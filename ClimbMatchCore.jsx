@@ -396,13 +396,13 @@ function rankSimilarRoutes(candidates,profile,opts){if(!profile)return [];var li
 
 
 const TRIP={
- bouldering:{tier:"Session",accent:"#f0883e",ready:["confirm"],modules:["meet"],why:"Short problems, no rope — spotters and crash pads. Just get everyone there."},
- sport:{tier:"Roped climb",accent:"#39d353",ready:["confirm"],modules:["meet"],why:"Pre-bolted and roped. The trust that matters here is the belay, not a gear list."},
- trad:{tier:"Roped climb",accent:"#2f81f7",ready:["confirm"],modules:["rack","meet"],why:"You place your own protection — belay trust, plus agreeing who carries the rack."},
- scrambling:{tier:"Day trip",accent:"#d29922",ready:["confirm","weather"],modules:["weather","meet"],why:"Mostly hands-on, unroped terrain. Watch exposure and check the weather."},
- hiking:{tier:"Day trip",accent:"#3fb950",ready:["confirm","weather"],modules:["weather","meet"],why:"A day on the trail — mind the forecast."},
- alpine:{tier:"Backcountry",accent:"#a371f7",ready:["confirm","align","gear","float"],modules:["align","gear","weather","avalanche","float","meet"],why:"Long, committing terrain with real objective hazards — the full safety stack lives here."},
- mountaineering:{tier:"Backcountry",accent:"#39d353",ready:["confirm","align","gear","float"],modules:["align","gear","weather","avalanche","float","meet"],why:"Glaciers, altitude, avalanche terrain. Be self-sufficient and expect SAR delays — full stack."}
+ bouldering:{tier:"Session",accent:"#f0883e",modules:["meet"],why:"Short problems, no rope — spotters and crash pads. Just get everyone there."},
+ sport:{tier:"Roped climb",accent:"#39d353",modules:["meet"],why:"Pre-bolted and roped. The trust that matters here is the belay, not a gear list."},
+ trad:{tier:"Roped climb",accent:"#2f81f7",modules:["rack","meet"],why:"You place your own protection — belay trust, plus agreeing who carries the rack."},
+ scrambling:{tier:"Day trip",accent:"#d29922",modules:["weather","meet"],why:"Mostly hands-on, unroped terrain. Watch exposure and check the weather."},
+ hiking:{tier:"Day trip",accent:"#3fb950",modules:["weather","meet"],why:"A day on the trail — mind the forecast."},
+ alpine:{tier:"Backcountry",accent:"#a371f7",modules:["align","gear","weather","avalanche","float","meet"],why:"Long, committing terrain with real objective hazards — the full safety stack lives here."},
+ mountaineering:{tier:"Backcountry",accent:"#39d353",modules:["align","gear","weather","avalanche","float","meet"],why:"Glaciers, altitude, avalanche terrain. Be self-sufficient and expect SAR delays — full stack."}
 };
 function tripOf(r){return TRIP[catOf(r)]||TRIP.scrambling;}
 /* Skills a VOUCH can endorse. Grouped by what a partner actually trusts you with, so the form reads as

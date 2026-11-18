@@ -1,0 +1,805 @@
+[
+ {
+  "id": "wa_mount_index_north_face",
+  "status": "found",
+  "trailhead": {
+   "name": "Lake Serene Trailhead",
+   "identifiedBy": {
+    "kind": "route_text",
+    "fact": "Lake Serene Trail from the Mount Index Road trailhead"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "Lake Serene Trailhead",
+     "lat": 47.809311,
+     "lng": -121.573654,
+     "url": ""
+    }
+   ]
+  },
+  "reachesSummit": true,
+  "summitEvidence": {
+   "kind": "route_text",
+   "fact": "descent notes rappel anchors near the summit; overview calls it the standard technical route up North Peak",
+   "url": ""
+  },
+  "otherFacts": [],
+  "notes": "Route already has a Trailhead pin (47.809189,-121.573693), 15 m from the USFS point."
+ },
+ {
+  "id": "wa_north_star_mountain_cloudy_peak_traverse",
+  "status": "found",
+  "trailhead": {
+   "name": "Holden Village / Railroad Creek Trailhead",
+   "identifiedBy": {
+    "kind": "route_text",
+    "fact": "Approach as for the East Route to Lyman Lake (sibling East Route starts at Holden Village / Railroad Creek)"
+   },
+   "placements": []
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Route text offers two approaches (Lucerne/Holden Village, or Phelps Creek over Spider Gap); both reported closed in recent seasons. Holden is the sibling's choice and has no coordinate in the official list; Phelps Creek Trailhead USFS 48.083206,-120.835015 is the alternate, 16 km away. Needs your placement or a decision on which start counts."
+ },
+ {
+  "id": "wa_northwest_mox_peak_northeast_ridge",
+  "status": "found",
+  "trailhead": {
+   "name": "Depot Creek Road Trailhead",
+   "identifiedBy": {
+    "kind": "page_peak",
+    "url": "https://www.mountaineers.org/activities/trip-reports/intermediate-alpine-climb-mox-peaks-twin-spires",
+    "fact": "Mountaineers climb of Easy Mox (NW Mox) started at Depot Creek TH, via Lake Ouzel and Glacier Col; route's own text calls the NE ridge the standard route on this spire"
+   },
+   "placements": []
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "approach_time_hr",
+    "value": "8 trailhead to Lake Ouzel, 2.5 Ouzel to Glacier Col",
+    "url": "https://www.mountaineers.org/activities/trip-reports/intermediate-alpine-climb-mox-peaks-twin-spires"
+   },
+   {
+    "field": "rappels",
+    "value": "two roped pitches with rappel anchors to saddle; summit pitch easy 5th",
+    "url": "https://www.mountaineers.org/activities/trip-reports/intermediate-alpine-climb-mox-peaks-twin-spires"
+   }
+  ],
+  "notes": "Depot Creek Road is on the Canadian side (Chilliwack Lake Road); official candidates are only BC points 17+ km away and none is named Depot Creek. Lower lot used when the road is rough. Needs placement by you. WTA's 48.9487,-121.2627 is the peak, not a trailhead."
+ },
+ {
+  "id": "wa_old_guard_peak_east_side_route",
+  "status": "found",
+  "trailhead": {
+   "name": "Cascade Pass Trailhead",
+   "identifiedBy": {
+    "kind": "route_text",
+    "fact": "Cascade River Road, final 3 miles to the trailhead; same approach infrastructure as the Southwest Route"
+   },
+   "placements": [
+    {
+     "source": "WTA",
+     "name": "Cascade Pass trailhead",
+     "lat": 48.4754,
+     "lng": -121.0751,
+     "url": "https://www.wta.org/go-hiking/hikes/cascade-pass"
+    }
+   ]
+  },
+  "reachesSummit": "unknown",
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "road",
+    "value": "Cascade River Road closed at MP 20 for maintenance (notice 10.15.26)",
+    "url": "https://www.wta.org/go-hiking/hikes/cascade-pass"
+   }
+  ],
+  "notes": "Route text never names the trailhead; Cascade Pass is inferred from the road description (road ends there, 23 mi from Marblemount). Reaches LeConte Glacier then 2-3 pitches of 5th; text calls it a roped alternative to the standard scramble, which implies the summit but never says so. Only one placement (WTA); not in the official list. No page found linking Old Guard explicitly to Cascade Pass; low confidence."
+ },
+ {
+  "id": "wa_overcoat_peak_north_face",
+  "status": "found",
+  "trailhead": {
+   "name": "Dingford Creek Trailhead",
+   "identifiedBy": {
+    "kind": "page_peak",
+    "url": "https://turns-all-year.com/trip-reports/june-2-2018-overcoat-peak",
+    "fact": "party started at Dingford Creek Trailhead (bike NF-5620 to Dutch Miller Gap TH, then trail and river ford) to reach Overcoat Peak"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "Dingford Creek Trailhead",
+     "lat": 47.517325,
+     "lng": -121.4543,
+     "url": ""
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "gain_ft",
+    "value": "5800 hiking/skiing plus 1400 biking",
+    "url": "https://turns-all-year.com/trip-reports/june-2-2018-overcoat-peak"
+   },
+   {
+    "field": "distance_mi",
+    "value": "16 biking + 13.5 hiking",
+    "url": "https://turns-all-year.com/trip-reports/june-2-2018-overcoat-peak"
+   }
+  ],
+  "notes": "Low confidence for THIS face: the report climbs a couloir to the NE side, and the route's own text says nothing about approach. An eastern approach from Pete Lake also exists (search hint only). Dingford is 12 km from the peak and the report bikes 8 mi of closed road beyond it."
+ },
+ {
+  "id": "wa_preacher_mountain_east_gully",
+  "status": "found",
+  "trailhead": {
+   "name": "Middle Fork Snoqualmie Trailhead",
+   "identifiedBy": {
+    "kind": "page_peak",
+    "url": "https://www.mountaineers.org/activities/routes-places/preacher-mountain",
+    "fact": "Preacher Mountain is typically approached from the Middle Fork Trailhead via Pratt Connector and Rainy Lake"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "Middle Fork Snoqualmie Trailhead",
+     "lat": 47.547762,
+     "lng": -121.537101,
+     "url": ""
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "distance_mi_rt",
+    "value": "11.0",
+    "url": "https://www.mountaineers.org/activities/routes-places/preacher-mountain"
+   },
+   {
+    "field": "gain_ft",
+    "value": "5000",
+    "url": "https://www.mountaineers.org/activities/routes-places/preacher-mountain"
+   },
+   {
+    "field": "high_point_ft",
+    "value": "5924",
+    "url": "https://www.mountaineers.org/activities/routes-places/preacher-mountain"
+   }
+  ],
+  "notes": "Peak-level identification; the route has no text. Mountaineers also names an alternate approach via Snow Lake trail and Wildcat Lakes."
+ },
+ {
+  "id": "wa_preacher_mountain_north_route",
+  "status": "found",
+  "trailhead": {
+   "name": "Middle Fork Snoqualmie Trailhead",
+   "identifiedBy": {
+    "kind": "page_peak",
+    "url": "https://www.mountaineers.org/activities/routes-places/preacher-mountain",
+    "fact": "Preacher Mountain is typically approached from the Middle Fork Trailhead via Pratt Connector and Rainy Lake"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "Middle Fork Snoqualmie Trailhead",
+     "lat": 47.547762,
+     "lng": -121.537101,
+     "url": ""
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "distance_mi_rt",
+    "value": "11.0",
+    "url": "https://www.mountaineers.org/activities/routes-places/preacher-mountain"
+   },
+   {
+    "field": "gain_ft",
+    "value": "5000",
+    "url": "https://www.mountaineers.org/activities/routes-places/preacher-mountain"
+   }
+  ],
+  "notes": "Peak-level identification; no route text. A 2017 blog describes the NW ridge meeting the north ridge, from Middle Fork TH."
+ },
+ {
+  "id": "wa_preacher_mountain_south_gully_south_spur",
+  "status": "found",
+  "trailhead": {
+   "name": "Middle Fork Snoqualmie Trailhead",
+   "identifiedBy": {
+    "kind": "page_peak",
+    "url": "https://www.mountaineers.org/activities/routes-places/preacher-mountain",
+    "fact": "Preacher Mountain is typically approached from the Middle Fork Trailhead via Pratt Connector and Rainy Lake"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "Middle Fork Snoqualmie Trailhead",
+     "lat": 47.547762,
+     "lng": -121.537101,
+     "url": ""
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "gain_ft",
+    "value": "5000",
+    "url": "https://www.mountaineers.org/activities/routes-places/preacher-mountain"
+   }
+  ],
+  "notes": "Peak-level identification; no route text."
+ },
+ {
+  "id": "wa_preacher_mountain_south_rib",
+  "status": "found",
+  "trailhead": {
+   "name": "Middle Fork Snoqualmie Trailhead",
+   "identifiedBy": {
+    "kind": "page_peak",
+    "url": "https://www.mountaineers.org/activities/routes-places/preacher-mountain",
+    "fact": "Preacher Mountain is typically approached from the Middle Fork Trailhead via Pratt Connector and Rainy Lake"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "Middle Fork Snoqualmie Trailhead",
+     "lat": 47.547762,
+     "lng": -121.537101,
+     "url": ""
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "gain_ft",
+    "value": "5000",
+    "url": "https://www.mountaineers.org/activities/routes-places/preacher-mountain"
+   }
+  ],
+  "notes": "Peak-level identification; no route text."
+ },
+ {
+  "id": "wa_preacher_mountain_west_face",
+  "status": "found",
+  "trailhead": {
+   "name": "Middle Fork Snoqualmie Trailhead",
+   "identifiedBy": {
+    "kind": "page_peak",
+    "url": "https://www.mountaineers.org/activities/routes-places/preacher-mountain",
+    "fact": "Preacher Mountain is typically approached from the Middle Fork Trailhead via Pratt Connector and Rainy Lake"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "Middle Fork Snoqualmie Trailhead",
+     "lat": 47.547762,
+     "lng": -121.537101,
+     "url": ""
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "gain_ft",
+    "value": "5000",
+    "url": "https://www.mountaineers.org/activities/routes-places/preacher-mountain"
+   }
+  ],
+  "notes": "Peak-level identification; no route text."
+ },
+ {
+  "id": "wa_prusik_peak_alpine_craggers_delight",
+  "status": "found",
+  "trailhead": {
+   "name": "Stuart Lake Trailhead",
+   "identifiedBy": {
+    "kind": "route_text",
+    "fact": "The Stuart Lake trailhead sits at the end of Forest Road 7601"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "Stuart Lake Trailhead",
+     "lat": 47.527806,
+     "lng": -120.820515,
+     "url": ""
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Single pitch; does not reach the summit by itself (own text)."
+ },
+ {
+  "id": "wa_prusik_peak_east_face",
+  "status": "found",
+  "trailhead": {
+   "name": "Stuart Lake Trailhead",
+   "identifiedBy": {
+    "kind": "page_peak",
+    "url": "https://www.mountaineers.org/activities/routes-places/enchantments-area-review/prusik-peak-west-ridge",
+    "fact": "standard approach to Prusik Peak: Stuart Lake Trailhead, Colchuck Lake, Aasgard Pass, Core; East Face and Stanley-Burgner start from the same Core basin"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "Stuart Lake Trailhead",
+     "lat": 47.527806,
+     "lng": -120.820515,
+     "url": ""
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "gain_ft",
+    "value": "4400 to Prusik via West Ridge",
+    "url": "https://www.mountaineers.org/activities/routes-places/enchantments-area-review/prusik-peak-west-ridge"
+   },
+   {
+    "field": "high_point_ft",
+    "value": "8000",
+    "url": "https://www.mountaineers.org/activities/routes-places/enchantments-area-review/prusik-peak-west-ridge"
+   }
+  ],
+  "notes": "Peak-level; the route has no text. Snow Lakes trailhead (USFS 47.544106,-120.709515) is another way into the Core and is nearer the east side; the page does not cover it."
+ },
+ {
+  "id": "wa_prusik_peak_prayer_for_a_friend",
+  "status": "found",
+  "trailhead": {
+   "name": "Stuart Lake Trailhead",
+   "identifiedBy": {
+    "kind": "route_text",
+    "fact": "The Stuart Lake trailhead sits at the end of Forest Road 7601"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "Stuart Lake Trailhead",
+     "lat": 47.527806,
+     "lng": -120.820515,
+     "url": ""
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Route stops at the top of the headwall, not the true summit (own descent text)."
+ },
+ {
+  "id": "wa_prusik_peak_solid_gold",
+  "status": "found",
+  "trailhead": {
+   "name": "Stuart Lake Trailhead",
+   "identifiedBy": {
+    "kind": "route_text",
+    "fact": "From the Stuart Lake Trailhead (3,400 ft) at the end of FS Road 7601"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "Stuart Lake Trailhead",
+     "lat": 47.527806,
+     "lng": -120.820515,
+     "url": ""
+    }
+   ]
+  },
+  "reachesSummit": false,
+  "summitEvidence": {
+   "kind": "route_text",
+   "fact": "top-out waypoint is on the West Ridge; parties continue to easy ground and shared rap anchors on the north side",
+   "url": ""
+  },
+  "otherFacts": [
+   {
+    "field": "trailhead_elevation_ft",
+    "value": "3400 (route) / 3600 (Mountaineers)",
+    "url": "https://www.mountaineers.org/activities/routes-places/enchantments-area-review/prusik-peak-west-ridge"
+   }
+  ],
+  "notes": "Route already has a Trailhead pin (47.5282,-120.82036), 21 m from the USFS point. Route ends on the ridge, not the summit."
+ },
+ {
+  "id": "wa_prusik_peak_stanley_burgner",
+  "status": "found",
+  "trailhead": {
+   "name": "Stuart Lake Trailhead",
+   "identifiedBy": {
+    "kind": "page_peak",
+    "url": "https://www.mountaineers.org/activities/routes-places/enchantments-area-review/prusik-peak-west-ridge",
+    "fact": "Prusik Peak routes start at the Stuart Lake Trail trailhead (end of Eightmile Rd, 3,600 ft)"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "Stuart Lake Trailhead",
+     "lat": 47.527806,
+     "lng": -120.820515,
+     "url": ""
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "pitch_grades",
+    "value": "P1 5.6/5.7 or 5.8; P4 5.8; P5 5.9",
+    "url": ""
+   }
+  ],
+  "notes": "Peak-level; the route's own text has no approach."
+ },
+ {
+  "id": "wa_prusik_peak_taylor_wood_route",
+  "status": "found",
+  "trailhead": {
+   "name": "Stuart Lake Trailhead",
+   "identifiedBy": {
+    "kind": "route_text",
+    "fact": "The Stuart Lake trailhead sits at the end of Forest Road 7601"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "Stuart Lake Trailhead",
+     "lat": 47.527806,
+     "lng": -120.820515,
+     "url": ""
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": ""
+ },
+ {
+  "id": "wa_red_mountain_snoqualmie_east_face",
+  "status": "found",
+  "trailhead": {
+   "name": "Pacific Crest Trail Trailhead (Snoqualmie Pass, Red Mountain #1033)",
+   "identifiedBy": {
+    "kind": "page_peak",
+    "url": "https://www.mountaineers.org/activities/routes-places/red-pass-mountain-commonwealth-basin",
+    "fact": "Red Mountain approached from the PCT Trailhead off I-90 exit 52 via Commonwealth Basin"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "Pacific Crest Trail - Snoqualmie North Trailhead",
+     "lat": 47.428012,
+     "lng": -121.413484,
+     "url": ""
+    },
+    {
+     "source": "WTA",
+     "name": "Red Mountain (#1033) trailhead",
+     "lat": 47.4278,
+     "lng": -121.4134,
+     "url": "https://www.wta.org/go-hiking/hikes/red-mountain-commonwealth-basin"
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "distance_mi_rt",
+    "value": "9.0 (Mountaineers) / 8.0 (WTA)",
+    "url": "https://www.mountaineers.org/activities/routes-places/red-pass-mountain-commonwealth-basin"
+   },
+   {
+    "field": "gain_ft",
+    "value": "2900",
+    "url": "https://www.mountaineers.org/activities/routes-places/red-pass-mountain-commonwealth-basin"
+   },
+   {
+    "field": "high_point_ft",
+    "value": "5890",
+    "url": "https://www.mountaineers.org/activities/routes-places/red-pass-mountain-commonwealth-basin"
+   }
+  ],
+  "notes": "Peak-level only. Both pages describe the west-side walk-up; an east-side route may be reached from the same Commonwealth Basin trail or from Snow Lake, which neither page covers. Low confidence."
+ },
+ {
+  "id": "wa_red_mountain_snoqualmie_east_ridge",
+  "status": "found",
+  "trailhead": {
+   "name": "Pacific Crest Trail Trailhead (Snoqualmie Pass, Red Mountain #1033)",
+   "identifiedBy": {
+    "kind": "page_peak",
+    "url": "https://www.mountaineers.org/activities/routes-places/red-pass-mountain-commonwealth-basin",
+    "fact": "Red Mountain approached from the PCT Trailhead off I-90 exit 52 via Commonwealth Basin"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "Pacific Crest Trail - Snoqualmie North Trailhead",
+     "lat": 47.428012,
+     "lng": -121.413484,
+     "url": ""
+    },
+    {
+     "source": "WTA",
+     "name": "Red Mountain (#1033) trailhead",
+     "lat": 47.4278,
+     "lng": -121.4134,
+     "url": "https://www.wta.org/go-hiking/hikes/red-mountain-commonwealth-basin"
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "distance_mi_rt",
+    "value": "9.0 (Mountaineers) / 8.0 (WTA)",
+    "url": "https://www.mountaineers.org/activities/routes-places/red-pass-mountain-commonwealth-basin"
+   },
+   {
+    "field": "gain_ft",
+    "value": "2900",
+    "url": "https://www.mountaineers.org/activities/routes-places/red-pass-mountain-commonwealth-basin"
+   },
+   {
+    "field": "high_point_ft",
+    "value": "5890",
+    "url": "https://www.mountaineers.org/activities/routes-places/red-pass-mountain-commonwealth-basin"
+   }
+  ],
+  "notes": "Peak-level only; low confidence (east side)."
+ },
+ {
+  "id": "wa_red_mountain_snoqualmie_southeast_face",
+  "status": "found",
+  "trailhead": {
+   "name": "Pacific Crest Trail Trailhead (Snoqualmie Pass, Red Mountain #1033)",
+   "identifiedBy": {
+    "kind": "page_peak",
+    "url": "https://www.mountaineers.org/activities/routes-places/red-pass-mountain-commonwealth-basin",
+    "fact": "Red Mountain approached from the PCT Trailhead off I-90 exit 52 via Commonwealth Basin"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "Pacific Crest Trail - Snoqualmie North Trailhead",
+     "lat": 47.428012,
+     "lng": -121.413484,
+     "url": ""
+    },
+    {
+     "source": "WTA",
+     "name": "Red Mountain (#1033) trailhead",
+     "lat": 47.4278,
+     "lng": -121.4134,
+     "url": "https://www.wta.org/go-hiking/hikes/red-mountain-commonwealth-basin"
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "distance_mi_rt",
+    "value": "9.0 (Mountaineers) / 8.0 (WTA)",
+    "url": "https://www.mountaineers.org/activities/routes-places/red-pass-mountain-commonwealth-basin"
+   },
+   {
+    "field": "gain_ft",
+    "value": "2900",
+    "url": "https://www.mountaineers.org/activities/routes-places/red-pass-mountain-commonwealth-basin"
+   },
+   {
+    "field": "high_point_ft",
+    "value": "5890",
+    "url": "https://www.mountaineers.org/activities/routes-places/red-pass-mountain-commonwealth-basin"
+   }
+  ],
+  "notes": "Peak-level only; low confidence (southeast side). Mountaineers describes the trail rising to the base of Red Mountain's south ridge."
+ },
+ {
+  "id": "wa_red_mountain_snoqualmie_west_ridge",
+  "status": "found",
+  "trailhead": {
+   "name": "Pacific Crest Trail Trailhead (Snoqualmie Pass, Red Mountain #1033)",
+   "identifiedBy": {
+    "kind": "page_peak",
+    "url": "https://www.mountaineers.org/activities/routes-places/red-pass-mountain-commonwealth-basin",
+    "fact": "Red Mountain approached from the PCT Trailhead off I-90 exit 52 via Commonwealth Basin"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "Pacific Crest Trail - Snoqualmie North Trailhead",
+     "lat": 47.428012,
+     "lng": -121.413484,
+     "url": ""
+    },
+    {
+     "source": "WTA",
+     "name": "Red Mountain (#1033) trailhead",
+     "lat": 47.4278,
+     "lng": -121.4134,
+     "url": "https://www.wta.org/go-hiking/hikes/red-mountain-commonwealth-basin"
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "distance_mi_rt",
+    "value": "9.0 (Mountaineers) / 8.0 (WTA)",
+    "url": "https://www.mountaineers.org/activities/routes-places/red-pass-mountain-commonwealth-basin"
+   },
+   {
+    "field": "gain_ft",
+    "value": "2900",
+    "url": "https://www.mountaineers.org/activities/routes-places/red-pass-mountain-commonwealth-basin"
+   },
+   {
+    "field": "high_point_ft",
+    "value": "5890",
+    "url": "https://www.mountaineers.org/activities/routes-places/red-pass-mountain-commonwealth-basin"
+   }
+  ],
+  "notes": "Peak-level; the west slope is the standard route per WTA, so this side is covered. Two placements agree within 30 m."
+ },
+ {
+  "id": "wa_rock_mountain_northeast_ridge",
+  "status": "found",
+  "trailhead": {
+   "name": "Old Merritt Lake Trailhead",
+   "identifiedBy": {
+    "kind": "route_text",
+    "fact": "Begin at the Old Merritt Lake Trailhead off US-2 (~2,950 ft)"
+   },
+   "placements": []
+  },
+  "reachesSummit": true,
+  "summitEvidence": {
+   "kind": "route_text",
+   "fact": "descent from the summit by the South Ridge and East Slope to the Rock Mountain Trailhead",
+   "url": ""
+  },
+  "otherFacts": [],
+  "notes": "No official point named Old Merritt Lake. Descent ends at the Rock Mountain Trailhead (USFS 47.775232,-120.957772), a different one, so the route needs a shuttle. Needs placement by you."
+ },
+ {
+  "id": "wa_ruby_mountain_northwest_ridge",
+  "status": "found",
+  "trailhead": {
+   "name": "SR 20 turnout opposite the boulder field (about 1,900 ft, 0.4 mi west of Horsetail Creek)",
+   "identifiedBy": {
+    "kind": "route_text",
+    "fact": "turnout about 12 mi east of Newhalem, directly across from a large boulder field"
+   },
+   "placements": []
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "An unsigned highway pullout with no official trailhead point (Happy Creek Forest Walk lot, 3.9 km away, is a different route's start). Needs a coordinate from the map or a ground check. Route text says it is typically done while SR 20 is gated."
+ },
+ {
+  "id": "wa_sharkfin_tower_flakes_and_chimneys_south_face",
+  "status": "found",
+  "trailhead": {
+   "name": "Boston Basin Trailhead",
+   "identifiedBy": {
+    "kind": "page_peak",
+    "url": "https://www.mountaineers.org/activities/routes-places/boston-basin-area-review/forbidden-peak-west-ridge",
+    "fact": "Boston Basin climbs start at the Boston Basin Trailhead, 21.7 mi up Cascade River Road, a pull-out just before Cascade Pass TH; NPS 2017 conditions report places the Sharkfin approach in Boston Basin"
+   },
+   "placements": []
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "trailhead_elevation_ft",
+    "value": "3200",
+    "url": "https://www.mountaineers.org/activities/routes-places/boston-basin-area-review/forbidden-peak-west-ridge"
+   },
+   {
+    "field": "approach_note",
+    "value": "snow-free approach gully is 3rd class in August 2017",
+    "url": "https://www.nps.gov/noca/blogs/sharkfin-tower-8-2-17.htm"
+   }
+  ],
+  "notes": "No official point matches (nearest candidates are more than 13 km). WTA gives 48.5021,-121.0676 for Boston Basin, the basin itself, not the lot. Needs placement by you. The route name turned up on no page; a 1960 AAC note describes the south face as three leads up a chimney."
+ },
+ {
+  "id": "wa_sherpa_peak_northeast_face",
+  "status": "found",
+  "trailhead": {
+   "name": "Stuart Lake Trailhead",
+   "identifiedBy": {
+    "kind": "page_peak",
+    "url": "https://www.mountaineers.org/activities/routes-places/enchantments-area-review/sherpa-peak-northeast-couloir",
+    "fact": "Sherpa Peak NE Couloir starts at the Lake Stuart Trailhead (3,600 ft) on Eightmile Creek Road, trail 1599, then leaves the Stuart Lake trail"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "Stuart Lake Trailhead",
+     "lat": 47.527806,
+     "lng": -120.820515,
+     "url": ""
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "distance_mi_rt",
+    "value": "16.0 (NE couloir)",
+    "url": "https://www.mountaineers.org/activities/routes-places/enchantments-area-review/sherpa-peak-northeast-couloir"
+   },
+   {
+    "field": "gain_ft",
+    "value": "5000",
+    "url": "https://www.mountaineers.org/activities/routes-places/enchantments-area-review/sherpa-peak-northeast-couloir"
+   },
+   {
+    "field": "high_point_ft",
+    "value": "8605",
+    "url": "https://www.mountaineers.org/activities/routes-places/enchantments-area-review/sherpa-peak-northeast-couloir"
+   },
+   {
+    "field": "season",
+    "value": "April-June",
+    "url": "https://www.mountaineers.org/activities/routes-places/enchantments-area-review/sherpa-peak-northeast-couloir"
+   }
+  ],
+  "notes": "The page covers the NE couloir, on the same side as this NE face. Stuart Lake TH is 8.1 km from the peak."
+ },
+ {
+  "id": "wa_silver_star_ne_ridge",
+  "status": "found",
+  "trailhead": {
+   "name": "SR-20 pullout near milepost 165-166 (Silver Star / Wine Spires)",
+   "identifiedBy": {
+    "kind": "route_text",
+    "fact": "approach_logistics: trailhead SR-20 pullout near milepost 165-166, first pullout after the Cutthroat Creek trailhead turnout; approach same as the Silver Star Glacier route"
+   },
+   "placements": []
+  },
+  "reachesSummit": true,
+  "summitEvidence": {
+   "kind": "route_text",
+   "fact": "technical rock line up the west summit's northeast aspect, reached via the Silver Star Glacier",
+   "url": ""
+  },
+  "otherFacts": [],
+  "notes": "The route's own stored coordinate 48.549,-120.630965 is in its text; no independent placement (USFS list has Cutthroat Trailhead 48.556306,-120.654715, a different lot about 1.7 km west). Needs placement by you. 'Reaches summit' rests on the text only, which does not state a top-out."
+ }
+]

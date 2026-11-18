@@ -1,0 +1,580 @@
+[
+ {
+  "id": "co_red_mountain_north_ridge_from_culebra_peak",
+  "name": "North Ridge (from Culebra Peak)",
+  "discipline": "scrambling",
+  "grade": "Class 2",
+  "verdict": "SUMMIT_ONLY",
+  "state": "co",
+  "peak": {
+   "id": "co_red_mountain",
+   "name": "Red Mountain",
+   "lat": 37.1122,
+   "lng": -105.1813,
+   "elevation_ft": 13911,
+   "region": null,
+   "path": "usa.colorado.co_sangre_de_cristo_range.co_red_mountain"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": "Reached only across private ranch land with a permit; it is a ridge walk usually done after Culebra Peak.",
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "North Fork-Purgatoire Trailhead",
+    "lat": 37.254653,
+    "lng": -105.10941,
+    "km": 17.1
+   },
+   {
+    "src": "USFS",
+    "name": "North Fork Trailhead",
+    "lat": 37.303063,
+    "lng": -105.139415,
+    "km": 21.5
+   },
+   {
+    "src": "USFS",
+    "name": "Indian Creek-Bear Lake Trailhead",
+    "lat": 37.326377,
+    "lng": -105.143495,
+    "km": 24
+   }
+  ],
+  "firstPass": {
+   "why": "stuck: Route text: reached only across private ranch land with a permit, done after Culebra Peak. No page opened (climb13ers slug 404). Access is via the Culebra ranch",
+   "trailhead": null,
+   "notes": "Route text: reached only across private ranch land with a permit, done after Culebra Peak. No page opened (climb13ers slug 404). Access is via the Culebra ranch, not a public trailhead; nearest USFS points 17+ km away are unrelated."
+  }
+ },
+ {
+  "id": "me_sugarloaf_mountain_appalachian_trail_to_sugarloaf",
+  "name": "Appalachian Trail to Sugarloaf",
+  "discipline": "walk-up",
+  "grade": null,
+  "verdict": "SUMMIT_ONLY",
+  "state": "me",
+  "peak": {
+   "id": "me_sugarloaf_mountain",
+   "name": "Sugarloaf Mountain",
+   "lat": 45.03167,
+   "lng": -70.31333,
+   "elevation_ft": null,
+   "region": "Maine",
+   "path": "usa.maine.me_a_western_mountains.me_sugarloaf_mountain"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [],
+  "officialCandidates": [],
+  "firstPass": {
+   "why": "held: no placement; agent flagged the identification as inferred/weak",
+   "trailhead": {
+    "name": "Caribou Pond Road (Caribou Valley Road) gate parking",
+    "identifiedBy": {
+     "kind": "page",
+     "url": "https://mainebyfoot.com/spaulding-mountain-near-carrabassett-valley/",
+     "fact": "AT from Caribou Pond Rd crosses river then climbs steeply up Sugarloaf to the junction of the Sugarloaf summit side trail"
+    },
+    "placements": []
+   },
+   "notes": "Route text empty and name says only Appalachian Trail. Moderate confidence: a different AT start is a small Route 27 lot (seen only in a search summary, not opened). No coordinate."
+  }
+ },
+ {
+  "id": "nv_mount_rose_mount_rose_trail",
+  "name": "Mount Rose Trail",
+  "discipline": "scrambling",
+  "grade": "Class 1",
+  "verdict": "SUMMIT_ONLY",
+  "state": "nv",
+  "peak": {
+   "id": "nv_mount_rose",
+   "name": "Mount Rose",
+   "lat": 39.3437,
+   "lng": -119.9177,
+   "elevation_ft": 10776,
+   "region": null,
+   "path": "usa.nevada.nv_western_nevada.nv_lake_tahoe_area.nv_mount_rose"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": "A well-defined trail from the highway pass climbs about 2,000 feet over roughly five miles to a saddle and the summit.",
+   "descent": null
+  },
+  "waypoints": [
+   {
+    "lat": 39.3437,
+    "lng": -119.9177,
+    "elev": 10776,
+    "name": "Mount Rose summit",
+    "type": "Summit"
+   }
+  ],
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Tahoe Meadows Trt Trailhead",
+    "lat": 39.307345,
+    "lng": -119.907463,
+    "km": 4.1
+   },
+   {
+    "src": "USFS",
+    "name": "Jones/Whites Trailhead",
+    "lat": 39.361305,
+    "lng": -119.857313,
+    "km": 5.5
+   },
+   {
+    "src": "USFS",
+    "name": "Whites Creek Trailhead",
+    "lat": 39.377945,
+    "lng": -119.847693,
+    "km": 7.1
+   },
+   {
+    "src": "USFS",
+    "name": "Thomas Creek Trailhead",
+    "lat": 39.393535,
+    "lng": -119.838543,
+    "km": 8.8
+   },
+   {
+    "src": "USFS",
+    "name": "Bullseye",
+    "lat": 39.391171,
+    "lng": -120.089569,
+    "km": 15.7
+   },
+   {
+    "src": "USFS",
+    "name": "Boca Historic Townsite Interpretive Trai",
+    "lat": 39.38662,
+    "lng": -120.093334,
+    "km": 15.8
+   },
+   {
+    "src": "USFS",
+    "name": "Boca Dam Viewpoint Trailhead",
+    "lat": 39.391487,
+    "lng": -120.092251,
+    "km": 15.9
+   },
+   {
+    "src": "USFS",
+    "name": "Ice House",
+    "lat": 39.386701,
+    "lng": -120.094823,
+    "km": 16
+   },
+   {
+    "src": "USFS",
+    "name": "Capra",
+    "lat": 39.418948,
+    "lng": -120.084774,
+    "km": 16.6
+   },
+   {
+    "src": "USFS",
+    "name": "Chimney Beach Parking",
+    "lat": 39.16777,
+    "lng": -119.926528,
+    "km": 19.6
+   },
+   {
+    "src": "USFS",
+    "name": "Two-Sixty-One",
+    "lat": 39.460338,
+    "lng": -120.130202,
+    "km": 22.4
+   },
+   {
+    "src": "USFS",
+    "name": "King'S Canyon",
+    "lat": 39.153349,
+    "lng": -119.815562,
+    "km": 22.9
+   },
+   {
+    "src": "USFS",
+    "name": "Keystone Trailhead",
+    "lat": 39.549655,
+    "lng": -119.859573,
+    "km": 23.4
+   },
+   {
+    "src": "USFS",
+    "name": "Thelin",
+    "lat": 39.312646,
+    "lng": -120.189267,
+    "km": 23.6
+   },
+   {
+    "src": "USFS",
+    "name": "Sawtooth Trailhead",
+    "lat": 39.310009,
+    "lng": -120.191538,
+    "km": 23.8
+   }
+  ],
+  "firstPass": {
+   "why": "held: only non-land-manager placements (other)",
+   "trailhead": {
+    "name": "Mount Rose Summit Trailhead (Mt Rose Highway pass)",
+    "identifiedBy": {
+     "kind": "route_text",
+     "fact": "trail from the highway pass"
+    },
+    "placements": [
+     {
+      "source": "Wikipedia",
+      "name": "Mount Rose Summit (the pass point, not the lot)",
+      "lat": 39.31333333,
+      "lng": -119.89722222,
+      "url": "https://en.wikipedia.org/wiki/Mount_Rose_Summit"
+     }
+    ]
+   },
+   "notes": "Pass is SR 431, 8,911 ft. USFS candidate Tahoe Meadows Trt Trailhead (39.307345,-119.907463) is a neighbouring lot about 1.2 km away; fs.usda.gov denied page reading so I could not tie the Mt Rose Trail to either lot. Place by hand at the Mt Rose Summit lot."
+  }
+ },
+ {
+  "id": "ny_armstrong_mountain_great_range_trail_from_the_lake_road",
+  "name": "Great Range Trail from the Lake Road",
+  "discipline": "scrambling",
+  "grade": "Class 1",
+  "verdict": "SUMMIT_ONLY",
+  "state": "ny",
+  "peak": {
+   "id": "ny_armstrong_mountain",
+   "name": "Armstrong Mountain",
+   "lat": 44.1348,
+   "lng": -73.849,
+   "elevation_ft": 4400,
+   "region": null,
+   "path": "usa.new_york.ny_adirondacks.ny_e_high_peaks_region.ny_armstrong_mountain"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": "Ladders beside Beaver Meadow Falls and steep sections; crossing the reserve on foot needs a reservation in the warm season. Path: Gothics access trail and Great Range Trail via Beaver Meadow Falls.",
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [],
+  "officialCandidates": [],
+  "firstPass": {
+   "why": "held: placements disagree by > 300 m",
+   "trailhead": {
+    "name": "Adirondack Mountain Reserve parking area (Ausable Road)",
+    "identifiedBy": {
+     "kind": "route_text",
+     "fact": "Great Range Trail from the Lake Road; crossing the reserve needs a reservation"
+    },
+    "placements": [
+     {
+      "source": "NYSDEC",
+      "name": "Adirondack Mountain Reserve parking area",
+      "lat": 44.14915,
+      "lng": -73.7694,
+      "url": "https://dec.ny.gov/places/adirondack-mountain-reserve-conservation-easement-tract"
+     },
+     {
+      "source": "NYSDEC",
+      "name": "Adirondack Mountain Reserve Trailhead (half mile up Ausable Road)",
+      "lat": 44.15026,
+      "lng": -73.77559,
+      "url": "https://dec.ny.gov/places/adirondack-mountain-reserve-conservation-easement-tract"
+     }
+    ]
+   },
+   "notes": "Lake Road is the AMR road. Both points are NYSDEC (same page), not independent. hikeamr.org was down."
+  }
+ },
+ {
+  "id": "ny_blake_peak_via_mount_colvin",
+  "name": "Via Mount Colvin",
+  "discipline": "scrambling",
+  "grade": "Class 2",
+  "verdict": "SUMMIT_ONLY",
+  "state": "ny",
+  "peak": {
+   "id": "ny_blake_peak",
+   "name": "Blake Peak",
+   "lat": 44.0814,
+   "lng": -73.8446,
+   "elevation_ft": 3960,
+   "region": null,
+   "path": "usa.new_york.ny_adirondacks.ny_e_high_peaks_region.ny_blake_peak"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": "Reached over Colvin on the practical route; the Elk Lake approach is far longer. Path: Gill Brook Trail over Colvin, then path to Blake.",
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [],
+  "officialCandidates": [],
+  "firstPass": {
+   "why": "stuck: Text names only Gill Brook Trail, no start. Gill Brook Trail is believed to start off the AMR Lake Road but I found no page stating it. Lead: AMR lot 44.14915,-",
+   "trailhead": null,
+   "notes": "Text names only Gill Brook Trail, no start. Gill Brook Trail is believed to start off the AMR Lake Road but I found no page stating it. Lead: AMR lot 44.14915,-73.7694 (NYSDEC)."
+  }
+ },
+ {
+  "id": "ny_dial_mountain_via_bear_den",
+  "name": "Via Bear Den",
+  "discipline": "scrambling",
+  "grade": "Class 1",
+  "verdict": "SUMMIT_ONLY",
+  "state": "ny",
+  "peak": {
+   "id": "ny_dial_mountain",
+   "name": "Dial Mountain",
+   "lat": 44.1059,
+   "lng": -73.796,
+   "elevation_ft": 4020,
+   "region": null,
+   "path": "usa.new_york.ny_adirondacks.ny_e_high_peaks_region.ny_dial_mountain"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": "Long push along the summit ridge; snow spikes advised on steeper parts of the Elk Pass side in winter. Path: Lake Road to Dial via Bear Den.",
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [],
+  "officialCandidates": [],
+  "firstPass": {
+   "why": "held: agent flagged the identification as inferred/weak; placements disagree by > 300 m",
+   "trailhead": {
+    "name": "Adirondack Mountain Reserve parking area (Ausable Road)",
+    "identifiedBy": {
+     "kind": "route_text",
+     "fact": "Lake Road to Dial via Bear Den"
+    },
+    "placements": [
+     {
+      "source": "NYSDEC",
+      "name": "Adirondack Mountain Reserve parking area",
+      "lat": 44.14915,
+      "lng": -73.7694,
+      "url": "https://dec.ny.gov/places/adirondack-mountain-reserve-conservation-easement-tract"
+     },
+     {
+      "source": "NYSDEC",
+      "name": "Adirondack Mountain Reserve Trailhead (half mile up Ausable Road)",
+      "lat": 44.15026,
+      "lng": -73.77559,
+      "url": "https://dec.ny.gov/places/adirondack-mountain-reserve-conservation-easement-tract"
+     }
+    ]
+   },
+   "notes": "Text does not name the lot; rests on Lake Road meaning the AMR road. Moderate confidence."
+  }
+ },
+ {
+  "id": "ny_gray_peak_via_lake_tear_of_the_clouds",
+  "name": "Via Lake Tear of the Clouds",
+  "discipline": "scrambling",
+  "grade": "Class 2",
+  "verdict": "SUMMIT_ONLY",
+  "state": "ny",
+  "peak": {
+   "id": "ny_gray_peak",
+   "name": "Gray Peak",
+   "lat": 44.1114,
+   "lng": -73.9349,
+   "elevation_ft": 4840,
+   "region": null,
+   "path": "usa.new_york.ny_adirondacks.ny_e_high_peaks_region.ny_gray_peak"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": "Marked trail to Lake Tear of the Clouds, then a faint herd path to the summit. Path: Marcy Dam and Lake Arnold/Feldspar trails to Lake Tear, then herd path. Starts at Adirondak Loj / High Peaks Information Center.",
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [],
+  "officialCandidates": [],
+  "firstPass": {
+   "why": "held: only non-land-manager placements (other)",
+   "trailhead": {
+    "name": "Adirondak Loj / High Peaks Information Center",
+    "identifiedBy": {
+     "kind": "route_text",
+     "fact": "Starts at Adirondak Loj / High Peaks Information Center"
+    },
+    "placements": [
+     {
+      "source": "Wikipedia",
+      "name": "Adirondak Loj (lodge point, not the lot)",
+      "lat": 44.1825,
+      "lng": -73.96666667,
+      "url": "https://en.wikipedia.org/wiki/Adirondak_Loj"
+     }
+    ]
+   },
+   "notes": "Placement is lodge-level only; place by hand at the public lot."
+  }
+ },
+ {
+  "id": "ny_iroquois_peak_via_algonquin_peak",
+  "name": "Via Algonquin Peak",
+  "discipline": "scrambling",
+  "grade": "Class 2",
+  "verdict": "SUMMIT_ONLY",
+  "state": "ny",
+  "peak": {
+   "id": "ny_iroquois_peak",
+   "name": "Iroquois Peak",
+   "lat": 44.137,
+   "lng": -73.9982,
+   "elevation_ft": 4840,
+   "region": null,
+   "path": "usa.new_york.ny_adirondacks.ny_e_high_peaks_region.ny_iroquois_peak"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": "Done as an out-and-back over Algonquin, with a steep unmarked final stretch. Path: Algonquin Peak trail, then herd path to Iroquois. Starts at Adirondak Loj / High Peaks Information Center.",
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [],
+  "officialCandidates": [],
+  "firstPass": {
+   "why": "held: only non-land-manager placements (other)",
+   "trailhead": {
+    "name": "Adirondak Loj / High Peaks Information Center",
+    "identifiedBy": {
+     "kind": "route_text",
+     "fact": "Starts at Adirondak Loj / High Peaks Information Center"
+    },
+    "placements": [
+     {
+      "source": "Wikipedia",
+      "name": "Adirondak Loj (lodge point, not the lot)",
+      "lat": 44.1825,
+      "lng": -73.96666667,
+      "url": "https://en.wikipedia.org/wiki/Adirondak_Loj"
+     }
+    ]
+   },
+   "notes": "Placement is lodge-level only; place by hand at the public lot."
+  }
+ },
+ {
+  "id": "ny_mount_colvin_gill_brook_trail",
+  "name": "Gill Brook Trail",
+  "discipline": "scrambling",
+  "grade": "Class 1",
+  "verdict": "SUMMIT_ONLY",
+  "state": "ny",
+  "peak": {
+   "id": "ny_mount_colvin",
+   "name": "Mount Colvin",
+   "lat": 44.0939,
+   "lng": -73.8344,
+   "elevation_ft": 4057,
+   "region": null,
+   "path": "usa.new_york.ny_adirondacks.ny_e_high_peaks_region.ny_mount_colvin"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": "Steep slab and a challenging spot near the summit; usually extended to Blake. Path: Gill Brook Trail.",
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [],
+  "officialCandidates": [],
+  "firstPass": {
+   "why": "stuck: Text names only Gill Brook Trail, no start; same lead as Blake Peak (AMR lot 44.14915,-73.7694, NYSDEC), not page-verified.",
+   "trailhead": null,
+   "notes": "Text names only Gill Brook Trail, no start; same lead as Blake Peak (AMR lot 44.14915,-73.7694, NYSDEC), not page-verified."
+  }
+ },
+ {
+  "id": "ny_mount_skylight_via_mount_marcy",
+  "name": "Via Mount Marcy",
+  "discipline": "scrambling",
+  "grade": "Class 1",
+  "verdict": "SUMMIT_ONLY",
+  "state": "ny",
+  "peak": {
+   "id": "ny_mount_skylight",
+   "name": "Mount Skylight",
+   "lat": 44.0994,
+   "lng": -73.9308,
+   "elevation_ft": 4924,
+   "region": null,
+   "path": "usa.new_york.ny_adirondacks.ny_e_high_peaks_region.ny_mount_skylight"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": "Usually climbed with Marcy and Gray; the alternative approach from Upper Works is longer. Path: Van Hoevenberg Trail over Marcy to Lake Tear of the Clouds. Starts at Adirondak Loj / High Peaks Information Center.",
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [],
+  "officialCandidates": [],
+  "firstPass": {
+   "why": "held: only non-land-manager placements (other)",
+   "trailhead": {
+    "name": "Adirondak Loj / High Peaks Information Center",
+    "identifiedBy": {
+     "kind": "route_text",
+     "fact": "Van Hoevenberg Trail. Starts at Adirondak Loj / High Peaks Information Center"
+    },
+    "placements": [
+     {
+      "source": "Wikipedia",
+      "name": "Adirondak Loj (lodge point, not the lot)",
+      "lat": 44.1825,
+      "lng": -73.96666667,
+      "url": "https://en.wikipedia.org/wiki/Adirondak_Loj"
+     }
+    ]
+   },
+   "notes": "Placement is lodge-level only; place by hand at the public lot."
+  }
+ }
+]

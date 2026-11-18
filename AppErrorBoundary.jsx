@@ -25,6 +25,19 @@ const CARD = { maxWidth: 420, width: "100%", background: "#161b22", border: "1px
 const BTN = { width: "100%", marginTop: 16, padding: "12px 14px", borderRadius: 10, border: "none",
   background: "#2f81f7", color: "#fff", fontSize: 15, fontWeight: 700, cursor: "pointer" };
 
+// A deploy removed the lazy screen's file and main.jsx is ALREADY reloading for it. main.jsx's
+// vite:preloadError handler calls preventDefault() so Vite does not rethrow -- and Vite then resolves
+// the import to undefined, so React.lazy throws its own "reading 'default'" TypeError into this
+// boundary while the reload is in flight. Seen 2026-11-18 on a signed-in phone: Menu > Listed areas
+// across a deploy drew "This screen hit a bug ... (reading 'default')", and stayed. That error,
+// within the window main.jsx's marker records, is the deploy, not a bug. The key is main.jsx's
+// CHUNK_RELOAD_KEY (check:chunk-reload holds the two spellings together).
+const CHUNK_RELOAD_KEY = "climbmatch:chunk-reload-at";
+function swallowedChunk(msg) {
+  if (!/default/.test(msg)) return false; // Chrome: reading 'default'; Firefox: property "default"; Safari: evaluating 'x.default'
+  try { return Date.now() - (Number(window.sessionStorage.getItem(CHUNK_RELOAD_KEY)) || 0) < 30 * 1000; } catch { return false; }
+}
+
 export default class AppErrorBoundary extends Component {
   constructor(props) { super(props); this.state = { err: null }; }
   static getDerivedStateFromError(err) { return { err }; }
@@ -32,6 +45,8 @@ export default class AppErrorBoundary extends Component {
     // Kept in the console for anyone with devtools open, and filed to app_errors (0399). The screen
     // below still does not say "we've been notified": the report is best effort, and may not arrive.
     console.error("[ClimbMatch] render error:", err, info && info.componentStack);
+    // Not filed when it is a deploy's missing file being reloaded (swallowedChunk): that is not a bug.
+    if (swallowedChunk(String((err && err.message) || err))) return;
     reportError("render", err, info && info.componentStack);
   }
   render() {
@@ -40,7 +55,7 @@ export default class AppErrorBoundary extends Component {
     // A lazily-loaded screen whose file could not be fetched is not a bug in the screen: main.jsx
     // already reloaded once for a stale deploy, so reaching here means no connection or a second
     // failure. Chrome, Firefox and Safari each word the failure differently.
-    const chunk = /dynamically imported module|Importing a module script failed/i.test(msg);
+    const chunk = /dynamically imported module|Importing a module script failed/i.test(msg) || swallowedChunk(msg);
     return (
       <div style={WRAP} role="alert">
         <div style={CARD}>

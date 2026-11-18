@@ -1,0 +1,1552 @@
+[
+ {
+  "id": "wa_mount_persis_the_hexorcist",
+  "name": "The Hexorcist",
+  "discipline": "mountaineering",
+  "grade": null,
+  "verdict": "SUMMIT_ONLY",
+  "state": "wa",
+  "peak": {
+   "id": "wa_mount_persis",
+   "name": "Mount Persis",
+   "lat": 47.790401,
+   "lng": -121.611813,
+   "elevation_ft": 5464,
+   "region": "Stevens / Index",
+   "path": "usa.washington.wa_centralwest.wa_stevens_pass_region.wa_mount_persis"
+  },
+  "text": {
+   "approach": "No maintained trail reaches the north face. Parties generally leave the West Ridge boot path or approach cross-country from the Anderson Creek drainage / FR 6220 area, bushwhacking through steep second-growth and old-growth timber to gain the base of the wall; expect substantial off-trail forest travel and real route-finding difficulty.",
+   "approach_logistics": "{\"peakLat\":47.790401,\"peakLng\":-121.611813,\"trailhead\":\"FR-6220 / Anderson Creek drainage (no maintained trail)\"}",
+   "road": "{\"name\":\"Forest Road 62 (FR-62)\",\"status\":\"Unpaved, rough; passenger cars may struggle on the upper section\",\"driveNote\":\"Same general FR-62 access as the West Ridge route; the specific approach to the base of the north face itself is not documented.\",\"seasonalGate\":\"A gate near the US-2 junction is sometimes locked with no advance notice\"}",
+   "overview": "A difficult, multi-pitch technical alpine rock climb up Mount Persis's sheer north face, established by prolific North Cascades first-ascentionist Bryan Burdo.",
+   "description": null,
+   "descent": null
+  },
+  "waypoints": [
+   {
+    "lat": 47.790401,
+    "lng": -121.611813,
+    "elev": 5464,
+    "name": "Mount Persis summit",
+    "type": "Summit",
+    "distMi": null,
+    "elevFt": 5464
+   }
+  ],
+  "siblingTrailheads": [
+   {
+    "route": "wa_mount_persis_west_ridge",
+    "name": "Mount Persis Trailhead (FR-62 road's end)"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Lake Serene Trailhead",
+    "lat": 47.809311,
+    "lng": -121.573654,
+    "km": 3.5
+   },
+   {
+    "src": "USFS",
+    "name": "Heybrook Lookout Trailhead",
+    "lat": 47.808327,
+    "lng": -121.535112,
+    "km": 6.1
+   },
+   {
+    "src": "USFS",
+    "name": "Barclay Lake Trailhead",
+    "lat": 47.792236,
+    "lng": -121.459288,
+    "km": 11.4
+   },
+   {
+    "src": "USFS",
+    "name": "Lake Elizabeth",
+    "lat": 47.701276,
+    "lng": -121.517445,
+    "km": 12.2
+   },
+   {
+    "src": "USFS",
+    "name": "Sunday Lake",
+    "lat": 47.660969,
+    "lng": -121.616557,
+    "km": 14.4
+   },
+   {
+    "src": "USFS",
+    "name": "Bare Mountain",
+    "lat": 47.639636,
+    "lng": -121.527105,
+    "km": 17.9
+   },
+   {
+    "src": "USFS",
+    "name": "Lennox Creek",
+    "lat": 47.63634,
+    "lng": -121.523149,
+    "km": 18.4
+   },
+   {
+    "src": "USFS",
+    "name": "Troublesome Creek Trailhead",
+    "lat": 47.898062,
+    "lng": -121.401959,
+    "km": 19.7
+   },
+   {
+    "src": "USFS",
+    "name": "Frog Mountain Trailhead",
+    "lat": 47.880584,
+    "lng": -121.321727,
+    "km": 23.9
+   }
+  ],
+  "firstPass": {
+   "why": "held: only non-land-manager placements (wta)",
+   "trailhead": {
+    "name": "Mount Persis Trailhead (FR 62 / FR 6220 road end)",
+    "identifiedBy": {
+     "kind": "route_text",
+     "fact": "leave the West Ridge boot path ... FR 6220 / Anderson Creek drainage"
+    },
+    "placements": [
+     {
+      "source": "WTA",
+      "name": "Mount Persis trailhead (pullout near road end)",
+      "lat": 47.7931,
+      "lng": -121.6449,
+      "url": "https://www.wta.org/go-hiking/hikes/mount-persis"
+     }
+    ]
+   },
+   "notes": "No USFS/NPS point matches; only a WTA coordinate (one placement). Route has no trail; starts off the West Ridge approach, same road end as the sibling West Ridge route."
+  }
+ },
+ {
+  "id": "wa_mount_rahm_custer_traverse",
+  "name": "Custer-Rahm Traverse",
+  "discipline": "scrambling",
+  "grade": "Class 4",
+  "verdict": "NO_SUMMIT",
+  "state": "wa",
+  "peak": {
+   "id": "wa_mount_rahm",
+   "name": "Mount Rahm",
+   "lat": 48.997115,
+   "lng": -121.228755,
+   "elevation_ft": 8485,
+   "region": "Chilliwack / Picket",
+   "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_chilliwack_range.wa_mount_rahm"
+  },
+  "text": {
+   "approach": "Reached from the summit of either Mount Rahm (via the Standard Route/Glacier or South Side) or Mount Custer (via its South Ridge), not from a trailhead directly.",
+   "approach_logistics": null,
+   "road": "{\"name\":\"Chilliwack Lake Road + Depot Creek Road (BC) — same access used for the South Side route, from which this traverse is usually launched\",\"status\":\"Paved to Chilliwack Lake (~25 mi), then rough pothole-prone gravel to the Depot Creek Road fork at 32.6 mi; Depot Creek Road itself washed out beyond roughly 0.8-1.6 mi\",\"driveNote\":\"See the South Side route's Depot Creek approach; this traverse is done as a link, not from the road directly.\",\"seasonalGate\":null}",
+   "overview": "A high, mostly Class 2/3 ridge-crest traverse directly connecting the summits of Mount Rahm and Mount Custer, with one short Class 4 gully bypassing an unclimbable arête near Custer's summit block.",
+   "description": null,
+   "descent": "Parties doing this traverse essentially never reverse it. From Custer's summit, descend the South Ridge route back toward Ouzel Lake or the Depot Creek-Silver Lake saddle camp; from Rahm's summit, descend the South Side route's gully system back to camp."
+  },
+  "waypoints": [
+   {
+    "lat": 48.96444,
+    "lng": -121.26472,
+    "elev": 5700,
+    "name": "Ouzel Lake basin, head of Depot Creek",
+    "type": "Campsite"
+   },
+   {
+    "lat": 48.9891,
+    "lng": -121.2497,
+    "name": "Route reference point (Custer-Rahm ridge, near Mount Custer)",
+    "type": "landmark",
+    "distMi": null,
+    "elevFt": null
+   }
+  ],
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "NPS",
+    "name": "Nepopekum Horse Trail Loop Trailhead (BC)",
+    "lat": 49.053337,
+    "lng": -121.094073,
+    "km": 11.6
+   },
+   {
+    "src": "NPS",
+    "name": "Strawberry Bar (BC)",
+    "lat": 49.076197,
+    "lng": -121.111462,
+    "km": 12.3
+   },
+   {
+    "src": "NPS",
+    "name": "Skyline II Trailhead (BC)",
+    "lat": 49.041545,
+    "lng": -121.068734,
+    "km": 12.7
+   },
+   {
+    "src": "NPS",
+    "name": "Shawatum Day Use parking area (BC)",
+    "lat": 49.105168,
+    "lng": -121.138761,
+    "km": 13.7
+   }
+  ],
+  "firstPass": {
+   "why": "stuck: Ridge link launched from the Rahm South Side / Custer South Ridge approach via Depot Creek, BC (Chilliwack Lake Rd + Depot Creek Rd, washed out beyond ~1-1.6 mi",
+   "trailhead": null,
+   "notes": "Ridge link launched from the Rahm South Side / Custer South Ridge approach via Depot Creek, BC (Chilliwack Lake Rd + Depot Creek Rd, washed out beyond ~1-1.6 mi). No single named trailhead in its text and no official point matches. Not researched further."
+  }
+ },
+ {
+  "id": "wa_mount_rainier_east_success_couloir",
+  "name": "East Success Couloir",
+  "discipline": "mountaineering",
+  "grade": "Steep Snow",
+  "verdict": "SUMMIT_ONLY",
+  "state": "wa",
+  "peak": {
+   "id": "wa_mount_rainier",
+   "name": "Mount Rainier",
+   "lat": 46.8528267,
+   "lng": -121.7604408,
+   "elevation_ft": 14406,
+   "region": "Washington",
+   "path": "usa.washington.wa_sw_tacoma.wa_southwest_cascades.wa_mount_rainier"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": "Approach via the Westside Road, Paradise, or Van Trump Meadows, then ascend the Success Couloir that lies farthest east, on snow of 45+ degrees. From Paradise or Van Trump the easiest line may be to cross the lower part of the Kautz Glacier and head up the Kautz Cleaver, then angle into the couloir. A lengthy snow ramp climbs nearly straight up. Rock bands may show near 12,600 feet and 13,300 depending on snow. Near 13,000 feet it follows an airy traverse above cliffs, then cuts back left and up",
+   "description": null,
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [
+   {
+    "route": "rainier_central_mowich_face",
+    "name": "Mowich Lake Trailhead"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "NPS",
+    "name": "4th Crossing Trailhead",
+    "lat": 46.79018,
+    "lng": -121.726702,
+    "km": 7.4
+   },
+   {
+    "src": "NPS",
+    "name": "Skyline Trailhead",
+    "lat": 46.786404,
+    "lng": -121.73639,
+    "km": 7.6
+   },
+   {
+    "src": "NPS",
+    "name": "Alta Vista Trailhead",
+    "lat": 46.784541,
+    "lng": -121.741355,
+    "km": 7.7
+   },
+   {
+    "src": "NPS",
+    "name": "Nisqually Vista Trailhead",
+    "lat": 46.785052,
+    "lng": -121.741604,
+    "km": 7.7
+   },
+   {
+    "src": "NPS",
+    "name": "Lower Lakes Trailhead",
+    "lat": 46.785505,
+    "lng": -121.733344,
+    "km": 7.8
+   },
+   {
+    "src": "NPS",
+    "name": "Comet Falls Trailhead",
+    "lat": 46.778817,
+    "lng": -121.783602,
+    "km": 8.4
+   },
+   {
+    "src": "NPS",
+    "name": "Narada Falls trailhead",
+    "lat": 46.775194,
+    "lng": -121.746062,
+    "km": 8.7
+   },
+   {
+    "src": "NPS",
+    "name": "Lower Lakes Trail",
+    "lat": 46.776604,
+    "lng": -121.737077,
+    "km": 8.7
+   },
+   {
+    "src": "NPS",
+    "name": "Wonderland Trailhead",
+    "lat": 46.769587,
+    "lng": -121.73481,
+    "km": 9.5
+   },
+   {
+    "src": "NPS",
+    "name": "Pinnacle Peak Trailhead",
+    "lat": 46.768403,
+    "lng": -121.731571,
+    "km": 9.6
+   },
+   {
+    "src": "NPS",
+    "name": "Wonderland Trail",
+    "lat": 46.769008,
+    "lng": -121.724238,
+    "km": 9.7
+   },
+   {
+    "src": "NPS",
+    "name": "Wonderland Trailhead",
+    "lat": 46.768216,
+    "lng": -121.728908,
+    "km": 9.7
+   },
+   {
+    "src": "NPS",
+    "name": "Louise Lake Trailhead",
+    "lat": 46.769797,
+    "lng": -121.714726,
+    "km": 9.9
+   },
+   {
+    "src": "NPS",
+    "name": "Wonderland Trailhead",
+    "lat": 46.76659,
+    "lng": -121.790888,
+    "km": 9.9
+   },
+   {
+    "src": "NPS",
+    "name": "Wonderland Trailhead",
+    "lat": 46.770281,
+    "lng": -121.703247,
+    "km": 10.2
+   },
+   {
+    "src": "USFS",
+    "name": "Trailhead: Glacier View",
+    "lat": 46.796503,
+    "lng": -121.947741,
+    "km": 15.6
+   },
+   {
+    "src": "USFS",
+    "name": "Trailhead: Tatoosh North",
+    "lat": 46.71151,
+    "lng": -121.714412,
+    "km": 16.1
+   },
+   {
+    "src": "USFS",
+    "name": "Trailhead: Lake Christine",
+    "lat": 46.773792,
+    "lng": -121.943278,
+    "km": 16.5
+   },
+   {
+    "src": "USFS",
+    "name": "Evans Creek Trailhead",
+    "lat": 46.941276,
+    "lng": -121.942185,
+    "km": 17
+   },
+   {
+    "src": "USFS",
+    "name": "Chinook Pass Overlook Trailhead",
+    "lat": 46.874769,
+    "lng": -121.517217,
+    "km": 18.7
+   }
+  ],
+  "firstPass": {
+   "why": "stuck: Route's own text offers three starts (Westside Road, Paradise, Van Trump Meadows) and says the easiest may be from Paradise or Van Trump; no page found that set",
+   "trailhead": null,
+   "notes": "Route's own text offers three starts (Westside Road, Paradise, Van Trump Meadows) and says the easiest may be from Paradise or Van Trump; no page found that settles it."
+  }
+ },
+ {
+  "id": "wa_mount_rainier_north_mowich_icefall",
+  "name": "North Mowich Icefall",
+  "discipline": "mountaineering",
+  "grade": null,
+  "verdict": "SUMMIT_ONLY",
+  "state": "wa",
+  "peak": {
+   "id": "wa_mount_rainier",
+   "name": "Mount Rainier",
+   "lat": 46.8528267,
+   "lng": -121.7604408,
+   "elevation_ft": 14406,
+   "region": "Washington",
+   "path": "usa.washington.wa_sw_tacoma.wa_southwest_cascades.wa_mount_rainier"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [
+   {
+    "route": "rainier_central_mowich_face",
+    "name": "Mowich Lake Trailhead"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "NPS",
+    "name": "4th Crossing Trailhead",
+    "lat": 46.79018,
+    "lng": -121.726702,
+    "km": 7.4
+   },
+   {
+    "src": "NPS",
+    "name": "Skyline Trailhead",
+    "lat": 46.786404,
+    "lng": -121.73639,
+    "km": 7.6
+   },
+   {
+    "src": "NPS",
+    "name": "Alta Vista Trailhead",
+    "lat": 46.784541,
+    "lng": -121.741355,
+    "km": 7.7
+   },
+   {
+    "src": "NPS",
+    "name": "Nisqually Vista Trailhead",
+    "lat": 46.785052,
+    "lng": -121.741604,
+    "km": 7.7
+   },
+   {
+    "src": "NPS",
+    "name": "Lower Lakes Trailhead",
+    "lat": 46.785505,
+    "lng": -121.733344,
+    "km": 7.8
+   },
+   {
+    "src": "NPS",
+    "name": "Comet Falls Trailhead",
+    "lat": 46.778817,
+    "lng": -121.783602,
+    "km": 8.4
+   },
+   {
+    "src": "NPS",
+    "name": "Narada Falls trailhead",
+    "lat": 46.775194,
+    "lng": -121.746062,
+    "km": 8.7
+   },
+   {
+    "src": "NPS",
+    "name": "Lower Lakes Trail",
+    "lat": 46.776604,
+    "lng": -121.737077,
+    "km": 8.7
+   },
+   {
+    "src": "NPS",
+    "name": "Wonderland Trailhead",
+    "lat": 46.769587,
+    "lng": -121.73481,
+    "km": 9.5
+   },
+   {
+    "src": "NPS",
+    "name": "Pinnacle Peak Trailhead",
+    "lat": 46.768403,
+    "lng": -121.731571,
+    "km": 9.6
+   },
+   {
+    "src": "NPS",
+    "name": "Wonderland Trail",
+    "lat": 46.769008,
+    "lng": -121.724238,
+    "km": 9.7
+   },
+   {
+    "src": "NPS",
+    "name": "Wonderland Trailhead",
+    "lat": 46.768216,
+    "lng": -121.728908,
+    "km": 9.7
+   },
+   {
+    "src": "NPS",
+    "name": "Louise Lake Trailhead",
+    "lat": 46.769797,
+    "lng": -121.714726,
+    "km": 9.9
+   },
+   {
+    "src": "NPS",
+    "name": "Wonderland Trailhead",
+    "lat": 46.76659,
+    "lng": -121.790888,
+    "km": 9.9
+   },
+   {
+    "src": "NPS",
+    "name": "Wonderland Trailhead",
+    "lat": 46.770281,
+    "lng": -121.703247,
+    "km": 10.2
+   },
+   {
+    "src": "USFS",
+    "name": "Trailhead: Glacier View",
+    "lat": 46.796503,
+    "lng": -121.947741,
+    "km": 15.6
+   },
+   {
+    "src": "USFS",
+    "name": "Trailhead: Tatoosh North",
+    "lat": 46.71151,
+    "lng": -121.714412,
+    "km": 16.1
+   },
+   {
+    "src": "USFS",
+    "name": "Trailhead: Lake Christine",
+    "lat": 46.773792,
+    "lng": -121.943278,
+    "km": 16.5
+   },
+   {
+    "src": "USFS",
+    "name": "Evans Creek Trailhead",
+    "lat": 46.941276,
+    "lng": -121.942185,
+    "km": 17
+   },
+   {
+    "src": "USFS",
+    "name": "Chinook Pass Overlook Trailhead",
+    "lat": 46.874769,
+    "lng": -121.517217,
+    "km": 18.7
+   }
+  ],
+  "firstPass": {
+   "why": "stuck: No route text. Mowich Lake is the likely start (Mountaineers Ptarmigan Ridge page, seen only as a search snippet, says that approach is the Wonderland Trail fro",
+   "trailhead": null,
+   "notes": "No route text. Mowich Lake is the likely start (Mountaineers Ptarmigan Ridge page, seen only as a search snippet, says that approach is the Wonderland Trail from Mowich Lake across Mowich Glacier) but I did not open a page about the North Mowich icefall, and the Mountaineers page returned 403 to my fetch. NPS Mowich Lake page prints no coordinate and does not mention climbing. NPS says SR 165 Fairfax Bridge access is closed."
+  }
+ },
+ {
+  "id": "wa_mount_stuart_direct_north_ridge",
+  "name": "Direct North Ridge",
+  "discipline": "alpine",
+  "grade": "5.9+",
+  "verdict": "SUMMIT_ONLY",
+  "state": "wa",
+  "peak": {
+   "id": "wa_mount_stuart",
+   "name": "Mount Stuart",
+   "lat": 47.4750106,
+   "lng": -120.9022286,
+   "elevation_ft": 9415,
+   "region": "Washington",
+   "path": "usa.washington.wa_centraleast.wa_stuart_range.wa_mount_stuart"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": "Lichen and loose rock mar parts of this bigger outing, which adds roughly 1200 feet and sustained 5.9+ cracks to the regular North Ridge. Easy fifth class follows the crest above the hardest early pitches, which include a slot and a long layback crack past a small roof. Bivouac sites sit around 8200 feet at the notch. Time varies enormously: a rapid half-day simul-climbing, or several days if pitched out.",
+   "description": null,
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [
+   {
+    "route": "wa_gorillas_direct",
+    "name": "Esmeralda Basin Trailhead (North Fork Teanaway Rd)"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Esmeralda Trailhead",
+    "lat": 47.436706,
+    "lng": -120.936915,
+    "km": 5
+   },
+   {
+    "src": "USFS",
+    "name": "Iron Peak Trailhead",
+    "lat": 47.421583,
+    "lng": -120.937341,
+    "km": 6.5
+   },
+   {
+    "src": "USFS",
+    "name": "Stuart Lake Trailhead",
+    "lat": 47.527806,
+    "lng": -120.820515,
+    "km": 8.5
+   },
+   {
+    "src": "USFS",
+    "name": "Eightmile Trailhead",
+    "lat": 47.536016,
+    "lng": -120.814025,
+    "km": 9.5
+   },
+   {
+    "src": "USFS",
+    "name": "Beverly Bean Trailhead",
+    "lat": 47.389302,
+    "lng": -120.872266,
+    "km": 9.8
+   },
+   {
+    "src": "USFS",
+    "name": "Scatter Creek Trailhead",
+    "lat": 47.507206,
+    "lng": -121.059815,
+    "km": 12.4
+   },
+   {
+    "src": "USFS",
+    "name": "Fourth Of July Trailhead",
+    "lat": 47.578106,
+    "lng": -120.796015,
+    "km": 14
+   },
+   {
+    "src": "USFS",
+    "name": "Stafford Creek Trailhead",
+    "lat": 47.365806,
+    "lng": -120.803615,
+    "km": 14.2
+   },
+   {
+    "src": "USFS",
+    "name": "Jack Trout Trailhead",
+    "lat": 47.606506,
+    "lng": -120.916025,
+    "km": 14.7
+   },
+   {
+    "src": "USFS",
+    "name": "Icicle Gorge Trailhead",
+    "lat": 47.607806,
+    "lng": -120.895025,
+    "km": 14.8
+   },
+   {
+    "src": "USFS",
+    "name": "Miller-bear Trailhead",
+    "lat": 47.368606,
+    "lng": -120.784615,
+    "km": 14.8
+   },
+   {
+    "src": "USFS",
+    "name": "Chatter Creek Trailhead",
+    "lat": 47.608249,
+    "lng": -120.881514,
+    "km": 14.9
+   },
+   {
+    "src": "USFS",
+    "name": "Paris Creek Trailhead",
+    "lat": 47.416373,
+    "lng": -121.081196,
+    "km": 15
+   },
+   {
+    "src": "USFS",
+    "name": "Paddy-Go-Easy Trailhead",
+    "lat": 47.532873,
+    "lng": -121.082797,
+    "km": 15
+   },
+   {
+    "src": "USFS",
+    "name": "Blackjack Ridge Trailhead",
+    "lat": 47.609106,
+    "lng": -120.944015,
+    "km": 15.2
+   }
+  ],
+  "firstPass": {
+   "why": "stuck: Two valid approaches with no way to pick for this route: north side from the Stuart Lake / Colchuck trailhead (USFS Stuart Lake Trailhead 47.527806,-120.820515)",
+   "trailhead": null,
+   "notes": "Two valid approaches with no way to pick for this route: north side from the Stuart Lake / Colchuck trailhead (USFS Stuart Lake Trailhead 47.527806,-120.820515) or south side from Esmeralda Trailhead (USFS 47.436706,-120.936915) via Lake Ingalls and Goat Pass. Route's own text is silent."
+  }
+ },
+ {
+  "id": "wa_mount_stuart_gorillas_in_the_mist",
+  "name": "Gorillas in the Mist",
+  "discipline": "alpine",
+  "grade": "5.11- Easy Snow",
+  "verdict": "SUMMIT_ONLY",
+  "state": "wa",
+  "peak": {
+   "id": "wa_mount_stuart",
+   "name": "Mount Stuart",
+   "lat": 47.4750106,
+   "lng": -120.9022286,
+   "elevation_ft": 9415,
+   "region": "Washington",
+   "path": "usa.washington.wa_centraleast.wa_stuart_range.wa_mount_stuart"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": "Crack and corner route. P1 (5.11- or 5.10+): hand and finger splitter from a small ledge to a broad ledge, then a mantle and a yellow corner. P2 (5.9): leftward through hanging corners and arete turns to a bolted ledge. P3 (5.10+): face holds to a 4 inch crack and a slung horn near big orange roofs, then diagonal cracks right; may be easier as two pitches. P4 (5.10-): finger cracks and stemming. P5 (5.10): rightward and upward, past a small tree. P6 (5th class): move the belay well right of a bi",
+   "description": null,
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [
+   {
+    "route": "wa_gorillas_direct",
+    "name": "Esmeralda Basin Trailhead (North Fork Teanaway Rd)"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Esmeralda Trailhead",
+    "lat": 47.436706,
+    "lng": -120.936915,
+    "km": 5
+   },
+   {
+    "src": "USFS",
+    "name": "Iron Peak Trailhead",
+    "lat": 47.421583,
+    "lng": -120.937341,
+    "km": 6.5
+   },
+   {
+    "src": "USFS",
+    "name": "Stuart Lake Trailhead",
+    "lat": 47.527806,
+    "lng": -120.820515,
+    "km": 8.5
+   },
+   {
+    "src": "USFS",
+    "name": "Eightmile Trailhead",
+    "lat": 47.536016,
+    "lng": -120.814025,
+    "km": 9.5
+   },
+   {
+    "src": "USFS",
+    "name": "Beverly Bean Trailhead",
+    "lat": 47.389302,
+    "lng": -120.872266,
+    "km": 9.8
+   },
+   {
+    "src": "USFS",
+    "name": "Scatter Creek Trailhead",
+    "lat": 47.507206,
+    "lng": -121.059815,
+    "km": 12.4
+   },
+   {
+    "src": "USFS",
+    "name": "Fourth Of July Trailhead",
+    "lat": 47.578106,
+    "lng": -120.796015,
+    "km": 14
+   },
+   {
+    "src": "USFS",
+    "name": "Stafford Creek Trailhead",
+    "lat": 47.365806,
+    "lng": -120.803615,
+    "km": 14.2
+   },
+   {
+    "src": "USFS",
+    "name": "Jack Trout Trailhead",
+    "lat": 47.606506,
+    "lng": -120.916025,
+    "km": 14.7
+   },
+   {
+    "src": "USFS",
+    "name": "Icicle Gorge Trailhead",
+    "lat": 47.607806,
+    "lng": -120.895025,
+    "km": 14.8
+   },
+   {
+    "src": "USFS",
+    "name": "Miller-bear Trailhead",
+    "lat": 47.368606,
+    "lng": -120.784615,
+    "km": 14.8
+   },
+   {
+    "src": "USFS",
+    "name": "Chatter Creek Trailhead",
+    "lat": 47.608249,
+    "lng": -120.881514,
+    "km": 14.9
+   },
+   {
+    "src": "USFS",
+    "name": "Paris Creek Trailhead",
+    "lat": 47.416373,
+    "lng": -121.081196,
+    "km": 15
+   },
+   {
+    "src": "USFS",
+    "name": "Paddy-Go-Easy Trailhead",
+    "lat": 47.532873,
+    "lng": -121.082797,
+    "km": 15
+   },
+   {
+    "src": "USFS",
+    "name": "Blackjack Ridge Trailhead",
+    "lat": 47.609106,
+    "lng": -120.944015,
+    "km": 15.2
+   }
+  ],
+  "firstPass": {
+   "why": "stuck: West Face Wall between Goat Pass and Stuart Pass (Mountain Project page). South-side approach via Lake Ingalls and Goat Pass starts at Esmeralda Trailhead (USFS",
+   "trailhead": null,
+   "notes": "West Face Wall between Goat Pass and Stuart Pass (Mountain Project page). South-side approach via Lake Ingalls and Goat Pass starts at Esmeralda Trailhead (USFS 47.436706,-120.936915; sibling Gorillas Direct uses it), but a north approach via Mountaineer Creek also reaches Stuart Pass and no page I opened ties this route to one. Lead only."
+  }
+ },
+ {
+  "id": "wa_mount_stuart_stuart_range_traverse",
+  "name": "Stuart Range Traverse",
+  "discipline": "alpine",
+  "grade": "5.9",
+  "verdict": "SUMMIT_ONLY",
+  "state": "wa",
+  "peak": {
+   "id": "wa_mount_stuart",
+   "name": "Mount Stuart",
+   "lat": 47.4750106,
+   "lng": -120.9022286,
+   "elevation_ft": 9415,
+   "region": "Washington",
+   "path": "usa.washington.wa_centraleast.wa_stuart_range.wa_mount_stuart"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [
+   {
+    "route": "wa_gorillas_direct",
+    "name": "Esmeralda Basin Trailhead (North Fork Teanaway Rd)"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Esmeralda Trailhead",
+    "lat": 47.436706,
+    "lng": -120.936915,
+    "km": 5
+   },
+   {
+    "src": "USFS",
+    "name": "Iron Peak Trailhead",
+    "lat": 47.421583,
+    "lng": -120.937341,
+    "km": 6.5
+   },
+   {
+    "src": "USFS",
+    "name": "Stuart Lake Trailhead",
+    "lat": 47.527806,
+    "lng": -120.820515,
+    "km": 8.5
+   },
+   {
+    "src": "USFS",
+    "name": "Eightmile Trailhead",
+    "lat": 47.536016,
+    "lng": -120.814025,
+    "km": 9.5
+   },
+   {
+    "src": "USFS",
+    "name": "Beverly Bean Trailhead",
+    "lat": 47.389302,
+    "lng": -120.872266,
+    "km": 9.8
+   },
+   {
+    "src": "USFS",
+    "name": "Scatter Creek Trailhead",
+    "lat": 47.507206,
+    "lng": -121.059815,
+    "km": 12.4
+   },
+   {
+    "src": "USFS",
+    "name": "Fourth Of July Trailhead",
+    "lat": 47.578106,
+    "lng": -120.796015,
+    "km": 14
+   },
+   {
+    "src": "USFS",
+    "name": "Stafford Creek Trailhead",
+    "lat": 47.365806,
+    "lng": -120.803615,
+    "km": 14.2
+   },
+   {
+    "src": "USFS",
+    "name": "Jack Trout Trailhead",
+    "lat": 47.606506,
+    "lng": -120.916025,
+    "km": 14.7
+   },
+   {
+    "src": "USFS",
+    "name": "Icicle Gorge Trailhead",
+    "lat": 47.607806,
+    "lng": -120.895025,
+    "km": 14.8
+   },
+   {
+    "src": "USFS",
+    "name": "Miller-bear Trailhead",
+    "lat": 47.368606,
+    "lng": -120.784615,
+    "km": 14.8
+   },
+   {
+    "src": "USFS",
+    "name": "Chatter Creek Trailhead",
+    "lat": 47.608249,
+    "lng": -120.881514,
+    "km": 14.9
+   },
+   {
+    "src": "USFS",
+    "name": "Paris Creek Trailhead",
+    "lat": 47.416373,
+    "lng": -121.081196,
+    "km": 15
+   },
+   {
+    "src": "USFS",
+    "name": "Paddy-Go-Easy Trailhead",
+    "lat": 47.532873,
+    "lng": -121.082797,
+    "km": 15
+   },
+   {
+    "src": "USFS",
+    "name": "Blackjack Ridge Trailhead",
+    "lat": 47.609106,
+    "lng": -120.944015,
+    "km": 15.2
+   }
+  ],
+  "firstPass": {
+   "why": "stuck: A multi-peak traverse with no single trailhead and no route text; not researched.",
+   "trailhead": null,
+   "notes": "A multi-peak traverse with no single trailhead and no route text; not researched."
+  }
+ },
+ {
+  "id": "wa_mount_triumph_west_route",
+  "name": "West Route",
+  "discipline": "scrambling",
+  "grade": "Class 4",
+  "verdict": "SUMMIT_ONLY",
+  "state": "wa",
+  "peak": {
+   "id": "wa_mount_triumph",
+   "name": "Mount Triumph",
+   "lat": 48.706705,
+   "lng": -121.355985,
+   "elevation_ft": 7260,
+   "region": "North Cascades Core",
+   "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_picket_range.wa_mount_triumph"
+  },
+  "text": {
+   "approach": "Reached via the longer, rougher Triumph Pass climbers' route rather than the standard Thornton Lakes approach used for the Northeast Ridge; used far less often and much less documented than the NE Ridge approach.",
+   "approach_logistics": null,
+   "road": "{\"name\":\"Same regional access as Northeast Ridge (SR-20 corridor)\",\"status\":null,\"driveNote\":null,\"seasonalGate\":null}",
+   "overview": "The technically easiest way up Mount Triumph but the least climbed line: a long Class 4 route up the mountain's west side and south face to the southeast shoulder, reached via the much longer and rougher Triumph Pass climbers' route rather than the popular Thornton Lakes approach used for the Northeast Ridge.",
+   "description": null,
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [
+   {
+    "route": "wa_mount_triumph_northeast_ridge",
+    "name": "Thornton Lakes Trailhead"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "NPS",
+    "name": "Gorge Overlook Trail Trailhead",
+    "lat": 48.699938,
+    "lng": -121.21076,
+    "km": 10.7
+   },
+   {
+    "src": "NPS",
+    "name": "Gorge Overlook Trail Trailhead",
+    "lat": 48.700343,
+    "lng": -121.209709,
+    "km": 10.8
+   },
+   {
+    "src": "USFS",
+    "name": "Baker River Trailhead",
+    "lat": 48.750499,
+    "lng": -121.555348,
+    "km": 15.4
+   },
+   {
+    "src": "USFS",
+    "name": "Lookout Mountain Trailhead",
+    "lat": 48.537501,
+    "lng": -121.291755,
+    "km": 19.4
+   },
+   {
+    "src": "USFS",
+    "name": "Watson Lakes Trailhead",
+    "lat": 48.674907,
+    "lng": -121.615318,
+    "km": 19.4
+   },
+   {
+    "src": "USFS",
+    "name": "Shannon Ridge Trailhead",
+    "lat": 48.767233,
+    "lng": -121.618094,
+    "km": 20.4
+   },
+   {
+    "src": "NPS",
+    "name": "Happy Creek Forest Walk Trailhead",
+    "lat": 48.728543,
+    "lng": -121.055832,
+    "km": 22.2
+   },
+   {
+    "src": "USFS",
+    "name": "Hidden Lake Trailhead",
+    "lat": 48.514161,
+    "lng": -121.221581,
+    "km": 23.6
+   },
+   {
+    "src": "USFS",
+    "name": "Baker Lake South Trailhead",
+    "lat": 48.645675,
+    "lng": -121.674648,
+    "km": 24.4
+   }
+  ],
+  "firstPass": {
+   "why": "stuck: Route text says it is reached by the Triumph Pass climbers' route rather than the Thornton Lakes approach, but no page I opened names where that route starts (W",
+   "trailhead": null,
+   "notes": "Route text says it is reached by the Triumph Pass climbers' route rather than the Thornton Lakes approach, but no page I opened names where that route starts (Wikipedia names none). Thornton Lakes TH is for the NE Ridge only."
+  }
+ },
+ {
+  "id": "wa_north_early_winter_spire_christianson_roskelley",
+  "name": "Christianson-Roskelley",
+  "discipline": "alpine",
+  "grade": "5.9",
+  "verdict": "SUMMIT_ONLY",
+  "state": "wa",
+  "peak": {
+   "id": "wa_north_early_winters_spire",
+   "name": "North Early Winters Spire",
+   "lat": 48.512935,
+   "lng": -120.655465,
+   "elevation_ft": 7760,
+   "region": "Washington",
+   "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_sub_wapass.wa_liberty_bell_group.wa_north_early_winters_spire"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [
+   {
+    "route": "wa_chockstone_route",
+    "name": "Blue Lake TH"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Hairpin",
+    "lat": 48.514336,
+    "lng": -120.642715,
+    "km": 1
+   },
+   {
+    "src": "USFS",
+    "name": "Blue Lake Trailhead",
+    "lat": 48.519016,
+    "lng": -120.674215,
+    "km": 1.5
+   },
+   {
+    "src": "USFS",
+    "name": "Burgundy Col",
+    "lat": 48.551406,
+    "lng": -120.630895,
+    "km": 4.6
+   },
+   {
+    "src": "USFS",
+    "name": "Bridge Creek Trailhead",
+    "lat": 48.504906,
+    "lng": -120.719115,
+    "km": 4.8
+   },
+   {
+    "src": "USFS",
+    "name": "Cutthroat Trailhead",
+    "lat": 48.556306,
+    "lng": -120.654715,
+    "km": 4.8
+   },
+   {
+    "src": "USFS",
+    "name": "Rainy Pass Trailhead (PCT North)",
+    "lat": 48.515306,
+    "lng": -120.736025,
+    "km": 5.9
+   },
+   {
+    "src": "USFS",
+    "name": "Heather Maple Pass Trailhead Rainy Pass ",
+    "lat": 48.516606,
+    "lng": -120.735815,
+    "km": 5.9
+   },
+   {
+    "src": "USFS",
+    "name": "Gilbert Trailhead",
+    "lat": 48.458443,
+    "lng": -120.565926,
+    "km": 9
+   },
+   {
+    "src": "USFS",
+    "name": "South Creek (north) Trailhead",
+    "lat": 48.439256,
+    "lng": -120.531125,
+    "km": 12.3
+   },
+   {
+    "src": "USFS",
+    "name": "South Creek (south) Trailhead",
+    "lat": 48.436816,
+    "lng": -120.530095,
+    "km": 12.5
+   },
+   {
+    "src": "USFS",
+    "name": "Scatter Creek Trailhead",
+    "lat": 48.434606,
+    "lng": -120.520115,
+    "km": 13.2
+   },
+   {
+    "src": "USFS",
+    "name": "Easy Pass Trailhead",
+    "lat": 48.587206,
+    "lng": -120.801615,
+    "km": 13.6
+   },
+   {
+    "src": "USFS",
+    "name": "Driveway Butte Trailhead",
+    "lat": 48.598271,
+    "lng": -120.512721,
+    "km": 14.2
+   },
+   {
+    "src": "USFS",
+    "name": "Cedar Creek Trailhead",
+    "lat": 48.579106,
+    "lng": -120.478815,
+    "km": 14.9
+   },
+   {
+    "src": "USFS",
+    "name": "Rattlesnake Trailhead",
+    "lat": 48.648664,
+    "lng": -120.571213,
+    "km": 16.3
+   },
+   {
+    "src": "NPS",
+    "name": "Imus Creek Loop Trail Trailhead",
+    "lat": 48.3085,
+    "lng": -120.65601,
+    "km": 22.7
+   }
+  ],
+  "firstPass": {
+   "why": "stuck: Likely Blue Lake Trailhead (USFS 48.519016,-120.674215) as for most NEWS routes, but no opened page puts THIS route on the west side; east-side climbs park at t",
+   "trailhead": null,
+   "notes": "Likely Blue Lake Trailhead (USFS 48.519016,-120.674215) as for most NEWS routes, but no opened page puts THIS route on the west side; east-side climbs park at the highway hairpin (USFS Hairpin 48.514336,-120.642715). Mountain Project approach page (opened): most NEWS routes are on the west side, reached by the Blue Lake Trail (No. 314), 2.5 mi, 1913 ft gain to the climbers' trail below the west face. "
+  }
+ },
+ {
+  "id": "wa_north_early_winter_spire_twitch_of_the_death_nerve",
+  "name": "Twitch of the Death Nerve",
+  "discipline": "alpine",
+  "grade": "5.8+",
+  "verdict": "SUMMIT_ONLY",
+  "state": "wa",
+  "peak": {
+   "id": "wa_north_early_winters_spire",
+   "name": "North Early Winters Spire",
+   "lat": 48.512935,
+   "lng": -120.655465,
+   "elevation_ft": 7760,
+   "region": "Washington",
+   "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_sub_wapass.wa_liberty_bell_group.wa_north_early_winters_spire"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [
+   {
+    "route": "wa_chockstone_route",
+    "name": "Blue Lake TH"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Hairpin",
+    "lat": 48.514336,
+    "lng": -120.642715,
+    "km": 1
+   },
+   {
+    "src": "USFS",
+    "name": "Blue Lake Trailhead",
+    "lat": 48.519016,
+    "lng": -120.674215,
+    "km": 1.5
+   },
+   {
+    "src": "USFS",
+    "name": "Burgundy Col",
+    "lat": 48.551406,
+    "lng": -120.630895,
+    "km": 4.6
+   },
+   {
+    "src": "USFS",
+    "name": "Bridge Creek Trailhead",
+    "lat": 48.504906,
+    "lng": -120.719115,
+    "km": 4.8
+   },
+   {
+    "src": "USFS",
+    "name": "Cutthroat Trailhead",
+    "lat": 48.556306,
+    "lng": -120.654715,
+    "km": 4.8
+   },
+   {
+    "src": "USFS",
+    "name": "Rainy Pass Trailhead (PCT North)",
+    "lat": 48.515306,
+    "lng": -120.736025,
+    "km": 5.9
+   },
+   {
+    "src": "USFS",
+    "name": "Heather Maple Pass Trailhead Rainy Pass ",
+    "lat": 48.516606,
+    "lng": -120.735815,
+    "km": 5.9
+   },
+   {
+    "src": "USFS",
+    "name": "Gilbert Trailhead",
+    "lat": 48.458443,
+    "lng": -120.565926,
+    "km": 9
+   },
+   {
+    "src": "USFS",
+    "name": "South Creek (north) Trailhead",
+    "lat": 48.439256,
+    "lng": -120.531125,
+    "km": 12.3
+   },
+   {
+    "src": "USFS",
+    "name": "South Creek (south) Trailhead",
+    "lat": 48.436816,
+    "lng": -120.530095,
+    "km": 12.5
+   },
+   {
+    "src": "USFS",
+    "name": "Scatter Creek Trailhead",
+    "lat": 48.434606,
+    "lng": -120.520115,
+    "km": 13.2
+   },
+   {
+    "src": "USFS",
+    "name": "Easy Pass Trailhead",
+    "lat": 48.587206,
+    "lng": -120.801615,
+    "km": 13.6
+   },
+   {
+    "src": "USFS",
+    "name": "Driveway Butte Trailhead",
+    "lat": 48.598271,
+    "lng": -120.512721,
+    "km": 14.2
+   },
+   {
+    "src": "USFS",
+    "name": "Cedar Creek Trailhead",
+    "lat": 48.579106,
+    "lng": -120.478815,
+    "km": 14.9
+   },
+   {
+    "src": "USFS",
+    "name": "Rattlesnake Trailhead",
+    "lat": 48.648664,
+    "lng": -120.571213,
+    "km": 16.3
+   },
+   {
+    "src": "NPS",
+    "name": "Imus Creek Loop Trail Trailhead",
+    "lat": 48.3085,
+    "lng": -120.65601,
+    "km": 22.7
+   }
+  ],
+  "firstPass": {
+   "why": "stuck: Lead is Blue Lake TH; side of the peak not confirmed for this route and no page about it found. Mountain Project approach page (opened): most NEWS routes are on",
+   "trailhead": null,
+   "notes": "Lead is Blue Lake TH; side of the peak not confirmed for this route and no page about it found. Mountain Project approach page (opened): most NEWS routes are on the west side, reached by the Blue Lake Trail (No. 314), 2.5 mi, 1913 ft gain to the climbers' trail below the west face. "
+  }
+ },
+ {
+  "id": "wa_north_early_winter_spire_vulcan_death_grip",
+  "name": "Vulcan Death Grip",
+  "discipline": "alpine",
+  "grade": "5.11d",
+  "verdict": "SUMMIT_ONLY",
+  "state": "wa",
+  "peak": {
+   "id": "wa_north_early_winters_spire",
+   "name": "North Early Winters Spire",
+   "lat": 48.512935,
+   "lng": -120.655465,
+   "elevation_ft": 7760,
+   "region": "Washington",
+   "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_sub_wapass.wa_liberty_bell_group.wa_north_early_winters_spire"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [
+   {
+    "route": "wa_chockstone_route",
+    "name": "Blue Lake TH"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Hairpin",
+    "lat": 48.514336,
+    "lng": -120.642715,
+    "km": 1
+   },
+   {
+    "src": "USFS",
+    "name": "Blue Lake Trailhead",
+    "lat": 48.519016,
+    "lng": -120.674215,
+    "km": 1.5
+   },
+   {
+    "src": "USFS",
+    "name": "Burgundy Col",
+    "lat": 48.551406,
+    "lng": -120.630895,
+    "km": 4.6
+   },
+   {
+    "src": "USFS",
+    "name": "Bridge Creek Trailhead",
+    "lat": 48.504906,
+    "lng": -120.719115,
+    "km": 4.8
+   },
+   {
+    "src": "USFS",
+    "name": "Cutthroat Trailhead",
+    "lat": 48.556306,
+    "lng": -120.654715,
+    "km": 4.8
+   },
+   {
+    "src": "USFS",
+    "name": "Rainy Pass Trailhead (PCT North)",
+    "lat": 48.515306,
+    "lng": -120.736025,
+    "km": 5.9
+   },
+   {
+    "src": "USFS",
+    "name": "Heather Maple Pass Trailhead Rainy Pass ",
+    "lat": 48.516606,
+    "lng": -120.735815,
+    "km": 5.9
+   },
+   {
+    "src": "USFS",
+    "name": "Gilbert Trailhead",
+    "lat": 48.458443,
+    "lng": -120.565926,
+    "km": 9
+   },
+   {
+    "src": "USFS",
+    "name": "South Creek (north) Trailhead",
+    "lat": 48.439256,
+    "lng": -120.531125,
+    "km": 12.3
+   },
+   {
+    "src": "USFS",
+    "name": "South Creek (south) Trailhead",
+    "lat": 48.436816,
+    "lng": -120.530095,
+    "km": 12.5
+   },
+   {
+    "src": "USFS",
+    "name": "Scatter Creek Trailhead",
+    "lat": 48.434606,
+    "lng": -120.520115,
+    "km": 13.2
+   },
+   {
+    "src": "USFS",
+    "name": "Easy Pass Trailhead",
+    "lat": 48.587206,
+    "lng": -120.801615,
+    "km": 13.6
+   },
+   {
+    "src": "USFS",
+    "name": "Driveway Butte Trailhead",
+    "lat": 48.598271,
+    "lng": -120.512721,
+    "km": 14.2
+   },
+   {
+    "src": "USFS",
+    "name": "Cedar Creek Trailhead",
+    "lat": 48.579106,
+    "lng": -120.478815,
+    "km": 14.9
+   },
+   {
+    "src": "USFS",
+    "name": "Rattlesnake Trailhead",
+    "lat": 48.648664,
+    "lng": -120.571213,
+    "km": 16.3
+   },
+   {
+    "src": "NPS",
+    "name": "Imus Creek Loop Trail Trailhead",
+    "lat": 48.3085,
+    "lng": -120.65601,
+    "km": 22.7
+   }
+  ],
+  "firstPass": {
+   "why": "stuck: No page found naming this route (search returned nothing); lead only, Blue Lake TH vs Hairpin. Mountain Project approach page (opened): most NEWS routes are on ",
+   "trailhead": null,
+   "notes": "No page found naming this route (search returned nothing); lead only, Blue Lake TH vs Hairpin. Mountain Project approach page (opened): most NEWS routes are on the west side, reached by the Blue Lake Trail (No. 314), 2.5 mi, 1913 ft gain to the climbers' trail below the west face. "
+  }
+ }
+]

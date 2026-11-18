@@ -1,0 +1,1161 @@
+[
+ {
+  "id": "ca_center_peak_standard_route",
+  "name": "Standard route",
+  "discipline": "mountaineering",
+  "grade": "Class 4",
+  "verdict": "SUMMIT_ONLY",
+  "state": "ca",
+  "peak": {
+   "id": "ca_center_peak",
+   "name": "Center Peak",
+   "lat": 36.7219,
+   "lng": -118.3627,
+   "elevation_ft": 12730,
+   "region": null,
+   "path": "usa.california.ca_high_sierra.ca_12_kearsarge_pass_to_cedar_grove.ca_center_peak"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": "Class 2 to the summit block, which is Class 4.",
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Onion Valley Campground",
+    "lat": 36.772538,
+    "lng": -118.341244,
+    "km": 5.9
+   },
+   {
+    "src": "USFS",
+    "name": "Shepherd Pass Th",
+    "lat": 36.726905,
+    "lng": -118.278912,
+    "km": 7.5
+   },
+   {
+    "src": "USFS",
+    "name": "Baxter Pass Trailhead",
+    "lat": 36.844705,
+    "lng": -118.297612,
+    "km": 14.8
+   },
+   {
+    "src": "NPS",
+    "name": "Cemetery Parking",
+    "lat": 36.725198,
+    "lng": -118.162135,
+    "km": 17.9
+   },
+   {
+    "src": "NPS",
+    "name": "Cemetery Parking",
+    "lat": 36.725769,
+    "lng": -118.161778,
+    "km": 17.9
+   },
+   {
+    "src": "USFS",
+    "name": "Whitney Portal Trailhead",
+    "lat": 36.586905,
+    "lng": -118.240112,
+    "km": 18.6
+   },
+   {
+    "src": "USFS",
+    "name": "MEYSAN LAKE TH",
+    "lat": 36.589789,
+    "lng": -118.230163,
+    "km": 18.9
+   },
+   {
+    "src": "NPS",
+    "name": " ",
+    "lat": 36.728353,
+    "lng": -118.146862,
+    "km": 19.2
+   },
+   {
+    "src": "USFS",
+    "name": "Whitney Portal NRT Trailhead",
+    "lat": 36.597405,
+    "lng": -118.186412,
+    "km": 21
+   },
+   {
+    "src": "NPS",
+    "name": "Bubbs Creek, Woods Creek, and Rae Lakes  ",
+    "lat": 36.794924,
+    "lng": -118.582577,
+    "km": 21.2
+   },
+   {
+    "src": "USFS",
+    "name": "Cedar Grove",
+    "lat": 36.796368,
+    "lng": -118.58291,
+    "km": 21.3
+   },
+   {
+    "src": "NPS",
+    "name": "River Trail",
+    "lat": 36.79427,
+    "lng": -118.584209,
+    "km": 21.3
+   },
+   {
+    "src": "NPS",
+    "name": "Copper Creek",
+    "lat": 36.796495,
+    "lng": -118.583551,
+    "km": 21.4
+   },
+   {
+    "src": "NPS",
+    "name": "Zumwalt Meadow/River Trail",
+    "lat": 36.793648,
+    "lng": -118.59852,
+    "km": 22.5
+   },
+   {
+    "src": "USFS",
+    "name": "TUTTLE CREEK TH",
+    "lat": 36.553705,
+    "lng": -118.184212,
+    "km": 24.6
+   },
+   {
+    "src": "USFS",
+    "name": "SAWMILL PASS TH",
+    "lat": 36.938805,
+    "lng": -118.290212,
+    "km": 25
+   }
+  ],
+  "firstPass": {
+   "why": "stuck: Route has no stored approach text naming a trailhead; page lookups not possible this run (OSM 429/406, no page evidence gathered). Not guessed.",
+   "trailhead": null,
+   "notes": "Route has no stored approach text naming a trailhead; page lookups not possible this run (OSM 429/406, no page evidence gathered). Not guessed."
+  }
+ },
+ {
+  "id": "ca_charybdis_northeast_ridge",
+  "name": "Northeast Ridge",
+  "discipline": "scrambling",
+  "grade": "Class 3",
+  "verdict": "SUMMIT_ONLY",
+  "state": "ca",
+  "peak": {
+   "id": "ca_charybdis",
+   "name": "Charybdis",
+   "lat": 37.0867,
+   "lng": -118.6682,
+   "elevation_ft": 13096,
+   "region": null,
+   "path": "usa.california.ca_high_sierra.ca_08_bishop_pass_evolution.ca_charybdis"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": "From a high camp, follow the south side of the northeast ridge, crossing snow patches and then rock. Near the top a traverse leads to a narrow chute and a notch below the summit monolith.",
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "South Lake Trailhead",
+    "lat": 37.169305,
+    "lng": -118.565813,
+    "km": 12.9
+   },
+   {
+    "src": "USFS",
+    "name": "Baker/Green Lakes Th",
+    "lat": 37.186805,
+    "lng": -118.557713,
+    "km": 14.8
+   },
+   {
+    "src": "USFS",
+    "name": "SABRINA LAKE TH",
+    "lat": 37.213605,
+    "lng": -118.610013,
+    "km": 15
+   },
+   {
+    "src": "USFS",
+    "name": "TYEE TH",
+    "lat": 37.195805,
+    "lng": -118.564713,
+    "km": 15.2
+   },
+   {
+    "src": "USFS",
+    "name": "LAMARCK LAKES TH",
+    "lat": 37.227305,
+    "lng": -118.627513,
+    "km": 16
+   },
+   {
+    "src": "USFS",
+    "name": "North Lake  Trailhead",
+    "lat": 37.230685,
+    "lng": -118.616614,
+    "km": 16.7
+   },
+   {
+    "src": "USFS",
+    "name": "BIG PINE CREEK SO FORK TH",
+    "lat": 37.124805,
+    "lng": -118.438913,
+    "km": 20.8
+   },
+   {
+    "src": "USFS",
+    "name": "Big Pine Creek North Fork Trail Trailhea",
+    "lat": 37.128105,
+    "lng": -118.427713,
+    "km": 21.8
+   }
+  ],
+  "firstPass": {
+   "why": "stuck: Route has no stored approach text naming a trailhead; page lookups not possible this run (OSM 429/406, no page evidence gathered). Not guessed.",
+   "trailhead": null,
+   "notes": "Route has no stored approach text naming a trailhead; page lookups not possible this run (OSM 429/406, no page evidence gathered). Not guessed."
+  }
+ },
+ {
+  "id": "ca_colosseum_mountain_standard_route",
+  "name": "Standard route",
+  "discipline": "scrambling",
+  "grade": "Class 1",
+  "verdict": "SUMMIT_ONLY",
+  "state": "ca",
+  "peak": {
+   "id": "ca_colosseum_mountain",
+   "name": "Colosseum Mountain",
+   "lat": 36.9074,
+   "lng": -118.3669,
+   "elevation_ft": 12473,
+   "region": null,
+   "path": "usa.california.ca_high_sierra.ca_12_kearsarge_pass_to_cedar_grove.ca_colosseum_mountain"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "SAWMILL PASS TH",
+    "lat": 36.938805,
+    "lng": -118.290212,
+    "km": 7.7
+   },
+   {
+    "src": "USFS",
+    "name": "Baxter Pass Trailhead",
+    "lat": 36.844705,
+    "lng": -118.297612,
+    "km": 9.3
+   },
+   {
+    "src": "USFS",
+    "name": "TABOOSE PASS TH",
+    "lat": 37.009505,
+    "lng": -118.327312,
+    "km": 11.9
+   },
+   {
+    "src": "USFS",
+    "name": "RED LAKE TH",
+    "lat": 37.035704,
+    "lng": -118.35896,
+    "km": 14.3
+   },
+   {
+    "src": "USFS",
+    "name": "Onion Valley Campground",
+    "lat": 36.772538,
+    "lng": -118.341244,
+    "km": 15.2
+   },
+   {
+    "src": "USFS",
+    "name": "BIRCH LAKE TH",
+    "lat": 37.087405,
+    "lng": -118.355412,
+    "km": 20
+   },
+   {
+    "src": "USFS",
+    "name": "Shepherd Pass Th",
+    "lat": 36.726905,
+    "lng": -118.278912,
+    "km": 21.5
+   },
+   {
+    "src": "USFS",
+    "name": "Cedar Grove",
+    "lat": 36.796368,
+    "lng": -118.58291,
+    "km": 22.8
+   },
+   {
+    "src": "NPS",
+    "name": "Copper Creek",
+    "lat": 36.796495,
+    "lng": -118.583551,
+    "km": 22.9
+   },
+   {
+    "src": "NPS",
+    "name": "Bubbs Creek, Woods Creek, and Rae Lakes  ",
+    "lat": 36.794924,
+    "lng": -118.582577,
+    "km": 22.9
+   },
+   {
+    "src": "NPS",
+    "name": "River Trail",
+    "lat": 36.79427,
+    "lng": -118.584209,
+    "km": 23.1
+   },
+   {
+    "src": "NPS",
+    "name": "Zumwalt Meadow/River Trail",
+    "lat": 36.793648,
+    "lng": -118.59852,
+    "km": 24.2
+   },
+   {
+    "src": "USFS",
+    "name": "BIG PINE CREEK SO FORK TH",
+    "lat": 37.124805,
+    "lng": -118.438913,
+    "km": 25
+   }
+  ],
+  "firstPass": {
+   "why": "stuck: Route has no stored approach text naming a trailhead; page lookups not possible this run (OSM 429/406, no page evidence gathered). Not guessed.",
+   "trailhead": null,
+   "notes": "Route has no stored approach text naming a trailhead; page lookups not possible this run (OSM 429/406, no page evidence gathered). Not guessed."
+  }
+ },
+ {
+  "id": "ca_coyote_peaks_via_coyote_pass_and_the_saddle",
+  "name": "Via Coyote Pass and the Saddle",
+  "discipline": "scrambling",
+  "grade": "Class 2",
+  "verdict": "SUMMIT_ONLY",
+  "state": "ca",
+  "peak": {
+   "id": "ca_coyote_peaks",
+   "name": "Coyote Peaks",
+   "lat": 36.3121,
+   "lng": -118.4472,
+   "elevation_ft": 10892,
+   "region": null,
+   "path": "usa.california.ca_high_sierra.ca_11_great_western_kings_kern_divide.ca_coyote_peaks"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": "A very long approach: from the trailhead go over Farewell Gap, south along the trail to Coyote Pass, then cross-country to the saddle between the two summits. A short boulder scramble finishes the climb. Water can be scarce on the trail.",
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Lewis Camp Trailhead",
+    "lat": 36.181305,
+    "lng": -118.515181,
+    "km": 15.8
+   },
+   {
+    "src": "USFS",
+    "name": "Jerkey Trailhead",
+    "lat": 36.167611,
+    "lng": -118.485535,
+    "km": 16.4
+   },
+   {
+    "src": "USFS",
+    "name": "Forks Of The Kern Trailhead",
+    "lat": 36.1379,
+    "lng": -118.455968,
+    "km": 19.4
+   },
+   {
+    "src": "NPS",
+    "name": "Farewell Gap - Franklin Lakes",
+    "lat": 36.44753,
+    "lng": -118.594135,
+    "km": 20
+   },
+   {
+    "src": "NPS",
+    "name": "Eagle-Mosquito",
+    "lat": 36.448545,
+    "lng": -118.595366,
+    "km": 20.2
+   },
+   {
+    "src": "NPS",
+    "name": "Sawtooth",
+    "lat": 36.453305,
+    "lng": -118.596761,
+    "km": 20.6
+   },
+   {
+    "src": "NPS",
+    "name": "Tar Gap",
+    "lat": 36.450721,
+    "lng": -118.614253,
+    "km": 21.5
+   },
+   {
+    "src": "USFS",
+    "name": "Blackrock Trailhead",
+    "lat": 36.178129,
+    "lng": -118.267418,
+    "km": 22
+   },
+   {
+    "src": "USFS",
+    "name": "Magician (needles) Trailhead",
+    "lat": 36.109583,
+    "lng": -118.484775,
+    "km": 22.8
+   }
+  ],
+  "firstPass": {
+   "why": "stuck: Route has no stored approach text naming a trailhead; page lookups not possible this run (OSM 429/406, no page evidence gathered). Not guessed.",
+   "trailhead": null,
+   "notes": "Route has no stored approach text naming a trailhead; page lookups not possible this run (OSM 429/406, no page evidence gathered). Not guessed."
+  }
+ },
+ {
+  "id": "ca_crag_peak_via_clover_meadow",
+  "name": "Via Clover Meadow",
+  "discipline": "scrambling",
+  "grade": "Class 3",
+  "verdict": "SUMMIT_ONLY",
+  "state": "ca",
+  "peak": {
+   "id": "ca_crag_peak",
+   "name": "Crag Peak",
+   "lat": 36.1118,
+   "lng": -118.1534,
+   "elevation_ft": 9480,
+   "region": null,
+   "path": "usa.california.ca_southern_sierra.ca_crag_peak"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": "Follow the Pacific Crest Trail north about five miles to Clover Meadow, then leave it and climb roughly 3,000 ft west through dense manzanita to the ridge. The true highpoint is the northern rock group, a short distance beyond the lower southern summit, with some class 3 on the ridge.",
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Blackrock Trailhead",
+    "lat": 36.178129,
+    "lng": -118.267418,
+    "km": 12.6
+   },
+   {
+    "src": "USFS",
+    "name": "OLANCHA PASS/SAGE FLAT TH",
+    "lat": 36.225667,
+    "lng": -118.061566,
+    "km": 15.1
+   }
+  ],
+  "firstPass": {
+   "why": "stuck: Route has no stored approach text naming a trailhead; page lookups not possible this run (OSM 429/406, no page evidence gathered). Not guessed.",
+   "trailhead": null,
+   "notes": "Route has no stored approach text naming a trailhead; page lookups not possible this run (OSM 429/406, no page evidence gathered). Not guessed."
+  }
+ },
+ {
+  "id": "ca_deerhorn_mountain_northeast_buttress",
+  "name": "Northeast Buttress",
+  "discipline": "scrambling",
+  "grade": "Class 3",
+  "verdict": "SUMMIT_ONLY",
+  "state": "ca",
+  "peak": {
+   "id": "ca_deerhorn_mountain",
+   "name": "Deerhorn Mountain",
+   "lat": 36.7132,
+   "lng": -118.4103,
+   "elevation_ft": 13281,
+   "region": null,
+   "path": "usa.california.ca_high_sierra.ca_12_kearsarge_pass_to_cedar_grove.ca_deerhorn_mountain"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": "Cross Kearsarge Pass, descend to Bubbs Creek, and head up Vidette Creek cross-country. Climb the northeast buttress to the lower northwest summit and traverse to the high point.",
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Onion Valley Campground",
+    "lat": 36.772538,
+    "lng": -118.341244,
+    "km": 9
+   },
+   {
+    "src": "USFS",
+    "name": "Shepherd Pass Th",
+    "lat": 36.726905,
+    "lng": -118.278912,
+    "km": 11.8
+   },
+   {
+    "src": "USFS",
+    "name": "Baxter Pass Trailhead",
+    "lat": 36.844705,
+    "lng": -118.297612,
+    "km": 17.7
+   },
+   {
+    "src": "NPS",
+    "name": "Bubbs Creek, Woods Creek, and Rae Lakes  ",
+    "lat": 36.794924,
+    "lng": -118.582577,
+    "km": 17.8
+   },
+   {
+    "src": "USFS",
+    "name": "Cedar Grove",
+    "lat": 36.796368,
+    "lng": -118.58291,
+    "km": 17.9
+   },
+   {
+    "src": "NPS",
+    "name": "River Trail",
+    "lat": 36.79427,
+    "lng": -118.584209,
+    "km": 17.9
+   },
+   {
+    "src": "NPS",
+    "name": "Copper Creek",
+    "lat": 36.796495,
+    "lng": -118.583551,
+    "km": 18
+   },
+   {
+    "src": "NPS",
+    "name": "Zumwalt Meadow/River Trail",
+    "lat": 36.793648,
+    "lng": -118.59852,
+    "km": 19
+   },
+   {
+    "src": "USFS",
+    "name": "Whitney Portal Trailhead",
+    "lat": 36.586905,
+    "lng": -118.240112,
+    "km": 20.7
+   },
+   {
+    "src": "USFS",
+    "name": "MEYSAN LAKE TH",
+    "lat": 36.589789,
+    "lng": -118.230163,
+    "km": 21.1
+   },
+   {
+    "src": "NPS",
+    "name": "Cemetery Parking",
+    "lat": 36.725198,
+    "lng": -118.162135,
+    "km": 22.2
+   },
+   {
+    "src": "NPS",
+    "name": "Cemetery Parking",
+    "lat": 36.725769,
+    "lng": -118.161778,
+    "km": 22.2
+   },
+   {
+    "src": "USFS",
+    "name": "SUGARLOAF HILL STAGING",
+    "lat": 36.728002,
+    "lng": -118.663445,
+    "km": 22.6
+   },
+   {
+    "src": "NPS",
+    "name": " ",
+    "lat": 36.728353,
+    "lng": -118.146862,
+    "km": 23.5
+   },
+   {
+    "src": "USFS",
+    "name": "Whitney Portal NRT Trailhead",
+    "lat": 36.597405,
+    "lng": -118.186412,
+    "km": 23.8
+   },
+   {
+    "src": "NPS",
+    "name": "Don Cecil - lower",
+    "lat": 36.78864,
+    "lng": -118.670443,
+    "km": 24.6
+   },
+   {
+    "src": "NPS",
+    "name": "Hotel Creek",
+    "lat": 36.793473,
+    "lng": -118.668599,
+    "km": 24.7
+   }
+  ],
+  "firstPass": {
+   "why": "stuck: Route has no stored approach text naming a trailhead; page lookups not possible this run (OSM 429/406, no page evidence gathered). Not guessed.",
+   "trailhead": null,
+   "notes": "Route has no stored approach text naming a trailhead; page lookups not possible this run (OSM 429/406, no page evidence gathered). Not guessed."
+  }
+ },
+ {
+  "id": "ca_devils_crag_1_standard_route",
+  "name": "Standard route",
+  "discipline": "mountaineering",
+  "grade": "Class 4",
+  "verdict": "SUMMIT_ONLY",
+  "state": "ca",
+  "peak": {
+   "id": "ca_devils_crag_1",
+   "name": "Devil's Crag #1",
+   "lat": 37.0381,
+   "lng": -118.6125,
+   "elevation_ft": 12400,
+   "region": null,
+   "path": "usa.california.ca_high_sierra.ca_08_bishop_pass_evolution.ca_devils_crag_1"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "South Lake Trailhead",
+    "lat": 37.169305,
+    "lng": -118.565813,
+    "km": 15.2
+   },
+   {
+    "src": "USFS",
+    "name": "Baker/Green Lakes Th",
+    "lat": 37.186805,
+    "lng": -118.557713,
+    "km": 17.2
+   },
+   {
+    "src": "USFS",
+    "name": "TYEE TH",
+    "lat": 37.195805,
+    "lng": -118.564713,
+    "km": 18
+   },
+   {
+    "src": "USFS",
+    "name": "BIG PINE CREEK SO FORK TH",
+    "lat": 37.124805,
+    "lng": -118.438913,
+    "km": 18.2
+   },
+   {
+    "src": "USFS",
+    "name": "Big Pine Creek North Fork Trail Trailhea",
+    "lat": 37.128105,
+    "lng": -118.427713,
+    "km": 19.2
+   },
+   {
+    "src": "USFS",
+    "name": "SABRINA LAKE TH",
+    "lat": 37.213605,
+    "lng": -118.610013,
+    "km": 19.5
+   },
+   {
+    "src": "USFS",
+    "name": "LAMARCK LAKES TH",
+    "lat": 37.227305,
+    "lng": -118.627513,
+    "km": 21.1
+   },
+   {
+    "src": "USFS",
+    "name": "North Lake  Trailhead",
+    "lat": 37.230685,
+    "lng": -118.616614,
+    "km": 21.4
+   },
+   {
+    "src": "USFS",
+    "name": "RED LAKE TH",
+    "lat": 37.035704,
+    "lng": -118.35896,
+    "km": 22.5
+   },
+   {
+    "src": "USFS",
+    "name": "BIRCH LAKE TH",
+    "lat": 37.087405,
+    "lng": -118.355412,
+    "km": 23.5
+   }
+  ],
+  "firstPass": {
+   "why": "stuck: Route has no stored approach text naming a trailhead; page lookups not possible this run (OSM 429/406, no page evidence gathered). Not guessed.",
+   "trailhead": null,
+   "notes": "Route has no stored approach text naming a trailhead; page lookups not possible this run (OSM 429/406, no page evidence gathered). Not guessed."
+  }
+ },
+ {
+  "id": "ca_diamond_peak_standard_route",
+  "name": "Standard route",
+  "discipline": "scrambling",
+  "grade": "Class 2",
+  "verdict": "SUMMIT_ONLY",
+  "state": "ca",
+  "peak": {
+   "id": "ca_diamond_peak",
+   "name": "Diamond Peak",
+   "lat": 36.8263,
+   "lng": -118.3903,
+   "elevation_ft": 13127,
+   "region": null,
+   "path": "usa.california.ca_high_sierra.ca_12_kearsarge_pass_to_cedar_grove.ca_diamond_peak"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Onion Valley Campground",
+    "lat": 36.772538,
+    "lng": -118.341244,
+    "km": 7.4
+   },
+   {
+    "src": "USFS",
+    "name": "Baxter Pass Trailhead",
+    "lat": 36.844705,
+    "lng": -118.297612,
+    "km": 8.5
+   },
+   {
+    "src": "USFS",
+    "name": "Shepherd Pass Th",
+    "lat": 36.726905,
+    "lng": -118.278912,
+    "km": 14.9
+   },
+   {
+    "src": "USFS",
+    "name": "SAWMILL PASS TH",
+    "lat": 36.938805,
+    "lng": -118.290212,
+    "km": 15.4
+   },
+   {
+    "src": "USFS",
+    "name": "Cedar Grove",
+    "lat": 36.796368,
+    "lng": -118.58291,
+    "km": 17.5
+   },
+   {
+    "src": "NPS",
+    "name": "Copper Creek",
+    "lat": 36.796495,
+    "lng": -118.583551,
+    "km": 17.5
+   },
+   {
+    "src": "NPS",
+    "name": "Bubbs Creek, Woods Creek, and Rae Lakes  ",
+    "lat": 36.794924,
+    "lng": -118.582577,
+    "km": 17.5
+   },
+   {
+    "src": "NPS",
+    "name": "River Trail",
+    "lat": 36.79427,
+    "lng": -118.584209,
+    "km": 17.6
+   },
+   {
+    "src": "NPS",
+    "name": "Zumwalt Meadow/River Trail",
+    "lat": 36.793648,
+    "lng": -118.59852,
+    "km": 18.9
+   },
+   {
+    "src": "USFS",
+    "name": "TABOOSE PASS TH",
+    "lat": 37.009505,
+    "lng": -118.327312,
+    "km": 21.1
+   },
+   {
+    "src": "NPS",
+    "name": "Cemetery Parking",
+    "lat": 36.725198,
+    "lng": -118.162135,
+    "km": 23.2
+   },
+   {
+    "src": "NPS",
+    "name": "Cemetery Parking",
+    "lat": 36.725769,
+    "lng": -118.161778,
+    "km": 23.2
+   },
+   {
+    "src": "USFS",
+    "name": "RED LAKE TH",
+    "lat": 37.035704,
+    "lng": -118.35896,
+    "km": 23.5
+   },
+   {
+    "src": "NPS",
+    "name": " ",
+    "lat": 36.728353,
+    "lng": -118.146862,
+    "km": 24.3
+   },
+   {
+    "src": "NPS",
+    "name": "Hotel Creek",
+    "lat": 36.793473,
+    "lng": -118.668599,
+    "km": 25
+   }
+  ],
+  "firstPass": {
+   "why": "stuck: Route has no stored approach text naming a trailhead; page lookups not possible this run (OSM 429/406, no page evidence gathered). Not guessed.",
+   "trailhead": null,
+   "notes": "Route has no stored approach text naming a trailhead; page lookups not possible this run (OSM 429/406, no page evidence gathered). Not guessed."
+  }
+ },
+ {
+  "id": "ca_dicks_peak_standard_route",
+  "name": "Standard route",
+  "discipline": "scrambling",
+  "grade": "Class 2",
+  "verdict": "SUMMIT_ONLY",
+  "state": "ca",
+  "peak": {
+   "id": "ca_dicks_peak",
+   "name": "Dicks Peak",
+   "lat": 38.9006,
+   "lng": -120.1509,
+   "elevation_ft": 9974,
+   "region": null,
+   "path": "usa.california.ca_lake_tahoe.ca_south_shore_2.ca_dicks_peak"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Bayview Trailhead",
+    "lat": 38.943878,
+    "lng": -120.099979,
+    "km": 6.5
+   },
+   {
+    "src": "USFS",
+    "name": "Glen Alpine Trailhead",
+    "lat": 38.877119,
+    "lng": -120.080238,
+    "km": 6.6
+   },
+   {
+    "src": "USFS",
+    "name": "Angora Resort Parking",
+    "lat": 38.871399,
+    "lng": -120.063109,
+    "km": 8.3
+   },
+   {
+    "src": "USFS",
+    "name": "Twin Lakes Trailhead",
+    "lat": 38.849635,
+    "lng": -120.225775,
+    "km": 8.6
+   },
+   {
+    "src": "USFS",
+    "name": "Rockbound Trailhead",
+    "lat": 38.84819,
+    "lng": -120.239447,
+    "km": 9.6
+   },
+   {
+    "src": "USFS",
+    "name": "Pyramid Creek Trailhead",
+    "lat": 38.811695,
+    "lng": -120.123655,
+    "km": 10.2
+   },
+   {
+    "src": "USFS",
+    "name": "RALSTON PEAK TRAILHEAD",
+    "lat": 38.805057,
+    "lng": -120.11549,
+    "km": 11.1
+   },
+   {
+    "src": "USFS",
+    "name": "Echo Lakes Trailhead",
+    "lat": 38.833938,
+    "lng": -120.043734,
+    "km": 11.9
+   },
+   {
+    "src": "USFS",
+    "name": "LYONS CREEK TRAILHEAD",
+    "lat": 38.810388,
+    "lng": -120.239486,
+    "km": 12.6
+   },
+   {
+    "src": "USFS",
+    "name": "VAN VLECK TRAILHEAD",
+    "lat": 38.931154,
+    "lng": -120.32134,
+    "km": 15.1
+   },
+   {
+    "src": "USFS",
+    "name": "Meeks Bay Trailhead",
+    "lat": 39.037325,
+    "lng": -120.126348,
+    "km": 15.4
+   },
+   {
+    "src": "USFS",
+    "name": "Mckinney Rubicon Trailhead",
+    "lat": 39.045881,
+    "lng": -120.167754,
+    "km": 16.2
+   },
+   {
+    "src": "USFS",
+    "name": "Loon Lake Trailhead",
+    "lat": 38.98236,
+    "lng": -120.314679,
+    "km": 16.8
+   },
+   {
+    "src": "USFS",
+    "name": "Big Meadow Trailhead",
+    "lat": 38.789155,
+    "lng": -120.000415,
+    "km": 18
+   },
+   {
+    "src": "USFS",
+    "name": "Ellis Peak",
+    "lat": 39.071988,
+    "lng": -120.231349,
+    "km": 20.3
+   }
+  ],
+  "firstPass": {
+   "why": "stuck: Route has no stored approach text naming a trailhead; page lookups not possible this run (OSM 429/406, no page evidence gathered). Not guessed.",
+   "trailhead": null,
+   "notes": "Route has no stored approach text naming a trailhead; page lookups not possible this run (OSM 429/406, no page evidence gathered). Not guessed."
+  }
+ },
+ {
+  "id": "ca_disappointment_peak_standard_route",
+  "name": "Standard route",
+  "discipline": "mountaineering",
+  "grade": "Class 4",
+  "verdict": "SUMMIT_ONLY",
+  "state": "ca",
+  "peak": {
+   "id": "ca_disappointment_peak",
+   "name": "Disappointment Peak",
+   "lat": 37.0679,
+   "lng": -118.4675,
+   "elevation_ft": 13917,
+   "region": null,
+   "path": "usa.california.ca_high_sierra.ca_09_palisades_surrounding_peaks.ca_disappointment_peak"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "BIG PINE CREEK SO FORK TH",
+    "lat": 37.124805,
+    "lng": -118.438913,
+    "km": 6.8
+   },
+   {
+    "src": "USFS",
+    "name": "Big Pine Creek North Fork Trail Trailhea",
+    "lat": 37.128105,
+    "lng": -118.427713,
+    "km": 7.6
+   },
+   {
+    "src": "USFS",
+    "name": "BIRCH LAKE TH",
+    "lat": 37.087405,
+    "lng": -118.355412,
+    "km": 10.2
+   },
+   {
+    "src": "USFS",
+    "name": "RED LAKE TH",
+    "lat": 37.035704,
+    "lng": -118.35896,
+    "km": 10.3
+   },
+   {
+    "src": "USFS",
+    "name": "TABOOSE PASS TH",
+    "lat": 37.009505,
+    "lng": -118.327312,
+    "km": 14
+   },
+   {
+    "src": "USFS",
+    "name": "South Lake Trailhead",
+    "lat": 37.169305,
+    "lng": -118.565813,
+    "km": 14.3
+   },
+   {
+    "src": "USFS",
+    "name": "Baker/Green Lakes Th",
+    "lat": 37.186805,
+    "lng": -118.557713,
+    "km": 15.5
+   },
+   {
+    "src": "USFS",
+    "name": "TYEE TH",
+    "lat": 37.195805,
+    "lng": -118.564713,
+    "km": 16.6
+   },
+   {
+    "src": "USFS",
+    "name": "SABRINA LAKE TH",
+    "lat": 37.213605,
+    "lng": -118.610013,
+    "km": 20.5
+   },
+   {
+    "src": "USFS",
+    "name": "SAWMILL PASS TH",
+    "lat": 36.938805,
+    "lng": -118.290212,
+    "km": 21.3
+   },
+   {
+    "src": "USFS",
+    "name": "North Lake  Trailhead",
+    "lat": 37.230685,
+    "lng": -118.616614,
+    "km": 22.4
+   },
+   {
+    "src": "USFS",
+    "name": "LAMARCK LAKES TH",
+    "lat": 37.227305,
+    "lng": -118.627513,
+    "km": 22.7
+   }
+  ],
+  "firstPass": {
+   "why": "stuck: Route has no stored approach text naming a trailhead; page lookups not possible this run (OSM 429/406, no page evidence gathered). Not guessed.",
+   "trailhead": null,
+   "notes": "Route has no stored approach text naming a trailhead; page lookups not possible this run (OSM 429/406, no page evidence gathered). Not guessed."
+  }
+ }
+]

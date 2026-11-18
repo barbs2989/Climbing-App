@@ -1401,6 +1401,12 @@ that they had none — on the one screen whose whole subject is who you climb wi
     404 a chunk with `page.route` in a context with `serviceWorkers: "block"` — `sw.js` precaches
     chunks and its fetches bypass `page.route`, so without the block an interception reports ZERO
     requests and proves nothing.
+  - **`preventDefault()` makes the import resolve to UNDEFINED** (2026-11-18, signed-in walk). Vite rethrows only
+    when the event is NOT prevented; prevented, the import yields `undefined`, and `React.lazy` throws its own
+    *Cannot read properties of undefined (reading 'default')* into the boundary while the reload is in flight.
+    Menu › Listed areas across a deploy drew *This screen hit a bug* with that message, and it stayed. The boundary
+    now reads main.jsx's marker (`swallowedChunk`): a *default* error within 30 s of it is the deploy — the
+    download card, and not filed to `app_errors`. The check asserts the key and all three engines' wording.
   - **A failed PREFETCH also fires `vite:preloadError`** and so reloads. That is intended for the
     deploy case; `main.jsx`'s idle prefetch skips offline and Save-Data so it cannot reload a
     climber at a trailhead.
