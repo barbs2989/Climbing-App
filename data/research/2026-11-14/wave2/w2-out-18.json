@@ -1,0 +1,2316 @@
+{
+ "az_mt_humphreys_humphrey_s_peak_trail": {
+  "area": "az_mt_humphreys",
+  "facts": [
+   {
+    "field": "gain_ft",
+    "value": 3420,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r03/coconino/recreation/trails/humphreys-trail-no-151",
+      "retrieved_at": "2026-11-14",
+      "fact": "Forest Service lists elevation gain/loss of 3,420 ft for Humphreys Trail No. 151."
+     },
+     {
+      "url": "https://hikearizona.com/decoder.php?ZTN=64",
+      "retrieved_at": "2026-11-14",
+      "fact": "HikeArizona gives elevation gain of 3,313 ft for Humphreys Summit Trail #151."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_oneway",
+    "value": "5 to 5.5",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r03/coconino/recreation/trails/humphreys-trail-no-151",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trail runs roughly 5 to 5.5 miles one way."
+     }
+    ]
+   },
+   {
+    "field": "time_oneway_hours",
+    "value": "3 to 4",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r03/coconino/recreation/trails/humphreys-trail-no-151",
+      "retrieved_at": "2026-11-14",
+      "fact": "Hiking time about 3 to 4 hours one way."
+     }
+    ]
+   },
+   {
+    "field": "car_to_car_hours",
+    "value": "5 to 6",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://hikearizona.com/decoder.php?ZTN=64",
+      "retrieved_at": "2026-11-14",
+      "fact": "Average round-trip time 5 to 6 hours."
+     }
+    ]
+   },
+   {
+    "field": "trailhead_elev_ft",
+    "value": 9340,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r03/coconino/recreation/trails/humphreys-trail-no-151",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trailhead elevation 9,340 ft."
+     },
+     {
+      "url": "https://hikearizona.com/decoder.php?ZTN=64",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trailhead elevation 9,320 feet."
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "Early summer to early autumn",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://hikearizona.com/decoder.php?ZTN=64",
+      "retrieved_at": "2026-11-14",
+      "fact": "Seasons listed as early summer to early autumn."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "July-September monsoon storms bring sudden heavy rain, wind and lightning; colder, windier above treeline",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r03/coconino/recreation/trails/humphreys-trail-no-151",
+      "retrieved_at": "2026-11-14",
+      "fact": "Monsoon storms with rain, wind and lightning can build fast July through September; colder and windier above treeline."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Arizona Snowbowl lot: Highway 180 for 7 miles to Forest Road 516 (Snowbowl Road)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r03/coconino/recreation/trails/humphreys-trail-no-151",
+      "retrieved_at": "2026-11-14",
+      "fact": "Directions: Highway 180 for 7 miles to Forest Road 516, the Snowbowl Road."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Inside Kachina Peaks Wilderness (designated 1984); check Kachina Peaks Avalanche Center before snow-season travel",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r03/coconino/recreation/trails/humphreys-trail-no-151",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trail lies in the 18,960-acre Kachina Peaks Wilderness, designated 1984; check the avalanche center report first."
+     }
+    ]
+   }
+  ],
+  "note": "FS prose says trail begins ~9,200 ft but its stats say 9,340 ft; used the stats. HikeArizona distance (10.25 mi) and time are round trip; distance not used."
+ },
+ "ak_denali_west_buttress": {
+  "area": "ak_denali",
+  "facts": [
+   {
+    "field": "fa",
+    "value": "Bradford Washburn and party, July 1951",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105953883/west-buttress",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA credited to Washburn, Hackett, Gale, Buchtel, Ambler, Griffiths, More and Bishop, July 10-14, 1951."
+     },
+     {
+      "url": "https://7summits.com/denali/west-buttress",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route pioneered by Bradford Washburn in 1951."
+     }
+    ]
+   },
+   {
+    "field": "start_elev_ft",
+    "value": 7200,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105953883/west-buttress",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route starts at 7,200 ft on the Kahiltna Glacier and climbs to 20,320 ft."
+     },
+     {
+      "url": "https://7summits.com/denali/west-buttress",
+      "retrieved_at": "2026-11-14",
+      "fact": "Kahiltna Base Camp listed at 7,200 ft."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 20320,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105953883/west-buttress",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route climbs from 7,200 ft to the 20,320 ft summit."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 13100,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105953883/west-buttress",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route type line: Snow, Alpine, 13100 ft (3970 m)."
+     }
+    ]
+   },
+   {
+    "field": "dist_km",
+    "value": 24.7,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://7summits.com/denali/west-buttress",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route profile gives 24.7 km one way from base camp to summit."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Kahiltna Base Camp 7,200 ft; Ski Hill/Camp 1 7,800 ft; Kahiltna Pass 9,700 ft; Motorcycle Hill/11K 11,000 ft; Windy Corner 13,500 ft; Basin/14K 14,200 ft; Ridge/16K 16,400 ft; High Camp/17K 17,200 ft",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://7summits.com/denali/west-buttress",
+      "retrieved_at": "2026-11-14",
+      "fact": "Camp table lists Base Camp 7200, Ski Hill 7800, Kahiltna Pass 9700, 11K 11,000, Windy Corner 13,500, 14K 14,200, 16K 16,400, 17K 17,200 ft."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Glacier camps shift: crevasses and snow bridges open and close through the season",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://7summits.com/denali/west-buttress",
+      "retrieved_at": "2026-11-14",
+      "fact": "No permanent glacier campsites; crevasses and snow bridges open and close as the ice moves."
+     }
+    ]
+   }
+  ],
+  "note": "MP also says the route has around 12,500 ft (ambiguous: gain vs length) and 7summits gives a modelled 4,242 m ascent from terrain data; neither used as gain_ft. NPS mountaineering/fees pages confirm registration and a pre-paid mountaineering fee for Denali but state no amount in the lines read."
+ },
+ "ak_mount_foraker_sultana_ridge": {
+  "area": "ak_mount_foraker",
+  "facts": [
+   {
+    "field": "dist_mi_oneway",
+    "value": 9,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.alpineinstitute.com/route-profile-sultana-ridge-mt-foraker/",
+      "retrieved_at": "2026-11-14",
+      "fact": "The gain is spread along 9 miles of ridge."
+     }
+    ]
+   },
+   {
+    "field": "approach_loss_ft",
+    "value": 1100,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.alpineinstitute.com/route-profile-sultana-ridge-mt-foraker/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Party summits Mount Crosson (12,800 ft) then descends 1,100 ft onward along the ridge."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Advanced base below Mount Crosson; high camp at 12,300 ft",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.alpineinstitute.com/route-profile-sultana-ridge-mt-foraker/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Advanced base camp at the foot of Crosson; high camp will be at 12,300 ft."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Over Mount Crosson (12,800 ft); ridge eases about 14,000 ft and tops out on the summit plateau at 17,100 ft",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.alpineinstitute.com/route-profile-sultana-ridge-mt-foraker/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Ridge becomes less steep near 14,000 ft and reaches the summit plateau at 17,100 ft."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Long series of ups and downs with cornices and crevasses; retreat harder and camps exposed",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.alpineinstitute.com/route-profile-sultana-ridge-mt-foraker/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Ridge has many ups and downs with cornices and crevasses; retreat is harder and camps more exposed."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "Alaska Grade 3",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.alpineinstitute.com/route-profile-sultana-ridge-mt-foraker/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Difficulty listed as Alaska Grade 3."
+     },
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-foraker-sultana-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Described as an Alaska Grade III intermediate ice climb."
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 10500,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.alpineinstitute.com/route-profile-sultana-ridge-mt-foraker/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Elevation gain 10,500 ft along 9 miles of ridge."
+     },
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-foraker-sultana-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Elevation Gain: 10,500 ft."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 17400,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.alpineinstitute.com/route-profile-sultana-ridge-mt-foraker/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mount Foraker stands 17,400 ft."
+     },
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-foraker-sultana-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "High Point: 17,402 ft."
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "April, May, June",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-foraker-sultana-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Seasons: April, May, June."
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "Snow and ice up to 55 degrees",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-foraker-sultana-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Intermediate ice climb with snow and ice up to 55 degrees."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "National Park entrance fee",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-foraker-sultana-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Parking/permit required: National Park Entrance Fee."
+     }
+    ]
+   }
+  ],
+  "note": "DDG snippet of a guide PDF names a March 1979 first ascent by Okonek, Cowles and Johnston but the page was not opened, so not recorded. Mountaineers page blocked by the browser safety check. Mountaineers 'Length: 20.0 mi' is not labelled one-way; not used."
+ },
+ "ak_3rd_4th_the_curtain_resisting_a_rest": {
+  "area": "ak_3rd_4th_the_curtain",
+  "facts": [
+   {
+    "field": "fa",
+    "value": "Blake Herrington and Jason Nelson (reported AAJ 2010)",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://publications.americanalpineclub.org/articles/12201013200/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Herrington and Nelson report climbing Resisting A Rest on the Curtain during a mid-July trip; AAJ 2010."
+     },
+     {
+      "url": "https://akalpinist.blogspot.com/2013/10/the-mendenhall-towers-at-least-part.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Herrington and Nelson made first ascents including Resisting a Rest, a first direct line on the Curtain."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "IV",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://publications.americanalpineclub.org/articles/12201013200/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route graded IV 5.10+."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "IV 5.10+",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://publications.americanalpineclub.org/articles/12201013200/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Resisting A Rest given as IV 5.10+."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Long corner system right of centre on the Curtain, across a vertical chasm between two towers (one rappel), then three pitches on Tower 4's west ridge",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://publications.americanalpineclub.org/articles/12201013200/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Corner system on the right of the Curtain, one rappel across a chasm, finishing with three pitches on Tower 4's west ridge."
+     }
+    ]
+   },
+   {
+    "field": "rappels",
+    "value": "One rappel mid-route to cross the chasm between two towers",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://publications.americanalpineclub.org/articles/12201013200/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route crosses a vertical chasm between two towers with one rappel."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "First ascent party flew by helicopter to the south side of the Mendenhall Towers, about 30 km north of Juneau",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://publications.americanalpineclub.org/articles/12201013200/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Towers lie 30 km north of Juneau; party used a helicopter to the south side."
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 8,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/200567657/resisting-a-rest",
+      "retrieved_at": "2026-11-14",
+      "fact": "5.10c R Trad, Alpine, 8 pitches, 1000 ft; FA Harrington, Nelson."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 1000,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/200567657/resisting-a-rest",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route length 1000 ft (303 m)."
+     }
+    ]
+   }
+  ],
+  "note": "AAJ gives 5.10+ where the app holds 5.10c R; not a conflict to resolve here. Climb year not stated outright in lines read (publication year 2010)."
+ },
+ "ak_3rd_4th_the_curtain_the_mammoth": {
+  "area": "ak_3rd_4th_the_curtain",
+  "facts": [
+   {
+    "field": "fa",
+    "value": "Dylans Miller & Stuart, Aug 2026 (as listed)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/203880863/the-mammoth",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA listed as 'Dylans Miller & Stuart Aug 2026'."
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 8,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/203880863/the-mammoth",
+      "retrieved_at": "2026-11-14",
+      "fact": "5.11+ Trad, Alpine, 8 pitches, 1300 ft."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 1300,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/203880863/the-mammoth",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route length 1300 ft (394 m)."
+     }
+    ]
+   }
+  ],
+  "note": "MP summary lists 8 pitches while the app's overview text says seven pitches; FA name text is garbled on the source ('Dylans Miller & Stuart')."
+ },
+ "ak_south_pioneer_peak_pioneer_ridge": {
+  "area": "ak_south_pioneer_peak",
+  "facts": [
+   {
+    "field": "high_point_ft",
+    "value": 6398,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://hikingalaska.net/2022/07/26/pioneer-ridge-and-pioneer-peak-alaska/",
+      "retrieved_at": "2026-11-14",
+      "fact": "The summit people mean is the 6,398-foot south summit."
+     }
+    ]
+   },
+   {
+    "field": "ridge_trail_gain_ft",
+    "value": 5330,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://hikingalaska.net/2022/07/26/pioneer-ridge-and-pioneer-peak-alaska/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Elevation gain 5,330 feet to the summit ridge (more for the south summit)."
+     },
+     {
+      "url": "https://www.alaska.org/detail/pioneer-ridge-austin-helmers-trail",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trail climbs some 5,200 feet over its 6 miles to the ridge."
+     }
+    ]
+   },
+   {
+    "field": "ridge_trail_dist_mi_oneway",
+    "value": 6,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.alaska.org/detail/pioneer-ridge-austin-helmers-trail",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trail is 6 miles to the ridge-top picnic table; 6 miles back down to the car."
+     }
+    ]
+   },
+   {
+    "field": "round_trip_mi",
+    "value": 12,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://hikingalaska.net/2022/07/26/pioneer-ridge-and-pioneer-peak-alaska/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Round trip 9.6 miles to the summit ridge; 12 miles to the south summit."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Beyond the ridge, about 1.5 more miles of increasingly strenuous scrambling on notoriously loose rock reach the south summit",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://hikingalaska.net/2022/07/26/pioneer-ridge-and-pioneer-peak-alaska/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Continuing from the ridge means another 1.5 miles of strenuous scrambling over loose, fragile rock."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Pioneer Ridge-Austin Helmers trailhead on Knik River Road: Old Glenn Hwy about 9.5 mi from Palmer, cross Knik River bridge, left on Knik River Road, about 3.5 mi",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://hikingalaska.net/2022/07/26/pioneer-ridge-and-pioneer-peak-alaska/",
+      "retrieved_at": "2026-11-14",
+      "fact": "From Palmer take Old Glenn Hwy 9.5 miles, cross the Knik River bridge, left on Knik River Road; trailhead on right after 3.5 miles."
+     },
+     {
+      "url": "https://www.alaska.org/detail/pioneer-ridge-austin-helmers-trail",
+      "retrieved_at": "2026-11-14",
+      "fact": "From Palmer go southeast on Old Glenn Hwy; after the Knik River bridge, about 9.5 miles from Palmer, onto Knik River Road."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Parking fee $5 or a Matanuska-Susitna Borough parking pass",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://hikingalaska.net/2022/07/26/pioneer-ridge-and-pioneer-peak-alaska/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Parking costs $5 or a Mat-Su Borough parking pass."
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "June to September",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://hikingalaska.net/2022/07/26/pioneer-ridge-and-pioneer-peak-alaska/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Typical season June to September."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Loose, fragile rock on the scramble from the ridge to the south summit",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://hikingalaska.net/2022/07/26/pioneer-ridge-and-pioneer-peak-alaska/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Scramble beyond the ridge crosses notoriously loose, fragile rock."
+     }
+    ]
+   }
+  ],
+  "note": "Gain to the south summit is only given as ridge gain plus 'another 2,000', which needs addition; not recorded as gain_ft. A social-media post giving 13 mi / 6,500 ft round trip was not used. Ridge figures are for the trail to the ridge, not the summit."
+ },
+ "ak_west_twin_peak_west_twincil": {
+  "area": "ak_west_twin_peak",
+  "facts": [
+   {
+    "field": "fa",
+    "value": "John Dillman, Don Paulke and Bruce Hitchcock, 1976",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/110891522/west-twincil",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA: John Dillman, Don Paulke and Bruce Hitchcock, 1976."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 2500,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/110891522/west-twincil",
+      "retrieved_at": "2026-11-14",
+      "fact": "Steep Snow, Alpine, 2500 ft (758 m)."
+     }
+    ]
+   }
+  ],
+  "note": "DuckDuckGo found no other publisher."
+ },
+ "bc_mount_robson_wishbone_arete": {
+  "area": "bc_mount_robson",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "5.6",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://en.wikipedia.org/wiki/Mount_Robson",
+      "retrieved_at": "2026-11-14",
+      "fact": "Main routes list gives Wishbone Arete as IV 5.6."
+     },
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/107968-tr-mount-robson-wishbone-arete-56-83124/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trip report titled Wishbone Arete (5.6); roped 5.6 pitches amid 4th class to 5.4 terrain."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "IV",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://en.wikipedia.org/wiki/Mount_Robson",
+      "retrieved_at": "2026-11-14",
+      "fact": "Wishbone Arete graded IV 5.6."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 12972,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://en.wikipedia.org/wiki/Mount_Robson",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mount Robson elevation 3,954 m / 12,972 ft."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Bike or walk the 3-mile trail to Kinney Lake, then a climbers' trail through brush to treeline and steep scree",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/107968-tr-mount-robson-wishbone-arete-56-83124/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Party biked the 3 mile trail to Kinney Lake, then found a climbers' trail up to treeline and scree slopes."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Very loose, inconsistent rock; no flat bivy spots high on the ridge; the upper traverse across the south face is threatened from above",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/107968-tr-mount-robson-wishbone-arete-56-83124/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Report describes extremely loose rock, no flat bivy for 2,500 ft, and a 1.2 mile south-face traverse under threat."
+     }
+    ]
+   }
+  ],
+  "note": "Wikipedia gives IV where the app holds alpine grade V; not resolved. The trip report is an unsuccessful attempt (turned back by fresh snow), so no summit time or gain recorded. theCrag route page sits behind a bot check (wall)."
+ },
+ "bc_mount_sir_donald_northwest_arete": {
+  "area": "bc_mount_sir_donald",
+  "facts": [
+   {
+    "field": "alpine_grade",
+    "value": "D-",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://ridgelineguiding.com/private-guide/mt-sir-donald/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Northwest Ridge rated D-, 5.4."
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 6700,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://stephabegg.com/trip-reports/british-columbia/sir-donald/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Car-to-car round trip involved 6,700 vertical feet up and back down."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 10817,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://stephabegg.com/trip-reports/british-columbia/sir-donald/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Summit elevation 3,284 m / 10,817 ft."
+     }
+    ]
+   },
+   {
+    "field": "trailhead_elev_ft",
+    "value": 4100,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://stephabegg.com/trip-reports/british-columbia/sir-donald/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trailhead at the campground is 1,250 m / 4,100 ft."
+     }
+    ]
+   },
+   {
+    "field": "approach_gain_ft",
+    "value": 4000,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://stephabegg.com/trip-reports/british-columbia/sir-donald/",
+      "retrieved_at": "2026-11-14",
+      "fact": "About 4,000 ft gained from the trailhead to the Uto-Sir Donald col."
+     }
+    ]
+   },
+   {
+    "field": "approach_time_hours",
+    "value": "3 to 4",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://ridgelineguiding.com/private-guide/mt-sir-donald/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Approach on the Sir Donald trail to the col bivy takes roughly 3-4 hours."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Uto-Sir Donald col bivy site, or camp about 300 m lower",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://ridgelineguiding.com/private-guide/mt-sir-donald/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Follow the Sir Donald trail to the Uto-Sir Donald col bivy or camp 300 m lower."
+     },
+     {
+      "url": "https://stephabegg.com/trip-reports/british-columbia/sir-donald/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Approach climbs to the Uto-Sir Donald col where the arete begins."
+     }
+    ]
+   },
+   {
+    "field": "climb_time_hours",
+    "value": 12,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://ridgelineguiding.com/private-guide/mt-sir-donald/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Guided ascents take roughly 12 hours camp to camp."
+     }
+    ]
+   },
+   {
+    "field": "trip_days",
+    "value": 3,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://ridgelineguiding.com/private-guide/mt-sir-donald/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Guided trip length 3 days."
+     }
+    ]
+   },
+   {
+    "field": "rappels",
+    "value": "Rap-ring line: 4 rappels down the ridge then 6 down the west face (guide: 10-13 rappels/lowers of 25 m with belayed downclimbing)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://stephabegg.com/trip-reports/british-columbia/sir-donald/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Established rap-ring descent: 4 rappels down the ridge and 6 on the west face."
+     },
+     {
+      "url": "https://ridgelineguiding.com/private-guide/mt-sir-donald/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Expect 10-13 rappels or lowers of 25 m with much belayed downclimbing."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Sir Donald trail from the campground at Rogers Pass, Glacier National Park",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://ridgelineguiding.com/private-guide/mt-sir-donald/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Drive to Rogers Pass in Glacier NP, then follow the Sir Donald hiking trail."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "5.4",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://ridgelineguiding.com/private-guide/mt-sir-donald/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Northwest Ridge rated D-, 5.4."
+     },
+     {
+      "url": "https://www.mountainproject.com/route/106090216/northwest-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Northwest Ridge graded 5.4 X, 2400 ft."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Arthur Bartleet and Val A. Fynn, August 19, 1909",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106090216/northwest-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA: Arthur Bartleet, Val A. Fynn, August 19, 1909."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": "2,400 (MP) / over 2,700 (Abegg)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106090216/northwest-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route length 2400 ft (727 m)."
+     },
+     {
+      "url": "https://stephabegg.com/trip-reports/british-columbia/sir-donald/",
+      "retrieved_at": "2026-11-14",
+      "fact": "From the col the NW Arete rises over 800 m / 2,700 ft."
+     }
+    ]
+   }
+  ],
+  "note": "Grades differ in form (5.2-5.4 vs 5.4), so not agree-2. Steph Abegg's 8-hour car-to-car was a fast solo; not recorded as typical time. Steph Abegg grades it 5.2-5.4; Ridgeline and MP give 5.4. Lengths 2,400 vs 2,700 ft differ by more than 10%."
+ },
+ "bc_south_howser_tower_west_buttress": {
+  "area": "bc_south_howser_tower",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "5.10 (free)",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://en.wikipedia.org/wiki/West_Buttress_(South_Howser_Tower)",
+      "retrieved_at": "2026-11-14",
+      "fact": "Technical grade 5.8 A2 aided, or 5.10 free."
+     },
+     {
+      "url": "https://stephabegg.com/trip-reports/british-columbia/bugaboos2016/",
+      "retrieved_at": "2026-11-14",
+      "fact": "South Howser Tower, Beckey-Chouinard listed as 5.10, 2000 ft."
+     }
+    ]
+   },
+   {
+    "field": "vertical_gain_ft",
+    "value": 2460,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://en.wikipedia.org/wiki/West_Buttress_(South_Howser_Tower)",
+      "retrieved_at": "2026-11-14",
+      "fact": "Vertical gain 750 m (2,460 ft)."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 11194,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://stephabegg.com/trip-reports/british-columbia/bugaboos2016/",
+      "retrieved_at": "2026-11-14",
+      "fact": "South Howser Tower elevation 3,412 m / 11,194 ft."
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "First free ascent 1975 by Tobin Sorenson and Rick Accomazzo; included in Fifty Classic Climbs of North America",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://en.wikipedia.org/wiki/West_Buttress_(South_Howser_Tower)",
+      "retrieved_at": "2026-11-14",
+      "fact": "First free ascent 1975 by Sorenson and Accomazo; route appears in Fifty Classic Climbs of North America."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "South Howser Tower rappel route",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://stephabegg.com/trip-reports/british-columbia/bugaboos2016/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Photo captions show the descent by the South Howser Tower rappel route."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Fred Beckey and Yvon Chouinard, August 1961",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://en.wikipedia.org/wiki/West_Buttress_(South_Howser_Tower)",
+      "retrieved_at": "2026-11-14",
+      "fact": "First ascent by Fred Beckey and Yvon Chouinard, August 1961."
+     },
+     {
+      "url": "https://www.mountainproject.com/route/105872592/beckey-chouinard",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA: Fred Beckey, Yvon Chouinard, August 1961."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 2000,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://stephabegg.com/trip-reports/british-columbia/bugaboos2016/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route length given as 2000 ft."
+     },
+     {
+      "url": "https://www.mountainproject.com/route/105872592/beckey-chouinard",
+      "retrieved_at": "2026-11-14",
+      "fact": "5.10 Trad, Alpine, 15 pitches, 2000 ft."
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": "15 (MP) / 17 to 22 (Wikipedia)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105872592/beckey-chouinard",
+      "retrieved_at": "2026-11-14",
+      "fact": "Listed as 15 pitches."
+     },
+     {
+      "url": "https://en.wikipedia.org/wiki/West_Buttress_(South_Howser_Tower)",
+      "retrieved_at": "2026-11-14",
+      "fact": "Pitches: 17 to 22."
+     }
+    ]
+   }
+  ],
+  "note": "Length disagrees: Wikipedia 750 m / 2,460 ft vertical vs Steph Abegg 2,000 ft (outside 10%), so neither locked. Wikipedia spells the free-ascent partner 'Accomazo'."
+ },
+ "bc_mount_waddington_south_face": {
+  "area": "bc_mount_waddington",
+  "facts": [
+   {
+    "field": "fa",
+    "value": "Fritz Wiessner and William (Bill) House, 1936",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://en.wikipedia.org/wiki/Mount_Waddington",
+      "retrieved_at": "2026-11-14",
+      "fact": "1936 South Face first ascent by Fritz Wiessner and Bill House."
+     },
+     {
+      "url": "https://publications.americanalpineclub.org/articles/12197854904/North-America-Canada-British-Columbia-Coast-Range-Mount-Waddington-South-Face-Third-Ascent",
+      "retrieved_at": "2026-11-14",
+      "fact": "South face first climbed in 1936 by Fritz Wiessner and William House."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 13186,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://en.wikipedia.org/wiki/Mount_Waddington",
+      "retrieved_at": "2026-11-14",
+      "fact": "Elevation 4,019 m (13,186 ft)."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 3300,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://publications.americanalpineclub.org/articles/12197854904/North-America-Canada-British-Columbia-Coast-Range-Mount-Waddington-South-Face-Third-Ascent",
+      "retrieved_at": "2026-11-14",
+      "fact": "High camp sat at the foot of the 3300-foot granite face."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Base camp about 6,800 ft on the Dais Glacier; high camp about 9,975 ft at the foot of the face",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://publications.americanalpineclub.org/articles/12197854904/North-America-Canada-British-Columbia-Coast-Range-Mount-Waddington-South-Face-Third-Ascent",
+      "retrieved_at": "2026-11-14",
+      "fact": "Base camp at 6800 ft on the Dais Glacier; high camp at 9975 ft below the face."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Third-ascent party walked in by the Franklin River and Franklin Glacier to the Dais Glacier (with an airdrop)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://publications.americanalpineclub.org/articles/12197854904/North-America-Canada-British-Columbia-Coast-Range-Mount-Waddington-South-Face-Third-Ascent",
+      "retrieved_at": "2026-11-14",
+      "fact": "After an airdrop, three days' approach via the Franklin River and Glacier to base camp on the Dais Glacier."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Bergschrund, then about 1,500 ft of couloir and 60-degree ice onto a ramp system toward the prominent tower on the face",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://publications.americanalpineclub.org/articles/12197854904/North-America-Canada-British-Columbia-Coast-Range-Mount-Waddington-South-Face-Third-Ascent",
+      "retrieved_at": "2026-11-14",
+      "fact": "Above the bergschrund, 1500 ft of couloir and 60-degree ice led to a ramp system and the face's prominent tower."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Unstable snow on the bergschrund wall",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://publications.americanalpineclub.org/articles/12197854904/North-America-Canada-British-Columbia-Coast-Range-Mount-Waddington-South-Face-Third-Ascent",
+      "retrieved_at": "2026-11-14",
+      "fact": "A leader fell 35 ft when unstable snow on the bergschrund wall collapsed."
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "Final 1,000 ft of the face is steep rock; second ascent by Fred and Helmut Beckey in 1942",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://en.wikipedia.org/wiki/Mount_Waddington",
+      "retrieved_at": "2026-11-14",
+      "fact": "The final 1,000 ft (300 m) of the south face is sheer rock."
+     },
+     {
+      "url": "https://publications.americanalpineclub.org/articles/12197854904/North-America-Canada-British-Columbia-Coast-Range-Mount-Waddington-South-Face-Third-Ascent",
+      "retrieved_at": "2026-11-14",
+      "fact": "Second ascent by Fred and Helmut Beckey in 1942."
+     }
+    ]
+   }
+  ],
+  "note": "AAJ third-ascent party climbed a 1200-ft variation of the original line; route steps above come from that report. The overview fact combines two separate single-source statements; treat each half as single-source."
+ },
+ "az_southeast_arete_2": {
+  "area": "az_east_face_3",
+  "facts": [
+   {
+    "field": "approach_step",
+    "value": "Western approach from Tohono O'odham Nation land: about 10 miles of dirt road to a campground trailhead; over 3,000 ft of gain just to reach the base of the climb",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://themtsarecalling.com/baboquivari/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Western approach crosses Tohono O'odham land; 10 mile dirt road to a campground trailhead; over 3000 ft gain on the approach to the climb."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Campground trailhead on the west side, reached through Tohono O'odham Nation land (flush toilets, shaded sites)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://themtsarecalling.com/baboquivari/",
+      "retrieved_at": "2026-11-14",
+      "fact": "The Nation allows access to a well kept campground trailhead with flush toilets and shaded sites."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Class 3 gully to a notch; P1 5.4 groove; crux pitch 2 (5.6)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://themtsarecalling.com/baboquivari/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Class 3 gully up the notch to the first pitch (5.4); pitch 2 is the crux; route crux 5.6."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Descend by the Forbes Route via the Great Ramp",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://themtsarecalling.com/baboquivari/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Party cached water and a pack at the Great Ramp, which leads to the final pitch of the Forbes Route, for the descent."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Border Patrol activity along the approach road and trail",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://themtsarecalling.com/baboquivari/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Border Patrol agents, trucks and a helicopter were active along the road and approach."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Don Morris, Jerry Robertson, Rick Tidrick, Dave Ganci and Tom Hale, March 1957",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106147075/southeast-arete",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA: March 1957, Don Morris, Jerry Robertson, Rick Tidrick, Dave Ganci and Tom Hale."
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 6,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106147075/southeast-arete",
+      "retrieved_at": "2026-11-14",
+      "fact": "5.6 Trad, 6 pitches, 680 ft."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 680,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106147075/southeast-arete",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route length 680 ft (206 m)."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "5.6",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106147075/southeast-arete",
+      "retrieved_at": "2026-11-14",
+      "fact": "Southeast Arete graded 5.6."
+     },
+     {
+      "url": "https://themtsarecalling.com/baboquivari/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trip report lists the route crux as 5.6."
+     }
+    ]
+   }
+  ],
+  "note": "Page header gives Distance 10.1 miles and Elevation Gain 4,730 without saying one-way or round trip; not used. Second source (University of Arizona climbing page, http) did not load; SummitPost 403 and theCrag behind bot check."
+ },
+ "az_the_ladybug": {
+  "area": "az_brown_s_peak",
+  "facts": [
+   {
+    "field": "fa",
+    "value": "Chuck Graf, Bob Graf and Bruce Grubbs, 1969",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106155938/the-ladybug",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA: Chuck Graf, Bob Graf, and Bruce Grubbs, 1969."
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 3,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106155938/the-ladybug",
+      "retrieved_at": "2026-11-14",
+      "fact": "5.5 Trad, Alpine, 3 pitches, 300 ft."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 300,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106155938/the-ladybug",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route length 300 ft (91 m)."
+     }
+    ]
+   }
+  ],
+  "note": "SummitPost (403) was the only other publisher found."
+ },
+ "ak_smaug_s_hoard": {
+  "area": "ak_throne_the",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "V 5.10R/X A3",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://publications.americanalpineclub.org/articles/12200224200/",
+      "retrieved_at": "2026-11-14",
+      "fact": "First ascensionists graded Smaug's Hoard V 5.10R/X A3."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "V",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://publications.americanalpineclub.org/articles/12200224200/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route grade V 5.10R/X A3."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Left-facing, right-leaning dihedral system toward the west side of the south face; fifth pitch passes a double roof on aid (A2); last pitch a chimney to a sloper traverse (5.6)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://publications.americanalpineclub.org/articles/12200224200/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Line follows a left-facing, right-leaning dihedral; pitch five aids a double roof at A2; final pitch is a 5.6 chimney and sloper traverse."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Several involved rappels down a waterfall drainage on the Throne's west face, crossing large bergschrunds",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://publications.americanalpineclub.org/articles/12200224200/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Descent made several involved rappels and crossed huge schrunds in a waterfall-filled drainage on the west face."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Fly to the Pika Glacier and ski to the base of the Throne's south face",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://publications.americanalpineclub.org/articles/12200224200/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Party flew to the Pika Glacier and skied to the base of the south face."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Samuel Johnson and Eric Sullivan, August 2001",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://publications.americanalpineclub.org/articles/12200224200/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Samuel Johnson and Eric Sullivan flew to the Pika Glacier on August 9 and established Smaug's Hoard; AAJ 2002."
+     },
+     {
+      "url": "https://www.mountainproject.com/route/110470888/smaugs-hoard",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA: Samuel Johnson & Eric Sullivan, August 2001."
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 7,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/110470888/smaugs-hoard",
+      "retrieved_at": "2026-11-14",
+      "fact": "5.10 A3 X Trad, Aid, Alpine, 7 pitches, 1000 ft."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 1000,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/110470888/smaugs-hoard",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route length 1000 ft (303 m)."
+     }
+    ]
+   }
+  ],
+  "note": "Pitch count not stated as a total (only described pitch by pitch); not derived."
+ },
+ "ak_the_throne_oxidado_express": {
+  "area": "ak_throne_the",
+  "facts": [
+   {
+    "field": "fa",
+    "value": "Rustam Lalkaka, Nadine Lehner and Pedro Binfa, July 1 (reported AAJ 2023)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://publications.americanalpineclub.org/articles/13201216431",
+      "retrieved_at": "2026-11-14",
+      "fact": "Lalkaka, Lehner and Binfa started the west-face line on July 1; report published AAJ 2023."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 1500,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://publications.americanalpineclub.org/articles/13201216431",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route named Oxidado Express: 1,500 ft, 12 pitches, 5.10."
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 12,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://publications.americanalpineclub.org/articles/13201216431",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route given as 12 pitches."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "5.10",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://publications.americanalpineclub.org/articles/13201216431",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route graded 5.10."
+     }
+    ]
+   },
+   {
+    "field": "car_to_car_hours",
+    "value": 20,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://publications.americanalpineclub.org/articles/13201216431",
+      "retrieved_at": "2026-11-14",
+      "fact": "First-ascent party returned to base camp 20 hours after starting."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "From the west summit descend The Lost Marsupial (5.8) on the south side to the glacier",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://publications.americanalpineclub.org/articles/13201216431",
+      "retrieved_at": "2026-11-14",
+      "fact": "Descended The Lost Marsupial (5.8) on the south side back to the glacier."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "70 m pitch to the La Playa ledge; mossy 5.10 stemming pitch to belay left of the green roof; 5.9 offwidth and steps; bypass the NW-ridge headwall to the northeast; one long 5.10- pitch; easy fifth to the west summit",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://publications.americanalpineclub.org/articles/13201216431",
+      "retrieved_at": "2026-11-14",
+      "fact": "Report describes 70 m pitches to La Playa, 5.10 stemming, 5.9 offwidth, a headwall bypass, a 5.10- pitch, then easy fifth to the west summit."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Pika Glacier camp between the Throne and Royal Tower, about a mile down-glacier from the flightseeing landing zone",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://publications.americanalpineclub.org/articles/13201216431",
+      "retrieved_at": "2026-11-14",
+      "fact": "Dropped about a mile down-glacier from the landing zone; camped between the Throne and Royal Tower."
+     }
+    ]
+   }
+  ],
+  "note": "The Mountain Project page appears to reuse the AAJ text, so it would not count as a second publisher."
+ },
+ "ak_the_chase": {
+  "area": "ak_royal_tower_the",
+  "facts": [
+   {
+    "field": "fa",
+    "value": "Kristian Sieling, Doug Munoz, Ned Lewis, June 1997",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/110470928/the-chase",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA: Kristian Sieling, Doug Munoz, Ned Lewis, June 1997."
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 12,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/110470928/the-chase",
+      "retrieved_at": "2026-11-14",
+      "fact": "Type: Trad, Aid, Alpine, 12 pitches, Grade IV."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "IV",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/110470928/the-chase",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route listed as Grade IV."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 1500,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/110470928/the-chase",
+      "retrieved_at": "2026-11-14",
+      "fact": "Climbs the 1500-foot east buttress of the peak."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Rappel the route; belay bolts on the first nine pitches",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/110470928/the-chase",
+      "retrieved_at": "2026-11-14",
+      "fact": "Belay bolts on the first nine pitches; rappel the route."
+     }
+    ]
+   }
+  ],
+  "note": "Same page also says the FA party hand-drilled the belay bolts in June 1994, which conflicts with the June 1997 FA line; FA year should be checked."
+ },
+ "ak_crown_jewel_crown_royal": {
+  "area": "ak_crown_jewel",
+  "facts": [
+   {
+    "field": "fa",
+    "value": "Todd and Donette Swain, July 2015",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/200810562/crown-royal",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA: Todd & Donette Swain, July 2015."
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 4,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/200810562/crown-royal",
+      "retrieved_at": "2026-11-14",
+      "fact": "Type: Trad, Alpine, 390 ft, 4 pitches."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 390,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/200810562/crown-royal",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route length 390 ft (118 m)."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Gear up to a blue Camalot",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/200810562/crown-royal",
+      "retrieved_at": "2026-11-14",
+      "fact": "Carry gear up to a blue Camalot."
+     }
+    ]
+   },
+   {
+    "field": "rappels",
+    "value": "Rappel the route, ideally with two 70 m ropes, to avoid downclimbing the snow and recrossing the bergschrund",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/200810562/crown-royal",
+      "retrieved_at": "2026-11-14",
+      "fact": "Rappel the route, ideally on two 70 m ropes, to avoid snow downclimb and the bergschrund."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Hanging glacier above could calve onto a possible fifth pitch up the corner",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/200810562/crown-royal",
+      "retrieved_at": "2026-11-14",
+      "fact": "A fifth pitch up the corner is possible but exposed to the hanging glacier above calving."
+     }
+    ]
+   }
+  ]
+ },
+ "ak_southeast_buttress_homewrecker": {
+  "area": "ak_southeast_buttress",
+  "facts": [
+   {
+    "field": "fa",
+    "value": "FA Jeff Benowitz and Ian McRae; FFA Jed Brown and Ian McRae",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/126604431/homewrecker",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA Jeff Benowitz and Ian McRae; FFA Jed Brown and Ian McRae."
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 6,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/126604431/homewrecker",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trad, Alpine, 6 pitches, 800 ft."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 800,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/126604431/homewrecker",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route length 800 ft (242 m)."
+     }
+    ]
+   }
+  ],
+  "note": "Facts read from the Mountain Project search-result summary for this route."
+ },
+ "ak_southeast_buttress_barnyard_betty": {
+  "area": "ak_southeast_buttress",
+  "facts": [
+   {
+    "field": "fa",
+    "value": "Benowitz, Williams",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/201173588/barnyard-betty",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA: Benowitz, Williams."
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 3,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/201173588/barnyard-betty",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trad, Alpine, 3 pitches, 500 ft."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 500,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/201173588/barnyard-betty",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route length 500 ft (152 m)."
+     }
+    ]
+   }
+  ],
+  "note": "Facts read from the Mountain Project search-result summary."
+ },
+ "ak_nunatak_kissing_up_the_choss_pile": {
+  "area": "ak_nunatak",
+  "facts": [
+   {
+    "field": "fa",
+    "value": "August 2025 (party not named)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/201616475/kissing-up-the-choss-pile",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA dated August 2025."
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 4,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/201616475/kissing-up-the-choss-pile",
+      "retrieved_at": "2026-11-14",
+      "fact": "5.8 R Trad, Alpine, 4 pitches, 500 ft."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 500,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/201616475/kissing-up-the-choss-pile",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route length 500 ft (152 m)."
+     }
+    ]
+   }
+  ],
+  "note": "Facts read from the Mountain Project search-result summary."
+ },
+ "ak_5390_west_face_f_tea_parties": {
+  "area": "ak_5390_west_face",
+  "facts": [
+   {
+    "field": "fa",
+    "value": "Ivan Reifenstuhl and Steve Reifenstuhl, 6/26/2022",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/122655950/f-tea-parties",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA: Ivan Reifenstuhl, Steve Reifenstuhl, 6/26/2022."
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 2,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/122655950/f-tea-parties",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trad, Alpine, 2 pitches, 170 ft."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 170,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/122655950/f-tea-parties",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route length 170 ft (52 m)."
+     }
+    ]
+   }
+  ]
+ },
+ "ak_5390_west_face_fossilized_potential": {
+  "area": "ak_5390_west_face",
+  "facts": [
+   {
+    "field": "fa",
+    "value": "August 8, 2024 (party not named)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/200396453/fossilized-potential",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA dated August 8, 2024."
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 2,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/200396453/fossilized-potential",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trad, Alpine, 2 pitches, 200 ft."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 200,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/200396453/fossilized-potential",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route length 200 ft (61 m)."
+     }
+    ]
+   }
+  ]
+ },
+ "ak_5390_west_face_four_amigos_aka_5_hours_to_freedom_big_anime_titties_se": {
+  "area": "ak_5390_west_face",
+  "facts": [
+   {
+    "field": "fa",
+    "value": "Ivan Reifenstuhl, Keith Mody, Megan Vander Boon, Ryan Monsalud, 7/4/2025",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/201975196/four-amigos-aka-5-hours-to-freedom-big-anime-titties-set-a-time-and-stick-to-it",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA: Ivan Reifenstuhl, Keith Mody, Megan Vander Boon, Ryan Monsalud, 7/4/2025."
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 2,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/201975196/four-amigos-aka-5-hours-to-freedom-big-anime-titties-set-a-time-and-stick-to-it",
+      "retrieved_at": "2026-11-14",
+      "fact": "5.9+ R Trad, Alpine, 2 pitches, 220 ft."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 220,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/201975196/four-amigos-aka-5-hours-to-freedom-big-anime-titties-set-a-time-and-stick-to-it",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route length 220 ft (67 m)."
+     }
+    ]
+   }
+  ]
+ },
+ "ak_5390_west_face_granitic_dreams": {
+  "area": "ak_5390_west_face",
+  "facts": [
+   {
+    "field": "fa",
+    "value": "Ivan Reifenstuhl and Steve Reifenstuhl, 6/21/2025",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/201710716/granitic-dreams",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA: Ivan Reifenstuhl, Steve Reifenstuhl, 6/21/2025."
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 2,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/201710716/granitic-dreams",
+      "retrieved_at": "2026-11-14",
+      "fact": "5.10c PG13 Trad, Alpine, 2 pitches, 230 ft."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 230,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/201710716/granitic-dreams",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route length 230 ft (70 m)."
+     }
+    ]
+   }
+  ]
+ },
+ "ak_o_malley_peak_3_unknown_5_9": {
+  "area": "ak_o_malley_peak_3",
+  "facts": [
+   {
+    "field": "pitches",
+    "value": 2,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/201463054/unknown-59",
+      "retrieved_at": "2026-11-14",
+      "fact": "5.9 Trad, Alpine, 2 pitches, 300 ft; FA unknown."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 300,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/201463054/unknown-59",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route length 300 ft (91 m)."
+     }
+    ]
+   }
+  ]
+ },
+ "ak_devil_s_thumb_south_pillar_free": {
+  "area": "ak_devil_s_thumb",
+  "facts": [
+   {
+    "field": "fa",
+    "value": "Paul Haraf and Carl Diedrich",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/125756133/south-pillar-free",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA: Paul Haraf & Carl Diedrich."
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 10,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/125756133/south-pillar-free",
+      "retrieved_at": "2026-11-14",
+      "fact": "5.10a Trad, Alpine, 10 pitches, 1500 ft."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 1500,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/125756133/south-pillar-free",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route length 1500 ft (455 m)."
+     }
+    ]
+   }
+  ]
+ },
+ "ak_mt_barrill_japanese_couloir": {
+  "area": "ak_mt_barrill",
+  "facts": [
+   {
+    "field": "fa",
+    "value": "Teruaki Segawa, Kensei Suga, Masayuki Suemasa, Eiji Tsai",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107179769/japanese-couloir",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA: Teruaki Segawa, Kensei Suga, Masayuki Suemasa, Eiji Tsai."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 3000,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107179769/japanese-couloir",
+      "retrieved_at": "2026-11-14",
+      "fact": "Steep Snow, Alpine, 3000 ft (909 m)."
+     }
+    ]
+   }
+  ]
+ },
+ "ak_mt_brooks_north_ridge": {
+  "area": "ak_mt_brooks",
+  "facts": [
+   {
+    "field": "fa",
+    "value": "Scudder, Briggs, Humphreys, Bernays",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106450278/north-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA: Scudder, Briggs, Humphreys, Bernays."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 6000,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106450278/north-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mod. Snow, Alpine, 6000 ft (1818 m)."
+     }
+    ]
+   }
+  ],
+  "note": "SuperTopo's Mount Brooks North Ridge page (http) did not load."
+ },
+ "bc_1_north_faces_from_fairy_meadow_nw_ridge_quadrant_with_rabbit_ears_arete_s": {
+  "area": "bc_1_north_faces_from_fairy_meadow",
+  "facts": [
+   {
+    "field": "fa",
+    "value": "NW Ridge (without the Ears): W. Putnan, D. Sprecker, R. Wallace, 1965; Ears unknown",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/120540775/nw-ridge-quadrant-with-rabbit-ears-arete-s",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA NW Ridge without the Ears by W. Putnan, D. Sprecker, R. Wallace 1965; Ears FA unknown."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 800,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/120540775/nw-ridge-quadrant-with-rabbit-ears-arete-s",
+      "retrieved_at": "2026-11-14",
+      "fact": "5.7 Trad, Alpine, 800 ft (242 m)."
+     }
+    ]
+   }
+  ],
+  "note": "Source spells the first name 'Putnan'; value normalised to Putnam would be a correction - keep source spelling if strict."
+ },
+ "bc_1_north_faces_from_fairy_meadow_outpost_to_spire_traverse_quadrant_spire": {
+  "area": "bc_1_north_faces_from_fairy_meadow",
+  "facts": [
+   {
+    "field": "fa",
+    "value": "Helmut Microys and R. Hall, 28 July 1981",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/120542034/outpost-to-spire-traverse-quadrant-spire",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA: Helmut Microys & R. Hall, 28 Jul 1981."
+     }
+    ]
+   }
+  ]
+ }
+}

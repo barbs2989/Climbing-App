@@ -1,0 +1,2565 @@
+{
+ "ca_ne_face": {
+  "area": "ca_north_east_ridge",
+  "skip_reason": "Area id ca_north_east_ridge names no peak, so the route could not be identified. Opened mountainproject.com/route/106083462/north-east-ridge-full (Mt Clarence King, 5.7+, not a match) and mountainproject.com/area/105791817/high-sierra region listings; no \"NE face\" 3rd-class route under an area named North East Ridge found."
+ },
+ "ca_ne_ridge_2": {
+  "area": "ca_north_east_ridge",
+  "skip_reason": "Same unidentified area (ca_north_east_ridge). Opened mountainproject.com/route/106083462/north-east-ridge-full (5.7+, Mt Clarence King, not 4th) and mountainproject.com/route/106030935/north-east-ridge (Williamson, Easy 5th, separate route ca_north_east_ridge); no match."
+ },
+ "ca_needham_mountain_standard_route": {
+  "area": "ca_needham_mountain",
+  "skip_reason": "Opened themtsarecalling.com/needham/ and firstchurchofthemasochist.com/2018/08/sawtooth-peak-needham-mountain-and.html; both reach Needham by traversing from Sawtooth Peak, not the standard route, and their stats are multi-peak. SummitPost (403) not readable; no MP route."
+ },
+ "ca_nevahbe_ridge": {
+  "area": "ca_mount_morgan_north",
+  "facts": [
+   {
+    "field": "approach_step",
+    "value": "Gain the ridge via a couloir rising above the McGee Creek pack station",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/117571815/nevahbe-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Ridge is reached by a couloir above the McGee Creek pack station."
+     },
+     {
+      "url": "https://www.climber.org/TripReports/2001/795.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Guidebook start: cross McGee Creek just before the pack station and reach the ridge by a steep couloir."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "none needed",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/117571815/nevahbe-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Protection section says none needed."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "McGee Creek trailhead",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climber.org/TripReports/2001/795.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Parked at McGee Creek trailhead and walked back toward the pack station."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "3rd",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.climber.org/TripReports/2001/795.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Reports class-3 and maybe mild class-4 climbing on the ridge."
+     },
+     {
+      "url": "https://www.mountainproject.com/route/117571815/nevahbe-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP rates Nevahbe Ridge 3rd."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Long winding ridge with many towers and ups and downs to Point 12,553, saddle, then white blocky ridge to Mt Morgan summit",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climber.org/TripReports/2001/795.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Ridge long and winding with towers; reached point 12553, then saddle and blocky ridge toward summit."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 13005,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climber.org/TripReports/2001/795.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Title gives Mt Morgan (N) 13,005 ft."
+     }
+    ]
+   }
+  ],
+  "note": ""
+ },
+ "ca_nnw_ridge": {
+  "area": "ca_little_lakes_peak",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Easy 5th",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112490488/nnw-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP grades NNW Ridge of Little Lakes Peak Easy 5th, Grade II; an older guidebook said class 4."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "II",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112490488/nnw-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Listed as Grade II."
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 2545,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112490488/nnw-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Stats: vertical difference between parking and summit +2545 ft."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_oneway",
+    "value": 3.2,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112490488/nnw-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Total distance approach plus climb, ascent route: 3.2 miles."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Mosquito Flat trailhead (Rock Creek Road end), 10,240 ft",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112490488/nnw-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Start at Mosquito Flats trailhead parking, altitude 10240 ft, end of Rock Creek road."
+     }
+    ]
+   },
+   {
+    "field": "road",
+    "value": "From US 395 at Toms Place take Rock Creek Road about 10.5 miles to its end",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112490488/nnw-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Rock Creek road from Toms Place about 10.5 miles to Mosquito Flats trailhead."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Morgan Pass trail ~1.5 mi; leave trail just S of Box Lake, cross creek, go SE cross-country ~0.5 mi",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112490488/nnw-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Take Morgan Lakes trail about 1.5 mi, turn off south of Box Lake, cross creek, cross-country SE ~0.5 mi."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "South face talus and scree to the Morgan Pass trail, then back down the trail",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112490488/nnw-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Normal descent: South face down ~1670 ft of talus/scree over 0.6 mi to the trail near Morgan Pass."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Loose and breaking rock on the ridge crest, including weak black rock intrusions",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112490488/nnw-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Crest is weathered and rarely climbed; beware loose or breaking rock and breakable black rock."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Light trad rack plus long slings for horns; no fixed protection",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112490488/nnw-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "No fixed protection; light trad rack and long slings suggested."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 3300,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112490488/nnw-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route length listed as 3300 ft."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 12785,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112490488/nnw-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Little Lakes Peak altitude 12785 ft."
+     },
+     {
+      "url": "https://www.climber.org/reports/2003/1159.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Little Lakes Peak listed at 12782 ft."
+     }
+    ]
+   }
+  ],
+  "note": "climber.org 1159 covers a different (SW Ridge) route; only the peak elevation was used."
+ },
+ "ca_north_ar_te": {
+  "area": "ca_north_arete",
+  "skip_reason": "Area id ca_north_arete names no peak; 5.6 North Arete could not be tied to a peak. Opened mountainproject.com/route/105836346/north-arete (Matterhorn, 5.7 - that is ca_north_arete_6) and thecrag/supertopo hits point to Bear Creek Spire North Arete (5.8); no confident match."
+ },
+ "ca_north_arete_6": {
+  "area": "ca_matterhorn_peak",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "5.7",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105836346/north-arete",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP grades Matterhorn Peak North Arete 5.7, Grade III."
+     },
+     {
+      "url": "https://themtsarecalling.com/matterhorn/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trip stats: crux 5.7 on the North Arete."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "III",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105836346/north-arete",
+      "retrieved_at": "2026-11-14",
+      "fact": "Listed as Grade III."
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 6,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105836346/north-arete",
+      "retrieved_at": "2026-11-14",
+      "fact": "Header lists 6 pitches (text says about 7)."
+     },
+     {
+      "url": "https://themtsarecalling.com/matterhorn/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trip stats: pitches 6."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Jerry Gallwas, Wally Kodis, Don Wilson, September 1954",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105836346/north-arete",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA: Gallwas, Kodis, Wilson, September 1954."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Twin Lakes, Horse Creek Trail",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105836346/north-arete",
+      "retrieved_at": "2026-11-14",
+      "fact": "Hike south from Twin Lakes on the Horse Creek Trail."
+     },
+     {
+      "url": "https://themtsarecalling.com/matterhorn/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trip stats: trailhead Twin Lakes, full services."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Small lake near 9,200 ft with limited campsites",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105836346/north-arete",
+      "retrieved_at": "2026-11-14",
+      "fact": "Leave trail around 9200 ft after ~3.5 mi; steep path to a small lake with limited campsites."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Down the east gully on scree or snow depending on season",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105836346/north-arete",
+      "retrieved_at": "2026-11-14",
+      "fact": "Descent via the east gully, loose scree or snow by season."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Full rack to #3 Camalot; no bolts or fixed anchors",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105836346/north-arete",
+      "retrieved_at": "2026-11-14",
+      "fact": "No bolts or fixed anchors; full rack up to #3 Camalot."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Singles 0.4 to BD #3, many slings, 55 m rope",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://themtsarecalling.com/matterhorn/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Protection used: singles 0.4 to BD #3, many slings, 55m rope."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Rotten, poorly protected rock on the first pitch",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105836346/north-arete",
+      "retrieved_at": "2026-11-14",
+      "fact": "First pitch has rotten rock and poor protection."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 14.9,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://themtsarecalling.com/matterhorn/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trip stats: distance 14.9 miles (single-day round trip)."
+     }
+    ]
+   },
+   {
+    "field": "gain_ft_roundtrip",
+    "value": 5500,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://themtsarecalling.com/matterhorn/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trip stats: elevation gain 5500 ft for the day."
+     }
+    ]
+   }
+  ],
+  "note": "MP header says 6 pitches, its text says about 7; themtsarecalling 6. Distance 14.9 mi / gain 5500 ft are one party's round-trip stats."
+ },
+ "ca_north_couloir": {
+  "area": "ca_mount_abbot",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "3rd",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111011183/north-couloir",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP grades Mount Abbot North Couloir 3rd class, Grade II, snow."
+     },
+     {
+      "url": "https://www.snwburd.com/reports/1998-09-08/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Planned the class 3 North Couloir, the easiest route from Little Lakes Valley per Secor."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Brower, Voge, Clyde, July 1934",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111011183/north-couloir",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA Brower, Voge, Clyde, July 1934."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "From Treasure Lakes up to Treasure Saddle, cross glacier north to couloir mouth (or from Mills Lake)",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111011183/north-couloir",
+      "retrieved_at": "2026-11-14",
+      "fact": "Treasure Lakes to Treasure Saddle, cross glacier/snowfield north to couloir; also reachable from Mills Lake."
+     },
+     {
+      "url": "https://www.snwburd.com/reports/1998-09-08/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Climb ~1,300 ft from Treasure Lakes to the pass between Abbot and Treasure Peak, then across the snow toward the couloir."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Snow up couloir halfway, exit right on ledges to ridge crest, follow knife-edge ridge south to summit",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111011183/north-couloir",
+      "retrieved_at": "2026-11-14",
+      "fact": "Midway exit right on ledges to crest, follow exposed ridge south to summit."
+     },
+     {
+      "url": "https://www.snwburd.com/reports/1998-09-08/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Halfway up exit the snow right and climb class 3 rock to the ridge, then to summit."
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "Early season after a cold night",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111011183/north-couloir",
+      "retrieved_at": "2026-11-14",
+      "fact": "Best early season after a hard freeze; suncups later."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Same route",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111011183/north-couloir",
+      "retrieved_at": "2026-11-14",
+      "fact": "Descend the ascent route."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Treasure Lakes",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.snwburd.com/reports/1998-09-08/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Camped at Treasure Lakes."
+     }
+    ]
+   }
+  ],
+  "note": ""
+ },
+ "ca_north_couloir_4": {
+  "area": "ca_thunderbolt_peak",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "4th",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111529059/north-couloir",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP grades Thunderbolt North Couloir 4th, Grade II, 1000 ft."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 1000,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111529059/north-couloir",
+      "retrieved_at": "2026-11-14",
+      "fact": "Length 1000 ft."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Sam Mack Meadow and the Thunderbolt Glacier",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111529059/north-couloir",
+      "retrieved_at": "2026-11-14",
+      "fact": "Approach from Sam Mack Meadow and Thunderbolt glacier."
+     },
+     {
+      "url": "https://www.climber.org/reports/2006/1494.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Hiked North Fork Big Pine Creek trail to Sam Mack Meadow, then glacier trail toward the couloir."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Bergschrund crossing was the crux",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111529059/north-couloir",
+      "retrieved_at": "2026-11-14",
+      "fact": "Crux was crossing the bergschrund."
+     },
+     {
+      "url": "https://www.climber.org/reports/2006/1494.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Crossed the bergschrund on the far left before the steep couloir."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Axe and crampons except in low-snow years",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111529059/north-couloir",
+      "retrieved_at": "2026-11-14",
+      "fact": "Low snow years a scramble; otherwise axe and crampons."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "North Fork Big Pine Creek",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climber.org/reports/2006/1494.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trailhead: North Fork Big Pine Creek."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Bivy sites ~100 ft above Sam Mack Meadow on the Glacier Trail",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climber.org/reports/2006/1494.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Bivy sites among rocks and junipers about 100 ft above Sam Mack Meadow."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Steep couloir with a Y branch near top; from the gap drop 30-50 ft, ramp around a rock rib, easy class 4 face to summit block",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climber.org/reports/2006/1494.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Couloir Y near top, drop 30-50 ft at gap, ramp around rib, easy class 4 face to summit block."
+     }
+    ]
+   }
+  ],
+  "note": "sierrapeaks.org/archives/sps00089.htm read; not route-specific."
+ },
+ "ca_north_couloir_5": {
+  "area": "ca_mt_sill",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "4th",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107173189/north-couloir",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP grades Mt Sill North Couloir 4th."
+     },
+     {
+      "url": "https://summitborn.com/mount-sill-north-couloir-route-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Guide: glacier crossing then a short Class 4 step onto the summit ridge."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Walter Starr Jr., September 25 1931",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107173189/north-couloir",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA Walter Starr Jr. 25 Sept 1931."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Palisade Glacier bergschrund, gully to Glacier Notch, North Couloir to Sill-Apex gap, traverse 100 ft, chute to NW ridge, blocks to summit",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107173189/north-couloir",
+      "retrieved_at": "2026-11-14",
+      "fact": "Glacier Notch, couloir to Sill/Apex gap, 100 ft traverse, chute to NW ridge, summit blocks."
+     },
+     {
+      "url": "https://summitborn.com/mount-sill-north-couloir-route-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Glacier crossing, loose gully to Glacier Notch, couloir, short Class 4 step."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Ice axe, crampons, helmet",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107173189/north-couloir",
+      "retrieved_at": "2026-11-14",
+      "fact": "Ice axe, crampons, helmet."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Crampons and ice axe for the glacier",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/mount-sill-north-couloir-route-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Glacier demands crampons and an ice axe."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Ridge toward North Palisade then rappels and an exposed traverse back to the notch",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107173189/north-couloir",
+      "retrieved_at": "2026-11-14",
+      "fact": "Descent down ridge toward North Pal, usually a series of rappels to an exposed traverse."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Inyo NF overnight wilderness permit year-round; quota 25/day May 1-Nov 1; day use no permit; groups max 15",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/mount-sill-north-couloir-route-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Overnight permit required year-round, quota 25 per day May-Nov; day use none; groups capped at 15."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 14153,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/mount-sill-north-couloir-route-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "High point 14,153 ft per USGS topo."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Glacier Lodge",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/mount-sill-north-couloir-route-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Out-and-back from Glacier Lodge."
+     }
+    ]
+   }
+  ],
+  "note": "Summitborn distance/gain/time figures are self-labelled estimates; not used."
+ },
+ "ca_north_east_couloir": {
+  "area": "ca_mt_langley",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "3rd",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112389795/north-east-couloir",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP grades Langley North East Couloir 3rd, easy snow, Grade III, 2000 ft."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "III",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112389795/north-east-couloir",
+      "retrieved_at": "2026-11-14",
+      "fact": "Listed Grade III."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 2000,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112389795/north-east-couloir",
+      "retrieved_at": "2026-11-14",
+      "fact": "Length 2000 ft."
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 7000,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112389795/north-east-couloir",
+      "retrieved_at": "2026-11-14",
+      "fact": "About 7,000 ft of elevation gain."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Tuttle Creek trailhead",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112389795/north-east-couloir",
+      "retrieved_at": "2026-11-14",
+      "fact": "Park at the Tuttle Creek trailhead, hike past the Ashram."
+     },
+     {
+      "url": "https://www.sierradescents.com/skiing/langley/northeast-couloir.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route approached via Tuttle Creek drainage."
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "Winter and spring snow climb",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112389795/north-east-couloir",
+      "retrieved_at": "2026-11-14",
+      "fact": "Excellent winter/spring climb and spring ski descent."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Same way as ascent",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112389795/north-east-couloir",
+      "retrieved_at": "2026-11-14",
+      "fact": "Descend the way you came up."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Tuttle Creek drainage; established trail under a mile from upper parking then up the drainage",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.sierradescents.com/skiing/langley/northeast-couloir.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Approach up Tuttle Creek; trail less than a mile from upper parking then drainage."
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "Winding couloir past spires and buttresses dropping about 3500 vertical ft to the Tuttle Creek drainage",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.sierradescents.com/skiing/langley/northeast-couloir.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Giant winding couloir drops past spires to Tuttle Creek Drainage, 3500 vertical feet below."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 14027,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.sierradescents.com/skiing/langley/northeast-couloir.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Langley summit given as 14,027 ft."
+     }
+    ]
+   }
+  ],
+  "note": ""
+ },
+ "ca_north_east_ridge": {
+  "area": "ca_mt_williamson",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Easy 5th",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106030935/north-east-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP grades Williamson NE Ridge Easy 5th, trad/snow/alpine."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "Class 4",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climber.org/TripReports/2004/1271.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Difficulty listed: long climb, class 4, ice."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Harding and Ohrenschall, Dec 29 1954 to Jan 2 1955",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106030935/north-east-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA listed Harding and Ohrenschall 12/29/1954-1/2/1955."
+     }
+    ]
+   },
+   {
+    "field": "vertical_th_to_summit_ft",
+    "value": 8000,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106030935/north-east-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trailhead-to-summit vertical given as 8000 ft."
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 11000,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106030935/north-east-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Total climbing vertical stated as 11,000 ft (page does not say one-way or round trip)."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 25,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106030935/north-east-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Round trip stated as 25 miles."
+     }
+    ]
+   },
+   {
+    "field": "water",
+    "value": "Waterless; refill only from snow or melt",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106030935/north-east-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route is waterless; top off from any snow or melt."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Cross East and West Horns (both 14,000+), descend West Horn NE side, plateau to summit",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106030935/north-east-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route crosses East and West Horns then a plateau to the summit."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "1-mile cross-country start with a stream ford, then 2000 ft of decomposed granite and brush",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106030935/north-east-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Starts with a 1-mile cross-country hike with a stream ford, then 2000 ft of loose slope and brush."
+     },
+     {
+      "url": "https://www.climber.org/TripReports/2004/1271.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "About a mile SW to the roadend on Shepherd Creek, crossed the creek, then up the ridge WNW."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Shepherd Pass trailhead (Symmes Creek)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climber.org/TripReports/2004/1271.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Started from the Shepherd Pass trailhead (Symmes Creek)."
+     }
+    ]
+   }
+  ],
+  "note": "Grade conflict: MP Easy 5th vs climber.org class 4. MP 11,000 ft total vertical not labelled one-way/round trip; 8000 ft is TH-to-summit difference."
+ },
+ "ca_north_face_18": {
+  "area": "ca_mount_dade",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Easy 5th",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114186842/north-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP grades Mount Dade North Face Easy 5th, snow, Grade III, 1000 ft."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "Class 5, rope used",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climber.org/reports/2004/1294.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Difficulty listed class 5, helmet, rope used (party unsure it was exactly the North Face Route)."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Al Green, Dave Brown, Bill Stronge, 1972",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114186842/north-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA Green, Brown, Stronge 1972."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 1000,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114186842/north-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "Length 1000 ft."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Hourglass Couloir route",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114186842/north-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "Descend via Dade's Hourglass Couloir."
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "Early season in a good snow year",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114186842/north-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "Best early season of a good snow year."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Mosquito Flat Trailhead (Little Lakes Valley, Treasure Lakes cutoff)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climber.org/reports/2004/1294.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Permit for Treasure Lakes out of Mosquito Flat Trailhead; Treasure Lakes cutoff past Long Lake after about 2.5 miles."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Wilderness permit for Treasure Lakes entry, obtained in Mammoth Lakes",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climber.org/reports/2004/1294.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Got a permit in Mammoth Lakes for Treasure Lakes from Mosquito Flat."
+     }
+    ]
+   }
+  ],
+  "note": "climber.org party was unsure they were exactly on the North Face route; its class 5 grade kept single-source."
+ },
+ "ca_north_maggie_mountain_saddle_route_from_long_meadow": {
+  "area": "ca_north_maggie_mountain",
+  "facts": [
+   {
+    "field": "trailhead",
+    "value": "Shake Camp trailhead, Mountain Home State Forest",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.sierrapeaks.org/archives/sps00203.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS trip met at Shake Camp trailhead in Mountain Home State Forest, hiked the Summit Lake trail."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Long Meadow (north end, near Tule River crossing)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.sierrapeaks.org/archives/sps00071.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS trip camped at north end of Long Meadow, about 100 yards south of the Tule River crossing."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Leave trail a few minutes north of the Long Meadow camp and push up through brush",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.sierrapeaks.org/archives/sps00203.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Left trail several minutes north of the Long Meadow camp, fought up brush toward North Maggie."
+     }
+    ]
+   }
+  ],
+  "note": "Both SPS reports are one publisher. themtsarecalling.com/maggie/ was read but climbs from Balch Park (different route), not used."
+ },
+ "ca_north_rib": {
+  "area": "ca_mt_tyndall",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "3rd",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105935218/north-rib",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP grades Tyndall North Rib 3rd class."
+     },
+     {
+      "url": "https://summitborn.com/mount-tyndall-north-rib-route-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Guide calls the North Rib a Class 3 rib."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Clarence King and Richard Cotter, 1864",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105935218/north-rib",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA listed as Clarence King and Richard Cotter, 1864."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Same as ascent",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105935218/north-rib",
+      "retrieved_at": "2026-11-14",
+      "fact": "Descent is the ascent route."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Shepherd Pass (Symmes Creek) Trailhead",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/mount-tyndall-north-rib-route-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Out-and-back from the Shepherd Pass (Symmes Creek) Trailhead."
+     },
+     {
+      "url": "https://www.sierradescents.com/skiing/tyndall/north-rib.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Approach starts at 6300 ft in Owens Valley at Shepherd Pass trailhead."
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "July to September",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/mount-tyndall-north-rib-route-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Best July-September after Shepherd Pass melts out."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Inyo NF overnight wilderness permit (Shepherd Pass quota) to camp; day hikers self-register",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/mount-tyndall-north-rib-route-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Overnight Inyo permit required to camp; day hikers self-register at trailhead."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 14019,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/mount-tyndall-north-rib-route-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "High point 14,019 ft summit."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Shepherd Pass Trail to the pass, then the North Rib to the summit",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/mount-tyndall-north-rib-route-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route shape: Shepherd Pass Trail to the pass then North Rib."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Climb ~3000 ft to Symmes Saddle, drop and regain ~500 ft, climb to Shepherd Pass; base about a mile beyond",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.sierradescents.com/skiing/tyndall/north-rib.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "3000 vertical to Symmes Saddle, drops and regains 500 ft, then to Shepherd Pass about a mile from Tyndall."
+     }
+    ]
+   },
+   {
+    "field": "approach_loss_ft",
+    "value": 500,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.sierradescents.com/skiing/tyndall/north-rib.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Approach drops and regains 500 vertical feet after Symmes Saddle."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 24,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.sierradescents.com/skiing/tyndall/north-rib.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Roughly 24 miles round trip to the summit."
+     }
+    ]
+   }
+  ],
+  "note": "Summitborn distance/gain marked approximate; sierradescents \"roughly 24 miles round trip\" used."
+ },
+ "ca_north_ridge_11": {
+  "area": "ca_whaleback",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Easy 5th",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119360718/north-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP grades Whaleback North Ridge Easy 5th, Grade III; mostly class 3-4 with isolated ~5.4 moves."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "Class 3-4",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://drdirtbag.com/2012/09/18/whaleback-n-ridge-glacier-ridge-15h50/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Most of ridge class 2-3 with a few 4th class boulder problems up high."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Fred Davenport and others, 1951",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119360718/north-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA Fred Davenport and others 1951."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "South ridge recommended (4th/low 5th scrambling)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119360718/north-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Recommends descending the south ridge."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Colby Pass trail to where it meets the north ridge; 19+ mile hike to the peak",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119360718/north-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Colby Pass trail to the ridge; 19+ mile hike to reach the peak."
+     },
+     {
+      "url": "https://drdirtbag.com/2012/09/18/whaleback-n-ridge-glacier-ridge-15h50/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Colby Pass trail past Big Wet Meadow to just past where it crosses the north ridge."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Big Wet Meadow",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119360718/north-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Grade III estimated from a camp near Big Wet Meadow."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "None",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119360718/north-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Protection: none."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Marvin Pass trailhead",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://drdirtbag.com/2012/09/18/whaleback-n-ridge-glacier-ridge-15h50/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Left the Marvin Pass trailhead; long sandy trail."
+     }
+    ]
+   }
+  ],
+  "note": "Grade conflict: MP Easy 5th (isolated ~5.4 moves) vs drdirtbag class 2-3 with a few 4th class moves."
+ },
+ "ca_north_ridge_12": {
+  "area": "ca_independence_peak",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Easy 5th",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112150351/north-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP grades Independence Peak North Ridge Easy 5th, with a 100-yard third-class knife edge."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "4th",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.sierrainaday.com/post/independence-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trip report lists North Ridge difficulty Class 4; found only scrambling to class 4 though class 5 is reported."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Probably Norman Clyde",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112150351/north-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA listed as probably Norman Clyde."
+     }
+    ]
+   },
+   {
+    "field": "car_to_car_hours",
+    "value": "4-6",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112150351/north-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Four to six hours car-to-car."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Onion Valley; Robinson Lake Trail from campsite #8",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112150351/north-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "From Onion Valley walk to campsite 8, follow Robinson Lake Trail ~1/2 mi to 9700 ft."
+     },
+     {
+      "url": "https://www.sierrainaday.com/post/independence-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trailhead: Onion Valley."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "West talus chute after a 150-ft downclimb",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112150351/north-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Descent west via a large talus chute reached by a spicy 150-ft downclimb."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 11744,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.sierrainaday.com/post/independence-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Independence Peak elevation 11744 ft."
+     }
+    ]
+   }
+  ],
+  "note": "Grade conflict: MP Easy 5th vs sierrainaday Class 4 (app holds 4th)."
+ },
+ "ca_north_ridge_13": {
+  "area": "ca_mt_conness",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Easy 5th",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105982681/north-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP grades Conness North Ridge Easy 5th."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "5.6",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://stephabegg.com/trip-reports/california/conness-nr/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trip report rates Conness North Ridge 5.6: mostly 3rd/4th class with one short airy 5.6 move."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Galen Rowell and Barry Hagen, 1969",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105982681/north-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA Galen Rowell and Barry Hagen 1969."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Saddlebag Lake",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105982681/north-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Approach from Saddlebag Lake."
+     },
+     {
+      "url": "https://stephabegg.com/trip-reports/california/conness-nr/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Approach began from Saddlebag Campground."
+     },
+     {
+      "url": "https://themtsarecalling.com/north/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trip stats list trailhead as Saddlebag Lakes."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "West Ridge approach trail, making a loop over the peak; the downclimb crux can be rappelled",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://stephabegg.com/trip-reports/california/conness-nr/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Climbed North Ridge and descended via the West Ridge approach trail; crux downclimb can be rappelled."
+     }
+    ]
+   }
+  ],
+  "note": "Grade conflict: MP says Easy 5th; StephAbegg says 5.6 (one short move). themtsarecalling Conness trip was multi-peak (North Peak, White Mtn) so its distance/gain were not used."
+ },
+ "ca_north_ridge_5": {
+  "area": "ca_cirque_peak",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "3rd",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111003223/north-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP grades Cirque Peak North Ridge 3rd; final class 2 section near summit."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "From New Army Pass along the ridge, staying just west of the crest",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111003223/north-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Starts at New Army Pass; stay just west of the ridge."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Cottonwood Lakes, New Army Pass trail",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111003223/north-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "New Army Pass trail from the lowest Cottonwood Lake."
+     },
+     {
+      "url": "https://summitborn.com/cirque-peak-mountain-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Cottonwood Lakes Trailhead is the usual start; New Army Pass approach is standard."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Same way, or steep NE-face scree to the New Army Pass trail",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111003223/north-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Descend the route or steep scree on the NE face to the New Army Pass trail."
+     }
+    ]
+   }
+  ],
+  "note": ""
+ },
+ "ca_north_ridge_6": {
+  "area": "ca_mt_tom",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "3rd",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111775017/north-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP grades Mt Tom North Ridge 3rd; mostly class 2-3."
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 7700,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111775017/north-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "7700 ft of elevation gain over 5 miles."
+     },
+     {
+      "url": "https://quinnrohlf.com/mt-tom-north-ridge/",
+      "retrieved_at": "2026-11-14",
+      "fact": "North Ridge has cumulative 8,000 ft of elevation gain."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_oneway",
+    "value": 5,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111775017/north-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Gain is over the course of 5 miles."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Pine Creek Road",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111775017/north-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Begin at Pine Creek road."
+     },
+     {
+      "url": "https://quinnrohlf.com/mt-tom-north-ridge/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Ridge drops from summit into Pine Creek Canyon; start from a trailhead reached by a short bumpy drive."
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "About 5 miles of off-trail alpine ridge travel",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://quinnrohlf.com/mt-tom-north-ridge/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Roughly 5 miles of off-trail ridge travel."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 13658,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://quinnrohlf.com/mt-tom-north-ridge/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Summit at 13,658 ft via the North Ridge."
+     }
+    ]
+   }
+  ],
+  "note": "Gain: MP 7700 ft vs quinnrohlf 8000 ft cumulative (within 10%)."
+ },
+ "ca_north_ridge_8": {
+  "area": "ca_trapezoid_peak",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "4th",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105815419/north-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP grades Trapezoid Peak North Ridge 4th, 4000 ft."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Sierra Club party, August 1939",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105815419/north-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA Sierra Club party August 1939."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 4000,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105815419/north-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Length 4000 ft."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Hike to Hurd Col from Margaret Lake",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105815419/north-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Hike up to Hurd Col from Margaret Lake."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "NE ridge to first summit, follow horizontal ridge keeping right at impasses, drop into notch, class 3 face to summit plateau",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105815419/north-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Long exposed ridge traverse ending at towers and a notch, then class 3 face."
+     }
+    ]
+   }
+  ],
+  "note": "firstchurchofthemasochist Trapezoid page was read but climbed from Treasure Lakes (different route); only MP used."
+ },
+ "ca_north_ridge_9": {
+  "area": "ca_peak_12_486",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "3rd",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111007752/north-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP grades Peak 12486 North Ridge 3rd."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Chris Owen, Melody Wong, Stefan Harms, October 2005",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111007752/north-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA Owen, Wong, Harms 10/2005."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Tree line from lakes, slabs to ramp, class 3 right of first tower, chimney through second tower to summit",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111007752/north-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Ridge past two gendarmes near the summit, chimney weakness in the second."
+     }
+    ]
+   }
+  ],
+  "note": "DuckDuckGo found no second publisher for Peak 12486 North Ridge; only MP used."
+ },
+ "ca_north_slope": {
+  "area": "ca_vagabond_peak_aka_thunder_and_lightning_peak",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "3rd",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/115170450/north-slope",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP grades Vagabond Peak North Slope 3rd; easy class 3 on ridge to summit."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "South Lake via Green Lake and Baker Lakes trail",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/115170450/north-slope",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trail to Baker Lakes from Green Lake; long day from South Lake."
+     },
+     {
+      "url": "https://themtsarecalling.com/cloudripper/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trip started at South Lake trailhead, trail to Green Lake, for Cloudripper and Vagabond."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Baker Lakes / Green Lake",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/115170450/north-slope",
+      "retrieved_at": "2026-11-14",
+      "fact": "Some camp at the lakes, or do it as a long day from South Lake."
+     }
+    ]
+   }
+  ],
+  "note": "themtsarecalling page is a combined Cloudripper + Vagabond day; only trailhead used."
+ },
+ "ca_north_slope_2": {
+  "area": "ca_cloudripper",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "3rd",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119477099/north-slope",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP grades Cloudripper North Slope 3rd; slope class 2, exposed class 3 moves to summit."
+     },
+     {
+      "url": "https://themtsarecalling.com/cloudripper/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trip stats crux Class 3 for Cloudripper and Vagabond."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 700,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119477099/north-slope",
+      "retrieved_at": "2026-11-14",
+      "fact": "North slope about 700 ft."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Unknown, maybe Norman Clyde",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119477099/north-slope",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA unknown maybe Norman Clyde."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Reach the plateau between Vagabond and Cloudripper from Vagabond Peak or via the East Ridge from Seven Lakes Basin",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119477099/north-slope",
+      "retrieved_at": "2026-11-14",
+      "fact": "Plateau reached from Vagabond Peak or by the East Ridge from Seven Lakes Basin."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "South Lake via Green Lake",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://themtsarecalling.com/cloudripper/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trip started at South Lake trailhead, trail to Green Lake, for Cloudripper and Vagabond."
+     }
+    ]
+   }
+  ],
+  "note": "themtsarecalling page is a combined Cloudripper + Vagabond day; only trailhead/class used."
+ },
+ "ca_northeast_face_4": {
+  "area": "ca_middle_palisade",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "4th",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106846447/northeast-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP grades Middle Palisade NE Face 4th, 1000 ft (app holds 3rd)."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Norman Clyde",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106846447/northeast-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA Norman Clyde."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "From the moraine splitting Middle Palisade Glacier, cross bergschrund, follow red rock band into a large gully",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106846447/northeast-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "Start at moraine, cross schrund, follow red band into a big gully."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Cross the small Middle Palisade Glacier, one long mostly class 3 gully, short summit ridge with a class 4 chimney",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/middle-palisade-northeast-face-route-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Glacier then one long gully of mostly Class 3 to summit ridge; summit block needs a Class 4 chimney."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Much loose rock on the red band; bergschrund crossing",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106846447/northeast-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "Careful of loose rock on the band."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "No permit for a day climb; overnight wilderness permit year-round, quota 12/day May 1-Nov 1; groups 15 max",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/middle-palisade-northeast-face-route-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "None for day climb; overnight permit quota 12 per day May-Nov; groups 15 or fewer."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 14012,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/middle-palisade-northeast-face-route-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "High point 14,012 ft (USGS Split Mountain quad)."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Glacier Lodge",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/middle-palisade-northeast-face-route-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Round trip from Glacier Lodge."
+     }
+    ]
+   }
+  ],
+  "note": "Grade conflict: MP 4th; summitborn says most reports class 3 with a class 4 summit chimney (app holds 3rd). Summitborn distance/gain are self-labelled estimates, not used."
+ },
+ "ca_northeast_face_5": {
+  "area": "ca_isosceles_peak",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Easy 5th",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106823482/northeast-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP grades Isosceles Peak NE Face Easy 5th; 3rd/4th corner then 5th to summit."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Frank Ferguson and A.C. Riedell, August 1933",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106823482/northeast-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA August 1933 Ferguson and Riedell."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Downclimb or rappel to notch west of summit, SW chute, traverse back to Dusy Lake",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106823482/northeast-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "Downclimb/rappel west to a notch, descend SW chute, traverse to Dusy Lake."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Alpine rack",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106823482/northeast-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "Protection: alpine rack."
+     }
+    ]
+   }
+  ],
+  "note": "climber.org/reports/2005/1453.html was read but covers SW Buttress/SE Ridge, not the NE Face; only MP used."
+ },
+ "ca_northeast_ridge_aka_easy_street_holtgrefe_ridge": {
+  "area": "ca_mount_harwood",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "3rd",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108262242",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP grades Harwood NE Ridge (Easy Street/Holtgrefe) 3rd, snow, Grade II, 3000 ft."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 3000,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108262242",
+      "retrieved_at": "2026-11-14",
+      "fact": "3,000 ft of easy snow."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Flat partway up; saddle between Harwood and Baldy",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108262242",
+      "retrieved_at": "2026-11-14",
+      "fact": "A flat on the way up fits a few parties; saddle between Harwood and Baldy is out of the wind."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Stockton Flat via Lytle Creek road",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108262242",
+      "retrieved_at": "2026-11-14",
+      "fact": "Drive up Lytle Creek; good descent if parked at Stockton Flat."
+     },
+     {
+      "url": "https://www.sierradescents.com/skiing/harwood/northeast-ridge.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Drove dirt road to Stockton Flats below Harwood's east face, started from there."
+     }
+    ]
+   }
+  ],
+  "note": ""
+ },
+ "ca_northeast_ridge_traverse_from_hurd_peak": {
+  "area": "ca_peak_12_192",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Easy 5th",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/117843874",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP grades the Hurd Peak traverse Easy 5th, 2000 ft; first half 4th/5th crux."
+     },
+     {
+      "url": "https://gutzjourney.com/trip-report-south-lake-peaks-traverse/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Between Peak 12,192 and Hurd: 4th and 3rd class, solid 5th class if staying on the ridge."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 2000,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/117843874",
+      "retrieved_at": "2026-11-14",
+      "fact": "Length 2000 ft."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "From Hurd Peak summit downclimb 3rd class to the technical section; first half crux, second half class 2-3",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/117843874",
+      "retrieved_at": "2026-11-14",
+      "fact": "Start from Hurd Peak summit; first half crux, second half mostly class 2-3."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "South Lake (Bishop Pass trailhead, Treasure Lakes trail)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://gutzjourney.com/trip-report-south-lake-peaks-traverse/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Took the Bishop Pass trailhead then the Treasure Lakes turnoff, South Lake."
+     }
+    ]
+   }
+  ],
+  "note": "gutzjourney page is the full South Lake Peaks traverse; its distance/gain cover the whole traverse and were not used."
+ },
+ "ca_northeast_spur": {
+  "area": "ca_arrow_peak",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "3rd",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114076825/northeast-spur",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP grades Arrow Peak Northeast Spur 3rd, 2000 ft."
+     },
+     {
+      "url": "https://www.calipidder.com/2011/09/arrow-peak-from-bench-lake/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trip report calls the northeast spur class 3."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Bolton Brown, August 1895",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114076825/northeast-spur",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA Bolton Brown August 1895."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 2000,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114076825/northeast-spur",
+      "retrieved_at": "2026-11-14",
+      "fact": "Length 2000 ft."
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "Nearly mile-long ridge seen from Bench Lake; called Northeast Ridge in another guide",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114076825/northeast-spur",
+      "retrieved_at": "2026-11-14",
+      "fact": "Almost mile-long ridge striking from Bench Lake."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Bench Lake",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.calipidder.com/2011/09/arrow-peak-from-bench-lake/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Climbed Arrow Peak from a camp at Bench Lake."
+     }
+    ]
+   }
+  ],
+  "note": ""
+ },
+ "ca_northwest_glacier_to_southeast_ridge": {
+  "area": "ca_banner_peak",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "3rd",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/121774681",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP grades Banner Peak NW Glacier to SE Ridge 3rd, Grade II, snow, 1000 ft."
+     },
+     {
+      "url": "https://www.outboundcalifornia.com/destinations/banner-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Banner Peak is a class-3 climb via the saddle between Banner and Ritter."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 1000,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/121774681",
+      "retrieved_at": "2026-11-14",
+      "fact": "1000 ft listed; snow chute described as 1000 feet."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "From North Glacier Pass around Lake Catherine to a snow chute, up to Banner-Ritter saddle, class 2-3 rock to summit",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/121774681",
+      "retrieved_at": "2026-11-14",
+      "fact": "North Glacier Pass, around Lake Catherine, snow chute to saddle, class 2-3 to summit."
+     },
+     {
+      "url": "https://www.outboundcalifornia.com/destinations/banner-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Class-3 via the Ritter saddle."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Rush Creek to Thousand Island Lake to North Glacier Pass",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/121774681",
+      "retrieved_at": "2026-11-14",
+      "fact": "Approach Rush Creek, Thousand Island Lake, North Glacier Pass."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Loose class 3 rock, snow on the saddle early season, rockfall between parties, afternoon storms on the exposed ridge",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.outboundcalifornia.com/destinations/banner-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Hazards: loose class-3 rock, early-season snow saddle, rockfall between parties, afternoon storms."
+     }
+    ]
+   }
+  ],
+  "note": ""
+ }
+}

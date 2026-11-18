@@ -27,10 +27,21 @@ const provSoon = { background: "transparent", color: c.sub, border: "1px solid "
 const hint = { color: c.sub, fontSize: 12, marginTop: -6, marginBottom: 10 };
 const field = { width: "100%", boxSizing: "border-box", background: "#0d1117", border: "1px solid " + c.border, borderRadius: 10, padding: "11px 13px", color: c.text, fontSize: 15, marginBottom: 10, outline: "none" };
 
+// "Did you mean …@gmail.com?" -- the common misspellings of the big mail domains, and a .con/.cmo ending.
+// Create account asks for the email twice for a reason (below); this catches the typo typed twice.
+const DOMAIN_FIX = { "gmial.com": "gmail.com", "gmal.com": "gmail.com", "gnail.com": "gmail.com", "gmaill.com": "gmail.com", "gamil.com": "gmail.com", "gmail.co": "gmail.com", "gmai.com": "gmail.com", "hotmial.com": "hotmail.com", "hotmal.com": "hotmail.com", "hotmail.co": "hotmail.com", "yaho.com": "yahoo.com", "yahooo.com": "yahoo.com", "yahoo.co": "yahoo.com", "outlok.com": "outlook.com", "outlook.co": "outlook.com", "iclod.com": "icloud.com", "icloud.co": "icloud.com", "icoud.com": "icloud.com" };
+export function emailTypo(e) {
+  const m = /^([^@\s]+)@([^@\s]+)$/.exec(String(e || "").trim().toLowerCase());
+  if (!m) return "";
+  let d = DOMAIN_FIX[m[2]] || "";
+  if (!d && /\.(con|cmo|ocm|vom)$/.test(m[2])) d = m[2].replace(/\.(con|cmo|ocm|vom)$/, ".com");
+  return d && d !== m[2] ? m[1] + "@" + d : "";
+}
+
 const TITLE = { in: "Welcome back", up: "Create your account", forgot: "Reset your password", reset: "Choose a new password" };
 const BLURB = {
   in: "Sign in — you'll stay logged in on this device.",
-  up: "Set up an account to log climbs and contribute beta.",
+  up: "Find climbing partners, log your climbs and share conditions.",
   forgot: "We'll email you a link that opens ClimbMatch and lets you set a new password.",
   reset: "You opened a reset link, so you're signed in — pick a new password now and it will be the one that works next time.",
 };
@@ -46,7 +57,7 @@ const ACTION = { in: "Sign in", up: "Create account", forgot: "Email me a reset 
 // thing a visitor meets, and browsing the app without an account stays one tap away.
 // `arrival` ("climb" | "list") names what a shared link the visitor came in on will open.
 export default function LoginScreen({ onClose, onAuthed, recovery, onRecovered, onLegal, onGuest, arrival }) {
-  const [mode, setMode] = useState(recovery ? "reset" : "in"); // "in" | "up" | "forgot" | "reset"
+  const [mode, setMode] = useState(recovery ? "reset" : (recallEmail() ? "in" : "up")); // a NEW visitor lands on Create account (owner, 2026-11-14); a returning one, whose email this device remembers, on Sign in // "in" | "up" | "forgot" | "reset"
   // AS THE APP'S FIRST SCREEN (no onClose: the real gate, or LOGIN_FIRST since #2688) the sign-in
   // form fills the screen under a branded header -- the mark, the wordmark and what the app is for --
   // the way Strava, AllTrails and Gora open, instead of a bare modal over a black page. It stays the
@@ -56,11 +67,13 @@ export default function LoginScreen({ onClose, onAuthed, recovery, onRecovered, 
   const [email, setEmail] = useState(recallEmail());
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
-  // Create account asks for the email and the password TWICE (owner, 2026-10-23): a typo in either
-  // makes an account nobody can sign in to, and with autoconfirm on no mail arrives to catch it.
+  // Create account asks for the EMAIL twice (owner, 2026-10-23): a typo makes an account nobody can
+  // sign in to, and with autoconfirm on no mail arrives to catch it. The PASSWORD is asked once since
+  // 2026-11-14, with a show/hide eye instead (owner: "make it look professional"): a mistyped password
+  // is recovered by "Forgot password?" through the right email, which a mistyped email is not.
   // Paste is allowed in both -- blocking it fails WCAG 3.3.8 and pushes people to weaker passwords.
   const [email2, setEmail2] = useState("");
-  const [password2, setPassword2] = useState("");
+  const [showPw, setShowPw] = useState(false);
   const [err, setErr] = useState("");
   const [info, setInfo] = useState("");
   const [busy, setBusy] = useState(false);
@@ -85,6 +98,11 @@ export default function LoginScreen({ onClose, onAuthed, recovery, onRecovered, 
   // Known to be off (the settings read answered and left it out): the button SAYS "coming soon"
   // on its face, so it never poses as a sign-in that works. Unknown (still loading) says nothing.
   const appleSoon = !!providers && !appleOn, googleSoon = !!providers && !googleOn;
+  // NEITHER ON = NEITHER SHOWN (owner, 2026-11-14, reversing "both always render" of 2026-10-23): two
+  // "coming soon" buttons were the first thing a new climber saw, above the form that works. Once one
+  // provider is switched on BOTH render again, Apple first and equal in size (App Store 4.8), and the
+  // other still says "coming soon".
+  const providersLive = appleOn || googleOn;
   const sameEmail = email.trim().toLowerCase() === email2.trim().toLowerCase();
 
   // Deliberately the same message whether or not the address has an account. Saying "no account
@@ -123,7 +141,6 @@ export default function LoginScreen({ onClose, onAuthed, recovery, onRecovered, 
     if (mode === "up" && !agreed) { setErr("Agree to the Terms of Service and Community Guidelines to create an account."); return; }
     if (mode === "up" && !sameEmail) { setErr("The two email addresses don't match."); return; }
     if (mode === "up" && password.length < MIN_PASSWORD) { setErr(`Use at least ${MIN_PASSWORD} characters.`); return; }
-    if (mode === "up" && password !== password2) { setErr("The two passwords don't match."); return; }
     if (captchaMissing()) return;
     setErr(""); setInfo(""); setBusy(true);
     const token = needsCaptcha ? captcha : undefined;
@@ -237,7 +254,7 @@ export default function LoginScreen({ onClose, onAuthed, recovery, onRecovered, 
             other third-party login, with equal prominence. Both always render (owner, 2026-10-23);
             one the project has not switched on yet reads "coming soon" on tap (goProvider).
             aria-label so the decorative logo does not become part of the announced name. */}
-        {(mode === "in" || mode === "up") && (
+        {(mode === "in" || mode === "up") && providersLive && (
           <div>
             <button onClick={() => goProvider("apple")} disabled={busy} aria-label={(mode === "up" ? "Sign up with Apple" : "Sign in with Apple") + (appleSoon ? ", coming soon" : "")} style={{ ...provBtn, ...(appleSoon ? provSoon : { background: "#fff", color: "#000" }), opacity: busy ? 0.7 : 1 }}>
               <svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M16.37 12.6c-.03-2.64 2.16-3.91 2.26-3.97-1.23-1.8-3.15-2.05-3.83-2.08-1.63-.17-3.18.96-4.01.96-.83 0-2.1-.94-3.46-.91-1.78.03-3.42 1.03-4.34 2.63-1.85 3.21-.47 7.96 1.33 10.56.88 1.27 1.93 2.7 3.3 2.65 1.33-.05 1.83-.86 3.43-.86 1.6 0 2.05.86 3.45.83 1.43-.02 2.33-1.29 3.2-2.57 1.01-1.47 1.43-2.9 1.45-2.97-.03-.01-2.78-1.07-2.81-4.23zM13.74 4.83c.73-.89 1.22-2.12 1.09-3.35-1.05.04-2.32.7-3.07 1.58-.67.78-1.27 2.03-1.11 3.24 1.17.09 2.37-.6 3.09-1.47z" /></svg>
@@ -266,17 +283,19 @@ export default function LoginScreen({ onClose, onAuthed, recovery, onRecovered, 
         {mode !== "reset" && (
           <input value={email} onChange={(e) => setEmail(e.target.value)} onKeyDown={(e) => e.key === "Enter" && go()} aria-label="Email" placeholder="Email" type="email" autoComplete="email" style={field} />
         )}
+        {(mode === "in" || mode === "up") && emailTypo(email) && (
+          <div style={hint}>Did you mean <button type="button" onClick={() => setEmail(emailTypo(email))} style={{ background: "none", border: "none", padding: 0, color: c.blue, fontWeight: 700, fontSize: 12, cursor: "pointer", textDecoration: "underline" }}>{emailTypo(email)}</button>?</div>
+        )}
         {mode === "up" && (
           <input value={email2} onChange={(e) => setEmail2(e.target.value)} onKeyDown={(e) => e.key === "Enter" && go()} aria-label="Confirm email" placeholder="Confirm email" type="email" autoComplete="email" aria-invalid={email2 && !sameEmail ? "true" : undefined} style={field} />
         )}
         {mode === "up" && email2 && !sameEmail && <div style={hint}>The emails don't match yet.</div>}
         {mode !== "forgot" && !done && (
-          <input value={password} onChange={(e) => setPassword(e.target.value)} onKeyDown={(e) => e.key === "Enter" && go()} aria-label={mode === "reset" ? "New password" : "Password"} placeholder={mode === "reset" ? "New password" : "Password"} type="password" autoComplete={mode === "in" ? "current-password" : "new-password"} style={field} />
+          <div style={{ position: "relative" }}>
+            <input value={password} onChange={(e) => setPassword(e.target.value)} onKeyDown={(e) => e.key === "Enter" && go()} aria-label={mode === "reset" ? "New password" : "Password"} placeholder={mode === "reset" ? "New password" : "Password"} type={showPw ? "text" : "password"} autoComplete={mode === "in" ? "current-password" : "new-password"} style={{ ...field, paddingRight: 52 }} />
+            <button type="button" onClick={() => setShowPw((v) => !v)} aria-label={showPw ? "Hide password" : "Show password"} aria-pressed={showPw} style={{ position: "absolute", right: 4, top: 2, height: 42, minWidth: 44, padding: "0 8px", background: "none", border: "none", color: c.blue, fontSize: 12.5, fontWeight: 700, cursor: "pointer" }}>{showPw ? "Hide" : "Show"}</button>
+          </div>
         )}
-        {mode === "up" && (
-          <input value={password2} onChange={(e) => setPassword2(e.target.value)} onKeyDown={(e) => e.key === "Enter" && go()} aria-label="Confirm password" placeholder="Confirm password" type="password" autoComplete="new-password" aria-invalid={password2 && password2 !== password ? "true" : undefined} style={field} />
-        )}
-        {mode === "up" && password2 && password2 !== password && <div style={hint}>The passwords don't match yet.</div>}
         {mode === "in" && (
           <div style={{ textAlign: "right", marginTop: -4, marginBottom: 12 }}>
             <button onClick={() => { setErr(""); setInfo(""); setPassword(""); setMode("forgot"); }} style={{ background: "none", border: "none", color: c.blue, fontSize: 12.5, fontWeight: 700, cursor: "pointer", ...TEXT_TAP }}>Forgot password?</button>

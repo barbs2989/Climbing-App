@@ -155,6 +155,7 @@ export default function ConditionsScoreCard({route,mtn,onAddAspect}: ConditionsS
      drew eleven narrow tiles; and the best-three-hours mark, a shadow on top of those tiles, made them look taller. */
   const hrLo=Math.min.apply(null,days.map(function(d){return d.hours.length?d.hours[0].hr:24;})),hrHi=Math.max.apply(null,days.map(function(d){return d.hours.length?d.hours[d.hours.length-1].hr:-1;}));
   const hrCol=function(x: {hr: number}){return x.hr-hrLo+1;};
+  const sunTrack=score.bearing!=null&&hrs.length>0,sunHrs=hrs.filter(function(x: ScoreHour){return x.lit;}).length,rainTrack=hrs.some(function(x: ScoreHour){return x.precip>0;});
   const hrGrid={display:"grid",gridTemplateColumns:"repeat("+Math.max(1,hrHi-hrLo+1)+",minmax(0,1fr))",gap:3};
   const selI=hrI!=null&&hrI<hrs.length?hrI:(day.best?day.best.i+1:0);const h=hrs[selI];
   const top=h?h.stars:day.stars;const lbl=starsLabel(top);const lblCol=col(top);
@@ -229,7 +230,19 @@ export default function ConditionsScoreCard({route,mtn,onAddAspect}: ConditionsS
       <div style={{fontSize:10.5,fontWeight:800,color:C.label,letterSpacing:0.5,textTransform:"uppercase",marginBottom:5}}>{dayI===0?"Pick an hour, rest of today ":"Pick an hour "}<span style={{textTransform:"none",letterSpacing:0,fontWeight:500,color:C.textMuted}}>(daylight hours · colour is the overall score)</span></div>
       <div style={hrGrid}>{hrs.map(function(x: ScoreHour,i: number){return <button key={x.time} onClick={function(){setHrI(i);}} aria-pressed={i===selI} aria-label={clockHr(x.hr)+", overall score "+fmt(x.stars)+" stars"+(day.best&&i>=day.best.i&&i<day.best.i+3?", one of the best 3 hours":"")+(x.dryFrac!=null&&x.dryFrac<1?", rock about "+Math.round(x.dryFrac*100)+"% dry":"")+(x.precip>0?", "+uPrecip(x.precip)+" of rain":"")} style={{gridColumn:hrCol(x),boxSizing:"border-box",height:44,padding:0,borderRadius:5,cursor:"pointer",background:col(x.stars),opacity:0.6+(x.stars||0)/5*0.4,border:"2px solid "+(i===selI?C.text:"transparent")}}/>;})}</div>
       {day.best?<div aria-hidden="true" style={Object.assign({},hrGrid,{marginTop:3})}>{hrs.slice(day.best.i,day.best.i+3).map(function(x: ScoreHour){return <div key={x.time} style={{gridColumn:hrCol(x),height:3,borderRadius:2,background:C.green}}/>;})}</div>:null}
-      <div style={Object.assign({},hrGrid,{marginTop:3})}>{hrs.map(function(x: ScoreHour,i: number){const c=hrCol(x);return <div key={x.time} style={{gridColumn:c,fontSize:9.5,color:C.textMuted,textAlign:"center",whiteSpace:"nowrap"}}>{i===0||((c-1)%3===0&&c-hrCol(hrs[0])>=3)?clockHr(x.hr).replace(" ",""):""}{score.bearing!=null?<div aria-hidden="true" style={{fontSize:10,color:x.lit?C.yellow:C.textMuted}}>{x.lit?"●":"▪"}</div>:null}{hrs.some(function(y: ScoreHour){return y.precip>0;})?<div aria-hidden="true" style={{fontSize:10,color:C.blue,minHeight:13}}>{x.precip>0?"•":""}</div>:null}</div>;})}</div>
+      {/* UNDER THE TILES (owner, 2026-11-14: "this part looks weird"): one cell used to stack the clock, a sun mark and a
+         rain mark, and the clock only prints every third hour, so the marks under an unlabelled hour sat a line higher
+         than the rest and a row of grey squares (shade) zig-zagged under the tiles with no key nearby. Now each thing is
+         its own track on the same clock grid: the clock, a yellow bar under the hours with sun on the wall (shade is
+         simply no bar), a blue dot under the hours with rain, and one key line naming the tracks that are drawn. */}
+      <div aria-hidden="true" style={Object.assign({},hrGrid,{marginTop:3})}>{hrs.map(function(x: ScoreHour,i: number){const c=hrCol(x);return <div key={x.time} style={{gridColumn:c,fontSize:9.5,lineHeight:"13px",height:13,color:C.textMuted,textAlign:"center",whiteSpace:"nowrap"}}>{i===0||((c-1)%3===0&&c-hrCol(hrs[0])>=3)?clockHr(x.hr).replace(" ",""):""}</div>;})}</div>
+      {sunTrack?<div aria-hidden="true" data-sun-track="1" style={Object.assign({},hrGrid,{marginTop:4})}>{hrs.map(function(x: ScoreHour){return <div key={x.time} style={{gridColumn:hrCol(x),height:4,borderRadius:2,background:x.lit?C.yellow:"transparent"}}/>;})}</div>:null}
+      {rainTrack?<div aria-hidden="true" data-rain-track="1" style={Object.assign({},hrGrid,{marginTop:3})}>{hrs.map(function(x: ScoreHour){return <div key={x.time} style={{gridColumn:hrCol(x),height:8,display:"flex",justifyContent:"center",alignItems:"center"}}>{x.precip>0?<span style={{width:6,height:6,borderRadius:3,background:C.blue}}/>:null}</div>;})}</div>:null}
+      {day.best||sunTrack||rainTrack?<div data-hour-key="1" style={{display:"flex",flexWrap:"wrap",columnGap:12,rowGap:2,marginTop:6,fontSize:11,color:C.textMuted}}>
+        {day.best?<span style={{display:"inline-flex",alignItems:"center",gap:5}}><span aria-hidden="true" style={{width:14,height:3,borderRadius:2,background:C.green}}/>Best 3 hours</span>:null}
+        {sunTrack?<span style={{display:"inline-flex",alignItems:"center",gap:5}}><span aria-hidden="true" style={{width:14,height:4,borderRadius:2,background:sunHrs?C.yellow:C.borderHi}}/>{sunHrs?"Sun on the wall":"No sun on the wall"}</span>:null}
+        {rainTrack?<span style={{display:"inline-flex",alignItems:"center",gap:5}}><span aria-hidden="true" style={{width:6,height:6,borderRadius:3,background:C.blue}}/>Rain</span>:null}
+      </div>:null}
     </div>:null}
     {h?<div>
       <div style={{fontSize:10.5,fontWeight:800,color:C.label,letterSpacing:0.5,textTransform:"uppercase",marginBottom:6}}>{"Why "+clockHr(h.hr)+" scores "+fmt(h.stars)+" · "+h.pts+" of "+h.max+" points"}</div>
@@ -282,7 +295,7 @@ export default function ConditionsScoreCard({route,mtn,onAddAspect}: ConditionsS
       {score.bearing!=null?condRow("Wall faces",DIR8[Math.round(score.bearing/45)%8]):null}
       {score.bearing!=null&&day.wallSun?condRow("Sun on the wall",day.wallSun.on!=null?"Hits the wall at "+clockAt(score,day.wallSun.on)+" · leaves at "+clockAt(score,day.wallSun.off):"No direct sun on this wall today",day.wallSun.on!=null?C.yellow:C.textSub):null}
       {score.bearing==null?condRow("Sun on the wall",(score.aspectVaries?"The wall faces several ways, so when the sun reaches it isn’t worked out, and sun isn’t scored":"No wall direction on file for this climb, so when the sun reaches it isn’t worked out")+". The shade map below shows where the terrain casts shadow.",C.textMuted):null}
-      {score.bearing!=null?<div style={condNote}>Times assume a clear sky; a yellow dot under the hours above marks the ones forecast to be in sun. Terrain and trees that shade the wall aren’t known.</div>:null}
+      {score.bearing!=null?<div style={condNote}>Times assume a clear sky; a yellow bar under the hours above marks the ones forecast to be in sun. Terrain and trees that shade the wall aren’t known.</div>:null}
     </div>)}
     {sec("Shade map",<div style={condBox}>{shadeAt!=null?<ShadeMap lat={lat} lng={lng} rise={day.sun.rise} set={day.sun.set} at0={shadeAt} dayKey={day.date} clock={function(u){return clockAt(score,u);}} C={C}/>:<div style={{fontSize:12.5,color:C.textSub,lineHeight:1.5}}>The forecast has no sunrise and sunset for this day, so the shade can’t be drawn.</div>}</div>)}
     {sec("Air quality",<div style={condBox}>

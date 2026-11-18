@@ -214,7 +214,9 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
    It carries `SLOPE_CREDIT` while it is on: Canada's and Mexico's elevation licences make a credit a condition of use (the
    credit-only-where-required rule). `BaseLayerToggle` takes `slope`/`slopeOn`/`setSlopeOn`: a *Slope* button (`aria-pressed`) under
    Full screen, with a colour key under it when on, stacked in one column with the Snow stepper. Only the route map (`GPXMap`) opts in. `on3d` ends the row with a **3D** button (route map and area map); a five-button row says "Sat" below a 285px row and tightens its padding below 215px (`index.html`, `.cm-lyr-3d`).
-7. Location dot: `useFollowMe(mapRef, { C, zoom, onFix })` watches geolocation, `acceptFix` discards stale/worse fixes (`FIX_STALE_MS`, `FIX_LOST_MS`),
+7. Location dot: `useFollowMe(mapRef, { C, zoom, onFix })` watches geolocation; `lib/fixFilter.js` decides what it shows: `acceptFix` discards stale/worse/older fixes (`FIX_STALE_MS`, `FIX_LOST_MS`),
+   `smoothFix` places the dot on a running estimate (Kalman-style, drifts at `FIX_MOVE_MPS`, resets on a jump no walk explains) so it stops hopping while you stand still,
+   and a first fix looser than `FIX_GOOD_M` (100 m) frames its ring instead of zooming in; the map zooms in when a GPS-grade fix lands. The ring and "±" stay the phone's own figure (`check:fix-filter`).
    `fmtFixAcc`/`locateLabel` word the status. The dot is an HTML marker lifted above all other markers; the accuracy ring stays under them (#2411).
    `NearMePanel` re-centres only on the first fix.
 8. Place search: `searchPlaces(q, bounds)` calls Nominatim with `countrycodes=us,ca&limit=5&dedupe=1`, `postalcode=` for a 5-digit zip else `q=`, and a `viewbox` from the map bounds.
@@ -272,7 +274,7 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
   (`contributions_area_field_ck`, 0304); `apply_agreed_area_field()` runs AFTER INSERT, writes the area column when the field was empty or
   3 distinct climbers agree, and marks the rows `approved` (through the `catalog.applier` GUC in `guard_contribution_status`), which is what
   makes `leaderboard()` (0235) count them.
-- RPCs: `area_climb_stats` (0304; `{ total, graded, by_disc, by_grade }` over the subtree, one grouped scan), `routes_in_subtree`, `routes_in_subtree_count`, `areas_in_subtree`, `search_names_fuzzy`; SQL `search_norm()` (0190, 0200, 0201).
+- RPCs: `area_climb_stats` (0304; `{ total, graded, by_disc, by_grade }` over the subtree). Since 0421 it and `area_children_grade_counts` read pre-counted tables instead of routes: `area_route_rollup` (each area's OWN routes by discipline × grade system × whole grade, kept by `trg_routes_area_rollup`) and, since 0440/0447, `area_subtree_rollup` (the routes strictly BELOW each area, by path, kept by `trg_area_route_rollup_up` and `trg_areas_path_moves_rollup`). A chart is one area's rows from each, so a state answers from a cold cache too (California timed out at 3.2 s cold before 0447; `area_subtree_rebuild(area[, only_root])` recomputes a subtree's stored rows). Same output as 0304/0402. Also `routes_in_subtree`, `routes_in_subtree_count`, `areas_in_subtree`, `search_names_fuzzy`; SQL `search_norm()` (0190, 0200, 0201).
 - `catalog_directory` view and `catalog_find_area` / `catalog_find_route` (0214) - a browse-outline and duplicate lookup used by data work, not by this UI.
 - External: OpenStreetMap, ArcGIS World_Imagery and OpenTopoMap tiles (`MAP_TILE_URLS`); NASA GIBS for snow layers; USGS basemap tiles for offline (`OFFLINE_TILE_URLS`);
   Nominatim for place search (no key). Tile credits live in `TILE_CREDIT`.
