@@ -60,7 +60,7 @@ ok("publishedLegClimb reads the two stored columns", JSON.stringify(A.publishedL
 const card = text(A.render("up", pub));
 ok("TRAILHEAD TO SUMMIT prints the published Loss", /TRAILHEAD TO SUMMIT[^]*↓ 1,600 ft Loss[^]*SUMMIT TO TRAILHEAD/.test(card), card);
 ok("SUMMIT TO TRAILHEAD prints the published Regain", /SUMMIT TO TRAILHEAD[^]*↑ 1,600 ft Regain/.test(card), card);
-ok("the card says what Loss and Regain mean", /Loss is the downhill on the way up, regain the uphill on the way back/.test(card), card);
+ok("the card carries no Loss/Regain explainer (owner: too much context text, 2026-11-18)", !/Loss is the downhill|Regain is the uphill/.test(card), card);
 ok("the card never claims to have measured them", !/measured/.test(card), card);
 const strip = text(A.render("down", pub));
 ok("the DESCENT strip carries the same Regain", /↑ 1,600 ft Regain/.test(strip), strip);
