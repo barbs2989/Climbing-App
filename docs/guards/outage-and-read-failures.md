@@ -1407,6 +1407,10 @@ that they had none — on the one screen whose whole subject is who you climb wi
     Menu › Listed areas across a deploy drew *This screen hit a bug* with that message, and it stayed. The boundary
     now reads main.jsx's marker (`swallowedChunk`): a *default* error within 30 s of it is the deploy — the
     download card, and not filed to `app_errors`. The check asserts the key and all three engines' wording.
+    The same day a climb tapped across the NEXT deploy drew `SectionErrorBoundary`'s *Something went wrong loading
+    this section*, whose Try Again cannot help (React.lazy keeps the failed import). Both boundaries now ask one
+    helper, `swallowedChunk` in `lib/chunkReload.js`; the section shows *ClimbMatch was just updated* with Reload.
+    The check asserts the key lives there and that BOTH boundaries import and call it.
   - **A failed PREFETCH also fires `vite:preloadError`** and so reloads. That is intended for the
     deploy case; `main.jsx`'s idle prefetch skips offline and Save-Data so it cannot reload a
     climber at a trailhead.
