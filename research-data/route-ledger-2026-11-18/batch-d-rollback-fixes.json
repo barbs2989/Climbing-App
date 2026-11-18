@@ -1,0 +1,568 @@
+{
+ "note": "Values replaced by the owner-approved batch-B fixes, 2026-11-18",
+ "rollback": [
+  {
+   "table": "routes",
+   "id": "wa_burgundy_spire_north_face",
+   "before": {
+    "pitches": 7
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_cutthroat_south_buttress",
+   "before": {
+    "gain_ft": 2500
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_south_ridge_3",
+   "before": {
+    "pitches": 0
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_south_ridge_3",
+   "before": {
+    "gain_ft": 3971
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_mount_logan_fremont_glacier",
+   "before": {
+    "pitches": 0
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_little_annapurna_south_slopes",
+   "before": {
+    "gain_ft": 5018
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_argonaut_peak_east_ridge",
+   "before": {
+    "dist_km": 8
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_argonaut_peak_east_ridge",
+   "before": {
+    "gain_ft": 4300
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_mount_rainier_fuhrer_finger",
+   "before": {
+    "pitches": 0
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_mount_rainier_fuhrer_finger",
+   "before": {
+    "high_point_ft": 14406
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_mount_rainier_ptarmigan_ridge",
+   "before": {
+    "gpx": [
+     [
+      46.89601,
+      -121.763797
+     ],
+     [
+      46.896245,
+      -121.765771
+     ],
+     [
+      46.896098,
+      -121.769204
+     ],
+     [
+      46.896714,
+      -121.771178
+     ],
+     [
+      46.89648,
+      -121.774697
+     ],
+     [
+      46.896157,
+      -121.776328
+     ],
+     [
+      46.895864,
+      -121.777873
+     ],
+     [
+      46.895512,
+      -121.778946
+     ],
+     [
+      46.896861,
+      -121.780105
+     ],
+     [
+      46.897352,
+      -121.780963
+     ],
+     [
+      46.896978,
+      -121.781778
+     ],
+     [
+      46.89656,
+      -121.782926
+     ],
+     [
+      46.894984,
+      -121.783581
+     ],
+     [
+      46.893371,
+      -121.78298
+     ],
+     [
+      46.890805,
+      -121.784182
+     ],
+     [
+      46.889793,
+      -121.785255
+     ],
+     [
+      46.889646,
+      -121.786156
+     ],
+     [
+      46.88906,
+      -121.786928
+     ],
+     [
+      46.888737,
+      -121.787701
+     ],
+     [
+      46.888503,
+      -121.788259
+     ],
+     [
+      46.887769,
+      -121.788988
+     ],
+     [
+      46.887095,
+      -121.789203
+     ],
+     [
+      46.886479,
+      -121.789031
+     ],
+     [
+      46.886068,
+      -121.788516
+     ],
+     [
+      46.885716,
+      -121.788001
+     ],
+     [
+      46.885188,
+      -121.787272
+     ],
+     [
+      46.884572,
+      -121.787315
+     ],
+     [
+      46.883956,
+      -121.786692
+     ],
+     [
+      46.883604,
+      -121.785984
+     ],
+     [
+      46.88312,
+      -121.786027
+     ],
+     [
+      46.882827,
+      -121.785555
+     ],
+     [
+      46.882343,
+      -121.785845
+     ],
+     [
+      46.88202,
+      -121.785855
+     ],
+     [
+      46.881514,
+      -121.78577
+     ],
+     [
+      46.881206,
+      -121.784697
+     ],
+     [
+      46.880942,
+      -121.783645
+     ],
+     [
+      46.880583,
+      -121.78298
+     ],
+     [
+      46.880114,
+      -121.782723
+     ],
+     [
+      46.879586,
+      -121.782465
+     ],
+     [
+      46.878882,
+      -121.782208
+     ],
+     [
+      46.878442,
+      -121.781993
+     ],
+     [
+      46.877898,
+      -121.782471
+     ],
+     [
+      46.877524,
+      -121.782417
+     ],
+     [
+      46.877062,
+      -121.783383
+     ],
+     [
+      46.876636,
+      -121.785035
+     ],
+     [
+      46.876394,
+      -121.786559
+     ],
+     [
+      46.876108,
+      -121.787878
+     ],
+     [
+      46.87591,
+      -121.788533
+     ],
+     [
+      46.875565,
+      -121.788479
+     ],
+     [
+      46.875323,
+      -121.788146
+     ],
+     [
+      46.874913,
+      -121.787632
+     ],
+     [
+      46.874641,
+      -121.787138
+     ],
+     [
+      46.874157,
+      -121.787117
+     ],
+     [
+      46.873996,
+      -121.785872
+     ],
+     [
+      46.873739,
+      -121.78555
+     ],
+     [
+      46.873563,
+      -121.785314
+     ],
+     [
+      46.873453,
+      -121.784509
+     ],
+     [
+      46.873145,
+      -121.784509
+     ],
+     [
+      46.872808,
+      -121.784563
+     ],
+     [
+      46.865678,
+      -121.782643
+     ],
+     [
+      46.864842,
+      -121.781784
+     ],
+     [
+      46.864259,
+      -121.780111
+     ],
+     [
+      46.864369,
+      -121.778989
+     ],
+     [
+      46.863936,
+      -121.777954
+     ],
+     [
+      46.864116,
+      -121.777042
+     ],
+     [
+      46.863969,
+      -121.776602
+     ],
+     [
+      46.86383,
+      -121.776452
+     ],
+     [
+      46.863566,
+      -121.775894
+     ],
+     [
+      46.863536,
+      -121.77525
+     ]
+    ]
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_mount_adams_adams_glacier",
+   "before": {
+    "gain_ft": 5150
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_mount_adams_adams_glacier",
+   "before": {
+    "permit": "Mt. Adams Climbing Pass (Cascade Volcano Pass) required above 7,000 ft May 1-Sep 30, sold per trip on Recreation.gov; free self-issue wilderness permit at the trailhead otherwise. Pack out human waste."
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_mount_adams_adams_glacier",
+   "before": {
+    "gpx": [
+     [
+      46.2885,
+      -121.5525
+     ],
+     [
+      46.265,
+      -121.535
+     ],
+     [
+      46.2024,
+      -121.4909
+     ]
+    ]
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_mount_baker_coleman_headwall",
+   "before": {
+    "commitment": "II-III"
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_mount_baker_coleman_headwall",
+   "before": {
+    "gpx": [
+     [
+      48.80201,
+      -121.89597
+     ],
+     [
+      48.7893,
+      -121.86777
+     ],
+     [
+      48.7792,
+      -121.8312
+     ],
+     [
+      48.776797,
+      -121.814467
+     ]
+    ]
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_mount_baker_park_glacier_headwall",
+   "before": {
+    "dist_km": 8
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_mount_baker_park_glacier_headwall",
+   "before": {
+    "gpx": [
+     [
+      48.80927,
+      -121.77145
+     ],
+     [
+      48.805508,
+      -121.7802
+     ],
+     [
+      48.804916,
+      -121.78449
+     ],
+     [
+      48.80243,
+      -121.786896
+     ],
+     [
+      48.79765,
+      -121.79024
+     ],
+     [
+      48.795105,
+      -121.79839
+     ],
+     [
+      48.789906,
+      -121.80295
+     ],
+     [
+      48.78671,
+      -121.8078
+     ],
+     [
+      48.784557,
+      -121.80936
+     ],
+     [
+      48.782066,
+      -121.809845
+     ],
+     [
+      48.78087,
+      -121.81113
+     ],
+     [
+      48.777985,
+      -121.81196
+     ],
+     [
+      48.77695,
+      -121.81531
+     ]
+    ]
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_snow_creek_wall_satellite",
+   "before": {
+    "disciplines": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_white_slabs",
+   "before": {
+    "pitches": 0
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_white_slabs",
+   "before": {
+    "commitment": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_white_slabs",
+   "before": {
+    "disciplines": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_snow_creek_wall_galaxy",
+   "before": {
+    "disciplines": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_snow_creek_wall_remorse",
+   "before": {
+    "gear": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_hyperspace",
+   "before": {
+    "pitches": 0
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_hyperspace",
+   "before": {
+    "alpine_grade": "IV"
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_hyperspace",
+   "before": {
+    "commitment": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_hyperspace",
+   "before": {
+    "disciplines": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_cutthroat_south_buttress",
+   "before": {
+    "high_point_ft": 8066
+   }
+  }
+ ]
+}

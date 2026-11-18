@@ -98,6 +98,12 @@ the last two rows. Research effort goes to the first three groups.
 - **Summit elevation = the published official figure** (land manager / survey, e.g. NPS
   14,410 ft for Rainier). The USGS elevation model is the fallback only. The USGS
   place-names bulk file (`DomesticNames_<ST>_Text.zip`) has coordinates but no elevations.
+  With no land-manager figure, the **USGS map figure** is official, NOT a LiDAR survey figure
+  (owner, 2026-11-18: Cutthroat 8,050 map vs 8,066 LiDAR → 8,050).
+- **Cheap impossibility checks before anything else:** a stored `gain_ft` below (summit − trailhead
+  elevation) is impossible; a one-way `dist_km` shorter than the straight line from trailhead to
+  summit is impossible; a value ≈ 2× the route's own summit-pin `distMi` is a round trip. Batch D
+  found gains below the net climb on 5 of 20 routes.
 - **Gain may be measured:** official summit figure − USGS elevation model at the trailhead
   parking point (Rainier: 14,410 − 5,410 = 9,000 ft), and agrees with a published figure.
 
