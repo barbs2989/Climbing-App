@@ -174,7 +174,7 @@ empty field fill at once and two agreeing climbers change one; the owner withdre
   — and a non-rack item (helmet, crampons) goes to Route-specific essentials; crag types are offered
   only rack items, since a crag page has no GEAR & ESSENTIALS card. The **Crux** box asks for a crux
   *grade*: `routes.crux` prints in a stat tile, and it used to ask for a sentence.
-  `check:add-route-fields` §3b evaluates the edit sheet's `DROP` per type and fails on any fact the add
+  `check:add-route-fields` §3b evaluates the edit sheet's rule (`lib/fieldScope.js`, which replaced its inline `DROP` on 2026-11-18) per type and fails on any fact the add
   form does not ask, unless `NOT_AT_CREATION` / `NOT_FOR` names it with a reason (the multi-part
   builders — waypoints, approach variants, rappel table, rescue card… — are added on the live route).
 
