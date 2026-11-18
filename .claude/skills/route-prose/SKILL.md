@@ -15,8 +15,8 @@ description: Write ClimbMatch route text (overview, approach, descent, pitch not
 2. A **separate writer agent** receives only that fact list — never the source pages, never
    their sentences. It cannot copy what it never read.
 3. Every sentence must trace to a fact in the list. A sentence with no fact behind it is cut.
-   Unlocked facts may be written only if the field is allowed to show unconfirmed data; a
-   paragraph **locks when every fact in it is locked**.
+   Unlocked facts may be written only if the field is allowed to show unconfirmed data. A
+   paragraph **never locks** (owner, 2026-11-18) — it stays open to rewording and correction.
 4. Every number in the text must equal a ledger fact (miles, gain, pitches, grades, times).
 
 ## Voice: direct guidebook
