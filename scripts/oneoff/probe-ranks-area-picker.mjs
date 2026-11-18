@@ -8,6 +8,23 @@ import path from "node:path";
 import { createFixture, sessionForStorage, STORAGE_KEY } from "../lib/ui-fixture.mjs";
 import { assertQuietBox } from "../lib/quiet-box.mjs";
 import { SUPABASE_URL, anonKey } from "../lib/supabase-env.mjs";
+import fs from "node:fs";
+import { createRequire } from "node:module";
+const AXE = fs.readFileSync(createRequire(import.meta.url).resolve("axe-core/axe.min.js"), "utf8");
+// check:axe's gate (WCAG 2.2 A/AA) plus label-in-name (2.5.3), run on the picker's own states, which no walk reaches.
+async function axeScan(page, where) {
+  if (!(await page.evaluate(() => !!window.axe))) await page.addScriptTag({ content: AXE });
+  const v = await page.evaluate(async () => {
+    const a = await window.axe.run(document, { runOnly: { type: "tag", values: ["wcag2a", "wcag2aa", "wcag21a", "wcag21aa", "wcag22aa"] }, resultTypes: ["violations"] });
+    const b = await window.axe.run(document, { runOnly: { type: "rule", values: ["label-content-name-mismatch"] }, resultTypes: ["violations"] });
+    // nested-interactive on the LEADERBOARD ROWS (a role=button row holding the points + report buttons) predates
+    // this picker and is reported separately; this probe gates the picker's own controls.
+    const lbRow = (n) => { const el = document.querySelector(n.target[0]); return !!(el && /^#\d+, /.test(el.getAttribute("aria-label") || "")); };
+    for (const x of [...a.violations, ...b.violations]) x.nodes = x.nodes.filter((n) => !(x.id === "nested-interactive" && lbRow(n)));
+    return [...a.violations, ...b.violations].map((x) => ({ id: x.id, nodes: x.nodes.filter((n) => !/partially obscured/.test(n.failureSummary || "")).map((n) => n.target.join(" ") + " [" + ((document.querySelector(n.target[0])||{}).getAttribute?.("aria-label")||"").slice(0,70) + "] — " + (n.failureSummary || "").split("\n").slice(1).join(" ").trim().slice(0, 140)) })).filter((x) => x.nodes.length);
+  });
+  ok(v.length === 0, "axe: no WCAG A/AA or label-in-name violation " + where + (v.length ? "\n         " + v.map((x) => x.id + ": " + x.nodes.slice(0, 3).join(" | ")).join("\n         ") : ""));
+}
 assertQuietBox("probe-ranks-area-picker.mjs");
 
 const URL = process.argv[2] || "http://localhost:5173/Climbing-App/";
@@ -53,11 +70,13 @@ try {
   }
   await page.waitForTimeout(800);
   await shot("2a-open");
+  await axeScan(page, "with the picker open");
   await box.fill("index");
   const hit = page.locator('[aria-label^="Index"]').first();
   await hit.waitFor({ timeout: 30000 });
   await shot("2-search");
-  const hitName = (await hit.getAttribute("aria-label")).split(",")[0];
+  await axeScan(page, "with search results showing");
+  const hitName = (await hit.getAttribute("aria-label")).split(" · ")[0];
   await hit.click();
   await page.waitForFunction((n) => document.querySelector('[aria-current="location"]')?.textContent === n, hitName, { timeout: 30000 });
   ok(true, "picking \"" + hitName + "\" ranks it");
@@ -76,13 +95,14 @@ try {
   await more.waitFor({ timeout: 30000 });
   const n = +((await more.textContent()).match(/\d+/)[0]);
   await more.click();
-  const rows = await page.evaluate(() => [...document.querySelectorAll("button[aria-label]")].filter((b) => /^[^,]+, [\d,]+ climbs?$/.test(b.getAttribute("aria-label"))).length);
+  const rows = await page.evaluate(() => [...document.querySelectorAll("button[aria-label]")].filter((b) => /^.+ [\d,]+ climbs?$/.test(b.getAttribute("aria-label"))).length);
   ok(rows === n, "Show all lists every state: " + rows + " of " + n);
   ok(n > 24, "more than the old cap of 24 is reachable (" + n + ")");
   await shot("4-show-all");
+  await axeScan(page, "with every state listed");
   const sw = await page.evaluate(() => document.documentElement.scrollWidth);
   ok(sw <= 390, "nothing runs off a 390px phone (scrollWidth " + sw + ")");
-  await page.locator('button[aria-label^="Washington, "]').click();
+  await page.locator('button[aria-label^="Washington "]').click();
   await page.waitForFunction(() => document.querySelector('[aria-current="location"]')?.textContent === "Washington", null, { timeout: 30000 });
   await page.getByRole("button", { name: /^Show all \d+$/ }).or(page.getByText(/^Inside Washington$/i)).first().waitFor({ timeout: 30000 });
   await page.waitForTimeout(1500);
@@ -93,6 +113,9 @@ try {
   await page.locator('button[aria-label="Up to All countries"]').click();
   await page.waitForFunction(() => document.querySelector('[aria-current="location"]')?.textContent === "All countries", null, { timeout: 30000 });
   ok(await page.getByRole("button", { name: "Change the area these rankings cover" }).count() === 0 && await box.count() === 1, "All countries opens with the picker shown and no Change");
+  const usRow = page.locator('button[aria-label^="United States "]');
+  await usRow.waitFor({ timeout: 30000 }).catch(() => {});
+  ok(await usRow.count() === 1 && await page.getByText("Loading areas…").count() === 0, "All countries finishes loading and lists the countries (United States among them)");
   await shot("5-all-countries");
   if (Array.isArray(insRows) && insRows.length === 1) {
     await mineChip.click();

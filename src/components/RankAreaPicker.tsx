@@ -67,7 +67,7 @@ export default function RankAreaPicker({real,uid,cur,chain,kids,kidsLoading,kids
         :kidsLoading?<LoadingRows C={C} label="Loading areas…" style={{padding:"8px 12px"}}/>
         :sorted.length?<div>
           <div style={{...head,margin:0,padding:"9px 12px 5px",borderTop:parent?"1px solid "+C.borderLight:"none"}}>{"Inside "+(cur.name||"this area")}</div>
-          {list.map(a=><button key={a.id} onClick={()=>onPick(a.id)} aria-label={a.name+", "+(a.n||0).toLocaleString()+((a.n||0)===1?" climb":" climbs")} style={row}><span style={{flex:1,minWidth:0,overflowWrap:"anywhere"}}>{a.name}</span><span style={{fontSize:12,fontWeight:500,color:C.textMuted,fontVariantNumeric:"tabular-nums"}}>{(a.n||0).toLocaleString()}</span><span aria-hidden="true" style={{color:C.textMuted}}>›</span></button>)}
+          {list.map(a=><button key={a.id} onClick={()=>onPick(a.id)} aria-label={/* the visible text, word for word, then the unit (WCAG 2.5.3: the name contains what it shows) */a.name+" "+(a.n||0).toLocaleString()+((a.n||0)===1?" climb":" climbs")} style={row}><span style={{flex:1,minWidth:0,overflowWrap:"anywhere"}}>{a.name}</span>{" "}<span style={{fontSize:12,fontWeight:500,color:C.textMuted,fontVariantNumeric:"tabular-nums"}}>{(a.n||0).toLocaleString()}</span><span aria-hidden="true" style={{color:C.textMuted}}>›</span></button>)}
           {sorted.length>SHOW?<button onClick={()=>setAllFor(showAll?null:cur.id)} style={{...row,justifyContent:"center",color:C.blue,fontWeight:700}}>{showAll?"Show fewer":"Show all "+sorted.length}</button>:null}
         </div>
         :<div style={{padding:"10px 12px",borderTop:parent?"1px solid "+C.borderLight:"none",fontSize:12,color:C.textMuted}}>{"No smaller areas inside "+(cur.name||"this area")+"."}</div>}

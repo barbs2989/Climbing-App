@@ -14,7 +14,13 @@
   as one-tap chips — then one *Up to <parent>* row and *Inside <area>*, every child that holds climbs as a 44px row
   (name · climb count · ›), 8 first and then *Show all N*; nothing is cut (it used to stop at 24). A failed children
   read says so rather than drawing an area with nothing inside. The level above the countries (*All countries*,
-  which ranks nothing) opens with the picker already shown. Signed out it walks the seed tree, with no search.
+  which ranks nothing) opens with the picker already shown. Signed out it walks the seed tree, with no search. A failed path read names the
+  area *Couldn't load this area's name*, not "this area". Every row's accessible name is its visible text in order
+  (WCAG 2.5.3; axe's `label-content-name-mismatch`), and so are the search hits' and the Crag regular row's —
+  `scripts/oneoff/probe-ranks-area-picker.mjs` runs axe on the open picker, the search results and Show all, which
+  no browser walk reaches.
+- **Known, not fixed here:** each leaderboard row is a `role="button"` holding the points button and the ⚑ Report
+  button — axe `nested-interactive` (WCAG 4.1.2), found by the same probe on 2026-11-18.
 - **Climbing type** (All, Sport, Trad, Top rope, Bouldering, Alpine, Mountaineering, Scrambling, Ice, Mixed, Aid)
   and **Ranking**, grouped Performance · Lists · Reliability · Community. Which boards a type offers is the `ids`
   list in `Leaderboards`: Send points on every graded type (not Mountaineering/Scrambling, whose class grades weigh
