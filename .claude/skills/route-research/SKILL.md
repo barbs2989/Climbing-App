@@ -58,6 +58,19 @@ already `owner` + locked.
 Mountain Project + OpenBeta (OpenBeta was built from MP); any page that quotes or credits
 another; two pages crediting the same guidebook. When unsure, they are not independent.
 
+### Which fields lock (owner, 2026-11-18)
+
+| group | fields | lock |
+|---|---|---|
+| facts that don't change | grade, rock/ice/aid/alpine grade, pitches, length_m, fa, high_point_ft, summit pin, aspect, discipline, commitment, bolts, anchor type | for good, once verified |
+| true today, change with policy | permit, fees, access / land manager, parking pin, emergency numbers | `official-1`, expires 12 months |
+| | **road / gate status** | expires **3 months** (enforced) |
+| paragraphs | approach, descent, overview, beta, pitch_detail, rappel_detail, hazards, rack | when EVERY fact inside is locked |
+| **never lock** (enforced) | crowds, seasonal_guidance, seasonal_hazards, timing, itinerary, pro_tips, watch_out, what_to_bring, partner_requirements, difficulty | never — evidence may be recorded as unconfirmed / disputed |
+
+`NEVER_LOCK` and `EXPIRY_MAX_DAYS` in `scripts/lib/research-ledger.mjs` refuse a batch that breaks
+the last two rows. Research effort goes to the first three groups.
+
 ### Agreement tolerances
 
 | field | agree when |
