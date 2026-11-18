@@ -50,6 +50,9 @@ Beside the usual `set` / `pitch_detail` / … keys, a batch entry may carry:
 - **Never-lock fields** (owner, 2026-11-18; `NEVER_LOCK`): crowds, seasonal_guidance,
   seasonal_hazards, timing, itinerary, pro_tips, watch_out, what_to_bring, partner_requirements,
   difficulty — refused at `locked` / `locked-1src`, allowed as `unconfirmed` / `disputed`.
+  **Paragraphs never lock either** (owner, 2026-11-18): overview, beta, description, approach,
+  descent, descent_text, bail, turnaround, best_season, comms, face, pro_needs, detailed_rack,
+  hazards, known_hazards, pitch_detail, rappel_detail, climbing_route, approach_variants, bivy.
 - **`road` locks expire within 92 days** (`EXPIRY_MAX_DAYS`); a road lock without `expires_at`, or
   one further out, is refused.
 - `enrich:apply` can still only WRITE its allow-listed prose columns; grades, discipline and other
