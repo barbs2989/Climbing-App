@@ -140,6 +140,11 @@ export default function NearMePanel({ center0, areaType, name, onBack, onOpenAre
     return out;
   }, [wlRoutes, nearbyAll]);
   const onList = (n: number) => "★ " + n + " on your list";
+  /* A PIN IS A BUTTON WITH A NAME (check:axe, 2026-11-18, once Home drew this map): Leaflet makes an
+     interactive marker a role=button whose only content is the drawn pin, so a screen reader heard
+     "button" — the curved label is SVG text, and a cluster's number alone says nothing. The name is the
+     tooltip's words, set on the marker's element when it reaches the map (a cluster group re-adds it). */
+  const named = (mk: LeafletAny, label: string) => { mk.on("add", () => { const el = mk.getElement && mk.getElement(); if (el) el.setAttribute("aria-label", label); }); };
   // A single tapped pin opens with its climbs showing; in a tapped CLUSTER each area opens its own.
   const [climbsOpen, setClimbsOpen] = useState<Record<string, boolean>>({});
   useEffect(() => { setClimbsOpen({}); }, [pick]);
@@ -232,6 +237,7 @@ export default function NearMePanel({ center0, areaType, name, onBack, onOpenAre
         const html = wl ? "<div style='border-radius:50%;box-shadow:0 0 0 3px " + C.amber + ",0 0 10px " + C.amber + "aa;'>" + pin + "</div>" : pin;
         const mk = L.marker([a.lat, a.lng], { icon: L.divIcon({ html, className: "", iconSize: [sz, sz], iconAnchor: [sz / 2, sz / 2] }) });
         mk.bindTooltip(a.name + " · " + a.route_count + " climb" + (a.route_count !== 1 ? "s" : "") + (wl ? " · " + onList(wl) : ""), { direction: "top" });
+        named(mk, a.name + ", " + a.route_count + " climb" + (a.route_count !== 1 ? "s" : "") + (wl ? ", " + onList(wl) : ""));
         mk.on("click", () => setPick({ areas: [a], cluster: false }));
         grp.addLayer(mk);
       } else {
@@ -244,6 +250,7 @@ export default function NearMePanel({ center0, areaType, name, onBack, onOpenAre
         const html = "<div style='width:" + sz + "px;height:" + sz + "px;border-radius:50%;background:" + C.blueSolid + ";border:2px solid " + (wl ? C.amber : "#fff") + ";color:#fff;font-weight:700;font-size:" + (n > 99 ? 10 : 12) + "px;display:flex;align-items:center;justify-content:center;box-shadow:0 1px 4px rgba(0,0,0,0.55);'>" + n + "</div>";
         const mk = L.marker([avgLat, avgLng], { icon: L.divIcon({ html, className: "", iconSize: [sz, sz], iconAnchor: [sz / 2, sz / 2] }) });
         mk.bindTooltip(n + " areas · " + climbs + (climbs === 1 ? " climb" : " climbs") + (wl ? " · " + onList(wl) : "") + tx(" — tap to zoom in"), { direction: "top" });
+        named(mk, n + " areas, " + climbs + (climbs === 1 ? " climb" : " climbs") + (wl ? ", " + onList(wl) : "") + tx(", tap to zoom in"));
         mk.on("click", () => {
           setPick({ areas, cluster: true });
           try { map.fitBounds(L.latLngBounds(areas.map(a => [a.lat, a.lng])), { padding: [50, 50], maxZoom: 15 }); } catch (e) { /* the map is gone or not laid out yet; nothing to update */ }
