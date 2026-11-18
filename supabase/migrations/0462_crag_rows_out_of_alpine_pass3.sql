@@ -1,5 +1,6 @@
 -- 0462 — Crag rows filed alpine move to trad / sport / top-rope, pass 3 (owner 2026-11-11: "crag for trad is just a
--- short approach"; pass 1 = 0452, pass 2 = 0457). 112 rows: 68 trad, 40 sport, 4 toprope.
+-- short approach"; pass 1 = 0452, pass 2 = 0457). 101 rows: 57 trad, 40 sport, 4 toprope.
+-- The Black Wall (Mt Blue Sky, 11 rows) is held back as unsure: snow at its base and over its rappel anchors (overrides3.json).
 --
 -- These rows were still "unsure" after pass 2. Their 227 areas were researched again for a STATED walk time from other
 -- sources (8 lists; data/research/2026-11-14/crag3/p-out-*.json; decisions: research-data/crag-rows-out-of-alpine-pass3-2026-11-18/).
@@ -57,23 +58,12 @@ insert into _crag_moves (id, area_id, discipline, disciplines) values
   ('ca_tumbler_2', 'ca_highlands_wall', 'sport', '["sport"]'::jsonb), -- Tumbler | 5.11a | <= 45 min on foot
   ('ca_two_scoops_3', 'ca_campground_crags', 'trad', '["trad"]'::jsonb), -- Two Scoops | 5.11b | <= 5 min on foot
   ('ca_you_don_t_got_it_till_you_get_it', 'ca_campground_crags', 'trad', '["trad"]'::jsonb), -- You Don't Got It Till You Get It | 5.11+ | <= 5 min on foot
-  ('co_cannonball_corner', 'co_black_wall_the', 'trad', '["trad"]'::jsonb), -- Cannonball Corner | 5.10+ | <= 40 min on foot
-  ('co_coffee_achievers', 'co_black_wall_the', 'trad', '["trad"]'::jsonb), -- Coffee Achievers | 5.10d | <= 40 min on foot
-  ('co_escape_route', 'co_black_wall_the', 'trad', '["trad"]'::jsonb), -- Escape Route | 5.8+ | <= 40 min on foot
-  ('co_espresso', 'co_black_wall_the', 'trad', '["trad"]'::jsonb), -- Espresso | 5.11a | <= 40 min on foot
-  ('co_good_evans', 'co_black_wall_the', 'trad', '["trad"]'::jsonb), -- Good Evans | 5.10d | <= 40 min on foot
-  ('co_high_variance', 'co_black_wall_the', 'trad', '["trad"]'::jsonb), -- High Variance | 5.12b | <= 40 min on foot
   ('co_just_stand_up', 'co_bionut_wall', 'trad', '["trad"]'::jsonb), -- Just Stand Up | 5.12- | <= 5 min on foot
   ('co_manalive', 'co_main_wall_15', 'sport', '["sport"]'::jsonb), -- Manalive | 5.12a | <= 25 min on foot
   ('co_moai_geddit', 'co_easter_island', 'trad', '["trad"]'::jsonb), -- Moai Geddit | 5.10- | <= 50 min on foot
   ('co_no_gear_left_behind', 'co_bionut_wall', 'trad', '["trad"]'::jsonb), -- No Gear Left Behind | 5.10 | <= 5 min on foot
-  ('co_old_rappel_route', 'co_black_wall_the', 'trad', '["trad"]'::jsonb), -- Old Rappel Route | 5.10d | <= 40 min on foot
-  ('co_parallel_universe_2', 'co_black_wall_the', 'trad', '["trad"]'::jsonb), -- Parallel Universe | 5.10 | <= 40 min on foot
-  ('co_phil_a_guster', 'co_black_wall_the', 'trad', '["trad"]'::jsonb), -- Phil-a-Guster | 5.11a | <= 40 min on foot
   ('co_priceless', 'co_main_wall_15', 'sport', '["sport"]'::jsonb), -- Priceless | 5.12b | <= 25 min on foot
-  ('co_rainbow_highway', 'co_black_wall_the', 'trad', '["trad"]'::jsonb), -- Rainbow Highway | 5.10+ | <= 40 min on foot
   ('co_rick_ross_big_bosch', 'co_bionut_wall', 'sport', '["sport"]'::jsonb), -- Rick Ross Big Bosch | 5.11- | <= 5 min on foot
-  ('co_road_warrior', 'co_black_wall_the', 'trad', '["trad"]'::jsonb), -- Road Warrior | 5.10+ | <= 40 min on foot
   ('co_touch_gold', 'co_main_wall_15', 'sport', '["sport"]'::jsonb), -- Touch Gold | 5.12b/c | <= 25 min on foot
   ('co_trad_route_2', 'co_bionut_wall', 'trad', '["trad"]'::jsonb), -- Trad Route | 5.10 | <= 5 min on foot
   ('co_tremendous_trifles', 'co_main_wall_15', 'sport', '["sport"]'::jsonb), -- Tremendous Trifles | 5.12c | <= 25 min on foot
@@ -160,7 +150,7 @@ update routes r
    and not exists (select 1 from contributions c where c.route_id = r.id and c.kind = 'field'
                     and c.field in ('discipline', 'rockStyle') and c.status = 'approved');
 
--- Expect 112 (less any rows the guards skipped; the notice above says why).
+-- Expect 101 (less any rows the guards skipped; the notice above says why).
 select discipline, count(*) from routes where id in (select id from _crag_moves) group by discipline order by 1;
 
 commit;
