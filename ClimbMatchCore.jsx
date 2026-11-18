@@ -1728,7 +1728,8 @@ function _autosize(el){
   if(!el||el.dataset.noAutogrow==="1")return;
   const max=Math.max(160,Math.round((window.innerHeight||800)*0.5));
   el.style.height="auto";
-  const h=Math.min(el.scrollHeight,max);
+  /* + the border: scrollHeight leaves it out, so every grown box was 2px short of its text and clipped it */
+  const h=Math.min(el.scrollHeight+el.offsetHeight-el.clientHeight,max);
   el.style.height=h+"px";
   el.style.overflowY=el.scrollHeight>max?"auto":"hidden";
 }
