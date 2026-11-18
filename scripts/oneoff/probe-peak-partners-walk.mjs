@@ -73,7 +73,7 @@ try {
   await page.waitForTimeout(5000);
   const order = await page.evaluate(() => { const t = document.body.innerText; return [t.indexOf("SAVED AREAS") >= 0 ? t.indexOf("SAVED AREAS") : t.indexOf("Saved areas"), t.indexOf("SAVED PEAKS") >= 0 ? t.indexOf("SAVED PEAKS") : t.indexOf("Saved peaks")]; });
   check(order[0] >= 0 && order[1] > order[0], `Saved areas (${order[0]}) is above Saved peaks (${order[1]})`);
-  const sw = await page.$$eval('[role="switch"][aria-label^="List me in partner search at"]', (els) => els.map((e) => e.getAttribute("aria-label") + "=" + e.getAttribute("aria-checked")));
+  const sw = await page.locator('[role="switch"][aria-label^="List me in partner search at"]').evaluateAll((els) => els.map((e) => e.getAttribute("aria-label") + "=" + e.getAttribute("aria-checked")));
   check(sw.length === 3, "three List me switches render: " + sw.join(" | "));
   await page.evaluate(() => { const h = [...document.querySelectorAll("*")].find((e) => /^saved areas$/i.test((e.textContent || "").trim())); if (h) h.scrollIntoView({ block: "start" }); window.scrollBy(0, -80); const s = document.getElementById("appscroll"); if (s && h) s.scrollTop += h.getBoundingClientRect().top - 120; });
   await page.waitForTimeout(600);
@@ -82,7 +82,7 @@ try {
   await page.click('[role="switch"][aria-label="List me in partner search at Mount Baker"]');
   await page.waitForTimeout(3500);
   await shot("2-saved-after-listing");
-  const after = await page.$$eval('[role="switch"][aria-label^="List me in partner search at"]', (els) => els.map((e) => e.getAttribute("aria-label").replace("List me in partner search at ", "") + "=" + e.getAttribute("aria-checked")));
+  const after = await page.locator('[role="switch"][aria-label^="List me in partner search at"]').evaluateAll((els) => els.map((e) => e.getAttribute("aria-label").replace("List me in partner search at ", "") + "=" + e.getAttribute("aria-checked")));
   log("  switches now: " + after.join(" | "));
   const rows = await rest(`partner_areas?user_id=eq.${owner.id}&select=area_id,disciplines`);
   const ids = (rows.body || []).map((r) => r.area_id).sort();
