@@ -126,7 +126,8 @@ export default function TechStats({route,onEdit,part,onEditArea}: TechStatsProps
     :["Distance",uDist(distKm),C.blue];
   let stats: StatTile[],note: string|null;
   if(disc==="bouldering"){
-    stats=[["Crux grade",cruxGrade(route.cruxGrade||route.grade),C.amber]];
+    /* A boulder problem has ONE grade, already in the header pill: no "Crux grade" tile (owner, 2026-11-18). */
+    stats=[];
     if(distTile)stats.unshift(distTile);
     if(route.routeFt)stats.unshift(["Boulder height",uElev(route.routeFt),C.orange]);
     note="Height is the boulder itself. The distance is just the walk in and out — there is no meaningful elevation gain to a single boulder."+rtNote+"";
