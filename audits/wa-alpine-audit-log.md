@@ -39180,3 +39180,40 @@ stale note, not a wrong number, not worth a SQL fix.
 
 0 confirmed errors fixed, 1 newly flagged for human review, 8 clean.
 Next batch will continue id-ascending from `wa_bears_breast_mountain_timeless_treasure` (pass 9).
+
+## 2026-11-18 — Batch 557 (pass 9)
+
+Checked Prusik Peak (Beckey-Davis), Big Kangaroo (Beckey-Tate, Going Down Under), Morning Star
+Peak (Beyond Redlining, on Vega North Tower / Eros Tower), Big Craggy Peak (Standard Scramble),
+and Big Four Mountain (Northwest Ridge, Spindrift Couloir, Tower Route) — 8 routes across 5
+peaks, id-ascending from `wa_bears_breast_mountain_timeless_treasure`.
+
+**Clean (7):** Prusik Peak's 8,008 ft matches the modern LiDAR figure (listsofjohn.com,
+Peakbagger-sourced Wikipedia); its Beckey-Davis FA (south face, June 29 1962) is confirmed by
+Mountain Project and the 1963 AAJ note, correctly distinct from the later Stanley-Burgner (1968)
+line. Big Kangaroo's Beckey-Tate FA (5/29/1967) is confirmed verbatim by Mountain Project and a
+trip report. Big Craggy Peak's 8,478 ft matches Wikipedia/PeakVisor (a dedicated theodolite survey
+puts the east summit at 8,473.1 ft — within normal rounding). Big Four Mountain's 6,170 ft sits
+inside the commonly-cited 6,160–6,180 ft range (Wikipedia/SummitPost/TopoZone). Big Four's
+Spindrift Couloir FA (Bart Paull and Doug Littauer, March 2 1996, north face, 5.9) is confirmed
+verbatim by the 1996 AAJ account. Going Down Under (Big Kangaroo, 2012 FA) returned no hits
+either way and was not flagged.
+
+**Flagged for human review (1, new):** `wa_big_four_mountain_tower_route`'s FA, stored as "Ben
+Guydelkon and Ron Miller, July 25, 1972" — zero corroboration found in either direction. One trip
+report mentions an unattributed "Tower Route" on the NE Ridge with no climbers named, and "Ben
+Guydelkon" is an unusual name that didn't surface anywhere in climbing-history sources, raising
+the possibility of a transcription artifact. Worth checking against the original ingestion
+source. No SQL written — nothing to confirm a fix against.
+
+**Noted, not flagged:** Big Kangaroo's stored 8,326 ft elevation matches Wikipedia/Peakbagger-
+cited figures, but a newer theodolite+LiDAR survey (countryhighpoints.com) gives 8,318 ft and
+older Mountaineers/Mountain Project pages use 8,280 ft — normal datum/survey spread across
+sources, not a contradiction worth a fix. Big Four's Northwest Ridge FA (Forest Farr and Art
+Winder, July 19 1931) matches the only source found (Wikipedia, repeated via mirrors) but has no
+second independent source to cross-verify against — not contradicted, so left alone. Beyond
+Redlining's FA (Rad Roberts and Kurt Hicks, July 2020) also returned no hits either way and was
+not flagged.
+
+0 confirmed errors fixed, 1 newly flagged for human review, 7 clean.
+Next batch will continue id-ascending from `wa_big_kangaroo_going_down_under` (pass 9).

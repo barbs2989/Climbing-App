@@ -2,10 +2,10 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 9,
-  "last_processed_id": "wa_bears_breast_mountain_timeless_treasure",
+  "last_processed_id": "wa_big_kangaroo_going_down_under",
   "total_in_scope_last_count": 751,
   "total_wa_alpine_or_mountaineering_tagged": 857,
-  "pass_note": "Batch 556 continued id-ascending from wa_austera_peak_southwest_ridge (the Supabase outage on 2026-11-14 that blocked the previous attempt had cleared by this run): Bacon Peak (Diobsud Creek Glacier), Baldy (Standard Route), Baring Mountain / 'Main Peak' (East Face, Oatmeal Man, North Face/R1), Bear Mountain-Chilliwack (North Buttress), Bears Breast Mountain (Infinite Beauty, Southwest Face, Timeless Treasure). No confirmed errors. All five peaks' stored high_point_ft matched an independent source exactly or within a few feet (Bacon Peak 7070 vs Wikipedia 7070; Baldy 6827 vs WTA/PeakVisor 6827 -- note Baldy's own data_quality.gaps text still cites a stale 6808 ft 'most consistently repeated figure' even though the stored field is the correct 6827, a stale note not a wrong number, not worth a SQL fix; Baring Mountain 6127 vs Wikipedia/SummitPost 6127 on all 3 routes; Bear Mountain-Chilliwack 7931 vs an independent trip report's 7931, with the North Buttress's FA (Beckey & Fielding, July 1967), pitches:7 and length_m 671 (~2200 ft) all matching an AAJ 1968 account surfaced in search; Bears Breast 7197 vs Wikipedia/PeakVisor 7197, with the Southwest Face FA (Beckey/Barto/Swift, Aug 8 1939) confirmed as also the peak's own FA). Bears Breast's Salmon La Sac trailhead, shared by Infinite Beauty and Timeless Treasure, is independently corroborated by a 2014 trip report describing that same Waptus Lake approach to the peak, and its coordinates (47.4092,-121.1038) sit ~0.6 km from the Forest Service campground's own published coordinates (47.4036,-121.0986) -- plausible given the stored point is the spur-road trailhead just past the campground. The Southwest Face's Dingford Creek trailhead (47.51744,-121.45276) matched WTA's own figure (47.5172,-121.4542) almost exactly. New flag: wa_baring_mountain_r1's FA, stored as 'Don Gordon (Claunch) and Ed Cooper, July 9-13, 1960', conflicts with a SummitPost claim (via search snippet) of 'Don Gordon and Ed Cooper, July 13, 1961' for the first successful ascent; other snippets describe a multi-year siege (1951, 1956, 1959, 1960 attempts) that doesn't cleanly resolve which year the face was actually topped out. The primary AAC article and summitpost.org are both unreachable from this environment (DNS/network-policy blocked -- same restriction noted in Pass 8), so the conflict could not be resolved here; left for a human, no SQL written. Not re-flagged: the route's seasonal_hazards text claims a '1951 fatality during an early attempt' -- a search snippet of the AAC account mentions 'an accident' on early attempts without confirming a death or year, so this is unconfirmed but not contradicted either, left alone. FA for East Face and Oatmeal Man (both credited to Peter Doorish, 1992) returned no hits in either direction and so were not flagged, per the rule against flagging what can't be checked. total_wa_alpine_or_mountaineering_tagged re-confirmed at 857 (unchanged), so total_in_scope_last_count carries over unchanged.",
+  "pass_note": "Batch 557 continued id-ascending from wa_bears_breast_mountain_timeless_treasure: Prusik Peak (Beckey-Davis), Big Kangaroo (Beckey-Tate, Going Down Under), Morning Star Peak (Beyond Redlining, on Vega North Tower / Eros Tower), Big Craggy Peak (Standard Scramble), and Big Four Mountain (Northwest Ridge, Spindrift Couloir, Tower Route) -- 8 routes across 5 peaks. Prusik Peak's 8008 ft matches the modern LiDAR figure on listsofjohn.com and Peakbagger-sourced Wikipedia (older pre-LiDAR contour sources give 7857-8000 ft, not a contradiction); its Beckey-Davis FA (south face, June 29 1962) is confirmed by Mountain Project and the 1963 AAJ note. Big Kangaroo's Beckey-Tate FA (5/29/1967) is confirmed verbatim by Mountain Project and a trip report; its stored 8326 ft elevation matches Wikipedia/Peakbagger-cited figures, though a newer theodolite+LiDAR survey (countryhighpoints.com) gives 8318 ft and older Mountaineers/Mountain Project pages use 8280 ft -- normal datum/survey spread across sources, not flagged. Big Craggy Peak's 8478 ft matches Wikipedia/PeakVisor (a dedicated survey gives the east summit as 8473.1 ft, within normal rounding). Big Four Mountain's 6170 ft sits inside the commonly-cited 6160-6180 ft range (Wikipedia/SummitPost/TopoZone); its Spindrift Couloir FA (Bart Paull and Doug Littauer, March 2 1996, north face, 5.9) is confirmed verbatim by the 1996 AAJ account via AAC publications. Big Four's Northwest Ridge FA (Forest Farr and Art Winder, July 19 1931) matches the only source found (Wikipedia, repeated via mirrors) but could not be cross-verified against a second independent source -- not contradicted, not re-flagged. New flag: wa_big_four_mountain_tower_route's FA, stored as 'Ben Guydelkon and Ron Miller, July 25, 1972', returned zero corroboration in either direction -- one trip report mentions an unattributed 'Tower Route' on the NE Ridge but names no climbers, and 'Ben Guydelkon' is an unusual name that did not surface in any climbing-history source, raising the possibility of a transcription artifact; left for a human to check against the original ingestion source, no SQL written. Beyond Redlining (2020 FA, Vega North Tower under the Morning Star Peak area) and Going Down Under (2012 FA, Big Kangaroo) are obscure modern routes that returned no hits either way and were not flagged, per the rule against flagging what can't be checked. total_wa_alpine_or_mountaineering_tagged not re-counted this run; carried over unchanged.",
   "batches": [
     {
       "batch_number": 1,
@@ -11048,6 +11048,25 @@
       "confirmed_errors_fixed": 0,
       "flagged_for_human_review": 1,
       "clean": 8,
+      "sql_file": null
+    },
+    {
+      "batch_number": 557,
+      "date": "2026-11-18",
+      "pass": 9,
+      "route_ids": [
+        "wa_beckey_davis",
+        "wa_beckey_tate",
+        "wa_beyond_redlining",
+        "wa_big_craggy_peak_scramble",
+        "wa_big_four_mountain_northwest_ridge",
+        "wa_big_four_mountain_spindrift_couloir",
+        "wa_big_four_mountain_tower_route",
+        "wa_big_kangaroo_going_down_under"
+      ],
+      "confirmed_errors_fixed": 0,
+      "flagged_for_human_review": 1,
+      "clean": 7,
       "sql_file": null
     }
   ],
