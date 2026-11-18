@@ -286,6 +286,8 @@ Notes: `docs/guards/social-and-crews.md`, `contributions-and-logbook.md`, `hones
 
 ## 7. Last significant change
 
+2026-11-18 (0453): the safety summary's per-answer counts show only once two climbers OTHER than you have answered, so no single crewmate's answer can be worked out from your own; a crew of two never sees them (*stays private in a crew of two*). Meet-up's one tap falls back from the climb's access point to its trailhead pin, its mountain's parking, then the access point every other climb on the mountain agrees on (`useAreaAccessPoint`; nothing when they disagree). Auth requests are exempt from the 25 s request deadline (`lib/supabase.js`), which could abort a token refresh mid-rotation and sign a climber out.
+
 2026-11-18 two-climber walkthrough: crew invites arrive live (`useMyCrewInvites` is a live query on `crew_members`); Ready up's *Said hi in crew chat* reads whether the crew chat has any message from the database (`useCrewHasMessages`), not only the messages loaded on this device; the Ready-up risk row calls it *Mixed* only for Conservative with Aggressive, the Safety screen's rule; *Climb with them again* asks *Who can join?* like + Create a crew.
 
 2026-11-18 (0451): `crew_alignment()` returns no per-answer count (risk levels, the four flags) until two confirmed members have answered — one answer would show whose it is. Who has answered (`done_ids`) still shows. Ready up says *Risk tolerance: shows once 2 of you have answered*, and the Safety screen's matrix says the counts show once 2 have answered. Known limit: in a crew of exactly two, once both answer, each can infer the other's answers from their own.
