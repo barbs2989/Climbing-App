@@ -29,6 +29,15 @@ views under `groupsTab`: For you · Your groups · Your activity · Discover · 
   by the search box and a distance by *Near a place*. Results show 20 at a time with *Show more groups*
   (`DISC_PAGE`), reset whenever a filter changes.
 - **A group opens on About** (owner 2026-11-13), for members too; closing the group forgets the tab it was left on.
+- **Its own avatar and cover photo** (owner 2026-11-18, 0454). The group form's *Photos* section (`GroupPhotoFields`)
+  takes an avatar and a cover. Picking a file uploads it at once (`uploadGroupPhoto`: the camera's location stripped,
+  scaled to screen size, the uploader's `{uid}/` prefix in `topo-photos`) and the group row takes the address when the
+  form is saved, so cancelling keeps the old picture; *Remove* goes back to the drawn one. The avatar replaces the
+  initial in `groupMark` (every list row, Requests, the group's page beside its name); the cover replaces the colour
+  band in `groupBand` (Discover's cards) and is a 150px banner at the top of the group's page. Only a manager can
+  change them (0090's update policy); `groups_avatar_url_ours` / `groups_cover_url_ours` refuse any address outside the
+  bucket, so a group's picture cannot be aimed at an outside server. A guest's pick is a preview on the device only,
+  as the guest profile photo is.
 - **Join / Leave and + Invite** in a group's header are compact pills; the joined state reads *✓ Joined* (its name
   for a screen reader still says tap to leave, and leaving asks first).
 - **Removing a member** (the ✕ on Members) is for the owner and moderators only, never on yourself or the owner, and
@@ -96,14 +105,15 @@ treats it as a DELETE. Probe: `scripts/oneoff/probe-live-takedown.mjs`.
 | `src/components/GroupEventForm.tsx` | `GroupEventForm`, the create-an-event sheet |
 | `lib/groupRules.js` | `groupVisOf`, `groupCanHostEvent`, `groupJoinPath`, `groupJoinLabel`, `GROUP_TOPICS`, `groupWhere` (moved out of `ClimbMatch.jsx`, PR62) |
 | `src/components/GroupsTab.tsx` | `GroupsTab`, the Groups screen body (For you / Your groups / Your activity / Discover / Events), lifted from App in PR61; App passes it the helpers above |
-| `lib/db.js` | `useMyGroups`, `createGroupRow`, `updateGroupSettings`, `setGroupVisibility`, `createGroupEvents`, `regionOfPlace`, `regionAbbr`, `useMyPartnerAreas`, `useStates`, `useGroupFeed`, `useAreaPoint` |
+| `lib/db.js` | `useMyGroups`, `createGroupRow`, `updateGroupSettings`, `uploadGroupPhoto`, `setGroupVisibility`, `createGroupEvents`, `regionOfPlace`, `regionAbbr`, `useMyPartnerAreas`, `useStates`, `useGroupFeed`, `useAreaPoint` |
 | `lib/search.js` | `searchMatches` |
 | `lib/live.js` | `useLiveQuery` — the Realtime subscription behind the live feed |
 | `src/components/GroupCrewPicker.tsx` | Form a crew from this group: pick members, then a saved climb or an area |
-| `supabase/migrations` | 0090, 0178, 0230, 0258, 0260, 0318, 0326, 0396; 0426 (private crews, used by Form a crew) |
+| `src/components/GroupPhotoFields.tsx` | `GroupPhotoFields`, the form's avatar and cover photo pickers (0454) |
+| `supabase/migrations` | 0090, 0178, 0230, 0258, 0260, 0318, 0326, 0396, 0454 (avatar and cover); 0426 (private crews, used by Form a crew) |
 
 ## 4. Data
-`groups` (`visibility`, `event_policy`, `policy`, `location`, `blurb`, `area_id`, `lat`, `lng`), `group_members` (`role`, `status`),
+`groups` (`visibility`, `event_policy`, `policy`, `location`, `blurb`, `area_id`, `lat`, `lng`, `avatar_url`, `cover_url`), `group_members` (`role`, `status`),
 `group_posts`, `group_post_reactions` (both in the `supabase_realtime` publication since 0326), `group_events`, `group_event_rsvps`, `partner_areas`, `areas` (state rows and `path`).
 
 ## 5. Known gaps
