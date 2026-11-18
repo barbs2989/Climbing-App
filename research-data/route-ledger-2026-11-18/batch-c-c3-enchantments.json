@@ -1,0 +1,1208 @@
+{
+ "wa_dragontail_peak_serpentine_arete": {
+  "area": "wa_dragontail_peak",
+  "set": {
+   "waypoints": [
+    {
+     "lat": 47.5284637,
+     "lng": -120.8199427,
+     "elev": 3400,
+     "name": "Stuart Lake Trailhead",
+     "type": "Trailhead",
+     "elevFt": 3400,
+     "directions": "The Stuart Lake Trailhead sits at the end of Forest Road 7601, which leaves Icicle Creek Road; the parking area is at about 3,400 ft and Trail #1599 starts there. Plan the day from the car either as a single car-to-car push, which runs about 13-14 hours for a fit party, or as a backpack in to camp at Colchuck Lake — camping needs an Enchantments overnight permit, so sort that out before you drive up."
+    },
+    {
+     "lat": 47.4878,
+     "lng": -120.8343,
+     "elev": 5570,
+     "name": "Colchuck Lake designated campsites",
+     "type": "Campsite"
+    },
+    {
+     "lat": 47.491988,
+     "lng": -120.833592,
+     "elev": 5574,
+     "name": "Colchuck Lake",
+     "type": "landmark",
+     "elevFt": 5574,
+     "directions": "Follow the Stuart Lake Trail about 2.5 miles to the signed junction and turn left onto the Colchuck Lake Trail, cross Mountaineer Creek and grind up the rocky switchbacks to Colchuck Lake at about 5,570 ft."
+    },
+    {
+     "lat": 47.4788694,
+     "lng": -120.833106,
+     "elev": 8840,
+     "name": "Dragontail Peak Summit",
+     "type": "Summit",
+     "elevFt": 8840,
+     "directions": "Go around the lake's west shore to its south end, boulder-hop onto the crest of the Colchuck Glacier's lateral moraine and follow it south toward the northwest face to the band of orange rock low on the wall. Cross the moat onto 4th-class ledges through the orange band, then climb the arete's crack and dihedral pitches and the ridge crest and sandy gully to the summit."
+    },
+    {
+     "lat": 47.48028,
+     "lng": -120.82056,
+     "elev": 7841,
+     "name": "Aasgard Pass",
+     "type": "pass",
+     "elevFt": 7841,
+     "directions": "Head down the loose sandy gully shared with the top of Backbone Ridge, downclimb or boot-ski the upper Snow Creek Glacier snowfield where it remains, then traverse east to Aasgard Pass."
+    }
+   ],
+   "road": {
+    "name": "Icicle Road, Eightmile Road (FR 7600) and FR 7601 to the Stuart Lake Trailhead",
+    "status": "Gravel and steep, washboarded later in the season; high clearance recommended, 4x4 advised. Closed to vehicles every winter.",
+    "driveNote": "From Leavenworth drive Icicle Road about 8.5 miles, turn left on Eightmile Road (FR 7600), then keep right on FR 7601 for about 4 miles, past the Eightmile Trailhead, to the end. The lot is small; when it is full, park only on the side of the road the signs allow, as no-parking zones are ticketed.",
+    "seasonalGate": "FR 7601 is closed to vehicles each winter."
+   }
+  },
+  "review": {
+   "sources": [
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/stuart-lake-trailhead",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/enchantments",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/enchantments-overnight-permits",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/alerts/updated-little-giant-fire-closure-order-wenatchee-river-and-entiat",
+    "https://www.mountainproject.com/route/106015955/serpentine-arete",
+    "https://www.mountainproject.com/area/106015951/dragontail-peak",
+    "https://stephabegg.com/?p=8699",
+    "https://climberkyle.com/2019/06/15/dragontail-peak-serpentine-arete-5-8/",
+    "https://www.mountaineers.org/activities/routes-places/enchantments-area-review/dragontail-peak-serpentine-ridge",
+    "https://alpinedave.com/enchantments/dragontail/serpentine.htm",
+    "https://listsofjohn.com/quad?q=14729",
+    "https://epqs.nationalmap.gov/v1/json",
+    "https://www.openstreetmap.org/"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "waypoints/Dragontail Peak Summit",
+    "value": {
+     "name": "Dragontail Peak Summit",
+     "lat": 47.4788694,
+     "lng": -120.833106
+    },
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "measurement": "USGS GNIS 1528383 'Dragontail Peak' summit point, DomesticNames_WA (edited 2026-08-17)",
+      "fact": "47.4788694,-120.833106",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "measurement": "USGS 3DEP: highest cell of a 9x9 grid (11 m spacing) round the GNIS point is 25 m away (8,826 ft); OSM peak node 356547014 is 23 m away",
+      "fact": "25 m",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "5.8",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106015955/serpentine-arete",
+      "fact": "5.8",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://stephabegg.com/?p=8699",
+      "fact": "5.8",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/enchantments-area-review/dragontail-peak-serpentine-ridge",
+      "fact": "5.8",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "rock_grade",
+    "value": "5.8",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106015955/serpentine-arete",
+      "fact": "5.8",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://stephabegg.com/?p=8699",
+      "fact": "5.8",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "length_m",
+    "value": 610,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106015955/serpentine-arete",
+      "fact": "2000 ft (606 m)",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://stephabegg.com/?p=8699",
+      "fact": "2000 ft",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://climberkyle.com/2019/06/15/dragontail-peak-serpentine-arete-5-8/",
+      "fact": "2000 ft",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "commitment",
+    "value": "IV",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106015955/serpentine-arete",
+      "fact": "Grade IV",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/enchantments-area-review/dragontail-peak-serpentine-ridge",
+      "fact": "Grade IV",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://climberkyle.com/2019/06/15/dragontail-peak-serpentine-arete-5-8/",
+      "fact": "IV",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 8840,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/enchantments-area-review/dragontail-peak-serpentine-ridge",
+      "fact": "High Point 8,840 ft",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://listsofjohn.com/quad?q=14729",
+      "fact": "Dragontail Peak 8,841'",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://stephabegg.com/?p=8699",
+      "fact": "8,842 ft",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Enchantment permit area: overnight stays May 15-Oct 31 require a quota permit (Recreation.gov advance lottery); day trips need the free self-issued day-use permit at the trailhead.",
+    "method": "official-1",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/enchantments-overnight-permits",
+      "fact": "overnight permit May 15-Oct 31; advance lottery via recreation.gov/permits/233273",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     },
+     {
+      "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/enchantments",
+      "fact": "day-use permit free, self-issued at the trailheads",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     },
+     {
+      "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/stuart-lake-trailhead",
+      "fact": "day use wilderness permit free, self-issued at trailhead; overnight permit May 15-Oct 31",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     }
+    ],
+    "expires_at": "2027-11-18T00:00:00Z"
+   },
+   {
+    "field": "road",
+    "value": {
+     "name": "Icicle Road, Eightmile Road (FR 7600) and FR 7601 to the Stuart Lake Trailhead",
+     "status": "Gravel and steep, washboarded later in the season; high clearance recommended, 4x4 advised. Closed to vehicles every winter.",
+     "driveNote": "From Leavenworth drive Icicle Road about 8.5 miles, turn left on Eightmile Road (FR 7600), then keep right on FR 7601 for about 4 miles, past the Eightmile Trailhead, to the end. The lot is small; when it is full, park only on the side of the road the signs allow, as no-parking zones are ticketed.",
+     "seasonalGate": "FR 7601 is closed to vehicles each winter."
+    },
+    "method": "official-1",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/stuart-lake-trailhead",
+      "fact": "Icicle Rd 8.5 mi; Eightmile Rd FR 7600; FR 7601 ~4 mi; high clearance, 4x4 advised; closed winter",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     }
+    ],
+    "expires_at": "2027-02-17T00:00:00Z"
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_dragontail_peak_serpentine_arete",
+    "column": "dist_km",
+    "from": 26.55,
+    "to": 10.06,
+    "why": "dist_km is one-way (the app doubles it). 26.55 km one-way renders a 33-mile round trip; The Mountaineers give 12.5 mi round trip (Stuart Lake Trail 2.5 mi + Colchuck Lake Trail 1.8 mi to the lake). 12.5 mi / 2 = 10.06 km.",
+    "evidence": [
+     "https://www.mountaineers.org/activities/routes-places/enchantments-area-review/dragontail-peak-serpentine-ridge"
+    ]
+   }
+  ],
+  "disputed": [
+   "pitches 14: The Mountaineers 14, Mountain Project 13, climberkyle ~15. Not locked; left as stored.",
+   "fa (Tom Hargis and Jay Ossiander, 1973): Mountain Project only (Steph Abegg mentions a 1973 first-ascent piton, no names; SummitPost blocked). Not locked.",
+   "gain_ft 5440: equals 8,840 summit - 3,400 USFS trailhead (DEM at the lot 3,378 ft gives 5,462); The Mountaineers state 7,030 ft gain. Not locked.",
+   "alpine_grade AD: no source found."
+  ],
+  "notes": "Summit pin moved 6 m to the USGS point. Trailhead pin moved 85 m from the USFS trailhead point (which is the trail start, OSM node 11298873822) to the centre of the OSM parking lot 'Stuart Lake Trailhead Parking' (way 150227748); not locked because the lot centre and the USFS point are 85 m apart. Elevation kept at the USFS 3,400 ft. Road rewritten from the USFS trailhead page (the old driveNote said to turn onto FR 7601 directly; FR 7600 comes first) and locked for 3 months. No 2026-11 closure order covers FR 7601 / Stuart Lake (Little Giant Fire order checked). Waypoint types 'landmark' (Colchuck Lake) and 'pass' (Aasgard Pass) are not in the waypoint skill's type list. GNIS names Aasgard Pass 'Colchuck Pass' (1533528), 15 m from the stored pin."
+ },
+ "wa_prusik_peak_west_ridge": {
+  "area": "wa_prusik_peak",
+  "set": {
+   "waypoints": [
+    {
+     "lat": 47.5284637,
+     "lng": -120.8199427,
+     "elev": 3400,
+     "name": "Stuart Lake Trailhead (Trail #1599)",
+     "note": "Start of the Colchuck Lake and Aasgard Pass approach, at about 3,400 ft. The Snow Lakes Trailhead is the longer, lower alternative into the same basin.",
+     "type": "Trailhead",
+     "elevFt": 3400,
+     "directions": "From US 2 at the west edge of Leavenworth, turn onto Icicle Creek Road and drive about 8.4 miles, then turn left onto FS Road 7601 and follow the rough, potholed dirt road about 3.7 miles to its end at the Stuart Lake Trailhead, about 3,400 ft. A Northwest Forest Pass or interagency pass is required to park; day trips need the free self-issued Enchantments day-use permit at the trailhead, and overnight stays need a quota permit."
+    },
+    {
+     "lat": 47.4803,
+     "lng": -120.8206,
+     "elev": 7841,
+     "name": "Aasgard Pass",
+     "type": "Junction",
+     "distMi": 5.5,
+     "elevFt": 7841,
+     "directions": "Hike the Stuart Lake Trail about 2.5 miles to the signed Colchuck Lake Trail junction, turn left, cross Mountaineer Creek and switchback 1.6 miles to Colchuck Lake at 5,570 ft. Boulder-hop the east shore to the boulder field at the south end, then climb Aasgard Pass, about 2,000 ft in 1.25 miles of loose scree and dirt, staying climber's left of the cliff bands, to the 7,841-ft pass."
+    },
+    {
+     "lat": 47.483,
+     "lng": -120.795,
+     "elev": 7000,
+     "name": "Core Enchantments",
+     "type": "Campsite",
+     "distMi": 7,
+     "elevFt": 7000,
+     "directions": "From the pass, drop gently east into the upper Core past Tranquil and Isolation Lakes and follow the cairned path down through the chain of lakes to the camps in the central basin."
+    },
+    {
+     "lat": 47.4872,
+     "lng": -120.786,
+     "elev": 7700,
+     "name": "West ridge notch",
+     "type": "Junction",
+     "distMi": 7.6,
+     "elevFt": 7700,
+     "directions": "From the basin camps, take the path toward Prusik Pass that leaves the west shore of Perfection Lake and climb north over granite to the pass, where the West Ridge begins."
+    },
+    {
+     "lat": 47.4874957,
+     "lng": -120.7843035,
+     "elev": 8008,
+     "name": "Prusik Peak summit",
+     "type": "Summit",
+     "elevFt": 8008,
+     "directions": "Climb about four pitches: a long first pitch up a wide crack in a band of white rock onto the crest, then along the ridge to a slung-block belay below the 5.7 friction-slab crux with an old fixed pin, and a finishing pitch by a finger crack or a 5.7 off-width to the summit."
+    }
+   ],
+   "road": {
+    "name": "Icicle Road, Eightmile Road (FR 7600) and FR 7601 to the Stuart Lake Trailhead",
+    "status": "Gravel and steep, washboarded later in the season; high clearance recommended, 4x4 advised. Closed to vehicles every winter.",
+    "driveNote": "From Leavenworth drive Icicle Road about 8.5 miles, turn left on Eightmile Road (FR 7600), then keep right on FR 7601 for about 4 miles, past the Eightmile Trailhead, to the end. The lot is small; when it is full, park only on the side of the road the signs allow, as no-parking zones are ticketed.",
+    "seasonalGate": "FR 7601 is closed to vehicles each winter."
+   }
+  },
+  "review": {
+   "sources": [
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/stuart-lake-trailhead",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/enchantments",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/enchantments-overnight-permits",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/alerts/updated-little-giant-fire-closure-order-wenatchee-river-and-entiat",
+    "https://www.mountainproject.com/route/105808527/west-ridge",
+    "https://www.mountainproject.com/area/105808510/prusik-peak",
+    "https://www.mountaineers.org/activities/routes-places/enchantments-area-review/prusik-peak-west-ridge",
+    "https://climberkyle.com/2018/09/09/prusik-peak-west-ridge-5-7/",
+    "https://listsofjohn.com/peak/48882",
+    "https://en.wikipedia.org/wiki/Prusik_Peak",
+    "https://epqs.nationalmap.gov/v1/json",
+    "https://www.openstreetmap.org/"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "waypoints/Prusik Peak summit",
+    "value": {
+     "name": "Prusik Peak summit",
+     "lat": 47.4874957,
+     "lng": -120.7843035
+    },
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "measurement": "USGS GNIS 1528402 'Prusik Peak' summit point, DomesticNames_WA (edited 2026-08-17)",
+      "fact": "47.4874957,-120.7843035",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "measurement": "USGS 3DEP: highest cell of a 9x9 grid round the GNIS point is 25 m away (8,002 ft); OSM peak node 348974816 is 22 m away",
+      "fact": "25 m",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "5.7",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105808527/west-ridge",
+      "fact": "5.7",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/enchantments-area-review/prusik-peak-west-ridge",
+      "fact": "Grade II, 5.7",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://climberkyle.com/2018/09/09/prusik-peak-west-ridge-5-7/",
+      "fact": "5.7",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "rock_grade",
+    "value": "5.7",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105808527/west-ridge",
+      "fact": "5.7",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/enchantments-area-review/prusik-peak-west-ridge",
+      "fact": "5.7",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 8008,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://listsofjohn.com/peak/48882",
+      "fact": "8,008' (LiDAR)",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/enchantments-area-review/prusik-peak-west-ridge",
+      "fact": "High Point 8,000 ft",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 4,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105808527/west-ridge",
+      "fact": "4 pitches",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "length_m",
+    "value": 122,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105808527/west-ridge",
+      "fact": "400 ft (121 m)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Enchantment permit area: overnight stays May 15-Oct 31 require a quota permit (Recreation.gov advance lottery); day trips need the free self-issued day-use permit at the trailhead.",
+    "method": "official-1",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/enchantments-overnight-permits",
+      "fact": "overnight permit May 15-Oct 31; advance lottery via recreation.gov/permits/233273",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     },
+     {
+      "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/enchantments",
+      "fact": "day-use permit free, self-issued at the trailheads",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     },
+     {
+      "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/stuart-lake-trailhead",
+      "fact": "day use wilderness permit free, self-issued at trailhead; overnight permit May 15-Oct 31",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     }
+    ],
+    "expires_at": "2027-11-18T00:00:00Z"
+   },
+   {
+    "field": "road",
+    "value": {
+     "name": "Icicle Road, Eightmile Road (FR 7600) and FR 7601 to the Stuart Lake Trailhead",
+     "status": "Gravel and steep, washboarded later in the season; high clearance recommended, 4x4 advised. Closed to vehicles every winter.",
+     "driveNote": "From Leavenworth drive Icicle Road about 8.5 miles, turn left on Eightmile Road (FR 7600), then keep right on FR 7601 for about 4 miles, past the Eightmile Trailhead, to the end. The lot is small; when it is full, park only on the side of the road the signs allow, as no-parking zones are ticketed.",
+     "seasonalGate": "FR 7601 is closed to vehicles each winter."
+    },
+    "method": "official-1",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/stuart-lake-trailhead",
+      "fact": "Icicle Rd 8.5 mi; Eightmile Rd FR 7600; FR 7601 ~4 mi; roadside parking allowed one side as posted; closed winter",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     }
+    ],
+    "expires_at": "2027-02-17T00:00:00Z"
+   }
+  ],
+  "disputed": [
+   "commitment / alpine_grade II-III: Mountain Project Grade III, The Mountaineers Grade II. Stored 'II-III' left as is.",
+   "fa 'Fred Beckey, John Rupley, Don Gordon & Fred Ayres, May 1957': no source found for it; Mountain Project says FA unknown; Wikipedia (citing Beckey's Cascade Alpine Guide) gives the PEAK first ascent as May 1948, Fred Beckey and Art Holben. Owner should check; not locked.",
+   "gain_ft 5900: The Mountaineers 4,400 ft (from a 3,600 ft trailhead); net from the 3,400 ft USFS trailhead to 8,008 ft is 4,608 ft. 5,900 may be cumulative over Aasgard Pass. Not locked.",
+   "pitches/length locked at the 1-source tier from Mountain Project only (SummitPost blocked; The Mountaineers and climberkyle give no count)."
+  ],
+  "notes": "Summit pin moved 22 m to the USGS point. Trailhead pin moved 43 m to the OSM Stuart Lake Trailhead Parking lot centre (not locked, see Dragontail note). Road rewritten: the stored one said no roadside parking is allowed on Rd 7601 (USFS: when the lot is full, one side of the road as posted) and put the trailhead at ~3,600 ft (USFS: 3,400 ft). dist_km 16.1 (10 mi one-way, 20 mi round trip) exceeds the route's own pins (West ridge notch at 7.6 mi); no published one-way figure found for this approach, so no fix proposed - owner check. Mountain Project area page lists Prusik at 7,916 ft (ignored: LiDAR 8,008 ft)."
+ },
+ "wa_ingalls_peak_south_ridge": {
+  "area": "wa_ingalls_peak",
+  "set": {
+   "waypoints": [
+    {
+     "lat": 47.4367939,
+     "lng": -120.9371625,
+     "elev": 4269,
+     "name": "Esmeralda (Ingalls Way) Trailhead",
+     "note": "End of FR-9737 off North Fork Teanaway River Rd; small lot fills fast in summer, Northwest Forest Pass required, self-issue wilderness permit at the kiosk.",
+     "type": "Trailhead",
+     "distMi": 0,
+     "directions": "From Cle Elum, head northeast on SR-970 about 5 miles, turn onto the Teanaway River Road and follow it roughly 23 miles to the road end. The small lot fills fast on summer weekends — a Northwest Forest Pass is required and there is a self-issue wilderness permit at the kiosk."
+    },
+    {
+     "lat": 47.459562,
+     "lng": -120.935089,
+     "elev": 6457,
+     "name": "Ingalls Pass",
+     "note": "Trail crests the pass with the first open view of Mount Stuart and the Ingalls Peaks; forks here, stay left/climber's-path toward Lake Ingalls rather than dropping right into Headlight Basin.",
+     "type": "Junction",
+     "distMi": 3,
+     "directions": "Take the Ingalls Way trail and stay left at the fork around 5,600 ft. Three miles of steady climbing brings you to Ingalls Pass, where Mount Stuart and the Ingalls Peaks come into view all at once. Fork again here: stay left on the climber's path toward Lake Ingalls rather than dropping right into Headlight Basin."
+    },
+    {
+     "lat": 47.470437,
+     "lng": -120.938581,
+     "elev": 6467,
+     "name": "Lake Ingalls",
+     "note": "Last reliable water before the summit scramble; camping and campfires are prohibited immediately around the lake to protect the fragile alpine basin, so treat/carry water here.",
+     "type": "Water",
+     "distMi": 4,
+     "directions": "Traverse from the pass to Lake Ingalls, about a mile. This is the last reliable water before the summit, so fill and treat here — camping and campfires are prohibited around the lake to protect the basin."
+    },
+    {
+     "lat": 47.4716,
+     "lng": -120.9472,
+     "elev": 7361,
+     "name": "Ingalls Col (notch between South and North/main peaks)",
+     "note": "Scramble up slabs, talus and boulders from the lake to this notch below Dogtooth Spire; this is where the roped South Ridge route begins, distinct from the easier North Ridge to South Peak.",
+     "type": "Junction",
+     "distMi": 4.7,
+     "directions": "From the lake, scramble slabs, talus and boulders up to the notch between the North and South peaks, below Dogtooth Spire. Expect snow on this section in June and early July. This notch is where the roped South Ridge begins, and it is a different objective from the easier North Ridge scramble to the South Peak."
+    },
+    {
+     "lat": null,
+     "lng": null,
+     "elev": 7450,
+     "name": "Dogtooth Crags traverse",
+     "note": "Exposed traverse along the right side of the Dogtooth Crags on broken rock and slabs leading to the base bench; loose blocks and route-finding in fog are the main dangers here.",
+     "type": "Hazard",
+     "distMi": 4.8,
+     "directions": "Traverse the right-hand side of the Dogtooth Crags on broken rock and slabs. Loose blocks are the main hazard, and this is the section people lose in fog — it is worth noting your line on the way in so you can reverse it."
+    },
+    {
+     "lat": null,
+     "lng": null,
+     "elev": 7500,
+     "name": "Bench below the red slab (start of roped pitches)",
+     "note": "Broad bench just below a distinctive large red slab; from the notch descend/traverse about 100 ft west to the base of a friction slab and rope up for the 3-pitch 5.4 ridge climb.",
+     "type": "Junction",
+     "distMi": 4.9,
+     "directions": "From the notch, descend and traverse roughly 100 ft west to the broad bench under the distinctive large red slab. Rope up here: the route is three pitches at 5.4, generally good rock with a few 5.2-5.3 moves and real exposure. The first pitch takes an obvious crack for close to a full rope length to a belay at a fixed piton on the slab."
+    },
+    {
+     "lat": 47.4724876,
+     "lng": -120.9463351,
+     "elev": 7662,
+     "name": "Ingalls Peak (North/main summit)",
+     "note": "True summit of Ingalls Peak; exposed but well-protected 5.4 climbing gains the top, descend by rappelling the route back to the col and reversing the approach.",
+     "type": "Summit",
+     "distMi": 5.1,
+     "directions": "Three pitches gain the true summit — exposed but well protected. Descend by rappelling the line you climbed, which goes in three raps on two 60 m ropes, or four on a single 60 m, using the same anchors, then reverse the scramble to the lake and the trail. Budget 3-4 hours for the approach and 3-5 hours for the climb; by August the whole basin gets hot and there is no shade above the lake."
+    },
+    {
+     "lat": 47.46699,
+     "lng": -120.940694,
+     "elev": 6349,
+     "name": "Headlight Creek crossing",
+     "type": "Water",
+     "distMi": 3.1
+    }
+   ],
+   "road": {
+    "name": "SR 970, North Fork Teanaway Road and FR 9737 to the Esmeralda Trailhead",
+    "status": "Paved highway, then county road and gravel Forest Road 9737 to the road end.",
+    "driveNote": "From Cle Elum drive east and north on SR 970 about 8.5 miles, turn left on the North Fork Teanaway Road for 13 miles, then bear right onto FR 9737 for about 9.6 miles to the Esmeralda Trailhead (4,269 ft). Parking is limited: keep the road clear for emergency vehicles, and if the lot is full park only on the west side of the road.",
+    "seasonalGate": "Check the Cle Elum Ranger District, (509) 852-1100, for road status before an early- or late-season trip."
+   }
+  },
+  "review": {
+   "sources": [
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/esmeralda-trailhead",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/alerts/three-queens-fire-area-closure-reduced-cle-elum-ranger-district-nov-1",
+    "https://www.mountainproject.com/route/107664796/south-ridge",
+    "https://www.mountainproject.com/area/110928196/ingalls-peak",
+    "https://www.mountaineers.org/activities/routes-places/ingalls-stuart-area/ingalls-peak-south-ridge",
+    "https://alpinedave.com/ingalls.html",
+    "https://listsofjohn.com/peak/49101",
+    "https://epqs.nationalmap.gov/v1/json",
+    "https://www.openstreetmap.org/"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "waypoints/Ingalls Peak (North/main summit)",
+    "value": {
+     "name": "Ingalls Peak (North/main summit)",
+     "lat": 47.4724876,
+     "lng": -120.9463351
+    },
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "measurement": "USGS GNIS 1521206 'Ingalls Peak' summit point, DomesticNames_WA (edited 2026-08-17)",
+      "fact": "47.4724876,-120.9463351",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "measurement": "USGS 3DEP: highest cell of a 9x9 grid round the GNIS point is 11 m away (7,657 ft); OSM peak node 356545306 is 17 m away",
+      "fact": "11 m",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "waypoints/Esmeralda (Ingalls Way) Trailhead",
+    "value": {
+     "name": "Esmeralda (Ingalls Way) Trailhead",
+     "lat": 47.4367939,
+     "lng": -120.9371625
+    },
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "measurement": "OSM parking way 295213926 'Esmeralda Trailhead' centre",
+      "fact": "47.4367939,-120.9371625",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/esmeralda-trailhead",
+      "fact": "Latitude 47.4367, Longitude -120.9369 (22 m from the OSM lot)",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 7662,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://listsofjohn.com/peak/49101",
+      "fact": "Ingalls Peak 7,662'",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/ingalls-stuart-area/ingalls-peak-south-ridge",
+      "fact": "High Point 7,662 ft",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 3500,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/ingalls-stuart-area/ingalls-peak-south-ridge",
+      "fact": "Elevation Gain 3,500 ft",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "measurement": "7,662 ft summit - USGS 3DEP 4,263 ft at the OSM Esmeralda lot = 3,399 ft (3% under)",
+      "fact": "3399",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "length_m",
+    "value": 91,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107664796/south-ridge",
+      "fact": "300 ft (91 m)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "road",
+    "value": {
+     "name": "SR 970, North Fork Teanaway Road and FR 9737 to the Esmeralda Trailhead",
+     "status": "Paved highway, then county road and gravel Forest Road 9737 to the road end.",
+     "driveNote": "From Cle Elum drive east and north on SR 970 about 8.5 miles, turn left on the North Fork Teanaway Road for 13 miles, then bear right onto FR 9737 for about 9.6 miles to the Esmeralda Trailhead (4,269 ft). Parking is limited: keep the road clear for emergency vehicles, and if the lot is full park only on the west side of the road.",
+     "seasonalGate": "Check the Cle Elum Ranger District, (509) 852-1100, for road status before an early- or late-season trip."
+    },
+    "method": "official-1",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/esmeralda-trailhead",
+      "fact": "SR 970 8.5 mi; N Fork Teanaway Rd 13 mi; FR 9737 9.6 mi; elev 4,269; park west side if full",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     }
+    ],
+    "expires_at": "2027-02-17T00:00:00Z"
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_ingalls_peak_south_ridge",
+    "column": "permit",
+    "from": "",
+    "to": "Free self-issued Alpine Lakes Wilderness permit at the trailhead, required for all entry. Parking: $5/day or $30/year (Northwest Forest Pass, Interagency or Digital Day Pass).",
+    "why": "permit is empty; the USFS Esmeralda Trailhead page states the free self-issued wilderness permit and the parking fee.",
+    "evidence": [
+     "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/esmeralda-trailhead"
+    ]
+   }
+  ],
+  "disputed": [
+   "grade 5.4: Mountain Project 5.4; The Mountaineers describe moves of 5.2-5.3 with a 5.6 variation; alpinedave climbed a 5.6 variation. Not locked.",
+   "pitches 3: The Mountaineers 3, Mountain Project 4. Not locked.",
+   "fa 'Keith Rankin & Ken Solberg, May 30, 1941': Mountain Project gives 'Keith Rankin & Ken Colbert (1941)' - the second name differs. Wikipedia gives the PEAK first ascent as 1925. Not locked; owner/third source needed.",
+   "dist_km 8 (5 mi one-way): The Mountaineers give 8.0 mi round trip but also put Lake Ingalls 4 mi from the trailhead, so their total looks low; the route's own pins put the summit at 5.1 mi. Left as stored."
+  ],
+  "notes": "Summit pin moved 18 m to the USGS point (the GNIS point is the North/main summit: the 3DEP high point is 11 m from it). Trailhead moved 17 m onto the OSM Esmeralda lot and locked (USFS point 22 m away); elevation set to the USFS 4,269 ft (was 4,200). Road rewritten from the USFS page (the old driveNote's '~22-23 mi from the SR 970 turnoff' mixed the legs) and locked for 3 months. Mountain Project's Ingalls Peak AREA elevation is 7,253 ft (wrong for the main summit; ignored). Three Queens Fire order (06-17-03-2026-47) does not list FR 9737 or Ingalls Way."
+ },
+ "wa_colchuck_peak_colchuck_glacier": {
+  "area": "wa_colchuck_peak",
+  "set": {
+   "waypoints": [
+    {
+     "lat": 47.5284637,
+     "lng": -120.8199427,
+     "elev": 3400,
+     "name": "Stuart Lake Trailhead",
+     "note": "Self-issue day-use wilderness permit at the kiosk; $5/day or NW Forest Pass, overnight Enchantment Permit Area reservation required May 15-Oct 31.",
+     "type": "Trailhead",
+     "distMi": 0,
+     "directions": "Stuart Lake Trailhead at the end of FR-7601 off Icicle Creek Road, about 3,400 ft. Self-issue day-use wilderness permit at the kiosk; $5/day or a Northwest Forest Pass. Staying overnight needs an Enchantment Permit Area reservation between 15 May and 31 October, which is a lottery."
+    },
+    {
+     "lat": null,
+     "lng": null,
+     "elev": 4500,
+     "name": "Stuart Lake / Colchuck Lake trail split",
+     "note": "Trail forks after paralleling Mountaineer Creek; bear left (south) onto the Colchuck Lake Trail, which climbs switchbacks the rest of the way.",
+     "type": "Junction",
+     "distMi": 2.5,
+     "directions": "The trail parallels Mountaineer Creek for two and a half miles before forking. Bear left, south, onto the Colchuck Lake Trail — the Stuart Lake Trail carries straight on. From the split it is switchbacks the rest of the way."
+    },
+    {
+     "lat": 47.4922,
+     "lng": -120.8331,
+     "elev": 5561,
+     "name": "Colchuck Lake",
+     "note": "Reliable water and established backcountry campsites along the shore; Colchuck Glacier and the Colchuck-Dragontail col are visible across the lake.",
+     "type": "Campsite",
+     "distMi": 4.1,
+     "directions": "Climb the switchbacks to the lake at about 5,560 ft. Reliable water and established shoreline campsites; from here you can read the whole objective across the water — the Colchuck Glacier and the col between Colchuck and Dragontail."
+    },
+    {
+     "lat": null,
+     "lng": null,
+     "elev": 6800,
+     "name": "Lateral moraine crest above the lake's south/west shore",
+     "note": "Gain the crest of the lateral moraine as soon as possible off the talus - the slopes below it are loose, unstable scree that's worse to descend.",
+     "type": "Hazard",
+     "distMi": 5.3,
+     "directions": "Work around the lake and up the talus on the south-west side, then gain the crest of the lateral moraine as soon as you reasonably can. The slopes below the crest are loose, unstable scree, and they are considerably worse to come down than to go up."
+    },
+    {
+     "lat": null,
+     "lng": null,
+     "elev": 6700,
+     "name": "Toe of Colchuck Glacier",
+     "note": "Rope up or don crampons here; snow-covered and non-crevassed early season but turns to bare blue ice by late summer when crampons won't bite.",
+     "type": "Junction",
+     "distMi": 5.7,
+     "directions": "The moraine leads to the glacier's toe. Put crampons on here and take the axe out. The glacier is receding and effectively crevasse-free, so many parties do not rope up — but it is snow-covered early season and turns to bare, hard ice by late summer, when crampons stop biting well and it becomes the crux of the day rather than a walk."
+    },
+    {
+     "lat": 47.476319,
+     "lng": -120.841289,
+     "elev": 8200,
+     "name": "Colchuck Col (Banshee Pass)",
+     "note": "Saddle between Colchuck and Dragontail peaks reached via the glacier's east/left lobe, steepening to roughly 100 ft of 40-degree snow just below the col.",
+     "type": "Junction",
+     "distMi": 6.3,
+     "directions": "Climb the glacier's east/left lobe toward the col — roughly 1,800 ft of gain from the base of the gravel rib. There is usually a good switchbacking bootpack. The headwall immediately below the col is the steepest ground on the route, around 40 degrees for the last hundred feet or so."
+    },
+    {
+     "lat": 47.4781887,
+     "lng": -120.8463606,
+     "elev": 8705,
+     "name": "Colchuck Peak",
+     "note": "Class 2-3 scramble northwest/west from the col to the true summit; watch for loose blocks on the final ridge.",
+     "type": "Summit",
+     "distMi": 6.5,
+     "directions": "From the col, scramble north-west to the summit: short, low-exposure high Class 2 to easy Class 3 on mixed rock and dirt. Early in the season this last section holds snow, which makes it harder rather than easier. Reverse the route to descend — most of the day's risk is in downclimbing the glacier when it has softened, and in the loose moraine slopes if you drift off the crest."
+    }
+   ],
+   "road": {
+    "name": "Icicle Road, Eightmile Road (FR 7600) and FR 7601 to the Stuart Lake Trailhead",
+    "status": "Gravel and steep, washboarded later in the season; high clearance recommended, 4x4 advised. Closed to vehicles every winter.",
+    "driveNote": "From Leavenworth drive Icicle Road about 8.5 miles, turn left on Eightmile Road (FR 7600), then keep right on FR 7601 for about 4 miles, past the Eightmile Trailhead, to the end. The lot is small; when it is full, park only on the side of the road the signs allow, as no-parking zones are ticketed.",
+    "seasonalGate": "FR 7601 is closed to vehicles each winter."
+   }
+  },
+  "review": {
+   "sources": [
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/stuart-lake-trailhead",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/enchantments",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/enchantments-overnight-permits",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/alerts/updated-little-giant-fire-closure-order-wenatchee-river-and-entiat",
+    "https://www.mountainproject.com/route/106845615/colchuck-glacier",
+    "https://www.mountainproject.com/area/106620717/colchuck-peak",
+    "https://gethighonaltitude.com/2020/06/15/colchuck-peak-colchuck-glacier/",
+    "https://listsofjohn.com/peak/48687",
+    "https://www.mountaineers.org/activities/routes-places/enchantments-area-review/colchuck-dragontail-peaks",
+    "https://en.wikipedia.org/wiki/Colchuck_Peak",
+    "https://epqs.nationalmap.gov/v1/json",
+    "https://www.openstreetmap.org/"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "waypoints/Colchuck Peak",
+    "value": {
+     "name": "Colchuck Peak",
+     "lat": 47.4781887,
+     "lng": -120.8463606
+    },
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "measurement": "USGS GNIS 1531556 'Colchuck Peak' summit point, DomesticNames_WA (edited 2026-08-17)",
+      "fact": "47.4781887,-120.8463606",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "measurement": "USGS 3DEP: highest cell of a 9x9 grid round the GNIS point is 16 m away (8,704 ft); OSM peak node 348974294 6 m away",
+      "fact": "16 m",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "Class 3",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106845615/colchuck-glacier",
+      "fact": "3rd",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://listsofjohn.com/peak/48687",
+      "fact": "YDS Class 3",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "length_m",
+    "value": 945,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106845615/colchuck-glacier",
+      "fact": "3100 ft (939 m)",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://gethighonaltitude.com/2020/06/15/colchuck-peak-colchuck-glacier/",
+      "fact": "3,100 ft",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "commitment",
+    "value": "II",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106845615/colchuck-glacier",
+      "fact": "Grade II",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://gethighonaltitude.com/2020/06/15/colchuck-peak-colchuck-glacier/",
+      "fact": "I/II",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 8705,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/area/106620717/colchuck-peak",
+      "fact": "8,705 ft",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://gethighonaltitude.com/2020/06/15/colchuck-peak-colchuck-glacier/",
+      "fact": "8,705 ft",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://listsofjohn.com/peak/48687",
+      "fact": "8,711' LiDAR, map 8,705'",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Enchantment permit area: overnight stays May 15-Oct 31 require a quota permit (Recreation.gov advance lottery); day trips need the free self-issued day-use permit at the trailhead.",
+    "method": "official-1",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/enchantments-overnight-permits",
+      "fact": "overnight permit May 15-Oct 31; advance lottery via recreation.gov/permits/233273",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     },
+     {
+      "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/enchantments",
+      "fact": "day-use permit free, self-issued at the trailheads",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     },
+     {
+      "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/stuart-lake-trailhead",
+      "fact": "day use wilderness permit free, self-issued at trailhead; overnight permit May 15-Oct 31",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     }
+    ],
+    "expires_at": "2027-11-18T00:00:00Z"
+   },
+   {
+    "field": "road",
+    "value": {
+     "name": "Icicle Road, Eightmile Road (FR 7600) and FR 7601 to the Stuart Lake Trailhead",
+     "status": "Gravel and steep, washboarded later in the season; high clearance recommended, 4x4 advised. Closed to vehicles every winter.",
+     "driveNote": "From Leavenworth drive Icicle Road about 8.5 miles, turn left on Eightmile Road (FR 7600), then keep right on FR 7601 for about 4 miles, past the Eightmile Trailhead, to the end. The lot is small; when it is full, park only on the side of the road the signs allow, as no-parking zones are ticketed.",
+     "seasonalGate": "FR 7601 is closed to vehicles each winter."
+    },
+    "method": "official-1",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/stuart-lake-trailhead",
+      "fact": "Icicle Rd 8.5 mi; Eightmile Rd FR 7600; FR 7601 ~4 mi; high clearance, 4x4 advised; closed winter",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     }
+    ],
+    "expires_at": "2027-02-17T00:00:00Z"
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_colchuck_peak_colchuck_glacier",
+    "column": "pitches",
+    "from": 0,
+    "to": null,
+    "why": "pitches must be >= 1 or null; this is a snow/scramble route with no pitches stated by any source.",
+    "evidence": [
+     "https://www.mountainproject.com/route/106845615/colchuck-glacier"
+    ]
+   }
+  ],
+  "disputed": [
+   "dist_km 8 (5 mi one-way) is shorter than the route's own pins (summit pin distMi 6.5 = 10.5 km; Colchuck Lake 4.1 mi). No published one-way figure found; owner check.",
+   "gain_ft 5300: net 8,705 - 3,378 (3DEP at the lot) = 5,327; The Mountaineers' combined Colchuck + Dragontail page gives 5,900 (both peaks). Not locked.",
+   "fa (Elvin and Norma Johnson, William and Kathy Long, August 1948): Mountain Project; Wikipedia gives the same party for the PEAK (1948) without saying which route. Not locked (route FA vs peak FA unclear).",
+   "rock_grade 'Class 3': same as grade, not separately locked."
+  ],
+  "notes": "Summit pin moved 7 m to the USGS point. Trailhead pin moved 85 m to the OSM lot centre (not locked, see Dragontail note). Road object replaced with the shared USFS-sourced Stuart Lake road (locked 3 months)."
+ },
+ "wa_mount_daniel_daniel_glacier": {
+  "area": "wa_mount_daniel",
+  "set": {
+   "waypoints": [
+    {
+     "lat": 47.5435484,
+     "lng": -121.0965346,
+     "elev": 3370,
+     "name": "Tucquala Meadows Trailhead",
+     "note": "FS 4330 (Cle Elum Valley Rd), about 11 mi past Salmon La Sac. Standard access for Peggys Pond via Cathedral Pass Trail #1345 to Cathedral Pass, continuing to Mount Daniel's SE slopes/Daniel Glacier.",
+     "type": "Trailhead",
+     "distMi": 0,
+     "directions": "Drive up the Cle Elum River valley on Forest Service Road 4330 (Cle Elum Valley Road), about 11 miles past Salmon La Sac, to its end at the trailhead, 3,370 feet. The access road is rough gravel and is best driven with a high-clearance or 4x4 vehicle."
+    },
+    {
+     "lat": 47.53478,
+     "lng": -121.11397,
+     "elev": 4839,
+     "name": "Squaw Lake",
+     "type": "Campsite",
+     "distMi": 2.5
+    },
+    {
+     "lat": 47.555989,
+     "lng": -121.142625,
+     "elev": 5559,
+     "name": "Peggy's Pond",
+     "type": "Water",
+     "distMi": 5.1
+    },
+    {
+     "lat": 47.556164,
+     "lng": -121.141633,
+     "elev": 5591,
+     "name": "Peggys Pond",
+     "type": "Campsite",
+     "distMi": 5
+    },
+    {
+     "lat": 47.5560755,
+     "lng": -121.1417331,
+     "name": "Peggys Pond",
+     "type": "Junction",
+     "distMi": null,
+     "elevFt": null,
+     "directions": "Take the Cathedral Rock Trail #1345, which crosses the Cle Elum River on a bridge and climbs past Squaw Lake to Cathedral Pass and the Pacific Crest Trail, about 4.5 miles. Follow the PCT briefly toward Deep Lake; at the first switchback down, take the spur to Peggys Pond, about half a mile of steep, narrow path along ledges with sheer drop-offs and loose rock."
+    },
+    {
+     "lat": 47.565031,
+     "lng": -121.180891,
+     "elev": 7960,
+     "name": "Mount Daniel (true/West Summit)",
+     "type": "Summit",
+     "distMi": null,
+     "elevFt": 7960,
+     "directions": "Follow braided boot paths northwest then west across heather and talus, gaining about 1,500 ft in a mile to the broad southeast ridge near 7,000 ft, with the Hyas Creek Glacier on your right and Circle Lake below on your left. Traverse climbers' trail and scree below the East Summit to the 7,600-ft saddle, then cross loose talus, snow and the rocky glacier margin to the West Summit, staying on rock off the glacier ice."
+    }
+   ],
+   "road": {
+    "name": "SR 903 and Forest Road 4330 to the Tucquala Meadows / Cathedral Pass trailhead",
+    "status": "Gravel Forest Road 4330 to the road end.",
+    "driveNote": "From Cle Elum drive SR 903 north 19 miles to Salmon La Sac, bear right onto FR 4330 and follow it 11 miles to the trailhead at its end (3,370 ft). Parking is limited.",
+    "seasonalGate": "Check the Cle Elum Ranger District, (509) 852-1100, for road status before an early- or late-season trip."
+   }
+  },
+  "review": {
+   "sources": [
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/tucquala-meadows-fish-lake-trailhead",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/alerts/three-queens-fire-area-closure-reduced-cle-elum-ranger-district-nov-1",
+    "https://www.mountaineers.org/activities/routes-places/mount-daniel-daniel-glacier",
+    "https://listsofjohn.com/peak/16876",
+    "https://wenatcheeoutdoors.org/2016/07/20/daniel-mt/",
+    "https://epqs.nationalmap.gov/v1/json",
+    "https://www.openstreetmap.org/"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "waypoints/Mount Daniel (true/West Summit)",
+    "value": {
+     "name": "Mount Daniel (true/West Summit)",
+     "lat": 47.565031,
+     "lng": -121.180891
+    },
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "measurement": "OSM peak node 7705568033 (West Peak of Mt. Daniel), 5 m from the pin; USGS 3DEP local maximum 7,969 ft at the pin (East Peak GNIS point 1518479 reads 7,890 ft)",
+      "fact": "47.5650539,-121.1809475",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://listsofjohn.com/peak/16876",
+      "fact": "Coords 47.56503, -121.18089; 7,977' LiDAR",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "waypoints/Tucquala Meadows Trailhead",
+    "value": {
+     "name": "Tucquala Meadows Trailhead",
+     "lat": 47.5435484,
+     "lng": -121.0965346
+    },
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "measurement": "OSM parking way 368014720 'Cathedral Pass Trailhead' centre",
+      "fact": "47.5435484,-121.0965346",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/tucquala-meadows-fish-lake-trailhead",
+      "fact": "Latitude 47.5435, Longitude -121.0966 (7 m from the OSM lot)",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 7960,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-daniel-daniel-glacier",
+      "fact": "High Point 7,960 ft",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://listsofjohn.com/peak/16876",
+      "fact": "7,977' (LiDAR), map 7,980'",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Free self-issue Alpine Lakes Wilderness permit at the trailhead; no quota or fee. Northwest Forest Pass to park at most trailheads.",
+    "method": "official-1",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/tucquala-meadows-fish-lake-trailhead",
+      "fact": "wilderness permit free, self-issued at trailhead; $5/day or $30 annual recreation pass",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     }
+    ],
+    "expires_at": "2027-11-18T00:00:00Z"
+   },
+   {
+    "field": "road",
+    "value": {
+     "name": "SR 903 and Forest Road 4330 to the Tucquala Meadows / Cathedral Pass trailhead",
+     "status": "Gravel Forest Road 4330 to the road end.",
+     "driveNote": "From Cle Elum drive SR 903 north 19 miles to Salmon La Sac, bear right onto FR 4330 and follow it 11 miles to the trailhead at its end (3,370 ft). Parking is limited.",
+     "seasonalGate": "Check the Cle Elum Ranger District, (509) 852-1100, for road status before an early- or late-season trip."
+    },
+    "method": "official-1",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/tucquala-meadows-fish-lake-trailhead",
+      "fact": "SR 903 19 mi to Salmon La Sac; FR 4330 11 mi to road end; 3,370 ft; parking limited",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     }
+    ],
+    "expires_at": "2027-02-17T00:00:00Z"
+   }
+  ],
+  "disputed": [
+   "grade 'Class 3': ListsOfJohn gives YDS Class 2+ for the peak; The Mountaineers call the Daniel Glacier route a basic glacier climb. Not locked.",
+   "summit: The Mountaineers' Daniel Glacier route ends at the Middle Summit (7,960 ft) and lists the West Summit (7,960 ft) as optional; the pin is the West Peak, the highest point by LiDAR (ListsOfJohn 7,977 ft; 3DEP 7,969 vs 7,951 at the middle node 9978873959). Pin locked on the West Peak as the mountain's summit; owner may prefer the Middle Summit.",
+   "gain_ft 5100 vs The Mountaineers 5,200; dist_km 12.1 (7.5 mi one-way) vs The Mountaineers 16.0 mi round trip (8 mi one-way). Both within 10%, one source each. Not locked.",
+   "fa 'Unknown (the peak was first climbed in 1925 by The Mountaineers via the Lynch Glacier)': The Mountaineers' Lynch Glacier page agrees on 1925; not locked."
+  ],
+  "notes": "The GNIS 'Mount Daniel' point (1518479, 47.5625784,-121.1718967) is the EAST peak (~7,890 ft), 728 m from the stored West Peak pin, so the feature wins (route-waypoints rule). Trailhead moved 7 m onto the OSM Cathedral Pass Trailhead lot and locked; its note and directions said '13 miles past Salmon-la-Sac' - USFS says 11 (fixed), elevation in directions set to the USFS 3,370 ft. OSM also has a separate 'Tucquala Meadows Trailhead' lot 155 m north; the USFS Tucquala Meadows / Fish Lake page's point is the Cathedral Pass lot. Road rewritten from the USFS page (old: 'about 12 miles' and 'Cathedral Rock/Deception Pass trailhead (3,350 ft)'). Three Queens Fire closure (06-17-03-2026-47, Nov 1 2026 - Apr 30 2027) lists no FR 4330, Cathedral Rock, Cathedral Pass or Peggy's Pond trail; Cle Elum RD alerts say only that it was reduced. Defect: three pins sit at Peggy's Pond (Water, Campsite, and a Junction with no elevation) within 75 m - check:waypoint-dedupe territory; not changed here."
+ }
+}
