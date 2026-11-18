@@ -2,7 +2,7 @@ import { useContext, useState, useEffect, useMemo, Fragment } from "react";
 import { ClimberCtx } from "../../lib/climberCtx.js";
 import { usePinnedBar } from "../../lib/usePinnedBar.js";
 import { searchPlaces } from "../../lib/mapKit";
-import { useSubtreeRoutes, useSubtreeRouteCount, useAreaChildren, useAreaNamesByIds, useAreaTrailsByIds, useAreaSearch, areaSearchTotal } from "../../lib/db";
+import { useSubtreeRoutes, useSubtreeRouteCount, useAreaChildren, useAreaNamesByIds, useAreaTrailsByIds, useAreaPeakElevationsByIds, useAreaSearch, areaSearchTotal } from "../../lib/db";
 import { discLabel } from "../../lib/areaDiscLabel.js";
 import { BTN_LG, CHIP, BTN_LINK, btnChip, BTN_SECONDARY } from "../../lib/buttonStyles.js";
 import { useWideScreen } from "../../lib/wideLayout.js";
@@ -131,14 +131,15 @@ const findB = <T extends [string, ...unknown[]]>(list: T[], k: string | undefine
 /* The grade options a range can be set from, per grading system, on the SAME number line as
    gradeNumFrom (lib/grade.js). Each entry is [label, lo, hi]: `lo` is the bound used when the
    grade is the MINIMUM, `hi` when it is the MAXIMUM, so a pick means "this grade" at either end.
-   YDS letters sit on quarter steps (5.10a = 10.25 … 5.10d = 11, the catalog's unanimous
-   convention). A bare "5.10" stores 10, so 5.10a as the MINIMUM uses 10 — otherwise a route
-   written without a letter falls out of the 5.10 band it belongs to. The one collision is in the
-   DATA, not here: 5.10d and a bare 5.11 are both stored as 11, so they travel together there. */
+   YDS letters sit inside their number (5.10a = 10.25, b 10.5, c 10.75, d 10.9 — lib/grade.js, 0464).
+   A bare "5.10" stores 10, so 5.10a as the MINIMUM uses 10 — otherwise a route written without a
+   letter falls out of the 5.10 band it belongs to. 5.10d used to be 11, the number of a bare 5.11,
+   so "up to 5.10d" took in every 5.11 and the grade chart filed every 5.10d under 5.11 (2026-11-18). */
 export const GRADE_SCALES: Record<string, RouteFinderPanelGrade[]> = (() => {
   const yds: RouteFinderPanelGrade[] = [];
   for (let i = 0; i <= 9; i++) yds.push(["5." + i, i, i]);
-  for (let b = 10; b <= 15; b++) for (let k = 0; k < 4; k++) yds.push(["5." + b + "abcd"[k], k === 0 ? b : b + (k + 1) / 4, b + (k + 1) / 4]);
+  const LETTER = [0.25, 0.5, 0.75, 0.9];
+  for (let b = 10; b <= 15; b++) for (let k = 0; k < 4; k++) yds.push(["5." + b + "abcd"[k], k === 0 ? b : b + LETTER[k], b + LETTER[k]]);
   const ints = (pre: string, a: number, z: number) => { const o: RouteFinderPanelGrade[] = []; for (let i = a; i <= z; i++) o.push([pre + i, i, i]); return o; };
   // A/C: aid and clean-aid grades share one number (A2 and C2 are both 2), so one option covers both.
   const aid: RouteFinderPanelGrade[] = []; for (let i = 0; i <= 5; i++) aid.push(["A" + i + "/C" + i, i, i]);
@@ -325,6 +326,8 @@ export default function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElev
   // THE AREA LINE above each wall (owner, 2026-11-14: "it shows the wall, but it needs to show City of Rocks or the
   // general area breakdown"): the levels between the state and the wall, e.g. City of Rocks › Circle Creek Overlook.
   const { data: areaTrails } = useAreaTrailsByIds(areaIds);
+  // A PEAK heading carries its height (2026-11-18): Peak elevation is a filter here, and nothing on the list said it.
+  const { data: peakElev } = useAreaPeakElevationsByIds(areaIds) as { data?: Record<string, number> };
   const trailOf = (id: string): { id: string; name: string }[] => (areaTrails && id && areaTrails[id]) || [];
   // ...but only the levels BELOW the area being searched: inside Leavenworth a wall's line read "Central-East Cascades,
   // Wenatchee & Leavenworth › Leavenworth › Icicle Creek" over every wall, two to four lines on a phone, repeating the
@@ -365,7 +368,10 @@ export default function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElev
 
   return (
     <div>
-      <ScreenHero C={C} title={"Route finder · " + loc.name} />
+      {/* QUIET on a phone, as the five top tabs are (owner, 2026-10-25: "the box took a third of a phone screen"):
+          the path bar above already ends on the area, and the box pushed the first climb ~60% down a 390px screen
+          (2026-11-18). The title stays an <h1> for screen readers, and the website still draws it. */}
+      <ScreenHero C={C} title={"Route finder · " + loc.name} quiet mb={4} />
       {/* THE SEARCH BAR STAYS PUT (owner, 2026-10-21: "keep the search for areas and routes bar sticky
           to the top of the page"): Routes | Areas, the box, Filters and the applied chips pin under the
           app's top bar (usePinnedBar) while the results scroll under them. */}
@@ -444,7 +450,7 @@ export default function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElev
         return <Fragment key={r.id}>
           {head ? (
             <div style={{ display: "flex", alignItems: "center", gap: 8, margin: i ? "16px 0 8px" : "10px 0 8px" }}>
-              <button onClick={() => onJumpToArea({ id: r.area_id, name: wall || "" })} style={{ ...BTN_LINK(C), flex: 1, minWidth: 0, textAlign: "left", padding: "3px 0", fontSize: 13.5, fontWeight: 800, color: C.text, overflowWrap: "anywhere" }}>{shownTrailOf(r.area_id).length ? <span style={{ display: "block", fontSize: 12, fontWeight: 600, color: C.textSub, marginBottom: 2 }}>{shownTrailOf(r.area_id).map(c => c.name).join(" › ")}</span> : null}{(wall || "This wall") + " ›"}</button>
+              <button onClick={() => onJumpToArea({ id: r.area_id, name: wall || "" })} style={{ ...BTN_LINK(C), flex: 1, minWidth: 0, textAlign: "left", padding: "3px 0", fontSize: 13.5, fontWeight: 800, color: C.text, overflowWrap: "anywhere" }}>{shownTrailOf(r.area_id).length ? <span style={{ display: "block", fontSize: 12, fontWeight: 600, color: C.textSub, marginBottom: 2 }}>{shownTrailOf(r.area_id).map(c => c.name).join(" › ")}</span> : null}{wall || "This wall"}{peakElev && peakElev[r.area_id] ? <span style={{ fontSize: 12, fontWeight: 600, color: C.textSub }}>{" · " + (uElevN(peakElev[r.area_id]) ?? 0).toLocaleString() + " " + uElevUnit()}</span> : null}{" ›"}</button>
               {onToggleBookmark ? <button onClick={() => onToggleBookmark(r.area_id)} aria-label={booked ? "Remove " + (wall || "this wall") + " from Saved" : "Save " + (wall || "this wall")} style={savePill(booked)}>{booked ? "★ Saved" : "☆ Save area"}</button> : null}
             </div>
           ) : null}
