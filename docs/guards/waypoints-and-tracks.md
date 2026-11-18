@@ -1498,6 +1498,27 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   - Injection-tested, three cases: neutering the dedupe guard restores 100 duplicates, re-merging
     the summit categories restores 20, and disabling `COORD_DP` changes nothing — which is how
     that guard was found to be inert and got documented as such rather than presumed working.
+- **`audit:map-discipline`** asks whether a PEAK climb's map reads as one (owner, 2026-11-18:
+  Golden Horn's Northeast Arête "looks like a sport or bouldering route"). It starts from every route
+  on a `peak` area, whatever it stores, because `audit:map-pins` reads `waypoints=not.is.null` and
+  so a route with NO pins is not a row there — the exact class. Verdicts mirror `GPXMap`:
+  TRAILHEAD_AND_SUMMIT, **SUMMIT_ONLY** (no Trailhead pin and no `approach_logistics` coordinate: the
+  crag-looking map) and NO_SUMMIT (pins, none a Summit/Topout). Read-only, public key, report only.
+  - **Measured 2026-11-18**: 1,278 routes on peaks; 434 SUMMIT_ONLY (168 WA, 155 CA, 66 CO, 33 NY),
+    53 NO_SUMMIT (51 WA). 166 of the SUMMIT_ONLY have a sibling on the same peak that pins a trailhead.
+  - **A sibling's trailhead is a CANDIDATE, never a fix.** Of 28 routes whose text matched a
+    sibling's trailhead name, 12 were written (the route's own approach names that trailhead:
+    "PCT from Rainy Pass", "same trailhead as the standard route") into `approach_logistics`
+    (`trailhead`, `trailheadLat/Lng` = the sibling's pin; a pin copied into `waypoints` would claim a
+    survey nobody made). 16 were refused: the text named a DIFFERENT start (Lower vs Upper Goodell
+    Creek, Hozomeen's Lightning Creek, Berge's Buck Creek, Triumph Pass, Table Mountain's winter
+    Bagley lot, Jefferson Pass beside the Mount Washington trailhead), offered two, or the match was
+    the peak's own name ("Mount Washington Trailhead" matches every Mount Washington route).
+  - **The read is AREAS FIRST.** A `routes⋈areas!inner` read filtered on `area_type` answered HTTP
+    500 twice (statement timeout over the 205k-row table); peak area ids, then `area_id=in.(…)` in
+    chunks of 60, answers in seconds.
+  - Ice and mixed are out of scope on purpose: an ice flow on a face does not top out, so "no
+    summit" is not a finding there.
 - **`audit:map-pins`** asks what the route MAP actually draws — how many trailhead pins it will
   paint, and which pins it will silently drop — rather than the geometry question the three
   waypoint audits ask. It overlaps `audit:waypoints` on two of its three sections and exists

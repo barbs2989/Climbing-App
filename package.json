@@ -63,6 +63,7 @@
     "audit:gain": "node scripts/audit-gain-vs-waypoints.mjs",
     "audit:road-coverage": "node scripts/audit-road-coverage.mjs",
     "audit:map-pins": "node scripts/audit-route-map-pins.mjs",
+    "audit:map-discipline": "node scripts/audit-map-discipline.mjs",
     "audit:access-prose": "node scripts/audit-misfiled-access-prose.mjs",
     "audit:note-voice": "node scripts/audit-waypoint-note-voice.mjs",
     "audit:misplaced-prose": "node scripts/audit-misplaced-prose.mjs",
