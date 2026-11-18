@@ -71,6 +71,23 @@ else ok(`all ${READERS.length} page readers and the sheet gate on lib/fieldScope
 // The sport gear box is only right while sport edits draws and not rack.
 if (!fieldScope("draws", scopeCtx({}, "sport")) || fieldScope("rack", scopeCtx({}, "sport"))) fail("sport's gear box opens `draws`, so sport must be offered draws and not rack");
 
+// ── 3b. the page side: what the sheet offers, the page names and can open (2026-11-18, third PR) ──
+const PAGE_SIDE = [
+  [/fieldScope\("outingShape",scopeCtx\(route,catOf\(route\)\)\)\?\(\(\)=>\{const _shp=recShapeOf\(route\)/, "the Plan tab's TRIP SHAPE row, shown exactly where the sheet offers Trip shape (RoutePlanTab)"],
+  [/<Calculator route=\{route\}[^>]*onEditTiming=\{\(\)=>\{openFix\("timing"\);\}\}/, "the PUBLISHED TIMES pencil (RoutePlanTab → Calculator)"],
+  [/<ClimateSeasonCard route=\{route\} onEdit=\{\(\)=>\{openFix\("climate"\);\}\}\/>/, "the CLIMATE & SEASON pencil (RouteDetail)"],
+  [/<PartnerRequirementsPanel [^>]*onEdit=\{\(\)=>setAutoFix\(selRoute\.id\+"#partnerRequirements"\)\}\/>/, "the PARTNER REQUIREMENTS pencil (ClimbMatch)"],
+  [/_hd\?\["Approach",effDistKm\(route\)/, "the boulder header's Approach cell, drawn only with a value (RouteDetail)"],
+  [/protOf\(route\)\|\|\(cragOnly&&routeAscentFt\(route\)==null\)\?null:\["Gain"/, "the crag header's Gain cell, drawn only with a value (RouteDetail)"],
+];
+const app = readAppFile(path.join(ROOT, "ClimbMatch.jsx")); // the Partners tab body is App's
+const pageLost = PAGE_SIDE.filter(([re]) => !re.test(rd) && !re.test(app)).map(([, n]) => n);
+if (pageLost.length) fail(`the page no longer matches the sheet: ${pageLost.join("; ")}`);
+else ok(`all ${PAGE_SIDE.length} page-side surfaces name, open or hide what the sheet offers`);
+// The header cells and the trip-shape row lean on these rules.
+for (const cat of CRAG) for (const k of ["dist", "gain", "outingShape"]) if (fieldScope(k, scopeCtx({ pitches: 3 }, cat))) fail(`${k} is offered on ${cat}: its header cell / trip-shape row is hidden there as uneditable`);
+for (const cat of MOUNTAIN) if (!fieldScope("outingShape", scopeCtx({ pitches: 3 }, cat))) fail(`outingShape is not offered on ${cat}, but its Plan tab draws a TRIP SHAPE row with an Add button`);
+
 // ── 4. page facts ──
 const PLANNER_ONLY = ["outingShape", "timing", "itinerary", "bivy", "whatToBring", "approachVariants", "dist", "gain", "loss", "seasonalHazards", "climbingRoute"];
 const CRAG_FACTS = ["location", "rockQuality", "wet", "sun", "anchor"];

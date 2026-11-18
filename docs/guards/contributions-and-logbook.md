@@ -161,7 +161,10 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   CRAG_CATS; (3) those readers still call it (regex anchors); (4) page facts that are gates in the page's
   own code — no Plan-tab-only field on a crag, crag fact rows only on crags, boulder rows only on
   boulders, DESCENT on multi-pitch sport/trad and a crag line that stores a descent, but not single-pitch
-  ones; the sections every page draws offered everywhere; (5) 7 injection cases. **What it cannot see:**
+  ones; the sections every page draws offered everywhere; (5) 7 injection cases. Section 3b (third PR)
+  anchors the page side: the TRIP SHAPE row gated on the same rule, the PUBLISHED TIMES / CLIMATE & SEASON /
+  PARTNER REQUIREMENTS pencils (the last is App's, so it reads ClimbMatch.jsx too), and the header cells drawn
+  only with a value where dist/gain are not editable. **What it cannot see:**
   section 4 is a hand-written list of page facts, not derived from the JSX, so a NEW section gate (or a
   section moved onto a crag page) is invisible to it until a fact is added here; and it reads gates by
   category, not the rendered page — the browser check is to open each discipline's sheet and compare.

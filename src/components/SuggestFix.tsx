@@ -14,7 +14,7 @@ import { ROAD_KEYS, ACCESS_KEYS, TIMING_KEYS, CROWDS_KEYS, PARTNER_KEYS, SEASONA
 import { fmtSlingVal } from "../../lib/slingFormat.js";
 import { tripTrailheadDraft, viaPitchSpans, spanLabel, tripTrailheadMerge } from "../../lib/approaches.js";
 import { ROCK_OPTIONS, routeRock } from "../../lib/rockType";
-import { effDistIsWholeTrip, recShapeOf } from "../../lib/outing.js";
+import { effDistIsWholeTrip, recShapeOf, OUTING_SHAPE_LABEL } from "../../lib/outing.js";
 import { fieldScope, scopeCtx } from "../../lib/fieldScope.js";
 import { CHIP, BTN } from "../../lib/buttonStyles.js";
 import GradePicker from "./GradePicker.tsx";
@@ -108,7 +108,7 @@ type SFDisc = [string, string, { discipline: string; style?: string }];
    ("retracing its approach" / "loops back to the trailhead by a different line" / "finishes at
    a different trailhead"), so the contribute form names each shape the same way the screen
    explains it. A code with no entry falls through to "—" rather than rendering the raw token. */
-const SHAPE_LABEL: Record<string,string>={outback:"Out and back",loop:"Loop",point:"Point to point"};
+const SHAPE_LABEL: Record<string,string>=OUTING_SHAPE_LABEL;
 const DISC_HAZ: Record<string,string[]>={sport:["Loose rock","Runout","Warms up / sun-affected"],trad:["Rockfall","Loose rock","Runout","Serious exposure","Warms up / sun-affected"],bouldering:["Bad landing zone","Loose rock","Warms up / sun-affected"],aid:["Rockfall","Loose rock","Runout","Serious exposure"],ice:["Avalanche terrain","Rockfall","Serious exposure"],mixed:["Rockfall","Loose rock","Avalanche terrain","Serious exposure"],alpine:["Rockfall","Loose rock","Lightning / storms","Avalanche terrain","Crevasse hazard","Cornices","Serious exposure","Complex route-finding","River / creek crossing"],mountaineering:["Rockfall","Lightning / storms","Avalanche terrain","Crevasse hazard","Cornices","Serious exposure","Complex route-finding","River / creek crossing"],hiking:["Avalanche terrain","River / creek crossing","Complex route-finding","Serious exposure"],scrambling:["Rockfall","Loose rock","Serious exposure"]};
 /* [4,5,6] -> "May–Jul"; [10,11,0,1] -> "Nov–Feb" (a run may wrap the new year); gaps split with ", ". */
 function monthSpan(ms: number[]){const s=ms.slice().sort(function(a,b){return a-b;});if(!s.length)return "";const runs: number[][]=[];s.forEach(function(m){const last=runs[runs.length-1];if(last&&m===last[1]+1)last[1]=m;else runs.push([m,m]);});if(runs.length>1&&runs[0][0]===0&&runs[runs.length-1][1]===11){const w=runs.pop() as number[];runs[0][0]=w[0];}return runs.map(function(r){return r[0]===r[1]?MONTHS[r[0]]:MONTHS[r[0]]+"–"+MONTHS[r[1]];}).join(", ");}
