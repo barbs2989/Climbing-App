@@ -53,9 +53,35 @@
       "fact": "Land manager: Mount Baker-Snoqualmie National Forest."
      }
     ]
+   },
+   {
+    "field": "season",
+    "value": "May - October",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climbhigherground.com/south-twin-sister",
+      "retrieved_at": "2026-11-14",
+      "fact": "Climb Higher Ground: when to climb South Twin West Ridge, May to October."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "Class 4 with low 5th-class steps",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climbhigherground.com/south-twin-sister",
+      "retrieved_at": "2026-11-14",
+      "fact": "Guide page: scrambling up to 4th class and even low 5th class."
+     }
+    ]
    }
   ],
-  "note": "Mountaineers gain 3,700 ft conflicts with the app's 6,100 ft; the page does not name its start point (possibly a higher road point than the Middle Fork gate). Length shows '20.0' with no unit, so it was not used."
+  "note": "Mountaineers gain 3,700 ft conflicts with the app's 6,100 ft; the page does not name its start point (possibly a higher road point than the Middle Fork gate). Length shows '20.0' with no unit, so it was not used. Climb Higher Ground's 5.2 mi / 3,000 ft are for its guided trips through the logging-road gate, so they were not used."
  },
  "wa_southeast_face": {
   "area": "wa_sharkfin_tower",
@@ -541,26 +567,36 @@
    {
     "field": "gain_ft",
     "value": 6200,
-    "method": "single-source",
-    "level": "locked-1src",
+    "method": "agree-2",
+    "level": "locked",
     "evidence": [
      {
       "url": "https://www.mountaineers.org/activities/routes-places/the-brothers-south-couloir",
       "retrieved_at": "2026-11-14",
       "fact": "Mountaineers lists Elevation Gain 6,200 ft for The Brothers South Couloir."
+     },
+     {
+      "url": "https://summitborn.com/the-brothers-south-couloir-route-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Summitborn gives gain of about 6,000 ft (within 10%)."
      }
     ]
    },
    {
     "field": "dist_mi_roundtrip",
     "value": 17,
-    "method": "single-source",
-    "level": "locked-1src",
+    "method": "agree-2",
+    "level": "locked",
     "evidence": [
      {
       "url": "https://www.mountaineers.org/activities/routes-places/the-brothers-south-couloir",
       "retrieved_at": "2026-11-14",
       "fact": "Mountaineers lists Length 17.0 mi."
+     },
+     {
+      "url": "https://summitborn.com/the-brothers-south-couloir-route-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Summitborn: about 17 mi round trip from the Lena Lake Trailhead."
      }
     ]
    },
@@ -580,13 +616,83 @@
    {
     "field": "permit",
     "value": "Northwest Forest Pass",
-    "method": "single-source",
-    "level": "locked-1src",
+    "method": "agree-2",
+    "level": "locked",
     "evidence": [
      {
       "url": "https://www.mountaineers.org/activities/routes-places/the-brothers-south-couloir",
       "retrieved_at": "2026-11-14",
       "fact": "Mountaineers: parking requires a Northwest Forest Pass."
+     },
+     {
+      "url": "https://summitborn.com/the-brothers-south-couloir-route-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Summitborn: parking needs a Northwest Forest Pass or the daily equivalent."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Lena Lake Trailhead on Hamma Hamma River Road (FR 25), about 700 ft",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/the-brothers-south-couloir-route-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Summitborn: take Hamma Hamma River Road (FR 25) about 8 miles to the signed Lena Lake trailhead at about 700 ft."
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "Late July - September",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/the-brothers-south-couloir-route-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Summitborn: best season late July to September, once the couloir melts out."
+     }
+    ]
+   },
+   {
+    "field": "car_to_car_hours",
+    "value": "12-15",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/the-brothers-south-couloir-route-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Summitborn: a long single-push day of 12-15 hours, or split over two days."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Climbers' camp near 3,200 ft",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/the-brothers-south-couloir-route-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Summitborn: most parties camp near 3,200 ft at the climbers' camp."
+     }
+    ]
+   },
+   {
+    "field": "permit_wilderness",
+    "value": "Self-issued wilderness permit for overnight camping (Brothers Wilderness)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/the-brothers-south-couloir-route-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Summitborn: overnight camping in the Brothers Wilderness needs a self-issued wilderness permit."
      }
     ]
    },
@@ -1474,8 +1580,460 @@
       "fact": "Mountaineers: Parking Permit Required: None."
      }
     ]
+   },
+   {
+    "field": "grade",
+    "value": "5.3",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://spokalpine.com/2024/08/20/shuksan-fisher-chimneys-se-ridge-iii-5-3/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Spokalpine trip report titles the route Shuksan SE Ridge, III 5.3."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "III",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://spokalpine.com/2024/08/20/shuksan-fisher-chimneys-se-ridge-iii-5-3/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Report title rates it Grade III."
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 6,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://spokalpine.com/2024/08/20/shuksan-fisher-chimneys-se-ridge-iii-5-3/",
+      "retrieved_at": "2026-11-14",
+      "fact": "The party reached the summit in six pitches, with some simul-climbing."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Up the upper Sulphide Glacier to gain the Southeast Ridge, then climb the ridge to the summit",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://spokalpine.com/2024/08/20/shuksan-fisher-chimneys-se-ridge-iii-5-3/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Party climbed the upper Sulphide Glacier and gained the Southeast Ridge, then climbed the ridge."
+     }
+    ]
    }
   ],
   "note": "Mountaineers lists Elevation Gain 9,115 ft (close to the summit height, likely a data-entry error) and rates the route 5.7 vs the app's 5.3, so neither was used."
+ },
+ "wa_south_ridge_6": {
+  "area": "wa_aiguille_de_l_m",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "5.6",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.alpineinstitute.com/route-profile-aiguille-de-i-m-north-ridge/",
+      "retrieved_at": "2026-11-14",
+      "fact": "AAI says the Aiguille has two routes; the South Ridge is an exposed 5.6 ridge."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Boston Basin (lower or upper camp)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.alpineinstitute.com/route-profile-aiguille-de-i-m-north-ridge/",
+      "retrieved_at": "2026-11-14",
+      "fact": "AAI: approach as for Forbidden Peak in Boston Basin, camping at the lower or upper camp."
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "South Ridge is the left skyline of the Aiguille seen from Boston Basin; the North Ridge is the right skyline",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/photo/109252871",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP photo caption: the South Ridge is the left skyline, the North Ridge the right skyline."
+     }
+    ]
+   },
+   {
+    "field": "trip_length",
+    "value": "Half-day climb from Boston Basin camp",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.alpineinstitute.com/route-profile-aiguille-de-i-m-north-ridge/",
+      "retrieved_at": "2026-11-14",
+      "fact": "AAI: the Aiguille can easily be done as a half-day climb from Boston Basin."
+     }
+    ]
+   }
+  ],
+  "note": "The AAI page is the North Ridge profile; it names the South Ridge (5.6) and the shared Boston Basin approach. Mountain Project has no South Ridge route page (only a photo marking the ridge). No page stated distance or gain for this route."
+ },
+ "wa_south_twin_sister_north_ridge": {
+  "area": "wa_south_twin_sister",
+  "skip_reason": "Opened: summitpost.org/south-twin/679815 (403 Forbidden, all SummitPost pages); thewildoutsiders.com/adventure-journal/south-twin-sister (extension could not attach, 2 tries); mountaineers.org routes-places/south-twin-sister-north-ridge (404); Mountain Project north-ridge 111140926 turned out to be an Oregon route; climbhigherground.com/south-twin-sister (West Ridge only). No North Ridge figures found."
+ },
+ "wa_spider_mountain_north_ridge": {
+  "area": "wa_spider_mountain",
+  "facts": [
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 19,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://onehikeaweek.com/2019/07/05/spider-mountain/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Spider Mountain at a glance: access Cascade Pass Trailhead, round trip 19 miles."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Cascade Pass Trailhead",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://onehikeaweek.com/2019/07/05/spider-mountain/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Access: Cascade Pass Trailhead."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Helmet, ice axe, crampons",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://onehikeaweek.com/2019/07/05/spider-mountain/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Gear listed: helmet, ice axe, crampons."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Cascade Pass to Cache Col, Red Ledge, Spider-Formidable Col, then a final class 3 traverse to the summit",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://onehikeaweek.com/2019/07/05/spider-mountain/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Report sections: Cascade Pass trailhead to Cache Col, to Red Ledge, to Spider-Formidable Col; a final class 3 traverse."
+     }
+    ]
+   },
+   {
+    "field": "glacier",
+    "value": "Middle Cascade Glacier is crossed",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://onehikeaweek.com/2019/07/05/spider-mountain/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Party travelled through the Middle Cascade Glacier."
+     }
+    ]
+   }
+  ],
+  "note": "SummitPost Spider Mountain page returned 403."
+ },
+ "wa_spinnaker_peak_s_route": {
+  "area": "wa_spinnaker_peak",
+  "facts": [
+   {
+    "field": "high_point_ft",
+    "value": 5645,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/spinnaker-peak-snowshoe",
+      "retrieved_at": "2026-11-14",
+      "fact": "WTA Spinnaker Peak (snowshoe) page lists Highest Point 5,645 feet."
+     }
+    ]
+   }
+  ],
+  "note": "Mountaineers 'Spinnaker & Martin Peaks' page (7.0 mi, 3,200 ft) is a two-peak outing, so not used. SummitPost Spinnaker pages return 403."
+ },
+ "wa_star_peak_sawtooth_nw_ridge": {
+  "area": "wa_star_peak_sawtooth",
+  "skip_reason": "Opened: wta.org/go-hiking/hikes/star-peak (standard hike from Star Lake basin, high point 8,690 ft; nothing on the NW Ridge); onehikeaweek.com/2011/08/07/star-peak/ (three-peak trip from Wolf Creek, not this route); summitpost.org/star-peak/151520 (403). No NW Ridge figures found."
+ },
+ "wa_sundial_northeast": {
+  "area": "wa_sundial",
+  "skip_reason": "Opened: mountainproject.com/area/105739691/sundial (no route listed for this line); mountainproject.com/approach-trail/203839937/approach-to-sundial (no stats in page HTML); summitpost.org/sundial-peak (403). Nothing usable found."
+ },
+ "wa_switchback_mountain_scramble": {
+  "area": "wa_switchback_mountain",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Class 3",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/cooney-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "WTA: the route to Cooney Peak is Class 3 with exposed scrambling."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 8321,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/cooney-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "WTA lists Highest Point 8,321 feet for Cooney Peak."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Northwest Forest Pass",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/cooney-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "WTA: Northwest Forest Pass required."
+     }
+    ]
+   }
+  ],
+  "note": "WTA rates the route to Cooney Peak Class 3; the app says Class 2. SummitPost Switchback Peak returns 403."
+ },
+ "wa_tailgunner_peak_w_route": {
+  "area": "wa_tailgunner",
+  "facts": [
+   {
+    "field": "gain_ft",
+    "value": 3900,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://journeywithjoshua.com/trip-reports/tailgunner-peak-the-quiet-one/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trip report stats: distance 5.38 mi, elevation gain 3,900 ft, time 6.4 hr."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 5.38,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://journeywithjoshua.com/trip-reports/tailgunner-peak-the-quiet-one/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trip report stats: distance 5.38 mi car to car."
+     }
+    ]
+   },
+   {
+    "field": "car_to_car_hours",
+    "value": 6.4,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://journeywithjoshua.com/trip-reports/tailgunner-peak-the-quiet-one/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trip report stats: time 6.4 hr."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "Class 2",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://journeywithjoshua.com/trip-reports/tailgunner-peak-the-quiet-one/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Class 2 scramble with a couple of stream crossings and some forest routefinding."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Northwest Forest Pass",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://journeywithjoshua.com/trip-reports/tailgunner-peak-the-quiet-one/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Passes: Northwest Forest Pass for the Barclay Lake lot."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Barclay Lake Trailhead, end of Barclay Creek Road (2,300 ft)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://trailcatjim.com/tailgunner-peak-via-barclay-creek-tailgunner-pass-south-slope/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Starts at Barclay Lake Trailhead at the end of Barclay Creek Road, elevation 2,300 ft."
+     }
+    ]
+   }
+  ],
+  "note": "Joshua's report gives 3,900 ft gain (app 3,540 ft, more than 10% apart). Jim Brisbine's report also climbed Gunn Point (two peaks, 4,500 ft), so only its trailhead is used."
+ },
+ "wa_the_brothers_traverse": {
+  "area": "wa_the_brothers",
+  "facts": [
+   {
+    "field": "gain_ft",
+    "value": 6200,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/the-brothers-brothers-traverse",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers Brothers Traverse route page lists Elevation Gain 6,200 ft."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 6866,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/the-brothers-brothers-traverse",
+      "retrieved_at": "2026-11-14",
+      "fact": "The route page lists High Point 6,866 ft."
+     }
+    ]
+   },
+   {
+    "field": "difficulty",
+    "value": "Intermediate Mountaineering Climb",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/the-brothers-brothers-traverse",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers rates it an Intermediate Mountaineering Climb."
+     }
+    ]
+   },
+   {
+    "field": "car_to_car_hours",
+    "value": "10h23m (one party)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/trip-reports/the-brothers-brothers-traverse",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trip report: watch logged 17.34 miles, 7,024 ft gain, 10h23m car to car."
+     }
+    ]
+   },
+   {
+    "field": "water",
+    "value": "Running water along the hike up to about 5,000 ft",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/trip-reports/the-brothers-brothers-traverse",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trip report: plenty of running water on the way up until about 5k ft."
+     }
+    ]
+   }
+  ],
+  "note": "Mountaineers route page gain 6,200 ft vs a member trip report's 7,024 ft (watch), more than 10% apart, so neither is locked. Both pages are from The Mountaineers, so they count as one publisher."
+ },
+ "wa_the_pleiades_scramble": {
+  "area": "wa_the_pleiades",
+  "skip_reason": "Opened: stevensong.com/usa/washington/the-pleiades-peaks-1-2-3-4/ (narrative, no stats); summitpost.org/the-pleiades/931529 (403). No figures found."
+ },
+ "wa_the_pyramid_picket_south_route": {
+  "area": "wa_the_pyramid_picket",
+  "facts": [
+   {
+    "field": "approach_step",
+    "value": "Goodell Creek Trailhead to Terror Basin, then on to Crescent Creek Basin",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://stephabegg.com/trip-reports/washington/pickets/southern-pickets-2/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trip: Goodell Creek Trailhead to Terror Basin, then Terror Basin to Crescent Creek Basin."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Backcountry permit required (North Cascades NP)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/southern-picket-range",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers Southern Pickets page: leaders must secure backcountry permits."
+     }
+    ]
+   }
+  ],
+  "note": "Steph Abegg climbed the Pyramid's West Ridge inside a 6-day Southern Pickets trip, so no route figures. Jim Brisbine's Degenhardt-Pyramid page had no stats; the Mountaineers Southern Picket Range zone page only covers permits."
+ },
+ "wa_the_rake_traverse_route": {
+  "area": "wa_the_rake",
+  "skip_reason": "Opened: cascadeclimbers.com/forum/topic/108688 (a South Gully route on The Rake, not this ridge traverse); stephabegg.com southern-pickets-2 (does not climb The Rake); summitpost Picket Range (403). No figures for this route."
  }
 }

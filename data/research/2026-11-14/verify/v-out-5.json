@@ -1,0 +1,895 @@
+[
+ {
+  "route_id": "wa_liberty_bell_beckey_route",
+  "area_id": "wa_liberty_bell",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 2500,
+  "confirmed_urls": [
+   "https://www.mountaineers.org/activities/routes-places/liberty-bell-blue-lake-trail-area-review/liberty-bell-southwest-face"
+  ],
+  "problems": "Mountaineers SW Face (page: \"also called the Beckey Route\") 2,500 confirmed; trailcatjim page says \"gained & lost\" (round-trip wording) -> not one-way gain, not counted (2,400)"
+ },
+ {
+  "route_id": "wa_south_early_winter_spire_southwest_couloir",
+  "area_id": "wa_south_early_winters_spire",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 2600,
+  "confirmed_urls": [
+   "https://www.mountaineers.org/activities/routes-places/liberty-bell-blue-lake-trail-area-review/south-early-winter-spire-sw-couloir"
+  ],
+  "problems": ""
+ },
+ {
+  "route_id": "wa_lundin_peak_west_ridge",
+  "area_id": "wa_lundin_peak",
+  "field": "gain_ft",
+  "verdict": "confirmed_agree2",
+  "value": 3000,
+  "confirmed_urls": [
+   "https://www.mountaineers.org/activities/routes-places/lundin-peak-west-ridge",
+   "https://www.wta.org/go-hiking/hikes/lundin-peak-trail"
+  ],
+  "problems": "Mountaineers West Ridge 3,000 (9.5 mi) and WTA Lundin Peak 2,900 (7.6 mi) both confirmed; within 10%"
+ },
+ {
+  "route_id": "wa_merchant_peak_south_route",
+  "area_id": "wa_merchant_peak",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 3900,
+  "confirmed_urls": [
+   "https://www.mountaineers.org/activities/routes-places/merchant-peak"
+  ],
+  "problems": "trailcatjim page says \"gained & lost\" (round-trip wording) -> not one-way gain, not counted (4,200)"
+ },
+ {
+  "route_id": "wa_monte_cristo_peak_scramble",
+  "area_id": "wa_monte_cristo_peak",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 3900,
+  "confirmed_urls": [
+   "https://www.mountaineers.org/activities/routes-places/monte-cristo-barlow-pass-area/monte-cristo-north-col"
+  ],
+  "problems": "page is Monte Cristo/North Col; confirm that is the route this id means"
+ },
+ {
+  "route_id": "wa_morning_star_peak_standard",
+  "area_id": "wa_morning_star_peak",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 4200,
+  "confirmed_urls": [
+   "https://www.mountaineers.org/activities/routes-places/morning-star-peak-south-ridge"
+  ],
+  "problems": "page is Morning Star Peak/South Ridge"
+ },
+ {
+  "route_id": "wa_mount_adams_south_climb",
+  "area_id": "wa_mount_adams",
+  "field": "gain_ft",
+  "verdict": "confirmed_agree2",
+  "value": 6600,
+  "confirmed_urls": [
+   "https://www.mountaineers.org/activities/routes-places/mount-adams-south-spur",
+   "https://www.wta.org/go-hiking/hikes/mount-adams-south-climb"
+  ],
+  "problems": "Mountaineers South Spur 6,600, WTA South Climb 6,700"
+ },
+ {
+  "route_id": "wa_mount_baker_coleman_deming",
+  "area_id": "wa_mount_baker",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 8100,
+  "confirmed_urls": [
+   "https://www.mountaineers.org/activities/routes-places/mount-baker-coleman-glacier"
+  ],
+  "problems": "page headline 8,100, but its own trip profile reads TH-camp 2,300 and camp-summit 4,800; headline may include a variant (Colfax) - review"
+ },
+ {
+  "route_id": "wa_mount_baker_easton_glacier",
+  "area_id": "wa_mount_baker",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 7500,
+  "confirmed_urls": [
+   "https://www.mountaineers.org/activities/routes-places/mount-baker-easton-glacier"
+  ],
+  "problems": ""
+ },
+ {
+  "route_id": "wa_mount_baker_north_ridge",
+  "area_id": "wa_mount_baker",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 7100,
+  "confirmed_urls": [
+   "https://www.mountaineers.org/activities/routes-places/mount-baker-north-ridge"
+  ],
+  "problems": ""
+ },
+ {
+  "route_id": "wa_mount_constance_north_chimney",
+  "area_id": "wa_mount_constance",
+  "field": "gain_ft",
+  "verdict": "wrong_route",
+  "value": null,
+  "confirmed_urls": [],
+  "problems": "evidence page is Mount Constance/South Chute, not a North Chimney route"
+ },
+ {
+  "route_id": "wa_mount_cruiser_south_corner",
+  "area_id": "wa_mount_cruiser",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 5300,
+  "confirmed_urls": [
+   "https://www.mountaineers.org/activities/routes-places/mount-cruiser-southwest-corner"
+  ],
+  "problems": "page is Mount Cruiser/Southwest Corner"
+ },
+ {
+  "route_id": "wa_mount_daniel_daniel_glacier",
+  "area_id": "wa_mount_daniel",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 5200,
+  "confirmed_urls": [
+   "https://www.mountaineers.org/activities/routes-places/mount-daniel-daniel-glacier"
+  ],
+  "problems": ""
+ },
+ {
+  "route_id": "wa_mount_daniel_lynch_glacier",
+  "area_id": "wa_mount_daniel",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 5000,
+  "confirmed_urls": [
+   "https://www.mountaineers.org/activities/routes-places/mount-daniel-lynch-glacier"
+  ],
+  "problems": ""
+ },
+ {
+  "route_id": "wa_mount_washington_olympic_winter_direct",
+  "area_id": "wa_mount_washington_olympic",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 3500,
+  "confirmed_urls": [
+   "https://www.mountaineers.org/activities/routes-places/mount-ellinor-mount-washington"
+  ],
+  "problems": "shared Ellinor/Washington page; Winter Direct line reads \"6.0 miles round trip, 3.500 feet of elevation gain\""
+ },
+ {
+  "route_id": "wa_mount_herman_standard_scramble",
+  "area_id": "wa_mount_herman",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 2100,
+  "confirmed_urls": [
+   "https://www.mountaineers.org/activities/routes-places/mount-herman"
+  ],
+  "problems": ""
+ },
+ {
+  "route_id": "wa_mount_hinman_west_ridge",
+  "area_id": "wa_mount_hinman",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 5800,
+  "confirmed_urls": [
+   "https://www.mountaineers.org/activities/routes-places/mount-hinman-west-route"
+  ],
+  "problems": "page is Mount Hinman/West Route; trailcatjim page says \"gained & lost\" (round-trip wording) -> not one-way gain, not counted (5,700)"
+ },
+ {
+  "route_id": "wa_mount_hinman_west_route",
+  "area_id": "wa_mount_hinman",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 5800,
+  "confirmed_urls": [
+   "https://www.mountaineers.org/activities/routes-places/mount-hinman-west-route"
+  ],
+  "problems": "trailcatjim page says \"gained & lost\" (round-trip wording) -> not one-way gain, not counted (5,700); same page as wa_mount_hinman_west_ridge - possible duplicate route"
+ },
+ {
+  "route_id": "wa_mount_howard_south_slope",
+  "area_id": "wa_mount_howard",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 4900,
+  "confirmed_urls": [
+   "https://www.mountaineers.org/activities/routes-places/mount-howard-mount-mastiff"
+  ],
+  "problems": "page headline 5,500 is Howard+Mastiff; Howard-only text: 12 mi RT, 4,900 ft from Merritt Lake TH"
+ },
+ {
+  "route_id": "or_jefferson_park_glacier",
+  "area_id": "or_mt_jefferson",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 5897,
+  "confirmed_urls": [
+   "https://www.mountaineers.org/activities/routes-places/mount-jefferson-jefferson-park-glacier"
+  ],
+  "problems": ""
+ },
+ {
+  "route_id": "wa_mount_olympus_blue_glacier",
+  "area_id": "wa_mount_olympus",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 7400,
+  "confirmed_urls": [
+   "https://www.mountaineers.org/activities/routes-places/mount-olympus-blue-glacier"
+  ],
+  "problems": "trailcatjim page says \"gained & lost\" (round-trip wording) -> not one-way gain, not counted (8,000)"
+ },
+ {
+  "route_id": "wa_olympus_traverse",
+  "area_id": "wa_mount_olympus",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 8100,
+  "confirmed_urls": [
+   "https://www.mountaineers.org/activities/routes-places/mount-olympus-blue-glacier"
+  ],
+  "problems": "\"Mount Olympus Traverse: 45 miles with 8,100 feet\" on the Blue Glacier page; whole-traverse figure"
+ },
+ {
+  "route_id": "wa_mount_persis_west_ridge",
+  "area_id": "wa_mount_persis",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 2800,
+  "confirmed_urls": [
+   "https://www.mountaineers.org/activities/routes-places/mount-persis"
+  ],
+  "problems": "trailcatjim page says \"gained & lost\" (round-trip wording) -> not one-way gain, not counted (2,800, via NW ridge)"
+ },
+ {
+  "route_id": "wa_mount_pilchuck_east_ridge",
+  "area_id": "wa_mount_pilchuck",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 2800,
+  "confirmed_urls": [
+   "https://www.mountaineers.org/activities/routes-places/mount-pilchuck-east-ridge"
+  ],
+  "problems": ""
+ },
+ {
+  "route_id": "wa_mount_prophet_east",
+  "area_id": "wa_mount_prophet",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 7200,
+  "confirmed_urls": [
+   "https://www.mountaineers.org/activities/routes-places/mount-prophet"
+  ],
+  "problems": "trailcatjim page says \"gained & lost\" (round-trip wording) -> not one-way gain, not counted (7,200)"
+ },
+ {
+  "route_id": "wa_mount_pugh_stujack",
+  "area_id": "wa_mount_pugh",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 5300,
+  "confirmed_urls": [
+   "https://www.mountaineers.org/activities/routes-places/mount-pugh",
+   "https://www.wta.org/go-hiking/hikes/mount-pugh"
+  ],
+  "problems": "WTA and Mountaineers print the identical figure -> one source per brief"
+ },
+ {
+  "route_id": "wa_mount_rainier_emmons_glacier",
+  "area_id": "wa_mount_rainier",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 10000,
+  "confirmed_urls": [
+   "https://www.mountaineers.org/activities/routes-places/mount-rainier-emmons-glacier"
+  ],
+  "problems": ""
+ },
+ {
+  "route_id": "wa_point_success_south_side",
+  "area_id": "wa_point_success",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 11500,
+  "confirmed_urls": [
+   "https://www.mountaineers.org/activities/routes-places/mount-rainier-success-cleaver"
+  ],
+  "problems": "page is Mount Rainier/Success Cleaver (25 mi RT)"
+ },
+ {
+  "route_id": "wa_mount_rainier_sunset_ridge",
+  "area_id": "wa_mount_rainier",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 11500,
+  "confirmed_urls": [
+   "https://www.mountaineers.org/activities/routes-places/mount-rainier-sunset-ridge"
+  ],
+  "problems": ""
+ },
+ {
+  "route_id": "wa_mount_skokomish_standard",
+  "area_id": "wa_mount_skokomish",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 5000,
+  "confirmed_urls": [
+   "https://www.mountaineers.org/activities/routes-places/mount-skokomish"
+  ],
+  "problems": "trailcatjim page says \"gained & lost\" (round-trip wording) -> not one-way gain, not counted (5,100)"
+ },
+ {
+  "route_id": "wa_mount_st_helens_monitor_ridge",
+  "area_id": "wa_mount_st_helens",
+  "field": "gain_ft",
+  "verdict": "confirmed_agree2",
+  "value": 4700,
+  "confirmed_urls": [
+   "https://www.mountaineers.org/activities/routes-places/mount-st-helens-monitor-ridge",
+   "https://www.wta.org/go-hiking/hikes/mount-st-helens-monitor-ridge"
+  ],
+  "problems": "Mountaineers 4,700, WTA 4,500"
+ },
+ {
+  "route_id": "wa_mount_st_helens_worm_flows",
+  "area_id": "wa_mount_st_helens",
+  "field": "gain_ft",
+  "verdict": "confirmed_agree2",
+  "value": 5700,
+  "confirmed_urls": [
+   "https://www.mountaineers.org/activities/routes-places/mount-st-helens-worm-flows",
+   "https://thepeakseeker.com/routes/worm-flows-route-mount-st-helens/"
+  ],
+  "problems": "Peak Seeker: gains about 5,700 ft trailhead to summit"
+ },
+ {
+  "route_id": "wa_mount_stickney_scramble",
+  "area_id": "wa_mount_stickney",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 4000,
+  "confirmed_urls": [
+   "https://www.mountaineers.org/activities/routes-places/mount-stickney"
+  ],
+  "problems": ""
+ },
+ {
+  "route_id": "or_west_ridge_2",
+  "area_id": "or_mt_thielsen",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 3302,
+  "confirmed_urls": [
+   "https://www.mountaineers.org/activities/routes-places/mount-thielsen-west-ridge"
+  ],
+  "problems": ""
+ },
+ {
+  "route_id": "wa_se_ridge_aka_shield_wall",
+  "area_id": "wa_mount_washington_olympic",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 5255,
+  "confirmed_urls": [
+   "https://www.mountaineers.org/activities/routes-places/mount-washington-shield-wall"
+  ],
+  "problems": "page Mount Washington/Shield Wall, HP 6,255"
+ },
+ {
+  "route_id": "wa_mount_constance_north_chute",
+  "area_id": "wa_mount_constance",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 7300,
+  "confirmed_urls": [
+   "https://www.mountaineers.org/activities/routes-places/mt-constance-n-chute"
+  ],
+  "problems": ""
+ },
+ {
+  "route_id": "wa_mount_constance_west_arete",
+  "area_id": "wa_mount_constance",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 7300,
+  "confirmed_urls": [
+   "https://www.mountaineers.org/activities/routes-places/mt-constance-w-arete"
+  ],
+  "problems": ""
+ },
+ {
+  "route_id": "wa_mount_logan_r2",
+  "area_id": "wa_mount_logan",
+  "field": "gain_ft",
+  "verdict": "wrong_scope",
+  "value": null,
+  "confirmed_urls": [],
+  "problems": "headline 8,500 matches the trip-profile gain incl. 1,500 ft regain on the way out (TH-camp 4,000, camp-summit 3,000, summit-TH 1,500): whole-outing gain, not one-way"
+ },
+ {
+  "route_id": "wa_mount_logan_r2",
+  "area_id": "wa_mount_logan",
+  "field": "approach_loss_ft",
+  "verdict": "confirmed_1src",
+  "value": 1500,
+  "confirmed_urls": [
+   "https://www.mountaineers.org/activities/routes-places/mt-logan-douglas-glacier"
+  ],
+  "problems": "trip profile: Trailhead to Camp gain 4,000 / loss 1,500 (app_value 9200 in input looks like a gain figure)"
+ },
+ {
+  "route_id": "wa_mount_logan_r2",
+  "area_id": "wa_mount_logan",
+  "field": "return_gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 1500,
+  "confirmed_urls": [
+   "https://www.mountaineers.org/activities/routes-places/mt-logan-douglas-glacier"
+  ],
+  "problems": "trip profile: Summit to Trailhead gain 1,500 / loss 7,000"
+ },
+ {
+  "route_id": "wa_mount_shuksan_north_face",
+  "area_id": "wa_mount_shuksan_climbs",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 6100,
+  "confirmed_urls": [
+   "https://www.mountaineers.org/activities/routes-places/mt-shuksan-n-face"
+  ],
+  "problems": ""
+ },
+ {
+  "route_id": "wa_mount_shuksan_sulphide_glacier",
+  "area_id": "wa_mount_shuksan_climbs",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 6500,
+  "confirmed_urls": [
+   "https://www.mountaineers.org/activities/routes-places/mt-shuksan-sulphide-glacier"
+  ],
+  "problems": ""
+ },
+ {
+  "route_id": "wa_mount_stone_lake_of_angels",
+  "area_id": "wa_mount_stone",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 5012,
+  "confirmed_urls": [
+   "https://www.mountaineers.org/activities/routes-places/mt-stone-6-616"
+  ],
+  "problems": "page title Mount Stone/South Couloir"
+ },
+ {
+  "route_id": "wa_bacon_peak_diobsud",
+  "area_id": "wa_bacon_peak",
+  "field": "gain_ft",
+  "verdict": "wrong_route",
+  "value": null,
+  "confirmed_urls": [],
+  "problems": "Mountaineers Bacon page starts at Anderson & Watson Lakes TH, not a Diobsud approach"
+ },
+ {
+  "route_id": "wa_black_peak_northeast_ridge",
+  "area_id": "wa_black_peak",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 4130,
+  "confirmed_urls": [
+   "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/black-peak-northeast-ridge"
+  ],
+  "problems": ""
+ },
+ {
+  "route_id": "wa_northwest_ridge",
+  "area_id": "wa_dorado_needle",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 7000,
+  "confirmed_urls": [
+   "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/high-occupancy-xc-zones/dorado-needle-nw-ridge"
+  ],
+  "problems": ""
+ },
+ {
+  "route_id": "wa_southwest_buttress",
+  "area_id": "wa_dorado_needle",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 7000,
+  "confirmed_urls": [
+   "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/high-occupancy-xc-zones/dorado-needle-southwest-buttress"
+  ],
+  "problems": ""
+ },
+ {
+  "route_id": "wa_icy_peak_ruth_icy_traverse",
+  "area_id": "wa_icy_peak",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 6500,
+  "confirmed_urls": [
+   "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/high-occupancy-xc-zones/ruth-mountain-icy-peak-traverse"
+  ],
+  "problems": "headline covers the Ruth+Icy outing; Icy profile TH-camp 3,600, camp-summit 1,270 - review whether one-way"
+ },
+ {
+  "route_id": "wa_icy_peak_ruth_icy_traverse",
+  "area_id": "wa_icy_peak",
+  "field": "approach_loss_ft",
+  "verdict": "confirmed_1src",
+  "value": 800,
+  "confirmed_urls": [
+   "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/high-occupancy-xc-zones/ruth-mountain-icy-peak-traverse"
+  ],
+  "problems": "Icy trip profile: Camp to Summit gain 1,270 / loss 800"
+ },
+ {
+  "route_id": "wa_icy_peak_ruth_icy_traverse",
+  "area_id": "wa_icy_peak",
+  "field": "return_gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 800,
+  "confirmed_urls": [
+   "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/high-occupancy-xc-zones/ruth-mountain-icy-peak-traverse"
+  ],
+  "problems": "Icy trip profile: Summit to Camp gain 800 / loss 1,270"
+ },
+ {
+  "route_id": "wa_buckner_mountain_north_face",
+  "area_id": "wa_buckner_mountain",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 5400,
+  "confirmed_urls": [
+   "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/mount-buckner-north-face"
+  ],
+  "problems": ""
+ },
+ {
+  "route_id": "wa_east_slope",
+  "area_id": "wa_primus_peak",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 7300,
+  "confirmed_urls": [
+   "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/primus-peak-borealis-glacier",
+   "https://www.wta.org/go-hiking/hikes/primus-peak"
+  ],
+  "problems": "WTA and Mountaineers print the identical figure -> one source per brief (page is Primus Peak/Borealis Glacier)"
+ },
+ {
+  "route_id": "wa_the_chopping_block_northeast_ridge",
+  "area_id": "wa_the_chopping_block",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 6209,
+  "confirmed_urls": [
+   "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/the-chopping-block-pinnacle-peak"
+  ],
+  "problems": "page route is The Chopping Block/Northeast Ridge from Goodell Creek"
+ },
+ {
+  "route_id": "wa_news_nw_corner",
+  "area_id": "wa_north_early_winters_spire",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 2372,
+  "confirmed_urls": [
+   "https://www.mountaineers.org/activities/routes-places/north-early-winter-spire-northwest-corner"
+  ],
+  "problems": ""
+ },
+ {
+  "route_id": "wa_painted_mountain_scramble",
+  "area_id": "wa_painted_mountain",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 4875,
+  "confirmed_urls": [
+   "https://www.mountaineers.org/activities/routes-places/painted-mountain-red-mountain",
+   "https://www.wta.org/go-hiking/hikes/red-mountain"
+  ],
+  "problems": "WTA and Mountaineers print the identical figure -> one source per brief"
+ },
+ {
+  "route_id": "wa_mount_rainier_disappointment_cleaver",
+  "area_id": "wa_mount_rainier",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 8790,
+  "confirmed_urls": [
+   "https://www.mountaineers.org/activities/routes-places/paradise-area-review/mount-rainier-disappointment-cleaver"
+  ],
+  "problems": ""
+ },
+ {
+  "route_id": "wa_mount_rainier_fuhrer_finger",
+  "area_id": "wa_mount_rainier",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 10000,
+  "confirmed_urls": [
+   "https://www.mountaineers.org/activities/routes-places/paradise-area-review/mount-rainier-fuhrer-finger"
+  ],
+  "problems": ""
+ },
+ {
+  "route_id": "wa_mount_rainier_gibraltar_ledges",
+  "area_id": "wa_mount_rainier",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 9010,
+  "confirmed_urls": [
+   "https://www.mountaineers.org/activities/routes-places/paradise-area-review/mount-rainier-gibraltar-ledges"
+  ],
+  "problems": ""
+ },
+ {
+  "route_id": "wa_mount_rainier_kautz_glacier",
+  "area_id": "wa_mount_rainier",
+  "field": "gain_ft",
+  "verdict": "confirmed_agree2",
+  "value": 9000,
+  "confirmed_urls": [
+   "https://www.mountaineers.org/activities/routes-places/paradise-area-review/mount-rainier-kautz-glacier",
+   "https://globalsummitguide.com/mountains-rainier-route-comparison/"
+  ],
+  "problems": "Mountaineers 9,000; globalsummitguide table \"~9,500 ft gain\" (cites NPS briefs)"
+ },
+ {
+  "route_id": "wa_preacher_mountain_scramble",
+  "area_id": "wa_preacher_mountain",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 5000,
+  "confirmed_urls": [
+   "https://www.mountaineers.org/activities/routes-places/preacher-mountain"
+  ],
+  "problems": ""
+ },
+ {
+  "route_id": "wa_ragged_ridge",
+  "area_id": "wa_alpine_and_technical_traverses",
+  "field": "gain_ft",
+  "verdict": "wrong_scope",
+  "value": null,
+  "confirmed_urls": [],
+  "problems": "8,420 is a multi-peak outing (Mesahchie+Katsuk), 20 mi RT; page also lists a 10 mi/5,000 ft variant"
+ },
+ {
+  "route_id": "wa_reynolds_peak_scramble",
+  "area_id": "wa_reynolds_peak",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 5300,
+  "confirmed_urls": [
+   "https://www.mountaineers.org/activities/routes-places/reynolds-peak"
+  ],
+  "problems": ""
+ },
+ {
+  "route_id": "wa_robinson_mountain_southeast_ridge",
+  "area_id": "wa_robinson_mountain",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 6100,
+  "confirmed_urls": [
+   "https://www.mountaineers.org/activities/routes-places/robinson-mountain"
+  ],
+  "problems": ""
+ },
+ {
+  "route_id": "wa_sherman_peak_baker_squak_glacier",
+  "area_id": "wa_sherman_peak_baker",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 6800,
+  "confirmed_urls": [
+   "https://www.mountaineers.org/activities/routes-places/sherman-peak-squak-glacier-mount-baker"
+  ],
+  "problems": "profile TH-camp 3,211, camp-summit 3,589"
+ },
+ {
+  "route_id": "wa_silver_peak_standard_scramble_route",
+  "area_id": "wa_silver_peak",
+  "field": "gain_ft",
+  "verdict": "conflict",
+  "value": null,
+  "confirmed_urls": [
+   "https://www.mountaineers.org/activities/routes-places/silver-peak",
+   "https://www.wta.org/go-hiking/hikes/silver-peak"
+  ],
+  "problems": "Mountaineers 1,900 vs WTA 2,100 (>10% of 1,900, borderline); Mountaineers headline length 8.5 mi vs 5.6 mi text"
+ },
+ {
+  "route_id": "wa_sinister_peak_north_face",
+  "area_id": "wa_sinister_peak",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 7000,
+  "confirmed_urls": [
+   "https://www.mountaineers.org/activities/routes-places/sinister-peak"
+  ],
+  "problems": ""
+ },
+ {
+  "route_id": "wa_fire_on_the_mountain",
+  "area_id": "wa_sloan_peak",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 5900,
+  "confirmed_urls": [
+   "https://www.mountaineers.org/activities/routes-places/sloan-peak-fire-on-the-mountain"
+  ],
+  "problems": ""
+ },
+ {
+  "route_id": "wa_lichtenberg_mountain_southeast_ridge",
+  "area_id": "wa_lichtenberg_mountain",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 2100,
+  "confirmed_urls": [
+   "https://www.mountaineers.org/activities/routes-places/smithbrook-road-area-review/lichtenberg-mountain"
+  ],
+  "problems": ""
+ },
+ {
+  "route_id": "wa_lichtenberg_mountain_se_route",
+  "area_id": "wa_lichtenberg_mountain",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 2100,
+  "confirmed_urls": [
+   "https://www.mountaineers.org/activities/routes-places/smithbrook-road-area-review/lichtenberg-mountain"
+  ],
+  "problems": "same page as wa_lichtenberg_mountain_southeast_ridge - possible duplicate route"
+ },
+ {
+  "route_id": "wa_mount_mccausland_n_route",
+  "area_id": "wa_mount_mccausland",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 1800,
+  "confirmed_urls": [
+   "https://www.mountaineers.org/activities/routes-places/smithbrook-road-area-review/mount-mccausland",
+   "https://www.wta.org/go-hiking/hikes/mt.-mccausland"
+  ],
+  "problems": "WTA and Mountaineers print the identical figure -> one source per brief; Mountaineers headline 2,700/8 mi is another variant, day-hike line 1,800/7 mi"
+ },
+ {
+  "route_id": "wa_snowfield_peak_neve_glacier",
+  "area_id": "wa_snowfield_peak",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 7500,
+  "confirmed_urls": [
+   "https://www.mountaineers.org/activities/routes-places/snowfield-peak-neve-glacier"
+  ],
+  "problems": "page says 7,500 (input value 7,400 does not appear)"
+ },
+ {
+  "route_id": "wa_south_twin_sister_west_ridge",
+  "area_id": "wa_south_twin_sister",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 3700,
+  "confirmed_urls": [
+   "https://www.mountaineers.org/activities/routes-places/south-twin-sister-west-ridge"
+  ],
+  "problems": ""
+ },
+ {
+  "route_id": "wa_spire_mountain_scramble",
+  "area_id": "wa_spire_mountain",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 5000,
+  "confirmed_urls": [
+   "https://www.mountaineers.org/activities/routes-places/spire-mountain"
+  ],
+  "problems": ""
+ },
+ {
+  "route_id": "wa_summit_chief_mountain_south_route",
+  "area_id": "wa_summit_chief_mountain",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 5000,
+  "confirmed_urls": [
+   "https://www.mountaineers.org/activities/routes-places/summit-chief"
+  ],
+  "problems": ""
+ },
+ {
+  "route_id": "wa_the_brothers_traverse",
+  "area_id": "wa_the_brothers",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 6200,
+  "confirmed_urls": [
+   "https://www.mountaineers.org/activities/routes-places/the-brothers-brothers-traverse"
+  ],
+  "problems": ""
+ },
+ {
+  "route_id": "wa_the_brothers_south_couloir",
+  "area_id": "wa_the_brothers",
+  "field": "gain_ft",
+  "verdict": "confirmed_agree2",
+  "value": 6200,
+  "confirmed_urls": [
+   "https://www.mountaineers.org/activities/routes-places/the-brothers-south-couloir",
+   "https://summitborn.com/the-brothers-south-couloir-route-guide/"
+  ],
+  "problems": "Summitborn \"Elevation Gain ≈ 6,000 ft\" (\"6,000 to 6,200\") - may lean on Mountaineers"
+ },
+ {
+  "route_id": "wa_the_chopping_block_south_route",
+  "area_id": "wa_the_chopping_block",
+  "field": "gain_ft",
+  "verdict": "wrong_route",
+  "value": null,
+  "confirmed_urls": [],
+  "problems": "page route is Northeast Ridge (variants SE Face, NW Route); no South route"
+ },
+ {
+  "route_id": "wa_the_tooth_south_face",
+  "area_id": "wa_the_tooth_climbs",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 2500,
+  "confirmed_urls": [
+   "https://www.mountaineers.org/activities/routes-places/the-tooth-south-face"
+  ],
+  "problems": ""
+ },
+ {
+  "route_id": "wa_the_tooth_fairy",
+  "area_id": "wa_summer_fall_rock_2",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 2500,
+  "confirmed_urls": [
+   "https://www.mountaineers.org/activities/routes-places/the-tooth-the-tooth-fairy"
+  ],
+  "problems": ""
+ },
+ {
+  "route_id": "or_south_ridge_route",
+  "area_id": "or_three_fingered_jack",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 3000,
+  "confirmed_urls": [
+   "https://www.mountaineers.org/activities/routes-places/three-fingered-jack-south-ridge"
+  ],
+  "problems": ""
+ },
+ {
+  "route_id": "wa_three_fingers_south_peak_lookout",
+  "area_id": "wa_three_fingers",
+  "field": "gain_ft",
+  "verdict": "confirmed_agree2",
+  "value": 4400,
+  "confirmed_urls": [
+   "https://www.mountaineers.org/activities/routes-places/three-fingers-south",
+   "https://www.wta.org/go-hiking/hikes/three-fingers"
+  ],
+  "problems": "Mountaineers 4,400, WTA 4,200"
+ }
+]
