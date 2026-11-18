@@ -40,7 +40,8 @@ export default function RankAreaPicker({real,uid,cur,chain,kids,kidsLoading,kids
   const open=openSel||atTop;
   const myQ=useMyPartnerAreas(real&&open?(uid||null):null);
   const mine: MyArea[]=((myQ.data as MyArea[]|undefined)||[]).filter(a=>a.areaId!==cur.id);
-  const trail=chain.slice(0,-1).filter(a=>a.id).map(a=>a.name);
+  /* The country left off, as the search's hits print it (GroupPlaceSearch): "Washington › Central-West Cascades", not a line spent on "United States". */
+  const trail=chain.slice(0,-1).filter(a=>a.id).slice(1).map(a=>a.name);
   const parent=chain.length>1?chain[chain.length-2]:null;
   const sorted=[...kids].sort((a,b)=>(b.n||0)-(a.n||0));
   const showAll=allFor===cur.id;
@@ -49,7 +50,7 @@ export default function RankAreaPicker({real,uid,cur,chain,kids,kidsLoading,kids
   const row={display:"flex",alignItems:"center",gap:10,width:"100%",minHeight:44,boxSizing:"border-box" as const,padding:"8px 12px",background:"transparent",border:"none",borderTop:"1px solid "+C.borderLight,color:C.text,fontSize:13.5,fontWeight:600,textAlign:"left" as const,cursor:"pointer"};
   return <div>
     <div style={{display:"flex",alignItems:"center",gap:10,background:C.card,border:"1px solid "+C.border,borderRadius:12,padding:"10px 12px"}}>
-      <ActionIcon name="pin" size={18} color={C.amber}/>
+      <div style={{alignSelf:"flex-start",marginTop:19,flexShrink:0,display:"flex"}}><ActionIcon name="pin" size={18} color={C.amber}/></div>
       <div style={{flex:1,minWidth:0}}>
         <div style={{fontSize:10.5,fontWeight:800,color:C.textMuted,letterSpacing:0.4,textTransform:"uppercase"}}>Ranking in</div>
         <div aria-current="location" style={{fontSize:16,fontWeight:800,color:C.amber,overflowWrap:"anywhere",lineHeight:1.25}}>{cur.name||"this area"}</div>
