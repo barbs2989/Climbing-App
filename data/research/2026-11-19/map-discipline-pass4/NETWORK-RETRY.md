@@ -1,6 +1,6 @@
-# Network retry, pass 4 (2026-11-18)
+# Network retry, pass 4 (retested 2026-11-18, second environment)
 
-Research NOT run: fewer than four of the test sites answered 200. The proxy refuses the CONNECT tunnel (403) and the WebFetch tool reports the hosts as outside the session's allowed network domains.
+Research NOT run: 0 of 8 test sites answered 200 (threshold 4). The proxy refuses the CONNECT tunnel (403) and the WebFetch tool reports the hosts as outside the session's allowed network domains. The same result as the earlier retest.
 
 | Site | Result |
 |---|---|
@@ -14,4 +14,4 @@ Research NOT run: fewer than four of the test sites answered 200. The proxy refu
 | https://www.peakbagger.com/ | 000 |
 | WebFetch en.wikipedia.org/wiki/Mount_Stuart | ENOTFOUND (host not in the environment's allowed domains) |
 
-Fix: allow these hosts in the environment's network settings (or use unrestricted access), then re-run. out/q01..q25.json are untouched.
+Fix: allow these hosts in the environment's network settings (or use unrestricted access), then re-fire. out/q01..q25.json are untouched.
