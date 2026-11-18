@@ -1411,6 +1411,15 @@ that they had none — on the one screen whose whole subject is who you climb wi
     this section*, whose Try Again cannot help (React.lazy keeps the failed import). Both boundaries now ask one
     helper, `swallowedChunk` in `lib/chunkReload.js`; the section shows *ClimbMatch was just updated* with Reload.
     The check asserts the key lives there and that BOTH boundaries import and call it.
+  - **A history step CANCELS the reload** (2026-11-18, live, signed in). The card for Menu › Listed areas
+    stayed because the reload never happened: the error reaches `AppErrorBoundary`, the whole App unmounts, and
+    `lib/backButton.js`'s cleanup calls `history.back()` — and in Chrome a `history.back()` after `reload()` cancels
+    the reload (measured: reload then back = no reload; reload alone = reload). A section-level error does not
+    unmount App, which is why the Climbs tab always reloaded. `main.jsx` now calls `noteReloadPending()` first
+    (`lib/chunkReload.js`) and backButton.js skips BOTH its `history.back()`s while it is set; the entry left behind
+    is the one its boot code replaces. Proven by a staged deploy behind an 800 ms page load (the local preview
+    answers too fast to show it): before, the error card at 18 ms and no reload in 10 s; after, the card at 40 ms
+    and the new build at 837 ms. The check asserts the call order and both guards (injection-tested).
   - **A failed PREFETCH also fires `vite:preloadError`** and so reloads. That is intended for the
     deploy case; `main.jsx`'s idle prefetch skips offline and Save-Data so it cannot reload a
     climber at a trailhead.
