@@ -17,10 +17,8 @@ async function axeScan(page, where) {
   const v = await page.evaluate(async () => {
     const a = await window.axe.run(document, { runOnly: { type: "tag", values: ["wcag2a", "wcag2aa", "wcag21a", "wcag21aa", "wcag22aa"] }, resultTypes: ["violations"] });
     const b = await window.axe.run(document, { runOnly: { type: "rule", values: ["label-content-name-mismatch"] }, resultTypes: ["violations"] });
-    // nested-interactive on the LEADERBOARD ROWS (a role=button row holding the points + report buttons) predates
-    // this picker and is reported separately; this probe gates the picker's own controls.
-    const lbRow = (n) => { const el = document.querySelector(n.target[0]); return !!(el && /^#\d+, /.test(el.getAttribute("aria-label") || "")); };
-    for (const x of [...a.violations, ...b.violations]) x.nodes = x.nodes.filter((n) => !(x.id === "nested-interactive" && lbRow(n)));
+    // The leaderboard rows' nested-interactive, excused here when this probe was written, is fixed
+    // (probe-ranks-row-a11y.mjs), so nothing on the page is excused any more.
     return [...a.violations, ...b.violations].map((x) => ({ id: x.id, nodes: x.nodes.filter((n) => !/partially obscured/.test(n.failureSummary || "")).map((n) => n.target.join(" ") + " [" + ((document.querySelector(n.target[0])||{}).getAttribute?.("aria-label")||"").slice(0,70) + "] — " + (n.failureSummary || "").split("\n").slice(1).join(" ").trim().slice(0, 140)) })).filter((x) => x.nodes.length);
   });
   ok(v.length === 0, "axe: no WCAG A/AA or label-in-name violation " + where + (v.length ? "\n         " + v.map((x) => x.id + ": " + x.nodes.slice(0, 3).join(" | ")).join("\n         ") : ""));

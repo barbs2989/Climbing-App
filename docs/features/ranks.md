@@ -19,8 +19,12 @@
   (WCAG 2.5.3; axe's `label-content-name-mismatch`), and so are the search hits' and the Crag regular row's —
   `scripts/oneoff/probe-ranks-area-picker.mjs` runs axe on the open picker, the search results and Show all, which
   no browser walk reaches.
-- **Known, not fixed here:** each leaderboard row is a `role="button"` holding the points button and the ⚑ Report
-  button — axe `nested-interactive` (WCAG 4.1.2), found by the same probe on 2026-11-18.
+- **A row is not a button holding buttons** (fixed 2026-11-18, owner "fix it"; axe `nested-interactive`, WCAG 4.1.2,
+  found by that probe): the row is a plain container, and rank + avatar + name are ONE real `<button>` that opens the
+  profile and carries the row's `lbRowName` name ("#1, …", which probes find rows by). The points button (*How X got
+  N pts*) and the ⚑ Report button sit BESIDE it, so each is reached and announced on its own. Where a row has no points
+  button (signed out, Vouched, Contributions) the number stays inside the profile button, so the whole row still opens
+  the profile. `scripts/oneoff/probe-ranks-row-a11y.mjs` drives it signed in and as a guest, with axe (13/13).
 - **Climbing type** (All, Sport, Trad, Top rope, Bouldering, Alpine, Mountaineering, Scrambling, Ice, Mixed, Aid)
   and **Ranking**, grouped Performance · Lists · Reliability · Community. Which boards a type offers is the `ids`
   list in `Leaderboards`: Send points on every graded type (not Mountaineering/Scrambling, whose class grades weigh
