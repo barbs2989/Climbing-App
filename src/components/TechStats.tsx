@@ -222,7 +222,12 @@ export default function TechStats({route,onEdit,part,onEditArea}: TechStatsProps
        anchor — a pitch's own anchor stays on its ROUTE BREAKDOWN row. Style is NOT here: `features`
        already draws as the tag chips (RouteTagRow), and a row would print it twice. */
     /* A multipitch crag line whose belays differ says so: the top anchor, then each kind by pitch. */
-    const _anc=String(route.anchor||"").trim();const _pAnc=disc!=="bouldering"?pitchAnchorSummary(route):null;if(disc!=="bouldering"&&((_anc&&_anc.length<=80)||_pAnc))facts.push(["Anchor",_pAnc?((_anc&&_anc.length<=80?_anc+" at the top · ":"")+"by pitch: "+pitchAnchorText(_pAnc)):_anc]);const _longOnFile: string[]=[];if(_anc.length>80)_longOnFile.push("Anchor");
+    /* On a crag page the anchor, wet-rock, rock-quality and fixed-gear facts sit in their own section card
+       (GEAR & SAFETY, ROCK & SEASON), as LOCATION does in WHERE IT STARTS, so none is ever too long to show
+       there. Capped, a long stated value was counted as on file (no "Not on file yet") and drawn nowhere, so a
+       climber could neither read it nor see that it existed (owner, 2026-11-18). */
+    const _factSec=CRAG_CATS.includes(disc);
+    const _anc=String(route.anchor||"").trim();const _pAnc=disc!=="bouldering"?pitchAnchorSummary(route):null;const _ancOk=!!_anc&&(_factSec||_anc.length<=80);if(disc!=="bouldering"&&(_ancOk||_pAnc))facts.push(["Anchor",_pAnc?((_ancOk?_anc+" at the top · ":"")+"by pitch: "+pitchAnchorText(_pAnc)):_anc]);const _longOnFile: string[]=[];if(!_factSec&&_anc.length>80)_longOnFile.push("Anchor");
     /* LOCATION is `location` (0243): where the line starts on its wall, which is how a climber finds it
        at the base. First among the facts, because it is the first thing needed at the crag. */
     const _loc=String(route.location||"").trim();const _locAll=CRAG_CATS.includes(disc);/* on a crag it has a section of its own, so it is never too long to show */if(_loc&&(_locAll||_loc.length<=160))facts.unshift(["Location",_loc]);if(!_locAll&&_loc.length>160)_longOnFile.push("Location");
@@ -236,7 +241,7 @@ export default function TechStats({route,onEdit,part,onEditArea}: TechStatsProps
     if(_sun)facts.push(["Sun",_sun]);
     /* WET, ROCK QUALITY and FIXED GEAR (0247): seepage after rain, loose or polished rock, and the
        pitons/bolt ladders already in place. Short stated values, so each is a facts row, not a tile. */
-    [["Wet",route.wet],["Rock quality",route.rockQuality],["Fixed gear",route.fixedGear]].forEach(function(f){const v=String(f[1]||"").trim();if(v&&v.length<=160)facts.push([f[0] as string,v]);else if(v)_longOnFile.push(f[0] as string);});
+    [["Wet",route.wet],["Rock quality",route.rockQuality],["Fixed gear",route.fixedGear]].forEach(function(f){const v=String(f[1]||"").trim();if(v&&(_factSec||v.length<=160))facts.push([f[0] as string,v]);else if(v)_longOnFile.push(f[0] as string);});
     /* SEASON is the crag's, wall's or peak's unless the route states its own (owner, 2026-11-13: consolidate
        to the crag, sub-area or peak). The route header already shows it (routeSeasonShort); the card said
        "Not on file yet" beside it on 100% of crag routes. Up to four ancestors, as the header reads it. */
