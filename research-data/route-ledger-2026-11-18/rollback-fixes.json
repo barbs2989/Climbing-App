@@ -1,0 +1,310 @@
+{
+ "note": "Old values replaced by the owner-approved 2026-11-18 fixes (fix-routes.sql / fix-areas.sql, applied via patchRow).",
+ "routes": [
+  {
+   "id": "wa_mount_rainier_disappointment_cleaver",
+   "high_point_ft": 14406
+  },
+  {
+   "id": "wa_sunshine_buttress",
+   "pitches": 0
+  },
+  {
+   "id": "wa_air_guitar",
+   "pitches": 0
+  },
+  {
+   "id": "wa_catwalk",
+   "pitches": 0
+  },
+  {
+   "id": "wa_pimpsqueak",
+   "pitches": 0
+  },
+  {
+   "id": "wa_devils_punch_bowl_area_2_devils_punch_bowl",
+   "grade": "WI3"
+  },
+  {
+   "id": "wa_full_or_nearly_wall_routes_abraxas",
+   "access": {
+    "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+    "notes": "Many of these peaks (Mount Persis, Gunn Peak, Baring Mountain area) sit outside designated wilderness — administratively unrestricted despite serious technical terrain.",
+    "permit": "None required.",
+    "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+    "parking_pass": "Northwest Forest Pass or America the Beautiful pass required at developed trailheads."
+   }
+  },
+  {
+   "id": "wa_chair_peak_northeast_buttress",
+   "discipline": "alpine",
+   "disciplines": [
+    "alpine"
+   ],
+   "gpx": [
+    [
+     47.444691,
+     -121.42313
+    ],
+    [
+     47.444759,
+     -121.423142
+    ],
+    [
+     47.44501,
+     -121.42333
+    ],
+    [
+     47.445161,
+     -121.423416
+    ],
+    [
+     47.445307,
+     -121.4235
+    ],
+    [
+     47.44543,
+     -121.42357
+    ],
+    [
+     47.44553,
+     -121.42369
+    ],
+    [
+     47.44571,
+     -121.42407
+    ],
+    [
+     47.44575,
+     -121.42431
+    ],
+    [
+     47.44573,
+     -121.42459
+    ],
+    [
+     47.44553,
+     -121.42528
+    ],
+    [
+     47.44542,
+     -121.42556
+    ],
+    [
+     47.44531,
+     -121.42595
+    ],
+    [
+     47.4453,
+     -121.42617
+    ],
+    [
+     47.44534,
+     -121.42646
+    ],
+    [
+     47.44541,
+     -121.42659
+    ],
+    [
+     47.44588,
+     -121.42728
+    ],
+    [
+     47.44619,
+     -121.42788
+    ],
+    [
+     47.44677,
+     -121.42872
+    ],
+    [
+     47.44749,
+     -121.42957
+    ],
+    [
+     47.4476,
+     -121.42975
+    ],
+    [
+     47.44774,
+     -121.43003
+    ],
+    [
+     47.448095,
+     -121.431105
+    ],
+    [
+     47.450206,
+     -121.436434
+    ],
+    [
+     47.453195,
+     -121.442785
+    ],
+    [
+     47.45421,
+     -121.445403
+    ],
+    [
+     47.455429,
+     -121.452184
+    ],
+    [
+     47.456329,
+     -121.45669
+    ],
+    [
+     47.458998,
+     -121.457891
+    ],
+    [
+     47.459869,
+     -121.46081
+    ],
+    [
+     47.459433,
+     -121.464393
+    ],
+    [
+     47.459462,
+     -121.464425
+    ],
+    [
+     47.459919,
+     -121.464554
+    ],
+    [
+     47.45984,
+     -121.465605
+    ],
+    [
+     47.459586,
+     -121.466292
+    ],
+    [
+     47.459789,
+     -121.466872
+    ],
+    [
+     47.459796,
+     -121.466947
+    ],
+    [
+     47.459796,
+     -121.466882
+    ]
+   ],
+   "best_season": "Late July through September for the snow-free rock route; the same buttress is also climbed as a winter ice/mixed line (roughly WI2-3) from about December through March when it's in condition.",
+   "seasonal_guidance": {
+    "optimalWindow": "Late July through September for dry rock conditions (best in August); the same buttress line also forms a separate winter alpine ice/mixed objective when consolidated",
+    "monthBreakdown": {
+     "May": {
+      "reason": "Snow climb/avalanche terrain; not a rock or reliable ice season",
+      "status": "risky"
+     },
+     "July": {
+      "reason": "Route typically dries out by mid-to-late July; some early-season snow patches possible on approach",
+      "status": "good"
+     },
+     "June": {
+      "reason": "Approach gully and lower buttress often still hold snow/ice; not yet a dry rock route",
+      "status": "marginal"
+     },
+     "April": {
+      "reason": "Spring transition - rising avalanche and wet-slide hazard, deteriorating ice",
+      "status": "risky"
+     },
+     "March": {
+      "reason": "Late winter ice can still be in condition, but spring warming begins increasing hazard",
+      "status": "good"
+     },
+     "August": {
+      "reason": "Best window for dry rock; most stable weather of the summer",
+      "status": "optimal"
+     },
+     "January": {
+      "reason": "Core winter ice season when conditions are in and avalanche hazard is manageable",
+      "status": "good"
+     },
+     "October": {
+      "reason": "Early snow/wet weather can arrive; shorter daylight window",
+      "status": "marginal"
+     },
+     "December": {
+      "reason": "Winter ice/mixed conditions can come in; requires stable, consolidated ice",
+      "status": "good"
+     },
+     "February": {
+      "reason": "Continued winter ice season, weather-dependent",
+      "status": "good"
+     },
+     "November": {
+      "reason": "Transitional season - unstable early-season snowpack, not yet a reliable ice route",
+      "status": "risky"
+     },
+     "September": {
+      "reason": "Still generally dry with cooler temps; days shortening",
+      "status": "good"
+     }
+    }
+   },
+   "itinerary": {
+    "cal": "",
+    "days": [
+     {
+      "n": 1,
+      "note": "A popular moderate alpine rock outing from the Alpental upper lot: approach past Source Lake into the basin, then climb 4-5 pitches of easy class 3-4 rock with big exposure up the buttress to the summit. Descent is via rappel/downclimb to the standard route and back down the approach.",
+      "hours": 11.5,
+      "miles": 6.5,
+      "title": "Car-to-car: approach, climb the Northeast Buttress, descend",
+      "gainFt": 3100,
+      "lossFt": 3100,
+      "packLb": 20,
+      "schedule": [
+       {
+        "time": "5:00 AM",
+        "label": "Leave Alpental upper parking lot",
+        "detail": "Headlamp start; snow travel to Source Lake and the basin is common outside of summer."
+       },
+       {
+        "time": "+3.5 hr",
+        "label": "Reach base of the Northeast Buttress",
+        "detail": "One detailed trip report logged 3 hr 24 min car-to-base."
+       },
+       {
+        "time": "+2.5-3 hr",
+        "label": "Climb the buttress (4-5 pitches, class 3-4)",
+        "detail": "Same report logged 2 hr 39 min base-to-summit."
+       },
+       {
+        "time": "+30 min",
+        "label": "Summit (6,238 ft)",
+        "detail": "Brief stop for views/food before starting down."
+       },
+       {
+        "time": "+1.75 hr",
+        "label": "Rappel/downclimb back to base of climb",
+        "detail": "Reverses onto the standard route rather than down the buttress itself."
+       },
+       {
+        "time": "+2.75 hr",
+        "label": "Descend to car",
+        "detail": "Retrace the approach back to the Alpental lot."
+       }
+      ],
+      "objective": "Summit Chair Peak via the Northeast Buttress"
+     }
+    ],
+    "totalNote": "A single long day car-to-car, about 10-12 hours; one well-documented trip logged 11 hr 22 min total with roughly 3,100 ft of gain over the round trip."
+   }
+  }
+ ],
+ "areas": [
+  {
+   "id": "wa_mount_rainier",
+   "lat": 46.851731,
+   "lng": -121.760395
+  }
+ ]
+}

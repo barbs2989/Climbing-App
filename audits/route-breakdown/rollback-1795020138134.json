@@ -1,0 +1,147 @@
+{
+ "wa_pimpsqueak": {
+  "area": "wa_pimpsqueak_boulder",
+  "hazards": [
+   "Rattlesnakes, poison ivy, and spring ticks are recurring hazards across crags in this canyon"
+  ]
+ },
+ "wa_chair_peak_northeast_buttress": {
+  "area": "wa_chair_peak",
+  "waypoints": [
+   {
+    "lat": 47.44542,
+    "lng": -121.42353,
+    "elev": 3100,
+    "name": "Alpental / Snow Lake Trailhead",
+    "note": "Self-serve day-use fee kiosk (Northwest Forest Pass or $5/day); trail departs the north end of the upper Alpental Ski Area parking lot.",
+    "type": "Trailhead",
+    "distMi": 0,
+    "directions": "From I-90 Exit 52, follow Alpental Road to its end and park in the upper Alpental lot (~3,100 ft). The trail leaves from the north end of the lot. Self-serve fee kiosk — Northwest Forest Pass or $5/day."
+   },
+   {
+    "lat": 47.455605,
+    "lng": -121.452107,
+    "elev": 3780,
+    "name": "Source Lake basin, Alpental valley",
+    "type": "Campsite",
+    "distMi": 1.6
+   },
+   {
+    "lat": 47.453472,
+    "lng": -121.4479,
+    "elev": 3800,
+    "name": "Source Lake Trail junction",
+    "note": "Leave the maintained Snow Lake Trail here toward Source Lake and Chair's east basin.",
+    "type": "Junction",
+    "distMi": 1.8,
+    "directions": "The first half mile follows the old ski-area cat track before it becomes standard trail, then climbs gently through forest. Stay on the maintained Snow Lake Trail until the Source Lake fork — that is where you leave it."
+   },
+   {
+    "lat": 47.45608,
+    "lng": -121.455983,
+    "elev": 4900,
+    "name": "Thumb Tack",
+    "note": "Large rock landmark in Chair's east basin; skis or packs are often cached here before ascending toward the buttress.",
+    "type": "Junction",
+    "distMi": 2.4,
+    "directions": "Leave the maintained trail at the fork and continue cross-country on boot path toward the basin under Chair's east face, roughly half a mile to a mile of talus, heather and (early or mid season) snow. The Thumb Tack is the large rock landmark once you are in the basin; parties commonly cache skis or packs here."
+   },
+   {
+    "lat": 47.457384,
+    "lng": -121.460025,
+    "elev": 5100,
+    "name": "Buttress base / entry gully",
+    "note": "Blocky entry gully gains low-angle blocky rock leading toward the buttress prow; rope up here for the exposed Class 4 to 5.4 climbing above.",
+    "type": "Junction",
+    "distMi": 2.7,
+    "directions": "From the Thumb Tack climb a short snow gully, about 300 ft, to gain the crest of the ridge that forms the Northeast Buttress. This gully sits under avalanche terrain coming off Chair and Snoqualmie Mountain and is a known early-season slide path — most parties carry axe and crampons from the basin onward and rope up at the base of the blocky entry gully."
+   },
+   {
+    "lat": 47.458687,
+    "lng": -121.464067,
+    "elev": 5800,
+    "name": "Tree cluster near buttress prow",
+    "note": "Notable stand of trees used as a belay stance on the ascent and as the first rappel anchor on the descent.",
+    "type": "Junction",
+    "distMi": 3,
+    "directions": "Follow the ridge crest up low-angle blocky rock from the entry gully to the stand of trees on the prow. This is the usual belay stance on the way up, and the first rappel anchor on the way down."
+   },
+   {
+    "lat": 47.45955,
+    "lng": -121.46675,
+    "elev": 6238,
+    "name": "Chair Peak summit",
+    "note": "True summit is the uncorniced center section with rock underneath; the northeast side is heavily corniced.",
+    "type": "Summit",
+    "distMi": 3.2,
+    "directions": "Continue up the buttress — four to five pitches of class 3-4 with big exposure. The true summit is the uncorniced centre section with rock underneath it; the northeast side is heavily corniced, so stay well back from the lip."
+   },
+   {
+    "lat": 47.458502,
+    "lng": -121.463491,
+    "elev": 6000,
+    "name": "Notch/saddle in main ridge",
+    "note": "Downclimb the SE-facing gully from the true summit to this notch before the rappels; steep unconsolidated snow up to about 70 degrees.",
+    "type": "Hazard",
+    "directions": "Descending: from the true summit, downclimb the southeast-facing gully to the notch in the main ridge. Steep unconsolidated snow, up to roughly 70 degrees."
+   },
+   {
+    "lat": 47.457615,
+    "lng": -121.460744,
+    "elev": 5800,
+    "name": "Fixed rappel anchor at rock buttress",
+    "note": "Double-rope rappel from a fixed anchor here down to the tree cluster, then continue rappelling and downclimbing to the base of the buttress.",
+    "type": "Hazard",
+    "directions": "From the notch, continue to the fixed anchor on the rock buttress. A double-rope rappel from here reaches the tree cluster, then keep rappelling and downclimbing to the base of the buttress and reverse the approach."
+   }
+  ]
+ },
+ "wa_dragontail_peak_backbone_ridge": {
+  "area": "wa_dragontail_peak",
+  "waypoints": [
+   {
+    "lat": 47.5278,
+    "lng": -120.8205,
+    "elev": 3400,
+    "name": "Stuart Lake Trailhead",
+    "type": "Trailhead",
+    "elevFt": 3400,
+    "directions": "From US 2 at the west edge of Leavenworth, turn onto Icicle Road and drive 8.4 miles, then turn left onto FS Road 7601 and follow the rough dirt road 3.7 miles to its end at the Stuart Lake Trailhead, about 3,400 ft. A Northwest Forest Pass and a self-issued Enchantment day-use permit are required."
+   },
+   {
+    "lat": 47.4878,
+    "lng": -120.8343,
+    "elev": 5570,
+    "name": "Colchuck Lake",
+    "type": "Campsite"
+   },
+   {
+    "lat": 47.491988,
+    "lng": -120.833592,
+    "elev": 5574,
+    "name": "Colchuck Lake",
+    "type": "landmark",
+    "elevFt": 5574,
+    "directions": "From the trailhead, follow the Stuart Lake Trail along Mountaineer Creek about 2.5 miles to the signed junction, turn left onto the Colchuck Lake Trail, cross the creek and switchback up to Colchuck Lake at about 5,570 ft."
+   },
+   {
+    "lat": 47.4789,
+    "lng": -120.83318,
+    "elev": 8840,
+    "name": "Dragontail Peak Summit",
+    "type": "Summit",
+    "elevFt": 8840,
+    "directions": "From the lake, follow the trail around the west shore to the south end, cross the talus beyond the campsites and pick up the climbers' path along the Colchuck Glacier moraine until the northwest face opens up. Backbone starts about 200 ft left of Serpentine Arete on bushy, left-trending ramps; scramble up and left, then back right to a slung tree and terrace, and climb the ridge, the offwidth and the Fin to the summit."
+   },
+   {
+    "lat": 47.4803,
+    "lng": -120.8206,
+    "elev": 7841,
+    "name": "Aasgard Pass",
+    "type": "pass",
+    "elevFt": 7841,
+    "directions": "Descend the east ledges and the sandy summit gully toward Aasgard Pass. Late in the season the upper gully can be icy, and parties rappel on rock anchors to avoid the ice slope."
+   }
+  ]
+ }
+}
