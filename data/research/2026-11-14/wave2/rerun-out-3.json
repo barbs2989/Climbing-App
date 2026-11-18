@@ -1,0 +1,1351 @@
+{
+ "ca_lion_rock_standard_route": {
+  "area": "ca_lion_rock",
+  "facts": [
+   {
+    "field": "dist_mi_oneway",
+    "value": 18.5,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS mileage list row \"Lion Rock\" (easiest route, trailhead to summit): start 7260 ft, 18.5 mi one way, Class 2, gain 7650 ft, loss 2550 ft, trail \"Alta Peak Trail\""
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 7650,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS mileage list row \"Lion Rock\" (easiest route, trailhead to summit): start 7260 ft, 18.5 mi one way, Class 2, gain 7650 ft, loss 2550 ft, trail \"Alta Peak Trail\""
+     }
+    ]
+   },
+   {
+    "field": "trailhead_elev_ft",
+    "value": 7260,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS mileage list row \"Lion Rock\" (easiest route, trailhead to summit): start 7260 ft, 18.5 mi one way, Class 2, gain 7650 ft, loss 2550 ft, trail \"Alta Peak Trail\""
+     }
+    ]
+   },
+   {
+    "field": "approach_loss_ft",
+    "value": 2550,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS mileage list row \"Lion Rock\" (easiest route, trailhead to summit): start 7260 ft, 18.5 mi one way, Class 2, gain 7650 ft, loss 2550 ft, trail \"Alta Peak Trail\""
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Alta Peak Trail",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS mileage list row \"Lion Rock\" (easiest route, trailhead to summit): start 7260 ft, 18.5 mi one way, Class 2, gain 7650 ft, loss 2550 ft, trail \"Alta Peak Trail\""
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Alternative start: Crescent Meadow on the High Sierra Trail, about 17 miles to the peak as a dayhike",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.snwburd.com/reports/2008-07-31/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Burd 2008: Lion Rock dayhike is some 17 miles from the nearest trailhead at Crescent Meadow, via the High Sierra Trail"
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Final approach from Tamarack Lake up granite slabs, benches and slopes to the summit",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.snwburd.com/reports/2008-07-31/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Burd 2008: descended the SE Slopes to the meadow above Tamarack Lake, then down to the lake and the trail"
+     },
+     {
+      "url": "https://pantilat.wordpress.com/2013/09/25/lion-loop-lion-rock-triple-divide-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Pantilat 2013: beyond Tamarack Lake went up granite slabs and benches to the last 500 ft below the summit"
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Southeast Slopes (class 2-3) back down to the meadow above Tamarack Lake, about 1.5 hours",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.snwburd.com/reports/2008-07-31/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Burd 2008: descended the easy class 2-3 SE Slopes; about an hour and a half from summit to the meadow above Tamarack Lake"
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Loose rock in the final ~500 ft scramble; the northeast chute to Lion Lake is extremely loose and steep",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://pantilat.wordpress.com/2013/09/25/lion-loop-lion-rock-triple-divide-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Pantilat 2013: loose rock in final 500 ft class 3 section; descended NE chute, extremely loose and steep"
+     }
+    ]
+   },
+   {
+    "field": "water",
+    "value": "Buck Creek is the only significant creek in the first 11 miles of the High Sierra Trail",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.snwburd.com/reports/2008-07-31/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Burd 2008: Buck Creek, the only significant creek for the first 11 miles of the HST"
+     }
+    ]
+   }
+  ],
+  "note": "GRADE CONFLICT: catalog and SPS list say Class 2; Burd calls the SE Slopes class 2-3; Pantilat found the final 500 ft class 3; backcountrysights (earlier pass) rated it class 3-4. Grade not recorded. Burd (Crescent Meadow, 17 mi) and SPS (Alta Peak Trail, 18.5 mi) start at different trailheads, so their distances are not compared. Burd: about 9 hours up, 5.5 hours back from the trail near Tamarack Lake to Crescent Meadow (single dayhike, not recorded as a car-to-car time)."
+ },
+ "ca_lippincott_mountain_standard_route": {
+  "area": "ca_lippincott_mountain",
+  "facts": [
+   {
+    "field": "dist_mi_oneway",
+    "value": 22,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS mileage list row \"Mount Lippincott\" (easiest route, trailhead to summit): start 7810 ft, 22 mi one way, Class 2, gain 8405 ft, loss 3950 ft, trail \"Sawtooth Pass Trail\""
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 8405,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS mileage list row \"Mount Lippincott\" (easiest route, trailhead to summit): start 7810 ft, 22 mi one way, Class 2, gain 8405 ft, loss 3950 ft, trail \"Sawtooth Pass Trail\""
+     }
+    ]
+   },
+   {
+    "field": "trailhead_elev_ft",
+    "value": 7810,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS mileage list row \"Mount Lippincott\" (easiest route, trailhead to summit): start 7810 ft, 22 mi one way, Class 2, gain 8405 ft, loss 3950 ft, trail \"Sawtooth Pass Trail\""
+     }
+    ]
+   },
+   {
+    "field": "approach_loss_ft",
+    "value": 3950,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS mileage list row \"Mount Lippincott\" (easiest route, trailhead to summit): start 7810 ft, 22 mi one way, Class 2, gain 8405 ft, loss 3950 ft, trail \"Sawtooth Pass Trail\""
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Sawtooth Pass Trail",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS mileage list row \"Mount Lippincott\" (easiest route, trailhead to summit): start 7810 ft, 22 mi one way, Class 2, gain 8405 ft, loss 3950 ft, trail \"Sawtooth Pass Trail\""
+     },
+     {
+      "url": "https://www.climber.org/reports/1998/355.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Eckert 1998: Glacier Pass is a cross-country route from the Sawtooth Pass trail to Black Rock Pass, used on the way in"
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "Class 2",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS mileage list row \"Mount Lippincott\" (easiest route, trailhead to summit): start 7810 ft, 22 mi one way, Class 2, gain 8405 ft, loss 3950 ft, trail \"Sawtooth Pass Trail\""
+     },
+     {
+      "url": "https://www.climber.org/reports/1998/355.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Eckert 1998: cross the south ridge at the 11,800 ft saddle and climb the south face near the ridgeline to keep it 2nd class"
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "From Little Five Lakes follow the trail toward Big Arroyo; leave it just past a shoulder near 10,400 ft and contour to the north shore of Lake 10295",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climber.org/reports/1998/355.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Eckert 1998: stay on trail from Little Five toward Big Arroyo, leave after a shoulder ~10400 ft, contour to north shore of Lake 10295"
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Follow the inlet stream to the upper lake at 10,800 ft, go up the class 2 boulders and sand of the ESE bowl, cross the south ridge at the 11,800 ft saddle and climb the south face near the ridgeline",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climber.org/reports/1998/355.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Eckert 1998: lake at 10800, easy 2nd class ESE bowl, cross south ridge at saddle 11800 onto south face, stay near ridgeline"
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Camp near the upper lake at 10,800 ft",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climber.org/reports/1998/355.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Eckert 1998: campsite at 10800 ft (waypoint L5CAMP), dropping traverse from there"
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "The east ridge is 3rd class although Secor rates it 2nd; going straight up from the saddle needs a few 3rd-class moves",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climber.org/reports/1998/355.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Eckert 1998: past reports say class 3-4 via the east ridge; east ridge 3rd class; direct ascent took a few third class moves"
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Glacier Pass can hold smooth ice in fall that is uncrossable without crampons",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climber.org/reports/1998/355.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Eckert Oct 1998: Glacier Pass blocked by smooth ice, uncrossable without crampons"
+     }
+    ]
+   }
+  ],
+  "note": "Eckert 1998 was a 3-day trip combined with Mt Eisen, so no route mileage is taken from it."
+ },
+ "ca_marion_peak_northeast_ridge": {
+  "area": "ca_marion_peak",
+  "facts": [
+   {
+    "field": "trailhead",
+    "value": "Taboose Pass Trail",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS mileage list row \"Marion Peak\": trail \"Taboose Pass Trail\", start 5415 ft"
+     },
+     {
+      "url": "https://www.climber.org/reports/2001/789.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Bulger 2001: started up Taboose Pass, then over Cartridge Pass and through Lakes Basin to Marion Lake"
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Taboose Pass, then Cartridge Pass (remnants of the old trail) and through Lakes Basin to Marion Lake",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climber.org/reports/2001/789.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Bulger 2001: up Taboose Pass, over Cartridge Pass on bits of old trail, through Lakes Basin to Marion Lake"
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Marion Lake",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climber.org/reports/2001/789.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Bulger 2001: allowed three days to reach Marion Lake and camped there"
+     }
+    ]
+   },
+   {
+    "field": "trip_days_to_base",
+    "value": "3 days from the trailhead to Marion Lake",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climber.org/reports/2001/789.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Bulger 2001: allowed three days to reach Marion Lake"
+     }
+    ]
+   }
+  ],
+  "note": "SPS list row (start 5415 ft, 20 mi one way, gain 10655 ft, loss 3350 ft, Class 2) is the peak's easiest route and does not name the Northeast Ridge, so figures are not recorded. Bulger calls the climb straightforward but does not name the ridge. sierrapeaks sps00159 (earlier pass) is multi-peak. SummitPost 403."
+ },
+ "ca_merced_peak_standard_route": {
+  "area": "ca_merced_peak",
+  "facts": [
+   {
+    "field": "dist_mi_oneway",
+    "value": 18.5,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS mileage list row \"Merced Peak\" (easiest route, trailhead to summit): start 7230 ft, 18.5 mi one way, Class 2, gain 6900 ft, loss 2405 ft, trail \"Mono Meadows TH\""
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 6900,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS mileage list row \"Merced Peak\" (easiest route, trailhead to summit): start 7230 ft, 18.5 mi one way, Class 2, gain 6900 ft, loss 2405 ft, trail \"Mono Meadows TH\""
+     }
+    ]
+   },
+   {
+    "field": "trailhead_elev_ft",
+    "value": 7230,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS mileage list row \"Merced Peak\" (easiest route, trailhead to summit): start 7230 ft, 18.5 mi one way, Class 2, gain 6900 ft, loss 2405 ft, trail \"Mono Meadows TH\""
+     }
+    ]
+   },
+   {
+    "field": "approach_loss_ft",
+    "value": 2405,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS mileage list row \"Merced Peak\" (easiest route, trailhead to summit): start 7230 ft, 18.5 mi one way, Class 2, gain 6900 ft, loss 2405 ft, trail \"Mono Meadows TH\""
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Mono Meadows trailhead",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS mileage list row \"Merced Peak\" (easiest route, trailhead to summit): start 7230 ft, 18.5 mi one way, Class 2, gain 6900 ft, loss 2405 ft, trail \"Mono Meadows TH\""
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "Class 2",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS mileage list row \"Merced Peak\" (easiest route, trailhead to summit): start 7230 ft, 18.5 mi one way, Class 2, gain 6900 ft, loss 2405 ft, trail \"Mono Meadows TH\""
+     },
+     {
+      "url": "https://www.snwburd.com/reports/2008-07-11/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Burd 2008: Merced Peak is only class 2 from most directions but lies far from any trailhead"
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Alternative from the south: Quartz Mountain trailhead, Chiquito Pass trail north about 6 miles, cross the South Fork Merced",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climber.org/reports/2004/1314.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Ayers 2004: from Quartz Mountain parking followed the Chiquito Pass trail north six miles and crossed the south fork of the Merced"
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "South Ridge: gain it at its low point and follow the solid, easy ridge to the summit",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climber.org/reports/2004/1314.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Ayers 2004: gained the south ridge at the low point and followed it to the summit; ridge solid and as easy as it looks"
+     }
+    ]
+   }
+  ],
+  "note": "Burd 2008 used the Chiquito Pass TH (more than 30 miles round trip); not compared with the SPS Mono Meadows figures."
+ },
+ "ca_midway_mountain_west_slope": {
+  "area": "ca_midway_mountain",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Class 2",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://doingmiles.com/2013-08-seki-midway/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Doing Miles 2013: Midway is a Class 2 climb and is not difficult (west-side approach from Colby Lake)"
+     },
+     {
+      "url": "https://www.climber.org/reports/2005/1428.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Bulger 2005 Midway trip: Difficulty class 2"
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Colby Pass Trail to Colby Lake, then cross-country up the west side over the top of Midway",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://doingmiles.com/2013-08-seki-midway/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Doing Miles 2013: at Colby Lake leave the trail for a cross-country traverse over the top of Midway Mountain"
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Westside trailhead at Sunset Meadow near Grant Grove",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climber.org/reports/2005/1428.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Bulger 2005: left the Westside trailhead at Sunset Meadow near Grant Grove"
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Traverse option: down the east ridge into Milestone Basin",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://doingmiles.com/2013-08-seki-midway/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Doing Miles 2013: descending the east ridge of Midway into Milestone Basin"
+     }
+    ]
+   }
+  ],
+  "note": "SPS list row (Shepherd Pass Trail, 6310 ft, 20.2 mi, gain 9955 ft, loss 2600 ft) approaches from the east and does not name the West Slope; not recorded. Doing Miles 5.6 mi is the Colby Lake-to-Kern River traverse, not used."
+ },
+ "ca_moses_mountain_standard_route": {
+  "area": "ca_moses_mountain",
+  "facts": [
+   {
+    "field": "dist_mi_oneway",
+    "value": 3.7,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS mileage list row \"Moses Mountain\" (easiest route, trailhead to summit): start 5920 ft, 3.7 mi one way, Class 3, gain 3510 ft, loss 100 ft, trail \"Long Meadow Trail\""
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 3510,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS mileage list row \"Moses Mountain\" (easiest route, trailhead to summit): start 5920 ft, 3.7 mi one way, Class 3, gain 3510 ft, loss 100 ft, trail \"Long Meadow Trail\""
+     }
+    ]
+   },
+   {
+    "field": "trailhead_elev_ft",
+    "value": 5920,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS mileage list row \"Moses Mountain\" (easiest route, trailhead to summit): start 5920 ft, 3.7 mi one way, Class 3, gain 3510 ft, loss 100 ft, trail \"Long Meadow Trail\""
+     }
+    ]
+   },
+   {
+    "field": "approach_loss_ft",
+    "value": 100,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS mileage list row \"Moses Mountain\" (easiest route, trailhead to summit): start 5920 ft, 3.7 mi one way, Class 3, gain 3510 ft, loss 100 ft, trail \"Long Meadow Trail\""
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "Class 3",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS mileage list row \"Moses Mountain\" (easiest route, trailhead to summit): start 5920 ft, 3.7 mi one way, Class 3, gain 3510 ft, loss 100 ft, trail \"Long Meadow Trail\""
+     },
+     {
+      "url": "https://www.snwburd.com/reports/2005-11-12/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Burd 2005: the ridge climbing on Moses was solid class 3 rock"
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Shake Camp trailhead",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.snwburd.com/reports/2005-11-12/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Burd 2005: hiked the road to the Shake Camp TH; the trail out of Shake Camp was easy to follow"
+     },
+     {
+      "url": "https://www.climber.org/reports/2000/643.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Bulger 2000: could not start from Shake Camp because snow covered the road and the gate was locked"
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Trail to Redwood Crossing, then stay on the west side of the river and go cross-country to the base",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climber.org/reports/2000/643.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Bulger 2000: took the trail to Redwood Crossing, stayed on the west side of the river, cross-country to the base of Moses"
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "In spring the road to Shake Camp can be gated by snow, adding about two miles",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climber.org/reports/2000/643.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Bulger 2000 (30 Apr): snow and a locked gate made the climb about two miles longer"
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Brushy forest slopes; a short class 4 section on the way to the ridge",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.snwburd.com/reports/2005-11-12/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Burd 2005: after the brush, crossed a short class 4 section and some class 3 before easier climbing"
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "In the western Golden Trout Wilderness, near Mountain Home State Forest",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.snwburd.com/reports/2005-11-12/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Burd 2005: Moses and North Maggie are in the western Golden Trout Wilderness, just outside Mountain Home State Forest"
+     }
+    ]
+   }
+  ],
+  "note": "Burd 2005 combined Moses with North Maggie, so its mileage is not used."
+ },
+ "ca_mount_bago_north_ridge": {
+  "area": "ca_mount_bago",
+  "facts": [
+   {
+    "field": "dist_mi_oneway",
+    "value": 9.7,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS mileage list row \"Mount Bago\" (easiest route, trailhead to summit): start 9190 ft, 9.7 mi one way, Class 1, gain 4110 ft, loss 1430 ft, trail \"Kearsarge Pass Trail\""
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 4110,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS mileage list row \"Mount Bago\" (easiest route, trailhead to summit): start 9190 ft, 9.7 mi one way, Class 1, gain 4110 ft, loss 1430 ft, trail \"Kearsarge Pass Trail\""
+     }
+    ]
+   },
+   {
+    "field": "trailhead_elev_ft",
+    "value": 9190,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS mileage list row \"Mount Bago\" (easiest route, trailhead to summit): start 9190 ft, 9.7 mi one way, Class 1, gain 4110 ft, loss 1430 ft, trail \"Kearsarge Pass Trail\""
+     }
+    ]
+   },
+   {
+    "field": "approach_loss_ft",
+    "value": 1430,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS mileage list row \"Mount Bago\" (easiest route, trailhead to summit): start 9190 ft, 9.7 mi one way, Class 1, gain 4110 ft, loss 1430 ft, trail \"Kearsarge Pass Trail\""
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Onion Valley trailhead (Kearsarge Pass Trail)",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS mileage list row \"Mount Bago\" (easiest route, trailhead to summit): start 9190 ft, 9.7 mi one way, Class 1, gain 4110 ft, loss 1430 ft, trail \"Kearsarge Pass Trail\""
+     },
+     {
+      "url": "https://www.snwburd.com/reports/2008-08-17/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Burd 2008: started at the Onion Valley TH at 6a for Bago"
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Over Kearsarge Pass to the PCT/JMT junction between Bullfrog and Charlotte Lakes, a short way toward Charlotte Lake, then west cross-country",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.snwburd.com/reports/2008-08-17/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Burd 2008: reached PCT/JMT junction between Bullfrog and Charlotte Lakes, followed trail toward Charlotte Lake, then west cross-country"
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "A wide, tedious chute leads onto the easy North Ridge, followed to the summit",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.snwburd.com/reports/2008-08-17/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Burd 2008: aimed for a wide but tedious chute leading to the north ridge, then up the easy North Ridge"
+     }
+    ]
+   }
+  ],
+  "note": "SPS list row is Class 1, matching the catalog grade and the easy North Ridge Burd describes."
+ },
+ "ca_mount_baxter_standard_route": {
+  "area": "ca_mount_baxter",
+  "facts": [
+   {
+    "field": "dist_mi_oneway",
+    "value": 10.6,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS mileage list row \"Mount Baxter\" (easiest route, trailhead to summit): start 5980 ft, 10.6 mi one way, Class 2, gain 8355 ft, loss 1200 ft, trail \"Baxter Pass Trail\""
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 8355,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS mileage list row \"Mount Baxter\" (easiest route, trailhead to summit): start 5980 ft, 10.6 mi one way, Class 2, gain 8355 ft, loss 1200 ft, trail \"Baxter Pass Trail\""
+     }
+    ]
+   },
+   {
+    "field": "trailhead_elev_ft",
+    "value": 5980,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS mileage list row \"Mount Baxter\" (easiest route, trailhead to summit): start 5980 ft, 10.6 mi one way, Class 2, gain 8355 ft, loss 1200 ft, trail \"Baxter Pass Trail\""
+     }
+    ]
+   },
+   {
+    "field": "approach_loss_ft",
+    "value": 1200,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS mileage list row \"Mount Baxter\" (easiest route, trailhead to summit): start 5980 ft, 10.6 mi one way, Class 2, gain 8355 ft, loss 1200 ft, trail \"Baxter Pass Trail\""
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Baxter Pass trailhead",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS mileage list row \"Mount Baxter\" (easiest route, trailhead to summit): start 5980 ft, 10.6 mi one way, Class 2, gain 8355 ft, loss 1200 ft, trail \"Baxter Pass Trail\""
+     },
+     {
+      "url": "https://www.climber.org/reports/2005/1403.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Bulger 2005: the Baxter Pass trail begins in a grove of native black oaks"
+     },
+     {
+      "url": "https://www.snwburd.com/reports/2007-06-10/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Burd 2007: started from the Baxter Pass TH"
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "Class 2",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS mileage list row \"Mount Baxter\" (easiest route, trailhead to summit): start 5980 ft, 10.6 mi one way, Class 2, gain 8355 ft, loss 1200 ft, trail \"Baxter Pass Trail\""
+     },
+     {
+      "url": "https://www.climber.org/reports/2003/1105.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Climber.org 2003: the most common summer and fall routes are class 2 scrambles on scree and sand"
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Base camp at 10,300 ft",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climber.org/reports/2005/1403.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Bulger 2005: proceeded to base camp at 10,300 feet"
+     }
+    ]
+   },
+   {
+    "field": "closure",
+    "value": "Southwest-slope route (Sequoia NP) closed July 1 to December 15, per a 2005 ranger answer; check current rules",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climber.org/reports/2005/1403.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Bulger 2005: Sequoia NP said the southwest-slope route is closed only from July 1 to December 15, not year-round"
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "Spring snow can turn the class 2 slopes into moderate snow climbs",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climber.org/reports/2003/1105.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Climber.org 2003: in spring snow transforms these slopes into moderate snow climbs"
+     }
+    ]
+   }
+  ],
+  "note": "Bulger 2005: from camp 10 mi round trip and 4000 ft gain to the summit plus 1000 ft regained on the way back (from camp, not the trailhead; not recorded). Burd 2007 took the SE Face, not this route."
+ },
+ "ca_mount_bradley_standard_route": {
+  "area": "ca_mount_bradley",
+  "facts": [
+   {
+    "field": "dist_mi_oneway",
+    "value": 5.7,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS mileage list row \"Mount Bradley\" (easiest route, trailhead to summit): start 5880 ft, 5.7 mi one way, Class 2, gain 7825 ft, loss 480 ft, trail \"Pinyon Creek Trail\""
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 7825,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS mileage list row \"Mount Bradley\" (easiest route, trailhead to summit): start 5880 ft, 5.7 mi one way, Class 2, gain 7825 ft, loss 480 ft, trail \"Pinyon Creek Trail\""
+     }
+    ]
+   },
+   {
+    "field": "trailhead_elev_ft",
+    "value": 5880,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS mileage list row \"Mount Bradley\" (easiest route, trailhead to summit): start 5880 ft, 5.7 mi one way, Class 2, gain 7825 ft, loss 480 ft, trail \"Pinyon Creek Trail\""
+     }
+    ]
+   },
+   {
+    "field": "approach_loss_ft",
+    "value": 480,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS mileage list row \"Mount Bradley\" (easiest route, trailhead to summit): start 5880 ft, 5.7 mi one way, Class 2, gain 7825 ft, loss 480 ft, trail \"Pinyon Creek Trail\""
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Pinyon Creek (mouth of Pinyon Canyon, from Independence)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS mileage list row \"Mount Bradley\" (easiest route, trailhead to summit): start 5880 ft, 5.7 mi one way, Class 2, gain 7825 ft, loss 480 ft, trail \"Pinyon Creek Trail\""
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Last timber on Pinyon Creek, about 10,200 ft",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.sierrapeaks.org/archives/sps01818.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS 1959 report: party camped at the last timber on Pinyon Creek, about 10,200 ft"
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Steep snow chute (early season, crampons), then gentle summit slopes",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.sierrapeaks.org/archives/sps01818.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS 1959 report (May): cramponed up a steep snow chute then walked the gentle summit slopes"
+     }
+    ]
+   }
+  ],
+  "note": "Second page (sierrapeaks archive sps01818) is the same publisher as the SPS list, so nothing reaches agree-2. sps00049 is an Onion Valley multi-peak trip. Medium \"East Ridge of Mount Bradley\" is a different route. SummitPost 403."
+ },
+ "ca_mount_ericsson_west_ridge_from_lucys_foot_pass": {
+  "area": "ca_mount_ericsson",
+  "facts": [
+   {
+    "field": "fa",
+    "value": "Bolton Coit Brown and Lucy Brown, 1896",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/mount-ericsson-mountain-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Summitborn: first recorded ascent by Bolton Coit Brown and his wife Lucy in 1896 by the easy west ridge from the col named for Lucy"
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "Class 2",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/mount-ericsson-mountain-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Summitborn: a gentle Class 2 line on the west"
+     },
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS mileage list row \"Mount Ericsson\": Class 2"
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Roads End (Kings Canyon) via Bubbs Creek Trail",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS mileage list row \"Mount Ericsson\": trail \"Roads end to Bubbs Creek Trail\", start 5035 ft"
+     },
+     {
+      "url": "https://summitborn.com/mount-ericsson-mountain-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Summitborn: nearest road access from the west is Roads End in Kings Canyon; from the east Shepherd Pass and Onion Valley"
+     }
+    ]
+   }
+  ],
+  "note": "SPS list figures (17.5 mi one way, gain 8150 ft, loss 200 ft) are for the peak's easiest route and do not name the West Ridge; not recorded."
+ },
+ "ca_mount_hooper_southwest_ridge_via_tombstone_pass": {
+  "area": "ca_mount_hooper",
+  "facts": [
+   {
+    "field": "trailhead",
+    "value": "No trailhead: locked gate at the southern campground loop, Jackass Meadow (Florence Lake road)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.sierrapeaks.org/archives/sps01423.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Gomillion 2000: no trailhead; parked at the locked gate at the southern campground loop"
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Boardwalk about 1/4 mile, then east up the Tombstone Creek drainage between the creek and the south ridge to Tombstone Pass",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.sierrapeaks.org/archives/sps01423.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Gomillion 2000: boardwalk for the first quarter mile, then up Tombstone Creek staying between creek and south ridge"
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Tombstone Pass (dry camp); more sites at the creek draining Hooper's south side",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.sierrapeaks.org/archives/sps01423.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Gomillion 2000: dry camp at Tombstone Pass; camp spots at the creek on the south side of Hooper"
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Traverse the level bench to the creek below Hooper's south side, then up to the cirque below the summit",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.sierrapeaks.org/archives/sps01423.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Gomillion 2000: level bench led to the creek draining the south side; straightforward to the cirque"
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "From the cirque veer west onto the Southwest Ridge (class 2) to the summit block",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.sierrapeaks.org/archives/sps01423.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Gomillion 2000: veered west to the Southwest Ridge and up to the summit block, class 2 to that point"
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Summit block: roped, via a crack on the south side",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.sierrapeaks.org/archives/sps01423.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Gomillion 2000: roped up and climbed the direct crack on the south side of the summit block"
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Exposed summit block above very steep faces",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.sierrapeaks.org/archives/sps01423.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Gomillion 2000: exposure is considerable on the west side of the block"
+     },
+     {
+      "url": "https://kg6mzs.com/2021/07/15/mount-hooper/",
+      "retrieved_at": "2026-11-14",
+      "fact": "KG6MZS 2021: summit block sits atop two very steep faces of 1000 ft or more"
+     }
+    ]
+   }
+  ],
+  "note": "Grade of the summit block is not stated on either page (catalog Class 4). Gomillion: about 3.5 h to Tombstone Pass; a \"3 mile cross-country approach\" instead of 13 miles to Sallie Keyes Lakes when the ferry is closed (endpoint unclear; not recorded). SPS list row uses the Blayney Meadows Trail, a different approach; not recorded. KG6MZS came from Selden Pass."
+ },
+ "ca_mount_leconte_east_slope": {
+  "area": "ca_mount_leconte",
+  "facts": [
+   {
+    "field": "trailhead",
+    "value": "Meysan Lake trailhead, Whitney Portal Road",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.snwburd.com/reports/2002-08-25/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Burd 2002: drove to Whitney Portal and parked near the Meysan Trailhead"
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Meysan Trail to Meysan Lake, then around the east and south ends of the lake to the talus bowl",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.snwburd.com/reports/2002-08-25/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Burd 2002: Meysan Trail from Whitney Portal; contoured the east and south ends of the lake toward the chutes"
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Secor's East Slope: the chute on the right (north) side of the bowl south of Meysan Lake, up to the high plateau, then to the summit",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.snwburd.com/reports/2002-08-25/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Burd 2002: Secor East Slope is a chute on the right north side of the bowl leading up to the plateau"
+     }
+    ]
+   }
+  ],
+  "note": "Burd climbed a chute a few hundred yards left of the East Slope (class 3), so his grade is not used. SPS list row (Granite View Drive, 6560 ft, 8.1 mi, gain 7270 ft, Class 3) does not name the route; not recorded. sps00583 (earlier pass) used the west side."
+ },
+ "ca_ne_face": {
+  "area": "ca_north_east_ridge",
+  "skip_reason": "Area id ca_north_east_ridge names no peak, so the route could not be identified. Earlier pass opened mountainproject.com/route/106083462/north-east-ridge-full (Mt Clarence King, 5.7+, not a match) and mountainproject.com/area/105791817/high-sierra listings; no \"NE face\" 3rd-class route under an area named North East Ridge found. Skip kept."
+ },
+ "ca_ne_ridge_2": {
+  "area": "ca_north_east_ridge",
+  "skip_reason": "Same unidentified area (ca_north_east_ridge). Earlier pass opened mountainproject.com/route/106083462/north-east-ridge-full (5.7+, Mt Clarence King, not 4th) and mountainproject.com/route/106030935/north-east-ridge (Williamson, Easy 5th, separate route); no match. Skip kept."
+ },
+ "ca_needham_mountain_standard_route": {
+  "area": "ca_needham_mountain",
+  "facts": [
+   {
+    "field": "dist_mi_oneway",
+    "value": 7.8,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS mileage list row \"Needham Mountain\" (easiest route, trailhead to summit): start 7808 ft, 7.8 mi one way, Class 2s3, gain 6060 ft, loss 1350 ft, trail \"Sawtooth Pass Trail\""
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 6060,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS mileage list row \"Needham Mountain\" (easiest route, trailhead to summit): start 7808 ft, 7.8 mi one way, Class 2s3, gain 6060 ft, loss 1350 ft, trail \"Sawtooth Pass Trail\""
+     }
+    ]
+   },
+   {
+    "field": "trailhead_elev_ft",
+    "value": 7808,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS mileage list row \"Needham Mountain\" (easiest route, trailhead to summit): start 7808 ft, 7.8 mi one way, Class 2s3, gain 6060 ft, loss 1350 ft, trail \"Sawtooth Pass Trail\""
+     }
+    ]
+   },
+   {
+    "field": "approach_loss_ft",
+    "value": 1350,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS mileage list row \"Needham Mountain\" (easiest route, trailhead to summit): start 7808 ft, 7.8 mi one way, Class 2s3, gain 6060 ft, loss 1350 ft, trail \"Sawtooth Pass Trail\""
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Sawtooth Pass Trail, Mineral King",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS mileage list row \"Needham Mountain\" (easiest route, trailhead to summit): start 7808 ft, 7.8 mi one way, Class 2s3, gain 6060 ft, loss 1350 ft, trail \"Sawtooth Pass Trail\""
+     },
+     {
+      "url": "https://themtsarecalling.com/needham/",
+      "retrieved_at": "2026-11-14",
+      "fact": "The Mountains Are Calling: started from the Mineral King trailhead up the trail toward Sawtooth Pass"
+     }
+    ]
+   },
+   {
+    "field": "road",
+    "value": "About 25 miles of winding, often one-lane road into Mineral King",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://themtsarecalling.com/needham/",
+      "retrieved_at": "2026-11-14",
+      "fact": "The Mountains Are Calling: 25 miles of winding, often one lane road into Mineral King"
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Marmots chew on cars at the trailhead; many parties wrap cars in tarps",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://themtsarecalling.com/needham/",
+      "retrieved_at": "2026-11-14",
+      "fact": "The Mountains Are Calling: cars at the trailhead wrapped in tarps because of marmots known to chew on them"
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Descent option: drop to about 11,100 ft, cross the couloir east of Mineral Peak to upper Monarch Lake and the Sawtooth Pass trail, or take the Crystal Lake trail",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.sierrapeaks.org/archives/sps00154.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS 1995 report: descended Needham to ~11,100 ft, crossed the couloir east of Mineral Pk to upper Monarch Lake, or Crystal Lake trail saves about a mile"
+     }
+    ]
+   }
+  ],
+  "note": "Catalog Class 3; SPS list gives 2s3. The Mountains Are Calling and SPS 1995 reached Needham by traversing from Sawtooth Peak, so their routes and figures are not used for the ascent."
+ }
+}
