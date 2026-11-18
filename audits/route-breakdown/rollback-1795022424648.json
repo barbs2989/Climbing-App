@@ -1,0 +1,87 @@
+{
+ "wa_mount_rainier_liberty_ridge": {
+  "area": "wa_mount_rainier",
+  "waypoints": [
+   {
+    "lat": 46.9021,
+    "lng": -121.6437,
+    "elev": 4400,
+    "name": "White River Campground / Glacier Basin Trailhead",
+    "note": "Trailhead at the upper D-loop of White River Campground; NPS climbing permit and self-issue wilderness camping permit required before heading up.",
+    "type": "Trailhead",
+    "distMi": 0,
+    "directions": "From Enumclaw, WA-410 runs about 43 miles east to the park's White River entrance; turn onto the Sunrise Road, cross the White River and turn onto the White River Road, following it to the campground at the end. Sort the climbing permit and the route-specific briefing before you drive up — both are required for this line — and check the road, which is seasonal."
+   },
+   {
+    "lat": null,
+    "lng": null,
+    "elev": 5935,
+    "name": "Glacier Basin",
+    "note": "End of maintained trail in a basin below the Inter Glacier moraine; a climbers' boot track continues cross-country from here toward St. Elmo Pass.",
+    "type": "Campsite",
+    "distMi": 3.5,
+    "directions": "Pick up the Glacier Basin Trail from the upper campground loop and follow it up the White River valley, about 3.5 miles and 1,500 ft, crossing the West Fork on a footbridge. It is maintained the whole way and ends in the basin. Fill everything here: this is the last dependable running water until Camp Schurman on the way out."
+   },
+   {
+    "lat": 46.888336,
+    "lng": -121.721478,
+    "elev": 7421,
+    "name": "St. Elmo Pass",
+    "note": "Saddle between Steamboat Prow and Burroughs Mountain where the Liberty Ridge approach leaves the Inter Glacier basin and drops onto the Winthrop Glacier.",
+    "type": "Junction",
+    "distMi": 4.5,
+    "directions": "The maintained trail ends at the basin. Leave it and climb snow and scree on an unsigned boot track up to the saddle, roughly 1,500 ft above. It can be hard ice early in the season and can cornice, so have the axe and crampons where you can reach them rather than buried in the pack."
+   },
+   {
+    "lat": 46.896675,
+    "lng": -121.748579,
+    "elev": 7300,
+    "name": "Winthrop Glacier traverse below Curtis Ridge",
+    "note": "Descend from St. Elmo Pass onto the Winthrop Glacier and traverse west beneath Curtis Ridge, roped for crevasses, toward the Carbon Glacier access ramp.",
+    "type": "Junction",
+    "distMi": null,
+    "directions": "Drop off the far side of the pass onto the Winthrop and rope up — roped travel with crevasse-rescue gear is the standard from here on. Contour counter-clockwise around the mountain at roughly 7,300 to 7,400 ft, crossing longitudinal crevasses and gaping moats. Rockfall comes down right where you step onto the glacier, again mid-traverse, and again at its end, so this leg wants to be moved through early."
+   },
+   {
+    "lat": 46.893671,
+    "lng": -121.76803,
+    "elev": 7400,
+    "name": "Lower Curtis Ridge / Carbon Glacier camp",
+    "note": "Standard bivy on the flat at the base of the access ramp; next day cross the crevassed Carbon Glacier, weaving through open cracks, to reach the toe of Liberty Ridge.",
+    "type": "Campsite",
+    "distMi": null,
+    "directions": "Carry on around the toe of Curtis Ridge to the flat ground at the edge of the Carbon Glacier, where there is room for a couple of small tents. The whole traverse sits under Willis Wall and Ptarmigan Ridge, and both throw ice and rock more freely as the day warms."
+   },
+   {
+    "lat": 46.87463,
+    "lng": -121.77147,
+    "elev": 10500,
+    "name": "Thumb Rock",
+    "note": "Rock col/campsite on the ridge crest, the usual high camp before the summit push; exposed to rockfall and wind, so many parties dig in behind the rock.",
+    "type": "Campsite",
+    "distMi": 7,
+    "directions": "Leave early enough to have the Carbon crossing behind you before the sun is on it. Drop onto the glacier and head south toward the toe of the ridge, negotiating the cracks, then start scouting a way onto the crest at somewhere around 8,600 to 8,800 ft. From there it is 30 to 40 degree snow with scrappy scree and rock steps up to the col. The camp is exposed to wind and to anything coming off the ridge above, so build a wall and pitch in the lee of the rock."
+   },
+   {
+    "lat": 46.869994,
+    "lng": -121.771108,
+    "elev": 12000,
+    "name": "Black Pyramid",
+    "note": "Steep 40-60° ice pitches and an exposed traverse onto the ridge's east face around this dark rock buttress; a rockfall and icefall hot spot, best climbed early/frozen.",
+    "type": "Hazard",
+    "distMi": 8,
+    "directions": "Off in the small hours. From camp, either take the short steep ice step in the middle of the rock band directly or traverse up and left around the cliff, then climb the ice gully between the rock walls, which can also be bypassed on its right. Above that the ridge steepens into sustained ice runnels. The whole stretch funnels rock and ice, so it wants to be climbed frozen and in the dark."
+   },
+   {
+    "lat": 46.8628855,
+    "lng": -121.7750975,
+    "elev": 14112,
+    "name": "Liberty Cap",
+    "note": "Liberty Ridge tops out on Liberty Cap's summit dome, the north sub-summit of Rainier overlooking Willis Wall; descend via the Emmons-Winthrop route past Camp Schurman.",
+    "type": "Summit",
+    "distMi": 9,
+    "directions": "Move out onto the east face of the ridge to get past the Black Pyramid, on exposed snow and ice up to about 60 degrees, with the angle easing back to 30 to 40 once you are around it. Several pitches of 40 to 60 degree ice and steep glacier ground then gain the Liberty Cap Glacier at around 13,500 ft. The bergschrund below the cap is usually the crux and varies year to year from a walk up a ramp to a short vertical ice step; the bridges and icy ledges across it are seasonal, so plan to climb it rather than count on finding a way over. Easier snow leads to the top."
+   }
+  ]
+ }
+}

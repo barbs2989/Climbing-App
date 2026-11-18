@@ -1,0 +1,777 @@
+{
+  "wa_mount_shuksan_price_glacier": {
+    "area": "wa_mount_shuksan_climbs",
+    "set": {
+      "waypoints": [
+        {
+          "lat": 48.8941195,
+          "lng": -121.6525865,
+          "elev": 2144,
+          "name": "Nooksack Cirque Trailhead",
+          "type": "Trailhead",
+          "distMi": 0,
+          "directions": "The Nooksack Cirque trailhead for Trail #750 sits at the end of Nooksack Cirque Road (FS-34), about a mile up from Hannegan Pass Road (FS-32) off the Mount Baker Highway, at about 2,200 ft. Cars stop on the near side of Ruth Creek: there is no bridge at the trailhead, and the crossing is made on foot on a large logjam a little downstream, with the trail and its registry box picked up on the far bank. In early summer, in high water, or after rain that crossing can be unsafe and has turned parties around before they started. Beyond it the first two miles are old roadbed on foot through old growth to the original trailhead site, so plan to walk from where you park rather than drive any closer. If you are climbing the Price, note that the standard descent comes out at the Lake Ann trailhead, so leave a shuttle vehicle or a second car there."
+        },
+        {
+          "lat": null,
+          "lng": null,
+          "elev": 6500,
+          "name": "Price Glacier Base Camp",
+          "type": "Campsite",
+          "distMi": 4
+        },
+        {
+          "lat": 48.8311153,
+          "lng": -121.6029859,
+          "elev": 9131,
+          "name": "Mount Shuksan Summit",
+          "type": "Summit",
+          "distMi": 8
+        }
+      ]
+    },
+    "review": {
+      "sources": [
+        "https://www.usgs.gov/tools/geographic-names-information-system-gnis (DomesticNames_WA bulk file)",
+        "https://www.openstreetmap.org/node/349028214",
+        "https://www.openstreetmap.org/node/3977130963",
+        "https://www.openstreetmap.org/node/37162420",
+        "https://epqs.nationalmap.gov/v1/json",
+        "https://www.mountainproject.com/route/106238998/price-glacier",
+        "https://www.mountainproject.com/area/122727462/main-peak",
+        "https://publications.americanalpineclub.org/articles/12194604300/Cascade-Climbs-1945",
+        "https://publications.americanalpineclub.org/articles/12194810100/United-States-First-Ascents-in-the-Cascades",
+        "https://home.nps.gov/noca/planyourvisit/upload/NOCA_Wilderness_Trip_Planner-Compliant_508_for-web_508-2.pdf",
+        "https://www.mountaineers.org/activities/routes-places/mt-shuksan-fisher-chimneys",
+        "https://www.fs.usda.gov/r06/mbs/recreation/trails/nooksack-cirque-trail-750",
+        "https://www.nps.gov/noca/planyourvisit/backcountry-reservations.htm",
+        "https://www.nps.gov/noca/planyourvisit/permits.htm"
+      ]
+    },
+    "ledger": [
+      {
+        "field": "waypoints/Mount Shuksan Summit",
+        "value": {
+          "name": "Mount Shuksan Summit",
+          "lat": 48.8311153,
+          "lng": -121.6029859
+        },
+        "method": "measured",
+        "level": "locked",
+        "evidence": [
+          {
+            "measurement": "USGS GNIS feature 1525722 \"Mount Shuksan\" (Summit) primary point",
+            "fact": "48.8311153, -121.6029859"
+          },
+          {
+            "url": "https://www.openstreetmap.org/node/349028214",
+            "fact": "OSM natural=peak \"Mount Shuksan\" (gnis:feature_id 1525722) at 48.8312379, -121.602677 — 26 m from the USGS point",
+            "retrieved_at": "2026-11-18"
+          }
+        ]
+      },
+      {
+        "field": "high_point_ft",
+        "value": 9131,
+        "method": "agree-2",
+        "level": "locked",
+        "evidence": [
+          {
+            "url": "https://home.nps.gov/noca/planyourvisit/upload/NOCA_Wilderness_Trip_Planner-Compliant_508_for-web_508-2.pdf",
+            "fact": "Mount Shuksan 9131ft / 2783m (NPS North Cascades Wilderness Trip Planner map)",
+            "retrieved_at": "2026-11-18",
+            "official": true
+          },
+          {
+            "url": "https://www.mountaineers.org/activities/routes-places/mt-shuksan-fisher-chimneys",
+            "fact": "High Point 9,127 ft (within 20 ft)",
+            "retrieved_at": "2026-11-18"
+          }
+        ]
+      },
+      {
+        "field": "fa",
+        "value": "Fred Beckey, Jack Schwabland, and Bill Granston, 1945",
+        "method": "agree-2",
+        "level": "locked",
+        "evidence": [
+          {
+            "url": "https://publications.americanalpineclub.org/articles/12194604300/Cascade-Climbs-1945",
+            "fact": "Schwabland, Granston, Beckey; 9 Sep 1945; North Fork Nooksack, north-side glacier (\"N.E. Face\")",
+            "retrieved_at": "2026-11-18"
+          },
+          {
+            "url": "https://www.mountainproject.com/route/106238998/price-glacier",
+            "fact": "FA: Beckey, Schwabaland [sic], and Grantson [sic], 1945",
+            "retrieved_at": "2026-11-18"
+          }
+        ]
+      },
+      {
+        "field": "ice_grade",
+        "value": "AI2-3",
+        "method": "single-source",
+        "level": "locked-1src",
+        "evidence": [
+          {
+            "url": "https://www.mountainproject.com/route/106238998/price-glacier",
+            "fact": "AI2-3, M4, Steep Snow; Grade IV",
+            "retrieved_at": "2026-11-18"
+          },
+          {
+            "url": "https://www.summitpost.org/price-glacier-mt-shuksan/542872",
+            "fact": "blocked: 403 Forbidden even through the owner's Chrome",
+            "retrieved_at": "2026-11-18"
+          }
+        ]
+      },
+      {
+        "field": "grade",
+        "value": "AI3",
+        "method": "single-source",
+        "level": "locked-1src",
+        "evidence": [
+          {
+            "url": "https://www.mountainproject.com/route/106238998/price-glacier",
+            "fact": "AI2-3 (a range agrees with either end)",
+            "retrieved_at": "2026-11-18"
+          },
+          {
+            "url": "https://www.summitpost.org/price-glacier-mt-shuksan/542872",
+            "fact": "blocked: 403 in Chrome",
+            "retrieved_at": "2026-11-18"
+          }
+        ]
+      },
+      {
+        "field": "commitment",
+        "value": "IV",
+        "method": "single-source",
+        "level": "locked-1src",
+        "evidence": [
+          {
+            "url": "https://www.mountainproject.com/route/106238998/price-glacier",
+            "fact": "Grade IV",
+            "retrieved_at": "2026-11-18"
+          }
+        ]
+      },
+      {
+        "field": "alpine_grade",
+        "value": "IV",
+        "method": "single-source",
+        "level": "locked-1src",
+        "evidence": [
+          {
+            "url": "https://www.mountainproject.com/route/106238998/price-glacier",
+            "fact": "Grade IV",
+            "retrieved_at": "2026-11-18"
+          }
+        ]
+      }
+    ],
+    "sql_fixes": [
+      {
+        "table": "routes",
+        "id": "wa_mount_shuksan_price_glacier",
+        "column": "gpx",
+        "from": "[[48.894,-121.651],[48.818,-121.585],[48.83109,-121.60294]]",
+        "to": null,
+        "why": "Stored track is 3 points = the route pins joined up (9.7 km gap), and its middle point 48.818,-121.585 lies SE of the summit, nowhere on the Nooksack Cirque / Price Glacier line. Fails the track checks (>=10 points, no gap >500 m) — route-waypoints-and-tracks says remove it.",
+        "evidence": []
+      }
+    ],
+    "disputed": [
+      "access.notes / access.parking: \"Northwest Forest Pass required\" at the Nooksack Cirque trailhead is unconfirmed — the USFS Trail 750 page names no pass and OSM tags the trailhead and its lot fee=no. Not changed (access is SQL-only); owner to check."
+    ],
+    "notes": "Trailhead pin moved 117 m onto the OSM parking node at the end of FS 34 (elev from USGS 3DEP 2,144 ft; the stored 2,200 ft was a round number). Only one publisher (OSM) for that lot, so the pin is set but not locked. Summit pin snapped to the USGS point (was 3 m off). The Campsite pin \"Price Glacier Base Camp\" has no coordinates — left as is (no mapped feature). The FA lock rests on Beckey's own AAJ account, which calls the line the \"N.E. Face\" and does not use the name Price Glacier; the route it describes (North Fork Nooksack, the north-side glacier, bergschrund series, out to the Curtis Glacier) is the Price, and MP + Wikipedia give the same party and year. fa keeps the year inside the string (there is no fa_year column)."
+  },
+  "wa_mount_shuksan_fisher_chimneys": {
+    "area": "wa_mount_shuksan_climbs",
+    "set": {
+      "waypoints": [
+        {
+          "lat": 48.8266,
+          "lng": -121.6445,
+          "elev": 4700,
+          "name": "Lake Ann",
+          "type": "Campsite"
+        },
+        {
+          "lat": 48.8500241,
+          "lng": -121.6861633,
+          "elev": 4770,
+          "name": "Lake Ann Trailhead",
+          "type": "Trailhead",
+          "distMi": 0,
+          "directions": "The trailhead is on the east side of the Mount Baker Highway (SR-542), about a mile below Artist Point, at roughly 4,770 feet."
+        },
+        {
+          "lat": null,
+          "lng": null,
+          "elev": 6700,
+          "name": "White Salmon Glacier Lower Bivouac",
+          "type": "Campsite",
+          "distMi": 5.5
+        },
+        {
+          "lat": 48.8311153,
+          "lng": -121.6029859,
+          "elev": 9131,
+          "name": "Mount Shuksan Summit",
+          "type": "Summit",
+          "distMi": 7.5
+        }
+      ]
+    },
+    "review": {
+      "sources": [
+        "https://www.usgs.gov/tools/geographic-names-information-system-gnis (DomesticNames_WA bulk file)",
+        "https://www.openstreetmap.org/node/349028214",
+        "https://www.openstreetmap.org/node/5810669862",
+        "https://www.openstreetmap.org/way/433212111",
+        "https://epqs.nationalmap.gov/v1/json",
+        "https://www.mountainproject.com/route/112041948/fisher-chimneys",
+        "https://www.mountaineers.org/activities/routes-places/mt-shuksan-fisher-chimneys",
+        "https://home.nps.gov/noca/planyourvisit/upload/NOCA_Wilderness_Trip_Planner-Compliant_508_for-web_508-2.pdf",
+        "https://www.nps.gov/noca/planyourvisit/backcountry-reservations.htm",
+        "https://www.nps.gov/noca/planyourvisit/permits.htm"
+      ]
+    },
+    "ledger": [
+      {
+        "field": "waypoints/Mount Shuksan Summit",
+        "value": {
+          "name": "Mount Shuksan Summit",
+          "lat": 48.8311153,
+          "lng": -121.6029859
+        },
+        "method": "measured",
+        "level": "locked",
+        "evidence": [
+          {
+            "measurement": "USGS GNIS feature 1525722 \"Mount Shuksan\" (Summit) primary point",
+            "fact": "48.8311153, -121.6029859"
+          },
+          {
+            "url": "https://www.openstreetmap.org/node/349028214",
+            "fact": "OSM natural=peak \"Mount Shuksan\" (gnis:feature_id 1525722) at 48.8312379, -121.602677 — 26 m from the USGS point",
+            "retrieved_at": "2026-11-18"
+          }
+        ]
+      },
+      {
+        "field": "high_point_ft",
+        "value": 9131,
+        "method": "agree-2",
+        "level": "locked",
+        "evidence": [
+          {
+            "url": "https://home.nps.gov/noca/planyourvisit/upload/NOCA_Wilderness_Trip_Planner-Compliant_508_for-web_508-2.pdf",
+            "fact": "Mount Shuksan 9131ft / 2783m (NPS North Cascades Wilderness Trip Planner map)",
+            "retrieved_at": "2026-11-18",
+            "official": true
+          },
+          {
+            "url": "https://www.mountaineers.org/activities/routes-places/mt-shuksan-fisher-chimneys",
+            "fact": "High Point 9,127 ft (within 20 ft)",
+            "retrieved_at": "2026-11-18"
+          }
+        ]
+      },
+      {
+        "field": "grade",
+        "value": "Class 4",
+        "method": "single-source",
+        "level": "locked-1src",
+        "evidence": [
+          {
+            "url": "https://www.mountainproject.com/route/112041948/fisher-chimneys",
+            "fact": "YDS 4th, AI1, Mod. Snow; Grade III",
+            "retrieved_at": "2026-11-18"
+          },
+          {
+            "url": "https://www.mountaineers.org/activities/routes-places/mt-shuksan-fisher-chimneys",
+            "fact": "rates it Basic Experience Climb only (no class)",
+            "retrieved_at": "2026-11-18"
+          }
+        ]
+      },
+      {
+        "field": "commitment",
+        "value": "III",
+        "method": "single-source",
+        "level": "locked-1src",
+        "evidence": [
+          {
+            "url": "https://www.mountainproject.com/route/112041948/fisher-chimneys",
+            "fact": "Grade III",
+            "retrieved_at": "2026-11-18"
+          }
+        ]
+      }
+    ],
+    "disputed": [
+      "gain_ft (5100): MP says 4,000 ft, The Mountaineers 6,750 ft, stored 5,100 — the trail loses/regains ~700-800 ft to Lake Ann so the figures count different things; nothing agrees within 10%.",
+      "fa: names agree with MP (Clarence Fisher, Esther Buswell, Paul Hugdahl, Lars Loveseth, Winnie Spieseke, Harriet Taylor), MP gives no year; no second publisher found — FA is never locked from one source."
+    ],
+    "notes": "Lake Ann Trailhead pin is already inside the OSM parking lot (4 m from the OSM trailhead node, USGS 3DEP 4,757 ft vs stored 4,770) — kept; OSM is one publisher so not locked. Summit pin snapped to the USGS point (was 3 m off). Stored track (2,336 pts, max gap 11 m, starts 15 m from the trailhead, reaches 7 m from the summit) passes the geometry checks but has no timestamps, so it was not used as a measurement. The Mountaineers gives Northwest Forest Pass for parking and party size 6 recommended / 9 max; NPS: overnight permit required, 12 in trailed areas and the Sulphide Glacier zone, 6 elsewhere cross-country."
+  },
+  "wa_mount_baker_easton_glacier": {
+    "area": "wa_mount_baker",
+    "set": {
+      "waypoints": [
+        {
+          "lat": 48.7066589,
+          "lng": -121.8112361,
+          "elev": 3322,
+          "name": "Park Butte / Schriebers Meadow",
+          "type": "Trailhead",
+          "distMi": 0,
+          "directions": "From Sedro-Woolley, drive SR 20 east 16 miles to milepost 82 and turn left (north) on Baker Lake Road (FS 11). After 12 miles turn left on FS 12 and drive 3.6 miles to the FS 13 junction; stay right on FS 13 (Sulphur Creek Road) for 5.3 miles to its end at the Park Butte / Schriebers Meadow trailhead, about 3,360 ft. From the parking area, pick up Park Butte Trail 603 and cross Sulphur Creek on a footbridge or log crossing near the start — this can become a genuine ford during peak snowmelt."
+        },
+        {
+          "lat": 48.739455,
+          "lng": -121.840289,
+          "elev": 5900,
+          "name": "Sandy Camp / Railroad Grade Camp",
+          "type": "Campsite",
+          "distMi": 4,
+          "directions": "Take Park Butte Trail 603 across Sulphur Creek (a footbridge or logs, a ford at peak melt) and up through the meadow and forest switchbacks to Morovitz Meadow, the last running water. At the signed junction there go right on Railroad Grade Trail 603.2, up stone steps onto the moraine crest, and follow it with the Easton Glacier dropping away on your right to Sandy Camp, where the crest runs out near 5,900 ft."
+        },
+        {
+          "lat": 48.7766298,
+          "lng": -121.8144732,
+          "elev": 10781,
+          "name": "Mount Baker Summit",
+          "type": "Summit",
+          "distMi": 7,
+          "directions": "Rope up at the glacier edge and climb roughly north toward Sherman Peak, keeping climber's right of the main crevasse bands. Near 9,400 to 9,700 ft at the rim of Sherman Crater, cross the rockfall-swept slope quickly and trend west across the saddle to the foot of the Roman Wall, climb its 35 to 45 degree snow staying right of the rocky rib, then cross the summit plateau to Grant Peak."
+        },
+        {
+          "lat": 48.706412,
+          "lng": -121.81354,
+          "elev": 3335,
+          "name": "Sulphur Creek crossing",
+          "type": "Water",
+          "distMi": 0.1
+        }
+      ]
+    },
+    "review": {
+      "sources": [
+        "https://www.usgs.gov/tools/geographic-names-information-system-gnis (DomesticNames_WA bulk file)",
+        "https://www.openstreetmap.org/way/183382338",
+        "https://www.openstreetmap.org/node/5398036075",
+        "https://epqs.nationalmap.gov/v1/json",
+        "https://www.fs.usda.gov/r06/mbs/recreation/mt-baker-summit-climbing",
+        "https://www.fs.usda.gov/r06/mbs/recreation/easton-glacier-climbing-route",
+        "https://www.fs.usda.gov/r06/mbs/recreation/mt-baker-wilderness",
+        "https://www.mountaineers.org/activities/routes-places/mount-baker-easton-glacier",
+        "https://www.mountainproject.com/route/107168660/easton-glacier"
+      ]
+    },
+    "ledger": [
+      {
+        "field": "waypoints/Mount Baker Summit",
+        "value": {
+          "name": "Mount Baker Summit",
+          "lat": 48.7766298,
+          "lng": -121.8144732
+        },
+        "method": "measured",
+        "level": "locked",
+        "evidence": [
+          {
+            "measurement": "USGS GNIS feature 1516062 \"Mount Baker\" (Summit) primary point",
+            "fact": "48.7766298, -121.8144732"
+          },
+          {
+            "measurement": "USGS GNIS feature 1520243 \"Grant Peak\" (Summit, the summit of Mount Baker) at 48.7766406, -121.8144899 — 1.7 m away",
+            "fact": "second USGS feature for the top"
+          }
+        ]
+      },
+      {
+        "field": "high_point_ft",
+        "value": 10781,
+        "method": "agree-2",
+        "level": "locked",
+        "evidence": [
+          {
+            "url": "https://www.fs.usda.gov/r06/mbs/recreation/mt-baker-summit-climbing",
+            "fact": "Mt. Baker summit (Grant Peak) 10,781 ft / 3,286 m",
+            "retrieved_at": "2026-11-18",
+            "official": true
+          },
+          {
+            "url": "https://www.mountaineers.org/activities/routes-places/mount-baker-easton-glacier",
+            "fact": "High Point 10,778 ft (within 20 ft)",
+            "retrieved_at": "2026-11-18"
+          }
+        ]
+      },
+      {
+        "field": "permit",
+        "value": "No climbing or wilderness permit is required; filling in the voluntary climbing register at the trailhead is recommended. No quota or fee. Northwest Forest Pass at developed trailheads.",
+        "method": "official-1",
+        "level": "locked",
+        "expires_at": "2027-11-18T00:00:00Z",
+        "evidence": [
+          {
+            "url": "https://www.fs.usda.gov/r06/mbs/recreation/mt-baker-summit-climbing",
+            "fact": "no climbing permit; no climbing fee; recreation pass per vehicle at Heliotrope Ridge, Park Butte, Artist Point",
+            "retrieved_at": "2026-11-18",
+            "official": true
+          },
+          {
+            "url": "https://www.fs.usda.gov/r06/mbs/recreation/mt-baker-wilderness",
+            "fact": "climbing register voluntary but strongly recommended; no wilderness permit listed (updated 2026-10-23)",
+            "retrieved_at": "2026-11-18",
+            "official": true
+          }
+        ]
+      },
+      {
+        "field": "gain_ft",
+        "value": 7600,
+        "method": "agree-2",
+        "level": "locked",
+        "evidence": [
+          {
+            "url": "https://www.mountaineers.org/activities/routes-places/mount-baker-easton-glacier",
+            "fact": "Elevation Gain 7,500 ft (1.3% off)",
+            "retrieved_at": "2026-11-18"
+          },
+          {
+            "measurement": "USFS official summit 10,781 ft − USGS 3DEP 3,322 ft at the Park Butte trailhead lot (OSM way 183382338) = 7,459 ft",
+            "fact": "7459 (1.9% off)"
+          }
+        ]
+      }
+    ],
+    "sql_fixes": [
+      {
+        "table": "routes",
+        "id": "wa_mount_baker_easton_glacier",
+        "column": "dist_km",
+        "from": 6.4,
+        "to": null,
+        "why": "6.4 km is shorter than the straight line from the Park Butte lot to the summit (7.8 km), so it is impossible under either dist_km convention. The Mountaineers gives 14.0 mi round trip; the stored track measures 23.9 km round trip and 12.0 km trailhead-to-summit. Owner to set per the row's convention (one-way vs round trip) — no derived value written here.",
+        "evidence": [
+          "https://www.mountaineers.org/activities/routes-places/mount-baker-easton-glacier"
+        ]
+      }
+    ],
+    "disputed": [
+      "alpine_grade / commitment: stored II, MP Grade III."
+    ],
+    "notes": "Trailhead pin moved 76 m east from the OSM \"Park Butte Trailhead\" node (which sits just outside the lot) onto the centroid of the OSM parking area; USGS 3DEP 3,322 ft (stored 3,360). The stored track starts at the trailhead node, 88 m from the new pin — inside the 200 m rule. Summit pin snapped to the USGS point (was 19 m off). USFS confirms: Park Butte Trail 603, stay left at Scott Paul 603.1, right onto Railroad Grade 603.2; camps Railroad Grade (7 sites, 2.25-2.75 mi), High Camps 5,600 ft (4 sites, 3.75 mi), Sandy Camp 5,900 ft; designated sites only below 6,000 ft in the NRA; group limit 12 entering the Wilderness; campfires prohibited; pack out waste. Easton FA unknown (MP) — fa stays null."
+  },
+  "wa_mount_baker_coleman_deming": {
+    "area": "wa_mount_baker",
+    "set": {
+      "waypoints": [
+        {
+          "lat": 48.8020775,
+          "lng": -121.8959136,
+          "elev": 3676,
+          "name": "Heliotrope Ridge Trailhead (Trail #677, FR-39)",
+          "type": "Trailhead",
+          "distMi": 0,
+          "elevFt": 3676,
+          "directions": "From the Mount Baker Highway (SR 542), turn onto Glacier Creek Road (FS 39) and follow it to the Heliotrope Ridge trailhead for Trail #677, at roughly 3,700 ft. Check the road first: FS 39 has a history of washouts, and when it has been closed low, parties have had to add several miles of road on foot or bike to reach the sign-in kiosk. When it is drivable, parking is limited and fills at weekends, and costs $5 a day or $30 for an annual pass. No climbing or wilderness permit is needed; the climbing register is voluntary. Glacier is the nearest supplies at 12 miles, with fuel in Maple Falls at 20 miles."
+        },
+        {
+          "lat": 48.79734,
+          "lng": -121.87015,
+          "elev": 5000,
+          "name": "Kulshan Cabin site",
+          "type": "Campsite",
+          "distMi": 1.9
+        },
+        {
+          "lat": 48.7893,
+          "lng": -121.86777,
+          "elev": 5897,
+          "name": "Hogsback Camp",
+          "type": "Campsite",
+          "distMi": 3,
+          "elevFt": 5897,
+          "directions": "Follow Trail 677 as it switchbacks through old growth and avalanche chutes, crossing Grouse, Kulshan and Heliotrope Creeks (cross early, before afternoon melt). At the signed fork at about 2 miles go right on the climbers' path up the crest of the Hogsback moraine to the camps near 6,000 ft."
+        },
+        {
+          "lat": 48.7724,
+          "lng": -121.8353,
+          "elev": 8983,
+          "name": "Colfax–Baker Saddle",
+          "type": "Junction",
+          "distMi": null,
+          "elevFt": 8983,
+          "directions": "Rope up where the moraine meets the Coleman Glacier and climb south, then southeast toward the Black Buttes, weaving through crevasses. Higher, the track swings east beneath Colfax Peak; cross under its icefall without stopping, keeping off the avalanche-prone Colfax flank, to the broad saddle between Colfax and the summit cone at about 9,000 ft."
+        },
+        {
+          "lat": 48.7766298,
+          "lng": -121.8144732,
+          "elev": 10781,
+          "name": "Mt. Baker summit (Grant Peak)",
+          "type": "Summit",
+          "distMi": null,
+          "elevFt": 10781,
+          "directions": "From the saddle turn east and climb about 300 ft up the pumice ridge on a boot path, then the steep snow of the Roman Wall to the right of its rock, roughly 9,300 to 10,400 ft. Where it eases onto the flat summit plateau, walk about ten minutes to Grant Peak; wand the top of the wall for the way back."
+        }
+      ]
+    },
+    "review": {
+      "sources": [
+        "https://www.usgs.gov/tools/geographic-names-information-system-gnis (DomesticNames_WA bulk file)",
+        "https://www.openstreetmap.org/way/296392530",
+        "https://www.openstreetmap.org/node/4939697885",
+        "https://epqs.nationalmap.gov/v1/json",
+        "https://www.fs.usda.gov/r06/mbs/recreation/mt-baker-summit-climbing",
+        "https://www.fs.usda.gov/r06/mbs/recreation/coleman-glacier-climbing-route",
+        "https://www.fs.usda.gov/r06/mbs/recreation/trails/heliotrope-ridge-trail-677",
+        "https://www.fs.usda.gov/r06/mbs/recreation/mt-baker-wilderness",
+        "https://www.mountaineers.org/activities/routes-places/mount-baker-coleman-glacier",
+        "https://www.mountainproject.com/route/105920598/colemandeming-glacier"
+      ]
+    },
+    "ledger": [
+      {
+        "field": "waypoints/Mt. Baker summit (Grant Peak)",
+        "value": {
+          "name": "Mt. Baker summit (Grant Peak)",
+          "lat": 48.7766298,
+          "lng": -121.8144732
+        },
+        "method": "measured",
+        "level": "locked",
+        "evidence": [
+          {
+            "measurement": "USGS GNIS feature 1516062 \"Mount Baker\" (Summit) primary point",
+            "fact": "48.7766298, -121.8144732"
+          },
+          {
+            "measurement": "USGS GNIS feature 1520243 \"Grant Peak\" (Summit, the summit of Mount Baker) at 48.7766406, -121.8144899 — 1.7 m away",
+            "fact": "second USGS feature for the top"
+          }
+        ]
+      },
+      {
+        "field": "high_point_ft",
+        "value": 10781,
+        "method": "agree-2",
+        "level": "locked",
+        "evidence": [
+          {
+            "url": "https://www.fs.usda.gov/r06/mbs/recreation/mt-baker-summit-climbing",
+            "fact": "Mt. Baker summit (Grant Peak) 10,781 ft / 3,286 m",
+            "retrieved_at": "2026-11-18",
+            "official": true
+          },
+          {
+            "url": "https://www.mountaineers.org/activities/routes-places/mount-baker-easton-glacier",
+            "fact": "High Point 10,778 ft (within 20 ft)",
+            "retrieved_at": "2026-11-18"
+          }
+        ]
+      },
+      {
+        "field": "permit",
+        "value": "No climbing or wilderness permit is required; filling in the voluntary climbing register at the trailhead is recommended. No quota or fee. Northwest Forest Pass at developed trailheads.",
+        "method": "official-1",
+        "level": "locked",
+        "expires_at": "2027-11-18T00:00:00Z",
+        "evidence": [
+          {
+            "url": "https://www.fs.usda.gov/r06/mbs/recreation/mt-baker-summit-climbing",
+            "fact": "no climbing permit; no climbing fee; recreation pass per vehicle at Heliotrope Ridge, Park Butte, Artist Point",
+            "retrieved_at": "2026-11-18",
+            "official": true
+          },
+          {
+            "url": "https://www.fs.usda.gov/r06/mbs/recreation/mt-baker-wilderness",
+            "fact": "climbing register voluntary but strongly recommended; no wilderness permit listed (updated 2026-10-23)",
+            "retrieved_at": "2026-11-18",
+            "official": true
+          }
+        ]
+      },
+      {
+        "field": "commitment",
+        "value": "II",
+        "method": "single-source",
+        "level": "locked-1src",
+        "evidence": [
+          {
+            "url": "https://www.mountainproject.com/route/105920598/colemandeming-glacier",
+            "fact": "Grade II",
+            "retrieved_at": "2026-11-18"
+          }
+        ]
+      }
+    ],
+    "sql_fixes": [
+      {
+        "table": "routes",
+        "id": "wa_mount_baker_coleman_deming",
+        "column": "dist_km",
+        "from": 4.7,
+        "to": null,
+        "why": "4.7 km is shorter than the straight line from the Heliotrope Ridge lot to the summit (6.6 km) — impossible. The Mountaineers gives 11.0 mi round trip; the stored track measures 10.2 km trailhead-to-summit. 4.7 km is roughly the trailhead-to-Hogsback leg (USFS ~3 mi). Owner to set per the row's convention.",
+        "evidence": [
+          "https://www.mountaineers.org/activities/routes-places/mount-baker-coleman-glacier",
+          "https://www.fs.usda.gov/r06/mbs/recreation/coleman-glacier-climbing-route"
+        ]
+      }
+    ],
+    "disputed": [
+      "gain_ft (7080): measurement USFS 10,781 − USGS 3DEP 3,676 at the lot = 7,105 agrees, but The Mountaineers says 8,100 ft and MP lists 7,080 ft only as an unlabelled \"elevation\" — no independent published figure agrees, so not locked.",
+      "fa: \"Edmund Coleman and party, August 17, 1868 (first ascent of Mount Baker)\" is the PEAK first ascent; MP credits it to this route (1868, no date) but no second source ties the 1868 line to the Coleman-Deming route. Not locked."
+    ],
+    "notes": "Trailhead pin moved 88 m west onto the OSM Heliotrope Ridge parking lot (way 296392530); the stored pin sat on the road east of the lot. The stored track starts inside that lot (19 m from the new pin). USGS 3DEP 3,676 ft (stored 3,700). Summit pin snapped to the USGS point (was 19 m off). USFS: Kulshan Cabin site 5,000 ft and Hogsback 6,000 ft camps, toilets at Kulshan Cabin and Harrison Camp, party size 12, pass required at the Heliotrope trailhead, best season late May-August. FR 39 page (updated 2026-10-22) lists no current closure — the road status text mentioning a December 2025 washout should be re-checked."
+  },
+  "wa_sahale_mountain_sahale_glacier": {
+    "area": "wa_sahale_mountain",
+    "set": {
+      "waypoints": [
+        {
+          "lat": 48.4753032,
+          "lng": -121.0751836,
+          "elev": 3641,
+          "name": "Cascade Pass Trailhead",
+          "type": "Trailhead",
+          "distMi": 0,
+          "elevFt": 3641,
+          "directions": "Drive Cascade River Road to its end, about 22 to 23 miles from Marblemount, to the large parking lot at the Cascade Pass Trailhead at 3,600 feet. If you plan to stay overnight at Sahale Glacier Camp, note that the permit is quota-limited — get an early-access wilderness permit or a walk-up the day before at the Marblemount ranger station."
+        },
+        {
+          "lat": 48.4683,
+          "lng": -121.06,
+          "elev": 5400,
+          "name": "Cascade Pass",
+          "type": "Junction",
+          "distMi": 3.7,
+          "elevFt": 5400,
+          "directions": "Follow the Cascade Pass Trail from the parking lot as it switchbacks steadily up through old-growth forest, roughly 1,800 ft in the first 2 miles, then eases across subalpine meadows to Cascade Pass at about 3.7 miles."
+        },
+        {
+          "lat": 48.485148,
+          "lng": -121.045182,
+          "elev": 7686,
+          "name": "Sahale Glacier Camp",
+          "type": "Campsite",
+          "distMi": 5.5,
+          "elevFt": 7600,
+          "directions": "At Cascade Pass take the left (north) fork signed for Sahale Arm and switchback up the open ridge crest, passing above Doubtful Lake. The final stretch above the Arm is loose scree and talus on cairns with real exposure, ending at the rock-walled tent pads of Sahale Glacier Camp."
+        },
+        {
+          "lat": 48.4911044,
+          "lng": -121.0384933,
+          "elev": 8680,
+          "name": "Sahale Mountain summit",
+          "type": "Summit",
+          "distMi": 6,
+          "elevFt": 8680,
+          "directions": "From camp, rope up and climb the Sahale Glacier to the southwest base of the summit pyramid. A short, exposed stretch of steep snow and class 3-4 rock leads to a ledge just below the top, finished by an awkward chimney-like move onto the summit block."
+        },
+        {
+          "lat": 48.473583,
+          "lng": -121.050163,
+          "elev": 5393,
+          "name": "Doubtful Lake",
+          "type": "Water",
+          "distMi": 2.1
+        }
+      ]
+    },
+    "review": {
+      "sources": [
+        "https://www.usgs.gov/tools/geographic-names-information-system-gnis (DomesticNames_WA bulk file)",
+        "https://www.openstreetmap.org/node/6736102919",
+        "https://www.openstreetmap.org/way/264249687",
+        "https://www.openstreetmap.org/node/1420498929",
+        "https://epqs.nationalmap.gov/v1/json",
+        "https://home.nps.gov/noca/planyourvisit/upload/NOCA_Wilderness_Trip_Planner-Compliant_508_for-web_508-2.pdf",
+        "https://www.nps.gov/noca/planyourvisit/cascade-pass-trail.htm",
+        "https://www.nps.gov/noca/planyourvisit/backcountry-reservations.htm",
+        "https://www.nps.gov/noca/planyourvisit/permits.htm",
+        "https://www.mountainproject.com/route/111724517/sahale-glacier",
+        "https://www.mountainproject.com/area/107848148/sahale-peak"
+      ]
+    },
+    "ledger": [
+      {
+        "field": "waypoints/Sahale Mountain summit",
+        "value": {
+          "name": "Sahale Mountain summit",
+          "lat": 48.4911044,
+          "lng": -121.0384933
+        },
+        "method": "measured",
+        "level": "locked",
+        "evidence": [
+          {
+            "measurement": "USGS GNIS feature 1525345 \"Sahale Mountain\" (Summit) primary point",
+            "fact": "48.4911044, -121.0384933"
+          },
+          {
+            "url": "https://www.openstreetmap.org/node/6736102919",
+            "fact": "OSM natural=peak \"Sahale Mountain\" at 48.4914104, -121.038389 — 35 m from the USGS point",
+            "retrieved_at": "2026-11-18"
+          }
+        ]
+      },
+      {
+        "field": "high_point_ft",
+        "value": 8680,
+        "method": "agree-2",
+        "level": "locked",
+        "evidence": [
+          {
+            "url": "https://home.nps.gov/noca/planyourvisit/upload/NOCA_Wilderness_Trip_Planner-Compliant_508_for-web_508-2.pdf",
+            "fact": "Sahale Mtn 8680ft / 2646m (NPS trip planner map)",
+            "retrieved_at": "2026-11-18",
+            "official": true
+          },
+          {
+            "url": "https://www.mountainproject.com/area/107848148/sahale-peak",
+            "fact": "description gives Sahale Peak 8,680 ft (its area header says 8,499 — that header figure is not used)",
+            "retrieved_at": "2026-11-18"
+          }
+        ]
+      },
+      {
+        "field": "commitment",
+        "value": "II",
+        "method": "single-source",
+        "level": "locked-1src",
+        "evidence": [
+          {
+            "url": "https://www.mountainproject.com/route/111724517/sahale-glacier",
+            "fact": "Grade II",
+            "retrieved_at": "2026-11-18"
+          }
+        ]
+      }
+    ],
+    "sql_fixes": [
+      {
+        "table": "routes",
+        "id": "wa_sahale_mountain_sahale_glacier",
+        "column": "discipline",
+        "from": "mountaineering",
+        "to": "alpine",
+        "why": "The summit is reached by a short chimney rated 5.0 (MP: Easy 5th, trad, a few pieces of rock pro, rappel off a slung block) and the row's own beta says \"(5.0)\". Owner rule: mountaineering is a walk-up and a scramble is never roped, so a roped 5.0 finish is alpine. ONE source only (SummitPost 403 even in Chrome) — needs a second before grade changes; grade would move from \"Class 4\" to \"Easy 5th\".",
+        "evidence": [
+          "https://www.mountainproject.com/route/111724517/sahale-glacier"
+        ]
+      }
+    ],
+    "disputed": [
+      "grade: stored \"Class 4\" vs MP \"Easy 5th\" (summit chimney 5.0); the row's own beta and rappels text agree with MP. One source.",
+      "fa: \"August 1897 (peak first ascent); John Charlton and Albert H. Sylvester\" is a PEAK FA and mixes a date with names — not verified, not locked."
+    ],
+    "notes": "Trailhead pin moved 36 m onto the centroid of the NPS Cascade Pass parking lot (OSM way 264249687); the stored 48.475,-121.075 was a rounded point (USGS 3DEP 3,641 ft, stored 3,600). Summit pin moved 39 m onto the USGS point; OSM's peak node is 35 m away, so both methods agree within 50 m. Note the USGS 3DEP reads 8,741 ft at the USGS point and 8,670 ft at the OSM node — the steep summit block defeats the DEM; the official 8,680 ft stands. The Cascade Pass Junction pin is 45 m from the USGS \"Cascade Pass\" point; by the landmark rule it belongs on the trail nearest that point — not moved (no OSM trail geometry pulled; Overpass was returning 502). Stored track: 200 points, 6.36 km trailhead-to-summit, but NPS gives 5.9 mi (9.5 km) to the Sahale Glacier camp alone — the track is heavily simplified (cuts the 35 switchbacks) and should not be used for any distance. NPS (2026): overnight permit required year-round, $10/person (16+) + $6 reservation fee, youth free; Sahale Glacier camp very competitive, melts out early July, unreachable late Sept; no reservations for trips before July 1. The access object carries an odd \"_raw\" key — worth a shape review."
+  }
+}
