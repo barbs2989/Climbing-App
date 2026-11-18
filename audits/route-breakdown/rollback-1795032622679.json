@@ -1,0 +1,516 @@
+{
+ "wa_liberty_bell_nw_face": {
+  "area": "wa_liberty_bell",
+  "road": {
+   "name": "Blue Lake Trailhead (WA-20, Washington Pass)",
+   "status": "Trailhead sits right off the paved North Cascades Highway (SR-20) at a marked parking pullout near Washington Pass; no unpaved or high-clearance road involved, just paved highway parking.",
+   "driveNote": "About 3-3.5 hours from Seattle via I-5 to Burlington then east on SR-20, or via US-2/US-97 through Wenatchee and north on SR-153/SR-20 from the east; a Northwest Forest Pass is required to park.",
+   "seasonalGate": "SR-20 (North Cascades Highway) closes for winter between the Ross Dam/Diablo area and Silver Star/Mazama, typically early-to-mid December through late April or early May depending on snowpack, making the trailhead unreachable by car in winter/spring."
+  }
+ },
+ "wa_liberty_traverse": {
+  "area": "wa_liberty_bell",
+  "waypoints": [
+   {
+    "lat": 48.5191,
+    "lng": -120.6742,
+    "elev": 5400,
+    "name": "Blue Lake Trailhead",
+    "note": "Blue Lake Trail #314 trailhead on SR-20; shared approach for Liberty Bell and South Early Winters Spire (NW Forest Pass required).",
+    "type": "Trailhead",
+    "distMi": 0,
+    "directions": "Drive SR-20 to the signed Blue Lake Trailhead on the south side of the highway, about 1 mile west of Washington Pass. A Northwest Forest Pass is required to park."
+   },
+   {
+    "lat": 48.5155,
+    "lng": -120.6588,
+    "elev": 7720,
+    "name": "Liberty Bell Mountain",
+    "note": "First of the five summits: the traverse tops out Liberty Bell by the Beckey Route, then carries on south over Concord Tower, Lexington Tower and North Early Winters Spire to finish on South Early Winters Spire.",
+    "type": "Summit",
+    "distMi": 2,
+    "directions": "Follow the Blue Lake Trail about 1.5 miles to the climbers' junction just past a small stream, marked by a large cairn, then climb the path up slabs, talus and heather into the gully below the Liberty Bell-Concord notch. Keep climber's left low in the gully, cross right higher up, and take the left fork a couple of hundred feet below the notch to the Beckey Route start; four short pitches lead to the summit."
+   },
+   {
+    "lat": 48.514505,
+    "lng": -120.658265,
+    "elev": 7611,
+    "name": "Concord Tower",
+    "note": "Second summit of the traverse, climbed by its North Face from the Liberty Bell-Concord notch.",
+    "type": "Summit",
+    "distMi": null,
+    "directions": "From Liberty Bell's summit, descend the Beckey Route and its rappels into the Liberty Bell-Concord notch, then climb Concord Tower's North Face to the top."
+   },
+   {
+    "lat": 48.514255,
+    "lng": -120.657465,
+    "elev": 7560,
+    "name": "Lexington Tower",
+    "note": "Third summit, climbed by its North Face.",
+    "type": "Summit",
+    "distMi": null,
+    "directions": "Rappel Concord Tower's south face into the notch below Lexington, then climb Lexington Tower's North Face to the top."
+   },
+   {
+    "lat": 48.512935,
+    "lng": -120.655465,
+    "elev": 7760,
+    "name": "North Early Winters Spire",
+    "note": "Fourth summit, climbed by its Northwest Corner.",
+    "type": "Summit",
+    "distMi": null,
+    "directions": "Rappel Lexington's south face, cross a short but exposed 3rd-class section, make one more short rappel, and walk to the base of North Early Winters Spire. Climb its Northwest Corner to the summit."
+   },
+   {
+    "lat": 48.512275,
+    "lng": -120.655395,
+    "elev": 7807,
+    "name": "South Early Winters Spire",
+    "note": "Fifth and last summit, finished by its Southwest Rib; descend by the South Arete rappels and walk back to the Blue Lake Trail.",
+    "type": "Summit",
+    "distMi": null,
+    "directions": "Get down off North Early Winters Spire and finish the day on South Early Winters Spire by its Southwest Rib."
+   }
+  ],
+  "road": {
+   "name": "Blue Lake Trailhead (WA-20, Washington Pass)",
+   "status": "Trailhead sits right off the paved North Cascades Highway (SR-20) at a marked parking pullout near Washington Pass; no unpaved or high-clearance road involved, just paved highway parking.",
+   "driveNote": "About 3-3.5 hours from Seattle via I-5 to Burlington then east on SR-20, or via US-2/US-97 through Wenatchee and north on SR-153/SR-20 from the east; a Northwest Forest Pass is required to park.",
+   "seasonalGate": "SR-20 (North Cascades Highway) closes for winter between the Ross Dam/Diablo area and Silver Star/Mazama, typically early-to-mid December through late April or early May depending on snowpack, making the trailhead unreachable by car in winter/spring."
+  }
+ },
+ "wa_south_early_winter_spire_direct_east_buttress": {
+  "area": "wa_south_early_winters_spire",
+  "waypoints": [
+   {
+    "lat": 48.5143,
+    "lng": -120.6425,
+    "elev": 5150,
+    "name": "Hairpin Turn Pullout (Hwy 20)",
+    "note": "Dirt pullout at the hairpin switchback ~0.5-1mi east of Washington Pass, directly beneath the east faces of North/South Early Winters Spire; hike up Spire Gully to the NEWS-SEWS notch, then traverse left to the route base. Parties often descend via South Arete/Blue Lake Trail and hitchhike back to a car left here.",
+    "type": "Trailhead",
+    "elevFt": 5150,
+    "directions": "Drive SR-20 to Washington Pass (the highway is closed over the pass in winter), then continue east, downhill, to the big hairpin switchback just below the pass; from the Mazama side it is the hairpin you reach as the road climbs to the pass. Park in the dirt pullout at the hairpin, about 5,100 ft, directly below the east faces of the Early Winters Spires. This is not the Blue Lake Trailhead."
+   },
+   {
+    "lat": 48.51216,
+    "lng": -120.65513,
+    "elev": 7807,
+    "name": "South Early Winters Spire",
+    "type": "Summit",
+    "elevFt": 7807,
+    "directions": "Hike up Spire Gully, following occasional cairns, to the last large tree in the middle of the gully, then traverse right across talus (snow early in the season) to below the gully that leads to the notch between North and South Early Winters Spires. Traverse left to the foot of the east buttress and climb its nine pitches to the summit."
+   }
+  ]
+ },
+ "wa_northwest_face_boving_pollock": {
+  "area": "wa_south_early_winters_spire",
+  "waypoints": [
+   {
+    "lat": 48.5191,
+    "lng": -120.6742,
+    "elev": 5400,
+    "name": "Blue Lake Trailhead",
+    "note": "Blue Lake Trail #314 trailhead on SR-20; shared approach for Liberty Bell and South Early Winters Spire (NW Forest Pass required).",
+    "type": "Trailhead",
+    "distMi": 0,
+    "directions": "The Blue Lake Trailhead is on the south side of SR 20 (North Cascades Highway) a little under a mile west of Washington Pass, between mileposts 161 and 162, about 42 miles east of Newhalem or 31 miles west of Winthrop. The paved lot is small and fills early. A Northwest Forest Pass or day-use fee is required."
+   },
+   {
+    "lat": 48.51217,
+    "lng": -120.65536,
+    "elev": 7807,
+    "name": "South Early Winters Spire",
+    "note": "True summit of South Early Winters Spire, between Liberty Bell and Blue Lake Peak.",
+    "type": "Summit",
+    "distMi": 2.3,
+    "directions": "Follow the Blue Lake Trail about 1 to 1.25 miles to the clearing on the spire's northwest side, then take the climbers' path up talus and heather into the basin below the northwest face. Find the chockstone-filled chimney between the two formations; the route starts at the steep corner entered by a traverse, just right of the bolted Mojo Rising start. Climb six pitches to the summit."
+   }
+  ]
+ },
+ "wa_beckey_davis": {
+  "area": "wa_prusik_peak",
+  "waypoints": [
+   {
+    "lat": 47.527315,
+    "lng": -120.820942,
+    "elev": 3400,
+    "name": "Stuart Lake Trailhead",
+    "note": "Standard access to the Core Enchantments via Colchuck Lake and Aasgard Pass.",
+    "type": "Trailhead",
+    "distMi": 0,
+    "directions": "From US-2 at the western edge of Leavenworth, turn onto Icicle Creek Road and drive 8.4 miles, then turn left onto Eightmile Road (FS Road 7601) and stay on the rough dirt road for 3.7 miles to reach the Stuart Lake Trailhead at about 3,400 ft. A Northwest Forest Pass is required to park and overnight trips May 15 to Oct 31 need an Enchantment permit; the road is usually gated November into May."
+   },
+   {
+    "lat": 47.4878,
+    "lng": -120.8343,
+    "elev": 5570,
+    "name": "Colchuck Lake designated campsites",
+    "type": "Campsite",
+    "distMi": 4.2
+   },
+   {
+    "lat": 47.485953,
+    "lng": -120.788698,
+    "elev": 7372,
+    "name": "Gnome Tarn",
+    "type": "Campsite",
+    "distMi": 7.1
+   },
+   {
+    "lat": 47.485953,
+    "lng": -120.788698,
+    "elev": 7415,
+    "name": "Gnome Tarn",
+    "note": "Landmark tarn on the boot path leading to the base of Prusik Peak's south face routes.",
+    "type": "Junction",
+    "distMi": 8,
+    "directions": "Take the Stuart Lake Trail about 2.5 miles to the Colchuck Lake Trail, cross Mountaineer Creek and climb to Colchuck Lake at 5,570 ft. From the boulder field at the lake's south end, climb Aasgard Pass, about 2,000 ft of loose scree in 1.25 miles, then cross the Core past Tranquil and Isolation lakes and go cross-country north over slabs and talus to Gnome Tarn below Prusik's south face."
+   },
+   {
+    "lat": null,
+    "lng": null,
+    "name": "Prusik Peak south face base",
+    "type": "Base",
+    "distMi": null,
+    "elevFt": null,
+    "directions": "Walk up from the tarn to the foot of the south face and find two large V-shaped features; the route starts in the chimney immediately left of them, to the right of the classic line in the middle of the face."
+   },
+   {
+    "lat": 47.487398,
+    "lng": -120.784552,
+    "elev": 8008,
+    "name": "Prusik Peak",
+    "note": "South Face route, 6-7 pitches, FA Beckey-Davis 1962.",
+    "type": "Summit",
+    "distMi": 9,
+    "directions": "Climb seven pitches, about 650 ft: left out of the chimney onto knobs, up face and cracks to Snafflehound Ledge, traverse right, take the 5.9 dihedral crux, then the crack and gully past a chockstone to the notch east of the summit horn, finishing with a friction traverse and jam crack to the summit."
+   }
+  ],
+  "road": {
+   "name": "Stuart Lake Trailhead (FR 7601 off Icicle Creek Road)",
+   "status": "Reached via paved Icicle Creek Road (FR 7600) about 8.5 miles from Leavenworth, then Eightmile Road (FR 7601) roughly 4 miles to the trailhead; the FR 7601 stretch is steep, narrow, and gets washboarded as the season progresses, so high-clearance is recommended.",
+   "driveNote": "About 2.5 hours from Seattle via US-2 over Stevens Pass to Leavenworth, then 15-20 minutes up Icicle Creek Road; a Northwest Forest Pass ($5/day or annual) is required to park, and a self-issued day-use wilderness permit or reserved overnight Enchantment Permit (lottery, May 15-Oct 31) is required beyond the trailhead.",
+   "seasonalGate": "FR 7601 is gated and closed to vehicles each winter to protect the roadbed, reopening in late spring once snow clears; Aasgard Pass itself commonly holds snow and a hidden creek/moat hazard into early July."
+  }
+ },
+ "wa_prusik_peak_stanley_burgner": {
+  "area": "wa_prusik_peak",
+  "waypoints": null
+ },
+ "wa_northeast_buttress_4": {
+  "area": "wa_colchuck_peak",
+  "waypoints": [
+   {
+    "lat": 47.5278,
+    "lng": -120.8205,
+    "elev": 3400,
+    "name": "Stuart Lake Trailhead",
+    "note": "FS Rd 7601 (Eightmile Creek Rd) off Icicle Creek Rd; standard approach to Colchuck Peak NE Buttress.",
+    "type": "Trailhead",
+    "distMi": 0,
+    "directions": "From US 2 at the west end of Leavenworth, take Icicle Creek Road 8.5 miles and turn left onto FS Road 7601 (Eightmile Road). Follow this bumpy dirt road about 4 miles to the road end. A Northwest Forest Pass is required to park, the road is closed in winter, and day trips need the free self-issued Enchantment day-use permit at the trailhead."
+   },
+   {
+    "lat": 47.4878,
+    "lng": -120.8343,
+    "elev": 5570,
+    "name": "Colchuck Lake designated campsites",
+    "type": "Campsite"
+   },
+   {
+    "lat": 47.4919578,
+    "lng": -120.8335801,
+    "elev": 5574,
+    "name": "Colchuck Lake",
+    "type": "Junction",
+    "distMi": 4.1,
+    "elevFt": 5574,
+    "directions": "Follow Stuart Lake Trail #1599 about 2.5 miles to the signed fork, turn left onto the Colchuck Lake Trail and climb its switchbacks about 1.6 miles to Colchuck Lake at 5,570 ft, the last reliable water."
+   },
+   {
+    "lat": 47.478242,
+    "lng": -120.846403,
+    "elev": 8705,
+    "name": "Colchuck Peak summit",
+    "note": "This is Colchuck Peak's summit, not Mount Stuart's — a different, neighboring peak. The coordinate matches the summit waypoint already on this peak's sibling Colchuck Glacier / Northeast Couloir routes.",
+    "type": "Summit",
+    "distMi": null,
+    "directions": "Follow the east-shore boot path to the inlet at the south end of the lake, then climb talus and snow up the basin to the toe of the Colchuck Glacier near 6,600-6,800 ft. Angle up across the glacier's true-right margin to the lowest rock of the buttress just south of the Northeast Couloir and cross the moat, which can be the crux in a lean year. About 14 pitches lead up the buttress to the summit."
+   }
+  ],
+  "road": {
+   "name": "Icicle Road to Eightmile Road (FR 7600), becoming FR 7601 for the final ~4 miles",
+   "status": "Gravel, steep and washboarded late-season; high-clearance recommended",
+   "driveNote": "The trailhead lot is small and fills by sunrise on summer weekends.",
+   "seasonalGate": "FR 7601 is gated by snow into spring."
+  }
+ },
+ "wa_mount_stuart_ice_cliff_glacier": {
+  "area": "wa_mount_stuart",
+  "waypoints": [
+   {
+    "lat": 47.5278,
+    "lng": -120.8205,
+    "elev": 3400,
+    "name": "Stuart Lake Trailhead",
+    "type": "Trailhead",
+    "distMi": 0,
+    "elevFt": 3400,
+    "directions": "The trailhead sits at the end of Eightmile Road (FR 7601), reached off Icicle Creek Road (FR 7600), at about 3,400 feet. In early season the road is sometimes snowed over or gated below the trailhead, which adds roughly two and a half miles of road walking or skinning before the trail itself begins."
+   },
+   {
+    "lat": 47.49742,
+    "lng": -120.86218,
+    "name": "Climbers' trail junction (east of Mountaineers Ridge)",
+    "type": "Junction",
+    "distMi": null,
+    "elevFt": null,
+    "directions": "Follow the Stuart Lake Trail about 2.5 miles to the Colchuck Lake junction and stay right for Stuart Lake. About a mile to a mile and a half farther, the trail turns uphill and begins switchbacking away from Mountaineer Creek; that turn is where you leave it and stay low in the valley bottom on the climbers' path."
+   },
+   {
+    "lat": 47.4842,
+    "lng": -120.88,
+    "elev": 5384,
+    "name": "Ice Cliff Glacier base bivy",
+    "type": "Campsite",
+    "distMi": null,
+    "elevFt": 5384,
+    "directions": "Cross Mountaineer Creek on logs and follow the unmaintained climbers' path upstream, staying low beside the creek with the creek on your left rather than following cairns up and right into the boulder slope near 4,675 ft. After about 1.5 miles, where the valley steepens, turn right (west) and climb talus and forest into the flat hanging basin near 5,400 ft beneath the Sherpa and Ice Cliff glaciers."
+   },
+   {
+    "lat": 47.475118,
+    "lng": -120.903144,
+    "elev": 9415,
+    "name": "Mount Stuart Summit",
+    "type": "Summit",
+    "distMi": null,
+    "elevFt": 9415,
+    "directions": "Gain the moraine and follow it to the toe of the North Ridge at about 6,600 ft, then cut hard left and traverse beneath the ice cliff without stopping. Pass the icefall on whichever flank is in condition, cross the cirque and the bergschrund to the couloir, and climb about 1,000 ft of it, taking the right fork, to the cornice exit near 8,600 ft. Traverse south of the false summit and follow the ridge to the top."
+   }
+  ],
+  "road": {
+   "name": "Eightmile Road (FR 7601) to Stuart Lake TH",
+   "status": "Seasonal gravel; rough; opens late spring",
+   "driveNote": "From Leavenworth via Icicle Creek Road to Eightmile Road and the Stuart Lake trailhead.",
+   "seasonalGate": "Snow-gated in winter/spring"
+  },
+  "approach_logistics": {
+   "peakLat": 47.475118,
+   "peakLng": -120.903144,
+   "trailhead": "Stuart Lake Trailhead (Trail #1599)",
+   "trailheadLat": 47.5282,
+   "trailheadLng": -120.82036,
+   "trailheadDirection": "From the Stuart Lake Trailhead (end of FR-7601 off Icicle Creek Road, ~3,400 ft), via the Mountaineer Creek drainage"
+  }
+ },
+ "wa_dragontail_peak_r4": {
+  "area": "wa_dragontail_peak",
+  "waypoints": [
+   {
+    "lat": 47.5282,
+    "lng": -120.82036,
+    "name": "Stuart Lake Trailhead (Trail #1599)",
+    "type": "Trailhead",
+    "directions": "From US 2 at the west edge of Leavenworth, turn onto Icicle Road and drive 8.4 miles, then turn left onto FS Road 7601 and follow the rough dirt road 3.7 miles to its end at the Stuart Lake Trailhead, about 3,400 ft. A Northwest Forest Pass and a self-issued Enchantment day-use permit are required. In winter the road is usually gated well below the trailhead, adding miles on foot or ski."
+   },
+   {
+    "lat": 47.4878,
+    "lng": -120.8343,
+    "elev": 5570,
+    "name": "Colchuck Lake designated campsites",
+    "type": "Campsite"
+   },
+   {
+    "lat": 47.478875,
+    "lng": -120.833121,
+    "name": "Dragontail Peak",
+    "type": "Summit",
+    "elevFt": 8840
+   }
+  ],
+  "road": {
+   "name": "Icicle Creek Rd to FR 7601 (Eightmile Rd) → Stuart Lake Trailhead",
+   "status": "Seasonal",
+   "driveNote": "Road may require snowshoeing/skinning the final approach in true winter conditions.",
+   "seasonalGate": "Gated in winter; access itself is part of the route's winter-conditions challenge"
+  }
+ },
+ "wa_mount_st_helens_worm_flows": {
+  "area": "wa_mount_st_helens",
+  "waypoints": [
+   {
+    "lat": 46.131,
+    "lng": -122.171,
+    "elev": 2680,
+    "name": "Marble Mountain Sno-Park",
+    "note": "Standard winter/spring trailhead; climbing permit required above 4,800 ft year-round.",
+    "type": "Trailhead",
+    "distMi": 0,
+    "directions": "From I-5 Exit 21 at Woodland, follow SR 503 east about 30 miles to Cougar. Continue east on Lewis River Road, which becomes Forest Road 90, to the Forest Road 83 junction, turn left and drive about 6 miles to the Marble Mountain Sno-Park, where the road is gated in winter and spring. A Washington Sno-Park permit is required December through March, and a Mount St. Helens climbing permit is required above 4,800 ft year-round."
+   },
+   {
+    "lat": 46.129751,
+    "lng": -122.171156,
+    "elev": 2700,
+    "name": "Marble Mountain Sno-Park",
+    "type": "Campsite"
+   },
+   {
+    "lat": 46.191484,
+    "lng": -122.195848,
+    "elev": 8363,
+    "name": "Mount St. Helens Summit",
+    "note": "Breaks treeline near 3,700 ft at Chocolate Falls, joins the Monitor Ridge route near 7,400 ft, then follows the crater rim west to the true high point.",
+    "type": "Summit",
+    "distMi": 5.4,
+    "directions": "Follow the Swift Creek Trail #244 north through forest about 2 miles to treeline near Chocolate Falls (about 3,700 ft) and cross to the west side of Swift Creek just above the falls. Follow posts, then cairns and wands, up the Worm Flows onto Worm Flow Ridge past the old seismic station near 6,200 ft, join the Monitor Ridge route near 7,400 ft, climb about 850 ft more to the crater rim and walk a quarter mile west along it to the high point."
+   }
+  ]
+ },
+ "wa_mount_baker_squak_glacier": {
+  "area": "wa_mount_baker",
+  "waypoints": [
+   {
+    "lat": 48.7067849,
+    "lng": -121.8129229,
+    "elev": 3200,
+    "name": "Schriebers Meadow / Park Butte Trailhead",
+    "type": "Trailhead",
+    "distMi": 0,
+    "directions": "From WA-20 at milepost 82, turn north onto Baker Lake Road (FS Road 11) and drive 12.5 miles to just past the Rocky Creek bridge. Turn left on FS Road 12 for 3.6 miles, then stay right on FS Road 13 for 5.3 miles to its end at the Schriebers Meadow (Park Butte) trailhead, about 3,360 ft. Road 13 is potholed and rocky; high clearance helps. A Northwest Forest Pass is required."
+   },
+   {
+    "lat": 48.74144,
+    "lng": -121.81501,
+    "elev": 6498,
+    "name": "Crag View Camp",
+    "type": "Campsite",
+    "distMi": 3.5,
+    "directions": "Take the Scott Paul Trail, which branches off within about a hundred feet of the trailhead. Around 4,600 ft, shortly after the first open meadow with views of Baker and Shuksan, leave the maintained trail at an unmarked junction for the climbers' path that climbs north up the ridge to Crag View, about 6,500 ft. The last hundred feet or so narrow to an exposed class 3 scramble."
+   },
+   {
+    "lat": 48.776797,
+    "lng": -121.814467,
+    "elev": 10781,
+    "name": "Mount Baker Summit",
+    "type": "Summit",
+    "distMi": 6.5,
+    "directions": "Rope up and head north up the Squak Glacier, west of the rock Prow, toward Sherman Peak. Near 9,600 ft traverse northwest to the Sherman Crater rim and join the Easton route, then climb the Roman Wall, about 1,000 ft of 35-40 degree snow, and cross the summit plateau north to Grant Peak."
+   }
+  ]
+ },
+ "wa_mount_baker_boulder_glacier": {
+  "area": "wa_mount_baker",
+  "waypoints": [
+   {
+    "lat": 48.73521,
+    "lng": -121.71027,
+    "elev": 2700,
+    "name": "Boulder Ridge Trailhead",
+    "note": "Boulder Ridge Trail #605 off Baker Lake Rd/FS 1130/1131.",
+    "type": "Trailhead",
+    "distMi": 0,
+    "directions": "From Sedro-Woolley, drive SR 20 east about 16 miles to milepost 82 and turn north on Baker Lake Road (FS 11). Continue about 18 miles; just past Boulder Creek Campground and the Boulder Creek bridge, turn left on FS 1130 for about 1 mile, then left on FS 1131 to the road end and the Boulder Ridge Trailhead (Trail #605) at about 2,700 ft. A Northwest Forest Pass is required to park."
+   },
+   {
+    "lat": 48.776797,
+    "lng": -121.814467,
+    "elev": 10781,
+    "name": "Mt. Baker summit (Grant Peak)",
+    "type": "Summit",
+    "distMi": 8,
+    "elevFt": 10781,
+    "distFrom": "track",
+    "directions": "Follow Boulder Ridge Trail #605 about 2 nearly flat miles to a boggy clearing at the wilderness boundary, then a steep, unmaintained boot path up heather over a Class 3 rock band near 4,700 ft. Stay on the moraine crest north of Boulder Creek to camp where the ridge meets the ice, then rope up and climb the glacier west, south of the cleaver; skirt the big buttress near 9,500 ft to the south, cross the bergschrund and finish up steep snow to Grant Peak."
+   }
+  ]
+ },
+ "wa_glacier_peak_frostbite_ridge": {
+  "area": "wa_glacier_peak",
+  "waypoints": [
+   {
+    "lat": 48.0579,
+    "lng": -121.2882,
+    "elev": 2100,
+    "name": "North Fork Sauk River Trailhead",
+    "type": "Trailhead",
+    "distMi": 0,
+    "elevFt": 2100,
+    "directions": "From Darrington, drive the Mountain Loop Highway south about 16 miles to Forest Road 49 (Sloan Creek Road), turn east and drive about 6.4 miles to the North Fork Sauk Trailhead parking lot at about 2,100 ft. A Northwest Forest Pass is required, and a free Glacier Peak Wilderness permit is self-issued at the trailhead."
+   },
+   {
+    "lat": null,
+    "lng": null,
+    "elev": 7200,
+    "name": "Kennedy Ridge high camp",
+    "note": "Standard high camp on snow and pumice on the Kennedy Ridge shoulder. Snowmelt water only, and pumice holds stakes poorly; open to weather in every direction.",
+    "type": "Campsite",
+    "distMi": null,
+    "elevFt": 7200,
+    "directions": "Hike the North Fork Sauk trail to the PCT near White Pass and follow the PCT north to Glacier Ridge. About 0.7 mile past the Glacier Creek crossing an unmarked climbers' path leaves the trail and climbs snow and pumice to the camp near 7,200 ft."
+   },
+   {
+    "lat": 48.111844,
+    "lng": -121.11412,
+    "elev": 10541,
+    "name": "Glacier Peak Summit",
+    "type": "Summit",
+    "distMi": null,
+    "elevFt": 10541,
+    "directions": "Gain the Kennedy Glacier, a crumbling mess of moraine and big boulders at its toe, and climb it roped to the 8,800 ft saddle where Frostbite Ridge begins. Follow the crest over pumice and 45-50 degree snow to the Rabbit Ears, pass through their notch and downclimb about 150 ft of class 3, then climb one to two pitches of alpine ice to the crater rim. Cross the crater and climb its far wall to the summit."
+   }
+  ]
+ },
+ "wa_mount_adams_lyman_glacier": {
+  "area": "wa_mount_adams",
+  "waypoints": [
+   {
+    "lat": 46.2885,
+    "lng": -121.5525,
+    "elev": 4600,
+    "name": "Killen Creek Trailhead (Trail #113, FR-2329)",
+    "note": "Standard start, via High Camp and a traverse east past Lava Ridge. Muddy Meadows trailhead, farther east, is an alternative start for the Lava and Lyman glaciers.",
+    "type": "Trailhead",
+    "elevFt": 4600,
+    "directions": "From Randle on US 12, take Forest Road 23 south about 32 miles, the last stretch gravel, to FR 2329, then turn east past Takhlakh Lake about 5 miles to the trailhead. From Trout Lake, take Mt Adams Road and FR 23 north about 24 miles to the same junction. Roads are seasonal. A free wilderness permit is self-issued at the trailhead; a Mt. Adams climbing pass is needed above 7,000 ft May through September."
+   },
+   {
+    "lat": 46.261041,
+    "lng": -121.540218,
+    "elev": 5701,
+    "name": "East Fork Adams Creek crossing",
+    "type": "Water"
+   },
+   {
+    "lat": 46.202494,
+    "lng": -121.490746,
+    "elev": 12276,
+    "name": "Mount Adams summit",
+    "type": "Summit",
+    "elevFt": 12276,
+    "directions": "Follow Killen Creek Trail #113 about 3.1 miles to the PCT at about 6,100 ft and continue straight across on High Camp Trail #10 a mile to High Camp. Traverse east and southeast off-trail across the lava fields, the toe of the Lava Glacier, and around or over the toe of Lava Ridge to the base of the Lyman Glacier near 8,000 ft. Climb either lobe of the glacier to the crux chute near 10,000 ft, then easier snow to the summit plateau and summit."
+   }
+  ]
+ },
+ "wa_saber_direct": {
+  "area": "wa_upper_castle",
+  "waypoints": null
+ },
+ "wa_upper_castle_angel_dreads": {
+  "area": "wa_upper_castle",
+  "waypoints": null
+ },
+ "wa_dr_leakey": {
+  "area": "wa_northwest_side",
+  "waypoints": null
+ },
+ "wa_mary_jane_dihedral": {
+  "area": "wa_snow_creek_wall",
+  "waypoints": null
+ },
+ "wa_iconoclast": {
+  "area": "wa_snow_creek_wall",
+  "waypoints": null
+ }
+}
