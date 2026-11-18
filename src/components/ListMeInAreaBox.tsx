@@ -27,12 +27,12 @@ export interface ListMeInAreaBoxProps {
    neither on the screen where a climber has just picked the place they want partners at. This box sits
    right under the picker, so the climber who is looking can be found by the next one with one tap.
    Same write as the area page's card (savePartnerArea / removePartnerArea), optimistic the same way. */
-/* The DB refuses a listing at these (0300 `partner_areas` trigger; My areas' NO_LISTING): climbing on a peak is matched
-   by route. The crag search can hand a peak, so the box steps aside rather than offer a tap that fails. */
-const NO_LISTING = new Set(["peak", "world", "country"]);
+/* The DB refuses a listing at these (0300 `partner_areas` trigger, narrowed by 0455; My areas' NO_LISTING): too broad
+   to search. A PEAK is listable since 0455 (owner 2026-11-18). The box steps aside rather than offer a tap that fails. */
+const NO_LISTING = new Set(["world", "country"]);
 /* "List me AT Bad Bananas" but "IN Utah": a spot you stand at takes "at"; a state, region, canyon or range takes "in".
    The region dropdown passes no type, and what it offers is always a region or a state. */
-const AT_SPOT = new Set(["crag", "wall", "boulder", "sector"]);
+const AT_SPOT = new Set(["crag", "wall", "boulder", "sector", "peak"]);
 export default function ListMeInAreaBox({ areaId, areaName, areaType, C, uid, myListings, onListMe, notify }: ListMeInAreaBoxProps) {
   const [busy, setBusy] = useState(false);
   const [optListed, setOptListed] = useState<boolean | null>(null);

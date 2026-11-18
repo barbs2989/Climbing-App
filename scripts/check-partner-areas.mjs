@@ -130,10 +130,14 @@ for (const name of ["match_objectives_of_users", "partners_by_objective"]) {
   }
 }
 
-// ── rule 5: a listing cannot sit on a peak (peaks are matched by route) ──
+// ── rule 5: a listing cannot sit on the world or a country (too broad to search); a PEAK is a place since 0455 ──
 {
   const f = need("partner_areas_validate");
-  if (f) ((/'peak'/.test(f.body) && /raise\s+exception/i.test(f.body)) ? ok : fail)(`partner_areas_validate refuses a listing at a peak`);
+  if (f) {
+    const refusal = (f.body.match(/if\s+t\s+in\s*\(([^)]*)\)/i) || [])[1] || "";
+    ((/'world'/.test(refusal) && /'country'/.test(refusal) && /raise\s+exception/i.test(f.body)) ? ok : fail)(`partner_areas_validate refuses a listing at the world or a country`);
+    (!/'peak'/.test(refusal) ? ok : fail)(`partner_areas_validate accepts a listing at a PEAK (owner 2026-11-18, 0455) — Partners › A peak reads them`);
+  }
 }
 
 // ── rule 6: the app reads listings through lib/db.js hooks named here, and objective writes refresh the match reader ──
