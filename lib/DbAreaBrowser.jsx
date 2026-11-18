@@ -8,6 +8,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { fetchArea, useArea, fetchAreaBreadcrumb } from "./db";
 import { POP_BACK } from "./popupChrome.js";
+import { useWideScreen } from "./wideLayout.js";
 import { ScreenHero } from "./ScreenHero";
 import { nearbyPeaksLive, nearbyPeaksBounds, nearbyPeaksRows } from "./nearbyPeaks.js";
 import { ClimberCtx } from "./climberCtx.js";
@@ -56,6 +57,7 @@ export default function DbAreaBrowser({ areaDiscussion, jumpToFinderReq, onSignI
   const [finderDisc, setFinderDisc] = useState(saved ? saved.finderDisc : ""); // a chart bar presets the finder's discipline
   const [finderInit, setFinderInit] = useState(saved ? saved.finderInit : null); // a search handed in from outside: { id, q, filters }
   const [treeOpen, setTreeOpen] = useState(false);
+  const wide = useWideScreen();
   const climber = useMemo(() => ({ wishlist, profile, completedIds, rankSuggested, discSlots }), [wishlist, profile, completedIds, rankSuggested, discSlots]);
   // The jump requests below are App props that STAY set once handled, so a remount would re-run the
   // last one (a search from an hour ago) over the position restored above. The ids already handled
@@ -209,6 +211,8 @@ export default function DbAreaBrowser({ areaDiscussion, jumpToFinderReq, onSignI
     setClimbsAreaPos({ stateNode, stack, screen, finderDisc, finderInit });
   }, [stateNode, stack, screen, finderDisc, finderInit]);
 
+  const treeBtn = stateNode ? <button onClick={() => setTreeOpen(true)} aria-haspopup="dialog" aria-label={"Area tree of " + stateNode.name} style={{ ...POP_BACK, flexShrink: 0, padding: "0 13px", marginLeft: "auto" }}><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="6" height="5" rx="1" /><rect x="15" y="10" width="6" height="5" rx="1" /><rect x="15" y="17" width="6" height="5" rx="1" /><path d="M6 8v11h9M6 12.5h9" /></svg><span>Area tree</span></button> : null;
+
   return (
     <ClimberCtx.Provider value={climber}>
     {/* Route finder, Near me and Objectives are screens a level down from the Climbs list: a sideways swipe
@@ -231,7 +235,7 @@ export default function DbAreaBrowser({ areaDiscussion, jumpToFinderReq, onSignI
       {screen === "areas" && current && current.name ? <AreaDocTitle name={current.name} /> : null}
       {crumbs.length ? (
         <div style={{ position: "sticky", top: 0, zIndex: 30, background: C.bg, paddingBottom: 10, marginBottom: 2 }}>
-          <div style={{ display: "flex", flexDirection: "column", alignItems: "stretch", gap: 10, background: C.surface, border: "1px solid " + C.borderHi, borderRadius: 12, padding: "11px 12px" }}>
+          <div style={{ display: "flex", flexDirection: "column", alignItems: "stretch", gap: wide ? 10 : 0, background: C.surface, border: "1px solid " + C.borderHi, borderRadius: 12, padding: "11px 12px" }}>
             {/* THE AREA TREE has its own labelled button here, beside Back (owner, 2026-11-14: the tree was "difficult to
                 find on the top left with a small button, make that more clear that is a button"). It used to be a 12px
                 "All areas" text link in the website's sub-area column only; this bar is on every Climbs screen, phone too. */}
@@ -240,7 +244,7 @@ export default function DbAreaBrowser({ areaDiscussion, jumpToFinderReq, onSignI
               <span aria-hidden="true">{"←"}</span>
               <span style={{ minWidth: 0, overflowWrap: "anywhere" }}>{"Back to " + (screen !== "areas" ? current.name : crumbs.length >= 2 ? crumbs[crumbs.length - 2].name : "All areas")}</span>
             </button>
-            {stateNode ? <button onClick={() => setTreeOpen(true)} aria-haspopup="dialog" aria-label={"Area tree of " + stateNode.name} style={{ ...POP_BACK, padding: "0 13px", marginLeft: "auto" }}><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="6" height="5" rx="1" /><rect x="15" y="10" width="6" height="5" rx="1" /><rect x="15" y="17" width="6" height="5" rx="1" /><path d="M6 8v11h9M6 12.5h9" /></svg><span>Area tree</span></button> : null}
+            {wide ? treeBtn : null}
             </div>
             {/* The path ends on the area you are IN (owner, 2026-11-11: "The area name needs to be on the top header
                 too"): its header box scrolls away on a long page, and this bar does not. It is the last item, in bold,
@@ -248,7 +252,7 @@ export default function DbAreaBrowser({ areaDiscussion, jumpToFinderReq, onSignI
             {(() => {
               const path = screen === "areas" ? [null, ...crumbs.slice(0, -1)] : [null, ...crumbs];
               const here = screen === "areas" && current ? current : null;
-              return path.length < 2 && !here ? null : (
+              const nav = path.length < 2 && !here ? null : (
                 <nav aria-label="Area path" style={{ display: "flex", alignItems: "center", flexWrap: "wrap", rowGap: 6, columnGap: 6, minWidth: 0 }}>
                   {path.map((c, i) => (
                     <span key={c ? c.id : "root"} style={{ display: "inline-flex", alignItems: "center", gap: 6, minWidth: 0, maxWidth: "100%" }}>
@@ -262,6 +266,9 @@ export default function DbAreaBrowser({ areaDiscussion, jumpToFinderReq, onSignI
                   </span> : null}
                 </nav>
               );
+              // ON A PHONE the Back above is drawn in the top bar instead (lib/pageBack.js), which left Area tree
+              // alone on a row of its own, ~45px over every Climbs screen; there it sits beside the path (2026-11-18).
+              return wide || !treeBtn ? nav : <div style={{ display: "flex", alignItems: "flex-start", gap: 8 }}><div style={{ flex: 1, minWidth: 0 }}>{nav}</div>{treeBtn}</div>;
             })()}
           </div>
         </div>

@@ -1,0 +1,514 @@
+{
+ "wa_green_giant_buttress_dreamer": {
+  "area": "wa_green_giant_buttress",
+  "set": {
+   "road": {
+    "name": "Forest Road 2060 (Clear Creek Road)",
+    "status": "No closure is posted for Road 2060 on the forest's alert list (checked Nov 18, 2026). The one Mountain Loop Highway winter gate listed, Bedal Campground to Barlow Pass, lies well south of the Clear Creek turnoff.",
+    "driveNote": "Head south out of Darrington on the Mountain Loop Highway. Roughly 3.3 mi past the ranger station, Road 2060 branches off on the right, across the highway from Clear Creek Campground. It is gravel from there on; where it splits, stay on the main right-hand branch, drive past the Eightmile trailhead, and carry on to where the drivable road gives out. It gets rougher beyond the trailhead, so a higher car helps."
+   }
+  },
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/106006991/dreamer",
+    "https://www.mountainproject.com/area/108546475/green-giant-buttress",
+    "https://www.mountainproject.com/area/106006698/darrington",
+    "https://www.mountainproject.com/area/119913914/the-comb",
+    "https://stephabegg.com/?p=8694",
+    "https://alpinedave.com/dreamer.html",
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/eight-mile-trail-65402",
+    "https://www.fs.usda.gov/r06/mbs/alerts",
+    "https://washingtonclimbers.org/index.php/wp-json/wp/v2/posts/12194",
+    "https://ofb.net/~ania/life/2004/Dreamer/",
+    "https://sverdina.com/darrington1.asp"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.9",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106006991/dreamer",
+      "fact": "5.9 YDS",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://stephabegg.com/?p=8694",
+      "fact": "original-line pitches 5.7, 5.7, 5.8, 5.8, 5.9, 5.9, 5.9(+), 5.8, 5.8, 5.6; 5.10b is the Direct/Urban Bypass",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 10,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106006991/dreamer",
+      "fact": "10 pitches",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://stephabegg.com/?p=8694",
+      "fact": "10 graded pitches: P1-P9 to official top, plus ~100 ft 5.6 to rap anchors",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "length_m",
+    "value": 305,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106006991/dreamer",
+      "fact": "1000 ft (303 m)",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://stephabegg.com/?p=8694",
+      "fact": "1000'",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "road",
+    "value": {
+     "name": "Forest Road 2060 (Clear Creek Road)",
+     "status": "No closure is posted for Road 2060 on the forest's alert list (checked Nov 18, 2026). The one Mountain Loop Highway winter gate listed, Bedal Campground to Barlow Pass, lies well south of the Clear Creek turnoff.",
+     "driveNote": "Head south out of Darrington on the Mountain Loop Highway. Roughly 3.3 mi past the ranger station, Road 2060 branches off on the right, across the highway from Clear Creek Campground. It is gravel from there on; where it splits, stay on the main right-hand branch, drive past the Eightmile trailhead, and carry on to where the drivable road gives out. It gets rougher beyond the trailhead, so a higher car helps."
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "expires_at": "2027-02-15T00:00:00Z",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r06/mbs/alerts",
+      "fact": "Nov 18 2026 alerts: Mountain Loop Hwy Bedal-Barlow Pass winter closure from Nov 16; none for Road 2060 or Eightmile trail",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     },
+     {
+      "url": "https://www.fs.usda.gov/r06/mbs/recreation/trails/eight-mile-trail-65402",
+      "fact": "Ranger Station +3.3 mi Mountain Loop Hwy; FR 2060 right, Clear Creek CG left; trailhead on right; updated Apr 17 2026",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     },
+     {
+      "url": "https://www.mountainproject.com/area/108546475/green-giant-buttress",
+      "fact": "right (main) fork; past Eightmile trail parking; road deteriorates, ends past a turnaround",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "disputed": [
+   "fa: stored \"1979: Chris Greyell with Duane Constantino\" - names agree with MP/OpenBeta (one publisher, 1979); no second independent source found, and the year sits inside the names field (shape rule: names only). Not locked.",
+   "commitment: this row null; MP says Grade III; the duplicate row wa_comb_the_dreamer holds IV. One source each - not proposed.",
+   "approach: Abegg ~3 mi / 1,500 ft / ~2 h from the road end (single source; dist_km and gain_ft left null)."
+  ],
+  "notes": "CORRECTLY PLACED ROW for Dreamer. DUPLICATE: wa_comb_the_dreamer (area wa_comb_the_climbs, 'Comb, The Routes') is the same climb: same name, grade 5.9, 10 pitches, same FA party and year (Constantino/Greyell 1979), and its own itinerary says 'Dreamer on Green Giant Buttress' with the Clear Creek / Copper Creek / three-waterfalls approach. Mountain Project files Dreamer only under Green Giant Buttress; its 'Comb, The' area holds only First Tooth and Fourth Tooth (4 routes, no Dreamer). Nothing deleted or merged - owner decides. Road status: no official 2060 status page exists; the lock rests on the forest alert list naming nothing on 2060. Mileage up 2060 disagrees between sources (MP 5-6 mi to the fork; Abegg road end 8.1 mi from the highway), so no mileage is written."
+ },
+ "wa_comb_the_dreamer": {
+  "area": "wa_comb_the_climbs",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/106006991/dreamer",
+    "https://www.mountainproject.com/area/119913914/the-comb",
+    "https://www.mountainproject.com/area/108546475/green-giant-buttress",
+    "https://www.mountainproject.com/area/106006698/darrington",
+    "https://stephabegg.com/?p=8694"
+   ]
+  },
+  "ledger": [],
+  "disputed": [
+   "commitment: stored IV; Mountain Project gives III for Dreamer (single source).",
+   "discipline: stored alpine; the correctly placed row and MP say trad."
+  ],
+  "notes": "DUPLICATE of wa_green_giant_buttress_dreamer (see that entry's notes for the evidence). Nothing locked here on purpose so the owner can remove or merge it. Same area also looks like a mixed import: 'Comb, The Routes' holds West Ridge (Class 4), Nada Lake Wall, Toketie Wall and Boot Crack beside real Comb routes (Desire, Boomerang, The Fast Lane) - unverified, worth a look. Fourth Tooth: the catalog's wa_fourth_tooth sits under wa_comb_the (48.1557,-121.6180, routes Bump City, Over the Rainbow), which matches Mountain Project's 'Comb, The' > Fourth Tooth at Darrington (the Comb's four buttresses are First-Fourth Tooth). It is NOT the Snoqualmie Pass Tooth (that is wa_the_tooth under wa_snoqualmie_pass_area). So the Fourth Tooth filing looks correct; no change suggested."
+ },
+ "wa_silent_running": {
+  "area": "wa_three_o_clock_rock",
+  "set": {
+   "road": {
+    "name": "Forest Road 2060 (Clear Creek Road)",
+    "status": "No closure is posted for Road 2060 on the forest's alert list (checked Nov 18, 2026). The one Mountain Loop Highway winter gate listed, Bedal Campground to Barlow Pass, lies well south of the Clear Creek turnoff.",
+    "driveNote": "Head south out of Darrington on the Mountain Loop Highway. Roughly 3.3 mi past the ranger station, Road 2060 branches off on the right, across the highway from Clear Creek Campground. It is gravel from there on; where it splits, stay on the main right-hand branch (the left branch, Road 2065, serves Exfoliation Dome). The Eightmile trailhead sign and path are on the right, with parking on the left side of the road."
+   }
+  },
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/108263566/silent-running",
+    "https://www.mountainproject.com/area/108543607/three-oclock-rock",
+    "https://climberkyle.com/2022/08/27/three-oclock-rock-silent-running-5-10a-and-total-soul-5-10b/",
+    "https://alpinedave.com/darrington/silent_running/silent_running.htm",
+    "https://chossclimbers.com/testing/us/washington/darrington",
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/eight-mile-trail-65402",
+    "https://www.fs.usda.gov/r06/mbs/alerts",
+    "https://www.fs.usda.gov/r06/passes/recreation-sites-where-day-use-fees-are-charged",
+    "https://washingtonclimbers.org/index.php/wp-json/wp/v2/posts/12194",
+    "https://www.mountaineers.org/activities/routes-places/west-buttress-of-exfoliation-dome"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "pitches",
+    "value": 7,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108263566/silent-running",
+      "fact": "7 pitches",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://climberkyle.com/2022/08/27/three-oclock-rock-silent-running-5-10a-and-total-soul-5-10b/",
+      "fact": "7 pitches",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://alpinedave.com/darrington/silent_running/silent_running.htm",
+      "fact": "7p, pitch grades 5.6, 5.8+, 5.9+, 5.8, 5.8, 5.9+, 5.10a",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "discipline",
+    "value": "trad",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108263566/silent-running",
+      "fact": "Trad",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://alpinedave.com/darrington/silent_running/silent_running.htm",
+      "fact": "pitch 7 needs a full rack",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "road",
+    "value": {
+     "name": "Forest Road 2060 (Clear Creek Road)",
+     "status": "No closure is posted for Road 2060 on the forest's alert list (checked Nov 18, 2026). The one Mountain Loop Highway winter gate listed, Bedal Campground to Barlow Pass, lies well south of the Clear Creek turnoff.",
+     "driveNote": "Head south out of Darrington on the Mountain Loop Highway. Roughly 3.3 mi past the ranger station, Road 2060 branches off on the right, across the highway from Clear Creek Campground. It is gravel from there on; where it splits, stay on the main right-hand branch (the left branch, Road 2065, serves Exfoliation Dome). The Eightmile trailhead sign and path are on the right, with parking on the left side of the road."
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "expires_at": "2027-02-15T00:00:00Z",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r06/mbs/alerts",
+      "fact": "Nov 18 2026 alerts: Mountain Loop Hwy Bedal-Barlow Pass winter closure from Nov 16; none for Road 2060 or Eightmile trail",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     },
+     {
+      "url": "https://www.fs.usda.gov/r06/mbs/recreation/trails/eight-mile-trail-65402",
+      "fact": "Ranger Station +3.3 mi Mountain Loop Hwy; FR 2060 right, Clear Creek CG left; trailhead on right; updated Apr 17 2026",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     },
+     {
+      "url": "https://www.mountainproject.com/area/108543607/three-oclock-rock",
+      "fact": "2060 opposite campground; ~5 mi: main right fork; Eightmile TH parking left, trail right",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/west-buttress-of-exfoliation-dome",
+      "fact": "FR 2060 mile 5.5 junction; left = FR 2065 (Blueberry Hill Road) to Exfoliation Dome",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_silent_running",
+    "column": "grade",
+    "from": "5.10-",
+    "to": "5.10a",
+    "why": "Majority rule: alpinedave and climberkyle both give 5.10a (MP description also says 5.10a; MP grade field 5.10-; chossclimbers 5.10b).",
+    "evidence": [
+     "https://alpinedave.com/darrington/silent_running/silent_running.htm",
+     "https://climberkyle.com/2022/08/27/three-oclock-rock-silent-running-5-10a-and-total-soul-5-10b/",
+     "https://www.mountainproject.com/route/108263566/silent-running"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_silent_running",
+    "column": "grade_num",
+    "from": 10,
+    "to": 10.25,
+    "why": "gradeNumFrom(\"5.10a\",\"yds\") with the grade change.",
+    "evidence": []
+   },
+   {
+    "table": "routes",
+    "id": "wa_silent_running",
+    "column": "access",
+    "from": {
+     "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+     "rules": "Group size capped at 12 (people + stock combined) inside Glacier Peak Wilderness; larger groups must split with 1-mile separation. Campfires prohibited above 3,500 ft in wilderness.",
+     "permit": "None required — free self-issue wilderness permits available at trailheads/ranger stations for day/overnight travel where the peak is inside designated wilderness.",
+     "group_limit": 12,
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Darrington Ranger District)",
+     "parking_pass": "Northwest Forest Pass required at Mountain Loop Highway trailheads — $5/day or $30/year."
+    },
+    "to": {
+     "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+     "rules": "The Eightmile trail enters the Boulder River Wilderness: groups are capped at 12.",
+     "permit": "None required — free self-issue wilderness permits available at trailheads/ranger stations for day/overnight travel where the peak is inside designated wilderness.",
+     "group_limit": 12,
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Darrington Ranger District)",
+     "parking_pass": null
+    },
+    "why": "Templated Glacier Peak Wilderness text is wrong here: the Forest Service trail page says the Eightmile trail enters the Boulder River Wilderness (group limit 12). The Eightmile/Clear Creek trailhead is not on the Forest Service list of day-use fee sites, so the NW Forest Pass claim is unsupported. Group limit 12 kept. Permit/fees text left as is (unverified).",
+    "evidence": [
+     "https://www.fs.usda.gov/r06/mbs/recreation/trails/eight-mile-trail-65402",
+     "https://www.fs.usda.gov/r06/passes/recreation-sites-where-day-use-fees-are-charged",
+     "https://washingtonclimbers.org/index.php/wp-json/wp/v2/posts/12194"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_silent_running",
+    "column": "length_m",
+    "from": null,
+    "to": 274,
+    "why": "Mountain Project 900 ft (273 m); single source - approve only if an MP-only length is acceptable.",
+    "evidence": [
+     "https://www.mountainproject.com/route/108263566/silent-running"
+    ]
+   }
+  ],
+  "disputed": [
+   "grade: MP 5.10- vs 5.10a (alpinedave, climberkyle) vs 5.10b (chossclimbers list) - fix proposed to 5.10a.",
+   "FA: MP only (Brooks/Hoffman 1970; current line Whitelaw/Perkins/Greyell 1999) - not locked.",
+   "approach_variants: stored note says ~6 mi up 2060 (matches MP 6.1 mi) while the Forest Service trail page says 8 mi to the trailhead - left as is."
+  ],
+  "notes": "Stored approach_variants text is otherwise consistent with sources. Bolts: all moves 5.7 and up are bolted (MP); count unpublished."
+ },
+ "wa_blueberry_hill_proxima_wall_blazing_saddles": {
+  "area": "wa_blueberry_hill_proxima_wall",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/203974424/blazing-saddles",
+    "https://www.mountainproject.com/area/108546462/blueberry-hill-proxima-wall"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.9",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/203974424/blazing-saddles",
+      "fact": "5.9 PG13",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 5,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/203974424/blazing-saddles",
+      "fact": "5 pitches: 5.8, 5.8, 5.9, 5.8+, 5.8",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "length_m",
+    "value": 213,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/203974424/blazing-saddles",
+      "fact": "700 ft (212 m)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "disputed": [
+   "FA: MP only (Hanna, Perkins, Veldhuisen, c. 2020) - not locked."
+  ],
+  "notes": "A c. 2020 route; only Mountain Project describes it (theCrag 403s, the Darrington guide is paywalled), hence locked-1src. Stored overview follows the MP description closely in order and content - worth a copy check."
+ },
+ "wa_blueberry_hill_proxima_wall_blueberry_buttress": {
+  "area": "wa_blueberry_hill_proxima_wall",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/108703710/blueberry-buttress",
+    "https://www.mountainproject.com/area/108546462/blueberry-hill-proxima-wall",
+    "https://www.mountaineers.org/activities/routes-places/west-buttress-of-exfoliation-dome",
+    "https://alpinedave.com/darrington/exfoliation2/index.htm",
+    "https://chossclimbers.com/testing/us/washington/darrington"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "discipline",
+    "value": "trad",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108703710/blueberry-buttress",
+      "fact": "Trad",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/west-buttress-of-exfoliation-dome",
+      "fact": "5.9 trad route",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_blueberry_hill_proxima_wall_blueberry_buttress",
+    "column": "grade",
+    "from": "5.8+",
+    "to": "5.9",
+    "why": "Majority rule: The Mountaineers rate it 5.9 (crux pitch 3 was 5.8 until a big flake fell off in 2004) and alpinedave gives the crux pitch 5.9; only MP keeps 5.8+.",
+    "evidence": [
+     "https://www.mountaineers.org/activities/routes-places/west-buttress-of-exfoliation-dome",
+     "https://alpinedave.com/darrington/exfoliation2/index.htm",
+     "https://www.mountainproject.com/route/108703710/blueberry-buttress"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_blueberry_hill_proxima_wall_blueberry_buttress",
+    "column": "grade_num",
+    "from": 8,
+    "to": 9,
+    "why": "gradeNumFrom(\"5.9\",\"yds\") with the grade change.",
+    "evidence": []
+   }
+  ],
+  "disputed": [
+   "pitches: stored 7 = MP; The Mountaineers 8-10 (lists 8); alpinedave 6 - no two agree on 7.",
+   "length_m: stored 305 = MP 1000 ft; Mountaineers pitch lengths sum to well over 1,100 ft - unconfirmed.",
+   "fa: MP Clark Gerhardt, Bill Sumner 1972 (single source; row fa is null).",
+   "parking pass: The Mountaineers say NW Forest Pass; the Forest Service fee-site list names no Clear Creek/Blueberry Hill site."
+  ],
+  "notes": "Also called the West Buttress / Blueberry Route of Exfoliation Dome. Road: left fork onto FR 2065 (Blueberry Hill Road) at ~5.5 mi of 2060, park past the second washout (Mountaineers), then ~1,000 ft up the Granite Sidewalk slab; no road object written (no official page for 2065)."
+ },
+ "wa_centralia": {
+  "area": "wa_salami_slabs",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/117632553/centralia",
+    "https://www.mountainproject.com/area/117599748/salami-slabs",
+    "https://www.fs.usda.gov/r06/passes/recreation-sites-where-day-use-fees-are-charged"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.7+",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/117632553/centralia",
+      "fact": "5.7+ YDS",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_centralia",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "0 is invalid; MP describes it as one long pitch (190 ft).",
+    "evidence": [
+     "https://www.mountainproject.com/route/117632553/centralia"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_centralia",
+    "column": "length_m",
+    "from": null,
+    "to": 58,
+    "why": "MP 190 ft (58 m); single source.",
+    "evidence": [
+     "https://www.mountainproject.com/route/117632553/centralia"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_centralia",
+    "column": "bolts",
+    "from": null,
+    "to": 10,
+    "why": "MP: 10 bolts; single source.",
+    "evidence": [
+     "https://www.mountainproject.com/route/117632553/centralia"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_centralia",
+    "column": "access",
+    "from": {
+     "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+     "rules": "Group size capped at 12 (people + stock combined) inside Glacier Peak Wilderness; larger groups must split with 1-mile separation. Campfires prohibited above 3,500 ft in wilderness.",
+     "permit": "None required — free self-issue wilderness permits available at trailheads/ranger stations for day/overnight travel where the peak is inside designated wilderness.",
+     "group_limit": 12,
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Darrington Ranger District)",
+     "parking_pass": "Northwest Forest Pass required at Mountain Loop Highway trailheads — $5/day or $30/year."
+    },
+    "to": {
+     "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+     "rules": null,
+     "permit": "None required — free self-issue wilderness permits available at trailheads/ranger stations for day/overnight travel where the peak is inside designated wilderness.",
+     "group_limit": null,
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Darrington Ranger District)",
+     "parking_pass": "Northwest Forest Pass required at Mountain Loop Highway trailheads — $5/day or $30/year."
+    },
+    "why": "Templated Glacier Peak Wilderness rules do not apply to the Salami Slabs below Exfoliation Dome (Glacier Peak Wilderness lies far east; the WCC lists Three O'Clock Rock, The Comb, Green Giant and Squire Creek Wall as the Boulder River Wilderness crags, not Exfoliation Dome). Parking pass left for the owner (the fee-site list does not name it).",
+    "evidence": [
+     "https://washingtonclimbers.org/index.php/wp-json/wp/v2/posts/12194",
+     "https://www.fs.usda.gov/r06/passes/recreation-sites-where-day-use-fees-are-charged"
+    ]
+   }
+  ],
+  "disputed": [
+   "fa: stored \"Hanna\" = MP (no year), single source."
+  ],
+  "notes": "Only Mountain Project describes this route; MP-only facts locked at 1-source."
+ }
+}

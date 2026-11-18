@@ -222,7 +222,7 @@ const noWalkHtml = text(render(route({ distKm: null, timing: { approachTimeHrs: 
 const tile = /(≥?)(\d+\.\d)hr Approach/.exec(noWalkHtml);
 eq("ANCHOR: the Approach tile rendered for a route with stored legs and no walk inputs", !!tile, true);
 eq("...and it states the stored approach (3.0hr) with no lower-bound mark", tile ? tile[1] + tile[2] : null, "3.0");
-eq("...and no 'Lower bounds only' note claims the walk is missing", /Lower bounds only — this climb has no recorded/.test(noWalkHtml), false);
+eq("...and no 'Lower bounds only' note claims the walk is missing", /Lower bounds only — no recorded/.test(noWalkHtml), false);
 
 /* The warning div sits immediately after the tile's own "Est. summit" / "Est. return" caption and
    is identified by carrying a margin-top the caption does not. Read from the RAW markup rather

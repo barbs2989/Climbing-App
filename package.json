@@ -39,6 +39,7 @@
     "audit:rappel-claims": "node scripts/audit-rappel-claims.mjs",
     "audit:mountaineering-rule": "node scripts/audit-mountaineering-rule.mjs",
     "audit:aspect-name": "node scripts/audit-aspect-vs-name.mjs",
+    "audit:optimal-season": "node scripts/audit-optimal-season.mjs",
     "audit:multi-approach": "node scripts/audit-multi-approach.mjs",
     "audit:camp-elevations": "node scripts/audit-camp-elevations.mjs",
     "audit:camp-route-fit": "node scripts/audit-camp-route-fit.mjs",

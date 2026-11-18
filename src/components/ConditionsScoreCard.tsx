@@ -216,7 +216,6 @@ export default function ConditionsScoreCard({route,mtn,onAddAspect}: ConditionsS
     </div>,true):null}
     {sec("Best time to climb",<div style={box}>{head}
     {showPrefs?<div style={{background:C.surface,border:"1px solid "+C.border,borderRadius:10,padding:"10px 12px",marginBottom:10}}>
-      <div style={{fontSize:11.5,color:C.textSub,lineHeight:1.5,marginBottom:8}}>They change the score on every crag route. Also in the Menu and Settings.</div>
       <CondPrefsControls disc={disc}/>
     </div>:null}
     <div role="group" aria-label="Day" style={{display:"flex",gap:5,overflowX:"auto",paddingBottom:4,marginBottom:10}}>{days.map(function(d,i){const on=i===Math.min(dayI,days.length-1);return <button key={d.date} onClick={function(){setDayI(i);setHrI(null);}} aria-pressed={on} aria-label={dayName(d,i)+", "+(d.stars==null?"no score":fmt(d.stars)+" stars")} style={{flex:"0 0 58px",width:58,boxSizing:"border-box",minHeight:58,padding:"6px 2px",borderRadius:9,border:"1px solid "+(on?C.green:C.border),background:on?C.greenBg:"transparent",color:C.text,cursor:"pointer",textAlign:"center"}}><div style={{fontSize:11.5,fontWeight:700}}>{dayName(d,i)}</div><div style={{fontSize:12,fontWeight:800,color:col(d.stars)}}>{fmt(d.stars)+" ★"}</div><div style={{fontSize:10.5,color:C.textMuted}}>{d.hi!=null?uTemp(d.hi)+"/"+uTemp(d.lo):""}</div></button>;})}</div>
@@ -295,7 +294,6 @@ export default function ConditionsScoreCard({route,mtn,onAddAspect}: ConditionsS
       {score.bearing!=null?condRow("Wall faces",DIR8[Math.round(score.bearing/45)%8]):null}
       {score.bearing!=null&&day.wallSun?condRow("Sun on the wall",day.wallSun.on!=null?"Hits the wall at "+clockAt(score,day.wallSun.on)+" · leaves at "+clockAt(score,day.wallSun.off):"No direct sun on this wall today",day.wallSun.on!=null?C.yellow:C.textSub):null}
       {score.bearing==null?condRow("Sun on the wall",(score.aspectVaries?"The wall faces several ways, so when the sun reaches it isn’t worked out, and sun isn’t scored":"No wall direction on file for this climb, so when the sun reaches it isn’t worked out")+". The shade map below shows where the terrain casts shadow.",C.textMuted):null}
-      {score.bearing!=null?<div style={condNote}>Times assume a clear sky; a yellow bar under the hours above marks the ones forecast to be in sun. Terrain and trees that shade the wall aren’t known.</div>:null}
     </div>)}
     {sec("Shade map",<div style={condBox}>{shadeAt!=null?<ShadeMap lat={lat} lng={lng} rise={day.sun.rise} set={day.sun.set} at0={shadeAt} dayKey={day.date} clock={function(u){return clockAt(score,u);}} C={C}/>:<div style={{fontSize:12.5,color:C.textSub,lineHeight:1.5}}>The forecast has no sunrise and sunset for this day, so the shade can’t be drawn.</div>}</div>)}
     {sec("Air quality",<div style={condBox}>

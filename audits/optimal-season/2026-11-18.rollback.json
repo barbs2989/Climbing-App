@@ -1,0 +1,90 @@
+[
+ {
+  "id": "wa_mount_baker_park_glacier_headwall",
+  "season": "Jun-Aug"
+ },
+ {
+  "id": "wa_buckner_mountain_north_face",
+  "season": "Jul-Sep"
+ },
+ {
+  "id": "wa_eagle_rock_scramble",
+  "seasonal_guidance": {
+   "optimalWindow": "Mid-July through October, per prior research on this route",
+   "monthBreakdown": {
+    "July": {
+     "reason": "Season opens mid-July; brush and vegetation still wet/thick early in the month, drying out by late July",
+     "status": "good"
+    },
+    "August": {
+     "reason": "Driest rock and clearest conditions of the season, though watch for afternoon thunderstorms",
+     "status": "optimal"
+    },
+    "October": {
+     "reason": "Wetter and colder later in the month; still viable early October but conditions degrade",
+     "status": "marginal"
+    },
+    "September": {
+     "reason": "Continues the best window with typically stable, drier weather before fall wetness sets in",
+     "status": "optimal"
+    }
+   }
+  }
+ },
+ {
+  "id": "wa_kyes_peak_glaciated_scramble",
+  "seasonal_guidance": {
+   "optimalWindow": "Mid-July through September (per prior research), with late July-August the most reliable window",
+   "monthBreakdown": {
+    "July": {
+     "reason": "Early July can still hold significant snow; by mid-July conditions typically firm up into the optimal window noted in prior research",
+     "status": "good"
+    },
+    "June": {
+     "reason": "Still largely snowbound with a long snowy approach and elevated avalanche/glacier hazard, consistent with the existing spring/early-summer climate notes",
+     "status": "marginal"
+    },
+    "August": {
+     "reason": "Most reliable conditions - snow largely consolidated or melted, glacier remnant more manageable, generally the most stable weather",
+     "status": "optimal"
+    },
+    "September": {
+     "reason": "Good late-season option with minimal snow coverage, but early-season storms and shorter days become a factor toward month's end",
+     "status": "good"
+    }
+   }
+  }
+ },
+ {
+  "id": "wa_east_ridge_3",
+  "seasonal_guidance": {
+   "optimalWindow": "Roughly late June through September, bounded by Highway 20's seasonal closure over Washington Pass (typically closed ~Nov-Apr); only two dated route-specific data points exist (Sept 14, 2000 FA; Aug 26, 2005 ascent), so treat as inferred from Washington Pass rock-season norms rather than route-verified month-by-month.",
+   "monthBreakdown": {
+    "May": {
+     "reason": "A late-May (Memorial Day) 2005 attempt on this exact ridge found 'bottomless muck' snow low on route and was turned back by an afternoon lightning storm.",
+     "status": "risky"
+    },
+    "August": {
+     "reason": "An Aug 26, 2005 extended ridge traverse ascent is documented as going reasonably well condition-wise.",
+     "status": "good"
+    },
+    "September": {
+     "reason": "The Sept 14, 2000 first ascent was completed in this month -- the only FA-quality data point.",
+     "status": "good"
+    }
+   }
+  }
+ },
+ {
+  "id": "wa_northeast_face_direct",
+  "seasonal_guidance": {
+   "optimalWindow": "Narrow -- both known ascents occurred in mid-to-late July (FA: July 19-20, 2002; second ascent: mid-July 2013), consistent with the general North Cascades glaciated-objective season via Cascade Pass; no explicit month-by-month guidance exists beyond these two data points.",
+   "monthBreakdown": {
+    "July": {
+     "reason": "Both documented ascents (the only two known climbs of this route) occurred in this month.",
+     "status": "good"
+    }
+   }
+  }
+ }
+]

@@ -103,7 +103,6 @@ export default function StatePicker({ onPick, C }: StatePickerProps) {
         <option value="">{!country ? "Choose a country first" : isLoading ? `Loading ${noun}s…` : inCountry.length ? `Select a ${noun}…` : error ? `Couldn’t load ${noun}s` : `No ${noun}s found`}</option>
         {inCountry.map((s: StatePickerState) => <option key={s.id} value={s.id}>{s.name}</option>)}
       </select>
-      <div style={{ fontSize: 12, color: C.textMuted, marginTop: 9, lineHeight: 1.5 }}>Tap through to drill in to its crags and climbs. Open any area's route list to filter and search by type, grade, stars and more.</div>
       {/* THE SAME LIST AS CARDS under the selects (2026-10-24). On a phone this screen was two
           dropdowns over a screen of empty dark space; the website already lays the countries and
           regions out as cards, the way Mountain Project's directory does. Same data and same

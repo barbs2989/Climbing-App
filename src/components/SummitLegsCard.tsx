@@ -47,11 +47,10 @@ export default function SummitLegsCard({route,calc}: SummitLegsCardProps){
   const shown=legs.map(function(l): [string, LegStat[]] {return [l[0],l[1].filter(function(s): s is LegStat {return s!==null;})];}).filter(function(l){return l[1].length;});
   if(!shown.length)return null;
   const days=itinDayCount(route);
-  const note="Times use the pace, pack and party set in Full trip time below."
+  const note=(""
     +(whole&&gainFt&&!pt.publishedIsWholeDay?" The whole outing gains "+uElev(gainFt)+".":"")
-    +(upLoss||downGain?" "+(upLoss&&downGain?"Loss is the downhill on the way up, regain the uphill on the way back.":upLoss?"Loss is the downhill on the way up.":"Regain is the uphill on the way back."):"")
     +(!pt.publishedIsWholeDay&&hasKm&&!legKm?" This route does not come back the way it goes: "+fmtLegKm(km)+" for the whole outing.":"")
-    +(days>1?" Usually done over "+days+" days — the Trip plan below splits it by day.":"");
+    +(days>1?" Usually done over "+days+" days — the Trip plan below splits it by day.":"")).trim();
   return <div style={{background:C.surface,borderRadius:10,padding:"4px 12px 11px",border:"1px solid "+C.border,marginBottom:12}}>
     {shown.map(function(l,i){return <div key={l[0]} style={{padding:"8px 0",borderTop:i===0?"none":"1px solid "+C.borderLight}}>
       <div style={{...SUB_LABEL,marginBottom:5}}>{l[0]}</div>

@@ -225,8 +225,14 @@
         [role="switch"] > * { transition: none; }
         button:not(:disabled):active, [style*="cursor: pointer"]:active, [role="button"]:not([aria-disabled="true"]):active, [role="tab"]:active, [role="switch"]:active, [role="checkbox"]:not([aria-disabled="true"]):active, [role="option"]:active, [role="menuitem"]:active { transform: none; }
       }
-      /* 16px inputs so iOS doesn't auto-zoom the page when a field is focused */
-      input, textarea, select { font-size: 16px !important; }
+      /* 16px inputs so iOS doesn't auto-zoom the page when a field is focused. Forced on every TOUCH screen,
+         as before. With a MOUSE (the website on a computer) nothing zooms, so there 16px is only the default a
+         field's own size overrides: forced, it drew every field at 16px beside 13px labels and cut the Route
+         finder's "Left → right" to "Left → ri" (2026-11-18). iOS is matched by -webkit-touch-callout as well,
+         so an iPad with a trackpad (a fine pointer) still never zooms. */
+      input, textarea, select { font-size: 16px; }
+      @media not all and (pointer: fine) { input, textarea, select { font-size: 16px !important; } }
+      @supports (-webkit-touch-callout: none) { input, textarea, select { font-size: 16px !important; } }
       /* ONE dropdown chevron for every <select>, on every screen. This rule used to live in a <style>
          that App renders inside its MAIN return only, so every screen App returns EARLY (Edit
          profile, the Calendar, the legal pages, sign-in) drew the browser's own

@@ -524,7 +524,7 @@ export default function FireMap({ onClose, C, ActionIcon, uDistMi = mi => Math.r
                   ))}
                 </div>
               )}
-              <div style={{ color: C.textMuted, lineHeight: 1.45 }}>Fine smoke near the ground, an hour&apos;s average, forecast for the region up to two days out — not a reading at your route. Clear map means under 9 µg/m³.</div>
+              <div style={{ color: C.textMuted, lineHeight: 1.45 }}>Regional smoke forecast, not a reading at your route. Clear = under 9 µg/m³.</div>
             </div>
           ) : null}
           <div style={{ width: "100%", color: C.textMuted, lineHeight: 1.45 }}>

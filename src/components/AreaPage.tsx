@@ -95,6 +95,7 @@ function areaClassics(routes: AreaPageRoute[]) {
 // the Partners tab's picker still allows it). The count and the rows are signed-in reads: the server
 // refuses a signed-out caller, so the card says "Sign in" rather than "nobody".
 // The sidebar map thumbnail opens at a zoom that frames the area: a region shows its valleys, a wall its cliff.
+// Only a crag or a wall is ONE place a pin can mark: a state, region, range or peak area is framed with no "C" crag pin.
 const MAP_ZOOM: Record<string, number> = { state: 6, region: 8, range: 9, canyon: 12, peak: 12, crag: 14, wall: 15 };
 const PARTNER_CARD_TYPES = ["region", "range", "canyon", "crag", "wall"];
 // The order a crag's own climb list can be read in (Mountain Project and theCrag: left to right as
@@ -267,7 +268,7 @@ export default function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, book
   // lays out its area pages, so you never scroll past the page to reach the areas below.
   const showAbout = formation || !!(area.blurb && String(area.blurb).trim());
   const childRows = !loading && children && children.length > 0 ? children : null;
-  const mapPin = area.lat != null && area.lng != null && isFinite(Number(area.lat)) && isFinite(Number(area.lng)) ? { lat: Number(area.lat), lng: Number(area.lng), zoom: MAP_ZOOM[area.area_type] || 10, name: area.name } : null;
+  const mapPin = area.lat != null && area.lng != null && isFinite(Number(area.lat)) && isFinite(Number(area.lng)) ? { lat: Number(area.lat), lng: Number(area.lng), zoom: MAP_ZOOM[area.area_type] || 10, name: area.name, pin: area.area_type === "crag" || area.area_type === "wall" } : null;
   const childList = (variant: "sidebar" | "section") => childRows ? <AreaChildrenList rows={childRows} noun={childNoun(children)} onDrill={onDrill} C={C} grades={wide && variant === "section" ? kidGrades.data || null : null} objectives={objByChild} variant={variant} onAllAreas={onAllAreas} map={variant === "sidebar" ? mapPin : null} onNear={onNear} discCounts={kidDiscs.data || null} /> : null;
   // CLASSIC CLIMBS HERE. Above a wall: all of them across the subtree (ClassicsList: five, then a dropdown), each
   // row naming the wall it is on; a failed read says so; an area with no classics shows nothing rather than "none".
@@ -451,8 +452,10 @@ export default function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, book
 
       {/* 14px above, the same gap Suggested climbs keeps above itself: with no Nearby peaks (a crag) the board
           sat flush under the Suggested climbs box (owner, 2026-11-11). Block margins collapse, so with
-          Nearby peaks shown the gap is 14, not 14 + its own 10. */}
-      {TopContributors ? <div style={{ marginTop: 14 }}><TopContributors areaId={area.id} mb={8}/></div> : null}
+          Nearby peaks shown the gap is 14, not 14 + its own 10. Below it, 20: the Discussion App mounts next opens
+          with a divider line (marginTop 10, collapsing with this), and at 8 that line sat ~11px under the box and read
+          as part of it (owner, 2026-11-18: "needs spacing"). */}
+      {TopContributors ? <div style={{ marginTop: 14 }}><TopContributors areaId={area.id} mb={20}/></div> : null}
     </div>
   );
   // The website: the map and the sub-areas in the left panel beside the page (owner chose "Sidebar on web, early on

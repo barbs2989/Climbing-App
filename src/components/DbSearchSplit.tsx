@@ -9,6 +9,7 @@ import { ATYPE } from "../../lib/areaBrowserShared.js";
 import type { CSSProperties, RefObject } from "react";
 import { hlMatch } from "../../ClimbMatchCore.jsx";
 import RouteRow from "./RouteRow.tsx";
+import ViewAreaPill from "./ViewAreaPill.tsx";
 import type { RouteRowRoute } from "./RouteRow.tsx";
 import type { C as Palette } from "../../ClimbMatchCore.jsx";
 
@@ -42,7 +43,10 @@ export default function DbSearchSplit({ scope, onJumpToArea, onOpenRoute, C, onM
   const { wrapRef, barRef, pin } = usePinnedBar(endRef);
   const qq = q.trim();
   const { data: areaHits, isLoading: la, error: ea } = useAreaSearch(scope.id, qq);
-  const { data: routeHits, isLoading: lr, error: er } = useSubtreeRoutes(scope.id, { q: qq, page: 0, pageSize: 40 });
+  // Asked only for typed words on the Routes tab: the list shows nothing else. With no words it read a whole
+  // state's climbs unfiltered, which times out (HTTP 500, statement timeout) on every visit to a state's page
+  // (2026-11-18), and on the Areas tab it ran a route search per keystroke that nobody saw.
+  const { data: routeHits, isLoading: lr, error: er } = useSubtreeRoutes(qq && mode === "routes" ? scope.id : null, { q: qq, page: 0, pageSize: 40 });
   // Which crag each hit is on, as the Route finder's rows say: two "Beckey Route"s read as one
   // climb listed twice. A failed read leaves the line off, never empty.
   const hitAreaIds = useMemo(() => [...new Set((routeHits || []).map((r: DbSearchSplitRoute) => r.area_id).filter(Boolean))], [routeHits]);
@@ -75,9 +79,9 @@ export default function DbSearchSplit({ scope, onJumpToArea, onOpenRoute, C, onM
                 <div key={a.id} {...clickable(() => onJumpToArea(a))} style={row}>
                   <div style={{ flex: 1, minWidth: 0 }}>
                     <div style={{ fontSize: 13.5, color: C.text, lineHeight: 1.3, overflowWrap: "anywhere" }}>{hlMatch(a.name, qq)}</div>
-                    <div style={{ fontSize: 11, color: C.textMuted, overflowWrap: "anywhere" }}>{(ATYPE[a.area_type] || a.area_type) + (a.parent_name ? " · " + a.parent_name : "")}</div>
+                    <div style={{ fontSize: 11, color: C.textMuted, overflowWrap: "anywhere" }}>{(ATYPE[a.area_type] || a.area_type) + (a.parent_name ? " · " + a.parent_name : "") + (a.route_count > 0 ? " · " + a.route_count.toLocaleString() + " climb" + (a.route_count !== 1 ? "s" : "") : "")}</div>
                   </div>
-                  {a.route_count > 0 ? <span style={{ fontSize: 12, color: C.textMuted, flexShrink: 0 }}>{a.route_count}</span> : null}
+                  <ViewAreaPill C={C} />
                 </div>
               ))}
               {areaSearchTotal(areaHits) > areaHits.length ? <div style={{ fontSize: 11.5, color: C.textMuted, padding: "10px 4px", textAlign: "center" }}>{"Closest " + areaHits.length + " of " + areaSearchTotal(areaHits).toLocaleString() + " — keep typing to narrow."}</div> : null}
