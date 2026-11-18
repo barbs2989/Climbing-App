@@ -47,7 +47,7 @@ export default function AlpineConditionsCard({ route, mtn, calc, activity, repor
     {pt ? <div style={BOX}>
       {avyOn ? <AvalancheSection pt={pt} /> : null}
       <div style={{ marginTop: avyOn ? ROUTE_GAP : 0 }}><SnowSection pt={pt} /></div>
-      {kind !== "waterfall" && kind !== "cragmixed" ? <div style={{ marginBottom: ROUTE_GAP }}><StreamsSection pt={pt} base={trailhead} /></div> : null}
+      {kind !== "waterfall" && kind !== "cragmixed" ? <div style={{ marginTop: ROUTE_GAP, marginBottom: ROUTE_GAP }}><StreamsSection pt={pt} base={trailhead} /></div> : null}
       <OutcomesSection activity={activity} />
       <ReportFreshness activity={activity} unavailable={reportsUnavailable} />
       <div style={{ marginTop: 14 }}><SeasonSection pt={pt} /></div>

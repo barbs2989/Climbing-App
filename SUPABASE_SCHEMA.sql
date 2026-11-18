@@ -9,7 +9,7 @@
 -- and commit the result in the same PR. `npm run gen:schema -- --check` exits 1 when this
 -- file has drifted from the live database.
 --
--- Counts: 85 tables, 836 columns, 446 keyed/checked constraints (148 foreign keys), 249 RLS policies.
+-- Counts: 86 tables, 843 columns, 451 keyed/checked constraints (150 foreign keys), 254 RLS policies.
 -- Not covered here: views, functions, triggers, standalone indexes (see supabase/migrations/).
 
 -- ── Foreign keys ───────────────────────────────────────────────────────────────
@@ -54,6 +54,8 @@
 -- crew_email_invites (crew_email_invites_claimed_by_fkey): FOREIGN KEY (claimed_by) REFERENCES auth.users(id) ON DELETE SET NULL
 -- crew_email_invites (crew_email_invites_crew_id_fkey): FOREIGN KEY (crew_id) REFERENCES crews(id) ON DELETE CASCADE
 -- crew_email_invites (crew_email_invites_invited_by_fkey): FOREIGN KEY (invited_by) REFERENCES auth.users(id) ON DELETE CASCADE
+-- crew_float_filings (crew_float_filings_crew_id_fkey): FOREIGN KEY (crew_id) REFERENCES crews(id) ON DELETE CASCADE
+-- crew_float_filings (crew_float_filings_user_id_fkey): FOREIGN KEY (user_id) REFERENCES profiles(id) ON DELETE CASCADE
 -- crew_members (crew_members_crew_id_fkey): FOREIGN KEY (crew_id) REFERENCES crews(id) ON DELETE CASCADE
 -- crew_members (crew_members_invited_by_fkey): FOREIGN KEY (invited_by) REFERENCES profiles(id) ON DELETE SET NULL
 -- crew_members (crew_members_user_id_fkey): FOREIGN KEY (user_id) REFERENCES profiles(id) ON DELETE CASCADE
@@ -730,6 +732,29 @@ CREATE POLICY "inviter or organizer can withdraw" ON public.crew_email_invites A
 CREATE POLICY "organizer can invite by email" ON public.crew_email_invites AS PERMISSIVE FOR INSERT TO public WITH CHECK ((( SELECT auth.uid() AS uid) = ( SELECT crews.created_by
    FROM crews
   WHERE (crews.id = crew_email_invites.crew_id))));
+
+CREATE TABLE public.crew_float_filings (
+  crew_id uuid NOT NULL,
+  user_id uuid NOT NULL DEFAULT auth.uid(),
+  filed_at date NOT NULL DEFAULT CURRENT_DATE,
+  return_by date,
+  updated_at timestamp with time zone NOT NULL DEFAULT now(),
+  CONSTRAINT crew_float_filings_pkey PRIMARY KEY (crew_id, user_id),
+  CONSTRAINT crew_float_filings_crew_id_fkey FOREIGN KEY (crew_id) REFERENCES crews(id) ON DELETE CASCADE,
+  CONSTRAINT crew_float_filings_user_id_fkey FOREIGN KEY (user_id) REFERENCES profiles(id) ON DELETE CASCADE
+);
+ALTER TABLE public.crew_float_filings ENABLE ROW LEVEL SECURITY;
+CREATE POLICY "float filings read by the crew" ON public.crew_float_filings AS PERMISSIVE FOR SELECT TO public USING (((auth.uid() = user_id) OR (EXISTS ( SELECT 1
+   FROM crew_members m
+  WHERE ((m.crew_id = crew_float_filings.crew_id) AND (m.user_id = auth.uid()) AND (m.status = 'confirmed'::text))))));
+CREATE POLICY "own float filing delete" ON public.crew_float_filings AS PERMISSIVE FOR DELETE TO public USING ((auth.uid() = user_id));
+CREATE POLICY "own float filing insert" ON public.crew_float_filings AS PERMISSIVE FOR INSERT TO public WITH CHECK (((auth.uid() = user_id) AND (EXISTS ( SELECT 1
+   FROM crew_members m
+  WHERE ((m.crew_id = crew_float_filings.crew_id) AND (m.user_id = auth.uid()) AND (m.status = 'confirmed'::text))))));
+CREATE POLICY "own float filing update" ON public.crew_float_filings AS PERMISSIVE FOR UPDATE TO public USING ((auth.uid() = user_id)) WITH CHECK (((auth.uid() = user_id) AND (EXISTS ( SELECT 1
+   FROM crew_members m
+  WHERE ((m.crew_id = crew_float_filings.crew_id) AND (m.user_id = auth.uid()) AND (m.status = 'confirmed'::text))))));
+CREATE POLICY "restricted accounts cannot post" ON public.crew_float_filings AS RESTRICTIVE FOR INSERT TO public WITH CHECK (is_active_user(auth.uid()));
 
 CREATE TABLE public.crew_members (
   crew_id uuid NOT NULL,
@@ -1893,8 +1918,11 @@ CREATE TABLE public.routes (
   rock_quality text,
   fixed_gear text,
   classic_score numeric(3,2),
+  approach_loss_ft integer,
+  return_gain_ft integer,
   CONSTRAINT routes_pkey PRIMARY KEY (id),
   CONSTRAINT routes_anchor_len CHECK (((anchor IS NULL) OR ((char_length(anchor) >= 1) AND (char_length(anchor) <= 80)))),
+  CONSTRAINT routes_approach_loss_ft_range CHECK (((approach_loss_ft IS NULL) OR ((approach_loss_ft >= 0) AND (approach_loss_ft <= 20000)))),
   CONSTRAINT routes_bolts_nonnegative CHECK (((bolts IS NULL) OR ((bolts >= 0) AND (bolts <= 500)))),
   CONSTRAINT routes_classic_score_check CHECK (((classic_score IS NULL) OR ((classic_score >= (0)::numeric) AND (classic_score <= (4)::numeric)))),
   CONSTRAINT routes_fixed_gear_len CHECK (((fixed_gear IS NULL) OR ((char_length(fixed_gear) >= 1) AND (char_length(fixed_gear) <= 160)))),
@@ -1903,6 +1931,7 @@ CREATE TABLE public.routes (
   CONSTRAINT routes_location_len CHECK (((location IS NULL) OR ((char_length(location) >= 1) AND (char_length(location) <= 1000)))),
   CONSTRAINT routes_outing_shape_check CHECK (((outing_shape IS NULL) OR (outing_shape = ANY (ARRAY['outback'::text, 'loop'::text, 'point'::text])))),
   CONSTRAINT routes_rack_items_array CHECK (((rack_items IS NULL) OR (jsonb_typeof(rack_items) = 'array'::text))),
+  CONSTRAINT routes_return_gain_ft_range CHECK (((return_gain_ft IS NULL) OR ((return_gain_ft >= 0) AND (return_gain_ft <= 20000)))),
   CONSTRAINT routes_rock_quality_len CHECK (((rock_quality IS NULL) OR ((char_length(rock_quality) >= 1) AND (char_length(rock_quality) <= 160)))),
   CONSTRAINT routes_sun_len CHECK (((sun IS NULL) OR ((char_length(sun) >= 1) AND (char_length(sun) <= 160)))),
   CONSTRAINT routes_variations_is_array CHECK (((variations IS NULL) OR (jsonb_typeof(variations) = 'array'::text))),
