@@ -68,6 +68,7 @@ views under `groupsTab`: For you · Your groups · Your activity · Discover · 
   accept or decline. The group is only where the names came from: the crew has no `group_id` and does not name it. The
   crew starts **private** (0426) when the group is private, so its roster stays as closed as the group's; the climber can
   switch it to *Listed* before starting.
+- **Recent posts from your groups shows three** (owner 2026-11-18): *For you* lists the first three of its (up to 15) posts, and a full-width *Show N more posts* dropdown (`recentOpen`, `aria-expanded`, a `Chevron`) opens the rest in place; *Show fewer posts* folds them back. Three or fewer posts draw no button.
 - **Long text opens in place** (2026-10-28): a post in *For you* (`groupPostPreview`) stops at five lines with *See more*, and a Discover card's blurb (`groupDiscoverCard`) at three. Both use the `groupPostMore` key the group's own post view uses, so a post opened in the feed is open in the group too.
 
 ## 2. How it works

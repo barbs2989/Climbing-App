@@ -55,15 +55,16 @@ select json_build_object(
             from pg_policies p where p.schemaname = 'public')
 ) as schema;`;
 
+/* SUPABASE_WORKDIR (2026-11-18): a fresh worktree has no supabase/.temp link; the CLI's --workdir points at a checkout that has one. */
 const tmp = path.join(process.env.CLAUDE_JOB_DIR || os.tmpdir(), "gen-supabase-schema.sql");
 fs.writeFileSync(tmp, SQL);
 let raw;
 try {
-  raw = execFileSync(NPX, [...NPX_PRE, "supabase", "db", "query", "--linked", "--read-only", "-o", "json", "-f", tmp],
+  raw = execFileSync(NPX, [...NPX_PRE, "supabase", "db", "query", "--linked", "--read-only", "-o", "json", "-f", tmp, ...(process.env.SUPABASE_WORKDIR ? ["--workdir", process.env.SUPABASE_WORKDIR] : [])],
     { encoding: "utf8", timeout: 180000, maxBuffer: 64 * 1024 * 1024, cwd: ROOT });
 } catch (e) {
   console.error("FAIL: could not read the live catalog —", String(e.message).split("\n")[0].slice(0, 200));
-  console.error("      A fresh worktree is not LINKED. Check: npx supabase projects list");
+  console.error("      A fresh worktree is not LINKED. Point it at a linked checkout: SUPABASE_WORKDIR=<main checkout> npm run gen:schema");
   process.exit(1);
 }
 const start = raw.indexOf("{"), end = raw.lastIndexOf("}");
