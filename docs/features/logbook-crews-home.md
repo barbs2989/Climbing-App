@@ -271,6 +271,8 @@ Notes: `docs/guards/social-and-crews.md`, `contributions-and-logbook.md`, `hones
 
 ## 7. Last significant change
 
+2026-11-18 two-climber walkthrough: crew invites arrive live (`useMyCrewInvites` is a live query on `crew_members`); Ready up's *Said hi in crew chat* reads whether the crew chat has any message from the database (`useCrewHasMessages`), not only the messages loaded on this device; the Ready-up risk row calls it *Mixed* only for Conservative with Aggressive, the Safety screen's rule; *Climb with them again* asks *Who can join?* like + Create a crew.
+
 2026-11-18 (0451): `crew_alignment()` returns no per-answer count (risk levels, the four flags) until two confirmed members have answered — one answer would show whose it is. Who has answered (`done_ids`) still shows. Ready up says *Risk tolerance: shows once 2 of you have answered*, and the Safety screen's matrix says the counts show once 2 have answered. Known limit: in a crew of exactly two, once both answer, each can infer the other's answers from their own.
 
 2026-11-14 (#3385): *Start a crew* on the climb page (beside Save) opens `CreateCrewSheet` for that climb; *Who can join?* is asked once at create (*Just people I invite*, the default, makes it private; *Let others ask to join* lists it); Meet-up offers *Meet at <access point>* (`route.road.name`) in one tap; the safety check says *Start with 5 private questions* once instead of five times; a crew invite on Requests shows the mountain, grade, day and how many are in; the Your crews rail names the mountain under each crew; a crew you just joined sorts first.

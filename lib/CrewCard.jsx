@@ -104,7 +104,8 @@ export default function CrewCard({blocked,crew,areaById,onOpenArea,onDisband,onL
       if(!answered)return {tone:"none",title:"Risk tolerance: not answered yet",sub:"It's the first question of the safety check — each of you answers privately; the crew sees counts only."};
       if(answered<2||!cnt.length)return {tone:"none",title:"Risk tolerance: shows once 2 of you have answered",sub:answered+" of "+total+" answered so far. Until a second climber answers, the crew sees nothing — one answer would show whose it is."};
       const part=answered<total?(answered+" of "+total+" answered"):null;
-      if(cnt.length>1)return {tone:"mixed",title:"Mixed risk tolerance",sub:cnt.map(x=>x[1]+" "+L[x[0]]).join(" · ")+(part?" · "+part:"")+" — talk it through before you commit."};
+      /* The same rule as the Safety screen (alignmentFromCounts): only Conservative WITH Aggressive needs a conversation; a neighbouring mix is listed, calmly. */if(cnt.length>1&&(a.risk_conservative||0)>0&&(a.risk_aggressive||0)>0)return {tone:"mixed",title:"Mixed risk tolerance",sub:cnt.map(x=>x[1]+" "+L[x[0]]).join(" · ")+(part?" · "+part:"")+" — talk it through before you commit."};
+      if(cnt.length>1)return {tone:answered<total?"partial":"aligned",title:"Risk tolerance: "+cnt.map(x=>x[1]+" "+L[x[0]]).join(" · "),sub:(part?part+" — ":"")+"close enough; mention it in crew chat."};
       return {tone:answered<total?"partial":"aligned",title:"Risk tolerance: "+(answered<total?"so far ":"all ")+L[cnt[0][0]],sub:part?part+" — waiting on the rest.":"Everyone answered the same. Aligned."};}
     if(!risks.length)return null;return mixedRisk?{tone:"mixed",title:"Mixed risk tolerance",sub:risks.join(" · ")+" — talk it through before you commit."}:{tone:"aligned",title:"Risk tolerance: "+risks[0],sub:"Aligned."};})();
   const riskTone=riskSum?({mixed:[C.amber,C.amberBg],aligned:[C.green,C.greenBg],partial:[C.blue,C.blueBg],none:[C.textMuted,C.card]})[riskSum.tone]:null;
