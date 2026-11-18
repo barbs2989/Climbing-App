@@ -434,7 +434,7 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     counts what it hid. **Block** (`onBlock` → `blockClimber`) needs an author with an account.
   - **Kept for the guards:** the composer's `ariaLabel="Add a comment"` (a one-off probe matches it),
     `"Reply to "+name` on the reply box (`check:a11y-names`), and the reaction entry point is a real
-    named button (*Add a reaction* / *Change your reaction*), which `check:clickable` records was once
+    named button (*Add a reaction* / *Your reaction: …. Choose a different reaction*), which `check:clickable` records was once
     inert on Enter. Like carries `aria-pressed`; Reply and *View N more replies* carry `aria-expanded`.
 - **`check:mutual-friends`** asserts that a mutual friend is **real**, **named the way they asked**,
   and **counted as the list that renders**. Static (one esbuild bundle of core plus two Babel
