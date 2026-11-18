@@ -2,10 +2,10 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 9,
-  "last_processed_id": "wa_bonanza_peak_oregonian_route",
+  "last_processed_id": "wa_burnt_boot_peak_north_ridge",
   "total_in_scope_last_count": 751,
   "total_wa_alpine_or_mountaineering_tagged": 857,
-  "pass_note": "Batch 559 continued id-ascending from wa_big_snow_mountain_north_slope_dingford_route: Big Snow Mountain's remaining two routes (Sasquatch's Breath, Southwest Ridge), Black Peak (Northeast Ridge), Blizzard Peak (Standard Route), and Bonanza Peak (Cascadian, Mary Green Glacier, Northeast Buttress, Oregonian) -- 8 routes across 4 peaks. No confirmed fix this batch. Corroborated: Black Peak NE Ridge's FA (Roger Jackson and Michael Kennedy, 9/1/1973) matches Mountain Project and OpenBeta exactly; its 8970 ft elevation matches SummitPost and older Wikipedia mirrors (current Wikipedia's 8975 ft is a newer NAVD88 remeasurement, a normal source-vintage gap, not an error). Blizzard Peak's 7622 ft and 1138 ft prominence both matched PeakVisor (7621 ft / ~1138 ft) almost exactly. Big Snow Mountain Southwest Ridge's Dingford Creek Trailhead waypoint (47.51744, -121.45276) matches WTA's listed trailhead coordinates within rounding. Flagged for human review: Bonanza Peak's main-summit high_point_ft (9511, stored on both the Mary Green Glacier and Northeast Buttress routes) disagrees with each of those routes' OWN embedded 'Bonanza Peak summit' waypoint (elev 9516) and with the area row's elevation_ft (9516) -- an internal inconsistency on top of outside sources themselves being split (SummitPost/ListsOfJohn map value 9511 vs Wikipedia/Peakbagger 9516), so left for a human to pick one figure and apply it consistently rather than guessed at here. Noted, not flagged: Sasquatch's Breath is a brand-new 2026 first ascent (Cummins/Roake) with no outside source found at all (no Mountain Project/AAJ/guidebook listing yet) -- consistent with its own sparse, mostly-null row; nothing in it contradicts anything, there's just nothing yet to corroborate against. The two Southwest Summit routes (Cascadian, Oregonian) agree with each other on high_point_ft (9320), a useful internal consistency check even though no outside source for that subsidiary summit's height was found.",
+  "pass_note": "Batch 560 continued id-ascending from wa_bonanza_peak_oregonian_route: Booker Mountain (Northeast Face), Boston Peak (Southeast Face), Prusik Peak (Boving-Christensen), South Early Winters Spire (Boving Roofs), Buckner Mountain (North Face, Southwest Face), Bulls Tooth (South Ridge), Burgundy Spire (Corkscrew Route, North Face), and Burnt Boot Peak (North Ridge) -- 10 routes across 8 peaks. Fixed Bulls Tooth's areas.elevation_ft (6849 -> 6840), which disagreed with its own route's high_point_ft and with Wikipedia/Peakbagger/GNIS topo data. Six items flagged for human review: Booker Mountain's future-dated fire-closure notice; Boston Peak's Boston Basin camping-structure claim vs. current NPS cross-country-zone language; three unresolved items on Prusik Peak's Boving-Christensen (elevation source split, unconfirmed FA year, an internal access-date inconsistency); Buckner Mountain's shared claim about which cross-country zones get a 12- vs 6-person group limit; and Burgundy Spire North Face's unconfirmed 'Burgundy Ledge' term/free-ascent date. Clean: Boving Roofs, Burgundy Spire's Corkscrew Route, and Burnt Boot Peak's North Ridge, each corroborated in full.",
   "batches": [
     {
       "batch_number": 1,
@@ -11106,6 +11106,28 @@
       "flagged_for_human_review": 1,
       "clean": 7,
       "sql_file": null
+    },
+    {
+      "batch_number": 560,
+      "date": "2026-11-18",
+      "pass": 9,
+      "route_ids": [
+        "wa_booker_mountain_northeast_face",
+        "wa_boston_peak_southeast_face",
+        "wa_boving_christensen",
+        "wa_boving_roofs",
+        "wa_buckner_mountain_north_face",
+        "wa_buckner_mountain_southwest_face",
+        "wa_bulls_tooth_south_ridge",
+        "wa_burgundy_spire_corkscrew_route",
+        "wa_burgundy_spire_north_face",
+        "wa_burnt_boot_peak_north_ridge"
+      ],
+      "confirmed_errors_fixed": 1,
+      "flagged_for_human_review": 6,
+      "clean": 3,
+      "sql_file": "audits/sql/2026-11-18-batch-560.sql",
+      "note": "Same elevation fix was already proposed in batch 387 (pass 7, 2026-10-08); live DB still shows the old value, so that SQL was apparently never applied. Re-flagged, not re-discovered independently of that history."
     }
   ],
   "outage_runs": [

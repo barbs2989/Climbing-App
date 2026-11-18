@@ -39298,3 +39298,54 @@ even though no outside source for that specific subsidiary summit's height was f
 
 0 confirmed errors fixed, 1 newly flagged for human review, 7 clean.
 Next batch will continue id-ascending from `wa_bonanza_peak_oregonian_route` (pass 9).
+
+## 2026-11-18 — Batch 560 (pass 9)
+
+Checked Booker Mountain (Northeast Face), Boston Peak (Southeast Face), Prusik Peak
+(Boving-Christensen), South Early Winters Spire (Boving Roofs), Buckner Mountain (North Face,
+Southwest Face), Bulls Tooth (South Ridge), Burgundy Spire (Corkscrew Route, North Face), and
+Burnt Boot Peak (North Ridge) — 10 routes across 8 peaks, id-ascending from
+`wa_bonanza_peak_oregonian_route`.
+
+**Confirmed error fixed (1):** Bulls Tooth's `areas.elevation_ft` was stored as 6849 ft, disagreeing
+with its own route's `high_point_ft` (6840) and with Wikipedia/Peakbagger and GNIS-derived topo
+data, which all converge on ~6840 ft. SQL in `audits/sql/2026-11-18-batch-560.sql`, checked clean
+by `check:sql`. **Note:** this is the same fix batch 387 (pass 7, 2026-10-08) already proposed in
+`audits/sql/2026-10-08-batch-387.sql` — the live DB still reads 6849, so that SQL was apparently
+never run. Re-flagging rather than assuming a human rejected it.
+
+**Clean (3):** Boving Roofs' grade/length/pitches/FA match Mountain Project verbatim, its access
+rules (no climbing permit, Okanogan-Wenatchee NF) check out, and its rappel-station history (June
+2022 rockfall, new bolted stations from North Cascades Mountain Guides) is independently
+corroborated by Mountaineers.org. Burgundy Spire's Corkscrew Route FA (Carla First, Brad Fowler,
+Jemy Barnari, Jim McCarthy, 1973) matches Mountain Project exactly, including the unusual spelling
+of "Jemy Barnari" — confirmed a real name, not a typo. Burnt Boot Peak's North Ridge checks out on
+elevation, coordinates, both the 1971 route FA (Williamson/Bucher/Oas) and the distinct 1963 peak
+FA, and the Dingford Creek/Hardscrabble approach.
+
+Booker Mountain, Buckner Mountain's two routes, and Burgundy Spire's North Face were also clean on
+every checkable fact (elevation, coordinates, FA, grade, approach, permit/access) — each carries
+one narrow flag below rather than a broader problem.
+
+**Flagged for human review (6):**
+- Booker Mountain NE Face: the stored Thunder Creek Fire closure notice is dated "September 14,
+  2026" — a future date relative to any source checkable now, so left unverified rather than
+  guessed at.
+- Boston Peak SE Face: `access.rules` describes Boston Basin as having two designated camps with
+  composting toilets, but current NPS language treats it as a cross-country zone (camp on
+  snow/rock/ground); may be an outdated simplification carried over from a secondary source.
+- Boving-Christensen (Prusik Peak): three unresolved items, none fixable — (1) elevation 8008 ft
+  matches Wikipedia/ListsOfJohn but Peakbagger/the Stuart Range list gives 7858 ft, a genuine
+  ~150 ft source split; (2) the FA party names are corroborated by the route's own name but the
+  stated "1977" year has no corroborating source; (3) the row's `access._raw` and top-level
+  `access` fields give two different specific Enchantments lottery dates for the same thing.
+- Buckner Mountain (both routes, shared `access.rules` text): claims a 12-person group limit
+  applies across eleven named cross-country zones including Forbidden; current NPS language may
+  restrict several of those zones (Forbidden among them) to 6, not 12 — couldn't reach nps.gov
+  directly this pass to confirm either way.
+- Burgundy Spire North Face: the FA's core facts (Beckey party, 1953, aid/fixed ropes, later freed
+  via a bypass tunnel) are corroborated, but the specific term "Burgundy Ledge" and the exact free-
+  ascent date weren't independently nameable in sources checked.
+
+1 confirmed error fixed, 6 newly flagged for human review, 3 clean.
+Next batch will continue id-ascending from `wa_burnt_boot_peak_north_ridge` (pass 9).
