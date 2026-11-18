@@ -1,0 +1,1679 @@
+[
+ {
+  "id": "wa_mount_despair_northeast_buttress",
+  "name": "Northeast Buttress (\"Bipolar Buttress\")",
+  "discipline": "alpine",
+  "grade": "5.9",
+  "verdict": "SUMMIT_ONLY",
+  "state": "wa",
+  "peak": {
+   "id": "wa_mount_despair",
+   "name": "Mount Despair",
+   "lat": 48.737185,
+   "lng": -121.376675,
+   "elevation_ft": 7296,
+   "region": "North Cascades Core",
+   "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_picket_range.wa_mount_despair"
+  },
+  "text": {
+   "approach": "Approach is up a brush-choked valley low in the Goodell Creek drainage — rough enough that even seasoned Cascades climbers have balked at it. This is the opposite (northeast) side of the peak from the standard Triumph Pass/Despair Lakes approach.",
+   "approach_logistics": null,
+   "road": null,
+   "overview": "A ~3,700 ft previously-unclimbed buttress line up Mt. Despair's northeast side to its north summit, opened in 2014: an easy 5.6 opening corner, a series of notches requiring short rappels, a stout 5.9 pitch through a deep summit-area cleft, a further steep pitch to the north ridge, and a snow-ridge finish.",
+   "description": null,
+   "descent": "From the north summit, the first-ascent party exited over Triumph Pass and out the Thornton Lakes Trail rather than retracing the Goodell Creek approach."
+  },
+  "waypoints": [
+   {
+    "lat": 48.737185,
+    "lng": -121.376675,
+    "elev": 7296,
+    "name": "Mount Despair North Summit",
+    "type": "Summit",
+    "distMi": null,
+    "elevFt": 7296
+   }
+  ],
+  "siblingTrailheads": [
+   {
+    "route": "wa_mount_despair_east_route",
+    "name": "Thornton Lakes Trailhead"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "NPS",
+    "name": "Gorge Overlook Trail Trailhead",
+    "lat": 48.699938,
+    "lng": -121.21076,
+    "km": 12.9
+   },
+   {
+    "src": "NPS",
+    "name": "Gorge Overlook Trail Trailhead",
+    "lat": 48.700343,
+    "lng": -121.209709,
+    "km": 12.9
+   },
+   {
+    "src": "USFS",
+    "name": "Baker River Trailhead",
+    "lat": 48.750499,
+    "lng": -121.555348,
+    "km": 13.2
+   },
+   {
+    "src": "USFS",
+    "name": "Shannon Ridge Trailhead",
+    "lat": 48.767233,
+    "lng": -121.618094,
+    "km": 18
+   },
+   {
+    "src": "USFS",
+    "name": "Watson Lakes Trailhead",
+    "lat": 48.674907,
+    "lng": -121.615318,
+    "km": 18.8
+   },
+   {
+    "src": "USFS",
+    "name": "Lookout Mountain Trailhead",
+    "lat": 48.537501,
+    "lng": -121.291755,
+    "km": 23.1
+   },
+   {
+    "src": "NPS",
+    "name": "Happy Creek Forest Walk Trailhead",
+    "lat": 48.728543,
+    "lng": -121.055832,
+    "km": 23.6
+   },
+   {
+    "src": "USFS",
+    "name": "Baker Lake South Trailhead",
+    "lat": 48.645675,
+    "lng": -121.674648,
+    "km": 24.1
+   },
+   {
+    "src": "USFS",
+    "name": "Boulder Ridge Trailhead",
+    "lat": 48.735219,
+    "lng": -121.710284,
+    "km": 24.5
+   },
+   {
+    "src": "USFS",
+    "name": "Panorama Dome Trailhead",
+    "lat": 48.860749,
+    "lng": -121.656654,
+    "km": 24.7
+   },
+   {
+    "src": "USFS",
+    "name": "Hannegan Trailhead",
+    "lat": 48.910191,
+    "lng": -121.591986,
+    "km": 24.9
+   }
+  ],
+  "firstPass": {
+   "why": "stuck: Route text: brush-choked valley low in the Goodell Creek drainage; no trailhead named. Mountain Project and a search summary say the NE buttress party approache",
+   "trailhead": null,
+   "notes": "Route text: brush-choked valley low in the Goodell Creek drainage; no trailhead named. Mountain Project and a search summary say the NE buttress party approached via Goodell Creek, but the CascadeClimbers report is 403 and the other report 404, so where they started is unconfirmed (SR 20 Goodell Creek crossing/campground likely but unverified). Sibling Thornton Lakes is the exit, not the start."
+  }
+ },
+ {
+  "id": "wa_mount_hinman_east_route",
+  "name": "East Route",
+  "discipline": "alpine",
+  "grade": null,
+  "verdict": "SUMMIT_ONLY",
+  "state": "wa",
+  "peak": {
+   "id": "wa_mount_hinman",
+   "name": "Mount Hinman",
+   "lat": 47.568595,
+   "lng": -121.214785,
+   "elevation_ft": 7492,
+   "region": "Alpine Lakes",
+   "path": "usa.washington.wa_centralwest.wa_western_alpine_lakes.wa_mount_hinman"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [
+   {
+    "route": "wa_mount_hinman_hinman_glacier",
+    "name": "Necklace Valley Trailhead"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Tucquala Meadows Trailhead",
+    "lat": 47.543506,
+    "lng": -121.096615,
+    "km": 9.3
+   },
+   {
+    "src": "USFS",
+    "name": "West Fork Foss Lakes Trailhead",
+    "lat": 47.635006,
+    "lng": -121.303348,
+    "km": 9.9
+   },
+   {
+    "src": "USFS",
+    "name": "Paddy-Go-Easy Trailhead",
+    "lat": 47.532873,
+    "lng": -121.082797,
+    "km": 10.7
+   },
+   {
+    "src": "USFS",
+    "name": "Necklace Valley Trailhead",
+    "lat": 47.665562,
+    "lng": -121.287237,
+    "km": 12.1
+   },
+   {
+    "src": "USFS",
+    "name": "Tonga Ridge Trailhead",
+    "lat": 47.679173,
+    "lng": -121.263348,
+    "km": 12.8
+   },
+   {
+    "src": "USFS",
+    "name": "Evans Lake",
+    "lat": 47.658774,
+    "lng": -121.323083,
+    "km": 12.9
+   },
+   {
+    "src": "USFS",
+    "name": "Dorothy Lake Trailhead",
+    "lat": 47.608617,
+    "lng": -121.384459,
+    "km": 13.5
+   },
+   {
+    "src": "USFS",
+    "name": "Scatter Creek Trailhead",
+    "lat": 47.507206,
+    "lng": -121.059815,
+    "km": 13.5
+   },
+   {
+    "src": "USFS",
+    "name": "Pct Windy Gap",
+    "lat": 47.694006,
+    "lng": -121.243915,
+    "km": 14.1
+   },
+   {
+    "src": "USFS",
+    "name": "Pete Lake Trailhead",
+    "lat": 47.434106,
+    "lng": -121.186915,
+    "km": 15.1
+   },
+   {
+    "src": "USFS",
+    "name": "Deception Creek Trailhead",
+    "lat": 47.712145,
+    "lng": -121.193701,
+    "km": 16
+   },
+   {
+    "src": "USFS",
+    "name": "Surprise Lake Trailhead",
+    "lat": 47.707506,
+    "lng": -121.156682,
+    "km": 16
+   },
+   {
+    "src": "USFS",
+    "name": "Jennifer Dunn  (Beckler Peak) Trailhead",
+    "lat": 47.723936,
+    "lng": -121.267151,
+    "km": 17.7
+   },
+   {
+    "src": "USFS",
+    "name": "Tunnel Creek Trailhead",
+    "lat": 47.712496,
+    "lng": -121.108255,
+    "km": 17.9
+   },
+   {
+    "src": "USFS",
+    "name": "Iron Goat/Martin Creek Trailhead",
+    "lat": 47.729636,
+    "lng": -121.206542,
+    "km": 17.9
+   }
+  ],
+  "firstPass": {
+   "why": "stuck: No route text. Search found no page defining a separate East Route on Hinman; sources describe the Necklace Valley / La Bohn Gap climb and Hinman Glacier. The p",
+   "trailhead": null,
+   "notes": "No route text. Search found no page defining a separate East Route on Hinman; sources describe the Necklace Valley / La Bohn Gap climb and Hinman Glacier. The peak is also reachable from the Middle Fork Snoqualmie side (3 days), so the Necklace Valley sibling is not proof. Not guessed."
+  }
+ },
+ {
+  "id": "wa_mount_hinman_west_route",
+  "name": "West Route",
+  "discipline": "alpine",
+  "grade": null,
+  "verdict": "SUMMIT_ONLY",
+  "state": "wa",
+  "peak": {
+   "id": "wa_mount_hinman",
+   "name": "Mount Hinman",
+   "lat": 47.568595,
+   "lng": -121.214785,
+   "elevation_ft": 7492,
+   "region": "Alpine Lakes",
+   "path": "usa.washington.wa_centralwest.wa_western_alpine_lakes.wa_mount_hinman"
+  },
+  "text": {
+   "approach": "From the Necklace Valley Trailhead, follow the Necklace Valley Trail up the East Fork Foss River, over the river crossing and the steep climb beyond it, to the hanging valley holding La Bohn Lakes, where parties camp. From the lakes, climb the snow chute or talus to La Bohn Gap; the climb proper heads due north from the gap toward the summit.",
+   "approach_logistics": "{\"trailhead\":\"Necklace Valley Trailhead\",\"trailheadDirection\":\"From US 2 just past the Skykomish Ranger Station, turn south onto Foss River Road (FR 68); the Necklace Valley Trailhead parking is on the left after about 4 miles.\"}",
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [
+   {
+    "route": "wa_mount_hinman_hinman_glacier",
+    "name": "Necklace Valley Trailhead"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Tucquala Meadows Trailhead",
+    "lat": 47.543506,
+    "lng": -121.096615,
+    "km": 9.3
+   },
+   {
+    "src": "USFS",
+    "name": "West Fork Foss Lakes Trailhead",
+    "lat": 47.635006,
+    "lng": -121.303348,
+    "km": 9.9
+   },
+   {
+    "src": "USFS",
+    "name": "Paddy-Go-Easy Trailhead",
+    "lat": 47.532873,
+    "lng": -121.082797,
+    "km": 10.7
+   },
+   {
+    "src": "USFS",
+    "name": "Necklace Valley Trailhead",
+    "lat": 47.665562,
+    "lng": -121.287237,
+    "km": 12.1
+   },
+   {
+    "src": "USFS",
+    "name": "Tonga Ridge Trailhead",
+    "lat": 47.679173,
+    "lng": -121.263348,
+    "km": 12.8
+   },
+   {
+    "src": "USFS",
+    "name": "Evans Lake",
+    "lat": 47.658774,
+    "lng": -121.323083,
+    "km": 12.9
+   },
+   {
+    "src": "USFS",
+    "name": "Dorothy Lake Trailhead",
+    "lat": 47.608617,
+    "lng": -121.384459,
+    "km": 13.5
+   },
+   {
+    "src": "USFS",
+    "name": "Scatter Creek Trailhead",
+    "lat": 47.507206,
+    "lng": -121.059815,
+    "km": 13.5
+   },
+   {
+    "src": "USFS",
+    "name": "Pct Windy Gap",
+    "lat": 47.694006,
+    "lng": -121.243915,
+    "km": 14.1
+   },
+   {
+    "src": "USFS",
+    "name": "Pete Lake Trailhead",
+    "lat": 47.434106,
+    "lng": -121.186915,
+    "km": 15.1
+   },
+   {
+    "src": "USFS",
+    "name": "Deception Creek Trailhead",
+    "lat": 47.712145,
+    "lng": -121.193701,
+    "km": 16
+   },
+   {
+    "src": "USFS",
+    "name": "Surprise Lake Trailhead",
+    "lat": 47.707506,
+    "lng": -121.156682,
+    "km": 16
+   },
+   {
+    "src": "USFS",
+    "name": "Jennifer Dunn  (Beckler Peak) Trailhead",
+    "lat": 47.723936,
+    "lng": -121.267151,
+    "km": 17.7
+   },
+   {
+    "src": "USFS",
+    "name": "Tunnel Creek Trailhead",
+    "lat": 47.712496,
+    "lng": -121.108255,
+    "km": 17.9
+   },
+   {
+    "src": "USFS",
+    "name": "Iron Goat/Martin Creek Trailhead",
+    "lat": 47.729636,
+    "lng": -121.206542,
+    "km": 17.9
+   }
+  ],
+  "firstPass": {
+   "why": "held: agent flagged the identification as inferred/weak",
+   "trailhead": {
+    "name": "Necklace Valley Trailhead",
+    "identifiedBy": {
+     "kind": "route_text",
+     "fact": "From the Necklace Valley Trailhead, follow the Necklace Valley Trail"
+    },
+    "placements": [
+     {
+      "source": "USFS",
+      "name": "Necklace Valley Trailhead",
+      "lat": 47.665562,
+      "lng": -121.287237,
+      "url": ""
+     }
+    ]
+   },
+   "notes": "USFS placement is 12 km from peak (within range)."
+  }
+ },
+ {
+  "id": "wa_mount_johnson_deception_chimney",
+  "name": "Deception Chimney",
+  "discipline": "alpine",
+  "grade": null,
+  "verdict": "SUMMIT_ONLY",
+  "state": "wa",
+  "peak": {
+   "id": "wa_mount_johnson",
+   "name": "Mount Johnson",
+   "lat": 47.832625,
+   "lng": -123.237265,
+   "elevation_ft": 7680,
+   "region": "Olympic Mountains",
+   "path": "usa.washington.wa_olympics.wa_olympic_np.wa_north_central_olympics.wa_mount_johnson"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [
+   {
+    "route": "wa_mount_johnson_standard",
+    "name": "Upper Dungeness Trailhead"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Maynard Burn Trailhead",
+    "lat": 47.88195,
+    "lng": -123.144459,
+    "km": 8.8
+   },
+   {
+    "src": "USFS",
+    "name": "Dungeness - Upper Trailhead",
+    "lat": 47.877578,
+    "lng": -123.136942,
+    "km": 9
+   },
+   {
+    "src": "NPS",
+    "name": "Royal Creek",
+    "lat": 47.878049,
+    "lng": -123.13699,
+    "km": 9
+   },
+   {
+    "src": "NPS",
+    "name": "Dosewallips Ranger Station",
+    "lat": 47.73716,
+    "lng": -123.166871,
+    "km": 11.8
+   },
+   {
+    "src": "USFS",
+    "name": "Tubal Cain Trailhead",
+    "lat": 47.886321,
+    "lng": -123.091728,
+    "km": 12.4
+   },
+   {
+    "src": "NPS",
+    "name": "Upper Dungeness/Tubal Cain",
+    "lat": 47.886221,
+    "lng": -123.091482,
+    "km": 12.4
+   },
+   {
+    "src": "USFS",
+    "name": "Three O'Clock Ridge",
+    "lat": 47.912689,
+    "lng": -123.110819,
+    "km": 13
+   },
+   {
+    "src": "NPS",
+    "name": "Deer Park",
+    "lat": 47.948984,
+    "lng": -123.258232,
+    "km": 13
+   },
+   {
+    "src": "NPS",
+    "name": "Obstruction Point",
+    "lat": 47.918418,
+    "lng": -123.382156,
+    "km": 14.4
+   },
+   {
+    "src": "USFS",
+    "name": "Big Quilcene - Upper Trailhead",
+    "lat": 47.827846,
+    "lng": -123.040655,
+    "km": 14.7
+   },
+   {
+    "src": "NPS",
+    "name": "Big Quilcene",
+    "lat": 47.82786,
+    "lng": -123.041062,
+    "km": 14.7
+   },
+   {
+    "src": "USFS",
+    "name": "Tunnel Creek Via Big Quilcene Trailhead",
+    "lat": 47.781423,
+    "lng": -123.052265,
+    "km": 14.9
+   },
+   {
+    "src": "USFS",
+    "name": "Slab Camp/Deer Ridge Trailhead",
+    "lat": 47.965118,
+    "lng": -123.193289,
+    "km": 15.1
+   },
+   {
+    "src": "NPS",
+    "name": "Slab Camp",
+    "lat": 47.964844,
+    "lng": -123.194033,
+    "km": 15.1
+   },
+   {
+    "src": "USFS",
+    "name": "Mount Townsend Upper Trailhead",
+    "lat": 47.856106,
+    "lng": -123.035636,
+    "km": 15.3
+   },
+   {
+    "src": "USFS",
+    "name": "Ned Hill",
+    "lat": 47.967926,
+    "lng": -123.187758,
+    "km": 15.5
+   },
+   {
+    "src": "USFS",
+    "name": "Little Quilcene Trailhead",
+    "lat": 47.886644,
+    "lng": -123.041897,
+    "km": 15.8
+   },
+   {
+    "src": "USFS",
+    "name": "Dungeness (Lower) / Gold Creek Trailhead",
+    "lat": 47.936417,
+    "lng": -123.092104,
+    "km": 15.8
+   },
+   {
+    "src": "NPS",
+    "name": "Dosewallips Road Wash-out",
+    "lat": 47.738836,
+    "lng": -123.073581,
+    "km": 16.1
+   },
+   {
+    "src": "USFS",
+    "name": "Tunnel Creek via Dosewallips Trailhead",
+    "lat": 47.740265,
+    "lng": -123.065779,
+    "km": 16.4
+   }
+  ],
+  "firstPass": {
+   "why": "stuck: No route text. Peak-level only. The peak is a Royal Basin / Upper Dungeness objective, but no page I could open says which side this named route is on; Mountain",
+   "trailhead": null,
+   "notes": "No route text. Peak-level only. The peak is a Royal Basin / Upper Dungeness objective, but no page I could open says which side this named route is on; Mountaineers Royal Basin page is 403, Mountain Project Mt Johnson is the California peak. Candidate if the owner accepts peak-level: Upper Dungeness Trailhead (USFS 47.877578,-123.136942)."
+  }
+ },
+ {
+  "id": "wa_mount_johnson_rumble_gully",
+  "name": "Rumble Gully",
+  "discipline": "alpine",
+  "grade": null,
+  "verdict": "SUMMIT_ONLY",
+  "state": "wa",
+  "peak": {
+   "id": "wa_mount_johnson",
+   "name": "Mount Johnson",
+   "lat": 47.832625,
+   "lng": -123.237265,
+   "elevation_ft": 7680,
+   "region": "Olympic Mountains",
+   "path": "usa.washington.wa_olympics.wa_olympic_np.wa_north_central_olympics.wa_mount_johnson"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [
+   {
+    "route": "wa_mount_johnson_standard",
+    "name": "Upper Dungeness Trailhead"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Maynard Burn Trailhead",
+    "lat": 47.88195,
+    "lng": -123.144459,
+    "km": 8.8
+   },
+   {
+    "src": "USFS",
+    "name": "Dungeness - Upper Trailhead",
+    "lat": 47.877578,
+    "lng": -123.136942,
+    "km": 9
+   },
+   {
+    "src": "NPS",
+    "name": "Royal Creek",
+    "lat": 47.878049,
+    "lng": -123.13699,
+    "km": 9
+   },
+   {
+    "src": "NPS",
+    "name": "Dosewallips Ranger Station",
+    "lat": 47.73716,
+    "lng": -123.166871,
+    "km": 11.8
+   },
+   {
+    "src": "USFS",
+    "name": "Tubal Cain Trailhead",
+    "lat": 47.886321,
+    "lng": -123.091728,
+    "km": 12.4
+   },
+   {
+    "src": "NPS",
+    "name": "Upper Dungeness/Tubal Cain",
+    "lat": 47.886221,
+    "lng": -123.091482,
+    "km": 12.4
+   },
+   {
+    "src": "USFS",
+    "name": "Three O'Clock Ridge",
+    "lat": 47.912689,
+    "lng": -123.110819,
+    "km": 13
+   },
+   {
+    "src": "NPS",
+    "name": "Deer Park",
+    "lat": 47.948984,
+    "lng": -123.258232,
+    "km": 13
+   },
+   {
+    "src": "NPS",
+    "name": "Obstruction Point",
+    "lat": 47.918418,
+    "lng": -123.382156,
+    "km": 14.4
+   },
+   {
+    "src": "USFS",
+    "name": "Big Quilcene - Upper Trailhead",
+    "lat": 47.827846,
+    "lng": -123.040655,
+    "km": 14.7
+   },
+   {
+    "src": "NPS",
+    "name": "Big Quilcene",
+    "lat": 47.82786,
+    "lng": -123.041062,
+    "km": 14.7
+   },
+   {
+    "src": "USFS",
+    "name": "Tunnel Creek Via Big Quilcene Trailhead",
+    "lat": 47.781423,
+    "lng": -123.052265,
+    "km": 14.9
+   },
+   {
+    "src": "USFS",
+    "name": "Slab Camp/Deer Ridge Trailhead",
+    "lat": 47.965118,
+    "lng": -123.193289,
+    "km": 15.1
+   },
+   {
+    "src": "NPS",
+    "name": "Slab Camp",
+    "lat": 47.964844,
+    "lng": -123.194033,
+    "km": 15.1
+   },
+   {
+    "src": "USFS",
+    "name": "Mount Townsend Upper Trailhead",
+    "lat": 47.856106,
+    "lng": -123.035636,
+    "km": 15.3
+   },
+   {
+    "src": "USFS",
+    "name": "Ned Hill",
+    "lat": 47.967926,
+    "lng": -123.187758,
+    "km": 15.5
+   },
+   {
+    "src": "USFS",
+    "name": "Little Quilcene Trailhead",
+    "lat": 47.886644,
+    "lng": -123.041897,
+    "km": 15.8
+   },
+   {
+    "src": "USFS",
+    "name": "Dungeness (Lower) / Gold Creek Trailhead",
+    "lat": 47.936417,
+    "lng": -123.092104,
+    "km": 15.8
+   },
+   {
+    "src": "NPS",
+    "name": "Dosewallips Road Wash-out",
+    "lat": 47.738836,
+    "lng": -123.073581,
+    "km": 16.1
+   },
+   {
+    "src": "USFS",
+    "name": "Tunnel Creek via Dosewallips Trailhead",
+    "lat": 47.740265,
+    "lng": -123.065779,
+    "km": 16.4
+   }
+  ],
+  "firstPass": {
+   "why": "stuck: No route text. Peak-level only. The peak is a Royal Basin / Upper Dungeness objective, but no page I could open says which side this named route is on; Mountain",
+   "trailhead": null,
+   "notes": "No route text. Peak-level only. The peak is a Royal Basin / Upper Dungeness objective, but no page I could open says which side this named route is on; Mountaineers Royal Basin page is 403, Mountain Project Mt Johnson is the California peak. Candidate if the owner accepts peak-level: Upper Dungeness Trailhead (USFS 47.877578,-123.136942)."
+  }
+ },
+ {
+  "id": "wa_mount_johnson_south_terrace_route",
+  "name": "South Terrace Route",
+  "discipline": "alpine",
+  "grade": null,
+  "verdict": "SUMMIT_ONLY",
+  "state": "wa",
+  "peak": {
+   "id": "wa_mount_johnson",
+   "name": "Mount Johnson",
+   "lat": 47.832625,
+   "lng": -123.237265,
+   "elevation_ft": 7680,
+   "region": "Olympic Mountains",
+   "path": "usa.washington.wa_olympics.wa_olympic_np.wa_north_central_olympics.wa_mount_johnson"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [
+   {
+    "route": "wa_mount_johnson_standard",
+    "name": "Upper Dungeness Trailhead"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Maynard Burn Trailhead",
+    "lat": 47.88195,
+    "lng": -123.144459,
+    "km": 8.8
+   },
+   {
+    "src": "USFS",
+    "name": "Dungeness - Upper Trailhead",
+    "lat": 47.877578,
+    "lng": -123.136942,
+    "km": 9
+   },
+   {
+    "src": "NPS",
+    "name": "Royal Creek",
+    "lat": 47.878049,
+    "lng": -123.13699,
+    "km": 9
+   },
+   {
+    "src": "NPS",
+    "name": "Dosewallips Ranger Station",
+    "lat": 47.73716,
+    "lng": -123.166871,
+    "km": 11.8
+   },
+   {
+    "src": "USFS",
+    "name": "Tubal Cain Trailhead",
+    "lat": 47.886321,
+    "lng": -123.091728,
+    "km": 12.4
+   },
+   {
+    "src": "NPS",
+    "name": "Upper Dungeness/Tubal Cain",
+    "lat": 47.886221,
+    "lng": -123.091482,
+    "km": 12.4
+   },
+   {
+    "src": "USFS",
+    "name": "Three O'Clock Ridge",
+    "lat": 47.912689,
+    "lng": -123.110819,
+    "km": 13
+   },
+   {
+    "src": "NPS",
+    "name": "Deer Park",
+    "lat": 47.948984,
+    "lng": -123.258232,
+    "km": 13
+   },
+   {
+    "src": "NPS",
+    "name": "Obstruction Point",
+    "lat": 47.918418,
+    "lng": -123.382156,
+    "km": 14.4
+   },
+   {
+    "src": "USFS",
+    "name": "Big Quilcene - Upper Trailhead",
+    "lat": 47.827846,
+    "lng": -123.040655,
+    "km": 14.7
+   },
+   {
+    "src": "NPS",
+    "name": "Big Quilcene",
+    "lat": 47.82786,
+    "lng": -123.041062,
+    "km": 14.7
+   },
+   {
+    "src": "USFS",
+    "name": "Tunnel Creek Via Big Quilcene Trailhead",
+    "lat": 47.781423,
+    "lng": -123.052265,
+    "km": 14.9
+   },
+   {
+    "src": "USFS",
+    "name": "Slab Camp/Deer Ridge Trailhead",
+    "lat": 47.965118,
+    "lng": -123.193289,
+    "km": 15.1
+   },
+   {
+    "src": "NPS",
+    "name": "Slab Camp",
+    "lat": 47.964844,
+    "lng": -123.194033,
+    "km": 15.1
+   },
+   {
+    "src": "USFS",
+    "name": "Mount Townsend Upper Trailhead",
+    "lat": 47.856106,
+    "lng": -123.035636,
+    "km": 15.3
+   },
+   {
+    "src": "USFS",
+    "name": "Ned Hill",
+    "lat": 47.967926,
+    "lng": -123.187758,
+    "km": 15.5
+   },
+   {
+    "src": "USFS",
+    "name": "Little Quilcene Trailhead",
+    "lat": 47.886644,
+    "lng": -123.041897,
+    "km": 15.8
+   },
+   {
+    "src": "USFS",
+    "name": "Dungeness (Lower) / Gold Creek Trailhead",
+    "lat": 47.936417,
+    "lng": -123.092104,
+    "km": 15.8
+   },
+   {
+    "src": "NPS",
+    "name": "Dosewallips Road Wash-out",
+    "lat": 47.738836,
+    "lng": -123.073581,
+    "km": 16.1
+   },
+   {
+    "src": "USFS",
+    "name": "Tunnel Creek via Dosewallips Trailhead",
+    "lat": 47.740265,
+    "lng": -123.065779,
+    "km": 16.4
+   }
+  ],
+  "firstPass": {
+   "why": "stuck: No route text. Peak-level only. The peak is a Royal Basin / Upper Dungeness objective, but no page I could open says which side this named route is on; Mountain",
+   "trailhead": null,
+   "notes": "No route text. Peak-level only. The peak is a Royal Basin / Upper Dungeness objective, but no page I could open says which side this named route is on; Mountaineers Royal Basin page is 403, Mountain Project Mt Johnson is the California peak. Candidate if the owner accepts peak-level: Upper Dungeness Trailhead (USFS 47.877578,-123.136942)."
+  }
+ },
+ {
+  "id": "wa_mount_johnson_southwest_route",
+  "name": "Southwest Route",
+  "discipline": "alpine",
+  "grade": "Class 3",
+  "verdict": "SUMMIT_ONLY",
+  "state": "wa",
+  "peak": {
+   "id": "wa_mount_johnson",
+   "name": "Mount Johnson",
+   "lat": 47.832625,
+   "lng": -123.237265,
+   "elevation_ft": 7680,
+   "region": "Olympic Mountains",
+   "path": "usa.washington.wa_olympics.wa_olympic_np.wa_north_central_olympics.wa_mount_johnson"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [
+   {
+    "route": "wa_mount_johnson_standard",
+    "name": "Upper Dungeness Trailhead"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Maynard Burn Trailhead",
+    "lat": 47.88195,
+    "lng": -123.144459,
+    "km": 8.8
+   },
+   {
+    "src": "USFS",
+    "name": "Dungeness - Upper Trailhead",
+    "lat": 47.877578,
+    "lng": -123.136942,
+    "km": 9
+   },
+   {
+    "src": "NPS",
+    "name": "Royal Creek",
+    "lat": 47.878049,
+    "lng": -123.13699,
+    "km": 9
+   },
+   {
+    "src": "NPS",
+    "name": "Dosewallips Ranger Station",
+    "lat": 47.73716,
+    "lng": -123.166871,
+    "km": 11.8
+   },
+   {
+    "src": "USFS",
+    "name": "Tubal Cain Trailhead",
+    "lat": 47.886321,
+    "lng": -123.091728,
+    "km": 12.4
+   },
+   {
+    "src": "NPS",
+    "name": "Upper Dungeness/Tubal Cain",
+    "lat": 47.886221,
+    "lng": -123.091482,
+    "km": 12.4
+   },
+   {
+    "src": "USFS",
+    "name": "Three O'Clock Ridge",
+    "lat": 47.912689,
+    "lng": -123.110819,
+    "km": 13
+   },
+   {
+    "src": "NPS",
+    "name": "Deer Park",
+    "lat": 47.948984,
+    "lng": -123.258232,
+    "km": 13
+   },
+   {
+    "src": "NPS",
+    "name": "Obstruction Point",
+    "lat": 47.918418,
+    "lng": -123.382156,
+    "km": 14.4
+   },
+   {
+    "src": "USFS",
+    "name": "Big Quilcene - Upper Trailhead",
+    "lat": 47.827846,
+    "lng": -123.040655,
+    "km": 14.7
+   },
+   {
+    "src": "NPS",
+    "name": "Big Quilcene",
+    "lat": 47.82786,
+    "lng": -123.041062,
+    "km": 14.7
+   },
+   {
+    "src": "USFS",
+    "name": "Tunnel Creek Via Big Quilcene Trailhead",
+    "lat": 47.781423,
+    "lng": -123.052265,
+    "km": 14.9
+   },
+   {
+    "src": "USFS",
+    "name": "Slab Camp/Deer Ridge Trailhead",
+    "lat": 47.965118,
+    "lng": -123.193289,
+    "km": 15.1
+   },
+   {
+    "src": "NPS",
+    "name": "Slab Camp",
+    "lat": 47.964844,
+    "lng": -123.194033,
+    "km": 15.1
+   },
+   {
+    "src": "USFS",
+    "name": "Mount Townsend Upper Trailhead",
+    "lat": 47.856106,
+    "lng": -123.035636,
+    "km": 15.3
+   },
+   {
+    "src": "USFS",
+    "name": "Ned Hill",
+    "lat": 47.967926,
+    "lng": -123.187758,
+    "km": 15.5
+   },
+   {
+    "src": "USFS",
+    "name": "Little Quilcene Trailhead",
+    "lat": 47.886644,
+    "lng": -123.041897,
+    "km": 15.8
+   },
+   {
+    "src": "USFS",
+    "name": "Dungeness (Lower) / Gold Creek Trailhead",
+    "lat": 47.936417,
+    "lng": -123.092104,
+    "km": 15.8
+   },
+   {
+    "src": "NPS",
+    "name": "Dosewallips Road Wash-out",
+    "lat": 47.738836,
+    "lng": -123.073581,
+    "km": 16.1
+   },
+   {
+    "src": "USFS",
+    "name": "Tunnel Creek via Dosewallips Trailhead",
+    "lat": 47.740265,
+    "lng": -123.065779,
+    "km": 16.4
+   }
+  ],
+  "firstPass": {
+   "why": "stuck: No route text. Peak-level only. The peak is a Royal Basin / Upper Dungeness objective, but no page I could open says which side this named route is on; Mountain",
+   "trailhead": null,
+   "notes": "No route text. Peak-level only. The peak is a Royal Basin / Upper Dungeness objective, but no page I could open says which side this named route is on; Mountaineers Royal Basin page is 403, Mountain Project Mt Johnson is the California peak. Candidate if the owner accepts peak-level: Upper Dungeness Trailhead (USFS 47.877578,-123.136942)."
+  }
+ },
+ {
+  "id": "wa_mount_johnson_staircase_route",
+  "name": "Staircase Route",
+  "discipline": "alpine",
+  "grade": null,
+  "verdict": "SUMMIT_ONLY",
+  "state": "wa",
+  "peak": {
+   "id": "wa_mount_johnson",
+   "name": "Mount Johnson",
+   "lat": 47.832625,
+   "lng": -123.237265,
+   "elevation_ft": 7680,
+   "region": "Olympic Mountains",
+   "path": "usa.washington.wa_olympics.wa_olympic_np.wa_north_central_olympics.wa_mount_johnson"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [
+   {
+    "route": "wa_mount_johnson_standard",
+    "name": "Upper Dungeness Trailhead"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Maynard Burn Trailhead",
+    "lat": 47.88195,
+    "lng": -123.144459,
+    "km": 8.8
+   },
+   {
+    "src": "USFS",
+    "name": "Dungeness - Upper Trailhead",
+    "lat": 47.877578,
+    "lng": -123.136942,
+    "km": 9
+   },
+   {
+    "src": "NPS",
+    "name": "Royal Creek",
+    "lat": 47.878049,
+    "lng": -123.13699,
+    "km": 9
+   },
+   {
+    "src": "NPS",
+    "name": "Dosewallips Ranger Station",
+    "lat": 47.73716,
+    "lng": -123.166871,
+    "km": 11.8
+   },
+   {
+    "src": "USFS",
+    "name": "Tubal Cain Trailhead",
+    "lat": 47.886321,
+    "lng": -123.091728,
+    "km": 12.4
+   },
+   {
+    "src": "NPS",
+    "name": "Upper Dungeness/Tubal Cain",
+    "lat": 47.886221,
+    "lng": -123.091482,
+    "km": 12.4
+   },
+   {
+    "src": "USFS",
+    "name": "Three O'Clock Ridge",
+    "lat": 47.912689,
+    "lng": -123.110819,
+    "km": 13
+   },
+   {
+    "src": "NPS",
+    "name": "Deer Park",
+    "lat": 47.948984,
+    "lng": -123.258232,
+    "km": 13
+   },
+   {
+    "src": "NPS",
+    "name": "Obstruction Point",
+    "lat": 47.918418,
+    "lng": -123.382156,
+    "km": 14.4
+   },
+   {
+    "src": "USFS",
+    "name": "Big Quilcene - Upper Trailhead",
+    "lat": 47.827846,
+    "lng": -123.040655,
+    "km": 14.7
+   },
+   {
+    "src": "NPS",
+    "name": "Big Quilcene",
+    "lat": 47.82786,
+    "lng": -123.041062,
+    "km": 14.7
+   },
+   {
+    "src": "USFS",
+    "name": "Tunnel Creek Via Big Quilcene Trailhead",
+    "lat": 47.781423,
+    "lng": -123.052265,
+    "km": 14.9
+   },
+   {
+    "src": "USFS",
+    "name": "Slab Camp/Deer Ridge Trailhead",
+    "lat": 47.965118,
+    "lng": -123.193289,
+    "km": 15.1
+   },
+   {
+    "src": "NPS",
+    "name": "Slab Camp",
+    "lat": 47.964844,
+    "lng": -123.194033,
+    "km": 15.1
+   },
+   {
+    "src": "USFS",
+    "name": "Mount Townsend Upper Trailhead",
+    "lat": 47.856106,
+    "lng": -123.035636,
+    "km": 15.3
+   },
+   {
+    "src": "USFS",
+    "name": "Ned Hill",
+    "lat": 47.967926,
+    "lng": -123.187758,
+    "km": 15.5
+   },
+   {
+    "src": "USFS",
+    "name": "Little Quilcene Trailhead",
+    "lat": 47.886644,
+    "lng": -123.041897,
+    "km": 15.8
+   },
+   {
+    "src": "USFS",
+    "name": "Dungeness (Lower) / Gold Creek Trailhead",
+    "lat": 47.936417,
+    "lng": -123.092104,
+    "km": 15.8
+   },
+   {
+    "src": "NPS",
+    "name": "Dosewallips Road Wash-out",
+    "lat": 47.738836,
+    "lng": -123.073581,
+    "km": 16.1
+   },
+   {
+    "src": "USFS",
+    "name": "Tunnel Creek via Dosewallips Trailhead",
+    "lat": 47.740265,
+    "lng": -123.065779,
+    "km": 16.4
+   }
+  ],
+  "firstPass": {
+   "why": "stuck: No route text. Peak-level only. The peak is a Royal Basin / Upper Dungeness objective, but no page I could open says which side this named route is on; Mountain",
+   "trailhead": null,
+   "notes": "No route text. Peak-level only. The peak is a Royal Basin / Upper Dungeness objective, but no page I could open says which side this named route is on; Mountaineers Royal Basin page is 403, Mountain Project Mt Johnson is the California peak. Name suggests a Staircase (Skokomish) approach, a different trailhead; unverified. Candidate if the owner accepts peak-level: Upper Dungeness Trailhead (USFS 47.877578,-123.136942)."
+  }
+ },
+ {
+  "id": "wa_mount_johnson_northwest_face",
+  "name": "Northwest Face",
+  "discipline": "alpine",
+  "grade": null,
+  "verdict": "SUMMIT_ONLY",
+  "state": "wa",
+  "peak": {
+   "id": "wa_mount_johnson",
+   "name": "Mount Johnson",
+   "lat": 47.832625,
+   "lng": -123.237265,
+   "elevation_ft": 7680,
+   "region": "Olympic Mountains",
+   "path": "usa.washington.wa_olympics.wa_olympic_np.wa_north_central_olympics.wa_mount_johnson"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [
+   {
+    "route": "wa_mount_johnson_standard",
+    "name": "Upper Dungeness Trailhead"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Maynard Burn Trailhead",
+    "lat": 47.88195,
+    "lng": -123.144459,
+    "km": 8.8
+   },
+   {
+    "src": "USFS",
+    "name": "Dungeness - Upper Trailhead",
+    "lat": 47.877578,
+    "lng": -123.136942,
+    "km": 9
+   },
+   {
+    "src": "NPS",
+    "name": "Royal Creek",
+    "lat": 47.878049,
+    "lng": -123.13699,
+    "km": 9
+   },
+   {
+    "src": "NPS",
+    "name": "Dosewallips Ranger Station",
+    "lat": 47.73716,
+    "lng": -123.166871,
+    "km": 11.8
+   },
+   {
+    "src": "USFS",
+    "name": "Tubal Cain Trailhead",
+    "lat": 47.886321,
+    "lng": -123.091728,
+    "km": 12.4
+   },
+   {
+    "src": "NPS",
+    "name": "Upper Dungeness/Tubal Cain",
+    "lat": 47.886221,
+    "lng": -123.091482,
+    "km": 12.4
+   },
+   {
+    "src": "USFS",
+    "name": "Three O'Clock Ridge",
+    "lat": 47.912689,
+    "lng": -123.110819,
+    "km": 13
+   },
+   {
+    "src": "NPS",
+    "name": "Deer Park",
+    "lat": 47.948984,
+    "lng": -123.258232,
+    "km": 13
+   },
+   {
+    "src": "NPS",
+    "name": "Obstruction Point",
+    "lat": 47.918418,
+    "lng": -123.382156,
+    "km": 14.4
+   },
+   {
+    "src": "USFS",
+    "name": "Big Quilcene - Upper Trailhead",
+    "lat": 47.827846,
+    "lng": -123.040655,
+    "km": 14.7
+   },
+   {
+    "src": "NPS",
+    "name": "Big Quilcene",
+    "lat": 47.82786,
+    "lng": -123.041062,
+    "km": 14.7
+   },
+   {
+    "src": "USFS",
+    "name": "Tunnel Creek Via Big Quilcene Trailhead",
+    "lat": 47.781423,
+    "lng": -123.052265,
+    "km": 14.9
+   },
+   {
+    "src": "USFS",
+    "name": "Slab Camp/Deer Ridge Trailhead",
+    "lat": 47.965118,
+    "lng": -123.193289,
+    "km": 15.1
+   },
+   {
+    "src": "NPS",
+    "name": "Slab Camp",
+    "lat": 47.964844,
+    "lng": -123.194033,
+    "km": 15.1
+   },
+   {
+    "src": "USFS",
+    "name": "Mount Townsend Upper Trailhead",
+    "lat": 47.856106,
+    "lng": -123.035636,
+    "km": 15.3
+   },
+   {
+    "src": "USFS",
+    "name": "Ned Hill",
+    "lat": 47.967926,
+    "lng": -123.187758,
+    "km": 15.5
+   },
+   {
+    "src": "USFS",
+    "name": "Little Quilcene Trailhead",
+    "lat": 47.886644,
+    "lng": -123.041897,
+    "km": 15.8
+   },
+   {
+    "src": "USFS",
+    "name": "Dungeness (Lower) / Gold Creek Trailhead",
+    "lat": 47.936417,
+    "lng": -123.092104,
+    "km": 15.8
+   },
+   {
+    "src": "NPS",
+    "name": "Dosewallips Road Wash-out",
+    "lat": 47.738836,
+    "lng": -123.073581,
+    "km": 16.1
+   },
+   {
+    "src": "USFS",
+    "name": "Tunnel Creek via Dosewallips Trailhead",
+    "lat": 47.740265,
+    "lng": -123.065779,
+    "km": 16.4
+   }
+  ],
+  "firstPass": {
+   "why": "held: agent flagged the identification as inferred/weak",
+   "trailhead": {
+    "name": "Upper Dungeness Trailhead (Royal Basin)",
+    "identifiedBy": {
+     "kind": "page_peak",
+     "url": "https://en.wikipedia.org/wiki/Mount_Johnson_(Washington)",
+     "fact": "Johnson is one of the Royal Basin mountaineering objectives in the Dungeness drainage; a 2014 ski report climbed its NW couloir from Royal Basin"
+    },
+    "placements": [
+     {
+      "source": "USFS",
+      "name": "Dungeness - Upper Trailhead",
+      "lat": 47.877578,
+      "lng": -123.136942,
+      "url": ""
+     },
+     {
+      "source": "NPS",
+      "name": "Royal Creek",
+      "lat": 47.878049,
+      "lng": -123.13699,
+      "url": ""
+     },
+     {
+      "source": "WTA",
+      "name": "Upper Dungeness/Royal Basin trailhead",
+      "lat": 47.8779,
+      "lng": -123.1369,
+      "url": "https://www.wta.org/go-hiking/hikes/royal-basin"
+     }
+    ]
+   },
+   "notes": "No route text. Peak-level only. Medium confidence: a NW couloir from Royal Basin is a NW-side line but the page does not say it is this route. Sibling standard route also uses Upper Dungeness. The three points are within 60 m."
+  }
+ },
+ {
+  "id": "wa_witches_tower_northwest_buttress",
+  "name": "Northwest Buttress",
+  "discipline": "alpine",
+  "grade": null,
+  "verdict": "SUMMIT_ONLY",
+  "state": "wa",
+  "peak": {
+   "id": "wa_witches_tower",
+   "name": "Witches Tower",
+   "lat": 47.4766,
+   "lng": -120.8255,
+   "elevation_ft": 8566,
+   "region": "Washington",
+   "path": "usa.washington.wa_centraleast.wa_stuart_range.wa_witches_tower"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [
+   {
+    "route": "wa_e_se_face",
+    "name": "Stuart Lake Trailhead"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Stuart Lake Trailhead",
+    "lat": 47.527806,
+    "lng": -120.820515,
+    "km": 5.7
+   },
+   {
+    "src": "USFS",
+    "name": "Eightmile Trailhead",
+    "lat": 47.536016,
+    "lng": -120.814025,
+    "km": 6.7
+   },
+   {
+    "src": "USFS",
+    "name": "Esmeralda Trailhead",
+    "lat": 47.436706,
+    "lng": -120.936915,
+    "km": 9.5
+   },
+   {
+    "src": "USFS",
+    "name": "Beverly Bean Trailhead",
+    "lat": 47.389302,
+    "lng": -120.872266,
+    "km": 10.3
+   },
+   {
+    "src": "USFS",
+    "name": "Iron Peak Trailhead",
+    "lat": 47.421583,
+    "lng": -120.937341,
+    "km": 10.4
+   },
+   {
+    "src": "USFS",
+    "name": "Fourth Of July Trailhead",
+    "lat": 47.578106,
+    "lng": -120.796015,
+    "km": 11.5
+   },
+   {
+    "src": "USFS",
+    "name": "Snow Lakes Trailhead",
+    "lat": 47.544106,
+    "lng": -120.709515,
+    "km": 11.5
+   },
+   {
+    "src": "USFS",
+    "name": "Ingalls Creek Trailhead",
+    "lat": 47.462906,
+    "lng": -120.673025,
+    "km": 11.6
+   },
+   {
+    "src": "USFS",
+    "name": "Stafford Creek Trailhead",
+    "lat": 47.365806,
+    "lng": -120.803615,
+    "km": 12.4
+   },
+   {
+    "src": "USFS",
+    "name": "Miller-bear Trailhead",
+    "lat": 47.368606,
+    "lng": -120.784615,
+    "km": 12.4
+   },
+   {
+    "src": "USFS",
+    "name": "Icicle Ridge Trailhead",
+    "lat": 47.568919,
+    "lng": -120.680113,
+    "km": 15
+   },
+   {
+    "src": "USFS",
+    "name": "Penstock Trailhead",
+    "lat": 47.586749,
+    "lng": -120.706609,
+    "km": 15.2
+   },
+   {
+    "src": "USFS",
+    "name": "Chatter Creek Trailhead",
+    "lat": 47.608249,
+    "lng": -120.881514,
+    "km": 15.2
+   },
+   {
+    "src": "USFS",
+    "name": "Icicle Gorge Trailhead",
+    "lat": 47.607806,
+    "lng": -120.895025,
+    "km": 15.5
+   },
+   {
+    "src": "USFS",
+    "name": "Jack Trout Trailhead",
+    "lat": 47.606506,
+    "lng": -120.916025,
+    "km": 16
+   }
+  ],
+  "firstPass": {
+   "why": "stuck: Route text empty. Mountain Project (approach text only) gives the peak's typical approach as Stuart Lake Trailhead via Colchuck Lake and Aasgard Pass, and lists",
+   "trailhead": null,
+   "notes": "Route text empty. Mountain Project (approach text only) gives the peak's typical approach as Stuart Lake Trailhead via Colchuck Lake and Aasgard Pass, and lists no NW Buttress; no page found describing this route's own approach, so peak-level identification could not be tied to its side. Likely candidate: USFS Stuart Lake Trailhead 47.527806,-120.820515 (WTA agrees 47.5277,-120.8210). Mountaineers and Wenatchee Outdoors 403."
+  }
+ }
+]

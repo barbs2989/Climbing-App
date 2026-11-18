@@ -1,0 +1,449 @@
+[
+ {
+  "id": "ca_trojan_peak_standard_route",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "class",
+    "value": "2",
+    "url": "https://climber.org/reports/2012/1815.html"
+   },
+   {
+    "field": "route",
+    "value": "NW face via Williamson-Trojan saddle (Secor 3rd ed p86), from Shepherd Pass",
+    "url": "https://climber.org/reports/2012/1815.html"
+   },
+   {
+    "field": "access",
+    "value": "Bighorn Sheep Zoological Area; George Creek is the shortest approach, daily limits",
+    "url": "https://mtnmouse.com/california/snb38_george_creek_trojan_peak.html"
+   },
+   {
+    "field": "fa",
+    "value": "Norman Clyde 1926-06-26",
+    "url": "https://en.wikipedia.org/wiki/Trojan_Peak"
+   }
+  ],
+  "notes": "Still stuck. Route has no text and no page names a single standard route. mtnmouse calls George Creek (east side, no signed trailhead, about 6,320 ft) the shortest and easiest approach to the SE slopes; the Secor class 2 NW face route is reached from Shepherd Pass (USFS Shepherd Pass Th 36.726905,-118.278912; climber.org says the hiker lot is past the stock trailhead). SummitPost and Peakbagger returned 403. Both approaches are class 2 on the peak; picking one would be a guess."
+ },
+ {
+  "id": "ca_tunemah_peak_east_ridge_via_dykeman_pass",
+  "status": "found",
+  "trailhead": {
+   "name": "Rancheria Trailhead (Wishon Reservoir)",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://www.snwburd.com/bob/trip_reports/tunemah_1.html",
+    "fact": "Bob Burd: from Rancheria TH east on Crown Valley Trail to Blue Canyon Trail, north to Dykeman Pass, Alpine Creek, East Ridge"
+   },
+   "placements": [
+    {
+     "source": "climber.org",
+     "name": "RANCHERIA TRAILHEAD 7600 (waypoint RANCHA)",
+     "lat": 36.97545,
+     "lng": -118.95603,
+     "url": "https://climber.org/driving/images/DinkeyCreek.gpx"
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "distance_mi",
+    "value": "over 45 round trip",
+    "url": "https://www.snwburd.com/bob/trip_reports/tunemah_1.html"
+   },
+   {
+    "field": "gain_ft",
+    "value": "over 13000",
+    "url": "https://www.snwburd.com/bob/trip_reports/tunemah_1.html"
+   },
+   {
+    "field": "class",
+    "value": "talus, some class 3 on east ridge",
+    "url": "https://www.snwburd.com/bob/trip_reports/tunemah_1.html"
+   },
+   {
+    "field": "trailhead_elev_ft",
+    "value": "7600",
+    "url": "https://climber.org/driving/DinkeyCreek.html"
+   },
+   {
+    "field": "alt_route",
+    "value": "Burnt Mountain Pass cross-country cutoff saves about 1 hr each way",
+    "url": "https://www.snwburd.com/bob/trip_reports/tunemah_1.html"
+   }
+  ],
+  "notes": "Identification now strong: a page describing this exact route (Dykeman Pass, East Ridge) starts at Rancheria TH. Placement is a climber.org driving-page GPX waypoint only (not a land-manager point). Not in official list; no second placement found (OSM by script from the name). Woodchuck TH (USFS 36.992058,-118.96353) is the nearby alternative; Maxson TH is a different side."
+ },
+ {
+  "id": "ca_tunnabora_peak_south_slope_from_tulainyo_lake",
+  "status": "found",
+  "trailhead": {
+   "name": "Whitney Portal Trailhead",
+   "identifiedBy": {
+    "kind": "route_text",
+    "fact": "Climb the Mountaineers Route to the Russell-Carillon plateau (starts at Whitney Portal); climber.org 2012/1810 did this exact line from Whitney Portal"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "Whitney Portal Trailhead",
+     "lat": 36.586905,
+     "lng": -118.240112,
+     "url": ""
+    },
+    {
+     "source": "Wikipedia",
+     "name": "Whitney Portal",
+     "lat": 36.58611,
+     "lng": -118.24139,
+     "url": "https://en.wikipedia.org/wiki/Whitney_Portal"
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "class",
+    "value": "pass north side class 3; sandy class 2 slopes",
+    "url": "https://climber.org/reports/2012/1810.html"
+   },
+   {
+    "field": "camp",
+    "value": "Russell-Carillon plateau about 12,910 ft; south slopes about 13,100 ft",
+    "url": "https://climber.org/reports/2012/1810.html"
+   },
+   {
+    "field": "water",
+    "value": "Tulainyo Lake",
+    "url": "https://climber.org/reports/2012/1810.html"
+   }
+  ],
+  "notes": "Placements about 100 m apart (Wikipedia gives the general Whitney Portal location); USFS point is the trailhead. Resolves the first pass hold. Peak is 4.3 km from it as the crow flies."
+ },
+ {
+  "id": "ca_twin_peaks_sierra_standard_route",
+  "status": "found",
+  "trailhead": {
+   "name": "Green Creek Trailhead",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://climber.org/reports/2007/1611.html",
+    "fact": "Twin Peaks via Green Lake and Virginia Pass (10,480 ft) from Green Creek TH; Twin Peaks reached from the Virginia Peak saddle by the ridge north"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "Green Creek Trailhead",
+     "lat": 38.112241,
+     "lng": -119.275354,
+     "url": ""
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "class",
+    "value": "2",
+    "url": "https://climber.org/reports/2007/1611.html"
+   },
+   {
+    "field": "distance_mi",
+    "value": "17.1 round trip with Virginia Peak",
+    "url": "https://themtsarecalling.com/virginiatwin/"
+   },
+   {
+    "field": "gain_ft",
+    "value": "5500 with Virginia Peak",
+    "url": "https://themtsarecalling.com/virginiatwin/"
+   },
+   {
+    "field": "pass_elev_ft",
+    "value": "10480 Virginia Pass",
+    "url": "https://climber.org/reports/2007/1611.html"
+   },
+   {
+    "field": "crux",
+    "value": "gendarmes below Twin Peaks, class 3",
+    "url": "https://themtsarecalling.com/virginiatwin/"
+   }
+  ],
+  "notes": "Two independent pages both take Green Creek TH to Virginia Pass and reach Twin Peaks by the ridge from Virginia Peak, so it is the Virginia Pass-side Twin Peaks, upgraded from weak. Only one placement (USFS)."
+ },
+ {
+  "id": "ca_virginia_peak_standard_route",
+  "status": "found",
+  "trailhead": {
+   "name": "Green Creek Trailhead (Green Lake Trailhead)",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://climber.org/reports/2007/1611.html",
+    "fact": "Virginia Peak class 2 NW ridge from camp past Virginia Pass, from Green Creek TH; second page themtsarecalling.com/virginiatwin says Green Lake Trailhead"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "Green Creek Trailhead",
+     "lat": 38.112241,
+     "lng": -119.275354,
+     "url": ""
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "class",
+    "value": "2, a few class 3 near summit",
+    "url": "https://climber.org/reports/2007/1611.html"
+   },
+   {
+    "field": "distance_mi",
+    "value": "5.8 to Virginia Pass, 2500 ft gain",
+    "url": "https://climber.org/reports/2007/1611.html"
+   }
+  ],
+  "notes": "Two pages now agree; Green Lake TH is the Green Creek TH (3 mi trail to Green Lake). One placement only."
+ },
+ {
+  "id": "ca_volunteer_peak_standard_route",
+  "status": "found",
+  "trailhead": {
+   "name": "Robinson Creek Trailhead (Twin Lakes / Barney Lake Trail)",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://www.snwburd.com/bob/trip_reports/volunteer_1.html",
+    "fact": "Twin Lakes day-use lot, Barney Lake Trail west over Seavey Pass to Volunteer's west face"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "Robinson Creek Trailhead",
+     "lat": 38.146801,
+     "lng": -119.389785,
+     "url": ""
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "class",
+    "value": "West Face class 2 lower, 3+ headwall; SW ridge easiest",
+    "url": "https://www.snwburd.com/bob/trip_reports/volunteer_1.html"
+   },
+   {
+    "field": "alt_start",
+    "value": "Horsecreek Pass approach used 2006",
+    "url": "https://www.snwburd.com/bob/trip_reports/volunteer_1.html"
+   }
+  ],
+  "notes": "Low confidence: one report, and it was the long West Face line; the same page calls the SW ridge/slopes the easiest route but does not name its trailhead. Long approach; a Yosemite-side start is possible."
+ },
+ {
+  "id": "ca_west_vidette_standard_route",
+  "status": "found",
+  "trailhead": {
+   "name": "Onion Valley Trailhead",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://sites.google.com/view/wacziarg-climbing/2021-10-19-west-vidette",
+    "fact": "Onion Valley over Kearsarge Pass to Vidette Meadow, Northeast Chute class 2"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "Onion Valley Campground",
+     "lat": 36.772538,
+     "lng": -118.341244,
+     "url": ""
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "distance_mi",
+    "value": "23 round trip",
+    "url": "https://sites.google.com/view/wacziarg-climbing/2021-10-19-west-vidette"
+   },
+   {
+    "field": "gain_ft",
+    "value": "7850",
+    "url": "https://sites.google.com/view/wacziarg-climbing/2021-10-19-west-vidette"
+   },
+   {
+    "field": "class",
+    "value": "2 via Northeast Chute",
+    "url": "https://sites.google.com/view/wacziarg-climbing/2021-10-19-west-vidette"
+   }
+  ],
+  "notes": "Still one trip report; page does not say this is the standard route. Onion Valley is the shortest road end to Vidette Meadow. USFS point is the campground at the road end; the trailhead lot is adjacent."
+ },
+ {
+  "id": "ca_wheel_mountain_standard_route",
+  "status": "found",
+  "trailhead": {
+   "name": "South Lake Trailhead",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://sites.google.com/view/wacziarg-climbing/2020-06-wheel-mountain-devils-crag-1-mount-mcduffie",
+    "fact": "South Lake, Bishop Pass, Le Conte Canyon, Rambaud Creek, Rambaud Pass, SE ridge class 2"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "South Lake Trailhead",
+     "lat": 37.169305,
+     "lng": -118.565813,
+     "url": ""
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "class",
+    "value": "SE ridge mostly 2, a bit of steep 3",
+    "url": "https://sites.google.com/view/wacziarg-climbing/2020-06-wheel-mountain-devils-crag-1-mount-mcduffie"
+   },
+   {
+    "field": "distance_mi",
+    "value": "7 (summit day from Grouse Meadow camp)",
+    "url": "https://sites.google.com/view/wacziarg-climbing/2020-06-wheel-mountain-devils-crag-1-mount-mcduffie"
+   },
+   {
+    "field": "gain_ft",
+    "value": "4400 (summit day)",
+    "url": "https://sites.google.com/view/wacziarg-climbing/2020-06-wheel-mountain-devils-crag-1-mount-mcduffie"
+   }
+  ],
+  "notes": "Low confidence: one multi-peak report, no second page. Peak is far from the lot (20+ trail miles). West-side start via Courtright/Maxson not ruled out."
+ },
+ {
+  "id": "co_cathedral_peak_south_ridge_and_couloir",
+  "status": "found",
+  "trailhead": {
+   "name": "Cathedral Lake Trailhead",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://www.climb13ers.com/colorado-13ers/cathedral-peak",
+    "fact": "South Ridge & Couloir route from Cathedral Lake TH, Trail 1984 to Cathedral Lake, rubble basin, northernmost couloir; route text also says trail to Cathedral Lake"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "Cathedral Trailhead",
+     "lat": 39.042686,
+     "lng": -106.80818,
+     "url": ""
+    },
+    {
+     "source": "climb13ers",
+     "name": "Cathedral Lake Trailhead",
+     "lat": 39.042842,
+     "lng": -106.808161,
+     "url": "https://www.climb13ers.com/colorado-13ers/cathedral-peak"
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "distance_mi",
+    "value": "8.6 round trip",
+    "url": "https://www.climb13ers.com/colorado-13ers/cathedral-peak"
+   },
+   {
+    "field": "gain_ft",
+    "value": "4025",
+    "url": "https://www.climb13ers.com/colorado-13ers/cathedral-peak"
+   },
+   {
+    "field": "class",
+    "value": "3",
+    "url": "https://www.climb13ers.com/colorado-13ers/cathedral-peak"
+   },
+   {
+    "field": "trailhead_elev_ft",
+    "value": "9910",
+    "url": "https://www.climb13ers.com/colorado-13ers/cathedral-peak"
+   },
+   {
+    "field": "permit",
+    "value": "overnight self-register, bear canister required",
+    "url": "https://www.climb13ers.com/colorado-13ers/cathedral-peak"
+   },
+   {
+    "field": "road",
+    "value": "Castle Creek Road CR15, about 12 mi from Aspen; passenger car",
+    "url": "https://www.climb13ers.com/colorado-13ers/cathedral-peak"
+   }
+  ],
+  "notes": "Confirmed: route text (trail to Cathedral Lake) plus climb13ers; USFS and climb13ers points agree within about 20 m. Route text says class 2-ish scramble; climb13ers rates class 3."
+ },
+ {
+  "id": "co_clinton_peak_south_slope",
+  "status": "found",
+  "trailhead": {
+   "name": "Wheeler Lake / Montgomery Reservoir Trailhead",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://www.climb13ers.com/colorado-13ers/clinton-peak",
+    "fact": "Clinton Peak SSW ridge from Wheeler Lake-Montgomery Reservoir TH, climbed with Traver and McNamee, matching the route text 'with neighboring McNamee and Traver'"
+   },
+   "placements": [
+    {
+     "source": "climb13ers",
+     "name": "Wheeler Lake-Montgomery Reservoir trailhead",
+     "lat": 39.356767,
+     "lng": -106.082872,
+     "url": "https://www.climb13ers.com/colorado-13ers/clinton-peak"
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "distance_mi",
+    "value": "12.8 round trip",
+    "url": "https://www.climb13ers.com/colorado-13ers/clinton-peak"
+   },
+   {
+    "field": "gain_ft",
+    "value": "3200",
+    "url": "https://www.climb13ers.com/colorado-13ers/clinton-peak"
+   },
+   {
+    "field": "trailhead_elev_ft",
+    "value": "10970",
+    "url": "https://www.climb13ers.com/colorado-13ers/clinton-peak"
+   },
+   {
+    "field": "class",
+    "value": "2",
+    "url": "https://www.climb13ers.com/colorado-13ers/clinton-peak"
+   },
+   {
+    "field": "road",
+    "value": "CR 4 from Hwy 9 near Alma/Hoosier Pass; passenger cars park at lower lot, 4WD to about 11,680 ft",
+    "url": "https://www.climb13ers.com/colorado-13ers/clinton-peak"
+   }
+  ],
+  "notes": "Moderate: page lists SSW Ridge, not 'South Slope', but it is the only route listed and the same single trailhead serves the Traver-McNamee-Clinton traverse. One placement only (climb13ers GPS); not in official list. Ground check: the page says the road end is the parking area; many walk further up the road."
+ }
+]

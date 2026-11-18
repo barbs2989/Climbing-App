@@ -1,0 +1,558 @@
+[
+ {
+  "id": "wa_mount_olympus_2_north_ridge_via_blue_glacier",
+  "status": "found",
+  "trailhead": {
+   "name": "Hoh Rain Forest Trailhead (Hoh River Trail)",
+   "identifiedBy": {
+    "kind": "page_peak",
+    "url": "https://www.nps.gov/olym/planyourvisit/climbing-mount-olympus.htm",
+    "fact": "approach to Mount Olympus climbs follows the Hoh River Trail; route is via Blue Glacier"
+   },
+   "placements": [
+    {
+     "source": "NPS",
+     "name": "Hoh Visitor Center",
+     "lat": 47.860086,
+     "lng": -123.934709,
+     "url": ""
+    },
+    {
+     "source": "NPS",
+     "name": "Hoh Ranger Station",
+     "lat": 47.860251,
+     "lng": -123.934853,
+     "url": ""
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "elevation_glacier_meadows_to_summit_ft",
+    "value": "4400 to 7980",
+    "url": "https://www.nps.gov/olym/planyourvisit/climbing-mount-olympus.htm"
+   }
+  ],
+  "notes": "NPS page names no trailhead, only the Hoh River Trail; that trail starts at the Hoh Visitor Center (NPS candidates). Sibling Blue Glacier route uses Hoh River Ranger Station (same place). Route's own text empty."
+ },
+ {
+  "id": "wa_olympus_summit_block_north_face",
+  "status": "found",
+  "trailhead": {
+   "name": "Hoh Rain Forest Trailhead (Hoh River Trail)",
+   "identifiedBy": {
+    "kind": "route_text",
+    "fact": "From the Hoh Rain Forest trailhead, follow the Hoh River Trail east"
+   },
+   "placements": [
+    {
+     "source": "NPS",
+     "name": "Hoh Visitor Center",
+     "lat": 47.860086,
+     "lng": -123.934709,
+     "url": ""
+    },
+    {
+     "source": "NPS",
+     "name": "Hoh Ranger Station",
+     "lat": 47.860251,
+     "lng": -123.934853,
+     "url": ""
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "distance_to_glacier_meadows_mi",
+    "value": "17.3 (route text)",
+    "url": ""
+   }
+  ],
+  "notes": "Placement is the Hoh Visitor Center/Ranger Station where the Hoh River Trail begins."
+ },
+ {
+  "id": "wa_mount_persis_the_hexorcist",
+  "status": "found",
+  "trailhead": {
+   "name": "Mount Persis Trailhead (FR 62 / FR 6220 road end)",
+   "identifiedBy": {
+    "kind": "route_text",
+    "fact": "leave the West Ridge boot path ... FR 6220 / Anderson Creek drainage"
+   },
+   "placements": [
+    {
+     "source": "WTA",
+     "name": "Mount Persis trailhead (pullout near road end)",
+     "lat": 47.7931,
+     "lng": -121.6449,
+     "url": "https://www.wta.org/go-hiking/hikes/mount-persis"
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "west_ridge_roundtrip_mi",
+    "value": "4.0",
+    "url": "https://www.wta.org/go-hiking/hikes/mount-persis"
+   },
+   {
+    "field": "west_ridge_gain_ft",
+    "value": "2658",
+    "url": "https://www.wta.org/go-hiking/hikes/mount-persis"
+   },
+   {
+    "field": "road",
+    "value": "US 2 to FR 62 ~3.5 mi, FR 6220, then ~2 mi rough road to small pullout; may not suit cars",
+    "url": "https://www.wta.org/go-hiking/hikes/mount-persis"
+   }
+  ],
+  "notes": "No USFS/NPS point matches; only a WTA coordinate (one placement). Route has no trail; starts off the West Ridge approach, same road end as the sibling West Ridge route."
+ },
+ {
+  "id": "wa_mount_price_northwest_route",
+  "status": "found",
+  "trailhead": {
+   "name": "Dingford Creek Trailhead",
+   "identifiedBy": {
+    "kind": "route_text",
+    "fact": "Take the Dingford Creek trail about 2.2 miles to its crossing of Goat Creek"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "Dingford Creek Trailhead",
+     "lat": 47.517325,
+     "lng": -121.4543,
+     "url": ""
+    },
+    {
+     "source": "WTA",
+     "name": "Dingford Creek trailhead",
+     "lat": 47.5174,
+     "lng": -121.4542,
+     "url": "https://www.wta.org/go-hiking/hikes/dingford-creek"
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "peak_elev_ft",
+    "value": "5587",
+    "url": "https://www.wta.org/go-hiking/hikes/dingford-creek"
+   }
+  ],
+  "notes": ""
+ },
+ {
+  "id": "wa_mount_pugh_pika_slab",
+  "status": "summit_only_answered",
+  "trailhead": null,
+  "reachesSummit": false,
+  "summitEvidence": {
+   "kind": "route_text",
+   "fact": "Pika Slab is a short crag band above the trail between the class 3 step and the summit; descent is the slab's short downclimb then the NW ridge in reverse; route does not go to the summit",
+   "url": ""
+  },
+  "otherFacts": [
+   {
+    "field": "trailhead",
+    "value": "Mount Pugh Trailhead 48.1454,-121.4161, 1900 ft",
+    "url": "https://www.wta.org/go-hiking/hikes/mount-pugh"
+   },
+   {
+    "field": "roundtrip_mi",
+    "value": "11.0",
+    "url": "https://www.wta.org/go-hiking/hikes/mount-pugh"
+   },
+   {
+    "field": "gain_ft",
+    "value": "5300",
+    "url": "https://www.wta.org/go-hiking/hikes/mount-pugh"
+   },
+   {
+    "field": "high_point_ft",
+    "value": "7201",
+    "url": "https://www.wta.org/go-hiking/hikes/mount-pugh"
+   }
+  ],
+  "notes": "Trailhead already pinned on the route (matches WTA 48.1454,-121.4161 and USFS Mt Pugh 48.147917,-121.416158, about 250 m apart). No page found that describes Pika Slab itself."
+ },
+ {
+  "id": "wa_mount_rahm_custer_traverse",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": true,
+  "summitEvidence": {
+   "kind": "route_text",
+   "fact": "ridge-crest traverse directly connecting the summits of Mount Rahm and Mount Custer",
+   "url": ""
+  },
+  "otherFacts": [
+   {
+    "field": "class",
+    "value": "2/3 with one short class 4 gully",
+    "url": ""
+   }
+  ],
+  "notes": "Ridge link launched from the Rahm South Side / Custer South Ridge approach via Depot Creek, BC (Chilliwack Lake Rd + Depot Creek Rd, washed out beyond ~1-1.6 mi). No single named trailhead in its text and no official point matches. Not researched further."
+ },
+ {
+  "id": "wa_glacier_peak_south_tahoma_headwall",
+  "status": "found",
+  "trailhead": {
+   "name": "Westside Road: Dry Creek Trailhead",
+   "identifiedBy": {
+    "kind": "route_text",
+    "fact": "closed Westside Road beyond the Dry Creek gate"
+   },
+   "placements": []
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "road_open",
+    "value": "summer only, May-Nov to Dry Creek; park south of barricade",
+    "url": "https://www.nps.gov/places/westside-road-dry-creek-trailhead.htm"
+   },
+   {
+    "field": "tahoma_creek_trailhead",
+    "value": "3200-3500 ft, 4.7 mi from start of Westside Road",
+    "url": "https://www.mountaineers.org/activities/routes-places/mount-rainier-success-cleaver"
+   }
+  ],
+  "notes": "NPS Dry Creek page prints no coordinate and no candidate in the list matches; empty placements, name only. Peak is Rainier (route id says glacier_peak). Barricade moves with washouts (Mountaineers: Dry Falls 2,840 ft in 2015)."
+ },
+ {
+  "id": "wa_glacier_peak_tahoma_cleaver",
+  "status": "found",
+  "trailhead": {
+   "name": "Westside Road: Dry Creek Trailhead",
+   "identifiedBy": {
+    "kind": "route_text",
+    "fact": "From Westside Road - Dry Creek Trailhead, walk the closed road past the barricade to the Tahoma Creek Trail"
+   },
+   "placements": []
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "tahoma_creek_trail_to_wonderland_mi",
+    "value": "2.0 to ~4300 ft",
+    "url": "https://www.mountaineers.org/activities/routes-places/mount-rainier-success-cleaver"
+   },
+   {
+    "field": "success_cleaver_roundtrip",
+    "value": "25.0 mi, 11500 ft gain to summit",
+    "url": "https://www.mountaineers.org/activities/routes-places/mount-rainier-success-cleaver"
+   },
+   {
+    "field": "high_point_ft",
+    "value": "14416",
+    "url": "https://www.mountaineers.org/activities/routes-places/mount-rainier-success-cleaver"
+   }
+  ],
+  "notes": "Same coordinate gap as South Tahoma Headwall. Mountaineers Success Cleaver page agrees on this approach."
+ },
+ {
+  "id": "wa_mount_rainier_east_success_couloir",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Route's own text offers three starts (Westside Road, Paradise, Van Trump Meadows) and says the easiest may be from Paradise or Van Trump; no page found that settles it."
+ },
+ {
+  "id": "wa_mount_rainier_north_mowich_icefall",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "No route text. Mowich Lake is the likely start (Mountaineers Ptarmigan Ridge page, seen only as a search snippet, says that approach is the Wonderland Trail from Mowich Lake across Mowich Glacier) but I did not open a page about the North Mowich icefall, and the Mountaineers page returned 403 to my fetch. NPS Mowich Lake page prints no coordinate and does not mention climbing. NPS says SR 165 Fairfax Bridge access is closed."
+ },
+ {
+  "id": "wa_mount_sefrit_bloody_head_couloir",
+  "status": "summit_only_answered",
+  "trailhead": null,
+  "reachesSummit": "unknown",
+  "summitEvidence": {
+   "kind": "route_text",
+   "fact": "gains the upper snow slopes of Nooksack Ridge near the summit crest (not stated to reach the summit)",
+   "url": ""
+  },
+  "otherFacts": [
+   {
+    "field": "trailhead",
+    "value": "Hannegan Pass Trailhead 3120 ft",
+    "url": "https://www.wta.org/go-hiking/hikes/hannegan-pass"
+   },
+   {
+    "field": "couloir_gain_ft",
+    "value": "1800",
+    "url": ""
+   }
+  ],
+  "notes": "Trailhead already pinned and matches USFS Hannegan 48.910191,-121.591986 and WTA 48.9101,-121.5927."
+ },
+ {
+  "id": "wa_mount_sefrit_southeast_ridge",
+  "status": "found",
+  "trailhead": {
+   "name": "Ruth Creek Road pullout near milepost 3 (FS 32, about 2,950 ft)",
+   "identifiedBy": {
+    "kind": "route_text",
+    "fact": "pullout near milepost 3, just past a creek flowing over a concrete weir, well short of the road's end"
+   },
+   "placements": []
+  },
+  "reachesSummit": true,
+  "summitEvidence": {
+   "kind": "route_text",
+   "fact": "Class 2-3 scramble up the southeast ridge to the top; descent reverses it",
+   "url": ""
+  },
+  "otherFacts": [
+   {
+    "field": "approach_bushwhack_min",
+    "value": "45",
+    "url": ""
+   }
+  ],
+  "notes": "NOT the Hannegan trailhead: the route's existing pin 'Hannegan trailhead, end of the Ruth Creek road' (typed Campsite) is further up the road (road end is 5.4 mi past the FS 32 fork). The pullout is an unnamed roadside spot with no official point and I found no coordinate for it."
+ },
+ {
+  "id": "wa_mount_steel_first_divide",
+  "status": "summit_only_answered",
+  "trailhead": null,
+  "reachesSummit": true,
+  "summitEvidence": {
+   "kind": "route_text",
+   "fact": "from First Divide continue cross-country to Mount Steel's summit; descent from the summit block back to First Divide",
+   "url": ""
+  },
+  "otherFacts": [
+   {
+    "field": "roundtrip_mi",
+    "value": "about 29",
+    "url": ""
+   }
+  ],
+  "notes": "Trailhead already pinned (Staircase 47.5155,-123.3295; NPS Staircase Ranger Station 47.51612,-123.327934 about 200 m away)."
+ },
+ {
+  "id": "wa_mount_stuart_direct_north_ridge",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "grade",
+    "value": "5.9, about 3000 ft",
+    "url": "https://stephabegg.com/?p=8737"
+   },
+   {
+    "field": "north_approach_car_to_base_h",
+    "value": "3:13",
+    "url": "https://stephabegg.com/?p=8737"
+   },
+   {
+    "field": "south_car_to_car_h",
+    "value": "16:47 incl. Cascadian Couloir descent",
+    "url": "https://stephabegg.com/?p=8737"
+   }
+  ],
+  "notes": "Two valid approaches with no way to pick for this route: north side from the Stuart Lake / Colchuck trailhead (USFS Stuart Lake Trailhead 47.527806,-120.820515) or south side from Esmeralda Trailhead (USFS 47.436706,-120.936915) via Lake Ingalls and Goat Pass. Route's own text is silent."
+ },
+ {
+  "id": "wa_mount_stuart_gorillas_in_the_mist",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "pitches",
+    "value": "8-10, 900 ft, grade 5.10d (for Gorillas Direct)",
+    "url": "https://www.mountainproject.com/v/gorillas-direct/112263877"
+   }
+  ],
+  "notes": "West Face Wall between Goat Pass and Stuart Pass (Mountain Project page). South-side approach via Lake Ingalls and Goat Pass starts at Esmeralda Trailhead (USFS 47.436706,-120.936915; sibling Gorillas Direct uses it), but a north approach via Mountaineer Creek also reaches Stuart Pass and no page I opened ties this route to one. Lead only."
+ },
+ {
+  "id": "wa_mount_stuart_stuart_range_traverse",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "A multi-peak traverse with no single trailhead and no route text; not researched."
+ },
+ {
+  "id": "wa_mount_triumph_west_route",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "class",
+    "value": "4, dangerous when wet",
+    "url": "https://en.wikipedia.org/wiki/Mount_Triumph"
+   }
+  ],
+  "notes": "Route text says it is reached by the Triumph Pass climbers' route rather than the Thornton Lakes approach, but no page I opened names where that route starts (Wikipedia names none). Thornton Lakes TH is for the NE Ridge only."
+ },
+ {
+  "id": "wa_mount_washington_olympic_winter_direct",
+  "status": "found",
+  "trailhead": {
+   "name": "Jefferson Pass Trailhead (end of FR 2419)",
+   "identifiedBy": {
+    "kind": "route_text",
+    "fact": "Start at the Jefferson Pass trailhead at the end of FR-2419, beside the Mount Washington trailhead"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "Jefferson Pass Trailhead",
+     "lat": 47.521266,
+     "lng": -123.231467,
+     "url": ""
+    },
+    {
+     "source": "WTA",
+     "name": "Mount Washington trailhead (FR 2419)",
+     "lat": 47.5204,
+     "lng": -123.2352,
+     "url": "https://www.wta.org/go-hiking/hikes/mount-washington"
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "standard_roundtrip_mi",
+    "value": "4.0",
+    "url": "https://www.wta.org/go-hiking/hikes/mount-washington"
+   },
+   {
+    "field": "standard_gain_ft",
+    "value": "3190",
+    "url": "https://www.wta.org/go-hiking/hikes/mount-washington"
+   }
+  ],
+  "notes": "USFS and WTA points are about 380 m apart, consistent with the text's 'beside'. USFS point is the Jefferson Pass TH proper."
+ },
+ {
+  "id": "wa_north_early_winter_spire_christianson_roskelley",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Likely Blue Lake Trailhead (USFS 48.519016,-120.674215) as for most NEWS routes, but no opened page puts THIS route on the west side; east-side climbs park at the highway hairpin (USFS Hairpin 48.514336,-120.642715). Mountain Project approach page (opened): most NEWS routes are on the west side, reached by the Blue Lake Trail (No. 314), 2.5 mi, 1913 ft gain to the climbers' trail below the west face. "
+ },
+ {
+  "id": "wa_north_early_winter_spire_twitch_of_the_death_nerve",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Lead is Blue Lake TH; side of the peak not confirmed for this route and no page about it found. Mountain Project approach page (opened): most NEWS routes are on the west side, reached by the Blue Lake Trail (No. 314), 2.5 mi, 1913 ft gain to the climbers' trail below the west face. "
+ },
+ {
+  "id": "wa_north_early_winter_spire_vulcan_death_grip",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "No page found naming this route (search returned nothing); lead only, Blue Lake TH vs Hairpin. Mountain Project approach page (opened): most NEWS routes are on the west side, reached by the Blue Lake Trail (No. 314), 2.5 mi, 1913 ft gain to the climbers' trail below the west face. "
+ },
+ {
+  "id": "wa_north_early_winters_spire_northwest_corner_a_k_a_boving_pollack_route",
+  "status": "found",
+  "trailhead": {
+   "name": "Blue Lake Trailhead",
+   "identifiedBy": {
+    "kind": "page_peak",
+    "url": "https://www.mountainproject.com/approach-trail/119406478/approach-to-north-early-winter-spire",
+    "fact": "approach to NEWS west face is the Blue Lake Trail No. 314 then climbers' trail; NW Corner is on the west-facing side"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "Blue Lake Trailhead",
+     "lat": 48.519016,
+     "lng": -120.674215,
+     "url": ""
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "approach",
+    "value": "2.5 mi, 1913 ft gain via Blue Lake Trail",
+    "url": "https://www.mountainproject.com/approach-trail/119406478/approach-to-north-early-winter-spire"
+   },
+   {
+    "field": "pitches_grade",
+    "value": "4 pitches, 5.9+",
+    "url": "https://stephabegg.com/?p=8765"
+   },
+   {
+    "field": "parking_pass",
+    "value": "Northwest Forest Pass at Blue Lake TH",
+    "url": ""
+   }
+  ],
+  "notes": "Medium confidence, peak-level: the opened page puts the Blue Lake approach under the west face and the NW Corner is on that side. SummitPost not used."
+ },
+ {
+  "id": "wa_north_peak_north_ridge",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "No route text, and I could not identify which North Peak this is (row coordinate 48.3068,-120.994 is roughly 9 km east of the Bachelor Creek area the West Face route uses). Searches found nothing."
+ },
+ {
+  "id": "wa_north_peak_southeast_buttress",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Same as North Peak North Ridge: peak could not be identified and no page found."
+ },
+ {
+  "id": "wa_west_face_2",
+  "status": "summit_only_answered",
+  "trailhead": null,
+  "reachesSummit": "unknown",
+  "summitEvidence": {
+   "kind": "route_text",
+   "fact": "climbs the centre of the West Face, then four double-rope rappels back down the face; text does not say the summit is reached",
+   "url": ""
+  },
+  "otherFacts": [],
+  "notes": "Trailhead already pinned (Downey Creek 48.2591,-121.2244, about 100 m from USFS 48.259506,-121.222915). Suiattle River Road closed to vehicles near milepost 4 per route text. Rappel descent down the face suggests the route ends at the top of the face rather than the summit."
+ }
+]

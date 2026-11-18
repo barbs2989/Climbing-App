@@ -1,0 +1,159 @@
+[
+{"id":"ca_north_maggie_mountain_saddle_route_from_long_meadow","status":"found",
+ "trailhead":{"name":"Shake Camp Trailhead (Long Meadow Trail, Mountain Home State Forest)",
+  "identifiedBy":{"kind":"page","fact":"USFS says the Long Meadow Trail (31E15) begins at Shake Camp; a North Maggie trip report parks near Shake Camp, crosses the Tule River and climbs the west slopes over Pt 10,113","url":"https://www.fs.usda.gov/r05/sequoia/recreation/trails/long-meadow-trail"},
+  "placements":[
+   {"source":"climber.org driving GPX (SHAKEC, Shake Camp Trailhead 6500)","name":"Shake Camp Trailhead","lat":36.24929,"lng":-118.67118,"url":"https://climber.org/driving/images/mtnhome.gpx"},
+   {"source":"The Dyrt","name":"Shake Camp - State Forest (campground)","lat":36.249,"lng":-118.670,"url":"https://www.thedyrt.com/camping/california/shake-camp-state-forest"}]},
+ "reachesSummit":null,"summitEvidence":null,
+ "otherFacts":[
+  {"field":"trail_length_mi","value":"7.2 (Long Meadow Trail, Shake Camp to forest boundary)","url":"https://www.fs.usda.gov/r05/sequoia/recreation/trails/long-meadow-trail"},
+  {"field":"trailhead_elev_ft","value":"6800 (USFS) / 6500 (climber.org)","url":"https://www.fs.usda.gov/r05/sequoia/recreation/trails/long-meadow-trail"},
+  {"field":"permit","value":"Golden Trout Wilderness permit for overnight","url":"https://www.fs.usda.gov/r05/sequoia/recreation/trails/long-meadow-trail"},
+  {"field":"distance_mi","value":"11.1 round trip","url":"https://themtsarecalling.com/maggie/"},
+  {"field":"gain_ft","value":"5700","url":"https://themtsarecalling.com/maggie/"},
+  {"field":"time_hr","value":"8:00 total","url":"https://themtsarecalling.com/maggie/"},
+  {"field":"crux_class","value":"3 (that report's west-slope line over Pt 10,113)","url":"https://themtsarecalling.com/maggie/"},
+  {"field":"route","value":"typical ascent is the drainage NW of the summit; burn area, Middle Tule Grove, river crossing","url":"https://themtsarecalling.com/maggie/"}],
+ "notes":"Strong: route text (Long Meadow, cross Middle Fork Tule, saddle by Pt 10,113) matches the Shake Camp/Long Meadow trail and the 2025 report. Other North Maggie trips start at Summit Trailhead (Burd) or Mountain Home; not this route. The Dyrt point is the campground, within ~100 m of the climber.org trailhead point. No USFS/NPS candidate in the input list is this trailhead."},
+
+{"id":"ca_observation_peak_standard_route","status":"found",
+ "trailhead":{"name":"Taboose Pass Trailhead",
+  "identifiedBy":{"kind":"page","fact":"Trailhead Taboose Pass, then Upper Basin and Amphitheater Pass to Observation; a 2016 Taboose-start plan also climbed Observation. Taboose is the nearest road trailhead on the east side (weak-moderate: peak-specific reports are overnight trips)","url":"https://climber.org/reports/2007/1718.html"},
+  "placements":[
+   {"source":"USFS","name":"TABOOSE PASS TH","lat":37.009505,"lng":-118.327312,"url":""},
+   {"source":"climber.org driving GPX (TABCRK, Taboose Pass Trailhead 5400)","name":"Taboose Pass Trailhead","lat":37.009199977,"lng":-118.326900005,"url":"https://climber.org/driving/images/TaboosePass.gpx"}]},
+ "reachesSummit":null,"summitEvidence":null,
+ "otherFacts":[
+  {"field":"trailhead_elev_ft","value":"5400","url":"https://climber.org/driving/TaboosePass.html"},
+  {"field":"road","value":"Aberdeen Station Rd off US 395, high clearance recommended, last 2 mi rough","url":"https://climber.org/driving/TaboosePass.html"},
+  {"field":"easiest_route","value":"Class 2 via Dumbbell Lakes","url":"https://en.wikipedia.org/wiki/Observation_Peak_(California)"},
+  {"field":"first_ascent","value":"1902 J.N. LeConte, C.W. Lindley","url":"https://en.wikipedia.org/wiki/Observation_Peak_(California)"},
+  {"field":"route_from_Upper_Basin","value":"Amphitheater Pass (class 1-2), ledge/chute descent, Amphitheater Lake, Cataract Creek Pass, class 2 east ridge","url":"https://climber.org/reports/2007/1718.html"},
+  {"field":"time_hr","value":"about 9 hr camp to camp from Upper Basin","url":"https://climber.org/reports/2007/1718.html"},
+  {"field":"distance_mi","value":"about 10 round trip from Upper Basin camp (author estimate)","url":"https://climber.org/reports/1999/494.html"},
+  {"field":"gain_ft","value":"about 3000 up, 1600 on return from Upper Basin camp","url":"https://climber.org/reports/1999/494.html"},
+  {"field":"taboose_trail","value":"about 8 mi and 6000 ft gain to Taboose Pass","url":"https://climber.org/reports/2016/1872.html"}],
+ "notes":"Confirms first pass: still inferred. Standard route is the Dumbbell Lakes line, which on the east side is also approached from Taboose via Vennacher Col (a 2016 plan). Observation is a multi-day backpack from any trailhead; Big Pine Creek and Sabrina are far farther. Both placements agree within 50 m."},
+
+{"id":"ca_pettit_peak_standard_route","status":"found",
+ "trailhead":{"name":"Glen Aulin Trailhead (Tuolumne Meadows)",
+  "identifiedBy":{"kind":"page","fact":"Day trip from Tuolumne Meadows down the Glen Aulin trail to Return Creek, then up and over to Register Creek and the north ridge to Pettit (low-moderate: single report, from one side of the peak)","url":"https://www.snwburd.com/bob/trip_reports/pettit_1.html"},
+  "placements":[
+   {"source":"NPS","name":"Glen Aulin Trailhead","lat":37.878889,"lng":-119.358511,"url":""},
+   {"source":"climber.org driving GPX (LEMBRT, Lembert Dome Trailhead; PCT north to Glen Aulin)","name":"Lembert Dome Trailhead","lat":37.878409982,"lng":-119.356999993,"url":"https://climber.org/driving/images/TiogaPass.gpx"}]},
+ "reachesSummit":null,"summitEvidence":null,
+ "otherFacts":[
+  {"field":"distance_mi","value":"about 10 from Tuolumne Meadows to Return Creek, plus about 1.5 up the creek and 3 cross-country","url":"https://www.snwburd.com/bob/trip_reports/pettit_1.html"},
+  {"field":"gain_ft","value":"about 4500 from the bottom of Return Creek, plus about 3000 loss down to it","url":"https://www.snwburd.com/bob/trip_reports/pettit_1.html"},
+  {"field":"time_hr","value":"about 18 hr round trip day; 9.5 hr to summit","url":"https://www.snwburd.com/bob/trip_reports/pettit_1.html"},
+  {"field":"class","value":"class 3 ridgeline near summit (Burd); class 2 from Volunteer Peak (Wacziarg)","url":"https://sites.google.com/view/wacziarg-climbing/2021-08-volunteer-peak-pettit-peak-regulation-peak"},
+  {"field":"alternate_approach","value":"Smedberg Lake via Virginia Lakes TH, over Volunteer Peak, class 2","url":"https://sites.google.com/view/wacziarg-climbing/2021-08-volunteer-peak-pettit-peak-regulation-peak"}],
+ "notes":"Weak-to-moderate. The only Tuolumne-side account names the town, not a lot; the Glen Aulin trail starts at the Tuolumne Meadows stables/Lembert area (two points ~140 m apart). Pettit is also reached from the north (Virginia Lakes/Twin Lakes via Smedberg or Seavey Pass) and usually paired with Volunteer Peak. SummitPost was 403 (blocked). Treat as a drivable start, not a standard."},
+
+{"id":"ca_picket_guard_peak_standard_route","status":"stuck",
+ "trailhead":null,"reachesSummit":null,"summitEvidence":null,
+ "otherFacts":[
+  {"field":"class","value":"2 overall; summit block 3rd class (about 6 ft)","url":"https://climber.org/reports/1999/466.html"},
+  {"field":"route","value":"north ridge (eastern of two) from lake at 10,800/11,400 ft in Picket Creek drainage, about 700 ft of climbing","url":"https://climber.org/reports/1999/466.html"},
+  {"field":"route","value":"approach from Picket Creek camp (next-to-last lake), third class descent to Kern-Kaweah River","url":"https://climber.org/reports/2003/1143.html"}],
+ "notes":"Three climber.org reports, all multi-day loops from two different trailheads: 2003/1143 starts at Mineral King (Sawtooth Pass Trail, then Little Five Lakes, Chagoopa Plateau, Kaweah Pass), 1999/466 and 2003/1154 start at Rowell Meadow (Marvin Pass), via Colby Pass / Gallats Lake. Neither is a standard; the peak is in the remote Kern-Kaweah basin 17+ km from any road. Candidate if forced: Mineral King Sawtooth (NPS 36.453305,-118.596761; climber.org STOOTH 36.45301,-118.59694) or Rowell Meadow, unconfirmed. No second-pass page found naming a standard start; web search budget ran out."},
+
+{"id":"ca_pyramid_peak_north_rocky_canyon","status":"found",
+ "trailhead":{"name":"Rocky Canyon use-trail pullout on US 50 (near Twin Bridges)",
+  "identifiedBy":{"kind":"page","fact":"Rocky Canyon route starts from a roadside pullout on Highway 50 just east of the Rocky Canyon creek, about 0.8 mi past Pyramid Creek trailhead; use trail starts up a dirt bank across the road","url":"https://www.theoutbound.com/lake-tahoe/backpacking/hike-pyramid-peak-via-rocky-canyon"},
+  "placements":[
+   {"source":"The Outbound (parking coordinates)","name":"Rocky Canyon parking pullout, US 50","lat":38.807805,"lng":-120.136722,"url":"https://www.theoutbound.com/lake-tahoe/backpacking/hike-pyramid-peak-via-rocky-canyon"},
+   {"source":"climber.org trip report waypoint (38 48.512 N, 120 8.161 W)","name":"Rocky Canyon use trail start","lat":38.808533,"lng":-120.136017,"url":"https://climber.org/reports/2004/1231.html"}]},
+ "reachesSummit":null,"summitEvidence":null,
+ "otherFacts":[
+  {"field":"distance_mi","value":"6.31 round trip (Outbound stats); another source 7.4","url":"https://www.theoutbound.com/lake-tahoe/backpacking/hike-pyramid-peak-via-rocky-canyon"},
+  {"field":"gain_ft","value":"3953 (about 4000-4100)","url":"https://www.theoutbound.com/lake-tahoe/backpacking/hike-pyramid-peak-via-rocky-canyon"},
+  {"field":"class","value":"2","url":"https://climber.org/reports/2004/1231.html"},
+  {"field":"upper_route","value":"final 750 ft steep talus/boulder scramble, stay left (west)","url":"https://www.theoutbound.com/lake-tahoe/backpacking/hike-pyramid-peak-via-rocky-canyon"},
+  {"field":"camp","value":"about 8600 ft; log creek crossing at 7340 ft","url":"https://climber.org/reports/2004/1231.html"},
+  {"field":"time_hr","value":"about 3 hr to summit from 8:30 start (2004/1283)","url":"https://climber.org/reports/2004/1283.html"},
+  {"field":"hazard","value":"2021 Caldor Fire burned Rocky Canyon; trail hard to follow","url":"https://www.theoutbound.com/lake-tahoe/backpacking/hike-pyramid-peak-via-rocky-canyon"}],
+ "notes":"Strong: two independent coordinates for the informal start agree within ~90 m. This is NOT a signed trailhead (Pyramid Creek TH, USFS 38.811695,-120.123655, is a different route ~1.3 km away). The start is hard to find; one source says the trail begins just east of the creek, across the road from the pullout. Highway 50 in the Strawberry/Twin Bridges stretch. Gaia lists a 'Strawberry to Pyramid' 6.2 mi track, consistent."},
+
+{"id":"ca_pyramid_peak_south_standard_route","status":"found",
+ "trailhead":{"name":"Taboose Pass Trailhead",
+  "identifiedBy":{"kind":"page","fact":"2016 Pyramid Peak (S) report: Taboose Pass trail, over the pass, Arrow Pass cross-country, SW ridge and west face to summit (moderate: Sawmill and Baxter passes are alternatives; Taboose is the nearest)","url":"https://climber.org/reports/2016/1872.html"},
+  "placements":[
+   {"source":"USFS","name":"TABOOSE PASS TH","lat":37.009505,"lng":-118.327312,"url":""},
+   {"source":"climber.org driving GPX (TABCRK, Taboose Pass Trailhead 5400)","name":"Taboose Pass Trailhead","lat":37.009199977,"lng":-118.326900005,"url":"https://climber.org/driving/images/TaboosePass.gpx"}]},
+ "reachesSummit":null,"summitEvidence":null,
+ "otherFacts":[
+  {"field":"class","value":"2 (SPS list), report says 2-3; southwest ridge easy third class","url":"https://climber.org/reports/2016/1872.html"},
+  {"field":"gain_ft","value":"almost 5000 to Taboose Creek camp (10,300 ft), about 6000 to the pass","url":"https://climber.org/reports/2016/1872.html"},
+  {"field":"trail","value":"Taboose Pass 11,352 ft, trailhead 5,400 ft; Bench Lake trail 4.1 mi from pass (forum)","url":"https://climber.org/reports/2016/1872.html"},
+  {"field":"routes","value":"Bench Lake trail then Arrow Pass (west/north) or Explorer Pass (east)","url":"https://climber.org/reports/2016/1872.html"},
+  {"field":"time","value":"summit 6:30 to 11:15 from camp, 1.5 hr on summit","url":"https://climber.org/reports/2016/1872.html"},
+  {"field":"elevation_ft","value":"12,779 (SPS list)","url":"https://climber.org/data/SierraPeaks/10/06.html"}],
+ "notes":"Moderate. Still one peak-specific report; a different 'Pyramid Peak' report (2001/811, 12,866 ft, Mosquito Flats, Dade Lake) is another peak, ignore. SummitPost (blocked 403) is reported by search summary to call Taboose the closest approach; not opened. Sawmill Pass (USFS 36.938805,-118.290212) is the main alternative. Placements agree within 50 m."},
+
+{"id":"ca_recess_peak_standard_route","status":"found",
+ "trailhead":{"name":"Bear Ridge Trailhead (Lake Edison dam vista)",
+  "identifiedBy":{"kind":"page","fact":"Two Recess Peak reports start at Bear Ridge TH near the Lake Thomas Edison dam overlook: Bear Ridge trail about 5 mi to JMT/PCT junction, cross-country SE to the SW ridge/arete (class 3)","url":"https://themtsarecalling.com/recess/"},
+  "placements":[
+   {"source":"USFS","name":"Bear Ridge Cutoff","lat":37.362469,"lng":-118.98554,"url":""},
+   {"source":"climber.org driving GPX (BEARCT, Bear Creek Trail parking with 2 bear boxes, Lake Edison)","name":"Bear Creek Trail parking, Lake Edison","lat":37.36225,"lng":-118.98574,"url":"https://climber.org/driving/images/KaiserPass.gpx"}]},
+ "reachesSummit":null,"summitEvidence":null,
+ "otherFacts":[
+  {"field":"distance_mi","value":"17.2 round trip","url":"https://themtsarecalling.com/recess/"},
+  {"field":"gain_ft","value":"about 7900","url":"https://themtsarecalling.com/recess/"},
+  {"field":"time_hr","value":"9:20","url":"https://themtsarecalling.com/recess/"},
+  {"field":"class","value":"class 3 crux on SW ridge; SPS list gives 2","url":"https://themtsarecalling.com/recess/"},
+  {"field":"alternate_trailhead","value":"Bear Creek Diversion Dam (7400 ft, 4WD, serves Gabb, Hilgard, Recess); about 3,600 ft day from Hilgard Lake camp","url":"https://climber.org/reports/1999/508.html"},
+  {"field":"alternate_trailhead_coords","value":"37.33632,-118.97636 (climber.org BEARCD), USFS Bear Creek Trailhead 37.335376,-118.974645","url":"https://climber.org/driving/images/KaiserPass.gpx"},
+  {"field":"route","value":"JMT junction, use trail to meadows west of Volcanic Knob, snow survey cabin, lakes NW of SW arete, W ridge, SW arete","url":"https://www.snwburd.com/bob/trip_reports/recess_1.html"},
+  {"field":"start_time","value":"6:30 headlamp start, JMT junction 8:00, summit area by ~12:30, back 16:00-16:30","url":"https://www.snwburd.com/bob/trip_reports/recess_1.html"}],
+ "notes":"REPLACES the first pass (Bear Creek Diversion Dam, from a 1999 Hilgard-Gabb multi-peak trip). The two peak-specific day reports use Bear Ridge, which is the west-side day approach. The USFS 'Bear Ridge Cutoff' point and climber.org's BEARCT parking coincide within ~25 m, but the Bear Ridge Trailhead is described as near the dam vista point (EDISN3 37.36735,-118.98339, ~600 m NE), so the coordinate is the trail's start, not a surveyed trailhead sign. A 2023 report started from Mosquito Flat (east side, camp near Mono Creek). Diversion Dam remains a valid alternative for a Hilgard Lake start."},
+
+{"id":"ca_red_kaweah_west_face","status":"found",
+ "trailhead":{"name":"Sawtooth Pass trailhead, Mineral King",
+  "identifiedBy":{"kind":"page","fact":"2008 trip 'Black, Red, and Big': Mineral King TH, climber's trail before the Monarch Creek crossing, Sawtooth Pass, Little Five Lakes, past Big Arroyo Cabin, up to high camp at 11,500 ft above Big Arroyo, then Red Kaweah (low-moderate: single report)","url":"https://climber.org/reports/2008/1684.html"},
+  "placements":[
+   {"source":"NPS","name":"Sawtooth","lat":36.453305,"lng":-118.596761,"url":""},
+   {"source":"climber.org driving GPX (STOOTH, Sawtooth and Timber Gap Trails 7800)","name":"Sawtooth/Timber Gap trailheads, Mineral King","lat":36.453009963,"lng":-118.59694004,"url":"https://climber.org/driving/images/MineralKing.gpx"}]},
+ "reachesSummit":null,"summitEvidence":null,
+ "otherFacts":[
+  {"field":"approach_day1","value":"about 15.3 mi Mineral King to Little Five Lakes via Sawtooth Pass and Lost Canyon","url":"https://climber.org/reports/2008/1684.html"},
+  {"field":"approach_day2","value":"Little Five Lakes past Big Arroyo Cabin, about 2000 ft cross-country to 11,500 ft high camp","url":"https://climber.org/reports/2008/1684.html"},
+  {"field":"climb","value":"3.6 mi and 2100 ft gain from high camp; 6:00 start, summit 9:05, back noon","url":"https://climber.org/reports/2008/1684.html"},
+  {"field":"class","value":"mostly 2, low class 3 moves; main chute (take left chute), ramp right of class 3 wall, north ridge to summit","url":"https://climber.org/reports/2008/1684.html"},
+  {"field":"alternate_start","value":"Crescent Meadow via High Sierra Trail to Big Arroyo (NPS 36.554944,-118.748861)","url":"https://climber.org/driving/images/MineralKing.gpx"},
+  {"field":"class_wikipedia","value":"easiest route listed class 4 technical (Wikipedia); SPS list class 2","url":"https://en.wikipedia.org/wiki/Red_Kaweah"}],
+ "notes":"Weak-to-moderate: the route's own text only says 'from Big Arroyo'. Big Arroyo is also reached by the High Sierra Trail from Crescent Meadow (about 30 mi) or via Mineral King (Sawtooth Pass, about 20 mi). The one detailed report used Mineral King; the route here is described from the cirque above Big Arroyo, which that report did climb. Treat as a long backpack, not a day route."},
+
+{"id":"ca_red_peak_standard_route","status":"found",
+ "trailhead":{"name":"Mono Meadow Trailhead",
+  "identifiedBy":{"kind":"page","fact":"Red Peak climb starts at Mono Meadows (Glacier Point Rd, ~7,200 ft), trail to Upper Ottoway Lake; NPS lists Mono Meadow as the trailhead for the Red Peak Pass loop via Ottoway Lakes","url":"https://climber.org/reports/2007/1612.html"},
+  "placements":[
+   {"source":"NPS","name":"Mono Meadow Trailhead","lat":37.671453,"lng":-119.584778,"url":""}]},
+ "reachesSummit":null,"summitEvidence":null,
+ "otherFacts":[
+  {"field":"approach","value":"Mono Meadow to Upper Ottoway Lake (10,400 ft) 15.7 mi, 3200 ft gain","url":"https://climber.org/reports/2007/1612.html"},
+  {"field":"route","value":"leave trail about 1/4 mi below Red Peak Pass at a granite bench, climb red talus (loose, shoebox to suitcase) to the peak","url":"https://climber.org/reports/2007/1612.html"},
+  {"field":"time","value":"summit 8:15 am from 6:00 am start at Upper Ottoway","url":"https://climber.org/reports/2007/1612.html"},
+  {"field":"loop","value":"Red Peak Pass loop from Mono Meadow 48.1 mi, 6650 ft gain; pass is park's highest at 11,155 ft","url":"https://www.nps.gov/yose/planyourvisit/wawona-backpacking-trails.htm"},
+  {"field":"trailhead_elev_ft","value":"about 7200","url":"https://climber.org/reports/2007/1612.html"},
+  {"field":"trail","value":"trail first descends about 3 mi, Merced Pass junction at about 4 mi, Lower Ottoway Lake 3.4 mi further","url":"https://sites.google.com/site/mytrailmixx/sierra-backpacking-trips/mono-meadow-to-ottoway-lake-2012"}],
+ "notes":"Moderate. Mono Meadow is the shortest road start to the Ottoway Lakes/Red Peak Pass; confirmed by a peak-specific report plus NPS loop page. Alternatives (Happy Isles via Merced Lake, or the south side via Quartz Mountain/Fernandez Pass) are much longer or off-trail. Single placement (NPS); no second coordinate source found."},
+
+{"id":"ca_rockhouse_peak_standard_route","status":"found",
+ "trailhead":{"name":"South Manter Meadow Trailhead (Big Meadow)",
+  "identifiedBy":{"kind":"page","fact":"Southern Manter Meadow trailhead is the usual one for Rockhouse; Manter Creek Trail 35E12 to Little Manter Meadow, saddle, then about 1 mi off trail north to the summit, class 2 north gully","url":"https://climber.org/driving/BigMeadow.html"},
+  "placements":[
+   {"source":"climber.org driving GPX (MANTRS, South Manter Meadow Trailhead 7800)","name":"South Manter Meadow Trailhead","lat":35.868829966,"lng":-118.326320052,"url":"https://climber.org/driving/images/BigMeadow.gpx"}]},
+ "reachesSummit":null,"summitEvidence":null,
+ "otherFacts":[
+  {"field":"distance_mi","value":"about 7.5 round trip from South Manter, 9 from North Manter; 16.5-18 from Big Meadow (inconsistent on that page)","url":"https://kernriversierra.com/hike/Rockhouse_Peak.html"},
+  {"field":"gain_ft","value":"about 2200 cumulative from Manter Meadow","url":"https://kernriversierra.com/hike/Rockhouse_Peak.html"},
+  {"field":"class","value":"north gully class 2; east side class 3; south face 5.7-5.8","url":"https://kernriversierra.com/hike/Rockhouse_Peak.html"},
+  {"field":"elevation_ft","value":"8383 (trip report/local guide), 8360 (SPS)","url":"https://kernriversierra.com/hike/Rockhouse_Peak.html"},
+  {"field":"trail_mileposts","value":"Little Manter Meadow camp 1.2 mi, saddle 3.4 mi, granite 4.5 mi from the west end of Manter Creek Trail","url":"https://kernriversierra.com/hike/Rockhouse_Peak.html"},
+  {"field":"eastern_route","value":"Long Valley Loop spur road, locked gate 7.1 mi from Chimney Creek fire station, 2.5 mi road walk to wilderness boundary, 17 mi round trip, 5700 ft gain, class 1 slabs with a low 3rd class move","url":"https://climber.org/reports/1997/256.html"},
+  {"field":"trailhead_elev_ft","value":"7800","url":"https://climber.org/driving/BigMeadow.html"}],
+ "notes":"Moderate: two pages (climber.org driving guide, Kern River Sierra guide) name the south Manter trailhead as the usual one. Also Long Valley/Canebrake (east, via locked-gate spur) is an alternative with a much longer walk. The listed 'standard' is on this page only by those two pages, no sibling or official trailhead point exists in the input (officialCandidates is empty), so the single placement is a climber.org waypoint."}
+]

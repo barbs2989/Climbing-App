@@ -1,0 +1,609 @@
+[
+ {
+  "id": "wa_monte_cristo_peak_standard_route_variation_1",
+  "status": "found",
+  "trailhead": {
+   "name": "Barlow Pass Trailhead",
+   "identifiedBy": {
+    "kind": "page_peak",
+    "url": "https://www.fs.usda.gov/r06/mbs/recreation/trails/old-monte-cristo-townsite-trail",
+    "fact": "USFS: Monte Cristo townsite reached by 4 mi gated road from Barlow Pass Trailhead; standard approach to the peak starts at the townsite (route text silent)"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "Barlow Pass Trailhead",
+     "lat": 48.026806,
+     "lng": -121.442307,
+     "url": ""
+    },
+    {
+     "source": "WTA",
+     "name": "Barlow Pass trailhead",
+     "lat": 48.027,
+     "lng": -121.4447,
+     "url": "https://www.wta.org/go-hiking/hikes/monte-cristo-143"
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "approach_miles_to_townsite",
+    "value": "4",
+    "url": "https://www.wta.org/go-hiking/hikes/monte-cristo-143"
+   },
+   {
+    "field": "barlow_pass_elev_ft",
+    "value": "2360",
+    "url": "https://www.wta.org/go-hiking/hikes/monte-cristo-143"
+   }
+  ],
+  "notes": "Route text names no trailhead. Peak-level: all Monte Cristo Peak access found is via Barlow Pass then the townsite (Glacier Basin); sibling scramble agrees. USFS point comes from the Morning Star chunk's candidate list (not in this chunk's top 4). USFS and WTA points ~150 m apart; USFS is the lot. SummitPost/Peakbagger not used."
+ },
+ {
+  "id": "wa_monte_cristo_peak_standard_route_variation_2",
+  "status": "found",
+  "trailhead": {
+   "name": "Barlow Pass Trailhead",
+   "identifiedBy": {
+    "kind": "page_peak",
+    "url": "https://www.fs.usda.gov/r06/mbs/recreation/trails/old-monte-cristo-townsite-trail",
+    "fact": "USFS: Monte Cristo townsite reached by 4 mi gated road from Barlow Pass Trailhead; standard approach to the peak starts at the townsite (route text silent)"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "Barlow Pass Trailhead",
+     "lat": 48.026806,
+     "lng": -121.442307,
+     "url": ""
+    },
+    {
+     "source": "WTA",
+     "name": "Barlow Pass trailhead",
+     "lat": 48.027,
+     "lng": -121.4447,
+     "url": "https://www.wta.org/go-hiking/hikes/monte-cristo-143"
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Variation of the standard route (text: second and third pitches and descent match variation 1); same Barlow Pass start as variation 1."
+ },
+ {
+  "id": "wa_beyond_redlining",
+  "status": "summit_only_answered",
+  "trailhead": {
+   "name": "Sunrise Mine Trailhead",
+   "identifiedBy": {
+    "kind": "route_text",
+    "fact": "Drive to the Sunrise Mine trailhead (FR 4065)"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "Sunrise Mine Trailhead",
+     "lat": 48.024743,
+     "lng": -121.477879,
+     "url": ""
+    }
+   ]
+  },
+  "reachesSummit": false,
+  "summitEvidence": {
+   "kind": "route_text",
+   "fact": "West Face of Vega North Tower (Eros Tower), 11 pitches, finishes on the Vega North Tower summit shared with Mile High Club; descends via Mile High Club rappels",
+   "url": ""
+  },
+  "otherFacts": [],
+  "notes": "Route tops out on Vega North Tower, a tower on the ridge, not the Morning Star Peak summit. Trailhead already pinned."
+ },
+ {
+  "id": "wa_marvin_s_ear",
+  "status": "summit_only_answered",
+  "trailhead": {
+   "name": "Sunrise Mine Trailhead",
+   "identifiedBy": {
+    "kind": "route_text",
+    "fact": "Drive to the Sunrise Mine trailhead (FR 4065)"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "Sunrise Mine Trailhead",
+     "lat": 48.024743,
+     "lng": -121.477879,
+     "url": ""
+    }
+   ]
+  },
+  "reachesSummit": false,
+  "summitEvidence": {
+   "kind": "route_text",
+   "fact": "climbs the skyline ridge of Vega Tower (sub-summit east of Vega North Tower), rappels its own line",
+   "url": ""
+  },
+  "otherFacts": [],
+  "notes": "Ends on Vega Tower, not the Morning Star Peak summit. Trailhead already pinned."
+ },
+ {
+  "id": "wa_mount_adams_avalanche_white_salmon_glaciers",
+  "status": "found",
+  "trailhead": {
+   "name": "Cold Springs Trailhead (South Climb)",
+   "identifiedBy": {
+    "kind": "route_text",
+    "fact": "Start at the Cold Springs trailhead at the end of FR 8040"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "South Climb Trailhead",
+     "lat": 46.135758,
+     "lng": -121.497589,
+     "url": ""
+    },
+    {
+     "source": "USFS",
+     "name": "Cold Springs/Tr.72 Th",
+     "lat": 46.136557,
+     "lng": -121.496904,
+     "url": ""
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Overview says approach via the PCT or the Shorthorn trail, which conflicts; the approach and descent text agree on Cold Springs. The two USFS points are ~90 m apart; South Climb Trailhead is the one on the South Climb trail."
+ },
+ {
+  "id": "wa_mount_adams_northwest_ridge",
+  "status": "summit_only_answered",
+  "trailhead": {
+   "name": "Killen Creek Trailhead",
+   "identifiedBy": {
+    "kind": "route_text",
+    "fact": "Start at the Killen Creek trailhead on FR 2329"
+   },
+   "placements": [
+    {
+     "source": "WTA",
+     "name": "Killen Creek",
+     "lat": 46.2885,
+     "lng": -121.5525,
+     "url": "https://www.wta.org/go-hiking/hikes/killen-creek"
+    }
+   ]
+  },
+  "reachesSummit": "unknown",
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "killen_creek_gain_ft",
+    "value": "2300",
+    "url": "https://www.wta.org/go-hiking/hikes/killen-creek"
+   },
+   {
+    "field": "high_camp_elev_ft",
+    "value": "6900",
+    "url": "https://www.wta.org/go-hiking/hikes/killen-creek"
+   }
+  ],
+  "notes": "Text calls it a snow/ice line up the west face of the North Ridge and descends the North Ridge; never states it reaches the summit. Trailhead already pinned. No page found for this named route."
+ },
+ {
+  "id": "wa_mount_adams_pinnacle_glacier_headwall",
+  "status": "found",
+  "trailhead": {
+   "name": "Riley Camp Trailhead",
+   "identifiedBy": {
+    "kind": "route_text",
+    "fact": "From the Riley Camp Trailhead, hike the Riley Camp Trail"
+   },
+   "placements": [
+    {
+     "source": "WTA",
+     "name": "Riley Camp (#64)",
+     "lat": 46.2172,
+     "lng": -121.6344,
+     "url": "https://www.wta.org/go-hiking/hikes/riley-camp"
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "road",
+    "value": "FR 23 (Buck Creek Rd) ~17.5 mi from Trout Lake, between MP 38 and 37, may be unmarked",
+    "url": "https://www.wta.org/go-hiking/hikes/riley-camp"
+   }
+  ],
+  "notes": "Only one placement (WTA); no USFS/OSM point matched. Route text says it ends on the Pinnacle summit, an easy stroll from the main summit."
+ },
+ {
+  "id": "wa_mount_baker_coleman_ski_descent",
+  "status": "found",
+  "trailhead": {
+   "name": "Heliotrope Ridge Trailhead",
+   "identifiedBy": {
+    "kind": "route_text",
+    "fact": "Start at the Heliotrope Ridge trailhead at the end of Glacier Creek Road (FR 39)"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "Heliotrope Ridge Trailhead",
+     "lat": 48.802236,
+     "lng": -121.89559,
+     "url": ""
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Sibling Boulder Ridge Trailhead is a different side; not used."
+ },
+ {
+  "id": "wa_mount_ballard_east_face",
+  "status": "found",
+  "trailhead": {
+   "name": "Slate Creek road gate (road end, about 3,800 ft)",
+   "identifiedBy": {
+    "kind": "route_text",
+    "fact": "Slate Creek road to the locked gate (about 3,800 ft), walk old South Fork Slate Creek road to the bridge"
+   },
+   "placements": []
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "bridge_elev_ft",
+    "value": "4000",
+    "url": ""
+   }
+  ],
+  "notes": "No named trailhead or coordinate: a gate on a road. No USFS/NPS point matches (Harts Pass candidates are 7 km+ away and are NOT the start). Trip-report search summaries (CascadeClimbers 2008, lemkeclimbs) agree on the gate but I did not open them. Sibling Canyon Creek Trailhead is a different side. Road status uncertain (2026 closure orders). Place by hand."
+ },
+ {
+  "id": "wa_mount_berge_east_ridge",
+  "status": "found",
+  "trailhead": {
+   "name": "Trinity Trailhead (Buck Creek)",
+   "identifiedBy": {
+    "kind": "route_text",
+    "fact": "From the Buck Creek/Trinity Trailhead, hike roughly 6 miles"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "Trinity Trailhead",
+     "lat": 48.071972,
+     "lng": -120.850005,
+     "url": ""
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "road_status",
+    "value": "FR 6200 closed beyond Atkinson Flat for storm damage; Little Giant Fire closure also covers Buck Creek Trail",
+    "url": ""
+   }
+  ],
+  "notes": "Per the route's own text. Sibling Little Giant trailhead is the other side. USFS lists only Trinity; I did not verify Buck Creek and Trinity are one lot."
+ },
+ {
+  "id": "wa_poltergeist_pinnacle",
+  "status": "summit_only_answered",
+  "trailhead": {
+   "name": "Hannegan Pass Trailhead",
+   "identifiedBy": {
+    "kind": "route_text",
+    "fact": "FR 32 to the trailhead at its end; Hannegan Pass Trail"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "Hannegan Trailhead",
+     "lat": 48.910191,
+     "lng": -121.591986,
+     "url": ""
+    }
+   ]
+  },
+  "reachesSummit": true,
+  "summitEvidence": {
+   "kind": "route_text",
+   "fact": "from the top of the technical climbing, ridge crest north to Mount Challenger's main summit, then descends Challenger Glacier",
+   "url": ""
+  },
+  "otherFacts": [],
+  "notes": "Trailhead already pinned; USFS point is 20 km from peak, consistent with the route's multi-day approach. Pinnacle is a sub-summit; reaching Challenger's summit is from the route text only."
+ },
+ {
+  "id": "wa_mount_chaval_north_ridge",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Text says same approach as West Route (Jug Creek/Bluff Lake/Cliff Lake via Grade Creek Road FR 2642/2643 off Illabot Creek Road FR-16) with no trailhead name. Search summaries: Grade Creek spur has deteriorated and may be undrivable; a SummitPost west-face approach parks at the Arrow Creek switchback on FR-16 (the sibling's start). Which start this route uses is not stated on any page I could open. Not guessed."
+ },
+ {
+  "id": "wa_mount_crowder_northeast_ridge",
+  "status": "found",
+  "trailhead": {
+   "name": "Hannegan Pass Trailhead",
+   "identifiedBy": {
+    "kind": "route_text",
+    "fact": "reached only by first climbing Mount Crowder by its Southwest Route; its road text names the Hannegan Pass Trailhead at FR-32 road's end"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "Hannegan Trailhead",
+     "lat": 48.910191,
+     "lng": -121.591986,
+     "url": ""
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Route is a descent line off the summit; trailhead is the Southwest Route's (sibling pin Hannegan Pass). Search summaries (WTA Phantom Peak, AAC) place Pickets-side approaches at Hannegan; I did not find a page describing Crowder's Southwest Route itself. 15-20 km from peak, multi-day."
+ },
+ {
+  "id": "wa_mount_despair_northeast_buttress",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "first_ascent_year",
+    "value": "2014",
+    "url": ""
+   },
+   {
+    "field": "exit",
+    "value": "Triumph Pass and Thornton Lakes Trail",
+    "url": ""
+   }
+  ],
+  "notes": "Route text: brush-choked valley low in the Goodell Creek drainage; no trailhead named. Mountain Project and a search summary say the NE buttress party approached via Goodell Creek, but the CascadeClimbers report is 403 and the other report 404, so where they started is unconfirmed (SR 20 Goodell Creek crossing/campground likely but unverified). Sibling Thornton Lakes is the exit, not the start."
+ },
+ {
+  "id": "wa_mount_fury_east_direct_east_ridge",
+  "status": "found",
+  "trailhead": {
+   "name": "Ross Dam Trailhead (SR 20 milepost 134)",
+   "identifiedBy": {
+    "kind": "route_text",
+    "fact": "Drive SR 20 to the Ross Dam trailhead between mileposts 134 and 135, then the Ross Lake water taxi to Big Beaver Landing"
+   },
+   "placements": []
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "boat",
+    "value": "Ross Lake Resort water taxi to Big Beaver Landing (~1,600 ft)",
+    "url": ""
+   }
+  ],
+  "notes": "No placement: no NPS/USFS point in the 25 km list matches (Gorge Overlook is a different lot); the WTA and NPS pages I tried 404'd. Found with empty placements per brief; place the lot by hand. The walk proper starts at the Big Beaver Landing dock (boat) or this lot."
+ },
+ {
+  "id": "wa_mount_hinman_east_route",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "No route text. Search found no page defining a separate East Route on Hinman; sources describe the Necklace Valley / La Bohn Gap climb and Hinman Glacier. The peak is also reachable from the Middle Fork Snoqualmie side (3 days), so the Necklace Valley sibling is not proof. Not guessed."
+ },
+ {
+  "id": "wa_mount_hinman_southeast_route",
+  "status": "found",
+  "trailhead": {
+   "name": "Necklace Valley Trailhead",
+   "identifiedBy": {
+    "kind": "route_text",
+    "fact": "Park at the Necklace Valley (East Fork Foss) trailhead at the end of FR 68"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "Necklace Valley Trailhead",
+     "lat": 47.665562,
+     "lng": -121.287237,
+     "url": ""
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "approach",
+    "value": "5 mi gentle then 2,400 ft in 3 mi of switchbacks to Jade Lake",
+    "url": ""
+   }
+  ],
+  "notes": "USFS placement only. Same lot as the West Route text (Foss River Road FR 68, ~4 mi from US 2)."
+ },
+ {
+  "id": "wa_mount_hinman_west_route",
+  "status": "found",
+  "trailhead": {
+   "name": "Necklace Valley Trailhead",
+   "identifiedBy": {
+    "kind": "route_text",
+    "fact": "From the Necklace Valley Trailhead, follow the Necklace Valley Trail"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "Necklace Valley Trailhead",
+     "lat": 47.665562,
+     "lng": -121.287237,
+     "url": ""
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "drive",
+    "value": "US 2 past Skykomish Ranger Station, south on Foss River Road FR 68, trailhead on left after ~4 mi",
+    "url": ""
+   }
+  ],
+  "notes": "USFS placement is 12 km from peak (within range)."
+ },
+ {
+  "id": "wa_mount_johnson_deception_chimney",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "No route text. Peak-level only. The peak is a Royal Basin / Upper Dungeness objective, but no page I could open says which side this named route is on; Mountaineers Royal Basin page is 403, Mountain Project Mt Johnson is the California peak. Candidate if the owner accepts peak-level: Upper Dungeness Trailhead (USFS 47.877578,-123.136942)."
+ },
+ {
+  "id": "wa_mount_johnson_northwest_face",
+  "status": "found",
+  "trailhead": {
+   "name": "Upper Dungeness Trailhead (Royal Basin)",
+   "identifiedBy": {
+    "kind": "page_peak",
+    "url": "https://en.wikipedia.org/wiki/Mount_Johnson_(Washington)",
+    "fact": "Johnson is one of the Royal Basin mountaineering objectives in the Dungeness drainage; a 2014 ski report climbed its NW couloir from Royal Basin"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "Dungeness - Upper Trailhead",
+     "lat": 47.877578,
+     "lng": -123.136942,
+     "url": ""
+    },
+    {
+     "source": "NPS",
+     "name": "Royal Creek",
+     "lat": 47.878049,
+     "lng": -123.13699,
+     "url": ""
+    },
+    {
+     "source": "WTA",
+     "name": "Upper Dungeness/Royal Basin trailhead",
+     "lat": 47.8779,
+     "lng": -123.1369,
+     "url": "https://www.wta.org/go-hiking/hikes/royal-basin"
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "royal_basin_hike",
+    "value": "16 mi round trip, 2,650 ft gain",
+    "url": "https://www.wta.org/go-hiking/hikes/royal-basin"
+   },
+   {
+    "field": "nw_couloir_length_ft",
+    "value": "1200",
+    "url": "https://www.turns-all-year.com/trip-reports/may-30-june-1-2014-royal-b-johnson-and-deception"
+   }
+  ],
+  "notes": "No route text. Peak-level only. Medium confidence: a NW couloir from Royal Basin is a NW-side line but the page does not say it is this route. Sibling standard route also uses Upper Dungeness. The three points are within 60 m."
+ },
+ {
+  "id": "wa_mount_johnson_rumble_gully",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "No route text. Peak-level only. The peak is a Royal Basin / Upper Dungeness objective, but no page I could open says which side this named route is on; Mountaineers Royal Basin page is 403, Mountain Project Mt Johnson is the California peak. Candidate if the owner accepts peak-level: Upper Dungeness Trailhead (USFS 47.877578,-123.136942)."
+ },
+ {
+  "id": "wa_mount_johnson_south_terrace_route",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "No route text. Peak-level only. The peak is a Royal Basin / Upper Dungeness objective, but no page I could open says which side this named route is on; Mountaineers Royal Basin page is 403, Mountain Project Mt Johnson is the California peak. Candidate if the owner accepts peak-level: Upper Dungeness Trailhead (USFS 47.877578,-123.136942)."
+ },
+ {
+  "id": "wa_mount_johnson_southwest_route",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "No route text. Peak-level only. The peak is a Royal Basin / Upper Dungeness objective, but no page I could open says which side this named route is on; Mountaineers Royal Basin page is 403, Mountain Project Mt Johnson is the California peak. Candidate if the owner accepts peak-level: Upper Dungeness Trailhead (USFS 47.877578,-123.136942)."
+ },
+ {
+  "id": "wa_mount_johnson_staircase_route",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "No route text. Peak-level only. The peak is a Royal Basin / Upper Dungeness objective, but no page I could open says which side this named route is on; Mountaineers Royal Basin page is 403, Mountain Project Mt Johnson is the California peak. Name suggests a Staircase (Skokomish) approach, a different trailhead; unverified. Candidate if the owner accepts peak-level: Upper Dungeness Trailhead (USFS 47.877578,-123.136942)."
+ },
+ {
+  "id": "wa_mount_lincoln_harniss_chute",
+  "status": "found",
+  "trailhead": {
+   "name": "Staircase Trailhead (North Fork Skokomish)",
+   "identifiedBy": {
+    "kind": "route_text",
+    "fact": "Same approach as the standard route: Staircase trailhead to Flapjack Lakes"
+   },
+   "placements": [
+    {
+     "source": "NPS",
+     "name": "Staircase Ranger Station",
+     "lat": 47.51612,
+     "lng": -123.327934,
+     "url": ""
+    },
+    {
+     "source": "WTA",
+     "name": "Flapjack Lakes via North Fork Skokomish (Staircase)",
+     "lat": 47.5161,
+     "lng": -123.3282,
+     "url": "https://www.wta.org/go-hiking/hikes/flapjack-lakes"
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "trail_status",
+    "value": "Flapjack Lakes trail closed per WTA due to Bear Gulch Fire damage",
+    "url": "https://www.wta.org/go-hiking/hikes/flapjack-lakes"
+   }
+  ],
+  "notes": "Closure status may be stale."
+ }
+]
