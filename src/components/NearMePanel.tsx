@@ -51,8 +51,15 @@ export interface NearMePanelProps {
   uDistMi?: (mi: number) => string;
   /** Opens a climb straight from the map (the tapped crag's climbs, listed under it); absent lists areas only. */
   onOpenRoute?: (r: RouteRowRoute) => void;
+  /** HOME'S "NEAR ME" (owner 2026-11-18): no List/Map switch (there is no list to switch to), the five
+      nearest areas under the map, and the map centred on the climber when location is ALREADY allowed —
+      it never asks on page load; the "Me" button still does. */
+  compact?: boolean;
+  /** With `compact`: opens the full Climbs map, under the short list. */
+  onOpenFull?: () => void;
 }
-export default function NearMePanel({ center0, areaType, name, onBack, onOpenArea, C, uDistMi, onOpenRoute }: NearMePanelProps) {
+const COMPACT_ROWS = 5;
+export default function NearMePanel({ center0, areaType, name, onBack, onOpenArea, C, uDistMi, onOpenRoute, compact, onOpenFull }: NearMePanelProps) {
   const mapDiv = useRef<HTMLDivElement | null>(null), mapRef = useRef<LeafletAny>(null), markRef = useRef<LeafletAny>(null), tileRef = useRef<LeafletAny>(null), placeMarkRef = useRef<LeafletAny>(null);
   const [ready, setReady] = useState(false);
   const [mapFail, setMapFail] = useState(false);
@@ -253,6 +260,13 @@ export default function NearMePanel({ center0, areaType, name, onBack, onOpenAre
   // Your dot is on the map from the start when location is already allowed -- without moving the
   // map off the area you opened it on. Never asks: the button above does that.
   useEffect(() => { if (ready) me.showDot(); }, [ready]); // eslint-disable-line react-hooks/exhaustive-deps -- shows the dot once when the map becomes ready; me is a per-render hook result
+  // Compact (Home): centre on the climber, but only when the browser says location is already granted.
+  useEffect(() => {
+    if (!ready || !compact || typeof navigator === "undefined" || !navigator.permissions || !navigator.permissions.query) return;
+    let live = true;
+    navigator.permissions.query({ name: "geolocation" }).then(st => { if (live && st.state === "granted") me.locate(); }, () => { /* no permissions API answer: stay on the country, the Me button asks */ });
+    return () => { live = false; };
+  }, [ready, compact]); // eslint-disable-line react-hooks/exhaustive-deps -- runs once when the map becomes ready; me is a per-render hook result
 
   const goToPlace = (p: NearMePanelPlace) => {
     const L = window.L, map = mapRef.current;
@@ -352,7 +366,7 @@ export default function NearMePanel({ center0, areaType, name, onBack, onOpenAre
     </section>
   ) : null;
   const errUI = geoErr ? <div role="status" style={{ color: C.red, fontSize: 12, marginTop: 6 }}>{geoErr}</div> : null;
-  const title = "Map" + (name ? " · " + name : "");
+  const title = compact ? "Near me" : "Map" + (name ? " · " + name : "");
   // The areas in view (type filter applied), busiest first, as 3D pins: each opens its area.
   const view3dEl = view3d && bounds ? (
     <Suspense fallback={null}>
@@ -367,7 +381,7 @@ export default function NearMePanel({ center0, areaType, name, onBack, onOpenAre
   ) : null;
   return (
     <div>
-      <ViewToggle mode="map" onList={onBack} onMap={() => {}} C={C} />
+      {compact ? null : <ViewToggle mode="map" onList={onBack} onMap={() => {}} C={C} />}
       {view3dEl}
       {fullscreen ? null : searchUI}
       {/* The inline slot the map's host div sits in when it is not full screen. React renders it
@@ -408,9 +422,9 @@ export default function NearMePanel({ center0, areaType, name, onBack, onOpenAre
               <div style={{ fontSize: 11, color: C.textMuted, marginTop: 2 }}>Shows areas with at least one climb of that type — on the map too.</div>
             </div>
           ) : null}
-          {data && data.total != null && !disc && data.total > sorted.length ? <div style={{ color: C.textMuted, fontSize: 11.5, marginBottom: 8 }}>{"Showing the busiest " + sorted.length + " of " + data.total + " areas in view — zoom in to see more."}</div> : null}
-          {disc && ((nearby as unknown[]).length > sorted.length || (data && (data.total as number) > (nearbyAll as unknown[]).length)) ? <div style={{ color: C.textMuted, fontSize: 11.5, marginBottom: 8 }}>{"Showing " + sorted.length + " " + (DL[disc] || disc).toLowerCase() + (sorted.length === 1 ? " area" : " areas") + " — zoom in to see more."}</div> : null}
-          {sorted.map(a => (
+          {!compact && data && data.total != null && !disc && data.total > sorted.length ? <div style={{ color: C.textMuted, fontSize: 11.5, marginBottom: 8 }}>{"Showing the busiest " + sorted.length + " of " + data.total + " areas in view — zoom in to see more."}</div> : null}
+          {!compact && disc && ((nearby as unknown[]).length > sorted.length || (data && (data.total as number) > (nearbyAll as unknown[]).length)) ? <div style={{ color: C.textMuted, fontSize: 11.5, marginBottom: 8 }}>{"Showing " + sorted.length + " " + (DL[disc] || disc).toLowerCase() + (sorted.length === 1 ? " area" : " areas") + " — zoom in to see more."}</div> : null}
+          {(compact ? sorted.slice(0, COMPACT_ROWS) : sorted).map(a => (
             <div key={a.id} {...clickable(() => onOpenArea(a))} style={{ background: C.card, border: "1px solid " + (wlByArea[a.id] ? C.amber : C.border), borderRadius: 12, padding: "11px 13px", marginBottom: 8, cursor: "pointer", display: "flex", justifyContent: "space-between", alignItems: "center", gap: 10 }}>
               <span style={{ minWidth: 0 }}>
                 <span style={{ display: "block", fontWeight: 700, fontSize: 14.5, color: C.text }}>{a.name}</span>
@@ -419,6 +433,7 @@ export default function NearMePanel({ center0, areaType, name, onBack, onOpenAre
               <span style={{ color: C.textMuted, fontSize: 12 }}>{a._mi != null ? (uDistMi ? uDistMi(a._mi) : a._mi.toFixed(1) + " mi") + " · " : ""}{a.route_count} climb{a.route_count !== 1 ? "s" : ""}</span>
             </div>
           ))}
+          {compact && onOpenFull && sorted.length ? <button onClick={onOpenFull} style={{ ...BTN, width: "100%", minHeight: 44, marginBottom: 8, background: C.surface, border: "1px solid " + C.border, color: C.blue, fontWeight: 700 }}>{(() => { const n = disc ? (nearby || []).length : (data && data.total != null ? Number(data.total) : sorted.length); return n > COMPACT_ROWS ? "See all " + n.toLocaleString() + " areas on the Climbs map" : "Open the Climbs map"; })()}</button> : null}
           {!isLoading && bounds && !sorted.length && !error ? <div style={{ color: C.textMuted, fontSize: 12.5 }}>{disc && nearbyAll && nearbyAll.length ? "No " + (DL[disc] || disc).toLowerCase() + tx(" areas in view — pan, zoom out, or tap All.") : "No climbs in view — pan or zoom out to see more."}</div> : null}
         </>
       ) : null}

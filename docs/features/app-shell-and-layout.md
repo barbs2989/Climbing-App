@@ -45,9 +45,9 @@ room for side-panel ads later. The phone app keeps its own look.
   - A full-width fixed **header** of two rows (112px). First the **top bar** (64px): a bare ☰ at the far left (no box, no "Menu" label on
     desktop — owner 2026-11-04; its accessible name is still "Menu"), the logo (the app mark beside a
     26px ClimbMatch wordmark, → Home), a
-    search box for every climb and place **centred in the window** (owner 2026-11-04; `WideSearch` sits on
+    search **split into two boxes, Areas then Routes** (owner 2026-11-18: `WideSearch only="places"` and `only="routes"`, sharing the band one box held, each with its own recent words; the Areas box keeps `/` and *Near me*, the Routes box the typed-filter row that opens the Route finder) — before that one box for every climb and place, **centred in the window** (owner 2026-11-04; `WideSearch` sits on
     the 50vw midline out of the row's flow, 220–680px wide so it never reaches either end; `/` jumps to
-    it; arrow keys and Enter pick a hit; **its list opens at 8 places and 10 climbs and grows in place** (owner 2026-11-13, "when i click mt only 6 show up"): *Show all N places* lists every place the search matched, *Show more climbs* adds 30 at a time up to 200, the same ranked search only longer, reset when the words change; the phone Climbs tab draws the same list inline), and at the right Saved · Alerts · Calendar · Messages and your
+    it; arrow keys and Enter pick a hit; **its list opens at 8 places and 10 climbs and grows in place** (owner 2026-11-13, "when i click mt only 6 show up"): *Show all N places* lists every place the search matched, *Show more climbs* adds 30 at a time up to 200, the same ranked search only longer, reset when the words change; the phone Climbs tab no longer draws it — it searches only what is downloaded, `DownloadedSearch`), and at the right Saved · Alerts · Calendar · Messages and your
     avatar. **The avatar opens a small account menu** (owner 2026-11-11, "add it, keep ☰"; `AvatarMenu` in
     `lib/DesktopShell.jsx`): your name, then Your profile · Settings · Help & FAQ · Send feedback, and Sign out
     when signed in. It is a WAI-ARIA menu button (↑ ↓ Home End, Esc returns focus to the avatar, a click

@@ -6,7 +6,7 @@ the seed path (in-memory `MOUNTAINS`/`ROUTES`) is the fallback and uses `Overvie
 Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/features/route-page.md`.
 
 ## 1. What it does today
-- **Area browser**: world > country > state > range > crag/peak drill-down. `StatePicker` is the entry (opening on the United States' regions on every width since 2026-11-04), headed on a phone by the catalog search box (`WideSearch` inline, `lib/DesktopShell.jsx`: climbs and places, *Near me* → the map at your position via `jumpToNearReq`, recent words on this device); `AreaPage` shows one area
+- **Area browser**: world > country > state > range > crag/peak drill-down. `StatePicker` is the entry (opening on the United States' regions on every width since 2026-11-04), headed on a phone by the **downloaded-only search** (`DownloadedSearch`, owner 2026-11-18: an *Areas | Routes* switch and box as an area page's `DbSearchSplit` has, searching ONLY what is on this device — every completed state download plus climbs saved one at a time — through `deviceAreaSearch` / `deviceRouteSearch` in `lib/offline.js` (a thin name index read once per session and rebuilt when a download changes; no network, so it answers the same with no signal), a line naming what it covers, and *Near me* → the map at your position via `jumpToNearReq`; with nothing downloaded it is a card offering *Manage areas*. The website draws no search here: its top bar has two boxes); `AreaPage` shows one area
   (`SummitBriefing` on peaks, its children or its routes, then — in this order — *Don’t see a climb or area here?* (`AddHereFooter`: Add a climb · Add an area), `DbSuggestedClimbs`
   "More climbs in this area", `NearbyPeaks`, Top contributors; App mounts the area Discussion straight after, so it ends the page). The Discussion is on the area page only: not under
   the area **Map** (`screen` "near"), the Route finder or Objectives (owner, 2026-11-11). RoutesTab hands it to `DbAreaBrowser` as the
@@ -144,7 +144,7 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
   by `sort_order`, no position last; `area` is still accepted. The offline twin is `subtreeComparer` in `lib/offline.js`.
   With **Bouldering the only type picked** (`boulderOnly` / `sortsFor` / `sortFor` in `RouteFinderPanel.tsx`) the two wall orders become
   **By boulder** (`sort_by` `area`: each boulder's problems together, by name) and the counts read *problems* (`finderNoun`).
-- **Near me / area map** (`NearMePanel`): Leaflet map of peak/crag area bubbles with route counts, list/map toggle (`ViewToggle`),
+- **Near me / area map** (`NearMePanel`): Leaflet map of peak/crag area bubbles with route counts, list/map toggle (`ViewToggle`; `compact` drops it, lists the five nearest areas with a *See all N areas on the Climbs map* button, and centres on you only when location is already granted — Home's **Near me** section on the phone, owner 2026-11-18),
   Street / Satellite / Topo / snow base layers (`BaseLayerToggle`), a live location dot, and a place search box
   ("Go to a town, county or zip/postal code") covering the US and Canada (provinces, towns, US zip, Canadian postal codes).
   **3D** (owner, 2026-11-14) ends its layer row, as on the route map: `Route3DView` opens on the box the flat map shows (`view`), the areas in view (type filter applied, up to 200) as pins in their type colour, each popup giving the climb count and **Open area**.
@@ -233,6 +233,7 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
 | `src/components/PartnersHereCard.tsx` | `PartnersHereCard`, the area page's partners card |
 | `src/components/StatePicker.tsx` | `StatePicker`, Pick a state |
 | `src/components/DbSearchSplit.tsx` | `DbSearchSplit`, area search results split into areas and climbs |
+| `src/components/DownloadedSearch.tsx` | `DownloadedSearch`, the phone Climbs tab's search over what is downloaded (`useDeviceSearch`, `useDeviceSearchScope` in `lib/db.js`) |
 | `src/components/NearMePanel.tsx` | `NearMePanel`, Near me, the live map |
 | `src/components/NearbyPeaks.tsx` | `NearbyPeaks`, nearby peaks on an area page |
 | `src/components/ObjectivesPanel.tsx` | `ObjectivesPanel`, Saved objectives in the browser |
