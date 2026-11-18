@@ -73,7 +73,17 @@ for (const r of rows) {
   findings.push({ id: r.id, name: r.name, discipline: r.discipline, verdict, pins: pins.length, siblingTrailhead: sib ? { route: sib.id, name: thPin(sib).name || null } : null });
 }
 
-if (JSON_OUT) { console.log(JSON.stringify({ state: STATE, read: rows.length, counts, findings }, null, 1)); process.exit(0); }
+// THE OTHER DIRECTION: a CRAG climb (sport, trad, top rope, aid, bouldering, on an area that is not a
+// peak) whose pins include a Summit draws the peak glyph and a Summit legend. 2026-11-18: 43 found; 38
+// were the crag's own location or a formation's top typed Summit and were retyped Crag / Topout
+// (coordinates unchanged). The rest are climbs filed under a crag discipline that really are peak routes
+// (Trap Dike, Cascade Mountain Slide, the Mt. Baldy trail): their DISCIPLINE is the finding, not the pin.
+const CRAG_DISCS = ["sport", "trad", "toprope", "aid", "bouldering"];
+const cragRows = await selectAll("routes", "id,name,area_id,discipline,waypoints", `waypoints=not.is.null&discipline=in.(${CRAG_DISCS.join(",")})${STATE === "all" ? "" : "&" + stateIdFilter(STATE)}`, { pageSize: 1000 });
+const cragSummits = cragRows.filter((r) => !peakAt.has(r.area_id) && pinsOf(r).some((w) => isType(w, /^summit$/i)))
+  .map((r) => ({ id: r.id, name: r.name, discipline: r.discipline, summitPins: pinsOf(r).filter((w) => isType(w, /^summit$/i)).map((w) => w.name || null) }));
+
+if (JSON_OUT) { console.log(JSON.stringify({ state: STATE, read: rows.length, counts, findings, cragSummits }, null, 1)); process.exit(0); }
 console.log(`audit:map-discipline -- ${rows.length} routes on peak areas (${STATE})\n`);
 console.table(counts);
 for (const v of ["SUMMIT_ONLY", "NO_SUMMIT"]) {
@@ -83,3 +93,6 @@ for (const v of ["SUMMIT_ONLY", "NO_SUMMIT"]) {
   f.slice(0, LIMIT).forEach((x) => console.log(`  ${x.id}  [${x.discipline}, ${x.pins} pins]${x.siblingTrailhead ? `  sibling: ${x.siblingTrailhead.route} -> ${x.siblingTrailhead.name}` : ""}`));
   if (f.length > LIMIT) console.log(`  ... ${f.length - LIMIT} more (--limit N, or --json)`);
 }
+console.log(`\nCRAG_SUMMIT: ${cragSummits.length} crag climbs (not on a peak) carry a Summit pin -- retype to Crag/Topout, or the route is a peak climb filed under a crag discipline`);
+cragSummits.slice(0, LIMIT).forEach((x) => console.log(`  ${x.id}  [${x.discipline}]  ${x.summitPins.join("; ")}`));
+if (cragSummits.length > LIMIT) console.log(`  ... ${cragSummits.length - LIMIT} more (--limit N, or --json)`);

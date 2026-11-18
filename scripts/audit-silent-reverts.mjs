@@ -120,6 +120,12 @@ const GATE = [];
    escape above fires by itself, with no bookkeeping at all. */
 const REVIEWED_SEEN = new Set();
 const REVIEWED = new Map([
+  ["13c825b78dbc242c4715d2f9e35ea10835b8aee8",
+    "#3378 replaced #3352's track-measured leg Loss/Regain with published, sourced columns (0449) on the " +
+    "owner's word (2026-11-14: \"i dont want to have to do any of our own math\"). Its message names " +
+    "measuredLegClimb and climbAlong as removed but not LEG_NOISE_FT / LEG_SHOW_FT, the two thresholds " +
+    "only those functions read. Deliberate: check:leg-loss-regain now asserts no card measures a track. " +
+    "Verified 2026-11-18; nothing in the tree references either constant."],
   ["9afff4eb84d5a417af540545079d8aace4399c2e",
     "#1677 promoted six scripts/oneoff/ unit probes into check:units — one wired guard, 852 lines, " +
     "and the six deleted files are the probes it supersedes. Verified: the commit ADDS " +

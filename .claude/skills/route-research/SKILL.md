@@ -100,7 +100,9 @@ the last two rows. Research effort goes to the first three groups.
   place-names bulk file (`DomesticNames_<ST>_Text.zip`) has coordinates but no elevations.
   With no land-manager figure, the **USGS map figure** is official, NOT a LiDAR survey figure
   (owner, 2026-11-18: Cutthroat 8,050 map vs 8,066 LiDAR → 8,050). Owner exception: Prusik Peak
-  keeps its locked 8,008 ft.
+  keeps its locked 8,008 ft. On an UNNAMED spire with no USGS point, where the map figure may be an
+  interpolated contour, the majority of climbing sources wins over the map figure (Sharkfin Tower:
+  8,160 from Mountain Project + Abegg, not the map's 8,220).
 - **Majority of independent sources wins** (owner, 2026-11-18): when 2+ independent sources agree
   on a value and one source (often Mountain Project) disagrees, the majority value is used — e.g.
   Mary Jane Dihedral 5.10a (MP) → 5.9 (theCrag, Abegg, Wenatchee Outdoors). Change `grade_num`

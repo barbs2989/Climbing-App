@@ -2,7 +2,7 @@
 // Signs in a per-run fixture pair (scripts/lib/ui-fixture.mjs — created with the service key, destroyed
 // after), saves a region, a crag and a peak for the owner, lists the mate on Mount Baker, then drives the
 // dev build at 390px and writes screenshots. Every extra row it adds is deleted before the fixture is.
-//   node scripts/oneoff/probe-peak-partners-walk.mjs <outDir>
+//   node scripts/oneoff/probe-peak-partners-walk.mjs <outDir> [--live]   (--live: the published site, no dev server)
 import { chromium } from "playwright-core";
 import { spawn } from "node:child_process";
 import fs from "node:fs";
@@ -15,9 +15,10 @@ import { assertQuietBox } from "../lib/quiet-box.mjs";
 assertQuietBox("probe-peak-partners-walk.mjs");
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
-const OUT = process.argv[2] || path.join(ROOT, "probe-out");
+const LIVE = process.argv.includes("--live");
+const OUT = process.argv.slice(2).find((a) => !a.startsWith("--")) || path.join(ROOT, "probe-out");
 fs.mkdirSync(OUT, { recursive: true });
-const PORT = 5287, base = `http://127.0.0.1:${PORT}/Climbing-App/`;
+const PORT = 5287, base = LIVE ? "https://barbs2989.github.io/Climbing-App/" : `http://127.0.0.1:${PORT}/Climbing-App/`;
 const KEY = requireServiceKey();
 const rest = async (p, opts = {}) => { const r = await fetch(SUPABASE_URL + "/rest/v1/" + p, { ...opts, headers: headers(KEY, { "Content-Type": "application/json", Prefer: "return=representation", ...(opts.headers || {}) }) }); const t = await r.text(); let b; try { b = JSON.parse(t); } catch { b = t; } return { status: r.status, body: b }; };
 const log = (...a) => console.log(...a);
@@ -26,7 +27,7 @@ const check = (ok, msg) => { findings.push((ok ? "ok    " : "FAIL  ") + msg); lo
 
 let server, browser, fixture; const extra = [];
 try {
-  server = spawn(NPX, [...NPX_PRE, "vite", "--config", "scripts/signed-in.config.mjs", "--host", "127.0.0.1", "--port", String(PORT), "--strictPort"], { cwd: ROOT, stdio: "ignore", env: { ...process.env, VITE_DEMO_AUTOLOGIN: "false" } });
+  if (!LIVE) server = spawn(NPX, [...NPX_PRE, "vite", "--config", "scripts/signed-in.config.mjs", "--host", "127.0.0.1", "--port", String(PORT), "--strictPort"], { cwd: ROOT, stdio: "ignore", env: { ...process.env, VITE_DEMO_AUTOLOGIN: "false" } });
   for (let i = 0; i < 60; i++) { try { if ((await fetch(base)).ok) break; } catch {} await new Promise((r) => setTimeout(r, 1000)); }
   fixture = await createFixture(log);
   const { owner, mate } = fixture;

@@ -8,9 +8,6 @@ export interface CardHeadProps {
   /** The title text; also what the confidence level is looked up by (`headKey`). */
   children?: ReactNode;
   style?: CSSProperties;
-  /** Let the confidence chip drop UNDER the title when the row is too narrow, lined up with the title's
-   *  first letter (ACCESS & REGULATIONS on a phone, owner 2026-11-18), instead of squeezing the title. */
-  wrapChip?: boolean;
 }
 
 /**
@@ -21,7 +18,12 @@ export interface CardHeadProps {
  * purpose (they must not import core) — see the hand-off in docs/refactor-progress.md. The heading role
  * sits on the TITLE only, as SL's does: on the whole row it took the chip's text in too, and the route
  * page's jump pill (SectionJumps reads heading text) read "ROUTE FACTSHigh".
+ * The chip WRAPS under the title when the row is too narrow, lined up with the title's first letter, instead
+ * of squeezing the title: beside a chip and an Edit button, ROUTE BREAKDOWN, EMERGENCY & RESCUE, GEAR &
+ * ESSENTIALS and ~10 more broke onto two lines at 320px, ACCESS & REGULATIONS onto three at 390 (owner,
+ * 2026-11-18). 6px of padding + the chip's own 4px margin = the bar (3) + gap (7); the bar is pulled back 6. The bar and
+ * the title are ONE unit, or a title too long for the row wrapped away and left the bar alone on a line above it.
  */
-export default function CardHead({tone,children,style,wrapChip}: CardHeadProps) {
-const _cx=useContext(ConfidenceCtx);const _levels=_cx&&_cx.levels?_cx.levels:null;const _onFlag=_cx&&_cx.onFlag?_cx.onFlag:null;const _k=_levels?headKey(children):null;const _lv=_k&&_levels?_levels[_k]:null;return <div style={{display:"flex",alignItems:"center",gap:7,minWidth:0,fontSize:12,fontWeight:800,color:C.text,letterSpacing:0.5,textTransform:"uppercase",...(wrapChip?{flexWrap:"wrap",rowGap:4,paddingLeft:6}:null),...style}}><span aria-hidden="true" style={{width:3,height:12,borderRadius:2,background:tone||C.blueSolid,flexShrink:0,marginLeft:wrapChip?-6:0}}/><span role="heading" aria-level={2} style={{minWidth:0}}>{children}</span>{_lv?<ConfChip level={_lv} label={children} compact onFlag={_onFlag?function(){_onFlag(_k,children);}:null}/>:null}</div>;
+export default function CardHead({tone,children,style}: CardHeadProps) {
+const _cx=useContext(ConfidenceCtx);const _levels=_cx&&_cx.levels?_cx.levels:null;const _onFlag=_cx&&_cx.onFlag?_cx.onFlag:null;const _k=_levels?headKey(children):null;const _lv=_k&&_levels?_levels[_k]:null;return <div style={{display:"flex",alignItems:"center",gap:7,minWidth:0,fontSize:12,fontWeight:800,color:C.text,letterSpacing:0.5,textTransform:"uppercase",flexWrap:"wrap",rowGap:4,paddingLeft:6,...style}}><span style={{display:"flex",alignItems:"center",gap:7,minWidth:0,marginLeft:-6}}><span aria-hidden="true" style={{width:3,height:12,borderRadius:2,background:tone||C.blueSolid,flexShrink:0}}/><span role="heading" aria-level={2} style={{minWidth:0}}>{children}</span></span>{_lv?<ConfChip level={_lv} label={children} compact onFlag={_onFlag?function(){_onFlag(_k,children);}:null}/>:null}</div>;
 }

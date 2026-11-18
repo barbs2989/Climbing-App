@@ -1519,6 +1519,20 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     chunks of 60, answers in seconds.
   - Ice and mixed are out of scope on purpose: an ice flow on a face does not top out, so "no
     summit" is not a finding there.
+  - **The other direction, CRAG_SUMMIT**: a crag climb (sport / trad / top rope / aid / bouldering
+    on an area that is NOT a peak) whose pins include a `Summit` draws the peak glyph and a Summit
+    legend. Measured 2026-11-18: 43. Read row by row, 30 were the crag's own location ("Half Moon
+    Crag", "Minidike", "Megadike (south section)") and 8 the top of the formation the climb ends on
+    ("Pinto Rock summit", "Mossy Loaf (crag top-out)"); they were retyped `Crag` / `Topout` through
+    enrich:apply with coordinates unchanged (38/38 re-read). The 5 left are PEAK climbs filed under a
+    crag discipline (Trap Dike and Cascade Mountain Slide as trad, the Mt. Baldy trail as top rope,
+    Castle Dome 4th class, Edward Peak's Mole): their discipline was the finding. Migration 0458
+    (owner: "do what you recommend") moved them by their own stored grade: the four class 3-4 routes to
+    scrambling, the 5.7 four-pitch Mole to alpine. CRAG_SUMMIT then read 0. Their AREAS are still typed
+    crag (Cascade Mountain, Mt Colden and Mount San Antonio are peaks); retyping an area moves every
+    route on it, so that is a separate change.
+    Research batches 1-3 (161 trailheads, 12 summit pins) are recorded in
+    `data/research/2026-11-18/map-discipline/REPORT.md`; audit after them: 931 / 265 / 41.
 - **`audit:map-pins`** asks what the route MAP actually draws — how many trailhead pins it will
   paint, and which pins it will silently drop — rather than the geometry question the three
   waypoint audits ask. It overlaps `audit:waypoints` on two of its three sections and exists
