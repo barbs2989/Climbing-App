@@ -487,11 +487,14 @@ console.log("\n--- 5. no legal surface promises a crew something no crew member 
 
 /* The stored shape is READ FROM THE WRITE, never restated — a copy would agree with itself whatever
    `onSetFloatPlan` does, which is the whole question. */
-/* Two spellings (2026-11-14): fileCrewFloatPlan now builds the object as `const _fp={...}` and writes it
-   with updateCrewRow(..., {float_plan:_fp}) so the toast can wait for the organizer-only write. */
-const fpWrite = /updateCrew\(\s*cid\s*,\s*\{\s*floatPlan\s*:\s*\{([\s\S]{20,600}?)\}\s*\}\s*\)/.exec(app)
-  || /const\s+_fp\s*=\s*\{([\s\S]{20,600}?)\}\s*;[\s\S]{0,600}?updateCrewRow\([^)]*float_plan\s*:\s*_fp\b/.exec(app);
-if (!fpWrite) dead("ANCHOR LOST: onSetFloatPlan's updateCrew(cid,{floatPlan:{...}}) in ClimbMatch.jsx — without the write this section cannot say what a crew stores, and every claim below would pass unexamined");
+/* RE-AIMED (0450, 2026-11-14/18). The crew-readable record moved: crews.float_plan (one organizer-only stamp per
+   crew) was replaced by crew_float_filings, one row per member, which fileCrewFloatPlan builds as
+   `const _mine=form===null?null:{filedAt,returnBy}` and writes through setMyFloatFiling. Its keys are read from
+   THAT write now. The Privacy Policy still says the crew's other members CAN read it and no screen shows it back
+   to them (owner, 2026-11-18: "only my own"), so the premise below is unchanged — and a second test, after the
+   renderer scan, holds the app to reading ONLY the climber's own row. */
+const fpWrite = /const\s+_mine\s*=\s*form\s*===\s*null\s*\?\s*null\s*:\s*\{([\s\S]{20,600}?)\}\s*;[\s\S]{0,600}?setMyFloatFiling\(/.exec(app);
+if (!fpWrite) dead("ANCHOR LOST: fileCrewFloatPlan's `const _mine=form===null?null:{...}` + setMyFloatFiling(...) in ClimbMatch.jsx — without the write this section cannot say what a crew stores, and every claim below would pass unexamined");
 const fpKeys = [...fpWrite[1].matchAll(/(?:^|[,{])\s*([A-Za-z_$][\w$]*)\s*:/g)].map((m) => m[1]);
 /* `contact` is deliberately DROPPED from the renderer test: the eleven-field float plan FORM has a
    field of that name too, so it is not distinctive to the stored object and would report the form's
@@ -517,6 +520,24 @@ const masked = [["ClimbMatch.jsx", parseComments(app, "ClimbMatch.jsx")], ["Clim
 const accessRe = new RegExp(String.raw`[.\[]\s*["']?(` + fpDistinct.join("|") + String.raw`)\b`, "g");
 const renderers = [];
 for (const [name, src] of masked) for (const m of src.matchAll(accessRe)) renderers.push(`${name}: …${src.slice(Math.max(0, m.index - 50), m.index + m[0].length + 50).replace(/\s+/g, " ")}…`);
+/* ONLY YOUR OWN ROW (0450). RLS lets a confirmed member read a crewmate's filing; the Privacy Policy's "no screen
+   in the app shows it back to them" is kept by the APP, so the one place that takes filings off the crews read must
+   keep only the row whose user_id is the signed-in climber, and no other app file may touch the table. lib/db.js is
+   the reader and writer, so it is exempt. ClimbMatch.jsx is judged with its comments masked. */
+{
+  const appMasked = masked[0][1];
+  const hits = [...appMasked.matchAll(/crew_float_filings/g)];
+  if (hits.length !== 1) bad(`ClimbMatch.jsx takes crew_float_filings off the crews read in ${hits.length} place(s) — it must be exactly ONE mapping that keeps only your own row, or a screen can show a crewmate's filing (Privacy Policy: no screen shows it back to them)`);
+  else {
+    const near = appMasked.slice(hits[0].index, hits[0].index + 200);
+    if (!/user_id\s*===\s*uid/.test(near)) bad("ClimbMatch.jsx's crew_float_filings mapping no longer keeps only the row whose user_id===uid — a crewmate's filing would reach a screen");
+    else ok("the crews read keeps only YOUR crew_float_filings row (user_id===uid), in one place");
+  }
+  const walk = (d) => fs.readdirSync(d, { withFileTypes: true }).flatMap((e) => e.isDirectory() ? walk(path.join(d, e.name)) : /\.(jsx?|tsx?)$/.test(e.name) ? [path.join(d, e.name)] : []);
+  const others = [...walk(path.join(ROOT, "lib")), ...walk(path.join(ROOT, "src"))].filter((f) => !/[\\/]lib[\\/]db\.js$/.test(f) && /crew_float_filings/.test(fs.readFileSync(f, "utf8")));
+  if (others.length) bad(`crew_float_filings is named outside lib/db.js and ClimbMatch.jsx's mapping: ${others.map((f) => path.relative(ROOT, f)).join(", ")} — read filings only through crew.myFloatFiling`);
+  else ok("no other lib/ or src/ file names crew_float_filings");
+}
 const planRendered = renderers.length > 0;
 
 /* Judge each legal surface's own STRING LITERALS, never the lifted array source: a sentence split

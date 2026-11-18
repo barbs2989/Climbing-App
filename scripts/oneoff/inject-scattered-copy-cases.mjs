@@ -30,7 +30,7 @@ const CASES = [
     why: "the real historical FAQ answer, restored verbatim" },
 
   { name: "toast-profile-field", file: "ClimbMatch.jsx",
-    find: "\"Float plan saved — your crew's card shows it's set. \"",
+    find: "\"Float plan saved — your crew card shows yours is set. \"",
     repl: "\"Float plan saved. Add an emergency contact in your profile, and send them the plan yourself. \"",
     fires: false,
     why: "the real historical toast — false while nothing could set a contact, TRUE since 0237 added one to Edit profile, so the rule stands down by itself (its own design: a hardcoded ban would forbid the fix). Repointed 2026-11-14 (PR #3369): fileCrewFloatPlan's old toast is gone, so the profile-contact wording is injected into the organizer's success toast instead" },

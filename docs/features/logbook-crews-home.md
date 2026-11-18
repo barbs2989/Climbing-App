@@ -138,12 +138,15 @@ Three top-level `tab` values in `ClimbMatch.jsx` (`tab==="today"`, `tab==="crew"
   `crew:<id>` first, the old scope deleted second, and a saved plan files the crew stub. A saved crew plan has *Send to the crew chat*
   (`FloatPlan`'s `onSendToCrew`, wired in both `FloatPlans` and the crew `SafetyTab`), which posts the plan text through `sendCrewMsg` — the
   climber's own send, so the Privacy Policy's "stays on your phone until you send it" still holds; `crews.float_plan` is unchanged.
-  **Who stamps the crew** (2026-11-14): saving a crew plan (`onFiled` → App's `fileCrewFloatPlan(cid, form)`) writes the
-  `crews.float_plan` stamp `{filedAt, contact: null, returnBy}` only when the climber is the ORGANIZER — the only role RLS (0036) lets
-  update the row — and its toast waits for that write. A member's save stays on the device and says so (*Float plan saved on this
-  device*), with no crew write and no organizer error. Deleting a crew plan calls `fileCrewFloatPlan(cid, null)`, which clears the
-  organizer's stamp so the card's ✓ does not outlive the plan. The stamp is still ONE per crew, so a member sees ✓ when the organizer
-  filed; per-member filings are the planned fix.
+  **Your own filing** (0450, 2026-11-18; replaces the 2026-11-14 organizer-only stamp): saving a crew plan (`onFiled` →
+  App's `fileCrewFloatPlan(cid, form)`) writes YOUR row in `crew_float_filings` through `setMyFloatFiling` (lib/db.js) — the
+  date filed and the crew's agreed return day, never the plan or a contact — for every confirmed member, the organizer
+  included; the toast waits for the write. `useMyCrews` embeds the table and App keeps only the row whose `user_id` is you
+  (`crew.myFloatFiling`), so `CrewCard`'s *✓ Your float plan* and the itinerary step's *your float plan set* say whether YOU
+  filed. RLS (copied from `crew_rides`, 0377) lets the crew's confirmed members read each other's rows, as the Privacy Policy
+  says, but no screen shows them (owner: "only my own"; `check:policy-claims` §5 holds the app to that). Deleting the plan
+  (`fileCrewFloatPlan(cid, null)`) deletes the row; leaving the crew drops it (trigger). `crews.float_plan` is deprecated and no
+  longer written; seed and signed-out crews keep their local `floatPlan` flag. RLS proof: `scripts/oneoff/verify-0450-float-filings-pglite.mjs`.
   **Chat → plan**: the plan text is ONE format, `floatPlanText` (core), and `parseFloatPlanText` reads it back (null for any other message).
   In a crew thread `MessageRow` (given `onSaveFloatPlan`) draws a posted plan as `FloatPlanCard` (`src/components/FloatPlanCard.tsx`): the climb,
   Leaves / Back by (amber) / Parking / Vehicle / Party / Comms / Contact where filled, notes, coordinate. A crewmate's card has *Save to my float
