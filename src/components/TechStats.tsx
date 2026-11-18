@@ -196,7 +196,6 @@ export default function TechStats({route,onEdit,part,onEditArea}: TechStatsProps
      Project and theCrag print a crag's rock: the owner removed the mapped qualifier 2026-10-15. */
   const _rk=routeRock(route);
   if(_rk)stats.push(["Rock",_rk.label,C.textSub]);
-  if(route.crux)stats.push(["Crux",String(route.crux),C.textSub]);
   /* ROUTE FACTS. On a crag discipline (sport, trad, toprope, aid, bouldering) this card is the ONE
      place the guidebook facts live, so every crag route reads the same set in the same order rather
      than each discipline growing its own box. Every row is gated on its own value: a bare route —
@@ -213,6 +212,10 @@ export default function TechStats({route,onEdit,part,onEditArea}: TechStatsProps
   const _alt=(function(a: unknown){return (Array.isArray(a)?a:(a?[a]:[])).map(function(x: unknown){return String(x==null?"":x).trim();}).filter(Boolean);})(route.altNames!=null?route.altNames:route.alt_names);
   if(_alt.length)facts.push(["Also called",_alt.join(", ")]);
   const _vars=(Array.isArray(route.variations)?route.variations:[]).map(function(v){if(v==null)return "";if(typeof v!=="object")return String(v).trim();return [v.name,v.grade].filter(Boolean).join(" · ")+(v.note?" — "+v.note:"");}).filter(Boolean);
+  /* CRUX is `routes.crux`: WHERE the hardest move or section is ("bulge about halfway up", "first bolt"), as the
+     catalog holds it and as Mountain Project and theCrag describe it, in words. A sentence, so a facts row, not a stat
+     tile; the difficulty itself is the grade (the Crux grade tile). Owner, 2026-11-18. */
+  if(route.crux)facts.push(["Crux",String(route.crux)]);
   if(_vars.length)facts.push(["Variations",<>{_vars.map(function(v,i){return <div key={i} style={{marginTop:i?3:0}}>{v}</div>;})}</>]);
   if(crag){
     /* The route's own area (a wall, crag or peak): crag-wide facts are read from it and, with onEditArea, added to it. */
