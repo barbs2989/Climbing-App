@@ -19,6 +19,12 @@ project documentation as a whole — `CLAUDE.md`, `docs/codebase/` and `docs/gua
     (sport, else trad), so a sport grade was measured against a trad grade: Avery (5.11a sport / 5.10a trad) read *Far
     apart* from Blake (5.9 trad). It now compares sport with sport and trad with trad, takes the closer when both set
     both, and falls back to the cross comparison only when they share no rope-grade kind. `check:match-percent` pins all three.
+  - **AVAILABILITY IS AN OVERLAP COEFFICIENT (2026-11-18).** It scored 6 per shared slot, so two weekends-only
+    climbers (the same schedule) got 6 of 12 and an amber "partly". It now scores shared slots over the SMALLER side's
+    slots (Szymkiewicz-Simpson), so one schedule wholly inside the other counts fully; flexible stays full. Chosen over
+    Jaccard, which would penalise the climber who is free MORE often; partner apps match on whether times line up.
+    `scripts/oneoff/measure-compat-designs.mjs` no longer reproduces the shipped formula, and has not since the
+    listed-areas term (0300) was added; it is a historical record, not a check.
   - **LEAD vs FOLLOW GRADES (2026-11-05, competitor review item 20).** A roped discipline's profile grade
     is the grade the climber LEADS (or, for a follow-only climber, follows); a leader may add the harder
     grade they will follow (`climb_grades[k].follow`, see `PROFILE_GRADES` in core). The grade term here

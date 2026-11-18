@@ -299,6 +299,17 @@ else fail(`the browse row no longer explains the missing match % (${JSON.stringi
   const cross = gOf({ sportGrade: "5.10a" }, { tradGrade: "5.10a" });
   if (cross.known && cross.gap === 0 && cross.kind === null) ok("with no rope-grade kind in common, it still compares across (sport vs trad) rather than calling it unknown");
   else fail(`a sport-only and a trad-only climber no longer compare grades (known=${cross.known}, gap=${cross.gap})`);
+  // AVAILABILITY IS AN OVERLAP COEFFICIENT (compat audit 2026-11-18): two climbers with the SAME schedule, or one whose
+  // slots all sit inside the other's, are a full match; it used to be 6 per shared slot, so weekends-only twins read amber.
+  const avOf = (a, b) => M.compatParts(a, b).find((r) => r.k === "avail");
+  const twin = avOf({ availability: ["weekends"] }, { availability: ["weekends"] });
+  const inside = avOf({ availability: ["weekends"] }, { availability: ["weekends", "weekday_pm"] });
+  const half = avOf({ availability: ["weekends", "weekday_am"] }, { availability: ["weekends", "weekday_pm"] });
+  const none = avOf({ availability: ["weekday_am"] }, { availability: ["weekday_pm"] });
+  if (twin.pts === twin.max && inside.pts === inside.max) ok("the same schedule, or one inside the other, counts fully for availability");
+  else fail(`weekends vs weekends scores ${twin.pts}/${twin.max} and weekends inside weekends+weekday PM ${inside.pts}/${inside.max} — a perfect fit reads as partial`);
+  if (half.pts > 0 && half.pts < half.max && none.pts === 0) ok("half the smaller schedule shared counts partly; nothing shared counts nothing");
+  else fail(`partial overlap scores ${half.pts}/${half.max} and no overlap ${none.pts}/${none.max}`);
   // The panel renders compatWhy() with the SAME viewer object it scores with: the partner row scores ME's MOUNTAIN
   // objectives (matchObjectiveIds), and the profile once scored ME.objectiveIds, so one climber read two numbers.
   const fpStart = stripped.indexOf("function FullProfile(");
