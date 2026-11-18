@@ -117,7 +117,7 @@ const realPeople=((peopleRes&&peopleRes.data)||[]).filter(function(p){return !_b
   const _searchAreaId=mode==="area"?(areaId||areaState||null):null;
   const inAreaRes=usePartnersInArea(_searchAreaId,_nearBy!=="any"?_origin:null,nearMi,USE_DB&&!!DB_UID&&!!_searchAreaId&&(_nearBy==="any"||!!_origin));
   const inAreaPeople=((inAreaRes&&inAreaRes.data)||[]).filter(function(p){return !_blockedIds.has(String(p.id))&&String(p.id)!==String(DB_UID);});
-  /* SAVED AREAS: the places the climber saved (Save area, 0322) as the search — every listed climber at any of them, or at one picked from the chips. The saved list stays owner-only; only climbers who LISTED themselves come back. A saved PEAK is searched too since 0455 (owner 2026-11-18): climbers can list themselves at a peak. */
+  /* SAVED AREAS: the places the climber saved (Save area, 0322) as the search — every listed climber at any of them, or at one picked from the chips. The saved list stays owner-only; only climbers who LISTED themselves come back. A saved PEAK is searched too since 0456 (owner 2026-11-18): climbers can list themselves at a peak. */
   const _savedCardsQ=useAreaCardsByIds(USE_DB&&DB_UID&&(mode==="saved"||mode==="peak")?(savedAreaIds||[]).slice(0,60):[]);
   const savedAreas=(savedAreaIds||[]).map(function(id){var a=(_savedCardsQ.data||{})[id];return a&&a.type!=="world"&&a.type!=="country"?{id:id,name:a.name||id}:null;}).filter(Boolean).slice(0,SAVED_SEARCH_LIM);
   /* Saved peaks, for A peak's one-tap chips. */const savedPeaks=(savedAreaIds||[]).map(function(id){var a=(_savedCardsQ.data||{})[id];return a&&a.type==="peak"?{id:id,name:a.name||id}:null;}).filter(Boolean);
@@ -128,7 +128,7 @@ const realPeople=((peopleRes&&peopleRes.data)||[]).filter(function(p){return !_b
   const _savedSearchIds=mode==="saved"?(_savedPicked?[_savedPicked]:savedAreas.map(function(a){return a.id;})):[];
   const savedRes=usePartnersInAreas(_savedSearchIds,_nearBy!=="any"?_origin:null,nearMi,USE_DB&&!!DB_UID&&_savedSearchIds.length>0&&(_nearBy==="any"||!!_origin));
   const savedPeople=(savedRes.data||[]).filter(function(p){return !_blockedIds.has(String(p.id))&&String(p.id)!==String(DB_UID);});
-  /* A PEAK (owner 2026-11-18, 0455): climbers LISTED at the peak (partners_in_area, the same reach as an area) and climbers whose
+  /* A PEAK (owner 2026-11-18, 0456): climbers LISTED at the peak (partners_in_area, the same reach as an area) and climbers whose
      mountain objectives sit on it (partners_by_objective's area half), one list: listed first, then objectives, each climber once. */
   const [peakPick,setPeakPick]=useState(null);const _peakId=mode==="peak"&&peakPick?peakPick.id:null;
   const _peakOn=USE_DB&&!!DB_UID&&!!_peakId&&(_nearBy==="any"||!!_origin);

@@ -4,7 +4,7 @@
 //
 // One listing per area: the crag types wanted there (empty = any), ONE optional date window
 // ("free here Oct 18-19") and a short note. Any area but the world or a country (too broad to search),
-// and since 0455 a PEAK too (owner 2026-11-18) — what you climb there is picked from the alpine family.
+// and since 0456 a PEAK too (owner 2026-11-18) — what you climb there is picked from the alpine family.
 // The server refuses the rest with a readable reason, which this screen relays.
 //
 // Adding is built for one hand: the search box comes first and searches EVERY area in every state,
@@ -33,7 +33,7 @@ const TYPE_LABEL = { state: "State", region: "Region", range: "Range", canyon: "
 // How many search hits the box shows; `total` says how many matched, so a cut is never silent.
 const HIT_LIM = 30;
 const NO_LISTING = new Set(["world", "country"]);
-// What a climber can want at a place: crag types at a crag, the alpine family at a peak (0455 allows both).
+// What a climber can want at a place: crag types at a crag, the alpine family at a peak (0456 allows both).
 const discsFor = (areaType) => areaType === "peak" ? ALPINE_COND_DISCIPLINES : CRAG_CATS;
 const fmtDay = (d) => { if (!d) return ""; try { return new Date(d + "T12:00:00").toLocaleDateString(DLOCALE, { month: "short", day: "numeric" }); } catch (e) { return d; } };
 export const windowText = (l) => (l && l.freeFrom && l.freeTo) ? (l.freeFrom === l.freeTo ? "Free " + fmtDay(l.freeFrom) : "Free " + fmtDay(l.freeFrom) + "–" + fmtDay(l.freeTo)) : "Any time";
@@ -52,7 +52,7 @@ export default function MyPartnerAreas({ uid, listings, listingsError, prefill, 
   const qOk = q.trim().length >= 2;
   const listed = useMemo(() => new Set((listings || []).map((l) => l.areaId)), [listings]);
   // Suggestions: where the climber's own logged/saved crag climbs and saved areas sit. A wall is too
-  // fine a place to find a partner at, so it is offered as its crag; a peak is offered as itself (0455).
+  // fine a place to find a partner at, so it is offered as its crag; a peak is offered as itself (0456).
   const cardsQ = useAreaCardsByIds(USE_DB ? (suggestIds || []).slice(0, 60) : []);
   const suggestions = useMemo(() => {
     const m = cardsQ.data || {}, out = [], seen = new Set();

@@ -1,4 +1,4 @@
--- 0455 — A CLIMBER CAN LIST THEMSELVES AT A PEAK (owner 2026-11-18: "for saved areas make a [switch] next to each area
+-- 0456 — A CLIMBER CAN LIST THEMSELVES AT A PEAK (owner 2026-11-18: "for saved areas make a [switch] next to each area
 -- to allow them to list themselves in partner search for that area. Also same for peaks. Allow users to find partners
 -- and crews by peaks as well").
 --
@@ -33,6 +33,6 @@ alter table public.partner_areas drop constraint if exists partner_areas_discipl
 alter table public.partner_areas add constraint partner_areas_disciplines_values
   check (disciplines <@ array['trad','sport','toprope','aid','bouldering','alpine','mountaineering','scrambling','ice','mixed']::text[]);
 comment on column public.partner_areas.disciplines is
-  'What the climber wants at this area; empty = any. Crag types (trad/sport/toprope/aid/bouldering) and, since 0455 (peak listings), alpine/mountaineering/scrambling/ice/mixed.';
+  'What the climber wants at this area; empty = any. Crag types (trad/sport/toprope/aid/bouldering) and, since 0456 (peak listings), alpine/mountaineering/scrambling/ice/mixed.';
 
 commit;

@@ -6,7 +6,7 @@ whole guide feature on 2026-11-14 (owner). This doc covers the partners mode (`l
 
 ## 1. What it does today
 - **Crag partners are found by AREA** (owner decision 2026-10-15; 0300): a climber lists themselves at the crags, canyons or
-  ranges they climb (`lib/MyPartnerAreas.jsx` — crag types, one optional date window, a note; since 0455 (owner 2026-11-18) a PEAK too, with alpine/mountaineering/scrambling/ice/mixed as its types; the world and a country are refused), and others
+  ranges they climb (`lib/MyPartnerAreas.jsx` — crag types, one optional date window, a note; since 0456 (owner 2026-11-18) a PEAK too, with alpine/mountaineering/scrambling/ice/mixed as its types; the world and a country are refused), and others
   find them under any area that contains, equals or sits inside those (two-way ltree reach, with an ancestor listing
   reaching down only from below the state since 0311). Under Near my areas and By Area a listed climber's row carries
   *Plan a session at <area>*, which opens the Start-a-crew sheet at that area with them invited. Alpine, mountaineering,
@@ -52,7 +52,7 @@ whole guide feature on 2026-11-14 (owner). This doc covers the partners mode (`l
   in common first; with no listing, the You card's *+ Add an area* is the way in and the empty card shows the meanwhile list) and **Saved areas** (internal mode `saved`: the
   areas you saved with Save area as the search — a chip row *All saved · N* plus one chip per saved crag, canyon, range or state;
   climbers listed at, inside, or across a wider area containing any of them, listed in the most of them first; saved peaks are searched
-  too since 0455; at most the first 12 saved areas; with none saved it says how to save one; an
+  too since 0456; at most the first 12 saved areas; with none saved it says how to save one; an
   *Edit saved areas* link opens Logbook › Saved › Areas), **A peak** (internal `peak`, signed in; owner 2026-11-18): `PeakPicker` (`src/components/PeakPicker.tsx`) — your saved peaks as chips over a peak-only catalog search — then one list: climbers LISTED on the peak (`usePartnersInArea`) first, then climbers with a route on it as a mountain objective (`usePartnersByObjective(null, peakId)`), each once; a half that failed is said, never read as empty; then the *Climb at <peak>?* `ListMeInAreaBox`. **Pick an area** (internal `area`; listing-based; the region dropdown plus a search box for any crag, canyon or range inside the chosen
   state; once a place is chosen, signed in, a *Climb in <place>?* / *Climb at <crag>?* box (`ListMeInAreaBox`; "at" for a crag, wall, boulder or sector, "in" otherwise) sits UNDER who is listed with a
   one-tap *List me in/at <place>* — the same `savePartnerArea` write as the area page's Partners here card — and, once listed,
@@ -125,14 +125,14 @@ whole guide feature on 2026-11-14 (owner). This doc covers the partners mode (`l
 | `lib/partner-gender-pref.js` | `partnersMyGenderPref`, `savePartnersMyGender` |
 | `lib/db.js` | `PARTNER_COLS`, `usePartnerGenders`, `useDiscoverableProfiles`, `useProfileSearch`, `useMyZip`, `usePartnersNear`, `usePartnersByObjective`, `usePartnerSignals`, `useMatchObjectivesOfUsers`, `useVerifiedUsers`, `useMyPartnerAreas`, `savePartnerArea`, `removePartnerArea`, `usePartnersInArea`, `usePartnersInAreas`, `usePartnersForMyAreas`, `usePartnerAreaCounts`, `usePartnerAreasOfUsers`, zip save/delete |
 | `lib/EditProfileScreen.jsx` | Zip code field (owner-only, feeds the origin; a typed zip is checked live by `useZipCentroid`). The home city is a label only — it places nobody |
-| `supabase/migrations/0189, 0211, 0232, 0295, 0300, 0303, 0311, 0455` | RPCs and tables below |
+| `supabase/migrations/0189, 0211, 0232, 0295, 0300, 0303, 0311, 0456` | RPCs and tables below |
 | `docs/codebase/algorithms.md` | `compat()` design history |
 
 ## 4. Data
 - **Supabase**: `profiles` (public read; `discoverable`, `level`, `avail_week`, `availability`, `hiking_speed_ft_hr`, grades; `climb_grades` holds ice, mixed and aid -- `PARTNER_COLS` selects it, and rows from the partner RPCs, which do not return it, get it from `usePartnerClimbGrades` by id), `profile_zips` (owner-only), `zip_centroids` (public Census gazetteer),
   objectives per user, `verification_records` (owner-only; read via 0232).
 - **`partner_areas`** (0300): one row per climber and area (`disciplines text[]` within the crag family, one optional `free_from`/`free_to` window, `note`);
-  owner-only RLS; a trigger refuses world/country (peaks allowed since 0455) and caps 30 per climber; `disciplines` takes the crag family and, since 0455, the alpine family. An expired window reads back as no window.
+  owner-only RLS; a trigger refuses world/country (peaks allowed since 0456) and caps 30 per climber; `disciplines` takes the crag family and, since 0456, the alpine family. An expired window reads back as no window.
 - **RPCs**: `partners_near` (0189; SECURITY DEFINER, distance rounded up to next 5 mi, radius floor 10 mi, only discoverable, never self, never users who blocked the caller);
   `partners_by_objective` (0211, re-created 0303 with the match rule); `partner_signals(uuid[])` (0295; returns `level` and `climbing_since` — its `trust_score` column was dropped in 0335 — max 200 rows, authenticated only);
   `partners_in_area`, `partners_for_my_areas`, `partner_area_counts`, `partner_areas_of_users`, `match_objectives_of_users` (0300; same visibility rule as `partners_near`; reach is `path <@ T or (path @> T and the listing is below the state)` since 0311 — a state listing answers a search at the state only).

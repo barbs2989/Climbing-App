@@ -18,7 +18,7 @@ export interface ListMeSwitchProps {
 /* LIST ME, beside each saved area and peak in Logbook › Saved (owner 2026-11-18): "make a [switch] next to each area to
    allow them to list themselves in partner search for that area. Also same for peaks." Saving is a private bookmark
    (saved_areas); this switch is the public half — a partner_areas listing, the same write as the area page's Partners
-   here card and Partners › Pick an area's List me box, optimistic the same way. A peak is a place since 0455. */
+   here card and Partners › Pick an area's List me box, optimistic the same way. A peak is a place since 0456. */
 export default function ListMeSwitch({ areaId, name, C, uid, listed, notify }: ListMeSwitchProps) {
   const [busy, setBusy] = useState(false);
   const [opt, setOpt] = useState<boolean | null>(null);
