@@ -121,6 +121,8 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
 - **Route finder** (`RouteFinderPanel`): filters over the area's whole subtree - disciplines, grade (system + low/high),
   min stars, min pitches, length band, sort (`DEF = { discs, sortBy, minStars, minPitches, len, gSys, gLo, gHi, gain, trip, elev, prom, near, within }`). Active filters show as chips.
   A wall heading's grey line is `shownTrailOf`: only the levels BELOW the area being searched (the CSV keeps the whole trail). The search bar pins through `usePinnedBar`, which never pins a hidden bar (a route page covering the finder) and re-measures when the bar is shown.
+  A PEAK heading adds the peak's elevation (`useAreaPeakElevationsByIds`: `areas.elevation_ft` of peak areas only, in the climber's units). The title (`ScreenHero quiet`) is a hidden <h1> on a phone and drawn on the website; on a phone the path bar puts *Area tree* beside the path, since its Back is drawn in the top bar.
+  Grade ranges use `GRADE_SCALES`, where a d is +0.9 (5.10d = 10.9, 0464), so *5.10a–5.10d* is exactly the grade chart's 5.10 bar and no longer takes in a bare 5.11.
   The website header's typed search opens the finder through `jumpToFinderReq` with `initial` words and filters (there is no *Save search* any more; saved searches were removed 2026-11-05).
   **Since 0369 (2026-10-24)** it also filters by **Distance away** (second in the sheet, under Discipline: *Use my location* or a town / zip through
   `searchPlaces`, then Within 10/25/50/100 mi or 15/40/80/150 km, plus a *Nearest first* sort grouped by wall), **Elevation gain**

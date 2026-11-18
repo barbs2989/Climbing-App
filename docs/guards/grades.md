@@ -152,6 +152,17 @@ Part of the guard notes — see [README.md](README.md) for the full index.
       which needs the database: it renders the real `RouteDetail` over the real rows through the
       real `dbRouteToCamel`, and is proven non-vacuous — reverting the rule fails **14** of its
       assertions.
+- **A YDS `d` IS +0.9, NOT +1 (0464, 2026-11-18).** The letters were quarter steps, a .25 … d +1, so 5.10d
+  was stored as **11**, the number of a bare 5.11 / 5.11- / 5.11+. The area grade chart buckets
+  `floor(grade_num)` and filed every 5.10d under 5.11, while the Route finder's *5.10a–5.10d* range ended at
+  11 inclusive and took in every bare 5.11: Leavenworth's 5.10 bar read **347** and opened **435** (32 5.10d +
+  57 bare/± 5.11), 5.11 177 → 208, 5.12 62 → 74. `lib/grade.js` (`YDS_LETTER`), `picker_grade_num` and the
+  finder's `GRADE_SCALES` now take d as .9 (order kept: 5.10c 10.75 < 5.10d 10.9 < bare 5.11 11 < 5.11a 11.25).
+  **The 12,470 rows were selected by the parser, not guessed:** of the 12,484 YDS rows naming a d, the new
+  parser moves 12,470; 0464's WHERE clause selects exactly those (0 only-there, 0 only-here), each to
+  stored − 0.1. Two rows whose stored number already disagreed (`co_crescent_wall_cool_aid`,
+  `ut_playing_hooky`, aid grades) were left for this audit. Every "quarter value" in the entries below means
+  the convention as it stood then; a d's quarter value is now .9.
 - **`audit:grade-num-drift`** asks whether the **stored** `grade_num` still agrees with what
   `lib/grade.js` derives from the row's own `grade`. `check:grade-parser` asserts there is exactly
   ONE parser in the CODE and structurally cannot see this: the column was populated by importers,
