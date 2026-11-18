@@ -5,22 +5,41 @@
 `lib/Leaderboards.jsx`, loaded lazily.
 
 ## 1. What it does today
-- **Scope** row: Overall · Near me (home zip + radius) · Friends · By area (area tree, down from the countries; the breadcrumb's last crumb is the current area, plain text with `aria-current`, not a control) —
+- **Scope** row: Overall · Near me (home zip + radius) · Friends · By area —
   four equal-width boxes across the full row, 46px tall at 14px type (a 44px touch target), not small scrolling chips.
+- **By area's picker** (`RankAreaPicker`, owner 2026-11-18): a *Ranking in* card names the area (plain text with
+  `aria-current`, its trail from the country down under it) beside a 44px **Change** button (`aria-expanded`). Change
+  opens, under the card: a search over the whole catalog (`GroupPlaceSearch` → `useCatalogAreaSearch`, signed in only;
+  picking a hit ranks it and closes the picker), *Your areas* — the climber's partner listings (`useMyPartnerAreas`)
+  as one-tap chips — then one *Up to <parent>* row and *Inside <area>*, every child that holds climbs as a 44px row
+  (name · climb count · ›), 8 first and then *Show all N*; nothing is cut (it used to stop at 24). A failed children
+  read says so rather than drawing an area with nothing inside. The level above the countries (*All countries*,
+  which ranks nothing) opens with the picker already shown. Signed out it walks the seed tree, with no search. A failed path read names the
+  area *Couldn't load this area's name*, not "this area". Every row's accessible name is its visible text in order
+  (WCAG 2.5.3; axe's `label-content-name-mismatch`), and so are the search hits' and the Crag regular row's —
+  `scripts/oneoff/probe-ranks-area-picker.mjs` runs axe on the open picker, the search results and Show all, which
+  no browser walk reaches.
+- **A row is not a button holding buttons** (fixed 2026-11-18, owner "fix it"; axe `nested-interactive`, WCAG 4.1.2,
+  found by that probe): the row is a plain container, and rank + avatar + name are ONE real `<button>` that opens the
+  profile and carries the row's `lbRowName` name ("#1, …", which probes find rows by). The points button (*How X got
+  N pts*, drawn as plain text) sits BESIDE it, so each is reached and announced on its own. Where a row has no points
+  button (signed out, Vouched, Contributions) the number stays inside the profile button, so the whole row still opens
+  the profile. `scripts/oneoff/probe-ranks-row-a11y.mjs` drives it signed in and as a guest, with axe (13/13).
 - **Climbing type** (All, Sport, Trad, Top rope, Bouldering, Alpine, Mountaineering, Scrambling, Ice, Mixed, Aid)
   and **Ranking**, grouped Performance · Lists · Reliability · Community. Which boards a type offers is the `ids`
   list in `Leaderboards`: Send points on every graded type (not Mountaineering/Scrambling, whose class grades weigh
   nothing), Onsight points on sport/trad/bouldering, Peaks on the three peak types.
 - **Row height**: ~42px on the website (1024px+, tighter line heights), 56px on a phone (competitor review batch A, item 8, owner 2026-11-04; Mountain Project's tables run ~40px).
 - **The table**: a header row (`#` · Climber · the board's unit), one row per climber with the rank, avatar, name,
-  location and "N of M backed", the value in a fixed right-hand column, and a ⚑ Report column on real rows.
+  location and "N of M backed", and the value in a fixed right-hand column. There is no ⚑ Report column (owner
+  2026-11-18: the board should look as clean signed in as signed out); you report a climber from their profile.
   Rows alternate shading; yours is tinted with a blue edge. Only climbers with a score above 0 on that board are
   ranked; equal scores share a rank (1, 2, 2, 4). The list shows 15 at a time up to the **top 100**, and your own
   row is pinned under it whenever the visible part does not include you. *You're #N of M* sits above the table, or
   *You're not ranked on this board yet* when nothing you logged counts toward it.
 - **Backed climbs only** (signed in, log-counted boards): ranks on partner-confirmed / photo / GPS-backed climbs only.
 - **The climbs behind a number (0357)**: on every board counted from logs (not Vouched, Contributions
-  or Top climbs), a real row's value is a button that opens `RankBreakdown`, *How N points add up*: a sentence on
+  or Top climbs), a real row's value is a button, drawn as plain text like the guest board's numbers, that opens `RankBreakdown`, *How N points add up*: a sentence on
   how that board scores, then one line per counted climb — name, grade, date, tick, area, its backing tier
   (Partner confirmed ×1 · Photo or GPS ×0.75 · Self-logged ×0.5) on the points boards, and what it added. Send
   points lists each route's best log; Days lists days with their climbs; Peaks lists summits. It reads
@@ -32,7 +51,7 @@
   scorecard (the ascents a score is summed from) and theCrag's CPR timeline (the ascent list under a column).
 - **Top climbs**: routes, not climbers, from `leaderboard_top_climbs`.
 - **Crag regular, under By area** (competitor review batch C, item 22, 2026-11-05 — Strava's Local Legend): below the area's
-  breadcrumb and its sub-area chips, one row names the climber with the most logged DAYS under that area in the last 90
+  *Ranking in* card and its picker, one row names the climber with the most logged DAYS under that area in the last 90
   (two at least, visible logs, no conditions reports, the same people the boards rank, ties by logs then last day) with the
   count; the row opens their profile. `useCragRegular` → `crag_regular` (0404), signed-in only; nothing is drawn when nobody
   has two days there, and a failed read draws nothing rather than a wrong name. The same row sits on the area page's PARTNERS HERE card.
@@ -95,7 +114,7 @@ Every number for a real climber comes from `leaderboard()` on the server; the cl
 ## 5. Connections
 - **Logbook**: the log form's tick types (`tickTypesFor`) decide what a board can see, and each discipline offers only its own words (2026-10-25 audit). Alpine: Summit, Turned around, Lead, Follow, Hung, Fell. Ice and mixed: those plus Top-rope. Top rope: Top-rope, Hung, Attempt. Aid: Lead, Follow, Top-rope, Hung, Fell, Attempt. Sport and trad keep the full roped list (Onsight, Flash, Redpoint included). A summit and a style on one climb: pick the style, then tap *Also reached the summit*. The client reads both through `summitedLog()` in `ClimbMatchCore.jsx`.
 - **Profile**: tapping a row opens `FullProfile`; friend and message actions live there, not on the row.
-- **Moderation**: ⚑ opens the report sheet (`setReportUser`).
+- **Moderation**: a row opens the climber's profile, whose *Report* opens the report sheet (`setReportUser`).
 - **No Trusted board**: it went with the trust score (2026-10-21). 0335 dropped `leaderboard()`'s `trust` column with `compute_trust_score`.
 
 ## 6. Guards

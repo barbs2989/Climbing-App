@@ -4,6 +4,7 @@ import type { Dispatch, SetStateAction } from "react";
 import { planTimes, realPitches } from "../../lib/planTimes";
 import { isMultiDayOuting, itinDayCount } from "../../lib/outing.js";
 import Hr from "./Hr.tsx";
+import EditIconButton from "./EditIconButton.tsx";
 
 /** The four planner inputs (kept in kilograms, hours from midnight). */
 export interface CalcInputs {
@@ -64,6 +65,8 @@ export interface CalculatorProps {
   /** The four inputs, lifted so they survive a sub-tab switch; without them the calculator keeps its own. */
   calc?: CalcInputs | null;
   onCalc?: Dispatch<SetStateAction<CalcInputs>> | null;
+  /** Opens the route edit sheet at Published times (offered on the mountain disciplines whose planner shows it, lib/fieldScope.js). Omitted = no pencil. */
+  onEditTiming?: (() => void) | null;
 }
 
 const uGain=(m: number)=>uImp()?Math.round(m*3.28084).toLocaleString()+" ft":Math.round(m).toLocaleString()+" m";
@@ -110,7 +113,7 @@ function sectionsCoveredByItinerary(route: CalculatorRoute){
    third source makes "what parties actually took" mean more than "what I took". Defaulted so a
    caller that omits it renders the estimate exactly as before rather than throwing. */
 /* Moved verbatim from RouteDetail.jsx (PR58); only the types were added. */
-export default function Calculator({route,activity,fit:fitProp,setFit:setFitProp,calc,onCalc}: CalculatorProps){
+export default function Calculator({route,activity,fit:fitProp,setFit:setFitProp,calc,onCalc,onEditTiming}: CalculatorProps){
   /* THE PLANNER INPUTS SURVIVE A SUB-TAB SWITCH, which is the same fix #1581 gave FloatPlan one
      sub-tab over. <Calculator/> renders ~17k characters inside the `tab==='planner'` branch, so
      tapping Safety to check the hazards unmounted it and every input reverted: pack 10kg, party 2,
@@ -242,7 +245,7 @@ export default function Calculator({route,activity,fit:fitProp,setFit:setFitProp
         in the row's own words directly below — `recommendedStart` says "from camp" or a clock
         time, and the section breakdown names each leg — so dropping the unearned half of the
         heading loses nothing and asserts nothing. */}
-    {route.timing?(function(){const tm=route.timing;const sb=Array.isArray(tm.sectionBreakdown)?tm.sectionBreakdown:[];const _sbDup=sectionsCoveredByItinerary(route);const _sbShow=_sbDup?[]:sb;return <div style={{background:C.blueBg,borderRadius:10,padding:"10px 12px",margin:"4px 0 12px",border:`1px solid ${C.blueDim}`}}><div style={{...SUB_LABEL,marginBottom:6}}>PUBLISHED TIMES</div>{tm.recommendedStart?<div style={{fontSize:12.5,color:C.textSub,marginBottom:8}}>{"Recommended start: "}<b style={{color:C.text}}>{tm.recommendedStart}</b></div>:null}<div style={{display:"flex",flexWrap:"wrap",gap:6,marginBottom:_sbShow.length?8:0}}>{[["Approach",tm.approachTimeHrs],["Summit",tm.summitTimeHrs],["Descent",tm.descentTimeHrs],["Total",tm.totalHrs]].filter(function(x){return x[1]!=null;}).map(function(x,i){return <div key={i} style={{flex:"1 1 56px",background:C.surface,borderRadius:8,padding:"6px 4px",textAlign:"center"}}><div style={{fontSize:10,color:C.textMuted,fontWeight:700}}>{(x[0] as string).toUpperCase()}</div><div style={{fontSize:14,fontWeight:800,color:x[0]==="Total"?C.blue:C.text}}>{x[1]+" hr"}</div></div>;})}</div>{_sbShow.map(function(s,i){return <div key={i} style={{display:"flex",justifyContent:"space-between",gap:8,padding:"6px 0",borderTop:`1px solid ${C.borderLight}`}}><div style={{minWidth:0}}><div style={{fontSize:12.5,fontWeight:600,color:C.text}}>{s.section}{s.fromTo?<span style={{color:C.textMuted,fontWeight:400}}>{" · "+s.fromTo}</span>:null}</div>{s.note?<div style={{fontSize:11,color:C.textMuted,marginTop:1,lineHeight:1.4}}>{s.note}</div>:null}</div><div style={{fontSize:12.5,fontWeight:700,color:C.blue,flexShrink:0,whiteSpace:"nowrap"}}>{typeof s.hrs==="number"?s.hrs+" hr":null}</div></div>;})}</div>;})():null}
+    {route.timing?(function(){const tm=route.timing;const sb=Array.isArray(tm.sectionBreakdown)?tm.sectionBreakdown:[];const _sbDup=sectionsCoveredByItinerary(route);const _sbShow=_sbDup?[]:sb;return <div style={{background:C.blueBg,borderRadius:10,padding:"10px 12px",margin:"4px 0 12px",border:`1px solid ${C.blueDim}`}}><div style={{display:"flex",alignItems:"center",justifyContent:"space-between",gap:8,marginBottom:6}}><div style={SUB_LABEL}>PUBLISHED TIMES</div>{onEditTiming?<EditIconButton onClick={onEditTiming} title="Edit published times"/>:null}</div>{tm.recommendedStart?<div style={{fontSize:12.5,color:C.textSub,marginBottom:8}}>{"Recommended start: "}<b style={{color:C.text}}>{tm.recommendedStart}</b></div>:null}<div style={{display:"flex",flexWrap:"wrap",gap:6,marginBottom:_sbShow.length?8:0}}>{[["Approach",tm.approachTimeHrs],["Summit",tm.summitTimeHrs],["Descent",tm.descentTimeHrs],["Total",tm.totalHrs]].filter(function(x){return x[1]!=null;}).map(function(x,i){return <div key={i} style={{flex:"1 1 56px",background:C.surface,borderRadius:8,padding:"6px 4px",textAlign:"center"}}><div style={{fontSize:10,color:C.textMuted,fontWeight:700}}>{(x[0] as string).toUpperCase()}</div><div style={{fontSize:14,fontWeight:800,color:x[0]==="Total"?C.blue:C.text}}>{x[1]+" hr"}</div></div>;})}</div>{_sbShow.map(function(s,i){return <div key={i} style={{display:"flex",justifyContent:"space-between",gap:8,padding:"6px 0",borderTop:`1px solid ${C.borderLight}`}}><div style={{minWidth:0}}><div style={{fontSize:12.5,fontWeight:600,color:C.text}}>{s.section}{s.fromTo?<span style={{color:C.textMuted,fontWeight:400}}>{" · "+s.fromTo}</span>:null}</div>{s.note?<div style={{fontSize:11,color:C.textMuted,marginTop:1,lineHeight:1.4}}>{s.note}</div>:null}</div><div style={{fontSize:12.5,fontWeight:700,color:C.blue,flexShrink:0,whiteSpace:"nowrap"}}>{typeof s.hrs==="number"?s.hrs+" hr":null}</div></div>;})}</div>;})():null}
     {/* What parties actually took, above the model that predicts it. Ordering is the point:
         the guidebook figure first (route.timing), then measured reality, then the estimate —
         so a formula never sits above evidence. Renders only when somebody has logged a real

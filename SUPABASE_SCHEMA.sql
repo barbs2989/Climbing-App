@@ -9,7 +9,7 @@
 -- and commit the result in the same PR. `npm run gen:schema -- --check` exits 1 when this
 -- file has drifted from the live database.
 --
--- Counts: 86 tables, 843 columns, 451 keyed/checked constraints (150 foreign keys), 254 RLS policies.
+-- Counts: 86 tables, 845 columns, 453 keyed/checked constraints (150 foreign keys), 254 RLS policies.
 -- Not covered here: views, functions, triggers, standalone indexes (see supabase/migrations/).
 
 -- ── Foreign keys ───────────────────────────────────────────────────────────────
@@ -1282,7 +1282,11 @@ CREATE TABLE public.groups (
   area_id text,
   lat double precision,
   lng double precision,
+  avatar_url text,
+  cover_url text,
   CONSTRAINT groups_pkey PRIMARY KEY (id),
+  CONSTRAINT groups_avatar_url_ours CHECK (((avatar_url IS NULL) OR ((length(avatar_url) <= 1000) AND (avatar_url ~ '^https://[a-z0-9]+\.supabase\.co/storage/v1/object/public/topo-photos/[0-9a-f-]{36}/[^?#]+$'::text)))),
+  CONSTRAINT groups_cover_url_ours CHECK (((cover_url IS NULL) OR ((length(cover_url) <= 1000) AND (cover_url ~ '^https://[a-z0-9]+\.supabase\.co/storage/v1/object/public/topo-photos/[0-9a-f-]{36}/[^?#]+$'::text)))),
   CONSTRAINT groups_event_policy_check CHECK ((event_policy = ANY (ARRAY['anyone'::text, 'mods'::text]))),
   CONSTRAINT groups_invite_policy_check CHECK ((invite_policy = ANY (ARRAY['members'::text, 'mods'::text]))),
   CONSTRAINT groups_join_questions_valid CHECK (group_join_questions_valid(join_questions)),

@@ -1,0 +1,89 @@
+[
+{"id":"ca_mount_bradley_standard_route","status":"found",
+ "trailhead":{"name":"Onion Valley Trailhead (Robinson Lake / University Pass trail), Inyo NF",
+  "identifiedBy":{"kind":"page","url":"https://cunelson.blogspot.com/2015/08/center-peak-and-mt-bradley.html","fact":"Onion Valley via Robinson Lake and University Pass to Center Basin, then Bradley chute class 2/3; same start in climber.org 2001/728 and a 2023 trip report"},
+  "placements":[
+   {"source":"USFS","name":"Onion Valley Campground","lat":36.772538,"lng":-118.341244,"url":""},
+   {"source":"americansouthwest.net (trailhead map link)","name":"Onion Valley trailhead","lat":36.772778,"lng":-118.339931,"url":"https://www.americansouthwest.net/california/onion-valley-kearsarge-pass/index.html"}]},
+ "reachesSummit":null,"summitEvidence":null,
+ "otherFacts":[
+  {"field":"approach","value":"Robinson Lake trail then University Pass (12,640 ft) into Center Basin","url":"https://cunelson.blogspot.com/2015/08/center-peak-and-mt-bradley.html"},
+  {"field":"class","value":"Bradley chute class 2/3; North Slope from University Pass class 3","url":"https://sites.google.com/view/wacziarg-climbing/2023-08-31-mount-bradley"},
+  {"field":"time_hrs","value":"about 10 round trip from Onion Valley (blog); 16.8 incl. PhD Peak (2023 report)","url":"https://cunelson.blogspot.com/2015/08/center-peak-and-mt-bradley.html"},
+  {"field":"distance_mi","value":"20.1 round trip incl. PhD Peak","url":"https://sites.google.com/view/wacziarg-climbing/2023-08-31-mount-bradley"},
+  {"field":"gain_ft","value":"8935 incl. PhD Peak","url":"https://sites.google.com/view/wacziarg-climbing/2023-08-31-mount-bradley"},
+  {"field":"trailhead_elevation_ft","value":"9200-9300","url":"https://climber.org/reports/2001/728.html"},
+  {"field":"road","value":"Onion Valley Road 13 mi from Independence, paved","url":"https://climber.org/driving/OnionValley.html"}],
+ "notes":"Three independent trip reports start at Onion Valley for Center Basin/Bradley. Stored route has no text; Bradley can also be reached via Bubbs Creek/Shepherd Pass, but Onion Valley is the common start. Placements: USFS plus a trip-writeup trailhead map coordinate (~120 m apart); no OSM. Hiking Project coordinate not used."},
+{"id":"ca_mount_corcoran_standard_route","status":"found",
+ "trailhead":{"name":"Meysan Lakes Trailhead (Whitney Portal), Inyo NF",
+  "identifiedBy":{"kind":"page","url":"https://www.climber.org/reports/2009/1710.html","fact":"Trailhead field: Meysan Lake Trailhead; 2007 report (climber.org/reports/2007/1609.html) Trailhead: Whitney Portal; Corcoran via North Notch from Meysan Lakes basin"},
+  "placements":[
+   {"source":"USFS","name":"MEYSAN LAKE TH","lat":36.589789,"lng":-118.230163,"url":""},
+   {"source":"USFS","name":"Whitney Portal Trailhead","lat":36.586905,"lng":-118.240112,"url":""}]},
+ "reachesSummit":null,"summitEvidence":null,
+ "otherFacts":[
+  {"field":"class","value":"North Notch route class 2-3; traverse from LeConte mostly class 2 with brief class 3","url":"https://climber.org/reports/2007/1609.html"},
+  {"field":"distance_mi","value":"5 to Meysan Lake","url":"https://climber.org/reports/2007/1609.html"},
+  {"field":"gain_ft","value":"3600 to Meysan Lake","url":"https://climber.org/reports/2007/1609.html"},
+  {"field":"alt_approach","value":"West side: North Notch from Miter Basin via Horseshoe Meadow, class 3, 4.11 mi / 2673 ft from Sky Blue Lake camp","url":"https://sites.google.com/view/wacziarg-climbing/2025-06-miter-basin"}],
+ "notes":"WEAK-MEDIUM: stored route has no text and Corcoran also has a west-side approach (Horseshoe Meadow via Miter Basin). East side is what both climber.org reports use, so likely the standard. Two USFS points ~0.9 km apart: Meysan Lake TH is the foot of the Meysan trail; Whitney Portal TH is the main lot. SummitPost 403."},
+{"id":"ca_mount_davis_southeast_slopes_from_north_glacier_pass","status":"found",
+ "trailhead":{"name":"Agnew Meadows Trailhead (River Trail / High Trail to Thousand Island Lake)",
+  "identifiedBy":{"kind":"page","url":"https://www.climber.org/reports/2006/1567.html","fact":"Trailhead Agnew Meadow; PCT to Thousand Island Lake then Glacier Pass to Lake Catherine and Davis class 2; also justindong.squarespace.com (High Trail / River Trail)"},
+  "placements":[
+   {"source":"USFS","name":"Agnew Mead. Wildflower Th","lat":37.681083,"lng":-119.080672,"url":""},
+   {"source":"USFS","name":"High Trail Trailhead","lat":37.682905,"lng":-119.084413,"url":""}]},
+ "reachesSummit":null,"summitEvidence":null,
+ "otherFacts":[
+  {"field":"class","value":"class 2 from North Glacier Pass","url":"https://www.snwburd.com/bob/trip_reports/davis_1.html"},
+  {"field":"distance_mi","value":"about 2.25 round trip, 1200 ft gain from Lake Catherine","url":"https://www.climber.org/reports/2006/1567.html"},
+  {"field":"alt_trailhead","value":"Rush Creek Trailhead via Agnew Pass to Thousand Island Lake (30.4 mi full backpack)","url":"https://themtsarecalling.com/davis/"},
+  {"field":"gain_ft","value":"about 4900 over about 12 mi (High Trail up, River Trail down)","url":"https://justindong.squarespace.com/journal/mt-davis"}],
+ "notes":"WEAK: route text only says walk to Thousand Island Lake; two trailheads serve it: Agnew Meadows (3 pages) and Rush Creek (1 page). Agnew chosen as most used. The two USFS points are ~0.4 km apart; the River Trail start at Agnew Meadows is not separately in the USFS list, so a human should pick the lot. No second independent placement."},
+{"id":"ca_mount_eisen_southeast_ridge_from_black_rock_pass","status":"found",
+ "trailhead":{"name":"Sawtooth Pass Trailhead, Mineral King",
+  "identifiedBy":{"kind":"page","url":"https://www.climber.org/reports/1998/355.html","fact":"Trailhead: Mineral King; Sawtooth Pass trail then cross-country over Glacier Pass to Blackrock Pass and the ridge to Eisen; matches route text (Glacier Pass, Cliff Creek, Black Rock Pass)"},
+  "placements":[{"source":"NPS","name":"Sawtooth","lat":36.453305,"lng":-118.596761,"url":""}]},
+ "reachesSummit":null,"summitEvidence":null,
+ "otherFacts":[
+  {"field":"class","value":"ridge traverse class 2 lower, class 3 upper","url":"https://www.climber.org/reports/1998/355.html"},
+  {"field":"hazard","value":"icy band below Glacier Pass needs crampons early season; ridge loose","url":"https://www.climber.org/reports/1998/355.html"},
+  {"field":"camp","value":"about 10,800 ft above Little Five Lakes","url":"https://www.climber.org/reports/1998/355.html"}],
+ "notes":"MEDIUM: the route text's Glacier Pass / Cliff Creek / Black Rock Pass matches the Mineral King route in the 1998 report. Alternative: Hamilton Lakes via High Sierra Trail from Crescent Meadow (search snippet only, unconfirmed). One placement only (no OSM)."},
+{"id":"ca_mount_elwell_mt_elwell_trail","status":"stuck","trailhead":null,"reachesSummit":null,"summitEvidence":null,
+ "otherFacts":[
+  {"field":"loop","value":"6.8 mi loop, 1883 gain, Bear Lake to Mt Elwell, near Graeagle","url":"https://sierrarecmagazine.com/the-northern-sierra/backpacking-bear-lake-to-mt-elwell-plumas-national-forest/"}],
+ "notes":"No opened page names which trailhead the Mt. Elwell Trail starts from. Candidates: USFS Round Lake TH, Smith Lake and Long Lake TH, Lakes Basin Campground; search summaries also mention Elwell Lodge and Gold Lake Lodge (unconfirmed). Wikipedia 404, USFS PDF 404, SummitPost 403, WebSearch budget exhausted."},
+{"id":"ca_mount_ericsson_west_ridge_from_lucys_foot_pass","status":"found",
+ "trailhead":{"name":"Road's End (Bubbs Creek Trailhead), Kings Canyon",
+  "identifiedBy":{"kind":"page","url":"https://www.scaruffi.com/travel/ericsson.html","fact":"Roads End to East Lake, then Lake Reflection, Lucy's Pass and Ericsson: a page about this exact route"},
+  "placements":[
+   {"source":"NPS","name":"Bubbs Creek, Woods Creek, and Rae Lakes","lat":36.794924,"lng":-118.582577,"url":""},
+   {"source":"USFS","name":"Cedar Grove","lat":36.796368,"lng":-118.58291,"url":""}]},
+ "reachesSummit":null,"summitEvidence":null,
+ "otherFacts":[
+  {"field":"distance_km","value":"about 23 Roads End to Lake Reflection; about 27 to Lucy's Pass","url":"https://www.scaruffi.com/travel/ericsson.html"},
+  {"field":"class","value":"Lucy's Pass north side class 3, borderline 4 with snow/ice; summit class 3 moves","url":"https://www.scaruffi.com/travel/ericsson.html"},
+  {"field":"elevation_m","value":"Roads End 1534; Lucy's Pass 3780; Ericsson 4140","url":"https://www.scaruffi.com/travel/ericsson.html"}],
+ "notes":"Upgraded from the first pass: a trip page for this route starts at Roads End. Alternative start: Onion Valley over Kearsarge Pass then Bubbs Creek (not described by this page). The two placements are ~150 m apart and different features, not independent; no OSM."},
+{"id":"ca_mount_fiske_standard_route","status":"stuck","trailhead":null,"reachesSummit":null,"summitEvidence":null,
+ "otherFacts":[
+  {"field":"class","value":"southwest ridge class 2 from north shore of Helen Lake (wacziarg); class 3 (Bulger)","url":"https://sites.google.com/view/wacziarg-climbing/2024-07-20-mount-fiske"},
+  {"field":"distance_mi","value":"24.84 round trip from Lake Sabrina, 6655 gain, 14.5 h","url":"https://sites.google.com/view/wacziarg-climbing/2024-07-20-mount-fiske"}],
+ "notes":"Two documented starts for the SW ridge from Helen Lake: Lake Sabrina via Echo Col (wacziarg-climbing 2024-07-20) and South Lake over Bishop Pass (climber.org/reports/2011/1876.html). Stored route has no text so cannot choose. Candidates: USFS SABRINA LAKE TH 37.213605,-118.610013; South Lake Trailhead 37.169305,-118.565813."},
+{"id":"ca_mount_florence_standard_route","status":"stuck","trailhead":null,"reachesSummit":null,"summitEvidence":null,
+ "otherFacts":[
+  {"field":"class","value":"class 2 easiest route","url":"https://en.wikipedia.org/wiki/Mount_Florence"},
+  {"field":"route","value":"Happy Isles via Merced Lake and Hutchings Creek, over 9000 ft gain, about 38 mi, final 3000 ft cross-country class 2","url":"https://climber.org/reports/1996/110.html"}],
+ "notes":"Only climber.org reports found (1996/110, 2002/998) start at Happy Isles, Yosemite Valley, a very long approach; the peak is also near Tuolumne (Lyell Canyon / Vogelsang) and no page says which is standard. Do not pin."},
+{"id":"ca_mount_genevra_standard_route","status":"stuck","trailhead":null,"reachesSummit":null,"summitEvidence":null,
+ "otherFacts":[
+  {"field":"class","value":"easiest route class 2","url":"https://en.wikipedia.org/wiki/Mount_Genevra"}],
+ "notes":"No standard start: climber.org reports use Onion Valley over Kearsarge Pass (1998/303, Genevra route not described) and Shepherd Pass (2002/943, 1996/101); Road's End also possible. Candidates: USFS Onion Valley Campground 36.772538,-118.341244; Shepherd Pass Th 36.726905,-118.278912."},
+{"id":"ca_mount_gibbs_standard_route","status":"stuck","trailhead":null,"reachesSummit":null,"summitEvidence":null,
+ "otherFacts":[
+  {"field":"class","value":"Gibbs class 2 via Dana ridge, class 1 north slope","url":"https://climber.org/reports/1997/191.html"},
+  {"field":"elevation_ft","value":"12764","url":"https://climber.org/reports/1997/214.html"}],
+ "notes":"Starts found: Tioga Pass entrance station (climber.org 1997/191, via Dana), Horse Meadows unmarked trailhead (1997/214, class 1 from SE), Walker Lake via Bloody Canyon (Wikipedia, first pass). Class 1 standard does not say which. Candidate: Mono/Parker Pass Trailhead 37.89091,-119.262696."}
+]

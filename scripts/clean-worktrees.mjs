@@ -40,7 +40,9 @@ const hasPr = new Set(prs.map((p) => p.headRefName));
 const worktrees = [];
 let cur = null;
 for (const line of git(["worktree", "list", "--porcelain"], mainRoot).split("\n")) {
-  if (line.startsWith("worktree ")) worktrees.push((cur = { path: line.slice(9), branch: null }));
+  // path.resolve: on Windows git prints C:/Users/... and wtDir is C:\Users\..., so the startsWith
+  // below matched nothing and the script reported "0 worktree(s)" with 90 on disk (2026-11-18).
+  if (line.startsWith("worktree ")) worktrees.push((cur = { path: path.resolve(line.slice(9)), branch: null }));
   else if (line.startsWith("branch ")) cur.branch = line.slice(7).replace("refs/heads/", "");
 }
 

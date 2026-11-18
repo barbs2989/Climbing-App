@@ -1,0 +1,272 @@
+[
+ {
+  "id": "bc_ossa_mountain_east_ridge",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Route has no stored approach text naming a trailhead (only 'Ossa Mountain trailhead, ~30 min from Squamish', unnamed place, no official candidates); page lookups not possible this run (OSM 429/406, no page evidence gathered). Not guessed."
+ },
+ {
+  "id": "ca_adams_peak_standard_route",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Route has no stored approach text naming a trailhead; page lookups not possible this run (OSM 429/406, no page evidence gathered). Not guessed."
+ },
+ {
+  "id": "ca_alta_peak_alta_trail",
+  "status": "found",
+  "trailhead": {
+   "name": "Wolverton Trailhead",
+   "identifiedBy": {
+    "kind": "route_text",
+    "fact": "description: trail climbs from Wolverton"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "Wolverton",
+     "lat": 36.596632,
+     "lng": -118.734168,
+     "url": ""
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "OSM unavailable: Nominatim/Overpass answered 429/406 (shared box saturated by parallel agents), skipped per brief; only the official placement found, no second independent placement. Route text silent beyond this."
+ },
+ {
+  "id": "ca_angora_mountain_standard_route",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Route has no stored approach text naming a trailhead; page lookups not possible this run (OSM 429/406, no page evidence gathered). Not guessed."
+ },
+ {
+  "id": "ca_birch_mountain_standard_route",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Route has no stored approach text naming a trailhead; page lookups not possible this run (OSM 429/406, no page evidence gathered). Not guessed."
+ },
+ {
+  "id": "ca_black_giant_west_slope_from_black_giant_pass",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Route has no stored approach text naming a trailhead; page lookups not possible this run (OSM 429/406, no page evidence gathered). Not guessed."
+ },
+ {
+  "id": "ca_black_hawk_mountain_via_summit_creek_and_mosquito_pass",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Route has no stored approach text naming a trailhead; page lookups not possible this run (OSM 429/406, no page evidence gathered). Not guessed."
+ },
+ {
+  "id": "ca_black_mountain_sierra_standard_route",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Route has no stored approach text naming a trailhead; page lookups not possible this run (OSM 429/406, no page evidence gathered). Not guessed."
+ },
+ {
+  "id": "ca_caltech_peak_standard_route",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Route has no stored approach text naming a trailhead; page lookups not possible this run (OSM 429/406, no page evidence gathered). Not guessed."
+ },
+ {
+  "id": "ca_cardinal_mountain_via_taboose_pass",
+  "status": "found",
+  "trailhead": {
+   "name": "Taboose Pass Trailhead",
+   "identifiedBy": {
+    "kind": "route_text",
+    "fact": "route name: Via Taboose Pass"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "TABOOSE PASS TH",
+     "lat": 37.009505,
+     "lng": -118.327312,
+     "url": ""
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "OSM unavailable: Nominatim/Overpass answered 429/406 (shared box saturated by parallel agents), skipped per brief; only the official placement found, no second independent placement. Route text silent beyond this."
+ },
+ {
+  "id": "ca_cartago_peak_standard_route",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Route has no stored approach text naming a trailhead; page lookups not possible this run (OSM 429/406, no page evidence gathered). Not guessed."
+ },
+ {
+  "id": "ca_castle_peak_summit_via_castle_pass",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Route has no stored approach text naming a trailhead; page lookups not possible this run (OSM 429/406, no page evidence gathered). Not guessed."
+ },
+ {
+  "id": "ca_center_peak_standard_route",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Route has no stored approach text naming a trailhead; page lookups not possible this run (OSM 429/406, no page evidence gathered). Not guessed."
+ },
+ {
+  "id": "ca_charybdis_northeast_ridge",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Route has no stored approach text naming a trailhead; page lookups not possible this run (OSM 429/406, no page evidence gathered). Not guessed."
+ },
+ {
+  "id": "ca_colosseum_mountain_standard_route",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Route has no stored approach text naming a trailhead; page lookups not possible this run (OSM 429/406, no page evidence gathered). Not guessed."
+ },
+ {
+  "id": "ca_coyote_peaks_via_coyote_pass_and_the_saddle",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Route has no stored approach text naming a trailhead; page lookups not possible this run (OSM 429/406, no page evidence gathered). Not guessed."
+ },
+ {
+  "id": "ca_crag_peak_via_clover_meadow",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Route has no stored approach text naming a trailhead; page lookups not possible this run (OSM 429/406, no page evidence gathered). Not guessed."
+ },
+ {
+  "id": "ca_deerhorn_mountain_northeast_buttress",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Route has no stored approach text naming a trailhead; page lookups not possible this run (OSM 429/406, no page evidence gathered). Not guessed."
+ },
+ {
+  "id": "ca_devils_crag_1_standard_route",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Route has no stored approach text naming a trailhead; page lookups not possible this run (OSM 429/406, no page evidence gathered). Not guessed."
+ },
+ {
+  "id": "ca_diamond_peak_standard_route",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Route has no stored approach text naming a trailhead; page lookups not possible this run (OSM 429/406, no page evidence gathered). Not guessed."
+ },
+ {
+  "id": "ca_dicks_peak_standard_route",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Route has no stored approach text naming a trailhead; page lookups not possible this run (OSM 429/406, no page evidence gathered). Not guessed."
+ },
+ {
+  "id": "ca_disappointment_peak_standard_route",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Route has no stored approach text naming a trailhead; page lookups not possible this run (OSM 429/406, no page evidence gathered). Not guessed."
+ },
+ {
+  "id": "ca_disaster_peak_southwest_ridge",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Route has no stored approach text naming a trailhead; page lookups not possible this run (OSM 429/406, no page evidence gathered). Not guessed."
+ },
+ {
+  "id": "ca_dunderberg_peak_southeast_slopes_from_virginia_lakes",
+  "status": "found",
+  "trailhead": {
+   "name": "Virginia Lakes Trailhead",
+   "identifiedBy": {
+    "kind": "route_text",
+    "fact": "route name: from Virginia Lakes"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "Virginia Lakes Trailhead",
+     "lat": 38.048105,
+     "lng": -119.262713,
+     "url": ""
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "OSM unavailable: Nominatim/Overpass answered 429/406 (shared box saturated by parallel agents), skipped per brief; only the official placement found, no second independent placement. Route text silent beyond this."
+ },
+ {
+  "id": "ca_electra_peak_standard_route",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Route has no stored approach text naming a trailhead; page lookups not possible this run (OSM 429/406, no page evidence gathered). Not guessed."
+ }
+]

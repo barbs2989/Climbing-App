@@ -185,7 +185,7 @@ npm run check:sun-times # the Calendar's sunrise and sunset match an ephemeris t
 npm run check:itinerary-shape # a trip plan is day by day or NOTHING, never prose (lib/itineraryShape.js), and every pipeline loader and trip-plan apply script still refuses prose (in build)
 npm run audit:itinerary-shape # does every LIVE trip plan follow that rule? fails on prose; reports gap days (service key)
 npm run check:return-leg      # the walk is split at the summit, a route's stored legs win, the descent is the longer of stored and walked, and each red warning names the DAY it lands on (in build)
-npm run check:leg-loss-regain # the leg cards print the downhill on the way up (Loss) and the uphill on the way back (Regain), measured on the recorded track; a loop's leg gain is the leg, not the outing (in build)
+npm run check:leg-loss-regain # the leg cards print the downhill on the way up (Loss) and the uphill on the way back (Regain) from PUBLISHED figures only (0449), never measured; a loop's whole-outing gain is not printed as a leg (in build)
 npm run audit:gain         # is a route gaining LESS than its own waypoints demand?
 npm run check:rappel-lengths # can the rope a route describes actually reach the rappel it states?
 npm run audit:rappel-claims  # does `rappels` claim raps the route's own descent_text denies?
@@ -203,6 +203,7 @@ npm run audit:waypoints    # is each waypoint actually on the route's own gpx tr
 npm run audit:waypoint-order # is the waypoint LIST sensible — order and duplicate pins?
 npm run audit:waypoint-track # THIRD waypoint audit — same question as audit:waypoints, different answer
 npm run audit:map-pins     # what the route MAP draws: two trailheads, and pins it silently drops
+npm run audit:map-discipline # does every PEAK climb's map read trailhead-to-summit, not like a bare crag? (incl. routes with NO pins)
 npm run audit:waypoint-distances # a trail cannot be SHORTER than the straight line — needs no gpx
 npm run audit:summit-pins  # is the SUMMIT pin on the summit? (pin vs the peak's own coordinate)
 npm run audit:peak-coords  # is the PEAK itself where we say it is? (its coordinate vs the ground)
@@ -261,6 +262,7 @@ npm run check:list-summit-audit # a peak list ticks only from a route that reach
 npm run check:contrib-shapes # what the contribute form SUBMITS is the shape its readers READ (in build)
 npm run check:consensus-clustering # three climbers who agree must be COUNTED as agreeing (in build)
 npm run check:add-route-fields # add-a-climb asks what the discipline needs, and nothing unstorable (in build)
+npm run check:edit-scope # the route EDIT SHEET offers, per discipline, only fields that discipline's page draws — one rule, lib/fieldScope.js (in build)
 npm run check:contrib-field-columns # every editable field has a DB row naming the routes column its confidence is computed from (in build)
 npm run check:editable-coverage # every routes column a climber can SEE has an editor, or a written reason it has none (in build)
 npm run audit:fifty-classics # which Fifty Classics does the catalog hold, and are they tagged?

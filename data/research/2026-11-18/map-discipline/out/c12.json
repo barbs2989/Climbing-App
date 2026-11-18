@@ -1,0 +1,632 @@
+[
+ {
+  "id": "wa_booker_mountain_northwest_route",
+  "status": "stuck",
+  "trailhead": {
+   "name": "Thunder Creek Trailhead (Colonial Creek Campground)",
+   "identifiedBy": {
+    "kind": "route_text",
+    "fact": "Thunder Creek Trail from Colonial Creek Campground to Park Creek Pass"
+   },
+   "placements": []
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Trailhead identified from route text but no official point within 25 km matches (nearest USFS points are Rainy Pass/Easy Pass area, wrong trailheads); WTA lookup gave no usable coordinate; OSM left to coordinator script. Sibling uses Cascade Pass TH, a different approach, not applied."
+ },
+ {
+  "id": "wa_bulls_tooth_south_ridge",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Route text vague: Chain Lakes/Doelle Lakes multi-day traverse, 'Stevens Pass/PCT or Icicle Creek Road'. No page opened that places this line; SummitPost 403. Not guessed."
+ },
+ {
+  "id": "wa_burgundy_spire_corkscrew_route",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Own text silent. Likely SR-20 pullout / Early Winters Creek to Burgundy Col like sibling Action Potential, but no page opened confirming for this route. USFS Burgundy Col point (48.551406,-120.630895) is a col, not a parking lot."
+ },
+ {
+  "id": "wa_cadet_peak_ne_ridge",
+  "status": "found",
+  "trailhead": {
+   "name": "Bedal Creek Trailhead (end of FR 4096)",
+   "identifiedBy": {
+    "kind": "route_text",
+    "fact": "Start from the end of Forest Service road 4096 and follow the Bedal Creek trail"
+   },
+   "placements": [
+    {
+     "source": "WTA",
+     "name": "Bedal Basin hike trailhead",
+     "lat": 48.0701,
+     "lng": -121.3753,
+     "url": "https://www.wta.org/go-hiking/hikes/bedal-creek"
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "No official USFS/NPS point matches (nearest Sloan Peak TH 11.6 km is a different trailhead; sibling Barlow Pass not applicable). Only placement is the WTA Bedal Basin hike coordinate (not a land-manager point) - verify with OSM; found on identification only."
+ },
+ {
+  "id": "wa_castle_peak_pasayten_east_ridge",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "No route text. Candidate access (Hozomeen/Freezeout Creek, Ross Lake water taxi, Manning Park) seen only in search summaries; SummitPost 403, stevensong page body not read. Not guessed."
+ },
+ {
+  "id": "wa_castle_peak_pasayten_north_ridge",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Same as east ridge: no route text, no page opened that identifies the start."
+ },
+ {
+  "id": "wa_chair_peak_south_ridge",
+  "status": "found",
+  "trailhead": {
+   "name": "Alpental / Snow Lake Trailhead",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://stevensong.com/usa/washington/chair-peak/",
+    "fact": "Chair Peak via the scramble route: Snow Lake trail 45 min, then climber trail"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "Snow Lake Trailhead",
+     "lat": 47.445656,
+     "lng": -121.423665,
+     "url": ""
+    },
+    {
+     "source": "WTA",
+     "name": "Snow Lake hike trailhead",
+     "lat": 47.4454,
+     "lng": -121.423,
+     "url": "https://www.wta.org/go-hiking/hikes/snow-lake"
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Page describes the south-side scramble route off the Snow Lake trail (Alpental lot, 3,100 ft); it does not use the name South Ridge so the match is moderate. WTA Chair Peak page lists a different coordinate (47.4154,-121.4433 near Denny Creek) - not used."
+ },
+ {
+  "id": "wa_chair_peak_southeast_face",
+  "status": "found",
+  "trailhead": {
+   "name": "Alpental / Snow Lake Trailhead",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://stevensong.com/usa/washington/chair-peak/",
+    "fact": "Chair Peak approached up Snow Lake trail then climber trail into the basin"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "Snow Lake Trailhead",
+     "lat": 47.445656,
+     "lng": -121.423665,
+     "url": ""
+    },
+    {
+     "source": "WTA",
+     "name": "Snow Lake hike trailhead",
+     "lat": 47.4454,
+     "lng": -121.423,
+     "url": "https://www.wta.org/go-hiking/hikes/snow-lake"
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Page is a scramble-route report, not the SE face line; same basin approach, moderate confidence."
+ },
+ {
+  "id": "wa_chianti_spire_lichen_bouquet",
+  "status": "stuck",
+  "trailhead": {
+   "name": "SR-20 Wine Spires pullout (milepost 166)",
+   "identifiedBy": {
+    "kind": "route_text",
+    "fact": "wide pullout on the south side of the highway near milepost 166, about 0.7 mile past the Cutthroat Lake road"
+   },
+   "placements": []
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "No official point matches this highway pullout (USFS Cutthroat Trailhead and Hairpin are different places); needs OSM placement."
+ },
+ {
+  "id": "wa_chianti_spire_north_face",
+  "status": "stuck",
+  "trailhead": {
+   "name": "SR-20 Wine Spires pullout (milepost 166)",
+   "identifiedBy": {
+    "kind": "route_text",
+    "fact": "road text: broad pullout on the south side of the highway near milepost 166"
+   },
+   "placements": []
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Same pullout; no official placement. Approach text itself starts from the Burgundy-Chianti notch."
+ },
+ {
+  "id": "wa_chimney_peak_the_chimney",
+  "status": "summit_only_answered",
+  "trailhead": null,
+  "reachesSummit": false,
+  "summitEvidence": {
+   "kind": "route_text",
+   "fact": "A 100-ft rock tower, a separate objective from the peak's class 3 SW-ridge summit scramble; descent regains the SW ridge class 3 ground",
+   "url": ""
+  },
+  "otherFacts": [],
+  "notes": "Graves Creek Trailhead already pinned. Waypoint Top of The Chimney has no coordinates. The tower is not the peak's summit per own text."
+ },
+ {
+  "id": "wa_chimney_rock_north_ridge",
+  "status": "found",
+  "trailhead": {
+   "name": "Pete Lake Trailhead",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://www.mountaineers.org/activities/routes-places/chimney-rock-east-face-direct",
+    "fact": "Chimney Rock glacier approach starts at Pete Lake trailhead, FR 4616 (2,900 ft)"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "Pete Lake Trailhead",
+     "lat": 47.434106,
+     "lng": -121.186915,
+     "url": ""
+    },
+    {
+     "source": "WTA",
+     "name": "Pete Lake hike trailhead",
+     "lat": 47.435,
+     "lng": -121.1855,
+     "url": "https://www.wta.org/go-hiking/hikes/pete-lake"
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Page describes the East Face Direct approach; the peak's glacier-side ridges share it but this page does not describe this specific line - moderate confidence."
+ },
+ {
+  "id": "wa_chimney_rock_northeast_ridge",
+  "status": "found",
+  "trailhead": {
+   "name": "Pete Lake Trailhead",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://www.mountaineers.org/activities/routes-places/chimney-rock-east-face-direct",
+    "fact": "Chimney Rock glacier approach starts at Pete Lake trailhead, FR 4616 (2,900 ft)"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "Pete Lake Trailhead",
+     "lat": 47.434106,
+     "lng": -121.186915,
+     "url": ""
+    },
+    {
+     "source": "WTA",
+     "name": "Pete Lake hike trailhead",
+     "lat": 47.435,
+     "lng": -121.1855,
+     "url": "https://www.wta.org/go-hiking/hikes/pete-lake"
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Page describes the East Face Direct approach; the peak's glacier-side ridges share it but this page does not describe this specific line - moderate confidence."
+ },
+ {
+  "id": "wa_chimney_rock_northwest_ridge",
+  "status": "found",
+  "trailhead": {
+   "name": "Pete Lake Trailhead",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://www.mountaineers.org/activities/routes-places/chimney-rock-east-face-direct",
+    "fact": "Chimney Rock glacier approach starts at Pete Lake trailhead, FR 4616 (2,900 ft)"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "Pete Lake Trailhead",
+     "lat": 47.434106,
+     "lng": -121.186915,
+     "url": ""
+    },
+    {
+     "source": "WTA",
+     "name": "Pete Lake hike trailhead",
+     "lat": 47.435,
+     "lng": -121.1855,
+     "url": "https://www.wta.org/go-hiking/hikes/pete-lake"
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Page describes the East Face Direct approach; the peak's glacier-side ridges share it but this page does not describe this specific line - moderate confidence."
+ },
+ {
+  "id": "wa_chimney_rock_southeast_ridge",
+  "status": "found",
+  "trailhead": {
+   "name": "Pete Lake Trailhead",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://www.mountaineers.org/activities/routes-places/chimney-rock-east-face-direct",
+    "fact": "Chimney Rock glacier approach starts at Pete Lake trailhead, FR 4616 (2,900 ft)"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "Pete Lake Trailhead",
+     "lat": 47.434106,
+     "lng": -121.186915,
+     "url": ""
+    },
+    {
+     "source": "WTA",
+     "name": "Pete Lake hike trailhead",
+     "lat": 47.435,
+     "lng": -121.1855,
+     "url": "https://www.wta.org/go-hiking/hikes/pete-lake"
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Page describes the East Face Direct approach; the peak's glacier-side ridges share it but this page does not describe this specific line - moderate confidence."
+ },
+ {
+  "id": "wa_chimney_rock_southeast_shoulder",
+  "status": "found",
+  "trailhead": {
+   "name": "Pete Lake Trailhead",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://www.mountaineers.org/activities/routes-places/chimney-rock-east-face-direct",
+    "fact": "Chimney Rock glacier approach starts at Pete Lake trailhead, FR 4616 (2,900 ft)"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "Pete Lake Trailhead",
+     "lat": 47.434106,
+     "lng": -121.186915,
+     "url": ""
+    },
+    {
+     "source": "WTA",
+     "name": "Pete Lake hike trailhead",
+     "lat": 47.435,
+     "lng": -121.1855,
+     "url": "https://www.wta.org/go-hiking/hikes/pete-lake"
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Page describes the East Face Direct approach; the peak's glacier-side ridges share it but this page does not describe this specific line - moderate confidence."
+ },
+ {
+  "id": "wa_chimney_rock_west_face",
+  "status": "summit_only_answered",
+  "trailhead": null,
+  "reachesSummit": false,
+  "summitEvidence": {
+   "kind": "route_text",
+   "fact": "climbs the south peak (7,440 ft); the central spire (7,727 ft) is the highest",
+   "url": ""
+  },
+  "otherFacts": [
+   {
+    "field": "south_peak_ft",
+    "value": "7440",
+    "url": ""
+   },
+   {
+    "field": "central_spire_ft",
+    "value": "7727",
+    "url": ""
+   },
+   {
+    "field": "trailhead",
+    "value": "Pete Lake Trailhead, FR-4616, ~2,900 ft",
+    "url": "https://www.mountaineers.org/activities/routes-places/chimney-rock-east-face-direct"
+   }
+  ],
+  "notes": "Route id says West Face but text and waypoint are South Peak via East Gully. Pete Lake Trailhead already pinned. Summit waypoint South Summit has no coords."
+ },
+ {
+  "id": "wa_colchuck_balanced_rock_east_route",
+  "status": "found",
+  "trailhead": {
+   "name": "Stuart Lake Trailhead (Eightmile Rd, FR 7601)",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://www.mountaineers.org/activities/routes-places/enchantments-area-review/colchuck-dragontail-peaks",
+    "fact": "Colchuck terrain approached via Stuart Lake Trail to Colchuck Lake; trailhead 3,400 ft, Eightmile Road FR 7601"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "Stuart Lake Trailhead",
+     "lat": 47.527806,
+     "lng": -120.820515,
+     "url": ""
+    },
+    {
+     "source": "WTA",
+     "name": "Colchuck Lake hike trailhead",
+     "lat": 47.5277,
+     "lng": -120.821,
+     "url": "https://www.wta.org/go-hiking/hikes/colchuck-lake"
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Page covers Colchuck/Dragontail via Colchuck Lake; does not name this specific line. Only road-served approach to Colchuck Lake, moderate confidence."
+ },
+ {
+  "id": "wa_colchuck_balanced_rock_south_route",
+  "status": "found",
+  "trailhead": {
+   "name": "Stuart Lake Trailhead (Eightmile Rd, FR 7601)",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://www.mountaineers.org/activities/routes-places/enchantments-area-review/colchuck-dragontail-peaks",
+    "fact": "Colchuck terrain approached via Stuart Lake Trail to Colchuck Lake; trailhead 3,400 ft, Eightmile Road FR 7601"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "Stuart Lake Trailhead",
+     "lat": 47.527806,
+     "lng": -120.820515,
+     "url": ""
+    },
+    {
+     "source": "WTA",
+     "name": "Colchuck Lake hike trailhead",
+     "lat": 47.5277,
+     "lng": -120.821,
+     "url": "https://www.wta.org/go-hiking/hikes/colchuck-lake"
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Page covers Colchuck/Dragontail via Colchuck Lake; does not name this specific line. Only road-served approach to Colchuck Lake, moderate confidence."
+ },
+ {
+  "id": "wa_colchuck_balanced_rock_the_foot_of_faith_west_face_p3_variation",
+  "status": "found",
+  "trailhead": {
+   "name": "Stuart Lake Trailhead (Eightmile Rd, FR 7601)",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://www.mountaineers.org/activities/routes-places/enchantments-area-review/colchuck-dragontail-peaks",
+    "fact": "Colchuck terrain approached via Stuart Lake Trail to Colchuck Lake; trailhead 3,400 ft, Eightmile Road FR 7601"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "Stuart Lake Trailhead",
+     "lat": 47.527806,
+     "lng": -120.820515,
+     "url": ""
+    },
+    {
+     "source": "WTA",
+     "name": "Colchuck Lake hike trailhead",
+     "lat": 47.5277,
+     "lng": -120.821,
+     "url": "https://www.wta.org/go-hiking/hikes/colchuck-lake"
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Page covers Colchuck/Dragontail via Colchuck Lake; does not name this specific line. Only road-served approach to Colchuck Lake, moderate confidence."
+ },
+ {
+  "id": "wa_colchuck_balanced_rock_west_face_p3_1984_variation",
+  "status": "found",
+  "trailhead": {
+   "name": "Stuart Lake Trailhead (Eightmile Rd, FR 7601)",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://www.mountaineers.org/activities/routes-places/enchantments-area-review/colchuck-dragontail-peaks",
+    "fact": "Colchuck terrain approached via Stuart Lake Trail to Colchuck Lake; trailhead 3,400 ft, Eightmile Road FR 7601"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "Stuart Lake Trailhead",
+     "lat": 47.527806,
+     "lng": -120.820515,
+     "url": ""
+    },
+    {
+     "source": "WTA",
+     "name": "Colchuck Lake hike trailhead",
+     "lat": 47.5277,
+     "lng": -120.821,
+     "url": "https://www.wta.org/go-hiking/hikes/colchuck-lake"
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Page covers Colchuck/Dragontail via Colchuck Lake; does not name this specific line. Only road-served approach to Colchuck Lake, moderate confidence."
+ },
+ {
+  "id": "wa_colchuck_peak_northeast_gully",
+  "status": "found",
+  "trailhead": {
+   "name": "Stuart Lake Trailhead (Eightmile Rd, FR 7601)",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://www.mountaineers.org/activities/routes-places/enchantments-area-review/colchuck-dragontail-peaks",
+    "fact": "Colchuck terrain approached via Stuart Lake Trail to Colchuck Lake; trailhead 3,400 ft, Eightmile Road FR 7601"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "Stuart Lake Trailhead",
+     "lat": 47.527806,
+     "lng": -120.820515,
+     "url": ""
+    },
+    {
+     "source": "WTA",
+     "name": "Colchuck Lake hike trailhead",
+     "lat": 47.5277,
+     "lng": -120.821,
+     "url": "https://www.wta.org/go-hiking/hikes/colchuck-lake"
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Page covers Colchuck/Dragontail via Colchuck Lake; does not name this specific line. Only road-served approach to Colchuck Lake, moderate confidence."
+ },
+ {
+  "id": "wa_colchuck_peak_south_face",
+  "status": "found",
+  "trailhead": {
+   "name": "Stuart Lake Trailhead (Eightmile Rd, FR 7601)",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://www.mountaineers.org/activities/routes-places/enchantments-area-review/colchuck-dragontail-peaks",
+    "fact": "Colchuck terrain approached via Stuart Lake Trail to Colchuck Lake; trailhead 3,400 ft, Eightmile Road FR 7601"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "Stuart Lake Trailhead",
+     "lat": 47.527806,
+     "lng": -120.820515,
+     "url": ""
+    },
+    {
+     "source": "WTA",
+     "name": "Colchuck Lake hike trailhead",
+     "lat": 47.5277,
+     "lng": -120.821,
+     "url": "https://www.wta.org/go-hiking/hikes/colchuck-lake"
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Page covers Colchuck/Dragontail via Colchuck Lake; does not name this specific line. Only road-served approach to Colchuck Lake, moderate confidence."
+ },
+ {
+  "id": "wa_colchuck_peak_south_route",
+  "status": "found",
+  "trailhead": {
+   "name": "Stuart Lake Trailhead (Eightmile Rd, FR 7601)",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://www.mountaineers.org/activities/routes-places/enchantments-area-review/colchuck-dragontail-peaks",
+    "fact": "Colchuck terrain approached via Stuart Lake Trail to Colchuck Lake; trailhead 3,400 ft, Eightmile Road FR 7601"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "Stuart Lake Trailhead",
+     "lat": 47.527806,
+     "lng": -120.820515,
+     "url": ""
+    },
+    {
+     "source": "WTA",
+     "name": "Colchuck Lake hike trailhead",
+     "lat": 47.5277,
+     "lng": -120.821,
+     "url": "https://www.wta.org/go-hiking/hikes/colchuck-lake"
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Page covers Colchuck/Dragontail via Colchuck Lake; does not name this specific line. Only road-served approach to Colchuck Lake, moderate confidence."
+ },
+ {
+  "id": "wa_colchuck_peak_west_ridge",
+  "status": "found",
+  "trailhead": {
+   "name": "Stuart Lake Trailhead (Eightmile Rd, FR 7601)",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://www.mountaineers.org/activities/routes-places/enchantments-area-review/colchuck-dragontail-peaks",
+    "fact": "Colchuck terrain approached via Stuart Lake Trail to Colchuck Lake; trailhead 3,400 ft, Eightmile Road FR 7601"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "Stuart Lake Trailhead",
+     "lat": 47.527806,
+     "lng": -120.820515,
+     "url": ""
+    },
+    {
+     "source": "WTA",
+     "name": "Colchuck Lake hike trailhead",
+     "lat": 47.5277,
+     "lng": -120.821,
+     "url": "https://www.wta.org/go-hiking/hikes/colchuck-lake"
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Page covers Colchuck/Dragontail via Colchuck Lake; does not name this specific line. Only road-served approach to Colchuck Lake, moderate confidence."
+ }
+]

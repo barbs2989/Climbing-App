@@ -3,8 +3,9 @@
 // opened from the Menu's "Listed areas" tile as well as from Partners, Crews and an area page.
 //
 // One listing per area: the crag types wanted there (empty = any), ONE optional date window
-// ("free here Oct 18-19") and a short note. Any area but a peak, world or country — peaks are matched
-// by route, and the server refuses one with a readable reason, which this screen relays.
+// ("free here Oct 18-19") and a short note. Any area but the world or a country (too broad to search),
+// and since 0456 a PEAK too (owner 2026-11-18) — what you climb there is picked from the alpine family.
+// The server refuses the rest with a readable reason, which this screen relays.
 //
 // Adding is built for one hand: the search box comes first and searches EVERY area in every state,
 // the way the Climbs search does (owner 2026-11-14: "add an area like you would when searching for
@@ -25,12 +26,15 @@ import { POP_BACK, POP_CLOSE, POP_REMOVE } from "./popupChrome.js";
 import { removePartnerArea, savePartnerArea, useAreaCardsByIds, useCatalogAreaSearch } from "./db";
 import { discLabel } from "./discLabels.js";
 import { C, CRAG_CATS, DLOCALE, SL, haptic, localYmd } from "../ClimbMatchCore.jsx";
+import { ALPINE_COND_DISCIPLINES } from "./alpineConditions.js";
 import ActionIcon from "../src/components/ActionIcon.tsx";
 
 const TYPE_LABEL = { state: "State", region: "Region", range: "Range", canyon: "Canyon", crag: "Crag", wall: "Wall", peak: "Peak", boulder: "Boulder", sector: "Sector" };
 // How many search hits the box shows; `total` says how many matched, so a cut is never silent.
 const HIT_LIM = 30;
-const NO_LISTING = new Set(["peak", "world", "country"]);
+const NO_LISTING = new Set(["world", "country"]);
+// What a climber can want at a place: crag types at a crag, the alpine family at a peak (0456 allows both).
+const discsFor = (areaType) => areaType === "peak" ? ALPINE_COND_DISCIPLINES : CRAG_CATS;
 const fmtDay = (d) => { if (!d) return ""; try { return new Date(d + "T12:00:00").toLocaleDateString(DLOCALE, { month: "short", day: "numeric" }); } catch (e) { return d; } };
 export const windowText = (l) => (l && l.freeFrom && l.freeTo) ? (l.freeFrom === l.freeTo ? "Free " + fmtDay(l.freeFrom) : "Free " + fmtDay(l.freeFrom) + "–" + fmtDay(l.freeTo)) : "Any time";
 // The coming Saturday–Sunday (today, when today is one of them), and the one after it.
@@ -48,13 +52,13 @@ export default function MyPartnerAreas({ uid, listings, listingsError, prefill, 
   const qOk = q.trim().length >= 2;
   const listed = useMemo(() => new Set((listings || []).map((l) => l.areaId)), [listings]);
   // Suggestions: where the climber's own logged/saved crag climbs and saved areas sit. A wall is too
-  // fine a place to find a partner at, so it is offered as its crag.
+  // fine a place to find a partner at, so it is offered as its crag; a peak is offered as itself (0456).
   const cardsQ = useAreaCardsByIds(USE_DB ? (suggestIds || []).slice(0, 60) : []);
   const suggestions = useMemo(() => {
     const m = cardsQ.data || {}, out = [], seen = new Set();
     for (const id of suggestIds || []) {
       const a = m[id]; if (!a) continue;
-      const up = (a.type === "wall" || a.type === "peak") && a.parentId;
+      const up = a.type === "wall" && a.parentId;
       const s = up ? { areaId: a.parentId, name: a.parentName || "", areaType: null, parentName: null } : { areaId: id, name: a.name, areaType: a.type, parentName: a.parentName };
       if (!s.name || seen.has(s.areaId) || listed.has(s.areaId) || NO_LISTING.has(s.areaType)) continue;
       seen.add(s.areaId); out.push(s);
@@ -110,9 +114,9 @@ export default function MyPartnerAreas({ uid, listings, listingsError, prefill, 
           </div>
           <div style={{ fontSize: 12, color: C.textMuted, marginBottom: 6, lineHeight: 1.5 }}>Climbers who search here, inside it, or across a wider area that contains it will see you.</div>
           <SL>What you climb here</SL>
-          <div role="group" aria-label="Crag types" style={{ display: "flex", gap: 7, flexWrap: "wrap", marginBottom: 6 }}>
+          <div role="group" aria-label={draft.areaType === "peak" ? "Disciplines" : "Crag types"} style={{ display: "flex", gap: 7, flexWrap: "wrap", marginBottom: 6 }}>
             <button aria-pressed={!draft.disciplines.length} onClick={() => setDraft({ ...draft, disciplines: [] })} style={pill(!draft.disciplines.length)}>Any</button>
-            {CRAG_CATS.map((d) => { const on = draft.disciplines.includes(d); return <button key={d} aria-pressed={on} onClick={() => toggleDisc(d)} style={pill(on)}>{discLabel(d)}</button>; })}
+            {discsFor(draft.areaType).map((d) => { const on = draft.disciplines.includes(d); return <button key={d} aria-pressed={on} onClick={() => toggleDisc(d)} style={pill(on)}>{discLabel(d)}</button>; })}
           </div>
           <SL>When you’re free here</SL>
           <div role="group" aria-label="When you’re free" style={{ display: "flex", gap: 7, flexWrap: "wrap", marginBottom: 8 }}>
@@ -131,7 +135,7 @@ export default function MyPartnerAreas({ uid, listings, listingsError, prefill, 
             <input ref={searchRef} type="search" value={q} onChange={(e) => setQ(e.target.value)} placeholder="Search any crag, canyon, range or state" aria-label="Search for an area to add" style={{ ...field, paddingLeft: 36 }} />
             <span aria-hidden="true" style={{ position: "absolute", left: 11, top: "50%", transform: "translateY(-50%)", display: "flex", pointerEvents: "none" }}><ActionIcon name="search" color={C.textMuted} size={17} /></span>
           </div>
-          {q.trim() ? <div style={{ marginBottom: 16 }}>{!qOk ? <div style={{ fontSize: 12, color: C.textMuted }}>Keep typing — at least two letters.</div> : searchQ.isError ? <div style={{ fontSize: 12, color: C.amber }}>Couldn’t search areas right now.</div> : searchQ.isPending && !hits.length ? <div style={{ fontSize: 12, color: C.textMuted }}>Searching…</div> : !hits.length ? <div style={{ fontSize: 12, color: C.textMuted, lineHeight: 1.5 }}>Nothing in the catalog is named “{q.trim()}”. Try part of the name (“smith” finds Smith Rock), or the full name instead of a nickname.</div> : <>{searchQ.data && searchQ.data.fuzzy ? <div style={{ fontSize: 12, color: C.textMuted, marginBottom: 6 }}>{"No exact match for “" + q.trim() + "” — closest names:"}</div> : null}{hits.map((a) => { const no = NO_LISTING.has(a.area_type); const already = listed.has(a.id); return <button key={a.id} disabled={no} onClick={() => startEdit(already ? (listings || []).find((l) => l.areaId === a.id) : { areaId: a.id, name: a.name, areaType: a.area_type, parentName: (a.trail && a.trail.length ? a.trail[a.trail.length - 1] : null), disciplines: [] })} style={{ ...card, display: "flex", alignItems: "center", gap: 10, width: "100%", textAlign: "left", minHeight: 52, padding: "9px 12px", color: no ? C.textMuted : C.text, cursor: no ? "default" : "pointer", marginBottom: 6, opacity: no ? 0.6 : 1 }}><span style={{ flex: 1, minWidth: 0 }}><span style={{ display: "block", fontSize: 14, fontWeight: 700, overflowWrap: "anywhere" }}>{a.name}</span><span style={{ display: "block", fontSize: 12, color: C.textMuted, overflowWrap: "anywhere" }}>{[TYPE_LABEL[a.area_type] || a.area_type, (a.trail || []).slice(-2).join(" › "), a.route_count ? a.route_count + " climb" + (a.route_count === 1 ? "" : "s") : ""].filter(Boolean).join(" · ")}</span></span><span style={{ fontSize: 12, fontWeight: 800, color: no ? C.textMuted : already ? C.green : C.blue, flexShrink: 0 }}>{no ? "Peak — matched by route" : already ? "Listed ✓" : "+ Add"}</span></button>; })}{hitTotal > hits.length ? <div style={{ fontSize: 12, color: C.textMuted, marginTop: 4 }}>{"Showing " + hits.length + " of " + hitTotal + " matches, closest names first — type more of the name to narrow."}</div> : null}</>}</div> : null}
+          {q.trim() ? <div style={{ marginBottom: 16 }}>{!qOk ? <div style={{ fontSize: 12, color: C.textMuted }}>Keep typing — at least two letters.</div> : searchQ.isError ? <div style={{ fontSize: 12, color: C.amber }}>Couldn’t search areas right now.</div> : searchQ.isPending && !hits.length ? <div style={{ fontSize: 12, color: C.textMuted }}>Searching…</div> : !hits.length ? <div style={{ fontSize: 12, color: C.textMuted, lineHeight: 1.5 }}>Nothing in the catalog is named “{q.trim()}”. Try part of the name (“smith” finds Smith Rock), or the full name instead of a nickname.</div> : <>{searchQ.data && searchQ.data.fuzzy ? <div style={{ fontSize: 12, color: C.textMuted, marginBottom: 6 }}>{"No exact match for “" + q.trim() + "” — closest names:"}</div> : null}{hits.map((a) => { const no = NO_LISTING.has(a.area_type); const already = listed.has(a.id); return <button key={a.id} disabled={no} onClick={() => startEdit(already ? (listings || []).find((l) => l.areaId === a.id) : { areaId: a.id, name: a.name, areaType: a.area_type, parentName: (a.trail && a.trail.length ? a.trail[a.trail.length - 1] : null), disciplines: [] })} style={{ ...card, display: "flex", alignItems: "center", gap: 10, width: "100%", textAlign: "left", minHeight: 52, padding: "9px 12px", color: no ? C.textMuted : C.text, cursor: no ? "default" : "pointer", marginBottom: 6, opacity: no ? 0.6 : 1 }}><span style={{ flex: 1, minWidth: 0 }}><span style={{ display: "block", fontSize: 14, fontWeight: 700, overflowWrap: "anywhere" }}>{a.name}</span><span style={{ display: "block", fontSize: 12, color: C.textMuted, overflowWrap: "anywhere" }}>{[TYPE_LABEL[a.area_type] || a.area_type, (a.trail || []).slice(-2).join(" › "), a.route_count ? a.route_count + " climb" + (a.route_count === 1 ? "" : "s") : ""].filter(Boolean).join(" · ")}</span></span><span style={{ fontSize: 12, fontWeight: 800, color: no ? C.textMuted : already ? C.green : C.blue, flexShrink: 0 }}>{no ? "Too broad to list" : already ? "Listed ✓" : "+ Add"}</span></button>; })}{hitTotal > hits.length ? <div style={{ fontSize: 12, color: C.textMuted, marginTop: 4 }}>{"Showing " + hits.length + " of " + hitTotal + " matches, closest names first — type more of the name to narrow."}</div> : null}</>}</div> : null}
           {!q.trim() && suggestions.length ? <div style={{ marginBottom: 16 }}>
             <SL>From your climbs</SL>
             <div style={{ display: "flex", gap: 7, flexWrap: "wrap" }}>{suggestions.map((s) => <button key={s.areaId} onClick={() => startEdit(s)} aria-label={"Add " + s.name} style={pill(false)}>{"+ " + s.name}</button>)}</div>
@@ -141,7 +145,7 @@ export default function MyPartnerAreas({ uid, listings, listingsError, prefill, 
           {listingsN ? (listings || []).map((l) => { const past = l.freeTo && l.freeTo < today; return <div key={l.areaId} style={{ ...card, display: "flex", alignItems: "center", gap: 10, padding: "4px 8px 4px 4px", marginBottom: 8 }}>
             <button onClick={() => startEdit(l)} aria-label={"Edit " + l.name} style={{ flex: 1, minWidth: 0, textAlign: "left", background: "none", border: "none", padding: "8px 10px", cursor: "pointer", color: C.text }}>
               <span style={{ display: "block", fontSize: 14.5, fontWeight: 700 }}>{l.name}<span style={{ fontSize: 11.5, fontWeight: 700, color: C.textMuted, marginLeft: 7 }}>{TYPE_LABEL[l.areaType] || ""}</span></span>
-              <span style={{ display: "block", fontSize: 12.5, color: C.textSub, marginTop: 2 }}>{(l.disciplines && l.disciplines.length ? l.disciplines.map((d) => discLabel(d)).join(", ") : "Any crag type") + " · "}<span style={{ color: past ? C.amber : C.textSub }}>{past ? "Window ended " + fmtDay(l.freeTo) + tx(" — tap to update") : windowText(l)}</span></span>
+              <span style={{ display: "block", fontSize: 12.5, color: C.textSub, marginTop: 2 }}>{(l.disciplines && l.disciplines.length ? l.disciplines.map((d) => discLabel(d)).join(", ") : l.areaType === "peak" ? "Any discipline" : "Any crag type") + " · "}<span style={{ color: past ? C.amber : C.textSub }}>{past ? "Window ended " + fmtDay(l.freeTo) + tx(" — tap to update") : windowText(l)}</span></span>
               {l.note ? <span style={{ display: "block", fontSize: 12, color: C.textMuted, marginTop: 2, fontStyle: "italic" }}>{l.note}</span> : null}
             </button>
             <button onClick={() => remove(l)} aria-label={"Remove " + l.name} style={POP_REMOVE}>✕</button>

@@ -1,0 +1,530 @@
+[
+ {
+  "id": "ca_mount_henry_west_ridge",
+  "status": "found",
+  "trailhead": {
+   "name": "Maxson Trailhead",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://www.climber.org/reports/2018/1879.html",
+    "fact": "Trailhead: Maxon; Mount Henry and Fleming Mountain, west ridge, Lower Indian Lake"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "Maxson Trailhead",
+     "lat": 37.082845,
+     "lng": -118.960333,
+     "url": ""
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Route text (Post Corral Creek, Fleming and Lower Indian lakes) matches the climber.org 2018 report from Maxson TH near Courtright Reservoir. 16 km from the peak (long approach)."
+ },
+ {
+  "id": "ca_mount_hilgard_standard_route",
+  "status": "found",
+  "trailhead": {
+   "name": "Bear Creek Diversion Dam Trailhead",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://www.climber.org/reports/1999/508.html",
+    "fact": "Trailhead: Bear Creek Diversion Dam; Hilgard via Lake Italy"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "Bear Creek Trailhead",
+     "lat": 37.335376,
+     "lng": -118.974645,
+     "url": ""
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Route text empty. Three climber.org reports (1999/508, 2007/1603, 2001/734) use Bear Creek Diversion Dam to Lake Italy for Hilgard; a 2012 report used Pine Creek instead. USFS point Bear Creek Trailhead is name-matched, not confirmed to be the Diversion Dam lot; verify."
+ },
+ {
+  "id": "ca_mount_hooper_southwest_ridge_via_tombstone_pass",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Route text names Tombstone Creek/Pass but no trailhead. climber.org Hooper reports start from Florence Lake TH, Bear Creek Diversion Dam or the Selden Pass trail; none mention Tombstone. Not identified."
+ },
+ {
+  "id": "ca_mount_huxley_standard_route",
+  "status": "found",
+  "trailhead": {
+   "name": "Piute Pass (North Lake) Trailhead",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://www.climber.org/reports/2009/1706.html",
+    "fact": "Trailhead: Piute Pass; Darwin Bench, west shoulder of Huxley"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "North Lake Trailhead",
+     "lat": 37.230685,
+     "lng": -118.616614,
+     "url": ""
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Piute Pass trailhead is the North Lake trailhead. 1997/209 (west shoulder class 2) is consistent."
+ },
+ {
+  "id": "ca_mount_izaak_walton_east_face",
+  "status": "found",
+  "trailhead": {
+   "name": "Mono Creek Trailhead (Lake Edison)",
+   "identifiedBy": {
+    "kind": "route_text",
+    "fact": "Hike the Mono Creek trail to Mott Lake"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "Mono Creek Trailhead",
+     "lat": 37.381365,
+     "lng": -118.997556,
+     "url": ""
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "approach_note",
+    "value": "ferry across Lake Thomas A Edison from Vermilion Valley Resort, round trip $15 pp in 2005",
+    "url": "https://www.climber.org/reports/2005/1431.html"
+   }
+  ],
+  "notes": "Page https://www.climber.org/reports/2005/1431.html: party took the Vermilion Valley Resort ferry on Lake Thomas A Edison, then side trail to Mott Lake. Official Mono Creek TH vs ferry landing not distinguished; verify which end the point sits."
+ },
+ {
+  "id": "ca_mount_jordan_standard_route",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Route text silent. climber.org reports reach Jordan from Shepherd Pass (1996 Climborama) or Cedar Grove (2004); no page identifies the standard route's trailhead."
+ },
+ {
+  "id": "ca_mount_kaweah_standard_route",
+  "status": "found",
+  "trailhead": {
+   "name": "Sawtooth Pass Trailhead (Mineral King)",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://www.climber.org/reports/2001/721.html",
+    "fact": "Mt. Kaweah via Glacier Pass and Black Rock Pass from Sawtooth Pass trailhead, Mineral King"
+   },
+   "placements": [
+    {
+     "source": "NPS",
+     "name": "Sawtooth",
+     "lat": 36.453305,
+     "lng": -118.596761,
+     "url": ""
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Also 2005/1449 uses Sawtooth Pass TH. Other Kaweah routes (Crescent Meadow, Big Arroyo) start elsewhere."
+ },
+ {
+  "id": "ca_mount_leconte_east_slope",
+  "status": "found",
+  "trailhead": {
+   "name": "Meysan Lake Trailhead",
+   "identifiedBy": {
+    "kind": "route_text",
+    "fact": "Follow the Meysan Lake trail"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "MEYSAN LAKE TH",
+     "lat": 36.589789,
+     "lng": -118.230163,
+     "url": ""
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "climber.org 2009/1710 lists Trailhead: Meysan Lake Trailhead for LeConte/Mallory."
+ },
+ {
+  "id": "ca_mount_lola_lola_trail",
+  "status": "found",
+  "trailhead": {
+   "name": "Mt. Lola Trailhead",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://www.climber.org/reports/2010/1765.html",
+    "fact": "Trailhead: Mt lola Trail"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "Mt. Lola Trailhead",
+     "lat": 39.488416,
+     "lng": -120.340129,
+     "url": ""
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Route text (forest, Cold Stream Meadow, south ridge) is the Mt Lola trail."
+ },
+ {
+  "id": "ca_mount_maclure_standard_route",
+  "status": "found",
+  "trailhead": {
+   "name": "Tuolumne Meadows (Lyell Canyon trail)",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://www.climber.org/reports/2010/1770.html",
+    "fact": "Trailhead: Tuolomne Meadows; Mt Lyell and Mt Maclure"
+   },
+   "placements": [
+    {
+     "source": "NPS",
+     "name": "Dog Lake Trailhead Parking",
+     "lat": 37.878162,
+     "lng": -119.338857,
+     "url": ""
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Lyell Canyon trail starts at Tuolumne Meadows; 1998/361 and 1992 reports go up Lyell Canyon. Dog Lake Trailhead Parking is the nearest named NPS lot to the Lyell Canyon trail start, not a point named Lyell Canyon; verify. 15.8 km."
+ },
+ {
+  "id": "ca_mount_mallory_east_slopes_from_meysan_lake",
+  "status": "found",
+  "trailhead": {
+   "name": "Meysan Lake Trailhead",
+   "identifiedBy": {
+    "kind": "route_text",
+    "fact": "Hike the Meysan Lakes trail to the lake"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "MEYSAN LAKE TH",
+     "lat": 36.589789,
+     "lng": -118.230163,
+     "url": ""
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "climber.org 2012/1806 and 2009/1710 list Meysan Lake trailhead."
+ },
+ {
+  "id": "ca_mount_mcadie_via_arc_pass",
+  "status": "found",
+  "trailhead": {
+   "name": "Whitney Portal Trailhead",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://www.climber.org/reports/2009/1715.html",
+    "fact": "a class 2-3 route from Arc Pass to Mt. McAdie; Trailhead: Whitney Portal"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "Whitney Portal Trailhead",
+     "lat": 36.586905,
+     "lng": -118.240112,
+     "url": ""
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Page is specific to the Arc Pass route."
+ },
+ {
+  "id": "ca_mount_mcduffie_standard_route",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Only multi-peak Black Divide/Ionian reports (from Lake Sabrina and South Lake); no page describes McDuffie's standard route start."
+ },
+ {
+  "id": "ca_mount_mcgee_standard_route",
+  "status": "found",
+  "trailhead": {
+   "name": "North Lake Trailhead",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://www.climber.org/reports/1997/235.html",
+    "fact": "Mt McGee solo climb near Evolution Valley; group started at North Lake"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "North Lake Trailhead",
+     "lat": 37.230685,
+     "lng": -118.616614,
+     "url": ""
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Single trip report; route text empty. McGee is also reachable from the west (Florence Lake via Evolution); weak confirmation, verify."
+ },
+ {
+  "id": "ca_mount_newcomb_southwest_slope",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Route text names Discovery Pass and Crabtree Pass; the only focused page (climber.org 2017/1875) goes from Cottonwood Lakes TH via New Army Pass and does not mention Crabtree. Not confirmed."
+ },
+ {
+  "id": "ca_mount_perkins_west_slope",
+  "status": "stuck",
+  "trailhead": {
+   "name": "Armstrong Canyon (roadside start)",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://www.climber.org/reports/2007/1580.html",
+    "fact": "Trailhead: Armstrong Canyon; Mt Perkins, Wynne, Pinchot"
+   },
+   "placements": []
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "climber.org 2007/1580 (Perkins, Wynne, Pinchot loop) lists Trailhead: Armstrong Canyon, a trailless roadside start with no official point; no placement."
+ },
+ {
+  "id": "ca_mount_pickering_standard_route",
+  "status": "found",
+  "trailhead": {
+   "name": "Cottonwood Lakes (New Army Pass) Trailhead",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://www.climber.org/reports/2003/1067.html",
+    "fact": "Langley, Pickering and Cirque from the New Army trailhead on Horseshoe Meadow Rd"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "Cottonwood Lakes Trailhead",
+     "lat": 36.453362,
+     "lng": -118.169987,
+     "url": ""
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "2002/966 also Cottonwood Lakes area for Pickering. Official point is 13.6 km from the peak."
+ },
+ {
+  "id": "ca_mount_pinchot_east_ridge_from_armstrong_canyon",
+  "status": "stuck",
+  "trailhead": {
+   "name": "Armstrong Canyon (roadside start)",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://www.climber.org/reports/2008/1680.html",
+    "fact": "Trailhead: Armstrong Canyon; Mount Pinchot East Ridge"
+   },
+   "placements": []
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Trailhead is Armstrong Canyon (climber.org 2008/1680 and 2007/1580), a cross-country start with no official point; Sawmill Pass TH is 10 km away and not the same place. No placement."
+ },
+ {
+  "id": "ca_mount_powell_standard_route",
+  "status": "found",
+  "trailhead": {
+   "name": "Lake Sabrina Trailhead",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://www.climber.org/reports/2000/655.html",
+    "fact": "Trailhead: Lake Sabrina; Mt Thompson and Mt Powell"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "SABRINA LAKE TH",
+     "lat": 37.213605,
+     "lng": -118.610013,
+     "url": ""
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Many reports (2000/655, 2000/697, 2003/1071, 2010/1768, 2016/1870). Note: SPS Powell is Point Powell, east summit of the massif; the stored peak coordinate may be a different summit."
+ },
+ {
+  "id": "ca_mount_prater_standard_route",
+  "status": "found",
+  "trailhead": {
+   "name": "Taboose Pass Trailhead",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://www.climber.org/reports/2013/1843.html",
+    "fact": "Upper Basin via Taboose Pass; Split Mtn, Mt Prater, Mt Bolton Brown"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "TABOOSE PASS TH",
+     "lat": 37.009505,
+     "lng": -118.327312,
+     "url": ""
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Also 2011/1826. Red Lake TH is nearer (6.7 km) but no report used it. Taboose point is 10 km away."
+ },
+ {
+  "id": "ca_mount_reinstein_standard_route",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Reports start from Florence Lake (2011/1789), Courtright (2005/1439) or are multi-peak; no page picks a standard-route trailhead."
+ },
+ {
+  "id": "ca_mount_rixford_south_slope",
+  "status": "found",
+  "trailhead": {
+   "name": "Onion Valley Trailhead",
+   "identifiedBy": {
+    "kind": "route_text",
+    "fact": "Hike over Kearsarge Pass to the Bullfrog Lake area"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "Onion Valley Campground",
+     "lat": 36.772538,
+     "lng": -118.341244,
+     "url": ""
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "climber.org 2010/1772 lists Trailhead: Onion Valley. Kearsarge Pass trail starts at Onion Valley."
+ },
+ {
+  "id": "ca_mount_ruskin_east_ridge",
+  "status": "found",
+  "trailhead": {
+   "name": "Taboose Pass Trailhead",
+   "identifiedBy": {
+    "kind": "route_text",
+    "fact": "Hike over Taboose Pass"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "TABOOSE PASS TH",
+     "lat": 37.009505,
+     "lng": -118.327312,
+     "url": ""
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "climber.org 2007/1718 and 2006/1532 list Trailhead: Taboose Pass."
+ },
+ {
+  "id": "ca_mount_senger_via_sallie_keyes_lakes",
+  "status": "found",
+  "trailhead": {
+   "name": "Florence Lake Trailhead",
+   "identifiedBy": {
+    "kind": "route_text",
+    "fact": "Hike the trail around Florence Lake"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "Florence Trailhead",
+     "lat": 37.276204,
+     "lng": -118.974298,
+     "url": ""
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "climber.org 1996/117 and 2001/832 (Sallie Keyes Lakes base camp; Mt. Senger) start at Florence Lake; 2001/832 used the 8:30 a.m. ferry, route text says walk around the lake."
+ },
+ {
+  "id": "ca_mount_silliman_south_slope_from_silliman_lake",
+  "status": "found",
+  "trailhead": {
+   "name": "Lodgepole Trailhead (Twin Lakes trail)",
+   "identifiedBy": {
+    "kind": "route_text",
+    "fact": "Follow the Twin Lakes trail to Silliman Creek"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "Lodgepole TH",
+     "lat": 36.604973,
+     "lng": -118.723059,
+     "url": ""
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Twin Lakes trail starts at Lodgepole. Identified from route text only; climber.org reports not opened."
+ }
+]

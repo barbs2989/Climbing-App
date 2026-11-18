@@ -1,0 +1,546 @@
+{
+ "wa_snow_creek_wall_satellite": {
+  "area": "wa_snow_creek_wall",
+  "set": {
+   "waypoints": [
+    {
+     "lat": 47.5442538,
+     "lng": -120.7100626,
+     "elev": 1300,
+     "elevFt": 1300,
+     "name": "Snow Lakes Trailhead",
+     "type": "Trailhead",
+     "note": "Parking lot for the Snow Lakes Trail, about 1,300 ft. Pay the $5 day-use fee or display a Northwest Forest Pass or interagency pass.",
+     "directions": "Take Icicle Road (FR 7600) out of Leavenworth; the lot sits on the left side about 4.3 mi along."
+    }
+   ]
+  },
+  "review": {
+   "sources": [
+    "https://cascadeclimbers.com/forum/topic/27808-snow-creek-wall-satellite-beta",
+    "https://www.mountaineers.org/activities/routes-places/snow-creek-wall",
+    "https://www.openstreetmap.org/way/154033355",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/snow-lakes-trailhead"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.7",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/27808-snow-creek-wall-satellite-beta",
+      "fact": "Satellite route (5P, 5.7), quoting the guidebook",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 5,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/27808-snow-creek-wall-satellite-beta",
+      "fact": "5P",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "waypoints/Snow Lakes Trailhead",
+    "value": {
+     "name": "Snow Lakes Trailhead",
+     "lat": 47.5442538,
+     "lng": -120.7100626
+    },
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.openstreetmap.org/way/154033355",
+      "fact": "Snow Lakes Trailhead Parking, centre 47.5442538,-120.7100626",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/snow-lakes-trailhead",
+      "fact": "Snow Lakes Trailhead 47.5441,-120.7095, 1,300 ft",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_snow_creek_wall_satellite",
+    "column": "disciplines",
+    "from": null,
+    "to": [
+     "trad"
+    ],
+    "why": "disciplines must name the row primary discipline (trad)",
+    "evidence": [
+     "https://cascadeclimbers.com/forum/topic/27808-snow-creek-wall-satellite-beta"
+    ]
+   }
+  ],
+  "disputed": [
+   "gear: stored \"gear to 2 in\" has no source found",
+   "fa: none found"
+  ],
+  "notes": "Not on Mountain Project, Wenatchee Outdoors or theCrag; The Mountaineers indexes the name only under its Snow Creek Wall page (no facts). Only source: a 2004 CascadeClimbers thread quoting the guidebook (5 pitches, 5.7; starts at a right-facing corner or a 5.2 chimney at the far left of the wall). SummitPost has a Satellite page (summitpost.org/satellite/162086) but is 403 - a second source there would lift both locks to agree-2. Climbers in the thread describe moss and brush on the route. Trailhead pin = centre of the OSM parking lot (way 154033355), 45.6 m from the USFS trailhead point; elevation is the USFS published 1,300 ft (USGS DEM reads 1,374 ft at the lot centre). Straight line lot to the wall centre is 1.75 km, so any one-way dist_km below 1.75 is wrong. dist_km left null (no stored value; The Mountaineers gives 5.0 mi round trip and 2,800 ft gain for the wall outing, Wenatchee Outdoors about 2.5 mi up to the base) - not proposed because the column has two conventions. USFS (updated 2026-08-04): $5/day or $30/yr, NW Forest Pass and Interagency passes accepted; free self-issued day-use wilderness permit at the trailhead; no dogs on the Snow Lakes Trail (Enchantment Permit Area). Whether a Snow Creek Wall day climb needs the day-use wilderness permit was not confirmed - permit not written."
+ },
+ "wa_white_slabs": {
+  "area": "wa_snow_creek_wall",
+  "set": {
+   "waypoints": [
+    {
+     "lat": 47.5442538,
+     "lng": -120.7100626,
+     "elev": 1300,
+     "elevFt": 1300,
+     "name": "Snow Lakes Trailhead",
+     "type": "Trailhead",
+     "note": "Parking lot for the Snow Lakes Trail, about 1,300 ft. Pay the $5 day-use fee or display a Northwest Forest Pass or interagency pass.",
+     "directions": "Take Icicle Road (FR 7600) out of Leavenworth; the lot sits on the left side about 4.3 mi along."
+    }
+   ]
+  },
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/111078912/white-slabs",
+    "https://www.mountaineers.org/activities/routes-places/snow-creek-wall",
+    "https://www.openstreetmap.org/way/154033355",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/snow-lakes-trailhead"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.7",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111078912/white-slabs",
+      "fact": "5.7 PG13",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/snow-creek-wall",
+      "fact": "White Slabs Grade II, 5.7",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "waypoints/Snow Lakes Trailhead",
+    "value": {
+     "name": "Snow Lakes Trailhead",
+     "lat": 47.5442538,
+     "lng": -120.7100626
+    },
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.openstreetmap.org/way/154033355",
+      "fact": "Snow Lakes Trailhead Parking, centre 47.5442538,-120.7100626",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/snow-lakes-trailhead",
+      "fact": "Snow Lakes Trailhead 47.5441,-120.7095, 1,300 ft",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_white_slabs",
+    "column": "pitches",
+    "from": 0,
+    "to": null,
+    "why": "0 is invalid; sources disagree (MP 3 pitches 160/140/120 ft; The Mountaineers four pitches) so null until a third source settles it",
+    "evidence": [
+     "https://www.mountainproject.com/route/111078912/white-slabs",
+     "https://www.mountaineers.org/activities/routes-places/snow-creek-wall"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_white_slabs",
+    "column": "commitment",
+    "from": null,
+    "to": "II",
+    "why": "MP and The Mountaineers both give Grade II",
+    "evidence": [
+     "https://www.mountainproject.com/route/111078912/white-slabs",
+     "https://www.mountaineers.org/activities/routes-places/snow-creek-wall"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_white_slabs",
+    "column": "disciplines",
+    "from": null,
+    "to": [
+     "trad"
+    ],
+    "why": "disciplines must name the row primary discipline (trad)",
+    "evidence": [
+     "https://www.mountainproject.com/route/111078912/white-slabs"
+    ]
+   }
+  ],
+  "disputed": [
+   "pitches: MP 3, The Mountaineers 4",
+   "length_m: MP 430 ft (130 m) only - not proposed",
+   "gear: stored \"Cams to 2 inches.\" vs MP triple cams 0.75-3 in plus nuts and small cams (1 source) - not changed",
+   "fa: stored Gordon/Rupley 1958, FFA Beckey/Bell 1961 matches MP only - unconfirmed (FA never locks on one source)"
+  ],
+  "notes": "Descent: MP says the route ends on the Country Club ramp and that party made 6 rappels with a 60 m rope after not finding the Umbrella Tree (5.7) finish; stored descent sentence is consistent, left as is. The Mountaineers gives the general climbers descent trail. Hazard line is templated canyon text, unverified. Trailhead pin = centre of the OSM parking lot (way 154033355), 45.6 m from the USFS trailhead point; elevation is the USFS published 1,300 ft (USGS DEM reads 1,374 ft at the lot centre). Straight line lot to the wall centre is 1.75 km, so any one-way dist_km below 1.75 is wrong. dist_km left null (no stored value; The Mountaineers gives 5.0 mi round trip and 2,800 ft gain for the wall outing, Wenatchee Outdoors about 2.5 mi up to the base) - not proposed because the column has two conventions. USFS (updated 2026-08-04): $5/day or $30/yr, NW Forest Pass and Interagency passes accepted; free self-issued day-use wilderness permit at the trailhead; no dogs on the Snow Lakes Trail (Enchantment Permit Area). Whether a Snow Creek Wall day climb needs the day-use wilderness permit was not confirmed - permit not written."
+ },
+ "wa_snow_creek_wall_galaxy": {
+  "area": "wa_snow_creek_wall",
+  "set": {
+   "waypoints": [
+    {
+     "lat": 47.5442538,
+     "lng": -120.7100626,
+     "elev": 1300,
+     "elevFt": 1300,
+     "name": "Snow Lakes Trailhead",
+     "type": "Trailhead",
+     "note": "Parking lot for the Snow Lakes Trail, about 1,300 ft. Pay the $5 day-use fee or display a Northwest Forest Pass or interagency pass.",
+     "directions": "Take Icicle Road (FR 7600) out of Leavenworth; the lot sits on the left side about 4.3 mi along."
+    }
+   ]
+  },
+  "review": {
+   "sources": [
+    "https://wenatcheeoutdoors.org/2016/04/28/snow-creek-wall/",
+    "https://climbcanada.blogspot.com/2007/07/leavenworth-wa-snow-creek-wall-galaxy.html",
+    "https://www.openstreetmap.org/way/154033355",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/snow-lakes-trailhead"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "waypoints/Snow Lakes Trailhead",
+    "value": {
+     "name": "Snow Lakes Trailhead",
+     "lat": 47.5442538,
+     "lng": -120.7100626
+    },
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.openstreetmap.org/way/154033355",
+      "fact": "Snow Lakes Trailhead Parking, centre 47.5442538,-120.7100626",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/snow-lakes-trailhead",
+      "fact": "Snow Lakes Trailhead 47.5441,-120.7095, 1,300 ft",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_snow_creek_wall_galaxy",
+    "column": "disciplines",
+    "from": null,
+    "to": [
+     "trad"
+    ],
+    "why": "disciplines must name the row primary discipline (trad)",
+    "evidence": [
+     "https://wenatcheeoutdoors.org/2016/04/28/snow-creek-wall/"
+    ]
+   }
+  ],
+  "disputed": [
+   "grade: Wenatchee Outdoors 5.9 (stored); 2007 climbcanada blog header 5.8+ - one step apart, unlocked",
+   "pitches: Wenatchee Outdoors \"up to 9\"; blog \"about 9 or so\" - both hedged, not locked (stored 9 plausible)",
+   "gear: Wenatchee Outdoors to 3.5 in; blog quotes guidebook pro to 3 in (stored \"gear to 3 in\")",
+   "commitment: stored IV - no source found",
+   "fa: stored \"FFA: Madsen, Hargis, McPherson, Davis 1966\" - blog gives FA 1966 only; names unconfirmed"
+  ],
+  "notes": "Not on Mountain Project, The Mountaineers or Steph Abegg. Wenatchee Outdoors: long route with much 5.5-5.6 terrain between a few good pitches. The 2007 blog reports decaying rap trees/two-pin station low on the route and that one 60 m rope does not reach between them. Trailhead pin = centre of the OSM parking lot (way 154033355), 45.6 m from the USFS trailhead point; elevation is the USFS published 1,300 ft (USGS DEM reads 1,374 ft at the lot centre). Straight line lot to the wall centre is 1.75 km, so any one-way dist_km below 1.75 is wrong. dist_km left null (no stored value; The Mountaineers gives 5.0 mi round trip and 2,800 ft gain for the wall outing, Wenatchee Outdoors about 2.5 mi up to the base) - not proposed because the column has two conventions. USFS (updated 2026-08-04): $5/day or $30/yr, NW Forest Pass and Interagency passes accepted; free self-issued day-use wilderness permit at the trailhead; no dogs on the Snow Lakes Trail (Enchantment Permit Area). Whether a Snow Creek Wall day climb needs the day-use wilderness permit was not confirmed - permit not written."
+ },
+ "wa_snow_creek_wall_remorse": {
+  "area": "wa_snow_creek_wall",
+  "set": {
+   "waypoints": [
+    {
+     "lat": 47.5442538,
+     "lng": -120.7100626,
+     "elev": 1300,
+     "elevFt": 1300,
+     "name": "Snow Lakes Trailhead",
+     "type": "Trailhead",
+     "note": "Parking lot for the Snow Lakes Trail, about 1,300 ft. Pay the $5 day-use fee or display a Northwest Forest Pass or interagency pass.",
+     "directions": "Take Icicle Road (FR 7600) out of Leavenworth; the lot sits on the left side about 4.3 mi along."
+    }
+   ]
+  },
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/126289579/remorse",
+    "https://wenatcheeoutdoors.org/2016/04/28/snow-creek-wall/",
+    "https://www.openstreetmap.org/way/154033355",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/snow-lakes-trailhead"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.8",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/126289579/remorse",
+      "fact": "5.8",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://wenatcheeoutdoors.org/2016/04/28/snow-creek-wall/",
+      "fact": "Remorse (route 19), 5.8",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 7,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/126289579/remorse",
+      "fact": "7 pitches",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "length_m",
+    "value": 244,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/126289579/remorse",
+      "fact": "800 ft (242 m)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "waypoints/Snow Lakes Trailhead",
+    "value": {
+     "name": "Snow Lakes Trailhead",
+     "lat": 47.5442538,
+     "lng": -120.7100626
+    },
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.openstreetmap.org/way/154033355",
+      "fact": "Snow Lakes Trailhead Parking, centre 47.5442538,-120.7100626",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/snow-lakes-trailhead",
+      "fact": "Snow Lakes Trailhead 47.5441,-120.7095, 1,300 ft",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_snow_creek_wall_remorse",
+    "column": "gear",
+    "from": null,
+    "to": [
+     "gear to 3 in"
+    ],
+    "why": "MP (gear to 3 in, Outer Space rack) and Wenatchee Outdoors (gear to 3 inches) agree; same array shape as the wall siblings",
+    "evidence": [
+     "https://www.mountainproject.com/route/126289579/remorse",
+     "https://wenatcheeoutdoors.org/2016/04/28/snow-creek-wall/"
+    ]
+   }
+  ],
+  "disputed": [
+   "fa: MP Ed Cooper & Galen McBee 1958, FFA Ron Burgner & Don McPherson (no year) - one source, not written",
+   "length_m 244 vs MP 242 m: MP states 800 ft = 243.8 m, within tolerance"
+  ],
+  "notes": "Remorse starts at the point the climbers trail meets the wall, right of RPM. Wenatchee Outdoors describes three pitches to the Outer Space ledge and says few parties climb the upper pitches; pitch count 7 is MP only (SummitPost blocked), locked at the 1-source tier. Descent not stated on the route page; the wall walk-off goes climbers left (Wenatchee Outdoors). Trailhead pin = centre of the OSM parking lot (way 154033355), 45.6 m from the USFS trailhead point; elevation is the USFS published 1,300 ft (USGS DEM reads 1,374 ft at the lot centre). Straight line lot to the wall centre is 1.75 km, so any one-way dist_km below 1.75 is wrong. dist_km left null (no stored value; The Mountaineers gives 5.0 mi round trip and 2,800 ft gain for the wall outing, Wenatchee Outdoors about 2.5 mi up to the base) - not proposed because the column has two conventions. USFS (updated 2026-08-04): $5/day or $30/yr, NW Forest Pass and Interagency passes accepted; free self-issued day-use wilderness permit at the trailhead; no dogs on the Snow Lakes Trail (Enchantment Permit Area). Whether a Snow Creek Wall day climb needs the day-use wilderness permit was not confirmed - permit not written."
+ },
+ "wa_hyperspace": {
+  "area": "wa_snow_creek_wall",
+  "set": {
+   "waypoints": [
+    {
+     "lat": 47.5442538,
+     "lng": -120.7100626,
+     "elev": 1300,
+     "elevFt": 1300,
+     "name": "Snow Lakes Trailhead",
+     "type": "Trailhead",
+     "note": "Parking lot for the Snow Lakes Trail, about 1,300 ft. Pay the $5 day-use fee or display a Northwest Forest Pass or interagency pass.",
+     "directions": "Take Icicle Road (FR 7600) out of Leavenworth; the lot sits on the left side about 4.3 mi along."
+    }
+   ]
+  },
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/106279399/hyperspace",
+    "https://stephabegg.com/trip-reports/washington/snow-creek-wall/",
+    "https://wenatcheeoutdoors.org/2016/04/28/snow-creek-wall/",
+    "https://publications.americanalpineclub.org/articles/12198416301/North-America-United-States-Washington-Cascade-Mountains-Climbs-in-Snow-Creek-Area-1982",
+    "https://www.openstreetmap.org/way/154033355",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/snow-lakes-trailhead"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.11a",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106279399/hyperspace",
+      "fact": "5.11a",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://stephabegg.com/trip-reports/washington/snow-creek-wall/",
+      "fact": "Hyperspace 5.11a",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "gear",
+    "value": "Cams to 4 inches.",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://stephabegg.com/trip-reports/washington/snow-creek-wall/",
+      "fact": "Gear to 4 inches",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://wenatcheeoutdoors.org/2016/04/28/snow-creek-wall/",
+      "fact": "Hyperspace ... Gear to 4 inches",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "waypoints/Snow Lakes Trailhead",
+    "value": {
+     "name": "Snow Lakes Trailhead",
+     "lat": 47.5442538,
+     "lng": -120.7100626
+    },
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.openstreetmap.org/way/154033355",
+      "fact": "Snow Lakes Trailhead Parking, centre 47.5442538,-120.7100626",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/snow-lakes-trailhead",
+      "fact": "Snow Lakes Trailhead 47.5441,-120.7095, 1,300 ft",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_hyperspace",
+    "column": "pitches",
+    "from": 0,
+    "to": 7,
+    "why": "0 is invalid. MP and Steph Abegg list 7 pitches (Abegg P1 is Remorse 5.8 or RPM 5.10+); Wenatchee Outdoors and the 1984 AAJ note say 8 - owner to choose; 7 is the count in the modern topos",
+    "evidence": [
+     "https://www.mountainproject.com/route/106279399/hyperspace",
+     "https://stephabegg.com/trip-reports/washington/snow-creek-wall/",
+     "https://wenatcheeoutdoors.org/2016/04/28/snow-creek-wall/",
+     "https://publications.americanalpineclub.org/articles/12198416301/North-America-United-States-Washington-Cascade-Mountains-Climbs-in-Snow-Creek-Area-1982"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_hyperspace",
+    "column": "alpine_grade",
+    "from": "IV",
+    "to": null,
+    "why": "a commitment grade misfiled in alpine_grade on a trad crag route, and MP gives Grade III, not IV",
+    "evidence": [
+     "https://www.mountainproject.com/route/106279399/hyperspace"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_hyperspace",
+    "column": "commitment",
+    "from": null,
+    "to": "III",
+    "why": "MP Grade III (one source; no other source states a commitment grade)",
+    "evidence": [
+     "https://www.mountainproject.com/route/106279399/hyperspace"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_hyperspace",
+    "column": "disciplines",
+    "from": null,
+    "to": [
+     "trad"
+    ],
+    "why": "disciplines must name the row primary discipline (trad)",
+    "evidence": [
+     "https://www.mountainproject.com/route/106279399/hyperspace"
+    ]
+   }
+  ],
+  "disputed": [
+   "pitches: MP 7 + Steph Abegg 7 vs Wenatchee Outdoors 8 + AAJ 1984 8",
+   "fa: stored \"Jim Yoder, Neil Cannon, Kevin Buselmeier 1983\"; MP spells Busselmeier, 1983; AAJ 1984 credits Jim Yoder only under a \"1982\" heading - year and spelling unconfirmed",
+   "length_m: MP 800 ft but its own pitch lengths sum to ~330 m - not proposed",
+   "commitment: III (MP) vs stored alpine_grade IV"
+  ],
+  "notes": "Starts on RPM (runout dirty 5.10+ slab, 2 bolts) or more usually Remorse; crux 5.10d flaring slot (Pressure Chamber/Pod). MP rack: 1 set nuts, doubles to #2, one #3, one #4. Descent: walk-off climbers left as for Outer Space (MP); Wenatchee Outdoors also describes rapping the Shield (3 double-rope raps to Two-Tree Ledge). Trailhead pin = centre of the OSM parking lot (way 154033355), 45.6 m from the USFS trailhead point; elevation is the USFS published 1,300 ft (USGS DEM reads 1,374 ft at the lot centre). Straight line lot to the wall centre is 1.75 km, so any one-way dist_km below 1.75 is wrong. dist_km left null (no stored value; The Mountaineers gives 5.0 mi round trip and 2,800 ft gain for the wall outing, Wenatchee Outdoors about 2.5 mi up to the base) - not proposed because the column has two conventions. USFS (updated 2026-08-04): $5/day or $30/yr, NW Forest Pass and Interagency passes accepted; free self-issued day-use wilderness permit at the trailhead; no dogs on the Snow Lakes Trail (Enchantment Permit Area). Whether a Snow Creek Wall day climb needs the day-use wilderness permit was not confirmed - permit not written."
+ }
+}

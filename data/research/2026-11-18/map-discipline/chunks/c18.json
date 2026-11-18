@@ -1,0 +1,3332 @@
+[
+ {
+  "id": "wa_mount_index_north_face",
+  "name": "North Face (North Peak)",
+  "discipline": "alpine",
+  "grade": "5.7",
+  "verdict": "NO_SUMMIT",
+  "state": "wa",
+  "peak": {
+   "id": "wa_north_peak_2",
+   "name": "North Peak",
+   "lat": 47.78255,
+   "lng": -121.58273,
+   "elevation_ft": 5357,
+   "region": "Washington",
+   "path": "usa.washington.wa_centralwest.wa_stevens_pass_region.wa_mount_index.wa_north_peak_2"
+  },
+  "text": {
+   "approach": "Lake Serene Trail (#1068) from the Mount Index Road trailhead, 3.6 miles / roughly 1,920 ft gain to Lake Serene (about 1.5-2 hours), then talus and grass slopes on the west side of the lake (near an old rockslide) to reach the base of the North Peak's broken, bushy lower spur.",
+   "approach_logistics": "{\"peakLat\":47.7745,\"peakLng\":-121.5809,\"trailhead\":\"Lake Serene Trailhead\",\"trailheadLat\":47.809189,\"trailheadLng\":-121.573693,\"trailheadDirection\":\"From Gold Bar, drive US-2 east about 7 miles, and just as the road curves left to a large bridge over the Skykomish River turn right onto Mount Index Road. After a quarter mile on dirt, turn right at the sign for the Lake Serene trail; the parking lot is about 500 feet ahead.\"}",
+   "road": "{\"name\":\"Mount Index Road (off US Hwy 2)\",\"status\":null,\"driveNote\":\"From US 2, roughly 13 miles east of Sultan, turn onto Mount Index Road at the Skykomish River bridge; bear right at the Y, and the Lake Serene trailhead parking lot is about a quarter-mile up this road.\",\"seasonalGate\":null}",
+   "overview": "The original, standard technical route up Mount Index's North Peak: a long north-side rib/face climb starting from a broken, bushy spur above Lake Serene, rated Grade III overall.",
+   "description": null,
+   "descent": "Reported round-trip climbing time is roughly 6-8 hours up and about 5 hours down from the base, on loose terrain that demands careful downclimbing/rappelling through the brushy, broken lower rib. Rappel anchors near the summit have been refreshed, and in mid-June they formed a clear path down the descent."
+  },
+  "waypoints": [
+   {
+    "lat": 47.809189,
+    "lng": -121.573693,
+    "elev": 566,
+    "name": "Lake Serene Trailhead",
+    "type": "Trailhead",
+    "distMi": 0,
+    "elevFt": null,
+    "directions": "From US 2 about 7 miles east of Gold Bar (near milepost 35), just as the highway curves left toward the bridge over the Skykomish River, turn right (south) onto Mount Index Road. Follow the gravel road about a quarter mile, turn right at the sign for Lake Serene Trail 1068, and park in the lot about 500 ft ahead at roughly 600 ft. A Northwest Forest Pass or America the Beautiful pass is required."
+   },
+   {
+    "lat": 47.781821,
+    "lng": -121.570379,
+    "elev": 2525,
+    "name": "Lake Serene",
+    "type": "landmark",
+    "distMi": 3.6,
+    "elevFt": 2525,
+    "directions": "Follow Lake Serene Trail #1068, first along an old road and then climbing through forest. At about 1.7 miles stay left where the signed Bridal Veil Falls spur branches right, cross the creek, and climb the final 1.5 miles on steps, roots and rock into the basin at the lake's north end, about 3.6 miles and 2,000 ft from the trailhead."
+   }
+  ],
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Lake Serene Trailhead",
+    "lat": 47.809311,
+    "lng": -121.573654,
+    "km": 3.1
+   },
+   {
+    "src": "USFS",
+    "name": "Heybrook Lookout Trailhead",
+    "lat": 47.808327,
+    "lng": -121.535112,
+    "km": 4.6
+   },
+   {
+    "src": "USFS",
+    "name": "Barclay Lake Trailhead",
+    "lat": 47.792236,
+    "lng": -121.459288,
+    "km": 9.3
+   },
+   {
+    "src": "USFS",
+    "name": "Lake Elizabeth",
+    "lat": 47.701276,
+    "lng": -121.517445,
+    "km": 10.3
+   },
+   {
+    "src": "USFS",
+    "name": "Sunday Lake",
+    "lat": 47.660969,
+    "lng": -121.616557,
+    "km": 13.8
+   },
+   {
+    "src": "USFS",
+    "name": "Bare Mountain",
+    "lat": 47.639636,
+    "lng": -121.527105,
+    "km": 16.4
+   },
+   {
+    "src": "USFS",
+    "name": "Lennox Creek",
+    "lat": 47.63634,
+    "lng": -121.523149,
+    "km": 16.9
+   },
+   {
+    "src": "USFS",
+    "name": "Troublesome Creek Trailhead",
+    "lat": 47.898062,
+    "lng": -121.401959,
+    "km": 18.6
+   },
+   {
+    "src": "USFS",
+    "name": "Frog Mountain Trailhead",
+    "lat": 47.880584,
+    "lng": -121.321727,
+    "km": 22.3
+   },
+   {
+    "src": "USFS",
+    "name": "Evergreen Lookout",
+    "lat": 47.838061,
+    "lng": -121.282515,
+    "km": 23.3
+   },
+   {
+    "src": "USFS",
+    "name": "Evans Lake",
+    "lat": 47.658774,
+    "lng": -121.323083,
+    "km": 23.8
+   },
+   {
+    "src": "USFS",
+    "name": "Johnson Ridge",
+    "lat": 47.7967,
+    "lng": -121.262293,
+    "km": 24
+   },
+   {
+    "src": "USFS",
+    "name": "Dorothy Lake Trailhead",
+    "lat": 47.608617,
+    "lng": -121.384459,
+    "km": 24.4
+   },
+   {
+    "src": "USFS",
+    "name": "Jennifer Dunn  (Beckler Peak) Trailhead",
+    "lat": 47.723936,
+    "lng": -121.267151,
+    "km": 24.5
+   },
+   {
+    "src": "USFS",
+    "name": "Blanca Lake Trailhead",
+    "lat": 47.914173,
+    "lng": -121.312237,
+    "km": 24.9
+   }
+  ]
+ },
+ {
+  "id": "wa_north_star_mountain_cloudy_peak_traverse",
+  "name": "Cloudy Peak Traverse (South Ridge)",
+  "discipline": "scrambling",
+  "grade": "Class 4",
+  "verdict": "SUMMIT_ONLY",
+  "state": "wa",
+  "peak": {
+   "id": "wa_north_star_mountain",
+   "name": "North Star Mountain",
+   "lat": 48.2230435,
+   "lng": -120.9005039,
+   "elevation_ft": 8096,
+   "region": "Washington",
+   "path": "usa.washington.wa_centraleast.wa_chiwawa_entiat_region.wa_north_star_mountain"
+  },
+  "text": {
+   "approach": "Approach as for the East Route to Lyman Lake: either from Lake Chelan via Lucerne, Holden Village and the Railroad Creek trail, or from the Chiwawa River side via Phelps Creek, over Spider Gap and down past the Upper Lyman Lakes. Both ways have been closed in recent seasons, the Lucerne side by storm-damaged roads and the Chiwawa side by wildfire and road closures, so check current Okanogan-Wenatchee National Forest closures before planning. From Lower Lyman Lake follow Trail #1256 west through forest and meadows to Cloudy Pass (6,440 ft), and gain the ridge crest there to start the traverse.",
+   "approach_logistics": null,
+   "road": null,
+   "overview": "A harder alternative approached from the west: gain the crest at Cloudy Pass, follow the ridge over Cloudy Peak (7,915 ft), then descend and cross talus to North Star's summit block via the same short, exposed Class 3-4 step used by the East Route.",
+   "description": null,
+   "descent": "From the North Star summit, downclimb the summit step, then make a direct beeline across talus toward the Cloudy Pass Trail, intersecting it at about 6,300 ft; follow meadows and interconnected granite slabs roughly 1.5 miles back to Cloudy Pass/Lyman Lake basin."
+  },
+  "waypoints": [
+   {
+    "lat": 48.200402,
+    "lng": -120.79099,
+    "elev": 3300,
+    "name": "Holden Ballpark Campground",
+    "type": "Campsite"
+   },
+   {
+    "lat": 48.2026264,
+    "lng": -120.9253791,
+    "elev": 6440,
+    "name": "Cloudy Pass",
+    "type": "Junction",
+    "distMi": null,
+    "elevFt": 6440,
+    "directions": "Cloudy Pass is on Trail #1256, which climbs west from Lower Lyman Lake through open forest and meadows. Lyman Lake is reached up Railroad Creek from Holden Village, or from Phelps Creek over Spider Gap and down past the Upper Lyman Lakes."
+   },
+   {
+    "lat": 48.2230435,
+    "lng": -120.9005039,
+    "elev": 8096,
+    "name": "North Star Mountain summit",
+    "type": "Summit",
+    "distMi": null,
+    "elevFt": 8096,
+    "directions": "From the pass, turn right and follow the ridge northeast up to Cloudy Peak (7,915 ft). Beyond it, lose elevation off its east side, either down the east ridge with some Class 3-4 or by dropping south of the summit around a cliff band, to reach the talus slopes that connect to North Star. Follow them northeast to the final 100 ft of rock to the summit, which is slick with lichen when wet."
+   }
+  ],
+  "siblingTrailheads": [
+   {
+    "route": "wa_north_star_mountain_east_route",
+    "name": "Holden Village / Railroad Creek Trailhead"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Phelps Creek Trailhead",
+    "lat": 48.083206,
+    "lng": -120.835015,
+    "km": 16.3
+   },
+   {
+    "src": "USFS",
+    "name": "Trinity Trailhead",
+    "lat": 48.071972,
+    "lng": -120.850005,
+    "km": 17.2
+   },
+   {
+    "src": "NPS",
+    "name": "Imus Creek Loop Trail Trailhead",
+    "lat": 48.3085,
+    "lng": -120.65601,
+    "km": 20.4
+   },
+   {
+    "src": "USFS",
+    "name": "Suiattle Trailhead",
+    "lat": 48.248106,
+    "lng": -121.192115,
+    "km": 21.8
+   },
+   {
+    "src": "USFS",
+    "name": "Little Giant Trailhead",
+    "lat": 48.026606,
+    "lng": -120.829015,
+    "km": 22.5
+   },
+   {
+    "src": "USFS",
+    "name": "Downey Creek Trailhead",
+    "lat": 48.259506,
+    "lng": -121.222915,
+    "km": 24.2
+   }
+  ]
+ },
+ {
+  "id": "wa_northwest_mox_peak_northeast_ridge",
+  "name": "Northeast Ridge",
+  "discipline": "alpine",
+  "grade": "5.6 Mod. Snow",
+  "verdict": "SUMMIT_ONLY",
+  "state": "wa",
+  "peak": {
+   "id": "wa_northwest_mox_peak",
+   "name": "Northwest Mox Peak",
+   "lat": 48.948747,
+   "lng": -121.262656,
+   "elevation_ft": 8407,
+   "region": "Chilliwack / Picket",
+   "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_chilliwack_range.wa_northwest_mox_peak"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": "The standard route on this spire and its easiest line to the top, though awkward for reaching the SE Spire. Ascend the snowy finger to reach rock, then take two pitches, fourth class into low fifth, directly to the saddle (rappel anchor atop each). A ledge line on the left may be easier but often seems wet and slimy. Beyond the saddle, follow the NE ridge on foot, with some exposed scrambling at class 3-4, then drop into a class 4 chute short of the summit and walk to the foot of the last pitch.",
+   "description": null,
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [
+   {
+    "route": "wa_northwest_mox_peak_standard",
+    "name": "Depot Creek Road Trailhead"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "NPS",
+    "name": "Nepopekum Horse Trail Loop Trailhead (BC)",
+    "lat": 49.053337,
+    "lng": -121.094073,
+    "km": 16.9
+   },
+   {
+    "src": "NPS",
+    "name": "Skyline II Trailhead (BC)",
+    "lat": 49.041545,
+    "lng": -121.068734,
+    "km": 17.5
+   },
+   {
+    "src": "NPS",
+    "name": "Strawberry Bar (BC)",
+    "lat": 49.076197,
+    "lng": -121.111462,
+    "km": 18
+   },
+   {
+    "src": "NPS",
+    "name": "Shawatum Day Use parking area (BC)",
+    "lat": 49.105168,
+    "lng": -121.138761,
+    "km": 19.6
+   },
+   {
+    "src": "USFS",
+    "name": "Hannegan Trailhead",
+    "lat": 48.910191,
+    "lng": -121.591986,
+    "km": 24.4
+   }
+  ]
+ },
+ {
+  "id": "wa_old_guard_peak_east_side_route",
+  "name": "East Side Route",
+  "discipline": "alpine",
+  "grade": "5.5",
+  "verdict": "NO_SUMMIT",
+  "state": "wa",
+  "peak": {
+   "id": "wa_old_guard_peak",
+   "name": "Old Guard Peak",
+   "lat": 48.3559,
+   "lng": -121.0358,
+   "elevation_ft": 8260,
+   "region": "Washington",
+   "path": "usa.washington.wa_northwest.wa_glacier_peak_region.wa_old_guard_peak"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": "{\"name\":\"Cascade River Road\",\"status\":\"Paved for the first ~10 miles from SR 20 at Marblemount, then rough gravel; the final 3 miles to the trailhead are narrow with steep drop-offs.\",\"driveNote\":\"Same approach infrastructure as the Southwest Route; see that route for full access detail. Alternate southern access via Suiattle River Road (FR 26)/Downey Creek Trailhead is closed by a washout under a Forest Service order in effect April 2, 2026 through January 1, 2028.\",\"seasonalGate\":\"Gated in winter/early spring; typically opens to the Cascade Pass Trailhead parking area by late June.\"}",
+   "overview": "A short, roped alternative to the standard scramble: 2 to 3 pitches of easy/moderate 5th-class climbing rising directly from the LeConte Glacier up Old Guard's east side.",
+   "description": null,
+   "descent": null
+  },
+  "waypoints": [
+   {
+    "lat": 48.392591,
+    "lng": -121.056917,
+    "elev": 5850,
+    "name": "Yang Yang Lakes",
+    "type": "Campsite"
+   },
+   {
+    "lat": 48.339595,
+    "lng": -121.052078,
+    "elev": 6200,
+    "name": "White Rock Lakes",
+    "type": "Campsite"
+   },
+   {
+    "lat": 48.442368,
+    "lng": -121.048085,
+    "elev": 6320,
+    "name": "Kool-Aid Lake",
+    "type": "Campsite"
+   }
+  ],
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Suiattle Trailhead",
+    "lat": 48.248106,
+    "lng": -121.192115,
+    "km": 16.7
+   },
+   {
+    "src": "USFS",
+    "name": "Downey Creek Trailhead",
+    "lat": 48.259506,
+    "lng": -121.222915,
+    "km": 17.5
+   },
+   {
+    "src": "USFS",
+    "name": "Green Mountain Trailhead",
+    "lat": 48.268149,
+    "lng": -121.236861,
+    "km": 17.8
+   },
+   {
+    "src": "USFS",
+    "name": "Hidden Lake Trailhead",
+    "lat": 48.514161,
+    "lng": -121.221581,
+    "km": 22.3
+   }
+  ]
+ },
+ {
+  "id": "wa_overcoat_peak_north_face",
+  "name": "North Face",
+  "discipline": "alpine",
+  "grade": null,
+  "verdict": "SUMMIT_ONLY",
+  "state": "wa",
+  "peak": {
+   "id": "wa_overcoat_peak",
+   "name": "Overcoat Peak",
+   "lat": 47.5139668,
+   "lng": -121.2922506,
+   "elevation_ft": 7432,
+   "region": "Washington",
+   "path": "usa.washington.wa_centralwest.wa_western_alpine_lakes.wa_overcoat_peak"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": "In mid-July the descent was a class 4 downclimb to a rappel anchor about 50 ft above the gully, then crossing snow at the gully bottom while roped."
+  },
+  "waypoints": [],
+  "siblingTrailheads": [
+   {
+    "route": "wa_overcoat_peak_southeast_route",
+    "name": "Dingford Creek Trailhead"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Pete Lake Trailhead",
+    "lat": 47.434106,
+    "lng": -121.186915,
+    "km": 11.9
+   },
+   {
+    "src": "USFS",
+    "name": "Dingford Creek Trailhead",
+    "lat": 47.517325,
+    "lng": -121.4543,
+    "km": 12.2
+   },
+   {
+    "src": "USFS",
+    "name": "Snow Lake Trailhead",
+    "lat": 47.445656,
+    "lng": -121.423665,
+    "km": 12.5
+   },
+   {
+    "src": "USFS",
+    "name": "Rachel Lake Trailhead",
+    "lat": 47.400706,
+    "lng": -121.283915,
+    "km": 12.6
+   },
+   {
+    "src": "USFS",
+    "name": "Dorothy Lake Trailhead",
+    "lat": 47.608617,
+    "lng": -121.384459,
+    "km": 12.6
+   },
+   {
+    "src": "USFS",
+    "name": "Pacific Crest Trail - Snoqualmie North T",
+    "lat": 47.428012,
+    "lng": -121.413484,
+    "km": 13.2
+   },
+   {
+    "src": "USFS",
+    "name": "Pacific Crest Trail/Stevens Pass Trailhe",
+    "lat": 47.42841,
+    "lng": -121.415498,
+    "km": 13.3
+   },
+   {
+    "src": "USFS",
+    "name": "West Fork Foss Lakes Trailhead",
+    "lat": 47.635006,
+    "lng": -121.303348,
+    "km": 13.5
+   },
+   {
+    "src": "USFS",
+    "name": "Pants - Snoqualmie South Trailhead",
+    "lat": 47.427228,
+    "lng": -121.420293,
+    "km": 13.6
+   },
+   {
+    "src": "USFS",
+    "name": "Gold Creek Trailhead",
+    "lat": 47.398629,
+    "lng": -121.380326,
+    "km": 14.4
+   },
+   {
+    "src": "USFS",
+    "name": "Kendall Peaks Trailhead",
+    "lat": 47.398249,
+    "lng": -121.394411,
+    "km": 15
+   },
+   {
+    "src": "USFS",
+    "name": "Tucquala Meadows Trailhead",
+    "lat": 47.543506,
+    "lng": -121.096615,
+    "km": 15.1
+   },
+   {
+    "src": "USFS",
+    "name": "Denny Creek Trailhead",
+    "lat": 47.415956,
+    "lng": -121.441168,
+    "km": 15.6
+   },
+   {
+    "src": "USFS",
+    "name": "Franklin Falls Trailhead",
+    "lat": 47.413339,
+    "lng": -121.441404,
+    "km": 15.8
+   },
+   {
+    "src": "USFS",
+    "name": "Paddy-Go-Easy Trailhead",
+    "lat": 47.532873,
+    "lng": -121.082797,
+    "km": 15.9
+   }
+  ]
+ },
+ {
+  "id": "wa_preacher_mountain_east_gully",
+  "name": "East Gully",
+  "discipline": "alpine",
+  "grade": null,
+  "verdict": "SUMMIT_ONLY",
+  "state": "wa",
+  "peak": {
+   "id": "wa_preacher_mountain",
+   "name": "Preacher Mountain",
+   "lat": 47.498605,
+   "lng": -121.519225,
+   "elevation_ft": 5924,
+   "region": "Alpine Lakes / I-90",
+   "path": "usa.washington.wa_centralwest.wa_north_bend_vicinity.wa_exit_34_middle_fork_amp_taylor_river.wa_preacher_mountain"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [
+   {
+    "route": "wa_preacher_mountain_scramble",
+    "name": "Middle Fork Snoqualmie Trailhead"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Dingford Creek Trailhead",
+    "lat": 47.517325,
+    "lng": -121.4543,
+    "km": 5.3
+   },
+   {
+    "src": "USFS",
+    "name": "Middle Fork Snoqualmie Trailhead",
+    "lat": 47.547762,
+    "lng": -121.537101,
+    "km": 5.6
+   },
+   {
+    "src": "USFS",
+    "name": "Pratt River Bar",
+    "lat": 47.530346,
+    "lng": -121.588315,
+    "km": 6.3
+   },
+   {
+    "src": "USFS",
+    "name": "Garfield Ledges Trailhead and Picnic Are",
+    "lat": 47.55598,
+    "lng": -121.535813,
+    "km": 6.5
+   },
+   {
+    "src": "USFS",
+    "name": "Snoqualmie Lake Trailhead",
+    "lat": 47.56087,
+    "lng": -121.532179,
+    "km": 7
+   },
+   {
+    "src": "USFS",
+    "name": "Snow Lake Trailhead",
+    "lat": 47.445656,
+    "lng": -121.423665,
+    "km": 9.3
+   },
+   {
+    "src": "USFS",
+    "name": "Ira Spring Trailhead",
+    "lat": 47.424763,
+    "lng": -121.583422,
+    "km": 9.5
+   },
+   {
+    "src": "USFS",
+    "name": "Talapus Lake Trailhead",
+    "lat": 47.401162,
+    "lng": -121.518504,
+    "km": 10.8
+   },
+   {
+    "src": "USFS",
+    "name": "Mcclellan Butte Trailhead",
+    "lat": 47.41195,
+    "lng": -121.587793,
+    "km": 10.9
+   },
+   {
+    "src": "USFS",
+    "name": "Pants - Snoqualmie South Trailhead",
+    "lat": 47.427228,
+    "lng": -121.420293,
+    "km": 10.9
+   },
+   {
+    "src": "USFS",
+    "name": "Denny Creek Trailhead",
+    "lat": 47.415956,
+    "lng": -121.441168,
+    "km": 10.9
+   },
+   {
+    "src": "USFS",
+    "name": "Pacific Crest Trail/Stevens Pass Trailhe",
+    "lat": 47.42841,
+    "lng": -121.415498,
+    "km": 11
+   },
+   {
+    "src": "USFS",
+    "name": "Franklin Falls Trailhead",
+    "lat": 47.413339,
+    "lng": -121.441404,
+    "km": 11.1
+   },
+   {
+    "src": "USFS",
+    "name": "Pacific Crest Trail - Snoqualmie North T",
+    "lat": 47.428012,
+    "lng": -121.413484,
+    "km": 11.2
+   },
+   {
+    "src": "USFS",
+    "name": "Pratt Lake Trailhead",
+    "lat": 47.397861,
+    "lng": -121.48645,
+    "km": 11.5
+   }
+  ]
+ },
+ {
+  "id": "wa_preacher_mountain_north_route",
+  "name": "North Route",
+  "discipline": "alpine",
+  "grade": null,
+  "verdict": "SUMMIT_ONLY",
+  "state": "wa",
+  "peak": {
+   "id": "wa_preacher_mountain",
+   "name": "Preacher Mountain",
+   "lat": 47.498605,
+   "lng": -121.519225,
+   "elevation_ft": 5924,
+   "region": "Alpine Lakes / I-90",
+   "path": "usa.washington.wa_centralwest.wa_north_bend_vicinity.wa_exit_34_middle_fork_amp_taylor_river.wa_preacher_mountain"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [
+   {
+    "route": "wa_preacher_mountain_scramble",
+    "name": "Middle Fork Snoqualmie Trailhead"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Dingford Creek Trailhead",
+    "lat": 47.517325,
+    "lng": -121.4543,
+    "km": 5.3
+   },
+   {
+    "src": "USFS",
+    "name": "Middle Fork Snoqualmie Trailhead",
+    "lat": 47.547762,
+    "lng": -121.537101,
+    "km": 5.6
+   },
+   {
+    "src": "USFS",
+    "name": "Pratt River Bar",
+    "lat": 47.530346,
+    "lng": -121.588315,
+    "km": 6.3
+   },
+   {
+    "src": "USFS",
+    "name": "Garfield Ledges Trailhead and Picnic Are",
+    "lat": 47.55598,
+    "lng": -121.535813,
+    "km": 6.5
+   },
+   {
+    "src": "USFS",
+    "name": "Snoqualmie Lake Trailhead",
+    "lat": 47.56087,
+    "lng": -121.532179,
+    "km": 7
+   },
+   {
+    "src": "USFS",
+    "name": "Snow Lake Trailhead",
+    "lat": 47.445656,
+    "lng": -121.423665,
+    "km": 9.3
+   },
+   {
+    "src": "USFS",
+    "name": "Ira Spring Trailhead",
+    "lat": 47.424763,
+    "lng": -121.583422,
+    "km": 9.5
+   },
+   {
+    "src": "USFS",
+    "name": "Talapus Lake Trailhead",
+    "lat": 47.401162,
+    "lng": -121.518504,
+    "km": 10.8
+   },
+   {
+    "src": "USFS",
+    "name": "Mcclellan Butte Trailhead",
+    "lat": 47.41195,
+    "lng": -121.587793,
+    "km": 10.9
+   },
+   {
+    "src": "USFS",
+    "name": "Pants - Snoqualmie South Trailhead",
+    "lat": 47.427228,
+    "lng": -121.420293,
+    "km": 10.9
+   },
+   {
+    "src": "USFS",
+    "name": "Denny Creek Trailhead",
+    "lat": 47.415956,
+    "lng": -121.441168,
+    "km": 10.9
+   },
+   {
+    "src": "USFS",
+    "name": "Pacific Crest Trail/Stevens Pass Trailhe",
+    "lat": 47.42841,
+    "lng": -121.415498,
+    "km": 11
+   },
+   {
+    "src": "USFS",
+    "name": "Franklin Falls Trailhead",
+    "lat": 47.413339,
+    "lng": -121.441404,
+    "km": 11.1
+   },
+   {
+    "src": "USFS",
+    "name": "Pacific Crest Trail - Snoqualmie North T",
+    "lat": 47.428012,
+    "lng": -121.413484,
+    "km": 11.2
+   },
+   {
+    "src": "USFS",
+    "name": "Pratt Lake Trailhead",
+    "lat": 47.397861,
+    "lng": -121.48645,
+    "km": 11.5
+   }
+  ]
+ },
+ {
+  "id": "wa_preacher_mountain_south_gully_south_spur",
+  "name": "South Gully-South Spur",
+  "discipline": "alpine",
+  "grade": null,
+  "verdict": "SUMMIT_ONLY",
+  "state": "wa",
+  "peak": {
+   "id": "wa_preacher_mountain",
+   "name": "Preacher Mountain",
+   "lat": 47.498605,
+   "lng": -121.519225,
+   "elevation_ft": 5924,
+   "region": "Alpine Lakes / I-90",
+   "path": "usa.washington.wa_centralwest.wa_north_bend_vicinity.wa_exit_34_middle_fork_amp_taylor_river.wa_preacher_mountain"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [
+   {
+    "route": "wa_preacher_mountain_scramble",
+    "name": "Middle Fork Snoqualmie Trailhead"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Dingford Creek Trailhead",
+    "lat": 47.517325,
+    "lng": -121.4543,
+    "km": 5.3
+   },
+   {
+    "src": "USFS",
+    "name": "Middle Fork Snoqualmie Trailhead",
+    "lat": 47.547762,
+    "lng": -121.537101,
+    "km": 5.6
+   },
+   {
+    "src": "USFS",
+    "name": "Pratt River Bar",
+    "lat": 47.530346,
+    "lng": -121.588315,
+    "km": 6.3
+   },
+   {
+    "src": "USFS",
+    "name": "Garfield Ledges Trailhead and Picnic Are",
+    "lat": 47.55598,
+    "lng": -121.535813,
+    "km": 6.5
+   },
+   {
+    "src": "USFS",
+    "name": "Snoqualmie Lake Trailhead",
+    "lat": 47.56087,
+    "lng": -121.532179,
+    "km": 7
+   },
+   {
+    "src": "USFS",
+    "name": "Snow Lake Trailhead",
+    "lat": 47.445656,
+    "lng": -121.423665,
+    "km": 9.3
+   },
+   {
+    "src": "USFS",
+    "name": "Ira Spring Trailhead",
+    "lat": 47.424763,
+    "lng": -121.583422,
+    "km": 9.5
+   },
+   {
+    "src": "USFS",
+    "name": "Talapus Lake Trailhead",
+    "lat": 47.401162,
+    "lng": -121.518504,
+    "km": 10.8
+   },
+   {
+    "src": "USFS",
+    "name": "Mcclellan Butte Trailhead",
+    "lat": 47.41195,
+    "lng": -121.587793,
+    "km": 10.9
+   },
+   {
+    "src": "USFS",
+    "name": "Pants - Snoqualmie South Trailhead",
+    "lat": 47.427228,
+    "lng": -121.420293,
+    "km": 10.9
+   },
+   {
+    "src": "USFS",
+    "name": "Denny Creek Trailhead",
+    "lat": 47.415956,
+    "lng": -121.441168,
+    "km": 10.9
+   },
+   {
+    "src": "USFS",
+    "name": "Pacific Crest Trail/Stevens Pass Trailhe",
+    "lat": 47.42841,
+    "lng": -121.415498,
+    "km": 11
+   },
+   {
+    "src": "USFS",
+    "name": "Franklin Falls Trailhead",
+    "lat": 47.413339,
+    "lng": -121.441404,
+    "km": 11.1
+   },
+   {
+    "src": "USFS",
+    "name": "Pacific Crest Trail - Snoqualmie North T",
+    "lat": 47.428012,
+    "lng": -121.413484,
+    "km": 11.2
+   },
+   {
+    "src": "USFS",
+    "name": "Pratt Lake Trailhead",
+    "lat": 47.397861,
+    "lng": -121.48645,
+    "km": 11.5
+   }
+  ]
+ },
+ {
+  "id": "wa_preacher_mountain_south_rib",
+  "name": "South Rib",
+  "discipline": "alpine",
+  "grade": null,
+  "verdict": "SUMMIT_ONLY",
+  "state": "wa",
+  "peak": {
+   "id": "wa_preacher_mountain",
+   "name": "Preacher Mountain",
+   "lat": 47.498605,
+   "lng": -121.519225,
+   "elevation_ft": 5924,
+   "region": "Alpine Lakes / I-90",
+   "path": "usa.washington.wa_centralwest.wa_north_bend_vicinity.wa_exit_34_middle_fork_amp_taylor_river.wa_preacher_mountain"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [
+   {
+    "route": "wa_preacher_mountain_scramble",
+    "name": "Middle Fork Snoqualmie Trailhead"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Dingford Creek Trailhead",
+    "lat": 47.517325,
+    "lng": -121.4543,
+    "km": 5.3
+   },
+   {
+    "src": "USFS",
+    "name": "Middle Fork Snoqualmie Trailhead",
+    "lat": 47.547762,
+    "lng": -121.537101,
+    "km": 5.6
+   },
+   {
+    "src": "USFS",
+    "name": "Pratt River Bar",
+    "lat": 47.530346,
+    "lng": -121.588315,
+    "km": 6.3
+   },
+   {
+    "src": "USFS",
+    "name": "Garfield Ledges Trailhead and Picnic Are",
+    "lat": 47.55598,
+    "lng": -121.535813,
+    "km": 6.5
+   },
+   {
+    "src": "USFS",
+    "name": "Snoqualmie Lake Trailhead",
+    "lat": 47.56087,
+    "lng": -121.532179,
+    "km": 7
+   },
+   {
+    "src": "USFS",
+    "name": "Snow Lake Trailhead",
+    "lat": 47.445656,
+    "lng": -121.423665,
+    "km": 9.3
+   },
+   {
+    "src": "USFS",
+    "name": "Ira Spring Trailhead",
+    "lat": 47.424763,
+    "lng": -121.583422,
+    "km": 9.5
+   },
+   {
+    "src": "USFS",
+    "name": "Talapus Lake Trailhead",
+    "lat": 47.401162,
+    "lng": -121.518504,
+    "km": 10.8
+   },
+   {
+    "src": "USFS",
+    "name": "Mcclellan Butte Trailhead",
+    "lat": 47.41195,
+    "lng": -121.587793,
+    "km": 10.9
+   },
+   {
+    "src": "USFS",
+    "name": "Pants - Snoqualmie South Trailhead",
+    "lat": 47.427228,
+    "lng": -121.420293,
+    "km": 10.9
+   },
+   {
+    "src": "USFS",
+    "name": "Denny Creek Trailhead",
+    "lat": 47.415956,
+    "lng": -121.441168,
+    "km": 10.9
+   },
+   {
+    "src": "USFS",
+    "name": "Pacific Crest Trail/Stevens Pass Trailhe",
+    "lat": 47.42841,
+    "lng": -121.415498,
+    "km": 11
+   },
+   {
+    "src": "USFS",
+    "name": "Franklin Falls Trailhead",
+    "lat": 47.413339,
+    "lng": -121.441404,
+    "km": 11.1
+   },
+   {
+    "src": "USFS",
+    "name": "Pacific Crest Trail - Snoqualmie North T",
+    "lat": 47.428012,
+    "lng": -121.413484,
+    "km": 11.2
+   },
+   {
+    "src": "USFS",
+    "name": "Pratt Lake Trailhead",
+    "lat": 47.397861,
+    "lng": -121.48645,
+    "km": 11.5
+   }
+  ]
+ },
+ {
+  "id": "wa_preacher_mountain_west_face",
+  "name": "West Face",
+  "discipline": "alpine",
+  "grade": null,
+  "verdict": "SUMMIT_ONLY",
+  "state": "wa",
+  "peak": {
+   "id": "wa_preacher_mountain",
+   "name": "Preacher Mountain",
+   "lat": 47.498605,
+   "lng": -121.519225,
+   "elevation_ft": 5924,
+   "region": "Alpine Lakes / I-90",
+   "path": "usa.washington.wa_centralwest.wa_north_bend_vicinity.wa_exit_34_middle_fork_amp_taylor_river.wa_preacher_mountain"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [
+   {
+    "route": "wa_preacher_mountain_scramble",
+    "name": "Middle Fork Snoqualmie Trailhead"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Dingford Creek Trailhead",
+    "lat": 47.517325,
+    "lng": -121.4543,
+    "km": 5.3
+   },
+   {
+    "src": "USFS",
+    "name": "Middle Fork Snoqualmie Trailhead",
+    "lat": 47.547762,
+    "lng": -121.537101,
+    "km": 5.6
+   },
+   {
+    "src": "USFS",
+    "name": "Pratt River Bar",
+    "lat": 47.530346,
+    "lng": -121.588315,
+    "km": 6.3
+   },
+   {
+    "src": "USFS",
+    "name": "Garfield Ledges Trailhead and Picnic Are",
+    "lat": 47.55598,
+    "lng": -121.535813,
+    "km": 6.5
+   },
+   {
+    "src": "USFS",
+    "name": "Snoqualmie Lake Trailhead",
+    "lat": 47.56087,
+    "lng": -121.532179,
+    "km": 7
+   },
+   {
+    "src": "USFS",
+    "name": "Snow Lake Trailhead",
+    "lat": 47.445656,
+    "lng": -121.423665,
+    "km": 9.3
+   },
+   {
+    "src": "USFS",
+    "name": "Ira Spring Trailhead",
+    "lat": 47.424763,
+    "lng": -121.583422,
+    "km": 9.5
+   },
+   {
+    "src": "USFS",
+    "name": "Talapus Lake Trailhead",
+    "lat": 47.401162,
+    "lng": -121.518504,
+    "km": 10.8
+   },
+   {
+    "src": "USFS",
+    "name": "Mcclellan Butte Trailhead",
+    "lat": 47.41195,
+    "lng": -121.587793,
+    "km": 10.9
+   },
+   {
+    "src": "USFS",
+    "name": "Pants - Snoqualmie South Trailhead",
+    "lat": 47.427228,
+    "lng": -121.420293,
+    "km": 10.9
+   },
+   {
+    "src": "USFS",
+    "name": "Denny Creek Trailhead",
+    "lat": 47.415956,
+    "lng": -121.441168,
+    "km": 10.9
+   },
+   {
+    "src": "USFS",
+    "name": "Pacific Crest Trail/Stevens Pass Trailhe",
+    "lat": 47.42841,
+    "lng": -121.415498,
+    "km": 11
+   },
+   {
+    "src": "USFS",
+    "name": "Franklin Falls Trailhead",
+    "lat": 47.413339,
+    "lng": -121.441404,
+    "km": 11.1
+   },
+   {
+    "src": "USFS",
+    "name": "Pacific Crest Trail - Snoqualmie North T",
+    "lat": 47.428012,
+    "lng": -121.413484,
+    "km": 11.2
+   },
+   {
+    "src": "USFS",
+    "name": "Pratt Lake Trailhead",
+    "lat": 47.397861,
+    "lng": -121.48645,
+    "km": 11.5
+   }
+  ]
+ },
+ {
+  "id": "wa_prusik_peak_alpine_craggers_delight",
+  "name": "Alpine Cragger's Delight",
+  "discipline": "alpine",
+  "grade": "5.10+",
+  "verdict": "SUMMIT_ONLY",
+  "state": "wa",
+  "peak": {
+   "id": "wa_prusik_peak",
+   "name": "Prusik Peak",
+   "lat": 47.487398,
+   "lng": -120.784552,
+   "elevation_ft": 8008,
+   "region": "Washington",
+   "path": "usa.washington.wa_centraleast.wa_stuart_range.wa_prusik_peak"
+  },
+  "text": {
+   "approach": "The Stuart Lake trailhead sits at the end of Forest Road 7601 above Leavenworth. Follow the Stuart Lake Trail (#1599) for about 2.5 miles to the signed junction, bear left onto the Colchuck Lake Trail (#1599A), cross Mountaineer Creek and climb to Colchuck Lake, then work around the shore to the boulder field at its south end. From there Aasgard Pass climbs nearly 2,000 ft of loose scree; it holds snow into early July and has a hidden creek under the slope, so carry an axe early in the season. From the pass, travel cross-country through the Core past Isolation and Tranquil lakes toward Gnome Tarn, the usual bivy about 20 minutes from the south face of Prusik Peak. The pitch starts on the south face about 20 ft left of the usual start of Stanley-Burgner, at the foot of a clean finger crack.",
+   "approach_logistics": null,
+   "road": "{\"name\":\"Icicle Road (Forest Road 7600)\",\"status\":null,\"driveNote\":\"Paved access from Leavenworth to the Stuart/Colchuck Lake or Snow Lakes trailheads.\",\"seasonalGate\":null}",
+   "overview": "A short, single-pitch finger crack on the south face, 20 ft left of the Stanley-Burgner route's normal start, that joins Stanley-Burgner's P1 exit.",
+   "description": null,
+   "descent": "This single pitch ends at the same ledge where the first pitch of Stanley-Burgner ends, so there is no summit descent from it alone. Most parties either rappel the pitch from gear or link into the second pitch of Stanley-Burgner and carry on to the summit. From the summit, walk east a short way and rappel the north face on slung stations, using one rope or two. Then scramble back around to the bas"
+  },
+  "waypoints": [],
+  "siblingTrailheads": [
+   {
+    "route": "wa_beckey_davis",
+    "name": "Stuart Lake Trailhead"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Stuart Lake Trailhead",
+    "lat": 47.527806,
+    "lng": -120.820515,
+    "km": 5.2
+   },
+   {
+    "src": "USFS",
+    "name": "Eightmile Trailhead",
+    "lat": 47.536016,
+    "lng": -120.814025,
+    "km": 5.8
+   },
+   {
+    "src": "USFS",
+    "name": "Snow Lakes Trailhead",
+    "lat": 47.544106,
+    "lng": -120.709515,
+    "km": 8.5
+   },
+   {
+    "src": "USFS",
+    "name": "Ingalls Creek Trailhead",
+    "lat": 47.462906,
+    "lng": -120.673025,
+    "km": 8.8
+   },
+   {
+    "src": "USFS",
+    "name": "Fourth Of July Trailhead",
+    "lat": 47.578106,
+    "lng": -120.796015,
+    "km": 10.1
+   },
+   {
+    "src": "USFS",
+    "name": "Icicle Ridge Trailhead",
+    "lat": 47.568919,
+    "lng": -120.680113,
+    "km": 12
+   },
+   {
+    "src": "USFS",
+    "name": "Penstock Trailhead",
+    "lat": 47.586749,
+    "lng": -120.706609,
+    "km": 12.5
+   },
+   {
+    "src": "USFS",
+    "name": "Beverly Bean Trailhead",
+    "lat": 47.389302,
+    "lng": -120.872266,
+    "km": 12.7
+   },
+   {
+    "src": "USFS",
+    "name": "Esmeralda Trailhead",
+    "lat": 47.436706,
+    "lng": -120.936915,
+    "km": 12.8
+   },
+   {
+    "src": "USFS",
+    "name": "Miller-bear Trailhead",
+    "lat": 47.368606,
+    "lng": -120.784615,
+    "km": 13.2
+   },
+   {
+    "src": "USFS",
+    "name": "Iron Peak Trailhead",
+    "lat": 47.421583,
+    "lng": -120.937341,
+    "km": 13.6
+   },
+   {
+    "src": "USFS",
+    "name": "Stafford Creek Trailhead",
+    "lat": 47.365806,
+    "lng": -120.803615,
+    "km": 13.6
+   },
+   {
+    "src": "USFS",
+    "name": "Castle Rock Trailhead",
+    "lat": 47.600107,
+    "lng": -120.714012,
+    "km": 13.6
+   },
+   {
+    "src": "USFS",
+    "name": "Chatter Creek Trailhead",
+    "lat": 47.608249,
+    "lng": -120.881514,
+    "km": 15.3
+   },
+   {
+    "src": "USFS",
+    "name": "Icicle Gorge Trailhead",
+    "lat": 47.607806,
+    "lng": -120.895025,
+    "km": 15.7
+   }
+  ]
+ },
+ {
+  "id": "wa_prusik_peak_east_face",
+  "name": "East Face",
+  "discipline": "alpine",
+  "grade": null,
+  "verdict": "SUMMIT_ONLY",
+  "state": "wa",
+  "peak": {
+   "id": "wa_prusik_peak",
+   "name": "Prusik Peak",
+   "lat": 47.487398,
+   "lng": -120.784552,
+   "elevation_ft": 8008,
+   "region": "Washington",
+   "path": "usa.washington.wa_centraleast.wa_stuart_range.wa_prusik_peak"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [
+   {
+    "route": "wa_beckey_davis",
+    "name": "Stuart Lake Trailhead"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Stuart Lake Trailhead",
+    "lat": 47.527806,
+    "lng": -120.820515,
+    "km": 5.2
+   },
+   {
+    "src": "USFS",
+    "name": "Eightmile Trailhead",
+    "lat": 47.536016,
+    "lng": -120.814025,
+    "km": 5.8
+   },
+   {
+    "src": "USFS",
+    "name": "Snow Lakes Trailhead",
+    "lat": 47.544106,
+    "lng": -120.709515,
+    "km": 8.5
+   },
+   {
+    "src": "USFS",
+    "name": "Ingalls Creek Trailhead",
+    "lat": 47.462906,
+    "lng": -120.673025,
+    "km": 8.8
+   },
+   {
+    "src": "USFS",
+    "name": "Fourth Of July Trailhead",
+    "lat": 47.578106,
+    "lng": -120.796015,
+    "km": 10.1
+   },
+   {
+    "src": "USFS",
+    "name": "Icicle Ridge Trailhead",
+    "lat": 47.568919,
+    "lng": -120.680113,
+    "km": 12
+   },
+   {
+    "src": "USFS",
+    "name": "Penstock Trailhead",
+    "lat": 47.586749,
+    "lng": -120.706609,
+    "km": 12.5
+   },
+   {
+    "src": "USFS",
+    "name": "Beverly Bean Trailhead",
+    "lat": 47.389302,
+    "lng": -120.872266,
+    "km": 12.7
+   },
+   {
+    "src": "USFS",
+    "name": "Esmeralda Trailhead",
+    "lat": 47.436706,
+    "lng": -120.936915,
+    "km": 12.8
+   },
+   {
+    "src": "USFS",
+    "name": "Miller-bear Trailhead",
+    "lat": 47.368606,
+    "lng": -120.784615,
+    "km": 13.2
+   },
+   {
+    "src": "USFS",
+    "name": "Iron Peak Trailhead",
+    "lat": 47.421583,
+    "lng": -120.937341,
+    "km": 13.6
+   },
+   {
+    "src": "USFS",
+    "name": "Stafford Creek Trailhead",
+    "lat": 47.365806,
+    "lng": -120.803615,
+    "km": 13.6
+   },
+   {
+    "src": "USFS",
+    "name": "Castle Rock Trailhead",
+    "lat": 47.600107,
+    "lng": -120.714012,
+    "km": 13.6
+   },
+   {
+    "src": "USFS",
+    "name": "Chatter Creek Trailhead",
+    "lat": 47.608249,
+    "lng": -120.881514,
+    "km": 15.3
+   },
+   {
+    "src": "USFS",
+    "name": "Icicle Gorge Trailhead",
+    "lat": 47.607806,
+    "lng": -120.895025,
+    "km": 15.7
+   }
+  ]
+ },
+ {
+  "id": "wa_prusik_peak_prayer_for_a_friend",
+  "name": "Prayer for a Friend",
+  "discipline": "alpine",
+  "grade": "5.14a",
+  "verdict": "SUMMIT_ONLY",
+  "state": "wa",
+  "peak": {
+   "id": "wa_prusik_peak",
+   "name": "Prusik Peak",
+   "lat": 47.487398,
+   "lng": -120.784552,
+   "elevation_ft": 8008,
+   "region": "Washington",
+   "path": "usa.washington.wa_centraleast.wa_stuart_range.wa_prusik_peak"
+  },
+  "text": {
+   "approach": "The Stuart Lake trailhead sits at the end of Forest Road 7601 above Leavenworth. Follow the Stuart Lake Trail (#1599) for about 2.5 miles to the signed junction, bear left onto the Colchuck Lake Trail (#1599A), cross Mountaineer Creek and climb to Colchuck Lake, then work around the shore to the boulder field at its south end. From there Aasgard Pass climbs nearly 2,000 ft of loose scree; it holds snow into early July and has a hidden creek under the slope, so carry an axe early in the season. From the pass, travel cross-country through the Core past Isolation and Tranquil lakes toward Gnome Tarn, the usual bivy about 20 minutes from the south face of Prusik Peak. The route starts on the south face at an easy corner just left of Der Sportsman, leading into the dihedral that begins the first pitch.",
+   "approach_logistics": null,
+   "road": "{\"name\":\"Icicle Road (Forest Road 7600)\",\"status\":null,\"driveNote\":\"Paved access from Leavenworth to the Stuart/Colchuck Lake or Snow Lakes trailheads.\",\"seasonalGate\":null}",
+   "overview": "The hardest documented route on Prusik Peak: a 5.14a big-wall-style testpiece up the southwest face headwall, first aided by Fitz Cahall and freed by Adrian Vanoni.",
+   "description": null,
+   "descent": "Since the route finishes at the top of the headwall rather than the true summit, parties scramble the remaining West Ridge terrain to the summit, then descend via the West Ridge's four-rappel descent."
+  },
+  "waypoints": [],
+  "siblingTrailheads": [
+   {
+    "route": "wa_beckey_davis",
+    "name": "Stuart Lake Trailhead"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Stuart Lake Trailhead",
+    "lat": 47.527806,
+    "lng": -120.820515,
+    "km": 5.2
+   },
+   {
+    "src": "USFS",
+    "name": "Eightmile Trailhead",
+    "lat": 47.536016,
+    "lng": -120.814025,
+    "km": 5.8
+   },
+   {
+    "src": "USFS",
+    "name": "Snow Lakes Trailhead",
+    "lat": 47.544106,
+    "lng": -120.709515,
+    "km": 8.5
+   },
+   {
+    "src": "USFS",
+    "name": "Ingalls Creek Trailhead",
+    "lat": 47.462906,
+    "lng": -120.673025,
+    "km": 8.8
+   },
+   {
+    "src": "USFS",
+    "name": "Fourth Of July Trailhead",
+    "lat": 47.578106,
+    "lng": -120.796015,
+    "km": 10.1
+   },
+   {
+    "src": "USFS",
+    "name": "Icicle Ridge Trailhead",
+    "lat": 47.568919,
+    "lng": -120.680113,
+    "km": 12
+   },
+   {
+    "src": "USFS",
+    "name": "Penstock Trailhead",
+    "lat": 47.586749,
+    "lng": -120.706609,
+    "km": 12.5
+   },
+   {
+    "src": "USFS",
+    "name": "Beverly Bean Trailhead",
+    "lat": 47.389302,
+    "lng": -120.872266,
+    "km": 12.7
+   },
+   {
+    "src": "USFS",
+    "name": "Esmeralda Trailhead",
+    "lat": 47.436706,
+    "lng": -120.936915,
+    "km": 12.8
+   },
+   {
+    "src": "USFS",
+    "name": "Miller-bear Trailhead",
+    "lat": 47.368606,
+    "lng": -120.784615,
+    "km": 13.2
+   },
+   {
+    "src": "USFS",
+    "name": "Iron Peak Trailhead",
+    "lat": 47.421583,
+    "lng": -120.937341,
+    "km": 13.6
+   },
+   {
+    "src": "USFS",
+    "name": "Stafford Creek Trailhead",
+    "lat": 47.365806,
+    "lng": -120.803615,
+    "km": 13.6
+   },
+   {
+    "src": "USFS",
+    "name": "Castle Rock Trailhead",
+    "lat": 47.600107,
+    "lng": -120.714012,
+    "km": 13.6
+   },
+   {
+    "src": "USFS",
+    "name": "Chatter Creek Trailhead",
+    "lat": 47.608249,
+    "lng": -120.881514,
+    "km": 15.3
+   },
+   {
+    "src": "USFS",
+    "name": "Icicle Gorge Trailhead",
+    "lat": 47.607806,
+    "lng": -120.895025,
+    "km": 15.7
+   }
+  ]
+ },
+ {
+  "id": "wa_prusik_peak_solid_gold",
+  "name": "Solid Gold",
+  "discipline": "alpine",
+  "grade": "5.11a",
+  "verdict": "NO_SUMMIT",
+  "state": "wa",
+  "peak": {
+   "id": "wa_prusik_peak",
+   "name": "Prusik Peak",
+   "lat": 47.487398,
+   "lng": -120.784552,
+   "elevation_ft": 8008,
+   "region": "Washington",
+   "path": "usa.washington.wa_centraleast.wa_stuart_range.wa_prusik_peak"
+  },
+  "text": {
+   "approach": "From the Stuart Lake Trailhead (3,400 ft) at the end of FS Road 7601, follow the Stuart Lake Trail about 2.5 miles to the signed Colchuck Lake Trail (#1599A) junction. Turn left, cross Mountaineer Creek (a rock-hop/log crossing and the last reliable, easy water source for a while), and switchback up 1.6 miles through forest to Colchuck Lake (5,570 ft) — roughly 4.1 miles and 2,000 ft from the car. Boulder-hop along the lake's east shore to the boulder field at its south end (about 5.5 miles in, 2,500 ft gained), then pick up the climbers' trail/talus leading to the base of Aasgard Pass. Aasgard Pass itself gains about 2,000 ft in only 1.25 miles of steep, loose dirt and scree — physically the crux of the approach. It's cairned when snow-free, but in early season (often into July) snow can bridge a hidden creek/moat on the left side of the gully that has caused serious injuries and at least one fatality when climbers post-holed or glissaded into it; the slope is also avalanche-prone with a spring/early-summer snowpack. From the top of the pass (7,841 ft) descend gently into the upper Core basin past Isolation/Tranquil Lake, then continue cross-country roughly 1–1.5 miles north over granite slabs and heather benches toward Prusik Pass and Gnome Tarn (~7,400 ft); Prusik's south face and the Solid Gold start are about 15–20 minutes from a Gnome Tarn camp. Total is roughly 7.5–8 miles and 4,600 ft one-way from the trailhead. Overnight camping in the Core Zone requires an Enchantme",
+   "approach_logistics": "{\"trailhead\":\"Stuart Lake Trailhead (Trail #1599)\",\"trailheadLat\":47.5282,\"trailheadLng\":-120.82036,\"trailheadDirection\":\"From Leavenworth, drive US-2 west 0.8 mile, turn left onto Icicle Road for about 8.5 miles, then turn left onto Eightmile Road (FR-7600), stay right onto FR-7601 and follow it about 4 miles to the trailhead. The last stretch closes in winter, typically November to May.\"}",
+   "road": "{\"name\":\"Icicle Creek Rd to FS Road 7601 (Stuart Lake Trailhead)\",\"status\":\"Rough, steep dirt road for the final 3.7 miles\",\"driveNote\":\"Turn onto FS Road 7601 from Icicle Creek Road and follow it 3.7 miles to the Stuart Lake Trailhead.\",\"seasonalGate\":\"Gated roughly November through April/early May depending on snowpack\"}",
+   "overview": "Solid Gold climbs the steep south face of Prusik Peak on immaculate golden granite, offering several pitches of sustained, well-protected crack and face climbing at a stiffer grade than the popular west ridge. It is a coveted free climb in the Enchantments, prized for its clean rock, fierce position, and a crux that demands confident 5.11 climbing high in an alpine setting. Strong parties combine it with the surrounding granite for an unforgettable day.",
+   "description": null,
+   "descent": "From the top of Solid Gold, most parties continue to easy ground and locate the shared 'Solid Gold' rap anchors (also used to descend Sail Away and other nearby lines) on the north side of the ridge. The standard descent is a single, full-length rappel — a 60m rope is typical — down the north face, landing on easier ground below; from there it's about a 30-minute scramble/downclimb east back aroun"
+  },
+  "waypoints": [
+   {
+    "lat": 47.5282,
+    "lng": -120.82036,
+    "elev": 3400,
+    "name": "Stuart Lake Trailhead",
+    "type": "Trailhead",
+    "distMi": 0,
+    "elevFt": 3400,
+    "directions": "The Stuart Lake Trailhead sits at the end of FS Road 7601, at about 3,400 feet."
+   },
+   {
+    "lat": 47.4803,
+    "lng": -120.8206,
+    "elev": 7841,
+    "name": "Aasgard Pass",
+    "type": "Junction",
+    "distMi": 5.5,
+    "elevFt": 7841,
+    "directions": "Hike the Stuart Lake Trail about 2.5 miles to the signed Colchuck Lake Trail junction, turn left, cross Mountaineer Creek and switchback 1.6 miles to Colchuck Lake at 5,570 ft. Boulder-hop the east shore to the boulder field at the south end, then climb Aasgard Pass, about 2,000 ft in 1.25 miles of loose scree and dirt, staying climber's left of the cliff bands, to the 7,841-ft pass."
+   },
+   {
+    "lat": 47.483,
+    "lng": -120.795,
+    "elev": 7000,
+    "name": "Core Enchantments",
+    "type": "Campsite",
+    "distMi": 7,
+    "elevFt": 7000,
+    "directions": "From the pass, drop gently east into the upper Core past Tranquil and Isolation Lakes and follow the cairned path down through the chain of lakes to the camps in the central basin."
+   },
+   {
+    "lat": 47.487,
+    "lng": -120.7848,
+    "elev": 7600,
+    "name": "Base of south face",
+    "type": "Junction",
+    "distMi": 7.6,
+    "elevFt": 7600,
+    "directions": "Leave the main basin path and scramble north over granite slabs on a faint path toward Prusik Pass and Gnome Tarn, then traverse to the left end of the south face. Solid Gold starts just right of the outside corner where the face turns onto the west side, on a right-leaning crack system leading to a stembox."
+   },
+   {
+    "lat": null,
+    "lng": null,
+    "elev": null,
+    "name": "Top of the route on the West Ridge",
+    "type": "Topout",
+    "distMi": 7.7,
+    "elevFt": null,
+    "directions": "Climb five pitches, about 450 ft: right-leaning cracks to a roof, a hand crack, slab and a chimney with some loose rock, then a finishing corner crack. The route tops out on the West Ridge below the true summit, not on the summit itself."
+   },
+   {
+    "lat": 47.509202,
+    "lng": -120.830543,
+    "elev": 3947,
+    "name": "Mountaineer Creek crossing",
+    "type": "Water",
+    "distMi": 1.4
+   },
+   {
+    "lat": 47.492385,
+    "lng": -120.836491,
+    "elev": 5561,
+    "name": "Colchuck Lake",
+    "type": "Water",
+    "distMi": 4
+   }
+  ],
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Stuart Lake Trailhead",
+    "lat": 47.527806,
+    "lng": -120.820515,
+    "km": 5.2
+   },
+   {
+    "src": "USFS",
+    "name": "Eightmile Trailhead",
+    "lat": 47.536016,
+    "lng": -120.814025,
+    "km": 5.8
+   },
+   {
+    "src": "USFS",
+    "name": "Snow Lakes Trailhead",
+    "lat": 47.544106,
+    "lng": -120.709515,
+    "km": 8.5
+   },
+   {
+    "src": "USFS",
+    "name": "Ingalls Creek Trailhead",
+    "lat": 47.462906,
+    "lng": -120.673025,
+    "km": 8.8
+   },
+   {
+    "src": "USFS",
+    "name": "Fourth Of July Trailhead",
+    "lat": 47.578106,
+    "lng": -120.796015,
+    "km": 10.1
+   },
+   {
+    "src": "USFS",
+    "name": "Icicle Ridge Trailhead",
+    "lat": 47.568919,
+    "lng": -120.680113,
+    "km": 12
+   },
+   {
+    "src": "USFS",
+    "name": "Penstock Trailhead",
+    "lat": 47.586749,
+    "lng": -120.706609,
+    "km": 12.5
+   },
+   {
+    "src": "USFS",
+    "name": "Beverly Bean Trailhead",
+    "lat": 47.389302,
+    "lng": -120.872266,
+    "km": 12.7
+   },
+   {
+    "src": "USFS",
+    "name": "Esmeralda Trailhead",
+    "lat": 47.436706,
+    "lng": -120.936915,
+    "km": 12.8
+   },
+   {
+    "src": "USFS",
+    "name": "Miller-bear Trailhead",
+    "lat": 47.368606,
+    "lng": -120.784615,
+    "km": 13.2
+   },
+   {
+    "src": "USFS",
+    "name": "Iron Peak Trailhead",
+    "lat": 47.421583,
+    "lng": -120.937341,
+    "km": 13.6
+   },
+   {
+    "src": "USFS",
+    "name": "Stafford Creek Trailhead",
+    "lat": 47.365806,
+    "lng": -120.803615,
+    "km": 13.6
+   },
+   {
+    "src": "USFS",
+    "name": "Castle Rock Trailhead",
+    "lat": 47.600107,
+    "lng": -120.714012,
+    "km": 13.6
+   },
+   {
+    "src": "USFS",
+    "name": "Chatter Creek Trailhead",
+    "lat": 47.608249,
+    "lng": -120.881514,
+    "km": 15.3
+   },
+   {
+    "src": "USFS",
+    "name": "Icicle Gorge Trailhead",
+    "lat": 47.607806,
+    "lng": -120.895025,
+    "km": 15.7
+   }
+  ]
+ },
+ {
+  "id": "wa_prusik_peak_stanley_burgner",
+  "name": "Stanley-Burgner",
+  "discipline": "alpine",
+  "grade": "5.10a",
+  "verdict": "SUMMIT_ONLY",
+  "state": "wa",
+  "peak": {
+   "id": "wa_prusik_peak",
+   "name": "Prusik Peak",
+   "lat": 47.487398,
+   "lng": -120.784552,
+   "elevation_ft": 8008,
+   "region": "Washington",
+   "path": "usa.washington.wa_centraleast.wa_stuart_range.wa_prusik_peak"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": "Direct, obvious line on superb rock; sustained, varied and consistently good. P1 and P2, and P3 and P4, link easily into pitches of about 180 ft. P1 offers a chimney at 5.6/5.7 or, left of it, a 5.8 wide crack, reaching low fifth class with trees. P2 scrambles to the highest tree under a knobby wall. P3 climbs the thin crack, exiting right on big knobs to a deep gully; P4 (5.8) follows the gully to a ledge beneath the chockstone. P5 (5.9) tunnels past the chockstone and climbs cracks to a squeez",
+   "description": null,
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [
+   {
+    "route": "wa_beckey_davis",
+    "name": "Stuart Lake Trailhead"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Stuart Lake Trailhead",
+    "lat": 47.527806,
+    "lng": -120.820515,
+    "km": 5.2
+   },
+   {
+    "src": "USFS",
+    "name": "Eightmile Trailhead",
+    "lat": 47.536016,
+    "lng": -120.814025,
+    "km": 5.8
+   },
+   {
+    "src": "USFS",
+    "name": "Snow Lakes Trailhead",
+    "lat": 47.544106,
+    "lng": -120.709515,
+    "km": 8.5
+   },
+   {
+    "src": "USFS",
+    "name": "Ingalls Creek Trailhead",
+    "lat": 47.462906,
+    "lng": -120.673025,
+    "km": 8.8
+   },
+   {
+    "src": "USFS",
+    "name": "Fourth Of July Trailhead",
+    "lat": 47.578106,
+    "lng": -120.796015,
+    "km": 10.1
+   },
+   {
+    "src": "USFS",
+    "name": "Icicle Ridge Trailhead",
+    "lat": 47.568919,
+    "lng": -120.680113,
+    "km": 12
+   },
+   {
+    "src": "USFS",
+    "name": "Penstock Trailhead",
+    "lat": 47.586749,
+    "lng": -120.706609,
+    "km": 12.5
+   },
+   {
+    "src": "USFS",
+    "name": "Beverly Bean Trailhead",
+    "lat": 47.389302,
+    "lng": -120.872266,
+    "km": 12.7
+   },
+   {
+    "src": "USFS",
+    "name": "Esmeralda Trailhead",
+    "lat": 47.436706,
+    "lng": -120.936915,
+    "km": 12.8
+   },
+   {
+    "src": "USFS",
+    "name": "Miller-bear Trailhead",
+    "lat": 47.368606,
+    "lng": -120.784615,
+    "km": 13.2
+   },
+   {
+    "src": "USFS",
+    "name": "Iron Peak Trailhead",
+    "lat": 47.421583,
+    "lng": -120.937341,
+    "km": 13.6
+   },
+   {
+    "src": "USFS",
+    "name": "Stafford Creek Trailhead",
+    "lat": 47.365806,
+    "lng": -120.803615,
+    "km": 13.6
+   },
+   {
+    "src": "USFS",
+    "name": "Castle Rock Trailhead",
+    "lat": 47.600107,
+    "lng": -120.714012,
+    "km": 13.6
+   },
+   {
+    "src": "USFS",
+    "name": "Chatter Creek Trailhead",
+    "lat": 47.608249,
+    "lng": -120.881514,
+    "km": 15.3
+   },
+   {
+    "src": "USFS",
+    "name": "Icicle Gorge Trailhead",
+    "lat": 47.607806,
+    "lng": -120.895025,
+    "km": 15.7
+   }
+  ]
+ },
+ {
+  "id": "wa_prusik_peak_taylor_wood_route",
+  "name": "Taylor-Wood Route",
+  "discipline": "alpine",
+  "grade": "5.9+",
+  "verdict": "SUMMIT_ONLY",
+  "state": "wa",
+  "peak": {
+   "id": "wa_prusik_peak",
+   "name": "Prusik Peak",
+   "lat": 47.487398,
+   "lng": -120.784552,
+   "elevation_ft": 8008,
+   "region": "Washington",
+   "path": "usa.washington.wa_centraleast.wa_stuart_range.wa_prusik_peak"
+  },
+  "text": {
+   "approach": "The Stuart Lake trailhead sits at the end of Forest Road 7601 above Leavenworth. Follow the Stuart Lake Trail (#1599) for about 2.5 miles to the signed junction, bear left onto the Colchuck Lake Trail (#1599A), cross Mountaineer Creek and climb to Colchuck Lake, then work around the shore to the boulder field at its south end. From there Aasgard Pass climbs nearly 2,000 ft of loose scree; it holds snow into early July and has a hidden creek under the slope, so carry an axe early in the season. From the pass, travel cross-country through the Core past Isolation and Tranquil lakes toward Gnome Tarn, the usual bivy about 20 minutes from the south face of Prusik Peak. From Gnome Tarn, drop through the boulders to the foot of the south face, walk past where Beckey-Davis begins, then continue to the right along the wall under a big sloping slab to reach the start.",
+   "approach_logistics": null,
+   "road": "{\"name\":\"Icicle Road (Forest Road 7600)\",\"status\":null,\"driveNote\":\"Paved access from Leavenworth to the Stuart/Colchuck Lake or Snow Lakes trailheads.\",\"seasonalGate\":null}",
+   "overview": "A long, 5.9+ ten-section route up the south face established by David Wood and Fletcher Taylor in 2023, combining crack, chimney, and short scrambling sections en route to the summit.",
+   "description": null,
+   "descent": "Two options: descend using the Stanley-Burgner route’s north-face rappel descent, four single-rope rappels then a 3rd-class downclimb, or make about five rappels down the couloir to the right of the route followed by easy scrambling back to the base. A single 60m rope suffices for both the ascent and the rappel descent."
+  },
+  "waypoints": [
+   {
+    "lat": 47.4875,
+    "lng": -120.7844,
+    "elev": 8008,
+    "name": "Prusik Peak Summit",
+    "type": "Summit",
+    "distMi": null,
+    "elevFt": 8008
+   }
+  ],
+  "siblingTrailheads": [
+   {
+    "route": "wa_beckey_davis",
+    "name": "Stuart Lake Trailhead"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Stuart Lake Trailhead",
+    "lat": 47.527806,
+    "lng": -120.820515,
+    "km": 5.2
+   },
+   {
+    "src": "USFS",
+    "name": "Eightmile Trailhead",
+    "lat": 47.536016,
+    "lng": -120.814025,
+    "km": 5.8
+   },
+   {
+    "src": "USFS",
+    "name": "Snow Lakes Trailhead",
+    "lat": 47.544106,
+    "lng": -120.709515,
+    "km": 8.5
+   },
+   {
+    "src": "USFS",
+    "name": "Ingalls Creek Trailhead",
+    "lat": 47.462906,
+    "lng": -120.673025,
+    "km": 8.8
+   },
+   {
+    "src": "USFS",
+    "name": "Fourth Of July Trailhead",
+    "lat": 47.578106,
+    "lng": -120.796015,
+    "km": 10.1
+   },
+   {
+    "src": "USFS",
+    "name": "Icicle Ridge Trailhead",
+    "lat": 47.568919,
+    "lng": -120.680113,
+    "km": 12
+   },
+   {
+    "src": "USFS",
+    "name": "Penstock Trailhead",
+    "lat": 47.586749,
+    "lng": -120.706609,
+    "km": 12.5
+   },
+   {
+    "src": "USFS",
+    "name": "Beverly Bean Trailhead",
+    "lat": 47.389302,
+    "lng": -120.872266,
+    "km": 12.7
+   },
+   {
+    "src": "USFS",
+    "name": "Esmeralda Trailhead",
+    "lat": 47.436706,
+    "lng": -120.936915,
+    "km": 12.8
+   },
+   {
+    "src": "USFS",
+    "name": "Miller-bear Trailhead",
+    "lat": 47.368606,
+    "lng": -120.784615,
+    "km": 13.2
+   },
+   {
+    "src": "USFS",
+    "name": "Iron Peak Trailhead",
+    "lat": 47.421583,
+    "lng": -120.937341,
+    "km": 13.6
+   },
+   {
+    "src": "USFS",
+    "name": "Stafford Creek Trailhead",
+    "lat": 47.365806,
+    "lng": -120.803615,
+    "km": 13.6
+   },
+   {
+    "src": "USFS",
+    "name": "Castle Rock Trailhead",
+    "lat": 47.600107,
+    "lng": -120.714012,
+    "km": 13.6
+   },
+   {
+    "src": "USFS",
+    "name": "Chatter Creek Trailhead",
+    "lat": 47.608249,
+    "lng": -120.881514,
+    "km": 15.3
+   },
+   {
+    "src": "USFS",
+    "name": "Icicle Gorge Trailhead",
+    "lat": 47.607806,
+    "lng": -120.895025,
+    "km": 15.7
+   }
+  ]
+ },
+ {
+  "id": "wa_red_mountain_snoqualmie_east_face",
+  "name": "East Face",
+  "discipline": "alpine",
+  "grade": null,
+  "verdict": "SUMMIT_ONLY",
+  "state": "wa",
+  "peak": {
+   "id": "wa_red_mountain_snoqualmie",
+   "name": "Red Mountain",
+   "lat": 47.456135,
+   "lng": -121.389105,
+   "elevation_ft": 5890,
+   "region": "Alpine Lakes",
+   "path": "usa.washington.wa_centralwest.wa_snoqualmie_pass_area.wa_red_mountain_snoqualmie"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [
+   {
+    "route": "wa_red_mountain_snoqualmie_standard",
+    "name": "PCT North Trailhead, Snoqualmie Pass"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Snow Lake Trailhead",
+    "lat": 47.445656,
+    "lng": -121.423665,
+    "km": 2.8
+   },
+   {
+    "src": "USFS",
+    "name": "Pacific Crest Trail - Snoqualmie North T",
+    "lat": 47.428012,
+    "lng": -121.413484,
+    "km": 3.6
+   },
+   {
+    "src": "USFS",
+    "name": "Pacific Crest Trail/Stevens Pass Trailhe",
+    "lat": 47.42841,
+    "lng": -121.415498,
+    "km": 3.7
+   },
+   {
+    "src": "USFS",
+    "name": "Pants - Snoqualmie South Trailhead",
+    "lat": 47.427228,
+    "lng": -121.420293,
+    "km": 4
+   },
+   {
+    "src": "USFS",
+    "name": "Denny Creek Trailhead",
+    "lat": 47.415956,
+    "lng": -121.441168,
+    "km": 5.9
+   },
+   {
+    "src": "USFS",
+    "name": "Franklin Falls Trailhead",
+    "lat": 47.413339,
+    "lng": -121.441404,
+    "km": 6.2
+   },
+   {
+    "src": "USFS",
+    "name": "Kendall Peaks Trailhead",
+    "lat": 47.398249,
+    "lng": -121.394411,
+    "km": 6.4
+   },
+   {
+    "src": "USFS",
+    "name": "Gold Creek Trailhead",
+    "lat": 47.398629,
+    "lng": -121.380326,
+    "km": 6.4
+   },
+   {
+    "src": "USFS",
+    "name": "Lake Keechelus Trailhead",
+    "lat": 47.384733,
+    "lng": -121.389446,
+    "km": 7.9
+   },
+   {
+    "src": "USFS",
+    "name": "Dingford Creek Trailhead",
+    "lat": 47.517325,
+    "lng": -121.4543,
+    "km": 8.4
+   },
+   {
+    "src": "USFS",
+    "name": "Annette Lake/Asahel Curtis Trailhead",
+    "lat": 47.392809,
+    "lng": -121.474008,
+    "km": 9.5
+   },
+   {
+    "src": "USFS",
+    "name": "Pratt Lake Trailhead",
+    "lat": 47.397861,
+    "lng": -121.48645,
+    "km": 9.8
+   },
+   {
+    "src": "USFS",
+    "name": "Rachel Lake Trailhead",
+    "lat": 47.400706,
+    "lng": -121.283915,
+    "km": 10
+   },
+   {
+    "src": "USFS",
+    "name": "Talapus Lake Trailhead",
+    "lat": 47.401162,
+    "lng": -121.518504,
+    "km": 11.5
+   },
+   {
+    "src": "USFS",
+    "name": "Ira Spring Trailhead",
+    "lat": 47.424763,
+    "lng": -121.583422,
+    "km": 15
+   }
+  ]
+ },
+ {
+  "id": "wa_red_mountain_snoqualmie_east_ridge",
+  "name": "East Ridge",
+  "discipline": "alpine",
+  "grade": null,
+  "verdict": "SUMMIT_ONLY",
+  "state": "wa",
+  "peak": {
+   "id": "wa_red_mountain_snoqualmie",
+   "name": "Red Mountain",
+   "lat": 47.456135,
+   "lng": -121.389105,
+   "elevation_ft": 5890,
+   "region": "Alpine Lakes",
+   "path": "usa.washington.wa_centralwest.wa_snoqualmie_pass_area.wa_red_mountain_snoqualmie"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [
+   {
+    "route": "wa_red_mountain_snoqualmie_standard",
+    "name": "PCT North Trailhead, Snoqualmie Pass"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Snow Lake Trailhead",
+    "lat": 47.445656,
+    "lng": -121.423665,
+    "km": 2.8
+   },
+   {
+    "src": "USFS",
+    "name": "Pacific Crest Trail - Snoqualmie North T",
+    "lat": 47.428012,
+    "lng": -121.413484,
+    "km": 3.6
+   },
+   {
+    "src": "USFS",
+    "name": "Pacific Crest Trail/Stevens Pass Trailhe",
+    "lat": 47.42841,
+    "lng": -121.415498,
+    "km": 3.7
+   },
+   {
+    "src": "USFS",
+    "name": "Pants - Snoqualmie South Trailhead",
+    "lat": 47.427228,
+    "lng": -121.420293,
+    "km": 4
+   },
+   {
+    "src": "USFS",
+    "name": "Denny Creek Trailhead",
+    "lat": 47.415956,
+    "lng": -121.441168,
+    "km": 5.9
+   },
+   {
+    "src": "USFS",
+    "name": "Franklin Falls Trailhead",
+    "lat": 47.413339,
+    "lng": -121.441404,
+    "km": 6.2
+   },
+   {
+    "src": "USFS",
+    "name": "Kendall Peaks Trailhead",
+    "lat": 47.398249,
+    "lng": -121.394411,
+    "km": 6.4
+   },
+   {
+    "src": "USFS",
+    "name": "Gold Creek Trailhead",
+    "lat": 47.398629,
+    "lng": -121.380326,
+    "km": 6.4
+   },
+   {
+    "src": "USFS",
+    "name": "Lake Keechelus Trailhead",
+    "lat": 47.384733,
+    "lng": -121.389446,
+    "km": 7.9
+   },
+   {
+    "src": "USFS",
+    "name": "Dingford Creek Trailhead",
+    "lat": 47.517325,
+    "lng": -121.4543,
+    "km": 8.4
+   },
+   {
+    "src": "USFS",
+    "name": "Annette Lake/Asahel Curtis Trailhead",
+    "lat": 47.392809,
+    "lng": -121.474008,
+    "km": 9.5
+   },
+   {
+    "src": "USFS",
+    "name": "Pratt Lake Trailhead",
+    "lat": 47.397861,
+    "lng": -121.48645,
+    "km": 9.8
+   },
+   {
+    "src": "USFS",
+    "name": "Rachel Lake Trailhead",
+    "lat": 47.400706,
+    "lng": -121.283915,
+    "km": 10
+   },
+   {
+    "src": "USFS",
+    "name": "Talapus Lake Trailhead",
+    "lat": 47.401162,
+    "lng": -121.518504,
+    "km": 11.5
+   },
+   {
+    "src": "USFS",
+    "name": "Ira Spring Trailhead",
+    "lat": 47.424763,
+    "lng": -121.583422,
+    "km": 15
+   }
+  ]
+ },
+ {
+  "id": "wa_red_mountain_snoqualmie_southeast_face",
+  "name": "Southeast Face",
+  "discipline": "alpine",
+  "grade": "Class 4",
+  "verdict": "SUMMIT_ONLY",
+  "state": "wa",
+  "peak": {
+   "id": "wa_red_mountain_snoqualmie",
+   "name": "Red Mountain",
+   "lat": 47.456135,
+   "lng": -121.389105,
+   "elevation_ft": 5890,
+   "region": "Alpine Lakes",
+   "path": "usa.washington.wa_centralwest.wa_snoqualmie_pass_area.wa_red_mountain_snoqualmie"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [
+   {
+    "route": "wa_red_mountain_snoqualmie_standard",
+    "name": "PCT North Trailhead, Snoqualmie Pass"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Snow Lake Trailhead",
+    "lat": 47.445656,
+    "lng": -121.423665,
+    "km": 2.8
+   },
+   {
+    "src": "USFS",
+    "name": "Pacific Crest Trail - Snoqualmie North T",
+    "lat": 47.428012,
+    "lng": -121.413484,
+    "km": 3.6
+   },
+   {
+    "src": "USFS",
+    "name": "Pacific Crest Trail/Stevens Pass Trailhe",
+    "lat": 47.42841,
+    "lng": -121.415498,
+    "km": 3.7
+   },
+   {
+    "src": "USFS",
+    "name": "Pants - Snoqualmie South Trailhead",
+    "lat": 47.427228,
+    "lng": -121.420293,
+    "km": 4
+   },
+   {
+    "src": "USFS",
+    "name": "Denny Creek Trailhead",
+    "lat": 47.415956,
+    "lng": -121.441168,
+    "km": 5.9
+   },
+   {
+    "src": "USFS",
+    "name": "Franklin Falls Trailhead",
+    "lat": 47.413339,
+    "lng": -121.441404,
+    "km": 6.2
+   },
+   {
+    "src": "USFS",
+    "name": "Kendall Peaks Trailhead",
+    "lat": 47.398249,
+    "lng": -121.394411,
+    "km": 6.4
+   },
+   {
+    "src": "USFS",
+    "name": "Gold Creek Trailhead",
+    "lat": 47.398629,
+    "lng": -121.380326,
+    "km": 6.4
+   },
+   {
+    "src": "USFS",
+    "name": "Lake Keechelus Trailhead",
+    "lat": 47.384733,
+    "lng": -121.389446,
+    "km": 7.9
+   },
+   {
+    "src": "USFS",
+    "name": "Dingford Creek Trailhead",
+    "lat": 47.517325,
+    "lng": -121.4543,
+    "km": 8.4
+   },
+   {
+    "src": "USFS",
+    "name": "Annette Lake/Asahel Curtis Trailhead",
+    "lat": 47.392809,
+    "lng": -121.474008,
+    "km": 9.5
+   },
+   {
+    "src": "USFS",
+    "name": "Pratt Lake Trailhead",
+    "lat": 47.397861,
+    "lng": -121.48645,
+    "km": 9.8
+   },
+   {
+    "src": "USFS",
+    "name": "Rachel Lake Trailhead",
+    "lat": 47.400706,
+    "lng": -121.283915,
+    "km": 10
+   },
+   {
+    "src": "USFS",
+    "name": "Talapus Lake Trailhead",
+    "lat": 47.401162,
+    "lng": -121.518504,
+    "km": 11.5
+   },
+   {
+    "src": "USFS",
+    "name": "Ira Spring Trailhead",
+    "lat": 47.424763,
+    "lng": -121.583422,
+    "km": 15
+   }
+  ]
+ },
+ {
+  "id": "wa_red_mountain_snoqualmie_west_ridge",
+  "name": "West Ridge",
+  "discipline": "alpine",
+  "grade": null,
+  "verdict": "SUMMIT_ONLY",
+  "state": "wa",
+  "peak": {
+   "id": "wa_red_mountain_snoqualmie",
+   "name": "Red Mountain",
+   "lat": 47.456135,
+   "lng": -121.389105,
+   "elevation_ft": 5890,
+   "region": "Alpine Lakes",
+   "path": "usa.washington.wa_centralwest.wa_snoqualmie_pass_area.wa_red_mountain_snoqualmie"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [
+   {
+    "route": "wa_red_mountain_snoqualmie_standard",
+    "name": "PCT North Trailhead, Snoqualmie Pass"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Snow Lake Trailhead",
+    "lat": 47.445656,
+    "lng": -121.423665,
+    "km": 2.8
+   },
+   {
+    "src": "USFS",
+    "name": "Pacific Crest Trail - Snoqualmie North T",
+    "lat": 47.428012,
+    "lng": -121.413484,
+    "km": 3.6
+   },
+   {
+    "src": "USFS",
+    "name": "Pacific Crest Trail/Stevens Pass Trailhe",
+    "lat": 47.42841,
+    "lng": -121.415498,
+    "km": 3.7
+   },
+   {
+    "src": "USFS",
+    "name": "Pants - Snoqualmie South Trailhead",
+    "lat": 47.427228,
+    "lng": -121.420293,
+    "km": 4
+   },
+   {
+    "src": "USFS",
+    "name": "Denny Creek Trailhead",
+    "lat": 47.415956,
+    "lng": -121.441168,
+    "km": 5.9
+   },
+   {
+    "src": "USFS",
+    "name": "Franklin Falls Trailhead",
+    "lat": 47.413339,
+    "lng": -121.441404,
+    "km": 6.2
+   },
+   {
+    "src": "USFS",
+    "name": "Kendall Peaks Trailhead",
+    "lat": 47.398249,
+    "lng": -121.394411,
+    "km": 6.4
+   },
+   {
+    "src": "USFS",
+    "name": "Gold Creek Trailhead",
+    "lat": 47.398629,
+    "lng": -121.380326,
+    "km": 6.4
+   },
+   {
+    "src": "USFS",
+    "name": "Lake Keechelus Trailhead",
+    "lat": 47.384733,
+    "lng": -121.389446,
+    "km": 7.9
+   },
+   {
+    "src": "USFS",
+    "name": "Dingford Creek Trailhead",
+    "lat": 47.517325,
+    "lng": -121.4543,
+    "km": 8.4
+   },
+   {
+    "src": "USFS",
+    "name": "Annette Lake/Asahel Curtis Trailhead",
+    "lat": 47.392809,
+    "lng": -121.474008,
+    "km": 9.5
+   },
+   {
+    "src": "USFS",
+    "name": "Pratt Lake Trailhead",
+    "lat": 47.397861,
+    "lng": -121.48645,
+    "km": 9.8
+   },
+   {
+    "src": "USFS",
+    "name": "Rachel Lake Trailhead",
+    "lat": 47.400706,
+    "lng": -121.283915,
+    "km": 10
+   },
+   {
+    "src": "USFS",
+    "name": "Talapus Lake Trailhead",
+    "lat": 47.401162,
+    "lng": -121.518504,
+    "km": 11.5
+   },
+   {
+    "src": "USFS",
+    "name": "Ira Spring Trailhead",
+    "lat": 47.424763,
+    "lng": -121.583422,
+    "km": 15
+   }
+  ]
+ },
+ {
+  "id": "wa_rock_mountain_northeast_ridge",
+  "name": "Northeast Ridge (Nason Ridge Traverse)",
+  "discipline": "mountaineering",
+  "grade": "Class 3",
+  "verdict": "NO_SUMMIT",
+  "state": "wa",
+  "peak": {
+   "id": "wa_rock_mountain",
+   "name": "Rock Mountain",
+   "lat": 47.7997534,
+   "lng": -120.9745323,
+   "elevation_ft": 6841,
+   "region": "Washington",
+   "path": "usa.washington.wa_centraleast.wa_nason_ridge_chiwaukum.wa_rock_mountain"
+  },
+  "text": {
+   "approach": "Begin at the Old Merritt Lake Trailhead off US-2 (~2,950 ft). Climb via Mahar Creek Ridge to Merritt Lake, then continue over Mt. Mastiff's Southeast Ridge and Mt. Howard's Northeast Ridge (both reported as snow climbs/rock scrambles) before dropping to the Howard-Rock col and climbing Rock Mountain's northeast side.",
+   "approach_logistics": "{\"peakLat\":47.7997534,\"peakLng\":-120.9745323,\"trailhead\":\"Old Merritt Lake Trailhead\",\"trailheadDirection\":\"Begin at the Old Merritt Lake Trailhead off US-2 (~2,950 ft).\"}",
+   "road": null,
+   "overview": "A cross-country mountaineering line up Rock Mountain's northeast side, reached by crossing the Howard-Rock col at the far end of a multi-summit Nason Ridge traverse (Mt. Mastiff - Mt. Howard - Rock Mountain), rather than via the maintained West Route trail.",
+   "description": null,
+   "descent": "From the summit, descend the South Ridge and East Slope toward Rock Lake, picking up the maintained Rock Mountain Trail in the Rock Lake basin and following it down the switchbacks to the Rock Mountain Trailhead on US-2 (a different trailhead than the Old Merritt Lake start, so a car shuttle or hitch on US-2 is typically needed)."
+  },
+  "waypoints": [
+   {
+    "lat": 47.805934,
+    "lng": -120.913651,
+    "elev": 5010,
+    "name": "Merritt Lake",
+    "type": "Campsite"
+   },
+   {
+    "lat": 47.805253,
+    "lng": -120.95451,
+    "elev": 5400,
+    "name": "Crescent Lake",
+    "type": "Campsite"
+   },
+   {
+    "lat": 47.797588,
+    "lng": -120.963796,
+    "elev": 5851,
+    "name": "Rock Lake",
+    "type": "Campsite"
+   }
+  ],
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Snowy Creek Trailhead",
+    "lat": 47.807612,
+    "lng": -120.996295,
+    "km": 1.8
+   },
+   {
+    "src": "USFS",
+    "name": "Rock Mountain Trailhead",
+    "lat": 47.775232,
+    "lng": -120.957772,
+    "km": 3
+   },
+   {
+    "src": "USFS",
+    "name": "Bygone Byways Trailhead",
+    "lat": 47.784606,
+    "lng": -121.029415,
+    "km": 4.4
+   },
+   {
+    "src": "USFS",
+    "name": "Lanham Lake Trailhead",
+    "lat": 47.771506,
+    "lng": -121.015015,
+    "km": 4.4
+   },
+   {
+    "src": "USFS",
+    "name": "White Pine Trailhead",
+    "lat": 47.77083,
+    "lng": -120.927007,
+    "km": 4.8
+   },
+   {
+    "src": "USFS",
+    "name": "Lake Minotaur Trailhead",
+    "lat": 47.827879,
+    "lng": -121.02974,
+    "km": 5.2
+   },
+   {
+    "src": "USFS",
+    "name": "Merritt Lake Trailhead",
+    "lat": 47.790506,
+    "lng": -120.885015,
+    "km": 6.8
+   },
+   {
+    "src": "USFS",
+    "name": "Smithbrook Trailhead",
+    "lat": 47.802504,
+    "lng": -121.07666,
+    "km": 7.6
+   },
+   {
+    "src": "USFS",
+    "name": "PCT Stevens South Trailhead",
+    "lat": 47.746756,
+    "lng": -121.086895,
+    "km": 10.3
+   },
+   {
+    "src": "USFS",
+    "name": "Heather Lake Trailhead",
+    "lat": 47.86916,
+    "lng": -121.070084,
+    "km": 10.5
+   },
+   {
+    "src": "USFS",
+    "name": "Lake Ethel Trailhead",
+    "lat": 47.772806,
+    "lng": -120.832015,
+    "km": 11.1
+   },
+   {
+    "src": "USFS",
+    "name": "Irving Pass Trailhead",
+    "lat": 47.895306,
+    "lng": -121.036015,
+    "km": 11.6
+   },
+   {
+    "src": "USFS",
+    "name": "Top Lake Trailhead",
+    "lat": 47.880106,
+    "lng": -121.079015,
+    "km": 11.9
+   },
+   {
+    "src": "USFS",
+    "name": "Hidden Lake Trailhead",
+    "lat": 47.823106,
+    "lng": -120.809995,
+    "km": 12.6
+   },
+   {
+    "src": "USFS",
+    "name": "Wellington Trailhead",
+    "lat": 47.747256,
+    "lng": -121.127681,
+    "km": 12.8
+   }
+  ]
+ },
+ {
+  "id": "wa_ruby_mountain_northwest_ridge",
+  "name": "Northwest Ridge Route",
+  "discipline": "mountaineering",
+  "grade": "Class 3",
+  "verdict": "SUMMIT_ONLY",
+  "state": "wa",
+  "peak": {
+   "id": "wa_ruby_mountain",
+   "name": "Ruby Mountain",
+   "lat": 48.694408,
+   "lng": -121.042952,
+   "elevation_ft": 7426,
+   "region": "North Cascades / Stehekin",
+   "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_north_cascades_core.wa_ruby_mountain"
+  },
+  "text": {
+   "approach": "From Newhalem, drive or walk SR 20 east about 12 miles (0.4 mi west of Horsetail Creek, ~2.8 mi northeast of Colonial Creek Campground) to a turnout at about 1,900 ft elevation, directly across from a large boulder field on Ruby's northwest side.",
+   "approach_logistics": null,
+   "road": "{\"name\":\"North Cascades Highway (SR 20)\",\"status\":\"Paved; trailhead is a highway turnout ~12 mi east of Newhalem\",\"driveNote\":\"From Newhalem, drive/hike SR 20 east ~12 miles (0.4 mi west of Horsetail Creek) to a turnout opposite a large boulder field, ~2.8 mi northeast of Colonial Creek Campground.\",\"seasonalGate\":\"This route is typically approached while SR 20 is snow-gated (roughly Dec-Apr) — climbers park at the plowed road-end or walk in from the winter closure gate.\"}",
+   "overview": "A steep, direct hike/scramble straight up Ruby's northwest ridge from a Highway 20 turnout — the most popular way up during winter and spring, when SR 20 is gated for the season.",
+   "description": null,
+   "descent": "Retrace the ascent ridge, using snow ramps to negotiate cliff bands in winter/spring conditions; remove snowshoes for one cliffy section around 4,000 ft as needed on the way down as well."
+  },
+  "waypoints": [
+   {
+    "lat": 48.694408,
+    "lng": -121.042952,
+    "elev": 7426,
+    "name": "Ruby Mountain summit",
+    "type": "Summit",
+    "distMi": null,
+    "elevFt": 7426
+   }
+  ],
+  "siblingTrailheads": [
+   {
+    "route": "wa_ruby_mountain_happy_creek",
+    "name": "Happy Creek trailhead (Happy Creek Forest Walk lot, SR 20)"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "NPS",
+    "name": "Happy Creek Forest Walk Trailhead",
+    "lat": 48.728543,
+    "lng": -121.055832,
+    "km": 3.9
+   },
+   {
+    "src": "USFS",
+    "name": "Canyon Creek Trailhead",
+    "lat": 48.706506,
+    "lng": -120.918315,
+    "km": 9.2
+   },
+   {
+    "src": "NPS",
+    "name": "Gorge Overlook Trail Trailhead",
+    "lat": 48.699938,
+    "lng": -121.21076,
+    "km": 12.3
+   },
+   {
+    "src": "NPS",
+    "name": "Gorge Overlook Trail Trailhead",
+    "lat": 48.700343,
+    "lng": -121.209709,
+    "km": 12.3
+   },
+   {
+    "src": "USFS",
+    "name": "East Creek Trailhead",
+    "lat": 48.667506,
+    "lng": -120.873115,
+    "km": 12.8
+   },
+   {
+    "src": "USFS",
+    "name": "Easy Pass Trailhead",
+    "lat": 48.587206,
+    "lng": -120.801615,
+    "km": 21.4
+   },
+   {
+    "src": "USFS",
+    "name": "Hidden Lake Trailhead",
+    "lat": 48.514161,
+    "lng": -121.221581,
+    "km": 24
+   }
+  ]
+ },
+ {
+  "id": "wa_sharkfin_tower_flakes_and_chimneys_south_face",
+  "name": "Flakes and Chimneys (South Face)",
+  "discipline": "alpine",
+  "grade": "5.7 Mod. Snow",
+  "verdict": "SUMMIT_ONLY",
+  "state": "wa",
+  "peak": {
+   "id": "wa_sharkfin_tower",
+   "name": "Sharkfin Tower",
+   "lat": 48.4996,
+   "lng": -121.0398,
+   "elevation_ft": 8120,
+   "region": "Washington",
+   "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_north_cascades_core.wa_boston_basin.wa_sharkfin_tower"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [
+   {
+    "route": "wa_sharkfin_tower_southeast_ridge",
+    "name": "Boston Basin Trailhead"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Hidden Lake Trailhead",
+    "lat": 48.514161,
+    "lng": -121.221581,
+    "km": 13.5
+   },
+   {
+    "src": "USFS",
+    "name": "Lookout Mountain Trailhead",
+    "lat": 48.537501,
+    "lng": -121.291755,
+    "km": 19
+   },
+   {
+    "src": "USFS",
+    "name": "Easy Pass Trailhead",
+    "lat": 48.587206,
+    "lng": -120.801615,
+    "km": 20.1
+   },
+   {
+    "src": "USFS",
+    "name": "East Creek Trailhead",
+    "lat": 48.667506,
+    "lng": -120.873115,
+    "km": 22.3
+   },
+   {
+    "src": "USFS",
+    "name": "Rainy Pass Trailhead (PCT North)",
+    "lat": 48.515306,
+    "lng": -120.736025,
+    "km": 22.4
+   },
+   {
+    "src": "USFS",
+    "name": "Heather Maple Pass Trailhead Rainy Pass ",
+    "lat": 48.516606,
+    "lng": -120.735815,
+    "km": 22.5
+   },
+   {
+    "src": "USFS",
+    "name": "Bridge Creek Trailhead",
+    "lat": 48.504906,
+    "lng": -120.719115,
+    "km": 23.6
+   },
+   {
+    "src": "USFS",
+    "name": "Canyon Creek Trailhead",
+    "lat": 48.706506,
+    "lng": -120.918315,
+    "km": 24.7
+   }
+  ]
+ },
+ {
+  "id": "wa_sherpa_peak_northeast_face",
+  "name": "Northeast Face",
+  "discipline": "alpine",
+  "grade": null,
+  "verdict": "SUMMIT_ONLY",
+  "state": "wa",
+  "peak": {
+   "id": "wa_sherpa_peak",
+   "name": "Sherpa Peak",
+   "lat": 47.471944,
+   "lng": -120.888889,
+   "elevation_ft": 8630,
+   "region": "Washington",
+   "path": "usa.washington.wa_centraleast.wa_stuart_range.wa_sherpa_peak"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [
+   {
+    "route": "wa_sherpa_balanced_rock_ne_couloir",
+    "name": "Stuart Lake Trailhead (Trail #1599)"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Esmeralda Trailhead",
+    "lat": 47.436706,
+    "lng": -120.936915,
+    "km": 5.3
+   },
+   {
+    "src": "USFS",
+    "name": "Iron Peak Trailhead",
+    "lat": 47.421583,
+    "lng": -120.937341,
+    "km": 6.7
+   },
+   {
+    "src": "USFS",
+    "name": "Stuart Lake Trailhead",
+    "lat": 47.527806,
+    "lng": -120.820515,
+    "km": 8.1
+   },
+   {
+    "src": "USFS",
+    "name": "Eightmile Trailhead",
+    "lat": 47.536016,
+    "lng": -120.814025,
+    "km": 9.1
+   },
+   {
+    "src": "USFS",
+    "name": "Beverly Bean Trailhead",
+    "lat": 47.389302,
+    "lng": -120.872266,
+    "km": 9.3
+   },
+   {
+    "src": "USFS",
+    "name": "Stafford Creek Trailhead",
+    "lat": 47.365806,
+    "lng": -120.803615,
+    "km": 13.4
+   },
+   {
+    "src": "USFS",
+    "name": "Scatter Creek Trailhead",
+    "lat": 47.507206,
+    "lng": -121.059815,
+    "km": 13.4
+   },
+   {
+    "src": "USFS",
+    "name": "Fourth Of July Trailhead",
+    "lat": 47.578106,
+    "lng": -120.796015,
+    "km": 13.7
+   },
+   {
+    "src": "USFS",
+    "name": "Miller-bear Trailhead",
+    "lat": 47.368606,
+    "lng": -120.784615,
+    "km": 13.9
+   },
+   {
+    "src": "USFS",
+    "name": "Icicle Gorge Trailhead",
+    "lat": 47.607806,
+    "lng": -120.895025,
+    "km": 15.1
+   },
+   {
+    "src": "USFS",
+    "name": "Jack Trout Trailhead",
+    "lat": 47.606506,
+    "lng": -120.916025,
+    "km": 15.1
+   },
+   {
+    "src": "USFS",
+    "name": "Chatter Creek Trailhead",
+    "lat": 47.608249,
+    "lng": -120.881514,
+    "km": 15.2
+   },
+   {
+    "src": "USFS",
+    "name": "Paris Creek Trailhead",
+    "lat": 47.416373,
+    "lng": -121.081196,
+    "km": 15.7
+   },
+   {
+    "src": "USFS",
+    "name": "Snow Lakes Trailhead",
+    "lat": 47.544106,
+    "lng": -120.709515,
+    "km": 15.7
+   },
+   {
+    "src": "USFS",
+    "name": "Blackjack Ridge Trailhead",
+    "lat": 47.609106,
+    "lng": -120.944015,
+    "km": 15.8
+   }
+  ]
+ },
+ {
+  "id": "wa_silver_star_ne_ridge",
+  "name": "Northeast Ridge",
+  "discipline": "alpine",
+  "grade": "5.9",
+  "verdict": "NO_SUMMIT",
+  "state": "wa",
+  "peak": {
+   "id": "wa_silver_star_mountain_okanogan",
+   "name": "Silver Star Mountain",
+   "lat": 48.547945,
+   "lng": -120.585127,
+   "elevation_ft": 8876,
+   "region": "Washington",
+   "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_sub_wapass.wa_silver_star_and_wine_spires.wa_silver_star_mountain_okanogan"
+  },
+  "text": {
+   "approach": "Same as the Silver Star Glacier route to Burgundy Col and onto the glacier (see that route for full trailhead-to-glacier detail), then trend toward the northeast side of the west summit.",
+   "approach_logistics": "{\"trailhead\":\"SR-20 pullout near milepost 165-166 (Silver Star / Wine Spires)\",\"trailheadLat\":48.549,\"trailheadLng\":-120.630965,\"trailheadDirection\":\"From Winthrop, drive SR-20 west; the parking is the first pullout after the turnout for the Cutthroat Creek trailhead, close to milepost 165. SR-20 closes each winter.\"}",
+   "road": "{\"name\":\"North Cascades Highway (SR-20)\",\"status\":\"Open seasonally\",\"driveNote\":\"Same trailhead pullout near milepost 166 as the Silver Star Glacier route.\",\"seasonalGate\":\"Closed roughly early December to mid/late April\"}",
+   "overview": "A technical rock line up the west summit's northeast aspect, reached via the Silver Star Glacier; more sustained than the standard glacier route but far less documented.",
+   "description": null,
+   "descent": null
+  },
+  "waypoints": [
+   {
+    "lat": 48.580406,
+    "lng": -120.624315,
+    "elev": 3600,
+    "name": "Lone Fir Campground, SR 20",
+    "type": "Campsite"
+   },
+   {
+    "lat": 48.554232,
+    "lng": -120.601804,
+    "elev": 6400,
+    "name": "Burgundy Creek bench camp — west side",
+    "type": "Campsite"
+   }
+  ],
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Burgundy Col",
+    "lat": 48.551406,
+    "lng": -120.630895,
+    "km": 3.4
+   },
+   {
+    "src": "USFS",
+    "name": "Cutthroat Trailhead",
+    "lat": 48.556306,
+    "lng": -120.654715,
+    "km": 5.2
+   },
+   {
+    "src": "USFS",
+    "name": "Hairpin",
+    "lat": 48.514336,
+    "lng": -120.642715,
+    "km": 5.7
+   },
+   {
+    "src": "USFS",
+    "name": "Blue Lake Trailhead",
+    "lat": 48.519016,
+    "lng": -120.674215,
+    "km": 7.3
+   },
+   {
+    "src": "USFS",
+    "name": "Driveway Butte Trailhead",
+    "lat": 48.598271,
+    "lng": -120.512721,
+    "km": 7.7
+   },
+   {
+    "src": "USFS",
+    "name": "Cedar Creek Trailhead",
+    "lat": 48.579106,
+    "lng": -120.478815,
+    "km": 8.6
+   },
+   {
+    "src": "USFS",
+    "name": "Gilbert Trailhead",
+    "lat": 48.458443,
+    "lng": -120.565926,
+    "km": 10.1
+   },
+   {
+    "src": "USFS",
+    "name": "Bridge Creek Trailhead",
+    "lat": 48.504906,
+    "lng": -120.719115,
+    "km": 11
+   },
+   {
+    "src": "USFS",
+    "name": "Goat Wall",
+    "lat": 48.622286,
+    "lng": -120.484775,
+    "km": 11.1
+   },
+   {
+    "src": "USFS",
+    "name": "Rattlesnake Trailhead",
+    "lat": 48.648664,
+    "lng": -120.571213,
+    "km": 11.2
+   },
+   {
+    "src": "USFS",
+    "name": "Heather Maple Pass Trailhead Rainy Pass ",
+    "lat": 48.516606,
+    "lng": -120.735815,
+    "km": 11.6
+   },
+   {
+    "src": "USFS",
+    "name": "Rainy Pass Trailhead (PCT North)",
+    "lat": 48.515306,
+    "lng": -120.736025,
+    "km": 11.7
+   },
+   {
+    "src": "USFS",
+    "name": "South Creek (north) Trailhead",
+    "lat": 48.439256,
+    "lng": -120.531125,
+    "km": 12.7
+   },
+   {
+    "src": "USFS",
+    "name": "Robinson Creek Trailhead",
+    "lat": 48.661706,
+    "lng": -120.542025,
+    "km": 13
+   },
+   {
+    "src": "USFS",
+    "name": "Monument Creek Trailhead",
+    "lat": 48.655436,
+    "lng": -120.515187,
+    "km": 13
+   }
+  ]
+ }
+]

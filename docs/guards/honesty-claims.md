@@ -59,8 +59,8 @@ Part of the guard notes — see [README.md](README.md) for the full index.
       own stale assertion.
     - **4c IS THE LOAD-BEARING HALF: a rule that only forbids is satisfied by deleting the line.**
       The FAQ must still ANSWER the question a climber asked **and still name where a contact
-      actually goes** (the float plan, whose own copy already says *"Nothing leaves your phone
-      until you share it"* — a verified claim rather than a minted one), and the toast must still
+      actually goes** (the float plan, whose own copy already says *"What you write stays on this
+      phone until you share it"* — a verified claim rather than a minted one), and the toast must still
       say plainly that ClimbMatch will not raise the alarm.
     - **THREE FALSE POSITIVES IN THE FIRST DRAFT, all flagging CORRECT work**, which is the
       direction that teaches people to ignore a guard. A greedy path match read *"Settings → Your
