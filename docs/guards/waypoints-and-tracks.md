@@ -1526,7 +1526,11 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     ("Pinto Rock summit", "Mossy Loaf (crag top-out)"); they were retyped `Crag` / `Topout` through
     enrich:apply with coordinates unchanged (38/38 re-read). The 5 left are PEAK climbs filed under a
     crag discipline (Trap Dike and Cascade Mountain Slide as trad, the Mt. Baldy trail as top rope,
-    Castle Dome 4th class, Edward Peak's Mole): their discipline is the finding, an owner decision.
+    Castle Dome 4th class, Edward Peak's Mole): their discipline was the finding. Migration 0458
+    (owner: "do what you recommend") moved them by their own stored grade: the four class 3-4 routes to
+    scrambling, the 5.7 four-pitch Mole to alpine. CRAG_SUMMIT then read 0. Their AREAS are still typed
+    crag (Cascade Mountain, Mt Colden and Mount San Antonio are peaks); retyping an area moves every
+    route on it, so that is a separate change.
     Research batches 1-3 (161 trailheads, 12 summit pins) are recorded in
     `data/research/2026-11-18/map-discipline/REPORT.md`; audit after them: 931 / 265 / 41.
 - **`audit:map-pins`** asks what the route MAP actually draws — how many trailhead pins it will
