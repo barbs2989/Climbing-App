@@ -40,6 +40,19 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
   the climber's own held edits show as "Awaiting review" (`PendingAreaEdits`); the owner reviews them in `lib/RouteQualityQueues.jsx`, which reads the raw columns through `useAreaEditRowsByIds` so ON THE PAGE NOW is the page's
   value, and links a proposed parking pin to Google Maps). The chart also runs on states, ranges and regions; not on
   world/country (the whole catalog in one call is ~2 s). Access stays on the route page (owner, 2026-10-04 / 2026-10-15).
+  The sheet's way out cannot scroll away (owner, 2026-11-18: "there's no x out button"): the header with its ✕ is sticky and painted over
+  the parking-pin map, a footer holds **Cancel** beside **Send** and never scrolls, Escape closes, and opening at a field (a pencil, *Add it*,
+  *Add the parking pin*) scrolls only the form body — it used `scrollIntoView`, which also scrolled the dialog layer and could carry the header off the top.
+- **Sorting the sub-areas** (owner, 2026-11-18; `lib/areaChildSort.js`: `childSortOptions`, `sortChildren`, `childSortFigure`; drawn by
+  `AreaChildrenList`): every list of sub-areas is **A → Z by default** — `useAreaChildren` orders by name and re-sorts with the same
+  locale-aware rule, so the area tree and the pickers read alphabetically too (it was most-climbs-first). A **Sort** select on the list's
+  heading line (the website sidebar: its own line) offers Name A → Z / Z → A, Most / Fewest climbs, **Most sport / trad / bouldering / …**
+  for each discipline the children hold, and, when the rows can answer it, Most of my objectives, Nearest to me (asks the device for its
+  location), Highest first (`elevation_ft`) and Shortest walk-in (`approach_min`). Under a discipline sort each row's figure is that
+  discipline's count ("2,743 problems"). The per-child counts come from `area_children_disc_counts` (0455, `useAreaChildrenDiscCounts`;
+  the same stored rollups as the grade bars); while it fails, the discipline sorts are left out rather than sorting every child as zero.
+  On a phone each row also carries a type line under its name: up to three disciplines, largest first, with their colour dots. The choice
+  lasts for the visit (drilling down keeps *Most sport*), never on the device, so every visit opens A → Z.
 - **Wrong place?** (owner note, 2026-10-25; `lib/AreaWrongSpot.jsx`, button in `AreaPage`): a climber says where the area belongs (10–400 characters, optional *which place*). `submitAreaPlacementClaim` (`lib/db.js`) files a `contributions` row of kind `area_placement` (`area_id` = the area, `value` = `{note, suggested}`), a claim only. It shows nothing on the page; the owner's *Wrong place claims* queue (`AreaPlacementQueue` in `lib/RouteProposals.jsx`) lists it and `resolve_area_placement` (0372, admin only) marks it *approved* (moved) or *rejected* (already right). A signed-out climber gets a sign-in button and no write.
 - **Discipline areas are not areas** (owner note, 2026-10-25): ice, mixed and dry-tooling words name a discipline, not a place. A bucket such as *Adirondack Ice & Mixed*, *Vail Ice* or *Dry Tooling & Ice Climbing at Exit 38* is dissolved into the place above it: its crags move under that place and the empty bucket is deleted (`scripts/oneoff/plan-discipline-buckets.mjs` plans, `apply-discipline-buckets.mjs` applies, with `scripts/data/discipline-buckets-rollback.json`). Place names that carry the word stay (*Ice Park*, *Ice Box*, *Ice Pond*, *Ice Caves*). A bucket whose move would create a same-named sibling is held. A bucket that still holds a contribution, topo, saved area or partner area is held too, because those cascade on delete (`areas.area_id` is `ON DELETE CASCADE` for them). Leaf areas named by discipline still hold routes; those need a per-route place and are not moved by the script.
 - **Climb rows** (`RouteRow`, every route list in the browser): name, stars, discipline, then the **pitch count** ("Trad · 5 pitches",
@@ -254,6 +267,7 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
 | `src/components/RoutesTab.tsx` | `RoutesTab`, the Climbs tab body (the live `DbAreaBrowser` and the seed-path browser), lifted from App in PR61 |
 | `lib/AddArea.jsx` | default export `AddArea` (mounted by App from its addAreaParent state in `ClimbMatch.jsx`) |
 | `lib/AreaSuggestFix.jsx` | default export `AreaSuggestFix` (mounted by App from its areaFixOpen / areaFixArea / areaFixField state in `ClimbMatch.jsx`) |
+| `lib/areaChildSort.js` | `childSortOptions`, `sortChildren`, `childSortFigure`, `CHILD_SORT_DEFAULT` |
 | `lib/areaFields.js` | `AREA_EDIT_FIELDS`, `AREA_EDIT_KEYS`, `ASPECTS`, `MONTH_ABBR`, `monthsLabel`, `myPendingAreaEdits` |
 | `lib/areaChrome.jsx` | `EditIconButton`, `CopyCoordButton` (shared with `RouteDetail.jsx`), `NO_PARKING_PIN_LINE` |
 | `lib/db.js` | `useAreaClimbStats`, `useAreaContributions`, `useArea`, `useAreaRoutes`, `useAreaChildren`, `useNearbyAreas`, `useNearbyPeaks`, `useSubtreeRoutes`, `useSubtreeRouteCount`, `useAreaSearch`, `useStates`, `useCountries`, `useAreaPath` |
