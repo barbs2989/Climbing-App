@@ -1,0 +1,548 @@
+{
+ "wa_south_ridge_3": {
+  "area": "wa_black_peak",
+  "waypoints": [
+   {
+    "lat": 48.5156,
+    "lng": -120.7362,
+    "elev": 4850,
+    "name": "Rainy Pass Trailhead (SR 20)",
+    "note": "Northwest Forest Pass required; parking is at the Rainy Pass picnic area, trailhead sign at the north end of the lot.",
+    "type": "Trailhead",
+    "distMi": 0,
+    "directions": "Drive the North Cascades Highway (SR 20) to Rainy Pass near milepost 157.5, about 50 miles east of Marblemount or 35 miles west of Winthrop, and turn into the Rainy Pass Picnic Area on the south side of the highway; the Lake Ann/Maple Pass trailhead sign is at the north end of the lot. A Northwest Forest Pass is required. The highway closes for the winter over the pass."
+   },
+   {
+    "lat": 48.509345,
+    "lng": -120.763756,
+    "elev": 6080,
+    "name": "Heather Pass junction",
+    "note": "Leave the Lake Ann/Maple Pass Loop trail #740 here onto the unmaintained climbers' path toward Lewis and Wing Lakes.",
+    "type": "Junction",
+    "distMi": 2.4,
+    "directions": "Follow the Lake Ann/Maple Pass Trail #740 about 1.3 miles through forest to the signed fork, stay right toward Heather Pass (the left fork goes to Lake Ann), and climb through meadows to Heather Pass, where you leave the maintained trail for the unmarked climbers' path toward Lewis and Wing Lakes."
+   },
+   {
+    "lat": 48.511137,
+    "lng": -120.775017,
+    "elev": 6100,
+    "name": "Talus field crossings",
+    "note": "Two loose talus fields to cross on the climbers' path before Lewis Lake; cairned but easy to lose in fog.",
+    "type": "Hazard",
+    "distMi": 3,
+    "directions": "Follow the unmarked, cairned climbers' path west from Heather Pass across two loose talus and boulder fields. The cairns are easy to lose in fog or under early-season snow, and this is the main route-finding problem of the approach."
+   },
+   {
+    "lat": 48.514102,
+    "lng": -120.782366,
+    "elev": 5700,
+    "name": "Lewis Lake",
+    "note": "Lower, less-established camp option; only a couple of decent tent spots on the north shore.",
+    "type": "Campsite",
+    "distMi": 3.5,
+    "directions": "Beyond the second talus field, drop down to Lewis Lake. The few tent sites are in the timber on the north shore."
+   },
+   {
+    "lat": 48.5172,
+    "lng": -120.8038,
+    "elev": 6920,
+    "name": "Wing Lake outlet",
+    "note": "Reliable water; the lake outlet is the last dependable source before the summit push.",
+    "type": "Water",
+    "distMi": 5,
+    "directions": "From Lewis Lake, climb about 1,200 ft of meadow and talus west to Wing Lake."
+   },
+   {
+    "lat": 48.519384,
+    "lng": -120.806837,
+    "elev": 6900,
+    "name": "Wing Lake camp",
+    "note": "Standard base camp for Black Peak climbers; best established tent sites are here rather than Lewis Lake.",
+    "type": "Campsite",
+    "distMi": 5,
+    "directions": "The established tent sites are in the trees on the right (north) as you reach the lake."
+   },
+   {
+    "lat": 48.522264,
+    "lng": -120.818554,
+    "elev": 8300,
+    "name": "South col",
+    "note": "Gained from Wing Lake by going around its north side, then up a moraine and permanent snowfield; a broad gully on the west side leads to the summit blocks.",
+    "type": "Junction",
+    "distMi": 5.8,
+    "directions": "Go around the right (north) side of Wing Lake, climb the moraine and permanent snowfield into the obvious talus and snow gully below the col, and angle climber's right out of it near the top to avoid the cliff bands directly below the col."
+   },
+   {
+    "lat": 48.523611,
+    "lng": -120.816193,
+    "elev": 8970,
+    "name": "Black Peak summit",
+    "note": "Class 3 with easy class 4 moves near the top; helmet recommended for rockfall off the summit block.",
+    "type": "Summit",
+    "distMi": 6,
+    "directions": "From the col, scramble north along the cairned south ridge toward the summit pyramid; a short class 4 step of about 15 ft guards the top."
+   }
+  ]
+ },
+ "wa_mount_logan_fremont_glacier": {
+  "area": "wa_mount_logan",
+  "waypoints": [
+   {
+    "lat": 48.6855,
+    "lng": -121.0925,
+    "elev": 1200,
+    "name": "Thunder Creek Trailhead (Colonial Creek Campground)",
+    "note": "Overnight stays need a North Cascades backcountry permit, reserved on Recreation.gov or picked up at the Wilderness Information Center in Marblemount; the trail starts at the south end of Colonial Creek Campground near the boat ramp off SR 20.",
+    "type": "Trailhead",
+    "distMi": 0,
+    "directions": "Drive SR 20, the North Cascades Highway, to Colonial Creek Campground near milepost 130 on Diablo Lake. The Thunder Creek trail starts at the south end of the campground, near the boat ramp, at about 1,200 ft. Overnight stays in the park need a North Cascades backcountry permit."
+   },
+   {
+    "lat": 48.583646,
+    "lng": -121.01939,
+    "elev": 2900,
+    "name": "Junction Camp",
+    "note": "Established hiker/stock camp about 10 miles in; cross a log bridge to the creekside hiker camp with views of Boston Glacier.",
+    "type": "Campsite",
+    "distMi": 10,
+    "directions": "Follow the Thunder Creek Trail south along Thunder Arm and up the Thunder Creek valley, past McAllister and Tricouni camps, about 10 miles to Junction Camp at the Fisher Creek Trail junction. The last mile or so below the camp is a steep climb."
+   },
+   {
+    "lat": 48.50623,
+    "lng": -120.960689,
+    "elev": 6000,
+    "name": "Park Creek Pass",
+    "note": "Broad, flat, rocky trough at Thunder Creek's headwaters; leave the maintained trail here and head east into the moraine toward the Fremont Glacier.",
+    "type": "Junction",
+    "distMi": 18.3,
+    "directions": "Stay on the Thunder Creek Trail rather than turning onto the Fisher Creek Trail, and continue up the upper Thunder Creek valley past Thunder Basin to Park Creek Pass, a broad, rocky trough at about 6,000 ft at the head of the creek."
+   },
+   {
+    "lat": 48.524735,
+    "lng": -120.962093,
+    "elev": 8248,
+    "name": "Point 8248 / Fremont Glacier saddle camp",
+    "note": "Rock-outcrop bivy sites at the southern margin of the Fremont Glacier with nearby running water; standard high camp for the summit push.",
+    "type": "Campsite",
+    "distMi": 20,
+    "directions": "Leave the maintained trail at the pass and climb east about 500 ft into the moraine, then traverse north around a broad ridge over heather and rock for roughly 1.5 to 2 miles, crossing a rib near 7,600 ft and a gully through cliff bands that can hold snow or ice, to the bivy sites on the saddle at the southern edge of the Fremont Glacier."
+   },
+   {
+    "lat": 48.529706,
+    "lng": -120.957028,
+    "elev": 8600,
+    "name": "Fremont Glacier hogsback and bergschrund",
+    "note": "Rope up for glacier travel; the snow hogback at the upper edge of the glacier can leave a bergschrund exposed in late season.",
+    "type": "Hazard",
+    "distMi": 20.5,
+    "directions": "Rope up and make the gentle glacier crossing north from camp to the Hogsback, the snow spine at the upper edge of the Fremont Glacier. Late in the season a bergschrund and a moat can open where the snow meets the rock."
+   },
+   {
+    "lat": 48.534423,
+    "lng": -120.950928,
+    "elev": 8900,
+    "name": "Western ramp / U-notch summit ridge gain",
+    "note": "A Class 3-4 rock pitch gains a left-slanting ramp (a fault-line weakness) to the summit ridge, then exposed Class 2-3 ledges lead through a U-notch between the summit tower and south horn.",
+    "type": "Junction",
+    "distMi": 21,
+    "directions": "Cross the moat onto rock and climb a Class 3-4 pitch to a left-slanting ramp, a fault-line weakness in the cliff bands, which leads up to the summit ridge. Do not head straight at the summit tower from the glacier."
+   },
+   {
+    "lat": 48.5367964,
+    "lng": -120.9520563,
+    "elev": 9087,
+    "name": "Mount Logan Summit",
+    "note": "Tiny summit gained via a final Class 3-4 rock pitch; reverse via the same route with a short rappel off the summit block.",
+    "type": "Summit",
+    "distMi": 21.2,
+    "directions": "Traverse exposed Class 2-3 ledges on the east side of the ridge through the U-notch between the summit tower and the south horn, then climb a final Class 3-4 pitch of about 100 ft on solid rock to the tiny summit."
+   },
+   {
+    "lat": 48.677945,
+    "lng": -121.077824,
+    "elev": 1222,
+    "name": "Thunder Creek crossing",
+    "type": "Water",
+    "distMi": 0.9
+   }
+  ]
+ },
+ "wa_little_annapurna_south_slopes": {
+  "area": "wa_little_annapurna",
+  "road": {
+   "name": "Icicle Creek Road to Forest Road 7601 (Mountaineer Creek Road)",
+   "driveNote": "From US-2 in Leavenworth, follow Icicle Creek Road about 8.4 miles, then Forest Road 7601 about 3.7 miles to the Stuart Lake/Colchuck Lake Trailhead (~3,500 ft). The trailhead parking area is small and routinely fills before dawn on summer weekends."
+  },
+  "waypoints": [
+   {
+    "lat": 47.5278,
+    "lng": -120.8205,
+    "elev": 3500,
+    "name": "Stuart Lake Trailhead",
+    "type": "Trailhead",
+    "distMi": 0,
+    "elevFt": 3500,
+    "directions": "Drive Eightmile Road (FR-7601) to its end at the Stuart Lake/Colchuck Lake trailhead, about 3,500 ft. Overnight stays in the Colchuck Zone need a quota wilderness permit."
+   },
+   {
+    "lat": 47.4919578,
+    "lng": -120.8335801,
+    "elev": 5570,
+    "name": "Colchuck Lake",
+    "type": "Junction",
+    "distMi": 4.3,
+    "elevFt": 5570,
+    "directions": "Follow the Stuart Lake Trail #1599 about 2.5 miles to the signed fork where the Colchuck Lake Trail #1599.1 splits left and south. Continue roughly 1.8 miles more, crossing Mountaineer Creek and a boulder-hop stretch near the outlet, to the lake at 5,570 ft. This is the last easy, reliable water, so fill here because there is none above."
+   },
+   {
+    "lat": 47.4803,
+    "lng": -120.8206,
+    "elev": 7841,
+    "name": "Aasgard Pass",
+    "type": "Junction",
+    "distMi": 5.5,
+    "elevFt": 7841,
+    "directions": "Skirt the lake's south and east shoreline on a braided, cairned climbers' path over talus and slab to the foot of the obvious steep gully and headwall at the head of the lake. Aasgard gains roughly 2,000 ft in under a mile on dirt switchbacks, loose scree and boulder-hopping; cairns get knocked over and the path splits into several use trails, so keep re-picking the line toward the notch. Firm snow and ice can linger into July, making an axe and sometimes crampons worthwhile on what is otherwise a scramble."
+   },
+   {
+    "lat": 47.476,
+    "lng": -120.81,
+    "elev": 7400,
+    "name": "Core Enchantments",
+    "type": "Campsite",
+    "distMi": 6.5,
+    "elevFt": 7400,
+    "directions": "From the pass, cross the grey talus and glacial till of the upper Core Zone past Tranquil Lake (Lake Freya) and Isolation Lake, then drop slightly into the meadow-and-tarn complex sometimes called the Brisingamen Lakelets."
+   },
+   {
+    "lat": 47.47,
+    "lng": -120.815,
+    "elev": 7700,
+    "name": "Base of north slopes",
+    "type": "Junction",
+    "distMi": 7,
+    "elevFt": 7700,
+    "directions": "Near the far end of the meadows, watch for an unsigned climbers' path forking right, to the west, toward Little Annapurna. If you cross a stream and pass a toilet sign you have gone by the junction and should backtrack."
+   },
+   {
+    "lat": 47.4682,
+    "lng": -120.8143,
+    "elev": 8485,
+    "name": "Little Annapurna summit",
+    "type": "Summit",
+    "distMi": 7.3,
+    "elevFt": 8485,
+    "directions": "Above here it is a scatter of cairned, well-worn boot paths rather than a trail. Take the line of least resistance up the broad north-facing slabs and talus on the peak's east side, switchbacking and scrambling at low 3rd class at most. The true summit is the middle of three rocky high points along the crest."
+   },
+   {
+    "lat": 47.4878,
+    "lng": -120.8343,
+    "elev": 5570,
+    "name": "Colchuck Lake designated campsites",
+    "type": "Campsite",
+    "distMi": 4.5
+   },
+   {
+    "lat": 47.509045,
+    "lng": -120.830987,
+    "elev": 3964,
+    "name": "Mountaineer Creek crossing",
+    "type": "Water",
+    "distMi": 1.5
+   }
+  ]
+ },
+ "wa_sherpa_peak_west_ridge": {
+  "area": "wa_sherpa_peak",
+  "road": {
+   "name": "Esmeralda Basin Road (FR 9737)",
+   "status": "Open seasonally; gravel",
+   "driveNote": "Access from Teanaway River Road; rough near the trailhead.",
+   "seasonalGate": "Snow may close the upper road into early summer"
+  },
+  "waypoints": [
+   {
+    "lat": 47.4367,
+    "lng": -120.9372,
+    "elev": 4243,
+    "name": "Esmeralda Basin / Ingalls Lake Trailhead (N Fork Teanaway River Rd)",
+    "type": "Trailhead",
+    "distMi": 0,
+    "elevFt": 4243,
+    "directions": "Drive the North Fork Teanaway River Road (FS-9737) to its end at the Esmeralda Basin / Longs Pass trailhead, about 4,300 ft. The road is usually open to the trailhead by early June, but the route itself wants late June through September, once the Longs Pass approach and the rock are snow-free. From the lot take the Longs Pass Trail (#1229), which climbs roughly 2.3 miles and 2,300 ft to Longs Pass."
+   },
+   {
+    "lat": 47.4492902,
+    "lng": -120.9251031,
+    "elev": 6250,
+    "name": "Long's Pass",
+    "type": "Junction",
+    "distMi": 2.5,
+    "elevFt": 6250,
+    "directions": "From the lot, follow the Esmeralda Basin trail 0.3 mile and turn right onto the Ingalls Way Trail (#1390). Climb about 1.4 miles to the junction at about 5,440 ft, turn right onto the Longs Pass trail, and switchback steeply up open, rocky slopes about 1.2 miles to the pass."
+   },
+   {
+    "lat": null,
+    "lng": null,
+    "elev": 6200,
+    "name": "Sherpa south basin camp",
+    "type": "Campsite",
+    "distMi": 4.5,
+    "elevFt": 6300,
+    "directions": "Drop steeply off the north side of the pass on the boot path, about 1,400 ft, to Ingalls Creek; ford or rock-hop it and follow the Ingalls Creek Trail east about a mile to the Beverly-Turnpike junction. Leave the trail on the climbers' path up through timber and brush, climb the rib staying left of its crest, and at about 5,800 ft traverse right over the rib into the basin below Sherpa."
+   },
+   {
+    "lat": 47.4715,
+    "lng": -120.892,
+    "elev": 8095,
+    "name": "Base of west ridge",
+    "type": "Junction",
+    "distMi": 5.4,
+    "elevFt": 8095,
+    "directions": "Climb class 2 snow and talus up the basin past the flat table-rock shelf at about 7,400 ft to the notch at the west foot of the ridge, on the col between Stuart and Sherpa; aim for the notch closest to Sherpa."
+   },
+   {
+    "lat": 47.4718,
+    "lng": -120.8889,
+    "elev": 8630,
+    "name": "Sherpa Peak summit",
+    "type": "Summit",
+    "distMi": 5.7,
+    "elevFt": 8630,
+    "directions": "Climb blocky class 4 ridge trending climber's left to a cave belay, then take the crack out of the cave (the crux, about 5.4 to 5.5). Continue left to a platform with a rappel anchor, scramble across a short gully, climb to the lowest point of the summit ridge, and follow it on exposed class 4 to the summit block."
+   }
+  ]
+ },
+ "wa_argonaut_peak_east_ridge": {
+  "area": "wa_argonaut_peak",
+  "waypoints": [
+   {
+    "lat": 47.3892,
+    "lng": -120.8725,
+    "name": "Beverly Turnpike Trailhead (#1391)",
+    "note": "South/Teanaway-side approach via Beverly Creek and Fourth Creek trails toward Ingalls Creek, then bushwhack/scramble up to the SE side of the peak. Matches this route's own recorded GPS track almost exactly.",
+    "type": "Trailhead",
+    "directions": "From I-90 Exit 85 east of Cle Elum, follow SR 970 about 7 miles and turn left onto Teanaway Road. Keep right onto North Fork Teanaway Road, which becomes gravel FR 9737 at 29 Pines Campground. Continue just under 4 miles and, just before the Beverly Creek bridge, turn right onto FR 9737-112, a rough one-lane spur best with high clearance, for about 1.4 miles to its end at about 3,650 ft."
+   },
+   {
+    "lat": 47.448764,
+    "lng": -120.864064,
+    "elev": 4223,
+    "name": "Ingalls Creek crossing",
+    "type": "Water"
+   },
+   {
+    "lat": null,
+    "lng": null,
+    "elev": null,
+    "name": "East end of ridge",
+    "type": "Junction",
+    "distMi": null,
+    "elevFt": null,
+    "directions": "Take Beverly Turnpike Trail #1391 up Beverly Creek, bearing left at about 0.5 mile rather than onto the Bean Creek trail. At about 3.1 miles turn right onto Fourth Creek Trail #1226.1, cross Fourth Creek Pass (about 6,000 ft), and descend to Ingalls Creek at about 6 miles and ford it. Leave the Ingalls Creek Trail and climb north into the Porcupine Creek basin, working up beside the southeast ridge to its foot."
+   },
+   {
+    "lat": 47.4701186,
+    "lng": -120.8614768,
+    "elev": 8453,
+    "name": "Argonaut Peak summit (true/west summit)",
+    "type": "Summit",
+    "elevFt": 8453,
+    "directions": "Climb about eight pitches up the crest of the southeast ridge, blocky and lichen-covered low down, to the southeast spire. Make two single-rope rappels or one double-rope rappel into the notch beyond, then continue to the true summit on the west spire."
+   }
+  ]
+ },
+ "wa_mount_rainier_fuhrer_finger": {
+  "area": "wa_mount_rainier",
+  "waypoints": [
+   {
+    "lat": 46.78584,
+    "lng": -121.73554,
+    "elev": 5420,
+    "name": "Paradise",
+    "type": "Trailhead",
+    "distMi": 0,
+    "elevFt": 5420,
+    "directions": "From SR 7 at Elbe, take SR 706 east through Ashford to the Nisqually Entrance, then follow the park road past Longmire to Paradise at about 5,400 ft, roughly 19 miles from the entrance. Overnight parking is allowed only in designated areas, and from November the road above Longmire is gated every night. A park entrance pass is required, plus a climbing permit for glacier travel or above 10,000 ft."
+   },
+   {
+    "lat": 46.851731,
+    "lng": -121.760395,
+    "elev": 14406,
+    "name": "Columbia Crest",
+    "type": "Summit",
+    "distMi": null,
+    "elevFt": 14406,
+    "directions": "Take the Skyline Trail about a mile to Glacier Vista, drop west off the moraine and cross the Nisqually Glacier roped, then climb the boulder gully on the far side and Wapowety Cleaver to camp near 9,000 to 9,500 ft. Cross the Wilson Glacier to the wide couloir with the hourglass, climb it, bear left onto the upper Nisqually above 11,000 ft to the saddle between Point Success and the crater rim, then go up onto the rim to Columbia Crest."
+   }
+  ]
+ },
+ "wa_mount_rainier_ptarmigan_ridge": {
+  "area": "wa_mount_rainier",
+  "waypoints": [
+   {
+    "lat": 46.9022,
+    "lng": -121.6442,
+    "elev": 4400,
+    "name": "White River Campground",
+    "type": "Trailhead",
+    "elevFt": 4400,
+    "directions": "From Enumclaw, drive SR 410 east to the White River Entrance of the park and turn west onto the Sunrise Road. After about 5 miles, cross the White River and turn left onto the White River Campground road, following it to its end. Park in the day-hiking and climbing lot at about 4,400 ft; the Glacier Basin Trail starts in the campground's D loop. The road is open in summer only, and a park entrance pass is required."
+   },
+   {
+    "lat": 46.86298,
+    "lng": -121.77486,
+    "elev": 14112,
+    "name": "Liberty Cap",
+    "type": "Summit",
+    "elevFt": 14112
+   },
+   {
+    "lat": 46.87017,
+    "lng": -121.73333,
+    "elev": 9440,
+    "name": "Camp Schurman",
+    "note": "Descent camp on the Emmons-Winthrop, passed on the way down from the summit, not on the approach.",
+    "type": "Campsite",
+    "distMi": null,
+    "elevFt": 9440
+   }
+  ],
+  "fa": "Wolf Bauer and Jack Hossack, September 8, 1935 (with later variations climbed in 1966 and by Fred Beckey's parties)"
+ },
+ "wa_mount_adams_adams_glacier": {
+  "area": "wa_mount_adams",
+  "waypoints": [
+   {
+    "lat": 46.2885,
+    "lng": -121.5525,
+    "elev": 4600,
+    "name": "Killen Creek Trailhead",
+    "type": "Trailhead",
+    "distMi": 0,
+    "directions": "Reached on Forest Roads 23, 21 and 2329 from the Randle or Trout Lake side. FR-2329 holds snow well into early summer, so check the road before committing — parties blocked short of the trailhead have had to walk or bushwhack an extra mile or more of road and forest to reach it."
+   },
+   {
+    "lat": 46.251,
+    "lng": -121.5327,
+    "elev": 6100,
+    "name": "High Camp Trail Junction",
+    "type": "Junction",
+    "distMi": 3.1,
+    "directions": "Follow Killen Creek Trail #113 up through subalpine forest and meadow for about three miles to the Pacific Crest Trail, and cross straight over onto the High Camp Trail. Killen Creek, crossed low on the trail, is the last dependable running water; everything above is melted snow. The tread thins out above treeline and is easy to lose in the dark or a whiteout, so note landmarks on the way up or carry a track."
+   },
+   {
+    "lat": null,
+    "lng": null,
+    "elev": 7000,
+    "name": "High Camp",
+    "type": "Campsite",
+    "distMi": 4.1,
+    "directions": "Another mile on the High Camp Trail ends it at the edge of the Adams Glacier's lateral moraine. Sheltered bivy sites sit slightly higher, in a shallow snow gully just left of the moraine, and more camping is scattered across the benches above that."
+   },
+   {
+    "lat": null,
+    "lng": null,
+    "elev": 7000,
+    "name": "Adams Glacier Base",
+    "type": "Junction",
+    "distMi": 7,
+    "directions": "A patchy path runs past the upper camping area and up moraine and snow to the glacier toe, where parties rope up. Judge the timing generously — the volcano's scale flattens distance out and this leg routinely runs two hours. The point of the very early start is to be through the icefall before the sun starts working on it."
+   },
+   {
+    "lat": 46.2024,
+    "lng": -121.4909,
+    "elev": 12276,
+    "name": "Mount Adams Summit",
+    "type": "Summit",
+    "distMi": 11.5,
+    "directions": "The usual line takes the right-hand side of the glacier for roughly the first two-thirds, threading ice steps and serac lanes, then cuts back left high up onto the unbroken snow of the summit plateau. Which side of the upper icefall goes changes from year to year, and the left-hand option has been found far steeper than the grade suggests — sustained 55 to 65 degrees rather than moderate — so look at it in daylight from below before committing. The crossing beneath the ice cliffs is the stretch to move through fastest, on thin bridges and with backtracking common. Above the icefall the angle eases and two or three false summits stand between you and the true one, so keep navigating rather than trusting the first high point."
+   }
+  ]
+ },
+ "wa_mount_baker_coleman_headwall": {
+  "area": "wa_mount_baker",
+  "waypoints": [
+   {
+    "lat": 48.80201,
+    "lng": -121.89597,
+    "elev": 3700,
+    "name": "Heliotrope Ridge Trailhead",
+    "type": "Trailhead",
+    "distMi": 0,
+    "directions": "The trailhead sits at roughly 3,400 to 3,700 ft on Glacier Creek Road 39. The road washed out in December 2025 and reopened to vehicles in August 2026 after repairs; it has washed out before, so check its status before committing."
+   },
+   {
+    "lat": 48.7893,
+    "lng": -121.86777,
+    "elev": 5900,
+    "name": "Heliotrope Ridge Camp",
+    "type": "Campsite",
+    "distMi": 3,
+    "directions": "Trail 677 climbs through old-growth forest and flower-filled avalanche chutes, with a couple of unbridged creek crossings that are awkward early season or after rain. At about 2.25 miles the maintained trail forks; the left branch goes to the Coleman Glacier overlook, so take the right climbers' path that drops toward the moraine. Past the former Kulshan Cabin site near 4,800 to 5,000 ft, the last reliable running water, the path climbs steeply up the crest of the Hogsback lateral moraine to the usual camps between about 6,500 and 7,200 ft, roughly 3 to 3.5 miles and 3,000 ft above the car. Above camp there is no water except what you melt."
+   },
+   {
+    "lat": 48.7792,
+    "lng": -121.8312,
+    "elev": 8500,
+    "name": "Coleman Headwall Base",
+    "type": "Hazard",
+    "distMi": null,
+    "directions": "Rope up for glacier travel and cross the broken lower Coleman, generally trending up toward 8,000 ft to meet the North Ridge tracks before dropping back down and cutting under the Roman Nose to reach the base near 8,500 ft. This crossing is a real route-finding crux that changes year to year, with big crevasses to weave around, questionable snow bridges, and sometimes a committing, barely-reversible jump or a short vertical step to get established. Leave camp in the dark (starts between 11 p.m. and 4:30 a.m. are typical) so you are past the exposed crossing and the lower face before the sun brings rock and ice down off the headwall and the Black Buttes."
+   },
+   {
+    "lat": 48.776797,
+    "lng": -121.814467,
+    "elev": 10781,
+    "name": "Mount Baker Summit",
+    "type": "Summit",
+    "distMi": 6,
+    "directions": "Roughly a dozen pitches of sustained 45 to 50 degree neve and ice lead up the face: hard, dirty ice on leftward-trending traverses low down with rockfall exposure from a choss band above, then short steeper steps and an 800 ft band of brittle, plated 60 to 80 degree ice that takes screws well despite looking suspect. A bergschrund near 10,000 ft is the other crux and its lip often forces a short, occasionally overhanging step, sometimes belayed or lowered across off a screw or picket. Above it the angle relents to moderate snow and then an easy slope onto the summit plateau; 8 to 12 hours camp-to-summit is typical."
+   }
+  ]
+ },
+ "wa_mount_baker_park_glacier_headwall": {
+  "area": "wa_mount_baker",
+  "waypoints": [
+   {
+    "lat": 48.8463,
+    "lng": -121.6927,
+    "elev": 5140,
+    "name": "Artist Point Trailhead (Chain Lakes/Ptarmigan Ridge Trail)",
+    "note": "Park Glacier Headwall approaches from Artist Point on the opposite side via Ptarmigan Ridge, not from Glacier Creek Rd/Heliotrope Ridge.",
+    "type": "Trailhead",
+    "elevFt": 5140,
+    "directions": "From I-5 Exit 255 in Bellingham, follow the Mount Baker Highway (WA-542) east through Glacier and past the Heather Meadows ski area to the road end at Artist Point, about 58 miles. The final stretch is usually snow-free only from about mid-July into early fall. A Northwest Forest Pass is required to park."
+   },
+   {
+    "lat": 48.776797,
+    "lng": -121.814467,
+    "elev": 10781,
+    "name": "Grant Peak (Mount Baker summit)",
+    "type": "Summit",
+    "elevFt": 10781,
+    "directions": "Follow the Chain Lakes Trail about a mile to the Ptarmigan Ridge junction, then the Ptarmigan Ridge Trail west along the crest past Coleman Pinnacle and Camp Kiser to the Portals, where most parties camp. Drop onto the Rainbow Glacier, cross onto the Park Glacier, and climb the headwall beneath the Cockscomb, crossing the bergschrund near 9,500 ft, to the summit plateau and Grant Peak."
+   }
+  ]
+ },
+ "wa_snow_creek_wall_satellite": {
+  "area": "wa_snow_creek_wall",
+  "waypoints": null
+ },
+ "wa_white_slabs": {
+  "area": "wa_snow_creek_wall",
+  "waypoints": null
+ },
+ "wa_snow_creek_wall_galaxy": {
+  "area": "wa_snow_creek_wall",
+  "waypoints": null
+ },
+ "wa_snow_creek_wall_remorse": {
+  "area": "wa_snow_creek_wall",
+  "waypoints": null
+ },
+ "wa_hyperspace": {
+  "area": "wa_snow_creek_wall",
+  "waypoints": null
+ }
+}

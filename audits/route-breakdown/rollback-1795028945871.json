@@ -1,0 +1,114 @@
+{
+ "wa_concord_tower_north_face": {
+  "area": "wa_concord_tower",
+  "road": {
+   "name": "North Cascades Highway (SR-20)",
+   "status": "Paved",
+   "driveNote": "Blue Lake Trailhead (~5,400 ft) is 0.5 mile past milepost 162 on the south side of SR-20, about 31 miles west of Winthrop and roughly 1 mile west of Washington Pass Overlook (5,477 ft); vault toilet, ~20 parking spots, no potable water, parking fills early on weekends.",
+   "seasonalGate": "Gated and closed in winter; typically closes early-to-mid December and reopens mid-April to May depending on snowpack (closed Dec. 4 in the 2025 season)."
+  }
+ },
+ "wa_burgundy_spire_north_face": {
+  "area": "wa_burgundy_spire",
+  "waypoints": [
+   {
+    "lat": 48.5514,
+    "lng": -120.6309,
+    "elev": 4310,
+    "name": "SR-20 Pullout (Burgundy Col climbers' trail)",
+    "note": "",
+    "type": "Trailhead",
+    "elevFt": 4310,
+    "directions": "Park at the pullout on SR-20 near milepost 166, about three and three-quarters miles east of Washington Pass and directly across the valley from Silver Star Mountain. There's no numbered Forest Service trail here — this pullout is simply the start of an established but unofficial boot path used by climbers heading for Burgundy Col."
+   },
+   {
+    "lat": 48.554232,
+    "lng": -120.601804,
+    "elev": 6400,
+    "name": "Burgundy Creek bench camp — west side",
+    "type": "Campsite",
+    "distMi": 1.5
+   },
+   {
+    "lat": 48.55464,
+    "lng": -120.5924,
+    "name": "Burgundy Col",
+    "type": "Junction",
+    "distMi": null,
+    "elevFt": null,
+    "directions": "Scramble down the loose talus embankment past the cairns into forest, pass the wilderness trail-register box, and cross Early Winters Creek on logs at about 4,080 ft — the logjam shifts year to year, so look up and down stream for the best one, and expect a cold, pushy ford in early season. The path winds through forest for about a quarter mile, then turns straight uphill between two small creeks and climbs relentlessly to the broad flat bench at ~6,460 ft (last reliable water); above the bench it climbs and traverses loose scree gullies and makes a rising traverse right beneath the cliffs on heather-covered slabs, with a final cairned stretch of very unstable scree over slab into the notch — do not take the obvious direct gully that appears to lead straight to the col, and travel tightly grouped, as this scree kicks rock onto anyone below."
+   },
+   {
+    "lat": 48.55186,
+    "lng": -120.59014,
+    "elev": 8400,
+    "name": "Burgundy Spire Summit",
+    "type": "Summit",
+    "elevFt": 8400,
+    "directions": "The route starts essentially straight off the col: the first pitch is directly above the notch and visually obvious, with no traverse along the base. Six to seven pitches lead up — 4th class with occasional mid-5th moves to a broad sandy ledge, along the ledge system toward the wide bowl, then the bowl's right side on loose exfoliating flakes to a tat-slung horn (the 5.8 crux, more rock quality than difficulty), past the horn to a hand crack in a flare and exposed 5.7–5.8 face climbing, then airy ridge with hand cracks, sharp arête moves and mandatory downclimbing to the heavily slung summit boulder."
+   }
+  ]
+ },
+ "wa_black_peak_northeast_ridge": {
+  "area": "wa_black_peak",
+  "waypoints": [
+   {
+    "lat": 48.51622,
+    "lng": -120.7354,
+    "elev": 4855,
+    "name": "Rainy Pass / Lake Ann-Maple Pass Trailhead",
+    "type": "Trailhead",
+    "distMi": null,
+    "elevFt": 4855,
+    "directions": "From Marblemount or Winthrop, drive SR-20 to the signed Rainy Pass Picnic Area trailhead at milepost 157, on the south side of the highway at Rainy Pass. A Northwest Forest Pass, interagency pass or day-use fee is required to park; overflow parking is along the highway."
+   },
+   {
+    "lat": 48.519444,
+    "lng": -120.733889,
+    "elev": 4860,
+    "name": "Rainy Pass trailhead lots, and the quarter-mile camping closures",
+    "type": "Campsite"
+   },
+   {
+    "lat": 48.5093,
+    "lng": -120.76288,
+    "elev": 6094,
+    "name": "Heather Pass",
+    "note": "Leave the maintained trail here for the unmarked climbers' path to Lewis and Wing Lakes.",
+    "type": "Junction",
+    "distMi": null,
+    "directions": "Take the Lake Ann trail and keep right at the signed fork toward Heather Pass, climbing through meadows to the pass."
+   },
+   {
+    "lat": 48.5141,
+    "lng": -120.78237,
+    "elev": 5705,
+    "name": "Lewis Lake",
+    "note": "A few tent sites in the timber on the north shore.",
+    "type": "Campsite",
+    "distMi": null,
+    "directions": "From Heather Pass follow the unmarked, cairned climbers' path west across two loose talus fields, then drop to Lewis Lake. The cairns are easy to lose in fog or early-season snow."
+   },
+   {
+    "lat": 48.5185,
+    "lng": -120.807,
+    "elev": 6923,
+    "name": "Wing Lake camp",
+    "note": "The usual base camp for the Northeast Ridge.",
+    "type": "Campsite",
+    "distMi": null,
+    "directions": "From Lewis Lake climb about 1,200 ft of meadow and talus west to Wing Lake."
+   },
+   {
+    "lat": 48.523611,
+    "lng": -120.816193,
+    "elev": 8970,
+    "name": "Black Peak summit",
+    "type": "Summit",
+    "distMi": null,
+    "elevFt": 8970,
+    "directions": "From Wing Lake, climb snow toward the low notch in the Northeast Ridge, following the moraine wide right before traversing back left, then climb the ridge, about five pitches of loose low-5th terrain, to the summit."
+   }
+  ]
+ }
+}
