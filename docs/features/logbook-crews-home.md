@@ -138,6 +138,12 @@ Three top-level `tab` values in `ClimbMatch.jsx` (`tab==="today"`, `tab==="crew"
   `crew:<id>` first, the old scope deleted second, and a saved plan files the crew stub. A saved crew plan has *Send to the crew chat*
   (`FloatPlan`'s `onSendToCrew`, wired in both `FloatPlans` and the crew `SafetyTab`), which posts the plan text through `sendCrewMsg` — the
   climber's own send, so the Privacy Policy's "stays on your phone until you send it" still holds; `crews.float_plan` is unchanged.
+  **Form and list, after the walkthrough** (2026-11-18): the three fields Save needs (route, hard return, emergency contact) say *Required*, and an
+  incomplete form says what is *Still needed* under an aria-disabled Save. The profile emergency contact (0237) is filled into an EMPTY contact field
+  once the saved plan has loaded (raw setter, so it is not an edit). `crewFloatFill` turns the agreed day (else the first proposed one) plus a
+  clock-time meet-up into the picker's own value. In `FloatPlans`: list times go through `fpWhen`; a new plan is not saved until its first edit,
+  and never-edited empty ones are swept on load; Delete (button or swipe) shows *Deleted … Undo* for 8 s, and Undo re-files a saved crew plan; a
+  failed delete says so; a crew-scoped plan whose crew is gone reads *Crew ended* and offers *Keep as a trip plan* (re-scoped to `trip:`).
   **Your own filing** (0450, 2026-11-18; replaces the 2026-11-14 organizer-only stamp): saving a crew plan (`onFiled` →
   App's `fileCrewFloatPlan(cid, form)`) writes YOUR row in `crew_float_filings` through `setMyFloatFiling` (lib/db.js) — the
   date filed and the crew's agreed return day, never the plan or a contact — for every confirmed member, the organizer
