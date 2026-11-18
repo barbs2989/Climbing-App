@@ -90,6 +90,16 @@ const app = readAppFile(path.join(ROOT, "ClimbMatch.jsx")); // the Partners tab 
 const pageLost = PAGE_SIDE.filter(([re]) => !re.test(rd) && !re.test(app)).map(([, n]) => n);
 if (pageLost.length) fail(`the page no longer matches the sheet: ${pageLost.join("; ")}`);
 else ok(`all ${PAGE_SIDE.length} page-side surfaces name, open or hide what the sheet offers`);
+// ADD-A-CLIMB asks a field only where the sheet offers it for that TYPE (owner, 2026-11-18): its rock list is shared by
+// trad, sport and top-rope, so without the scope a sport climb was asked its first free and first winter ascent.
+{
+  const ar = readAppFile(path.join(ROOT, "lib", "AddRoute.jsx"));
+  if (!/const sf=k=>\{[^}]*return !FIELD_SCOPE\[sk\]\|\|fieldScope\(sk,_sfScope\);\}/.test(ar) || !/const _sfScope=scopeCtx\(\{pitches:[^}]*\},disc==="rock"\?sub:disc\)/.test(ar))
+    fail("add-a-climb's sf() no longer gates on lib/fieldScope.js per climb TYPE — a sport climb is asked its first winter ascent again");
+  else ok("add-a-climb asks only what the edit sheet offers for the climb's type (sf() gates on fieldScope)");
+  for (const [k, cat] of [["ffa", "sport"], ["fwa", "trad"], ["ropeNote", "toprope"], ["protRating", "toprope"]])
+    if (fieldScope(k, scopeCtx({ pitches: 2 }, cat))) fail(`${k} is in scope for ${cat}, so add-a-climb asks it again`);
+}
 // The header cells and the trip-shape row lean on these rules.
 for (const cat of CRAG) for (const k of ["dist", "gain", "outingShape"]) if (fieldScope(k, scopeCtx({ pitches: 3 }, cat))) fail(`${k} is offered on ${cat}: its header cell / trip-shape row is hidden there as uneditable`);
 for (const cat of MOUNTAIN) if (!fieldScope("outingShape", scopeCtx({ pitches: 3 }, cat))) fail(`outingShape is not offered on ${cat}, but its Plan tab draws a TRIP SHAPE row with an Add button`);
@@ -129,6 +139,14 @@ function pageFacts(scope) {
   }
   for (const cat of MOUNTAIN) if (!on("waypoints", cat, 3, CRAG_AREA)) out.push(`waypoints is not offered on ${cat} — the Plan tab's WAYPOINTS list renders there`);
   if (on("ropeNote", "bouldering", 1)) out.push("ropeNote is offered on a boulder — there is no rope");
+  // OVERLAPPING FIELDS merged into one editor (owner, 2026-11-18): the old field only where a value is stored.
+  const MERGED = [["proTips", "beta", "trad", { proTips: ["Bring a 70m"] }], ["bestSeason", "seasonalGuidance", "alpine", { bestSeason: "July to September" }],
+    ["rappelCountNote", "rappelDetail", "alpine", { rappelCountNote: "3 single-rope raps" }], ["condWindow", "seasonalGuidance", "alpine", { condWindow: "Late June" }]];
+  for (const [k, into, cat, has] of MERGED) {
+    if (on(k, cat, 3)) out.push(`${k} is offered on a ${cat} route that stores none — it was merged into ${into}, its one editor`);
+    if (!on(k, cat, 3, has)) out.push(`${k} is not offered on a ${cat} route that STORES one — the page still shows it, so it must stay correctable`);
+    if (!on(into, cat, 3)) out.push(`${into} is not offered on ${cat} — it is where ${k} was merged`);
+  }
   return out;
 }
 const facts = pageFacts(FIELD_SCOPE);
@@ -145,6 +163,8 @@ const INJECT = [
   ["Hazards dropped from bouldering", { haz: (c) => c.cat !== "bouldering" }],
   ["Crash pads offered on sport", { pads: (c) => c.cat === "bouldering" || c.cat === "sport" }],
   ["Route waypoints offered on every crag again", { waypoints: () => true }],
+  ["Pro tips offered beside Beta again", { proTips: () => true }],
+  ["A stored when-to-go note left uneditable", { bestSeason: () => false }],
   ["Route waypoints dropped from crags with no editable crag", { waypoints: (c) => MOUNTAIN.includes(c.cat) }],
 ];
 const missed = INJECT.filter(([, patch]) => pageFacts({ ...FIELD_SCOPE, ...patch }).length === 0).map(([n]) => n);
