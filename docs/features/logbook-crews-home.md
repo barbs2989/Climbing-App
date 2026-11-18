@@ -268,6 +268,8 @@ Notes: `docs/guards/social-and-crews.md`, `contributions-and-logbook.md`, `hones
 
 ## 7. Last significant change
 
+2026-11-18 (0451): `crew_alignment()` returns no per-answer count (risk levels, the four flags) until two confirmed members have answered — one answer would show whose it is. Who has answered (`done_ids`) still shows. Ready up says *Risk tolerance: shows once 2 of you have answered*, and the Safety screen's matrix says the counts show once 2 have answered. Known limit: in a crew of exactly two, once both answer, each can infer the other's answers from their own.
+
 2026-11-14 (#3385): *Start a crew* on the climb page (beside Save) opens `CreateCrewSheet` for that climb; *Who can join?* is asked once at create (*Just people I invite*, the default, makes it private; *Let others ask to join* lists it); Meet-up offers *Meet at <access point>* (`route.road.name`) in one tap; the safety check says *Start with 5 private questions* once instead of five times; a crew invite on Requests shows the mountain, grade, day and how many are in; the Your crews rail names the mountain under each crew; a crew you just joined sorts first.
 
 2026-11-14 (#3381, 0448): any confirmed member proposes days on the Day sheet's calendar (`crew_propose_day`, which also says the proposer can make it); a day is taken back by whoever proposed it or by the organiser (`crew_unpropose_day`, which clears its acks and its lock; `crews.date_proposers`). Members still cannot UPDATE the crew row. `crews`, `crew_members` and `crew_day_acks` are on Realtime, and `useMyCrews` is a live query over them, so a crewmate's change reaches an open Crews tab without a reload.
