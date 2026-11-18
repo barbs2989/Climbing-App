@@ -13,14 +13,15 @@
   nothing), Onsight points on sport/trad/bouldering, Peaks on the three peak types.
 - **Row height**: ~42px on the website (1024px+, tighter line heights), 56px on a phone (competitor review batch A, item 8, owner 2026-11-04; Mountain Project's tables run ~40px).
 - **The table**: a header row (`#` · Climber · the board's unit), one row per climber with the rank, avatar, name,
-  location and "N of M backed", the value in a fixed right-hand column, and a ⚑ Report column on real rows.
+  location and "N of M backed", and the value in a fixed right-hand column. There is no ⚑ Report column (owner
+  2026-11-18: the board should look as clean signed in as signed out); you report a climber from their profile.
   Rows alternate shading; yours is tinted with a blue edge. Only climbers with a score above 0 on that board are
   ranked; equal scores share a rank (1, 2, 2, 4). The list shows 15 at a time up to the **top 100**, and your own
   row is pinned under it whenever the visible part does not include you. *You're #N of M* sits above the table, or
   *You're not ranked on this board yet* when nothing you logged counts toward it.
 - **Backed climbs only** (signed in, log-counted boards): ranks on partner-confirmed / photo / GPS-backed climbs only.
 - **The climbs behind a number (0357)**: on every board counted from logs (not Vouched, Contributions
-  or Top climbs), a real row's value is a button that opens `RankBreakdown`, *How N points add up*: a sentence on
+  or Top climbs), a real row's value is a button, drawn as plain text like the guest board's numbers, that opens `RankBreakdown`, *How N points add up*: a sentence on
   how that board scores, then one line per counted climb — name, grade, date, tick, area, its backing tier
   (Partner confirmed ×1 · Photo or GPS ×0.75 · Self-logged ×0.5) on the points boards, and what it added. Send
   points lists each route's best log; Days lists days with their climbs; Peaks lists summits. It reads
@@ -95,7 +96,7 @@ Every number for a real climber comes from `leaderboard()` on the server; the cl
 ## 5. Connections
 - **Logbook**: the log form's tick types (`tickTypesFor`) decide what a board can see, and each discipline offers only its own words (2026-10-25 audit). Alpine: Summit, Turned around, Lead, Follow, Hung, Fell. Ice and mixed: those plus Top-rope. Top rope: Top-rope, Hung, Attempt. Aid: Lead, Follow, Top-rope, Hung, Fell, Attempt. Sport and trad keep the full roped list (Onsight, Flash, Redpoint included). A summit and a style on one climb: pick the style, then tap *Also reached the summit*. The client reads both through `summitedLog()` in `ClimbMatchCore.jsx`.
 - **Profile**: tapping a row opens `FullProfile`; friend and message actions live there, not on the row.
-- **Moderation**: ⚑ opens the report sheet (`setReportUser`).
+- **Moderation**: a row opens the climber's profile, whose *Report* opens the report sheet (`setReportUser`).
 - **No Trusted board**: it went with the trust score (2026-10-21). 0335 dropped `leaderboard()`'s `trust` column with `compute_trust_score`.
 
 ## 6. Guards
