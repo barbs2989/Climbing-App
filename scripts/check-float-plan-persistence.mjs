@@ -179,7 +179,10 @@ else fail("RouteDetail renders its own <FloatPlan> again, or no longer links to 
 const coreBare = readCoreSource()
   .replace(/\/\*[\s\S]*?\*\//g, " ").replace(/^[ \t]*\/\/.*$/gm, " ");
 
-const crewTag = coreBare.match(/<FloatPlan\b[^>]*>/);
+/* THE CREW CARD DRAWS ONE TOO (Step 3B, 2026-11-18), and the lib sources are concatenated, so the FIRST
+   <FloatPlan> in coreBare may be the card's. SafetyTab's is the one AFTER its view==="float" branch. */
+const sfGate = coreBare.indexOf('view==="float"');
+const crewTag = sfGate >= 0 ? coreBare.slice(sfGate).match(/<FloatPlan\b[^>]*>/) : null;
 if (!crewTag) fail("ANCHOR LOST: SafetyTab no longer renders <FloatPlan …>");
 else if (/\bplan=\{/.test(crewTag[0]) && /\bonPlan=\{/.test(crewTag[0]))
   ok("SafetyTab passes BOTH plan and onPlan");
@@ -199,6 +202,17 @@ const crewSeed = coreBare.match(/\[floatPlan,setFloatPlan\]\s*=\s*useState\(([^;
 if (!crewSeed) fail("could not read the crew declaration back");
 else if (/floatPlanState\(/.test(crewSeed[1])) ok("the crew site seeds from floatPlanState()");
 else fail(`the crew site does not seed from floatPlanState() — the eleven-key shape is duplicated: ${crewSeed[1].trim()}`);
+
+// ---- 8b. THE CREW CARD'S INLINE PLAN (Step 3B). It is UNCONTROLLED on purpose — the card's sheet unmounts it on
+// close — so what keeps the eleven fields is the device copy: it MUST pass scope (and who, the key the copy is
+// filed under). Without scope FloatPlan saves nothing and a closed sheet loses the form, the defect this guard is for.
+{
+  const ccBare = fs.readFileSync(path.join(ROOT, "lib", "CrewCard.jsx"), "utf8").replace(/\/\*[\s\S]*?\*\//g, " ").replace(/^[ \t]*\/\/.*$/gm, " ");
+  const ccTag = ccBare.match(/<FloatPlan\b[^>]*>/);
+  if (!ccTag) ok("the crew card draws no float plan of its own");
+  else if (/\bscope=\{/.test(ccTag[0]) && /\bwho=\{/.test(ccTag[0])) ok("the crew card's inline float plan passes scope AND who, so a closed sheet keeps it on the device");
+  else fail(`the crew card's inline <FloatPlan> does not pass scope and who — closing the sheet loses the form: ${ccTag[0]}`);
+}
 
 // ---- 9. THE SAME DEFECT ONE SUB-TAB OVER: <Calculator/>.
 // The planner's own inputs — fitness, pack weight, party size, departure — lived in local state
