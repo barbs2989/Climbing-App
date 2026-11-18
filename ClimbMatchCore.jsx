@@ -1330,7 +1330,7 @@ function compatWhy(a,b){var _av=k=>{var o=(typeof AVAIL_OPTS!=="undefined"?AVAIL
    earlier attempt returned a Number OBJECT carrying this as a property, which would have
    been rejected as a React child and broken `===` at every call site. Separate function
    instead, so callers that want to say "based on limited info" can, and nothing else moves. */
-function compatUnknown(a,b){a=a||{};b=b||{};var n=0;var ad=Array.isArray(a.disciplines)?a.disciplines:[],bd=Array.isArray(b.disciplines)?b.disciplines:[];if(!ad.length||!bd.length)n++;var ao=Array.isArray(a.objectiveIds)?a.objectiveIds:[],bo=Array.isArray(b.objectiveIds)?b.objectiveIds:[];/* WHERE YOU CLIMB is one signal with two sources: mountain objectives OR listed areas (0300). A crag climber with listed areas and no alpine objective is not "unknown". */var aa=Array.isArray(a.partnerAreaPaths)?a.partnerAreaPaths:[],ba=Array.isArray(b.partnerAreaPaths)?b.partnerAreaPaths:[];if((!ao.length&&!aa.length)||(!bo.length&&!ba.length))n++;if(!(Number(a.hikingSpeedFtHr)||0)||!(Number(b.hikingSpeedFtHr)||0))n++;if(!availOf(a).length||!availOf(b).length)n++;return n;}
+function compatUnknown(a,b){a=a||{};b=b||{};var n=0;var ad=Array.isArray(a.disciplines)?a.disciplines:[],bd=Array.isArray(b.disciplines)?b.disciplines:[];if(!ad.length||!bd.length)n++;var ao=Array.isArray(a.objectiveIds)?a.objectiveIds:[],bo=Array.isArray(b.objectiveIds)?b.objectiveIds:[];/* WHERE YOU CLIMB is one signal with two sources: mountain objectives OR listed areas (0300). A crag climber with listed areas and no alpine objective is not "unknown". */var aa=Array.isArray(a.partnerAreaPaths)?a.partnerAreaPaths:[],ba=Array.isArray(b.partnerAreaPaths)?b.partnerAreaPaths:[];if((!ao.length&&!aa.length)||(!bo.length&&!ba.length))n++;/* PACE THROUGH paceOf(), as compatParts() scores it: a signed-in climber's own pace lives in MY_PACE, not on ME, so reading the field counted every signed-in viewer's pace as missing -- "based on limited info" on a card whose every line had an answer, and one unknown nearer to hiding the % (browser pass 2026-11-18). */if(!paceOf(a)||!paceOf(b))n++;if(!availOf(a).length||!availOf(b).length)n++;return n;}
 function scarfHrs(distKm,gainM,lossM,fit,packKg){distKm=+distKm||0;gainM=+gainM||0;lossM=+lossM||0;const fm={beginner:{sx:3.5,sy:400,sz:600},intermediate:{sx:4.8,sy:600,sz:800},advanced:{sx:5.5,sy:750,sz:900},expert:{sx:6.5,sy:900,sz:1000}};const f=fm[fit]||fm.intermediate;const pp=packKg>15?0.85:packKg>8?0.92:1;return(distKm/(f.sx*pp))+(gainM/(f.sy*pp))+(lossM/(f.sz*pp));}
 /* What parties ACTUALLY took, from their own logs.
  *
@@ -1728,7 +1728,8 @@ function _autosize(el){
   if(!el||el.dataset.noAutogrow==="1")return;
   const max=Math.max(160,Math.round((window.innerHeight||800)*0.5));
   el.style.height="auto";
-  const h=Math.min(el.scrollHeight,max);
+  /* + the border: scrollHeight leaves it out, so every grown box was 2px short of its text and clipped it */
+  const h=Math.min(el.scrollHeight+el.offsetHeight-el.clientHeight,max);
   el.style.height=h+"px";
   el.style.overflowY=el.scrollHeight>max?"auto":"hidden";
 }

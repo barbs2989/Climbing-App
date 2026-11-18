@@ -190,7 +190,7 @@ export default function ItineraryView({route,activity,onSeeReports,onSeeSeason,s
       </div>;
   const seasonLong=route.season&&peakish&&seasonShort(route.season)!==seasonTidy(route.season)?route.season:null;
   const whenToGo=route.bestSeason&&!route.seasonalGuidance&&peakish?route.bestSeason:null;
-  const caveat=<div style={{fontSize:11.5,color:C.textMuted,lineHeight:1.5,marginTop:2}}>Estimates for an average party. Adjust for your fitness and conditions, and check the latest <b style={{color:C.textSub}}>Reports</b> and <b style={{color:C.textSub}}>Safety</b> tabs.{flagged?<span style={{color:C.amber}}>{" Climbers have flagged "+flagged+" hazard"+(flagged!==1?"s":"")+" not in the official info. Check Safety before you commit."}</span>:null}</div>;
+  const caveat=flagged?<div style={{fontSize:11.5,color:C.amber,lineHeight:1.5,marginTop:2}}>{"Climbers have flagged "+flagged+" hazard"+(flagged!==1?"s":"")+" not in the official info. Check Safety."}</div>:null;
   return <div>
     <SL>Trip plan</SL>
     {showSummary?<div style={{...CARD,padding:"12px 13px",marginBottom:ROUTE_GAP}}>
@@ -198,7 +198,6 @@ export default function ItineraryView({route,activity,onSeeReports,onSeeSeason,s
         <span style={{fontSize:20,fontWeight:800,color:C.text,lineHeight:1.1}}>{dayN?dayN+(dayN===1?" day":" days"):"Suggested plan"}</span>
         <span style={{fontSize:11.5,color:C.textMuted}}>{dayN===1?"car to car":dayN>1?"suggested itinerary":"how parties usually do it"}</span>
       </div>
-      <div style={{fontSize:11.5,color:C.textMuted,lineHeight:1.45,marginBottom:8}}>Based on how parties commonly climb it. Faster or slower parties, other camps or another order are all normal.</div>
       {it&&it.totalNote?<div style={{fontSize:12.5,color:C.textSub,lineHeight:1.5,marginBottom:10}}>{it.totalNote}</div>:null}
       {days.length&&(totG||totL||totMi||totH)?<div style={{display:"flex",gap:5,marginBottom:10}}>
         <Tile big label="Gain" value={totG?uElev(totG):null} color={C.green}/>
@@ -233,7 +232,7 @@ export default function ItineraryView({route,activity,onSeeReports,onSeeSeason,s
       {!showBuilder?<div>
         {hasMine?<div style={{...CARD,padding:"4px 13px",marginBottom:ROUTE_GAP}}>
           {(myItin&&myItin.days||[]).map(function(d: StoredDay,i: number){const last=i===(myItin.days as StoredDay[]).length-1;const bits=[has(d.gainFt)&&d.gainFt?"+"+uElev(d.gainFt as number):null,fmtHrs(d.hours),has(d.miles)&&d.miles?uDistMi(d.miles as number):null].filter(Boolean).join(" · ");return <div key={i} style={{display:"flex",alignItems:"center",gap:9,padding:"9px 0",borderBottom:last?"none":"1px solid "+C.border}}><DayTag n={d.n||i+1}/><div style={{minWidth:0,flex:1}}><div style={{fontSize:13,fontWeight:700,lineHeight:1.3}}>{d.title||"Untitled day"}</div>{bits?<div style={{fontSize:11.5,color:C.textMuted,marginTop:1}}>{bits}</div>:null}</div></div>;})}
-        </div>:<div style={{fontSize:12,color:C.textMuted,lineHeight:1.45,marginBottom:9}}>Build your own plan for this route: start from a suggested one or from scratch, then share it with your crew.</div>}
+        </div>:null}
         <div style={{display:"flex",gap:7,flexWrap:"wrap"}}>
           <button onClick={function(){startBuilder(hasMine?myItin:null);}} style={{...BTN,background:hasMine?C.card:C.blueBg,color:hasMine?C.blue:C.onSolid,border:"1px solid "+(hasMine?C.border:C.blueDim)}}>{hasMine?"Edit my plan":"+ Plan your own itinerary"}</button>
           {hasMine?<button onClick={function(){shareOrCopy(route.name+" — plan",itinShareText(myItin,route),notify);}} aria-label="Share my plan" style={{...BTN,background:C.card,color:C.blue,border:"1px solid "+C.border}}>{"Share…"}</button>:null}
