@@ -81,6 +81,16 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     A climb longer than `SUMMIT_DAY_MAX_H` (20 hr, a traverse) gets no clock, and its days are counted
     from the plan's hours. Injection: `inject-return-leg-day-cases.mjs` 25/25, its two banner cases
     repointed at the new copy.
+  - **ACCURACY, measured 2026-11-18** (`audits/2026-11-18-multiday-estimate-accuracy.json`): on 15 of a
+    28-route sample with reported leg times, the summit-day view's time up from camp was 0.98x reported
+    where the summit day ends at the car and 1.02x where later days follow; the whole summit day ran
+    1.14-1.17x (long, the safe side). Reading a car-ending summit leg as ONE WAY instead of the camp
+    rule's round trip scored worse (1.67x), so `CAMP_LEG_MATCH` stays: the stored leg's meaning varies
+    by row, and the misses are row data (Goode NE Buttress up 5.3 hr vs 10.5 reported, Dark Peak 5.3 vs
+    8, Daniel's summit day 15 vs 7, Shasta's Avalanche Gulch 2.95 vs 4.5). The evidence is search
+    snippets, mostly low confidence; do not bulk-rewrite rows from it. A whole-trip-only route shows
+    the total alone: the walk-model legs beside it never added up to it (Indian Head, 9.5 + 13.6 + 8.6
+    over 13.6).
   - **THE WALK IS TWO LEGS.** One `scarfHrs()` used to charge gain AND loss before the summit, so the
     descent was walked on the way UP: on the 352 gain≈loss rows Est. summit EQUALLED Est. return, and a
     pitched route's return had no walk out at all. Now `up` = distance + gain, `down` = distance +
