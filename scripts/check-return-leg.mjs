@@ -169,13 +169,22 @@ const NEAR = { distKm: 2, gainM: 1000 / FT, lossM: 1000 / FT };
 const CAMP_DAYS = { days: [{ n: 1, title: "Approach to camp" }, { n: 2, title: "Summit day" }, { n: 3, title: "Walk out" }] };
 const pushNear = legs(T({ approachTimeHrs: 3, summitTimeHrs: 10, totalHrs: 13 }, NEAR));
 const derivedNear = legs(T({ approachTimeHrs: 2, totalHrs: 10 }, NEAR));
-const campMulti = legs(T({ approachTimeHrs: 6, summitTimeHrs: 11, descentTimeHrs: 5, totalHrs: 22 }, Object.assign({ itinerary: CAMP_DAYS }, NEAR)));
+/* A MULTI-DAY route no longer renders the single-push tiles (2026-11-18): the Planner shows its summit
+   day from camp (summitDayPlan). The planTimes maths the Conditions tab counts back from is asserted on
+   planTimes itself, and the rendered summit day on its own two clocks. */
+const campMultiRoute = T({ approachTimeHrs: 6, summitTimeHrs: 11, descentTimeHrs: 5, totalHrs: 22 }, Object.assign({ itinerary: CAMP_DAYS }, NEAR));
+const campP = planTimes(campMultiRoute, {});
+const campMulti = campP ? { summit: Math.round(campP.sumH * 60), ret: Math.round(campP.retH * 60) } : null;
+const SUMMIT_DAY = /([^ ]+ [AP]M) Est\. summit.*?([^ ]+ [AP]M) Back at camp/;
+const campDay = (() => { const m = text(render(campMultiRoute)).match(SUMMIT_DAY); return m ? { summit: mins(m[1]), back: mins(m[2]) } : null; })();
 const campOneDay = legs(T({ approachTimeHrs: 6, summitTimeHrs: 11, descentTimeHrs: 5, totalHrs: 22 }, NEAR));
 eq("ANCHOR: the push, derived and camp fixtures rendered", !!pushNear && !!derivedNear && !!campMulti && !!campOneDay, true);
 eq("a push's DESCENT share (0.41) is walked down, not dropped: the round trip is its stored 13 hr total", pushNear ? JSON.stringify([pushNear.down, pushNear.ret]) : null, JSON.stringify([Math.round(10 * 0.41 * 60), (6 + 13) * 60]));
 eq("a DERIVED leg (total - approach) holds the descent too: 0.59 of it up, the rest down", derivedNear ? JSON.stringify([derivedNear.summit, derivedNear.ret]) : null, JSON.stringify([Math.round((6 + 2 + 8 * 0.59) * 60), (6 + 10) * 60]));
 eq("a MULTI-DAY route's summit leg beside walk in ~= walk out is a round trip from camp: 0.59 up", campMulti ? campMulti.summit : null, Math.round((6 + 6 + 11 * 0.59) * 60));
 eq("...and its other 0.41 comes down to camp BEFORE the stored walk out (round trip = the 22 hr total)", campMulti ? campMulti.ret : null, (6 + 22) * 60);
+eq("the rendered summit day of that trip is timed FROM CAMP: leave 6:00, 0.59 of the leg up", campDay ? campDay.summit : null, Math.round((6 + 11 * 0.59) * 60));
+eq("...and back at camp after the other 0.41, the walk in left out of the clock", campDay ? campDay.back : null, (6 + 11) * 60);
 eq("...while the same legs on a SINGLE-day route are a one-way climb, left whole", campOneDay ? JSON.stringify([campOneDay.summit, campOneDay.down]) : null, JSON.stringify([(6 + 6 + 11) * 60, 5 * 60]));
 /* ...and a stored leg is a FIT PARTY's day ("published times for a fit party in good conditions",
    the contribute form's definition of `timing`), which fitness and pack do not scale. The Planner

@@ -1,7 +1,7 @@
 import { uImp, gainBelowOwnPins, RSL as SL, C, SUB_LABEL, loggedTimeStats, fmtDurMin, uElev, pitchedFraction, gn, scarfHrs, techHrs, uDist } from "../../ClimbMatchCore.jsx";
 import { useState } from "react";
 import type { Dispatch, SetStateAction } from "react";
-import { planTimes, realPitches } from "../../lib/planTimes";
+import { planTimes, realPitches, summitDayPlan } from "../../lib/planTimes";
 import { isMultiDayOuting, itinDayCount } from "../../lib/outing.js";
 import Hr from "./Hr.tsx";
 import EditIconButton from "./EditIconButton.tsx";
@@ -194,6 +194,12 @@ export default function Calculator({route,activity,fit:fitProp,setFit:setFitProp
      as the box rendered for nobody. Ask what a newly-reachable surface SAYS, not only that it now
      reaches somebody. */
   const late=retH>18.5,sumLate=!publishedIsWholeDay&&sumH>13,multiDay=isMultiDayOuting(route);
+  /* A MULTI-DAY TRIP IS SHOWN AS DAYS (owner, 2026-11-18: "What if the trip is multiple days?"). The
+     single push above added every day into one run from Depart, so 445 of 507 multi-day WA routes
+     showed a red After dark or Overnight for a trip that sleeps in camp. summitDayPlan (lib/planTimes.js)
+     lays the same estimate out as the walk in, the summit day timed from camp, and the walk out; Depart
+     becomes the time the party leaves camp. */
+  const sd=multiDay?summitDayPlan(route,P,{depart,party}):null;
   // The N/A on the Approach tile was only half that fix. Total, Est. summit and Est. return
   // all still add hikeH, and hikeH is 0 whenever the approach inputs are missing -- 204,469
   // of the catalog's 205,492 routes. It used to be obvious (0.0hr Total, summit at the
@@ -232,6 +238,8 @@ export default function Calculator({route,activity,fit:fitProp,setFit:setFitProp
   const lowerBound=approachUnknown||climbUnknown;
   /* A section of the Plan tab like TRIP PLAN above it, so it takes the same section header (owner's note,
      2026-10-25: "It should look like all the other headers"); it was a 14px blue title inside its own card. */
+  /* The lower-bound notes, shared by the one-day clocks and the multi-day view below. */
+  const floorNotes=<>{approachUnknown?<div style={{gridColumn:"1 / -1",fontSize:12,color:C.textMuted,lineHeight:1.5,marginTop:2}}>{"Lower bounds only — this climb has no recorded "+missHikeLabel+", and anything missing counts as zero. Your real day will be longer."}</div>:null}{climbUnknown?<div style={{gridColumn:"1 / -1",fontSize:12,color:C.textMuted,lineHeight:1.5,marginTop:2}}>{"Lower bounds only — nothing on file says how long the climbing takes on this route: no pitch count, no published summit time. It counts as zero in the figures above, so your real day will be longer."}</div>:null}{gainShort?<div style={{gridColumn:"1 / -1",fontSize:12,color:C.textMuted,lineHeight:1.5,marginTop:2}}>{"Lower bound — the recorded gain of "+uElev(gainShort.gainFt)+" is less than the "+uElev(gainShort.riseFt)+" between this route’s own trailhead and summit pins. The times above are figured on the smaller number, so your real day will be longer."}</div>:null}{(!hasPublishedSummitH&&!hasDerivedSummitH&&route.pitches&&pitchedFraction(gn(route.grade as string))<1)?<div style={{gridColumn:"1 / -1",fontSize:12,color:C.textMuted,lineHeight:1.5,marginTop:2}}>{"Climbing time assumes a party moving continuously on ground this easy rather than belaying every pitch. That is an assumption inside the estimate, not something this route reports — if you plan to pitch it out, roughly double that figure."}</div>:null}</>;
   return <div><SL>Full trip time</SL><div style={{background:C.card,borderRadius:12,padding:"12px 14px",border:`1px solid ${C.border}`}}>
     {/* The heading used to read "PUBLISHED TIMES · CAR-TO-CAR", hardcoded on every route carrying a
         timing object, and it never asked whether the published plan WAS car-to-car. Measured over
@@ -263,15 +271,37 @@ export default function Calculator({route,activity,fit:fitProp,setFit:setFitProp
         they could act on — the inputs below already say what it responds to. */}
       {(route.timing?"Or estimate for your party":"Estimate for your party")+" · approach, climb and descent, car to car"}</div>
     {P.legsStored?<div data-fit-party="1" style={{fontSize:12,color:C.textSub,lineHeight:1.5,marginTop:-8,marginBottom:12}}>{(publishedIsWholeDay?"The car-to-car time is this route’s published time":storedApproachH!=null?"The approach and climb are this route’s published times":"The climb is this route’s published time")+" for a fit party, so fitness and pack don’t change "+(publishedIsWholeDay||storedApproachH==null?"it":"them")+". Allow more if your party is slower."}</div>:null}
-    {multiDay?<div data-multiday={itinDayCount(route)} style={{background:C.amberBg,borderRadius:9,padding:"9px 11px",marginBottom:12,border:`1px solid ${C.amber}44`,fontSize:12,color:C.textSub,lineHeight:1.5}}>{"This route is typically done over "+itinDayCount(route)+" days. The single-push estimate below is a reference only — the "}<b style={{color:C.amber}}>Trip plan</b>{" above is the realistic one."}</div>:null}
+    {multiDay?<div data-multiday={itinDayCount(route)} style={{background:C.amberBg,borderRadius:9,padding:"9px 11px",marginBottom:12,border:`1px solid ${C.amber}44`,fontSize:12,color:C.textSub,lineHeight:1.5}}>{"This route is typically done over "+itinDayCount(route)+" days. "+(sd&&sd.timed?"The estimate below times the summit day from camp; the ":"The times below are totals for the whole trip; the ")}<b style={{color:C.amber}}>Trip plan</b>{" above has each day."}</div>:null}
     <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:9,marginBottom:12}}>
       <div><div style={{...SUB_LABEL,marginBottom:3}}>FITNESS</div><select aria-label="Your fitness level" value={fit} onChange={e=>setFit(e.target.value)} style={{width:"100%",padding:"7px 8px",borderRadius:8,border:`1px solid ${C.border}`,background:C.surface,color:C.text,fontSize:13}}>{["beginner","intermediate","advanced","expert"].map(f=><option key={f} value={f}>{f[0].toUpperCase()+f.slice(1)}</option>)}</select></div>
       {/* `pack` is kilograms because scarfHrs' penalty tiers are kg (>8, >15), but this was the one input in the app that ignored the unit setting — hardcoded "PACK (KG)" while UNITS defaults to imperial. A US climber typing 30 for a 30 lb pack had it read as 30 kg and got the heaviest slowdown applied to a planning estimate. Show and accept the reader's unit; keep kg in state. */}
       <div><div style={{fontSize:12,color:C.textMuted,marginBottom:3,fontWeight:700}}>{uImp()?"PACK (LB)":"PACK (KG)"}</div><input aria-label="Pack weight" type="number" value={uImp()?Math.round(pack/0.4536):pack} onChange={e=>{const n=Number(e.target.value);if(isNaN(n))return;setPack(uImp()?n*0.4536:n);}} style={{width:"100%",padding:"7px 8px",borderRadius:8,border:`1px solid ${C.border}`,background:C.surface,color:C.text,fontSize:13,boxSizing:"border-box",outline:"none"}}/></div>
       <div><div style={{...SUB_LABEL,marginBottom:3}}>PARTY SIZE</div><input aria-label="Party size" type="number" value={party} onChange={e=>setParty(Number(e.target.value))} style={{width:"100%",padding:"7px 8px",borderRadius:8,border:`1px solid ${C.border}`,background:C.surface,color:C.text,fontSize:13,boxSizing:"border-box",outline:"none"}}/></div>
-      <div><div style={{...SUB_LABEL,marginBottom:3}}>DEPART</div><select aria-label="Departure time" value={depart} onChange={e=>setDepart(Number(e.target.value))} style={{width:"100%",padding:"7px 8px",borderRadius:8,border:`1px solid ${C.border}`,background:C.surface,color:C.text,fontSize:13}}>{Array.from({length:25},(_,i)=>2+i*0.5).map(h=><option key={h} value={h}>{fmt(h)}</option>)}</select></div>
+      <div><div style={{...SUB_LABEL,marginBottom:3}}>{sd&&sd.timed?"LEAVE CAMP":"DEPART"}</div><select aria-label={sd&&sd.timed?"Time you leave camp on the summit day":"Departure time"} value={depart} onChange={e=>setDepart(Number(e.target.value))} style={{width:"100%",padding:"7px 8px",borderRadius:8,border:`1px solid ${C.border}`,background:C.surface,color:C.text,fontSize:13}}>{Array.from({length:25},(_,i)=>2+i*0.5).map(h=><option key={h} value={h}>{fmt(h)}</option>)}</select></div>
     </div>
     <div style={{background:C.surface,borderRadius:10,padding:"12px 14px",marginBottom:10}}>
+      {sd?(function(){
+        const dayLbl=(a: number,b: number)=>a===b?"Day "+a:"Days "+a+"–"+b;
+        const hr=(h: number)=>h.toFixed(1)+" hr";
+        const sdN=sd.inDays+1;
+        const row=(key: string,day: string,what: string,val: string,col: string)=><div key={key} style={{display:"flex",justifyContent:"space-between",alignItems:"baseline",gap:10,padding:"7px 0",borderBottom:`1px solid ${C.borderLight}`}}><div style={{minWidth:0}}><div style={{fontSize:11,fontWeight:700,color:C.textMuted,textTransform:"uppercase",letterSpacing:0.3}}>{day}</div><div style={{fontSize:13,color:C.text,fontWeight:600}}>{what}</div></div><div style={{fontSize:15,fontWeight:800,color:col,flexShrink:0,whiteSpace:"nowrap"}}>{val}</div></div>;
+        const clock=(lbl: string,h: number,red: boolean,warn: string)=><div style={{textAlign:"center",background:red?C.redBg:lowerBound?C.card:C.greenBg,borderRadius:8,padding:8}}><div style={{fontSize:17,fontWeight:700,color:red?C.red:lowerBound?C.text:C.green}}>{(lowerBound?"≥":"")+fmt(h)}</div><div style={{fontSize:12,color:C.textMuted}}>{lbl}</div>{red?<div style={{fontSize:12,color:C.red,marginTop:1}}>{warn}</div>:null}</div>;
+        return <div data-summit-day={sd.timed?"timed":sd.why}>
+          {row("in",dayLbl(1,sd.inDays),sd.inDays===1?"Walk in to camp":"Walk in, camping on the way",(walkInKnown?"":"≥")+hr(sd.walkInH),C.green)}
+          {sd.timed?<div style={{padding:"8px 0",borderBottom:sd.outDays?`1px solid ${C.borderLight}`:"none"}}>
+            <div style={{fontSize:11,fontWeight:700,color:C.textMuted,textTransform:"uppercase",letterSpacing:0.3}}>{"Day "+sdN+" · summit day"}</div>
+            <div style={{fontSize:13,color:C.text,fontWeight:600,marginBottom:8}}>{"Leaving camp at "+fmt(depart)+(sd.endAt==="car"?", out to the car the same day":"")}</div>
+            <div style={{display:"grid",gridTemplateColumns:sd.endClock!=null?"1fr 1fr":"1fr",gap:9}}>
+              {clock("Est. summit",sd.summitClock as number,!!sd.sumLate,"Leave camp earlier")}
+              {sd.endClock!=null?clock(sd.endAt==="car"?"Back at the car":"Back at camp",sd.endClock,!!sd.late,"After dark"):null}
+            </div>
+          </div>:row("mid",dayLbl(sdN,sdN+(sd.climbDays||1)-1),sd.why==="long"?"The climb, over several days":"The climb",climbKnown?hr(techH):"N/A",C.blue)}
+          {sd.outDays>0?row("out",dayLbl(sd.nDays-sd.outDays+1,sd.nDays),"Walk out",(walkOutKnown||P.storedDescentH!=null?"":"≥")+hr(sd.timed?(sd.walkOutH as number):P.downH),C.blue):null}
+          {!sd.timed&&sd.outDays===0?row("down",dayLbl(sd.nDays,sd.nDays),"Descent to the car",(walkOutKnown||P.storedDescentH!=null?"":"≥")+hr(P.downH),C.blue):null}
+          <div style={{display:"flex",justifyContent:"space-between",alignItems:"baseline",gap:10,paddingTop:9}}><div style={{fontSize:13,color:C.textSub}}>{"Total trip, moving, over "+sd.nDays+" days"}</div><div style={{fontSize:17,fontWeight:800,color:C.amber}}>{hasAnyEstimate?(lowerBound?"≥":"")+hr(P.tripH):"N/A"}</div></div>
+          {!sd.timed?<div style={{fontSize:12,color:C.textSub,lineHeight:1.5,marginTop:6}}>{sd.why==="whole"?"This route’s published time covers the whole trip and is not split into days, so there is no summit-day clock.":sd.why==="long"?"The climb spans more than one day, so there is no single summit-day clock. The Trip plan above times each day.":"Nothing on file says how long the summit day takes, so there is no summit-day clock."}</div>:null}
+          <div style={{display:"grid",gridTemplateColumns:"1fr",gap:4,marginTop:6}}>{floorNotes}</div>
+        </div>;})():<>
       {/* A ROUTE THAT PUBLISHES ONE CAR-TO-CAR FIGURE HAS NO LEGS TO SHOW. The four tiles used to print
           "incl." under Approach and Descent (meaning: included in the car-to-car number) and the same
           figure twice, as "Car-to-car" and "Total trip" (owner, 2026-11-18: "Why does it say incl.?").
@@ -289,8 +319,8 @@ export default function Calculator({route,activity,fit:fitProp,setFit:setFitProp
       <Hr/>
       <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:9}}>
         <div style={{textAlign:"center",background:sumLate?C.redBg:lowerBound?C.card:C.greenBg,borderRadius:8,padding:8}}><div style={{fontSize:17,fontWeight:700,color:sumLate?C.red:lowerBound?C.text:C.green}}>{publishedIsWholeDay?"N/A":hasAnyEstimate?(lowerBound?"≥":"")+fmt(sumH):"N/A"}</div><div style={{fontSize:12,color:C.textMuted}}>Est. {route.discipline==="bouldering"?"top-out":["sport","trad","toprope","rock","aid","ice","mixed"].indexOf(route.discipline as string)>=0?"finish":"summit"}</div>{sumLate?<div style={{fontSize:12,color:C.red,marginTop:1}}>{dayOf(sumH)>0?"Overnight":"Leave earlier"}</div>:null}</div>
-        <div style={{textAlign:"center",background:late?C.redBg:lowerBound?C.card:C.greenBg,borderRadius:8,padding:8}}><div style={{fontSize:17,fontWeight:700,color:late?C.red:lowerBound?C.text:C.green}}>{hasAnyEstimate?(lowerBound?"≥":"")+fmt(retH):"N/A"}</div><div style={{fontSize:12,color:C.textMuted}}>Est. return</div>{late?<div style={{fontSize:12,color:C.red,marginTop:1}}>{dayOf(retH)>0?"Overnight":"After dark"}</div>:null}</div>{approachUnknown?<div style={{gridColumn:"1 / -1",fontSize:12,color:C.textMuted,lineHeight:1.5,marginTop:2}}>{"Lower bounds only — this climb has no recorded "+missHikeLabel+", and anything missing counts as zero. Your real day will be longer."}</div>:null}{climbUnknown?<div style={{gridColumn:"1 / -1",fontSize:12,color:C.textMuted,lineHeight:1.5,marginTop:2}}>{"Lower bounds only — nothing on file says how long the climbing takes on this route: no pitch count, no published summit time. It counts as zero in the figures above, so your real day will be longer."}</div>:null}{gainShort?<div style={{gridColumn:"1 / -1",fontSize:12,color:C.textMuted,lineHeight:1.5,marginTop:2}}>{"Lower bound — the recorded gain of "+uElev(gainShort.gainFt)+" is less than the "+uElev(gainShort.riseFt)+" between this route’s own trailhead and summit pins. The times above are figured on the smaller number, so your real day will be longer."}</div>:null}{(!hasPublishedSummitH&&!hasDerivedSummitH&&route.pitches&&pitchedFraction(gn(route.grade as string))<1)?<div style={{gridColumn:"1 / -1",fontSize:12,color:C.textMuted,lineHeight:1.5,marginTop:2}}>{"Climbing time assumes a party moving continuously on ground this easy rather than belaying every pitch. That is an assumption inside the estimate, not something this route reports — if you plan to pitch it out, roughly double that figure."}</div>:null}
-      </div>
+        <div style={{textAlign:"center",background:late?C.redBg:lowerBound?C.card:C.greenBg,borderRadius:8,padding:8}}><div style={{fontSize:17,fontWeight:700,color:late?C.red:lowerBound?C.text:C.green}}>{hasAnyEstimate?(lowerBound?"≥":"")+fmt(retH):"N/A"}</div><div style={{fontSize:12,color:C.textMuted}}>Est. return</div>{late?<div style={{fontSize:12,color:C.red,marginTop:1}}>{dayOf(retH)>0?"Overnight":"After dark"}</div>:null}</div>{floorNotes}
+      </div></>}
     </div>
     {(route.segments||[]).map((seg,i)=>{
       const sh=scarfHrs(seg.distKm,seg.gainM,seg.lossM,fit,pack)+(seg.type==="technical"?techHrs(2,35,gn(route.grade)):0);

@@ -25,6 +25,7 @@ Not yet documented here (add a doc when you next work in one): moderation/safety
 the catalog import pipeline (see [docs/BACKEND.md](docs/BACKEND.md)).
 
 ## Recent changes
+- **A multi-day trip is estimated as days** (owner 2026-11-18): the Planner's estimate added every day into one push, so 445 of 507 multi-day routes showed a red *After dark* or *Overnight*. It now shows the walk in, the summit day timed from camp (*Leave camp*), and the walk out; reds fell to 115 / 109. See [route-page.md](docs/features/route-page.md).
 - **One trip time per route, and no "incl."** (owner 2026-11-18): a route that publishes one car-to-car figure shows it once in the Planner, with a sentence saying it is not split into legs, instead of "incl." under Approach and Descent. 67 WA routes whose published total, legs, trip-plan days and summary disagreed were researched online and made to agree; 639 of 639 routes with two or more total figures now match (`audits/2026-11-18-trip-time-consistency.json`). See [route-page.md](docs/features/route-page.md).
 - **Bouldering shows one grade** (owner 2026-11-18): the TECHNICAL STATS card no longer draws a *Crux grade* tile on a boulder problem, which repeated the grade in the header. See [route-page.md](docs/features/route-page.md).
 - **The crux is WHERE, the grade is how hard** (owner 2026-11-18): the edit sheet and add-a-climb ask *Where the crux is* (text, every discipline) instead of a *Crux grade* that wrote into a column of descriptions; the page prints it as a Crux facts row. See [route-page.md](docs/features/route-page.md).

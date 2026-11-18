@@ -155,7 +155,8 @@ const CASES = [
          "the Plan tab while sitting ON it, past the Trip plan rendered directly above. A gate fix " +
          "that left this would have made a circular pointer visible for the first time",
     edits: [{
-      find: '{"This route is typically done over "+itinDayCount(route)+" days. The single-push estimate below is a reference only — the "}<b style={{color:C.amber}}>Trip plan</b>{" above is the realistic one."}',
+      // Repointed 2026-11-18: the banner now introduces the summit-day view (summitDayPlan).
+      find: '{"This route is typically done over "+itinDayCount(route)+" days. "+(sd&&sd.timed?"The estimate below times the summit day from camp; the ":"The times below are totals for the whole trip; the ")}<b style={{color:C.amber}}>Trip plan</b>{" above has each day."}',
       repl: 'This route is typically done over multiple days. The single-push estimate below is a reference only — use the <b style={{color:C.amber}}>Plan</b> tab for a realistic day-by-day plan.',
     }],
     expect: "fail",
@@ -166,8 +167,8 @@ const CASES = [
     why: "MUST STAY SILENT. Section 3 pins the day COUNT, the pointer's destination and the " +
          "ordering — never one phrasing. A guard pinned to the sentence would forbid improving it",
     edits: [{
-      find: '{"This route is typically done over "+itinDayCount(route)+" days. The single-push estimate below is a reference only — the "}',
-      repl: '{"Parties typically take "+itinDayCount(route)+" days on this route, so read the single-push estimate below as a reference only. The "}',
+      find: '{"This route is typically done over "+itinDayCount(route)+" days. "+(',
+      repl: '{"Parties typically take "+itinDayCount(route)+" days on this route. "+(',
     }],
     expect: "pass",
   },

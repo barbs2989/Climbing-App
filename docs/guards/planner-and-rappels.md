@@ -67,6 +67,20 @@ Part of the guard notes — see [README.md](README.md) for the full index.
 - **`check:return-leg`** holds the planner's time maths, which live in **`lib/planTimes.js`** since
   2026-10-07 (the Conditions tab's alpine start counts back from the same estimate, so neither may
   compute it for itself). Static SSR through the real `<Calculator/>`, so it sits in `npm run build`.
+  - **A MULTI-DAY ROUTE IS RENDERED AS DAYS since 2026-11-18** (owner: "What if the trip is multiple
+    days?"). The single push added every day into one run from Depart, so 445 of 507 multi-day WA
+    routes showed a red After dark / Overnight (Forbidden's West Ridge summited at 3:54 PM, day 1's
+    walk in stacked on day 2's climb). `summitDayPlan` lays the same `planTimes` estimate out as the
+    walk in, the summit day timed from camp (Depart reads *Leave camp*), and the walk out; reds fell
+    to 115 / 109, and those are a 6 AM camp start that is genuinely late
+    (`scripts/oneoff/measure-multiday-estimate.mjs`). The camp fixture's single-push clocks are now
+    asserted on `planTimes` itself (the Conditions tab still counts back from them), and the rendered
+    summit day on its own two clocks: leave 6:00, summit after 0.59 of the leg, back at camp after the
+    rest. A stored summit leg planTimes did NOT split (walk in and out outside `CAMP_LEG_MATCH`) is
+    split for the CLOCK only when days follow it, 61 WA rows; the trip total and planTimes never move.
+    A climb longer than `SUMMIT_DAY_MAX_H` (20 hr, a traverse) gets no clock, and its days are counted
+    from the plan's hours. Injection: `inject-return-leg-day-cases.mjs` 25/25, its two banner cases
+    repointed at the new copy.
   - **THE WALK IS TWO LEGS.** One `scarfHrs()` used to charge gain AND loss before the summit, so the
     descent was walked on the way UP: on the 352 gain≈loss rows Est. summit EQUALLED Est. return, and a
     pitched route's return had no walk out at all. Now `up` = distance + gain, `down` = distance +
