@@ -125,6 +125,7 @@ through the linked CLI (one read-only SELECT):
 
     npm run gen:schema                # rewrite the file from the live database
     npm run gen:schema -- --check     # exit 1 if the committed file has drifted from live
+    SUPABASE_WORKDIR=<main checkout> npm run gen:schema   # from a fresh worktree with no supabase/.temp link (2026-11-18)
 
 Run `npm run gen:schema` after ANY change to the database structure (a migration, a DDL run in
 the SQL Editor, a policy edit) and commit the result in the same PR. It needs the link state
