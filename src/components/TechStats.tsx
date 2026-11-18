@@ -14,7 +14,8 @@ import CragFactSection from "./CragFactSection.tsx";
 import CardHead from "./CardHead.tsx";
 import EditIconButton from "./EditIconButton.tsx";
 import CountUp from "./CountUp.tsx";
-import { AREA_FACT_FIELD } from "../../lib/cragFactField.js";
+import { AREA_FACT_FIELD, FACT_FIELD } from "../../lib/cragFactField.js";
+import { fieldScope, scopeCtx } from "../../lib/fieldScope.js";
 import { usableFa } from "../../lib/fa";
 import { climbNoun } from "../../lib/discLabels.js";
 import type { CragFact } from "./CragFactRows.tsx";
@@ -225,7 +226,9 @@ export default function TechStats({route,onEdit,part,onEditArea}: TechStatsProps
     /* LOCATION is `location` (0243): where the line starts on its wall, which is how a climber finds it
        at the base. First among the facts, because it is the first thing needed at the crag. */
     const _loc=String(route.location||"").trim();const _locAll=CRAG_CATS.includes(disc);/* on a crag it has a section of its own, so it is never too long to show */if(_loc&&(_locAll||_loc.length<=160))facts.unshift(["Location",_loc]);if(!_locAll&&_loc.length>160)_longOnFile.push("Location");
-    const _dsc=String(route.descent||"").trim();if(_dsc&&_dsc.length<=140)facts.push(["Descent",_dsc]);
+    /* A short descent is a fact line only where the page draws no DESCENT section (a boulder): wherever the
+       section renders (lib/fieldScope.js, as RoutePlanTab gates it) it carries the descent whole, at any length. */
+    const _dsc=String(route.descent||"").trim();if(_dsc&&_dsc.length<=140&&!fieldScope("descentText",scopeCtx(route,disc)))facts.push(["Descent",_dsc]);
     /* SUN is `sun` (0247): when this wall is in sun or shade, as stated for it. Where it exists it
        replaces the sun line computed from the aspect — the stated hours are the better fact. */
     const _sun=String(route.sun||"").trim();
@@ -248,11 +251,11 @@ export default function TechStats({route,onEdit,part,onEditArea}: TechStatsProps
        pertain to the discipline — no bolts on a boulder, no landing on a sport line. A missing fact
        reads "Not on file yet", never "unknown" or a guess, and one link under the list opens the editor. */
     const _have=new Set(facts.map(function(f){return f[0];}).concat(stats.map(function(t){return t[0];})).concat(_longOnFile));
-    /* Each of these is a field the contribute form offers for this discipline (its DROP rules match),
-       so every "Not on file yet" can actually be filled. Descent is not here: the DESCENT section
+    /* Each of these is a field the contribute form offers for this discipline — filtered through
+       lib/fieldScope.js, the sheet's own rule, so every "Not on file yet" can actually be filled. Descent is not here: the DESCENT section
        below carries its own placeholder. */
     const _want=disc==="bouldering"?["Location","Landing","Crash pads","Start","Aspect","Season","Rock quality","Wet"]
-      :["Location"].concat(disc==="toprope"?[]:["Pitches",disc==="aid"?"Wall height":"Route length"]).concat(disc==="sport"?["Bolts"]:[]).concat(disc==="sport"||disc==="trad"?["Protection"]:[]).concat(["Anchor"]).concat(disc==="toprope"?[]:["Rope"]).concat(["Aspect","Season","Rock quality","Wet"]).concat(disc==="trad"||disc==="aid"?["Fixed gear"]:[]);
+      :["Location"].concat(disc==="toprope"?[]:["Pitches",disc==="aid"?"Wall height":"Route length"]).concat(disc==="sport"?["Bolts"]:[]).concat(disc==="sport"||disc==="trad"?["Protection"]:[]).concat(["Anchor"]).concat(disc==="toprope"?[]:["Rope"]).concat(["Aspect","Season","Rock quality","Wet"]).concat(disc==="trad"||disc==="aid"?["Fixed gear"]:[]).filter(function(k){const fk=(FACT_FIELD as Record<string,string>)[k];return !fk||fieldScope(fk,scopeCtx(route,disc));});
     /* A missing crag-wide fact (AREA_FACT_FIELD) is marked with the area's noun, so its Add edits the area once
        for every route on it; the rest stay the route's. All of them render on ONE "Not on file yet" line. */
     _want.forEach(function(k){if(_have.has(k))return;facts.push([k,<span style={{color:C.textMuted,fontStyle:"italic"}}>Not on file yet</span>,onEditArea&&(AREA_FACT_FIELD as Record<string,string>)[k]?_arNoun:true]);});
