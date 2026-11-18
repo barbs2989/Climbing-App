@@ -97,12 +97,13 @@ try {
   if (await seeAll.count()) { await seeAll.click(); await page.waitForTimeout(5000); ok(await by.inputValue() === "anyone", "See everyone switches to Everyone"); }
   else note("no See everyone button (no browse climbers) -- switching by the pill");
   if (await by.inputValue() !== "anyone") { await by.selectOption("anyone"); await page.waitForTimeout(5000); }
-  // Climber cards keep their OWN look (owner 2026-11-18), not the crew card's: a real row is radius 12 with a
-  // plain 1px edge; an example card keeps its 4px blue left bar.
-  const rowLook = await page.locator('div[role="button"]', { hasText: /@/ }).first().evaluate((e) => { let x = e; while (x && getComputedStyle(x).borderTopWidth !== "1px") x = x.parentElement; if (!x) return null; const c = getComputedStyle(x); return { r: c.borderTopLeftRadius, pad: c.paddingTop }; }).catch(() => null);
-  ok(!!rowLook && rowLook.r === "12px" && rowLook.pad === "10px", "a real climber row has the partner card look" + (rowLook ? " (radius " + rowLook.r + ", padding " + rowLook.pad + ")" : " (no row found)"));
+  // REAL CLIMBERS WEAR THE EXAMPLE CARD (owner 2026-11-18), and neither has the 4px blue left bar any more.
+  const look = (e) => { const c = getComputedStyle(e); return { r: c.borderTopLeftRadius, l: c.borderLeftWidth, pad: c.paddingTop }; };
+  const real = page.locator("[data-real-climber-card]");
+  if (await real.count()) { const r = await real.first().evaluate(look); ok(r.r === "16px" && r.l === "1px" && r.pad === "16px", "a real climber wears the example card, no left bar (radius " + r.r + ", left " + r.l + ", padding " + r.pad + ")");
+    ok(await real.first().locator("button", { hasText: /^Full profile & vouches$/ }).count() === 1, "a real climber card has Full profile & vouches"); } else note("no real climber cards on screen");
   const ex = page.locator("button", { hasText: /^Full profile & vouches$/ });
-  if (await ex.count()) { const l = await ex.first().evaluate((e) => { let x = e; while (x && getComputedStyle(x).borderLeftWidth !== "4px") x = x.parentElement; return !!x; }).catch(() => false); ok(l, "an example climber card keeps its blue left bar"); } else note("no example climber cards on screen");
+  if (await ex.count()) { const l = await ex.last().evaluate((e) => { let x = e; while (x && getComputedStyle(x).borderTopLeftRadius !== "16px") x = x.parentElement; return x ? getComputedStyle(x).borderLeftWidth : null; }).catch(() => null); ok(l === "1px", "the example card has no left bar (left " + l + ")"); } else note("no example climber cards on screen");
   await shot(page, "2-everyone");
 
   // 3. Distance -> Near me now, 10 mi, then the empty card's next radius.
