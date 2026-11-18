@@ -148,7 +148,7 @@ Three top-level `tab` values in `ClimbMatch.jsx` (`tab==="today"`, `tab==="crew"
   with scope `crew:<id>`: the device copy keeps it across the sheet closing (`check:float-plan-persistence` 8b requires scope + who). *All your float plans ›*
   still goes to the list, and `CrewListView` re-keys `FloatPlans` when the inline plan closes so the list re-reads.
   **Form and list, after the walkthrough** (2026-11-18): the three fields Save needs (route, hard return, emergency contact) say *Required*, and an
-  incomplete form says what is *Still needed* under an aria-disabled Save. The profile emergency contact (0237) is filled into an EMPTY contact field
+  incomplete form says what is *Still needed* under an aria-disabled Save; a departure in the past, or a hard return before the departure, gets an amber note under its field (2026-11-18). Plans are keyed by account, so one made signed out is not merged in silently at sign-in: the list says how many were made signed out and offers *Move to my account* or a two-tap *Not mine — delete*. An EMPTY guest draft (nothing typed) is simply cleared at sign-in, as the account's own empty drafts are. The profile emergency contact (0237) is filled into an EMPTY contact field
   once the saved plan has loaded (raw setter, so it is not an edit). `crewFloatFill` turns the agreed day (else the first proposed one) plus a
   clock-time meet-up into the picker's own value. In `FloatPlans`: list times go through `fpWhen`; a new plan is not saved until its first edit,
   and never-edited empty ones are swept on load; Delete (button or swipe) shows *Deleted … Undo* for 8 s, and Undo re-files a saved crew plan; a
