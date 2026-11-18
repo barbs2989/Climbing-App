@@ -10,7 +10,7 @@ const vals = to.map((o, i) => {
   // the comma goes BEFORE the comment, or the last row's semicolon would sit inside it (0452 replay failure)
   return `  (${q(o.id)}, ${q(o.area_id)}, ${q(o.new_discipline)}, ${q(JSON.stringify(o.new_disciplines))}::jsonb)${i < to.length - 1 ? "," : ";"} -- ${String(o.name).replace(/[\r\n]/g, " ")} | ${o.grade} | ${min ? "<= " + min + " min on foot" : "hand-read approach"}`;
 }).join("\n");
-const sql = `-- 0461 — Crag rows filed alpine move to trad / sport / top-rope, pass 3 (owner 2026-11-11: "crag for trad is just a
+const sql = `-- 0462 — Crag rows filed alpine move to trad / sport / top-rope, pass 3 (owner 2026-11-11: "crag for trad is just a
 -- short approach"; pass 1 = 0452, pass 2 = 0457). ${to.length} rows: ${Object.entries(cnt).map(([k, v]) => v + " " + k).join(", ")}.
 --
 -- These rows were still "unsure" after pass 2. Their 227 areas were researched again for a STATED walk time from other

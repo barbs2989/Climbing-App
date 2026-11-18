@@ -1,4 +1,4 @@
--- 0461 — Crag rows filed alpine move to trad / sport / top-rope, pass 3 (owner 2026-11-11: "crag for trad is just a
+-- 0462 — Crag rows filed alpine move to trad / sport / top-rope, pass 3 (owner 2026-11-11: "crag for trad is just a
 -- short approach"; pass 1 = 0452, pass 2 = 0457). 112 rows: 68 trad, 40 sport, 4 toprope.
 --
 -- These rows were still "unsure" after pass 2. Their 227 areas were researched again for a STATED walk time from other
