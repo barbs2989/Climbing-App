@@ -1,0 +1,728 @@
+{
+ "wa_mount_baker_north_ridge": {
+  "area": "wa_mount_baker",
+  "set": {
+   "waypoints": [
+    {
+     "lat": 48.8020775,
+     "lng": -121.8959136,
+     "elev": 3676,
+     "name": "Heliotrope Ridge Trailhead",
+     "type": "Trailhead",
+     "distMi": 0,
+     "directions": "From the Mount Baker Highway (SR 542), continue about 1 mile east of the Glacier Public Service Center and turn right onto Glacier Creek Road (FS 39). Drive about 8 miles, turn left at a junction and continue less than half a mile to the Heliotrope Ridge Trailhead for Trail 677, at about 3,700 ft. A Northwest Forest Pass is required to park."
+    },
+    {
+     "lat": 48.7893,
+     "lng": -121.86777,
+     "elev": 5900,
+     "name": "Hogsback Camp",
+     "type": "Campsite",
+     "distMi": 3,
+     "directions": "Follow Trail 677 through old growth, crossing Grouse, Kulshan and Heliotrope Creeks (lowest early in the day), to the signed fork at about 2.25 miles. Go right on the climbers' path up the crest of the Hogsback moraine to the camps around 6,000 ft at the edge of the Coleman Glacier."
+    },
+    {
+     "lat": 48.7897,
+     "lng": -121.84,
+     "elev": 6900,
+     "name": "North Ridge Base / Coleman Glacier Junction",
+     "type": "Junction",
+     "distMi": 4,
+     "directions": "Rope up and cross the Coleman Glacier east (climber's left) toward the toe of the North Ridge, threading seracs and open crevasses; the route changes yearly and often has no track. Arrive at the double bergschrund guarding the base of the ridge, and probe as you near it for a hidden third crack between the two visible ones."
+    },
+    {
+     "lat": 48.7766298,
+     "lng": -121.8144732,
+     "elev": 10781,
+     "name": "Mount Baker Summit",
+     "type": "Summit",
+     "distMi": 6,
+     "directions": "Cross the double bergschrund on a bridge or narrow ramp and climb the broad 40 degree snow gully to the ridge crest. Follow the crest to the ice cliff near 9,600 ft and climb its steep ice, short near-vertical steps then sustained 60 to 65 degree ice, for several pitches. Above it the angle eases; trend climber's left through crevasses on the upper ice cap to the summit plateau and Grant Peak."
+    }
+   ]
+  },
+  "review": {
+   "sources": [
+    "https://www.usgs.gov/tools/geographic-names-information-system-gnis (DomesticNames_WA bulk file)",
+    "https://www.openstreetmap.org/way/296392530",
+    "https://epqs.nationalmap.gov/v1/json",
+    "https://www.fs.usda.gov/r06/mbs/recreation/mt-baker-summit-climbing",
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/heliotrope-ridge-trail-677",
+    "https://www.fs.usda.gov/r06/mbs/alerts",
+    "https://www.cascadiadaily.com/2026/aug/20/glacier-creek-road-reopens-following-washout-repairs/",
+    "https://www.mountainproject.com/route/106445849/north-ridge",
+    "https://www.mountainproject.com/area/105877061/mt-baker",
+    "https://publications.americanalpineclub.org/articles/12194921901/United-States-Cascades-First-Ascent-of-the-N-Face-of-Mt-Baker",
+    "https://www.mountaineers.org/activities/routes-places/mount-baker-north-ridge"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "waypoints/Mount Baker Summit",
+    "value": {
+     "name": "Mount Baker Summit",
+     "lat": 48.7766298,
+     "lng": -121.8144732
+    },
+    "method": "measured",
+    "level": "locked",
+    "evidence": [
+     {
+      "measurement": "USGS GNIS feature 1516062 \"Mount Baker\" (Summit) primary point",
+      "fact": "48.7766298, -121.8144732"
+     },
+     {
+      "measurement": "USGS GNIS feature 1520243 \"Grant Peak\" (Summit, the top of Mount Baker) at 48.7766406, -121.8144899, 1.7 m away",
+      "fact": "second USGS feature for the top"
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 10781,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r06/mbs/recreation/mt-baker-summit-climbing",
+      "official": true,
+      "fact": "10,781 ft (Grant Peak)",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.mountainproject.com/area/105877061/mt-baker",
+      "fact": "10,781 ft",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 7100,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-baker-north-ridge",
+      "fact": "Elevation Gain 7,100 ft",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "measurement": "USFS official summit 10,781 ft - USGS 3DEP 3,676 ft at the Heliotrope Ridge lot (OSM way 296392530)",
+      "fact": "7105 ft"
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Fred Beckey, Ralph Widrig, Dick Widrig, August 7, 1948",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://publications.americanalpineclub.org/articles/12194921901/United-States-Cascades-First-Ascent-of-the-N-Face-of-Mt-Baker",
+      "fact": "Fred Beckey, Ralph Widrig, Dick Widrig; 7 August 1948",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.mountainproject.com/route/106445849/north-ridge",
+      "fact": "Fred Beckey, Dick Widrig, Ralph Widrig, August 1948",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "No climbing or wilderness permit is required; filling in the voluntary climbing register at the trailhead is recommended. No quota or fee. Northwest Forest Pass at developed trailheads.",
+    "method": "official-1",
+    "level": "locked",
+    "expires_at": "2027-11-18T00:00:00Z",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r06/mbs/recreation/mt-baker-summit-climbing",
+      "official": true,
+      "fact": "no permit to climb; some trailheads have a register; no fee; recreation pass at Heliotrope Ridge",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "WI3",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106445849/north-ridge",
+      "fact": "WI3 Steep Snow",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "commitment",
+    "value": "III",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106445849/north-ridge",
+      "fact": "Grade III",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "length_m",
+    "value": 914,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106445849/north-ridge",
+      "fact": "3,000 ft (909 m)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_mount_baker_north_ridge",
+    "column": "dist_km",
+    "from": 4,
+    "to": 12.9,
+    "why": "4 km is shorter than the straight line from the Heliotrope Ridge lot to the summit (6.6 km), so it is impossible. The Mountaineers gives 16.0 mi round trip (trailhead-camp 5 mi + camp-summit 3 mi = 8 mi = 12.9 km one way). Owner to choose per the row's dist_km convention (or null).",
+    "evidence": [
+     "https://www.mountaineers.org/activities/routes-places/mount-baker-north-ridge"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_mount_baker_north_ridge",
+    "column": "gpx",
+    "from": "4 points = the route's pins joined up",
+    "to": null,
+    "why": "The stored track is the 4 waypoints joined by straight lines (trailhead, camp, base, summit). It fails the track checks (>=10 points, no gap over 500 m); route-waypoints-and-tracks says remove it and leave the upper part blank.",
+    "evidence": []
+   }
+  ],
+  "disputed": [
+   "pitches (5): no source gives a pitch count (MP lists none; the AAJ account describes one long ice wall). Left unlocked.",
+   "road: the stored text (FR 39 reopened 20 Aug 2026 after the Dec 2025 washout) matches a Cascadia Daily News report quoting the Forest Service, and the USFS alert list no longer carries an FR 39 closure (its alert page now 404s), but no official page states the reopening. Not locked.",
+   "high_point_ft: The Mountaineers prints 10,778 ft (USFS and MP 10,781) - within tolerance."
+  ],
+  "notes": "Summit pin snapped 19 m onto the USGS point; trailhead pin moved 9 m onto the OSM Heliotrope Ridge lot (way 296392530), USGS 3DEP 3,676 ft (stored 3,700) - same placement batch B used for Coleman-Deming. The 'North Ridge Base / Coleman Glacier Junction' pin sits on a moving glacier near the bergschrund - an approximate base only; it cannot be locked. MP: WI3, Grade III, 3,000 ft, descent by the Coleman-Deming. The Mountaineers: Intermediate Ice Climb, June-July, party size 12. Mt. Baker Highway (SR 542) below Glacier is open; only the Artist Point section closed 25 Oct 2026."
+ },
+ "wa_mount_shuksan_sulphide_glacier": {
+  "area": "wa_mount_shuksan_climbs",
+  "set": {
+   "waypoints": [
+    {
+     "lat": 48.76723,
+     "lng": -121.61808,
+     "elev": 2551,
+     "name": "Shannon Ridge Trailhead",
+     "type": "Trailhead",
+     "distMi": 0,
+     "directions": "Drive Baker Lake Road (Forest Road 11) north from SR 20 near milepost 82, then turn onto FR 1152 and follow the 1152-014 spur to its end at about 2,500 feet, where the trail begins. The spur is rough and rutted, so high clearance is the sensible minimum for the drive in. If you're staying overnight in the park, you'll need a North Cascades backcountry permit, obtained in person at Marblemount or arranged with the wilderness office ahead of time."
+    },
+    {
+     "lat": 48.7822,
+     "lng": -121.6125,
+     "elev": 4597,
+     "name": "Timberline Junction",
+     "type": "Junction",
+     "distMi": 2.9,
+     "directions": "Follow Shannon Ridge Trail #742, an old roadbed heading northeast, for about 2 miles to where the road tread ends near 3,800 ft, weaving through a belt of blowdown. Continue on true trail angling left through brush onto the open ridge crest and up to timberline near 4,600 ft, where snow often lingers into midsummer."
+    },
+    {
+     "lat": 48.8006,
+     "lng": -121.6061,
+     "elev": 6193,
+     "name": "Shannon Ridge / Sulphide Glacier Camp",
+     "type": "Campsite",
+     "distMi": 4,
+     "directions": "From timberline, follow the broad, rolling crest of Shannon Ridge through meadows and broken timber for about 2 miles to a pass near 5,400 ft, where a north-south ridge is met and the Sulphide Glacier and summit pyramid first come into view. Continue up open slopes and snow onto the toe of the glacier to the lower camp at about 6,200 ft; an upper camp sits near 6,500 ft. There is no reliable water late in the season."
+    },
+    {
+     "lat": 48.8311153,
+     "lng": -121.6029859,
+     "elev": 9131,
+     "name": "Mount Shuksan Summit Pyramid",
+     "type": "Summit",
+     "distMi": 8,
+     "directions": "Rope up at camp and climb northward, keeping to the western edge of the Sulphide Glacier over a series of rolling steps; near 7,600 ft the angle eases, so bear north-northeast across the upper glacier to the foot of the summit pyramid at about 8,400-8,500 ft. Cross the moat and climb the central gully on the pyramid's south face, the one with rappel anchors, roughly 600 ft of steep snow or blocky rock to the summit."
+    }
+   ]
+  },
+  "review": {
+   "sources": [
+    "https://www.usgs.gov/tools/geographic-names-information-system-gnis (DomesticNames_WA bulk file)",
+    "https://www.openstreetmap.org/way/340549491",
+    "https://www.openstreetmap.org/node/12594542930",
+    "https://epqs.nationalmap.gov/v1/json",
+    "https://www.mountainproject.com/route/108833562/sulphide-glacier",
+    "https://www.mountainproject.com/area/122727462/main-peak",
+    "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/high-occupancy-xc-zones/mount-shuksan-sulphide-glacier",
+    "https://theoutbound.com/washington/hiking/climb-mt-shuksan-via-the-sulphide-glacier-route",
+    "https://home.nps.gov/noca/planyourvisit/upload/NOCA_Wilderness_Trip_Planner-Compliant_508_for-web_508-2.pdf",
+    "https://www.nps.gov/noca/planyourvisit/permits.htm",
+    "https://www.nps.gov/noca/planyourvisit/climbing.htm",
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/shannon-ridge-trail-742",
+    "https://en.wikipedia.org/wiki/Mount_Shuksan",
+    "https://www.alpineinstitute.com/route-profile-mount-shuksan-sulphide-glacier/"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "waypoints/Mount Shuksan Summit Pyramid",
+    "value": {
+     "name": "Mount Shuksan Summit Pyramid",
+     "lat": 48.8311153,
+     "lng": -121.6029859
+    },
+    "method": "measured",
+    "level": "locked",
+    "evidence": [
+     {
+      "measurement": "USGS GNIS feature 1525722 \"Mount Shuksan\" (Summit) primary point",
+      "fact": "48.8311153, -121.6029859"
+     },
+     {
+      "measurement": "USGS GNIS feature 1526725 \"Summit Pyramid\" (Summit) at 48.8311356, -121.6029879, 2 m away",
+      "fact": "second USGS feature for the top"
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 9131,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://home.nps.gov/noca/planyourvisit/upload/NOCA_Wilderness_Trip_Planner-Compliant_508_for-web_508-2.pdf",
+      "official": true,
+      "fact": "Mount Shuksan 9131ft",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/high-occupancy-xc-zones/mount-shuksan-sulphide-glacier",
+      "fact": "High Point 9,127 ft",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 6500,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/high-occupancy-xc-zones/mount-shuksan-sulphide-glacier",
+      "fact": "Elevation Gain 6,500 ft",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://theoutbound.com/washington/hiking/climb-mt-shuksan-via-the-sulphide-glacier-route",
+      "fact": "6,230 ft",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "measurement": "NPS 9,131 ft summit - USGS 3DEP 2,556 ft at the Shannon Ridge lot (OSM way 340549491)",
+      "fact": "6575 ft"
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "Class 3",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108833562/sulphide-glacier",
+      "fact": "3rd (YDS), Easy Snow; 3rd-class gullies on the pyramid",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://theoutbound.com/washington/hiking/climb-mt-shuksan-via-the-sulphide-glacier-route",
+      "fact": "summit gully class 3-4",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "commitment",
+    "value": "II",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108833562/sulphide-glacier",
+      "fact": "Grade II",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_mount_shuksan_sulphide_glacier",
+    "column": "pitches",
+    "from": 3,
+    "to": null,
+    "why": "The 3 'pitches' are the route's three sections (trail, glacier, summit pyramid) per pitch_detail, not roped pitches; no source gives a pitch count for this Class 3 route.",
+    "evidence": [
+     "https://www.mountainproject.com/route/108833562/sulphide-glacier"
+    ]
+   }
+  ],
+  "disputed": [
+   "dist_km (8): The Mountaineers 16.0 mi RT (12.9 km one way), The Outbound 13.62 mi RT (11.0 km), the stored track reaches the summit at 11.1 km. 8 looks like miles stored as km, but dist_km holds two conventions - owner to decide; not changed.",
+   "length_m (183 = 600 ft summit pyramid): The Mountaineers 500 ft, The Outbound ~400 ft. Not locked.",
+   "fa: Curtis and Price, 7 Sep 1906, is the PEAK first ascent (Wikipedia, citing Curtis in Mazama 1907; it also notes a disputed 1897 Morovits claim). No source found ties the 1906 climb to the Sulphide Glacier line. Not locked.",
+   "permit: NPS permits.htm (updated 15 Oct 2026) confirms an overnight backcountry permit via Recreation.gov, and that for Baker Lake Road / Sulphide Glacier rangers issue walk-up permits by email (noca_wilderness@nps.gov, the day before); the Marblemount WIC closes for the season from 11 Oct. Neither NPS page says a day climb needs no permit. Stored permit text not locked."
+  ],
+  "notes": "Summit pin snapped 4 m onto the USGS point. Trailhead pin already 5 m from the centroid of the OSM Shannon Ridge lot (way 340549491; USGS 3DEP 2,556 ft vs stored 2,551) - kept. Stored track (2,283 pts, max gap 11 m, starts 16 m from the trailhead, passes 1 m from the summit) passes the geometry checks but has no timestamps, so not used as a measurement. USFS Trail 742: FS 11 24 mi to FS 1152, 3 mi to FS 1152014, 1.5 mi to road end; recreation pass required; trail enters the park ~3.25 mi. NPS: party size 12 in the Sulphide Glacier zone, campfires banned in cross-country zones. No current USFS alert covers Baker Lake Road or FS 1152."
+ },
+ "wa_sloan_peak_corkscrew": {
+  "area": "wa_sloan_peak",
+  "set": {
+   "waypoints": [
+    {
+     "lat": 48.073457,
+     "lng": -121.376681,
+     "elev": 2784,
+     "name": "Bedal Creek / Bedal Basin Trailhead (end of FR 4096)",
+     "type": "Trailhead",
+     "distMi": null,
+     "elevFt": 2784,
+     "directions": "Drive the Mountain Loop Highway to Forest Road 4096 and follow that rough, narrow spur - a 4WD road about three miles long where high clearance genuinely helps - to its end at the Bedal Creek trailhead, around 2,790 feet."
+    },
+    {
+     "lat": 48.05601,
+     "lng": -121.36307,
+     "elev": 3521,
+     "name": "Climber's trail turnoff on Bedal Creek Trail",
+     "type": "Junction",
+     "distMi": null,
+     "elevFt": null,
+     "directions": "Walk the old Bedal Creek Trail about 1.5 miles and 700 ft to around 3,500 ft, where a climbers' path, often marked with pink flagging, turns off to the left. Watch for it: the old tread continues and dies in a brushy washout below the basin."
+    },
+    {
+     "lat": 48.0413767,
+     "lng": -121.3402434,
+     "elev": 7835,
+     "name": "Sloan Peak Summit",
+     "type": "Summit",
+     "distMi": null,
+     "elevFt": 7835,
+     "directions": "Climb the path steeply through forest to talus near 4,900 ft, then bend southeast to the Bedal-Sloan saddle at 5,300 ft. Continue southeast over a rock ridge near 5,800 ft, rope up and cross the Sloan Glacier southwest to the rock near 7,100 ft. Follow the exposed heather shelf of the Corkscrew across the south face onto the west face, climb the gully to the crest, then a short class 4 step and third class to the summit."
+    }
+   ],
+   "road": {
+    "name": "Bedal Creek Trailhead (FR-4096), off Mountain Loop Highway",
+    "status": "Closed for the winter. The Forest Service shut the Mountain Loop Highway from Bedal Campground south to Barlow Pass on 16 November 2026, and the FR 4096 turnoff lies inside that stretch; it sets the reopening date each spring. Walking, snowshoeing and skiing stay allowed.",
+    "driveNote": "Roughly 1.5-2 hours from Seattle via US-2/SR-92/Mountain Loop Highway to the Bedal Creek Trailhead.",
+    "seasonalGate": "FR roads off the Mountain Loop Highway are typically only reliably open late spring through fall; check Darrington Ranger District/USFS alerts for current status."
+   }
+  },
+  "review": {
+   "sources": [
+    "https://www.usgs.gov/tools/geographic-names-information-system-gnis (DomesticNames_WA bulk file)",
+    "https://www.openstreetmap.org/node/50819875",
+    "https://www.openstreetmap.org/way/394225479",
+    "https://www.openstreetmap.org/node/356546463",
+    "https://epqs.nationalmap.gov/v1/json",
+    "https://www.fs.usda.gov/r06/mbs/alerts",
+    "https://www.fs.usda.gov/r06/mbs/alerts/mountain-loop-highway-bedal-campground-barlow-pass-closed-winter-nov-16",
+    "https://www.mountaineers.org/activities/routes-places/sloan-peak-corkscrew-route",
+    "https://www.mountainproject.com/route/117524006/corkscrew-route",
+    "https://www.mountainproject.com/area/117523878/sloan-peak",
+    "https://en.wikipedia.org/wiki/Sloan_Peak"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "waypoints/Sloan Peak Summit",
+    "value": {
+     "name": "Sloan Peak Summit",
+     "lat": 48.0413767,
+     "lng": -121.3402434
+    },
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "measurement": "USGS GNIS feature 1525950 \"Sloan Peak\" (Summit) primary point",
+      "fact": "48.0413767, -121.3402434"
+     },
+     {
+      "url": "https://www.openstreetmap.org/node/356546463",
+      "fact": "OSM natural=peak Sloan Peak (gnis 1525950) at 48.0414972, -121.340108, 17 m away",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 7835,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/sloan-peak-corkscrew-route",
+      "fact": "High Point 7,835 ft",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.mountainproject.com/area/117523878/sloan-peak",
+      "fact": "7,835 ft",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://en.wikipedia.org/wiki/Sloan_Peak",
+      "fact": "7,835 ft",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "Class 3",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/117524006/corkscrew-route",
+      "fact": "3rd, Easy Snow",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://en.wikipedia.org/wiki/Sloan_Peak",
+      "fact": "Corkscrew class 3",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "commitment",
+    "value": "II",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/117524006/corkscrew-route",
+      "fact": "Grade II",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "length_m",
+    "value": 457,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/117524006/corkscrew-route",
+      "fact": "1,500 ft (455 m)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "road",
+    "value": {
+     "name": "Bedal Creek Trailhead (FR-4096), off Mountain Loop Highway",
+     "status": "Closed for the winter. The Forest Service shut the Mountain Loop Highway from Bedal Campground south to Barlow Pass on 16 November 2026, and the FR 4096 turnoff lies inside that stretch; it sets the reopening date each spring. Walking, snowshoeing and skiing stay allowed.",
+     "driveNote": "Roughly 1.5-2 hours from Seattle via US-2/SR-92/Mountain Loop Highway to the Bedal Creek Trailhead.",
+     "seasonalGate": "FR roads off the Mountain Loop Highway are typically only reliably open late spring through fall; check Darrington Ranger District/USFS alerts for current status."
+    },
+    "method": "official-1",
+    "level": "locked",
+    "expires_at": "2027-02-15T00:00:00Z",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r06/mbs/alerts/mountain-loop-highway-bedal-campground-barlow-pass-closed-winter-nov-16",
+      "official": true,
+      "fact": "MLH Bedal Campground south to Barlow Pass closed for winter Mon 16 Nov; alert start 9 Nov 2026",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/sloan-peak-corkscrew-route",
+      "fact": "FR 4096 turnoff ~1 mile south of Bedal Campground",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "disputed": [
+   "fa: Wikipedia (citing Beckey's Cascade Alpine Guide) 'Harry Bedal and Nels Skaar, July 30, 1921', MP 'Henry Bedal & Nels Skaar (1921)'. Same party and year, first name differs (Harry/Henry) - left unlocked; stored text uses Harry with the date.",
+   "gain_ft (5935): The Mountaineers headline 5,900 ft, but its own trip profile sums 3,000 + 2,100 = 5,100 ft; measurement: 7,835 summit - USGS 3DEP 2,784 ft at the FR 4096 road-end trailhead = 5,051 ft. Figures differ by >10%; not locked.",
+   "dist_km (7.65): The Mountaineers 12.0 mi RT (9.7 km one way); the stored track reaches the summit at 7.0 km. Not changed.",
+   "rock_grade: The Mountaineers names one short Class 4 step below the summit; stored 'one or two 4th-class moves' agrees in kind."
+  ],
+  "notes": "ROAD CLOSED NOW: USFS alert (start 9 Nov 2026) closed the Mountain Loop Highway from Bedal Campground south to Barlow Pass on 16 Nov; FR 4096 leaves the highway ~1 mile south of Bedal Campground (The Mountaineers), so the Bedal Creek trailhead cannot be driven to this winter. road.status rewritten (own words) and locked official-1 to 15 Feb 2027. Trailhead pin moved 387 m north onto the OSM 'Bedal Creek Trailhead' node at the end of FS 4096 (node 50819875, where Trail 705 and FS 4096 meet; USGS 3DEP 2,784 ft) - the stored pin sat ~400 m up the trail. OSM only, so set but not locked. The stored track starts 190 m from the new pin (inside the 200 m rule), passes 4 m from the summit, max gap 11 m, no timestamps. Summit pin snapped 8 m onto the USGS point, elevation set to the published 7,835 ft (was 7,838.6, a DEM read). The Mountaineers also lists a Cougar Creek approach, and names Skykomish Ranger District where the row's access says Darrington - not checked further."
+ },
+ "wa_vesper_peak_north_face": {
+  "area": "wa_vesper_peak",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/111130491/vesper-peak",
+    "https://www.mountainproject.com/route/113835462/north-face",
+    "https://stephabegg.com/?p=8733"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.7",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/113835462/north-face",
+      "fact": "5.7",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://stephabegg.com/?p=8733",
+      "fact": "5.7 (II+)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "disputed": [
+   "pitches (4): MP lists 4 pitches but its own description counts two class 4 and three class 5 pitches; Steph Abegg describes about 3 chimney/gully pitches then about 4 slab pitches. Not locked.",
+   "commitment: MP Grade II, Abegg II+. The row stores none; not added (not settable)."
+  ],
+  "notes": "Row is nearly empty (no waypoints, approach, length or commitment). Shares the Sunrise Mine Trailhead and summit with the Standard Route (see that entry for pins). Abegg: 10 mi RT, 4,100 ft gain, descent by the south/east heather benches to the trail; MP: small-to-medium nuts and cams, crampons/axe early season; Abegg reports a serious 2010 accident on the route. Distinct from Ragged Edge (5.7, 6 pitches) on the same face."
+ },
+ "wa_vesper_peak_standard_route": {
+  "area": "wa_vesper_peak",
+  "set": {
+   "waypoints": [
+    {
+     "lat": 48.0249913,
+     "lng": -121.4778893,
+     "elev": 2311,
+     "name": "Sunrise Mine Trailhead",
+     "type": "Trailhead",
+     "distMi": 0,
+     "directions": "From Granite Falls, drive the Mountain Loop Highway east about 27 to 28 miles, then turn onto Sunrise Mine Road, Forest Road 4065. Follow roughly 2.3 to 2.5 miles of gravel to the road's end at the Sunrise Mine Trailhead, where Trail No. 707 starts. A Northwest Forest Pass is required."
+    },
+    {
+     "lat": 48.0128351,
+     "lng": -121.5178588,
+     "elev": 6214,
+     "name": "Vesper Peak",
+     "type": "Summit",
+     "distMi": 4,
+     "directions": "Take Trail 707 across the unbridged South Fork Stillaguamish and up through forest and a talus basin to the steep, loose couloir and Headlee Pass, about 2.7 miles in. Traverse below Sperry Peak into the upper Vesper Creek basin, leave the lake trail at the creek crossing, and climb the steep bootpath to treeline, then about 1,000 ft of granite slabs on the central rib, following cairns, to the summit."
+    }
+   ]
+  },
+  "review": {
+   "sources": [
+    "https://www.usgs.gov/tools/geographic-names-information-system-gnis (DomesticNames_WA bulk file)",
+    "https://www.openstreetmap.org/way/572502528",
+    "https://www.openstreetmap.org/node/4867566162",
+    "https://www.openstreetmap.org/node/356546878",
+    "https://epqs.nationalmap.gov/v1/json",
+    "https://www.wta.org/go-hiking/hikes/vesper-peak",
+    "https://www.mountaineers.org/activities/routes-places/vesper-sperry-wolf-peaks",
+    "https://www.mountainproject.com/area/111130491/vesper-peak",
+    "https://stephabegg.com/?p=8733",
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/sunrise-mine-trail-707",
+    "https://www.fs.usda.gov/r06/mbs/alerts"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "waypoints/Vesper Peak",
+    "value": {
+     "name": "Vesper Peak",
+     "lat": 48.0128351,
+     "lng": -121.5178588
+    },
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "measurement": "USGS GNIS feature 1527702 \"Vesper Peak\" (Summit) primary point",
+      "fact": "48.0128351, -121.5178588"
+     },
+     {
+      "url": "https://www.openstreetmap.org/node/356546878",
+      "fact": "OSM natural=peak Vesper Peak (gnis 1527702) at 48.0130034, -121.517975, 21 m away",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 6214,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/vesper-peak",
+      "fact": "Highest point 6,214 ft",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/vesper-sperry-wolf-peaks",
+      "fact": "Vesper Peak (6,214 ft)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 4000,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/vesper-peak",
+      "fact": "4,000 ft gain",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/vesper-sperry-wolf-peaks",
+      "fact": "Vesper Peak 4,000 ft gain",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "measurement": "6,214 ft summit - USGS 3DEP 2,311 ft at the Sunrise Mine lot (OSM way 572502528)",
+      "fact": "3903 ft"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_vesper_peak_standard_route",
+    "column": "pitches",
+    "from": 0,
+    "to": null,
+    "why": "pitches is >= 1 or null, never 0 (disciplines.md shapes); this is an unroped scramble.",
+    "evidence": []
+   }
+  ],
+  "disputed": [
+   "dist_km (5.3): WTA and The Mountaineers both give 8.0 mi RT (6.4 km one way); the stored track (no timestamps) reaches the summit at 5.1 km. Publishers agree on 6.4 km but the track disagrees - owner to decide; not changed.",
+   "grade (Class 3) / rock_grade (Class 2-3): no source states a class. WTA calls the top mostly low-angle rock where a 10-20 ft fall is possible; The Mountaineers rates it Technical 3; the area blurb says Class 2. Not locked.",
+   "road.status 'open': no official page states FR 4065 status. USFS's 16 Nov 2026 closure covers Bedal-Barlow Pass only (Sunrise Mine Road is west of Barlow Pass), but Snohomish County usually closes the Deer Creek gate (west of Sunrise Mine Road) in late Nov/early Dec. Re-check soon; not locked."
+  ],
+  "notes": "Trailhead pin moved 39 m onto the centroid of the OSM Sunrise Mine parking lot (way 572502528, USFS, gravel, capacity 12; USGS 3DEP 2,311 ft, stored 2,298); OSM only, so not locked. Summit pin snapped 12 m onto the USGS point. Stored track (1,063 pts, max gap 11 m, starts 39 m from the lot, passes 5 m from the summit) has no timestamps. USFS Trail 707: 17.1 mi east of Verlot on the MLH, FR 4065 2.2 mi; South Fork Stillaguamish ford at 0.5 mi; steep rocky chute below Headlee Pass. The Mountaineers: trailhead 2,350 ft, Headlee Pass 4,720 ft at 2.7 mi, Vesper Lake 4,950 ft. Pass: WTA says NW Forest Pass or America the Beautiful; USFS says a recreation pass 'may be used' as fee payment."
+ }
+}
