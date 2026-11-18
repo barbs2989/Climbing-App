@@ -25,6 +25,7 @@ Not yet documented here (add a doc when you next work in one): moderation/safety
 the catalog import pipeline (see [docs/BACKEND.md](docs/BACKEND.md)).
 
 ## Recent changes
+- **Phone top bar: ☰ without the word Menu, and the screen's Back pinned beside it** (owner 2026-11-18): a screen's own ← Back moves into the sticky top bar (one Back, top left, stays on screen while scrolling); the website is unchanged (`lib/pageBack.js`). See [app-shell-and-layout.md](docs/features/app-shell-and-layout.md).
 - **Route sections no longer hide themselves when you fold them** (owner 2026-11-18, trip plan *Hour by hour*): *Show less* lands the section below the app bar and sub-tab bar instead of behind them; a folded section that something scrolls from inside unfolds instead of showing its middle; the route page's jump chips land below the bars and follow a tab that is still loading (`lib/pinnedTop.js`). See [route-page.md](docs/features/route-page.md).
 - **Groups: Recent posts from your groups folds after three** (owner 2026-11-18): For you shows three posts and a *Show N more posts* dropdown for the rest (`GroupsTab`). See [groups.md](docs/features/groups.md).
 - **axe-core back on 4.14** (2026-11-18): the 4.10.3 pin and the Dependabot ignore from #3348 are lifted. #3354 gave every control a name that contains what it shows (WCAG 2.5.3) the same afternoon the pin went in, so the rule 4.14 gates, `label-content-name-mismatch`, has nothing left to report; a walk of this branch confirmed it before merge.

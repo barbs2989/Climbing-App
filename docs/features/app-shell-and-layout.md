@@ -41,6 +41,16 @@ room for side-panel ads later. The phone app keeps its own look.
     `<body>` (it rendered inside `#appscroll`, under the app header, which hid its ✕). Hidden file
     inputs (`.cm-file-input`) are `position:fixed`, so they no longer stretch a popup's backdrop into a
     second scroller that carried Log a climb off the screen. `check:pinned-dismiss` walks every popup.
+  - **The phone's top bar: an icon-only ☰ and ONE Back beside it** (owner 2026-11-18: "remove the text, menu from
+    the menu box ... persist the back button on the top left so it's always visible even as you scroll ... If there's
+    already a back button on the screen, just have 1 ... app view only"). The Menu is a 44px ☰ square like the bar's
+    other buttons (its name is still "Menu"). When the screen in the main column (a climb, an area, a chat, a crew's
+    safety page) has its own ← Back at its top, `usePageBack` in `lib/pageBack.js` finds it (`findPageBack` in
+    `lib/dialogA11y.js`: a BACK, never a ✕, within the top of `#appscroll`), marks it `data-cm-page-back` so a rule in
+    App's `<style>` hides it, and the sticky bar draws a `POP_BACK` pill (44px tall, "← Back"; the arrow alone under
+    360px) that taps that same control — so every screen keeps its own handler and none was rewired. Its accessible
+    name is the screen's ("Back to All areas"). The phone's hardware Back (`findBackControl`) taps the hidden control
+    too. Popups are untouched: they cover the bar and pin their own ✕ / Back. Home has no back, so its bar is unchanged.
 - **Desktop (1024px and wider) — the website shell:**
   - A full-width fixed **header** of two rows (112px). First the **top bar** (64px): a bare ☰ at the far left (no box, no "Menu" label on
     desktop — owner 2026-11-04; its accessible name is still "Menu"), the logo (the app mark beside a
@@ -254,7 +264,8 @@ taken focus from it by the time the hook looks.
 | `lib/DesktopShell.jsx` | `WideSearch`, `WideRail` (`RailCrews`, `RailGroups`, `FoldCard`), `AvatarMenu`, `WideFooter`, `DocTitle` |
 | `lib/installPrompt.js` | `useInstallPrompt` |
 | `lib/Ads.jsx` | `ADS_ON`, `adsActive`, `SideAd`, `RailAd`, `useRailFollow`, `FollowColumn` |
-| `lib/dialogA11y.js` | `coveringLayer`, `pinDismiss`, `pinLayers` |
+| `lib/dialogA11y.js` | `coveringLayer`, `pinDismiss`, `pinLayers`, `findPageBack`, `PAGE_BACK_ATTR` |
+| `lib/pageBack.js` | `usePageBack` |
 | `lib/tapSlop.js` | `installTapSlop`, `slopTarget`, `TAP_MIN` |
 | `ClimbMatch.jsx` | `NAV`, `goTab`, `navBadge`, `_inChat`, `_known`, `_openMe`, `_closePages`, `_pageView`, `_isAdPage`, `_avatarItems` |
 | `index.html` | `#cm-boot`, `.b-nav`, `#cm-splash` |
