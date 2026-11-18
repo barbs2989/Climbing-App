@@ -47,6 +47,11 @@ Beside the usual `set` / `pitch_detail` / … keys, a batch entry may carry:
 - A field locked at `locked` changes only with an `overturn` of 3+ independent publishers (2+ for
   `locked-1src`); an expired `official-1` lock no longer blocks.
 - A ledger-only entry (no column changes) locks the value as it stands.
+- **Never-lock fields** (owner, 2026-11-18; `NEVER_LOCK`): crowds, seasonal_guidance,
+  seasonal_hazards, timing, itinerary, pro_tips, watch_out, what_to_bring, partner_requirements,
+  difficulty — refused at `locked` / `locked-1src`, allowed as `unconfirmed` / `disputed`.
+- **`road` locks expire within 92 days** (`EXPIRY_MAX_DAYS`); a road lock without `expires_at`, or
+  one further out, is refused.
 - `enrich:apply` can still only WRITE its allow-listed prose columns; grades, discipline and other
   identity columns stay hand-written SQL. The ledger can lock them as they stand.
 
