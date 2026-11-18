@@ -46,7 +46,7 @@ whole guide feature on 2026-11-14 (owner). This doc covers the partners mode (`l
   grade is the lead grade unless its role is "follow"), so a follow-only climber or one with no grade on file does not match; grades
   compare on `gradeNumFrom`, which reads aid C3 and A3 as the same grade. Changing the discipline clears it; it counts in the clear-filters
   button. Real rows get their `climb_grades` through `usePartnerClimbGrades` (the partner RPCs carry none).
-- **Find someone by name** (DB only): a search box (min 2 chars) over real profiles, opened from the *Name* pill.
+- **Find someone by name** (DB only): a full-width search bar (min 2 chars) over real profiles, always shown under *Find partners / Join a crew*; the search title sits under the filter pills, above the results (owner 2026-11-14).
 - **Search for partners by** five modes (the Search by ▾ pill; owner 2026-11-13 merged Near my areas and Saved areas): **My areas** (signed in, the default),
   with two chips under the pills — **Where I'm listed** (internal mode `myareas`: climbers whose listings overlap yours, most
   in common first; with no listing, the You card's *+ Add an area* is the way in and the empty card shows the meanwhile list) and **Saved areas** (internal mode `saved`: the

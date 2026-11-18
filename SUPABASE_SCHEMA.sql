@@ -9,7 +9,7 @@
 -- and commit the result in the same PR. `npm run gen:schema -- --check` exits 1 when this
 -- file has drifted from the live database.
 --
--- Counts: 85 tables, 838 columns, 448 keyed/checked constraints (148 foreign keys), 249 RLS policies.
+-- Counts: 86 tables, 843 columns, 451 keyed/checked constraints (150 foreign keys), 254 RLS policies.
 -- Not covered here: views, functions, triggers, standalone indexes (see supabase/migrations/).
 
 -- ── Foreign keys ───────────────────────────────────────────────────────────────
@@ -54,6 +54,8 @@
 -- crew_email_invites (crew_email_invites_claimed_by_fkey): FOREIGN KEY (claimed_by) REFERENCES auth.users(id) ON DELETE SET NULL
 -- crew_email_invites (crew_email_invites_crew_id_fkey): FOREIGN KEY (crew_id) REFERENCES crews(id) ON DELETE CASCADE
 -- crew_email_invites (crew_email_invites_invited_by_fkey): FOREIGN KEY (invited_by) REFERENCES auth.users(id) ON DELETE CASCADE
+-- crew_float_filings (crew_float_filings_crew_id_fkey): FOREIGN KEY (crew_id) REFERENCES crews(id) ON DELETE CASCADE
+-- crew_float_filings (crew_float_filings_user_id_fkey): FOREIGN KEY (user_id) REFERENCES profiles(id) ON DELETE CASCADE
 -- crew_members (crew_members_crew_id_fkey): FOREIGN KEY (crew_id) REFERENCES crews(id) ON DELETE CASCADE
 -- crew_members (crew_members_invited_by_fkey): FOREIGN KEY (invited_by) REFERENCES profiles(id) ON DELETE SET NULL
 -- crew_members (crew_members_user_id_fkey): FOREIGN KEY (user_id) REFERENCES profiles(id) ON DELETE CASCADE
@@ -730,6 +732,29 @@ CREATE POLICY "inviter or organizer can withdraw" ON public.crew_email_invites A
 CREATE POLICY "organizer can invite by email" ON public.crew_email_invites AS PERMISSIVE FOR INSERT TO public WITH CHECK ((( SELECT auth.uid() AS uid) = ( SELECT crews.created_by
    FROM crews
   WHERE (crews.id = crew_email_invites.crew_id))));
+
+CREATE TABLE public.crew_float_filings (
+  crew_id uuid NOT NULL,
+  user_id uuid NOT NULL DEFAULT auth.uid(),
+  filed_at date NOT NULL DEFAULT CURRENT_DATE,
+  return_by date,
+  updated_at timestamp with time zone NOT NULL DEFAULT now(),
+  CONSTRAINT crew_float_filings_pkey PRIMARY KEY (crew_id, user_id),
+  CONSTRAINT crew_float_filings_crew_id_fkey FOREIGN KEY (crew_id) REFERENCES crews(id) ON DELETE CASCADE,
+  CONSTRAINT crew_float_filings_user_id_fkey FOREIGN KEY (user_id) REFERENCES profiles(id) ON DELETE CASCADE
+);
+ALTER TABLE public.crew_float_filings ENABLE ROW LEVEL SECURITY;
+CREATE POLICY "float filings read by the crew" ON public.crew_float_filings AS PERMISSIVE FOR SELECT TO public USING (((auth.uid() = user_id) OR (EXISTS ( SELECT 1
+   FROM crew_members m
+  WHERE ((m.crew_id = crew_float_filings.crew_id) AND (m.user_id = auth.uid()) AND (m.status = 'confirmed'::text))))));
+CREATE POLICY "own float filing delete" ON public.crew_float_filings AS PERMISSIVE FOR DELETE TO public USING ((auth.uid() = user_id));
+CREATE POLICY "own float filing insert" ON public.crew_float_filings AS PERMISSIVE FOR INSERT TO public WITH CHECK (((auth.uid() = user_id) AND (EXISTS ( SELECT 1
+   FROM crew_members m
+  WHERE ((m.crew_id = crew_float_filings.crew_id) AND (m.user_id = auth.uid()) AND (m.status = 'confirmed'::text))))));
+CREATE POLICY "own float filing update" ON public.crew_float_filings AS PERMISSIVE FOR UPDATE TO public USING ((auth.uid() = user_id)) WITH CHECK (((auth.uid() = user_id) AND (EXISTS ( SELECT 1
+   FROM crew_members m
+  WHERE ((m.crew_id = crew_float_filings.crew_id) AND (m.user_id = auth.uid()) AND (m.status = 'confirmed'::text))))));
+CREATE POLICY "restricted accounts cannot post" ON public.crew_float_filings AS RESTRICTIVE FOR INSERT TO public WITH CHECK (is_active_user(auth.uid()));
 
 CREATE TABLE public.crew_members (
   crew_id uuid NOT NULL,

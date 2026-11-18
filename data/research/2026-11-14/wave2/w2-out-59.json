@@ -1,0 +1,3017 @@
+{
+ "wa_rock_mountain_west_route": {
+  "area": "wa_rock_mountain",
+  "facts": [
+   {
+    "field": "gain_ft",
+    "value": 4050,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/rock-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "WTA Rock Mountain (Rock Lake): 4,050 ft elevation gain, 8.6 mi round trip."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 6852,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/rock-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers lists the high point as 6,852 ft."
+     },
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/rock-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "WTA lists highest point 6,852 ft."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Trailhead just off US 2 east of Stevens Pass (2,675 ft per Mountaineers)",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/rock-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Drive SR 2 8.5 mi east of Stevens Pass, turn north on Old Rd 667; trailhead at 2,675 ft."
+     },
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/rock-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trailhead sits right off Highway 2 a few miles east of Stevens Pass."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Trail climbs more than 90 switchbacks to the summit area",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/rock-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Counting switchbacks may reach over 90 before the destination."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Northwest Forest Pass",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/rock-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Parking permit required: Northwest Forest Pass."
+     }
+    ]
+   }
+  ],
+  "note": "WTA: 8.6 mi round trip, 4,050 ft gain (matches current). Mountaineers page is the WINTER scramble (Jan-Jun, Dec): 11 mi RT, 4,300 ft gain -- not used for gain_ft."
+ },
+ "wa_ruth_icy_traverse": {
+  "area": "wa_ruth_mountain",
+  "facts": [
+   {
+    "field": "gain_ft",
+    "value": 6500,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/high-occupancy-xc-zones/ruth-mountain-icy-peak-traverse",
+      "retrieved_at": "2026-11-14",
+      "fact": "Ruth Mountain-Icy Peak Traverse: elevation gain 6,500 ft (16.0 mi length)."
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "Jun-Oct",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/high-occupancy-xc-zones/ruth-mountain-icy-peak-traverse",
+      "retrieved_at": "2026-11-14",
+      "fact": "Seasons listed June through October."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Hannegan Campground at end of Ruth Creek Rd (FR 32), 3,000 ft",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/high-occupancy-xc-zones/ruth-mountain-icy-peak-traverse",
+      "retrieved_at": "2026-11-14",
+      "fact": "Take Ruth Creek Rd (FR 32) 4.5 mi to road end at Hannegan Campground, 3,000 ft."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Trail 4 mi to Hannegan Pass (5,056 ft)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/high-occupancy-xc-zones/ruth-mountain-icy-peak-traverse",
+      "retrieved_at": "2026-11-14",
+      "fact": "Hike the trail 4 mi to Hannegan Pass at 5,056 ft."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Snow camp beyond the notch on Ruth, ~6,600 ft",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/high-occupancy-xc-zones/ruth-mountain-icy-peak-traverse",
+      "retrieved_at": "2026-11-14",
+      "fact": "Camp on snow on the far side of the notch, about 6,600 ft."
+     }
+    ]
+   },
+   {
+    "field": "times",
+    "value": "5-6 hr trailhead to Ruth camp; 3-5 hr camp to Icy summit",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/high-occupancy-xc-zones/ruth-mountain-icy-peak-traverse",
+      "retrieved_at": "2026-11-14",
+      "fact": "Times: 5-6 hr trailhead to camp on Ruth, 3-5 hr camp to Icy Peak summit."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Rockfall on Icy Peak; biting flies/mosquitoes on Hannegan trail",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/high-occupancy-xc-zones/ruth-mountain-icy-peak-traverse",
+      "retrieved_at": "2026-11-14",
+      "fact": "Notes rockfall issues on Icy Peak and bothersome black flies and mosquitoes on the trail."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Northwest Forest Pass; North Cascades NP / Mt Baker Wilderness",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/high-occupancy-xc-zones/ruth-mountain-icy-peak-traverse",
+      "retrieved_at": "2026-11-14",
+      "fact": "Parking permit: Northwest Forest Pass; land manager North Cascades National Park."
+     }
+    ]
+   },
+   {
+    "field": "trailhead_elev_ft",
+    "value": 3000,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/high-occupancy-xc-zones/ruth-mountain-icy-peak-traverse",
+      "retrieved_at": "2026-11-14",
+      "fact": "Road end at Hannegan Campground, 3,000 ft."
+     },
+     {
+      "url": "https://www.northwestalpineguides.com/northwest-climbs/ruth-mountain/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trailhead: Hannegan Campground, 3,000 ft."
+     }
+    ]
+   }
+  ],
+  "note": "Mountaineers gain 6,500 ft over 16 mi (round-trip length) vs current 8,000."
+ },
+ "wa_ruth_mountain_south_slopes": {
+  "area": "wa_ruth_mountain",
+  "facts": [
+   {
+    "field": "trailhead",
+    "value": "Hannegan Campground at end of Ruth Creek Rd (FR 32), 3,000 ft",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.northwestalpineguides.com/northwest-climbs/ruth-mountain/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trailhead: Hannegan Campground, 3,000 ft."
+     },
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/high-occupancy-xc-zones/ruth-mountain-icy-peak-traverse",
+      "retrieved_at": "2026-11-14",
+      "fact": "Ruth Creek Rd (FR 32) to road end at Hannegan Campground, 3,000 ft."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "4 mi trail to Hannegan Pass camp (5,056 ft)",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.northwestalpineguides.com/northwest-climbs/ruth-mountain/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Approach 4 miles, 2,056 ft gain to Hannegan Pass camp at 5,056 ft."
+     },
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/high-occupancy-xc-zones/ruth-mountain-icy-peak-traverse",
+      "retrieved_at": "2026-11-14",
+      "fact": "Hike the trail 4 mi to Hannegan Pass at 5,056 ft."
+     }
+    ]
+   },
+   {
+    "field": "approach_gain_ft",
+    "value": 2056,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.northwestalpineguides.com/northwest-climbs/ruth-mountain/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Hannegan Pass approach: 4 miles, 2,056 ft gain, 4-5 hours to camp."
+     }
+    ]
+   },
+   {
+    "field": "summit_day_gain_ft",
+    "value": 2059,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.northwestalpineguides.com/northwest-climbs/ruth-mountain/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Camp to summit: 3 hours, 2,059 ft."
+     }
+    ]
+   },
+   {
+    "field": "times",
+    "value": "4-5 hr trailhead to Hannegan Pass camp; 3 hr camp to summit",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.northwestalpineguides.com/northwest-climbs/ruth-mountain/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Approach time to camp 4-5 hours; camp to summit 3 hours."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Hannegan Pass camp, 5,056 ft",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.northwestalpineguides.com/northwest-climbs/ruth-mountain/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Hannegan Pass Camp: 5,056 ft."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "From Hannegan Pass ascend a steep ridge to the Ruth Glacier, then weave between crevasses on moderate slopes",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.northwestalpineguides.com/northwest-climbs/ruth-mountain/",
+      "retrieved_at": "2026-11-14",
+      "fact": "From Hannegan Pass the route climbs a steep ridge to the Ruth Glacier base and winds between crevasses on moderate slopes."
+     },
+     {
+      "url": "https://www.alpineinstitute.com/route-profile-ruth-mountain-climb/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trail splits at Hannegan Pass; a ridge leads up to the glacier and summit."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Small open crevasses beside the track on the glacier",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.alpineinstitute.com/route-profile-ruth-mountain-climb/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Open crevasses lie left and right of the track, but they are small."
+     }
+    ]
+   }
+  ],
+  "note": "Two-day guided itinerary (NWAG). Approach + summit-day gains are stated separately; not summed."
+ },
+ "wa_ruth_peak_olympics_scramble": {
+  "area": "wa_ruth_peak_olympics",
+  "facts": [
+   {
+    "field": "trailhead",
+    "value": "Sol Duc trailhead is the shortest start for the Bailey Range",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://climberkyle.com/2021/07/31/the-bailey-range-traverse/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Shortest way to do the route begins at Sol Duc."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Eleven Bull Basin, beneath Mount Carrie and Ruth Peak",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://climberkyle.com/2021/07/31/the-bailey-range-traverse/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Camped in Eleven Bull Basin beneath Carrie and Ruth."
+     }
+    ]
+   },
+   {
+    "field": "water",
+    "value": "Streams in Eleven Bull Basin",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://climberkyle.com/2021/07/31/the-bailey-range-traverse/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Streams gush from the hillsides in Eleven Bull Basin."
+     }
+    ]
+   }
+  ],
+  "note": "Only one publisher read (climberkyle traverse report). SummitPost 403; Wikipedia/peakvisor not used. NPS Carrie-glacier page and AAC article seen in search but not route pages."
+ },
+ "wa_sahale_mountain_r1": {
+  "area": "wa_sahale_mountain",
+  "facts": [
+   {
+    "field": "gain_ft",
+    "value": 5780,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/boston-basin-area-review/sahale-peak-quien-sabe-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers Sahale Peak/Quien Sabe Glacier: elevation gain 5,780 ft, high point 8,680 ft."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 8680,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/boston-basin-area-review/sahale-peak-quien-sabe-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "High point 8,680 ft."
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "Jul-Sep",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/boston-basin-area-review/sahale-peak-quien-sabe-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Seasons July, August, September."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "4th class",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107848161/quien-sabe-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project rates Quien Sabe Glacier 4th YDS, snow/alpine."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Old Diamond Mine Rd fork off Cascade River Rd, about 21.7 mi from Marblemount (3,220 ft)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/boston-basin-area-review/sahale-peak-quien-sabe-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Cascade River Rd about 21.7 mi to old Diamond Mine Rd fork, 3,220 ft."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Walk about 1 mi on the old mine road, then the trail turns sharply right and steeply up",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/boston-basin-area-review/sahale-peak-quien-sabe-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "From the fork walk about 1 mile on the mine road until the trail leaves it steeply to the right."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Boston Basin, 6,200 ft",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/boston-basin-area-review/sahale-peak-quien-sabe-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Camp in Boston Basin at 6,200 ft."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "From camp climb snowfields on the left of the Quien Sabe Glacier toward Sharkfin Col, then rope up and traverse east to the couloir below the peak",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/boston-basin-area-review/sahale-peak-quien-sabe-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Ascend snowfields left of Quien Sabe Glacier to just below Sharkfin Col, rope up and traverse east to the couloir."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Sign in at the ranger station and obtain a permit",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/boston-basin-area-review/sahale-peak-quien-sabe-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Sign in at Ranger Station and get a permit."
+     }
+    ]
+   }
+  ],
+  "note": "Mountaineers page covers Sahale, Sharkfin and Boston via Quien Sabe; the gain/high point used are those listed on the Sahale/Quien Sabe page."
+ },
+ "wa_sahale_mountain_sahale_glacier": {
+  "area": "wa_sahale_mountain",
+  "facts": [
+   {
+    "field": "gain_ft",
+    "value": 5300,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/cascade-pass-area-review/sahale-peak-south-slope",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers Sahale Peak/South Slope: elevation gain 5,300 ft, length 17.0 mi."
+     },
+     {
+      "url": "https://summitborn.com/sahale-arm-trail-to-sahale-mountain/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Summitborn gives gain about 5,100 ft and estimates 5,100-5,300 ft."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 8680,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/cascade-pass-area-review/sahale-peak-south-slope",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers high point 8,680 ft."
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "Jul-Oct",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/cascade-pass-area-review/sahale-peak-south-slope",
+      "retrieved_at": "2026-11-14",
+      "fact": "Seasons July through October."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Cascade Pass Trailhead, end of Cascade River Road (3,660 ft)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/sahale-arm-trail-to-sahale-mountain/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trailhead elevation 3,660 ft at Cascade Pass Trailhead."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "3.5 mi trail to Cascade Pass, then east up Sahale Arm about 1,700 ft more",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/cascade-pass-area-review/sahale-peak-south-slope",
+      "retrieved_at": "2026-11-14",
+      "fact": "An easy 3.5 mi trail to Cascade Pass, then east up Sahale Arm another 1,700 ft."
+     }
+    ]
+   },
+   {
+    "field": "times",
+    "value": "4-5 hr trailhead to camp, 2 hr camp to summit",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/cascade-pass-area-review/sahale-peak-south-slope",
+      "retrieved_at": "2026-11-14",
+      "fact": "Times: 4-5 hr trailhead to camp, 2 hr camp to summit."
+     }
+    ]
+   },
+   {
+    "field": "car_to_car_hours",
+    "value": 12,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/sahale-arm-trail-to-sahale-mountain/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Estimated time about 12 hours."
+     }
+    ]
+   },
+   {
+    "field": "rappels",
+    "value": "Rappel off the summit block",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/sahale-arm-trail-to-sahale-mountain/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Out-and-back with a rappel off the summit block."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "Class 3 rock with a short Class 4 section above a glacier",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/sahale-arm-trail-to-sahale-mountain/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mostly Class 3 rock with a short Class 4 section above moderate glacier."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "None for a day climb; NPS backcountry permit required to camp overnight",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/sahale-arm-trail-to-sahale-mountain/",
+      "retrieved_at": "2026-11-14",
+      "fact": "No permit for a day climb; NPS backcountry permit for any overnight stay."
+     },
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/cascade-pass-area-review/sahale-peak-south-slope",
+      "retrieved_at": "2026-11-14",
+      "fact": "Get a permit at the ranger station if not planning to car camp."
+     }
+    ]
+   }
+  ],
+  "note": "Summitborn also states ~3,940 ft of the gain is to the glacier camp and a lidar high point of ~8,745 ft; Mountaineers 8,680 ft kept."
+ },
+ "wa_saska_peak_emerald_saska_col": {
+  "area": "wa_saska_peak",
+  "facts": [
+   {
+    "field": "trailhead",
+    "value": "North Fork Entiat River Trailhead at the end of FR 5606 (3,880 ft)",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/emerald-saska-peaks",
+      "retrieved_at": "2026-11-14",
+      "fact": "Continue ~35 mi, turn right on FR 5606 to the North Fork Entiat River Trailhead (3,880 ft)."
+     },
+     {
+      "url": "https://climberkyle.com/2017/05/27/saska-emerald-and-cardinal-peaks/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Approach via the Entiat River Road to the trailhead."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Fox Camp 0.25 mi north of the trailhead; also a camp in the basin between Emerald and Saska",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/emerald-saska-peaks",
+      "retrieved_at": "2026-11-14",
+      "fact": "Camp 0.25 mile north at Fox Camp; a beautiful camp in the basin between Emerald and Saska, 1.5 mi further."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "From Fox Camp take the Pyramid Trail 1.5 mi to the basin between Emerald and Saska",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/emerald-saska-peaks",
+      "retrieved_at": "2026-11-14",
+      "fact": "From Fox Camp hike the Pyramid Trail 1.5 miles to the basin between Emerald and Saska."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Traverse around the basin and climb snow slopes to Saska (early season)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://climberkyle.com/2017/05/27/saska-emerald-and-cardinal-peaks/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Traversed around the basin and ascended snow slopes to Saska Peak."
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "Jul-Oct",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/emerald-saska-peaks",
+      "retrieved_at": "2026-11-14",
+      "fact": "Seasons July through October."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Northwest Forest Pass",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/emerald-saska-peaks",
+      "retrieved_at": "2026-11-14",
+      "fact": "Parking permit: Northwest Forest Pass."
+     }
+    ]
+   },
+   {
+    "field": "road",
+    "value": "Last miles of road to the trailhead can be closed early in the season",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://climberkyle.com/2017/05/27/saska-emerald-and-cardinal-peaks/",
+      "retrieved_at": "2026-11-14",
+      "fact": "The last 5 miles of road to the trailhead were closed in late May, requiring a road walk."
+     }
+    ]
+   }
+  ],
+  "note": "Mountaineers Emerald-Saska page is a two-peak trip (23 mi, 5,200 ft) -- not used for gain. WTA saska-peak lists swapped stats (gain 8,404 / high 5,254) -- not used."
+ },
+ "wa_scarface_3": {
+  "area": "wa_colchuck_balanced_rock",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "5.10+",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108157279/scarface",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project: Scarface 5.10+ YDS on Colchuck Balanced Rock."
+     },
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/75607-tr-colchuck-balanced-rock-scarface-iii-510/",
+      "retrieved_at": "2026-11-14",
+      "fact": "CascadeClimbers trip report titled Scarface (III, 5.10+), 8/15/2010."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "III",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108157279/scarface",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists Grade III."
+     },
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/75607-tr-colchuck-balanced-rock-scarface-iii-510/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trip report title gives Grade III."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 1200,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108157279/scarface",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists 1200 ft."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Colin B. and Nate F., August 2010",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108157279/scarface",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA: Colin B., Nate F."
+     },
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/75607-tr-colchuck-balanced-rock-scarface-iii-510/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trip report dated 8/15/2010 by the party with Nate F. describes the climb."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Second pitch is the highlight: sustained steep climbing; slab on the fourth pitch; moderate pitches higher up",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/75607-tr-colchuck-balanced-rock-scarface-iii-510/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Second pitch was the highlight with sustained steep climbing; slab on 4th pitch; moderate pitches up high."
+     }
+    ]
+   }
+  ],
+  "note": "FA year 2010 comes from the CC report date; MP FA line names no date."
+ },
+ "wa_scramble_route": {
+  "area": "wa_eagle_peak",
+  "facts": [
+   {
+    "field": "approach_gain_ft",
+    "value": 2955,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.nps.gov/mora/planyourvisit/eagle-peak.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "NPS Eagle Peak Trail to the Eagle-Chutla saddle: elevation gain 2,955 feet."
+     },
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/eagle-peak-saddle",
+      "retrieved_at": "2026-11-14",
+      "fact": "WTA Eagle Peak Saddle: 7.2 miles round trip, 2,910 ft gain."
+     }
+    ]
+   },
+   {
+    "field": "approach_dist_mi_roundtrip",
+    "value": 7.2,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/eagle-peak-saddle",
+      "retrieved_at": "2026-11-14",
+      "fact": "WTA: Eagle Peak Saddle 7.2 miles roundtrip."
+     }
+    ]
+   },
+   {
+    "field": "approach_hours_roundtrip",
+    "value": 5,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.nps.gov/mora/planyourvisit/eagle-peak.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Hiking time, round trip, 5 hours (trail to the saddle)."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Eagle Peak Trailhead at Longmire, 300 ft past the Nisqually suspension bridge",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.nps.gov/mora/planyourvisit/eagle-peak.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trailhead located 300 feet past the suspension bridge through the Longmire employee housing area."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Trail switchbacks up a steep slope and ends at the saddle between Eagle Peak and Chutla Peak",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.nps.gov/mora/planyourvisit/eagle-peak.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trail switchbacks up a steep slope and terminates at a saddle between Eagle Peak and Chutla Peak."
+     }
+    ]
+   },
+   {
+    "field": "road",
+    "value": "Nisqually suspension bridge has a 3-ton weight limit; heavier vehicles park at Longmire and walk across",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.nps.gov/mora/planyourvisit/eagle-peak.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Suspension bridge weight limit 3 tons; otherwise park at main Longmire lot and cross on foot."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "No wilderness camps on the trail",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.nps.gov/mora/planyourvisit/eagle-peak.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Wilderness camps: none."
+     }
+    ]
+   }
+  ],
+  "note": "All figures are for the maintained trail to the saddle, not the summit scramble. WTA highest point 5,720 ft is the saddle."
+ },
+ "wa_seven_fingered_jack_southwest_slopes": {
+  "area": "wa_seven_fingered_jack",
+  "facts": [
+   {
+    "field": "trailhead",
+    "value": "Phelps Creek Trailhead at the end of Phelps Creek Road (about 3,500 ft)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://trailcatjim.com/mt-ferrow-and-seven-fingered-jack/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Start and end at Phelps Creek Trailhead, end of Phelps Creek Road, elevation about 3,500 ft."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Leroy Basin, about 6,200 ft",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://trailcatjim.com/mt-ferrow-and-seven-fingered-jack/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Campsite: Leroy Basin, elevation about 6,200 ft."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Phelps Creek trail, cross Leroy Creek, then the Leroy Basin trail",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://trailcatjim.com/mt-ferrow-and-seven-fingered-jack/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Waypoints: Phelps Creek, Leroy Creek and Leroy Basin on trail."
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "Jul-Sep",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-maude-seven-fingered-jack",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers Mount Maude and Seven Fingered Jack: seasons July, August, September."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Northwest Forest Pass",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-maude-seven-fingered-jack",
+      "retrieved_at": "2026-11-14",
+      "fact": "Parking permit: Northwest Forest Pass."
+     }
+    ]
+   }
+  ],
+  "note": "Mountaineers page combines Maude and Seven Fingered Jack (14 mi, 5,600 ft, high point 9,100) -- multi-peak, gain not used. thealpineguide.com page is behind a Cloudflare check."
+ },
+ "wa_sews_sw_rib": {
+  "area": "wa_south_early_winters_spire",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "5.8",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106416669/southwest-rib",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project: Southwest Rib 5.8 YDS."
+     },
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/liberty-bell-blue-lake-trail-area-review/south-early-winter-spire-west-face-southwest-rib",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers: West Face and Southwest Rib is a Grade III, 5.8 climb."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "III",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106416669/southwest-rib",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists Grade III."
+     },
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/liberty-bell-blue-lake-trail-area-review/south-early-winter-spire-west-face-southwest-rib",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers calls it Grade III."
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 7,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106416669/southwest-rib",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project: 900 ft, 7 pitches."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 900,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106416669/southwest-rib",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists the route as 900 ft."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Donald Anderson and Larry Scott, 1964",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106416669/southwest-rib",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA: Donald Anderson & Larry Scott, 1964."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Slabby arete leads to a belay at the Rabbit Ears, two bouldery towers with rappel slings; then rappel or downclimb into the gully",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106416669/southwest-rib",
+      "retrieved_at": "2026-11-14",
+      "fact": "Slabby arete to belay at the Rabbit Ears; P7 rappel or downclimb into the gully."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 5,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/liberty-bell-blue-lake-trail-area-review/south-early-winter-spire-west-face-southwest-rib",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers lists length 5.0 mi."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 7807,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/liberty-bell-blue-lake-trail-area-review/south-early-winter-spire-west-face-southwest-rib",
+      "retrieved_at": "2026-11-14",
+      "fact": "High point 7,807 ft."
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "May-Oct",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/liberty-bell-blue-lake-trail-area-review/south-early-winter-spire-west-face-southwest-rib",
+      "retrieved_at": "2026-11-14",
+      "fact": "Seasons May through October."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Northwest Forest Pass",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/liberty-bell-blue-lake-trail-area-review/south-early-winter-spire-west-face-southwest-rib",
+      "retrieved_at": "2026-11-14",
+      "fact": "Parking permit required: Northwest Forest Pass."
+     }
+    ]
+   }
+  ],
+  "note": ""
+ },
+ "wa_sharkfin_tower_southeast_ridge": {
+  "area": "wa_sharkfin_tower",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "5.0",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://stephabegg.com/trip-reports/washington/sharkfin-tower/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Stephabegg: Sharkfin Tower Southeast Ridge 5.0, 3 pitches."
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 3,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://stephabegg.com/trip-reports/washington/sharkfin-tower/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route listed as Southeast Ridge 5.0, 3p."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 8160,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://stephabegg.com/trip-reports/washington/sharkfin-tower/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Stephabegg lists Sharkfin Tower elevation 8,160 ft."
+     }
+    ]
+   },
+   {
+    "field": "rock",
+    "value": "Granite",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://stephabegg.com/trip-reports/washington/sharkfin-tower/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Rock: granite."
+     }
+    ]
+   },
+   {
+    "field": "approach_gain_ft",
+    "value": 2500,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://stephabegg.com/trip-reports/washington/sharkfin-tower/",
+      "retrieved_at": "2026-11-14",
+      "fact": "About 2 miles with ~2,500 ft of gain to the lower Boston Basin camp."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "From upper Boston Basin go to the western edge of the Quien Sabe Glacier; approach gully is moderate snow plus 3rd/4th class",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://stephabegg.com/trip-reports/washington/sharkfin-tower/",
+      "retrieved_at": "2026-11-14",
+      "fact": "From upper Boston Basin ascend to the western edge of the Quien Sabe Glacier; approach gully moderate snow + 3rd/4th."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Choosing a similar but wrong gully led to a rockfall injury and a fatal rappel accident",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://stephabegg.com/trip-reports/washington/sharkfin-tower/",
+      "retrieved_at": "2026-11-14",
+      "fact": "A party chose a similar incorrect gully, leading to rockfall injury and a rappel accident with three fatalities."
+     }
+    ]
+   }
+  ],
+  "note": "Single publisher (stephabegg, citing Nelson and Potterfield). Mountaineers has no Sharkfin route page (404); its Quien Sabe page covers Sharkfin only as an option."
+ },
+ "wa_sheep_gap_mountain_scramble": {
+  "area": "wa_sheep_gap_mountain",
+  "facts": [
+   {
+    "field": "trailhead",
+    "value": "Monte Cristo Trailhead at Barlow Pass, Mountain Loop Highway (2,321 ft)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://onehikeaweek.com/2024/10/10/sheep-gap-mountain-north-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Access: Monte Cristo Trailhead at Barlow Pass; elevation range starts at 2,321 ft."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Gothic Basin via the Weden Creek trail, then a permanent snowfield below the pass gives access to the peaks",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://onehikeaweek.com/2024/10/10/sheep-gap-mountain-north-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route via Gothic Basin and Weden Creek trail; a permanent snowfield below the pass gives access to the peaks."
+     }
+    ]
+   }
+  ],
+  "note": "onehikeaweek trip was the NORTH peak (13.8 mi RT, to 5,683 ft) plus Middle Peak, not the main summit -- only shared approach facts used. SummitPost 808715 not opened (403 wall). Mountaineers/WTA have no page (404)."
+ },
+ "wa_sherman_peak_baker_route": {
+  "area": "wa_sherman_peak_baker",
+  "facts": [
+   {
+    "field": "route_step",
+    "value": "From the Easton Glacier side gain the shoulder of the west ridge, then follow it to a final knife-edge to the summit",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://stevensong.com/usa/washington/sherman-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Sherman Peak ascent route from Easton Glacier; gaining the west ridge shoulder; final knife-edge to the summit."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Steep crater face and seracs in Sherman Crater; active volcanic gas vents",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://stevensong.com/usa/washington/sherman-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Photos note the steep crater face, seracs in Sherman Crater and a volcanic gas hole."
+     }
+    ]
+   }
+  ],
+  "note": "Mountaineers Sherman Peak page is the SQUAK Glacier route (13.4 mi, 6,800 ft, high point 10,160 ft) -- different route, not used. Current high point 10,133 ft (2023 survey) differs from Mountaineers 10,160."
+ },
+ "wa_sherpa_glacier": {
+  "area": "wa_mount_stuart",
+  "facts": [
+   {
+    "field": "gain_ft",
+    "value": 5833,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/enchantments-area-review/mount-stuart-sherpa-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers Mount Stuart/Sherpa Glacier: elevation gain 5,833 ft, length 16.2 mi."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 9415,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/enchantments-area-review/mount-stuart-sherpa-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "High point 9,415 ft."
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "Mar-Jun",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/enchantments-area-review/mount-stuart-sherpa-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Seasons March through June."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Lake Stuart Trailhead (3,600 ft)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/enchantments-area-review/mount-stuart-sherpa-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Drive 4 miles to the Lake Stuart Trailhead (3,600 ft)."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Fork at about 2.2 mi (4,500 ft)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/enchantments-area-review/mount-stuart-sherpa-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "At about 2.2 mi (4,500 ft) there is a fork."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Wooded camps, a boulderfield camp near water, or a camp at the base of the glacier",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/enchantments-area-review/mount-stuart-sherpa-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Camping in the woods, better camps near water at a boulderfield, or at the glacier base."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Northwest Forest Pass",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/enchantments-area-review/mount-stuart-sherpa-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Parking permit: Northwest Forest Pass."
+     }
+    ]
+   }
+  ],
+  "note": "whereiskylemiller Sherpa Glacier page is a ski/snowboard attempt that did not summit (18 mi, 15 h) -- not used."
+ },
+ "wa_sherpa_peak_east_ridge": {
+  "area": "wa_sherpa_peak",
+  "facts": [
+   {
+    "field": "high_point_ft",
+    "value": 8605,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/sherpa-peak-mountain-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Summitborn: Sherpa Peak elevation 8,605 ft."
+     },
+     {
+      "url": "https://onehikeaweek.com/2014/10/19/sherpa-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Elevation range 4,280 to 8,605 ft."
+     },
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/104328-tr-sherpa-peak-east-ridge-02052022/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trip report: Sherpa Peak (8,605 ft) via East Ridge."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Lake Ingalls (Esmeralda) Trailhead, over Longs Pass",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://onehikeaweek.com/2014/10/19/sherpa-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Access: Lake Ingalls Trailhead, via Longs Pass; elevation range from 4,280 ft."
+     },
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/104328-tr-sherpa-peak-east-ridge-02052022/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Options were Esmeralda trailhead over Longs Pass or Beverly Creek trailhead via Fourth Creek."
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "The East Ridge is the least technical route to the summit",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://onehikeaweek.com/2014/10/19/sherpa-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "The east ridge provides the least challenging way to the summit."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 14,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://onehikeaweek.com/2014/10/19/sherpa-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Round trip 14 miles."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Cross Longs Pass, descend to Ingalls Creek, and on the return climb back up to Longs Pass",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://onehikeaweek.com/2014/10/19/sherpa-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "The trip involved going back up to Longs Pass from Ingalls Creek."
+     }
+    ]
+   },
+   {
+    "field": "gear",
+    "value": "Helmet, rock gear and rope",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://onehikeaweek.com/2014/10/19/sherpa-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Gear: helmet, rock and rope."
+     }
+    ]
+   },
+   {
+    "field": "rappels",
+    "value": "30 m rappels used on the descent",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/104328-tr-sherpa-peak-east-ridge-02052022/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Party planned 30 m rappels."
+     }
+    ]
+   }
+  ],
+  "note": "Winter CC report used snowmobiles; Beverly Creek alternative avoids avalanche terrain before Sherpa per that report."
+ },
+ "wa_sherpa_peak_north_ridge": {
+  "area": "wa_sherpa_peak",
+  "facts": [
+   {
+    "field": "high_point_ft",
+    "value": 8605,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/sherpa-peak-mountain-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Summitborn: Sherpa Peak elevation 8,605 ft."
+     },
+     {
+      "url": "https://onehikeaweek.com/2014/10/19/sherpa-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Elevation range 4,280 to 8,605 ft."
+     },
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/104328-tr-sherpa-peak-east-ridge-02052022/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trip report: Sherpa Peak (8,605 ft) via East Ridge."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "5.8",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://lemkeclimbs.com/sherpa-peak-north-ridge-58",
+      "retrieved_at": "2026-11-14",
+      "fact": "Lemke Climbs: Sherpa Peak North Ridge 5.8; pitches of 5.7 and 5.8."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Scrambling and a long 5.7 pitch to a big Class 2 ledge below the crest, then a dirty 5.8 chimney and another 5.8 crack pitch; a deep gully regains the crest",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://lemkeclimbs.com/sherpa-peak-north-ridge-58",
+      "retrieved_at": "2026-11-14",
+      "fact": "One long 5.7 pitch, a dirty 5.8 chimney pitch, another 5.8 crack pitch, then a deep gully back to the crest."
+     }
+    ]
+   },
+   {
+    "field": "water",
+    "value": "Water found around 7,000 ft, last source for a while",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://lemkeclimbs.com/sherpa-peak-north-ridge-58",
+      "retrieved_at": "2026-11-14",
+      "fact": "Found water around 7,000 feet, the last chance for a while."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Party bivied on a large ledge before the big notch",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://lemkeclimbs.com/sherpa-peak-north-ridge-58",
+      "retrieved_at": "2026-11-14",
+      "fact": "Ended up bivying on a large ledge shortly before the notch."
+     }
+    ]
+   }
+  ],
+  "note": "Lemke page lists elevation 8,635 ft in its header but 8,605 ft in its log; 8,605 used from three publishers."
+ },
+ "wa_sherpa_peak_west_ridge": {
+  "area": "wa_sherpa_peak",
+  "facts": [
+   {
+    "field": "high_point_ft",
+    "value": 8605,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/sherpa-peak-mountain-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Summitborn: Sherpa Peak elevation 8,605 ft."
+     },
+     {
+      "url": "https://onehikeaweek.com/2014/10/19/sherpa-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Elevation range 4,280 to 8,605 ft."
+     },
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/104328-tr-sherpa-peak-east-ridge-02052022/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trip report: Sherpa Peak (8,605 ft) via East Ridge."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "5.4",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/ingalls-stuart-area/sherpa-peak-w-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers: Sherpa Peak via the West Ridge is a Grade II, 5.4 climb."
+     },
+     {
+      "url": "https://summitborn.com/sherpa-peak-mountain-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Summitborn: the West Ridge is graded only around 5.4."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "II",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/ingalls-stuart-area/sherpa-peak-w-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers: Grade II."
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "May-Sep",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/ingalls-stuart-area/sherpa-peak-w-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Seasons May through September."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Camp at 6,200 ft, or an upper basin camp at 7,400 ft on a flat rock in a boulder field",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/ingalls-stuart-area/sherpa-peak-w-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Camp at 6,200 ft or at an upper basin camp at 7,400 ft on a big flat rock in a boulder field."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "From high camp climb to the Stuart-Sherpa col at about 8,100 ft, then follow the ridge; Class 4 ridge travel below the crux pitch",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/ingalls-stuart-area/sherpa-peak-w-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "From high camp climb to the Stuart-Sherpa col at about 8,100 ft and climb the ridge."
+     },
+     {
+      "url": "https://summitborn.com/sherpa-peak-mountain-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Class 4 ridge travel and broken rock below the crux pitch."
+     }
+    ]
+   },
+   {
+    "field": "rappels",
+    "value": "Two single-rope rappels, a scramble, another single-rope rappel, then a final double-rope rappel",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/ingalls-stuart-area/sherpa-peak-w-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Two single rope rappels, scramble, another single rope rappel, then a final double rope rappel."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Northwest Forest Pass",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/ingalls-stuart-area/sherpa-peak-w-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Parking permit: Northwest Forest Pass."
+     }
+    ]
+   }
+  ],
+  "note": "Mountaineers gain 7,400 ft for this page (trailhead unclear; current 4,330 from Longs Pass) -- not used. Mountaineers high point 8,600 ft."
+ },
+ "wa_sky_mountain_s_route": {
+  "area": "wa_sky_mountain",
+  "facts": [
+   {
+    "field": "approach_step",
+    "value": "Park at Stevens Pass on the north side of US 2, walk the road up to Skyline Lake, then follow the undulating east ridge",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.yellowleaf.org/scramble/g/r/2005-12-22-sky-mtn.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Parked at Stevens Pass lot north of Highway 2 and hiked the road up to Skyline Lake, then to the ridge top."
+     },
+     {
+      "url": "https://stevensong.com/usa/washington/sky-mountain/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Approach from Skyline Lake along the undulating east ridge."
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "Sky Mountain is the unofficial name of the high point of the horseshoe Skyline (Heather) Ridge just north of Stevens Pass",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://stevensong.com/usa/washington/sky-mountain/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Unofficial name of the highest peak on horseshoe-shaped Skyline or Heather Ridge north of Stevens Pass."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "East ridge starts at a rock garden; the summit block is best taken from the north side, up a gully to the forested summit ridge",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://stevensong.com/usa/washington/sky-mountain/",
+      "retrieved_at": "2026-11-14",
+      "fact": "East ridge begins at a rock garden; correct attack was the north side, up a gully to the forested summit ridge."
+     }
+    ]
+   },
+   {
+    "field": "route_step_2",
+    "value": "A field of granite boulders leads along Skyline Ridge; scrambling the east side of the 5,440+ ft point is semi-exposed",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.yellowleaf.org/scramble/g/r/2005-12-22-sky-mtn.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Granite boulder field leads to the 5,440+ ft point on Skyline Ridge; its east side involved semi-exposed scrambling."
+     }
+    ]
+   }
+  ],
+  "note": "WTA sky-mountain page exists but carries no stats or description. No gain/distance stated by either page."
+ },
+ "wa_slippery_slab_tower_ne_face": {
+  "area": "wa_thunder_mountain_and_slippery_slab_tower",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "5.4",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/115128293/slippery-slab-tower-ne-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project: Slippery Slab Tower NE Face 5.4 YDS, trad alpine."
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 2,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/115128293/slippery-slab-tower-ne-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project: 150 ft, 2 pitches."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 150,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/115128293/slippery-slab-tower-ne-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists 150 ft."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Dave Harrah, William Herston, Keith Rankin and Ruth Rankin, May 1947",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/115128293/slippery-slab-tower-ne-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA: Dave Harrah, William Herston, Keith Rankin, Ruth Rankin, May 1947."
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 4200,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/slippery-slab-tower-ne-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers: elevation gain 4,200 ft."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 6400,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/slippery-slab-tower-ne-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers high point 6,400 ft."
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "May-Oct",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/slippery-slab-tower-ne-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "Seasons May through October."
+     }
+    ]
+   },
+   {
+    "field": "times",
+    "value": "6-7 hr trailhead to summit",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/slippery-slab-tower-ne-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "Times: 6-7 hr trailhead to summit."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Tunnel Creek Trailhead (3,100 ft)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/slippery-slab-tower-ne-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trailhead at 3,100 ft."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Tunnel Creek Trail 1.6 mi to the PCT at Hope Lake (4,400 ft), then the PCT south 3.8 mi to Trap Pass (5,800 ft)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/slippery-slab-tower-ne-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trail 1.6 miles to PCT junction at Hope Lake (4,400 ft); PCT south 3.8 mi to Trap Pass (5,800 ft)."
+     }
+    ]
+   },
+   {
+    "field": "rappels",
+    "value": "Rappel the route from belay trees, or one double-rope rappel straight down from the upper belay tree",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/slippery-slab-tower-ne-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "Rappel from belay trees, or one double rope rappel straight down from the upper belay tree."
+     },
+     {
+      "url": "https://www.mountainproject.com/route/115128293/slippery-slab-tower-ne-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "Rappel the climbing route; an obvious rappel station is likely."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Northwest Forest Pass",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/slippery-slab-tower-ne-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "Parking permit: Northwest Forest Pass."
+     }
+    ]
+   }
+  ],
+  "note": ""
+ },
+ "wa_sloan_peak_corkscrew": {
+  "area": "wa_sloan_peak",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Class 3 with glacier travel",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/sloan-peak-corkscrew-route",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers: glacier and rock skills needed (Class 3)."
+     },
+     {
+      "url": "https://stephabegg.com/trip-reports/washington/sloan-bedal/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Corkscrew Route is 3rd class with some glacier travel."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 7835,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/sloan-peak-corkscrew-route",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers high point 7,835 ft."
+     },
+     {
+      "url": "https://stephabegg.com/trip-reports/washington/sloan-bedal/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Stephabegg gives Sloan Peak elevation 7,835 ft."
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 5900,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/sloan-peak-corkscrew-route",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers Sloan Peak/Corkscrew Route: elevation gain 5,900 ft, length 12.0 mi."
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "Jul-Sep",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/sloan-peak-corkscrew-route",
+      "retrieved_at": "2026-11-14",
+      "fact": "Seasons July, August, September."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Bedal Creek Trailhead at the end of Bedal Creek Road (2,800 ft)",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/sloan-peak-corkscrew-route",
+      "retrieved_at": "2026-11-14",
+      "fact": "Drive 3 miles to the trailhead (2,800 ft)."
+     },
+     {
+      "url": "https://stephabegg.com/trip-reports/washington/sloan-bedal/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Bedal Creek Trailhead is at the end of the Bedal Creek Road."
+     }
+    ]
+   },
+   {
+    "field": "times",
+    "value": "4-5 hr to camp, 5-6 hr camp to summit",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/sloan-peak-corkscrew-route",
+      "retrieved_at": "2026-11-14",
+      "fact": "Times: 4-5 hr to camp, 5-6 hr to summit."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Saddle at 5,330 ft or the ridge overlooking the glacier",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/sloan-peak-corkscrew-route",
+      "retrieved_at": "2026-11-14",
+      "fact": "Camp on the saddle at 5,330 ft or on the ridge overlooking the glacier."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Northwest Forest Pass",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/sloan-peak-corkscrew-route",
+      "retrieved_at": "2026-11-14",
+      "fact": "Parking permit required: Northwest Forest Pass."
+     }
+    ]
+   }
+  ],
+  "note": "WTA sloan-peak (9 mi RT, 2,900 ft) does not name its route/trailhead clearly -- not used."
+ },
+ "wa_snowking_mountain_standard": {
+  "area": "wa_snowking_mountain",
+  "facts": [
+   {
+    "field": "high_point_ft",
+    "value": 7433,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/snowking",
+      "retrieved_at": "2026-11-14",
+      "fact": "WTA lists highest point 7,433 ft."
+     },
+     {
+      "url": "https://onehikeaweek.com/2023/10/20/snowking-mountain/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Elevation range 1,160 to 7,433 ft."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "Class 3",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/snowking",
+      "retrieved_at": "2026-11-14",
+      "fact": "WTA calls Snowking a strenuous mountaineering trip or class 3 alpine scramble."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Road 1570 (Kindy Creek Rd) at Vee Creek, about 1,160 ft",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://onehikeaweek.com/2023/10/20/snowking-mountain/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Access: Road 1570 at Vee Creek; elevation range starts at 1,160 ft."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Common approach from the Cascade River via Found Peak and Kindy Ridge to a high camp above Cyclone Lake",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://onehikeaweek.com/2023/10/20/snowking-mountain/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Most parties start from the Cascade River via Found Peak and Kindy Ridge; high camp above Cyclone Lake."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Summit climbed via the northeast ridge from the Cyclone Lake high camp",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://onehikeaweek.com/2023/10/20/snowking-mountain/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Climbing Snowking Mountain via Northeast Ridge from the high camp above Cyclone Lake."
+     }
+    ]
+   }
+  ],
+  "note": "onehikeaweek 17.1 mi round trip also included Razorback Mountain (multi-peak), not used. Mountaineers snowking-mtn page is an M3 expert SKI route (12 mi, 5,000 ft) -- not used for this climb."
+ },
+ "wa_south_arete": {
+  "area": "wa_south_early_winters_spire",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "5.5",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106378815/south-arete",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project: South Arete 5.5 YDS, trad alpine."
+     },
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/liberty-bell-blue-lake-trail-area-review/south-early-winter-spire-south-arete",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers: three or four pitches with two 5.5 moves, mostly easy climbing."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "II",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106378815/south-arete",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists Grade II."
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 3,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106378815/south-arete",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists 3 pitches."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Fred Beckey and Helmy Beckey, June 19, 1942",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106378815/south-arete",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA: Fred Beckey, Helmy Beckey, June 19, 1942."
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 2600,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/liberty-bell-blue-lake-trail-area-review/south-early-winter-spire-south-arete",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers: elevation gain 2,600 ft, length 6.0 mi."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 7807,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/liberty-bell-blue-lake-trail-area-review/south-early-winter-spire-south-arete",
+      "retrieved_at": "2026-11-14",
+      "fact": "High point 7,807 ft."
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "May-Oct",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/liberty-bell-blue-lake-trail-area-review/south-early-winter-spire-south-arete",
+      "retrieved_at": "2026-11-14",
+      "fact": "Seasons May through October."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Blue Lake Trailhead on SR 20, 1.5 mi west of Washington Pass (5,200 ft)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/liberty-bell-blue-lake-trail-area-review/south-early-winter-spire-south-arete",
+      "retrieved_at": "2026-11-14",
+      "fact": "Blue Lake Trailhead (5,200 ft), 1.5 mi west of the pass on SR-20."
+     }
+    ]
+   },
+   {
+    "field": "times",
+    "value": "5-7 hr trailhead to summit",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/liberty-bell-blue-lake-trail-area-review/south-early-winter-spire-south-arete",
+      "retrieved_at": "2026-11-14",
+      "fact": "Times: 5-7 hr trailhead to summit."
+     }
+    ]
+   },
+   {
+    "field": "rappels",
+    "value": "2-3 single-rope rappels down the climbing route, depending on how much is downclimbed",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/liberty-bell-blue-lake-trail-area-review/south-early-winter-spire-south-arete",
+      "retrieved_at": "2026-11-14",
+      "fact": "Rappel the route; two to three single rope rappels depending on downclimbing."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Northwest Forest Pass",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/liberty-bell-blue-lake-trail-area-review/south-early-winter-spire-south-arete",
+      "retrieved_at": "2026-11-14",
+      "fact": "Parking permit required: Northwest Forest Pass."
+     }
+    ]
+   }
+  ],
+  "note": "Mountaineers says 3-4 pitches; MP says 3. Trailhead elevation 5,200 ft (Mountaineers) vs current 5,400."
+ },
+ "wa_south_early_winter_spire_passenger": {
+  "area": "wa_south_early_winters_spire",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "5.11d",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106585962/the-passenger",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project: The Passenger 5.11d YDS."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "III",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106585962/the-passenger",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists Grade III."
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 7,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106585962/the-passenger",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project: 900 ft, 7 pitches."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 900,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106585962/the-passenger",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists 900 ft."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Bryan Burdo, Pete Doorish and Greg White, October 1991",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106585962/the-passenger",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA: Bryan Burdo, Pete Doorish & Greg White (10/1991)."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Descend by the South Arete, the standard descent for the peak",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106585962/the-passenger",
+      "retrieved_at": "2026-11-14",
+      "fact": "Descent is the South Arete, the standard descent for this peak."
+     }
+    ]
+   }
+  ],
+  "note": "Current alpine_grade IV; MP says III. hillmap blog TR titled Passenger 5.11 IV not readable (tab lost)."
+ },
+ "wa_south_face_12": {
+  "area": "wa_argonaut_peak",
+  "facts": [
+   {
+    "field": "high_point_ft",
+    "value": 8453,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/argonaut-peak-south-route",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers Argonaut Peak/South Route: high point 8,453 ft."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Beverly Creek Trailhead at the end of FR 9737-112 (3,600 ft)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/argonaut-peak-south-route",
+      "retrieved_at": "2026-11-14",
+      "fact": "Turn right on Forest Road 9737-112 and drive 1.4 mi to the Beverly Creek trailhead at road end (3,600 ft)."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Final crux is a 50-ft gully with a chockstone at its top (Class 4) on the right side of the summit face",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/argonaut-peak-south-route",
+      "retrieved_at": "2026-11-14",
+      "fact": "Ascend to the right side of the summit face and climb the final crux, a 50-foot chockstone gully (Class 4)."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Northwest Forest Pass",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/argonaut-peak-south-route",
+      "retrieved_at": "2026-11-14",
+      "fact": "Parking permit: Northwest Forest Pass."
+     }
+    ]
+   }
+  ],
+  "note": "Mountaineers page is the South ROUTE (Basic Alpine, Class 4 chockstone gully; 19 mi, 7,600 ft gain) -- current route is a 5.6 South Face; gain/length not used. Second publisher not found (SummitPost 403)."
+ },
+ "wa_south_face_3": {
+  "area": "wa_concord_tower",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "5.6",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/117635520/south-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project: Concord Tower South Face 5.6 YDS."
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 3,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/117635520/south-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project: 300 ft, 3 pitches, Grade II."
+     },
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/liberty-bell-blue-lake-trail-area-review/concord-tower-south-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers: climb three pitches to the summit."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "II",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/117635520/south-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists Grade II."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 300,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/117635520/south-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists 300 ft."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Donald Cramer, Donald Anderson, Bruce Schuler and Fred Stanley, 1965",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/117635520/south-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA 1965 by Donald Cramer, Donald Anderson, Bruce Schuler, Fred Stanley."
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 2000,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/liberty-bell-blue-lake-trail-area-review/concord-tower-south-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers: elevation gain 2,000 ft, length 5.0 mi."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 7560,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/liberty-bell-blue-lake-trail-area-review/concord-tower-south-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers high point 7,560 ft."
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "May-Oct",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/liberty-bell-blue-lake-trail-area-review/concord-tower-south-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "Seasons May through October."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Blue Lake Trailhead on SR 20, 1.5 mi west of Washington Pass (5,200 ft)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/liberty-bell-blue-lake-trail-area-review/concord-tower-south-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "Blue Lake Trailhead (5,200 ft), 1.5 mi west of Washington Pass."
+     }
+    ]
+   },
+   {
+    "field": "rappels",
+    "value": "Two single-rope rappels back to the notch",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/liberty-bell-blue-lake-trail-area-review/concord-tower-south-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "Return to notch via two single rope rappels."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Northwest Forest Pass",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/liberty-bell-blue-lake-trail-area-review/concord-tower-south-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "Parking permit: Northwest Forest Pass."
+     }
+    ]
+   }
+  ],
+  "note": "Mountaineers grades it 5.6+/5.7 in 3-4 pitches; MP says 5.6, so grade left single-source."
+ },
+ "wa_south_face_5": {
+  "area": "wa_inspiration_peak",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "5.8",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/inspiration-peak-south-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers: Inspiration Peak South Face is a Grade III, 5.8 rock climb."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "III",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/inspiration-peak-south-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers: Grade III."
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 7500,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/inspiration-peak-south-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers: elevation gain 7,500 ft, length 16.0."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 7880,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/inspiration-peak-south-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers high point 7,880 ft."
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "Jun-Sep",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/inspiration-peak-south-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "Seasons June through September."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Terror Basin climbers trail from Goodell Creek",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/102123-tr-inspiration-peak-south-face-09022018/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Approach notes: Terror Basin trail from Goodell Creek."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "4th and low 5th scrambling, a long right-trending 5th-class ramp to the steep Great Gash, which leads up-left to the upper West Ridge; one ridge pitch to finish",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/102123-tr-inspiration-peak-south-face-09022018/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Ramp followed right to the Great Gash, which goes up and left to the upper West Ridge; a ridge pitch finishes."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Exposed scrambling then steep rappels down the south face",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/102123-tr-inspiration-peak-south-face-09022018/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Descent involved exposed scrambling and steep rappels down the south face."
+     }
+    ]
+   }
+  ],
+  "note": "Mountaineers lists permit None (NPS land)."
+ },
+ "wa_south_face_8": {
+  "area": "wa_lundin_peak",
+  "facts": [
+   {
+    "field": "high_point_ft",
+    "value": 6057,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/lundin-peak-west-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers: summit 6,057 ft is on the east end; high point 6,057 ft."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Pacific Crest Trail parking lot at Snoqualmie Pass (3,040 ft)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/lundin-peak-west-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Take the first right to the Pacific Crest Trail parking lot (3,040 ft)."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Commonwealth Basin trail; a valley on the left leads to the south face of Lundin",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/lundin-peak-west-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Via the Commonwealth Basin trail another valley appears on the left leading to the south face of Lundin."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Walk down to the Red-Lundin saddle and take the trail down to Commonwealth Basin and the PCT",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/lundin-peak-west-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Walk down to Red-Lundin saddle and pick up the trail to Commonwealth Basin and the PCT."
+     }
+    ]
+   }
+  ],
+  "note": "Only source read is the Mountaineers WEST RIDGE page (shared trailhead/summit/descent); CascadeClimbers thread on Lundin south-face routes has no route detail. MP 119617555 South Face Left (5.10) is a different line."
+ },
+ "wa_south_face_center": {
+  "area": "wa_concord_tower",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "5.8+",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111944979/south-face-center",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project: Concord Tower South Face Center 5.8+ YDS."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 220,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111944979/south-face-center",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists 220 ft, trad alpine."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Climb through a bulge trending left; two right-facing corners lead to a tree just below the summit block",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111944979/south-face-center",
+      "retrieved_at": "2026-11-14",
+      "fact": "Through a bulge trending left; two right-facing corners reach the tree below the summit block."
+     }
+    ]
+   },
+   {
+    "field": "rappels",
+    "value": "Two single-rope rappels from the south side of the summit",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111944979/south-face-center",
+      "retrieved_at": "2026-11-14",
+      "fact": "Two single rope raps from the south side of the summit bring you down."
+     },
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/liberty-bell-blue-lake-trail-area-review/concord-tower-south-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "Return to the notch via two single rope rappels."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 7560,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/liberty-bell-blue-lake-trail-area-review/concord-tower-south-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers Concord Tower high point 7,560 ft."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Blue Lake Trailhead on SR 20, 1.5 mi west of Washington Pass (5,200 ft)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/liberty-bell-blue-lake-trail-area-review/concord-tower-south-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "Blue Lake Trailhead (5,200 ft), 1.5 mi west of Washington Pass."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Northwest Forest Pass",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/liberty-bell-blue-lake-trail-area-review/concord-tower-south-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "Parking permit: Northwest Forest Pass."
+     }
+    ]
+   }
+  ],
+  "note": "Mountaineers facts are from the Concord Tower South Face page (same peak, shared approach and descent). MP lists FA as not known."
+ },
+ "wa_south_ridge_3": {
+  "area": "wa_black_peak",
+  "facts": [
+   {
+    "field": "high_point_ft",
+    "value": 8970,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/black-peak-s-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers high point 8,970 ft."
+     },
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/black-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "WTA highest point 8,970 ft."
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 5100,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/black-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "WTA Black Peak: 12.0 miles roundtrip, 5,100 ft elevation gain."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 12,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/black-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "WTA: 12.0 miles roundtrip."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "II",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/black-peak-s-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers: a Grade II climb with class 4 rock and snow up to 30 degrees."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "Class 4",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/black-peak-s-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers: class 4 rock and snow up to 30 degrees."
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "May-Oct",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/black-peak-s-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Seasons May through October."
+     }
+    ]
+   },
+   {
+    "field": "times",
+    "value": "4-6 hr trailhead to camp",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/black-peak-s-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Times: 4-6 hr trailhead to camp."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Established sites at the lakes passed on the approach",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/black-peak-s-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Approach passes multiple lakes with established camp sites."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Approach passes Wing Lake",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/black-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "WTA describes Black Peak from Wing Lake."
+     }
+    ]
+   }
+  ],
+  "note": "WTA 5,100 ft gain vs current gain 3,971 (current loss is 5,100). MP 107664796 South Ridge is a Leavenworth crag route, not Black Peak."
+ }
+}

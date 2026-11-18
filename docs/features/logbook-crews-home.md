@@ -138,12 +138,21 @@ Three top-level `tab` values in `ClimbMatch.jsx` (`tab==="today"`, `tab==="crew"
   `crew:<id>` first, the old scope deleted second, and a saved plan files the crew stub. A saved crew plan has *Send to the crew chat*
   (`FloatPlan`'s `onSendToCrew`, wired in both `FloatPlans` and the crew `SafetyTab`), which posts the plan text through `sendCrewMsg` — the
   climber's own send, so the Privacy Policy's "stays on your phone until you send it" still holds; `crews.float_plan` is unchanged.
-  **Who stamps the crew** (2026-11-14): saving a crew plan (`onFiled` → App's `fileCrewFloatPlan(cid, form)`) writes the
-  `crews.float_plan` stamp `{filedAt, contact: null, returnBy}` only when the climber is the ORGANIZER — the only role RLS (0036) lets
-  update the row — and its toast waits for that write. A member's save stays on the device and says so (*Float plan saved on this
-  device*), with no crew write and no organizer error. Deleting a crew plan calls `fileCrewFloatPlan(cid, null)`, which clears the
-  organizer's stamp so the card's ✓ does not outlive the plan. The stamp is still ONE per crew, so a member sees ✓ when the organizer
-  filed; per-member filings are the planned fix.
+  **Form and list, after the walkthrough** (2026-11-18): the three fields Save needs (route, hard return, emergency contact) say *Required*, and an
+  incomplete form says what is *Still needed* under an aria-disabled Save. The profile emergency contact (0237) is filled into an EMPTY contact field
+  once the saved plan has loaded (raw setter, so it is not an edit). `crewFloatFill` turns the agreed day (else the first proposed one) plus a
+  clock-time meet-up into the picker's own value. In `FloatPlans`: list times go through `fpWhen`; a new plan is not saved until its first edit,
+  and never-edited empty ones are swept on load; Delete (button or swipe) shows *Deleted … Undo* for 8 s, and Undo re-files a saved crew plan; a
+  failed delete says so; a crew-scoped plan whose crew is gone reads *Crew ended* and offers *Keep as a trip plan* (re-scoped to `trip:`).
+  **Your own filing** (0450, 2026-11-18; replaces the 2026-11-14 organizer-only stamp): saving a crew plan (`onFiled` →
+  App's `fileCrewFloatPlan(cid, form)`) writes YOUR row in `crew_float_filings` through `setMyFloatFiling` (lib/db.js) — the
+  date filed and the crew's agreed return day, never the plan or a contact — for every confirmed member, the organizer
+  included; the toast waits for the write. `useMyCrews` embeds the table and App keeps only the row whose `user_id` is you
+  (`crew.myFloatFiling`), so `CrewCard`'s *✓ Your float plan* and the itinerary step's *your float plan set* say whether YOU
+  filed. RLS (copied from `crew_rides`, 0377) lets the crew's confirmed members read each other's rows, as the Privacy Policy
+  says, but no screen shows them (owner: "only my own"; `check:policy-claims` §5 holds the app to that). Deleting the plan
+  (`fileCrewFloatPlan(cid, null)`) deletes the row; leaving the crew drops it (trigger). `crews.float_plan` is deprecated and no
+  longer written; seed and signed-out crews keep their local `floatPlan` flag. RLS proof: `scripts/oneoff/verify-0450-float-filings-pglite.mjs`.
   **Chat → plan**: the plan text is ONE format, `floatPlanText` (core), and `parseFloatPlanText` reads it back (null for any other message).
   In a crew thread `MessageRow` (given `onSaveFloatPlan`) draws a posted plan as `FloatPlanCard` (`src/components/FloatPlanCard.tsx`): the climb,
   Leaves / Back by (amber) / Parking / Vehicle / Party / Comms / Contact where filled, notes, coordinate. A crewmate's card has *Save to my float
@@ -267,6 +276,12 @@ Notes: `docs/guards/social-and-crews.md`, `contributions-and-logbook.md`, `hones
 (Matched by name; not re-run.)
 
 ## 7. Last significant change
+
+2026-11-18 two-climber walkthrough: crew invites arrive live (`useMyCrewInvites` is a live query on `crew_members`); Ready up's *Said hi in crew chat* reads whether the crew chat has any message from the database (`useCrewHasMessages`), not only the messages loaded on this device; the Ready-up risk row calls it *Mixed* only for Conservative with Aggressive, the Safety screen's rule; *Climb with them again* asks *Who can join?* like + Create a crew.
+
+2026-11-18 (0451): `crew_alignment()` returns no per-answer count (risk levels, the four flags) until two confirmed members have answered — one answer would show whose it is. Who has answered (`done_ids`) still shows. Ready up says *Risk tolerance: shows once 2 of you have answered*, and the Safety screen's matrix says the counts show once 2 have answered. Known limit: in a crew of exactly two, once both answer, each can infer the other's answers from their own.
+
+2026-11-14 (#3385): *Start a crew* on the climb page (beside Save) opens `CreateCrewSheet` for that climb; *Who can join?* is asked once at create (*Just people I invite*, the default, makes it private; *Let others ask to join* lists it); Meet-up offers *Meet at <access point>* (`route.road.name`) in one tap; the safety check says *Start with 5 private questions* once instead of five times; a crew invite on Requests shows the mountain, grade, day and how many are in; the Your crews rail names the mountain under each crew; a crew you just joined sorts first.
 
 2026-11-14 (#3381, 0448): any confirmed member proposes days on the Day sheet's calendar (`crew_propose_day`, which also says the proposer can make it); a day is taken back by whoever proposed it or by the organiser (`crew_unpropose_day`, which clears its acks and its lock; `crews.date_proposers`). Members still cannot UPDATE the crew row. `crews`, `crew_members` and `crew_day_acks` are on Realtime, and `useMyCrews` is a live query over them, so a crewmate's change reaches an open Crews tab without a reload.
 

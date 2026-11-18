@@ -1,0 +1,2266 @@
+{
+ "wa_mount_rainier_fuhrer_finger": {
+  "area": "wa_mount_rainier",
+  "facts": [
+   {
+    "field": "gain_ft",
+    "value": 10000,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/paradise-area-review/mount-rainier-fuhrer-finger",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers lists elevation gain 10,000 ft for the Fuhrer Finger climb from Paradise."
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "May-July",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/paradise-area-review/mount-rainier-fuhrer-finger",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers lists seasons May, June, July."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "II",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/paradise-area-review/mount-rainier-fuhrer-finger",
+      "retrieved_at": "2026-11-14",
+      "fact": "Described as a Grade II climb on 30-45 degree snow and ice."
+     },
+     {
+      "url": "https://www.mountainproject.com/route/106636996/fuhrer-finger",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project: snow, alpine, 9000 ft, Grade II."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "~9,500 ft on Wapowety Cleaver edge of Wilson Glacier",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/paradise-area-review/mount-rainier-fuhrer-finger",
+      "retrieved_at": "2026-11-14",
+      "fact": "Good campsite at 9,500 ft; some parties dig platforms at 10,000 ft."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Cross Nisqually Glacier ~6,200 ft, up Wilson Gully, Wilson Glacier left edge to ~9,000 ft",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/paradise-area-review/mount-rainier-fuhrer-finger",
+      "retrieved_at": "2026-11-14",
+      "fact": "Cross the Nisqually near 6,200 ft, ascend Wilson Gully (rockfall), follow Wilson Glacier to about 9,000 ft."
+     }
+    ]
+   },
+   {
+    "field": "leg_gain_trailhead_to_camp_ft",
+    "value": 4100,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/paradise-area-review/mount-rainier-fuhrer-finger",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trip profile: trailhead to camp 6 hr, 4,100 ft gain."
+     }
+    ]
+   },
+   {
+    "field": "leg_gain_camp_to_summit_ft",
+    "value": 4900,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/paradise-area-review/mount-rainier-fuhrer-finger",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trip profile: camp to summit 5-7 hr, 4,900 ft gain; summit to trailhead 6-8 hr."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Descend route or carry over Disappointment Cleaver",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/paradise-area-review/mount-rainier-fuhrer-finger",
+      "retrieved_at": "2026-11-14",
+      "fact": "Descend the climbing route, or carry over and go down the Disappointment Cleaver route."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Standard glacier gear, pickets and/or flukes",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/paradise-area-review/mount-rainier-fuhrer-finger",
+      "retrieved_at": "2026-11-14",
+      "fact": "Equipment: standard glacier gear plus pickets and/or flukes."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Rockfall in Wilson Gully and the finger",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/paradise-area-review/mount-rainier-fuhrer-finger",
+      "retrieved_at": "2026-11-14",
+      "fact": "Page warns of rockfall in Wilson Gully and while climbing the finger."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Climbing permit above 10,000 ft or on glaciers; park entrance fee",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/paradise-area-review/mount-rainier-fuhrer-finger",
+      "retrieved_at": "2026-11-14",
+      "fact": "Climbing permit required on glaciers or above 10,000 ft; National Park entrance fee for parking."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 9000,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106636996/fuhrer-finger",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists route length 9000 ft."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Hans Fuhrer, Heinie Fuhrer, Joseph Hazard, Thomas Hermans, 2 July 1920",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106636996/fuhrer-finger",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA July 2 1920 by Hans and Heine Fuhrer, Joseph Hazard, Thomas Hermans."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "Mod. Snow",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106636996/fuhrer-finger",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project grade: moderate snow."
+     }
+    ]
+   }
+  ],
+  "note": "Mountaineers gain 10,000 ft vs our 9,010. MP length 9000 ft is the climb vertical. Second trip-report source (climberkyle) was a ski descent via Camp Muir, not used."
+ },
+ "wa_mount_rainier_gibraltar_ledges": {
+  "area": "wa_mount_rainier",
+  "facts": [
+   {
+    "field": "gain_ft",
+    "value": 9010,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/paradise-area-review/mount-rainier-gibraltar-ledges",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers lists elevation gain 9,010 ft."
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "Dec-Feb",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/paradise-area-review/mount-rainier-gibraltar-ledges",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers lists seasons January, February, December."
+     },
+     {
+      "url": "https://willhiteweb.com/mount_rainier_national_park/gibraltar_ledges_route/climb_296.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Page says the Gibraltar Ledges route is typically only done in winter."
+     }
+    ]
+   },
+   {
+    "field": "leg_gain_trailhead_to_camp_ft",
+    "value": 4680,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/paradise-area-review/mount-rainier-gibraltar-ledges",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trip profile: trailhead to camp 6 hr, 4,680 ft."
+     }
+    ]
+   },
+   {
+    "field": "leg_gain_camp_to_summit_ft",
+    "value": 4330,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/paradise-area-review/mount-rainier-gibraltar-ledges",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trip profile: camp to summit 7 hr, 4,330 ft; summit to camp 5 hr."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Reverse route; in high rockfall descend Ingraham Glacier and Cadaver Gap",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/paradise-area-review/mount-rainier-gibraltar-ledges",
+      "retrieved_at": "2026-11-14",
+      "fact": "Descend the route, or in high rockfall go down the Ingraham Glacier and through Cadaver Gap to camp."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Standard glacier gear, flukes and pickets",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/paradise-area-review/mount-rainier-gibraltar-ledges",
+      "retrieved_at": "2026-11-14",
+      "fact": "Equipment: standard glacier gear, flukes and pickets."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Camp Muir",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://willhiteweb.com/mount_rainier_national_park/gibraltar_ledges_route/climb_296.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Winter trip camped at Camp Muir; descended via the Ingraham Glacier."
+     }
+    ]
+   }
+  ],
+  "note": "Season: Mountaineers Dec-Feb and willhiteweb \"typically only done in winter\" overlap. Mazamas activity page opened, holds only Mazamas grade letters."
+ },
+ "wa_mount_rainier_ingraham_direct": {
+  "area": "wa_mount_rainier",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Mod. Snow",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106812783/ingraham-glacier-direct",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project grade: moderate snow, Grade II, 4500 ft."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "II",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106812783/ingraham-glacier-direct",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists Grade II."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 4500,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106812783/ingraham-glacier-direct",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists route length 4500 ft."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Skyline trail ends ~7,200 ft, then Muir Snowfield to Camp Muir",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.timberlinetrails.com/RainierApproachClimb.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Paradise to Camp Muir approach: trail ends at 7,200 ft, then continue up the Muir Snowfield."
+     }
+    ]
+   }
+  ],
+  "note": "Mountaineers slug 404; MP length 4500 ft is the glacier climb above camp. No second source for gain."
+ },
+ "wa_mount_rainier_kautz_glacier": {
+  "area": "wa_mount_rainier",
+  "facts": [
+   {
+    "field": "gain_ft",
+    "value": 9000,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/paradise-area-review/mount-rainier-kautz-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers lists elevation gain 9,000 ft."
+     },
+     {
+      "url": "https://globalsummitguide.com/mountains-rainier-route-comparison/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Comparison table citing NPS route brief: about 9,500 ft gain, 11-12 mi."
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "Jul-Sep",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/paradise-area-review/mount-rainier-kautz-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers lists seasons July, August, September."
+     }
+    ]
+   },
+   {
+    "field": "leg_gain_trailhead_to_camp_ft",
+    "value": 5800,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/paradise-area-review/mount-rainier-kautz-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trip profile: trailhead to camp 8-10 hr, 5,800 ft."
+     }
+    ]
+   },
+   {
+    "field": "leg_gain_camp_to_summit_ft",
+    "value": 3200,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/paradise-area-review/mount-rainier-kautz-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trip profile: camp to summit 5-10 hr, 3,200 ft; summit to trailhead 4-6 hr."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Standard glacier gear, ice screws and pickets",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/paradise-area-review/mount-rainier-kautz-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Equipment: glacier gear plus ice screws and pickets."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "WI2-3",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105906991/kautz-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project grade WI2-3; ice, alpine, 9000 ft."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 9000,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105906991/kautz-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists route length 9000 ft."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Hans Fuhrer, Heinie Fuhrer, Roger Toll, Harry Myers, 1920",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105906991/kautz-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA credited to Hans Fuhrer, Heinie Fuhrer, Roger Toll, Harry Myers (no year shown)."
+     },
+     {
+      "url": "https://www.alpineinstitute.com/route-profile-kautz-glacier/",
+      "retrieved_at": "2026-11-14",
+      "fact": "First documented ascent 1920 by the Fuhrer brothers, Roger Toll and Harry Myers."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Camp Hazard (highest camp; ice-cliff exposure)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.alpineinstitute.com/route-profile-kautz-glacier/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Camp Hazard has sites and blue-bag bins, but most avoid it because ice cliffs above shed debris."
+     }
+    ]
+   },
+   {
+    "field": "rappels",
+    "value": "Short rappel from Wapowety Cleaver onto the Kautz Glacier",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.jeffreyjhebert.com/adventures/kautz-glacier-on-mount-rainier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Report reached the short rappel down onto the Kautz Glacier from Wapowety Cleaver; bivy near 11,000 ft."
+     }
+    ]
+   }
+  ],
+  "note": "Gain: Mountaineers 9,000 and globalsummitguide (NPS brief) ~9,500 agree within 10%. MP has FA names without year; AAI gives 1920 with same four names."
+ },
+ "wa_mount_rainier_kautz_headwall": {
+  "area": "wa_mount_rainier",
+  "skip_reason": "Opened alpineinstitute Kautz Glacier profile, jeffreyjhebert Kautz report and globalsummitguide Rainier comparison: all cover the standard Kautz Glacier, none the headwall variant. Mountaineers slug 404; MP search returned only Kautz Glacier."
+ },
+ "wa_mount_rainier_liberty_ridge": {
+  "area": "wa_mount_rainier",
+  "facts": [
+   {
+    "field": "gain_ft",
+    "value": 11500,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://tahomawild.com/liberty-ridge-rainier-route/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route summary: elevation gain about 11,500 ft, distance about 10-12 miles."
+     },
+     {
+      "url": "https://globalsummitguide.com/mountains-rainier-route-comparison/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Comparison table citing NPS route brief: about 11,500 ft gain, 10-12 mi."
+     },
+     {
+      "url": "https://stephabegg.com/trip-reports/washington/rainier-liberty/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trip summary: elevation gain 11,400 ft via White River approach; max grade 55 degrees."
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 10000,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/new-routes-places-for-beta-brews/mount-rainier-liberty-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers lists elevation gain 10,000 ft, high point 14,410 ft."
+     }
+    ],
+    "conflict": true
+   },
+   {
+    "field": "season",
+    "value": "May-Jul",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/new-routes-places-for-beta-brews/mount-rainier-liberty-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers lists seasons May, June, July."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Ice axe, crampons, helmet, pickets, ice screws, glacier rope",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/new-routes-places-for-beta-brews/mount-rainier-liberty-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Equipment: ice axe, crampons, helmets, pickets, ice screws, glacier rope."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "AI2-3 Steep Snow",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106459197/liberty-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project grade AI2-3 steep snow."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "IV",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106459197/liberty-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists Grade IV, 5700 ft, 6 pitches."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 5700,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106459197/liberty-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists route length 5700 ft."
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 6,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106459197/liberty-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists 6 pitches."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Ome Daiber, Arnie Campbell, Jim Borrow, 1935",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106459197/liberty-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA: Ome Daiber, Arnie Campbell and Jim Borrow, 1935."
+     },
+     {
+      "url": "https://tahomawild.com/liberty-ridge-rainier-route/",
+      "retrieved_at": "2026-11-14",
+      "fact": "First climbed September 1935 by Ome Daiber, Will Borrow and Arnold Campbell."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Thumb Rock (traditional high bivouac)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://tahomawild.com/liberty-ridge-rainier-route/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Traditional high bivouac is Thumb Rock."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Lower Curtis Ridge (~7,500 ft); Thumb Rock (~10,800 ft)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://stephabegg.com/trip-reports/washington/rainier-liberty/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Camps on lower Curtis Ridge at 7,500 ft and at Thumb Rock at 10,800 ft."
+     }
+    ]
+   },
+   {
+    "field": "leg_gain_trailhead_to_camp_ft",
+    "value": 3100,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://stephabegg.com/trip-reports/washington/rainier-liberty/",
+      "retrieved_at": "2026-11-14",
+      "fact": "White River to camp on lower Curtis Ridge (7,500 ft): elevation gain 3,100 ft."
+     }
+    ]
+   }
+  ],
+  "note": "Gain: tahomawild/globalsummitguide ~11,500 and stephabegg 11,400 (White River) agree; Mountaineers lists 10,000 (conflict, not used). tahomawild and globalsummitguide may both derive from the NPS route brief. Liberty Ridge season on tahomawild quotes Mountaineers, so not counted twice. MP grade IV; tahomawild says Mountaineers calls it Grade V (not used)."
+ },
+ "wa_mount_rainier_mowich_face": {
+  "area": "wa_mount_rainier",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "AI3-4 Steep Snow",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106703081/central-mowich-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project (Central Mowich Face): AI3-4 steep snow, Grade IV, 9200 ft."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "IV",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106703081/central-mowich-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists Grade IV for Central Mowich Face."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Dee Molenaar, Gene Prater, Jim Wickwire, Dick Pargeter",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106703081/central-mowich-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA of Central Mowich Face: Molenaar, Prater, Wickwire, Pargeter."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Alt. west approach: Westside Road (2,880 ft) 4 mi to Round Pass, S Puyallup trail, Puyallup Cleaver camps ~7,500 ft",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.alpinedave.com/mt_rainier/mowich/mowich.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Left cars at 2,880 ft, hiked closed road 4 miles to Round Pass, S Puyallup trail, camps at 7,500 ft on Puyallup Cleaver."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Nunatak camp ~9,600 ft (west-side approach)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.alpinedave.com/mt_rainier/mowich/mowich.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "High camp on a nunatak at 9,600 ft; 6,500 ft in about 8 miles took 9 hours that day."
+     }
+    ]
+   }
+  ],
+  "note": "MP page is Central Mowich Face (one of the variations). Mountaineers slug 404. alpinedave describes a west-side (Westside Road) approach; our page uses Mowich Lake."
+ },
+ "wa_mount_rainier_nisqually_icefall": {
+  "area": "wa_mount_rainier",
+  "facts": [
+   {
+    "field": "camp",
+    "value": "Camp Muir (~10,000 ft)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.bclodge.com/Climbing/Nisqually/index.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route starts from high camp at Camp Muir (10,000 ft) and descends to the foot of the icefall."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Avalanche and icefall; rangers reported an avalanche sweeping the icefall",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.bclodge.com/Climbing/Nisqually/index.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Rangers at Camp Muir reported an avalanche swept the icefall the morning of the climb."
+     }
+    ]
+   }
+  ],
+  "note": "Mountaineers slug 404; MP search did not find a Nisqually Icefall page (returned Kautz). bclodge trip report used for camp/hazard only."
+ },
+ "wa_mount_rainier_ptarmigan_ridge": {
+  "area": "wa_mount_rainier",
+  "facts": [
+   {
+    "field": "season",
+    "value": "May-Jul",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-rainier-ptarmigan-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers lists seasons May, June, July."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Glacier gear, two tools, crampons, pickets, ice screws, small rock rack",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-rainier-ptarmigan-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Equipment: glacier gear, two axes/tools, crampons, pickets, ice screws, small rock rack."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Carryover down Emmons Glacier, out White River",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-rainier-ptarmigan-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Done as a carryover: descend the Emmons Glacier and usually exit via White River."
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 11400,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://stephabegg.com/trip-reports/washington/rainier-ptarmigan/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trip report summary: elevation gain 11,400 ft from White River; max grade 55-degree ice, short 5th-class rock."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Lower Curtis Ridge (~7,500 ft); high camp on Ptarmigan Ridge (~10,300 ft)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://stephabegg.com/trip-reports/washington/rainier-ptarmigan/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Camps on lower Curtis Ridge at 7,500 ft (3,100 ft gain from White River) and high on Ptarmigan Ridge at 10,300 ft."
+     }
+    ]
+   },
+   {
+    "field": "leg_gain_trailhead_to_camp_ft",
+    "value": 3100,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://stephabegg.com/trip-reports/washington/rainier-ptarmigan/",
+      "retrieved_at": "2026-11-14",
+      "fact": "White River to lower Curtis Ridge camp (7,500 ft): elevation gain 3,100 ft."
+     }
+    ]
+   }
+  ],
+  "note": "Mountaineers lists gain 11,000 ft and length 20 mi but from the Mowich Lake approach (now closed), so not used for gain; stephabegg 11,400 ft is from White River (our trailhead)."
+ },
+ "wa_mount_rainier_sunset_ridge": {
+  "area": "wa_mount_rainier",
+  "facts": [
+   {
+    "field": "gain_ft",
+    "value": 11500,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-rainier-sunset-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers lists elevation gain 11,500 ft, length 16 mi, high point 14,411 ft."
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "Jun-Aug",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-rainier-sunset-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers lists seasons June, July, August."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Walk Westside Road ~3.5 mi to Round Pass, S Puyallup River Trail, Wonderland to St Andrews Park",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-rainier-sunset-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Walk road about 3.5 mi to Round Pass, then South Puyallup River and Wonderland trails to Saint Andrews Park."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Standard glacier gear, pickets and ice screws",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-rainier-sunset-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Equipment: glacier gear, pickets and ice screws."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "5.5",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112479245/sunset-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project grade 5.5 plus AI; trad, ice, snow, Grade IV, 9000 ft."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "IV",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112479245/sunset-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists Grade IV."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 9000,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112479245/sunset-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists route length 9000 ft."
+     }
+    ]
+   }
+  ],
+  "note": "Mountaineers 11,500 ft gain matches our current; length 16 mi on Mountaineers not stated as one-way or round trip (not recorded)."
+ },
+ "wa_mount_rainier_tahoma_glacier": {
+  "area": "wa_mount_rainier",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Mod. Snow",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/201233880/tahoma-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project grade moderate snow, Grade II, 8000 ft."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "II",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/201233880/tahoma-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists Grade II."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 8000,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/201233880/tahoma-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists route length 8000 ft."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Philemon Van Trump, Alfred Drewry, Warren Riley, 1891",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/201233880/tahoma-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA 1891 by Van Trump, Drewry and Riley (and a dog)."
+     }
+    ]
+   }
+  ],
+  "note": "Only MP opened with route data; jeffreyjhebert Tahoma report gave only the Westside Road gate at 2,800 ft."
+ },
+ "wa_mount_rainier_willis_wall": {
+  "area": "wa_mount_rainier",
+  "facts": [
+   {
+    "field": "fa",
+    "value": "West Rib: Charles Bell solo, June 1961",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://en.wikipedia.org/wiki/Willis_Wall",
+      "retrieved_at": "2026-11-14",
+      "fact": "First climb credited to Charles Bell, solo, West Rib, June 1961."
+     }
+    ]
+   },
+   {
+    "field": "fa_direct",
+    "value": "East Rib through central ice cliff: Don Anderson, Fred Dunham, Dave Mahre, Jim Wickwire, 1963",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://en.wikipedia.org/wiki/Willis_Wall",
+      "retrieved_at": "2026-11-14",
+      "fact": "1963 party of Anderson, Dunham, Mahre, Wickwire made the first direct ascent through the ice cliff."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 3600,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://en.wikipedia.org/wiki/Willis_Wall",
+      "retrieved_at": "2026-11-14",
+      "fact": "The wall is 3,600 ft of volcanic rock, headwall of the Carbon Glacier eastern cirque."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "200-300 ft summit ice cliff prone to large icefall",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://en.wikipedia.org/wiki/Willis_Wall",
+      "retrieved_at": "2026-11-14",
+      "fact": "Crowned by a 200-300 ft ice wall prone to large ice falls."
+     }
+    ]
+   }
+  ],
+  "note": "Wikipedia gives wall 3,600 ft (our overview says ~4,000). AAJ 1964 article (publications.americanalpineclub.org/articles/12196416902) names Dave Mahre and Fred Dunham on the 1963 climb, consistent with Wikipedia, but its date was not extracted so FA stays single-source."
+ },
+ "wa_mount_roosevelt_standard": {
+  "area": "wa_mount_roosevelt",
+  "facts": [
+   {
+    "field": "gain_ft",
+    "value": 3500,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/mount-roosevelt",
+      "retrieved_at": "2026-11-14",
+      "fact": "WTA Mount Roosevelt: 12.0 mi roundtrip, 3,500 ft gain, highest point 5,835 ft."
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 2485,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.yellowleaf.org/scramble/g/r/2006-05-05-roosevelt.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "May 2006 trip report (crossed frozen Snow Lake) lists elevation gain 2,485 ft."
+     }
+    ],
+    "conflict": true
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 12,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/mount-roosevelt",
+      "retrieved_at": "2026-11-14",
+      "fact": "WTA lists 12.0 miles roundtrip."
+     }
+    ]
+   }
+  ],
+  "note": "Conflict: WTA 3,500 ft gain / 12 mi RT vs yellowleaf May 2006 report 2,485 ft (winter route across frozen Snow Lake). Our current 2,700. Mountaineers has only a combined Roosevelt-Kaleetan page (not used)."
+ },
+ "wa_mount_saul_se_route": {
+  "area": "wa_mount_saul",
+  "facts": [
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 12,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://trailcatjim.com/mt-saul-via-east-slope-east-face-1999/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trip stats: about 12 miles traveled, 5000 ft gained and lost, 7.3 hr up, 4.4 hr down."
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 5000,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://trailcatjim.com/mt-saul-via-east-slope-east-face-1999/",
+      "retrieved_at": "2026-11-14",
+      "fact": "About 5000 ft gained and lost from Indian Creek/Mt David trailhead (2300 ft) via Airplane Lake."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Indian Creek / Mt David Trailhead, end of White River Road (2,300 ft)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://trailcatjim.com/mt-saul-via-east-slope-east-face-1999/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Start and end at Indian Creek / Mt David trailhead at end of White River Road, elevation 2300 ft."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Leave Indian Creek Trail at Airplane Creek; ~2,000 ft bushwhack to Airplane Lake",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://trailcatjim.com/mt-saul-via-east-slope-east-face-1999/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Left Indian Creek Trail at Airplane Creek for about a 2,000 ft bushwhack up to Airplane Lake."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "White River bridge washout; Indian Creek crossing and stream crossings",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://trailcatjim.com/mt-saul-via-east-slope-east-face-1999/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Report found White River bridge washed out (crossed on a log) and dicey stream crossings."
+     }
+    ]
+   }
+  ],
+  "note": "Only trailcatjim had stats; WTA mount-saul and Mountaineers mount-saul gave no route page. WTA Indian Creek figure is for the whole trail, not used for gain."
+ },
+ "wa_mount_seattle_south": {
+  "area": "wa_mount_seattle",
+  "facts": [
+   {
+    "field": "approach_step",
+    "value": "North Fork Quinault Trail: 16 mi to Low Divide, 519 ft to 3,602 ft",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.nps.gov/olym/planyourvisit/north-for-quinault.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "NPS: North Fork Quinault trailhead to Low Divide is 16 miles, elevation 519 ft to 3,602 ft."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "River fords at Wild Rose Creek, Elip Creek and 16-Mile; hazardous in high water",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.nps.gov/olym/planyourvisit/north-for-quinault.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Fords required at Wild Rose Creek, Elip Creek and 16-Mile; hazardous during high water."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Olympic NP wilderness permit for overnight",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.nps.gov/olym/planyourvisit/north-for-quinault.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Page directs overnight users to obtain a wilderness permit."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "North Fork Quinault Trailhead (519 ft)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.nps.gov/olym/planyourvisit/north-for-quinault.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trail starts at North Fork Quinault trailhead at 519 ft; ~2.5 mi to Wolf Bar, ~4 mi more to Elip Creek."
+     }
+    ]
+   }
+  ],
+  "note": "No route page with summit stats found; NPS North Fork Quinault trail page used for approach facts."
+ },
+ "wa_mount_sefrit_southwest_ridge": {
+  "area": "wa_mount_sefrit",
+  "facts": [
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 10.5,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://onehikeaweek.com/2025/05/23/mount-sefrit/",
+      "retrieved_at": "2026-11-14",
+      "fact": "At a glance: Nooksack Cirque Trailhead, round trip 10.5 miles, elevation range 2140-7212 ft."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Nooksack Cirque Trailhead (2,140 ft)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://onehikeaweek.com/2025/05/23/mount-sefrit/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Access from Nooksack Cirque Trailhead; low point 2140 ft."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Helmet, microspikes, snowshoes, ice axe, crampons (spring)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://onehikeaweek.com/2025/05/23/mount-sefrit/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Essential gear listed: helmet, microspikes, snowshoes, ice axe, crampons (May trip)."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Creek crossing near trailhead (thin log)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://onehikeaweek.com/2025/05/23/mount-sefrit/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Crossed on a thin fallen log upstream behind the trailhead sign after scouting."
+     }
+    ]
+   }
+  ],
+  "note": "Only onehikeaweek had route stats; trailcatjim Sefrit report is a different route (NW Glacier/SE Ridge), not used."
+ },
+ "wa_mount_shuksan_hanging_glacier": {
+  "area": "wa_mount_shuksan_climbs",
+  "skip_reason": "Mountaineers slug 404; MP search returned the Sulphide Glacier page (opened, wrong route). cascadeclimbers/karakoram trip reports found in search but not opened before time ran out."
+ },
+ "wa_mount_shuksan_north_face": {
+  "area": "wa_mount_shuksan_climbs",
+  "facts": [
+   {
+    "field": "season",
+    "value": "May-Jul",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mt-shuksan-n-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers lists seasons May, June, July."
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 6100,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mt-shuksan-n-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers lists elevation gain 6,100 ft, high point 9,127 ft."
+     }
+    ]
+   },
+   {
+    "field": "leg_gain_trailhead_to_camp_ft",
+    "value": 2500,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mt-shuksan-n-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trip profile: trailhead to camp 2,500 ft gain."
+     }
+    ]
+   },
+   {
+    "field": "leg_gain_camp_to_summit_ft",
+    "value": 3600,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mt-shuksan-n-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trip profile: camp to summit 6-8 hr, 3,600 ft; summit to trailhead 8-12 hr."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Ice axe, crampons, ice screws, pickets",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mt-shuksan-n-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "Equipment: ice axe, crampons, ice screws, pickets."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "AI2-3 Mod. Snow",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107476295/north-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project grade AI2-3 moderate snow, 5500 ft."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 5500,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107476295/north-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists route length 5500 ft."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Fasset, Hanft, Thompson",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107476295/north-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project FA: Fasset, Hanft, Thompson."
+     }
+    ]
+   }
+  ],
+  "note": "Mountaineers 6,100 ft gain vs our 5,500 (MP 5,500 ft is climb length, not gain)."
+ },
+ "wa_mount_shuksan_sulphide_glacier": {
+  "area": "wa_mount_shuksan_climbs",
+  "facts": [
+   {
+    "field": "gain_ft",
+    "value": 6500,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mt-shuksan-sulphide-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers lists elevation gain 6,500 ft, length 16 mi, high point 9,127 ft."
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "Jun-Aug",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mt-shuksan-sulphide-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers lists seasons June, July, August."
+     }
+    ]
+   },
+   {
+    "field": "leg_gain_trailhead_to_camp_ft",
+    "value": 3800,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mt-shuksan-sulphide-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trip profile: trailhead to camp 5-6 hr, 3,800 ft."
+     }
+    ]
+   },
+   {
+    "field": "leg_gain_camp_to_summit_ft",
+    "value": 2600,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mt-shuksan-sulphide-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trip profile: camp to summit 5-6 hr, 2,600 ft; summit to camp 2-3 hr; camp to trailhead 3 hr."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Standard glacier equipment and helmet",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mt-shuksan-sulphide-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Equipment: standard glacier equipment and helmet."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Northwest Forest Pass",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mt-shuksan-sulphide-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Parking permit: Northwest Forest Pass."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "3rd, Easy Snow",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108833562/sulphide-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project grade 3rd class, easy snow, Grade II."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "II",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108833562/sulphide-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists Grade II."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Shannon Ridge trail segment: 8.2 mi RT, 2,800 ft gain to ~5,400 ft",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/shannon-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "WTA Shannon Ridge hike: 8.2 mi roundtrip, 2,800 ft gain, high point 5,400 ft."
+     }
+    ]
+   }
+  ],
+  "note": "Mountaineers lists length 16 mi without saying round trip (not recorded). WTA Shannon Ridge figures are for the hike only."
+ },
+ "wa_mount_skokomish_standard": {
+  "area": "wa_mount_skokomish",
+  "facts": [
+   {
+    "field": "gain_ft",
+    "value": 5000,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-skokomish",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers Mount Skokomish page lists elevation gain 5,000 ft, length 12 mi, high point 6,434 ft."
+     },
+     {
+      "url": "https://trailcatjim.com/mt-skokomish-via-southeast-slope-south-ridge/",
+      "retrieved_at": "2026-11-14",
+      "fact": "From Putvin Trailhead (1600 ft): about 9 miles traveled, 5100 ft gained and lost, 3.8 hr up, 2.5 hr down."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Putvin Trail to Lake of the Angels: 7.0 mi RT, 3,400 ft gain, lake ~4,950 ft",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/lake-of-the-angels",
+      "retrieved_at": "2026-11-14",
+      "fact": "WTA Lake of the Angels hike: 7.0 mi roundtrip, 3,400 ft gain, high point 4,950 ft."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 9,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://trailcatjim.com/mt-skokomish-via-southeast-slope-south-ridge/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trip stats: about 9 miles traveled (round trip)."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Putvin Trailhead, Hamma Hamma River Road (1,600 ft)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://trailcatjim.com/mt-skokomish-via-southeast-slope-south-ridge/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Start and end at Putvin Trailhead on Hamma Hamma River Road, elevation 1600 ft."
+     }
+    ]
+   },
+   {
+    "field": "time_up_down_hours",
+    "value": "3.8 up, 2.5 down",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://trailcatjim.com/mt-skokomish-via-southeast-slope-south-ridge/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trip stats: 3.8 hours up and 2.5 hours down."
+     }
+    ]
+   }
+  ],
+  "note": "Gain agrees: Mountaineers 5,000 and trailcatjim 5,100 (Putvin TH). Mountaineers 12 mi vs trailcatjim 9 mi conflict; Mountaineers page does not name the route."
+ },
+ "wa_mount_spickard_southwest": {
+  "area": "wa_mount_spickard",
+  "facts": [
+   {
+    "field": "trailhead",
+    "value": "Depot Creek Trail (unmaintained), ~50 ft from US/Canada border",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climbinginwa.com/blog/mount-spickard-wa",
+      "retrieved_at": "2026-11-14",
+      "fact": "Started from the unmaintained Depot Creek Trail, located about 50 feet from the US/Canada border."
+     }
+    ]
+   }
+  ],
+  "note": "stevensong Spickard report is a multi-peak trip (no route-only numbers); climbinginwa report gave trailhead only."
+ },
+ "wa_mount_st_helens_monitor_ridge": {
+  "area": "wa_mount_st_helens",
+  "facts": [
+   {
+    "field": "gain_ft",
+    "value": 4700,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-st-helens-monitor-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers lists elevation gain 4,700 ft, length 9 mi, high point 8,363 ft."
+     },
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/mount-st-helens-monitor-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "WTA: 10.0 mi roundtrip, 4,500 ft gain, highest point 8,365 ft."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 10,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/mount-st-helens-monitor-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "WTA lists 10.0 miles roundtrip."
+     }
+    ]
+   }
+  ],
+  "note": "Gain agrees: Mountaineers 4,700 and WTA 4,500. Mountaineers length 9 mi vs WTA 10 mi RT (WTA recorded)."
+ },
+ "wa_mount_st_helens_worm_flows": {
+  "area": "wa_mount_st_helens",
+  "facts": [
+   {
+    "field": "gain_ft",
+    "value": 5700,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-st-helens-worm-flows",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers lists elevation gain 5,700 ft, length 12 mi, high point 8,363 ft."
+     },
+     {
+      "url": "https://thepeakseeker.com/routes/worm-flows-route-mount-st-helens/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route gains about 5,700 ft over about 6 miles from trailhead to summit."
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "Dec-May",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-st-helens-worm-flows",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers lists seasons December through May."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_oneway",
+    "value": 6,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://thepeakseeker.com/routes/worm-flows-route-mount-st-helens/",
+      "retrieved_at": "2026-11-14",
+      "fact": "About 6 miles from trailhead (Marble Mountain Sno-Park) to summit."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Marble Mountain Sno-Park",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://thepeakseeker.com/routes/worm-flows-route-mount-st-helens/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Winter route starts at Marble Mountain Sno-Park, not Climbers Bivouac."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "~2 mi and ~1,000 ft to Chocolate Falls, then wooden posts/cairns through lava flows",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://thepeakseeker.com/routes/worm-flows-route-mount-st-helens/",
+      "retrieved_at": "2026-11-14",
+      "fact": "After about 2 miles and 1,000 ft reach Chocolate Falls; follow posts and cairns up the flows to the rim."
+     }
+    ]
+   }
+  ],
+  "note": "Gain agrees: Mountaineers and thepeakseeker both 5,700. Mountaineers length 12 mi (RT not stated) not recorded."
+ },
+ "wa_mount_stickney_scramble": {
+  "area": "wa_mount_stickney",
+  "facts": [
+   {
+    "field": "gain_ft",
+    "value": 4000,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-stickney",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers lists elevation gain 4,000 ft, length 13 mi, high point 5,367 ft."
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "May-Sep",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-stickney",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers lists seasons May through September."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Northwest Forest Pass",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-stickney",
+      "retrieved_at": "2026-11-14",
+      "fact": "Parking permit: Northwest Forest Pass."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 13.5,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://onehikeaweek.com/2018/10/27/mount-stickney/",
+      "retrieved_at": "2026-11-14",
+      "fact": "At a glance: access Olney Creek Road, round trip 13.5 miles, elevation range 1680-5280 ft, helmet."
+     },
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-stickney",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers lists length 13.0 mi."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Olney Creek Road",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://onehikeaweek.com/2018/10/27/mount-stickney/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Access via Olney Creek Road."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Helmet",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://onehikeaweek.com/2018/10/27/mount-stickney/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Gear listed: helmet."
+     }
+    ]
+   }
+  ],
+  "note": "Mountaineers length 13 mi (page does not say round trip) and onehikeaweek 13.5 mi round trip agree within 10%. Mountaineers high point 5,367 ft vs onehikeaweek 5,280 ft top of range."
+ },
+ "wa_mount_stone_lake_of_angels": {
+  "area": "wa_mount_stone",
+  "facts": [
+   {
+    "field": "gain_ft",
+    "value": 5012,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mt-stone-6-616",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers Mt Stone page lists elevation gain 5,012 ft, length 10 mi, high point 6,612 ft."
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "Apr-Oct",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mt-stone-6-616",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers lists seasons April through October."
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "Jul-Sep",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/mount-stone-south-couloir-route-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Best seasons July to September; Hamma Hamma Road snow-closed earlier."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Putvin Trail to Lake of the Angels: 7.0 mi RT, 3,400 ft gain, lake ~4,950 ft",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/lake-of-the-angels",
+      "retrieved_at": "2026-11-14",
+      "fact": "WTA Lake of the Angels hike: 7.0 mi roundtrip, 3,400 ft gain, high point 4,950 ft."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Putvin Trailhead, Hamma Hamma River Road FS 25 (~1,530 ft)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/mount-stone-south-couloir-route-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trailhead elevation about 1,530 ft at Putvin Trailhead on Hamma Hamma River Road (FS 25)."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Out-and-back via Putvin Trail, Lake of the Angels basin, St. Peters Gate, South Couloir",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/mount-stone-south-couloir-route-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route shape: out-and-back via Putvin Trail, Lake of the Angels basin and St. Peters Gate."
+     }
+    ]
+   }
+  ],
+  "note": "summitborn quotes the Mountaineers gain figure (5,012), so it is not a second source for gain; its 10 mi RT likely same origin (not recorded)."
+ },
+ "wa_mount_stuart_cascadian_couloir": {
+  "area": "wa_mount_stuart",
+  "facts": [
+   {
+    "field": "gain_ft",
+    "value": 8000,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/ingalls-stuart-area/mt-stuart-cascadian-couloir",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers lists elevation gain 8,000 ft, high point 9,415 ft."
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "Jun-Oct",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/ingalls-stuart-area/mt-stuart-cascadian-couloir",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers lists seasons June through October."
+     }
+    ]
+   },
+   {
+    "field": "approach_loss_ft",
+    "value": 1400,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/ingalls-stuart-area/mt-stuart-cascadian-couloir",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trip profile: trailhead to camp gains 2,000 ft and loses 1,400 ft (over Longs Pass to Ingalls Creek)."
+     }
+    ]
+   },
+   {
+    "field": "return_gain_ft",
+    "value": 1400,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/ingalls-stuart-area/mt-stuart-cascadian-couloir",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trip profile: camp to trailhead gains 1,400 ft and loses 2,000 ft."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Base camp ~4,800 ft near Ingalls Creek",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/ingalls-stuart-area/mt-stuart-cascadian-couloir",
+      "retrieved_at": "2026-11-14",
+      "fact": "Hike ~4 mi over Longs Pass (6,200 ft) and descend to base camp at 4,800 ft by Ingalls Creek."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Mine road 0.25 mi to fork, right toward Longs Pass, 4 mi over pass (6,200 ft)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/ingalls-stuart-area/mt-stuart-cascadian-couloir",
+      "retrieved_at": "2026-11-14",
+      "fact": "From parking take old mine road ~0.25 mi to fork, right fork toward Longs Pass, 4 mi over the pass."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Standard alpine equipment and crampons",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/ingalls-stuart-area/mt-stuart-cascadian-couloir",
+      "retrieved_at": "2026-11-14",
+      "fact": "Equipment: standard alpine equipment and crampons."
+     }
+    ]
+   }
+  ],
+  "note": "Mountaineers trip profile gives approach loss 1,400 ft over Longs Pass and return regain 1,400 ft (single source)."
+ },
+ "wa_mount_stuart_girth_pillar": {
+  "area": "wa_mount_stuart",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "5.11-",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106475357/girth-pillar",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project grade 5.11-, Grade V, 2000 ft, 11 pitches."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "V",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106475357/girth-pillar",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists Grade V."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 2000,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106475357/girth-pillar",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists 2000 ft."
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 11,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106475357/girth-pillar",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists 11 pitches."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Kit Lewis, Jim Nelson, 1983",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106475357/girth-pillar",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA Kit Lewis and Jim Nelson, 1983."
+     }
+    ]
+   }
+  ],
+  "note": "Only MP opened with route data; Mountaineers slug 404."
+ },
+ "wa_mount_stuart_ice_cliff_glacier": {
+  "area": "wa_mount_stuart",
+  "skip_reason": "Opened Mountaineers enchantments-area-review/mt-stuart-ice-cliff-glacier (only difficulty and high point 9,415, no stats) and jeffreyjhebert Ice Cliff Glacier report (ski trip, no stats)."
+ },
+ "wa_mount_stuart_north_ridge": {
+  "area": "wa_mount_stuart",
+  "facts": [
+   {
+    "field": "season",
+    "value": "May-Sep",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/ingalls-stuart-area/mt-stuart-n-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers lists seasons May through September."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Rack to 3.5 in, ice axe and crampons",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/ingalls-stuart-area/mt-stuart-n-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Equipment: rack to 3-1/2 inches, ice axe and crampons."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "5.9",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106050599/north-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project North Ridge: 5.9, trad alpine, Grade IV, 18 pitches."
+     },
+     {
+      "url": "https://stephabegg.com/trip-reports/washington/stuart-north-ridge-07222026/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Report title: Mt. Stuart, Complete North Ridge (5.9, 3000 ft)."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "IV",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106050599/north-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists Grade IV."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Upper: John Rupley, Don Gordon 1956; Great Gendarme: Wickwire, Stanley 1964",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106050599/north-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA John Rupley and Don Gordon 1956; Great Gendarme by James Wickwire and Fred Stanley 1964."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 3000,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://stephabegg.com/trip-reports/washington/stuart-north-ridge-07222026/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Report title gives the Complete North Ridge as 3000 ft."
+     }
+    ]
+   }
+  ],
+  "note": "Mountaineers gain 5,525 ft is from the Ingalls/Esmeralda approach, not our Stuart Lake trailhead (not used). MP North Ridge 1200 ft is the upper ridge only; stephabegg Complete North Ridge 3000 ft used."
+ },
+ "wa_mount_stuart_stuart_glacier_couloir": {
+  "area": "wa_mount_stuart",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "WI2-3 M5-",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108794198/stuart-glacier-couloir",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project grade WI2-3 M5-, Grade IV, 1700 ft, 6 pitches."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "IV",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108794198/stuart-glacier-couloir",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists Grade IV."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 1700,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108794198/stuart-glacier-couloir",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists 1700 ft."
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 6,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108794198/stuart-glacier-couloir",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists 6 pitches."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Helmy Beckey, Larry Strathdee, 1944",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108794198/stuart-glacier-couloir",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA Helmy Beckey and Larry Strathdee, 1944."
+     }
+    ]
+   }
+  ],
+  "note": "stephabegg report opened (spring conditions) but no route stats extracted."
+ }
+}
