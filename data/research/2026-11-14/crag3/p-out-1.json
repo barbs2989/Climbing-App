@@ -379,11 +379,322 @@
     "fact": "'drop in or descend the Devils Slide trail, or follow Strawberry Creek drainage for days!'; no time."
    },
    {
-    "url": "https://www.mountainproject.com/route/110079368/the-dark-angel",
+    "url": "https://www.mountainproject.com/area/109907677/devils-staircase",
     "retrieved_at": "2026-11-18",
-    "fact": "Dark Angel: Trad, Alpine, 5 pitches; no approach time."
+    "fact": "Lists The Dark Angel as Trad, Alpine, 5 pitches."
    }
   ],
-  "note": "No time stated; Grade III 900 ft backcountry cliff."
+  "note": "No time stated; Grade III ~900 ft backcountry cliff."
+ },
+ {
+  "area_id": "or_eagle_rock_2",
+  "place_name": "Eagle Rock, North Umpqua River (Hwy 138 MP 50), Umpqua NF, OR",
+  "verdict": "unsure",
+  "approach_stated": null,
+  "from": "trailhead (Marsters Bridge, North Umpqua Trail)",
+  "summit_or_glacier": true,
+  "route_types": {},
+  "evidence": [
+   {
+    "url": "https://www.fs.usda.gov/r06/umpqua/recreation/eagle-rock-climbing-area",
+    "retrieved_at": "2026-11-18",
+    "fact": "Directions via North Umpqua Trail, Illahee Flat trail, power-line road to Parkway Saddle; no time or distance; rappel needs two 50 m ropes."
+   },
+   {
+    "url": "https://www.mountainproject.com/area/118183383/eagle-rock",
+    "retrieved_at": "2026-11-18",
+    "fact": "Same approach text; 3 routes all Trad; no time or distance."
+   }
+  ],
+  "note": "No time anywhere opened; multi-trail approach plus scramble and road walk. Summit finish with rappel descent (prior)."
+ },
+ {
+  "area_id": "ca_upper_north_wall",
+  "place_name": "Upper North Wall, East Cottage Dome (Erratic Dome), Tuolumne Meadows, CA",
+  "verdict": "unsure",
+  "approach_stated": null,
+  "from": "dirt pullout on Tioga Road",
+  "summit_or_glacier": false,
+  "route_types": {},
+  "evidence": [
+   {
+    "url": "https://www.mountainproject.com/area/105865949/cottage-domes",
+    "retrieved_at": "2026-11-18",
+    "fact": "Park 2.7 mi west of Tuolumne store; hike up slabs to the SW summit of East Cottage Dome, traverse around; no time."
+   },
+   {
+    "url": "https://yosemite.travel/listing/hiking/east-cottage-dome",
+    "retrieved_at": "2026-11-18",
+    "fact": "'a short cross-country walk' to the dome; Est. Time field blank."
+   }
+  ],
+  "note": "Approach crosses over the dome's summit slabs to reach the wall (walk-up, not a route finish). No minutes stated; SuperTopo unreachable."
+ },
+ {
+  "area_id": "ca_wilderness_wall_2",
+  "place_name": "Wilderness Wall, Kaiser Pass Road, Huntington Lake (Hwy 168), CA",
+  "verdict": "unsure",
+  "approach_stated": null,
+  "from": "pullout on Kaiser Pass Road",
+  "summit_or_glacier": false,
+  "route_types": {
+   "ca_no_control": "TR"
+  },
+  "evidence": [
+   {
+    "url": "https://www.mountainproject.com/area/106885855/wilderness-wall",
+    "retrieved_at": "2026-11-18",
+    "fact": "Pullout 4.2 mi up Kaiser Pass Rd, follow stream 'up the steep hill about 100 meters'; no time; all 3 routes TR."
+   }
+  ],
+  "note": "Only a distance (~100 m) is stated; the page's 'half an hour' refers to exploring for new lines, not the approach. Clearly short, but no stated time."
+ },
+ {
+  "area_id": "nh_eagle_cliff_climbs",
+  "place_name": "Eagle Cliff, Franconia Notch, NH (place inferred)",
+  "verdict": "crag",
+  "approach_stated": "About a 50 minute uphill hike.",
+  "from": "parking (Greenleaf Trail)",
+  "summit_or_glacier": false,
+  "route_types": {},
+  "evidence": [
+   {
+    "url": "https://www.mountainproject.com/area/111133016/eagle-cliff",
+    "retrieved_at": "2026-11-18",
+    "fact": "'About a 50 minute uphill hike'; Greenleaf Trail ~40 min then climbers' trail ~10 min. Routes include 'Super Best Bubs', 'Wünderbub'."
+   }
+  ],
+  "note": "Sample routes Lil Bub Died Bubbing / One Bub Too Many are not on MP or found by search; place rests on the area name plus the Bub naming theme at Eagle Cliff. Types left null."
+ },
+ {
+  "area_id": "wy_gros_ventre_tower",
+  "place_name": "Gros Ventre Tower, Gros Ventre River (Grand Teton NP east boundary), WY",
+  "verdict": "unsure",
+  "approach_stated": null,
+  "from": "dirt lot west of Forest Service pullout",
+  "summit_or_glacier": false,
+  "route_types": {},
+  "evidence": [
+   {
+    "url": "https://www.mountainproject.com/area/114783451/gros-ventre-tower",
+    "retrieved_at": "2026-11-18",
+    "fact": "Park in dirt lot; north face visible from the road; approach from the top 3-bolt anchor; no time, no 'roadside'."
+   }
+  ],
+  "note": "Visible from the road, top-down approach; no stated time."
+ },
+ {
+  "area_id": "nm_keep_the",
+  "place_name": "The Keep, Pinnacle Valley, Sandia Mountains (West Side), NM",
+  "verdict": "unsure",
+  "approach_stated": null,
+  "from": "Sandia Crest parking",
+  "summit_or_glacier": false,
+  "route_types": {},
+  "evidence": [
+   {
+    "url": "https://www.mountainproject.com/area/107731009/the-keep",
+    "retrieved_at": "2026-11-18",
+    "fact": "'rap down the watch tower and the hike about 50 yards southeast'; no time."
+   },
+   {
+    "url": "https://www.mountainproject.com/area/106014542/watchtower",
+    "retrieved_at": "2026-11-18",
+    "fact": "Junction 0.2 miles from parking, then 'After some additional minutes' (no number), boot path 100 yards, rappel."
+   },
+   {
+    "url": "https://www.mountainproject.com/area/106001932/pinnacle-valley",
+    "retrieved_at": "2026-11-18",
+    "fact": "Distances only; USFS closure of Crest Road and parking above the 10k lot Apr 30 2026 - Jan 15 2027."
+   }
+  ],
+  "note": "Distances only, top-down from the Crest. Access alert: Crest Road/parking closed until Jan 15 2027 per MP, which would lengthen the walk (also affects Yucca Flower Tower)."
+ },
+ {
+  "area_id": "ut_mt_timpanogos",
+  "place_name": "North Pillar of Mt. Timpanogos (American Fork Canyon side), Wasatch, UT",
+  "verdict": "crag",
+  "approach_stated": "view from the car, before the 30-45min approach",
+  "from": "car (end of ~3 mi rough road)",
+  "summit_or_glacier": false,
+  "route_types": {},
+  "evidence": [
+   {
+    "url": "https://www.mountainproject.com/route/106005107/lecherous-leanings",
+    "retrieved_at": "2026-11-18",
+    "fact": "Photo caption: 'view from the car, before the 30-45min approach'; Sport, Alpine, 800 ft, 7 pitches, Grade III; rappel the route."
+   }
+  ],
+  "note": "Time is from a photo caption. Route tops out on the pillar ('P7 summit anchors') and is rappelled; not Timpanogos' summit. Owner may treat a 7-pitch Grade III pillar top as alpine."
+ },
+ {
+  "area_id": "wy_point_11440_east_buttress",
+  "place_name": "Point 11440, East Buttress, Little Sandy Valley, Wind River Range, WY",
+  "verdict": "alpine",
+  "approach_stated": "Allow about 6 hours from the car to the upper meadows.",
+  "from": "trailhead (Sweetwater Gap / Little Sandy Lake)",
+  "summit_or_glacier": true,
+  "route_types": {
+   "wy_wyoming_state_bird": "Trad"
+  },
+  "evidence": [
+   {
+    "url": "https://www.mountainproject.com/route/109258350/wyoming-state-bird",
+    "retrieved_at": "2026-11-18",
+    "fact": "Wyoming State Bird: Trad, Alpine, 1,200 ft, 8 pitches, Grade IV; in Little Sandy Valley > Point 11440, East Buttress."
+   },
+   {
+    "url": "https://www.mountainproject.com/area/109258338/point-11440-east-buttress",
+    "retrieved_at": "2026-11-18",
+    "fact": "Approach from Little Sandy Lake north, then up the drainage; 'To descend from the summit, head north to the gully'."
+   },
+   {
+    "url": "https://www.mountainproject.com/area/106007403/little-sandy-valley",
+    "retrieved_at": "2026-11-18",
+    "fact": "'Allow about 6 hours from the car to the upper meadows.'"
+   }
+  ],
+  "note": "Now located. Backcountry Wind Rivers objective with a summit descent; the 6 h figure is for the valley's upper meadows (the stated valley approach), far over 60 min."
+ },
+ {
+  "area_id": "ca_saber_ridge",
+  "place_name": "Saber Ridge, Tamarack Lake Area, Sequoia & Kings Canyon NP, CA",
+  "verdict": "alpine",
+  "approach_stated": null,
+  "from": "trailhead (Crescent Meadow)",
+  "summit_or_glacier": true,
+  "route_types": {
+   "ca_saber_ridge_traverse_south_to_north": "Trad"
+  },
+  "evidence": [
+   {
+    "url": "https://www.mountainproject.com/route/108245066/saber-ridge-traverse-south-to-north",
+    "retrieved_at": "2026-11-18",
+    "fact": "Trad, Alpine, 20 pitches, Grade III ridge traverse; area Sequoia & Kings Canyon NP > Tamarack Lake Area."
+   },
+   {
+    "url": "https://www.sierrainaday.com/post/saber-ridge",
+    "retrieved_at": "2026-11-18",
+    "fact": "Trailhead Crescent Meadow; first day 'a hot and arduous 15 miles with 40 lb packs' to camp."
+   }
+  ],
+  "note": "Now located. No approach time stated, but it is a 20-pitch ridge traverse reached by a multi-day backcountry backpack - alpine on ridge finish and roadless backcountry."
+ },
+ {
+  "area_id": "co_prow_the",
+  "place_name": null,
+  "verdict": "unsure",
+  "approach_stated": null,
+  "from": null,
+  "summit_or_glacier": false,
+  "route_types": {},
+  "evidence": [],
+  "note": "'Jim Bo' 5.10+ on a CO 'Prow' still not found (DuckDuckGo returns only the climber 'Jimbo'; MP search returns nothing)."
+ },
+ {
+  "area_id": "co_eldora_wall",
+  "place_name": "Eldora Wall, above Lost Lake, near Eldora, CO",
+  "verdict": "unsure",
+  "approach_stated": null,
+  "from": "Hessie trailhead",
+  "summit_or_glacier": false,
+  "route_types": {},
+  "evidence": [
+   {
+    "url": "https://www.mountainproject.com/area/105994763",
+    "retrieved_at": "2026-11-18",
+    "fact": "Hessie trailhead 1.5 miles to Lost Lake, then 0.3 miles east on a faint trail; no times, 0 comments."
+   }
+  ],
+  "note": "Distance only (~1.8 mi); prior crag call rested on distance, which the rule disallows."
+ },
+ {
+  "area_id": "mt_smash_n_grab_slab_the",
+  "place_name": "Smash 'N' Grab Slab, Mt Oberlin, Glacier National Park, MT",
+  "verdict": "crag",
+  "approach_stated": "Walk down the steep scree field and across the basin to the base of the slab, about a 15-minute approach.",
+  "from": "Going-to-the-Sun Road pull-out",
+  "summit_or_glacier": false,
+  "route_types": {
+   "mt_put_me_on_a_pedestal": "Trad"
+  },
+  "evidence": [
+   {
+    "url": "https://www.mountainproject.com/route/117358444",
+    "retrieved_at": "2026-11-18",
+    "fact": "'about a 15-minute approach'; Trad, Alpine, 650 ft, 4 pitches; ends in bear grass above the wall, walk back to Logan Pass."
+   }
+  ],
+  "note": "Confirmed. Route type on MP is 'Trad, Alpine'; primary Trad given (our known_type was 'Alpine')."
+ },
+ {
+  "area_id": "tx_dad_boulder",
+  "place_name": "Dad Boulder, Springfield Park, Austin, TX",
+  "verdict": "unsure",
+  "approach_stated": null,
+  "from": "trailhead",
+  "summit_or_glacier": false,
+  "route_types": {
+   "tx_trad_dad": "Trad"
+  },
+  "evidence": [
+   {
+    "url": "https://www.mountainproject.com/area/121109296",
+    "retrieved_at": "2026-11-18",
+    "fact": "'Walk a quarter mile from the trailhead'; no time."
+   },
+   {
+    "url": "https://www.mountainproject.com/route/121119832",
+    "retrieved_at": "2026-11-18",
+    "fact": "Trad Dad: 'Trad, Alpine, 40 ft'."
+   }
+  ],
+  "note": "Only a distance (1/4 mile) is stated, so strictly unsure; a 40 ft boulder in a city park is not alpine terrain (MP's Alpine tag looks wrong). Primary type Trad."
+ },
+ {
+  "area_id": "ca_dome_of_the_immaculate_conception_aka_notre_dome",
+  "place_name": "Dome of the Immaculate Conception (Notre Dome), Courtright Reservoir, Western Sierra, CA",
+  "verdict": "unsure",
+  "approach_stated": null,
+  "from": "campsite at end of 0.75 mi logging spur",
+  "summit_or_glacier": false,
+  "route_types": {},
+  "evidence": [
+   {
+    "url": "https://www.mountainproject.com/area/109162121/dome-of-the-immaculate-conception-aka-notre-dome",
+    "retrieved_at": "2026-11-18",
+    "fact": "Drive logging spur 0.75 mi to campsite, hike NW, contour ridge, cross Short Hair Creek, talus to base; no time."
+   },
+   {
+    "url": "https://www.mountainproject.com/route/109489757/first-communion",
+    "retrieved_at": "2026-11-18",
+    "fact": "First Communion: Trad, 100 ft; no approach time."
+   }
+  ],
+  "note": "No time stated anywhere opened."
+ },
+ {
+  "area_id": "co_wave_the_2",
+  "place_name": "The Wave, Wild Ridge Area, Independence Pass, CO",
+  "verdict": "crag",
+  "approach_stated": "This takes about 30 minutes.",
+  "from": "pullout on CO-82",
+  "summit_or_glacier": false,
+  "route_types": {
+   "co_original_line": "Trad"
+  },
+  "evidence": [
+   {
+    "url": "https://www.mountainproject.com/area/110711644",
+    "retrieved_at": "2026-11-18",
+    "fact": "Wild Ridge approach from the Hwy 82 pullout to the base of the wall: 'This takes about 30 minutes.'"
+   },
+   {
+    "url": "https://www.mountainproject.com/area/115401569",
+    "retrieved_at": "2026-11-18",
+    "fact": "The Wave is reached by climbing routes on the lower tier (The Coral) or via El Diablo de Oro; Original Line Trad 5.9."
+   }
+  ],
+  "note": "30 min to the base of Wild Ridge; The Wave itself starts from a ledge reached by first climbing a Coral route. No summit."
  }
 ]

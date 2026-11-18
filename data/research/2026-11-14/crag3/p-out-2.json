@@ -1,4 +1,689 @@
 [
-{"area_id":"nh_03_main_slab","place_name":"03. Main Slab, Mt. Willard, Crawford Notch, NH","verdict":"crag","approach_stated":"\"about 20-25min\" (old approach walking the tracks from parking across from Elephant's Head); recommended way: Hattie's Garden path \"(about 10 min)\" then \"another 4-5 minutes\" to the Main Slab","from":"parking","summit_or_glacier":false,"route_types":{"nh_a_night_climb_for_two_knights":"Trad","nh_across_the_universe":"Trad","nh_celestial_path_mid_cliff_start":"Trad","nh_first_knight_returns_1_pitch":"Trad","nh_lost_in_space_mid_cliff_start":"Trad","nh_sputnik_2":"Trad","nh_woodnote_arete":"Trad","nh_asteroid_belt":"Trad","nh_bob_ralph_s_most_excellent_adventure":"Trad","nh_bradley_s_main_slab_route":"Trad","nh_butterfingers":"Trad"},"evidence":[{"url":"https://www.mountainproject.com/area/106006303","retrieved_at":"2026-11-18","fact":"Hattie's Garden path about 10 min, then 4-5 min more to Main Slab; older track approach from parking about 20-25 min."},{"url":"https://www.mountainproject.com/route-finder-export?selectedIds=106006303&type=rock","retrieved_at":"2026-11-18","fact":"MP export: all listed Main Slab routes Trad (Woodnote Arete Trad, TR)."}],"note":"The one whole car-to-cliff time (20-25 min) is for the non-recommended track walk, which the page calls trespassing when the train runs. Bear Minimum left null: MP name is 'Bear Minimum (to intercept Star Trek/\"Night Climb\")'."},
-{"area_id":"id_right_flank_the","place_name":"The Right Flank, Bear Creek Wall, Lost River Range, ID","verdict":"crag","approach_stated":"\"The crag is plainly obvious and the walk is about 40 minutes.\"","from":"car (end of drivable Bear Creek road)","summit_or_glacier":false,"route_types":{"id_ch3":"Trad","id_chert_highway":"Trad","id_hammerhead":"Trad","id_harmy_route_1":"Trad","id_harmy_route_2":"Trad","id_jw_10d":"Trad","id_jw_12b":"Trad","id_jw_other":"Trad","id_luddite":"Sport","id_middlemiss":"Trad","id_mr_b_meson":"Trad","id_no_chert_no_chews_no":"Sport"},"evidence":[{"url":"https://www.mountainproject.com/area/114622135","retrieved_at":"2026-11-18","fact":"'The crag is plainly obvious and the walk is about 40 minutes.' Author unsure where the road is legally drivable now."},{"url":"https://www.mountainproject.com/route-finder-export?selectedIds=114622135&type=rock","retrieved_at":"2026-11-18","fact":"MP export gives Right Flank route types (Luddite, No Chert... Sport; rest listed Trad)."}],"note":"Start point uncertain: author has not driven the road in two decades."}
+ {
+  "area_id": "nh_03_main_slab",
+  "place_name": "03. Main Slab, Mt. Willard, Crawford Notch, NH",
+  "verdict": "crag",
+  "approach_stated": "\"about 20-25min\" (old approach walking the tracks from parking across from Elephant's Head); recommended way: Hattie's Garden path \"(about 10 min)\" then \"another 4-5 minutes\" to the Main Slab",
+  "from": "parking",
+  "summit_or_glacier": false,
+  "route_types": {
+   "nh_a_night_climb_for_two_knights": "Trad",
+   "nh_across_the_universe": "Trad",
+   "nh_celestial_path_mid_cliff_start": "Trad",
+   "nh_first_knight_returns_1_pitch": "Trad",
+   "nh_lost_in_space_mid_cliff_start": "Trad",
+   "nh_sputnik_2": "Trad",
+   "nh_woodnote_arete": "Trad",
+   "nh_asteroid_belt": "Trad",
+   "nh_bob_ralph_s_most_excellent_adventure": "Trad",
+   "nh_bradley_s_main_slab_route": "Trad",
+   "nh_butterfingers": "Trad"
+  },
+  "evidence": [
+   {
+    "url": "https://www.mountainproject.com/area/106006303",
+    "retrieved_at": "2026-11-18",
+    "fact": "Hattie's Garden path about 10 min, then 4-5 min more to Main Slab; older track approach from parking about 20-25 min."
+   },
+   {
+    "url": "https://www.mountainproject.com/route-finder-export?selectedIds=106006303&type=rock",
+    "retrieved_at": "2026-11-18",
+    "fact": "MP export: all listed Main Slab routes Trad (Woodnote Arete Trad, TR)."
+   }
+  ],
+  "note": "The one whole car-to-cliff time (20-25 min) is for the non-recommended track walk, which the page calls trespassing when the train runs. Bear Minimum left null: MP name is 'Bear Minimum (to intercept Star Trek/\"Night Climb\")'."
+ },
+ {
+  "area_id": "id_right_flank_the",
+  "place_name": "The Right Flank, Bear Creek Wall, Lost River Range, ID",
+  "verdict": "crag",
+  "approach_stated": "\"The crag is plainly obvious and the walk is about 40 minutes.\"",
+  "from": "car (end of drivable Bear Creek road)",
+  "summit_or_glacier": false,
+  "route_types": {
+   "id_ch3": "Trad",
+   "id_chert_highway": "Trad",
+   "id_hammerhead": "Trad",
+   "id_harmy_route_1": "Trad",
+   "id_harmy_route_2": "Trad",
+   "id_jw_10d": "Trad",
+   "id_jw_12b": "Trad",
+   "id_jw_other": "Trad",
+   "id_luddite": "Sport",
+   "id_middlemiss": "Trad",
+   "id_mr_b_meson": "Trad",
+   "id_no_chert_no_chews_no": "Sport"
+  },
+  "evidence": [
+   {
+    "url": "https://www.mountainproject.com/area/114622135",
+    "retrieved_at": "2026-11-18",
+    "fact": "'The crag is plainly obvious and the walk is about 40 minutes.' Author unsure where the road is legally drivable now."
+   },
+   {
+    "url": "https://www.mountainproject.com/route-finder-export?selectedIds=114622135&type=rock",
+    "retrieved_at": "2026-11-18",
+    "fact": "MP export gives Right Flank route types (Luddite, No Chert... Sport; rest listed Trad)."
+   }
+  ],
+  "note": "Start point uncertain: author has not driven the road in two decades."
+ },
+ {
+  "area_id": "ca_central_cottage_dome",
+  "place_name": "Central Cottage Dome, Cottage Domes, DAFF Area, Tuolumne Meadows, Yosemite NP, CA",
+  "verdict": "unsure",
+  "approach_stated": "Only a leg: \"Walk north from West Cottage Dome for about 5 minutes.\"",
+  "from": "West Cottage Dome (not the car)",
+  "summit_or_glacier": false,
+  "route_types": {
+   "ca_dead_ranger": "Sport",
+   "ca_far_right_2": "Sport",
+   "ca_fist_fight_3": "Trad",
+   "ca_new_world_order_3": "Sport",
+   "ca_polaris": "Sport",
+   "ca_sex_on_the_flag": "Sport",
+   "ca_the_pregnant_virgin": "Sport",
+   "ca_warm_fuzzies_2": "Sport",
+   "ca_rugburn": "Sport",
+   "ca_unknown_135": "Sport",
+   "ca_unknown_136": "Sport"
+  },
+  "evidence": [
+   {
+    "url": "https://www.mountainproject.com/area/119046586",
+    "retrieved_at": "2026-11-18",
+    "fact": "Getting There: walk north from West Cottage Dome about 5 minutes; no car-to-base time."
+   },
+   {
+    "url": "https://www.mountainproject.com/area/105865949/cottage-domes",
+    "retrieved_at": "2026-11-18",
+    "fact": "Park in pullout 2.7 mi west of Tuolumne store; directions only, no time."
+   },
+   {
+    "url": "https://www.mountainproject.com/route-finder-export?selectedIds=105865949&type=rock",
+    "retrieved_at": "2026-11-18",
+    "fact": "MP export types for Central Cottage Dome routes (Unknown 5.11c and 5.11b both Sport)."
+   }
+  ],
+  "note": "No page states a total. SuperTopo (per-route approach times) refused connection; theCrag page has no access text. Mixed types given as primary: Dead Ranger/Polaris/Sex on the Flag are 'Sport, TR'; Fist Fight 'Trad, TR'."
+ },
+ {
+  "area_id": "ca_real_cloud_ripper_tower_the",
+  "place_name": "The Real Cloud Ripper Tower, Cloud Ripper Towers, The Others, Tahquitz, Idyllwild, CA",
+  "verdict": "unsure",
+  "approach_stated": null,
+  "from": null,
+  "summit_or_glacier": false,
+  "evidence": [
+   {
+    "url": "https://www.mountainproject.com/area/110540219/the-real-cloud-ripper-tower",
+    "retrieved_at": "2026-11-18",
+    "fact": "Getting There: same as the CRT cirque; no time."
+   },
+   {
+    "url": "https://www.mountainproject.com/area/109909589/cloud-ripper-towers",
+    "retrieved_at": "2026-11-18",
+    "fact": "'Follow death march as if you are going to Hinterland Buttress'; no time."
+   },
+   {
+    "url": "https://www.mountainproject.com/area/109912643/the-hinterland",
+    "retrieved_at": "2026-11-18",
+    "fact": "Hinterland approached from bottom of North Gully; no time."
+   },
+   {
+    "url": "https://www.mountainproject.com/area/109014094/the-others",
+    "retrieved_at": "2026-11-18",
+    "fact": "Getting There: 'Mucho hiking.' No time."
+   }
+  ],
+  "note": "Every page describes a long backside walk but none gives a time. Leans alpine. Sierra Wave / Moon Dike types not read.",
+  "route_types": {}
+ },
+ {
+  "area_id": "nv_sport_wall",
+  "place_name": "Sport Wall, Lamoille Canyon, Ruby Mountains, NV",
+  "verdict": "unsure",
+  "approach_stated": null,
+  "from": "parking 0.8 mi from canyon gate",
+  "summit_or_glacier": false,
+  "evidence": [
+   {
+    "url": "https://www.mountainproject.com/area/110562223",
+    "retrieved_at": "2026-11-18",
+    "fact": "Only 'Parking area on the right, 0.8 miles from canyon gate.' No time, no comments."
+   }
+  ],
+  "note": "theCrag Lamoille Canyon page returned no access text. Nothing states minutes.",
+  "route_types": {}
+ },
+ {
+  "area_id": "nm_santa_maria",
+  "place_name": "Santa Maria, Pinnacle Valley, Sandia Mountains (West Side), NM",
+  "verdict": "unsure",
+  "approach_stated": null,
+  "from": "Crest parking",
+  "summit_or_glacier": false,
+  "evidence": [
+   {
+    "url": "https://www.mountainproject.com/area/107746424",
+    "retrieved_at": "2026-11-18",
+    "fact": "Via the Tombstone access trail then a gully south of the Quay; no time."
+   },
+   {
+    "url": "https://www.mountainproject.com/area/106001932/pinnacle-valley",
+    "retrieved_at": "2026-11-18",
+    "fact": "Distances only from Crest lot; Crest Road and upper lots closed Apr 30 2026 - Jan 15 2027."
+   }
+  ],
+  "note": "No time stated anywhere opened. Crest Road closure would lengthen any approach this season.",
+  "route_types": {}
+ },
+ {
+  "area_id": "co_main_wall_15",
+  "place_name": "Main Wall, The Halidome, Empire, CO",
+  "verdict": "crag",
+  "approach_stated": "\"Allow 20-25 minutes for the approach.\" (to The Catwalk ledge, from which the Main Wall routes start)",
+  "from": "roadside parking",
+  "summit_or_glacier": false,
+  "route_types": {
+   "co_tremendous_trifles": "Sport",
+   "co_wind_machine_2": "Trad",
+   "co_manalive": "Sport",
+   "co_priceless": "Sport",
+   "co_touch_gold": "Sport"
+  },
+  "evidence": [
+   {
+    "url": "https://www.mountainproject.com/area/112125737/the-halidome",
+    "retrieved_at": "2026-11-18",
+    "fact": "Catwalk approach: 'Allow 20-25 minutes for the approach.' Warns of alpine conditions above 10,000 ft."
+   },
+   {
+    "url": "https://www.mountainproject.com/area/112125834/main-wall",
+    "retrieved_at": "2026-11-18",
+    "fact": "Main Wall lines are developed above the Catwalk ledge, accessed by trail from the right."
+   },
+   {
+    "url": "https://www.mountainproject.com/route-finder-export?selectedIds=112125737&type=rock",
+    "retrieved_at": "2026-11-18",
+    "fact": "Export: Manalive, Priceless, Touch Gold, Tremendous Trifles Sport; Wind Machine Trad, Sport."
+   }
+  ],
+  "note": "Wind Machine is 'Trad, Sport, Alpine' on MP (mixed); given as Trad. Priceless is 5.12 on MP vs 5.12b here."
+ },
+ {
+  "area_id": "ca_doda_dome",
+  "place_name": "Doda Dome, DAFF Area, Tuolumne Meadows, Yosemite NP, CA",
+  "verdict": "unsure",
+  "approach_stated": null,
+  "from": "Cathedral Creek pullouts, Hwy 120",
+  "summit_or_glacier": false,
+  "evidence": [
+   {
+    "url": "https://www.mountainproject.com/area/106042472/doda-dome",
+    "retrieved_at": "2026-11-18",
+    "fact": "'Follow the DAFF/West Crack approach, then northwest to this dome.' No time."
+   },
+   {
+    "url": "https://www.mountainproject.com/area/110652491/daff-area",
+    "retrieved_at": "2026-11-18",
+    "fact": "Parking at Cathedral Creek pullouts, ducked trail; no time."
+   },
+   {
+    "url": "https://www.mountainproject.com/area/114607928/daff-dome",
+    "retrieved_at": "2026-11-18",
+    "fact": "No getting-there section or time."
+   }
+  ],
+  "note": "Nothing states a time.",
+  "route_types": {}
+ },
+ {
+  "area_id": "ca_tiger_cage_upper_tier",
+  "place_name": "Tiger Cage, Upper Tier, Courtright Reservoir, Hwy 168, CA (MP area 117556444)",
+  "verdict": "unsure",
+  "approach_stated": "No time: \"Easy approach (the same approach as to the lower tier anchors).\"",
+  "from": "pullout before the Y / Marmot Rock Campground",
+  "summit_or_glacier": false,
+  "route_types": {
+   "ca_unknown_5_10a": "Trad",
+   "ca_unknown_5_10c": "Sport",
+   "ca_unknown_5_7": "Trad",
+   "ca_unknown_5_8_3": "Trad"
+  },
+  "evidence": [
+   {
+    "url": "https://www.mountainproject.com/area/117556444/tiger-cage-upper-tier",
+    "retrieved_at": "2026-11-18",
+    "fact": "Upper Tier exists: Unknown 5.10a Trad, 5.10c Sport, 5.7 Trad, 5.8 Trad; 'Easy approach', no minutes."
+   },
+   {
+    "url": "https://www.mountainproject.com/area/111988807/tiger-cage",
+    "retrieved_at": "2026-11-18",
+    "fact": "'easily accessed from the main road' by a faint use trail; no time."
+   }
+  ],
+  "note": "Identity now confirmed (separate MP area 'Tiger Cage, Upper Tier'). Still no stated minutes."
+ },
+ {
+  "area_id": "ca_queen_jane_area",
+  "place_name": "Queen Jane Area, Lee Vining Canyon / Tioga Road, CA",
+  "verdict": "unsure",
+  "approach_stated": null,
+  "from": "Dinosaur Crag (not the car)",
+  "summit_or_glacier": false,
+  "evidence": [
+   {
+    "url": "https://www.mountainproject.com/area/111077360/queen-jane-area",
+    "retrieved_at": "2026-11-18",
+    "fact": "From Dinosaur Crag's right end, 500 more yards up a talus fan; no time."
+   }
+  ],
+  "note": "Leg from another crag only; no time.",
+  "route_types": {}
+ },
+ {
+  "area_id": "wy_boulder_island",
+  "place_name": "Boulder Island, Leigh Lake, Grand Teton NP, WY",
+  "verdict": "unsure",
+  "approach_stated": null,
+  "from": "Leigh Lake parking",
+  "summit_or_glacier": false,
+  "evidence": [
+   {
+    "url": "https://www.mountainproject.com/area/106547716/boulder-island",
+    "retrieved_at": "2026-11-18",
+    "fact": "About 3/4 mile trail, then swim ~50 yards (or paddle/portage); no times, 0 comments."
+   }
+  ],
+  "note": "Distances only; needs a swim or boat. Prior 'crag' rested on distance, not a stated time.",
+  "route_types": {}
+ },
+ {
+  "area_id": "mt_pollock_mountain",
+  "place_name": "Pollock Mountain, Logan Pass, Glacier NP, MT",
+  "verdict": "unsure",
+  "approach_stated": null,
+  "from": "Logan Pass / Lunch Creek",
+  "summit_or_glacier": true,
+  "evidence": [
+   {
+    "url": "https://www.mountainproject.com/area/117378558/pollock-mountain",
+    "retrieved_at": "2026-11-18",
+    "fact": "Park at Lunch Creek; hike up; standard Class 4/5 chimney route to the summit; no time."
+   }
+  ],
+  "note": "No time stated. Mountain setting (summit route, Grade III face) leans alpine.",
+  "route_types": {}
+ },
+ {
+  "area_id": "ut_cobrazone",
+  "place_name": "Cobrazone, Bald Mountain, Mirror Lake Hwy, Uinta Mtns, UT",
+  "verdict": "crag",
+  "approach_stated": "\"This should be an easy 10-15 min approach.\"",
+  "from": "Bald Mountain Trailhead parking",
+  "summit_or_glacier": false,
+  "evidence": [
+   {
+    "url": "https://www.mountainproject.com/area/111096935/cobrazone",
+    "retrieved_at": "2026-11-18",
+    "fact": "From Bald Mountain TH parking across talus: 'easy 10-15 min approach'."
+   }
+  ],
+  "note": "",
+  "route_types": {}
+ },
+ {
+  "area_id": "ca_short_crag",
+  "place_name": "Short Crag, Black Bluff approach, Bluff Mesa, Big Bear, CA",
+  "verdict": "unsure",
+  "approach_stated": null,
+  "from": "Bluff Mesa Group Campground",
+  "summit_or_glacier": false,
+  "evidence": [
+   {
+    "url": "https://www.mountainproject.com/area/109166938/short-crag",
+    "retrieved_at": "2026-11-18",
+    "fact": "On the cairned trail just before it heads downhill to Black Bluff; no time, 0 comments."
+   },
+   {
+    "url": "https://www.mountainproject.com/area/107186938/black-bluff",
+    "retrieved_at": "2026-11-18",
+    "fact": "Black Bluff 'about 1.5 miles following the cairns'; no time; area closed (Line Fire)."
+   }
+  ],
+  "note": "Distance only. Black Bluff's 14 comments not read.",
+  "route_types": {}
+ },
+ {
+  "area_id": "ca_peanut_gallery",
+  "place_name": "Peanut Gallery, East Cottage Dome, Cottage Domes, Tuolumne Meadows, CA",
+  "verdict": "unsure",
+  "approach_stated": null,
+  "from": "pullout 2.7 mi west of Tuolumne store",
+  "summit_or_glacier": false,
+  "evidence": [
+   {
+    "url": "https://www.mountainproject.com/area/105865962/peanut-gallery",
+    "retrieved_at": "2026-11-18",
+    "fact": "'At East Cottage Dome, west and down below Knobulator'; no time."
+   },
+   {
+    "url": "https://www.mountainproject.com/area/105865957/west-face",
+    "retrieved_at": "2026-11-18",
+    "fact": "Trail from parking to the dome base; 'Don't hike the summit'; no time."
+   },
+   {
+    "url": "https://www.mountainproject.com/route/105866006/knobulator",
+    "retrieved_at": "2026-11-18",
+    "fact": "Knobulator route page gives no approach time."
+   }
+  ],
+  "note": "A SuperTopo page for Knobulator may list an approach time, but the site refused connection, so it was not read.",
+  "route_types": {}
+ },
+ {
+  "area_id": "nh_01_main_wall",
+  "place_name": "Main Wall, Eagle Cliff, Franconia Notch, NH",
+  "verdict": "crag",
+  "approach_stated": "\"About a 50 minute uphill hike.\"",
+  "from": "Greenleaf Trail start",
+  "summit_or_glacier": false,
+  "route_types": {
+   "nh_the_late_show": "Trad",
+   "nh_w_nderbub": "Sport"
+  },
+  "evidence": [
+   {
+    "url": "https://www.mountainproject.com/area/111133016/eagle-cliff",
+    "retrieved_at": "2026-11-18",
+    "fact": "'About a 50 minute uphill hike. Follow the Green Leaf Trail for about 40 minutes', then climbers' trail ~10 min."
+   },
+   {
+    "url": "https://www.mountainproject.com/route-finder-export?selectedIds=126716703&type=rock",
+    "retrieved_at": "2026-11-18",
+    "fact": "Export: The Late Show Trad; Wünderbub Sport."
+   }
+  ],
+  "note": "Within 60 min but close to the line."
+ },
+ {
+  "area_id": "ca_stately_pleasure_dome",
+  "place_name": "Stately Pleasure Dome, Tenaya Lake, Tioga Road, CA",
+  "verdict": "crag",
+  "approach_stated": "Roadside: \"Easy parking all along the base.\"",
+  "from": "Tioga Road pullouts",
+  "summit_or_glacier": false,
+  "evidence": [
+   {
+    "url": "https://www.mountainproject.com/area/105835737/stately-pleasure-dome",
+    "retrieved_at": "2026-11-18",
+    "fact": "'great big dome on the north side of the highway next to Tenaya Lake. Easy parking all along the base.'"
+   }
+  ],
+  "note": "Route names not exact on MP: 'Jabberwalky' (Trad) vs Jabberwocky; only 'Water Streak #1' listed, so both left null. Descent is 3rd/4th class slabs off the dome top.",
+  "route_types": {}
+ },
+ {
+  "area_id": "nm_elevenses_crag",
+  "place_name": "Elevenses Crag, Porvenir Canyon, NM",
+  "verdict": "unsure",
+  "approach_stated": null,
+  "from": "FS parking, Porvenir Canyon",
+  "summit_or_glacier": false,
+  "evidence": [
+   {
+    "url": "https://www.mountainproject.com/area/117398179/elevenses-crag",
+    "retrieved_at": "2026-11-18",
+    "fact": "'about 2 1/2 miles in on a very easy trail', eleven creek crossings; no time."
+   },
+   {
+    "url": "https://www.mountainproject.com/area/109705432/porvenir-canyon",
+    "retrieved_at": "2026-11-18",
+    "fact": "No approach times; 2022 fire damage noted."
+   }
+  ],
+  "note": "Distance only.",
+  "route_types": {}
+ },
+ {
+  "area_id": "ut_baby_alien",
+  "place_name": "Baby Alien, Mystery Towers, Onion Creek, Moab, UT",
+  "verdict": "unsure",
+  "approach_stated": null,
+  "from": "Onion Creek Rd",
+  "summit_or_glacier": false,
+  "evidence": [
+   {
+    "url": "https://www.mountainproject.com/area/116551701/baby-alien",
+    "retrieved_at": "2026-11-18",
+    "fact": "Same approach as Atlas/Citadel/Aliens; spire at 2.1 miles from Onion Creek Rd; no time."
+   },
+   {
+    "url": "https://www.mountainproject.com/area/105716832/mystery-towers-top-of-the-world-overlook",
+    "retrieved_at": "2026-11-18",
+    "fact": "No approach time; refers to Desert Rock III guidebook."
+   }
+  ],
+  "note": "Prior said ~1 mile; the page says 2.1 miles. No time stated.",
+  "route_types": {}
+ },
+ {
+  "area_id": "ca_sun_the",
+  "place_name": "The Sun, Mountaineer Walls, El Cajon Mountain, San Diego County, CA",
+  "verdict": "alpine",
+  "approach_stated": "\"This option takes about 1.5 hr from the car.\" (South Ridge hike, then rap in from the top)",
+  "from": "car",
+  "summit_or_glacier": true,
+  "route_types": {
+   "ca_eclipse": "Trad"
+  },
+  "evidence": [
+   {
+    "url": "https://www.mountainproject.com/area/120069696/the-sun",
+    "retrieved_at": "2026-11-18",
+    "fact": "Identified: Eclipse Trad 5.12a. South Ridge option 'about 1.5 hr from the car', rap in from the top."
+   }
+  ],
+  "note": "Other option: hike to the Regalias and climb up from below (no time). Ridge-top rappel access."
+ },
+ {
+  "area_id": "ca_west_buttress",
+  "place_name": "W Buttress, Storm Crag, Horseshoe Piles, Lake George, Mammoth Lakes, CA",
+  "verdict": "unsure",
+  "approach_stated": "Parent Horseshoe Piles: \"The approach takes 15-20 minutes if you hit it right.\"; Storm Crag: \"After 3 or 4 minutes you will see the crag up hill.\"",
+  "from": "Lake George parking lot",
+  "summit_or_glacier": false,
+  "route_types": {
+   "ca_santa_ana": "Sport"
+  },
+  "evidence": [
+   {
+    "url": "https://www.mountainproject.com/route/107820557/santa-ana",
+    "retrieved_at": "2026-11-18",
+    "fact": "Santa Ana 5.10a Sport, at Horseshoe Piles > Storm Crag > W Buttress."
+   },
+   {
+    "url": "https://www.mountainproject.com/area/105912179",
+    "retrieved_at": "2026-11-18",
+    "fact": "Horseshoe Piles from Lake George lot: 'The approach takes 15-20 minutes if you hit it right.'"
+   },
+   {
+    "url": "https://www.mountainproject.com/area/107820157/storm-crag",
+    "retrieved_at": "2026-11-18",
+    "fact": "Storm Crag: 'several minutes' to water tanks, then 'After 3 or 4 minutes you will see the crag'; no total."
+   }
+  ],
+  "note": "Identified. Only legs are timed (all short); no page states the car-to-Storm-Crag total, so not ruled crag under the no-adding rule."
+ },
+ {
+  "area_id": "ca_dog_wall",
+  "place_name": "Dog Wall, Horseshoe Piles, Lake George, Mammoth Lakes, CA",
+  "verdict": "unsure",
+  "approach_stated": "Horseshoe Piles: \"The approach takes 15-20 minutes if you hit it right.\"; Dog Wall: \"15 min approach uphill.\" from Horseshoe Piles",
+  "from": "Lake George parking lot",
+  "summit_or_glacier": false,
+  "evidence": [
+   {
+    "url": "https://www.mountainproject.com/area/105912179",
+    "retrieved_at": "2026-11-18",
+    "fact": "Horseshoe Piles approach from Lake George lot takes 15-20 minutes."
+   },
+   {
+    "url": "https://www.mountainproject.com/area/106883144",
+    "retrieved_at": "2026-11-18",
+    "fact": "Dog Wall: head to Horseshoe Piles then '15 min approach uphill'. Lists '(Route no longer exists) We met Quimet', Sport."
+   }
+  ],
+  "note": "Two timed legs but no stated total, so unsure under the no-adding rule though both legs are short. MP marks We met Quimet as no longer existing (Sport, Alpine); name not exact, type left null.",
+  "route_types": {}
+ },
+ {
+  "area_id": "co_three_streaks_the",
+  "place_name": "The Three Streaks, Clam Shell, Grand Turk, San Juans (near Silverton), CO",
+  "verdict": "unsure",
+  "approach_stated": "Clam Shell parent: \"From the upper, 30+ minute hike\" (from the upper meadows, not the car)",
+  "from": "US 550 pullout above Silverton",
+  "summit_or_glacier": false,
+  "route_types": {
+   "co_left_middle_right": "TR"
+  },
+  "evidence": [
+   {
+    "url": "https://www.mountainproject.com/area/121014233/the-three-streaks",
+    "retrieved_at": "2026-11-18",
+    "fact": "Identified; 'See the approach to the Windows'; Left, Middle, Right is TR."
+   },
+   {
+    "url": "https://www.mountainproject.com/area/121014039/clam-shell",
+    "retrieved_at": "2026-11-18",
+    "fact": "'From the upper, 30+ minute hike' via upper meadows and game trails."
+   },
+   {
+    "url": "https://www.mountainproject.com/area/120981206/grand-turk",
+    "retrieved_at": "2026-11-18",
+    "fact": "From US 550: power line, game trails, 'many arduous benches', camping; no time."
+   }
+  ],
+  "note": "Backcountry approach with camping described; no car-to-base time. Leans alpine."
+ },
+ {
+  "area_id": "co_atat_rk_s_vision",
+  "place_name": "Atatürk's Vision, Grand Turk, San Juans (near Silverton), CO",
+  "verdict": "unsure",
+  "approach_stated": null,
+  "from": "US 550 pullout above Silverton",
+  "summit_or_glacier": false,
+  "route_types": {
+   "co_turkish_delight": "Sport"
+  },
+  "evidence": [
+   {
+    "url": "https://www.mountainproject.com/area/120981257/ataturks-vision",
+    "retrieved_at": "2026-11-18",
+    "fact": "'From parking area, hike up gentle benches to the upper valley.' No time."
+   },
+   {
+    "url": "https://www.mountainproject.com/route/120981355/turkish-delight",
+    "retrieved_at": "2026-11-18",
+    "fact": "Turkish Delight 5.11a/b Sport, Alpine, 90 ft, FA Matthias Holladay, Atatürk's Vision."
+   }
+  ],
+  "note": "Identified via MP search. No time; Grand Turk page describes a long bench approach with camping. Leans alpine."
+ },
+ {
+  "area_id": "mt_tower_of_poor_rock",
+  "place_name": "Tower of Poor Rock, East Rosebud, Beartooths, MT",
+  "verdict": "crag",
+  "approach_stated": "\"Walk straight up through talus for 20-25 minutes to the base of the routes.\"",
+  "from": "parking at East Rosebud Creek bridge",
+  "summit_or_glacier": false,
+  "evidence": [
+   {
+    "url": "https://www.mountainproject.com/area/114381348",
+    "retrieved_at": "2026-11-18",
+    "fact": "Park at East Rosebud Creek bridge; talus 20-25 minutes to the base."
+   }
+  ],
+  "note": "Long multi-pitch but short approach.",
+  "route_types": {}
+ },
+ {
+  "area_id": "ut_distant_drum",
+  "place_name": "Distant Drum, The Jungle, Aquarius Plateau, UT",
+  "verdict": "unsure",
+  "approach_stated": null,
+  "from": null,
+  "summit_or_glacier": false,
+  "evidence": [
+   {
+    "url": "https://www.mountainproject.com/area/107629976",
+    "retrieved_at": "2026-11-18",
+    "fact": "Three access options; chimney shortcut 'about 5 minutes' saves 'about 30 min' of walking; no total time."
+   },
+   {
+    "url": "https://www.mountainproject.com/area/106494756/jungle-on-the-aquarius-plateau",
+    "retrieved_at": "2026-11-18",
+    "fact": "'many terrific new lines are within a short walk'; no minutes; 'roadside' not used."
+   }
+  ],
+  "note": "Prior 'roadside' not supported by the pages; the cliff-base trail was extended ~4 km.",
+  "route_types": {}
+ },
+ {
+  "area_id": "ca_black_bluff_upper_face",
+  "place_name": "Black Bluff - Upper Face, Bluff Mesa, Big Bear, CA",
+  "verdict": "unsure",
+  "approach_stated": null,
+  "from": "Bluff Mesa Group Campground",
+  "summit_or_glacier": false,
+  "evidence": [
+   {
+    "url": "https://www.mountainproject.com/area/107186938/black-bluff",
+    "retrieved_at": "2026-11-18",
+    "fact": "'about 1.5 miles following the cairns'; no time; closed due to Line Fire."
+   }
+  ],
+  "note": "Distance only; 14 comments not read.",
+  "route_types": {}
+ },
+ {
+  "area_id": "ca_trinity_tower_the",
+  "place_name": "The Trinity Tower, Pyramids of Pleiades, Tahquitz Others, CA",
+  "verdict": "unsure",
+  "approach_stated": null,
+  "from": "Humber Park (Devils Slide trail)",
+  "summit_or_glacier": false,
+  "evidence": [
+   {
+    "url": "https://www.mountainproject.com/area/109014094/the-others",
+    "retrieved_at": "2026-11-18",
+    "fact": "Parent 'Getting There': 'Mucho hiking.' No time."
+   },
+   {
+    "url": "https://www.mountainproject.com/area/114485337/tahquitz-celestial-7-akathe-tahquitz-back-country-walk-about-grade-v-6000-510",
+    "retrieved_at": "2026-11-18",
+    "fact": "Backcountry link-up page gives no approach times."
+   }
+  ],
+  "note": "Multi-trail approach via Saddle Junction; no stated time. Leans alpine.",
+  "route_types": {}
+ },
+ {
+  "area_id": "co_pike_s_peak_2",
+  "place_name": "Bigger Bagger Pinnacle, Pikes Peak, CO",
+  "verdict": "unsure",
+  "approach_stated": null,
+  "from": null,
+  "summit_or_glacier": false,
+  "evidence": [
+   {
+    "url": "https://www.mountainproject.com/area/124805458/bigger-bagger-pinnacle",
+    "retrieved_at": "2026-11-18",
+    "fact": "Getting There 'To be edited in'; private land in lower drainage; longer legal approaches exist."
+   }
+  ],
+  "note": "Nothing stated; leans alpine.",
+  "route_types": {}
+ }
 ]
