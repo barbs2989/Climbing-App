@@ -5,6 +5,7 @@ import { C, CAT, ROUTES, catOf, gradeLabel, routeLocText, shortDate, daysUntil }
 import Av from "../src/components/Av.tsx";
 import DiscIcon from "../src/components/DiscIcon.tsx";
 import ActionIcon from "../src/components/ActionIcon.tsx";
+import { photoThumb, thumbFallback } from "./photoThumb";
 import { discLabel } from "./discLabels";
 import { useMyHomeStatePaths, usePlaceSearch, useRouteSearch, useStates } from "./db.js";
 import { USE_DB } from "./supabase";
@@ -293,7 +294,7 @@ function RailGroups({ groups, groupUnreadN, onOpenGroup, onAllGroups }) {
     {list.slice(0, PER).map(g => {
       const nn = groupUnreadN(g);
       return <button key={g.id} onClick={() => onOpenGroup(g)} aria-label={g.name + (nn ? ", " + nn + " new post" + (nn === 1 ? "" : "s") : "")} style={ROW}>
-        <span aria-hidden="true" style={{ width: 28, height: 28, borderRadius: 10, background: C.card, border: "1px solid " + C.border, display: "inline-flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}><ActionIcon name="partners" size={15} color={C.textSub} /></span>
+        {/* The group's own avatar (0454) when it has one, else the groups icon. */}<span aria-hidden="true" style={{ width: 28, height: 28, borderRadius: 10, background: C.card, border: "1px solid " + C.border, display: "inline-flex", alignItems: "center", justifyContent: "center", flexShrink: 0, overflow: "hidden" }}>{g.avatarUrl ? <img src={photoThumb(g.avatarUrl, 28)} onError={thumbFallback} alt="" loading="lazy" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} /> : <ActionIcon name="partners" size={15} color={C.textSub} />}</span>
         <span style={{ flex: 1, minWidth: 0, fontSize: 13.5, fontWeight: nn ? 800 : 700, overflowWrap: "anywhere" }}>{g.name}</span>
         {nn ? <span aria-hidden="true" style={{ width: 8, height: 8, borderRadius: 4, background: C.red, flexShrink: 0 }} /> : null}
       </button>;
