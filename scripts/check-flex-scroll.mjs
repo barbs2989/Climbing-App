@@ -63,7 +63,30 @@ for (const f of files) {
     if (!isScroll(ov)) return;
     panes++;
     if (outOfFlow(st.position)) return;   // out of flow: flex shrinking never applied
-    if (isZero(st.minHeight)) return;     // already sized to shrink
+    if (isZero(st.minHeight)) {
+      // minHeight:0 only lets a pane shrink when its OWN parent is the flex container. The route
+      // edit sheet ("Add or fix info", SuggestFix.tsx) had flex:1 + minHeight:0 on its pane, but
+      // the pane and its footer sat in a plain <div> under the capped flex column: the pane grew
+      // to its full 4,000px, never scrolled, and, being overscroll-behavior:contain, swallowed
+      // every mouse wheel over it, so on a desktop the form could not be scrolled at all
+      // (owner, 2026-11-18). Fragments are not DOM, so the nearest JSX ELEMENT is the parent; a
+      // component tag is not DOM either, so it says nothing and is left alone.
+      if (hasHeight(st)) return;
+      // display:contents draws no box, so its children are the flex items of the box above it
+      // (AreaSuggestFix.jsx wraps its pane that way, correctly): look through it.
+      const anc = ancestors();
+      const disp = a => { const s = styleProps(a, code); return String((s && s.display) || "").trim(); };
+      while (anc.length && /^["']contents["']$/.test(disp(anc[anc.length - 1]))) anc.pop();
+      const parent = anc[anc.length - 1];
+      if (!parent || !/^[a-z]/.test(String(parent.name && parent.name.name))) return;
+      const ps = styleProps(parent, code);
+      if (ps && /^["'](flex|inline-flex)["']$/.test(String(ps.display || "").trim())) return;
+      if (!anc.slice(0, -1).some(a => { const as = styleProps(a, code); return as && isColumn(as.flexDirection) && capped(as); })) return;
+      evaluated++;
+      const line = code.slice(0, open.start).split("\n").length;
+      hits.push(`${path.basename(f)}:${line}  minHeight:0 but its parent <${parent.name.name}> is not a flex container — ` + JSON.stringify(st).slice(0, 110) + "…");
+      return;
+    }
     if (hasHeight(st)) return;            // does not depend on flex shrinking
     evaluated++;
     const bad = ancestors().some(a => {
