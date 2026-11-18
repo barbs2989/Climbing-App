@@ -36,7 +36,7 @@ export default function AccessFold({summary,onEdit,children}: AccessFoldProps){c
         sharing one line at 390px). Line one is the heading with its chip and the pencil; line two is what
         it holds and the pill that opens it. The heading WRAPS its chip rather than its words: title, chip
         and pencil need ~350px and a 390px phone gives the row ~260, so the chip drops under the title,
-        lined up with its first letter (CardHead's wrapChip; it sat 4px off every edge before).
+        lined up with its first letter (CardHead does this for every card heading now; it sat 4px off every edge before).
         The toggle is STRETCHED BEHIND both lines, not wrapped around them: CardHead carries the confidence
         chip's Flag button, and a button inside a button is invalid HTML (React warns validateDOMNesting)
         and leaves the Flag's tap to the browser. The title, summary and pill sit above it and let taps
@@ -45,7 +45,7 @@ export default function AccessFold({summary,onEdit,children}: AccessFoldProps){c
     <div style={{position:"relative",minHeight:44}}>
       <button onClick={function(){setOpen(!open);}} aria-expanded={open} aria-label={(open?"Hide":"Show")+" access & regulations"+(!open&&summary?": "+summary:"")} style={{minHeight:44,position:"absolute",left:0,top:0,width:"100%",height:"100%",padding:0,background:"transparent",border:"none",cursor:"pointer"}}/>
       <div style={{display:"flex",alignItems:"center",gap:8}}>
-        <span style={{flex:1,minWidth:0,position:"relative",pointerEvents:"none"}}><CardHead wrapChip style={{marginBottom:0}}>ACCESS & REGULATIONS</CardHead></span>
+        <span style={{flex:1,minWidth:0,position:"relative",pointerEvents:"none"}}><CardHead style={{marginBottom:0}}>ACCESS & REGULATIONS</CardHead></span>
         <span style={{position:"relative",flexShrink:0}}><EditIconButton onClick={onEdit} title="Edit access & permit information"/></span>
       </div>
       <div style={{display:"flex",alignItems:"center",gap:8,marginTop:4}}>
