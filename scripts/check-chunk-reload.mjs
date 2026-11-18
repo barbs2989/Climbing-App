@@ -57,6 +57,20 @@ else {
   ]) if (!re.test(msg)) fail.push(`AppErrorBoundary's chunk-error test no longer matches ${engine}'s message ("${msg}")`);
 }
 
+// preventDefault() above stops Vite rethrowing the import error -- and Vite then resolves the import to
+// UNDEFINED, so React.lazy throws its own "reading 'default'" TypeError into the boundary while the
+// reload is in flight (2026-11-18, signed-in walk: Menu > Listed areas across a deploy drew "This screen
+// hit a bug ... (reading 'default')" and stayed). The boundary must read main.jsx's marker and call that
+// error the deploy, in each engine's wording.
+if (key && !boundary.includes(`"${key}"`)) fail.push(`AppErrorBoundary.jsx never reads "${key}" — a lazy screen whose file a deploy removed shows "This screen hit a bug (reading 'default')" while main.jsx reloads`);
+const sw = boundary.match(/if \(!\/(.+?)\/(\w*)\.test\(msg\)\) return false;/) || [];
+if (!sw[1]) fail.push("AppErrorBoundary.jsx no longer has swallowedChunk's `if (!/…/.test(msg)) return false;` — update this check");
+else for (const [engine, msg] of [
+  ["Chrome", "Cannot read properties of undefined (reading 'default')"],
+  ["Firefox", "can't access property \"default\", n is undefined"],
+  ["Safari", "undefined is not an object (evaluating 'n.default')"],
+]) if (!new RegExp(sw[1], sw[2]).test(msg)) fail.push(`AppErrorBoundary's swallowed-chunk test no longer matches ${engine}'s message ("${msg}")`);
+
 if (fail.length) {
   console.error("check:chunk-reload FAILED:\n" + fail.map((f) => "  - " + f).join("\n"));
   process.exit(1);
