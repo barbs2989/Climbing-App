@@ -43,7 +43,10 @@ export default function DbSearchSplit({ scope, onJumpToArea, onOpenRoute, C, onM
   const { wrapRef, barRef, pin } = usePinnedBar(endRef);
   const qq = q.trim();
   const { data: areaHits, isLoading: la, error: ea } = useAreaSearch(scope.id, qq);
-  const { data: routeHits, isLoading: lr, error: er } = useSubtreeRoutes(scope.id, { q: qq, page: 0, pageSize: 40 });
+  // Asked only for typed words on the Routes tab: the list shows nothing else. With no words it read a whole
+  // state's climbs unfiltered, which times out (HTTP 500, statement timeout) on every visit to a state's page
+  // (2026-11-18), and on the Areas tab it ran a route search per keystroke that nobody saw.
+  const { data: routeHits, isLoading: lr, error: er } = useSubtreeRoutes(qq && mode === "routes" ? scope.id : null, { q: qq, page: 0, pageSize: 40 });
   // Which crag each hit is on, as the Route finder's rows say: two "Beckey Route"s read as one
   // climb listed twice. A failed read leaves the line off, never empty.
   const hitAreaIds = useMemo(() => [...new Set((routeHits || []).map((r: DbSearchSplitRoute) => r.area_id).filter(Boolean))], [routeHits]);
