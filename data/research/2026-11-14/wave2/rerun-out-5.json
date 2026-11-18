@@ -1,0 +1,1278 @@
+{
+ "ca_raymond_peak_north_gully": {
+  "area": "ca_raymond_peak",
+  "skip_reason": "Re-checked 2026-11-14: summitpost.org/raymond-peak-from-raymond-lake/530219 answers 403 Forbidden; greglamy.net/Hiking/RaymondLake.html is the PCT hike to Raymond Lake from Sunset Lake Rd (11.6 mi, 2,230 ft to the lake, not the gully); earlier pass opened greglamy RaymondPeak.html (south-side hike). DDG finds no other page for the North Gully. No stated fact for this route."
+ },
+ "co_green_mountain_pinnacle_fern_alley": {
+  "area": "co_green_mountain_pinnacle",
+  "skip_reason": "Earlier skip kept: MP Green Mountain Pinnacle area and search (no Fern Alley), thecrag route 20973577 (empty), ukclimbing logbook (no entry); DDG 2026-11-14 shows only those same pages plus listsofjohn peak 130035 (peak, not this cleft). No page states facts for this route."
+ },
+ "co_summit_lake_couloirs_summit_lake_bowl": {
+  "area": "co_summit_lake_couloirs",
+  "facts": [
+   {
+    "field": "trailhead",
+    "value": "Summit Lake Trailhead (12,850 ft) on the Mount Evans/Blue Sky road",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.frontrangeskimo.com/evans-old",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mount Evans North Face and Summit Lake Bowl lines are all reached from the Summit Lake Trailhead, listed at 12,850 ft."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Walk south up the summit road, cross the Bear Creek outlet of Summit Lake, leave the road west and climb about 450 ft over 0.45 mi to the bowl below the North Face",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.frontrangeskimo.com/evans-old",
+      "retrieved_at": "2026-11-14",
+      "fact": "Shared approach: road south, cross Bear Creek outlet, leave road west, ~450 vertical ft and 0.45 mi up to small bowl under the North Face."
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "Spring and summer",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.frontrangeskimo.com/evans-old",
+      "retrieved_at": "2026-11-14",
+      "fact": "North Face / Summit Lake Bowl section gives season as spring and summer."
+     }
+    ]
+   }
+  ],
+  "note": "frontrangeskimo treats the North Face and Summit Lake Bowl as one zone with shared approach (1 mile from Summit Lake TH, bowl at 13,280 ft); its per-line ratings (D4-D12) are for named lines, not 'Summit Lake Bowl' as a whole, so not recorded. MP area page (earlier pass) had no entry; dismalwilderness was a hiking route."
+ },
+ "co_apache_peak_queen_s_way": {
+  "area": "co_apache_peak",
+  "facts": [
+   {
+    "field": "trailhead",
+    "value": "Long Lake Trailhead (Brainard Lake area)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/php14ers/tripreport.php?trip=20458",
+      "retrieved_at": "2026-11-14",
+      "fact": "Party left the Long Lake trailhead and followed the Pawnee Pass and Isabelle Glacier trails."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Pawnee Pass Trail then Isabelle Glacier Trail to the unnamed tarn at 11,420 ft, then a faint path north of the tarn toward the base of Isabelle Glacier",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/php14ers/tripreport.php?trip=20458",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trail to tarn at 11,420 ft, then small trail off the tarn's north side most of the way to the glacier base."
+     }
+    ]
+   },
+   {
+    "field": "round_trip_mi",
+    "value": 11,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/php14ers/tripreport.php?trip=20458",
+      "retrieved_at": "2026-11-14",
+      "fact": "Author says they covered about 11 miles in total (round trip, July 2020)."
+     }
+    ],
+    "note": "Approximate, round trip, one party's figure."
+   },
+   {
+    "field": "gain_ft",
+    "value": 3600,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/php14ers/tripreport.php?trip=20458",
+      "retrieved_at": "2026-11-14",
+      "fact": "Author says about 3,600 feet of gain in total for the round trip."
+     }
+    ],
+    "note": "Round-trip total from one trip report; approximate."
+   },
+   {
+    "field": "car_to_car_time",
+    "value": "14 h 21 min",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/php14ers/tripreport.php?trip=20458",
+      "retrieved_at": "2026-11-14",
+      "fact": "The whole outing took 14 hours 21 minutes."
+     }
+    ],
+    "note": "One party's car-to-car time."
+   },
+   {
+    "field": "route_step",
+    "value": "Crampons and axe on the ~35 degree snow of the couloir above Isabelle Glacier, then talus southwest to the summit",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/php14ers/tripreport.php?trip=20458",
+      "retrieved_at": "2026-11-14",
+      "fact": "Crampons and axes for a ~35 degree slope; from the couloir top they angled SW across talus to the summit."
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "Queen's Way is the snow extension of Isabelle Glacier, ending at a lower tarn",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.snowboardmountaineer.com/trip-report-queens-way-apache-peak-dryland/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Describes Queen's Way as the extension of Isabelle Glacier; photo caption shows its snowfield ending on the lower tarn."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Glissade or downclimb the couloir back onto the glacier",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/php14ers/tripreport.php?trip=20458",
+      "retrieved_at": "2026-11-14",
+      "fact": "Party glissaded the couloir/glacier on descent."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Glissade runout at the couloir base goes into a talus band, not onto the flat glacier",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/php14ers/tripreport.php?trip=20458",
+      "retrieved_at": "2026-11-14",
+      "fact": "Author lost control glissading; the runout fed straight into a talus band."
+     }
+    ]
+   }
+  ],
+  "note": "hikingrmnp.org page returned a Chrome error; SummitPost 162380 not tried (403 site-wide). Distance/gain/time are one party's figures."
+ },
+ "co_arapahoe_peaks_streetwalker_couloir": {
+  "area": "co_arapahoe_peaks",
+  "facts": [
+   {
+    "field": "overview",
+    "value": "Couloir immediately right of Skywalker on South Arapaho Peak",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/php14ers/tripreport.php?trip=5934",
+      "retrieved_at": "2026-11-14",
+      "fact": "Streetwalker is the couloir to the right of Skywalker."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "From the couloir top there is still 500+ vertical ft to the South Arapaho summit",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/php14ers/tripreport.php?trip=5934",
+      "retrieved_at": "2026-11-14",
+      "fact": "Author notes another 500+ vertical feet from the couloir top to the summit."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Gentle slope to the saddle between South Arapaho and Old Baldy, joining the standard summer route",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/php14ers/tripreport.php?trip=5934",
+      "retrieved_at": "2026-11-14",
+      "fact": "They used the gentle slope to the South Arapaho/Old Baldy saddle and the standard summer route as the descent."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Cornices at the exits of the neighbouring Skywalker and avalanche debris; check conditions",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/php14ers/tripreport.php?trip=5934",
+      "retrieved_at": "2026-11-14",
+      "fact": "Skywalker's exits were corniced with avalanche debris, so they chose Streetwalker instead."
+     }
+    ]
+   }
+  ],
+  "note": "The TR's '~9.0 miles, 4,000 feet of gain' covers Streetwalker plus a traverse to North Arapaho and back, so not used for this route. TR's '35 degree' is a guess, not recorded. No second page found for Streetwalker (DDG returns Skywalker pages)."
+ },
+ "co_flattop_mountain_n_side_ptarmigan_glacier": {
+  "area": "co_flattop_mountain_n_side",
+  "facts": [
+   {
+    "field": "high_point_ft",
+    "value": 12150,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.cmc.org/education-adventure/trips/find-trips/snow-climb-2013-this-is-an-easy-to-moderate-snow-climb-up-ptarmigan-glacier-rmnp-great-place-to-practice-snow-skills",
+      "retrieved_at": "2026-11-14",
+      "fact": "Club trip listing gives high point elevation 12,150 ft."
+     },
+     {
+      "url": "https://www.powderproject.com/trail/7001914/ptarmigan-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Ski line listed with a high of 12,144 ft."
+     }
+    ],
+    "note": "PowderProject's high is the top of the ski line (12,144); CMC's 12,150 is the trip high point."
+   },
+   {
+    "field": "trailhead",
+    "value": "Bear Lake Trailhead (RMNP)",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.cmc.org/education-adventure/trips/find-trips/snow-climb-2013-this-is-an-easy-to-moderate-snow-climb-up-ptarmigan-glacier-rmnp-great-place-to-practice-snow-skills",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trip starts at Bear Lake trailhead, up the Flattop trail toward Lake Helene."
+     },
+     {
+      "url": "https://www.powderproject.com/trail/7001914/ptarmigan-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Approach via the Bear Lake / Fern Lake and Lake Helene trails; ski back to the trailhead."
+     }
+    ]
+   },
+   {
+    "field": "round_trip_mi",
+    "value": 13.6,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.cmc.org/education-adventure/trips/find-trips/snow-climb-2013-this-is-an-easy-to-moderate-snow-climb-up-ptarmigan-glacier-rmnp-great-place-to-practice-snow-skills",
+      "retrieved_at": "2026-11-14",
+      "fact": "Planned trip mileage 13.6 mi."
+     }
+    ],
+    "note": "CMC planned loop returning over Flattop Mountain trail, not the out-and-back."
+   },
+   {
+    "field": "gain_ft",
+    "value": 4600,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.cmc.org/education-adventure/trips/find-trips/snow-climb-2013-this-is-an-easy-to-moderate-snow-climb-up-ptarmigan-glacier-rmnp-great-place-to-practice-snow-skills",
+      "retrieved_at": "2026-11-14",
+      "fact": "Planned trip elevation gain 4,600 ft."
+     }
+    ],
+    "note": "CMC planned loop (up the glacier, down the Flattop trail)."
+   },
+   {
+    "field": "approach_step",
+    "value": "Flattop trail toward Lake Helene and Notchtop; climbers' path to the lake, then Lower Ptarmigan Glacier below Notchtop curving right to the main glacier",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.cmc.org/education-adventure/trips/find-trips/snow-climb-2013-this-is-an-easy-to-moderate-snow-climb-up-ptarmigan-glacier-rmnp-great-place-to-practice-snow-skills",
+      "retrieved_at": "2026-11-14",
+      "fact": "Describes climber's path near Lake Helene, Lower Ptarmigan Glacier below Notchtop Spire, curving up and right to main glacier."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Ice axe, mountaineering crampons and helmet",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.cmc.org/education-adventure/trips/find-trips/snow-climb-2013-this-is-an-easy-to-moderate-snow-climb-up-ptarmigan-glacier-rmnp-great-place-to-practice-snow-skills",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trip requires technical snow skills, ice axe, mountaineering crampons and helmet."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Flattop Mountain trail, or glissade and reverse the approach",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.cmc.org/education-adventure/trips/find-trips/snow-climb-2013-this-is-an-easy-to-moderate-snow-climb-up-ptarmigan-glacier-rmnp-great-place-to-practice-snow-skills",
+      "retrieved_at": "2026-11-14",
+      "fact": "Primary return via Flattop Mountain trail; option to glissade and return the approach route."
+     }
+    ]
+   },
+   {
+    "field": "max_slope_deg",
+    "value": 25,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.powderproject.com/trail/7001914/ptarmigan-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Max slope listed as 47% (25 degrees), average 22 degrees."
+     }
+    ],
+    "note": "Ski line figure; about 400 ft of descent from 12,144 to 11,744."
+   }
+  ],
+  "note": "CMC 2013 trip changed to Gabletop on the day due to conditions; its planned figures for Ptarmigan Glacier are recorded as planned, round trip/loop."
+ },
+ "co_long_s_peak_western_aspect_pagoda_couloir": {
+  "area": "co_long_s_peak_western_aspect",
+  "facts": [
+   {
+    "field": "trailhead",
+    "value": "Glacier Gorge Trailhead (RMNP), passenger-car access",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.climb13ers.com/colorado-13ers/pagoda-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Passenger vehicle access to the Glacier Gorge Trailhead; route figures given from there."
+     },
+     {
+      "url": "https://summitborn.com/pagoda-mountain-green-lake-couloir-route-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Distance quoted round trip from the Glacier Gorge Trailhead."
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 4315,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.climb13ers.com/colorado-13ers/pagoda-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Round trip from Glacier Gorge: 14.8 mi / 4,315 ft."
+     },
+     {
+      "url": "https://summitborn.com/pagoda-mountain-green-lake-couloir-route-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Net gain trailhead to summit about 4,250 ft."
+     }
+    ],
+    "note": "Both to Pagoda's summit via this couloir."
+   },
+   {
+    "field": "round_trip_mi",
+    "value": 14.8,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climb13ers.com/colorado-13ers/pagoda-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Round trip from Glacier Gorge trailhead 14.8 miles."
+     }
+    ],
+    "note": "Summitborn gives a 13.5-15 mi range."
+   },
+   {
+    "field": "length_ft",
+    "value": 1200,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climb13ers.com/colorado-13ers/pagoda-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "About 1,200 ft of total gain in the couloir before reaching the north ridge."
+     }
+    ],
+    "note": "Vertical gain inside the couloir."
+   },
+   {
+    "field": "route_step",
+    "value": "From Green Lake climb the west-facing couloir to the last notch on the Keyboard of the Winds ridge north of Pagoda, then about 400 ft of boulder scrambling to the summit",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.climb13ers.com/colorado-13ers/pagoda-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "West-facing couloir to the notch north of the summit; final 400 ft of scrambling over boulders."
+     },
+     {
+      "url": "https://summitborn.com/pagoda-mountain-green-lake-couloir-route-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "West-facing couloir from Green Lake to a notch on the north ridge, then the ridge to the summit."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "A steep slab a few hundred feet up the talus cone is bypassed on a ramp at its foot",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climb13ers.com/colorado-13ers/pagoda-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Hike along a steep ramp at the base of the slab instead of climbing the slab."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Reverse the ascent route",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.climb13ers.com/colorado-13ers/pagoda-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Return by following the ascent route back down."
+     },
+     {
+      "url": "https://summitborn.com/pagoda-mountain-green-lake-couloir-route-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route shape out-and-back."
+     }
+    ]
+   },
+   {
+    "field": "car_to_car_hours",
+    "value": "10-12",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/pagoda-mountain-green-lake-couloir-route-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "10-12 hours car to car in one push."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Glacier Gorge backcountry campsite between Mills and Black Lakes",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.climb13ers.com/colorado-13ers/pagoda-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Half day from the designated backcountry campsite between Mills and Black Lakes."
+     },
+     {
+      "url": "https://summitborn.com/pagoda-mountain-green-lake-couloir-route-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Option to split it with a night at the Glacier Gorge campsite."
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "Mid-July to September for the dry scramble; a snow climb before that",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/pagoda-mountain-green-lake-couloir-route-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Best mid-July through September once snow is gone; earlier the couloir is a snow climb."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "RMNP entrance fee/pass and the seasonal Bear Lake Road timed-entry reservation",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/pagoda-mountain-green-lake-couloir-route-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Park entrance fee or pass plus seasonal Bear Lake Road timed-entry reservation."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Loose couloir with rockfall onto parties below; afternoon storms over the Divide with no shelter above Green Lake",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/pagoda-mountain-green-lake-couloir-route-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Loose couloir sheds rock; storms build by late morning and there is no shelter between Green Lake and summit."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Ice axe recommended",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climb13ers.com/colorado-13ers/pagoda-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Ice Axe Recommended: Yes."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "Class 2+ (climb13ers) / Class 3 (Summitborn) as a dry scramble",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.climb13ers.com/colorado-13ers/pagoda-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Rated Class 2+."
+     },
+     {
+      "url": "https://summitborn.com/pagoda-mountain-green-lake-couloir-route-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Rated Class 3 scramble."
+     }
+    ],
+    "note": "Grades disagree; summer dry-rock rating, not our snow grade."
+   }
+  ],
+  "note": "Identity: both pages describe the west-facing couloir from Green Lake to the notch between Pagoda and the Keyboard of the Winds, matching our description. Our 'Easy Snow' grade is for snow conditions; the class ratings are for the dry route and disagree (2+ vs 3)."
+ },
+ "co_mt_blue_sky_formerly_mount_evans_mixed_couloirs_crystal_couloir": {
+  "area": "co_mt_blue_sky_formerly_mount_evans_mixed_couloirs",
+  "facts": [
+   {
+    "field": "trailhead",
+    "value": "Summit Lake parking area on the Mt Blue Sky (Evans) road",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.thevirtualsherpa.com/mt-blue-sky-crystal-couloir-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trailhead: Summit Lake."
+     },
+     {
+      "url": "https://www.14ers.com/php14ers/tripreport.php?trip=16992",
+      "retrieved_at": "2026-11-14",
+      "fact": "Party started from the Summit Lake lot and returned there."
+     }
+    ]
+   },
+   {
+    "field": "round_trip_mi",
+    "value": 2,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.thevirtualsherpa.com/mt-blue-sky-crystal-couloir-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Distance 2 miles round trip from Summit Lake."
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 1450,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.thevirtualsherpa.com/mt-blue-sky-crystal-couloir-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Total elevation gain 1,450 ft."
+     }
+    ],
+    "note": "Round trip from Summit Lake to the summit."
+   },
+   {
+    "field": "high_point_ft",
+    "value": 14264,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.thevirtualsherpa.com/mt-blue-sky-crystal-couloir-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "High point 14,264 ft."
+     }
+    ]
+   },
+   {
+    "field": "trailhead_elev_ft",
+    "value": 12830,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.thevirtualsherpa.com/mt-blue-sky-crystal-couloir-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Elevation start 12,830 ft."
+     }
+    ]
+   },
+   {
+    "field": "car_to_car_hours",
+    "value": "2-3",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.thevirtualsherpa.com/mt-blue-sky-crystal-couloir-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Estimated 2-3 hours round trip."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 1000,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.thevirtualsherpa.com/mt-blue-sky-crystal-couloir-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Line is about 1,000 ft long."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "40-50 degrees at the crux",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.thevirtualsherpa.com/mt-blue-sky-crystal-couloir-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Snow climb grade moderate to difficult, 40-50 degrees at the crux."
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "Late May to June, right after the road opens",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.thevirtualsherpa.com/mt-blue-sky-crystal-couloir-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Season late May-June; go as soon as the highway opens."
+     }
+    ]
+   },
+   {
+    "field": "road",
+    "value": "Mt Blue Sky highway usually opens around Memorial Day; reached via Echo Lake from Evergreen or Idaho Springs",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.thevirtualsherpa.com/mt-blue-sky-crystal-couloir-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Road via Echo Lake, usually opens around Memorial Day."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Timed parking reservation required for Summit Lake; fee $7 or less (America the Beautiful pass)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.thevirtualsherpa.com/mt-blue-sky-crystal-couloir-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Reservation required; fee $7 or less depending on pass."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Echo Lake Campground is the closest official camping; no camping at Summit Lake",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.thevirtualsherpa.com/mt-blue-sky-crystal-couloir-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Closest official camping Echo Lake Campground; cannot camp at Summit Lake."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Standard Mt Blue Sky trail back to Summit Lake",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.thevirtualsherpa.com/mt-blue-sky-crystal-couloir-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Descent option: standard trail back to Summit Lake."
+     },
+     {
+      "url": "https://www.14ers.com/php14ers/tripreport.php?trip=16992",
+      "retrieved_at": "2026-11-14",
+      "fact": "From the summit they descended to the Summit Lake lot."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Two top-outs: the standard right exit or a steeper left variation, both ending at the same ridge spot",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.thevirtualsherpa.com/mt-blue-sky-crystal-couloir-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Right (standard) top-out and a steeper left option end in essentially the same spot."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Crampons; avalanche beacon, probe and shovel; axe optional",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.thevirtualsherpa.com/mt-blue-sky-crystal-couloir-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Gear list: crampons, avalanche gear, optional axe."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Avalanche risk in winter and spring; top melts out by July",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.thevirtualsherpa.com/mt-blue-sky-crystal-couloir-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Avalanche risk winter/spring; top melts out, don't push into July."
+     }
+    ]
+   },
+   {
+    "field": "aspect",
+    "value": "North / northeast",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.thevirtualsherpa.com/mt-blue-sky-crystal-couloir-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Faces north/northeast."
+     }
+    ]
+   }
+  ],
+  "note": "MP 109063573 (1420 ft) shares a templated length with other lines, not used. 14ers TR 16992 confirms trailhead and descent only."
+ },
+ "co_mt_blue_sky_formerly_mount_evans_mixed_couloirs_north_face_snowfield": {
+  "area": "co_mt_blue_sky_formerly_mount_evans_mixed_couloirs",
+  "facts": [
+   {
+    "field": "trailhead",
+    "value": "Summit Lake Trailhead (12,850 ft)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.frontrangeskimo.com/evans-old",
+      "retrieved_at": "2026-11-14",
+      "fact": "All North Face lines start from the Summit Lake Trailhead at 12,850 ft."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Road south, cross the Bear Creek outlet, then west about 450 ft and 0.45 mi to the bowl at 13,280 ft below the North Face",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.frontrangeskimo.com/evans-old",
+      "retrieved_at": "2026-11-14",
+      "fact": "Shared North Face approach to the bowl at 13,280 ft."
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "Spring and summer",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.frontrangeskimo.com/evans-old",
+      "retrieved_at": "2026-11-14",
+      "fact": "North Face routes: season spring, summer; north exposure."
+     }
+    ]
+   }
+  ],
+  "note": "frontrangeskimo names its widest North Face line 'North Face Moderate' (to the 14,150 ft saddle); it may be this snowfield but the names differ, so only the shared approach facts are recorded. MP 109063726's 1420 ft is templated (earlier pass)."
+ },
+ "co_s6_pk_13_441_celestial_lotion": {
+  "area": "co_s6_pk_13_441",
+  "skip_reason": "Opened 2026-11-14: DDG for \"Celestial Lotion\" couloir (cosmetics only); Mountain Project search for Celestial Lotion (0 results); 14ers.com trip report 23438 (S6 N Couloir + S4 south face, 10.5 mi multi-peak day, cannot tie to this east/looker's-left line). No stated fact for this route."
+ },
+ "co_torrey_s_peak_south_paw_couloir": {
+  "area": "co_torrey_s_peak",
+  "facts": [
+   {
+    "field": "aspect",
+    "value": "East-northeast",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.backcountryrecon.com/colorado/front-range/south-paw-couloir/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Steep E-NE facing couloir off Torreys."
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "Steep couloir on Torreys just south of Dead Dog Couloir",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.backcountryrecon.com/colorado/front-range/south-paw-couloir/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Line lies to the south of Dead Dog Couloir."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Cliffs, rockfall and avalanche; called extremely dangerous",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.backcountryrecon.com/colorado/front-range/south-paw-couloir/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Warns of cliffs, falling rock and avalanches; extremely dangerous line."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Cornice above the main entrance, passable a little to skier's right",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/php14ers/peakstatus_entry.php?recnum=34430",
+      "retrieved_at": "2026-11-14",
+      "fact": "Cornice right above the main entrance, avoided by entering slightly to skier's right."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Reached from the Grays/Torreys standard trail: party went over Grays to Torreys and entered from the top",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/php14ers/peakstatus_entry.php?recnum=34430",
+      "retrieved_at": "2026-11-14",
+      "fact": "Hiked Grays then Torreys and skied South Paw."
+     }
+    ]
+   },
+   {
+    "field": "road",
+    "value": "Road to the Grays/Torreys lot passable in a low-clearance car with care",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/php14ers/peakstatus_entry.php?recnum=34430",
+      "retrieved_at": "2026-11-14",
+      "fact": "Got to the parking lot in a small low-clearance car; a couple of spots need care."
+     }
+    ]
+   }
+  ],
+  "note": "Each fact single-source; the cornice in our overview is confirmed by the 14ers report."
+ },
+ "co_wilson_group_luttrell_route": {
+  "area": "co_wilson_group",
+  "facts": [
+   {
+    "field": "overview",
+    "value": "Also called the Fox Traverse; climbs El Diente's northwest couloir",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.exploringtherockies.com/2011/05/08/el-diente-ski-descent-the-luttrel-line/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Luttrel Line aka Fox Traverse, on El Diente's Northwest Couloir."
+     },
+     {
+      "url": "https://www.14ers.com/php14ers/peakstatus_entry.php?recnum=34489",
+      "retrieved_at": "2026-11-14",
+      "fact": "Skied the Fox Traverse / Luttrell line on El Diente."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Navajo Lake Trailhead; road open from Dolores/Dunton or Lizard Head Pass",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/php14ers/peakstatus_entry.php?recnum=34489",
+      "retrieved_at": "2026-11-14",
+      "fact": "Road to Navajo Lake TH clear from Dolores/Dunton or Lizard Head Pass."
+     }
+    ]
+   },
+   {
+    "field": "round_trip_mi",
+    "value": 13.5,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/php14ers/peakstatus_entry.php?recnum=34489",
+      "retrieved_at": "2026-11-14",
+      "fact": "13.5 miles, 5,400 ft vert, 12 hrs via Navajo Lake approach."
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 5400,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/php14ers/peakstatus_entry.php?recnum=34489",
+      "retrieved_at": "2026-11-14",
+      "fact": "5,400 ft vertical via the Navajo Lake approach."
+     }
+    ],
+    "note": "Round trip, one party."
+   },
+   {
+    "field": "car_to_car_hours",
+    "value": 12,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/php14ers/peakstatus_entry.php?recnum=34489",
+      "retrieved_at": "2026-11-14",
+      "fact": "12 hours via Navajo Lake."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Navajo Lake trail past the Kilpacker junction (above 10,000 ft) to Navajo Lake (11,200 ft), then to the base of the couloir",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/php14ers/peakstatus_entry.php?recnum=34489",
+      "retrieved_at": "2026-11-14",
+      "fact": "Kilpacker junction above 10,000; Navajo Lake at 11,200; skins from the lake to the couloir base."
+     }
+    ]
+   },
+   {
+    "field": "approach_alt",
+    "value": "From Silver Pick (9,600 ft) over Rock of Ages saddle: 11 mi, 6,600 ft, 14 h",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.exploringtherockies.com/2011/05/08/el-diente-ski-descent-the-luttrel-line/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Silver Pick start at 9,600 ft via Rock of Ages saddle twice; 11 miles, 6,600 ft, 14 hours."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Couloir base about 12,000 ft; line not visible from one viewpoint; avoid cutting climber's left too early",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.exploringtherockies.com/2011/05/08/el-diente-ski-descent-the-luttrel-line/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Base of NW face ~12,000 ft; route not fully visible; resist cutting left early."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Crampons",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.exploringtherockies.com/2011/05/08/el-diente-ski-descent-the-luttrel-line/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Crampons went on at the base of the couloir."
+     }
+    ]
+   }
+  ],
+  "note": "Approach figures differ because the two parties used different trailheads (Navajo Lake vs Silver Pick); each recorded with its trailhead."
+ },
+ "or_krag_peak_traverse": {
+  "area": "or_wallowa_mountains_traverses",
+  "facts": [
+   {
+    "field": "gain_ft",
+    "value": 4888,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://fastestknowntime.com/route/krag-peak-traverse-or",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route lists vertical gain 4,888 ft."
+     }
+    ]
+   },
+   {
+    "field": "loop_mi",
+    "value": 10.76,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://fastestknowntime.com/route/krag-peak-traverse-or",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route distance 10.76 mi (loop)."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "East Eagle Trail about 1.5 mi, then right up 'the box', the loose steep rib on Krag's west side, to the west summit",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://fastestknowntime.com/route/krag-peak-traverse-or",
+      "retrieved_at": "2026-11-14",
+      "fact": "Start on East Eagle Trail a mile and a half, go right up the box on the west side to the west summit."
+     }
+    ]
+   },
+   {
+    "field": "fkt_time",
+    "value": "5 h 9 min (Oct 2022)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://fastestknowntime.com/route/krag-peak-traverse-or",
+      "retrieved_at": "2026-11-14",
+      "fact": "Submitter completed it 10/1/22: 4,888 ft, 10.76 mi, 5 hrs 9 min."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Exposed sections with big loose blocks",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://fastestknowntime.com/route/krag-peak-traverse-or",
+      "retrieved_at": "2026-11-14",
+      "fact": "Sections of exposure with big loose blocks; use caution."
+     }
+    ]
+   }
+  ],
+  "note": "Only the itinerary was missing; no page gives a day-by-day plan (it is a one-day loop). FKT figures match what the app already stores. oregonhikers Krag_Peak describes a different (NE ridge) route (earlier pass)."
+ },
+ "wa_berdeen_peak_scramble": {
+  "area": "wa_berdeen_peak",
+  "facts": [
+   {
+    "field": "day_leg",
+    "value": "Day 1: end of Bacon Creek Rd (850 ft), up Porkbelly Ridge, over the east side of Berdeen Peak (6,400 ft) to camp above Berdeen Lake: +6,550 ft, -1,820 ft, 6.3 mi",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://stephabegg.com/trip-reports/washington/pickets/mystery-ridge-enchainment/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Day 1 from Bacon Creek Road end (850') up Porkbelly Ridge over Berdeen to camp above the lake: +6550', -1820', 6.3 miles."
+     }
+    ],
+    "note": "Day of a 7-day enchainment; the leg ends at camp past the summit."
+   },
+   {
+    "field": "route_step",
+    "value": "Berdeen climbed by its east ridge and northwest slopes",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://stephabegg.com/trip-reports/washington/pickets/mystery-ridge-enchainment/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Climbing Berdeen Peak via its East Ridge and NW Slopes."
+     }
+    ]
+   },
+   {
+    "field": "route_alt",
+    "value": "North ridge from the Berdeen Lake / Native Knoll saddle, pleasant on snow (June)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.nwhikers.net/forums/viewtopic.php?p=1094678",
+      "retrieved_at": "2026-11-14",
+      "fact": "With snow, the north ridge of Berdeen Peak from the Native Knoll saddle was pleasant."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Bench camp at 6,200 ft southeast of Hagan Mountain used by parties coming from Blum Lakes",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.nwhikers.net/forums/viewtopic.php?p=1094678",
+      "retrieved_at": "2026-11-14",
+      "fact": "Camped at 6,200 ft on the bench southeast of Hagan, then descended to Berdeen Lake."
+     }
+    ]
+   }
+  ],
+  "note": "Stored gain (6,550) and distance (10.1 km = 6.3 mi) already come from stephabegg's Day 1 figures, which run to a camp beyond the summit. nwhikers approach is from Blum Lakes, not Bacon Creek."
+ },
+ "wa_big_four_mountain_dry_creek_route": {
+  "area": "wa_big_four_mountain",
+  "facts": [
+   {
+    "field": "approach_step",
+    "value": "Cross the South Fork Stillaguamish on a large (about 2 ft) log; climbers' path marked with flagging",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/trip-reports/tripreport-2000060330",
+      "retrieved_at": "2026-11-14",
+      "fact": "River crossed on a large 2-foot-diameter log; path sketchy but flagged."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Lower couloir/snow finger through the cliffs, traverse, then the main upper couloir",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/trip-reports/tripreport-2000060330",
+      "retrieved_at": "2026-11-14",
+      "fact": "40-45 degree snow finger led to the upper glacier, traversed to the main snow couloir."
+     },
+     {
+      "url": "https://cascadecrusades.org/SkiMountaineering/bigfour/routes/drycreek/drycreekmarch2006/drycreekmarch2006.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Rightward-slanting couloir through cliffs, then a traverse to the base of the upper couloir."
+     }
+    ]
+   },
+   {
+    "field": "season_note",
+    "value": "Early-season snow (snow from about 2,000 ft) avoids grungy 4th-class climbing in the cedars",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/trip-reports/tripreport-2000060330",
+      "retrieved_at": "2026-11-14",
+      "fact": "Snow started near 2,000 ft in early June; early season avoids 4th-class cedar scrambling."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Cornice and rock/snow fall onto the face above the traverse",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/trip-reports/tripreport-2000060330",
+      "retrieved_at": "2026-11-14",
+      "fact": "A large cornice broke off and fell into a bergschrund above the traverse."
+     }
+    ]
+   }
+  ],
+  "note": "Neither page gives distance or gain. cascadecrusades is a winter ski ascent via the Ice Caves trail."
+ }
+}
