@@ -1,0 +1,963 @@
+{
+ "wa_south_ridge_3": {
+  "area": "wa_black_peak",
+  "set": {
+   "waypoints": [
+    {
+     "lat": 48.5156,
+     "lng": -120.7362,
+     "elev": 4850,
+     "name": "Rainy Pass Trailhead (SR 20)",
+     "note": "Northwest Forest Pass required; parking is at the Rainy Pass picnic area, trailhead sign at the north end of the lot.",
+     "type": "Trailhead",
+     "distMi": 0,
+     "directions": "Drive the North Cascades Highway (SR 20) to Rainy Pass near milepost 157.5, about 50 miles east of Marblemount or 35 miles west of Winthrop, and turn into the Rainy Pass Picnic Area on the south side of the highway; the Lake Ann/Maple Pass trailhead sign is at the north end of the lot. A Northwest Forest Pass is required. The highway closes for the winter over the pass."
+    },
+    {
+     "lat": 48.509345,
+     "lng": -120.763756,
+     "elev": 6080,
+     "name": "Heather Pass junction",
+     "note": "Leave the Lake Ann/Maple Pass Loop trail #740 here onto the unmaintained climbers' path toward Lewis and Wing Lakes.",
+     "type": "Junction",
+     "distMi": 2.4,
+     "directions": "Follow the Lake Ann/Maple Pass Trail #740 about 1.3 miles through forest to the signed fork, stay right toward Heather Pass (the left fork goes to Lake Ann), and climb through meadows to Heather Pass, where you leave the maintained trail for the unmarked climbers' path toward Lewis and Wing Lakes."
+    },
+    {
+     "lat": 48.511137,
+     "lng": -120.775017,
+     "elev": 6100,
+     "name": "Talus field crossings",
+     "note": "Two loose talus fields to cross on the climbers' path before Lewis Lake; cairned but easy to lose in fog.",
+     "type": "Hazard",
+     "distMi": 3,
+     "directions": "Follow the unmarked, cairned climbers' path west from Heather Pass across two loose talus and boulder fields. The cairns are easy to lose in fog or under early-season snow, and this is the main route-finding problem of the approach."
+    },
+    {
+     "lat": 48.514102,
+     "lng": -120.782366,
+     "elev": 5700,
+     "name": "Lewis Lake",
+     "note": "Lower, less-established camp option; only a couple of decent tent spots on the north shore.",
+     "type": "Campsite",
+     "distMi": 3.5,
+     "directions": "Beyond the second talus field, drop down to Lewis Lake. The few tent sites are in the timber on the north shore."
+    },
+    {
+     "lat": 48.5172,
+     "lng": -120.8038,
+     "elev": 6920,
+     "name": "Wing Lake outlet",
+     "note": "Reliable water; the lake outlet is the last dependable source before the summit push.",
+     "type": "Water",
+     "distMi": 5,
+     "directions": "From Lewis Lake, climb about 1,200 ft of meadow and talus west to Wing Lake."
+    },
+    {
+     "lat": 48.519384,
+     "lng": -120.806837,
+     "elev": 6900,
+     "name": "Wing Lake camp",
+     "note": "Standard base camp for Black Peak climbers; best established tent sites are here rather than Lewis Lake.",
+     "type": "Campsite",
+     "distMi": 5,
+     "directions": "The established tent sites are in the trees on the right (north) as you reach the lake."
+    },
+    {
+     "lat": 48.522264,
+     "lng": -120.818554,
+     "elev": 8300,
+     "name": "South col",
+     "note": "Gained from Wing Lake by going around its north side, then up a moraine and permanent snowfield; a broad gully on the west side leads to the summit blocks.",
+     "type": "Junction",
+     "distMi": 5.8,
+     "directions": "Go around the right (north) side of Wing Lake, climb the moraine and permanent snowfield into the obvious talus and snow gully below the col, and angle climber's right out of it near the top to avoid the cliff bands directly below the col."
+    },
+    {
+     "lat": 48.5233329,
+     "lng": -120.8162065,
+     "elev": 8970,
+     "name": "Black Peak summit",
+     "note": "Class 3 with easy class 4 moves near the top; helmet recommended for rockfall off the summit block.",
+     "type": "Summit",
+     "distMi": 6,
+     "directions": "From the col, scramble north along the cairned south ridge toward the summit pyramid; a short class 4 step of about 15 ft guards the top."
+    }
+   ]
+  },
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/106528788",
+    "https://www.mountainproject.com/route/113180087/south-ridge",
+    "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/black-peak-s-ridge",
+    "https://theoutbound.com/washington/hiking/scramble-up-black-peak-s-south-ridge",
+    "https://en.wikipedia.org/wiki/Black_Peak_(Washington)",
+    "https://www.nps.gov/noca/planyourvisit/road-conditions.htm",
+    "https://www.nps.gov/noca/planyourvisit/trail-conditions.htm",
+    "USGS GNIS DomesticNames_WA",
+    "https://epqs.nationalmap.gov/v1/json",
+    "https://www.openstreetmap.org/"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "waypoints/Black Peak summit",
+    "value": {
+     "name": "Black Peak summit",
+     "lat": 48.5233329,
+     "lng": -120.8162065
+    },
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "measurement": "USGS GNIS 1516618 'Black Peak' summit point, DomesticNames_WA",
+      "fact": "48.5233329,-120.8162065",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "measurement": "USGS 3DEP: highest cell of a 9x9 grid (11 m spacing) round the GNIS point is 16 m away (8,979 ft)",
+      "fact": "16 m",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "Class 4",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/113180087/south-ridge",
+      "fact": "4th",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/black-peak-s-ridge",
+      "fact": "Grade II, class 4 rock",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "rock_grade",
+    "value": "4th class (YDS)",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/113180087/south-ridge",
+      "fact": "4th",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/black-peak-s-ridge",
+      "fact": "class 4 rock",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "commitment",
+    "value": "II",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/113180087/south-ridge",
+      "fact": "Grade II",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/black-peak-s-ridge",
+      "fact": "Grade II",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 8970,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/black-peak-s-ridge",
+      "fact": "High Point 8,970 ft",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.mountainproject.com/area/106528788",
+      "fact": "Elevation 8,970 ft",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://en.wikipedia.org/wiki/Black_Peak_(Washington)",
+      "fact": "8,975 ft (Peakbagger ref), within 20 ft",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "length_m",
+    "value": 305,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/113180087/south-ridge",
+      "fact": "1,000 ft (303 m); SummitPost blocked (403)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_south_ridge_3",
+    "column": "pitches",
+    "from": 0,
+    "to": null,
+    "why": "pitches is >= 1 or null; an unroped class 4 scramble has no pitch count",
+    "evidence": [
+     "https://www.mountainproject.com/route/113180087/south-ridge"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_south_ridge_3",
+    "column": "gain_ft",
+    "from": 3971,
+    "to": 4700,
+    "why": "stored gain is below the net climb: 8,970 ft summit minus USGS 3DEP 4,857 ft at the Rainy Pass trailhead = 4,113 ft, and the route drops to Lewis Lake on the way; a published figure gives 4,700 ft",
+    "evidence": [
+     "https://theoutbound.com/washington/hiking/scramble-up-black-peak-s-south-ridge",
+     "https://epqs.nationalmap.gov/v1/json"
+    ]
+   }
+  ],
+  "disputed": [
+   "fa: MP route page credits Lage Wernstedt, possibly with Alfred Shull, 1926; Wikipedia (Beckey) gives Wernstedt 1926 as the PEAK first ascent. Stored value mixes names, year and a note (\"(first ascent of the peak)\") - fa should hold names only; not locked (needs a second source for the ROUTE FA and the second name)",
+   "dist_km 17.4 (10.8 mi): matches a ~11 mi round-trip figure (SummitPost, seen only as a search summary) rather than one-way (summit pin distMi 6 = 9.7 km; theoutbound 7 mi, unstated whether one-way). Left as is - looks like the round-trip convention"
+  ],
+  "notes": "Id/area check: wa_south_ridge_3 is filed under wa_black_peak and the row is Black Peak (8,970 ft, Wing Lake, Rainy Pass) - correct. Summit pin moved 31 m to the USGS point (OSM peak node 356545306 is 87 m off and not used). Trailhead pin left as is (Rainy Pass picnic-area lots, OSM ways 184346448/374400980, are 110-135 m north of it; no official coordinate found to settle which lot), so not locked. SR 20 normally closes late Nov/early Dec (NPS road page, updated 2026-11-09, still lists it open) - re-check before any trip now. Stored trailhead note says the trail sign is at the north end of the lot; OSM puts the Rainy Pass trailhead node at the south end - unverified."
+ },
+ "wa_mount_logan_fremont_glacier": {
+  "area": "wa_mount_logan",
+  "set": {
+   "waypoints": [
+    {
+     "lat": 48.6855,
+     "lng": -121.0925,
+     "elev": 1200,
+     "name": "Thunder Creek Trailhead (Colonial Creek Campground)",
+     "note": "Overnight stays need a North Cascades backcountry permit, reserved on Recreation.gov or picked up at the Wilderness Information Center in Marblemount; the trail starts at the south end of Colonial Creek Campground near the boat ramp off SR 20.",
+     "type": "Trailhead",
+     "distMi": 0,
+     "directions": "Drive SR 20, the North Cascades Highway, to Colonial Creek Campground near milepost 130 on Diablo Lake. The Thunder Creek trail starts at the south end of the campground, near the boat ramp, at about 1,200 ft. Overnight stays in the park need a North Cascades backcountry permit."
+    },
+    {
+     "lat": 48.583646,
+     "lng": -121.01939,
+     "elev": 2900,
+     "name": "Junction Camp",
+     "note": "Established hiker/stock camp about 10 miles in; cross a log bridge to the creekside hiker camp with views of Boston Glacier.",
+     "type": "Campsite",
+     "distMi": 10,
+     "directions": "Follow the Thunder Creek Trail south along Thunder Arm and up the Thunder Creek valley, past McAllister and Tricouni camps, about 10 miles to Junction Camp at the Fisher Creek Trail junction. The last mile or so below the camp is a steep climb."
+    },
+    {
+     "lat": 48.50623,
+     "lng": -120.960689,
+     "elev": 6000,
+     "name": "Park Creek Pass",
+     "note": "Broad, flat, rocky trough at Thunder Creek's headwaters; leave the maintained trail here and head east into the moraine toward the Fremont Glacier.",
+     "type": "Junction",
+     "distMi": 18.3,
+     "directions": "Stay on the Thunder Creek Trail rather than turning onto the Fisher Creek Trail, and continue up the upper Thunder Creek valley past Thunder Basin to Park Creek Pass, a broad, rocky trough at about 6,000 ft at the head of the creek."
+    },
+    {
+     "lat": 48.524735,
+     "lng": -120.962093,
+     "elev": 8248,
+     "name": "Point 8248 / Fremont Glacier saddle camp",
+     "note": "Rock-outcrop bivy sites at the southern margin of the Fremont Glacier with nearby running water; standard high camp for the summit push.",
+     "type": "Campsite",
+     "distMi": 20,
+     "directions": "Leave the maintained trail at the pass and climb east about 500 ft into the moraine, then traverse north around a broad ridge over heather and rock for roughly 1.5 to 2 miles, crossing a rib near 7,600 ft and a gully through cliff bands that can hold snow or ice, to the bivy sites on the saddle at the southern edge of the Fremont Glacier."
+    },
+    {
+     "lat": 48.529706,
+     "lng": -120.957028,
+     "elev": 8600,
+     "name": "Fremont Glacier hogsback and bergschrund",
+     "note": "Rope up for glacier travel; the snow hogback at the upper edge of the glacier can leave a bergschrund exposed in late season.",
+     "type": "Hazard",
+     "distMi": 20.5,
+     "directions": "Rope up and make the gentle glacier crossing north from camp to the Hogsback, the snow spine at the upper edge of the Fremont Glacier. Late in the season a bergschrund and a moat can open where the snow meets the rock."
+    },
+    {
+     "lat": 48.534423,
+     "lng": -120.950928,
+     "elev": 8900,
+     "name": "Western ramp / U-notch summit ridge gain",
+     "note": "A Class 3-4 rock pitch gains a left-slanting ramp (a fault-line weakness) to the summit ridge, then exposed Class 2-3 ledges lead through a U-notch between the summit tower and south horn.",
+     "type": "Junction",
+     "distMi": 21,
+     "directions": "Cross the moat onto rock and climb a Class 3-4 pitch to a left-slanting ramp, a fault-line weakness in the cliff bands, which leads up to the summit ridge. Do not head straight at the summit tower from the glacier."
+    },
+    {
+     "lat": 48.5368474,
+     "lng": -120.9525564,
+     "elev": 9087,
+     "name": "Mount Logan Summit",
+     "note": "Tiny summit gained via a final Class 3-4 rock pitch; reverse via the same route with a short rappel off the summit block.",
+     "type": "Summit",
+     "distMi": 21.2,
+     "directions": "Traverse exposed Class 2-3 ledges on the east side of the ridge through the U-notch between the summit tower and the south horn, then climb a final Class 3-4 pitch of about 100 ft on solid rock to the tiny summit."
+    },
+    {
+     "lat": 48.677945,
+     "lng": -121.077824,
+     "elev": 1222,
+     "name": "Thunder Creek crossing",
+     "type": "Water",
+     "distMi": 0.9
+    }
+   ]
+  },
+  "review": {
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/mt-logan-fremont-glacier",
+    "https://en.wikipedia.org/wiki/Mount_Logan_(Washington)",
+    "https://www.nps.gov/noca/planyourvisit/fire-closures.htm",
+    "https://www.nps.gov/noca/planyourvisit/trail-conditions.htm",
+    "https://www.nps.gov/noca/planyourvisit/road-conditions.htm",
+    "https://www.nps.gov/noca/planyourvisit/permits.htm",
+    "USGS GNIS DomesticNames_WA",
+    "https://epqs.nationalmap.gov/v1/json",
+    "https://www.openstreetmap.org/"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "waypoints/Mount Logan Summit",
+    "value": {
+     "name": "Mount Logan Summit",
+     "lat": 48.5368474,
+     "lng": -120.9525564
+    },
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "measurement": "USGS GNIS 1522356 'Mount Logan' summit point, DomesticNames_WA",
+      "fact": "48.5368474,-120.9525564",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "measurement": "USGS 3DEP: highest cell of a 9x9 grid round the GNIS point is the GNIS cell itself (9,086 ft); OSM peak node 356545688 is 25 m away",
+      "fact": "0 m",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 9087,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/mt-logan-fremont-glacier",
+      "fact": "High Point 9,087 ft",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://en.wikipedia.org/wiki/Mount_Logan_(Washington)",
+      "fact": "9,087 ft (Peakbagger ref)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_mount_logan_fremont_glacier",
+    "column": "pitches",
+    "from": 0,
+    "to": null,
+    "why": "pitches is >= 1 or null; a glacier route with a short scramble has no pitch count",
+    "evidence": [
+     "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/mt-logan-fremont-glacier"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_mount_logan_fremont_glacier",
+    "column": "dist_km",
+    "from": 29,
+    "to": 37.8,
+    "why": "one-way convention. 29 km (18 mi) is only the walk to the meadows by Park Creek Pass; the summit pin is at distMi 21.2 (34.1 km) and the published round trip is 47.0 mi (= 37.8 km one way). Wikipedia gives about 20 mi trailhead to peak",
+    "evidence": [
+     "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/mt-logan-fremont-glacier",
+     "https://en.wikipedia.org/wiki/Mount_Logan_(Washington)"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_mount_logan_fremont_glacier",
+    "column": "access",
+    "from": "(access.closures: Thunder Creek Fire closes the Thunder Creek Trail from the Fisher Creek junction to Park Creek Pass...)",
+    "to": "replace access.closures with: \"The park's fire-closure list (updated 6 October 2026) no longer names the Thunder Creek Trail or its camps; check current trail and road conditions with North Cascades National Park, (360) 854-7200, before a trip.\" (rest of access unchanged)",
+    "why": "the stored closure (dated 14 September 2026) is not on the NPS fire-closures page updated 2026-10-06, and the trail-conditions page (2026-11-03) lists Thunder Creek Trail as cleared, with no fire closure; the Stehekin High Bridge closure it also cites is not listed either",
+    "evidence": [
+     "https://www.nps.gov/noca/planyourvisit/fire-closures.htm",
+     "https://www.nps.gov/noca/planyourvisit/trail-conditions.htm"
+    ]
+   }
+  ],
+  "disputed": [
+   "gain_ft 8900: Mountaineers 8,900 ft only (net climb 9,087 - 3DEP 1,224 ft at the Colonial Creek lot = 7,863 ft); one source, left unlocked",
+   "grade \"Class 4\": Mountaineers says Class 2, 3 and 4; Wikipedia (Smoot) gives class 3 as the easiest route; trip reports mention low 5th when the glacier is melted out",
+   "fa \"Lage Wernstedt, 1926\": Wikipedia gives it as the PEAK first ascent; no source found that ties it to the Fremont Glacier route"
+  ],
+  "notes": "Summit pin moved 37 m to the USGS point (it is the 3DEP high cell). Permit text left unlocked: the NPS permits page (updated 2026-10-15) confirms overnight permits via Recreation.gov or walk-up at Marblemount, but does not say day climbs need none, and it adds a winter self-issue by email (Oct 11 - mid-May). access.fees cites $10 + $6 - not checked against the NPS fees page. The trailhead pin is 5 m from OSM parking way 1210519116 but no NPS coordinate was found, so it is not locked."
+ },
+ "wa_little_annapurna_south_slopes": {
+  "area": "wa_little_annapurna",
+  "set": {
+   "road": {
+    "name": "Icicle Road, Eightmile Road (FR 7600) and FR 7601 to the Stuart Lake Trailhead",
+    "status": "Steep gravel that gets washboarded as the season goes on; a high-clearance vehicle is advised, with four-wheel drive if you have it. Vehicles are barred from FR 7601 each winter.",
+    "driveNote": "Leave Leavenworth on Icicle Road and go roughly 8.5 mi to the Eightmile Road (FR 7600) turnoff on the left. Bear right onto FR 7601, pass the Eightmile Trailhead, and carry on about 4 mi to the road end at about 3,400 ft. Space is tight: once the lot fills, use only the side of the road the signs allow, since parking in the marked zones is ticketed.",
+    "seasonalGate": "FR 7601 is closed to vehicles every winter."
+   },
+   "waypoints": [
+    {
+     "lat": 47.5284637,
+     "lng": -120.8199427,
+     "elev": 3400,
+     "name": "Stuart Lake Trailhead",
+     "type": "Trailhead",
+     "distMi": 0,
+     "elevFt": 3400,
+     "directions": "The Stuart Lake Trailhead is at the end of Forest Road 7601, reached from Icicle Road out of Leavenworth by way of Eightmile Road (FR 7600); the lot sits at about 3,400 ft. Overnight stays in the Colchuck Zone need a quota wilderness permit."
+    },
+    {
+     "lat": 47.4919578,
+     "lng": -120.8335801,
+     "elev": 5570,
+     "name": "Colchuck Lake",
+     "type": "Junction",
+     "distMi": 4.3,
+     "elevFt": 5570,
+     "directions": "Follow the Stuart Lake Trail #1599 about 2.5 miles to the signed fork where the Colchuck Lake Trail #1599.1 splits left and south. Continue roughly 1.8 miles more, crossing Mountaineer Creek and a boulder-hop stretch near the outlet, to the lake at 5,570 ft. This is the last easy, reliable water, so fill here because there is none above."
+    },
+    {
+     "lat": 47.4803,
+     "lng": -120.8206,
+     "elev": 7841,
+     "name": "Aasgard Pass",
+     "type": "Junction",
+     "distMi": 5.5,
+     "elevFt": 7841,
+     "directions": "Skirt the lake's south and east shoreline on a braided, cairned climbers' path over talus and slab to the foot of the obvious steep gully and headwall at the head of the lake. Aasgard gains roughly 2,000 ft in under a mile on dirt switchbacks, loose scree and boulder-hopping; cairns get knocked over and the path splits into several use trails, so keep re-picking the line toward the notch. Firm snow and ice can linger into July, making an axe and sometimes crampons worthwhile on what is otherwise a scramble."
+    },
+    {
+     "lat": 47.476,
+     "lng": -120.81,
+     "elev": 7400,
+     "name": "Core Enchantments",
+     "type": "Campsite",
+     "distMi": 6.5,
+     "elevFt": 7400,
+     "directions": "From the pass, cross the grey talus and glacial till of the upper Core Zone past Tranquil Lake (Lake Freya) and Isolation Lake, then drop slightly into the meadow-and-tarn complex sometimes called the Brisingamen Lakelets."
+    },
+    {
+     "lat": 47.47,
+     "lng": -120.815,
+     "elev": 7700,
+     "name": "Base of north slopes",
+     "type": "Junction",
+     "distMi": 7,
+     "elevFt": 7700,
+     "directions": "Near the far end of the meadows, watch for an unsigned climbers' path forking right, to the west, toward Little Annapurna. If you cross a stream and pass a toilet sign you have gone by the junction and should backtrack."
+    },
+    {
+     "lat": 47.4682997,
+     "lng": -120.8143022,
+     "elev": 8485,
+     "name": "Little Annapurna summit",
+     "type": "Summit",
+     "distMi": 7.3,
+     "elevFt": 8485,
+     "directions": "Above here it is a scatter of cairned, well-worn boot paths rather than a trail. Take the line of least resistance up the broad north-facing slabs and talus on the peak's east side, switchbacking and scrambling at low 3rd class at most. The true summit is the middle of three rocky high points along the crest."
+    },
+    {
+     "lat": 47.4878,
+     "lng": -120.8343,
+     "elev": 5570,
+     "name": "Colchuck Lake designated campsites",
+     "type": "Campsite",
+     "distMi": 4.5
+    },
+    {
+     "lat": 47.509045,
+     "lng": -120.830987,
+     "elev": 3964,
+     "name": "Mountaineer Creek crossing",
+     "type": "Water",
+     "distMi": 1.5
+    }
+   ]
+  },
+  "review": {
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/enchantments-area-review/little-annapurna",
+    "https://stephabegg.com/?p=8740",
+    "https://wenatcheeoutdoors.org/2016/07/30/little-annapurna/",
+    "https://en.wikipedia.org/wiki/Little_Annapurna",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/stuart-lake-trailhead",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/enchantments",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/enchantments-overnight-permits",
+    "USGS GNIS DomesticNames_WA",
+    "https://epqs.nationalmap.gov/v1/json",
+    "https://www.openstreetmap.org/"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "waypoints/Little Annapurna summit",
+    "value": {
+     "name": "Little Annapurna summit",
+     "lat": 47.4682997,
+     "lng": -120.8143022
+    },
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "measurement": "USGS GNIS 1531557 'Little Annapurna' summit point, DomesticNames_WA",
+      "fact": "47.4682997,-120.8143022",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "measurement": "USGS 3DEP: highest cell of a 9x9 grid round the GNIS point is 40 m away (8,475 ft); OSM peak node 356548164 is 24 m away",
+      "fact": "40 m",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Enchantment permit area: overnight stays May 15-Oct 31 require a quota permit (Recreation.gov advance lottery); day trips need the free self-issued day-use permit at the trailhead.",
+    "method": "official-1",
+    "level": "locked",
+    "expires_at": "2027-11-18T00:00:00Z",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/enchantments-overnight-permits",
+      "fact": "overnight permit May 15-Oct 31; advance lottery Feb 15-Mar 1",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     },
+     {
+      "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/enchantments",
+      "fact": "day-use permit free, self-issued at the trailheads",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     },
+     {
+      "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/stuart-lake-trailhead",
+      "fact": "day-use wilderness permit free, self-issued; overnight permit May 15-Oct 31",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     }
+    ]
+   },
+   {
+    "field": "road",
+    "value": {
+     "name": "Icicle Road, Eightmile Road (FR 7600) and FR 7601 to the Stuart Lake Trailhead",
+     "status": "Steep gravel that gets washboarded as the season goes on; a high-clearance vehicle is advised, with four-wheel drive if you have it. Vehicles are barred from FR 7601 each winter.",
+     "driveNote": "Leave Leavenworth on Icicle Road and go roughly 8.5 mi to the Eightmile Road (FR 7600) turnoff on the left. Bear right onto FR 7601, pass the Eightmile Trailhead, and carry on about 4 mi to the road end at about 3,400 ft. Space is tight: once the lot fills, use only the side of the road the signs allow, since parking in the marked zones is ticketed.",
+     "seasonalGate": "FR 7601 is closed to vehicles every winter."
+    },
+    "method": "official-1",
+    "level": "locked",
+    "expires_at": "2027-02-17T00:00:00Z",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/stuart-lake-trailhead",
+      "fact": "Icicle Rd 8.5 mi; FR 7600; FR 7601 ~4 mi; high clearance, 4WD; closed winter; 3,400 ft",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_little_annapurna_south_slopes",
+    "column": "gain_ft",
+    "from": 5018,
+    "to": 5400,
+    "why": "stored gain is below the net climb (8,485 ft summit - USGS 3DEP 3,378 ft at the Stuart Lake lot = 5,107 ft); The Mountaineers give 5,400 ft for the 15 mi round trip",
+    "evidence": [
+     "https://www.mountaineers.org/activities/routes-places/enchantments-area-review/little-annapurna",
+     "https://epqs.nationalmap.gov/v1/json"
+    ]
+   }
+  ],
+  "disputed": [
+   "high_point_ft 8485: ListsOfJohn 8,485 ft (as cited by Wikipedia; LoJ itself showed a Cloudflare human check), Steph Abegg 8,460 ft, The Mountaineers 8,440 ft, 3DEP high cell 8,475 ft - not locked",
+   "grade \"Class 3\" vs the row's own rock_grade \"Class 2\": Steph Abegg 3rd class (North Side), Wikipedia class 2, The Mountaineers Technical 1 - not locked",
+   "dist_km 11.7 agrees with The Mountaineers 15.0 mi round trip (12.1 km one way) and the summit pin (distMi 7.3); only one published figure, so not locked"
+  ],
+  "notes": "Name check: the standard route is the NORTH slopes from the upper Enchantments basin (Steph Abegg \"North Side\"; Wenatchee Outdoors: the north slopes are the walk-up, the south side drops off steeply; the south face is a 5.5-5.6 rock route). The row name \"North Slopes\" is right; the id says south_slopes - ids are not renamed, so this is a cosmetic misnomer only. Defects: the Stuart Lake trailhead directions said \"Drive Eightmile Road (FR-7601)\" - Eightmile Road is FR 7600, the trailhead is on FR 7601; rewritten. Trailhead pin moved 87 m to the OSM \"Stuart Lake Trailhead Parking\" lot (same pin batch C used for Colchuck/Dragontail/Prusik; not locked, the USFS point 47.5278,-120.8205 is the trail start). The bivy array starts with Perfection/Inspiration Lake camps written for Prusik Peak - a templated block worth re-checking. Pins \"Core Enchantments\" (47.476,-120.81) and \"Base of north slopes\" (47.47,-120.815) are rounded, synthetic-looking coordinates. Summit pin moved 11 m to the USGS point."
+ },
+ "wa_sherpa_peak_west_ridge": {
+  "area": "wa_sherpa_peak",
+  "set": {
+   "road": {
+    "name": "SR 970, North Fork Teanaway Road and FR 9737 to the Esmeralda Trailhead",
+    "status": "Paved state highway and county road, then gravel Forest Road 9737 to its end.",
+    "driveNote": "Head out of Cle Elum on SR 970 for roughly 8.5 mi, then go left on the North Fork Teanaway Road for 13 mi. Bear right on FR 9737 and drive about 9.6 mi to the road-end lot at 4,269 ft. Space is limited: keep the road clear for emergency vehicles, and if the lot is full the only roadside parking allowed is on the west side.",
+    "seasonalGate": "Check road status with the Cle Elum Ranger District before an early- or late-season trip."
+   },
+   "waypoints": [
+    {
+     "lat": 47.4367939,
+     "lng": -120.9371625,
+     "elev": 4269,
+     "name": "Esmeralda Basin / Ingalls Lake Trailhead (N Fork Teanaway River Rd)",
+     "type": "Trailhead",
+     "distMi": 0,
+     "elevFt": 4269,
+     "directions": "Drive the North Fork Teanaway River Road (FS-9737) to its end at the Esmeralda Basin / Longs Pass trailhead, about 4,300 ft. The road is usually open to the trailhead by early June, but the route itself wants late June through September, once the Longs Pass approach and the rock are snow-free. From the lot take the Longs Pass Trail (#1229), which climbs roughly 2.3 miles and 2,300 ft to Longs Pass."
+    },
+    {
+     "lat": 47.4492902,
+     "lng": -120.9251031,
+     "elev": 6250,
+     "name": "Long's Pass",
+     "type": "Junction",
+     "distMi": 2.5,
+     "elevFt": 6250,
+     "directions": "From the lot, follow the Esmeralda Basin trail 0.3 mile and turn right onto the Ingalls Way Trail (#1390). Climb about 1.4 miles to the junction at about 5,440 ft, turn right onto the Longs Pass trail, and switchback steeply up open, rocky slopes about 1.2 miles to the pass."
+    },
+    {
+     "lat": null,
+     "lng": null,
+     "elev": 6200,
+     "name": "Sherpa south basin camp",
+     "type": "Campsite",
+     "distMi": 4.5,
+     "elevFt": 6300,
+     "directions": "Drop steeply off the north side of the pass on the boot path, about 1,400 ft, to Ingalls Creek; ford or rock-hop it and follow the Ingalls Creek Trail east about a mile to the Beverly-Turnpike junction. Leave the trail on the climbers' path up through timber and brush, climb the rib staying left of its crest, and at about 5,800 ft traverse right over the rib into the basin below Sherpa."
+    },
+    {
+     "lat": 47.4715,
+     "lng": -120.892,
+     "elev": 8095,
+     "name": "Base of west ridge",
+     "type": "Junction",
+     "distMi": 5.4,
+     "elevFt": 8095,
+     "directions": "Climb class 2 snow and talus up the basin past the flat table-rock shelf at about 7,400 ft to the notch at the west foot of the ridge, on the col between Stuart and Sherpa; aim for the notch closest to Sherpa."
+    },
+    {
+     "lat": 47.4717377,
+     "lng": -120.8886421,
+     "elev": 8630,
+     "name": "Sherpa Peak summit",
+     "type": "Summit",
+     "distMi": 5.7,
+     "elevFt": 8630,
+     "directions": "Climb blocky class 4 ridge trending climber's left to a cave belay, then take the crack out of the cave (the crux, about 5.4 to 5.5). Continue left to a platform with a rappel anchor, scramble across a short gully, climb to the lowest point of the summit ridge, and follow it on exposed class 4 to the summit block."
+    }
+   ]
+  },
+  "review": {
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/ingalls-stuart-area/sherpa-peak-w-ridge",
+    "https://stephabegg.com/?p=8737",
+    "https://climberkyle.com/2017/07/31/west-ridge-of-stuart-and-sherpa/",
+    "https://stg.openbeta.io/climb/4d9035ba-8175-5189-beda-aaec46a68c4d/west-ridge",
+    "https://en.wikipedia.org/wiki/Sherpa_Peak",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/esmeralda-trailhead",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/alerts",
+    "USGS GNIS DomesticNames_WA",
+    "https://epqs.nationalmap.gov/v1/json",
+    "https://www.openstreetmap.org/"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "waypoints/Sherpa Peak summit",
+    "value": {
+     "name": "Sherpa Peak summit",
+     "lat": 47.4717377,
+     "lng": -120.8886421
+    },
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "measurement": "USGS GNIS 1531559 'Sherpa Peak' summit point, DomesticNames_WA",
+      "fact": "47.4717377,-120.8886421",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "measurement": "USGS 3DEP: highest cell of a 9x9 grid round the GNIS point is 16 m away (8,611 ft); OSM peak node 348973980 is 37 m away",
+      "fact": "16 m",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "waypoints/Esmeralda Basin / Ingalls Lake Trailhead (N Fork Teanaway River Rd)",
+    "value": {
+     "name": "Esmeralda Basin / Ingalls Lake Trailhead (N Fork Teanaway River Rd)",
+     "lat": 47.4367939,
+     "lng": -120.9371625
+    },
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "measurement": "OSM parking way 295213926 'Esmeralda Trailhead' centre (as locked for Ingalls Peak in batch C)",
+      "fact": "47.4367939,-120.9371625",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/esmeralda-trailhead",
+      "fact": "Latitude 47.4367, Longitude -120.9369 (22 m from the OSM lot); elevation 4,269 ft",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 8630,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://en.wikipedia.org/wiki/Sherpa_Peak",
+      "fact": "8,630 ft (Peakbagger ref); same article cites ListsOfJohn 8,635 ft",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://stephabegg.com/?p=8737",
+      "fact": "8,605 ft (25 ft off - not counted)",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/ingalls-stuart-area/sherpa-peak-w-ridge",
+      "fact": "High Point 8,600 ft (30 ft off - not counted)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "commitment",
+    "value": "II",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/ingalls-stuart-area/sherpa-peak-w-ridge",
+      "fact": "Grade II; SummitPost blocked (403)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "road",
+    "value": {
+     "name": "SR 970, North Fork Teanaway Road and FR 9737 to the Esmeralda Trailhead",
+     "status": "Paved state highway and county road, then gravel Forest Road 9737 to its end.",
+     "driveNote": "Head out of Cle Elum on SR 970 for roughly 8.5 mi, then go left on the North Fork Teanaway Road for 13 mi. Bear right on FR 9737 and drive about 9.6 mi to the road-end lot at 4,269 ft. Space is limited: keep the road clear for emergency vehicles, and if the lot is full the only roadside parking allowed is on the west side.",
+     "seasonalGate": "Check road status with the Cle Elum Ranger District before an early- or late-season trip."
+    },
+    "method": "official-1",
+    "level": "locked",
+    "expires_at": "2027-02-17T00:00:00Z",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/esmeralda-trailhead",
+      "fact": "SR 970 8.5 mi; N Fork Teanaway Rd 13 mi; FR 9737 9.6 mi; 4,269 ft; west side if full",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_sherpa_peak_west_ridge",
+    "column": "grade",
+    "from": "5.5",
+    "to": "5.4",
+    "why": "The Mountaineers (Grade II, 5.4) and Mountain Project/OpenBeta (5.4) agree on 5.4; Steph Abegg gives 5.5 citing the Cascade Alpine Guide and climberkyle reports a 5.7 move. Owner call - also rock_grade 5.5 -> 5.4 if approved",
+    "evidence": [
+     "https://www.mountaineers.org/activities/routes-places/ingalls-stuart-area/sherpa-peak-w-ridge",
+     "https://stg.openbeta.io/climb/4d9035ba-8175-5189-beda-aaec46a68c4d/west-ridge",
+     "https://stephabegg.com/?p=8737"
+    ]
+   }
+  ],
+  "disputed": [
+   "grade: 5.4 (Mountaineers, MP/OpenBeta) vs 5.5 (Abegg, from Beckey) vs 5.7 (climberkyle) - not locked; fix proposed",
+   "fa: OpenBeta (=MP) Fred Dunham, Ray Lilleby, James Wick[wire], 13 Aug 1961; a Wenatchee Outdoors post (seen only as a search summary, 403 to the fetcher) says 1962. Wikipedia's 1955 Mahre/Prater party is the PEAK first ascent. Not locked",
+   "length_m 152: Steph Abegg 450 ft (137 m), within 50 ft; only one source",
+   "gain_ft 4330 is the net climb (8,630 - 4,262 ft at the Esmeralda lot = 4,368 ft, so 4,330 is even slightly below it). The route crosses Longs Pass and drops ~1,400 ft to Ingalls Creek, so the real ascent is well above the net figure; The Mountaineers give 7,400 ft (looks like the round-trip total). Not changed - owner should pick the convention",
+   "dist_km 7.2 (4.5 mi) equals the pin distance to the \"Sherpa south basin camp\" (distMi 4.5); the route's own summit pin is distMi 5.7 (9.2 km). Looks like a leg, but no published one-way figure was found - not proposed"
+  ],
+  "notes": "Summit pin moved 20 m to the USGS point; trailhead moved 10 m onto the Esmeralda lot already locked for Ingalls Peak (elevation 4,269 ft from USFS, was 4,243). Road rewritten in our own words from the USFS page (stored road was vague, no facts wrong). Permit text (free self-issue Alpine Lakes permit; outside the Enchantment Permit Area) left unlocked: the USFS Esmeralda page confirms the free self-issue permit, but no official page states that Ingalls Creek is outside the permit area. Stored approach text gives the Longs Pass climb as 2.3 mi while the Longs Pass pin directions add 0.3 + 1.4 + 1.2 = 2.9 mi (pin distMi 2.5) - internal mismatch, unresolved."
+ },
+ "wa_argonaut_peak_east_ridge": {
+  "area": "wa_argonaut_peak",
+  "set": {
+   "waypoints": [
+    {
+     "lat": 47.3891797,
+     "lng": -120.8723157,
+     "name": "Beverly Turnpike Trailhead (#1391)",
+     "note": "South/Teanaway-side approach via Beverly Creek and Fourth Creek trails toward Ingalls Creek, then bushwhack/scramble up to the SE side of the peak. Matches this route's own recorded GPS track almost exactly.",
+     "type": "Trailhead",
+     "directions": "From I-90 Exit 85 east of Cle Elum, follow SR 970 about 7 miles and turn left onto Teanaway Road. Keep right onto North Fork Teanaway Road, which becomes gravel FR 9737 at 29 Pines Campground. Continue just under 4 miles and, just before the Beverly Creek bridge, turn right onto FR 9737-112, a rough one-lane spur best with high clearance, for about 1.4 miles to its end at about 3,650 ft.",
+     "elev": 3647
+    },
+    {
+     "lat": 47.448764,
+     "lng": -120.864064,
+     "elev": 4223,
+     "name": "Ingalls Creek crossing",
+     "type": "Water"
+    },
+    {
+     "lat": null,
+     "lng": null,
+     "elev": null,
+     "name": "East end of ridge",
+     "type": "Junction",
+     "distMi": null,
+     "elevFt": null,
+     "directions": "Take Beverly Turnpike Trail #1391 up Beverly Creek, bearing left at about 0.5 mile rather than onto the Bean Creek trail. At about 3.1 miles turn right onto Fourth Creek Trail #1226.1, cross Fourth Creek Pass (about 6,000 ft), and descend to Ingalls Creek at about 6 miles and ford it. Leave the Ingalls Creek Trail and climb north into the Porcupine Creek basin, working up beside the southeast ridge to its foot."
+    },
+    {
+     "lat": 47.4701186,
+     "lng": -120.8614768,
+     "elev": 8453,
+     "name": "Argonaut Peak summit (true/west summit)",
+     "type": "Summit",
+     "elevFt": 8453,
+     "directions": "Climb about eight pitches up the crest of the southeast ridge, blocky and lichen-covered low down, to the southeast spire. Make two single-rope rappels or one double-rope rappel into the notch beyond, then continue to the true summit on the west spire."
+    }
+   ]
+  },
+  "review": {
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/argonaut%20peak-southeast-ridge",
+    "https://www.mountainproject.com/area/114795615/argonaut-peak",
+    "https://tripreportblog.blogspot.com/2009/09/argonaut-se-ridge-0912-1309.html",
+    "https://cascadeclimbers.com/forum/topic/61743-tr-argnaut-se-ridge-august-9-10-2008",
+    "https://en.wikipedia.org/wiki/Argonaut_Peak",
+    "https://publications.americanalpineclub.org/articles/12195930201",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/alerts",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/alerts/current-road-condition-updates-and-closure-order-alerts",
+    "USGS GNIS DomesticNames_WA",
+    "https://epqs.nationalmap.gov/v1/json",
+    "https://www.openstreetmap.org/"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.6",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/argonaut%20peak-southeast-ridge",
+      "fact": "Grade II, Class 5.6; MP has no page for this route, SummitPost blocked (403), trip reports only cite Beckey's 5.6",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "commitment",
+    "value": "II",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/argonaut%20peak-southeast-ridge",
+      "fact": "Grade II",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 8453,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/argonaut%20peak-southeast-ridge",
+      "fact": "High Point 8,453 ft",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://en.wikipedia.org/wiki/Argonaut_Peak",
+      "fact": "8,457 ft (Peakbagger ref), within 20 ft",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_argonaut_peak_east_ridge",
+    "column": "dist_km",
+    "from": 8,
+    "to": 16.1,
+    "why": "one-way convention. 8 km is shorter than the straight line from the Beverly Turnpike lot to the summit (9.0 km), so it cannot be right; The Mountaineers give 20.0 mi round trip (16.1 km one way); a 2009 trip report gives 15+ mi round trip",
+    "evidence": [
+     "https://www.mountaineers.org/activities/routes-places/argonaut%20peak-southeast-ridge",
+     "https://tripreportblog.blogspot.com/2009/09/argonaut-se-ridge-0912-1309.html"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_argonaut_peak_east_ridge",
+    "column": "gain_ft",
+    "from": 4300,
+    "to": 4853,
+    "why": "stored gain is below the net climb (8,453 ft summit - USGS 3DEP 3,647 ft at the Beverly Turnpike lot = 4,806 ft); The Mountaineers give 4,853 ft. Note the approach also crosses Fourth Creek Pass (~6,000 ft) and drops to Ingalls Creek (~4,200 ft), so the true one-way ascent is higher (a 2009 trip report: ~7,000 ft round trip)",
+    "evidence": [
+     "https://www.mountaineers.org/activities/routes-places/argonaut%20peak-southeast-ridge",
+     "https://epqs.nationalmap.gov/v1/json"
+    ]
+   }
+  ],
+  "disputed": [
+   "summit pin: the stored pin (= OSM peak node 356548162) sits 8 m from the 3DEP high cell (8,437 ft). The USGS GNIS point (47.4700838,-120.8609257) is 42 m east of it and reads 8,300 ft on 3DEP - 137 ft below the top, so it looks like it is on the side of the summit spire. Under the 50 m rule the pin would move to GNIS; left unchanged and unlocked for the owner to decide",
+   "pitches 8: stated only by SummitPost (seen as a search summary; blocked) - unconfirmed",
+   "fa \"Loomis, Parks, Schnell and Seman (May 30, 1977)\": no source found. Wikipedia gives the PEAK first ascent (south route) as Lex Maxwell, Bob McCall, Bill Prater, Sept 1955 - a different fact; not locked",
+   "road/access: stored road says FR 9737-112 is closed under a 2025 Labor Mountain Fire order from 20 May to 31 Dec 2026. The current USFS alerts list (checked 2026-11-18) has no Labor Mountain order; the road-condition alert runs 22 May-31 Dec 2026 but names no roads on the page. Could not confirm - owner should check the USFS fire-closure map before trusting it"
+  ],
+  "notes": "Name check: the route is the Southeast Ridge (The Mountaineers \"Argonaut Peak/Southeast Ridge\", Grade II 5.6); the id still says east_ridge (renamed 2026-07-15 per data_quality) - id only. Trailhead pin moved 14 m onto the OSM \"Beverly Turnpike Trailhead\" lot (way 376025373) and given its 3DEP elevation (3,647 ft); not locked (no official coordinate - the USFS trailhead page URL 404s). Permit text (free self-issue, outside the Enchantment Permit Area) left unlocked for the same reason as Sherpa."
+ }
+}
