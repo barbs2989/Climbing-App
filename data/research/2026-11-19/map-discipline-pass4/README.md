@@ -4,9 +4,10 @@ Worklist: 270 routes (verified.json `stuck` + weak `hold`, minus the 3 skipped i
 25 chunks in `in/q01..q25.json`.
 
 ## Result
-- found: 0. stuck: every route in the chunks that ran (out/q03–q08, 66 routes). Chunks q01, q02 may be
-  partial or absent in out/. q09–q25 were NOT run: the first wave showed the network was blocked, so
-  further waves would only have repeated it.
+- Ran: q01-q08 (88 routes). found: 3 (all in q02: Booker NW, Castle Peak CA via Castle Pass, Cathedral Peak
+  S Ridge). Those 3 rest on placements carried from earlier passes and were NOT re-read this run, so
+  verify before applying. stuck: 85. q09-q25 were NOT run: the first wave showed the network was
+  blocked, so more waves would only have repeated it.
 - Cause: this session's network policy allows none of the research hosts. WebFetch: ENOTFOUND for
   wta.org, summitpost.org, wikipedia.org, mountaineers.org, climber.org, adirondackhub.com and others.
   The egress proxy returned 403 for nominatim.openstreetmap.org, apps.fs.usda.gov, climb13ers.com,
