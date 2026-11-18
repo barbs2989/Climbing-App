@@ -138,6 +138,11 @@ Three top-level `tab` values in `ClimbMatch.jsx` (`tab==="today"`, `tab==="crew"
   `crew:<id>` first, the old scope deleted second, and a saved plan files the crew stub. A saved crew plan has *Send to the crew chat*
   (`FloatPlan`'s `onSendToCrew`, wired in both `FloatPlans` and the crew `SafetyTab`), which posts the plan text through `sendCrewMsg` — the
   climber's own send, so the Privacy Policy's "stays on your phone until you send it" still holds; `crews.float_plan` is unchanged.
+  **On the crew card** (Step 3B, 2026-11-18): the card's *Itinerary & float plan* sheet opens the plan INLINE (*Set float plan* / *✓ Your float plan —
+  view or edit* toggles to *Hide float plan*) instead of closing the sheet and scrolling to Crews › Float plans below every crew. `CrewCard` gets
+  `floatInline` from `CrewListView` (who, `crewFloatFill` defaults, `fileCrewFloatPlan`, `sendCrewMsg`, onChanged) and draws an UNCONTROLLED `<FloatPlan>`
+  with scope `crew:<id>`: the device copy keeps it across the sheet closing (`check:float-plan-persistence` 8b requires scope + who). *All your float plans ›*
+  still goes to the list, and `CrewListView` re-keys `FloatPlans` when the inline plan closes so the list re-reads.
   **Form and list, after the walkthrough** (2026-11-18): the three fields Save needs (route, hard return, emergency contact) say *Required*, and an
   incomplete form says what is *Still needed* under an aria-disabled Save. The profile emergency contact (0237) is filled into an EMPTY contact field
   once the saved plan has loaded (raw setter, so it is not an edit). `crewFloatFill` turns the agreed day (else the first proposed one) plus a
