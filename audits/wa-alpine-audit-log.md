@@ -39261,3 +39261,40 @@ error.
 1 confirmed error fixed, 1 newly flagged for human review, 6 clean.
 Next batch will continue id-ascending from `wa_big_snow_mountain_north_slope_dingford_route`
 (pass 9).
+
+## 2026-11-18 — Batch 559 (pass 9)
+
+Checked Big Snow Mountain's remaining two routes (Sasquatch's Breath, Southwest Ridge), Black Peak
+(Northeast Ridge), Blizzard Peak (Standard Route), and Bonanza Peak (Cascadian, Mary Green
+Glacier, Northeast Buttress, Oregonian) — 8 routes across 4 peaks, id-ascending from
+`wa_big_snow_mountain_north_slope_dingford_route`.
+
+**No confirmed errors this batch.**
+
+**Clean (7):** Black Peak Northeast Ridge's FA (Roger Jackson and Michael Kennedy, September 1,
+1973) matches Mountain Project and OpenBeta exactly. Black Peak's 8,970 ft elevation matches
+SummitPost and older Wikipedia mirrors (current Wikipedia has since moved to 8,975 ft on a NAVD88
+remeasurement — a normal source-vintage gap, not a contradiction). Blizzard Peak's stored 7,622 ft
+and 1,138 ft prominence both match PeakVisor's figures (7,621 ft / ~1,138 ft) almost exactly — a
+single weaker source (TopoZone, ~7,602 ft) that doesn't match was outweighed by the
+elevation+prominence pair agreeing together. Big Snow Mountain Southwest Ridge's Dingford Creek
+Trailhead waypoint (47.51744, -121.45276) matches WTA's listed trailhead coordinates within
+rounding. Sasquatch's Breath (a brand-new 2026 FA by Carson Cummins and Aiden Roake) has no
+outside source yet to check against, but its row is honestly sparse — grade/pitches/length/FA only,
+no fabricated detail — so there's nothing to contradict.
+
+**Flagged for human review (1, new):** Bonanza Peak's main-summit `high_point_ft` (9511, stored
+on both the Mary Green Glacier and Northeast Buttress routes) disagrees with each of those same
+routes' own embedded "Bonanza Peak summit" waypoint (`elev` 9516) and with the area row's
+`elevation_ft` (also 9516) — an internal inconsistency layered on top of outside sources
+themselves being split (SummitPost/ListsOfJohn's map-based value is 9511; Wikipedia/Peakbagger
+give 9516). Not auto-fixed since there's no way to tell which figure a human would want to
+standardize on; worth picking one and applying it across the area row and both routes' fields
+together.
+
+**Noted, not flagged:** The two Southwest Summit routes (Cascadian, Oregonian) agree with each
+other on `high_point_ft` (9320) for that subsidiary summit — a useful internal consistency check,
+even though no outside source for that specific subsidiary summit's height was found either way.
+
+0 confirmed errors fixed, 1 newly flagged for human review, 7 clean.
+Next batch will continue id-ascending from `wa_bonanza_peak_oregonian_route` (pass 9).
