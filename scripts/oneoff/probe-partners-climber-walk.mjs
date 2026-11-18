@@ -58,7 +58,7 @@ try {
   const by = page.locator('select[aria-label="Search by"]');
   ok(await by.count() === 1, "Partners tab is open (Search by pill present)");
   const modes = await by.locator("option").allInnerTexts();
-  ok(modes.join("|") === "My areas|Pick an area|My objectives|A route|Everyone", "five modes: " + modes.join(" | "));
+  ok(modes.join("|") === "My areas|Pick an area|A peak|My objectives|A route|Everyone", "six modes (A peak since #3451): " + modes.join(" | "));
   ok(await by.inputValue() === "myareas", "opens on My areas");
   const you = page.locator('section[aria-label="How climbers find you"]');
   ok(await you.count() === 1, "the You card is there");
@@ -85,7 +85,7 @@ try {
   note("empty card: " + emptyTxt.replace(/\n/g, " / "));
   ok(!/Add an area|Choose my areas/.test(emptyTxt) && /Invite a climbing friend/.test(emptyTxt), "it offers Invite (the You card above has + Add an area)");
   const meanwhile = await page.locator("text=/^Meanwhile, climbers/i").count();
-  note("meanwhile list shown: " + (meanwhile ? "yes" : "no (no other discoverable climbers?)"));
+  ok(meanwhile === 0, "no Meanwhile list under the empty card (removed 2026-11-18)");
   await shot(page, "1-myareas-unlisted");
   await empty.locator("button", { hasText: /^Invite a climbing friend$/ }).click(); await page.waitForTimeout(600);
   ok(await empty.locator("text=/Copy link/i").count() > 0, "Invite opens the share buttons (Copy link)");
@@ -97,9 +97,13 @@ try {
   if (await seeAll.count()) { await seeAll.click(); await page.waitForTimeout(5000); ok(await by.inputValue() === "anyone", "See everyone switches to Everyone"); }
   else note("no See everyone button (no browse climbers) -- switching by the pill");
   if (await by.inputValue() !== "anyone") { await by.selectOption("anyone"); await page.waitForTimeout(5000); }
-  await cardLook(page.locator('div[role="button"]', { hasText: /@/ }), "a real climber row");
+  // REAL CLIMBERS WEAR THE EXAMPLE CARD (owner 2026-11-18), and neither has the 4px blue left bar any more.
+  const look = (e) => { const c = getComputedStyle(e); return { r: c.borderTopLeftRadius, l: c.borderLeftWidth, pad: c.paddingTop }; };
+  const real = page.locator("[data-real-climber-card]");
+  if (await real.count()) { const r = await real.first().evaluate(look); ok(r.r === "16px" && r.l === "1px" && r.pad === "16px", "a real climber wears the example card, no left bar (radius " + r.r + ", left " + r.l + ", padding " + r.pad + ")");
+    ok(await real.first().locator("button", { hasText: /^Full profile & vouches$/ }).count() === 1, "a real climber card has Full profile & vouches"); } else note("no real climber cards on screen");
   const ex = page.locator("button", { hasText: /^Full profile & vouches$/ });
-  if (await ex.count()) await cardLook(ex, "an example climber card"); else note("no example climber cards on screen");
+  if (await ex.count()) { const l = await ex.last().evaluate((e) => { let x = e; while (x && getComputedStyle(x).borderTopLeftRadius !== "16px") x = x.parentElement; return x ? getComputedStyle(x).borderLeftWidth : null; }).catch(() => null); ok(l === "1px", "the example card has no left bar (left " + l + ")"); } else note("no example climber cards on screen");
   await shot(page, "2-everyone");
 
   // 3. Distance -> Near me now, 10 mi, then the empty card's next radius.
@@ -147,7 +151,7 @@ try {
   const yOf = (l) => l.first().boundingBox().then((b) => b && b.y).catch(() => null);
   const firstResultY = (await yOf(page.locator("[data-partner-empty]"))) ?? (await yOf(page.locator("text=/^Listed here or inside first/"))) ?? (await yOf(page.locator("text=/^No one is listed in Utah/")));
   const boxY = (await box.boundingBox()).y;
-  ok(firstResultY != null && firstResultY < boxY, "the results (or the empty card) come before the box");
+  ok(firstResultY != null && boxY < firstResultY, "the list-me box comes before the results (or the empty card)");
   await shot(page, "5-utah");
   await box.locator("button", { hasText: /^List me in Utah$/ }).click(); await page.waitForTimeout(4000);
   ok(/You’re listed in Utah/.test(await box.innerText()), "listed: the box reads You're listed in Utah ✓");

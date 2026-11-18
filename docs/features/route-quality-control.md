@@ -120,7 +120,10 @@ empty field fill at once and two agreeing climbers change one; the owner withdre
 - **Pitches and rappels** (`SuggestFix`): each ROUTE BREAKDOWN row has its own "✎ Edit this pitch",
   which opens the sheet scrolled to that pitch (`focusPitch`) with its *Pitch N* header just under the
   pinned title bar, showing THAT pitch only (owner 2026-11-18: every pitch at once made the box too
-  large); *Show all N pitches* brings back the rest and *+ Add pitch*. Pitches can be moved up and down;
+  large); *Show all N pitches* brings back the rest and *+ Add pitch*, keeping the edited pitch where it
+  was on screen. A pitch's belay, gear and notes are text boxes sized to their whole text (a one-line
+  input cut them mid-word), but stay one line of data: Enter does nothing and a pasted line break
+  becomes a space. Pitches can be moved up and down;
   clustering compares every pitch key (grade, gear, length, note, anchor, bolts, crux). The rappel
   table has an editor at last — `rappelDetail`, type `rappels`: one row per station with length (in
   the climber's units, stored in metres), anchor, how to find the station, hazards one per line and
