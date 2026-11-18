@@ -25,7 +25,7 @@ export default function NearbyPeaks({ area, onJumpToArea, C, uDistMi }: NearbyPe
   return (
     <div style={{ marginBottom: 10 }}>
       <SL C={C}>Nearby peaks</SL>
-      <div style={{ fontSize: 11.5, color: C.textMuted, margin: "-4px 0 9px", lineHeight: 1.5 }}>Other peaks with routes on file, by straight-line distance from this summit — not driving distance, and not a claim they share a trailhead.</div>
+      <div style={{ fontSize: 11.5, color: C.textMuted, margin: "-4px 0 9px", lineHeight: 1.5 }}>Straight-line distance from this summit.</div>
       {rows.map(({ a, mi }: NearbyPeaksRow) => (
         <div key={a.id} {...clickable(() => onJumpToArea(a))} style={{ background: C.card, borderRadius: 12, padding: "11px 14px", marginBottom: 9, border: "1px solid " + C.borderHi, cursor: "pointer" }}>
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 8 }}>

@@ -431,7 +431,7 @@ export default function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElev
           </div>
         ))}
       </> : <>
-      {af.minStars ? <div style={{ fontSize: 11.5, color: C.textMuted, margin: "8px 2px", lineHeight: 1.45 }}>{"Few climbs have a star rating yet, so climbs nobody has rated still show. Only climbs rated below " + af.minStars + "★ are hidden."}</div> : null}
+      {af.minStars ? <div style={{ fontSize: 11.5, color: C.textMuted, margin: "8px 2px", lineHeight: 1.45 }}>{"Unrated climbs still show."}</div> : null}
       {error && !all.length ? <div style={{ color: C.red, fontSize: 12.5 }}>Couldn't search routes — check your connection and try again.</div> : null}
       {error && all.length ? <div style={{ color: C.textMuted, fontSize: 12.5 }}>Couldn't refresh just now — showing the results from your last load.</div> : null}
       {/* GROUPED BY WALL on a wall sort: a heading opens the wall's page and saves it; the rows under
@@ -460,7 +460,7 @@ export default function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElev
       )}
       {/* A star minimum no longer empties a search (0334: unrated climbs stay in), so the
           explanation left is the grade range's: a route with no readable grade fails it. */}
-      {!isLoading && !error && !all.length && <div style={{ fontSize: 13, color: C.textMuted, textAlign: "center", padding: "26px 12px", lineHeight: 1.5 }}>{(gLoO || gHiO) ? "No routes match these filters. Routes without a readable grade are hidden while a grade range is set — try widening it or setting it back to Any." : ["gain", "trip", "elev", "prom"].some(k => af[k] && af[k] !== "any") ? "No routes match these filters. Gain, round trip, peak elevation and prominence are recorded mostly for mountain routes, and climbs without the figure are hidden while one is set." : af.near ? "No routes in " + loc.name + " are that close to " + af.near.label + " — try a wider distance." : "No routes match these filters."}</div>}
+      {!isLoading && !error && !all.length && <div style={{ fontSize: 13, color: C.textMuted, textAlign: "center", padding: "26px 12px", lineHeight: 1.5 }}>{(gLoO || gHiO) ? "No routes match these filters. Routes without a readable grade are hidden while a grade range is set — try widening it or setting it back to Any." : ["gain", "trip", "elev", "prom"].some(k => af[k] && af[k] !== "any") ? "No routes match these filters. Climbs missing the figure are hidden." : af.near ? "No routes in " + loc.name + " are that close to " + af.near.label + " — try a wider distance." : "No routes match these filters."}</div>}
       </>}
       </>}
 
@@ -599,7 +599,7 @@ export default function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElev
             <div style={{ display: "flex", gap: 7, flexWrap: "wrap" }}>{([[0, "Any"], [2, "★★+"], [3, "★★★+"], [4, "★★★★+"]] as [number, string][]).map(o => chip(o[1], df.minStars === o[0], () => setDf(d => ({ ...d, minStars: o[0] }))))}</div>
             {/* 0334: an unrated climb is not ruled out. 2 of 90,084 sport climbs had a rating when this
                 was written, so the old rule turned every star search into an empty list. */}
-            <div style={{ fontSize: 11.5, color: C.textMuted, marginTop: 8, lineHeight: 1.45 }}>Few climbs have a star rating yet, so climbs nobody has rated always show. This hides only climbs rated below the minimum.</div>
+            <div style={{ fontSize: 11.5, color: C.textMuted, marginTop: 8, lineHeight: 1.45 }}>Unrated climbs still show.</div>
             {fitsDiscs(df.discs, "minPitches") ? <>
             {lab("Pitches")}
             <div style={{ display: "flex", gap: 7, flexWrap: "wrap" }}>{([[0, "Any"], [1, "1+ (single)"], [2, "2+ (multi-pitch)"], [3, "3+"], [5, "5+"], [10, "10+"]] as [number, string][]).map(o => chip(o[1], df.minPitches === o[0], () => setDf(d => ({ ...d, minPitches: o[0] }))))}</div>
@@ -619,7 +619,7 @@ export default function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElev
             <div style={{ display: "flex", gap: 7, flexWrap: "wrap" }}>{PEAK_ELEV_MINS.map(o => chip(minLabel(o, metric, eU), df.elev === o[0], () => setDf(d => ({ ...d, elev: o[0] }))))}</div>
             {lab("Prominence")}
             <div style={{ display: "flex", gap: 7, flexWrap: "wrap" }}>{PROM_MINS.map(o => chip(minLabel(o, metric, eU), df.prom === o[0], () => setDf(d => ({ ...d, prom: o[0] }))))}</div>
-            {[df.gain, df.trip, df.elev, df.prom].some(v => v && v !== "any") ? <div style={{ fontSize: 11.5, color: C.textMuted, marginTop: 8, lineHeight: 1.45 }}>Gain, round trip, peak elevation and prominence are recorded mostly for mountain routes. Climbs without the figure are hidden while one of these is set.</div> : null}
+            {[df.gain, df.trip, df.elev, df.prom].some(v => v && v !== "any") ? <div style={{ fontSize: 11.5, color: C.textMuted, marginTop: 8, lineHeight: 1.45 }}>Climbs missing this figure are hidden.</div> : null}
             </> : null}
             </div>
             <div style={{ flexShrink: 0, display: "flex", gap: 8, padding: "12px 16px calc(env(safe-area-inset-bottom) + 12px)", borderTop: "1px solid " + C.border, background: C.bg }}>
