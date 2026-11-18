@@ -78,7 +78,7 @@ const CASES = [
   {
     name: "4. a STALE declaration fails",
     file: "scripts/check-clickable-divs.mjs",
-    edit: (s) => s.replace('"()=>onViewProfile(c)"', '"()=>thisHandlerDoesNotExistAnywhere(q)"'),
+    edit: (s) => s.replace('"()=>{setSharedRoute(null);setProfileModal(c);}"', '"()=>thisHandlerDoesNotExistAnywhere(q)"'),
     expect: "fail",
     need: /STALE declaration/,
     why: "a declaration that matches nothing must not rot silently",
