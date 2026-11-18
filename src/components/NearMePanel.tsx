@@ -262,6 +262,12 @@ export default function NearMePanel({ center0, areaType, name, onBack, onOpenAre
     if (map) setTimeout(() => readBounds(map), 350); // after the pan/zoom animation settles
   } });
   const locate = me.locate, locating = me.locating, geoErr = me.err;
+  // A list reads "44 mi", not "43.51 mi" (walkthrough 2026-11-18): whole numbers from 10 up, one
+  // decimal below, in whichever unit the climber set (uDistMi picks it; this only rounds its number).
+  const fmtMi = (mi: number) => (uDistMi ? uDistMi(mi) : mi.toFixed(1) + " mi").replace(/^\d+(?:\.\d+)?/, n => { const v = parseFloat(n); return String(v >= 10 ? Math.round(v) : Math.round(v * 10) / 10); });
+  // Home's Near me before any fix: the list is sorted from the MIDDLE OF THE MAP (the middle of the
+  // country), so it is not near the climber. It says so and offers the climber's own position.
+  const noFix = me.acc == null;
   // Your dot is on the map from the start when location is already allowed -- without moving the
   // map off the area you opened it on. Never asks: the button above does that.
   useEffect(() => { if (ready) me.showDot(); }, [ready]); // eslint-disable-line react-hooks/exhaustive-deps -- shows the dot once when the map becomes ready; me is a per-render hook result
@@ -361,7 +367,7 @@ export default function NearMePanel({ center0, areaType, name, onBack, onOpenAre
                   <span style={{ display: "block", fontWeight: 700, fontSize: 14, color: C.text, overflowWrap: "anywhere" }}>{a.name}</span>
                   {wl ? <span style={{ display: "block", fontSize: 11.5, fontWeight: 700, color: C.amber }}>{onList(wl)}</span> : null}
                 </span>
-                <span style={{ color: C.textMuted, fontSize: 12, flexShrink: 0 }}>{a._mi != null ? (uDistMi ? uDistMi(a._mi) : a._mi.toFixed(1) + " mi") + " · " : ""}{a.route_count} climb{a.route_count !== 1 ? "s" : ""}</span>
+                <span style={{ color: C.textMuted, fontSize: 12, flexShrink: 0 }}>{a._mi != null ? fmtMi(a._mi) + " · " : ""}{a.route_count} climb{a.route_count !== 1 ? "s" : ""}</span>
               </div>
               {onOpenRoute && pickRows.length > 1 && a.route_count > 0 ? <button onClick={() => setClimbsOpen(o => ({ ...o, [a.id]: !o[a.id] }))} aria-expanded={open} aria-label={(open ? "Hide" : "Show") + " the climbs at " + a.name} style={{ ...CHIP, flexShrink: 0, minHeight: 44, border: "1px solid " + (open ? C.blue : C.border), background: open ? C.blueBg : C.surface, color: open ? C.onSolid : C.blue, fontSize: 12, fontWeight: 700, cursor: "pointer" }}>{open ? "Hide" : "Climbs"}</button> : null}
             </div>
@@ -430,13 +436,19 @@ export default function NearMePanel({ center0, areaType, name, onBack, onOpenAre
           ) : null}
           {!compact && data && data.total != null && !disc && data.total > sorted.length ? <div style={{ color: C.textMuted, fontSize: 11.5, marginBottom: 8 }}>{"Showing the busiest " + sorted.length + " of " + data.total + " areas in view — zoom in to see more."}</div> : null}
           {!compact && disc && ((nearby as unknown[]).length > sorted.length || (data && (data.total as number) > (nearbyAll as unknown[]).length)) ? <div style={{ color: C.textMuted, fontSize: 11.5, marginBottom: 8 }}>{"Showing " + sorted.length + " " + (DL[disc] || disc).toLowerCase() + (sorted.length === 1 ? " area" : " areas") + " — zoom in to see more."}</div> : null}
+          {compact && noFix && sorted.length ? (
+            <div style={{ display: "flex", alignItems: "center", gap: 10, background: C.surface, border: "1px solid " + C.border, borderRadius: 12, padding: "10px 12px", marginBottom: 8 }}>
+              <span style={{ flex: 1, minWidth: 0, fontSize: 12.5, color: C.textSub, lineHeight: 1.4 }}>{tx("Closest to the middle of the map. Use your location to see what's near you.")}</span>
+              <button onClick={() => locate()} disabled={locating} style={{ ...BTN, flexShrink: 0, minHeight: 40, background: C.blueSolid, color: C.onSolid, border: "none", fontWeight: 700 }}>{locating ? "Finding you…" : "Use my location"}</button>
+            </div>
+          ) : null}
           {(compact ? sorted.slice(0, COMPACT_ROWS) : sorted).map(a => (
             <div key={a.id} {...clickable(() => onOpenArea(a))} style={{ background: C.card, border: "1px solid " + (wlByArea[a.id] ? C.amber : C.border), borderRadius: 12, padding: "11px 13px", marginBottom: 8, cursor: "pointer", display: "flex", justifyContent: "space-between", alignItems: "center", gap: 10 }}>
               <span style={{ minWidth: 0 }}>
                 <span style={{ display: "block", fontWeight: 700, fontSize: 14.5, color: C.text }}>{a.name}</span>
                 {wlByArea[a.id] ? <span style={{ display: "block", fontSize: 11.5, fontWeight: 700, color: C.amber }}>{onList(wlByArea[a.id])}</span> : null}
               </span>
-              <span style={{ color: C.textMuted, fontSize: 12 }}>{a._mi != null ? (uDistMi ? uDistMi(a._mi) : a._mi.toFixed(1) + " mi") + " · " : ""}{a.route_count} climb{a.route_count !== 1 ? "s" : ""}</span>
+              <span style={{ color: C.textMuted, fontSize: 12 }}>{a._mi != null ? fmtMi(a._mi) + " · " : ""}{a.route_count} climb{a.route_count !== 1 ? "s" : ""}</span>
             </div>
           ))}
           {compact && onOpenFull && sorted.length ? <button onClick={() => { const map = mapRef.current; let view: NearMePanelView | null = null; try { if (map) { const c = map.getCenter(); view = { lat: c.lat, lng: c.lng, zoom: map.getZoom() }; } } catch (e) { view = null; } onOpenFull(view); }} style={{ ...BTN, width: "100%", minHeight: 44, marginBottom: 8, background: C.surface, border: "1px solid " + C.border, color: C.blue, fontWeight: 700 }}>{(() => { const n = !disc && data && data.total != null ? Number(data.total) : null; return n != null && n > COMPACT_ROWS ? "See all " + n.toLocaleString() + " areas on the Climbs map" : "Open the Climbs map"; })()}</button> : null}

@@ -117,7 +117,7 @@ export default function DownloadedSearch({ C, downloaded, onOpenArea, onOpenRout
                       <span style={{ display: "block", fontSize: 14, lineHeight: 1.3, overflowWrap: "anywhere" }}>{hlMatch(a.name, qq)}</span>
                       <span style={{ display: "block", fontSize: 11.5, color: C.textMuted, overflowWrap: "anywhere" }}>{[ATYPE[a.area_type] || a.area_type, a.where].filter(Boolean).join(" · ")}</span>
                     </span>
-                    {a.route_count ? <span style={{ fontSize: 12, color: C.textMuted, flexShrink: 0 }}>{a.route_count + (a.route_count === 1 ? " climb" : " climbs")}</span> : null}
+                    {a.route_count ? <span style={{ fontSize: 12, color: C.textMuted, flexShrink: 0 }}>{a.route_count.toLocaleString() + (a.route_count === 1 ? " climb" : " climbs")}</span> : null}
                   </button>
                 ))
                 : (res.rows as DownloadedSearchRoute[]).map(r => <RouteRow key={r.id} r={r} onOpen={() => onOpenRoute(r)} C={C} highlight={qq} areaName={r.areaName || null}/>)}

@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { parseTypedSearch } from "./typedSearch.js";
+import { searchMatches } from "./search.js";
 import { C, CAT, ROUTES, catOf, gradeLabel, routeLocText, shortDate, daysUntil } from "../ClimbMatchCore.jsx";
 import Av from "../src/components/Av.tsx";
 import DiscIcon from "../src/components/DiscIcon.tsx";
@@ -124,7 +125,12 @@ export function WideSearch({ onOpenRoute, onOpenArea, onOpenFinder, width, left,
   useEffect(() => { setHi(0); }, [qq]);
   const seedHits = !USE_DB && qq && wantRoutes ? ROUTES.filter(r => r.name.toLowerCase().includes(qq.toLowerCase())).slice(0, 6) : [];
   const places = USE_DB ? ((placesQ.data && placesQ.data.rows) || []) : [];
-  const routes = USE_DB ? (routesQ.data || []) : seedHits;
+  /* IN THE ROUTES BOX A NAME MATCH LEADS (walkthrough 2026-11-18): the shared route search also finds the
+     routes OF an area named like the words (so a picker can list a whole peak), and "outer space" put
+     "Major Tom" (a climb at the crag Outer Space) above the climbs named Outer Space. Here, climbs whose own
+     name holds every word come first; the search's order is kept within each group. */
+  const routes0 = USE_DB ? (routesQ.data || []) : seedHits;
+  const routes = only === "routes" && qq ? routes0.map((r, i) => ({ r, i, k: searchMatches(qq, r.name) ? 0 : 1 })).sort((x, y) => x.k - y.k || x.i - y.i).map(x => x.r) : routes0;
   const placesTotal = USE_DB ? ((placesQ.data && placesQ.data.total) || 0) : 0;
   // Asked for more and still showing the shorter list: say it is coming rather than drop the row.
   const placesMore = !USE_DB || !places.length ? null
@@ -206,7 +212,7 @@ export function WideSearch({ onOpenRoute, onOpenArea, onOpenFinder, width, left,
        an AI3 ice route looked alike before anyone read them). Places keep the pin; the finder row the compass. */
     const disc = h.kind === "route" ? (h.r.discipline || catOf(h.r) || "") : "";
     const discColor = (CAT[disc] || {}).color || C.textMuted;
-    const where = h.kind === "finder" ? "Open the Route finder with these filters" : h.kind === "place" ? [h.a.where, h.a.route_count ? h.a.route_count + (h.a.route_count === 1 ? " climb" : " climbs") : ""].filter(Boolean).join(" · ") : routeWhere(h.r);
+    const where = h.kind === "finder" ? "Open the Route finder with these filters" : h.kind === "place" ? [h.a.where, h.a.route_count ? Number(h.a.route_count).toLocaleString() + (Number(h.a.route_count) === 1 ? " climb" : " climbs") : ""].filter(Boolean).join(" · ") : routeWhere(h.r);
     const grade = h.kind === "route" ? h.r.grade : "";
     const held = (h.kind === "place" && placesState === "busy") || (h.kind === "route" && routesState === "busy");
     return <button key={h.kind + (h.kind === "finder" ? "" : h.kind === "place" ? h.a.id : h.r.id)} id={OPT + i} role="option" aria-selected={on} onMouseDown={e => e.preventDefault()} onMouseEnter={() => setHi(i)} onClick={click(h)} aria-busy={held || undefined} style={{ ...ROW, background: on ? C.card : "transparent", opacity: held ? 0.5 : 1 }}>{h.kind === "route" ? <DiscIcon d={disc} size={17}/> : <ActionIcon name={h.kind === "finder" ? "explore" : "pin"} size={17} color={C.textMuted}/>}<span style={{ minWidth: 0, flex: 1 }}><span style={{ display: "block", fontSize: 14, fontWeight: 700, overflowWrap: "anywhere" }}>{name}</span>{grade || where ? <span style={{ display: "block", fontSize: 12, color: C.textMuted, overflowWrap: "anywhere" }}>{grade ? <span style={{ color: discColor, fontWeight: 700 }}>{grade}</span> : null}{grade && where ? " · " : ""}{where}</span> : null}</span></button>;
