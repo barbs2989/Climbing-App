@@ -5,7 +5,7 @@
 // Owner, 2026-11-14: "mt goode northeast buttress has a pretty big descent on the approach, but the stats
 // don't show that", then "i dont want to have to do any of our own math, all the information should be
 // online". PR #3352 measured both on the recorded track's heights; that was replaced the same day by
-// routes.approach_loss_ft / return_gain_ft (0441), which the research pipeline writes with their sources in
+// routes.approach_loss_ft / return_gain_ft (0449), which the research pipeline writes with their sources in
 // route_field_evidence. publishedLegClimb() (lib/tripLegs.js) only reads them. This pins, on synthetic routes:
 //   1. a route with a published approach loss and return regain prints "Loss" up and "Regain" down;
 //   2. the DESCENT strip carries the same Regain;

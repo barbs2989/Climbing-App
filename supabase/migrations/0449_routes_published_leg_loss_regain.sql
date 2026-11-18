@@ -1,4 +1,4 @@
--- 0441 — routes.approach_loss_ft and routes.return_gain_ft: the PUBLISHED downhill on the way to the summit
+-- 0449 — routes.approach_loss_ft and routes.return_gain_ft: the PUBLISHED downhill on the way to the summit
 -- and the PUBLISHED uphill on the way back to the car.
 --
 -- Why (owner, 2026-11-14): "mt goode northeast buttress has a pretty big descent on the approach, but the
@@ -25,6 +25,6 @@ alter table routes add constraint routes_return_gain_ft_range
   check (return_gain_ft is null or return_gain_ft between 0 and 20000);
 
 comment on column routes.approach_loss_ft is
-  'Published feet LOST on the way from the trailhead to the summit; evidence in route_field_evidence (0441).';
+  'Published feet LOST on the way from the trailhead to the summit; evidence in route_field_evidence (0449).';
 comment on column routes.return_gain_ft is
-  'Published feet REGAINED on the way from the summit back to the trailhead; evidence in route_field_evidence (0441).';
+  'Published feet REGAINED on the way from the summit back to the trailhead; evidence in route_field_evidence (0449).';

@@ -262,7 +262,7 @@ const SETTABLE = new Set([
   // area asserted, patchRow, re-read and reconciled.
   "approach_logistics",
   // The PUBLISHED climb (owner, 2026-11-14: "i dont want to have to do any of our own math, all the
-  // information should be online"): gain_ft, and the approach's downhill / the way back's uphill (0441)
+  // information should be online"): gain_ft, and the approach's downhill / the way back's uphill (0449)
   // that the leg cards print. Integers only (checked below), each carried with `ledger` evidence.
   "gain_ft", "approach_loss_ft", "return_gain_ft",
 ]);

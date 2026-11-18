@@ -1170,7 +1170,7 @@ reads "incl."). `totalH` is unchanged: the summit clock and the alpine start cou
 Owner, 2026-11-14: *"mt goode northeast buttress has a pretty big descent on the approach, but the stats
 don't show that"*, then *"i dont want to have to do any of our own math, all the information should be
 online"*. The leg cards print **Loss** (downhill on the way to the summit) and **Regain** (uphill on the way
-back) ONLY from `routes.approach_loss_ft` / `return_gain_ft` (0441), which the research pipeline writes with
+back) ONLY from `routes.approach_loss_ft` / `return_gain_ft` (0449), which the research pipeline writes with
 their sources in `route_field_evidence` (0437). `publishedLegClimb()` in `lib/tripLegs.js` only reads them.
 
 - **Do not measure them.** PR #3352 summed the recorded track's heights (`measuredLegClimb`); the owner
