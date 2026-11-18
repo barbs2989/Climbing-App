@@ -33,6 +33,11 @@ export const NEVER_LOCK = new Set([
   "timing", "itinerary",                                          // time estimates & trip plan
   "pro_tips", "watch_out", "what_to_bring",                       // tips, watch-outs, what to bring
   "partner_requirements", "difficulty",                           // app guidance & computed scores
+  // Paragraphs never lock either (owner, 2026-11-18: "dont lock paragraphs") — they stay open to
+  // rewording and correction. This replaces the earlier "locks when every fact inside is locked".
+  "overview", "beta", "description", "approach", "descent", "descent_text", "bail", "turnaround",
+  "best_season", "comms", "face", "pro_needs", "detailed_rack", "hazards", "known_hazards",
+  "pitch_detail", "rappel_detail", "climbing_route", "approach_variants", "bivy",
 ]);
 // Road and gate status must be re-checked every 3 months (owner, 2026-11-18).
 export const EXPIRY_MAX_DAYS = { road: 92 };
@@ -207,6 +212,7 @@ function selftest() {
   t("ledger value must match the final row", ledgerValueMatches({ field: "gain_ft", value: 9000 }, { gain_ft: 9000 }) && !ledgerValueMatches({ field: "gain_ft", value: 9001 }, { gain_ft: 9000 }));
   t("pin ledger value matches by name+coords", ledgerValueMatches({ field: "waypoints/Summit", value: { name: "Summit", lat: 1, lng: 2 } }, { waypoints: [{ name: "Summit", lat: 1, lng: 2, elev: 9 }] }));
   t("a never-lock field is refused as locked", validateEntry({ field: "pro_tips", value: ["x"], method: "agree-2", level: "locked", evidence: [mp, ck] }, now).length > 0);
+  t("a paragraph never locks", validateEntry({ field: "approach", value: "x", method: "agree-2", level: "locked", evidence: [mp, ck] }, now).length > 0);
   t("a never-lock field may be recorded as disputed", validateEntry({ field: "timing", value: {}, method: "agree-2", level: "disputed", evidence: [mp] }, now).length === 0);
   t("a road lock without expiry is refused", validateEntry({ field: "road", value: {}, method: "official-1", level: "locked", evidence: [nps] }, now).length > 0);
   t("a road lock 12 months out is refused", validateEntry({ field: "road", value: {}, method: "official-1", level: "locked", evidence: [nps], expires_at: "2027-11-14T00:00:00Z" }, now).length > 0);

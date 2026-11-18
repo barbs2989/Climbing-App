@@ -4,6 +4,7 @@
 //   - unused variables         (no-unused-vars / @typescript-eslint/no-unused-vars)
 //   - implicit or explicit any (@typescript-eslint/no-explicit-any; tsc strict owns noImplicitAny)
 //   - hooks                    (react-hooks/rules-of-hooks, react-hooks/exhaustive-deps)
+// plus one bug-shaped rule: a palette-function style spread uncalled (no-restricted-syntax, 2026-11-18).
 // Every rule is an error. The JS app files get exactly these rules; src/ (TypeScript) also gets
 // typescript-eslint's `strict` set. Findings that predate this config are held in
 // eslint-suppressions.json — see scripts/check-lint.mjs for how that baseline only shrinks.
@@ -14,6 +15,9 @@ import react from "eslint-plugin-react";
 import reactHooks from "eslint-plugin-react-hooks";
 import globals from "globals";
 
+// A palette style in lib/buttonStyles.js that is a FUNCTION of C, spread uncalled, adds nothing: CrewCard's
+// "All your float plans" link drew as a grey browser-default button that way (2026-11-18).
+const paletteSpread = ["error", { selector: "SpreadElement > Identifier.argument[name=/^(BTN_PRIMARY|BTN_SECONDARY|BTN_GO|BTN_LINK|INPUT)$/]", message: "This style is a function of the palette: spread NAME(C), not NAME." }];
 const unused = { args: "after-used", ignoreRestSiblings: true, varsIgnorePattern: "^_", argsIgnorePattern: "^_", caughtErrors: "none" };
 
 export default tseslint.config(
@@ -33,6 +37,7 @@ export default tseslint.config(
       "react/jsx-uses-vars": "error",
       "react-hooks/rules-of-hooks": "error",
       "react-hooks/exhaustive-deps": "error",
+      "no-restricted-syntax": paletteSpread,
     },
   },
   {
@@ -45,6 +50,7 @@ export default tseslint.config(
       "react/jsx-uses-vars": "error",
       "react-hooks/rules-of-hooks": "error",
       "react-hooks/exhaustive-deps": "error",
+      "no-restricted-syntax": paletteSpread,
     },
   },
 );
