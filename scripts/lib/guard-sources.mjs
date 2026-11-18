@@ -205,6 +205,8 @@ export const MOVED = {
     "src/components/Resume.tsx",
     "src/components/FullProfile.tsx",
     "src/components/PolicyUpdateNotice.tsx",
+    // Ranks › By area's card and picker, out of lib/Leaderboards.jsx (itself moved from core).
+    "src/components/RankAreaPicker.tsx",
   ],
   "lib/AlpineConditionsCard.jsx": [
     "src/components/AirSection.tsx",
