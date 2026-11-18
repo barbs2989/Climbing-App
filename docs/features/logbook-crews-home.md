@@ -268,6 +268,8 @@ Notes: `docs/guards/social-and-crews.md`, `contributions-and-logbook.md`, `hones
 
 ## 7. Last significant change
 
+2026-11-14 (#3385): *Start a crew* on the climb page (beside Save) opens `CreateCrewSheet` for that climb; *Who can join?* is asked once at create (*Just people I invite*, the default, makes it private; *Let others ask to join* lists it); Meet-up offers *Meet at <access point>* (`route.road.name`) in one tap; the safety check says *Start with 5 private questions* once instead of five times; a crew invite on Requests shows the mountain, grade, day and how many are in; the Your crews rail names the mountain under each crew; a crew you just joined sorts first.
+
 2026-11-14 (#3381, 0448): any confirmed member proposes days on the Day sheet's calendar (`crew_propose_day`, which also says the proposer can make it); a day is taken back by whoever proposed it or by the organiser (`crew_unpropose_day`, which clears its acks and its lock; `crews.date_proposers`). Members still cannot UPDATE the crew row. `crews`, `crew_members` and `crew_day_acks` are on Realtime, and `useMyCrews` is a live query over them, so a crewmate's change reaches an open Crews tab without a reload.
 
 2026-11-14 crew walkthrough (#3377): Your friends picker in the Crew sheet; one chip size; a footer that never reflows; risk tolerance from the crew's answers in a Safety & risk panel; a late joiner is asked about the agreed day; the safety matrix says who answered, not each person's level.
