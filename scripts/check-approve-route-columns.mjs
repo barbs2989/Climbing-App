@@ -103,13 +103,16 @@ for (const f of files) {
   if (!raw.includes(FN)) continue;
   const sql = stripLineComments(raw);
 
+  /* `(?:public\.)?` on both patterns: 0384 wrote `CREATE OR REPLACE FUNCTION public.approve_new_route(`, and
+     without the schema prefix this walk never saw it, so from 0384 on it checked 0352 as the newest definition
+     (found 2026-11-18, adding 0461). */
   // drops first within a file: 0128/0135 both drop the old signature immediately before
   // creating the new one, which is the correct order and the one this models.
-  for (const m of sql.matchAll(new RegExp(`drop\\s+function\\s+(?:if\\s+exists\\s+)?${FN}\\s*\\(([^)]*)\\)`, "gi"))) {
+  for (const m of sql.matchAll(new RegExp(`drop\\s+function\\s+(?:if\\s+exists\\s+)?(?:public\\.)?${FN}\\s*\\(([^)]*)\\)`, "gi"))) {
     live.delete(sigKey(parseArgs(m[1]).types));
   }
 
-  for (const m of sql.matchAll(new RegExp(`create\\s+(?:or\\s+replace\\s+)?function\\s+${FN}\\s*\\(([^)]*)\\)`, "gi"))) {
+  for (const m of sql.matchAll(new RegExp(`create\\s+(?:or\\s+replace\\s+)?function\\s+(?:public\\.)?${FN}\\s*\\(([^)]*)\\)`, "gi"))) {
     const { types, names } = parseArgs(m[1]);
     live.add(sigKey(types));
 
