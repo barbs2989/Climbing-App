@@ -5,8 +5,16 @@
 `lib/Leaderboards.jsx`, loaded lazily.
 
 ## 1. What it does today
-- **Scope** row: Overall · Near me (home zip + radius) · Friends · By area (area tree, down from the countries; the breadcrumb's last crumb is the current area, plain text with `aria-current`, not a control) —
+- **Scope** row: Overall · Near me (home zip + radius) · Friends · By area —
   four equal-width boxes across the full row, 46px tall at 14px type (a 44px touch target), not small scrolling chips.
+- **By area's picker** (`RankAreaPicker`, owner 2026-11-18): a *Ranking in* card names the area (plain text with
+  `aria-current`, its trail from the country down under it) beside a 44px **Change** button (`aria-expanded`). Change
+  opens, under the card: a search over the whole catalog (`GroupPlaceSearch` → `useCatalogAreaSearch`, signed in only;
+  picking a hit ranks it and closes the picker), *Your areas* — the climber's partner listings (`useMyPartnerAreas`)
+  as one-tap chips — then one *Up to <parent>* row and *Inside <area>*, every child that holds climbs as a 44px row
+  (name · climb count · ›), 8 first and then *Show all N*; nothing is cut (it used to stop at 24). A failed children
+  read says so rather than drawing an area with nothing inside. The level above the countries (*All countries*,
+  which ranks nothing) opens with the picker already shown. Signed out it walks the seed tree, with no search.
 - **Climbing type** (All, Sport, Trad, Top rope, Bouldering, Alpine, Mountaineering, Scrambling, Ice, Mixed, Aid)
   and **Ranking**, grouped Performance · Lists · Reliability · Community. Which boards a type offers is the `ids`
   list in `Leaderboards`: Send points on every graded type (not Mountaineering/Scrambling, whose class grades weigh
@@ -32,7 +40,7 @@
   scorecard (the ascents a score is summed from) and theCrag's CPR timeline (the ascent list under a column).
 - **Top climbs**: routes, not climbers, from `leaderboard_top_climbs`.
 - **Crag regular, under By area** (competitor review batch C, item 22, 2026-11-05 — Strava's Local Legend): below the area's
-  breadcrumb and its sub-area chips, one row names the climber with the most logged DAYS under that area in the last 90
+  *Ranking in* card and its picker, one row names the climber with the most logged DAYS under that area in the last 90
   (two at least, visible logs, no conditions reports, the same people the boards rank, ties by logs then last day) with the
   count; the row opens their profile. `useCragRegular` → `crag_regular` (0404), signed-in only; nothing is drawn when nobody
   has two days there, and a failed read draws nothing rather than a wrong name. The same row sits on the area page's PARTNERS HERE card.
