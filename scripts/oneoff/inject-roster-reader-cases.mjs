@@ -37,13 +37,8 @@ const CASES = [
     expect: "usually free for everyone",
     silent: false,
   },
-  {
-    name: "the backcountry safety total back on roster",
-    find: "var total=inCrew.length;var done=inCrew.filter(",
-    repl: "var total=roster.length;var done=roster.filter(",
-    expect: "the backcountry safety brief's total",
-    silent: false,
-  },
+  // "the backcountry safety total back on roster" retired 2026-11-14: the Ready-up safety banner that
+  // counted inCrew was folded into the checklist's Safety part (crewStage), which check:crew covers.
   {
     name: "risk alignment back on roster",
     find: 'const risks=tp.modules.includes("align")?inCrew.map(',

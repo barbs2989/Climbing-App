@@ -1,0 +1,259 @@
+{
+ "wa_hibox_mountain_standard": { "area": "wa_hibox_mountain", "facts": [
+  { "field": "gain_ft", "value": 3900, "method": "agree-2", "level": "locked", "evidence": [
+    {"url":"https://www.mountaineers.org/activities/routes-places/hibox-mountain","retrieved_at":"2026-11-14","fact":"Route details list elevation gain of 3,900 ft for the Hibox scramble."},
+    {"url":"https://www.wta.org/go-hiking/hikes/hibox-mountain","retrieved_at":"2026-11-14","fact":"Hike stats give elevation gain of 3,900 feet."} ] },
+  { "field": "high_point_ft", "value": 6547, "method": "agree-2", "level": "locked", "evidence": [
+    {"url":"https://www.mountaineers.org/activities/routes-places/hibox-mountain","retrieved_at":"2026-11-14","fact":"High point listed as 6,547 ft."},
+    {"url":"https://www.wta.org/go-hiking/hikes/hibox-mountain","retrieved_at":"2026-11-14","fact":"Highest point listed as 6,560 feet (within 10% of 6,547)."} ] },
+  { "field": "dist_mi_roundtrip", "value": 8, "method": "single-source", "level": "locked-1src", "evidence": [
+    {"url":"https://www.mountaineers.org/activities/routes-places/hibox-mountain","retrieved_at":"2026-11-14","fact":"Scramble described as 8 miles with 3,900 ft of gain (round trip length 8.0 mi)."} ] },
+  { "field": "season", "value": "May-October", "method": "single-source", "level": "locked-1src", "evidence": [
+    {"url":"https://www.mountaineers.org/activities/routes-places/hibox-mountain","retrieved_at":"2026-11-14","fact":"Seasons listed May through October."} ] },
+  { "field": "trailhead", "value": "Rachel Lake Trailhead (2,800 ft): I-90 Exit 62, 5 mi toward Kachess Lake Campground, left on Box Canyon Rd (FR 4930) 4.2 mi", "method": "single-source", "level": "locked-1src", "evidence": [
+    {"url":"https://www.mountaineers.org/activities/routes-places/hibox-mountain","retrieved_at":"2026-11-14","fact":"Drive Exit 62, follow signs 5 mi, turn onto Box Canyon Road FR 4930 for 4.2 mi to Rachel Lake Trailhead at 2,800 ft."} ] },
+  { "field": "route_step", "value": "Leave Rachel Lake trail ~3,300 ft for NE boot path; rock band ~5,300 ft passed on the right to a sloping meadow", "method": "single-source", "level": "locked-1src", "evidence": [
+    {"url":"https://www.mountaineers.org/activities/routes-places/hibox-mountain","retrieved_at":"2026-11-14","fact":"Boot path leaves trail near 3,300 ft heading northeast; go right around a rock band near 5,300 ft to a large meadow."} ] },
+  { "field": "permit", "value": "Northwest Forest Pass", "method": "single-source", "level": "locked-1src", "evidence": [
+    {"url":"https://www.mountaineers.org/activities/routes-places/hibox-mountain","retrieved_at":"2026-11-14","fact":"Parking permit required: Northwest Forest Pass; Alpine Lakes Wilderness, Cle Elum Ranger District."} ] } ],
+  "note": "Round-trip distance conflicts: Mountaineers 8.0 mi vs WTA 10.0 mi (both round trip) - recorded Mountaineers only, not locked. stevensong.com/usa/washington/hibox-mountain gives a 6 h round trip but says much was not moving time; not used." },
+
+ "wa_himmelhorn_southeast_route": { "area": "wa_himmelhorn", "skip_reason": "Opened mountainproject.com/area/122904990/himmelhorn (lists only Wild Hair Crack, not this route); DDG found only the AAJ South Face 'Stonehenge' report (different route) and nwhikers/cascadeclimbers Southern Pickets traverse threads (multi-peak). SummitPost himmelhorn/695349 not tried after SummitPost returned 403 site-wide. Only one relevant page opened; needs a second pass." },
+
+ "wa_honeymoon_route": { "area": "wa_mount_deception", "skip_reason": "Opened mountaineers.org/activities/routes-places/mount-deception (standard route: 35 mi, 8,000 ft, not the Honeymoon/NE couloir) and DDG results (WTA trip report, FKT, cascadeclimbers TR 51976 not read). SummitPost 403. No page stated figures for the Honeymoon Route itself." },
+
+ "wa_hoodoo_peak_sawtooth_scramble": { "area": "wa_hoodoo_peak_sawtooth", "facts": [
+  { "field": "grade", "value": "Class 2", "method": "agree-2", "level": "locked", "evidence": [
+    {"url":"https://www.willhiteweb.com/north_cascades/hoodoo_peak/libby_lake_017.htm","retrieved_at":"2026-11-14","fact":"Route rated Class 2 from Libby Lake Trailhead."},
+    {"url":"https://hike2hike.com/day-hikes/hoodoo-peak-washington-north-cascades/","retrieved_at":"2026-11-14","fact":"Hoodoo Peak titled a Class 2 scramble; easy scrambling class 2 at worst near the top."} ] },
+  { "field": "gain_ft", "value": 4500, "method": "single-source", "level": "locked-1src", "evidence": [
+    {"url":"https://www.willhiteweb.com/north_cascades/hoodoo_peak/libby_lake_017.htm","retrieved_at":"2026-11-14","fact":"Elevation gain listed as 4,500 feet."} ] },
+  { "field": "dist_mi_oneway", "value": 5.5, "method": "single-source", "level": "locked-1src", "evidence": [
+    {"url":"https://www.willhiteweb.com/north_cascades/hoodoo_peak/libby_lake_017.htm","retrieved_at":"2026-11-14","fact":"Hiking distance listed as 5.5 miles one-way."} ] },
+  { "field": "high_point_ft", "value": 8464, "method": "single-source", "level": "locked-1src", "evidence": [
+    {"url":"https://www.willhiteweb.com/north_cascades/hoodoo_peak/libby_lake_017.htm","retrieved_at":"2026-11-14","fact":"Summit elevation listed as 8,464 feet."} ] } ],
+  "note": "App has grade Class 3; both sources say Class 2. Gain conflict: willhiteweb 4,500 vs hike2hike '12 miles round trip and 4000ft of gain' (11% apart), so gain not locked. Mountaineers hoodoo-peak-raven-ridge and climberkyle Hoodoo+Raven Ridge are multi-peak trips, not used." },
+
+ "wa_hozomeen_mountain_north_peak_north_route": { "area": "wa_hozomeen_mountain", "facts": [
+  { "field": "gain_ft", "value": 6800, "method": "single-source", "level": "locked-1src", "evidence": [
+    {"url":"https://trailcatjim.com/hozomeen-mtn-north-peak-via-north-ridge-north-cirque-northeast-ridge/","retrieved_at":"2026-11-14","fact":"Approximate stats: 6800 feet gained and lost via North Ridge, North Cirque, Northeast Ridge."} ] },
+  { "field": "dist_mi_roundtrip", "value": 15, "method": "single-source", "level": "locked-1src", "evidence": [
+    {"url":"https://trailcatjim.com/hozomeen-mtn-north-peak-via-north-ridge-north-cirque-northeast-ridge/","retrieved_at":"2026-11-14","fact":"Approximate stats: 15 miles traveled."} ] },
+  { "field": "ascent_hours", "value": 7.1, "method": "single-source", "level": "locked-1src", "evidence": [
+    {"url":"https://trailcatjim.com/hozomeen-mtn-north-peak-via-north-ridge-north-cirque-northeast-ridge/","retrieved_at":"2026-11-14","fact":"Approximate stats: 7.1 hours up."} ] },
+  { "field": "descent_hours", "value": 6, "method": "single-source", "level": "locked-1src", "evidence": [
+    {"url":"https://trailcatjim.com/hozomeen-mtn-north-peak-via-north-ridge-north-cirque-northeast-ridge/","retrieved_at":"2026-11-14","fact":"Approximate stats: 6.0 hours down."} ] },
+  { "field": "grade", "value": "Class 4", "method": "single-source", "level": "locked-1src", "evidence": [
+    {"url":"https://trailcatjim.com/hozomeen-mtn-north-peak-via-north-ridge-north-cirque-northeast-ridge/","retrieved_at":"2026-11-14","fact":"Key ledge mostly Class 2-3 with a short, very exposed Class 4 segment."} ] } ],
+  "note": "Second publishers found (stevensong 'red lone goat snow camp', onehikeaweek 2019) look like different routes or trips; not read. App figures (6800 gain, 13.1 h) appear to come from this same page." },
+
+ "wa_huckleberry_mountain_west_route": { "area": "wa_huckleberry_mountain", "skip_reason": "Opened mountaineers.org/activities/routes-places/huckleberry-mountain (high point 5,900 ft, 14 mi, 4,900 ft - does not match this 6,320 ft peak's West Face; likely another Huckleberry) and trailcatjim.com/huckleberry-mountain-via-east-ridge-upper-east-face-2024 (21.6 mi, 5,850 ft, but East Ridge/Upper East Face, a different route). No West Face figures found." },
+
+ "wa_icy_peak_southwest_route": { "area": "wa_icy_peak", "skip_reason": "Opened cascademountainascents.com/trips/ruth-icy/ (guided 2-day Ruth-to-Icy traverse, May-Sept, final 4th class scramble to Icy - a traverse from Ruth, not this route) and Mountaineers listing for Ruth Mountain-Icy Peak traverse. No page for the Southwest Route from Hannegan with stated figures." },
+
+ "wa_indian_head_peak_southwest_slopes": { "area": "wa_indian_head_peak", "skip_reason": "Opened wta.org/go-hiking/hikes/indian-head-peak (no stats rendered) and trailcatjim.com/little-indian-traverse-meander-meadow-indian-head-peak/ (22 mi, 5,400 ft gained, 6,100 lost - a multi-peak traverse, not usable)." },
+
+ "wa_ingalls_peak_east_route": { "area": "wa_ingalls_peak_east", "facts": [
+  { "field": "grade", "value": "5.3", "method": "single-source", "level": "locked-1src", "evidence": [
+    {"url":"https://www.mountainproject.com/route/120932106/east-peak-southwest-face","retrieved_at":"2026-11-14","fact":"East Peak (Southwest Face) graded 5.3 YDS."} ] },
+  { "field": "pitches", "value": 2, "method": "single-source", "level": "locked-1src", "evidence": [
+    {"url":"https://www.mountainproject.com/route/120932106/east-peak-southwest-face","retrieved_at":"2026-11-14","fact":"Type: Trad, 200 ft, 2 pitches."} ] },
+  { "field": "length_ft", "value": 200, "method": "single-source", "level": "locked-1src", "evidence": [
+    {"url":"https://www.mountainproject.com/route/120932106/east-peak-southwest-face","retrieved_at":"2026-11-14","fact":"Route length 200 ft (61 m)."} ] },
+  { "field": "fa", "value": "Gene Prater, Bill Prater and Stan Butchart, 1952", "method": "single-source", "level": "locked-1src", "evidence": [
+    {"url":"https://www.mountainproject.com/route/120932106/east-peak-southwest-face","retrieved_at":"2026-11-14","fact":"FA credited to Gene and Bill Prater with Stan Butchart (spelled Butcharc on page), 1952."} ] },
+  { "field": "gain_ft", "value": 3500, "method": "single-source", "level": "locked-1src", "evidence": [
+    {"url":"https://www.mountaineers.org/activities/routes-places/ingalls-stuart-area/ingalls-peak-east-peak-southwest-face","retrieved_at":"2026-11-14","fact":"Route details list elevation gain 3,500 ft for East Peak Southwest Face."} ] },
+  { "field": "season", "value": "June-October", "method": "single-source", "level": "locked-1src", "evidence": [
+    {"url":"https://www.mountaineers.org/activities/routes-places/ingalls-stuart-area/ingalls-peak-east-peak-southwest-face","retrieved_at":"2026-11-14","fact":"Seasons listed June through October."} ] },
+  { "field": "leg_times", "value": "Trailhead to notch 3-4 h; notch to summit 3-5 h; summit to trailhead 4-5 h", "method": "single-source", "level": "locked-1src", "evidence": [
+    {"url":"https://www.mountaineers.org/activities/routes-places/ingalls-stuart-area/ingalls-peak-east-peak-southwest-face","retrieved_at":"2026-11-14","fact":"Trip profile: trailhead to notch 3-4 h, notch to summit 3-5 h, summit to trailhead 4-5 h."} ] } ],
+  "note": "Mountaineers East Peak page lists high point 7,662 ft (the main North summit) - appears copied from the South Ridge page; its trip-profile legs are 2,800 + 300 ft while the header says 3,500. Treat its gain with caution. Not used high point." },
+
+ "wa_ingalls_peak_south_ridge": { "area": "wa_ingalls_peak", "facts": [
+  { "field": "grade", "value": "5.4", "method": "single-source", "level": "locked-1src", "evidence": [
+    {"url":"https://www.mountainproject.com/route/107664796/south-ridge","retrieved_at":"2026-11-14","fact":"Ingalls Peak South Ridge graded 5.4 YDS."} ] },
+  { "field": "alpine_grade", "value": "II", "method": "single-source", "level": "locked-1src", "evidence": [
+    {"url":"https://www.mountainproject.com/route/107664796/south-ridge","retrieved_at":"2026-11-14","fact":"Type: Trad, 300 ft, 4 pitches, Grade II."} ] },
+  { "field": "length_ft", "value": 300, "method": "single-source", "level": "locked-1src", "evidence": [
+    {"url":"https://www.mountainproject.com/route/107664796/south-ridge","retrieved_at":"2026-11-14","fact":"Route length 300 ft (91 m)."} ] },
+  { "field": "pitches", "value": 4, "method": "single-source", "level": "locked-1src", "evidence": [
+    {"url":"https://www.mountainproject.com/route/107664796/south-ridge","retrieved_at":"2026-11-14","fact":"Listed as 4 pitches."} ] },
+  { "field": "fa", "value": "Keith Rankin and Ken Colbert, 1941", "method": "single-source", "level": "locked-1src", "evidence": [
+    {"url":"https://www.mountainproject.com/route/107664796/south-ridge","retrieved_at":"2026-11-14","fact":"FA: Keith Rankin and Ken Colbert, 1941."} ] },
+  { "field": "gain_ft", "value": 3500, "method": "single-source", "level": "locked-1src", "evidence": [
+    {"url":"https://www.mountaineers.org/activities/routes-places/ingalls-stuart-area/ingalls-peak-south-ridge","retrieved_at":"2026-11-14","fact":"Route details list elevation gain 3,500 ft; trip profile 3,000 ft to notch plus 400 ft notch to summit."} ] },
+  { "field": "high_point_ft", "value": 7662, "method": "single-source", "level": "locked-1src", "evidence": [
+    {"url":"https://www.mountaineers.org/activities/routes-places/ingalls-stuart-area/ingalls-peak-south-ridge","retrieved_at":"2026-11-14","fact":"High point listed as 7,662 ft."} ] },
+  { "field": "dist_mi_roundtrip", "value": 8, "method": "single-source", "level": "locked-1src", "evidence": [
+    {"url":"https://www.mountaineers.org/activities/routes-places/ingalls-stuart-area/ingalls-peak-south-ridge","retrieved_at":"2026-11-14","fact":"Length listed as 8.0 mi."} ] },
+  { "field": "season", "value": "June-October", "method": "single-source", "level": "locked-1src", "evidence": [
+    {"url":"https://www.mountaineers.org/activities/routes-places/ingalls-stuart-area/ingalls-peak-south-ridge","retrieved_at":"2026-11-14","fact":"Seasons listed June through October."} ] },
+  { "field": "descent", "value": "Rappel the climbing route or the Southwest Face route", "method": "single-source", "level": "locked-1src", "evidence": [
+    {"url":"https://www.mountaineers.org/activities/routes-places/ingalls-stuart-area/ingalls-peak-south-ridge","retrieved_at":"2026-11-14","fact":"Descent route: rappel the climbing route or the Southwest Face route."} ] },
+  { "field": "leg_times", "value": "Trailhead to notch 3-4 h; notch to summit 3-5 h; summit to trailhead 4-5 h", "method": "single-source", "level": "locked-1src", "evidence": [
+    {"url":"https://www.mountaineers.org/activities/routes-places/ingalls-stuart-area/ingalls-peak-south-ridge","retrieved_at":"2026-11-14","fact":"Trip profile: trailhead to notch 3-4 h, notch to summit 3-5 h, summit to trailhead 4-5 h."} ] } ],
+  "note": "Grade/pitch conflict: Mountaineers calls it a three-pitch climb with a few 5.2-5.3 moves; Mountain Project says 5.4, 4 pitches. Neither locked." },
+
+ "wa_inner_constance_standard": { "area": "wa_inner_constance", "facts": [
+  { "field": "gain_ft", "value": 7300, "method": "single-source", "level": "locked-1src", "evidence": [
+    {"url":"https://trailcatjim.com/mt-constance-inner-peak/","retrieved_at":"2026-11-14","fact":"Approximate stats: 7300 feet gained and lost."} ] },
+  { "field": "dist_mi_roundtrip", "value": 16, "method": "single-source", "level": "locked-1src", "evidence": [
+    {"url":"https://trailcatjim.com/mt-constance-inner-peak/","retrieved_at":"2026-11-14","fact":"16 miles traveled: 8 miles on bike plus 8 miles on foot."} ] },
+  { "field": "ascent_hours", "value": 6.6, "method": "single-source", "level": "locked-1src", "evidence": [
+    {"url":"https://trailcatjim.com/mt-constance-inner-peak/","retrieved_at":"2026-11-14","fact":"Approximate stats: 6.6 hours up."} ] },
+  { "field": "descent_hours", "value": 3.9, "method": "single-source", "level": "locked-1src", "evidence": [
+    {"url":"https://trailcatjim.com/mt-constance-inner-peak/","retrieved_at":"2026-11-14","fact":"Approximate stats: 3.9 hours down."} ] } ],
+  "note": "Mountain Project area 122778097 lists only Sean's Route/Second Wind (different line). Mountaineers has only Mount Constance South Chute. Second source not found; app gain 7300 likely from this page." },
+
+ "wa_inspiration_peak_west_ridge": { "area": "wa_inspiration_peak", "facts": [
+  { "field": "grade", "value": "5.7", "method": "single-source", "level": "locked-1src", "evidence": [
+    {"url":"https://www.mountainproject.com/route/126437847/west-ridge","retrieved_at":"2026-11-14","fact":"Inspiration Peak West Ridge graded 5.7 YDS."} ] },
+  { "field": "alpine_grade", "value": "III", "method": "single-source", "level": "locked-1src", "evidence": [
+    {"url":"https://www.mountainproject.com/route/126437847/west-ridge","retrieved_at":"2026-11-14","fact":"Type: Trad, Alpine, 14 pitches, Grade III."} ] },
+  { "field": "pitches", "value": 14, "method": "single-source", "level": "locked-1src", "evidence": [
+    {"url":"https://www.mountainproject.com/route/126437847/west-ridge","retrieved_at":"2026-11-14","fact":"Listed as 14 pitches."} ] },
+  { "field": "fa", "value": "Fred Beckey and Helmy Beckey, August 29, 1940", "method": "single-source", "level": "locked-1src", "evidence": [
+    {"url":"https://www.mountainproject.com/route/126437847/west-ridge","retrieved_at":"2026-11-14","fact":"FA by 17-year-old Fred Beckey and 15-year-old Helmy Beckey on 8/29/1940."} ] } ],
+  "note": "Matches app overview FA. Beware MP 106450596 'West Ridge' is Forbidden Peak (June 1940 FA), not Inspiration. Mountaineers has only Inspiration South Face." },
+
+ "wa_inspiration_traverse": { "area": "wa_alpine_and_technical_traverses", "skip_reason": "DDG found trailcatjim and jeffreyjhebert Inspiration traverse reports; trailcatjim inspiration-traverse URL guessed from listing returned 404 and the Isolation-traverse variant is a different trip; Mountaineers eldorado-peak-inspiration-glacier is a single peak. No page read stating figures for this exact traverse; needs another pass (jeffreyjhebert.com/adventures/inspiration-traverse-eldorado-austera-dorado-needle not read)." },
+
+ "wa_iron_cap_mountain_south_route": { "area": "wa_iron_cap_mountain", "skip_reason": "Opened wta.org/go-hiking/hikes/iron-cap-mountain (no stats rendered) and yellowleaf.org/scramble/g/l/Iron-Cap-Mountain.html (location index only). climberkyle Big Snow-Iron Cap high route and yellowleaf 2005 traverse are multi-peak trips." },
+
+ "wa_iron_peak_teanaway_scramble": { "area": "wa_iron_peak_teanaway", "skip_reason": "Opened wta.org/go-hiking/hikes/iron-peak (7.6 mi RT, 2,360 ft, high point 6,160 ft - stops at the saddle, not the 6,510 ft summit) and willhiteweb.com/washington_climbing/iron_peak/genes_teanaway_051.htm (Iron + Teanaway Peak combined trip, 3+ mi, 3,000+ ft). Neither states summit-only figures." },
+
+ "wa_ives_peak_r1": { "area": "wa_ives_peak", "skip_reason": "Opened willhiteweb.com/washington/goat_rocks_climbing/ives_hawkeye_227.htm (15-mile loop with Hawkeye Point - multi-peak) and oregonhikers.org/field_guide/Ives_Peak (no stats returned). hippohamster post is the North Ridge (different route)." },
+
+ "wa_jack_mountain_nohokomeen_headwall": { "area": "wa_jack_mountain", "skip_reason": "Opened stevensong.com/usa/washington/jack-mountain-nohokomeen-headwall/ (East Bank Trail just under 8 miles; ~1000 m gain to high camp; no route totals) and whereiskylemiller.com/highway-20/jack-mountain-nohokomeen-glacier/ (ski approach via ridge, no totals). Nothing usable stated outright." },
+
+ "wa_johannesburg_mountain_northeast_buttress": { "area": "wa_johannesburg_mountain", "facts": [
+  { "field": "grade", "value": "5.8", "method": "single-source", "level": "locked-1src", "evidence": [
+    {"url":"https://www.alpineinstitute.com/route-profile-ne-buttress-johannesburg-mountain-v-5-8-ai-2/","retrieved_at":"2026-11-14","fact":"Route profile titled NE Buttress, Johannesburg Mountain (V, 5.8, AI 2)."} ] },
+  { "field": "alpine_grade", "value": "V", "method": "single-source", "level": "locked-1src", "evidence": [
+    {"url":"https://www.alpineinstitute.com/route-profile-ne-buttress-johannesburg-mountain-v-5-8-ai-2/","retrieved_at":"2026-11-14","fact":"Commitment grade V; ice grade AI 2."} ] },
+  { "field": "camp", "value": "Bivy at ~7,100 ft at the base of the glacier on the buttress", "method": "single-source", "level": "locked-1src", "evidence": [
+    {"url":"https://www.alpineinstitute.com/route-profile-ne-buttress-johannesburg-mountain-v-5-8-ai-2/","retrieved_at":"2026-11-14","fact":"Moderate rock leads to a bivy site at 7,100 feet at the base of the glacier."} ] },
+  { "field": "leg_times", "value": "Base of buttress to bivy 8-12 h; bivy to summit 1-3 h", "method": "single-source", "level": "locked-1src", "evidence": [
+    {"url":"https://www.alpineinstitute.com/route-profile-ne-buttress-johannesburg-mountain-v-5-8-ai-2/","retrieved_at":"2026-11-14","fact":"Most parties take 8-12 hours from buttress base to bivy and 1-3 hours to the summit."} ] } ],
+  "note": "App alpine_grade is TD; AAI gives V. Lower slabs described as loose, about 5.5, little protection. MP 106108831 'Northeast Buttress' is Slesse, not Johannesburg." },
+
+ "wa_kaleetan_peak_south_ridge": { "area": "wa_kaleetan_peak", "facts": [
+  { "field": "gain_ft", "value": 4500, "method": "single-source", "level": "locked-1src", "evidence": [
+    {"url":"https://www.wta.org/go-hiking/hikes/kaleetan-peak","retrieved_at":"2026-11-14","fact":"Hike stats: elevation gain 4,500 feet."} ] },
+  { "field": "dist_mi_roundtrip", "value": 12, "method": "single-source", "level": "locked-1src", "evidence": [
+    {"url":"https://www.wta.org/go-hiking/hikes/kaleetan-peak","retrieved_at":"2026-11-14","fact":"Length 12.0 miles, roundtrip."} ] },
+  { "field": "high_point_ft", "value": 6224, "method": "single-source", "level": "locked-1src", "evidence": [
+    {"url":"https://www.wta.org/go-hiking/hikes/kaleetan-peak","retrieved_at":"2026-11-14","fact":"Highest point listed as 6,224 feet."} ] } ],
+  "note": "Grade conflict: hike2hike.com/summits/kaleetan-peak-scramble-north-bend-washington/ rates YDS Class 2; stevensong.com/usa/washington/kaleetan-peak/ says mostly a hike with short class 2-3 scrambling near the top; app says Class 3. Not recorded. WTA high point 6,224 vs app 6,259." },
+
+ "wa_katsuk_peak_gully": { "area": "wa_katsuk_peak", "skip_reason": "Opened trailcatjim.com/katsuk-peak-via-south-spur-east-ridge/ (15 mi, 8,100 ft - South Spur/East Ridge, a different route) and Mountaineers ragged-ridge-via-easy-pass listing (zone, no route figures). lemkeclimbs and hike2hike pages are multi-peak Ragged Ridge trips." },
+
+ "wa_kendall_peak_standard": { "area": "wa_kendall_peak", "facts": [
+  { "field": "gain_ft", "value": 2800, "method": "single-source", "level": "locked-1src", "evidence": [
+    {"url":"https://www.wta.org/go-hiking/hikes/kendall-peak","retrieved_at":"2026-11-14","fact":"Hike stats: elevation gain 2,800 feet."} ] },
+  { "field": "dist_mi_roundtrip", "value": 9.2, "method": "single-source", "level": "locked-1src", "evidence": [
+    {"url":"https://www.wta.org/go-hiking/hikes/kendall-peak","retrieved_at":"2026-11-14","fact":"Length 9.2 miles, roundtrip."} ] },
+  { "field": "high_point_ft", "value": 5784, "method": "single-source", "level": "locked-1src", "evidence": [
+    {"url":"https://www.wta.org/go-hiking/hikes/kendall-peak","retrieved_at":"2026-11-14","fact":"Highest point listed as 5,784 feet."} ] } ],
+  "note": "musthikemusteat.com/i-90/kendall-peak-scramble/ (2,046 ft to 5,027 ft, partial outing) did not reach the true summit; not used. Mountaineers kendall-peak page had no details block." },
+
+ "wa_klawatti_peak_southeast_face": { "area": "wa_klawatti_peak", "skip_reason": "Opened wta.org/go-hiking/hikes/klawatti-peak (no stats rendered); lemkeclimbs.com/eldorado-peak-and-klawatti-peak navigation was hijacked by a shared tab and not read; MP route 119380095 is the SW Buttress (different route). Mountaineers inspiration-mcallister-klawatti-ice-cap is a zone page." },
+
+ "wa_kyes_peak_glaciated_scramble": { "area": "wa_kyes_peak", "facts": [
+  { "field": "gain_ft", "value": 6500, "method": "single-source", "level": "locked-1src", "evidence": [
+    {"url":"https://www.mountaineers.org/activities/routes-places/kyes-peak","retrieved_at":"2026-11-14","fact":"Route details list elevation gain 6,500 ft."} ] },
+  { "field": "dist_mi_roundtrip", "value": 13, "method": "single-source", "level": "locked-1src", "evidence": [
+    {"url":"https://www.mountaineers.org/activities/routes-places/kyes-peak","retrieved_at":"2026-11-14","fact":"Length listed as 13.0 mi."} ] },
+  { "field": "high_point_ft", "value": 7284, "method": "single-source", "level": "locked-1src", "evidence": [
+    {"url":"https://www.mountaineers.org/activities/routes-places/kyes-peak","retrieved_at":"2026-11-14","fact":"High point listed as 7,284 ft."} ] },
+  { "field": "season", "value": "July-September", "method": "single-source", "level": "locked-1src", "evidence": [
+    {"url":"https://www.mountaineers.org/activities/routes-places/kyes-peak","retrieved_at":"2026-11-14","fact":"Seasons listed July, August, September."} ] },
+  { "field": "trailhead", "value": "Blanca Lake Trailhead (1,900 ft), end of Index-Galena Rd / FR 63", "method": "single-source", "level": "locked-1src", "evidence": [
+    {"url":"https://www.mountaineers.org/activities/routes-places/kyes-peak","retrieved_at":"2026-11-14","fact":"Start is the Blanca Lake Trailhead at 1,900 ft off Index-Galena Road (FR 63)."} ] },
+  { "field": "closure", "value": "Road closure: 6 mi and 1,200 ft one-way from the closure to the trailhead (updated 9/2026)", "method": "single-source", "level": "locked-1src", "evidence": [
+    {"url":"https://www.mountaineers.org/activities/routes-places/kyes-peak","retrieved_at":"2026-11-14","fact":"From the closure to the trailhead is 6 miles and 1200 ft gain one-way; road paved to Blanca Lake junction [Upd 9/2026]."} ] },
+  { "field": "car_to_car_hours", "value": 9, "method": "single-source", "level": "locked-1src", "evidence": [
+    {"url":"https://climberkyle.com/2025/06/29/kyes-peak/","retrieved_at":"2026-11-14","fact":"Trip notes: took around 9 hours."} ] } ],
+  "note": "Gain/distance conflict: Mountaineers 6,500 ft / 13 mi vs climberkyle 7,500 ft / 14 mi (15% apart) - not locked. Grade: Mountaineers says some Class 4 scrambling to summit; climberkyle describes ~50 ft of ledgy class 3+. The road-closure figures are NOT included in the 13 mi/6,500 ft." },
+
+ "wa_la_bohn_peak_southwest_slopes": { "area": "wa_la_bohn_peak", "skip_reason": "Opened yellowleaf.org/scramble/g/l/La-Bohn-Peak.html (location index, no figures) and Mountaineers search (only mount-hinman-west-route, a different peak). yellowleaf 2005 traverse is multi-peak." },
+
+ "wa_lane_peak_r1": { "area": "wa_lane_peak", "facts": [
+  { "field": "grade", "value": "WI2", "method": "single-source", "level": "locked-1src", "evidence": [
+    {"url":"https://www.mountainproject.com/route/110175024/the-zipper","retrieved_at":"2026-11-14","fact":"Lane Peak The Zipper graded WI2."} ] },
+  { "field": "length_ft", "value": 1000, "method": "single-source", "level": "locked-1src", "evidence": [
+    {"url":"https://www.mountainproject.com/route/110175024/the-zipper","retrieved_at":"2026-11-14","fact":"Type: Mixed, Ice, Snow, Alpine, 1000 ft (303 m), 3 pitches."} ] },
+  { "field": "pitches", "value": 3, "method": "single-source", "level": "locked-1src", "evidence": [
+    {"url":"https://www.mountainproject.com/route/110175024/the-zipper","retrieved_at":"2026-11-14","fact":"Listed as 3 pitches."} ] },
+  { "field": "alpine_grade", "value": "Grade II", "method": "single-source", "level": "locked-1src", "evidence": [
+    {"url":"https://www.mountaineers.org/activities/routes-places/lane-peak-zipper-lovers-lane","retrieved_at":"2026-11-14","fact":"Zipper and Lovers Lane are two Grade II intermediate winter climbs; Zipper up to 45 degree snow and/or ice."} ] },
+  { "field": "gain_ft", "value": 1500, "method": "single-source", "level": "locked-1src", "evidence": [
+    {"url":"https://www.mountaineers.org/activities/routes-places/lane-peak-zipper-lovers-lane","retrieved_at":"2026-11-14","fact":"Elevation gain 1,500 ft; trip profile trailhead to summit 3 h and 1,500 ft."} ] },
+  { "field": "dist_mi_roundtrip", "value": 5, "method": "single-source", "level": "locked-1src", "evidence": [
+    {"url":"https://www.mountaineers.org/activities/routes-places/lane-peak-zipper-lovers-lane","retrieved_at":"2026-11-14","fact":"Length listed as 5.0 mi."} ] },
+  { "field": "high_point_ft", "value": 6012, "method": "single-source", "level": "locked-1src", "evidence": [
+    {"url":"https://www.mountaineers.org/activities/routes-places/lane-peak-zipper-lovers-lane","retrieved_at":"2026-11-14","fact":"High point listed as 6,012 ft."} ] },
+  { "field": "season", "value": "December-February", "method": "single-source", "level": "locked-1src", "evidence": [
+    {"url":"https://www.mountaineers.org/activities/routes-places/lane-peak-zipper-lovers-lane","retrieved_at":"2026-11-14","fact":"Seasons listed January, February, December."} ] },
+  { "field": "rappels", "value": "From the top, downclimb to a tree with slings and rappel into the Zipper; rappel usually over 100 ft, double rope recommended", "method": "single-source", "level": "locked-1src", "evidence": [
+    {"url":"https://www.mountaineers.org/activities/routes-places/lane-peak-zipper-lovers-lane","retrieved_at":"2026-11-14","fact":"Downclimb to a tree with rappel slings; rappel is usually more than 100 ft so double ropes are recommended."} ] },
+  { "field": "leg_times", "value": "Trailhead to summit 3 h; summit to trailhead 2 h", "method": "single-source", "level": "locked-1src", "evidence": [
+    {"url":"https://www.mountaineers.org/activities/routes-places/lane-peak-zipper-lovers-lane","retrieved_at":"2026-11-14","fact":"Trip profile: trailhead to summit 3 h, summit to trailhead 2 h."} ] },
+  { "field": "trailhead", "value": "Narada Falls (drive 15 mi from park entrance) when Stevens Canyon Rd is gated", "method": "single-source", "level": "locked-1src", "evidence": [
+    {"url":"https://www.mountaineers.org/activities/routes-places/lane-peak-zipper-lovers-lane","retrieved_at":"2026-11-14","fact":"Drive 15 miles to Narada Falls to start."} ] } ],
+  "note": "Gain 1,500 vs app 2,000 and distance 5 mi RT vs app 3.2 km: different publishers' approach assumptions; not locked." },
+
+ "wa_lane_peak_r2": { "area": "wa_lane_peak", "facts": [
+  { "field": "grade", "value": "Mod. Snow", "method": "single-source", "level": "locked-1src", "evidence": [
+    {"url":"https://www.mountainproject.com/route/117755275/fly-the","retrieved_at":"2026-11-14","fact":"Lane Peak The Fly graded Mod. Snow."} ] },
+  { "field": "length_ft", "value": 800, "method": "single-source", "level": "locked-1src", "evidence": [
+    {"url":"https://www.mountainproject.com/route/117755275/fly-the","retrieved_at":"2026-11-14","fact":"Type: Snow, Alpine, 800 ft (242 m), Grade II."} ] },
+  { "field": "alpine_grade", "value": "Grade II", "method": "single-source", "level": "locked-1src", "evidence": [
+    {"url":"https://www.mountainproject.com/route/117755275/fly-the","retrieved_at":"2026-11-14","fact":"Commitment Grade II."} ] } ],
+  "note": "App grade AI1; MP says Mod. Snow. MP FA unknown. Mountaineers lane-peak-zipper-lovers-lane page covers Zipper and Lovers Lane only." },
+
+ "wa_lemah_mountain_east_route": { "area": "wa_lemah_mountain", "facts": [
+  { "field": "gain_ft", "value": 5500, "method": "single-source", "level": "locked-1src", "evidence": [
+    {"url":"https://www.mountaineers.org/activities/routes-places/lemah-mountain-southeast-approach","retrieved_at":"2026-11-14","fact":"Lemah Mountain Southeast Approach lists elevation gain 5,500 ft."} ] },
+  { "field": "season", "value": "June-September", "method": "single-source", "level": "locked-1src", "evidence": [
+    {"url":"https://www.mountaineers.org/activities/routes-places/lemah-mountain-southeast-approach","retrieved_at":"2026-11-14","fact":"Seasons listed June through September."} ] },
+  { "field": "route_step", "value": "From SW of main summit climb Class 2-3 cliff bands to the Lemah 2/Main col, traverse west, summit block from NW ridge (Class 2)", "method": "single-source", "level": "locked-1src", "evidence": [
+    {"url":"https://www.mountaineers.org/activities/routes-places/lemah-mountain-southeast-approach","retrieved_at":"2026-11-14","fact":"Climb Class 2-3 cliff bands to col between Lemah 2 and Main, traverse west, summit block via northwest ridge Class 2."} ] } ],
+  "note": "Mountaineers high point 7,480 ft vs app 7,512. Gain 5,500 vs app 4,680 (>10%); Mountaineers page mentions camping at Spectacle Lake, so start/camp may differ. ericsbasecamp Lemah page returned no readable text." },
+
+ "wa_lena_lake_to_mt_stone_traverse": { "area": "wa_mount_stone", "facts": [
+  { "field": "gain_ft", "value": 7400, "method": "single-source", "level": "locked-1src", "evidence": [
+    {"url":"https://trailcatjim.com/st-peters-traverse-mt-stone-2021/","retrieved_at":"2026-11-14","fact":"Stats including Mt Stone summit sidetrip: 7400 feet gained."} ] },
+  { "field": "loss_ft", "value": 6550, "method": "single-source", "level": "locked-1src", "evidence": [
+    {"url":"https://trailcatjim.com/st-peters-traverse-mt-stone-2021/","retrieved_at":"2026-11-14","fact":"Stats including summit sidetrip: 6550 feet lost."} ] },
+  { "field": "dist_mi_total", "value": 15.1, "method": "single-source", "level": "locked-1src", "evidence": [
+    {"url":"https://trailcatjim.com/st-peters-traverse-mt-stone-2021/","retrieved_at":"2026-11-14","fact":"Stats including summit sidetrip: 15.1 miles traveled, Upper Lena Lake to Lake of the Angels via St Peters Gate."} ] } ],
+  "note": "Point-to-point traverse; without the summit sidetrip the page gives 14.3 mi, 6,300 ft gained, 5,450 lost. App gain 9,000 conflicts with 7,400. Mountaineers mt-stone-6-616 is the South Couloir (different route), not used." },
+
+ "wa_let_it_burn": { "area": "wa_colchuck_balanced_rock", "facts": [
+  { "field": "grade", "value": "5.12-", "method": "single-source", "level": "locked-1src", "evidence": [
+    {"url":"https://www.mountainproject.com/route/108157307/let-it-burn","retrieved_at":"2026-11-14","fact":"Let it Burn graded 5.12- YDS."} ] },
+  { "field": "length_ft", "value": 1200, "method": "single-source", "level": "locked-1src", "evidence": [
+    {"url":"https://www.mountainproject.com/route/108157307/let-it-burn","retrieved_at":"2026-11-14","fact":"Type: Trad, Sport, 1200 ft (364 m), 8 pitches, Grade III."} ] },
+  { "field": "pitches", "value": 8, "method": "single-source", "level": "locked-1src", "evidence": [
+    {"url":"https://www.mountainproject.com/route/108157307/let-it-burn","retrieved_at":"2026-11-14","fact":"Listed as 8 pitches."} ] },
+  { "field": "alpine_grade", "value": "III", "method": "single-source", "level": "locked-1src", "evidence": [
+    {"url":"https://www.mountainproject.com/route/108157307/let-it-burn","retrieved_at":"2026-11-14","fact":"Commitment Grade III."} ] },
+  { "field": "fa", "value": "Jens Holsten and Max Hasson", "method": "single-source", "level": "locked-1src", "evidence": [
+    {"url":"https://www.mountainproject.com/route/108157307/let-it-burn","retrieved_at":"2026-11-14","fact":"FA: Jens Holsten, Max Hasson."} ] } ],
+  "note": "App overview calls it grade IV 5.12a; MP says Grade III. Only MP opened for this route (Mountaineers/DDG found no other route page)." },
+
+ "wa_lexington_tower_east_face": { "area": "wa_lexington_tower", "facts": [
+  { "field": "grade", "value": "5.9+", "method": "single-source", "level": "locked-1src", "evidence": [
+    {"url":"https://www.mountainproject.com/route/106482011/east-face","retrieved_at":"2026-11-14","fact":"Lexington Tower East Face graded 5.9+ YDS."} ] },
+  { "field": "length_ft", "value": 800, "method": "single-source", "level": "locked-1src", "evidence": [
+    {"url":"https://www.mountainproject.com/route/106482011/east-face","retrieved_at":"2026-11-14","fact":"Type: Trad, Alpine, 800 ft (242 m), 10 pitches, Grade III."} ] },
+  { "field": "pitches", "value": 10, "method": "single-source", "level": "locked-1src", "evidence": [
+    {"url":"https://www.mountainproject.com/route/106482011/east-face","retrieved_at":"2026-11-14","fact":"Listed as 10 pitches."} ] },
+  { "field": "alpine_grade", "value": "III", "method": "single-source", "level": "locked-1src", "evidence": [
+    {"url":"https://www.mountainproject.com/route/106482011/east-face","retrieved_at":"2026-11-14","fact":"Commitment Grade III."} ] },
+  { "field": "fa", "value": "Steve Marts and Don McPherson", "method": "single-source", "level": "locked-1src", "evidence": [
+    {"url":"https://www.mountainproject.com/route/106482011/east-face","retrieved_at":"2026-11-14","fact":"FA: Steve Marts and Don McPherson."} ] } ],
+  "note": "App alpine_grade IV vs MP III. MP 118994517 'East Face' is a different spire (5.10-). Supertopo Lexington page found in search but not read." }
+}

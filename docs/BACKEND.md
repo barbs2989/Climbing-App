@@ -178,55 +178,13 @@ migrated.** `crews` / `crew_members` / `crews_messages`, `messages` (direct), `c
 Re-derive rather than trust this paragraph: `grep -o 'from("[a-z_]*")' lib/db.js | sort -u`
 returns **37** tables against 41 live.
 
-### Hire-a-Guide (migrations `0020`-`0024`) — live, not a sketch
+### Hire-a-Guide — removed (0445)
 
-The guide-hire feature is fully migrated (as, now, are the social tables above)
-(directory/lead-gen only — no in-app payment; every guide listed free in this phase, a
-paid/featured tier is a separate later phase):
-
-```
-profiles.is_admin boolean            -- single manual reviewer flag (0020)
-
-guide_profiles(id -> profiles, status draft/submitted/active/rejected/delisted,
-      title, base_location, specialty, bio, cancellation_policy, lat, lng,
-      day_rate, group_max, response_hrs, regions text[], languages text[],
-      active_disciplines text[],     -- derived only, see trigger below — never client-writable
-      insurance_carrier_name, insurance_attested, permit_attested,
-      waiver_process_attested, independent_contractor_attested (+ _at timestamps),
-      agreement_signed_name, agreement_signed_at)
-      -- CHECK: status='active' requires all four attestation booleans true
-
-cert_track_disciplines(cert_track, discipline)  -- static taxonomy: SPI/MPI/RockGuide/
-      -- AlpineGuide/SkiGuide/IFMGA -> which disciplines each track actually covers
-
-guide_credentials(id, guide_id, kind primary_track/cross_cutting, cert_track or
-      cross_cutting_type (AIARE/WFR/other), cert_number, issuing_org,
-      status pending/verified/rejected/lapsed, verified_at, verified_expires_at, reviewed_by)
-      -- trigger stamps verified_expires_at = verified_at + 12 months (never client-supplied)
-      -- trigger recomputes guide_profiles.active_disciplines from verified+unexpired
-      --   primary_track credentials -- this is the DB-level cert-scope hard gate
-      -- RPC reconcile_guide_verification(guide_id): flips lapsed credentials on read
-      --   (no cron -- called opportunistically when a guide profile loads)
-
-guide_documents(id, guide_id, credential_id, doc_type insurance_coi/cert_card,
-      storage_path, uploaded_at, deleted_at)
-      -- private Storage bucket "guide-documents", signed URLs only, never public
-
-inquiries(id, guide_id, climber_id default auth.uid(), objective, requested_dates,
-      message, party_size, includes_minor, climber_disclaimer_accepted_at default now(),
-      status new/accepted/declined, guide_responded_at)
-      -- climber_disclaimer_accepted_at IS the timestamped liability-disclaimer record
-      -- append-only from the climber's side (trigger blocks editing submitted fields)
-
-reviews(id, inquiry_id uuid unique, guide_id, climber_id, rating, text,
-      guide_reply, guide_reply_at)
-      -- insert requires a real matching inquiries row (climber_id + guide_id) --
-      --   the actual integrity mechanism, not just a UI gate
-      -- guide gets reply-only write access via a trigger, never edits the review itself
-```
-
-Admin review (verifying credentials, approving/rejecting applications) is Supabase
-Studio-only for v1 — one reviewer, low volume, no bespoke queue UI built yet.
+The guide directory, applications, inquiries and guide reviews (migrations 0021-0024, 0082,
+0226) were removed on 2026-11-14 at the owner's request: 0445 drops their tables and functions,
+and the private `guide-documents` bucket was deleted through the Storage API. `profiles.is_admin`
+(0020) stays — every admin queue uses it. A climber's own guiding certifications stay on their
+résumé (`profiles.certifications`, 0181).
 
 ---
 

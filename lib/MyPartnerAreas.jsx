@@ -6,9 +6,12 @@
 // ("free here Oct 18-19") and a short note. Any area but a peak, world or country — peaks are matched
 // by route, and the server refuses one with a readable reason, which this screen relays.
 //
-// Adding is built for one hand: the search box comes first and already searches the climber's home
-// state (theCrag files favourites from the place itself; Mountain Project's partner posts are "area +
-// dates"), the areas the climber's own climbs and saved areas sit in are offered as one-tap
+// Adding is built for one hand: the search box comes first and searches EVERY area in every state,
+// the way the Climbs search does (owner 2026-11-14: "add an area like you would when searching for
+// climbs"). It used to search one state, picked from a dropdown under it, so from Washington "smith
+// rock" or "red river gorge" said "didn't match" — scripts/oneoff/audit-area-search.mjs measures the
+// difference. (theCrag files favourites from the place itself; Mountain Project's partner posts are
+// "area + dates".) The areas the climber's own climbs and saved areas sit in are offered as one-tap
 // suggestions, and the date window is a preset (This weekend / Next weekend) before it is a picker.
 //
 // Writes reflect by the list updating (the hooks invalidate every reader), so there is no success
@@ -19,12 +22,14 @@ import { BTN_LG } from "./buttonStyles.js";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { USE_DB } from "./supabase";
 import { POP_BACK, POP_CLOSE, POP_REMOVE } from "./popupChrome.js";
-import { removePartnerArea, savePartnerArea, useAreaCardsByIds, useAreaSearch, useMyHomeStatePaths, useStates } from "./db";
+import { removePartnerArea, savePartnerArea, useAreaCardsByIds, useCatalogAreaSearch } from "./db";
 import { discLabel } from "./discLabels.js";
 import { C, CRAG_CATS, DLOCALE, SL, haptic, localYmd } from "../ClimbMatchCore.jsx";
 import ActionIcon from "../src/components/ActionIcon.tsx";
 
-const TYPE_LABEL = { state: "State", region: "Region", range: "Range", canyon: "Canyon", crag: "Crag", wall: "Wall", peak: "Peak" };
+const TYPE_LABEL = { state: "State", region: "Region", range: "Range", canyon: "Canyon", crag: "Crag", wall: "Wall", peak: "Peak", boulder: "Boulder", sector: "Sector" };
+// How many search hits the box shows; `total` says how many matched, so a cut is never silent.
+const HIT_LIM = 30;
 const NO_LISTING = new Set(["peak", "world", "country"]);
 const fmtDay = (d) => { if (!d) return ""; try { return new Date(d + "T12:00:00").toLocaleDateString(DLOCALE, { month: "short", day: "numeric" }); } catch (e) { return d; } };
 export const windowText = (l) => (l && l.freeFrom && l.freeTo) ? (l.freeFrom === l.freeTo ? "Free " + fmtDay(l.freeFrom) : "Free " + fmtDay(l.freeFrom) + "–" + fmtDay(l.freeTo)) : "Any time";
@@ -32,19 +37,15 @@ export const windowText = (l) => (l && l.freeFrom && l.freeTo) ? (l.freeFrom ===
 const addDays = (d, n) => { const x = new Date(d); x.setDate(x.getDate() + n); return x; };
 function weekendFrom(now, weeksOut) { const dow = now.getDay(); const sat = dow === 0 ? addDays(now, -1) : addDays(now, 6 - dow); const s = addDays(sat, 7 * weeksOut); return { freeFrom: localYmd(dow === 0 && !weeksOut ? now : s), freeTo: localYmd(addDays(s, 1)) }; }
 
-export default function MyPartnerAreas({ uid, listings, listingsError, prefill, discoverable, onOpenPrivacy, onClose, notify, homeStateId, suggestIds }) {
+export default function MyPartnerAreas({ uid, listings, listingsError, prefill, discoverable, onOpenPrivacy, onClose, notify, suggestIds }) {
   const [draft, setDraft] = useState(null); // {areaId,name,areaType,parentName, disciplines[], freeFrom, freeTo, note, pick}
   const [q, setQ] = useState("");
-  const [rootId, setRootId] = useState(homeStateId || "");
   const [busy, setBusy] = useState(false);
-  const statesQ = useStates();
-  const states = (statesQ.data || []).filter((s) => s && s.id);
-  // The climber's home state, so the search box works the moment the screen opens.
-  const homePaths = useMyHomeStatePaths();
-  const homeId = homeStateId || ((states.find((s) => homePaths.includes(s.path)) || {}).id) || "";
-  useEffect(() => { if (!rootId && homeId) setRootId(homeId); }, [homeId]); // eslint-disable-line react-hooks/exhaustive-deps -- seed the root once from home; reading rootId would re-seed it after the climber clears it
-  const searchQ = useAreaSearch(USE_DB && rootId ? rootId : null, q, 30);
-  const hits = (searchQ.data || []).filter((a) => a && a.id);
+  // The whole catalog, every state: the same search (and spelling rules) as Add a climb's area picker.
+  const searchQ = useCatalogAreaSearch(USE_DB ? q : "", HIT_LIM);
+  const hits = ((searchQ.data && searchQ.data.rows) || []).filter((a) => a && a.id);
+  const hitTotal = (searchQ.data && searchQ.data.total) || 0;
+  const qOk = q.trim().length >= 2;
   const listed = useMemo(() => new Set((listings || []).map((l) => l.areaId)), [listings]);
   // Suggestions: where the climber's own logged/saved crag climbs and saved areas sit. A wall is too
   // fine a place to find a partner at, so it is offered as its crag.
@@ -94,7 +95,6 @@ export default function MyPartnerAreas({ uid, listings, listingsError, prefill, 
   const listingsN = (listings || []).length;
   const editing = draft && listed.has(draft.areaId);
   const title = draft ? (editing ? "Edit listing" : "List me here") : "Listed areas";
-  const rootName = (states.find((s) => s.id === rootId) || {}).name || "";
   return createPortal(<div onKeyDown={(e) => { if (e.key === "Escape") { if (draft) setDraft(null); else onClose(); } }} tabIndex={-1} role="dialog" aria-label="My listed areas" aria-modal="true" style={{ position: "fixed", inset: 0, background: C.bg, zIndex: 1200, overflowY: "auto", overscrollBehavior: "contain", maxWidth: 520, margin: "0 auto", boxSizing: "border-box" }}>
     <div style={{ minHeight: "100%" }}>
       <div style={{ position: "sticky", top: 0, background: C.surface, borderBottom: "1px solid " + C.border, padding: "calc(env(safe-area-inset-top) + 10px) 16px 10px", display: "flex", alignItems: "center", gap: 10, zIndex: 2 }}>
@@ -128,15 +128,10 @@ export default function MyPartnerAreas({ uid, listings, listingsError, prefill, 
         </div> : <div>
           <div style={{ fontSize: 13, color: C.textSub, lineHeight: 1.5, marginBottom: 14 }}>List the crags, canyons and ranges you climb. Climbers looking for a partner there will find you, and you’ll see who climbs where you do.</div>
           <div style={{ position: "relative", marginBottom: 8 }}>
-            <input ref={searchRef} type="search" value={q} onChange={(e) => setQ(e.target.value)} placeholder={rootId ? "Add an area — search " + (rootName || "a state") : "Pick a state to search"} disabled={!rootId} aria-label="Search for an area to add" style={{ ...field, paddingLeft: 36 }} />
+            <input ref={searchRef} type="search" value={q} onChange={(e) => setQ(e.target.value)} placeholder="Search any crag, canyon, range or state" aria-label="Search for an area to add" style={{ ...field, paddingLeft: 36 }} />
             <span aria-hidden="true" style={{ position: "absolute", left: 11, top: "50%", transform: "translateY(-50%)", display: "flex", pointerEvents: "none" }}><ActionIcon name="search" color={C.textMuted} size={17} /></span>
           </div>
-          <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 12 }}>
-            <span style={{ fontSize: 12, color: C.textMuted }}>Searching in</span>
-            <select aria-label="State to search" value={rootId} onChange={(e) => { setRootId(e.target.value); }} style={{ ...field, width: "auto", flex: 1, padding: "7px 10px", fontSize: 13 }}><option value="">Pick a state…</option>{states.map((s) => <option key={s.id} value={s.id}>{s.name}</option>)}</select>
-          </div>
-          {statesQ.isError ? <div style={{ fontSize: 12, color: C.amber, marginBottom: 8 }}>Couldn’t load the list of states.</div> : null}
-          {q.trim() && rootId ? <div style={{ marginBottom: 16 }}>{searchQ.isError ? <div style={{ fontSize: 12, color: C.amber }}>Couldn’t search areas right now.</div> : searchQ.isPending && !hits.length ? <div style={{ fontSize: 12, color: C.textMuted }}>Searching…</div> : !hits.length ? <div style={{ fontSize: 12, color: C.textMuted }}>That name didn’t match a crag, canyon or range in {rootName || "this state"} — try another spelling or state.</div> : hits.slice(0, 30).map((a) => { const no = NO_LISTING.has(a.area_type); const already = listed.has(a.id); return <button key={a.id} disabled={no} onClick={() => startEdit(already ? (listings || []).find((l) => l.areaId === a.id) : { areaId: a.id, name: a.name, areaType: a.area_type, parentName: a.parent_name || null, disciplines: [] })} style={{ ...card, display: "flex", alignItems: "center", gap: 10, width: "100%", textAlign: "left", minHeight: 52, padding: "9px 12px", color: no ? C.textMuted : C.text, cursor: no ? "default" : "pointer", marginBottom: 6, opacity: no ? 0.6 : 1 }}><span style={{ flex: 1, minWidth: 0 }}><span style={{ display: "block", fontSize: 14, fontWeight: 700, overflowWrap: "anywhere" }}>{a.name}</span><span style={{ display: "block", fontSize: 12, color: C.textMuted, overflowWrap: "anywhere" }}>{[TYPE_LABEL[a.area_type] || a.area_type, a.parent_name, a.route_count ? a.route_count + " climb" + (a.route_count === 1 ? "" : "s") : ""].filter(Boolean).join(" · ")}</span></span><span style={{ fontSize: 12, fontWeight: 800, color: no ? C.textMuted : already ? C.green : C.blue, flexShrink: 0 }}>{no ? "Peak — matched by route" : already ? "Listed ✓" : "+ Add"}</span></button>; })}</div> : null}
+          {q.trim() ? <div style={{ marginBottom: 16 }}>{!qOk ? <div style={{ fontSize: 12, color: C.textMuted }}>Keep typing — at least two letters.</div> : searchQ.isError ? <div style={{ fontSize: 12, color: C.amber }}>Couldn’t search areas right now.</div> : searchQ.isPending && !hits.length ? <div style={{ fontSize: 12, color: C.textMuted }}>Searching…</div> : !hits.length ? <div style={{ fontSize: 12, color: C.textMuted, lineHeight: 1.5 }}>Nothing in the catalog is named “{q.trim()}”. Try part of the name (“smith” finds Smith Rock), or the full name instead of a nickname.</div> : <>{searchQ.data && searchQ.data.fuzzy ? <div style={{ fontSize: 12, color: C.textMuted, marginBottom: 6 }}>{"No exact match for “" + q.trim() + "” — closest names:"}</div> : null}{hits.map((a) => { const no = NO_LISTING.has(a.area_type); const already = listed.has(a.id); return <button key={a.id} disabled={no} onClick={() => startEdit(already ? (listings || []).find((l) => l.areaId === a.id) : { areaId: a.id, name: a.name, areaType: a.area_type, parentName: (a.trail && a.trail.length ? a.trail[a.trail.length - 1] : null), disciplines: [] })} style={{ ...card, display: "flex", alignItems: "center", gap: 10, width: "100%", textAlign: "left", minHeight: 52, padding: "9px 12px", color: no ? C.textMuted : C.text, cursor: no ? "default" : "pointer", marginBottom: 6, opacity: no ? 0.6 : 1 }}><span style={{ flex: 1, minWidth: 0 }}><span style={{ display: "block", fontSize: 14, fontWeight: 700, overflowWrap: "anywhere" }}>{a.name}</span><span style={{ display: "block", fontSize: 12, color: C.textMuted, overflowWrap: "anywhere" }}>{[TYPE_LABEL[a.area_type] || a.area_type, (a.trail || []).slice(-2).join(" › "), a.route_count ? a.route_count + " climb" + (a.route_count === 1 ? "" : "s") : ""].filter(Boolean).join(" · ")}</span></span><span style={{ fontSize: 12, fontWeight: 800, color: no ? C.textMuted : already ? C.green : C.blue, flexShrink: 0 }}>{no ? "Peak — matched by route" : already ? "Listed ✓" : "+ Add"}</span></button>; })}{hitTotal > hits.length ? <div style={{ fontSize: 12, color: C.textMuted, marginTop: 4 }}>{"Showing " + hits.length + " of " + hitTotal + " matches, closest names first — type more of the name to narrow."}</div> : null}</>}</div> : null}
           {!q.trim() && suggestions.length ? <div style={{ marginBottom: 16 }}>
             <SL>From your climbs</SL>
             <div style={{ display: "flex", gap: 7, flexWrap: "wrap" }}>{suggestions.map((s) => <button key={s.areaId} onClick={() => startEdit(s)} aria-label={"Add " + s.name} style={pill(false)}>{"+ " + s.name}</button>)}</div>

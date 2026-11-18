@@ -1,0 +1,2601 @@
+{
+ "ca_mount_corcoran_standard_route": {
+  "area": "ca_mount_corcoran",
+  "facts": [
+   {
+    "field": "dist_mi_oneway",
+    "value": 8,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list (one way, trailhead to summit, easiest route): 8 miles for Mount Corcoran"
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 7155,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list: 7155 ft gain trailhead to summit for Mount Corcoran"
+     }
+    ]
+   },
+   {
+    "field": "trailhead_elev_ft",
+    "value": 6560,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list: start elevation 6560 ft for Mount Corcoran"
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Granite View Drive",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list names the starting trail/trailhead for Mount Corcoran as Granite View Drive"
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "Class 2",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list gives Class 2 for Mount Corcoran (difficulty per Secor's easiest route)"
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Tuttle Creek: use trail south from above the stone cabin, log crossing near 9500 ft, boulder hopping on the south slope",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/archives/sps00583.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS 1993 report: Tuttle Creek trailhead off Granite View Dr, use trail past a stone cabin, stream crossing about 9500 ft"
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Forested bench at about 10,600 ft in Tuttle Creek with a small stream",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/archives/sps00583.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS report camped on a partly forested bench about 10,600 ft with a small stream"
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Snow-free chute left of the big snow chute to the notch north of the summit, then a short chute south to the top",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/archives/sps00583.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS report: chute to the notch just north of Corcoran, drop a little on the far side, short chute south to the summit"
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Loose rock in the upper chute",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/archives/sps00583.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS report: upper chute needed care not to dislodge loosely bound rocks"
+     }
+    ]
+   }
+  ],
+  "note": "SPS list figures are one way, single-peak, via the easiest route in Secor (per the list intro https://sierrapeaks.org/SPS%20peaks%20with%20mileage/Intro_SPS_list_with_mileage.docx). Route steps from one 1993 SPS trip report (same publisher as the SPS list); permit details there are dated and not used. The trip is single-source for route steps."
+ },
+ "ca_mount_cotter_standard_route": {
+  "area": "ca_mount_cotter",
+  "facts": [
+   {
+    "field": "dist_mi_oneway",
+    "value": 16.2,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list (one way, trailhead to summit, easiest route): 16.2 miles for Mount Cotter"
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 6255,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list: 6255 ft gain trailhead to summit for Mount Cotter"
+     }
+    ]
+   },
+   {
+    "field": "approach_loss_ft",
+    "value": 2730,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list: 2730 ft of loss on the way in to Mount Cotter"
+     }
+    ]
+   },
+   {
+    "field": "trailhead_elev_ft",
+    "value": 9190,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list: start elevation 9190 ft for Mount Cotter"
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Kearsarge Pass Trail",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list names the starting trail/trailhead for Mount Cotter as Kearsarge Pass Trail"
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "Class 2",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list gives Class 2 for Mount Cotter (difficulty per Secor's easiest route)"
+     }
+    ]
+   }
+  ],
+  "note": "SPS list figures are one way, single-peak, via the easiest route in Secor (per the list intro https://sierrapeaks.org/SPS%20peaks%20with%20mileage/Intro_SPS_list_with_mileage.docx). Also opened Bob Burd cotter_1 and themtsarecalling.com/cotter/ (both multi-peak trips; figures not used)."
+ },
+ "ca_mount_dana_2_standard_route": {
+  "area": "ca_mount_dana_2",
+  "facts": [
+   {
+    "field": "dist_mi_oneway",
+    "value": 3.1,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list (one way, trailhead to summit, easiest route): 3.1 miles for Mount Dana"
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 3440,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list: 3440 ft gain trailhead to summit for Mount Dana"
+     }
+    ]
+   },
+   {
+    "field": "approach_loss_ft",
+    "value": 325,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list: 325 ft of loss on the way in to Mount Dana"
+     }
+    ]
+   },
+   {
+    "field": "trailhead_elev_ft",
+    "value": 9943,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list: start elevation 9943 ft for Mount Dana"
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Tioga Pass",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list names the starting trail/trailhead for Mount Dana as Tioga Pass"
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "Class 1",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list gives Class 1 for Mount Dana (difficulty per Secor's easiest route)"
+     }
+    ]
+   }
+  ],
+  "note": "SPS list figures are one way, single-peak, via the easiest route in Secor (per the list intro https://sierrapeaks.org/SPS%20peaks%20with%20mileage/Intro_SPS_list_with_mileage.docx). Also opened Bob Burd dana_1 (Dana with Gibbs in one day, so figures not used)."
+ },
+ "ca_mount_davis_southeast_slopes_from_north_glacier_pass": {
+  "area": "ca_mount_davis",
+  "facts": [
+   {
+    "field": "trailhead",
+    "value": "Rush Creek",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://themtsarecalling.com/davis/",
+      "retrieved_at": "2026-11-14",
+      "fact": "The Mountains Are Calling: trailhead Rush Creek, 2-day backpack, Class 2-3"
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 30.4,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://themtsarecalling.com/davis/",
+      "retrieved_at": "2026-11-14",
+      "fact": "The Mountains Are Calling: roundtrip mileage 30.4 from Rush Creek"
+     }
+    ]
+   },
+   {
+    "field": "trip_gain_ft",
+    "value": 8000,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://themtsarecalling.com/davis/",
+      "retrieved_at": "2026-11-14",
+      "fact": "The Mountains Are Calling: elevation gain about 8,000 ft for the trip"
+     }
+    ]
+   },
+   {
+    "field": "trip_days",
+    "value": 2,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://themtsarecalling.com/davis/",
+      "retrieved_at": "2026-11-14",
+      "fact": "The Mountains Are Calling: total time 2 days (backpack)"
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Rush Creek trail to Thousand Island Lake, use trail along the lake to the base of North Glacier Pass",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://themtsarecalling.com/davis/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Use trail along Thousand Island Lake to the base of North Glacier Pass, about 45 minutes from camp"
+     }
+    ]
+   },
+   {
+    "field": "water",
+    "value": "Agnew Lake level can be low; refill at Crest Creek near the Gem Lakes junction",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://themtsarecalling.com/davis/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Planned water at Agnew Lake was low; walked another mile to Crest Creek and the Gem junction"
+     }
+    ]
+   }
+  ],
+  "note": "SPS mileage list row \"Mount Davis\": start 8325 ft, 11.4 mi one way, Class 2, gain 5100 ft, loss 1120 ft, trail \"Pacific Crest Trail\". Not recorded as facts: the list uses the peak's easiest Secor route and does not name this route, so the figures cannot be tied to it. One trip report (2017); mileage may include a detour mentioned in the report. SPS list row starts on the Pacific Crest Trail (8325 ft), so the two are different approaches and were not compared."
+ },
+ "ca_mount_eisen_southeast_ridge_from_black_rock_pass": {
+  "area": "ca_mount_eisen",
+  "facts": [
+   {
+    "field": "overview",
+    "value": "On the Great Western Divide north of Black Rock Pass",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.snwburd.com/bob/trip_reports/eisen_1.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Bob Burd 2007: Eisen and Lippincott lie on the Great Western Divide north of Black Rock Pass"
+     }
+    ]
+   }
+  ],
+  "note": "SPS mileage list row \"Mount Eisen\": start 7810 ft, 16.5 mi one way, Class 2, gain 6750 ft, loss 2400 ft, trail \"Sawtooth Pass Trail\". Not recorded as facts: the list uses the peak's easiest Secor route and does not name this route, so the figures cannot be tied to it. Bob Burd trip combined Eisen with Lippincott, so its figures are not used. Opened sps2022.com/post/eisen/ (photo captions only)."
+ },
+ "ca_mount_elwell_mt_elwell_trail": {
+  "area": "ca_mount_elwell",
+  "facts": [
+   {
+    "field": "dist_mi_oneway",
+    "value": 3.4,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list (one way, trailhead to summit, easiest route): 3.4 miles for Mount Elwell"
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 2080,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list: 2080 ft gain trailhead to summit for Mount Elwell"
+     },
+     {
+      "url": "https://www.wildernessportal.com/trails/mount-elwell-peak-trail",
+      "retrieved_at": "2026-11-14",
+      "fact": "Wilderness Portal: from Lakes Basin Campground, typical round trip near 6 miles and about 1,900 ft of gain"
+     }
+    ]
+   },
+   {
+    "field": "approach_loss_ft",
+    "value": 820,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list: 820 ft of loss on the way in to Mount Elwell"
+     }
+    ]
+   },
+   {
+    "field": "trailhead_elev_ft",
+    "value": 6560,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list: start elevation 6560 ft for Mount Elwell"
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Lake Basin campground",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list names the starting trail/trailhead for Mount Elwell as Lake Basin campground"
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "Class 1",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list gives Class 1 for Mount Elwell (difficulty per Secor's easiest route)"
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 6,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wildernessportal.com/trails/mount-elwell-peak-trail",
+      "retrieved_at": "2026-11-14",
+      "fact": "Wilderness Portal: out-and-back, 6 miles, trailheads at Lakes Basin Campground and the Gray Eagle Lodge side"
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "June-October",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.visitplumas.org/get-outside/hiking/mt-elwell-and-long-lake-loop/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Visit Plumas: best season to hike the Mt. Elwell and Long Lake loop is June to October"
+     }
+    ]
+   },
+   {
+    "field": "loop_option",
+    "value": "Mt. Elwell and Long Lake loop, 8 miles, Lakes Basin Recreation Area",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.visitplumas.org/get-outside/hiking/mt-elwell-and-long-lake-loop/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Visit Plumas: 8-mile loop past Long Lake up toward Mount Elwell in the Lakes Basin Recreation Area"
+     }
+    ]
+   }
+  ],
+  "note": "SPS list figures are one way, single-peak, via the easiest route in Secor (per the list intro https://sierrapeaks.org/SPS%20peaks%20with%20mileage/Intro_SPS_list_with_mileage.docx). Gain agree-2: SPS 2080 ft one way vs Wilderness Portal about 1,900 ft (within 10%), both from Lakes Basin Campground. Round-trip 6 mi not compared with SPS one-way 3.4 mi (would need halving)."
+ },
+ "ca_mount_ericsson_west_ridge_from_lucys_foot_pass": {
+  "area": "ca_mount_ericsson",
+  "skip_reason": "SPS mileage list row \"Mount Ericsson\": start 5035 ft, 17.5 mi one way, Class 2, gain 8150 ft, loss 200 ft, trail \"Roads end to Bubbs Creek Trail\". Not recorded as facts: the list uses the peak's easiest Secor route and does not name this route, so the figures cannot be tied to it. Only the SPS list was found for this peak; SummitPost returns 403."
+ },
+ "ca_mount_fiske_standard_route": {
+  "area": "ca_mount_fiske",
+  "facts": [
+   {
+    "field": "dist_mi_oneway",
+    "value": 11.5,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list (one way, trailhead to summit, easiest route): 11.5 miles for Mount Fiske"
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 5630,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list: 5630 ft gain trailhead to summit for Mount Fiske"
+     }
+    ]
+   },
+   {
+    "field": "approach_loss_ft",
+    "value": 1200,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list: 1200 ft of loss on the way in to Mount Fiske"
+     }
+    ]
+   },
+   {
+    "field": "trailhead_elev_ft",
+    "value": 9075,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list: start elevation 9075 ft for Mount Fiske"
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Sabrina Basin Trail",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list names the starting trail/trailhead for Mount Fiske as Sabrina Basin Trail"
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "Class 2",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list gives Class 2 for Mount Fiske (difficulty per Secor's easiest route)"
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "South Lake over Bishop Pass, down LeConte Canyon, up the John Muir Trail to Helen Lake",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climber.org/reports/2011/1876.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Climber.org 2011: hiked from South Lake along the JMT from LeConte Canyon toward Muir Pass to Helen Lake"
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Bench about 40 ft above the north shore of Helen Lake",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climber.org/reports/2011/1876.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Climber.org 2011: camped on a bench about 40 ft above Helen Lake on its north shore"
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "South face, easier than the southwest ridge",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climber.org/reports/2011/1876.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Climber.org 2011: climbed blocks on the southwest ridge and descended the much easier south face"
+     }
+    ]
+   }
+  ],
+  "note": "SPS list figures are one way, single-peak, via the easiest route in Secor (per the list intro https://sierrapeaks.org/SPS%20peaks%20with%20mileage/Intro_SPS_list_with_mileage.docx). Climber.org report names South Lake as trailhead and rates its route Class 3 (southwest ridge); SPS list starts at Sabrina Basin Trail (Class 2). Different approaches, not merged."
+ },
+ "ca_mount_florence_standard_route": {
+  "area": "ca_mount_florence",
+  "facts": [
+   {
+    "field": "dist_mi_oneway",
+    "value": 13.2,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list (one way, trailhead to summit, easiest route): 13.2 miles for Mount Florence"
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 5050,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list: 5050 ft gain trailhead to summit for Mount Florence"
+     }
+    ]
+   },
+   {
+    "field": "approach_loss_ft",
+    "value": 100,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list: 100 ft of loss on the way in to Mount Florence"
+     }
+    ]
+   },
+   {
+    "field": "trailhead_elev_ft",
+    "value": 8720,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list: start elevation 8720 ft for Mount Florence"
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "John Muir Trail",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list names the starting trail/trailhead for Mount Florence as John Muir Trail"
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "Class 2",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list gives Class 2 for Mount Florence (difficulty per Secor's easiest route)"
+     }
+    ]
+   }
+  ],
+  "note": "SPS list figures are one way, single-peak, via the easiest route in Secor (per the list intro https://sierrapeaks.org/SPS%20peaks%20with%20mileage/Intro_SPS_list_with_mileage.docx)."
+ },
+ "ca_mount_genevra_standard_route": {
+  "area": "ca_mount_genevra",
+  "facts": [
+   {
+    "field": "dist_mi_oneway",
+    "value": 20.3,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list (one way, trailhead to summit, easiest route): 20.3 miles for Mount Genevra"
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 9620,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list: 9620 ft gain trailhead to summit for Mount Genevra"
+     }
+    ]
+   },
+   {
+    "field": "approach_loss_ft",
+    "value": 1600,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list: 1600 ft of loss on the way in to Mount Genevra"
+     }
+    ]
+   },
+   {
+    "field": "trailhead_elev_ft",
+    "value": 5035,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list: start elevation 5035 ft for Mount Genevra"
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Roads end to Bubbs Creek Trail",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list names the starting trail/trailhead for Mount Genevra as Roads end to Bubbs Creek Trail"
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "Class 2",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list gives Class 2 for Mount Genevra (difficulty per Secor's easiest route)"
+     }
+    ]
+   }
+  ],
+  "note": "SPS list figures are one way, single-peak, via the easiest route in Secor (per the list intro https://sierrapeaks.org/SPS%20peaks%20with%20mileage/Intro_SPS_list_with_mileage.docx). Also opened Bob Burd genevra_1 (Genevra with Jordan in one trip; figures not used)."
+ },
+ "ca_mount_gibbs_standard_route": {
+  "area": "ca_mount_gibbs",
+  "facts": [
+   {
+    "field": "dist_mi_oneway",
+    "value": 3.5,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list (one way, trailhead to summit, easiest route): 3.5 miles for Mount Gibbs"
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 3195,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list: 3195 ft gain trailhead to summit for Mount Gibbs"
+     }
+    ]
+   },
+   {
+    "field": "approach_loss_ft",
+    "value": 110,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list: 110 ft of loss on the way in to Mount Gibbs"
+     }
+    ]
+   },
+   {
+    "field": "trailhead_elev_ft",
+    "value": 9689,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list: start elevation 9689 ft for Mount Gibbs"
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Mono Pass Trail",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list names the starting trail/trailhead for Mount Gibbs as Mono Pass Trail"
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "Class 1",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list gives Class 1 for Mount Gibbs (difficulty per Secor's easiest route)"
+     }
+    ]
+   }
+  ],
+  "note": "SPS list figures are one way, single-peak, via the easiest route in Secor (per the list intro https://sierrapeaks.org/SPS%20peaks%20with%20mileage/Intro_SPS_list_with_mileage.docx). Also opened Bob Burd dana_1 (Dana with Gibbs in one day, so figures not used)."
+ },
+ "ca_mount_goddard_standard_route": {
+  "area": "ca_mount_goddard",
+  "facts": [
+   {
+    "field": "dist_mi_oneway",
+    "value": 18.8,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list (one way, trailhead to summit, easiest route): 18.8 miles for MOUNT GODDARD"
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 7960,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list: 7960 ft gain trailhead to summit for MOUNT GODDARD"
+     }
+    ]
+   },
+   {
+    "field": "approach_loss_ft",
+    "value": 2200,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list: 2200 ft of loss on the way in to MOUNT GODDARD"
+     }
+    ]
+   },
+   {
+    "field": "trailhead_elev_ft",
+    "value": 7810,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list: start elevation 7810 ft for MOUNT GODDARD"
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Bishop Pass Trail",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list names the starting trail/trailhead for MOUNT GODDARD as Bishop Pass Trail"
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "Class 2",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list gives Class 2 for MOUNT GODDARD (difficulty per Secor's easiest route)"
+     }
+    ]
+   }
+  ],
+  "note": "SPS list figures are one way, single-peak, via the easiest route in Secor (per the list intro https://sierrapeaks.org/SPS%20peaks%20with%20mileage/Intro_SPS_list_with_mileage.docx). Also opened Bob Burd goddard_1 and climber.org 2005/1456 (day trip from Lake Sabrina via Haeckel Col, about 13 mi planned, Class 3) - a different approach from the SPS Bishop Pass row, so not merged."
+ },
+ "ca_mount_goethe_standard_route": {
+  "area": "ca_mount_goethe",
+  "facts": [
+   {
+    "field": "dist_mi_oneway",
+    "value": 9.6,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list (one way, trailhead to summit, easiest route): 9.6 miles for Mount Goethe"
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 6025,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list: 6025 ft gain trailhead to summit for Mount Goethe"
+     }
+    ]
+   },
+   {
+    "field": "approach_loss_ft",
+    "value": 2020,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list: 2020 ft of loss on the way in to Mount Goethe"
+     }
+    ]
+   },
+   {
+    "field": "trailhead_elev_ft",
+    "value": 9260,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list: start elevation 9260 ft for Mount Goethe"
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Lamark Lakes Trail",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list names the starting trail/trailhead for Mount Goethe as Lamark Lakes Trail"
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "Class 1",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list gives Class 1 for Mount Goethe (difficulty per Secor's easiest route)"
+     }
+    ]
+   },
+   {
+    "field": "itinerary",
+    "value": "Day 1 North Lake to Lake 11623 in Darwin Canyon, 8 mi, 4000 ft gain; Day 2 to Goethe and back, under 8 mi, 2900 ft; Day 3 out, under 8 mi, 1600 ft",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.kathywing.com/CaliforniaHikesandScrambles/Sierra-Nevada-Hiking/Mount-Goethe-via-Lamarck-Col-and-Darwin-Canyon/i-xdJbHzv",
+      "retrieved_at": "2026-11-14",
+      "fact": "KathyWing 3-day backpack via Lamarck Col: day 1 8 mi/4000 ft, day 2 just under 8 mi/2900 ft, day 3 just under 8 mi/1600 ft"
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Lake 11623 in Darwin Canyon",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.kathywing.com/CaliforniaHikesandScrambles/Sierra-Nevada-Hiking/Mount-Goethe-via-Lamarck-Col-and-Darwin-Canyon/i-xdJbHzv",
+      "retrieved_at": "2026-11-14",
+      "fact": "KathyWing camped at Lake 11623 in Darwin Canyon"
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "North Lake over Lamarck Col into Darwin Canyon",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.kathywing.com/CaliforniaHikesandScrambles/Sierra-Nevada-Hiking/Mount-Goethe-via-Lamarck-Col-and-Darwin-Canyon/i-xdJbHzv",
+      "retrieved_at": "2026-11-14",
+      "fact": "KathyWing route: from North Lake over Lamarck Col and down into Darwin Canyon"
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Sandy slopes keep it Class 1; firmer ground nearby is Class 2",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.kathywing.com/CaliforniaHikesandScrambles/Sierra-Nevada-Hiking/Mount-Goethe-via-Lamarck-Col-and-Darwin-Canyon/i-xdJbHzv",
+      "retrieved_at": "2026-11-14",
+      "fact": "KathyWing: staying on sandy slopes keeps it Class 1; stepping up to Class 2 gives more solid ground"
+     }
+    ]
+   }
+  ],
+  "note": "SPS list figures are one way, single-peak, via the easiest route in Secor (per the list intro https://sierrapeaks.org/SPS%20peaks%20with%20mileage/Intro_SPS_list_with_mileage.docx)."
+ },
+ "ca_mount_guyot_guyot_pass_route": {
+  "area": "ca_mount_guyot",
+  "facts": [
+   {
+    "field": "dist_mi_oneway",
+    "value": 18.1,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list (one way, trailhead to summit, easiest route): 18.1 miles for Mount Guyot"
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 4760,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list: 4760 ft gain trailhead to summit for Mount Guyot"
+     }
+    ]
+   },
+   {
+    "field": "approach_loss_ft",
+    "value": 2400,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list: 2400 ft of loss on the way in to Mount Guyot"
+     }
+    ]
+   },
+   {
+    "field": "trailhead_elev_ft",
+    "value": 9940,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list: start elevation 9940 ft for Mount Guyot"
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Cottonwood Pass Trail",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list names the starting trail/trailhead for Mount Guyot as Cottonwood Pass Trail"
+     },
+     {
+      "url": "https://www.snwburd.com/bob/trip_reports/guyot_1.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Bob Burd 2007: met at the Cottonwood Pass trailhead and went over Cottonwood Pass toward Guyot Pass"
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "Class 1",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list gives Class 1 for Mount Guyot (difficulty per Secor's easiest route)"
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Over Cottonwood Pass, losing elevation, up the trail to Guyot Pass (pine-tree carving), then southwest up the northeast ridge",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.snwburd.com/bob/trip_reports/guyot_1.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Bob Burd: Guyot Pass is marked by a carving on a pine; from there southwest up the Northeast Ridge to the summit"
+     }
+    ]
+   },
+   {
+    "field": "grade_trip_report",
+    "value": "Class 2",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.snwburd.com/bob/trip_reports/guyot_1.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Bob Burd: an easy Class 2 climb up the Northeast Ridge, some Class 3 near the summit ridge if sought"
+     }
+    ]
+   }
+  ],
+  "note": "SPS list figures are one way, single-peak, via the easiest route in Secor (per the list intro https://sierrapeaks.org/SPS%20peaks%20with%20mileage/Intro_SPS_list_with_mileage.docx). Grade conflict: SPS list Class 1, Bob Burd easy Class 2, our record Class 1. Trailhead agree-2 (Cottonwood Pass)."
+ },
+ "ca_mount_hale_standard_route": {
+  "area": "ca_mount_hale",
+  "facts": [
+   {
+    "field": "dist_mi_oneway",
+    "value": 10.7,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list (one way, trailhead to summit, easiest route): 10.7 miles for Mount Hale"
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 6945,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list: 6945 ft gain trailhead to summit for Mount Hale"
+     }
+    ]
+   },
+   {
+    "field": "approach_loss_ft",
+    "value": 1750,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list: 1750 ft of loss on the way in to Mount Hale"
+     }
+    ]
+   },
+   {
+    "field": "trailhead_elev_ft",
+    "value": 8300,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list: start elevation 8300 ft for Mount Hale"
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Mount Whitney Trail",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list names the starting trail/trailhead for Mount Hale as Mount Whitney Trail"
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "Class 1",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list gives Class 1 for Mount Hale (difficulty per Secor's easiest route)"
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Whitney Portal over Trail Crest to camp above Guitar Lake, then day hike to Hale",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.kathywing.com/CaliforniaHikesandScrambles/Sierra-Nevada-Hiking/Mount-Young-Mount-Hale/i-4Nr2PgX",
+      "retrieved_at": "2026-11-14",
+      "fact": "KathyWing: entered at Whitney Portal, over Trail Crest, camped above Guitar Lake, day-hiked to Hale and Young"
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Above Guitar Lake",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.kathywing.com/CaliforniaHikesandScrambles/Sierra-Nevada-Hiking/Mount-Young-Mount-Hale/i-4Nr2PgX",
+      "retrieved_at": "2026-11-14",
+      "fact": "KathyWing camped above Guitar Lake for Hale and Young"
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Wilderness permit to enter at Whitney Portal",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.kathywing.com/CaliforniaHikesandScrambles/Sierra-Nevada-Hiking/Mount-Young-Mount-Hale/i-4Nr2PgX",
+      "retrieved_at": "2026-11-14",
+      "fact": "KathyWing picked up a permit to enter at Whitney Portal for the trip"
+     }
+    ]
+   }
+  ],
+  "note": "SPS list figures are one way, single-peak, via the easiest route in Secor (per the list intro https://sierrapeaks.org/SPS%20peaks%20with%20mileage/Intro_SPS_list_with_mileage.docx). KathyWing trip figures (31.5 mi, 11,600 ft) cover Hale, Young and Whitney together, so not used. Trailhead agrees with SPS list (Mount Whitney Trail, start 8300 ft) but different wording, kept single-source."
+ },
+ "ca_mount_henry_west_ridge": {
+  "area": "ca_mount_henry",
+  "facts": [
+   {
+    "field": "trailhead",
+    "value": "Maxson Trailhead",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://themtsarecalling.com/henry/",
+      "retrieved_at": "2026-11-14",
+      "fact": "The Mountains Are Calling: trailhead Maxson, pit toilets"
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 30.6,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://themtsarecalling.com/henry/",
+      "retrieved_at": "2026-11-14",
+      "fact": "The Mountains Are Calling: distance 30.6 miles"
+     }
+    ]
+   },
+   {
+    "field": "trip_gain_ft",
+    "value": 6300,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://themtsarecalling.com/henry/",
+      "retrieved_at": "2026-11-14",
+      "fact": "The Mountains Are Calling: elevation gain 6,300 ft"
+     }
+    ]
+   },
+   {
+    "field": "car_to_car_hours",
+    "value": "13:20",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://themtsarecalling.com/henry/",
+      "retrieved_at": "2026-11-14",
+      "fact": "The Mountains Are Calling: total time 13:20"
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Ridge between the Turf Lakes and Indian Lakes drainages up to the west ridge, solid slab",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://themtsarecalling.com/henry/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Followed the ridgeline splitting the Turf Lakes and Indian Lakes drainages up to the west ridge over solid slab"
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Lower Indian Lake outlet runs swiftly in spring melt",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://themtsarecalling.com/henry/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Spring snowmelt had the outlet of Lower Indian Lake running swiftly"
+     }
+    ]
+   }
+  ],
+  "note": "SPS mileage list row \"Mount Henry\": start 8200 ft, 20 mi one way, Class 2, gain 4715 ft, loss 700 ft, trail \"Blackcap Basin Trail\". Not recorded as facts: the list uses the peak's easiest Secor route and does not name this route, so the figures cannot be tied to it. Trip report rates its crux Class 3 (our grade Class 2). SPS list starts on Blackcap Basin Trail; not compared."
+ },
+ "ca_mount_hilgard_standard_route": {
+  "area": "ca_mount_hilgard",
+  "facts": [
+   {
+    "field": "dist_mi_oneway",
+    "value": 13.7,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list (one way, trailhead to summit, easiest route): 13.7 miles for Mount Hilgard"
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 7760,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list: 7760 ft gain trailhead to summit for Mount Hilgard"
+     }
+    ]
+   },
+   {
+    "field": "approach_loss_ft",
+    "value": 1800,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list: 1800 ft of loss on the way in to Mount Hilgard"
+     }
+    ]
+   },
+   {
+    "field": "trailhead_elev_ft",
+    "value": 7400,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list: start elevation 7400 ft for Mount Hilgard"
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Pine Creek Pass Trail",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list names the starting trail/trailhead for Mount Hilgard as Pine Creek Pass Trail"
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "Class 2",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list gives Class 2 for Mount Hilgard (difficulty per Secor's easiest route)"
+     }
+    ]
+   }
+  ],
+  "note": "SPS list figures are one way, single-peak, via the easiest route in Secor (per the list intro https://sierrapeaks.org/SPS%20peaks%20with%20mileage/Intro_SPS_list_with_mileage.docx). Also opened Bob Burd hilgard_1 (Hilgard with another summit; figures not used)."
+ },
+ "ca_mount_hooper_southwest_ridge_via_tombstone_pass": {
+  "area": "ca_mount_hooper",
+  "skip_reason": "SPS mileage list row \"Mount Hooper\": start 7360 ft, 18.2 mi one way, Class 2-4, gain 5790 ft, loss 800 ft, trail \"Blayney Meadows Trail\". Not recorded as facts: the list uses the peak's easiest Secor route and does not name this route, so the figures cannot be tied to it. Only the SPS list (Class 2-4, Blayney Meadows Trail) was found; SummitPost, the main route source, returns 403."
+ },
+ "ca_mount_huxley_standard_route": {
+  "area": "ca_mount_huxley",
+  "facts": [
+   {
+    "field": "dist_mi_oneway",
+    "value": 10.2,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list (one way, trailhead to summit, easiest route): 10.2 miles for Mount Huxley"
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 5875,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list: 5875 ft gain trailhead to summit for Mount Huxley"
+     }
+    ]
+   },
+   {
+    "field": "approach_loss_ft",
+    "value": 1850,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list: 1850 ft of loss on the way in to Mount Huxley"
+     }
+    ]
+   },
+   {
+    "field": "trailhead_elev_ft",
+    "value": 9060,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list: start elevation 9060 ft for Mount Huxley"
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Sabrina Basin Trail",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list names the starting trail/trailhead for Mount Huxley as Sabrina Basin Trail"
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "Class 3",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list gives Class 3 for Mount Huxley (difficulty per Secor's easiest route)"
+     }
+    ]
+   }
+  ],
+  "note": "SPS list figures are one way, single-peak, via the easiest route in Secor (per the list intro https://sierrapeaks.org/SPS%20peaks%20with%20mileage/Intro_SPS_list_with_mileage.docx). Also opened vulgarianramblers.org Huxley page: easiest route Class 3 (matches SPS, but both follow Secor, so not counted as independent)."
+ },
+ "ca_mount_izaak_walton_east_face": {
+  "area": "ca_mount_izaak_walton",
+  "facts": [
+   {
+    "field": "permit",
+    "value": "Permit from the Kaiser Pass ranger station",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climber.org/reports/2005/1431.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Climber.org 2005: picked up the permit at the Kaiser Pass ranger before the Lake Thomas A Edison ferry"
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Ferry across Lake Thomas A Edison, trail along Mono Creek, above Pocket Meadow take the unmaintained side trail to Mott Lake",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climber.org/reports/2005/1431.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Climber.org 2005: ferry across Lake Thomas A Edison, Mono Creek trail, side trail above Pocket Meadow to Mott Lake"
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Mott Lake",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climber.org/reports/2005/1431.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Climber.org 2005: camped at Mott Lake and climbed from there"
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "North Fork stream crossing is a ford",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climber.org/reports/2005/1431.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Climber.org 2005: the return started with a ford at the North Fork stream crossing"
+     }
+    ]
+   }
+  ],
+  "note": "SPS mileage list row \"Mount Izaak Walton\": start 7660 ft, 12.6 mi one way, Class 2, gain 5215 ft, loss 800 ft, trail \"Mono Creek Trail\". Not recorded as facts: the list uses the peak's easiest Secor route and does not name this route, so the figures cannot be tied to it. The 2005 party climbed the south side (Class 2), not the East Face, so summit-route facts and its day figures are not used. SPS list starts on Mono Creek Trail, consistent with this approach."
+ },
+ "ca_mount_jordan_standard_route": {
+  "area": "ca_mount_jordan",
+  "facts": [
+   {
+    "field": "dist_mi_oneway",
+    "value": 20.8,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list (one way, trailhead to summit, easiest route): 20.8 miles for Mount Jordan"
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 9885,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list: 9885 ft gain trailhead to summit for Mount Jordan"
+     }
+    ]
+   },
+   {
+    "field": "approach_loss_ft",
+    "value": 1600,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list: 1600 ft of loss on the way in to Mount Jordan"
+     }
+    ]
+   },
+   {
+    "field": "trailhead_elev_ft",
+    "value": 5035,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list: start elevation 5035 ft for Mount Jordan"
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Granite Pass Trail",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list names the starting trail/trailhead for Mount Jordan as Granite Pass Trail"
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "Class 3-4",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list gives Class 3-4 for Mount Jordan (difficulty per Secor's easiest route)"
+     }
+    ]
+   }
+  ],
+  "note": "SPS list figures are one way, single-peak, via the easiest route in Secor (per the list intro https://sierrapeaks.org/SPS%20peaks%20with%20mileage/Intro_SPS_list_with_mileage.docx). Also opened Bob Burd genevra_1 (Genevra with Jordan; figures not used). Grade: SPS Class 3-4, our record Class 4."
+ },
+ "ca_mount_kaweah_standard_route": {
+  "area": "ca_mount_kaweah",
+  "facts": [
+   {
+    "field": "dist_mi_oneway",
+    "value": 25,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list (one way, trailhead to summit, easiest route): 25.0 miles for MOUNT KAWEAH"
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 10390,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list: 10390 ft gain trailhead to summit for MOUNT KAWEAH"
+     }
+    ]
+   },
+   {
+    "field": "approach_loss_ft",
+    "value": 4400,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list: 4400 ft of loss on the way in to MOUNT KAWEAH"
+     }
+    ]
+   },
+   {
+    "field": "trailhead_elev_ft",
+    "value": 7810,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list: start elevation 7810 ft for MOUNT KAWEAH"
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Sawtooth Pass Trail",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list names the starting trail/trailhead for MOUNT KAWEAH as Sawtooth Pass Trail"
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "Class 1",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list gives Class 1 for MOUNT KAWEAH (difficulty per Secor's easiest route)"
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Mineral King",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://themtsarecalling.com/kaweah/",
+      "retrieved_at": "2026-11-14",
+      "fact": "The Mountains Are Calling: trailhead Mineral King"
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 30.1,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://themtsarecalling.com/kaweah/",
+      "retrieved_at": "2026-11-14",
+      "fact": "The Mountains Are Calling: distance 30.1 miles"
+     }
+    ]
+   },
+   {
+    "field": "trip_gain_ft",
+    "value": 12140,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://themtsarecalling.com/kaweah/",
+      "retrieved_at": "2026-11-14",
+      "fact": "The Mountains Are Calling: elevation gain 12,140 ft"
+     }
+    ]
+   },
+   {
+    "field": "car_to_car_hours",
+    "value": "21:50",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://themtsarecalling.com/kaweah/",
+      "retrieved_at": "2026-11-14",
+      "fact": "The Mountains Are Calling: total time 21:50"
+     }
+    ]
+   }
+  ],
+  "note": "SPS list figures are one way, single-peak, via the easiest route in Secor (per the list intro https://sierrapeaks.org/SPS%20peaks%20with%20mileage/Intro_SPS_list_with_mileage.docx). Grade conflict: SPS list Class 1, trip report crux Class 3, our record Class 2. Trailhead agrees in substance (SPS: Sawtooth Pass Trail from 7810 ft, Mineral King) but worded differently."
+ },
+ "ca_mount_lamarck_standard_route": {
+  "area": "ca_mount_lamarck",
+  "facts": [
+   {
+    "field": "dist_mi_oneway",
+    "value": 5.6,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list (one way, trailhead to summit, easiest route): 5.6 miles for Mount Lamarck"
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 4155,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list: 4155 ft gain trailhead to summit for Mount Lamarck"
+     }
+    ]
+   },
+   {
+    "field": "trailhead_elev_ft",
+    "value": 9260,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list: start elevation 9260 ft for Mount Lamarck"
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Lamark Lakes Trail",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list names the starting trail/trailhead for Mount Lamarck as Lamark Lakes Trail"
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "Class 1",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list gives Class 1 for Mount Lamarck (difficulty per Secor's easiest route)"
+     }
+    ]
+   }
+  ],
+  "note": "SPS list figures are one way, single-peak, via the easiest route in Secor (per the list intro https://sierrapeaks.org/SPS%20peaks%20with%20mileage/Intro_SPS_list_with_mileage.docx). Also opened Bob Burd lamarck_1 (1994 trip crossing Lamarck Col into Evolution; no summit-route figures)."
+ },
+ "ca_mount_leconte_east_slope": {
+  "area": "ca_mount_leconte",
+  "skip_reason": "SPS mileage list row \"Mount LeConte\": start 6560 ft, 8.1 mi one way, Class 3, gain 7270 ft, trail \"Granite View Drive\". Not recorded as facts: the list uses the peak's easiest Secor route and does not name this route, so the figures cannot be tied to it. Also opened sierrapeaks.org/archives/sps00583.htm: the 1993 party reached LeConte by traversing from the Corcoran notch on the west side (high Class 3), not the East Slope."
+ },
+ "ca_mount_lola_lola_trail": {
+  "area": "ca_mount_lola",
+  "facts": [
+   {
+    "field": "dist_mi_oneway",
+    "value": 4.8,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list (one way, trailhead to summit, easiest route): 4.8 miles for Mount Lola"
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 1405,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list: 1405 ft gain trailhead to summit for Mount Lola"
+     }
+    ]
+   },
+   {
+    "field": "approach_loss_ft",
+    "value": 255,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list: 255 ft of loss on the way in to Mount Lola"
+     }
+    ]
+   },
+   {
+    "field": "trailhead_elev_ft",
+    "value": 8000,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list: start elevation 8000 ft for Mount Lola"
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Mt Lola Trail",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list names the starting trail/trailhead for Mount Lola as Mt Lola Trail"
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "Class 1",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list gives Class 1 for Mount Lola (difficulty per Secor's easiest route)"
+     }
+    ]
+   },
+   {
+    "field": "trail_length_mi_oneway",
+    "value": 9.5,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r05/tahoe/recreation/trails/mt-lola-trail",
+      "retrieved_at": "2026-11-14",
+      "fact": "USFS: Mt. Lola Trail 14E08 is 9.5 miles one way, elevation 6640 to 9143 ft, rated difficult"
+     }
+    ]
+   },
+   {
+    "field": "trail_number",
+    "value": "14E08",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r05/tahoe/recreation/trails/mt-lola-trail",
+      "retrieved_at": "2026-11-14",
+      "fact": "USFS lists the Mt. Lola Trail as trail number 14E08"
+     }
+    ]
+   },
+   {
+    "field": "emergency",
+    "value": "Sierraville Ranger District, Tahoe NF: 530-994-3401",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r05/tahoe/recreation/trails/mt-lola-trail",
+      "retrieved_at": "2026-11-14",
+      "fact": "USFS office contact for the trail is Sierraville Ranger District, phone 530-994-3401"
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 10.4,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://truckeetrails.org/trails/mt-lola/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Truckee Trails Foundation: 10.4-mile out-and-back hike to the summit"
+     }
+    ]
+   },
+   {
+    "field": "gain_ft_hike",
+    "value": 2300,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://truckeetrails.org/trails/mt-lola/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Truckee Trails Foundation: about 2300 ft elevation gain, moderately difficult"
+     }
+    ]
+   },
+   {
+    "field": "road",
+    "value": "Hwy 89 north from Truckee 14.5 mi; USFS Rd 07 1.5 mi; Rd 07-10 0.6 mi; right on unsigned Henness Pass Rd 3.1 mi to road signed Mt Lola Trail",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://truckeetrails.org/trails/mt-lola/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Directions: Hwy 89 N 14.5 mi, USFS Road 07 for 1.5 mi, 07-10 for 0.6 mi, Henness Pass Road 3.1 mi to signed Mt Lola Trail road"
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "Tallest peak in the Sierra north of Interstate 80; trail passes Cold Stream meadow",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://truckeetrails.org/trails/mt-lola/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Described as the tallest peak in the Sierra north of I-80, with wildflowers at Cold Stream meadow on the way"
+     }
+    ]
+   }
+  ],
+  "note": "SPS list figures are one way, single-peak, via the easiest route in Secor (per the list intro https://sierrapeaks.org/SPS%20peaks%20with%20mileage/Intro_SPS_list_with_mileage.docx). Sources disagree on the approach: SPS list says 4.8 mi / 1405 ft gain from 8000 ft; Truckee Trails says 10.4 mi round trip / 2300 ft; USFS says the trail is 9.5 mi one way from 6640 ft. Different trailhead elevations suggest different starts; none merged."
+ },
+ "ca_mount_maclure_standard_route": {
+  "area": "ca_mount_maclure",
+  "facts": [
+   {
+    "field": "dist_mi_oneway",
+    "value": 13.8,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list (one way, trailhead to summit, easiest route): 13.8 miles for Mount MacClure"
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 4280,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list: 4280 ft gain trailhead to summit for Mount MacClure"
+     }
+    ]
+   },
+   {
+    "field": "approach_loss_ft",
+    "value": 120,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list: 120 ft of loss on the way in to Mount MacClure"
+     }
+    ]
+   },
+   {
+    "field": "trailhead_elev_ft",
+    "value": 8720,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list: start elevation 8720 ft for Mount MacClure"
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "John Muir Trail",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list names the starting trail/trailhead for Mount MacClure as John Muir Trail"
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "Class 3",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list gives Class 3 for Mount MacClure (difficulty per Secor's easiest route)"
+     }
+    ]
+   }
+  ],
+  "note": "SPS list figures are one way, single-peak, via the easiest route in Secor (per the list intro https://sierrapeaks.org/SPS%20peaks%20with%20mileage/Intro_SPS_list_with_mileage.docx)."
+ },
+ "ca_mount_mallory_east_slopes_from_meysan_lake": {
+  "area": "ca_mount_mallory",
+  "facts": [
+   {
+    "field": "dist_mi_oneway",
+    "value": 7,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list (one way, trailhead to summit, easiest route): 7.0 miles for Mount Mallory"
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 5985,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list: 5985 ft gain trailhead to summit for Mount Mallory"
+     },
+     {
+      "url": "https://www.kathywing.com/CaliforniaHikesandScrambles/Sierra-Nevada-Hiking/Mount-Mallory-13845-9608/i-47VQ9kK",
+      "retrieved_at": "2026-11-14",
+      "fact": "KathyWing: day hike on Meysan Lake Trail to Meysan Lake then cross-country to Mallory, about 14 mi round trip, 6500 ft gain"
+     }
+    ]
+   },
+   {
+    "field": "trailhead_elev_ft",
+    "value": 7860,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list: start elevation 7860 ft for Mount Mallory"
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Meysan Lake Trail",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list names the starting trail/trailhead for Mount Mallory as Meysan Lake Trail"
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "Class 2",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list gives Class 2 for Mount Mallory (difficulty per Secor's easiest route)"
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 14,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.kathywing.com/CaliforniaHikesandScrambles/Sierra-Nevada-Hiking/Mount-Mallory-13845-9608/i-47VQ9kK",
+      "retrieved_at": "2026-11-14",
+      "fact": "KathyWing: about 14 miles round trip via Meysan Lake"
+     }
+    ]
+   },
+   {
+    "field": "car_to_car_hours",
+    "value": 13.5,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.kathywing.com/CaliforniaHikesandScrambles/Sierra-Nevada-Hiking/Mount-Mallory-13845-9608/i-47VQ9kK",
+      "retrieved_at": "2026-11-14",
+      "fact": "KathyWing: 13.5-hour day, 8 hours up and 5.5 down"
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Meysan Lake Trail to Meysan Lake, then cross-country up the slope behind the lake",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.kathywing.com/CaliforniaHikesandScrambles/Sierra-Nevada-Hiking/Mount-Mallory-13845-9608/i-47VQ9kK",
+      "retrieved_at": "2026-11-14",
+      "fact": "KathyWing: trail to Meysan Lake, then cross-country up the slope behind the lake to Mallory"
+     }
+    ]
+   }
+  ],
+  "note": "SPS list figures are one way, single-peak, via the easiest route in Secor (per the list intro https://sierrapeaks.org/SPS%20peaks%20with%20mileage/Intro_SPS_list_with_mileage.docx). Gain agree-2: SPS 5985 ft one way vs KathyWing 6500 ft (within 10%). One trip report, 2008."
+ },
+ "ca_mount_mcadie_via_arc_pass": {
+  "area": "ca_mount_mcadie",
+  "facts": [
+   {
+    "field": "trailhead",
+    "value": "Whitney Portal",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climber.org/reports/2009/1715.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Climber.org 2009 McAdie report: trailhead Whitney Portal, Class 3"
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Just above Trailside Meadow",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climber.org/reports/2009/1715.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Climber.org 2009: camped two nights just above Trailside Meadow"
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "From Trailside Meadow past Consultation Lake to Arc Pass",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climber.org/reports/2009/1715.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Climber.org 2009: went from Trailside Meadow past Consultation Lake up to Arc Pass"
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Conventional route from Arc Pass traverses to the middle peak; Class 2-3 from the pass",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climber.org/reports/2009/1715.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Climber.org 2009: the middle-peak traverse is the conventional route from Arc Pass, a Class 2-3 route"
+     }
+    ]
+   }
+  ],
+  "note": "SPS mileage list row \"Mount McAdie\": start 8300 ft, 6.9 mi one way, Class 3, gain 5500 ft, trail \"Mount Whitney Trail\". Not recorded as facts: the list uses the peak's easiest Secor route and does not name this route, so the figures cannot be tied to it."
+ },
+ "ca_mount_mcduffie_standard_route": {
+  "area": "ca_mount_mcduffie",
+  "facts": [
+   {
+    "field": "dist_mi_oneway",
+    "value": 17,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list (one way, trailhead to summit, easiest route): 17 miles for Mount McDuffie"
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 8870,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list: 8870 ft gain trailhead to summit for Mount McDuffie"
+     }
+    ]
+   },
+   {
+    "field": "approach_loss_ft",
+    "value": 3400,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list: 3400 ft of loss on the way in to Mount McDuffie"
+     },
+     {
+      "url": "https://www.snwburd.com/bob/trip_reports/mcduffie_1.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Bob Burd 2007: dayhike from South Lake with a 3,500-ft descent from Bishop Pass into LeConte Canyon"
+     }
+    ]
+   },
+   {
+    "field": "trailhead_elev_ft",
+    "value": 7810,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list: start elevation 7810 ft for Mount McDuffie"
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Bishop Pass Trail",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list names the starting trail/trailhead for Mount McDuffie as Bishop Pass Trail"
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "Class 2",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list gives Class 2 for Mount McDuffie (difficulty per Secor's easiest route)"
+     }
+    ]
+   },
+   {
+    "field": "trailhead_name",
+    "value": "South Lake",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.snwburd.com/bob/trip_reports/mcduffie_1.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Bob Burd 2007: departed the South Lake trailhead at 2 a.m. for McDuffie"
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "South Lake over Bishop Pass, down into LeConte Canyon, then over 5,000 ft back up from the river to the summit",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.snwburd.com/bob/trip_reports/mcduffie_1.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Bob Burd: over 5,000 ft to regain from the river up to the summit after dropping from Bishop Pass"
+     }
+    ]
+   }
+  ],
+  "note": "SPS list figures are one way, single-peak, via the easiest route in Secor (per the list intro https://sierrapeaks.org/SPS%20peaks%20with%20mileage/Intro_SPS_list_with_mileage.docx). Approach loss agree-2: SPS 3400 ft vs Bob Burd 3,500 ft (within 10%)."
+ },
+ "ca_mount_mcgee_standard_route": {
+  "area": "ca_mount_mcgee",
+  "facts": [
+   {
+    "field": "dist_mi_oneway",
+    "value": 18.5,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list (one way, trailhead to summit, easiest route): 18.5 miles for Mount McGee"
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 7140,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list: 7140 ft gain trailhead to summit for Mount McGee"
+     }
+    ]
+   },
+   {
+    "field": "approach_loss_ft",
+    "value": 3450,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list: 3450 ft of loss on the way in to Mount McGee"
+     }
+    ]
+   },
+   {
+    "field": "trailhead_elev_ft",
+    "value": 9255,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list: start elevation 9255 ft for Mount McGee"
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Lamark Lakes Trail",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list names the starting trail/trailhead for Mount McGee as Lamark Lakes Trail"
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "Class 3",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list gives Class 3 for Mount McGee (difficulty per Secor's easiest route)"
+     }
+    ]
+   }
+  ],
+  "note": "SPS list figures are one way, single-peak, via the easiest route in Secor (per the list intro https://sierrapeaks.org/SPS%20peaks%20with%20mileage/Intro_SPS_list_with_mileage.docx)."
+ }
+}

@@ -242,7 +242,7 @@ const CHECKED = {
   helpOpen: 'the Help FAQ\'s "almost no route carries one yet" is static prose about the CATALOG, not a read of the climber\'s own data -- communityTracks is seed-only and has no column, so no query stands behind the sentence',
   aboutOpen: 'renders no such copy of its own -- it sits beside <Help> at the same render site, so the 3000-char window attributes Help\'s FAQ to it; see helpOpen',
 
-  legal: "LegalView is static copy; the certifications/skills/events lines come from GuideDashboard, which is seed-backed (DEMO_FILLERS)",
+  legal: "LegalView is static copy",
 
   /* SharedListView (0199) reads ONE list through useSharedList and branches on the query itself, not
      on a named xUnavailable flag: q.isError renders "Couldn't load this list…", a null result (RLS
@@ -345,7 +345,7 @@ for (const r of ungated) {
 if (!ungated.length) console.log("  (none)");
 console.log("\nREAD THE ATTRIBUTION, NOT THE COUNT. Components are collected from a 3000-char");
 console.log("window after the render site, so an overlay rendered NEXT TO others picks up their");
-console.log("copy as well as its own -- `dashOpen` listing Inbox is that, not a finding. The rows");
+console.log("copy as well as its own -- one listing a neighbour's component is that, not a finding. The rows");
 console.log("with ONE followed component are the clean ones. The count is an upper bound.");
 /* Count the rows that ARE gated, not "everything minus the unexamined". The old arithmetic folded
    the CHECKED rows into the gated total, so it printed "16 gated" above a list of three — and the

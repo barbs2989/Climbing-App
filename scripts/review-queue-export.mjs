@@ -23,6 +23,7 @@
 import fs from "fs";
 import crypto from "crypto";
 import { SUPABASE_URL, requireServiceKey, headers } from "./lib/supabase-env.mjs";
+import { stateFromPath } from "../lib/stateSections.js";
 
 const args = process.argv.slice(2);
 const opt = (k, d) => { const i = args.indexOf(k); return i >= 0 ? args[i + 1] : d; };
@@ -75,7 +76,8 @@ const routeIds = [...edits.map((e) => e.route_id), ...flags.map((f) => f.route_i
 const routes = await byIds("routes", "*", routeIds);
 const routeBy = Object.fromEntries(routes.map((r) => [r.id, r]));
 const areaIds = [...routes.map((r) => r.area_id), ...edits.filter((e) => e.area_id && !e.route_id).map((e) => e.area_id)];
-const areas = await byIds("areas", "id,name,state,area_type", areaIds);
+// `areas` has no state column: the state is the ltree path's second label (lib/stateSections.js).
+const areas = (await byIds("areas", "id,name,path,area_type", areaIds)).map((a) => ({ ...a, state: stateFromPath(a.path) }));
 const areaBy = Object.fromEntries(areas.map((a) => [a.id, a]));
 
 const routeCtx = (r) => r ? { name: r.name, grade: r.grade, discipline: r.discipline, area: (areaBy[r.area_id] || {}).name || r.area_id, state: (areaBy[r.area_id] || {}).state || String(r.id).split("_")[0] } : null;

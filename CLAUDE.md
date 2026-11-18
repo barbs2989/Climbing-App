@@ -54,6 +54,7 @@ npm run check:no-module-scope-core-reads # a component core imports BACK must no
 npm run check:bottom-panels # a fixed panel at the bottom must RESERVE the space it covers (in build)
 npm run check:hooks# React hooks-rules violations (runs in build + CI)
 npm run check:page-swipe # swiping a page's tabs on a phone (lib/pageSwipe.js): which tab a drag lands on, which touches it leaves to rows/sliders/maps/charts, every tab page still wired (in build)
+npm run check:fix-filter # the "you are here" dot on every map (lib/fixFilter.js): which readings count, the dot smooths jitter standing still but keeps up walking, a coarse first fix frames its ring instead of zooming in (in build)
 npm run check:dead-props # props passed or declared but never read (runs in build + CI)
 npm run check:boot # index.html's boot placeholder AND the Help tour still match the real nav
 npm run check:screen-lists # every guard walks EVERY tab the app has, and no tab it hasn't (in build)
@@ -346,7 +347,7 @@ Everything else — crews, messages, connections, vouches, logs, trip reports, a
     fixed then and this sentence was not, so a reader starting here would reintroduce it; section 4 of that guard now
     reads this bullet and fails on a foreign or missing id. Keep the list on ONE line — the check reads that line, and
     prose naming the absent id would fail on its own explanation.
-- `discover` — find partners, crews **or guides** (`partnersMode` is `"partners"` / `"crews"` / `"guides"`, whose controls read *Find partners* / *Join a crew* / *Hire a guide*). Only the first two are tested with `partnersMode===`; **`guides` is the else branch**, so grepping for the comparison finds two of three.
+- `discover` — find partners or crews (`partnersMode` is `"partners"` / `"crews"`, whose controls read *Find partners* / *Join a crew*). Only `"partners"` is tested with `partnersMode===`; crews is the else branch. The guide directory (*Hire a guide*, guide applications and the guide dashboard) was removed on 2026-11-14 (owner: "I don't want that anymore").
 - `crew` — your crews and direct/crew messaging (`crewView`). Friends and Requests are `crewView`s opened from the Menu's tiles; the tab's own view is crews only.
 - `groups` — the Groups screen, Facebook-style: For you · Your groups · Your activity · Discover · Events (`groupsTab`). **Not on the bottom bar**: NAV marks it `bar:false`, and it opens from the Menu's Groups tile. A group opens as the `openGroupId` overlay over it.
 - `logbook` — your objectives, completed climbs, trip reports.
@@ -365,7 +366,7 @@ Read it in three bands:
 
 ### Domain concepts to know
 
-- **Trust & safety** is a first-class theme: `trustScore`/`safetyScore`, vouches, `VERIF` verification states, `RISK_LEVELS`, `SAFETY_ESSENTIALS`/`WATCH` (per-discipline safety advice), and float plans on crews.
+- **Trust & safety** is a first-class theme: vouches, `VERIF` verification states, `RISK_LEVELS`, `SAFETY_ESSENTIALS`/`WATCH` (per-discipline safety advice), and float plans on crews.
 - **Crews** are trip parties around a `routeId` with members, proposed `dates`/`dayAcks`, and a "Ready" state computed by `datesAgreed`/`agreedDate` (everyone confirmed + a day everyone acked).
 - **Conditions consensus** is derived, not stored: `buildConsensus(route.activity)` weights reports by reporter trust and recency (`RECENT_DAYS`, `isRecent`) and extracts top condition tags, hazards (`HAZARD_TAGS`), and best months.
 

@@ -3,6 +3,7 @@ import { C, DLOCALE, uTemp, uElev, uWind, uSnowfall, uPrecip } from "../../Climb
 import { BOX, clockOf, floorQ, hrSpan } from "../../lib/alpineConditionsShared.js";
 import CardHead from "./CardHead.tsx";
 import type { daySummary } from "../../lib/alpineConditions.js";
+import { useEffect, useRef } from "react";
 import type { CSSProperties } from "react";
 
 /* HOUR BY HOUR for the selected day, at the forecast's own point and height (owner, 2026-10-08: "more of an
@@ -23,7 +24,10 @@ import type { CSSProperties } from "react";
    daily summit table lay them out: each row is the day's flag count, high / low, freezing level and gusts at the
    forecast's own height, plus new snow and the start. It adds NO judgement -- every number is the day's own
    daySummary, every count the flags the card already raised, and the start the same one the card's start box
-   shows (none past a one-day push or on a minimum estimate). Tapping a row opens that day in every section. */
+   shows (none past a one-day push or on a minimum estimate). Tapping a day opens it in every section.
+   SIDE BY SIDE (owner, 2026-11-14: "dont stack them on top of eachother day by day, have them scroll to the right"):
+   each day is a card in one row that scrolls sideways, as the Weather forecast's day tiles do. The scrollbar stays
+   visible so a mouse can reach day 7, and stepping the day from another section's ‹ › brings its card into view. */
 export interface DayByDayDay {
   date: string;
   start?: { at: number } | null;
@@ -49,10 +53,13 @@ export default function DayByDay<D extends DayByDayDay>({ days, di, pick, dayNam
   const lbl: CSSProperties = { display: "block", fontSize: 10.5, color: C.textMuted, fontWeight: 700 };
   // Values WRAP (a freezing level "8,200 ft–10,900 ft" breaks after its dash): at 390px a one-line clip cut it to "8,200 ft–1…" on every day.
   const val: CSSProperties = { display: "block", fontSize: 12.5, color: C.text, fontWeight: 700, lineHeight: 1.3, overflowWrap: "anywhere" };
+  const rowRef = useRef<HTMLDivElement | null>(null);
+  // Keep the selected card in view when the day is stepped from elsewhere; scrollLeft only, so the page never jumps.
+  useEffect(function () { const row = rowRef.current; const card = row && (row.children[di] as HTMLElement | undefined); if (!row || !card) return; const l = card.offsetLeft - row.offsetLeft, r = l + card.offsetWidth; if (l < row.scrollLeft) row.scrollLeft = Math.max(0, l - 14); else if (r > row.scrollLeft + row.clientWidth) row.scrollLeft = r - row.clientWidth + 14; }, [di]);
   const date = function (d: DayByDayDay) { return new Date(d.date + "T12:00:00Z").toLocaleDateString(DLOCALE, { month: "short", day: "numeric", timeZone: "UTC" }); };
   return <div style={BOX}>
     <CardHead style={{ marginBottom: 8 }}>DAY BY DAY</CardHead>
-    <div data-day-table="1" style={{ margin: "0 -14px -12px", borderTop: "1px solid " + C.border }}>
+    <div ref={rowRef} data-day-table="1" style={{ display: "flex", gap: 8, overflowX: "auto", margin: "0 -14px", padding: "0 14px 6px", scrollSnapType: "x proximity" }}>
     {days.map(function (d: D, i: number) {
       const on = i === di, w = nWarn(d), c = nCaution(d), s = d.sum;
       const flagWord = w + c === 0 ? "No flags" : [w ? w + " warning" + (w === 1 ? "" : "s") : null, c ? c + " caution" + (c === 1 ? "" : "s") : null].filter(Boolean).join(" · ");
@@ -64,7 +71,7 @@ export default function DayByDay<D extends DayByDayDay>({ days, di, pick, dayNam
       // The AMOUNT, its hours and its window, with the chance beneath -- never the chance alone (owner's note, 2026-10-28).
       const rain = s.precip == null ? "—" : s.precip === 0 ? "None" : uPrecip(s.precip);
       const rainSub = [s.precipHrs ? s.precipHrs + " h" + (s.precipFrom != null ? ", " + hrSpan(fc, s.precipFrom, s.precipTo) : "") : null, s.popMax ? "hourly chance up to " + Math.round(s.popMax) + "%" : null, s.snow ? "snow melted in" : null].filter(Boolean).join(" · ");
-      return <button key={d.date} onClick={function () { pick(i); }} aria-pressed={on} aria-label={dayName(d, i) + " " + date(d) + ", " + flagWord + ". High / low " + temp + ". Freezing level " + fl + ". " + (s.snow ? "Precipitation " : "Rain ") + rain + (rainSub ? ", " + rainSub : "") + ". Gusts " + gust + "." + (extra ? " " + extra + "." : "")} style={{ display: "block", width: "100%", textAlign: "left", padding: "11px 14px", margin: 0, border: "none", borderTop: i ? "1px solid " + C.border : "none", borderRadius: 0, background: on ? C.blueBg : "transparent", boxShadow: on ? "inset 3px 0 0 " + C.blue : "none", color: C.text, cursor: "pointer", font: "inherit" }}>
+      return <button key={d.date} onClick={function () { pick(i); }} aria-pressed={on} aria-label={dayName(d, i) + " " + date(d) + ", " + flagWord + ". High / low " + temp + ". Freezing level " + fl + ". " + (s.snow ? "Precipitation " : "Rain ") + rain + (rainSub ? ", " + rainSub : "") + ". Gusts " + gust + "." + (extra ? " " + extra + "." : "")} style={{ display: "flex", flexDirection: "column", justifyContent: "flex-start", flexShrink: 0, width: 220, textAlign: "left", padding: "10px 11px", margin: 0, border: "1px solid " + (on ? C.blue : C.border), borderRadius: 10, background: on ? C.blueBg : "transparent", boxShadow: on ? "inset 0 3px 0 " + C.blue : "none", color: C.text, cursor: "pointer", font: "inherit", scrollSnapAlign: "start" }}>
         <span style={{ display: "flex", alignItems: "baseline", gap: 8, marginBottom: 6 }}><span style={{ fontSize: 12.5, fontWeight: 800 }}>{dayName(d, i)}</span>{" "}<span style={{ fontSize: 11.5, color: C.textMuted }}>{date(d)}</span>{" "}<span style={{ fontSize: 12, fontWeight: 700, color: w ? C.red : c ? C.amber : C.textSub }}>{flagWord}</span></span>{" "}
         <span style={{ display: "grid", gridTemplateColumns: "repeat(2,minmax(0,1fr))", gap: 5 }}>
           {/* Name and rows in ONE order -- day, date, flags, high/low, freezing level, rain, gusts, notes -- because a voice-control user reads the row and says those words (WCAG 2.5.3). The spaces render nothing between these blocks; they keep the words apart. */}<span style={cell}><span style={lbl}>High / low</span>{" "}<span style={val}>{temp}</span></span>{" "}
@@ -76,7 +83,7 @@ export default function DayByDay<D extends DayByDayDay>({ days, di, pick, dayNam
         <span style={{ display: "block", fontSize: 11.5, color: C.textMuted, lineHeight: 1.45, marginTop: 4 }}>{extra}</span>
       </button>;
     })}
-    <div style={{ fontSize: 11, color: C.textMuted, lineHeight: 1.5, padding: "9px 14px 11px", borderTop: "1px solid " + C.border }}>{tx("Whole-day figures at the forecast’s height. Tap a day to open it in every section.")}</div>
     </div>
+    <div style={{ fontSize: 11, color: C.textMuted, lineHeight: 1.5, paddingTop: 6 }}>{tx("Whole-day figures at the forecast’s height. Scroll sideways for more days; tap a day to open it in every section.")}</div>
   </div>;
 }

@@ -1,0 +1,1786 @@
+{
+ "ca_via_tyee_lakes": {
+  "area": "ca_table_mountain_2",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "3rd",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112281902",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project rates Via Tyee Lakes 3rd class."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Tyee Lakes Trailhead, South Lake Road (Hwy 168), by Willow Campground",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112281902",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route starts at the Tyee Lakes Trailhead on the South Lake Road."
+     },
+     {
+      "url": "https://www.fs.usda.gov/r05/inyo/recreation/trails/tyee-lakes-trail",
+      "retrieved_at": "2026-11-14",
+      "fact": "Tyee Lakes trail sits by Willow Campground across a footbridge over Bishop Creek, reached via Hwy 168 toward South Lake."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Past the four Tyee Lakes, switchbacks north to a high plateau, over the pass high point, then east along treeline to the summit rocks",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112281902",
+      "retrieved_at": "2026-11-14",
+      "fact": "Hike past four Tyee Lakes, switchback north to a plateau, cross the pass top, then go east along treeline to summit rocks."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Summit rocks: pick the easiest of at least two ways up",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112281902",
+      "retrieved_at": "2026-11-14",
+      "fact": "At the summit rocks take the easiest line; there are at least two."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 20,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112281902",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists the route as 20 ft."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "None",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112281902",
+      "retrieved_at": "2026-11-14",
+      "fact": "Protection listed as none."
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "Steep switchbacking trail with views of the Inconsolable Range; Tyee Lakes lie near the top of Table Mountain",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r05/inyo/recreation/trails/tyee-lakes-trail",
+      "retrieved_at": "2026-11-14",
+      "fact": "Steep trail with many switchbacks; views of the Inconsolable Range; Tyee Lakes are near the top of Table Mountain."
+     }
+    ]
+   },
+   {
+    "field": "road",
+    "value": "Parking is a roadside dirt lot; trail not recommended for stock",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r05/inyo/recreation/trails/tyee-lakes-trail",
+      "retrieved_at": "2026-11-14",
+      "fact": "Parking is a roadside dirt lot; the trail is not recommended for stock."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Inyo National Forest wilderness permit for overnight trips (walk-in permits free)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://valhikes.blogspot.com/2017/07/north-to-south-tyee-lakes-table.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Author picked up a free Inyo NF walk-in permit for an overnight Tyee Lakes trip."
+     }
+    ]
+   }
+  ],
+  "note": "valhikes blog is a multi-day traverse; only the permit fact used. No distance/gain stated for this route alone."
+ },
+ "ca_virginia_peak_standard_route": {
+  "area": "ca_virginia_peak",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Class 2",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.sierrapeaks.org/SPSPkXlsht.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS peak list gives Virginia Peak (12,001) class 2."
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "In NE Yosemite on a ridge off the crest at Twin Peaks, near Virginia Pass, Sawtooth Ridge and Matterhorn Peak",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://en.wikipedia.org/wiki/Virginia_Peak_(Yosemite)",
+      "retrieved_at": "2026-11-14",
+      "fact": "Virginia Peak sits in NE Yosemite on a ridge branching from the crest at Twin Peaks, near Virginia Pass."
+     }
+    ]
+   }
+  ],
+  "note": "SummitPost pages for Virginia Peak are 403 (walled). Wikipedia states no route class. Peakbagger search needs a form postback (no results via URL). No trailhead/distance found stated for the standard route."
+ },
+ "ca_vogelsang_peak_standard_route": {
+  "area": "ca_vogelsang_peak",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Class 2",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.sierrapeaks.org/SPSPkXlsht.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS peak list gives Vogelsang Peak (11,493) class 2."
+     }
+    ]
+   }
+  ],
+  "note": "Opened: SPS list; Wikipedia Vogelsang_Peak (names Nightingale Arete/West Face technical routes, not the standard route); gordonye.com/vogel_en.html returned an empty page; SummitPost 403. Single source only."
+ },
+ "ca_volunteer_peak_standard_route": {
+  "area": "ca_volunteer_peak",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Class 2",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.sierrapeaks.org/SPSPkXlsht.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS peak list gives Volunteer Peak (10,481) class 2."
+     }
+    ]
+   }
+  ],
+  "note": "Opened: SPS list; nogosierra.com/locations/yosemite/volunteer-peak (generic machine-written text, e.g. trailhead \"in Lee Vining\" - not trusted, not used); Wikipedia page 404; SummitPost 403."
+ },
+ "ca_w_ridge": {
+  "area": "ca_peak_13_360",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "5.4",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107684456",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project rates this West Ridge 5.4, Grade II."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "II",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107684456",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists Grade II."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 2000,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107684456",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists the route as 2000 ft."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "From Trapezoid Peak (Peak 12,960) summit traverse east toward Mt Goode about 1/2 mile of ridge; several towers climbed or bypassed on the right",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107684456",
+      "retrieved_at": "2026-11-14",
+      "fact": "From Trapezoid summit head east toward Mt Goode, about half a mile of ridge; towers climbed or bypassed climber's right."
+     }
+    ]
+   },
+   {
+    "field": "rappels",
+    "value": "One 50 ft rappel off the last tower (or about 5.8 downclimb)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107684456",
+      "retrieved_at": "2026-11-14",
+      "fact": "The final tower needs a 50 ft rappel, or what looked like 5.8 downclimbing."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Light alpine rack and 30 m rope",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107684456",
+      "retrieved_at": "2026-11-14",
+      "fact": "Suggests a light alpine rack and a 30 m rope."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Class 2 descent from Mt Goode to the Bishop Pass trail at Saddlerock Lake",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107684456",
+      "retrieved_at": "2026-11-14",
+      "fact": "Standard class 2 descent off Mt Goode reaches the Bishop Pass trail at Saddlerock Lake."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Some loose rock on the ridge",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107684456",
+      "retrieved_at": "2026-11-14",
+      "fact": "Some loose rock but mostly quality traversing."
+     }
+    ]
+   }
+  ],
+  "note": "CONFLICT: app grade is 3rd; Mountain Project (the only page found) says 5.4 with a rappel. Other MP page (117844712 Trapezoid traverse) is same publisher. Opened DDG results only otherwise; SummitPost 403."
+ },
+ "ca_west_chute": {
+  "area": "ca_cloudripper",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "3rd",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106842277",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project rates the West Chute class 3, Grade II."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "II",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106842277",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists Grade II."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Tony Watkin, 22 June 1997 (per Secor)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106842277",
+      "retrieved_at": "2026-11-14",
+      "fact": "Citing Secor, the West Chute was climbed by Tony Watkin on June 22, 1997."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "South Lake",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106842277",
+      "retrieved_at": "2026-11-14",
+      "fact": "Approach starts from the South Lake parking area."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Bishop Pass trail 2.9 mi to the signed Chocolate Lakes junction, then the Chocolate Lakes trail around the north end of Chocolate Peak",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106842277",
+      "retrieved_at": "2026-11-14",
+      "fact": "Take Bishop Pass trail 2.9 miles to the Chocolate Lakes junction, then the Chocolate Lakes trail around Chocolate Peak."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_loop",
+    "value": 8.5,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106842277",
+      "retrieved_at": "2026-11-14",
+      "fact": "Total mileage with the Green Lake descent is about 8.5 miles (loop)."
+     }
+    ]
+   },
+   {
+    "field": "gain_ft_loop",
+    "value": 4300,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106842277",
+      "retrieved_at": "2026-11-14",
+      "fact": "Loop with Green Lake descent has about 4300 ft of gain."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Loop descent via Green Lake",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106842277",
+      "retrieved_at": "2026-11-14",
+      "fact": "Totals quoted for the loop with the Green Lake descent."
+     },
+     {
+      "url": "https://rangergupta.substack.com/p/cloudripper-via-west-chute-loop",
+      "retrieved_at": "2026-11-14",
+      "fact": "West Chute loop trip report; the hike out passes Green Lake."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Chocolate Lakes",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://rangergupta.substack.com/p/cloudripper-via-west-chute-loop",
+      "retrieved_at": "2026-11-14",
+      "fact": "Party camped at Chocolate Lakes before climbing the chute."
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "Straightforward route finding on solid granite in a prominent gully",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106842277",
+      "retrieved_at": "2026-11-14",
+      "fact": "West Chute has straightforward route finding and enjoyable climbing on solid granite."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Loose rock low in the chute; a large boulder field near the top",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://rangergupta.substack.com/p/cloudripper-via-west-chute-loop",
+      "retrieved_at": "2026-11-14",
+      "fact": "Lower chute had loose rock; the last part of the chute is a large boulder field."
+     }
+    ]
+   }
+  ],
+  "note": "Loop distance conflicts: MP ~8.5 mi vs Gupta blog ~12 mi (not used). themtsarecalling.com/cloudripper is Cloudripper+Vagabond via Green Lake headwall (12.0 mi, 4390 ft) - different line, not used. SummitPost West Chute page 403."
+ },
+ "ca_west_east_summit_traverse": {
+  "area": "ca_isosceles_peak",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Easy 5th",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106823499",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project rates the West-East Summit Traverse Easy 5th."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 900,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106823499",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists the route as 900 ft."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Chris Simmons and Carlton Swan, 24 August 2009",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106823499",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA 24 August 2009 by Chris Simmons and Carlton Swan."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "From the West Summit traverse the ridge (3rd with some 4th class steps) to a notch below the East Summit, then one low 5th class pitch",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106823499",
+      "retrieved_at": "2026-11-14",
+      "fact": "Ridge traverse 3rd with 4th steps to a notch, then one low fifth pitch to the East Summit."
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 1,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106823499",
+      "retrieved_at": "2026-11-14",
+      "fact": "One low 5th class pitch gains the East Summit."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Descend the SW Chute",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106823499",
+      "retrieved_at": "2026-11-14",
+      "fact": "Descent is the SW Chute."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Standard alpine rack",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106823499",
+      "retrieved_at": "2026-11-14",
+      "fact": "Protection: standard alpine rack."
+     }
+    ]
+   }
+  ],
+  "note": "Opened MP Isosceles area + route; Wikipedia Isosceles_Peak is a Canadian peak (wrong mountain, not used); SummitPost 403. Single source."
+ },
+ "ca_west_face_11": {
+  "area": "ca_mt_williamson",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "3rd",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105906285",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project rates the West Face 3rd class."
+     },
+     {
+      "url": "https://summitborn.com/mount-williamson-west-face-route-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Guide titles the West Face a Class 3 scramble."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Joseph N. LeConte party, 1903",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105906285",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA listed as Joseph N. LeConte, R.H. Butler, E.B. Gould and others, 1903."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Approach over Shepherd Pass into Williamson Bowl",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105906285",
+      "retrieved_at": "2026-11-14",
+      "fact": "Approach by Shepherd Pass."
+     },
+     {
+      "url": "https://summitborn.com/mount-williamson-west-face-route-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Out-and-back via the Shepherd Pass Trail to the pass, then across Williamson Bowl."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Shepherd Pass Trailhead (Symmes Creek), west of Independence",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/mount-williamson-west-face-route-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trailhead is the Shepherd Pass Trailhead (Symmes Creek) west of Independence."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "From the second lake in Williamson Bowl head to the south part of the face, climb the big chute right of a black water streak, pass a notch, traverse right to a 3rd class cleft to the summit plateau",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105906285",
+      "retrieved_at": "2026-11-14",
+      "fact": "From the second lake climb talus right of the black stain, up a huge chute, through a notch, right to a 3rd class cleft."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Descend the same route",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105906285",
+      "retrieved_at": "2026-11-14",
+      "fact": "Use this same route for descent."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Rope and a few pieces optional for beginners",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105906285",
+      "retrieved_at": "2026-11-14",
+      "fact": "Beginners may feel safer with a rope and a few pieces."
+     }
+    ]
+   },
+   {
+    "field": "gain_ft_roundtrip_cumulative",
+    "value": 10100,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/mount-williamson-west-face-route-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "About 10,100 ft cumulative gain round trip, Shepherd Pass adding a descent and reclimb each way."
+     }
+    ]
+   },
+   {
+    "field": "trip_days",
+    "value": "2-3 days",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/mount-williamson-west-face-route-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Estimated time 2 to 3 days; a single day only for the fittest."
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "July-September",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/mount-williamson-west-face-route-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Best season July to September for dry rock."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Inyo NF overnight wilderness permit (Shepherd Pass quota); bear canister required; check bighorn sheep closures",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/mount-williamson-west-face-route-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Inyo overnight permit with Shepherd Pass quota, bear canister, and bighorn-sheep closures to check."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Anvil Camp (~10,000 ft) or higher toward Shepherd Pass",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/mount-williamson-west-face-route-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Most parties high-camp near Anvil Camp around 10,000 ft or nearer Shepherd Pass."
+     }
+    ]
+   },
+   {
+    "field": "water",
+    "value": "Symmes Creek low down; seasonal at Anvil Camp and Shepherd Pass; upper mountain dry",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/mount-williamson-west-face-route-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Water at Symmes Creek, seasonal at Anvil Camp and the pass; upper mountain is dry."
+     }
+    ]
+   }
+  ],
+  "note": "Summitborn figures are approximate (≈) and its RT distance is a range (29-30 mi) - not recorded. Summitborn and MP do not appear to copy each other. SummitPost 403. SPS list class 2 is the peak, not this route."
+ },
+ "ca_west_face_5": {
+  "area": "ca_alpine_multi_pitch",
+  "skip_reason": "Area \"alpine multi pitch\" names no peak, so the route cannot be identified. Opened DuckDuckGo HTML search (mountainproject \"alpine multi pitch\" \"West Face\") - no results; SummitPost is 403 for all pages. No page could be tied to this route."
+ },
+ "ca_west_face_south_ridge": {
+  "area": "ca_independence_peak",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "3rd",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119510306",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project rates West face - South Ridge 3rd class."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 2600,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119510306",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists the route as 2600 ft."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Onion Valley Trailhead",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119510306",
+      "retrieved_at": "2026-11-14",
+      "fact": "Start from Onion Valley Trailhead toward Robinson Lake."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Trail toward Robinson Lake for about a mile to a rise above the lake, then leave the trail up the west slopes (loose talus, class 3 max) to the south ridge about 1/4 mile from the summit",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119510306",
+      "retrieved_at": "2026-11-14",
+      "fact": "About a mile up the Robinson Lake trail, then up the west slopes on talus to the south ridge near the summit."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "On the crest: exposed class 4 and easy class 5 to the summit block, or drop east to avoid it",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119510306",
+      "retrieved_at": "2026-11-14",
+      "fact": "Staying on the crest gives exposed class 4 and easy 5; dropping east avoids it."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Loose talus on the west slopes",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119510306",
+      "retrieved_at": "2026-11-14",
+      "fact": "Loose talus is unavoidable on the west slopes."
+     }
+    ]
+   }
+  ],
+  "note": "MP description is quoted from SummitPost (SummitPost itself 403) - counts as one source. sierrainaday.com/post/independence-peak covers the North Ridge (class 4) from the same Onion Valley/Robinson Lake start - different route, not used for agreement."
+ },
+ "ca_west_ridge_2": {
+  "area": "ca_mt_julius_caesar",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "3rd",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/110944517",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project rates the West Ridge 3rd class."
+     },
+     {
+      "url": "https://www.climber.org/reports/2012/1814.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Report notes Secor 3rd edition calls the West Ridge a classic class 3 (author felt it was class 2)."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Via Italy Pass",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/110944517",
+      "retrieved_at": "2026-11-14",
+      "fact": "From Italy Pass go cross-country NW to the 12,300 ft saddle at the ridge start."
+     },
+     {
+      "url": "https://www.climber.org/reports/2012/1814.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Party started at Pine Creek trailhead toward Italy Pass."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Pine Creek trailhead",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climber.org/reports/2012/1814.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Started out at Pine Creek trailhead toward Italy Pass."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Talus hop along the ridge crest from the 12,300 ft saddle",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/110944517",
+      "retrieved_at": "2026-11-14",
+      "fact": "Talus hop across boulders on the ridge crest, starting at the 12,300 ft saddle."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Down the south slope/ridge",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/110944517",
+      "retrieved_at": "2026-11-14",
+      "fact": "Descent is down the south slope or ridge."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Lake Italy (south side near the inlet)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climber.org/reports/2012/1814.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Camped on the south side of Lake Italy near the inlet; several sites."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "None; solo scramble",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/110944517",
+      "retrieved_at": "2026-11-14",
+      "fact": "None required, a solo scramble."
+     }
+    ]
+   }
+  ],
+  "note": "climber.org author thought the ridge was class 2 in her judgement while citing Secor class 3. Wikipedia: Italy Pass is 1/2 mile south of the summit (peak FA 1928 Praters - summit, not route)."
+ },
+ "ca_west_ridge_3": {
+  "area": "ca_matterhorn_peak",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "4th",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/116721814",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project rates the West Ridge 4th class, Grade II."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "II",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/116721814",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists Grade II."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 1600,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/116721814",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists the route as 1600 ft."
+     }
+    ]
+   },
+   {
+    "field": "climb_gain_ft_from_burro_pass",
+    "value": 1640,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/116721814",
+      "retrieved_at": "2026-11-14",
+      "fact": "Elevation gain from the pass to the summit is about 1640 feet."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "From Twin Lakes via Mule Pass to Burro Pass",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/116721814",
+      "retrieved_at": "2026-11-14",
+      "fact": "Best reached from Twin Lakes via Mule Pass, then up to Burro Pass."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Finger Lakes just below Burro Pass",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/116721814",
+      "retrieved_at": "2026-11-14",
+      "fact": "Author camped at Finger Lakes just below Burro Pass."
+     }
+    ]
+   },
+   {
+    "field": "trip_days",
+    "value": "2 days to reach the route (casual)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/116721814",
+      "retrieved_at": "2026-11-14",
+      "fact": "Author took a casual two days to get there."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Follow the ridge from Burro Pass directly to the summit; it narrows and exposure grows halfway up",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/116721814",
+      "retrieved_at": "2026-11-14",
+      "fact": "Follow the ridge from the pass; about halfway it narrows and you are committed."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "South to the top of the sandy chute, down it back to Burro Pass",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/116721814",
+      "retrieved_at": "2026-11-14",
+      "fact": "Descend by wandering south to the chute and following it back to Burro Pass."
+     }
+    ]
+   }
+  ],
+  "note": "Single source (MP). The esa-rol.com gallery linked from MP is by the same author (same source). Wikipedia Matterhorn_Peak has no route info; SPS class 2 is the peak easiest route. SummitPost West Ridge page 403."
+ },
+ "ca_west_ridge_4": {
+  "area": "ca_mt_crocker",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "3rd",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111025481",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project rates the West Ridge 3rd (ridge itself easy class 2 from the col)."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "McGee Creek trailhead",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111025481",
+      "retrieved_at": "2026-11-14",
+      "fact": "Big McGee Lake is approached from the McGee Creek trailhead."
+     },
+     {
+      "url": "https://www.climber.org/reports/1991/4.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Party started from the McGee Creek trailhead south of Convict Lake."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Big McGee Lake",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111025481",
+      "retrieved_at": "2026-11-14",
+      "fact": "Best done from a camp at Big McGee Lake."
+     },
+     {
+      "url": "https://www.climber.org/reports/1991/4.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Group camped at Big McGee Lake (10,500 ft)."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "From Big McGee Lake east up to Crocker Lake (10,914) below the col, long slope to the col; steeper gully near the top",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111025481",
+      "retrieved_at": "2026-11-14",
+      "fact": "From Big McGee head east to Crocker Lake, up the long slope; a steeper gully just below the col."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Easy class 2 ridge from the col (11,700+) west of the peak, best kept near the north face",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111025481",
+      "retrieved_at": "2026-11-14",
+      "fact": "Easy class 2 scramble from the 11,700+ col; ridge best done close to the north face."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Descend the way you came",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111025481",
+      "retrieved_at": "2026-11-14",
+      "fact": "Descend the way you came."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Ice axe in early season",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111025481",
+      "retrieved_at": "2026-11-14",
+      "fact": "Ice axe in early season."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Early season snow in the bowl and gully below the col",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111025481",
+      "retrieved_at": "2026-11-14",
+      "fact": "Col approach is a snow bowl in early season; steep snow or exposed ledges in the gully."
+     }
+    ]
+   }
+  ],
+  "note": "climber.org 1991 went via the SW saddle (11,800) and a knife ridge - not certain it is the same line, so only trailhead/camp used. Wikipedia peak FA 1929 (Sparrea) is the summit, not this route. SummitPost 403."
+ },
+ "ca_west_ridge_indirect": {
+  "area": "ca_mt_carillon",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "3rd",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112086512",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project rates West Ridge Indirect 3rd class."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 1000,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112086512",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists the route as 1000 ft."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Whitney Portal, via the North Fork Lone Pine Creek",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112086512",
+      "retrieved_at": "2026-11-14",
+      "fact": "Reach the Russell-Carillon pass from Whitney Portal via the North Fork Lone Pine Creek turn-off."
+     },
+     {
+      "url": "https://www.climber.org/reports/2004/1340.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Group met at Whitney Portal and hiked up the North Fork."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Wilderness permit required (Mt Whitney Zone)",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112086512",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route needs a USFS wilderness permit for day or overnight use."
+     },
+     {
+      "url": "https://www.climber.org/reports/2004/1340.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trip was rescheduled because Whitney zone wilderness permits were hard to get."
+     }
+    ]
+   },
+   {
+    "field": "permit_quota",
+    "value": "Whitney Zone quota May 1-Nov 1 (100/day day use, 60/day overnight); lottery; $15/person",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r05/inyo/wilderness/mount-whitney",
+      "retrieved_at": "2026-11-14",
+      "fact": "Quota season May 1 to Nov 1: 100 day-use and 60 overnight per day; $15 per person fee."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Unofficial North Fork trail has full 3rd class scrambling sections",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112086512",
+      "retrieved_at": "2026-11-14",
+      "fact": "The unofficial North Fork trail has serious 3rd class scrambling sections."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Start near Russell-Carillon col (~13,250 ft); head east up the ridge, avoiding hard parts on the SE side or S-SW face",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112086512",
+      "retrieved_at": "2026-11-14",
+      "fact": "From near the Russell-Carillon col (~13,250 ft) go E up the ridge, skirting hard bits SE or S-SW."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 13552,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112086512",
+      "retrieved_at": "2026-11-14",
+      "fact": "Summit altitude given as 13,552 ft."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Scramble down the S or SW side to talus and sand, then south on sand to the approach",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112086512",
+      "retrieved_at": "2026-11-14",
+      "fact": "Scramble down S/SW to talus and sand, then hike S to meet the approach."
+     }
+    ]
+   }
+  ],
+  "note": "SPS peak list gives Mount Carillon 13,517 vs MP 13,552 - high point kept single-source from MP; conflict noted. SPS class 2 is the peak easiest route."
+ },
+ "ca_west_ridge_of_north_guard_the_parapet_ridge": {
+  "area": "ca_north_guard",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Easy 5th",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106511092",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project rates the route Easy 5th, Grade III."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "III",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106511092",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists Grade III."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 4000,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106511092",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists the route as 4000 ft."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "From the Sphinx Lakes",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106511092",
+      "retrieved_at": "2026-11-14",
+      "fact": "Start at Sphinx Lakes and scramble talus to the toe of the ridge."
+     },
+     {
+      "url": "https://www.scaruffi.com/travel/nguard.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Approach to North Guard is via Roads End, the Sphinx Lakes and Sphinx Pass."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Roads End",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.scaruffi.com/travel/nguard.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Approach starts at Roads End trailhead."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Long ridge with towers and gendarmes, mostly 4th class, harder near the summit",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106511092",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mostly 4th class ridge with towers and gendarmes; gets harder approaching the summit."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Gully just below the summit toward Brewer (south), then cross a col back NE into the Sphinx Lakes cirque",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106511092",
+      "retrieved_at": "2026-11-14",
+      "fact": "Descend the gully toward Brewer, then cross a col NE back to the Sphinx Lakes cirque."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "On descent do not mistake the neighbouring drainage for Sphinx Lakes - they look alike",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106511092",
+      "retrieved_at": "2026-11-14",
+      "fact": "Do not mistake the drainage before you for Sphinx; they look very similar."
+     }
+    ]
+   }
+  ],
+  "note": "scaruffi climbs a chute left of the west ridge to the ridge end - different line; used only for the approach. climber.org 1999/486 is North Guard by another route (not used)."
+ },
+ "ca_west_slope": {
+  "area": "ca_bear_claw_spire_peak_12_563",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Class 3",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119263796",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project rates West Slope 3rd class."
+     },
+     {
+      "url": "https://en.wikipedia.org/wiki/Bear_Claw_Spire",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route list: West Slope, class 3."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Norman Clyde, 1938",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119263796",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA: Norman Clyde 1938."
+     },
+     {
+      "url": "https://en.wikipedia.org/wiki/Bear_Claw_Spire",
+      "retrieved_at": "2026-11-14",
+      "fact": "First ascent 1938 via the west slope by Norman Clyde."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "II",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119263796",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists Grade II."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 700,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119263796",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists the route as 700 ft."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Round the east shore of Royce Lake, cut across, then straight up the southwest slope",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119263796",
+      "retrieved_at": "2026-11-14",
+      "fact": "After rounding the east shore of Royce Lake, cut across then head straight up."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Class 2 rock or sand up the slope; last 50 ft class 3 on steeper solid rock to the summit block",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119263796",
+      "retrieved_at": "2026-11-14",
+      "fact": "Class 2 up the slope; the final 50 feet is class 3 on steeper, more solid rock."
+     }
+    ]
+   }
+  ],
+  "note": ""
+ },
+ "ca_west_vidette_standard_route": {
+  "area": "ca_west_vidette",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Class 2",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.sierrapeaks.org/SPSPkXlsht.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS peak list gives West Vidette (12,533) class 2."
+     }
+    ]
+   }
+  ],
+  "note": "Opened: SPS list; Wikipedia West_Vidette (summit FA 1926 Clyde, no route); climber.org/reports/2002/1007.html (West Vidette via an east buttress, class 2-3, not clearly the standard route - not used); SummitPost 403."
+ },
+ "ca_wheel_mountain_standard_route": {
+  "area": "ca_wheel_mountain",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Class 3",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.sierrapeaks.org/SPSPkXlsht.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS peak list gives Wheel Mountain (12,774) class 3."
+     }
+    ]
+   }
+  ],
+  "note": "Opened: SPS list; Wikipedia Wheel_Mountain (summit FA 1933, no route detail); nogosierra.com wheel-mountain (generic text, not used); SummitPost 403."
+ },
+ "ca_white_mountain_peak_trail": {
+  "area": "ca_white_mountain_peak",
+  "facts": [
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 15,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.hikingguy.com/hikes/white-mountain-peak-california/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Distance 15 miles (gate to summit and back)."
+     },
+     {
+      "url": "https://en.wikipedia.org/wiki/White_Mountain_Peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Round-trip hike from the gate to the summit is about 14 miles."
+     }
+    ]
+   },
+   {
+    "field": "gain_ft_roundtrip",
+    "value": 3360,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.hikingguy.com/hikes/white-mountain-peak-california/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Total climbing 3360 ft."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Locked gate below Barcroft Station, ~11,700 ft",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.hikingguy.com/hikes/white-mountain-peak-california/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Start at the well-marked gate; the start is at 11,700 ft."
+     },
+     {
+      "url": "https://en.wikipedia.org/wiki/White_Mountain_Peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Hikers start at a locked gate at 11,680 ft, about 2 miles before Barcroft Station."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Dirt road about 2 miles to Barcroft Station, then a final steep push to the summit",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.hikingguy.com/hikes/white-mountain-peak-california/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Road passes Barcroft Station (12,470 ft) at about 2 miles before a steep final push."
+     },
+     {
+      "url": "https://en.wikipedia.org/wiki/White_Mountain_Peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Locked gate is about 2 miles before Barcroft Station."
+     }
+    ]
+   },
+   {
+    "field": "car_to_car_hours",
+    "value": "7-9",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.hikingguy.com/hikes/white-mountain-peak-california/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Time 7 to 9 hours."
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "July-October (when the access road is open)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.hikingguy.com/hikes/white-mountain-peak-california/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Best July through October when the access road is open."
+     }
+    ]
+   },
+   {
+    "field": "road",
+    "value": "Last 16 miles on dirt (Bristlecone Pine Forest Scenic Byway)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.hikingguy.com/hikes/white-mountain-peak-california/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Last 16 miles of the drive are dirt on the Bristlecone Pine Forest Scenic Byway."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Altitude sickness and extreme weather; start is at 11,700 ft",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.hikingguy.com/hikes/white-mountain-peak-california/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Altitude is the main risk; same weather and altitude-sickness issues as the high Sierra."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 14252,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.hikingguy.com/hikes/white-mountain-peak-california/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Summit is 14,252 ft."
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "Two dips on the road add regain; total RT gain exceeds 3500 ft; road popular with mountain bikers",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://en.wikipedia.org/wiki/White_Mountain_Peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Two ~250 ft dips push total round-trip gain over 3500 ft; popular with mountain bikers."
+     }
+    ]
+   }
+  ],
+  "note": "Gain: hikingguy 3360 vs Wikipedia \">3500 total\" (and \"<2,600 net\") - kept single-source. Distances 15 vs ~14 mi round trip are within 10%; value from hikingguy."
+ },
+ "ca_wnw_edge": {
+  "area": "ca_keeler_needle",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "3rd",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/113462881",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project rates WNW Edge 3rd class."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 650,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/113462881",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists the route as 650 ft."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Mt Whitney Trail to the notch between Mt Whitney and Keeler Needle",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/113462881",
+      "retrieved_at": "2026-11-14",
+      "fact": "Leave the main Whitney trail next to the notch between Whitney and Keeler Needle."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "From the notch head roughly ESE up toward the pointy summit; scramble with big exposure, harder lines available near the edge",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/113462881",
+      "retrieved_at": "2026-11-14",
+      "fact": "Head ESE up toward the summit from the notch; exposed scrambling, more difficulty near the edge."
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "Exposed scramble to a dramatic summit with drops on three sides; an add-on for Whitney Trail parties",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/113462881",
+      "retrieved_at": "2026-11-14",
+      "fact": "Fun exposed scrambling to a dramatic summit; suits climbers hiking the Whitney Trail."
+     }
+    ]
+   }
+  ],
+  "note": "Opened stephabegg.com keeler (Harding Route, different route - not used) and MP Keeler area. Whitney Zone permit almost certainly applies but no page states it for this route, so not recorded. SummitPost 403."
+ }
+}
