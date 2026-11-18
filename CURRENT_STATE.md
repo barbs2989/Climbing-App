@@ -25,6 +25,7 @@ Not yet documented here (add a doc when you next work in one): moderation/safety
 the catalog import pipeline (see [docs/BACKEND.md](docs/BACKEND.md)).
 
 ## Recent changes
+- **A clear *View area* button** (owner 2026-11-18): every row that opens an area — the sub-area list, the All areas tree, the area searches and the top search's Places — ends in a solid blue *View area ›* (`ViewAreaPill`), so the tree's expand arrow and its open target no longer look alike. See [maps-and-area-browser.md](docs/features/maps-and-area-browser.md).
 - **A comment reaction shows its emoji alone** (owner 2026-11-18): in every Discussion, the React button showed your pick as emoji plus its word (*🤩 Psych*); it now shows the emoji only, the word moves to its accessible name, and the button always carries an add-reaction face (`ActionIcon` *smile-plus*) so it reads as a choice of more (`Comments`).
 - **Bouldering shows one grade** (owner 2026-11-18): the TECHNICAL STATS card no longer draws a *Crux grade* tile on a boulder problem, which repeated the grade in the header. See [route-page.md](docs/features/route-page.md).
 - **The crux is WHERE, the grade is how hard** (owner 2026-11-18): the edit sheet and add-a-climb ask *Where the crux is* (text, every discipline) instead of a *Crux grade* that wrote into a column of descriptions; the page prints it as a Crux facts row. See [route-page.md](docs/features/route-page.md).
