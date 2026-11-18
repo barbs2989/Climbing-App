@@ -80,7 +80,7 @@ const out = path.join(outdir, "b.cjs");
 const CORE = JSON.stringify(corePath);
 await build({
   stdin: {
-    contents: `export { compat, compatParts, compatWhy, compatUnknown, CLIMBERS, ME, CMAX_DISC, CMAX_GRADE, CMAX_OBJ, CMAX_VERIF, CMAX_PACE, CMAX_AVAIL, CMAX_AREA, COMPAT_BASE, COMPAT_TOP, COMPAT_MAX } from ${CORE};`,
+    contents: `export { compat, compatParts, compatWhy, compatUnknown, __set_MY_PACE, CLIMBERS, ME, CMAX_DISC, CMAX_GRADE, CMAX_OBJ, CMAX_VERIF, CMAX_PACE, CMAX_AVAIL, CMAX_AREA, COMPAT_BASE, COMPAT_TOP, COMPAT_MAX } from ${CORE};`,
     resolveDir: ROOT, loader: "js",
   },
   bundle: true, format: "cjs", platform: "node", jsx: "automatic",
@@ -310,6 +310,18 @@ else fail(`the browse row no longer explains the missing match % (${JSON.stringi
   else fail(`weekends vs weekends scores ${twin.pts}/${twin.max} and weekends inside weekends+weekday PM ${inside.pts}/${inside.max} — a perfect fit reads as partial`);
   if (half.pts > 0 && half.pts < half.max && none.pts === 0) ok("half the smaller schedule shared counts partly; nothing shared counts nothing");
   else fail(`partial overlap scores ${half.pts}/${half.max} and no overlap ${none.pts}/${none.max}`);
+  // PACE IS KNOWN THE SAME WAY BY BOTH (browser pass 2026-11-18). A signed-in viewer's pace is MY_PACE, not a field on
+  // ME (id 0); compatParts reads it through paceOf() and compatUnknown read the bare field, so every signed-in card said
+  // "based on limited info" while its pace line had an answer.
+  if (typeof M.__set_MY_PACE !== "function") dead("core does not export __set_MY_PACE — the signed-in pace case cannot be judged");
+  M.__set_MY_PACE(1300);
+  const meNoField = { id: 0, disciplines: ["trad"], tradGrade: "5.9", availability: ["weekends"], partnerAreaPaths: ["usa.wa.index"] };
+  const them = { id: "x", disciplines: ["trad"], tradGrade: "5.9", availability: ["weekends"], partnerAreaPaths: ["usa.wa.index"], hikingSpeedFtHr: 1500 };
+  const paceKnown = M.compatParts(meNoField, them).find((r) => r.k === "pace").known;
+  const unk = M.compatUnknown(meNoField, them);
+  M.__set_MY_PACE(null);
+  if (paceKnown && unk === 0) ok("a signed-in viewer's pace (MY_PACE) counts as KNOWN for \"limited info\" exactly as the pace line scores it");
+  else fail(`the pace line is known=${paceKnown} but compatUnknown counts ${unk} unknown signal(s) for a viewer whose pace is MY_PACE — the card says "based on limited info" with every line answered`);
   // The panel renders compatWhy() with the SAME viewer object it scores with: the partner row scores ME's MOUNTAIN
   // objectives (matchObjectiveIds), and the profile once scored ME.objectiveIds, so one climber read two numbers.
   const fpStart = stripped.indexOf("function FullProfile(");
