@@ -43,14 +43,19 @@ export interface CappedProps {
 }
 const CAP_AT=620,CAP_SHOW=400,CAP_SLACK=60,NAV_CLEAR=80;/* NAV_CLEAR: the fixed bottom nav covers the last ~70px of the screen */
 /* Moved verbatim from RouteDetail.jsx (PR57); only the types were added. */
-export default function Capped({children}: CappedProps){const outer=useRef<HTMLDivElement>(null);const inner=useRef<HTMLDivElement>(null);const btn=useRef<HTMLButtonElement>(null);const closing=useRef(false);const shift=useRef(0);const [tall,setTall]=useState(false);const [open,setOpen]=useState(false);
+export default function Capped({children}: CappedProps){const outer=useRef<HTMLDivElement>(null);const inner=useRef<HTMLDivElement>(null);const btn=useRef<HTMLButtonElement>(null);const closing=useRef(false);const shift=useRef(0);const focused=useRef<HTMLElement|null>(null);const [tall,setTall]=useState(false);const [open,setOpen]=useState(false);
   useEffect(function(){const el=inner.current;if(!el)return;function measure(){const h=(el as HTMLDivElement).offsetHeight;/* a hoisted function does not keep the null check above */if(!h)return;setTall(function(t){return h>(t?CAP_SHOW+CAP_SLACK:CAP_AT);});}measure();if(typeof ResizeObserver==="undefined")return;const ro=new ResizeObserver(measure);ro.observe(el);return function(){ro.disconnect();};},[]);
   const shut=tall&&!open;
   /* Measured against the INNER box, which moves with any inner scroll; the outer one does not, so a focus that had already scrolled the box read as "above the fold". */
-  function onFocusIn(e: FocusEvent<HTMLDivElement>){if(!shut||!inner.current)return;const top=inner.current.getBoundingClientRect().top;if((e.target as HTMLElement).getBoundingClientRect().bottom>top+CAP_SHOW)setOpen(true);}
+  function onFocusIn(e: FocusEvent<HTMLDivElement>){if(!shut||!inner.current)return;const top=inner.current.getBoundingClientRect().top;if((e.target as HTMLElement).getBoundingClientRect().bottom>top+CAP_SHOW){focused.current=e.target as HTMLElement;setOpen(true);}}
   /* What the inner scroll was showing stays where the browser put it: after the unfold, the PAGE scrolls by the offset the box had. */
   function onInnerScroll(){const o=outer.current;if(!o||!o.scrollTop)return;const x=o.scrollTop;o.scrollTop=0;if(shut){shift.current+=x;setOpen(true);}}
   useLayoutEffect(function(){const x=shift.current;if(!open||!x)return;shift.current=0;for(let el=outer.current&&outer.current.parentElement;el;el=el.parentElement){const oy=getComputedStyle(el).overflowY;if((oy==="auto"||oy==="scroll")&&el.scrollHeight>el.clientHeight){el.scrollTop+=x;return;}}const se=document.scrollingElement;if(se)se.scrollTop+=x;},[open]);
+  /* ...and the control whose focus unfolded the section ends up ON SCREEN. It did not: the section unfolded, but the
+     control was left 20-450px below the bottom of the screen (re-test on the live site, 2026-11-18: Plan's APPROACH
+     and Safety's KNOWN HAZARDS on all five routes tried). Checked after the unfold is drawn and again next frame,
+     after the browser's own focus scroll, and centred only if it is under the bars or the bottom nav. */
+  useLayoutEffect(function(){const el=focused.current;if(!open||!el)return;focused.current=null;function fix(){if(!(el as HTMLElement).isConnected)return;const r=(el as HTMLElement).getBoundingClientRect();if(r.top<pinnedTopBottom(el)||r.bottom>window.innerHeight-NAV_CLEAR)(el as HTMLElement).scrollIntoView({block:"center"});}fix();if(typeof requestAnimationFrame!=="undefined")requestAnimationFrame(fix);},[open]);
   useLayoutEffect(function(){if(open||!closing.current)return;closing.current=false;const o=outer.current,b=btn.current;if(!o)return;const r=b?b.getBoundingClientRect():null;const bar=pinnedTopBottom(o);if(o.getBoundingClientRect().top<bar||!r||r.top<bar||r.bottom>window.innerHeight-NAV_CLEAR)scrollBelowPinned(o);},[open]);
   function toggle(){if(open){closing.current=true;setOpen(false);}else setOpen(true);}
   return <div>
