@@ -1,5 +1,6 @@
 import { Component } from "react";
 import { reportError } from "./lib/errorReport.js";
+import { swallowedChunk } from "./lib/chunkReload.js";
 
 // The app had no error boundary, so any throw during render unmounted the whole tree and
 // left the black `#root` — the exact blank screen `check:refs`, `check:hooks` and the
@@ -25,19 +26,7 @@ const CARD = { maxWidth: 420, width: "100%", background: "#161b22", border: "1px
 const BTN = { width: "100%", marginTop: 16, padding: "12px 14px", borderRadius: 10, border: "none",
   background: "#2f81f7", color: "#fff", fontSize: 15, fontWeight: 700, cursor: "pointer" };
 
-// A deploy removed the lazy screen's file and main.jsx is ALREADY reloading for it. main.jsx's
-// vite:preloadError handler calls preventDefault() so Vite does not rethrow -- and Vite then resolves
-// the import to undefined, so React.lazy throws its own "reading 'default'" TypeError into this
-// boundary while the reload is in flight. Seen 2026-11-18 on a signed-in phone: Menu > Listed areas
-// across a deploy drew "This screen hit a bug ... (reading 'default')", and stayed. That error,
-// within the window main.jsx's marker records, is the deploy, not a bug. The key is main.jsx's
-// CHUNK_RELOAD_KEY (check:chunk-reload holds the two spellings together).
-const CHUNK_RELOAD_KEY = "climbmatch:chunk-reload-at";
-function swallowedChunk(msg) {
-  if (!/default/.test(msg)) return false; // Chrome: reading 'default'; Firefox: property "default"; Safari: evaluating 'x.default'
-  try { return Date.now() - (Number(window.sessionStorage.getItem(CHUNK_RELOAD_KEY)) || 0) < 30 * 1000; } catch { return false; }
-}
-
+// swallowedChunk: a deploy's missing file that main.jsx is already reloading for (lib/chunkReload.js).
 export default class AppErrorBoundary extends Component {
   constructor(props) { super(props); this.state = { err: null }; }
   static getDerivedStateFromError(err) { return { err }; }

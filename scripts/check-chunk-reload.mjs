@@ -62,9 +62,14 @@ else {
 // reload is in flight (2026-11-18, signed-in walk: Menu > Listed areas across a deploy drew "This screen
 // hit a bug ... (reading 'default')" and stayed). The boundary must read main.jsx's marker and call that
 // error the deploy, in each engine's wording.
-if (key && !boundary.includes(`"${key}"`)) fail.push(`AppErrorBoundary.jsx never reads "${key}" — a lazy screen whose file a deploy removed shows "This screen hit a bug (reading 'default')" while main.jsx reloads`);
-const sw = boundary.match(/if \(!\/(.+?)\/(\w*)\.test\(msg\)\) return false;/) || [];
-if (!sw[1]) fail.push("AppErrorBoundary.jsx no longer has swallowedChunk's `if (!/…/.test(msg)) return false;` — update this check");
+const chunkLib = read("lib/chunkReload.js");
+if (key && !chunkLib.includes(`"${key}"`)) fail.push(`lib/chunkReload.js never reads "${key}" — a lazy screen whose file a deploy removed shows "This screen hit a bug (reading 'default')" while main.jsx reloads`);
+for (const [f, what] of [["AppErrorBoundary.jsx", "the whole-app card"], ["lib/SectionErrorBoundary.jsx", "a section's card"]]) {
+  const src = read(f);
+  if (!/import \{[^}]*\bswallowedChunk\b[^}]*\} from "[^"]*chunkReload\.js"/.test(src) || !/swallowedChunk\(msg\)/.test(src)) fail.push(`${f} no longer asks swallowedChunk(msg) — ${what} calls a deploy's missing file a bug while main.jsx reloads`);
+}
+const sw = chunkLib.match(/if \(!\/(.+?)\/(\w*)\.test\(msg\)\) return false;/) || [];
+if (!sw[1]) fail.push("lib/chunkReload.js no longer has swallowedChunk's `if (!/…/.test(msg)) return false;` — update this check");
 else for (const [engine, msg] of [
   ["Chrome", "Cannot read properties of undefined (reading 'default')"],
   ["Firefox", "can't access property \"default\", n is undefined"],
