@@ -123,7 +123,10 @@ empty field fill at once and two agreeing climbers change one; the owner withdre
   large); *Show all N pitches* brings back the rest and *+ Add pitch*, keeping the edited pitch where it
   was on screen. A pitch's belay, gear and notes are text boxes sized to their whole text (a one-line
   input cut them mid-word), but stay one line of data: Enter does nothing and a pasted line break
-  becomes a space. Pitches can be moved up and down;
+  becomes a space. The pitch is HELD under the title bar while the sheet settles (re-landed on every size
+  change for 1.5s, or until the climber scrolls or touches it), measured from the card's title bar whichever
+  element scrolls (the card on desktop, the inner pane on the production phone sheet), with scroll
+  anchoring off. Each field row's value preview is capped at two lines. Pitches can be moved up and down;
   clustering compares every pitch key (grade, gear, length, note, anchor, bolts, crux). The rappel
   table has an editor at last — `rappelDetail`, type `rappels`: one row per station with length (in
   the climber's units, stored in metres), anchor, how to find the station, hazards one per line and
