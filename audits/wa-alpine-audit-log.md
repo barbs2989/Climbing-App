@@ -39349,3 +39349,46 @@ one narrow flag below rather than a broader problem.
 
 1 confirmed error fixed, 6 newly flagged for human review, 3 clean.
 Next batch will continue id-ascending from `wa_burnt_boot_peak_north_ridge` (pass 9).
+
+## 2026-11-18 — Batch 561 (pass 9)
+
+Routes: Cardinal Peak (NW Couloir-North Ridge, Southeast Slopes), Carne Mountain (Trail route),
+Cascade Peak (East Ridge, NW Chimney), Whatcom Peak (Castle in the Sky), Castle Peak/Pasayten
+(East Ridge, North Ridge, The Drawbridge), and The Castle/Tatoosh (La Villa) — 10 routes across 6
+peaks.
+
+Verified against independent sources and found correct: Cardinal Peak's 8,596 ft elevation
+(matches ListsOfJohn's LiDAR figure); Cascade Peak's 7,428 ft and its July 23, 1950 Beckey/
+Schoening/Sharpe FA (matches Wikipedia exactly, coordinates too); Whatcom Peak's 7,574 ft and its
+1936 Berry/Buchanen FA (the unusual "Buchanen" spelling is correct, not a typo — confirmed on
+Wikipedia); Castle in the Sky's August 2022 Boyce/Chapko FA (confirmed via Boyce's own Cascade
+Climbers trip report); Castle Peak/Pasayten's 8,343 ft elevation (matches the 2023 differential-
+GPS survey that restored it to the WA Top 100 list — the older 8,306 ft USGS-map figure is now
+superseded); The Drawbridge's June 2017 Zentler/Schilling FA of the Middle North Buttress
+(confirmed via the original Cascade Climbers trip report); and The Castle/Tatoosh's 6,440 ft
+elevation (matches Wikipedia, though SummitPost/Mazamas give slightly higher figures).
+
+**Clean (7):** Cardinal Peak Southeast Slopes (internally consistent gain_ft against trailhead/
+summit elevation), Cascade Peak East Ridge and NW Chimney, Castle in the Sky (its 2022 Chilliwack
+Complex fire note is properly hedged as background, not asserted as a currently active closure),
+Castle Peak/Pasayten East Ridge (bare/unenriched, nothing to check), The Drawbridge, and The
+Castle La Villa (its Plummer Peak Fire mention is similarly hedged — "check current closure
+notices" — rather than stated as fact).
+
+**Flagged for human review (3):**
+- Castle Peak/Pasayten North Ridge: `fa` stores the literal string "John R" — reads as a
+  truncated/incomplete name, not a complete sourced fact. Could not find any source documenting
+  a "John Roper" (or other) first ascent of this route to confirm or complete it, so left as-is
+  rather than guessing.
+- Cardinal Peak NW Couloir-North Ridge and Carne Mountain Trail: both carry Little Giant Fire
+  closure text stating the order runs "September 3 through October 31, 2026 unless lifted
+  sooner." That end date has now passed (today is 2026-11-18); WTA reporting found only that the
+  closure order was "reduced" in September, with nothing confirming a full lift or an extension
+  past Oct 31. The text may now be describing an expired order as current.
+- Carne Mountain Trail: the route's own approach prose states the summit at "7,091 ft" while
+  `high_point_ft` and the area row both say 7,085 ft — a minor 6 ft internal mismatch. Sources
+  don't resolve it cleanly either way (WTA and Willhite both give 7,085 ft; other sources range
+  up to ~7,100 ft), so left unflagged for a SQL fix.
+
+0 confirmed errors fixed, 3 newly flagged for human review, 7 clean.
+Next batch will continue id-ascending from `wa_castle_peak_tatoosh_la_villa` (pass 9).
