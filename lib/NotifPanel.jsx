@@ -39,14 +39,14 @@ export default function NotifPanel({requests,requestsUnavailable,notifs,onAccept
   const reqNotifs=notifs.filter(n=>n.cat==="requests"),actNotifs=notifs.filter(n=>n.cat!=="requests");
   /* `page` (the website's See all notifications): a 520px full-window sheet, which wideLayout lays into the column as a page; no scrim, and the archive starts open. */
   return <div onClick={page?undefined:onClose} role="dialog" aria-label="Notifications" aria-modal={page?undefined:"true"} style={page?{position:"fixed",inset:0,maxWidth:520,margin:"0 auto",boxSizing:"border-box",background:C.bg,zIndex:1200,overflowY:"auto",overscrollBehavior:"contain"}:{position:"fixed",inset:0,background:C.scrimStrong,zIndex:1200,overflowY:"auto",overscrollBehavior:"contain",display:"flex",alignItems:"flex-start",justifyContent:"center",padding:"12px 8px"}}>
-    <div onClick={e=>e.stopPropagation()} style={page?{background:C.bg,width:"100%"}:{background:C.surface,borderRadius:18,width:"100%",maxWidth:440,border:`1px solid ${C.border}`,overflow:"hidden"}}>
+    <div onClick={e=>e.stopPropagation()} style={page?{background:C.bg,width:"100%"}:{background:C.surface,borderRadius:18,width:"100%",maxWidth:440,border:`1px solid ${C.border}`,overflow:"hidden",display:"flex",flexDirection:"column"}}>
       {/* ← Back on the LEFT, the bulk action alone on the RIGHT (owner note 2026-10-23: "Clear all button is too close to the x out button.
       We also need a back button here on the top left"). Facebook, Instagram and LinkedIn open notifications with a back arrow top-left and no ✕,
       so Back replaces the ✕ rather than adding a second way out; "Archive all" then has the right edge to itself. It said "Clear all", but
       it archives (everything stays under Archived, restorable), and swipe-left now DELETES, so "clear" would name the wrong one. */}
       <div style={{display:"flex",alignItems:"center",gap:12,padding:"12px 14px",borderBottom:`1px solid ${C.border}`}}><button onClick={onClose} style={POP_BACK}>← Back</button><div style={{flex:1,minWidth:0,color:C.text,fontSize:17,fontWeight:700}}>Notifications</div>{notifs.length?<button onClick={()=>onClearAll&&onClearAll()} style={{flexShrink:0,background:C.card,border:`1px solid ${C.border}`,color:C.textSub,borderRadius:8,padding:"0 12px",height:36,fontSize:12.5,fontWeight:700,cursor:"pointer",whiteSpace:"nowrap"}}>Archive all</button>:null}</div>
       
-      <div style={{padding:"12px 14px",maxHeight:page?"none":"72vh",overflowY:"auto",overscrollBehavior:"contain"}}>
+      <div style={{padding:"12px 14px",maxHeight:page?"none":"72vh",minHeight:0,overflowY:"auto",overscrollBehavior:"contain"}}>
         {empty?null:<div style={{fontSize:11.5,color:C.textMuted,margin:"0 2px 10px"}}>{tx("Swipe right to archive · swipe left to clear · or tap ⋯")}</div>}
         {(requests.length||reqNotifs.length)?<div style={{marginBottom:14}}><SL action={<button onClick={()=>onGo({tab:"crew",view:"requests"})} style={{background:"none",border:"none",color:C.blue,fontSize:12.5,fontWeight:700,cursor:"pointer",padding:"6px 0",whiteSpace:"nowrap"}}>See all requests ›</button>}>Requests</SL>{/* The two buttons never shrank and the name column had no floor, so at 360px the
         middle column collapsed to ~90px: "wants to be your climbing friend · 53" wrapped
