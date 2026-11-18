@@ -10,6 +10,7 @@ import { discLabel } from "./discLabels";
 import { useMyHomeStatePaths, usePlaceSearch, useRouteSearch, useStates } from "./db.js";
 import { USE_DB } from "./supabase";
 import Chevron from "../src/components/Chevron.tsx";
+import ViewAreaPill from "../src/components/ViewAreaPill.tsx";
 import { RailAd, useRailFollow } from "./Ads.jsx";
 import { ZOOM } from "./wideLayout.js";
 import BrandMark from "../src/components/BrandMark.tsx";
@@ -196,7 +197,7 @@ export function WideSearch({ onOpenRoute, onOpenArea, onOpenFinder, width, left,
     const where = h.kind === "finder" ? "Open the Route finder with these filters" : h.kind === "place" ? [h.a.where, h.a.route_count ? h.a.route_count + (h.a.route_count === 1 ? " climb" : " climbs") : ""].filter(Boolean).join(" · ") : routeWhere(h.r);
     const grade = h.kind === "route" ? h.r.grade : "";
     const held = (h.kind === "place" && placesState === "busy") || (h.kind === "route" && routesState === "busy");
-    return <button key={h.kind + (h.kind === "finder" ? "" : h.kind === "place" ? h.a.id : h.r.id)} id={"wide-search-" + i} role="option" aria-selected={on} onMouseDown={e => e.preventDefault()} onMouseEnter={() => setHi(i)} onClick={click(h)} aria-busy={held || undefined} style={{ ...ROW, background: on ? C.card : "transparent", opacity: held ? 0.5 : 1 }}>{h.kind === "route" ? <DiscIcon d={disc} size={17}/> : <ActionIcon name={h.kind === "finder" ? "explore" : "pin"} size={17} color={C.textMuted}/>}<span style={{ minWidth: 0, flex: 1 }}><span style={{ display: "block", fontSize: 14, fontWeight: 700, overflowWrap: "anywhere" }}>{name}</span>{grade || where ? <span style={{ display: "block", fontSize: 12, color: C.textMuted, overflowWrap: "anywhere" }}>{grade ? <span style={{ color: discColor, fontWeight: 700 }}>{grade}</span> : null}{grade && where ? " · " : ""}{where}</span> : null}</span></button>;
+    return <button key={h.kind + (h.kind === "finder" ? "" : h.kind === "place" ? h.a.id : h.r.id)} id={"wide-search-" + i} role="option" aria-selected={on} onMouseDown={e => e.preventDefault()} onMouseEnter={() => setHi(i)} onClick={click(h)} aria-busy={held || undefined} style={{ ...ROW, background: on ? C.card : "transparent", opacity: held ? 0.5 : 1 }}>{h.kind === "route" ? <DiscIcon d={disc} size={17}/> : <ActionIcon name={h.kind === "finder" ? "explore" : "pin"} size={17} color={C.textMuted}/>}<span style={{ minWidth: 0, flex: 1 }}><span style={{ display: "block", fontSize: 14, fontWeight: 700, overflowWrap: "anywhere" }}>{name}</span>{grade || where ? <span style={{ display: "block", fontSize: 12, color: C.textMuted, overflowWrap: "anywhere" }}>{grade ? <span style={{ color: discColor, fontWeight: 700 }}>{grade}</span> : null}{grade && where ? " · " : ""}{where}</span> : null}</span>{h.kind === "place" ? <ViewAreaPill C={C}/> : null}</button>;
   };
   const showList = open && !!qq;
   // The EMPTY box, focused: recent words and Near me (nothing when there is neither).
