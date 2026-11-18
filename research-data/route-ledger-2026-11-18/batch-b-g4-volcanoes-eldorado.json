@@ -1,0 +1,443 @@
+{
+ "wa_mount_adams_south_climb": {
+  "area": "wa_mount_adams",
+  "set": {
+   "waypoints": [
+    {
+     "lat": 46.1359,
+     "lng": -121.4976,
+     "elev": 5562,
+     "name": "South Climb / Cold Springs Trailhead",
+     "type": "Trailhead",
+     "elevFt": 5562,
+     "directions": "From Trout Lake, drive north on Mt Adams Road to the FR 23 junction and bear right about a mile to the signed FR 80 turn for South Climb. Follow FR 80 for 3.7 miles to FR 8040, then FR 8040 for 8.1 miles to its end at the South Climb / Cold Springs trailhead; it is steep and narrow with sharp switchbacks, so no RVs or trailers. Self-issue a free wilderness permit at the trailhead, and buy the Mt. Adams Climbing Pass online beforehand to go above 7,000 ft."
+    },
+    {
+     "lat": 46.157013,
+     "lng": -121.491171,
+     "elev": 6792,
+     "name": "Morrison Creek crossing",
+     "type": "Water",
+     "distMi": 2.2
+    },
+    {
+     "lat": 46.2024372,
+     "lng": -121.4907742,
+     "elev": 12276,
+     "name": "Mount Adams Summit",
+     "type": "Summit",
+     "elevFt": 12276,
+     "directions": "Follow South Climb Trail #183 up an old roadbed through the burn, across the Round the Mountain Trail and the PCT, and up Crescent Ridge beside the Crescent Glacier to the Lunch Counter, a rocky bench at about 9,250-9,400 ft. Climb the south-facing snowfield of the South Spur about 2,400 ft to Piker's Peak, the false summit, then drop to the saddle and climb the last 600 ft or so of the summit cone to the old lookout on top."
+    }
+   ]
+  },
+  "review": {
+   "sources": [
+    "https://www.fs.usda.gov/r06/giffordpinchot/recreation/mt-adams-summit",
+    "https://www.fs.usda.gov/r06/giffordpinchot/recreation/trails/trail-183-south-climb",
+    "https://fs.usda.gov/r06/giffordpinchot/recreation/trailhead-south-climb",
+    "https://www.recreation.gov/activitypass/mt-adams-climb",
+    "https://www.mountaineers.org/activities/routes-places/mount-adams-south-spur",
+    "USGS GNIS DomesticNames_WA 1515726 Mount Adams",
+    "USGS EPQS 3DEP elevation",
+    "https://www.mountainproject.com/area/105877037/mount-adams"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "high_point_ft",
+    "value": 12276,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r06/giffordpinchot/recreation/mt-adams-summit",
+      "official": true,
+      "fact": "summit 12,276 ft",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-adams-south-spur",
+      "fact": "High Point: 12,276 ft",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "measurement": "USGS 3DEP (EPQS) at the GNIS Mount Adams point 46.2024372,-121.4907742 = 12,276.3 ft; highest cell of a 7x7 grid at ~25 m spacing",
+      "fact": "12276"
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 6600,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-adams-south-spur",
+      "fact": "Elevation Gain: 6,600 ft",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.fs.usda.gov/r06/giffordpinchot/recreation/trails/trail-183-south-climb",
+      "official": true,
+      "fact": "about 6,700 vertical feet",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "measurement": "official 12,276 ft summit - USGS 3DEP 5,562 ft at the trailhead pin = 6,714 ft (within 10% of 6,600)",
+      "fact": "6714"
+     }
+    ]
+   },
+   {
+    "field": "waypoints/Mount Adams Summit",
+    "value": {
+     "name": "Mount Adams Summit",
+     "lat": 46.2024372,
+     "lng": -121.4907742
+    },
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.usgs.gov/tools/geographic-names-information-system-gnis",
+      "fact": "GNIS 1515726 Mount Adams 46.2024372,-121.4907742",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "measurement": "USGS 3DEP grid search (49 points, ~25 m spacing) around the GNIS point: highest cell is the GNIS point itself (12,276 ft)",
+      "fact": "high point within 25 m"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_mount_adams_south_climb",
+    "column": "pitches",
+    "from": 0,
+    "to": null,
+    "why": "pitches is >=1 or null, never 0; a walk-up snow climb has no pitches (same fix as wa_pimpsqueak in batch A)",
+    "evidence": []
+   },
+   {
+    "table": "routes",
+    "id": "wa_mount_adams_south_climb",
+    "column": "permit",
+    "from": "Mt. Adams Climbing Pass (Cascade Volcano Pass) required above 7,000 ft May 1-Sep 30, sold per trip on Recreation.gov; free self-issue wilderness permit at the trailhead otherwise. Pack out human waste.",
+    "to": "Mt. Adams Climbing Pass required above 7,000 ft May 1-Sep 30, $20 per person (16+) per trip on Recreation.gov; free self-issue wilderness permit at the trailhead otherwise. Pack out human waste.",
+    "why": "The official name is Mt. Adams Climbing Pass; 'Cascade Volcano Pass' appears on no current USFS or Recreation.gov page. Adds the stated $20 fee. Lock official-1 after.",
+    "evidence": [
+     "https://www.fs.usda.gov/r06/giffordpinchot/recreation/mt-adams-summit",
+     "https://www.recreation.gov/activitypass/mt-adams-climb"
+    ]
+   }
+  ],
+  "disputed": [
+   "dist_km (9.2): USFS says ~12 mi round trip (9.7 km one-way), The Mountaineers 14 mi round trip (11.3 km one-way); the stored track measures 9.5 km up / 19.2 km total. Not locked.",
+   "fa: stored 'Unknown (climbed since at least the 1860s)'. The PEAK's first recorded ascent is commonly given as 1854, but no route-FA source was opened; left alone.",
+   "grade 'Class 2': The Mountaineers rate it a scramble (Strenuous 5, Technical 4), Mountain Project 'Easy Snow'; no opened source states a class. Not locked.",
+   "max_angle 30: only The Mountaineers (30 degree snow below the summit). One source; not locked."
+  ],
+  "notes": "Waypoints: summit moved 23 m to the exact USGS GNIS point (official 12,276 ft); trailhead elev set from USGS 3DEP (5,562 ft, was 5,600) and its directions now name the Mt. Adams Climbing Pass instead of 'Cascade Volcano Pass' (the only text change). Trailhead pin NOT moved: 17 m from the USFS trailhead point (46.135752,-121.497575) but 52 m from the OSM 'South Climb Trailhead' parking multipolygon centroid (two lots), so not locked. USFS now says the road needs good clearance and AWD year-round (4WD recommended); road/approach say only 'no RVs/trailers' — owner may want that in road.status (not writable here). access.fees/parking_pass/rules match USFS (group 12, $5/day or $30/yr, Climbing Pass stub covers parking) but the Yakama Nation sentence was not verified, so access is not locked. Ranger station (509) 395-3402, 2455 Hwy 141 confirmed by USFS. Stored GPX (CalTopo-sourced, kept per rule) passes 134 m from the summit pin, inside the 300 m allowance; max gap 80 m."
+ },
+ "wa_mount_st_helens_monitor_ridge": {
+  "area": "wa_mount_st_helens",
+  "set": {
+   "waypoints": [
+    {
+     "lat": 46.14639,
+     "lng": -122.18324,
+     "elev": 3740,
+     "name": "Climbers Bivouac Trailhead",
+     "note": "Highest vehicle access on the south side via FR-90/FR-83/FR-81/Spur 830; Ptarmigan Trail #216A starts here, and a climbing permit is required above 4,800 ft.",
+     "type": "Trailhead",
+     "distMi": 0,
+     "directions": "From Cougar, follow FR-90, FR-83, FR-81 and Spur 830 to the Climbers Bivouac trailhead at 3,700 ft, the highest vehicle access on this side of the mountain. Ptarmigan Trail #216A starts from the parking area. A climbing permit is required year-round above 4,800 ft and is checked at or near the trailhead; permits sell on Recreation.gov and release on the 1st of the prior month. Climbers Bivouac and the summer route are typically open and snow-free from late June through October."
+    },
+    {
+     "lat": 46.146715,
+     "lng": -122.182665,
+     "elev": 3736,
+     "name": "Climbers Bivouac",
+     "type": "Campsite"
+    },
+    {
+     "lat": 46.16442,
+     "lng": -122.1906,
+     "elev": 4665,
+     "name": "Ptarmigan Trail / Loowit Trail junction",
+     "note": "Ptarmigan Trail #216A meets the Loowit Trail (#216) here after climbing 900 ft through second-growth forest; continue straight/south to keep ascending toward timberline.",
+     "type": "Junction",
+     "distMi": 2.1,
+     "directions": "From the parking area pick up the signed Ptarmigan Trail #216A and follow it through second-growth forest for a little over two miles, gaining roughly 1,000 ft at an easy grade to the point where the Loowit Trail cuts across. Keep going straight and uphill rather than turning onto the Loowit. This stretch holds the only shade and the only seasonal creeklets on the route, and nothing above is dependable, so most parties carry all their water from the car."
+    },
+    {
+     "lat": 46.164959,
+     "lng": -122.19058,
+     "elev": 4727,
+     "name": "Timberline / permit-zone boundary",
+     "note": "Trees give out and the route opens onto Monitor Ridge's lava flows; this is the start of the year-round permit zone above which every climber must carry a self-issued or reserved permit.",
+     "type": "Junction",
+     "distMi": 2.25,
+     "directions": "A few hundred yards further the trees thin out and the tread gives way to the open lava and pumice of the ridge itself. This is the 4,800 ft line above which every climber must be carrying a permit, so it is the last place to sort that out. Before committing to the slope, find the first of the wooden posts and confirm the line you will be following."
+    },
+    {
+     "lat": 46.183266,
+     "lng": -122.189692,
+     "elev": 7271,
+     "name": "End of wooden route-marker posts",
+     "note": "Large wooden posts mark the boulder-hop route up Monitor Ridge to about this elevation; above here the tread disappears and the line is unmarked loose rock, pumice, and ash.",
+     "type": "Junction",
+     "distMi": 4,
+     "directions": "Above timberline the route follows a widely spaced line of tall wooden posts up boulder ribs and blocky old lava for about 2,200 ft; the rock ribs travel far better than the ash gullies beside them. Losing the post line in fog or low cloud is the biggest route-finding problem on the climb and a small drift off it puts you on steep, loose, off-route ground, so sight the next post before leaving the last. The posts run out near a GPS monitoring station at about 7,000 ft."
+    },
+    {
+     "lat": 46.191444,
+     "lng": -122.195816,
+     "elev": 8365,
+     "name": "Mount St. Helens summit (crater rim high point)",
+     "note": "True summit is about a quarter mile west along the crescent crater rim from where Monitor Ridge tops out; on clear days it offers views into the 1980-eruption horseshoe crater and lava dome.",
+     "type": "Summit",
+     "distMi": 5,
+     "directions": "The high point is a short walk west along the crescent of the rim from where Monitor Ridge tops out. Stay on the outer side of the crest the whole way and keep the same distance off the lip; there is nothing gained by walking the edge for the view into the crater."
+    }
+   ]
+  },
+  "review": {
+   "sources": [
+    "https://fs.usda.gov/r06/giffordpinchot/recreation/monitor-ridge-climbing-route",
+    "https://fs.usda.gov/r06/giffordpinchot/recreation/mount-st-helens-summit",
+    "https://fs.usda.gov/r06/giffordpinchot/recreation/trailhead-climbers-bivouac-summer-climbing-route",
+    "https://www.recreation.gov/permits/4675309",
+    "https://www.mountaineers.org/activities/routes-places/mount-st-helens-monitor-ridge",
+    "USGS GNIS DomesticNames_WA 1525360 Mount Saint Helens",
+    "USGS EPQS 3DEP elevation"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "permit",
+    "value": "Climbing permit required year-round above 4,800 ft; Apr 1-Oct 31 permits are quota-limited and sold on Recreation.gov, no quota Nov-Mar.",
+    "method": "official-1",
+    "level": "locked",
+    "expires_at": "2027-11-18T00:00:00Z",
+    "evidence": [
+     {
+      "url": "https://fs.usda.gov/r06/giffordpinchot/recreation/mount-st-helens-summit",
+      "official": true,
+      "fact": "above 4,800 ft year-round; quota Apr 1-Oct 31 (350, then 110/day); Nov 1-Mar 31 free, no limit",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://fs.usda.gov/r06/giffordpinchot/recreation/trailhead-climbers-bivouac-summer-climbing-route",
+      "official": true,
+      "fact": "same dates and quotas (page updated 2026-10-27)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 4700,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-st-helens-monitor-ridge",
+      "fact": "Elevation Gain: 4,700 ft",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://fs.usda.gov/r06/giffordpinchot/recreation/monitor-ridge-climbing-route",
+      "official": true,
+      "fact": "gaining 4,500 feet in 5 miles (within 10%)",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "measurement": "official 8,365 ft rim - USGS 3DEP 3,740 ft at the trailhead pin = 4,625 ft",
+      "fact": "4625"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_mount_st_helens_monitor_ridge",
+    "column": "high_point_ft",
+    "from": 8363,
+    "to": 8365,
+    "why": "Land manager's published summit/crater-rim figure is 8,365 ft (USFS route + summit pages; Recreation.gov 8,365 ft / 2,550 m). 8,363 is the older USGS figure. Then lock official-1.",
+    "evidence": [
+     "https://fs.usda.gov/r06/giffordpinchot/recreation/monitor-ridge-climbing-route",
+     "https://www.recreation.gov/permits/4675309"
+    ]
+   },
+   {
+    "table": "areas",
+    "id": "wa_mount_st_helens",
+    "column": "elevation_ft",
+    "from": 8363,
+    "to": 8365,
+    "why": "same official figure; areas.elevation (metres) 2549 -> 2550",
+    "evidence": [
+     "https://www.recreation.gov/permits/4675309"
+    ]
+   }
+  ],
+  "disputed": [
+   "Summit pin: GNIS 'Mount Saint Helens' (46.1911944,-122.1943855) lies 114 m E of the stored pin and 3DEP puts it at 8,169 ft, ~160 ft below the rim high point. The stored pin (46.191444,-122.195816, 3DEP 8,326 ft) is within ~5 m of the 3DEP grid high point (46.1914,-122.1958, 8,321 ft) on the SW rim, which Recreation.gov names as the highest point. Feature wins, pin kept; not locked because OSM (second method) could not be queried (Overpass 502 all session).",
+   "Permit season end: the USFS Monitor Ridge page's Passes section says Apr 1-Nov 30 quota / Dec 1-Mar 31 free, contradicting its own General Information (Apr 1-Oct 31) and the summit + trailhead pages. Locked to Oct 31 (3 of 4 statements, trailhead page newest); re-check at expiry.",
+   "dist_km 8: USFS 5 mi one-way (8.0 km) vs The Mountaineers 9 mi round trip (7.2 km one-way); not locked (two dist conventions).",
+   "End of wooden route-marker posts pin: USFS says the posts end at about 7,000 ft, but 3DEP at the pin reads 7,271 ft, so the pin probably sits ~270 ft too high on the ridge. Elevation now from 3DEP; position left for a check-in or recorded track."
+  ],
+  "notes": "Removed two Hazard pins that mark no fixed feature: Upper pumice/ash slope | Crater rim cornice / unstable edge (a whole slope, and a seasonal cornice; rule: moving/vague hazards get no pin; the facts remain in approach/descent_text/hazards). Pin elevations reset to USGS 3DEP (were round website numbers); summit elev 8,365 official. Trailhead pin not moved: USFS trailhead point (46.146375,-122.183602) is 28 m away and the OSM 'Climbers Bivouac Trailhead' parking polygon centroid 32 m away, but those two are 57 m apart, so not locked. access object lacks the $20/climber/day quota-season fee and $6 reservation fee (Recreation.gov), and its overnight_permit says camping above 4,800 ft is not allowed, which no opened official page states; Nov-Mar self-issue is at the Marble Mountain Sno-Park kiosk or the trailhead if open (USFS trailhead page). USFS: FR 81-830 gate closes Dec 1 2026, AWD/4WD recommended, primitive first-come camping at the Bivouac. Monument phone (360) 449-7800 confirmed."
+ },
+ "wa_eldorado_peak_east_ridge": {
+  "area": "wa_main_peak",
+  "set": {
+   "waypoints": [
+    {
+     "lat": 48.4926,
+     "lng": -121.1222,
+     "elev": 2164,
+     "name": "Eldorado Creek Trailhead (Cascade River Road)",
+     "type": "Trailhead",
+     "distMi": 0,
+     "elevFt": 2164,
+     "directions": "Drive Cascade River Road east from Marblemount for about 20 miles to the Eldorado trailhead pullout, about 3 miles short of the road's end at Cascade Pass, roughly 2,100 feet; the first ten miles are paved and the rest is gravel and washboard. There's a pit toilet at the parking area. The road typically doesn't open until late May or June, depending on snowpack. Camping here needs a North Cascades National Park backcountry permit reserved in advance, but the permit itself must be picked up in person at the Marblemount Wilderness Information Center before you drive up."
+    },
+    {
+     "lat": 48.5352,
+     "lng": -121.1233,
+     "elev": 7634,
+     "name": "Eldorado / Inspiration Glacier camp",
+     "type": "Campsite",
+     "distMi": 3.5,
+     "elevFt": 7634,
+     "directions": "Walk about 90 ft back down the road and cross the Cascade River on the log, then go about 100 ft straight away from the river to the climbers' path. It climbs steeply through timber for about 1,500 ft to a boulder field; follow cairns up it, staying climber's right of Eldorado Creek, into Eldorado Creek Basin. Cross the ridge at about 6,100 ft into Roush Basin, take talus and slabs onto the Eldorado Glacier, rope up, and climb it to camp near 7,500 ft."
+    },
+    {
+     "lat": 48.538,
+     "lng": -121.128,
+     "elev": 8104,
+     "name": "Inspiration Glacier",
+     "type": "Junction",
+     "distMi": 4.3,
+     "elevFt": 8104,
+     "directions": "Roped, cross the nearly flat Inspiration Glacier toward the obvious low gap near the east end of Eldorado's East Ridge. Take a bearing from camp, because the glacier is featureless in cloud. Pass north through the gap onto the glacier slopes north of the ridge."
+    },
+    {
+     "lat": 48.5376197,
+     "lng": -121.1342682,
+     "elev": 8868,
+     "name": "Eldorado Peak summit",
+     "type": "Summit",
+     "distMi": 4.8,
+     "elevFt": 8868,
+     "directions": "Climb west up the glacier slopes north of the ridge, keeping the crest on your left and probing suspect snow bridges, to where the slope steepens below the knife-edge. Follow the narrow, often corniced snow crest to the small summit. An axe and crampons are essential, and many parties place pickets along the crest."
+    }
+   ]
+  },
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/108131635/east-ridge",
+    "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/high-occupancy-xc-zones/eldorado-peak-inspiration-glacier",
+    "https://www.nps.gov/noca/blogs/climbing-conditions-for-eldorado-area.htm",
+    "https://www.nps.gov/noca/planyourvisit/permits.htm",
+    "https://www.openstreetmap.org/node/356544852",
+    "https://www.openstreetmap.org/way/1110149578",
+    "USGS GNIS DomesticNames_WA 1519242 Eldorado Peak",
+    "USGS EPQS 3DEP elevation"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "waypoints/Eldorado Peak summit",
+    "value": {
+     "name": "Eldorado Peak summit",
+     "lat": 48.5376197,
+     "lng": -121.1342682
+    },
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.usgs.gov/tools/geographic-names-information-system-gnis",
+      "fact": "GNIS 1519242 Eldorado Peak 48.5376197,-121.1342682",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "measurement": "USGS 3DEP grid search (49 points, ~15 m spacing): high point 48.53747,-121.134486 (8,857 ft), 22 m from the GNIS point",
+      "fact": "within 22 m"
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 6716,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/high-occupancy-xc-zones/eldorado-peak-inspiration-glacier",
+      "fact": "Elevation Gain: 6,768 ft",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "measurement": "8,868 ft summit - USGS 3DEP 2,164 ft at the trailhead pin = 6,704 ft",
+      "fact": "6704"
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "Grade II",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108131635/east-ridge",
+      "fact": "Snow, Alpine, Grade II",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_eldorado_peak_east_ridge",
+    "column": "high_point_ft",
+    "from": 8872,
+    "to": 8868,
+    "why": "Published figure is 8,868 ft (USGS topo value carried by OSM node 356544852 ele=2703 m, source=USGS; The Mountaineers High Point 8,868 ft). No source found for 8,872. Then lock agree-2.",
+    "evidence": [
+     "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/high-occupancy-xc-zones/eldorado-peak-inspiration-glacier",
+     "https://www.openstreetmap.org/node/356544852"
+    ]
+   },
+   {
+    "table": "areas",
+    "id": "wa_main_peak",
+    "column": "elevation_ft",
+    "from": 8872,
+    "to": 8868,
+    "why": "same figure (its blurb also says 8,873 ft; fix that number to 8,868)",
+    "evidence": [
+     "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/high-occupancy-xc-zones/eldorado-peak-inspiration-glacier"
+    ]
+   }
+  ],
+  "disputed": [
+   "fa 'Donald Blair, Norval Grigg, Arthur Winder, Arthur Wilson - Aug 27, 1933': Mountain Project agrees on names and Aug 1933 (no day). The second source (Blair's article in The Mountaineer annual, 1933) is a PDF that would not render through Chrome; an FA cannot lock on one source. Shape rule: fa holds names only, the date belongs in its own place.",
+   "permit text 'no permit for day climbs': the NPS permits page (updated 2026-10-15) says backcountry permits are required year-round for overnight camps and cross-country zones and does not say day trips are exempt. Not locked; owner/NPS to confirm.",
+   "grade 'Class 2' on a roped glacier route: NPS conditions reports (2023) note short 4th and low-5th class rock steps late season and bare ice above ~8,600 ft avoidable by a class 3 scramble; MP rates it Easy Snow. Grade not locked.",
+   "length_m 305: no source states a route length."
+  ],
+  "notes": "HIERARCHY: area wa_main_peak is named 'Main Peak' but its blurb, coordinates and elevation are Eldorado Peak's summit, under parent wa_eldorado_peak. It copies Mountain Project's breadcrumb (... > Eldorado Peak > Main Peak) and reads as a duplicate level: owner decision whether to rename wa_main_peak to 'Eldorado Peak' or move its 8 routes up into wa_eldorado_peak (read the parent row first; catalog_find_area). Waypoints: summit moved 30 m to the exact GNIS point with 8,868 ft (was 8,872); 'Inspiration Glacier' junction elev set from 3DEP (8,104 ft, was 8,200); that pin sits 114 m off the stored track and 730 m from the GNIS glacier point, marks a vague spot on a moving glacier and is a candidate for removal (left in place). Trailhead pin left: 19 m from the OSM unpaved parking way 1110149578, elev 2,164 ft matches 3DEP. NPS facts: group limit 12 in the Eldorado XC zone (matches access.rules); all Cascade River Road permits picked up in person at the Marblemount WIC, 7280 Ranger Station Rd (matches); East Ridge bivy ~7,600 ft is for Eldorado XC zone permits only, Inspiration XC is a separate permit; no camping at the Eldorado parking area; food canisters Jun 1-Nov 15 below treeline in the Eldorado XC zone; park phone 360-854-7200. access.notes '2026 lottery Mar 2-13' and the '$10 + $6' fees were not on the permits page (fees page not opened): unverified."
+ }
+}
