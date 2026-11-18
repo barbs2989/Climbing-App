@@ -32,6 +32,7 @@ const lazyCount = appFiles.reduce((n, f) => n + (read(f).match(/\bimport\(\s*["'
 
 const main = read("main.jsx");
 const at = main.indexOf('"vite:preloadError"');
+const at0 = at;
 if (lazyCount && at < 0) {
   fail.push(`${lazyCount} dynamic import()s in the app, but main.jsx no longer listens for "vite:preloadError" — a tab open across a deploy shows "This screen hit a bug" on every lazy screen`);
 } else if (at >= 0) {
@@ -75,6 +76,21 @@ else for (const [engine, msg] of [
   ["Firefox", "can't access property \"default\", n is undefined"],
   ["Safari", "undefined is not an object (evaluating 'n.default')"],
 ]) if (!new RegExp(sw[1], sw[2]).test(msg)) fail.push(`AppErrorBoundary's swallowed-chunk test no longer matches ${engine}'s message ("${msg}")`);
+
+// A history step after location.reload() CANCELS the reload (measured live 2026-11-18). The deploy
+// reload's error unmounts App when it reaches AppErrorBoundary, and lib/backButton.js steps history on
+// unmount -- so main.jsx must flag the reload first, and backButton.js must not step while it is flagged.
+if (at0 >= 0) {
+  const body0 = main.slice(at0, at0 + 1400);
+  const n = body0.indexOf("noteReloadPending()"), r = body0.indexOf("location.reload()");
+  if (n < 0 || n > r) fail.push("main.jsx's vite:preloadError handler no longer calls noteReloadPending() BEFORE location.reload() — lib/backButton.js's unmount cleanup then steps history and cancels the reload, leaving the climber on the error card");
+}
+{
+  const bb = read("lib/backButton.js");
+  const backs = (bb.match(/history\.back\(\)/g) || []).length;
+  const guarded = (bb.match(/isReloadPending\(\)/g) || []).length;
+  if (!/import \{[^}]*\bisReloadPending\b[^}]*\} from "\.\/chunkReload\.js"/.test(bb) || guarded < 2) fail.push(`lib/backButton.js steps history (${backs} history.back() calls) without asking isReloadPending() in both its disarm and its unmount cleanup — a deploy reload is cancelled and the climber is left on the error card`);
+}
 
 if (fail.length) {
   console.error("check:chunk-reload FAILED:\n" + fail.map((f) => "  - " + f).join("\n"));
