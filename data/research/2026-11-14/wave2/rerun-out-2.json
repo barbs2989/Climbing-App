@@ -1,0 +1,935 @@
+{
+ "ca_east_face_left_side": {
+  "area": "ca_whaleback",
+  "skip_reason": "Opened en.wikipedia.org/wiki/Whaleback_(California) (easiest route class 3, FA 1936; no East Face Left Side description) and the SPS mileage list (sierrapeaks.org xls: Whaleback easiest route 24.0 mi, 6225 ft gain, 2850 ft loss from Marvin Pass Trail) - the list does not name the route, so its figures cannot be tied to East Face, Left Side. Earlier pass: two Mountain Project hits were Wind River routes; SummitPost 403."
+ },
+ "ca_four_gables_peak_12_801_peak_12_808_standard_route": {
+  "area": "ca_four_gables_peak_12_801_peak_12_808",
+  "facts": [
+   {
+    "field": "dist_mi_oneway",
+    "value": 8.3,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS mileage list: 8.3 miles one way from trailhead to Four Gables summit by the easiest route"
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 5050,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS mileage list: 5050 ft of gain trailhead to Four Gables summit"
+     }
+    ]
+   },
+   {
+    "field": "approach_loss_ft",
+    "value": 100,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS mileage list: 100 ft of loss on the way in to Four Gables"
+     }
+    ]
+   },
+   {
+    "field": "trailhead_elev_ft",
+    "value": 7770,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS mileage list: start elevation 7770 ft for Four Gables"
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Horton Lakes Trailhead",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS mileage list: Four Gables trailhead is the Horton Lakes Trail"
+     },
+     {
+      "url": "https://themtsarecalling.com/basinfourgables/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trip to Four Gables starts at the Horton Lakes trailhead, which has no services"
+     }
+    ]
+   }
+  ],
+  "note": "Grade conflict not recorded: SPS list (xls and SPSPkXlsht.htm) gives class 1 for the easiest route; Wikipedia Four_Gables gives easiest route class 2. themtsarecalling 17.9 mi / 7300 ft is a four-peak day, not used. Wikipedia FA 1931 Norman Clyde is the peak FA, not tied to this route."
+ },
+ "ca_electra_peak_standard_route": {
+  "area": "ca_electra_peak",
+  "facts": [
+   {
+    "field": "dist_mi_oneway",
+    "value": 13.5,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS mileage list: 13.5 miles one way from trailhead to Electra Peak summit by the easiest route"
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 7800,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS mileage list: 7800 ft of gain trailhead to Electra Peak summit"
+     }
+    ]
+   },
+   {
+    "field": "approach_loss_ft",
+    "value": 2600,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS mileage list: 2600 ft of loss on the way in to Electra Peak"
+     }
+    ]
+   },
+   {
+    "field": "trailhead_elev_ft",
+    "value": 7240,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS mileage list: start elevation 7240 ft for Electra Peak"
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Rush Creek Trail",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS mileage list: Electra Peak trailhead is the Rush Creek Trail"
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "Class 2",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS mileage list: Electra Peak easiest route class 2"
+     }
+    ]
+   }
+  ],
+  "note": "Wikipedia Electra_Peak infobox has no easiest route or FA. Earlier pass: SPS trip reports sps00050/sps00028 and climber.org 1999/446 are multi-peak trips, not used."
+ },
+ "ca_ellery_gullies": {
+  "area": "ca_ellery_ridges",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Easy 5th",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114981729/ellery-gullies",
+      "retrieved_at": "2026-11-14",
+      "fact": "Ellery Gullies rated Easy 5th; gullies I and II are third class to very easy fifth class"
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 1000,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114981729/ellery-gullies",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route listed as trad/alpine, 1000 ft long"
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 6,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114981729/ellery-gullies",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route listed with 6 pitches"
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "II",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114981729/ellery-gullies",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route listed as Grade II"
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "unknown",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114981729/ellery-gullies",
+      "retrieved_at": "2026-11-14",
+      "fact": "First ascent listed as unknown"
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "Four gully systems between Crow's Foot and Power House Couloir on the south slope of Lee Vining Canyon; I and II are 3rd to very easy 5th, III and IV moderate 5th",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114981729/ellery-gullies",
+      "retrieved_at": "2026-11-14",
+      "fact": "Four gullies between Crow's Foot and Power House Couloir, numbered right to left; I and II 3rd/very easy 5th, III and IV moderate 5th"
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Park at Ellery Lake dam, cross the dam, follow the dirt road, then go up scree to gullies I and II; III and IV need cross-country travel past the road end",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114981729/ellery-gullies",
+      "retrieved_at": "2026-11-14",
+      "fact": "Gullies I and II seen from Ellery Lake dam parking; cross dam, follow dirt road, climb scree; III and IV need overland travel"
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "As for the Ellery ridges: work down through dwarf pine toward Speed of Life/Golden Rock or Golden Years, then a steep section to scree and moraine",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114981729/ellery-gullies",
+      "retrieved_at": "2026-11-14",
+      "fact": "Descend as for the ridges through dwarf pine toward Speed of Life/Golden Rock or Golden Years, then a steep step to scree"
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Light rack, or solo",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114981729/ellery-gullies",
+      "retrieved_at": "2026-11-14",
+      "fact": "Protection: a light rack, or solo it"
+     }
+    ]
+   }
+  ],
+  "note": "Single publisher (Mountain Project route page; the Ellery Ridges area page 112067363 is the same publisher). Earlier pass found only ski and FKT pages."
+ },
+ "ca_excelsior_mountain_standard_route": {
+  "area": "ca_excelsior_mountain",
+  "facts": [
+   {
+    "field": "dist_mi_oneway",
+    "value": 4.6,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS mileage list: 4.6 miles one way from trailhead to Excelsior Mountain summit by the easiest route"
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 2995,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS mileage list: 2995 ft of gain trailhead to Excelsior Mountain summit"
+     }
+    ]
+   },
+   {
+    "field": "approach_loss_ft",
+    "value": 360,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS mileage list: 360 ft of loss on the way in to Excelsior Mountain"
+     }
+    ]
+   },
+   {
+    "field": "trailhead_elev_ft",
+    "value": 9810,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS mileage list: start elevation 9810 ft for Excelsior Mountain"
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Virginia Lakes Trailhead",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS mileage list: Excelsior Mountain trailhead is the Virginia Lakes Trail"
+     },
+     {
+      "url": "https://mountainfieldguide.com/excelsior-mountain-yosemite/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Virginia Lakes Trailhead called the most convenient starting point for an ascent"
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "Class 1",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS mileage list: Excelsior Mountain easiest route class 1"
+     }
+    ]
+   }
+  ],
+  "note": "mountainfieldguide.com says easiest routes are class 1 to 2 (not identical, so grade not agree-2). stavislost 9.4 mi loop and themtsarecalling 12.2 mi are multi-peak trips, not used."
+ },
+ "ca_finger_peak_standard_route": {
+  "area": "ca_finger_peak",
+  "facts": [
+   {
+    "field": "dist_mi_oneway",
+    "value": 28,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS mileage list: 28 miles one way from trailhead to Finger Peak summit by the easiest route"
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 7485,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS mileage list: 7485 ft of gain trailhead to Finger Peak summit"
+     }
+    ]
+   },
+   {
+    "field": "approach_loss_ft",
+    "value": 1800,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS mileage list: 1800 ft of loss on the way in to Finger Peak"
+     }
+    ]
+   },
+   {
+    "field": "trailhead_elev_ft",
+    "value": 6720,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS mileage list: start elevation 6720 ft for Finger Peak"
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Crown Valley Trail",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS mileage list: Finger Peak trailhead is the Crown Valley Trail"
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "Class 2",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS mileage list: Finger Peak easiest route class 2"
+     }
+    ]
+   }
+  ],
+  "note": "Wikipedia Finger_Peak does not exist (404). Earlier pass: climber.org 2003/1102 multi-peak from Rancheria TH; MP area lists only a technical route."
+ },
+ "ca_foerster_peak_standard_route": {
+  "area": "ca_foerster_peak",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Class 2",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.sierrapeaks.org/SPSPkXlsht.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS peak list: Foerster Peak, 12,057 ft, class 2 (easiest route)"
+     }
+    ]
+   }
+  ],
+  "note": "Foerster is not in the SPS mileage xls, so no distance or gain. Wikipedia Foerster_Peak: FA 1914 Norman Clyde (peak FA, not tied to this route), easiest route blank. Earlier pass: themtsarecalling and climber.org are multi-peak trips."
+ },
+ "ca_gemini_standard_route": {
+  "area": "ca_gemini",
+  "facts": [
+   {
+    "field": "dist_mi_oneway",
+    "value": 16,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS mileage list: 16 miles one way from trailhead to Gemini summit by the easiest route"
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 6380,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS mileage list: 6380 ft of gain trailhead to Gemini summit"
+     }
+    ]
+   },
+   {
+    "field": "approach_loss_ft",
+    "value": 1150,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS mileage list: 1150 ft of loss on the way in to Gemini"
+     }
+    ]
+   },
+   {
+    "field": "trailhead_elev_ft",
+    "value": 7650,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS mileage list: start elevation 7650 ft for Gemini"
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Bear Ridge Trail",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS mileage list: Gemini trailhead is the Bear Ridge Trail"
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "Class 2",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS mileage list: Gemini easiest route class 2"
+     }
+    ]
+   }
+  ],
+  "note": "Wikipedia Gemini_(California) 404. Earlier pass: themtsarecalling (Bear Creek Diversion Dam, 2 peaks) and backcountrysights (Italy Pass, 2 peaks) not used; their approaches differ from SPS Bear Ridge."
+ },
+ "ca_glacier_ridge_standard_route": {
+  "area": "ca_glacier_ridge",
+  "facts": [
+   {
+    "field": "dist_mi_oneway",
+    "value": 25,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS mileage list: 25 miles one way from trailhead to Glacier Ridge summit by the easiest route"
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 6870,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS mileage list: 6870 ft of gain trailhead to Glacier Ridge summit"
+     }
+    ]
+   },
+   {
+    "field": "approach_loss_ft",
+    "value": 2850,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS mileage list: 2850 ft of loss on the way in to Glacier Ridge"
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Marvin Pass Trail",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS mileage list: Glacier Ridge trailhead is the Marvin Pass Trail"
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "Class 2, class 4 summit",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS mileage list: Glacier Ridge class 2s4 (class 2 with a class 4 summit)"
+     }
+    ]
+   }
+  ],
+  "note": "SPS start elevation cell reads 83401 (typo), not recorded. Our grade Class 4 matches the class-4 summit block. Wikipedia Glacier_Ridge_(California) 404."
+ },
+ "ca_iron_mountain_via_fern_lake": {
+  "area": "ca_iron_mountain",
+  "skip_reason": "Opened SPS mileage list (sierrapeaks.org xls: Iron Mountain 7.7 mi, 4560 ft gain, 540 ft loss from West campground parking, class 1) and en.wikipedia.org Iron_Mountain_(Madera_County) (easiest class 2). Neither names the Fern Lake route; class conflicts (1 vs 2). Earlier pass: SPS sps00050 climbs from Corral Meadow, USFS Iron Lake Trail is a different trail."
+ },
+ "ca_joe_devel_peak_standard_route": {
+  "area": "ca_joe_devel_peak",
+  "facts": [
+   {
+    "field": "dist_mi_oneway",
+    "value": 17,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS mileage list: 17 miles one way from trailhead to Joe Devel Peak summit by the easiest route"
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 5285,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS mileage list: 5285 ft of gain trailhead to Joe Devel Peak summit"
+     }
+    ]
+   },
+   {
+    "field": "approach_loss_ft",
+    "value": 1900,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS mileage list: 1900 ft of loss on the way in to Joe Devel Peak"
+     }
+    ]
+   },
+   {
+    "field": "trailhead_elev_ft",
+    "value": 9940,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS mileage list: start elevation 9940 ft for Joe Devel Peak"
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Cottonwood Pass Trail",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS mileage list: Joe Devel Peak trailhead is the Cottonwood Pass Trail"
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "Class 2",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS mileage list: Joe Devel Peak easiest route class 2"
+     },
+     {
+      "url": "https://en.wikipedia.org/wiki/Joe_Devel_Peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Wikipedia infobox: easiest route class 2"
+     }
+    ]
+   }
+  ],
+  "note": "Wikipedia FA 1875 is the peak FA, not tied to this route."
+ },
+ "ca_kern_peak_kern_peak_trail_east_face": {
+  "area": "ca_kern_peak",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Class 1",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS mileage list: Kern Peak easiest route class 1"
+     }
+    ]
+   }
+  ],
+  "note": "SPS list gives Kern Peak easiest route 17.2 mi one way, 4920 ft gain, 3350 ft loss from Cottonwood Pass Trail (start 9940), but does not name the Kern Peak Trail or East Face, so figures not recorded. Wikipedia Kern_Peak: easiest route \"trail hike\", FA 1924 Horsfall and Laughlin (peak FA, citation needed). SummitPost 403; DDG gave only aggregators (AllTrails, onX, hiiker)."
+ },
+ "ca_kern_point_standard_route": {
+  "area": "ca_kern_point",
+  "facts": [
+   {
+    "field": "dist_mi_oneway",
+    "value": 23.5,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS mileage list: 23.5 miles one way from trailhead to Kern Point summit by the easiest route"
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 11020,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS mileage list: 11020 ft of gain trailhead to Kern Point summit"
+     }
+    ]
+   },
+   {
+    "field": "approach_loss_ft",
+    "value": 4600,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS mileage list: 4600 ft of loss on the way in to Kern Point"
+     }
+    ]
+   },
+   {
+    "field": "trailhead_elev_ft",
+    "value": 6310,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS mileage list: start elevation 6310 ft for Kern Point"
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Shepherd Pass Trail",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS mileage list: Kern Point trailhead is the Shepherd Pass Trail"
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "Class 2",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS mileage list: Kern Point easiest route class 2"
+     },
+     {
+      "url": "https://en.wikipedia.org/wiki/Kern_Point",
+      "retrieved_at": "2026-11-14",
+      "fact": "Wikipedia infobox: easiest route class 2"
+     }
+    ]
+   }
+  ],
+  "note": "Wikipedia FA 1924 is the peak FA, not tied to this route."
+ },
+ "ca_koip_peak_via_parker_pass_and_koip_peak_pass": {
+  "area": "ca_koip_peak",
+  "facts": [
+   {
+    "field": "dist_mi_oneway",
+    "value": 9.7,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS mileage list: 9.7 miles one way from trailhead to Koip Peak summit by the easiest route"
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 3005,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS mileage list: 3005 ft of gain trailhead to Koip Peak summit"
+     }
+    ]
+   },
+   {
+    "field": "approach_loss_ft",
+    "value": 400,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS mileage list: 400 ft of loss on the way in to Koip Peak"
+     }
+    ]
+   },
+   {
+    "field": "trailhead_elev_ft",
+    "value": 9689,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS mileage list: start elevation 9689 ft for Koip Peak"
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Mono Pass Trailhead",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS mileage list: Koip Peak trailhead is the Mono Pass Trail"
+     },
+     {
+      "url": "https://themtsarecalling.com/koip/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Koip Peak trip starts at the Mono Pass trailhead (trash, pit toilets), via Parker Pass and Koip Peak Pass switchbacks"
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "Class 1",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS mileage list: Koip Peak easiest route class 1"
+     },
+     {
+      "url": "https://en.wikipedia.org/wiki/Koip_Peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Wikipedia infobox: easiest route is a class 1 hike from Koip Peak Pass"
+     }
+    ]
+   }
+  ],
+  "note": "themtsarecalling 19.3 mi / 6850 ft covers Gibbs, Parker, Koip and Kuna, not used. Wikipedia FA 1919 Walker Huber is the peak FA."
+ },
+ "ca_leconte_gully": {
+  "area": "ca_g_grizzly_peak",
+  "skip_reason": "Opened themtsarecalling.com/libertycap/ (Grizzly Peak, Diving Board and Liberty Cap day: 11.6 mi, 6000 ft, class 4 - three summits, ascent described via Sierra Point, not clearly LeConte Gully) and supertopo.com climbers-forum/32650 (site error, did not load). Earlier pass: climber.org pages were Mount LeConte. SummitPost leconte-gully/164848 is 403."
+ }
+}

@@ -1,0 +1,729 @@
+{
+ "ca_devils_crag_1_standard_route": {
+  "area": "ca_devils_crag_1",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Class 4",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list gives Devils Crag #1 class 4 (least technical route)."
+     },
+     {
+      "url": "https://sierramountaineering.com/climbing-devils-crag/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Devils Crag #1 route described as a knife-edged 4th class ridge."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "South Lake trailhead, Bishop Pass Trail",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list trailhead for Devils Crag #1: Bishop Pass Trail."
+     },
+     {
+      "url": "https://sierramountaineering.com/climbing-devils-crag/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Approach starts at South Lake Trailhead and crosses Bishop Pass."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_oneway",
+    "value": 18.5,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list: Devils Crag #1 mileage 18.5, one way, least technical route."
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 6410,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list: Devils Crag #1 gain 6410 ft."
+     }
+    ]
+   },
+   {
+    "field": "approach_loss_ft",
+    "value": 3820,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list: Devils Crag #1 loss 3820 ft."
+     }
+    ]
+   },
+   {
+    "field": "trailhead_elev_ft",
+    "value": 9810,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list: Devils Crag #1 start elevation 9810 ft."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Over Bishop Pass (11,973 ft), down to LeConte Canyon and the JMT, south about 2.6 mi to Grouse Meadow, cross the river, then a steep loose slope",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierramountaineering.com/climbing-devils-crag/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Approach: 6 mi to Bishop Pass, 6.5 mi down to LeConte Canyon/JMT, 2.6 mi to Grouse Meadow, river crossing, steep loose slope."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Unnamed lakes near 10,400 ft above Grouse Meadow",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierramountaineering.com/climbing-devils-crag/",
+      "retrieved_at": "2026-11-14",
+      "fact": "A couple of unnamed lakes at about 10,400 ft offer camping."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Talus to Rambaud Pass (11,575 ft), then the Northwest Arete: class 4 chute, short 4th-class pitches, an exposed downclimb, narrow ridge to summit",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierramountaineering.com/climbing-devils-crag/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route: Rambaud Pass, start of Northwest Arete, class 4 chute ~20m, 20m 4th class pitch, exposed 10m downclimb, narrow ridge to top."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Loose rock and wild exposure on a narrow 4th-class ridge; rope work used",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierramountaineering.com/climbing-devils-crag/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Rock is loose and route wildly exposed; complex 4th class terrain needs careful rope work."
+     }
+    ]
+   },
+   {
+    "field": "trip_days",
+    "value": "Guided trip: day 1 approach to camp (16.7 mi, about 13 h), day 2 summit",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierramountaineering.com/climbing-devils-crag/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Day 1 approach measured 16.71 miles in just over 13 hours; Day 2 to Devils Crag #1."
+     }
+    ]
+   }
+  ],
+  "note": "Wikipedia (opened earlier pass) gives easiest route class 4+; SPS and SMI say class 4. SMI 16.71 mi is to camp, not summit; not used as distance. SPS list mileage is stated as one way on the least technical route; Gain/Loss columns as listed."
+ },
+ "ca_diamond_peak_standard_route": {
+  "area": "ca_diamond_peak",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Class 2",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list gives Diamond Peak class 2."
+     },
+     {
+      "url": "https://backcountrysights.com/black-mtn-diamond-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Several chutes lead to Diamond Peak, all class 2."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Baxter Pass Trail",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list trailhead for Diamond Peak: Baxter Pass Trail."
+     },
+     {
+      "url": "https://backcountrysights.com/black-mtn-diamond-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route goes up the Baxter Pass trail."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_oneway",
+    "value": 11.6,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list: Diamond Peak mileage 11.6, one way."
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 8860,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list: Diamond Peak gain 8860 ft."
+     }
+    ]
+   },
+   {
+    "field": "approach_loss_ft",
+    "value": 1765,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list: Diamond Peak loss 1765 ft."
+     }
+    ]
+   },
+   {
+    "field": "trailhead_elev_ft",
+    "value": 6030,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list: Diamond Peak start elevation 6030 ft."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Baxter Pass trail to the high meadows near 10,800 ft, leave the trail and go southwest up the canyon to the cirque between Black Mountain and Diamond Peak",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://backcountrysights.com/black-mtn-diamond-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trail to meadows ~10,800 ft, then cross-country SW up canyon to cirque between Black and Diamond."
+     }
+    ]
+   },
+   {
+    "field": "road",
+    "value": "Dirt road to Baxter Pass trailhead is well graded; no high clearance or 4WD needed",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://backcountrysights.com/black-mtn-diamond-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Road is mostly dirt but well-graded, passable without clearance or 4WD."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Inyo NF wilderness permit for overnight trips; no campfires above 10,400 ft",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://backcountrysights.com/black-mtn-diamond-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Overnight trips need an Inyo wilderness permit; no campfires above 10,400 ft."
+     }
+    ]
+   },
+   {
+    "field": "closure",
+    "value": "Area lies in the California Bighorn Sheep Zoological Area; seasonal restrictions were lifted by the Forest Service",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://backcountrysights.com/black-mtn-diamond-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Baxter Pass, Black and Diamond are in the Bighorn Sheep Zoological Area; seasonal restrictions lifted."
+     }
+    ]
+   }
+  ],
+  "note": "Backcountrysights 17.8 mi / 8700 ft is a 3-day Black+Diamond trip, not used. SPS list mileage is stated as one way on the least technical route; Gain/Loss columns as listed."
+ },
+ "ca_disappointment_peak_standard_route": {
+  "area": "ca_disappointment_peak",
+  "facts": [
+   {
+    "field": "trailhead",
+    "value": "South Fork of Big Pine Creek (South Fork Trail)",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list trailhead for Disappointment Peak: South Fork Trail."
+     },
+     {
+      "url": "https://www.climber.org/reports/2003/1119.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Disappointment attempt from trailhead South Fork of Big Pine Creek."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "Class 4",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list gives Disappointment Peak class 4."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_oneway",
+    "value": 6.8,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list: Disappointment Peak mileage 6.8, one way."
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 6315,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list: Disappointment Peak gain 6315 ft."
+     }
+    ]
+   },
+   {
+    "field": "approach_loss_ft",
+    "value": 200,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list: Disappointment Peak loss 200 ft."
+     }
+    ]
+   },
+   {
+    "field": "trailhead_elev_ft",
+    "value": 7800,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list: Disappointment Peak start elevation 7800 ft."
+     }
+    ]
+   }
+  ],
+  "note": "Wikipedia (earlier pass) says easiest route class 4+. climber.org 2003/1119 party did not summit (Balcony only). summitborn Disappointment page is the Wyoming peak, not used. SPS list mileage is stated as one way on the least technical route; Gain/Loss columns as listed."
+ },
+ "ca_disaster_peak_southwest_ridge": {
+  "area": "ca_disaster_peak",
+  "skip_reason": "Opened SPS mileage list (Disaster Peak class 2, Disaster Creek Trail, 6.7 mi one way, 4165 ft gain) and climber.org TripReports/2007/1647 (Iceberg Meadow TH up Disaster Creek, 4.9 mi/3500 ft). Neither names the southwest ridge, and the two figures disagree, so no figure can be tied to this route. SummitPost 403."
+ },
+ "wy_symmetry_coulior_to_upper_west_face": {
+  "area": "wy_storm_point",
+  "facts": [
+   {
+    "field": "hazard",
+    "value": "Snowfield at the top of the Symmetry Spire couloir: an unroped climber slipped and slid on the way to Storm Point (1963); rope inexperienced parties here",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://publications.americanalpineclub.org/articles/13196301301/",
+      "retrieved_at": "2026-11-14",
+      "fact": "1963: party climbing Storm Point via the Symmetry Spire couloir; unbelayed member slipped on upper snowfield; analysis says rope novices."
+     }
+    ]
+   }
+  ],
+  "note": "Only an accident report found. Mountain Project search renders client-side (no results readable); SummitPost 403; earlier pass found no route page."
+ },
+ "ny_basin_mountain_shoreys_shortcut": {
+  "area": "ny_basin_mountain",
+  "facts": [
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 16,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.lakeplacid.com/hiking/basin-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "16 miles round trip, from the Garden via the Phelps Trail and Shorey's Shortcut."
+     }
+    ]
+   },
+   {
+    "field": "gain_ft_roundtrip",
+    "value": 4250,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.lakeplacid.com/hiking/basin-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Elevation gain 4,250 ft, cumulative over the round trip, same route."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "The Garden trailhead, via the Phelps Trail",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.lakeplacid.com/hiking/basin-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Hike based on the Garden trailhead via Phelps Trail and Shorey's Shortcut."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Phelps Trail past Slant Rock, left onto Shorey's Shortcut (steep, narrow, muddy, blowdown), then left at its top toward Basin",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.lakeplacid.com/hiking/basin-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Past Slant Rock Shorey Shortcut comes in on left; climbs steeply; from its top go left to Basin."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Steep rock slab, water crossings, ladders and an exposed summit",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.lakeplacid.com/hiking/basin-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Hike includes steep rock slab, water crossings, an exposed summit and ladders."
+     }
+    ]
+   }
+  ],
+  "note": "Earlier pass pages (pureadirondacks, adirondackhikers, hikeadk) did not name Shorey's Shortcut. Round-trip figures only; no one-way figure stated."
+ },
+ "ny_dix_mtn_beckhorn_trail_from_elk_lake": {
+  "area": "ny_dix_mtn",
+  "facts": [
+   {
+    "field": "closure",
+    "value": "Elk Lake easement: no hiking access Oct 24 evening to Dec 7 morning 2026; vehicle gate closed until after May 2027 mud season, upper lot adds about 4.6 mi round trip",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.hikeadk.com/hikes/macomb-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Elk Lake: no hiking through easement Oct 24-Dec 7 2026; gate closed until after May 2027 mud season; upper parking adds ~4.6 mi RT."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 13.2,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.lakeplacid.com/hiking/dix-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "13.2 miles round trip, based on an ascent from Elk Lake via the Beckhorn Trail."
+     }
+    ]
+   },
+   {
+    "field": "gain_ft_roundtrip",
+    "value": 3740,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.lakeplacid.com/hiking/dix-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Elevation gain printed as 3.740 feet (read as 3,740) for Elk Lake via Beckhorn."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Steep rock slab, unmarked trail sections, bridges and an exposed summit",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.lakeplacid.com/hiking/dix-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Hike includes steep rock slab, unmarked trail, junctions, bridges and an exposed summit."
+     }
+    ]
+   },
+   {
+    "field": "closure",
+    "value": "Elk Lake route is closed during big game season",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.lakeplacid.com/hiking/dix-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Elk Lake: this route is closed during big game season."
+     }
+    ]
+   }
+  ],
+  "note": "lakeplacid.com prints the gain as \"3.740 feet\" (typo for 3,740); verify. Earlier pass sources gave Round Pond figures only."
+ },
+ "ny_lower_wolfjaw_wedge_brook_and_range_trail_from_st_huberts": {
+  "area": "ny_lower_wolfjaw",
+  "facts": [
+   {
+    "field": "permit",
+    "value": "AMR / Ausable Club Lake Road parking is managed by the AMR reservation system in the active season",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.hikeadk.com/hikes/gothics",
+      "retrieved_at": "2026-11-14",
+      "fact": "AMR/Ausable Club/Lake Road parking runs on the AMR reservation system during the active season."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_oneway",
+    "value": 4.4,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.lakeplacid.com/hiking/lower-wolfjaw-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "From AMR: 4.4 miles one way via West River and Wedge Brook trails."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 8.8,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.lakeplacid.com/hiking/lower-wolfjaw-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "From AMR: 8.8 miles round trip."
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 3070,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.lakeplacid.com/hiking/lower-wolfjaw-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "From AMR via Wedge Brook: elevation gain 3,070 feet."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "AMR parking in St. Huberts, across Route 73 from the Roaring Brook Falls trailhead",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.lakeplacid.com/hiking/lower-wolfjaw-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Parking across the road from Roaring Brook Falls trailhead in Saint Huberts; AMR land."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Road walk to Lake Road, AMR gate, West River Trail along the Ausable, Wedge Brook Trail at 2 mi, campsite at 3.2 mi, junction with the State Range Trail, right and very steep to summit",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.lakeplacid.com/hiking/lower-wolfjaw-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "West River Trail; Wedge Brook Trail at 2 mi; primitive campsite 3.2 mi; Range Trail junction; right, very steep to summit."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Primitive campsite on the Wedge Brook Trail, 3.2 mi from parking",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.lakeplacid.com/hiking/lower-wolfjaw-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Primitive campsite 3.2 miles from the parking lot."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "AMR private land with easement rules posted at the gate; dogs prohibited",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.lakeplacid.com/hiking/lower-wolfjaw-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "AMR is private with recreational easements; special rules at gate; dogs absolutely prohibited."
+     }
+    ]
+   }
+  ],
+  "note": "lakeplacid.com lists gain 3,070 ft next to the 8.8 mi round-trip figure without saying one-way or round trip; recorded as gain_ft, verify. hikeadk 11.2 mi is a paired range day, not used."
+ },
+ "ct_4th_class_gully": {
+  "area": "ct_upper_tier_2",
+  "skip_reason": "Could not identify the route. Opened MP area pages 110245378, 110014876, 106135673, 111903298 (all named Upper Tier; none in CT or listing a 4th Class Gully) and MP photo 202311540 (a Colorado 4th-class gully, wrong route). DuckDuckGo site searches found no CT page. Rerun: earlier skip judged justified (route/peak not identifiable from readable pages); DuckDuckGo rerun found only SummitPost (403), peakery and wrong-state pages."
+ },
+ "mt_chunder_shoot": {
+  "area": "mt_mt_hole_in_the_wall",
+  "skip_reason": "No page found for this route. Opened peakery.com/mount-hole-in-the-wall-montana (peak stats only, Beartooths, no routes) and MP area 105994493 hole-in-the-wall (a New Mexico area, wrong place). DuckDuckGo found no route page. Rerun: earlier skip judged justified (route/peak not identifiable from readable pages); DuckDuckGo rerun found only SummitPost (403), peakery and wrong-state pages."
+ },
+ "nm_west_gully": {
+  "area": "nm_cerro_guadalupe",
+  "skip_reason": "Opened alltrails.com cerro-de-guadalupe (1.3 mi, 813 ft out and back, but the line is not named, so cannot attribute to West Gully) and MP routes 114142876 and 120288047 named West Gully (Colorado routes, wrong peak). SummitPost (cerro-de-guadalupe/154641) returns 403. Rerun: earlier skip judged justified (route/peak not identifiable from readable pages); DuckDuckGo rerun found only SummitPost (403), peakery and wrong-state pages."
+ },
+ "ny_armstrong_mountain_great_range_trail_from_the_lake_road": {
+  "area": "ny_armstrong_mountain",
+  "facts": [
+   {
+    "field": "permit",
+    "value": "AMR / Ausable Club Lake Road parking is managed by the AMR reservation system in the active season",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.hikeadk.com/hikes/gothics",
+      "retrieved_at": "2026-11-14",
+      "fact": "AMR/Ausable Club/Lake Road parking runs on the AMR reservation system during the active season."
+     }
+    ]
+   }
+  ],
+  "skip_reason": "Opened pureadirondacks.com/armstrong-mountain (via Upper Wolfjaw from the Garden/DEC Interior Outpost, not Lake Road), adirondackhikers.com/armstrong-mountain (5.8 mi, trailhead unclear) and hikeadk.com/armstrong-mountain (13.8 mi planning estimate, range-day guide). None states figures for the Lake Road approach; only the AMR parking rule recorded. Rerun: lakeplacid.com/hiking/armstrong-mountain gives 11.2 mi RT / 3,500 ft via the Beaver Meadow Falls Trail, not the Great Range Trail; not used."
+ },
+ "ny_grace_peak_dix_range_herd_path": {
+  "area": "ny_grace_peak",
+  "facts": [
+   {
+    "field": "closure",
+    "value": "Elk Lake easement: no hiking access Oct 24 evening to Dec 7 morning 2026; vehicle gate closed until after May 2027 mud season, upper lot adds about 4.6 mi round trip",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.hikeadk.com/hikes/macomb-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Elk Lake: no hiking through easement Oct 24-Dec 7 2026; gate closed until after May 2027 mud season; upper parking adds ~4.6 mi RT."
+     }
+    ]
+   }
+  ],
+  "skip_reason": "Opened pureadirondacks.com/grace-peak (figures are for Grace alone via Lindsay Brook, explicitly not the described route) and adirondackhikers.com/grace-peak (5 mi / 2,800 ft for East Dix alone, approach unclear). No figure for the Dix Range herd path recorded; Elk Lake closure only. Rerun: lakeplacid.com/hiking/grace-peak returns 404."
+ },
+ "or_goat_peak_scramble_route": {
+  "area": "or_goat_peak",
+  "skip_reason": "Opened karl-helser.com Goat Peak (Mount Jefferson south ridge) trip report and the Mountain Project search for Goat Peak; could not confirm which Oregon Goat Peak this route is, and no page states a scramble route for it. SummitPost Goat Peak links not opened (site answers 403). Rerun: earlier skip judged justified (route/peak not identifiable from readable pages); DuckDuckGo rerun found only SummitPost (403), peakery and wrong-state pages."
+ },
+ "wy_southwest_ridge_3": {
+  "area": "wy_pyramid_peak",
+  "skip_reason": "Opened DuckDuckGo results: SummitPost pyramid-peak pages (403 wall), 14ers.com peaks/10047 (a Colorado peak) and peakery listing only; no page describing a Pyramid Peak (WY) Southwest Ridge was readable. Mountain Project area not located. Rerun: earlier skip judged justified (route/peak not identifiable from readable pages); DuckDuckGo rerun found only SummitPost (403), peakery and wrong-state pages."
+ }
+}
