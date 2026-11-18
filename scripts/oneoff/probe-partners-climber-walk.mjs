@@ -58,7 +58,7 @@ try {
   const by = page.locator('select[aria-label="Search by"]');
   ok(await by.count() === 1, "Partners tab is open (Search by pill present)");
   const modes = await by.locator("option").allInnerTexts();
-  ok(modes.join("|") === "My areas|Pick an area|My objectives|A route|Everyone", "five modes: " + modes.join(" | "));
+  ok(modes.join("|") === "My areas|Pick an area|A peak|My objectives|A route|Everyone", "six modes (A peak since #3451): " + modes.join(" | "));
   ok(await by.inputValue() === "myareas", "opens on My areas");
   const you = page.locator('section[aria-label="How climbers find you"]');
   ok(await you.count() === 1, "the You card is there");
