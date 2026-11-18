@@ -1,0 +1,138 @@
+{
+ "note": "Values replaced by the owner-approved batch-B fixes, 2026-11-18",
+ "rollback": [
+  {
+   "table": "routes",
+   "id": "wa_forbidden_peak_north_ridge",
+   "before": {
+    "gain_ft": 4500
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_sharkfin_tower_southeast_ridge",
+   "before": {
+    "gain_ft": 4870
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_mount_torment_torment_forbidden_traverse",
+   "before": {
+    "ice_grade": "AI2-AI3 (variable depending on seasonal snow/ice conditions)"
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_the_brothers_south_couloir",
+   "before": {
+    "pitches": 0
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_mount_constance_north_chimney",
+   "before": {
+    "gain_ft": 7100
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_mount_constance_north_chimney",
+   "before": {
+    "loss_ft": 7100
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_mount_constance_west_arete",
+   "before": {
+    "gain_ft": 7100
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_mount_constance_west_arete",
+   "before": {
+    "loss_ft": 7100
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_mount_shuksan_north_face",
+   "before": {
+    "gain_ft": 5500
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_mount_shuksan_north_face",
+   "before": {
+    "dist_km": 20.92
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_sahale_mountain_r1",
+   "before": {
+    "dist_km": 16.9
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_mount_baker_boulder_park_cleaver",
+   "before": {
+    "dist_km": 25.7
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_godzilla",
+   "before": {
+    "disciplines": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_davis_holland_route",
+   "before": {
+    "disciplines": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_japanese_gardens",
+   "before": {
+    "length_m": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_japanese_gardens",
+   "before": {
+    "disciplines": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_thin_fingers",
+   "before": {
+    "disciplines": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_iron_horse",
+   "before": {
+    "disciplines": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_sharkfin_tower_southeast_ridge",
+   "before": {
+    "high_point_ft": 8120
+   }
+  }
+ ]
+}

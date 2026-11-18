@@ -1,0 +1,766 @@
+{
+ "wa_godzilla": {
+  "area": "wa_dwarf_tossing_to_narrow_arrow",
+  "set": {
+   "waypoints": [
+    {
+     "lat": 47.8175556,
+     "lng": -121.5712432,
+     "elev": 485,
+     "elevFt": 485,
+     "name": "Index Town Walls Parking",
+     "type": "Trailhead",
+     "note": "Gravel climbers' lot just below the Lower Town Wall, about 485 ft. Break-ins are common here, so leave nothing in the car."
+    }
+   ]
+  },
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/105790717/godzilla",
+    "https://www.thecrag.com/en/climbing/united-states/central-cascade-mountains/route/19182841",
+    "https://rakkup.com/guidebook/index-rock-climbing/godzilla/c15358",
+    "https://stephabegg.com/trip-reports/washington/index/",
+    "https://www.openstreetmap.org/way/145298210",
+    "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks",
+    "https://washingtonclimbers.org/index.php/2026/03/12/climbers-donate-index-town-wall-to-washington-state-parks/",
+    "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.9",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105790717/godzilla",
+      "fact": "5.9 YDS",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://rakkup.com/guidebook/index-rock-climbing/godzilla/c15358",
+      "fact": "5.9 (Kalman/Van Biene Index guide)",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://stephabegg.com/trip-reports/washington/index/",
+      "fact": "5.9+ single pitch",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 1,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105790717/godzilla",
+      "fact": "105 ft, P1 to bolted belay; P2 is the separate 'Leaping Lizards' 10b extension",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://stephabegg.com/trip-reports/washington/index/",
+      "fact": "Godzilla 5.9+ climbed as a single pitch",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "discipline",
+    "value": "trad",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105790717/godzilla",
+      "fact": "Trad",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.thecrag.com/en/climbing/united-states/central-cascade-mountains/route/19182841",
+      "fact": "Trad",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Don Harder, Donn Heller",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105790717/godzilla",
+      "fact": "FA Don Harder and Donn Heller (no year)",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.thecrag.com/en/climbing/united-states/central-cascade-mountains/route/19182841",
+      "fact": "FA: Don Harder & Donn Heller",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "waypoints/Index Town Walls Parking",
+    "value": {
+     "name": "Index Town Walls Parking",
+     "lat": 47.8175556,
+     "lng": -121.5712432
+    },
+    "method": "agree-2",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.openstreetmap.org/way/145298210",
+      "fact": "amenity=parking 'Index Town Walls Parking Area', centroid of 11 nodes 47.8175556,-121.5712432; USGS 3DEP 485 ft",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_godzilla",
+    "column": "access",
+    "from": {
+     "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+     "notes": "Many of these peaks (Mount Persis, Gunn Peak, Baring Mountain area) sit outside designated wilderness — administratively unrestricted despite serious technical terrain.",
+     "permit": "None required.",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+     "parking_pass": "Northwest Forest Pass or America the Beautiful pass required at developed trailheads."
+    },
+    "to": {
+     "land_manager": "Washington State Parks (Forks of the Sky State Park)"
+    },
+    "why": "Stored access is the pasted Mt. Baker-Snoqualmie NF template (Persis/Gunn/Baring text, NW Forest Pass) - false here, as on Abraxas (batch A). State Parks' release of 2026-03-13: the WCC donated the 20-acre Lower Town Wall and State Parks now manages it as part of Forks of the Sky State Park. No official page names the pass for this lot, so only the land manager is proposed (alternative: null, as Abraxas).",
+    "evidence": [
+     "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks",
+     "https://washingtonclimbers.org/index.php/2026/03/12/climbers-donate-index-town-wall-to-washington-state-parks/"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_godzilla",
+    "column": "disciplines",
+    "from": null,
+    "to": [
+     "trad"
+    ],
+    "why": "disciplines is null; must name the primary discipline (trad).",
+    "evidence": [
+     "https://www.mountainproject.com/route/105790717/godzilla",
+     "https://www.thecrag.com/en/climbing/united-states/central-cascade-mountains/route/19182841"
+    ]
+   }
+  ],
+  "disputed": [
+   "length_m: stored 32 = MP 105 ft; theCrag 55 m counts P1+P2 (2 pitches) - single source for the 1-pitch length, not locked",
+   "parking pass: a Discover Pass is required at State Parks (parks.wa.gov) and the LTW is now park land, but no official page names this lot - not proposed",
+   "fa year: no source gives one"
+  ],
+  "notes": "MP: P1 has no bolts; rapping from the bolted belay needs a 70 m rope (Abegg: single 70 m too). hazards string is the area-wide template (rockfall / corroded bolts) - not verified for this route. Parking pin from OSM only (no second independent source) - added, unconfirmed."
+ },
+ "wa_davis_holland_route": {
+  "area": "wa_full_or_nearly_wall_routes",
+  "set": {
+   "waypoints": [
+    {
+     "lat": 47.8175556,
+     "lng": -121.5712432,
+     "elev": 485,
+     "elevFt": 485,
+     "name": "Index Town Walls Parking",
+     "type": "Trailhead",
+     "note": "Gravel climbers' lot just below the Lower Town Wall, about 485 ft. Break-ins are common here, so leave nothing in the car."
+    }
+   ]
+  },
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/105836583/davis-holland-route",
+    "https://stephabegg.com/trip-reports/washington/index/",
+    "https://www.climbing.com/places/davis-holland-to-lovin-arms-5-10c-index-washington/?scope=anon",
+    "https://www.openstreetmap.org/way/145298210",
+    "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks",
+    "https://washingtonclimbers.org/index.php/2026/03/12/climbers-donate-index-town-wall-to-washington-state-parks/"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.10c",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105836583/davis-holland-route",
+      "fact": "5.10c",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://stephabegg.com/trip-reports/washington/index/",
+      "fact": "Davis-Holland P3 5.10c (crux)",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.climbing.com/places/davis-holland-to-lovin-arms-5-10c-index-washington/?scope=anon",
+      "fact": "Davis-Holland 5.10c",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 3,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105836583/davis-holland-route",
+      "fact": "3 pitches (6 with Lovin' Arms; most do 3)",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://stephabegg.com/trip-reports/washington/index/",
+      "fact": "DH-only ascents of P1-P3: 5.8+, 5.10a, 5.10c",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "discipline",
+    "value": "trad",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105836583/davis-holland-route",
+      "fact": "Trad",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.climbing.com/places/davis-holland-to-lovin-arms-5-10c-index-washington/?scope=anon",
+      "fact": "nuts and doubles of cams to 3 in; all belays bolted",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "waypoints/Index Town Walls Parking",
+    "value": {
+     "name": "Index Town Walls Parking",
+     "lat": 47.8175556,
+     "lng": -121.5712432
+    },
+    "method": "agree-2",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.openstreetmap.org/way/145298210",
+      "fact": "amenity=parking 'Index Town Walls Parking Area', centroid of 11 nodes 47.8175556,-121.5712432; USGS 3DEP 485 ft",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_davis_holland_route",
+    "column": "access",
+    "from": {
+     "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+     "notes": "Many of these peaks (Mount Persis, Gunn Peak, Baring Mountain area) sit outside designated wilderness — administratively unrestricted despite serious technical terrain.",
+     "permit": "None required.",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+     "parking_pass": "Northwest Forest Pass or America the Beautiful pass required at developed trailheads."
+    },
+    "to": null,
+    "why": "Stored access is the pasted Mt. Baker-Snoqualmie NF template (NW Forest Pass, Persis/Gunn/Baring) - false at Index, as on Abraxas (batch A, also Upper Town Wall, nulled). The official State Parks release covers the Lower Town Wall only; no official page I could open names the Upper Wall's land manager, so null rather than a guess.",
+    "evidence": [
+     "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks",
+     "https://washingtonclimbers.org/index.php/2026/03/12/climbers-donate-index-town-wall-to-washington-state-parks/"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_davis_holland_route",
+    "column": "gear",
+    "from": [
+     "Rack up to 3 inches, though many parties get by without the #3 cam",
+     "Small nuts, with extras if you have them, for the delicate pitch 3 crux (5.10a)",
+     "All three pitch belays are bolted anchors",
+     "Descent: rappel about 25 m from the p3 anchor to a 3-bolt station, then either a 55 m double-rope rappel to the ground or a couple of shorter single-rope raps trending climber's left via the sport-wall anchors",
+     "A single 70 m rope also works for rappelling, or you can walk off",
+     "Most parties link into Lovin' Arms (5.11b) from the pitch 3 anchor rather than rapping — that adds three more pitches to the top of the Upper Wall"
+    ],
+    "to": [
+     "Rack up to 3 inches, though many parties get by without the #3 cam",
+     "Small nuts, with extras if you have them, for the delicate pitch 3 crux (5.10c)",
+     "All three pitch belays are bolted anchors",
+     "Descent: rappel about 25 m from the p3 anchor to a 3-bolt station, then either a 55 m double-rope rappel to the ground or a couple of shorter single-rope raps trending climber's left via the sport-wall anchors",
+     "A single 70 m rope also works for rappelling, or you can walk off",
+     "Most parties link into Lovin' Arms (5.11b) from the pitch 3 anchor rather than rapping — that adds three more pitches to the top of the Upper Wall"
+    ],
+    "why": "Gear item 2 calls the pitch 3 crux 5.10a; MP and Abegg both grade pitch 3 5.10c (P2 is the 5.10a pitch). Only that number changes.",
+    "evidence": [
+     "https://www.mountainproject.com/route/105836583/davis-holland-route",
+     "https://stephabegg.com/trip-reports/washington/index/"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_davis_holland_route",
+    "column": "disciplines",
+    "from": null,
+    "to": [
+     "trad"
+    ],
+    "why": "disciplines is null; must name the primary discipline (trad).",
+    "evidence": [
+     "https://www.mountainproject.com/route/105836583/davis-holland-route",
+     "https://www.climbing.com/places/davis-holland-to-lovin-arms-5-10c-index-washington/?scope=anon"
+    ]
+   }
+  ],
+  "disputed": [
+   "fa: names Dan Davis, John Holland agree (MP + climbing.com) but the year 1964 is on climbing.com only - not locked. MP adds FFA Pete Doorish, Mead Hargis 1971 (single source; ffa column empty)",
+   "length_m: stored 122 = MP 400 ft; no second figure",
+   "commitment: MP Grade III; column empty - single source, not proposed",
+   "descent: MP recommends a ~25 m rap to a 3-bolt station then a 55 m double-rope rap (or shorter single-rope raps left via the Sport Wall anchors); stored rappel_detail says 3 single-rope raps down the pitches; Abegg/climbing.com say a single 70 m rope works - rappel_detail not changed"
+  ],
+  "notes": "Upper Town Wall, reached from the same Index Town Walls lot via the tracks and the Upper Wall trail. Most parties continue on Lovin' Arms (6 pitches total, 5.10c per Abegg/climbing.com)."
+ },
+ "wa_japanese_gardens": {
+  "area": "wa_dwarf_tossing_to_narrow_arrow",
+  "set": {
+   "waypoints": [
+    {
+     "lat": 47.8175556,
+     "lng": -121.5712432,
+     "elev": 485,
+     "elevFt": 485,
+     "name": "Index Town Walls Parking",
+     "type": "Trailhead",
+     "note": "Gravel climbers' lot just below the Lower Town Wall, about 485 ft. Break-ins are common here, so leave nothing in the car."
+    }
+   ]
+  },
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/105791008/japanese-gardens",
+    "https://www.thecrag.com/en/climbing/united-states/central-cascade-mountains/route/19182517",
+    "https://rakkup.com/guidebook/index-rock-climbing/japanese-gardens/c18489",
+    "https://www.openstreetmap.org/way/145298210",
+    "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks",
+    "https://washingtonclimbers.org/index.php/2026/03/12/climbers-donate-index-town-wall-to-washington-state-parks/"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "pitches",
+    "value": 4,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105791008/japanese-gardens",
+      "fact": "4 pitches, 200 ft",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.thecrag.com/en/climbing/united-states/central-cascade-mountains/route/19182517",
+      "fact": "Pitches: 4 (5.11c, 5.11b, 5.11a, 5.11c)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "discipline",
+    "value": "trad",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105791008/japanese-gardens",
+      "fact": "Trad",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.thecrag.com/en/climbing/united-states/central-cascade-mountains/route/19182517",
+      "fact": "TRAD",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "waypoints/Index Town Walls Parking",
+    "value": {
+     "name": "Index Town Walls Parking",
+     "lat": 47.8175556,
+     "lng": -121.5712432
+    },
+    "method": "agree-2",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.openstreetmap.org/way/145298210",
+      "fact": "amenity=parking 'Index Town Walls Parking Area', centroid of 11 nodes 47.8175556,-121.5712432; USGS 3DEP 485 ft",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_japanese_gardens",
+    "column": "access",
+    "from": {
+     "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+     "notes": "Many of these peaks (Mount Persis, Gunn Peak, Baring Mountain area) sit outside designated wilderness — administratively unrestricted despite serious technical terrain.",
+     "permit": "None required.",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+     "parking_pass": "Northwest Forest Pass or America the Beautiful pass required at developed trailheads."
+    },
+    "to": {
+     "land_manager": "Washington State Parks (Forks of the Sky State Park)"
+    },
+    "why": "Stored access is the pasted Mt. Baker-Snoqualmie NF template (Persis/Gunn/Baring text, NW Forest Pass) - false here, as on Abraxas (batch A). State Parks' release of 2026-03-13: the WCC donated the 20-acre Lower Town Wall and State Parks now manages it as part of Forks of the Sky State Park. No official page names the pass for this lot, so only the land manager is proposed (alternative: null, as Abraxas).",
+    "evidence": [
+     "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks",
+     "https://washingtonclimbers.org/index.php/2026/03/12/climbers-donate-index-town-wall-to-washington-state-parks/"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_japanese_gardens",
+    "column": "length_m",
+    "from": null,
+    "to": 61,
+    "why": "MP: 200 ft (61 m), 4 pitches. Single source (theCrag shows no length; Rakkup is paywalled) - owner decides.",
+    "evidence": [
+     "https://www.mountainproject.com/route/105791008/japanese-gardens"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_japanese_gardens",
+    "column": "disciplines",
+    "from": null,
+    "to": [
+     "trad"
+    ],
+    "why": "disciplines is null; must name the primary discipline (trad).",
+    "evidence": [
+     "https://www.mountainproject.com/route/105791008/japanese-gardens",
+     "https://www.thecrag.com/en/climbing/united-states/central-cascade-mountains/route/19182517"
+    ]
+   }
+  ],
+  "disputed": [
+   "grade: stored 5.11d (= Rock Climbing Washington 'III 5.11d', cited on theCrag); theCrag assigned 5.11c (pitches 11c/11b/11a/11c, matches stored pitch_detail); Rakkup (Kalman/Van Biene) 5.11c; MP 5.11+. 5.11c leads, but theCrag's assigned grade may come from the same guide as Rakkup - not proposed. If the owner takes 5.11c: grade_num 12 -> 11.75 (gradeNumFrom); rock_grade is null",
+   "commitment: stored III = RCW only (via theCrag) - not locked",
+   "fa: MP only (theCrag 'no known route history') - not locked"
+  ],
+  "notes": "Stored pitch_detail grades match theCrag exactly."
+ },
+ "wa_thin_fingers": {
+  "area": "wa_narrow_arrow_and_further_right",
+  "set": {
+   "waypoints": [
+    {
+     "lat": 47.8175556,
+     "lng": -121.5712432,
+     "elev": 485,
+     "elevFt": 485,
+     "name": "Index Town Walls Parking",
+     "type": "Trailhead",
+     "note": "Gravel climbers' lot just below the Lower Town Wall, about 485 ft. Break-ins are common here, so leave nothing in the car."
+    }
+   ]
+  },
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/105805741/thin-fingers",
+    "https://www.thecrag.com/en/climbing/united-states/central-cascade-mountains/route/19183135",
+    "https://rakkup.com/guidebook/index-rock-climbing/thin-fingers/c18487",
+    "https://stephabegg.com/trip-reports/washington/index/",
+    "https://www.openstreetmap.org/way/145298210",
+    "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks",
+    "https://washingtonclimbers.org/index.php/2026/03/12/climbers-donate-index-town-wall-to-washington-state-parks/"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.11a",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105805741/thin-fingers",
+      "fact": "5.11a",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.thecrag.com/en/climbing/united-states/central-cascade-mountains/route/19183135",
+      "fact": "5.11a",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://rakkup.com/guidebook/index-rock-climbing/thin-fingers/c18487",
+      "fact": "5.11a",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 1,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105805741/thin-fingers",
+      "fact": "one long pitch, 120 ft; 70 m rope to lower",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.thecrag.com/en/climbing/united-states/central-cascade-mountains/route/19183135",
+      "fact": "Trad 35m, no pitch count (single pitch)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "length_m",
+    "value": 37,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105805741/thin-fingers",
+      "fact": "120 ft (36 m)",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.thecrag.com/en/climbing/united-states/central-cascade-mountains/route/19183135",
+      "fact": "35m",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "discipline",
+    "value": "trad",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105805741/thin-fingers",
+      "fact": "Trad",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.thecrag.com/en/climbing/united-states/central-cascade-mountains/route/19183135",
+      "fact": "Trad",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "waypoints/Index Town Walls Parking",
+    "value": {
+     "name": "Index Town Walls Parking",
+     "lat": 47.8175556,
+     "lng": -121.5712432
+    },
+    "method": "agree-2",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.openstreetmap.org/way/145298210",
+      "fact": "amenity=parking 'Index Town Walls Parking Area', centroid of 11 nodes 47.8175556,-121.5712432; USGS 3DEP 485 ft",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_thin_fingers",
+    "column": "access",
+    "from": {
+     "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+     "notes": "Many of these peaks (Mount Persis, Gunn Peak, Baring Mountain area) sit outside designated wilderness — administratively unrestricted despite serious technical terrain.",
+     "permit": "None required.",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+     "parking_pass": "Northwest Forest Pass or America the Beautiful pass required at developed trailheads."
+    },
+    "to": {
+     "land_manager": "Washington State Parks (Forks of the Sky State Park)"
+    },
+    "why": "Stored access is the pasted Mt. Baker-Snoqualmie NF template (Persis/Gunn/Baring text, NW Forest Pass) - false here, as on Abraxas (batch A). State Parks' release of 2026-03-13: the WCC donated the 20-acre Lower Town Wall and State Parks now manages it as part of Forks of the Sky State Park. No official page names the pass for this lot, so only the land manager is proposed (alternative: null, as Abraxas).",
+    "evidence": [
+     "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks",
+     "https://washingtonclimbers.org/index.php/2026/03/12/climbers-donate-index-town-wall-to-washington-state-parks/"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_thin_fingers",
+    "column": "disciplines",
+    "from": null,
+    "to": [
+     "trad"
+    ],
+    "why": "disciplines is null; must name the primary discipline (trad).",
+    "evidence": [
+     "https://www.mountainproject.com/route/105805741/thin-fingers",
+     "https://www.thecrag.com/en/climbing/united-states/central-cascade-mountains/route/19183135"
+    ]
+   }
+  ],
+  "disputed": [
+   "fa: stored 'Bob Crawford, Pat Cruver 1975 (FFA Paul Boving 1976)'; MP lists FA Paul Boving only (no year); theCrag/Rakkup give none - stored FA and both years unconfirmed"
+  ],
+  "notes": "MP: fixed clips at the anchor; a 70 m rope reaches the ground."
+ },
+ "wa_iron_horse": {
+  "area": "wa_dwarf_tossing_to_narrow_arrow",
+  "set": {
+   "waypoints": [
+    {
+     "lat": 47.8175556,
+     "lng": -121.5712432,
+     "elev": 485,
+     "elevFt": 485,
+     "name": "Index Town Walls Parking",
+     "type": "Trailhead",
+     "note": "Gravel climbers' lot just below the Lower Town Wall, about 485 ft. Break-ins are common here, so leave nothing in the car."
+    }
+   ]
+  },
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/105903139/iron-horse",
+    "https://www.thecrag.com/en/climbing/united-states/central-cascade-mountains/route/19182391",
+    "https://rakkup.com/guidebook/index-rock-climbing/iron-horse/c18755",
+    "https://stephabegg.com/trip-reports/washington/index/",
+    "https://www.mountainproject.com/route/109830773/iron-horse-p2",
+    "https://www.openstreetmap.org/way/145298210",
+    "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks",
+    "https://washingtonclimbers.org/index.php/2026/03/12/climbers-donate-index-town-wall-to-washington-state-parks/"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.11d",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105903139/iron-horse",
+      "fact": "5.11d",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.thecrag.com/en/climbing/united-states/central-cascade-mountains/route/19182391",
+      "fact": "5.11d",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://rakkup.com/guidebook/index-rock-climbing/iron-horse/c18755",
+      "fact": "5.11d",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "discipline",
+    "value": "trad",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105903139/iron-horse",
+      "fact": "Trad",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.thecrag.com/en/climbing/united-states/central-cascade-mountains/route/19182391",
+      "fact": "Trad",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "waypoints/Index Town Walls Parking",
+    "value": {
+     "name": "Index Town Walls Parking",
+     "lat": 47.8175556,
+     "lng": -121.5712432
+    },
+    "method": "agree-2",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.openstreetmap.org/way/145298210",
+      "fact": "amenity=parking 'Index Town Walls Parking Area', centroid of 11 nodes 47.8175556,-121.5712432; USGS 3DEP 485 ft",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_iron_horse",
+    "column": "access",
+    "from": {
+     "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+     "notes": "Many of these peaks (Mount Persis, Gunn Peak, Baring Mountain area) sit outside designated wilderness — administratively unrestricted despite serious technical terrain.",
+     "permit": "None required.",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+     "parking_pass": "Northwest Forest Pass or America the Beautiful pass required at developed trailheads."
+    },
+    "to": {
+     "land_manager": "Washington State Parks (Forks of the Sky State Park)"
+    },
+    "why": "Stored access is the pasted Mt. Baker-Snoqualmie NF template (Persis/Gunn/Baring text, NW Forest Pass) - false here, as on Abraxas (batch A). State Parks' release of 2026-03-13: the WCC donated the 20-acre Lower Town Wall and State Parks now manages it as part of Forks of the Sky State Park. No official page names the pass for this lot, so only the land manager is proposed (alternative: null, as Abraxas).",
+    "evidence": [
+     "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks",
+     "https://washingtonclimbers.org/index.php/2026/03/12/climbers-donate-index-town-wall-to-washington-state-parks/"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_iron_horse",
+    "column": "disciplines",
+    "from": null,
+    "to": [
+     "trad"
+    ],
+    "why": "disciplines is null; must name the primary discipline (trad).",
+    "evidence": [
+     "https://www.mountainproject.com/route/105903139/iron-horse",
+     "https://www.thecrag.com/en/climbing/united-states/central-cascade-mountains/route/19182391"
+    ]
+   }
+  ],
+  "disputed": [
+   "pitches: stored 1 = MP (P1 is this entry; 'Iron Horse P2' is a separate MP route); Abegg calls the 5.11d 'pitch 1'; theCrag gives no count - not locked",
+   "length_m: stored 37 vs MP 120 ft (36 m); no second figure",
+   "fa: stored string is MP's (P1 short/full FA and FFA) - single source, not locked"
+  ],
+  "notes": "MP: thin crack ~20 ft left of the Sagittarius start; small nuts and cams."
+ }
+}

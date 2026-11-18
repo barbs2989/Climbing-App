@@ -1,0 +1,650 @@
+{
+ "wa_the_brothers_south_couloir": {
+  "area": "wa_the_brothers",
+  "review": {
+   "sources": [
+    "https://www.fs.usda.gov/r06/olympic/recreation/brothers-wilderness",
+    "https://www.fs.usda.gov/r06/olympic/recreation/lena-lake-campground",
+    "https://www.mountaineers.org/activities/routes-places/the-brothers-south-couloir",
+    "https://listsofjohn.com/peak/17137",
+    "https://www.openstreetmap.org/node/348996573",
+    "https://www.openstreetmap.org/way/832769289",
+    "USGS GNIS DomesticNames_WA 1527026",
+    "USGS EPQS 3DEP elevation"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "high_point_ft",
+    "value": 6866,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r06/olympic/recreation/brothers-wilderness",
+      "official": true,
+      "fact": "summit of The Brothers 6,866 ft (land manager; page updated 2026-03-19)",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/the-brothers-south-couloir",
+      "fact": "High Point: 6,866 ft",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 6200,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/the-brothers-south-couloir",
+      "fact": "Elevation Gain: 6,200 ft",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "measurement": "USFS 6,866 ft summit - USGS 3DEP 663 ft at the OSM Lena Lake/Brothers Trailhead parking (way 832769289, 10-20 m from the stored trailhead pin) = 6,203 ft",
+      "fact": "6203"
+     }
+    ]
+   },
+   {
+    "field": "waypoints/The Brothers - South Peak (Mount Edward)",
+    "value": {
+     "name": "The Brothers - South Peak (Mount Edward)",
+     "lat": 47.653799,
+     "lng": -123.140923
+    },
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "measurement": "USGS 3DEP (EPQS) 7x7 grid at 5 m around the pin: highest cell 6,862.8 ft 5 m from it, the pin 6,861.1 ft. The GNIS 1527026 'The Brothers' point (47.6537193,-123.140575) reads 6,777 ft, 85 ft lower and 30 m east, so the real top wins (owner rule 2026-11-18); gap recorded",
+      "fact": "47.653799,-123.140923 (3DEP high ground)"
+     },
+     {
+      "url": "https://listsofjohn.com/peak/17137",
+      "fact": "summit coords 47.65380 N, 123.14092 W (LiDAR summit), 1 m from the pin",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_the_brothers_south_couloir",
+    "column": "pitches",
+    "from": 0,
+    "to": null,
+    "why": "pitches must be >= 1 or null; this is an unroped scramble/snow climb with no pitch count published.",
+    "evidence": [
+     "https://www.mountaineers.org/activities/routes-places/the-brothers-south-couloir"
+    ]
+   }
+  ],
+  "disputed": [
+   "high_point_ft: USFS (land manager) and The Mountaineers give 6,866 ft, locked under the land-manager rule; ListsOfJohn gives USGS map 6,842 ft and LiDAR 6,868 ft. If the owner wants the USGS map figure instead, 6,842 would need an overturn.",
+   "dist_km 13.7 (8.5 mi one-way): matches The Mountaineers 17.0 mi round trip and the summit pin distMi 8.5, but only one publisher; not locked. Straight line trailhead-summit is 6.1 km, so not impossible.",
+   "Trailhead pin (47.5997,-123.1512) is 20 m from the OSM Lena Lake/Brothers Trailhead parking way; OSM is the only placement method found, so not locked.",
+   "permit 'No wilderness permit required; Northwest Forest Pass to park.': the USFS Lena Lake page confirms day-use parking takes a NW Forest Pass / Interagency / Digital pass ($5/day, $30/yr) and that camping at Lena Lake is free and first-come; neither USFS page states outright that no wilderness permit is needed, so not locked.",
+   "fa (1912 party / 1908 north summit): no source opened; not locked."
+  ],
+  "notes": "Summit pin stays: it is the real top (3DEP and ListsOfJohn's LiDAR summit agree within 5 m); the GNIS point is 30 m east and 85 ft lower. The summit pin's elevFt 6868 and the overview's '~6,868' are the LiDAR figure, 2 ft above the locked 6,866 - harmless, not rewritten. USFS Lena Lake page gives two hike figures to Lena Lake (3.2 and 3.5 mi); the Brothers Wilderness page gives Lena Lake Trail #810 as 3.6 mi to the Brothers Trail junction and Brothers Trail #821 as 3 mi."
+ },
+ "wa_the_brothers_traverse": {
+  "area": "wa_the_brothers",
+  "set": {
+   "waypoints": [
+    {
+     "lat": 47.5997,
+     "lng": -123.1509,
+     "name": "Lena Lake Trailhead (FR-25, Hamma Hamma)",
+     "type": "Trailhead",
+     "directions": "From Hoodsport, drive north on US 101 about 14 miles and turn left onto Hamma Hamma River Road (FR 25) at milepost 318. Follow it about 7.5 paved miles to the Lena Lake Trailhead, where parking lines the road. A Northwest Forest Pass is required to park."
+    },
+    {
+     "lat": 47.619386,
+     "lng": -123.159505,
+     "elev": 1773,
+     "name": "Lena Lake",
+     "type": "Water"
+    },
+    {
+     "lat": 47.653799,
+     "lng": -123.140923,
+     "name": "The Brothers",
+     "type": "Summit",
+     "elevFt": 6868
+    }
+   ]
+  },
+  "review": {
+   "sources": [
+    "https://www.fs.usda.gov/r06/olympic/recreation/brothers-wilderness",
+    "https://www.fs.usda.gov/r06/olympic/recreation/lena-lake-campground",
+    "https://www.mountaineers.org/activities/routes-places/the-brothers-brothers-traverse",
+    "https://www.mountaineers.org/activities/routes-places/the-brothers-south-couloir",
+    "https://www.mountainproject.com/route/106494582/brothers-traverse",
+    "https://listsofjohn.com/peak/17137",
+    "https://www.openstreetmap.org/node/348996573",
+    "USGS GNIS DomesticNames_WA 1527026",
+    "USGS EPQS 3DEP elevation"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "high_point_ft",
+    "value": 6866,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r06/olympic/recreation/brothers-wilderness",
+      "official": true,
+      "fact": "summit of The Brothers 6,866 ft (land manager; page updated 2026-03-19)",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/the-brothers-south-couloir",
+      "fact": "High Point: 6,866 ft",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "waypoints/The Brothers",
+    "value": {
+     "name": "The Brothers",
+     "lat": 47.653799,
+     "lng": -123.140923
+    },
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "measurement": "USGS 3DEP (EPQS) 7x7 grid at 5 m around the pin: highest cell 6,862.8 ft 5 m from it, the pin 6,861.1 ft. The GNIS 1527026 'The Brothers' point (47.6537193,-123.140575) reads 6,777 ft, 85 ft lower and 30 m east, so the real top wins (owner rule 2026-11-18); gap recorded",
+      "fact": "47.653799,-123.140923 (3DEP high ground)"
+     },
+     {
+      "url": "https://listsofjohn.com/peak/17137",
+      "fact": "summit coords 47.65380 N, 123.14092 W (LiDAR summit), 1 m from the pin",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "disputed": [
+   "grade 5.4 / rock_grade 'Easy 5th class (5.4)': Mountain Project says 'Easy 5th' with no number; The Mountaineers gives no YDS grade. 5.4 is not stated on any page opened; not locked.",
+   "pitches 7: Mountain Project's author count only (snow-dependent); not locked.",
+   "gain_ft 6042: The Mountaineers gives 6,200 ft; the net climb (6,866 - 663) is 6,203 ft and the traverse over the north peak adds more, so 6042 is probably low but is not below the net climb by more than 3%; left for the owner.",
+   "access / The Mountaineers list the land manager as Olympic National Park and parking as 'National Park Entrance Fee'; the USFS Lena Lake page says the trailhead is national forest and takes a NW Forest Pass. The stored access (ONF, NWFP) matches USFS; The Mountaineers' fields look templated."
+  ],
+  "notes": "Summit pin moved 30 m west from the GNIS point (reads 6,774 ft on 3DEP) to the real top, the same point locked on South Couloir. Mountain Project gives the notch at ~6,100 ft and a ~5,500 ft bivy."
+ },
+ "wa_mount_constance_north_chimney": {
+  "area": "wa_mount_constance",
+  "review": {
+   "sources": [
+    "https://listsofjohn.com/peak/49040",
+    "https://www.mountaineers.org/activities/routes-places/mt-constance-n-chute",
+    "https://www.mountaineers.org/activities/routes-places/mount-constance-south-chute",
+    "https://www.mountaineers.org/activities/routes-places/mt-constance-w-arete",
+    "https://www.wta.org/go-hiking/hikes/lake-constance",
+    "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm",
+    "https://www.nps.gov/olym/planyourvisit/fees.htm",
+    "https://www.nps.gov/olym/planyourvisit/current-road-conditions.htm",
+    "https://www.openstreetmap.org/node/356544624",
+    "https://www.openstreetmap.org/way/965039432",
+    "USGS GNIS DomesticNames_WA 1518031",
+    "USGS EPQS 3DEP elevation"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "high_point_ft",
+    "value": 7756,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://listsofjohn.com/peak/49040",
+      "fact": "map: 7,756' (USGS map figure; LiDAR 7,749')",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mt-constance-w-arete",
+      "fact": "High Point: 7,756 ft",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "waypoints/Mount Constance (true/main summit)",
+    "value": {
+     "name": "Mount Constance (true/main summit)",
+     "lat": 47.772826,
+     "lng": -123.127336
+    },
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://listsofjohn.com/peak/49040",
+      "fact": "summit coords 47.77283 N, 123.12733 W (LiDAR summit), 1 m from the pin",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "measurement": "USGS 3DEP (EPQS) grid: high ground 7,728 ft at 47.772691-47.772781,-123.127245/-123.127312, 10-15 m south of the pin (pin reads 7,711 ft). The GNIS 1518031 'Mount Constance' point (47.7726285,-123.1273118) reads 7,675 ft, 53 ft below that high ground, so the real top wins (owner rule 2026-11-18); gap recorded. OSM peak node 356544624 sits 16 m from the pin",
+      "fact": "high ground within 15 m"
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Olympic National Park: no permit for day climbs; all overnight wilderness stays require a wilderness camping permit via Recreation.gov.",
+    "method": "official-1",
+    "level": "locked",
+    "expires_at": "2027-11-18T00:00:00Z",
+    "evidence": [
+     {
+      "url": "https://www.nps.gov/olym/planyourvisit/fees.htm",
+      "official": true,
+      "fact": "wilderness permits required for overnight backcountry trips only: $8/person/night + $6 per permit - reused from batch C (Olympus Blue Glacier lock, same text)",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm",
+      "official": true,
+      "fact": "Lake Constance listed as a wilderness quota area; backpacking permits required year-round (page updated 2026-02-12)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_mount_constance_north_chimney",
+    "column": "gain_ft",
+    "from": 7100,
+    "to": 7300,
+    "why": "Impossible: 7,100 ft is below the net climb. Summit 7,756 ft (USGS map) - USGS 3DEP 466 ft at the stored Dosewallips washout trailhead pin = 7,290 ft (506 ft at the OSM Dosewallips River Trailhead lot -> 7,250), and the route drops ~150 ft below the saddle and regains it. The Mountaineers gives 7,300 ft for all three Constance routes.",
+    "evidence": [
+     "https://www.mountaineers.org/activities/routes-places/mt-constance-n-chute",
+     "https://www.mountaineers.org/activities/routes-places/mount-constance-south-chute",
+     "https://listsofjohn.com/peak/49040"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_mount_constance_north_chimney",
+    "column": "loss_ft",
+    "from": 7100,
+    "to": 7300,
+    "why": "Out-and-back route: loss equals gain; same fix as gain_ft.",
+    "evidence": [
+     "https://www.mountaineers.org/activities/routes-places/mt-constance-n-chute"
+    ]
+   }
+  ],
+  "disputed": [
+   "Route name 'North Chimney (Standard Route)': the stored directions describe The Mountaineers' South Chute standard route (Avalanche Canyon, South Chute, Terrible/Finger Traverse) finishing up a chimney on the summit block's north side. The Mountaineers also list a separate 'North Chute' route (Grade II, class 3). Check that this row is not confused with the North Chute.",
+   "dist_km 15 (9.3 mi one-way): WTA gives 8.5 mi drive to the washout, 5+ mi of road to the Lake Constance trailhead, then 2.2 mi (4.4 mi RT) to the lake; plus ~2 mi to the summit, so ~9.5 mi one-way is plausible. No published one-way trailhead-to-summit figure found; not locked.",
+   "Trailhead pin 'Dosewallips Road washout parking' (47.7413492,-123.0474426) is 130 m east of the OSM 'Dosewallips River Trailhead' parking (way 965039432, 47.741560,-123.049201, operator USFS, fee=no); one method only, not moved. Its elev 550 vs 3DEP 466 ft at the pin / 506 ft at the OSM lot.",
+   "access.closures says the washout is 'about 10.5 miles from Brinnon' and road.driveNote says ~7 mi paved + ~3 mi gravel; WTA and the trailhead pin's own directions say 8.5 miles to the washout. NPS: washout is 6.5 miles below the Dosewallips campground, road closed to vehicles, open to foot and bike. Road not locked; the mileage needs the owner's pick."
+  ],
+  "notes": "Summit pin kept: it equals ListsOfJohn's LiDAR summit coordinate; 3DEP high ground (7,728 ft) is 10-15 m south; the GNIS point reads 53 ft lower. NPS road page (updated 2026-11-17): Dosewallips Road closed to vehicles at a washout outside the park, 6.5 mi from the campground; foot/bike only. Mountaineers' South Chute page: ~2 mi and 3,350 ft from the road to the lake (4,650 ft)."
+ },
+ "wa_mount_constance_west_arete": {
+  "area": "wa_mount_constance",
+  "review": {
+   "sources": [
+    "https://listsofjohn.com/peak/49040",
+    "https://www.mountaineers.org/activities/routes-places/mt-constance-w-arete",
+    "https://www.mountaineers.org/activities/routes-places/mount-constance-south-chute",
+    "https://cascadeclimbers.com/forum/topic/13519-any-opinions-on-w-arete-of-constance/",
+    "https://lemkeclimbs.com/mount-constance-west-arete.html",
+    "https://www.wta.org/go-hiking/hikes/lake-constance",
+    "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm",
+    "https://www.nps.gov/olym/planyourvisit/fees.htm",
+    "https://www.nps.gov/olym/planyourvisit/current-road-conditions.htm",
+    "https://www.openstreetmap.org/node/356544624",
+    "USGS GNIS DomesticNames_WA 1518031",
+    "USGS EPQS 3DEP elevation"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "high_point_ft",
+    "value": 7756,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://listsofjohn.com/peak/49040",
+      "fact": "map: 7,756' (USGS map figure; LiDAR 7,749')",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mt-constance-w-arete",
+      "fact": "High Point: 7,756 ft",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "waypoints/Mount Constance (true/main summit)",
+    "value": {
+     "name": "Mount Constance (true/main summit)",
+     "lat": 47.772826,
+     "lng": -123.127336
+    },
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://listsofjohn.com/peak/49040",
+      "fact": "summit coords 47.77283 N, 123.12733 W (LiDAR summit), 1 m from the pin",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "measurement": "USGS 3DEP (EPQS) grid: high ground 7,728 ft at 47.772691-47.772781,-123.127245/-123.127312, 10-15 m south of the pin (pin reads 7,711 ft). The GNIS 1518031 'Mount Constance' point (47.7726285,-123.1273118) reads 7,675 ft, 53 ft below that high ground, so the real top wins (owner rule 2026-11-18); gap recorded. OSM peak node 356544624 sits 16 m from the pin",
+      "fact": "high ground within 15 m"
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Olympic National Park: no permit for day climbs; all overnight wilderness stays require a wilderness camping permit via Recreation.gov.",
+    "method": "official-1",
+    "level": "locked",
+    "expires_at": "2027-11-18T00:00:00Z",
+    "evidence": [
+     {
+      "url": "https://www.nps.gov/olym/planyourvisit/fees.htm",
+      "official": true,
+      "fact": "wilderness permits required for overnight backcountry trips only: $8/person/night + $6 per permit - reused from batch C (Olympus Blue Glacier lock, same text)",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm",
+      "official": true,
+      "fact": "Lake Constance listed as a wilderness quota area; backpacking permits required year-round (page updated 2026-02-12)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_mount_constance_west_arete",
+    "column": "gain_ft",
+    "from": 7100,
+    "to": 7300,
+    "why": "Impossible: below the net climb. Summit 7,756 ft (USGS map) - USGS 3DEP 466 ft at the stored washout trailhead pin = 7,290 ft. The Mountaineers gives 7,300 ft for the West Arete.",
+    "evidence": [
+     "https://www.mountaineers.org/activities/routes-places/mt-constance-w-arete",
+     "https://listsofjohn.com/peak/49040"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_mount_constance_west_arete",
+    "column": "loss_ft",
+    "from": 7100,
+    "to": 7300,
+    "why": "Loss mirrors gain on this out-and-back; same fix.",
+    "evidence": [
+     "https://www.mountaineers.org/activities/routes-places/mt-constance-w-arete"
+    ]
+   }
+  ],
+  "disputed": [
+   "grade 5.5 (also rock_grade '5.5 (some parties call it 5.4)'): The Mountaineers say Grade III with 5.4 rock; a CascadeClimbers thread quotes 'the guidebook' at Grade III, 5.4 (probably the same Olympic guidebook, so likely one source); Lemke Climbs titles it 'Class 5.5'. Not two clearly independent sources for 5.4, so no majority change proposed. If the owner accepts Mountaineers + guidebook as two: grade 5.4, grade_num = gradeNumFrom('5.4','yds').",
+   "commitment / alpine_grade III: The Mountaineers and the guidebook quoted on CascadeClimbers both say Grade III but are probably one source; not locked.",
+   "dist_km 11.1 (6.9 mi one-way) looks too short: WTA gives 5+ mi of closed road from the washout to the Lake Constance trailhead plus 2.2 mi to the lake (~7.2 mi, ~11.6 km) before the ~1.5 mi to Crystal Pass. It is longer than the 6.9 km straight line, so not 'impossible' under the rule; the North Chimney row says 15 km. Owner to decide.",
+   "pitches 5 / length_m 335: no source opened states them; not locked."
+  ],
+  "notes": "Stored gpx has 3 points: pins joined, fails the recorded-track checks (removal is outside enrich:apply). The 'Constance Creek crossing' Water pin (47.749438,-123.141072, 4,691 ft) sits at the Lake Constance outlet, not on Constance Creek low down where the North Chimney row places it (47.729708,-123.141418) - name or spot is wrong; not moved (no second method)."
+ },
+ "wa_mount_olympus_west_ridge": {
+  "area": "wa_mount_olympus",
+  "set": {
+   "waypoints": [
+    {
+     "lat": 47.8602,
+     "lng": -123.9345,
+     "elev": 578,
+     "name": "Hoh River Trailhead (Hoh Rain Forest Visitor Center)",
+     "note": "Hoh Rain Forest Visitor Center trailhead; shared start for multiple Mount Olympus routes.",
+     "type": "Trailhead",
+     "distMi": 0,
+     "directions": "From US 101 about 13 miles south of Forks, turn east on Upper Hoh Road and drive about 18 miles to the road end at the Hoh Rain Forest Visitor Center, about 578 ft. A park entrance pass is required, and overnight trips need an Olympic National Park wilderness permit booked in advance; the Hoh is a quota area."
+    },
+    {
+     "lat": 47.864394,
+     "lng": -123.921149,
+     "elev": 614,
+     "name": "Hoh River crossing",
+     "type": "Water",
+     "distMi": 0.8
+    },
+    {
+     "lat": 47.8789,
+     "lng": -123.7382,
+     "elev": 1000,
+     "name": "Lewis Meadows Camp, Hoh River trail",
+     "type": "Campsite",
+     "distMi": 9.8
+    },
+    {
+     "lat": 47.8575,
+     "lng": -123.6927,
+     "elev": 2600,
+     "name": "Elk Lake Camp, Hoh River trail",
+     "type": "Campsite",
+     "distMi": 13.7
+    },
+    {
+     "lat": 47.8323,
+     "lng": -123.6915,
+     "elev": 4300,
+     "name": "Glacier Meadows — the standard Blue Glacier base camp",
+     "type": "Campsite",
+     "distMi": 15.6
+    },
+    {
+     "lat": null,
+     "lng": null,
+     "elev": 7260,
+     "name": "West Ridge moat (gain ridge)",
+     "type": "Junction",
+     "distMi": null,
+     "elevFt": 7260,
+     "distFrom": "track",
+     "directions": "Cross the Blue Glacier to the southwest, keeping Crystal Pass, Five Fingers Ridge and the West Peak in view as references, to the moat at the ridge's lowest point near 7,260 ft. If you find yourself climbing toward Crystal Pass, you have drifted onto the standard route."
+    },
+    {
+     "lat": 47.8013175,
+     "lng": -123.7106182,
+     "elev": 7980,
+     "name": "Mount Olympus (West Peak)",
+     "type": "Summit",
+     "distMi": 20.8,
+     "elevFt": 7980,
+     "distFrom": "track",
+     "directions": "Cross the moat and climb about 600 ft of ridge in roughly seven pitches, never harder than 5.4, staying high but slightly south of the loose crest and using shallow gullies, to the base of the summit block, then climb the roughly 100-ft block to the top."
+    }
+   ]
+  },
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/114973736/west-ridge",
+    "https://www.mountaineers.org/activities/routes-places/mount-olympus-blue-glacier",
+    "https://www.nps.gov/olym/planyourvisit/climbing-mount-olympus.htm",
+    "https://www.nps.gov/olym/planyourvisit/fees.htm",
+    "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm",
+    "https://www.nps.gov/olym/planyourvisit/current-road-conditions.htm",
+    "USGS GNIS DomesticNames_WA 1524047, 1527994",
+    "USGS EPQS 3DEP elevation"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "waypoints/Mount Olympus (West Peak)",
+    "value": {
+     "name": "Mount Olympus (West Peak)",
+     "lat": 47.8013175,
+     "lng": -123.7106182
+    },
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "measurement": "USGS GNIS 1524047 'Mount Olympus' summit point (DomesticNames_WA) - reused from batch C (Blue Glacier lock, same summit)",
+      "fact": "47.8013175,-123.7106182",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "measurement": "USGS GNIS 1527994 'West Peak' point 47.8012363,-123.7105783, 10 m from it - reused from batch C",
+      "fact": "10 m",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 7980,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.nps.gov/olym/planyourvisit/climbing-mount-olympus.htm",
+      "official": true,
+      "fact": "elevation 4,400 to 7,980 ft - reused from batch C (Blue Glacier lock, same summit)",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-olympus-blue-glacier",
+      "fact": "High Point: 7,965 ft (within 20 ft) - reused from batch C",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 7500,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-olympus-blue-glacier",
+      "fact": "Elevation Gain: 7,400 ft for the same Hoh trailhead and summit (within 10%) - reused from batch C",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "measurement": "NPS 7,980 ft summit - USGS 3DEP 592 ft at the Hoh trailhead = 7,388 ft (within 10%) - reused from batch C",
+      "fact": "7388"
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Olympic National Park: no permit for day climbs; all overnight wilderness stays require a wilderness camping permit via Recreation.gov.",
+    "method": "official-1",
+    "level": "locked",
+    "expires_at": "2027-11-18T00:00:00Z",
+    "evidence": [
+     {
+      "url": "https://www.nps.gov/olym/planyourvisit/fees.htm",
+      "official": true,
+      "fact": "wilderness permits required for overnight backcountry trips only: $8/person/night + $6 per permit - reused from batch C (Olympus Blue Glacier lock, same text)",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm",
+      "official": true,
+      "fact": "Hoh River Trail is a quota area: Elk Lake, Martin Creek and Glacier Meadows are quota sites (page updated 2026-02-12)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "5.4",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114973736/west-ridge",
+      "fact": "YDS 5.4; never harder than 5.4",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "rock_grade",
+    "value": "5.4",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114973736/west-ridge",
+      "fact": "YDS 5.4",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 7,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114973736/west-ridge",
+      "fact": "7 pitches",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "length_m",
+    "value": 212,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114973736/west-ridge",
+      "fact": "700 ft (212 m)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "commitment",
+    "value": "II",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114973736/west-ridge",
+      "fact": "Grade II",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "disputed": [
+   "dist_km 28 (17.4 mi) is the Hoh trailhead to Glacier Meadows leg, not the route: Mountain Project gives ~17.5 mi to Glacier Meadows, ~1 mi to the glacier and ~2 mi of glacier to Snow Dome before the ridge; the summit pin says 20.8 mi. Batch C proposed 35.4 km for Blue Glacier on the same evidence; under batch F's rule this is listed, not proposed.",
+   "fa '1964, Gary Maykut, Len Miller, and Joe Witte': Mountain Project only (an FA never locks on one source); SummitPost is blocked.",
+   "loss_ft 400 alongside gain_ft 7500: looks like a different convention (loss on the way up?) - owner to check.",
+   "single-source locks (grade, rock_grade, pitches, length_m, commitment) rest on Mountain Project alone because SummitPost (the other route page) returns 403 even through Chrome."
+  ],
+  "notes": "Summit pin moved 18 m to the exact GNIS point, as locked on Blue Glacier in batch C. NPS road page (updated 2026-11-17): Upper Hoh Road open, paved, 18 mi from US 101. Mountain Project: Hoh River Ranger Station 573 ft; Lewis Meadows at ~11 mi (stored Campsite pin says 9.8); Snow Dome ~6,700 ft; ridge entered by a moat at ~7,260 ft."
+ }
+}
