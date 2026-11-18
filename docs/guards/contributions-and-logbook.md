@@ -167,7 +167,13 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   category, not the rendered page — the browser check is to open each discipline's sheet and compare.
   Single-pitch crag lines that already STORE a descent/rappel/pitch value keep those fields
   (`scopeCtx().has`): the page still shows the value, so dropping its editor would make it uncorrectable.
-  Crag `waypoints` and `approachLogistics` stay offered while the crag parking card opens them.
+  Crag parking (2026-11-18, second PR): the crag parking card's *Add* buttons open the CRAG's area editor at
+  `parking_pin`, so a crag route is offered no route `waypoints` / `approachLogistics` — except where its
+  crag cannot be edited (`cragAreaEditable`, the same test RouteDetail's `areaFactEdit` uses) or the route
+  stores its own pin / directions (the card shows a route pin ahead of the crag's, and its pencil opens
+  that one). Measured: ~99% of WA crag-discipline routes sit on an area of type `crag`; the rest
+  (area_type null) keep the route editor. The anchors in section 3 hold the card, the pencil and the
+  prop threading through RouteDetail → RouteOverviewTab → RoutePlanTab.
 - **`check:add-route-fields` §3b (2026-10-22): the add form is held LEVEL with the edit sheet, per
   discipline.** Since 2026-11-18 it imports `lib/fieldScope.js` (it used to evaluate SuggestFix's inline
   `DROP` literal via `Function`) and holds each of the ten types the add form offers to the sheet's
