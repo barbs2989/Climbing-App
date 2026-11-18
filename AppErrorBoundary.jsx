@@ -1,5 +1,6 @@
 import { Component } from "react";
 import { reportError } from "./lib/errorReport.js";
+import { swallowedChunk } from "./lib/chunkReload.js";
 
 // The app had no error boundary, so any throw during render unmounted the whole tree and
 // left the black `#root` — the exact blank screen `check:refs`, `check:hooks` and the
@@ -25,6 +26,7 @@ const CARD = { maxWidth: 420, width: "100%", background: "#161b22", border: "1px
 const BTN = { width: "100%", marginTop: 16, padding: "12px 14px", borderRadius: 10, border: "none",
   background: "#2f81f7", color: "#fff", fontSize: 15, fontWeight: 700, cursor: "pointer" };
 
+// swallowedChunk: a deploy's missing file that main.jsx is already reloading for (lib/chunkReload.js).
 export default class AppErrorBoundary extends Component {
   constructor(props) { super(props); this.state = { err: null }; }
   static getDerivedStateFromError(err) { return { err }; }
@@ -32,6 +34,8 @@ export default class AppErrorBoundary extends Component {
     // Kept in the console for anyone with devtools open, and filed to app_errors (0399). The screen
     // below still does not say "we've been notified": the report is best effort, and may not arrive.
     console.error("[ClimbMatch] render error:", err, info && info.componentStack);
+    // Not filed when it is a deploy's missing file being reloaded (swallowedChunk): that is not a bug.
+    if (swallowedChunk(String((err && err.message) || err))) return;
     reportError("render", err, info && info.componentStack);
   }
   render() {
@@ -40,7 +44,7 @@ export default class AppErrorBoundary extends Component {
     // A lazily-loaded screen whose file could not be fetched is not a bug in the screen: main.jsx
     // already reloaded once for a stale deploy, so reaching here means no connection or a second
     // failure. Chrome, Firefox and Safari each word the failure differently.
-    const chunk = /dynamically imported module|Importing a module script failed/i.test(msg);
+    const chunk = /dynamically imported module|Importing a module script failed/i.test(msg) || swallowedChunk(msg);
     return (
       <div style={WRAP} role="alert">
         <div style={CARD}>
