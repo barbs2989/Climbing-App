@@ -1,0 +1,158 @@
+[
+ {
+  "id": "wa_mount_persis_the_hexorcist",
+  "status": "found",
+  "trailhead": {
+   "name": "Mount Persis Trailhead (pullout near FR 62/6220 road end)",
+   "identifiedBy": {
+    "kind": "route_text",
+    "fact": "approach_logistics names FR-6220 / Anderson Creek drainage; approach leaves West Ridge boot path"
+   },
+   "placements": [
+    {
+     "source": "WTA",
+     "name": "Mount Persis trailhead (West Ridge)",
+     "lat": 47.7931,
+     "lng": -121.6449,
+     "url": "https://www.wta.org/go-hiking/hikes/mount-persis"
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "road",
+    "value": "US-2 ~33 mi, FR 62 ~3.5 mi to FR 6220, left ~1 mi, veer left ~1 mi; pullout on left before road end; may not suit passenger cars",
+    "url": "https://www.wta.org/go-hiking/hikes/mount-persis"
+   }
+  ],
+  "notes": "WEAK, carried over: re-opened WTA page (West Ridge trailhead coord only, no north face mention). Single non-land-manager placement; Nominatim returned nothing. Route text itself says north-face approach is undocumented."
+ },
+ {
+  "id": "wa_mount_rahm_custer_traverse",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": "unknown",
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Carried over stuck. Wikipedia Mount Rahm says only Rahm is at NE end of Custer Ridge; no route page found; reachesSummit unknown (own text says it connects the two summits)."
+ },
+ {
+  "id": "wa_mount_rainier_east_success_couloir",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Carried over stuck. NPS climbing page lists Paradise, Westside Road, White River, Mowich as trailheads but maps no route to one; own text offers three starts."
+ },
+ {
+  "id": "wa_mount_rainier_north_mowich_icefall",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Carried over stuck. No route text; Mowich Lake only a sibling lead; NPS climbing page confirms Mowich Lake is a climbing trailhead but ties no route."
+ },
+ {
+  "id": "wa_mount_stuart_direct_north_ridge",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Carried over stuck. Wikipedia Mount Stuart names no trailhead or north ridge; SummitPost 403. Stuart Lake (north) vs Esmeralda (south) unresolved."
+ },
+ {
+  "id": "wa_mount_stuart_gorillas_in_the_mist",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Carried over stuck. No page found tying it to a side; Esmeralda is only a lead."
+ },
+ {
+  "id": "wa_mount_stuart_stuart_range_traverse",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Carried over stuck: multi-peak traverse, no single trailhead."
+ },
+ {
+  "id": "wa_mount_triumph_west_route",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Carried over stuck. Wikipedia Mount Triumph URL 404; no page names the start of the Triumph Pass climbers route."
+ },
+ {
+  "id": "wa_north_early_winter_spire_christianson_roskelley",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "trailhead_coord",
+    "value": "Blue Lake trail #314 lot 48.5191,-120.6742",
+    "url": "https://www.wta.org/go-hiking/hikes/blue-lake"
+   }
+  ],
+  "notes": "Carried over stuck. WTA Blue Lake page says climbers on that trail are likely headed to Early Winters Spire, but no page about Christianson-Roskelley or this spire. Lead only: Blue Lake TH (USFS 48.519016,-120.674215)."
+ },
+ {
+  "id": "wa_north_early_winter_spire_twitch_of_the_death_nerve",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "trailhead_coord",
+    "value": "Blue Lake trail #314 lot 48.5191,-120.6742",
+    "url": "https://www.wta.org/go-hiking/hikes/blue-lake"
+   }
+  ],
+  "notes": "Carried over stuck. WTA Blue Lake page says climbers on that trail are likely headed to Early Winters Spire, but no page about Twitch of the Death Nerve or this spire. Lead only: Blue Lake TH (USFS 48.519016,-120.674215)."
+ },
+ {
+  "id": "wa_north_early_winter_spire_vulcan_death_grip",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "trailhead_coord",
+    "value": "Blue Lake trail #314 lot 48.5191,-120.6742",
+    "url": "https://www.wta.org/go-hiking/hikes/blue-lake"
+   }
+  ],
+  "notes": "Carried over stuck. WTA Blue Lake page says climbers on that trail are likely headed to Early Winters Spire, but no page about Vulcan Death Grip or this spire. Lead only: Blue Lake TH (USFS 48.519016,-120.674215)."
+ },
+ {
+  "id": "wa_north_peak_north_ridge",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Carried over stuck. No page opened about North Peak (Gunsight Range)."
+ },
+ {
+  "id": "wa_north_peak_southeast_buttress",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Carried over stuck. No page opened about North Peak (Gunsight Range)."
+ }
+]

@@ -1,0 +1,460 @@
+[
+ {
+  "route_id": "ny_mount_marshall_herbert_brook_herd_path",
+  "area_id": "ny_mount_marshall",
+  "field": "gain_ft",
+  "verdict": "none",
+  "value": null,
+  "trailhead": "Upper Works",
+  "evidence": [
+   {
+    "url": "https://www.adirondackhub.com/hiking/mount-marshall",
+    "retrieved_at": "2026-11-18",
+    "fact": "Upper Works hike: 13 miles round trip, elevation gain 2,515 feet (gain not labelled one-way)."
+   },
+   {
+    "url": "https://www.cnyhiking.com/MountMarshall.htm",
+    "retrieved_at": "2026-11-18",
+    "fact": "Upper Works via Calamity Brook: '6+ mile one way hike to the summit'; no gain stated."
+   }
+  ],
+  "note": "No page states a one-way gain. AdirondackHub 2,515 is unlabelled and 13% below held 2,900. LakePlacid.com's Loj route (different TH) gives 3,130 RT and warns the Avalanche Lake trail is closed by a slide."
+ },
+ {
+  "route_id": "ny_nye_mountain_via_indian_pass_brook",
+  "area_id": "ny_nye_mountain",
+  "field": "gain_ft",
+  "verdict": "none",
+  "value": null,
+  "trailhead": "Adirondack Loj (Heart Lake)",
+  "evidence": [
+   {
+    "url": "https://listhiker.com/peaks/ny-nye",
+    "retrieved_at": "2026-11-18",
+    "fact": "Nye alone roughly 6 miles round trip (no gain); Street+Nye about 8 miles with around 2,000 feet of gain."
+   },
+   {
+    "url": "https://adirondack46.com/peaks/nye-mountain",
+    "retrieved_at": "2026-11-18",
+    "fact": "Typical Elevation Gain 2,300 ft, primary trailhead Adirondak Loj; not labelled one-way, not said whether it includes Street."
+   }
+  ],
+  "note": "No Nye-only one-way gain found. The figures seen are combined Street+Nye or unlabelled."
+ },
+ {
+  "route_id": "wa_mount_baker_coleman_deming",
+  "area_id": "wa_mount_baker",
+  "field": "gain_ft",
+  "verdict": "found_agree2",
+  "value": "approx. 7,000 feet",
+  "trailhead": "Heliotrope Ridge trailhead",
+  "evidence": [
+   {
+    "url": "https://mazamas.org/activity/instance/10599/detail/",
+    "retrieved_at": "2026-11-18",
+    "fact": "Trailhead Heliotrope Ridge; 'The total ascent from the trailhead is approx. 7,000 feet.' Stats show 7,000."
+   },
+   {
+    "url": "https://thepeakseeker.com/routes/coleman-deming-route-mount-baker/",
+    "retrieved_at": "2026-11-18",
+    "fact": "Heliotrope trailhead ~3,700 ft; 'just over 7,000 feet to ascend to reach the summit'; elevation change 7,080 ft; 11 mi RT."
+   }
+  ],
+  "note": "Held 8,100 contradicts both, and also contradicts the held Mountaineers page's own text ('gains 7,000 feet in a distance of 5.5 miles', seen in its search snippet). Peakseeker says a road closure can add 1-3 miles each way."
+ },
+ {
+  "route_id": "wa_granite_mountain_standard_scramble_route",
+  "area_id": "wa_granite_mountain",
+  "field": "gain_ft",
+  "verdict": "found_1src",
+  "value": "3500 feet",
+  "trailhead": "Pratt Lake Trailhead (I-90 exit 47)",
+  "evidence": [
+   {
+    "url": "https://www.snoqualmielookouts.org/granite-mountain-lookout",
+    "retrieved_at": "2026-11-18",
+    "fact": "Via Pratt Lake #1007 to Granite Mountain #1016: 'The route is 4.2 miles one way and you gain 3500 feet of elevation on the way up.'"
+   },
+   {
+    "url": "https://www.fs.usda.gov/r06/mbs/recreation/trails/granite-mountain-trail-1016",
+    "retrieved_at": "2026-11-18",
+    "fact": "From Pratt Lake Trailhead, climbing 'to nearly 3,800 feet at the summit'; lookout a little over four miles; 8.6 mi round-trip."
+   }
+  ],
+  "note": "Only the lookout page clearly says one-way (3,500). USFS wording is ambiguous ('nearly 3,800 feet at the summit', but the summit is ~5,600 ft, so it reads as gain), so it is not counted. 3,500 is within 10% of held 3,800 (7.9%)."
+ },
+ {
+  "route_id": "wa_hibox_mountain_southeast_ridge",
+  "area_id": "wa_hibox_mountain",
+  "field": "gain_ft",
+  "verdict": "found_agree2",
+  "value": "3700 feet",
+  "trailhead": "Rachel Lake Trailhead (end of Kachess Lake Road, 2,750 ft)",
+  "evidence": [
+   {
+    "url": "https://trailcatjim.com/hibox-peak-via-box-canyon-creek-southwest-slope-2018/",
+    "retrieved_at": "2026-11-18",
+    "fact": "Summit reached '4.2 hours + 3700 feet from trailhead'; trip total 6.7 miles, 3800 feet gained & lost."
+   },
+   {
+    "url": "https://www.willhiteweb.com/alpine_lakes_wilderness/hibox_mountain/rachel_lake_trail_339.htm",
+    "retrieved_at": "2026-11-18",
+    "fact": "Rachel Lake Trail route to Hibox: 'Distance: 3.5 miles', 'Elevation Gain: 3,800 feet'."
+   }
+  ],
+  "note": "Trailcatjim's in-text cumulative marker is explicitly one-way from the TH (3,700). On Willhite, one-way is implied only by the 3.5-mile distance (the RT is ~6.7-10 mi), not labelled; downgrade to found_1src if that counts as inference. Both are within 10% of held 3,900 (3,700 is 5.1% off)."
+ },
+ {
+  "route_id": "wa_bonanza_peak_mary_green_glacier",
+  "area_id": "wa_bonanza_peak",
+  "field": "gain_ft",
+  "verdict": "none",
+  "value": null,
+  "trailhead": "Holden Village / Holden Lake trail",
+  "evidence": [
+   {
+    "url": "https://trailcatjim.com/bonanza-peak-via-holden-lake-holden-pass-mary-green-glacier-east-face/",
+    "retrieved_at": "2026-11-18",
+    "fact": "Holden Pass reached '3.8 hours + 3200 feet from TH'; summit '5.4 hours + 3100 feet from camp'; 15 mi, 6300 ft gained & lost."
+   }
+  ],
+  "note": "No page states TH-to-summit one-way. Trailcatjim gives two legs (TH to camp, camp to summit); adding them would be our own math, so not used."
+ },
+ {
+  "route_id": "wa_forbidden_peak_west_ridge",
+  "area_id": "wa_forbidden_peak",
+  "field": "gain_ft",
+  "verdict": "none",
+  "value": null,
+  "trailhead": "Boston Basin Trailhead (Cascade River Road)",
+  "evidence": [
+   {
+    "url": "https://ncmountainguides.com/routes/climbing-routes/forbidden-peak-west-ridge",
+    "retrieved_at": "2026-11-18",
+    "fact": "Trailhead to high camp: 'climbing 3,100' in approximately 3 miles'; no camp-to-summit or TH-to-summit gain."
+   },
+   {
+    "url": "https://trailcatjim.com/forbidden-peak-via-west-ridge/",
+    "retrieved_at": "2026-11-18",
+    "fact": "Summit markers are time from camp only; 10 miles, 5700 feet gained & lost."
+   }
+  ],
+  "note": "FKT page (search snippet only) gives TH 3,223 ft to summit 8,783 ft, '8mi loop and 5,603 ft', which is round trip. Mountain Madness page lists no gain."
+ },
+ {
+  "route_id": "wa_liberty_bell_beckey_route",
+  "area_id": "wa_liberty_bell",
+  "field": "gain_ft",
+  "verdict": "none",
+  "value": null,
+  "trailhead": "Blue Lake Trailhead, Highway 20",
+  "evidence": [
+   {
+    "url": "https://trailcatjim.com/liberty-bowl-liberty-bell-mtn-via-beckey-route/",
+    "retrieved_at": "2026-11-18",
+    "fact": "Summit '6.6 hours from car' (no feet marker); 5 miles, 2400 feet gained & lost."
+   }
+  ],
+  "note": "The Outbound (search snippet) says 2000 ft from the parking lot to the notch, not the summit. The Mountaineers activity page (2,500) is the same source as the held page."
+ },
+ {
+  "route_id": "wa_merchant_peak_south_route",
+  "area_id": "wa_merchant_peak",
+  "field": "gain_ft",
+  "verdict": "none",
+  "value": null,
+  "trailhead": "Barclay Lake Trailhead",
+  "evidence": [
+   {
+    "url": "https://ericsbasecamp.net/trips/Merchant/Merchant.htm",
+    "retrieved_at": "2026-11-18",
+    "fact": "Barclay Lake TH c.2200', summit 6113', RT c.6 miles; no gain figure stated."
+   },
+   {
+    "url": "https://trailcatjim.com/merchant-peak-via-south-gully-east-ridge/",
+    "retrieved_at": "2026-11-18",
+    "fact": "No summit marker; 6 miles, 4200 feet gained & lost, Barclay Lake Trailhead."
+   }
+  ],
+  "note": "No page states one-way gain."
+ },
+ {
+  "route_id": "wa_cathedral_rock_standard",
+  "area_id": "wa_cathedral_rock",
+  "field": "gain_ft",
+  "verdict": "none",
+  "value": null,
+  "trailhead": "Tucquala Meadows Trailhead (Cathedral Pass trail #1345)",
+  "evidence": [
+   {
+    "url": "https://trailcatjim.com/deception-pass-loop-cathedral-rock-via-southwest-face/",
+    "retrieved_at": "2026-11-18",
+    "fact": "Cathedral Rock via SW Face + Deception Pass loop: 15.5 miles, 3800 feet gained & lost; no summit marker."
+   }
+  ],
+  "note": "No one-way figure found, and the route match (standard = SW Face?) is still unproven."
+ },
+ {
+  "route_id": "wa_guye_peak_r1",
+  "area_id": "wa_guye_peak",
+  "field": "gain_ft",
+  "verdict": "none",
+  "value": null,
+  "trailhead": "Alpental TH",
+  "evidence": [
+   {
+    "url": "https://trailcatjim.com/guye-peak-north-summit-middle-summit-south-summit-cave-ridge/",
+    "retrieved_at": "2026-11-18",
+    "fact": "North summit reached at '1.2 miles + 2050 feet from Alpental TH; 2.1 miles + 2150 feet from Commonwealth TH'."
+   }
+  ],
+  "note": "Seen in a search snippet only; the page was not opened. That is the North/Alpental route, not the held West Face (1,700). Which line 'r1' is remains unproven, so nothing is counted. If r1 is the Alpental north route, open that page: it would give 2,050 one-way."
+ },
+ {
+  "route_id": "co_hagerman_peak_southface",
+  "area_id": "co_hagerman_peak",
+  "field": "gain_ft",
+  "verdict": "none",
+  "value": null,
+  "trailhead": "Geneva Lake TH (14ers option set incl. Snowmass Creek)",
+  "evidence": [
+   {
+    "url": "https://www.climb13ers.com/colorado-13ers/hagerman-peak",
+    "retrieved_at": "2026-11-18",
+    "fact": "South Face Gullies: 'RT From Geneva Lake TH #1973: 9.7mi / 4,155'' (round-trip label)."
+   }
+  ],
+  "note": "No one-way figure found. climb13ers labels its figure RT. DDG \"one way\" query returned nothing."
+ },
+ {
+  "route_id": "co_gladstone_peak_north_ridge",
+  "area_id": "co_gladstone_peak",
+  "field": "gain_ft",
+  "verdict": "none",
+  "value": null,
+  "trailhead": "Rock of Ages TH",
+  "evidence": [],
+  "note": "Search snippets only: listhiker (copies 14ers) says 11.25 mi RT, 4,100 ft; jamesjusthiking says 11.3 mi, 4,500 ft gain (RT trip stats). No one-way-labelled page."
+ },
+ {
+  "route_id": "co_fletcher_mountain_southeast_ridge",
+  "area_id": "co_fletcher_mountain",
+  "field": "gain_ft",
+  "verdict": "none",
+  "value": null,
+  "trailhead": "Blue Lakes (Upper Blue Lake dam)",
+  "evidence": [],
+  "note": "Search snippets only: 14ers trip report \"distance about 4.8 miles, total elevation gain about 2300\" (RT stats); AllTrails and thenextsummit (copies 14ers) give no one-way label."
+ },
+ {
+  "route_id": "co_mount_adams_west_ridge_via_willow_creek",
+  "area_id": "co_mount_adams",
+  "field": "gain_ft",
+  "verdict": "none",
+  "value": null,
+  "trailhead": null,
+  "evidence": [],
+  "note": "Searched DDG for a one-way TH-to-summit gain; found only 14ers-derived pages (summitborn/thenextsummit/listhiker), climb13ers RT-labelled figures, or RT trip stats. No one-way-labelled page."
+ },
+ {
+  "route_id": "co_mount_oklahoma_southeast_slopes",
+  "area_id": "co_mount_oklahoma",
+  "field": "gain_ft",
+  "verdict": "none",
+  "value": null,
+  "trailhead": null,
+  "evidence": [],
+  "note": "Searched DDG for a one-way TH-to-summit gain; found only 14ers-derived pages (summitborn/thenextsummit/listhiker), climb13ers RT-labelled figures, or RT trip stats. No one-way-labelled page."
+ },
+ {
+  "route_id": "co_mount_silverheels_north_spur_from_hoosier_pass",
+  "area_id": "co_mount_silverheels",
+  "field": "gain_ft",
+  "verdict": "none",
+  "value": null,
+  "trailhead": null,
+  "evidence": [],
+  "note": "Searched DDG for a one-way TH-to-summit gain; found only 14ers-derived pages (summitborn/thenextsummit/listhiker), climb13ers RT-labelled figures, or RT trip stats. No one-way-labelled page."
+ },
+ {
+  "route_id": "co_horseshoe_mountain_east_slopes",
+  "area_id": "co_horseshoe_mountain",
+  "field": "gain_ft",
+  "verdict": "none",
+  "value": null,
+  "trailhead": null,
+  "evidence": [],
+  "note": "Searched DDG for a one-way TH-to-summit gain; found only 14ers-derived pages (summitborn/thenextsummit/listhiker), climb13ers RT-labelled figures, or RT trip stats. No one-way-labelled page."
+ },
+ {
+  "route_id": "co_dyer_mountain_southeast_slopes",
+  "area_id": "co_dyer_mountain",
+  "field": "gain_ft",
+  "verdict": "none",
+  "value": null,
+  "trailhead": null,
+  "evidence": [],
+  "note": "Searched DDG for a one-way TH-to-summit gain; found only 14ers-derived pages (summitborn/thenextsummit/listhiker), climb13ers RT-labelled figures, or RT trip stats. No one-way-labelled page."
+ },
+ {
+  "route_id": "co_mount_edwards_southwest_ridge",
+  "area_id": "co_mount_edwards",
+  "field": "gain_ft",
+  "verdict": "none",
+  "value": null,
+  "trailhead": null,
+  "evidence": [],
+  "note": "Searched DDG for a one-way TH-to-summit gain; found only 14ers-derived pages (summitborn/thenextsummit/listhiker), climb13ers RT-labelled figures, or RT trip stats. No one-way-labelled page."
+ },
+ {
+  "route_id": "co_mount_hope_east_ridge",
+  "area_id": "co_mount_hope",
+  "field": "gain_ft",
+  "verdict": "none",
+  "value": null,
+  "trailhead": null,
+  "evidence": [],
+  "note": "Searched DDG for a one-way TH-to-summit gain; found only 14ers-derived pages (summitborn/thenextsummit/listhiker), climb13ers RT-labelled figures, or RT trip stats. No one-way-labelled page."
+ },
+ {
+  "route_id": "co_mount_ouray_west_ridge",
+  "area_id": "co_mount_ouray",
+  "field": "gain_ft",
+  "verdict": "none",
+  "value": null,
+  "trailhead": null,
+  "evidence": [],
+  "note": "Searched DDG for a one-way TH-to-summit gain; found only 14ers-derived pages (summitborn/thenextsummit/listhiker), climb13ers RT-labelled figures, or RT trip stats. No one-way-labelled page."
+ },
+ {
+  "route_id": "co_cronin_peak_north_ridge",
+  "area_id": "co_cronin_peak",
+  "field": "gain_ft",
+  "verdict": "none",
+  "value": null,
+  "trailhead": null,
+  "evidence": [],
+  "note": "Searched DDG for a one-way TH-to-summit gain; found only 14ers-derived pages (summitborn/thenextsummit/listhiker), climb13ers RT-labelled figures, or RT trip stats. No one-way-labelled page."
+ },
+ {
+  "route_id": "co_california_peak_south_ridge",
+  "area_id": "co_california_peak",
+  "field": "gain_ft",
+  "verdict": "none",
+  "value": null,
+  "trailhead": null,
+  "evidence": [],
+  "note": "Searched DDG for a one-way TH-to-summit gain; found only 14ers-derived pages (summitborn/thenextsummit/listhiker), climb13ers RT-labelled figures, or RT trip stats. No one-way-labelled page."
+ },
+ {
+  "route_id": "co_stewart_peak_east_ridge",
+  "area_id": "co_stewart_peak",
+  "field": "gain_ft",
+  "verdict": "none",
+  "value": null,
+  "trailhead": null,
+  "evidence": [],
+  "note": "Searched DDG for a one-way TH-to-summit gain; found only 14ers-derived pages (summitborn/thenextsummit/listhiker), climb13ers RT-labelled figures, or RT trip stats. No one-way-labelled page."
+ },
+ {
+  "route_id": "co_arapahoe_peaks_skywalker_couloir",
+  "area_id": "co_arapahoe_peaks",
+  "field": "gain_ft",
+  "verdict": "none",
+  "value": null,
+  "trailhead": null,
+  "evidence": [],
+  "note": "Searched DDG for a one-way TH-to-summit gain; found only 14ers-derived pages (summitborn/thenextsummit/listhiker), climb13ers RT-labelled figures, or RT trip stats. No one-way-labelled page."
+ },
+ {
+  "route_id": "co_west_buttress",
+  "area_id": "co_snowdon_peak_2",
+  "field": "gain_ft",
+  "verdict": "none",
+  "value": null,
+  "trailhead": null,
+  "evidence": [],
+  "note": "Searched DDG for a one-way TH-to-summit gain; found only 14ers-derived pages (summitborn/thenextsummit/listhiker), climb13ers RT-labelled figures, or RT trip stats. No one-way-labelled page."
+ },
+ {
+  "route_id": "co_mount_buckskin_northeast_slope",
+  "area_id": "co_mount_buckskin",
+  "field": "gain_ft",
+  "verdict": "none",
+  "value": null,
+  "trailhead": "Kite Lake TH",
+  "evidence": [],
+  "note": "Search snippets only: mountainfieldguide says ~1,950 ft with \"about three miles round trip\" (looks derived from 14ers); merelyafleshwound ski trip 2,500 ft over 5.25 mi (different outing). An AllTrails review says construction added 1.4 mi and 640 ft to reach the TH; check whether the Kite Lake road is open."
+ },
+ {
+  "route_id": "co_red_gully",
+  "area_id": "co_the_crestones",
+  "field": "gain_ft",
+  "verdict": "none",
+  "value": null,
+  "trailhead": "South Colony Lakes 4WD TH",
+  "evidence": [],
+  "note": "No one-way-labelled page found. It may duplicate co_crestone_peak_south_face (same 14ers cpea2 URL)."
+ },
+ {
+  "route_id": "co_handies_peak_standard_route_southwest_slopes",
+  "area_id": "co_handies_peak_standard_route",
+  "field": "gain_ft",
+  "verdict": "none",
+  "value": null,
+  "trailhead": "American Basin TH",
+  "evidence": [],
+  "note": "Search snippets only: 14ers 2,500 (2,800 from the bottom of the American Basin road); AllTrails 2,434 out-and-back; RunBikeHike 2,700; friendhike 720 m out-and-back. None is labelled one-way. Low-clearance cars park at the road bottom (+300 ft, +1.5 mi RT, per hikearizona snippet)."
+ },
+ {
+  "route_id": "wa_big_snow_mountain_east_ridge_hardscrabble_route",
+  "area_id": "wa_big_snow_mountain",
+  "field": "gain_ft",
+  "verdict": "none",
+  "value": null,
+  "trailhead": "Old Middle Fork Road / Hardscrabble Lakes boot path",
+  "evidence": [
+   {
+    "url": "https://www.wta.org/go-hiking/hikes/big-snow-mountain",
+    "retrieved_at": "2026-11-18",
+    "fact": "Elevation gain 5,200 feet; route starts 1/2 mile below Hardscrabble Horse Camp; road walk of nearly 7 miles first."
+   },
+   {
+    "url": "https://www.willhiteweb.com/washington_climbing/big_snow_mountain/snoqualmie_080.htm",
+    "retrieved_at": "2026-11-18",
+    "fact": "Dingford Trailhead / Myrtle Lake route: Distance 6+ miles, Elevation Gain 5,280 feet; a different route."
+   }
+  ],
+  "note": "WTA gives 5,200 ft with no length and no one-way label (the Mountaineers held figure is 5,300). The Willhite page (5,280, Distance 6+ miles) is the Dingford/Myrtle Lake route, a different route. A ~7-mile road walk is needed before the trail."
+ },
+ {
+  "route_id": "wa_martin_peak_west_ridge",
+  "area_id": "wa_martin_peak",
+  "field": "gain_ft",
+  "verdict": "none",
+  "value": null,
+  "trailhead": "Holden (via Holden Pass)",
+  "evidence": [],
+  "note": "Only trip reports were found (stevensong, cascadeclimbers, trailcatjim via Martin Lake/SW gullies, a different approach); none states a one-way TH-to-summit gain."
+ },
+ {
+  "route_id": "or_matterhorn_wallowas_east_ridge_from_ice_lake",
+  "area_id": "or_matterhorn_wallowas",
+  "field": "gain_ft",
+  "verdict": "none",
+  "value": null,
+  "trailhead": "Wallowa Lake TH (Ice Lake Trail 1808)",
+  "evidence": [],
+  "note": "One-way figures found are TH to Ice Lake only: ms-megaventure blog says 7 miles one way, 3200 ft gain; the oregonhikers forum says over 3,000 ft one way. Nothing found for the summit."
+ },
+ {
+  "route_id": "wa_lemah_mountain_east_route",
+  "area_id": "wa_lemah_mountain",
+  "field": "gain_ft",
+  "verdict": "none",
+  "value": null,
+  "trailhead": "Pete Lake TH",
+  "evidence": [],
+  "note": "Search snippets: SummitPost (403, skipped) says 4700 ft; a WTA trip report gives a range of 2840-7727 ft over 31 mi RT. No one-way-labelled figure, and the route match is still unproven."
+ }
+]

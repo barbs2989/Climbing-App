@@ -1498,6 +1498,41 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   - Injection-tested, three cases: neutering the dedupe guard restores 100 duplicates, re-merging
     the summit categories restores 20, and disabling `COORD_DP` changes nothing — which is how
     that guard was found to be inert and got documented as such rather than presumed working.
+- **`audit:map-discipline`** asks whether a PEAK climb's map reads as one (owner, 2026-11-18:
+  Golden Horn's Northeast Arête "looks like a sport or bouldering route"). It starts from every route
+  on a `peak` area, whatever it stores, because `audit:map-pins` reads `waypoints=not.is.null` and
+  so a route with NO pins is not a row there — the exact class. Verdicts mirror `GPXMap`:
+  TRAILHEAD_AND_SUMMIT, **SUMMIT_ONLY** (no Trailhead pin and no `approach_logistics` coordinate: the
+  crag-looking map) and NO_SUMMIT (pins, none a Summit/Topout). Read-only, public key, report only.
+  - **Measured 2026-11-18**: 1,278 routes on peaks; 434 SUMMIT_ONLY (168 WA, 155 CA, 66 CO, 33 NY),
+    53 NO_SUMMIT (51 WA). 166 of the SUMMIT_ONLY have a sibling on the same peak that pins a trailhead.
+  - **A sibling's trailhead is a CANDIDATE, never a fix.** Of 28 routes whose text matched a
+    sibling's trailhead name, 12 were written (the route's own approach names that trailhead:
+    "PCT from Rainy Pass", "same trailhead as the standard route") into `approach_logistics`
+    (`trailhead`, `trailheadLat/Lng` = the sibling's pin; a pin copied into `waypoints` would claim a
+    survey nobody made). 16 were refused: the text named a DIFFERENT start (Lower vs Upper Goodell
+    Creek, Hozomeen's Lightning Creek, Berge's Buck Creek, Triumph Pass, Table Mountain's winter
+    Bagley lot, Jefferson Pass beside the Mount Washington trailhead), offered two, or the match was
+    the peak's own name ("Mount Washington Trailhead" matches every Mount Washington route).
+  - **The read is AREAS FIRST.** A `routes⋈areas!inner` read filtered on `area_type` answered HTTP
+    500 twice (statement timeout over the 205k-row table); peak area ids, then `area_id=in.(…)` in
+    chunks of 60, answers in seconds.
+  - Ice and mixed are out of scope on purpose: an ice flow on a face does not top out, so "no
+    summit" is not a finding there.
+  - **The other direction, CRAG_SUMMIT**: a crag climb (sport / trad / top rope / aid / bouldering
+    on an area that is NOT a peak) whose pins include a `Summit` draws the peak glyph and a Summit
+    legend. Measured 2026-11-18: 43. Read row by row, 30 were the crag's own location ("Half Moon
+    Crag", "Minidike", "Megadike (south section)") and 8 the top of the formation the climb ends on
+    ("Pinto Rock summit", "Mossy Loaf (crag top-out)"); they were retyped `Crag` / `Topout` through
+    enrich:apply with coordinates unchanged (38/38 re-read). The 5 left are PEAK climbs filed under a
+    crag discipline (Trap Dike and Cascade Mountain Slide as trad, the Mt. Baldy trail as top rope,
+    Castle Dome 4th class, Edward Peak's Mole): their discipline was the finding. Migration 0458
+    (owner: "do what you recommend") moved them by their own stored grade: the four class 3-4 routes to
+    scrambling, the 5.7 four-pitch Mole to alpine. CRAG_SUMMIT then read 0. Their AREAS are still typed
+    crag (Cascade Mountain, Mt Colden and Mount San Antonio are peaks); retyping an area moves every
+    route on it, so that is a separate change.
+    Research batches 1-3 (161 trailheads, 12 summit pins) are recorded in
+    `data/research/2026-11-18/map-discipline/REPORT.md`; audit after them: 931 / 265 / 41.
 - **`audit:map-pins`** asks what the route MAP actually draws — how many trailhead pins it will
   paint, and which pins it will silently drop — rather than the geometry question the three
   waypoint audits ask. It overlaps `audit:waypoints` on two of its three sections and exists

@@ -118,7 +118,9 @@ empty field fill at once and two agreeing climbers change one; the owner withdre
   the database's sentence.
 
 - **Pitches and rappels** (`SuggestFix`): each ROUTE BREAKDOWN row has its own "✎ Edit this pitch",
-  which opens the sheet scrolled to that pitch (`focusPitch`); pitches can be moved up and down;
+  which opens the sheet scrolled to that pitch (`focusPitch`) with its *Pitch N* header just under the
+  pinned title bar, showing THAT pitch only (owner 2026-11-18: every pitch at once made the box too
+  large); *Show all N pitches* brings back the rest and *+ Add pitch*. Pitches can be moved up and down;
   clustering compares every pitch key (grade, gear, length, note, anchor, bolts, crux). The rappel
   table has an editor at last — `rappelDetail`, type `rappels`: one row per station with length (in
   the climber's units, stored in metres), anchor, how to find the station, hazards one per line and
@@ -174,7 +176,7 @@ empty field fill at once and two agreeing climbers change one; the owner withdre
   — and a non-rack item (helmet, crampons) goes to Route-specific essentials; crag types are offered
   only rack items, since a crag page has no GEAR & ESSENTIALS card. The **Crux** box asks for a crux
   *grade*: `routes.crux` prints in a stat tile, and it used to ask for a sentence.
-  `check:add-route-fields` §3b evaluates the edit sheet's `DROP` per type and fails on any fact the add
+  `check:add-route-fields` §3b evaluates the edit sheet's rule (`lib/fieldScope.js`, which replaced its inline `DROP` on 2026-11-18) per type and fails on any fact the add
   form does not ask, unless `NOT_AT_CREATION` / `NOT_FOR` names it with a reason (the multi-part
   builders — waypoints, approach variants, rappel table, rescue card… — are added on the live route).
 

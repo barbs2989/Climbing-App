@@ -1,0 +1,684 @@
+{
+ "wa_mount_shuksan_north_face": {
+  "area": "wa_mount_shuksan_climbs",
+  "set": {
+   "waypoints": [
+    {
+     "lat": 48.8589,
+     "lng": -121.6591,
+     "elev": 3573,
+     "name": "White Salmon Road (hairpin) TH",
+     "type": "Trailhead",
+     "distMi": 0,
+     "directions": "Park near the old White Salmon day-lodge site on SR 542 (White Salmon Road, Forest Road 3075), just before the Mount Baker Ski Area's White Salmon lodge. Walk around the gate and follow the old road about a mile to where it ends at an old clearcut. With good snow cover, drop northeast into the White Salmon Creek valley and follow it toward the glacier; without good cover, hold your elevation and contour around the clearcut instead, since the valley bottom turns to slide alder and devil's club once the snow is gone."
+    },
+    {
+     "lat": null,
+     "lng": null,
+     "elev": 5500,
+     "name": "North Face Base Camp",
+     "type": "Campsite",
+     "distMi": 5,
+     "directions": "Continue up the White Salmon valley toward the toe of the White Salmon Glacier, then climb to the shoulder at about 5,500 ft on the divide between the White Salmon Glacier and the Price cirque, where the ridge meets the face. Flat bivy ground and a view down onto Price Lake confirm you are there."
+    },
+    {
+     "lat": 48.8311153,
+     "lng": -121.6029859,
+     "elev": 9131,
+     "name": "Mount Shuksan Summit",
+     "type": "Summit",
+     "distMi": 8,
+     "directions": "Traverse left across the base through the lower glacier's crevasses, keeping climber's right of the main runnel to stay out from under icefall off the Hanging Glacier. Climb the face at about 45 degrees through a notch between rock outcrops near 6,900 ft, steepening to 50 degrees to top out on the shoulder near 8,400 ft. Traverse the plateau around the east side of the pyramid and finish up its central gully."
+    }
+   ]
+  },
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/107476295/north-face",
+    "https://stephabegg.com/?p=8911",
+    "https://gethighonaltitude.com/2017/08/15/mt-shuksan-the-north-face/",
+    "https://publications.americanalpineclub.org/articles/12194604300/Cascade-Climbs-1945",
+    "https://www.openstreetmap.org/way/309280645",
+    "https://home.nps.gov/noca/planyourvisit/upload/NOCA_Wilderness_Trip_Planner-Compliant_508_for-web_508-2.pdf",
+    "USGS GNIS DomesticNames_WA 1525722",
+    "USGS EPQS 3DEP elevation"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "waypoints/Mount Shuksan Summit",
+    "value": {
+     "name": "Mount Shuksan Summit",
+     "lat": 48.8311153,
+     "lng": -121.6029859
+    },
+    "method": "measured",
+    "level": "locked",
+    "evidence": [
+     {
+      "measurement": "USGS GNIS feature 1525722 \"Mount Shuksan\" (Summit) primary point - reused from batches B/C",
+      "fact": "48.8311153, -121.6029859"
+     },
+     {
+      "url": "https://www.openstreetmap.org/node/349028214",
+      "fact": "OSM natural=peak \"Mount Shuksan\" (gnis:feature_id 1525722), 26 m from the USGS point - reused from batch B",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 9131,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://home.nps.gov/noca/planyourvisit/upload/NOCA_Wilderness_Trip_Planner-Compliant_508_for-web_508-2.pdf",
+      "official": true,
+      "fact": "Mount Shuksan 9131 ft (NPS trip planner map) - reused from batches B/C",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mt-shuksan-fisher-chimneys",
+      "fact": "High Point 9,127 ft (within 20 ft) - reused from batch B",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_mount_shuksan_north_face",
+    "column": "gain_ft",
+    "from": 5500,
+    "to": 5558,
+    "why": "Impossible: 5,500 ft is below the net climb. NPS 9,131 ft summit - USGS 3DEP 3,573 ft at the stored White Salmon trailhead pin = 5,558 ft (5,510 ft from the OSM White Salmon lodge lot at 3,622 ft). No source opened publishes a one-way gain (Steph Abegg gives about 10,000 ft of gain-and-loss for the round trip, GPS). 5,558 is a FLOOR: the approach drops into the White Salmon valley and regains it. Owner may prefer null.",
+    "evidence": [
+     "https://stephabegg.com/?p=8911",
+     "https://home.nps.gov/noca/planyourvisit/upload/NOCA_Wilderness_Trip_Planner-Compliant_508_for-web_508-2.pdf",
+     "USGS EPQS 3DEP"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_mount_shuksan_north_face",
+    "column": "dist_km",
+    "from": 20.92,
+    "to": null,
+    "why": "Round trip stored in a one-way column: 20.92 km = 13.0 mi, which is Steph Abegg's GPS car-to-car round trip (about 13 mi). The route's own summit pin says 8 mi one-way and the straight line is 5.1 km. No published one-way figure found.",
+    "evidence": [
+     "https://stephabegg.com/?p=8911"
+    ]
+   }
+  ],
+  "disputed": [
+   "grade \"AI3\" / ice_grade \"AI2-3\": Mountain Project AI2-3 Mod. Snow; gethighonaltitude IV, AI4. Not locked (one source each, they disagree by a full grade).",
+   "commitment \"III\" / alpine_grade \"II-III\": gethighonaltitude says Grade IV; Mountain Project gives none. Not locked.",
+   "length_m 914 (3,000 ft): Mountain Project header and gethighonaltitude both say 5,500 ft route length (that equals the shoulder camp elevation MP quotes, and GHA may follow MP); the face itself is roughly 5,500 to 8,400 ft. Not locked, not changed.",
+   "fa \"Fasset, Hanft, Thompson\": Mountain Project only, no year; AAJ 1945 calls the north face still unclimbed then. A first ascent never locks on one source."
+  ],
+  "notes": "Summit pin snapped 4 m onto the locked USGS point. Trailhead pin left as is (not locked): Steph Abegg starts at the White Salmon Lodge parking lot (3,650 ft; OSM way 309280645 at 48.86311,-121.65397, USGS 3DEP 3,622 ft), Mountain Project at the end of the old road past the lodge; the stored \"hairpin\" pin is 0.5 km SW of that lot. Overpass was down (504/timeouts) - OSM was read from the openstreetmap.org map API. The North Face Base Camp pin has no coordinate (vague spot) - left. Mountain Project approach: backcountry permits from the ranger station in Glacier."
+ },
+ "wa_sahale_mountain_r1": {
+  "area": "wa_sahale_mountain",
+  "set": {
+   "waypoints": [
+    {
+     "lat": 48.4801941,
+     "lng": -121.0796175,
+     "elev": 3228,
+     "name": "Boston Basin Trailhead (Cascade River Road pullout)",
+     "note": "Unmarked pullout at mile ~22 of Cascade River Road opposite Johannesburg Mountain, room for 6-8 cars; self-issue wilderness permit and Northwest Forest Pass required.",
+     "type": "Trailhead",
+     "distMi": 0,
+     "directions": "The Boston Basin start is an unmarked climbers' pullout on Cascade River Road, about 21.7 miles from Marblemount at roughly 3,200-3,300 ft, sitting opposite Johannesburg Mountain. There is no trailhead sign of any kind, so watch your odometer rather than looking for signage — it is easy to drive straight past. The pullout holds six to eight cars and you need a Northwest Forest Pass to park. Camping in Boston Basin needs a North Cascades wilderness permit picked up in person at Marblemount, and the popular sites fill fast in the early-access lottery for peak summer weekends."
+    },
+    {
+     "lat": 48.494755,
+     "lng": -121.063487,
+     "elev": 5300,
+     "name": "Boston Basin low camp",
+     "note": "Designated moraine campsite with composting toilet at treeline; most parties continue higher for a shorter summit day.",
+     "type": "Campsite",
+     "distMi": 2.7,
+     "directions": "Keep climbing the steep, switchbacking climbers' path above the streams to treeline at about 5,300 ft, where the low camp sits on heather benches and moraine."
+    },
+    {
+     "lat": null,
+     "lng": null,
+     "elev": 6700,
+     "name": "Glacier rope-up point beneath Sharkfin Tower",
+     "note": "Where the boot path meets continuous snow on the Quien Sabe Glacier's lower-angle (north/left) side; rope up for crevasses here.",
+     "type": "Junction",
+     "distMi": 4,
+     "directions": "From high camp, stay on climber's left and walk moraine and slabs toward the left side of Sharkfin Tower to the toe of the Quien Sabe Glacier. Rope up where the boot path meets continuous snow, around 6,700 ft."
+    },
+    {
+     "lat": 48.489971153846156,
+     "lng": -121.04370653846154,
+     "elev": 7600,
+     "name": "Bergschrund crossing",
+     "note": "Narrow snow bridge crosses above and left of the bergschrund late-season; crevasses widen through August-September and the crossing point shifts year to year.",
+     "type": "Hazard",
+     "distMi": 4.6,
+     "directions": "Make a rising traverse under the cliffs below Sharkfin Tower onto the flatter part of the glacier, then pick a line up the steeper section between crevasses; the left-hand and more direct lines merge partway up. Cross near 7,600 ft on a snow bridge above and left of the bergschrund; the crossing point shifts from year to year."
+    },
+    {
+     "lat": 48.492543,
+     "lng": -121.037233,
+     "elev": 8200,
+     "name": "Boston-Sahale Col",
+     "note": "Top of the glacier traverse beneath the Sharkfin face; gains the col between Sahale and Boston Peak before the final scramble.",
+     "type": "Junction",
+     "distMi": 5,
+     "directions": "Climb the upper glacier to a second crossing near 8,100 ft, where large open crevasses flank the route late in the season. Later in summer the usual line goes right around the end of the bergschrund, then cuts back up and left to the Boston-Sahale col, the only low saddle at the top of the glacier."
+    },
+    {
+     "lat": 48.4911044,
+     "lng": -121.0384933,
+     "elev": 8680,
+     "name": "Sahale Mountain summit",
+     "note": "Short, exposed 3rd/4th-class scramble up the summit block from the col; the true summit block has fixed anchors used by many parties to rappel back to the col.",
+     "type": "Summit",
+     "distMi": 5.2,
+     "directions": "From the col, traverse right (south) across a short but exposed snow slope with a rocky step, crampons and axe on and well back from any cornice, to the base of the summit block. Finish with about 60-70 ft of very exposed, loose Class 3 with 4th-class moves to the summit."
+    }
+   ]
+  },
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/107848161/quien-sabe-glacier",
+    "https://www.rmiguides.com/blog/2015/09/04/sahale_mountain_a_great_introduction_to_the_north_cascades",
+    "https://cnmtstuartclimbproject.blogspot.com/2017/07/routesahale-peak-quien-sabe-glacier.html",
+    "https://www.mountainproject.com/area/107848148/sahale-peak",
+    "https://home.nps.gov/noca/planyourvisit/upload/NOCA_Wilderness_Trip_Planner-Compliant_508_for-web_508-2.pdf",
+    "USGS GNIS DomesticNames_WA 1525345",
+    "USGS EPQS 3DEP elevation"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "waypoints/Sahale Mountain summit",
+    "value": {
+     "name": "Sahale Mountain summit",
+     "lat": 48.4911044,
+     "lng": -121.0384933
+    },
+    "method": "measured",
+    "level": "locked",
+    "evidence": [
+     {
+      "measurement": "USGS GNIS feature 1525345 \"Sahale Mountain\" (Summit) primary point - reused from batch B",
+      "fact": "48.4911044, -121.0384933"
+     },
+     {
+      "url": "https://www.openstreetmap.org/node/6736102919",
+      "fact": "OSM natural=peak \"Sahale Mountain\", 35 m from the USGS point - reused from batch B",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 8680,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://home.nps.gov/noca/planyourvisit/upload/NOCA_Wilderness_Trip_Planner-Compliant_508_for-web_508-2.pdf",
+      "official": true,
+      "fact": "Sahale Mtn 8680 ft (NPS trip planner map) - reused from batch B",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.mountainproject.com/area/107848148/sahale-peak",
+      "fact": "Sahale Peak 8,680 ft in the description - reused from batch B",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "Class 4",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107848161/quien-sabe-glacier",
+      "fact": "YDS 4th, Easy Snow, PG13; loose class 3 with a 4th-class summit block",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.rmiguides.com/blog/2015/09/04/sahale_mountain_a_great_introduction_to_the_north_cascades",
+      "fact": "Quien Sabe Glacier from Boston Basin; a 4th or low 5th class move or two to the top block",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "rock_grade",
+    "value": "4th class",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107848161/quien-sabe-glacier",
+      "fact": "YDS 4th",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.rmiguides.com/blog/2015/09/04/sahale_mountain_a_great_introduction_to_the_north_cascades",
+      "fact": "4th or low 5th class move or two on the highest block",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 5480,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "measurement": "NPS 8,680 ft summit - USGS 3DEP 3,215 ft at the Boston Basin pullout (stored pin) = 5,465 ft; 5,452 ft from the OSM lot pin (3,228 ft)",
+      "fact": "5465"
+     },
+     {
+      "url": "https://cnmtstuartclimbproject.blogspot.com/2017/07/routesahale-peak-quien-sabe-glacier.html",
+      "fact": "gain 5,780 ft (5.5% off)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_sahale_mountain_r1",
+    "column": "dist_km",
+    "from": 16.9,
+    "to": null,
+    "why": "Round trip in a one-way column: 16.9 km (10.5 mi) is 2x the route's own summit pin (5.2 mi = 8.4 km) and matches the published 10 mi round trip. No published one-way figure (straight line trailhead-summit 3.3 km).",
+    "evidence": [
+     "https://cnmtstuartclimbproject.blogspot.com/2017/07/routesahale-peak-quien-sabe-glacier.html"
+    ]
+   }
+  ],
+  "disputed": [
+   "Summit block class: Mountain Project 4th (loose class 3 to a 4th-class block); RMI one or two 4th to low 5th moves; the Mountaineers-course blog says class 3. Grade locked at Class 4 (2 of 3).",
+   "pitches 1: no source gives a pitch count for this route. Not locked.",
+   "commitment / alpine_grade \"II\": no opened page grades the Quien Sabe route (MP lists Easy Snow, no Roman grade). Not locked."
+  ],
+  "notes": "Summit pin moved under 1 m onto the locked USGS point. Trailhead pin moved 41 m onto the OSM Boston Basin parking lot used by batch B for Forbidden West Ridge (48.4801941,-121.0796175, USGS 3DEP 3,228 ft) - not locked (Overpass was down; reused). Mountain Project: Cascade River Road 21.7 mi from Marblemount to the fork at 3,200 ft; old Diamond Mine road 0.75 mi, then 4 stream crossings; camps about 5,000 and 6,000 ft with composting toilets; about 3 h to the basin. The Mountaineers page returned 403 to WebFetch and was not read through Chrome."
+ },
+ "wa_mount_baker_cockscomb_ridge": {
+  "area": "wa_mount_baker",
+  "set": {
+   "waypoints": [
+    {
+     "lat": 48.8020775,
+     "lng": -121.8959136,
+     "elev": 3676,
+     "name": "Heliotrope Ridge Trailhead",
+     "type": "Trailhead",
+     "distMi": 0,
+     "directions": "From the Mount Baker Highway (SR 542) about a mile east of Glacier, turn onto Glacier Creek Road (FR 39) and follow it to its end at the Heliotrope Ridge trailhead for Trail 677, at about 3,700 ft."
+    },
+    {
+     "lat": 48.7893,
+     "lng": -121.86777,
+     "elev": 5900,
+     "name": "Hogsback Camp",
+     "type": "Campsite",
+     "distMi": 3,
+     "directions": "Follow Trail 677 through old growth, crossing Grouse, Kulshan and Heliotrope Creeks (lowest early in the day), to the signed fork at about 2 miles. Take the right-hand climbers' path up the crest of the Hogsback moraine to the camps near 6,000 ft beside the Coleman Glacier."
+    },
+    {
+     "lat": 48.79605,
+     "lng": -121.81755,
+     "elev": 7800,
+     "name": "Cockscomb Ridge base (east edge of the Roosevelt Glacier)",
+     "type": "Junction",
+     "distMi": null,
+     "directions": "Rope up and head east-northeast across the Coleman and then the Roosevelt Glacier, two to three hours through a crevasse field with thin snow bridges, then take low-to-moderate snow ramps to the foot of the ridge at about 7,500 to 7,800 ft on the east edge of the Roosevelt."
+    },
+    {
+     "lat": 48.78642,
+     "lng": -121.81378,
+     "elev": 9260,
+     "name": "Cockscomb Tower",
+     "type": "Hazard",
+     "distMi": null,
+     "directions": "Climb the lower ridge on moderate snow, passing a pinnacle on its right and keeping to snow over the poor rock. Get around the junky towers and bergschrunds on the left (east) on ramps through the icefall, including a long contour east near 9,000 ft around a schrund, to the foot of the 300 ft Cockscomb Tower."
+    },
+    {
+     "lat": 48.7766298,
+     "lng": -121.8144732,
+     "elev": 10781,
+     "name": "Mount Baker Summit",
+     "type": "Summit",
+     "distMi": null,
+     "directions": "Pass the tower on its left (east) side by steep snow; late in the season, when that snow is gone, drop onto the Park Glacier and climb its AI3 headwall instead. Regain the crest above the tower, follow it as it broadens into the summit plateau, and cross the plateau to Grant Peak."
+    }
+   ]
+  },
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/113499467/cockscomb-ridge",
+    "https://www.mountainproject.com/area/105877061/mt-baker",
+    "https://www.alpineinstitute.com/?p=100309",
+    "https://summitpost.org/cockscomb-ridge/772662",
+    "https://www.fs.usda.gov/r06/mbs/recreation/mt-baker-summit-climbing",
+    "https://www.openstreetmap.org/way/296392530",
+    "USGS GNIS DomesticNames_WA 1516062 / 1520243",
+    "USGS EPQS 3DEP elevation"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "waypoints/Mount Baker Summit",
+    "value": {
+     "name": "Mount Baker Summit",
+     "lat": 48.7766298,
+     "lng": -121.8144732
+    },
+    "method": "measured",
+    "level": "locked",
+    "evidence": [
+     {
+      "measurement": "USGS GNIS feature 1516062 \"Mount Baker\" (Summit) primary point, DomesticNames_WA - reused from batches B/C/D/E",
+      "fact": "48.7766298, -121.8144732"
+     },
+     {
+      "measurement": "USGS GNIS feature 1520243 \"Grant Peak\" (Summit) at 48.7766406, -121.8144899, 1.7 m away - reused from batches B/C/D/E",
+      "fact": "second USGS feature for the top"
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 10781,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r06/mbs/recreation/mt-baker-summit-climbing",
+      "official": true,
+      "fact": "Mt. Baker summit (Grant Peak) 10,781 ft - reused from batch D",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.alpineinstitute.com/route-profile-mt-baker-coleman-headwall/",
+      "fact": "summit 10,781 ft - reused from batch D",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "No climbing or wilderness permit is required; filling in the voluntary climbing register at the trailhead is recommended. No quota or fee. Northwest Forest Pass at developed trailheads.",
+    "method": "official-1",
+    "level": "locked",
+    "expires_at": "2027-11-18T00:00:00Z",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r06/mbs/recreation/mt-baker-summit-climbing",
+      "official": true,
+      "fact": "no climbing permit; no climbing fee; recreation pass per vehicle at the trailheads - reused from batches B/D/E",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "AI3",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/113499467/cockscomb-ridge",
+      "fact": "AI2-3 (a range agrees with either end); YDS 4th, M 1b, PG13",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://summitpost.org/cockscomb-ridge/772662",
+      "fact": "blocked: SummitPost 403s even through the owner's Chrome (batch C)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "ice_grade",
+    "value": "AI2-3",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/113499467/cockscomb-ridge",
+      "fact": "AI2-3",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://summitpost.org/cockscomb-ridge/772662",
+      "fact": "blocked: SummitPost 403s even through the owner's Chrome (batch C)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "rock_grade",
+    "value": "4th class",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/113499467/cockscomb-ridge",
+      "fact": "YDS 4th",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://summitpost.org/cockscomb-ridge/772662",
+      "fact": "blocked: SummitPost 403s even through the owner's Chrome (batch C)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "length_m",
+    "value": 914,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/113499467/cockscomb-ridge",
+      "fact": "3,000 ft (909 m)",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://summitpost.org/cockscomb-ridge/772662",
+      "fact": "blocked: SummitPost 403s even through the owner's Chrome (batch C)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 5,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/113499467/cockscomb-ridge",
+      "fact": "5 pitches",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://summitpost.org/cockscomb-ridge/772662",
+      "fact": "blocked: SummitPost 403s even through the owner's Chrome (batch C)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "disputed": [
+   "fa: Mountain Project (= OpenBeta) credits Murley, Musser, Vielbig, 1961 with no day; SummitPost (search result only - the page is blocked) dates the Cockscomb route to July 4, 1960. The stored \"July 4, 1961\" mixes the two. Not locked; needs the AAJ or Mountaineer annual.",
+   "commitment \"II\" vs alpine_grade \"Grade III\" on the same row contradict each other; no opened source gives a Roman grade for this route. Not locked.",
+   "gain_ft 7201: measured net climb is 7,105 ft (USFS 10,781 - USGS 3DEP 3,676 ft at the Heliotrope lot); the sibling North Ridge is locked at 7,100. Within tolerance, but no published figure for this route - not locked."
+  ],
+  "notes": "Summit pin snapped 19 m onto the locked USGS point. Trailhead pin moved 18 m onto the OSM Heliotrope Ridge lot (way 296392530, USGS 3DEP 3,676 ft), the placement batch C used for North Ridge - not locked. REMOVED the \"Camp Kiser, Ptarmigan Ridge\" pin: it sits on Ptarmigan Ridge on the far (northeast) side of the mountain, has no distance or directions, and Mountain Project's approach is from Heliotrope across the Coleman and Roosevelt glaciers to the ridge at about 7,500 ft. dist_km 10.5 is longer than the 6.6 km straight line - plausible one-way, left. Mountain Project: descent by the Coleman-Deming; best spring/early summer (loose rock)."
+ },
+ "wa_mount_baker_boulder_park_cleaver": {
+  "area": "wa_mount_baker",
+  "set": {
+   "waypoints": [
+    {
+     "lat": 48.73521,
+     "lng": -121.71027,
+     "elev": 2721,
+     "name": "Boulder Ridge Trailhead",
+     "type": "Trailhead",
+     "distMi": 0,
+     "directions": "From Sedro-Woolley, drive SR 20 east 16 miles to milepost 82 and turn left (north) on Baker Lake Road (FS 11). Continue about 18 miles; just past Boulder Creek Campground and the Boulder Creek bridge, turn left on FR-1130 for about 1 mile, then left on FR-1131 to its end at the Boulder Ridge Trailhead, around 2,700 ft. Boulder Ridge Trail #605 starts from the road's end. This is the lowest trailhead on the mountain, which is why the climb adds up to about 8,000 ft of cumulative gain — the biggest of any Baker route."
+    },
+    {
+     "lat": 48.7766298,
+     "lng": -121.8144732,
+     "elev": 10781,
+     "name": "Mount Baker Summit",
+     "type": "Summit",
+     "distMi": 8,
+     "directions": "Follow Boulder Ridge Trail #605 about 2 flat miles to the boggy clearing at the wilderness boundary, then the user path up steep heather and a Class 3 rock step to camp where the ridge meets snow. Rope up and cross the lower glacier northwest to the toe of the cleaver near 6,800 ft, follow the cleaver, mostly on its north side, to the large rock buttress near 9,300 ft, then take one of the finishes past the buttress onto the summit plateau and Grant Peak."
+    }
+   ]
+  },
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/107467457/boulder-park-cleaver",
+    "https://www.fs.usda.gov/r06/mbs/recreation/boulder-glacier-climbing-route",
+    "https://www.fs.usda.gov/r06/mbs/recreation/mt-baker-summit-climbing",
+    "https://mountaineers.org/activities/routes-places/mt-baker-boulder-glacier",
+    "https://www.openstreetmap.org/way/1360538534",
+    "USGS GNIS DomesticNames_WA 1516062 / 1520243",
+    "USGS EPQS 3DEP elevation"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "waypoints/Mount Baker Summit",
+    "value": {
+     "name": "Mount Baker Summit",
+     "lat": 48.7766298,
+     "lng": -121.8144732
+    },
+    "method": "measured",
+    "level": "locked",
+    "evidence": [
+     {
+      "measurement": "USGS GNIS feature 1516062 \"Mount Baker\" (Summit) primary point, DomesticNames_WA - reused from batches B/C/D/E",
+      "fact": "48.7766298, -121.8144732"
+     },
+     {
+      "measurement": "USGS GNIS feature 1520243 \"Grant Peak\" (Summit) at 48.7766406, -121.8144899, 1.7 m away - reused from batches B/C/D/E",
+      "fact": "second USGS feature for the top"
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 10781,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r06/mbs/recreation/mt-baker-summit-climbing",
+      "official": true,
+      "fact": "Mt. Baker summit (Grant Peak) 10,781 ft - reused from batch D",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.alpineinstitute.com/route-profile-mt-baker-coleman-headwall/",
+      "fact": "summit 10,781 ft - reused from batch D",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "No climbing or wilderness permit is required; filling in the voluntary climbing register at the trailhead is recommended. No quota or fee. Northwest Forest Pass at developed trailheads.",
+    "method": "official-1",
+    "level": "locked",
+    "expires_at": "2027-11-18T00:00:00Z",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r06/mbs/recreation/mt-baker-summit-climbing",
+      "official": true,
+      "fact": "no climbing permit; no climbing fee; recreation pass per vehicle at the trailheads - reused from batches B/D/E",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "waypoints/Boulder Ridge Trailhead",
+    "value": {
+     "name": "Boulder Ridge Trailhead",
+     "lat": 48.73521,
+     "lng": -121.71027
+    },
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r06/mbs/recreation/boulder-glacier-climbing-route",
+      "official": true,
+      "fact": "Boulder Ridge Trailhead 48.73521306, -121.71026884 - reused from batch E",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.openstreetmap.org/way/1360538534",
+      "fact": "OSM amenity=parking at the end of FR 1131, 18 m from the pin - reused from batch E",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 8081,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "measurement": "USFS 10,781 ft summit - USGS 3DEP 2,721 ft at the Boulder Ridge trailhead pin = 8,060 ft (same trailhead and summit as the Boulder Glacier, reused from batch E)",
+      "fact": "8060"
+     },
+     {
+      "url": "https://mountaineers.org/activities/routes-places/mt-baker-boulder-glacier",
+      "fact": "Elevation Gain 8,100 ft, Boulder Ridge trailhead to the same summit via the same high camp - reused from batch E",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_mount_baker_boulder_park_cleaver",
+    "column": "dist_km",
+    "from": 25.7,
+    "to": null,
+    "why": "25.7 km is 2x the route's own summit pin (8 mi = 12.9 km): a round trip in a one-way column - the same value batch E proposed nulling on the sibling Boulder Glacier route (same trailhead). No published one-way figure; Mountain Project and USFS give only about 2 mi of maintained trail.",
+    "evidence": [
+     "https://www.mountainproject.com/route/107467457/boulder-park-cleaver",
+     "https://www.fs.usda.gov/r06/mbs/recreation/boulder-glacier-climbing-route"
+    ]
+   }
+  ],
+  "disputed": [
+   "grade \"Class 3\": Mountain Project grades the route Mod. Snow only; the Class 3 is the rock step on the approach (rock_grade says so). Not locked.",
+   "fa \"Joe Morovits and party, July 2, 1894\": Mountain Project only. A first ascent never locks on one source.",
+   "length_m 1585 (5,200 ft) vs Mountain Project 7,100 ft: neither is a measured route length (5,200 ft is the camp-to-summit gain the Mountaineers give for the Boulder Glacier). Not locked.",
+   "Camps: Mountain Project bivies about 5,500 ft below the Boulder Glacier; the stored descent text calls the high camp 7,200-7,500 ft and the bail/descent text 5,700 ft. Not checked further."
+  ],
+  "notes": "Summit pin snapped 19 m onto the locked USGS point. Trailhead pin renamed to \"Boulder Ridge Trailhead\" (the name it carries on the sibling Boulder Glacier route) and moved 4 m onto the locked USFS point, elev USGS 3DEP 2,721 ft. Mountain Project road: Baker Lake Rd about 15 mi from SR 20, left on FS 1130 just after Boulder Creek, then left on FS 1131 to its end; Forest Service parking pass. Stored driveNote says 17.8 mi, MP 15, USFS ~18 mi (batch E) - left as is."
+ }
+}

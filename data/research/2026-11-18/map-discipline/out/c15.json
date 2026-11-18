@@ -1,0 +1,370 @@
+[
+ {
+  "id": "wa_iron_cap_mountain_northeast_shoulder",
+  "status": "found",
+  "trailhead": {
+   "name": "Necklace Valley Trailhead",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://www.wta.org/go-hiking/trip-reports/trip_report-2026-08-19.115349918346",
+    "fact": "Tank Lakes reached from East Fork Foss / Necklace Valley TH; route text says Tank Lakes side via Foss River trails, not from Chetwoot Lake"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "Necklace Valley Trailhead",
+     "lat": 47.665562,
+     "lng": -121.287237,
+     "url": ""
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Inference: West Fork Foss (sibling's TH) is the Chetwoot Lake side, which the text rules out. Report notes 2.5 mi road walk to this TH if road gated. Medium confidence."
+ },
+ {
+  "id": "wa_jack_mountain_east_ridge",
+  "status": "found",
+  "trailhead": {
+   "name": "Canyon Creek Trailhead",
+   "identifiedBy": {
+    "kind": "route_text",
+    "fact": "From the Canyon Creek Trailhead (~1,900 ft, SR 20 near MP 141)"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "Canyon Creek Trailhead",
+     "lat": 48.706506,
+     "lng": -120.918315,
+     "url": ""
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Text also offers East Bank TH (MP 138) as alternative; Canyon Creek is the one the approach prose walks from."
+ },
+ {
+  "id": "wa_klawatti_peak_north_ridge",
+  "status": "stuck",
+  "trailhead": {
+   "name": "Eldorado trailhead (Cascade River Road, ~mile 20-21)",
+   "identifiedBy": {
+    "kind": "route_text",
+    "fact": "drive the Cascade River Road about 19-21 miles to the Eldorado trailhead (~2,150 ft)"
+   },
+   "placements": []
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Identified by name but no official USFS/NPS candidate matches it; OSM withdrawn from brief, needs placement by script. Sibling calls it Eldorado Creek trailhead."
+ },
+ {
+  "id": "wa_lane_peak_r1",
+  "status": "summit_only_answered",
+  "trailhead": null,
+  "reachesSummit": false,
+  "summitEvidence": {
+   "kind": "route_text",
+   "fact": "climbs the couloir to a dead tree at a notch in the east ridge, the top of the technical climbing and rappel point"
+  },
+  "otherFacts": [],
+  "notes": "Already has Pinnacle Saddle TH pin. Ends at ridge notch, not summit."
+ },
+ {
+  "id": "wa_lane_peak_r2",
+  "status": "summit_only_answered",
+  "trailhead": null,
+  "reachesSummit": "unknown",
+  "summitEvidence": {
+   "kind": "route_text",
+   "fact": "couloir tops out at a notch in the west ridge; most parties continue onto the standard South Face route"
+  },
+  "otherFacts": [],
+  "notes": "Route proper ends at the notch; summit reached only by continuing on another route."
+ },
+ {
+  "id": "wa_lemah_two_goatshead_spire",
+  "status": "summit_only_answered",
+  "trailhead": null,
+  "reachesSummit": false,
+  "summitEvidence": {
+   "kind": "route_text",
+   "fact": "a separate rock tower (~7,000 ft) on the eastern spur of Lemah Two, below the 7,280 ft peak"
+  },
+  "otherFacts": [],
+  "notes": "Objective is the spire, not Lemah Two's summit. Pete Lake TH pin already present."
+ },
+ {
+  "id": "wa_tooth_and_claw",
+  "status": "summit_only_answered",
+  "trailhead": null,
+  "reachesSummit": "unknown",
+  "summitEvidence": {
+   "kind": "route_text",
+   "fact": "descent starts from the East Shoulder via a 4th-class traverse west to the East Face gully"
+  },
+  "otherFacts": [],
+  "notes": "Route reaches the East Shoulder; text does not say it continues to the true summit."
+ },
+ {
+  "id": "wa_liberty_and_injustice_for_all",
+  "status": "summit_only_answered",
+  "trailhead": null,
+  "reachesSummit": false,
+  "summitEvidence": {
+   "kind": "route_text",
+   "fact": "joins Thin Red Line at its seventh-pitch anchor; descent is rappels from top of pitch 5 to the ground"
+  },
+  "otherFacts": [],
+  "notes": "Ends mid-face, well below the summit."
+ },
+ {
+  "id": "wa_liberty_bell_freedom_or_death",
+  "status": "found",
+  "trailhead": {
+   "name": "Hairpin pond pullout, SR 20",
+   "identifiedBy": {
+    "kind": "route_text",
+    "fact": "Standard East Face approach; road text: east-side pond pullout"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "Hairpin",
+     "lat": 48.514336,
+     "lng": -120.642715,
+     "url": ""
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "4-pitch East Face line; does not itself reach the summit."
+ },
+ {
+  "id": "wa_liberty_bell_freedom_rider",
+  "status": "found",
+  "trailhead": {
+   "name": "Hairpin pond pullout, SR 20",
+   "identifiedBy": {
+    "kind": "route_text",
+    "fact": "park at the pond pullout near the hairpin turn east of Washington Pass"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "Hairpin",
+     "lat": 48.514336,
+     "lng": -120.642715,
+     "url": ""
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": ""
+ },
+ {
+  "id": "wa_liberty_bell_the_barber_pole",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Route text empty; no page about this route found. Sibling uses the hairpin turnout (USFS Hairpin 48.514336,-120.642715) but not confirmed for this route."
+ },
+ {
+  "id": "wa_lincoln_peak_standard",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Text drives FR-38 to its mile-12.5 switchback then hikes old road; FR-38 closed at milepost 7 per text, so the effective start varies. Not placed. Heliotrope Ridge TH (sibling's) is called the less direct alternative."
+ },
+ {
+  "id": "wa_little_annapurna_boola_boola_buttress",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "No route text. Lead only: cascadeclimbers report https://cascadeclimbers.com/forum/topic/34952-tr-boola-boola-buttress-thank-you-baby-jesus-possible-new-route-7102005/ puts it below the Dragontail plateau across from Little Annapurna, names no trailhead."
+ },
+ {
+  "id": "wa_little_annapurna_northeast_face",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "No route text. Peak standard route starts at Stuart Lake TH via Colchuck Lake and Aasgard Pass (https://www.mountaineers.org/activities/routes-places/enchantments-area-review/little-annapurna); not shown to apply to this face."
+ },
+ {
+  "id": "wa_little_annapurna_northwest_buttress",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "No route text. Same lead as NE Face: peak standard route from Stuart Lake TH via Aasgard Pass; not confirmed for this route."
+ },
+ {
+  "id": "wa_little_annapurna_south_face",
+  "status": "stuck",
+  "trailhead": {
+   "name": "Ingalls Creek Trailhead",
+   "identifiedBy": {
+    "kind": "route_text",
+    "fact": "turn onto Ingalls Creek Road/Trailhead off Hwy 97, hike Ingalls Creek Trail ~8 miles"
+   },
+   "placements": []
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Identified from route text but no official candidate matches (nearest list: Stuart Lake, Eightmile). Needs placement by script. Sibling uses Stuart Lake TH, a different start."
+ },
+ {
+  "id": "wa_little_big_chief_mountain_falcon_route",
+  "status": "found",
+  "trailhead": {
+   "name": "Dingford Creek Trailhead (end of Middle Fork Snoqualmie Valley Road)",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://hiking.andrewleader.net/routes/falcon-route/",
+    "fact": "From the end of the Middle Fork Valley Road, hike up the valley ~3 hours to a steel bridge, then cross-country to Summit Chief Valley"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "Dingford Creek Trailhead",
+     "lat": 47.517325,
+     "lng": -121.4543,
+     "url": ""
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Page does not name the lot; Dingford Creek TH assumed as the Middle Fork road end and matches sibling. Medium confidence; road may be closed."
+ },
+ {
+  "id": "wa_little_big_chief_mountain_southwest_face",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "No route text, no route-specific page read. Likely same Summit Chief valley start as Falcon Route but unconfirmed."
+ },
+ {
+  "id": "wa_little_sister_southeast_ridge",
+  "status": "found",
+  "trailhead": {
+   "name": "Elbow Lake Trailhead",
+   "identifiedBy": {
+    "kind": "route_text",
+    "fact": "Elbow Lake Trailhead, cross the Middle Fork Nooksack"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "Elbow Lake Trailhead",
+     "lat": 48.681054,
+     "lng": -121.895073,
+     "url": ""
+    }
+   ]
+  },
+  "reachesSummit": true,
+  "summitEvidence": {
+   "kind": "route_text",
+   "fact": "ridge finishes through looser 4th-class terrain to the summit"
+  },
+  "otherFacts": [],
+  "notes": "Route text says FR-38 washed out at milepost 7."
+ },
+ {
+  "id": "wa_lundin_peak_northwest_face",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "No route text; no page for this face found."
+ },
+ {
+  "id": "wa_lundin_peak_southeast_ridge",
+  "status": "found",
+  "trailhead": {
+   "name": "Snoqualmie Pass / PCT North Trailhead",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://trailcatjim.com/lundin-peak-via-red-pass-southeast-ridge-2023/",
+    "fact": "Starting point Snoqualmie Pass PCT-Northbound Trailhead off I-90 Exit 52, via Commonwealth Basin and Red Pass to the Southeast Ridge"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "Pacific Crest Trail - Snoqualmie North T",
+     "lat": 47.428012,
+     "lng": -121.413484,
+     "url": ""
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Matches sibling's PCT North TH."
+ },
+ {
+  "id": "wa_baring_mountain_oatmeal_man",
+  "status": "summit_only_answered",
+  "trailhead": null,
+  "reachesSummit": true,
+  "summitEvidence": {
+   "kind": "route_text",
+   "fact": "From the summit, follow the base-jumper boot track down and west"
+  },
+  "otherFacts": [],
+  "notes": "Barclay Lake TH pin already present."
+ },
+ {
+  "id": "wa_middle_peak_north_face",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Not researched; no route text. Sibling is Downey Creek TH, unconfirmed."
+ },
+ {
+  "id": "wa_middle_peak_traverse_route",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Not researched; no route text. Sibling is Downey Creek TH, unconfirmed."
+ },
+ {
+  "id": "wa_mixup_peak_pbs_late_night_special",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Report https://cascadeclimbers.com/forum/topic/108657-trip-report-mix-up-peak-pbs-late-night-special-08102026/ says standard approach to Gunsight Notch, mentions Cache Col; no trailhead named. Cascade Pass TH likely but not stated; no official candidate matches."
+ }
+]

@@ -75,7 +75,7 @@ const CASES = [
     file: path.join(ROOT, "lib/SafetyTab.jsx"),
     why: "seeding the crew site from a hand-written literal instead of floatPlanState() puts the eleven-key shape in two places, and they drift. The props are still passed, so only the seeding assertion sees it.",
     expect: /crew site does not seed from floatPlanState/,
-    edit: (s) => s.replace(/(\[floatPlan,setFloatPlan\]=useState\(\(\)=>)floatPlanState\(\)/,
+    edit: (s) => s.replace(/(\[floatPlan,setFloatPlan\]=useState\(\(\)=>)floatPlanState\([^)]*\)/,
       "$1({form:{route:\"\"},saved:false,checkedIn:false})"),
   },
 
@@ -104,8 +104,8 @@ const CASES = [
     file: PLAN,
     why: "the call site stops passing calc/onCalc, so Calculator falls back to its own state and the planner inputs are lost on a sub-tab switch again.",
     edit: (s) => s.replace(
-      "<Calculator route={route} activity={activity} calc={calcInputs} onCalc={setCalcInputs}/>",
-      "<Calculator route={route} activity={activity}/>"),
+      "<Calculator route={route} activity={activity} calc={calcInputs} onCalc={setCalcInputs} ",
+      "<Calculator route={route} activity={activity} "),
   },
   {
     name: "calc-owner-removed",

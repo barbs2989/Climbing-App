@@ -1,0 +1,156 @@
+[
+ {
+  "id": "wa_north_peak_north_ridge",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "No route text. Web search budget exhausted this run. Only hit was a search summary for a different North Gunsight West Face; no page about North Peak (row coordinate 48.3068,-120.994) found. Sibling West Face uses Downey Creek, but the row coordinate is ~9 km east of that route's area, so the sibling is not evidence."
+ },
+ {
+  "id": "wa_north_peak_southeast_buttress",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "No route text. Web search budget exhausted this run. Only hit was a search summary for a different North Gunsight West Face; no page about North Peak (row coordinate 48.3068,-120.994) found. Sibling West Face uses Downey Creek, but the row coordinate is ~9 km east of that route's area, so the sibling is not evidence."
+ },
+ {
+  "id": "wa_old_guard_peak_east_side_route",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": "unknown",
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "cascade_pass_lot_coords",
+    "value": "48.4754,-121.0751 (circular lot at end of Cascade River Road)",
+    "url": "https://www.wta.org/go-hiking/hikes/cascade-pass"
+   }
+  ],
+  "notes": "WTA Cascade Pass page confirms the lot at the road end but never mentions Old Guard, LeConte or Cache Col, so the link from the route's Cascade River Road text to Cascade Pass stays inferred. Route text says rising from LeConte Glacier but never says it tops out on the summit. Not upgraded."
+ },
+ {
+  "id": "wa_overcoat_peak_north_face",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Not re-researched beyond first pass (search budget exhausted, no new page found); Dingford identification stays a one-trip-report weak guess for another side; not upgraded."
+ },
+ {
+  "id": "wa_red_mountain_snoqualmie_east_face",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Only peak-level pages (WTA, Mountaineers 403) read; WTA describes the west slope via PCT/Commonwealth Basin and none names this side. The east side may be reached from Snow Lake or Commonwealth Basin; unresolved."
+ },
+ {
+  "id": "wa_red_mountain_snoqualmie_east_ridge",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Only peak-level pages (WTA, Mountaineers 403) read; WTA describes the west slope via PCT/Commonwealth Basin and none names this side. The east side may be reached from Snow Lake or Commonwealth Basin; unresolved."
+ },
+ {
+  "id": "wa_red_mountain_snoqualmie_southeast_face",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Only peak-level pages (WTA, Mountaineers 403) read; WTA describes the west slope via PCT/Commonwealth Basin and none names this side. The southeast side may be reached from Snow Lake or Commonwealth Basin; unresolved."
+ },
+ {
+  "id": "wa_red_mountain_snoqualmie_west_ridge",
+  "status": "found",
+  "trailhead": {
+   "name": "Pacific Crest Trail Trailhead (Snoqualmie Pass, Red Mountain #1033)",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://www.wta.org/go-hiking/hikes/red-mountain-commonwealth-basin",
+    "fact": "final 1000 ft on west slope rock of Red Mountain; trailhead off I-90 exit 52"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "Pacific Crest Trail - Snoqualmie North Trailhead",
+     "lat": 47.428012,
+     "lng": -121.413484,
+     "url": ""
+    },
+    {
+     "source": "WTA",
+     "name": "Red Mountain (#1033) trailhead",
+     "lat": 47.4278,
+     "lng": -121.4134,
+     "url": "https://www.wta.org/go-hiking/hikes/red-mountain-commonwealth-basin"
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "trail_miles_to_basin",
+    "value": "5",
+    "url": "https://www.wta.org/go-hiking/hikes/red-mountain-commonwealth-basin"
+   }
+  ],
+  "notes": "Medium confidence: WTA describes the west slope as the way up, matching this side; West Ridge is not named by the page."
+ },
+ {
+  "id": "wa_skookum_peak_twinsisters_jaw_s_tooth_and_northwest_ridge",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Mountain Project (text only) names Dailey Prairie then over the west ridge of South Twin; no formal trailhead named, no page placing Dailey Prairie found. WTA Elbow Lake page (Pioneer Camp TH 48.6797,-121.8970) does not mention Skookum, and says FR 38/FR 12 are washed out or closing. Not resolved; Elbow Lake not supported."
+ },
+ {
+  "id": "wa_the_temple_west_face",
+  "status": "found",
+  "trailhead": {
+   "name": "Snow Lakes Trailhead",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://mountaineers.org/activities/routes-places/enchantments-area-review/mount-temple-west-side",
+    "fact": "Mount Temple West Side accessed from Snow Lakes Trail parking lot (search summary only; page 403 to me)"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "Snow Lakes Trailhead",
+     "lat": 47.544106,
+     "lng": -120.709515,
+     "url": ""
+    },
+    {
+     "source": "WTA",
+     "name": "Snow Lakes trailhead",
+     "lat": 47.5441,
+     "lng": -120.7097,
+     "url": "https://www.wta.org/go-hiking/hikes/snow-lakes"
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "trailhead_road",
+    "value": "end of Icicle Creek Road, about 4.2 mi south of US 2",
+    "url": "https://www.wta.org/go-hiking/hikes/snow-lakes"
+   }
+  ],
+  "notes": "Identification still rests on the Mountaineers search summary plus the South Ridge sibling; page itself 403. Placements agree within 20 m. Medium confidence."
+ }
+]

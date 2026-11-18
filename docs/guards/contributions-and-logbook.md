@@ -147,10 +147,42 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   2026-10-16: `commaOf` joined `linesOf` there — the comma split `altNames`/`variations` use on
   both paths (0327). The trap: the guard passed locally in a batch whose exit code was `tail`'s,
   and only CI's build job surfaced the FAIL. A guard piped to `tail -1` reports nothing.
+- **`check:edit-scope` (2026-11-18): the edit sheet offers, per discipline, only what that
+  discipline's PAGE draws.** The owner opened a section pencil on a trad route and got Trip shape,
+  Published times, Camping & bivy and a full waypoint editor. Measured that day (every chip × all 76
+  fields, readers traced): the sheet's inline `DROP` map and the page's section gates had been written
+  apart, and a single-pitch sport/trad route was offered ~15 fields its page never shows, while ~20
+  rendered values were not editable on their own discipline. The rule now lives in ONE module,
+  `lib/fieldScope.js` (`FIELD_SCOPE`, `fieldScope(k, ctx)`, `scopeCtx(route, cat, pitchCount)`), read by
+  the sheet's `okField`, the DESCENT gate (RoutePlanTab), the crag "Not on file yet" list and Descent fact
+  (TechStats) and the facts-card pencil (RouteDetail). The guard checks (1) every FIELDS key has exactly
+  one rule and no rule is stale — `fieldScope()` answers **false** for an unknown key, so a field added to
+  FIELDS without a rule silently vanishes everywhere until this fails; (2) fieldScope's CRAG list is
+  CRAG_CATS; (3) those readers still call it (regex anchors); (4) page facts that are gates in the page's
+  own code — no Plan-tab-only field on a crag, crag fact rows only on crags, boulder rows only on
+  boulders, DESCENT on multi-pitch sport/trad and a crag line that stores a descent, but not single-pitch
+  ones; the sections every page draws offered everywhere; (5) 7 injection cases. Section 3b (third PR)
+  anchors the page side: the TRIP SHAPE row gated on the same rule, the PUBLISHED TIMES / CLIMATE & SEASON /
+  PARTNER REQUIREMENTS pencils (the last is App's, so it reads ClimbMatch.jsx too), and the header cells drawn
+  only with a value where dist/gain are not editable. Fourth PR: add-a-climb's `sf()` must gate on fieldScope per
+  climb TYPE (anchor), and the merged fields (proTips→beta, bestSeason/condWindow→seasonalGuidance,
+  rappelCountNote→rappelDetail) are offered only where stored — page facts plus 2 injection cases. **What it cannot see:**
+  section 4 is a hand-written list of page facts, not derived from the JSX, so a NEW section gate (or a
+  section moved onto a crag page) is invisible to it until a fact is added here; and it reads gates by
+  category, not the rendered page — the browser check is to open each discipline's sheet and compare.
+  Single-pitch crag lines that already STORE a descent/rappel/pitch value keep those fields
+  (`scopeCtx().has`): the page still shows the value, so dropping its editor would make it uncorrectable.
+  Crag parking (2026-11-18, second PR): the crag parking card's *Add* buttons open the CRAG's area editor at
+  `parking_pin`, so a crag route is offered no route `waypoints` / `approachLogistics` — except where its
+  crag cannot be edited (`cragAreaEditable`, the same test RouteDetail's `areaFactEdit` uses) or the route
+  stores its own pin / directions (the card shows a route pin ahead of the crag's, and its pencil opens
+  that one). Measured: ~99% of WA crag-discipline routes sit on an area of type `crag`; the rest
+  (area_type null) keep the route editor. The anchors in section 3 hold the card, the pencil and the
+  prop threading through RouteDetail → RouteOverviewTab → RoutePlanTab.
 - **`check:add-route-fields` §3b (2026-10-22): the add form is held LEVEL with the edit sheet, per
-  discipline.** It evaluates RouteDetail's `DROP` literal (via `Function`, with the same
-  `cat`/`roped`/`alpiney`/`boulder` inputs SuggestFix computes) for each of the ten types the add form
-  offers, and requires each kept key to be in `FIELDS[disc] ∪ FIELDS[sub]` (renamed through `AS`:
+  discipline.** Since 2026-11-18 it imports `lib/fieldScope.js` (it used to evaluate SuggestFix's inline
+  `DROP` literal via `Function`) and holds each of the ten types the add form offers to the sheet's
+  MULTI-pitch offer, and requires each kept key to be in `FIELDS[disc] ∪ FIELDS[sub]` (renamed through `AS`:
   pitchCount→pitches, length→height, descentText→descent), or be a gear STEPPER in `GSEC`, or be named
   in `NOT_AT_CREATION` / `NOT_FOR` with a reason. Stale exemptions fail. **What it cannot see:** that a
   form key REACHES its column — rule 4 of `check:approve-route-columns` holds that — nor whether the

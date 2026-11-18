@@ -1,0 +1,724 @@
+{
+ "wa_saber_direct": {
+  "area": "wa_upper_castle",
+  "set": {
+   "waypoints": [
+    {
+     "lat": 47.599736,
+     "lng": -120.713852,
+     "elev": 1399,
+     "name": "Castle Rock Trailhead",
+     "type": "Trailhead",
+     "distMi": 0,
+     "note": "Large roadside lot on US 2 below Castle Rock; no recreation pass is needed to park here."
+    }
+   ]
+  },
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/120736329/saber-direct",
+    "https://www.mountainproject.com/route/105792672/saber",
+    "https://www.mountainproject.com/area/114816092/upper-castle",
+    "https://wenatcheeoutdoors.org/2016/05/02/castle-rock-upper-wall-sw-face/",
+    "https://chossclimbers.com/?p=8251",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/castle-rock-trailhead",
+    "https://www.openstreetmap.org/way/301611553",
+    "https://epqs.nationalmap.gov/v1/json (USGS 3DEP point query)"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "waypoints/Castle Rock Trailhead",
+    "value": {
+     "name": "Castle Rock Trailhead",
+     "lat": 47.599736,
+     "lng": -120.713852
+    },
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.openstreetmap.org/way/301611553",
+      "fact": "amenity=parking 'Castle Rock Trailhead', centre 47.59974,-120.71385 (reused from batch C, wa_midway)",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/castle-rock-trailhead",
+      "fact": "Latitude 47.600101, Longitude -120.713997, 42 m from OSM (reused from batch C, wa_midway)",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     },
+     {
+      "measurement": "USGS 3DEP point query at 47.599736,-120.713852 (reused from batch C)",
+      "fact": "1,399 ft"
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "5.9",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/120736329/saber-direct",
+      "fact": "5.9 (route page and Upper Castle list)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "discipline",
+    "value": "trad",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/120736329/saber-direct",
+      "fact": "Type: Trad; gear to 2 in, #3 helps at the start",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_saber_direct",
+    "column": "pitches",
+    "from": 0,
+    "to": 2,
+    "why": "0 is invalid. MP: 2 pitches (a different first pitch, then the standard Saber finish from Saber Ledge). Single source.",
+    "evidence": [
+     "https://www.mountainproject.com/route/120736329/saber-direct"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_saber_direct",
+    "column": "length_m",
+    "from": null,
+    "to": 91,
+    "why": "MP: 300 ft (91 m). Single source.",
+    "evidence": [
+     "https://www.mountainproject.com/route/120736329/saber-direct"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_saber_direct",
+    "column": "permit",
+    "from": null,
+    "to": "No recreation pass is needed to park at the Castle Rock Trailhead.",
+    "why": "Reused from batch C (wa_midway/wa_angel): USFS Castle Rock Trailhead page, no pass or fee to park.",
+    "evidence": [
+     "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/castle-rock-trailhead"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_saber_direct",
+    "column": "disciplines",
+    "from": null,
+    "to": [
+     "trad"
+    ],
+    "why": "disciplines is null; must name the primary discipline (trad).",
+    "evidence": [
+     "https://www.mountainproject.com/route/120736329/saber-direct"
+    ]
+   }
+  ],
+  "disputed": [
+   "fa: row \"Fred Beckey\" matches MP only (no year); the standard Saber FA on MP is Pete Schoening 1950 - not locked (FA never locks from one source)",
+   "approach_variants baseFinding says the direct is not a separate ground start and diverges on the pitch; MP says it starts in the crack LEFT of the standard Saber start with a bouldery move off the ground, then joins Saber at Saber Ledge. Not rewritten on one source - owner/next pass to check."
+  ],
+  "notes": "Saber Direct is only on Mountain Project; Wenatchee Outdoors (SW Face page) and chossclimbers list Saber (5.4 / 5.6) but no direct; theCrag throttled (swamp page) before it could be checked; SummitPost not tried (403). So grade/discipline lock at locked-1src. No gain/dist/high point stored - impossibility checks n/a."
+ },
+ "wa_upper_castle_angel_dreads": {
+  "area": "wa_upper_castle",
+  "set": {
+   "waypoints": [
+    {
+     "lat": 47.599736,
+     "lng": -120.713852,
+     "elev": 1399,
+     "name": "Castle Rock Trailhead",
+     "type": "Trailhead",
+     "distMi": 0,
+     "note": "Large roadside lot on US 2 below Castle Rock; no recreation pass is needed to park here."
+    }
+   ]
+  },
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/121142121/angel-dreads",
+    "https://www.mountainproject.com/area/114816092/upper-castle",
+    "https://wenatcheeoutdoors.org/2016/05/02/castle-rock-upper-wall-west/",
+    "https://chossclimbers.com/?p=8251",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/castle-rock-trailhead",
+    "https://www.openstreetmap.org/way/301611553",
+    "https://epqs.nationalmap.gov/v1/json (USGS 3DEP point query)"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "waypoints/Castle Rock Trailhead",
+    "value": {
+     "name": "Castle Rock Trailhead",
+     "lat": 47.599736,
+     "lng": -120.713852
+    },
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.openstreetmap.org/way/301611553",
+      "fact": "amenity=parking 'Castle Rock Trailhead', centre 47.59974,-120.71385 (reused from batch C, wa_midway)",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/castle-rock-trailhead",
+      "fact": "Latitude 47.600101, Longitude -120.713997, 42 m from OSM (reused from batch C, wa_midway)",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     },
+     {
+      "measurement": "USGS 3DEP point query at 47.599736,-120.713852 (reused from batch C)",
+      "fact": "1,399 ft"
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "5.11-",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/121142121/angel-dreads",
+      "fact": "5.11- PG13",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "length_m",
+    "value": 30,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/121142121/angel-dreads",
+      "fact": "100 ft (30 m)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "discipline",
+    "value": "trad",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/121142121/angel-dreads",
+      "fact": "Type: Trad; micro cams and nuts, largest BD #1",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_upper_castle_angel_dreads",
+    "column": "permit",
+    "from": null,
+    "to": "No recreation pass is needed to park at the Castle Rock Trailhead.",
+    "why": "Reused from batch C (wa_midway/wa_angel): USFS Castle Rock Trailhead page, no pass or fee to park.",
+    "evidence": [
+     "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/castle-rock-trailhead"
+    ]
+   }
+  ],
+  "disputed": [
+   "pitches: stored 1; MP gives no pitch count (100 ft, single pitch implied) - left as is, not locked",
+   "fa: MP \"Unknown\"; row empty - correct to leave null"
+  ],
+  "notes": "Only on Mountain Project (a variation start: Angel crack then the thin cracks into Dan's Dreadful Direct). Wenatchee Outdoors West page and chossclimbers mention Angel but not Angel Dreads. Stored overview, detailed_rack (largest BD #1) and location agree with MP facts. MP adds a PG13 protection rating (prot_rating column empty; not proposed on one source)."
+ },
+ "wa_dr_leakey": {
+  "area": "wa_northwest_side",
+  "set": {
+   "waypoints": [
+    {
+     "lat": 47.539612,
+     "lng": -120.520081,
+     "elev": 1024,
+     "name": "Peshastin Pinnacles State Park parking",
+     "type": "Trailhead",
+     "distMi": 0,
+     "note": "State park lot off North Dryden Road; a Discover Pass is required, and the park is closed Nov 1 to Mar 15."
+    }
+   ]
+  },
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/105874955/dr-leakey",
+    "https://www.mountainproject.com/area/105874363/northwest-side",
+    "https://www.thecrag.com/en/climbing/united-states/central-cascade-mountains/route/19209427",
+    "https://wenatcheeoutdoors.org/2016/05/02/peshastin-pinnacles/",
+    "https://parks.wa.gov/find-parks/state-parks/peshastin-pinnacles-state-park",
+    "https://www.openstreetmap.org/way/374991572",
+    "https://epqs.nationalmap.gov/v1/json (USGS 3DEP point query)"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "waypoints/Peshastin Pinnacles State Park parking",
+    "value": {
+     "name": "Peshastin Pinnacles State Park parking",
+     "lat": 47.539612,
+     "lng": -120.520081
+    },
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.openstreetmap.org/way/374991572",
+      "fact": "amenity=parking, access=permit, fee=yes; centre 47.53961,-120.52008 (reused from batch C, wa_potholes)",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://parks.wa.gov/find-parks/state-parks/peshastin-pinnacles-state-park",
+      "fact": "Get Directions map point 47.5396,-120.5199, 14 m from OSM (reused from batch C, wa_potholes)",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     },
+     {
+      "measurement": "USGS 3DEP point query at 47.539612,-120.520081 (reused from batch C)",
+      "fact": "1,024 ft"
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "5.11b",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105874955/dr-leakey",
+      "fact": "5.11b",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.thecrag.com/en/climbing/united-states/central-cascade-mountains/route/19209427",
+      "fact": "5.11b, grade citation: Rock Climbing Washington guidebook",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "discipline",
+    "value": "sport",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105874955/dr-leakey",
+      "fact": "Type: Sport; 6 bolts, 2-bolt anchor",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_dr_leakey",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "0 is invalid. MP: 80 ft sport route, 6 bolts to a two-bolt anchor (MP omits the count on single-pitch routes).",
+    "evidence": [
+     "https://www.mountainproject.com/route/105874955/dr-leakey"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_dr_leakey",
+    "column": "length_m",
+    "from": null,
+    "to": 24,
+    "why": "MP: 80 ft (24 m). Single source; theCrag length UNKNOWN.",
+    "evidence": [
+     "https://www.mountainproject.com/route/105874955/dr-leakey"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_dr_leakey",
+    "column": "bolts",
+    "from": null,
+    "to": 6,
+    "why": "MP: six bolts. Single source.",
+    "evidence": [
+     "https://www.mountainproject.com/route/105874955/dr-leakey"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_dr_leakey",
+    "column": "anchor",
+    "from": null,
+    "to": "Two-bolt anchor",
+    "why": "MP: two-bolt anchor. Single source.",
+    "evidence": [
+     "https://www.mountainproject.com/route/105874955/dr-leakey"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_dr_leakey",
+    "column": "permit",
+    "from": null,
+    "to": "Discover Pass required to park. The park is open 6:30 a.m. to dusk and closed Nov 1 to Mar 15; climbers must be off the rocks half an hour before closing, and bolting or drilling is not allowed.",
+    "why": "Reused from batch C (wa_potholes): WA State Parks page, official.",
+    "evidence": [
+     "https://parks.wa.gov/find-parks/state-parks/peshastin-pinnacles-state-park"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_dr_leakey",
+    "column": "disciplines",
+    "from": null,
+    "to": [
+     "sport"
+    ],
+    "why": "disciplines is null; must name the primary discipline (sport).",
+    "evidence": [
+     "https://www.mountainproject.com/route/105874955/dr-leakey"
+    ]
+   }
+  ],
+  "disputed": [
+   "fa: row \"Rick LeDuc, Jamie Christensen, Bob McGowan.\" matches MP names (no year); theCrag \"no known route history\" - not locked",
+   "hazards: \"roughly half of the wedge bolts and hangers worn or spinning\" is not on MP (no bolt-condition note) - unverified; the Nov 1 - Mar 15 closure in the same string is confirmed by WA State Parks (batch C)",
+   "location: theCrag pin 47.52865,-120.47443 is ~3.6 km east of the park - ignored (climbing-site coordinates are never evidence)"
+  ],
+  "notes": "Wenatchee Outdoors Peshastin page does not list Dr. Leakey. Hazards string ends without a full stop (\"Mar 15\") - cosmetic."
+ },
+ "wa_mary_jane_dihedral": {
+  "area": "wa_snow_creek_wall",
+  "set": {
+   "waypoints": [
+    {
+     "lat": 47.5442538,
+     "lng": -120.7100626,
+     "elev": 1300,
+     "elevFt": 1300,
+     "name": "Snow Lakes Trailhead",
+     "type": "Trailhead",
+     "note": "Parking lot for the Snow Lakes Trail, about 1,300 ft. Pay the $5 day-use fee or display a Northwest Forest Pass or interagency pass.",
+     "directions": "Take Icicle Road (FR 7600) out of Leavenworth; the lot sits on the left side about 4.3 mi along."
+    }
+   ]
+  },
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/107781733/mary-jane-dihedral",
+    "https://www.thecrag.com/en/climbing/united-states/central-cascade-mountains/route/16778827",
+    "https://stephabegg.com/trip-reports/washington/snow-creek-wall/",
+    "https://wenatcheeoutdoors.org/2016/04/28/snow-creek-wall/",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/snow-lakes-trailhead",
+    "https://www.openstreetmap.org/way/154033355"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "waypoints/Snow Lakes Trailhead",
+    "value": {
+     "name": "Snow Lakes Trailhead",
+     "lat": 47.5442538,
+     "lng": -120.7100626
+    },
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.openstreetmap.org/way/154033355",
+      "fact": "Snow Lakes Trailhead Parking, centre 47.5442538,-120.7100626 (reused from batch D, wa_snow_creek_wall_galaxy)",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/snow-lakes-trailhead",
+      "fact": "Snow Lakes Trailhead 47.5441,-120.7095, 1,300 ft; 45.6 m from OSM (reused from batch D)",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     }
+    ]
+   },
+   {
+    "field": "discipline",
+    "value": "trad",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107781733/mary-jane-dihedral",
+      "fact": "Type: Trad",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://wenatcheeoutdoors.org/2016/04/28/snow-creek-wall/",
+      "fact": "Mary Jane Dihedral, gear to 2.5 inches (crack route)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_mary_jane_dihedral",
+    "column": "grade",
+    "from": "5.10a",
+    "to": "5.9",
+    "why": "Three independent sources put it at 5.9: theCrag 5.9 III (citing Rock Climbing Washington), Steph Abegg 5.9, Wenatchee Outdoors 5.9+. Only MP says 5.10a. grade_num would go 10.25 -> 9. Owner decides; not locked.",
+    "evidence": [
+     "https://www.thecrag.com/en/climbing/united-states/central-cascade-mountains/route/16778827",
+     "https://stephabegg.com/trip-reports/washington/snow-creek-wall/",
+     "https://wenatcheeoutdoors.org/2016/04/28/snow-creek-wall/",
+     "https://www.mountainproject.com/route/107781733/mary-jane-dihedral"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_mary_jane_dihedral",
+    "column": "length_m",
+    "from": null,
+    "to": 212,
+    "why": "MP 700 ft (212 m); theCrag 660 ft (201 m) - within 10%. MP figure used.",
+    "evidence": [
+     "https://www.mountainproject.com/route/107781733/mary-jane-dihedral",
+     "https://www.thecrag.com/en/climbing/united-states/central-cascade-mountains/route/16778827"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_mary_jane_dihedral",
+    "column": "permit",
+    "from": null,
+    "to": "Park at the Snow Lakes Trailhead with the $5 day-use fee, a Northwest Forest Pass or an interagency pass.",
+    "why": "Reused from batch D: USFS Snow Lakes Trailhead page (updated 2026-08-04) - $5/day or $30/yr, NW Forest Pass and Interagency passes accepted. Wenatchee Outdoors also says NW Forest Pass. Whether a day climb needs the free self-issued wilderness day-use permit was not confirmed, so it is left out.",
+    "evidence": [
+     "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/snow-lakes-trailhead",
+     "https://wenatcheeoutdoors.org/2016/04/28/snow-creek-wall/"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_mary_jane_dihedral",
+    "column": "disciplines",
+    "from": null,
+    "to": [
+     "trad"
+    ],
+    "why": "disciplines is null; must name the primary discipline (trad).",
+    "evidence": [
+     "https://www.mountainproject.com/route/107781733/mary-jane-dihedral",
+     "https://wenatcheeoutdoors.org/2016/04/28/snow-creek-wall/"
+    ]
+   }
+  ],
+  "disputed": [
+   "grade: MP 5.10a vs theCrag/RCW 5.9, Abegg 5.9, WO 5.9+ (fix proposed above)",
+   "pitches: stored 7; MP 5 (from the ledge above the Orbit chimney); Abegg \"5-6p\", 3 pitches independent of Orbit; WO \"about 2 pitches up Orbit\" then several to rejoin Orbit two from the top - depends where counting starts; not changed",
+   "commitment: MP II vs theCrag III - unlocked, not proposed",
+   "gear: stored \"Cams to 2 inches.\"; WO 2.5 in; MP mentions a #3 and #1 Camalot to back up the P2 anchor - stored size likely low, not changed on this evidence",
+   "fa: names match MP (McPherson, Burgner, Madsen); year 1966 not found on any page - not locked"
+  ],
+  "notes": "MP bolts: P1 two-bolt hanging belay added 2015, single-bolt P2 anchor plus a newer bolt, a newer bolt on P3 (Abegg also notes 2015 bolts). The stored approach_variants (start on the ledge above the Orbit chimney) agree with MP. Straight line Snow Lakes lot to the wall is 1.75 km (batch D) - no dist_km stored, so impossibility checks n/a; approach distMi 2.5 is consistent with WO \"hike 2 miles\" / \"2.5-mile uphill hike\"."
+ },
+ "wa_iconoclast": {
+  "area": "wa_snow_creek_wall",
+  "set": {
+   "waypoints": [
+    {
+     "lat": 47.5442538,
+     "lng": -120.7100626,
+     "elev": 1300,
+     "elevFt": 1300,
+     "name": "Snow Lakes Trailhead",
+     "type": "Trailhead",
+     "note": "Parking lot for the Snow Lakes Trail, about 1,300 ft. Pay the $5 day-use fee or display a Northwest Forest Pass or interagency pass.",
+     "directions": "Take Icicle Road (FR 7600) out of Leavenworth; the lot sits on the left side about 4.3 mi along."
+    }
+   ]
+  },
+  "review": {
+   "sources": [
+    "https://mountainproject.com/route/107191762/iconoclast",
+    "https://wenatcheeoutdoors.org/2016/04/28/snow-creek-wall/",
+    "https://stephabegg.com/trip-reports/washington/snow-creek-wall/",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/snow-lakes-trailhead",
+    "https://www.openstreetmap.org/way/154033355"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "waypoints/Snow Lakes Trailhead",
+    "value": {
+     "name": "Snow Lakes Trailhead",
+     "lat": 47.5442538,
+     "lng": -120.7100626
+    },
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.openstreetmap.org/way/154033355",
+      "fact": "Snow Lakes Trailhead Parking, centre 47.5442538,-120.7100626 (reused from batch D, wa_snow_creek_wall_galaxy)",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/snow-lakes-trailhead",
+      "fact": "Snow Lakes Trailhead 47.5441,-120.7095, 1,300 ft; 45.6 m from OSM (reused from batch D)",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "5.10c",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://mountainproject.com/route/107191762/iconoclast",
+      "fact": "5.10c",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://wenatcheeoutdoors.org/2016/04/28/snow-creek-wall/",
+      "fact": "Iconoclast (route 21), 5.10c",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://stephabegg.com/trip-reports/washington/snow-creek-wall/",
+      "fact": "5.10c (5.11a with Psychopath and Yellow Wall variations)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "discipline",
+    "value": "trad",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://mountainproject.com/route/107191762/iconoclast",
+      "fact": "Type: Trad",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://wenatcheeoutdoors.org/2016/04/28/snow-creek-wall/",
+      "fact": "gear to 3 inches; sparse bolts",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "gear",
+    "value": "Cams to 3 inches.",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://mountainproject.com/route/107191762/iconoclast",
+      "fact": "medium rack to 3 in, doubles #0.5-#2, nuts",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://wenatcheeoutdoors.org/2016/04/28/snow-creek-wall/",
+      "fact": "Gear to 3 inches",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_iconoclast",
+    "column": "pitches",
+    "from": 0,
+    "to": 8,
+    "why": "0 is invalid. MP: 8 pitches counting the two Remorse pitches it starts on and the P8 bolt ladder. WO describes 7 (Remorse 1-2, then 3-7 ending at the bolt ladder) and Abegg 6 - owner may prefer another count; 8 matches the MP 800 ft length.",
+    "evidence": [
+     "https://mountainproject.com/route/107191762/iconoclast",
+     "https://wenatcheeoutdoors.org/2016/04/28/snow-creek-wall/",
+     "https://stephabegg.com/trip-reports/washington/snow-creek-wall/"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_iconoclast",
+    "column": "length_m",
+    "from": null,
+    "to": 242,
+    "why": "MP: 800 ft (242 m). Single source.",
+    "evidence": [
+     "https://mountainproject.com/route/107191762/iconoclast"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_iconoclast",
+    "column": "commitment",
+    "from": null,
+    "to": "IV",
+    "why": "MP: Grade IV. Single source.",
+    "evidence": [
+     "https://mountainproject.com/route/107191762/iconoclast"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_iconoclast",
+    "column": "permit",
+    "from": null,
+    "to": "Park at the Snow Lakes Trailhead with the $5 day-use fee, a Northwest Forest Pass or an interagency pass.",
+    "why": "Reused from batch D: USFS Snow Lakes Trailhead page (updated 2026-08-04) - $5/day or $30/yr, NW Forest Pass and Interagency passes accepted. Wenatchee Outdoors also says NW Forest Pass. Whether a day climb needs the free self-issued wilderness day-use permit was not confirmed, so it is left out.",
+    "evidence": [
+     "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/snow-lakes-trailhead",
+     "https://wenatcheeoutdoors.org/2016/04/28/snow-creek-wall/"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_iconoclast",
+    "column": "disciplines",
+    "from": null,
+    "to": [
+     "trad"
+    ],
+    "why": "disciplines is null; must name the primary discipline (trad).",
+    "evidence": [
+     "https://mountainproject.com/route/107191762/iconoclast",
+     "https://wenatcheeoutdoors.org/2016/04/28/snow-creek-wall/"
+    ]
+   }
+  ],
+  "disputed": [
+   "pitches: MP 8, WO 7, Abegg 6 (fix to 8 proposed)",
+   "fa: row \"Mead Hargis, Tom Hargis 1971\" matches MP only - not locked"
+  ],
+  "notes": "MP: P3 and P6 one bolt each, two-bolt belays atop P5-P7, P8 bolt ladder (5.10b A0); most parties finish up the last Outer Space pitch; descent walk off left or two-rope rappels. Stored approach (Snow Lakes trail ~1.5-2.5 mi, log crossing, ~500 ft bootpath) agrees with MP (~1.5 mi) and WO (2 mi). No gain/dist stored - impossibility checks n/a."
+ }
+}

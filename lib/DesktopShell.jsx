@@ -5,10 +5,12 @@ import { C, CAT, ROUTES, catOf, gradeLabel, routeLocText, shortDate, daysUntil }
 import Av from "../src/components/Av.tsx";
 import DiscIcon from "../src/components/DiscIcon.tsx";
 import ActionIcon from "../src/components/ActionIcon.tsx";
+import { photoThumb, thumbFallback } from "./photoThumb";
 import { discLabel } from "./discLabels";
 import { useMyHomeStatePaths, usePlaceSearch, useRouteSearch, useStates } from "./db.js";
 import { USE_DB } from "./supabase";
 import Chevron from "../src/components/Chevron.tsx";
+import ViewAreaPill from "../src/components/ViewAreaPill.tsx";
 import { RailAd, useRailFollow } from "./Ads.jsx";
 import { ZOOM } from "./wideLayout.js";
 import BrandMark from "../src/components/BrandMark.tsx";
@@ -195,7 +197,7 @@ export function WideSearch({ onOpenRoute, onOpenArea, onOpenFinder, width, left,
     const where = h.kind === "finder" ? "Open the Route finder with these filters" : h.kind === "place" ? [h.a.where, h.a.route_count ? h.a.route_count + (h.a.route_count === 1 ? " climb" : " climbs") : ""].filter(Boolean).join(" · ") : routeWhere(h.r);
     const grade = h.kind === "route" ? h.r.grade : "";
     const held = (h.kind === "place" && placesState === "busy") || (h.kind === "route" && routesState === "busy");
-    return <button key={h.kind + (h.kind === "finder" ? "" : h.kind === "place" ? h.a.id : h.r.id)} id={"wide-search-" + i} role="option" aria-selected={on} onMouseDown={e => e.preventDefault()} onMouseEnter={() => setHi(i)} onClick={click(h)} aria-busy={held || undefined} style={{ ...ROW, background: on ? C.card : "transparent", opacity: held ? 0.5 : 1 }}>{h.kind === "route" ? <DiscIcon d={disc} size={17}/> : <ActionIcon name={h.kind === "finder" ? "explore" : "pin"} size={17} color={C.textMuted}/>}<span style={{ minWidth: 0, flex: 1 }}><span style={{ display: "block", fontSize: 14, fontWeight: 700, overflowWrap: "anywhere" }}>{name}</span>{grade || where ? <span style={{ display: "block", fontSize: 12, color: C.textMuted, overflowWrap: "anywhere" }}>{grade ? <span style={{ color: discColor, fontWeight: 700 }}>{grade}</span> : null}{grade && where ? " · " : ""}{where}</span> : null}</span></button>;
+    return <button key={h.kind + (h.kind === "finder" ? "" : h.kind === "place" ? h.a.id : h.r.id)} id={"wide-search-" + i} role="option" aria-selected={on} onMouseDown={e => e.preventDefault()} onMouseEnter={() => setHi(i)} onClick={click(h)} aria-busy={held || undefined} style={{ ...ROW, background: on ? C.card : "transparent", opacity: held ? 0.5 : 1 }}>{h.kind === "route" ? <DiscIcon d={disc} size={17}/> : <ActionIcon name={h.kind === "finder" ? "explore" : "pin"} size={17} color={C.textMuted}/>}<span style={{ minWidth: 0, flex: 1 }}><span style={{ display: "block", fontSize: 14, fontWeight: 700, overflowWrap: "anywhere" }}>{name}</span>{grade || where ? <span style={{ display: "block", fontSize: 12, color: C.textMuted, overflowWrap: "anywhere" }}>{grade ? <span style={{ color: discColor, fontWeight: 700 }}>{grade}</span> : null}{grade && where ? " · " : ""}{where}</span> : null}</span>{h.kind === "place" ? <ViewAreaPill C={C}/> : null}</button>;
   };
   const showList = open && !!qq;
   // The EMPTY box, focused: recent words and Near me (nothing when there is neither).
@@ -293,7 +295,7 @@ function RailGroups({ groups, groupUnreadN, onOpenGroup, onAllGroups }) {
     {list.slice(0, PER).map(g => {
       const nn = groupUnreadN(g);
       return <button key={g.id} onClick={() => onOpenGroup(g)} aria-label={g.name + (nn ? ", " + nn + " new post" + (nn === 1 ? "" : "s") : "")} style={ROW}>
-        <span aria-hidden="true" style={{ width: 28, height: 28, borderRadius: 10, background: C.card, border: "1px solid " + C.border, display: "inline-flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}><ActionIcon name="partners" size={15} color={C.textSub} /></span>
+        {/* The group's own avatar (0454) when it has one, else the groups icon. */}<span aria-hidden="true" style={{ width: 28, height: 28, borderRadius: 10, background: C.card, border: "1px solid " + C.border, display: "inline-flex", alignItems: "center", justifyContent: "center", flexShrink: 0, overflow: "hidden" }}>{g.avatarUrl ? <img src={photoThumb(g.avatarUrl, 28)} onError={thumbFallback} alt="" loading="lazy" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} /> : <ActionIcon name="partners" size={15} color={C.textSub} />}</span>
         <span style={{ flex: 1, minWidth: 0, fontSize: 13.5, fontWeight: nn ? 800 : 700, overflowWrap: "anywhere" }}>{g.name}</span>
         {nn ? <span aria-hidden="true" style={{ width: 8, height: 8, borderRadius: 4, background: C.red, flexShrink: 0 }} /> : null}
       </button>;

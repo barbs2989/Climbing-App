@@ -2,7 +2,7 @@
 // browser: the signed-out demo board, and the signed-in board fed by leaderboard() rows seeded
 // straight into the query cache (the shape 0194 returns). Written 2026-09-24 when the box was too
 // oversubscribed for a browser walk. Asserts every board renders, real rows reach the screen,
-// the report button and the backed switch appear only where they should, and no example
+// no report button sits on a row (since 2026-11-18), the backed switch appears only where it should, and no example
 // profile is mixed into the real board.
 //   node scripts/oneoff/probe-ranks-renders.mjs
 import { build } from "esbuild";
@@ -57,7 +57,8 @@ const ROWS = [
 const seed = [[["leaderboard", "overall", null, null, ""], ROWS],
   [["leaderboard-top-climbs", "overall", null, "all", null, ""], [{ route: { id: "probe_route_x", name: "Zyxwv Arete", grade: "5.9", discipline: "alpine", area_id: "probe_area" }, area_name: "Probe Crag", climbers: 3, avg_stars: 4.3 }]]];
 
-const BOARDS = ["catches", "vouched", "active", "points", "onsight", "vert", "days", "peaksLife", "climbs", "classics_b", "contribs"];
+// No "catches": the Belay board went 2026-11-05 with the rest of belay catches.
+const BOARDS = ["vouched", "active", "points", "onsight", "vert", "days", "peaksLife", "climbs", "classics_b", "contribs"];
 // 1. The real board, every board id.
 for (const b of BOARDS) {
   let h; try { h = text(render({ ...base, rankBoard: b, uid: "11111111-1111-1111-1111-111111111111", useDb: true }, seed)); }
@@ -71,7 +72,11 @@ for (const b of BOARDS) {
   const logBoard = !["trust", "catches", "vouched", "contribs"].includes(b);
   if (logBoard !== h.includes("Backed climbs only")) fail(`real/${b}: backed switch ${logBoard ? "missing" : "shown on a non-log board"}`);
   if (logBoard && !h.includes("4 of 13 backed")) fail(`real/${b}: the "N of M backed" line is missing`);
-  if (!/Report .*climbs or ranking/.test(render({ ...base, rankBoard: b, uid: "u", useDb: true }, seed))) fail(`real/${b}: no report control on the real row`);
+  // No ⚑ on the board since 2026-11-18 (owner: the signed-out board "looks cleaner"): Report is on the profile.
+  const raw = render({ ...base, rankBoard: b, uid: "11111111-1111-1111-1111-111111111111", useDb: true }, seed);
+  if (/Report .*climbs or ranking/.test(raw)) fail(`real/${b}: a report control is back on the row`);
+  if (logBoard && !/aria-label="How [^"]* got /.test(raw)) fail(`real/${b}: the value no longer opens the climbs behind it`);
+  if (/dashed/.test(raw.match(/<button[^>]*aria-label="How [^"]*"[^>]*>/)?.[0] || "")) fail(`real/${b}: the value is boxed again`);
   ok(`real/${b} renders`);
 }
 // 2. Backed only swaps to stats.backed -- checked through the data, since the switch is state.
@@ -91,7 +96,7 @@ const demoOptions = render({ ...base, rankBoard: "catches", uid: null, useDb: fa
   /Loading rankings|couldn’t be read|Couldn’t load the rankings/.test(h) ? ok("real board with no data is loading/unread, not empty") : fail("real board with no data renders as empty");
 }
 // 5. The 0323 audit: a discipline board reads that discipline's counts (stats.by), a climber with
-//    nothing on a board is not ranked on it, equal scores share a rank, and ⚑ sits in its own column.
+//    nothing on a board is not ranked on it, equal scores share a rank, and no ⚑ column is drawn.
 {
   const by = (days, vert) => ({ sport: { logged: 4, backed: 1, daysYr: days, vertYr: vert, classics: 1, peaks: { life: 0, yr: 0 } },
     rock: { logged: 4, backed: 1, daysYr: days, vertYr: vert, classics: 1, peaks: { life: 0, yr: 0 } } });
@@ -108,7 +113,7 @@ const demoOptions = render({ ...base, rankBoard: "catches", uid: null, useDb: fa
   const firsts = (pts.match(/aria-label="#1, /g) || []).length, thirds = (pts.match(/aria-label="#3, /g) || []).length;
   firsts === 2 && thirds === 1 ? ok("equal scores share rank 1, and the next climber is #3") : fail(`ties: ${firsts} row(s) at #1 and ${thirds} at #3 (want 2 and 1)`);
   /Nulla Zero/.test(text(pts)) ? fail("a climber with 0 points is ranked on Send points") : ok("a climber with 0 points is not ranked");
-  /aria-label="Report Tiea Uno’s climbs or ranking"/.test(pts) ? ok("each real row carries ⚑") : fail("⚑ missing on a real row");
+  /aria-label="Report Tiea Uno’s climbs or ranking"/.test(pts) ? fail("a real row carries ⚑ again (Report lives on the profile)") : ok("no ⚑ column on the board");
   const days = text(render({ ...props, rankDisc: "sport", rankBoard: "days" }, seed2));
   days.includes("47") && days.includes("12") ? ok("the Sport board's Days are the sport days (stats.by), not the career total") : fail("the Sport board's Days did not read stats.by.sport");
   const help = text(pts);

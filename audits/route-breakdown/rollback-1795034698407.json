@@ -1,0 +1,328 @@
+{
+ "wa_forbidden_peak_east_ridge": {
+  "area": "wa_forbidden_peak",
+  "waypoints": [
+   {
+    "lat": 48.48055,
+    "lng": -121.07979,
+    "elev": 3200,
+    "name": "Boston Basin Trailhead",
+    "note": "Small pullout on Cascade River Road ~21.7 mi from Marblemount; NW Forest Pass to park, overnight stays need a park backcountry permit, picked up in person at the Marblemount Wilderness Information Center.",
+    "type": "Trailhead",
+    "distMi": 0,
+    "elevFt": 3200,
+    "directions": "From SR 20 at Marblemount, turn onto the Cascade River Road, which crosses the Skagit River and runs east, paved for about 10 miles and then rough gravel. Drive about 22 miles to a small pullout on the left beneath the northeast face of Johannesburg Mountain, at about 3,200 ft, with room for only a handful of cars. The road usually opens to its end by late June or early July. Overnight stays in the park require a backcountry permit."
+   },
+   {
+    "lat": 48.501315,
+    "lng": -121.062561,
+    "elev": 6248,
+    "name": "Boston Basin",
+    "type": "Campsite",
+    "distMi": 3,
+    "elevFt": 6200,
+    "directions": "Follow the old Diamond Mine roadbed for about a mile and watch for the climbers' path leaving it. The path climbs steeply through forest with several creek crossings to treeline near 5,300 ft, then over talus and heather to the camps in Boston Basin."
+   },
+   {
+    "lat": null,
+    "lng": null,
+    "elev": 7900,
+    "name": "East end of ridge",
+    "type": "Junction",
+    "distMi": 4.3,
+    "elevFt": 7900,
+    "directions": "From camp, do not head toward the south-face couloir; traverse east around the basin and gain the ridges and gullies along the east side of the glacier below Forbidden. Expect hours of loose, choss-covered slabs, seepage and small stream crossings, usually finishing with a snow gully that wants crampons, then broken rock and snow up to the notch just above the high bivy, below the solitary gendarme."
+   },
+   {
+    "lat": 48.5115,
+    "lng": -121.0579,
+    "elev": 8815,
+    "name": "Forbidden Peak summit",
+    "type": "Summit",
+    "distMi": 4.7,
+    "elevFt": 8815,
+    "directions": "From the notch, go left around the first gendarme and simul-climb easy blocks to the crest, then follow it west over the gendarmes rather than taking their bypasses. Rappel off the back of the last gendarme into a narrow notch, climb the 5.8 crux crack on the wall ahead, and continue on easier ground to the summit."
+   },
+   {
+    "lat": 48.494755,
+    "lng": -121.063487,
+    "elev": 5300,
+    "name": "Boston Basin lower camp",
+    "type": "Campsite",
+    "distMi": 2
+   }
+  ],
+  "road": {
+   "name": "Cascade River Road (Forest Road 15)",
+   "status": "Gated at Eldorado Creek (MP 20) for the 2026 season following spring landslide damage near MP 18; bikes and pedestrians may pass the gate, but it is a further 3 miles and about 1,500 ft of road to the Cascade Pass trailhead. Reconfirm on the NPS Road Conditions page before driving.",
+   "walkMi": 2.5,
+   "seasonalGate": "Normally gated at Eldorado Creek (MP20) through late autumn-spring."
+  }
+ },
+ "wa_forbidden_peak_north_ridge": {
+  "area": "wa_forbidden_peak",
+  "waypoints": [
+   {
+    "lat": 48.48055,
+    "lng": -121.07979,
+    "elev": 3200,
+    "name": "Boston Basin Trailhead",
+    "note": "Small pullout on Cascade River Road ~21.7 mi from Marblemount; NW Forest Pass to park, overnight stays need a park backcountry permit, picked up in person at the Marblemount Wilderness Information Center.",
+    "type": "Trailhead",
+    "distMi": 0,
+    "directions": "The Boston Basin trailhead is a small pullout on Cascade River Road roughly 21.7 miles from Marblemount, at about 3,200 ft. You need a Northwest Forest Pass to park there. A wilderness permit is required to camp in Boston Basin, and those permits are competitive — they go through the Park Service's early-access lottery, so have one in hand before you make the drive up."
+   },
+   {
+    "lat": 48.494755,
+    "lng": -121.063487,
+    "elev": 5300,
+    "name": "Boston Basin lower camp",
+    "type": "Campsite"
+   },
+   {
+    "lat": 48.501315,
+    "lng": -121.062561,
+    "elev": 6400,
+    "name": "Boston Basin High Camp",
+    "note": "Standard base camp for both Torment and Forbidden; continue northeast along the Quien Sabe Glacier's west edge toward Sharkfin Col.",
+    "type": "Campsite",
+    "distMi": 3,
+    "directions": "From the pullout, follow the old Diamond Mine roadbed about a mile, then take the unsigned climbers' path that leaves it and climbs steeply through forest, crossing four streams, to treeline near 5,300 ft. Continue up heather and boulder slopes into Boston Basin to the high camps near 6,400 ft."
+   },
+   {
+    "lat": 48.5015,
+    "lng": -121.045,
+    "elev": 7725,
+    "name": "Sharkfin Col",
+    "note": "Low point on the ridge left of Sharkfin Tower, gained via ~10 ft of 5.7 rock and a 200-ft class-3 gully; loose scree underfoot.",
+    "type": "Junction",
+    "distMi": 3.6,
+    "directions": "From high camp, follow the moraine and the west edge of the Quien Sabe Glacier up to about 7,500 ft, then climb to the notch just west of Sharkfin Tower: roughly 10 ft of 5.7 rock and a 200 ft class 3 gully on loose scree. A rock tower stands right beside the true col; everything after it is committed."
+   },
+   {
+    "lat": null,
+    "lng": null,
+    "elev": 7570,
+    "name": "Rappel to Boston Glacier",
+    "note": "Rappel of roughly 100-150 ft, in one or two stages depending on snow, down a loose gully off the col to reach the Boston Glacier; watch for rope-snag on loose rock.",
+    "type": "Hazard",
+    "distMi": 3.7,
+    "directions": "On the north side of the col, rappel roughly 100-150 ft, in one or two stages depending on snow, down a loose gully onto the Boston Glacier. The lower station sits just above the bergschrund. Once down, retreat means re-climbing to the col."
+   },
+   {
+    "lat": null,
+    "lng": null,
+    "elev": 7000,
+    "name": "Boston Glacier crevasse traverse",
+    "note": "Northward traverse through heavily crevassed terrain toward the north end of the glacier; a fall here would be serious, kick solid steps.",
+    "type": "Hazard",
+    "distMi": 4.2,
+    "directions": "Rope up and traverse north through heavily crevassed ground, losing several hundred feet to pass below a large rock spur, toward the far north end of the glacier."
+   },
+   {
+    "lat": null,
+    "lng": null,
+    "elev": 8100,
+    "name": "North Ridge crest",
+    "note": "Ridge regained above a 5.6 left-facing corner crux; two small snow-free bivy spots sit just below on the northeast side.",
+    "type": "Junction",
+    "distMi": 4.6,
+    "directions": "Climb back up the steepening snow to the col between Boston Glacier and Forbidden at the foot of the ridge; late in the season the moat there can take ice or steep dirt with tools to cross. From the bivy ledges near 7,600 ft, climb the short 5.6 left-facing corner and continue onto the crest."
+   },
+   {
+    "lat": 48.51165,
+    "lng": -121.05841,
+    "elev": 8815,
+    "name": "Forbidden Peak",
+    "note": "True summit; descend via the West Ridge couloir back to Boston Basin.",
+    "type": "Summit",
+    "distMi": 5,
+    "directions": "Follow the long, nearly level crest of rock steps and knife-edge snow, mostly simul-climbing; where the crest is awkward the ground just east of it often goes more easily. Near 8,400 ft the ridge rears up onto better rock, and the final pitch lands on the summit block."
+   }
+  ],
+  "road": {
+   "name": "Cascade River Road to Boston Basin Trailhead",
+   "status": "Open seasonally",
+   "driveNote": "From Marblemount via Cascade River Road to the Boston Basin/climber's trailhead.",
+   "seasonalGate": "Gated/snow-covered in winter and spring"
+  },
+  "beta": "Grade IV overall; the ridge itself goes at about 5.0. From Boston Basin high camp, traverse glacier to Sharkfin Col via 10 feet of 5.7 rock and 200 feet of Class 3 gully. North ridge route at ~7,700 ft to summit. Moderate to good granite, high exposure with wonderful ridge position. Glaciers: Quien Sabe Glacier, Boston Glacier."
+ },
+ "wa_sharkfin_tower_southeast_ridge": {
+  "area": "wa_sharkfin_tower",
+  "waypoints": [
+   {
+    "lat": 48.48055,
+    "lng": -121.07979,
+    "elev": 3200,
+    "name": "Boston Basin Trailhead",
+    "type": "Trailhead",
+    "distMi": 0,
+    "elevFt": 3200,
+    "directions": "Drive Cascade River Road about 21.7 miles from Marblemount to the unsigned Boston Basin pullout, at roughly 3,200-3,400 feet. The upper road is prone to washouts, so check its status before you go. Park at the small, unsigned roadside pullout; there's no trailhead sign. Camping in Boston Basin requires an NPS wilderness permit, since it's a quota area, arranged through Marblemount."
+   },
+   {
+    "lat": 48.492,
+    "lng": -121.065,
+    "elev": 5395,
+    "name": "Boston Basin",
+    "type": "Campsite",
+    "distMi": 3,
+    "elevFt": 5395,
+    "directions": "From the pullout, walk the old Diamond Mine roadbed for about three quarters of a mile, then turn sharp right onto the steep climbers' trail. It climbs through old growth across four stream crossings to treeline near 5,300 ft and the low camps on the heather benches. A higher camp sits farther up on a meadow knoll around 6,300 ft."
+   },
+   {
+    "lat": 48.4985,
+    "lng": -121.042,
+    "elev": 7600,
+    "name": "Base of southeast ridge",
+    "type": "Junction",
+    "distMi": 4,
+    "elevFt": 7600,
+    "directions": "From camp, skirt the climber's-left side of the Quien Sabe Glacier and gain it high, then rope up and traverse east along the top of the glacier until you are directly beneath the tower. Climb the single gully that breaks the rock band there (snow early season, loose scree later) to a terrace at the tower's base, then a short second gully to the notch. If your gully does not lead onto a terrace directly under the fin, you are in the wrong one."
+   },
+   {
+    "lat": 48.4996,
+    "lng": -121.0398,
+    "elev": 8120,
+    "name": "Sharkfin Tower summit",
+    "type": "Summit",
+    "distMi": 4.2,
+    "elevFt": 8120,
+    "directions": "From the notch, skirt the ridge on climber's right over large blocks and up a short dihedral to the crest, then follow the exposed crest and the upper blocks for about three pitches of low fifth class to the small summit."
+   },
+   {
+    "lat": 48.494755,
+    "lng": -121.063487,
+    "elev": 5300,
+    "name": "Boston Basin lower camp",
+    "type": "Campsite",
+    "distMi": 1.4
+   }
+  ],
+  "road": {
+   "name": "Cascade River Road",
+   "status": "Open, as listed on the park's road-conditions page updated July 3, 2026; normally gravel/paved to a pullout near MP 21.7. Subject to ordinary seasonal gating and occasional washout closures.",
+   "driveNote": "When open, drive from Marblemount roughly 21.7 miles to a small pullout at ~3,200 ft; the climbers' trailhead is an unmarked abandoned road, easy to miss.",
+   "seasonalGate": "Typically gated/snowed-in through late spring and prone to washouts most years even outside fire closures"
+  }
+ },
+ "wa_mount_torment_south_ridge": {
+  "area": "wa_mount_torment",
+  "waypoints": [
+   {
+    "lat": 48.48055,
+    "lng": -121.07979,
+    "elev": 3200,
+    "name": "Boston Basin Trailhead",
+    "type": "Trailhead",
+    "distMi": 0,
+    "elevFt": 3200,
+    "directions": "Follow Cascade River Road (Forest Road 15) to its end at the Boston Basin trailhead, an unsigned pullout at about 3,200 feet, roughly 21.7 miles from Marblemount and directly across from Johannesburg Mountain. Park at the small roadside pullout. Register and pick up your permit through Marblemount before heading up."
+   },
+   {
+    "lat": 48.50132,
+    "lng": -121.06256,
+    "elev": 6248,
+    "name": "Boston Basin",
+    "type": "Campsite",
+    "distMi": 3,
+    "elevFt": 6248,
+    "directions": "Walk the old Diamond Mine roadbed about three quarters of a mile to a mile, then turn sharp right onto the steep climbers' trail. It switchbacks up through forest across four small creeks to treeline and the low camps around 5,300 ft, then continues up open slabs and tundra on the skier's right of Boston Creek to high camp near 6,200 to 6,400 ft."
+   },
+   {
+    "lat": 48.51,
+    "lng": -121.076,
+    "elev": 7400,
+    "name": "Base of south ridge",
+    "type": "Junction",
+    "distMi": 4.2,
+    "elevFt": 7400,
+    "directions": "Leave the trail and make a rising traverse northwest near the 6,200 ft contour beneath Forbidden Peak's south spur, crossing a prominent rock rib below the cliffs. Gain the Taboo Glacier on its climber's left and follow it up to the deep couloir breaking the rock band on the left; cross the bergschrund or moat and scramble about 100 ft of loose class 3-4 to the notch."
+   },
+   {
+    "lat": 48.5126,
+    "lng": -121.0768,
+    "elev": 8120,
+    "name": "Mount Torment summit",
+    "type": "Summit",
+    "distMi": 4.6,
+    "elevFt": 8120,
+    "directions": "Climb an open book angling left off the notch, turn right at its top to a ledge, and take a short second open book to the crest. Pass a steeper tower on sloping, exposed ledges, weave among towers continuing leftward on the southwest face, and finish on sustained fourth and low fifth-class granite to the summit."
+   },
+   {
+    "lat": 48.494755,
+    "lng": -121.063487,
+    "elev": 5300,
+    "name": "Boston Basin lower camp",
+    "type": "Campsite",
+    "distMi": 2.1
+   },
+   {
+    "lat": 48.499415,
+    "lng": -121.059455,
+    "elev": 6162,
+    "name": "Boston Creek crossing",
+    "type": "Water",
+    "distMi": 2.8
+   }
+  ],
+  "road": {
+   "name": "Cascade River Road",
+   "status": "Paved then gravel/washboard to the Boston Basin pullout (~3,200–3,300 ft), about 21.7 miles from Marblemount.",
+   "driveNote": "Check current NPS/USFS road status before driving; passenger cars usually manage when fully open.",
+   "seasonalGate": "Prone to closure beyond storm-damaged sections after flooding/rockslides until repaired."
+  }
+ },
+ "wa_mount_torment_torment_forbidden_traverse": {
+  "area": "wa_mount_torment",
+  "waypoints": [
+   {
+    "lat": 48.48055,
+    "lng": -121.07979,
+    "elev": 3200,
+    "name": "Boston Basin Trailhead",
+    "type": "Trailhead",
+    "distMi": 0,
+    "elevFt": 3200,
+    "directions": "Drive Cascade River Road to the Boston Basin trailhead pullout, at roughly 3,200 feet and about mile 22-23, directly across from Johannesburg Mountain. Park at the small roadside pullout. A North Cascades National Park backcountry permit, issued at the Wilderness Information Center in Marblemount, is required to camp in Boston Basin."
+   },
+   {
+    "lat": 48.50132,
+    "lng": -121.06256,
+    "elev": 6248,
+    "name": "Boston Basin",
+    "type": "Campsite",
+    "distMi": 3,
+    "elevFt": 6248,
+    "directions": "Follow the old mining road about three quarters of a mile to the old mine site, then take the sharp right onto the steep, unmaintained climbers' trail. It switchbacks up through forest with four creek crossings to treeline around 5,300 ft, then eases across heather benches and talus into Boston Basin, with high camp at roughly 6,200 to 6,400 ft."
+   },
+   {
+    "lat": 48.5126,
+    "lng": -121.0768,
+    "elev": 8120,
+    "name": "Mount Torment summit",
+    "note": "Leave packs at the notch just below the top, tag the summit, and downclimb back to the notch.",
+    "type": "Summit",
+    "distMi": null,
+    "directions": "Traverse northwest across the upper basin to the toe of the Taboo Glacier, rope up, and climb it and the east couloir past the moat to the notch at the base of Torment's South Ridge. Climb the ridge to Torment's summit."
+   },
+   {
+    "lat": 48.5115,
+    "lng": -121.0579,
+    "elev": 8815,
+    "name": "Forbidden Peak summit",
+    "type": "Summit",
+    "distMi": 6,
+    "elevFt": 8815,
+    "directions": "From the notch below Torment's summit, rappel onto the Forbidden Glacier, cross it to the saddle, and follow the Sidewalk in the Sky crest to the West Ridge Notch and up Forbidden's West Ridge to the summit."
+   }
+  ],
+  "road": {
+   "name": "Cascade River Road",
+   "status": "Paved for roughly the first half from Marblemount, then gravel/washboard for the final miles to the Boston Basin pullout at ~3,200–3,300 ft (about 21.7 miles from Marblemount).",
+   "driveNote": "A standard passenger car can usually reach the Boston Basin trailhead when the road is fully open, but check current NPS/USFS road status before driving — closures at mid-road mileposts have forced parties to walk extra miles in past seasons.",
+   "seasonalGate": "Not gated at a fixed mile year-round, but the road is frequently closed beyond storm-damaged sections after flooding or rockslides until NPS/USFS crews repair it."
+  }
+ }
+}

@@ -1,0 +1,289 @@
+[
+ {
+  "id": "ca_lippincott_mountain_standard_route",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Own text is empty; no route-specific page opened (Peakbagger human check, Nominatim 429, Wikipedia names none for this route). Retried after brief change: SummitPost 403, Peakbagger human check, hikespeak slug guesses timed out; Wikipedia has no trailhead."
+ },
+ {
+  "id": "ca_marion_peak_northeast_ridge",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Own text does not name a single trailhead (several plausible starts); no route-specific page opened (Peakbagger human check, Nominatim 429, Wikipedia names none for this route). Retried after brief change: SummitPost 403, Peakbagger human check, hikespeak slug guesses timed out; Wikipedia has no trailhead."
+ },
+ {
+  "id": "ca_merced_peak_standard_route",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Own text is empty; no route-specific page opened (Peakbagger human check, Nominatim 429, Wikipedia names none for this route). Wikipedia peak page (https://en.wikipedia.org/wiki/Merced_Peak) says approached from Quartz Mountain Trailhead or two trailheads on the Glacier Point road: ambiguous. Retried after brief change: SummitPost 403, Peakbagger human check, hikespeak slug guesses timed out; Wikipedia has no trailhead."
+ },
+ {
+  "id": "ca_midway_mountain_west_slope",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Own text does not name a single trailhead (several plausible starts); no route-specific page opened (Peakbagger human check, Nominatim 429, Wikipedia names none for this route). Retried after brief change: SummitPost 403, Peakbagger human check, hikespeak slug guesses timed out; Wikipedia has no trailhead."
+ },
+ {
+  "id": "ca_milestone_mountain_standard_route",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Own text is empty; no route-specific page opened (Peakbagger human check, Nominatim 429, Wikipedia names none for this route). Retried after brief change: SummitPost 403, Peakbagger human check, hikespeak slug guesses timed out; Wikipedia has no trailhead."
+ },
+ {
+  "id": "ca_mokelumne_peak_standard_route",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Own text is empty; no route-specific page opened (Peakbagger human check, Nominatim 429, Wikipedia names none for this route). Retried after brief change: SummitPost 403, Peakbagger human check, hikespeak slug guesses timed out; Wikipedia has no trailhead."
+ },
+ {
+  "id": "ca_moses_mountain_standard_route",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Own text is empty; no route-specific page opened (Peakbagger human check, Nominatim 429, Wikipedia names none for this route). Retried after brief change: SummitPost 403, Peakbagger human check, hikespeak slug guesses timed out; Wikipedia has no trailhead."
+ },
+ {
+  "id": "ca_mount_bago_north_ridge",
+  "status": "found",
+  "trailhead": {
+   "name": "Onion Valley Trailhead",
+   "identifiedBy": {
+    "kind": "route_text",
+    "fact": "Cross Kearsarge Pass (trail starts at Onion Valley; inferred from the pass, the text does not name the lot)"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "Onion Valley Campground",
+     "lat": 36.772538,
+     "lng": -118.341244,
+     "url": ""
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Inference: Kearsarge Pass is crossed from Onion Valley; text never names the lot. USFS point is the campground, not necessarily the trail lot. No OSM placement (Nominatim 429)."
+ },
+ {
+  "id": "ca_mount_baldwin_via_convict_canyon_and_bright_dot_lake",
+  "status": "found",
+  "trailhead": {
+   "name": "Convict Lake Trailhead",
+   "identifiedBy": {
+    "kind": "route_text",
+    "fact": "Follow the trail up from Convict Lake to Bright Dot Lake"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "Convict Lake Trailhead",
+     "lat": 37.600105,
+     "lng": -118.853813,
+     "url": ""
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "distance_mi_rt",
+    "value": "13",
+    "url": "route text"
+   },
+   {
+    "field": "gain_ft",
+    "value": "5000",
+    "url": "route text"
+   }
+  ],
+  "notes": "Only one placement (USFS); a second USFS point Convict Lake Trail 37.595125,-118.852757 is ~0.6 km south (trail start vs lot not distinguished). OSM Nominatim answered 429 for the whole session, so no second independent placement."
+ },
+ {
+  "id": "ca_mount_barnard_standard_route",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Own text is empty; no route-specific page opened (Peakbagger human check, Nominatim 429, Wikipedia names none for this route). Retried after brief change: SummitPost 403, Peakbagger human check, hikespeak slug guesses timed out; Wikipedia has no trailhead."
+ },
+ {
+  "id": "ca_mount_baxter_standard_route",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Own text is empty; no route-specific page opened (Peakbagger human check, Nominatim 429, Wikipedia names none for this route). Retried after brief change: SummitPost 403, Peakbagger human check, hikespeak slug guesses timed out; Wikipedia has no trailhead."
+ },
+ {
+  "id": "ca_mount_bolton_brown_standard_route",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Own text does not name a single trailhead (several plausible starts); no route-specific page opened (Peakbagger human check, Nominatim 429, Wikipedia names none for this route). Retried after brief change: SummitPost 403, Peakbagger human check, hikespeak slug guesses timed out; Wikipedia has no trailhead."
+ },
+ {
+  "id": "ca_mount_bradley_standard_route",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Own text is empty; no route-specific page opened (Peakbagger human check, Nominatim 429, Wikipedia names none for this route). Retried after brief change: SummitPost 403, Peakbagger human check, hikespeak slug guesses timed out; Wikipedia has no trailhead."
+ },
+ {
+  "id": "ca_mount_corcoran_standard_route",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Own text is empty; no route-specific page opened (Peakbagger human check, Nominatim 429, Wikipedia names none for this route). Retried after brief change: SummitPost 403, Peakbagger human check, hikespeak slug guesses timed out; Wikipedia has no trailhead."
+ },
+ {
+  "id": "ca_mount_davis_southeast_slopes_from_north_glacier_pass",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Own text does not name a single trailhead (several plausible starts); no route-specific page opened (Peakbagger human check, Nominatim 429, Wikipedia names none for this route). Retried after brief change: SummitPost 403, Peakbagger human check, hikespeak slug guesses timed out; Wikipedia has no trailhead."
+ },
+ {
+  "id": "ca_mount_eisen_southeast_ridge_from_black_rock_pass",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Own text does not name a single trailhead (several plausible starts); no route-specific page opened (Peakbagger human check, Nominatim 429, Wikipedia names none for this route). Retried after brief change: SummitPost 403, Peakbagger human check, hikespeak slug guesses timed out; Wikipedia has no trailhead."
+ },
+ {
+  "id": "ca_mount_elwell_mt_elwell_trail",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Own text does not name a single trailhead (several plausible starts); no route-specific page opened (Peakbagger human check, Nominatim 429, Wikipedia names none for this route). Retried after brief change: SummitPost 403, Peakbagger human check, hikespeak slug guesses timed out; Wikipedia has no trailhead."
+ },
+ {
+  "id": "ca_mount_ericsson_west_ridge_from_lucys_foot_pass",
+  "status": "found",
+  "trailhead": {
+   "name": "Road's End (Bubbs Creek Trailhead), Kings Canyon",
+   "identifiedBy": {
+    "kind": "route_text",
+    "fact": "Approach via the Bubbs Creek drainage"
+   },
+   "placements": [
+    {
+     "source": "NPS",
+     "name": "Bubbs Creek, Woods Creek, and Rae Lakes",
+     "lat": 36.794924,
+     "lng": -118.582577,
+     "url": ""
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Inference: Bubbs Creek trail starts at Road's End; text does not name the lot. Single NPS placement; USFS Cedar Grove 36.796368,-118.58291 is ~150 m away (a different feature, not independent). No OSM (429)."
+ },
+ {
+  "id": "ca_mount_fiske_standard_route",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Own text is empty; no route-specific page opened (Peakbagger human check, Nominatim 429, Wikipedia names none for this route). Retried after brief change: SummitPost 403, Peakbagger human check, hikespeak slug guesses timed out; Wikipedia has no trailhead."
+ },
+ {
+  "id": "ca_mount_florence_standard_route",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Own text is empty; no route-specific page opened (Peakbagger human check, Nominatim 429, Wikipedia names none for this route). Retried after brief change: SummitPost 403, Peakbagger human check, hikespeak slug guesses timed out; Wikipedia has no trailhead."
+ },
+ {
+  "id": "ca_mount_genevra_standard_route",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Own text is empty; no route-specific page opened (Peakbagger human check, Nominatim 429, Wikipedia names none for this route). Retried after brief change: SummitPost 403, Peakbagger human check, hikespeak slug guesses timed out; Wikipedia has no trailhead."
+ },
+ {
+  "id": "ca_mount_gibbs_standard_route",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "access",
+    "value": "from Tioga Pass Road or Walker Lake trailhead via Bloody Canyon",
+    "url": "https://en.wikipedia.org/wiki/Mount_Gibbs"
+   }
+  ],
+  "notes": "Own text is empty; no route-specific page opened (Peakbagger human check, Nominatim 429, Wikipedia names none for this route). Wikipedia (https://en.wikipedia.org/wiki/Mount_Gibbs) says approached from Tioga Pass Road (west) or Walker Lake trailhead via Bloody Canyon (east): two starts, standard not stated. Retried after brief change: SummitPost 403, Peakbagger human check, hikespeak slug guesses timed out; Wikipedia has no trailhead."
+ },
+ {
+  "id": "ca_mount_goddard_standard_route",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Own text is empty; no route-specific page opened (Peakbagger human check, Nominatim 429, Wikipedia names none for this route). Retried after brief change: SummitPost 403, Peakbagger human check, hikespeak slug guesses timed out; Wikipedia has no trailhead."
+ },
+ {
+  "id": "ca_mount_guyot_guyot_pass_route",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Own text does not name a single trailhead (several plausible starts); no route-specific page opened (Peakbagger human check, Nominatim 429, Wikipedia names none for this route). Retried after brief change: SummitPost 403, Peakbagger human check, hikespeak slug guesses timed out; Wikipedia has no trailhead."
+ },
+ {
+  "id": "ca_mount_hale_standard_route",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Own text is empty; no route-specific page opened (Peakbagger human check, Nominatim 429, Wikipedia names none for this route). Retried after brief change: SummitPost 403, Peakbagger human check, hikespeak slug guesses timed out; Wikipedia has no trailhead."
+ }
+]

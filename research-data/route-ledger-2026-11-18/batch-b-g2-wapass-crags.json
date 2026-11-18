@@ -1,0 +1,793 @@
+{
+  "wa_liberty_crack": {
+    "area": "wa_liberty_bell",
+    "set": {
+      "waypoints": [
+        {
+          "lat": 48.51454,
+          "lng": -120.64332,
+          "elev": 5200,
+          "name": "SR-20 Hairpin / Pond Pullout (east of Washington Pass)",
+          "type": "Trailhead",
+          "distMi": 0,
+          "elevFt": 5200,
+          "directions": "Park in the pullout on the north side of SR-20 at the hairpin curve, roughly 0.3 to 0.5 mile past the Washington Pass Overlook turnoff and a short distance east of Washington Pass. SR-20 is gated for the winter and typically doesn't reopen until mid-to-late April or early May, so this approach isn't accessible until the highway opens for the season."
+        },
+        {
+          "lat": 48.515435,
+          "lng": -120.658365,
+          "elev": 7720,
+          "name": "Liberty Bell Mountain summit",
+          "type": "Summit",
+          "distMi": 1.3,
+          "elevFt": 7720,
+          "directions": "From the talus, pick the line by the huge roof above you — the Lithuanian Lip — with Liberty Crack the continuous crack passing to its right; do not scramble straight up the fall line beneath it, which lands parties on the neighbouring East Face routes. The standard entry traverses in from the left for roughly 40 feet on third- and fourth-class ledges to the ledges under the true first-pitch crack, and twelve pitches then lead to the bolted alcove near the summit shoulder."
+        }
+      ]
+    },
+    "review": {
+      "sources": [
+        "https://www.mountainproject.com/route/106512297/liberty-crack",
+        "https://stephabegg.com/trip-reports/washington/washington-pass/",
+        "https://www.mountaineers.org/activities/routes-places/liberty-bell-liberty-crack",
+        "http://publications.americanalpineclub.org/articles/12196729100/The-East-Face-of-Liberty-Bell",
+        "https://www.thecrag.com/en/climbing/united-states/north-cascade-mountains/route/16771951",
+        "https://epqs.nationalmap.gov/v1/json (USGS 3DEP point queries)",
+        "USGS GNIS DomesticNames_WA feature 1522053",
+        "https://wsdot.wa.gov/travel/roads-bridges/mountain-pass-closure-and-opening-dates"
+      ]
+    },
+    "ledger": [
+      {
+        "field": "length_m",
+        "value": 366,
+        "method": "agree-2",
+        "level": "locked",
+        "evidence": [
+          {
+            "url": "https://www.mountainproject.com/route/106512297/liberty-crack",
+            "fact": "1200 ft (364 m)",
+            "retrieved_at": "2026-11-18"
+          },
+          {
+            "url": "https://stephabegg.com/trip-reports/washington/washington-pass/",
+            "fact": "1,200 ft",
+            "retrieved_at": "2026-11-18"
+          }
+        ]
+      },
+      {
+        "field": "aid_grade",
+        "value": "C2",
+        "method": "agree-2",
+        "level": "locked",
+        "evidence": [
+          {
+            "url": "https://www.mountainproject.com/route/106512297/liberty-crack",
+            "fact": "C2",
+            "retrieved_at": "2026-11-18"
+          },
+          {
+            "url": "https://www.mountaineers.org/activities/routes-places/liberty-bell-liberty-crack",
+            "fact": "Grade V, 5.9, C2",
+            "retrieved_at": "2026-11-18"
+          },
+          {
+            "url": "https://stephabegg.com/trip-reports/washington/washington-pass/",
+            "fact": "V, 5.9-10d C2",
+            "retrieved_at": "2026-11-18"
+          }
+        ]
+      },
+      {
+        "field": "commitment",
+        "value": "V",
+        "method": "agree-2",
+        "level": "locked",
+        "evidence": [
+          {
+            "url": "https://www.mountainproject.com/route/106512297/liberty-crack",
+            "fact": "Grade V",
+            "retrieved_at": "2026-11-18"
+          },
+          {
+            "url": "https://www.mountaineers.org/activities/routes-places/liberty-bell-liberty-crack",
+            "fact": "Grade V",
+            "retrieved_at": "2026-11-18"
+          }
+        ]
+      },
+      {
+        "field": "fa",
+        "value": "Steve Marts, Don McPherson & Fred Stanley, July 1965",
+        "method": "agree-2",
+        "level": "locked",
+        "evidence": [
+          {
+            "url": "http://publications.americanalpineclub.org/articles/12196729100/The-East-Face-of-Liberty-Bell",
+            "fact": "Steve Marts, Don McPherson, Fred Stanley, 1965 (AAJ 1966 15:1 p.132-3)",
+            "retrieved_at": "2026-11-18"
+          },
+          {
+            "url": "https://www.mountainproject.com/route/106512297/liberty-crack",
+            "fact": "Steve Marts, Don McPherson, Fred Stanley, July 1965",
+            "retrieved_at": "2026-11-18"
+          }
+        ]
+      },
+      {
+        "field": "rappels",
+        "value": "2",
+        "method": "agree-2",
+        "level": "locked",
+        "evidence": [
+          {
+            "url": "https://www.mountainproject.com/route/106512297/liberty-crack",
+            "fact": "two rappels (<30 m each) on bolted anchors to the Beckey gully",
+            "retrieved_at": "2026-11-18"
+          },
+          {
+            "url": "https://stephabegg.com/trip-reports/washington/washington-pass/",
+            "fact": "two 25 m rappels into the Liberty Bell-Concord notch",
+            "retrieved_at": "2026-11-18"
+          }
+        ]
+      }
+    ],
+    "sql_fixes": [
+      {
+        "table": "routes",
+        "id": "wa_liberty_crack",
+        "column": "high_point_ft",
+        "from": 7746,
+        "to": 7720,
+        "why": "Liberty Bell summit is published as 7,720 ft by two independent sources, and the sibling wa_liberty_bell_beckey_route already stores 7720 for the same summit. USGS 3DEP reads 7,745 ft at the summit node; no land-manager figure found.",
+        "evidence": [
+          "https://www.mountaineers.org/activities/routes-places/liberty-bell-liberty-crack",
+          "https://stephabegg.com/trip-reports/washington/washington-pass/"
+        ]
+      }
+    ],
+    "disputed": [
+      "grade / rock_grade: MP 5.11a C2; The Mountaineers 5.9 C2; Steph Abegg 5.9-10d C2 (free grade depends on how much is aided) - 5.11a left unlocked",
+      "pitches: MP 12; Steph Abegg 10-14 (12 in 2009, 10 in 2017) - 12 left unlocked",
+      "summit pin: the USGS GNIS point (48.515196,-120.658209) is 29 m from the stored pin but reads 7,582 ft on 3DEP, ~160 ft below the top (stored pin and OSM peak node read 7,745 ft). Rule says USGS point exactly unless >50 m off; it is under 50 m yet on the face. Pin NOT moved - owner to decide (same for wa_liberty_bell_beckey_route)."
+    ],
+    "notes": "Removed the 'Base of east face' pin (typed Junction): 3DEP reads 7,037 ft there vs the 6,600 ft it claims, ~112 m from the summit; a 1,200 ft face cannot start ~700 ft below the top. No mapped base feature to re-place it. Summit pin elev/elevFt was the string \"7720\"; now the number 7720. Hairpin-pullout trailhead pin: no OSM parking node; 3DEP 5,151 ft vs pin 5,200 ft - unlocked. FA month (July) is MP-only; AAJ gives the year. The bivy entry says parties sleep at the Blue Lake lot; The Mountaineers SEWS page says camping is NOT permitted at that trailhead (USFS page only bans camping within 0.25 mi of the lake) - check. theCrag lists this as 5.13a / 500 m (the free line) - not used. SummitPost answered 403 in Chrome."
+  },
+  "wa_liberty_bell_beckey_route": {
+    "area": "wa_liberty_bell",
+    "review": {
+      "sources": [
+        "https://www.mountainproject.com/route/105797867/beckey-route-sw-face",
+        "https://www.mountaineers.org/activities/routes-places/liberty-bell-blue-lake-trail-area-review/liberty-bell-southwest-face",
+        "https://stephabegg.com/trip-reports/washington/washington-pass/",
+        "https://www.thecrag.com/en/climbing/united-states/north-cascade-mountains/route/16771669",
+        "http://publications.americanalpineclub.org/articles/12194810100/United-States-First-Ascents-in-the-Cascades",
+        "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/blue-lake-trailhead",
+        "https://www.openstreetmap.org/way/301865978",
+        "https://wsdot.wa.gov/travel/roads-bridges/mountain-pass-closure-and-opening-dates",
+        "https://epqs.nationalmap.gov/v1/json (USGS 3DEP point queries)"
+      ]
+    },
+    "ledger": [
+      {
+        "field": "grade",
+        "value": "5.6",
+        "method": "agree-2",
+        "level": "locked",
+        "evidence": [
+          {
+            "url": "https://www.mountainproject.com/route/105797867/beckey-route-sw-face",
+            "fact": "5.6",
+            "retrieved_at": "2026-11-18"
+          },
+          {
+            "url": "https://www.mountaineers.org/activities/routes-places/liberty-bell-blue-lake-trail-area-review/liberty-bell-southwest-face",
+            "fact": "Grade II, 5.6",
+            "retrieved_at": "2026-11-18"
+          },
+          {
+            "url": "https://stephabegg.com/trip-reports/washington/washington-pass/",
+            "fact": "5.6",
+            "retrieved_at": "2026-11-18"
+          }
+        ]
+      },
+      {
+        "field": "rock_grade",
+        "value": "5.6",
+        "method": "agree-2",
+        "level": "locked",
+        "evidence": [
+          {
+            "url": "https://www.mountainproject.com/route/105797867/beckey-route-sw-face",
+            "fact": "5.6",
+            "retrieved_at": "2026-11-18"
+          },
+          {
+            "url": "https://www.mountaineers.org/activities/routes-places/liberty-bell-blue-lake-trail-area-review/liberty-bell-southwest-face",
+            "fact": "5.6",
+            "retrieved_at": "2026-11-18"
+          }
+        ]
+      },
+      {
+        "field": "pitches",
+        "value": 4,
+        "method": "agree-2",
+        "level": "locked",
+        "evidence": [
+          {
+            "url": "https://www.mountainproject.com/route/105797867/beckey-route-sw-face",
+            "fact": "4 pitches",
+            "retrieved_at": "2026-11-18"
+          },
+          {
+            "url": "https://www.mountaineers.org/activities/routes-places/liberty-bell-blue-lake-trail-area-review/liberty-bell-southwest-face",
+            "fact": "four pitch",
+            "retrieved_at": "2026-11-18"
+          },
+          {
+            "url": "https://stephabegg.com/trip-reports/washington/washington-pass/",
+            "fact": "4 pitches",
+            "retrieved_at": "2026-11-18"
+          }
+        ]
+      },
+      {
+        "field": "commitment",
+        "value": "II",
+        "method": "agree-2",
+        "level": "locked",
+        "evidence": [
+          {
+            "url": "https://www.mountainproject.com/route/105797867/beckey-route-sw-face",
+            "fact": "Grade II",
+            "retrieved_at": "2026-11-18"
+          },
+          {
+            "url": "https://www.mountaineers.org/activities/routes-places/liberty-bell-blue-lake-trail-area-review/liberty-bell-southwest-face",
+            "fact": "Grade II",
+            "retrieved_at": "2026-11-18"
+          },
+          {
+            "url": "https://www.thecrag.com/en/climbing/united-states/north-cascade-mountains/route/16771669",
+            "fact": "5.6 II",
+            "retrieved_at": "2026-11-18"
+          }
+        ]
+      },
+      {
+        "field": "high_point_ft",
+        "value": 7720,
+        "method": "agree-2",
+        "level": "locked",
+        "evidence": [
+          {
+            "url": "https://www.mountaineers.org/activities/routes-places/liberty-bell-blue-lake-trail-area-review/liberty-bell-southwest-face",
+            "fact": "High Point: 7,720 ft",
+            "retrieved_at": "2026-11-18"
+          },
+          {
+            "url": "https://stephabegg.com/trip-reports/washington/washington-pass/",
+            "fact": "Liberty Bell 7,720 ft",
+            "retrieved_at": "2026-11-18"
+          }
+        ]
+      },
+      {
+        "field": "fa",
+        "value": "Fred Beckey, Jerry O'Neil & Charles Welsh, September 27, 1946 (first ascent of Liberty Bell Mountain)",
+        "method": "agree-2",
+        "level": "locked",
+        "evidence": [
+          {
+            "url": "http://publications.americanalpineclub.org/articles/12194810100/United-States-First-Ascents-in-the-Cascades",
+            "fact": "Charles Welsh, Jerry O'Neil, Fred Beckey; N. Peak of Liberty Bell, 27 September 1946, from the SW gully",
+            "retrieved_at": "2026-11-18"
+          },
+          {
+            "url": "https://www.mountainproject.com/route/105797867/beckey-route-sw-face",
+            "fact": "Fred Beckey, Jerry O'Neil, Charles Welsh, 1946",
+            "retrieved_at": "2026-11-18"
+          }
+        ]
+      },
+      {
+        "field": "rappels",
+        "value": "3 single-rope rappels with a 60 m rope: one off slung trees just below the summit, then two of about 25 m from bolted anchors into the Liberty Bell-Concord notch. Downclimbing the first section instead leaves two.",
+        "method": "agree-2",
+        "level": "locked",
+        "evidence": [
+          {
+            "url": "https://stephabegg.com/trip-reports/washington/washington-pass/",
+            "fact": "three rappels with a single 60 m rope",
+            "retrieved_at": "2026-11-18"
+          },
+          {
+            "url": "https://www.mountaineers.org/activities/routes-places/liberty-bell-blue-lake-trail-area-review/liberty-bell-southwest-face",
+            "fact": "tree rappel (single 60 m), then from the bolts two single-rope rappels to the notch",
+            "retrieved_at": "2026-11-18"
+          }
+        ]
+      },
+      {
+        "field": "waypoints/Blue Lake Trailhead",
+        "value": {
+          "name": "Blue Lake Trailhead",
+          "lat": 48.5191,
+          "lng": -120.6742
+        },
+        "method": "agree-2",
+        "level": "locked",
+        "evidence": [
+          {
+            "measurement": "OSM parking area way 301865978 (Blue Lake Trailhead lot) centre 48.51911,-120.67424, 3 m from the pin",
+            "url": "https://www.openstreetmap.org/way/301865978",
+            "fact": "48.51911,-120.67424",
+            "retrieved_at": "2026-11-18"
+          },
+          {
+            "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/blue-lake-trailhead",
+            "official": true,
+            "fact": "Blue Lake Trailhead 48.51901,-120.6742, elevation 5,400 ft",
+            "retrieved_at": "2026-11-18"
+          }
+        ]
+      }
+    ],
+    "sql_fixes": [
+      {
+        "table": "routes",
+        "id": "wa_liberty_bell_beckey_route",
+        "column": "length_m",
+        "from": 152,
+        "to": 122,
+        "why": "Two independent sources state 400 ft (122 m); only MP states 500 ft (the stored 152 m)",
+        "evidence": [
+          "https://stephabegg.com/trip-reports/washington/washington-pass/",
+          "https://www.thecrag.com/en/climbing/united-states/north-cascade-mountains/route/16771669"
+        ]
+      }
+    ],
+    "disputed": [
+      "length_m: Steph Abegg 400 ft, theCrag 400 ft vs MP 500 ft (stored 152 m) - 122 proposed in sql_fixes",
+      "fa spelling: theCrag writes C. Welch; AAJ 1948 and MP write Welsh (stored Welsh)",
+      "summit pin: same GNIS-point question as wa_liberty_crack (not moved)"
+    ],
+    "notes": "gain_ft 2520 left unlocked: USFS trailhead 5,400 ft and the 7,720 ft summit give 2,320 net; The Mountaineers says 2,500 ft. dist_km 4 vs The Mountaineers 4.0 mi round trip - dist_km holds two conventions, not touched. Notch pin (7300): 3DEP reads 7,190 ft at the pin; The Mountaineers gives the notch as 7,300 ft - unlocked. The Mountaineers trailhead elevation 5,200 ft disagrees with USFS 5,400 ft; USFS (official) used. USFS: $5/day or $30/yr, Northwest Forest Pass or Interagency pass accepted; TH closed when SR 20 is closed. WSDOT: SR 20 opened Apr 22 / closed Dec 4 2025; Apr 19 / Nov 18 2024; May 11 / Nov 30 2023; 2026 partial reopening Apr 30, no 2026 closure date yet."
+  },
+  "wa_sews_sw_rib": {
+    "area": "wa_south_early_winters_spire",
+    "review": {
+      "sources": [
+        "https://www.mountainproject.com/route/106416669/southwest-rib",
+        "https://stephabegg.com/trip-reports/washington/washington-pass/",
+        "https://www.thecrag.com/en/climbing/united-states/north-cascade-mountains/route/16773055",
+        "http://publications.americanalpineclub.org/articles/12196613300/North-America-United-States-WashingtonCascade-Mountains-Early-Winter-Spires",
+        "https://www.mountaineers.org/activities/routes-places/liberty-bell-blue-lake-trail-area-review/south-early-winter-spire-south-arete",
+        "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/blue-lake-trailhead",
+        "https://www.openstreetmap.org/way/301865978",
+        "https://wsdot.wa.gov/travel/roads-bridges/mountain-pass-closure-and-opening-dates",
+        "https://epqs.nationalmap.gov/v1/json (USGS 3DEP point queries)"
+      ]
+    },
+    "ledger": [
+      {
+        "field": "grade",
+        "value": "5.8",
+        "method": "agree-2",
+        "level": "locked",
+        "evidence": [
+          {
+            "url": "https://www.mountainproject.com/route/106416669/southwest-rib",
+            "fact": "5.8",
+            "retrieved_at": "2026-11-18"
+          },
+          {
+            "url": "https://stephabegg.com/trip-reports/washington/washington-pass/",
+            "fact": "Southwest Rib 5.8, 900 ft",
+            "retrieved_at": "2026-11-18"
+          },
+          {
+            "url": "https://www.thecrag.com/en/climbing/united-states/north-cascade-mountains/route/16773055",
+            "fact": "5.8 II",
+            "retrieved_at": "2026-11-18"
+          }
+        ]
+      },
+      {
+        "field": "rock_grade",
+        "value": "5.8",
+        "method": "agree-2",
+        "level": "locked",
+        "evidence": [
+          {
+            "url": "https://www.mountainproject.com/route/106416669/southwest-rib",
+            "fact": "5.8",
+            "retrieved_at": "2026-11-18"
+          },
+          {
+            "url": "https://stephabegg.com/trip-reports/washington/washington-pass/",
+            "fact": "5.8",
+            "retrieved_at": "2026-11-18"
+          }
+        ]
+      },
+      {
+        "field": "length_m",
+        "value": 274,
+        "method": "agree-2",
+        "level": "locked",
+        "evidence": [
+          {
+            "url": "https://www.mountainproject.com/route/106416669/southwest-rib",
+            "fact": "900 ft (273 m)",
+            "retrieved_at": "2026-11-18"
+          },
+          {
+            "url": "https://stephabegg.com/trip-reports/washington/washington-pass/",
+            "fact": "900 ft",
+            "retrieved_at": "2026-11-18"
+          },
+          {
+            "url": "https://www.thecrag.com/en/climbing/united-states/north-cascade-mountains/route/16773055",
+            "fact": "900 ft",
+            "retrieved_at": "2026-11-18"
+          }
+        ]
+      },
+      {
+        "field": "fa",
+        "value": "Donald Anderson and Larry Scott, 1964",
+        "method": "agree-2",
+        "level": "locked",
+        "evidence": [
+          {
+            "url": "http://publications.americanalpineclub.org/articles/12196613300/North-America-United-States-WashingtonCascade-Mountains-Early-Winter-Spires",
+            "fact": "Larry Scott and Don Anderson, August 1964, rib crest left of the couloir",
+            "retrieved_at": "2026-11-18"
+          },
+          {
+            "url": "https://www.mountainproject.com/route/106416669/southwest-rib",
+            "fact": "Donald Anderson & Larry Scott, 1964",
+            "retrieved_at": "2026-11-18"
+          }
+        ]
+      },
+      {
+        "field": "high_point_ft",
+        "value": 7807,
+        "method": "agree-2",
+        "level": "locked",
+        "evidence": [
+          {
+            "url": "https://www.mountaineers.org/activities/routes-places/liberty-bell-blue-lake-trail-area-review/south-early-winter-spire-south-arete",
+            "fact": "High Point: 7,807 ft",
+            "retrieved_at": "2026-11-18"
+          },
+          {
+            "url": "https://stephabegg.com/trip-reports/washington/washington-pass/",
+            "fact": "South Early Winter Spire 7,807 ft",
+            "retrieved_at": "2026-11-18"
+          },
+          {
+            "measurement": "USGS 3DEP 7,806.7 ft at the OSM SEWS peak node 48.512271,-120.655362 (2 m from the stored pin)",
+            "fact": "7807"
+          }
+        ]
+      },
+      {
+        "field": "gain_ft",
+        "value": 2407,
+        "method": "agree-2",
+        "level": "locked",
+        "evidence": [
+          {
+            "measurement": "7,807 ft summit minus USFS official Blue Lake Trailhead 5,400 ft",
+            "fact": "2407"
+          },
+          {
+            "url": "https://www.mountaineers.org/activities/routes-places/liberty-bell-blue-lake-trail-area-review/south-early-winter-spire-south-arete",
+            "fact": "Elevation Gain: 2,600 ft (same trailhead and summit)",
+            "retrieved_at": "2026-11-18"
+          }
+        ]
+      },
+      {
+        "field": "waypoints/Blue Lake Trailhead, Hwy 20",
+        "value": {
+          "name": "Blue Lake Trailhead, Hwy 20",
+          "lat": 48.5191,
+          "lng": -120.6742
+        },
+        "method": "agree-2",
+        "level": "locked",
+        "evidence": [
+          {
+            "measurement": "OSM parking area way 301865978 (Blue Lake Trailhead lot) centre 48.51911,-120.67424, 3 m from the pin",
+            "url": "https://www.openstreetmap.org/way/301865978",
+            "fact": "48.51911,-120.67424",
+            "retrieved_at": "2026-11-18"
+          },
+          {
+            "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/blue-lake-trailhead",
+            "official": true,
+            "fact": "Blue Lake Trailhead 48.51901,-120.6742, elevation 5,400 ft",
+            "retrieved_at": "2026-11-18"
+          }
+        ]
+      }
+    ],
+    "sql_fixes": [],
+    "disputed": [
+      "pitches: MP 7; theCrag 6; Steph Abegg 9-10 - 7 left unlocked",
+      "commitment: MP Grade III vs theCrag II - III left unlocked",
+      "rappels (South Arete descent): MP three rappels with a 70 m rope; Steph Abegg downclimb + 2 rappels; The Mountaineers 2-3 single-rope rappels; stored says 3 on a 60 m rope - unlocked"
+    ],
+    "notes": "Summit pin kept: 2 m from the OSM SEWS node and 3DEP reads 7,807 ft there. The only USGS GNIS point is the group feature 'Early Winters Spires' (48.512637,-120.655381), 41 m away and 28 m from NEWS, reading 7,576 ft (the notch between the spires) - it is not the SEWS summit. alpine_grade holds III (= commitment) - a commitment grade, not an alpine grade; owner to decide."
+  },
+  "wa_south_arete": {
+    "area": "wa_south_early_winters_spire",
+    "review": {
+      "sources": [
+        "https://www.mountainproject.com/route/106378815/south-arete",
+        "https://www.thecrag.com/en/climbing/united-states/north-cascade-mountains/route/16772731",
+        "https://www.mountaineers.org/activities/routes-places/liberty-bell-blue-lake-trail-area-review/south-early-winter-spire-south-arete",
+        "https://stephabegg.com/trip-reports/washington/washington-pass/",
+        "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/blue-lake-trailhead",
+        "https://www.openstreetmap.org/way/301865978",
+        "https://wsdot.wa.gov/travel/roads-bridges/mountain-pass-closure-and-opening-dates",
+        "https://epqs.nationalmap.gov/v1/json (USGS 3DEP point queries)"
+      ]
+    },
+    "ledger": [
+      {
+        "field": "commitment",
+        "value": "II",
+        "method": "agree-2",
+        "level": "locked",
+        "evidence": [
+          {
+            "url": "https://www.mountainproject.com/route/106378815/south-arete",
+            "fact": "Grade II",
+            "retrieved_at": "2026-11-18"
+          },
+          {
+            "url": "https://www.thecrag.com/en/climbing/united-states/north-cascade-mountains/route/16772731",
+            "fact": "5.6 II",
+            "retrieved_at": "2026-11-18"
+          }
+        ]
+      },
+      {
+        "field": "high_point_ft",
+        "value": 7807,
+        "method": "agree-2",
+        "level": "locked",
+        "evidence": [
+          {
+            "url": "https://www.mountaineers.org/activities/routes-places/liberty-bell-blue-lake-trail-area-review/south-early-winter-spire-south-arete",
+            "fact": "High Point: 7,807 ft",
+            "retrieved_at": "2026-11-18"
+          },
+          {
+            "url": "https://stephabegg.com/trip-reports/washington/washington-pass/",
+            "fact": "South Early Winter Spire 7,807 ft",
+            "retrieved_at": "2026-11-18"
+          },
+          {
+            "measurement": "USGS 3DEP 7,806.7 ft at the OSM SEWS peak node",
+            "fact": "7807"
+          }
+        ]
+      },
+      {
+        "field": "gain_ft",
+        "value": 2407,
+        "method": "agree-2",
+        "level": "locked",
+        "evidence": [
+          {
+            "measurement": "7,807 ft summit minus USFS official Blue Lake Trailhead 5,400 ft",
+            "fact": "2407"
+          },
+          {
+            "url": "https://www.mountaineers.org/activities/routes-places/liberty-bell-blue-lake-trail-area-review/south-early-winter-spire-south-arete",
+            "fact": "Elevation Gain: 2,600 ft",
+            "retrieved_at": "2026-11-18"
+          }
+        ]
+      },
+      {
+        "field": "waypoints/Blue Lake Trailhead",
+        "value": {
+          "name": "Blue Lake Trailhead",
+          "lat": 48.5191,
+          "lng": -120.6742
+        },
+        "method": "agree-2",
+        "level": "locked",
+        "evidence": [
+          {
+            "measurement": "OSM parking area way 301865978 (Blue Lake Trailhead lot) centre 48.51911,-120.67424, 3 m from the pin",
+            "url": "https://www.openstreetmap.org/way/301865978",
+            "fact": "48.51911,-120.67424",
+            "retrieved_at": "2026-11-18"
+          },
+          {
+            "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/blue-lake-trailhead",
+            "official": true,
+            "fact": "Blue Lake Trailhead 48.51901,-120.6742, elevation 5,400 ft",
+            "retrieved_at": "2026-11-18"
+          }
+        ]
+      }
+    ],
+    "sql_fixes": [
+      {
+        "table": "routes",
+        "id": "wa_south_arete",
+        "column": "disciplines",
+        "from": null,
+        "to": [
+          "alpine"
+        ],
+        "why": "disciplines must name the row's primary discipline (alpine)",
+        "evidence": [
+          "https://www.mountainproject.com/route/106378815/south-arete",
+          "https://www.thecrag.com/en/climbing/united-states/north-cascade-mountains/route/16772731"
+        ]
+      }
+    ],
+    "disputed": [
+      "grade: MP 5.5 vs theCrag 5.6 II (The Mountaineers: two 5.5 moves, no headline grade) - 5.5 left unlocked",
+      "pitches: MP 3; The Mountaineers three or four; theCrag 6 - 3 left unlocked",
+      "rappels: stored 3 single-rope on 60 m; The Mountaineers 2-3 single-rope depending on downclimbing; Steph Abegg downclimb + 2 rappels (one party a single final rappel); MP SW Rib page 3 rappels with a 70 m rope",
+      "fa: Fred and Helmy Beckey, June 19 1942 is MP-only; AAJ search found no record - unconfirmed",
+      "length_m 183: only theCrag states a length (660 ft = 201 m) - unconfirmed"
+    ],
+    "notes": "Summit pin 11 m from the OSM SEWS node - kept; same GNIS group-point caveat as wa_sews_sw_rib. The Mountaineers reports a significant rockfall in early June 2022 leaving loose rock above the chockstone chimney (one dated source, not a closure). The Mountaineers: camping NOT permitted at the Blue Lake trailhead - check any bivy text on this group."
+  },
+  "wa_saber": {
+    "area": "wa_upper_castle",
+    "review": {
+      "sources": [
+        "https://www.mountainproject.com/route/105792672/saber",
+        "https://wenatcheeoutdoors.org/2016/05/02/castle-rock-upper-wall-sw-face/",
+        "https://www.ukclimbing.com/logbook/crags/tumwater_canyon-7025/saber-419814",
+        "USGS GNIS DomesticNames_WA feature 1528397 (Castle Rock pillar)"
+      ]
+    },
+    "ledger": [],
+    "sql_fixes": [
+      {
+        "table": "routes",
+        "id": "wa_saber",
+        "column": "pitches",
+        "from": 0,
+        "to": 2,
+        "why": "pitches must be >=1 or null, never 0; MP and Wenatchee Outdoors both say 2 pitches",
+        "evidence": [
+          "https://www.mountainproject.com/route/105792672/saber",
+          "https://wenatcheeoutdoors.org/2016/05/02/castle-rock-upper-wall-sw-face/"
+        ]
+      },
+      {
+        "table": "routes",
+        "id": "wa_saber",
+        "column": "disciplines",
+        "from": null,
+        "to": [
+          "trad"
+        ],
+        "why": "disciplines must name the row's primary discipline (trad)",
+        "evidence": [
+          "https://www.mountainproject.com/route/105792672/saber"
+        ]
+      }
+    ],
+    "disputed": [
+      "grade: MP 5.6; Wenatchee Outdoors 5.4; UKC 5.5 (UKC text mirrors MP's, so not independent) - stored 5.6 unlocked",
+      "fa: stored 'Pete Schoening, Dick Widrig'; MP names Pete Schoening only (1950); no page found naming Widrig - unconfirmed",
+      "length: MP 280 ft (85 m), UKC 86 m (MP mirror) - one publisher, not proposed"
+    ],
+    "notes": "Descent is a walk-off from the top (Wenatchee Outdoors; MP silent) - descent columns empty, not written (one source, no new prose). Parking: large pullout on US-2 near milepost 96.5, trail from its west end (Wenatchee Outdoors) - matches stored approach_variants. Area wa_upper_castle lat/lng (47.59968,-120.71235) is EXACTLY Mountain Project's GPS for Saber - an MP coordinate stored on the area; the GNIS Castle Rock pillar is 47.599565,-120.711756 (~47 m off). SummitPost 403 in Chrome; the CascadeClimbers thread (1949 date claim) was not opened."
+  },
+  "wa_orbit": {
+    "area": "wa_snow_creek_wall",
+    "review": {
+      "sources": [
+        "https://www.mountainproject.com/route/106768055/orbit",
+        "https://www.mountaineers.org/activities/routes-places/snow-creek-wall",
+        "https://stephabegg.com/trip-reports/washington/snow-creek-wall/",
+        "https://climberkyle.com/2021/07/08/snow-creek-wall-outer-space-5-9-orbit-5-8/"
+      ]
+    },
+    "ledger": [
+      {
+        "field": "grade",
+        "value": "5.8+",
+        "method": "agree-2",
+        "level": "locked",
+        "evidence": [
+          {
+            "url": "https://www.mountainproject.com/route/106768055/orbit",
+            "fact": "5.8+ PG13",
+            "retrieved_at": "2026-11-18"
+          },
+          {
+            "url": "https://www.mountaineers.org/activities/routes-places/snow-creek-wall",
+            "fact": "Orbit Grade III, 5.8+",
+            "retrieved_at": "2026-11-18"
+          }
+        ]
+      },
+      {
+        "field": "pitches",
+        "value": 7,
+        "method": "agree-2",
+        "level": "locked",
+        "evidence": [
+          {
+            "url": "https://www.mountainproject.com/route/106768055/orbit",
+            "fact": "7 pitches",
+            "retrieved_at": "2026-11-18"
+          },
+          {
+            "url": "https://www.mountaineers.org/activities/routes-places/snow-creek-wall",
+            "fact": "Seven pitches",
+            "retrieved_at": "2026-11-18"
+          }
+        ]
+      }
+    ],
+    "sql_fixes": [
+      {
+        "table": "routes",
+        "id": "wa_orbit",
+        "column": "commitment",
+        "from": null,
+        "to": "III",
+        "why": "MP and The Mountaineers both give Grade III; the III currently sits in alpine_grade",
+        "evidence": [
+          "https://www.mountainproject.com/route/106768055/orbit",
+          "https://www.mountaineers.org/activities/routes-places/snow-creek-wall"
+        ]
+      },
+      {
+        "table": "routes",
+        "id": "wa_orbit",
+        "column": "alpine_grade",
+        "from": "III",
+        "to": null,
+        "why": "III is a commitment grade misfiled in alpine_grade on a trad crag route",
+        "evidence": [
+          "https://www.mountainproject.com/route/106768055/orbit",
+          "https://www.mountaineers.org/activities/routes-places/snow-creek-wall"
+        ]
+      },
+      {
+        "table": "routes",
+        "id": "wa_orbit",
+        "column": "disciplines",
+        "from": null,
+        "to": [
+          "trad"
+        ],
+        "why": "disciplines must name the row's primary discipline (trad)",
+        "evidence": [
+          "https://www.mountainproject.com/route/106768055/orbit"
+        ]
+      }
+    ],
+    "disputed": [
+      "length_m: MP 800 ft (242 m); Steph Abegg's pitch lengths sum to ~1,020 ft (no total stated) - not proposed",
+      "fa: 'Beckey, Davis 1962' is MP-only - unconfirmed",
+      "pitches: Steph Abegg's page title says 4-6p though her pitch list has 7 - two sources state 7, locked",
+      "gear: MP gear to 3 in + double nuts; The Mountaineers medium rack to 2.5 in; stored cams to 3 in + small nuts - unlocked"
+    ],
+    "notes": "Descent is a cairned walk-off to the left, no rappels (MP; The Mountaineers climbers' descent trail; climberkyle) - descent columns are empty and were not written (no new prose this batch); a later prose pass can lock it. The stored hazard line (rattlesnakes, poison ivy, ticks 'across crags in this canyon') is templated area text - unverified. The Mountaineers: Snow Lakes TH 1,300 ft, about 4.3 mi up Icicle Road; Northwest Forest Pass; USFS caps GROUP/course permits at 4/day weekdays (not individuals). MP notes peregrine nesting in 2014, no closure then."
+  }
+}

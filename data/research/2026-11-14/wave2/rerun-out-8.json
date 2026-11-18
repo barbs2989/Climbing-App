@@ -1,0 +1,808 @@
+{
+ "wa_ives_peak_r1": {
+  "area": "wa_ives_peak",
+  "facts": [
+   {
+    "field": "trailhead",
+    "value": "Snowgrass Flat Trailhead",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://onehikeaweek.com/2022/07/10/ives-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Access listed as Snowgrass Flat Trailhead for the Ives Peak trip."
+     },
+     {
+      "url": "https://www.wta.org/go-hiking/trip-reports/trip_report.2022-07-14.8916277563",
+      "retrieved_at": "2026-11-14",
+      "fact": "Report access listed as Snowgrass Flat Trailhead for Ives Peak."
+     }
+    ]
+   },
+   {
+    "field": "approach_loss_ft",
+    "value": 75,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://onehikeaweek.com/2022/07/10/ives-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trail drops about 75 feet from the trailhead down to the Goat Creek bridge, the low point of the trip."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Cross Goat Creek on a bridge in under two miles from the trailhead",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://onehikeaweek.com/2022/07/10/ives-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Goat Creek bridge crossing reached in under two miles; lowest point of the outing."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "High camp around 7,200 ft on gravel near the ridge below the peaks",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://onehikeaweek.com/2022/07/10/ives-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Camped near 7200 ft close to Old Snowy and Ives."
+     },
+     {
+      "url": "https://www.wta.org/go-hiking/trip-reports/trip_report.2022-07-14.8916277563",
+      "retrieved_at": "2026-11-14",
+      "fact": "Party camped near 7200 ft on a gravel stretch close to the peaks."
+     }
+    ]
+   },
+   {
+    "field": "water",
+    "value": "No running water above treeline; water lower in the upper basin",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/trip-reports/trip_report.2022-07-14.8916277563",
+      "retrieved_at": "2026-11-14",
+      "fact": "Running water found lower in the upper basin; none above the trees in July 2022."
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "Fourth-highest summit in the Goat Rocks Wilderness",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://onehikeaweek.com/2022/07/10/ives-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Ives Peak ranks fourth in Goat Rocks Wilderness after Gilbert Peak and Big Horn."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Snowfields to cross early season; scree on the ridgeline once melted",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/trip-reports/trip_report.2022-07-14.8916277563",
+      "retrieved_at": "2026-11-14",
+      "fact": "July 2022: snow from 5300 ft, snowfields to cross, ridgeline mostly melted to scree."
+     }
+    ]
+   }
+  ],
+  "note": "onehikeaweek 14.2 mi round trip covers Ives + Old Snowy (multi-peak) - not recorded. Willhite 15-mile loop multi-peak (earlier pass). No single-route gain/distance found."
+ },
+ "wa_jack_mountain_nohokomeen_headwall": {
+  "area": "wa_jack_mountain",
+  "facts": [
+   {
+    "field": "trailhead",
+    "value": "East Bank Trailhead on SR-20 near milepost 138, 1,800 ft",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/jack-mountain-nohokomeen-headwall",
+      "retrieved_at": "2026-11-14",
+      "fact": "Drive SR-20 to East Bank Trailhead (1,800 ft) near Milepost 138."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "East Bank Trail about 8 miles to May Creek, then off trail up toward the Nohokomeen basin",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/jack-mountain-nohokomeen-headwall",
+      "retrieved_at": "2026-11-14",
+      "fact": "Follow East Bank Trail ~8 miles to May Creek Campground, then ~3 miles off trail to the glacier toe."
+     },
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/101659-tr-jack-mountain-nohokomeen-headwall-05122018/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Party walked the 8-mile East Bank trail, then left it to climb steep slopes toward upper Nohokomeen Creek basin."
+     }
+    ]
+   },
+   {
+    "field": "approach_offtrail_mi",
+    "value": 3,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/jack-mountain-nohokomeen-headwall",
+      "retrieved_at": "2026-11-14",
+      "fact": "From May Creek head off trail up ~3 miles to the toe of the Nohokomeen Glacier; steep and brushy in places."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 30,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/jack-mountain-nohokomeen-headwall",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route length listed as 30.0 mi (Mountaineers route stats)."
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 10000,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/jack-mountain-nohokomeen-headwall",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route elevation gain listed as 10,000 ft."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 9066,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/jack-mountain-nohokomeen-headwall",
+      "retrieved_at": "2026-11-14",
+      "fact": "High point listed as 9,066 ft."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 700,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/jack-mountain-nohokomeen-headwall",
+      "retrieved_at": "2026-11-14",
+      "fact": "Headwall involves about 700 vertical feet of snow at slopes up to 60 degrees."
+     }
+    ]
+   },
+   {
+    "field": "grade_snow",
+    "value": "Snow to 60 degrees on the headwall",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/jack-mountain-nohokomeen-headwall",
+      "retrieved_at": "2026-11-14",
+      "fact": "Headwall snow slopes reach up to 60 degrees."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "AI3",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://lemkeclimbs.com/jack-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trip titled Jack Mountain 9075 ft Nohokomeen Headwall AI3."
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "March-April",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/jack-mountain-nohokomeen-headwall",
+      "retrieved_at": "2026-11-14",
+      "fact": "Seasons listed: March, April (early-spring snow climb)."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Crampons, two tools, rope and pickets; snowshoes depending on snow",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/jack-mountain-nohokomeen-headwall",
+      "retrieved_at": "2026-11-14",
+      "fact": "Equipment: crampons, two tools, rope, pickets, snowshoes as conditions require."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Descend the climbing route",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/jack-mountain-nohokomeen-headwall",
+      "retrieved_at": "2026-11-14",
+      "fact": "Descent: descend the climbing route."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Bergschrund may be an obstacle later in season; cornices on summit ridge",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/jack-mountain-nohokomeen-headwall",
+      "retrieved_at": "2026-11-14",
+      "fact": "Later in season the bergschrund may block; avoid cornices on the ridge traverse to the summit."
+     }
+    ]
+   },
+   {
+    "field": "closure",
+    "value": "SR-20 winter closure gate near milepost 134 adds miles before the spring opening",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/jack-mountain-nohokomeen-headwall",
+      "retrieved_at": "2026-11-14",
+      "fact": "Western winter gate at Milepost 134 (or earlier); climbing before the spring opening adds miles."
+     },
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/101659-tr-jack-mountain-nohokomeen-headwall-05122018/",
+      "retrieved_at": "2026-11-14",
+      "fact": "May 2018 party biked 4 miles of closed highway past the gate to reach the East Bank trail."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Camps around 6,000 ft in the basin or about 8,000 ft on the glacier",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/101659-tr-jack-mountain-nohokomeen-headwall-05122018/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Party camped near 6000 ft in a sheltered snow gully; another team camped near 8000 ft on the glacier."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "No parking permit required",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/jack-mountain-nohokomeen-headwall",
+      "retrieved_at": "2026-11-14",
+      "fact": "Parking Permit Required: None."
+     }
+    ]
+   },
+   {
+    "field": "land_manager",
+    "value": "East Bank Trail in Ross Lake NRA; peak in Pasayten Wilderness (Methow Valley RD, OWNF)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/jack-mountain-nohokomeen-headwall",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trailhead and trail in Ross Lake NRA; Jack Mountain and glacier in Pasayten Wilderness, Okanogan-Wenatchee NF."
+     }
+    ]
+   }
+  ],
+  "note": "lemkeclimbs and CascadeClimbers TR are the same author/text - one source (CC cited for the 8 mi). Mountaineers 30 mi length and 10,000 ft gain are its route stats; round trip is implied, not stated."
+ },
+ "wa_katsuk_peak_gully": {
+  "area": "wa_katsuk_peak",
+  "facts": [
+   {
+    "field": "trailhead",
+    "value": "Easy Pass trailhead on SR-20 between mileposts 151 and 152, 3,700 ft; ~10 cars, toilet",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/ragged-ridge-via-easy-pass",
+      "retrieved_at": "2026-11-14",
+      "fact": "Easy Pass trailhead between Mileposts 151-152 (3,700 ft), room for ~10 cars, bathroom."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Over Easy Pass, descend toward Fisher Camp (5,100 ft), then up to a high camp on Mesahchie south shoulder",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/ragged-ridge-via-easy-pass",
+      "retrieved_at": "2026-11-14",
+      "fact": "Hike over Easy Pass, descend toward Fisher Camp at 5,100 ft, head up to high camp at 6,700 ft."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "High camp at 6,700 ft on Mesahchie Peak south shoulder",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/ragged-ridge-via-easy-pass",
+      "retrieved_at": "2026-11-14",
+      "fact": "High camp at 6,700 ft on Mesahchie south shoulder, used for Mesahchie and Katsuk."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Loose rock and untrustworthy holds; 3rd-4th class scrambling and long route-finding",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/trip-reports/trip_report-2020-09-10-1573654713",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mesahchie and Katsuk: lots of loose rock, untrustworthy holds, needs 3rd-4th class comfort and route finding."
+     }
+    ]
+   },
+   {
+    "field": "trailhead_name",
+    "value": "Easy Pass Trailhead",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/ragged-ridge-via-easy-pass",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mesahchie and Katsuk reached from the Easy Pass trailhead on SR-20."
+     },
+     {
+      "url": "https://onehikeaweek.com/2014/08/18/mesahchie-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mesahchie + Katsuk trip access listed as Easy Pass Trailhead."
+     }
+    ]
+   }
+  ],
+  "note": "Mountaineers 20 mi RT / 8,420 ft covers Mesahchie + Katsuk together; walkingplacestogether 23 mi is a multi-day Kimtah+Katsuk trip; trailcatjim figures are the South Spur/East Ridge. None recorded as route totals."
+ },
+ "wa_klawatti_peak_southeast_face": {
+  "area": "wa_klawatti_peak",
+  "facts": [
+   {
+    "field": "permit",
+    "value": "NCNP backcountry camping permit required for overnight stays",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/klawatti-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Backcountry camping permit required to camp overnight in the North Cascades National Park Complex."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Large parking lot on the right about 19 miles up Cascade River Road",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/klawatti-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Drive 19 miles up the road to a large parking lot on the right side."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Cross Inspiration Glacier northeast to Klawatti Col; camp near the peak",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/trip-reports/trip_report.2016-12-20.2905486903",
+      "retrieved_at": "2026-11-14",
+      "fact": "Solo party crossed Inspiration Glacier northeast to Klawatti Col and camped a short walk from the climb."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Moats on the south side of the peak; crevasses open on Eldorado and Inspiration glaciers by mid-July",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/trip-reports/trip_report.2016-12-20.2905486903",
+      "retrieved_at": "2026-11-14",
+      "fact": "July: moats across the south side were the main concern; more crevasses open on Eldorado and Inspiration glaciers."
+     }
+    ]
+   },
+   {
+    "field": "glacier",
+    "value": "Route involves glacier crossings and exposed scrambling",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/klawatti-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route described as involving exposed scrambles and glacier crossings."
+     }
+    ]
+   }
+  ],
+  "note": "Grade conflict: WTA hike page calls the route Class 3; the 2016 WTA trip report found a few class 4 moves in a steep south-side gully. Neither recorded as grade (app has Class 4/PD). engineeredforadventure page is a ski descent of the S face - no figures used."
+ },
+ "wa_la_bohn_peak_southwest_slopes": {
+  "area": "wa_la_bohn_peak",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Class 2",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://en.wikipedia.org/wiki/La_Bohn_Peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Easiest route listed as class 2 via the East Ridge."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "From La Bohn Gap go west up easy boulder and heather/talus slopes; final stretch is a ridge walk to the true summit",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/trip-reports/tripreport-2002081604",
+      "retrieved_at": "2026-11-14",
+      "fact": "From La Bohn Gap travelled west up easy boulder/heather slopes to the 6585 ft summit."
+     },
+     {
+      "url": "https://www.wta.org/go-hiking/trip-reports/tripreport-2002081725",
+      "retrieved_at": "2026-11-14",
+      "fact": "Ascended west on talus to a false summit; last 1/8 mile is a ridge walk to the true summit."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Necklace Valley trail ends about 1/2 mile below La Bohn Gap; avalanche fan below the peak leads to the gap",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/trip-reports/tripreport-2002081604",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trail stopped ~1/2 mile before La Bohn Gap; party climbed the avalanche fan to the gap."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Necklace Valley trailhead on Foss River road about 8 miles from US 2 near Skykomish",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/trip-reports/tripreport-2002081604",
+      "retrieved_at": "2026-11-14",
+      "fact": "Turn onto Foss River road ~1/2 mile past Skykomish Ranger Station; trail parking about 8 miles in."
+     }
+    ]
+   },
+   {
+    "field": "time_to_summit_hours",
+    "value": 5,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/trip-reports/tripreport-2002081725",
+      "retrieved_at": "2026-11-14",
+      "fact": "About 5 hours from the car at the Necklace Valley trailhead to the summit."
+     }
+    ]
+   },
+   {
+    "field": "prominence_ft",
+    "value": 705,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://en.wikipedia.org/wiki/La_Bohn_Peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Prominence listed as 705 ft."
+     }
+    ]
+   },
+   {
+    "field": "land_manager",
+    "value": "Alpine Lakes Wilderness, Mount Baker-Snoqualmie National Forest",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://en.wikipedia.org/wiki/La_Bohn_Peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Peak lies in Alpine Lakes Wilderness on Mount Baker-Snoqualmie NF land."
+     }
+    ]
+   }
+  ],
+  "note": "Both WTA trip reports (2002, different authors, same publisher) counted as one source. Mountaineers activity page (2005 Everett scramble) gives no figures."
+ },
+ "wa_little_mac_spire_southwest_route": {
+  "area": "wa_little_mac_spire",
+  "skip_reason": "Kept earlier skip: AAJ 1970 (https://publications.americanalpineclub.org/articles/12197012201/) gives the FA of a different line (south face, NCCS III F8). Rerun opened peakery https://peakery.com/little-mac-spire-washington/ (elevation only, no logged climbs) and DuckDuckGo results (only AAJ, peakery, a SummitPost photo page - SummitPost 403). Mountaineers has no route page. No source describes the 5.4 Southwest Route."
+ },
+ "wa_massie_peak_west_route": {
+  "area": "wa_massie_peak",
+  "skip_reason": "Kept earlier skip: WTA TR https://www.wta.org/go-hiking/trip-reports/trip_report-2024-08-28.224652782050 is a multi-peak Buck Creek Pass trip; yellowleaf https://www.yellowleaf.org/scramble/g/l/Massie-Peak.html has no trips. Rerun: NWHikers https://www.nwhikers.net/forums/viewtopic.php?t=10852 served a bot-check page (not bypassed); Peakbagger search has no Massie Peak entry; Mountaineers has no route page; SummitPost 403."
+ },
+ "wa_mesahchie_peak_west_ridge": {
+  "area": "wa_mesahchie_peak",
+  "facts": [
+   {
+    "field": "trailhead",
+    "value": "Easy Pass Trailhead on SR-20 between mileposts 151 and 152, 3,700 ft; ~10 cars, toilet",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/ragged-ridge-via-easy-pass",
+      "retrieved_at": "2026-11-14",
+      "fact": "Easy Pass trailhead between Mileposts 151-152 (3,700 ft), room for ~10 cars, bathroom."
+     },
+     {
+      "url": "https://onehikeaweek.com/2014/08/18/mesahchie-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mesahchie + Katsuk trip access listed as Easy Pass Trailhead."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Over Easy Pass, descend toward Fisher Camp (5,100 ft), then up to a high camp on Mesahchie south shoulder; climb from the Mesahchie-Katsuk saddle",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/ragged-ridge-via-easy-pass",
+      "retrieved_at": "2026-11-14",
+      "fact": "Over Easy Pass, toward Fisher Camp 5,100 ft, up to 6,700 ft camp, then northwest to the Mesahchie-Katsuk saddle and the summit."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "High camp at 6,700 ft on Mesahchie Peak south shoulder",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/ragged-ridge-via-easy-pass",
+      "retrieved_at": "2026-11-14",
+      "fact": "High camp at 6,700 ft on Mesahchie south shoulder."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Loose rock and untrustworthy holds; 3rd-4th class scrambling and long route-finding",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/trip-reports/trip_report-2020-09-10-1573654713",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mesahchie and Katsuk: lots of loose rock, untrustworthy holds, needs 3rd-4th class comfort and route finding."
+     }
+    ]
+   }
+  ],
+  "note": "Mountaineers 20 mi RT / 8,420 ft is for Mesahchie + Katsuk combined; trailcatjim 16 mi / 8,200 ft is the South Rib-South Gullies line; onehikeaweek lists round trip TBD. No route totals recorded. The Mountaineers page climbs both summits from the Mesahchie-Katsuk saddle - consistent with this west-side line, not proof of it."
+ },
+ "wa_mount_christie_west": {
+  "area": "wa_mount_christie",
+  "facts": [
+   {
+    "field": "trailhead",
+    "value": "North Fork Quinault Trailhead, 519 ft; North Fork Road may close in winter",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.nps.gov/olym/planyourvisit/north-for-quinault.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trail elevation change 519 ft to 3,602 ft; North Fork Road may be closed during winter."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "North Fork Quinault Trail: trailhead to Wolf Bar ~2.5 mi, to Elip Creek ~4 mi more, to Sixteen Mile ~5.7 mi more, to Low Divide ~3.5 mi more",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.nps.gov/olym/planyourvisit/north-for-quinault.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Segments: TH to Wolf Bar ~2.5 mi; Wolf Bar-Elip Creek ~4 mi; Elip Creek-Sixteen Mile ~5.7 mi; to Low Divide ~3.5 mi."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Wilderness camps along the trail: Wolf Bar, Elip Creek, Sixteen Mile, Low Divide",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.nps.gov/olym/planyourvisit/north-for-quinault.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Named camp segments Wolf Bar, Elip Creek, Sixteen Mile and Low Divide on the North Fork Quinault Trail."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Fords at Wild Rose Creek, Elip Creek and 16-Mile; 16-Mile crossing can be impassable in heavy rain or melt",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.nps.gov/olym/planyourvisit/north-for-quinault.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "River fords required at Wild Rose Creek, Elip Creek and 16-Mile; hazardous in high water."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Olympic NP wilderness permit required for overnight stays",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.nps.gov/olym/planyourvisit/north-for-quinault.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Wilderness Permit required; see Wilderness Reservations page."
+     }
+    ]
+   }
+  ],
+  "note": "Only the shared North Fork Quinault approach is sourced (NPS); no page gives the climb itself. Earlier pass: trailcatjim and Quinault-Skyline loop are multi-peak; CascadeClimbers TR 53919 is the East Ridge."
+ },
+ "wa_mount_duckabush_standard": {
+  "area": "wa_mount_duckabush",
+  "facts": [
+   {
+    "field": "approach_step",
+    "value": "Duckabush River Trail: 6.2 mi from trailhead to park boundary (1,550 ft), then 16.1 mi to O'Neil Pass (4,950 ft)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.nps.gov/olym/planyourvisit/duckabush-river-trail.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Distance 16.1 mi park boundary to O'Neil Pass, 6.2 mi trailhead to boundary; 1550 ft to 4950 ft."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "10-Mile Camp, Upper Duckabush and Marmot Lake (toilets at each)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.nps.gov/olym/planyourvisit/duckabush-river-trail.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Campsites: 10-Mile Camp, Upper Duckabush, Marmot Lake; toilets at all three."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Olympic NP wilderness permit; bear canisters required",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.nps.gov/olym/planyourvisit/duckabush-river-trail.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Wilderness permit needed; bear canisters are the required food storage method."
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "High elevations early July through October",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.nps.gov/olym/planyourvisit/duckabush-river-trail.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Best season for high elevations listed as early July through October."
+     }
+    ]
+   },
+   {
+    "field": "approach_step_lower",
+    "value": "A couple of gentle miles, Brothers Wilderness sign at 1 mi, then the climb over Big Hump",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/duckabush-river",
+      "retrieved_at": "2026-11-14",
+      "fact": "Gentle first miles, Brothers Wilderness sign after a mile, river glimpse at 2 mi, then climb Big Hump."
+     }
+    ]
+   }
+  ],
+  "note": "Only the approach trail is sourced (NPS, WTA); no page describes the summit scramble. Earlier pass: Wikipedia and a Mountaineers day-hike TR had no route data."
+ }
+}

@@ -29,6 +29,8 @@ const NEVER = {
   lat: "a coordinate: pins are contributed as waypoints / start location, never typed as a route field",
   lng: "a coordinate: pins are contributed as waypoints / start location, never typed as a route field",
   name_search: "derived from name by trigger",
+  approach_loss_ft: "PUBLISHED figure only (0449; owner: \"all the information should be online\") — written by research with its sources in route_field_evidence, a climber flags it rather than types it",
+  return_gain_ft: "PUBLISHED figure only (0449; owner: \"all the information should be online\") — written by research with its sources in route_field_evidence, a climber flags it rather than types it",
   sort_order: "list order within a wall, set by the import",
   grade_num: "derived from grade by picker_grade_num on approval (0309)",
   grade_system: "derived from grade by picker_grade_num on approval (0309)",

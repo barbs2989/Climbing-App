@@ -1,0 +1,572 @@
+[
+ {
+  "id": "ca_wheel_mountain_standard_route",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "route",
+    "value": "SE ridge via Rambaud Pass, mostly class 2, steep class 3 near summit",
+    "url": "https://sites.google.com/view/wacziarg-climbing/2020-06-wheel-mountain-devils-crag-1-mount-mcduffie"
+   },
+   {
+    "field": "day_miles",
+    "value": "7 from camp at Lake 10,400",
+    "url": "https://sites.google.com/view/wacziarg-climbing/2020-06-wheel-mountain-devils-crag-1-mount-mcduffie"
+   },
+   {
+    "field": "day_gain_ft",
+    "value": "4400",
+    "url": "https://sites.google.com/view/wacziarg-climbing/2020-06-wheel-mountain-devils-crag-1-mount-mcduffie"
+   }
+  ],
+  "notes": "Chrome tab refused scripts, so no Peakbagger data. Only page is one multi-peak report starting at South Lake (Bishop Pass, Le Conte Canyon, Rambaud Creek), 20+ trail miles; one party choice, not shown as the standard start; west-side start not ruled out. SummitPost 403."
+ },
+ {
+  "id": "co_cathedral_peak_south_ridge_and_couloir",
+  "status": "found",
+  "trailhead": {
+   "name": "Cathedral Lake Trailhead",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://www.climb13ers.com/colorado-13ers/cathedral-peak",
+    "fact": "South Ridge and Couloir: Cathedral Lake TH 9,910 ft, Trail 1984 to Cathedral Lake; matches route text trail to Cathedral Lake"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "Cathedral Trailhead",
+     "lat": 39.042686,
+     "lng": -106.80818,
+     "url": ""
+    },
+    {
+     "source": "climb13ers printed coordinate",
+     "name": "Cathedral Lake Trailhead",
+     "lat": 39.042842,
+     "lng": -106.808161,
+     "url": "https://www.climb13ers.com/colorado-13ers/cathedral-peak"
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "class",
+    "value": "3",
+    "url": "https://www.climb13ers.com/colorado-13ers/cathedral-peak"
+   },
+   {
+    "field": "gain_ft",
+    "value": "4025 RT (page also gives 1950 for approach via lake)",
+    "url": "https://www.climb13ers.com/colorado-13ers/cathedral-peak"
+   },
+   {
+    "field": "distance_mi",
+    "value": "8.6 RT",
+    "url": "https://www.climb13ers.com/colorado-13ers/cathedral-peak"
+   },
+   {
+    "field": "permit",
+    "value": "free self-register permit, bear canisters",
+    "url": "https://www.climb13ers.com/colorado-13ers/cathedral-peak"
+   },
+   {
+    "field": "trailhead_elev_ft",
+    "value": "9910",
+    "url": "https://www.climb13ers.com/colorado-13ers/cathedral-peak"
+   }
+  ],
+  "notes": "USFS and climb13ers agree within about 20 m. No OSM placement (Nominatim returned little). Page rates class 3, route text says scramble."
+ },
+ {
+  "id": "co_clinton_peak_south_slope",
+  "status": "found",
+  "trailhead": {
+   "name": "Wheeler Lake-Montgomery Reservoir Trailhead",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://www.climb13ers.com/colorado-13ers/clinton-peak",
+    "fact": "Only Clinton route listed (SSW ridge, class 2) starts here, with Traver and McNamee; matches route text"
+   },
+   "placements": [
+    {
+     "source": "climb13ers printed coordinate",
+     "name": "Wheeler Lake-Montgomery Reservoir TH",
+     "lat": 39.35677,
+     "lng": -106.08287,
+     "url": "https://www.climb13ers.com/colorado-13ers/clinton-peak"
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "distance_mi",
+    "value": "12.8 RT",
+    "url": "https://www.climb13ers.com/colorado-13ers/clinton-peak"
+   },
+   {
+    "field": "gain_ft",
+    "value": "3200",
+    "url": "https://www.climb13ers.com/colorado-13ers/clinton-peak"
+   },
+   {
+    "field": "trailhead_elev_ft",
+    "value": "10970",
+    "url": "https://www.climb13ers.com/colorado-13ers/clinton-peak"
+   },
+   {
+    "field": "class",
+    "value": "2",
+    "url": "https://www.climb13ers.com/colorado-13ers/clinton-peak"
+   },
+   {
+    "field": "road",
+    "value": "CR 4 to north side of Montgomery Reservoir, right fork to west end; passenger car OK",
+    "url": "https://www.climb13ers.com/colorado-13ers/clinton-peak"
+   }
+  ],
+  "notes": "Single non-land-manager placement; no matching USFS point. Page names the route SSW Ridge not South Slope, but it is the only Clinton route listed. Coordinate converted from printed DMS."
+ },
+ {
+  "id": "co_cronin_peak_north_ridge",
+  "status": "found",
+  "trailhead": {
+   "name": "Baldwin Creek Trailhead",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://www.climb13ers.com/colorado-13ers/cronin-peak_north-ridge",
+    "fact": "North Ridge starts Baldwin Creek TH 9,540 ft (4x4); route text says Baldwin Creek area"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "Mt. Antero Trailhead",
+     "lat": 38.709992,
+     "lng": -106.291811,
+     "url": ""
+    },
+    {
+     "source": "climb13ers printed coordinate",
+     "name": "Baldwin Creek TH (lower)",
+     "lat": 38.70997,
+     "lng": -106.29189,
+     "url": "https://www.climb13ers.com/colorado-13ers/cronin-peak_north-ridge"
+    },
+    {
+     "source": "USFS",
+     "name": "Baldwin Lake Trailhead (upper start, FR277/278 junction, where 6.6 mi figure begins)",
+     "lat": 38.682513,
+     "lng": -106.272986,
+     "url": ""
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "distance_mi",
+    "value": "6.6 RT from upper junction (+6 RT from lower TH)",
+    "url": "https://www.climb13ers.com/colorado-13ers/cronin-peak_north-ridge"
+   },
+   {
+    "field": "gain_ft",
+    "value": "3000 (+1420 from lower TH)",
+    "url": "https://www.climb13ers.com/colorado-13ers/cronin-peak_north-ridge"
+   },
+   {
+    "field": "class",
+    "value": "2",
+    "url": "https://www.climb13ers.com/colorado-13ers/cronin-peak_north-ridge"
+   },
+   {
+    "field": "upper_th_elev_ft",
+    "value": "10870",
+    "url": "https://www.climb13ers.com/colorado-13ers/cronin-peak_north-ridge"
+   }
+  ],
+  "notes": "Page lower TH coordinate coincides with USFS Mt. Antero Trailhead (same lot, other sign name). Upper junction (3.0 mi up the 4x4 road) matches USFS Baldwin Lake TH; page mileage starts there. Lead picks: lower lot for ordinary vehicles, upper for 4WD. Page not field tested."
+ },
+ {
+  "id": "co_dyer_mountain_southeast_slopes",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "iowa_gulch_route",
+    "value": "class 3 W Ridge / SE Flank circuit, 4.5 mi RT, 2205 ft, TH 11,650",
+    "url": "https://www.climb13ers.com/colorado-13ers/dyer-mountain"
+   },
+   {
+    "field": "se_ridge_route",
+    "value": "class 2 SE Ridge from Fourmile-Leavick TH 11,250, 12.2 mi RT, 4120 ft",
+    "url": "https://www.climb13ers.com/colorado-13ers/dyer-mountain"
+   }
+  ],
+  "notes": "Two plausible starts: Iowa Gulch-Leadville TH (circuit using the SE flank; fits text short climb from a high trailhead) and Fourmile-Leavick TH (SE Ridge, 12.2 mi, not short). No printed TH coordinates; no USFS match."
+ },
+ {
+  "id": "co_emerald_peak_south_southwest_ridge",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "distance_mi",
+    "value": "8.8 RT",
+    "url": "https://www.climb13ers.com/colorado-13ers/emerald-peak"
+   },
+   {
+    "field": "gain_ft",
+    "value": "3515",
+    "url": "https://www.climb13ers.com/colorado-13ers/emerald-peak"
+   },
+   {
+    "field": "class",
+    "value": "2",
+    "url": "https://www.climb13ers.com/colorado-13ers/emerald-peak"
+   },
+   {
+    "field": "trailhead",
+    "value": "Rockdale/Clohesy Lake TH 9,940 ft; 4WD or very good high clearance",
+    "url": "https://www.climb13ers.com/colorado-13ers/emerald-peak"
+   }
+  ],
+  "notes": "Trailhead identified (Rockdale/Clohesy Lake, climb13ers) but not placed. USFS Cloyses Trailhead (38.950901,-106.407437) is about 400 m NE of OSM Clohesy Lake (way 46213700, 38.94749,-106.40935) and probably the same lot, but the signed name differs and no page ties them. Not reported."
+ },
+ {
+  "id": "co_half_peak_northwest_ridge",
+  "status": "found",
+  "trailhead": {
+   "name": "Carson Pass Trailhead (4x4)",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://www.climb13ers.com/colorado-13ers/half-peak",
+    "fact": "NW ridge page primary start Carson Pass TH 12,370 ft; route text says mileage depends on high-clearance driving"
+   },
+   "placements": [
+    {
+     "source": "climb13ers printed coordinate",
+     "name": "Carson Pass TH",
+     "lat": 37.85626,
+     "lng": -107.36806,
+     "url": "https://www.climb13ers.com/colorado-13ers/half-peak"
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "distance_mi",
+    "value": "26 RT incl. Quarter Peak sequence",
+    "url": "https://www.climb13ers.com/colorado-13ers/half-peak"
+   },
+   {
+    "field": "gain_ft",
+    "value": "5175",
+    "url": "https://www.climb13ers.com/colorado-13ers/half-peak"
+   },
+   {
+    "field": "class",
+    "value": "3 brief, otherwise 2",
+    "url": "https://www.climb13ers.com/colorado-13ers/half-peak"
+   },
+   {
+    "field": "road",
+    "value": "Wager Gulch road BLM 3308/FS 568, 4WD, graded 2025",
+    "url": "https://www.climb13ers.com/colorado-13ers/half-peak"
+   },
+   {
+    "field": "alt_start",
+    "value": "Cataract Gulch TH, passenger car, 15.6 mi/4275 ft from CD Trail junction",
+    "url": "https://www.climb13ers.com/colorado-13ers/half-peak"
+   }
+  ],
+  "notes": "Weaker: page also offers Cataract Gulch (passenger car) as alternative, no coordinate. Carson Pass is the headline. Single non-land-manager placement; TH about 11 km from summit; no USFS match."
+ },
+ {
+  "id": "co_jones_mountain_northeast_ridge",
+  "status": "found",
+  "trailhead": {
+   "name": "Burns Gulch Trailhead",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://www.climb13ers.com/colorado-13ers/niagara-peak",
+    "fact": "Jones NE Ridge is the middle leg of Burns Gulch, American W Ridge, Jones, Niagara; route text says strung with American and Niagara"
+   },
+   "placements": [
+    {
+     "source": "climb13ers printed coordinate",
+     "name": "Burns Gulch TH",
+     "lat": 37.91798,
+     "lng": -107.55799,
+     "url": "https://www.climb13ers.com/colorado-13ers/niagara-peak"
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "leg",
+    "value": "1.2 mi / 540 ft one way from American (text says 520)",
+    "url": "https://www.climb13ers.com/colorado-13ers/niagara-peak"
+   },
+   {
+    "field": "class",
+    "value": "2 (ridge step maybe 2+)",
+    "url": "https://www.climb13ers.com/colorado-13ers/niagara-peak"
+   },
+   {
+    "field": "trailhead_elev_ft",
+    "value": "10790",
+    "url": "https://www.climb13ers.com/colorado-13ers/niagara-peak"
+   },
+   {
+    "field": "road",
+    "value": "Burns/Grouse Gulch turnoff 3.5 mi past Eureka; rocky 4WD to fork near 11,680 ft",
+    "url": "https://www.climb13ers.com/colorado-13ers/niagara-peak"
+   }
+  ],
+  "notes": "Single non-land-manager placement. Evidence is the Niagara page; the route is only documented as a link-up from here."
+ },
+ {
+  "id": "co_niagara_peak_northeast_ridge",
+  "status": "found",
+  "trailhead": {
+   "name": "Burns Gulch Trailhead",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://www.climb13ers.com/colorado-13ers/niagara-peak",
+    "fact": "Niagara NE Ridge: Burns Gulch TH 10,790 ft, 9.6 mi RT 4,145 ft via American and Jones"
+   },
+   "placements": [
+    {
+     "source": "climb13ers printed coordinate",
+     "name": "Burns Gulch TH",
+     "lat": 37.91798,
+     "lng": -107.55799,
+     "url": "https://www.climb13ers.com/colorado-13ers/niagara-peak"
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "distance_mi",
+    "value": "9.6 RT headline (approach section totals 5.3; page inconsistent)",
+    "url": "https://www.climb13ers.com/colorado-13ers/niagara-peak"
+   },
+   {
+    "field": "gain_ft",
+    "value": "4145 headline (3555 in approach section)",
+    "url": "https://www.climb13ers.com/colorado-13ers/niagara-peak"
+   },
+   {
+    "field": "niagara_leg",
+    "value": "0.90 mi / 590 ft one way from Jones",
+    "url": "https://www.climb13ers.com/colorado-13ers/niagara-peak"
+   },
+   {
+    "field": "class",
+    "value": "2",
+    "url": "https://www.climb13ers.com/colorado-13ers/niagara-peak"
+   }
+  ],
+  "notes": "Same lot as Jones NE Ridge. Single non-land-manager placement. Page figures contradict themselves."
+ },
+ {
+  "id": "co_phoenix_peak_south_ridge_and_slopes",
+  "status": "found",
+  "trailhead": {
+   "name": "East Willow Creek Trailhead (lower, passenger car; USFS Phoenix Park Trailhead)",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://www.climb13ers.com/colorado-13ers/un13895--phoenix-peak",
+    "fact": "South Ridge and Slopes from East Willow Creek TH via CR 502; passenger cars park at lower switchback, 4WD upper TH saves about 3 mi RT"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "Phoenix Park Trailhead",
+     "lat": 37.904527,
+     "lng": -106.91652,
+     "url": ""
+    },
+    {
+     "source": "climb13ers printed coordinate",
+     "name": "East Willow Creek TH (lower)",
+     "lat": 37.90412,
+     "lng": -106.91676,
+     "url": "https://www.climb13ers.com/colorado-13ers/un13895--phoenix-peak"
+    },
+    {
+     "source": "climb13ers printed coordinate",
+     "name": "Upper TH (4WD), 10,340 ft",
+     "lat": 37.91894,
+     "lng": -106.90301,
+     "url": "https://www.climb13ers.com/colorado-13ers/un13895--phoenix-peak"
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "distance_mi",
+    "value": "9.4 RT from upper TH, +3 RT from lower switchback",
+    "url": "https://www.climb13ers.com/colorado-13ers/un13895--phoenix-peak"
+   },
+   {
+    "field": "gain_ft",
+    "value": "3585",
+    "url": "https://www.climb13ers.com/colorado-13ers/un13895--phoenix-peak"
+   },
+   {
+    "field": "class",
+    "value": "2",
+    "url": "https://www.climb13ers.com/colorado-13ers/un13895--phoenix-peak"
+   },
+   {
+    "field": "road",
+    "value": "CR 502 fork right at 1.2 mi; switchback 3.5 mi on; 4WD road NNE to upper TH",
+    "url": "https://www.climb13ers.com/colorado-13ers/un13895--phoenix-peak"
+   }
+  ],
+  "notes": "Printed lower coordinate is about 40 m from USFS Phoenix Park TH, so same lot (page does not use that name; matched by coordinate). Two valid starts by vehicle; lower is default, upper needs 4WD. Earlier pass used the upper only."
+ },
+ {
+  "id": "co_red_mountain_north_ridge_from_culebra_peak",
+  "status": "found",
+  "trailhead": {
+   "name": "Cielo Vista Ranch HQ check-in (Culebra access); walk starts at Four-Way junction",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://www.climb13ers.com/colorado-13ers/red-mountain_north-ridge",
+    "fact": "Cielo Vista TH 9,100 ft ranch HQ check-in; 4WD road to Four Way junction 3.4 mi, 11,220 ft; matches route text private ranch with permit"
+   },
+   "placements": [
+    {
+     "source": "climb13ers printed coordinate",
+     "name": "Cielo Vista TH (ranch HQ)",
+     "lat": 37.14981,
+     "lng": -105.29256,
+     "url": "https://www.climb13ers.com/colorado-13ers/red-mountain_north-ridge"
+    },
+    {
+     "source": "climb13ers printed coordinate",
+     "name": "Four-Way junction (walk start)",
+     "lat": 37.14229,
+     "lng": -105.23252,
+     "url": "https://www.climb13ers.com/colorado-13ers/red-mountain_north-ridge"
+    },
+    {
+     "source": "climb13ers printed coordinate",
+     "name": "Upper road end if allowed, 11,670 ft",
+     "lat": 37.13899,
+     "lng": -105.21576,
+     "url": "https://www.climb13ers.com/colorado-13ers/red-mountain_north-ridge"
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "distance_mi",
+    "value": "8.2 RT incl. Culebra, from Four-Way",
+    "url": "https://www.climb13ers.com/colorado-13ers/red-mountain_north-ridge"
+   },
+   {
+    "field": "gain_ft",
+    "value": "4070",
+    "url": "https://www.climb13ers.com/colorado-13ers/red-mountain_north-ridge"
+   },
+   {
+    "field": "fee",
+    "value": "$150 (2024) for Culebra and Red",
+    "url": "https://www.climb13ers.com/colorado-13ers/red-mountain_north-ridge"
+   },
+   {
+    "field": "access",
+    "value": "Fri-Sun only, no climbing Aug 1 to end Dec, gate 6:00-6:15 AM, sign-out 6 PM",
+    "url": "https://www.climb13ers.com/colorado-13ers/red-mountain_north-ridge"
+   },
+   {
+    "field": "class",
+    "value": "2",
+    "url": "https://www.climb13ers.com/colorado-13ers/red-mountain_north-ridge"
+   }
+  ],
+  "notes": "Private ranch, no official placement; all coordinates climb13ers printed. Must check in at ranch HQ and drive in. Page unclear whether 8.2 mi starts at HQ or Four-Way."
+ },
+ {
+  "id": "co_vermilion_peak_southeast_ridge",
+  "status": "found",
+  "trailhead": {
+   "name": "Lake Hope Trailhead",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://www.climb13ers.com/colorado-13ers/vermillion-peak",
+    "fact": "Vermilion SE Ridge Route class 2+ from Lake Hope TH 10,745 ft via FSR 627"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "Hope Lake Trailhead",
+     "lat": 37.804939,
+     "lng": -107.851592,
+     "url": ""
+    },
+    {
+     "source": "climb13ers printed coordinate",
+     "name": "Lake Hope TH",
+     "lat": 37.80497,
+     "lng": -107.85161,
+     "url": "https://www.climb13ers.com/colorado-13ers/vermillion-peak"
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "distance_mi",
+    "value": "9.15 RT",
+    "url": "https://www.climb13ers.com/colorado-13ers/vermillion-peak"
+   },
+   {
+    "field": "gain_ft",
+    "value": "4450",
+    "url": "https://www.climb13ers.com/colorado-13ers/vermillion-peak"
+   },
+   {
+    "field": "class",
+    "value": "2+",
+    "url": "https://www.climb13ers.com/colorado-13ers/vermillion-peak"
+   },
+   {
+    "field": "road",
+    "value": "FSR 627 about 2.5-2.9 mi from highway, high clearance last 2 mi",
+    "url": "https://www.climb13ers.com/colorado-13ers/vermillion-peak"
+   },
+   {
+    "field": "sequence",
+    "value": "with V.8, Beattie, Fuller",
+    "url": "https://www.climb13ers.com/colorado-13ers/vermillion-peak"
+   }
+  ],
+  "notes": "USFS and printed coordinate agree within about 5 m. Page only offers Lake Hope; South Mineral Creek conflict not supported. No OSM placement."
+ }
+]

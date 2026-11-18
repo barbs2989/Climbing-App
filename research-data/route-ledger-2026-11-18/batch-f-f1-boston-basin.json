@@ -1,0 +1,1168 @@
+{
+ "wa_forbidden_peak_east_ridge": {
+  "area": "wa_forbidden_peak",
+  "set": {
+   "waypoints": [
+    {
+     "lat": 48.4801941,
+     "lng": -121.0796175,
+     "elev": 3228,
+     "name": "Boston Basin Trailhead",
+     "note": "Small pullout on Cascade River Road ~21.7 mi from Marblemount; NW Forest Pass to park, overnight stays need a park backcountry permit, picked up in person at the Marblemount Wilderness Information Center.",
+     "type": "Trailhead",
+     "distMi": 0,
+     "elevFt": 3228,
+     "directions": "From SR 20 at Marblemount, turn onto the Cascade River Road, which crosses the Skagit River and runs east, paved for about 10 miles and then rough gravel. Drive about 22 miles to a small pullout on the left beneath the northeast face of Johannesburg Mountain, at about 3,200 ft, with room for only a handful of cars. The road usually opens to its end by late June or early July. Overnight stays in the park require a backcountry permit."
+    },
+    {
+     "lat": 48.501315,
+     "lng": -121.062561,
+     "elev": 6248,
+     "name": "Boston Basin",
+     "type": "Campsite",
+     "distMi": 3,
+     "elevFt": 6200,
+     "directions": "Follow the old Diamond Mine roadbed for about a mile and watch for the climbers' path leaving it. The path climbs steeply through forest with several creek crossings to treeline near 5,300 ft, then over talus and heather to the camps in Boston Basin."
+    },
+    {
+     "lat": null,
+     "lng": null,
+     "elev": 7900,
+     "name": "East end of ridge",
+     "type": "Junction",
+     "distMi": 4.3,
+     "elevFt": 7900,
+     "directions": "From camp, do not head toward the south-face couloir; traverse east around the basin and gain the ridges and gullies along the east side of the glacier below Forbidden. Expect hours of loose, choss-covered slabs, seepage and small stream crossings, usually finishing with a snow gully that wants crampons, then broken rock and snow up to the notch just above the high bivy, below the solitary gendarme."
+    },
+    {
+     "lat": 48.5116521,
+     "lng": -121.0584131,
+     "elev": 8815,
+     "name": "Forbidden Peak summit",
+     "type": "Summit",
+     "distMi": 4.7,
+     "elevFt": 8815,
+     "directions": "From the notch, go left around the first gendarme and simul-climb easy blocks to the crest, then follow it west over the gendarmes rather than taking their bypasses. Rappel off the back of the last gendarme into a narrow notch, climb the 5.8 crux crack on the wall ahead, and continue on easier ground to the summit."
+    },
+    {
+     "lat": 48.494755,
+     "lng": -121.063487,
+     "elev": 5300,
+     "name": "Boston Basin lower camp",
+     "type": "Campsite",
+     "distMi": 2
+    }
+   ],
+   "road": {
+    "name": "Cascade River Road (Forest Road 15)",
+    "status": "Winter closure: as of the park's Nov 9, 2026 update, cars stop at the gate at milepost 21; you may walk or ride a bike beyond it to the Boston Basin parking area at mile 22.5.",
+    "driveNote": "Leave SR 20 at Marblemount; the Boston Basin parking area sits at mile 22.5, shortly before the road ends at the Cascade Pass lot (mile 23.1). Expect pavement for roughly the first 10 miles and rough gravel after that. The park bars trailers past its boundary at mile 18 and any vehicle over 22 ft long or 8 ft wide, and advises against sedans and low-clearance cars.",
+    "seasonalGate": "In a normal year the road is open through to the Cascade Pass trailhead by the end of June (early July after a big snow year or storm damage); outside that season the park may gate it at different points for winter, maintenance or emergencies."
+   }
+  },
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/106450578/forbidden-peak",
+    "https://www.mountainproject.com/route/107244142/east-ridge-direct",
+    "https://www.mountaineers.org/activities/routes-places/boston-basin-area-review/forbidden-peak-e-ridge-direct",
+    "https://publications.americanalpineclub.org/articles/12195930601/North-America-United-States-Washington-Forbidden-Peak-Direct-East-Ridge",
+    "https://stephabegg.com/?p=8697",
+    "https://pages.uoregon.edu/dbelitz/db_virtual/db_climbing/peaks/forbidden_pk.html",
+    "https://www.nps.gov/noca/planyourvisit/road-conditions.htm",
+    "https://www.nps.gov/noca/planyourvisit/cascade-river-road.htm",
+    "https://www.nps.gov/noca/planyourvisit/permits.htm",
+    "https://epqs.nationalmap.gov/v1/json",
+    "https://www.openstreetmap.org/way/1110147162"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.8-",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107244142/east-ridge-direct",
+      "fact": "5.8-",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/boston-basin-area-review/forbidden-peak-e-ridge-direct",
+      "fact": "Grade III, 5.7-5.8",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "rock_grade",
+    "value": "5.8-",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107244142/east-ridge-direct",
+      "fact": "5.8-",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/boston-basin-area-review/forbidden-peak-e-ridge-direct",
+      "fact": "5.7-5.8",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "commitment",
+    "value": "III",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107244142/east-ridge-direct",
+      "fact": "Grade III",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/boston-basin-area-review/forbidden-peak-e-ridge-direct",
+      "fact": "Grade III",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 8815,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/area/106450578/forbidden-peak",
+      "fact": "Forbidden Peak 8,815 ft",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://stephabegg.com/?p=8697",
+      "fact": "summit 8,815 ft (reused from batch B)",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://pages.uoregon.edu/dbelitz/db_virtual/db_climbing/peaks/forbidden_pk.html",
+      "fact": "8,815 ft (reused from batch B)",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/boston-basin-area-review/forbidden-peak-e-ridge-direct",
+      "fact": "High Point: 8,815 ft",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Fred Beckey, Joe Hieb, Ed Cooper, Don Claunch — 1958",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107244142/east-ridge-direct",
+      "fact": "FA 1958: Fred Beckey, Joe Hieb, Ed Cooper, Don Claunch",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://publications.americanalpineclub.org/articles/12195930601/North-America-United-States-Washington-Forbidden-Peak-Direct-East-Ridge",
+      "fact": "Beckey, Hieb, Cooper, Claunch on the true east ridge, never before attempted; Memorial Day weekend, AAJ 1959 (covers the 1958 season)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "waypoints/Forbidden Peak summit",
+    "value": {
+     "name": "Forbidden Peak summit",
+     "lat": 48.5116521,
+     "lng": -121.0584131
+    },
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "measurement": "USGS GNIS 1519683 'Forbidden Peak' summit point, DomesticNames_WA (edited 2026-08-17) - reused from batch B lock on wa_forbidden_peak_west_ridge",
+      "fact": "48.5116521,-121.0584131",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "measurement": "USGS 3DEP elevation at this point 8,805 ft, 10 ft below the published 8,815 ft summit: the point is on the top",
+      "fact": "8805 ft",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "road",
+    "value": {
+     "name": "Cascade River Road (Forest Road 15)",
+     "status": "Winter closure: as of the park's Nov 9, 2026 update, cars stop at the gate at milepost 21; you may walk or ride a bike beyond it to the Boston Basin parking area at mile 22.5.",
+     "driveNote": "Leave SR 20 at Marblemount; the Boston Basin parking area sits at mile 22.5, shortly before the road ends at the Cascade Pass lot (mile 23.1). Expect pavement for roughly the first 10 miles and rough gravel after that. The park bars trailers past its boundary at mile 18 and any vehicle over 22 ft long or 8 ft wide, and advises against sedans and low-clearance cars.",
+     "seasonalGate": "In a normal year the road is open through to the Cascade Pass trailhead by the end of June (early July after a big snow year or storm damage); outside that season the park may gate it at different points for winter, maintenance or emergencies."
+    },
+    "method": "official-1",
+    "level": "locked",
+    "expires_at": "2027-02-15T00:00:00Z",
+    "evidence": [
+     {
+      "url": "https://www.nps.gov/noca/planyourvisit/road-conditions.htm",
+      "fact": "CLOSED (partial), gate at MP21, winter seasonal closure, update 11/9/26; foot/bike past gate allowed",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     },
+     {
+      "url": "https://www.nps.gov/noca/planyourvisit/road-conditions.htm",
+      "fact": "paved to ~mile 10, then gravel; no vehicles over 22 ft; not for sedans/low-clearance",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     },
+     {
+      "url": "https://www.nps.gov/noca/planyourvisit/cascade-river-road.htm",
+      "fact": "23.1 mi to Cascade Pass TH; Boston Basin parking mile 22.5; paved to ~mile 10",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     },
+     {
+      "url": "https://www.nps.gov/noca/planyourvisit/cascade-river-road.htm",
+      "fact": "trailers barred past park boundary MP 18; over 22 ft long / 8 ft wide barred",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     },
+     {
+      "url": "https://www.nps.gov/noca/planyourvisit/cascade-river-road.htm",
+      "fact": "usually open to Cascade Pass TH by end of June; early July after heavy snow/storm damage",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     }
+    ]
+   }
+  ],
+  "disputed": [
+   "pitches 6: Mountain Project 6; The Mountaineers \"nine pitch\". Not locked.",
+   "dist_km 13.36: summit pin distMi 4.7 (7.6 km one way); no published one-way or round-trip figure found; 13.36 is neither clearly one way nor 2x. Above the 3.83 km straight line, so not impossible. Not changed.",
+   "trailhead mileage: pin notes say ~21.7 mi from Marblemount (The Mountaineers); NPS puts the Boston Basin parking area at mile 22.5. Pin text left as is."
+  ],
+  "notes": "Summit pin moved 41 m to the USGS GNIS point (the West Ridge lock from batch B). Trailhead pin moved 42 m to the OSM parking lot used for the West Ridge in batch B (way 1110147162, USGS 3DEP 3,228 ft) - one method only, not locked. gain_ft 5615 passes the impossibility check (8,815 - 3,228 = 5,587). Road replaced with an NPS-sourced object (Nov 9, 2026 winter closure at the MP 21 gate; Boston Basin parking at mile 22.5). The stored status claimed a 2026 landslide gate at Eldorado Creek. Permit not locked: the NPS permits page (updated Oct 15, 2026) says backcountry permits are required year-round and Boston Basin permits must be picked up in person at Marblemount (self-issue when the center is closed from Oct 11), but no NPS page states the stored \"no permit for day climbs\". AAJ article does not print the year; it sits in the 1959 journal, which reports 1958 climbs, matching Mountain Project."
+ },
+ "wa_forbidden_peak_north_ridge": {
+  "area": "wa_forbidden_peak",
+  "set": {
+   "waypoints": [
+    {
+     "lat": 48.4801941,
+     "lng": -121.0796175,
+     "elev": 3228,
+     "name": "Boston Basin Trailhead",
+     "note": "Small pullout on Cascade River Road ~21.7 mi from Marblemount; NW Forest Pass to park, overnight stays need a park backcountry permit, picked up in person at the Marblemount Wilderness Information Center.",
+     "type": "Trailhead",
+     "distMi": 0,
+     "directions": "The Boston Basin trailhead is a small pullout on Cascade River Road roughly 21.7 miles from Marblemount, at about 3,200 ft. You need a Northwest Forest Pass to park there. A wilderness permit is required to camp in Boston Basin, and those permits are competitive — they go through the Park Service's early-access lottery, so have one in hand before you make the drive up."
+    },
+    {
+     "lat": 48.494755,
+     "lng": -121.063487,
+     "elev": 5300,
+     "name": "Boston Basin lower camp",
+     "type": "Campsite"
+    },
+    {
+     "lat": 48.501315,
+     "lng": -121.062561,
+     "elev": 6400,
+     "name": "Boston Basin High Camp",
+     "note": "Standard base camp for both Torment and Forbidden; continue northeast along the Quien Sabe Glacier's west edge toward Sharkfin Col.",
+     "type": "Campsite",
+     "distMi": 3,
+     "directions": "From the pullout, follow the old Diamond Mine roadbed about a mile, then take the unsigned climbers' path that leaves it and climbs steeply through forest, crossing four streams, to treeline near 5,300 ft. Continue up heather and boulder slopes into Boston Basin to the high camps near 6,400 ft."
+    },
+    {
+     "lat": 48.5015,
+     "lng": -121.045,
+     "elev": 7725,
+     "name": "Sharkfin Col",
+     "note": "Low point on the ridge left of Sharkfin Tower, gained via ~10 ft of 5.7 rock and a 200-ft class-3 gully; loose scree underfoot.",
+     "type": "Junction",
+     "distMi": 3.6,
+     "directions": "From high camp, follow the moraine and the west edge of the Quien Sabe Glacier up to about 7,500 ft, then climb to the notch just west of Sharkfin Tower: roughly 10 ft of 5.7 rock and a 200 ft class 3 gully on loose scree. A rock tower stands right beside the true col; everything after it is committed."
+    },
+    {
+     "lat": null,
+     "lng": null,
+     "elev": 7570,
+     "name": "Rappel to Boston Glacier",
+     "note": "Rappel of roughly 100-150 ft, in one or two stages depending on snow, down a loose gully off the col to reach the Boston Glacier; watch for rope-snag on loose rock.",
+     "type": "Hazard",
+     "distMi": 3.7,
+     "directions": "On the north side of the col, rappel roughly 100-150 ft, in one or two stages depending on snow, down a loose gully onto the Boston Glacier. The lower station sits just above the bergschrund. Once down, retreat means re-climbing to the col."
+    },
+    {
+     "lat": null,
+     "lng": null,
+     "elev": 7000,
+     "name": "Boston Glacier crevasse traverse",
+     "note": "Northward traverse through heavily crevassed terrain toward the north end of the glacier; a fall here would be serious, kick solid steps.",
+     "type": "Hazard",
+     "distMi": 4.2,
+     "directions": "Rope up and traverse north through heavily crevassed ground, losing several hundred feet to pass below a large rock spur, toward the far north end of the glacier."
+    },
+    {
+     "lat": null,
+     "lng": null,
+     "elev": 8100,
+     "name": "North Ridge crest",
+     "note": "Ridge regained above a 5.6 left-facing corner crux; two small snow-free bivy spots sit just below on the northeast side.",
+     "type": "Junction",
+     "distMi": 4.6,
+     "directions": "Climb back up the steepening snow to the col between Boston Glacier and Forbidden at the foot of the ridge; late in the season the moat there can take ice or steep dirt with tools to cross. From the bivy ledges near 7,600 ft, climb the short 5.6 left-facing corner and continue onto the crest."
+    },
+    {
+     "lat": 48.5116521,
+     "lng": -121.0584131,
+     "elev": 8815,
+     "name": "Forbidden Peak",
+     "note": "True summit; descend via the West Ridge couloir back to Boston Basin.",
+     "type": "Summit",
+     "distMi": 5,
+     "directions": "Follow the long, nearly level crest of rock steps and knife-edge snow, mostly simul-climbing; where the crest is awkward the ground just east of it often goes more easily. Near 8,400 ft the ridge rears up onto better rock, and the final pitch lands on the summit block."
+    }
+   ],
+   "road": {
+    "name": "Cascade River Road (Forest Road 15)",
+    "status": "Winter closure: as of the park's Nov 9, 2026 update, cars stop at the gate at milepost 21; you may walk or ride a bike beyond it to the Boston Basin parking area at mile 22.5.",
+    "driveNote": "Leave SR 20 at Marblemount; the Boston Basin parking area sits at mile 22.5, shortly before the road ends at the Cascade Pass lot (mile 23.1). Expect pavement for roughly the first 10 miles and rough gravel after that. The park bars trailers past its boundary at mile 18 and any vehicle over 22 ft long or 8 ft wide, and advises against sedans and low-clearance cars.",
+    "seasonalGate": "In a normal year the road is open through to the Cascade Pass trailhead by the end of June (early July after a big snow year or storm damage); outside that season the park may gate it at different points for winter, maintenance or emergencies."
+   },
+   "beta": "Grade III, with the hardest ridge moves about 5.6. From Boston Basin high camp, cross the Quien Sabe Glacier to Sharkfin Col (a short 5.7 step and a class 3 gully), rappel to the Boston Glacier, and join the north ridge near 7,700 ft for an exposed run of moderate granite to the summit."
+  },
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/106450578/forbidden-peak",
+    "https://www.mountainproject.com/route/108482756/north-ridge",
+    "https://www.mountaineers.org/activities/routes-places/boston-basin-area-review/forbidden-peak-north-ridge",
+    "https://stephabegg.com/?p=8697",
+    "https://pages.uoregon.edu/dbelitz/db_virtual/db_climbing/peaks/forbidden_pk.html",
+    "https://www.nps.gov/noca/planyourvisit/road-conditions.htm",
+    "https://www.nps.gov/noca/planyourvisit/cascade-river-road.htm",
+    "https://www.nps.gov/noca/planyourvisit/permits.htm",
+    "https://epqs.nationalmap.gov/v1/json",
+    "https://www.openstreetmap.org/way/1110147162"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.6",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108482756/north-ridge",
+      "fact": "5.6",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/boston-basin-area-review/forbidden-peak-north-ridge",
+      "fact": "grade 3, 5.6",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "rock_grade",
+    "value": "5.6",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108482756/north-ridge",
+      "fact": "5.6",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/boston-basin-area-review/forbidden-peak-north-ridge",
+      "fact": "5.6",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "commitment",
+    "value": "III",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108482756/north-ridge",
+      "fact": "Grade III",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/boston-basin-area-review/forbidden-peak-north-ridge",
+      "fact": "grade 3",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 8815,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/area/106450578/forbidden-peak",
+      "fact": "Forbidden Peak 8,815 ft",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://stephabegg.com/?p=8697",
+      "fact": "summit 8,815 ft (reused from batch B)",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://pages.uoregon.edu/dbelitz/db_virtual/db_climbing/peaks/forbidden_pk.html",
+      "fact": "8,815 ft (reused from batch B)",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/boston-basin-area-review/forbidden-peak-north-ridge",
+      "fact": "High Point: 8,815 ft",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "waypoints/Forbidden Peak",
+    "value": {
+     "name": "Forbidden Peak",
+     "lat": 48.5116521,
+     "lng": -121.0584131
+    },
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "measurement": "USGS GNIS 1519683 'Forbidden Peak' summit point, DomesticNames_WA (edited 2026-08-17) - reused from batch B lock on wa_forbidden_peak_west_ridge",
+      "fact": "48.5116521,-121.0584131",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "measurement": "USGS 3DEP elevation at this point 8,805 ft, 10 ft below the published 8,815 ft summit: the point is on the top",
+      "fact": "8805 ft",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "road",
+    "value": {
+     "name": "Cascade River Road (Forest Road 15)",
+     "status": "Winter closure: as of the park's Nov 9, 2026 update, cars stop at the gate at milepost 21; you may walk or ride a bike beyond it to the Boston Basin parking area at mile 22.5.",
+     "driveNote": "Leave SR 20 at Marblemount; the Boston Basin parking area sits at mile 22.5, shortly before the road ends at the Cascade Pass lot (mile 23.1). Expect pavement for roughly the first 10 miles and rough gravel after that. The park bars trailers past its boundary at mile 18 and any vehicle over 22 ft long or 8 ft wide, and advises against sedans and low-clearance cars.",
+     "seasonalGate": "In a normal year the road is open through to the Cascade Pass trailhead by the end of June (early July after a big snow year or storm damage); outside that season the park may gate it at different points for winter, maintenance or emergencies."
+    },
+    "method": "official-1",
+    "level": "locked",
+    "expires_at": "2027-02-15T00:00:00Z",
+    "evidence": [
+     {
+      "url": "https://www.nps.gov/noca/planyourvisit/road-conditions.htm",
+      "fact": "CLOSED (partial), gate at MP21, winter seasonal closure, update 11/9/26; foot/bike past gate allowed",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     },
+     {
+      "url": "https://www.nps.gov/noca/planyourvisit/road-conditions.htm",
+      "fact": "paved to ~mile 10, then gravel; no vehicles over 22 ft; not for sedans/low-clearance",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     },
+     {
+      "url": "https://www.nps.gov/noca/planyourvisit/cascade-river-road.htm",
+      "fact": "23.1 mi to Cascade Pass TH; Boston Basin parking mile 22.5; paved to ~mile 10",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     },
+     {
+      "url": "https://www.nps.gov/noca/planyourvisit/cascade-river-road.htm",
+      "fact": "trailers barred past park boundary MP 18; over 22 ft long / 8 ft wide barred",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     },
+     {
+      "url": "https://www.nps.gov/noca/planyourvisit/cascade-river-road.htm",
+      "fact": "usually open to Cascade Pass TH by end of June; early July after heavy snow/storm damage",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_forbidden_peak_north_ridge",
+    "column": "gain_ft",
+    "from": 4500,
+    "to": 7000,
+    "why": "Impossible: 4,500 is below the net climb (8,815 summit - 3,228 trailhead = 5,587), and the route also climbs to Sharkfin Col (7,720), drops to about 7,000 on the Boston Glacier and regains the ridge, so the floor is ~6,300. The Mountaineers give 7,000 ft; Mountain Project says \"nearly 5,000\" (also below the floor). One published figure that clears the floor.",
+    "evidence": [
+     "https://www.mountaineers.org/activities/routes-places/boston-basin-area-review/forbidden-peak-north-ridge",
+     "https://www.mountainproject.com/route/108482756/north-ridge",
+     "USGS 3DEP 3,228 ft at the Boston Basin parking lot (batch B)"
+    ]
+   }
+  ],
+  "disputed": [
+   "fa: Mountain Project only (1952, Beckey, \"Schawbland\", Wilde - stored spelling Schwabland). No second source found. Not locked.",
+   "pitches 8 / length_m 518: no source gives either. Not locked.",
+   "dist_km 6: The Mountaineers list 8.8 mi (their Length is normally round trip, ~7.1 km one way); summit pin distMi 5 (8 km). 6 km clears the 3.83 km straight line. Not changed.",
+   "alpine_grade AD: unverified."
+  ],
+  "notes": "beta rewritten as one short passage of our own: it said \"Grade IV overall; the ridge itself goes at about 5.0\", contradicting the locked III and 5.6. Summit pin was 0.3 m from the GNIS point; set exactly and locked. Trailhead pin moved 42 m to the OSM parking lot used for the West Ridge in batch B (way 1110147162, USGS 3DEP 3,228 ft) - one method only, not locked. Stored gpx starts 197 m from the parking pin. Road replaced with an NPS-sourced object (Nov 9, 2026 winter closure at the MP 21 gate; Boston Basin parking at mile 22.5). Permit not locked: the NPS permits page (updated Oct 15, 2026) says backcountry permits are required year-round and Boston Basin permits must be picked up in person at Marblemount (self-issue when the center is closed from Oct 11), but no NPS page states the stored \"no permit for day climbs\"."
+ },
+ "wa_sharkfin_tower_southeast_ridge": {
+  "area": "wa_sharkfin_tower",
+  "set": {
+   "waypoints": [
+    {
+     "lat": 48.4801941,
+     "lng": -121.0796175,
+     "elev": 3228,
+     "name": "Boston Basin Trailhead",
+     "type": "Trailhead",
+     "distMi": 0,
+     "elevFt": 3228,
+     "directions": "Drive Cascade River Road about 21.7 miles from Marblemount to the unsigned Boston Basin pullout, at roughly 3,200-3,400 feet. The upper road is prone to washouts, so check its status before you go. Park at the small, unsigned roadside pullout; there's no trailhead sign. Camping in Boston Basin requires an NPS wilderness permit, since it's a quota area, arranged through Marblemount."
+    },
+    {
+     "lat": 48.492,
+     "lng": -121.065,
+     "elev": 5395,
+     "name": "Boston Basin",
+     "type": "Campsite",
+     "distMi": 3,
+     "elevFt": 5395,
+     "directions": "From the pullout, walk the old Diamond Mine roadbed for about three quarters of a mile, then turn sharp right onto the steep climbers' trail. It climbs through old growth across four stream crossings to treeline near 5,300 ft and the low camps on the heather benches. A higher camp sits farther up on a meadow knoll around 6,300 ft."
+    },
+    {
+     "lat": 48.4985,
+     "lng": -121.042,
+     "elev": 7600,
+     "name": "Base of southeast ridge",
+     "type": "Junction",
+     "distMi": 4,
+     "elevFt": 7600,
+     "directions": "From camp, skirt the climber's-left side of the Quien Sabe Glacier and gain it high, then rope up and traverse east along the top of the glacier until you are directly beneath the tower. Climb the single gully that breaks the rock band there (snow early season, loose scree later) to a terrace at the tower's base, then a short second gully to the notch. If your gully does not lead onto a terrace directly under the fin, you are in the wrong one."
+    },
+    {
+     "lat": 48.4996,
+     "lng": -121.0398,
+     "elev": 8120,
+     "name": "Sharkfin Tower summit",
+     "type": "Summit",
+     "distMi": 4.2,
+     "elevFt": 8120,
+     "directions": "From the notch, skirt the ridge on climber's right over large blocks and up a short dihedral to the crest, then follow the exposed crest and the upper blocks for about three pitches of low fifth class to the small summit."
+    },
+    {
+     "lat": 48.494755,
+     "lng": -121.063487,
+     "elev": 5300,
+     "name": "Boston Basin lower camp",
+     "type": "Campsite",
+     "distMi": 1.4
+    }
+   ],
+   "road": {
+    "name": "Cascade River Road (Forest Road 15)",
+    "status": "Winter closure: as of the park's Nov 9, 2026 update, cars stop at the gate at milepost 21; you may walk or ride a bike beyond it to the Boston Basin parking area at mile 22.5.",
+    "driveNote": "Leave SR 20 at Marblemount; the Boston Basin parking area sits at mile 22.5, shortly before the road ends at the Cascade Pass lot (mile 23.1). Expect pavement for roughly the first 10 miles and rough gravel after that. The park bars trailers past its boundary at mile 18 and any vehicle over 22 ft long or 8 ft wide, and advises against sedans and low-clearance cars.",
+    "seasonalGate": "In a normal year the road is open through to the Cascade Pass trailhead by the end of June (early July after a big snow year or storm damage); outside that season the park may gate it at different points for winter, maintenance or emergencies."
+   }
+  },
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/108338771/southeast-ridge",
+    "https://www.mountainproject.com/area/108338245/sharkfin-tower",
+    "https://stephabegg.com/?p=58447",
+    "https://listsofjohn.com/peak/171314",
+    "https://wikimili.com/en/Sharkfin_Tower",
+    "https://www.nps.gov/noca/planyourvisit/road-conditions.htm",
+    "https://www.nps.gov/noca/planyourvisit/cascade-river-road.htm",
+    "https://www.nps.gov/noca/planyourvisit/permits.htm",
+    "https://epqs.nationalmap.gov/v1/json",
+    "https://www.openstreetmap.org/way/1110147162"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.0",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108338771/southeast-ridge",
+      "fact": "5.0",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://stephabegg.com/?p=58447",
+      "fact": "Southeast Ridge 5.0, 3p",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "rock_grade",
+    "value": "5.0",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108338771/southeast-ridge",
+      "fact": "5.0",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://stephabegg.com/?p=58447",
+      "fact": "5.0",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 3,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108338771/southeast-ridge",
+      "fact": "3 pitches",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://stephabegg.com/?p=58447",
+      "fact": "3 pitches",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "road",
+    "value": {
+     "name": "Cascade River Road (Forest Road 15)",
+     "status": "Winter closure: as of the park's Nov 9, 2026 update, cars stop at the gate at milepost 21; you may walk or ride a bike beyond it to the Boston Basin parking area at mile 22.5.",
+     "driveNote": "Leave SR 20 at Marblemount; the Boston Basin parking area sits at mile 22.5, shortly before the road ends at the Cascade Pass lot (mile 23.1). Expect pavement for roughly the first 10 miles and rough gravel after that. The park bars trailers past its boundary at mile 18 and any vehicle over 22 ft long or 8 ft wide, and advises against sedans and low-clearance cars.",
+     "seasonalGate": "In a normal year the road is open through to the Cascade Pass trailhead by the end of June (early July after a big snow year or storm damage); outside that season the park may gate it at different points for winter, maintenance or emergencies."
+    },
+    "method": "official-1",
+    "level": "locked",
+    "expires_at": "2027-02-15T00:00:00Z",
+    "evidence": [
+     {
+      "url": "https://www.nps.gov/noca/planyourvisit/road-conditions.htm",
+      "fact": "CLOSED (partial), gate at MP21, winter seasonal closure, update 11/9/26; foot/bike past gate allowed",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     },
+     {
+      "url": "https://www.nps.gov/noca/planyourvisit/road-conditions.htm",
+      "fact": "paved to ~mile 10, then gravel; no vehicles over 22 ft; not for sedans/low-clearance",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     },
+     {
+      "url": "https://www.nps.gov/noca/planyourvisit/cascade-river-road.htm",
+      "fact": "23.1 mi to Cascade Pass TH; Boston Basin parking mile 22.5; paved to ~mile 10",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     },
+     {
+      "url": "https://www.nps.gov/noca/planyourvisit/cascade-river-road.htm",
+      "fact": "trailers barred past park boundary MP 18; over 22 ft long / 8 ft wide barred",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     },
+     {
+      "url": "https://www.nps.gov/noca/planyourvisit/cascade-river-road.htm",
+      "fact": "usually open to Cascade Pass TH by end of June; early July after heavy snow/storm damage",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_sharkfin_tower_southeast_ridge",
+    "column": "gain_ft",
+    "from": 4870,
+    "to": null,
+    "why": "Impossible: 4,870 is below the net climb from the 3,228 ft parking lot to any published summit figure (8,120 -> 4,892; 8,160 -> 4,932; USGS map 8,220 -> 4,992). No published trailhead-to-summit gain found (Abegg gives ~2,500 ft to lower camp only). Set to (agreed summit height - 3,228) once the owner decides high_point_ft; null until then.",
+    "evidence": [
+     "https://www.mountainproject.com/area/108338245/sharkfin-tower",
+     "https://stephabegg.com/?p=58447",
+     "https://listsofjohn.com/peak/171314",
+     "USGS 3DEP 3,228 ft at the Boston Basin parking lot (batch B)"
+    ]
+   }
+  ],
+  "disputed": [
+   "high_point_ft 8120: Beckey via Wikipedia 8,120; Mountain Project 8,160 and Abegg 8,160 (majority); ListsOfJohn USGS map figure 8,220 (LiDAR 8,319). Owner rules conflict (majority vs USGS map figure, and the map figure on an unnamed spire may be an interpolated contour). Not locked; the owner decides 8,160 vs 8,220.",
+   "summit pin: stored 48.4996,-121.0398 (= the Peakbagger coordinate quoted by Wikipedia; stored track ends on it) vs ListsOfJohn 48.50076,-121.04128, 169 m apart. USGS 3DEP (10 m) reads 8,161 ft at the stored pin and 8,095 ft at the LoJ point, but LoJ LiDAR puts the 8,319 ft spire top at its point, and the 10 m model rises along the ridge toward Boston Peak past the stored pin. No GNIS point (unofficial name). OSM Overpass unreachable this session. Not moved, not locked.",
+   "fa: Mountain Project (Wesley Grande, Jay Todd, Joseph Vance, Aug 1947) and Wikipedia (uncited infobox, same) are not shown independent; Abegg confirms only 1947 via the SE Ridge. Not locked.",
+   "length_m 61 and commitment II: Mountain Project only.",
+   "dist_km 9.3: summit pin distMi 4.2 (6.8 km); not 2x, above the 3.64 km straight line. Not changed."
+  ],
+  "notes": "Trailhead pin moved 42 m to the OSM parking lot used for the West Ridge in batch B (way 1110147162, USGS 3DEP 3,228 ft) - one method only, not locked. Road replaced with an NPS-sourced object (Nov 9, 2026 winter closure at the MP 21 gate; Boston Basin parking at mile 22.5). Permit not locked: the NPS permits page (updated Oct 15, 2026) says backcountry permits are required year-round and Boston Basin permits must be picked up in person at Marblemount (self-issue when the center is closed from Oct 11), but no NPS page states the stored \"no permit for day climbs\". overview text says \"(8,120 ft)\" - update it with the owner's high_point decision."
+ },
+ "wa_mount_torment_south_ridge": {
+  "area": "wa_mount_torment",
+  "set": {
+   "waypoints": [
+    {
+     "lat": 48.4801941,
+     "lng": -121.0796175,
+     "elev": 3228,
+     "name": "Boston Basin Trailhead",
+     "type": "Trailhead",
+     "distMi": 0,
+     "elevFt": 3228,
+     "directions": "Follow Cascade River Road (Forest Road 15) to its end at the Boston Basin trailhead, an unsigned pullout at about 3,200 feet, roughly 21.7 miles from Marblemount and directly across from Johannesburg Mountain. Park at the small roadside pullout. Register and pick up your permit through Marblemount before heading up."
+    },
+    {
+     "lat": 48.50132,
+     "lng": -121.06256,
+     "elev": 6248,
+     "name": "Boston Basin",
+     "type": "Campsite",
+     "distMi": 3,
+     "elevFt": 6248,
+     "directions": "Walk the old Diamond Mine roadbed about three quarters of a mile to a mile, then turn sharp right onto the steep climbers' trail. It switchbacks up through forest across four small creeks to treeline and the low camps around 5,300 ft, then continues up open slabs and tundra on the skier's right of Boston Creek to high camp near 6,200 to 6,400 ft."
+    },
+    {
+     "lat": 48.51,
+     "lng": -121.076,
+     "elev": 7400,
+     "name": "Base of south ridge",
+     "type": "Junction",
+     "distMi": 4.2,
+     "elevFt": 7400,
+     "directions": "Leave the trail and make a rising traverse northwest near the 6,200 ft contour beneath Forbidden Peak's south spur, crossing a prominent rock rib below the cliffs. Gain the Taboo Glacier on its climber's left and follow it up to the deep couloir breaking the rock band on the left; cross the bergschrund or moat and scramble about 100 ft of loose class 3-4 to the notch."
+    },
+    {
+     "lat": 48.5126,
+     "lng": -121.0768,
+     "elev": 8120,
+     "name": "Mount Torment summit",
+     "type": "Summit",
+     "distMi": 4.6,
+     "elevFt": 8120,
+     "directions": "Climb an open book angling left off the notch, turn right at its top to a ledge, and take a short second open book to the crest. Pass a steeper tower on sloping, exposed ledges, weave among towers continuing leftward on the southwest face, and finish on sustained fourth and low fifth-class granite to the summit."
+    },
+    {
+     "lat": 48.494755,
+     "lng": -121.063487,
+     "elev": 5300,
+     "name": "Boston Basin lower camp",
+     "type": "Campsite",
+     "distMi": 2.1
+    },
+    {
+     "lat": 48.499415,
+     "lng": -121.059455,
+     "elev": 6162,
+     "name": "Boston Creek crossing",
+     "type": "Water",
+     "distMi": 2.8
+    }
+   ],
+   "road": {
+    "name": "Cascade River Road (Forest Road 15)",
+    "status": "Winter closure: as of the park's Nov 9, 2026 update, cars stop at the gate at milepost 21; you may walk or ride a bike beyond it to the Boston Basin parking area at mile 22.5.",
+    "driveNote": "Leave SR 20 at Marblemount; the Boston Basin parking area sits at mile 22.5, shortly before the road ends at the Cascade Pass lot (mile 23.1). Expect pavement for roughly the first 10 miles and rough gravel after that. The park bars trailers past its boundary at mile 18 and any vehicle over 22 ft long or 8 ft wide, and advises against sedans and low-clearance cars.",
+    "seasonalGate": "In a normal year the road is open through to the Cascade Pass trailhead by the end of June (early July after a big snow year or storm damage); outside that season the park may gate it at different points for winter, maintenance or emergencies."
+   }
+  },
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/108312462/mount-torment",
+    "https://www.mountainproject.com/route/112057303/south-ridge",
+    "https://www.mountaineers.org/activities/routes-places/boston-basin-area-review/mount-torment-forbidden-peak-traverse",
+    "https://stephabegg.com/?p=8940",
+    "https://publications.americanalpineclub.org/articles/12195930103",
+    "https://listsofjohn.com/peak/48824",
+    "https://www.nps.gov/noca/planyourvisit/road-conditions.htm",
+    "https://www.nps.gov/noca/planyourvisit/cascade-river-road.htm",
+    "https://www.nps.gov/noca/planyourvisit/permits.htm",
+    "https://epqs.nationalmap.gov/v1/json",
+    "https://www.openstreetmap.org/way/1110147162"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.4",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112057303/south-ridge",
+      "fact": "5.4",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/boston-basin-area-review/mount-torment-forbidden-peak-traverse",
+      "fact": "Mount Torment, a Grade II, 5.4 rock climb",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "rock_grade",
+    "value": "5.4",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112057303/south-ridge",
+      "fact": "5.4",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/boston-basin-area-review/mount-torment-forbidden-peak-traverse",
+      "fact": "5.4",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 8120,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/area/108312462/mount-torment",
+      "fact": "Mount Torment 8,120 ft",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://stephabegg.com/?p=8940",
+      "fact": "Mt. Torment summit 8,120 ft",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://listsofjohn.com/peak/48824",
+      "fact": "USGS map figure 8,140 ft (within 20 ft; LiDAR 8,183)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "road",
+    "value": {
+     "name": "Cascade River Road (Forest Road 15)",
+     "status": "Winter closure: as of the park's Nov 9, 2026 update, cars stop at the gate at milepost 21; you may walk or ride a bike beyond it to the Boston Basin parking area at mile 22.5.",
+     "driveNote": "Leave SR 20 at Marblemount; the Boston Basin parking area sits at mile 22.5, shortly before the road ends at the Cascade Pass lot (mile 23.1). Expect pavement for roughly the first 10 miles and rough gravel after that. The park bars trailers past its boundary at mile 18 and any vehicle over 22 ft long or 8 ft wide, and advises against sedans and low-clearance cars.",
+     "seasonalGate": "In a normal year the road is open through to the Cascade Pass trailhead by the end of June (early July after a big snow year or storm damage); outside that season the park may gate it at different points for winter, maintenance or emergencies."
+    },
+    "method": "official-1",
+    "level": "locked",
+    "expires_at": "2027-02-15T00:00:00Z",
+    "evidence": [
+     {
+      "url": "https://www.nps.gov/noca/planyourvisit/road-conditions.htm",
+      "fact": "CLOSED (partial), gate at MP21, winter seasonal closure, update 11/9/26; foot/bike past gate allowed",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     },
+     {
+      "url": "https://www.nps.gov/noca/planyourvisit/road-conditions.htm",
+      "fact": "paved to ~mile 10, then gravel; no vehicles over 22 ft; not for sedans/low-clearance",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     },
+     {
+      "url": "https://www.nps.gov/noca/planyourvisit/cascade-river-road.htm",
+      "fact": "23.1 mi to Cascade Pass TH; Boston Basin parking mile 22.5; paved to ~mile 10",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     },
+     {
+      "url": "https://www.nps.gov/noca/planyourvisit/cascade-river-road.htm",
+      "fact": "trailers barred past park boundary MP 18; over 22 ft long / 8 ft wide barred",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     },
+     {
+      "url": "https://www.nps.gov/noca/planyourvisit/cascade-river-road.htm",
+      "fact": "usually open to Cascade Pass TH by end of June; early July after heavy snow/storm damage",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     }
+    ]
+   }
+  ],
+  "disputed": [
+   "commitment II: The Mountaineers Grade II (= stored); Mountain Project Grade III. Not locked.",
+   "pitches 4 / length_m 305: Mountain Project 4 pitches, 1,000 ft; The Mountaineers describe about 8 pitches to the summit. Not locked.",
+   "fa \"Ed Cooper and Walter Sellers, July 1958\": AAJ 1959 names Buck Seller and Edward Cooper (ascent July 26, 1958 by the southwest and south faces); Mountain Project \"Cooper and Sellers, 1958\". First names / spelling differ. Not locked.",
+   "summit pin 48.5126,-121.0768: 8 m from the USGS 3DEP high point (8,134 ft at 48.512546,-121.076719); ListsOfJohn gives 48.51205,-121.07778, 96 m away, where the model reads ~8,071 ft. No GNIS point. Kept, not locked (one method).",
+   "dist_km 4.8: summit pin distMi 4.6 (7.4 km); 4.8 km is above the 3.60 km straight line but looks like a partial leg. No published one-way figure. Not changed.",
+   "gain_ft 4900 passes the floor by 8 ft (8,120 - 3,228 = 4,892); no published figure. Not locked."
+  ],
+  "notes": "Trailhead pin moved 42 m to the OSM parking lot used for the West Ridge in batch B (way 1110147162, USGS 3DEP 3,228 ft) - one method only, not locked. Stored gpx (CalTopo-sourced per data_quality; kept) starts 246 m from the parking pin. Road replaced with an NPS-sourced object (Nov 9, 2026 winter closure at the MP 21 gate; Boston Basin parking at mile 22.5). Permit not locked: the NPS permits page (updated Oct 15, 2026) says backcountry permits are required year-round and Boston Basin permits must be picked up in person at Marblemount (self-issue when the center is closed from Oct 11), but no NPS page states the stored \"no permit for day climbs\"."
+ },
+ "wa_mount_torment_torment_forbidden_traverse": {
+  "area": "wa_mount_torment",
+  "set": {
+   "waypoints": [
+    {
+     "lat": 48.4801941,
+     "lng": -121.0796175,
+     "elev": 3228,
+     "name": "Boston Basin Trailhead",
+     "type": "Trailhead",
+     "distMi": 0,
+     "elevFt": 3228,
+     "directions": "Drive Cascade River Road to the Boston Basin trailhead pullout, at roughly 3,200 feet and about mile 22-23, directly across from Johannesburg Mountain. Park at the small roadside pullout. A North Cascades National Park backcountry permit, issued at the Wilderness Information Center in Marblemount, is required to camp in Boston Basin."
+    },
+    {
+     "lat": 48.50132,
+     "lng": -121.06256,
+     "elev": 6248,
+     "name": "Boston Basin",
+     "type": "Campsite",
+     "distMi": 3,
+     "elevFt": 6248,
+     "directions": "Follow the old mining road about three quarters of a mile to the old mine site, then take the sharp right onto the steep, unmaintained climbers' trail. It switchbacks up through forest with four creek crossings to treeline around 5,300 ft, then eases across heather benches and talus into Boston Basin, with high camp at roughly 6,200 to 6,400 ft."
+    },
+    {
+     "lat": 48.5126,
+     "lng": -121.0768,
+     "elev": 8120,
+     "name": "Mount Torment summit",
+     "note": "Leave packs at the notch just below the top, tag the summit, and downclimb back to the notch.",
+     "type": "Junction",
+     "distMi": null,
+     "directions": "Traverse northwest across the upper basin to the toe of the Taboo Glacier, rope up, and climb it and the east couloir past the moat to the notch at the base of Torment's South Ridge. Climb the ridge to Torment's summit."
+    },
+    {
+     "lat": 48.5116521,
+     "lng": -121.0584131,
+     "elev": 8815,
+     "name": "Forbidden Peak summit",
+     "type": "Summit",
+     "distMi": 6,
+     "elevFt": 8815,
+     "directions": "From the notch below Torment's summit, rappel onto the Forbidden Glacier, cross it to the saddle, and follow the Sidewalk in the Sky crest to the West Ridge Notch and up Forbidden's West Ridge to the summit."
+    }
+   ],
+   "road": {
+    "name": "Cascade River Road (Forest Road 15)",
+    "status": "Winter closure: as of the park's Nov 9, 2026 update, cars stop at the gate at milepost 21; you may walk or ride a bike beyond it to the Boston Basin parking area at mile 22.5.",
+    "driveNote": "Leave SR 20 at Marblemount; the Boston Basin parking area sits at mile 22.5, shortly before the road ends at the Cascade Pass lot (mile 23.1). Expect pavement for roughly the first 10 miles and rough gravel after that. The park bars trailers past its boundary at mile 18 and any vehicle over 22 ft long or 8 ft wide, and advises against sedans and low-clearance cars.",
+    "seasonalGate": "In a normal year the road is open through to the Cascade Pass trailhead by the end of June (early July after a big snow year or storm damage); outside that season the park may gate it at different points for winter, maintenance or emergencies."
+   }
+  },
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/106450578/forbidden-peak",
+    "https://www.mountainproject.com/area/108312462/mount-torment",
+    "https://www.mountainproject.com/route/108312467/torment-forbidden-traverse",
+    "https://www.mountaineers.org/activities/routes-places/boston-basin-area-review/mount-torment-forbidden-peak-traverse",
+    "https://stephabegg.com/?p=8940",
+    "https://stephabegg.com/?p=8697",
+    "https://pages.uoregon.edu/dbelitz/db_virtual/db_climbing/peaks/forbidden_pk.html",
+    "https://publications.americanalpineclub.org/articles/12195930103",
+    "https://www.nps.gov/noca/planyourvisit/road-conditions.htm",
+    "https://www.nps.gov/noca/planyourvisit/cascade-river-road.htm",
+    "https://www.nps.gov/noca/planyourvisit/permits.htm",
+    "https://epqs.nationalmap.gov/v1/json",
+    "https://www.openstreetmap.org/way/1110147162"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.6",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108312467/torment-forbidden-traverse",
+      "fact": "5.6",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/boston-basin-area-review/mount-torment-forbidden-peak-traverse",
+      "fact": "Forbidden Peak, a Grade IV, 5.6 rock climb",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "rock_grade",
+    "value": "5.6",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108312467/torment-forbidden-traverse",
+      "fact": "5.6",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/boston-basin-area-review/mount-torment-forbidden-peak-traverse",
+      "fact": "5.6",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "commitment",
+    "value": "IV",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108312467/torment-forbidden-traverse",
+      "fact": "Grade IV",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/boston-basin-area-review/mount-torment-forbidden-peak-traverse",
+      "fact": "Grade IV",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 8815,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/area/106450578/forbidden-peak",
+      "fact": "Forbidden Peak 8,815 ft",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://stephabegg.com/?p=8697",
+      "fact": "summit 8,815 ft (reused from batch B)",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://pages.uoregon.edu/dbelitz/db_virtual/db_climbing/peaks/forbidden_pk.html",
+      "fact": "8,815 ft (reused from batch B)",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/boston-basin-area-review/mount-torment-forbidden-peak-traverse",
+      "fact": "High Point: 8,815 ft",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "waypoints/Forbidden Peak summit",
+    "value": {
+     "name": "Forbidden Peak summit",
+     "lat": 48.5116521,
+     "lng": -121.0584131
+    },
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "measurement": "USGS GNIS 1519683 'Forbidden Peak' summit point, DomesticNames_WA (edited 2026-08-17) - reused from batch B lock on wa_forbidden_peak_west_ridge",
+      "fact": "48.5116521,-121.0584131",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "measurement": "USGS 3DEP elevation at this point 8,805 ft, 10 ft below the published 8,815 ft summit: the point is on the top",
+      "fact": "8805 ft",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "road",
+    "value": {
+     "name": "Cascade River Road (Forest Road 15)",
+     "status": "Winter closure: as of the park's Nov 9, 2026 update, cars stop at the gate at milepost 21; you may walk or ride a bike beyond it to the Boston Basin parking area at mile 22.5.",
+     "driveNote": "Leave SR 20 at Marblemount; the Boston Basin parking area sits at mile 22.5, shortly before the road ends at the Cascade Pass lot (mile 23.1). Expect pavement for roughly the first 10 miles and rough gravel after that. The park bars trailers past its boundary at mile 18 and any vehicle over 22 ft long or 8 ft wide, and advises against sedans and low-clearance cars.",
+     "seasonalGate": "In a normal year the road is open through to the Cascade Pass trailhead by the end of June (early July after a big snow year or storm damage); outside that season the park may gate it at different points for winter, maintenance or emergencies."
+    },
+    "method": "official-1",
+    "level": "locked",
+    "expires_at": "2027-02-15T00:00:00Z",
+    "evidence": [
+     {
+      "url": "https://www.nps.gov/noca/planyourvisit/road-conditions.htm",
+      "fact": "CLOSED (partial), gate at MP21, winter seasonal closure, update 11/9/26; foot/bike past gate allowed",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     },
+     {
+      "url": "https://www.nps.gov/noca/planyourvisit/road-conditions.htm",
+      "fact": "paved to ~mile 10, then gravel; no vehicles over 22 ft; not for sedans/low-clearance",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     },
+     {
+      "url": "https://www.nps.gov/noca/planyourvisit/cascade-river-road.htm",
+      "fact": "23.1 mi to Cascade Pass TH; Boston Basin parking mile 22.5; paved to ~mile 10",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     },
+     {
+      "url": "https://www.nps.gov/noca/planyourvisit/cascade-river-road.htm",
+      "fact": "trailers barred past park boundary MP 18; over 22 ft long / 8 ft wide barred",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     },
+     {
+      "url": "https://www.nps.gov/noca/planyourvisit/cascade-river-road.htm",
+      "fact": "usually open to Cascade Pass TH by end of June; early July after heavy snow/storm damage",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_mount_torment_torment_forbidden_traverse",
+    "column": "ice_grade",
+    "from": "AI2-AI3 (variable depending on seasonal snow/ice conditions)",
+    "to": null,
+    "why": "Shape: a sentence in a grade column, and no source gives a WI/AI grade - Mountain Project rates the snow traverse \"Steep Snow\" (icy front-pointing to step-kicking). Keep that in prose, not ice_grade.",
+    "evidence": [
+     "https://www.mountainproject.com/route/108312467/torment-forbidden-traverse"
+    ]
+   }
+  ],
+  "disputed": [
+   "fa \"Ed Cooper and Walt Sellers, July 1958\": AAJ 1959 (Cooper) names Buck Seller for the July 26, 1958 Torment ascent but does not name the traverse partner or call it a first; Mountain Project says Ed Cooper and Walt Sellers, July 1958. Not locked; overview repeats the claim.",
+   "length_m 1609 (1 mile): Abegg about 1 mile between summits; AAJ about 1.5 miles of ridge. Not locked.",
+   "pitches 6: no source. dist_km 4.8: Forbidden summit pin distMi 6 (9.7 km); above the 3.83 km straight line. Not changed.",
+   "gain_ft 6000: Mountain Project lists \"6000 ft\" without saying gain or length; clears the 5,587 floor. Not locked.",
+   "beta calls the Forbidden West Ridge \"5.7\"; it is locked at 5.6 (batch B). Abegg titles it 5.7. Left."
+  ],
+  "notes": "Two Summit pins: the Torment summit pin (passed on the way) changed to type Junction so the route has one Summit (Forbidden, the high point and finish). Forbidden summit pin moved 41 m to the GNIS point and locked. Trailhead pin moved 42 m to the OSM parking lot used for the West Ridge in batch B (way 1110147162, USGS 3DEP 3,228 ft) - one method only, not locked. Road replaced with an NPS-sourced object (Nov 9, 2026 winter closure at the MP 21 gate; Boston Basin parking at mile 22.5). Permit not locked: the NPS permits page (updated Oct 15, 2026) says backcountry permits are required year-round and Boston Basin permits must be picked up in person at Marblemount (self-issue when the center is closed from Oct 11), but no NPS page states the stored \"no permit for day climbs\"."
+ }
+}

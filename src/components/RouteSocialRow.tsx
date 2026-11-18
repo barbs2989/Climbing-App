@@ -5,6 +5,7 @@ import { climbNoun } from "../../lib/discLabels.js";
 import { clickable } from "../../lib/clickable";
 import CountUp from "./CountUp.tsx";
 import Av from "./Av.tsx";
+import { scrollBelowPinned } from "../../lib/pinnedTop.js";
 
 /** One climber the presence channel names (visible, signed in). */
 export interface SocialViewer {
@@ -60,7 +61,7 @@ export default function RouteSocialRow({route,variant,presence,dbCrews,savedCoun
   if(lists>0)chips.push({n:lists,label:" climber"+(lists!==1?"s":"")+" saved it"});
   if(!(vw||viewers.length||chips.length))return null;
   /* "N climbers logged it" and "N in the last 45 days" are about the trip reports, not partners — they open them; the rest of the strip still goes to Partners. */
-  const goFor=function(c: Chip){return c.plain?{}:c.reports?clickable(function(){setTab("conditions");setTimeout(function(){const el=document.getElementById("trip-reports-section");if(el&&el.scrollIntoView)el.scrollIntoView({behavior:"smooth",block:"start"});},60);}):clickable(()=>setTab("partners"));};
+  const goFor=function(c: Chip){return c.plain?{}:c.reports?clickable(function(){setTab("conditions");setTimeout(function(){const el=document.getElementById("trip-reports-section");scrollBelowPinned(el,{behavior:"smooth"});},60);}):clickable(()=>setTab("partners"));};
   const avatars=viewers.slice(0,4).map(function(vwr,i){/* A signed-in viewer opens THEIR OWN profile, by uid. It used to open a copy of the first example climber with the viewer's name pasted on -- their location, grades and disciplines -- under an id nothing could message. A signed-out viewer has no profile to open. */const _vid=realProfileId(vwr.id);return <span key={"v"+i} {...clickable(_vid?function(e: {stopPropagation: () => void}){e.stopPropagation();if(onViewProfile)onViewProfile({id:_vid,name:vwr.name||"Climber",avatar:vwr.avatar||FALLBACK_AV,_real:true});}:undefined)} title={(vwr.name||"A climber")+" is viewing this "+climbNoun(route)+" now"+(_vid?tx(" — tap to view their profile"):"")} style={{cursor:_vid?"pointer":"default",display:"inline-flex",flexShrink:0}}><Av src={vwr.avatar} size={22}/></span>;});
   if(variant==="header"){
     /* The header strip: the same cells as the facts grid above it (value over label, a rule between cells, a rule beneath), so the two read as one block. */

@@ -1,0 +1,77 @@
+{
+ "total": 118,
+ "byType": {
+  "Trailhead": 90,
+  "Summit": 5,
+  "Junction": 29,
+  "Topout": 54,
+  "Crag": 42,
+  "climb": 13,
+  "Crag/route start": 3,
+  "Base": 14,
+  "crag_base": 2,
+  "base": 1,
+  "crag": 1,
+  "Landmark": 1,
+  "crag base": 1,
+  "area/route reference point": 1
+ },
+ "summitOnCrag": [
+  {
+   "id": "ca_castle_dome_4th_class_route",
+   "name": "Castle Dome - 4th class route",
+   "disc": "trad",
+   "area": "Castle Dome",
+   "areaType": "crag",
+   "summitPins": [
+    "Castle Dome"
+   ],
+   "trailhead": true
+  },
+  {
+   "id": "ca_mt_baldy_trail_aka_south_ridge_or_bear_flat_trail",
+   "name": "Mt. Baldy Trail (aka South Ridge or Bear Flat Trail)",
+   "disc": "toprope",
+   "area": "Mount San Antonio (Mt. Baldy)",
+   "areaType": "crag",
+   "summitPins": [
+    "Mount San Antonio (Mt. Baldy) summit"
+   ],
+   "trailhead": false
+  },
+  {
+   "id": "ny_cascade_mountain_slide",
+   "name": "Cascade Mountain Slide",
+   "disc": "trad",
+   "area": "Cascade Mountain",
+   "areaType": "crag",
+   "summitPins": [
+    "Cascade Mountain summit"
+   ],
+   "trailhead": false
+  },
+  {
+   "id": "ny_trap_dike_summer",
+   "name": "Trap Dike (summer)",
+   "disc": "trad",
+   "area": "Mt Colden",
+   "areaType": "crag",
+   "summitPins": [
+    "Mt Colden summit"
+   ],
+   "trailhead": true
+  },
+  {
+   "id": "wa_south_face_of_the_mole",
+   "name": "South Face",
+   "disc": "trad",
+   "area": "Hook Creek Drainage",
+   "areaType": "crag",
+   "summitPins": [
+    "Edward Peak (The Mole) summit"
+   ],
+   "trailhead": false
+  }
+ ],
+ "trailheadAndSummit": []
+}

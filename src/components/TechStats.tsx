@@ -14,7 +14,8 @@ import CragFactSection from "./CragFactSection.tsx";
 import CardHead from "./CardHead.tsx";
 import EditIconButton from "./EditIconButton.tsx";
 import CountUp from "./CountUp.tsx";
-import { AREA_FACT_FIELD } from "../../lib/cragFactField.js";
+import { AREA_FACT_FIELD, FACT_FIELD } from "../../lib/cragFactField.js";
+import { fieldScope, scopeCtx } from "../../lib/fieldScope.js";
 import { usableFa } from "../../lib/fa";
 import { climbNoun } from "../../lib/discLabels.js";
 import type { CragFact } from "./CragFactRows.tsx";
@@ -125,7 +126,8 @@ export default function TechStats({route,onEdit,part,onEditArea}: TechStatsProps
     :["Distance",uDist(distKm),C.blue];
   let stats: StatTile[],note: string|null;
   if(disc==="bouldering"){
-    stats=[["Crux grade",cruxGrade(route.cruxGrade||route.grade),C.amber]];
+    /* A boulder problem has ONE grade, already in the header pill: no "Crux grade" tile (owner, 2026-11-18). */
+    stats=[];
     if(distTile)stats.unshift(distTile);
     if(route.routeFt)stats.unshift(["Boulder height",uElev(route.routeFt),C.orange]);
     note="Height is the boulder itself. The distance is just the walk in and out — there is no meaningful elevation gain to a single boulder."+rtNote+"";
@@ -195,7 +197,6 @@ export default function TechStats({route,onEdit,part,onEditArea}: TechStatsProps
      Project and theCrag print a crag's rock: the owner removed the mapped qualifier 2026-10-15. */
   const _rk=routeRock(route);
   if(_rk)stats.push(["Rock",_rk.label,C.textSub]);
-  if(route.crux)stats.push(["Crux",String(route.crux),C.textSub]);
   /* ROUTE FACTS. On a crag discipline (sport, trad, toprope, aid, bouldering) this card is the ONE
      place the guidebook facts live, so every crag route reads the same set in the same order rather
      than each discipline growing its own box. Every row is gated on its own value: a bare route —
@@ -212,6 +213,10 @@ export default function TechStats({route,onEdit,part,onEditArea}: TechStatsProps
   const _alt=(function(a: unknown){return (Array.isArray(a)?a:(a?[a]:[])).map(function(x: unknown){return String(x==null?"":x).trim();}).filter(Boolean);})(route.altNames!=null?route.altNames:route.alt_names);
   if(_alt.length)facts.push(["Also called",_alt.join(", ")]);
   const _vars=(Array.isArray(route.variations)?route.variations:[]).map(function(v){if(v==null)return "";if(typeof v!=="object")return String(v).trim();return [v.name,v.grade].filter(Boolean).join(" · ")+(v.note?" — "+v.note:"");}).filter(Boolean);
+  /* CRUX is `routes.crux`: WHERE the hardest move or section is ("bulge about halfway up", "first bolt"), as the
+     catalog holds it and as Mountain Project and theCrag describe it, in words. A sentence, so a facts row, not a stat
+     tile; the difficulty itself is the grade (the Crux grade tile). Owner, 2026-11-18. */
+  if(route.crux)facts.push(["Crux",String(route.crux)]);
   if(_vars.length)facts.push(["Variations",<>{_vars.map(function(v,i){return <div key={i} style={{marginTop:i?3:0}}>{v}</div>;})}</>]);
   if(crag){
     /* The route's own area (a wall, crag or peak): crag-wide facts are read from it and, with onEditArea, added to it. */
@@ -221,11 +226,18 @@ export default function TechStats({route,onEdit,part,onEditArea}: TechStatsProps
        anchor — a pitch's own anchor stays on its ROUTE BREAKDOWN row. Style is NOT here: `features`
        already draws as the tag chips (RouteTagRow), and a row would print it twice. */
     /* A multipitch crag line whose belays differ says so: the top anchor, then each kind by pitch. */
-    const _anc=String(route.anchor||"").trim();const _pAnc=disc!=="bouldering"?pitchAnchorSummary(route):null;if(disc!=="bouldering"&&((_anc&&_anc.length<=80)||_pAnc))facts.push(["Anchor",_pAnc?((_anc&&_anc.length<=80?_anc+" at the top · ":"")+"by pitch: "+pitchAnchorText(_pAnc)):_anc]);const _longOnFile: string[]=[];if(_anc.length>80)_longOnFile.push("Anchor");
+    /* On a crag page the anchor, wet-rock, rock-quality and fixed-gear facts sit in their own section card
+       (GEAR & SAFETY, ROCK & SEASON), as LOCATION does in WHERE IT STARTS, so none is ever too long to show
+       there. Capped, a long stated value was counted as on file (no "Not on file yet") and drawn nowhere, so a
+       climber could neither read it nor see that it existed (owner, 2026-11-18). */
+    const _factSec=CRAG_CATS.includes(disc);
+    const _anc=String(route.anchor||"").trim();const _pAnc=disc!=="bouldering"?pitchAnchorSummary(route):null;const _ancOk=!!_anc&&(_factSec||_anc.length<=80);if(disc!=="bouldering"&&(_ancOk||_pAnc))facts.push(["Anchor",_pAnc?((_ancOk?_anc+" at the top · ":"")+"by pitch: "+pitchAnchorText(_pAnc)):_anc]);const _longOnFile: string[]=[];if(!_factSec&&_anc.length>80)_longOnFile.push("Anchor");
     /* LOCATION is `location` (0243): where the line starts on its wall, which is how a climber finds it
        at the base. First among the facts, because it is the first thing needed at the crag. */
     const _loc=String(route.location||"").trim();const _locAll=CRAG_CATS.includes(disc);/* on a crag it has a section of its own, so it is never too long to show */if(_loc&&(_locAll||_loc.length<=160))facts.unshift(["Location",_loc]);if(!_locAll&&_loc.length>160)_longOnFile.push("Location");
-    const _dsc=String(route.descent||"").trim();if(_dsc&&_dsc.length<=140)facts.push(["Descent",_dsc]);
+    /* A short descent is a fact line only where the page draws no DESCENT section (a boulder): wherever the
+       section renders (lib/fieldScope.js, as RoutePlanTab gates it) it carries the descent whole, at any length. */
+    const _dsc=String(route.descent||"").trim();if(_dsc&&_dsc.length<=140&&!fieldScope("descentText",scopeCtx(route,disc)))facts.push(["Descent",_dsc]);
     /* SUN is `sun` (0247): when this wall is in sun or shade, as stated for it. Where it exists it
        replaces the sun line computed from the aspect — the stated hours are the better fact. */
     const _sun=String(route.sun||"").trim();
@@ -233,7 +245,7 @@ export default function TechStats({route,onEdit,part,onEditArea}: TechStatsProps
     if(_sun)facts.push(["Sun",_sun]);
     /* WET, ROCK QUALITY and FIXED GEAR (0247): seepage after rain, loose or polished rock, and the
        pitons/bolt ladders already in place. Short stated values, so each is a facts row, not a tile. */
-    [["Wet",route.wet],["Rock quality",route.rockQuality],["Fixed gear",route.fixedGear]].forEach(function(f){const v=String(f[1]||"").trim();if(v&&v.length<=160)facts.push([f[0] as string,v]);else if(v)_longOnFile.push(f[0] as string);});
+    [["Wet",route.wet],["Rock quality",route.rockQuality],["Fixed gear",route.fixedGear]].forEach(function(f){const v=String(f[1]||"").trim();if(v&&(_factSec||v.length<=160))facts.push([f[0] as string,v]);else if(v)_longOnFile.push(f[0] as string);});
     /* SEASON is the crag's, wall's or peak's unless the route states its own (owner, 2026-11-13: consolidate
        to the crag, sub-area or peak). The route header already shows it (routeSeasonShort); the card said
        "Not on file yet" beside it on 100% of crag routes. Up to four ancestors, as the header reads it. */
@@ -248,11 +260,11 @@ export default function TechStats({route,onEdit,part,onEditArea}: TechStatsProps
        pertain to the discipline — no bolts on a boulder, no landing on a sport line. A missing fact
        reads "Not on file yet", never "unknown" or a guess, and one link under the list opens the editor. */
     const _have=new Set(facts.map(function(f){return f[0];}).concat(stats.map(function(t){return t[0];})).concat(_longOnFile));
-    /* Each of these is a field the contribute form offers for this discipline (its DROP rules match),
-       so every "Not on file yet" can actually be filled. Descent is not here: the DESCENT section
+    /* Each of these is a field the contribute form offers for this discipline — filtered through
+       lib/fieldScope.js, the sheet's own rule, so every "Not on file yet" can actually be filled. Descent is not here: the DESCENT section
        below carries its own placeholder. */
     const _want=disc==="bouldering"?["Location","Landing","Crash pads","Start","Aspect","Season","Rock quality","Wet"]
-      :["Location"].concat(disc==="toprope"?[]:["Pitches",disc==="aid"?"Wall height":"Route length"]).concat(disc==="sport"?["Bolts"]:[]).concat(disc==="sport"||disc==="trad"?["Protection"]:[]).concat(["Anchor"]).concat(disc==="toprope"?[]:["Rope"]).concat(["Aspect","Season","Rock quality","Wet"]).concat(disc==="trad"||disc==="aid"?["Fixed gear"]:[]);
+      :["Location"].concat(disc==="toprope"?[]:["Pitches",disc==="aid"?"Wall height":"Route length"]).concat(disc==="sport"?["Bolts"]:[]).concat(disc==="sport"||disc==="trad"?["Protection"]:[]).concat(["Anchor"]).concat(disc==="toprope"?[]:["Rope"]).concat(["Aspect","Season","Rock quality","Wet"]).concat(disc==="trad"||disc==="aid"?["Fixed gear"]:[]).filter(function(k){const fk=(FACT_FIELD as Record<string,string>)[k];return !fk||fieldScope(fk,scopeCtx(route,disc));});
     /* A missing crag-wide fact (AREA_FACT_FIELD) is marked with the area's noun, so its Add edits the area once
        for every route on it; the rest stay the route's. All of them render on ONE "Not on file yet" line. */
     _want.forEach(function(k){if(_have.has(k))return;facts.push([k,<span style={{color:C.textMuted,fontStyle:"italic"}}>Not on file yet</span>,onEditArea&&(AREA_FACT_FIELD as Record<string,string>)[k]?_arNoun:true]);});

@@ -12,8 +12,10 @@ export interface CragLocationCardProps {
   };
   /** The crag's area: its coordinate is the CRAG point. */
   mtn?: { lat?: number | string | null; lng?: number | string | null } | null;
-  /** Opens the parking-pin editor; without it there is no Add parking button. */
+  /** Opens the parking-pin editor — the CRAG's pin where the crag can be edited (owner, 2026-11-18); without it there is no Add parking button. */
   onEditParking?: (() => void) | null;
+  /** Opens the ROUTE's own pin editor. The pencil uses it when the pin shown is the route's own, not the crag's: trailheadPoint() reads a route pin first, so editing the crag pin would not move what this card shows. */
+  onEditRoutePin?: (() => void) | null;
 }
 
 /** WHERE THE CLIMBING IS, AND WHERE YOU PARK — the two places a crag visit needs, side by side under
@@ -31,7 +33,7 @@ export interface CragLocationCardProps {
  *
  * Reads `C` at render time. Moved verbatim from RouteDetail.jsx; only the types were added.
  */
-export default function CragLocationCard({route,mtn,onEditParking}: CragLocationCardProps){
+export default function CragLocationCard({route,mtn,onEditParking,onEditRoutePin}: CragLocationCardProps){
   const crag=(mtn&&mtn.lat!=null&&mtn.lng!=null&&mtn.lat!==""&&mtn.lng!==""&&isFinite(Number(mtn.lat))&&isFinite(Number(mtn.lng)))?{lat:Number(mtn.lat),lng:Number(mtn.lng)}:null;
   const tp=trailheadPoint(route);
   const park=tp?{lat:Number(tp.lat),lng:Number(tp.lng),name:tp.name}:null;
@@ -54,7 +56,7 @@ export default function CragLocationCard({route,mtn,onEditParking}: CragLocation
   const linkSt: CSSProperties={flex:"1 1 0",display:"flex",alignItems:"center",justifyContent:"center",boxSizing:"border-box",minHeight:44,padding:"8px 10px",borderRadius:8,border:"1px solid "+C.greenDim,background:C.greenBg,color:C.green,fontSize:12.5,fontWeight:700,textDecoration:"none",whiteSpace:"nowrap"};
   return <div style={{background:C.surface,borderRadius:12,padding:"12px 14px",border:"1px solid "+C.border,marginTop:10,marginBottom:12}}>
     {row("CRAG",C.orange,null,crag?<CopyCoordButton lat={crag.lat} lng={crag.lng} what="crag"/>:<div style={{fontSize:11.5,color:C.textMuted}}>No crag coordinates on file yet.</div>)}
-    {row("PARKING",C.green,park&&park.name&&park.name!=="Trailhead"?park.name:null,park?<>{note&&parkIsCrag?<div style={{fontSize:12,color:C.textSub,lineHeight:1.5,marginBottom:6}}>{note}</div>:null}{dir?<div style={{fontSize:12,color:C.textSub,lineHeight:1.5,marginBottom:6}}>{dir}</div>:null}<CopyCoordButton lat={park.lat} lng={park.lng} what="parking"/>{note&&!parkIsCrag?<div style={{fontSize:12,color:C.textSub,lineHeight:1.5,marginTop:8}}><span style={{fontWeight:700,color:C.text}}>{"Crag-wide parking — "}</span>{note}</div>:null}</>:note?<><div style={{fontSize:12,color:C.textSub,lineHeight:1.5}}>{note}</div>{onEditParking?<button onClick={onEditParking} style={addPin}>Add the pin</button>:null}</>:<div style={{display:"flex",alignItems:"center",justifyContent:"space-between",gap:8}}><div style={{fontSize:11.5,color:C.textMuted,lineHeight:1.45}}>No parking spot on file yet.</div>{onEditParking?<button onClick={onEditParking} style={addPin}>Add parking</button>:null}</div>,park&&onEditParking?<EditIconButton onClick={onEditParking} title="Edit the parking pin"/>:null)}
+    {row("PARKING",C.green,park&&park.name&&park.name!=="Trailhead"?park.name:null,park?<>{note&&parkIsCrag?<div style={{fontSize:12,color:C.textSub,lineHeight:1.5,marginBottom:6}}>{note}</div>:null}{dir?<div style={{fontSize:12,color:C.textSub,lineHeight:1.5,marginBottom:6}}>{dir}</div>:null}<CopyCoordButton lat={park.lat} lng={park.lng} what="parking"/>{note&&!parkIsCrag?<div style={{fontSize:12,color:C.textSub,lineHeight:1.5,marginTop:8}}><span style={{fontWeight:700,color:C.text}}>{"Crag-wide parking — "}</span>{note}</div>:null}</>:note?<><div style={{fontSize:12,color:C.textSub,lineHeight:1.5}}>{note}</div>{onEditParking?<button onClick={onEditParking} style={addPin}>Add the pin</button>:null}</>:<div style={{display:"flex",alignItems:"center",justifyContent:"space-between",gap:8}}><div style={{fontSize:11.5,color:C.textMuted,lineHeight:1.45}}>No parking spot on file yet.</div>{onEditParking?<button onClick={onEditParking} style={addPin}>Add parking</button>:null}</div>,park&&onEditParking?<EditIconButton onClick={!parkIsCrag&&onEditRoutePin?onEditRoutePin:onEditParking} title="Edit the parking pin"/>:null)}
     {dest?<div>
       <div style={{...SUB_LABEL,marginBottom:5}}>{park?"DIRECTIONS TO PARKING":"DIRECTIONS"}</div>
       {park?null:<div style={{fontSize:11.5,color:C.textMuted,lineHeight:1.45,marginBottom:6}}>{note?"No parking pin on file yet, so these go to the crag itself — the note above says where climbers park.":"No parking spot on file, so these go to the crag itself — your maps app will stop at the nearest road, which may not be where climbers park."}</div>}

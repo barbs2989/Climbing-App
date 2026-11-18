@@ -1,0 +1,1446 @@
+[
+ {
+  "id": "wa_colchuck_peak_northeast_gully",
+  "name": "Northeast Gully",
+  "discipline": "alpine",
+  "grade": null,
+  "verdict": "SUMMIT_ONLY",
+  "state": "wa",
+  "peak": {
+   "id": "wa_colchuck_peak",
+   "name": "Colchuck Peak",
+   "lat": 47.478348,
+   "lng": -120.846468,
+   "elevation_ft": 8705,
+   "region": "Washington",
+   "path": "usa.washington.wa_centraleast.wa_stuart_range.wa_colchuck_peak"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [
+   {
+    "route": "wa_colchuck_peak_colchuck_glacier",
+    "name": "Stuart Lake Trailhead"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Stuart Lake Trailhead",
+    "lat": 47.527806,
+    "lng": -120.820515,
+    "km": 5.8
+   },
+   {
+    "src": "USFS",
+    "name": "Eightmile Trailhead",
+    "lat": 47.536016,
+    "lng": -120.814025,
+    "km": 6.9
+   },
+   {
+    "src": "USFS",
+    "name": "Esmeralda Trailhead",
+    "lat": 47.436706,
+    "lng": -120.936915,
+    "km": 8.2
+   },
+   {
+    "src": "USFS",
+    "name": "Iron Peak Trailhead",
+    "lat": 47.421583,
+    "lng": -120.937341,
+    "km": 9.3
+   },
+   {
+    "src": "USFS",
+    "name": "Beverly Bean Trailhead",
+    "lat": 47.389302,
+    "lng": -120.872266,
+    "km": 10.1
+   },
+   {
+    "src": "USFS",
+    "name": "Fourth Of July Trailhead",
+    "lat": 47.578106,
+    "lng": -120.796015,
+    "km": 11.7
+   },
+   {
+    "src": "USFS",
+    "name": "Snow Lakes Trailhead",
+    "lat": 47.544106,
+    "lng": -120.709515,
+    "km": 12.6
+   },
+   {
+    "src": "USFS",
+    "name": "Stafford Creek Trailhead",
+    "lat": 47.365806,
+    "lng": -120.803615,
+    "km": 12.9
+   },
+   {
+    "src": "USFS",
+    "name": "Ingalls Creek Trailhead",
+    "lat": 47.462906,
+    "lng": -120.673025,
+    "km": 13.1
+   },
+   {
+    "src": "USFS",
+    "name": "Miller-bear Trailhead",
+    "lat": 47.368606,
+    "lng": -120.784615,
+    "km": 13.1
+   },
+   {
+    "src": "USFS",
+    "name": "Chatter Creek Trailhead",
+    "lat": 47.608249,
+    "lng": -120.881514,
+    "km": 14.7
+   },
+   {
+    "src": "USFS",
+    "name": "Icicle Gorge Trailhead",
+    "lat": 47.607806,
+    "lng": -120.895025,
+    "km": 14.8
+   },
+   {
+    "src": "USFS",
+    "name": "Jack Trout Trailhead",
+    "lat": 47.606506,
+    "lng": -120.916025,
+    "km": 15.2
+   },
+   {
+    "src": "USFS",
+    "name": "Icicle Ridge Trailhead",
+    "lat": 47.568919,
+    "lng": -120.680113,
+    "km": 16
+   },
+   {
+    "src": "USFS",
+    "name": "Penstock Trailhead",
+    "lat": 47.586749,
+    "lng": -120.706609,
+    "km": 16
+   }
+  ],
+  "firstPass": {
+   "why": "held: agent flagged the identification as inferred/weak",
+   "trailhead": {
+    "name": "Stuart Lake Trailhead (Eightmile Rd, FR 7601)",
+    "identifiedBy": {
+     "kind": "page",
+     "url": "https://www.mountaineers.org/activities/routes-places/enchantments-area-review/colchuck-dragontail-peaks",
+     "fact": "Colchuck terrain approached via Stuart Lake Trail to Colchuck Lake; trailhead 3,400 ft, Eightmile Road FR 7601"
+    },
+    "placements": [
+     {
+      "source": "USFS",
+      "name": "Stuart Lake Trailhead",
+      "lat": 47.527806,
+      "lng": -120.820515,
+      "url": ""
+     },
+     {
+      "source": "WTA",
+      "name": "Colchuck Lake hike trailhead",
+      "lat": 47.5277,
+      "lng": -120.821,
+      "url": "https://www.wta.org/go-hiking/hikes/colchuck-lake"
+     }
+    ]
+   },
+   "notes": "Page covers Colchuck/Dragontail via Colchuck Lake; does not name this specific line. Only road-served approach to Colchuck Lake, moderate confidence."
+  }
+ },
+ {
+  "id": "wa_colchuck_peak_south_face",
+  "name": "South Face",
+  "discipline": "alpine",
+  "grade": null,
+  "verdict": "SUMMIT_ONLY",
+  "state": "wa",
+  "peak": {
+   "id": "wa_colchuck_peak",
+   "name": "Colchuck Peak",
+   "lat": 47.478348,
+   "lng": -120.846468,
+   "elevation_ft": 8705,
+   "region": "Washington",
+   "path": "usa.washington.wa_centraleast.wa_stuart_range.wa_colchuck_peak"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [
+   {
+    "route": "wa_colchuck_peak_colchuck_glacier",
+    "name": "Stuart Lake Trailhead"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Stuart Lake Trailhead",
+    "lat": 47.527806,
+    "lng": -120.820515,
+    "km": 5.8
+   },
+   {
+    "src": "USFS",
+    "name": "Eightmile Trailhead",
+    "lat": 47.536016,
+    "lng": -120.814025,
+    "km": 6.9
+   },
+   {
+    "src": "USFS",
+    "name": "Esmeralda Trailhead",
+    "lat": 47.436706,
+    "lng": -120.936915,
+    "km": 8.2
+   },
+   {
+    "src": "USFS",
+    "name": "Iron Peak Trailhead",
+    "lat": 47.421583,
+    "lng": -120.937341,
+    "km": 9.3
+   },
+   {
+    "src": "USFS",
+    "name": "Beverly Bean Trailhead",
+    "lat": 47.389302,
+    "lng": -120.872266,
+    "km": 10.1
+   },
+   {
+    "src": "USFS",
+    "name": "Fourth Of July Trailhead",
+    "lat": 47.578106,
+    "lng": -120.796015,
+    "km": 11.7
+   },
+   {
+    "src": "USFS",
+    "name": "Snow Lakes Trailhead",
+    "lat": 47.544106,
+    "lng": -120.709515,
+    "km": 12.6
+   },
+   {
+    "src": "USFS",
+    "name": "Stafford Creek Trailhead",
+    "lat": 47.365806,
+    "lng": -120.803615,
+    "km": 12.9
+   },
+   {
+    "src": "USFS",
+    "name": "Ingalls Creek Trailhead",
+    "lat": 47.462906,
+    "lng": -120.673025,
+    "km": 13.1
+   },
+   {
+    "src": "USFS",
+    "name": "Miller-bear Trailhead",
+    "lat": 47.368606,
+    "lng": -120.784615,
+    "km": 13.1
+   },
+   {
+    "src": "USFS",
+    "name": "Chatter Creek Trailhead",
+    "lat": 47.608249,
+    "lng": -120.881514,
+    "km": 14.7
+   },
+   {
+    "src": "USFS",
+    "name": "Icicle Gorge Trailhead",
+    "lat": 47.607806,
+    "lng": -120.895025,
+    "km": 14.8
+   },
+   {
+    "src": "USFS",
+    "name": "Jack Trout Trailhead",
+    "lat": 47.606506,
+    "lng": -120.916025,
+    "km": 15.2
+   },
+   {
+    "src": "USFS",
+    "name": "Icicle Ridge Trailhead",
+    "lat": 47.568919,
+    "lng": -120.680113,
+    "km": 16
+   },
+   {
+    "src": "USFS",
+    "name": "Penstock Trailhead",
+    "lat": 47.586749,
+    "lng": -120.706609,
+    "km": 16
+   }
+  ],
+  "firstPass": {
+   "why": "held: agent flagged the identification as inferred/weak",
+   "trailhead": {
+    "name": "Stuart Lake Trailhead (Eightmile Rd, FR 7601)",
+    "identifiedBy": {
+     "kind": "page",
+     "url": "https://www.mountaineers.org/activities/routes-places/enchantments-area-review/colchuck-dragontail-peaks",
+     "fact": "Colchuck terrain approached via Stuart Lake Trail to Colchuck Lake; trailhead 3,400 ft, Eightmile Road FR 7601"
+    },
+    "placements": [
+     {
+      "source": "USFS",
+      "name": "Stuart Lake Trailhead",
+      "lat": 47.527806,
+      "lng": -120.820515,
+      "url": ""
+     },
+     {
+      "source": "WTA",
+      "name": "Colchuck Lake hike trailhead",
+      "lat": 47.5277,
+      "lng": -120.821,
+      "url": "https://www.wta.org/go-hiking/hikes/colchuck-lake"
+     }
+    ]
+   },
+   "notes": "Page covers Colchuck/Dragontail via Colchuck Lake; does not name this specific line. Only road-served approach to Colchuck Lake, moderate confidence."
+  }
+ },
+ {
+  "id": "wa_colchuck_peak_south_route",
+  "name": "South Route",
+  "discipline": "alpine",
+  "grade": "Class 2",
+  "verdict": "SUMMIT_ONLY",
+  "state": "wa",
+  "peak": {
+   "id": "wa_colchuck_peak",
+   "name": "Colchuck Peak",
+   "lat": 47.478348,
+   "lng": -120.846468,
+   "elevation_ft": 8705,
+   "region": "Washington",
+   "path": "usa.washington.wa_centraleast.wa_stuart_range.wa_colchuck_peak"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [
+   {
+    "route": "wa_colchuck_peak_colchuck_glacier",
+    "name": "Stuart Lake Trailhead"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Stuart Lake Trailhead",
+    "lat": 47.527806,
+    "lng": -120.820515,
+    "km": 5.8
+   },
+   {
+    "src": "USFS",
+    "name": "Eightmile Trailhead",
+    "lat": 47.536016,
+    "lng": -120.814025,
+    "km": 6.9
+   },
+   {
+    "src": "USFS",
+    "name": "Esmeralda Trailhead",
+    "lat": 47.436706,
+    "lng": -120.936915,
+    "km": 8.2
+   },
+   {
+    "src": "USFS",
+    "name": "Iron Peak Trailhead",
+    "lat": 47.421583,
+    "lng": -120.937341,
+    "km": 9.3
+   },
+   {
+    "src": "USFS",
+    "name": "Beverly Bean Trailhead",
+    "lat": 47.389302,
+    "lng": -120.872266,
+    "km": 10.1
+   },
+   {
+    "src": "USFS",
+    "name": "Fourth Of July Trailhead",
+    "lat": 47.578106,
+    "lng": -120.796015,
+    "km": 11.7
+   },
+   {
+    "src": "USFS",
+    "name": "Snow Lakes Trailhead",
+    "lat": 47.544106,
+    "lng": -120.709515,
+    "km": 12.6
+   },
+   {
+    "src": "USFS",
+    "name": "Stafford Creek Trailhead",
+    "lat": 47.365806,
+    "lng": -120.803615,
+    "km": 12.9
+   },
+   {
+    "src": "USFS",
+    "name": "Ingalls Creek Trailhead",
+    "lat": 47.462906,
+    "lng": -120.673025,
+    "km": 13.1
+   },
+   {
+    "src": "USFS",
+    "name": "Miller-bear Trailhead",
+    "lat": 47.368606,
+    "lng": -120.784615,
+    "km": 13.1
+   },
+   {
+    "src": "USFS",
+    "name": "Chatter Creek Trailhead",
+    "lat": 47.608249,
+    "lng": -120.881514,
+    "km": 14.7
+   },
+   {
+    "src": "USFS",
+    "name": "Icicle Gorge Trailhead",
+    "lat": 47.607806,
+    "lng": -120.895025,
+    "km": 14.8
+   },
+   {
+    "src": "USFS",
+    "name": "Jack Trout Trailhead",
+    "lat": 47.606506,
+    "lng": -120.916025,
+    "km": 15.2
+   },
+   {
+    "src": "USFS",
+    "name": "Icicle Ridge Trailhead",
+    "lat": 47.568919,
+    "lng": -120.680113,
+    "km": 16
+   },
+   {
+    "src": "USFS",
+    "name": "Penstock Trailhead",
+    "lat": 47.586749,
+    "lng": -120.706609,
+    "km": 16
+   }
+  ],
+  "firstPass": {
+   "why": "held: agent flagged the identification as inferred/weak",
+   "trailhead": {
+    "name": "Stuart Lake Trailhead (Eightmile Rd, FR 7601)",
+    "identifiedBy": {
+     "kind": "page",
+     "url": "https://www.mountaineers.org/activities/routes-places/enchantments-area-review/colchuck-dragontail-peaks",
+     "fact": "Colchuck terrain approached via Stuart Lake Trail to Colchuck Lake; trailhead 3,400 ft, Eightmile Road FR 7601"
+    },
+    "placements": [
+     {
+      "source": "USFS",
+      "name": "Stuart Lake Trailhead",
+      "lat": 47.527806,
+      "lng": -120.820515,
+      "url": ""
+     },
+     {
+      "source": "WTA",
+      "name": "Colchuck Lake hike trailhead",
+      "lat": 47.5277,
+      "lng": -120.821,
+      "url": "https://www.wta.org/go-hiking/hikes/colchuck-lake"
+     }
+    ]
+   },
+   "notes": "Page covers Colchuck/Dragontail via Colchuck Lake; does not name this specific line. Only road-served approach to Colchuck Lake, moderate confidence."
+  }
+ },
+ {
+  "id": "wa_colchuck_peak_west_ridge",
+  "name": "West Ridge",
+  "discipline": "alpine",
+  "grade": null,
+  "verdict": "SUMMIT_ONLY",
+  "state": "wa",
+  "peak": {
+   "id": "wa_colchuck_peak",
+   "name": "Colchuck Peak",
+   "lat": 47.478348,
+   "lng": -120.846468,
+   "elevation_ft": 8705,
+   "region": "Washington",
+   "path": "usa.washington.wa_centraleast.wa_stuart_range.wa_colchuck_peak"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [
+   {
+    "route": "wa_colchuck_peak_colchuck_glacier",
+    "name": "Stuart Lake Trailhead"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Stuart Lake Trailhead",
+    "lat": 47.527806,
+    "lng": -120.820515,
+    "km": 5.8
+   },
+   {
+    "src": "USFS",
+    "name": "Eightmile Trailhead",
+    "lat": 47.536016,
+    "lng": -120.814025,
+    "km": 6.9
+   },
+   {
+    "src": "USFS",
+    "name": "Esmeralda Trailhead",
+    "lat": 47.436706,
+    "lng": -120.936915,
+    "km": 8.2
+   },
+   {
+    "src": "USFS",
+    "name": "Iron Peak Trailhead",
+    "lat": 47.421583,
+    "lng": -120.937341,
+    "km": 9.3
+   },
+   {
+    "src": "USFS",
+    "name": "Beverly Bean Trailhead",
+    "lat": 47.389302,
+    "lng": -120.872266,
+    "km": 10.1
+   },
+   {
+    "src": "USFS",
+    "name": "Fourth Of July Trailhead",
+    "lat": 47.578106,
+    "lng": -120.796015,
+    "km": 11.7
+   },
+   {
+    "src": "USFS",
+    "name": "Snow Lakes Trailhead",
+    "lat": 47.544106,
+    "lng": -120.709515,
+    "km": 12.6
+   },
+   {
+    "src": "USFS",
+    "name": "Stafford Creek Trailhead",
+    "lat": 47.365806,
+    "lng": -120.803615,
+    "km": 12.9
+   },
+   {
+    "src": "USFS",
+    "name": "Ingalls Creek Trailhead",
+    "lat": 47.462906,
+    "lng": -120.673025,
+    "km": 13.1
+   },
+   {
+    "src": "USFS",
+    "name": "Miller-bear Trailhead",
+    "lat": 47.368606,
+    "lng": -120.784615,
+    "km": 13.1
+   },
+   {
+    "src": "USFS",
+    "name": "Chatter Creek Trailhead",
+    "lat": 47.608249,
+    "lng": -120.881514,
+    "km": 14.7
+   },
+   {
+    "src": "USFS",
+    "name": "Icicle Gorge Trailhead",
+    "lat": 47.607806,
+    "lng": -120.895025,
+    "km": 14.8
+   },
+   {
+    "src": "USFS",
+    "name": "Jack Trout Trailhead",
+    "lat": 47.606506,
+    "lng": -120.916025,
+    "km": 15.2
+   },
+   {
+    "src": "USFS",
+    "name": "Icicle Ridge Trailhead",
+    "lat": 47.568919,
+    "lng": -120.680113,
+    "km": 16
+   },
+   {
+    "src": "USFS",
+    "name": "Penstock Trailhead",
+    "lat": 47.586749,
+    "lng": -120.706609,
+    "km": 16
+   }
+  ],
+  "firstPass": {
+   "why": "held: agent flagged the identification as inferred/weak",
+   "trailhead": {
+    "name": "Stuart Lake Trailhead (Eightmile Rd, FR 7601)",
+    "identifiedBy": {
+     "kind": "page",
+     "url": "https://www.mountaineers.org/activities/routes-places/enchantments-area-review/colchuck-dragontail-peaks",
+     "fact": "Colchuck terrain approached via Stuart Lake Trail to Colchuck Lake; trailhead 3,400 ft, Eightmile Road FR 7601"
+    },
+    "placements": [
+     {
+      "source": "USFS",
+      "name": "Stuart Lake Trailhead",
+      "lat": 47.527806,
+      "lng": -120.820515,
+      "url": ""
+     },
+     {
+      "source": "WTA",
+      "name": "Colchuck Lake hike trailhead",
+      "lat": 47.5277,
+      "lng": -120.821,
+      "url": "https://www.wta.org/go-hiking/hikes/colchuck-lake"
+     }
+    ]
+   },
+   "notes": "Page covers Colchuck/Dragontail via Colchuck Lake; does not name this specific line. Only road-served approach to Colchuck Lake, moderate confidence."
+  }
+ },
+ {
+  "id": "wa_crater_mountain_appassionata_smothered_in_smoke",
+  "name": "Appassionata Smothered In Smoke",
+  "discipline": "alpine",
+  "grade": "5.1 R",
+  "verdict": "SUMMIT_ONLY",
+  "state": "wa",
+  "peak": {
+   "id": "wa_crater_mountain",
+   "name": "Crater Mountain",
+   "lat": 48.739225,
+   "lng": -120.920065,
+   "elevation_ft": 8132,
+   "region": "Ross Lake/Jack Mountain",
+   "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_north_cascades_core.wa_crater_mountain"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": "Start at the crag's lowest point and walk up and slightly left to a big hueco, head-high. Enter it and go straight up the short, vertical, very juggy face, which then eases to a ledge. Leave by scrambling right at class 3.",
+   "description": null,
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [
+   {
+    "route": "wa_crater_mountain_standard_route",
+    "name": "Canyon Creek Trailhead"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Canyon Creek Trailhead",
+    "lat": 48.706506,
+    "lng": -120.918315,
+    "km": 3.6
+   },
+   {
+    "src": "USFS",
+    "name": "East Creek Trailhead",
+    "lat": 48.667506,
+    "lng": -120.873115,
+    "km": 8.7
+   },
+   {
+    "src": "NPS",
+    "name": "Happy Creek Forest Walk Trailhead",
+    "lat": 48.728543,
+    "lng": -121.055832,
+    "km": 10
+   },
+   {
+    "src": "USFS",
+    "name": "Slate Peak Trailhead",
+    "lat": 48.737839,
+    "lng": -120.678515,
+    "km": 17.7
+   },
+   {
+    "src": "USFS",
+    "name": "Pacific Crest Trail North",
+    "lat": 48.732066,
+    "lng": -120.674961,
+    "km": 18
+   },
+   {
+    "src": "USFS",
+    "name": "Buckskin Ridge T.H.",
+    "lat": 48.732301,
+    "lng": -120.668331,
+    "km": 18.5
+   },
+   {
+    "src": "USFS",
+    "name": "Harts Pass Trailhead",
+    "lat": 48.720996,
+    "lng": -120.669933,
+    "km": 18.5
+   },
+   {
+    "src": "USFS",
+    "name": "Brown Bear (PCT South) Trailhead",
+    "lat": 48.702504,
+    "lng": -120.672426,
+    "km": 18.6
+   },
+   {
+    "src": "USFS",
+    "name": "Easy Pass Trailhead",
+    "lat": 48.587206,
+    "lng": -120.801615,
+    "km": 19
+   },
+   {
+    "src": "NPS",
+    "name": "Gorge Overlook Trail Trailhead",
+    "lat": 48.700343,
+    "lng": -121.209709,
+    "km": 21.7
+   },
+   {
+    "src": "NPS",
+    "name": "Gorge Overlook Trail Trailhead",
+    "lat": 48.699938,
+    "lng": -121.21076,
+    "km": 21.8
+   }
+  ],
+  "firstPass": {
+   "why": "stuck: Own text describes a crag-like short face (hueco, ledge, class 3), names no trailhead; sibling lead Canyon Creek TH (USFS 48.706506,-120.918315) is not evidence",
+   "trailhead": null,
+   "notes": "Own text describes a crag-like short face (hueco, ledge, class 3), names no trailhead; sibling lead Canyon Creek TH (USFS 48.706506,-120.918315) is not evidence for this route."
+  }
+ },
+ {
+  "id": "wa_cutthroat_the_swarm",
+  "name": "The Swarm",
+  "discipline": "alpine",
+  "grade": "5.11c",
+  "verdict": "SUMMIT_ONLY",
+  "state": "wa",
+  "peak": {
+   "id": "wa_cutthroat_peak",
+   "name": "Cutthroat Peak",
+   "lat": 48.526495,
+   "lng": -120.703655,
+   "elevation_ft": 8065,
+   "region": "Washington",
+   "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_sub_wapass.wa_cutthroat_peak"
+  },
+  "text": {
+   "approach": "Begin as for the North Ridge (via the South Buttress approach trail or the Rainy Pass/PCT option), then continue toward the East Face, avoiding steep, loose scree chimneys directly below the wall.",
+   "approach_logistics": null,
+   "road": "{\"name\":\"North Cascades Highway (State Route 20)\",\"status\":\"Seasonal\",\"driveNote\":\"Approach via the South Buttress pullout or Rainy Pass trailhead, both off SR-20.\",\"seasonalGate\":\"Typically closed roughly early December through mid-to-late April/May depending on snowpack.\"}",
+   "overview": "A modern, sustained 5.11 alpine testpiece up Cutthroat's East Face, with four gear-protected headwall pitches (5.10-5.11) on bolted anchors linking natural, less-traveled terrain below and above — a quality alternative to the crowded Liberty Bell group just to the south.",
+   "description": null,
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [
+   {
+    "route": "wa_complete_south_buttress",
+    "name": "Cutthroat Peak Climbers Trail Pullout (Hwy 20, ~1.5 mi W of Washington Pass)"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Blue Lake Trailhead",
+    "lat": 48.519016,
+    "lng": -120.674215,
+    "km": 2.3
+   },
+   {
+    "src": "USFS",
+    "name": "Heather Maple Pass Trailhead Rainy Pass ",
+    "lat": 48.516606,
+    "lng": -120.735815,
+    "km": 2.6
+   },
+   {
+    "src": "USFS",
+    "name": "Bridge Creek Trailhead",
+    "lat": 48.504906,
+    "lng": -120.719115,
+    "km": 2.7
+   },
+   {
+    "src": "USFS",
+    "name": "Rainy Pass Trailhead (PCT North)",
+    "lat": 48.515306,
+    "lng": -120.736025,
+    "km": 2.7
+   },
+   {
+    "src": "USFS",
+    "name": "Hairpin",
+    "lat": 48.514336,
+    "lng": -120.642715,
+    "km": 4.7
+   },
+   {
+    "src": "USFS",
+    "name": "Cutthroat Trailhead",
+    "lat": 48.556306,
+    "lng": -120.654715,
+    "km": 4.9
+   },
+   {
+    "src": "USFS",
+    "name": "Burgundy Col",
+    "lat": 48.551406,
+    "lng": -120.630895,
+    "km": 6
+   },
+   {
+    "src": "USFS",
+    "name": "Easy Pass Trailhead",
+    "lat": 48.587206,
+    "lng": -120.801615,
+    "km": 9.9
+   },
+   {
+    "src": "USFS",
+    "name": "Gilbert Trailhead",
+    "lat": 48.458443,
+    "lng": -120.565926,
+    "km": 12.7
+   },
+   {
+    "src": "USFS",
+    "name": "South Creek (north) Trailhead",
+    "lat": 48.439256,
+    "lng": -120.531125,
+    "km": 16
+   },
+   {
+    "src": "USFS",
+    "name": "Driveway Butte Trailhead",
+    "lat": 48.598271,
+    "lng": -120.512721,
+    "km": 16.2
+   },
+   {
+    "src": "USFS",
+    "name": "South Creek (south) Trailhead",
+    "lat": 48.436816,
+    "lng": -120.530095,
+    "km": 16.2
+   },
+   {
+    "src": "USFS",
+    "name": "Rattlesnake Trailhead",
+    "lat": 48.648664,
+    "lng": -120.571213,
+    "km": 16.7
+   },
+   {
+    "src": "USFS",
+    "name": "Scatter Creek Trailhead",
+    "lat": 48.434606,
+    "lng": -120.520115,
+    "km": 17
+   },
+   {
+    "src": "USFS",
+    "name": "Cedar Creek Trailhead",
+    "lat": 48.579106,
+    "lng": -120.478815,
+    "km": 17.6
+   },
+   {
+    "src": "NPS",
+    "name": "Imus Creek Loop Trail Trailhead",
+    "lat": 48.3085,
+    "lng": -120.65601,
+    "km": 24.5
+   }
+  ],
+  "firstPass": {
+   "why": "stuck: Text gives two options (South Buttress pullout or Rainy Pass/PCT) and says continue to East Face; does not pick one. Leads: USFS Rainy Pass Trailhead (PCT North",
+   "trailhead": null,
+   "notes": "Text gives two options (South Buttress pullout or Rainy Pass/PCT) and says continue to East Face; does not pick one. Leads: USFS Rainy Pass Trailhead (PCT North) 48.515306,-120.736025."
+  }
+ },
+ {
+  "id": "wa_dome_peak_indian_summer",
+  "name": "Indian Summer",
+  "discipline": "alpine",
+  "grade": "5.10",
+  "verdict": "NO_SUMMIT",
+  "state": "wa",
+  "peak": {
+   "id": "wa_dome_peak",
+   "name": "Dome Peak",
+   "lat": 48.3034,
+   "lng": -121.0295,
+   "elevation_ft": 8926,
+   "region": "Washington",
+   "path": "usa.washington.wa_northwest.wa_glacier_peak_region.wa_dome_peak"
+  },
+  "text": {
+   "approach": "Western approach (the recommended option): roughly 10 miles with about 7,800 ft of gain via the Ptarmigan Traverse trail toward Spire Point — described as a 'brutal approach' with significant bushwhacking. A longer eastern approach via Chelan also exists but adds a full extra day each way.",
+   "approach_logistics": null,
+   "road": "{\"name\":\"Suiattle River Road (Forest Road 26)\",\"status\":\"Closed to vehicles at approximately milepost 4-4.5 due to a December 2025 flood washout; closed under USFS order #06-05-26-03, in effect April 2, 2026 through January 1, 2028 unless rescinded sooner. Foot and bike access continues beyond the closure toward the trailhead.\",\"walkMi\":16,\"driveNote\":\"From Darrington, drive Hwy 530 then Suiattle River Road (FR 26); verify current closure status with the Mt. Baker-Snoqualmie NF before driving.\",\"seasonalGate\":null}",
+   "overview": "A 7-pitch, 5.10- granite rock climb up Dome Peak's South Face, established as a new route around September 2, 2011 — a rarely-repeated alternative to the standard Dome Glacier route for parties seeking real rock climbing on the peak.",
+   "description": null,
+   "descent": "The technical climbing ends just below the top, and a short scramble reaches the summit. From there the way down is brief: a few minutes of walking and easy downclimbing returns to the saddle between Dome and Chickamin Peaks, where parties camp on snow beside the Dome Glacier. From camp, one way out runs down the Dome Glacier to Cub Lake, over Cub Pass, and down the headwaters of Bachelor Creek to"
+  },
+  "waypoints": [
+   {
+    "lat": 48.30563,
+    "lng": -121.09123,
+    "elev": 5338,
+    "name": "Cub Lake",
+    "type": "Campsite"
+   }
+  ],
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Suiattle Trailhead",
+    "lat": 48.248106,
+    "lng": -121.192115,
+    "km": 13.5
+   },
+   {
+    "src": "USFS",
+    "name": "Downey Creek Trailhead",
+    "lat": 48.259506,
+    "lng": -121.222915,
+    "km": 15.1
+   },
+   {
+    "src": "USFS",
+    "name": "Green Mountain Trailhead",
+    "lat": 48.268149,
+    "lng": -121.236861,
+    "km": 15.8
+   },
+   {
+    "src": "USFS",
+    "name": "Huckleberry Mtn Trailhead",
+    "lat": 48.270539,
+    "lng": -121.349723,
+    "km": 24
+   },
+   {
+    "src": "USFS",
+    "name": "White Chuck Bench Trailhead",
+    "lat": 48.154028,
+    "lng": -121.265293,
+    "km": 24.1
+   }
+  ],
+  "firstPass": {
+   "why": "stuck: Trailhead not identified: text says Ptarmigan Traverse western approach (about 10 mi, 7800 ft gain) and Suiattle River Rd closed at MP 4-4.5; no named TH. Not r",
+   "trailhead": null,
+   "notes": "Trailhead not identified: text says Ptarmigan Traverse western approach (about 10 mi, 7800 ft gain) and Suiattle River Rd closed at MP 4-4.5; no named TH. Not researched further."
+  }
+ },
+ {
+  "id": "wa_dragontail_peak_boving_route",
+  "name": "Boving Route",
+  "discipline": "alpine",
+  "grade": "5.10",
+  "verdict": "SUMMIT_ONLY",
+  "state": "wa",
+  "peak": {
+   "id": "wa_dragontail_peak",
+   "name": "Dragontail Peak",
+   "lat": 47.47873,
+   "lng": -120.833421,
+   "elevation_ft": 8840,
+   "region": "Washington",
+   "path": "usa.washington.wa_centraleast.wa_stuart_range.wa_dragontail_peak"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [
+   {
+    "route": "wa_der_dihedral",
+    "name": "Stuart Lake Trailhead"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Stuart Lake Trailhead",
+    "lat": 47.527806,
+    "lng": -120.820515,
+    "km": 5.5
+   },
+   {
+    "src": "USFS",
+    "name": "Eightmile Trailhead",
+    "lat": 47.536016,
+    "lng": -120.814025,
+    "km": 6.5
+   },
+   {
+    "src": "USFS",
+    "name": "Esmeralda Trailhead",
+    "lat": 47.436706,
+    "lng": -120.936915,
+    "km": 9.1
+   },
+   {
+    "src": "USFS",
+    "name": "Iron Peak Trailhead",
+    "lat": 47.421583,
+    "lng": -120.937341,
+    "km": 10.1
+   },
+   {
+    "src": "USFS",
+    "name": "Beverly Bean Trailhead",
+    "lat": 47.389302,
+    "lng": -120.872266,
+    "km": 10.4
+   },
+   {
+    "src": "USFS",
+    "name": "Fourth Of July Trailhead",
+    "lat": 47.578106,
+    "lng": -120.796015,
+    "km": 11.4
+   },
+   {
+    "src": "USFS",
+    "name": "Snow Lakes Trailhead",
+    "lat": 47.544106,
+    "lng": -120.709515,
+    "km": 11.8
+   },
+   {
+    "src": "USFS",
+    "name": "Ingalls Creek Trailhead",
+    "lat": 47.462906,
+    "lng": -120.673025,
+    "km": 12.2
+   },
+   {
+    "src": "USFS",
+    "name": "Stafford Creek Trailhead",
+    "lat": 47.365806,
+    "lng": -120.803615,
+    "km": 12.8
+   },
+   {
+    "src": "USFS",
+    "name": "Miller-bear Trailhead",
+    "lat": 47.368606,
+    "lng": -120.784615,
+    "km": 12.8
+   },
+   {
+    "src": "USFS",
+    "name": "Chatter Creek Trailhead",
+    "lat": 47.608249,
+    "lng": -120.881514,
+    "km": 14.8
+   },
+   {
+    "src": "USFS",
+    "name": "Icicle Gorge Trailhead",
+    "lat": 47.607806,
+    "lng": -120.895025,
+    "km": 15.1
+   },
+   {
+    "src": "USFS",
+    "name": "Icicle Ridge Trailhead",
+    "lat": 47.568919,
+    "lng": -120.680113,
+    "km": 15.3
+   },
+   {
+    "src": "USFS",
+    "name": "Penstock Trailhead",
+    "lat": 47.586749,
+    "lng": -120.706609,
+    "km": 15.3
+   },
+   {
+    "src": "USFS",
+    "name": "Jack Trout Trailhead",
+    "lat": 47.606506,
+    "lng": -120.916025,
+    "km": 15.5
+   }
+  ],
+  "firstPass": {
+   "why": "stuck: Not listed on the MP Dragontail area page, no page found describing it; Stuart Lake TH (USFS 47.527806,-120.820515) is only a sibling lead.",
+   "trailhead": null,
+   "notes": "Not listed on the MP Dragontail area page, no page found describing it; Stuart Lake TH (USFS 47.527806,-120.820515) is only a sibling lead."
+  }
+ },
+ {
+  "id": "wa_dragontail_peak_colchuck_col_buttress",
+  "name": "Colchuck Col Buttress",
+  "discipline": "alpine",
+  "grade": "5.6",
+  "verdict": "SUMMIT_ONLY",
+  "state": "wa",
+  "peak": {
+   "id": "wa_dragontail_peak",
+   "name": "Dragontail Peak",
+   "lat": 47.47873,
+   "lng": -120.833421,
+   "elevation_ft": 8840,
+   "region": "Washington",
+   "path": "usa.washington.wa_centraleast.wa_stuart_range.wa_dragontail_peak"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [
+   {
+    "route": "wa_der_dihedral",
+    "name": "Stuart Lake Trailhead"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Stuart Lake Trailhead",
+    "lat": 47.527806,
+    "lng": -120.820515,
+    "km": 5.5
+   },
+   {
+    "src": "USFS",
+    "name": "Eightmile Trailhead",
+    "lat": 47.536016,
+    "lng": -120.814025,
+    "km": 6.5
+   },
+   {
+    "src": "USFS",
+    "name": "Esmeralda Trailhead",
+    "lat": 47.436706,
+    "lng": -120.936915,
+    "km": 9.1
+   },
+   {
+    "src": "USFS",
+    "name": "Iron Peak Trailhead",
+    "lat": 47.421583,
+    "lng": -120.937341,
+    "km": 10.1
+   },
+   {
+    "src": "USFS",
+    "name": "Beverly Bean Trailhead",
+    "lat": 47.389302,
+    "lng": -120.872266,
+    "km": 10.4
+   },
+   {
+    "src": "USFS",
+    "name": "Fourth Of July Trailhead",
+    "lat": 47.578106,
+    "lng": -120.796015,
+    "km": 11.4
+   },
+   {
+    "src": "USFS",
+    "name": "Snow Lakes Trailhead",
+    "lat": 47.544106,
+    "lng": -120.709515,
+    "km": 11.8
+   },
+   {
+    "src": "USFS",
+    "name": "Ingalls Creek Trailhead",
+    "lat": 47.462906,
+    "lng": -120.673025,
+    "km": 12.2
+   },
+   {
+    "src": "USFS",
+    "name": "Stafford Creek Trailhead",
+    "lat": 47.365806,
+    "lng": -120.803615,
+    "km": 12.8
+   },
+   {
+    "src": "USFS",
+    "name": "Miller-bear Trailhead",
+    "lat": 47.368606,
+    "lng": -120.784615,
+    "km": 12.8
+   },
+   {
+    "src": "USFS",
+    "name": "Chatter Creek Trailhead",
+    "lat": 47.608249,
+    "lng": -120.881514,
+    "km": 14.8
+   },
+   {
+    "src": "USFS",
+    "name": "Icicle Gorge Trailhead",
+    "lat": 47.607806,
+    "lng": -120.895025,
+    "km": 15.1
+   },
+   {
+    "src": "USFS",
+    "name": "Icicle Ridge Trailhead",
+    "lat": 47.568919,
+    "lng": -120.680113,
+    "km": 15.3
+   },
+   {
+    "src": "USFS",
+    "name": "Penstock Trailhead",
+    "lat": 47.586749,
+    "lng": -120.706609,
+    "km": 15.3
+   },
+   {
+    "src": "USFS",
+    "name": "Jack Trout Trailhead",
+    "lat": 47.606506,
+    "lng": -120.916025,
+    "km": 15.5
+   }
+  ],
+  "firstPass": {
+   "why": "stuck: Not listed on the MP Dragontail area page, no page found describing it; Stuart Lake TH (USFS 47.527806,-120.820515) is only a sibling lead.",
+   "trailhead": null,
+   "notes": "Not listed on the MP Dragontail area page, no page found describing it; Stuart Lake TH (USFS 47.527806,-120.820515) is only a sibling lead."
+  }
+ },
+ {
+  "id": "wa_dragontail_peak_northwest_face",
+  "name": "Northwest Face",
+  "discipline": "alpine",
+  "grade": "5.9",
+  "verdict": "SUMMIT_ONLY",
+  "state": "wa",
+  "peak": {
+   "id": "wa_dragontail_peak",
+   "name": "Dragontail Peak",
+   "lat": 47.47873,
+   "lng": -120.833421,
+   "elevation_ft": 8840,
+   "region": "Washington",
+   "path": "usa.washington.wa_centraleast.wa_stuart_range.wa_dragontail_peak"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [
+   {
+    "route": "wa_der_dihedral",
+    "name": "Stuart Lake Trailhead"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Stuart Lake Trailhead",
+    "lat": 47.527806,
+    "lng": -120.820515,
+    "km": 5.5
+   },
+   {
+    "src": "USFS",
+    "name": "Eightmile Trailhead",
+    "lat": 47.536016,
+    "lng": -120.814025,
+    "km": 6.5
+   },
+   {
+    "src": "USFS",
+    "name": "Esmeralda Trailhead",
+    "lat": 47.436706,
+    "lng": -120.936915,
+    "km": 9.1
+   },
+   {
+    "src": "USFS",
+    "name": "Iron Peak Trailhead",
+    "lat": 47.421583,
+    "lng": -120.937341,
+    "km": 10.1
+   },
+   {
+    "src": "USFS",
+    "name": "Beverly Bean Trailhead",
+    "lat": 47.389302,
+    "lng": -120.872266,
+    "km": 10.4
+   },
+   {
+    "src": "USFS",
+    "name": "Fourth Of July Trailhead",
+    "lat": 47.578106,
+    "lng": -120.796015,
+    "km": 11.4
+   },
+   {
+    "src": "USFS",
+    "name": "Snow Lakes Trailhead",
+    "lat": 47.544106,
+    "lng": -120.709515,
+    "km": 11.8
+   },
+   {
+    "src": "USFS",
+    "name": "Ingalls Creek Trailhead",
+    "lat": 47.462906,
+    "lng": -120.673025,
+    "km": 12.2
+   },
+   {
+    "src": "USFS",
+    "name": "Stafford Creek Trailhead",
+    "lat": 47.365806,
+    "lng": -120.803615,
+    "km": 12.8
+   },
+   {
+    "src": "USFS",
+    "name": "Miller-bear Trailhead",
+    "lat": 47.368606,
+    "lng": -120.784615,
+    "km": 12.8
+   },
+   {
+    "src": "USFS",
+    "name": "Chatter Creek Trailhead",
+    "lat": 47.608249,
+    "lng": -120.881514,
+    "km": 14.8
+   },
+   {
+    "src": "USFS",
+    "name": "Icicle Gorge Trailhead",
+    "lat": 47.607806,
+    "lng": -120.895025,
+    "km": 15.1
+   },
+   {
+    "src": "USFS",
+    "name": "Icicle Ridge Trailhead",
+    "lat": 47.568919,
+    "lng": -120.680113,
+    "km": 15.3
+   },
+   {
+    "src": "USFS",
+    "name": "Penstock Trailhead",
+    "lat": 47.586749,
+    "lng": -120.706609,
+    "km": 15.3
+   },
+   {
+    "src": "USFS",
+    "name": "Jack Trout Trailhead",
+    "lat": 47.606506,
+    "lng": -120.916025,
+    "km": 15.5
+   }
+  ],
+  "firstPass": {
+   "why": "stuck: Not listed on the MP Dragontail area page, no page found describing it; Stuart Lake TH (USFS 47.527806,-120.820515) is only a sibling lead.",
+   "trailhead": null,
+   "notes": "Not listed on the MP Dragontail area page, no page found describing it; Stuart Lake TH (USFS 47.527806,-120.820515) is only a sibling lead."
+  }
+ }
+]

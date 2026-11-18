@@ -8,6 +8,7 @@ import { setQueryClient } from "./lib/queryClientRef.js";
 import { installTapSlop } from "./lib/tapSlop.js";
 import { installErrorReporting } from "./lib/errorReport.js";
 import { refreshProfileReadsOnSignIn } from "./lib/auth.js";
+import { noteReloadPending } from "./lib/chunkReload.js";
 
 // networkMode "always" is load-bearing, not a tuning knob. React Query's default is
 // "online": when the browser reports itself offline it sets fetchStatus "paused" and
@@ -134,6 +135,7 @@ window.addEventListener("vite:preloadError", (event) => {
     window.sessionStorage.setItem(CHUNK_RELOAD_KEY, String(Date.now()));
   } catch { return; }
   event.preventDefault();
+  noteReloadPending(); // so nothing unmounting now steps history and cancels this reload (lib/chunkReload.js)
   window.location.reload();
 });
 

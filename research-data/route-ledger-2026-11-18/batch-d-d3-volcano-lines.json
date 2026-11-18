@@ -1,0 +1,929 @@
+{
+ "wa_mount_rainier_fuhrer_finger": {
+  "area": "wa_mount_rainier",
+  "set": {
+   "waypoints": [
+    {
+     "lat": 46.78584,
+     "lng": -121.73554,
+     "elev": 5420,
+     "name": "Paradise",
+     "type": "Trailhead",
+     "distMi": 0,
+     "elevFt": 5420,
+     "directions": "From SR 7 at Elbe, take SR 706 east through Ashford to the Nisqually Entrance, then follow the park road past Longmire to Paradise at about 5,400 ft, roughly 19 miles from the entrance. Overnight parking is allowed only in designated areas, and from November the road above Longmire is gated every night. A park entrance pass is required, plus a climbing permit for glacier travel or above 10,000 ft."
+    },
+    {
+     "lat": 46.8528267,
+     "lng": -121.7604408,
+     "elev": 14410,
+     "name": "Columbia Crest",
+     "type": "Summit",
+     "distMi": null,
+     "elevFt": 14406,
+     "directions": "Take the Skyline Trail about a mile to Glacier Vista, drop west off the moraine and cross the Nisqually Glacier roped, then climb the boulder gully on the far side and Wapowety Cleaver to camp near 9,000 to 9,500 ft. Cross the Wilson Glacier to the wide couloir with the hourglass, climb it, bear left onto the upper Nisqually above 11,000 ft to the saddle between Point Success and the crater rim, then go up onto the rim to Columbia Crest."
+    }
+   ]
+  },
+  "review": {
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/paradise-area-review/mount-rainier-fuhrer-finger",
+    "https://www.mountainproject.com/route/106636996/fuhrer-finger",
+    "https://npshistory.com/nature_notes/mora/vol12/vol12-9c.htm",
+    "https://www.nps.gov/mora/planyourvisit/climbing.htm",
+    "USGS GNIS DomesticNames_WA (1533614 Mount Rainier, 1517974 Columbia Crest)",
+    "USGS EPQS 3DEP elevation"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "waypoints/Columbia Crest",
+    "value": {
+     "name": "Columbia Crest",
+     "lat": 46.8528267,
+     "lng": -121.7604408
+    },
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "measurement": "USGS GNIS 1533614 'Mount Rainier' summit point (DomesticNames_WA)",
+      "fact": "46.8528267,-121.7604408",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "measurement": "USGS GNIS 1517974 'Columbia Crest' point 46.8528143,-121.7603729, 5 m from it",
+      "fact": "5 m",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Mount Rainier: climbing on glaciers or above 10,000 ft requires the park's climbing registration; overnight high camps also need a wilderness permit.",
+    "method": "official-1",
+    "level": "locked",
+    "expires_at": "2027-11-18T00:00:00Z",
+    "evidence": [
+     {
+      "url": "https://www.nps.gov/mora/planyourvisit/climbing.htm",
+      "official": true,
+      "fact": "permit needed to be on a glacier or above high camps (~10,000 ft); wilderness permit for all overnight camping; $82 registration",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "II",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/paradise-area-review/mount-rainier-fuhrer-finger",
+      "fact": "A Grade II climb",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.mountainproject.com/route/106636996/fuhrer-finger",
+      "fact": "Grade II, Mod. Snow",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "commitment",
+    "value": "II",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/paradise-area-review/mount-rainier-fuhrer-finger",
+      "fact": "A Grade II climb",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.mountainproject.com/route/106636996/fuhrer-finger",
+      "fact": "Grade II",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_mount_rainier_fuhrer_finger",
+    "column": "pitches",
+    "from": 0,
+    "to": null,
+    "why": "pitches 0 is invalid (>=1 or null); no source gives a pitch count for this snow/glacier route (MP lists none).",
+    "evidence": [
+     "https://www.mountainproject.com/route/106636996/fuhrer-finger"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_mount_rainier_fuhrer_finger",
+    "column": "high_point_ft",
+    "from": 14406,
+    "to": 14410,
+    "why": "Official NPS summit figure 14,410 ft, as locked on the other Columbia Crest routes (Mountaineers prints 14,411). Lock agree-2 after.",
+    "evidence": [
+     "https://www.nps.gov/mora/planyourvisit/climbing.htm",
+     "https://www.mountaineers.org/activities/routes-places/paradise-area-review/mount-rainier-fuhrer-finger"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_mount_rainier_fuhrer_finger",
+    "column": "gain_ft",
+    "from": 9010,
+    "to": 9000,
+    "why": "Measured: NPS 14,410 ft - USGS 3DEP 5,413.5 ft at the stored Paradise trailhead pin = 8,996 ft; same figure locked for Kautz/Gibraltar/DC from Paradise. (Mountaineers says 10,000 ft, 11% off - not used.) Lock measured after.",
+    "evidence": [
+     "USGS EPQS 3DEP",
+     "https://www.nps.gov/mora/planyourvisit/climbing.htm"
+    ]
+   }
+  ],
+  "disputed": [
+   "fa: NPS Nature Notes lists the 2 July 1920 ascent 'via the Nisqually Glacier' by Joe Hazard, P. M. Farrar, T. Hermans, Hans and Henry Fuehrer (5 people); Mountain Project gives July 2, 1920 with only 4 (Hans Fuhrer, Heine Fuhrer, Joseph Hazard, Thomas Hermans - no Farrar). Stored spells 'Peyton Farrer'; NPS spells 'Farrar' and gives only the initials P. M. Names differ, so not locked; the NPS entry also does not name the Finger explicitly.",
+   "dist_km 8.05: one-way convention would be too short - the stored track alone runs 8.67 km from Paradise to Lower Castle camp (46.8243,-121.7567) and the camp is still 3.2 km straight-line below the summit, so one-way is roughly 11-12 km (Kautz, same start, has a 7.2 mi summit pin). No source opened states a distance. Not fixed.",
+   "grade 'Class 3' (class system) for a 30-45 deg snow couloir: MP rates it 'Mod. Snow', Mountaineers gives no class. Not changed."
+  ],
+  "notes": "Summit pin moved 122 m onto the USGS GNIS point, elev 14,410 (NPS). Trailhead pin left as stored (same point Gibraltar Ledges uses; Kautz uses the Paradise Parking Area pin 140 m NE - the Paradise pins on the three routes should be unified by the owner). Stored gpx: 1,063 points, no timestamps, starts 39 m from the trailhead pin, max gap 62 m, but ENDS at Lower Castle camp (3.2 km from the summit) - an approach-only line; kept per the rule but it is not trailhead-to-summit. Mountaineers: camp at 9,500 ft on the cleaver, Wapowety Cleaver top 13,000 ft, party size 12, May-July. MP descents: the route itself, Kautz, or DC/Ingraham to Muir."
+ },
+ "wa_mount_rainier_ptarmigan_ridge": {
+  "area": "wa_mount_rainier",
+  "set": {
+   "waypoints": [
+    {
+     "lat": 46.9022,
+     "lng": -121.6442,
+     "elev": 4302,
+     "name": "White River Campground",
+     "type": "Trailhead",
+     "elevFt": 4400,
+     "directions": "From Enumclaw, drive SR 410 east to the White River Entrance of the park and turn west onto the Sunrise Road. After about 5 miles, cross the White River and turn left onto the White River Campground road, following it to its end. Park in the day-hiking and climbing lot at about 4,400 ft; the Glacier Basin Trail starts in the campground's D loop. The road is open in summer only, and a park entrance pass is required."
+    },
+    {
+     "lat": 46.8629752,
+     "lng": -121.7748468,
+     "elev": 14112,
+     "name": "Liberty Cap",
+     "type": "Summit",
+     "elevFt": 14112
+    },
+    {
+     "lat": 46.87017,
+     "lng": -121.73333,
+     "elev": 9440,
+     "name": "Camp Schurman",
+     "note": "Descent camp on the Emmons-Winthrop, passed on the way down from the summit, not on the approach.",
+     "type": "Campsite",
+     "distMi": null,
+     "elevFt": 9440
+    }
+   ],
+   "fa": "Wolf Bauer and Jack Hossack, 1935"
+  },
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/106846325/ptarmigan-ridge",
+    "https://www.mountaineers.org/activities/routes-places/mount-rainier-ptarmigan-ridge",
+    "https://publications.americanalpineclub.org/articles/12193931000",
+    "https://publications.americanalpineclub.org/articles/12196012102/North-America-United-States-Washington-Cascades-Mount-Rainer-North-Ridge-Routes",
+    "https://npshistory.com/nature_notes/mora/vol12/vol12-9c.htm",
+    "https://www.nps.gov/mora/planyourvisit/climbing.htm",
+    "https://wsdot.wa.gov/about/news/2025/103-year-old-sr-165-carbon-river-fairfax-bridge-permanently-closed",
+    "USGS GNIS DomesticNames_WA 1522055 Liberty Cap",
+    "USGS EPQS 3DEP elevation",
+    "https://www.openstreetmap.org/node/348178708"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "waypoints/Liberty Cap",
+    "value": {
+     "name": "Liberty Cap",
+     "lat": 46.8629752,
+     "lng": -121.7748468
+    },
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "measurement": "USGS GNIS 1522055 'Liberty Cap' summit point (DomesticNames_WA)",
+      "fact": "46.8629752,-121.7748468",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "measurement": "USGS 3DEP (EPQS) 7x7 grid at ~25 m spacing around the GNIS point: highest cell is the GNIS point itself (14,115.9 ft)",
+      "fact": "high point within 25 m",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 14112,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-rainier-ptarmigan-ridge",
+      "fact": "High Point 14,100 ft (12 ft off)",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "measurement": "USGS 3DEP at the GNIS Liberty Cap point = 14,115.9 ft (4 ft off)",
+      "fact": "14116"
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Mount Rainier: climbing on glaciers or above 10,000 ft requires the park's climbing registration; overnight high camps also need a wilderness permit.",
+    "method": "official-1",
+    "level": "locked",
+    "expires_at": "2027-11-18T00:00:00Z",
+    "evidence": [
+     {
+      "url": "https://www.nps.gov/mora/planyourvisit/climbing.htm",
+      "official": true,
+      "fact": "permit needed to be on a glacier or above high camps (~10,000 ft); wilderness permit for all overnight camping; $82 registration",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Wolf Bauer and Jack Hossack, 1935",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106846325/ptarmigan-ridge",
+      "fact": "FA Wolf Bauer and Jack Hossack, September 8, 1935",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://publications.americanalpineclub.org/articles/12193931000",
+      "fact": "Ptarmigan Ridge climbed in 1935 by Wolf Bauer and Jack Hossack (AAJ, Don Woods, 1939)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "5.6",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106846325/ptarmigan-ridge",
+      "fact": "5.6 YDS, AI2-3, Grade IV (SummitPost blocked)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "commitment",
+    "value": "IV",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106846325/ptarmigan-ridge",
+      "fact": "Grade IV",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "IV",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106846325/ptarmigan-ridge",
+      "fact": "Grade IV",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_mount_rainier_ptarmigan_ridge",
+    "column": "gpx",
+    "from": "69-point line",
+    "to": null,
+    "why": "Fails the recorded-track checks: starts 9.1 km from the trailhead pin (near Curtis Ridge), gaps up to 806 m, no timestamps (CalTopo-sourced per data_quality). Rule: a stored line with gaps over 500 m is removed.",
+    "evidence": [
+     "stored gpx measured offline"
+    ]
+   }
+  ],
+  "disputed": [
+   "fa date: September 8, 1935 is Mountain Project only (AAJ gives the year). fa set to names + year; the stored clause about 1966 variations and Fred Beckey parties was dropped from fa (MP: 1966 variation by Bloomer, Kelsey, Pinsch, Williams; Ice Cliff variation by Beckey and friends; the 1960 AAJ dates Beckey's variant 1957) - those are variation FAs, which belong in variations, not the route FA.",
+   "gain_ft 9481 / dist_km 28.97 (18 mi): The Mountaineers gives 11,000 ft and 20.0 mi (32.2 km) - 14% and 10% off. Neither convention is clear for a carryover (White River in, Emmons out). Not locked or changed.",
+   "High point: MP treats the top as Columbia Crest 14,410 ft \"via Liberty Cap\"; Mountaineers prints 14,100 ft (Liberty Cap). Kept at Liberty Cap like Liberty Ridge."
+  ],
+  "notes": "Summit pin snapped 1 m onto the GNIS Liberty Cap point (OSM node 348178708 is a GNIS import, so it is not a second method; the 3DEP grid is). Trailhead elev 4,400 -> 4,302 ft (USGS 3DEP, same pin Emmons uses). Mowich Lake approach: WSDOT permanently closed the SR 165 Fairfax Bridge on 22 Apr 2025, so the stored approach sentence is correct; best_season still says the Mowich road \"often does not open until early July\" (outdated but not wrong in itself). The route's three stored waypoints have distMi undefined/null."
+ },
+ "wa_mount_adams_adams_glacier": {
+  "area": "wa_mount_adams",
+  "set": {
+   "waypoints": [
+    {
+     "lat": 46.2883827,
+     "lng": -121.5523575,
+     "elev": 4587,
+     "name": "Killen Creek Trailhead",
+     "type": "Trailhead",
+     "distMi": 0,
+     "directions": "Reached on Forest Roads 23, 21 and 2329 from the Randle or Trout Lake side. FR-2329 holds snow well into early summer, so check the road before committing — parties blocked short of the trailhead have had to walk or bushwhack an extra mile or more of road and forest to reach it."
+    },
+    {
+     "lat": 46.251,
+     "lng": -121.5327,
+     "elev": 6100,
+     "name": "High Camp Trail Junction",
+     "type": "Junction",
+     "distMi": 3.1,
+     "directions": "Follow Killen Creek Trail #113 up through subalpine forest and meadow for about three miles to the Pacific Crest Trail, and cross straight over onto the High Camp Trail. Killen Creek, crossed low on the trail, is the last dependable running water; everything above is melted snow. The tread thins out above treeline and is easy to lose in the dark or a whiteout, so note landmarks on the way up or carry a track."
+    },
+    {
+     "lat": null,
+     "lng": null,
+     "elev": 7000,
+     "name": "High Camp",
+     "type": "Campsite",
+     "distMi": 4.1,
+     "directions": "Another mile on the High Camp Trail ends it at the edge of the Adams Glacier's lateral moraine. Sheltered bivy sites sit slightly higher, in a shallow snow gully just left of the moraine, and more camping is scattered across the benches above that."
+    },
+    {
+     "lat": null,
+     "lng": null,
+     "elev": 7000,
+     "name": "Adams Glacier Base",
+     "type": "Junction",
+     "distMi": 7,
+     "directions": "A patchy path runs past the upper camping area and up moraine and snow to the glacier toe, where parties rope up. Judge the timing generously — the volcano's scale flattens distance out and this leg routinely runs two hours. The point of the very early start is to be through the icefall before the sun starts working on it."
+    },
+    {
+     "lat": 46.2024372,
+     "lng": -121.4907742,
+     "elev": 12276,
+     "name": "Mount Adams Summit",
+     "type": "Summit",
+     "distMi": 11.5,
+     "directions": "The usual line takes the right-hand side of the glacier for roughly the first two-thirds, threading ice steps and serac lanes, then cuts back left high up onto the unbroken snow of the summit plateau. Which side of the upper icefall goes changes from year to year, and the left-hand option has been found far steeper than the grade suggests — sustained 55 to 65 degrees rather than moderate — so look at it in daylight from below before committing. The crossing beneath the ice cliffs is the stretch to move through fastest, on thin bridges and with backtracking common. Above the icefall the angle eases and two or three false summits stand between you and the true one, so keep navigating rather than trusting the first high point."
+    }
+   ]
+  },
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/107707699/adams-glacier",
+    "https://publications.americanalpineclub.org/articles/12194604300/Cascade-Climbs-1945",
+    "https://www.fs.usda.gov/r06/giffordpinchot/recreation/trailhead-killen-creek",
+    "https://www.fs.usda.gov/r06/giffordpinchot/recreation/trails/trail-113-killen-creek",
+    "https://www.fs.usda.gov/r06/giffordpinchot/recreation/mt-adams-summit",
+    "https://www.mountaineers.org/activities/routes-places/mount-adams-south-spur",
+    "https://www.openstreetmap.org/way/147108641",
+    "USGS GNIS DomesticNames_WA 1515726 Mount Adams",
+    "USGS EPQS 3DEP elevation"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "waypoints/Mount Adams Summit",
+    "value": {
+     "name": "Mount Adams Summit",
+     "lat": 46.2024372,
+     "lng": -121.4907742
+    },
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.usgs.gov/tools/geographic-names-information-system-gnis",
+      "fact": "GNIS 1515726 Mount Adams 46.2024372,-121.4907742",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "measurement": "USGS 3DEP grid search (49 points, ~25 m spacing) around the GNIS point: highest cell is the GNIS point (12,276 ft) - batch B, same point",
+      "fact": "high point within 25 m"
+     }
+    ]
+   },
+   {
+    "field": "waypoints/Killen Creek Trailhead",
+    "value": {
+     "name": "Killen Creek Trailhead",
+     "lat": 46.2883827,
+     "lng": -121.5523575
+    },
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "measurement": "OSM way 147108641 amenity=parking 'Killen Creek Trailhead', centroid",
+      "fact": "46.2883827,-121.5523575",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.fs.usda.gov/r06/giffordpinchot/recreation/trailhead-killen-creek",
+      "official": true,
+      "fact": "trailhead 46.288406,-121.552318 (4 m from the OSM lot centroid)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 12276,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r06/giffordpinchot/recreation/mt-adams-summit",
+      "official": true,
+      "fact": "summit 12,276 ft (updated 2026-11-17)",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "measurement": "USGS 3DEP at the GNIS Mount Adams point = 12,276.3 ft",
+      "fact": "12276"
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Fred Beckey, Dave Lind, and Robert Mulhall, July 1945",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://publications.americanalpineclub.org/articles/12194604300/Cascade-Climbs-1945",
+      "fact": "Fred Beckey, Dave Lind, Bob Mulhall; 8 July 1945; NW face via the Adams Glacier icefall, first ascent by the route",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.mountainproject.com/route/107707699/adams-glacier",
+      "fact": "FA Beckey, Lind, and Mulhall, July 1945",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "AI3",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107707699/adams-glacier",
+      "fact": "AI2-3 Steep Snow (slash grade agrees with either half)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "commitment",
+    "value": "III",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107707699/adams-glacier",
+      "fact": "Grade III",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "length_m",
+    "value": 1433,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107707699/adams-glacier",
+      "fact": "4,700 ft (1,424 m)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_mount_adams_adams_glacier",
+    "column": "gain_ft",
+    "from": 5150,
+    "to": 7690,
+    "why": "Measured: USFS official summit 12,276 ft - USGS 3DEP 4,587 ft at the Killen Creek lot = 7,689 ft. 5,150 is roughly the climb above High Camp only; the stored loss_ft (7,680) already counts the whole descent. Lock measured after.",
+    "evidence": [
+     "https://www.fs.usda.gov/r06/giffordpinchot/recreation/mt-adams-summit",
+     "USGS EPQS 3DEP"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_mount_adams_adams_glacier",
+    "column": "dist_km",
+    "from": 28.16,
+    "to": 11.3,
+    "why": "One-way convention. The first-ascent account starts on the Killen Creek Trail \"about seven miles from the summit\" (11.3 km); USFS: Killen Creek Trail 113 is 3.1 mi to the PCT; straight line trailhead-summit is 10.7 km. 28.16 km (17.5 mi) is neither one-way nor a 14-mile round trip. If the owner wants round-trip here, use 22.5.",
+    "evidence": [
+     "https://publications.americanalpineclub.org/articles/12194604300/Cascade-Climbs-1945",
+     "https://www.fs.usda.gov/r06/giffordpinchot/recreation/trails/trail-113-killen-creek"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_mount_adams_adams_glacier",
+    "column": "permit",
+    "from": "Mt. Adams Climbing Pass (Cascade Volcano Pass) required above 7,000 ft May 1-Sep 30, sold per trip on Recreation.gov; free self-issue wilderness permit at the trailhead otherwise. Pack out human waste.",
+    "to": "Mt. Adams Climbing Pass required above 7,000 ft from May 1 to Sep 30 (age 16 and up), bought ahead on Recreation.gov; at other times and below 7,000 ft, a free self-issued wilderness permit at the trailhead. Pack out all human waste.",
+    "why": "USFS page (updated 2026-11-17) names it the Mt. Adams Climbing Pass (not Cascade Volcano Pass), age 16+, sold on Recreation.gov; free self-issue wilderness permit below 7,000 ft and Oct-Apr; pack out all waste. \"Per trip\" is not stated there. Lock official-1 after (expires 2027-11-18).",
+    "evidence": [
+     "https://www.fs.usda.gov/r06/giffordpinchot/recreation/mt-adams-summit"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_mount_adams_adams_glacier",
+    "column": "gpx",
+    "from": "3-point line",
+    "to": null,
+    "why": "The stored line is the trailhead, one point and the summit pin joined up (3 points, 7.7 km gap) - not a track. Rule: lines that are only pins joined are removed.",
+    "evidence": [
+     "stored gpx measured offline"
+    ]
+   }
+  ],
+  "disputed": [
+   "Climbing Pass season: the USFS Killen Creek trailhead page (updated 2026-01-09) says June 1-Sep 30; the USFS Mt. Adams Summit page (updated 2026-11-17) says May 1-Sep 30. The newer page is used.",
+   "Waypoint distMi: the summit pin says 11.5 mi and the base pin 7 mi; the first-ascent account puts the summit about 7 mi from the trail start. Not changed (no exact figure)."
+  ],
+  "notes": "Trailhead pin moved 17 m onto the OSM Killen Creek lot (USFS point 4 m away), elev 4,587 ft (3DEP; stored 4,600). Summit pin moved 11 m onto the USGS GNIS point. AAJ 1945: icefall begins ~8,500 ft, two 50 deg slopes above the first bergschrund, angle eases above 10,000 ft, descent by the North Ridge. MP: dry camps 7,000-7,600 ft, a lake camp at 7,650 ft. USFS: group limit 12, scat packs free at the Trout Lake district office. The two pins with null lat/lng (High Camp, Adams Glacier Base) were left as they are."
+ },
+ "wa_mount_baker_coleman_headwall": {
+  "area": "wa_mount_baker",
+  "set": {
+   "waypoints": [
+    {
+     "lat": 48.8020775,
+     "lng": -121.8959136,
+     "elev": 3676,
+     "name": "Heliotrope Ridge Trailhead",
+     "type": "Trailhead",
+     "distMi": 0,
+     "directions": "The trailhead sits at roughly 3,400 to 3,700 ft on Glacier Creek Road 39. The road washed out in December 2025 and reopened to vehicles in August 2026 after repairs; it has washed out before, so check its status before committing."
+    },
+    {
+     "lat": 48.7893,
+     "lng": -121.86777,
+     "elev": 5900,
+     "name": "Heliotrope Ridge Camp",
+     "type": "Campsite",
+     "distMi": 3,
+     "directions": "Trail 677 climbs through old-growth forest and flower-filled avalanche chutes, with a couple of unbridged creek crossings that are awkward early season or after rain. At about 2.25 miles the maintained trail forks; the left branch goes to the Coleman Glacier overlook, so take the right climbers' path that drops toward the moraine. Past the former Kulshan Cabin site near 4,800 to 5,000 ft, the last reliable running water, the path climbs steeply up the crest of the Hogsback lateral moraine to the usual camps between about 6,500 and 7,200 ft, roughly 3 to 3.5 miles and 3,000 ft above the car. Above camp there is no water except what you melt."
+    },
+    {
+     "lat": 48.7792,
+     "lng": -121.8312,
+     "elev": 8500,
+     "name": "Coleman Headwall Base",
+     "type": "Hazard",
+     "distMi": null,
+     "directions": "Rope up for glacier travel and cross the broken lower Coleman, generally trending up toward 8,000 ft to meet the North Ridge tracks before dropping back down and cutting under the Roman Nose to reach the base near 8,500 ft. This crossing is a real route-finding crux that changes year to year, with big crevasses to weave around, questionable snow bridges, and sometimes a committing, barely-reversible jump or a short vertical step to get established. Leave camp in the dark (starts between 11 p.m. and 4:30 a.m. are typical) so you are past the exposed crossing and the lower face before the sun brings rock and ice down off the headwall and the Black Buttes."
+    },
+    {
+     "lat": 48.7766298,
+     "lng": -121.8144732,
+     "elev": 10781,
+     "name": "Mount Baker Summit",
+     "type": "Summit",
+     "distMi": 6,
+     "directions": "Roughly a dozen pitches of sustained 45 to 50 degree neve and ice lead up the face: hard, dirty ice on leftward-trending traverses low down with rockfall exposure from a choss band above, then short steeper steps and an 800 ft band of brittle, plated 60 to 80 degree ice that takes screws well despite looking suspect. A bergschrund near 10,000 ft is the other crux and its lip often forces a short, occasionally overhanging step, sometimes belayed or lowered across off a screw or picket. Above it the angle relents to moderate snow and then an easy slope onto the summit plateau; 8 to 12 hours camp-to-summit is typical."
+    }
+   ]
+  },
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/105893407/coleman-headwall",
+    "https://www.alpineinstitute.com/route-profile-mt-baker-coleman-headwall/",
+    "https://gethighonaltitude.com/2017/08/01/mt-baker-coleman-headwall",
+    "https://www.fs.usda.gov/r06/mbs/recreation/mt-baker-summit-climbing",
+    "https://www.fs.usda.gov/r06/mbs/recreation/park-glacier-climbing-route",
+    "https://www.openstreetmap.org/way/296392530",
+    "USGS GNIS DomesticNames_WA 1516062 / 1520243",
+    "USGS EPQS 3DEP elevation"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "waypoints/Mount Baker Summit",
+    "value": {
+     "name": "Mount Baker Summit",
+     "lat": 48.7766298,
+     "lng": -121.8144732
+    },
+    "method": "measured",
+    "level": "locked",
+    "evidence": [
+     {
+      "measurement": "USGS GNIS feature 1516062 \"Mount Baker\" (Summit) primary point, DomesticNames_WA",
+      "fact": "48.7766298, -121.8144732"
+     },
+     {
+      "measurement": "USGS GNIS feature 1520243 \"Grant Peak\" (Summit) at 48.7766406, -121.8144899, 1.7 m away",
+      "fact": "second USGS feature for the top"
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 10781,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r06/mbs/recreation/mt-baker-summit-climbing",
+      "official": true,
+      "fact": "Mt. Baker summit (Grant Peak) 10,781 ft",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.alpineinstitute.com/route-profile-mt-baker-coleman-headwall/",
+      "fact": "summit 10,781 ft",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "No climbing or wilderness permit is required; filling in the voluntary climbing register at the trailhead is recommended. No quota or fee. Northwest Forest Pass at developed trailheads.",
+    "method": "official-1",
+    "level": "locked",
+    "expires_at": "2027-11-18T00:00:00Z",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r06/mbs/recreation/mt-baker-summit-climbing",
+      "official": true,
+      "fact": "no climbing permit; no climbing fee; recreation pass per vehicle at Heliotrope Ridge, Park Butte, Artist Point (read by batch B, 2026-11-18)",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.fs.usda.gov/r06/mbs/recreation/park-glacier-climbing-route",
+      "official": true,
+      "fact": "valid Recreation Pass required at Artist Point trailhead; party size 12 (updated 2026-08-31)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "AI4",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105893407/coleman-headwall",
+      "fact": "AI4 Steep Snow",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://gethighonaltitude.com/2017/08/01/mt-baker-coleman-headwall",
+      "fact": "IV, AI4-5 (range agrees with AI4)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "Grade IV",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105893407/coleman-headwall",
+      "fact": "Grade IV",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://gethighonaltitude.com/2017/08/01/mt-baker-coleman-headwall",
+      "fact": "IV",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "length_m",
+    "value": 610,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105893407/coleman-headwall",
+      "fact": "2,000 ft (606 m)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_mount_baker_coleman_headwall",
+    "column": "commitment",
+    "from": "II-III",
+    "to": "IV",
+    "why": "MP and gethighonaltitude both rate the route Grade IV (the row's own alpine_grade already says Grade IV). Lock agree-2 after.",
+    "evidence": [
+     "https://www.mountainproject.com/route/105893407/coleman-headwall",
+     "https://gethighonaltitude.com/2017/08/01/mt-baker-coleman-headwall"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_mount_baker_coleman_headwall",
+    "column": "gain_ft",
+    "from": 7000,
+    "to": 7100,
+    "why": "Same trailhead and summit as the North Ridge, whose gain_ft 7,100 is locked (Mountaineers 7,100 ft; USFS 10,781 - 3DEP 3,676 at the Heliotrope lot = 7,105). Lock agree-2 after.",
+    "evidence": [
+     "https://www.mountaineers.org/activities/routes-places/mount-baker-north-ridge",
+     "USGS EPQS 3DEP"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_mount_baker_coleman_headwall",
+    "column": "gpx",
+    "from": "4-point line",
+    "to": null,
+    "why": "The stored line is exactly the four waypoints joined up (gaps to 2.9 km) - not a track. Rule: lines that are only pins joined are removed.",
+    "evidence": [
+     "stored gpx measured offline"
+    ]
+   }
+  ],
+  "disputed": [
+   "fa (Ed Cooper, Phil Bartow, Donald Grimlund, David Nicholson, August 1957): Mountain Project only; no AAJ or other page found. Not locked.",
+   "pitches 12: AAI says up to 14 depending on conditions; MP lists none. Not locked.",
+   "Grade: Mountain Madness is reported (stored corrections) to call it III+; MP and gethighonaltitude say IV.",
+   "dist_km 20.92 (13 mi) is about 2.2x the summit pin's 6 mi - a round-trip value. Left; flagged for the owner's convention choice."
+  ],
+  "notes": "Trailhead pin moved onto the OSM Heliotrope Ridge lot (way 296392530) and summit pin onto the USGS point (19 m), the same placements as Coleman-Deming and North Ridge; trailhead elev 3,676 ft (3DEP). The \"Coleman Headwall Base\" pin is typed Hazard; 3DEP 8,515 ft there agrees with the ~8,500 ft base AAI names, but it sits on a moving glacier and is not lockable - consider type Base. AAI: base left of the Roman Nose ~8,500 ft, mostly 45-50 deg, angle eases ~10,200 ft, right-hand line not recommended after July 1. gethighonaltitude counts three bergschrund crossings (MP: two)."
+ },
+ "wa_mount_baker_park_glacier_headwall": {
+  "area": "wa_mount_baker",
+  "set": {
+   "waypoints": [
+    {
+     "lat": 48.8468419,
+     "lng": -121.6927812,
+     "elev": 5073,
+     "name": "Artist Point Trailhead (Chain Lakes/Ptarmigan Ridge Trail)",
+     "note": "Park Glacier Headwall approaches from Artist Point on the opposite side via Ptarmigan Ridge, not from Glacier Creek Rd/Heliotrope Ridge.",
+     "type": "Trailhead",
+     "elevFt": 5140,
+     "directions": "From I-5 Exit 255 in Bellingham, follow the Mount Baker Highway (WA-542) east through Glacier and past the Heather Meadows ski area to the road end at Artist Point, about 58 miles. The final stretch is usually snow-free only from about mid-July into early fall. A Northwest Forest Pass is required to park."
+    },
+    {
+     "lat": 48.7766298,
+     "lng": -121.8144732,
+     "elev": 10781,
+     "name": "Grant Peak (Mount Baker summit)",
+     "type": "Summit",
+     "elevFt": 10781,
+     "directions": "Follow the Chain Lakes Trail about a mile to the Ptarmigan Ridge junction, then the Ptarmigan Ridge Trail west along the crest past Coleman Pinnacle and Camp Kiser to the Portals, where most parties camp. Drop onto the Rainbow Glacier, cross onto the Park Glacier, and climb the headwall beneath the Cockscomb, crossing the bergschrund near 9,500 ft, to the summit plateau and Grant Peak."
+    }
+   ]
+  },
+  "review": {
+   "sources": [
+    "https://publications.americanalpineclub.org/articles/12197134901",
+    "https://climberkyle.com/2026/05/09/mt-baker-park-glacier-headwall-talum-glacier/",
+    "https://www.fs.usda.gov/r06/mbs/recreation/park-glacier-climbing-route",
+    "https://www.fs.usda.gov/r06/mbs/recreation/artist-point-trailhead",
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/ptarmigan-ridge-trail-6821",
+    "https://www.fs.usda.gov/r06/mbs/recreation/mt-baker-summit-climbing",
+    "https://www.openstreetmap.org/way/96495723",
+    "USGS GNIS DomesticNames_WA 1516062 / 1520243",
+    "USGS EPQS 3DEP elevation"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "waypoints/Grant Peak (Mount Baker summit)",
+    "value": {
+     "name": "Grant Peak (Mount Baker summit)",
+     "lat": 48.7766298,
+     "lng": -121.8144732
+    },
+    "method": "measured",
+    "level": "locked",
+    "evidence": [
+     {
+      "measurement": "USGS GNIS feature 1516062 \"Mount Baker\" (Summit) primary point, DomesticNames_WA",
+      "fact": "48.7766298, -121.8144732"
+     },
+     {
+      "measurement": "USGS GNIS feature 1520243 \"Grant Peak\" (Summit) at 48.7766406, -121.8144899, 1.7 m away",
+      "fact": "second USGS feature for the top"
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 10781,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r06/mbs/recreation/mt-baker-summit-climbing",
+      "official": true,
+      "fact": "Mt. Baker summit (Grant Peak) 10,781 ft",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.alpineinstitute.com/route-profile-mt-baker-coleman-headwall/",
+      "fact": "summit 10,781 ft",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "No climbing or wilderness permit is required; filling in the voluntary climbing register at the trailhead is recommended. No quota or fee. Northwest Forest Pass at developed trailheads.",
+    "method": "official-1",
+    "level": "locked",
+    "expires_at": "2027-11-18T00:00:00Z",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r06/mbs/recreation/mt-baker-summit-climbing",
+      "official": true,
+      "fact": "no climbing permit; no climbing fee; recreation pass per vehicle at Heliotrope Ridge, Park Butte, Artist Point (read by batch B, 2026-11-18)",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.fs.usda.gov/r06/mbs/recreation/park-glacier-climbing-route",
+      "official": true,
+      "fact": "valid Recreation Pass required at Artist Point trailhead; party size 12 (updated 2026-08-31)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_mount_baker_park_glacier_headwall",
+    "column": "dist_km",
+    "from": 8,
+    "to": null,
+    "why": "dist_km 8 is shorter than the 11.8 km straight line from the Artist Point lot to the summit, so it cannot be one-way; it equals the USFS 5-mile (8.0 km) approach to Camp Kiser - a leg. No source opened gives a trailhead-to-summit figure; null until one does.",
+    "evidence": [
+     "https://www.fs.usda.gov/r06/mbs/recreation/park-glacier-climbing-route"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_mount_baker_park_glacier_headwall",
+    "column": "grade",
+    "from": "Class 3",
+    "to": "AI3",
+    "why": "Misclassification: a class grade for a steep ice face. AAJ (FA account) describes an overhanging 30-50 ft schrund, a ~60 deg access ramp and ~60 deg on the upper face over about three and a half leads. AI3 is the row's own ice_grade, NOT stated by any source opened - owner to approve the value (with grade_system class -> wi, grade_num 3).",
+    "evidence": [
+     "https://publications.americanalpineclub.org/articles/12197134901"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_mount_baker_park_glacier_headwall",
+    "column": "gpx",
+    "from": "13-point line",
+    "to": null,
+    "why": "Fails the track checks: starts 7.1 km from the trailhead pin, gaps to 765 m, 13 points, no timestamps (CalTopo-sourced). Rule: gaps over 500 m are removed.",
+    "evidence": [
+     "stored gpx measured offline"
+    ]
+   }
+  ],
+  "disputed": [
+   "fa (Norm Bodine, Jim Friar, Tim Keliher, July 4-5, 1971): matches the AAJ 1971 report written by Keliher, but it is the only source - a first ascent never locks on one. Not locked.",
+   "pitches 4: AAJ \"about three and a half leads\"; no second source.",
+   "Road season: stored road text says Artist Point opens mid-to-late June; the USFS Artist Point page (updated 2026-07-20) says typically July-October, closing after the first big snowfall (late Sep-early Nov). Not locked."
+  ],
+  "notes": "Trailhead pin moved 60 m onto the centroid of the OSM Artist Point Trailhead lot (way 96495723, USFS-operated, 150 spaces), 3DEP 5,073 ft (stored 5,140; USFS page says 5,160). Not locked: the USFS site point (48.84637,-121.69194) is 81 m from the lot centroid. Summit pin snapped 19 m to the USGS point. USFS: Ptarmigan Ridge Trail 682.1 is 4.5 mi one-way from Artist Point; Coleman Pinnacle 3 mi past the Chain Lakes junction, Camp Kiser 0.5 mi further; camps also at the Flats and the Portals; party size 12; the USFS Park Glacier page does not mention a headwall. climberkyle (May 2026 ski descent): ~45 deg for ~600 ft then the bergschrund. Waypoints carry distMi undefined."
+ }
+}

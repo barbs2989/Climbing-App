@@ -254,7 +254,7 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     Crews is *not* captured: `crewView` defaults to it, so it is the `Crew` screen already
     captured, and that equality is asserted as a round-trip rather than dodged.
     **Each crew there is one compact card since 2026-11-14 ("guided, not gated"):** cover, who is
-    in, a 7-step strip, one *Next step* button, a row per step and *Crew chat* / *⋯ More*. The
+    in, a 7-step strip, one *Next step* button, a row per step and *Crew chat* (the *⋯ More* button went on 2026-11-18; its settings are at the foot of the Crew sheet). The
     roster, the days, the meet-up and the rest open in a portalled step sheet (`lib/CrewStepSheet.jsx`,
     a `role="dialog"` with a ✕ *Close*), so a walk that needs one opens it by its row
     (`button[data-crew-step="crew"|"day"|"meet"|"ready"|"gear"|"itin"]`) and closes it before

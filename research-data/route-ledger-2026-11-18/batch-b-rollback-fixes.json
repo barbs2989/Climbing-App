@@ -1,0 +1,167 @@
+{
+ "note": "Values replaced by the owner-approved batch-B fixes, 2026-11-18",
+ "rollback": [
+  {
+   "table": "routes",
+   "id": "wa_mount_rainier_liberty_ridge",
+   "before": {
+    "permit": "Mount Rainier: climbing on glaciers or above 10,000 ft requires the park's climbing registration; overnight high camps also need a wilderness permit."
+   }
+  },
+  {
+   "table": "areas",
+   "id": "wa_forbidden_peak",
+   "before": {
+    "lat": 48.5115,
+    "lng": -121.0579
+   }
+  },
+  {
+   "table": "areas",
+   "id": "wa_mount_stuart",
+   "before": {
+    "lat": 47.475118,
+    "lng": -120.903144
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_mount_stuart_cascadian_couloir",
+   "before": {
+    "high_point_ft": 9416
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_liberty_crack",
+   "before": {
+    "high_point_ft": 7746
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_liberty_bell_beckey_route",
+   "before": {
+    "length_m": 152
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_south_arete",
+   "before": {
+    "disciplines": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_saber",
+   "before": {
+    "pitches": 0
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_saber",
+   "before": {
+    "disciplines": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_orbit",
+   "before": {
+    "commitment": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_orbit",
+   "before": {
+    "alpine_grade": "III"
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_orbit",
+   "before": {
+    "disciplines": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_mount_shuksan_price_glacier",
+   "before": {
+    "gpx": [
+     [
+      48.894,
+      -121.651
+     ],
+     [
+      48.818,
+      -121.585
+     ],
+     [
+      48.83109,
+      -121.60294
+     ]
+    ]
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_mount_baker_easton_glacier",
+   "before": {
+    "dist_km": 6.4
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_mount_baker_coleman_deming",
+   "before": {
+    "dist_km": 4.7
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_mount_adams_south_climb",
+   "before": {
+    "pitches": 0
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_mount_adams_south_climb",
+   "before": {
+    "permit": "Mt. Adams Climbing Pass (Cascade Volcano Pass) required above 7,000 ft May 1-Sep 30, sold per trip on Recreation.gov; free self-issue wilderness permit at the trailhead otherwise. Pack out human waste."
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_mount_st_helens_monitor_ridge",
+   "before": {
+    "high_point_ft": 8363
+   }
+  },
+  {
+   "table": "areas",
+   "id": "wa_mount_st_helens",
+   "before": {
+    "elevation_ft": 8363
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_eldorado_peak_east_ridge",
+   "before": {
+    "high_point_ft": 8872
+   }
+  },
+  {
+   "table": "areas",
+   "id": "wa_main_peak",
+   "before": {
+    "elevation_ft": 8872
+   }
+  }
+ ]
+}

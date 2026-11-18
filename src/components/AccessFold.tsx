@@ -18,7 +18,7 @@ export interface AccessFoldProps {
    SAYS so: the row ends in a "Show details" / "Hide" pill (owner, 2026-11-05: "isn't clear that it's a dropdown").
    With a permit, its details, fees, closures, rules, a group limit, the land manager, a pass, parking,
    how to apply and two permit links it ran to a full phone screen on most alpine routes, ahead of
-   the approach a climber came to read. Closed, it is one row: the heading, then WHAT it holds (the
+   the approach a climber came to read. Closed, it is two lines: the heading, then WHAT it holds (the
    labels of the rows on file) so a climber can tell a permit is involved without opening it.
    The body is HIDDEN, not unmounted: the text stays in the markup, so check:field-renders still
    proves every access sub-key reaches the page. The edit pencil sits beside the toggle, not inside
@@ -31,20 +31,30 @@ export interface AccessFoldProps {
  */
 export default function AccessFold({summary,onEdit,children}: AccessFoldProps){const [open,setOpen]=useState(false);
   return <div style={{background:C.card,borderRadius:10,padding:"11px 12px",margin:FOLD_GAP+"px 0 "+ROUTE_GAP+"px",border:`1px solid ${C.border}`}}>
-    <div style={{display:"flex",alignItems:"center",gap:8}}>
-      {/* The toggle is STRETCHED BEHIND the row, not wrapped around it: CardHead carries the confidence
-          chip's Flag button, and a button inside a button is invalid HTML (React warns validateDOMNesting)
-          and leaves the Flag's tap to the browser. The title and summary sit above it and let taps fall
-          through to the toggle; the Flag takes its own (pointer-events in ConfChip). */}
-      <div style={{flex:1,minWidth:0,minHeight:44,position:"relative",display:"flex",alignItems:"center",gap:8}}>
-        <button onClick={function(){setOpen(!open);}} aria-expanded={open} aria-label={(open?"Hide":"Show")+" access & regulations"+(!open&&summary?": "+summary:"")} style={{minHeight:44,position:"absolute",left:0,top:0,width:"100%",height:"100%",padding:0,background:"transparent",border:"none",cursor:"pointer"}}/>
-        <span style={{flex:1,minWidth:0,position:"relative",pointerEvents:"none"}}><CardHead style={{marginBottom:open?0:3}}>ACCESS & REGULATIONS</CardHead>{open?null:<span aria-hidden="true" style={{display:"block",fontSize:12,color:C.textMuted,overflowWrap:"anywhere"}}>{summary}</span>}</span>
+    {/* TWO LINES, not one row (owner, 2026-11-18: the heading wrapped to three lines, "ACCESS / & /
+        REGULATIONS", squeezed to 26px by its confidence chip, the Show details pill and the pencil all
+        sharing one line at 390px). Line one is the heading with its chip and the pencil; line two is what
+        it holds and the pill that opens it. The heading WRAPS its chip rather than its words: title, chip
+        and pencil need ~350px and a 390px phone gives the row ~260, so the chip drops under the title,
+        lined up with its first letter (CardHead does this for every card heading now; it sat 4px off every edge before).
+        The toggle is STRETCHED BEHIND both lines, not wrapped around them: CardHead carries the confidence
+        chip's Flag button, and a button inside a button is invalid HTML (React warns validateDOMNesting)
+        and leaves the Flag's tap to the browser. The title, summary and pill sit above it and let taps
+        fall through to the toggle; the Flag and the pencil take their own (pointer-events in ConfChip;
+        the pencil is stacked above the toggle). */}
+    <div style={{position:"relative",minHeight:44}}>
+      <button onClick={function(){setOpen(!open);}} aria-expanded={open} aria-label={(open?"Hide":"Show")+" access & regulations"+(!open&&summary?": "+summary:"")} style={{minHeight:44,position:"absolute",left:0,top:0,width:"100%",height:"100%",padding:0,background:"transparent",border:"none",cursor:"pointer"}}/>
+      <div style={{display:"flex",alignItems:"center",gap:8}}>
+        <span style={{flex:1,minWidth:0,position:"relative",pointerEvents:"none"}}><CardHead style={{marginBottom:0}}>ACCESS & REGULATIONS</CardHead></span>
+        <span style={{position:"relative",flexShrink:0}}><EditIconButton onClick={onEdit} title="Edit access & permit information"/></span>
+      </div>
+      <div style={{display:"flex",alignItems:"center",gap:8,marginTop:4}}>
+        <span aria-hidden="true" style={{flex:1,minWidth:0,position:"relative",pointerEvents:"none",fontSize:12,color:C.textMuted,lineHeight:1.4,overflowWrap:"anywhere"}}>{open?null:summary}</span>
         {/* A LABELLED pill, not a bare chevron (owner, 2026-11-05: "isn't clear that it's a dropdown"):
             a 16px chevron at the end of a heading-and-caption row read as decoration, so the row looked
             like a short card. The word says what the tap does; the pill says it is a control. */}
         <span aria-hidden="true" style={{position:"relative",pointerEvents:"none",display:"inline-flex",alignItems:"center",gap:3,flexShrink:0,padding:"5px 7px 5px 10px",borderRadius:999,border:`1px solid ${C.blue}66`,background:C.blue+"14",color:C.blue,fontSize:12.5,fontWeight:700,lineHeight:1}}>{open?"Hide":"Show details"}<Chevron open={open} size={14} color={C.blue}/></span>
       </div>
-      <EditIconButton onClick={onEdit} title="Edit access & permit information"/>
     </div>
     <div hidden={!open} style={{marginTop:9}}>{children}</div>
   </div>;

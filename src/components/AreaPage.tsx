@@ -1,10 +1,11 @@
 import { DISCIPLINES, ATYPE } from "../../lib/areaBrowserShared.js";
 import { useState, useRef, useContext, useEffect, type CSSProperties } from "react";
 import { createPortal } from "react-dom";
-import { useArea, useAreaClimbStats, useAreaContributions, useAreaChildren, useAreaChildrenGradeCounts, useAreaRoutes, useAreaClassics, useAreaLoggedMonths, useAreaNamesByIds, useScopedWishlistRoutes, submitAreaPlacementClaim } from "../../lib/db";
+import { useArea, useAreaClimbStats, useAreaContributions, useAreaChildren, useAreaChildrenGradeCounts, useAreaChildrenDiscCounts, useAreaRoutes, useAreaClassics, useAreaLoggedMonths, useAreaNamesByIds, useScopedWishlistRoutes, submitAreaPlacementClaim } from "../../lib/db";
 import type { WallGradeRow } from "./WallGradeBars.tsx";
 import AreaActionRow from "./AreaActionRow.tsx";
 import AreaChildrenList from "./AreaChildrenList.tsx";
+import type { ChildDiscCounts } from "../../lib/areaChildSort.js";
 import AreaPhotoStrip from "./AreaPhotoStrip.tsx";
 import { DISC_LABELS as DL } from "../../lib/discLabels";
 import { ScreenHero } from "../../lib/ScreenHero";
@@ -195,6 +196,8 @@ export default function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, book
   // grade bars) start with the page instead of waiting a round trip for the children list. Anything
   // else waits for the list: a crag or peak can be a leaf.
   const aboveLeaf = isLeaf === false || (!Array.isArray(children) && ["state", "region", "range"].includes(area.area_type || ""));
+  // Each child's climbs by discipline (0455), for the sub-area list's "Most sport / trad…" sorts and its type line.
+  const kidDiscs: AreaPageQuery<ChildDiscCounts> = useAreaChildrenDiscCounts(area.id, { enabled: aboveLeaf });
   // The website's arrangement (competitor review item 15, 2026-11-04): CLIMBS HERE and GRADE SPREAD side by
   // side, the finder's form inline under them preset to the climber's grade, classics as one-line rows,
   // and MOST LOGGED HERE beside Season. The phone keeps its stacked page and its Route finder button.
@@ -265,7 +268,7 @@ export default function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, book
   const showAbout = formation || !!(area.blurb && String(area.blurb).trim());
   const childRows = !loading && children && children.length > 0 ? children : null;
   const mapPin = area.lat != null && area.lng != null && isFinite(Number(area.lat)) && isFinite(Number(area.lng)) ? { lat: Number(area.lat), lng: Number(area.lng), zoom: MAP_ZOOM[area.area_type] || 10, name: area.name } : null;
-  const childList = (variant: "sidebar" | "section") => childRows ? <AreaChildrenList rows={childRows} noun={childNoun(children)} onDrill={onDrill} C={C} grades={wide && variant === "section" ? kidGrades.data || null : null} objectives={objByChild} variant={variant} onAllAreas={onAllAreas} map={variant === "sidebar" ? mapPin : null} onNear={onNear} /> : null;
+  const childList = (variant: "sidebar" | "section") => childRows ? <AreaChildrenList rows={childRows} noun={childNoun(children)} onDrill={onDrill} C={C} grades={wide && variant === "section" ? kidGrades.data || null : null} objectives={objByChild} variant={variant} onAllAreas={onAllAreas} map={variant === "sidebar" ? mapPin : null} onNear={onNear} discCounts={kidDiscs.data || null} /> : null;
   // CLASSIC CLIMBS HERE. Above a wall: all of them across the subtree (ClassicsList: five, then a dropdown), each
   // row naming the wall it is on; a failed read says so; an area with no classics shows nothing rather than "none".
   // A wall: areaClassics over its own rows; with none, TOP RATED HERE -- the rows that carry a climber star rating
@@ -448,8 +451,10 @@ export default function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, book
 
       {/* 14px above, the same gap Suggested climbs keeps above itself: with no Nearby peaks (a crag) the board
           sat flush under the Suggested climbs box (owner, 2026-11-11). Block margins collapse, so with
-          Nearby peaks shown the gap is 14, not 14 + its own 10. */}
-      {TopContributors ? <div style={{ marginTop: 14 }}><TopContributors areaId={area.id} mb={8}/></div> : null}
+          Nearby peaks shown the gap is 14, not 14 + its own 10. Below it, 20: the Discussion App mounts next opens
+          with a divider line (marginTop 10, collapsing with this), and at 8 that line sat ~11px under the box and read
+          as part of it (owner, 2026-11-18: "needs spacing"). */}
+      {TopContributors ? <div style={{ marginTop: 14 }}><TopContributors areaId={area.id} mb={20}/></div> : null}
     </div>
   );
   // The website: the map and the sub-areas in the left panel beside the page (owner chose "Sidebar on web, early on
