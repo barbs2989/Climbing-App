@@ -45,7 +45,7 @@ room for side-panel ads later. The phone app keeps its own look.
     the menu box ... persist the back button on the top left so it's always visible even as you scroll ... If there's
     already a back button on the screen, just have 1 ... app view only"). The Menu is a 44px ☰ square like the bar's
     other buttons (its name is still "Menu"). When the screen in the main column (a climb, an area, a chat, a crew's
-    safety page) has its own ← Back at its top, `usePageBack` in `lib/pageBack.js` finds it (`findPageBack` in
+    safety page) has its own ← Back at its top, `usePageBack` in `lib/pageBack.js` finds it (`findPageBacks` in
     `lib/dialogA11y.js`: a BACK, never a ✕, within the top of `#appscroll`), marks it `data-cm-page-back` so a rule in
     App's `<style>` hides it, and the sticky bar draws a `POP_BACK` pill (44px tall, "← Back"; the arrow alone under
     360px) that taps that same control — so every screen keeps its own handler and none was rewired. Its accessible
@@ -264,7 +264,7 @@ taken focus from it by the time the hook looks.
 | `lib/DesktopShell.jsx` | `WideSearch`, `WideRail` (`RailCrews`, `RailGroups`, `FoldCard`), `AvatarMenu`, `WideFooter`, `DocTitle` |
 | `lib/installPrompt.js` | `useInstallPrompt` |
 | `lib/Ads.jsx` | `ADS_ON`, `adsActive`, `SideAd`, `RailAd`, `useRailFollow`, `FollowColumn` |
-| `lib/dialogA11y.js` | `coveringLayer`, `pinDismiss`, `pinLayers`, `findPageBack`, `PAGE_BACK_ATTR` |
+| `lib/dialogA11y.js` | `coveringLayer`, `pinDismiss`, `pinLayers`, `findPageBacks`, `PAGE_BACK_ATTR` |
 | `lib/pageBack.js` | `usePageBack` |
 | `lib/tapSlop.js` | `installTapSlop`, `slopTarget`, `TAP_MIN` |
 | `ClimbMatch.jsx` | `NAV`, `goTab`, `navBadge`, `_inChat`, `_known`, `_openMe`, `_closePages`, `_pageView`, `_isAdPage`, `_avatarItems` |
