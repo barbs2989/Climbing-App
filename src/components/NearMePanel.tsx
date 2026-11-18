@@ -387,7 +387,7 @@ export default function NearMePanel({ center0, areaType, name, onBack, onOpenAre
           lat: a.lat, lng: a.lng, name: a.name,
           color: DISC_COLORS[a.dominant_discipline] || C.blue, iconHtml: discIconMarkup(a.dominant_discipline, 14),
           sub: a.route_count + (a.route_count === 1 ? " climb" : " climbs") + (wlByArea[a.id] ? " · " + onList(wlByArea[a.id]) : ""),
-          openLabel: "Open area", onOpen: () => { setView3d(false); setFullscreen(false); onOpenArea(a); },
+          openLabel: "View area", onOpen: () => { setView3d(false); setFullscreen(false); onOpenArea(a); },
         }))} />
     </Suspense>
   ) : null;

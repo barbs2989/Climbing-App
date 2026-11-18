@@ -118,7 +118,9 @@ empty field fill at once and two agreeing climbers change one; the owner withdre
   the database's sentence.
 
 - **Pitches and rappels** (`SuggestFix`): each ROUTE BREAKDOWN row has its own "✎ Edit this pitch",
-  which opens the sheet scrolled to that pitch (`focusPitch`); pitches can be moved up and down;
+  which opens the sheet scrolled to that pitch (`focusPitch`) with its *Pitch N* header just under the
+  pinned title bar, showing THAT pitch only (owner 2026-11-18: every pitch at once made the box too
+  large); *Show all N pitches* brings back the rest and *+ Add pitch*. Pitches can be moved up and down;
   clustering compares every pitch key (grade, gear, length, note, anchor, bolts, crux). The rappel
   table has an editor at last — `rappelDetail`, type `rappels`: one row per station with length (in
   the climber's units, stored in metres), anchor, how to find the station, hazards one per line and

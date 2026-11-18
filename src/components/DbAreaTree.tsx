@@ -1,6 +1,7 @@
 import { tx } from "../../lib/tapWords.js";
 import { useAreaChildren, useCountries, useAreaSearch, areaSearchTotal } from "../../lib/db";
 import Chevron from "./Chevron.tsx";
+import ViewAreaPill from "./ViewAreaPill.tsx";
 import LoadingRows from "./LoadingRows.tsx";
 import { useState } from "react";
 import { createPortal } from "react-dom";
@@ -80,10 +81,10 @@ function DbAreaTreeNode({ area, depth, currentId, pinIds, expanded, onToggle, on
         {/* One target opens the area: the name, its count and the chevron. The chevron used
             to be a separate 16px span and the name was cut to one line, so the only ways in
             were a sliver of truncated text or an arrow a thumb barely covers. Names wrap. */}
-        <button onClick={() => onNavigate(area)} aria-label={"Open " + area.name + (n > 0 ? ", " + n + " climb" + (n !== 1 ? "s" : "") : "")} style={{ flex: 1, minWidth: 0, minHeight: 38, display: "flex", alignItems: "center", gap: 8, textAlign: "left", background: "none", border: "none", cursor: "pointer", padding: "2px 0" }}>
-          <div style={{ flex: 1, minWidth: 0, fontSize: 14.5, lineHeight: 1.3, fontWeight: cur ? 800 : 700, color: cur ? C.blue : C.text, overflowWrap: "anywhere" }}>{area.name}{cur ? <span style={{ marginLeft: 7, fontSize: 10, fontWeight: 800, color: C.blue, background: C.bg, border: "1px solid " + C.blueDim, borderRadius: 20, padding: "1px 7px", whiteSpace: "nowrap", display: "inline-block" }}>You are here</span> : null}</div>
-          {n > 0 ? <span style={{ flexShrink: 0, fontSize: 11, fontWeight: 700, color: C.textSub, background: C.surface, border: "1px solid " + C.border, borderRadius: 20, padding: "2px 9px" }}>{n}</span> : null}
-          <span aria-hidden="true" style={{display:"flex",flexShrink:0}}><Chevron size={16} color={C.textMuted}/></span>
+        <button onClick={() => onNavigate(area)} aria-label={"View " + area.name + (n > 0 ? ", " + n + " climb" + (n !== 1 ? "s" : "") : "")} style={{ flex: 1, minWidth: 0, minHeight: 44, display: "flex", alignItems: "center", gap: 8, textAlign: "left", background: "none", border: "none", cursor: "pointer", padding: "2px 0" }}>
+          <div style={{ flex: 1, minWidth: 0 }}><div style={{ fontSize: 14.5, lineHeight: 1.3, fontWeight: cur ? 800 : 700, color: cur ? C.blue : C.text, overflowWrap: "anywhere" }}>{area.name}{cur ? <span style={{ marginLeft: 7, fontSize: 10, fontWeight: 800, color: C.blue, background: C.bg, border: "1px solid " + C.blueDim, borderRadius: 20, padding: "1px 7px", whiteSpace: "nowrap", display: "inline-block" }}>You are here</span> : null}</div>
+          {n > 0 ? <div style={{ fontSize: 11.5, fontWeight: 600, color: C.textMuted, marginTop: 2 }}>{n.toLocaleString() + " climb" + (n !== 1 ? "s" : "")}</div> : null}</div>
+          <ViewAreaPill C={C} />
         </button>
       </div>
       {isOpen ? (
@@ -161,8 +162,8 @@ export default function DbAreaTree({ stateRoot, current, ancestorIds, onNavigate
             what is inside it without going anywhere. */}
         <div style={{ fontSize: 11.5, color: C.textMuted, marginTop: 7, lineHeight: 1.45 }}>
           {q.trim()
-            ? (total > 0 ? tx("Best matches first — tap one to open its climbs.") : "Searches every area under " + stateRoot.name + ", at any depth.")
-            : tx("Tap a name to open that area’s climbs · tap the arrow to see what’s inside it")}
+            ? (total > 0 ? tx("Best matches first — tap View area to open one.") : "Searches every area under " + stateRoot.name + ", at any depth.")
+            : tx("View area opens that area and its climbs · the arrow just shows what’s inside it")}
         </div>
       </div>
       <div style={{ flex: 1, minHeight: 0, overflowY: "auto", overscrollBehavior: "contain", paddingBottom: 30 }}>
@@ -179,10 +180,9 @@ export default function DbAreaTree({ stateRoot, current, ancestorIds, onNavigate
                       hit read as a bare name with no way to tell a summit from a boulder —
                       while the in-page Areas search two screens over renders exactly this
                       line. Same data, same shape, so the two searches now agree. */}
-                  <div style={{ fontSize: 11.5, color: C.textMuted, overflowWrap: "anywhere" }}>{[ATYPE[m.area_type] || m.area_type, m.parent_name].filter(Boolean).join(" · ")}</div>
+                  <div style={{ fontSize: 11.5, color: C.textMuted, overflowWrap: "anywhere" }}>{[ATYPE[m.area_type] || m.area_type, m.parent_name, m.route_count > 0 ? m.route_count.toLocaleString() + " climb" + (m.route_count !== 1 ? "s" : "") : null].filter(Boolean).join(" · ")}</div>
                 </div>
-                {m.route_count > 0 ? <span style={{ flexShrink: 0, fontSize: 11, fontWeight: 700, color: C.textSub, background: C.surface, border: "1px solid " + C.border, borderRadius: 20, padding: "2px 9px" }}>{m.route_count + " climb" + (m.route_count !== 1 ? "s" : "")}</span> : null}
-                <span aria-hidden="true" style={{display:"flex",flexShrink:0}}><Chevron size={16} color={C.textMuted}/></span>
+                <ViewAreaPill C={C} />
               </div>
             ))}
             {/* Never truncate silently. Before 0147 this list was the alphabetically-first
