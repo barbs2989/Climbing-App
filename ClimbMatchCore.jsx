@@ -2042,7 +2042,7 @@ const ADDR_MS=["M1","M2","M3","M3+","M4","M4+","M5","M5+","M6","M6+","M7","M7+",
 const ADDR_AIDS=["A0","A1","A2","A2+","A3","A3+","A4","A4+","A5","C1","C2","C2+","C3","C3+","C4"];
 const ADDR_ALPS=["Class 3","Class 4","Class 5","Grade I","Grade II","Grade III","Grade IV","Grade V","Grade VI"];
 const ADDR_CLS=["Class 1","Class 2","Class 3","Class 4"];
-const ADDR_GRADES={sport:ADDR_YDS,trad:ADDR_YDS,rock:ADDR_YDS,bouldering:ADDR_VS,ice:ADDR_WIS,mixed:ADDR_MS,aid:ADDR_AIDS,mountaineering:ADDR_ALPS,alpine:ADDR_ALPS,scrambling:ADDR_CLS,hiking:ADDR_CLS};
+/* The headline grade each discipline actually carries (add-a-climb audit, 2026-11-18, 1,000 live routes a discipline): alpine is a YDS grade (5.8, 5.10a; the I-VI commitment is its own field), mountaineering a class or a snow grade (Class 3, Mod. Snow). ADDR_ALPS offered neither, and offered a walk-up "Class 5". */const ADDR_ALPINE=["Class 3","Class 4","5.0","5.1","5.2","5.3"].concat(ADDR_YDS);const ADDR_MTN=["Class 1","Class 2","Class 3","Class 4","Easy Snow","Mod. Snow","Steep Snow"];const ADDR_GRADES={sport:ADDR_YDS,trad:ADDR_YDS,rock:ADDR_YDS,bouldering:ADDR_VS,ice:ADDR_WIS,mixed:ADDR_MS,aid:ADDR_AIDS,mountaineering:ADDR_MTN,alpine:ADDR_ALPINE,scrambling:ADDR_CLS,hiking:ADDR_CLS};
 /* Adding the modifier rungs took YDS from 28 chips to 55, and 55 chips in a flat wrap is a
    wall you scan rather than a control you use. Split each scale into (stem, suffix) so the
    picker can ask the two questions a climber actually asks in order — which number, then how
@@ -2064,7 +2064,7 @@ function gradeGroups(list){
 }
 
 const ADDR_HAZ=["Rockfall","Loose rock","Runout","Lightning / storms","Avalanche terrain","Crevasse hazard","Cornices","River / creek crossing","Serious exposure","Complex route-finding","Bad landing zone","Warms up / sun-affected"];
-const ADDR_COMMIT=["A few hours","Half day","Full day","Multi-day"];
+/* The COMMITMENT GRADE, I-VI: what routes.commitment holds (II x327, III x283... live) and what the edit sheet and TECH STATS read. It was four time buckets ("Half day"), which printed as "Commitment: Half day". */const ADDR_COMMIT=["I","II","III","IV","V","VI"];
 /* ── THE AREA PICKER READ THE SEED TREE WHILE THE APP BROWSES THE DATABASE ──────────────
    `MOUNTAINS` holds 29 areas worldwide and exactly ONE selectable leaf in Washington
    (Mount Baker, under North Cascades), against 2,525 Washington areas in the live catalog

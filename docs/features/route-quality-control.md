@@ -183,6 +183,32 @@ empty field fill at once and two agreeing climbers change one; the owner withdre
   form does not ask, unless `NOT_AT_CREATION` / `NOT_FOR` names it with a reason (the multi-part
   builders — waypoints, approach variants, rappel table, rescue card… — are added on the live route).
 
+- **Add-a-climb audit, discipline fit and OTHER DETAILS** (owner 2026-11-18, 0461). Each discipline is asked only what
+  it carries, measured against 1,000 live routes per discipline and Mountain Project / theCrag / OpenBeta:
+  - **Grades** (`ADDR_GRADES` in `ClimbMatchCore.jsx`, shared with the edit sheet): alpine is YDS (`ADDR_ALPINE`: Class 3–4,
+    5.0 up), mountaineering a class or a snow grade (`ADDR_MTN`: Class 1–4, Easy / Mod. / Steep Snow); `ADDR_ALPS` offered
+    neither. **Commitment** is the I–VI grade (`ADDR_COMMIT`) that `routes.commitment` holds and Tech Stats prints; it was
+    "Half day" / "Full day". The alpine-grade dropdown keeps the IFAS letters only, since I–VI is asked as Commitment.
+  - **Scope** (`lib/fieldScope.js`, so the edit sheet agrees): first free ascent only on trad, aid, alpine and mixed; hardest
+    rock on aid (as *Hardest free climbing*) and not on a scramble; a walk-up's hardest rock is a class (`ADDR_CLS`) in both
+    forms; no hardest ice, rack, ropework or rappels on a scramble. Each is kept where a route already stores one
+    (`scopeCtx().has`).
+  - **One pitch where no pitch count is asked** (top-rope, bouldering, scrambling): top-rope was shown Descent, Rappels and
+    Pitch by pitch. Top-rope gear is anchor gear (static rope, slings, lockers, cordelette), never quickdraws. No rack once
+    the picked grade is Class 1–3 (`isNoRackClass`). Rock type adds andesite and conglomerate chips and the edit sheet's full
+    list (`ROCK_OPTIONS`) behind *Other rock type*.
+  - **Only what the discipline shows is sent**: switching discipline used to keep hidden values, so a gain typed under
+    Alpine was filed on a Sport climb. `_prop` nulls every form field `sf()` does not show.
+  - **A typed new crag is not a destination**: it used to file the climb against the parent area (or none), which
+    `approve_new_route` refuses. It now offers *Propose "X" in <area>*, which opens Add an area (`onProposeArea` →
+    `addAreaParent.draftName`) under the picked area, or the one above a picked crag.
+  - **Honest copy**: no photo upload on the DB path (a proposal only counted them); *I've climbed this* says the reviewer
+    sees it, not that it logs the climb. Pitch lengths are typed in the climber's units; section numbers skip hidden sections.
+  - **Anything else? → OTHER DETAILS** (`routes.extra_facts`, 0461): label/value rows for a fact no field holds, on every
+    discipline (`FIELD_SCOPE.extraFacts`). `approve_new_route` writes them (trimmed, 20 rows, 60/300 characters, the
+    column's CHECK `extra_facts_ok`); Tech Stats prints ONE *Other details* row with a line each (never a row per label, so
+    a label cannot collide with a built-in row); the edit sheet edits them as "Label: value" lines (`CONV.extraFacts`).
+
 - **Add-a-climb finds the area by searching the whole catalog** (`DbAreaPicker` in
   `ClimbMatchCore.jsx`, `useCatalogAreaSearch` in `lib/db.js`): the first box searches every
   area in every state and province, with no country or state needed first. It uses the Climbs tab's

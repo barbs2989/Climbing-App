@@ -9,7 +9,7 @@
 -- and commit the result in the same PR. `npm run gen:schema -- --check` exits 1 when this
 -- file has drifted from the live database.
 --
--- Counts: 86 tables, 845 columns, 453 keyed/checked constraints (150 foreign keys), 254 RLS policies.
+-- Counts: 86 tables, 846 columns, 454 keyed/checked constraints (150 foreign keys), 254 RLS policies.
 -- Not covered here: views, functions, triggers, standalone indexes (see supabase/migrations/).
 
 -- ── Foreign keys ───────────────────────────────────────────────────────────────
@@ -1445,7 +1445,7 @@ CREATE TABLE public.partner_areas (
   updated_at timestamp with time zone NOT NULL DEFAULT now(),
   CONSTRAINT partner_areas_pkey PRIMARY KEY (id),
   CONSTRAINT partner_areas_user_id_area_id_key UNIQUE (user_id, area_id),
-  CONSTRAINT partner_areas_disciplines_values CHECK ((disciplines <@ ARRAY['trad'::text, 'sport'::text, 'toprope'::text, 'aid'::text, 'bouldering'::text])),
+  CONSTRAINT partner_areas_disciplines_values CHECK ((disciplines <@ ARRAY['trad'::text, 'sport'::text, 'toprope'::text, 'aid'::text, 'bouldering'::text, 'alpine'::text, 'mountaineering'::text, 'scrambling'::text, 'ice'::text, 'mixed'::text])),
   CONSTRAINT partner_areas_note_len CHECK (((note IS NULL) OR (length(note) <= 140))),
   CONSTRAINT partner_areas_window CHECK ((((free_from IS NULL) = (free_to IS NULL)) AND ((free_to IS NULL) OR (free_to >= free_from)))),
   CONSTRAINT partner_areas_area_id_fkey FOREIGN KEY (area_id) REFERENCES areas(id) ON DELETE CASCADE,
@@ -1924,11 +1924,13 @@ CREATE TABLE public.routes (
   classic_score numeric(3,2),
   approach_loss_ft integer,
   return_gain_ft integer,
+  extra_facts jsonb,
   CONSTRAINT routes_pkey PRIMARY KEY (id),
   CONSTRAINT routes_anchor_len CHECK (((anchor IS NULL) OR ((char_length(anchor) >= 1) AND (char_length(anchor) <= 80)))),
   CONSTRAINT routes_approach_loss_ft_range CHECK (((approach_loss_ft IS NULL) OR ((approach_loss_ft >= 0) AND (approach_loss_ft <= 20000)))),
   CONSTRAINT routes_bolts_nonnegative CHECK (((bolts IS NULL) OR ((bolts >= 0) AND (bolts <= 500)))),
   CONSTRAINT routes_classic_score_check CHECK (((classic_score IS NULL) OR ((classic_score >= (0)::numeric) AND (classic_score <= (4)::numeric)))),
+  CONSTRAINT routes_extra_facts_shape CHECK (extra_facts_ok(extra_facts)),
   CONSTRAINT routes_fixed_gear_len CHECK (((fixed_gear IS NULL) OR ((char_length(fixed_gear) >= 1) AND (char_length(fixed_gear) <= 160)))),
   CONSTRAINT routes_guide_stars_range CHECK (((guide_stars IS NULL) OR ((guide_stars >= 0) AND (guide_stars <= 4)))),
   CONSTRAINT routes_itinerary_is_day_by_day CHECK (((itinerary IS NULL) OR ((jsonb_typeof(itinerary) = 'object'::text) AND (jsonb_typeof((itinerary -> 'days'::text)) = 'array'::text) AND (jsonb_array_length((itinerary -> 'days'::text)) > 0)))),
