@@ -23,6 +23,7 @@ import path from "path";
 import { fileURLToPath } from "url";
 import { appSources, readAppFile } from "./lib/guard-sources.mjs";
 import { readCoreSource } from "./lib/guard-sources.mjs";
+import { fieldScope, scopeCtx, CRAG as SCOPE_CRAG } from "../lib/fieldScope.js";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 appSources(ROOT, "check:add-route-fields");
@@ -411,22 +412,13 @@ if (!inverted) ok(`alpine ${alpine} >= rock ${counts.rock}, bouldering ${counts.
   const sfLine = rd.split("\n").find((l) => l.includes("const FIELDS=[{k:"));
   if (!sfLine) anchorLost("`const FIELDS=[{k:` — the edit sheet's field list in RouteDetail.jsx");
   const sheet = [...sfLine.matchAll(/\{k:"([a-zA-Z0-9_]+)"/g)].map((m) => m[1]);
-  const di = rd.indexOf("const DROP={");
-  if (di < 0) anchorLost("`const DROP={` — the edit sheet's per-discipline rules");
-  // Brace-balanced, string- and comment-aware, so a `}` inside a comment cannot cut it short.
-  let d = 0, de = -1;
-  for (let i = di + 11; i < rd.length; i++) {
-    const c = rd[i];
-    if (c === "/" && rd[i + 1] === "*") { i = rd.indexOf("*/", i + 2) + 1; continue; }
-    if (c === '"' || c === "'") { const q = c; while (++i < rd.length && rd[i] !== q) if (rd[i] === "\\") i++; continue; }
-    if (c === "{") d++;
-    else if (c === "}" && --d === 0) { de = i; break; }
-  }
-  if (de < 0) anchorLost("the edit sheet's DROP literal did not close");
-  const dropSrc = rd.slice(di + 11, de + 1);
+  /* The edit sheet's per-discipline rule lives in lib/fieldScope.js since 2026-11-18 (it was the sheet's inline
+     DROP map); the sheet must still CALL it, or what is evaluated here is not what the sheet offers. */
+  if (!/const okField=function\(k: string\)\{return fieldScope\(k,/.test(rd)) anchorLost("`const okField=function(k: string){return fieldScope(k,` — the edit sheet no longer gates on lib/fieldScope.js");
   const ccM = /const CRAG_CATS=(\[[^\]]*\])/.exec(core);
   if (!ccM) anchorLost("`const CRAG_CATS=[` in ClimbMatchCore.jsx");
   const CRAG_CATS = JSON.parse(ccM[1]);
+  if ([...CRAG_CATS].sort().join() !== [...SCOPE_CRAG].sort().join()) fail(`lib/fieldScope.js CRAG (${SCOPE_CRAG}) is not ClimbMatchCore's CRAG_CATS (${CRAG_CATS}) — the edit sheet and the page disagree about which disciplines are crags`);
   // The add form's own gear steppers. GSEC is a pure expression of disc/sub, evaluated the same way.
   const gM = /const GSEC=([^;]*);/.exec(ar);
   if (!gM) anchorLost("`const GSEC=` — the add form's gear steppers");
@@ -448,17 +440,10 @@ if (!inverted) ok(`alpine ${alpine} >= rock ${counts.rock}, bouldering ${counts.
     permit: "asked as the Permit row of Permits & land manager (access.permit), which the page's permit line falls back to",
     aidGrade: "on an aid route the Grade picker IS the aid scale (ADDR_GRADES.aid)",
   };
-  // Per type, where the edit sheet offers a fact the discipline does not have.
-  // A crag page (CRAG_CATS) has no Plan tab, and TechStats prints "High point" only for alpine,
-  // mountaineering and hiking — so on a crag type these three are read by no screen.
-  const CRAG_UNREAD = {
-    highPointFt: "TechStats prints High point only on alpine / mountaineering / hiking pages",
-    outingShape: "read by the planner, and a crag page has no Plan tab",
-    timing: "published times render in the planner, and a crag page has no Plan tab",
-  };
+  // Per type, where the edit sheet offers a fact the add form deliberately does not ask. (The crag exemptions
+  // for High point, Trip shape and Published times went 2026-11-18: lib/fieldScope.js no longer offers them on a
+  // crag, which is what those reasons said.)
   const NOT_FOR = {
-    trad: CRAG_UNREAD, sport: CRAG_UNREAD, toprope: CRAG_UNREAD, aid: CRAG_UNREAD,
-    bouldering: { ...CRAG_UNREAD, ffa: "a boulder's first ascent is its free ascent", fwa: "no winter-ascent distinction on a boulder", ropeNote: "no rope on a boulder", rappelCountNote: "no rappel off a boulder" },
     mountaineering: { ffa: "a walk-up is climbed free by its first ascent" },
     scrambling: { ffa: "a scramble is climbed free by its first ascent" },
   };
@@ -467,12 +452,8 @@ if (!inverted) ok(`alpine ${alpine} >= rock ${counts.rock}, bouldering ${counts.
   for (const t of TYPES) {
     const crag = ["trad", "sport", "toprope", "bouldering"].includes(t);
     const disc = crag ? (t === "bouldering" ? "bouldering" : "rock") : t, sub = crag ? t : "";
-    const cat = t, roped = ["trad", "sport", "alpine", "ice", "mixed", "aid", "mountaineering"].includes(cat);
-    const alpiney = ["alpine", "mountaineering", "ice", "mixed", "scrambling"].includes(cat), boulder = cat === "bouldering";
-    let DROP;
-    try { DROP = Function("cat", "CRAG_CATS", "roped", "alpiney", "boulder", "singlePitch", "return (" + dropSrc + ")")(cat, CRAG_CATS, roped, alpiney, boulder, boulder); }
-    catch (e) { anchorLost(`the edit sheet's DROP no longer evaluates for ${t} (${e.message})`); }
-    const offered = sheet.filter((k) => !DROP[k]);
+    /* A new climb may be multi-pitch, so it is held to the sheet's multi-pitch offer (the larger one). */
+    const offered = sheet.filter((k) => fieldScope(k, scopeCtx({ pitches: 2 }, t)));
     if (offered.length < 30) anchorLost(`the edit sheet offers only ${offered.length} keys for ${t}`);
     const asked = new Set([...(FIELDS[disc] || []), ...(sub && FIELDS[sub] ? FIELDS[sub] : [])]);
     const steppers = new Set(gsecOf(disc, sub));
