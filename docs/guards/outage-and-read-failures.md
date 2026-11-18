@@ -1392,7 +1392,7 @@ that they had none — on the one screen whose whole subject is who you climb wi
   asks for a file that 404s the first time it visits a lazy screen (hit on Partners 2026-09-24,
   fixed #1851; the screen itself was fine — `check:signed-in` walked it clean). `main.jsx` answers
   `vite:preloadError` with ONE reload, guarded by a 30s sessionStorage timestamp; `ClimbMatch.jsx`
-  reopens the tab that was tapped, but only right after that reload; `AppErrorBoundary` names a
+  reopens the tab that was tapped, and since 2026-11-18 the route and sub-tab that were open (`routeAfterChunkReload`, key `climbmatch:route`: *List me* on a crag route across a deploy landed on the Climbs root), but only right after that reload; `AppErrorBoundary` names a
   chunk failure as a download failure. Static: asserts the handler exists while any `import()` does,
   calls `preventDefault()` + `location.reload()`, keeps its loop guard, that the reload-marker key is
   the same in both files, and that the boundary's regex matches the Chrome, Firefox and Safari
