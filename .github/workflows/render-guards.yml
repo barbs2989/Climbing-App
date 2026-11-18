@@ -43,30 +43,20 @@ name: Render guards
 # owner, and the handful of real findings drowned in them. Any other failure stays red.
 
 on:
-  pull_request:
-    branches: [main, master]
-    paths-ignore:
-      # Files no walk reads and the built app does not contain. A PR or merge touching ONLY
-      # these cannot change what any screen renders, so walking it costs ~16 browser jobs
-      # against the PRODUCTION database for no new evidence. Measured 2026-11-04/05: about a
-      # third of PRs were data/audit/doc-only, and the walks are the load that stalled the
-      # project (pg_stat_statements: the signed-in boot RPCs ran ~1,760 times in 3.6 h, all
-      # CI). Verified then: no walk script, nor anything it imports, reads these paths or any
-      # .md file; the app names them only in comments. Everything else (app code, lib/, src/,
-      # other scripts/, supabase/, package*.json, .github/) still runs every walk. Branch
-      # protection requires only `build`, so a skipped walk blocks nothing.
-      - "audits/**"
-      - "research-data/**"
-      - "research/**"
-      - "catalog/**"
-      - "enrichment-wip/**"
-      - "gear-research/**"
-      - "docs/**"
-      - "**.md"
-      - "scripts/oneoff/**"
-      - "scripts/pipeline/**"
-      - "scripts/enrich/**"
-      - "scripts/audit-*.mjs"
+  # NO pull_request TRIGGER (owner, 2026-11-14). Every PR push started these 15 browser jobs, each
+  # walking the PRODUCTION database. On 2026-11-14 the workflow was switched back on after a day
+  # off: the runner queue went from about 30 runs to 60+, and the database's health
+  # probe, clean all morning, failed from 14:00 UTC and was down 19:28-21:10. That is a
+  # correlation, not a proof, but docs/codebase/supabase-scripts.md already names these walks as
+  # what spends the disk I/O budget, and the paths-ignore list that used to sit here was an
+  # earlier attempt at the same load. The workflow had been disabled by hand to stop it, which
+  # also stopped the scheduled walk of main -- so nothing walked a screen anywhere.
+  #
+  # What a PR still gets: `build` (the required check) and the static guards in build-check.yml.
+  # What it no longer gets before merge: these walks. A screen broken by a PR is caught by the
+  # scheduled walk below within four hours, or at once with `gh workflow run render-guards.yml`.
+  # Before merging a risky UI change, run its walk locally (npm run check:ui, check:axe, ...).
+  #
   # Main is walked on a timer, not on every merge (owner, 2026-11-13). Per-merge walks started
   # 15 browser jobs (16 with zero-state.yml) that gated nothing -- deploy.yml never waits on
   # them -- and took the free plan's ~20-runner pool from every PR's required `build` and from

@@ -2,6 +2,7 @@
   "note": "Success messages beside a session-gated write that are intentional (local-only state that really did change). Shrink this list; never grow it without a reason in the PR.",
   "allowed": [
     "ClimbMatch.jsx :: \"Crew removed\")",
+    "ClimbMatch.jsx :: \"Float plan saved — your crew's card shows it's set. \"+_done)",
     "ClimbMatch.jsx :: \"Group deleted from this device\")",
     "ClimbMatch.jsx :: \"Group deleted\")",
     "ClimbMatch.jsx :: \"Group settings saved\")",

@@ -487,7 +487,10 @@ console.log("\n--- 5. no legal surface promises a crew something no crew member 
 
 /* The stored shape is READ FROM THE WRITE, never restated — a copy would agree with itself whatever
    `onSetFloatPlan` does, which is the whole question. */
-const fpWrite = /updateCrew\(\s*cid\s*,\s*\{\s*floatPlan\s*:\s*\{([\s\S]{20,600}?)\}\s*\}\s*\)/.exec(app);
+/* Two spellings (2026-11-14): fileCrewFloatPlan now builds the object as `const _fp={...}` and writes it
+   with updateCrewRow(..., {float_plan:_fp}) so the toast can wait for the organizer-only write. */
+const fpWrite = /updateCrew\(\s*cid\s*,\s*\{\s*floatPlan\s*:\s*\{([\s\S]{20,600}?)\}\s*\}\s*\)/.exec(app)
+  || /const\s+_fp\s*=\s*\{([\s\S]{20,600}?)\}\s*;[\s\S]{0,600}?updateCrewRow\([^)]*float_plan\s*:\s*_fp\b/.exec(app);
 if (!fpWrite) dead("ANCHOR LOST: onSetFloatPlan's updateCrew(cid,{floatPlan:{...}}) in ClimbMatch.jsx — without the write this section cannot say what a crew stores, and every claim below would pass unexamined");
 const fpKeys = [...fpWrite[1].matchAll(/(?:^|[,{])\s*([A-Za-z_$][\w$]*)\s*:/g)].map((m) => m[1]);
 /* `contact` is deliberately DROPPED from the renderer test: the eleven-field float plan FORM has a

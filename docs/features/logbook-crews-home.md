@@ -138,6 +138,12 @@ Three top-level `tab` values in `ClimbMatch.jsx` (`tab==="today"`, `tab==="crew"
   `crew:<id>` first, the old scope deleted second, and a saved plan files the crew stub. A saved crew plan has *Send to the crew chat*
   (`FloatPlan`'s `onSendToCrew`, wired in both `FloatPlans` and the crew `SafetyTab`), which posts the plan text through `sendCrewMsg` — the
   climber's own send, so the Privacy Policy's "stays on your phone until you send it" still holds; `crews.float_plan` is unchanged.
+  **Who stamps the crew** (2026-11-14): saving a crew plan (`onFiled` → App's `fileCrewFloatPlan(cid, form)`) writes the
+  `crews.float_plan` stamp `{filedAt, contact: null, returnBy}` only when the climber is the ORGANIZER — the only role RLS (0036) lets
+  update the row — and its toast waits for that write. A member's save stays on the device and says so (*Float plan saved on this
+  device*), with no crew write and no organizer error. Deleting a crew plan calls `fileCrewFloatPlan(cid, null)`, which clears the
+  organizer's stamp so the card's ✓ does not outlive the plan. The stamp is still ONE per crew, so a member sees ✓ when the organizer
+  filed; per-member filings are the planned fix.
   **Chat → plan**: the plan text is ONE format, `floatPlanText` (core), and `parseFloatPlanText` reads it back (null for any other message).
   In a crew thread `MessageRow` (given `onSaveFloatPlan`) draws a posted plan as `FloatPlanCard` (`src/components/FloatPlanCard.tsx`): the climb,
   Leaves / Back by (amber) / Parking / Vehicle / Party / Comms / Contact where filled, notes, coordinate. A crewmate's card has *Save to my float
@@ -261,6 +267,8 @@ Notes: `docs/guards/social-and-crews.md`, `contributions-and-logbook.md`, `hones
 (Matched by name; not re-run.)
 
 ## 7. Last significant change
+
+2026-11-14 (#3381, 0448): any confirmed member proposes days on the Day sheet's calendar (`crew_propose_day`, which also says the proposer can make it); a day is taken back by whoever proposed it or by the organiser (`crew_unpropose_day`, which clears its acks and its lock; `crews.date_proposers`). Members still cannot UPDATE the crew row. `crews`, `crew_members` and `crew_day_acks` are on Realtime, and `useMyCrews` is a live query over them, so a crewmate's change reaches an open Crews tab without a reload.
 
 2026-11-14 crew walkthrough (#3377): Your friends picker in the Crew sheet; one chip size; a footer that never reflows; risk tolerance from the crew's answers in a Safety & risk panel; a late joiner is asked about the agreed day; the safety matrix says who answered, not each person's level.
 Private crews and Form a crew from a group (0426, owner 2026-11-14): a crew can be *Private* (unlisted, invite only, roster read only by its own people); a group's *Members* tab forms one from picked members.

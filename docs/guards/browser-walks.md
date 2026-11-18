@@ -4,6 +4,13 @@ Guards that drive the real app in Chrome: the screen walks (ui, zero, signed-in)
 
 Part of the guard notes — see [README.md](README.md) for the full index.
 
+> **Where these run (since 2026-11-14).** `render-guards.yml` no longer has a `pull_request`
+> trigger: its walks run on main every 4 hours and on demand (`gh workflow run render-guards.yml`),
+> never on a PR push. Notes below that say a walk "runs on every PR via render-guards.yml"
+> describe how it ran when they were written. `zero-state.yml` still runs on PRs. Each PR push
+> used to start 15 browser jobs against the production database; see the `on:` block of the
+> workflow for the measurements. Before merging a risky UI change, run its walk locally.
+
 - **`check:overlay-discovery`** asks whether every modal the app declares can still be
   *reached* by the three browser guards. They all walk "every overlay" and all get that list
   from `scripts/lib/overlay-scaffold.mjs`, which until 2026-08-09 discovered overlays by a
@@ -1320,7 +1327,7 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   - Injection-tested: reverting #740's aria-label fails naming all three sub-tabs by their
     announced text; breaking the scaffold anchor fails on the 58-character boot shell rather
     than passing over a blank app — the trap `check:overlay-scroll` documents above.
-  - Runs on every PR via `render-guards.yml`; not a build gate (browser automation).
+  - Runs on main every 4 hours via `render-guards.yml` (not on PRs since 2026-11-14); not a build gate (browser automation).
 - **`check:selected-state`** asks whether a control that **looks** selected **says** it is.
   Until #1041 the primary nav was the only one that did — `aria-current={tab===n.id?"page":undefined}`,
   literally the only `aria-current` in the codebase, against **zero** `aria-selected` and **zero**
@@ -1329,7 +1336,7 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   it was the view you were on. #1041 and #1062 fixed **21 controls** across 4 tab bars (Crew,
   both Logbook bars, RouteDetail's sub-tabs) and 4 toggle groups (onboarding's disciplines and
   availability, PartnerSearch's availability filter and its ✓ Verified / Speed match pair).
-  Runs on every PR via `render-guards.yml`; not a build gate (browser automation).
+  Runs on main every 4 hours via `render-guards.yml` (not on PRs since 2026-11-14); not a build gate (browser automation).
   - **No sibling guard asks this, and the two nearest ones show why it is separate.**
     `check:a11y-names` asks whether a control **has** a name; `check:a11y-badges` asks whether
     that name has a count welded into it. A mute tab bar passes both. #740 gave these exact
@@ -1539,7 +1546,7 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   see it:** `check:ui` reads text, and a screen whose right-hand edge is off-viewport
   reports the same characters as a correct one. Two bugs of this shape are already on record
   and both were found by eye. It walks the 6 tabs and every openable overlay at 390×844.
-  Runs on every PR, and on main every 4 hours, via `render-guards.yml`; not a build gate
+  Runs on main every 4 hours via `render-guards.yml` (not on PRs since 2026-11-14); not a build gate
   (browser automation).
   - **The precision rule is what makes it usable.** A chip row with `overflowX:auto` is a
     *correct* pattern that is supposed to scroll sideways, so an element is reported only if
@@ -1694,4 +1701,4 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     surfaces (so the check is **not** vacuous — it depends on the injection doing its job);
     reverting `_anniv` to `MY_CLIMBS.map` fails; breaking the opener anchor fails on the
     58-character boot shell rather than passing over a blank app.
-  - Runs on every PR via `render-guards.yml`; not a build gate (browser automation).
+  - Runs on main every 4 hours via `render-guards.yml` (not on PRs since 2026-11-14); not a build gate (browser automation).
