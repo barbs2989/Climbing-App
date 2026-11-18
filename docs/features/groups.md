@@ -33,7 +33,7 @@ views under `groupsTab`: For you · Your groups · Your activity · Discover · 
   takes an avatar and a cover. Picking a file uploads it at once (`uploadGroupPhoto`: the camera's location stripped,
   scaled to screen size, the uploader's `{uid}/` prefix in `topo-photos`) and the group row takes the address when the
   form is saved, so cancelling keeps the old picture; *Remove* goes back to the drawn one. The avatar replaces the
-  initial in `groupMark` (every list row, Requests, the group's page beside its name); the cover replaces the colour
+  initial in `groupMark` (every list row, Requests, the group's page beside its name) and the icon in the website sidebar's *Your groups* (`RailGroups`, `lib/DesktopShell.jsx`); the cover replaces the colour
   band in `groupBand` (Discover's cards) and is a 150px banner at the top of the group's page. Only a manager can
   change them (0090's update policy); `groups_avatar_url_ours` / `groups_cover_url_ours` refuse any address outside the
   bucket, so a group's picture cannot be aimed at an outside server. A guest's pick is a preview on the device only,
