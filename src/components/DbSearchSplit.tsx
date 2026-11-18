@@ -41,8 +41,12 @@ export default function DbSearchSplit({ scope, onJumpToArea, onOpenRoute, C, onM
   const [q, setQ] = useState("");
   const { wrapRef, barRef, pin } = usePinnedBar(endRef);
   const qq = q.trim();
-  const { data: areaHits, isLoading: la, error: ea } = useAreaSearch(scope.id, qq);
-  const { data: routeHits, isLoading: lr, error: er } = useSubtreeRoutes(scope.id, { q: qq, page: 0, pageSize: 40 });
+  const { data: areaHits, isLoading: la, error: ea, isPlaceholderData: ha } = useAreaSearch(scope.id, qq);
+  const { data: routeHits, isLoading: lr, error: er, isPlaceholderData: hr } = useSubtreeRoutes(scope.id, { q: qq, page: 0, pageSize: 40 });
+  // HELD ROWS SAY SO (walkthrough 2026-11-18): while the new words' search runs, the last words' hits
+  // stayed on screen at full strength ("st helens" showing "Iron Cap Mountain" from "el cap"). They
+  // dim, and the list says it is busy, until the answer for these words lands — as the top bar's do.
+  const held = mode === "areas" ? !!ha : !!hr;
   // Which crag each hit is on, as the Route finder's rows say: two "Beckey Route"s read as one
   // climb listed twice. A failed read leaves the line off, never empty.
   const hitAreaIds = useMemo(() => [...new Set((routeHits || []).map((r: DbSearchSplitRoute) => r.area_id).filter(Boolean))], [routeHits]);
@@ -65,7 +69,7 @@ export default function DbSearchSplit({ scope, onJumpToArea, onOpenRoute, C, onM
       {qq ? (
         // No maxHeight/overflow: the hits used to scroll inside a 46vh box of their own, so most
         // of them were hidden behind a second scrollbar. They run down the page instead.
-        <div style={{ marginTop: 6 }}>
+        <div style={{ marginTop: 6, opacity: held ? 0.5 : 1, transition: "opacity 120ms" }} aria-busy={held || undefined}>
           {mode === "areas" ? (
             la ? <LoadingRows C={C} label="Loading…" style={{padding: "14px 4px"}}/>
             : ea ? <div style={{ fontSize: 13, color: C.red, padding: "14px 4px", textAlign: "center" }}>Couldn't search areas.</div>

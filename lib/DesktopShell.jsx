@@ -96,9 +96,14 @@ export function WideSearch({ onOpenRoute, onOpenArea, onOpenFinder, width, left,
   const forget = () => { setRecent([]); try { localStorage.removeItem(RK); } catch (_e) { /* nothing stored */ } };
   const [lims, setLims] = useState({ q: "", places: PLACES_FIRST, routes: ROUTES_FIRST });
   const lim = lims.q === qq ? lims : { q: qq, places: PLACES_FIRST, routes: ROUTES_FIRST };
-  const routesQ = useRouteSearch(USE_DB && wantRoutes ? qq : "", lim.routes);
-  const placesQ = usePlaceSearch(USE_DB && wantPlaces ? qq : "", lim.places);
   const typed = useMemo(() => (USE_DB && onOpenFinder && wantRoutes ? parseTypedSearch(qq) : null), [qq, onOpenFinder, wantRoutes]);
+  /* A FILTER IS NOT A NAME (walkthrough 2026-11-18): "WI4", "V10" and "5.10a" are read as Route finder
+     filters, and the name search for them found nothing useful and timed out (57014 at 6 s) under
+     the finder row, adding "Couldn't search climbs". Words that are ONLY a filter (no place left
+     over) skip the name search; with a place left over ("5.10 sport near Leavenworth") it still runs. */
+  const filterOnly = !!typed && !typed.place;
+  const routesQ = useRouteSearch(USE_DB && wantRoutes && !filterOnly ? qq : "", lim.routes);
+  const placesQ = usePlaceSearch(USE_DB && wantPlaces ? qq : "", lim.places);
   const typedPlaceQ = usePlaceSearch(typed && typed.place ? typed.place : "", 1);
   const homePaths = useMyHomeStatePaths();
   const { data: allStates } = useStates();
@@ -145,7 +150,9 @@ export function WideSearch({ onOpenRoute, onOpenArea, onOpenFinder, width, left,
   const rowsChangedAt = useRef(0);
   useEffect(() => { rowsChangedAt.current = Date.now(); }, [rowsKey]);
   const failed = USE_DB && ((wantRoutes && routesQ.isError) || (wantPlaces && placesQ.isError)) && !hits.length;
-  const busy = USE_DB && ((wantRoutes && routesQ.isLoading) || (wantPlaces && placesQ.isLoading)) && !hits.length;
+  // Held rows from the LAST words are not an answer for these: with none held, a search still running says
+  // "Searching…", never "No … match" for words it has not looked up yet (walkthrough 2026-11-18).
+  const busy = USE_DB && ((wantRoutes && (routesQ.isLoading || routesState === "busy" || (filterOnly && !finderHit))) || (wantPlaces && (placesQ.isLoading || placesState === "busy"))) && !hits.length;
   const pick = h => {
     if (h.kind === "more") {
       if (h.state !== "more") return;
@@ -222,7 +229,7 @@ export function WideSearch({ onOpenRoute, onOpenArea, onOpenFinder, width, left,
   const placesOrphan = !!placesState && !places.length, routesOrphan = !!routesState && !routes.length;
   return <div ref={box} style={wrap}>
     <span aria-hidden="true" style={{ position: "absolute", left: 12, top: 0, height: 40, display: "flex", alignItems: "center", pointerEvents: "none" }}><ActionIcon name="search" size={18} color={C.textMuted}/></span>
-    <input ref={input} value={q} onChange={e => { setQ(e.target.value); setOpen(true); }} onFocus={() => setOpen(true)} onKeyDown={onKey} aria-label={only === "places" ? "Search areas" : only === "routes" ? "Search routes" : "Search climbs and places"} role="combobox" aria-expanded={showList || showEmpty} aria-controls={LIST} aria-activedescendant={showList && hits.length ? OPT + Math.min(hi, hits.length - 1) : undefined} aria-autocomplete="list" placeholder={only === "places" ? "Search areas" : only === "routes" ? "Search routes" : "Search climbs & crags"} style={{ width: "100%", height: 40, boxSizing: "border-box", padding: "0 38px 0 38px", borderRadius: 20, border: "1px solid " + C.border, background: C.card, color: C.text, fontSize: 14.5, outline: "none" }}/>
+    <input ref={input} value={q} onChange={e => { setQ(e.target.value); setOpen(true); }} onFocus={() => setOpen(true)} onKeyDown={onKey} aria-label={only === "places" ? "Search all areas" : only === "routes" ? "Search all routes" : "Search climbs and places"} role="combobox" aria-expanded={showList || showEmpty} aria-controls={LIST} aria-activedescendant={showList && hits.length ? OPT + Math.min(hi, hits.length - 1) : undefined} aria-autocomplete="list" placeholder={only === "places" ? "Search areas" : only === "routes" ? "Search routes" : "Search climbs & crags"} style={{ width: "100%", height: 40, boxSizing: "border-box", padding: "0 38px 0 38px", borderRadius: 20, border: "1px solid " + C.border, background: C.card, color: C.text, fontSize: 14.5, outline: "none" }}/>
     {!q && wantPlaces ? <kbd aria-hidden="true" title="Press / to search" style={{ position: "absolute", right: 12, top: 10, fontSize: 11.5, fontFamily: "inherit", color: C.textMuted, border: "1px solid " + C.border, borderRadius: 5, padding: "1px 6px", pointerEvents: "none" }}>/</kbd> : null}
     {showList ? <div id={LIST} role="listbox" aria-label="Search results" style={panel}>
       {failed ? <div role="alert" style={{ padding: "12px 10px", fontSize: 13, color: C.amber }}>Search isn’t reachable right now — check your connection and try again.</div>
@@ -230,7 +237,7 @@ export function WideSearch({ onOpenRoute, onOpenArea, onOpenFinder, width, left,
         : !hits.length ? <div style={{ padding: "12px 10px", fontSize: 13, color: C.textMuted }}>{(only === "places" ? "No areas match “" : only === "routes" ? "No routes match “" : "No climbs or places match “") + qq + "”."}</div>
         : hits.map((h, i) => { const head = (h.kind === "place" || h.kind === "route") && (i === 0 || hits[i - 1].kind !== h.kind) ? headOf(h.kind) : ""; return head ? [h.kind === "route" && placesOrphan ? section("place", placesState) : null, <div key={"head-" + h.kind} style={{ ...SECTION, padding: h.kind === "place" ? "6px 10px 4px" : "8px 10px 4px" }}>{head}</div>, note(h.kind, h.kind === "place" ? placesState : routesState), row(h, i)] : row(h, i); }).concat(placesOrphan && !routes.length ? [section("place", placesState)] : [], routesOrphan ? [section("route", routesState)] : [])}
     </div> : showEmpty ? <div id={LIST} role="listbox" aria-label="Search shortcuts" style={panel}>
-      {onNearMe ? <button role="option" aria-selected={false} onMouseDown={e => e.preventDefault()} onClick={() => { setOpen(false); if (input.current) input.current.blur(); onNearMe(); }} style={plain}><ActionIcon name="pin" size={17} color={C.blue}/><span style={{ fontSize: 14, fontWeight: 700, color: C.blue }}>Near me</span><span style={{ fontSize: 12, color: C.textMuted }}>climbs around your position, on the map</span></button> : null}
+      {onNearMe ? <button role="option" aria-selected={false} onMouseDown={e => e.preventDefault()} onClick={() => { setOpen(false); if (input.current) input.current.blur(); onNearMe(); }} style={plain}><ActionIcon name="pin" size={17} color={C.blue}/>{/* Stacked, not side by side: in the half-width box the two wrapped against each other ("Near / me"). */}<span style={{ minWidth: 0 }}><span style={{ display: "block", fontSize: 14, fontWeight: 700, color: C.blue }}>Near me</span><span style={{ display: "block", fontSize: 12, color: C.textMuted }}>Climbs around your position, on the map</span></span></button> : null}
       {recent.length ? <><div style={{ ...SECTION, padding: "8px 10px 4px", display: "flex", justifyContent: "space-between", alignItems: "center" }}><span>Recent</span><button onMouseDown={e => e.preventDefault()} onClick={forget} style={{ border: "none", background: "transparent", color: C.textMuted, fontSize: 11.5, fontWeight: 700, cursor: "pointer", padding: "4px 0", textTransform: "none", letterSpacing: 0 }}>Clear</button></div>
         {recent.map(s => <button key={s} role="option" aria-selected={false} onMouseDown={e => e.preventDefault()} onClick={() => { setQ(s); setOpen(true); if (input.current) input.current.focus(); }} style={plain}><ActionIcon name="search" size={16} color={C.textMuted}/><span style={{ fontSize: 14, fontWeight: 600, overflowWrap: "anywhere" }}>{s}</span></button>)}</> : null}
     </div> : null}

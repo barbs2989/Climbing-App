@@ -1,7 +1,8 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import type { CSSProperties } from "react";
 import { useDeviceSearch, useDeviceSearchScope } from "../../lib/db";
 import { warmDeviceSearch } from "../../lib/offline";
+import { parseTypedSearch } from "../../lib/typedSearch.js";
 import { ATYPE } from "../../lib/areaBrowserShared.js";
 import { hlMatch } from "../../ClimbMatchCore.jsx";
 import type { C as Palette } from "../../ClimbMatchCore.jsx";
@@ -23,6 +24,12 @@ export interface DownloadedSearchProps {
   onManageAreas: () => void;
   /** Opens the Climbs map at the climber's position. */
   onNearMe: () => void;
+  /** Opens the Route finder on a downloaded place with the filters typed ("5.9 trad", "WI4"). */
+  onOpenFinder?: (req: DownloadedSearchFinderReq) => void;
+}
+export interface DownloadedSearchFinderReq {
+  loc: { id: string; name: string; area_type: string };
+  filters: { discs: string[]; gSys: string; gLo: string; gHi: string };
 }
 
 /* THE PHONE'S CLIMBS SEARCH (owner 2026-11-18): "allow users to search for areas and routes straight
@@ -32,7 +39,7 @@ export interface DownloadedSearchProps {
    climb saved on its own — so it answers the same with no signal. With nothing downloaded it says so
    and offers Manage areas instead of an empty box that can never find anything. The website has its
    own two boxes in the top bar and never mounts this. */
-export default function DownloadedSearch({ C, downloaded, onOpenArea, onOpenRoute, onManageAreas, onNearMe }: DownloadedSearchProps) {
+export default function DownloadedSearch({ C, downloaded, onOpenArea, onOpenRoute, onManageAreas, onNearMe, onOpenFinder }: DownloadedSearchProps) {
   const [mode, setMode] = useState<"areas" | "routes">("areas");
   const [q, setQ] = useState("");
   const qq = q.trim();
@@ -42,6 +49,12 @@ export default function DownloadedSearch({ C, downloaded, onOpenArea, onOpenRout
   const routesQ = useDeviceSearch("routes", mode === "routes" ? qq : "", salt);
   // Read the names into memory before the first keystroke, so the first search does not wait on it.
   useEffect(() => { if (downloaded.length) warmDeviceSearch(); }, [salt]); // eslint-disable-line react-hooks/exhaustive-deps -- salt IS the downloaded list, as one comparable string
+  /* A GRADE OR A TYPE IS A FILTER, NOT A NAME (walkthrough 2026-11-18): "5.9 trad", "WI4" and "5.10
+     sport near Leavenworth" matched no climb's name and said so. As the website's Routes box does, the
+     words are read as Route finder filters and offered as a row, on what is downloaded: the place typed
+     when it is on this phone, else each downloaded state. */
+  const typed = useMemo(() => (onOpenFinder ? parseTypedSearch(qq) : null), [qq, onOpenFinder]);
+  const placeQ = useDeviceSearch("areas", typed && typed.place ? typed.place : "", salt, 1);
   const scope = scopeQ.data;
   const states: string[] = scope ? scope.states : [];
   const packs = scope ? scope.packs : 0;
@@ -51,6 +64,18 @@ export default function DownloadedSearch({ C, downloaded, onOpenArea, onOpenRout
   const covers = states.length || packs
     ? "Searching what’s on this phone: " + [states.join(", "), packs ? packs + (packs === 1 ? " saved climb" : " saved climbs") : ""].filter(Boolean).join(" · ")
     : "";
+  const finderScopes: { id: string; name: string; area_type: string }[] = !typed ? []
+    : typed.place ? ((placeQ.data && placeQ.data.rows[0]) ? [placeQ.data.rows[0]] : [])
+    : (scope ? scope.stateRows : []);
+  const finderRows = typed && onOpenFinder ? finderScopes.map(sc => (
+    <button key={"finder-" + sc.id} onClick={() => onOpenFinder({ loc: { id: sc.id, name: sc.name, area_type: sc.area_type }, filters: { discs: typed.discs, gSys: typed.gSys, gLo: typed.gLo, gHi: typed.gHi } })} style={row}>
+      <ActionIcon name="explore" size={17} color={C.blue}/>
+      <span style={{ flex: 1, minWidth: 0 }}>
+        <span style={{ display: "block", fontSize: 14, fontWeight: 700, color: C.blue, overflowWrap: "anywhere" }}>{typed.label + " in " + sc.name}</span>
+        <span style={{ display: "block", fontSize: 11.5, color: C.textMuted }}>Open the Route finder with these filters</span>
+      </span>
+    </button>
+  )) : [];
   const q0 = mode === "areas" ? areasQ : routesQ;
   const res = q0.data;
   const busy = !!qq && (q0.isLoading || q0.isPlaceholderData);
@@ -71,16 +96,20 @@ export default function DownloadedSearch({ C, downloaded, onOpenArea, onOpenRout
       </div>
       <div style={{ position: "relative" }}>
         <span aria-hidden="true" style={{ position: "absolute", left: 12, top: 0, height: 44, display: "flex", alignItems: "center", pointerEvents: "none" }}><ActionIcon name="search" size={18} color={C.textMuted}/></span>
-        <input type="search" value={q} onChange={e => setQ(e.target.value)} aria-label={mode === "areas" ? "Search your downloaded areas" : "Search your downloaded routes"} placeholder={mode === "areas" ? "Search areas, crags, peaks…" : "Search routes…"} style={{ width: "100%", height: 44, boxSizing: "border-box", padding: "0 12px 0 38px", borderRadius: 12, border: "1px solid " + C.border, background: C.card, color: C.text, fontSize: 15, outline: "none" }}/>
+        <input type="search" enterKeyHint="search" value={q} onChange={e => setQ(e.target.value)} aria-label={mode === "areas" ? "Search your downloaded areas" : "Search your downloaded routes"} placeholder={mode === "areas" ? "Search areas, crags, peaks…" : "Search routes…"} style={{ width: "100%", height: 44, boxSizing: "border-box", padding: "0 12px 0 38px", borderRadius: 12, border: "1px solid " + C.border, background: C.card, color: C.text, fontSize: 15, outline: "none" }}/>
       </div>
-      {covers ? <div style={{ fontSize: 11.5, color: C.textMuted, margin: "6px 2px 0", lineHeight: 1.4, overflowWrap: "anywhere" }}>{covers}</div> : null}
+      {/* What it covers, and the way to change that: with a state downloaded nothing else on this screen leads to Manage areas. */}
+      {covers ? <div style={{ display: "flex", alignItems: "center", gap: 8, margin: "2px 2px 0" }}><span style={{ flex: 1, minWidth: 0, fontSize: 11.5, color: C.textMuted, lineHeight: 1.4, overflowWrap: "anywhere" }}>{covers}</span><button onClick={onManageAreas} aria-label="Manage downloaded areas" style={{ flexShrink: 0, minHeight: 36, padding: "4px 2px 4px 8px", border: "none", background: "transparent", color: C.blue, fontSize: 12, fontWeight: 700, cursor: "pointer" }}>Manage</button></div> : null}
       {!qq ? nearMe : (
         // The hits run down the page, as the area page's do: no inner scroll box.
         <div style={{ marginTop: 6 }} aria-busy={busy || undefined}>
           {q0.isError ? <div role="alert" style={{ fontSize: 13, color: C.red, padding: "14px 4px", textAlign: "center" }}>{mode === "areas" ? "Couldn’t search your downloaded areas — try again." : "Couldn’t search your downloaded routes — try again."}</div>
-            : !res ? <LoadingRows C={C} label="Searching your downloads…" style={{ padding: "14px 4px" }}/>
+            // An EMPTY answer held from the last words is not an answer for these: still searching, say so.
+            : !res || (busy && !res.rows.length) ? <LoadingRows C={C} label="Searching your downloads…" style={{ padding: "14px 4px" }}/>
+            : !res.rows.length && finderRows.length ? <div>{finderRows}</div>
             : !res.rows.length ? <EmptyState C={C} icon="search" action={<button onClick={onManageAreas} style={{ minHeight: 40, padding: "6px 14px", borderRadius: 20, border: "1px solid " + C.border, background: C.surface, color: C.text, fontSize: 13, fontWeight: 700, cursor: "pointer" }}>Manage areas</button>}>{(mode === "areas" ? "No downloaded areas match “" : "No downloaded routes match “") + qq + "”. Places you haven’t downloaded don’t show here."}</EmptyState>
             : <div style={{ opacity: busy ? 0.5 : 1 }}>
+              {finderRows}
               {mode === "areas"
                 ? (res.rows as DownloadedSearchArea[]).map(a => (
                   <button key={a.id} onClick={() => onOpenArea(a)} style={row}>
