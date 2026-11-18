@@ -43,7 +43,10 @@ export default function DbSearchSplit({ scope, onJumpToArea, onOpenRoute, C, onM
   const { wrapRef, barRef, pin } = usePinnedBar(endRef);
   const qq = q.trim();
   const { data: areaHits, isLoading: la, error: ea, isPlaceholderData: ha } = useAreaSearch(scope.id, qq);
-  const { data: routeHits, isLoading: lr, error: er, isPlaceholderData: hr } = useSubtreeRoutes(scope.id, { q: qq, page: 0, pageSize: 40 });
+  // Asked only for typed words on the Routes tab: the list shows nothing else. With no words it read a whole
+  // state's climbs unfiltered, which times out (HTTP 500, statement timeout) on every visit to a state's page
+  // (2026-11-18), and on the Areas tab it ran a route search per keystroke that nobody saw.
+  const { data: routeHits, isLoading: lr, error: er, isPlaceholderData: hr } = useSubtreeRoutes(qq && mode === "routes" ? scope.id : null, { q: qq, page: 0, pageSize: 40 });
   // HELD ROWS SAY SO (walkthrough 2026-11-18): while the new words' search runs, the last words' hits
   // stayed on screen at full strength ("st helens" showing "Iron Cap Mountain" from "el cap"). They
   // dim, and the list says it is busy, until the answer for these words lands — as the top bar's do.

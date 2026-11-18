@@ -1026,6 +1026,26 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   - Injection-tested 4/4, cases at the bottom of the script, each proving its edit landed **by
     checksum** before judging the guard. Case 4 must **pass**: a guard clause returning `null` is
     not a screen.
+- **`check:flex-scroll`** asks whether every scroll pane inside a height-capped flex column can
+  actually shrink to scroll (`minHeight:0`, or a height of its own). Prompted by the Filter routes
+  sheet, whose header slid off the top because its body never scrolled.
+  - **`minHeight:0` is not enough on its own (2026-11-18).** The route edit sheet ("Add or fix
+    info", `SuggestFix.tsx`) had `flex:1` + `minHeight:0` on its pane, so the guard exempted it,
+    but the pane and its footer sat in a plain `<div>` under the capped column. The pane grew to
+    ~4,400px and never scrolled, and because it is `overscroll-behavior:contain` Chrome let it
+    SWALLOW every mouse wheel over it: on a desktop the form could not be scrolled at all (owner:
+    "Editing a climb on desktop view doesn't allow you to scroll down"). A touch drag hid it on the
+    phone. The guard now also fails a `minHeight:0` pane whose nearest DOM parent is not
+    `display:flex` when a capped flex column sits above it; `display:contents` is looked through
+    (AreaSuggestFix.jsx wraps its pane that way, correctly), and a component tag is left alone.
+    Injection-tested against the original SuggestFix.
+  - **The browser sweep that found it** wheeled the mouse over all 61 openable popups at 1440×900
+    and 1024×768 (a throwaway probe, not committed). Besides the edit sheet, Notifications on
+    desktop left *See all notifications* 19px under the window (its 72vh list did not shrink inside
+    the desktop window cap; the card is now a flex column with `minHeight:0` on the list). Vouch
+    for a climber flagged too and is NOT a bug: the wheel sat over the inner climber list, which
+    scrolls to its end and contains; off the list the sheet scrolls to the end. Fire map flagged
+    on its Leaflet tile layer (overflow:hidden by design); its last link is on screen.
 - **`check:scroll-containment`** asks whether every inline scroll pane (`overflowY`/`overflow`
   `auto|scroll`) declares `overscrollBehavior`. Without it a drag that reaches the pane's end
   is handed to the page behind, and on a phone the sheet reads as **stuck**. Prompted by

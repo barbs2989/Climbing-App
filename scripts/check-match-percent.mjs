@@ -80,7 +80,7 @@ const out = path.join(outdir, "b.cjs");
 const CORE = JSON.stringify(corePath);
 await build({
   stdin: {
-    contents: `export { compat, compatParts, compatWhy, compatUnknown, CLIMBERS, ME, CMAX_DISC, CMAX_GRADE, CMAX_OBJ, CMAX_VERIF, CMAX_PACE, CMAX_AVAIL, CMAX_AREA, COMPAT_BASE, COMPAT_TOP, COMPAT_MAX } from ${CORE};`,
+    contents: `export { compat, compatParts, compatWhy, compatUnknown, __set_MY_PACE, CLIMBERS, ME, CMAX_DISC, CMAX_GRADE, CMAX_OBJ, CMAX_VERIF, CMAX_PACE, CMAX_AVAIL, CMAX_AREA, COMPAT_BASE, COMPAT_TOP, COMPAT_MAX } from ${CORE};`,
     resolveDir: ROOT, loader: "js",
   },
   bundle: true, format: "cjs", platform: "node", jsx: "automatic",
@@ -287,16 +287,60 @@ else fail(`the browse row no longer explains the missing match % (${JSON.stringi
   const bad_ = wb.filter((r) => r.tone !== "unk");
   if (!bad_.length) ok("an unfilled profile reads as NOT SAID on every line, never as a mismatch");
   else fail(`an unfilled profile reads as ${bad_.map((r) => r.k + "=" + r.tone).join(", ")} — absence is being described as a mismatch`);
+  // GRADE IS LIKE WITH LIKE (compat audit 2026-11-18). Taking each side's first rope grade compared a sport grade with a
+  // trad grade: a 5.11a sport / 5.10a trad leader read "Far apart" from a 5.9 trad leader one step below their trad grade.
+  const gOf = (a, b) => M.compatParts(a, b).find((r) => r.k === "grade");
+  const lw = gOf({ sportGrade: "5.11a", tradGrade: "5.10a" }, { tradGrade: "5.9" });
+  if (lw.known && lw.mine === "5.10a" && lw.theirs === "5.9" && lw.kind === "trad") ok("grade compares trad with trad when both set a trad grade (5.10a vs 5.9, not 5.11a sport vs 5.9 trad)");
+  else fail(`grade compared ${lw.mine} with ${lw.theirs} (${lw.kind}) — a sport grade is being measured against a trad grade`);
+  const both = gOf({ sportGrade: "5.12a", tradGrade: "5.10a" }, { sportGrade: "5.10a", tradGrade: "5.10a" });
+  if (both.gap === 0 && both.kind === "trad") ok("when both set both, the CLOSER kind decides (same trad grade beats a sport gap)");
+  else fail(`two climbers with the same trad grade scored a grade gap of ${both.gap} (${both.kind})`);
+  const cross = gOf({ sportGrade: "5.10a" }, { tradGrade: "5.10a" });
+  if (cross.known && cross.gap === 0 && cross.kind === null) ok("with no rope-grade kind in common, it still compares across (sport vs trad) rather than calling it unknown");
+  else fail(`a sport-only and a trad-only climber no longer compare grades (known=${cross.known}, gap=${cross.gap})`);
+  // AVAILABILITY IS AN OVERLAP COEFFICIENT (compat audit 2026-11-18): two climbers with the SAME schedule, or one whose
+  // slots all sit inside the other's, are a full match; it used to be 6 per shared slot, so weekends-only twins read amber.
+  const avOf = (a, b) => M.compatParts(a, b).find((r) => r.k === "avail");
+  const twin = avOf({ availability: ["weekends"] }, { availability: ["weekends"] });
+  const inside = avOf({ availability: ["weekends"] }, { availability: ["weekends", "weekday_pm"] });
+  const half = avOf({ availability: ["weekends", "weekday_am"] }, { availability: ["weekends", "weekday_pm"] });
+  const none = avOf({ availability: ["weekday_am"] }, { availability: ["weekday_pm"] });
+  if (twin.pts === twin.max && inside.pts === inside.max) ok("the same schedule, or one inside the other, counts fully for availability");
+  else fail(`weekends vs weekends scores ${twin.pts}/${twin.max} and weekends inside weekends+weekday PM ${inside.pts}/${inside.max} — a perfect fit reads as partial`);
+  if (half.pts > 0 && half.pts < half.max && none.pts === 0) ok("half the smaller schedule shared counts partly; nothing shared counts nothing");
+  else fail(`partial overlap scores ${half.pts}/${half.max} and no overlap ${none.pts}/${none.max}`);
+  // PACE IS KNOWN THE SAME WAY BY BOTH (browser pass 2026-11-18). A signed-in viewer's pace is MY_PACE, not a field on
+  // ME (id 0); compatParts reads it through paceOf() and compatUnknown read the bare field, so every signed-in card said
+  // "based on limited info" while its pace line had an answer.
+  if (typeof M.__set_MY_PACE !== "function") dead("core does not export __set_MY_PACE — the signed-in pace case cannot be judged");
+  M.__set_MY_PACE(1300);
+  const meNoField = { id: 0, disciplines: ["trad"], tradGrade: "5.9", availability: ["weekends"], partnerAreaPaths: ["usa.wa.index"] };
+  const them = { id: "x", disciplines: ["trad"], tradGrade: "5.9", availability: ["weekends"], partnerAreaPaths: ["usa.wa.index"], hikingSpeedFtHr: 1500 };
+  const paceKnown = M.compatParts(meNoField, them).find((r) => r.k === "pace").known;
+  const unk = M.compatUnknown(meNoField, them);
+  M.__set_MY_PACE(null);
+  if (paceKnown && unk === 0) ok("a signed-in viewer's pace (MY_PACE) counts as KNOWN for \"limited info\" exactly as the pace line scores it");
+  else fail(`the pace line is known=${paceKnown} but compatUnknown counts ${unk} unknown signal(s) for a viewer whose pace is MY_PACE — the card says "based on limited info" with every line answered`);
   // The panel renders compatWhy() with the SAME viewer object it scores with: the partner row scores ME's MOUNTAIN
   // objectives (matchObjectiveIds), and the profile once scored ME.objectiveIds, so one climber read two numbers.
   const fpStart = stripped.indexOf("function FullProfile(");
   const fp = fpStart < 0 ? "" : stripped.slice(fpStart, stripped.indexOf("\nfunction ", fpStart + 10));
   if (fp.length < 2000) dead("ANCHOR LOST: FullProfile could not be lifted");
-  const meVar = (fp.match(/score=climber\._real\?\(\(realObjQ\.data&&_unkN<3\)\?compat\((\w+),climber\)/) || [])[1];
-  if (!meVar) dead("ANCHOR LOST: FullProfile's score expression");
+  const scoreM = fp.match(/score=climber\._real\?\(\(_scoreReady&&_unkN<3\)\?compat\((\w+),(\w+)\)/);
+  if (!scoreM) dead("ANCHOR LOST: FullProfile's score expression");
+  const meVar = scoreM[1], themVar = scoreM[2];
+  // THE OTHER SIDE is the partner row's too (compat audit 2026-11-18): the objectives that still count for a match and
+  // their LISTED AREAS, read by the sheet itself. Only the row carried listed areas, so the same climber opened from
+  // Friends or a chat read "Areas: not listed by both of you" and up to 10 points lower.
+  const themDef = (fp.match(new RegExp("const " + themVar + "=climber\\._real\\?Object\\.assign\\(\\{\\},climber,\\{([^}]*)\\}")) || [])[1] || "";
+  if (/objectiveIds:_mObj/.test(themDef) && /useMatchObjectivesOfUsers\(/.test(fp) && /const _mObj[^;]*matchObjQ\.data/.test(fp)) ok("the profile scores THEIR side with the match objectives the partner row uses, not every objective");
+  else fail("the profile scores their objectives from a different read than the partner row (match_objectives_of_users) — the two can show different %s");
+  if (/partnerAreaPaths:_mAreas/.test(themDef) && /usePartnerAreasOfUsers\(/.test(fp) && /const _mAreas[^;]*partnerAreasQ\.data/.test(fp)) ok("the profile reads their listed areas itself, so every door into it scores the area term");
+  else fail("the profile only has listed areas when the partner row passed them — opened from anywhere else it says \"Areas: not listed by both of you\"");
   if (meVar !== "ME" && new RegExp(meVar + "=Object\\.assign\\(\\{\\},ME,\\{objectiveIds:Array\\.isArray\\(ME\\.matchObjectiveIds\\)").test(fp)) ok("the profile scores with ME's mountain objectives, as the partner row does");
   else fail("the profile scores with ME.objectiveIds while the partner row scores ME.matchObjectiveIds — the same climber reads two different match %s");
-  if (fp.includes("compatWhy(" + meVar + ",climber)")) ok("the profile's \"How you match\" checklist explains that same score");
+  if (fp.includes("compatWhy(" + meVar + "," + themVar + ")")) ok("the profile's \"How you match\" checklist explains that same score");
   else fail("the profile does not render compatWhy() for the viewer it scores — the match % has no explanation, or explains a different pair");
 }
 

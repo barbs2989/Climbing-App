@@ -21,6 +21,9 @@ interface Picked { disc: string; gLo: string; gHi: string; sortBy: string }
 // at the sport grade; the other disciplines have no grade on the profile, so they start at Any.
 const MY_GRADE_KEY: Record<string, keyof RouteFinderInlineGrades> = { sport: "sport", trad: "trad", toprope: "sport", bouldering: "boulder" };
 const SORTS: [string, string][] = [["lr", "Left → right"], ["name", "Name A→Z"], ["stars_desc", "Most starred"]];
+// A boulder or a peak has no left-to-right line (owner, 2026-10-21 and 2026-11-14), and the finder already turns the wall
+// order into BY BOULDER / BY PEAK for them; the form names the order the list will actually show.
+const WALL_SORT_WORD: Record<string, string> = { bouldering: "By boulder", alpine: "By peak", mountaineering: "By peak", scrambling: "By peak" };
 const scaleFor = (disc: string) => (DISC_GRADE_SCALES[disc] || [])[0] || "";
 const dl = DL as Record<string, string>;
 
@@ -51,10 +54,14 @@ export default function RouteFinderInline({ discs, myGrades, onFind, C }: RouteF
         <div role="heading" aria-level={3} style={{ fontSize: 12, fontWeight: 800, color: C.text, letterSpacing: 0.4, textTransform: "uppercase" }}>Find climbs here</div>
         {presetNote ? <span style={{ fontSize: 11.5, color: C.textMuted }}>{presetNote}</span> : null}
       </div>
-      <div style={{ display: "grid", gridTemplateColumns: "1.7fr 1fr 1fr 1.4fr auto", gap: 10, alignItems: "end" }}>
+      {/* FOUR FIELDS IN A ROW, THE BUTTON UNDER THEM: every select is drawn at 16px (index.html, so iOS does not zoom),
+          and five columns cut "Left → right" to "Left → ri" (2026-11-18). */}
+      <div style={{ display: "grid", gridTemplateColumns: "minmax(0,1.4fr) minmax(0,1fr) minmax(0,1fr) minmax(0,1.4fr)", gap: 10, alignItems: "end" }}>
         <label style={lab}>Type
           <select aria-label="Type" value={p.disc} onChange={e => setP(init(e.target.value))} style={selSt(true)}>
             {discs.map(d => <option key={d} value={d}>{dl[d] || d}</option>)}
+            {/* Every climb here, as the Route finder button opens it; no grade range, since grades share no scale across types. */}
+            <option value="">All types</option>
           </select>
         </label>
         <label style={lab}>From
@@ -71,10 +78,10 @@ export default function RouteFinderInline({ discs, myGrades, onFind, C }: RouteF
         </label>
         <label style={lab}>Sort
           <select aria-label="Sort" value={p.sortBy} onChange={e => setP(x => ({ ...x, sortBy: e.target.value }))} style={selSt(false)}>
-            {SORTS.map(s => <option key={s[0]} value={s[0]}>{s[1]}</option>)}
+            {SORTS.map(s => <option key={s[0]} value={s[0]}>{s[0] === "lr" && WALL_SORT_WORD[p.disc] ? WALL_SORT_WORD[p.disc] : s[1]}</option>)}
           </select>
         </label>
-        <button onClick={() => onFind({ discs: p.disc ? [p.disc] : [], gSys: scale, gLo: p.gLo, gHi: p.gHi, sortBy: p.sortBy })} style={{ ...BTN_LG, border: "1px solid " + C.blue, background: C.blueBg, color: C.onSolid, whiteSpace: "nowrap" }}>Find climbs</button>
+        <button onClick={() => onFind({ discs: p.disc ? [p.disc] : [], gSys: scale, gLo: p.gLo, gHi: p.gHi, sortBy: p.sortBy })} style={{ ...BTN_LG, gridColumn: "1 / -1", border: "1px solid " + C.blue, background: C.blueBg, color: C.onSolid, whiteSpace: "nowrap" }}>Find climbs</button>
       </div>
     </div>
   );

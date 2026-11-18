@@ -111,10 +111,10 @@ export default function RouteBreakdown({route,focus,onEdit,comments,commentsUnav
   const _undesc=(route.pitches as number)-pitchCount;
   const short=pitchShortfall(route,rows.length)?(" The route lists "+route.pitches+" pitches, so "+_undesc+(_undesc===1?" is":" are")+" not described here."):"";
   const intro=(pitchCount&&stageCount)
-    ?("The whole climb in order — "+rows.length+" sections, of which "+pitchCount+" are roped pitches and "+stageCount+" are travel or route-finding legs."+short)
+    ?(pitchCount+" roped pitch"+(pitchCount!==1?"es":"")+", "+stageCount+" travel leg"+(stageCount!==1?"s":"")+", in order."+short)
     :(pitchCount
       ?(pitchCount+" roped pitch"+(pitchCount!==1?"es":"")+", in route order."+short)
-      :("How the route goes, section by section — "+stageCount+" leg"+(stageCount!==1?"s":"")+". These are stages of travel and route-finding, not roped pitches."));
+      :(stageCount+" leg"+(stageCount!==1?"s":"")+", in order."));
   return <div id="route-breakdown" style={{marginBottom:ROUTE_GAP,scrollMarginTop:"80px"}}>
     {/* No caption beside the pencil (owner, 2026-11-05: "Tap a row for detail ... cuts off the edit button on the phone"):
         the heading, a nowrap caption and the pencil did not fit a phone's width, and it was the pencil that lost. */}
