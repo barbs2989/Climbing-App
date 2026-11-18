@@ -322,6 +322,18 @@ else fail(`the browse row no longer explains the missing match % (${JSON.stringi
   M.__set_MY_PACE(null);
   if (paceKnown && unk === 0) ok("a signed-in viewer's pace (MY_PACE) counts as KNOWN for \"limited info\" exactly as the pace line scores it");
   else fail(`the pace line is known=${paceKnown} but compatUnknown counts ${unk} unknown signal(s) for a viewer whose pace is MY_PACE — the card says "based on limited info" with every line answered`);
+  // WHERE YOU CLIMB IS KNOWN ONLY WHEN IT IS COMPARABLE (retest 2026-11-18): objectives vs objectives, or areas vs areas.
+  // An alpinist with only mountain objectives and a crag climber with only listed areas show "?" on BOTH lines; counting
+  // that as known under-stated "limited info" and let a % show three unknowns deep.
+  const objOnly = { disciplines: ["trad"], objectiveIds: ["r1"] }, areaOnly = { disciplines: ["trad"], partnerAreaPaths: ["usa.wa.index"] };
+  const wParts = M.compatParts(objOnly, areaOnly), wLinesUnknown = !wParts.find((r) => r.k === "obj").known && !wParts.find((r) => r.k === "area").known;
+  const wBase = M.compatUnknown({ disciplines: ["trad"], objectiveIds: ["r1"] }, { disciplines: ["trad"], objectiveIds: ["r2"] });
+  const wMixed = M.compatUnknown(objOnly, areaOnly);
+  if (wLinesUnknown && wMixed === wBase + 1) ok("objectives on one side and only areas on the other count as an UNKNOWN \"where you climb\", as both its lines say");
+  else fail(`objectives-only vs areas-only: both lines unknown=${wLinesUnknown}, but compatUnknown counts ${wMixed} (comparable pair: ${wBase}) — "limited info" disagrees with the card`);
+  const wAreas = M.compatUnknown(areaOnly, { disciplines: ["trad"], partnerAreaPaths: ["usa.ut.x"] });
+  if (wAreas === wBase) ok("...while two climbers who both LISTED areas (0300: crag partners) stay comparable without any objective");
+  else fail(`two climbers with listed areas and no objectives count ${wAreas} unknowns, not ${wBase} — crag climbers read as "limited info" again`);
   // The panel renders compatWhy() with the SAME viewer object it scores with: the partner row scores ME's MOUNTAIN
   // objectives (matchObjectiveIds), and the profile once scored ME.objectiveIds, so one climber read two numbers.
   const fpStart = stripped.indexOf("function FullProfile(");

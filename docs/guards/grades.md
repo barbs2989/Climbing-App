@@ -152,6 +152,14 @@ Part of the guard notes — see [README.md](README.md) for the full index.
       which needs the database: it renders the real `RouteDetail` over the real rows through the
       real `dbRouteToCamel`, and is proven non-vacuous — reverting the rule fails **14** of its
       assertions.
+- **A BARE OR ± YDS GRADE FROM 5.10 UP SITS ON A / B / C (0466, 2026-11-18).** 5.10-, 5.10 and 5.10+ were all
+  stored at 10, below 5.10a, so "5.10c and up" dropped every 5.10+. No official mapping exists; the common reading
+  is - ≈ a/b, bare ≈ b/c, + ≈ c/d (Mountain Project forum threads), and a split grade is stored at its FIRST letter
+  ("5.10b/c" = 10.5), so - = .25, bare = .5, + = .75 (`YDS_SIGN`). Below 5.10 there are no letters: 5.9+ stays 9.
+  A "-" before a number is a range ("5.10-11"), not a minus. **Selected by the parser:** 25,569 of 25,576 candidate
+  rows move (6,518 by .25, 11,721 by .5, 7,330 by .75), 0466's WHERE + CASE give exactly those rows and values
+  (0/0/0), and none leaves its whole number, so the grade charts do not change. Six aid rows already drifting
+  ("5.10 A3" stored as 3) are left for this audit.
 - **A YDS `d` IS +0.9, NOT +1 (0464, 2026-11-18).** The letters were quarter steps, a .25 … d +1, so 5.10d
   was stored as **11**, the number of a bare 5.11 / 5.11- / 5.11+. The area grade chart buckets
   `floor(grade_num)` and filed every 5.10d under 5.11, while the Route finder's *5.10a–5.10d* range ended at

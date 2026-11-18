@@ -90,7 +90,12 @@ export default function MyPartnerAreas({ uid, listings, listingsError, prefill, 
     if ((draft.freeFrom && !draft.freeTo) || (!draft.freeFrom && draft.freeTo)) { notify && notify("Pick both days of the window, or choose Any time"); return; }
     if (draft.freeFrom && draft.freeTo && draft.freeTo < draft.freeFrom) { notify && notify("The window ends before it starts"); return; }
     setBusy(true);
-    try { await savePartnerArea(uid, { areaId: draft.areaId, disciplines: draft.disciplines, freeFrom: draft.freeFrom || null, freeTo: draft.freeTo || null, note: draft.note }); haptic && haptic("light"); leaveDraft(); }
+    try { await savePartnerArea(uid, { areaId: draft.areaId, disciplines: draft.disciplines, freeFrom: draft.freeFrom || null, freeTo: draft.freeTo || null, note: draft.note }); haptic && haptic("light");
+      // Opened FOR this place (List me at <crag> on a route or area page): back to that page, not on into the
+      // whole Listed areas list, which left the climber a screen away from the climb they came from (owner walk,
+      // 2026-11-18). Opened from the Menu, it still returns to the list.
+      if (prefill && prefill.areaId && prefill.areaId === draft.areaId) { const nm = draft.name || "this area", ed = listed.has(draft.areaId); setDraft(null); onClose(); notify && notify(ed ? "Listing updated" : "You’re listed " + (["crag", "wall", "boulder", "sector", "peak"].includes(draft.areaType) ? "at " : "in ") + nm); return; }
+      setDraft(null); }
     catch (e) { notify && notify("Couldn’t list you there — " + ((e && e.message) || "try again")); }
     finally { setBusy(false); }
   }
