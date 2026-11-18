@@ -26,7 +26,7 @@ export interface AreaChildrenListProps<T extends AreaChildRow> {
   /** Sidebar: the "All areas" tree link in the heading. */
   onAllAreas?: () => void;
   /** Sidebar: the map thumbnail at the top, and where tapping it goes. */
-  map?: { lat: number; lng: number; zoom: number; name: string } | null;
+  map?: { lat: number; lng: number; zoom: number; name: string; pin: boolean } | null;
   onNear?: () => void;
   /** Child id → discipline → climbs in its subtree (0455), for the "Most sport / trad…" sorts; null hides them. */
   discCounts?: ChildDiscCounts | null;
@@ -110,7 +110,7 @@ export default function AreaChildrenList<T extends AreaChildRow>({ rows: given, 
   };
   return <div>
     {side && map ? <div style={{ position: "relative", marginBottom: 10 }}>
-      <WalkInMap pts={[]} park={null} crag={{ lat: map.lat, lng: map.lng }} height={120} zoom={map.zoom} label={"Map of " + map.name} />
+      <WalkInMap pts={[]} park={null} crag={map.pin ? { lat: map.lat, lng: map.lng } : null} center={{ lat: map.lat, lng: map.lng }} height={120} zoom={map.zoom} label={"Map of " + map.name} />
       {onNear ? <button onClick={onNear} aria-label={"Open the map of " + map.name} style={{ position: "absolute", inset: 0, background: "transparent", border: "none", cursor: "pointer", borderRadius: 9, padding: 0, zIndex: 500 /* over Leaflet's own panes (400) */ }}>
         {/* A visible EXPAND chip (owner, 2026-11-14): the whole thumbnail opens the map, but nothing said so. */}
         <span aria-hidden="true" style={{ position: "absolute", top: 6, right: 6, display: "inline-flex", alignItems: "center", gap: 5, background: C.card, color: C.text, border: "1px solid " + C.border, borderRadius: 8, padding: "4px 8px", fontSize: 12, fontWeight: 700, boxShadow: "0 1px 4px rgba(0,0,0,0.25)" }}>

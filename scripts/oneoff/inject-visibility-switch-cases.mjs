@@ -54,8 +54,9 @@ const CASES = [
    * tapping a climb count. */
   { name: "stat-tile", file: "lib/PartnerSearch.jsx", must: "fail",
     why: "the real ungated stat-tile route into another climber's résumé",
-    find: 'const act=st[2]==="climbs"?(c.resumePublic!==false?()=>onResume&&onResume(c):null)',
-    repl: 'const act=st[2]==="climbs"?()=>onResume&&onResume(c)' },
+    // The tile is the one partner card's climbs chip now (owner 2026-11-18); the example climber's route.
+    find: 'onClimbs={c.resumePublic!==false&&onResume?function(){onResume&&onResume(c);}:null}',
+    repl: 'onClimbs={onResume?function(){onResume&&onResume(c);}:null}' },
 
   { name: "resume-button", file: "src/components/FullProfile.tsx", must: "fail", // FullProfile moved from core in PR50
     why: "rule 3 — the profile button stops consulting the flag",

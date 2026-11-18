@@ -239,6 +239,7 @@ npm run audit:copied-prose -- --live # ...and does the LIVE text of every route 
 npm run audit:approach-scope # does a route's approach text run past the base of the climb?
 npm run audit:mountaineering-rule # mountaineering is ONLY a walk-up and a scramble is never roped: no mountaineering or scrambling row carries a 5.x grade (alpine instead), and every disciplines list names its own primary; trigger 0280/0366 + catOf/rDiscs enforce it
 npm run audit:aspect-name    # does a route's NAME point the same way as its `aspect`?
+npm run audit:optimal-season # does the HEADER season, the OPTIMAL WINDOW and its month CALENDAR say one thing? (and no window reads like research notes; --selftest needs no DB)
 npm run audit:prose-length   # does a route's DESCRIPTION state a length or pitch count its own STATS contradict? (--selftest needs no DB)
 npm run audit:partner-grade  # does PARTNER REQUIREMENTS ask for a lead grade the route's own GRADE contradicts? (--selftest needs no DB)
 npm run audit:multi-approach # a climb reached MORE THAN ONE WAY that the page cannot switch between yet

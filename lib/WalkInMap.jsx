@@ -9,23 +9,25 @@ export const walkInPts = (gpx) => (Array.isArray(gpx) ? gpx : []).map((p) => (Ar
 
 // `zoom`: the zoom to open at when there is only one point to frame (a pin, no line) -- an area page's map thumbnail
 // shows a whole region, where fitting one point would open at street level. `label` replaces the walk-in description.
-/** @param {{ pts: any, park: any, crag: any, height?: number, zoom?: number, label?: string }} props */
-export default function WalkInMap({ pts, park, crag, height = 200, zoom, label }) {
+// `center`: a point to frame with NO pin. A state, region or range is not a crag, so its thumbnail must not draw a "C".
+/** @param {{ pts: any, park: any, crag: any, center?: { lat: number, lng: number } | null, height?: number, zoom?: number, label?: string }} props */
+export default function WalkInMap({ pts, park, crag, center = null, height = 200, zoom, label }) {
   const div = useRef(null), mapRef = useRef(null), tileRef = useRef(null);
   const [fail, setFail] = useState(false);
   // The map is built once; that one build reads these.
-  const init = useRef({ pts, park, crag, zoom });
+  const init = useRef({ pts, park, crag, center, zoom });
   useEffect(() => {
     let cancelled = false;
     loadLeaflet(() => {
       if (cancelled || !div.current || mapRef.current || !window.L) return;
       const L = window.L, map = L.map(div.current, { attributionControl: false, zoomControl: false });
-      const { pts: p0, park: k0, crag: c0, zoom: z0 } = init.current;
+      const { pts: p0, park: k0, crag: c0, center: m0, zoom: z0 } = init.current;
       applyBaseLayer(map, tileRef, "topo");
       const pin = (p, label, color) => L.marker([p.lat, p.lng], { keyboard: false, interactive: false, icon: L.divIcon({ className: "", iconSize: [22, 22], iconAnchor: [11, 11], html: '<div style="width:22px;height:22px;border-radius:50%;background:' + color + ';border:2px solid #fff;color:#fff;font:700 11px/18px system-ui;text-align:center">' + label + "</div>" }) }).addTo(map);
       const bounds = p0.slice();
       if (k0) { pin(k0, "P", C.blue); bounds.push([k0.lat, k0.lng]); }
       if (c0) { pin(c0, "C", C.orange); bounds.push([c0.lat, c0.lng]); }
+      if (m0 && !bounds.length) bounds.push([m0.lat, m0.lng]);
       if (p0.length > 1) L.polyline(p0, { color: C.orange, weight: 4 }).addTo(map);
       if (bounds.length === 1 && z0) map.setView(bounds[0], z0);
       else if (bounds.length) map.fitBounds(L.latLngBounds(bounds).pad(0.25), { maxZoom: 17 });
