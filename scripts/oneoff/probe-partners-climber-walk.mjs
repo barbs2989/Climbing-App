@@ -85,7 +85,7 @@ try {
   note("empty card: " + emptyTxt.replace(/\n/g, " / "));
   ok(!/Add an area|Choose my areas/.test(emptyTxt) && /Invite a climbing friend/.test(emptyTxt), "it offers Invite (the You card above has + Add an area)");
   const meanwhile = await page.locator("text=/^Meanwhile, climbers/i").count();
-  note("meanwhile list shown: " + (meanwhile ? "yes" : "no (no other discoverable climbers?)"));
+  ok(meanwhile === 0, "no Meanwhile list under the empty card (removed 2026-11-18)");
   await shot(page, "1-myareas-unlisted");
   await empty.locator("button", { hasText: /^Invite a climbing friend$/ }).click(); await page.waitForTimeout(600);
   ok(await empty.locator("text=/Copy link/i").count() > 0, "Invite opens the share buttons (Copy link)");
@@ -97,9 +97,12 @@ try {
   if (await seeAll.count()) { await seeAll.click(); await page.waitForTimeout(5000); ok(await by.inputValue() === "anyone", "See everyone switches to Everyone"); }
   else note("no See everyone button (no browse climbers) -- switching by the pill");
   if (await by.inputValue() !== "anyone") { await by.selectOption("anyone"); await page.waitForTimeout(5000); }
-  await cardLook(page.locator('div[role="button"]', { hasText: /@/ }), "a real climber row");
+  // Climber cards keep their OWN look (owner 2026-11-18), not the crew card's: a real row is radius 12 with a
+  // plain 1px edge; an example card keeps its 4px blue left bar.
+  const rowLook = await page.locator('div[role="button"]', { hasText: /@/ }).first().evaluate((e) => { let x = e; while (x && getComputedStyle(x).borderTopWidth !== "1px") x = x.parentElement; if (!x) return null; const c = getComputedStyle(x); return { r: c.borderTopLeftRadius, pad: c.paddingTop }; }).catch(() => null);
+  ok(!!rowLook && rowLook.r === "12px" && rowLook.pad === "10px", "a real climber row has the partner card look" + (rowLook ? " (radius " + rowLook.r + ", padding " + rowLook.pad + ")" : " (no row found)"));
   const ex = page.locator("button", { hasText: /^Full profile & vouches$/ });
-  if (await ex.count()) await cardLook(ex, "an example climber card"); else note("no example climber cards on screen");
+  if (await ex.count()) { const l = await ex.first().evaluate((e) => { let x = e; while (x && getComputedStyle(x).borderLeftWidth !== "4px") x = x.parentElement; return !!x; }).catch(() => false); ok(l, "an example climber card keeps its blue left bar"); } else note("no example climber cards on screen");
   await shot(page, "2-everyone");
 
   // 3. Distance -> Near me now, 10 mi, then the empty card's next radius.
@@ -147,7 +150,7 @@ try {
   const yOf = (l) => l.first().boundingBox().then((b) => b && b.y).catch(() => null);
   const firstResultY = (await yOf(page.locator("[data-partner-empty]"))) ?? (await yOf(page.locator("text=/^Listed here or inside first/"))) ?? (await yOf(page.locator("text=/^No one is listed in Utah/")));
   const boxY = (await box.boundingBox()).y;
-  ok(firstResultY != null && firstResultY < boxY, "the results (or the empty card) come before the box");
+  ok(firstResultY != null && boxY < firstResultY, "the list-me box comes before the results (or the empty card)");
   await shot(page, "5-utah");
   await box.locator("button", { hasText: /^List me in Utah$/ }).click(); await page.waitForTimeout(4000);
   ok(/You’re listed in Utah/.test(await box.innerText()), "listed: the box reads You're listed in Utah ✓");
