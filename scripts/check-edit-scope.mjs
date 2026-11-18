@@ -64,6 +64,12 @@ const READERS = [
   [/_dsc\.length<=140&&!fieldScope\("descentText",scopeCtx\(route,disc\)\)/, "the crag Descent fact, skipped where DESCENT renders (TechStats)"],
   [/\.filter\(function\(k\)\{return fieldScope\(k,_sc\);\}\)\)\|\|"grade"/, "the facts-card pencil (RouteDetail factsPencilKey)"],
   [/openFix\(catOf\(route\)==="sport"\?"draws":"rack"\)/, "the \"Brought different gear?\" box opening draws on sport (RouteDetail gearUpdateBox)"],
+  [/<CragLocationCard route=\{route\} mtn=\{mtn\} onEditParking=\{onEditArea\?\(\)=>\{onEditArea\("parking_pin"\);\}:\(\)=>\{openFix\("waypoints"\);\}\} onEditRoutePin=\{\(\)=>\{openFix\("waypoints"\);\}\}\/>/, "the crag parking card editing the CRAG's pin, the route pin only as fallback (RoutePlanTab)"],
+  [/park&&onEditParking\?<EditIconButton onClick=\{!parkIsCrag&&onEditRoutePin\?onEditRoutePin:onEditParking\}/, "the parking pencil editing the pin it SHOWS — the route's own when trailheadPoint() picked it (CragLocationCard)"],
+  [/const areaFactEdit=onSuggestAreaEdit&&cragAreaEditable\(route\)\?/, "the crag-area editor offered exactly where fieldScope's cragPin says (RouteDetail areaFactEdit)"],
+  [/<RoutePlanTab onEditArea=\{areaFactEdit\} /, "the Plan tab handed the crag-area editor (RouteDetail)"],
+  [/<RouteOverviewTab onEditArea=\{areaFactEdit\} /, "the Overview tab handed the crag-area editor (RouteDetail)"],
+  [/<RoutePlanTab onEditArea=\{onEditArea\} atTabTop=\{undefined\} /, "Overview passing it to the crag's Plan body (RouteOverviewTab)"],
 ];
 const lost = READERS.filter(([re]) => !re.test(rd)).map(([, n]) => n);
 if (lost.length) fail(`no longer reads lib/fieldScope.js: ${lost.join("; ")} — a page section and the edit sheet can drift apart again`);
@@ -112,6 +118,16 @@ function pageFacts(scope) {
     if (!on("descentText", cat, 1, { descent: "Walk off left" })) out.push(`descentText is not offered on single-pitch ${cat} that STORES a descent — the page shows it, so it must stay editable`);
   }
   if (on("descentText", "bouldering", 1)) out.push("descentText is offered on a boulder — no DESCENT renders there");
+  // Crag parking is the CRAG's pin (owner, 2026-11-18): the parking card opens the area editor wherever it can.
+  const CRAG_AREA = { _dbArea: { id: "x", areaType: "crag" } };
+  for (const cat of CRAG) {
+    if (on("waypoints", cat, 1, CRAG_AREA)) out.push(`waypoints is offered on ${cat} whose crag can be edited — its parking card edits the crag's pin, and a crag page draws no waypoint list`);
+    if (!on("waypoints", cat, 1)) out.push(`waypoints is not offered on ${cat} with no editable crag — the route pin is then the only way to set parking`);
+    if (!on("waypoints", cat, 1, { ...CRAG_AREA, waypoints: [{ type: "Trailhead", lat: 1, lng: 1 }] })) out.push(`waypoints is not offered on ${cat} that STORES its own pin — the card shows that pin ahead of the crag's, so it must stay editable`);
+    if (on("approachLogistics", cat, 1, CRAG_AREA)) out.push(`approachLogistics is offered on ${cat} whose crag can be edited, with no directions stored`);
+    if (!on("approachLogistics", cat, 1, { ...CRAG_AREA, approachLogistics: { trailheadDirection: "Left at the fork" } })) out.push(`approachLogistics is not offered on ${cat} that STORES directions — the parking card shows them`);
+  }
+  for (const cat of MOUNTAIN) if (!on("waypoints", cat, 3, CRAG_AREA)) out.push(`waypoints is not offered on ${cat} — the Plan tab's WAYPOINTS list renders there`);
   if (on("ropeNote", "bouldering", 1)) out.push("ropeNote is offered on a boulder — there is no rope");
   return out;
 }
@@ -128,6 +144,8 @@ const INJECT = [
   ["Descent dropped from multi-pitch trad", { descentText: (c) => MOUNTAIN.includes(c.cat) || c.cat === "aid" }],
   ["Hazards dropped from bouldering", { haz: (c) => c.cat !== "bouldering" }],
   ["Crash pads offered on sport", { pads: (c) => c.cat === "bouldering" || c.cat === "sport" }],
+  ["Route waypoints offered on every crag again", { waypoints: () => true }],
+  ["Route waypoints dropped from crags with no editable crag", { waypoints: (c) => MOUNTAIN.includes(c.cat) }],
 ];
 const missed = INJECT.filter(([, patch]) => pageFacts({ ...FIELD_SCOPE, ...patch }).length === 0).map(([n]) => n);
 if (missed.length) fail(`injection not caught: ${missed.join("; ")} — section 4 has gone blind`);

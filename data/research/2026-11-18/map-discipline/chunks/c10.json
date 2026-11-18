@@ -1,0 +1,930 @@
+[
+ {
+  "id": "me_spaulding_mountain_appalachian_trail_from_caribou_pond_road",
+  "name": "Appalachian Trail from Caribou Pond Road",
+  "discipline": "walk-up",
+  "grade": null,
+  "verdict": "SUMMIT_ONLY",
+  "state": "me",
+  "peak": {
+   "id": "me_spaulding_mountain",
+   "name": "Spaulding Mountain",
+   "lat": 45.00294,
+   "lng": -70.3335,
+   "elevation_ft": null,
+   "region": "Maine",
+   "path": "usa.maine.me_a_western_mountains.me_spaulding_mountain"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [],
+  "officialCandidates": []
+ },
+ {
+  "id": "me_sugarloaf_mountain_appalachian_trail_to_sugarloaf",
+  "name": "Appalachian Trail to Sugarloaf",
+  "discipline": "walk-up",
+  "grade": null,
+  "verdict": "SUMMIT_ONLY",
+  "state": "me",
+  "peak": {
+   "id": "me_sugarloaf_mountain",
+   "name": "Sugarloaf Mountain",
+   "lat": 45.03167,
+   "lng": -70.31333,
+   "elevation_ft": null,
+   "region": "Maine",
+   "path": "usa.maine.me_a_western_mountains.me_sugarloaf_mountain"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [],
+  "officialCandidates": []
+ },
+ {
+  "id": "me_the_horn_saddleback_appalachian_trail_north_from_route_4_past_saddleback",
+  "name": "Appalachian Trail north from Route 4, past Saddleback",
+  "discipline": "walk-up",
+  "grade": null,
+  "verdict": "SUMMIT_ONLY",
+  "state": "me",
+  "peak": {
+   "id": "me_the_horn_saddleback",
+   "name": "The Horn",
+   "lat": 44.95133,
+   "lng": -70.48717,
+   "elevation_ft": null,
+   "region": "Maine",
+   "path": "usa.maine.me_a_western_mountains.me_the_horn_saddleback"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [],
+  "officialCandidates": []
+ },
+ {
+  "id": "nh_owls_head_owl_s_head_path",
+  "name": "Owl's Head Path",
+  "discipline": "walk-up",
+  "grade": null,
+  "verdict": "SUMMIT_ONLY",
+  "state": "nh",
+  "peak": {
+   "id": "nh_owls_head",
+   "name": "Owls Head",
+   "lat": 44.14444,
+   "lng": -71.605,
+   "elevation_ft": null,
+   "region": "New Hampshire",
+   "path": "usa.new_hampshire.nh_wm_franconia_notch.nh_owls_head"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Cascade Brook",
+    "lat": 44.108494,
+    "lng": -71.68239,
+    "km": 7.4
+   },
+   {
+    "src": "USFS",
+    "name": "Skookumchuck Trailhead",
+    "lat": 44.205685,
+    "lng": -71.681556,
+    "km": 9.1
+   },
+   {
+    "src": "USFS",
+    "name": "Lincoln Woods",
+    "lat": 44.063915,
+    "lng": -71.588275,
+    "km": 9.1
+   },
+   {
+    "src": "USFS",
+    "name": "Lafayette X-C",
+    "lat": 44.201778,
+    "lng": -71.69191,
+    "km": 9.4
+   },
+   {
+    "src": "USFS",
+    "name": "Garfield Trailhead",
+    "lat": 44.228907,
+    "lng": -71.633649,
+    "km": 9.7
+   },
+   {
+    "src": "USFS",
+    "name": "Gale River Trailhead",
+    "lat": 44.232673,
+    "lng": -71.610926,
+    "km": 9.8
+   },
+   {
+    "src": "USFS",
+    "name": "North Twin",
+    "lat": 44.237809,
+    "lng": -71.547729,
+    "km": 11.3
+   },
+   {
+    "src": "USFS",
+    "name": "Coppermine Trailhead",
+    "lat": 44.180482,
+    "lng": -71.756475,
+    "km": 12.7
+   },
+   {
+    "src": "USFS",
+    "name": "Hancock Trailhead",
+    "lat": 44.041365,
+    "lng": -71.524773,
+    "km": 13.1
+   },
+   {
+    "src": "USFS",
+    "name": "Zealand Trailhead",
+    "lat": 44.224671,
+    "lng": -71.479071,
+    "km": 13.4
+   },
+   {
+    "src": "USFS",
+    "name": "East Pond Trailhead (kanc)",
+    "lat": 44.035332,
+    "lng": -71.53031,
+    "km": 13.5
+   },
+   {
+    "src": "USFS",
+    "name": "Hale Brook Trailhead",
+    "lat": 44.236389,
+    "lng": -71.487564,
+    "km": 13.9
+   },
+   {
+    "src": "USFS",
+    "name": "Greeley Pond Trailhead (kanc)",
+    "lat": 44.031429,
+    "lng": -71.516893,
+    "km": 14.4
+   },
+   {
+    "src": "USFS",
+    "name": "Reel Brook",
+    "lat": 44.123985,
+    "lng": -71.785303,
+    "km": 14.6
+   },
+   {
+    "src": "USFS",
+    "name": "Sugarloaf",
+    "lat": 44.254245,
+    "lng": -71.504689,
+    "km": 14.6
+   }
+  ]
+ },
+ {
+  "id": "nv_mount_rose_mount_rose_trail",
+  "name": "Mount Rose Trail",
+  "discipline": "scrambling",
+  "grade": "Class 1",
+  "verdict": "SUMMIT_ONLY",
+  "state": "nv",
+  "peak": {
+   "id": "nv_mount_rose",
+   "name": "Mount Rose",
+   "lat": 39.3437,
+   "lng": -119.9177,
+   "elevation_ft": 10776,
+   "region": null,
+   "path": "usa.nevada.nv_western_nevada.nv_lake_tahoe_area.nv_mount_rose"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": "A well-defined trail from the highway pass climbs about 2,000 feet over roughly five miles to a saddle and the summit.",
+   "descent": null
+  },
+  "waypoints": [
+   {
+    "lat": 39.3437,
+    "lng": -119.9177,
+    "elev": 10776,
+    "name": "Mount Rose summit",
+    "type": "Summit"
+   }
+  ],
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Tahoe Meadows Trt Trailhead",
+    "lat": 39.307345,
+    "lng": -119.907463,
+    "km": 4.1
+   },
+   {
+    "src": "USFS",
+    "name": "Jones/Whites Trailhead",
+    "lat": 39.361305,
+    "lng": -119.857313,
+    "km": 5.5
+   },
+   {
+    "src": "USFS",
+    "name": "Whites Creek Trailhead",
+    "lat": 39.377945,
+    "lng": -119.847693,
+    "km": 7.1
+   },
+   {
+    "src": "USFS",
+    "name": "Thomas Creek Trailhead",
+    "lat": 39.393535,
+    "lng": -119.838543,
+    "km": 8.8
+   },
+   {
+    "src": "USFS",
+    "name": "Bullseye",
+    "lat": 39.391171,
+    "lng": -120.089569,
+    "km": 15.7
+   },
+   {
+    "src": "USFS",
+    "name": "Boca Historic Townsite Interpretive Trai",
+    "lat": 39.38662,
+    "lng": -120.093334,
+    "km": 15.8
+   },
+   {
+    "src": "USFS",
+    "name": "Boca Dam Viewpoint Trailhead",
+    "lat": 39.391487,
+    "lng": -120.092251,
+    "km": 15.9
+   },
+   {
+    "src": "USFS",
+    "name": "Ice House",
+    "lat": 39.386701,
+    "lng": -120.094823,
+    "km": 16
+   },
+   {
+    "src": "USFS",
+    "name": "Capra",
+    "lat": 39.418948,
+    "lng": -120.084774,
+    "km": 16.6
+   },
+   {
+    "src": "USFS",
+    "name": "Chimney Beach Parking",
+    "lat": 39.16777,
+    "lng": -119.926528,
+    "km": 19.6
+   },
+   {
+    "src": "USFS",
+    "name": "Two-Sixty-One",
+    "lat": 39.460338,
+    "lng": -120.130202,
+    "km": 22.4
+   },
+   {
+    "src": "USFS",
+    "name": "King'S Canyon",
+    "lat": 39.153349,
+    "lng": -119.815562,
+    "km": 22.9
+   },
+   {
+    "src": "USFS",
+    "name": "Keystone Trailhead",
+    "lat": 39.549655,
+    "lng": -119.859573,
+    "km": 23.4
+   },
+   {
+    "src": "USFS",
+    "name": "Thelin",
+    "lat": 39.312646,
+    "lng": -120.189267,
+    "km": 23.6
+   },
+   {
+    "src": "USFS",
+    "name": "Sawtooth Trailhead",
+    "lat": 39.310009,
+    "lng": -120.191538,
+    "km": 23.8
+   }
+  ]
+ },
+ {
+  "id": "ny_allen_mountain_allen_brook_herd_path",
+  "name": "Allen Brook herd path",
+  "discipline": "scrambling",
+  "grade": "Class 2",
+  "verdict": "SUMMIT_ONLY",
+  "state": "ny",
+  "peak": {
+   "id": "ny_allen_mountain",
+   "name": "Allen Mountain",
+   "lat": 44.0708,
+   "lng": -73.9397,
+   "elevation_ft": 4340,
+   "region": null,
+   "path": "usa.new_york.ny_adirondacks.ny_e_high_peaks_region.ny_allen_mountain"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": "Long, muddy day; the Opalescent River bridge is gone so the crossing can be hazardous at high water. Path: Hanging Spear Falls (East River) Trail to Allen Brook herd path. Starts at Upper Works / Tahawus Road.",
+   "descent": null
+  },
+  "waypoints": [
+   {
+    "lat": 44.0708,
+    "lng": -73.9397,
+    "elev": 4340,
+    "name": "Allen Mountain summit",
+    "type": "Summit"
+   }
+  ],
+  "siblingTrailheads": [],
+  "officialCandidates": []
+ },
+ {
+  "id": "ny_armstrong_mountain_great_range_trail_from_the_lake_road",
+  "name": "Great Range Trail from the Lake Road",
+  "discipline": "scrambling",
+  "grade": "Class 1",
+  "verdict": "SUMMIT_ONLY",
+  "state": "ny",
+  "peak": {
+   "id": "ny_armstrong_mountain",
+   "name": "Armstrong Mountain",
+   "lat": 44.1348,
+   "lng": -73.849,
+   "elevation_ft": 4400,
+   "region": null,
+   "path": "usa.new_york.ny_adirondacks.ny_e_high_peaks_region.ny_armstrong_mountain"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": "Ladders beside Beaver Meadow Falls and steep sections; crossing the reserve on foot needs a reservation in the warm season. Path: Gothics access trail and Great Range Trail via Beaver Meadow Falls.",
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [],
+  "officialCandidates": []
+ },
+ {
+  "id": "ny_basin_mountain_shoreys_shortcut",
+  "name": "Shorey's Shortcut",
+  "discipline": "scrambling",
+  "grade": "Class 1",
+  "verdict": "SUMMIT_ONLY",
+  "state": "ny",
+  "peak": {
+   "id": "ny_basin_mountain",
+   "name": "Basin Mountain",
+   "lat": 44.1212,
+   "lng": -73.8863,
+   "elevation_ft": 4827,
+   "region": null,
+   "path": "usa.new_york.ny_adirondacks.ny_e_high_peaks_region.ny_basin_mountain"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": "Long day with ladders and rock slabs; the exposed summit is often combined with Haystack or Saddleback. Path: Phelps Trail and Shorey's Shortcut. Starts at The Garden, Keene Valley.",
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [],
+  "officialCandidates": []
+ },
+ {
+  "id": "ny_blake_peak_via_mount_colvin",
+  "name": "Via Mount Colvin",
+  "discipline": "scrambling",
+  "grade": "Class 2",
+  "verdict": "SUMMIT_ONLY",
+  "state": "ny",
+  "peak": {
+   "id": "ny_blake_peak",
+   "name": "Blake Peak",
+   "lat": 44.0814,
+   "lng": -73.8446,
+   "elevation_ft": 3960,
+   "region": null,
+   "path": "usa.new_york.ny_adirondacks.ny_e_high_peaks_region.ny_blake_peak"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": "Reached over Colvin on the practical route; the Elk Lake approach is far longer. Path: Gill Brook Trail over Colvin, then path to Blake.",
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [],
+  "officialCandidates": []
+ },
+ {
+  "id": "ny_cliff_mountain_uphill_brook_herd_path",
+  "name": "Uphill Brook herd path",
+  "discipline": "scrambling",
+  "grade": "Class 2",
+  "verdict": "SUMMIT_ONLY",
+  "state": "ny",
+  "peak": {
+   "id": "ny_cliff_mountain",
+   "name": "Cliff Mountain",
+   "lat": 44.1031,
+   "lng": -73.9751,
+   "elevation_ft": 3960,
+   "region": null,
+   "path": "usa.new_york.ny_adirondacks.ny_e_high_peaks_region.ny_cliff_mountain"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": "Herd path leaves near the Uphill lean-to and climbs a steep, slippery cliff band; the first high point is a false summit. Path: Calamity Brook Trail to unmarked herd path. Starts at Upper Works, Newcomb.",
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [],
+  "officialCandidates": []
+ },
+ {
+  "id": "ny_couchsachraga_peak_via_santanoni_ridge",
+  "name": "Via Santanoni ridge",
+  "discipline": "scrambling",
+  "grade": "Class 2",
+  "verdict": "SUMMIT_ONLY",
+  "state": "ny",
+  "peak": {
+   "id": "ny_couchsachraga_peak",
+   "name": "Couchsachraga Peak",
+   "lat": 44.0956,
+   "lng": -74.1602,
+   "elevation_ft": 3820,
+   "region": null,
+   "path": "usa.new_york.ny_adirondacks.ny_e_high_peaks_region.ny_couchsachraga_peak"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": "Reached along the ridge beyond Santanoni; the boggy col below it is notoriously wet. Path: Santanoni Express herd path and ridge from Upper Works. Starts at Upper Works, Newcomb.",
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [],
+  "officialCandidates": []
+ },
+ {
+  "id": "ny_dial_mountain_via_bear_den",
+  "name": "Via Bear Den",
+  "discipline": "scrambling",
+  "grade": "Class 1",
+  "verdict": "SUMMIT_ONLY",
+  "state": "ny",
+  "peak": {
+   "id": "ny_dial_mountain",
+   "name": "Dial Mountain",
+   "lat": 44.1059,
+   "lng": -73.796,
+   "elevation_ft": 4020,
+   "region": null,
+   "path": "usa.new_york.ny_adirondacks.ny_e_high_peaks_region.ny_dial_mountain"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": "Long push along the summit ridge; snow spikes advised on steeper parts of the Elk Pass side in winter. Path: Lake Road to Dial via Bear Den.",
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [],
+  "officialCandidates": []
+ },
+ {
+  "id": "ny_donaldson_mountain_seward_range_herd_path",
+  "name": "Seward Range herd path",
+  "discipline": "scrambling",
+  "grade": "Class 2",
+  "verdict": "SUMMIT_ONLY",
+  "state": "ny",
+  "peak": {
+   "id": "ny_donaldson_mountain",
+   "name": "Donaldson Mountain",
+   "lat": 44.1539,
+   "lng": -74.211,
+   "elevation_ft": 4140,
+   "region": null,
+   "path": "usa.new_york.ny_adirondacks.ny_e_high_peaks_region.ny_donaldson_mountain"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": "Summit sits just off the ridge path beyond Seward; normally done as part of the range. Path: Blueberry Trail and Seward Range herd path. Starts at Corey's Road parking area.",
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [],
+  "officialCandidates": []
+ },
+ {
+  "id": "ny_esther_mountain_herd_path_from_marble_mountain",
+  "name": "Herd path from Marble Mountain",
+  "discipline": "scrambling",
+  "grade": "Class 2",
+  "verdict": "SUMMIT_ONLY",
+  "state": "ny",
+  "peak": {
+   "id": "ny_esther_mountain",
+   "name": "Esther Mountain",
+   "lat": 44.387,
+   "lng": -73.8899,
+   "elevation_ft": 4240,
+   "region": null,
+   "path": "usa.new_york.ny_adirondacks.ny_e_high_peaks_region.ny_esther_mountain"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": "Cairn-marked junction past Marble Mountain leads to an unofficial herd path; the summit has a false top before the plaque. Path: Marble Mountain route from the Atmospheric Science Research Center road. Starts at Atmospheric Science Research Center road, Wilmington.",
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [],
+  "officialCandidates": []
+ },
+ {
+  "id": "ny_grace_peak_dix_range_herd_path",
+  "name": "Dix Range herd path",
+  "discipline": "scrambling",
+  "grade": "Class 2",
+  "verdict": "SUMMIT_ONLY",
+  "state": "ny",
+  "peak": {
+   "id": "ny_grace_peak",
+   "name": "Grace Peak",
+   "lat": 44.0653,
+   "lng": -73.7574,
+   "elevation_ft": 4012,
+   "region": null,
+   "path": "usa.new_york.ny_adirondacks.ny_e_high_peaks_region.ny_grace_peak"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": "Formerly East Dix; pointed rock summit reached by unmarked path east of South Dix. Path: Dix Range crest herd path from Elk Lake. Starts at Elk Lake trailhead.",
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [],
+  "officialCandidates": []
+ },
+ {
+  "id": "ny_gray_peak_via_lake_tear_of_the_clouds",
+  "name": "Via Lake Tear of the Clouds",
+  "discipline": "scrambling",
+  "grade": "Class 2",
+  "verdict": "SUMMIT_ONLY",
+  "state": "ny",
+  "peak": {
+   "id": "ny_gray_peak",
+   "name": "Gray Peak",
+   "lat": 44.1114,
+   "lng": -73.9349,
+   "elevation_ft": 4840,
+   "region": null,
+   "path": "usa.new_york.ny_adirondacks.ny_e_high_peaks_region.ny_gray_peak"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": "Marked trail to Lake Tear of the Clouds, then a faint herd path to the summit. Path: Marcy Dam and Lake Arnold/Feldspar trails to Lake Tear, then herd path. Starts at Adirondak Loj / High Peaks Information Center.",
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [],
+  "officialCandidates": []
+ },
+ {
+  "id": "ny_hough_peak_dix_range_herd_path",
+  "name": "Dix Range herd path",
+  "discipline": "scrambling",
+  "grade": "Class 2",
+  "verdict": "SUMMIT_ONLY",
+  "state": "ny",
+  "peak": {
+   "id": "ny_hough_peak",
+   "name": "Hough Peak",
+   "lat": 44.0695,
+   "lng": -73.7776,
+   "elevation_ft": 4400,
+   "region": null,
+   "path": "usa.new_york.ny_adirondacks.ny_e_high_peaks_region.ny_hough_peak"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": "Unmarked herd path along the Dix crest, with tight brush and rock scrambles; usually done with Dix. Path: Dix Range crest herd path from Elk Lake. Starts at Elk Lake trailhead.",
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [],
+  "officialCandidates": []
+ },
+ {
+  "id": "ny_iroquois_peak_via_algonquin_peak",
+  "name": "Via Algonquin Peak",
+  "discipline": "scrambling",
+  "grade": "Class 2",
+  "verdict": "SUMMIT_ONLY",
+  "state": "ny",
+  "peak": {
+   "id": "ny_iroquois_peak",
+   "name": "Iroquois Peak",
+   "lat": 44.137,
+   "lng": -73.9982,
+   "elevation_ft": 4840,
+   "region": null,
+   "path": "usa.new_york.ny_adirondacks.ny_e_high_peaks_region.ny_iroquois_peak"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": "Done as an out-and-back over Algonquin, with a steep unmarked final stretch. Path: Algonquin Peak trail, then herd path to Iroquois. Starts at Adirondak Loj / High Peaks Information Center.",
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [],
+  "officialCandidates": []
+ },
+ {
+  "id": "ny_macomb_mountain_macomb_slide",
+  "name": "Macomb Slide",
+  "discipline": "scrambling",
+  "grade": "Class 2",
+  "verdict": "SUMMIT_ONLY",
+  "state": "ny",
+  "peak": {
+   "id": "ny_macomb_mountain",
+   "name": "Macomb Mountain",
+   "lat": 44.0517,
+   "lng": -73.7801,
+   "elevation_ft": 4405,
+   "region": null,
+   "path": "usa.new_york.ny_adirondacks.ny_e_high_peaks_region.ny_macomb_mountain"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": "Slide is steep and loose; the first 2.3 miles from Elk Lake cross private land and the trail closes during big game season. Path: Hunters Pass Trail to Slide Brook, then slide and herd path. Starts at Elk Lake trailhead.",
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [],
+  "officialCandidates": []
+ },
+ {
+  "id": "ny_mount_colvin_gill_brook_trail",
+  "name": "Gill Brook Trail",
+  "discipline": "scrambling",
+  "grade": "Class 1",
+  "verdict": "SUMMIT_ONLY",
+  "state": "ny",
+  "peak": {
+   "id": "ny_mount_colvin",
+   "name": "Mount Colvin",
+   "lat": 44.0939,
+   "lng": -73.8344,
+   "elevation_ft": 4057,
+   "region": null,
+   "path": "usa.new_york.ny_adirondacks.ny_e_high_peaks_region.ny_mount_colvin"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": "Steep slab and a challenging spot near the summit; usually extended to Blake. Path: Gill Brook Trail.",
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [],
+  "officialCandidates": []
+ },
+ {
+  "id": "ny_mount_emmons_seward_range_herd_path",
+  "name": "Seward Range herd path",
+  "discipline": "scrambling",
+  "grade": "Class 2",
+  "verdict": "SUMMIT_ONLY",
+  "state": "ny",
+  "peak": {
+   "id": "ny_mount_emmons",
+   "name": "Mount Emmons",
+   "lat": 44.1437,
+   "lng": -74.214,
+   "elevation_ft": 4040,
+   "region": null,
+   "path": "usa.new_york.ny_adirondacks.ny_e_high_peaks_region.ny_mount_emmons"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": "Last peak along the Seward ridge; usually combined with Seward and Donaldson. Path: Blueberry Trail and Seward Range herd path. Starts at Corey's Road parking area.",
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [],
+  "officialCandidates": []
+ },
+ {
+  "id": "ny_mount_haystack_phelps_trail_from_the_garden",
+  "name": "Phelps Trail from the Garden",
+  "discipline": "scrambling",
+  "grade": "Class 1",
+  "verdict": "SUMMIT_ONLY",
+  "state": "ny",
+  "peak": {
+   "id": "ny_mount_haystack",
+   "name": "Mount Haystack",
+   "lat": 44.1056,
+   "lng": -73.9006,
+   "elevation_ft": 4960,
+   "region": null,
+   "path": "usa.new_york.ny_adirondacks.ny_e_high_peaks_region.ny_mount_haystack"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": "Steep rock slab and an exposed summit make this one of the harder marked High Peaks; the Loj approach via Marcy Dam is longer. Path: Phelps Trail from The Garden. Starts at The Garden, Keene Valley.",
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [],
+  "officialCandidates": []
+ },
+ {
+  "id": "ny_mount_marshall_herbert_brook_herd_path",
+  "name": "Herbert Brook herd path",
+  "discipline": "scrambling",
+  "grade": "Class 2",
+  "verdict": "SUMMIT_ONLY",
+  "state": "ny",
+  "peak": {
+   "id": "ny_mount_marshall",
+   "name": "Mount Marshall",
+   "lat": 44.1275,
+   "lng": -74.0118,
+   "elevation_ft": 4360,
+   "region": null,
+   "path": "usa.new_york.ny_adirondacks.ny_e_high_peaks_region.ny_mount_marshall"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": "Marked trail to Flowed Lands, then a cairned herd path up Herbert Brook with many stream crossings. Path: Flowed Lands and Herbert Brook herd path. Starts at Upper Works, Newcomb.",
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [],
+  "officialCandidates": []
+ },
+ {
+  "id": "ny_mount_redfield_uphill_brook_herd_path",
+  "name": "Uphill Brook herd path",
+  "discipline": "scrambling",
+  "grade": "Class 2",
+  "verdict": "SUMMIT_ONLY",
+  "state": "ny",
+  "peak": {
+   "id": "ny_mount_redfield",
+   "name": "Mount Redfield",
+   "lat": 44.0948,
+   "lng": -73.9499,
+   "elevation_ft": 4606,
+   "region": null,
+   "path": "usa.new_york.ny_adirondacks.ny_e_high_peaks_region.ny_mount_redfield"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": "Marked trail to the Uphill lean-to area, then a cairned herd path; the approach from the Loj crosses slides and is not the usual way. Path: Calamity Brook Trail to unmarked herd path. Starts at Upper Works, Newcomb.",
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [],
+  "officialCandidates": []
+ },
+ {
+  "id": "ny_mount_skylight_via_mount_marcy",
+  "name": "Via Mount Marcy",
+  "discipline": "scrambling",
+  "grade": "Class 1",
+  "verdict": "SUMMIT_ONLY",
+  "state": "ny",
+  "peak": {
+   "id": "ny_mount_skylight",
+   "name": "Mount Skylight",
+   "lat": 44.0994,
+   "lng": -73.9308,
+   "elevation_ft": 4924,
+   "region": null,
+   "path": "usa.new_york.ny_adirondacks.ny_e_high_peaks_region.ny_mount_skylight"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": "Usually climbed with Marcy and Gray; the alternative approach from Upper Works is longer. Path: Van Hoevenberg Trail over Marcy to Lake Tear of the Clouds. Starts at Adirondak Loj / High Peaks Information Center.",
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [],
+  "officialCandidates": []
+ }
+]

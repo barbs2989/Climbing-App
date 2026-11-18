@@ -1,0 +1,548 @@
+[
+ {
+  "id": "wa_vesper_peak_north_face",
+  "name": "North Face",
+  "discipline": "alpine",
+  "grade": "5.7",
+  "verdict": "SUMMIT_ONLY",
+  "state": "wa",
+  "peak": {
+   "id": "wa_vesper_peak",
+   "name": "Vesper Peak",
+   "lat": 48.012988,
+   "lng": -121.517992,
+   "elevation_ft": 6214,
+   "region": "Mountain Loop Highway",
+   "path": "usa.washington.wa_northwest.wa_glacier_peak_region.wa_vesper_peak"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": "Take the Vesper summit trail, then bear right off trail to the first ridge notch and scramble a ledge to its end. Expect class 4 for the first two pitches, then class 5 for three. Pitch it, or just scramble, as far as a small ledge. The third pitch moves left across and up a corner rated 5.5-5.6 to a belay. The fourth is slab again (5.5). The final pitch is low angle on the face but runout.",
+   "description": null,
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [
+   {
+    "route": "wa_fish_whistle",
+    "name": "Sunrise Mine Trailhead"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Sunrise Mine Trailhead",
+    "lat": 48.024743,
+    "lng": -121.477879,
+    "km": 3.3
+   },
+   {
+    "src": "USFS",
+    "name": "Perry/Dickerman Trailhead",
+    "lat": 48.053953,
+    "lng": -121.490537,
+    "km": 5
+   },
+   {
+    "src": "USFS",
+    "name": "Weden Crk/Gothic Basin",
+    "lat": 48.015548,
+    "lng": -121.443699,
+    "km": 5.5
+   },
+   {
+    "src": "USFS",
+    "name": "Barlow Pass Trailhead",
+    "lat": 48.026806,
+    "lng": -121.442307,
+    "km": 5.8
+   },
+   {
+    "src": "USFS",
+    "name": "Ice Caves Trailhead",
+    "lat": 48.065906,
+    "lng": -121.510715,
+    "km": 5.9
+   },
+   {
+    "src": "USFS",
+    "name": "Elliot Creek-goat Lake Trailhead",
+    "lat": 48.053706,
+    "lng": -121.411315,
+    "km": 9.1
+   },
+   {
+    "src": "USFS",
+    "name": "Marten Creek",
+    "lat": 48.07215,
+    "lng": -121.606408,
+    "km": 9.3
+   },
+   {
+    "src": "USFS",
+    "name": "Mallardy Ridge Trailhead",
+    "lat": 48.026656,
+    "lng": -121.642315,
+    "km": 9.4
+   },
+   {
+    "src": "USFS",
+    "name": "Youth-On-Age Nature Trail Trailhead",
+    "lat": 48.068686,
+    "lng": -121.643515,
+    "km": 11.2
+   },
+   {
+    "src": "USFS",
+    "name": "Coal Independence Lakes Trailhead",
+    "lat": 48.116386,
+    "lng": -121.522179,
+    "km": 11.5
+   },
+   {
+    "src": "USFS",
+    "name": "Kelcema Lake Trailhead",
+    "lat": 48.114528,
+    "lng": -121.593273,
+    "km": 12.6
+   },
+   {
+    "src": "USFS",
+    "name": "Boardman Lake Trailhead",
+    "lat": 48.031553,
+    "lng": -121.686734,
+    "km": 12.7
+   },
+   {
+    "src": "USFS",
+    "name": "North Fork Sauk Falls",
+    "lat": 48.098386,
+    "lng": -121.369437,
+    "km": 14.6
+   },
+   {
+    "src": "USFS",
+    "name": "Troublesome Creek Trailhead",
+    "lat": 47.898062,
+    "lng": -121.401959,
+    "km": 15.4
+   },
+   {
+    "src": "USFS",
+    "name": "Lost Creek Ridge Trailhead",
+    "lat": 48.094456,
+    "lng": -121.332884,
+    "km": 16.5
+   }
+  ]
+ },
+ {
+  "id": "wa_west_twin_needle_west_slope",
+  "name": "West Slope - East Arete (Original Route)",
+  "discipline": "scrambling",
+  "grade": "Class 4",
+  "verdict": "SUMMIT_ONLY",
+  "state": "wa",
+  "peak": {
+   "id": "wa_west_twin_needle",
+   "name": "West Twin Needle",
+   "lat": 48.7766,
+   "lng": -121.3125,
+   "elevation_ft": 7936,
+   "region": "Washington",
+   "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_picket_range.wa_southern_pickets.wa_west_twin_needle"
+  },
+  "text": {
+   "approach": "Same general Southern Pickets approach as the South Route — via Goodell Creek, The Barrier, and Crescent Creek Basin — continuing to the notch/saddle between Himmelhorn and West Twin Needle rather than climbing directly from the basin.",
+   "approach_logistics": null,
+   "road": "{\"name\":\"North Cascades Highway (SR 20) to Goodell Creek Road\",\"status\":\"Paved highway to a short NPS access road; open year-round at this low elevation (west of the seasonal Washington Pass closure)\",\"driveNote\":\"Trailhead is off SR 20 roughly 13 miles east of Marblemount and about 1 mile west of Newhalem (near milepost 119); follow signs from Newhalem toward Goodell Creek.\",\"seasonalGate\":null}",
+   "overview": "The peak's original 1932 line: a moderate class 2 scramble up the west slope from the Himmelhorn-West Twin Needle notch, most often climbed today as one link in the multi-day Southern Picket enchainment/traverse; continuing off the summit onto the class 3 east arete toward East Twin Needle is part of the full traverse rather than a stand-alone descent.",
+   "description": null,
+   "descent": null
+  },
+  "waypoints": [
+   {
+    "lat": 48.673832,
+    "lng": -121.265135,
+    "elev": 478,
+    "name": "Goodell Creek crossing",
+    "type": "Water"
+   },
+   {
+    "lat": 48.673235,
+    "lng": -121.267375,
+    "elev": 500,
+    "name": "Goodell Creek Campground, roadhead staging",
+    "type": "Campsite"
+   },
+   {
+    "lat": 48.764392,
+    "lng": -121.28099,
+    "elev": 5800,
+    "name": "Terror Basin camp",
+    "type": "Campsite"
+   },
+   {
+    "lat": 48.766899,
+    "lng": -121.301569,
+    "elev": 6050,
+    "name": "Crescent Creek Basin camp",
+    "type": "Campsite"
+   },
+   {
+    "lat": 48.7766,
+    "lng": -121.3125,
+    "elev": 7936,
+    "name": "West Twin Needle Summit",
+    "type": "Summit",
+    "distMi": null,
+    "elevFt": 7936
+   }
+  ],
+  "siblingTrailheads": [
+   {
+    "route": "wa_west_twin_needle_south_route",
+    "name": "Goodell Creek / Upper Goodell Group Camp trailhead (SR-20, Newhalem)"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "NPS",
+    "name": "Gorge Overlook Trail Trailhead",
+    "lat": 48.699938,
+    "lng": -121.21076,
+    "km": 11.3
+   },
+   {
+    "src": "NPS",
+    "name": "Gorge Overlook Trail Trailhead",
+    "lat": 48.700343,
+    "lng": -121.209709,
+    "km": 11.3
+   },
+   {
+    "src": "USFS",
+    "name": "Baker River Trailhead",
+    "lat": 48.750499,
+    "lng": -121.555348,
+    "km": 18
+   },
+   {
+    "src": "NPS",
+    "name": "Happy Creek Forest Walk Trailhead",
+    "lat": 48.728543,
+    "lng": -121.055832,
+    "km": 19.6
+   },
+   {
+    "src": "USFS",
+    "name": "Shannon Ridge Trailhead",
+    "lat": 48.767233,
+    "lng": -121.618094,
+    "km": 22.4
+   },
+   {
+    "src": "USFS",
+    "name": "Watson Lakes Trailhead",
+    "lat": 48.674907,
+    "lng": -121.615318,
+    "km": 24.9
+   }
+  ]
+ },
+ {
+  "id": "wa_whistler_mountain_north_ridge",
+  "name": "North Ridge",
+  "discipline": "alpine",
+  "grade": "5.4",
+  "verdict": "SUMMIT_ONLY",
+  "state": "wa",
+  "peak": {
+   "id": "wa_whistler_mountain_okanogan",
+   "name": "Whistler Mountain",
+   "lat": 48.515555,
+   "lng": -120.707905,
+   "elevation_ft": 7790,
+   "region": "Washington",
+   "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_sub_wapass.wa_whistler_mountain_okanogan"
+  },
+  "text": {
+   "approach": "Park on the wide paved shoulder of SR-20 about three quarters of a mile west of the signed Blue Lake trailhead lot, on the north side, where there is no guard rail. A good climbers' trail leads from the road through forest into the basin. No pass is needed at the pullout; the Blue Lake lot needs a forest pass.",
+   "approach_logistics": null,
+   "road": "{\"name\":\"SR-20 (North Cascades Highway)\",\"status\":\"seasonal\",\"driveNote\":\"SR-20 closes for winter, normally from about mid-November to mid-April.\"}",
+   "overview": "The north ridge is the rock route on Whistler, climbed from the highway shoulder shared with Cutthroat Peak. A climbers' trail drops into the open basin between the two peaks, then the route follows the ridge to the summit pyramid, mostly class 3 with some class 4 steps, over about 2,700 ft of gain. The ridge is exposed in places, and a fall would have serious consequences.",
+   "description": null,
+   "descent": "Retrace the ridge. A short loose step is usually rappelled instead of downclimbed."
+  },
+  "waypoints": [
+   {
+    "lat": 48.5154506,
+    "lng": -120.7078688,
+    "elev": 7790,
+    "name": "Whistler Mountain summit",
+    "type": "Summit"
+   }
+  ],
+  "siblingTrailheads": [
+   {
+    "route": "wa_whistler_mountain_scramble",
+    "name": "Rainy Pass Trailhead (PCT North parking lot, SR-20)"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Bridge Creek Trailhead",
+    "lat": 48.504906,
+    "lng": -120.719115,
+    "km": 1.4
+   },
+   {
+    "src": "USFS",
+    "name": "Rainy Pass Trailhead (PCT North)",
+    "lat": 48.515306,
+    "lng": -120.736025,
+    "km": 2.1
+   },
+   {
+    "src": "USFS",
+    "name": "Heather Maple Pass Trailhead Rainy Pass ",
+    "lat": 48.516606,
+    "lng": -120.735815,
+    "km": 2.1
+   },
+   {
+    "src": "USFS",
+    "name": "Blue Lake Trailhead",
+    "lat": 48.519016,
+    "lng": -120.674215,
+    "km": 2.5
+   },
+   {
+    "src": "USFS",
+    "name": "Hairpin",
+    "lat": 48.514336,
+    "lng": -120.642715,
+    "km": 4.8
+   },
+   {
+    "src": "USFS",
+    "name": "Cutthroat Trailhead",
+    "lat": 48.556306,
+    "lng": -120.654715,
+    "km": 6
+   },
+   {
+    "src": "USFS",
+    "name": "Burgundy Col",
+    "lat": 48.551406,
+    "lng": -120.630895,
+    "km": 6.9
+   },
+   {
+    "src": "USFS",
+    "name": "Easy Pass Trailhead",
+    "lat": 48.587206,
+    "lng": -120.801615,
+    "km": 10.5
+   },
+   {
+    "src": "USFS",
+    "name": "Gilbert Trailhead",
+    "lat": 48.458443,
+    "lng": -120.565926,
+    "km": 12.2
+   },
+   {
+    "src": "USFS",
+    "name": "South Creek (north) Trailhead",
+    "lat": 48.439256,
+    "lng": -120.531125,
+    "km": 15.5
+   },
+   {
+    "src": "USFS",
+    "name": "South Creek (south) Trailhead",
+    "lat": 48.436816,
+    "lng": -120.530095,
+    "km": 15.8
+   },
+   {
+    "src": "USFS",
+    "name": "Scatter Creek Trailhead",
+    "lat": 48.434606,
+    "lng": -120.520115,
+    "km": 16.5
+   },
+   {
+    "src": "USFS",
+    "name": "Driveway Butte Trailhead",
+    "lat": 48.598271,
+    "lng": -120.512721,
+    "km": 17.1
+   },
+   {
+    "src": "USFS",
+    "name": "Rattlesnake Trailhead",
+    "lat": 48.648664,
+    "lng": -120.571213,
+    "km": 17.9
+   },
+   {
+    "src": "USFS",
+    "name": "Cedar Creek Trailhead",
+    "lat": 48.579106,
+    "lng": -120.478815,
+    "km": 18.3
+   },
+   {
+    "src": "NPS",
+    "name": "Imus Creek Loop Trail Trailhead",
+    "lat": 48.3085,
+    "lng": -120.65601,
+    "km": 23.3
+   }
+  ]
+ },
+ {
+  "id": "wa_witches_tower_northwest_buttress",
+  "name": "Northwest Buttress",
+  "discipline": "alpine",
+  "grade": null,
+  "verdict": "SUMMIT_ONLY",
+  "state": "wa",
+  "peak": {
+   "id": "wa_witches_tower",
+   "name": "Witches Tower",
+   "lat": 47.4766,
+   "lng": -120.8255,
+   "elevation_ft": 8566,
+   "region": "Washington",
+   "path": "usa.washington.wa_centraleast.wa_stuart_range.wa_witches_tower"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [
+   {
+    "route": "wa_e_se_face",
+    "name": "Stuart Lake Trailhead"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Stuart Lake Trailhead",
+    "lat": 47.527806,
+    "lng": -120.820515,
+    "km": 5.7
+   },
+   {
+    "src": "USFS",
+    "name": "Eightmile Trailhead",
+    "lat": 47.536016,
+    "lng": -120.814025,
+    "km": 6.7
+   },
+   {
+    "src": "USFS",
+    "name": "Esmeralda Trailhead",
+    "lat": 47.436706,
+    "lng": -120.936915,
+    "km": 9.5
+   },
+   {
+    "src": "USFS",
+    "name": "Beverly Bean Trailhead",
+    "lat": 47.389302,
+    "lng": -120.872266,
+    "km": 10.3
+   },
+   {
+    "src": "USFS",
+    "name": "Iron Peak Trailhead",
+    "lat": 47.421583,
+    "lng": -120.937341,
+    "km": 10.4
+   },
+   {
+    "src": "USFS",
+    "name": "Fourth Of July Trailhead",
+    "lat": 47.578106,
+    "lng": -120.796015,
+    "km": 11.5
+   },
+   {
+    "src": "USFS",
+    "name": "Snow Lakes Trailhead",
+    "lat": 47.544106,
+    "lng": -120.709515,
+    "km": 11.5
+   },
+   {
+    "src": "USFS",
+    "name": "Ingalls Creek Trailhead",
+    "lat": 47.462906,
+    "lng": -120.673025,
+    "km": 11.6
+   },
+   {
+    "src": "USFS",
+    "name": "Stafford Creek Trailhead",
+    "lat": 47.365806,
+    "lng": -120.803615,
+    "km": 12.4
+   },
+   {
+    "src": "USFS",
+    "name": "Miller-bear Trailhead",
+    "lat": 47.368606,
+    "lng": -120.784615,
+    "km": 12.4
+   },
+   {
+    "src": "USFS",
+    "name": "Icicle Ridge Trailhead",
+    "lat": 47.568919,
+    "lng": -120.680113,
+    "km": 15
+   },
+   {
+    "src": "USFS",
+    "name": "Penstock Trailhead",
+    "lat": 47.586749,
+    "lng": -120.706609,
+    "km": 15.2
+   },
+   {
+    "src": "USFS",
+    "name": "Chatter Creek Trailhead",
+    "lat": 47.608249,
+    "lng": -120.881514,
+    "km": 15.2
+   },
+   {
+    "src": "USFS",
+    "name": "Icicle Gorge Trailhead",
+    "lat": 47.607806,
+    "lng": -120.895025,
+    "km": 15.5
+   },
+   {
+    "src": "USFS",
+    "name": "Jack Trout Trailhead",
+    "lat": 47.606506,
+    "lng": -120.916025,
+    "km": 16
+   }
+  ]
+ }
+]

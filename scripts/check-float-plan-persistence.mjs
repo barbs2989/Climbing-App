@@ -168,8 +168,13 @@ const gate = fp.indexOf("isOpen&&openSt?");
 const decl = fp.indexOf("[openSt,setOpenSt]=useState(");
 if (decl >= 0 && gate >= 0 && decl < gate) ok("the open plan's state is declared ABOVE the branch that renders it");
 else fail("the float plan state is not declared above the branch that unmounts the form");
-if (!/<FloatPlan\b/.test(rd) && /onFloatPlan\(route\)/.test(rd)) ok("the route page LINKS to Crews › Float plans rather than holding a second form");
-else fail("RouteDetail renders its own <FloatPlan> again, or no longer links to Crews › Float plans");
+/* THE ROUTE PAGE DRAWS THE PLAN AGAIN, IN PLACE (2026-11-18). What this section guarded against was a CONTROLLED
+   form whose state lived in a branch the Plan tab unmounts. The route card's form has the crew card's shape instead:
+   uncontrolled, kept by the device copy its scope saves under who — so it must pass both, and the hub link stays. */
+const rdTag = rd.match(/<FloatPlan\b[^>]*>/);
+if (rdTag && !(/\bscope=\{/.test(rdTag[0]) && /\bwho=\{/.test(rdTag[0]))) fail(`the route page draws a <FloatPlan> without scope AND who — leaving the tab loses the form: ${rdTag[0]}`);
+else if (!/onFloatPlan\(route\)/.test(rd)) fail("the route page no longer links to Crews › Float plans");
+else ok(rdTag ? "the route page's in-place float plan passes scope AND who, and still links to Crews › Float plans" : "the route page LINKS to Crews › Float plans");
 
 // ---- 8. THE SECOND CALL SITE. SafetyTab (the crew safety screen) has the same shape and is the
 // WORSE of the two: "Team Alignment" and "Float Plan" are a two-button pair, so the control most
