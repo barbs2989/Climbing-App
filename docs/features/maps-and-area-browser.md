@@ -65,6 +65,7 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
   A **boulder problem** is never part of the wall order (owner's note, 2026-10-21: "there's no left to right or right to left order ... with
   bouldering"): its stored `sort_order` (MP's) does not make a list offer Left → right, a problem sorts with the unplaced, by name, is not
   counted as "no position on the wall yet", and its row prints no "#n in this area" (`RouteRow`). A list of problems sorts A → Z by default.
+  Nor does an alpine, mountaineering or scrambling row print "#n in this area" (2026-11-18): a peak's routes are faces and ridges, not a line along a cliff base.
   Neither import kept a position (the OpenBeta ETL dropped `metadata.leftRightIndex`; MP's route-finder CSV has none), so on 2026-10-21
   **1 of 314,360 routes** had one.
 - **Filters on a wall's list** (owner note, 2026-10-25): **Filters** over a leaf area's climb list narrows it by discipline (the disciplines the wall holds, plus All) and a star minimum (Any / 2+ / 3+ stars; a climb nobody has rated stays in). The button is drawn as the Route finder draws its Filters button (full width, `BTN_LG`, the text colour, a turning chevron), not as a chip -- as a muted chip it matched the sort chips under it and was missed (owner, 2026-11-05). It filters the rows `useAreaRoutes` already loaded, so it costs no query. The sort adds **By discipline** (one heading per discipline, in `DISCIPLINES` order, A → Z under each). Grade is deliberately NOT a sort key: `grade_num` is only comparable within one scale.
@@ -107,7 +108,7 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
     MP pages return 404 or have no route table. Every wall is logged under `_order/<state>.jsonl`, so a re-run skips
     finished walls, and a state whose walls are all done skips its database load. Any future bulk run must be paced
     and watched the same way.
-- **Search** (`DbSearchSplit`): finds areas and routes under the current scope; typing "mt baker" finds Mount Baker. Its Areas | Routes
+- **Search** (`DbSearchSplit`): finds areas and routes under the current scope; typing "mt baker" finds Mount Baker. The route search runs only for typed words on the Routes tab (with none it read a whole state's climbs and timed out, 2026-11-18). Its Areas | Routes
   toggle and box PIN under the top bar (`usePinnedBar`) while the list below scrolls, and let go at the list's end marker (2026-10-23).
 - **Add an area** (0360, `lib/AddArea.jsx`): *Add an area* under an area's list, or under the route finder's results, opens a sheet —
   name, kind (crag/wall/boulder · peak · area), about, optional location — that lists catalog places already filed under that name
