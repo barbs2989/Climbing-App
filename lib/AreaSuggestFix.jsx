@@ -37,7 +37,9 @@ export default function AreaSuggestFix({ area, field, rows, myId, C, onClose, on
   const [fullCur, setFullCur] = useState({});
   useEffect(() => {
     if (!field || !scrollRef.current) return;
-    const t = setTimeout(() => { const el = scrollRef.current && scrollRef.current.querySelector("#af-section-" + field); if (el && el.scrollIntoView) el.scrollIntoView({ block: "start" }); }, 80);
+    // Scroll the FORM BODY to the field, not el.scrollIntoView(): that scrolls every scrollable ancestor too, the
+    // dialog layer included, and on a short screen it carried the header -- and its ✕ -- up off the top.
+    const t = setTimeout(() => { const box = scrollRef.current, el = box && box.querySelector("#af-section-" + field); if (box && el instanceof HTMLElement) box.scrollTop = Math.max(0, el.offsetTop - 8); }, 80);
     return () => clearTimeout(t);
   }, [field]);
   const a = area || {};
@@ -102,21 +104,31 @@ export default function AreaSuggestFix({ area, field, rows, myId, C, onClose, on
     setBusy(false);
   };
 
-  return createPortal(<div role="dialog" aria-modal="true" aria-label={"Suggest an edit to " + (a.name || "this area")} style={{ position: "fixed", inset: 0, background:C.scrimStrong, zIndex: 100000, display: "flex", alignItems: "flex-start", justifyContent: "center", padding: "72px 12px 32px", overflowY: "auto", overscrollBehavior: "contain" }}>
-    <div style={{ background: C.surface, borderRadius: 18, width: "100%", maxWidth: 460, border: "1px solid " + C.border, overflowY: "auto", overscrollBehavior: "contain", maxHeight: "92vh", display: "flex", flexDirection: "column" }}>
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "14px 16px", borderBottom: "1px solid " + C.border, flexShrink: 0 }}><div style={{ fontSize: 16, fontWeight: 700, color: C.text }}>{sent ? "Thanks for contributing" : "Suggest an edit"}</div><button onClick={onClose} aria-label="Close" style={POP_CLOSE}>{"✕"}</button></div>
+  // THE WAY OUT CANNOT SCROLL AWAY (owner, 2026-11-18: "when trying to fill in info about areas there's no x out
+  // button"). The header is sticky and painted over the parking-pin map's Leaflet panes; the footer holding Cancel
+  // beside Send never scrolls; Escape closes; and opening at a field scrolls only the form body (above).
+  const onKey = (e) => { if (e.key === "Escape" && !busy) onClose(); };
+  return createPortal(<div role="dialog" aria-modal="true" onKeyDown={onKey} aria-label={"Suggest an edit to " + (a.name || "this area")} style={{ position: "fixed", inset: 0, background:C.scrimStrong, zIndex: 100000, display: "flex", alignItems: "flex-start", justifyContent: "center", padding: "40px 12px 24px", overflowY: "auto", overscrollBehavior: "contain" }}>
+    <div style={{ background: C.surface, borderRadius: 18, width: "100%", maxWidth: 460, border: "1px solid " + C.border, overflowY: "auto", overscrollBehavior: "contain", maxHeight: "calc(100dvh - 64px)" /* the padding above and below: the card never runs past the window */, display: "flex", flexDirection: "column" }}>
+      <div style={{ position: "sticky", top: 0, zIndex: 1000 /* over the Leaflet panes of the map picker (400-700) */, background: C.surface, display: "flex", justifyContent: "space-between", alignItems: "center", gap: 10, padding: "12px 16px", borderBottom: "1px solid " + C.border, flexShrink: 0 }}>
+        <div style={{ minWidth: 0 }}>
+          <div style={{ fontSize: 16, fontWeight: 800, color: C.text }}>{sent ? "Thanks for contributing" : "Suggest an edit"}</div>
+          {!sent && a.name ? <div style={{ fontSize: 12.5, color: C.textMuted, marginTop: 2, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{a.name}</div> : null}
+        </div>
+        <button onClick={onClose} aria-label="Close" style={POP_CLOSE}>{"✕"}</button>
+      </div>
       {sent ? <div style={{ padding: 16 }}>
         <div style={{ fontSize: 40, textAlign: "center", marginBottom: 8 }}>{"✓"}</div>
         <div style={{ textAlign: "center", fontWeight: 700, fontSize: 15, color: C.text, marginBottom: 12 }}>{sent.n === 1 ? "Sent for review" : sent.n + " edits sent for review"}</div>
         <div style={{ background: C.amberBg, border: "1px solid " + C.amber + "55", borderRadius: 11, padding: "11px 13px", fontSize: 12.5, color: C.text, lineHeight: 1.55, marginBottom: 12 }}>{"Every edit is checked before it shows. You’ll be told when it’s checked, and it credits you once it’s live."}</div>
         <button onClick={onClose} style={{ ...BTN, width: "100%", background: C.blueSolid, color:C.onSolid, border: "none" }}>Done</button>
-      </div> : <div ref={scrollRef} style={{ minHeight: 0, padding: 16, overflowY: "auto", overscrollBehavior: "contain", flex: 1 }}>
-        <div style={{ fontSize: 12.5, color: C.textSub, lineHeight: 1.55, background: C.card, border: "1px solid " + C.border, borderRadius: 12, padding: "10px 12px", marginBottom: 12 }}>{"Spotted something wrong or missing about "}<b>{a.name || "this area"}</b>{"? Fill in any fields below — leave the rest blank. Every edit is checked before it shows on the page."}</div>
+      </div> : <div style={{ display: "contents" }}><div ref={scrollRef} style={{ position: "relative", minHeight: 0, padding: 16, overflowY: "auto", overscrollBehavior: "contain", flex: 1 }}>
+        <div style={{ fontSize: 12.5, color: C.textSub, lineHeight: 1.55, padding: "0 2px", marginBottom: 12 }}>{"Spotted something wrong or missing about "}<b>{a.name || "this area"}</b>{"? Fill in any fields below — leave the rest blank. Every edit is checked before it shows on the page."}</div>
         {AREA_EDIT_FIELDS.map(f => {
           const cur = f.cur(a);
           const pend = myPendingAreaEdits(rows, myId).filter(r => r.field === f.k).sort((x, y) => String(y.created_at).localeCompare(String(x.created_at)))[0];
           const v = vals[f.k];
-          return <div key={f.k} id={"af-section-" + f.k} style={{ marginBottom: 14, scrollMarginTop: 8 }}>
+          return <div key={f.k} id={"af-section-" + f.k} style={{ marginBottom: 10, scrollMarginTop: 8, background: C.card, border: "1px solid " + (f.k === field ? C.blue : C.border), borderRadius: 12, padding: "11px 12px" }}>
             <div style={lbl}>{f.label}</div>
             <div style={{ fontSize: 11.5, color: C.textMuted, lineHeight: 1.45, marginBottom: 6 }}>{cur ? <>{"Now: "}<span style={{ color: C.textSub, whiteSpace: "pre-wrap", overflowWrap: "anywhere" }}>{cur.length > 140 && !fullCur[f.k] ? cur.slice(0, 140).trim() + "…" : cur}</span>{cur.length > 140 ? <button type="button" onClick={() => setFullCur(o => ({ ...o, [f.k]: !o[f.k] }))} aria-expanded={!!fullCur[f.k]} style={{minHeight:44, background: "none", border: "none", padding: "0 0 0 6px", color: C.blue, fontSize: 11.5, fontWeight: 700, cursor: "pointer" }}>{fullCur[f.k] ? "Show less" : "Show all"}</button> : null}</> : "Not on file yet."}</div>
             {pend ? <div style={{ fontSize: 11.5, color: C.text, background: C.amberBg, border: "1px solid " + C.amber + "55", borderRadius: 8, padding: "6px 9px", marginBottom: 6 }}>{"Awaiting review: "}<b>{f.type === "months" ? monthsLabel(pend.value) : f.fmt ? f.fmt(pend.value) : String(pend.value)}</b></div> : null}
@@ -138,9 +150,12 @@ export default function AreaSuggestFix({ area, field, rows, myId, C, onClose, on
             {problems[f.k] ? <div role="alert" style={{ fontSize: 11.5, color: C.amber, marginTop: 5 }}>{problems[f.k]}</div> : null}
           </div>;
         })}
-        {err ? <div role="alert" style={{ fontSize: 12.5, color: C.red, lineHeight: 1.45, marginBottom: 10 }}>{err}</div> : null}
-        <button onClick={submit} disabled={!canSubmit} style={{ ...BTN, width: "100%", background: canSubmit ? C.blueSolid : C.card, color: canSubmit ? C.onSolid : C.textMuted, border: "1px solid " + (canSubmit ? C.blueSolid : C.border), cursor: canSubmit ? "pointer" : "default" }}>{busy ? "Sending…" : edits.length ? "Send " + edits.length + " " + (edits.length === 1 ? "edit" : "edits") : "Fill in a field to send"}</button>
-      </div>}
+        {err ? <div role="alert" style={{ fontSize: 12.5, color: C.red, lineHeight: 1.45, marginBottom: 4 }}>{err}</div> : null}
+      </div>
+      <div style={{ flexShrink: 0, display: "flex", gap: 8, padding: "10px 16px 12px", borderTop: "1px solid " + C.border, background: C.surface }}>
+        <button onClick={onClose} disabled={busy} style={{ ...BTN, flex: "0 0 auto", padding: "0 18px", background: C.card, color: C.text, border: "1px solid " + C.border, cursor: busy ? "default" : "pointer" }}>Cancel</button>
+        <button onClick={submit} disabled={!canSubmit} style={{ ...BTN, flex: 1, minWidth: 0, background: canSubmit ? C.blueSolid : C.card, color: canSubmit ? C.onSolid : C.textMuted, border: "1px solid " + (canSubmit ? C.blueSolid : C.border), cursor: canSubmit ? "pointer" : "default" }}>{busy ? "Sending…" : edits.length ? "Send " + edits.length + " " + (edits.length === 1 ? "edit" : "edits") : "Fill in a field to send"}</button>
+      </div></div>}
     </div>
   </div>, document.body);
 }

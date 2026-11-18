@@ -138,8 +138,17 @@ Three top-level `tab` values in `ClimbMatch.jsx` (`tab==="today"`, `tab==="crew"
   `crew:<id>` first, the old scope deleted second, and a saved plan files the crew stub. A saved crew plan has *Send to the crew chat*
   (`FloatPlan`'s `onSendToCrew`, wired in both `FloatPlans` and the crew `SafetyTab`), which posts the plan text through `sendCrewMsg` — the
   climber's own send, so the Privacy Policy's "stays on your phone until you send it" still holds; `crews.float_plan` is unchanged.
+  **Leftovers fixed** (2026-11-18): the crew Safety screen's *Float plan* tab FILES again (#3369 had wrapped its `onFiled` in an extra arrow, so
+  Save there never reached `fileCrewFloatPlan`), and it starts from the same crew prefill as the card (`safetyFloatDefaults` → SafetyTab
+  `floatDefaults`). The route page's *File a float plan for this climb* (`floatPlanForRoute`) takes a crag-session crew at the route's crag too
+  (the itinerary picker's rule, 0302), preferring the route's own crew, then the soonest day.
+  **On the crew card** (Step 3B, 2026-11-18): the card's *Itinerary & float plan* sheet opens the plan INLINE (*Set float plan* / *✓ Your float plan —
+  view or edit* toggles to *Hide float plan*) instead of closing the sheet and scrolling to Crews › Float plans below every crew. `CrewCard` gets
+  `floatInline` from `CrewListView` (who, `crewFloatFill` defaults, `fileCrewFloatPlan`, `sendCrewMsg`, onChanged) and draws an UNCONTROLLED `<FloatPlan>`
+  with scope `crew:<id>`: the device copy keeps it across the sheet closing (`check:float-plan-persistence` 8b requires scope + who). *All your float plans ›*
+  still goes to the list, and `CrewListView` re-keys `FloatPlans` when the inline plan closes so the list re-reads.
   **Form and list, after the walkthrough** (2026-11-18): the three fields Save needs (route, hard return, emergency contact) say *Required*, and an
-  incomplete form says what is *Still needed* under an aria-disabled Save. The profile emergency contact (0237) is filled into an EMPTY contact field
+  incomplete form says what is *Still needed* under an aria-disabled Save; a departure in the past, or a hard return before the departure, gets an amber note under its field (2026-11-18). Plans are keyed by account, so one made signed out is not merged in silently at sign-in: the list says how many were made signed out and offers *Move to my account* or a two-tap *Not mine — delete*. An EMPTY guest draft (nothing typed) is simply cleared at sign-in, as the account's own empty drafts are. The profile emergency contact (0237) is filled into an EMPTY contact field
   once the saved plan has loaded (raw setter, so it is not an edit). `crewFloatFill` turns the agreed day (else the first proposed one) plus a
   clock-time meet-up into the picker's own value. In `FloatPlans`: list times go through `fpWhen`; a new plan is not saved until its first edit,
   and never-edited empty ones are swept on load; Delete (button or swipe) shows *Deleted … Undo* for 8 s, and Undo re-files a saved crew plan; a
@@ -276,6 +285,8 @@ Notes: `docs/guards/social-and-crews.md`, `contributions-and-logbook.md`, `hones
 (Matched by name; not re-run.)
 
 ## 7. Last significant change
+
+2026-11-18 (0453): the safety summary's per-answer counts show only once two climbers OTHER than you have answered, so no single crewmate's answer can be worked out from your own; a crew of two never sees them (*stays private in a crew of two*). Meet-up's one tap falls back from the climb's access point to its trailhead pin, its mountain's parking, then the access point every other climb on the mountain agrees on (`useAreaAccessPoint`; nothing when they disagree). Auth requests are exempt from the 25 s request deadline (`lib/supabase.js`), which could abort a token refresh mid-rotation and sign a climber out.
 
 2026-11-18 two-climber walkthrough: crew invites arrive live (`useMyCrewInvites` is a live query on `crew_members`); Ready up's *Said hi in crew chat* reads whether the crew chat has any message from the database (`useCrewHasMessages`), not only the messages loaded on this device; the Ready-up risk row calls it *Mixed* only for Conservative with Aggressive, the Safety screen's rule; *Climb with them again* asks *Who can join?* like + Create a crew.
 

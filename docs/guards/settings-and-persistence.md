@@ -5,6 +5,8 @@ A control that claims to remember something must store it: float plans and plann
 Part of the guard notes — see [README.md](README.md) for the full index.
 
 - **`check:float-plan-persistence`** asserts that a filed float plan survives leaving the tab.
+  - **8a, a handler that files (2026-11-18):** #3369 left the crew Safety screen with `onFiled={safetyCrew?()=>(form)=>fileCrewFloatPlan(…)}` — an arrow RETURNING the handler, so Save there never filed, and TypeScript accepts it. 8a fails on any `onFiled`/`onFiledCrew` arrow whose body is another arrow; re-injecting that exact line fails it.
+  - **A third site, the crew card (2026-11-18):** section 8 now finds SafetyTab's tag AFTER its `view==="float"` branch (the lib sources are concatenated, so the card's tag came first), and 8b requires the card's uncontrolled `<FloatPlan>` to pass `scope` and `who` — the device copy is what survives the sheet closing. Removing `scope` there fails it.
   - **THE FORM MOVED TO CREWS (2026-09-30).** It is no longer on the route page's Safety tab: that
     tab links to **Crews › Float plans** (`lib/FloatPlans.jsx`), which lists every plan on the device
     (`listFloatPlans`, incl. old `route:<id>` scopes) and exports via Share / Email / Save as PDF.

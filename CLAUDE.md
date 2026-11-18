@@ -261,6 +261,7 @@ npm run check:list-summit-audit # a peak list ticks only from a route that reach
 npm run check:contrib-shapes # what the contribute form SUBMITS is the shape its readers READ (in build)
 npm run check:consensus-clustering # three climbers who agree must be COUNTED as agreeing (in build)
 npm run check:add-route-fields # add-a-climb asks what the discipline needs, and nothing unstorable (in build)
+npm run check:edit-scope # the route EDIT SHEET offers, per discipline, only fields that discipline's page draws — one rule, lib/fieldScope.js (in build)
 npm run check:contrib-field-columns # every editable field has a DB row naming the routes column its confidence is computed from (in build)
 npm run check:editable-coverage # every routes column a climber can SEE has an editor, or a written reason it has none (in build)
 npm run audit:fifty-classics # which Fifty Classics does the catalog hold, and are they tagged?

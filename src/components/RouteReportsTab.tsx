@@ -13,6 +13,7 @@ import ReportStats from "./ReportStats.tsx";
 import type { ReactNode } from "react";
 import type { ReportCond } from "./ReportStats.tsx";
 import type { ConsensusPanelProps } from "./ConsensusPanel.tsx";
+import { scrollBelowPinned } from "../../lib/pinnedTop.js";
 
 /** One trip report row as the list reads it. */
 interface ReportsTabRow {
@@ -68,7 +69,7 @@ export default function RouteReportsTab({activity,climberN,condActivity,cragOnly
   const TRIP_FIRST=5;const [allTrips,setAllTrips]=useState(false);const trips=activity||[];const shownTrips=allTrips?trips:trips.slice(0,TRIP_FIRST);
   /* The conditions count reports kept to friends or crews (condActivity); the list shows only shared ones. Say so, or the consensus's "7 reports" over a list of 5 reads as a bug. */
   const privateN=Math.max(0,((condActivity||[]).length)-trips.length);
-  const jumpToTrips=function(){const el=typeof document!=="undefined"?document.getElementById("trip-reports-section"):null;if(el&&el.scrollIntoView)el.scrollIntoView({behavior:"smooth",block:"start"});};
+  const jumpToTrips=function(){const el=typeof document!=="undefined"?document.getElementById("trip-reports-section"):null;scrollBelowPinned(el,{behavior:"smooth"});};
   /* ONE log button at a time. The full-width one leads the tab until you've logged the climb; the list header's own button is for logging it again. Both used to show, a screen apart, doing the same thing. */
   return <div>{!logged?<div style={{marginBottom:ROUTE_GAP}}><button onClick={()=>onLog(route)} style={{...BTN,width:"100%",background:C.greenBg,color:C.green,border:"1px solid "+C.greenDim}}>✓ Log your ascent</button></div>:null}
         {trips.length?<div style={{marginTop:-4,marginBottom:ROUTE_GAP-4}}><button onClick={jumpToTrips} style={{minHeight:44,...BTN_LINK(C),background:"transparent",border:"none",color:C.blue,padding:0}}>{"Jump to the "+trips.length+" "+(cragOnly?"send":"trip")+" report"+(trips.length!==1?"s":"")+" ↓"}</button></div>:null}
