@@ -39392,3 +39392,45 @@ notices" — rather than stated as fact).
 
 0 confirmed errors fixed, 3 newly flagged for human review, 7 clean.
 Next batch will continue id-ascending from `wa_castle_peak_tatoosh_la_villa` (pass 9).
+
+## 2026-11-18 — Batch 562 (pass 9)
+
+Routes: The Castle/Tatoosh (Southeast Face), Cathedral Peak/Pasayten (Last Rites, Southeast
+Buttress), Cathedral Rock (Northeast Buttress, Northeast Ridge 2003 Variation, Southeast Face
+Chimney), and Chair Peak (Chair-Bryant Traverse, East Face, North Face, Northwest Ridge) — 10
+routes across 4 peaks.
+
+Verified against independent sources and found correct/plausible: The Castle's 6,440 ft elevation
+(matches the most-repeated figure across sources, though SummitPost/Mazamas give slightly higher
+6,460-6,480 ft); Cathedral Peak/Pasayten's 8,606 ft (matches Wikipedia's NAVD88 figure; the
+8,601 ft seen on Mazamas/SummitPost looks like the same peak under an older datum, not a
+different measurement); Cathedral Rock's 6,724 ft (matches Mountain Project and SummitPost);
+Chair Peak's 6,238 ft (matches Wikipedia/SummitPost/PeakVisor; ListsOfJohn's newer LiDAR figure
+runs a few feet higher at 6,243 ft); Cathedral Rock Northeast Buttress's 1984 Bellamy/Speer FA
+(corroborated by the 1985 American Alpine Journal report, which calls it the first ascent of the
+peak's "vertical east side" at III 5.7 — matches the stored grade); and Chair Peak North Face's
+January 1975 Lewis/Hampson/Harris/Jacobson FA and Northwest Ridge's 1965 Jackson/Krook FA (both
+confirmed via Mountain Project's route history, which also independently matches the stored
+grades). Chair Peak East Face's 1933 Blair/Winder FA could not be independently confirmed or
+contradicted in available sources (one hit for "Art Winder" in that era was for an unrelated 1930
+Chimney Rock route near Pete Lake, not this route) — left as-is per the no-guessing rule.
+
+**Clean (9):** The Castle Southeast Face; Cathedral Peak/Pasayten Southeast Buttress (its FA is
+already honestly stored as "First ascent party unrecorded; route established July 1973," so
+nothing to flag); Cathedral Rock Northeast Buttress, Northeast Ridge (2003 Variation), and
+Southeast Face Chimney; Chair-Bryant Traverse (its own stored text already flags itself as
+little-documented, which matches how little independent material exists on this route); Chair
+Peak East Face, North Face, and Northwest Ridge.
+
+**Flagged for human review (1):**
+- Cathedral Peak/Pasayten Last Rites: `fa` stores "Scott Bennett and Blake Herrington, August
+  2011." The route itself (300m, 5.11+, south face, finishing up the Southeast Buttress's last
+  pitch) is well corroborated — a 2012 American Alpine Journal report and Blake Herrington's own
+  trip blog both place it on an August 2011 Pasayten trip. But Scott Bennett's own well-documented
+  August 2011 trip with Herrington was in British Columbia's Waddington Range (with Graham
+  Zimmerman and Forest Woodward) — a different country, the same month. No source found names
+  Bennett on the Pasayten trip, and the actual second climber on Last Rites could not be confirmed
+  from available sources, so the name is left as-is rather than guessing a replacement.
+
+0 confirmed errors fixed, 1 newly flagged for human review, 9 clean.
+Next batch will continue id-ascending from `wa_chair_peak_northwest_ridge` (pass 9).

@@ -2,10 +2,10 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 9,
-  "last_processed_id": "wa_castle_peak_tatoosh_la_villa",
+  "last_processed_id": "wa_chair_peak_northwest_ridge",
   "total_in_scope_last_count": 751,
   "total_wa_alpine_or_mountaineering_tagged": 857,
-  "pass_note": "Batch 561 continued id-ascending from wa_burnt_boot_peak_north_ridge: Cardinal Peak (NW Couloir-North Ridge, Southeast Slopes), Carne Mountain (Trail route), Cascade Peak (East Ridge, NW Chimney), Whatcom Peak (Castle in the Sky), Castle Peak/Pasayten (East Ridge, North Ridge, The Drawbridge), and The Castle/Tatoosh (La Villa) -- 10 routes across 6 peaks, all alpine/mountaineering on peak-type areas. No confirmed errors (elevations and FA credits all independently corroborated). Three items flagged for human review: a seemingly-truncated FA name ('John R') on Castle Peak/Pasayten's North Ridge; two routes (Cardinal Peak NW Couloir, Carne Mountain Trail) whose stored Little Giant Fire closure text gives an end date (Oct 31, 2026) that has already passed as of this run, with no source found confirming whether it was lifted or extended; and a 6 ft internal mismatch between Carne Mountain's high_point_ft (7,085) and its own approach prose ('7,091 ft'), which source elevations (7,080-7,103 ft range) don't cleanly resolve either way.",
+  "pass_note": "Verified elevations (The Castle 6,440 ft, Cathedral Peak/Pasayten 8,606 ft, Cathedral Rock 6,724 ft, Chair Peak 6,238 ft) and several first-ascent credits (Cathedral Rock Northeast Buttress 1984 Bellamy/Speer per the 1985 AAJ report; Chair Peak North Face Jan 1975 Lewis/Hampson/Harris/Jacobson and Northwest Ridge 1965 Jackson/Krook per Mountain Project route history) against independent sources -- all matched, nothing fixed. Flagged for human review: wa_cathedral_peak_last_rites.fa credits Scott Bennett alongside Blake Herrington for the August 2011 Pasayten first ascent, but Bennett's own documented August 2011 trip with Herrington was in BC's Waddington Range (with Zimmerman and Woodward), not the Pasayten -- no source names Bennett on the Pasayten trip, and the real second climber could not be confirmed, so left alone rather than guessing a replacement name.",
   "batches": [
     {
       "batch_number": 1,
@@ -11150,6 +11150,28 @@
       "clean": 7,
       "sql_file": null,
       "note": "Verified elevations (Cardinal Peak 8,596 ft, Cascade Peak 7,428 ft, Whatcom Peak 7,574 ft, Castle Peak/Pasayten 8,343 ft per the 2023 differential-GPS survey, The Castle/Tatoosh 6,440 ft) and first-ascent credits (Cascade Peak 1950 Beckey/Schoening/Sharpe; Whatcom Peak 1936 Berry/Buchanen; Castle in the Sky 2022 Boyce/Chapko; The Drawbridge 2017 Zentler/Schilling) all against independent sources -- all matched, nothing fixed. Flagged for human review: (1) wa_castle_peak_pasayten_north_ridge.fa stores the literal string 'John R', which reads as a truncated/incomplete name rather than a verified fact -- could not confirm an intended full name, so left alone rather than guessing; (2) wa_cardinal_peak_nw_couloir_north_ridge and wa_carne_mountain_trail_route both carry Little Giant Fire closure text stating the order runs 'September 3 through October 31, 2026 unless lifted sooner' -- that window has now passed (today is 2026-11-18) with no source found confirming the closure was lifted or extended, so the text may be describing an expired order as current; (3) wa_carne_mountain_trail_route's own approach prose states the summit at '7,091 ft' while high_point_ft and the area row both say 7,085 ft -- a minor (6 ft) internal mismatch that sources don't resolve cleanly (WTA/Willhite give 7,085 ft; other sources range up to ~7,100 ft)."
+    },
+    {
+      "batch_number": 562,
+      "date": "2026-11-18",
+      "pass": 9,
+      "route_ids": [
+        "wa_castle_peak_tatoosh_southeast_face",
+        "wa_cathedral_peak_last_rites",
+        "wa_cathedral_peak_pasayten_se_buttress",
+        "wa_cathedral_rock_northeast_buttress",
+        "wa_cathedral_rock_northeast_ridge_2003_variation",
+        "wa_cathedral_rock_southeast_face_chimney",
+        "wa_chair_bryant_traverse",
+        "wa_chair_peak_east_face",
+        "wa_chair_peak_north_face",
+        "wa_chair_peak_northwest_ridge"
+      ],
+      "confirmed_errors_fixed": 0,
+      "flagged_for_human_review": 1,
+      "clean": 9,
+      "sql_file": null,
+      "note": "Verified elevations (The Castle 6,440 ft, Cathedral Peak/Pasayten 8,606 ft, Cathedral Rock 6,724 ft, Chair Peak 6,238 ft) and several first-ascent credits (Cathedral Rock Northeast Buttress 1984 Bellamy/Speer per the 1985 AAJ report; Chair Peak North Face Jan 1975 Lewis/Hampson/Harris/Jacobson and Northwest Ridge 1965 Jackson/Krook per Mountain Project route history) against independent sources -- all matched, nothing fixed. Flagged for human review: wa_cathedral_peak_last_rites.fa credits Scott Bennett alongside Blake Herrington for the August 2011 Pasayten first ascent, but Bennett's own documented August 2011 trip with Herrington was in BC's Waddington Range (with Zimmerman and Woodward), not the Pasayten -- no source names Bennett on the Pasayten trip, and the real second climber could not be confirmed, so left alone rather than guessing a replacement name."
     }
   ],
   "outage_runs": [
