@@ -58,6 +58,19 @@ already `owner` + locked.
 Mountain Project + OpenBeta (OpenBeta was built from MP); any page that quotes or credits
 another; two pages crediting the same guidebook. When unsure, they are not independent.
 
+### Which fields lock (owner, 2026-11-18)
+
+| group | fields | lock |
+|---|---|---|
+| facts that don't change | grade, rock/ice/aid/alpine grade, pitches, length_m, fa, high_point_ft, summit pin, aspect, discipline, commitment, bolts, anchor type | for good, once verified |
+| true today, change with policy | permit, fees, access / land manager, parking pin, emergency numbers | `official-1`, expires 12 months |
+| | **road / gate status** | expires **3 months** (enforced) |
+| **never lock** (enforced) | crowds, seasonal_guidance, seasonal_hazards, timing, itinerary, pro_tips, watch_out, what_to_bring, partner_requirements, difficulty | never — evidence may be recorded as unconfirmed / disputed |
+| **paragraphs — never lock** (owner, 2026-11-18: "dont lock paragraphs"; enforced) | overview, beta, description, approach, descent, descent_text, bail, turnaround, best_season, comms, face, pro_needs, detailed_rack, hazards, known_hazards, pitch_detail, rappel_detail, climbing_route, approach_variants, bivy | never — they stay open to rewording and correction (this replaces "lock when every fact inside is locked") |
+
+`NEVER_LOCK` and `EXPIRY_MAX_DAYS` in `scripts/lib/research-ledger.mjs` refuse a batch that breaks
+the last two rows. Research effort goes to the first three groups.
+
 ### Agreement tolerances
 
 | field | agree when |
@@ -70,7 +83,7 @@ another; two pages crediting the same guidebook. When unsure, they are not indep
 | first ascent | same names and year (a PEAK FA is not a ROUTE FA) |
 | approach distance / gain | within 10% |
 | season | month windows overlap |
-| prose (approach, descent, overview…) | never matched as text — locks when EVERY fact inside it (trail names, miles, gain, turns) is itself locked; see `route-prose` |
+| prose (approach, descent, overview…) | never locks (owner, 2026-11-18). Check the facts inside it against sources and correct the text, but leave it open |
 | opinion words (classic, chossy, sandbagged, loose) | a fact like any other: 2 sources |
 
 ### Verifier rules learned on the worked example (Rainier, Disappointment Cleaver, 2026-11-14)

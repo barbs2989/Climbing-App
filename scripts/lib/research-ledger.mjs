@@ -25,6 +25,22 @@ const SAME_PUBLISHER = {
 const NO_COORD_PUBLISHERS = new Set(["mountainproject.com"]);
 // Fields that hold a position; a pin is "waypoints/<name>".
 export const isCoordField = f => f === "lat" || f === "lng" || f === "approach_logistics" || f.startsWith("waypoints/");
+// Fields that NEVER lock (owner, 2026-11-18): they change week to week, depend on the party, or are
+// advice/opinion/computed guidance that should keep improving. Disputed / unconfirmed rows are still
+// allowed, so evidence about them can be recorded without freezing them.
+export const NEVER_LOCK = new Set([
+  "crowds", "seasonal_guidance", "seasonal_hazards",            // conditions & crowds
+  "timing", "itinerary",                                          // time estimates & trip plan
+  "pro_tips", "watch_out", "what_to_bring",                       // tips, watch-outs, what to bring
+  "partner_requirements", "difficulty",                           // app guidance & computed scores
+  // Paragraphs never lock either (owner, 2026-11-18: "dont lock paragraphs") — they stay open to
+  // rewording and correction. This replaces the earlier "locks when every fact inside is locked".
+  "overview", "beta", "description", "approach", "descent", "descent_text", "bail", "turnaround",
+  "best_season", "comms", "face", "pro_needs", "detailed_rack", "hazards", "known_hazards",
+  "pitch_detail", "rappel_detail", "climbing_route", "approach_variants", "bivy",
+]);
+// Road and gate status must be re-checked every 3 months (owner, 2026-11-18).
+export const EXPIRY_MAX_DAYS = { road: 92 };
 // Never locked from one source (owner: MP alone may lock grade/length/bolts/rack, never coords or a first ascent).
 const NEVER_SINGLE = f => isCoordField(f) || ["fa", "ffa", "fwa"].includes(f);
 
@@ -70,6 +86,13 @@ export function validateEntry(e, now = new Date()) {
   const counted = coord ? ev.filter(x => x.measurement || !NO_COORD_PUBLISHERS.has(publisherOf(x))) : ev;
   if (coord && counted.length < ev.length) errs.push(`${at}: Mountain Project / OpenBeta coordinates are never evidence — remove them or record them as a lead elsewhere`);
   const pubs = distinctPublishers(counted.filter(x => !x.measurement));
+  const col = String(e.field || "").split("/")[0];
+  if (LOCKED.has(e.level) && NEVER_LOCK.has(col)) errs.push(`${at}: ${col} never locks (owner rule) — record it as unconfirmed or disputed`);
+  if (LOCKED.has(e.level) && EXPIRY_MAX_DAYS[col]) {
+    const max = new Date(now.getTime() + EXPIRY_MAX_DAYS[col] * 86400000);
+    if (!e.expires_at) errs.push(`${at}: ${col} locks must expire within ${EXPIRY_MAX_DAYS[col]} days (set expires_at)`);
+    else if (new Date(e.expires_at) > max) errs.push(`${at}: ${col} lock expires too late — at most ${EXPIRY_MAX_DAYS[col]} days out`);
+  }
   if (LOCKED.has(e.level)) {
     if (e.method === "agree-2" && e.level === "locked" && pubs.size + counted.filter(x => x.measurement).length < 2)
       errs.push(`${at}: agree-2 needs 2 independent publishers (has ${pubs.size}: ${[...pubs].join(", ") || "none"})`);
@@ -188,6 +211,12 @@ function selftest() {
   t("a 1-source lock is replaced by 2 sources", lockViolations({ grade: "5.10a" }, rows, { grade: [mp, ck] }, now).length === 0);
   t("ledger value must match the final row", ledgerValueMatches({ field: "gain_ft", value: 9000 }, { gain_ft: 9000 }) && !ledgerValueMatches({ field: "gain_ft", value: 9001 }, { gain_ft: 9000 }));
   t("pin ledger value matches by name+coords", ledgerValueMatches({ field: "waypoints/Summit", value: { name: "Summit", lat: 1, lng: 2 } }, { waypoints: [{ name: "Summit", lat: 1, lng: 2, elev: 9 }] }));
+  t("a never-lock field is refused as locked", validateEntry({ field: "pro_tips", value: ["x"], method: "agree-2", level: "locked", evidence: [mp, ck] }, now).length > 0);
+  t("a paragraph never locks", validateEntry({ field: "approach", value: "x", method: "agree-2", level: "locked", evidence: [mp, ck] }, now).length > 0);
+  t("a never-lock field may be recorded as disputed", validateEntry({ field: "timing", value: {}, method: "agree-2", level: "disputed", evidence: [mp] }, now).length === 0);
+  t("a road lock without expiry is refused", validateEntry({ field: "road", value: {}, method: "official-1", level: "locked", evidence: [nps] }, now).length > 0);
+  t("a road lock 12 months out is refused", validateEntry({ field: "road", value: {}, method: "official-1", level: "locked", evidence: [nps], expires_at: "2027-11-14T00:00:00Z" }, now).length > 0);
+  t("a road lock 3 months out passes", validateEntry({ field: "road", value: {}, method: "official-1", level: "locked", evidence: [nps], expires_at: "2027-02-10T00:00:00Z" }, now).length === 0);
   const h = nextLedgerRow("r", { field: "approach", value: "new", method: "agree-2", level: "locked", evidence: [mp, ck] }, rows[1], "b1", now);
   t("history keeps the replaced value", h.history.length === 1 && h.history[0].value === "old");
   if (fail) { console.error(`\n${fail} self-test case(s) failed`); process.exit(1); }
