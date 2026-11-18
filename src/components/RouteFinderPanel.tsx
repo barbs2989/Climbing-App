@@ -326,6 +326,10 @@ export default function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElev
   // general area breakdown"): the levels between the state and the wall, e.g. City of Rocks › Circle Creek Overlook.
   const { data: areaTrails } = useAreaTrailsByIds(areaIds);
   const trailOf = (id: string): { id: string; name: string }[] => (areaTrails && id && areaTrails[id]) || [];
+  // ...but only the levels BELOW the area being searched: inside Leavenworth a wall's line read "Central-East Cascades,
+  // Wenatchee & Leavenworth › Leavenworth › Icicle Creek" over every wall, two to four lines on a phone, repeating the
+  // path the climber is already in (2026-11-18). The export keeps the whole trail.
+  const shownTrailOf = (id: string) => { const t = trailOf(id), i = t.findIndex(c => c.id === loc.id); return i >= 0 ? t.slice(i + 1) : t; };
   const { data: areaHits, isLoading: la, error: ea }: { data?: RouteFinderPanelAreaHit[] | null; isLoading: boolean; error: unknown } = useAreaSearch(scope.id, mode === "areas" ? qD.trim() : "");
 
   const nF = af.discs.length + (gLoO || gHiO ? 1 : 0) + (af.minStars ? 1 : 0) + (af.minPitches ? 1 : 0) + (af.len !== "any" ? 1 : 0) + (af.sortBy !== DEF.sortBy ? 1 : 0) + ["gain", "trip", "elev", "prom"].filter(k => af[k] && af[k] !== "any").length + (af.near ? 1 : 0);
@@ -388,7 +392,7 @@ export default function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElev
       </div>
       {/* Compact rows and Export CSV sit UNDER the pinned bar, not in it (owner, 2026-11-14: "move the export csv lower so
           that it doesn't stick when you scroll. same with compact rows"): they scroll away with the results. */}
-      {mode === "routes" && !needsArea && wide && all.length ? <div style={{ display: "flex", gap: 8, alignItems: "center", margin: "10px 0 0" }}><button onClick={toggleCompact} aria-pressed={compact} style={btnChip(C, compact)}>Compact rows</button><button onClick={() => downloadCsv("climbmatch-route-finder-" + new Date().toISOString().slice(0, 10), ["Climb", "Grade", "Discipline", "Pitches", "Stars", "Area", "Wall or area"], all.map(r => [r.name, rowGrade(r) === "—" ? "" : rowGrade(r), r.discipline ? discLabel(r.discipline) : "", r.pitches > 0 ? r.pitches : "", r.stars != null ? Math.round(r.stars * 10) / 10 : "", trailOf(r.area_id).map(c => c.name).join(" › "), (areaNames && areaNames[r.area_id]) || ""]))} title="The loaded results as a spreadsheet" style={{ ...BTN_SECONDARY(C), padding: "6px 11px", fontSize: 12.5 }}>{"Export CSV (" + all.length + ")"}</button></div> : null}
+      {mode === "routes" && !needsArea && wide && all.length ? <div style={{ display: "flex", gap: 8, alignItems: "center", margin: "10px 0 0" }}><button onClick={toggleCompact} aria-pressed={compact} style={btnChip(C, compact)}>Compact rows</button><button onClick={() => downloadCsv("climbmatch-route-finder-" + new Date().toISOString().slice(0, 10), ["Climb", "Grade", "Discipline", "Pitches", "Stars", "Area", "Wall or area"], all.map(r => [r.name, rowGrade(r) === "—" ? "" : rowGrade(r), r.discipline ? discLabel(r.discipline) : "", r.pitches > 0 ? r.pitches : "", r.stars != null ? Math.round(r.stars * 10) / 10 : "", trailOf(r.area_id).map(c => c.name).join(" › "), (areaNames && areaNames[r.area_id]) || ""]))} title="The loaded results as a spreadsheet" style={{ ...BTN_SECONDARY(C), padding: "6px 11px", fontSize: 12.5 }}>{/* It exports what is LOADED: "(40)" under "703 routes" read as a different count. */"Export CSV (" + (total != null && total > all.length ? all.length + " of " + total.toLocaleString() + " loaded" : all.length) + ")"}</button></div> : null}
       {loc.id !== scope.id ? (
         <div style={{ display: "flex", alignItems: "center", gap: 8, margin: "10px 0 2px", fontSize: 12.5, color: C.textSub }}>
           <span style={{ flex: 1, minWidth: 0, overflowWrap: "anywhere" }}>{"In " + loc.name + ", " + scope.name}</span>
@@ -440,12 +444,12 @@ export default function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElev
         return <Fragment key={r.id}>
           {head ? (
             <div style={{ display: "flex", alignItems: "center", gap: 8, margin: i ? "16px 0 8px" : "10px 0 8px" }}>
-              <button onClick={() => onJumpToArea({ id: r.area_id, name: wall || "" })} style={{ ...BTN_LINK(C), flex: 1, minWidth: 0, textAlign: "left", padding: "3px 0", fontSize: 13.5, fontWeight: 800, color: C.text, overflowWrap: "anywhere" }}>{trailOf(r.area_id).length ? <span style={{ display: "block", fontSize: 12, fontWeight: 600, color: C.textSub, marginBottom: 2 }}>{trailOf(r.area_id).map(c => c.name).join(" › ")}</span> : null}{(wall || "This wall") + " ›"}</button>
+              <button onClick={() => onJumpToArea({ id: r.area_id, name: wall || "" })} style={{ ...BTN_LINK(C), flex: 1, minWidth: 0, textAlign: "left", padding: "3px 0", fontSize: 13.5, fontWeight: 800, color: C.text, overflowWrap: "anywhere" }}>{shownTrailOf(r.area_id).length ? <span style={{ display: "block", fontSize: 12, fontWeight: 600, color: C.textSub, marginBottom: 2 }}>{shownTrailOf(r.area_id).map(c => c.name).join(" › ")}</span> : null}{(wall || "This wall") + " ›"}</button>
               {onToggleBookmark ? <button onClick={() => onToggleBookmark(r.area_id)} aria-label={booked ? "Remove " + (wall || "this wall") + " from Saved" : "Save " + (wall || "this wall")} style={savePill(booked)}>{booked ? "★ Saved" : "☆ Save area"}</button> : null}
             </div>
           ) : null}
           <div style={{ display: "flex", gap: 6, alignItems: "stretch" }}>
-            <RouteRow r={r} onOpen={onOpen} C={C} areaName={GROUPED_SORTS[af.sortBy] ? null : [...trailOf(r.area_id).map(c => c.name), wall].filter(Boolean).join(" › ") || null} savedMark={!onToggleWish} dense={wide && compact} />
+            <RouteRow r={r} onOpen={onOpen} C={C} areaName={GROUPED_SORTS[af.sortBy] ? null : [...shownTrailOf(r.area_id).map(c => c.name), wall].filter(Boolean).join(" › ") || null} savedMark={!onToggleWish} dense={wide && compact} />
             {onToggleWish ? <button onClick={() => setSaveFor({ ...r, wall })} aria-haspopup="dialog" aria-label={"Save " + r.name + (saved ? ", saved" : "")} style={{ ...CHIP, flexShrink: 0, width: 44, marginBottom: 8, padding: 0, fontSize: 17, cursor: "pointer", border: "1px solid " + (saved ? C.blue : C.border), background: saved ? C.blueBg : C.card, color: saved ? C.onSolid : C.textSub }}><span aria-hidden="true">{saved ? "★" : "☆"}</span></button> : null}
           </div>
         </Fragment>;
