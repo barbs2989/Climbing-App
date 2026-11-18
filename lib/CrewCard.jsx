@@ -100,8 +100,9 @@ export default function CrewCard({blocked,crew,areaById,onOpenArea,onDisband,onL
      "<yours> — aligned". A crew with a database row reads crew_alignment's counts instead (nobody is
      named: the questionnaire promises group counts only); a demo crew keeps the roster values. */
   const riskSum=(()=>{const a=alignQ.data;const L={conservative:"Conservative",moderate:"Moderate",aggressive:"Aggressive"};
-    if(a){const cnt=[["conservative",a.risk_conservative||0],["moderate",a.risk_moderate||0],["aggressive",a.risk_aggressive||0]].filter(x=>x[1]>0);const answered=cnt.reduce((t,x)=>t+x[1],0);const total=a.member_count||inCrew.length;
+    if(a){const cnt=[["conservative",a.risk_conservative||0],["moderate",a.risk_moderate||0],["aggressive",a.risk_aggressive||0]].filter(x=>x[1]>0);/* WHO answered comes from done_ids; the counts stay zero until two have (0451), so one answer is never shown as the crew's. */const answered=Array.isArray(a.done_ids)?a.done_ids.length:cnt.reduce((t,x)=>t+x[1],0);const total=a.member_count||inCrew.length;
       if(!answered)return {tone:"none",title:"Risk tolerance: not answered yet",sub:"It's the first question of the safety check — each of you answers privately; the crew sees counts only."};
+      if(answered<2||!cnt.length)return {tone:"none",title:"Risk tolerance: shows once 2 of you have answered",sub:answered+" of "+total+" answered so far. Until a second climber answers, the crew sees nothing — one answer would show whose it is."};
       const part=answered<total?(answered+" of "+total+" answered"):null;
       if(cnt.length>1)return {tone:"mixed",title:"Mixed risk tolerance",sub:cnt.map(x=>x[1]+" "+L[x[0]]).join(" · ")+(part?" · "+part:"")+" — talk it through before you commit."};
       return {tone:answered<total?"partial":"aligned",title:"Risk tolerance: "+(answered<total?"so far ":"all ")+L[cnt[0][0]],sub:part?part+" — waiting on the rest.":"Everyone answered the same. Aligned."};}
