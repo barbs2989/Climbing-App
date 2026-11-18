@@ -74,6 +74,21 @@ Owner: "try peakbagger again", "keep going", "use more agents". Peakbagger loade
 - **Still open:** 134 held, 149 stuck (`verified.json`). What would move them: OSM placements once the
   Overpass servers recover (83 hold only for a coordinate), and SummitPost (still 403).
 
+## Third batch (same day): OSM placements via Nominatim
+Owner: "keep going". The Overpass servers stayed down, but Nominatim answered. One query per held route
+(its named trailhead, inside a box around the peak, 1.5 s apart; trailhead / parking features only) found
+OSM features for 26 of 103 routes (`osm-names.json`). Matching now compares our name's MAIN part
+("The Garden Trailhead (Keene Valley)" → "The Garden Trailhead"; "Silver Creek/Grizzly Gulch" → "Silver
+Creek"), so a true name match is no longer refused for a parenthetical; true mismatches stay held (Crown
+Valley vs Rancheria, Big Meadow vs Manter Meadow, St. Huberts vs Roaring Brook, Holden vs 10 Mile Falls).
+- **Applied: 13 trailheads** (`batch3.json`, 13 of 13 re-read): Kite Lake (Buckskin, Democrat, Lincoln),
+  Silver Creek (Redcloud, Sunshine, UN 13,820, UN 13,838), Argentine Pass (Edwards), The Garden (Basin,
+  Haystack, Saddleback), Rancheria (Tunemah, locked), Riley Camp (Adams Pinnacle Glacier Headwall, locked).
+  Every one is an OSM trailhead node or parking area carrying that exact name.
+- Held by hand again: Himmelhorn Stonehenge / Wild Hair Crack (the only OSM point is the Goodell Creek
+  campground). Adams's evidence went in ledger-only for the jsonb key-order MISMATCH noted above.
+- **Audit after three batches:** TRAILHEAD_AND_SUMMIT 750 → 931, SUMMIT_ONLY 434 → 265, NO_SUMMIT 53 → 41.
+
 ## Files
 `BRIEF*.md` (the three agent briefs) · `chunks/` + `out/` (first pass, 20 chunks) · `chunks2/` + `out2/`
 (second pass, 23 chunks) · `gnis.json` · `verified.json` · `batch.json` (exactly what was applied, with its
