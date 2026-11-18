@@ -99,7 +99,7 @@ export interface RealClimberRowProps {
   onVouches?: ((c: RealClimberCand) => void) | null;
   /** Shared objectives, Invite to your crew, mutual friends -- drawn by the list, under the bio. */
   extras?: ReactNode;
-  /** The blue line under the name when they list no areas; null hides it. */
+  /** The blue line under the name when they list no areas ("Wants this climb"); none by default -- "Suggested match" on every card said nothing (audit 2026-11-18). */
   tag?: string | null;
 }
 
@@ -142,12 +142,12 @@ export default function RealClimberRow({p,onOpen,objIds,objErr,verified,listing,
   const fst=friendState?friendState(p.id):null;const _fs=fst==="friends"?{bg:C.greenBg,fg:C.green,bd:C.greenDim}:fst==="out"?{bg:C.amberBg,fg:C.amber,bd:C.amber}:fst==="in"?{bg:C.green,fg:C.onBright,bd:C.green}:{bg:C.blueSolid,fg:C.onSolid,bd:C.blueSolid};
   return <div key={p.id} data-real-climber-card="" style={{background:C.card,borderRadius:16,padding:"16px 16px",marginBottom:24,border:"1px solid "+C.borderHi,boxShadow:"0 1px 3px rgba(0,0,0,0.28)"}}>
     <div style={{display:"flex",gap:12,alignItems:"flex-start",marginBottom:12}}>
-      <span {...(_open?clickable(_open):{})} aria-label={_open?"Open "+_nm+"’s profile":undefined} style={{cursor:_open?"pointer":"default",flexShrink:0}}><Av src={p.avatar} size={52} online={online}/></span>
+      <span {...(_open?clickable(_open):{})} /* The photo opens the profile by mouse; the NAME beside it is the one keyboard / screen-reader stop, so the same profile is not announced twice per card (audit 2026-11-18). */ tabIndex={-1} aria-hidden="true" style={{cursor:_open?"pointer":"default",flexShrink:0}}><Av src={p.avatar} size={52} online={online}/></span>
       <div style={{flex:1,minWidth:0}}>
         <div style={{display:"flex",alignItems:"center",gap:6,flexWrap:"wrap",marginBottom:2}}><span {...(_open?clickable(_open):{})} style={{display:"inline-flex",alignItems:"center",minHeight:24,fontWeight:700,fontSize:15,cursor:_open?"pointer":"default",overflowWrap:"anywhere"}}>{_nm}</span>{verified===true?<span title="Verified climber" style={{color:C.green,fontSize:12,fontWeight:700}}>✓</span>:null}</div>
         {/* @handle (when the name shows instead), level and years on ONE line, as the example card read "Expert · 18yr". */(function(){const sub=[(p.username&&_nm!=="@"+p.username)?"@"+p.username:null,level||null,years?years+"yr":null].filter(Boolean);return sub.length?<div style={{fontSize:12,color:C.text,marginBottom:4,overflowWrap:"anywhere"}}>{sub.join(" · ")}</div>:null;})()}
         {_free?<div style={{fontSize:11.5,fontWeight:800,color:C.green,marginBottom:3}}>{"● Free this weekend"}</div>:null}
-        {_lstLine?<div style={{fontSize:11.5,color:C.blue,fontWeight:700,overflowWrap:"anywhere"}}>{_lstLine}</div>:(tag===null?null:<span style={{fontSize:11.5,fontWeight:700,color:C.blue}}>{tag||"Suggested match"}</span>)}
+        {_lstLine?<div style={{fontSize:11.5,color:C.blue,fontWeight:700,overflowWrap:"anywhere"}}>{_lstLine}</div>:(tag?<span style={{fontSize:11.5,fontWeight:700,color:C.blue}}>{tag}</span>:null)}
       </div>
       {!_objReady?<div style={{flexShrink:0,maxWidth:96,textAlign:"center",fontSize:11,color:objErr?C.amber:C.textSub,lineHeight:1.35}}>{objErr?"Couldn’t load their objectives to score a match":"Scoring match…"}</div>:_unk>=3?<div style={{flexShrink:0,maxWidth:96,textAlign:"center",fontSize:11,color:C.textSub,lineHeight:1.35}}>Not enough shared info to score a match</div>:<div title={"Match % blends your shared objectives and listed areas, grade range, disciplines, availability overlap and whether they are verified"+(_unk?" · based on limited info":"")} style={{flexShrink:0,textAlign:"center",background:_band.bg,borderRadius:13,padding:"7px 10px",border:"1px solid "+_band.bd,minWidth:52}}><div style={{fontSize:18,fontWeight:800,color:_band.fg,lineHeight:1}}>{_sc}%</div><div style={{fontSize:10.5,color:_band.fg,marginTop:3,textTransform:"uppercase",letterSpacing:0.6}}>match</div></div>}
     </div>
