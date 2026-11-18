@@ -114,6 +114,11 @@ Part of the guard notes — see [README.md](README.md) for the full index.
       float-plan toast reads *"ClimbMatch can't alert anyone for you"* and the form says what you
       type stays on your phone. The two **legal** surfaces were the ones contradicting it — so a
       climber comparing them would trust the wrong one, since a policy reads as the authority.
+    - **RE-AIMED to `crew_float_filings` (0450, 2026-11-18).** The crew-readable record is now one row per
+      member, written by `setMyFloatFiling`; §5 lifts its keys from `fileCrewFloatPlan`'s `const _mine=…` and adds an
+      OWN-ROW test: ClimbMatch.jsx (comments masked) must take the table off the crews read in exactly one place that
+      keeps `user_id===uid`, and no other lib/ or src/ file may name it (lib/db.js exempt). An injected `return !!x`
+      in that mapping fails it. The policy sentence (members CAN read it; no screen shows it) is unchanged.
     - **BOTH PREMISES ARE DERIVED, so section 5 INVERTS rather than rotting** — the two-directional
       shape `check:profile-claims` and §4b already use. Settability comes from the `profiles`
       snapshot and the editor's own draft; *is the plan rendered* comes from **the write**: the
