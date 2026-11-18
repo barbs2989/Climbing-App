@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState, type RefObject } from "react";
 import { C } from "../../ClimbMatchCore.jsx";
 import { useWideScreen } from "../../lib/wideLayout.js";
+import { scrollBelowPinned } from "../../lib/pinnedTop.js";
 
 export interface SectionJumpsProps {
   /** The tab's content element; the jump row scans its headings and re-scans as they change. */
@@ -58,21 +59,8 @@ export default function SectionJumps({ rootRef, tabKey }: SectionJumpsProps) {
     const h = els.current[i];
     if (!h || !h.isConnected) return;
     /* Land BELOW whatever is pinned at the top of the screen (the app bar is sticky, 59px), not under it: a fixed 12px margin hid the heading it jumped to (owner, 2026-10-21). Measured at tap time, so a taller bar (a notch inset, a banner) is cleared too. */
-    let bar = 0;
-    try {
-      /* Probed twice: the app bar, then whatever is pinned right under it (the route page's sub-tab bar, since 2026-11-04). */
-      for (let pass = 0; pass < 2; pass++) {
-        let found = 0;
-        for (let el: Element | null = document.elementFromPoint((window.innerWidth || 0) / 2, bar + 1); el && el !== document.body; el = el.parentElement) {
-          const pos = getComputedStyle(el).position;
-          if ((pos === "sticky" || pos === "fixed") && !el.contains(h)) { const b = el.getBoundingClientRect().bottom; if (b > bar && b < (window.innerHeight || 0) / 2) found = b; break; }
-        }
-        if (!found) break;
-        bar = found;
-      }
-    } catch { /* elementFromPoint before layout: fall back to the plain 12px margin */ }
-    h.style.scrollMarginTop = (Math.round(bar) + 12) + "px";
-    h.scrollIntoView({ behavior: "auto", block: "start" });
+    /* Probed twice: the app bar, then whatever is pinned right under it (the route page's sub-tab bar, since 2026-11-04) — lib/pinnedTop.js. */
+    scrollBelowPinned(h);
     if (h.animate) h.animate([{ backgroundColor: C.blueDim, boxShadow: "0 0 0 6px " + C.blueDim }, { backgroundColor: "transparent", boxShadow: "0 0 0 6px transparent" }], { duration: 1200, easing: "ease-out" });
     if (!h.hasAttribute("tabindex")) h.setAttribute("tabindex", "-1");
     try { h.focus({ preventScroll: true }); } catch { /* an element that cannot take focus: the jump still happened */ }
