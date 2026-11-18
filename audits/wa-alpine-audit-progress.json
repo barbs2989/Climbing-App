@@ -2,10 +2,10 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 9,
-  "last_processed_id": "wa_big_kangaroo_going_down_under",
+  "last_processed_id": "wa_big_snow_mountain_north_slope_dingford_route",
   "total_in_scope_last_count": 751,
   "total_wa_alpine_or_mountaineering_tagged": 857,
-  "pass_note": "Batch 557 continued id-ascending from wa_bears_breast_mountain_timeless_treasure: Prusik Peak (Beckey-Davis), Big Kangaroo (Beckey-Tate, Going Down Under), Morning Star Peak (Beyond Redlining, on Vega North Tower / Eros Tower), Big Craggy Peak (Standard Scramble), and Big Four Mountain (Northwest Ridge, Spindrift Couloir, Tower Route) -- 8 routes across 5 peaks. Prusik Peak's 8008 ft matches the modern LiDAR figure on listsofjohn.com and Peakbagger-sourced Wikipedia (older pre-LiDAR contour sources give 7857-8000 ft, not a contradiction); its Beckey-Davis FA (south face, June 29 1962) is confirmed by Mountain Project and the 1963 AAJ note. Big Kangaroo's Beckey-Tate FA (5/29/1967) is confirmed verbatim by Mountain Project and a trip report; its stored 8326 ft elevation matches Wikipedia/Peakbagger-cited figures, though a newer theodolite+LiDAR survey (countryhighpoints.com) gives 8318 ft and older Mountaineers/Mountain Project pages use 8280 ft -- normal datum/survey spread across sources, not flagged. Big Craggy Peak's 8478 ft matches Wikipedia/PeakVisor (a dedicated survey gives the east summit as 8473.1 ft, within normal rounding). Big Four Mountain's 6170 ft sits inside the commonly-cited 6160-6180 ft range (Wikipedia/SummitPost/TopoZone); its Spindrift Couloir FA (Bart Paull and Doug Littauer, March 2 1996, north face, 5.9) is confirmed verbatim by the 1996 AAJ account via AAC publications. Big Four's Northwest Ridge FA (Forest Farr and Art Winder, July 19 1931) matches the only source found (Wikipedia, repeated via mirrors) but could not be cross-verified against a second independent source -- not contradicted, not re-flagged. New flag: wa_big_four_mountain_tower_route's FA, stored as 'Ben Guydelkon and Ron Miller, July 25, 1972', returned zero corroboration in either direction -- one trip report mentions an unattributed 'Tower Route' on the NE Ridge but names no climbers, and 'Ben Guydelkon' is an unusual name that did not surface in any climbing-history source, raising the possibility of a transcription artifact; left for a human to check against the original ingestion source, no SQL written. Beyond Redlining (2020 FA, Vega North Tower under the Morning Star Peak area) and Going Down Under (2012 FA, Big Kangaroo) are obscure modern routes that returned no hits either way and were not flagged, per the rule against flagging what can't be checked. total_wa_alpine_or_mountaineering_tagged not re-counted this run; carried over unchanged.",
+  "pass_note": "Batch 558 continued id-ascending from wa_big_kangaroo_going_down_under: Big Kangaroo (Kearney-Thomas, Skinny Start, Walkabout, West Face), Big Snagtooth (West Ridge / Standard Route), and Big Snow Mountain (East Buttress, East Ridge/Hardscrabble Route, North Slope/Dingford Route) -- 8 routes across 3 peaks. Fixed one confirmed error: Big Snagtooth's area elevation_ft (8379) and its West Ridge route's own summit waypoint elevFt (8379) both disagreed with a 2023 theodolite survey (8374.3 ft) and with that same route's high_point_ft and the SAME waypoint's own elev field (both already 8374) -- see audits/sql/2026-11-18-batch-558.sql. Walkabout's 9 pitches / 259 m (~850 ft) and West Face's FA (Beckey/Beckey/Varney, June 21 1942, 5.6, 3 pitches) matched outside sources (AAJ 'Walkabout' account; Mountain Project) exactly. Big Snagtooth's FA (Beckey, O'Neil, Welsh, Sept 29 1946) is corroborated by the AAJ 1948 'First Ascents in the Cascades' report. Big Snow Mountain's 6680 ft (area and all three routes) matched Wikipedia/Peakbagger/PeakVisor; its North Slope route's Myrtle Lake waypoint (3777 ft) matched Wikipedia (3779 ft) within rounding. Flagged for human review: Kearney-Thomas's stored pitch count (7) vs. Mountain Project's dedicated route page (8 pitches) -- grade matches exactly (5.11a) so it's the same route, but only one outside source was found, so not auto-fixed. Skinny Start returned no dedicated source either way and was not flagged. Big Snow Mountain's East Buttress, East Ridge (Hardscrabble), and North Slope (Dingford) routes themselves (grade/FA/approach) returned no specific first-ascent corroboration beyond the shared peak facts above and were not flagged -- consistent with the peak's own sparse route documentation online.",
   "batches": [
     {
       "batch_number": 1,
@@ -11068,6 +11068,25 @@
       "flagged_for_human_review": 1,
       "clean": 7,
       "sql_file": null
+    },
+    {
+      "batch_number": 558,
+      "date": "2026-11-18",
+      "pass": 9,
+      "route_ids": [
+        "wa_big_kangaroo_kearney_thomas",
+        "wa_big_kangaroo_skinny_start",
+        "wa_big_kangaroo_walkabout",
+        "wa_big_kangaroo_west_face",
+        "wa_big_snagtooth_west_ridge",
+        "wa_big_snow_mountain_east_buttress",
+        "wa_big_snow_mountain_east_ridge_hardscrabble_route",
+        "wa_big_snow_mountain_north_slope_dingford_route"
+      ],
+      "confirmed_errors_fixed": 1,
+      "flagged_for_human_review": 1,
+      "clean": 6,
+      "sql_file": "audits/sql/2026-11-18-batch-558.sql"
     }
   ],
   "outage_runs": [

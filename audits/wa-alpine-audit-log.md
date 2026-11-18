@@ -39217,3 +39217,47 @@ not flagged.
 
 0 confirmed errors fixed, 1 newly flagged for human review, 7 clean.
 Next batch will continue id-ascending from `wa_big_kangaroo_going_down_under` (pass 9).
+
+## 2026-11-18 — Batch 558 (pass 9)
+
+Checked Big Kangaroo (Kearney-Thomas, Skinny Start, Walkabout, West Face), Big Snagtooth (West
+Ridge / Standard Route), and Big Snow Mountain (East Buttress, East Ridge/Hardscrabble Route,
+North Slope/Dingford Route) — 8 routes across 3 peaks, id-ascending from
+`wa_big_kangaroo_going_down_under`.
+
+**Confirmed error fixed (1):** `wa_big_snagtooth` — the area's `elevation_ft` (8379) and its own
+West Ridge route's summit waypoint `elevFt` (also 8379) both disagreed with a 2023 theodolite
+survey (Country High Points: 8374.3 ft) and with that same route's `high_point_ft` and the very
+same waypoint object's `elev` field, which were already 8374. Both numbers were the outliers
+against the modern survey and against the rest of the row. Fixed in
+`audits/sql/2026-11-18-batch-558.sql`.
+
+**Clean (6):** Walkabout's 9 pitches and 259 m (~850 ft) match an AAC "Big Kangaroo, south face,
+Walkabout" account almost exactly (ground-up FA, IV 5.11 A2, 850'). West Face's FA (Fred Beckey,
+Helmy Beckey, Walt Varney, June 21 1942, 5.6, 3 pitches, 200 ft) matches Mountain Project
+verbatim. Big Snagtooth's West Ridge FA (Beckey, O'Neil, Welsh, Sept 29 1946) is corroborated by
+the AAJ 1948 "First Ascents in the Cascades" report, which places the same three climbers at
+Snagtooth Ridge in Sept 1946 with a summit push beginning at daybreak on the 29th. Big Snow
+Mountain's 6,680 ft (the area row and all three of its routes here) matches Wikipedia/Peakbagger
+and PeakVisor; the North Slope route's Myrtle Lake waypoint (3,777 ft) matches Wikipedia's 3,779
+ft within normal rounding.
+
+**Flagged for human review (1, new):** `wa_big_kangaroo_kearney_thomas` — stored `pitches: 7`
+vs. Mountain Project's dedicated route page, which lists Kearney-Thomas at 8 pitches. The grade
+matches exactly (5.11a), so it's confirmed to be the same route, but only one outside source gives
+a pitch count, so this isn't auto-fixed — worth checking the Mountain Project page directly.
+
+**Noted, not flagged:** Skinny Start (3 pitches, 259 m) returned no dedicated source in either
+direction — its length happens to match Walkabout's, but that's plausible since both climb the
+same ~800-900 ft south face as Beckey-Tate (900 ft/6p) and South Face (800 ft/8p), not evidence of
+a copy error. Big Snow Mountain's East Buttress, East Ridge (Hardscrabble), and North Slope
+(Dingford) routes returned no first-ascent-level corroboration beyond the shared peak facts above
+— the peak's route documentation online is sparse — so nothing on them was flagged. A stale
+`data_quality` note on Big Kangaroo's West Face (referencing an old id,
+`wa_big_kangaroo_southwest_rib`) is left over from a since-completed rename; the row's actual id is
+already `wa_big_kangaroo_west_face`, matching its content, so the note is stale text, not a live
+error.
+
+1 confirmed error fixed, 1 newly flagged for human review, 6 clean.
+Next batch will continue id-ascending from `wa_big_snow_mountain_north_slope_dingford_route`
+(pass 9).
