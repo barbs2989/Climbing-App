@@ -34,6 +34,9 @@ const Q = "(?:(early|mid|late)(?:[- ]to[- ](?:early|mid|late))?[- ])?";
 const SEP = "\\s*(?:\\([^)]*\\)\\s*)?(?:[-–—]|to|through|thru|into|until)\\s*";
 const RANGE = new RegExp("\\b" + Q + MON + SEP + Q + MON + "\\b", "gi");
 const ONE = new RegExp("\\b" + Q + MON + "\\b", "gi");
+// Each end is ONE group (a month or a season word), so m[1..4] read as Q, end, Q, end like RANGE.
+const END = "((?:" + MON.slice(1) + "|winter|spring|summer|autumn|fall)";
+const SRANGE = new RegExp("\\b" + Q + END + SEP + Q + END + "\\b", "gi");
 const SEASONS = { winter: [11, 0, 1], spring: [2, 3, 4], summer: [5, 6, 7], autumn: [8, 9, 10], fall: [8, 9, 10] };
 const NEG = /\b(avoid|not|except|outside|never)\b/i;
 
@@ -54,6 +57,19 @@ export function monthsOf(text) {
       for (let i = a, g = 0; g < 12; g++, i = (i + 1) % 12) { months.add(i); if (i === b) break; }
       ends.add(a); ends.add(b);
       if (m[1]) partial.add(a); if (m[3]) partial.add(b);
+      rest = rest.replace(m[0], " ");
+    }
+    /* A range with a SEASON at one end: "Late autumn through May" (Colfax's Polish Route, an ice
+       line: header Nov-May, calendar best in April) read as May alone and was reported as sharing
+       no optimal month with its own calendar. The season end is pinned to one month by its
+       qualifier (early = the season's first month, late = its last, none = its first as a start
+       and its last as an end). Coarse, so the result counts as WORDS: used only for no-overlap. */
+    for (const m of rest.matchAll(SRANGE)) {
+      const end = (q, w, isEnd) => { const s = SEASONS[String(w).toLowerCase()]; if (s) { words = true; return /late/i.test(q || "") ? s[2] : /mid/i.test(q || "") ? s[1] : /early/i.test(q || "") ? s[0] : isEnd ? s[2] : s[0]; } return /^may$/.test(w) ? 99 : monthRank(w); };
+      const a = end(m[1], m[2], false), b = end(m[3], m[4], true);
+      if (a > 11 || b > 11 || !(SEASONS[m[2].toLowerCase()] || SEASONS[m[4].toLowerCase()])) continue;
+      for (let i = a, g = 0; g < 12; g++, i = (i + 1) % 12) { months.add(i); if (i === b) break; }
+      ends.add(a); ends.add(b);
       rest = rest.replace(m[0], " ");
     }
     for (const m of rest.matchAll(ONE)) {
@@ -79,6 +95,8 @@ function selftest() {
     ["good in cold weather; avoid May-Sep", "null"],
     ["Year-round", "Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec"],
     ["Mid to late summer", "Jun Jul Aug"],
+    ["Late autumn through May in sustained cold, once the crux dagger has formed", "Jan Feb Mar Apr May Nov Dec"],
+    ["Winter to early spring in a stable spell", "Jan Feb Mar Dec"],
     ["Late August into September", "Aug Sep"],
     ["Jul-Oct; core dry-talus conditions are most reliable August-September", "Jul Aug Sep Oct"],
     ["you may go in July", "Jul"],

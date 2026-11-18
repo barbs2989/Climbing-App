@@ -13,6 +13,18 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   (`scripts/oneoff/fix-optimal-season-2026-11-18.mjs`, rollback `audits/optimal-season/`); the
   rest were researched and HELD on thin or split evidence (Tye Peak, Goode NE Face, Forbidden NE
   Face, Adams Wilson/Lava headwalls behind the Yakama Jul-Oct permit, Snowking's two seasons).
+  - **Second pass, same day (owner "keep going")**: a wider research round found 2+ agreeing
+    sources for six of the held lines, fixed by `scripts/oneoff/fix-optimal-season-2026-11-18-b.mjs`
+    (Adams North Ridge Jun-mid Jul, Adams Lava Headwall May-Jun, Tye Peak to its winter snow season
+    — header, window AND calendar — Honeymoon Route May-Jun, Mount Lawson Late Jun-Sep, Whatcom
+    South Spur's August). Still held, and **two are route identity, not season**: Adams "Wilson
+    Glacier Headwall" is a known RAINIER route name and no source knows one on Adams; Goode
+    "Northeast Face" turns up only the NE Buttress. Forbidden "Northeast Face" is ambiguous (the
+    old name of the normal summer traverse, or a direct ice face); Snowking (glacier vs west
+    ridge) and South Twin Sister (sources span May-Oct to year-round) stay low.
+  - A range can START or END on a season word ("Late autumn through May" on Colfax's Polish
+    Route); read as May alone, it was a false finding. `SRANGE` pins the season end to one month
+    by its qualifier and marks the result as words.
   - **A regex over the window is the trap.** The first draft read "August and September" as
     August alone, "Late May (ski) through August" as May, and "nearly year-round" as year-round:
     34 of its 36 window-vs-calendar flags were its own. `--selftest` pins those shapes. A risky
