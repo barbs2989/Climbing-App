@@ -85,7 +85,7 @@ npm run check:message-delivery # a message from a SECOND real account arrives, a
 npm run check:block-guarantees # blocked: cannot read, message or crew-invite you (2 real accounts; hand-run)
 npm run check:new-climber-journey # a new climber onboards, opens a crew, removes a friend — did any of it reach the DB? (hand-run)
 npm run check:overlay-scroll # no overlay pane may chain its scroll to the page behind
-npm run check:pinned-dismiss # a popup's ✕ / ← Back stays on screen, and tappable, scrolled to the end
+npm run check:pinned-dismiss # a popup's ✕ / ← Back stays on screen, and tappable, scrolled to the end; and a popup OPENS at its top unless it edits one field
 npm run check:overlay-fullscreen # on a phone every popup COVERS the screen as a page; the app behind never shows through
 npm run check:a11y-badges # no control announces two fragments welded into one token
 npm run check:selected-state # a control that LOOKS selected must SAY it is selected
