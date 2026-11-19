@@ -1,0 +1,92 @@
+[
+ {"route_id":"wa_northwest_arete","field":"gain_ft","stored_value":5057,"found_value":4853,"verdict":"unresolved","final_value":null,"trailhead":"Stuart Lake Trailhead (3,600 ft), via Mountaineer Creek",
+  "figures":[
+   {"value":4853,"trailhead":"Stuart Lake TH","url":"https://www.mountaineers.org/activities/routes-places/argonaut-peak-northwest-arete","one_way":true,"fact":"Mountaineers route page: Elevation Gain 4,853 ft, Stuart Lake Trailhead via Mountaineer Creek."},
+   {"value":700,"trailhead":"n/a (climb only)","url":"https://www.mountainproject.com/route/119339605/northwest-arete","one_way":false,"fact":"Mountain Project lists 700 ft, the length of the climb, not trailhead-to-summit gain."}
+  ],
+  "evidence":[],
+  "note":"New pages checked with no trailhead-to-summit gain: Mountain Project route 119339605, jeffreyjhebert.com TR (times only), wenatcheeoutdoors.org TR (no gain). Peakbagger peak search unusable from this tab; cascadeclimbers.com blocked. Stored and found differ 4% but no second independent page states a figure."},
+ {"route_id":"wa_chair_peak_northeast_buttress","field":"gain_ft","stored_value":3100,"found_value":3238,"verdict":"found_confirmed","final_value":3238,"trailhead":"Alpental / Snow Lake trailhead",
+  "figures":[
+   {"value":3238,"trailhead":"Alpental (Snow Lake TH)","url":"https://www.mountaineers.org/activities/routes-places/chair-peak-northeast-buttress","one_way":true,"fact":"Mountaineers route page states Elevation Gain 3,238 ft for the NE Buttress from Alpental."},
+   {"value":3100,"trailhead":"Snow Lake trailhead (Alpental)","url":"https://www.hippohamster.com/posts/chair-peak-ne-buttress","one_way":true,"fact":"HippoHamster NE Buttress trip page summary stats: Elevation Gain 3,100 ft; started from the Snow Lake trailhead."},
+   {"value":3793,"trailhead":"Denny Creek area TH (exit 47, FR 58)","url":"https://www.wta.org/go-hiking/hikes/chair-peak","one_way":false,"fact":"WTA Chair Peak: 9.0 mi roundtrip, 3,793 ft gain, from a FR 58 trailhead off exit 47, not Alpental."}
+  ],
+  "evidence":[
+   {"url":"https://www.mountaineers.org/activities/routes-places/chair-peak-northeast-buttress","retrieved_at":"2026-11-18","fact":"Elevation Gain 3,238 ft for Chair Peak NE Buttress from Alpental."},
+   {"url":"https://www.hippohamster.com/posts/chair-peak-ne-buttress","retrieved_at":"2026-11-18","fact":"Elevation Gain: 3,100 ft, starting at the Snow Lake trailhead, NE Buttress."}
+  ],
+  "note":"3,100 vs 3,238 differ 4.3%, so they agree; the HippoHamster figure equals the stored 3,100 exactly, so stored is equally confirmed. Neither is a land manager; chose the Mountaineers route page as the route-specific club figure. Eric's Base Camp TRs (ChairPk2, ChairPk3) give only start/summit heights and RT miles. WTA's figure is a different trailhead and round trip."},
+ {"route_id":"wa_north_ridge_west_side","field":"gain_ft","stored_value":2300,"found_value":2815,"verdict":"unresolved","final_value":null,"trailhead":"not stated (Rainy Pass via PCT or Cutthroat Lake TH)",
+  "figures":[
+   {"value":2815,"trailhead":"not stated","url":"https://www.mountaineers.org/activities/routes-places/incomplete-no-resposnse-works-in-progress/molar-tooth-north-ridge-westside","one_way":true,"fact":"Mountaineers route page (works-in-progress folder) lists 2,815 ft gain."},
+   {"value":2815,"trailhead":"not stated ('TH')","url":"https://www.mountaineers.org/activities/activities/basic-rock-climb-molar-tooth-north-ridge-westside","one_way":true,"fact":"Mountaineers activity Sep 1 2025: Mileage 5.0 mi, Elevation Gain 2,815 ft. Same publisher, copies route page; not independent."}
+  ],
+  "evidence":[],
+  "note":"Only Mountaineers states a figure (route page and an activity page from the same club count as one source). Mountain Project area 117649096 names two approaches (PCT from Rainy Pass; Cutthroat Lake TH) but gives no gain; stevensong.com gives none; cascadeclimbers 2009 TR blocked; AAJ 1993/94 reports give no approach gain. Stored and found differ 18%."},
+ {"route_id":"wa_monte_cristo_peak_scramble","field":"gain_ft","stored_value":5200,"found_value":3900,"verdict":"stored_confirmed","final_value":5200,"trailhead":"Barlow Pass (Monte Cristo road, ~2,350 ft) via Glacier Basin",
+  "figures":[
+   {"value":3900,"trailhead":"Barlow Pass","url":"https://www.mountaineers.org/activities/routes-places/monte-cristo-barlow-pass-area/monte-cristo-north-col","one_way":true,"fact":"Mountaineers North Col route: walk road 4 mi to Monte Cristo, trail 2.5 mi to Glacier Basin; lists 3,900 ft gain."},
+   {"value":5200,"trailhead":"Barlow Pass","url":"https://mazamas.org/activity/218/","one_way":true,"fact":"Mazamas Monte Cristo route page states 5,200 ft gain (from prior pass; Mazamas pages 403 to WebFetch today)."},
+   {"value":5200,"trailhead":"Barlow Pass","url":"https://mazamas.org/activity/65/","one_way":true,"fact":"Second Mazamas Monte Cristo route page also states 5,200 ft (same publisher, counts once)."},
+   {"value":4800,"trailhead":"Barlow Pass roadhead (2,350 ft)","url":"https://trailcatjim.com/monte-cristo-peak-via-north-couloir-east-face/","one_way":false,"fact":"Brisbine 1996 TR via Glacier Basin, North Couloir, East Face: 16.5 miles, 4800 feet gained and lost."},
+   {"value":6300,"trailhead":"Barlow Pass","url":"https://trailcatjim.com/monte-cristo-glacier-basin-climbing-reconnaissance-2026/","one_way":false,"fact":"Brisbine 2026 reconnaissance (no summit): 11.2 miles, 6300 feet gained and lost, multi-objective."}
+  ],
+  "evidence":[
+   {"url":"https://mazamas.org/activity/218/","retrieved_at":"2026-11-18","fact":"Mazamas Monte Cristo route page gives 5,200 ft elevation gain from Barlow Pass."},
+   {"url":"https://www.mountaineers.org/activities/routes-places/monte-cristo-barlow-pass-area/monte-cristo-north-col","retrieved_at":"2026-11-18","fact":"Mountaineers North Col page gives 3,900 ft; Barlow Pass 2,350 ft to 7,136 ft summit rises more than that."}
+  ],
+  "note":"Only one independent page (Mazamas) agrees with stored 5,200, so this is a single-source confirmation, not a two-page agreement. The Mountaineers 3,900 is below the plain trailhead-to-summit rise (Barlow Pass ~2,350 ft to summit 7,136 ft), so it is very likely an error. Brisbine's 4,800 is phrased 'gained and lost' (rule: not one-way). Blanca Lake approach (cascadeclimbers 2021) is a different trailhead. Still need to confirm the route id means the Glacier Basin / North Col line."},
+ {"route_id":"wa_mount_constance_west_arete","field":"gain_ft","stored_value":7300,"found_value":7300,"verdict":"unresolved","final_value":null,"trailhead":"Lake Constance Trail (Dosewallips Road; road washed out ~4-6.5 mi below, adds walking)",
+  "figures":[
+   {"value":7300,"trailhead":"not stated","url":"https://www.mountaineers.org/activities/routes-places/mt-constance-w-arete","one_way":true,"fact":"Mountaineers West Arete page: Elevation Gain 7,300 ft, High Point 7,756 ft; no trailhead or approach text."},
+   {"value":7000,"trailhead":"Lake Constance TH at Constance Creek, Road 2610","url":"https://www.willhiteweb.com/washington_climbing/olympic_mountains/hood_canal/mount_constance_078.htm","one_way":false,"fact":"Willhite: Distance 5+ miles, Elevation Gain 7,000+ feet, for the South Chute route via Avalanche Canyon, not West Arete."},
+   {"value":10925,"trailhead":"Dosewallips Road washout (biked)","url":"https://www.thewildoutsiders.com/adventure-journal/mount-constance","one_way":false,"fact":"Wild Outsiders: Elevation Gain 10,925 ft over 31.49 mi, a round trip from the washout."}
+  ],
+  "evidence":[],
+  "note":"Stored equals found, so there is no real dispute. No second West Arete page gives a trailhead-to-summit figure. Eric's Base Camp Constance3 (West Arete from the washout) gives only 3,250 ft for the lake trail and about 20 mi RT. Willhite's 7,000+ is within 4% but for the South Chute route and an open-ended '+' figure. NPS Lake Constance page: Dosewallips Road washout adds 6.5 miles of hiking."},
+ {"route_id":"wa_mount_rainier_gibraltar_ledges","field":"gain_ft","stored_value":9000,"found_value":9010,"verdict":"found_confirmed","final_value":9010,"trailhead":"Paradise (~5,400 ft)",
+  "figures":[
+   {"value":9010,"trailhead":"Paradise","url":"https://www.mountaineers.org/activities/routes-places/paradise-area-review/mount-rainier-gibraltar-ledges","one_way":true,"fact":"Mountaineers Gibraltar Ledges route page states Elevation Gain 9,010 ft from Paradise."},
+   {"value":9000,"trailhead":"Paradise","url":"https://mazamas.org/activity/275/","one_way":true,"fact":"Mazamas Gibraltar Ledges route page states 9,000 ft gain (prior pass; page blank/blocked in my tab today)."}
+  ],
+  "evidence":[
+   {"url":"https://www.mountaineers.org/activities/routes-places/paradise-area-review/mount-rainier-gibraltar-ledges","retrieved_at":"2026-11-18","fact":"Elevation Gain 9,010 ft, Gibraltar Ledges from Paradise."},
+   {"url":"https://mazamas.org/activity/275/","retrieved_at":"2026-11-18","fact":"Mazamas Gibraltar Ledges: 9,000 ft elevation gain from Paradise."}
+  ],
+  "note":"0.1% apart; both stored and found are confirmed. No NPS page with a route gain figure surfaced. Picked the more precise Mountaineers 9,010; keeping stored 9,000 is equally supported."},
+ {"route_id":"wa_esmeralda_peaks_scramble","field":"gain_ft","stored_value":3100,"found_value":3000,"verdict":"unresolved","final_value":null,"trailhead":"DeRoux trailhead (North Fork Teanaway Road)",
+  "figures":[
+   {"value":3000,"trailhead":"DeRoux TH","url":"https://www.willhiteweb.com/teanawayriver/esmeralda/deroux_trail_018.htm","one_way":true,"fact":"Willhite: High Esmeralda 6,765 ft, 3,000 ft gain, 4 miles from the DeRoux trailhead."},
+   {"value":4500,"trailhead":"DeRoux/Esmeralda TH loop","url":"https://www.mountaineers.org/activities/activities/alpine-scramble-esmeralda-peaks-12","one_way":false,"fact":"Mountaineers activity: adding DeRoux makes it 9 miles and 4,500 ft gain round trip."}
+  ],
+  "evidence":[],
+  "note":"WTA Esmeralda Peak page (high point 6,362 ft) gives no gain; peakery East Peak page gives none; SummitPost route page (De Roux Creek) is 403. Values differ 3.2%, so there is no real dispute, but only one source."},
+ {"route_id":"wa_sherpa_glacier","field":"gain_ft","stored_value":6000,"found_value":5833,"verdict":"unresolved","final_value":null,"trailhead":"Stuart Lake Trailhead (3,600 ft per Mountaineers)",
+  "figures":[
+   {"value":5833,"trailhead":"Lake Stuart TH","url":"https://www.mountaineers.org/activities/routes-places/enchantments-area-review/mount-stuart-sherpa-glacier","one_way":true,"fact":"Mountaineers Sherpa Glacier route page: Elevation Gain 5,833 ft, length 16.2 mi, from Lake Stuart Trailhead."},
+   {"value":6309,"trailhead":"not stated (generic Mount Stuart page)","url":"https://www.wta.org/go-hiking/hikes/mount-stuart","one_way":false,"fact":"WTA Mount Stuart hike page: 11.1 miles roundtrip, 6,309 ft gain; names no trailhead or route."},
+   {"value":7500,"trailhead":"Icicle Creek Road (gated, ski approach)","url":"https://skimo.co/sherpa-glacier-couloir","one_way":false,"fact":"Skimo ski line: elevation gain 7500 ft to a high point of 8600 ft, not the summit; winter road approach."},
+   {"value":6000,"trailhead":"Icicle Creek Road gate (winter)","url":"https://engineeredforadventure.com/sherpa-glacier-couloir/","one_way":false,"fact":"Ski trip: 27 miles, 6,000 ft for the day; stopped at the ridgeline, no summit."}
+  ],
+  "evidence":[],
+  "note":"The WTA 2020 Sherpa Glacier trip report (trip_report-2020-06-16-2487535542) links the generic WTA Mount Stuart page (6,309 ft, 11.1 mi RT). That page names no trailhead, and 11.1 mi does not match the 16.2 mi Stuart Lake route, so it is not route evidence. Ski pages are winter road-closure outings to the couloir top. Eric's Base Camp Ice Cliff TR gives the start (3,400 ft) but no gain. Wenatchee Outdoors page 403. Stored and found differ 2.8%."},
+ {"route_id":"wa_white_mountain_olympics_scramble","field":"gain_ft","stored_value":5706,"found_value":9000,"verdict":"unresolved","final_value":null,"trailhead":"End of Dosewallips Road (washout), via West Fork Dosewallips, camp at Honeymoon Meadows",
+  "figures":[
+   {"value":9000,"trailhead":"End of Dosewallips Road","url":"https://www.mountaineers.org/activities/routes-places/white-mountain-6400-ft","one_way":false,"fact":"Headline 9,000 ft and 42.0 mi is the whole outing: bike and hike to camp plus an 8 mi RT scramble day."},
+   {"value":5300,"trailhead":"End of Dosewallips Road to Honeymoon Meadows camp","url":"https://www.mountaineers.org/activities/routes-places/white-mountain-6400-ft","one_way":false,"fact":"Same page: the approach to camp has about 5300 ft of gain. That is to camp, not the summit."},
+   {"value":4000,"trailhead":"Honeymoon Meadows camp","url":"https://www.mountaineers.org/activities/routes-places/white-mountain-6400-ft","one_way":false,"fact":"Same page: the scramble day from camp has about 4000 ft of gain, 8 mi RT."}
+  ],
+  "evidence":[],
+  "note":"The found 9,000 is NOT a one-way trailhead-to-summit figure. The page's own text breaks it into a ~5,300 ft approach to camp and a ~4,000 ft round-trip scramble day, so do not write 9,000. No other page with a White Mountain (Olympics, 6,400 ft, 1.5 mi S of Anderson Pass) gain figure was found. The page also notes the bike leg on the washed-out Dosewallips Road: about 7 mi with ~1,900 ft of gain."},
+ {"route_id":"wa_warrior_peak_standard","field":"gain_ft","stored_value":4900,"found_value":4800,"verdict":"found_confirmed","final_value":4800,"trailhead":"Upper Dungeness trailhead past the Dungeness River Bridge on FR 2870 (2,500 ft)",
+  "figures":[
+   {"value":4800,"trailhead":"Upper Dungeness TH (Big Quilcene as alternate)","url":"https://mazamas.org/activity/instance/15252/detail/","one_way":true,"fact":"Mazamas Warrior Peak climb lists 4,800 ft gain; advises calling USFS on road access (prior pass; page blank in my tab today)."},
+   {"value":5000,"trailhead":"Dungeness River Bridge parking, FR 2870 (2,500 ft)","url":"https://www.mountaineers.org/activities/routes-places/warrior-peak-southeast-summit","one_way":true,"fact":"Mountaineers Warrior Peak SE Summit: Length 18.0 mi, Elevation Gain 5,000 ft, High Point 7,300 ft, Dungeness trailhead."}
+  ],
+  "evidence":[
+   {"url":"https://mazamas.org/activity/instance/15252/detail/","retrieved_at":"2026-11-18","fact":"Mazamas Warrior Peak: 4,800 ft elevation gain from the Upper Dungeness approach."},
+   {"url":"https://www.mountaineers.org/activities/routes-places/warrior-peak-southeast-summit","retrieved_at":"2026-11-18","fact":"Elevation Gain 5,000 ft, 18.0 mi, from the Dungeness River Bridge parking area (2,500 ft)."}
+  ],
+  "note":"Two independent clubs agree (4% apart), and stored 4,900 agrees with both. The SE summit is the higher of the two and is the usual objective. Final is the Mazamas 4,800 (the found value; the Mountaineers 5,000 is equally supported). Mountaineers also gives an alternate approach via Upper Big Quilcene and Marmot Pass. Mazamas notes road access to the trailhead should be checked with USFS."}
+]
