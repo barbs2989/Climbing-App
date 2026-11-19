@@ -1,0 +1,332 @@
+{
+ "wa_z_crack_2": {
+  "area": "wa_alphabet_rock",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/105825065/z-crack",
+    "https://www.mountainproject.com/area/105825051/alphabet-rock",
+    "https://www.roy-stevenson.com/rock-climbing.html",
+    "https://www.thecrag.com/en/climbing/world/search?S=Alphabet+Rock",
+    "https://wenatcheeoutdoors.org/?s=Alphabet+Rock",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_02/MapServer/0",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_Wilderness_01/MapServer/0",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/eightmile-campground",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/passes"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.10d",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105825065/z-crack",
+      "fact": "5.10d YDS",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.thecrag.com/en/climbing/world/search?S=Alphabet+Rock",
+      "fact": "theCrag search answered Forbidden in the owner's Chrome (blocked)",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://wenatcheeoutdoors.org/?s=Alphabet+Rock",
+      "fact": "Wenatchee Outdoors has no Alphabet Rock route page (search finds only Givler's Dome and a shade note)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_z_crack_2",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "0 is invalid. MP: Trad, 60 ft; one finger crack from the overhang start to an anchor. One pitch is implied, not stated: ledger after apply unconfirmed, single-source.",
+    "evidence": [
+     "https://www.mountainproject.com/route/105825065/z-crack"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_z_crack_2",
+    "column": "length_m",
+    "from": null,
+    "to": 18,
+    "why": "length_m is empty. MP states 60 ft (18 m). theCrag answers Forbidden in Chrome; Wenatchee Outdoors has no Alphabet Rock page. MP-alone length: locked-1src (single-source) after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/105825065/z-crack",
+     "https://www.thecrag.com/en/climbing/world/search?S=Alphabet+Rock",
+     "https://wenatcheeoutdoors.org/?s=Alphabet+Rock"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_z_crack_2",
+    "column": "gear",
+    "from": null,
+    "to": "Cams to 2.5 inches, with extra finger and micro sizes; a 50 m rope.",
+    "why": "gear is empty. MP protection: cams to 2.5 in, extra finger to micro sizes, 50 m rope. Reworded; MP-alone rack: locked-1src (single-source) after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/105825065/z-crack"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_z_crack_2",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Okanogan-Wenatchee National Forest (Wenatchee River Ranger District)",
+     "rules": "The crag is outside designated wilderness."
+    },
+    "why": "access is empty. Copies field for field the live object on the Icicle siblings wa_givler_s_crack / wa_bo_derek / wa_classic_crack (batch K). Re-checked 2026-11-18: USFS basic-ownership layer at the Alphabet Rock area point (47.54504,-120.74317) and at its stored parking pin (47.54381,-120.73472) = USDA Forest Service, Okanogan-Wenatchee NF; USFS wilderness layer returns no wilderness at the crag; USFS Eightmile Campground page (same Icicle Road corridor) names the Wenatchee River Ranger District. Parking pass left out: the OWNF passes page says only that a pass is needed at sites where a day-use fee is required and names no Icicle Road pullout; no official page found stating a rule for this pullout (HELD, as in batch K). official-1 after apply, expires 2027-11-18.",
+    "evidence": [
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_02/MapServer/0",
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_Wilderness_01/MapServer/0",
+     "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/eightmile-campground",
+     "https://www.fs.usda.gov/r06/okanogan-wenatchee/passes"
+    ]
+   }
+  ],
+  "disputed": [
+   "grade: an older magazine list gives 'Z-Cracks (5.10)' with no letter; consistent with MP 5.10d, not counted as a second source."
+  ],
+  "notes": "Obvious finger crack on the left side of the formation; crux pulling the overhang at the base (MP). A-Team (wa_a_team) is an alternate finish of this route. Catalog: wa_alphabet_rock_2_z_crack_aid ('Z Crack Aid', C1+, 18 m) is not on MP's Alphabet Rock list; it may be the aid ascent of this same Z Crack line (possible duplicate row, owner decides). hazards: the stored canyon-wide line (rattlesnakes, poison ivy, ticks) is a template; not verified per route, left as is."
+ },
+ "wa_dogleg_crack": {
+  "area": "wa_alphabet_rock",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/105825054/dogleg-crack",
+    "https://www.mountainproject.com/area/105825051/alphabet-rock",
+    "https://www.roy-stevenson.com/rock-climbing.html",
+    "https://www.thecrag.com/en/climbing/world/search?S=Alphabet+Rock",
+    "https://wenatcheeoutdoors.org/?s=Alphabet+Rock",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_02/MapServer/0",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_Wilderness_01/MapServer/0",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/eightmile-campground",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/passes"
+   ]
+  },
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_dogleg_crack",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "0 is invalid. MP: Trad, 60 ft; one right-leaning hand crack jammed to the top. One pitch is implied, not stated: ledger after apply unconfirmed, single-source.",
+    "evidence": [
+     "https://www.mountainproject.com/route/105825054/dogleg-crack"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_dogleg_crack",
+    "column": "length_m",
+    "from": null,
+    "to": 18,
+    "why": "length_m is empty. MP states 60 ft (18 m). theCrag answers Forbidden in Chrome; Wenatchee Outdoors has no Alphabet Rock page. MP-alone length: locked-1src (single-source) after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/105825054/dogleg-crack",
+     "https://www.thecrag.com/en/climbing/world/search?S=Alphabet+Rock",
+     "https://wenatcheeoutdoors.org/?s=Alphabet+Rock"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_dogleg_crack",
+    "column": "gear",
+    "from": null,
+    "to": "Doubles of cams from finger size up to a #2 Camalot; a 50 m rope.",
+    "why": "gear is empty. MP protection: 2 each cams finger size to #2 Camalot, 50 m rope. Reworded; MP-alone rack: locked-1src (single-source) after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/105825054/dogleg-crack"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_dogleg_crack",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Okanogan-Wenatchee National Forest (Wenatchee River Ranger District)",
+     "rules": "The crag is outside designated wilderness."
+    },
+    "why": "access is empty. Copies field for field the live object on the Icicle siblings wa_givler_s_crack / wa_bo_derek / wa_classic_crack (batch K). Re-checked 2026-11-18: USFS basic-ownership layer at the Alphabet Rock area point (47.54504,-120.74317) and at its stored parking pin (47.54381,-120.73472) = USDA Forest Service, Okanogan-Wenatchee NF; USFS wilderness layer returns no wilderness at the crag; USFS Eightmile Campground page (same Icicle Road corridor) names the Wenatchee River Ranger District. Parking pass left out: the OWNF passes page says only that a pass is needed at sites where a day-use fee is required and names no Icicle Road pullout; no official page found stating a rule for this pullout (HELD, as in batch K). official-1 after apply, expires 2027-11-18.",
+    "evidence": [
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_02/MapServer/0",
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_Wilderness_01/MapServer/0",
+     "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/eightmile-campground",
+     "https://www.fs.usda.gov/r06/okanogan-wenatchee/passes"
+    ]
+   }
+  ],
+  "disputed": [
+   "grade: MP 5.8+ (stored); an older magazine list gives 'Dogleg Crack (5.8)'. Not identical, so not locked; stored 5.8+ unchanged."
+  ],
+  "notes": "Right-leaning slabby hand crack on the right (north) side; crux in the first 15 ft, 5.7 above (MP). FA unknown on MP. hazards: the stored canyon-wide line (rattlesnakes, poison ivy, ticks) is a template; not verified per route, left as is."
+ },
+ "wa_alphabet_soup": {
+  "area": "wa_alphabet_rock",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/108827445/alphabet-soup",
+    "https://www.mountainproject.com/area/105825051/alphabet-rock",
+    "https://www.thecrag.com/en/climbing/world/search?S=Alphabet+Rock",
+    "https://wenatcheeoutdoors.org/?s=Alphabet+Rock",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_02/MapServer/0",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_Wilderness_01/MapServer/0",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/eightmile-campground",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/passes"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.10b",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108827445/alphabet-soup",
+      "fact": "5.10b YDS",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.thecrag.com/en/climbing/world/search?S=Alphabet+Rock",
+      "fact": "theCrag search answered Forbidden in the owner's Chrome (blocked)",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://wenatcheeoutdoors.org/?s=Alphabet+Rock",
+      "fact": "Wenatchee Outdoors has no Alphabet Rock route page (search finds only Givler's Dome and a shade note)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_alphabet_soup",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "0 is invalid. MP: a crack right of Meat Grinder, over a bulge to a ledge, then a finger traverse left that joins the top of Meat Grinder; one short line, no length given. One pitch is implied, not stated: ledger after apply unconfirmed, single-source.",
+    "evidence": [
+     "https://www.mountainproject.com/route/108827445/alphabet-soup"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_alphabet_soup",
+    "column": "gear",
+    "from": null,
+    "to": "Gear up to 3 inches.",
+    "why": "gear is empty. MP protection: gear to 3 in. Reworded; MP-alone rack: locked-1src (single-source) after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/108827445/alphabet-soup"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_alphabet_soup",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Okanogan-Wenatchee National Forest (Wenatchee River Ranger District)",
+     "rules": "The crag is outside designated wilderness."
+    },
+    "why": "access is empty. Copies field for field the live object on the Icicle siblings wa_givler_s_crack / wa_bo_derek / wa_classic_crack (batch K). Re-checked 2026-11-18: USFS basic-ownership layer at the Alphabet Rock area point (47.54504,-120.74317) and at its stored parking pin (47.54381,-120.73472) = USDA Forest Service, Okanogan-Wenatchee NF; USFS wilderness layer returns no wilderness at the crag; USFS Eightmile Campground page (same Icicle Road corridor) names the Wenatchee River Ranger District. Parking pass left out: the OWNF passes page says only that a pass is needed at sites where a day-use fee is required and names no Icicle Road pullout; no official page found stating a rule for this pullout (HELD, as in batch K). official-1 after apply, expires 2027-11-18.",
+    "evidence": [
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_02/MapServer/0",
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_Wilderness_01/MapServer/0",
+     "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/eightmile-campground",
+     "https://www.fs.usda.gov/r06/okanogan-wenatchee/passes"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "MP gives no length, so length_m stays null. fa 'FA Mack Johnson, James Ellis, Reed O'Brien 2011' equals MP; the 'FA ' prefix is cosmetic (a reformat adds no fact, left). FA is single-source, not locked. Finishes on Meat Grinder (wa_meat_grinder_2) - a shared finish, not a link-up of two rows. hazards: the stored canyon-wide line (rattlesnakes, poison ivy, ticks) is a template; not verified per route, left as is."
+ },
+ "wa_jaws_of_life": {
+  "area": "wa_alphabet_rock",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/114288965/jaws-of-life",
+    "https://www.mountainproject.com/area/105825051/alphabet-rock",
+    "https://www.thecrag.com/en/climbing/world/search?S=Alphabet+Rock",
+    "https://wenatcheeoutdoors.org/?s=Alphabet+Rock",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_02/MapServer/0",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_Wilderness_01/MapServer/0",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/eightmile-campground",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/passes"
+   ]
+  },
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_jaws_of_life",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "0 is invalid. MP: Trad/TR, 70 ft; crack to a hanging arete to the top, anchors on top. One pitch is implied, not stated: ledger after apply unconfirmed, single-source.",
+    "evidence": [
+     "https://www.mountainproject.com/route/114288965/jaws-of-life"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_jaws_of_life",
+    "column": "length_m",
+    "from": null,
+    "to": 21,
+    "why": "length_m is empty. MP states 70 ft (21 m). theCrag answers Forbidden in Chrome; Wenatchee Outdoors has no Alphabet Rock page. MP-alone length: locked-1src (single-source) after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/114288965/jaws-of-life",
+     "https://www.thecrag.com/en/climbing/world/search?S=Alphabet+Rock",
+     "https://wenatcheeoutdoors.org/?s=Alphabet+Rock"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_jaws_of_life",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Okanogan-Wenatchee National Forest (Wenatchee River Ranger District)",
+     "rules": "The crag is outside designated wilderness."
+    },
+    "why": "access is empty. Copies field for field the live object on the Icicle siblings wa_givler_s_crack / wa_bo_derek / wa_classic_crack (batch K). Re-checked 2026-11-18: USFS basic-ownership layer at the Alphabet Rock area point (47.54504,-120.74317) and at its stored parking pin (47.54381,-120.73472) = USDA Forest Service, Okanogan-Wenatchee NF; USFS wilderness layer returns no wilderness at the crag; USFS Eightmile Campground page (same Icicle Road corridor) names the Wenatchee River Ranger District. Parking pass left out: the OWNF passes page says only that a pass is needed at sites where a day-use fee is required and names no Icicle Road pullout; no official page found stating a rule for this pullout (HELD, as in batch K). official-1 after apply, expires 2027-11-18.",
+    "evidence": [
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_02/MapServer/0",
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_Wilderness_01/MapServer/0",
+     "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/eightmile-campground",
+     "https://www.fs.usda.gov/r06/okanogan-wenatchee/passes"
+    ]
+   }
+  ],
+  "disputed": [
+   "grade: stored 5.11c, MP now 5.12- (15 votes). One source, no second found (theCrag blocked) - HELD, owner decides; grade_num would change with it.",
+   "bolts: MP protection says 3 bolts, MP description says past 2 bolts to a rest. Same page disagrees - HELD."
+  ],
+  "notes": "fa 'Matt Kerns 1991; arete start Mack Johnson 1993' (= MP) mixes the original line and a later start variation: catalog defect, reported, not rewritten. Between St. Vitus' Dance and Z Crack; the original line traversed in from St. Vitus's start (MP). hazards: the stored canyon-wide line (rattlesnakes, poison ivy, ticks) is a template; not verified per route, left as is."
+ },
+ "wa_a_team": {
+  "area": "wa_alphabet_rock",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/114289003/a-team",
+    "https://www.mountainproject.com/area/105825051/alphabet-rock"
+   ]
+  },
+  "disputed": [],
+  "notes": "CATALOG DEFECT - no fixes proposed: MP describes A-Team as an alternate finish to Z Crack (climb Z Crack to its last section, traverse left to a thin seam; toprope from the Jaws of Life or Z Crack anchors). It is a variation of wa_z_crack_2, not its own line; owner decides whether it stays a row. Also: fa 'Mack Johnson (TR) Michael Telstad 10/12/19 (Lead)' mixes a toprope ascent and the first lead (defect, not rewritten). MP grade 5.11a = stored; MP Trad/TR 70 ft; pitches 0 left for the owner's call on the row. Access would be the same OWNF object as its siblings if the row is kept."
+ }
+}
