@@ -18,7 +18,7 @@ whole guide feature on 2026-11-14 (owner). This doc covers the partners mode (`l
   **Discipline ▾**, **Leads ▾** once a roped discipline (sport, trad, ice, mixed, aid) is picked, the **Only women / men / non-binary
   climbers** switch (`role="switch"`), and **More filters** in every mode (since 2026-11-18; it was on the example-list modes only). The More filters panel opens right under the row (**Experience** — Any / Beginner / Intermediate / Advanced / Expert chips, moved in from the pill row, owner 2026-11-18 — speed match,
   available to climb, max distance and **Sort** for the examples — Sort only where there are two ways to sort, i.e. a seed coordinate; its badge
-  counts the panel filters). The pills are 44px on a phone and 36px on the website (#3156). The name
+  counts the panel filters). The controls are 44px on a phone and 36px on the website (#3156), and since 2026-11-18 (owner) they wear the **Join a crew look** — the *Find a crew by* buttons: two across, 10px corners, 12.5px semibold centred, blue while chosen or set — instead of rounded pills; only the look changed, each is still a dropdown. Each dropdown draws ONE arrow, the one `index.html` puts on every select (#2585); the row no longer adds a chevron of its own beside it. The name
   search is an icon pill (*Name*, `aria-expanded`) beside the title that opens the box. Partner cards stay one per row (owner).
 - **The You card — how other climbers find you** (owner, climber walkthrough 2026-11-13): one compact card above the pills holding
   everything about YOUR visibility, so the pill row is only "who am I looking for". **My areas · N** (owner 2026-11-14: "a larger and more clear box",
