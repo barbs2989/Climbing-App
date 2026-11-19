@@ -1,0 +1,526 @@
+{
+ "wa_glacier_peak_cool_glacier_gerdine": {
+  "area": "wa_glacier_peak",
+  "set": {
+   "waypoints": [
+    {
+     "lat": 48.0579,
+     "lng": -121.2882,
+     "elev": 2070,
+     "name": "North Fork Sauk River Trailhead",
+     "note": "Northwest Forest Pass required at the kiosk; this has been the primary approach since the White Chuck River Trail washed out in 2003.",
+     "type": "Trailhead",
+     "distMi": 0,
+     "directions": "The North Fork Sauk River Trailhead sits at about 2,050 ft off FR 49, the Sloan Creek Road, and it is where Trail #649 starts up the valley. A Northwest Forest Pass is required, and there is a kiosk at the trailhead. Do not plan on coming in from the west: the White Chuck River Road (FR 23) remains washed out, and this has been the primary approach to Glacier Peak since the White Chuck River Trail washed out in 2003."
+    },
+    {
+     "lat": 48.0295555,
+     "lng": -121.1937146,
+     "elev": 2950,
+     "name": "Mackinaw Shelter (former shelter site)",
+     "note": "Old-growth riverside camp; the actual shelter is gone/unsafe, use the established sites nearby, last reliable flat camping before the climb steepens.",
+     "type": "Campsite",
+     "distMi": 5,
+     "directions": "Follow the North Fork Sauk trail up-valley on a mellow, rolling, well-maintained grade through old-growth forest, with a few scattered campsites along the way. The old shelter site is the last of the low-elevation river camps; past it the trail leaves the valley floor and steepens sharply."
+    },
+    {
+     "lat": 48.033168,
+     "lng": -121.149547,
+     "elev": 5900,
+     "name": "North Fork Sauk Trail / PCT junction near White Pass",
+     "note": "Trail gains ~3,000 ft in the final stretch to this meadow junction with sweeping views of Glacier Peak; join the PCT here.",
+     "type": "Junction",
+     "distMi": 9,
+     "directions": "Beyond the old shelter site the trail turns into roughly three miles of switchbacks, gaining about 3,000 ft to the meadows at White Pass. Water is unreliable once you leave the river, so fill up before starting the climb. The PCT junction is at the top."
+    },
+    {
+     "lat": 48.07715,
+     "lng": -121.10538,
+     "elev": 7300,
+     "name": "Glacier Gap",
+     "note": "Large, popular camp area with many established sites on a broad gap; standard base camp for the Gerdine Ridge/Cool Glacier route.",
+     "type": "Campsite",
+     "distMi": 15,
+     "directions": "Continue northeast across the basin, gaining a few hundred feet to the broad gap where the White Chuck and Suiattle glaciers meet. Established sites are spread across the gap, and it is the last flat ground before the summit push."
+    },
+    {
+     "lat": 48.105652,
+     "lng": -121.109776,
+     "elev": 9600,
+     "name": "Cool Glacier saddle (Gerdine-Cool col)",
+     "note": "Saddle between Disappointment Peak and Glacier Peak where the Gerdine Ridge route tops out onto the Cool Glacier for the final push.",
+     "type": "Junction",
+     "distMi": null,
+     "directions": "Leave camp on crampons, losing a little height onto rocky Gerdine Ridge, then climb north, contouring the slope below Glacier Gap Peak before regaining the crest and following it to roughly 8,400 ft. The climber's track ends near a gendarme around 8,500 ft — rope up there, traverse northeast onto the Gerdine and upper Suiattle ice, and end-run one or two crevasses where it bends into the Cool Glacier. Keep moving on that traverse; the cliffs of Disappointment Peak above it shed rock. Finish by climbing west up the Cool Glacier to regain the ridge at the saddle."
+    },
+    {
+     "lat": 48.1117373,
+     "lng": -121.1129474,
+     "elev": 10541,
+     "name": "Glacier Peak summit",
+     "note": "True summit of Glacier Peak (Dakobed); broad volcanic summit with views across the North Cascades.",
+     "type": "Summit",
+     "distMi": 18.1,
+     "directions": "From the saddle the glacier travel is over. Rejoin the climber's trail and finish up one short, steep pitch of pumice and broken volcanic rock to the top — unroped class 2-3, with no rock gear needed."
+    }
+   ]
+  },
+  "review": {
+   "sources": [
+    "https://www.usgs.gov/volcanoes/glacier-peak",
+    "https://www.fs.usda.gov/r06/mbs/recreation/north-fork-sauk-trailhead",
+    "https://www.mountaineers.org/activities/routes-places/glacier-peak-disappointment-peak-cleaver",
+    "https://www.mountainproject.com/route/107257991/gerdine-ridgecool-glacier",
+    "https://www.mountainproject.com/route/122217045/disappointment-peak-cleavergerdine-ridge-direct",
+    "https://www.fs.usda.gov/r06/mbs/alerts",
+    "https://www.fs.usda.gov/r06/mbs/alerts/forest-service-roads-23-white-chuck-road-and-27-rat-trap-pass-road-closed",
+    "https://www.fs.usda.gov/r06/mbs/alerts/mountain-loop-highway-bedal-campground-barlow-pass-closed-winter-nov-16",
+    "https://www.fs.usda.gov/r06/mbs/alerts/suiattle-river-road-washout-closure-0",
+    "USGS GNIS DomesticNames_WA (1519988 Glacier Peak, 1518794 Disappointment Peak, 1528075 White Pass)",
+    "USGS EPQS 3DEP elevation",
+    "https://www.openstreetmap.org/way/300757736"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "high_point_ft",
+    "value": 10541,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.usgs.gov/volcanoes/glacier-peak",
+      "official": true,
+      "fact": "Quick Facts 3,213 m (10,541 ft) - reused from batch C (Sitkum Glacier lock)",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "measurement": "USGS 3DEP (EPQS) at the GNIS Glacier Peak point = 10,541 ft, highest cell of a 7x7 grid around it (re-measured this batch)",
+      "fact": "10541"
+     }
+    ]
+   },
+   {
+    "field": "waypoints/Glacier Peak summit",
+    "value": {
+     "name": "Glacier Peak summit",
+     "lat": 48.1117373,
+     "lng": -121.1129474
+    },
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "measurement": "USGS GNIS 1519988 Glacier Peak summit point, DomesticNames_WA - reused from batch C; stored pin was 88 m off it",
+      "fact": "48.1117373,-121.1129474"
+     },
+     {
+      "measurement": "USGS 3DEP grid search (49 points) around the GNIS point: the highest cell is the GNIS point itself",
+      "fact": "high point at the GNIS point"
+     }
+    ]
+   },
+   {
+    "field": "waypoints/North Fork Sauk River Trailhead",
+    "value": {
+     "name": "North Fork Sauk River Trailhead",
+     "lat": 48.0579,
+     "lng": -121.2882
+    },
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r06/mbs/recreation/north-fork-sauk-trailhead",
+      "official": true,
+      "fact": "North Fork Sauk Trailhead 48.0579, -121.2882, elevation 2,070 ft",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "measurement": "OpenStreetMap USFS parking way 300757736 centre 43 m from the pin - reused from batch C",
+      "fact": "43 m"
+     }
+    ]
+   },
+   {
+    "field": "length_m",
+    "value": 914,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107257991/gerdine-ridgecool-glacier",
+      "fact": "Snow, 3000 ft (909 m), Grade II, Easy Snow",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_glacier_peak_cool_glacier_gerdine",
+    "column": "pitches",
+    "from": 0,
+    "to": null,
+    "why": "pitches must be >= 1 or null; a glacier route has no pitch count in any source (MP lists none).",
+    "evidence": [
+     "https://www.mountainproject.com/route/107257991/gerdine-ridgecool-glacier"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_glacier_peak_cool_glacier_gerdine",
+    "column": "access",
+    "from": "access.seasonal: \"... Suiattle River Road (FSR 26), the primary Glacier Peak access, has had storm-damage closures — check current conditions before a trip.\"",
+    "to": "access.seasonal: keep the Mountain Loop sentence; replace the Suiattle sentence with \"Suiattle River Road (FSR 26) is closed to vehicles from milepost 12 to the Suiattle River Trailhead, 5 Nov 2026 to 1 Oct 2028 (order 06-05-26-25); this route starts from the North Fork Sauk instead.\"",
+    "why": "The stored sentence calls the Suiattle the primary access (this route starts from the North Fork Sauk) and gives no closure facts; USFS order 06-05-26-25 states them.",
+    "evidence": [
+     "https://www.fs.usda.gov/r06/mbs/alerts/suiattle-river-road-washout-closure-0",
+     "https://www.fs.usda.gov/r06/mbs/recreation/north-fork-sauk-trailhead"
+    ]
+   }
+  ],
+  "disputed": [
+   "gain_ft 9400: The Mountaineers headline 8,200 ft is below the net climb (USGS 10,541 - USFS 2,070 = 8,471), so implausible; its own leg table sums 5,000 + 3,800 = 8,800 ft up. No second source. Not locked, not changed.",
+   "dist_km 29.1 (18.1 mi, = the summit pin distMi): The Mountaineers 33 mi round trip, legs 10.5 + 6.5 = 17 mi (27.4 km) one way via its camp; the stored track reaches the summit at 26.9 km. One-way convention, not impossible (straight line 14.3 km), within 10% of 27.4. Not changed.",
+   "grade Class 2: MP gives Easy Snow (standard line); the direct variant over Disappointment Peak is 4th class (MP 122217045); The Mountaineers give no class. Not locked.",
+   "commitment II / alpine_grade II: MP Grade II only (MP alone cannot lock commitment).",
+   "high point: The Mountaineers 10,520 ft vs USGS 10,541 ft; USGS kept.",
+   "Cool Glacier saddle pin: stored elev 9,600 (The Mountaineers: 9,600 ft col above Disappointment Peak) but USGS 3DEP reads 9,471 ft at the pin, 219 m from the GNIS Disappointment Peak point; pin may sit below the col. Left.",
+   "permit: stored says a self-issue Glacier Peak Wilderness permit at the trailhead; the USFS North Fork Sauk trailhead page names Glacier Peak Wilderness rules but no permit. Not locked.",
+   "road.status (washouts near mile 1 and mile 6, clearance advice): no official page states it; unconfirmed. road.seasonalGate White Chuck facts DO match USFS order 06-05-25-02 (FR 23 closed from MP 3.7, from 19 Mar 2025, end N/A, page updated 30 Jun 2026), but road is not locked because status is unconfirmed.",
+   "fa: the 1897 USGS party (Gerdine, Strom, Dubor, Bard) is the PEAK first ascent; no source opened ties it to this route. Not locked."
+  ],
+  "notes": "Summit pin moved 88 m onto the locked USGS GNIS point (same correction batches C and E made on Sitkum and Frostbite Ridge); trailhead elev set to the USFS 2,070 ft (was 2,050), coordinates already equal the USFS page. Mountain Loop Highway Bedal Campground-Barlow Pass winter closure began 16 Nov 2026 (alert of 9 Nov 2026); the alert does not mention Sloan Creek Road FR 49, so whether FR 49 can be reached from Darrington this winter is not stated officially. The stored track (3,000 points, no timestamps, max gap 19 m) starts 80 m from the trailhead pin and passes 64 m from the summit."
+ },
+ "wa_glacier_peak_sitkum_glacier": {
+  "area": "wa_glacier_peak",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/121086767/sitkum-glacier",
+    "https://www.fs.usda.gov/r06/mbs/recreation/north-fork-sauk-trailhead",
+    "https://www.fs.usda.gov/r06/mbs/alerts",
+    "https://www.fs.usda.gov/r06/mbs/alerts/forest-service-roads-23-white-chuck-road-and-27-rat-trap-pass-road-closed",
+    "https://www.fs.usda.gov/r06/mbs/alerts/mountain-loop-highway-bedal-campground-barlow-pass-closed-winter-nov-16",
+    "https://www.fs.usda.gov/r06/mbs/alerts/suiattle-river-road-washout-closure-0"
+   ]
+  },
+  "ledger": [],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_glacier_peak_sitkum_glacier",
+    "column": "access",
+    "from": "access.seasonal: \"... Suiattle River Road (FSR 26), the primary Glacier Peak access, has had storm-damage closures — check current conditions before a trip.\"",
+    "to": "access.seasonal: keep the Mountain Loop sentence; replace the Suiattle sentence with \"Suiattle River Road (FSR 26) is closed to vehicles from milepost 12 to the Suiattle River Trailhead, 5 Nov 2026 to 1 Oct 2028 (order 06-05-26-25); this route starts from the North Fork Sauk instead.\"",
+    "why": "The stored sentence calls the Suiattle the primary access (this route starts from the North Fork Sauk) and gives no closure facts; USFS order 06-05-26-25 states them.",
+    "evidence": [
+     "https://www.fs.usda.gov/r06/mbs/alerts/suiattle-river-road-washout-closure-0",
+     "https://www.fs.usda.gov/r06/mbs/recreation/north-fork-sauk-trailhead"
+    ]
+   }
+  ],
+  "disputed": [
+   "Already locked in batch C (not re-researched): high_point_ft 10541, summit pin, North Fork Sauk trailhead pin.",
+   "commitment III / alpine_grade III: MP \"Snow, Grade III, Easy Snow\" is the only source; MP alone cannot lock commitment.",
+   "grade Class 2: MP gives Easy Snow, no class; not locked.",
+   "fa: MP says FA unknown for the route; stored credits the 1897 USGS party, which is the PEAK first ascent (that party first topped Disappointment Peak, i.e. came from the south-east side). Not locked; owner may want the route FA set to unknown.",
+   "gain_ft / dist_km stay null: MP describes the old White Chuck start (5.5 mi to Kennedy Hot Springs, 9 mi to Boulder Basin), closed since the 2003 flood; no source gives a figure for the current North Fork Sauk + Red Pass approach."
+  ],
+  "notes": "No new lockable fact found. White Chuck Road FR 23 closure (USFS order 06-05-25-02, from MP 3.7 since 19 Mar 2025, page updated 30 Jun 2026) still listed, matching the stored access.closures text; not locked because the same object also carries the unverified permit claim."
+ },
+ "wa_sloan_peak_corkscrew": {
+  "area": "wa_sloan_peak",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/117524006/corkscrew-route",
+    "https://www.wta.org/go-hiking/hikes/bedal-creek",
+    "https://www.mountainproject.com/area/classics/120288416/glacier-peak-wilderness",
+    "https://www.fs.usda.gov/r06/mbs/alerts/mountain-loop-highway-bedal-campground-barlow-pass-closed-winter-nov-16"
+   ]
+  },
+  "ledger": [],
+  "disputed": [
+   "Already locked in batch C (not re-researched): summit pin, high_point_ft 7835, grade Class 3, commitment II, length_m 457, road (official-1 to 2027-02-15).",
+   "Trailhead pin: stored 48.073457,-121.376681 (OSM node 50819875 at the end of FR 4096, moved there in batch C); WTA Bedal Basin gives 48.0701, -121.3753, 387 m away (the old pin). Two methods disagree; not locked.",
+   "gain_ft 5935: The Mountaineers 5,900 ft headline (own table 5,100); MP gives none; floor 7,835 - 3DEP 2,784 = 5,051 passes. One source; not locked.",
+   "dist_km 7.65: The Mountaineers 12.0 mi round trip (9.7 km one way); the stored track (no timestamps) reaches the summit at 7.04 km; straight line 4.48 km. Not impossible; not changed.",
+   "fa: MP \"Henry Bedal & Nels Skaar (1921)\" vs stored \"Harry Bedal\" (Wikipedia/Beckey). Same party and year; first name disputed; not locked."
+  ],
+  "notes": "Mountain Loop Highway Bedal Campground-Barlow Pass winter closure from 16 Nov 2026 confirmed again (alert of 9 Nov 2026); WTA puts the FR 4096 turnoff about a mile past Bedal campground, i.e. inside the closure - matches the locked road text."
+ },
+ "wa_mount_pugh_stujack": {
+  "area": "wa_mount_pugh",
+  "set": {
+   "waypoints": [
+    {
+     "lat": 48.1457549,
+     "lng": -121.4157801,
+     "elev": 1949,
+     "name": "Mt. Pugh Trailhead #644",
+     "note": "Mountain Loop Highway to FR-2095. Trail passes Lake Metan (1.5 mi) en route to Stujack Pass.",
+     "type": "Trailhead",
+     "distMi": 0,
+     "directions": "From I-5 exit 208, drive east on SR-530 through Arlington to Darrington, about 28 miles, then turn right at the four-way stop in town onto the Mountain Loop Highway and follow it south roughly 14 miles — paved at first, then graveled — to FR-2095, the Mt. Pugh Spur Road, marked with a large sign on the left. Turn onto FR-2095, a narrow, one-lane, unpaved road, and continue about 1.5 miles to the trailhead on the right; the trailhead lot itself holds only a handful of cars, so use the large pullout at the switchback just below it if it's full. FR-2095 is gated from October 16 to June 1 for wildlife, on top of whatever winter closure may be in effect on the Mountain Loop Highway itself."
+    },
+    {
+     "lat": 48.13749,
+     "lng": -121.39619,
+     "elev": 3182,
+     "name": "Lake Metan",
+     "type": "Water",
+     "distMi": null,
+     "elevFt": null,
+     "directions": "Follow Trail #644 about 1.5 miles through old-growth forest, with several stream crossings and about 1,300 ft of gain, to Lake Metan. It is the last reliable water on the route."
+    },
+    {
+     "lat": 48.1471791,
+     "lng": -121.3841526,
+     "name": "Stujack Pass",
+     "type": "Junction",
+     "distMi": null,
+     "elevFt": null,
+     "directions": "Round the north side of the lake and switchback steeply up through forest, then talus and meadows past an open boulder basin near 4,900 ft, to the notch of Stujack Pass at about 5,700 ft, where the maintained trail ends. Snow often lingers on this stretch into midsummer.",
+     "elev": 5700
+    },
+    {
+     "lat": 48.1431022,
+     "lng": -121.3744782,
+     "elev": 7201,
+     "name": "Mount Pugh Summit",
+     "type": "Summit",
+     "distMi": null,
+     "elevFt": 7201,
+     "directions": "Climb left out of the notch on heather, contour the east side of the ridge and cross the head of a small permanent snowfield, then follow the knife-edge crest on chipped, blasted ledges past the short Class 3 chimney with an iron ring. Ignore stray cairns that lead toward the cliff edge. The true high point is a roughly 10 ft boulder at the edge of the flat summit plateau."
+    }
+   ],
+   "road": {
+    "name": "Mountain Loop Highway to Forest Road 2095 (FR-2095)",
+    "status": "Closed now: the Forest Service keeps FR 2095 gated at the Mountain Loop Highway each year from 16 October to 1 June, for wildlife.",
+    "driveNote": "From the Darrington Ranger District office, follow the Mountain Loop Highway about 14 miles, then turn left (east) onto signed FR 2095 and go roughly 1 mile to the trailhead on the right. Parking is very limited; the large pullout at the switchback below takes the overflow.",
+    "seasonalGate": "Gated every year from 16 October to 1 June. Darrington Ranger District: (360) 436-1155."
+   }
+  },
+  "review": {
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/mt-pugh-trail-644",
+    "https://www.wta.org/go-hiking/hikes/mount-pugh",
+    "https://www.mountaineers.org/activities/routes-places/mount-pugh",
+    "https://www.mountainproject.com/area/202261312/mount-pugh",
+    "https://en.wikipedia.org/wiki/Nels_Bruseth",
+    "https://www.fs.usda.gov/r06/mbs/alerts",
+    "https://www.fs.usda.gov/r06/mbs/alerts/mountain-loop-highway-bedal-campground-barlow-pass-closed-winter-nov-16",
+    "USGS GNIS DomesticNames_WA (1528468 Mount Pugh, 1526648 Stujack Pass)",
+    "USGS EPQS 3DEP elevation",
+    "https://www.openstreetmap.org/node/1884907895",
+    "https://www.openstreetmap.org/node/356547043",
+    "https://www.openstreetmap.org/node/4104848821"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "high_point_ft",
+    "value": 7201,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r06/mbs/recreation/trails/mt-pugh-trail-644",
+      "official": true,
+      "fact": "Summit high point 7,201 feet",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-pugh",
+      "fact": "High Point: 7,201 ft",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/mount-pugh",
+      "fact": "Highest point 7,201 feet",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "waypoints/Mount Pugh Summit",
+    "value": {
+     "name": "Mount Pugh Summit",
+     "lat": 48.1431022,
+     "lng": -121.3744782
+    },
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "measurement": "USGS GNIS 1528468 Mount Pugh summit point, DomesticNames_WA; stored pin was 7 m off",
+      "fact": "48.1431022,-121.3744782"
+     },
+     {
+      "measurement": "OSM natural=peak node 356547043 (gnis:feature_id 1528468) 10 m away; USGS 3DEP 7,199 ft at the GNIS point is the highest cell of a 7x7 grid",
+      "fact": "10 m; 3DEP high point"
+     }
+    ]
+   },
+   {
+    "field": "waypoints/Mt. Pugh Trailhead #644",
+    "value": {
+     "name": "Mt. Pugh Trailhead #644",
+     "lat": 48.1457549,
+     "lng": -121.4157801
+    },
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "measurement": "OSM amenity=parking node 1884907895 \"Mount Pugh Trailhead\" (capacity 20); the stored track starts 8 m from it",
+      "fact": "48.1457549,-121.4157801"
+     },
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/mount-pugh",
+      "fact": "Trailhead coordinates 48.1454, -121.4161 (46 m from the OSM lot)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "road",
+    "value": {
+     "name": "Mountain Loop Highway to Forest Road 2095 (FR-2095)",
+     "status": "Closed now: the Forest Service keeps FR 2095 gated at the Mountain Loop Highway each year from 16 October to 1 June, for wildlife.",
+     "driveNote": "From the Darrington Ranger District office, follow the Mountain Loop Highway about 14 miles, then turn left (east) onto signed FR 2095 and go roughly 1 mile to the trailhead on the right. Parking is very limited; the large pullout at the switchback below takes the overflow.",
+     "seasonalGate": "Gated every year from 16 October to 1 June. Darrington Ranger District: (360) 436-1155."
+    },
+    "method": "official-1",
+    "level": "locked",
+    "expires_at": "2027-02-16T00:00:00Z",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r06/mbs/recreation/trails/mt-pugh-trail-644",
+      "official": true,
+      "fact": "FR 2095 gated Oct 16 - Jun 1 (wildlife); 14 mi + 1 mi; updated Oct 6 2026",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.fs.usda.gov/r06/mbs/recreation/trails/mt-pugh-trail-644",
+      "official": true,
+      "fact": "Darrington Ranger Station (360) 436-1155; limited parking, overflow pullout at switchback",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 5300,
+    "method": "agree-2",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/mount-pugh",
+      "fact": "5,300 feet elevation gain, 11.0 miles roundtrip",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-pugh",
+      "fact": "Elevation Gain 5,300 ft, Length 11.0 mi",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_mount_pugh_stujack",
+    "column": "pitches",
+    "from": 0,
+    "to": null,
+    "why": "pitches must be >= 1 or null; a trail-and-scramble route has no pitch count in any source.",
+    "evidence": [
+     "https://www.fs.usda.gov/r06/mbs/recreation/trails/mt-pugh-trail-644",
+     "https://www.mountaineers.org/activities/routes-places/mount-pugh"
+    ]
+   }
+  ],
+  "disputed": [
+   "gain_ft 5300: WTA and The Mountaineers both say 5,300 ft (and both 11.0 mi), but The Mountaineers page recommends the same Romano guidebook WTA often draws on, so they may not be independent; left unconfirmed for the owner. Impossibility check: with the old pin (3DEP 1,892 ft) the net climb was 5,309 > 5,300 (impossible); at the OSM parking lot (3DEP 1,949 ft) it is 5,252, so 5,300 is possible.",
+   "dist_km 7.2 (4.5 mi): WTA and The Mountaineers 11.0 mi round trip = 5.5 mi (8.85 km) one way; the stored track (no timestamps) reaches the summit at 8.11 km; straight line 3.10 km. Stored value is ~19% short but not impossible and not a round trip; not changed (F rule).",
+   "grade Class 3: The Mountaineers \"Class 2 climbing/scrambling with exposure, Technical 2\"; MP area page names a class 2 rock step on the NW Ridge; stored hazards describe a short Class 3 chimney. Not locked.",
+   "fa: Nels Bruseth 1916 is the PEAK first recorded ascent (MP; Wikipedia citing Beckey, who says \"apparently\"); no source ties it to this route. Not locked.",
+   "parking pass: The Mountaineers say Northwest Forest Pass required; the USFS trail page lists no passes or fees. access/permit not locked.",
+   "Lake Metan elevation: USFS 2,800 ft, WTA 3,260 ft, USGS 3DEP 3,182 ft at the stored pin (no GNIS point for the lake). Pin left.",
+   "Stujack Pass pin = OSM saddle node 4104848821; the GNIS Stujack Pass point is 74 m away; 3DEP 5,708 ft at the pin vs USFS 5,700 ft. Not locked (methods disagree by >50 m); elev set to USFS 5,700.",
+   "Drive mileage: USFS 14 mi + 1 mi on FR 2095; WTA 12.5 mi + 1.5 mi. Road text now uses the USFS figures; the Trailhead pin directions still mix them (14 mi, 1.5 mi) - prose, left."
+  ],
+  "notes": "ROAD CLOSED NOW: FR 2095 is gated 16 Oct - 1 Jun every year (USFS trail page, updated 6 Oct 2026). road rewritten from the USFS page in our own words and locked official-1 to 2027-02-16 - it should be re-checked before 1 June when the gate opens. Trailhead pin moved 46 m onto the OSM parking lot (the old pin sat 56 ft lower on the road), elev from USGS 3DEP. Summit snapped 7 m onto the USGS point. Stored track: 1,717 points, max gap 11 m, starts 8 m from the new trailhead, passes 4 m from the summit."
+ },
+ "wa_mount_daniel_daniel_glacier": {
+  "area": "wa_mount_daniel",
+  "set": {
+   "waypoints": [
+    {
+     "lat": 47.5435484,
+     "lng": -121.0965346,
+     "elev": 3370,
+     "name": "Tucquala Meadows Trailhead",
+     "note": "FS 4330 (Cle Elum Valley Rd), about 11 mi past Salmon La Sac. Standard access for Peggys Pond via Cathedral Pass Trail #1345 to Cathedral Pass, continuing to Mount Daniel's SE slopes/Daniel Glacier.",
+     "type": "Trailhead",
+     "distMi": 0,
+     "directions": "Drive up the Cle Elum River valley on Forest Service Road 4330 (Cle Elum Valley Road), about 11 miles past Salmon La Sac, to its end at the trailhead, 3,370 feet. The access road is rough gravel and is best driven with a high-clearance or 4x4 vehicle."
+    },
+    {
+     "lat": 47.53478,
+     "lng": -121.11397,
+     "elev": 4839,
+     "name": "Squaw Lake",
+     "type": "Campsite",
+     "distMi": 2.5
+    },
+    {
+     "lat": 47.555989,
+     "lng": -121.142625,
+     "elev": 5559,
+     "name": "Peggy's Pond",
+     "type": "Water",
+     "distMi": 5.1
+    },
+    {
+     "lat": 47.556164,
+     "lng": -121.141633,
+     "elev": 5591,
+     "name": "Peggys Pond",
+     "type": "Campsite",
+     "distMi": 5,
+     "directions": "Take the Cathedral Rock Trail #1345, which crosses the Cle Elum River on a bridge and climbs past Squaw Lake to Cathedral Pass and the Pacific Crest Trail, about 4.5 miles. Follow the PCT briefly toward Deep Lake; at the first switchback down, take the spur to Peggys Pond, about half a mile of steep, narrow path along ledges with sheer drop-offs and loose rock."
+    },
+    {
+     "lat": 47.565031,
+     "lng": -121.180891,
+     "elev": 7960,
+     "name": "Mount Daniel (true/West Summit)",
+     "type": "Summit",
+     "distMi": null,
+     "elevFt": 7960,
+     "directions": "Follow braided boot paths northwest then west across heather and talus, gaining about 1,500 ft in a mile to the broad southeast ridge near 7,000 ft, with the Hyas Creek Glacier on your right and Circle Lake below on your left. Traverse climbers' trail and scree below the East Summit to the 7,600-ft saddle, then cross loose talus, snow and the rocky glacier margin to the West Summit, staying on rock off the glacier ice."
+    }
+   ]
+  },
+  "review": {
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/mount-daniel-daniel-glacier",
+    "https://wenatcheeoutdoors.org/2016/07/20/daniel-mt/",
+    "USGS GNIS DomesticNames_WA (1524305 Peggys Pond, 1518479 Mount Daniel)",
+    "USGS EPQS 3DEP elevation"
+   ]
+  },
+  "ledger": [],
+  "disputed": [
+   "Already locked in batch C (not re-researched): summit pin (West Peak), trailhead pin, high_point_ft 7960, permit, road (official-1 to 2027-02-17).",
+   "gain_ft 5100: The Mountaineers 5,200 ft (within 2%); no second source (Wenatchee Outdoors gives only waypoint heights: trailhead 3,365, Squaw Lake 4,840, Peggy's Pond 5,590). Net floor 7,960 - 3DEP 3,375 = 4,585 passes. Not locked.",
+   "dist_km 12.1: equals the stored track to the summit (12.09 km, no timestamps); The Mountaineers 16.0 mi round trip = 12.9 km one way (within 7%); straight line 6.77 km. One source; not changed.",
+   "grade Class 3 / commitment II: ListsOfJohn Class 2+, The Mountaineers basic glacier climb (batch C); not locked."
+  ],
+  "notes": "Pin clean-up: three pins sat on Peggys Pond within 77 m (Water, Campsite, and a \"Junction\" with no elevation that is not a junction). The Junction is removed and its approach directions moved onto the Campsite pin, which sits exactly on the GNIS Peggys Pond point (1524305). Water pin kept on the shore. Locked pins untouched. Wenatchee Outdoors (ski-oriented page) gives the trailhead at 3,365 ft and Peggy's Pond 5,590 ft; the Water pin elev 5,559 is 3DEP at its spot."
+ }
+}
