@@ -434,6 +434,12 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     in `RouteDetail.jsx` and the first hit is unrelated, so a bare `.replace()` edited the
     wrong line and the run passed. It reported *"edit landed: false"* rather than *"guard
     missed"* — **prove the injection landed before believing what the guard says about it.**
+  **A starless climb is still a climb (2026-11-18).** The hydration split your logs into `logs` and
+  `condReports` on `stars == null`, but the rating is optional, so a starless Summit (1 of 14 live rows)
+  became a conditions report. `check:log` now runs `isScoutRow` (`lib/tripReportRow.js`: tick
+  `Conditions`, or no tick and no stars) over 5 rows, and fails if `scoutOnly:row.stars==null` or
+  `if(row.stars==null)dbConds.push` comes back, or if fewer than 3 places call `isScoutRow(row)`.
+  Injected both reverts: each fails naming itself.
 - **`check:suggestion-discs`** asserts that Suggested climbs covers **every** discipline a
   climber logs, and that a climb they merely **looked at** is never described as one they have
   climbed. `suggestionProfile` used to end `Object.keys(byDisc).sort(by count)[0]` — it kept the

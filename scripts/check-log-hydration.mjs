@@ -259,6 +259,32 @@ if (staleThin.length) {
 }
 console.log("  ok    the route-page hydration drops nothing a reader wants");
 
+// ---- a starless CLIMB is still a climb (2026-11-18) ----------------------------
+// The star rating is optional. The hydration filed every `stars == null` row with your CONDITIONS
+// reports, so a starless Summit (1 of the 14 live logs) left your climbs, and the bell said its
+// climber "reported conditions on" it. One rule now decides, isScoutRow in lib/tripReportRow.js:
+// tick "Conditions", or no tick AND no stars (an older scout report). Read its body and run it.
+{
+  const trr = readFileSync(new URL("../lib/tripReportRow.js", import.meta.url), "utf8");
+  const m = trr.match(/export function isScoutRow\((\w+)\) \{([\s\S]*?)\n\}/);
+  if (!m) fail("ANCHOR LOST — isScoutRow is gone from lib/tripReportRow.js.");
+  const isScoutRow = new Function(m[1], m[2]);
+  const cases = [
+    [{ tick_type: "Conditions", stars: null }, true, "a Conditions report"],
+    [{ tick_type: null, stars: null }, true, "an older scout report (no tick, no stars)"],
+    [{ tick_type: "Summit", stars: null }, false, "a starless Summit"],
+    [{ tick_type: "Redpoint", stars: 3 }, false, "a rated Redpoint"],
+    [{ tick_type: null, stars: 4 }, false, "a rated log with no tick"],
+  ];
+  for (const [row, want, name] of cases) if (isScoutRow(row) !== want) fail("isScoutRow calls " + name + (want ? " a climb." : " a conditions report."));
+  console.log("  ok    isScoutRow tells a starless climb from a conditions report (5 cases)");
+  for (const bad of ["scoutOnly:row.stars==null", "if(row.stars==null)dbConds.push"])
+    if (SRC.includes(bad)) fail("the hydration decides scout by stars alone again (" + bad + ") — use isScoutRow(row).");
+  const uses = (SRC.match(/isScoutRow\(row\)/g) || []).length;
+  if (uses < 3) fail("isScoutRow(row) decides only " + uses + " of the 3 places (scoutOnly, the dbConds split, the bell's wording).");
+  console.log("  ok    the hydration and the bell both use isScoutRow");
+}
+
 console.log("\nclimb-log hydration: ok");
 
 // ---- injection cases, re-run these after touching depth1Keys ----------------
