@@ -1129,7 +1129,7 @@ const _anniv=useMemo(()=>logs.map(function(cl){var d=new Date((cl.date||"")+"T12
     var fr={};(connections||[]).forEach(function(c){fr[c.id]=1;});
     var here=function(cr){return (cr.routeId===logModal.id||(cr.areaId&&cr.areaId===logModal.mountainId))?1:0;};
     var seen={},out=[];
-    (crews||[]).slice().sort(function(a,b){return here(b)-here(a);}).forEach(function(cr){(cr.members||[]).forEach(function(m){var id=m&&m.climberId;if(id==null||id===0||seen[id]||fr[id]||m.status!=="confirmed")return;var c=crewMemberById(id);if(!c)return;seen[id]=1;out.push({id:c.id,name:pubName(c),avatar:c.avatar,thisClimb:!!here(cr)});});});
+    (crews||[]).slice().sort(function(a,b){return here(b)-here(a);}).forEach(function(cr){(cr.members||[]).forEach(function(m){var id=m&&m.climberId;if(id==null||id===0||seen[id]||fr[id]||m.status!=="confirmed")return;var c=crewMemberById(id);if(!c)return;seen[id]=1;out.push({id:c.id,name:pubName(c),username:c.username||"",avatar:c.avatar,thisClimb:!!here(cr)});});});
     return out;
   },[logModal,crews,connections,crewMemberById]);
   /* THE SIGNED-IN CLIMBER IS ALWAYS IN `members`, so anything that also says "You" counts them
