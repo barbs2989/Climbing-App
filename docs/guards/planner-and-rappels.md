@@ -107,8 +107,11 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     section label shifted one row. 16 more the same day: Baker North Ridge's summit leg also held the
     Coleman-Deming descent; Huckleberry's 1.3 hr descent could not cover camp plus a 7-mile walk out;
     Klawatti's 1 hr was only the col-to-summit scramble; Torment-Forbidden's "~40 hr" was elapsed
-    time, now 30.5 on the move. **STILL OPEN:** 71 rows — 36 researched but held (no timed report of
-    the route, or too few; their proposals are in the audit) and 35 never researched. Re-run with the same brief per row; a row whose summit day already equals its leg is
+    time, now 30.5 on the move. 14 more after that (46 of the 103 in all): NW Mox's and Primus's
+    summit legs were round trips; the East Fury traverse's 5 hr total was the ridge alone, now 30.
+    **STILL OPEN:** 57 rows, all researched but held — no timed report of the climb itself, or a
+    climb time borrowed from a neighbouring route; their proposals are in the audit. Sinister and
+    Spire Point still count a 16-mile walk on the Suiattle road, which reports since 2018 drive. Re-run with the same brief per row; a row whose summit day already equals its leg is
     read as a round trip by the camp rule meanwhile.
   - **ACCURACY, measured 2026-11-18** (`audits/2026-11-18-multiday-estimate-accuracy.json`): on 15 of a
     28-route sample with reported leg times, the summit-day view's time up from camp was 0.98x reported

@@ -1195,6 +1195,337 @@
     "campToTh": null,
     "summitToTh": 7.5
    }
+  },
+  {
+   "id": "wa_mount_triumph_northeast_ridge",
+   "confidence": "medium",
+   "from": [
+    5,
+    6,
+    10,
+    21
+   ],
+   "to": [
+    5,
+    6.5,
+    10.5,
+    22
+   ],
+   "why": "Summit day was stored as 6 h but the day plan called it a 12.5 h round trip and the hike-out day had no hours. Two timed reports put col-to-summit at 6.5-7.25 h and the return at about 6.5 h; the hike-out (about 4 h) has no timed report and is estimated from 6.2 mi and 3,850 ft of descent.",
+   "legs": {
+    "thToCamp": 5,
+    "campToSummit": 6.5,
+    "summitToCamp": 6.5,
+    "campToTh": 4,
+    "summitToTh": null
+   }
+  },
+  {
+   "id": "wa_northwest_mox_peak_standard",
+   "confidence": "medium",
+   "from": [
+    12.5,
+    14.2,
+    8,
+    34.7
+   ],
+   "to": [
+    10,
+    8,
+    11.5,
+    29.5
+   ],
+   "why": "The summit leg stored the whole 14.2-hr round trip from camp, and the approach (12.5) and exit (8) were slower than reports. Reports give about 6-6.25 hr car to Lake Ouzel, 7 hr camp to summit and 4 hr back (a fast party 3 and 1.7), so the row now reads 10 hr in, 8 hr camp to summit, 4.5 hr back to camp plus a 7-hr walk out.",
+   "legs": {
+    "thToCamp": 10,
+    "campToSummit": 8,
+    "summitToCamp": 4.5,
+    "campToTh": 7,
+    "summitToTh": null
+   }
+  },
+  {
+   "id": "wa_primus_peak_south_ridge",
+   "confidence": "medium",
+   "from": [
+    12,
+    6,
+    7,
+    25
+   ],
+   "to": [
+    9,
+    4,
+    8.5,
+    21.5
+   ],
+   "why": "The row double-counted the approach (12 hr over two days for a trip that takes 7-9 hr to Klawatti Col) and stored a summit-day round trip as the summit leg. Reports put col to summit near 4 hr and the walk out from the col at 5-6 hr; the summit day now returns to camp (4 up + 3 back) and the descent holds that return plus the walk out.",
+   "legs": {
+    "thToCamp": "7-9 hr trailhead to Klawatti Col in one push; about 2 hr from Eldorado high camp to the col (used 6 + 3 over two days)",
+    "campToSummit": 4,
+    "summitToCamp": 3,
+    "campToTh": 5.5,
+    "summitToTh": null
+   }
+  },
+  {
+   "id": "wa_eldorado_peak_northeast_face",
+   "confidence": "medium",
+   "from": [
+    6,
+    6.5,
+    6.5,
+    19
+   ],
+   "to": [
+    6,
+    4.5,
+    6.5,
+    17
+   ],
+   "why": "Old row had a 6.5 hr round-trip summit leg while the days summed to 19.5 against a 19 total. One timed Northeast Face report gives 6 hr in, 4.5 hr camp to summit and 7.5 hr summit to car (about 2 hr down to camp plus about 4.5-5 hr out), backed by 5.5-6 hr approach times elsewhere; the summit day is now 4.5 up plus 2 back to camp.",
+   "legs": {
+    "thToCamp": 6,
+    "campToSummit": 4.5,
+    "summitToCamp": 2,
+    "campToTh": 4.5,
+    "summitToTh": null
+   }
+  },
+  {
+   "id": "wa_prusik_peak_south_face_burgner_stanley",
+   "confidence": "medium",
+   "from": [
+    null,
+    6.5,
+    13,
+    19.5
+   ],
+   "to": [
+    6.5,
+    5.5,
+    7,
+    19
+   ],
+   "why": "Old row left the approach blank, had mislabelled sections, and a 13 hr descent that double-counted the climb. Timed reports put the climbing at 4.5-5.5 hr and the rappels back to the base at about 1 hr with camp 20 min away; the 6.5 hr with-pack approach sits above the 5 hr light-pack figure. Approach and hike-out days have no direct timed overnight source beyond these ranges.",
+   "legs": {
+    "thToCamp": 6.5,
+    "campToSummit": 5.5,
+    "summitToCamp": 1.5,
+    "campToTh": 5.5,
+    "summitToTh": null
+   }
+  },
+  {
+   "id": "wa_ridge_traverse_from_east_fury",
+   "confidence": "medium",
+   "from": [
+    0.5,
+    2.5,
+    2,
+    5
+   ],
+   "to": [
+    12,
+    6,
+    12,
+    30
+   ],
+   "why": "Old timing (5 hr total, 0.5 hr approach) covered only the ridge and ignored the four-day trip whose days had no hours. Reports give 3.5-4 hr from Luna Col to East Fury and about 12 hr camp to West Fury and back, about 4 hr on the valley trail and about 7 hr from the col out to the boat; the Access Creek day (8 hr) and the East-to-West leg are the least certain figures.",
+   "legs": {
+    "thToCamp": 12,
+    "campToSummit": 6,
+    "summitToCamp": 5,
+    "campToTh": 7,
+    "summitToTh": null
+   }
+  },
+  {
+   "id": "wa_south_spur",
+   "confidence": "medium",
+   "from": [
+    8.5,
+    9.3,
+    14.2,
+    32
+   ],
+   "to": [
+    8.5,
+    9.25,
+    15,
+    32.75
+   ],
+   "why": "The summit day stopped at the summit and left out the walk back down to the Perfect Pass camp, and the section and day hours used long decimals. A timed party took 8.5 hr to Easy Ridge camp and 7.75 hr from there to Perfect Pass; the snow and exposed ridge to the summit add about 1.5 hr, and the return to the pass about 0.75 hr. The walk-out days were kept from the row (one fast soloist was quicker), so the descent legs rest on a single fast report.",
+   "legs": {
+    "thToCamp": 8.5,
+    "campToSummit": 9.25,
+    "summitToCamp": 0.75,
+    "campToTh": 14.25,
+    "summitToTh": null
+   }
+  },
+  {
+   "id": "wa_southeast_mox_peak_beckey_route_west_ridge",
+   "confidence": "medium",
+   "from": null,
+   "to": [
+    8.5,
+    6,
+    9.75,
+    24.25
+   ],
+   "why": "The row had no timing legs and its day hours used one party's quick summit day. The reports give 6.25-7.5 hr to Ouzel Lake plus 2 hr to the high camp, and 5.5-7.5 hr from camp to the summit with 3-6.5 hr back, and 5.5-6 hr out. The middle figures give a 10-hr summit day (6 up, 4 back) and about 24 hr of moving time.",
+   "legs": {
+    "thToCamp": 8.5,
+    "campToSummit": 6,
+    "summitToCamp": 4,
+    "campToTh": 5.75,
+    "summitToTh": null
+   }
+  },
+  {
+   "id": "wa_southeast_mox_peak_se_rib",
+   "confidence": "medium",
+   "from": [
+    12.5,
+    13,
+    8,
+    33.5
+   ],
+   "to": [
+    8.5,
+    6,
+    9.75,
+    24.25
+   ],
+   "why": "Every leg was slower than the reports (9 hr to Ouzel Lake, a 13-hr summit day counted whole as the summit leg). Timed parties take about 6.5 hr to Ouzel Lake, 2 hr to the Redoubt saddle camp, about 6 hr camp to summit and 4 hr back, and about 5.75 hr out, so the trip is about 24 hr of moving time. Same figures as the sister row for this route.",
+   "legs": {
+    "thToCamp": 8.5,
+    "campToSummit": 6,
+    "summitToCamp": 4,
+    "campToTh": 5.75,
+    "summitToTh": null
+   }
+  },
+  {
+   "id": "wa_soviet_route",
+   "confidence": "medium",
+   "from": [
+    6,
+    13,
+    14.5,
+    33.5
+   ],
+   "to": [
+    6,
+    13,
+    14.5,
+    33.5
+   ],
+   "why": "The A/S/D/T split (6/13/14.5/33.5) and day hours already matched the one-way convention: leave camp 5 am, Southwest Peak ~6 pm (13 h), back at camp 2:30 am (+8.5 h), walk out 6 h. Only the section breakdown still counted the whole 21.5 h camp-to-camp day as 'Climb'; it is split into a 13 h climb and an 8.5 h descent. One detailed timed report (plus the FA approach time), hence medium.",
+   "legs": {
+    "thToCamp": 6,
+    "campToSummit": 13,
+    "summitToCamp": 8.5,
+    "campToTh": 6,
+    "summitToTh": null
+   }
+  },
+  {
+   "id": "wa_spider_mountain_north_ridge",
+   "confidence": "medium",
+   "from": [
+    null,
+    3,
+    null,
+    8
+   ],
+   "to": [
+    5.5,
+    4.5,
+    8,
+    18
+   ],
+   "why": "Total 8 h was only the summit day and the summit leg held just the col-to-summit stretch. Reports give ~2-2.5 h trailhead to Cascade Pass plus ~3 h to Kool-Aid Lake (5.5 h in), ~1.5 h lake to col plus 2-3 h col to summit (4.5 h one way inside the 8 h camp round trip), and ~4.5 h out; new 5.5/4.5/8/18. No single party's full timed log, so medium.",
+   "legs": {
+    "thToCamp": 5.5,
+    "campToSummit": 4.5,
+    "summitToCamp": 3.5,
+    "campToTh": 4.5,
+    "summitToTh": null
+   }
+  },
+  {
+   "id": "wa_spire_point_southwest_face",
+   "confidence": "medium",
+   "from": [
+    13.5,
+    10,
+    3.5,
+    27
+   ],
+   "to": [
+    13.5,
+    3,
+    10.5,
+    27
+   ],
+   "why": "Summit leg held the whole 10 h summit day (climb plus walk back to Sixmile). The row's own schedule (leave 6 am, top ~9 am) and reports of a short climb from Spire Col give ~3 h one way; the 7 h back to Sixmile plus 3.5 h out (10.5 h) fits the ~9 h Itswoot-Ridge-to-car report. Total 27 unchanged. Flag: day 1 says 22.5 mi including a 16-mi closed-road walk in 4.5 h; that road has since reopened, so its miles and note look stale (not changed here, hours only).",
+   "legs": {
+    "thToCamp": 13.5,
+    "campToSummit": 3,
+    "summitToCamp": 7,
+    "campToTh": 3.5,
+    "summitToTh": null
+   }
+  },
+  {
+   "id": "wa_the_tempest",
+   "confidence": "medium",
+   "from": [
+    3,
+    12,
+    5,
+    20
+   ],
+   "to": [
+    2.5,
+    10.75,
+    4,
+    17.25
+   ],
+   "why": "Old figures counted the whole climbing day, round trip, as the summit leg and padded the walk-in. Timed reports on the same formation put lake-to-base near 1.5-2 hr, the descent to the basin under 1 hr and lake-to-car about 2 hr; Tempest time on route runs from 5.5 hr (strong free/C1 team, descent included) to a dawn-to-dark first ascent, so about 9 hr for an aid party; summit day is now 10.75 hr camp-to-summit plus 2 hr back to camp.",
+   "legs": {
+    "thToCamp": 2.5,
+    "campToSummit": 10.75,
+    "summitToCamp": 2,
+    "campToTh": 2,
+    "summitToTh": null
+   }
+  },
+  {
+   "id": "wa_west_face_2",
+   "confidence": "medium",
+   "from": [
+    21.3,
+    7.5,
+    5,
+    33.8
+   ],
+   "to": [
+    13,
+    10.5,
+    17.5,
+    41
+   ],
+   "why": "The route is North Gunsight's West Face. Old timing (21.3/7.5/5) left the day hours empty and listed no hike-out days, though the plan's note said Days 4-5 walk out. A timed 2018 ascent gives about 13 hr to the col over two days, 3 hr of glacier plus 7.5 hr of climbing to the top, raps plus the 3 hr glacier slog back (16 hr camp to camp), and 12.5 hr out, now split over new Days 4-5 (one source for the climb itself).",
+   "legs": {
+    "thToCamp": 13,
+    "campToSummit": 10.5,
+    "summitToCamp": 5,
+    "campToTh": 12.5,
+    "summitToTh": null
+   }
   }
  ],
  "held": [
@@ -2300,43 +2631,385 @@
     "campToTh": 5.5,
     "summitToTh": null
    }
+  },
+  {
+   "id": "wa_ne_ridge",
+   "confidence": "low",
+   "proposed": [
+    10,
+    5,
+    9,
+    24
+   ],
+   "why": "Every time field was empty. No timed report of the NE Ridge itself was found: the 10 h approach is from a timed 19-mile hike-in, the 5 h camp-to-summit is scaled from a timed 10-pitch 5.9 day on the same peak down to 7 pitches of 5.3, and the 1 h walk-off and 8 h hike-out follow the reported walk-off and hike-out pace.",
+   "legs": {
+    "thToCamp": 10,
+    "campToSummit": 5,
+    "summitToCamp": 1,
+    "campToTh": 8,
+    "summitToTh": null
+   }
+  },
+  {
+   "id": "wa_north_face_of_the_mole",
+   "confidence": "low",
+   "proposed": [
+    6,
+    3.5,
+    4,
+    13.5
+   ],
+   "why": "Day hours were empty and the 2 h descent left out the summit-to-camp return. The 6 h approach is the middle of 4.5-9 h reports; there is no timed report of camp-to-summit or the walk-out, so 3.5 h up, 1.5 h back to camp and 2.5 h out come from the row's own day notes (40 min to the base, 3-4 h climbing, 2-3 h out).",
+   "legs": {
+    "thToCamp": 6,
+    "campToSummit": 3.5,
+    "summitToCamp": 1.5,
+    "campToTh": 2.5,
+    "summitToTh": null
+   }
+  },
+  {
+   "id": "wa_north_star_mountain_east_route",
+   "confidence": "low",
+   "proposed": [
+    5,
+    4,
+    6.5,
+    15.5
+   ],
+   "why": "The approach day counted the boat and bus rides (9 h) and the summit leg was stored as the 9 h round trip. The hike to Lower Lyman Lake is reported at about 4.5 h moving, so 5 h; no timed camp-to-summit report was found, so the 4 h up and 2.5 h back are estimated from about 2,500 ft of Class 2 ground and one fast party's timings nearby; the 4 h hike out is downhill on the same 8.2 mi trail.",
+   "legs": {
+    "thToCamp": 5,
+    "campToSummit": 4,
+    "summitToCamp": 2.5,
+    "campToTh": 4,
+    "summitToTh": null
+   }
+  },
+  {
+   "id": "wa_northeast_face_direct",
+   "confidence": "low",
+   "proposed": [
+    6,
+    9,
+    9.5,
+    24.5
+   ],
+   "why": "The row had no total and a 3-hr approach that matched nothing; the 3-day plan had blank day hours. Approach and walk-out follow the reported 5-8 hr trailhead-to-lake and the South Route figures (summit to trailhead 9-10 hr, so about 4 hr summit to camp and 5.5 hr camp out); the 9-hr camp-to-summit is the middle of the row's own 8-10.5 hr figure, as no timed face report was found, so confidence is low.",
+   "legs": {
+    "thToCamp": 6,
+    "campToSummit": 9,
+    "summitToCamp": 4,
+    "campToTh": 5.5,
+    "summitToTh": null
+   }
+  },
+  {
+   "id": "wa_northwest_face_4",
+   "confidence": "low",
+   "proposed": [
+    8,
+    8,
+    10.5,
+    26.5
+   ],
+   "why": "The row had a stray 3-hr approach, no total and blank day hours. No timed report of the face was found; the 8-hr approach scales the one timed valley approach (6.5 hr) for the added closed-road walk, and the 8-hr climb (15 pitches, much of it simul-climbed), 3.5 hr back to camp and 7-hr walk out are estimates, so confidence is low.",
+   "legs": {
+    "thToCamp": 8,
+    "campToSummit": 8,
+    "summitToCamp": 3.5,
+    "campToTh": 7,
+    "summitToTh": null
+   }
+  },
+  {
+   "id": "wa_poltergeist_pinnacle",
+   "confidence": "low",
+   "proposed": [
+    15,
+    8.5,
+    16.5,
+    40
+   ],
+   "why": "The row had a stray 3-hr approach, no total and blank day hours. Reported moving time Hannegan to Perfect Pass is about 16-17.5 hr and the exit 13-15.5 hr (most parties take two days each way; the 3-day plan keeps one long day each, set at 15 and 13); no timed report of the pinnacle exists, so the 8.5-hr camp-to-summit (3 hr to the base, about 5.5 on route) and 3.5 hr back to camp are estimates and confidence is low.",
+   "legs": {
+    "thToCamp": 15,
+    "campToSummit": 8.5,
+    "summitToCamp": 3.5,
+    "campToTh": 13,
+    "summitToTh": null
+   }
+  },
+  {
+   "id": "wa_prusik_peak_alpine_craggers_delight",
+   "confidence": "medium",
+   "proposed": [
+    7,
+    5,
+    7.5,
+    19.5
+   ],
+   "why": "The row had day hours but no timing legs. Reports put the loaded walk over Aasgard to Gnome Tarn at about 6-7 hr, Stanley-Burgner at about 4-4.5 hr base to summit with about 1 hr to rap back to the base, and the Snow Lakes walk-out at 4 hr light to just under 6 hr loaded; the summit leg is camp to summit one way (0.5 walk + 4.5 climbing) and the return to camp sits in the descent.",
+   "legs": {
+    "thToCamp": 7,
+    "campToSummit": 5,
+    "summitToCamp": 1.5,
+    "campToTh": 6,
+    "summitToTh": null
+   }
+  },
+  {
+   "id": "wa_prusik_peak_prayer_for_a_friend",
+   "confidence": "low",
+   "proposed": [
+    7,
+    9,
+    7,
+    23
+   ],
+   "why": "No timed ascent exists for this route: the free ascent took ten days of work over two seasons and the second ascent has no published times. Day hours were all null; they are filled from the shared Aasgard approach and the West Ridge rappel times, with a 9 hr camp-to-summit estimate for seven hard pitches and a 5.5 hr reverse of Aasgard to the car.",
+   "legs": {
+    "thToCamp": 7,
+    "campToSummit": 9,
+    "summitToCamp": 1.5,
+    "campToTh": 5.5,
+    "summitToTh": null
+   }
+  },
+  {
+   "id": "wa_prusik_peak_sail_away",
+   "confidence": "low",
+   "proposed": [
+    7,
+    8,
+    7,
+    22
+   ],
+   "why": "No timed report of a Sail Away ascent beyond the first-ascent party's roughly 8 unhurried hours for the six pitches (already in the row); the shared approach, walk-out and Solid Gold rappel times come from other Prusik south-face reports. The route tops out on the Sail/West Ridge rather than the true summit, so the summit leg is camp to the top of the route.",
+   "legs": {
+    "thToCamp": 7,
+    "campToSummit": 8,
+    "summitToCamp": 1,
+    "campToTh": 6,
+    "summitToTh": null
+   }
+  },
+  {
+   "id": "wa_sentinel_peak_standard",
+   "confidence": "low",
+   "proposed": [
+    14,
+    3.5,
+    15.5,
+    33
+   ],
+   "why": "The summit day's 9 hr was the whole day and disagreed with its own 6 AM-5 PM schedule; the summit leg is now camp to Sentinel one way (3.5 hr, matching the schedule and near the 4 hr from a farther camp), with Old Guard and the move to Yang Yang in the descent. Approach legs come from snippet splits (4 hr to Kool-Aid, 6-11 hr on to Yang Yang); no timed report of this exact col-camp itinerary was found.",
+   "legs": {
+    "thToCamp": 14,
+    "campToSummit": 3.5,
+    "summitToCamp": 7.5,
+    "campToTh": 8,
+    "summitToTh": null
+   }
+  },
+  {
+   "id": "wa_sinister_peak_southwest_route",
+   "confidence": "medium",
+   "proposed": [
+    12,
+    6,
+    12,
+    30
+   ],
+   "why": "The 11 hr climb leg was the camp-to-camp round trip and day 2 (7 hr) was far longer than the ~3.5-4 hr reports give from the Bachelor Creek crossing to Cub Lake / Itswoot Ridge. Reports put camp to summit at ~6-7 hr and summit back to camp at ~4 hr, so summit is now 6 one way, the summit day 10, and the return folded into the descent. Note for the owner: the day 1 note still says the Suiattle road is closed for 16 mi, but 2018 parties drove to the Downey Creek trailhead; if the road is open, days 1 and 4 are about 3 and 2 hr shorter (hours here keep the note's road walk).",
+   "legs": {
+    "thToCamp": "7-8 hr trailhead to Cub Lake / Itswoot Ridge in one push (Bachelor Creek footlog at ~4.3 hr); row keeps 8 + 4 = 12 because its day 1 note also walks the road",
+    "campToSummit": 6,
+    "summitToCamp": 4,
+    "campToTh": "5.5 hr Cub Lake to car; 3.5 hr Itswoot Ridge to bottom of Bachelor Creek plus ~6 mi; row 8 incl. road per its note",
+    "summitToTh": null
+   }
+  },
+  {
+   "id": "wa_smears_jugs_and_rock_roll",
+   "confidence": "low",
+   "proposed": [
+    8.5,
+    1,
+    6,
+    15.5
+   ],
+   "why": "The row's timing treated it as one 10 hr day while its itinerary is four days with no hours. Hours now follow the day plan (7.5 hr in, ~1 hr scouting, 1.5 hr climb-and-back day, 5.5 hr out), matching the notes' 6-8 and 5-6 hr ranges and a reported 5 hr fast descent; no timed report of the climb itself or the ascent was found, so confidence is low.",
+   "legs": {
+    "thToCamp": 7.5,
+    "campToSummit": 1,
+    "summitToCamp": 0.5,
+    "campToTh": 5.5,
+    "summitToTh": null
+   }
+  },
+  {
+   "id": "wa_south_face_10",
+   "confidence": "low",
+   "proposed": [
+    10,
+    5.5,
+    9.5,
+    25
+   ],
+   "why": "Only the 0.5 hr camp-to-base figure was stored and every day's hours were empty. The approach is ~10 hr over two days, the hike out ~8.5 hr, and the descent walk-off ~1 hr; no timed South Face report was found, so camp to summit (5.5 hr) is set from the 40 min walk to the face plus ~4.5 hr for seven 5.8 pitches, and confidence is low.",
+   "legs": {
+    "thToCamp": "10+ hr for ~19 mi (one push); split 6.5 + 3.5",
+    "campToSummit": 5.5,
+    "summitToCamp": 1,
+    "campToTh": 8.5,
+    "summitToTh": null
+   }
+  },
+  {
+   "id": "wa_south_headwall",
+   "confidence": "low",
+   "proposed": [
+    3,
+    7.5,
+    7.5,
+    18
+   ],
+   "why": "The row stored only a 1.92 hr approach and no other legs. Reports give ~3 hr to the Ingalls Creek camp, ~3.5 hr back out, and ~4-5 hr down the Cascadian from the summit; with no timed South Headwall report, camp to summit is set at 7.5 hr (scree to 8,700 ft plus 4-5 pitches), so confidence is low.",
+   "legs": {
+    "thToCamp": 3,
+    "campToSummit": 7.5,
+    "summitToCamp": 4,
+    "campToTh": 3.5,
+    "summitToTh": null
+   }
+  },
+  {
+   "id": "wa_south_ridge_4",
+   "confidence": "medium",
+   "proposed": [
+    6,
+    4,
+    6,
+    16
+   ],
+   "why": "The row had no total and a 3-hr descent that could not cover both the return to camp and the walk out. Approach and walk-out are well timed (about 6 hr in, 4.5 hr out, 1-1.5 hr from the summit back to camp by the East Ridge), but no timed South Ridge ascent was found, so the 4-hr camp-to-summit leg (4 roped pitches plus reaching the ridge, vs 2-3 hr for the East Ridge walk-up) is an estimate with low confidence.",
+   "legs": {
+    "thToCamp": 6,
+    "campToSummit": 4,
+    "summitToCamp": 1.5,
+    "campToTh": 4.5,
+    "summitToTh": null
+   }
+  },
+  {
+   "id": "wa_southwest_rib_2",
+   "confidence": "low",
+   "proposed": [
+    6,
+    9,
+    6.5,
+    21.5
+   ],
+   "why": "The row had no hour figures at all. Approach (~6 h) and the glissade back to camp (~1.5 h) come from one report; no source times the 19 pitches, so the 9 h camp-to-summit is an estimate for a competent party on ~19 easy-fifth pitches, and the 5 h walk-out is reckoned from the ~10 mostly downhill miles. Low confidence: no timed report of the climb itself.",
+   "legs": {
+    "thToCamp": 6,
+    "campToSummit": 9,
+    "summitToCamp": 1.5,
+    "campToTh": 5,
+    "summitToTh": null
+   }
+  },
+  {
+   "id": "wa_sw_ridge",
+   "confidence": "low",
+   "proposed": [
+    12.5,
+    4,
+    11.5,
+    28
+   ],
+   "why": "The row had no hour figures at all. No source times the camp-to-summit or summit-to-camp legs of the SW Ridge, so those are estimated from a five-short-pitch route a short walk above high camp; the approach days (trail to Swamp Creek, then a long brushy day to high camp) and the two-part walk-out are set from one party's timed narrative plus the 9-mile/4500 ft distances. Ferry and shuttle riding time is not counted as moving time.",
+   "legs": {
+    "thToCamp": 12.5,
+    "campToSummit": 4,
+    "summitToCamp": 2.5,
+    "campToTh": 9,
+    "summitToTh": null
+   }
+  },
+  {
+   "id": "wa_the_monk_le_gibet",
+   "confidence": "low",
+   "proposed": [
+    8.5,
+    3,
+    16,
+    27.5
+   ],
+   "why": "The old 0.5 hr approach was only the walk from camp to the base, and no other leg was set. The hike in is set between a fast light party (about 6 h) and a loaded wet one (10+ h). The summit-day split (3 h camp to summit, 2 h for the rappels, a second short Monk route and the walk to camp, keeping the 5 h day) has no timed report and is estimated from the pitch count. Day 3 on Cathedral uses one party's camp-to-summit-and-back time trimmed to a typical pace, and the untimed 18-mile walk out is estimated at 7 h. Per the multi-day convention, the days after the Monk day (Cathedral, walk out) sit in the descent.",
+   "legs": {
+    "thToCamp": 8.5,
+    "campToSummit": 3,
+    "summitToCamp": 2,
+    "campToTh": 7,
+    "summitToTh": null
+   }
+  },
+  {
+   "id": "wa_the_monk_odine",
+   "confidence": "low",
+   "proposed": [
+    8.5,
+    2.5,
+    16.5,
+    27.5
+   ],
+   "why": "The old 0.5 hr approach was only the walk from camp to the base, and no other leg was set. The hike in is set between a fast light party (about 6 h) and a loaded wet one (10+ h). The summit-day split (2.5 h camp to summit, 2.5 h for the rappels, a second short Monk route and the walk to camp, keeping the 5 h day) has no timed report and is estimated from the pitch count. Day 3 on Cathedral uses one party's camp-to-summit-and-back time trimmed to a typical pace, and the untimed 18-mile walk out is estimated at 7 h. Per the multi-day convention, the days after the Monk day (Cathedral, walk out) sit in the descent.",
+   "legs": {
+    "thToCamp": 8.5,
+    "campToSummit": 2.5,
+    "summitToCamp": 2.5,
+    "campToTh": 7,
+    "summitToTh": null
+   }
+  },
+  {
+   "id": "wa_the_monk_scabo",
+   "confidence": "low",
+   "proposed": [
+    8.5,
+    3,
+    16,
+    27.5
+   ],
+   "why": "The old 0.5 hr approach was only the walk from camp to the base, and no other leg was set. The hike in is set between a fast light party (about 6 h) and a loaded wet one (10+ h). The summit-day split (3 h camp to summit, 2 h for the rappels, a second short Monk route and the walk to camp, keeping the 5 h day) has no timed report and is estimated from the pitch count. Day 3 on Cathedral uses one party's camp-to-summit-and-back time trimmed to a typical pace, and the untimed 18-mile walk out is estimated at 7 h. Per the multi-day convention, the days after the Monk day (Cathedral, walk out) sit in the descent.",
+   "legs": {
+    "thToCamp": 8.5,
+    "campToSummit": 3,
+    "summitToCamp": 2,
+    "campToTh": 7,
+    "summitToTh": null
+   }
+  },
+  {
+   "id": "wa_tupshin_peak_east_face",
+   "confidence": "low",
+   "proposed": [
+    10,
+    3,
+    8,
+    21
+   ],
+   "why": "Row had no hour figures at all. The only timed report is a fast solo (bivy to summit 1.5 hr, 3 hr round trip; hike-out about 4.5 hr) plus a 2.5 hr round trip on the face from its base; figures are scaled to a roped party with overnight packs (4 + 6 hr in, 3 hr up, 2 hr back, 6 hr out), so confidence is low.",
+   "legs": {
+    "thToCamp": 10,
+    "campToSummit": 3,
+    "summitToCamp": 2,
+    "campToTh": 6,
+    "summitToTh": null
+   }
   }
  ],
- "notResearched": [
-  "wa_mount_triumph_northeast_ridge",
-  "wa_ne_ridge",
-  "wa_north_face_of_the_mole",
-  "wa_north_star_mountain_east_route",
-  "wa_northeast_face_direct",
-  "wa_northwest_face_4",
-  "wa_northwest_mox_peak_standard",
-  "wa_poltergeist_pinnacle",
-  "wa_primus_peak_south_ridge",
-  "wa_prusik_peak_alpine_craggers_delight",
-  "wa_prusik_peak_prayer_for_a_friend",
-  "wa_prusik_peak_sail_away",
-  "wa_eldorado_peak_northeast_face",
-  "wa_prusik_peak_south_face_burgner_stanley",
-  "wa_ridge_traverse_from_east_fury",
-  "wa_sentinel_peak_standard",
-  "wa_sinister_peak_southwest_route",
-  "wa_smears_jugs_and_rock_roll",
-  "wa_south_face_10",
-  "wa_south_headwall",
-  "wa_south_ridge_4",
-  "wa_south_spur",
-  "wa_southeast_mox_peak_beckey_route_west_ridge",
-  "wa_southeast_mox_peak_se_rib",
-  "wa_southwest_rib_2",
-  "wa_soviet_route",
-  "wa_spider_mountain_north_ridge",
-  "wa_spire_point_southwest_face",
-  "wa_sw_ridge",
-  "wa_the_monk_le_gibet",
-  "wa_the_monk_odine",
-  "wa_the_monk_scabo",
-  "wa_the_tempest",
-  "wa_tupshin_peak_east_face",
-  "wa_west_face_2"
- ]
+ "notResearched": []
 }
