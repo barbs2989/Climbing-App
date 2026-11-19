@@ -24,6 +24,6 @@
     "src/components/BlockedClimbersSheet.tsx :: _ubn+\" unblocked — they can message you and invite you to crews again\"",
     "src/components/FriendsSheet.tsx :: _first+\" removed from friends\")",
     "src/components/LogClimbSheet.tsx :: \"Conditions report deleted\")",
-    "src/components/LogClimbSheet.tsx :: _delLog&&_delLog.text?\"Trip report deleted\":\"Logged climb deleted\")"
+    "src/components/LogClimbSheet.tsx :: logHasReport(_delLog)?\"Trip report deleted\":\"Logged climb deleted\")"
   ]
 }

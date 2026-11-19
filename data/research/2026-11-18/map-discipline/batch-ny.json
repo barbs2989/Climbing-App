@@ -1,0 +1,868 @@
+{
+ "ny_donaldson_mountain_seward_range_herd_path": {
+  "area": "ny_donaldson_mountain",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Seward Trailhead, Coreys Road",
+    "trailheadLat": 44.191669,
+    "trailheadLng": -74.26344
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Seward Trailhead, Coreys Road",
+     "trailheadLat": 44.191669,
+     "trailheadLng": -74.26344
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://services6.arcgis.com/DZHaqZm9cxOD4CWM/arcgis/rest/services/NYS_State_Land_Assets/FeatureServer/38/query?where=OBJECTID%3D5107624&outFields=NAME,FACILITY&f=json",
+      "fact": "NYSDEC parking layer: Ampersand Parking Lot (High Peaks Wilderness) 44.19167,-74.26344",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     },
+     {
+      "url": "https://www.lakeplacid.com/hiking/seward-range",
+      "fact": "Coreys Road trailhead for the Seward Range 44.19214,-74.26345 (52 m from the DEC lot)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "stored",
+    "fact": "route text: Blueberry Trail, starts at Coreys Road parking area"
+   },
+   "chunk": "nydec"
+  }
+ },
+ "ny_mount_emmons_seward_range_herd_path": {
+  "area": "ny_mount_emmons",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Seward Trailhead, Coreys Road",
+    "trailheadLat": 44.191669,
+    "trailheadLng": -74.26344
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Seward Trailhead, Coreys Road",
+     "trailheadLat": 44.191669,
+     "trailheadLng": -74.26344
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://services6.arcgis.com/DZHaqZm9cxOD4CWM/arcgis/rest/services/NYS_State_Land_Assets/FeatureServer/38/query?where=OBJECTID%3D5107624&outFields=NAME,FACILITY&f=json",
+      "fact": "NYSDEC parking layer: Ampersand Parking Lot (High Peaks Wilderness) 44.19167,-74.26344",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     },
+     {
+      "url": "https://www.lakeplacid.com/hiking/seward-range",
+      "fact": "Coreys Road trailhead for the Seward Range 44.19214,-74.26345 (52 m from the DEC lot)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "stored",
+    "fact": "route text: Blueberry Trail, starts at Coreys Road parking area"
+   },
+   "chunk": "nydec"
+  }
+ },
+ "ny_seward_mountain_seward_herd_path": {
+  "area": "ny_seward_mountain",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Seward Trailhead, Coreys Road",
+    "trailheadLat": 44.191669,
+    "trailheadLng": -74.26344
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Seward Trailhead, Coreys Road",
+     "trailheadLat": 44.191669,
+     "trailheadLng": -74.26344
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://services6.arcgis.com/DZHaqZm9cxOD4CWM/arcgis/rest/services/NYS_State_Land_Assets/FeatureServer/38/query?where=OBJECTID%3D5107624&outFields=NAME,FACILITY&f=json",
+      "fact": "NYSDEC parking layer: Ampersand Parking Lot (High Peaks Wilderness) 44.19167,-74.26344",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     },
+     {
+      "url": "https://www.lakeplacid.com/hiking/seward-range",
+      "fact": "Coreys Road trailhead for the Seward Range 44.19214,-74.26345 (52 m from the DEC lot)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "stored",
+    "fact": "route text: Blueberry Trail, starts at Coreys Road parking area"
+   },
+   "chunk": "nydec"
+  }
+ },
+ "ny_seymour_mountain_ward_brook_herd_path": {
+  "area": "ny_seymour_mountain",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Seward Trailhead, Coreys Road",
+    "trailheadLat": 44.191669,
+    "trailheadLng": -74.26344
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Seward Trailhead, Coreys Road",
+     "trailheadLat": 44.191669,
+     "trailheadLng": -74.26344
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://services6.arcgis.com/DZHaqZm9cxOD4CWM/arcgis/rest/services/NYS_State_Land_Assets/FeatureServer/38/query?where=OBJECTID%3D5107624&outFields=NAME,FACILITY&f=json",
+      "fact": "NYSDEC parking layer: Ampersand Parking Lot (High Peaks Wilderness) 44.19167,-74.26344",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     },
+     {
+      "url": "https://www.lakeplacid.com/hiking/seward-range",
+      "fact": "Coreys Road trailhead for the Seward Range 44.19214,-74.26345 (52 m from the DEC lot)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "stored",
+    "fact": "route text: Blueberry Trail, starts at Coreys Road parking area"
+   },
+   "chunk": "nydec"
+  }
+ },
+ "ny_esther_mountain_herd_path_from_marble_mountain": {
+  "area": "ny_esther_mountain",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Atmospheric Sciences Research Center trailhead, Wilmington",
+    "trailheadLat": 44.394405,
+    "trailheadLng": -73.857687
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Atmospheric Sciences Research Center trailhead, Wilmington",
+     "trailheadLat": 44.394405,
+     "trailheadLng": -73.857687
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://services6.arcgis.com/DZHaqZm9cxOD4CWM/arcgis/rest/services/NYS_State_Land_Assets/FeatureServer/38/query?where=OBJECTID%3D5117357&outFields=NAME,FACILITY&f=json",
+      "fact": "NYSDEC parking layer: Asrc Trail Parking (Suny Atmospheric Sciences Research Center) 44.39440,-73.85769",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "stored",
+    "fact": "route text: Marble Mountain route from the Atmospheric Science Research Center road"
+   },
+   "chunk": "nydec"
+  }
+ },
+ "ny_south_dix_dix_range_herd_path": {
+  "area": "ny_south_dix",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Elk Lake Trailhead",
+    "trailheadLat": 44.019709,
+    "trailheadLng": -73.82668
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Elk Lake Trailhead",
+     "trailheadLat": 44.019709,
+     "trailheadLng": -73.82668
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://services6.arcgis.com/DZHaqZm9cxOD4CWM/arcgis/rest/services/NYS_State_Land_Assets/FeatureServer/38/query?where=OBJECTID%3D5106979&outFields=NAME,FACILITY&f=json",
+      "fact": "NYSDEC parking layer: Elk Lake Parking Lot (High Peaks Wilderness) 44.01971,-73.82668",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     },
+     {
+      "url": "https://dec.ny.gov/places/dix-mountain-tract",
+      "fact": "Elk Lake Trailhead parking at the end of Elk Lake Road 44.0209,-73.8278 (about 150 m from the layer point)",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "stored",
+    "fact": "route text: Dix Range herd path from Elk Lake; starts at Elk Lake trailhead"
+   },
+   "chunk": "nydec"
+  }
+ },
+ "ny_sawteeth_weld_trail": {
+  "area": "ny_sawteeth",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "AMR parking area, St. Huberts (Route 73)",
+    "trailheadLat": 44.14915,
+    "trailheadLng": -73.7694
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "AMR parking area, St. Huberts (Route 73)",
+     "trailheadLat": 44.14915,
+     "trailheadLng": -73.7694
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://dec.ny.gov/places/adirondack-mountain-reserve-conservation-easement-tract",
+      "fact": "Ausable Club Road parking areas 44.1492,-73.7694",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     },
+     {
+      "url": "https://services6.arcgis.com/DZHaqZm9cxOD4CWM/arcgis/rest/services/NYS_State_Land_Assets/FeatureServer/38/query?where=OBJECTID%3D5115054&outFields=NAME,FACILITY&f=json",
+      "fact": "NYSDEC parking layer: Amr Parking Lot (High Peaks Wilderness) 44.14975,-73.76800",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "stored",
+    "fact": "route text: starts at St. Huberts parking (Adirondack Mountain Reserve); same point as the Mount Colvin Gill Brook route"
+   },
+   "chunk": "nydec"
+  }
+ },
+ "ny_upper_wolfjaw_mountain_wedge_brook_trail": {
+  "area": "ny_upper_wolfjaw_mountain",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "AMR parking area, St. Huberts (Route 73)",
+    "trailheadLat": 44.14915,
+    "trailheadLng": -73.7694
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "AMR parking area, St. Huberts (Route 73)",
+     "trailheadLat": 44.14915,
+     "trailheadLng": -73.7694
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://dec.ny.gov/places/adirondack-mountain-reserve-conservation-easement-tract",
+      "fact": "Ausable Club Road parking areas 44.1492,-73.7694",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     },
+     {
+      "url": "https://services6.arcgis.com/DZHaqZm9cxOD4CWM/arcgis/rest/services/NYS_State_Land_Assets/FeatureServer/38/query?where=OBJECTID%3D5115054&outFields=NAME,FACILITY&f=json",
+      "fact": "NYSDEC parking layer: Amr Parking Lot (High Peaks Wilderness) 44.14975,-73.76800",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "stored",
+    "fact": "route text: starts at St. Huberts parking (Adirondack Mountain Reserve); same point as the Mount Colvin Gill Brook route"
+   },
+   "chunk": "nydec"
+  }
+ },
+ "ny_rocky_peak_ridge_via_giant_mountain": {
+  "area": "ny_rocky_peak_ridge",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Roaring Brook Falls Trailhead (NY 73)",
+    "trailheadLat": 44.150449,
+    "trailheadLng": -73.767586
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Roaring Brook Falls Trailhead (NY 73)",
+     "trailheadLat": 44.150449,
+     "trailheadLng": -73.767586
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://services6.arcgis.com/DZHaqZm9cxOD4CWM/arcgis/rest/services/NYS_State_Land_Assets/FeatureServer/38/query?where=OBJECTID%3D5114560&outFields=NAME,FACILITY&f=json",
+      "fact": "NYSDEC parking layer: Roaring Brook Falls Parking Lot (Giant Mountain Wilderness) 44.15045,-73.76759",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     },
+     {
+      "url": "https://dec.ny.gov/places/giant-mountain-wilderness",
+      "fact": "Roaring Brook Falls Trailhead Parking Area 44.1509,-73.7687; Roaring Brook Trail to Giant",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "stored",
+    "fact": "route text: Roaring Brook Trail over Giant, then the ridge trail"
+   },
+   "chunk": "nydec"
+  }
+ },
+ "ny_cliff_mountain_uphill_brook_herd_path": {
+  "area": "ny_cliff_mountain",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Upper Works Trailhead",
+    "trailheadLat": 44.086202,
+    "trailheadLng": -74.055542
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Upper Works Trailhead",
+     "trailheadLat": 44.086202,
+     "trailheadLng": -74.055542
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.openstreetmap.org/way/1082600068",
+      "fact": "Upper Works Parking Area 44.08620,-74.05554",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://services6.arcgis.com/DZHaqZm9cxOD4CWM/arcgis/rest/services/NYS_State_Land_Assets/FeatureServer/38/query?where=OBJECTID%3D5102122&outFields=NAME,FACILITY&f=json",
+      "fact": "NYSDEC parking layer: Upper Works Trail Parking (High Peaks Wilderness) 44.08917,-74.05640 (330 m north of the OSM lot)",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "stored",
+    "fact": "route text: Calamity Brook Trail; starts at Upper Works; same point as the Marshall and Redfield routes"
+   },
+   "chunk": "nydec"
+  }
+ },
+ "ny_allen_mountain_allen_brook_herd_path": {
+  "area": "ny_allen_mountain",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "East River Trailhead, Upper Works Road",
+    "trailheadLat": 44.08122,
+    "trailheadLng": -74.055131
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "East River Trailhead, Upper Works Road",
+     "trailheadLat": 44.08122,
+     "trailheadLng": -74.055131
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://services6.arcgis.com/DZHaqZm9cxOD4CWM/arcgis/rest/services/NYS_State_Land_Assets/FeatureServer/38/query?where=OBJECTID%3D5102121&outFields=NAME,FACILITY&f=json",
+      "fact": "NYSDEC parking layer: East River Trail Parking (High Peaks Wilderness) 44.08122,-74.05513",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "stored",
+    "fact": "route text: Hanging Spear Falls (East River) Trail; starts at Upper Works / Tahawus Road"
+   },
+   "chunk": "nydec"
+  }
+ },
+ "ny_gray_peak_via_lake_tear_of_the_clouds": {
+  "area": "ny_gray_peak",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Adirondak Loj / High Peaks Information Center",
+    "trailheadLat": 44.182801,
+    "trailheadLng": -73.963945
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Adirondak Loj / High Peaks Information Center",
+     "trailheadLat": 44.182801,
+     "trailheadLng": -73.963945
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.openstreetmap.org/way/223290700",
+      "fact": "High Peaks Information Center 44.18280,-73.96394",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://myhikes.org/trails/heart-lake-loop-trail",
+      "fact": "Heart Lake / ADK Loj parking lot 44.18307,-73.96380 (32 m away)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "stored",
+    "fact": "route text: starts at Adirondak Loj / High Peaks Information Center"
+   },
+   "chunk": "nydec"
+  }
+ },
+ "ny_iroquois_peak_via_algonquin_peak": {
+  "area": "ny_iroquois_peak",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Adirondak Loj / High Peaks Information Center",
+    "trailheadLat": 44.182801,
+    "trailheadLng": -73.963945
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Adirondak Loj / High Peaks Information Center",
+     "trailheadLat": 44.182801,
+     "trailheadLng": -73.963945
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.openstreetmap.org/way/223290700",
+      "fact": "High Peaks Information Center 44.18280,-73.96394",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://myhikes.org/trails/heart-lake-loop-trail",
+      "fact": "Heart Lake / ADK Loj parking lot 44.18307,-73.96380 (32 m away)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "stored",
+    "fact": "route text: starts at Adirondak Loj / High Peaks Information Center"
+   },
+   "chunk": "nydec"
+  }
+ },
+ "ny_mount_skylight_via_mount_marcy": {
+  "area": "ny_mount_skylight",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Adirondak Loj / High Peaks Information Center",
+    "trailheadLat": 44.182801,
+    "trailheadLng": -73.963945
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Adirondak Loj / High Peaks Information Center",
+     "trailheadLat": 44.182801,
+     "trailheadLng": -73.963945
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.openstreetmap.org/way/223290700",
+      "fact": "High Peaks Information Center 44.18280,-73.96394",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://myhikes.org/trails/heart-lake-loop-trail",
+      "fact": "Heart Lake / ADK Loj parking lot 44.18307,-73.96380 (32 m away)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "stored",
+    "fact": "route text: starts at Adirondak Loj / High Peaks Information Center"
+   },
+   "chunk": "nydec"
+  }
+ },
+ "ny_nye_mountain_via_indian_pass_brook": {
+  "area": "ny_nye_mountain",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Adirondak Loj / High Peaks Information Center",
+    "trailheadLat": 44.182801,
+    "trailheadLng": -73.963945
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Adirondak Loj / High Peaks Information Center",
+     "trailheadLat": 44.182801,
+     "trailheadLng": -73.963945
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.openstreetmap.org/way/223290700",
+      "fact": "High Peaks Information Center 44.18280,-73.96394",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://myhikes.org/trails/heart-lake-loop-trail",
+      "fact": "Heart Lake / ADK Loj parking lot 44.18307,-73.96380 (32 m away)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "stored",
+    "fact": "route text: starts at Adirondak Loj / High Peaks Information Center"
+   },
+   "chunk": "nydec"
+  }
+ },
+ "ny_phelps_mountain_phelps_trail": {
+  "area": "ny_phelps_mountain",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Adirondak Loj / High Peaks Information Center",
+    "trailheadLat": 44.182801,
+    "trailheadLng": -73.963945
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Adirondak Loj / High Peaks Information Center",
+     "trailheadLat": 44.182801,
+     "trailheadLng": -73.963945
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.openstreetmap.org/way/223290700",
+      "fact": "High Peaks Information Center 44.18280,-73.96394",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://myhikes.org/trails/heart-lake-loop-trail",
+      "fact": "Heart Lake / ADK Loj parking lot 44.18307,-73.96380 (32 m away)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "stored",
+    "fact": "route text: starts at Adirondak Loj / High Peaks Information Center"
+   },
+   "chunk": "nydec"
+  }
+ },
+ "ny_street_mountain_via_indian_pass_brook": {
+  "area": "ny_street_mountain",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Adirondak Loj / High Peaks Information Center",
+    "trailheadLat": 44.182801,
+    "trailheadLng": -73.963945
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Adirondak Loj / High Peaks Information Center",
+     "trailheadLat": 44.182801,
+     "trailheadLng": -73.963945
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.openstreetmap.org/way/223290700",
+      "fact": "High Peaks Information Center 44.18280,-73.96394",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://myhikes.org/trails/heart-lake-loop-trail",
+      "fact": "Heart Lake / ADK Loj parking lot 44.18307,-73.96380 (32 m away)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "stored",
+    "fact": "route text: starts at Adirondak Loj / High Peaks Information Center"
+   },
+   "chunk": "nydec"
+  }
+ },
+ "ny_table_top_mountain_herd_path_from_the_van_hoevenberg_trail": {
+  "area": "ny_table_top_mountain",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Adirondak Loj / High Peaks Information Center",
+    "trailheadLat": 44.182801,
+    "trailheadLng": -73.963945
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Adirondak Loj / High Peaks Information Center",
+     "trailheadLat": 44.182801,
+     "trailheadLng": -73.963945
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.openstreetmap.org/way/223290700",
+      "fact": "High Peaks Information Center 44.18280,-73.96394",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://myhikes.org/trails/heart-lake-loop-trail",
+      "fact": "Heart Lake / ADK Loj parking lot 44.18307,-73.96380 (32 m away)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "stored",
+    "fact": "route text: starts at Adirondak Loj / High Peaks Information Center"
+   },
+   "chunk": "nydec"
+  }
+ },
+ "ny_panther_peak_panther_brook_herd_path": {
+  "area": "ny_panther_peak",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Bradley Pond Trailhead (Santanoni Range), Upper Works Road",
+    "trailheadLat": 44.069157,
+    "trailheadLng": -74.061535
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Bradley Pond Trailhead (Santanoni Range), Upper Works Road",
+     "trailheadLat": 44.069157,
+     "trailheadLng": -74.061535
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.openstreetmap.org/way/307706607",
+      "fact": "Bradley Pond Parking Area 44.06916,-74.06154",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.adirondackhub.com/hiking/the-santanoni-range",
+      "fact": "Bradley Pond / Santanoni Range trailhead 44.06921,-74.06152 (6 m away)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "stored",
+    "fact": "route text names the Bradley Pond Trail; three opened pages each place its start on Santanoni Road off Upper Works Road"
+   },
+   "chunk": "nydec"
+  }
+ },
+ "ny_couchsachraga_peak_via_santanoni_ridge": {
+  "area": "ny_couchsachraga_peak",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Bradley Pond Trailhead (Santanoni Range), Upper Works Road",
+    "trailheadLat": 44.069157,
+    "trailheadLng": -74.061535
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Bradley Pond Trailhead (Santanoni Range), Upper Works Road",
+     "trailheadLat": 44.069157,
+     "trailheadLng": -74.061535
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.openstreetmap.org/way/307706607",
+      "fact": "Bradley Pond Parking Area 44.06916,-74.06154",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.adirondackhub.com/hiking/the-santanoni-range",
+      "fact": "Bradley Pond / Santanoni Range trailhead 44.06921,-74.06152 (6 m away)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "stored",
+    "fact": "route text names the Bradley Pond Trail; three opened pages each place its start on Santanoni Road off Upper Works Road"
+   },
+   "chunk": "nydec"
+  }
+ },
+ "ny_santanoni_peak_santanoni_express": {
+  "area": "ny_santanoni_peak",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Bradley Pond Trailhead (Santanoni Range), Upper Works Road",
+    "trailheadLat": 44.069157,
+    "trailheadLng": -74.061535
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Bradley Pond Trailhead (Santanoni Range), Upper Works Road",
+     "trailheadLat": 44.069157,
+     "trailheadLng": -74.061535
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.openstreetmap.org/way/307706607",
+      "fact": "Bradley Pond Parking Area 44.06916,-74.06154",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.adirondackhub.com/hiking/the-santanoni-range",
+      "fact": "Bradley Pond / Santanoni Range trailhead 44.06921,-74.06152 (6 m away)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "stored",
+    "fact": "route text names the Bradley Pond Trail; three opened pages each place its start on Santanoni Road off Upper Works Road"
+   },
+   "chunk": "nydec"
+  }
+ }
+}

@@ -1,0 +1,691 @@
+[
+ {
+  "id": "wa_mount_ballard_east_face",
+  "name": "East Face",
+  "discipline": "scrambling",
+  "grade": "Class 4",
+  "verdict": "SUMMIT_ONLY",
+  "state": "wa",
+  "peak": {
+   "id": "wa_mount_ballard",
+   "name": "Mount Ballard",
+   "lat": 48.686066,
+   "lng": -120.757928,
+   "elevation_ft": 8371,
+   "region": "Pasayten/Okanogan",
+   "path": "usa.washington.wa_okanogan.wa_pasayten.wa_mount_ballard"
+  },
+  "text": {
+   "approach": "Drive the Harts Pass road over the pass and down the Slate Creek road to the locked gate (about 3,800 ft). Walk the old South Fork Slate Creek road roughly a mile to the large bridge near 4,000 ft, then leave the road and travel south through open forest.",
+   "approach_logistics": null,
+   "road": null,
+   "overview": "The approach most climbers use: a bushwhack from the Slate Creek road to the east ridge, a steep vegetated slot, scrambling into the east cirque, then a ledge traverse to the summit gully on the west side of the top block.",
+   "description": null,
+   "descent": "Retrace the route; descend the green slot carefully and keep to the forest on the left on the way down to avoid the alder."
+  },
+  "waypoints": [
+   {
+    "lat": 48.686066,
+    "lng": -120.757928,
+    "elev": 8371,
+    "name": "Mount Ballard summit (south/true peak)",
+    "type": "Summit"
+   }
+  ],
+  "siblingTrailheads": [
+   {
+    "route": "wa_mount_ballard_south",
+    "name": "Canyon Creek Trailhead"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Brown Bear (PCT South) Trailhead",
+    "lat": 48.702504,
+    "lng": -120.672426,
+    "km": 6.5
+   },
+   {
+    "src": "USFS",
+    "name": "Harts Pass Trailhead",
+    "lat": 48.720996,
+    "lng": -120.669933,
+    "km": 7.5
+   },
+   {
+    "src": "USFS",
+    "name": "Pacific Crest Trail North",
+    "lat": 48.732066,
+    "lng": -120.674961,
+    "km": 8
+   },
+   {
+    "src": "USFS",
+    "name": "Slate Peak Trailhead",
+    "lat": 48.737839,
+    "lng": -120.678515,
+    "km": 8.2
+   },
+   {
+    "src": "USFS",
+    "name": "Buckskin Ridge T.H.",
+    "lat": 48.732301,
+    "lng": -120.668331,
+    "km": 8.3
+   },
+   {
+    "src": "USFS",
+    "name": "East Creek Trailhead",
+    "lat": 48.667506,
+    "lng": -120.873115,
+    "km": 8.7
+   },
+   {
+    "src": "USFS",
+    "name": "Easy Pass Trailhead",
+    "lat": 48.587206,
+    "lng": -120.801615,
+    "km": 11.5
+   },
+   {
+    "src": "USFS",
+    "name": "Canyon Creek Trailhead",
+    "lat": 48.706506,
+    "lng": -120.918315,
+    "km": 12
+   },
+   {
+    "src": "USFS",
+    "name": "Rattlesnake Trailhead",
+    "lat": 48.648664,
+    "lng": -120.571213,
+    "km": 14.3
+   },
+   {
+    "src": "USFS",
+    "name": "Robinson Creek Trailhead",
+    "lat": 48.661706,
+    "lng": -120.542025,
+    "km": 16.1
+   },
+   {
+    "src": "USFS",
+    "name": "Cutthroat Trailhead",
+    "lat": 48.556306,
+    "lng": -120.654715,
+    "km": 16.3
+   },
+   {
+    "src": "USFS",
+    "name": "Burgundy Col",
+    "lat": 48.551406,
+    "lng": -120.630895,
+    "km": 17.6
+   },
+   {
+    "src": "USFS",
+    "name": "Monument Creek Trailhead",
+    "lat": 48.655436,
+    "lng": -120.515187,
+    "km": 18.1
+   },
+   {
+    "src": "USFS",
+    "name": "Heather Maple Pass Trailhead Rainy Pass ",
+    "lat": 48.516606,
+    "lng": -120.735815,
+    "km": 18.9
+   },
+   {
+    "src": "USFS",
+    "name": "Rainy Pass Trailhead (PCT North)",
+    "lat": 48.515306,
+    "lng": -120.736025,
+    "km": 19.1
+   },
+   {
+    "src": "NPS",
+    "name": "Happy Creek Forest Walk Trailhead",
+    "lat": 48.728543,
+    "lng": -121.055832,
+    "km": 22.4
+   }
+  ],
+  "firstPass": {
+   "why": "held: no placement; agent flagged the identification as inferred/weak",
+   "trailhead": {
+    "name": "Slate Creek road gate (road end, about 3,800 ft)",
+    "identifiedBy": {
+     "kind": "route_text",
+     "fact": "Slate Creek road to the locked gate (about 3,800 ft), walk old South Fork Slate Creek road to the bridge"
+    },
+    "placements": []
+   },
+   "notes": "No named trailhead or coordinate: a gate on a road. No USFS/NPS point matches (Harts Pass candidates are 7 km+ away and are NOT the start). Trip-report search summaries (CascadeClimbers 2008, lemkeclimbs) agree on the gate but I did not open them. Sibling Canyon Creek Trailhead is a different side. Road status uncertain (2026 closure orders). Place by hand."
+  },
+  "earlierPasses": {
+   "why": "stuck: Route's own text gives a locked gate on the Slate Creek road (~3,800 ft), not a named trailhead, and no page I could open gives a coordinate or name for it (Wik",
+   "trailhead": null,
+   "notes": "Route's own text gives a locked gate on the Slate Creek road (~3,800 ft), not a named trailhead, and no page I could open gives a coordinate or name for it (Wikipedia silent; WTA has no such page; no USFS/NPS point). Cannot place honestly."
+  },
+  "priorPass": {
+   "kind": "stuck",
+   "why": "Text gives a locked gate on Slate Creek road (~3,800 ft), not a named trailhead; Wikipedia Ballard page is a disambiguation with no access info; no land-manager"
+  },
+  "lastPassNote": "Start identified strongly (route text plus two opened pages) but it is an unnamed gate with no printed coordinate and no USFS/NPS match; Harts Pass candidates a"
+ },
+ {
+  "id": "wa_mount_rainier_east_success_couloir",
+  "name": "East Success Couloir",
+  "discipline": "mountaineering",
+  "grade": "Steep Snow",
+  "verdict": "SUMMIT_ONLY",
+  "state": "wa",
+  "peak": {
+   "id": "wa_mount_rainier",
+   "name": "Mount Rainier",
+   "lat": 46.8528267,
+   "lng": -121.7604408,
+   "elevation_ft": 14406,
+   "region": "Washington",
+   "path": "usa.washington.wa_sw_tacoma.wa_southwest_cascades.wa_mount_rainier"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": "Approach via the Westside Road, Paradise, or Van Trump Meadows, then ascend the Success Couloir that lies farthest east, on snow of 45+ degrees. From Paradise or Van Trump the easiest line may be to cross the lower part of the Kautz Glacier and head up the Kautz Cleaver, then angle into the couloir. A lengthy snow ramp climbs nearly straight up. Rock bands may show near 12,600 feet and 13,300 depending on snow. Near 13,000 feet it follows an airy traverse above cliffs, then cuts back left and up",
+   "description": null,
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [
+   {
+    "route": "rainier_central_mowich_face",
+    "name": "Mowich Lake Trailhead"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "NPS",
+    "name": "4th Crossing Trailhead",
+    "lat": 46.79018,
+    "lng": -121.726702,
+    "km": 7.4
+   },
+   {
+    "src": "NPS",
+    "name": "Skyline Trailhead",
+    "lat": 46.786404,
+    "lng": -121.73639,
+    "km": 7.6
+   },
+   {
+    "src": "NPS",
+    "name": "Alta Vista Trailhead",
+    "lat": 46.784541,
+    "lng": -121.741355,
+    "km": 7.7
+   },
+   {
+    "src": "NPS",
+    "name": "Nisqually Vista Trailhead",
+    "lat": 46.785052,
+    "lng": -121.741604,
+    "km": 7.7
+   },
+   {
+    "src": "NPS",
+    "name": "Lower Lakes Trailhead",
+    "lat": 46.785505,
+    "lng": -121.733344,
+    "km": 7.8
+   },
+   {
+    "src": "NPS",
+    "name": "Comet Falls Trailhead",
+    "lat": 46.778817,
+    "lng": -121.783602,
+    "km": 8.4
+   },
+   {
+    "src": "NPS",
+    "name": "Narada Falls trailhead",
+    "lat": 46.775194,
+    "lng": -121.746062,
+    "km": 8.7
+   },
+   {
+    "src": "NPS",
+    "name": "Lower Lakes Trail",
+    "lat": 46.776604,
+    "lng": -121.737077,
+    "km": 8.7
+   },
+   {
+    "src": "NPS",
+    "name": "Wonderland Trailhead",
+    "lat": 46.769587,
+    "lng": -121.73481,
+    "km": 9.5
+   },
+   {
+    "src": "NPS",
+    "name": "Pinnacle Peak Trailhead",
+    "lat": 46.768403,
+    "lng": -121.731571,
+    "km": 9.6
+   },
+   {
+    "src": "NPS",
+    "name": "Wonderland Trail",
+    "lat": 46.769008,
+    "lng": -121.724238,
+    "km": 9.7
+   },
+   {
+    "src": "NPS",
+    "name": "Wonderland Trailhead",
+    "lat": 46.768216,
+    "lng": -121.728908,
+    "km": 9.7
+   },
+   {
+    "src": "NPS",
+    "name": "Louise Lake Trailhead",
+    "lat": 46.769797,
+    "lng": -121.714726,
+    "km": 9.9
+   },
+   {
+    "src": "NPS",
+    "name": "Wonderland Trailhead",
+    "lat": 46.76659,
+    "lng": -121.790888,
+    "km": 9.9
+   },
+   {
+    "src": "NPS",
+    "name": "Wonderland Trailhead",
+    "lat": 46.770281,
+    "lng": -121.703247,
+    "km": 10.2
+   },
+   {
+    "src": "USFS",
+    "name": "Trailhead: Glacier View",
+    "lat": 46.796503,
+    "lng": -121.947741,
+    "km": 15.6
+   },
+   {
+    "src": "USFS",
+    "name": "Trailhead: Tatoosh North",
+    "lat": 46.71151,
+    "lng": -121.714412,
+    "km": 16.1
+   },
+   {
+    "src": "USFS",
+    "name": "Trailhead: Lake Christine",
+    "lat": 46.773792,
+    "lng": -121.943278,
+    "km": 16.5
+   },
+   {
+    "src": "USFS",
+    "name": "Evans Creek Trailhead",
+    "lat": 46.941276,
+    "lng": -121.942185,
+    "km": 17
+   },
+   {
+    "src": "USFS",
+    "name": "Chinook Pass Overlook Trailhead",
+    "lat": 46.874769,
+    "lng": -121.517217,
+    "km": 18.7
+   }
+  ],
+  "firstPass": {
+   "why": "stuck: Route's own text offers three starts (Westside Road, Paradise, Van Trump Meadows) and says the easiest may be from Paradise or Van Trump; no page found that set",
+   "trailhead": null,
+   "notes": "Route's own text offers three starts (Westside Road, Paradise, Van Trump Meadows) and says the easiest may be from Paradise or Van Trump; no page found that settles it."
+  },
+  "earlierPasses": {
+   "why": "stuck: Stuck: own text offers Westside Road, Paradise or Van Trump; no page found.",
+   "trailhead": null,
+   "notes": "Stuck: own text offers Westside Road, Paradise or Van Trump; no page found."
+  },
+  "priorPass": {
+   "kind": "stuck",
+   "why": "Carried over stuck. NPS climbing page lists Paradise, Westside Road, White River, Mowich as trailheads but maps no route to one; own text offers three starts."
+  },
+  "lastPassNote": "Mountain Project text, like the route's own, offers Van Trump Meadows (Comet Falls), Westside Road or Paradise; easiest said to be Paradise/Van Trump via Kautz "
+ },
+ {
+  "id": "wa_north_peak_southeast_buttress",
+  "name": "Southeast Buttress",
+  "discipline": "alpine",
+  "grade": "5.7",
+  "verdict": "SUMMIT_ONLY",
+  "state": "wa",
+  "peak": {
+   "id": "wa_north_peak",
+   "name": "North Peak",
+   "lat": 48.3068,
+   "lng": -120.994,
+   "elevation_ft": 8160,
+   "region": "Washington",
+   "path": "usa.washington.wa_northwest.wa_glacier_peak_region.wa_glacier_peak_wilderness.wa_gunsight_range_the.wa_north_peak"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [
+   {
+    "route": "wa_west_face_2",
+    "name": "Downey Creek Trailhead"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Suiattle Trailhead",
+    "lat": 48.248106,
+    "lng": -121.192115,
+    "km": 16
+   },
+   {
+    "src": "USFS",
+    "name": "Downey Creek Trailhead",
+    "lat": 48.259506,
+    "lng": -121.222915,
+    "km": 17.7
+   },
+   {
+    "src": "USFS",
+    "name": "Green Mountain Trailhead",
+    "lat": 48.268149,
+    "lng": -121.236861,
+    "km": 18.5
+   },
+   {
+    "src": "NPS",
+    "name": "Imus Creek Loop Trail Trailhead",
+    "lat": 48.3085,
+    "lng": -120.65601,
+    "km": 25
+   }
+  ],
+  "firstPass": {
+   "why": "stuck: Same as North Peak North Ridge: peak could not be identified and no page found.",
+   "trailhead": null,
+   "notes": "Same as North Peak North Ridge: peak could not be identified and no page found."
+  },
+  "earlierPasses": {
+   "why": "stuck: No route text. Web search budget exhausted this run. Only hit was a search summary for a different North Gunsight West Face; no page about North Peak (row coord",
+   "trailhead": null,
+   "notes": "No route text. Web search budget exhausted this run. Only hit was a search summary for a different North Gunsight West Face; no page about North Peak (row coordinate 48.3068,-120.994) found. Sibling West Face uses Downey Creek, but the row coordinate is ~9 km east of that route's area, so the sibling is not evidence."
+  },
+  "priorPass": {
+   "kind": "stuck",
+   "why": "Carried over stuck. No page opened about North Peak (Gunsight Range)."
+  },
+  "lastPassNote": "Same as North Ridge: no page about the Southeast Buttress; a southeast side may be approached from the east (Agnes Creek/Stehekin or Entiat) rather than Downey "
+ },
+ {
+  "id": "wa_north_star_mountain_cloudy_peak_traverse",
+  "name": "Cloudy Peak Traverse (South Ridge)",
+  "discipline": "scrambling",
+  "grade": "Class 4",
+  "verdict": "SUMMIT_ONLY",
+  "state": "wa",
+  "peak": {
+   "id": "wa_north_star_mountain",
+   "name": "North Star Mountain",
+   "lat": 48.2230435,
+   "lng": -120.9005039,
+   "elevation_ft": 8096,
+   "region": "Washington",
+   "path": "usa.washington.wa_centraleast.wa_chiwawa_entiat_region.wa_north_star_mountain"
+  },
+  "text": {
+   "approach": "Approach as for the East Route to Lyman Lake: either from Lake Chelan via Lucerne, Holden Village and the Railroad Creek trail, or from the Chiwawa River side via Phelps Creek, over Spider Gap and down past the Upper Lyman Lakes. Both ways have been closed in recent seasons, the Lucerne side by storm-damaged roads and the Chiwawa side by wildfire and road closures, so check current Okanogan-Wenatchee National Forest closures before planning. From Lower Lyman Lake follow Trail #1256 west through forest and meadows to Cloudy Pass (6,440 ft), and gain the ridge crest there to start the traverse.",
+   "approach_logistics": null,
+   "road": null,
+   "overview": "A harder alternative approached from the west: gain the crest at Cloudy Pass, follow the ridge over Cloudy Peak (7,915 ft), then descend and cross talus to North Star's summit block via the same short, exposed Class 3-4 step used by the East Route.",
+   "description": null,
+   "descent": "From the North Star summit, downclimb the summit step, then make a direct beeline across talus toward the Cloudy Pass Trail, intersecting it at about 6,300 ft; follow meadows and interconnected granite slabs roughly 1.5 miles back to Cloudy Pass/Lyman Lake basin."
+  },
+  "waypoints": [
+   {
+    "lat": 48.200402,
+    "lng": -120.79099,
+    "elev": 3300,
+    "name": "Holden Ballpark Campground",
+    "type": "Campsite"
+   },
+   {
+    "lat": 48.2026264,
+    "lng": -120.9253791,
+    "elev": 6440,
+    "name": "Cloudy Pass",
+    "type": "Junction",
+    "distMi": null,
+    "elevFt": 6440,
+    "directions": "Cloudy Pass is on Trail #1256, which climbs west from Lower Lyman Lake through open forest and meadows. Lyman Lake is reached up Railroad Creek from Holden Village, or from Phelps Creek over Spider Gap and down past the Upper Lyman Lakes."
+   },
+   {
+    "lat": 48.2230435,
+    "lng": -120.9005039,
+    "elev": 8096,
+    "name": "North Star Mountain summit",
+    "type": "Summit",
+    "distMi": null,
+    "elevFt": 8096,
+    "directions": "From the pass, turn right and follow the ridge northeast up to Cloudy Peak (7,915 ft). Beyond it, lose elevation off its east side, either down the east ridge with some Class 3-4 or by dropping south of the summit around a cliff band, to reach the talus slopes that connect to North Star. Follow them northeast to the final 100 ft of rock to the summit, which is slick with lichen when wet."
+   }
+  ],
+  "siblingTrailheads": [
+   {
+    "route": "wa_north_star_mountain_east_route",
+    "name": "Holden Village / Railroad Creek Trailhead"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Phelps Creek Trailhead",
+    "lat": 48.083206,
+    "lng": -120.835015,
+    "km": 16.3
+   },
+   {
+    "src": "USFS",
+    "name": "Trinity Trailhead",
+    "lat": 48.071972,
+    "lng": -120.850005,
+    "km": 17.2
+   },
+   {
+    "src": "NPS",
+    "name": "Imus Creek Loop Trail Trailhead",
+    "lat": 48.3085,
+    "lng": -120.65601,
+    "km": 20.4
+   },
+   {
+    "src": "USFS",
+    "name": "Suiattle Trailhead",
+    "lat": 48.248106,
+    "lng": -121.192115,
+    "km": 21.8
+   },
+   {
+    "src": "USFS",
+    "name": "Little Giant Trailhead",
+    "lat": 48.026606,
+    "lng": -120.829015,
+    "km": 22.5
+   },
+   {
+    "src": "USFS",
+    "name": "Downey Creek Trailhead",
+    "lat": 48.259506,
+    "lng": -121.222915,
+    "km": 24.2
+   }
+  ],
+  "priorPass": {
+   "kind": "hold",
+   "th": "Holden Village / Railroad Creek Trailhead",
+   "why": [
+    "no placement"
+   ],
+   "notes": "Route text offers two approaches (Lucerne/Holden Village, or Phelps Creek over Spider Gap); both reported closed in recent seasons. Holden is the sibling's choice and has no coordinate in the official"
+  },
+  "lastPassNote": "Three plausible starts, none tied to this route: Holden Village/Railroad Creek (Lucerne ferry + bus; Lyman Lake ~16 mi from Holden), Phelps Creek TH over Spider"
+ },
+ {
+  "id": "wa_skookum_peak_twinsisters_jaw_s_tooth_and_northwest_ridge",
+  "name": "Jaw's Tooth and Northwest Ridge",
+  "discipline": "alpine",
+  "grade": "5.6",
+  "verdict": "SUMMIT_ONLY",
+  "state": "wa",
+  "peak": {
+   "id": "wa_skookum_peak_twinsisters",
+   "name": "Skookum Peak",
+   "lat": 48.700085,
+   "lng": -121.983895,
+   "elevation_ft": 6534,
+   "region": "Baker / Twin Sisters",
+   "path": "usa.washington.wa_northwest.wa_shuksan_baker_neighbors.wa_skookum_peak_twinsisters"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": "Off Skookum's north ridge stands Jaw's Tooth, a shark-tooth pinnacle of 65 feet; the two combine into a fine route. Start in the basin northwest of Skookum and zigzag upward through fourth class and low fifth class ground to the striking layback corner, a sustained, very high quality 5.6 pitch. Easy ground leads to the tooth's summit. Getting down into the southern notch means either a rappel off tat or a low 5th downclimb. Along the ridge to Skookum's summit, the ground is firm and at the low 5",
+   "description": null,
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [
+   {
+    "route": "wa_skookum_peak_twinsisters_scramble",
+    "name": "Elbow Lake Trail - North Trailhead (FR 38)"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Middle Fork Nooksack Trailhead",
+    "lat": 48.726672,
+    "lng": -121.900293,
+    "km": 6.8
+   },
+   {
+    "src": "USFS",
+    "name": "Elbow Lake Trailhead",
+    "lat": 48.681054,
+    "lng": -121.895073,
+    "km": 6.9
+   },
+   {
+    "src": "USFS",
+    "name": "Park Butte Trailhead",
+    "lat": 48.707228,
+    "lng": -121.811323,
+    "km": 12.7
+   },
+   {
+    "src": "USFS",
+    "name": "Heliotrope Ridge Trailhead",
+    "lat": 48.802236,
+    "lng": -121.89559,
+    "km": 13.1
+   },
+   {
+    "src": "USFS",
+    "name": "Blue Lake/Dock Butte Trailhead",
+    "lat": 48.654167,
+    "lng": -121.784477,
+    "km": 15.5
+   },
+   {
+    "src": "USFS",
+    "name": "Shadow Of Sentinels Trailhead",
+    "lat": 48.669225,
+    "lng": -121.715262,
+    "km": 20
+   },
+   {
+    "src": "USFS",
+    "name": "Boulder Ridge Trailhead",
+    "lat": 48.735219,
+    "lng": -121.710284,
+    "km": 20.4
+   },
+   {
+    "src": "USFS",
+    "name": "Skyline Divide Trailhead",
+    "lat": 48.880839,
+    "lng": -121.863348,
+    "km": 22
+   },
+   {
+    "src": "USFS",
+    "name": "Horseshoe Bend Trailhead",
+    "lat": 48.902228,
+    "lng": -121.910293,
+    "km": 23.1
+   },
+   {
+    "src": "USFS",
+    "name": "Baker Lake South Trailhead",
+    "lat": 48.645675,
+    "lng": -121.674648,
+    "km": 23.5
+   },
+   {
+    "src": "USFS",
+    "name": "Boyd Creek",
+    "lat": 48.900561,
+    "lng": -121.863348,
+    "km": 24
+   }
+  ],
+  "firstPass": {
+   "why": "held: no placement; agent flagged the identification as inferred/weak",
+   "trailhead": {
+    "name": "Dailey Prairie",
+    "identifiedBy": {
+     "kind": "page",
+     "url": "https://www.mountainproject.com/area/120237761/skookum-peak",
+     "fact": "Getting There: hike to Dailey Prairie, over west ridge of South Twin, then basins to the Skookum routes"
+    },
+    "placements": []
+   },
+   "notes": "Weak. Page (Mountain Project text only, no coordinates used) names Dailey Prairie as the start; no official point matches. Candidates: Elbow Lake Trailhead 48.681054,-121.895073 (6.9 km); sibling scramble uses Elbow Lake Trail north trailhead FR 38; WTA Elbow Lake page puts Pioneer Horse Camp at 48.6797,-121.8970 and does not mention Skookum. Conflict between Dailey Prairie and Elbow Lake unresolved; owner should place Dailey Prairie manually."
+  },
+  "earlierPasses": {
+   "why": "stuck: Mountain Project (text only) names Dailey Prairie then over the west ridge of South Twin; no formal trailhead named, no page placing Dailey Prairie found. WTA E",
+   "trailhead": null,
+   "notes": "Mountain Project (text only) names Dailey Prairie then over the west ridge of South Twin; no formal trailhead named, no page placing Dailey Prairie found. WTA Elbow Lake page (Pioneer Camp TH 48.6797,-121.8970) does not mention Skookum, and says FR 38/FR 12 are washed out or closing. Not resolved; Elbow Lake not supported."
+  },
+  "priorPass": {
+   "kind": "stuck",
+   "why": "Pass 3: Wikipedia 404. Earlier lead Dailey Prairie remains unplaced."
+  },
+  "lastPassNote": "Only Mountain Project (text) gives Dailey Prairie, a place not a signed trailhead, and no page placed it or tied it to a lot. Cascadeclimbers TR 403; WTA/Mounta"
+ }
+]

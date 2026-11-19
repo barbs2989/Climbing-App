@@ -161,3 +161,68 @@ point is a campground (Hozomeen x3, every Goodell route), or the owner reverted 
   separate Santanoni / Bradley Pond trailhead on the same road. The stored text contradicts itself; it needs
   an owner or prose fix before a pin.
 - **Audit now:** SUMMIT_ONLY 258, NO_SUMMIT 40, CRAG_SUMMIT 0.
+
+## Multi-start pass (2026-11-18, 8 agents, `BRIEF6.md`)
+
+38 routes: the 36 stuck because two or more starts are in use, plus Panther and Couchsachraga. A start counted
+only if an authoritative page names it standard for this route, or three opened trip reports show a clear
+majority. 11 got an answer, 27 stay stuck (`out6/`).
+
+- **Written (4, `batch-r6.json`, unconfirmed, verified on re-read):** Lippincott Mountain (NPS Sawtooth,
+  Mineral King), Mount Corcoran (USFS Meysan Lake TH), Chianti Spire North Face (USFS Burgundy Col site at
+  the SR 20 pullout; ground 4,305 ft against the stored 4,250 ft), Culebra Peak NW Ridge (Cielo Vista Ranch
+  gate; 14ers.com and climb13ers agree). Each row was read for drive text first; none conflicts.
+- **Answered but not pinned:**
+  - Panther and Couchsachraga: Santanoni Range (Bradley Pond) trailhead on Santanoni Road, three pages each.
+    No official or OSM trailhead point (Photon finds only the trail and the pond). Stored "Starts at Upper
+    Works" is wrong for both.
+  - Mount Rainier East Success Couloir: Paradise in three of four opened reports (mostly ski trips). The NPS
+    list has no Paradise trailhead point. Held for the owner.
+  - Lincoln Peak standard: FR-38 in three reports; parking is an unsigned switchback near mile 12.3 with no
+    coordinate. The row already names FR-38; no pin.
+  - Mount Ballard East Face: locked gate on the Slate Creek road in three reports; no coordinate.
+  - Spanish Needle North Ridge: PCT at Canebrake Road, called standard by one report; the only coordinate is
+    Chimney Creek Campground (never pin a campground).
+  - Angora Mountain: Lewis Camp 3 pages to 2; too thin.
+- North Peak Southeast Buttress: Mountain Project's North Peak sits about 28 km from the catalog's coordinate;
+  the peak may be misidentified.
+- **Audit now:** SUMMIT_ONLY 254, NO_SUMMIT 40, CRAG_SUMMIT 0.
+
+## New York state parking layer (2026-11-18)
+
+A new official source: NYSDEC's `NYS_State_Land_Assets` PARKING layer (services6.arcgis.com, layer 38; 270
+points in the High Peaks box, `nydec-parking.json`). DEC's Giant Mountain page prints the same Roaring Brook
+Falls coordinate, so the layer is the land manager's own. 21 held New York routes written
+(`batch-ny.json`, all unconfirmed, verified on re-read). Each row's own text names the start.
+
+- DEC layer points: Seward Trailhead on Coreys Road (DEC calls the lot "Ampersand Parking Lot"; a tourism
+  page's Coreys Road trailhead is 52 m away) for Donaldson, Emmons, Seward, Seymour; ASRC lot for Esther; Elk
+  Lake for South Dix; AMR lot for Sawteeth and Upper Wolfjaw (same point as Colvin); Roaring Brook Falls for
+  Rocky Peak Ridge via Giant; East River for Allen.
+- Cliff: the OSM Upper Works lot, same as Marshall and Redfield (the DEC point is 330 m north of it).
+- Adirondak Loj (private lot, not in the DEC layer): OSM High Peaks Information Center, with another site's
+  lot coordinate 32 m away, for Gray, Iroquois, Skylight, Nye, Phelps, Street, Table Top.
+- Santanoni Range: OSM "Bradley Pond Parking Area" (way 307706607), 6 m from the tourism coordinate, for
+  Panther, Couchsachraga and Santanoni Express. Their descriptions still say "Starts at Upper Works,
+  Newcomb"; the lot is on Upper Works Road 2 km short of the Upper Works lot. Prose fix still open.
+- Photon finds a lot when asked for "<trail name> parking"; the earlier pass asked only for the agent's
+  trailhead name.
+- **Audit now:** SUMMIT_ONLY 233, NO_SUMMIT 40, CRAG_SUMMIT 0.
+
+## Hand release of word-filter holds (2026-11-18)
+
+49 routes were held ONLY because the research note contained a caution word. Read by hand: 12 have a
+route-specific identification and an official point, and the caution word concerned something else (an
+alternative for a different route, a placement distance, an unopened page). Written (`batch-rel.json`, all
+unconfirmed, verified on re-read; each row read first, no conflicting drive text): Mount Bago (Onion
+Valley), Mount Baxter (Baxter Pass), Mount Guyot (Cottonwood Pass), Red Peak (Mono Meadow), Rockhouse Peak
+(South Manter Meadow, OSM), Vandever (Eagle-Mosquito), Needham (Sawtooth), Colosseum (Sawmill Pass), Castle
+Peak via Castle Pass (Donner Summit PCT), Cathedral Peak CO (Cathedral Lake), Snowmass East Slopes (USFS
+"Snowmass Trailhead", ground 8,427 ft against the route page's 8,400 ft), Little Annapurna South Face
+(Ingalls Creek, from the route's own text).
+
+Still held on reading: peak-level-only Washington answers (Chimney Rock x3, Colchuck Balanced Rock x2,
+Hibox x2, Colchuck NE Gully, Mixup, Apex, Castle Peak Pasayten), notes that name a second start in use
+(Black Mountain, Mokelumne, Striped, Red Kaweah, Twin Peaks, Hilgard, Joe Devel, Overcoat, Vermilion,
+Clinton), campground points (Black Hawk, Katahdin Hunt Trail), and earlier hand holds.
+- **Audit now:** SUMMIT_ONLY 221, NO_SUMMIT 40, CRAG_SUMMIT 0.

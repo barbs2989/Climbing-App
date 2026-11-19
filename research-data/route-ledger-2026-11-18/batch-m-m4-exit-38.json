@@ -1,0 +1,441 @@
+{
+ "wa_serenity_point_blasted": {
+  "area": "wa_serenity_point",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/204016258/blasted",
+    "https://www.mountainproject.com/area/202795353/serenity-point",
+    "https://parks.wa.gov/find-parks/state-parks/olallie-state-park",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_02/MapServer/0",
+    "https://gis.dnr.wa.gov/site3/rest/services/Public_Boundaries/WADNR_PUBLIC_Managed_Lands/MapServer/8",
+    "https://gis.dnr.wa.gov/site3/rest/services/Public_Boundaries/WADNR_PUBLIC_Major_Public_Lands_NonDNR/MapServer/1"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.12b",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/204016258/blasted",
+      "fact": "5.12b, sport",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "length_m",
+    "value": 24,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/204016258/blasted",
+      "fact": "80 ft (24 m)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "discipline",
+    "value": "sport",
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/204016258/blasted",
+      "fact": "Type: Sport; protection: permadraws",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "October 2026: Justin Lockhart and Saign Charlestein",
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/204016258/blasted",
+      "fact": "FA: Saign Charlestein, Justin Lockhart (10-2026)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [],
+  "disputed": [],
+  "notes": "New route (shared Oct 13, 2026); only Mountain Project lists it, the Exit 38 guidebook predates it. Bolt count not stated (permadraws only), so bolts/anchor stay null. Pitch count 1 is implied, not stated: not locked. Land manager not confirmed, access HELD. No DNR NAP/NRCA polygon covers this point (DNR layer 8 empty), so neither Mount Si nor Middle Fork Snoqualmie NRCA applies. The crag lies in the Mount Washington climbing area, which the Olallie State Park page says is reached from its Homestead Valley Trailhead, but at the crag point the USFS ownership layer reads NON-FS and the state public-lands layer returns no polygon, so it may be private inholding or park land missing from that layer. Owner decision or a State Parks boundary map is needed."
+ },
+ "wa_nevermind_wall_strip_clip_direct": {
+  "area": "wa_nevermind_wall",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/108185839/strip-clip-direct",
+    "https://www.mountainproject.com/area/105792216/nevermind-wall",
+    "https://rakkup.com/guidebook/exit-38-rock-climbing/strip-clip-direct/c25581",
+    "https://rakkup.com/guidebook/exit-38-rock-climbing/nevermind-wall/s11468",
+    "https://parks.wa.gov/find-parks/state-parks/olallie-state-park",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_02/MapServer/0",
+    "https://gis.dnr.wa.gov/site3/rest/services/Public_Boundaries/WADNR_PUBLIC_Managed_Lands/MapServer/8",
+    "https://gis.dnr.wa.gov/site3/rest/services/Public_Boundaries/WADNR_PUBLIC_Major_Public_Lands_NonDNR/MapServer/1"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.10b",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108185839/strip-clip-direct",
+      "fact": "5.10b sport",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://rakkup.com/guidebook/exit-38-rock-climbing/strip-clip-direct/c25581",
+      "fact": "Strip Clip Direct 5.10b, sport (Exit 38 Rock Climbs)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "discipline",
+    "value": "sport",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108185839/strip-clip-direct",
+      "fact": "Type: Sport; 8 bolts, chain anchor",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://rakkup.com/guidebook/exit-38-rock-climbing/strip-clip-direct/c25581",
+      "fact": "Type: Sport",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "length_m",
+    "value": 20,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108185839/strip-clip-direct",
+      "fact": "65 ft (20 m)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "1996: Bill Boileau and Mack Johnson",
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108185839/strip-clip-direct",
+      "fact": "FA: Mack Johnson & Bill Boileau (1996)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_nevermind_wall_strip_clip_direct",
+    "column": "bolts",
+    "from": null,
+    "to": 8,
+    "why": "Mountain Project states 8 bolts (the guidebook says the direct is a 2-bolt start joining Strip Clip). Lock locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/108185839/strip-clip-direct"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_nevermind_wall_strip_clip_direct",
+    "column": "anchor",
+    "from": null,
+    "to": "Chain anchor",
+    "why": "Mountain Project: chain anchor with lower-offs. Lock locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/108185839/strip-clip-direct"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "Pitch count 1 implied, not stated: not locked. Land manager not confirmed, access HELD. No DNR NAP/NRCA polygon covers this point (DNR layer 8 empty), so neither Mount Si nor Middle Fork Snoqualmie NRCA applies. The USFS basic-ownership layer puts the Nevermind Wall point (47.43561,-121.6638, a Mountain Project coordinate, so a lead only) on National Forest land (Mt. Baker-Snoqualmie NF), while Deception Wall 250 m east sits in the Palouse to Cascades State Park Trail strip; a climbers' coalition page (Cloudflare-blocked, seen only as a search snippet, not evidence) also says Nevermind is just outside the park in the national forest. If confirmed, the Olallie State Park access text used on Deception Wall must NOT be copied here. Parking is at State Parks trailhead lots, so a Discover Pass likely still applies, but held without an official page naming this wall."
+ },
+ "wa_nevermind_wall_trundling_for_glory_hangerville": {
+  "area": "wa_nevermind_wall",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/112295823/trundling-for-glory-hangerville",
+    "https://www.mountainproject.com/area/105792216/nevermind-wall",
+    "https://rakkup.com/guidebook/exit-38-rock-climbing/hangerville/c25587",
+    "https://rakkup.com/guidebook/exit-38-rock-climbing/nevermind-wall/s11468",
+    "https://parks.wa.gov/find-parks/state-parks/olallie-state-park",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_02/MapServer/0",
+    "https://gis.dnr.wa.gov/site3/rest/services/Public_Boundaries/WADNR_PUBLIC_Managed_Lands/MapServer/8",
+    "https://gis.dnr.wa.gov/site3/rest/services/Public_Boundaries/WADNR_PUBLIC_Major_Public_Lands_NonDNR/MapServer/1"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.11c",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112295823/trundling-for-glory-hangerville",
+      "fact": "5.11c sport",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://rakkup.com/guidebook/exit-38-rock-climbing/hangerville/c25587",
+      "fact": "Hangerville (aka Trundling for Glory) 5.11c, sport",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "discipline",
+    "value": "sport",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112295823/trundling-for-glory-hangerville",
+      "fact": "Type: Sport; 10 bolts, chain anchor",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://rakkup.com/guidebook/exit-38-rock-climbing/hangerville/c25587",
+      "fact": "Type: Sport",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "length_m",
+    "value": 24,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112295823/trundling-for-glory-hangerville",
+      "fact": "80 ft (24 m)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Mack Johnson (1998)",
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112295823/trundling-for-glory-hangerville",
+      "fact": "FA: Mack Johnson (1998)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_nevermind_wall_trundling_for_glory_hangerville",
+    "column": "bolts",
+    "from": null,
+    "to": 10,
+    "why": "Mountain Project states 10 bolts. Lock locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/112295823/trundling-for-glory-hangerville"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_nevermind_wall_trundling_for_glory_hangerville",
+    "column": "anchor",
+    "from": null,
+    "to": "Chain anchor",
+    "why": "Mountain Project: chain anchor with lower-offs. Lock locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/112295823/trundling-for-glory-hangerville"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "The guidebook lists it as Hangerville (aka Trundling for Glory); the app name already carries both. Pitch count 1 implied, not stated: not locked. Access held: same land-status finding as Strip Clip Direct (Nevermind Wall point reads National Forest on the USFS ownership layer; no DNR NRCA)."
+ },
+ "wa_change_creek_fin_chump_change": {
+  "area": "wa_change_creek_fin",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/126584539/chump-change",
+    "https://www.mountainproject.com/area/126584395/change-creek-fin",
+    "https://parks.wa.gov/find-parks/state-parks/olallie-state-park",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_02/MapServer/0",
+    "https://gis.dnr.wa.gov/site3/rest/services/Public_Boundaries/WADNR_PUBLIC_Managed_Lands/MapServer/8",
+    "https://gis.dnr.wa.gov/site3/rest/services/Public_Boundaries/WADNR_PUBLIC_Major_Public_Lands_NonDNR/MapServer/1"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.9+",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/126584539/chump-change",
+      "fact": "5.9+ sport",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "length_m",
+    "value": 6,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/126584539/chump-change",
+      "fact": "20 ft (6 m)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "discipline",
+    "value": "sport",
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/126584539/chump-change",
+      "fact": "Type: Sport; four bolts up the prow",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_change_creek_fin_chump_change",
+    "column": "bolts",
+    "from": null,
+    "to": 4,
+    "why": "Mountain Project states four bolts straight up the prow. Lock locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/126584539/chump-change"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_change_creek_fin_chump_change",
+    "column": "anchor",
+    "from": null,
+    "to": "Quick-link anchor",
+    "why": "Mountain Project: anchors with quick links at the top (or walk off left). Lock locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/126584539/chump-change"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "Crag added in 2024; only Mountain Project lists it. fa is empty; MP names Kris Rhoads and Kevin Connor, but an FA is never set from MP alone (held). Land manager not confirmed, access HELD. No DNR NAP/NRCA polygon covers this point (DNR layer 8 empty), so neither Mount Si nor Middle Fork Snoqualmie NRCA applies. The USFS ownership layer puts the Change Creek Fin point (MP coordinate, lead only) on Mt. Baker-Snoqualmie NF land; held until an official page or the owner confirms."
+ },
+ "wa_i_can_fly_2": {
+  "area": "wa_deception_wall",
+  "review": {
+   "sources": [
+    "https://rakkup.com/guidebook/exit-38-rock-climbing/i-can-fly/c26562",
+    "https://rakkup.com/guidebook/exit-38-rock-climbing/deception-wall/s11786",
+    "https://www.mountainproject.com/area/108184422/deception-wall",
+    "https://www.mountainproject.com/route/109488411/rat-face",
+    "https://parks.wa.gov/find-parks/state-parks/olallie-state-park",
+    "https://parks.wa.gov/node/3529",
+    "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_02/MapServer/0",
+    "https://gis.dnr.wa.gov/site3/rest/services/Public_Boundaries/WADNR_PUBLIC_Major_Public_Lands_NonDNR/MapServer/1",
+    "https://gis.dnr.wa.gov/site3/rest/services/Public_Boundaries/WADNR_PUBLIC_Managed_Lands/MapServer/8"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "discipline",
+    "value": "sport",
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://rakkup.com/guidebook/exit-38-rock-climbing/i-can-fly/c26562",
+      "fact": "I Can Fly, Sport, Deception Wall (Exit 38 Rock Climbs)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_i_can_fly_2",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "0 is invalid. The Exit 38 guidebook calls it the next pitch above Rat Face, i.e. one pitch; implied, single source, so ledger unconfirmed (single-source).",
+    "evidence": [
+     "https://rakkup.com/guidebook/exit-38-rock-climbing/i-can-fly/c26562"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_i_can_fly_2",
+    "column": "access",
+    "from": null,
+    "to": {
+     "rules": "Day use only, 6:30 a.m. to dusk. Climbing at Deception Crags can be closed between February and August while peregrine falcons nest; check the park's alerts before going.",
+     "land_manager": "Washington State Parks (Olallie State Park)",
+     "parking_pass": "Discover Pass required to park at Washington State Parks ($10 one day, $45 a year)."
+    },
+    "why": "access is empty. Reuses the LIVE value already on wa_jiffy_pop / wa_underground_economy (same wall, batch J). Re-checked today: the Olallie State Park page says Homestead Valley Trailhead reaches Deception Crags, day use 6:30 a.m. to dusk, Discover Pass $10/$45; the Discover Pass page says a pass is required to park at State Parks; the State Parks post (May 20, 2026) names Deception Crags at Olallie for Feb-Aug falcon closures. The DNR public-lands layer puts the Deception Wall point in the Palouse to Cascades State Park Trail (State Parks); no DNR NRCA. Lock official-1 after apply, expires 2027-11-18.",
+    "evidence": [
+     "https://parks.wa.gov/find-parks/state-parks/olallie-state-park",
+     "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass",
+     "https://parks.wa.gov/node/3529",
+     "https://gis.dnr.wa.gov/site3/rest/services/Public_Boundaries/WADNR_PUBLIC_Major_Public_Lands_NonDNR/MapServer/1"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_i_can_fly_2",
+    "column": "permit",
+    "from": null,
+    "to": "No climbing permit. A Discover Pass is needed to park at Olallie State Park.",
+    "why": "permit is empty. Same live value as the other Deception Wall rows; official-1 from the same State Parks pages, expires 2027-11-18.",
+    "evidence": [
+     "https://parks.wa.gov/find-parks/state-parks/olallie-state-park",
+     "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass"
+    ]
+   }
+  ],
+  "disputed": [
+   "grade: app 5.12a; the Exit 38 guidebook (Rakkup) gives 5.12b; Mountain Project has no page for this route. One source against the stored value: not changed, not locked."
+  ],
+  "notes": "Catalog defect: like Rat Face (wa_rat_face, itself live with pitches 0), I Can Fly is a continuation pitch (guidebook: the next pitch above Rat Face, which starts from Jiffy Pop's anchor), filed as its own row. Owner call whether it stays a separate route or becomes pitch 3 of a Jiffy Pop link. fa 'Mike Orr' has no source found (MP has no page; guidebook page gives none): left, not locked. In passing: wa_rat_face pitches = 0 live."
+ }
+}

@@ -15,11 +15,12 @@ whole guide feature on 2026-11-14 (owner). This doc covers the partners mode (`l
   title that STATES the search ("Climbers who climb where you do", "Climbers in Index", "Climbers who want
   Liberty Crack"; the distance is on its own pill, not repeated in the title), then — signed in — the **You card**, then ONE wrapping row of pills (`role="group"` *Narrow the list*): **Search by ▾** (the five modes, a native select drawn
   as a pill), **Distance ▾** (ONE pill: Anywhere · Within 10 / 25 / 50 / 100 / 200 / 500 mi of <zip> · Near me now, then the same radii "of you now" once located),
-  **Discipline ▾**, **Leads ▾** once a roped discipline (sport, trad, ice, mixed, aid) is picked, **Experience ▾**, and **More filters** (on the example-list
-  modes, and on every mode for a signed-in climber). The More filters panel opens right under the row: first **Show only**, one chip per gender
-  (Women · Men · Non-binary · Genderqueer · Genderfluid · Agender · Two-Spirit, `aria-pressed`; tick several), then, on the example-list modes, speed match,
+  **Discipline ▾**, **Leads ▾** once a roped discipline (sport, trad, ice, mixed, aid) is picked, and **More filters** in every mode, signed in or not
+  (since 2026-11-18; the non-gender filters were on the example-list modes only). The More filters panel opens right under the row: first **Show only**, one chip per gender
+  (Women · Men · Non-binary · Genderqueer · Genderfluid · Agender · Two-Spirit, `aria-pressed`; tick several; signed in), then **Experience** — Any / Beginner /
+  Intermediate / Advanced / Expert chips, moved in from the row (owner 2026-11-18) — speed match,
   available to climb, max distance and **Sort** for the examples — Sort only where there are two ways to sort, i.e. a seed coordinate. Its badge
-  counts the panel filters that are on, one per picked gender. The pills are 44px on a phone and 36px on the website (#3156). The name
+  counts the panel filters that are on, one per picked gender. The controls are 44px on a phone and 36px on the website (#3156), and since 2026-11-18 (owner) they wear the **Join a crew look** — the *Find a crew by* buttons: two across, 10px corners, 12.5px semibold centred, blue while chosen or set — instead of rounded pills; only the look changed, each is still a dropdown. A dropdown whose longest choice cannot fit half a phone column (Distance with a zip, Leads) takes a row of its own rather than clipping its label, and Discipline sits beside Search by so the short two share a row. Each dropdown draws ONE arrow, the one `index.html` puts on every select (#2585); the row no longer adds a chevron of its own beside it. The name
   search is an icon pill (*Name*, `aria-expanded`) beside the title that opens the box. Partner cards stay one per row (owner).
 - **The You card — how other climbers find you** (owner, climber walkthrough 2026-11-13): one compact card above the pills holding
   everything about YOUR visibility, so the pill row is only "who am I looking for". Its first row is the sentence and button the Join a crew
@@ -82,7 +83,7 @@ whole guide feature on 2026-11-14 (owner). This doc covers the partners mode (`l
   device as a list (`lib/partner-gender-pref.js`); a device that still holds the old single *Only my gender* switch ON keeps it as the
   climber's own gender until they change the chips. *Clear filters* does not clear it. Pronouns are shown on profiles and filter nothing.
   The You card's hint for a climber with no gender now reads *so climbers who filter by gender can find you*.
-- **Filters** (all narrow the real lists as well as the example profiles): Discipline and Experience (level) as pills; Speed match,
+- **Filters** (all narrow the real lists as well as the example profiles): Discipline as a dropdown in the row; Experience (level), Speed match,
   Available to climb (Weekend AM / Weekend PM / Weekday AM / Weekday PM / Flexible) and Max distance (examples) behind *More filters*.
   The panel starts CLOSED (its badge counts the active panel filters), on Find partners and on Join a crew alike, so the results come first.
   A filter that empties a list says so; a failed signals read says the list is not narrowed by experience.

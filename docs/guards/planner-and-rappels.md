@@ -109,8 +109,17 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     Klawatti's 1 hr was only the col-to-summit scramble; Torment-Forbidden's "~40 hr" was elapsed
     time, now 30.5 on the move. 14 more after that (46 of the 103 in all): NW Mox's and Primus's
     summit legs were round trips; the East Fury traverse's 5 hr total was the ridge alone, now 30.
-    **STILL OPEN:** 57 rows, all researched but held — no timed report of the climb itself, or a
-    climb time borrowed from a neighbouring route; their proposals are in the audit. The Suiattle
+    A second, deeper pass on the 57 held rows the same night moved 10 to medium and applied them
+    (Prusik's Craggers' Delight and Sail Away, Gato Negro, Poltergeist, Sitkum, Spickard Silver
+    Glacier, Sinister SW, Eldorado NW, Smears Jugs, Fortress SW; 56 of the 103 in all).
+    Of the 47 still at low confidence, 39 stored blank or fragmentary times (Agnes showed 19.4 hr for
+    a 5-day trip; several stored only the 0.5 hr camp-to-base walk as the "approach"); the owner chose
+    to write their researched, consistent proposals anyway (marked `confidence: "low"`,
+    `ownerApproved` in the audit; 95 of the 103 in all). **STILL OPEN:** 8 rows whose stored times
+    already add up but whose split the evidence questions (Willis Wall, Ghost, Dot, Dragontail
+    Gerber-Sink, Barnes, Sentinel, Ferry, North Star) — left as they are. The forum and guide pages
+    that would settle them refuse automated fetches, so a third web pass is unlikely to move them; a
+    climber's logged time is the way. The Suiattle
     River Road routes (Sinister, Spire Point, Gunsight, Dome, Frostbite Ridge) now walk the 8 closed
     road miles of the order in force since 2026-11-05 IN their day hours; the earlier closure pass had
     added the road miles but not the hours (`audits/closure-distance/README.md`). Re-run with the same brief per row; a row whose summit day already equals its leg is

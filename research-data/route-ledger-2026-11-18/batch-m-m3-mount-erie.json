@@ -1,0 +1,621 @@
+{
+ "wa_zig_zag": {
+  "area": "wa_a_main_wall_west",
+  "set": {
+   "waypoints": [
+    {
+     "lat": 48.4516,
+     "lng": -122.633088,
+     "elev": 157,
+     "name": "Heart Lake Road kiosk pullout",
+     "note": "Roadside gravel pullout on Heart Lake Road beside an information kiosk; trail 248 leaves from here toward trail 247 and the south-face crags.",
+     "type": "Trailhead",
+     "distMi": 0,
+     "elevFt": 157
+    }
+   ]
+  },
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/106517013/zig-zag",
+    "https://www.mountainproject.com/area/114859186/main-wall-west",
+    "https://rakkup.com/guidebook/mt-erie-rock-climbing/zig-zag/c28767",
+    "https://rakkup.com/guidebook/mt-erie-rock-climbing/main-wall-west/s12345",
+    "https://www.alpineinstitute.com/route-profile-mt-erie-s-zig-zag-route-5-7-or-5-8-ii/",
+    "https://www.openstreetmap.org/way/1268220847",
+    "https://www.openstreetmap.org/node/11778894534",
+    "https://www.anacorteswa.gov/DocumentCenter/View/32255/Anacortes-Community-Forest-Lands-Plan",
+    "https://www.anacorteswa.gov/Facilities/Facility/Details/Anacortes-Community-Forest-Lands-7",
+    "https://www.anacorteswa.gov/517/Community-Forest-Lands-ACFL"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.7",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106517013/zig-zag",
+      "fact": "Zig Zag 5.7 YDS, Trad, 2 pitches",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://rakkup.com/guidebook/mt-erie-rock-climbing/zig-zag/c28767",
+      "fact": "Zig Zag 5.7, three stars, two-pitch route (Mt. Erie Climbing guidebook)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "waypoints/Heart Lake Road kiosk pullout",
+    "value": {
+     "name": "Heart Lake Road kiosk pullout",
+     "lat": 48.4516,
+     "lng": -122.633088
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.openstreetmap.org/way/1268220847",
+      "fact": "amenity=parking layby, fee=no, centroid 48.45160,-122.63309; info board node 11778894534 beside it; USGS 3DEP 157 ft",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_zig_zag",
+    "column": "pitches",
+    "from": 0,
+    "to": 2,
+    "why": "0 is invalid. Mountain Project states 2 pitches and the Mt. Erie guidebook page calls it a two-pitch route: agree-2, locked after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/106517013/zig-zag",
+     "https://rakkup.com/guidebook/mt-erie-rock-climbing/zig-zag/c28767"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_zig_zag",
+    "column": "length_m",
+    "from": null,
+    "to": 61,
+    "why": "Mountain Project states 200 ft (61 m). Single source (guidebook paywalled); locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/106517013/zig-zag"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_zig_zag",
+    "column": "anchor",
+    "from": null,
+    "to": "Chain anchor",
+    "why": "Mountain Project: 2 or 3 chain anchors depending on how it is pitched. Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/106517013/zig-zag"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_zig_zag",
+    "column": "access",
+    "from": null,
+    "to": {
+     "fees": null,
+     "rules": "Climbing and scrambling are allowed only in the Mt. Erie summit and south/west face area. The forest lands are open 6 am to 10 pm. New fixed anchors and new climbing areas need Forest Advisory Board approval.",
+     "permit": "No permit for individual climbers. Groups should send their planned climbing dates to Anacortes Parks & Recreation ahead of time.",
+     "group_limit": null,
+     "land_manager": "City of Anacortes Parks & Recreation (Anacortes Community Forest Lands)",
+     "parking_pass": null
+    },
+    "why": "Access is empty. Same object now live on the batch-I Mt. Erie routes (Orange Crush, The Abyss, Treeshadow), re-checked today: City of Anacortes owns the forest lands, Parks & Recreation manages them; the Oct 2025 ACFL plan limits climbing to the summit and S/W faces, sets 6am-10pm hours, asks for climbing dates in advance and requires Forest Advisory Board approval for fixed anchors. No fee or pass stated. Lockable official-1 (12 months) after apply.",
+    "evidence": [
+     "https://www.anacorteswa.gov/DocumentCenter/View/32255/Anacortes-Community-Forest-Lands-Plan",
+     "https://www.anacorteswa.gov/Facilities/Facility/Details/Anacortes-Community-Forest-Lands-7",
+     "https://www.anacorteswa.gov/517/Community-Forest-Lands-ACFL"
+    ]
+   }
+  ],
+  "disputed": [
+   "commitment: only one source (a guide-service route profile) gives grade II; held, not proposed.",
+   "guide_stars: stored 1, but the Mt. Erie guidebook page (rakkup) shows three stars for Zig Zag. Held for the owner (stored figure may come from another guide)."
+  ],
+  "notes": "fa: stored 'Dallas Kloke & Mike Killien (1963)' held the year in the names field; set to names only, unconfirmed (MP only, year 1963). Parking pin = OSM layby with the info kiosk ~0.16 mi north of the Lake Erie store, matching the stored approach text (gravel pullout with kiosk on Heart Lake Road). MP rack: gear to 2 in, small cam/offset nut for the move off the P1 ledge. Descent: scramble gullies, rappel, or continue up Springboard. Road/gate: no official page states Mt. Erie Road or Heart Lake Road gate hours; only the ACFL 6am-10pm public-access hours (in access.rules). No road value proposed."
+ },
+ "wa_springboard": {
+  "area": "wa_a_main_wall_west",
+  "set": {
+   "waypoints": [
+    {
+     "lat": 48.4516,
+     "lng": -122.633088,
+     "elev": 157,
+     "name": "Heart Lake Road kiosk pullout",
+     "note": "Roadside gravel pullout on Heart Lake Road beside an information kiosk; trail 248 leaves from here toward trail 247 and the south-face crags.",
+     "type": "Trailhead",
+     "distMi": 0,
+     "elevFt": 157
+    }
+   ]
+  },
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/106517047/springboard",
+    "https://www.mountainproject.com/area/114859186/main-wall-west",
+    "https://rakkup.com/guidebook/mt-erie-rock-climbing/main-wall-west/s12345",
+    "https://www.alpineinstitute.com/route-profile-mt-erie-s-zig-zag-route-5-7-or-5-8-ii/",
+    "https://www.openstreetmap.org/way/1268220847",
+    "https://www.openstreetmap.org/node/11778894534",
+    "https://www.anacorteswa.gov/DocumentCenter/View/32255/Anacortes-Community-Forest-Lands-Plan",
+    "https://www.anacorteswa.gov/Facilities/Facility/Details/Anacortes-Community-Forest-Lands-7",
+    "https://www.anacorteswa.gov/517/Community-Forest-Lands-ACFL"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.8+",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106517047/springboard",
+      "fact": "Springboard 5.8+ YDS, Trad, 65 ft",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://rakkup.com/guidebook/mt-erie-rock-climbing/main-wall-west/s12345",
+      "fact": "Springboard 5.8+, three stars, trad (Mt. Erie Climbing guidebook)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "waypoints/Heart Lake Road kiosk pullout",
+    "value": {
+     "name": "Heart Lake Road kiosk pullout",
+     "lat": 48.4516,
+     "lng": -122.633088
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.openstreetmap.org/way/1268220847",
+      "fact": "amenity=parking layby, fee=no, centroid 48.45160,-122.63309; info board node 11778894534 beside it; USGS 3DEP 157 ft",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_springboard",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "0 is invalid. Mountain Project: a single 65 ft crack started from the horizontal tree on the ledge atop Zig Zag. Count implied, not stated: unconfirmed after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/106517047/springboard"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_springboard",
+    "column": "length_m",
+    "from": null,
+    "to": 20,
+    "why": "Mountain Project states 65 ft (20 m). Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/106517047/springboard"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_springboard",
+    "column": "anchor",
+    "from": null,
+    "to": "Chain anchor",
+    "why": "Mountain Project protection: gear to 2 in, a fixed pin that may be gone, chain anchor. Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/106517047/springboard"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_springboard",
+    "column": "access",
+    "from": null,
+    "to": {
+     "fees": null,
+     "rules": "Climbing and scrambling are allowed only in the Mt. Erie summit and south/west face area. The forest lands are open 6 am to 10 pm. New fixed anchors and new climbing areas need Forest Advisory Board approval.",
+     "permit": "No permit for individual climbers. Groups should send their planned climbing dates to Anacortes Parks & Recreation ahead of time.",
+     "group_limit": null,
+     "land_manager": "City of Anacortes Parks & Recreation (Anacortes Community Forest Lands)",
+     "parking_pass": null
+    },
+    "why": "Access is empty. Same object now live on the batch-I Mt. Erie routes (Orange Crush, The Abyss, Treeshadow), re-checked today: City of Anacortes owns the forest lands, Parks & Recreation manages them; the Oct 2025 ACFL plan limits climbing to the summit and S/W faces, sets 6am-10pm hours, asks for climbing dates in advance and requires Forest Advisory Board approval for fixed anchors. No fee or pass stated. Lockable official-1 (12 months) after apply.",
+    "evidence": [
+     "https://www.anacorteswa.gov/DocumentCenter/View/32255/Anacortes-Community-Forest-Lands-Plan",
+     "https://www.anacorteswa.gov/Facilities/Facility/Details/Anacortes-Community-Forest-Lands-7",
+     "https://www.anacorteswa.gov/517/Community-Forest-Lands-ACFL"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "FA unknown on MP; fa stays null. Reaching the start needs Zig Zag (or Undercover) first: walk out the horizontal tree to the face. MP says the fixed pin may be gone; carry a small nut for the face moves."
+ },
+ "wa_cat_from_outer_space": {
+  "area": "wa_a_main_wall_west",
+  "set": {
+   "waypoints": [
+    {
+     "lat": 48.4516,
+     "lng": -122.633088,
+     "elev": 157,
+     "name": "Heart Lake Road kiosk pullout",
+     "note": "Roadside gravel pullout on Heart Lake Road beside an information kiosk; trail 248 leaves from here toward trail 247 and the south-face crags.",
+     "type": "Trailhead",
+     "distMi": 0,
+     "elevFt": 157
+    }
+   ]
+  },
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/112008680/cat-from-outer-space",
+    "https://www.mountainproject.com/area/114859186/main-wall-west",
+    "https://rakkup.com/guidebook/mt-erie-rock-climbing/cat-from-outer-space/c28762",
+    "https://rakkup.com/guidebook/mt-erie-rock-climbing/main-wall-west/s12345",
+    "https://www.openstreetmap.org/way/1268220847",
+    "https://www.openstreetmap.org/node/11778894534",
+    "https://www.anacorteswa.gov/DocumentCenter/View/32255/Anacortes-Community-Forest-Lands-Plan",
+    "https://www.anacorteswa.gov/Facilities/Facility/Details/Anacortes-Community-Forest-Lands-7",
+    "https://www.anacorteswa.gov/517/Community-Forest-Lands-ACFL"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "waypoints/Heart Lake Road kiosk pullout",
+    "value": {
+     "name": "Heart Lake Road kiosk pullout",
+     "lat": 48.4516,
+     "lng": -122.633088
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.openstreetmap.org/way/1268220847",
+      "fact": "amenity=parking layby, fee=no, centroid 48.45160,-122.63309; info board node 11778894534 beside it; USGS 3DEP 157 ft",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_cat_from_outer_space",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "0 is invalid. Mountain Project: one 70 ft bolted line that starts from the left anchors atop Zig Zag pitch 1. Count implied, not stated: unconfirmed after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/112008680/cat-from-outer-space"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_cat_from_outer_space",
+    "column": "length_m",
+    "from": null,
+    "to": 21,
+    "why": "Mountain Project states 70 ft (21 m). Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/112008680/cat-from-outer-space"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_cat_from_outer_space",
+    "column": "bolts",
+    "from": null,
+    "to": 9,
+    "why": "Mountain Project: 9 bolts. Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/112008680/cat-from-outer-space"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_cat_from_outer_space",
+    "column": "anchor",
+    "from": null,
+    "to": "Chain anchor",
+    "why": "Mountain Project: chain anchor. Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/112008680/cat-from-outer-space"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_cat_from_outer_space",
+    "column": "access",
+    "from": null,
+    "to": {
+     "fees": null,
+     "rules": "Climbing and scrambling are allowed only in the Mt. Erie summit and south/west face area. The forest lands are open 6 am to 10 pm. New fixed anchors and new climbing areas need Forest Advisory Board approval.",
+     "permit": "No permit for individual climbers. Groups should send their planned climbing dates to Anacortes Parks & Recreation ahead of time.",
+     "group_limit": null,
+     "land_manager": "City of Anacortes Parks & Recreation (Anacortes Community Forest Lands)",
+     "parking_pass": null
+    },
+    "why": "Access is empty. Same object now live on the batch-I Mt. Erie routes (Orange Crush, The Abyss, Treeshadow), re-checked today: City of Anacortes owns the forest lands, Parks & Recreation manages them; the Oct 2025 ACFL plan limits climbing to the summit and S/W faces, sets 6am-10pm hours, asks for climbing dates in advance and requires Forest Advisory Board approval for fixed anchors. No fee or pass stated. Lockable official-1 (12 months) after apply.",
+    "evidence": [
+     "https://www.anacorteswa.gov/DocumentCenter/View/32255/Anacortes-Community-Forest-Lands-Plan",
+     "https://www.anacorteswa.gov/Facilities/Facility/Details/Anacortes-Community-Forest-Lands-7",
+     "https://www.anacorteswa.gov/517/Community-Forest-Lands-ACFL"
+    ]
+   }
+  ],
+  "disputed": [
+   "grade: stored 5.10b/c = Mt. Erie guidebook (rakkup) 5.10b/c; Mountain Project 5.10+. Not identical after normalising; not locked, not changed.",
+   "fa: stored 'TR J. Matzko '97  FA Siep, Kloke 2001'. Guidebook page: top-roped by Jay Matzko 1997, later bolted by Siep and Kloke (year cut off). Mountain Project: first lead C. Mudry 2001. Lead FA party disagrees; held (stored text also mixes TR, FA and years in one field)."
+  ],
+  "notes": "Second-tier route: it starts from the left set of anchors at the top of Zig Zag pitch 1, so climbing to it needs Zig Zag P1 or an alternative start."
+ },
+ "wa_c_snag_buttress_snag_buttress_direct": {
+  "area": "wa_b_snag_buttress",
+  "set": {
+   "waypoints": [
+    {
+     "lat": 48.4516,
+     "lng": -122.633088,
+     "elev": 157,
+     "name": "Heart Lake Road kiosk pullout",
+     "note": "Roadside gravel pullout on Heart Lake Road beside an information kiosk; trail 248 leaves from here toward trail 247 and the south-face crags.",
+     "type": "Trailhead",
+     "distMi": 0,
+     "elevFt": 157
+    }
+   ]
+  },
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/117263998/snag-buttress-direct",
+    "https://www.mountainproject.com/area/114868057/snag-buttress",
+    "https://rakkup.com/guidebook/mt-erie-rock-climbing/snag-buttress-direct/c28779",
+    "https://rakkup.com/guidebook/mt-erie-rock-climbing/snag-buttress/s12346",
+    "https://www.openstreetmap.org/way/1268220847",
+    "https://www.openstreetmap.org/node/11778894534",
+    "https://www.anacorteswa.gov/DocumentCenter/View/32255/Anacortes-Community-Forest-Lands-Plan",
+    "https://www.anacorteswa.gov/Facilities/Facility/Details/Anacortes-Community-Forest-Lands-7",
+    "https://www.anacorteswa.gov/517/Community-Forest-Lands-ACFL"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.10d",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/117263998/snag-buttress-direct",
+      "fact": "Snag Buttress Direct 5.10d YDS, Trad, 100 ft",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://rakkup.com/guidebook/mt-erie-rock-climbing/snag-buttress-direct/c28779",
+      "fact": "Snag Buttress Direct 5.10d, trad (Mt. Erie Climbing guidebook)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "length_m",
+    "value": 30,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/117263998/snag-buttress-direct",
+      "fact": "Trad, 100 ft (30 m)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "waypoints/Heart Lake Road kiosk pullout",
+    "value": {
+     "name": "Heart Lake Road kiosk pullout",
+     "lat": 48.4516,
+     "lng": -122.633088
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.openstreetmap.org/way/1268220847",
+      "fact": "amenity=parking layby, fee=no, centroid 48.45160,-122.63309; info board node 11778894534 beside it; USGS 3DEP 157 ft",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_c_snag_buttress_snag_buttress_direct",
+    "column": "anchor",
+    "from": null,
+    "to": "Chain anchor",
+    "why": "Mountain Project protection: pro to 2 in (short version) or 3 in (full length), chain anchors. Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/117263998/snag-buttress-direct"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_c_snag_buttress_snag_buttress_direct",
+    "column": "access",
+    "from": null,
+    "to": {
+     "fees": null,
+     "rules": "Climbing and scrambling are allowed only in the Mt. Erie summit and south/west face area. The forest lands are open 6 am to 10 pm. New fixed anchors and new climbing areas need Forest Advisory Board approval.",
+     "permit": "No permit for individual climbers. Groups should send their planned climbing dates to Anacortes Parks & Recreation ahead of time.",
+     "group_limit": null,
+     "land_manager": "City of Anacortes Parks & Recreation (Anacortes Community Forest Lands)",
+     "parking_pass": null
+    },
+    "why": "Access is empty. Same object now live on the batch-I Mt. Erie routes (Orange Crush, The Abyss, Treeshadow), re-checked today: City of Anacortes owns the forest lands, Parks & Recreation manages them; the Oct 2025 ACFL plan limits climbing to the summit and S/W faces, sets 6am-10pm hours, asks for climbing dates in advance and requires Forest Advisory Board approval for fixed anchors. No fee or pass stated. Lockable official-1 (12 months) after apply.",
+    "evidence": [
+     "https://www.anacorteswa.gov/DocumentCenter/View/32255/Anacortes-Community-Forest-Lands-Plan",
+     "https://www.anacorteswa.gov/Facilities/Facility/Details/Anacortes-Community-Forest-Lands-7",
+     "https://www.anacorteswa.gov/517/Community-Forest-Lands-ACFL"
+    ]
+   }
+  ],
+  "disputed": [
+   "ffa: Mountain Project only: FA unknown, FFA R. Bailey, J. Howard (1972). MP alone may not set a first ascent; held."
+  ],
+  "notes": "pitches stored 1: MP lists 100 ft with no pitch count, not locked. MP: starts in front of the pine on top of Snag Buttress; the hard part is the first 30 ft (Mental Hopscotch's chain anchor serves a crux-only lap); descent by rappel with a 70 m rope. MP area comment (Mar 2024) reports a loose anchor bolt on the left side of the Snag Buttress ledge - not verified."
+ },
+ "wa_b_pigeon_stool_wall_east_great_balls_of_fire": {
+  "area": "wa_b_pigeon_stool_wall_east",
+  "set": {
+   "waypoints": [
+    {
+     "lat": 48.4516,
+     "lng": -122.633088,
+     "elev": 157,
+     "name": "Heart Lake Road kiosk pullout",
+     "note": "Roadside gravel pullout on Heart Lake Road beside an information kiosk; trail 248 leaves from here toward trail 247 and the south-face crags.",
+     "type": "Trailhead",
+     "distMi": 0,
+     "elevFt": 157
+    }
+   ]
+  },
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/126270456/great-balls-of-fire",
+    "https://www.mountainproject.com/area/126267524/pigeon-stool-wall-east",
+    "https://rakkup.com/guidebook/mt-erie-rock-climbing/great-balls-of-fire/c30531",
+    "https://www.mountainproject.com/route/126270426/desperation",
+    "https://www.openstreetmap.org/way/1268220847",
+    "https://www.openstreetmap.org/node/11778894534",
+    "https://www.anacorteswa.gov/DocumentCenter/View/32255/Anacortes-Community-Forest-Lands-Plan",
+    "https://www.anacorteswa.gov/Facilities/Facility/Details/Anacortes-Community-Forest-Lands-7",
+    "https://www.anacorteswa.gov/517/Community-Forest-Lands-ACFL"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.6",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/126270456/great-balls-of-fire",
+      "fact": "Great Balls of Fire 5.6 YDS, Sport, 55 ft",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://rakkup.com/guidebook/mt-erie-rock-climbing/great-balls-of-fire/c30531",
+      "fact": "Great Balls of Fire 5.6, one star (Mt. Erie Climbing guidebook)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "length_m",
+    "value": 17,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/126270456/great-balls-of-fire",
+      "fact": "Sport, 55 ft (17 m)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "waypoints/Heart Lake Road kiosk pullout",
+    "value": {
+     "name": "Heart Lake Road kiosk pullout",
+     "lat": 48.4516,
+     "lng": -122.633088
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.openstreetmap.org/way/1268220847",
+      "fact": "amenity=parking layby, fee=no, centroid 48.45160,-122.63309; info board node 11778894534 beside it; USGS 3DEP 157 ft",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_b_pigeon_stool_wall_east_great_balls_of_fire",
+    "column": "bolts",
+    "from": null,
+    "to": 5,
+    "why": "Mountain Project protection: 5 bolts. Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/126270456/great-balls-of-fire"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_b_pigeon_stool_wall_east_great_balls_of_fire",
+    "column": "anchor",
+    "from": null,
+    "to": "Chain anchor",
+    "why": "Mountain Project: chain anchor shared with Desperation. Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/126270456/great-balls-of-fire"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_b_pigeon_stool_wall_east_great_balls_of_fire",
+    "column": "access",
+    "from": null,
+    "to": {
+     "fees": null,
+     "rules": "Climbing and scrambling are allowed only in the Mt. Erie summit and south/west face area. The forest lands are open 6 am to 10 pm. New fixed anchors and new climbing areas need Forest Advisory Board approval.",
+     "permit": "No permit for individual climbers. Groups should send their planned climbing dates to Anacortes Parks & Recreation ahead of time.",
+     "group_limit": null,
+     "land_manager": "City of Anacortes Parks & Recreation (Anacortes Community Forest Lands)",
+     "parking_pass": null
+    },
+    "why": "Access is empty. Same object now live on the batch-I Mt. Erie routes (Orange Crush, The Abyss, Treeshadow), re-checked today: City of Anacortes owns the forest lands, Parks & Recreation manages them; the Oct 2025 ACFL plan limits climbing to the summit and S/W faces, sets 6am-10pm hours, asks for climbing dates in advance and requires Forest Advisory Board approval for fixed anchors. No fee or pass stated. Lockable official-1 (12 months) after apply.",
+    "evidence": [
+     "https://www.anacorteswa.gov/DocumentCenter/View/32255/Anacortes-Community-Forest-Lands-Plan",
+     "https://www.anacorteswa.gov/Facilities/Facility/Details/Anacortes-Community-Forest-Lands-7",
+     "https://www.anacorteswa.gov/517/Community-Forest-Lands-ACFL"
+    ]
+   }
+  ],
+  "disputed": [
+   "fa: Mountain Project only: S. Trent, D. Kloke (2003). Not set (MP alone).",
+   "discipline: MP sport (5 bolts); the guidebook page icon read as trad. Not changed, not locked."
+  ],
+  "notes": "pitches stored 1 kept (MP gives 55 ft, no count). MP: same Heart Lake Road kiosk trailhead, trail 248 then 247 east past the Main Wall junction to the East Buttress trail; the last step to the wall is a dirty class 3 move and the belay is exposed. Two anchors on this wall (left three routes, right two), not one as the guide topo shows. Lichen: bring a brush."
+ }
+}

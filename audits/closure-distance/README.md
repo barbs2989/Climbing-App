@@ -28,6 +28,14 @@ Ridge, which said to drive to the road's end, +3.75 hr for 11). Rollback:
 `audits/rollback-suiattle-road-1795060575617.json`; find the affected rows again with
 `scripts/oneoff/scan-suiattle-road.mjs`.
 
+**Order 06-05-26-25 read in full (2026-11-18):** it prohibits only "any type of vehicle" under
+36 CFR 261.54(a) and says the closed road is "closed to all motorized vehicles"; no foot or
+bicycle prohibition, so walking or biking past the gate is allowed (the old 03 order cited
+261.54(e), being on the road). It runs 2026-11-05 to **2028-10-01** unless rescinded, supersedes
+06-05-26-03, and also closes the whole Green Mountain Road (FR 2680) to vehicles. A re-scan of the
+live text found every route consistent with this (foot/bike past the gate; Sitkum and Cool Glacier
+give the 1 Oct 2028 end date); nothing to change.
+
 ## Left (resume here)
 
 1. **b05, FR 38 Middle Fork Nooksack.** The plan is researched and reviewed but NOT written: the database returned 504 on the first read.

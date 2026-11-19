@@ -1,11 +1,11 @@
 import { useState, useMemo, useEffect } from "react";
 import { usePinnedBar } from "../../lib/usePinnedBar.js";
 import { useWideScreen } from "../../lib/wideLayout.js";
-import { useAreaSearch, useSubtreeRoutes, useAreaNamesByIds, areaSearchTotal } from "../../lib/db";
+import { useAreaSearch, useSubtreeRoutes, useAreaNamesByIds, useAreaTrailsByIds, areaSearchTotal } from "../../lib/db";
 import { clickable } from "../../lib/clickable";
 import LoadingRows from "./LoadingRows.tsx";
 import EmptyState from "./EmptyState.tsx";
-import { ATYPE } from "../../lib/areaBrowserShared.js";
+import { ATYPE, areaWhere } from "../../lib/areaBrowserShared.js";
 import type { CSSProperties, RefObject } from "react";
 import { hlMatch } from "../../ClimbMatchCore.jsx";
 import RouteRow from "./RouteRow.tsx";
@@ -60,6 +60,9 @@ export default function DbSearchSplit({ scope, onJumpToArea, onOpenRoute, C, onM
   // climb listed twice. A failed read leaves the line off, never empty.
   const hitAreaIds = useMemo(() => [...new Set((routeHits || []).map((r: DbSearchSplitRoute) => r.area_id).filter(Boolean))], [routeHits]);
   const { data: hitAreaNames } = useAreaNamesByIds(hitAreaIds);
+  // ...and the two levels above that crag, then the state (2026-11-18): "Main Wall" alone names a dozen walls in
+  // one state, so the row reads "Index › Lower Town Wall › Main Wall, Washington".
+  const { data: hitAreaTrails } = useAreaTrailsByIds(hitAreaIds);
   useEffect(() => { if (onModeChange) onModeChange(mode); }, [mode, onModeChange]);
   const tab = (on: boolean): CSSProperties => ({ flex: 1, padding: "7px 0", textAlign: "center", fontSize: 12.5, fontWeight: 700, cursor: "pointer", borderRadius: 7, background: on ? C.blueSolid : "transparent", color: on ? C.onSolid : C.textSub });
   const row = { display: "flex", alignItems: "center", gap: 10, padding: "9px 4px", cursor: "pointer", borderBottom: "1px solid " + C.borderLight };
@@ -105,7 +108,7 @@ export default function DbSearchSplit({ scope, onJumpToArea, onOpenRoute, C, onM
             // The same row every other route list draws (discipline glyph, Classic, your Done/Saved, grade),
             // with the hit's crag as its place and the typed text in bold, as the seed search showed it.
             : routeHits.map((r: DbSearchSplitRoute) => (
-              <RouteRow key={r.id} r={r as DbSearchSplitRoute & RouteRowRoute} onOpen={() => onOpenRoute(r)} C={C} highlight={qq} areaName={hitAreaNames ? hitAreaNames[r.area_id] || null : null} />
+              <RouteRow key={r.id} r={r as DbSearchSplitRoute & RouteRowRoute} onOpen={() => onOpenRoute(r)} C={C} highlight={qq} areaName={areaWhere(r.area_id, hitAreaNames, hitAreaTrails, scope.id)} />
             ))
           )}
         </div>
