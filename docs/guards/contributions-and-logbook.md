@@ -570,3 +570,8 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   anchors above still hold: they now guard the picked discipline's second chip row. What it cannot
   see: whether the database's answer carries `by_grade_disc` (a response without it falls back to
   scale chips only), and a route's SECOND discipline, which the rollup does not count.
+  **A sliver is not a scale (2026-11-18).** A scale under `SCALE_MIN_SHARE` (5%) of the picked
+  discipline's graded climbs gets no chip, so those few climbs are on NO chart: a deliberate
+  exception to "no climb on a chart nobody can open", taken because the stray rows put a second
+  chip row on nearly every discipline. The guard holds the bar at 5% or lower and requires the share
+  to be measured against the picked discipline's own total.
