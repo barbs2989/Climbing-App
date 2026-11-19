@@ -1,6 +1,6 @@
 // resolve-map-link — expand a Google or Apple Maps SHORT link to the full link it redirects to.
 //
-// A crew's organiser pastes what a maps app's Share button hands out as the meet-up spot (0478). The
+// A crew's organiser pastes what a maps app's Share button hands out as the meet-up spot (0484). The
 // phone apps share a short link (https://maps.app.goo.gl/…, https://maps.apple/p/…) that carries no
 // coordinate; the full link it redirects to does. A browser cannot read another site's redirect, so
 // this function follows it and returns the full link. The app reads the coordinate out of that link

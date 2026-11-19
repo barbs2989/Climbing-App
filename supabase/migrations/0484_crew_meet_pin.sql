@@ -1,4 +1,4 @@
--- 0478 — A CREW'S MEET-UP SPOT CAN CARRY A MAP PIN (owner 2026-11-19: "For meetup spot, would there be a
+-- 0484 — A CREW'S MEET-UP SPOT CAN CARRY A MAP PIN (owner 2026-11-19: "For meetup spot, would there be a
 -- way to share a google or Apple Maps pin? Ie paste the shared link into the app?").
 --
 -- crews.meet_place is the spot's NAME, typed by the organiser. The Meet-up sheet also had an "Exact
@@ -34,8 +34,8 @@ begin
 end $$;
 
 comment on column public.crews.meet_lat is
-  'Latitude of the crew''s meet-up pin (0478); set with meet_lng or not at all. Read out of a pasted maps link or coordinate by the app — the link itself is never stored.';
+  'Latitude of the crew''s meet-up pin (0484); set with meet_lng or not at all. Read out of a pasted maps link or coordinate by the app — the link itself is never stored.';
 comment on column public.crews.meet_lng is
-  'Longitude of the crew''s meet-up pin (0478); see meet_lat.';
+  'Longitude of the crew''s meet-up pin (0484); see meet_lat.';
 
 commit;

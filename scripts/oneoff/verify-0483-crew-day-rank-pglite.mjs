@@ -1,8 +1,8 @@
-// verify-0477-crew-day-rank-pglite.mjs — replays every migration into PGlite and acts as the organiser, two
+// verify-0483-crew-day-rank-pglite.mjs — replays every migration into PGlite and acts as the organiser, two
 // confirmed members, an invitee and an outsider against one crew: a member's ORDER of the proposed days
-// (crew_day_acks.rank, 0477). A new "I can make it" goes to the end of that member's order; crew_rank_day moves one
-// day and renumbers the rest; nobody orders for anybody else; a row from before 0477 stays unordered.
-// No production database, no service key: `node scripts/oneoff/verify-0477-crew-day-rank-pglite.mjs`.
+// (crew_day_acks.rank, 0483). A new "I can make it" goes to the end of that member's order; crew_rank_day moves one
+// day and renumbers the rest; nobody orders for anybody else; a row from before 0483 stays unordered.
+// No production database, no service key: `node scripts/oneoff/verify-0483-crew-day-rank-pglite.mjs`.
 import fs from "node:fs";
 import path from "node:path";
 import { PGlite } from "@electric-sql/pglite";
@@ -90,7 +90,7 @@ const ack = (who, d) => as(who, () => db.query("insert into public.crew_day_acks
 const unack = (who, d) => as(who, () => db.query("delete from public.crew_day_acks where crew_id = $1 and user_id = $2 and date = $3::date", [crew, U[who], d]));
 const rank = (who, d, n) => as(who, () => db.query("select public.crew_rank_day($1, $2::date, $3)", [crew, d, n]));
 
-// A row from BEFORE 0477: the trigger is switched off for one insert, so Casey holds an unranked day.
+// A row from BEFORE 0483: the trigger is switched off for one insert, so Casey holds an unranked day.
 await db.exec("alter table public.crew_day_acks disable trigger crew_day_acks_default_rank");
 await db.query("update public.crews set dates = $2::jsonb where id = $1", [crew, JSON.stringify([D1])]);
 await db.query("insert into public.crew_day_acks (crew_id, user_id, date) values ($1, $2, $3::date)", [crew, U.casey, D1]);
@@ -120,7 +120,7 @@ ok(!r.e && await says("blake") === `${D3}:1 ${D1}:3 ${D5}:4 ${D4}:5`, "taking a 
 r = await ack("blake", D2);
 ok(!r.e && (await order("blake")).slice(-1)[0].d === D2, "…and saying yes again goes to the end of his order: " + await says("blake"));
 
-ok(await says("casey") === `${D1}:null`, "Casey's row from before 0477 has no place");
+ok(await says("casey") === `${D1}:null`, "Casey's row from before 0483 has no place");
 r = await ack("casey", D3);
 ok(!r.e && await says("casey") === `${D1}:null ${D3}:null`, "…and a new day does not hand her a 1st choice she never picked: " + await says("casey"));
 r = await rank("casey", D3, 1);
@@ -145,5 +145,5 @@ ok(!r.e && r.r.rows.length === 5, "a confirmed crewmate reads Blake's order — 
 r = await as("blake", () => db.query("insert into public.crew_day_acks (crew_id, user_id, date, rank) values ($1, $2, $3::date, 0)", [crew, U.blake, day(41)]));
 ok(!!r.e, "the table refuses a rank below 1");
 
-console.log(fails ? `\n${fails} expectation(s) FAILED` : "\n0477 crew day order: every expectation holds");
+console.log(fails ? `\n${fails} expectation(s) FAILED` : "\n0483 crew day order: every expectation holds");
 process.exit(fails ? 1 : 0);

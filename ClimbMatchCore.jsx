@@ -1503,7 +1503,7 @@ function relTime(ts){if(!ts)return "";var d=Date.now()-ts;var m=Math.floor(d/600
    owner 2026-11-14); this names that day so the card, the Day sheet and Coming up ask "can you make it?"
    instead of starting the vote over. Null when the day is already agreed, or when anyone else is missing. */
 function dayWaitingOnMe(c){if(!c||!c.dayAcks||agreedDate(c))return null;const ds=(c.dates&&c.dates.length)?c.dates:(c.date?[c.date]:[]);const others=[...new Set((c.members||[]).filter(m=>m.status==="confirmed"&&m.climberId!==0).map(m=>m.climberId))];if(!others.length)return null;const ok=d=>{const a=c.dayAcks[d]||[];return !a.includes(0)&&others.every(id=>a.includes(id));};return (c.date&&ds.includes(c.date)&&ok(c.date))?c.date:(ds.find(ok)||null);}
-/* BACKUP DAYS (0477, owner 2026-11-19). crew.dayRanks is { day: { climberId: rank } }: each member's own
+/* BACKUP DAYS (0483, owner 2026-11-19). crew.dayRanks is { day: { climberId: rank } }: each member's own
    ORDER of the proposed days, as crew_day_acks.rank holds it (1 = first choice). It is an order, not a
    score, so every reader asks for POSITIONS: a member's lowest rank is their 1st choice whatever the
    number, a gap left by taking a day back means nothing, and a rank on a day the member no longer says

@@ -205,7 +205,7 @@ console.log(`  ${crew.members.length === 2 ? "ok  " : "FAIL"}  hydration carries
   }
 }
 
-// BACKUP DAYS (0477, owner 2026-11-19: "3rd, 4th, 5th, etc back up days"). A member's order of the
+// BACKUP DAYS (0483, owner 2026-11-19: "3rd, 4th, 5th, etc back up days"). A member's order of the
 // proposed days is crew_day_acks.rank. It used to be device-only state with two places (1st choice,
 // Backup), each allowed on ONE day, so nobody else ever saw it. Pinned here: the order is hydrated
 // for EVERY member, read as positions (a gap or a rank on a day taken back means nothing), named past
@@ -269,7 +269,7 @@ console.log(`  ${crew.members.length === 2 ? "ok  " : "FAIL"}  hydration carries
   }
 }
 
-// THE MEET-UP PIN (0478, owner 2026-11-19: "paste the shared link into the app"). The organiser pastes a
+// THE MEET-UP PIN (0484, owner 2026-11-19: "paste the shared link into the app"). The organiser pastes a
 // Google or Apple Maps link, or a coordinate; lib/meetPin.js reads the POINT out of it and only the
 // point is stored. The cases are links as the apps really hand them out (the two Google ones are what
 // live maps.app.goo.gl links redirected to on 2026-11-19; the Apple ones are from Apple's "Adopting

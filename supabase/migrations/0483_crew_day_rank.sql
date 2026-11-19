@@ -1,4 +1,4 @@
--- 0477 — A CREW MEMBER'S ORDER OF DAYS REACHES THE CREW (owner 2026-11-19: "We should add 3rd, 4th,
+-- 0483 — A CREW MEMBER'S ORDER OF DAYS REACHES THE CREW (owner 2026-11-19: "We should add 3rd, 4th,
 -- 5th, etc back up days for proposing a day to climb on crews").
 --
 -- A crew can already hold 10 proposed days (0448), and the Day sheet let a climber call one of them
@@ -33,7 +33,7 @@ begin
 end $$;
 
 comment on column public.crew_day_acks.rank is
-  'The place of this day in this member''s own order of the crew''s proposed days: 1 = first choice, 2 = backup, 3 = second backup… Null = never ordered. Set by the insert trigger and crew_rank_day (0477).';
+  'The place of this day in this member''s own order of the crew''s proposed days: 1 = first choice, 2 = backup, 3 = second backup… Null = never ordered. Set by the insert trigger and crew_rank_day (0483).';
 
 create or replace function public.crew_day_acks_default_rank()
 returns trigger
