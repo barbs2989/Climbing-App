@@ -1,0 +1,1117 @@
+{
+ "wa_bite_your_tongue": {
+  "area": "wa_chunkyard_the",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/112180744/bite-your-tongue",
+    "https://www.mountainproject.com/area/108873653/the-chunkyard",
+    "https://wdfw.wa.gov/places-to-go/wildlife-areas/oak-creek-wildlife-area-unit",
+    "https://geodataservices.wdfw.wa.gov/arcgis/rest/services/WP_Misc/DNR_ForestFireProtectionAssessment/MapServer/0",
+    "https://geodataservices.wdfw.wa.gov/arcgis/rest/services/WP_RealEstate/WildlifeAreas/MapServer/0",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0",
+    "https://chriswinter.blogspot.com/2012/05/spring-cragging-in-tieton-valley.html",
+    "https://chriswinter.blogspot.com/2012/05/back-to-tieton.html"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.10c",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112180744/bite-your-tongue",
+      "fact": "5.10c YDS, Sport",
+      "retrieved_at": "2026-11-19"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_bite_your_tongue",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "pitches 0 is invalid. One bolted lower-off line at a short single-tier crag: Bolted line; shares its start with Chunk in the Trunk. MP gives no pitch count (single pitch is implied, so record it as unconfirmed, single-source, after apply).",
+    "evidence": [
+     "https://www.mountainproject.com/route/112180744/bite-your-tongue"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_bite_your_tongue",
+    "column": "length_m",
+    "from": null,
+    "to": 30,
+    "why": "length_m empty. MP states 100 ft (30 m). Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/112180744/bite-your-tongue"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_bite_your_tongue",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Washington Department of Fish and Wildlife (Oak Creek Wildlife Area)",
+     "parking_pass": "Discover Pass or WDFW Vehicle Access Pass in the wildlife area lot"
+    },
+    "why": "access is empty. The Chunkyard sits just east of Moon Rocks; batch O placed the Moon Rocks cliff (OSM way 453131149) and points 500 m east of it inside a WDFW-owned Oak Creek parcel (DFWOwnedParcels, ObjectID 4085), with no National Forest land in the USFS ownership layer. WDFW Oak Creek unit page re-read 2026-11-19: a Discover Pass is required on WDFW lands; a Vehicle Access Pass may be used instead. Object copied field for field from the LIVE value on wa_bend_center_riptide and wa_chunkyard_the_the_deconstructionist. official-1, expires 2027-11-19.",
+    "evidence": [
+     "https://wdfw.wa.gov/places-to-go/wildlife-areas/oak-creek-wildlife-area-unit",
+     "https://geodataservices.wdfw.wa.gov/arcgis/rest/services/WP_Misc/DNR_ForestFireProtectionAssessment/MapServer/0",
+     "https://geodataservices.wdfw.wa.gov/arcgis/rest/services/WP_RealEstate/WildlifeAreas/MapServer/0",
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_bite_your_tongue",
+    "column": "permit",
+    "from": null,
+    "to": "A Discover Pass, or a WDFW Vehicle Access Pass, is needed to park in the Oak Creek Wildlife Area lot.",
+    "why": "permit is empty. Same official WDFW page; same LIVE string as wa_bend_center_riptide and wa_chunkyard_the_the_deconstructionist. official-1, expires 2027-11-19.",
+    "evidence": [
+     "https://wdfw.wa.gov/places-to-go/wildlife-areas/oak-creek-wildlife-area-unit",
+     "https://geodataservices.wdfw.wa.gov/arcgis/rest/services/WP_Misc/DNR_ForestFireProtectionAssessment/MapServer/0"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "MP gives \"Bolts\" with no count and no anchor detail; bolts and anchor left empty. FA unknown on MP; fa stays null. Grade and other facts from MP only: theCrag is blocked; two 2012 trip reports mention the Chunkyard but name no routes. Pitch 0 -> 1: a one-length lower-off sport line. Closure HELD: the WDFW Oak Creek page bars climbing near nesting golden eagles from Feb 1 to the end of nesting (posted boundary) but names no cliff; no closure text proposed. Parking pin held (MP gives only the Moon Rocks trail). Area pin defect (from batch O, still live): areas.wa_chunkyard_the 46.68425,-120.95838 is ~7.8 km WSW of the Moon Rocks cliff; reported, not moved."
+ },
+ "wa_deadbeat_descendant": {
+  "area": "wa_chunkyard_the",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/112180684/deadbeat-descendant",
+    "https://www.mountainproject.com/area/108873653/the-chunkyard",
+    "https://wdfw.wa.gov/places-to-go/wildlife-areas/oak-creek-wildlife-area-unit",
+    "https://geodataservices.wdfw.wa.gov/arcgis/rest/services/WP_Misc/DNR_ForestFireProtectionAssessment/MapServer/0",
+    "https://geodataservices.wdfw.wa.gov/arcgis/rest/services/WP_RealEstate/WildlifeAreas/MapServer/0",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0",
+    "https://chriswinter.blogspot.com/2012/05/spring-cragging-in-tieton-valley.html",
+    "https://chriswinter.blogspot.com/2012/05/back-to-tieton.html"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.11a",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112180684/deadbeat-descendant",
+      "fact": "5.11a YDS, Sport",
+      "retrieved_at": "2026-11-19"
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Andy Fitz, Jim Matthews, Tuck Russel (2008)",
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112180684/deadbeat-descendant",
+      "fact": "FA: Andy Fitz, Jim Matthews, Tuck Russel (2008)",
+      "retrieved_at": "2026-11-19"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_deadbeat_descendant",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "pitches 0 is invalid. One bolted lower-off line at a short single-tier crag: Six bolts on a short mini-buttress before the main wall. MP gives no pitch count (single pitch is implied, so record it as unconfirmed, single-source, after apply).",
+    "evidence": [
+     "https://www.mountainproject.com/route/112180684/deadbeat-descendant"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_deadbeat_descendant",
+    "column": "bolts",
+    "from": null,
+    "to": 6,
+    "why": "bolts empty. MP states 6 bolts. Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/112180684/deadbeat-descendant"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_deadbeat_descendant",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Washington Department of Fish and Wildlife (Oak Creek Wildlife Area)",
+     "parking_pass": "Discover Pass or WDFW Vehicle Access Pass in the wildlife area lot"
+    },
+    "why": "access is empty. The Chunkyard sits just east of Moon Rocks; batch O placed the Moon Rocks cliff (OSM way 453131149) and points 500 m east of it inside a WDFW-owned Oak Creek parcel (DFWOwnedParcels, ObjectID 4085), with no National Forest land in the USFS ownership layer. WDFW Oak Creek unit page re-read 2026-11-19: a Discover Pass is required on WDFW lands; a Vehicle Access Pass may be used instead. Object copied field for field from the LIVE value on wa_bend_center_riptide and wa_chunkyard_the_the_deconstructionist. official-1, expires 2027-11-19.",
+    "evidence": [
+     "https://wdfw.wa.gov/places-to-go/wildlife-areas/oak-creek-wildlife-area-unit",
+     "https://geodataservices.wdfw.wa.gov/arcgis/rest/services/WP_Misc/DNR_ForestFireProtectionAssessment/MapServer/0",
+     "https://geodataservices.wdfw.wa.gov/arcgis/rest/services/WP_RealEstate/WildlifeAreas/MapServer/0",
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_deadbeat_descendant",
+    "column": "permit",
+    "from": null,
+    "to": "A Discover Pass, or a WDFW Vehicle Access Pass, is needed to park in the Oak Creek Wildlife Area lot.",
+    "why": "permit is empty. Same official WDFW page; same LIVE string as wa_bend_center_riptide and wa_chunkyard_the_the_deconstructionist. official-1, expires 2027-11-19.",
+    "evidence": [
+     "https://wdfw.wa.gov/places-to-go/wildlife-areas/oak-creek-wildlife-area-unit",
+     "https://geodataservices.wdfw.wa.gov/arcgis/rest/services/WP_Misc/DNR_ForestFireProtectionAssessment/MapServer/0"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "MP gives no length or anchor detail. Grade and other facts from MP only: theCrag is blocked; two 2012 trip reports mention the Chunkyard but name no routes. Pitch 0 -> 1: a one-length lower-off sport line. Closure HELD: the WDFW Oak Creek page bars climbing near nesting golden eagles from Feb 1 to the end of nesting (posted boundary) but names no cliff; no closure text proposed. Parking pin held (MP gives only the Moon Rocks trail). Area pin defect (from batch O, still live): areas.wa_chunkyard_the 46.68425,-120.95838 is ~7.8 km WSW of the Moon Rocks cliff; reported, not moved."
+ },
+ "wa_salvaged": {
+  "area": "wa_chunkyard_the",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/108875130/salvaged",
+    "https://www.mountainproject.com/area/108873653/the-chunkyard",
+    "https://wdfw.wa.gov/places-to-go/wildlife-areas/oak-creek-wildlife-area-unit",
+    "https://geodataservices.wdfw.wa.gov/arcgis/rest/services/WP_Misc/DNR_ForestFireProtectionAssessment/MapServer/0",
+    "https://geodataservices.wdfw.wa.gov/arcgis/rest/services/WP_RealEstate/WildlifeAreas/MapServer/0",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0",
+    "https://chriswinter.blogspot.com/2012/05/spring-cragging-in-tieton-valley.html",
+    "https://chriswinter.blogspot.com/2012/05/back-to-tieton.html"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.10a/b",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108875130/salvaged",
+      "fact": "5.10a/b YDS, Sport",
+      "retrieved_at": "2026-11-19"
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Andy Fitz, Ed Mosshart",
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108875130/salvaged",
+      "fact": "FA: Andy Fitz, Ed Mosshart",
+      "retrieved_at": "2026-11-19"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_salvaged",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "pitches 0 is invalid. One bolted lower-off line at a short single-tier crag: Nine bolts to chain anchors. MP gives no pitch count (single pitch is implied, so record it as unconfirmed, single-source, after apply).",
+    "evidence": [
+     "https://www.mountainproject.com/route/108875130/salvaged"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_salvaged",
+    "column": "bolts",
+    "from": null,
+    "to": 9,
+    "why": "bolts empty. MP states 9 bolts. Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/108875130/salvaged"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_salvaged",
+    "column": "anchor",
+    "from": null,
+    "to": "Chain anchor",
+    "why": "anchor empty. MP states chain anchors. Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/108875130/salvaged"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_salvaged",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Washington Department of Fish and Wildlife (Oak Creek Wildlife Area)",
+     "parking_pass": "Discover Pass or WDFW Vehicle Access Pass in the wildlife area lot"
+    },
+    "why": "access is empty. The Chunkyard sits just east of Moon Rocks; batch O placed the Moon Rocks cliff (OSM way 453131149) and points 500 m east of it inside a WDFW-owned Oak Creek parcel (DFWOwnedParcels, ObjectID 4085), with no National Forest land in the USFS ownership layer. WDFW Oak Creek unit page re-read 2026-11-19: a Discover Pass is required on WDFW lands; a Vehicle Access Pass may be used instead. Object copied field for field from the LIVE value on wa_bend_center_riptide and wa_chunkyard_the_the_deconstructionist. official-1, expires 2027-11-19.",
+    "evidence": [
+     "https://wdfw.wa.gov/places-to-go/wildlife-areas/oak-creek-wildlife-area-unit",
+     "https://geodataservices.wdfw.wa.gov/arcgis/rest/services/WP_Misc/DNR_ForestFireProtectionAssessment/MapServer/0",
+     "https://geodataservices.wdfw.wa.gov/arcgis/rest/services/WP_RealEstate/WildlifeAreas/MapServer/0",
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_salvaged",
+    "column": "permit",
+    "from": null,
+    "to": "A Discover Pass, or a WDFW Vehicle Access Pass, is needed to park in the Oak Creek Wildlife Area lot.",
+    "why": "permit is empty. Same official WDFW page; same LIVE string as wa_bend_center_riptide and wa_chunkyard_the_the_deconstructionist. official-1, expires 2027-11-19.",
+    "evidence": [
+     "https://wdfw.wa.gov/places-to-go/wildlife-areas/oak-creek-wildlife-area-unit",
+     "https://geodataservices.wdfw.wa.gov/arcgis/rest/services/WP_Misc/DNR_ForestFireProtectionAssessment/MapServer/0"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "MP calls it long but gives no length. Grade and other facts from MP only: theCrag is blocked; two 2012 trip reports mention the Chunkyard but name no routes. Pitch 0 -> 1: a one-length lower-off sport line. Closure HELD: the WDFW Oak Creek page bars climbing near nesting golden eagles from Feb 1 to the end of nesting (posted boundary) but names no cliff; no closure text proposed. Parking pin held (MP gives only the Moon Rocks trail). Area pin defect (from batch O, still live): areas.wa_chunkyard_the 46.68425,-120.95838 is ~7.8 km WSW of the Moon Rocks cliff; reported, not moved."
+ },
+ "wa_chunk_in_the_trunk": {
+  "area": "wa_chunkyard_the",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/112180783/chunk-in-the-trunk",
+    "https://www.mountainproject.com/area/108873653/the-chunkyard",
+    "https://wdfw.wa.gov/places-to-go/wildlife-areas/oak-creek-wildlife-area-unit",
+    "https://geodataservices.wdfw.wa.gov/arcgis/rest/services/WP_Misc/DNR_ForestFireProtectionAssessment/MapServer/0",
+    "https://geodataservices.wdfw.wa.gov/arcgis/rest/services/WP_RealEstate/WildlifeAreas/MapServer/0",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0",
+    "https://chriswinter.blogspot.com/2012/05/spring-cragging-in-tieton-valley.html",
+    "https://chriswinter.blogspot.com/2012/05/back-to-tieton.html"
+   ]
+  },
+  "ledger": [],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_chunk_in_the_trunk",
+    "column": "grade",
+    "from": "5.10a",
+    "to": "5.10a/b",
+    "why": "Stored 5.10a; the MP route page states 5.10a/b (flagged by batch O). Only one open source lists this route (theCrag blocked, no guide page online); MP alone may lock a grade (locked-1src). grade_num unchanged: gradeNumFrom(\"5.10a/b\",\"yds\") = 10.25, same as stored; rock_grade is null.",
+    "evidence": [
+     "https://www.mountainproject.com/route/112180783/chunk-in-the-trunk"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_chunk_in_the_trunk",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "pitches 0 is invalid. One bolted lower-off line at a short single-tier crag: 14 bolts to one anchor up top, 100 ft. MP gives no pitch count (single pitch is implied, so record it as unconfirmed, single-source, after apply).",
+    "evidence": [
+     "https://www.mountainproject.com/route/112180783/chunk-in-the-trunk"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_chunk_in_the_trunk",
+    "column": "length_m",
+    "from": null,
+    "to": 30,
+    "why": "length_m empty. MP states 100 ft (30 m). Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/112180783/chunk-in-the-trunk"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_chunk_in_the_trunk",
+    "column": "bolts",
+    "from": null,
+    "to": 14,
+    "why": "bolts empty. MP states 14 bolts. Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/112180783/chunk-in-the-trunk"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_chunk_in_the_trunk",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Washington Department of Fish and Wildlife (Oak Creek Wildlife Area)",
+     "parking_pass": "Discover Pass or WDFW Vehicle Access Pass in the wildlife area lot"
+    },
+    "why": "access is empty. The Chunkyard sits just east of Moon Rocks; batch O placed the Moon Rocks cliff (OSM way 453131149) and points 500 m east of it inside a WDFW-owned Oak Creek parcel (DFWOwnedParcels, ObjectID 4085), with no National Forest land in the USFS ownership layer. WDFW Oak Creek unit page re-read 2026-11-19: a Discover Pass is required on WDFW lands; a Vehicle Access Pass may be used instead. Object copied field for field from the LIVE value on wa_bend_center_riptide and wa_chunkyard_the_the_deconstructionist. official-1, expires 2027-11-19.",
+    "evidence": [
+     "https://wdfw.wa.gov/places-to-go/wildlife-areas/oak-creek-wildlife-area-unit",
+     "https://geodataservices.wdfw.wa.gov/arcgis/rest/services/WP_Misc/DNR_ForestFireProtectionAssessment/MapServer/0",
+     "https://geodataservices.wdfw.wa.gov/arcgis/rest/services/WP_RealEstate/WildlifeAreas/MapServer/0",
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_chunk_in_the_trunk",
+    "column": "permit",
+    "from": null,
+    "to": "A Discover Pass, or a WDFW Vehicle Access Pass, is needed to park in the Oak Creek Wildlife Area lot.",
+    "why": "permit is empty. Same official WDFW page; same LIVE string as wa_bend_center_riptide and wa_chunkyard_the_the_deconstructionist. official-1, expires 2027-11-19.",
+    "evidence": [
+     "https://wdfw.wa.gov/places-to-go/wildlife-areas/oak-creek-wildlife-area-unit",
+     "https://geodataservices.wdfw.wa.gov/arcgis/rest/services/WP_Misc/DNR_ForestFireProtectionAssessment/MapServer/0"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "MP: \"an anchor up top\" with no detail; anchor left empty. FA unknown on MP. Grade and other facts from MP only: theCrag is blocked; two 2012 trip reports mention the Chunkyard but name no routes. Pitch 0 -> 1: a one-length lower-off sport line. Closure HELD: the WDFW Oak Creek page bars climbing near nesting golden eagles from Feb 1 to the end of nesting (posted boundary) but names no cliff; no closure text proposed. Parking pin held (MP gives only the Moon Rocks trail). Area pin defect (from batch O, still live): areas.wa_chunkyard_the 46.68425,-120.95838 is ~7.8 km WSW of the Moon Rocks cliff; reported, not moved."
+ },
+ "wa_arrowleaf": {
+  "area": "wa_chunkyard_the",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/108874980/arrowleaf",
+    "https://www.mountainproject.com/area/108873653/the-chunkyard",
+    "https://wdfw.wa.gov/places-to-go/wildlife-areas/oak-creek-wildlife-area-unit",
+    "https://geodataservices.wdfw.wa.gov/arcgis/rest/services/WP_Misc/DNR_ForestFireProtectionAssessment/MapServer/0",
+    "https://geodataservices.wdfw.wa.gov/arcgis/rest/services/WP_RealEstate/WildlifeAreas/MapServer/0",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0",
+    "https://chriswinter.blogspot.com/2012/05/spring-cragging-in-tieton-valley.html",
+    "https://chriswinter.blogspot.com/2012/05/back-to-tieton.html"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.8",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108874980/arrowleaf",
+      "fact": "5.8 YDS, Sport",
+      "retrieved_at": "2026-11-19"
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Andy Fitz, Tuck Russell, and friends",
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108874980/arrowleaf",
+      "fact": "FA: Andy Fitz, Tuck Russell, and friends",
+      "retrieved_at": "2026-11-19"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_arrowleaf",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "pitches 0 is invalid. One bolted lower-off line at a short single-tier crag: Six bolts, over a roof to the anchors. MP gives no pitch count (single pitch is implied, so record it as unconfirmed, single-source, after apply).",
+    "evidence": [
+     "https://www.mountainproject.com/route/108874980/arrowleaf"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_arrowleaf",
+    "column": "bolts",
+    "from": null,
+    "to": 6,
+    "why": "bolts empty. MP states 6 bolts. Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/108874980/arrowleaf"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_arrowleaf",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Washington Department of Fish and Wildlife (Oak Creek Wildlife Area)",
+     "parking_pass": "Discover Pass or WDFW Vehicle Access Pass in the wildlife area lot"
+    },
+    "why": "access is empty. The Chunkyard sits just east of Moon Rocks; batch O placed the Moon Rocks cliff (OSM way 453131149) and points 500 m east of it inside a WDFW-owned Oak Creek parcel (DFWOwnedParcels, ObjectID 4085), with no National Forest land in the USFS ownership layer. WDFW Oak Creek unit page re-read 2026-11-19: a Discover Pass is required on WDFW lands; a Vehicle Access Pass may be used instead. Object copied field for field from the LIVE value on wa_bend_center_riptide and wa_chunkyard_the_the_deconstructionist. official-1, expires 2027-11-19.",
+    "evidence": [
+     "https://wdfw.wa.gov/places-to-go/wildlife-areas/oak-creek-wildlife-area-unit",
+     "https://geodataservices.wdfw.wa.gov/arcgis/rest/services/WP_Misc/DNR_ForestFireProtectionAssessment/MapServer/0",
+     "https://geodataservices.wdfw.wa.gov/arcgis/rest/services/WP_RealEstate/WildlifeAreas/MapServer/0",
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_arrowleaf",
+    "column": "permit",
+    "from": null,
+    "to": "A Discover Pass, or a WDFW Vehicle Access Pass, is needed to park in the Oak Creek Wildlife Area lot.",
+    "why": "permit is empty. Same official WDFW page; same LIVE string as wa_bend_center_riptide and wa_chunkyard_the_the_deconstructionist. official-1, expires 2027-11-19.",
+    "evidence": [
+     "https://wdfw.wa.gov/places-to-go/wildlife-areas/oak-creek-wildlife-area-unit",
+     "https://geodataservices.wdfw.wa.gov/arcgis/rest/services/WP_Misc/DNR_ForestFireProtectionAssessment/MapServer/0"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "MP names \"the anchors\" with no type; anchor left empty. MP gives no length. MP says it is directly right of Yellow Bell, while the Yellow Bell page calls its neighbour \"Arrowhead\" (a typo on MP, not a catalog defect). Grade and other facts from MP only: theCrag is blocked; two 2012 trip reports mention the Chunkyard but name no routes. Pitch 0 -> 1: a one-length lower-off sport line. Closure HELD: the WDFW Oak Creek page bars climbing near nesting golden eagles from Feb 1 to the end of nesting (posted boundary) but names no cliff; no closure text proposed. Parking pin held (MP gives only the Moon Rocks trail). Area pin defect (from batch O, still live): areas.wa_chunkyard_the 46.68425,-120.95838 is ~7.8 km WSW of the Moon Rocks cliff; reported, not moved."
+ },
+ "wa_bite_sized_chunk": {
+  "area": "wa_chunkyard_the",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/112180669/bite-sized-chunk",
+    "https://www.mountainproject.com/area/108873653/the-chunkyard",
+    "https://wdfw.wa.gov/places-to-go/wildlife-areas/oak-creek-wildlife-area-unit",
+    "https://geodataservices.wdfw.wa.gov/arcgis/rest/services/WP_Misc/DNR_ForestFireProtectionAssessment/MapServer/0",
+    "https://geodataservices.wdfw.wa.gov/arcgis/rest/services/WP_RealEstate/WildlifeAreas/MapServer/0",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0",
+    "https://chriswinter.blogspot.com/2012/05/spring-cragging-in-tieton-valley.html",
+    "https://chriswinter.blogspot.com/2012/05/back-to-tieton.html"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.10+",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112180669/bite-sized-chunk",
+      "fact": "5.10+ YDS, Sport",
+      "retrieved_at": "2026-11-19"
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Andy Fitz, Tuck Russel (2009)",
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112180669/bite-sized-chunk",
+      "fact": "FA: Andy Fitz, Tuck Russel (2009)",
+      "retrieved_at": "2026-11-19"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_bite_sized_chunk",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "pitches 0 is invalid. One bolted lower-off line at a short single-tier crag: Four bolts on a short overhanging arete. MP gives no pitch count (single pitch is implied, so record it as unconfirmed, single-source, after apply).",
+    "evidence": [
+     "https://www.mountainproject.com/route/112180669/bite-sized-chunk"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_bite_sized_chunk",
+    "column": "bolts",
+    "from": null,
+    "to": 4,
+    "why": "bolts empty. MP states 4 bolts. Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/112180669/bite-sized-chunk"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_bite_sized_chunk",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Washington Department of Fish and Wildlife (Oak Creek Wildlife Area)",
+     "parking_pass": "Discover Pass or WDFW Vehicle Access Pass in the wildlife area lot"
+    },
+    "why": "access is empty. The Chunkyard sits just east of Moon Rocks; batch O placed the Moon Rocks cliff (OSM way 453131149) and points 500 m east of it inside a WDFW-owned Oak Creek parcel (DFWOwnedParcels, ObjectID 4085), with no National Forest land in the USFS ownership layer. WDFW Oak Creek unit page re-read 2026-11-19: a Discover Pass is required on WDFW lands; a Vehicle Access Pass may be used instead. Object copied field for field from the LIVE value on wa_bend_center_riptide and wa_chunkyard_the_the_deconstructionist. official-1, expires 2027-11-19.",
+    "evidence": [
+     "https://wdfw.wa.gov/places-to-go/wildlife-areas/oak-creek-wildlife-area-unit",
+     "https://geodataservices.wdfw.wa.gov/arcgis/rest/services/WP_Misc/DNR_ForestFireProtectionAssessment/MapServer/0",
+     "https://geodataservices.wdfw.wa.gov/arcgis/rest/services/WP_RealEstate/WildlifeAreas/MapServer/0",
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_bite_sized_chunk",
+    "column": "permit",
+    "from": null,
+    "to": "A Discover Pass, or a WDFW Vehicle Access Pass, is needed to park in the Oak Creek Wildlife Area lot.",
+    "why": "permit is empty. Same official WDFW page; same LIVE string as wa_bend_center_riptide and wa_chunkyard_the_the_deconstructionist. official-1, expires 2027-11-19.",
+    "evidence": [
+     "https://wdfw.wa.gov/places-to-go/wildlife-areas/oak-creek-wildlife-area-unit",
+     "https://geodataservices.wdfw.wa.gov/arcgis/rest/services/WP_Misc/DNR_ForestFireProtectionAssessment/MapServer/0"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "MP gives no length or anchor detail. Grade and other facts from MP only: theCrag is blocked; two 2012 trip reports mention the Chunkyard but name no routes. Pitch 0 -> 1: a one-length lower-off sport line. Closure HELD: the WDFW Oak Creek page bars climbing near nesting golden eagles from Feb 1 to the end of nesting (posted boundary) but names no cliff; no closure text proposed. Parking pin held (MP gives only the Moon Rocks trail). Area pin defect (from batch O, still live): areas.wa_chunkyard_the 46.68425,-120.95838 is ~7.8 km WSW of the Moon Rocks cliff; reported, not moved."
+ },
+ "wa_a_chunk_is_blown": {
+  "area": "wa_chunkyard_the",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/108875140/a-chunk-is-blown",
+    "https://www.mountainproject.com/area/108873653/the-chunkyard",
+    "https://wdfw.wa.gov/places-to-go/wildlife-areas/oak-creek-wildlife-area-unit",
+    "https://geodataservices.wdfw.wa.gov/arcgis/rest/services/WP_Misc/DNR_ForestFireProtectionAssessment/MapServer/0",
+    "https://geodataservices.wdfw.wa.gov/arcgis/rest/services/WP_RealEstate/WildlifeAreas/MapServer/0",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0",
+    "https://chriswinter.blogspot.com/2012/05/spring-cragging-in-tieton-valley.html",
+    "https://chriswinter.blogspot.com/2012/05/back-to-tieton.html"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.10b/c",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108875140/a-chunk-is-blown",
+      "fact": "5.10b/c YDS, Sport",
+      "retrieved_at": "2026-11-19"
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Andy Fitz, Jonah Harrison",
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108875140/a-chunk-is-blown",
+      "fact": "FA: Andy Fitz, Jonah Harrison",
+      "retrieved_at": "2026-11-19"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_a_chunk_is_blown",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "pitches 0 is invalid. One bolted lower-off line at a short single-tier crag: Past a bulge to chain anchors. MP gives no pitch count (single pitch is implied, so record it as unconfirmed, single-source, after apply).",
+    "evidence": [
+     "https://www.mountainproject.com/route/108875140/a-chunk-is-blown"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_a_chunk_is_blown",
+    "column": "anchor",
+    "from": null,
+    "to": "Chain anchor",
+    "why": "anchor empty. MP states chain anchors. Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/108875140/a-chunk-is-blown"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_a_chunk_is_blown",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Washington Department of Fish and Wildlife (Oak Creek Wildlife Area)",
+     "parking_pass": "Discover Pass or WDFW Vehicle Access Pass in the wildlife area lot"
+    },
+    "why": "access is empty. The Chunkyard sits just east of Moon Rocks; batch O placed the Moon Rocks cliff (OSM way 453131149) and points 500 m east of it inside a WDFW-owned Oak Creek parcel (DFWOwnedParcels, ObjectID 4085), with no National Forest land in the USFS ownership layer. WDFW Oak Creek unit page re-read 2026-11-19: a Discover Pass is required on WDFW lands; a Vehicle Access Pass may be used instead. Object copied field for field from the LIVE value on wa_bend_center_riptide and wa_chunkyard_the_the_deconstructionist. official-1, expires 2027-11-19.",
+    "evidence": [
+     "https://wdfw.wa.gov/places-to-go/wildlife-areas/oak-creek-wildlife-area-unit",
+     "https://geodataservices.wdfw.wa.gov/arcgis/rest/services/WP_Misc/DNR_ForestFireProtectionAssessment/MapServer/0",
+     "https://geodataservices.wdfw.wa.gov/arcgis/rest/services/WP_RealEstate/WildlifeAreas/MapServer/0",
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_a_chunk_is_blown",
+    "column": "permit",
+    "from": null,
+    "to": "A Discover Pass, or a WDFW Vehicle Access Pass, is needed to park in the Oak Creek Wildlife Area lot.",
+    "why": "permit is empty. Same official WDFW page; same LIVE string as wa_bend_center_riptide and wa_chunkyard_the_the_deconstructionist. official-1, expires 2027-11-19.",
+    "evidence": [
+     "https://wdfw.wa.gov/places-to-go/wildlife-areas/oak-creek-wildlife-area-unit",
+     "https://geodataservices.wdfw.wa.gov/arcgis/rest/services/WP_Misc/DNR_ForestFireProtectionAssessment/MapServer/0"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "Bolts HELD: MP says \"4 clips\", not a bolt count (a clip count may or may not include the anchor). MP gives no length. Grade and other facts from MP only: theCrag is blocked; two 2012 trip reports mention the Chunkyard but name no routes. Pitch 0 -> 1: a one-length lower-off sport line. Closure HELD: the WDFW Oak Creek page bars climbing near nesting golden eagles from Feb 1 to the end of nesting (posted boundary) but names no cliff; no closure text proposed. Parking pin held (MP gives only the Moon Rocks trail). Area pin defect (from batch O, still live): areas.wa_chunkyard_the 46.68425,-120.95838 is ~7.8 km WSW of the Moon Rocks cliff; reported, not moved."
+ },
+ "wa_superchunk": {
+  "area": "wa_chunkyard_the",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/108875111/superchunk",
+    "https://www.mountainproject.com/area/108873653/the-chunkyard",
+    "https://wdfw.wa.gov/places-to-go/wildlife-areas/oak-creek-wildlife-area-unit",
+    "https://geodataservices.wdfw.wa.gov/arcgis/rest/services/WP_Misc/DNR_ForestFireProtectionAssessment/MapServer/0",
+    "https://geodataservices.wdfw.wa.gov/arcgis/rest/services/WP_RealEstate/WildlifeAreas/MapServer/0",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0",
+    "https://chriswinter.blogspot.com/2012/05/spring-cragging-in-tieton-valley.html",
+    "https://chriswinter.blogspot.com/2012/05/back-to-tieton.html"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.9+",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108875111/superchunk",
+      "fact": "5.9+ YDS, Sport",
+      "retrieved_at": "2026-11-19"
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Andy Fitz, Tuck Russell",
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108875111/superchunk",
+      "fact": "FA: Andy Fitz, Tuck Russell",
+      "retrieved_at": "2026-11-19"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_superchunk",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "pitches 0 is invalid. One bolted lower-off line at a short single-tier crag: Bulges, a hanging crack/slab and a headwall; single line. MP gives no pitch count (single pitch is implied, so record it as unconfirmed, single-source, after apply).",
+    "evidence": [
+     "https://www.mountainproject.com/route/108875111/superchunk"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_superchunk",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Washington Department of Fish and Wildlife (Oak Creek Wildlife Area)",
+     "parking_pass": "Discover Pass or WDFW Vehicle Access Pass in the wildlife area lot"
+    },
+    "why": "access is empty. The Chunkyard sits just east of Moon Rocks; batch O placed the Moon Rocks cliff (OSM way 453131149) and points 500 m east of it inside a WDFW-owned Oak Creek parcel (DFWOwnedParcels, ObjectID 4085), with no National Forest land in the USFS ownership layer. WDFW Oak Creek unit page re-read 2026-11-19: a Discover Pass is required on WDFW lands; a Vehicle Access Pass may be used instead. Object copied field for field from the LIVE value on wa_bend_center_riptide and wa_chunkyard_the_the_deconstructionist. official-1, expires 2027-11-19.",
+    "evidence": [
+     "https://wdfw.wa.gov/places-to-go/wildlife-areas/oak-creek-wildlife-area-unit",
+     "https://geodataservices.wdfw.wa.gov/arcgis/rest/services/WP_Misc/DNR_ForestFireProtectionAssessment/MapServer/0",
+     "https://geodataservices.wdfw.wa.gov/arcgis/rest/services/WP_RealEstate/WildlifeAreas/MapServer/0",
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_superchunk",
+    "column": "permit",
+    "from": null,
+    "to": "A Discover Pass, or a WDFW Vehicle Access Pass, is needed to park in the Oak Creek Wildlife Area lot.",
+    "why": "permit is empty. Same official WDFW page; same LIVE string as wa_bend_center_riptide and wa_chunkyard_the_the_deconstructionist. official-1, expires 2027-11-19.",
+    "evidence": [
+     "https://wdfw.wa.gov/places-to-go/wildlife-areas/oak-creek-wildlife-area-unit",
+     "https://geodataservices.wdfw.wa.gov/arcgis/rest/services/WP_Misc/DNR_ForestFireProtectionAssessment/MapServer/0"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "Bolts HELD: MP says \"8 clips\", not a bolt count. No anchor detail, no length. The MP area page classics list shows a second, garbled grade row for this route; the route page states 5.9+ (stored), so no change. Grade and other facts from MP only: theCrag is blocked; two 2012 trip reports mention the Chunkyard but name no routes. Pitch 0 -> 1: a one-length lower-off sport line. Closure HELD: the WDFW Oak Creek page bars climbing near nesting golden eagles from Feb 1 to the end of nesting (posted boundary) but names no cliff; no closure text proposed. Parking pin held (MP gives only the Moon Rocks trail). Area pin defect (from batch O, still live): areas.wa_chunkyard_the 46.68425,-120.95838 is ~7.8 km WSW of the Moon Rocks cliff; reported, not moved."
+ },
+ "wa_hidden_in_plain_view": {
+  "area": "wa_chunkyard_the",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/111888374/hidden-in-plain-view",
+    "https://www.mountainproject.com/area/108873653/the-chunkyard",
+    "https://wdfw.wa.gov/places-to-go/wildlife-areas/oak-creek-wildlife-area-unit",
+    "https://geodataservices.wdfw.wa.gov/arcgis/rest/services/WP_Misc/DNR_ForestFireProtectionAssessment/MapServer/0",
+    "https://geodataservices.wdfw.wa.gov/arcgis/rest/services/WP_RealEstate/WildlifeAreas/MapServer/0",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0",
+    "https://chriswinter.blogspot.com/2012/05/spring-cragging-in-tieton-valley.html",
+    "https://chriswinter.blogspot.com/2012/05/back-to-tieton.html"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.10b",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111888374/hidden-in-plain-view",
+      "fact": "5.10b YDS, Sport",
+      "retrieved_at": "2026-11-19"
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Andy Fitz, Tuck Russell",
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111888374/hidden-in-plain-view",
+      "fact": "FA: Andy Fitz, Tuck Russell",
+      "retrieved_at": "2026-11-19"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_hidden_in_plain_view",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "pitches 0 is invalid. One bolted lower-off line at a short single-tier crag: 8 bolts and chain anchors, 60 ft. MP gives no pitch count (single pitch is implied, so record it as unconfirmed, single-source, after apply).",
+    "evidence": [
+     "https://www.mountainproject.com/route/111888374/hidden-in-plain-view"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_hidden_in_plain_view",
+    "column": "length_m",
+    "from": null,
+    "to": 18,
+    "why": "length_m empty. MP states 60 ft (18 m). Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/111888374/hidden-in-plain-view"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_hidden_in_plain_view",
+    "column": "bolts",
+    "from": null,
+    "to": 8,
+    "why": "bolts empty. MP states 8 bolts. Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/111888374/hidden-in-plain-view"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_hidden_in_plain_view",
+    "column": "anchor",
+    "from": null,
+    "to": "Chain anchor",
+    "why": "anchor empty. MP states chain anchors. Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/111888374/hidden-in-plain-view"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_hidden_in_plain_view",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Washington Department of Fish and Wildlife (Oak Creek Wildlife Area)",
+     "parking_pass": "Discover Pass or WDFW Vehicle Access Pass in the wildlife area lot"
+    },
+    "why": "access is empty. The Chunkyard sits just east of Moon Rocks; batch O placed the Moon Rocks cliff (OSM way 453131149) and points 500 m east of it inside a WDFW-owned Oak Creek parcel (DFWOwnedParcels, ObjectID 4085), with no National Forest land in the USFS ownership layer. WDFW Oak Creek unit page re-read 2026-11-19: a Discover Pass is required on WDFW lands; a Vehicle Access Pass may be used instead. Object copied field for field from the LIVE value on wa_bend_center_riptide and wa_chunkyard_the_the_deconstructionist. official-1, expires 2027-11-19.",
+    "evidence": [
+     "https://wdfw.wa.gov/places-to-go/wildlife-areas/oak-creek-wildlife-area-unit",
+     "https://geodataservices.wdfw.wa.gov/arcgis/rest/services/WP_Misc/DNR_ForestFireProtectionAssessment/MapServer/0",
+     "https://geodataservices.wdfw.wa.gov/arcgis/rest/services/WP_RealEstate/WildlifeAreas/MapServer/0",
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_hidden_in_plain_view",
+    "column": "permit",
+    "from": null,
+    "to": "A Discover Pass, or a WDFW Vehicle Access Pass, is needed to park in the Oak Creek Wildlife Area lot.",
+    "why": "permit is empty. Same official WDFW page; same LIVE string as wa_bend_center_riptide and wa_chunkyard_the_the_deconstructionist. official-1, expires 2027-11-19.",
+    "evidence": [
+     "https://wdfw.wa.gov/places-to-go/wildlife-areas/oak-creek-wildlife-area-unit",
+     "https://geodataservices.wdfw.wa.gov/arcgis/rest/services/WP_Misc/DNR_ForestFireProtectionAssessment/MapServer/0"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "Grade and other facts from MP only: theCrag is blocked; two 2012 trip reports mention the Chunkyard but name no routes. Pitch 0 -> 1: a one-length lower-off sport line. Closure HELD: the WDFW Oak Creek page bars climbing near nesting golden eagles from Feb 1 to the end of nesting (posted boundary) but names no cliff; no closure text proposed. Parking pin held (MP gives only the Moon Rocks trail). Area pin defect (from batch O, still live): areas.wa_chunkyard_the 46.68425,-120.95838 is ~7.8 km WSW of the Moon Rocks cliff; reported, not moved."
+ },
+ "wa_chunked_and_formed": {
+  "area": "wa_chunkyard_the",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/111939415/chunked-and-formed",
+    "https://www.mountainproject.com/area/108873653/the-chunkyard",
+    "https://wdfw.wa.gov/places-to-go/wildlife-areas/oak-creek-wildlife-area-unit",
+    "https://geodataservices.wdfw.wa.gov/arcgis/rest/services/WP_Misc/DNR_ForestFireProtectionAssessment/MapServer/0",
+    "https://geodataservices.wdfw.wa.gov/arcgis/rest/services/WP_RealEstate/WildlifeAreas/MapServer/0",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0",
+    "https://chriswinter.blogspot.com/2012/05/spring-cragging-in-tieton-valley.html",
+    "https://chriswinter.blogspot.com/2012/05/back-to-tieton.html"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.9",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111939415/chunked-and-formed",
+      "fact": "5.9 YDS, Sport",
+      "retrieved_at": "2026-11-19"
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Andy Fitz, Tuck Russell",
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111939415/chunked-and-formed",
+      "fact": "FA: Andy Fitz, Tuck Russell",
+      "retrieved_at": "2026-11-19"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_chunked_and_formed",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "pitches 0 is invalid. One bolted lower-off line at a short single-tier crag: 6 bolts with chain anchors, 60 ft. MP gives no pitch count (single pitch is implied, so record it as unconfirmed, single-source, after apply).",
+    "evidence": [
+     "https://www.mountainproject.com/route/111939415/chunked-and-formed"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_chunked_and_formed",
+    "column": "length_m",
+    "from": null,
+    "to": 18,
+    "why": "length_m empty. MP states 60 ft (18 m). Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/111939415/chunked-and-formed"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_chunked_and_formed",
+    "column": "bolts",
+    "from": null,
+    "to": 6,
+    "why": "bolts empty. MP states 6 bolts. Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/111939415/chunked-and-formed"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_chunked_and_formed",
+    "column": "anchor",
+    "from": null,
+    "to": "Chain anchor",
+    "why": "anchor empty. MP states chain anchors. Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/111939415/chunked-and-formed"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_chunked_and_formed",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Washington Department of Fish and Wildlife (Oak Creek Wildlife Area)",
+     "parking_pass": "Discover Pass or WDFW Vehicle Access Pass in the wildlife area lot"
+    },
+    "why": "access is empty. The Chunkyard sits just east of Moon Rocks; batch O placed the Moon Rocks cliff (OSM way 453131149) and points 500 m east of it inside a WDFW-owned Oak Creek parcel (DFWOwnedParcels, ObjectID 4085), with no National Forest land in the USFS ownership layer. WDFW Oak Creek unit page re-read 2026-11-19: a Discover Pass is required on WDFW lands; a Vehicle Access Pass may be used instead. Object copied field for field from the LIVE value on wa_bend_center_riptide and wa_chunkyard_the_the_deconstructionist. official-1, expires 2027-11-19.",
+    "evidence": [
+     "https://wdfw.wa.gov/places-to-go/wildlife-areas/oak-creek-wildlife-area-unit",
+     "https://geodataservices.wdfw.wa.gov/arcgis/rest/services/WP_Misc/DNR_ForestFireProtectionAssessment/MapServer/0",
+     "https://geodataservices.wdfw.wa.gov/arcgis/rest/services/WP_RealEstate/WildlifeAreas/MapServer/0",
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_chunked_and_formed",
+    "column": "permit",
+    "from": null,
+    "to": "A Discover Pass, or a WDFW Vehicle Access Pass, is needed to park in the Oak Creek Wildlife Area lot.",
+    "why": "permit is empty. Same official WDFW page; same LIVE string as wa_bend_center_riptide and wa_chunkyard_the_the_deconstructionist. official-1, expires 2027-11-19.",
+    "evidence": [
+     "https://wdfw.wa.gov/places-to-go/wildlife-areas/oak-creek-wildlife-area-unit",
+     "https://geodataservices.wdfw.wa.gov/arcgis/rest/services/WP_Misc/DNR_ForestFireProtectionAssessment/MapServer/0"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "Grade and other facts from MP only: theCrag is blocked; two 2012 trip reports mention the Chunkyard but name no routes. Pitch 0 -> 1: a one-length lower-off sport line. Closure HELD: the WDFW Oak Creek page bars climbing near nesting golden eagles from Feb 1 to the end of nesting (posted boundary) but names no cliff; no closure text proposed. Parking pin held (MP gives only the Moon Rocks trail). Area pin defect (from batch O, still live): areas.wa_chunkyard_the 46.68425,-120.95838 is ~7.8 km WSW of the Moon Rocks cliff; reported, not moved."
+ },
+ "wa_yellow_bell": {
+  "area": "wa_chunkyard_the",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/108875095/yellow-bell",
+    "https://www.mountainproject.com/area/108873653/the-chunkyard",
+    "https://wdfw.wa.gov/places-to-go/wildlife-areas/oak-creek-wildlife-area-unit",
+    "https://geodataservices.wdfw.wa.gov/arcgis/rest/services/WP_Misc/DNR_ForestFireProtectionAssessment/MapServer/0",
+    "https://geodataservices.wdfw.wa.gov/arcgis/rest/services/WP_RealEstate/WildlifeAreas/MapServer/0",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0",
+    "https://chriswinter.blogspot.com/2012/05/spring-cragging-in-tieton-valley.html",
+    "https://chriswinter.blogspot.com/2012/05/back-to-tieton.html"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.8",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108875095/yellow-bell",
+      "fact": "5.8 YDS, Sport",
+      "retrieved_at": "2026-11-19"
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Andy Fitz, Tuck Russell, and friends",
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108875095/yellow-bell",
+      "fact": "FA: Andy Fitz, Tuck Russell, and friends",
+      "retrieved_at": "2026-11-19"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_yellow_bell",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "pitches 0 is invalid. One bolted lower-off line at a short single-tier crag: Five bolts past a bulge to chain anchors. MP gives no pitch count (single pitch is implied, so record it as unconfirmed, single-source, after apply).",
+    "evidence": [
+     "https://www.mountainproject.com/route/108875095/yellow-bell"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_yellow_bell",
+    "column": "bolts",
+    "from": null,
+    "to": 5,
+    "why": "bolts empty. MP states 5 bolts. Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/108875095/yellow-bell"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_yellow_bell",
+    "column": "anchor",
+    "from": null,
+    "to": "Chain anchor",
+    "why": "anchor empty. MP states chain anchors. Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/108875095/yellow-bell"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_yellow_bell",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Washington Department of Fish and Wildlife (Oak Creek Wildlife Area)",
+     "parking_pass": "Discover Pass or WDFW Vehicle Access Pass in the wildlife area lot"
+    },
+    "why": "access is empty. The Chunkyard sits just east of Moon Rocks; batch O placed the Moon Rocks cliff (OSM way 453131149) and points 500 m east of it inside a WDFW-owned Oak Creek parcel (DFWOwnedParcels, ObjectID 4085), with no National Forest land in the USFS ownership layer. WDFW Oak Creek unit page re-read 2026-11-19: a Discover Pass is required on WDFW lands; a Vehicle Access Pass may be used instead. Object copied field for field from the LIVE value on wa_bend_center_riptide and wa_chunkyard_the_the_deconstructionist. official-1, expires 2027-11-19.",
+    "evidence": [
+     "https://wdfw.wa.gov/places-to-go/wildlife-areas/oak-creek-wildlife-area-unit",
+     "https://geodataservices.wdfw.wa.gov/arcgis/rest/services/WP_Misc/DNR_ForestFireProtectionAssessment/MapServer/0",
+     "https://geodataservices.wdfw.wa.gov/arcgis/rest/services/WP_RealEstate/WildlifeAreas/MapServer/0",
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_yellow_bell",
+    "column": "permit",
+    "from": null,
+    "to": "A Discover Pass, or a WDFW Vehicle Access Pass, is needed to park in the Oak Creek Wildlife Area lot.",
+    "why": "permit is empty. Same official WDFW page; same LIVE string as wa_bend_center_riptide and wa_chunkyard_the_the_deconstructionist. official-1, expires 2027-11-19.",
+    "evidence": [
+     "https://wdfw.wa.gov/places-to-go/wildlife-areas/oak-creek-wildlife-area-unit",
+     "https://geodataservices.wdfw.wa.gov/arcgis/rest/services/WP_Misc/DNR_ForestFireProtectionAssessment/MapServer/0"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "MP gives no length. Grade and other facts from MP only: theCrag is blocked; two 2012 trip reports mention the Chunkyard but name no routes. Pitch 0 -> 1: a one-length lower-off sport line. Closure HELD: the WDFW Oak Creek page bars climbing near nesting golden eagles from Feb 1 to the end of nesting (posted boundary) but names no cliff; no closure text proposed. Parking pin held (MP gives only the Moon Rocks trail). Area pin defect (from batch O, still live): areas.wa_chunkyard_the 46.68425,-120.95838 is ~7.8 km WSW of the Moon Rocks cliff; reported, not moved."
+ }
+}
