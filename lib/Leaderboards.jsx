@@ -5,7 +5,6 @@ import { DISC_LABELS as DL } from "./discLabels";
 import { clickable } from "./clickable";
 import { useState } from "react";
 import { useWideScreen } from "./wideLayout.js";
-import { useSwipeTabs } from "./pageSwipe.js";
 import { useLeaderboard, useTopClimbs, useAreaPath, dbRouteToCamel, useVerifiedUsers, useCragRegular } from "./db";
 import { C, CAT, summitedLog, CLIMBERS, DEMO_FILLERS, FILLER_CLIMBERS, ME, MOUNTAINS, NONCOMPLETION_TICKS, ROUTES, catOf, distMiles, haveMyLoc, inArea, lbRowName, pubName, routeAscentFt, seedHistoryFor, uDistMi, uDistMiUnitLong, uElev } from "../ClimbMatchCore.jsx";
 import Av from "../src/components/Av.tsx";
@@ -31,7 +30,6 @@ export default function Leaderboards({meLive,onView,onClimb,logs,connections,sho
   const [areaId,setAreaId]=useState("usa");
   /* By area’s Choose-an-area page (RankAreaPicker): null while the board shows, else the area that page stands on. */const [pickId,setPickId]=useState(null);const picking=scope==="area"&&pickId!==null;
   const [radiusMi,setRadiusMi]=useState(120);
-  /* Swipe between Overall / Near me / Friends / By area on a phone (owner, 2026-11-14), SCOPES's order; lib/pageSwipe.js. */const sw=useSwipeTabs({ids:["overall","near","friends","area"],cur:scope,onChange:setScope});
   const disc=rankDisc,setDisc=setRankDisc;
   const gv=g=>{const m=g&&g.match(/5\.(\d+)([a-d]?)/);return m?parseInt(m[1])+(m[2]?("abcd".indexOf(m[2])+1)/4:0.5):0;};
   const vv=g=>{const m=g&&g.match(/V(\d+)/);return m?parseInt(m[1]):-1;};const wv=g=>{const m=g&&g.match(/WI(\d+)/);return m?parseInt(m[1]):-1;};
@@ -197,7 +195,7 @@ export default function Leaderboards({meLive,onView,onClimb,logs,connections,sho
   /* Choosing an area is a page of its own, in place of the board (as the Climbs tab’s Route finder replaces its area
      page): while it is open nothing else here is drawn. The picker keeps ONE slot in this tree either way, so it stays
      mounted across opening and closing and can move focus and the scroll itself. */
-  return (<div ref={sw.ref} {...sw.bind} style={sw.dragStyle||undefined}>
+  return (<div>
     {picking?null:<>
     {/* Your OWN row is `{...ME,routesLogged:logs.length,vertYr,...}`, so a failed climb_logs read
         does not blank this board -- it silently reports you as having climbed nothing and drops
