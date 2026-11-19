@@ -192,6 +192,13 @@ eq("...and back at camp after the other 0.41, the walk in left out of the clock"
 const carEndRoute = T({ approachTimeHrs: 6, summitTimeHrs: 11, descentTimeHrs: 5, totalHrs: 22 }, Object.assign({ itinerary: { days: [{ n: 1, title: "Walk in to camp", hours: 6 }, { n: 2, title: "Summit and walk out", hours: 16 }] } }, NEAR));
 const carP = planTimes(carEndRoute, {});
 eq("a 2-day trip whose summit day ends at the CAR reads its summit leg one way: all 11 hr up, no camp split", carP ? JSON.stringify([carP.summitDayFromCamp, carP.techH]) : null, JSON.stringify([false, 11]));
+/* A SUMMIT DAY LONGER THAN THE SUMMIT LEG says the leg is ONE WAY (2026-11-18): the rest of the day is
+   the way back to camp. Walk in 6 ~= descent 8, so without that test the camp rule would split it. */
+const oneWayRoute = T({ approachTimeHrs: 6, summitTimeHrs: 6, descentTimeHrs: 8, totalHrs: 20 }, Object.assign({ itinerary: { days: [{ n: 1, title: "Walk in", hours: 6 }, { n: 2, title: "Summit day", hours: 9 }, { n: 3, title: "Walk out", hours: 5 }] } }, NEAR));
+const owP = planTimes(oneWayRoute, {});
+eq("a summit day LONGER than the summit leg reads the leg one way: all 6 hr up, no camp split", owP ? JSON.stringify([owP.summitDayFromCamp, owP.techH]) : null, JSON.stringify([false, 6]));
+const owDay = (() => { const m = text(render(oneWayRoute)).match(SUMMIT_DAY); return m ? { summit: mins(m[1]), back: mins(m[2]) } : null; })();
+eq("...and is back at camp when the summit day's own hours run out (leave 4:00, 9 hr day)", owDay ? JSON.stringify([owDay.summit, owDay.back]) : null, JSON.stringify([(4 + 6) * 60, (4 + 9) * 60]));
 eq("...while the same legs on a SINGLE-day route are a one-way climb, left whole", campOneDay ? JSON.stringify([campOneDay.summit, campOneDay.down]) : null, JSON.stringify([(6 + 6 + 11) * 60, 5 * 60]));
 /* ...and a stored leg is a FIT PARTY's day ("published times for a fit party in good conditions",
    the contribute form's definition of `timing`), which fitness and pack do not scale. The Planner

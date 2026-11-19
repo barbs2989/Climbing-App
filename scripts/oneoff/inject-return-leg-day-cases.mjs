@@ -192,6 +192,15 @@ const CASES = [
     must: /SINGLE-day route are a one-way climb/,
   },
   {
+    name: "one-way-summit-leg-split-again",
+    file: PLAN,
+    why: "A summit day longer than its summit leg holds the way back to camp; splitting the leg anyway " +
+         "halves the climb, the Goode / Agnes ambiguity the plan's own hours now settle",
+    edits: [{ find: " && !summitLegOneWay && ", repl: " && " }],
+    expect: "fail",
+    must: /summit day LONGER than the summit leg reads the leg one way/,
+  },
+  {
     name: "camp-rule-on-a-summit-day-that-walks-out",
     file: PLAN,
     why: "THE SHASTA DEFECT, restored: a 2-day trip whose summit day walks out to the car stores its summit " +
