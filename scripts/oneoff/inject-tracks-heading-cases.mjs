@@ -106,7 +106,7 @@ const cases = [
   },
   {
     name: "SILENT: a comment naming the old heading",
-    edits: [[RD, "const ctSeed=(route.communityTracks||[]);", "/* was headed Recent recorded tracks */const ctSeed=(route.communityTracks||[]);"]],
+    edits: [[RD, "const ctSeed=loggedOnly?[]:(route.communityTracks||[]);", "/* was headed Recent recorded tracks */const ctSeed=loggedOnly?[]:(route.communityTracks||[]);"]],
     expect: null,
   },
 ];
