@@ -106,11 +106,10 @@ export interface PlanActivity {
 }
 /* A sport, trad, top-rope or boulder line has no recorded walk and no trip to report: what a climber leaves
    on it is a LOGGED CLIMB (owner, 2026-11-18). So its Plan-tab list is "Recent logged climbs", built from
-   the logs alone. Aid is a crag discipline too, but a wall can carry an approach track, so it keeps the
-   tracks heading. */
-const LOGGED_ONLY_CATS=["sport","trad","toprope","bouldering"];
+   the logs alone. Aid joined them the same day (owner: "do the rest"). */
+const LOGGED_ONLY_CATS=["sport","trad","toprope","aid","bouldering"];
 /* A conditions-only report (LogAscent's "I only scouted it") is not a climb. Its tick type is "Conditions";
-   `scoutOnly` alone is not proof, because hydrating your own logs marks any starless log scoutOnly. */
+   A seed scout report carries `scoutOnly` and no tick. Same rule as isScoutRow (lib/tripReportRow.js). */
 const isScoutReport=function(a: PlanActivity){return a.tickType==="Conditions"||(!!a.scoutOnly&&!a.tickType);};
 /** What the Plan body itself reads off the route; the children's own route types are intersected below. */
 interface PlanOwnRoute {
