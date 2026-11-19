@@ -7,12 +7,14 @@
 //   - a fact that is not stored is not printed (no "Unknown", no zero posing as a value);
 //   - the chart's headline is the SUM OF ITS BARS, and a remainder the bars do not show is
 //     said in words ("+N not typed") rather than hidden in the headline;
-//   - the grade spread names how many climbs it left out ("12 of 15 list a grade").
+//   - the grade spread draws ONE scale at a time and offers every scale the area has as a chip
+//     (Rock first), so no climb sits on a scale the climber cannot pick.
 import { useState } from "react";
 import { AREA_EDIT_FIELDS, MONTH_ABBR, monthsLabel, myPendingAreaEdits } from "./areaFields";
 import { DISC_COLORS } from "./disciplines";
 import { DISC_LABELS as DL, DISC_SHORT as DS } from "./discLabels";
 import { EditIconButton } from "./areaChrome";
+import { CHIP } from "./buttonStyles.js";
 
 const card = C => ({ background: C.card, borderRadius: 12, padding: "12px 14px", border: "1px solid " + C.border, marginBottom: 12 });
 // THE AREA SHEET (owner, 2026-11-11: "create borders between each section so it reads nicely"): the area page's
@@ -140,7 +142,10 @@ export function ClimbsChart({ stats, loading, error, C, discOptions, onDisc, chi
 }
 
 // ── GRADE SPREAD — columns over the area's main grading scale ──
-const SYS_LABEL = { yds: "5.x", v: "V", wi: "WI", m: "M", aid: "A/C", class: "Class", snow: "Snow" };
+// THE DISCIPLINE PICKER (owner, 2026-11-18: "you should be able to select the discipline to view the chart.
+// Start with the default as rock"): one chip per grading scale the area has, in this order, Rock selected first.
+const SYS_ORDER = ["yds", "v", "wi", "m", "aid", "class", "snow"];
+const SYS_PICK = { yds: "Rock", v: DS.bouldering, wi: DL.ice, m: DL.mixed, aid: DL.aid, class: DS.scrambling, snow: "Snow" };
 const SYS_NAME = { yds: "rock grades", v: "V grades", wi: "ice grades", m: "mixed grades", aid: "aid grades", class: "class grades", snow: "snow grades" };
 export function bucketLabel(sys, b) {
   b = Number(b);
@@ -162,24 +167,28 @@ export function hasGradeSpread(stats) {
 // `bare`: no wrapper (the disclosure draws the section). `onGrade(sys, bucket)`: each column is a button that
 // opens the Route finder on that grade -- the chart is the way into the finder, not a picture beside it.
 export function GradeSpread({ stats, C, standalone, bare, onGrade }) {
+  const [picked, setPicked] = useState(null);
   const rows = stats && Array.isArray(stats.by_grade) ? stats.by_grade.filter(g => g && g.n > 0 && g.sys) : [];
   if (!rows.length) return null;
   const bySys = {};
   for (const g of rows) bySys[g.sys] = (bySys[g.sys] || 0) + Number(g.n);
-  const sys = Object.keys(bySys).sort((a, b) => bySys[b] - bySys[a])[0];
+  // Every scale with a climb on it is a chip. Rock opens first; an area with no rock opens on its biggest scale.
+  const scales = [...SYS_ORDER.filter(k => bySys[k]), ...Object.keys(bySys).filter(k => !SYS_ORDER.includes(k))];
+  const sys = picked && bySys[picked] ? picked : bySys.yds ? "yds" : scales.slice().sort((a, b) => bySys[b] - bySys[a])[0];
   const cols = rows.filter(g => g.sys === sys).map(g => ({ b: Number(g.bucket), n: Number(g.n) })).sort((a, b) => a.b - b.b);
   if (!cols.length) return null;
   // Fill the gaps so the axis is a scale, not a list of whatever happened to exist.
   const lo = cols[0].b, hi = cols[cols.length - 1].b, full = [];
   for (let b = lo; b <= hi; b++) { const f = cols.find(c => c.b === b); full.push({ b, n: f ? f.n : 0 }); }
   const max = Math.max(...full.map(c => c.n));
-  const shown = full.reduce((a, c) => a + c.n, 0), total = stats ? Number(stats.total) || 0 : 0;
-  const other = Object.keys(bySys).filter(s => s !== sys).reduce((a, s) => a + bySys[s], 0);
   const W = 100, H = 56, gap = 2, bw = (W - gap * (full.length - 1)) / full.length, every = full.length > 9 ? 2 : 1;
   const label = c => bucketLabel(sys, c.b);
   const desc = full.filter(c => c.n).map(c => label(c) + ": " + c.n).join(", ");
   return <div style={bare ? null : standalone ? card(C) : { marginTop: 12, paddingTop: 10, borderTop: "1px solid " + C.border }}>
-    <div style={{ ...headRow, marginBottom: 6 }}><Head C={C}>Grade spread</Head><span style={{ fontSize: 11.5, color: C.textMuted }}>{SYS_NAME[sys] || sys}</span></div>
+    <div style={{ ...headRow, marginBottom: 6 }}><Head C={C}>Grade spread</Head>{scales.length > 1 ? null : <span style={{ fontSize: 11.5, color: C.textMuted }}>{SYS_NAME[sys] || sys}</span>}</div>
+    {scales.length > 1 ? <div role="group" aria-label="Grade spread discipline" className="cm-hscroll" style={{ display: "flex", gap: 6, overflowX: "auto", paddingBottom: 3, marginBottom: 8 }}>
+      {scales.map(k => <button key={k} onClick={() => setPicked(k)} aria-pressed={k === sys} style={{ ...CHIP, flexShrink: 0, border: "1px solid " + (k === sys ? C.blue : C.border), background: k === sys ? C.blueBg : C.surface, color: k === sys ? "#fff" : C.textSub }}>{SYS_PICK[k] || k}</button>)}
+    </div> : null}
     <div style={{ position: "relative" }}>
     <svg role="img" aria-label={"Climbs by grade (" + (SYS_NAME[sys] || sys) + "): " + desc} viewBox={"0 0 " + W + " " + H} preserveAspectRatio="none" style={{ width: "100%", height: 56, display: "block" }}>
       {full.map((c, i) => { const h = max ? Math.max(c.n ? 1.5 : 0, c.n / max * (H - 2)) : 0; return <rect key={c.b} x={i * (bw + gap)} y={H - h} width={bw} height={h} rx={0} fill={C.blueSolid} />; })}
@@ -191,7 +200,6 @@ export function GradeSpread({ stats, C, standalone, bare, onGrade }) {
     <div style={{ display: "flex", gap: gap + "px", marginTop: 3 }}>
       {full.map((c, i) => <div key={c.b} style={{ flex: 1, minWidth: 0, textAlign: "center", fontSize: 9.5, color: C.textMuted, whiteSpace: "nowrap", overflow: "visible" }}>{i % every === 0 || i === full.length - 1 ? label(c) : ""}</div>)}
     </div>
-    {total > shown ? <div style={{ fontSize: 11.5, color: C.textMuted, marginTop: 5 }}>{shown.toLocaleString() + " of " + total.toLocaleString() + " list a " + (SYS_LABEL[sys] || sys) + " grade" + (other ? " · " + other.toLocaleString() + " on other scales" : "")}</div> : null}
   </div>;
 }
 
