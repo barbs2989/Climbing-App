@@ -100,6 +100,8 @@ try {
   await dlg.locator("button", { hasText: /^List me at / }).click(); await p.waitForTimeout(4000);
   ok(/Listed at 1 area/i.test(await dlg.innerText()), "listed at 1 area");
   await shot(p, "7-listed-one");
+  const ly = await dlg.locator("text=/Listed at 1 area/i").boundingBox(), by = await dlg.locator("text=Browse areas").boundingBox();
+  ok(ly && by && ly.y < by.y, "your listings sit above the area finder");
   // The finder keeps its place, marks the row, and that row edits the listing.
   const crumbs2 = await dlg.locator('[role="group"][aria-label="Where you are in the areas"]').innerText().catch(() => "");
   ok(/Washington/.test(crumbs2), "after listing, the finder is still in Washington (" + crumbs2.replace(/\n/g, " ") + ")");
