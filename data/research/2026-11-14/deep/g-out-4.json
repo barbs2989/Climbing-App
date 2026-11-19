@@ -1,0 +1,155 @@
+[
+ {
+  "route_id": "co_bell_cord_couloir",
+  "field": "gain_ft",
+  "stored_value": 4600,
+  "found_value": 4556,
+  "verdict": "found_confirmed",
+  "final_value": 4556,
+  "trailhead": "Maroon Lake trailhead",
+  "figures": [
+   {"value": 4556, "trailhead": "Maroon Lake", "url": "https://www.14ers.com/route.php?route=maro3", "one_way": true, "fact": "14ers.com Maroon Peak Bell Cord Couloir route: 8 miles, 4,556 feet, Class 4."},
+   {"value": 4600, "trailhead": "not named (7.0 mi outing, Maroon Lake implied)", "url": "https://www.jamesjusthiking.com/2013-trip-reports/south-maroon-peak-3", "one_way": true, "fact": "Trip stats 06/22/2013: South Maroon Peak via Bell Cord Couloir, 7.0 miles, elevation gain 4,600 ft; single summit, descended nearby couloir."},
+   {"value": 4900, "trailhead": "Maroon Lake", "url": "http://www.jaredworkman.com/bellcord.htm", "one_way": false, "fact": "Bell Cord Couloir AND traverse to North Maroon, ~8.5 miles, ~4,900 ft; multi-peak."},
+   {"value": 4700, "trailhead": "Maroon Lake", "url": "https://www.merelyafleshwound.com/mountaineering/elk-range/maroon-bells/maroon-east-face-ski/", "one_way": false, "fact": "Ski outing via Garbage Chute, Y Couloir, South Ridge, East Face; 4,700 ft; ascent was not the Bell Cord."},
+   {"value": 5000, "trailhead": "Crater Lake camp", "url": "https://www.14ers.com/php14ers/tripreport.php?trip=3270", "one_way": false, "fact": "Started at Crater Lake 10,100 ft, Bell Cord plus traverse to N. Maroon; approx 5,000 ft; from camp, multi-peak."}
+  ],
+  "evidence": [
+   {"url": "https://www.14ers.com/route.php?route=maro3", "retrieved_at": "2026-11-18", "fact": "Bell Cord Couloir route: 8 miles, 4,556 feet gain, Class 4."},
+   {"url": "https://www.jamesjusthiking.com/2013-trip-reports/south-maroon-peak-3", "retrieved_at": "2026-11-18", "fact": "Bell Cord Couloir, 7.0 miles, elevation gain 4,600 ft, single summit of South Maroon (Maroon Peak)."}
+  ],
+  "note": "Personal trip report (own ACME/CalTopo stats) is independent of 14ers. 4,600 vs 4,556 is 1%, so it also matches stored 4,600 exactly; either value is supported. The trip report's gain is the outing total, but it was one summit with a descent, so it is the ascent gain. Trailhead not named on the page."
+ },
+ {
+  "route_id": "wa_chair_peak_north_face",
+  "field": "gain_ft",
+  "stored_value": 3138,
+  "found_value": 3000,
+  "verdict": "found_confirmed",
+  "final_value": 3000,
+  "trailhead": "Upper Alpental parking lot",
+  "figures": [
+   {"value": 3000, "trailhead": "Upper Alpental parking lot (3,100 ft)", "url": "https://www.mountaineers.org/activities/routes-places/chair-peak-n-face-winter", "one_way": true, "fact": "Trip profile: Trailhead to Summit, 3,000 ft elevation gain; High Point 6,238 ft."},
+   {"value": 2910, "trailhead": "Upper Alpental Parking Lot (3,330 ft)", "url": "https://www.peakbagger.com/climber/ascent.aspx?aid=222842", "one_way": true, "fact": "Peakbagger ascent 2012-01-28, route North Face AI3-4: gain on way in 2,910 ft from Upper Alpental Parking Lot."},
+   {"value": 3133, "trailhead": "Alpental", "url": "https://www.peakbagger.com/climber/PeakAscents.aspx?pid=2103", "one_way": true, "fact": "Peakbagger ascent 2026-10-16 NE Buttress (5.4): gain 3,133 ft; different route on same approach, not counted."},
+   {"value": 3793, "trailhead": "Denny Creek/Franklin Falls area (WTA)", "url": "https://www.wta.org/go-hiking/hikes/chair-peak", "one_way": false, "fact": "WTA Chair Peak: 9.0 miles roundtrip, 3,793 ft gain; different trailhead and route, roundtrip figure."}
+  ],
+  "evidence": [
+   {"url": "https://www.mountaineers.org/activities/routes-places/chair-peak-n-face-winter", "retrieved_at": "2026-11-18", "fact": "Trailhead to Summit: 3,000 ft elevation gain, from upper Alpental parking lot."},
+   {"url": "https://www.peakbagger.com/climber/ascent.aspx?aid=222842", "retrieved_at": "2026-11-18", "fact": "North Face AI3-4, gain on way in 2,910 ft, start Upper Alpental Parking Lot."}
+  ],
+  "note": "2,910 vs 3,000 is 3% apart. Stored 3,138 is also within 10% of both (7.3% from 2,910), so the stored value is not wrong either. Peakbagger also lists many Alpental ascents of other routes at about 3,100-3,150 ft."
+ },
+ {
+  "route_id": "wa_witches_tower_southwest_corner",
+  "field": "gain_ft",
+  "stored_value": 5400,
+  "found_value": 5000,
+  "verdict": "unresolved",
+  "final_value": null,
+  "trailhead": "Stuart Lake / Colchuck Lake trailhead (3,500 ft)",
+  "figures": [
+   {"value": 5000, "trailhead": "Lake Stuart trailhead 3,500 ft", "url": "https://www.mountaineers.org/activities/routes-places/enchantments-area-review/witches-tower-southwest-corner", "one_way": true, "fact": "Header: Elevation Gain 5,000 ft, Length 10.0 mi, High Point 8,520 ft; profile 4,200 to camp plus 800 to summit."},
+   {"value": 396, "trailhead": "camp", "url": "https://www.peakbagger.com/climber/PeakAscents.aspx?pid=2181", "one_way": false, "fact": "Peakbagger ascent 2008-07-17 standard route: gain 396 ft from a camp; trip 7,324 ft multi-day."}
+  ],
+  "evidence": [],
+  "note": "The Mountaineers page states 5,000 ft in its own header field, not only as a sum of its profile. No second independent one-way figure found. Tried Peakbagger (only 2 ascents with stats: one from camp), Wenatchee Outdoors (no gain, adapted from SummitPost), NWHikers (multi-peak, no stats), Mountaineers trip report (same publisher). SummitPost 403. Stored 5,400 vs 5,000 is 7.4%, which is within 10%."
+ },
+ {
+  "route_id": "wa_liberty_bell_nw_face", "field": "gain_ft", "stored_value": 2520, "found_value": 2500,
+  "verdict": "unresolved", "final_value": null, "trailhead": "Blue Lake trailhead, SR 20 near Washington Pass",
+  "figures": [
+   {"value": 2500, "trailhead": "Blue Lake trailhead", "url": "https://www.mountaineers.org/activities/routes-places/liberty-bell-blue-lake-trail-area-review/liberty-bell-northwest-face", "one_way": true, "fact": "Mountaineers Liberty Bell/Northwest Face route page gives 2,500 ft elevation gain."}
+  ],
+  "evidence": [],
+  "note": "No second one-way figure for the NW Face specifically. Peakbagger lists 8 NW Face ascents of Liberty Bell (pid 1918), none with a gain entered. Jeff Hebert and Climber Kyle NW Face reports give times and pitches only. Mountain Project gives none (prior pass). Mazamas 2,200 is a different route. Stored 2,520 vs 2,500 is 0.8%, so no real dispute."
+ },
+ {
+  "route_id": "wa_mount_constance_north_chute", "field": "gain_ft", "stored_value": 7100, "found_value": 7300,
+  "verdict": "found_confirmed", "final_value": 7300, "trailhead": "Dosewallips Road washout (below Lake Constance trail)",
+  "figures": [
+   {"value": 7300, "trailhead": "not named on page", "url": "https://www.mountaineers.org/activities/routes-places/mt-constance-n-chute", "one_way": true, "fact": "Mount Constance/North Chute: Elevation Gain 7,300 ft, High Point 7,756 ft."},
+   {"value": 7204, "trailhead": "washed-out Dosewallips road, start 645 ft", "url": "https://www.peakbagger.com/climber/ascent.aspx?aid=269741", "one_way": true, "fact": "Peakbagger ascent 2012-09-16: gain on way in 7,204 ft from 645 ft start; linked TR says North Chute and Finger Traverse."}
+  ],
+  "evidence": [
+   {"url": "https://www.mountaineers.org/activities/routes-places/mt-constance-n-chute", "retrieved_at": "2026-11-18", "fact": "North Chute route: Elevation Gain 7,300 ft, High Point 7,756 ft."},
+   {"url": "https://www.peakbagger.com/climber/ascent.aspx?aid=269741", "retrieved_at": "2026-11-18", "fact": "Gain on way in 7,204 ft from a 645 ft start; route North Chute per the linked NWHikers report."}
+  ],
+  "note": "The route comes from the linked NWHikers report (http://www.nwhikers.net/forums/viewtopic.php?t=8001313): up the North Chute and Finger Traverse, down the South Chute, starting from the washed-out road. 7,204 is 1.3% from 7,300 and 1.5% from stored 7,100, so all three agree. The Mountaineers page names no trailhead. The Dosewallips road washout adds to the walk."
+ },
+ {
+  "route_id": "wa_mount_rainier_fuhrer_finger", "field": "gain_ft", "stored_value": 9010, "found_value": 10000,
+  "verdict": "found_confirmed", "final_value": 10000, "trailhead": "Paradise",
+  "figures": [
+   {"value": 10000, "trailhead": "Paradise", "url": "https://www.mountaineers.org/activities/routes-places/paradise-area-review/mount-rainier-fuhrer-finger", "one_way": true, "fact": "Mountaineers Mount Rainier/Fuhrer Finger route page: elevation gain 10,000 ft."},
+   {"value": 10000, "trailhead": "Paradise Trailhead", "url": "https://mazamas.org/activity/instance/129/detail/", "one_way": true, "fact": "Mazamas Mt. Rainier, Fuhrer Finger: Elevation 14,411 ft, Elevation Gain 10,000 ft, Trailhead Paradise Trailhead."},
+   {"value": 9000, "trailhead": "Paradise", "url": "https://tripreportblog.blogspot.com/2009/05/mount-rainier-fuhrer-finger-0528-2909.html", "one_way": true, "fact": "Prior pass: trip report gives about 9,000 ft (approximate)."},
+   {"value": 4100, "trailhead": "Paradise", "url": "https://www.rmiguides.com/programs/mt-rainier-fuhrer-finger", "one_way": false, "fact": "RMI lists gain per day only: Day 2 gain 4,100 ft to a 9,000 ft camp; summit day 5,400 ft. No one-way total."}
+  ],
+  "evidence": [
+   {"url": "https://www.mountaineers.org/activities/routes-places/paradise-area-review/mount-rainier-fuhrer-finger", "retrieved_at": "2026-11-18", "fact": "Fuhrer Finger route page: elevation gain 10,000 ft from Paradise."},
+   {"url": "https://mazamas.org/activity/instance/129/detail/", "retrieved_at": "2026-11-18", "fact": "Elevation Gain 10,000ft; Trailhead: Paradise Trailhead; elevation 14,411 ft."}
+  ],
+  "note": "Mazamas (Portland) is a different club from The Mountaineers (Seattle), and its page cites SummitPost and Beckey, not The Mountaineers. Stored 9,010 is 9.9% below 10,000, just inside the 10% rule, and the approximate 9,000 trip report backs it. 10,000 likely counts the drop onto the Nisqually Glacier. IMG's PDF could not be read (compressed). Peakbagger lists 7 Fuhrer Finger ascents (pid 2296), none with a gain entered."
+ },
+ {
+  "route_id": "wa_hoodoo_peak_sawtooth_scramble", "field": "gain_ft", "stored_value": 4600, "found_value": 4500,
+  "verdict": "found_confirmed", "final_value": 4500, "trailhead": "Libby Lake / Libby Creek trailhead",
+  "figures": [
+   {"value": 4500, "trailhead": "Libby Lake Trailhead", "url": "https://www.willhiteweb.com/north_cascades/hoodoo_peak/libby_lake_017.htm", "one_way": true, "fact": "Hiking distance 5.5 miles one-way, elevation gain 4,500 feet, from Libby Lake trailhead."},
+   {"value": 4297, "trailhead": "Libby Creek Trail", "url": "https://www.peakbagger.com/climber/ascent.aspx?aid=2656032", "one_way": true, "fact": "Peakbagger 2024-09-27 via Libby Creek Trail and cabin: gain on way in 4,297 ft, 11.8 mi round trip."},
+   {"value": 4000, "trailhead": "not confirmed", "url": "https://hike2hike.com/day-hikes/hoodoo-peak-washington-north-cascades/", "one_way": true, "fact": "Prior pass: hike2hike gives 4,000 ft."}
+  ],
+  "evidence": [
+   {"url": "https://www.willhiteweb.com/north_cascades/hoodoo_peak/libby_lake_017.htm", "retrieved_at": "2026-11-18", "fact": "5.5 miles one-way, Elevation Gain 4,500 feet, Libby Lake trailhead."},
+   {"url": "https://www.peakbagger.com/climber/ascent.aspx?aid=2656032", "retrieved_at": "2026-11-18", "fact": "Libby Creek Trail to Hoodoo Peak: gain on way in 4,297 ft, distance 11.8 mi round trip."}
+  ],
+  "note": "4,297 vs 4,500 is 4.5% apart; stored 4,600 is 6.6% from 4,297, so it also agrees. Peakbagger's GPS-logged ascents (pid 1958) cluster at 3,985-4,311 ft, which suggests 4,500 is on the high side. The willhiteweb figure is the named one-way source."
+ },
+ {
+  "route_id": "wa_iron_peak_teanaway_scramble", "field": "gain_ft", "stored_value": 2710, "found_value": 2543,
+  "verdict": "found_confirmed", "final_value": 2543, "trailhead": "Iron Peak trailhead, North Fork Teanaway Road (~3,950 ft)",
+  "figures": [
+   {"value": 2543, "trailhead": "Iron Peak trailhead", "url": "https://besthikesbc.ca/hiking-iron-peak-in-the-teanaway-region/", "one_way": true, "fact": "Elevation gain 775 m (2,543 ft) to the summit."},
+   {"value": 2557, "trailhead": "start 3,953 ft (Iron Peak TH)", "url": "https://www.peakbagger.com/climber/ascent.aspx?aid=824375", "one_way": true, "fact": "Peakbagger GPS ascent 2017-07-04: gain on way in 2,557 ft, 6.4 mi, start 3,953 ft, summit attained."},
+   {"value": 2569, "trailhead": "start 3,941 ft (Iron Peak TH)", "url": "https://www.peakbagger.com/climber/ascent.aspx?aid=2065445", "one_way": true, "fact": "Peakbagger GPS ascent 2022-10-23: gain on way in 2,569 ft, 8.2 mi, start 3,941 ft."},
+   {"value": 2360, "trailhead": "Iron Peak trailhead", "url": "https://www.wta.org/go-hiking/hikes/iron-peak", "one_way": false, "fact": "WTA: 7.6 mi roundtrip, 2,360 ft gain, highest point 6,160 ft (saddle); summit 6,510 ft is a further scramble."}
+  ],
+  "evidence": [
+   {"url": "https://besthikesbc.ca/hiking-iron-peak-in-the-teanaway-region/", "retrieved_at": "2026-11-18", "fact": "Elevation gain 775 m (2,543 ft) to Iron Peak summit."},
+   {"url": "https://www.peakbagger.com/climber/ascent.aspx?aid=824375", "retrieved_at": "2026-11-18", "fact": "Iron Peak summit, gain on way in 2,557 ft, start trailhead 3,953 ft, GPS track."}
+  ],
+  "note": "Peakbagger entries for the trail (pid 17679) cluster at 2,532-2,610 ft. Stored 2,710 is also within 10% (6%). WTA's 2,360 stops at the 6,160 ft saddle, not the summit, so it is not counted. The Peakbagger pages give only a start elevation, not a trailhead name; 3,95x ft fits the Iron Peak TH."
+ },
+ {
+  "route_id": "wa_sloan_peak_corkscrew", "field": "gain_ft", "stored_value": 5935, "found_value": 5900,
+  "verdict": "found_confirmed", "final_value": 5900, "trailhead": "Cougar Creek / North Fork Sauk road approach (~1,900 ft)",
+  "figures": [
+   {"value": 5900, "trailhead": "not named in prior note (12.0 mi)", "url": "https://www.mountaineers.org/activities/routes-places/sloan-peak-corkscrew-route", "one_way": true, "fact": "Mountaineers Sloan Peak/Corkscrew Route: Elevation Gain 5,900 ft, length 12.0 mi."},
+   {"value": 5939, "trailhead": "start 1,900 ft (Cougar Creek side)", "url": "https://www.peakbagger.com/climber/ascent.aspx?aid=145426", "one_way": true, "fact": "Peakbagger 2010-10-02: gain on way in 5,939 ft from a 1,900 ft start; linked SummitPost report titled Corkscrew Route, October 2, 2010."},
+   {"value": 5000, "trailhead": "Bedal Creek", "url": "https://sonjasaxe.com/trip-reports/2024/7/27/sloan-peak-via-the-corkscrew-route", "one_way": false, "fact": "Corkscrew via Bedal Creek trailhead: total mileage 10 miles, total elevation gain 5,000 ft; different trailhead."},
+   {"value": 5882, "trailhead": "North Fork Sauk road closure", "url": "https://engineeredforadventure.com/sloan/", "one_way": false, "fact": "5,882 ft ascent, 18.7 mi round trip, road walk; turned back 300 ft below summit."}
+  ],
+  "evidence": [
+   {"url": "https://www.mountaineers.org/activities/routes-places/sloan-peak-corkscrew-route", "retrieved_at": "2026-11-18", "fact": "Corkscrew Route: Elevation Gain 5,900 ft, length 12.0 mi."},
+   {"url": "https://www.peakbagger.com/climber/ascent.aspx?aid=145426", "retrieved_at": "2026-11-18", "fact": "Sloan Peak 2010-10-02, gain on way in 5,939 ft, start trailhead 1,900 ft; linked report is the Corkscrew Route."}
+  ],
+  "note": "The Peakbagger entry names no route, but it links SummitPost trip report 668294, whose listing reads 'Corkscrew Route - October 2, 2010', the same date. Jeff Hebert's Cougar Creek Corkscrew report also left the car at about 1,900 ft. 5,939 vs 5,900 is 0.7%, and stored 5,935 matches both. Bedal Creek is a higher trailhead (about 5,000 ft gain)."
+ },
+ {
+  "route_id": "wa_sahale_mountain_sahale_glacier", "field": "gain_ft", "stored_value": 5020, "found_value": 5500,
+  "verdict": "stored_confirmed", "final_value": 5104, "trailhead": "Cascade Pass trailhead (~3,600 ft)",
+  "figures": [
+   {"value": 5500, "trailhead": "Cascade Pass", "url": "https://mazamas.org/activity/instance/1086/detail/", "one_way": true, "fact": "Prior pass: Mazamas Sahale Glacier activity gives 5,500 ft gain."},
+   {"value": 5300, "trailhead": "Cascade Pass", "url": "https://www.mountaineers.org/activities/routes-places/cascade-pass-area-review/sahale-peak-south-slope", "one_way": true, "fact": "Prior pass: Mountaineers Sahale Peak South Slope gives 5,300 ft; different route (south slope)."},
+   {"value": 5104, "trailhead": "Cascade Pass 3,652 ft", "url": "https://www.peakbagger.com/climber/ascent.aspx?aid=2427433", "one_way": true, "fact": "Peakbagger 2012-08-04, route Sahale Glacier: gain on way in 5,104 ft, start trailhead Cascade Pass 3,652 ft."},
+   {"value": 5176, "trailhead": "start 3,580 ft (Cascade Pass TH)", "url": "https://www.peakbagger.com/climber/ascent.aspx?aid=562760", "one_way": true, "fact": "Peakbagger 2012-09-08, route Sahale Glacier: gain on way in 5,176 ft, 7 mi one way, start 3,580 ft."},
+   {"value": 5120, "trailhead": "Cascade Pass", "url": "https://www.alpineinstitute.com/sahale-peak-via-sahale-glacier/", "one_way": false, "fact": "Prior pass: Alpine Institute 5,120 ft is to an 8,600 ft high point, not the summit."}
+  ],
+  "evidence": [
+   {"url": "https://www.peakbagger.com/climber/ascent.aspx?aid=2427433", "retrieved_at": "2026-11-18", "fact": "Route Sahale Glacier, gain on way in 5,104 ft, start trailhead Cascade Pass 3,652 ft."},
+   {"url": "https://www.peakbagger.com/climber/ascent.aspx?aid=562760", "retrieved_at": "2026-11-18", "fact": "Route Sahale Glacier, gain on way in 5,176 ft, 7 mi each way, start trailhead 3,580 ft."}
+  ],
+  "note": "Two different climbers logged the Sahale Glacier route from the Cascade Pass TH at 5,104 and 5,176 (1.6% and 3.0% from stored 5,020). Mazamas 5,500 is also within 10% of both (7.2% / 5.9%), so it does not contradict them. Stored 5,020 vs found 5,500 is 8.7%, which is inside the 10% rule anyway. final_value 5,104 is the entry that names both route and trailhead; keeping stored 5,020 would also be supported. Other Sahale ascents on Peakbagger (pid 1854) mostly read 5,100-5,280."
+ }
+]

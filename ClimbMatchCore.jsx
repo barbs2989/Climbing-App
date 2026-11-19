@@ -174,9 +174,17 @@ export function shortDate(d){
   if(isNaN(dt.getTime()))return raw;
   try{return dt.toLocaleDateString(DLOCALE,{month:"short",day:"numeric",year:"numeric"});}catch(e){return raw;}
 }
+/* `vouches.reason` holds the WHOLE vouch as JSON ({route, ratings, skills, text, practicedOn, wouldClimbAgain});
+   an old or one-tap vouch holds plain words, or nothing. Every reader goes through this one parser: the
+   "vouched for you" notification printed the column raw, so a climber read `"{"route":"Coleman–Deming…`. */
+export function parseVouchReason(reason){
+  if(reason==null||reason==="")return {};
+  try{var p=JSON.parse(reason);if(p&&typeof p==="object"&&!Array.isArray(p))return p;}catch(e){/* plain words, not JSON */}
+  return {text:String(reason)};
+}
 export function vouchRowsFrom(rows,authors){
   return (rows||[]).map(function(row){
-    var parsed={};try{parsed=JSON.parse(row.reason)||{};}catch(e){parsed={text:row.reason||""};}
+    var parsed=parseVouchReason(row.reason);
     var a=(authors||[]).find(function(x){return x.id===row.from_id;});
     /* pubName, not the raw name: a vouch names the person who GAVE it, and FullProfile builds
        another climber's vouch rows with this — so a bare `.name` published every voucher's real

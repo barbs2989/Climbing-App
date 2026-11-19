@@ -31,6 +31,26 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     access question, not a research one. All held. **Shoulders are not a worklist**: `--shoulders`
     lists the 56 (mostly "Jun-Sep" over a risky June). Header and calendar came from one pipeline,
     so narrowing the header to the calendar would be a mechanical bulk edit with no new evidence.
+  - **Fourth pass, read through the owner's Chrome (2026-11-18)** — do not re-derive:
+    - **"Class 3" on the Adams glacier lines is NOT an error.** The 2026-10-01 final-grade pass put
+      every WA mountain route's crux on one of three scales (`FINAL_GRADE` in lib/grade.js: Class
+      1-4, 5.x, WI/AI); Mountain Project's "Mod. Snow" / "Steep Snow" (Lyman, North Ridge, Mazama
+      Headwall) is not one of them, and writing it would drop the headline grade and the finder
+      filter. Pass three's flag was wrong.
+    - **Yakama Tract D (Adams's east side: Mazama and Wilson) opens on dates the Yakama set each
+      year, day use only** — late July to early September in 2023, late August to late September in
+      2021, closed all of 2018 and "until further notice" from June 2019 on The Mountaineers' Mazama
+      page; plus a Tract D tribal-use permit. The often-quoted "Jul 1-Oct 1" is an older rule. So
+      Wilson's May-Jun snow season has no public access window at all: an owner call, not research.
+    - **Goode NE Face is a dead end**: `audits/route-grades/deep/out/g5.json` already records that
+      the only source is one AAJ 1967 sentence (no grade), that 5.8 is unsupported, and that the beta
+      describes the 1966 NE Buttress. MP, The Mountaineers and SummitPost (403 even in Chrome) have no
+      page for it.
+    - **South Twin Sister West Ridge: closed, no change** — The Mountaineers lists it year-round, so
+      the stored May-Oct header sits inside every published range. **Snowking: still held** — The
+      Mountaineers' NE Shoulder (May-Oct, "early season snow scramble") is not shown to be our Kindy
+      Creek / Snowking Glacier line, and its range overlaps both of our conflicting values.
+    - SummitPost answers 403 in Chrome too; Mountain Project and The Mountaineers open.
   - A range can START or END on a season word ("Late autumn through May" on Colfax's Polish
     Route); read as May alone, it was a false finding. `SRANGE` pins the season end to one month
     by its qualifier and marks the result as words.

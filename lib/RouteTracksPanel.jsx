@@ -22,14 +22,14 @@ import Av from "../src/components/Av.tsx";
 import Chevron from "../src/components/Chevron.tsx";
 import Stars from "../src/components/Stars.tsx";
 
-/* A sport, trad, top-rope or boulder line has no recorded walk and no trip to report: what a climber leaves
+/* A sport, trad, top-rope, aid or boulder line has no recorded walk and no trip to report: what a climber leaves
    on it is a LOGGED CLIMB (owner, 2026-11-18). So its list is "Recent logged climbs", built from the logs
-   alone: no seed tracks, no scout reports, each row naming its tick. Aid is a crag discipline too, but a
-   wall can carry an approach track, so it keeps the tracks heading. A walk-in recording a climber attached
+   alone: no seed tracks, no scout reports, each row naming its tick. Aid joined them the same day (owner:
+   "do the rest"). A walk-in recording a climber attached
    to their log still shows on that log's row. */
-export const LOGGED_ONLY_CATS = ["sport", "trad", "toprope", "bouldering"];
+export const LOGGED_ONLY_CATS = ["sport", "trad", "toprope", "aid", "bouldering"];
 /* A conditions-only report (LogAscent's "I only scouted it") is not a climb. Its tick type is "Conditions";
-   `scoutOnly` alone is not proof, because hydrating your own logs marks any starless log scoutOnly. */
+   A seed scout report carries `scoutOnly` and no tick. Same rule as isScoutRow (lib/tripReportRow.js). */
 export function isScoutReport(a) { return a.tickType === "Conditions" || (!!a.scoutOnly && !a.tickType); }
 
 // The first rows a page shows; the rest behind "Show N more".

@@ -180,8 +180,9 @@ empty field fill at once and two agreeing climbers change one; the owner withdre
   `rock`, and `sf()` reads both. The gear steppers (quickdraws, ice screws, cams, nuts) and the ticked
   items now become **rack rows** (`rackItems`, `{item, qty, sizes?}`, written to `rack_items` by `approve_new_route` since 0384; the ticked items stay text lines) — they used to land only in the `gear` object, which no screen reads
   — and a non-rack item (helmet, crampons) goes to Route-specific essentials; crag types are offered
-  only rack items, since a crag page has no GEAR & ESSENTIALS card. The **Crux** box asks for a crux
-  *grade*: `routes.crux` prints in a stat tile, and it used to ask for a sentence.
+  only rack items, since a crag page has no GEAR & ESSENTIALS card. The crux box asks **Where the crux
+  is** (#3482): `routes.crux` holds a place ("the bulge halfway up") and prints as a Crux facts row; the
+  difficulty is the grade. (It asked for a crux *grade* from 2026-10-22 until then.)
   `check:add-route-fields` §3b evaluates the edit sheet's rule (`lib/fieldScope.js`, which replaced its inline `DROP` on 2026-11-18) per type and fails on any fact the add
   form does not ask, unless `NOT_AT_CREATION` / `NOT_FOR` names it with a reason (the multi-part
   builders — waypoints, approach variants, rappel table, rescue card… — are added on the live route).

@@ -156,11 +156,20 @@ const CASES = [
          "that left this would have made a circular pointer visible for the first time",
     edits: [{
       // Repointed 2026-11-18: the banner now introduces the summit-day view (summitDayPlan).
-      find: '{"This route is typically done over "+itinDayCount(route)+" days. "+(sd&&sd.timed?"The estimate below times the summit day from camp; the ":"The times below are totals for the whole trip; the ")}<b style={{color:C.amber}}>Trip plan</b>{" above has each day."}',
+      find: '{"This route is typically done over "+itinDayCount(route)+" days. "+(sd&&sd.timed?"The estimate below times the summit day from camp; the ":"The times below are totals for the whole trip; the ")}<b style={{color:C.amber}}>Trip plan</b>{" below has each day."}',
       repl: 'This route is typically done over multiple days. The single-push estimate below is a reference only — use the <b style={{color:C.amber}}>Plan</b> tab for a realistic day-by-day plan.',
     }],
     expect: "fail",
     must: /already on/,
+  },
+  {
+    name: "multiday-pointer-says-the-wrong-way",
+    why: "The pointer must say which way the Trip plan is, truthfully. Since 2026-11-18 the alpine Plan " +
+         "tab draws Full trip time ABOVE the trip plan; copy that still said 'above' would send a reader " +
+         "up the page to a section that is below them",
+    edits: [{ find: '<b style={{color:C.amber}}>Trip plan</b>{" below has each day."}', repl: '<b style={{color:C.amber}}>Trip plan</b>{" above has each day."}' }],
+    expect: "fail",
+    must: /really is above/,
   },
   {
     name: "SILENT-multiday-copy-reworded-but-still-honest",

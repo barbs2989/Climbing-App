@@ -344,7 +344,6 @@ eq("a starred seed campOption does NOT drive it — that field reaches no real r
 const md3Html = render(md3);
 const iPlan = md3Html.indexOf(">Trip plan<"), iDiscl = md3Html.search(/data-multiday="/);
 eq("ANCHOR: the Trip plan section rendered on the same tab", iPlan >= 0, true);
-eq("...and it really is ABOVE the disclaimer that points at it", iPlan >= 0 && iDiscl > iPlan, true);
 /* The box's OWN text, sliced from its anchor to the first closing tag — it holds one <b> and no
    nested div. Scoped rather than matched page-wide, because "Trip plan" is also the heading of the
    section being pointed AT, so a page-wide test would pass on the strength of the destination
@@ -352,6 +351,12 @@ eq("...and it really is ABOVE the disclaimer that points at it", iPlan >= 0 && i
    destination, never that it is worded one way. */
 const box = md3Html.slice(iDiscl).split("</div>")[0];
 eq("the disclaimer names the section it points at", box.includes("Trip plan"), true);
+/* ...and the direction it gives is TRUE. The trip plan sat above Full trip time until 2026-11-18, when the
+   alpine Plan tab put timing before the itinerary (owner) and the copy turned to "below". Read the word the
+   box uses and check the page against it, so neither a reorder nor a copy edit can make it point the wrong way. */
+const says = /\babove\b/.test(box) ? "above" : /\bbelow\b/.test(box) ? "below" : null;
+eq("the disclaimer says which way the Trip plan is (above or below)", !!says, true);
+eq("...and the Trip plan really is " + (says || "there"), iPlan >= 0 && (says === "above" ? iDiscl > iPlan : says === "below" ? iPlan > iDiscl : false), true);
 eq("...and no longer sends a reader to the tab they are already on", /use the .?Plan.? tab/.test(text(md3Html)), false);
 
 console.log("\na pitch count of 1 beside 100+ m of climb is no pitch count -- not a 0.6 hr climb");
