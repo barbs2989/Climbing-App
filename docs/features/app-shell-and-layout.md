@@ -93,8 +93,8 @@ room for side-panel ads later. The phone app keeps its own look.
     real website would"; `wideNavStrip`): Home · Climbs · Partners · Crews · Groups · Logbook · Ranks in a
     row, each an icon and its label, starting at the page column's left edge. The active tab is underlined
     in blue. It carries **no count badges** (owner 2026-11-11: they overlapped the labels): crew chat unread
-    shows on the Messages icon and the rail's *Your crews*, unfinished climbs inside Logbook. It keeps the name *Primary*. It replaced the
-    fixed left sidebar, which held the tabs, then *Your crews* and *Your groups* (those are rail cards now).
+    shows on the Messages icon, unfinished climbs inside Logbook. It keeps the name *Primary*. It replaced the
+    fixed left sidebar, which held the tabs, then *Your crews* and *Your groups* (they moved to the rail, and left it 2026-11-18).
     Profile is the avatar, not a tab. No site links: those are the footer's.
   - The **page column**, and at **1280px and wider** a 300px **right rail** (`WideRail`): *Coming up*
     (agreed crew days); *Alerts*, which starts **open on the newest three** (owner 2026-11-04; it started
@@ -109,11 +109,9 @@ room for side-panel ads later. The phone app keeps its own look.
     make it new again, so a new message or newly proposed days bring it back. Only a log-tag row (*Were you
     there?*) keeps its own taller card, for its two answer buttons. The count holds unread notifications
     back until the account's read-state (`notifStateQ`) has answered, so it no longer reads *1 new* and
-    then drops to none. A guest is told to sign in. Then **Your crews** (owner 2026-11-11: crews
-    and crew chats combined; `RailCrews`): each active crew, newest chat message first, named for its
-    place, its last message under the name and its chat's unread count; a click opens the crew; five,
-    then *See all N crews ›*. Then **Your groups** (`RailGroups`): five, a red dot when a group has posts
-    you have not seen (`groupUnreadN`), drawn only when you are in a group. Both fold like Alerts. **Direct
+    then drops to none. A guest is told to sign in. **Your crews and Your groups are not in the rail** (owner 2026-11-18:
+    "remove your crews and your groups from right panel"; they were rail cards from 2026-11-11): the Crews
+    tab and the Groups screen hold them. **Direct
     messages are not in the rail** (owner 2026-11-11): the top bar's Messages drop-down holds them and counts
     them. The rail's last slot is an ad (`ad`, off everywhere but route pages for now).
   - Between 1024 and 1279px there is no rail; the column is centred alone. Crews and groups are reached
@@ -271,7 +269,7 @@ taken focus from it by the time the hook looks.
 |---|---|
 | `lib/wideLayout.js` | `useWideScreen`, `useFullWidth`, `useAdSideWidth`, `wideGeom`, `wideColumn`, `wideRail`, `wideTopBar`, `wideTopRow`, `wideNavStrip`, `wideCss`, `WIDE_MIN`, `FULL_MIN`, `AD_SIDE_MIN`, `TOP_H`, `NAV_H`, `HEAD_H` |
 | `lib/MonthGrid.jsx` | `MonthGrid` |
-| `lib/DesktopShell.jsx` | `WideSearch`, `WideRail` (`RailCrews`, `RailGroups`, `FoldCard`), `AvatarMenu`, `WideFooter`, `DocTitle` |
+| `lib/DesktopShell.jsx` | `WideSearch`, `WideRail`, `AvatarMenu`, `WideFooter`, `DocTitle` |
 | `lib/installPrompt.js` | `useInstallPrompt` |
 | `lib/Ads.jsx` | `ADS_ON`, `adsActive`, `SideAd`, `RailAd`, `useRailFollow`, `FollowColumn` |
 | `lib/dialogA11y.js` | `coveringLayer`, `pinDismiss`, `pinLayers`, `findPageBacks`, `PAGE_BACK_ATTR`, `STEP_BACK_ATTR` |

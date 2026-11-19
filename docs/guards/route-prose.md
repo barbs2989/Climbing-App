@@ -22,6 +22,15 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     "Northeast Face" turns up only the NE Buttress. Forbidden "Northeast Face" is ambiguous (the
     old name of the normal summer traverse, or a direct ice face); Snowking (glacier vs west
     ridge) and South Twin Sister (sources span May-Oct to year-round) stay low.
+  - **Third pass: the three "identity" rows are REAL routes** — the research agent's "Wilson
+    Glacier Headwall is a Rainier route" was wrong for our row (it climbs Adams's Roosevelt Cliff),
+    and Goode's and Forbidden's NE faces each carry a distinct FA (1954; 1961, the direct ice face).
+    What is wrong instead: Goode NE Face's `beta` describes the NE BUTTRESS ("Grade IV 5.5, 6-8
+    pitches") under a 5.8 grade; five Adams glacier and headwall lines are graded "Class 3"; and
+    Wilson's best snow (May-Jun) falls outside the Yakama east-side Jul 1-Oct 1 access, which is an
+    access question, not a research one. All held. **Shoulders are not a worklist**: `--shoulders`
+    lists the 56 (mostly "Jun-Sep" over a risky June). Header and calendar came from one pipeline,
+    so narrowing the header to the calendar would be a mechanical bulk edit with no new evidence.
   - A range can START or END on a season word ("Late autumn through May" on Colfax's Polish
     Route); read as May alone, it was a false finding. `SRANGE` pins the season end to one month
     by its qualifier and marks the result as words.
