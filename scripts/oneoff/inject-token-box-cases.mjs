@@ -90,7 +90,10 @@ for (const c of CASES) {
   }
   fs.writeFileSync(FILE, edited);
   let out = "";
-  try { out = execSync("npm run check:token-boxes 2>&1", { encoding: "utf8" }); }
+  // maxBuffer: the guard prints a React server-render warning with a stack for every render, well over
+  // execSync's 1 MB default. Past the limit execSync throws with the output CUT SHORT, the verdict line is
+  // not in it, and every real catch read as a MISS (cases 1, 2 and 5, found 2026-11-19).
+  try { out = execSync("npm run check:token-boxes 2>&1", { encoding: "utf8", maxBuffer: 1 << 28 }); }
   catch (e) { out = (e.stdout || "") + (e.stderr || ""); }
   fs.writeFileSync(FILE, original);
 
