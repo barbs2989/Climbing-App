@@ -329,7 +329,7 @@ export default function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElev
   const { data: areaTrails } = useAreaTrailsByIds(areaIds);
   // A PEAK heading carries its height (2026-11-18): Peak elevation is a filter here, and nothing on the list said it.
   const { data: peakElev } = useAreaPeakElevationsByIds(areaIds) as { data?: Record<string, number> };
-  const trailOf = (id: string): { id: string; name: string }[] => (areaTrails && id && areaTrails[id]) || [];
+  const trailOf = (id: string): { id: string; name: string }[] => ((areaTrails && id && areaTrails[id]) || []).filter((c: { state?: boolean }) => !c.state);
   // ...but only the levels BELOW the area being searched: inside Leavenworth a wall's line read "Central-East Cascades,
   // Wenatchee & Leavenworth › Leavenworth › Icicle Creek" over every wall, two to four lines on a phone, repeating the
   // path the climber is already in (2026-11-18). The export keeps the whole trail.

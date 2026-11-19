@@ -60,8 +60,8 @@ export default function DbSearchSplit({ scope, onJumpToArea, onOpenRoute, C, onM
   // climb listed twice. A failed read leaves the line off, never empty.
   const hitAreaIds = useMemo(() => [...new Set((routeHits || []).map((r: DbSearchSplitRoute) => r.area_id).filter(Boolean))], [routeHits]);
   const { data: hitAreaNames } = useAreaNamesByIds(hitAreaIds);
-  // ...and the levels that lead to that crag, below the area being searched (2026-11-18): "Main Wall" alone names
-  // a dozen walls in one state, so the row reads "Index › Lower Town Wall › Main Wall".
+  // ...and the two levels above that crag, then the state (2026-11-18): "Main Wall" alone names a dozen walls in
+  // one state, so the row reads "Index › Lower Town Wall › Main Wall, Washington".
   const { data: hitAreaTrails } = useAreaTrailsByIds(hitAreaIds);
   useEffect(() => { if (onModeChange) onModeChange(mode); }, [mode, onModeChange]);
   const tab = (on: boolean): CSSProperties => ({ flex: 1, padding: "7px 0", textAlign: "center", fontSize: 12.5, fontWeight: 700, cursor: "pointer", borderRadius: 7, background: on ? C.blueSolid : "transparent", color: on ? C.onSolid : C.textSub });
