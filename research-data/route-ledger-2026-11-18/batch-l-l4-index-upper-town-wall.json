@@ -1,0 +1,391 @@
+{
+ "wa_dana_s_arch_area_dana_s_arch": {
+  "area": "wa_dana_s_arch_area",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/106329381/danas-arch",
+    "https://www.mountainproject.com/route/201702439",
+    "https://www.mountainproject.com/area/107614498/danas-arch-area",
+    "https://rakkup.com/guidebook/index-rock-climbing/dana's-arch-/c25312",
+    "https://rakkup.com/guidebook/index-rock-climbing/dana's-arch-area/s12353",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer",
+    "https://www.openstreetmap.org/way/37319530",
+    "https://washingtonclimbers.org/index.php/wp-json/wp/v2/posts/14326",
+    "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+   ]
+  },
+  "ledger": [],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_dana_s_arch_area_dana_s_arch",
+    "column": "fa",
+    "from": "1970 aided ascent: Pat Timson, Leigh Nason, Bob Crawford; FFA: Terry Lien, Darryl Cramer",
+    "to": "Bob Crawford, Leigh Nason, Pat Timson 1970 (aid)",
+    "why": "Split the pasted FFA out of fa into ffa (proposed together, per brief I). MP: 'Bob Crawford, Leigh Nason, Pat Timson (1970; all pitches to top, with aid) FFA: Darryl Cramer, Terry Lien'. Same names as stored. Single source: ledger level would be unconfirmed.",
+    "evidence": [
+     "https://www.mountainproject.com/route/106329381/danas-arch",
+     "https://www.mountainproject.com/route/201702439"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_dana_s_arch_area_dana_s_arch",
+    "column": "ffa",
+    "from": null,
+    "to": "Darryl Cramer, Terry Lien",
+    "why": "Goes with the fa split above. MP (the free page and the aid page) credits the free ascent of the short first pitch to Darryl Cramer and Terry Lien; no year stated.",
+    "evidence": [
+     "https://www.mountainproject.com/route/106329381/danas-arch",
+     "https://www.mountainproject.com/route/201702439"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_dana_s_arch_area_dana_s_arch",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Washington State Parks (Forks of the Sky State Park)"
+    },
+    "why": "access is empty. Official WA State Parks GIS layer 'Park Boundaries' (State Parks GIS Program, updated 2026-06-01): the Upper Town Wall cliff (OSM way 37319530, 'Index Town Wall' natural=cliff) falls inside 'Forks of the Sky State Park Property'. WCC 2017 plan notice agrees (Upper Town Wall on State Parks land). This is not the Lower Town Wall parcel donated in 2026. official-1, expires 2027-11-18. No parking pass written: see notes.",
+    "evidence": [
+     "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5657347,47.8235375&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+     "https://www.openstreetmap.org/way/37319530",
+     "https://washingtonclimbers.org/index.php/wp-json/wp/v2/posts/14326"
+    ]
+   }
+  ],
+  "disputed": [
+   "grade: MP '5.11' (pitch notes .11b to the first anchor, ~.12a above); Rakkup (Kalman/Van Biene guide) 5.11a. Not locked - plain 5.11 vs 5.11a, and the ~12a extension may set the grade.",
+   "discipline: MP Sport (six bolts, then two permadraws); Rakkup shows the trad icon. Not locked.",
+   "pitches: stored 1. MP states no count; it describes a belay at the .11b anchor then a continuation to lower-offs (could be read as 2). Not locked."
+  ],
+  "notes": "Catalog: 'Dana's Arch' (free, this row) and 'Dana's Arch Complete (Aid)' (wa_d_dana_s_arch_area_dana_s_arch_complete_aid: A3, 4 pitches, 500 ft, Grade IV) are SEPARATE lines in MP's sense: the free route is the short freed start (FFA of P1 per MP's aid page) of the 1970 four-pitch aid line to the top. They overlap on P1; not a duplicate, but the 1970 aid FA belongs to the aid row, whose fa is null - owner call. Catalog defect (not fixed): 'Tempitchuous' (wa_d_dana_s_arch_area_tempitchuous, Dana's Arch Area, sport 5.12a, 3 pitches, 76 m, fa null) and 'Tempituous' (wa_earwax_wall_tempituous, Earwax Wall, sport 5.12a, 3 pitches, fa 'Matt Kerns, Greg Collum 1994') are ONE line filed twice: MP has a single 'Tempitchuous' (route 106555487: Sport, 250 ft, 3 pitches, Grade II, 5.12a, FA Matt Kerns, Greg Collum; left of Dana's Arch, right of Earwax Wall). Row lat/lng (47.82354,-121.56683) equals MP's Dana's Arch Area GPS exactly: an MP coordinate, never evidence; not changed (no open-data point for this route). Bolts: MP describes 6 bolts to the first anchor plus 2 permadraws above; implied total, not proposed. Land: Upper Town Wall = Forks of the Sky State Park property (official State Parks GIS); the 2026 donation covered only the Lower Town Wall. HELD: parking pass. The OSM 'Index Town Walls Parking Area' (way 145298210) matches a 'Forks of the Sky' polygon in the State Parks ParkingAreas layer, but that point falls OUTSIDE the State Parks boundary layer and no official page names a pass for this lot, so a Discover Pass claim is held. HELD: peregrine closure - WCC (not official) says the State Parks plan has a presumptive closure of the Upper Cheeks/'Beach' ledge of the Upper Town Wall from March 1 each year; no official page found."
+ },
+ "wa_d_dana_s_arch_area_wildest_dreams": {
+  "area": "wa_dana_s_arch_area",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/106329266/wildest-dreams",
+    "https://rakkup.com/guidebook/index-rock-climbing/wildest-dreams/c31754",
+    "https://rakkup.com/guidebook/index-rock-climbing/dana's-arch-area/s12353",
+    "https://www.mountainproject.com/area/107614498/danas-arch-area",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer",
+    "https://www.openstreetmap.org/way/37319530",
+    "https://washingtonclimbers.org/index.php/wp-json/wp/v2/posts/14326"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.12-",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106329266/wildest-dreams",
+      "fact": "5.12- YDS, Trad, 350 ft, 4 pitches, Grade III",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 4,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106329266/wildest-dreams",
+      "fact": "Trad, 350 ft (106 m), 4 pitches, Grade III",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "length_m",
+    "value": 107,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106329266/wildest-dreams",
+      "fact": "350 ft (106 m); 350 ft = 106.7 m",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "discipline",
+    "value": "trad",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106329266/wildest-dreams",
+      "fact": "Type: Trad",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://rakkup.com/guidebook/index-rock-climbing/wildest-dreams/c31754",
+      "fact": "Wildest Dreams 5.12b, trad icon",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_d_dana_s_arch_area_wildest_dreams",
+    "column": "commitment",
+    "from": null,
+    "to": "III",
+    "why": "commitment empty; MP states Grade III. Single source.",
+    "evidence": [
+     "https://www.mountainproject.com/route/106329266/wildest-dreams"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_d_dana_s_arch_area_wildest_dreams",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Washington State Parks (Forks of the Sky State Park)"
+    },
+    "why": "access is empty. Official WA State Parks GIS layer 'Park Boundaries' (State Parks GIS Program, updated 2026-06-01): the Upper Town Wall cliff (OSM way 37319530, 'Index Town Wall' natural=cliff) falls inside 'Forks of the Sky State Park Property'. WCC 2017 plan notice agrees (Upper Town Wall on State Parks land). This is not the Lower Town Wall parcel donated in 2026. official-1, expires 2027-11-18. No parking pass written: see notes.",
+    "evidence": [
+     "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5657347,47.8235375&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+     "https://www.openstreetmap.org/way/37319530",
+     "https://washingtonclimbers.org/index.php/wp-json/wp/v2/posts/14326"
+    ]
+   }
+  ],
+  "disputed": [
+   "grade: MP 5.12- (P3 fingers crack 5.12a or A1); Rakkup (current Index guide) 5.12b. 5.12- spans a/b so they may agree; locked at the 1-source tier on MP's stated value, Rakkup recorded here."
+  ],
+  "notes": "MP: P1 5.10 (~6 bolts), P2 5.11, P3 5.12a or A1 (~40 ft fingers crack), P4 5.10 (~35 m); all anchors fixed with rap hardware; 70 m rope; rack singles to 3 in with extra small cams and small nuts; descent is a short face traverse and 4th class to the top of the wall, then a walk to the trail. FA 'Chris Hensen, et al 2006' per MP only - held (FA never from MP alone). Land: Upper Town Wall = Forks of the Sky State Park property (official State Parks GIS); the 2026 donation covered only the Lower Town Wall. HELD: parking pass. The OSM 'Index Town Walls Parking Area' (way 145298210) matches a 'Forks of the Sky' polygon in the State Parks ParkingAreas layer, but that point falls OUTSIDE the State Parks boundary layer and no official page names a pass for this lot, so a Discover Pass claim is held. HELD: peregrine closure - WCC (not official) says the State Parks plan has a presumptive closure of the Upper Cheeks/'Beach' ledge of the Upper Town Wall from March 1 each year; no official page found."
+ },
+ "wa_d_dana_s_arch_area_the_back_road": {
+  "area": "wa_dana_s_arch_area",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/118981813",
+    "https://rakkup.com/guidebook/index-rock-climbing/the-back-road/c39561",
+    "https://www.mountainproject.com/area/107614498/danas-arch-area",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer",
+    "https://www.openstreetmap.org/way/37319530",
+    "https://washingtonclimbers.org/index.php/wp-json/wp/v2/posts/14326"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "pitches",
+    "value": 4,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/118981813",
+      "fact": "Trad, 200 ft (61 m), 4 pitches, Grade II",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "length_m",
+    "value": 61,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/118981813",
+      "fact": "200 ft (61 m)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "commitment",
+    "value": "II",
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/118981813",
+      "fact": "Grade II",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_d_dana_s_arch_area_the_back_road",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Washington State Parks (Forks of the Sky State Park)"
+    },
+    "why": "access is empty. Official WA State Parks GIS layer 'Park Boundaries' (State Parks GIS Program, updated 2026-06-01): the Upper Town Wall cliff (OSM way 37319530, 'Index Town Wall' natural=cliff) falls inside 'Forks of the Sky State Park Property'. WCC 2017 plan notice agrees (Upper Town Wall on State Parks land). This is not the Lower Town Wall parcel donated in 2026. official-1, expires 2027-11-18. No parking pass written: see notes.",
+    "evidence": [
+     "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5657347,47.8235375&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+     "https://www.openstreetmap.org/way/37319530",
+     "https://washingtonclimbers.org/index.php/wp-json/wp/v2/posts/14326"
+    ]
+   }
+  ],
+  "disputed": [
+   "grade: stored/MP 5.9, but MP's own pitch notes give every pitch as 5.8 (P1 '5.8ish'); Rakkup (Index guide) 5.8. MP's 5.9 may reflect the DGS 5.9+ variation finish. Not locked, not changed - owner call (a change to 5.8 would also need grade_num via gradeNumFrom).",
+   "pitches: Rakkup calls it 'rumored' 4 pitches at 5.8 - agrees with MP's 4 but too hedged to count as a second source."
+  ],
+  "notes": "Rakkup files The Back Road under the 'Tempitchuous Area' of the Upper Town Wall Left; MP and our row file it under Dana's Arch Area (same stretch of cliff). MP: starts at an obvious fissure ~10 ft left of Jungle Fun; new bolts (P1 three, P2 three, P3 one, P4 bolted arete); rack to #4; descent three single-70 m-rope raps (top to P4 base ledge, to top of P1, to ground; tie knots). FA 'Jim Langdon, Pete Sandstedt, March 1968' per MP only - held. P4 original chimney line takes falling debris. Land: Upper Town Wall = Forks of the Sky State Park property (official State Parks GIS); the 2026 donation covered only the Lower Town Wall. HELD: parking pass. The OSM 'Index Town Walls Parking Area' (way 145298210) matches a 'Forks of the Sky' polygon in the State Parks ParkingAreas layer, but that point falls OUTSIDE the State Parks boundary layer and no official page names a pass for this lot, so a Discover Pass claim is held. HELD: peregrine closure - WCC (not official) says the State Parks plan has a presumptive closure of the Upper Cheeks/'Beach' ledge of the Upper Town Wall from March 1 each year; no official page found."
+ },
+ "wa_d_dana_s_arch_area_legends_ride_free": {
+  "area": "wa_dana_s_arch_area",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/120344979",
+    "https://www.mountainproject.com/area/107614498/danas-arch-area",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer",
+    "https://www.openstreetmap.org/way/37319530",
+    "https://washingtonclimbers.org/index.php/wp-json/wp/v2/posts/14326"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.11-",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/120344979",
+      "fact": "5.11- YDS, Trad, TR, 35 ft (11 m)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "length_m",
+    "value": 11,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/120344979",
+      "fact": "35 ft (11 m)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 1,
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/120344979",
+      "fact": "35 ft single crack; no pitch count stated",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_d_dana_s_arch_area_legends_ride_free",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Washington State Parks (Forks of the Sky State Park)"
+    },
+    "why": "access is empty. Official WA State Parks GIS layer 'Park Boundaries' (State Parks GIS Program, updated 2026-06-01): the Upper Town Wall cliff (OSM way 37319530, 'Index Town Wall' natural=cliff) falls inside 'Forks of the Sky State Park Property'. WCC 2017 plan notice agrees (Upper Town Wall on State Parks land). This is not the Lower Town Wall parcel donated in 2026. official-1, expires 2027-11-18. No parking pass written: see notes.",
+    "evidence": [
+     "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5657347,47.8235375&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+     "https://www.openstreetmap.org/way/37319530",
+     "https://washingtonclimbers.org/index.php/wp-json/wp/v2/posts/14326"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "MP: single 35 ft crack ~15 ft past Dana's Arch; crux off the deck; thin gear (0.1-0.2 cams, brass/ball nuts) plus a few hand-size cams; top-ropeable from chains. FA 'Adam Wood, Josh Stern' per MP only - held. Not in the Rakkup Dana's Arch sector list; theCrag returned Forbidden in Chrome. Land: Upper Town Wall = Forks of the Sky State Park property (official State Parks GIS); the 2026 donation covered only the Lower Town Wall. HELD: parking pass. The OSM 'Index Town Walls Parking Area' (way 145298210) matches a 'Forks of the Sky' polygon in the State Parks ParkingAreas layer, but that point falls OUTSIDE the State Parks boundary layer and no official page names a pass for this lot, so a Discover Pass claim is held. HELD: peregrine closure - WCC (not official) says the State Parks plan has a presumptive closure of the Upper Cheeks/'Beach' ledge of the Upper Town Wall from March 1 each year; no official page found."
+ },
+ "wa_c_the_beach_merman": {
+  "area": "wa_beach_the",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/121956737/merman",
+    "https://www.mountainproject.com/route/121956753/mermaid?print=1",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer",
+    "https://www.openstreetmap.org/way/37319530",
+    "https://washingtonclimbers.org/index.php/wp-json/wp/v2/posts/14326"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.11-",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/121956737/merman",
+      "fact": "5.11-, Trad, 75 ft (23 m)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "length_m",
+    "value": 23,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/121956737/merman",
+      "fact": "75 ft (23 m)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 1,
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/121956737/merman",
+      "fact": "75 ft crack; no pitch count stated",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_c_the_beach_merman",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Washington State Parks (Forks of the Sky State Park)"
+    },
+    "why": "access is empty. Official WA State Parks GIS layer 'Park Boundaries' (State Parks GIS Program, updated 2026-06-01): the Upper Town Wall cliff (OSM way 37319530, 'Index Town Wall' natural=cliff) falls inside 'Forks of the Sky State Park Property'. WCC 2017 plan notice agrees (Upper Town Wall on State Parks land). This is not the Lower Town Wall parcel donated in 2026. official-1, expires 2027-11-18. No parking pass written: see notes. The Beach area point (47.824,-121.5655) also falls inside the same park polygon.",
+    "evidence": [
+     "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5657347,47.8235375&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+     "https://www.openstreetmap.org/way/37319530",
+     "https://washingtonclimbers.org/index.php/wp-json/wp/v2/posts/14326"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "MP files Merman under Index > Cheeks > (1) Upper Cheeks > (c) The Beach, right of Mermaid (bolted) and left of Under-medicated; our area path puts Upper Cheeks under Upper Town Wall - possible filing difference, owner call. MP: steep crack, standard Index rack, TR easily set from Mermaid, slow to dry. FA 'Michal Rynkiewicz, Ryan Hoover' per MP only - held. RAPTOR: WCC (2017, not official) names the Upper Cheeks/'Beach' ledge as the most common peregrine nest site, with a presumptive closure from March 1 each year - this route is on that ledge; held until an official page states it, but worth a conditions note. Area name 'Beach, The' is a sort-style label. Land: Upper Town Wall = Forks of the Sky State Park property (official State Parks GIS); the 2026 donation covered only the Lower Town Wall. HELD: parking pass. The OSM 'Index Town Walls Parking Area' (way 145298210) matches a 'Forks of the Sky' polygon in the State Parks ParkingAreas layer, but that point falls OUTSIDE the State Parks boundary layer and no official page names a pass for this lot, so a Discover Pass claim is held. HELD: peregrine closure - WCC (not official) says the State Parks plan has a presumptive closure of the Upper Cheeks/'Beach' ledge of the Upper Town Wall from March 1 each year; no official page found."
+ }
+}

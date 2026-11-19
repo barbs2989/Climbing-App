@@ -1,0 +1,394 @@
+{
+ "wa_magic_bus": {
+  "area": "wa_three_o_clock_rock",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/108683315/magic-bus",
+    "https://cascadeclimbers.com/forum/topic/50828-tr-darrington-three-oclock-rock-magic-bus-5112007",
+    "https://www.mountainproject.com/area/108543607/three-oclock-rock",
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/eight-mile-trail-65402",
+    "https://www.fs.usda.gov/r06/mbs/recreation/boulder-river-wilderness",
+    "https://www.fs.usda.gov/r06/mbs/recreation/wilderness-regulations",
+    "https://www.fs.usda.gov/r06/mbs/passes",
+    "https://www.fs.usda.gov/r06/mbs/alerts",
+    "https://www.mountaineers.org/activities/routes-places/darrington-area"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.8+",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108683315/magic-bus",
+      "fact": "YDS 5.8+",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Risse, McKillop, Wojcik, 1979",
+    "method": "agree-2",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108683315/magic-bus",
+      "fact": "FA Risse, McKillop, Wojcik, 1979",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/50828-tr-darrington-three-oclock-rock-magic-bus-5112007",
+      "fact": "Mark McKillop: the route he and Peter Wojcik did in 1979 (Risse not named)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_magic_bus",
+    "column": "pitches",
+    "from": 0,
+    "to": 2,
+    "why": "0 is invalid. MP states 2 pitches; most parties rappel from the second anchors (two short extension pitches exist above). Lock (locked-1src) after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/108683315/magic-bus"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_magic_bus",
+    "column": "length_m",
+    "from": null,
+    "to": 61,
+    "why": "MP states 200 ft (61 m) for the 2-pitch route. Single source (theCrag 403). Lock (locked-1src) after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/108683315/magic-bus"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_magic_bus",
+    "column": "detailed_rack",
+    "from": null,
+    "to": "Eight quickdraws; a small cam is optional for the moves to the first bolt.",
+    "why": "Rack empty; MP says bolts plus an optional small cam at the start, 8 draws. Paragraph, not lockable.",
+    "evidence": [
+     "https://www.mountainproject.com/route/108683315/magic-bus"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_magic_bus",
+    "column": "access",
+    "from": {
+     "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+     "rules": "Group size capped at 12 (people + stock combined) inside Glacier Peak Wilderness; larger groups must split with 1-mile separation. Campfires prohibited above 3,500 ft in wilderness.",
+     "permit": "None required — free self-issue wilderness permits available at trailheads/ranger stations for day/overnight travel where the peak is inside designated wilderness.",
+     "group_limit": 12,
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Darrington Ranger District)",
+     "parking_pass": "Northwest Forest Pass required at Mountain Loop Highway trailheads — $5/day or $30/year."
+    },
+    "to": {
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Darrington Ranger District)",
+     "group_limit": 12,
+     "rules": "The Eight-Mile Trail to the rock enters the Boulder River Wilderness, where groups are capped at 12 people and stock combined.",
+     "parking_pass": "Northwest Forest Pass required at Mountain Loop Highway trailheads — $5/day or $30/year."
+    },
+    "why": "Land manager: the Forest Service Eight-Mile Trail 654.02 page (Darrington Ranger District) says the trail is popular with climbers bound for Three O'Clock Rock and that it enters the Boulder River Wilderness; the forest's wilderness-regulations page sets the 12-person group cap. The stored text named the Glacier Peak Wilderness (wrong wilderness, templated) and a self-issue permit, which the forest's regulations page lists only for the Alpine Lakes Wilderness. No pass statement for this trailhead was found on an official page, so the stored parking_pass is kept unchanged and HELD (see notes); the Rainier-templated fees line and the permit line are dropped. official-1, expires 2027-11-18. Because parking_pass is unverified, this object is NOT locked.",
+    "evidence": [
+     "https://www.fs.usda.gov/r06/mbs/recreation/trails/eight-mile-trail-65402",
+     "https://www.fs.usda.gov/r06/mbs/recreation/boulder-river-wilderness",
+     "https://www.fs.usda.gov/r06/mbs/recreation/wilderness-regulations"
+    ]
+   }
+  ],
+  "disputed": [
+   "commitment: stored III; MP gives no commitment grade for this 200 ft, 2-pitch route and no other source states one. III looks wrong for a 2-pitch crag line but MP alone cannot set it; held.",
+   "fa: MP lists Risse, McKillop, Wojcik, 1979; a 2007 CascadeClimbers post by Mark McKillop names only himself and Peter Wojcik, 1979, and says the modern bolted line no longer resembles their original. Left unconfirmed."
+  ],
+  "notes": "HELD: parking_pass (Northwest Forest Pass) - no official page states a pass for the Eight-Mile trailhead; the Mountaineers route page says 'Parking Permit Required: None' (not official). The MBS passes page only says a pass may be needed at developed sites. HELD: descent (MP alone: rappel from the second anchors, one 70 m rope comfortable, 60 m needs knotted ends). Road: FR 2060 (Clear Creek Road) - the MBS alerts list (32 alerts, read 2026-11-18) names no closure on 2060/2065, but absence is not evidence, so no road object is written. Official trail page: 3.3 mi south of the Darrington RD office on the Mountain Loop Hwy, right on FR 2060 opposite Clear Creek Campground, 8 mi to the trailhead; MP and the Mountaineers say about 5-6.5 mi and a right fork onto FR 2065 - mileage disputed. The Mountain Loop Highway winter closure (Bedal Campground to Barlow Pass, from Nov 16) is well south of the Clear Creek turnoff and does not affect this approach. No pins: OSM has no parking or trailhead feature at the Eight-Mile trailhead, and the area coordinate is MP's."
+ },
+ "wa_three_o_clock_rock_total_soul": {
+  "area": "wa_three_o_clock_rock",
+  "set": {
+   "descent_text": "Rappel the route on two ropes. Start from a slung tree in the woods north of the top; a short rappel reaches a chain anchor, then double-rope rappels lead back to the ground."
+  },
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/106007016/total-soul",
+    "https://cascadeclimbers.com/forum/topic/81048-tr-darringon-three-oclock-rock-total-soul-722011",
+    "https://climberkyle.com/2022/08/27/three-oclock-rock-silent-running-5-10a-and-total-soul-5-10b/",
+    "https://www.mountainproject.com/area/108543607/three-oclock-rock",
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/eight-mile-trail-65402",
+    "https://www.fs.usda.gov/r06/mbs/recreation/boulder-river-wilderness",
+    "https://www.fs.usda.gov/r06/mbs/recreation/wilderness-regulations",
+    "https://www.fs.usda.gov/r06/mbs/passes",
+    "https://www.fs.usda.gov/r06/mbs/alerts",
+    "https://www.mountaineers.org/activities/routes-places/darrington-area"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.10b",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106007016/total-soul",
+      "fact": "YDS 5.10b",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://climberkyle.com/2022/08/27/three-oclock-rock-silent-running-5-10a-and-total-soul-5-10b/",
+      "fact": "Total Soul (5.10b)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 8,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106007016/total-soul",
+      "fact": "Trad, 1000 ft (303 m), 8 pitches",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/81048-tr-darringon-three-oclock-rock-total-soul-722011",
+      "fact": "an eight pitch slab climb",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "length_m",
+    "value": 305,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106007016/total-soul",
+      "fact": "1000 ft (303 m); 1000 ft = 305 m",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_three_o_clock_rock_total_soul",
+    "column": "anchor",
+    "from": null,
+    "to": "Chain anchors",
+    "why": "MP states chains are in place at every belay. Lock (locked-1src) after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/106007016/total-soul"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_three_o_clock_rock_total_soul",
+    "column": "detailed_rack",
+    "from": null,
+    "to": "10-11 quickdraws and cams from 0.3 to 2 in; keep a #1 Camalot for the end of pitch 4. Most parties leave the nuts behind.",
+    "why": "Rack empty; MP lists gear 0.3-2 in, 10-11 draws, a #1 Camalot saved for the end of P4, nuts rarely used. Paragraph, not lockable.",
+    "evidence": [
+     "https://www.mountainproject.com/route/106007016/total-soul"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_three_o_clock_rock_total_soul",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Darrington Ranger District)",
+     "group_limit": 12,
+     "rules": "The Eight-Mile Trail to the rock enters the Boulder River Wilderness, where groups are capped at 12 people and stock combined."
+    },
+    "why": "Land manager: the Forest Service Eight-Mile Trail 654.02 page (Darrington Ranger District) says the trail is popular with climbers bound for Three O'Clock Rock and that it enters the Boulder River Wilderness; the forest's wilderness-regulations page sets the 12-person group cap. The stored text named the Glacier Peak Wilderness (wrong wilderness, templated) and a self-issue permit, which the forest's regulations page lists only for the Alpine Lakes Wilderness. No pass statement for this trailhead was found on an official page, so no parking_pass key is written. official-1, expires 2027-11-18. Lock official-1 after apply.",
+    "evidence": [
+     "https://www.fs.usda.gov/r06/mbs/recreation/trails/eight-mile-trail-65402",
+     "https://www.fs.usda.gov/r06/mbs/recreation/boulder-river-wilderness",
+     "https://www.fs.usda.gov/r06/mbs/recreation/wilderness-regulations"
+    ]
+   }
+  ],
+  "disputed": [
+   "commitment: stored III; MP states Grade II. Only one source, and commitment cannot be set from MP alone; held for the owner.",
+   "descent rappel count: CascadeClimbers 2011 says one single-rope rappel then 7 double-rope rappels; climberkyle 2022 says 6 double-rope rappels (old station gone); MP says two-rope rappels, one rap from the top of P2 to the ground. Count left out of the descent text."
+  ],
+  "notes": "FA HELD: MP alone gives Matt Perkins, David Whitelaw (1999); no second source opened (theCrag 403, SummitPost not tried per brief C). Bolts: MP's per-pitch counts total about 45 but P1 is approximate, so no bolts value is proposed. Hazard (single source, climberkyle 2022): a large rockfall above pitch 4 in 2019, and dirt on the lower pitches. descent_text is in set because three independent sources agree on rappelling the line with two ropes from a tree north of the top. Road/pass held as for Magic Bus. North Buttress line, start a few hundred yards left of where the trail meets the rock at Silent Running. OSM has a route_bottom node for Total Soul that links to MP (copied data, not used)."
+ },
+ "wa_three_o_clock_rock_till_broad_daylight": {
+  "area": "wa_three_o_clock_rock",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/106007005/till-broad-daylight",
+    "https://www.mountainproject.com/route/106813219/the-quin-konehead-pre-memorial-route-aka-the-kone",
+    "https://www.mountainproject.com/area/108543607/three-oclock-rock",
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/eight-mile-trail-65402",
+    "https://www.fs.usda.gov/r06/mbs/recreation/boulder-river-wilderness",
+    "https://www.fs.usda.gov/r06/mbs/recreation/wilderness-regulations",
+    "https://www.fs.usda.gov/r06/mbs/passes",
+    "https://www.fs.usda.gov/r06/mbs/alerts",
+    "https://www.mountaineers.org/activities/routes-places/darrington-area"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.9",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106007005/till-broad-daylight",
+      "fact": "YDS 5.9",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_three_o_clock_rock_till_broad_daylight",
+    "column": "pitches",
+    "from": null,
+    "to": 5,
+    "why": "MP's type line states 5 pitches. Ledger unconfirmed: the same page's description also describes a sixth pitch ending at anchors.",
+    "evidence": [
+     "https://www.mountainproject.com/route/106007005/till-broad-daylight"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_three_o_clock_rock_till_broad_daylight",
+    "column": "length_m",
+    "from": null,
+    "to": 121,
+    "why": "MP states 400 ft (121 m). Single source (theCrag 403). Lock (locked-1src) after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/106007005/till-broad-daylight"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_three_o_clock_rock_till_broad_daylight",
+    "column": "detailed_rack",
+    "from": null,
+    "to": "Light rack of cams to 1.5 in plus about 12 draws and slings; bring several long ones, as the line zigzags.",
+    "why": "Rack empty; MP lists a light rack to 1.5 in and a dozen runners and draws, with long runners for the wandering line. Paragraph, not lockable.",
+    "evidence": [
+     "https://www.mountainproject.com/route/106007005/till-broad-daylight"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_three_o_clock_rock_till_broad_daylight",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Darrington Ranger District)",
+     "group_limit": 12,
+     "rules": "The Eight-Mile Trail to the rock enters the Boulder River Wilderness, where groups are capped at 12 people and stock combined."
+    },
+    "why": "Land manager: the Forest Service Eight-Mile Trail 654.02 page (Darrington Ranger District) says the trail is popular with climbers bound for Three O'Clock Rock and that it enters the Boulder River Wilderness; the forest's wilderness-regulations page sets the 12-person group cap. The stored text named the Glacier Peak Wilderness (wrong wilderness, templated) and a self-issue permit, which the forest's regulations page lists only for the Alpine Lakes Wilderness. No pass statement for this trailhead was found on an official page, so no parking_pass key is written. official-1, expires 2027-11-18. Lock official-1 after apply.",
+    "evidence": [
+     "https://www.fs.usda.gov/r06/mbs/recreation/trails/eight-mile-trail-65402",
+     "https://www.fs.usda.gov/r06/mbs/recreation/boulder-river-wilderness",
+     "https://www.fs.usda.gov/r06/mbs/recreation/wilderness-regulations"
+    ]
+   }
+  ],
+  "disputed": [
+   "pitches: MP type line 5 pitches; its own description reaches a sixth pitch ending at anchors. Proposed 5 as unconfirmed."
+  ],
+  "notes": "FA HELD: MP alone, 'D. Whitelaw, C. Greyell (1st 2 pitches), ca. 1985' - partial and approximate. Descent HELD (MP alone): two ropes down the Tidbits line, or one 70 m rope down Gastroblast (a 60 m is 10-15 ft short). Route is on the South Buttress at the right edge of the Great Arch; pitch 5 joins The Kone at a chain belay. Road/pass held as for Magic Bus."
+ },
+ "wa_three_o_clock_rock_conan_s_crack": {
+  "area": "wa_three_o_clock_rock",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/108543607/three-oclock-rock",
+    "https://www.mountainproject.com/route/108543506/masters-of-the-universe",
+    "https://www.mountainproject.com/area/108543607/three-oclock-rock",
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/eight-mile-trail-65402",
+    "https://www.fs.usda.gov/r06/mbs/recreation/boulder-river-wilderness",
+    "https://www.fs.usda.gov/r06/mbs/recreation/wilderness-regulations",
+    "https://www.fs.usda.gov/r06/mbs/passes",
+    "https://www.fs.usda.gov/r06/mbs/alerts",
+    "https://www.mountaineers.org/activities/routes-places/darrington-area"
+   ]
+  },
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_three_o_clock_rock_conan_s_crack",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Darrington Ranger District)",
+     "group_limit": 12,
+     "rules": "The Eight-Mile Trail to the rock enters the Boulder River Wilderness, where groups are capped at 12 people and stock combined."
+    },
+    "why": "Land manager: the Forest Service Eight-Mile Trail 654.02 page (Darrington Ranger District) says the trail is popular with climbers bound for Three O'Clock Rock and that it enters the Boulder River Wilderness; the forest's wilderness-regulations page sets the 12-person group cap. The stored text named the Glacier Peak Wilderness (wrong wilderness, templated) and a self-issue permit, which the forest's regulations page lists only for the Alpine Lakes Wilderness. No pass statement for this trailhead was found on an official page, so no parking_pass key is written. official-1, expires 2027-11-18. Lock official-1 after apply.",
+    "evidence": [
+     "https://www.fs.usda.gov/r06/mbs/recreation/trails/eight-mile-trail-65402",
+     "https://www.fs.usda.gov/r06/mbs/recreation/boulder-river-wilderness",
+     "https://www.fs.usda.gov/r06/mbs/recreation/wilderness-regulations"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "STUCK: no open source states Conan's Crack's grade, pitches (stored 4), FA (stored Don Brooks, Brent Hoffman 1973) or gear (stored 'gear to 6 in'). MP has no route page; its Masters of the Universe page only places it left of that route on the South Buttress (photo caption 'Conan's Crack Area'). The stored values most likely came from theCrag, which answered 403 in Chrome and to WebFetch; SummitPost not tried per brief C. Nothing locked or changed beyond access."
+ },
+ "wa_three_o_clock_rock_rubber_soul": {
+  "area": "wa_three_o_clock_rock",
+  "review": {
+   "sources": [
+    "https://cascadeclimbers.com/forum/topic/50828-tr-darrington-three-oclock-rock-magic-bus-5112007",
+    "https://www.mountainproject.com/area/108543607/three-oclock-rock",
+    "https://www.mountainproject.com/area/108543607/three-oclock-rock",
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/eight-mile-trail-65402",
+    "https://www.fs.usda.gov/r06/mbs/recreation/boulder-river-wilderness",
+    "https://www.fs.usda.gov/r06/mbs/recreation/wilderness-regulations",
+    "https://www.fs.usda.gov/r06/mbs/passes",
+    "https://www.fs.usda.gov/r06/mbs/alerts",
+    "https://www.mountaineers.org/activities/routes-places/darrington-area"
+   ]
+  },
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_three_o_clock_rock_rubber_soul",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Darrington Ranger District)",
+     "group_limit": 12,
+     "rules": "The Eight-Mile Trail to the rock enters the Boulder River Wilderness, where groups are capped at 12 people and stock combined."
+    },
+    "why": "Land manager: the Forest Service Eight-Mile Trail 654.02 page (Darrington Ranger District) says the trail is popular with climbers bound for Three O'Clock Rock and that it enters the Boulder River Wilderness; the forest's wilderness-regulations page sets the 12-person group cap. The stored text named the Glacier Peak Wilderness (wrong wilderness, templated) and a self-issue permit, which the forest's regulations page lists only for the Alpine Lakes Wilderness. No pass statement for this trailhead was found on an official page, so no parking_pass key is written. official-1, expires 2027-11-18. Lock official-1 after apply.",
+    "evidence": [
+     "https://www.fs.usda.gov/r06/mbs/recreation/trails/eight-mile-trail-65402",
+     "https://www.fs.usda.gov/r06/mbs/recreation/boulder-river-wilderness",
+     "https://www.fs.usda.gov/r06/mbs/recreation/wilderness-regulations"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "STUCK: no open source states Rubber Soul's grade, pitches, length or FA. MP has no page. A 2007 CascadeClimbers thread places it on the North Buttress near the original Silent Running start, left of the long bushy seam that splits the buttress, and says it was less popular than Silent Running. A search-engine summary attributes '5.8 III' to theCrag, but theCrag is 403 and a summary is not evidence. Stored 5.8 / III / 'gear to 2 in' left as is, unverified."
+ }
+}
