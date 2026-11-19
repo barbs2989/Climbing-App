@@ -194,7 +194,7 @@ Three top-level `tab` values in `ClimbMatch.jsx` (`tab==="today"`, `tab==="crew"
    (`setCrewGearCount`, RPC `set_crew_gear_count`, `crew_members.gear_counts`); several climbers can bring one item and the counts add up, so "Quickdraws · 12 wanted" is
    covered only at 12. The list is only what the crew typed: nothing is drawn from the route or the members' profiles, and the card suggests no gear.
 4. **Messaging**: `sendCrewMessage`/`fetchOlderCrewMessages`, `sendDirectMessage`/`fetchMyDirectMessages`, read markers via `markCrewRead`/`fetchCrewLastReads`/`markDmThreadRead`.
-5. **Pinned states** follow the account (0187): `pinnedStates` state in `App`, saved by `savePinnedStates` (`profiles.pinned_states`). Offline downloads stay on the device
+5. **Pinned states** follow the account (0187; Home's card says so only to a guest, in one line — the signed-in explainer sentence was removed 2026-11-18): `pinnedStates` state in `App`, saved by `savePinnedStates` (`profiles.pinned_states`). Offline downloads stay on the device
    (`downloadedStates`, `dlLoaded`, `lib/offline.js`: `downloadStateOffline`, `removeStateOffline`, `packRouteOffline`).
    Home's pinned card (`TodayTab`) lists the pins A to Z, one row each: the name on the left, and on the right the
    device copy's age from `dlTimes` ("Last updated 3h ago") with an Update button (`updateState`), or Download for a pin
