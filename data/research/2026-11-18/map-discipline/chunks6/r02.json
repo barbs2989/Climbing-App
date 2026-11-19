@@ -1,0 +1,937 @@
+[
+ {
+  "id": "ca_glacier_ridge_standard_route",
+  "name": "Standard route",
+  "discipline": "mountaineering",
+  "grade": "Class 4",
+  "verdict": "SUMMIT_ONLY",
+  "state": "ca",
+  "peak": {
+   "id": "ca_glacier_ridge",
+   "name": "Glacier Ridge",
+   "lat": 36.6175,
+   "lng": -118.5589,
+   "elevation_ft": 12360,
+   "region": null,
+   "path": "usa.california.ca_high_sierra.ca_11_great_western_kings_kern_divide.ca_glacier_ridge"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": "Class 2 to the summit block, which is Class 4.",
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Lodgepole TH",
+    "lat": 36.604973,
+    "lng": -118.723059,
+    "km": 14.7
+   },
+   {
+    "src": "NPS",
+    "name": "Tokopah Falls",
+    "lat": 36.605023,
+    "lng": -118.722893,
+    "km": 14.7
+   },
+   {
+    "src": "NPS",
+    "name": "Twin Lakes",
+    "lat": 36.604973,
+    "lng": -118.723058,
+    "km": 14.7
+   },
+   {
+    "src": "NPS",
+    "name": "Lodgepole-Sherman Tree",
+    "lat": 36.604383,
+    "lng": -118.72581,
+    "km": 15
+   },
+   {
+    "src": "USFS",
+    "name": "SUGARLOAF HILL STAGING",
+    "lat": 36.728002,
+    "lng": -118.663445,
+    "km": 15.4
+   },
+   {
+    "src": "USFS",
+    "name": "Wolverton",
+    "lat": 36.596632,
+    "lng": -118.734168,
+    "km": 15.8
+   },
+   {
+    "src": "NPS",
+    "name": "Lakes Trail",
+    "lat": 36.596644,
+    "lng": -118.734257,
+    "km": 15.8
+   },
+   {
+    "src": "NPS",
+    "name": "Sherman Tree Parking Access",
+    "lat": 36.58466,
+    "lng": -118.749842,
+    "km": 17.4
+   },
+   {
+    "src": "NPS",
+    "name": "Sherman Tree",
+    "lat": 36.580732,
+    "lng": -118.752048,
+    "km": 17.7
+   },
+   {
+    "src": "USFS",
+    "name": "Crescent Meadow",
+    "lat": 36.554642,
+    "lng": -118.748928,
+    "km": 18.3
+   },
+   {
+    "src": "NPS",
+    "name": "High Sierra Trail",
+    "lat": 36.554944,
+    "lng": -118.748861,
+    "km": 18.3
+   },
+   {
+    "src": "NPS",
+    "name": "Sawtooth",
+    "lat": 36.453305,
+    "lng": -118.596761,
+    "km": 18.6
+   },
+   {
+    "src": "NPS",
+    "name": "Eagle-Mosquito",
+    "lat": 36.448545,
+    "lng": -118.595366,
+    "km": 19.1
+   },
+   {
+    "src": "NPS",
+    "name": "Farewell Gap - Franklin Lakes",
+    "lat": 36.44753,
+    "lng": -118.594135,
+    "km": 19.2
+   },
+   {
+    "src": "NPS",
+    "name": "Tar Gap",
+    "lat": 36.450721,
+    "lng": -118.614253,
+    "km": 19.2
+   },
+   {
+    "src": "NPS",
+    "name": "Paradise Ridge Trail",
+    "lat": 36.464986,
+    "lng": -118.670944,
+    "km": 19.7
+   },
+   {
+    "src": "NPS",
+    "name": "Atwell/Hockett",
+    "lat": 36.464576,
+    "lng": -118.670521,
+    "km": 19.7
+   },
+   {
+    "src": "NPS",
+    "name": "River Trail",
+    "lat": 36.79427,
+    "lng": -118.584209,
+    "km": 19.8
+   },
+   {
+    "src": "NPS",
+    "name": "Bubbs Creek, Woods Creek, and Rae Lakes  ",
+    "lat": 36.794924,
+    "lng": -118.582577,
+    "km": 19.8
+   },
+   {
+    "src": "USFS",
+    "name": "Cedar Grove",
+    "lat": 36.796368,
+    "lng": -118.58291,
+    "km": 20
+   }
+  ],
+  "firstPass": {
+   "why": "stuck: Only a SummitPost snippet (Cloud Canyon, three trailheads) seen; page 403.",
+   "trailhead": null,
+   "notes": "Only a SummitPost snippet (Cloud Canyon, three trailheads) seen; page 403."
+  },
+  "earlierPasses": {
+   "why": "held: agent flagged the identification as inferred/weak",
+   "trailhead": {
+    "name": "Wolverton Trailhead (Lakes Trail), Sequoia NP",
+    "identifiedBy": {
+     "kind": "page",
+     "url": "https://sites.google.com/view/wacziarg-climbing/2024-06-lion-lake-area-peaks",
+     "fact": "Wolverton Trailhead start; Lion Lake Pass into Cloud Canyon; slabs, class 3 chute, summit block class 4 by easiest side"
+    },
+    "placements": [
+     {
+      "source": "USFS",
+      "name": "Wolverton",
+      "lat": 36.596632,
+      "lng": -118.734168,
+      "url": ""
+     },
+     {
+      "source": "NPS",
+      "name": "Lakes Trail",
+      "lat": 36.596644,
+      "lng": -118.734257,
+      "url": ""
+     }
+    ]
+   },
+   "notes": "WEAK-ish: one trip report on this peak, and the peak has about three trailheads to Cloud Canyon (Wolverton, Marvin Pass, Avalanche Pass) plus the High Sierra Trail; Wolverton is one valid start, not proven the standard. The USFS and NPS points are the same lot from two datasets. Multi-day (3-4 days). The Marvin/Avalanche list comes from a search summary, page not opened."
+  },
+  "priorPass": {
+   "kind": "stuck",
+   "why": "Weak: one trip report via Wolverton; several approaches exist."
+  },
+  "lastPassNote": "SummitPost (403, search summary only) says the approach is via upper Cloud Canyon from three trailheads (Marvin Pass, Avalanche Pass, High Sierra Trail via Copp"
+ },
+ {
+  "id": "ca_lippincott_mountain_standard_route",
+  "name": "Standard route",
+  "discipline": "scrambling",
+  "grade": "Class 2",
+  "verdict": "SUMMIT_ONLY",
+  "state": "ca",
+  "peak": {
+   "id": "ca_lippincott_mountain",
+   "name": "Lippincott Mountain",
+   "lat": 36.5215,
+   "lng": -118.5631,
+   "elevation_ft": 12265,
+   "region": null,
+   "path": "usa.california.ca_sequoia_kings_canyon_np.ca_hamilton_lakes_and_valhalla.ca_lippincott_mountain"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "NPS",
+    "name": "Sawtooth",
+    "lat": 36.453305,
+    "lng": -118.596761,
+    "km": 8.2
+   },
+   {
+    "src": "NPS",
+    "name": "Eagle-Mosquito",
+    "lat": 36.448545,
+    "lng": -118.595366,
+    "km": 8.6
+   },
+   {
+    "src": "NPS",
+    "name": "Farewell Gap - Franklin Lakes",
+    "lat": 36.44753,
+    "lng": -118.594135,
+    "km": 8.7
+   },
+   {
+    "src": "NPS",
+    "name": "Tar Gap",
+    "lat": 36.450721,
+    "lng": -118.614253,
+    "km": 9.1
+   },
+   {
+    "src": "NPS",
+    "name": "Paradise Ridge Trail",
+    "lat": 36.464986,
+    "lng": -118.670944,
+    "km": 11.5
+   },
+   {
+    "src": "NPS",
+    "name": "Atwell/Hockett",
+    "lat": 36.464576,
+    "lng": -118.670521,
+    "km": 11.5
+   },
+   {
+    "src": "NPS",
+    "name": "Middle Fork Kaweah",
+    "lat": 36.527567,
+    "lng": -118.75126,
+    "km": 16.8
+   },
+   {
+    "src": "USFS",
+    "name": "Crescent Meadow",
+    "lat": 36.554642,
+    "lng": -118.748928,
+    "km": 17
+   },
+   {
+    "src": "USFS",
+    "name": "Lodgepole TH",
+    "lat": 36.604973,
+    "lng": -118.723059,
+    "km": 17
+   },
+   {
+    "src": "NPS",
+    "name": "Tokopah Falls",
+    "lat": 36.605023,
+    "lng": -118.722893,
+    "km": 17
+   },
+   {
+    "src": "NPS",
+    "name": "High Sierra Trail",
+    "lat": 36.554944,
+    "lng": -118.748861,
+    "km": 17
+   },
+   {
+    "src": "NPS",
+    "name": "Twin Lakes",
+    "lat": 36.604973,
+    "lng": -118.723058,
+    "km": 17
+   },
+   {
+    "src": "NPS",
+    "name": "Lodgepole-Sherman Tree",
+    "lat": 36.604383,
+    "lng": -118.72581,
+    "km": 17.2
+   },
+   {
+    "src": "USFS",
+    "name": "Wolverton",
+    "lat": 36.596632,
+    "lng": -118.734168,
+    "km": 17.4
+   },
+   {
+    "src": "NPS",
+    "name": "Lakes Trail",
+    "lat": 36.596644,
+    "lng": -118.734257,
+    "km": 17.4
+   },
+   {
+    "src": "NPS",
+    "name": "Paradise Creek",
+    "lat": 36.522122,
+    "lng": -118.763627,
+    "km": 17.9
+   },
+   {
+    "src": "NPS",
+    "name": "Sherman Tree Parking Access",
+    "lat": 36.58466,
+    "lng": -118.749842,
+    "km": 18.1
+   },
+   {
+    "src": "NPS",
+    "name": "Sherman Tree",
+    "lat": 36.580732,
+    "lng": -118.752048,
+    "km": 18.1
+   },
+   {
+    "src": "USFS",
+    "name": "SUGARLOAF HILL STAGING",
+    "lat": 36.728002,
+    "lng": -118.663445,
+    "km": 24.6
+   }
+  ],
+  "firstPass": {
+   "why": "stuck: Own text is empty; no route-specific page opened (Peakbagger human check, Nominatim 429, Wikipedia names none for this route). Retried after brief change: Summi",
+   "trailhead": null,
+   "notes": "Own text is empty; no route-specific page opened (Peakbagger human check, Nominatim 429, Wikipedia names none for this route). Retried after brief change: SummitPost 403, Peakbagger human check, hikespeak slug guesses timed out; Wikipedia has no trailhead."
+  },
+  "earlierPasses": {
+   "why": "held: agent flagged the identification as inferred/weak",
+   "trailhead": {
+    "name": "Mineral King trailhead (Farewell Gap / Franklin Lakes lot at the road end)",
+    "identifiedBy": {
+     "kind": "page",
+     "url": "https://www.climber.org/reports/1998/355.html",
+     "fact": "Trailhead: Mineral King; via Blackrock Pass to Little Five Lakes, ESE face, south ridge saddle, south face; SPS 2025 list: SE slope from Black Rock Pass Trail"
+    },
+    "placements": [
+     {
+      "source": "NPS",
+      "name": "Farewell Gap - Franklin Lakes",
+      "lat": 36.44753,
+      "lng": -118.594135,
+      "url": ""
+     },
+     {
+      "source": "NPS",
+      "name": "Sawtooth",
+      "lat": 36.453305,
+      "lng": -118.596761,
+      "url": ""
+     }
+    ]
+   },
+   "notes": "MODERATE: the report names Mineral King but not the exact lot; I read the Farewell Gap - Franklin Lakes lot as the Black Rock Pass start (not confirmed by a page), Sawtooth is the alternate 600 m away. The peak can also be reached from the High Sierra Trail side; no page opened for that."
+  },
+  "priorPass": {
+   "kind": "stuck",
+   "why": "Peakbagger unresponsive (fetches timed out). Earlier pass only names Mineral King generally (climber.org 1998/355), not the exact lot, and the High Sierra Trail"
+  },
+  "lastPassNote": "Two equally plausible starts: Mineral King via Glacier Pass or Timber Gap to Black Rock Pass and Little Five Lakes (climber.org 1998/355, which names Mineral Ki"
+ },
+ {
+  "id": "ca_merced_peak_standard_route",
+  "name": "Standard route",
+  "discipline": "scrambling",
+  "grade": "Class 2",
+  "verdict": "SUMMIT_ONLY",
+  "state": "ca",
+  "peak": {
+   "id": "ca_merced_peak",
+   "name": "Merced Peak",
+   "lat": 37.6348,
+   "lng": -119.3946,
+   "elevation_ft": 11726,
+   "region": null,
+   "path": "usa.california.ca_yosemite_national_park.ca_southern_yosemite.ca_merced_peak"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Quartz Mountain Trailhead",
+    "lat": 37.530826,
+    "lng": -119.447315,
+    "km": 12.5
+   },
+   {
+    "src": "USFS",
+    "name": "Fernandez Pass Trailhead",
+    "lat": 37.534696,
+    "lng": -119.298678,
+    "km": 14
+   },
+   {
+    "src": "NPS",
+    "name": "Mono Meadow Trailhead",
+    "lat": 37.671453,
+    "lng": -119.584778,
+    "km": 17.2
+   },
+   {
+    "src": "USFS",
+    "name": "GRIZZLY LAKE",
+    "lat": 37.490547,
+    "lng": -119.467449,
+    "km": 17.3
+   },
+   {
+    "src": "NPS",
+    "name": "Happy Isles Trailhead",
+    "lat": 37.732831,
+    "lng": -119.55779,
+    "km": 18
+   },
+   {
+    "src": "NPS",
+    "name": "Mirror Lake Trailhead",
+    "lat": 37.739523,
+    "lng": -119.559781,
+    "km": 18.6
+   },
+   {
+    "src": "NPS",
+    "name": "Ostrander Trailhead",
+    "lat": 37.666739,
+    "lng": -119.603609,
+    "km": 18.7
+   },
+   {
+    "src": "NPS",
+    "name": "Valley Trailhead Parking",
+    "lat": 37.734968,
+    "lng": -119.566518,
+    "km": 18.8
+   },
+   {
+    "src": "NPS",
+    "name": "Glacier Point Trailhead",
+    "lat": 37.727709,
+    "lng": -119.573491,
+    "km": 18.8
+   },
+   {
+    "src": "NPS",
+    "name": "Snow Creek Trailhead",
+    "lat": 37.759225,
+    "lng": -119.539376,
+    "km": 18.8
+   },
+   {
+    "src": "NPS",
+    "name": "Glacier Point Parking",
+    "lat": 37.726956,
+    "lng": -119.575298,
+    "km": 18.9
+   },
+   {
+    "src": "NPS",
+    "name": "Four Mile Trailhead (Glacier Point)",
+    "lat": 37.72885,
+    "lng": -119.573742,
+    "km": 18.9
+   },
+   {
+    "src": "NPS",
+    "name": "Sentinel Dome Trailhead",
+    "lat": 37.712552,
+    "lng": -119.586349,
+    "km": 19
+   },
+   {
+    "src": "NPS",
+    "name": "Curry Village Orchard Parking",
+    "lat": 37.738659,
+    "lng": -119.56951,
+    "km": 19.2
+   },
+   {
+    "src": "NPS",
+    "name": "Curry Village East Lot",
+    "lat": 37.737913,
+    "lng": -119.57,
+    "km": 19.2
+   },
+   {
+    "src": "NPS",
+    "name": "Curry Village West Lot",
+    "lat": 37.73884,
+    "lng": -119.572758,
+    "km": 19.5
+   },
+   {
+    "src": "NPS",
+    "name": "Bridalveil Creek Trailhead",
+    "lat": 37.661682,
+    "lng": -119.619448,
+    "km": 20
+   },
+   {
+    "src": "NPS",
+    "name": "Westfall Meadow Trailhead (Bridalveil Creek Campground)",
+    "lat": 37.663508,
+    "lng": -119.624382,
+    "km": 20.5
+   },
+   {
+    "src": "USFS",
+    "name": "BEASORE STAGING",
+    "lat": 37.447953,
+    "lng": -119.457997,
+    "km": 21.5
+   },
+   {
+    "src": "USFS",
+    "name": "Hells Half Acre Trailhead",
+    "lat": 37.438949,
+    "lng": -119.285613,
+    "km": 23.8
+   }
+  ],
+  "firstPass": {
+   "why": "stuck: Own text is empty; no route-specific page opened (Peakbagger human check, Nominatim 429, Wikipedia names none for this route). Wikipedia peak page (https://en.w",
+   "trailhead": null,
+   "notes": "Own text is empty; no route-specific page opened (Peakbagger human check, Nominatim 429, Wikipedia names none for this route). Wikipedia peak page (https://en.wikipedia.org/wiki/Merced_Peak) says approached from Quartz Mountain Trailhead or two trailheads on the Glacier Point road: ambiguous. Retried after brief change: SummitPost 403, Peakbagger human check, hikespeak slug guesses timed out; Wikipedia has no trailhead."
+  },
+  "earlierPasses": {
+   "why": "stuck: Two pages read (themtsarecalling, climber.org 2004/1314) both use Quartz Mountain Trailhead (USFS candidate at 37.530826,-119.447315), but Wikipedia and a searc",
+   "trailhead": null,
+   "notes": "Two pages read (themtsarecalling, climber.org 2004/1314) both use Quartz Mountain Trailhead (USFS candidate at 37.530826,-119.447315), but Wikipedia and a search summary say Mono Meadow/Glacier Point road trailheads are equally standard; the class 2 standard route is not shown to be the Quartz Mountain one. Two valid starts, no page says which is THIS route. SummitPost 403. Left stuck."
+  },
+  "priorPass": {
+   "kind": "stuck",
+   "why": "Two equally used starts: Quartz Mountain (USFS 37.530826,-119.447315) and Mono Meadow/Glacier Point road. Peakbagger unresponsive; not resolved."
+  },
+  "lastPassNote": "Two equally used starts confirmed: Quartz Mountain TH (USFS 37.530826,-119.447315; shortest, ~16 mi, per SummitPost summary) and Mono Meadow TH (NPS 37.671453,-"
+ },
+ {
+  "id": "ca_mount_corcoran_standard_route",
+  "name": "Standard route",
+  "discipline": "scrambling",
+  "grade": "Class 2",
+  "verdict": "SUMMIT_ONLY",
+  "state": "ca",
+  "peak": {
+   "id": "ca_mount_corcoran",
+   "name": "Mount Corcoran",
+   "lat": 36.5386,
+   "lng": -118.2505,
+   "elevation_ft": 13714,
+   "region": null,
+   "path": "usa.california.ca_high_sierra.ca_14_whitney_surrounding_peaks.ca_mount_corcoran"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Whitney Portal Trailhead",
+    "lat": 36.586905,
+    "lng": -118.240112,
+    "km": 5.5
+   },
+   {
+    "src": "USFS",
+    "name": "MEYSAN LAKE TH",
+    "lat": 36.589789,
+    "lng": -118.230163,
+    "km": 6
+   },
+   {
+    "src": "USFS",
+    "name": "TUTTLE CREEK TH",
+    "lat": 36.553705,
+    "lng": -118.184212,
+    "km": 6.2
+   },
+   {
+    "src": "USFS",
+    "name": "Whitney Portal NRT Trailhead",
+    "lat": 36.597405,
+    "lng": -118.186412,
+    "km": 8.7
+   },
+   {
+    "src": "USFS",
+    "name": "Cottonwood Lakes Trailhead",
+    "lat": 36.453362,
+    "lng": -118.169987,
+    "km": 11.9
+   },
+   {
+    "src": "USFS",
+    "name": "Cottonwood Pass Trailhead",
+    "lat": 36.448305,
+    "lng": -118.170612,
+    "km": 12.3
+   },
+   {
+    "src": "USFS",
+    "name": "Shepherd Pass Th",
+    "lat": 36.726905,
+    "lng": -118.278912,
+    "km": 21.1
+   },
+   {
+    "src": "NPS",
+    "name": "Cemetery Parking",
+    "lat": 36.725198,
+    "lng": -118.162135,
+    "km": 22.2
+   },
+   {
+    "src": "NPS",
+    "name": "Cemetery Parking",
+    "lat": 36.725769,
+    "lng": -118.161778,
+    "km": 22.3
+   },
+   {
+    "src": "NPS",
+    "name": " ",
+    "lat": 36.728353,
+    "lng": -118.146862,
+    "km": 23
+   }
+  ],
+  "firstPass": {
+   "why": "stuck: Own text is empty; no route-specific page opened (Peakbagger human check, Nominatim 429, Wikipedia names none for this route). Retried after brief change: Summi",
+   "trailhead": null,
+   "notes": "Own text is empty; no route-specific page opened (Peakbagger human check, Nominatim 429, Wikipedia names none for this route). Retried after brief change: SummitPost 403, Peakbagger human check, hikespeak slug guesses timed out; Wikipedia has no trailhead."
+  },
+  "earlierPasses": {
+   "why": "held: agent flagged the identification as inferred/weak",
+   "trailhead": {
+    "name": "Meysan Lakes Trailhead (Whitney Portal), Inyo NF",
+    "identifiedBy": {
+     "kind": "page",
+     "url": "https://www.climber.org/reports/2009/1710.html",
+     "fact": "Trailhead field: Meysan Lake Trailhead; 2007 report (climber.org/reports/2007/1609.html) Trailhead: Whitney Portal; Corcoran via North Notch from Meysan Lakes basin"
+    },
+    "placements": [
+     {
+      "source": "USFS",
+      "name": "MEYSAN LAKE TH",
+      "lat": 36.589789,
+      "lng": -118.230163,
+      "url": ""
+     },
+     {
+      "source": "USFS",
+      "name": "Whitney Portal Trailhead",
+      "lat": 36.586905,
+      "lng": -118.240112,
+      "url": ""
+     }
+    ]
+   },
+   "notes": "WEAK-MEDIUM: stored route has no text and Corcoran also has a west-side approach (Horseshoe Meadow via Miter Basin). East side is what both climber.org reports use, so likely the standard. Two USFS points ~0.9 km apart: Meysan Lake TH is the foot of the Meysan trail; Whitney Portal TH is the main lot. SummitPost 403."
+  },
+  "priorPass": {
+   "kind": "stuck",
+   "why": "Earlier pass: Meysan Lakes/Whitney Portal east side from two climber.org reports (1609, 1710), also west approach via Horseshoe Meadow. Not strengthened; no pag"
+  },
+  "lastPassNote": "SummitPost 403. Search summary: three approaches (Meysan Lakes off Whitney Portal Rd, Turtle Creek via Horseshoe Meadows Rd, Miter Basin from Horseshoe Meadow);"
+ },
+ {
+  "id": "ca_mount_davis_southeast_slopes_from_north_glacier_pass",
+  "name": "Southeast Slopes from North Glacier Pass",
+  "discipline": "scrambling",
+  "grade": "Class 2",
+  "verdict": "SUMMIT_ONLY",
+  "state": "ca",
+  "peak": {
+   "id": "ca_mount_davis",
+   "name": "Mount Davis",
+   "lat": 37.7149,
+   "lng": -119.2195,
+   "elevation_ft": 12303,
+   "region": null,
+   "path": "usa.california.ca_high_sierra.ca_04_ritter_minarets.ca_mount_davis"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": "Walk to Thousand Island Lake and North Glacier Pass, then up easy slopes. The hard part is picking the true summit among bumps.",
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "FERN/YOST TH",
+    "lat": 37.761788,
+    "lng": -119.113341,
+    "km": 10.7
+   },
+   {
+    "src": "USFS",
+    "name": "YOST LAKE TH",
+    "lat": 37.761811,
+    "lng": -119.113265,
+    "km": 10.7
+   },
+   {
+    "src": "USFS",
+    "name": "Shadow Lake Trailhead",
+    "lat": 37.682096,
+    "lng": -119.08618,
+    "km": 12.3
+   },
+   {
+    "src": "USFS",
+    "name": "High Trail Trailhead",
+    "lat": 37.682905,
+    "lng": -119.084413,
+    "km": 12.4
+   },
+   {
+    "src": "USFS",
+    "name": "Agnew Mead. Wildflower Th",
+    "lat": 37.681083,
+    "lng": -119.080672,
+    "km": 12.8
+   },
+   {
+    "src": "USFS",
+    "name": "JOHN MUIR TRAIL NORTH TH",
+    "lat": 37.6272,
+    "lng": -119.085702,
+    "km": 15.3
+   },
+   {
+    "src": "USFS",
+    "name": "MINARET LAKE TH",
+    "lat": 37.62724,
+    "lng": -119.085818,
+    "km": 15.3
+   },
+   {
+    "src": "USFS",
+    "name": "FERN LAKE (D52)TH",
+    "lat": 37.62725,
+    "lng": -119.085834,
+    "km": 15.3
+   },
+   {
+    "src": "USFS",
+    "name": "Sotcher Lake Trailhead",
+    "lat": 37.627205,
+    "lng": -119.076613,
+    "km": 15.9
+   },
+   {
+    "src": "USFS",
+    "name": "FISH CREEK TH",
+    "lat": 37.614231,
+    "lng": -119.076571,
+    "km": 16.8
+   },
+   {
+    "src": "NPS",
+    "name": "Rainbow Falls Trailhead",
+    "lat": 37.614303,
+    "lng": -119.076609,
+    "km": 16.8
+   },
+   {
+    "src": "USFS",
+    "name": "Rainbow Falls Trailhead",
+    "lat": 37.613905,
+    "lng": -119.076613,
+    "km": 16.9
+   },
+   {
+    "src": "USFS",
+    "name": "PARKER LAKE TH",
+    "lat": 37.853005,
+    "lng": -119.134513,
+    "km": 17.1
+   },
+   {
+    "src": "USFS",
+    "name": "Glass Creek Meadow Trailhead",
+    "lat": 37.748985,
+    "lng": -119.022887,
+    "km": 17.7
+   },
+   {
+    "src": "USFS",
+    "name": "Walker Lake Trailhead",
+    "lat": 37.872305,
+    "lng": -119.159113,
+    "km": 18.3
+   },
+   {
+    "src": "USFS",
+    "name": "Inyo Craters Trailhead",
+    "lat": 37.688105,
+    "lng": -119.006313,
+    "km": 19
+   },
+   {
+    "src": "NPS",
+    "name": "Mono/Parker Pass Trailhead",
+    "lat": 37.89091,
+    "lng": -119.262696,
+    "km": 19.9
+   },
+   {
+    "src": "NPS",
+    "name": "Dog Lake Trailhead Parking",
+    "lat": 37.878162,
+    "lng": -119.338857,
+    "km": 21
+   },
+   {
+    "src": "NPS",
+    "name": "Dog Lake Trailhead",
+    "lat": 37.878407,
+    "lng": -119.338986,
+    "km": 21
+   },
+   {
+    "src": "NPS",
+    "name": "Elizabeth Lake Trailhead",
+    "lat": 37.870604,
+    "lng": -119.355807,
+    "km": 21.1
+   }
+  ],
+  "firstPass": {
+   "why": "stuck: Own text does not name a single trailhead (several plausible starts); no route-specific page opened (Peakbagger human check, Nominatim 429, Wikipedia names none",
+   "trailhead": null,
+   "notes": "Own text does not name a single trailhead (several plausible starts); no route-specific page opened (Peakbagger human check, Nominatim 429, Wikipedia names none for this route). Retried after brief change: SummitPost 403, Peakbagger human check, hikespeak slug guesses timed out; Wikipedia has no trailhead."
+  },
+  "earlierPasses": {
+   "why": "held: agent flagged the identification as inferred/weak",
+   "trailhead": {
+    "name": "Agnew Meadows Trailhead (River Trail / High Trail to Thousand Island Lake)",
+    "identifiedBy": {
+     "kind": "page",
+     "url": "https://www.climber.org/reports/2006/1567.html",
+     "fact": "Trailhead Agnew Meadow; PCT to Thousand Island Lake then Glacier Pass to Lake Catherine and Davis class 2; also justindong.squarespace.com (High Trail / River Trail)"
+    },
+    "placements": [
+     {
+      "source": "USFS",
+      "name": "Agnew Mead. Wildflower Th",
+      "lat": 37.681083,
+      "lng": -119.080672,
+      "url": ""
+     },
+     {
+      "source": "USFS",
+      "name": "High Trail Trailhead",
+      "lat": 37.682905,
+      "lng": -119.084413,
+      "url": ""
+     }
+    ]
+   },
+   "notes": "WEAK: route text only says walk to Thousand Island Lake; two trailheads serve it: Agnew Meadows (3 pages) and Rush Creek (1 page). Agnew chosen as most used. The two USFS points are ~0.4 km apart; the River Trail start at Agnew Meadows is not separately in the USFS list, so a human should pick the lot. No second independent placement."
+  },
+  "priorPass": {
+   "kind": "stuck",
+   "why": "Agnew Meadows (3 pages) vs Rush Creek both reach Thousand Island Lake; equally used, so stuck. Wikipedia names no trailhead."
+  },
+  "lastPassNote": "Two equally used starts to Thousand Island Lake: Rush Creek (themtsarecalling.com, opened) and Agnew Meadows (earlier climber.org report; a one-day report per s"
+ }
+]

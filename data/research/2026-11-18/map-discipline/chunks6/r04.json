@@ -1,0 +1,454 @@
+[
+ {
+  "id": "ca_silver_peak_standard_route",
+  "name": "Standard route",
+  "discipline": "scrambling",
+  "grade": "Class 2",
+  "verdict": "SUMMIT_ONLY",
+  "state": "ca",
+  "peak": {
+   "id": "ca_silver_peak",
+   "name": "Silver Peak",
+   "lat": 37.4697,
+   "lng": -119.0212,
+   "elevation_ft": 11878,
+   "region": null,
+   "path": "usa.california.ca_high_sierra.ca_05_convict_lake_mcgee_creek.ca_silver_peak"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Rush Creek Trailhead",
+    "lat": 37.469635,
+    "lng": -119.077143,
+    "km": 4.9
+   },
+   {
+    "src": "USFS",
+    "name": "BEAR CREEK",
+    "lat": 37.382877,
+    "lng": -119.01976,
+    "km": 9.7
+   },
+   {
+    "src": "USFS",
+    "name": "Mono Creek Trailhead",
+    "lat": 37.381365,
+    "lng": -118.997556,
+    "km": 10
+   },
+   {
+    "src": "USFS",
+    "name": "Bear Ridge Cutoff",
+    "lat": 37.362469,
+    "lng": -118.98554,
+    "km": 12.3
+   },
+   {
+    "src": "USFS",
+    "name": "Duck Pass Trailhead",
+    "lat": 37.591205,
+    "lng": -118.989213,
+    "km": 13.8
+   },
+   {
+    "src": "USFS",
+    "name": "T.J. Lake Trailhead",
+    "lat": 37.598925,
+    "lng": -119.003379,
+    "km": 14.5
+   },
+   {
+    "src": "USFS",
+    "name": "Deer Lake Th",
+    "lat": 37.603516,
+    "lng": -119.011199,
+    "km": 14.9
+   },
+   {
+    "src": "USFS",
+    "name": "Bear Creek Trailhead",
+    "lat": 37.335376,
+    "lng": -118.974645,
+    "km": 15.5
+   },
+   {
+    "src": "USFS",
+    "name": "Red Cones Th",
+    "lat": 37.612945,
+    "lng": -119.02116,
+    "km": 15.9
+   },
+   {
+    "src": "USFS",
+    "name": "Mammoth Pass Trailhead",
+    "lat": 37.613024,
+    "lng": -119.021391,
+    "km": 15.9
+   },
+   {
+    "src": "USFS",
+    "name": "MAM MT, BOTTEMLESS PIT, ETC TH",
+    "lat": 37.615505,
+    "lng": -119.011113,
+    "km": 16.2
+   },
+   {
+    "src": "USFS",
+    "name": "MONO CROSSING",
+    "lat": 37.324319,
+    "lng": -119.068593,
+    "km": 16.7
+   },
+   {
+    "src": "USFS",
+    "name": "Mammoth Rock Th",
+    "lat": 37.618505,
+    "lng": -118.993313,
+    "km": 16.7
+   },
+   {
+    "src": "USFS",
+    "name": "Portal Forebay Trailhead",
+    "lat": 37.323907,
+    "lng": -119.067756,
+    "km": 16.7
+   },
+   {
+    "src": "USFS",
+    "name": "Rainbow Falls Trailhead",
+    "lat": 37.613905,
+    "lng": -119.076613,
+    "km": 16.8
+   },
+   {
+    "src": "NPS",
+    "name": "Rainbow Falls Trailhead",
+    "lat": 37.614303,
+    "lng": -119.076609,
+    "km": 16.8
+   }
+  ],
+  "priorPass": {
+   "kind": "hold",
+   "th": "Onion Spring Trailhead (Lake Edison)",
+   "why": [
+    "no placement"
+   ],
+   "notes": "Not in USFS list (Mono Creek TH is on the far side of the lake). Report 2013/1835 also lists Lake Edison as trailhead. Name only, needs placing."
+  },
+  "lastPassNote": "Two equally used starts: Lake Edison / Vermilion Valley Resort trailhead (2013, 2018 reports) and Onion Springs OHV-road trailhead (2002 report, about 5 mi up O"
+ },
+ {
+  "id": "ca_spanish_needle_north_ridge",
+  "name": "North Ridge",
+  "discipline": "scrambling",
+  "grade": "Class 3",
+  "verdict": "SUMMIT_ONLY",
+  "state": "ca",
+  "peak": {
+   "id": "ca_spanish_needle",
+   "name": "Spanish Needle",
+   "lat": 35.7714,
+   "lng": -118.0014,
+   "elevation_ft": 7841,
+   "region": null,
+   "path": "usa.california.ca_southern_sierra.ca_spanish_needle"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": "Reach the Pacific Crest Trail saddle north of the summit, then climb the north ridge. Expect loose rock, side-hilling and tricky chute-finding on exposed third class.",
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [],
+  "officialCandidates": [],
+  "firstPass": {
+   "why": "held: no placement; agent flagged the identification as inferred/weak",
+   "trailhead": {
+    "name": "PCT crossing at Canebrake Road",
+    "identifiedBy": {
+     "kind": "page",
+     "url": "https://climber.org/reports/2013/1828.html",
+     "fact": "Climber.org 2013 report Sawtooth Peak and Spanish Needle: Trailhead PCT crossing at Canebrake Rd"
+    },
+    "placements": []
+   },
+   "notes": "Another report (2006/1559) used Chimney Creek Campground, so more than one start exists; route text (PCT saddle north of summit) fits the PCT start. Name only. Lower confidence."
+  },
+  "earlierPasses": {
+   "why": "held: only non-land-manager placements (other)",
+   "trailhead": {
+    "name": "Pacific Crest Trail at Canebrake Road (park at Chimney Creek Campground)",
+    "identifiedBy": {
+     "kind": "page",
+     "url": "https://climber.org/reports/2013/1828.html",
+     "fact": "Trailhead: PCT crossing at Canebrake Rd; PCT south to a broad saddle ~1/2 mi north of the peak; traverse east of the north ridge, class 3. Route text here: PCT saddle north of summit"
+    },
+    "placements": [
+     {
+      "source": "BLM",
+      "name": "Chimney Creek Campground",
+      "lat": 35.83917,
+      "lng": -118.0423,
+      "url": "https://www.blm.gov/visit/chimney-creek-campground"
+     },
+     {
+      "source": "climber.org driving page",
+      "name": "CHMCMP Chimney Peak campground",
+      "lat": 35.83884,
+      "lng": -118.04312,
+      "url": "https://climber.org/driving/images/canebrake.gpx"
+     },
+     {
+      "source": "climber.org driving page",
+      "name": "CANPCT Canebrake Rd at Pacific Crest Tr",
+      "lat": 35.835717,
+      "lng": -118.043983,
+      "url": "https://climber.org/driving/canebrake.html"
+     }
+    ]
+   },
+   "notes": "Confirmed by the report, climber.org's Canebrake driving page and BLM (PCT crosses Canebrake Rd just south of the campground). The 2006 report (1559) also started at Chimney Creek. Another start (Rodecker Flat, east) is said to exist for the north ridge; I did not read a page on it."
+  },
+  "priorPass": {
+   "kind": "hold",
+   "th": "Pacific Crest Trail at Canebrake Road (park at Chimney Creek Campground)",
+   "why": [
+    "only non-land-manager placements (other)"
+   ],
+   "notes": "Confirmed by the report, climber.org's Canebrake driving page and BLM (PCT crosses Canebrake Rd just south of the campground). The 2006 report (1559) also started at Chimney Creek. Another start (Rode"
+  },
+  "lastPassNote": "Three real starts (Chimney campground + PCT, Canebrake Rd saddle/Lamont TH, Rodecker Flat). Route text (PCT saddle north of summit) fits the PCT/Chimney start b"
+ },
+ {
+  "id": "ca_trojan_peak_standard_route",
+  "name": "Standard route",
+  "discipline": "scrambling",
+  "grade": "Class 2",
+  "verdict": "SUMMIT_ONLY",
+  "state": "ca",
+  "peak": {
+   "id": "ca_trojan_peak",
+   "name": "Trojan Peak",
+   "lat": 36.6422,
+   "lng": -118.3152,
+   "elevation_ft": 13947,
+   "region": null,
+   "path": "usa.california.ca_high_sierra.ca_13_shepherd_pass.ca_trojan_peak"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Whitney Portal Trailhead",
+    "lat": 36.586905,
+    "lng": -118.240112,
+    "km": 9.1
+   },
+   {
+    "src": "USFS",
+    "name": "MEYSAN LAKE TH",
+    "lat": 36.589789,
+    "lng": -118.230163,
+    "km": 9.6
+   },
+   {
+    "src": "USFS",
+    "name": "Shepherd Pass Th",
+    "lat": 36.726905,
+    "lng": -118.278912,
+    "km": 10
+   },
+   {
+    "src": "USFS",
+    "name": "Whitney Portal NRT Trailhead",
+    "lat": 36.597405,
+    "lng": -118.186412,
+    "km": 12.5
+   },
+   {
+    "src": "USFS",
+    "name": "Onion Valley Campground",
+    "lat": 36.772538,
+    "lng": -118.341244,
+    "km": 14.7
+   },
+   {
+    "src": "USFS",
+    "name": "TUTTLE CREEK TH",
+    "lat": 36.553705,
+    "lng": -118.184212,
+    "km": 15.3
+   },
+   {
+    "src": "NPS",
+    "name": "Cemetery Parking",
+    "lat": 36.725198,
+    "lng": -118.162135,
+    "km": 16.5
+   },
+   {
+    "src": "NPS",
+    "name": "Cemetery Parking",
+    "lat": 36.725769,
+    "lng": -118.161778,
+    "km": 16.5
+   },
+   {
+    "src": "NPS",
+    "name": " ",
+    "lat": 36.728353,
+    "lng": -118.146862,
+    "km": 17.8
+   },
+   {
+    "src": "USFS",
+    "name": "Baxter Pass Trailhead",
+    "lat": 36.844705,
+    "lng": -118.297612,
+    "km": 22.6
+   },
+   {
+    "src": "USFS",
+    "name": "Cottonwood Lakes Trailhead",
+    "lat": 36.453362,
+    "lng": -118.169987,
+    "km": 24.7
+   }
+  ],
+  "firstPass": {
+   "why": "stuck: Climber.org reports conflict: 2012/1815 and 2001/839 use Shepherd Pass, 2006/1475 and 2007/1577 use George Creek. No page says which is the standard route. Shep",
+   "trailhead": null,
+   "notes": "Climber.org reports conflict: 2012/1815 and 2001/839 use Shepherd Pass, 2006/1475 and 2007/1577 use George Creek. No page says which is the standard route. Shepherd Pass Th (USFS 36.726905,-118.278912) is a candidate."
+  },
+  "earlierPasses": {
+   "why": "stuck: Still stuck. Route has no text and no page names a single standard route. mtnmouse calls George Creek (east side, no signed trailhead, about 6,320 ft) the short",
+   "trailhead": null,
+   "notes": "Still stuck. Route has no text and no page names a single standard route. mtnmouse calls George Creek (east side, no signed trailhead, about 6,320 ft) the shortest and easiest approach to the SE slopes; the Secor class 2 NW face route is reached from Shepherd Pass (USFS Shepherd Pass Th 36.726905,-118.278912; climber.org says the hiker lot is past the stock trailhead). SummitPost and Peakbagger returned 403. Both approaches are class 2 on the peak; picking one would be a guess."
+  },
+  "priorPass": {
+   "kind": "stuck",
+   "why": "Two equal class 2 approaches (George Creek east side; Shepherd Pass NW face). Wikipedia names no trailhead. Stays stuck."
+  },
+  "lastPassNote": "Two equal class 2 approaches: George Creek (east, shortest, no signed trailhead) and Shepherd Pass. Sierra Club ratings list both. SummitPost not opened. Stays "
+ },
+ {
+  "id": "co_culebra_peak_northwest_ridge",
+  "name": "Northwest Ridge",
+  "discipline": "scrambling",
+  "grade": "Class 2",
+  "verdict": "SUMMIT_ONLY",
+  "state": "co",
+  "peak": {
+   "id": "co_culebra_peak",
+   "name": "Culebra Peak",
+   "lat": 37.1224,
+   "lng": -105.1858,
+   "elevation_ft": 14053,
+   "region": null,
+   "path": "usa.colorado.co_sangre_de_cristo_range.co_culebra_peak"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "North Fork-Purgatoire Trailhead",
+    "lat": 37.254653,
+    "lng": -105.10941,
+    "km": 16.2
+   },
+   {
+    "src": "USFS",
+    "name": "North Fork Trailhead",
+    "lat": 37.303063,
+    "lng": -105.139415,
+    "km": 20.5
+   },
+   {
+    "src": "USFS",
+    "name": "Indian Creek-Bear Lake Trailhead",
+    "lat": 37.326377,
+    "lng": -105.143495,
+    "km": 23
+   }
+  ],
+  "priorPass": {
+   "kind": "hold",
+   "th": "Cielo Vista Ranch headquarters (Culebra Peak, private)",
+   "why": [
+    "no placement"
+   ],
+   "notes": "Nominatim/Overpass not used per brief v2. Private land, fee. None of the official candidates (16+ km north) applies. Needs a coordinate for the ranch North HQ gate."
+  },
+  "lastPassNote": "Stuck: three equally listed starts, and the page prints no coordinates for any. All parties check in at ranch HQ. Official candidates 16+ km away do not apply."
+ },
+ {
+  "id": "ny_couchsachraga_peak_via_santanoni_ridge",
+  "name": "Via Santanoni ridge",
+  "discipline": "scrambling",
+  "grade": "Class 2",
+  "verdict": "SUMMIT_ONLY",
+  "state": "ny",
+  "peak": {
+   "id": "ny_couchsachraga_peak",
+   "name": "Couchsachraga Peak",
+   "lat": 44.0956,
+   "lng": -74.1602,
+   "elevation_ft": 3820,
+   "region": null,
+   "path": "usa.new_york.ny_adirondacks.ny_e_high_peaks_region.ny_couchsachraga_peak"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": "Reached along the ridge beyond Santanoni; the boggy col below it is notoriously wet. Path: Santanoni Express herd path and ridge from Upper Works. Starts at Upper Works, Newcomb.",
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [],
+  "officialCandidates": [],
+  "priorPass": {
+   "kind": "hold",
+   "th": "Upper Works Trailhead",
+   "why": [
+    "no placement"
+   ],
+   "notes": "No coordinate found."
+  },
+  "lastPassNote": "stored text says Upper Works but names Bradley Pond / Santanoni Express trail; find the signed trailhead those trails start at and an official (NYSDEC) or OSM coordinate"
+ }
+]

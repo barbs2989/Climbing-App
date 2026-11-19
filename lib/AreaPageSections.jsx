@@ -8,8 +8,8 @@
 //   - the chart's headline is the SUM OF ITS BARS, and a remainder the bars do not show is
 //     said in words ("+N not typed") rather than hidden in the headline;
 //   - the grade spread draws ONE discipline on ONE scale at a time, and offers every discipline the area
-//     has as a chip (and every scale that discipline is graded on), so no climb sits on a chart the
-//     climber cannot pick.
+//     has as a chip (and every scale that discipline is really graded on there: one holding under 5% of
+//     the discipline's graded climbs is a filing stray and gets no chip, see SCALE_MIN_SHARE).
 import { useState } from "react";
 import { AREA_EDIT_FIELDS, MONTH_ABBR, monthsLabel, myPendingAreaEdits } from "./areaFields";
 import { DISC_COLORS } from "./disciplines";
@@ -147,8 +147,13 @@ export function ClimbsChart({ stats, loading, error, C, discOptions, onDisc, chi
 // discipline. Make sure every dicipline is its own chip if there's that type of climbing in that area"): one
 // chip per DISCIPLINE with a graded climb here (area_climb_stats.by_grade_disc, 0476), in this order. It was one
 // chip per grading scale, which drew trad, sport and top rope as a single "Rock". A discipline graded on more
-// than one scale here (alpine: 5.x and Class) gets a second chip row for the scale, so no climb is on a chart
-// nobody can open.
+// than one scale here (alpine: 5.x and Class) gets a second chip row for the scale.
+// A SLIVER IS NOT A SCALE (owner, 2026-11-18, "do what you recommend"): Washington's Sport chip offered
+// "5.x · Class" for 3 climbs filed on a Class grade out of 4,938, and Bouldering "5.x · V" for a handful, so
+// nearly every chip grew a second row and the chart moved down for nothing. A scale holding less than this share
+// of the picked discipline's graded climbs here gets no chip. Those few climbs are then on no chart; they are
+// still counted under "Climbs here by type" and listed in the Route finder.
+const SCALE_MIN_SHARE = 0.05;
 const DISC_ORDER = ["trad", "sport", "toprope", "bouldering", "alpine", "ice", "mixed", "aid", "mountaineering", "scrambling", "hiking"];
 const ROPED_ROCK = ["trad", "sport", "toprope"];
 const SYS_ORDER = ["yds", "v", "wi", "m", "aid", "class", "snow"];
@@ -209,8 +214,10 @@ export function GradeSpread({ stats, C, standalone, bare, onGrade }) {
   const mine = rows.filter(g => g.disc === disc);
   const bySys = {};
   for (const g of mine) bySys[g.sys] = (bySys[g.sys] || 0) + g.n;
-  // Every scale the picked discipline is graded on is a chip too; it opens on the one with the most climbs.
-  const scales = [...SYS_ORDER.filter(k => bySys[k]), ...Object.keys(bySys).filter(k => !SYS_ORDER.includes(k))];
+  // Every scale the picked discipline is graded on is a chip too, a sliver aside (SCALE_MIN_SHARE; the biggest of
+  // at most seven scales always clears 5%); it opens on the one with the most climbs. With no discipline (climbs
+  // filed with no type, or an answer from before 0476) a small scale is a whole discipline, not a stray: all stay.
+  const scales = [...SYS_ORDER.filter(k => bySys[k]), ...Object.keys(bySys).filter(k => !SYS_ORDER.includes(k))].filter(k => !disc || bySys[k] >= byDisc[disc] * SCALE_MIN_SHARE);
   const sys = pickedSys && bySys[pickedSys] ? pickedSys : scales.slice().sort((x, y) => bySys[y] - bySys[x])[0];
   const cols = mine.filter(g => g.sys === sys).map(g => ({ b: g.b, n: g.n })).sort((x, y) => x.b - y.b);
   if (!cols.length) return null;
