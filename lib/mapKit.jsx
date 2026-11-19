@@ -654,7 +654,8 @@ export function useFollowMe(mapRef, { C, zoom = 15, onFix } = {}) {
       navigator.permissions.query({ name: "geolocation" }).then((p) => { if (p && p.state === "granted") locate(true); }, () => {});
     } catch (e) {}
   };
-  return { locate: () => locate(false), showDot, release, locating, following, acc, lost, err };
+  // `asking`: err is the browser's-question line, an instruction and not a failure, so a map can draw it calmly.
+  return { locate: () => locate(false), showDot, release, locating, following, acc, lost, err, asking: err === ASK_MSG };
 }
 // The locate button's words. Once following, the label IS the accuracy, in the climber's units, so
 // "a little off" is something the screen states rather than something you discover at the crag.
@@ -663,7 +664,7 @@ export function fmtFixAcc(m) {
   return loadUnits() === "metric" ? Math.round(m) + " m" : Math.round(m * 3.28084).toLocaleString() + " ft";
 }
 export function locateLabel(st, idle) {
-  if (st.locating) return "Locating…";
+  if (st.locating) return st.asking ? "Allow location" : "Locating…";
   if (st.following) return st.lost ? "No GPS fix" : st.acc != null ? "±" + fmtFixAcc(st.acc) : idle;
   return idle;
 }

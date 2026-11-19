@@ -1,0 +1,604 @@
+{
+ "wa_great_northern_slab": {
+  "area": "wa_great_northern_slab",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/105790657/great-northern-slab",
+    "https://www.mountainproject.com/area/105790646/great-northern-slab",
+    "https://www.thecrag.com/en/climbing/united-states/central-cascade-mountains/area/16775707",
+    "https://rakkup.com/guidebook/index-rock-climbing/the-great-northern-slab/s10833",
+    "https://rakkup.com/guidebook/index-rock-climbing/the-great-northern-slab/c28146",
+    "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks",
+    "https://washingtonclimbers.org/index.php/2026/03/12/climbers-donate-index-town-wall-to-washington-state-parks/"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.7",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105790657/great-northern-slab",
+      "fact": "5.7",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.thecrag.com/en/climbing/united-states/central-cascade-mountains/area/16775707",
+      "fact": "Great Northern Slab 5.7 Trad 140ft",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://rakkup.com/guidebook/index-rock-climbing/the-great-northern-slab/c28146",
+      "fact": "The Great Northern Slab, 5.7 (Kalman/Van Biene guide)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "discipline",
+    "value": "trad",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105790657/great-northern-slab",
+      "fact": "Trad",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.thecrag.com/en/climbing/united-states/central-cascade-mountains/area/16775707",
+      "fact": "Trad",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Paul Guimarin, Philip Leatherman",
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105790657/great-northern-slab",
+      "fact": "FA: Paul Guimarin and Philip Leatherman (no year)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_great_northern_slab",
+    "column": "pitches",
+    "from": 0,
+    "to": 3,
+    "why": "pitches = 0 is invalid. MP states 3 pitches (P1 5.2, P2 5.7, P3 5.7+), all belays bolted. theCrag gives no count; the Rakkup guide's teaser says it can be done in one super-long pitch (rest paywalled). Single source for the count.",
+    "evidence": [
+     "https://www.mountainproject.com/route/105790657/great-northern-slab",
+     "https://rakkup.com/guidebook/index-rock-climbing/the-great-northern-slab/c28146"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_great_northern_slab",
+    "column": "access",
+    "from": {
+     "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+     "notes": "Many of these peaks (Mount Persis, Gunn Peak, Baring Mountain area) sit outside designated wilderness — administratively unrestricted despite serious technical terrain.",
+     "permit": "None required.",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+     "parking_pass": "Northwest Forest Pass or America the Beautiful pass required at developed trailheads."
+    },
+    "to": {
+     "land_manager": "Washington State Parks (Forks of the Sky State Park)"
+    },
+    "why": "Stored access is the pasted Mt. Baker-Snoqualmie NF template (Persis/Gunn/Baring, NW Forest Pass) - false at Index. State Parks release 2026-03-13: the WCC donated the ~20-acre Lower Town Wall (bought after the 2009 no-trespassing signs) and State Parks manages it as part of Forks of the Sky State Park. Same fix as batch F (Godzilla, Japanese Gardens). No official page names a pass for this lot, so only the land manager is proposed.",
+    "evidence": [
+     "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks",
+     "https://washingtonclimbers.org/index.php/2026/03/12/climbers-donate-index-town-wall-to-washington-state-parks/"
+    ]
+   }
+  ],
+  "disputed": [
+   "length_m (null): MP 250 ft (76 m, 3 pitches) vs theCrag 140 ft - not proposed"
+  ],
+  "notes": "The route row's id equals its area id (wa_great_northern_slab) - the route is filed inside an area of the same name; fine, but the owner may want to know. MP: rappel the route; two 60 m ropes reach the ground from the P2 station; rack to 3 in plus runners. hazards string is the area-wide template, not verified."
+ },
+ "wa_japanese_gardens_to_1st_anchor": {
+  "area": "wa_dwarf_tossing_to_narrow_arrow",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/119361117/japanese-gardens-to-1st-anchor",
+    "https://www.mountainproject.com/route/105791008/japanese-gardens",
+    "https://www.mountainproject.com/area/105790707/dwarf-tossing-to-narrow-arrow",
+    "https://www.thecrag.com/en/climbing/united-states/central-cascade-mountains/area/16775827",
+    "https://rakkup.com/guidebook/index-rock-climbing/lower-town-wall/s10403",
+    "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks",
+    "https://washingtonclimbers.org/index.php/2026/03/12/climbers-donate-index-town-wall-to-washington-state-parks/"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.10a",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119361117/japanese-gardens-to-1st-anchor",
+      "fact": "5.10a",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "length_m",
+    "value": 12,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119361117/japanese-gardens-to-1st-anchor",
+      "fact": "Trad, 40 ft (12 m)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 1,
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119361117/japanese-gardens-to-1st-anchor",
+      "fact": "abridged first pitch of Japanese Gardens, to the lower anchors (count implied, not stated)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_japanese_gardens_to_1st_anchor",
+    "column": "fa",
+    "from": "Lowell Anderson, Dave Page, Jim Stoddard. FFA: Terry Lien, Jon Nelson",
+    "to": "Lowell Anderson, Dave Page, Jim Stoddard",
+    "why": "fa holds the FFA too; split it into ffa (proposed together). MP only.",
+    "evidence": [
+     "https://www.mountainproject.com/route/119361117/japanese-gardens-to-1st-anchor"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_japanese_gardens_to_1st_anchor",
+    "column": "ffa",
+    "from": null,
+    "to": "Terry Lien, Jon Nelson",
+    "why": "Moved out of fa (see above). MP only.",
+    "evidence": [
+     "https://www.mountainproject.com/route/119361117/japanese-gardens-to-1st-anchor"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_japanese_gardens_to_1st_anchor",
+    "column": "access",
+    "from": {
+     "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+     "notes": "Many of these peaks (Mount Persis, Gunn Peak, Baring Mountain area) sit outside designated wilderness — administratively unrestricted despite serious technical terrain.",
+     "permit": "None required.",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+     "parking_pass": "Northwest Forest Pass or America the Beautiful pass required at developed trailheads."
+    },
+    "to": {
+     "land_manager": "Washington State Parks (Forks of the Sky State Park)"
+    },
+    "why": "Stored access is the pasted Mt. Baker-Snoqualmie NF template (Persis/Gunn/Baring, NW Forest Pass) - false at Index. State Parks release 2026-03-13: the WCC donated the ~20-acre Lower Town Wall (bought after the 2009 no-trespassing signs) and State Parks manages it as part of Forks of the Sky State Park. Same fix as batch F (Godzilla, Japanese Gardens). No official page names a pass for this lot, so only the land manager is proposed.",
+    "evidence": [
+     "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks",
+     "https://washingtonclimbers.org/index.php/2026/03/12/climbers-donate-index-town-wall-to-washington-state-parks/"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "theCrag and the Rakkup guide list only the full 4-pitch Japanese Gardens (P1 5.11c on theCrag), not this 'to 1st anchor' variant; MP keeps it as its own entry (an abridged P1 ending at the lower anchors, single rack to 4 in). Overlaps catalog row wa_japanese_gardens - a variant of that line, not a duplicate row; owner call whether it stays separate."
+ },
+ "wa_princely_ambitions": {
+  "area": "wa_dwarf_tossing_to_narrow_arrow",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/105790710/princely-ambitions",
+    "https://www.thecrag.com/en/climbing/united-states/central-cascade-mountains/area/16775827",
+    "https://rakkup.com/guidebook/index-rock-climbing/lower-town-wall/s10403",
+    "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks",
+    "https://washingtonclimbers.org/index.php/2026/03/12/climbers-donate-index-town-wall-to-washington-state-parks/"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.9",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105790710/princely-ambitions",
+      "fact": "5.9",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.thecrag.com/en/climbing/united-states/central-cascade-mountains/area/16775827",
+      "fact": "Princely Ambitions 5.9 Trad 210ft, 2 pitches",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://rakkup.com/guidebook/index-rock-climbing/lower-town-wall/s10403",
+      "fact": "Princely Ambitions 5.9 (Kalman/Van Biene guide)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 2,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105790710/princely-ambitions",
+      "fact": "Trad, 2 pitches, Grade II",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.thecrag.com/en/climbing/united-states/central-cascade-mountains/area/16775827",
+      "fact": "2 pitches: 5.9 45m, 5.8 20m",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "discipline",
+    "value": "trad",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105790710/princely-ambitions",
+      "fact": "Trad",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.thecrag.com/en/climbing/united-states/central-cascade-mountains/area/16775827",
+      "fact": "Trad",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Clint Cummins, Jeremy Metz, 6/1977",
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105790710/princely-ambitions",
+      "fact": "FA: Clint Cummins, Jeremy Metz, 6/1977",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_princely_ambitions",
+    "column": "length_m",
+    "from": null,
+    "to": 64,
+    "why": "theCrag: 210 ft (64 m), pitches 45 m + 20 m. MP gives no length. Single source - owner decides.",
+    "evidence": [
+     "https://www.thecrag.com/en/climbing/united-states/central-cascade-mountains/area/16775827"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_princely_ambitions",
+    "column": "bolts",
+    "from": null,
+    "to": 1,
+    "why": "MP: one bolt on P1 at the start of the traverse (formerly two). Single source.",
+    "evidence": [
+     "https://www.mountainproject.com/route/105790710/princely-ambitions"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_princely_ambitions",
+    "column": "access",
+    "from": {
+     "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+     "notes": "Many of these peaks (Mount Persis, Gunn Peak, Baring Mountain area) sit outside designated wilderness — administratively unrestricted despite serious technical terrain.",
+     "permit": "None required.",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+     "parking_pass": "Northwest Forest Pass or America the Beautiful pass required at developed trailheads."
+    },
+    "to": {
+     "land_manager": "Washington State Parks (Forks of the Sky State Park)"
+    },
+    "why": "Stored access is the pasted Mt. Baker-Snoqualmie NF template (Persis/Gunn/Baring, NW Forest Pass) - false at Index. State Parks release 2026-03-13: the WCC donated the ~20-acre Lower Town Wall (bought after the 2009 no-trespassing signs) and State Parks manages it as part of Forks of the Sky State Park. Same fix as batch F (Godzilla, Japanese Gardens). No official page names a pass for this lot, so only the land manager is proposed.",
+    "evidence": [
+     "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks",
+     "https://washingtonclimbers.org/index.php/2026/03/12/climbers-donate-index-town-wall-to-washington-state-parks/"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "MP: rappel the route with two 60 m ropes; bolted stations atop both pitches; rack to 3-4 in, a small cam helps on the traverse. Stored pitch_detail (5.9, 5.8) matches MP and theCrag."
+ },
+ "wa_libra_crack": {
+  "area": "wa_great_northern_slab",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/105795777/libra-crack",
+    "https://www.mountainproject.com/route/106620653/pisces",
+    "https://www.mountainproject.com/area/105790646/great-northern-slab",
+    "https://www.thecrag.com/en/climbing/united-states/central-cascade-mountains/area/16775707",
+    "https://www.thecrag.com/en/climbing/united-states/central-cascade-mountains/route/21045991",
+    "https://rakkup.com/guidebook/index-rock-climbing/the-great-northern-slab/s10833",
+    "https://rakkup.com/guidebook/index-rock-climbing/pisces/c21059",
+    "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks",
+    "https://washingtonclimbers.org/index.php/2026/03/12/climbers-donate-index-town-wall-to-washington-state-parks/"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.10a/b",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105795777/libra-crack",
+      "fact": "5.10a/b",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "discipline",
+    "value": "trad",
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105795777/libra-crack",
+      "fact": "Trad",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_libra_crack",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "pitches = 0 is invalid. MP calls it 'this short pitch' (40 ft) - one pitch.",
+    "evidence": [
+     "https://www.mountainproject.com/route/105795777/libra-crack"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_libra_crack",
+    "column": "length_m",
+    "from": null,
+    "to": 12,
+    "why": "MP: Trad, 40 ft (12 m). Single source.",
+    "evidence": [
+     "https://www.mountainproject.com/route/105795777/libra-crack"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_libra_crack",
+    "column": "access",
+    "from": {
+     "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+     "notes": "Many of these peaks (Mount Persis, Gunn Peak, Baring Mountain area) sit outside designated wilderness — administratively unrestricted despite serious technical terrain.",
+     "permit": "None required.",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+     "parking_pass": "Northwest Forest Pass or America the Beautiful pass required at developed trailheads."
+    },
+    "to": {
+     "land_manager": "Washington State Parks (Forks of the Sky State Park)"
+    },
+    "why": "Stored access is the pasted Mt. Baker-Snoqualmie NF template (Persis/Gunn/Baring, NW Forest Pass) - false at Index. State Parks release 2026-03-13: the WCC donated the ~20-acre Lower Town Wall (bought after the 2009 no-trespassing signs) and State Parks manages it as part of Forks of the Sky State Park. Same fix as batch F (Godzilla, Japanese Gardens). No official page names a pass for this lot, so only the land manager is proposed.",
+    "evidence": [
+     "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks",
+     "https://washingtonclimbers.org/index.php/2026/03/12/climbers-donate-index-town-wall-to-washington-state-parks/"
+    ]
+   }
+  ],
+  "disputed": [
+   "fa: stored 'Mark Weigelt, Mike Berman 1969'; MP says FA unknown - stored value has no source found, left as is",
+   "identity/alt_names: MP lists Libra Crack (5.10a/b, 40 ft) and Pisces (5.6) as separate routes; theCrag and the Rakkup guide have no Libra Crack but a 'Pisces' at 5.10a (theCrag 140 ft). The catalog cross-labels them: wa_libra_crack alt_names ['Pisces'] and wa_pisces (5.6, pitches 0) alt_names ['Libra Crack (the 10a start)']. Likely the guidebook's Pisces = Libra Crack start + the upper crack. Owner call"
+  ],
+  "notes": "MP: hand crack right of a huge eyebolt, tight hands to fists in ~20 ft, one set of cams. Catalog defect: wa_pisces also stored with pitches 0."
+ },
+ "wa_city_park": {
+  "area": "wa_dwarf_tossing_to_narrow_arrow",
+  "set": {
+   "fa": "Roger Johnson, Richard Mathies, 1966"
+  },
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/106328525/city-park",
+    "https://www.mountainproject.com/area/105790707/dwarf-tossing-to-narrow-arrow",
+    "https://www.thecrag.com/en/climbing/united-states/central-cascade-mountains/area/16775827",
+    "https://www.thecrag.com/en/climbing/united-states/central-cascade-mountains/route/19182787",
+    "https://rakkup.com/guidebook/index-rock-climbing/city-park/c18756",
+    "https://rakkup.com/guidebook/index-rock-climbing/lower-town-wall/s10403",
+    "https://alpinist.com/?p=48458",
+    "https://climbing-history.org/climb/1469",
+    "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks",
+    "https://washingtonclimbers.org/index.php/2026/03/12/climbers-donate-index-town-wall-to-washington-state-parks/"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.13d",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.thecrag.com/en/climbing/united-states/central-cascade-mountains/route/19182787",
+      "fact": "City Park 5.13d, P1 5.13d 35m",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://alpinist.com/?p=48458",
+      "fact": "crux first pitch 5.13c/d",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 4,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106328525/city-park",
+      "fact": "Trad, 350 ft (106 m), 4 pitches",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://alpinist.com/?p=48458",
+      "fact": "four pitches; first 5.13c/d, upper three no harder than 5.10",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "discipline",
+    "value": "trad",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106328525/city-park",
+      "fact": "Trad",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.thecrag.com/en/climbing/united-states/central-cascade-mountains/route/19182787",
+      "fact": "TRAD",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Roger Johnson, Richard Mathies, 1966",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106328525/city-park",
+      "fact": "FA: Roger Johnson, Richard Mathies, 1966",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://alpinist.com/?p=48458",
+      "fact": "first climbed (aid) by Roger Johnson and Richard Mathies, 1966",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "ffa",
+    "value": "Todd Skinner 1986",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106328525/city-park",
+      "fact": "FFA: Todd Skinner, 1986",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://alpinist.com/?p=48458",
+      "fact": "freed by Todd Skinner, 1986",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://climbing-history.org/climb/1469",
+      "fact": "Todd Skinner 1986, worked",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_city_park",
+    "column": "aid_grade",
+    "from": null,
+    "to": "C1",
+    "why": "P1 goes free at 5.13 or at C1 (MP: '.13+ or C1'); theCrag also lists 'City Park (aid)' at C1. aid_grade_num 1 (gradeNumFrom('C1','aid')).",
+    "evidence": [
+     "https://www.mountainproject.com/route/106328525/city-park",
+     "https://www.thecrag.com/en/climbing/united-states/central-cascade-mountains/area/16775827"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_city_park",
+    "column": "aid_grade_num",
+    "from": null,
+    "to": 1,
+    "why": "goes with aid_grade C1",
+    "evidence": [
+     "https://www.mountainproject.com/route/106328525/city-park"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_city_park",
+    "column": "access",
+    "from": {
+     "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+     "notes": "Many of these peaks (Mount Persis, Gunn Peak, Baring Mountain area) sit outside designated wilderness — administratively unrestricted despite serious technical terrain.",
+     "permit": "None required.",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+     "parking_pass": "Northwest Forest Pass or America the Beautiful pass required at developed trailheads."
+    },
+    "to": {
+     "land_manager": "Washington State Parks (Forks of the Sky State Park)"
+    },
+    "why": "Stored access is the pasted Mt. Baker-Snoqualmie NF template (Persis/Gunn/Baring, NW Forest Pass) - false at Index. State Parks release 2026-03-13: the WCC donated the ~20-acre Lower Town Wall (bought after the 2009 no-trespassing signs) and State Parks manages it as part of Forks of the Sky State Park. Same fix as batch F (Godzilla, Japanese Gardens). No official page names a pass for this lot, so only the land manager is proposed.",
+    "evidence": [
+     "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks",
+     "https://washingtonclimbers.org/index.php/2026/03/12/climbers-donate-index-town-wall-to-washington-state-parks/"
+    ]
+   }
+  ],
+  "disputed": [
+   "grade: free grade of the crux P1 - theCrag 5.13d, Alpinist 5.13c/d, MP 5.13+ (8b), Rakkup (Kalman/Van Biene guide) 5.13c, Gripped 5.13+. Locked 5.13d on theCrag + Alpinist; the current guidebook's 5.13c is the dissent",
+   "length_m 107: MP 350 ft (4 pitches); theCrag 180 ft (55 m) for 2 pitches (35 m + 20 m); not locked",
+   "pitches: theCrag lists only 2 (5.13d, 5.10b); MP and Alpinist give 4 (P3 ~5.10, P4 5.9+, which MP says only 'apparently' go free). Majority 4 locked"
+  ],
+  "notes": "Free grade / pitch answer: the hard free climbing is ONE pitch, P1 (~35 m, bolt ladder start into a pin-scarred tips splitter), 5.13d (theCrag) / 5.13c/d (Alpinist) / 5.13c (Rakkup); the full line is 4 pitches (P2 5.10b, P3 ~5.10, P4 5.9+). Most free ascents stop at the P1 anchor. fa set strips the pasted 'FFA: Todd Skinner, 1986' (already in ffa). Catalog: wa_city_park_p2 (5.10b) and wa_city_park_bolt_ladder (5.10b sport) are separate rows for parts of this line, mirroring MP's separate entries - owner call. Pitch_detail P1 note 'historically graded America's hardest crack' is unverified. Rack: nuts and cams down to 00 (Alpinist, MP). Ascent history: Skinner and Herr used pre-placed gear; Mikey Schaefer made the first redpoint placing gear on lead (Alpinist 2005, climbing-history 2006 - year disagrees)."
+ }
+}
