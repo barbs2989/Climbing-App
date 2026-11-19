@@ -21,7 +21,7 @@ import { routeInList, listPeaks, peakClimbed, FIFTY_CLASSICS } from "./lib/lists
 import { splitParagraphs, seasonWindowMonths } from "./EnrichmentPanels";
 import { renderToStaticMarkup } from "react-dom/server";
 import { loadLeaflet, applyBaseLayer, BaseLayerToggle, pinHtml, useFollowMe, locateLabel } from "./lib/mapKit";
-import { displayGrade, gradeSources } from "./lib/grade";
+import { displayGrade, gradeSources, splitProtection } from "./lib/grade";
 import { useRecentRouteIds } from "./lib/recent";
 import { POP_BACK, POP_CLOSE, POP_REMOVE, POP_CHIP_X } from "./lib/popupChrome.js";
 import { fromThumb } from "./lib/photoThumb";
@@ -356,7 +356,7 @@ function gradeLabelRaw(r){return gradeSources(r)[0]||"";}
    COMMITMENT grade, not a difficulty. Slesse's NE Buttress read "V" in this pill while the CRUX
    GRADE tile below it read "5.9 A2". See displayGrade() in lib/grade.js. */
 function gradeLabel(r){return displayGrade(r);}
-function routeGradeVal(r){var gl=ADDR_GRADES[catOf(r)]||ADDR_YDS;var i=gl.indexOf(gradeLabel(r));return i<0?-1:i/gl.length;}
+function routeGradeVal(r){var gl=ADDR_GRADES[catOf(r)]||ADDR_YDS;var i=gl.indexOf(splitProtection(gradeLabel(r)).grade);return i<0?-1:i/gl.length;}
 function suggGainFt(r){return r.gainFt!=null?r.gainFt:(r.gain_ft!=null?r.gain_ft:null);}
 /* One climber's grade/gain centre for ONE discipline. Split out because three callers now
    accumulate the same shape from different evidence: completed logs, and climbs merely
