@@ -1,0 +1,1769 @@
+{
+ "date": "2026-11-18",
+ "convention": "summitTimeHrs = camp to summit one way; summit day hours = summitTimeHrs + return to camp; descentTimeHrs = everything after the summit",
+ "applied": [
+  {
+   "id": "rainier_central_mowich_face",
+   "confidence": "medium",
+   "from": null,
+   "to": [
+    7,
+    9,
+    6,
+    22
+   ],
+   "why": "Timing was null and the summit day's 14 h mixed the climb with the carry-over. Reports run 7.5 h (fast skiers) to 14 h camp to summit, so the one-way summit leg is 9 h; summit to Schurman about 3 h, and Schurman to White River about 2.25-2.5 h for strong parties, set to 3 h.",
+   "legs": {
+    "thToCamp": 7,
+    "campToSummit": 9,
+    "summitToCamp": 3,
+    "campToTh": 3,
+    "summitToTh": null,
+    "note": "summitToCamp = summit to Camp Schurman (carry-over); campToTh = Schurman to White River"
+   },
+   "evidence": [
+    {
+     "url": "https://turns-all-year.com/trip-reports/july-21-23-2016-mt-rainier-central-mowich-face",
+     "says": "Ski party: Mowich Lake to 8,100 ft Edmunds divide camp in about 8.5 h (late start); camp 4:15 AM to top of face 9:30 AM (5.25 h) and Columbia Crest 11:45 AM (7.5 h)."
+    },
+    {
+     "url": "https://alpinedave.com/mt_rainier/mowich/mowich.htm",
+     "says": "Climbing party: 9 h to a 9,600 ft camp; 12 h from camp to Liberty Cap and about 14 h to the summit (left 3 AM, summit 5 PM); under 3 h summit to Camp Muir."
+    },
+    {
+     "url": "https://cascadeclimbers.com/forum/topic/103382-tr-mt-rainier-central-mowich-face-iv-ai2-60-degrees-07132019",
+     "says": "403; search snippet: about 13 h camp to camp from a high bivy."
+    },
+    {
+     "url": "https://stephabegg.com/?p=8881",
+     "says": "Ptarmigan Ridge carry-over, same descent: Liberty Cap to Camp Schurman 2.5 h, Schurman to White River car 2.5 h."
+    },
+    {
+     "url": "https://mountaineers.org/activities/trip-reports/mount-rainier-ptarmigan-ridge",
+     "says": "403; search snippet: about 3 h Liberty Cap to Camp Schurman and about 2.25 h Schurman to the car."
+    },
+    {
+     "url": "https://turns-all-year.com/trip-reports/tahoma-central-mowich-face",
+     "says": "Fast single push from the Mowich road gate: Observation Rock by 5 AM, summit about 2 PM; no camp."
+    },
+    {
+     "url": "https://upwardescape.blogspot.com/2012/08",
+     "says": "Camp at 8,600 ft above Observation Rock, left about 5 AM; unplanned bivy below the summit; no leg durations."
+    }
+   ]
+  },
+  {
+   "id": "wa_amphitheater_mountain_middle_finger_buttress_left_side",
+   "confidence": "medium",
+   "from": [
+    null,
+    null,
+    null,
+    null
+   ],
+   "to": [
+    8.5,
+    3.5,
+    8.5,
+    20.5
+   ],
+   "why": "All timing legs were null and two of three day hours were missing. Hike in set to 8.5 hr from reports of 6, 8-10 and 10+ hr; the 4-pitch route is a half-day outing 10-15 min from camp (3.5 hr camp to top), about 1.5 hr down the crest and gully to camp; hike out 7 hr is estimated from the hike-in reports (no sourced figure). Summit day hours = camp-to-top plus the return to camp.",
+   "legs": {
+    "thToCamp": 8.5,
+    "campToSummit": 3.5,
+    "summitToCamp": 1.5,
+    "campToTh": 7,
+    "summitToTh": null
+   },
+   "evidence": [
+    {
+     "url": "https://www.countryhighpoints.com/cathedral-peak-and-amphitheater-mountain/",
+     "says": "Fetched: fast solo hiker reached Upper Cathedral Lake about 6 hours after leaving the trailhead (7:45am start); whole car-to-car day with both peaks about 16 hours."
+    },
+    {
+     "url": "https://cascadeclimbers.com/forum/topic/102109-tr-pasayten-wilderness-cathedral-and-amphitheater-se-buttress-of-cathedral-peak-and-finger-of-fatwa-on-middle-finger-buttress-on-amphitheatre-mountain-08312018",
+     "says": "(403; search snippet) 2018 party: approach from Andrews Creek trailhead 8-10 hours; walk from Upper Cathedral Lake to the Amphitheater buttresses 15-45 minutes."
+    },
+    {
+     "url": "https://stephabegg.com/trip-reports/washington/pasayten-2016/",
+     "says": "Fetched: 19-mile hike in to Upper Cathedral Lake took 10+ hours (wet brush, thundershower); hike out a 19-mile slog with no time stated; summit-to-camp from neighbouring Cathedral Peak 45 min."
+    },
+    {
+     "url": "https://mountaineers.org/activities/routes-places/cathedral-peak-amphitheater-mountain",
+     "says": "(403; search snippet) approach to Upper Cathedral Lake roughly 18 miles; no hours."
+    },
+    {
+     "url": "https://mountainproject.com/area/109095714/cathedral-peak?print=1",
+     "says": "(snippet) Andrews Creek Trail approach 18 miles to Upper Cathedral Lake; no hours."
+    },
+    {
+     "url": "https://www.yellowleaf.org/scramble/g/r/2013-09-07-pasayten.html",
+     "says": "Fetched: Cathedral + Amphitheater as a 3-day car-to-car trip; no leg times."
+    },
+    {
+     "url": "https://cascadeclimbers.com/forum/topic/26806-tr-6-days-and-6-routes-in-the-pasayten-wilderness-part-2-7282004",
+     "says": "(403; search snippets) about 10 minutes around Upper Cathedral Lake to the Left-Side Route of Middle Finger Buttress, which the party started in the afternoon; Pilgrimage to Mecca (II 5.9) starts about five minutes from camp and is a great half-day climb."
+    },
+    {
+     "url": "https://cascadeclimbers.com/forum/tags/pasayten",
+     "says": "(snippet) Left-Side Route reached in about 10 minutes around the lake; 4 pitches, about 500 ft, 5.10b/c."
+    },
+    {
+     "url": "https://www.mountainproject.com/area/109096109/amphitheatre-mountain",
+     "says": "(snippet) Middle Finger Buttress - Left Side listed as 4-pitch trad/alpine; no hours."
+    }
+   ]
+  },
+  {
+   "id": "wa_amphitheater_mountain_pilgrimage_to_mecca",
+   "confidence": "medium",
+   "from": [
+    0.25,
+    null,
+    null,
+    null
+   ],
+   "to": [
+    8.5,
+    3.5,
+    8.5,
+    20.5
+   ],
+   "why": "approachTimeHrs held only the 0.25 hr camp-to-base walk and the other legs were null. Under the multi-day split the approach is now the 8.5 hr hike in (reports 6, 8-10, 10+ hr); the half-day route is 3.5 hr camp to top, about 1.5 hr back to camp via the saddle and trail; hike out 7 hr estimated. Summit day hours = camp-to-top plus the return to camp.",
+   "legs": {
+    "thToCamp": 8.5,
+    "campToSummit": 3.5,
+    "summitToCamp": 1.5,
+    "campToTh": 7,
+    "summitToTh": null
+   },
+   "evidence": [
+    {
+     "url": "https://www.countryhighpoints.com/cathedral-peak-and-amphitheater-mountain/",
+     "says": "Fetched: fast solo hiker reached Upper Cathedral Lake about 6 hours after leaving the trailhead (7:45am start); whole car-to-car day with both peaks about 16 hours."
+    },
+    {
+     "url": "https://cascadeclimbers.com/forum/topic/102109-tr-pasayten-wilderness-cathedral-and-amphitheater-se-buttress-of-cathedral-peak-and-finger-of-fatwa-on-middle-finger-buttress-on-amphitheatre-mountain-08312018",
+     "says": "(403; search snippet) 2018 party: approach from Andrews Creek trailhead 8-10 hours; walk from Upper Cathedral Lake to the Amphitheater buttresses 15-45 minutes."
+    },
+    {
+     "url": "https://stephabegg.com/trip-reports/washington/pasayten-2016/",
+     "says": "Fetched: 19-mile hike in to Upper Cathedral Lake took 10+ hours (wet brush, thundershower); hike out a 19-mile slog with no time stated; summit-to-camp from neighbouring Cathedral Peak 45 min."
+    },
+    {
+     "url": "https://mountaineers.org/activities/routes-places/cathedral-peak-amphitheater-mountain",
+     "says": "(403; search snippet) approach to Upper Cathedral Lake roughly 18 miles; no hours."
+    },
+    {
+     "url": "https://mountainproject.com/area/109095714/cathedral-peak?print=1",
+     "says": "(snippet) Andrews Creek Trail approach 18 miles to Upper Cathedral Lake; no hours."
+    },
+    {
+     "url": "https://www.yellowleaf.org/scramble/g/r/2013-09-07-pasayten.html",
+     "says": "Fetched: Cathedral + Amphitheater as a 3-day car-to-car trip; no leg times."
+    },
+    {
+     "url": "https://cascadeclimbers.com/forum/topic/26806-tr-6-days-and-6-routes-in-the-pasayten-wilderness-part-2-7282004",
+     "says": "(403; search snippets) about 10 minutes around Upper Cathedral Lake to the Left-Side Route of Middle Finger Buttress, which the party started in the afternoon; Pilgrimage to Mecca (II 5.9) starts about five minutes from camp and is a great half-day climb."
+    },
+    {
+     "url": "https://mountainproject.com/route/114974294/pilgrimage-to-mecca",
+     "says": "(snippet) 4 pitches, 450 ft; descend east to the Amphitheater saddle and the trail south back around to Upper Cathedral Lake; no hours."
+    },
+    {
+     "url": "https://stg.openbeta.io/climb/0f840b52-ef2a-5f6c-a4cb-27237dc9a103/pilgrimage-to-mecca",
+     "says": "(snippet) walk to the buttress from camp about 15 minutes."
+    },
+    {
+     "url": "https://cascadeclimbers.com/forum/topic/69170-tr-cathedral-provincial-park-and-pasayten-wilderness-mmg-traverse-cathedral-seb-pilgrimage-to-mecca-8232009",
+     "says": "(403; snippet) 2009 party camped at Upper Cathedral Lake and climbed the route the next day; no hours in snippet."
+    }
+   ]
+  },
+  {
+   "id": "wa_bears_breast_mountain_southwest_face",
+   "confidence": "medium",
+   "from": [
+    null,
+    6,
+    4.7,
+    null
+   ],
+   "to": [
+    4.75,
+    6,
+    9.25,
+    20
+   ],
+   "why": "Summit and return legs (6 up, ~4.75 back) already came from a real report, but approach, hike-out and total were blank (old A/S/D/T null/6/4.7/null). Two reports agree on ~4.75 hr to the gap and ~11 hr camp to camp; the 2020 party walked out in ~4.5 hr.",
+   "legs": {
+    "thToCamp": 4.75,
+    "campToSummit": 6,
+    "summitToCamp": 4.75,
+    "campToTh": 4.5,
+    "summitToTh": null
+   },
+   "evidence": [
+    {
+     "url": "https://trailcatjim.com/bears-breast-mtn-via-southwest-face-west-chimney/",
+     "says": "2003 3-day SW Face trip: trailhead to Dutch Miller Gap 4.8 hr; base of face 1.0 hr from camp, notch 3.2 hr, summit 6.0 hr from camp; back to camp 4.7 hr from the summit; hiked out day 3 (no duration given)."
+    },
+    {
+     "url": "https://www.nwhikers.net/forums/viewtopic.php?p=1196146",
+     "says": "Aug 2020: car to Dutch Miller Gap 4:45 (partly by bike on the closed road); left camp at the 5,300 ft tarns shortly after 6 am, 30 min from the peak back to camp, started out ~5:30 pm (so ~11 hr camp to camp); camp to Dingford Creek ~4.5 hr (shortly before 10 pm)."
+    },
+    {
+     "url": "https://www.mountainproject.com/area/127298931/bears-breast-mountain",
+     "says": "Alternate approach via the Middle Fork Trail to Dutch Miller Gap, about 13 mi."
+    }
+   ]
+  },
+  {
+   "id": "wa_beckey_davis",
+   "confidence": "medium",
+   "from": [
+    null,
+    6.5,
+    12.5,
+    19
+   ],
+   "to": [
+    6.5,
+    5.75,
+    6.75,
+    19
+   ],
+   "why": "The summit field held the day-1 approach and the descent held the climb day plus the hike out, with the breakdown labels shifted one row (old A/S/D/T null/6.5/12.5/19). Reports put the climb at 5-5.5 hr base to top plus 15-20 min from camp and about 1 hr down plus the walk back, so the kept 7 hr climb day splits 5.75 up and 1.25 back; day hours 6.5/7/5.5 unchanged.",
+   "legs": {
+    "thToCamp": 6.5,
+    "campToSummit": 5.75,
+    "summitToCamp": 1.25,
+    "campToTh": 5.5,
+    "summitToTh": null
+   },
+   "evidence": [
+    {
+     "url": "https://stephabegg.com/?p=8743",
+     "says": "Sep 2017 Beckey-Davis in a day: car to base 5:44 (Snow Lakes), climb 5:30 (about an hour lost route-finding), top back to base 1:06, base to car 5:49."
+    },
+    {
+     "url": "https://stephabegg.com/trip-reports/washington/prusik-solid-gold/",
+     "says": "Camped at Gnome Tarn via Colchuck/Aasgard; approach ~6 hr; south face ~15 min from camp; Burgner-Stanley rap descent ~1 hr top to base."
+    },
+    {
+     "url": "https://stephabegg.com/?p=58486",
+     "says": "Gnome Tarn bivy ~20 min from the south face base; 59 min Colchuck Lake to Aasgard Pass; a neighbouring south-face route took 7 hr base to summit."
+    },
+    {
+     "url": "https://www.wta.org/go-hiking/trip-reports/trip_report-2020-08-02-8346140304",
+     "says": "(403 - search snippet) trailhead 05:50, Colchuck Lake 07:45, top of Aasgard 10:30 (~4.7 hr to the pass)."
+    }
+   ]
+  },
+  {
+   "id": "wa_black_peak_northeast_ridge",
+   "confidence": "high",
+   "from": [
+    5,
+    5.5,
+    null,
+    13
+   ],
+   "to": [
+    4,
+    6,
+    5.5,
+    15.5
+   ],
+   "why": "The summit day held only the climb (5.5) and the hike-out had no hours, so the total of 13 matched nothing. Reports put Rainy Pass to Wing Lake at 2.5-4 hr (4 used), Wing Lake to the summit at 5-7 hr (6 used), summit back to camp via the south ridge at 2-3 hr (2.5) and Wing Lake out at about 3 hr; summit day is 6+2.5=8.5.",
+   "legs": {
+    "thToCamp": 4,
+    "campToSummit": 6,
+    "summitToCamp": 2.5,
+    "campToTh": 3,
+    "summitToTh": null
+   },
+   "evidence": [
+    {
+     "url": "https://cascadeclimbers.com/forum/topic/103056-tr-black-peak-ne-ridge-08242019",
+     "says": "(snippet; page 403) left Wing Lake 8:00, notch 9:30, summit 13:15 (about 5.25 hr, incl. ~1 hr off route)"
+    },
+    {
+     "url": "https://cascadeclimbers.com/forum/topic/81542-tr-black-peak-ne-ridge-7102011/",
+     "says": "(snippet; page 403) on the trail 05:00, start of climb 06:30, summit 11:30 (6.5 hr camp to summit); back at Wing Lake 13:30 (2 hr); cars 16:30 (3 hr out)"
+    },
+    {
+     "url": "https://cascadeclimbers.com/forum/topic/87318-tr-black-peak-north-east-ridge-772012",
+     "says": "(snippet) slow party left Wing Lake 12:30, summit 21:00 (8.5 hr)"
+    },
+    {
+     "url": "https://cascadeclimbers.com/forum/topic/101762-tr-black-peak-ne-ridge-06022018",
+     "says": "(snippet) summit 14:30, back to camp 16:30 via south ridge (2 hr)"
+    },
+    {
+     "url": "https://mountaineers.org/activities/trip-reports/black-peak-northeast-ridge-3",
+     "says": "(snippet) trailhead 04:00, Wing Lake 07:00 (3 hr in), start NE Ridge 10:00, summit 16:00, Wing Lake 19:00 (3 hr down), cars 22:15 (3.25 hr out)"
+    },
+    {
+     "url": "https://mountaineers.org/activities/trip-reports/black-peak-northeast-ridge-2",
+     "says": "(snippet) summit back to camp took 2 hours via the south ridge cairns; car to Wing Lake camp about 4 hr"
+    },
+    {
+     "url": "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/black-peak-northeast-ridge",
+     "says": "(snippet; page 403) route guide: 4-6 hr trailhead to camp, 4-7 hr camp to summit"
+    },
+    {
+     "url": "https://www.summitpost.org/black-peak/climbers-log/150936/p1",
+     "says": "(snippet) climber's log: Lewis Lake 90 min, Wing Lake 2.5 hr from trailhead; one party 9.75 hr car to car simul-climbing"
+    },
+    {
+     "url": "https://climberkyle.com/2019/08/04/black-peak-ne-ridge-5-3/",
+     "says": "(fetched) fast one-day party: summit about 5 hr from Rainy Pass, car a little over 8 hr after starting"
+    },
+    {
+     "url": "https://alpinedave.com/black/black.htm",
+     "says": "(fetched) one-day party: left Rainy Pass 07:00, back at car 13 hr later"
+    }
+   ]
+  },
+  {
+   "id": "wa_boving_christensen",
+   "confidence": "medium",
+   "from": [
+    null,
+    6.5,
+    10.5,
+    17
+   ],
+   "to": [
+    6,
+    3.5,
+    6.5,
+    16
+   ],
+   "why": "The approach day sat in a section labelled Climb, the summit figure (6.5) was really the approach, and the total of 17 summed nothing. Reports put the hike in at about 5.5-6.5 hr and the hike out at 3.5-6.5 hr; a 4-pitch line from a tarn 15-20 min away takes about 3.5 hr to the top and about 1 hr by the rappel back to camp. No report times Boving-Christensen itself, so the climb is scaled from the 7-pitch neighbour (4.5 hr).",
+   "legs": {
+    "thToCamp": 6,
+    "campToSummit": 3.5,
+    "summitToCamp": 1,
+    "campToTh": 5.5,
+    "summitToTh": null
+   },
+   "evidence": [
+    {
+     "url": "https://stephabegg.com/trip-reports/washington/prusik-solid-gold/",
+     "says": "(fetched; trip that included Boving-Christensen) approach about 6 hr over Aasgard to camp at Gnome Tarn; south face about 15 min from camp; about 30 min from top of route back to base on the shared rappel descent"
+    },
+    {
+     "url": "https://stephabegg.com/?p=8741",
+     "says": "(fetched, neighbouring 7-pitch Burgner-Stanley) climb took 4.5 hr; rappels back to the base 1 hr, Lake Viviane 25 min later; hiked out in 3.5 to 6.5 hr"
+    },
+    {
+     "url": "https://www.wta.org/go-hiking/trip-reports/trip_report-2020-08-02-8346140304",
+     "says": "(snippet) trailhead 5:50, Colchuck Lake 7:45, top of Aasgard 10:30 (about 4 hr 40 min)"
+    },
+    {
+     "url": "https://www.mountaineers.org/activities/routes-places/enchantments-area-review/prusik-peak-south-face",
+     "says": "(snippet; page 403) Gnome Tarn about 20 min from the base of the south face"
+    },
+    {
+     "url": "https://www.mountaineers.org/activities/trip-reports/prusik-peak-west-ridge-12",
+     "says": "(snippet, West Ridge) 12-13 hr camp to camp days; one winter party took 7 hr to slog out"
+    }
+   ]
+  },
+  {
+   "id": "wa_castle_peak_pasayten_scramble",
+   "confidence": "medium",
+   "from": [
+    6,
+    4,
+    15,
+    25
+   ],
+   "to": [
+    10,
+    4,
+    9,
+    23
+   ],
+   "why": "Approach stored 6 hr while the two days before the summit day add to 10, and the 15 hr descent double-counted; reports put the lake-to-high-camp walk at 8-12 hr (10 used), high camp to summit about 4 hr one way, and summit back to high camp about 3 hr, so the summit day is 7 hr and the walk-out day stays 6 hr.",
+   "legs": {
+    "thToCamp": 10,
+    "campToSummit": 4,
+    "summitToCamp": 3,
+    "campToTh": 6,
+    "summitToTh": null
+   },
+   "evidence": [
+    {
+     "url": "https://lemkeclimbs.com/castle-peak.html",
+     "says": "2023 continuous push: Lightning Creek lakeshore ~4am, Freezeout junction ~6am, Freezeout Cabin (3,600 ft) ~8:30am (about 4.5 hr lake to cabin, fast and light); cabin to summit ~5 hr; summit to the boat at the lake ~8.75 hr, partly in the dark"
+    },
+    {
+     "url": "https://lemkeclimbs.com/?p=2830",
+     "says": "Same trip: cabin ~8:33am, summit 1:30pm, left summit ~2:45pm, back at boat ~11:30pm; 27.5 hr total including ~4.5 hr on the water"
+    },
+    {
+     "url": "https://www.countryhighpoints.com/castle-peak-survey/",
+     "says": "Same 2023 survey party: lake to cabin ~4.5 hr, cabin to summit ~5.25 hr, summit to lake ~8.75 hr, 39 mi on foot"
+    },
+    {
+     "url": "https://www.summitpost.org/route/295596/freezeout-creek-route.html",
+     "says": "403; search snippet: 8-12 hr from the trailhead to a 5,400 ft camp (4-8 hr from Turner Bridge), 15 mi; final 1.6 mi / 2,900 ft from that camp to the summit; time requirement a few days"
+    },
+    {
+     "url": "https://countryhighpoints.com/castle-peak",
+     "says": "2018 Manning Park side day trip (different approach): creek bend to summit ~3 hr, summit back to trail ~3 hr, 12h20 car to car; used only as a check on camp-to-summit pace"
+    },
+    {
+     "url": "https://adminonly.wta.org/go-hiking/trip-reports/tripreport-2004100502",
+     "says": "403; the row's own note records a 2004 party reaching the summit about 4 hr from a Freezeout-side camp"
+    }
+   ]
+  },
+  {
+   "id": "wa_chimney_rock_east_face_direct",
+   "confidence": "medium",
+   "from": [
+    4.5,
+    null,
+    null,
+    null
+   ],
+   "to": [
+    5.5,
+    6.25,
+    8.75,
+    20.5
+   ],
+   "why": "The day plan already carried timed report figures (5.5, 11.5, 3.5 hr) but the stored legs were blank and the approach read the fastest party's 4.5 hr; the split now follows the plan: 5.5 hr in, 6.25 hr camp to summit, 5.25 hr of rappels and talus back to camp, 3.5 hr out. The search budget ran out before new sources could be found, so no fresh URL confirms these.",
+   "legs": {
+    "thToCamp": 5.5,
+    "campToSummit": 6.25,
+    "summitToCamp": 5.25,
+    "campToTh": 3.5,
+    "summitToTh": null
+   },
+   "evidence": [
+    {
+     "url": "(row's own day notes, from earlier researched reports)",
+     "says": "Trailhead to the boulder bivy 4.5 hr for one party and 6.5 hr for another; leave camp 6:30am, summit 12:50pm (about 6h20 from camp); eight 60 m rappels plus downclimbing just over 2 hr; about 2 hr of talus back to camp at 6pm; bivy to car about 3.5 hr"
+    },
+    {
+     "url": "https://lemkeclimbs.com/chimney-rock",
+     "says": "Wrong peak (Utah); not used"
+    },
+    {
+     "url": "https://stephabegg.com/trip-reports/washington/chimney-rock/",
+     "says": "404"
+    }
+   ]
+  },
+  {
+   "id": "wa_dorado_needle_east_ridge",
+   "confidence": "medium",
+   "from": [
+    null,
+    null,
+    6,
+    null
+   ],
+   "to": [
+    7,
+    6,
+    8,
+    21
+   ],
+   "why": "No day hours or summit leg were stored and the 6 h descent matched nothing. Reports put the walk to the Eldorado camp at 6-8 h, the Dorado camp-to-camp day at 8-12 h (about 6 h camp to summit via the col, 4 h back over the NW Ridge and glaciers), and the walk out at about 4 h.",
+   "legs": {
+    "thToCamp": 7,
+    "campToSummit": 6,
+    "summitToCamp": 4,
+    "campToTh": 4,
+    "summitToTh": null
+   },
+   "evidence": [
+    {
+     "url": "https://www.alpineinstitute.com/route-profile-dorado-needle-east-ridge/",
+     "says": "most parties take 8-12 h from the Eldorado East Ridge camp to the summit of Dorado and back"
+    },
+    {
+     "url": "https://evilfungus.blogspot.com/2008/08",
+     "says": "NW Ridge: trailhead to East Ridge bivy ~8 h; camp to base 2 h; base to summit 1:45; summit to camp ~4:15 (rappels, waiting); camp to cars ~4 h"
+    },
+    {
+     "url": "https://www.mountainproject.com/route/111927639/dorado-needle-sw-buttress?print=1",
+     "says": "neighbouring SW Buttress: 2 h camp to base, 7 h climbing, 1.5 h back, about 4 h camp to cars"
+    },
+    {
+     "url": "https://gethighonaltitude.com/2020/09/06/dorado-needle-east-ridge/",
+     "says": "East Ridge done as a full day from the 7,400 ft Eldorado camp; no clock times"
+    },
+    {
+     "url": "https://sverdina.com/dorado_needle1.asp",
+     "says": "two-day climb from Eldorado camp, back to camp late afternoon, out next morning; no hours"
+    },
+    {
+     "url": "https://www.wta.org/go-hiking/trip-reports/trip_report.2017-09-03.1151208441",
+     "says": "(snippet) Eldorado trailhead up about 6:21, down about 4 h"
+    },
+    {
+     "url": "https://adminonly.wta.org/go-hiking/trip-reports/trip_report.2018-05-27.0284414101",
+     "says": "(403; snippet) about 6 h moving up, 3.75 h down on the Eldorado approach"
+    }
+   ]
+  },
+  {
+   "id": "wa_eldorado_peak_east_ridge",
+   "confidence": "medium",
+   "from": [
+    6,
+    7,
+    3.5,
+    16.5
+   ],
+   "to": [
+    6,
+    3,
+    5.5,
+    14.5
+   ],
+   "why": "The 7-hour summit leg was a camp round trip and the clock times put 5.5 hr on a leg reports give at 1.5-3 hr. Camp to summit is now 3 hr one way, 1.5 hr back to camp, 6 hr in and 4 hr out.",
+   "legs": {
+    "thToCamp": 6,
+    "campToSummit": 3,
+    "summitToCamp": 1.5,
+    "campToTh": 4,
+    "summitToTh": null
+   },
+   "evidence": [
+    {
+     "url": "https://www.mountaineers.org/activities/routes-places/eldorado-peak-inspiration-glacier",
+     "says": "(403; search snippet) trailhead to camp 5-6 hr, camp to summit 3-5 hr, summit to camp 2-3 hr, camp to trailhead 3-4 hr."
+    },
+    {
+     "url": "https://danielarndt.com/trips/50-eldorado-peak-climb-via-the-knife-edge-east-ridge",
+     "says": "8:30 AM to camp on Inspiration Glacier at 4 PM (~7.5 hr); camp 5:15 PM to summit 7:15 PM (2 hr)."
+    },
+    {
+     "url": "https://www.mountaineers.org/activities/trip-reports/eldorado-peak-inspiration-glacier-13",
+     "says": "(403; search snippet, July 2024) just under 2 hr camp to summit, about 1 hr summit to camp, ~5 hr camp to trailhead."
+    },
+    {
+     "url": "https://www.wta.org/go-hiking/trip-reports/trip_report.2018-05-29.0787688814",
+     "says": "(403; search snippet) about 7 hours from the car to high camp."
+    },
+    {
+     "url": "https://www.wta.org/go-hiking/trip-reports/trip_report-2025-07-14.161204657143",
+     "says": "(403; search snippet) reached high camp 9:30, left 10:30, summit noon, back at high camp 1:30 (1.5 hr up, 1.5 hr down)."
+    },
+    {
+     "url": "https://www.wta.org/go-hiking/trip-reports/trip_report.2018-04-28.6391774319",
+     "says": "(search snippet) camp on the Eldorado Glacier flat, walking ~5 AM, summit ~7 AM."
+    }
+   ]
+  },
+  {
+   "id": "wa_eldorado_peak_west_arete",
+   "confidence": "medium",
+   "from": [
+    8,
+    5.3,
+    5,
+    18.3
+   ],
+   "to": [
+    6,
+    10,
+    4.5,
+    20.5
+   ],
+   "why": "The row had a 17-hour climb day against a 5.3-hour summit leg and two days with no hours. Reports put camp to summit at 7 to about 13 hr (set at 10), the walk back down the East Ridge to camp under an hour, 5-7.5 hr in (6) and 3-5 hr out (4).",
+   "legs": {
+    "thToCamp": 6,
+    "campToSummit": 10,
+    "summitToCamp": 0.5,
+    "campToTh": 4,
+    "summitToTh": null
+   },
+   "evidence": [
+    {
+     "url": "https://coloradomountainschool.blogspot.com/2011/10/weekly-wednesday-trip-report-w-ridge-of.html",
+     "says": "Guided party: summit about 7 hours after leaving the East Ridge camp; about 15 minutes from the summit down the East Ridge to camp; about 4.5 hours out to the car."
+    },
+    {
+     "url": "https://mojoclimb.blogspot.com/2009/07/eldorado-peak-west-arete.html",
+     "says": "Early start from the trailhead, at the ~7,500 ft bivy before noon (~5-6 hr); climb day early start, topped out in the early evening (~12-13 hr); three days total."
+    },
+    {
+     "url": "https://www.mountaineers.org/activities/routes-places/eldorado-peak-inspiration-glacier",
+     "says": "(403; snippet) trailhead to camp 5-6 hr; camp to trailhead 3-4 hr."
+    },
+    {
+     "url": "https://danielarndt.com/trips/50-eldorado-peak-climb-via-the-knife-edge-east-ridge",
+     "says": "~7.5 hr car to Inspiration Glacier camp."
+    },
+    {
+     "url": "https://davidmoskowitz.blogspot.com/2009/08/climbing-in-north-cascades.html",
+     "says": "West Arete party had an unplanned bivouac high on the face; no times."
+    },
+    {
+     "url": "https://cascadeclimbers.com/forum/topic/26158-tr-eldorado-west-arete-6262004",
+     "says": "(403; snippet) three-day trip, long route; no time read."
+    }
+   ]
+  },
+  {
+   "id": "wa_energizer_bunny",
+   "confidence": "medium",
+   "from": [
+    null,
+    6.5,
+    11,
+    17.5
+   ],
+   "to": [
+    6,
+    4.5,
+    6,
+    16.5
+   ],
+   "why": "Summit held the camp-to-camp climb day and descent held climb plus hike out (11 hr) with no approach; now walk in ~6, camp to top of the wall ~4.5 one way (15 min plus ~4 hr), rappel back to camp ~1, and a loaded hike out ~5.",
+   "legs": {
+    "thToCamp": 6,
+    "campToSummit": 4.5,
+    "summitToCamp": 1,
+    "campToTh": 5,
+    "summitToTh": null
+   },
+   "evidence": [
+    {
+     "url": "https://stephabegg.com/?p=8742",
+     "says": "~6 hr and 4000-6000 ft to reach Prusik; south face ~15 min from Gnome Tarn camp; Energizer Bunny climbed in ~4 hr to the West Ridge; rappels ~30 min (Solid Gold) to ~1 hr (Burgner-Stanley) back to the base"
+    },
+    {
+     "url": "https://stephabegg.com/trip-reports/washington/prusik-solid-gold/",
+     "says": "same trip: ~6 hr approach, 15 min camp to face, 4 hr on the route"
+    },
+    {
+     "url": "https://publications.americanalpineclub.org/articles/13201213722",
+     "says": "first ascent party finished the five pitches in about four hours"
+    },
+    {
+     "url": "https://lucasfng.blogspot.com/2024/09",
+     "says": "light day party: Stuart Lake TH to Colchuck 1h45, to top of Aasgard ~2h more; West Ridge base back to car ~2h20 (fast, no camp)"
+    },
+    {
+     "url": "https://www.wta.org/go-hiking/trip-reports/trip_report-2020-08-02-8346140304",
+     "says": "(snippet; 403) Colchuck TH 05:50, base of Aasgard 08:30, top of Aasgard 10:30"
+    },
+    {
+     "url": "https://summitpost.org/prusik-in-a-day/985029",
+     "says": "(snippet; 403) 2022 party ~5 hr from Colchuck Lake TH to the base of Prusik"
+    },
+    {
+     "url": "https://www.mountaineers.org/activities/routes-places/enchantments-area-review/prusik-peak-south-face",
+     "says": "(snippet; 403) camp to summit 3-6 hr for south face routes"
+    }
+   ]
+  },
+  {
+   "id": "wa_forbidden_peak_north_ridge",
+   "confidence": "medium",
+   "from": [
+    3.5,
+    13,
+    null,
+    24.5
+   ],
+   "to": [
+    11.5,
+    5,
+    8,
+    24.5
+   ],
+   "why": "Approach held only day 1 (3.5) and summit held the whole 13-hr summit-and-walk-out day with no descent, so the legs did not add to 24.5; days 1-2 are now the approach (11.5), bivy to summit ~5 hr one way (reports 4-6), and the West Ridge descent plus walk out the remaining 8 hr of day 3 (day hours unchanged).",
+   "legs": {
+    "thToCamp": 4.5,
+    "campToBivy": 7,
+    "campToSummit": 5,
+    "summitToCamp": null,
+    "campToTh": null,
+    "summitToTh": 8
+   },
+   "evidence": [
+    {
+     "url": "https://alpinedave.com/forbidden/north_ridge/north_ridge.htm",
+     "says": "left Boston Basin camp for Sharkfin Col about noon, reached the ridge-base bivy ~6:30 pm (~6.5 hr); next day started ~8 am, summit ~2 pm (~6 hr); long descent finished near dark"
+    },
+    {
+     "url": "https://mountainmadness.com/blog/north-ridge-of-forbidden-peak",
+     "says": "~4 hr trailhead to Boston Basin; ~4 hr of ridge climbing to the summit; summit day incl. descent to Boston Basin camp 13 hr"
+    },
+    {
+     "url": "https://www.mountaineers.org/activities/trip-reports/forbidden-peak-nw-face",
+     "says": "(snippet; 403) 2022: TH 8:30 am, Sharkfin Col 1:30 pm, ridge bivy 6:30 pm; next day 6:50 am start, summit 11:00 (about 4 hr), West Ridge notch 1:00 pm"
+    },
+    {
+     "url": "https://cascadeclimbers.com/forum/topic/108166-tr-forbidden-peak-north-ridge-07122025",
+     "says": "(snippet; 403) 2025: TH ~7:45 am, Sharkfin gully ~noon, on glacier 1:30 pm, ridge 3:45 pm, bivy ~6:15 pm"
+    },
+    {
+     "url": "https://www.summitpost.org/route/155472/west-ridge.html",
+     "says": "(snippet) West Ridge party: summit ~10 am, notch ~1 pm, back on snow 4:30 pm, high camp 6:30 pm, cars ~10 pm"
+    },
+    {
+     "url": "https://www.ncmountainguides.com/blog/north-ridge-of-forbidden-peak",
+     "says": "(snippet) guided 3-day plan; glacier-crossing day ~10 hr to the toe-of-ridge bivy"
+    }
+   ]
+  },
+  {
+   "id": "wa_glacier_peak_frostbite_ridge",
+   "confidence": "medium",
+   "from": [
+    11.5,
+    12.5,
+    7,
+    31
+   ],
+   "to": [
+    11.5,
+    8,
+    11.5,
+    31
+   ],
+   "why": "The traverse day's full 12.5 hr sat in the summit leg; split into 8 hr camp to summit (middle of the reported 7-10) and 4.5 hr down the Sitkum to the western camp, which moves into the descent; total unchanged at 31. Note: the stored 7 hr walk-out from the Boulder Basin area over White Pass looks short beside the Sitkum row's 10.5 hr out the same side; left as is (outside this split).",
+   "legs": {
+    "thToCamp": 11.5,
+    "campToSummit": 8,
+    "summitToCamp": 4.5,
+    "campToTh": 7,
+    "summitToTh": null
+   },
+   "evidence": [
+    {
+     "url": "https://www.mountaineers.org/activities/routes-places/glacier-peak-vista-frostbite-ridge",
+     "says": "403; snippet: trailhead to camp 8-10 hr, camp to summit 7-10 hr, descent 6-8 hr; PCT ~9 mi to East Fork Milk Creek basin camp at 5,600 ft."
+    },
+    {
+     "url": "https://cascadeclimbers.com/forum/topic/107364-tr-glacier-peak-frostbite-ridge-642023",
+     "says": "403; snippet: 11 hr to a sandy camp ~5,700 ft."
+    },
+    {
+     "url": "https://cascadeclimbers.com/forum/topic/97905-tr-glacier-peak-frostbite-ridge-822015",
+     "says": "403; snippet: about 3.5 hr from camp to the Vista-Kennedy saddle."
+    },
+    {
+     "url": "https://www.mountainproject.com/route/110630353/frostbite-ridge?print=1",
+     "says": "Most parties take 2-3 days; one-day approach called grueling; standard descent Gerdine/Cool Glacier."
+    },
+    {
+     "url": "https://sverdina.com/Glacier3.asp",
+     "says": "4-day trip up Frostbite, down Cool Glacier; final hike out ~3.5 hr from White Pass to the trailhead; other legs untimed."
+    },
+    {
+     "url": "https://www.alpineascents.com/climbs/glacier-peak/itinerary/",
+     "says": "Comparable south-side summit day: up 6-8 hr, down 3-4 hr to high camp; White Pass to North Fork Sauk trailhead 4-6 hr."
+    }
+   ]
+  },
+  {
+   "id": "wa_goode_mountain_megalodon_ridge",
+   "confidence": "medium",
+   "from": [
+    9,
+    12,
+    15,
+    36
+   ],
+   "to": [
+    8,
+    12,
+    11,
+    31
+   ],
+   "why": "Summit bivy, so the summit day equals the 12-hr camp-to-summit climb (FA about 12 hr). The approach day (9) and the two-day descent (15) ran long: reports put trailhead-to-bivy at 6.5-8 hr and summit-to-car at 10-12.5 hr, so approach 8 and descent 11 (6 down into the Park Creek drainage + 5 out), keeping the four days.",
+   "legs": {
+    "thToCamp": 8,
+    "campToSummit": 12,
+    "summitToCamp": null,
+    "campToTh": null,
+    "summitToTh": 11
+   },
+   "evidence": [
+    {
+     "url": "https://alpinist.com/newswire/massive-ridge-climbed-in-north-cascades/",
+     "says": "FA party: ~12 mi PCT/N Fork approach to an exposed bivy below the ridge (day 1); about 12 hours of climbing, mostly simul, to a summit bivy (day 2); descent by Black Tooth Notch/SW gully and ~20 mi of trail to the car on day 3 (summit to car in one day)."
+    },
+    {
+     "url": "https://publications.americanalpineclub.org/articles/12200813101/North-America-United-States-Goode-Mountain-Megalodon-east-Ridge",
+     "says": "Day 1 from Rainy Pass to a bench at the arete toe; day 2 climb (2 hr to the 8,200 ft tower, then the rest) to a summit bivy; day 3 descend to Park Creek and hike to the car."
+    },
+    {
+     "url": "https://climberkyle.com/2020/07/18/mt-goode-ne-buttress-5-5/",
+     "says": "Neighbouring NE Buttress via N Fork Bridge Creek: trailhead to camp a little over 6 hr (6.5 hr day); summit bivy; summit to car via the snow couloir, 5 rappels and Park Creek, 24 mi in 10 hr."
+    },
+    {
+     "url": "https://sverdina.com/Goode1.asp",
+     "says": "NE Buttress party: summit to N Fork camp ~6.3 hr via Black Tooth Notch/SW couloir rappels; camp to car ~6.3 hr (14 mi)."
+    },
+    {
+     "url": "https://cascadeclimbers.com/forum/topic/104181-tr-goode-mountain-megalodon-ridge-08292021",
+     "says": "403 on fetch; snippet gives route tips only, no times."
+    }
+   ]
+  }
+ ],
+ "held": [
+  {
+   "id": "wa_accidental_discharge_east_face",
+   "confidence": "low",
+   "proposed": [
+    13,
+    6.5,
+    15,
+    34.5
+   ],
+   "why": "Every hour was null. Approach and walk-out legs come from reports of the same Downey Creek / Dome-Chickamin col approach; no report times this 3-pitch route itself, so the summit day is built from the 3 h col-to-Gunsight crossing plus the short climb. Search budget ran out before further Gunsight east-face reports could be read.",
+   "legs": {
+    "thToCamp": 13,
+    "campToSummit": 6.5,
+    "summitToCamp": 4.5,
+    "campToTh": 10.5,
+    "summitToTh": null,
+    "note": "thToCamp = TH to Itswoot 10 + Itswoot to col 3; campToSummit = col to Blue Glacier base ~3.5 + 3 pitches/scramble ~3; campToTh = col to Itswoot 2.5 + Itswoot to TH 8"
+   },
+   "evidence": [
+    {
+     "url": "https://stephabegg.com/?p=8693",
+     "says": "Downey Creek TH to Itswoot Ridge about 10 h (12.8 mi, +5,700 ft); Itswoot to Dome-Chickamin col camp about 3 h; col to the base of North Gunsight about 3 h each way; col to TH in one day about 12.5 h."
+    },
+    {
+     "url": "https://publications.americanalpineclub.org/articles/12200813000/North-America-United-States-Gunsight-Peaks-Traverse-Gunrunner",
+     "says": "Confirms Accidental Discharge is 3 pitches of 5.10 on the east face of South Gunsight, reached from the Blue Glacier after a two-day approach; rappelled to the Blue Glacier; no hours."
+    },
+    {
+     "url": "https://www.mountaineers.org/activities/trip-reports/glacier-climb-dome-peak-dome-glacier-1",
+     "says": "403; search snippet: about 10 h car to camp and about 7.5 h camp back to the car (Itswoot area); route profile gives trailhead to camp 9-11 h."
+    },
+    {
+     "url": "https://sverdina.com/Dome1.asp",
+     "says": "Camped on Itswoot Ridge; about 11 miles out to the trailhead in one day; no leg hours."
+    },
+    {
+     "url": "https://cascadeclimbers.com/forum/topic/108169-tr-gunsight-e-and-sw-faces-of-middle-s-ridge-of-south-07132025",
+     "says": "403 (east-face Gunsight trip report; no figures read)."
+    },
+    {
+     "url": "https://wenatcheeoutdoors.org/2020/09/23/gunsight-peak-sinister-peak/",
+     "says": "403 (no figures read)."
+    }
+   ]
+  },
+  {
+   "id": "wa_agnes_mountain_south_ridge",
+   "confidence": "low",
+   "proposed": [
+    17.75,
+    8.5,
+    18,
+    44.25
+   ],
+   "why": "The row was 19.4 h total for a 5-day trip because only the summit day was counted, and that day was the one very slow party's 10.6 up and 8.8 down. A faster party fit the pass-to-summit-and-back inside a day with a camp move, so the middle is set to 8.5 h up and 7 h back; other days come from the same reports. Only two sources; search budget ran out.",
+   "legs": {
+    "thToCamp": 17.75,
+    "campToSummit": 8.5,
+    "summitToCamp": 7,
+    "campToTh": 11,
+    "summitToTh": null,
+    "note": "one slow party: 10.6 up / 8.8 down from Upper Blue Basin; a second party went from a 5,000 ft camp to the summit and back to the 6,760 ft pass camp in one day by sunset"
+   },
+   "evidence": [
+    {
+     "url": "https://trailcatjim.com/agnes-mtn-via-south-ridge-northwest-face-gunsight-peak-attempt/",
+     "says": "High Bridge to Swamp Creek 5.2 h (8.5 mi); Swamp Creek to Upper Blue Basin 10 h; summit day left 6 AM, summit 4:30 PM (10.6 h), back to camp 1:50 AM (8.8 h); out from high camp 10.7 h to Three-Mile Camp then a 3-mile morning walk."
+    },
+    {
+     "url": "https://onehikeaweek.com/2020/07/20/agnes-mountain/",
+     "says": "Day 1 High Bridge to a ~5,000 ft camp; day 2 up 1,800 ft to the 6,760 ft pass, on to the summit and back to the pass camp by sunset; last day a 10-mile walk to High Bridge in the early morning. Few clock times."
+    }
+   ]
+  },
+  {
+   "id": "wa_amphitheater_mountain_finger_of_fatwa",
+   "confidence": "low",
+   "proposed": [
+    7,
+    5,
+    8,
+    20
+   ],
+   "why": "Every hour except day 1 was null. The approach is about 6 h for a fast solo hiker and about 7 h loaded; the five-pitch 5.11c climb with its short approach is set at 5 h to the top and 1.5 h back down the gully; the mostly downhill 17-mile walk out at 6.5 h. Only one web source; search budget ran out before route-specific reports could be found.",
+   "legs": {
+    "thToCamp": 7,
+    "campToSummit": 5,
+    "summitToCamp": 1.5,
+    "campToTh": 6.5,
+    "summitToTh": null
+   },
+   "evidence": [
+    {
+     "url": "https://www.countryhighpoints.com/cathedral-peak-and-amphitheater-mountain/",
+     "says": "Fast solo: Andrews Creek TH 7:45 AM to Upper Cathedral Lake about 2 PM (about 6 h, ~18 mi, overgrown and blowdowns); 16 h, 40 mi car to car including two summits."
+    },
+    {
+     "url": "row (prior research)",
+     "says": "Row approach text gives about 7 h with a loaded pack; base is about 15 min from the lake; descent by the ridge crest and a 3rd-class gully."
+    }
+   ]
+  },
+  {
+   "id": "wa_amphitheater_mountain_middle_finger_buttress_right_side",
+   "confidence": "low",
+   "proposed": [
+    8.5,
+    6.5,
+    8.5,
+    23.5
+   ],
+   "why": "All timing legs were null and two of three day hours were missing. Hike in 8.5 hr from reports of 6, 8-10 and 10+ hr; no report times this 7-pitch line, so camp to top 6.5 hr (short approach plus seven 5.9 pitches, the full day the row already describes) and 1.5 hr back to camp by the crest and gully are estimates; hike out 7 hr estimated. Summit day hours = camp-to-top plus the return to camp.",
+   "legs": {
+    "thToCamp": 8.5,
+    "campToSummit": 6.5,
+    "summitToCamp": 1.5,
+    "campToTh": 7,
+    "summitToTh": null
+   },
+   "evidence": [
+    {
+     "url": "https://www.countryhighpoints.com/cathedral-peak-and-amphitheater-mountain/",
+     "says": "Fetched: fast solo hiker reached Upper Cathedral Lake about 6 hours after leaving the trailhead (7:45am start); whole car-to-car day with both peaks about 16 hours."
+    },
+    {
+     "url": "https://cascadeclimbers.com/forum/topic/102109-tr-pasayten-wilderness-cathedral-and-amphitheater-se-buttress-of-cathedral-peak-and-finger-of-fatwa-on-middle-finger-buttress-on-amphitheatre-mountain-08312018",
+     "says": "(403; search snippet) 2018 party: approach from Andrews Creek trailhead 8-10 hours; walk from Upper Cathedral Lake to the Amphitheater buttresses 15-45 minutes."
+    },
+    {
+     "url": "https://stephabegg.com/trip-reports/washington/pasayten-2016/",
+     "says": "Fetched: 19-mile hike in to Upper Cathedral Lake took 10+ hours (wet brush, thundershower); hike out a 19-mile slog with no time stated; summit-to-camp from neighbouring Cathedral Peak 45 min."
+    },
+    {
+     "url": "https://mountaineers.org/activities/routes-places/cathedral-peak-amphitheater-mountain",
+     "says": "(403; search snippet) approach to Upper Cathedral Lake roughly 18 miles; no hours."
+    },
+    {
+     "url": "https://mountainproject.com/area/109095714/cathedral-peak?print=1",
+     "says": "(snippet) Andrews Creek Trail approach 18 miles to Upper Cathedral Lake; no hours."
+    },
+    {
+     "url": "https://www.yellowleaf.org/scramble/g/r/2013-09-07-pasayten.html",
+     "says": "Fetched: Cathedral + Amphitheater as a 3-day car-to-car trip; no leg times."
+    },
+    {
+     "url": "https://cascadeclimbers.com/forum/topic/26806-tr-6-days-and-6-routes-in-the-pasayten-wilderness-part-2-7282004",
+     "says": "(403; search snippets) about 10 minutes around Upper Cathedral Lake to the Left-Side Route of Middle Finger Buttress, which the party started in the afternoon; Pilgrimage to Mecca (II 5.9) starts about five minutes from camp and is a great half-day climb."
+    },
+    {
+     "url": "https://www.mountainproject.com/area/109096109/amphitheatre-mountain",
+     "says": "(snippet) Middle Finger Buttress routes listed on Amphitheatre Mountain; no hours."
+    }
+   ]
+  },
+  {
+   "id": "wa_amphitheater_mountain_north_ridge",
+   "confidence": "low",
+   "proposed": [
+    8.5,
+    4,
+    8.5,
+    21
+   ],
+   "why": "All timing legs were null and two of three day hours were missing. Hike in 8.5 hr from reports of 6, 8-10 and 10+ hr; no report times the ridge, so 4 hr camp to summit (walk to Cathedral Pass, then 5-7 short pitches with route-finding) and 1.5 hr walk-off to camp are estimates; hike out 7 hr estimated. Summit day hours = camp-to-top plus the return to camp.",
+   "legs": {
+    "thToCamp": 8.5,
+    "campToSummit": 4,
+    "summitToCamp": 1.5,
+    "campToTh": 7,
+    "summitToTh": null
+   },
+   "evidence": [
+    {
+     "url": "https://www.countryhighpoints.com/cathedral-peak-and-amphitheater-mountain/",
+     "says": "Fetched: fast solo hiker reached Upper Cathedral Lake about 6 hours after leaving the trailhead (7:45am start); whole car-to-car day with both peaks about 16 hours."
+    },
+    {
+     "url": "https://cascadeclimbers.com/forum/topic/102109-tr-pasayten-wilderness-cathedral-and-amphitheater-se-buttress-of-cathedral-peak-and-finger-of-fatwa-on-middle-finger-buttress-on-amphitheatre-mountain-08312018",
+     "says": "(403; search snippet) 2018 party: approach from Andrews Creek trailhead 8-10 hours; walk from Upper Cathedral Lake to the Amphitheater buttresses 15-45 minutes."
+    },
+    {
+     "url": "https://stephabegg.com/trip-reports/washington/pasayten-2016/",
+     "says": "Fetched: 19-mile hike in to Upper Cathedral Lake took 10+ hours (wet brush, thundershower); hike out a 19-mile slog with no time stated; summit-to-camp from neighbouring Cathedral Peak 45 min."
+    },
+    {
+     "url": "https://mountaineers.org/activities/routes-places/cathedral-peak-amphitheater-mountain",
+     "says": "(403; search snippet) approach to Upper Cathedral Lake roughly 18 miles; no hours."
+    },
+    {
+     "url": "https://mountainproject.com/area/109095714/cathedral-peak?print=1",
+     "says": "(snippet) Andrews Creek Trail approach 18 miles to Upper Cathedral Lake; no hours."
+    },
+    {
+     "url": "https://www.yellowleaf.org/scramble/g/r/2013-09-07-pasayten.html",
+     "says": "Fetched: Cathedral + Amphitheater as a 3-day car-to-car trip; no leg times."
+    },
+    {
+     "url": "https://summitpost.org/amphitheater-mountain/climbers-log/155206",
+     "says": "(403; snippet) North Ridge logs 2011/2020 from Cathedral Pass: short pitches, scattered 5.5, unclear route-finding; one party spent a couple of hours on the long south ridge after topping out; no camp-to-summit time."
+    },
+    {
+     "url": "https://stg.openbeta.io/climb/db16fe77-110c-5d81-9651-edc3196bfc3f/north-ridge",
+     "says": "(snippet; 404 on fetch) 5.5, 5-7 pitches, scramble from Cathedral Pass to rope-up, walk-off SW back to Upper Cathedral Lake or 3rd-class gully on north slope; no hours."
+    }
+   ]
+  },
+  {
+   "id": "wa_bears_breast_mountain_infinite_beauty",
+   "confidence": "low",
+   "proposed": [
+    5,
+    5.5,
+    10,
+    20.5
+   ],
+   "why": "Old row stored car-to-slab-base as the approach (4.5), a 1.5 hr descent and no summit or total, with every day blank (old A/S/D/T 4.5/null/1.5/null). Only one report gives a summit-day figure (about 11 hr camp to camp), split 5.5 up and 5.5 back via Shovel Lake; ~5 hr loaded to the Waptus bridge camp (13 mi to the slab base budgets 5-6 hr) and ~4.5 hr out. The web search budget ran out before a second summit-day source turned up.",
+   "legs": {
+    "thToCamp": 5,
+    "campToSummit": 5.5,
+    "summitToCamp": 5.5,
+    "campToTh": 4.5,
+    "summitToTh": null
+   },
+   "evidence": [
+    {
+     "url": "https://www.mountainproject.com/area/127298931/bears-breast-mountain",
+     "says": "Salmon La Sac via Waptus River Trail ~9 mi to Waptus Lake, PCT west to near the Waptus River crossing, fisherman trail up Shovel Creek to the Mega Slab base: ~13 mi, budget 5-6 hr trailhead to base. Descent back down the slab (recommended) or east to Shovel Lake and the creek. Lists Infinite Beauty and Timeless Treasure, both 5.6."
+    },
+    {
+     "url": "https://cascadeclimbers.com/forum/topic/95807-tr-bears-breast-se-mega-slab-972014",
+     "says": "(403 - search snippets) 2014 SE Mega Slab party camped at the Waptus River bridge near the PCT junction; slab free-climbed in ~2 hr to the shoulder; ~2.5 hr summit to Shovel Lake; back in camp ~11 hr after leaving."
+    },
+    {
+     "url": "https://cascadeclimbers.com/forum/topic/104556-tr-bear%E2%80%99s-breast-summit-chief-se-face-on-bear%E2%80%99s-breast-e-to-w-ridge-traverse-on-summit-chief-09012022",
+     "says": "(403 - search snippets) 2022 SE face party reached the base of the wall ~4.5 hr from the car with light packs; bivy at Shovel Creek."
+    }
+   ]
+  },
+  {
+   "id": "wa_bears_breast_mountain_timeless_treasure",
+   "confidence": "low",
+   "proposed": [
+    5,
+    5.5,
+    10,
+    20.5
+   ],
+   "why": "Old row stored car-to-slab-base as the approach (4.5), a 1.5 hr descent and no summit or total, with every day blank (old A/S/D/T 4.5/null/1.5/null). Only one report gives a summit-day figure (about 11 hr camp to camp), split 5.5 up and 5.5 back via Shovel Lake; ~5 hr loaded to the Waptus bridge camp (13 mi to the slab base budgets 5-6 hr) and ~4.5 hr out. The web search budget ran out before a second summit-day source turned up.",
+   "legs": {
+    "thToCamp": 5,
+    "campToSummit": 5.5,
+    "summitToCamp": 5.5,
+    "campToTh": 4.5,
+    "summitToTh": null
+   },
+   "evidence": [
+    {
+     "url": "https://www.mountainproject.com/area/127298931/bears-breast-mountain",
+     "says": "Salmon La Sac via Waptus River Trail ~9 mi to Waptus Lake, PCT west to near the Waptus River crossing, fisherman trail up Shovel Creek to the Mega Slab base: ~13 mi, budget 5-6 hr trailhead to base. Descent back down the slab (recommended) or east to Shovel Lake and the creek. Lists Infinite Beauty and Timeless Treasure, both 5.6."
+    },
+    {
+     "url": "https://cascadeclimbers.com/forum/topic/95807-tr-bears-breast-se-mega-slab-972014",
+     "says": "(403 - search snippets) 2014 SE Mega Slab party camped at the Waptus River bridge near the PCT junction; slab free-climbed in ~2 hr to the shoulder; ~2.5 hr summit to Shovel Lake; back in camp ~11 hr after leaving."
+    },
+    {
+     "url": "https://cascadeclimbers.com/forum/topic/104556-tr-bear%E2%80%99s-breast-summit-chief-se-face-on-bear%E2%80%99s-breast-e-to-w-ridge-traverse-on-summit-chief-09012022",
+     "says": "(403 - search snippets) 2022 SE face party reached the base of the wall ~4.5 hr from the car with light packs; bivy at Shovel Creek."
+    }
+   ]
+  },
+  {
+   "id": "wa_bonanza_peak_cascadian_route",
+   "confidence": "low",
+   "proposed": [
+    5,
+    11,
+    8,
+    24
+   ],
+   "why": "No hours were stored anywhere. The only report gives the summit day as 15 hr camp to camp; the split into 11 up and 4 back (Isella walkway and the south-ridge notch) is our estimate. The hike in (about 1.5-2 hr Holden to Hart Lake, then about 3 hr to the col) and the hike out (2 hr 40 min to the trail, then the valley walk) come from a neighbouring route that uses the same camp; ferry and bus time is not counted.",
+   "legs": {
+    "thToCamp": 5,
+    "campToSummit": 11,
+    "summitToCamp": 4,
+    "campToTh": 4,
+    "summitToTh": null
+   },
+   "evidence": [
+    {
+     "url": "https://publications.americanalpineclub.org/articles/13201216753",
+     "says": "(fetched) three-day trip: ferry, bus to Holden, 11+ mi hike to a 7,000 ft camp near the North Star-Bonanza col; climb and Isella descent back to camp; hiked out the next day. No hour figures."
+    },
+    {
+     "url": "https://cascadeclimbers.com/forum/topic/107541-tr-bonanza-peaks-southwest-summit-west-face-cascadian-route-v-510-08262023",
+     "says": "(snippet; page 403) Saturday: finished the approach, climbed and descended to camp in 15 hours, dawn to dusk"
+    },
+    {
+     "url": "https://stephabegg.com/?p=8709",
+     "says": "(fetched, neighbouring Soviet Route from the same col camp) Hart Lake to the camp about 3 hr; camp to base under 1 hr; camp to trail on the hike out about 2 hr 40 min"
+    },
+    {
+     "url": "https://www.wta.org/go-hiking/trip-reports/trip_report.2022-08-02.2548069151",
+     "says": "(snippet) climb to the 7,100 ft North Star-Bonanza pass in about 2.5 hr"
+    },
+    {
+     "url": "https://www.mountaineers.org/activities/trip-reports/intermediate-alpine-climb-bonanza-peak-mary-green-glacier-1",
+     "says": "(snippet, different route) camp to summit 6 hr, summit back to camp 7.5 hr"
+    }
+   ]
+  },
+  {
+   "id": "wa_castle_in_the_sky",
+   "confidence": "low",
+   "proposed": [
+    10.5,
+    13,
+    15.5,
+    39
+   ],
+   "why": "approachTimeHrs held only the 45-minute walk to the base and the summit day had no hours. Kept the row's own day 1 (10.5) and day 3 (15.5); the summit day (Impasse crossing, walk to the base, 12 pitches and the scramble) is estimated at 13 hr and treated as ending at a bivy on or just below the summit, since day 3 starts with the descent. Needs a research re-run when searches are available.",
+   "legs": {
+    "thToCamp": 10.5,
+    "campToSummit": 13,
+    "summitToCamp": null,
+    "campToTh": null,
+    "summitToTh": 15.5
+   },
+   "evidence": [
+    {
+     "url": "(none fetched)",
+     "says": "The session's web-search budget ran out before this route could be searched; no URL was found or fetched. Figures come from the row's own day plan (10.5 hr day 1, 15.5 hr day 3) and its stated legs (45 min to the base from a high camp, 12 pitches plus about 1,000 ft of scrambling)."
+    }
+   ]
+  },
+  {
+   "id": "wa_cathedral_peak_last_rites",
+   "confidence": "low",
+   "proposed": [
+    11,
+    8.75,
+    8.75,
+    28.5
+   ],
+   "why": "Every hour was blank except a 0.7 hr camp-to-base and a 0.75 hr summit-to-camp; reports put the 17-20 mi walk in at 6-10+ hr (9 used, 8 for the downhill walk out) and a ~10 pitch face from the lake at about 7-8 hr base to summit, so the summit day is 8.75 hr camp to top plus 0.75 hr walk-off. No timed report of Last Rites itself was found, so the climbing time is set from the neighbouring buttress and the row's own hour-per-pitch note; the rest day is given 2 hr of scouting.",
+   "legs": {
+    "thToCamp": 9,
+    "campToSummit": 8.75,
+    "summitToCamp": 0.75,
+    "campToTh": 8,
+    "summitToTh": null
+   },
+   "evidence": [
+    {
+     "url": "https://stephabegg.com/trip-reports/washington/pasayten-2016/",
+     "says": "Andrews Creek to Upper Cathedral Lake about 19 mi in 10+ hr with heavy packs; camp to base of the SE Buttress 40 min; base to summit 7h10 on the ~10-pitch 5.9 buttress; summit back to camp 45 min; hiked the 19 mi out (not timed)"
+    },
+    {
+     "url": "https://www.countryhighpoints.com/cathedral-peak-and-amphitheater-mountain/",
+     "says": "2018 solo day trip: Andrews Creek trailhead 7:45am to Upper Cathedral Lake ~2pm (about 6 hr, light pack); car at 11:45pm after also climbing Amphitheater; 40 mi car to car"
+    },
+    {
+     "url": "https://sites.google.com/stephabegg.com/washington/tripreports/cathedral",
+     "says": "Search snippet: hike in 19 miles (10+ hours) to camp at Upper Cathedral Lake"
+    },
+    {
+     "url": "https://mountaineers.org/activities/trip-reports/cathedral-peak-amphitheater-mountain",
+     "says": "Search snippet: party did the trip in 3 days and suggests 5 would be nicer (no hours)"
+    },
+    {
+     "url": "https://chossclimbers.com/testing/us/washington/pasayten-wilderness/pasayten-fail/",
+     "says": "US-side approach reported as about 21 mi; no hours"
+    },
+    {
+     "url": "https://apps.yellowleaf.org/scramble/g/r/2013-09-07-pasayten.html",
+     "says": "3 days car to car for Cathedral plus neighbours; no hours"
+    }
+   ]
+  },
+  {
+   "id": "wa_chimney_peak_the_chimney",
+   "confidence": "low",
+   "proposed": [
+    6.5,
+    7,
+    10.5,
+    24
+   ],
+   "why": "Every hour was blank. No timed report could be reached (the search budget ran out mid-batch and the key sites returned 403), so the figures are reconciled from the row's own day plan: 13.9 mi and 1,850 ft on good trail with a 40 lb pack (6.5 hr in, 6 hr out), and 4,900 ft of off-trail brush and scrambling plus one roped pitch (7 hr camp to summit, 4.5 hr back down to camp).",
+   "legs": {
+    "thToCamp": 6.5,
+    "campToSummit": 7,
+    "summitToCamp": 4.5,
+    "campToTh": 6,
+    "summitToTh": null
+   },
+   "evidence": [
+    {
+     "url": "https://www.wta.org/go-hiking/hikes/enchanted-valley",
+     "says": "Enchanted Valley about 13.5 mi one way from Graves Creek, 27.8 mi round trip; no hike time"
+    },
+    {
+     "url": "https://stephabegg.com/trip-reports/washington/chimney-peak/",
+     "says": "404"
+    },
+    {
+     "url": "https://www.summitpost.org/chimney-peak/150617",
+     "says": "403"
+    },
+    {
+     "url": "https://www.peakbagger.com/search.aspx?tid=S&ss=Chimney+Peak",
+     "says": "403"
+    },
+    {
+     "url": "(prior pass, acc-out-0.json)",
+     "says": "No timed report of Chimney Peak from Enchanted Valley was found; only an empty route stub"
+    }
+   ]
+  },
+  {
+   "id": "wa_direct_north_buttress",
+   "confidence": "low",
+   "proposed": [
+    22,
+    5,
+    13.5,
+    40.5
+   ],
+   "why": "The row had no day hours, no summit leg and a 1 h descent for a six-day trip. The climbing is split as the plan lays it out (day 3 to a bivy counted in the approach, day 4 to the summit, per the traverse rule): camp-to-summit about 13 h total from the reported 1.5 h to the base and 8-11.5 h on route, summit back to camp 1 h; the Hannegan walk-in/out has only mileage, so its hours are paced from 17-21 mi and a 9 h Chilliwack-side comparison.",
+   "legs": {
+    "thToCamp": 14,
+    "campToSummit": 13,
+    "summitToCamp": 1,
+    "campToTh": 12.5,
+    "summitToTh": null,
+    "note": "camp-to-summit 13 = 1.5 camp to base + ~11.5 base to summit, split by the plan's bivy into 8 (day 3) + 5 (day 4)"
+   },
+   "evidence": [
+    {
+     "url": "https://stephabegg.com/?p=8710",
+     "says": "Beckey-Fielding North Buttress from the Chilliwack Lake side: trailhead to saddle camp 9 h (5 h to Bear Creek camp + 4 h up); camp to base 1.5 h; climbing 8 h; summit to camp 1 h; 10.5 h camp to camp; hike out 9 h; 3-day trip"
+    },
+    {
+     "url": "https://cascadeclimbers.com/forum/topic/99815-tr-north-cascades-bear-mountain-direct-north-buttress-8112016",
+     "says": "(403; search snippet) Direct North Buttress Aug 11-13 2016: base to summit about 11.5 h; back at camp with ~20 min of light"
+    },
+    {
+     "url": "https://skisickness.com/2005/08/22",
+     "says": "(404; search snippet) a 2005 party finished the DNB in about 8.5 h"
+    },
+    {
+     "url": "https://www.mountainproject.com/area/112828230/bear-mountain",
+     "says": "(snippet) Hannegan Pass trailhead to Bear Creek camp roughly 17 miles; 1980 first ascent took 2.5 days with a bivy"
+    },
+    {
+     "url": "https://www.nps.gov/noca/planyourvisit/copper-ridge-trail.htm",
+     "says": "(snippet) Chilliwack River Trail 17.3 mi; Bear Creek camp closed after the 2021 fire; no hours"
+    },
+    {
+     "url": "https://www.wta.org/go-hiking/trip-reports/tripreport-2007082708",
+     "says": "(snippet) four-day Chilliwack trip, final day out over Hannegan about 7 h"
+    }
+   ]
+  },
+  {
+   "id": "wa_dot_mountain_scramble",
+   "confidence": "low",
+   "proposed": [
+    9.5,
+    5,
+    11,
+    25.5
+   ],
+   "why": "The 9 h summit leg was the camp-to-camp day; it is now 5 h camp to Dot with 4 h back to camp counted in the descent, so the summit day keeps its 9 h. The 9 mi mostly downhill first day is cut from 6 to 4.5 h (reported just under 3 h at a fast pace); no report times Dot alone, so the summit-day figures stay close to the row's own schedule.",
+   "legs": {
+    "thToCamp": 9.5,
+    "campToSummit": 5,
+    "summitToCamp": 4,
+    "campToTh": 7,
+    "summitToTh": null
+   },
+   "evidence": [
+    {
+     "url": "https://lemkeclimbs.com/pasayten-mini-slam",
+     "says": "Slate Pass to the Freds Lake trail junction camp ~9 mi in just under 3 h; camp to the saddle above Freds Lake 2:45; a four-summit day including Dot 15.5 h camp to camp; out the next afternoon"
+    },
+    {
+     "url": "https://countryhighpoints.com/pasayten-peakbagging",
+     "says": "Lago 2:30 pm, Ptarmigan 4:30 pm, passing Dot between, on a 33 mi 18.5 h camp-to-camp day; 7 h hike out next day"
+    },
+    {
+     "url": "https://climberkyle.com/2020/07/08/hart-of-the-pasayten/",
+     "says": "Dot an easy walk-up; 42 mi loop from Slate Pass in about 14 h with a 9 mi climb back to the car"
+    },
+    {
+     "url": "https://www.meetup.com/seattleoutdooradventurers/events/315055588/",
+     "says": "(snippet) Lago about 2-3 h from camp; Dot a quick bonus summit"
+    },
+    {
+     "url": "https://www.mountaineers.org/activities/routes-places/osceola-carru-lago-blackcap-lost-traverse",
+     "says": "(snippet) Lago and Carru day 8-10 h round trip from camp"
+    }
+   ]
+  },
+  {
+   "id": "wa_dragontail_peak_r2",
+   "confidence": "low",
+   "proposed": [
+    4,
+    8,
+    4.5,
+    16.5
+   ],
+   "why": "The 10 h summit leg was the camp-to-camp day; per the convention it is now 8 h camp to summit (4 AM start, topping out around noon per the row's own schedule) with the ~2 h Aasgard descent to camp moved into the descent, and the schedule's 11 h span trimmed to the day's 10 h. Every Gerber-Sink report page returned 403, so only snippets were usable.",
+   "legs": {
+    "thToCamp": 4,
+    "campToSummit": 8,
+    "summitToCamp": 2,
+    "campToTh": 2.5,
+    "summitToTh": null
+   },
+   "evidence": [
+    {
+     "url": "https://cascadeclimbers.com/forum/topic/57491-tr-dragontail-gerber-sink-north-face-2172008/?page=2",
+     "says": "(403; snippet) about 4.5 h from the car to Colchuck Lake in winter"
+    },
+    {
+     "url": "https://cascadeclimbers.com/forum/topic/99138-tr-dragontail-peak-gerber-sink-4172016",
+     "says": "(403; snippet) descent a little under 2 h"
+    },
+    {
+     "url": "https://cascadeclimbers.com/forum/topic/99097-tr-dragontail-peak-gerber-sink-4102016",
+     "says": "(403) not readable"
+    },
+    {
+     "url": "https://www.mountaineers.org/activities/trip-reports/dragontail-peak-colchuck-col-1",
+     "says": "(snippet) Colchuck Col route: 6 h summit back to the car via Aasgard; 5 h summit to trailhead on another party"
+    }
+   ]
+  },
+  {
+   "id": "wa_east_twin_needle_thread_of_ice",
+   "confidence": "low",
+   "proposed": [
+    7,
+    8,
+    10.5,
+    25.5
+   ],
+   "why": "The row had no timing and a 16-hour climb day taken from a ski party that lost hours to a detour and skiing rope work. Camp to the summit is set at 8 hr (4 hr over the col to the couloir foot as on the neighbouring North Buttress, then the 1,200 ft couloir and scramble), 5.5 hr down the south gullies back to camp, 7 hr in from the car and 5 hr out.",
+   "legs": {
+    "thToCamp": 7,
+    "campToSummit": 8,
+    "summitToCamp": 5.5,
+    "campToTh": 5,
+    "summitToTh": null
+   },
+   "evidence": [
+    {
+     "url": "https://stephabegg.com/?p=8734",
+     "says": "First-ascent party, June 26-28 2009: three days; day 3 described as a 5-hour descent back to the car. No times for days 1-2."
+    },
+    {
+     "url": "https://wildsnow.com/5477/cascades-pickets-thread-ice-ski/",
+     "says": "2011 ski party: left trailhead 7:15 AM, reached ridge camp in the afternoon (~7-8 hr); climb day woke 5 AM, back at camp ~11 PM, called a 16-hour day, slowed by a detour around a moated rock band (5th-class wet slab) and rope work skiing the line; descent day took about as long as the way up."
+    },
+    {
+     "url": "https://cascadeclimbers.com/forum/topic/104511-tr-crescent-creek-spires-southern-picket-range-east-twin-needle-north-buttress-59-d-2000%E2%80%99-07312022",
+     "says": "(403; search snippet) 2022 East Twin Needle North Buttress from a Chopping Block col camp via the Otto-Himmel col: ~4-4.5 hr to reach the rock, ~6 hr climbing to the summit, ~5 hr for descent by the south gully and walk back to camp."
+    },
+    {
+     "url": "https://stephabegg.com/?p=8949",
+     "says": "Trailhead to Terror Creek Basin about 7 hours; hike out about 7 hours."
+    },
+    {
+     "url": "https://cascadeclimbers.com/forum/topic/100826-tr-west-mcmillan-the-barrier-mt-terror-7132017",
+     "says": "(search snippet, report on the Barrier approach) about 6.5 hours trailhead to the Stump Hollow camp between the Barrier and the Chopping Block."
+    },
+    {
+     "url": "https://cascadeclimbers.com/forum/topic/103696-tr-himmelhorn-wild-hair-crack-and-ne-ridge-of-the-chopping-block-10042020",
+     "says": "(search snippet) left camp ~6 AM; travel through the cirque to the Otto-Himmel col is fairly quick."
+    }
+   ]
+  },
+  {
+   "id": "wa_eldorado_peak_eldorado_glacier_nw",
+   "confidence": "low",
+   "proposed": [
+    6,
+    6.5,
+    5.5,
+    18
+   ],
+   "why": "The summit leg was the camp round trip. No report gave a couloir time, so camp to summit (6.5 hr) comes from the row's own schedule; the walk back to camp (1.5 hr), the 6 hr in and 4 hr out come from reports on the shared East Ridge descent.",
+   "legs": {
+    "thToCamp": 6,
+    "campToSummit": 6.5,
+    "summitToCamp": 1.5,
+    "campToTh": 4,
+    "summitToTh": null
+   },
+   "evidence": [
+    {
+     "url": "https://www.mountaineers.org/activities/routes-places/eldorado-peak-inspiration-glacier",
+     "says": "(403; snippet) trailhead to camp 5-6 hr, summit to camp 2-3 hr, camp to trailhead 3-4 hr (same camp and descent line)."
+    },
+    {
+     "url": "https://danielarndt.com/trips/50-eldorado-peak-climb-via-the-knife-edge-east-ridge",
+     "says": "~7.5 hr car to Inspiration Glacier camp."
+    },
+    {
+     "url": "https://www.mountaineers.org/activities/trip-reports/eldorado-peak-inspiration-glacier-13",
+     "says": "(403; snippet) ~1 hr summit to camp by the East Ridge; ~5 hr camp to trailhead."
+    },
+    {
+     "url": "https://www.wta.org/go-hiking/trip-reports/trip_report.2018-05-29.0787688814",
+     "says": "(403; snippet) ~7 hr car to high camp."
+    },
+    {
+     "url": "https://cascadeclimbers.com/forum/topic/63148-tr-eldorado-peak-nw-couloir-attempt-ne-face-10262008",
+     "says": "(403; only the title was visible) NW Couloir attempt; no time read."
+    }
+   ]
+  },
+  {
+   "id": "wa_fortress_mountain_southwest_face",
+   "confidence": "low",
+   "proposed": [
+    5,
+    3.5,
+    6.5,
+    15
+   ],
+   "why": "No day had hours and there was no approach or total; set from a day party reaching the summit ~6 hr from Trinity, a ~3.5 hr round trip from the pass for a fast party, and the 9-mile loaded walk in and out. Few direct leg times exist.",
+   "legs": {
+    "thToCamp": 5,
+    "campToSummit": 3.5,
+    "summitToCamp": 2.5,
+    "campToTh": 4,
+    "summitToTh": null
+   },
+   "evidence": [
+    {
+     "url": "https://www.wta.org/go-hiking/trip-reports/tripreport-2005063008",
+     "says": "(snippet; 403) day party left Trinity 5:00 am, summit ~6 hr later, car to car 12.5 hr, 21 mi, 7000 ft"
+    },
+    {
+     "url": "https://www.countryhighpoints.com/buck-mountain-and-fortress-mountain-car-to-car/",
+     "says": "very fast single push: back at Buck Creek Pass 4 pm, Fortress climbed and back on the main trail 7:30 pm (~3.5 hr round trip from the pass area), trailhead 10:30 pm"
+    },
+    {
+     "url": "https://lemkeclimbs.com/?p=2843",
+     "says": "hiked in from 10:45 am, dropped packs below Pass No Pass, climbed the SW face and was heading down by 5:30 pm, camped at the pass after sunset; hiked out next afternoon, at TH before dark"
+    },
+    {
+     "url": "https://www.mountaineers.org/activities/trip-reports/buck-mountain-southwest-route-1",
+     "says": "(snippet; neighbouring Buck Mtn from the same camp) camp to summit 4.5 hr, summit to cars 6.5 hr"
+    },
+    {
+     "url": "https://api.theoutbound.com/washington/backpacking/scramble-fortress-mountain",
+     "says": "no times; ~9 mi to the Fortress turnoff, 22 mi and 6000 ft round trip; camps below Pass No Pass or at Buck Creek Pass"
+    }
+   ]
+  },
+  {
+   "id": "wa_gato_negro",
+   "confidence": "low",
+   "proposed": [
+    2,
+    6.5,
+    5,
+    13.5
+   ],
+   "why": "Stored legs were a single-day split (1.5/6/3) that did not match the 2-hr walk in on day 1 and left the walk out uncounted; the session web-search budget ran out before route-specific reports were found, so the camp-to-camp day is set just above the recorded fast party (9.5 hr) and the walk out from the row's own figures.",
+   "legs": {
+    "thToCamp": 2,
+    "campToSummit": 6.5,
+    "summitToCamp": 3.5,
+    "campToTh": 1.5,
+    "summitToTh": null
+   },
+   "evidence": [
+    {
+     "url": "(row's own day plan)",
+     "says": "hike to the 6,500 ft bench camp 2 hr; one fast party of four went camp to camp in 9.5 hr; several hours for the loose descent gully"
+    }
+   ]
+  },
+  {
+   "id": "wa_ghost_peak_south_route",
+   "confidence": "low",
+   "proposed": [
+    26.5,
+    6.5,
+    19.5,
+    52.5
+   ],
+   "why": "The summit day stored its whole 10 hr round trip as the summit leg; split per the existing day plan (leave 5:30, summit about noon) into 6.5 up and 3.5 back to high camp, moved into the descent. No Ghost-specific timed report was reachable; approach days left as stored, though a fast solo party reports only ~6 hr trailhead to Whatcom Pass, so day 2's 10 hr looks generous.",
+   "legs": {
+    "thToCamp": 26.5,
+    "campToSummit": 6.5,
+    "summitToCamp": 3.5,
+    "campToTh": 16,
+    "summitToTh": null
+   },
+   "evidence": [
+    {
+     "url": "https://lemkeclimbs.com/whatcom-peak",
+     "says": "Solo, light: trailhead to near Brush Creek ~5 hr, Brush Creek to Whatcom Pass just over 1 hr; hike out Whatcom Pass to trailhead ~17 mi in ~6 hr."
+    },
+    {
+     "url": "https://publications.americanalpineclub.org/articles/13201216005",
+     "says": "Phantom/Ghost area needs an involved two-day approach over Hannegan, Easy Ridge, Perfect Pass and the Challenger Glacier to a bivy under Ghost Peak; no hour figures."
+    },
+    {
+     "url": "https://aac-publications.s3.amazonaws.com/documents/aaj/1971/PDF/AAJ_1971_17_2_347c.pdf",
+     "says": "1970 first ascent from the notch south of the peak, gained from the west; no times (search snippet)."
+    },
+    {
+     "url": "https://cascadeclimbers.com/forum/topic/107494-tr-crooked-thumb-to-challenger-phantom-middle-challenger-various-07202023",
+     "says": "403; snippet only: solo party bivied near Crooked Thumb via Perfect Pass/Solar Pass; glacier badly broken; no summit-day times for Ghost."
+    },
+    {
+     "url": "https://cascadeclimbers.com/forum/topic/97920-tr-northern-pickets-phantom-peak-challenger-125-and-quotthe-bat-wingquot-7302015",
+     "says": "403; snippet only: party ran out of daylight going Hannegan to Whatcom Pass and around Whatcom, camped below Crooked Thumb."
+    },
+    {
+     "url": "https://www.summitpost.org/mount-challenger/climbers-log/151237/d-164933",
+     "says": "Snippet: a Challenger party from Perfect Pass was back 6 hr after leaving it (round trip), a nearby comparable summit day."
+    }
+   ]
+  },
+  {
+   "id": "wa_glacier_peak_sitkum_glacier",
+   "confidence": "low",
+   "proposed": [
+    14.5,
+    5.5,
+    14,
+    34
+   ],
+   "why": "Only the summit leg (a 9 hr round trip) was stored, with no total; split it into 5.5 hr Boulder Basin to summit and 3.5 hr back (the ratio reported on comparable Glacier Peak summit days, matching the plan's 3-4 AM start, late-morning summit and mid-afternoon return), and filled the other legs from the stored day plan. No Sitkum-specific timed report was reachable (fetches blocked, search budget ran out).",
+   "legs": {
+    "thToCamp": 14.5,
+    "campToSummit": 5.5,
+    "summitToCamp": 3.5,
+    "campToTh": 10.5,
+    "summitToTh": null
+   },
+   "evidence": [
+    {
+     "url": "https://www.alpineascents.com/climbs/glacier-peak/itinerary/",
+     "says": "Comparable south-side summit day from a ~6,800 ft high camp: up 6-8 hr (guided), down 3-4 hr; North Fork Sauk trailhead to PCT/White Pass ~10-12 hr over two days; White Pass to trailhead 4-6 hr."
+    },
+    {
+     "url": "https://turns-all-year.com/trip-reports/july-12-15-2007-glacier-peak-south-side-route",
+     "says": "North Fork Sauk trailhead to White Pass ~8 hr; Glacier Gap camp to summit ~4 hr, back by ~3 PM on skis."
+    },
+    {
+     "url": "https://stephabegg.com/?p=8925",
+     "says": "Fast party: Kololo high camp to summit by the South Ridge 3h50 (one way)."
+    },
+    {
+     "url": "https://sverdina.com/Glacier3.asp",
+     "says": "North Fork Sauk/PCT approach over Red Pass into the White Chuck to Glacier Ridge took 7.5 hr on day 2; White Pass to trailhead ~3.5 hr."
+    },
+    {
+     "url": "https://www.mountaineers.org/activities/routes-places/glacier-peak-sitkum-glacier",
+     "says": "403; no figures retrieved."
+    }
+   ]
+  },
+  {
+   "id": "wa_golden_horn_east_face",
+   "confidence": "low",
+   "proposed": [
+    6,
+    13,
+    7,
+    26
+   ],
+   "why": "The summit leg held only the 11 hr on the face, and approach, descent and total were empty; set camp-to-summit to the first-ascent day (13 hr from leaving camp) and added ~1.5 hr down the standard southwest scramble to camp, giving a 14.5 hr summit day and 26 hr total. No independent timed repeat could be found (search budget exhausted; pages blocked), so this rests on the row's own records.",
+   "legs": {
+    "thToCamp": 6,
+    "campToSummit": 13,
+    "summitToCamp": 1.5,
+    "campToTh": 5.5,
+    "summitToTh": null
+   },
+   "evidence": [
+    {
+     "url": "(row's own day plan, first-ascent account)",
+     "says": "Left camp 4:30 AM, started climbing 6:30 AM, ~11 hr on the 11 pitches, summit ~5:30 PM: 13 hr camp to summit."
+    },
+    {
+     "url": "(row's own day 3 note)",
+     "says": "Hike out Snowy Lakes to Rainy Pass about 5.5 hr; day 1 stored at 6 hr for the 11 mi in."
+    }
+   ]
+  },
+  {
+   "id": "wa_helmet_butte_standard_route",
+   "confidence": "low",
+   "proposed": [
+    5,
+    1.25,
+    4.75,
+    11
+   ],
+   "why": "No hours on the approach or day plan, and summit/descent were treated as a lone scramble. Reports have Pass No Pass reached by early afternoon (~5 hr for 8.8 mi, 3,000 ft) and the butte as a 1-2 hr outing from camp; set 1.25 up, 0.75 back, and the 8.8-mi walk out (~4 hr) split 2 + 2 across days 2-3. Web search budget ran out after one query; every page 403'd, snippets only.",
+   "legs": {
+    "thToCamp": 5,
+    "campToSummit": 1.25,
+    "summitToCamp": 0.75,
+    "campToTh": 4,
+    "summitToTh": null
+   },
+   "evidence": [
+    {
+     "url": "https://www.wta.org/go-hiking/trip-reports/tripreport-2005063008",
+     "says": "Snippet only (403): a car-to-car day via Buck Creek of ~21 mi and 7,000 ft that included Helmet Butte from near Pass No Pass."
+    },
+    {
+     "url": "https://cascadeclimbers.com/forum/topic/107867-tr-fortress-and-helmet-butte-standard-07282024",
+     "says": "Snippet only (403): party reached Pass No Pass in the early afternoon, then went up Helmet Butte after dinner (a short evening outing from camp)."
+    },
+    {
+     "url": "https://summitpost.org/helmet-butte/979358",
+     "says": "Snippet only (403): from Pass No Pass traverse southwest; short class 3 on the south side of the summit block."
+    },
+    {
+     "url": "row itinerary day 2 note",
+     "says": "1-2 hours round trip from Pass No Pass; approach 8.8 mi, 3,000 ft."
+    }
+   ]
+  },
+  {
+   "id": "wa_himmelhorn_stonehenge",
+   "confidence": "low",
+   "proposed": [
+    10,
+    8,
+    10,
+    28
+   ],
+   "why": "approachTimeHrs held 1 (camp to base, not the days before) and summit/descent/total and two day hours were missing. The web search budget was exhausted before this route could be researched, so the figures reconcile the row's own plan: ~10-hr Barrier approach, 4 am start to a summit ~8 hr later, ~3 hr back to camp, 7-hr walk out.",
+   "legs": {
+    "thToCamp": 10,
+    "campToSummit": 8,
+    "summitToCamp": 3,
+    "campToTh": 7,
+    "summitToTh": null
+   },
+   "evidence": [
+    {
+     "url": "row itinerary (own record)",
+     "says": "4:00 AM leave camp, 5:00 AM at the snow below the wall, then ~600 ft scrambling and 8 pitches with two 5.10- leads; walk-off and downclimb to camp; walk out from the Chopping Block camp about 7 hours; approach gains 5,800 ft and many parties take two days."
+    }
+   ]
+  },
+  {
+   "id": "wa_himmelhorn_wild_hair_crack",
+   "confidence": "low",
+   "proposed": [
+    10,
+    5,
+    10,
+    25
+   ],
+   "why": "Every timing figure and the first two day hours were missing. The web search budget was exhausted before research; figures reconcile the row's own plan and the shared 7-hr walk out: ~10-hr approach, ~5 hr camp to summit for a gully plus 4 pitches, ~3 hr back to camp.",
+   "legs": {
+    "thToCamp": 10,
+    "campToSummit": 5,
+    "summitToCamp": 3,
+    "campToTh": 7,
+    "summitToTh": null
+   },
+   "evidence": [
+    {
+     "url": "row itinerary (own record)",
+     "says": "Same Barrier approach (5,800 ft, often two days); gully to the Himmel-Otto col then 4 pitches of 5.7; scramble or rappel the moats back; walk out about 7 hours from the Chopping Block camp."
+    }
+   ]
+  }
+ ],
+ "notResearched": [
+  "wa_honeymoon_route",
+  "wa_hozomeen_mountain_west_face",
+  "wa_huckleberry_mountain_east_ridge",
+  "wa_inner_constance_northwest_buttress",
+  "wa_jack_mountain_east_ridge",
+  "wa_jack_mountain_nohokomeen_headwall",
+  "wa_jack_mountain_southeast_ridge_direct",
+  "wa_klawatti_peak_north_ridge",
+  "wa_little_big_chief_mountain_northeast_face",
+  "wa_mount_baker_north_ridge",
+  "wa_mount_barnes_scramble",
+  "wa_mount_berge_east_ridge",
+  "wa_mount_ferry_standard",
+  "wa_mount_fury_east_mongo_ridge",
+  "wa_mount_fury_east_north_buttress",
+  "wa_mount_goode_northeast_buttress",
+  "wa_mount_lago_south_slope_south_face",
+  "wa_mount_maude_r2",
+  "wa_mount_olympus_2_north_ridge_via_blue_glacier",
+  "wa_mount_prophet_east",
+  "wa_mount_rainier_curtis_ridge",
+  "wa_mount_rainier_sunset_ridge",
+  "wa_mount_rainier_tahoma_glacier",
+  "wa_mount_rainier_willis_wall",
+  "wa_mount_seattle_south",
+  "wa_mount_spickard_silver_glacier",
+  "wa_mount_terror_west_ridge",
+  "wa_mount_torment_torment_forbidden_traverse",
+  "wa_mount_triumph_northeast_ridge",
+  "wa_ne_ridge",
+  "wa_north_face_of_the_mole",
+  "wa_north_star_mountain_east_route",
+  "wa_northeast_face_direct",
+  "wa_northwest_face_4",
+  "wa_northwest_mox_peak_standard",
+  "wa_poltergeist_pinnacle",
+  "wa_primus_peak_south_ridge",
+  "wa_prusik_peak_alpine_craggers_delight",
+  "wa_prusik_peak_prayer_for_a_friend",
+  "wa_prusik_peak_sail_away",
+  "wa_eldorado_peak_northeast_face",
+  "wa_prusik_peak_south_face_burgner_stanley",
+  "wa_ridge_traverse_from_east_fury",
+  "wa_sentinel_peak_standard",
+  "wa_sinister_peak_southwest_route",
+  "wa_smears_jugs_and_rock_roll",
+  "wa_south_face_10",
+  "wa_south_headwall",
+  "wa_south_ridge_4",
+  "wa_south_spur",
+  "wa_southeast_mox_peak_beckey_route_west_ridge",
+  "wa_southeast_mox_peak_se_rib",
+  "wa_southwest_rib_2",
+  "wa_soviet_route",
+  "wa_spider_mountain_north_ridge",
+  "wa_spire_point_southwest_face",
+  "wa_sw_ridge",
+  "wa_the_monk_le_gibet",
+  "wa_the_monk_odine",
+  "wa_the_monk_scabo",
+  "wa_the_tempest",
+  "wa_tupshin_peak_east_face",
+  "wa_west_face_2"
+ ]
+}

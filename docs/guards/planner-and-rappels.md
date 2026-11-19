@@ -96,9 +96,17 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     already right): summit leg = camp to summit one way, descent = summit to car. Forbidden's West Ridge
     6 hr up (10 sources), Stuart's Ice Cliff Glacier 7, Argonaut South Face 6. A summit reached ON THE
     WALK IN (Courtney Peak: approach 5 + summit 1 inside a 7.5 hr day 1) gets no clock (`why: "enroute"`).
-    **STILL OPEN:** 102 multi-day rows whose summit leg the camp rule leaves unsplit with later days after
-    it, 22 of them red at a 4 AM start (Forbidden North Ridge 13 hr "up", Willis Wall 16): most read as a
-    round trip from camp, but Goode's NE Buttress is one way, so only per-route research can split them.
+    **102 multi-day rows whose summit leg the camp rule left unsplit with later days after it** (plus
+    Eldorado NE Face) are being researched to ONE convention: summit leg = camp to summit one way, the
+    summit day's hours = that leg + the way back to camp, so the plan's own hours say which way the leg
+    runs (`summitLegOneWay` in `lib/planTimes.js`; guard "a summit day LONGER than the summit leg reads
+    the leg one way"). 16 rewritten 2026-11-18 (`audits/2026-11-18-trip-time-camp-summit-days.json`):
+    Forbidden North Ridge 13 hr "up" was ridge + whole descent, now 5 up from the bivy; Eldorado East
+    Ridge 7 was a round trip, now 3; Beckey-Davis, Boving-Christensen and Energizer Bunny had every
+    section label shifted one row. **STILL OPEN:** 87 rows — 24 researched but held (too few timed
+    reports: the session's web search budget ran out; their proposals are in the audit) and 63 never
+    researched. Re-run with the same brief per row; a row whose summit day already equals its leg is
+    read as a round trip by the camp rule meanwhile.
   - **ACCURACY, measured 2026-11-18** (`audits/2026-11-18-multiday-estimate-accuracy.json`): on 15 of a
     28-route sample with reported leg times, the summit-day view's time up from camp was 0.98x reported
     where the summit day ends at the car and 1.02x where later days follow; the whole summit day ran
