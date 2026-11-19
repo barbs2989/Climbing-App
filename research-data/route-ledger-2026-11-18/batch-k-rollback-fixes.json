@@ -1,0 +1,278 @@
+{
+ "note": "Values replaced by the owner-approved batch-B fixes, 2026-11-18",
+ "rollback": [
+  {
+   "table": "routes",
+   "id": "wa_south_east_corner",
+   "before": {
+    "pitches": 0
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_south_east_corner",
+   "before": {
+    "length_m": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_south_east_corner",
+   "before": {
+    "commitment": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_south_east_corner",
+   "before": {
+    "detailed_rack": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_south_east_corner",
+   "before": {
+    "permit": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_south_face_4_blownout_to_1st_anchor",
+   "before": {
+    "permit": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_jill_s_thrill",
+   "before": {
+    "pitches": 0
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_jill_s_thrill",
+   "before": {
+    "length_m": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_jill_s_thrill",
+   "before": {
+    "commitment": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_jill_s_thrill",
+   "before": {
+    "detailed_rack": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_jill_s_thrill",
+   "before": {
+    "permit": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_free_for_all_direct",
+   "before": {
+    "pitches": 0
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_free_for_all_direct",
+   "before": {
+    "length_m": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_free_for_all_direct",
+   "before": {
+    "detailed_rack": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_free_for_all_direct",
+   "before": {
+    "permit": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_northwest_face_pioneer_iron_spike_route",
+   "before": {
+    "detailed_rack": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_northwest_face_pioneer_iron_spike_route",
+   "before": {
+    "permit": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_givler_s_crack",
+   "before": {
+    "pitches": 0
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_bo_derek",
+   "before": {
+    "pitches": 0
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_bo_derek",
+   "before": {
+    "length_m": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_classic_crack",
+   "before": {
+    "pitches": 0
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_classic_crack",
+   "before": {
+    "length_m": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_classic_crack",
+   "before": {
+    "anchor": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_condorphamine_addiction",
+   "before": {
+    "pitches": 0
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_condorphamine_addiction",
+   "before": {
+    "length_m": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_great_northern_slab",
+   "before": {
+    "pitches": 0
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_japanese_gardens_to_1st_anchor",
+   "before": {
+    "fa": "Lowell Anderson, Dave Page, Jim Stoddard. FFA: Terry Lien, Jon Nelson"
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_japanese_gardens_to_1st_anchor",
+   "before": {
+    "ffa": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_princely_ambitions",
+   "before": {
+    "length_m": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_princely_ambitions",
+   "before": {
+    "bolts": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_libra_crack",
+   "before": {
+    "pitches": 0
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_libra_crack",
+   "before": {
+    "length_m": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_city_park",
+   "before": {
+    "aid_grade": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_city_park",
+   "before": {
+    "aid_grade_num": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_chockstone_route",
+   "before": {
+    "gain_ft": 2350
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_the_west_face",
+   "before": {
+    "rock_grade": "5.11-"
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_the_west_face",
+   "before": {
+    "gain_ft": 2400
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_boving_roofs",
+   "before": {
+    "gain_ft": 2350
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_liberty_bell_sidewinder",
+   "before": {
+    "permit": null
+   }
+  }
+ ]
+}

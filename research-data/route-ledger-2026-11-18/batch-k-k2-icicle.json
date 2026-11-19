@@ -1,0 +1,364 @@
+{
+ "wa_givler_s_crack": {
+  "area": "wa_givler_s_dome",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/105793355/givlers-crack",
+    "https://www.mountainproject.com/area/124317366/givlers-dome",
+    "https://wenatcheeoutdoors.org/2016/05/02/givlers-dome/",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_02/MapServer/0",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_Wilderness_01/MapServer/0",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/eightmile-campground",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/opportunities/climbing-and-caving"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "discipline",
+    "value": "trad",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105793355/givlers-crack",
+      "fact": "Trad; gear to 3 in",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://wenatcheeoutdoors.org/2016/05/02/givlers-dome/",
+      "fact": "standard rack for Givler's Crack, gear to 3 in",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "gear",
+    "value": "Cams up to about 3 inches.",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105793355/givlers-crack",
+      "fact": "Gear to 3 in",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://wenatcheeoutdoors.org/2016/05/02/givlers-dome/",
+      "fact": "Gear to 3 in",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_givler_s_crack",
+    "column": "pitches",
+    "from": 0,
+    "to": 2,
+    "why": "0 is invalid. MP: Trad, 2 pitches; Wenatchee Outdoors: most parties climb it in 2 pitches (short first pitch, then the hand crack). agree-2. Ledger after apply: agree-2/locked; evidence: Trad, 2 pitches | most parties do it as 2 pitches.",
+    "evidence": [
+     "https://www.mountainproject.com/route/105793355/givlers-crack",
+     "https://wenatcheeoutdoors.org/2016/05/02/givlers-dome/"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_givler_s_crack",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Okanogan-Wenatchee National Forest (Wenatchee River Ranger District)",
+     "rules": "The crag is outside designated wilderness."
+    },
+    "why": "access is empty. USFS basic-ownership layer at the crag (47.54829,-120.74088) = USDA Forest Service, Okanogan-Wenatchee NF; USFS wilderness layer = no wilderness there; the USFS Eightmile Campground page (Icicle Road, same corridor) names the Wenatchee River Ranger District. A parking pass at the Icicle Road pullouts is NOT stated on any official page found, so it is left out. official-1 after apply, expires 2027-11-18. Ledger after apply: official-1/locked; evidence: USDA FOREST SERVICE, Okanogan-Wenatchee National Forest at 47.54829,-120.74088 | no wilderness polygon at 47.54829,-120.74088 | Eightmile Campground on Icicle Road: Wenatchee River Ranger District.",
+    "evidence": [
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_02/MapServer/0",
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_Wilderness_01/MapServer/0",
+     "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/eightmile-campground"
+    ]
+   }
+  ],
+  "disputed": [
+   "grade: MP 5.7+ (stored), Wenatchee Outdoors 5.8 (a few 5.8 moves, feels like 5.7). Not identical; theCrag 403 (Chrome too), SummitPost blocked. Left as is.",
+   "fa: stored 'John Marts and party, 1960s'; MP/OpenBeta 'Steve Marts, 1970s'. One source only, and it contradicts the stored first name and decade. Left as is; needs a second source.",
+   "length: MP describes a 250 ft hand crack (P1 about 40 ft); no route length stated, no second source. Not proposed."
+  ],
+  "notes": "Raptor closure (Jan 1 - Aug 15, golden eagles) is posted on MP for Bridge Creek Wall only, not this crag; no official USFS closure page found for 2026. No official page states whether a NW Forest Pass is needed at the Icicle Road roadside pullouts (OSM tags them fee=no, not evidence), so parking_pass and permit are left out. No official Icicle Road seasonal-closure page found (a USFS 'upper Icicle Road area' alert URL now returns 404). Parking: Wenatchee Outdoors puts it at pullouts on the south side of Icicle Road about 5.95-6 mi from Icicle Junction, trail starting right of Alphabet Rock, 20-25 min up. The area's stored Forestland/Barney's Rubble parking pin (47.54381,-120.73472) is 4 m from OSM parking way/310632525 (fee=no). No pin proposed (routes carry no waypoints)."
+ },
+ "wa_givler_s_dome_fork_crack": {
+  "area": "wa_givler_s_dome",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/124317366/givlers-dome",
+    "https://wenatcheeoutdoors.org/2016/05/02/givlers-dome/"
+   ]
+  },
+  "notes": "STUCK / possible catalog defect: no source found for a 'Fork Crack' on Givler's Dome. MP's Givler's Dome page lists 5 routes (Bo Derek, Givler's Crack, Just For The Bolt Of It, Mastodon Roof, Never-Never Crack); Wenatchee Outdoors' Givler's Dome page lists Bo Derek, Wilson/McNerthney Route, Givler's Crack, Neat Route, It Doesn't Get Any Neater Than This, Just for the Bolt of It - no Fork Crack. One forum comment mentions a 'Forking crack' 5.9 near Icicle Buttress (a different crag). The row (5.9, pitches null, guide_stars 0) cannot be verified; owner decides whether it belongs here, elsewhere, or not at all. No fixes proposed."
+ },
+ "wa_bo_derek": {
+  "area": "wa_givler_s_dome",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/105809767/bo-derek",
+    "https://www.mountainproject.com/area/124317366/givlers-dome",
+    "https://wenatcheeoutdoors.org/2016/05/02/givlers-dome/",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_02/MapServer/0",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_Wilderness_01/MapServer/0",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/eightmile-campground"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "discipline",
+    "value": "trad",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105809767/bo-derek",
+      "fact": "Trad, cams to #2 Camalot",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://wenatcheeoutdoors.org/2016/05/02/givlers-dome/",
+      "fact": "Bo Derek: crack, gear to 1.5 in; standard rack",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_bo_derek",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "0 is invalid. MP: one 65 ft trad line (no pitch count stated); one pitch is implied, not stated - ledger unconfirmed (single-source).",
+    "evidence": [
+     "https://www.mountainproject.com/route/105809767/bo-derek"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_bo_derek",
+    "column": "length_m",
+    "from": null,
+    "to": 20,
+    "why": "MP states 65 ft (20 m). Single source (theCrag 403, SummitPost blocked); locked-1src after apply. Ledger after apply: single-source/locked-1src; evidence: Trad, 65 ft (20 m).",
+    "evidence": [
+     "https://www.mountainproject.com/route/105809767/bo-derek"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_bo_derek",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Okanogan-Wenatchee National Forest (Wenatchee River Ranger District)",
+     "rules": "The crag is outside designated wilderness."
+    },
+    "why": "access is empty. USFS basic-ownership layer at the crag (47.54829,-120.74088) = USDA Forest Service, Okanogan-Wenatchee NF; USFS wilderness layer = no wilderness there; the USFS Eightmile Campground page (Icicle Road, same corridor) names the Wenatchee River Ranger District. A parking pass at the Icicle Road pullouts is NOT stated on any official page found, so it is left out. official-1 after apply, expires 2027-11-18. Ledger after apply: official-1/locked; evidence: USDA FOREST SERVICE, Okanogan-Wenatchee National Forest at 47.54829,-120.74088 | no wilderness polygon at 47.54829,-120.74088 | Eightmile Campground on Icicle Road: Wenatchee River Ranger District.",
+    "evidence": [
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_02/MapServer/0",
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_Wilderness_01/MapServer/0",
+     "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/eightmile-campground"
+    ]
+   }
+  ],
+  "disputed": [
+   "grade: stored 5.10a; MP 5.10-; Wenatchee Outdoors 5.10b ('stellar 5.10b crack'). No two sources agree on one letter; left as is.",
+   "gear: MP cams to #2 Camalot; Wenatchee Outdoors gear to 1.5 in. Not proposed.",
+   "anchor: MP says there is no anchor at the top; most parties use the bolted anchor far left plus a directional. Not proposed (one source).",
+   "fa: stored 'Bob Plumb, Gordon Briody 1980' equals MP; a first ascent never locks from one source."
+  ],
+  "notes": "Raptor closure (Jan 1 - Aug 15, golden eagles) is posted on MP for Bridge Creek Wall only, not this crag; no official USFS closure page found for 2026. No official page states whether a NW Forest Pass is needed at the Icicle Road roadside pullouts (OSM tags them fee=no, not evidence), so parking_pass and permit are left out. No official Icicle Road seasonal-closure page found (a USFS 'upper Icicle Road area' alert URL now returns 404)."
+ },
+ "wa_classic_crack": {
+  "area": "wa_eight_mile_rock",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/105793864/classic-crack",
+    "https://www.openstreetmap.org/node/11919016988",
+    "https://www.openstreetmap.org/relation/19302894",
+    "https://app.advcollective.com/climbing/eight-mile-rock-climbing-guide-icicle-creeks-inviting-crag",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_02/MapServer/0",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_Wilderness_01/MapServer/0",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/eightmile-campground"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.8+",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105793864/classic-crack",
+      "fact": "5.8+ YDS, Trad",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_classic_crack",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "0 is invalid. MP: one 50 ft crack to a bolted anchor; one pitch is implied, not stated - ledger unconfirmed. (OSM node 11919016988 tags climbing:pitches=1, but OSM route tags here mirror MP, so not a second source.)",
+    "evidence": [
+     "https://www.mountainproject.com/route/105793864/classic-crack"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_classic_crack",
+    "column": "length_m",
+    "from": null,
+    "to": 15,
+    "why": "MP states 50 ft (15 m). Single source; locked-1src after apply. Ledger after apply: single-source/locked-1src; evidence: Trad, 50 ft (15 m).",
+    "evidence": [
+     "https://www.mountainproject.com/route/105793864/classic-crack"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_classic_crack",
+    "column": "anchor",
+    "from": null,
+    "to": "Bolted anchor",
+    "why": "MP protection: standard rack to 2 in, bolted anchor at the top (bolt count not stated). Single source.",
+    "evidence": [
+     "https://www.mountainproject.com/route/105793864/classic-crack"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_classic_crack",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Okanogan-Wenatchee National Forest (Wenatchee River Ranger District)",
+     "rules": "The crag is outside designated wilderness."
+    },
+    "why": "access is empty. USFS basic-ownership layer at the crag (47.55538,-120.77103) = USDA Forest Service, Okanogan-Wenatchee NF; USFS wilderness layer = no wilderness there; the USFS Eightmile Campground page (Icicle Road, same corridor) names the Wenatchee River Ranger District. A parking pass at the Icicle Road pullouts is NOT stated on any official page found, so it is left out. official-1 after apply, expires 2027-11-18. Ledger after apply: official-1/locked; evidence: USDA FOREST SERVICE, Okanogan-Wenatchee National Forest at 47.55538,-120.77103 | no wilderness polygon at 47.55538,-120.77103 | Eightmile Campground on Icicle Road: Wenatchee River Ranger District.",
+    "evidence": [
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_02/MapServer/0",
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_Wilderness_01/MapServer/0",
+     "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/eightmile-campground"
+    ]
+   }
+  ],
+  "disputed": [
+   "grade: a rockclimbing.com photo caption calls it 5.9 (caption only). An Adventure Collective page agrees 5.8+ but is an uncited aggregator and says there is no fixed gear, contradicting MP's bolted anchor - not counted.",
+   "fa: stored 'Mr. Beckey' equals MP's FA field verbatim; no first name or year, unverifiable. Left as is."
+  ],
+  "notes": "Raptor closure (Jan 1 - Aug 15, golden eagles) is posted on MP for Bridge Creek Wall only, not this crag; no official USFS closure page found for 2026. No official page states whether a NW Forest Pass is needed at the Icicle Road roadside pullouts (OSM tags them fee=no, not evidence), so parking_pass and permit are left out. No official Icicle Road seasonal-closure page found (a USFS 'upper Icicle Road area' alert URL now returns 404). FILING CHECKED, NOT A DEFECT: Classic Crack is at Eight-Mile Rock - MP breadcrumb Icicle Creek > Eight Mile Area > Eight-Mile Rock, and OSM route node 11919016988 sits in the OSM 'Eightmile Rock' crag (relation 19302894), 5 m from the stored area point. The area's stored parking pin (47.55561,-120.77017) coincides (0 m) with OSM layby parking way/301611317."
+ },
+ "wa_condorphamine_addiction": {
+  "area": "wa_condor_buttress",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/v/105793190",
+    "https://wenatcheeoutdoors.org/2016/05/02/condor-buttress-condoraphamine-addiction/",
+    "https://tripreportblog.blogspot.com/2010/05/condorphamine-addiction-050810.html",
+    "https://www.openstreetmap.org/node/13895390853",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_02/MapServer/0",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_Wilderness_01/MapServer/0",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/eightmile-campground"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.10b",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/v/105793190",
+      "fact": "5.10b YDS",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://wenatcheeoutdoors.org/2016/05/02/condor-buttress-condoraphamine-addiction/",
+      "fact": "7 pitch 5.10B slab climb (adapted from SummitPost)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "discipline",
+    "value": "sport",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/v/105793190",
+      "fact": "Sport; lots of draws",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://wenatcheeoutdoors.org/2016/05/02/condor-buttress-condoraphamine-addiction/",
+      "fact": "needs only quickdraws for protection",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_condorphamine_addiction",
+    "column": "pitches",
+    "from": 0,
+    "to": 7,
+    "why": "0 is invalid. MP: 7 pitches; Wenatchee Outdoors (adapted from SummitPost): 7 pitch climb (3.5 if linked). agree-2. Ledger after apply: agree-2/locked; evidence: Sport, 675 ft, 7 pitches | 7 pitch 5.10B slab climb (adapted from SummitPost).",
+    "evidence": [
+     "https://www.mountainproject.com/v/105793190",
+     "https://wenatcheeoutdoors.org/2016/05/02/condor-buttress-condoraphamine-addiction/"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_condorphamine_addiction",
+    "column": "length_m",
+    "from": null,
+    "to": 206,
+    "why": "MP states 675 ft = 205.7 m, rounded 206 (MP prints 205 m). Wenatchee Outdoors/SummitPost give 600 ft for the FACE, not the route, so not a contradiction. locked-1src after apply. Ledger after apply: single-source/locked-1src; evidence: Sport, 675 ft, 7 pitches.",
+    "evidence": [
+     "https://www.mountainproject.com/v/105793190",
+     "https://wenatcheeoutdoors.org/2016/05/02/condor-buttress-condoraphamine-addiction/"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_condorphamine_addiction",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Okanogan-Wenatchee National Forest (Wenatchee River Ranger District)",
+     "rules": "The crag is outside designated wilderness."
+    },
+    "why": "access is empty. USFS basic-ownership layer at the crag (47.572757,-120.776903) = USDA Forest Service, Okanogan-Wenatchee NF; USFS wilderness layer = no wilderness there; the USFS Eightmile Campground page (Icicle Road, same corridor) names the Wenatchee River Ranger District. A parking pass at the Icicle Road pullouts is NOT stated on any official page found, so it is left out. official-1 after apply, expires 2027-11-18. Ledger after apply: official-1/locked; evidence: USDA FOREST SERVICE, Okanogan-Wenatchee National Forest at 47.572757,-120.776903 | no wilderness polygon at 47.572757,-120.776903 | Eightmile Campground on Icicle Road: Wenatchee River Ranger District.",
+    "evidence": [
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_02/MapServer/0",
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_Wilderness_01/MapServer/0",
+     "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/eightmile-campground"
+    ]
+   }
+  ],
+  "disputed": [
+   "fa: stored 'Leland Windham, Ron Cotman 2000' = MP; Wenatchee Outdoors/SummitPost name only Leland Windham, 2000. Names differ, so FA not locked.",
+   "approach time: MP 1-2 h; Wenatchee Outdoors 45-50 min at a good clip. Not proposed."
+  ],
+  "notes": "Raptor closure (Jan 1 - Aug 15, golden eagles) is posted on MP for Bridge Creek Wall only, not this crag; no official USFS closure page found for 2026. No official page states whether a NW Forest Pass is needed at the Icicle Road roadside pullouts (OSM tags them fee=no, not evidence), so parking_pass and permit are left out. No official Icicle Road seasonal-closure page found (a USFS 'upper Icicle Road area' alert URL now returns 404). Parking: Wenatchee Outdoors - the largest pullout about 0.2 mi past the Eightmile Road turn on Icicle Road; a 2010 blog parked at the Snow Lakes lot (outlier). MP's route GPS (47.54712,-120.75066) points at Icicle Buttress, 3.5 km off; the stored Condor Buttress area point (47.57259,-120.77926) is 178 m from OSM route_bottom node 13895390853, so the catalog location looks right. Descent: rappel the route (two ropes recommended by both) or one short rappel to the gully and walk off (MP)."
+ }
+}
