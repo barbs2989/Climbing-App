@@ -1,0 +1,507 @@
+{
+ "ca_mount_bago_north_ridge": {
+  "area": "ca_mount_bago",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Onion Valley Trailhead",
+    "trailheadLat": 36.772538,
+    "trailheadLng": -118.341244
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Onion Valley Trailhead",
+     "trailheadLat": 36.772538,
+     "trailheadLng": -118.341244
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_InfraRecreationSites_01/MapServer/0/query?where=site_cn%3D%275340.003721%27&outFields=site_name&f=json",
+      "fact": "ONION VALLEY/KEARSARGE PASS TH 36.77254,-118.34124",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     },
+     {
+      "url": "https://peaksforfreaks.blogspot.com/2014/05/bago-buddy-peak-mt-baxter-acrodectes.html",
+      "fact": "Onion Valley Trailhead (within 6 m) 36.77256,-118.34119",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://peaksforfreaks.blogspot.com/2014/05/bago-buddy-peak-mt-baxter-acrodectes.html",
+    "fact": "Kearsarge Pass Trail from Onion Valley TH (4.7 mi to pass, 2.6 mi to JMT junction) to reach the Bago area; route text itself says cross Kearsarge Pass"
+   },
+   "chunk": "out2/r05.json",
+   "released": "hand-read: caution word in the note did not concern the start"
+  }
+ },
+ "ca_mount_baxter_standard_route": {
+  "area": "ca_mount_baxter",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Baxter Pass Trailhead",
+    "trailheadLat": 36.844705,
+    "trailheadLng": -118.297612
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Baxter Pass Trailhead",
+     "trailheadLat": 36.844705,
+     "trailheadLng": -118.297612
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_InfraRecreationSites_01/MapServer/0/query?where=site_cn%3D%275323.003721%27&outFields=site_name&f=json",
+      "fact": "BAXTER PASS TRAILHEAD 36.84471,-118.29761",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     },
+     {
+      "url": "https://peaksforfreaks.blogspot.com/2014/05/bago-buddy-peak-mt-baxter-acrodectes.html",
+      "fact": "Baxter Pass Trailhead (within 18 m) 36.84486,-118.29770",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://www.snwburd.com/bob/trip_reports/baxter_1.html",
+    "fact": "Baxter Pass Trailhead, party started 6 a.m.; also Wacziarg 2022 class 2 SW slope via Baxter Pass trail"
+   },
+   "chunk": "out2/r05.json",
+   "released": "hand-read: caution word in the note did not concern the start"
+  }
+ },
+ "ca_mount_guyot_guyot_pass_route": {
+  "area": "ca_mount_guyot",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Cottonwood Pass Trailhead (Horseshoe Meadow)",
+    "trailheadLat": 36.448305,
+    "trailheadLng": -118.170612
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Cottonwood Pass Trailhead (Horseshoe Meadow)",
+     "trailheadLat": 36.448305,
+     "trailheadLng": -118.170612
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_InfraRecreationSites_01/MapServer/0/query?where=site_cn%3D%275330.003721%27&outFields=site_name&f=json",
+      "fact": "COTTONWOOD PASS TH 36.44831,-118.17061",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     },
+     {
+      "url": "https://www.hikespeak.com/trails/cottonwood-pass-hike-golden-trout-wilderness",
+      "fact": "Cottonwood Pass Trailhead (east end of Horseshoe Meadow Campground) (within 5 m) 36.44834,-118.17065",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "route_text",
+    "fact": "Reach the Pacific Crest Trail near Guyot Pass from Horseshoe Meadow; Cottonwood Pass trail from Horseshoe Meadow (3.5 mi, 1,200 ft) is the way to the PCT"
+   },
+   "chunk": "out2/r07.json",
+   "released": "hand-read: caution word in the note did not concern the start"
+  }
+ },
+ "ca_red_peak_standard_route": {
+  "area": "ca_red_peak",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Mono Meadow Trailhead",
+    "trailheadLat": 37.671453,
+    "trailheadLng": -119.584778
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Mono Meadow Trailhead",
+     "trailheadLat": 37.671453,
+     "trailheadLng": -119.584778
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://mapservices.nps.gov/arcgis/rest/services/NationalDatasets/NPS_Public_POIs_Geographic/FeatureServer/0/query?where=POINAME%3D%27Mono%20Meadow%20Trailhead%27&outFields=POINAME&f=json",
+      "fact": "Mono Meadow Trailhead (YOSE) 37.67145,-119.58478",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "page",
+    "fact": "Red Peak climb starts at Mono Meadows (Glacier Point Rd, ~7,200 ft), trail to Upper Ottoway Lake; NPS lists Mono Meadow as the trailhead for the Red Peak Pass loop via Ottoway Lakes",
+    "url": "https://climber.org/reports/2007/1612.html"
+   },
+   "chunk": "out2/r09.json",
+   "released": "hand-read: caution word in the note did not concern the start"
+  }
+ },
+ "ca_rockhouse_peak_standard_route": {
+  "area": "ca_rockhouse_peak",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "South Manter Meadow Trailhead (Big Meadow)",
+    "trailheadLat": 35.868835,
+    "trailheadLng": -118.326483
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "South Manter Meadow Trailhead (Big Meadow)",
+     "trailheadLat": 35.868835,
+     "trailheadLng": -118.326483
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.openstreetmap.org/node/8284671095",
+      "fact": "Manter Meadow Trailhead 35.86883,-118.32648",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://climber.org/driving/images/BigMeadow.gpx",
+      "fact": "South Manter Meadow Trailhead (within 15 m) 35.86883,-118.32632",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://climber.org/driving/BigMeadow.html",
+    "fact": "South Manter Meadow is the trailhead most people use for Rockhouse; Manter Creek Trail 35E12 east, then about 1 mi off trail north"
+   },
+   "chunk": "out5/q21.json",
+   "released": "hand-read: caution word in the note did not concern the start"
+  }
+ },
+ "ca_vandever_mountain_south_slope_from_farewell_gap": {
+  "area": "ca_vandever_mountain",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Eagle-Mosquito Trailhead (Mineral King road end)",
+    "trailheadLat": 36.448545,
+    "trailheadLng": -118.595366
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Eagle-Mosquito Trailhead (Mineral King road end)",
+     "trailheadLat": 36.448545,
+     "trailheadLng": -118.595366
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://mapservices.nps.gov/arcgis/rest/services/NationalDatasets/NPS_Public_POIs_Geographic/FeatureServer/0/query?where=POINAME%3D%27Eagle-Mosquito%27&outFields=POINAME&f=json",
+      "fact": "Eagle-Mosquito (SEKI) 36.44854,-118.59537",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     },
+     {
+      "url": "https://www.openstreetmap.org/node/2382074194",
+      "fact": "Eagle-Mosquito Trailhead (within 10 m) 36.44845,-118.59535",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://hikingwalking.com/destinations/ca/ca_sws/mineral_king/white_chief",
+    "fact": "Eagle/Mosquito parking at the end of Mineral King Road; Farewell Gap trail starts at the Eagle Creek trailhead at road end (search summary of a guide)"
+   },
+   "chunk": "out5/q25.json",
+   "released": "hand-read: caution word in the note did not concern the start"
+  }
+ },
+ "ca_needham_mountain_standard_route": {
+  "area": "ca_needham_mountain",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Sawtooth Pass Trailhead, Mineral King",
+    "trailheadLat": 36.453305,
+    "trailheadLng": -118.596761
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Sawtooth Pass Trailhead, Mineral King",
+     "trailheadLat": 36.453305,
+     "trailheadLng": -118.596761
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://mapservices.nps.gov/arcgis/rest/services/NationalDatasets/NPS_Public_POIs_Geographic/FeatureServer/0/query?where=POINAME%3D%27Sawtooth%27&outFields=POINAME&f=json",
+      "fact": "Sawtooth (SEKI) 36.45331,-118.59676",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://climber.org/reports/2011/1825.html",
+    "fact": "Hiked from Mineral King trailhead (7830) to Crystal Lake, over Amphitheatre Col, climbed Needham"
+   },
+   "chunk": "out2/r08.json",
+   "released": "hand-read: caution word in the note did not concern the start"
+  }
+ },
+ "co_cathedral_peak_south_ridge_and_couloir": {
+  "area": "co_cathedral_peak",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Cathedral Lake Trailhead",
+    "trailheadLat": 39.042686,
+    "trailheadLng": -106.80818
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Cathedral Lake Trailhead",
+     "trailheadLat": 39.042686,
+     "trailheadLng": -106.80818
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_InfraRecreationSites_01/MapServer/0/query?where=site_cn%3D%2712385.001831%27&outFields=site_name&f=json",
+      "fact": "CATHEDRAL 39.04269,-106.80818",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     },
+     {
+      "url": "https://www.climb13ers.com/colorado-13ers/cathedral-peak",
+      "fact": "Cathedral Lake Trailhead (within 17 m) 39.04284,-106.80816",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://www.climb13ers.com/colorado-13ers/cathedral-peak",
+    "fact": "South Ridge & Couloir route from Cathedral Lake TH, Trail 1984 to Cathedral Lake, rubble basin, northernmost couloir; route text also says trail to Cathedral Lake"
+   },
+   "chunk": "out2/r11.json",
+   "released": "hand-read: caution word in the note did not concern the start"
+  }
+ },
+ "wa_little_annapurna_south_face": {
+  "area": "wa_little_annapurna",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Ingalls Creek Trailhead",
+    "trailheadLat": 47.462906,
+    "trailheadLng": -120.673025
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Ingalls Creek Trailhead",
+     "trailheadLat": 47.462906,
+     "trailheadLng": -120.673025
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_InfraRecreationSites_01/MapServer/0/query?where=site_cn%3D%276218.005511%27&outFields=site_name&f=json",
+      "fact": "INGALLS CREEK 47.46291,-120.67302",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     },
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/ingalls-creek",
+      "fact": "Ingalls Creek trailhead (trail #1215) (within 18 m) 47.46280,-120.67320",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "route_text",
+    "fact": "turn onto Ingalls Creek Road/Trailhead off US-97, hike Ingalls Creek Trail ~8 miles, then up Crystal Creek"
+   },
+   "chunk": "out2/r19.json",
+   "released": "hand-read: caution word in the note did not concern the start"
+  }
+ },
+ "ca_colosseum_mountain_standard_route": {
+  "area": "ca_colosseum_mountain",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Sawmill Pass Trailhead",
+    "trailheadLat": 36.938805,
+    "trailheadLng": -118.290212
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Sawmill Pass Trailhead",
+     "trailheadLat": 36.938805,
+     "trailheadLng": -118.290212
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_InfraRecreationSites_01/MapServer/0/query?where=site_cn%3D%275355.003721%27&outFields=site_name&f=json",
+      "fact": "SAWMILL PASS TH 36.93881,-118.29021",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     },
+     {
+      "url": "https://www.openstreetmap.org/node/5790654656",
+      "fact": "Sawmill Pass Trailhead (within 12 m) 36.93891,-118.29025",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "page",
+    "fact": "Trailhead Sawmill Trail; Colosseum climbed by west ridge from the Sawmill Pass side (1998 official trip, Eckert/Schuman)",
+    "url": "https://www.climber.org/reports/1998/385.html"
+   },
+   "chunk": "out2/r02.json",
+   "released": "hand-read: caution word in the note did not concern the start"
+  }
+ },
+ "ca_castle_peak_summit_via_castle_pass": {
+  "area": "ca_castle_peak_summit",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Donner Summit PCT Trailhead (I-80 exit 176)",
+    "trailheadLat": 39.339885,
+    "trailheadLng": -120.343949
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Donner Summit PCT Trailhead (I-80 exit 176)",
+     "trailheadLat": 39.339885,
+     "trailheadLng": -120.343949
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_InfraRecreationSites_01/MapServer/0/query?where=site_cn%3D%275340.004481%27&outFields=site_name&f=json",
+      "fact": "DONNER SUMMIT PCT 39.33989,-120.34395",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://www.donnersummitca.com/adventures/castle-peak/",
+    "fact": "hike starts at exit 176 I-80; PCT trailhead south side; parking north side lot or sno-park; route reaches Castle Pass then northeast along ridge to NW turret"
+   },
+   "chunk": "out5/q02.json",
+   "released": "hand-read: caution word in the note did not concern the start"
+  }
+ },
+ "co_snowmass_mountain_east_slopes": {
+  "area": "co_snowmass_mountain",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Snowmass Creek Trailhead",
+    "trailheadLat": 39.198895,
+    "trailheadLng": -107.000566
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Snowmass Creek Trailhead",
+     "trailheadLat": 39.198895,
+     "trailheadLng": -107.000566
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_InfraRecreationSites_01/MapServer/0/query?where=site_cn%3D%2712379.001831%27&outFields=site_name&f=json",
+      "fact": "WEST SNOWMASS 39.19890,-107.00057",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://www.14ers.com/route.php?route=snow1",
+    "fact": "East Slopes route starts at Snowmass Creek trailhead, 8400 ft, 11.3 mi up Snowmass Creek Rd from CO 82; 22 mi RT, 5800 ft gain"
+   },
+   "chunk": "out5/q22.json",
+   "released": "hand-read: caution word in the note did not concern the start"
+  }
+ }
+}
