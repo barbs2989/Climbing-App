@@ -5,7 +5,6 @@ import { C, CAT, ROUTES, catOf, gradeLabel, routeLocText, shortDate, daysUntil }
 import Av from "../src/components/Av.tsx";
 import DiscIcon from "../src/components/DiscIcon.tsx";
 import ActionIcon from "../src/components/ActionIcon.tsx";
-import { photoThumb, thumbFallback } from "./photoThumb";
 import { discLabel } from "./discLabels";
 import { useMyHomeStatePaths, usePlaceSearch, useRouteSearch, useStates } from "./db.js";
 import { USE_DB } from "./supabase";
@@ -234,75 +233,10 @@ export function WideSearch({ onOpenRoute, onOpenArea, onOpenFinder, width, left,
   </div>;
 }
 
-/* RIGHT RAIL. Widgets drawn from what App already holds — the next agreed crew days, alerts, your
-   crews and your groups. Ads take the last slot in this column (desktop only; `ad`). */
-
-const badgeN = n => n ? <span aria-hidden="true" style={{ minWidth: 18, height: 18, borderRadius: 9, background: C.redSolid, color: C.onSolid, fontSize: 11, fontWeight: 800, display: "inline-flex", alignItems: "center", justifyContent: "center", padding: "0 5px", boxSizing: "border-box" }}>{n}</span> : null;
-const PER = 5;
-const seeAllBtn = { padding: "4px 10px", border: "none", background: "transparent", color: C.blue, fontSize: 13, fontWeight: 700, cursor: "pointer" };
-
-/* A rail card whose header folds it — the Alerts card's header shape (44px, chevron, aria-expanded),
-   carrying the card's unread count so a folded card still says what waits. Starts open. */
-function FoldCard({ id, title, unread, unreadWord, children }) {
-  const [open, setOpen] = useState(true);
-  return <section aria-labelledby={id} style={{ ...CARD, paddingBottom: 6 }}>
-    <button id={id} onClick={() => setOpen(o => !o)} aria-expanded={open} aria-label={title + (unread ? ", " + unread + " " + unreadWord : "")} style={{ minHeight: 44, ...SECTION, width: "100%", display: "flex", alignItems: "center", gap: 8, padding: 0, border: "none", background: "transparent", cursor: "pointer", textAlign: "left" }}><span style={{ flex: 1 }}>{title}</span>{badgeN(unread)}<span aria-hidden="true" style={{ display: "flex" }}><Chevron open={open} size={14} color={C.blue} /></span></button>
-    {open ? <div style={{ marginBottom: 4 }}>{children}</div> : null}
-  </section>;
-}
-
-/* YOUR CREWS, WITH THEIR CHATS (owner 2026-11-11: "move your crews to the right… combine your crews
-   with crew chats", and "remove the direct chats from the right panel" — direct messages stay one
-   click away in the top bar's Messages drop-down, which carries their unread count). One row per
-   active crew (App's activeCrews, the Crews tab's own list), newest chat message first, named for its
-   place, with the last message under the name (read the way the inbox reads it: "You: …", "Photo")
-   and the chat's unread count. While the read is in flight it says so, never "No crews yet." (the
-   empty-account claim check:outage guards against). A click opens the CREW (owner: the crew page, as the sidebar's rows
-   did), where its chat is. A failed crews read says so rather than listing nothing. */
-function RailCrews({ crews, crewMsgs, crewUnread, placeOf, unavailable, loading, onOpenCrew, onAllCrews, onFindPartners }) {
-  const last = arr => (arr && arr.length ? arr[arr.length - 1] : null);
-  const rows = (crews || []).map(cr => {
-    const p = placeOf(cr);
-    const m = last((crewMsgs || {})[cr.id]);
-    return { cr, name: (p && p.kind !== "missing" && p.name) || "Crew", sub: (p && p.kind !== "missing" && p.parentName && p.parentName !== p.name) ? p.parentName : null, m, ts: (m && m.ts) || 0, unread: Number((crewUnread || {})[cr.id]) || 0 };
-  }).sort((a, b) => b.ts - a.ts);
-  const unread = rows.reduce((n, r) => n + r.unread, 0);
-  const preview = m => (m ? (m.from === "me" ? "You: " : (m.name ? m.name + ": " : "")) + (m.image && !m.text ? "Photo" : String(m.text || "")) : "");
-  return <FoldCard id="rail-crews" title={"Your crews" + (rows.length ? " · " + rows.length : "")} unread={unread} unreadWord="unread">
-    {unavailable ? <div style={{ fontSize: 13, color: C.amber, lineHeight: 1.45, padding: "0 2px 8px" }}>Couldn’t load your crews just now.</div>
-      : !rows.length && loading ? <div style={{ fontSize: 13, color: C.textMuted, padding: "0 2px 8px" }}>Loading your crews…</div>
-      : !rows.length ? <div style={{ fontSize: 13, color: C.textMuted, lineHeight: 1.45, padding: "0 2px 8px" }}>No crews yet.<button onClick={onFindPartners} style={{ ...seeAllBtn, display: "block", padding: 0, marginTop: 8 }}>Find partners ›</button></div>
-      : <>{rows.slice(0, PER).map(r => <button key={r.cr.id} onClick={() => onOpenCrew(r.cr)} aria-label={r.name + " crew" + (r.unread ? ", " + r.unread + " unread" : "")} style={{ ...ROW, alignItems: "flex-start" }}>
-          <span aria-hidden="true" style={{ width: 28, height: 28, borderRadius: 10, background: C.card, border: "1px solid " + C.border, display: "inline-flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}><ActionIcon name="crews" size={15} color={C.textSub} /></span>
-          <span style={{ flex: 1, minWidth: 0 }}>
-            <span style={{ display: "block", fontSize: 13.5, fontWeight: r.unread ? 800 : 700, overflowWrap: "anywhere" }}>{r.name}{r.sub ? <span style={{ display: "block", fontSize: 11.5, fontWeight: 600, color: C.textMuted }}>{r.sub}</span> : null}</span>
-            {r.m ? <span style={{ display: "block", fontSize: 12.5, lineHeight: 1.4, color: r.unread ? C.textSub : C.textMuted, overflowWrap: "anywhere" }}>{preview(r.m)}</span> : null}
-          </span>
-          {badgeN(r.unread)}
-        </button>)}
-        {rows.length > PER ? <button onClick={onAllCrews} style={seeAllBtn}>{"See all " + rows.length + " crews ›"}</button> : null}</>}
-  </FoldCard>;
-}
-
-/* YOUR GROUPS (owner 2026-11-04 put them in the sidebar, from the competitor review — Facebook lists
-   your groups; owner 2026-11-11 moved them here): up to five, a red dot when a group has posts you have
-   not seen (App's groupUnreadN, the Groups tab's own count). Drawn only when you are in a group. */
-function RailGroups({ groups, groupUnreadN, onOpenGroup, onAllGroups }) {
-  const list = groups || [];
-  if (!list.length) return null;
-  const newN = list.filter(g => groupUnreadN(g) > 0).length;
-  return <FoldCard id="rail-groups" title={"Your groups · " + list.length} unread={newN} unreadWord={newN === 1 ? "group with new posts" : "groups with new posts"}>
-    {list.slice(0, PER).map(g => {
-      const nn = groupUnreadN(g);
-      return <button key={g.id} onClick={() => onOpenGroup(g)} aria-label={g.name + (nn ? ", " + nn + " new post" + (nn === 1 ? "" : "s") : "")} style={ROW}>
-        {/* The group's own avatar (0454) when it has one, else the groups icon. */}<span aria-hidden="true" style={{ width: 28, height: 28, borderRadius: 10, background: C.card, border: "1px solid " + C.border, display: "inline-flex", alignItems: "center", justifyContent: "center", flexShrink: 0, overflow: "hidden" }}>{g.avatarUrl ? <img src={photoThumb(g.avatarUrl, 28)} onError={thumbFallback} alt="" loading="lazy" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} /> : <ActionIcon name="partners" size={15} color={C.textSub} />}</span>
-        <span style={{ flex: 1, minWidth: 0, fontSize: 13.5, fontWeight: nn ? 800 : 700, overflowWrap: "anywhere" }}>{g.name}</span>
-        {nn ? <span aria-hidden="true" style={{ width: 8, height: 8, borderRadius: 4, background: C.red, flexShrink: 0 }} /> : null}
-      </button>;
-    })}
-    {list.length > PER ? <button onClick={onAllGroups} style={seeAllBtn}>{"See all " + list.length + " groups ›"}</button> : null}
-  </FoldCard>;
-}
+/* RIGHT RAIL. Widgets drawn from what App already holds — the next agreed crew days and alerts. Your
+   crews and your groups left it (owner 2026-11-18: "remove your crews and your groups from right
+   panel"); they stay on the Crews tab and the Groups screen. Ads take the last slot in this column
+   (desktop only; `ad`). */
 
 /* THE AVATAR'S MENU (owner 2026-11-11: "add it, keep ☰"): on the website the avatar opens a small
    drop-down under it, as Strava's, GitHub's and Facebook's do, instead of going straight to the
@@ -353,7 +287,7 @@ export function AvatarMenu({ avatar, name, items }) {
 
 /* UPCOMING-UNAVAILABLE: the crews read failed, so the agreed days are unknown, not none (check:overlay-absence:
    "No crew days agreed yet" over a failed read told a climber with crew days that they had none). */
-export function WideRail({ upcoming, upcomingUnavailable, alerts, waiting, newN: newCount, guest, onSignIn, onOpenCal, onOpenAlerts, onFindPartners, crews, groups, ad, showToast }) {
+export function WideRail({ upcoming, upcomingUnavailable, alerts, waiting, newN: newCount, guest, onSignIn, onOpenCal, onOpenAlerts, onFindPartners, ad, showToast }) {
   const unread = alerts.filter(n => !n.read);
   /* ONE ALERTS LIST (owner, 2026-10-23, #2734): this card shows what Home's Alerts button shows —
      `waiting` (requests, invites, unread chats, a day or a climb to confirm; amber, first) and then
@@ -386,8 +320,6 @@ export function WideRail({ upcoming, upcomingUnavailable, alerts, waiting, newN:
       {guest ? null : unreadShown.length ? unreadShown.map(n => <button key={n.id} onClick={onOpenAlerts} style={{ ...ROW, alignItems: "flex-start", boxSizing: "border-box", height: 53 }}><span aria-hidden="true" style={{ width: 7, height: 7, marginTop: 6, borderRadius: 4, background: C.blue, flexShrink: 0 }}/><span style={{ minWidth: 0, fontSize: 13, lineHeight: 1.4, color: C.text, display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical", overflow: "hidden", overflowWrap: "anywhere" }}>{n.text}</span></button>) : waiting.length ? null : <div style={{ fontSize: 13, color: C.textMuted, padding: "2px 2px 4px" }}>You’re all caught up.</div>}
       {alerts.length || moreN > 0 ? <button onClick={onOpenAlerts} style={{ marginTop: 4, padding: "4px 10px", border: "none", background: "transparent", color: C.blue, fontSize: 13, fontWeight: 700, cursor: "pointer" }}>{moreN > 0 ? "See all notifications · " + moreN + " more ›" : "See all notifications ›"}</button> : null}</div>}
     </section>
-    {crews ? <RailCrews {...crews} onFindPartners={onFindPartners} /> : null}
-    {groups ? <RailGroups {...groups} /> : null}
     {ad ? <RailAd /> : null}
   </aside>;
 }
