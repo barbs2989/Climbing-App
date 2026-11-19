@@ -590,9 +590,10 @@ function renderMD(text){
   const blocks=[];let list=null;
   function flushList(){if(list){blocks.push(list);list=null;}}
   function inline(s,key){
-    const parts=s.split(/(\*\*[^*]+\*\*|_[^_]+_|\[[^\]\n]+\]\([^)\s]+\))/g).filter(Boolean);
+    const parts=s.split(/(\*\*[^*]+\*\*|~~[^~]+~~|_[^_]+_|\[[^\]\n]+\]\([^)\s]+\))/g).filter(Boolean);
     return parts.map(function(p,i){
       if(/^\*\*[^*]+\*\*$/.test(p))return <b key={key+"_"+i}>{p.slice(2,-2)}</b>;
+      if(/^~~[^~]+~~$/.test(p))return <s key={key+"_"+i}>{p.slice(2,-2)}</s>;
       if(/^_[^_]+_$/.test(p))return <i key={key+"_"+i}>{p.slice(1,-1)}</i>;
       const lk=/^\[([^\]\n]+)\]\(([^)\s]+)\)$/.exec(p);
       /* Only http(s) becomes a link. This text is climber-written and stored verbatim, so
@@ -608,7 +609,12 @@ function renderMD(text){
   lines.forEach(function(line,li){
     const bullet=/^\s*[-•]\s+(.*)/.exec(line);
     const numbered=/^\s*\d+[.)]\s+(.*)/.exec(line);
-    if(bullet){
+    /* "> " opens a QUOTE, the space required: a line that starts ">5.10 only" is a sentence. */
+    const quote=/^\s*>\s+(.*)/.exec(line);
+    if(quote){
+      if(!list||list.type!=="q"){flushList();list={type:"q",key:"l"+li,items:[]};}
+      list.items.push(quote[1]);
+    }else if(bullet){
       if(!list||list.type!=="ul"){flushList();list={type:"ul",key:"l"+li,items:[]};}
       list.items.push(bullet[1]);
     }else if(numbered){
@@ -623,6 +629,7 @@ function renderMD(text){
   return blocks.map(function(b){
     if(b.type==="ul")return <ul key={b.key} style={{margin:"4px 0",paddingLeft:20}}>{b.items.map(function(it,i){return <li key={i} style={{marginBottom:2}}>{inline(it,b.key+i)}</li>;})}</ul>;
     if(b.type==="ol")return <ol key={b.key} style={{margin:"4px 0",paddingLeft:20}}>{b.items.map(function(it,i){return <li key={i} style={{marginBottom:2}}>{inline(it,b.key+i)}</li>;})}</ol>;
+    if(b.type==="q")return <blockquote key={b.key} style={{margin:"4px 0 8px",padding:"1px 0 1px 10px",borderLeft:"3px solid "+C.border,color:C.textSub}}>{b.items.map(function(it,i){return <div key={i}>{inline(it,b.key+i)}</div>;})}</blockquote>;
     return <p key={b.key} style={{margin:"0 0 8px"}}>{inline(b.text,b.key)}</p>;
   });
 }
@@ -632,17 +639,19 @@ function renderMD(text){
    dash). A textarea cannot draw bold, so markers were the only way to show it. This is a
    contentEditable box instead: B turns bold ON, what you type next is bold, B again turns it off,
    and the list buttons draw real bullets. What it STORES is unchanged — the plain-text markdown
-   renderMD reads (**bold**, _italic_, "- " / "1. " lines, [label](url)) — so every row already
+   renderMD reads (**bold**, _italic_, ~~struck~~, "- " / "1. " / "> " lines, [label](url)) — so every row already
    written renders as before and nothing stored is HTML. The HTML lives only inside this box, is
    rebuilt from the stored text with every character escaped, and paste is taken as plain text,
    so no stored string can become markup. renderMD cannot nest, so bold+italic is stored bold. */
 function _mdEsc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");}
-function _mdInlineHtml(s){return String(s).split(/(\*\*[^*]+\*\*|_[^_]+_|\[[^\]\n]+\]\([^)\s]+\))/g).filter(Boolean).map(function(p){if(/^\*\*[^*]+\*\*$/.test(p))return "<b>"+_mdEsc(p.slice(2,-2))+"</b>";if(/^_[^_]+_$/.test(p))return "<i>"+_mdEsc(p.slice(1,-1))+"</i>";var lk=/^\[([^\]\n]+)\]\(([^)\s]+)\)$/.exec(p);if(lk&&/^https?:\/\//i.test(lk[2]))return "<a href=\""+_mdEsc(lk[2])+"\">"+_mdEsc(lk[1])+"</a>";return _mdEsc(p);}).join("");}
+function _mdInlineHtml(s){return String(s).split(/(\*\*[^*]+\*\*|~~[^~]+~~|_[^_]+_|\[[^\]\n]+\]\([^)\s]+\))/g).filter(Boolean).map(function(p){if(/^\*\*[^*]+\*\*$/.test(p))return "<b>"+_mdEsc(p.slice(2,-2))+"</b>";if(/^~~[^~]+~~$/.test(p))return "<s>"+_mdEsc(p.slice(2,-2))+"</s>";if(/^_[^_]+_$/.test(p))return "<i>"+_mdEsc(p.slice(1,-1))+"</i>";var lk=/^\[([^\]\n]+)\]\(([^)\s]+)\)$/.exec(p);if(lk&&/^https?:\/\//i.test(lk[2]))return "<a href=\""+_mdEsc(lk[2])+"\">"+_mdEsc(lk[1])+"</a>";return _mdEsc(p);}).join("");}
 function mdToEditorHtml(md){
   if(!md)return "";
   var out="",list=null;
   var close=function(){if(list){out+="</"+list+">";list=null;}};
   String(md).split("\n").forEach(function(line){
+    var q=/^\s*>\s+(.*)$/.exec(line);
+    if(q){if(list!=="blockquote"){close();out+="<blockquote>";list="blockquote";}out+="<div>"+(_mdInlineHtml(q[1])||"<br>")+"</div>";return;}
     var b=/^\s*[-•]\s+(.*)$/.exec(line),n=b?null:/^\s*\d+[.)]\s+(.*)$/.exec(line);
     if(b||n){var t=b?"ul":"ol";if(list!==t){close();out+="<"+t+">";list=t;}out+="<li>"+(_mdInlineHtml(b?b[1]:n[1])||"<br>")+"</li>";return;}
     close();out+="<div>"+(_mdInlineHtml(line)||"<br>")+"</div>";
@@ -657,20 +666,20 @@ function editorHtmlToMd(root){
   var flush=function(force){if(has||force||cur.pre){lines.push(cur);}cur={pre:"",runs:[]};has=false;};
   var BLOCK={DIV:1,P:1,H1:1,H2:1,H3:1,H4:1,BLOCKQUOTE:1,PRE:1};
   var walk=function(node,f){
-    if(node.nodeType===3){var parts=node.nodeValue.replace(/ /g," ").replace(/​/g,"").split("\n");parts.forEach(function(t,i){if(i>0)flush(true);if(t){cur.runs.push({t:t,b:f.b,i:f.i,h:f.h});has=true;}});return;}
+    if(node.nodeType===3){var parts=node.nodeValue.replace(/ /g," ").replace(/​/g,"").split("\n");parts.forEach(function(t,i){if(i>0)flush(true);if(t){cur.runs.push({t:t,b:f.b,i:f.i,h:f.h,s:f.s,q:f.q});has=true;}});return;}
     if(node.nodeType!==1)return;
     var tag=node.tagName,st=node.style||{};
     if(tag==="BR"){var last=!node.nextSibling&&node.parentNode!==root&&(BLOCK[node.parentNode.tagName]||node.parentNode.tagName==="LI");if(last&&has)return;flush(true);return;}
-    var g={b:f.b||tag==="B"||tag==="STRONG"||/^(bold|bolder|[6-9]00)$/.test(st.fontWeight||""),i:f.i||tag==="I"||tag==="EM"||st.fontStyle==="italic",h:f.h};
+    var g={b:f.b||tag==="B"||tag==="STRONG"||/^(bold|bolder|[6-9]00)$/.test(st.fontWeight||""),i:f.i||tag==="I"||tag==="EM"||st.fontStyle==="italic",h:f.h,s:f.s||tag==="S"||tag==="STRIKE"||tag==="DEL"||/line-through/.test((st.textDecoration||"")+" "+(st.textDecorationLine||"")),q:f.q||tag==="BLOCKQUOTE"};
     if(tag==="A"){var hr=node.getAttribute("href")||"";if(/^https?:\/\//i.test(hr))g.h=hr;}
     if(tag==="UL"||tag==="OL"){if(has)flush();var k=0;Array.prototype.forEach.call(node.childNodes,function(ch){if(ch.nodeType===1&&ch.tagName==="LI"){k++;cur.pre=tag==="OL"?k+". ":"- ";Array.prototype.forEach.call(ch.childNodes,function(c2){walk(c2,g);});flush(true);}else walk(ch,g);});return;}
     if(BLOCK[tag]){if(has)flush();var before=lines.length;Array.prototype.forEach.call(node.childNodes,function(ch){walk(ch,g);});if(has)flush();else if(lines.length===before)flush(true);return;}
     Array.prototype.forEach.call(node.childNodes,function(ch){walk(ch,g);});
   };
-  Array.prototype.forEach.call(root.childNodes,function(ch){walk(ch,{b:false,i:false,h:null});});
+  Array.prototype.forEach.call(root.childNodes,function(ch){walk(ch,{b:false,i:false,h:null,s:false,q:false});});
   if(has||cur.pre)flush();
   var wrap=function(s,m){if(!s.trim())return s;var lead=s.match(/^\s*/)[0],trail=s.match(/\s*$/)[0];return lead+m+s.trim()+m+trail;};
-  var md=lines.map(function(ln){var merged=[];ln.runs.forEach(function(r){var p=merged[merged.length-1];if(p&&p.b===r.b&&p.i===r.i&&p.h===r.h)p.t+=r.t;else merged.push(Object.assign({},r));});return ln.pre+merged.map(function(r){if(r.h)return r.t.trim()?"["+r.t+"]("+r.h+")":r.t;if(r.b)return wrap(r.t,"**");if(r.i)return wrap(r.t,"_");return r.t;}).join("");});
+  var md=lines.map(function(ln){var merged=[];ln.runs.forEach(function(r){var p=merged[merged.length-1];if(p&&p.b===r.b&&p.i===r.i&&p.h===r.h&&p.s===r.s)p.t+=r.t;else merged.push(Object.assign({},r));});return (ln.runs.some(function(r){return r.q;})?"> ":"")+ln.pre+merged.map(function(r){if(r.h)return r.t.trim()?"["+r.t+"]("+r.h+")":r.t;if(r.b)return wrap(r.t,"**");if(r.i)return wrap(r.t,"_");if(r.s)return wrap(r.t,"~~");return r.t;}).join("");});
   while(md.length&&!md[md.length-1].trim())md.pop();
   return md.join("\n");
 }
