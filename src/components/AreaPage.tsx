@@ -282,7 +282,12 @@ export default function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, book
 
   // Partners here and the area/route search are placed differently on the website and the phone (see their sites below).
   const partnersEl = PARTNER_CARD_TYPES.includes(area.area_type) ? <PartnersHereCard area={area} C={C} uid={uid} myListings={myListings} onListMe={onListMe} onFindPartnersInArea={onFindPartnersInArea} onViewProfile={onViewProfile} PartnerRow={PartnerRow} notify={notify} onStartCrew={onStartCrew} onCrewsHere={onCrewsHere} onGroupsHere={onGroupsHere} openCrewCountAt={openCrewCountAt} /> : null;
+  // PHONE: the area/route search sits DIRECTLY UNDER "Climbs here by type" (owner, 2026-11-18), the first
+  // thing in the sheet after the grade spread, and pins near the top as you scroll (usePinnedBar, released at
+  // listEndRef at the foot of the page). The website keeps it under the Route finder · Objectives · Map row.
   const searchEl = !loading && (!error || (children && children.length > 0)) && isLeaf === false ? <DbSearchSplit scope={area} onJumpToArea={onJumpToArea} onOpenRoute={onOpenRoute} C={C} endRef={listEndRef} /> : null;
+  const phoneSearch = !wide && !!searchEl;
+  const section = (el: ReactNode) => <div style={areaSheet(C)}><div style={{ marginTop: -1 }}>{el}</div></div>;
   const main = (
     <div style={{ minWidth: 0 }}>
       {/* The area's box IS the Climbs tab's header once you are in an area: App's generic "Climbs"
@@ -318,25 +323,27 @@ export default function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, book
 
       {formation && areaEdits.data && areaEdits.data.length ? <PendingAreaEdits rows={areaEdits.data} C={C} myId={myId} /> : null}
 
-      <div style={areaSheet(C)}>
-        {chartable ? <GradeSpreadDisclosure first stats={stats.data} loading={stats.isLoading} error={stats.error} C={C} discOptions={discOptions} onDisc={onFinder} onGrade={onGrade} /> : null}
-        {showAbout ? <AboutCard area={area} C={C} onEdit={editOn} flat first={!chartable} /> : null}
-        <AreaActionRow C={C} first={!chartable && !showAbout} routeCount={area.route_count} onFinder={() => onFinder()} inlineDiscs={wide && chartable ? inlineDiscs : []} myGrades={myGrades} onFindInline={fl => onFinder(fl)} objectivesHere={objectivesHere} onObjectives={onObjectives} onNear={onNear} />
-        {/* DESKTOP: the area/route search sits directly under the Route finder · Objectives · Map row (owner,
-            2026-11-14), not below the facts and Partners cards. The phone keeps it after the cards. */}
-        {wide && searchEl ? <div style={{ padding: "12px 14px 0", borderTop: "1px solid " + C.border }}>{searchEl}</div> : null}
-        {!leftEl && childRows ? <div style={{ padding: "12px 14px 4px", borderTop: "1px solid " + C.border }}>{childList("section")}</div> : null}
-        {classicsEl}
-        {area.area_type !== "world" && area.area_type !== "country" ? <AreaPhotoStrip area={{ id: String(area.id), name: area.name }} C={C} signedIn={!!(myId || uid)} onSignIn={onSignIn} onOpenRoute={r => onOpenRoute(r as unknown as RouteRowRoute)} /> : null}
-        {/* GETTING THERE -- the one drive control on the area page: the words first, then the map. ONLY where a
-            destination is actionable: "Directions to Colorado" routes you to a state centroid. A crag, peak or
-            wall has somewhere you can actually park (check:area-surfaces reads this gate). */}
-        {["crag", "peak", "wall"].includes(area.area_type) ? <AreaGettingThere area={area} C={C} onEdit={editOn} flat /> : null}
-      </div>
+      {/* EVERY SECTION ITS OWN CARD, with space between (owner, 2026-11-18: "every section needs to be it's own
+          with spacing"): the grade spread, the search, the description, the Route finder row, the sub-areas, the
+          classics, the photos and Getting there were one bordered sheet split by hairlines. Each is drawn by
+          section(), which clips the 1px top rule a section draws to divide itself inside a shared sheet. */}
+      {chartable ? section(<GradeSpreadDisclosure first stats={stats.data} loading={stats.isLoading} error={stats.error} C={C} discOptions={discOptions} onDisc={onFinder} onGrade={onGrade} />) : null}
+      {phoneSearch ? section(<div style={{ padding: "12px 14px 0" }}>{searchEl}</div>) : null}
+      {showAbout ? section(<AboutCard area={area} C={C} onEdit={editOn} flat first />) : null}
+      {section(<AreaActionRow C={C} first routeCount={area.route_count} onFinder={() => onFinder()} inlineDiscs={wide && chartable ? inlineDiscs : []} myGrades={myGrades} onFindInline={fl => onFinder(fl)} objectivesHere={objectivesHere} onObjectives={onObjectives} onNear={onNear} />)}
+      {/* DESKTOP: the area/route search sits directly under the Route finder · Objectives · Map row (owner,
+          2026-11-14), not below the facts and Partners cards. The phone draws it under the grade spread above. */}
+      {wide && searchEl ? section(<div style={{ padding: "12px 14px 0" }}>{searchEl}</div>) : null}
+      {!leftEl && childRows ? section(<div style={{ padding: "12px 14px 4px" }}>{childList("section")}</div>) : null}
+      {classicsEl ? section(classicsEl) : null}
+      {area.area_type !== "world" && area.area_type !== "country" ? section(<AreaPhotoStrip area={{ id: String(area.id), name: area.name }} C={C} signedIn={!!(myId || uid)} onSignIn={onSignIn} onOpenRoute={r => onOpenRoute(r as unknown as RouteRowRoute)} />) : null}
+      {/* GETTING THERE -- the one drive control on the area page: the words first, then the map. ONLY where a
+          destination is actionable: "Directions to Colorado" routes you to a state centroid. A crag, peak or
+          wall has somewhere you can actually park (check:area-surfaces reads this gate). */}
+      {["crag", "peak", "wall"].includes(area.area_type) ? section(<AreaGettingThere area={area} C={C} onEdit={editOn} flat />) : null}
 
       {formation ? <AreaFactsCard area={area} C={C} uElev={uElev} onEdit={editOn} loggedMonths={wide && logged.data ? logged.data : null} /> : null}
       {wide ? null : partnersEl}
-      {wide ? null : searchEl}
 
       {/* Sits directly above the route rows it summarises. It renders nothing unless the routes support it. */}
       {!loading && routes && routes.length ? <SummitBriefing area={area} routes={routes} uElev={uElev} uDistMi={uDistMi} C={C} /> : null}

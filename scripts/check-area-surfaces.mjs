@@ -108,9 +108,9 @@ if (!/maps\/dir/.test(browser)) {
 } else {
   ok("the area page offers directions");
   // Since 2026-10-15 the drive links live in AreaGettingThere (the GETTING THERE card), and the
-  // gate is on its MOUNT — so the test is that the mount is written `["crag","peak","wall"].includes(area.area_type) ? <AreaGettingThere`.
+  // gate is on its MOUNT — so the test is that the mount is written `["crag","peak","wall"].includes(area.area_type) ? <AreaGettingThere`, or wrapped in AreaPage's section() card (2026-11-18).
   // The older shape (gate within 120 chars of the href) is accepted too, so the card can move.
-  const gated = /\[\s*"crag",\s*"peak",\s*"wall"\s*\]\.includes\(area\.area_type\)\s*\?\s*<AreaGettingThere/.test(browser)
+  const gated = /\[\s*"crag",\s*"peak",\s*"wall"\s*\]\.includes\(area\.area_type\)\s*\?\s*(?:section\(\s*)?<AreaGettingThere/.test(browser)
     || /\[\s*"crag",\s*"peak",\s*"wall"\s*\]\.includes\(area\.area_type\)[\s\S]{0,120}maps\/dir/.test(browser);
   if (!gated) {
     problems.push('the Directions link is no longer gated on area_type in ["crag","peak","wall"] — every area has a coordinate, so this offers to route a climber to a state or country centroid.');
