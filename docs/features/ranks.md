@@ -23,7 +23,9 @@
   inside; a wall with nothing inside says that, and keeps its path. Signed out it walks the seed tree, with no search.
   A failed path read names the area *Couldn’t load this area’s name*, not "this area".
   `scripts/oneoff/probe-ranks-area-picker.mjs` drives all of it signed in at 390px and runs axe on the state cards, the
-  area rows and the search results, which no browser walk reaches (27/27).
+  area rows and the search results, which no browser walk reaches (30/30). The picker keeps one slot in
+  `Leaderboards`' tree, open or closed, so it stays mounted: opening puts focus on the area's name, leaving hands it back to
+  Change, and while a path loads the header reads *Loading…*, never the root's name.
 - **A row is not a button holding buttons** (fixed 2026-11-18, owner "fix it"; axe `nested-interactive`, WCAG 4.1.2,
   found by that probe): the row is a plain container, and rank + avatar + name are ONE real `<button>` that opens the
   profile and carries the row's `lbRowName` name ("#1, …", which probes find rows by). The points button (*How X got

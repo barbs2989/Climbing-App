@@ -60,11 +60,15 @@ export default function RankAreaPicker({real,uid,ranked,trail,browseId,onBrowse,
   const depth=real?(lvl?(pathQ.data?chain.length-1:2):0):chain.length;
   const cards=depth<=1;
   const discQ=useAreaChildrenDiscCounts(lvl||null,{enabled:real&&open&&!!lvl});
-  const here=real&&!lvl?RANK_ROOT:chain[chain.length-1];
+  /* The area the page stands on. Signed in, only the loaded path names it: while that read is pending or failed the
+     chain holds the root alone, and the root must not be printed as the name of the area below it. */
+  const path=(pathQ.data as RankArea[]|undefined)||[];
+  const here: RankArea|undefined=real?(lvl?path[path.length-1]:RANK_ROOT):chain[chain.length-1];
   const nameUnavailable=real&&pathQ.isError;
   const name=here?here.name:nameUnavailable?"Couldn’t load this area’s name":real&&pathQ.isPending?"Loading…":"this area";
   const named=!!here;
-  const above=chain.slice(0,-1);
+  /* An unnamed area still shows the way up to the top. */
+  const above=real&&lvl&&!here?[RANK_ROOT]:chain.slice(0,-1);
   const acount=(id: string)=>(ROUTES as {mountainId: string}[]).filter(r=>inArea(r.mountainId,id)).length;
   const kids: AreaChildRow[]=!open?[]:real?((kidsQ.data as AreaChildRow[]|undefined)||[]).filter(a=>(a.route_count||0)>0)
     :(MOUNTAINS as RankSeedArea[]).filter(m=>m.parentId===lvl).map(m=>({id:m.id,name:m.name,route_count:acount(m.id)})).filter(a=>a.route_count>0).sort((a,b)=>a.name.localeCompare(b.name));
@@ -72,14 +76,17 @@ export default function RankAreaPicker({real,uid,ranked,trail,browseId,onBrowse,
   const mine: MyArea[]=((myQ.data as MyArea[]|undefined)||[]).filter(a=>a.areaId!==ranked.id);
   const allPeaks=kids.length>0&&kids.every(a=>a.area_type==="peak");
 
-  /* Each step is a new page: it starts at the top with the area's name in focus, as the Climbs tab's pages do. Not on mount. */
+  /* Each step is a new page: it starts at the top with the area's name in focus, as the Climbs tab's pages do; leaving
+     the page hands focus back to Change. Not on mount. (Leaderboards keeps this component mounted across both.) */
+  const changeBtn=useRef<HTMLButtonElement>(null);
   const title=useRef<HTMLHeadingElement>(null);
   const last=useRef(browseId);
   useEffect(()=>{
     if(last.current===browseId)return;
     last.current=browseId;
     scrollAppToTop();
-    if(browseId!==null&&title.current)title.current.focus({preventScroll:true});
+    const to=browseId!==null?title.current:changeBtn.current;
+    if(to)to.focus({preventScroll:true});
   },[browseId]);
 
   if(!open)return <div style={{display:"flex",alignItems:"center",gap:10,background:C.card,border:"1px solid "+C.border,borderRadius:12,padding:"10px 12px"}}>
@@ -89,7 +96,7 @@ export default function RankAreaPicker({real,uid,ranked,trail,browseId,onBrowse,
       <div aria-current="location" style={{fontSize:16,fontWeight:800,color:C.amber,overflowWrap:"anywhere",lineHeight:1.25}}>{ranked.name||"this area"}</div>
       {trail.length?<div style={{fontSize:11.5,color:C.textMuted,overflowWrap:"anywhere",lineHeight:1.35,marginTop:1}}>{trail.join(" › ")}</div>:null}
     </div>
-    <button onClick={()=>onBrowse(ranked.id)} aria-label="Change the area these rankings cover" style={{minHeight:44,minWidth:72,padding:"0 14px",flexShrink:0,borderRadius:10,border:"1px solid "+C.border,background:C.surface,color:C.blue,fontSize:13,fontWeight:700,cursor:"pointer"}}>Change</button>
+    <button ref={changeBtn} onClick={()=>onBrowse(ranked.id)} aria-label="Change the area these rankings cover" style={{minHeight:44,minWidth:72,padding:"0 14px",flexShrink:0,borderRadius:10,border:"1px solid "+C.border,background:C.surface,color:C.blue,fontSize:13,fontWeight:700,cursor:"pointer"}}>Change</button>
   </div>;
 
   const head: CSSProperties={fontSize:11,fontWeight:800,color:C.textMuted,letterSpacing:0.4,textTransform:"uppercase",margin:"12px 0 6px"};

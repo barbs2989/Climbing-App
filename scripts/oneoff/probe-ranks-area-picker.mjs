@@ -43,7 +43,7 @@ try {
   const errs = [];
   page.on("pageerror", (e) => errs.push(e.message));
   await page.addInitScript(({ key, value }) => { try { localStorage.setItem(key, value); } catch {} }, { key: STORAGE_KEY, value: JSON.stringify(sessionForStorage(fixture.session)) });
-  await page.goto(URL, { waitUntil: "domcontentloaded" });
+  await page.goto(URL, { waitUntil: "domcontentloaded", timeout: 180000 });
   const shot = async (n) => { if (SHOTS) await page.screenshot({ path: path.join(SHOTS, n + ".png") }); };
   const card = () => page.locator('[aria-current="location"]').first();
   const tapText = (t) => page.evaluate((tt) => { const e = [...document.querySelectorAll('button,[role="button"],a')].filter((x) => (x.textContent || "").trim() === tt).sort((a, b) => Number(!!b.closest('[aria-label="Primary"]')) - Number(!!a.closest('[aria-label="Primary"]')))[0]; if (e) e.click(); return !!e; }, t);
@@ -70,6 +70,7 @@ try {
 
   await change.click();
   await onLevel("United States");
+  ok(await page.evaluate(() => document.activeElement === document.querySelector('h2[tabindex="-1"]')), "opening the page puts focus on the area's name, not nowhere");
   const box = page.getByLabel("Search any crag, peak or area");
   ok(await box.count() === 1, "Change opens the Choose-an-area page, with the catalog search");
   ok(await boardShown() === 0, "the page stands in place of the board, not above it");
@@ -91,8 +92,12 @@ try {
   await shot("2a-page-united-states");
   await axeScan(page, "on the Choose-an-area page (state cards)");
 
+  // The header between the tap and the path landing, sampled every frame: it must never name the root for the area below it.
+  await page.evaluate(() => { window.__h2 = []; const t = setInterval(() => { const e = document.querySelector('h2[tabindex="-1"]'); if (e) window.__h2.push(e.textContent); }, 16); window.__h2stop = () => clearInterval(t); });
   await page.locator("button", { hasText: /^Washington[\d,]+ climbs$/ }).click();
   await onLevel("Washington");
+  const seen = await page.evaluate(() => { window.__h2stop(); return [...new Set(window.__h2)]; });
+  ok(seen.every((x) => ["United States", "Loading…", "Washington"].includes(x)), "while Washington's path loads the header never reads All countries (saw: " + seen.join(" ; ") + ")");
   ok((await card().count()) === 0 && await boardShown() === 0, "walking to Washington stays on the page and ranks nothing yet");
   const sort = page.getByLabel("Sort areas");
   await sort.waitFor({ timeout: 30000 });
@@ -125,6 +130,7 @@ try {
   await page.evaluate(() => [...document.querySelectorAll("button")].filter((b) => /Back to rankings/.test(b.getAttribute("aria-label") || b.textContent || "")).pop().click());
   await ranking(rows[0]);
   ok(await boardShown() === 1, "Back leaves the page without changing the ranked area (" + rows[0] + ")");
+  ok(await page.evaluate(() => (document.activeElement?.getAttribute("aria-label") || "") === "Change the area these rankings cover"), "leaving the page hands focus back to Change");
 
   await change.click();
   await onLevel(rows[0]);
