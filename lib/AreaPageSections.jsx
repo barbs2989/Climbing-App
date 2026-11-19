@@ -197,6 +197,9 @@ export function GradeSpread({ stats, C, standalone, bare, onGrade }) {
   const axis = countAxis(max), top = axis[axis.length - 1];
   const W = 100, H = 56, gap = 2, bw = (W - gap * (full.length - 1)) / full.length, every = full.length > 9 ? 2 : 1;
   const label = c => bucketLabel(sys, c.b);
+  // Every other grade is named when there are many, and always the last. When the last is not on that stride the
+  // one before it stays blank: side by side on a phone the two ran together ("5.145.15", seen at 390 and 320px).
+  const last = full.length - 1, showLabel = i => i === last || (i % every === 0 && !(every > 1 && last % every !== 0 && i === last - 1));
   const desc = full.filter(c => c.n).map(c => label(c) + ": " + c.n).join(", ");
   return <div style={bare ? null : standalone ? card(C) : { marginTop: 12, paddingTop: 10, borderTop: "1px solid " + C.border }}>
     <div style={{ ...headRow, marginBottom: 6 }}><Head C={C}>Grade spread</Head>{scales.length > 1 ? null : <span style={{ fontSize: 11.5, color: C.textMuted }}>{SYS_NAME[sys] || sys}</span>}</div>
@@ -218,7 +221,7 @@ export function GradeSpread({ stats, C, standalone, bare, onGrade }) {
     </div>
     </div>
     <div style={{ display: "flex", gap: gap + "px", marginTop: 3, marginLeft: Y_AXIS_W + Y_GAP }}>
-      {full.map((c, i) => <div key={c.b} style={{ flex: 1, minWidth: 0, textAlign: "center", fontSize: 9.5, color: C.textMuted, whiteSpace: "nowrap", overflow: "visible" }}>{i % every === 0 || i === full.length - 1 ? label(c) : ""}</div>)}
+      {full.map((c, i) => <div key={c.b} style={{ flex: 1, minWidth: 0, textAlign: "center", fontSize: 9.5, color: C.textMuted, whiteSpace: "nowrap", overflow: "visible" }}>{showLabel(i) ? label(c) : ""}</div>)}
     </div>
   </div>;
 }
