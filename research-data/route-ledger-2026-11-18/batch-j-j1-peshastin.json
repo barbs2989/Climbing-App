@@ -1,0 +1,694 @@
+{
+ "wa_windward_direct": {
+  "area": "wa_sickle_slab",
+  "set": {
+   "waypoints": [
+    {
+     "lat": 47.539612,
+     "lng": -120.520081,
+     "elev": 1024,
+     "name": "Peshastin Pinnacles State Park parking",
+     "type": "Trailhead",
+     "distMi": 0,
+     "note": "State park lot off North Dryden Road; a Discover Pass is required, and the park is closed Nov 1 to Mar 15."
+    }
+   ]
+  },
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/105874902/windward-direct",
+    "https://www.mountainproject.com/area/105874324/peshastin-pinnacles-state-park",
+    "https://wenatcheeoutdoors.org/2016/05/02/peshastin-pinnacles/",
+    "https://parks.wa.gov/find-parks/state-parks/peshastin-pinnacles-state-park",
+    "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass",
+    "https://www.openstreetmap.org/way/374991572",
+    "https://epqs.nationalmap.gov/v1/json (USGS 3DEP point query, reused from batch C)"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "waypoints/Peshastin Pinnacles State Park parking",
+    "value": {
+     "name": "Peshastin Pinnacles State Park parking",
+     "lat": 47.539612,
+     "lng": -120.520081
+    },
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.openstreetmap.org/way/374991572",
+      "fact": "amenity=parking, access=permit, fee=yes; centre 47.53961,-120.52008 (reused from batch C, wa_potholes)",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://parks.wa.gov/find-parks/state-parks/peshastin-pinnacles-state-park",
+      "fact": "Get Directions map point 47.5396,-120.5199, 14 m from OSM (reused from batch C, wa_potholes)",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     },
+     {
+      "measurement": "USGS 3DEP point query at 47.539612,-120.520081 (reused from batch C)",
+      "fact": "1,024 ft"
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "5.8",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105874902/windward-direct",
+      "fact": "5.8, Trad",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://wenatcheeoutdoors.org/2016/05/02/peshastin-pinnacles/",
+      "fact": "Windward Direct: 5.8, bolts",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Dan Davis, Curtis Stout, 1963.",
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105874902/windward-direct",
+      "fact": "FA: Dan Davis, Curtis Stout, 1963",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_windward_direct",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "0 is invalid. Single pitch is implied, not stated: MP descent is a 30 ft rappel off the back; Wenatchee Outdoors: downclimb the back or one 100 ft rappel down the front. Ledger level unconfirmed (single-source, implied).",
+    "evidence": [
+     "https://www.mountainproject.com/route/105874902/windward-direct",
+     "https://wenatcheeoutdoors.org/2016/05/02/peshastin-pinnacles/"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_windward_direct",
+    "column": "bolts",
+    "from": null,
+    "to": 6,
+    "why": "MP protection: gear to 2 in plus six bolts. Wenatchee Outdoors says only \"bolts\". Single source (locked-1src after apply).",
+    "evidence": [
+     "https://www.mountainproject.com/route/105874902/windward-direct"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_windward_direct",
+    "column": "detailed_rack",
+    "from": "Quickdraws; some old bolts remain.",
+    "to": "Quickdraws for six bolts, plus gear to 2 in.",
+    "why": "Stored rack omits the gear MP lists (pro to 2 in, six bolts). Not lockable (paragraph).",
+    "evidence": [
+     "https://www.mountainproject.com/route/105874902/windward-direct"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_windward_direct",
+    "column": "permit",
+    "from": null,
+    "to": "Discover Pass required to park. The park is open 6:30 a.m. to dusk and closed Nov 1 to Mar 15; climbers must be off the rocks half an hour before closing, and bolting or drilling is not allowed.",
+    "why": "Same live wording as wa_potholes / wa_cro_magnon_caveman / wa_dr_leakey (batch C/E). Re-opened the WA State Parks park page 2026-11-18: closed Nov 1 - Mar 15, 6:30 a.m. - dusk, off the rocks 30 min before close, no bolting/drilling. parks.wa.gov Discover Pass page: a Discover Pass is required for parking at Washington State Parks. official-1, expires 2027-11-18.",
+    "evidence": [
+     "https://parks.wa.gov/find-parks/state-parks/peshastin-pinnacles-state-park",
+     "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_windward_direct",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Washington State Parks (Peshastin Pinnacles State Park)",
+     "permit": "None needed to climb.",
+     "parking_pass": "Discover Pass.",
+     "fees": "Discover Pass: $10 for one day or $45 for a year.",
+     "rules": "Closed Nov 1 to Mar 15. Open 6:30 a.m. to dusk; be off the rocks half an hour before closing. No bolting or drilling."
+    },
+    "why": "access is empty. Land manager = Washington State Parks (park page published by the WA State Parks and Recreation Commission). Discover Pass required for parking at State Parks (parks.wa.gov Discover Pass page); park page lists $10 day / $45 annual. Closure, hours and no-bolting rule from the park page. official-1, expires 2027-11-18.",
+    "evidence": [
+     "https://parks.wa.gov/find-parks/state-parks/peshastin-pinnacles-state-park",
+     "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass"
+    ]
+   }
+  ],
+  "disputed": [
+   "descent: MP says rappel 30 ft off the back; Wenatchee Outdoors says downclimb the back or rappel the front 100 ft; stored \"Rappel down the same line\" matches only the front option - left as is.",
+   "discipline: MP Type Trad (gear to 2 in + 6 bolts); Wenatchee Outdoors lists it as bolts, well protected - mixed protection, discipline not locked (MP alone never locks discipline).",
+   "hazards: the generic Peshastin block claims \"roughly half\" of the bolts are worn or spinning - not found on any source opened; its Nov 1 - Mar 15 closure is confirmed by WA State Parks."
+  ],
+  "notes": "Area filing checked: MP files Windward Direct under Sickle Slab, and Wenatchee Outdoors says Sickle Slab is the right side of the Austrian Slab crag and lists Windward Direct there. Filing under wa_sickle_slab is correct. fa keeps the year inside the string (shape rule: names only) - left for the owner."
+ },
+ "wa_lightning_crack_3": {
+  "area": "wa_southwest_side",
+  "set": {
+   "waypoints": [
+    {
+     "lat": 47.539612,
+     "lng": -120.520081,
+     "elev": 1024,
+     "name": "Peshastin Pinnacles State Park parking",
+     "type": "Trailhead",
+     "distMi": 0,
+     "note": "State park lot off North Dryden Road; a Discover Pass is required, and the park is closed Nov 1 to Mar 15."
+    }
+   ]
+  },
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/105875465/lightning-crack",
+    "https://www.mountainproject.com/area/105874324/peshastin-pinnacles-state-park",
+    "https://wenatcheeoutdoors.org/2016/05/02/peshastin-pinnacles/",
+    "https://parks.wa.gov/find-parks/state-parks/peshastin-pinnacles-state-park",
+    "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass",
+    "https://www.openstreetmap.org/way/374991572",
+    "https://epqs.nationalmap.gov/v1/json (USGS 3DEP point query, reused from batch C)"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "waypoints/Peshastin Pinnacles State Park parking",
+    "value": {
+     "name": "Peshastin Pinnacles State Park parking",
+     "lat": 47.539612,
+     "lng": -120.520081
+    },
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.openstreetmap.org/way/374991572",
+      "fact": "amenity=parking, access=permit, fee=yes; centre 47.53961,-120.52008 (reused from batch C, wa_potholes)",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://parks.wa.gov/find-parks/state-parks/peshastin-pinnacles-state-park",
+      "fact": "Get Directions map point 47.5396,-120.5199, 14 m from OSM (reused from batch C, wa_potholes)",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     },
+     {
+      "measurement": "USGS 3DEP point query at 47.539612,-120.520081 (reused from batch C)",
+      "fact": "1,024 ft"
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "5.9",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105875465/lightning-crack",
+      "fact": "5.9, Trad",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://wenatcheeoutdoors.org/2016/05/02/peshastin-pinnacles/",
+      "fact": "Lightning Crack: 5.9, gear to 3 in",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Fred Beckey, Dick McGowen, 1960.",
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105875465/lightning-crack",
+      "fact": "FA: Fred Beckey, Dick McGowen, 1960",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_lightning_crack_3",
+    "column": "bolts",
+    "from": null,
+    "to": 3,
+    "why": "MP protection: gear to 2 in, 3 bolts. Single source (locked-1src after apply).",
+    "evidence": [
+     "https://www.mountainproject.com/route/105875465/lightning-crack"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_lightning_crack_3",
+    "column": "permit",
+    "from": null,
+    "to": "Discover Pass required to park. The park is open 6:30 a.m. to dusk and closed Nov 1 to Mar 15; climbers must be off the rocks half an hour before closing, and bolting or drilling is not allowed.",
+    "why": "Same live wording as wa_potholes / wa_cro_magnon_caveman / wa_dr_leakey (batch C/E). Re-opened the WA State Parks park page 2026-11-18: closed Nov 1 - Mar 15, 6:30 a.m. - dusk, off the rocks 30 min before close, no bolting/drilling. parks.wa.gov Discover Pass page: a Discover Pass is required for parking at Washington State Parks. official-1, expires 2027-11-18.",
+    "evidence": [
+     "https://parks.wa.gov/find-parks/state-parks/peshastin-pinnacles-state-park",
+     "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_lightning_crack_3",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Washington State Parks (Peshastin Pinnacles State Park)",
+     "permit": "None needed to climb.",
+     "parking_pass": "Discover Pass.",
+     "fees": "Discover Pass: $10 for one day or $45 for a year.",
+     "rules": "Closed Nov 1 to Mar 15. Open 6:30 a.m. to dusk; be off the rocks half an hour before closing. No bolting or drilling."
+    },
+    "why": "access is empty. Land manager = Washington State Parks (park page published by the WA State Parks and Recreation Commission). Discover Pass required for parking at State Parks (parks.wa.gov Discover Pass page); park page lists $10 day / $45 annual. Closure, hours and no-bolting rule from the park page. official-1, expires 2027-11-18.",
+    "evidence": [
+     "https://parks.wa.gov/find-parks/state-parks/peshastin-pinnacles-state-park",
+     "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass"
+    ]
+   }
+  ],
+  "disputed": [
+   "rack: stored \"Gear to 2 inches.\" matches MP (pro to 2 in, 3 bolts); Wenatchee Outdoors says gear to 3 in - not changed.",
+   "pitches: stored 2 is only implied by MP (climb to a belay, then the zig-zag crack to the rappel station); MP gives no count - not locked.",
+   "descent: stored two-rope rappel down the back (Empire State line) not found on MP or Wenatchee Outdoors - unverified.",
+   "hazards: the generic Peshastin block claims \"roughly half\" of the bolts are worn or spinning - not found on any source opened; its Nov 1 - Mar 15 closure is confirmed by WA State Parks."
+  ],
+  "notes": "Filed under Grand Central Tower > Southwest Side, matching MP. The AAJ 1960 Grand Central Tower note is a different line (east-face chimney, Claunch/Cooper/McBee). MP spells the FA partner McGowen here and McGowan on Diagonal Direct."
+ },
+ "wa_austrian_slab": {
+  "area": "wa_austrian_slab",
+  "set": {
+   "waypoints": [
+    {
+     "lat": 47.539612,
+     "lng": -120.520081,
+     "elev": 1024,
+     "name": "Peshastin Pinnacles State Park parking",
+     "type": "Trailhead",
+     "distMi": 0,
+     "note": "State park lot off North Dryden Road; a Discover Pass is required, and the park is closed Nov 1 to Mar 15."
+    }
+   ]
+  },
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/105877253/austrian-slab",
+    "https://www.mountainproject.com/area/105874324/peshastin-pinnacles-state-park",
+    "https://wenatcheeoutdoors.org/2016/05/02/peshastin-pinnacles/",
+    "https://parks.wa.gov/find-parks/state-parks/peshastin-pinnacles-state-park",
+    "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass",
+    "https://www.openstreetmap.org/way/374991572",
+    "https://epqs.nationalmap.gov/v1/json (USGS 3DEP point query, reused from batch C)"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "waypoints/Peshastin Pinnacles State Park parking",
+    "value": {
+     "name": "Peshastin Pinnacles State Park parking",
+     "lat": 47.539612,
+     "lng": -120.520081
+    },
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.openstreetmap.org/way/374991572",
+      "fact": "amenity=parking, access=permit, fee=yes; centre 47.53961,-120.52008 (reused from batch C, wa_potholes)",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://parks.wa.gov/find-parks/state-parks/peshastin-pinnacles-state-park",
+      "fact": "Get Directions map point 47.5396,-120.5199, 14 m from OSM (reused from batch C, wa_potholes)",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     },
+     {
+      "measurement": "USGS 3DEP point query at 47.539612,-120.520081 (reused from batch C)",
+      "fact": "1,024 ft"
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "5.8",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105877253/austrian-slab",
+      "fact": "5.8, Trad; theCrag blocked (403), Wenatchee Outdoors does not list this route by name",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_austrian_slab",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "0 is invalid. Single pitch implied, not stated: MP has the line passing 3 bolts to the rappel anchor. Ledger level unconfirmed (single-source, implied).",
+    "evidence": [
+     "https://www.mountainproject.com/route/105877253/austrian-slab"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_austrian_slab",
+    "column": "bolts",
+    "from": null,
+    "to": 3,
+    "why": "MP: past 3 bolts to the rappel anchor. Single source (locked-1src after apply).",
+    "evidence": [
+     "https://www.mountainproject.com/route/105877253/austrian-slab"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_austrian_slab",
+    "column": "detailed_rack",
+    "from": "Draws, wires and small to mid-size cams (to roughly 1.5 in).",
+    "to": "Quickdraws for three bolts, plus gear to 1 in.",
+    "why": "MP protection: pro to 1 in, draws (3 bolts). Stored \"to roughly 1.5 in\" has no source. Not lockable.",
+    "evidence": [
+     "https://www.mountainproject.com/route/105877253/austrian-slab"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_austrian_slab",
+    "column": "permit",
+    "from": null,
+    "to": "Discover Pass required to park. The park is open 6:30 a.m. to dusk and closed Nov 1 to Mar 15; climbers must be off the rocks half an hour before closing, and bolting or drilling is not allowed.",
+    "why": "Same live wording as wa_potholes / wa_cro_magnon_caveman / wa_dr_leakey (batch C/E). Re-opened the WA State Parks park page 2026-11-18: closed Nov 1 - Mar 15, 6:30 a.m. - dusk, off the rocks 30 min before close, no bolting/drilling. parks.wa.gov Discover Pass page: a Discover Pass is required for parking at Washington State Parks. official-1, expires 2027-11-18.",
+    "evidence": [
+     "https://parks.wa.gov/find-parks/state-parks/peshastin-pinnacles-state-park",
+     "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_austrian_slab",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Washington State Parks (Peshastin Pinnacles State Park)",
+     "permit": "None needed to climb.",
+     "parking_pass": "Discover Pass.",
+     "fees": "Discover Pass: $10 for one day or $45 for a year.",
+     "rules": "Closed Nov 1 to Mar 15. Open 6:30 a.m. to dusk; be off the rocks half an hour before closing. No bolting or drilling."
+    },
+    "why": "access is empty. Land manager = Washington State Parks (park page published by the WA State Parks and Recreation Commission). Discover Pass required for parking at State Parks (parks.wa.gov Discover Pass page); park page lists $10 day / $45 annual. Closure, hours and no-bolting rule from the park page. official-1, expires 2027-11-18.",
+    "evidence": [
+     "https://parks.wa.gov/find-parks/state-parks/peshastin-pinnacles-state-park",
+     "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass"
+    ]
+   }
+  ],
+  "disputed": [
+   "fa: row \"Fred Beckey, Eric Bjornstad, Don Gordon, 1952\"; MP \"Fred Beckey, Austrian guy, 1960\" - different party and year, no second source; not changed.",
+   "descent: stored \"scramble off either side of the ledge, or rappel\" - MP mentions only the rappel anchor; unverified.",
+   "hazards: the generic Peshastin block claims \"roughly half\" of the bolts are worn or spinning - not found on any source opened; its Nov 1 - Mar 15 closure is confirmed by WA State Parks."
+  ],
+  "notes": "Filing ok (MP: Austrian Slab sub-area). Wenatchee Outdoors lists Austrian Slab routes (Slakin, Standard Route 5.8, etc.) but none named \"Austrian Slab\"; it may be the same line under another name - not assumed."
+ },
+ "wa_diagonal_direct": {
+  "area": "wa_martian_slab",
+  "set": {
+   "waypoints": [
+    {
+     "lat": 47.539612,
+     "lng": -120.520081,
+     "elev": 1024,
+     "name": "Peshastin Pinnacles State Park parking",
+     "type": "Trailhead",
+     "distMi": 0,
+     "note": "State park lot off North Dryden Road; a Discover Pass is required, and the park is closed Nov 1 to Mar 15."
+    }
+   ]
+  },
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/105876986/diagonal-direct",
+    "https://www.mountainproject.com/area/105874343/martian-slab",
+    "https://www.thecrag.com/en/climbing/united-states/central-cascade-mountains/area/16779943",
+    "https://parks.wa.gov/find-parks/state-parks/peshastin-pinnacles-state-park",
+    "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass",
+    "https://www.openstreetmap.org/way/374991572",
+    "https://epqs.nationalmap.gov/v1/json (USGS 3DEP point query, reused from batch C)"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "waypoints/Peshastin Pinnacles State Park parking",
+    "value": {
+     "name": "Peshastin Pinnacles State Park parking",
+     "lat": 47.539612,
+     "lng": -120.520081
+    },
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.openstreetmap.org/way/374991572",
+      "fact": "amenity=parking, access=permit, fee=yes; centre 47.53961,-120.52008 (reused from batch C, wa_potholes)",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://parks.wa.gov/find-parks/state-parks/peshastin-pinnacles-state-park",
+      "fact": "Get Directions map point 47.5396,-120.5199, 14 m from OSM (reused from batch C, wa_potholes)",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     },
+     {
+      "measurement": "USGS 3DEP point query at 47.539612,-120.520081 (reused from batch C)",
+      "fact": "1,024 ft"
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Pat Callis, Dick McGowan.",
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105876986/diagonal-direct",
+      "fact": "FA: Pat Callis, Dick McGowan (no year)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_diagonal_direct",
+    "column": "pitches",
+    "from": 0,
+    "to": 2,
+    "why": "0 is invalid. MP states Trad, 2 pitches (P1 east-face pockets to a belay, P2 wavy crack to a rappel anchor). Single source (locked-1src after apply).",
+    "evidence": [
+     "https://www.mountainproject.com/route/105876986/diagonal-direct"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_diagonal_direct",
+    "column": "bolts",
+    "from": null,
+    "to": 6,
+    "why": "MP protection: gear to 2 in, 6 bolts. Single source (locked-1src after apply).",
+    "evidence": [
+     "https://www.mountainproject.com/route/105876986/diagonal-direct"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_diagonal_direct",
+    "column": "detailed_rack",
+    "from": null,
+    "to": "Quickdraws for six bolts, plus gear to 2 in.",
+    "why": "Empty. MP protection: pro to 2 in, 6 bolts. Not lockable.",
+    "evidence": [
+     "https://www.mountainproject.com/route/105876986/diagonal-direct"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_diagonal_direct",
+    "column": "permit",
+    "from": null,
+    "to": "Discover Pass required to park. The park is open 6:30 a.m. to dusk and closed Nov 1 to Mar 15; climbers must be off the rocks half an hour before closing, and bolting or drilling is not allowed.",
+    "why": "Same live wording as wa_potholes / wa_cro_magnon_caveman / wa_dr_leakey (batch C/E). Re-opened the WA State Parks park page 2026-11-18: closed Nov 1 - Mar 15, 6:30 a.m. - dusk, off the rocks 30 min before close, no bolting/drilling. parks.wa.gov Discover Pass page: a Discover Pass is required for parking at Washington State Parks. official-1, expires 2027-11-18.",
+    "evidence": [
+     "https://parks.wa.gov/find-parks/state-parks/peshastin-pinnacles-state-park",
+     "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_diagonal_direct",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Washington State Parks (Peshastin Pinnacles State Park)",
+     "permit": "None needed to climb.",
+     "parking_pass": "Discover Pass.",
+     "fees": "Discover Pass: $10 for one day or $45 for a year.",
+     "rules": "Closed Nov 1 to Mar 15. Open 6:30 a.m. to dusk; be off the rocks half an hour before closing. No bolting or drilling."
+    },
+    "why": "access is empty. Land manager = Washington State Parks (park page published by the WA State Parks and Recreation Commission). Discover Pass required for parking at State Parks (parks.wa.gov Discover Pass page); park page lists $10 day / $45 annual. Closure, hours and no-bolting rule from the park page. official-1, expires 2027-11-18.",
+    "evidence": [
+     "https://parks.wa.gov/find-parks/state-parks/peshastin-pinnacles-state-park",
+     "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass"
+    ]
+   }
+  ],
+  "disputed": [
+   "grade: row 5.8; theCrag Martian Slab list 5.8; MP 5.8+. Not identical after normalising and no 2-source majority - not locked, not changed.",
+   "hazards: the generic Peshastin block claims \"roughly half\" of the bolts are worn or spinning - not found on any source opened; its Nov 1 - Mar 15 closure is confirmed by WA State Parks."
+  ],
+  "notes": "Filing ok (MP: Martian Slabs > Martian Slab). theCrag route page blocked (403) after the area list loaded."
+ },
+ "wa_martian_diagonal": {
+  "area": "wa_martian_slab",
+  "set": {
+   "waypoints": [
+    {
+     "lat": 47.539612,
+     "lng": -120.520081,
+     "elev": 1024,
+     "name": "Peshastin Pinnacles State Park parking",
+     "type": "Trailhead",
+     "distMi": 0,
+     "note": "State park lot off North Dryden Road; a Discover Pass is required, and the park is closed Nov 1 to Mar 15."
+    }
+   ]
+  },
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/105876979/martian-diagonal",
+    "https://www.mountainproject.com/area/105874343/martian-slab",
+    "https://www.thecrag.com/en/climbing/united-states/central-cascade-mountains/area/16779943",
+    "https://parks.wa.gov/find-parks/state-parks/peshastin-pinnacles-state-park",
+    "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass",
+    "https://www.openstreetmap.org/way/374991572",
+    "https://epqs.nationalmap.gov/v1/json (USGS 3DEP point query, reused from batch C)"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "waypoints/Peshastin Pinnacles State Park parking",
+    "value": {
+     "name": "Peshastin Pinnacles State Park parking",
+     "lat": 47.539612,
+     "lng": -120.520081
+    },
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.openstreetmap.org/way/374991572",
+      "fact": "amenity=parking, access=permit, fee=yes; centre 47.53961,-120.52008 (reused from batch C, wa_potholes)",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://parks.wa.gov/find-parks/state-parks/peshastin-pinnacles-state-park",
+      "fact": "Get Directions map point 47.5396,-120.5199, 14 m from OSM (reused from batch C, wa_potholes)",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     },
+     {
+      "measurement": "USGS 3DEP point query at 47.539612,-120.520081 (reused from batch C)",
+      "fact": "1,024 ft"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_martian_diagonal",
+    "column": "pitches",
+    "from": 0,
+    "to": 3,
+    "why": "0 is invalid. MP states 3 pitches (P1 slab to bolts and a belay, P2 up the ramp past bolts, P3 to the ridge crest). Single source (locked-1src after apply); a SummitPost page reportedly says 2 but was not opened (blocked).",
+    "evidence": [
+     "https://www.mountainproject.com/route/105876979/martian-diagonal"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_martian_diagonal",
+    "column": "bolts",
+    "from": null,
+    "to": 3,
+    "why": "MP protection: gear to 1 in, 3 bolts, three fixed pins. Single source (locked-1src after apply).",
+    "evidence": [
+     "https://www.mountainproject.com/route/105876979/martian-diagonal"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_martian_diagonal",
+    "column": "permit",
+    "from": null,
+    "to": "Discover Pass required to park. The park is open 6:30 a.m. to dusk and closed Nov 1 to Mar 15; climbers must be off the rocks half an hour before closing, and bolting or drilling is not allowed.",
+    "why": "Same live wording as wa_potholes / wa_cro_magnon_caveman / wa_dr_leakey (batch C/E). Re-opened the WA State Parks park page 2026-11-18: closed Nov 1 - Mar 15, 6:30 a.m. - dusk, off the rocks 30 min before close, no bolting/drilling. parks.wa.gov Discover Pass page: a Discover Pass is required for parking at Washington State Parks. official-1, expires 2027-11-18.",
+    "evidence": [
+     "https://parks.wa.gov/find-parks/state-parks/peshastin-pinnacles-state-park",
+     "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_martian_diagonal",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Washington State Parks (Peshastin Pinnacles State Park)",
+     "permit": "None needed to climb.",
+     "parking_pass": "Discover Pass.",
+     "fees": "Discover Pass: $10 for one day or $45 for a year.",
+     "rules": "Closed Nov 1 to Mar 15. Open 6:30 a.m. to dusk; be off the rocks half an hour before closing. No bolting or drilling."
+    },
+    "why": "access is empty. Land manager = Washington State Parks (park page published by the WA State Parks and Recreation Commission). Discover Pass required for parking at State Parks (parks.wa.gov Discover Pass page); park page lists $10 day / $45 annual. Closure, hours and no-bolting rule from the park page. official-1, expires 2027-11-18.",
+    "evidence": [
+     "https://parks.wa.gov/find-parks/state-parks/peshastin-pinnacles-state-park",
+     "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass"
+    ]
+   }
+  ],
+  "disputed": [
+   "grade: row and MP 5.6; theCrag Martian Slab list 5.5 (spelled \"Matian Diagonal\") - not locked.",
+   "fa: row \"Dave Beckstead, Fred Stanley, 1948.\"; MP same names, 1963 - year disputed, no second source; held (FA never single-source).",
+   "pitches: MP 3; SummitPost reportedly 2 (search summary only, page not opened) - proposing 3 from MP.",
+   "hazards: the generic Peshastin block claims \"roughly half\" of the bolts are worn or spinning - not found on any source opened; its Nov 1 - Mar 15 closure is confirmed by WA State Parks."
+  ],
+  "notes": "Filing ok (MP: Martian Slabs > Martian Slab). Stored rack \"Gear to 1 inch.\" matches MP. Stored descent (rappel at the end of the ramp) broadly matches MP (short downclimb to a rappel station at the crest)."
+ }
+}

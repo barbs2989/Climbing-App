@@ -1,0 +1,616 @@
+{
+ "wa_chronic": {
+  "area": "wa_world_wall",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/105805917/chronic",
+    "https://www.mountainproject.com/area/105789885/world-wall",
+    "https://rakkup.com/guidebook/exit-32-little-si-rock-climbing/chronic/c61598",
+    "https://rakkup.com/guidebook/exit-32-little-si-rock-climbing/world-wall-i/s20104",
+    "https://dnr.wa.gov/MountSi",
+    "https://gis.dnr.wa.gov/site3/rest/services/Public_Boundaries/WADNR_PUBLIC_Managed_Lands/MapServer"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.13b",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105805917/chronic",
+      "fact": "5.13b YDS",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://rakkup.com/guidebook/exit-32-little-si-rock-climbing/chronic/c61598",
+      "fact": "5.13b (Exit 32 guidebook, Kutzke & Price)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "discipline",
+    "value": "sport",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105805917/chronic",
+      "fact": "Type: Sport",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://rakkup.com/guidebook/exit-32-little-si-rock-climbing/chronic/c61598",
+      "fact": "Sport icon on the route page",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_chronic",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "0 is invalid. A single bolted line lowered off one anchor (Sport, 85 ft (26 m)), but Mountain Project does not state a pitch count, so 1 is implied only: approve 1, record as unconfirmed single-source.",
+    "evidence": [
+     "https://www.mountainproject.com/route/105805917/chronic"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_chronic",
+    "column": "length_m",
+    "from": null,
+    "to": 26,
+    "why": "Mountain Project: Sport, 85 ft (26 m). Single source (the Exit 32 guidebook on rakkup is paywalled, theCrag blocked); locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/105805917/chronic"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_chronic",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Washington State Department of Natural Resources (Mount Si Natural Resources Conservation Area, South Puget Sound Region)",
+     "permit": "None needed to climb.",
+     "parking_pass": "A Discover Pass is required to park at the Little Si Trailhead.",
+     "fees": null,
+     "rules": "Dogs must be on a leash."
+    },
+    "why": "access is empty. DNR's Mount Si NRCA page: Discover Pass required to park at the Little Si Trailhead; dogs on leash; DNR South Puget Sound Region manages it. DNR managed-lands layer at World Wall returns 'Mount Si NRCA' (surface trust: Natural Resources Conservation Area). Lock official-1 after apply, expires 2027-11-18. No fee amount is stated on the page, so fees stays null.",
+    "evidence": [
+     "https://dnr.wa.gov/MountSi",
+     "https://gis.dnr.wa.gov/site3/rest/services/Public_Boundaries/WADNR_PUBLIC_Managed_Lands/MapServer"
+    ]
+   }
+  ],
+  "disputed": [
+   "fa: stored 'Bryan Burdo, 1994'; Mountain Project gives 'Prep Erik Kubiak; FFA Bryan Burdo (1991)'. One source vs the stored value, years differ - not changed, not locked.",
+   "bolts: Mountain Project gives only '11 clips' (may or may not count the anchor) - not proposed."
+  ],
+  "notes": "Grade 5.13b and sport locked agree-2 (Mountain Project + the Exit 32 guidebook by Kutzke & Price on rakkup). Starts with two bolts of 5.9; Californicator branches left at the rest. MP: a 60 m rope lowers off, 70 m is more comfortable."
+ },
+ "wa_technorigine": {
+  "area": "wa_world_wall",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/105793715/technorigine",
+    "https://www.mountainproject.com/area/105789885/world-wall",
+    "https://rakkup.com/guidebook/exit-32-little-si-rock-climbing/technorigine/c61600",
+    "https://rakkup.com/guidebook/exit-32-little-si-rock-climbing/world-wall-i/s20104",
+    "https://dnr.wa.gov/MountSi",
+    "https://gis.dnr.wa.gov/site3/rest/services/Public_Boundaries/WADNR_PUBLIC_Managed_Lands/MapServer"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.12c",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105793715/technorigine",
+      "fact": "5.12c YDS",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://rakkup.com/guidebook/exit-32-little-si-rock-climbing/technorigine/c61600",
+      "fact": "5.12c (Exit 32 guidebook, Kutzke & Price)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "discipline",
+    "value": "sport",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105793715/technorigine",
+      "fact": "Type: Sport",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://rakkup.com/guidebook/exit-32-little-si-rock-climbing/technorigine/c61600",
+      "fact": "Sport icon on the route page",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Bryan Burdo, Leland Windham (1992)",
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105793715/technorigine",
+      "fact": "FA: Bryan Burdo (1992)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_technorigine",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "0 is invalid. A single bolted line lowered off one anchor (Sport, 90 ft (27 m)), but Mountain Project does not state a pitch count, so 1 is implied only: approve 1, record as unconfirmed single-source.",
+    "evidence": [
+     "https://www.mountainproject.com/route/105793715/technorigine"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_technorigine",
+    "column": "length_m",
+    "from": null,
+    "to": 27,
+    "why": "Mountain Project: Sport, 90 ft (27 m). Single source (the Exit 32 guidebook on rakkup is paywalled, theCrag blocked); locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/105793715/technorigine"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_technorigine",
+    "column": "bolts",
+    "from": null,
+    "to": 12,
+    "why": "Mountain Project: Fixed draws (12 bolts). Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/105793715/technorigine"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_technorigine",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Washington State Department of Natural Resources (Mount Si Natural Resources Conservation Area, South Puget Sound Region)",
+     "permit": "None needed to climb.",
+     "parking_pass": "A Discover Pass is required to park at the Little Si Trailhead.",
+     "fees": null,
+     "rules": "Dogs must be on a leash."
+    },
+    "why": "access is empty. DNR's Mount Si NRCA page: Discover Pass required to park at the Little Si Trailhead; dogs on leash; DNR South Puget Sound Region manages it. DNR managed-lands layer at World Wall returns 'Mount Si NRCA' (surface trust: Natural Resources Conservation Area). Lock official-1 after apply, expires 2027-11-18. No fee amount is stated on the page, so fees stays null.",
+    "evidence": [
+     "https://dnr.wa.gov/MountSi",
+     "https://gis.dnr.wa.gov/site3/rest/services/Public_Boundaries/WADNR_PUBLIC_Managed_Lands/MapServer"
+    ]
+   }
+  ],
+  "disputed": [
+   "fa: stored 'Bryan Burdo and Leland Windham 92'; Mountain Project names only Bryan Burdo (1992). set only re-shapes the stored value to 'Names (year)'; Leland Windham is unconfirmed either way.",
+   "anchor: Mountain Project says only 'lowering hardware on both anchors' (the Aborigine anchor and the Technorigine anchor) - type not stated, not proposed."
+  ],
+  "notes": "Technorigine is an extension of Aborigine (5.11b): it continues past the Aborigine chains to a second anchor; MP's 90 ft and 12 bolts are the whole line from the ground. Fixed draws.",
+  "set": {
+   "fa": "Bryan Burdo, Leland Windham (1992)"
+  }
+ },
+ "wa_propaganda": {
+  "area": "wa_world_wall",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/105805809/propaganda",
+    "https://www.mountainproject.com/area/105789885/world-wall",
+    "https://rakkup.com/guidebook/exit-32-little-si-rock-climbing/propaganda/c61619",
+    "https://rakkup.com/guidebook/exit-32-little-si-rock-climbing/world-wall-i/s20104",
+    "https://dnr.wa.gov/MountSi",
+    "https://gis.dnr.wa.gov/site3/rest/services/Public_Boundaries/WADNR_PUBLIC_Managed_Lands/MapServer"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "discipline",
+    "value": "sport",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105805809/propaganda",
+      "fact": "Type: Sport",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://rakkup.com/guidebook/exit-32-little-si-rock-climbing/propaganda/c61619",
+      "fact": "Sport icon on the route page",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Bryan Burdo (1993)",
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105805809/propaganda",
+      "fact": "FA: Bryan Burdo (1993)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_propaganda",
+    "column": "grade",
+    "from": "5.12+",
+    "to": "5.12d",
+    "why": "Exit 32 guidebook (Kutzke & Price, rakkup) 5.12d; Mountain Project 5.12c/d, which agrees with either half. Two independent sources agree on 5.12d; the stored '5.12+' is vaguer. Lock agree-2 after apply.",
+    "evidence": [
+     "https://rakkup.com/guidebook/exit-32-little-si-rock-climbing/propaganda/c61619",
+     "https://www.mountainproject.com/route/105805809/propaganda"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_propaganda",
+    "column": "grade_num",
+    "from": 12.75,
+    "to": 12.9,
+    "why": "gradeNumFrom('5.12d','yds') = 12.9, follows the grade change. rock_grade is null, so it is not touched.",
+    "evidence": [
+     "https://rakkup.com/guidebook/exit-32-little-si-rock-climbing/propaganda/c61619"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_propaganda",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "0 is invalid. A single bolted line lowered off one anchor (Sport, 90 ft (27 m)), but Mountain Project does not state a pitch count, so 1 is implied only: approve 1, record as unconfirmed single-source.",
+    "evidence": [
+     "https://www.mountainproject.com/route/105805809/propaganda"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_propaganda",
+    "column": "length_m",
+    "from": null,
+    "to": 27,
+    "why": "Mountain Project: Sport, 90 ft (27 m). Single source (the Exit 32 guidebook on rakkup is paywalled, theCrag blocked); locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/105805809/propaganda"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_propaganda",
+    "column": "bolts",
+    "from": null,
+    "to": 9,
+    "why": "Mountain Project: 9 bolts and anchor. Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/105805809/propaganda"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_propaganda",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Washington State Department of Natural Resources (Mount Si Natural Resources Conservation Area, South Puget Sound Region)",
+     "permit": "None needed to climb.",
+     "parking_pass": "A Discover Pass is required to park at the Little Si Trailhead.",
+     "fees": null,
+     "rules": "Dogs must be on a leash."
+    },
+    "why": "access is empty. DNR's Mount Si NRCA page: Discover Pass required to park at the Little Si Trailhead; dogs on leash; DNR South Puget Sound Region manages it. DNR managed-lands layer at World Wall returns 'Mount Si NRCA' (surface trust: Natural Resources Conservation Area). Lock official-1 after apply, expires 2027-11-18. No fee amount is stated on the page, so fees stays null.",
+    "evidence": [
+     "https://dnr.wa.gov/MountSi",
+     "https://gis.dnr.wa.gov/site3/rest/services/Public_Boundaries/WADNR_PUBLIC_Managed_Lands/MapServer"
+    ]
+   }
+  ],
+  "notes": "Starts off the upper ledge just right of Bust the Rhythm, up the dark water streak on the left side of the main wall; fixed draws. Stored overview says anchors 80 ft up; MP length 90 ft (within tolerance, not changed). FA matches MP but a first ascent never locks from one source."
+ },
+ "wa_psychosomatic": {
+  "area": "wa_world_wall",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/105792640/psychosomatic",
+    "https://www.mountainproject.com/area/105789885/world-wall",
+    "https://rakkup.com/guidebook/exit-32-little-si-rock-climbing/psychosomatic/c61613",
+    "https://rakkup.com/guidebook/exit-32-little-si-rock-climbing/world-wall-i/s20104",
+    "https://dnr.wa.gov/MountSi",
+    "https://gis.dnr.wa.gov/site3/rest/services/Public_Boundaries/WADNR_PUBLIC_Managed_Lands/MapServer"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.12d",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105792640/psychosomatic",
+      "fact": "5.12d YDS",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://rakkup.com/guidebook/exit-32-little-si-rock-climbing/psychosomatic/c61613",
+      "fact": "5.12d (Exit 32 guidebook, Kutzke & Price)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "discipline",
+    "value": "sport",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105792640/psychosomatic",
+      "fact": "Type: Sport",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://rakkup.com/guidebook/exit-32-little-si-rock-climbing/psychosomatic/c61613",
+      "fact": "Sport icon on the route page",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Bryan Burdo (1993)",
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105792640/psychosomatic",
+      "fact": "FA: Bryan Burdo (1993)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_psychosomatic",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "0 is invalid. A single bolted line lowered off one anchor (Sport, 100 ft (30 m)), but Mountain Project does not state a pitch count, so 1 is implied only: approve 1, record as unconfirmed single-source.",
+    "evidence": [
+     "https://www.mountainproject.com/route/105792640/psychosomatic"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_psychosomatic",
+    "column": "length_m",
+    "from": null,
+    "to": 30,
+    "why": "Mountain Project: Sport, 100 ft (30 m). Single source (the Exit 32 guidebook on rakkup is paywalled, theCrag blocked); locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/105792640/psychosomatic"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_psychosomatic",
+    "column": "bolts",
+    "from": null,
+    "to": 10,
+    "why": "Mountain Project: 10 bolts and a chain anchor. Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/105792640/psychosomatic"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_psychosomatic",
+    "column": "anchor",
+    "from": null,
+    "to": "Chain anchor",
+    "why": "Mountain Project: 10 bolts and a chain anchor. Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/105792640/psychosomatic"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_psychosomatic",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Washington State Department of Natural Resources (Mount Si Natural Resources Conservation Area, South Puget Sound Region)",
+     "permit": "None needed to climb.",
+     "parking_pass": "A Discover Pass is required to park at the Little Si Trailhead.",
+     "fees": null,
+     "rules": "Dogs must be on a leash."
+    },
+    "why": "access is empty. DNR's Mount Si NRCA page: Discover Pass required to park at the Little Si Trailhead; dogs on leash; DNR South Puget Sound Region manages it. DNR managed-lands layer at World Wall returns 'Mount Si NRCA' (surface trust: Natural Resources Conservation Area). Lock official-1 after apply, expires 2027-11-18. No fee amount is stated on the page, so fees stays null.",
+    "evidence": [
+     "https://dnr.wa.gov/MountSi",
+     "https://gis.dnr.wa.gov/site3/rest/services/Public_Boundaries/WADNR_PUBLIC_Managed_Lands/MapServer"
+    ]
+   }
+  ],
+  "notes": "Extension of Psycho Wussy: same start, past the Psycho Wussy chains to a second anchor (guidebook and MP agree). fa re-shaped from 'Bryan Burdo 93' to 'Bryan Burdo (1993)', which MP states. Stored overview says anchors 80 ft up; MP gives 100 ft for the whole line - the overview should put the top anchor at about 100 ft (not rewritten: prose pass).",
+  "set": {
+   "fa": "Bryan Burdo (1993)"
+  }
+ },
+ "wa_world_wall_psycho_wussy": {
+  "area": "wa_world_wall",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/112070225/psycho-wussy",
+    "https://www.mountainproject.com/area/105789885/world-wall",
+    "https://rakkup.com/guidebook/exit-32-little-si-rock-climbing/psycho-wussy/c61616",
+    "https://rakkup.com/guidebook/exit-32-little-si-rock-climbing/world-wall-i/s20104",
+    "https://dnr.wa.gov/MountSi",
+    "https://gis.dnr.wa.gov/site3/rest/services/Public_Boundaries/WADNR_PUBLIC_Managed_Lands/MapServer"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.11b",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112070225/psycho-wussy",
+      "fact": "5.11b YDS",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://rakkup.com/guidebook/exit-32-little-si-rock-climbing/psycho-wussy/c61616",
+      "fact": "5.11b (Exit 32 guidebook, Kutzke & Price)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "discipline",
+    "value": "sport",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112070225/psycho-wussy",
+      "fact": "Type: Sport",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://rakkup.com/guidebook/exit-32-little-si-rock-climbing/psycho-wussy/c61616",
+      "fact": "Sport icon on the route page",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 1,
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112070225/psycho-wussy",
+      "fact": "calls the route 'this pitch'; no count stated",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "length_m",
+    "value": 18,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112070225/psycho-wussy",
+      "fact": "Sport, 60 ft (18 m)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Bryan Burdo (1993)",
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112070225/psycho-wussy",
+      "fact": "FA: Bryan Burdo (1993)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_world_wall_psycho_wussy",
+    "column": "bolts",
+    "from": null,
+    "to": 7,
+    "why": "Mountain Project: 7 bolts and anchor, fixed draws. Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/112070225/psycho-wussy"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_world_wall_psycho_wussy",
+    "column": "anchor",
+    "from": null,
+    "to": "Two-bolt anchor",
+    "why": "Mountain Project: ends at the first two bolt anchor. Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/112070225/psycho-wussy"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_world_wall_psycho_wussy",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Washington State Department of Natural Resources (Mount Si Natural Resources Conservation Area, South Puget Sound Region)",
+     "permit": "None needed to climb.",
+     "parking_pass": "A Discover Pass is required to park at the Little Si Trailhead.",
+     "fees": null,
+     "rules": "Dogs must be on a leash."
+    },
+    "why": "access is empty. DNR's Mount Si NRCA page: Discover Pass required to park at the Little Si Trailhead; dogs on leash; DNR South Puget Sound Region manages it. DNR managed-lands layer at World Wall returns 'Mount Si NRCA' (surface trust: Natural Resources Conservation Area). Lock official-1 after apply, expires 2027-11-18. No fee amount is stated on the page, so fees stays null.",
+    "evidence": [
+     "https://dnr.wa.gov/MountSi",
+     "https://gis.dnr.wa.gov/site3/rest/services/Public_Boundaries/WADNR_PUBLIC_Managed_Lands/MapServer"
+    ]
+   }
+  ],
+  "notes": "First part of Psychosomatic; ends at the first two-bolt anchor. The block that once made the start easy slid and was broken up; the start is now harder and a fall there is more serious - MP says to belay off the single-bolt ground anchor (often a fixed static line). Candidate hazard text for the prose pass.",
+  "set": {
+   "fa": "Bryan Burdo (1993)"
+  }
+ }
+}

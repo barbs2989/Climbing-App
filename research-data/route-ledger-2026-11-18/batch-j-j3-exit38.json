@@ -1,0 +1,670 @@
+{
+ "wa_jiffy_pop": {
+  "area": "wa_deception_wall",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/108510576/jiffy-pop",
+    "https://www.mountainproject.com/area/108184422/deception-wall",
+    "https://rakkup.com/guidebook/exit-38-rock-climbing/jiffy-pop/c26560",
+    "https://rakkup.com/guidebook/exit-38-rock-climbing/deception-wall/s11786",
+    "https://parks.wa.gov/find-parks/state-parks/olallie-state-park",
+    "https://parks.wa.gov/node/3529",
+    "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.7",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108510576/jiffy-pop",
+      "fact": "5.7 sport",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://rakkup.com/guidebook/exit-38-rock-climbing/jiffy-pop/c26560",
+      "fact": "Jiffy Pop 5.7, sport (Exit 38 Rock Climbs, Kutzke & Price)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "discipline",
+    "value": "sport",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108510576/jiffy-pop",
+      "fact": "Type: Sport; 4 bolts, chain anchor",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://rakkup.com/guidebook/exit-38-rock-climbing/jiffy-pop/c26560",
+      "fact": "Type: Sport",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Mike and Laura Orr",
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108510576/jiffy-pop",
+      "fact": "FA: Mike and Laura Orr (1995)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_jiffy_pop",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "0 is invalid. Mountain Project describes one 50 ft bolted line to a chain anchor; the pitch count is implied, not stated, so lock unconfirmed (single-source).",
+    "evidence": [
+     "https://www.mountainproject.com/route/108510576/jiffy-pop"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_jiffy_pop",
+    "column": "length_m",
+    "from": null,
+    "to": 15,
+    "why": "Mountain Project states 50 ft (15 m). Rakkup gives no length (paywalled). Lock locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/108510576/jiffy-pop"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_jiffy_pop",
+    "column": "bolts",
+    "from": null,
+    "to": 4,
+    "why": "Mountain Project: 4 bolts. Lock locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/108510576/jiffy-pop"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_jiffy_pop",
+    "column": "anchor",
+    "from": null,
+    "to": "Chain anchor",
+    "why": "Mountain Project: chain anchor. Lock locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/108510576/jiffy-pop"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_jiffy_pop",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Washington State Parks (Olallie State Park)",
+     "parking_pass": "Discover Pass required to park at Washington State Parks ($10 one day, $45 a year).",
+     "rules": "Day use only, 6:30 a.m. to dusk. Climbing at Deception Crags can be closed between February and August while peregrine falcons nest; check the park's alerts before going."
+    },
+    "why": "access is empty. Official-1: the Olallie State Park page says the Homestead Valley Trailhead reaches Deception Crags, lists the Discover Pass fees ($45 annual, $10 one day) and day-use hours 6:30 a.m. to dusk; the State Parks pass page says a Discover Pass is required to park at State Parks; the State Parks blog (May 20, 2026) names Deception Crags at Olallie State Park for falcon closures between February and August, coordinated with WDFW. Lock official-1 after apply, expires 2027-11-18. Not DNR land.",
+    "evidence": [
+     "https://parks.wa.gov/find-parks/state-parks/olallie-state-park",
+     "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass",
+     "https://parks.wa.gov/node/3529"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_jiffy_pop",
+    "column": "permit",
+    "from": null,
+    "to": "No climbing permit. A Discover Pass is needed to park at Olallie State Park.",
+    "why": "permit is empty. Official-1 from the same State Parks pages; lock after apply, expires 2027-11-18.",
+    "evidence": [
+     "https://parks.wa.gov/find-parks/state-parks/olallie-state-park",
+     "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "Starts at the east end of the concrete bridge and traverses right onto a small buttress; the straight-up chalk line is Old Milwaukee Road. Rat Face (5.10c MP, 5.10c/d Rakkup) continues above it as its second pitch, filed as its own row wa_rat_face. FA year 1995 (MP only; FA never locks from MP)."
+ },
+ "wa_underground_economy": {
+  "area": "wa_deception_wall",
+  "set": {
+   "fa": "Bryan Burdo"
+  },
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/108184444/underground-economy",
+    "https://www.mountainproject.com/area/108184422/deception-wall",
+    "https://rakkup.com/guidebook/exit-38-rock-climbing/deception-wall/s11786",
+    "https://parks.wa.gov/find-parks/state-parks/olallie-state-park",
+    "https://parks.wa.gov/node/3529",
+    "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.9",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108184444/underground-economy",
+      "fact": "5.9 sport",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://rakkup.com/guidebook/exit-38-rock-climbing/deception-wall/s11786",
+      "fact": "Underground Economy 5.9, sport (Exit 38 Rock Climbs)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "discipline",
+    "value": "sport",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108184444/underground-economy",
+      "fact": "Type: Sport; 5 bolts, chain anchor",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://rakkup.com/guidebook/exit-38-rock-climbing/deception-wall/s11786",
+      "fact": "all Deception Wall routes listed as sport",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Bryan Burdo",
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108184444/underground-economy",
+      "fact": "FA: Bryan Burdo (1994)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_underground_economy",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "0 is invalid. Mountain Project describes one 50 ft bolted line to a chain anchor; the pitch count is implied, not stated, so lock unconfirmed (single-source).",
+    "evidence": [
+     "https://www.mountainproject.com/route/108184444/underground-economy"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_underground_economy",
+    "column": "length_m",
+    "from": null,
+    "to": 15,
+    "why": "Mountain Project states 50 ft (15 m). Lock locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/108184444/underground-economy"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_underground_economy",
+    "column": "bolts",
+    "from": null,
+    "to": 5,
+    "why": "Mountain Project: 5 bolts. Lock locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/108184444/underground-economy"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_underground_economy",
+    "column": "anchor",
+    "from": null,
+    "to": "Chain anchor",
+    "why": "Mountain Project: chain anchor. Lock locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/108184444/underground-economy"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_underground_economy",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Washington State Parks (Olallie State Park)",
+     "parking_pass": "Discover Pass required to park at Washington State Parks ($10 one day, $45 a year).",
+     "rules": "Day use only, 6:30 a.m. to dusk. Climbing at Deception Crags can be closed between February and August while peregrine falcons nest; check the park's alerts before going."
+    },
+    "why": "access is empty. Official-1: the Olallie State Park page says the Homestead Valley Trailhead reaches Deception Crags, lists the Discover Pass fees ($45 annual, $10 one day) and day-use hours 6:30 a.m. to dusk; the State Parks pass page says a Discover Pass is required to park at State Parks; the State Parks blog (May 20, 2026) names Deception Crags at Olallie State Park for falcon closures between February and August, coordinated with WDFW. Lock official-1 after apply, expires 2027-11-18. Not DNR land.",
+    "evidence": [
+     "https://parks.wa.gov/find-parks/state-parks/olallie-state-park",
+     "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass",
+     "https://parks.wa.gov/node/3529"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_underground_economy",
+    "column": "permit",
+    "from": null,
+    "to": "No climbing permit. A Discover Pass is needed to park at Olallie State Park.",
+    "why": "permit is empty. Official-1 from the same State Parks pages; lock after apply, expires 2027-11-18.",
+    "evidence": [
+     "https://parks.wa.gov/find-parks/state-parks/olallie-state-park",
+     "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "fa was empty; set to Bryan Burdo (MP, 1994), unconfirmed. A side trail at the NE end of the concrete bridge leads to the start."
+ },
+ "wa_won_t_get_fooled_again": {
+  "area": "wa_deception_wall",
+  "set": {
+   "fa": "Bryan Burdo"
+  },
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/108185785/wont-get-fooled-again",
+    "https://www.mountainproject.com/area/108184422/deception-wall",
+    "https://rakkup.com/guidebook/exit-38-rock-climbing/deception-wall/s11786",
+    "https://parks.wa.gov/find-parks/state-parks/olallie-state-park",
+    "https://parks.wa.gov/node/3529",
+    "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.10a/b",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108185785/wont-get-fooled-again",
+      "fact": "5.10a/b sport",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://rakkup.com/guidebook/exit-38-rock-climbing/deception-wall/s11786",
+      "fact": "Won't Get Fooled Again 5.10a (slash grade agrees with either half)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "discipline",
+    "value": "sport",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108185785/wont-get-fooled-again",
+      "fact": "Type: Sport; 9 bolts, chain anchors",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://rakkup.com/guidebook/exit-38-rock-climbing/deception-wall/s11786",
+      "fact": "all Deception Wall routes listed as sport",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Bryan Burdo",
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108185785/wont-get-fooled-again",
+      "fact": "FA: Bryan Burdo, 1994",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_won_t_get_fooled_again",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "0 is invalid. Mountain Project describes one 70 ft bolted line to a chain anchor; the pitch count is implied, not stated, so lock unconfirmed (single-source).",
+    "evidence": [
+     "https://www.mountainproject.com/route/108185785/wont-get-fooled-again"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_won_t_get_fooled_again",
+    "column": "length_m",
+    "from": null,
+    "to": 21,
+    "why": "Mountain Project states 70 ft (21 m). Lock locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/108185785/wont-get-fooled-again"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_won_t_get_fooled_again",
+    "column": "bolts",
+    "from": null,
+    "to": 9,
+    "why": "Mountain Project: 9 bolts. Lock locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/108185785/wont-get-fooled-again"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_won_t_get_fooled_again",
+    "column": "anchor",
+    "from": null,
+    "to": "Chain anchor",
+    "why": "Mountain Project: chain anchors with lower-offs. Lock locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/108185785/wont-get-fooled-again"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_won_t_get_fooled_again",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Washington State Parks (Olallie State Park)",
+     "parking_pass": "Discover Pass required to park at Washington State Parks ($10 one day, $45 a year).",
+     "rules": "Day use only, 6:30 a.m. to dusk. Climbing at Deception Crags can be closed between February and August while peregrine falcons nest; check the park's alerts before going."
+    },
+    "why": "access is empty. Official-1: the Olallie State Park page says the Homestead Valley Trailhead reaches Deception Crags, lists the Discover Pass fees ($45 annual, $10 one day) and day-use hours 6:30 a.m. to dusk; the State Parks pass page says a Discover Pass is required to park at State Parks; the State Parks blog (May 20, 2026) names Deception Crags at Olallie State Park for falcon closures between February and August, coordinated with WDFW. Lock official-1 after apply, expires 2027-11-18. Not DNR land.",
+    "evidence": [
+     "https://parks.wa.gov/find-parks/state-parks/olallie-state-park",
+     "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass",
+     "https://parks.wa.gov/node/3529"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_won_t_get_fooled_again",
+    "column": "permit",
+    "from": null,
+    "to": "No climbing permit. A Discover Pass is needed to park at Olallie State Park.",
+    "why": "permit is empty. Official-1 from the same State Parks pages; lock after apply, expires 2027-11-18.",
+    "evidence": [
+     "https://parks.wa.gov/find-parks/state-parks/olallie-state-park",
+     "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass"
+    ]
+   }
+  ],
+  "disputed": [
+   "grade: MP 5.10a/b, Rakkup (Exit 38 Rock Climbs) 5.10a. Agrees under the slash-grade rule; kept 5.10a/b. Owner may prefer 5.10a."
+  ],
+  "notes": "First route reached on the Deception ledge, beside the two 5.13s; lowering clears through a gap in the trees. fa was empty; set to Bryan Burdo (MP, 1994), unconfirmed."
+ },
+ "wa_black_market": {
+  "area": "wa_deception_wall",
+  "set": {
+   "fa": "Bryan Burdo"
+  },
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/108510604/black-market",
+    "https://www.mountainproject.com/route/121020998/gray-market",
+    "https://www.mountainproject.com/area/108184422/deception-wall",
+    "https://rakkup.com/guidebook/exit-38-rock-climbing/deception-wall/s11786",
+    "https://parks.wa.gov/find-parks/state-parks/olallie-state-park",
+    "https://parks.wa.gov/node/3529",
+    "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.9+",
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108510604/black-market",
+      "fact": "5.9+ sport, 40 ft, 5 bolts, chain anchor",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Bryan Burdo",
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108510604/black-market",
+      "fact": "FA: Bryan Burdo (1994)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_black_market",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "0 is invalid. Mountain Project describes one 40 ft bolted line to a chain anchor; the pitch count is implied, not stated, so lock unconfirmed (single-source).",
+    "evidence": [
+     "https://www.mountainproject.com/route/108510604/black-market"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_black_market",
+    "column": "length_m",
+    "from": null,
+    "to": 12,
+    "why": "Mountain Project states 40 ft (12 m). Single source; see notes on the route's status before locking.",
+    "evidence": [
+     "https://www.mountainproject.com/route/108510604/black-market"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_black_market",
+    "column": "bolts",
+    "from": null,
+    "to": 5,
+    "why": "Mountain Project: 5 bolts (as originally bolted; since rebolted, see notes). Single source.",
+    "evidence": [
+     "https://www.mountainproject.com/route/108510604/black-market"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_black_market",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Washington State Parks (Olallie State Park)",
+     "parking_pass": "Discover Pass required to park at Washington State Parks ($10 one day, $45 a year).",
+     "rules": "Day use only, 6:30 a.m. to dusk. Climbing at Deception Crags can be closed between February and August while peregrine falcons nest; check the park's alerts before going."
+    },
+    "why": "access is empty. Official-1: the Olallie State Park page says the Homestead Valley Trailhead reaches Deception Crags, lists the Discover Pass fees ($45 annual, $10 one day) and day-use hours 6:30 a.m. to dusk; the State Parks pass page says a Discover Pass is required to park at State Parks; the State Parks blog (May 20, 2026) names Deception Crags at Olallie State Park for falcon closures between February and August, coordinated with WDFW. Lock official-1 after apply, expires 2027-11-18. Not DNR land.",
+    "evidence": [
+     "https://parks.wa.gov/find-parks/state-parks/olallie-state-park",
+     "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass",
+     "https://parks.wa.gov/node/3529"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_black_market",
+    "column": "permit",
+    "from": null,
+    "to": "No climbing permit. A Discover Pass is needed to park at Olallie State Park.",
+    "why": "permit is empty. Official-1 from the same State Parks pages; lock after apply, expires 2027-11-18.",
+    "evidence": [
+     "https://parks.wa.gov/find-parks/state-parks/olallie-state-park",
+     "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass"
+    ]
+   }
+  ],
+  "disputed": [
+   "status: MP says Black Market was re/retro-bolted, redirected slightly and absorbed into Gray Market (5.11b/c, 90 ft, 11 bolts), whose first anchor ends the old low-angle Black Market section. Rakkup's Deception Wall list has no Black Market (it may be one of its 'Name Unknown' rows). Grade kept unconfirmed until the owner decides whether this row is a live route or history."
+  ],
+  "notes": "fa had a trailing full stop ('Bryan Burdo.'); set to 'Bryan Burdo'. The catalog also holds wa_deception_wall_gray_market: Black Market is now the lower part of it to the first chain anchor, so the owner may want to merge, alias or retire this row (owner call, not done here). Anchor not proposed: the original chains may not be the anchor now in use."
+ },
+ "wa_repo_man": {
+  "area": "wa_c_repo_ii",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/106427294/repo-man",
+    "https://www.mountainproject.com/area/113507030/repo-ii",
+    "https://rakkup.com/guidebook/exit-32-little-si-rock-climbing/repo-man/c61713",
+    "https://dnr.wa.gov/natural-areas/natural-resources-conservation-areas/mount-si-natural-resources-conservation-area"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.9",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106427294/repo-man",
+      "fact": "5.9, Trad/TR",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://rakkup.com/guidebook/exit-32-little-si-rock-climbing/repo-man/c61713",
+      "fact": "Repo Man 5.9, trad (Exit 32 Rock Climbs, Kutzke & Price)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "discipline",
+    "value": "trad",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106427294/repo-man",
+      "fact": "Type: Trad, TR; pro to 1.5 in plus 2 bolts",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://rakkup.com/guidebook/exit-32-little-si-rock-climbing/repo-man/c61713",
+      "fact": "Type: Trad",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_repo_man",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "0 is invalid. Mountain Project describes one 60 ft bolted line to a chain anchor; the pitch count is implied, not stated, so lock unconfirmed (single-source).",
+    "evidence": [
+     "https://www.mountainproject.com/route/106427294/repo-man"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_repo_man",
+    "column": "length_m",
+    "from": null,
+    "to": 18,
+    "why": "Mountain Project states 60 ft (18 m). Rakkup paywalled. Lock locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/106427294/repo-man"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_repo_man",
+    "column": "bolts",
+    "from": null,
+    "to": 2,
+    "why": "Mountain Project: gear to 1.5 in plus 2 bolts (upper slab). Lock locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/106427294/repo-man"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_repo_man",
+    "column": "anchor",
+    "from": null,
+    "to": "Chain anchor",
+    "why": "Mountain Project: chain anchor. Lock locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/106427294/repo-man"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_repo_man",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Washington DNR (Mount Si Natural Resources Conservation Area)",
+     "parking_pass": "Discover Pass required to park at the Little Si Trailhead ($10 one day, $45 a year)."
+    },
+    "why": "access is empty. Official-1: DNR's Mount Si NRCA page puts the Little Si Trailhead in the NRCA and says a Discover Pass is required to park there; prices from the State Parks Discover Pass page. Lock after apply, expires 2027-11-18.",
+    "evidence": [
+     "https://dnr.wa.gov/natural-areas/natural-resources-conservation-areas/mount-si-natural-resources-conservation-area",
+     "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_repo_man",
+    "column": "permit",
+    "from": null,
+    "to": "No climbing permit. A Discover Pass is needed to park at the Little Si Trailhead.",
+    "why": "permit is empty. Official-1 (DNR Mount Si NRCA page). Lock after apply, expires 2027-11-18.",
+    "evidence": [
+     "https://dnr.wa.gov/natural-areas/natural-resources-conservation-areas/mount-si-natural-resources-conservation-area"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "Area filing is CORRECT: Repo II sits at Exit 32 (Little Si) > British Aisles in both the catalog and MP, not at Exit 38 as the batch list grouped it. Gear: cams to 1.5 in; the start is awkward (MP warns against using the nearby boulder); the upper part is a bolted slab that MP suspects belongs to a neighbouring route. FA unknown on MP."
+ }
+}

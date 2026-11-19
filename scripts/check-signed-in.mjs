@@ -237,7 +237,11 @@ try {
     const cands = [...document.querySelectorAll('button,[role="button"],a,summary,div,span,b')]
       .filter((e) => re.test((e.textContent || "").trim()));
     if (!cands.length) return false;
-    cands.sort((a, b) => (a.textContent || "").length - (b.textContent || "").length);
+    // A TIE GOES TO THE CONTROL. The crew card's footer wraps its "Crew chat" button in a div of
+    // the same text, and the div comes first: clicking it presses nothing, so the chat never opened
+    // and the walk measured the crew list as the chat (2026-11-18). tapByText learned this in #1420.
+    const ctl = (e) => (e.tagName === "BUTTON" || e.tagName === "A" || e.getAttribute("role") === "button" ? 1 : 0);
+    cands.sort((a, b) => ((a.textContent || "").length - (b.textContent || "").length) || (ctl(b) - ctl(a)));
     cands[0].scrollIntoView({ block: "center" });
     cands[0].click();
     return true;

@@ -1,0 +1,317 @@
+[
+ {
+  "id": "wa_chair_peak_south_ridge",
+  "status": "found",
+  "trailhead": {
+   "name": "Snow Lake Trailhead (Alpental)",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://stevensong.com/usa/washington/chair-peak/",
+    "fact": "2024 report: scramble to south shoulder starts at Snow Lake trailhead, Alpental lot 3,100 ft, trail 1013, Snow Lake trail ~45 min then climber trail"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "Snow Lake Trailhead",
+     "lat": 47.445656,
+     "lng": -121.423665,
+     "url": ""
+    },
+    {
+     "source": "WTA",
+     "name": "Snow Lake hike trailhead",
+     "lat": 47.4454,
+     "lng": -121.423,
+     "url": "https://www.wta.org/go-hiking/hikes/snow-lake"
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "trailhead_elev_ft",
+    "value": "3100",
+    "url": "https://stevensong.com/usa/washington/chair-peak/"
+   }
+  ],
+  "notes": "WEAK/inferred: page body too large for WebFetch, so read via search summary, not opened text; report says south shoulder, not South Ridge; peak has one Snoqualmie-side scramble. SummitPost 403."
+ },
+ {
+  "id": "wa_chair_peak_southeast_face",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "No page about the SE snow face found; Snow Lake/Alpental is only a peak-level inference (as earlier passes). SummitPost, Mountaineers blocked."
+ },
+ {
+  "id": "ca_charybdis_northeast_ridge",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "approach",
+    "value": "Lake Sabrina TH; 2019 NE ridge trip camped Lake 11,828 Ionian Basin",
+    "url": "https://sites.google.com/view/wacziarg-climbing/2019-09-charybdis-scylla-black-giant"
+   },
+   {
+    "field": "approach",
+    "value": "Wikipedia: Sabrina TH ~16 mi cross-country; South Lake TH ~23 mi",
+    "url": "https://en.wikipedia.org/wiki/Charybdis_(mountain)"
+   }
+  ],
+  "notes": "Route text starts from a high camp. Sabrina, South Lake (Bishop Pass/Black Giant), North Lake all documented; no page ties the NE ridge to one. One NE ridge trip used Lake Sabrina (single trip, weak lead). SummitPost 403."
+ },
+ {
+  "id": "wa_chianti_spire_lichen_bouquet",
+  "status": "found",
+  "trailhead": {
+   "name": "SR-20 Wine Spires pullout (milepost 166)",
+   "identifiedBy": {
+    "kind": "route_text",
+    "fact": "wide pullout south side of highway near MP 166, ~0.7 mi past Cutthroat Lake road, ~4,250 ft"
+   },
+   "placements": []
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "trailhead_elev_ft",
+    "value": "4250",
+    "url": "https://stephabegg.com/?p=8704"
+   },
+   {
+    "field": "burgundy_col_elev_ft",
+    "value": "7720",
+    "url": "https://stephabegg.com/?p=8704"
+   },
+   {
+    "field": "approach_gain_ft",
+    "value": "3500 to col, under 5 mi",
+    "url": "https://stephabegg.com/?p=8704"
+   }
+  ],
+  "notes": "Identification from the route's own text (north face text begins at the notch via Burgundy Col; road text names the pullout). No page gives a coordinate; stephabegg and search confirm a highway trailhead at ~4,250 ft, no milepost or coordinate. No NW Forest Pass needed. Placement left to OSM script."
+ },
+ {
+  "id": "wa_chianti_spire_north_face",
+  "status": "found",
+  "trailhead": {
+   "name": "SR-20 Wine Spires pullout (milepost 166)",
+   "identifiedBy": {
+    "kind": "route_text",
+    "fact": "wide pullout south side of highway near MP 166, ~0.7 mi past Cutthroat Lake road, ~4,250 ft"
+   },
+   "placements": []
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "trailhead_elev_ft",
+    "value": "4250",
+    "url": "https://stephabegg.com/?p=8704"
+   },
+   {
+    "field": "burgundy_col_elev_ft",
+    "value": "7720",
+    "url": "https://stephabegg.com/?p=8704"
+   },
+   {
+    "field": "approach_gain_ft",
+    "value": "3500 to col, under 5 mi",
+    "url": "https://stephabegg.com/?p=8704"
+   }
+  ],
+  "notes": "Identification from the route's own text (north face text begins at the notch via Burgundy Col; road text names the pullout). No page gives a coordinate; stephabegg and search confirm a highway trailhead at ~4,250 ft, no milepost or coordinate. No NW Forest Pass needed. Placement left to OSM script."
+ },
+ {
+  "id": "wa_chimney_rock_north_ridge",
+  "status": "found",
+  "trailhead": {
+   "name": "Pete Lake Trailhead",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://lemkeclimbs.com/chimney-rock-2",
+    "fact": "Chimney Rock climbs from Pete Lake TH via Pete Lake trail, Lemah Meadow trail, PCT north (East Face trip, not this line)"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "Pete Lake Trailhead",
+     "lat": 47.434106,
+     "lng": -121.186915,
+     "url": ""
+    },
+    {
+     "source": "WTA",
+     "name": "Pete Lake hike trailhead",
+     "lat": 47.435,
+     "lng": -121.1855,
+     "url": "https://www.wta.org/go-hiking/hikes/pete-lake"
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "approach",
+    "value": "Pete Lake trail ~4 mi to lake, Lemah Meadow trail to PCT, PCT north ~0.5 mi",
+    "url": "https://lemkeclimbs.com/chimney-rock-2"
+   }
+  ],
+  "notes": "WEAK peak-level: every page found (Lemke, climberkyle, search snippets of MP/SummitPost) uses Pete Lake TH for Chimney Rock; none describes this ridge. SummitPost 403."
+ },
+ {
+  "id": "wa_chimney_rock_northeast_ridge",
+  "status": "found",
+  "trailhead": {
+   "name": "Pete Lake Trailhead",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://lemkeclimbs.com/chimney-rock-2",
+    "fact": "Chimney Rock climbs from Pete Lake TH via Pete Lake trail, Lemah Meadow trail, PCT north (East Face trip, not this line)"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "Pete Lake Trailhead",
+     "lat": 47.434106,
+     "lng": -121.186915,
+     "url": ""
+    },
+    {
+     "source": "WTA",
+     "name": "Pete Lake hike trailhead",
+     "lat": 47.435,
+     "lng": -121.1855,
+     "url": "https://www.wta.org/go-hiking/hikes/pete-lake"
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "approach",
+    "value": "Pete Lake trail ~4 mi to lake, Lemah Meadow trail to PCT, PCT north ~0.5 mi",
+    "url": "https://lemkeclimbs.com/chimney-rock-2"
+   }
+  ],
+  "notes": "WEAK peak-level: every page found (Lemke, climberkyle, search snippets of MP/SummitPost) uses Pete Lake TH for Chimney Rock; none describes this ridge. SummitPost 403."
+ },
+ {
+  "id": "wa_chimney_rock_northwest_ridge",
+  "status": "found",
+  "trailhead": {
+   "name": "Pete Lake Trailhead",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://lemkeclimbs.com/chimney-rock-2",
+    "fact": "Chimney Rock climbs from Pete Lake TH via Pete Lake trail, Lemah Meadow trail, PCT north (East Face trip, not this line)"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "Pete Lake Trailhead",
+     "lat": 47.434106,
+     "lng": -121.186915,
+     "url": ""
+    },
+    {
+     "source": "WTA",
+     "name": "Pete Lake hike trailhead",
+     "lat": 47.435,
+     "lng": -121.1855,
+     "url": "https://www.wta.org/go-hiking/hikes/pete-lake"
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "approach",
+    "value": "Pete Lake trail ~4 mi to lake, Lemah Meadow trail to PCT, PCT north ~0.5 mi",
+    "url": "https://lemkeclimbs.com/chimney-rock-2"
+   }
+  ],
+  "notes": "WEAK peak-level: every page found (Lemke, climberkyle, search snippets of MP/SummitPost) uses Pete Lake TH for Chimney Rock; none describes this ridge. SummitPost 403."
+ },
+ {
+  "id": "wa_chimney_rock_southeast_ridge",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "approach",
+    "value": "Pete Lake trail ~4 mi to lake, Lemah Meadow trail to PCT, PCT north ~0.5 mi",
+    "url": "https://lemkeclimbs.com/chimney-rock-2"
+   }
+  ],
+  "notes": "WEAK peak-level: every page found (Lemke, climberkyle, search snippets of MP/SummitPost) uses Pete Lake TH for Chimney Rock; none describes this ridge. SummitPost 403. Class 2 south-side line could start elsewhere (Rachel Lake); unverified."
+ },
+ {
+  "id": "wa_chimney_rock_southeast_shoulder",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "approach",
+    "value": "Pete Lake trail ~4 mi to lake, Lemah Meadow trail to PCT, PCT north ~0.5 mi",
+    "url": "https://lemkeclimbs.com/chimney-rock-2"
+   }
+  ],
+  "notes": "WEAK peak-level: every page found (Lemke, climberkyle, search snippets of MP/SummitPost) uses Pete Lake TH for Chimney Rock; none describes this ridge. SummitPost 403. Class 3 south-side line could start elsewhere; unverified."
+ },
+ {
+  "id": "ny_cliff_mountain_uphill_brook_herd_path",
+  "status": "found",
+  "trailhead": {
+   "name": "Upper Works Trailhead",
+   "identifiedBy": {
+    "kind": "route_text",
+    "fact": "Starts at Upper Works, Newcomb; Calamity Brook Trail to unmarked herd path"
+   },
+   "placements": [
+    {
+     "source": "AdirondackHub",
+     "name": "Upper Works parking area (page address point, not labelled trailhead)",
+     "lat": 44.086533,
+     "lng": -74.055815,
+     "url": "https://adirondackhub.com/hiking/cliff-mountain"
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "distance_mi_rt",
+    "value": "15.5",
+    "url": "https://adirondackhub.com/hiking/cliff-mountain"
+   },
+   {
+    "field": "gain_ft",
+    "value": "3450",
+    "url": "https://adirondackhub.com/hiking/cliff-mountain"
+   },
+   {
+    "field": "road",
+    "value": "Blue Ridge Rd (CR 84) 17.4 mi from I-87 exit 29, Tahawus Rd (CR 25) 6.3 mi, left at High Peaks sign, road dead-ends at lot",
+    "url": "https://newcombny.gov/upper-works"
+   }
+  ],
+  "notes": "Identification solid (route's own text; Newcomb town page confirms Calamity Brook trail starts at the Upper Works lot). Placement weak: one coordinate from a hub page tied to the address, no official coordinate; OSM name match by script."
+ }
+]

@@ -154,8 +154,9 @@ else fail("a Campsite waypoint does not reach CAMPING & BIVY — the two stores 
   const start = t.indexOf(HEAD);
   // The panel ends at the next section heading. Since 2026-11-18 the alpine Plan tab puts ROUTE TRACK
   // (the map) ABOVE the climb, and CAMPING & BIVY is followed by CROWDS & SOLITUDE (when mounted) and then
-  // the recent tracks list, so bound on whichever of those comes first after the panel's heading.
-  const NEXT = ["CROWDS", "Recent tracks", "Recent logged climbs", "ROUTE TRACK", "WAYPOINTS"];
+  // the recent tracks list, so bound on whichever of those comes first after the panel's heading. ROUTE TRACK
+  // and WAYPOINTS are NOT ends any more: a site note naming them would cut the slice short.
+  const NEXT = ["CROWDS", "Recent tracks", "Recent logged climbs"];
   const afters = NEXT.map((h) => t.indexOf(h, start + HEAD.length)).filter((i) => i > start);
   const after = afters.length ? Math.min(...afters) : -1;
   if (start < 0) fail("dedupe case: the panel did not render at all");
