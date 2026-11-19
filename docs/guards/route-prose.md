@@ -50,7 +50,17 @@ Part of the guard notes — see [README.md](README.md) for the full index.
       the stored May-Oct header sits inside every published range. **Snowking: still held** — The
       Mountaineers' NE Shoulder (May-Oct, "early season snow scramble") is not shown to be our Kindy
       Creek / Snowking Glacier line, and its range overlaps both of our conflicting values.
-    - SummitPost answers 403 in Chrome too; Mountain Project and The Mountaineers open.
+    - SummitPost answers 403 in Chrome too; Mountain Project and The Mountaineers open. The AAJ
+      site is not readable through the Chrome extension (no permission) but WebFetch reads it.
+  - **Fifth pass: the held rows decided** (`scripts/oneoff/fix-optimal-season-2026-11-18-d.mjs`).
+    Owner: Adams Wilson Glacier Headwall shows its snow season (May-Jun) with a Yakama access note
+    in the window; Goode NE Face's buttress beta cleared, grade kept; the 56 shoulders left. Research
+    decided the other two: **Snowking** is the line The Mountaineers describe (same FR-1570 approach,
+    Cyclone Lake, the small glacier), "very good early season (May-June)", with a WTA ascent on snow
+    on May 26, 2019, so its May-Jul header was right and its mid-summer window, calendar and When to
+    go were not. **Forbidden NE Face**'s AAJ first-ascent report is a mid-September climb in fine
+    late-season weather over Sharkfin Col, so its Jul-Sep header was right and its "late spring"
+    window had no source.
   - A range can START or END on a season word ("Late autumn through May" on Colfax's Polish
     Route); read as May alone, it was a false finding. `SRANGE` pins the season end to one month
     by its qualifier and marks the result as words.
