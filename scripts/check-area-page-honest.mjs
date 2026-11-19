@@ -62,6 +62,11 @@ if (!/const discs = \[\.\.\.DISC_ORDER\.filter\(k => byDisc\[k\]\), \.\.\.Object
 if (!/discs\.map\(k => <button.*aria-pressed=\{k === disc\}/.test(gradeBody)) fail("GradeSpread no longer offers every discipline as a chip that says which one is picked");
 if (!/const mine = rows\.filter\(g => g\.disc === disc\)/.test(gradeBody)) fail("GradeSpread's columns are no longer the PICKED discipline's rows — a chip would draw another discipline's climbs");
 if (!/by_grade_disc/.test(sections)) fail("the grade spread no longer reads area_climb_stats.by_grade_disc (0476) — without it the chart cannot tell trad from sport");
+// A scale holding a sliver of the picked discipline's climbs gets no chip (owner, 2026-11-18). The bar may be
+// lowered, never raised past 5%: above that a real second scale (alpine on Class is ~8% of its graded climbs)
+// would lose its chart.
+if (!/const SCALE_MIN_SHARE = 0\.0[0-5]\d*;/.test(sections)) fail("SCALE_MIN_SHARE is gone or above 5% — a scale a discipline is really graded on would lose its chip");
+if (!/\.filter\(k => !disc \|\| bySys\[k\] >= byDisc\[disc\] \* SCALE_MIN_SHARE\)/.test(gradeBody)) fail("GradeSpread no longer measures a scale's share against the PICKED discipline's own climbs — ANCHOR LOST");
 if (/yds: "Rock"/.test(sections)) fail("a grade-spread chip is labelled \"Rock\" again — trad, sport and top rope are each their own chip (owner, 2026-11-18)");
 if (/on other scales|" list a "/.test(gradeBody)) fail("GradeSpread prints the \"N of M list a grade\" line again — the owner removed it (2026-11-18); the picker is how the other scales are reached");
 if (!fails) ok("the chart's headline is the sum of its bars, and the grade spread offers every discipline the area has, on every scale it is graded on");
