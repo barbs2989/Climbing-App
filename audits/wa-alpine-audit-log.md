@@ -39526,3 +39526,49 @@ contradicted by any source found — left alone per the rule against flagging wh
 
 0 confirmed errors fixed, 4 newly flagged for human review, 3 clean.
 Next batch will continue id-ascending from `wa_chimney_rock_west_face` (pass 9).
+
+## Batch 565 — 2026-11-19 (pass 9)
+
+Chiwawa Mountain (Southwest Route), North Early Winters Spire (Chockstone Route), Clark Mountain
+(id `wa_clark_mountain_west_ridge`), Unicorn Peak (Classic Route), and four Colchuck Balanced Rock
+rows (East Route, South Route, The Foot of Faith West Face P3 variation, West Face) — 8 routes
+across 5 peaks, continuing id-ascending from `wa_chimney_rock_west_face` (skipping
+`wa_clean_break`, on `wa_juno_tower`, a crag not a peak — out of scope).
+
+Verified against independent sources and found correct: Chiwawa Mountain's elevation (8,459 ft)
+and prominence (1,219 ft) match Wikipedia-derived figures exactly (ListsOfJohn's LiDAR figures of
+8,458 ft / 1,276 ft are ordinary survey variance); its FA ("Lorenz A. Nelson and a Mountaineers
+party, 1921") matches what Wikipedia, SummitPost and Armchair Mountaineer all give, though every
+one of those sources hedges it as unconfirmed rather than certain — an inherent historical-record
+gap, not a DB error. Chockstone Route's FA ("Wesley Grande, Pete Schoening, and Dick Widrig, May
+28, 1950") is confirmed by Mountain Project's own Chockstone Route page crediting the same trio and
+year; the row's own hedge ("historically also referenced as the Southwest Face Route") already
+anticipates SummitPost's inconsistent route-naming for this same 1950 ascent, so no fix needed.
+Unicorn Peak's elevation (6,971 ft) and prominence (2,091 ft) both match Wikipedia exactly (one
+outlier source, SummitPost's 2,120 ft prominence, does not override it). Colchuck Balanced Rock
+West Face: FA ("Tom Boley, Jack Lewis (1980)") matches Mountain Project exactly; the area blurb's
+first-winter-ascent credit ("Nathan Farr and Blake Herrington, late January 2012") matches an AAC
+Publications report of the same two climbers and month/year; the peak's overall FA ("Gene Prater
+and Thomas Quin, 1958") matches Wikipedia.
+
+**Clean (7):** Chiwawa Mountain Southwest Route, Chockstone Route, Unicorn Peak Classic Route,
+Colchuck Balanced Rock West Face (all verified above); Colchuck Balanced Rock East Route and South
+Route (stub rows carrying only a grade, no claims to check); The Foot of Faith West Face P3
+variation (a guidebook-style pitch description with no externally-checkable facts beyond the climb
+itself).
+
+**Flagged for human review (1):**
+- The row stored as `wa_clark_mountain_west_ridge` is named "Walrus Glacier" in its own `name`
+  field, has `face` = "Walrus Glacier (east side)" and `aspect` = "E", and every content field
+  (overview/beta/descent) describes the standard glacier route to Clark Mountain via Boulder Creek
+  Trail and Boulder Pass — not a west ridge. No source (Mountain Project, SummitPost, Wenatchee
+  Outdoors, The Mountaineers, Cascade Climbers trip reports) names a "West Ridge" route on Clark
+  Mountain at all; the mountain's documented approaches are Walrus Glacier, Richardson Glacier, a
+  Southeast Route, a non-technical South Ridge/basin scramble, and a Thunder Creek approach — none
+  called West Ridge. This is the same id/content conflation this audit has flagged before (Chimney
+  Rock West Face/"South Peak via East Gully," Cascade Peak East Ridge, Boston Peak Southwest Face)
+  and needs a human rename or split decision, not a field-level SQL patch — the id likely dates
+  from before the row's content was filled in with the Walrus Glacier description.
+
+0 confirmed errors fixed, 1 newly flagged for human review, 7 clean.
+Next batch will continue id-ascending from `wa_colchuck_balanced_rock_west_face` (pass 9).
