@@ -1,0 +1,292 @@
+{
+ "note": "Values replaced by the owner-approved batch-B fixes, 2026-11-18",
+ "rollback": [
+  {
+   "table": "routes",
+   "id": "wa_orange_sunshine",
+   "before": {
+    "pitches": 0
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_orange_sunshine",
+   "before": {
+    "length_m": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_orange_sunshine",
+   "before": {
+    "detailed_rack": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_orange_sunshine",
+   "before": {
+    "permit": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_jam_exam",
+   "before": {
+    "pitches": 0
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_jam_exam",
+   "before": {
+    "length_m": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_jam_exam",
+   "before": {
+    "fa": "??"
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_jam_exam",
+   "before": {
+    "detailed_rack": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_jam_exam",
+   "before": {
+    "permit": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_twin_cracks",
+   "before": {
+    "pitches": 0
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_twin_cracks",
+   "before": {
+    "length_m": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_twin_cracks",
+   "before": {
+    "anchor": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_twin_cracks",
+   "before": {
+    "detailed_rack": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_twin_cracks",
+   "before": {
+    "permit": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_journeyman_crack",
+   "before": {
+    "pitches": 0
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_journeyman_crack",
+   "before": {
+    "detailed_rack": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_journeyman_crack",
+   "before": {
+    "permit": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_slot_machine_3",
+   "before": {
+    "pitches": 0
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_slot_machine_3",
+   "before": {
+    "anchor": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_slot_machine_3",
+   "before": {
+    "detailed_rack": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_slot_machine_3",
+   "before": {
+    "permit": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_magic_bus",
+   "before": {
+    "pitches": 0
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_magic_bus",
+   "before": {
+    "length_m": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_magic_bus",
+   "before": {
+    "detailed_rack": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_three_o_clock_rock_total_soul",
+   "before": {
+    "anchor": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_three_o_clock_rock_total_soul",
+   "before": {
+    "detailed_rack": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_three_o_clock_rock_till_broad_daylight",
+   "before": {
+    "pitches": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_three_o_clock_rock_till_broad_daylight",
+   "before": {
+    "length_m": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_three_o_clock_rock_till_broad_daylight",
+   "before": {
+    "detailed_rack": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_blueberry_hill_proxima_wall_rainman",
+   "before": {
+    "detailed_rack": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_blueberry_hill_proxima_wall_westward_ho",
+   "before": {
+    "detailed_rack": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_blueberry_hill_proxima_wall_westward_ho",
+   "before": {
+    "anchor": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_witch_doctor_wall_witch_doctor_s_elixir",
+   "before": {
+    "grade": "5.9 PG13"
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_witch_doctor_wall_witch_doctor_s_elixir",
+   "before": {
+    "prot_rating": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_witch_doctor_wall_witch_doctor_s_elixir",
+   "before": {
+    "bolts": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_witch_doctor_wall_witch_doctor_s_elixir",
+   "before": {
+    "anchor": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_witch_doctor_wall_witch_doctor_s_elixir",
+   "before": {
+    "detailed_rack": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_snagglepuss",
+   "before": {
+    "pitches": 0
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_snagglepuss",
+   "before": {
+    "length_m": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_snagglepuss",
+   "before": {
+    "anchor": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_snagglepuss",
+   "before": {
+    "detailed_rack": null
+   }
+  }
+ ]
+}
