@@ -1,0 +1,1145 @@
+{
+ "date": "2026-11-18",
+ "what": "Summit-day view (summitDayPlan) against reported leg times on a 28-route sample of multi-day WA routes (3 shapes). Evidence is search-result snippets; most rows low confidence.",
+ "result": [
+  "camp-rule, ends at car    ca_mt_shasta_avalanche_gulch           medium up: now 2.95 alt 5 reported 4.5 | day: now 9 alt 9 reported 8",
+  "camp-rule, ends at car    wa_eldorado_peak_north_ridge           low    up: now 2.95 alt 5 reported 3 | day: now 10 alt 10 reported 5",
+  "camp-rule, ends at car    wa_hourglass_gully_winter              low    up: now 2.36 alt 4 reported — | day: now 10 alt 10 reported 12",
+  "camp-rule, ends at car    wa_mount_adams_south_climb             medium up: now 2.06 alt 3.5 reported 4 | day: now 7.7 alt 7 reported —",
+  "camp-rule, ends at car    wa_mount_daniel_daniel_glacier         medium up: now 6.49 alt 11 reported — | day: now 15 alt 15 reported 7",
+  "camp-rule, ends at car    wa_ruth_icy_traverse                   medium up: now 4.13 alt 7 reported 4 | day: now 12.5 alt 12.5 reported 11",
+  "camp-rule, later days     wa_eldorado_peak_northeast_face        medium up: now 3.83 alt 3.83 reported 3.5 | day: now 6.5 alt 6.5 reported —",
+  "camp-rule, later days     wa_katsuk_peak_gully                   low    up: now 2.95 alt 2.95 reported 4 | day: now 5 alt 5 reported 11.5",
+  "camp-rule, later days     wa_mount_olympus_west_ridge            low    up: now 7.67 alt 7.67 reported 7.5 | day: now 13 alt 13 reported 14",
+  "camp-rule, later days     wa_northwest_ridge                     low    up: now 4.13 alt 4.13 reported 2.5 | day: now 7 alt 7 reported 6",
+  "camp-rule, later days     wa_southwest_buttress                  low    up: now 7.08 alt 7.08 reported 6 | day: now 12 alt 12 reported 7.5",
+  "unsplit leg, later days   wa_dark_peak_dark_glacier_route        low    up: now 5.31 alt 5.31 reported 8 | day: now 9 alt 9 reported 15",
+  "unsplit leg, later days   wa_huckleberry_mountain_east_ridge     low    up: now 3.42 alt 3.42 reported 4.25 | day: now 5.8 alt 5.8 reported —",
+  "unsplit leg, later days   wa_mount_goode_northeast_buttress      medium up: now 5.31 alt 5.31 reported 10.5 | day: now 9 alt 9 reported —",
+  "unsplit leg, later days   wa_sentinel_peak_standard              low    up: now 5.31 alt 5.31 reported — | day: now 9 alt 9 reported 3.5",
+  "ENDS AT CAR: up from camp — now 4 routes, median 0.98x, within ±25%: 2; alternative 4 routes, median 1.67x, within ±25%: 2",
+  "             summit day — now 5 routes, median 1.14x, within ±25%: 3; alternative 5 routes, median 1.14x, within ±25%: 3",
+  "LATER DAYS: up from camp — now 8 routes, median 1.02x, within ±25%: 4; alternative 8 routes, median 1.02x, within ±25%: 4",
+  "            summit day — now 6 routes, median 1.17x, within ±25%: 2; alternative 6 routes, median 1.17x, within ±25%: 2"
+ ],
+ "conclusion": "Time up from camp median 0.98x (summit day ends at the car) and 1.02x (later days); summit day 1.14-1.17x, the safe side. Reading a car-ending summit leg as one-way scored worse (1.67x), so the camp rule stays. Misses are row data: Goode NE Buttress, Dark Peak, Daniel, Shasta Avalanche Gulch.",
+ "reports": [
+  {
+   "id": "ca_mt_shasta_avalanche_gulch",
+   "route": "Avalanche Gulch",
+   "reports": [
+    {
+     "url": "https://summitpost.org/mount-shasta/climbers-log/150188/d-22172",
+     "leg": "campToSummitH",
+     "lo": 4,
+     "hi": 4,
+     "note": "2005, Helen Lake to summit ~4h, snippet"
+    },
+    {
+     "url": "https://summitpost.org/mount-shasta/climbers-log/150188/d-139044",
+     "leg": "campToSummitH",
+     "lo": 4.47,
+     "hi": 4.47,
+     "note": "2012, 4:28 Helen Lake to summit, snippet"
+    },
+    {
+     "url": "https://www.summitpost.org/mount-shasta/climbers-log/150188",
+     "leg": "campToSummitH",
+     "lo": 4.5,
+     "hi": 5,
+     "note": "2012, a little under 5h from Helen Lake, snippet"
+    },
+    {
+     "url": "https://mountaineers.org/activities/trip-reports/mount-shasta-avalanche-gulch-1",
+     "leg": "thToCampH",
+     "lo": 3.5,
+     "hi": 3.5,
+     "note": "2019 party reached camp 3 PM, 3.5h trailhead to Helen Lake, search summary"
+    },
+    {
+     "url": "https://mauve-parsnip-jwsg.squarespace.com/blog/shasta-2023",
+     "leg": "summitDayH",
+     "lo": 8,
+     "hi": 8,
+     "note": "2023 day trip from Bunny Flat, ~4h up 4h down (car-summit-car), snippet"
+    }
+   ],
+   "typical": {
+    "thToCampH": 3.5,
+    "campToSummitH": 4.5,
+    "summitToCampH": 2,
+    "campToThH": null,
+    "summitToThH": 3.5,
+    "summitDayH": null
+   },
+   "confidence": "medium",
+   "comment": "All figures from search-summary snippets; summitToThH inferred from 8h round trip minus 4h up, weak. Slow parties 5+ up."
+  },
+  {
+   "id": "wa_chimney_peak_standard",
+   "route": "Standard Route",
+   "reports": [],
+   "typical": {
+    "thToCampH": null,
+    "campToSummitH": null,
+    "summitToCampH": null,
+    "campToThH": null,
+    "summitToThH": null,
+    "summitDayH": null
+   },
+   "confidence": "low",
+   "comment": "No timed report found for Chimney Peak (Enchanted Valley); only an empty SummitPost stub. Unrelated Cowlitz Chimneys (Rainier) not used."
+  },
+  {
+   "id": "wa_eldorado_peak_west_arete",
+   "route": "West Arete",
+   "reports": [
+    {
+     "url": "https://cascadeclimbers.com/forum/topic/75284-tr-eldorado-west-arete-7242010",
+     "leg": "note",
+     "lo": null,
+     "hi": null,
+     "note": "2010 party at base of arete ~8:15am; no camp-summit time in snippet"
+    }
+   ],
+   "typical": {
+    "thToCampH": null,
+    "campToSummitH": null,
+    "summitToCampH": null,
+    "campToThH": null,
+    "summitToThH": null,
+    "summitDayH": null
+   },
+   "confidence": "low",
+   "comment": "No usable times found; standard Inspiration Glacier route reportedly ~2h camp to summit (neighbouring route), West Arete longer."
+  },
+  {
+   "id": "wa_katsuk_peak_gully",
+   "route": "Southwest Gully",
+   "reports": [
+    {
+     "url": "https://cascadeclimbers.com/forum/topic/104487-tr-katsuk-peak-8425-south-ridge-route-07232022",
+     "leg": "summitDayH",
+     "lo": 11.5,
+     "hi": 11.5,
+     "note": "July 2022, camp 6,600ft to summit to trailhead (camp-summit-car), neighbouring route: South Ridge, snippet"
+    },
+    {
+     "url": "https://lemkeclimbs.com/?p=2610",
+     "leg": "campToSummitH",
+     "lo": 2,
+     "hi": 5.5,
+     "note": "left camp 6:30am; text conflicts (~10am vs just before noon); neighbouring Ragged Ridge route, snippet"
+    }
+   ],
+   "typical": {
+    "thToCampH": null,
+    "campToSummitH": 4,
+    "summitToCampH": null,
+    "campToThH": null,
+    "summitToThH": null,
+    "summitDayH": 11.5
+   },
+   "confidence": "low",
+   "comment": "Two thin, partly conflicting reports on the neighbouring South Ridge route; campToSummit 4 is a midpoint guess."
+  },
+  {
+   "id": "wa_mount_arriva_scramble",
+   "route": "Southwest Slopes",
+   "reports": [
+    {
+     "url": "https://www.wta.org/go-hiking/trip-reports/tripreport-2007081804",
+     "leg": "summitDayH",
+     "lo": 11.75,
+     "hi": 11.75,
+     "note": "Aug 2007 day trip Fisher Peak + Arriva, 7600ft, 10mi, car-to-car 11h45 (not a camp trip), snippet"
+    }
+   ],
+   "typical": {
+    "thToCampH": null,
+    "campToSummitH": null,
+    "summitToCampH": null,
+    "campToThH": null,
+    "summitToThH": null,
+    "summitDayH": null
+   },
+   "confidence": "low",
+   "comment": "No Silent Lakes camp-to-summit split found; only a car-to-car day for Fisher + Arriva (two peaks)."
+  },
+  {
+   "id": "wa_mount_olympus_west_ridge",
+   "route": "West Ridge",
+   "reports": [
+    {
+     "url": "https://summitpost.org/mount-olympus/climbers-log/150427",
+     "leg": "campToSummitH",
+     "lo": 8,
+     "hi": 8,
+     "note": "left Glacier Meadows 2:35am, summit 8h later; route unstated (likely Blue Glacier), snippet"
+    },
+    {
+     "url": "https://summitpost.org/mount-olympus/climbers-log/150427",
+     "leg": "campToSummitH",
+     "lo": 7,
+     "hi": 7,
+     "note": "~7h camp to summit, Blue Glacier route (neighbouring route), snippet"
+    },
+    {
+     "url": "https://summitpost.org/mount-olympus/climbers-log/150427",
+     "leg": "summitDayH",
+     "lo": 14,
+     "hi": 14,
+     "note": "14h summit day from 4am start at Glacier Meadows, camp-summit-camp, route unstated, snippet"
+    }
+   ],
+   "typical": {
+    "thToCampH": null,
+    "campToSummitH": 7.5,
+    "summitToCampH": null,
+    "campToThH": null,
+    "summitToThH": null,
+    "summitDayH": 14
+   },
+   "confidence": "low",
+   "comment": "All figures from Blue Glacier/unstated routes; no West Ridge timing found; West Ridge reportedly slower with route-finding."
+  },
+  {
+   "id": "wa_northwest_ridge",
+   "route": "Northwest Ridge",
+   "reports": [
+    {
+     "url": "https://evilfungus.blogspot.com/2008/08",
+     "leg": "note",
+     "lo": 2,
+     "hi": 2,
+     "note": "2008 camp to the route took ~2h, longer than expected, snippet"
+    },
+    {
+     "url": "https://summitpost.org/dorado-needle/climbers-log/209118",
+     "leg": "campToSummitH",
+     "lo": 1.3,
+     "hi": 1.3,
+     "note": "left camp 6:00, top of McAllister Glacier in 0.5h, knife edge +35min, summit +5min (east-side variant, fast), snippet"
+    },
+    {
+     "url": "https://gethighonaltitude.com/2020/09/05/dorado-needle-east-ridge/",
+     "leg": "summitDayH",
+     "lo": 5,
+     "hi": 5,
+     "note": "camp to camp ~5h, neighbouring route: East Ridge, snippet"
+    },
+    {
+     "url": "https://www.mountainproject.com/route/111927639/dorado-needle-sw-buttress",
+     "leg": "campToSummitH",
+     "lo": 2,
+     "hi": 2,
+     "note": "2h approach from Eldorado camp, neighbouring route SW Buttress, snippet"
+    }
+   ],
+   "typical": {
+    "thToCampH": null,
+    "campToSummitH": 2.5,
+    "summitToCampH": null,
+    "campToThH": null,
+    "summitToThH": null,
+    "summitDayH": 6
+   },
+   "confidence": "low",
+   "comment": "Mixed variants/neighbouring routes; camp-to-summit 2-3h for a glacier camp; summit day camp-summit-camp perhaps 5-7h."
+  },
+  {
+   "id": "wa_andersons_thumb_standard",
+   "route": "Standard Route",
+   "reports": [],
+   "typical": {
+    "thToCampH": null,
+    "campToSummitH": null,
+    "summitToCampH": null,
+    "campToThH": null,
+    "summitToThH": null,
+    "summitDayH": null
+   },
+   "confidence": "low",
+   "comment": "Two searches found no reports for this Washington peak (results were other 'Thumb' formations and Mt Anderson in the Olympics, a different peak); nothing recorded."
+  },
+  {
+   "id": "wa_dark_peak_dark_glacier_route",
+   "route": "Dark Glacier Route",
+   "reports": [
+    {
+     "url": "https://summitpost.org/swamp-creek-route/165326",
+     "leg": "summitDayH",
+     "lo": 12,
+     "hi": 16,
+     "note": "SummitPost Swamp Creek route page (neighbouring route: Swamp Creek, not Dark Glacier): 7-9 hr camp to summit, 5-7 hr back to camp from Swamp Creek Camp; one party 16 hr camp-to-camp. Search snippet. camp-summit-camp"
+    },
+    {
+     "url": "https://summitpost.org/swamp-creek-route/165326",
+     "leg": "campToSummitH",
+     "lo": 7,
+     "hi": 9,
+     "note": "neighbouring route: Swamp Creek; guidebook estimate from Swamp Creek Camp, snippet"
+    },
+    {
+     "url": "https://summitpost.org/swamp-creek-route/165326",
+     "leg": "summitToCampH",
+     "lo": 5,
+     "hi": 7,
+     "note": "neighbouring route: Swamp Creek; guidebook estimate, snippet"
+    },
+    {
+     "url": "https://www.mountaineers.org/activities/activities/basic-glacier-climb-dark-peak-dark-glacier-7",
+     "leg": "summitDayH",
+     "lo": 15,
+     "hi": 15,
+     "note": "Mountaineers Dark Glacier listing: strong parties 15+ hr summit day, ~6000 ft gain, brushy; snippet. camp-summit-camp"
+    }
+   ],
+   "typical": {
+    "thToCampH": null,
+    "campToSummitH": 8,
+    "summitToCampH": 6,
+    "campToThH": null,
+    "summitToThH": null,
+    "summitDayH": 15
+   },
+   "confidence": "low",
+   "comment": "Only guidebook-style figures, mostly the Swamp Creek route; no per-leg trip-report times found; walk-in and walk-out legs not found."
+  },
+  {
+   "id": "wa_ghost_peak_south_route",
+   "route": "South Route",
+   "reports": [
+    {
+     "url": "https://summitpost.org/challenger-whatcom-traverse/331607",
+     "leg": "thToCampH",
+     "lo": 12,
+     "hi": 12,
+     "note": "neighbouring objective: a Challenger traverse party took 12+ hr Copper Creek to Perfect Pass (different approach); snippet"
+    },
+    {
+     "url": "https://www.mountaineers.org/activities/trip-reports/mount-spickard-south-ridge-mount-redoubt-south-face",
+     "leg": "thToCampH",
+     "lo": 6.5,
+     "hi": 6.5,
+     "note": "neighbouring: Chilliwack valley, trailhead to Lake Ouzel camp for Spickard/Redoubt, not Ghost Peak; snippet"
+    }
+   ],
+   "typical": {
+    "thToCampH": null,
+    "campToSummitH": null,
+    "summitToCampH": null,
+    "campToThH": null,
+    "summitToThH": null,
+    "summitDayH": null
+   },
+   "confidence": "low",
+   "comment": "No Ghost Peak (Pickets) report found in two searches; only AAC mention of a bivy under Ghost Peak and unrelated nearby legs, so no typical figures given."
+  },
+  {
+   "id": "wa_magic_mountain_northeast_couloir",
+   "route": "Northeast Couloir",
+   "reports": [
+    {
+     "url": "https://www.mountaineers.org/activities/routes-places/magic-mountain-south-ridge",
+     "leg": "summitDayH",
+     "lo": 7,
+     "hi": 9,
+     "note": "neighbouring route: South Ridge, trailhead to summit 7-9 hr, 6-7 hr back down (day trip, not from camp); snippet. Note this is car-to-summit, not camp-to-summit"
+    },
+    {
+     "url": "https://www.mountaineers.org/activities/routes-places/magic-mountain-south-ridge",
+     "leg": "summitToThH",
+     "lo": 6,
+     "hi": 7,
+     "note": "neighbouring route: South Ridge, summit back to trailhead; snippet"
+    }
+   ],
+   "typical": {
+    "thToCampH": null,
+    "campToSummitH": null,
+    "summitToCampH": null,
+    "campToThH": null,
+    "summitToThH": 6.5,
+    "summitDayH": null
+   },
+   "confidence": "low",
+   "comment": "No timed report of the NE Couloir found (ski reports give no times); only South Ridge day-trip figures from the Mountaineers."
+  },
+  {
+   "id": "wa_mount_daniel_daniel_glacier",
+   "route": "Daniel Glacier / Southeast Slopes",
+   "reports": [
+    {
+     "url": "https://www.wta.org/go-hiking/trip-reports/trip_report.2014-07-02.4410364108",
+     "leg": "summitDayH",
+     "lo": 7.75,
+     "hi": 7.75,
+     "note": "snippet attributed to a 2014 party: left Peggy's Pond 4:45 am, back at camp 12:30 pm (descent 2.5 hr); URL is a best guess from the search result list, not confirmed. camp-summit-camp"
+    },
+    {
+     "url": "https://www.wta.org/go-hiking/trip-reports/trip_report.2014-07-02.4410364108",
+     "leg": "campToThH",
+     "lo": 4,
+     "hi": 4,
+     "note": "same 2014 party: packed up and hiked out, 4 hr to car; URL uncertain"
+    },
+    {
+     "url": "https://www.wta.org/go-hiking/trip-reports/trip_report.2014-07-02.4410364108",
+     "leg": "summitToCampH",
+     "lo": 2.5,
+     "hi": 2.5,
+     "note": "same party: 2.5 hr descent; URL uncertain"
+    },
+    {
+     "url": "https://www.summitpost.org/mount-daniel/climbers-log/150409/p2",
+     "leg": "summitDayH",
+     "lo": 5.5,
+     "hi": 5.5,
+     "note": "solo climber, 5.5 hr camp to camp (2019), snippet. Likely Lynch/other route, unconfirmed"
+    },
+    {
+     "url": "https://www.wta.org/go-hiking/trip-reports/trip_report-2025-06-20.214603664382",
+     "leg": "summitDayH",
+     "lo": 13,
+     "hi": 13,
+     "note": "day trip: trailhead 3:30 am, Peggy's Pond 6:00 am, back at car 4:30 pm (13 hr); mapping of URL to report is a guess; snippet. car-to-car"
+    },
+    {
+     "url": "https://www.wta.org/go-hiking/trip-reports/trip_report-2025-06-20.214603664382",
+     "leg": "thToCampH",
+     "lo": 2.5,
+     "hi": 2.5,
+     "note": "day-trip party, trailhead to Peggy's Pond in 2.5 hr (fast, light pack); URL uncertain"
+    }
+   ],
+   "typical": {
+    "thToCampH": null,
+    "campToSummitH": null,
+    "summitToCampH": 2.5,
+    "campToThH": 4,
+    "summitToThH": null,
+    "summitDayH": 7
+   },
+   "confidence": "medium",
+   "comment": "Several camp-based figures agree on ~6-8 hr camp-summit-camp and 4 hr out; walk-in with an overnight pack not found; some URLs are best-guess matches to search snippets."
+  },
+  {
+   "id": "wa_mount_rainier_tahoma_glacier",
+   "route": "Tahoma Glacier",
+   "reports": [
+    {
+     "url": "https://cascadeclimbers.com/forum/profile/18735-motsies/",
+     "leg": "thToCampH",
+     "lo": 8,
+     "hi": 8,
+     "note": "party reached first camp near Tokaloo Spire ~8 hr from car, via ridge past St. Andrews Park (camp slightly different from St. Andrews Rocks); snippet"
+    },
+    {
+     "url": "https://cascadeclimbers.com/forum/profile/18735-motsies/",
+     "leg": "campToSummitH",
+     "lo": 2,
+     "hi": 2,
+     "note": "only to the bottom of the hourglass, leaving high camp 2:15 am; NOT the summit; snippet, excluded from typical"
+    },
+    {
+     "url": "https://cascadeclimbers.com/forum/profile/18735-motsies/",
+     "leg": "campToThH",
+     "lo": 9,
+     "hi": 9,
+     "note": "descent from high camp to Westside Road took ~9 hr with postholing; snippet"
+    }
+   ],
+   "typical": {
+    "thToCampH": 8,
+    "campToSummitH": null,
+    "summitToCampH": null,
+    "campToThH": 9,
+    "summitToThH": null,
+    "summitDayH": null
+   },
+   "confidence": "low",
+   "comment": "One trip report (via snippet) with approach and exit figures; no complete summit time found. Camp there was not exactly St. Andrews Rocks."
+  },
+  {
+   "id": "wa_ruth_icy_traverse",
+   "route": "Ruth-Icy Traverse",
+   "reports": [
+    {
+     "url": "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/high-occupancy-xc-zones/ruth-mountain-icy-peak-traverse",
+     "leg": "thToCampH",
+     "lo": 5,
+     "hi": 6,
+     "note": "Mountaineers route guide, trailhead to camp on Ruth; snippet"
+    },
+    {
+     "url": "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/high-occupancy-xc-zones/ruth-mountain-icy-peak-traverse",
+     "leg": "campToSummitH",
+     "lo": 3,
+     "hi": 5,
+     "note": "route guide, camp to Icy Peak summit; snippet"
+    },
+    {
+     "url": "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/high-occupancy-xc-zones/ruth-mountain-icy-peak-traverse",
+     "leg": "campToThH",
+     "lo": 3,
+     "hi": 4,
+     "note": "route guide, camp back to trailhead (the guide's figure; reports below show longer via Icy); snippet"
+    },
+    {
+     "url": "https://www.mountaineers.org/activities/trip-reports/ruth-mountain-icy-peak-traverse-17",
+     "leg": "thToCampH",
+     "lo": 7,
+     "hi": 7,
+     "note": "2017 Mountaineers trip, moving time just shy of 7 hr (report number is a best guess from the list); snippet"
+    },
+    {
+     "url": "https://www.mountaineers.org/activities/trip-reports/ruth-mountain-icy-peak-traverse-15",
+     "leg": "thToCampH",
+     "lo": 8,
+     "hi": 8,
+     "note": "2015 trip: 7 hr to Ruth summit plus ~1 hr to camp, leisurely; report number a best guess; snippet"
+    },
+    {
+     "url": "https://www.mountaineers.org/activities/trip-reports/ruth-mountain-icy-peak-traverse-15",
+     "leg": "summitToThH",
+     "lo": 7,
+     "hi": 7,
+     "note": "2015 trip: from Icy gully base to trailhead ~7 hr, moderate pace; and 4 hr camp to Icy base; snippet"
+    },
+    {
+     "url": "https://www.wta.org/go-hiking/trip-reports/trip_report.2019-08-06.7467175727",
+     "leg": "campToThH",
+     "lo": 3.5,
+     "hi": 4,
+     "note": "Ruth-only day trip (2018): 4 hr up from car, 3.5-4 hr back to car; URL attribution uncertain; snippet"
+    }
+   ],
+   "typical": {
+    "thToCampH": 6.5,
+    "campToSummitH": 4,
+    "summitToCampH": null,
+    "campToThH": 4,
+    "summitToThH": 7,
+    "summitDayH": null
+   },
+   "confidence": "medium",
+   "comment": "Mountaineers guide plus two trip reports agree reasonably on walk-in 6-8 hr and camp-to-Icy 3-5 hr; the exit after Icy is 4 (guide) to 7 (a 2015 party) hr; several report URLs are best-guess matches to snippets."
+  },
+  {
+   "id": "wa_austera_peak",
+   "route": "Austera Peak",
+   "reports": [
+    {
+     "url": "https://summitpost.org/austera-day-trip/169565",
+     "leg": "summitDayH",
+     "lo": 12.5,
+     "hi": 12.5,
+     "note": "solo day trip car-to-car (trailhead to Austera 7 hr); search snippet"
+    },
+    {
+     "url": "https://www.mountaineers.org/activities/trip-reports/intermediate-alpine-climb-austera-peak-via-klawatti-glacier",
+     "leg": "thToCampH",
+     "lo": 11,
+     "hi": 11,
+     "note": "to Eldorado-area camp incl ~1.5 hr breaks, 2025 Mountaineers; snippet; neighbouring route via Klawatti"
+    },
+    {
+     "url": "https://cascadeclimbers.com/forum/topic/27229-tr-klawatti-eldorado-austera-solo-klawatti-s-face-eldorado-slog-austera-e-ridge-8162004",
+     "leg": "campToSummitH",
+     "lo": 2.5,
+     "hi": 2.5,
+     "note": "solo 2004: from Eldorado summit (~7:30am from 7,400 ft camp) just over 2.5 hr to Austera rock; snippet; partial leg only"
+    },
+    {
+     "url": "https://www.mountaineers.org/activities/routes-places/eldorado-peak-inspiration-glacier",
+     "leg": "thToCampH",
+     "lo": 5,
+     "hi": 6,
+     "note": "Eldorado standard, Mountaineers route page; camp is the same Eldorado high camp"
+    },
+    {
+     "url": "https://www.mountaineers.org/activities/routes-places/eldorado-peak-inspiration-glacier",
+     "leg": "campToThH",
+     "lo": 3,
+     "hi": 4,
+     "note": "Eldorado standard, Mountaineers route page"
+    }
+   ],
+   "typical": {
+    "thToCampH": 5.5,
+    "campToSummitH": null,
+    "summitToCampH": null,
+    "campToThH": 3.5,
+    "summitToThH": null,
+    "summitDayH": null
+   },
+   "confidence": "low",
+   "comment": "No clean Austera-from-camp time found; walk in/out borrowed from Eldorado camp reports; Austera itself probably ~3-5 hr one way from camp (unsourced)."
+  },
+  {
+   "id": "wa_eldorado_peak_north_ridge",
+   "route": "North Ridge",
+   "reports": [
+    {
+     "url": "https://gethighonaltitude.com/2020/09/07/eldorado-north-ridge",
+     "leg": "summitDayH",
+     "lo": 5,
+     "hi": 5,
+     "note": "camp-summit-camp about 5 hr, North Ridge 2020; search snippet"
+    },
+    {
+     "url": "https://www.mountaineers.org/activities/routes-places/eldorado-peak-inspiration-glacier",
+     "leg": "thToCampH",
+     "lo": 5,
+     "hi": 6,
+     "note": "East Ridge standard; same camp"
+    },
+    {
+     "url": "https://www.mountaineers.org/activities/routes-places/eldorado-peak-inspiration-glacier",
+     "leg": "campToSummitH",
+     "lo": 3,
+     "hi": 5,
+     "note": "East Ridge standard (neighbouring route)"
+    },
+    {
+     "url": "https://www.mountaineers.org/activities/routes-places/eldorado-peak-inspiration-glacier",
+     "leg": "summitToCampH",
+     "lo": 2,
+     "hi": 3,
+     "note": "East Ridge standard"
+    },
+    {
+     "url": "https://www.mountaineers.org/activities/routes-places/eldorado-peak-inspiration-glacier",
+     "leg": "campToThH",
+     "lo": 3,
+     "hi": 4,
+     "note": "East Ridge standard"
+    },
+    {
+     "url": "https://www.mountaineers.org/activities/trip-reports/basic-glacier-climb-eldorado-peak-inspiration-glacier-1",
+     "leg": "campToSummitH",
+     "lo": 2,
+     "hi": 2,
+     "note": "2024 party, East Ridge; snippet"
+    },
+    {
+     "url": "https://www.mountaineers.org/activities/trip-reports/basic-glacier-climb-eldorado-peak-inspiration-glacier-1",
+     "leg": "summitToCampH",
+     "lo": 1,
+     "hi": 1,
+     "note": "2024 party, East Ridge; snippet"
+    },
+    {
+     "url": "https://www.mountaineers.org/activities/trip-reports/basic-glacier-climb-eldorado-peak-inspiration-glacier-1",
+     "leg": "campToThH",
+     "lo": 5,
+     "hi": 5,
+     "note": "2024 party, East Ridge; snippet"
+    }
+   ],
+   "typical": {
+    "thToCampH": 6,
+    "campToSummitH": 3,
+    "summitToCampH": 1.5,
+    "campToThH": 4,
+    "summitToThH": null,
+    "summitDayH": 5
+   },
+   "confidence": "low",
+   "comment": "Only one North Ridge figure (5 hr camp-summit-camp); the rest are East Ridge approach/descent legs sharing the same camp."
+  },
+  {
+   "id": "wa_hourglass_gully_winter",
+   "route": "Hourglass Gully (Winter)",
+   "reports": [
+    {
+     "url": "https://climberkyle.com/2017/05/21/mt-index-hourglass-gully/",
+     "leg": "summitDayH",
+     "lo": 12,
+     "hi": 12,
+     "note": "car-to-car, May 2017 (not winter); snippet"
+    },
+    {
+     "url": "https://www.wta.org/go-hiking/trip-reports/trip_report-2021-01-21-3793227531",
+     "leg": "summitDayH",
+     "lo": null,
+     "hi": null,
+     "note": "winter party started 4:30am, descent the hard part; no hours stated"
+    },
+    {
+     "url": "https://summitpost.org/persis-index-traverse/168555",
+     "leg": "campToSummitH",
+     "lo": 3,
+     "hi": 3,
+     "note": "Persis-Index traverse, different route, summit 3 hr from camp, back in 2 hr; neighbouring route"
+    }
+   ],
+   "typical": {
+    "thToCampH": null,
+    "campToSummitH": null,
+    "summitToCampH": null,
+    "campToThH": null,
+    "summitToThH": null,
+    "summitDayH": 12
+   },
+   "confidence": "low",
+   "comment": "Only car-to-car ~12 hr (non-winter) found; typically a long single day from Lake Serene; Lake Serene hike alone is 5-7 hr round trip per guides (Komoot/others)."
+  },
+  {
+   "id": "wa_magic_mountain_west_ridge",
+   "route": "West Ridge",
+   "reports": [
+    {
+     "url": "https://www.mountaineers.org/activities/routes-places/magic-mountain-south-ridge",
+     "leg": "summitDayH",
+     "lo": 7,
+     "hi": 9,
+     "note": "South Ridge (neighbouring route), trailhead to summit 7-9 hr, 6-7 hr back; snippet"
+    }
+   ],
+   "typical": {
+    "thToCampH": null,
+    "campToSummitH": null,
+    "summitToCampH": null,
+    "campToThH": null,
+    "summitToThH": null,
+    "summitDayH": null
+   },
+   "confidence": "low",
+   "comment": "No West Ridge timing found; only South Ridge trailhead-to-summit 7-9 hr (via Kool-Aid Lake camp), 6-7 hr return."
+  },
+  {
+   "id": "wa_mount_fairchild_standard",
+   "route": "Standard Route",
+   "reports": [],
+   "typical": {
+    "thToCampH": null,
+    "campToSummitH": null,
+    "summitToCampH": null,
+    "campToThH": null,
+    "summitToThH": null,
+    "summitDayH": null
+   },
+   "confidence": "low",
+   "comment": "Two searches returned nothing on Fairchild timing (Bailey Range reports only); no figures recorded."
+  },
+  {
+   "id": "wa_mount_stuart_ice_cliff_glacier",
+   "route": "Ice Cliff Glacier",
+   "reports": [
+    {
+     "url": "https://www.summitpost.org/route/156480/ice-cliff-glacier.html",
+     "leg": "summitDayH",
+     "lo": null,
+     "hi": null,
+     "note": "route page says one to two days; no hours; snippet"
+    },
+    {
+     "url": "https://www.summitpost.org/mount-stuart/climbers-log/150353/d-6366",
+     "leg": "campToSummitH",
+     "lo": 6.5,
+     "hi": 6.5,
+     "note": "1969 Sherpa Glacier party: notch 7am, top out 1:30pm; different route, historical; snippet"
+    }
+   ],
+   "typical": {
+    "thToCampH": null,
+    "campToSummitH": null,
+    "summitToCampH": null,
+    "campToThH": null,
+    "summitToThH": null,
+    "summitDayH": null
+   },
+   "confidence": "low",
+   "comment": "No hour counts for this route found; camps at ~5,200 ft in the basin, descent via Sherpa Glacier back to camp."
+  },
+  {
+   "id": "wa_sentinel_peak_standard",
+   "route": "Standard Route",
+   "reports": [
+    {
+     "url": "https://sverdina.com/ptarmigan_traverse1.asp",
+     "leg": "campToSummitH",
+     "lo": 3.5,
+     "hi": 3.5,
+     "note": "Ptarmigan itinerary lists Sentinel SW route as 3.5 hr camp-to-camp (2025); snippet"
+    },
+    {
+     "url": "https://climber.org/reports/2002/965.html",
+     "leg": "summitDayH",
+     "lo": 4,
+     "hi": 4,
+     "note": "2005-ish report from camp above South Cascade Glacier, 4 hr round trip camp-summit-camp; snippet, attribution uncertain; neighbouring approach"
+    }
+   ],
+   "typical": {
+    "thToCampH": null,
+    "campToSummitH": null,
+    "summitToCampH": null,
+    "campToThH": null,
+    "summitToThH": null,
+    "summitDayH": 3.5
+   },
+   "confidence": "low",
+   "comment": "Only ~3.5-4 hr for the summit outing from a camp near the col; no walk-in/out hours found."
+  },
+  {
+   "id": "wa_cathedral_rock_southeast_face_chimney",
+   "route": "Southeast Face Chimney",
+   "reports": [
+    {
+     "url": "https://www.mountaineers.org/activities/routes-places/cathedral-rock-southwest-face",
+     "leg": "summitDayH",
+     "lo": 5,
+     "hi": 6,
+     "note": "neighbouring route: Southwest Face; Mountaineers route page, snippet, trailhead to summit"
+    },
+    {
+     "url": "https://summitpost.org/southwest-route/168102",
+     "leg": "summitDayH",
+     "lo": 9,
+     "hi": 11,
+     "note": "neighbouring route: Southwest Face; SummitPost estimate, round trip (camp-summit-car unclear), snippet"
+    },
+    {
+     "url": "https://summitpost.org/southwest-route/168102",
+     "leg": "thToCampH",
+     "lo": 3,
+     "hi": 3.5,
+     "note": "neighbouring route: Southwest Face; approach estimate to base, snippet"
+    },
+    {
+     "url": "https://www.mountaineers.org/activities/trip-reports/basic-alpine-climb-cathedral-rock-southwest-face",
+     "leg": "summitDayH",
+     "lo": 15.5,
+     "hi": 15.5,
+     "note": "neighbouring route: Southwest Face; 2014 party 6:30am to 10pm car-to-car, snippet"
+    }
+   ],
+   "typical": {
+    "thToCampH": 3.25,
+    "campToSummitH": null,
+    "summitToCampH": null,
+    "campToThH": null,
+    "summitToThH": null,
+    "summitDayH": null
+   },
+   "confidence": "low",
+   "comment": "No report found for the SE Face chimney itself; figures are for the SW Face from the same pass, with no camp-based legs. Cathedral Peak (CA) results were discarded as a different peak."
+  },
+  {
+   "id": "wa_eldorado_peak_northeast_face",
+   "route": "Northeast Face",
+   "reports": [
+    {
+     "url": "https://www.mountaineers.org/activities/routes-places/eldorado-peak-inspiration-glacier",
+     "leg": "thToCampH",
+     "lo": 5,
+     "hi": 6,
+     "note": "Mountaineers route guidance (Inspiration Glacier/standard route), snippet"
+    },
+    {
+     "url": "https://www.mountaineers.org/activities/routes-places/eldorado-peak-inspiration-glacier",
+     "leg": "campToSummitH",
+     "lo": 3,
+     "hi": 5,
+     "note": "Mountaineers route guidance, standard route, snippet"
+    },
+    {
+     "url": "https://www.mountaineers.org/activities/trip-reports/eldorado-peak-inspiration-glacier-16",
+     "leg": "campToSummitH",
+     "lo": 2,
+     "hi": 2,
+     "note": "July 2024 party, standard route, snippet"
+    },
+    {
+     "url": "https://www.mountaineers.org/activities/trip-reports/eldorado-peak-inspiration-glacier-13",
+     "leg": "campToSummitH",
+     "lo": 2.5,
+     "hi": 2.5,
+     "note": "July 2025 party, 10:30 leave camp, 12:00 summit (snippet-derived), standard route"
+    },
+    {
+     "url": "https://www.mountaineers.org/activities/trip-reports/intermediate-alpine-climb-eldorado-peak-northeast-face",
+     "leg": "campToSummitH",
+     "lo": 4.5,
+     "hi": 4.5,
+     "note": "Oct 2014 team of four, snippet says camp to summit 4.5 hr; slower autumn conditions"
+    },
+    {
+     "url": "https://www.wta.org/go-hiking/trip-reports/trip_report.2018-05-29.0787688814",
+     "leg": "summitDayH",
+     "lo": 15.5,
+     "hi": 15.5,
+     "note": "one-day car-to-car, not NE Face specifically, snippet"
+    }
+   ],
+   "typical": {
+    "thToCampH": 5.5,
+    "campToSummitH": 3.5,
+    "summitToCampH": null,
+    "campToThH": null,
+    "summitToThH": null,
+    "summitDayH": null
+   },
+   "confidence": "medium",
+   "comment": "Timings are mostly for the standard Eldorado summit route; the NE Face itself was not timed in any snippet, and the face may run slower when icy."
+  },
+  {
+   "id": "wa_huckleberry_mountain_east_ridge",
+   "route": "East Ridge",
+   "reports": [
+    {
+     "url": "https://peakery.com/huckleberry-mountain-washington-6320ft",
+     "leg": "campToSummitH",
+     "lo": 4.25,
+     "hi": 4.25,
+     "note": "Ridge Lake camp 6:45am to summit 11:00am, snippet"
+    },
+    {
+     "url": "https://www.mountaineers.org/activities/trip-reports/basic-rock-climb-huckleberry-mountain-east-face-1",
+     "leg": "summitToThH",
+     "lo": 5.25,
+     "hi": 5.25,
+     "note": "2017 party off summit 12:15, back at cars 17:30, snippet; East Face report (neighbouring route)"
+    },
+    {
+     "url": "https://www.mountaineers.org/activities/trip-reports/basic-rock-climb-huckleberry-mountain-east-face-1",
+     "leg": "summitDayH",
+     "lo": 10.5,
+     "hi": 10.5,
+     "note": "2017 party day trip car-to-car 7:00 to 17:30, snippet; East Face report (neighbouring route)"
+    },
+    {
+     "url": "https://www.summitpost.org/huckleberry-mountain-snoqualmie/1009936",
+     "leg": "thToCampH",
+     "lo": null,
+     "hi": null,
+     "note": "approach 9-10 miles, many parties take 2-3 days with camp at Ridge or Gravel Lake; no hours given"
+    }
+   ],
+   "typical": {
+    "thToCampH": null,
+    "campToSummitH": 4.25,
+    "summitToCampH": null,
+    "campToThH": null,
+    "summitToThH": 5.25,
+    "summitDayH": null
+   },
+   "confidence": "low",
+   "comment": "Two usable figures; the car-to-car data is from East Face reports (same approach), and slower snow conditions (July 2017) were reported without numbers."
+  },
+  {
+   "id": "wa_mount_adams_south_climb",
+   "route": "South Climb (South Spur)",
+   "reports": [
+    {
+     "url": "https://www.wta.org/go-hiking/trip-reports/trip_report.2017-07-18.6130852885",
+     "leg": "campToSummitH",
+     "lo": 3,
+     "hi": 3,
+     "note": "July 2017; round trip camp-summit-camp just under 4.5 hr incl ~1.5 hr descent to Lunch Counter, snippet"
+    },
+    {
+     "url": "https://www.wta.org/go-hiking/trip-reports/trip_report.2017-07-18.6130852885",
+     "leg": "summitToCampH",
+     "lo": 1.5,
+     "hi": 1.5,
+     "note": "July 2017 glissade/hike to Lunch Counter, snippet"
+    },
+    {
+     "url": "https://mauve-parsnip-jwsg.squarespace.com/blog/adams-2024",
+     "leg": "campToSummitH",
+     "lo": 3,
+     "hi": 3,
+     "note": "2024 ski/boot, snippet (SummitPost-style log); Lunch Counter to summit 3 hr"
+    },
+    {
+     "url": "https://mauve-parsnip-jwsg.squarespace.com/blog/adams-2024",
+     "leg": "summitToCampH",
+     "lo": 1,
+     "hi": 1,
+     "note": "summit to Lunch Counter ~1 hr, snippet"
+    },
+    {
+     "url": "https://mauve-parsnip-jwsg.squarespace.com/blog/adams-2024",
+     "leg": "campToThH",
+     "lo": 2.5,
+     "hi": 3,
+     "note": "Lunch Counter to campground/trailhead 2.5-3 hr, snippet"
+    },
+    {
+     "url": "https://www.wta.org/go-hiking/trip-reports/trip_report.2022-07-27.4964603255",
+     "leg": "summitToCampH",
+     "lo": 1,
+     "hi": 1.25,
+     "note": "July 2022 descent back to tents a little over 1 hr, snippet"
+    },
+    {
+     "url": "https://www.wta.org/go-hiking/trip-reports/trip_report.2019-05-31.9783355813",
+     "leg": "campToSummitH",
+     "lo": 5,
+     "hi": 5,
+     "note": "late May 2019, wind and low visibility, snippet"
+    },
+    {
+     "url": "https://www.wta.org/go-hiking/trip-reports/trip_report.2019-05-31.9783355813",
+     "leg": "summitToCampH",
+     "lo": 2.5,
+     "hi": 2.5,
+     "note": "late May 2019 storm descent, snippet"
+    },
+    {
+     "url": "https://adminonly.wta.org/go-hiking/trip-reports/trip_report-2022-06-19-5160946053",
+     "leg": "campToSummitH",
+     "lo": 7,
+     "hi": 7,
+     "note": "June 2022, slow snow; down in 2 hr, snippet"
+    },
+    {
+     "url": "https://adminonly.wta.org/go-hiking/trip-reports/trip_report-2022-06-19-5160946053",
+     "leg": "summitToCampH",
+     "lo": 2,
+     "hi": 2,
+     "note": "June 2022, snippet"
+    }
+   ],
+   "typical": {
+    "thToCampH": null,
+    "campToSummitH": 4,
+    "summitToCampH": 1.5,
+    "campToThH": 2.75,
+    "summitToThH": null,
+    "summitDayH": null
+   },
+   "confidence": "medium",
+   "comment": "Lunch Counter camp to summit 3-5 hr in good summer conditions, 5-7 hr in slow snow; the walk in from the trailhead was not found in hours."
+  },
+  {
+   "id": "wa_mount_goode_northeast_buttress",
+   "route": "Northeast Buttress",
+   "reports": [
+    {
+     "url": "https://www.mountaineers.org/activities/routes-places/goode-mountain-northeast-buttress",
+     "leg": "thToCampH",
+     "lo": 10,
+     "hi": 10,
+     "note": "Mountaineers route page, trailhead to camp ~10 hr, snippet"
+    },
+    {
+     "url": "https://www.mountaineers.org/activities/routes-places/goode-mountain-northeast-buttress",
+     "leg": "campToSummitH",
+     "lo": 9,
+     "hi": 12,
+     "note": "Mountaineers route page, camp to summit, snippet"
+    },
+    {
+     "url": "https://www.wta.org/go-hiking/trip-reports/trip_report.2022-08-16.4035302077",
+     "leg": "campToSummitH",
+     "lo": 11,
+     "hi": 11,
+     "note": "Aug 2022, 5,500 ft bivy to summit ~11 hr, snippet"
+    },
+    {
+     "url": "https://www.wta.org/go-hiking/trip-reports/trip_report.2022-08-16.4035302077",
+     "leg": "summitToThH",
+     "lo": 18,
+     "hi": 18,
+     "note": "Aug 2022: descent via NW couloir, Black Tooth Notch, Park Creek to Bridge Creek ~18 hr over 21.8 mi; snippet ambiguous on whether 18 hr is whole descent; possibly a fast/long push"
+    }
+   ],
+   "typical": {
+    "thToCampH": 10,
+    "campToSummitH": 10.5,
+    "summitToCampH": null,
+    "campToThH": null,
+    "summitToThH": null,
+    "summitDayH": null
+   },
+   "confidence": "medium",
+   "comment": "Camp-to-summit is long (9-12 hr); the descent to Bridge Creek is a long walk out (about 20 miles) and the one figure for it is uncertain."
+  },
+  {
+   "id": "wa_north_star_mountain_east_route",
+   "route": "East Route",
+   "reports": [
+    {
+     "url": "https://adminonly.wta.org/go-hiking/trip-reports/trip_report-2025-07-06.194511732442",
+     "leg": "thToCampH",
+     "lo": 4.5,
+     "hi": 4.5,
+     "note": "2025 party, Holden to Lower Lyman, ~4.5 hr moving with 30-35 lb packs, snippet"
+    },
+    {
+     "url": "https://adminonly.wta.org/go-hiking/trip-reports/trip_report-2025-07-06.194511732442",
+     "leg": "campToThH",
+     "lo": 3.75,
+     "hi": 3.75,
+     "note": "same report, return ~3.75 hr moving, snippet"
+    }
+   ],
+   "typical": {
+    "thToCampH": 4.5,
+    "campToSummitH": null,
+    "summitToCampH": null,
+    "campToThH": 3.75,
+    "summitToThH": null,
+    "summitDayH": null
+   },
+   "confidence": "low",
+   "comment": "No summit-push time found for the WA North Star (class 2 off Lyman Lake); Colorado North Star results were discarded. Approach figures are from the Holden end, not the Lake Chelan boat/bus."
+  },
+  {
+   "id": "wa_southwest_buttress",
+   "route": "Southwest Buttress",
+   "reports": [
+    {
+     "url": "https://www.mountaineers.org/activities/routes-places/dorado-needle-southwest-buttress",
+     "leg": "campToSummitH",
+     "lo": 4,
+     "hi": 7,
+     "note": "Mountaineers route page, 4-7 hr from high camp, snippet"
+    },
+    {
+     "url": "https://www.mountainproject.com/route/111927639/dorado-needle-sw-buttress?print=1",
+     "leg": "campToSummitH",
+     "lo": 9,
+     "hi": 9,
+     "note": "2007 user: 2 hr approach from Eldorado camp plus 7 hr climb, snippet; from Eldorado camp not the col camp"
+    },
+    {
+     "url": "https://www.mountainproject.com/route/111927639/dorado-needle-sw-buttress?print=1",
+     "leg": "summitToCampH",
+     "lo": 1.5,
+     "hi": 1.5,
+     "note": "2007 user, snippet"
+    },
+    {
+     "url": "https://www.mountainproject.com/route/111927639/dorado-needle-sw-buttress?print=1",
+     "leg": "campToThH",
+     "lo": 4,
+     "hi": 4,
+     "note": "2007 user, camp to cars ~4 hr, snippet"
+    },
+    {
+     "url": "https://cascadeclimbers.com/forum/topic/53581-tr-dorado-needle-sw-buttress-8242007",
+     "leg": "campToSummitH",
+     "lo": 6,
+     "hi": 6,
+     "note": "2007 party: ~2 hr to snow base, ~4 hr on rock to NW ridge, one more pitch to summit; snippet"
+    }
+   ],
+   "typical": {
+    "thToCampH": null,
+    "campToSummitH": 6,
+    "summitToCampH": 1.5,
+    "campToThH": 4,
+    "summitToThH": null,
+    "summitDayH": null
+   },
+   "confidence": "low",
+   "comment": "Mostly 2007 reports from an Eldorado-side camp; the app's col camp may be closer or farther, and the walk in was not given in hours."
+  }
+ ]
+}

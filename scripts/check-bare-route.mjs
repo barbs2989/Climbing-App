@@ -421,14 +421,19 @@ for (const d of [...CRAG, "alpine"]) {
     else ok(`enriched ${d} route: every ROUTE FACTS row renders with its value`);
     if (!t.includes("Apr-Oct")) fail(`enriched ${d} route: season missing`);
   }
-  // Season in the header strap for every crag discipline, the way bouldering always had it.
-  for (const d of ["sport", "trad", "toprope", "aid"]) {
-    const html = render({ ...bare(d, "5.9"), season: "ZZSEASONZZ" }, "overview");
+  // NO season in the header strap, on any discipline (owner, 2026-11-18: "Remove the dates ie Oct-Apr from the
+  // header"). Until then this asserted the opposite. The season is still on the page: the ROUTE FACTS row above.
+  // And the protection rating stored on the grade ("5.9 PG13") is its own pill right after the grade pill.
+  for (const d of ["sport", "trad", "toprope", "aid", "bouldering", "alpine"]) {
+    const html = render({ ...bare(d, d === "bouldering" ? "V3 R" : "5.9 PG13"), season: "ZZSEASONZZ" }, "overview");
     // Anchored on data-header-strap: the strap's 2-line clamp is gone (it wraps now, owner note 2026-10-29: text cut off).
     const strap = (html.match(/data-header-strap="1"/g) || []).length;
     if (!strap) fail("ANCHOR LOST: the header strap's data-header-strap marker moved — update this guard");
-    if (!/data-header-strap="1"[^>]*>[^<]*ZZSEASONZZ/.test(html)) fail(`${d}: season on file but not in the header strap`);
-    else ok(`${d}: season shows in the header strap`);
+    if (/data-header-strap="1"[^>]*>[^<]*ZZSEASONZZ/.test(html)) fail(`${d}: the header strap prints the season — it belongs to ROUTE FACTS and the Conditions tab only`);
+    else ok(`${d}: no season in the header strap`);
+    const [g, p] = d === "bouldering" ? ["V3", "R"] : ["5.9", "PG13"];
+    if (!new RegExp(">" + g.replace(".", "\\.") + "</span><span[^>]*>" + p + "</span>").test(html)) fail(`${d}: the header does not draw the protection rating ${p} as its own pill right after the grade ${g}`);
+    else ok(`${d}: protection rating ${p} is its own pill right after the grade`);
   }
   // A crag route with a breakdown and a climate box but nothing that opens Plan: the breakdown on
   // Overview, CLIMATE & SEASON on the Conditions tab (owner note 2026-10-24) and NOT on Overview.
