@@ -39434,3 +39434,51 @@ Peak East Face, North Face, and Northwest Ridge.
 
 0 confirmed errors fixed, 1 newly flagged for human review, 9 clean.
 Next batch will continue id-ascending from `wa_chair_peak_northwest_ridge` (pass 9).
+
+## Batch 563 — 2026-11-19 (pass 9)
+
+Routes: Chair Peak (South Ridge, Southeast Face, West Ridge), Chalangin Peak (Little Giant Pass –
+Luahna Col Route), Chelan Butte (Chelan Butte Trail), and Chianti Spire (East Face, Lichen
+Bouquet, North Face) — 8 routes across 5 peaks.
+
+Verified against independent sources and found correct/plausible: Chair Peak West Ridge's hedged
+FA phrasing ("Martin Volken and party, reported July 25, 2007") matches Volken's own Cascade
+Climbers trip report calling it a "new route" on that date; Chianti Spire North Face's 1952
+Hieb/Maki FA is corroborated by an American Alpine Journal account of the party rappelling to the
+Chianti-Burgundy notch and finding the north face the only route (year carries its own "?" in
+secondary sources — an inherent gap in the historical record, not something this pass can
+resolve); Chelan Butte's stored 3,812 ft elevation matches TopoZone/MyTopo exactly (other sources
+range up to 3,835 ft, ordinary survey/datum variance).
+
+**Fixed (1):** Chianti Spire East Face carried three different numbers for one summit inside a
+single row — `high_point_ft` 8459, its own "Chianti Spire Summit" waypoint `elev` 8459, and that
+same waypoint's `elevFt` 8420 — while its two siblings on the same peak (Lichen Bouquet, North
+Face) and the `areas` row for Chianti Spire itself all agree on 8400 ft, which also falls inside
+the 8,380-8,400 ft range external sources (SummitPost, trip reports) give. Aligned East Face's
+figures to 8400 to match (`audits/sql/2026-11-19-batch-563.sql`).
+
+**Clean (5):** Chair Peak South Ridge and Southeast Face (bare rows, nothing to check); Chalangin
+Peak Little Giant Pass – Luahna Col (elevation matches the peak record; one access note flagged
+below); Chelan Butte Trail; Chianti Spire Lichen Bouquet and North Face's own facts otherwise
+check out.
+
+**Flagged for human review (2):**
+- Chianti Spire East Face: `fa` credits "Mark Bebie, Jim Nelson - 1986," but Mountain Project and
+  OpenBeta both credit Jim Nelson's partner as Carl Dietrich, not Bebie, for the same 1986 route.
+  Two sources disagree on the second climber's name and neither could be weighted as more
+  authoritative, so left as-is rather than picking one.
+- Chalangin Peak Little Giant Pass – Luahna Col: the stored access text cites a "Little Giant Fire
+  closure (order 06-17-07-2026-40)... through 31 October 2026" as a live closure reason. That end
+  date has already passed (today is 2026-11-19), web search turned up a different order number for
+  what looks like the same closure plus a superseding order dated 2026-10-14, and the fire is now
+  at 100% containment — but fs.usda.gov is unreachable from this sandbox, so the current official
+  wording couldn't be confirmed. The practical access conclusion doesn't change (the separate
+  storm-damage order keeps the road closed through 31 Dec 2027 regardless), so this is a
+  staleness/citation risk rather than a wrong bottom line.
+
+Could not verify Chianti Spire Lichen Bouquet's FA credit (Kearney/Culberson/Kelley, Sept 8 1989)
+against any source — every search variant tried returned only Chianti-wine results. Left alone
+per the no-guessing rule; nothing to flag since nothing could be checked either way.
+
+1 confirmed error fixed, 2 newly flagged for human review, 5 clean.
+Next batch will continue id-ascending from `wa_chianti_spire_north_face` (pass 9).
