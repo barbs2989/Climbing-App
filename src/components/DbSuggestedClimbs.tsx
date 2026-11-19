@@ -20,31 +20,22 @@ export interface DbSuggestedClimbsProps {
 
 // Suggested Climbs: mirrors the static catalog's SuggestedClimbs (ClimbMatch.jsx)
 // — same layout/copy, but sourced from useScopedWishlistRoutes/useSubtreeRoutes
-// instead of the in-memory ROUTES array. `profile`/`completedIds`/`rankSuggested`
+// instead of the in-memory ROUTES array. `profile`/`completedIds`/`rankSuggested`/`slotQuery`/`stated`
 // are computed once in App (grade/gain scoring lives in ClimbMatch.jsx, which
 // this file doesn't import — see its own header comment on why) and read from ClimberCtx.
 export default function DbSuggestedClimbs({ area, onOpen, C }: DbSuggestedClimbsProps) {
-  const { profile, completedIds, wishlist, rankSuggested, discSlots } = useContext(ClimberCtx);
+  const { profile, completedIds, wishlist, rankSuggested, discSlots, slotQuery, stated } = useContext(ClimberCtx);
   // Collapsed until the climber opens it — the user's call (2026-09-30): the rows are one tap
   // away behind the "Suggested climbs · N" header, never spread across the area page by default.
   const [open, setOpen] = useState(false);
   const recentIds = useRecentRouteIds();
   const { data: objRoutes } = useScopedWishlistRoutes(area, wishlist);
-  /* THE POOL IS NO LONGER FILTERED BY DISCIPLINE, and that is the actual fix.
-     It used to be `{disc: profile.disc}` — the single most-logged discipline — so every other
-     discipline was excluded by the QUERY and no amount of client-side ranking could recover
-     it. Now one mixed pool comes back and `rankSuggested` (which already filters on catOf)
-     picks per slot. Same one round trip, so the multi-discipline rows cost nothing extra.
-     pageSize is up from 30 because the 30 now have to cover every discipline, not one. */
-  const poolQ = useSubtreeRoutes(area.id, { sortBy: "name", pageSize: 120 });
-  const pool = poolQ.data;
-  /* THE AREA'S CLASSICS ARE THE POPULARITY SIGNAL. Only 6 of 205k routes carry a star rating, so a
-     name-sorted pool of 120 made every band and the fallback the area's first names alphabetically
-     (seed-vs-real audit, 2026-11-11). area_classics is the ranked list the area page's Classics
+  /* THE AREA'S CLASSICS ARE THE QUALITY SIGNAL. area_classics is the ranked list the area page's Classics
      section already reads — same key, so on a page that shows it this is the cached answer, not a
-     second read — and it goes FIRST in the candidates, ahead of the alphabetical pool. Same gate as
+     second read — and it goes FIRST in every slot's candidates, ahead of that slot's own pool. Same gate as
      the area page: never over a whole country or the world. */
-  const classicsQ = useAreaClassics(area.id, !["world", "country"].includes(area.area_type || ""));
+  const scoped = !["world", "country"].includes(area.area_type || "");
+  const classicsQ = useAreaClassics(area.id, scoped);
   const classics = classicsQ.data;
   /* Recently-opened climbs, twice over, because the two answers are different questions.
      Scoped: which of them are in THIS area — that is the "pick up where you left off" row.
@@ -53,6 +44,20 @@ export default function DbSuggestedClimbs({ area, onOpen, C }: DbSuggestedClimbs
      `.in("id", …)` over at most RECENT_MAX primary keys, so neither is an expensive read. */
   const { data: recentScoped } = useScopedWishlistRoutes(area, recentIds);
   const { data: recentAll } = useRoutesByIds(recentIds);
+  /* The discipline slots: what the climber has LOGGED, then the grades STATED on their profile, then what
+     they have been browsing (suggestDiscSlots). */
+  const slots = discSlots ? discSlots(profile, recentAll || [], undefined, stated) : [];
+  /* EVERY SLOT RANKS ITS OWN POOL (2026-11-19). There was one pool for all of them: the area's first 120
+     climbs BY NAME. On a region of 8,238 climbs that is the names sorting before "Ai", so "Because you've
+     been climbing Sport" was the grade-nearest of whatever happened to start with a quote mark or a digit.
+     Each slot now reads its own discipline inside the climber's grade window, best-rated first
+     (slotQuery). Three hooks because hooks cannot loop: one per slot SUGGEST_DISC_MAX allows, off when the
+     slot is empty. Never over a country or the world, where the read exceeds the statement timeout. */
+  const slotOpts = (i: number) => (slots[i] && slotQuery ? slotQuery(slots[i]) : {});
+  const slotQ0 = useSubtreeRoutes(scoped && slots[0] && slotQuery ? area.id : null, slotOpts(0));
+  const slotQ1 = useSubtreeRoutes(scoped && slots[1] && slotQuery ? area.id : null, slotOpts(1));
+  const slotQ2 = useSubtreeRoutes(scoped && slots[2] && slotQuery ? area.id : null, slotOpts(2));
+  const slotQs = [slotQ0, slotQ1, slotQ2];
   const objectives = (objRoutes || []).filter(r => !completedIds.has(r.id));
   const objIds = new Set(objectives.map(r => r.id));
   /* Keep the click order the climber actually produced. The query returns rows in whatever
@@ -67,16 +72,21 @@ export default function DbSuggestedClimbs({ area, onOpen, C }: DbSuggestedClimbs
   const fresh = (r: DbSuggestedClimbsRow) => !completedIds.has(r.id) && !(wishlist || []).includes(r.id) && !recentSet.has(r.id);
   const classicPicks = ((classics || []) as DbSuggestedClimbsRow[]).filter(fresh);
   const classicIds = new Set(classicPicks.map(r => r.id));
-  const candidates = classicPicks.concat(((pool || []) as DbSuggestedClimbsRow[]).filter(r => fresh(r) && !classicIds.has(r.id)));
+  const behindClassics = (rows: unknown) => classicPicks.concat(((rows || []) as DbSuggestedClimbsRow[]).filter(r => fresh(r) && !classicIds.has(r.id)));
   /* One climb, one row — two slots can rank the same route and a repeated name reads as a bug. */
-  const slots = discSlots ? discSlots(profile, recentAll || []) : [];
   const claimed: Record<string | number, number> = {};
-  const bands = slots.map(s => {
-    const rows = rankSuggested(candidates.filter((r: DbSuggestedClimbsRow) => !claimed[r.id]), s, { limit: 5 });
+  const bands = slots.map((s, i) => {
+    const rows = rankSuggested(behindClassics(slotQs[i] ? slotQs[i].data : null).filter((r: DbSuggestedClimbsRow) => !claimed[r.id]), s, { limit: 5 });
     rows.forEach(r => { claimed[r.id] = 1; });
     return { slot: s, rows };
   }).filter(b => b.rows.length);
-  const noneYet = !objectives.length && !recent.length && !bands.length;
+  /* THE UNRANKED POOL, for the "nothing personal to show" row only: every discipline, best-rated first.
+     Read only once the slots have answered and ranked nothing (or there are no slots), so a climber
+     with personal rows does not pay for a list they will never be shown. */
+  const slotsPending = slotQs.some(q => q.isLoading);
+  const poolQ = useSubtreeRoutes(scoped && !slotsPending && !bands.length ? area.id : null, { sortBy: "stars_desc", pageSize: 60 });
+  const candidates = behindClassics(poolQ.data);
+  const noneYet = !objectives.length && !recent.length && !bands.length && !slotsPending;
   /* The fallback row: the area's classics in their ranked order when it has any, else the pool. */
   const popularFromClassics = noneYet && classicPicks.length > 0;
   const popular = noneYet ? (popularFromClassics ? classicPicks : [...candidates].sort((a, b) => (b.stars || 0) - (a.stars || 0))).slice(0, 5) : [];
@@ -84,18 +94,20 @@ export default function DbSuggestedClimbs({ area, onOpen, C }: DbSuggestedClimbs
   /* NEVER VANISH ON A FAILED READ. It used to return null whenever nothing ranked, so a pool that
      failed to load hid the whole section with nothing said. Loading and failure now show behind the
      same header; only a loaded, genuinely empty answer renders nothing. */
-  const loading = !total && (poolQ.isLoading || classicsQ.isLoading);
-  const failed = !total && !loading && !!poolQ.isError && (!!classicsQ.isError || !classics);
+  const reads = [poolQ, ...slotQs];
+  const loading = !total && (reads.some(q => q.isLoading) || classicsQ.isLoading);
+  const failed = !total && !loading && reads.some(q => q.isError) && (!!classicsQ.isError || !classics);
   if (!total && !loading && !failed) return null;
-  const retry = () => { poolQ.refetch(); classicsQ.refetch(); };
+  const retry = () => { reads.forEach(q => { if (q.isError) q.refetch(); }); if (classicsQ.isError) classicsQ.refetch(); };
   const lbl = { fontSize: 11.5, fontWeight: 700, color: C.label, textTransform: "uppercase", letterSpacing: 0.3, margin: "2px 0 7px" };
   // eslint-disable-next-line no-sparse-arrays -- the hole is the fallback pair [, d]: label is d itself
   const discLabel = (d: string) => (DISCIPLINES.find(x => x[0] === d) || [, d])[1];
-  /* Two headings, because they are two different claims and only one of them can be true of a
-     climb you have actually done. Never say "you've been climbing X" off a page view. */
-  const bandTitle = (s: { src?: string; disc: string }) => (s.src === "viewed" ? "Because you've been looking at " : "Because you've been climbing ") + discLabel(s.disc);
+  /* Three headings, because they are three different claims and only one of them can be true of a
+     climb you have actually done. Never say "you've been climbing X" off a page view, or off a grade
+     typed into a profile. */
+  const bandTitle = (s: { src?: string; disc: string }) => s.src === "stated" ? discLabel(s.disc) + " near the grade on your profile" : (s.src === "viewed" ? "Because you've been looking at " : "Because you've been climbing ") + discLabel(s.disc);
   return (
-    <div style={{ marginTop: 14 }}>
+    <div style={{ margin: "14px 0" }}>
       <button onClick={() => setOpen(o => !o)} aria-expanded={open} style={{minHeight:44, width: "100%", display: "flex", alignItems: "center", gap: 9, background: C.surface, border: "1px solid " + C.border, borderRadius: 12, padding: "11px 13px", cursor: "pointer" }}>
         <span style={{ flex: 1, textAlign: "left", fontSize: 13.5, fontWeight: 700, color: C.text }}>{"Suggested climbs" + (total ? " · " + total : "")}</span>
         <Chevron open={open} color={C.blue} />
@@ -110,11 +122,9 @@ export default function DbSuggestedClimbs({ area, onOpen, C }: DbSuggestedClimbs
           {objectives.length ? <div><div style={lbl}>From your objectives</div>{objectives.map(r => <RouteRow key={r.id} r={r} onOpen={onOpen} C={C} areaName={placeOf(r)} />)}</div> : null}
           {recent.length ? <div><div style={lbl}>Pick up where you left off</div>{recent.map(r => <RouteRow key={r.id} r={r} onOpen={onOpen} C={C} />)}</div> : null}
           {bands.map(b => <div key={b.slot.src + ":" + b.slot.disc}><div style={lbl}>{bandTitle(b.slot)}</div>{b.rows.map(r => <RouteRow key={r.id} r={r} onOpen={onOpen} C={C} />)}</div>)}
-          {/* `popular` sorts on (stars || 0), and only 6 routes in the whole 205k catalog carry
-              a star rating -- so for essentially every area every candidate ties at 0, the sort
-              is a no-op, and a stable sort hands back the pool's own order, which is sortBy:"name".
-              Calling five alphabetically-first routes "Popular in this area" invents a signal we
-              do not have. Claim popularity only when the rows actually carry it. */}
+          {/* `popular` sorts on (stars || 0). Where no candidate carries a star rating the sort is a
+              no-op and the rows are simply the pool's own order, so calling them "Popular in this
+              area" would invent a signal we do not have. Claim popularity only when the rows carry it. */}
           {popular.length ? <div><div style={lbl}>{popularFromClassics ? "Classics in this area" : popular.some(r => r.stars) ? "Popular in this area" : "More climbs in this area"}</div>{popular.map(r => <RouteRow key={r.id} r={r} onOpen={onOpen} C={C} classicMark={!popularFromClassics} />)}</div> : null}
         </div>
       ) : null}
