@@ -16,6 +16,7 @@
 // REPORT-ONLY, exit 0 (non-zero only when the read fails — an empty read is never "no findings").
 //   npm run audit:optimal-season                 the four checks, with denominators
 //   npm run audit:optimal-season -- --json f     ...and every finding to a file
+//   npm run audit:optimal-season -- --shoulders  every range that ENDS on a month its own calendar calls risky
 //   npm run audit:optimal-season -- --headers    what the header prints for routes whose own window feeds it
 //   npm run audit:optimal-season -- --selftest   the parser on the shapes that fooled the first draft; no DB
 //
@@ -118,7 +119,7 @@ if (!rows.length) { console.error("audit:optimal-season: EMPTY READ — refusing
 const ancestor = (a) => { let p = a && a.parent; while (p) { if (Array.isArray(p.season_months) && p.season_months.length) return p.season_months; p = p.parent; } return null; };
 const lbl = (ms) => ms.map((i) => MONTH_ABBR[i]).join(" ");
 const F = { headerVsWindow: [], headerVsCalendar: [], windowVsCalendar: [], windowVoice: [] };
-const shoulder = { header: 0, window: 0 };
+const shoulder = { header: 0, window: 0 }, shoulders = [];
 const N = { rows: rows.length, window: 0, windowMonths: 0, calendar: 0, header: 0, headerFromWindow: 0, headerFromArea: 0 };
 const headers = [];
 
@@ -151,7 +152,7 @@ for (const r of rows) {
     const endRisky = risky.filter((i) => m.ends.includes(i) && !m.partial.includes(i));
     const noOpt = optimal.length > 0 && !optimal.some((i) => m.months.includes(i));
     if (inner.length || noOpt) list.push({ ...base, ...extra, months: lbl(m.months), calendar: calTxt, riskyInside: lbl(inner), noOptimalShared: noOpt });
-    else if (endRisky.length) shoulder[key]++;
+    else if (endRisky.length) { shoulder[key]++; shoulders.push({ ...base, on: key, ...extra, riskyEnd: lbl(endRisky), calendar: calTxt }); }
   };
   judge(hm, "header", F.headerVsCalendar, { header, headerFrom: from });
   judge(wm, "window", F.windowVsCalendar, { window: win });
@@ -164,6 +165,7 @@ show("headerVsWindow", "HEADER vs OPTIMAL WINDOW — no month in common", (f) =>
 show("headerVsCalendar", "HEADER vs CALENDAR — shares no optimal month, or a risky month inside it", (f) => `${f.id} [${f.discipline}] header "${f.header}" (${f.headerFrom}) · ${f.calendar}`);
 show("windowVsCalendar", "OPTIMAL WINDOW vs its own CALENDAR", (f) => `${f.id} window "${f.window.slice(0, 80)}" · ${f.calendar}`);
 show("windowVoice", "OPTIMAL WINDOW written as research notes", (f) => `${f.id} "${f.says}" · "${f.window.slice(0, 110)}"`);
-console.log(`\nshoulders (a risky month at the unqualified end of a range; counted, not listed): header ${shoulder.header}, window ${shoulder.window}`);
+console.log(`\nshoulders (a risky month at the unqualified end of a range; listed with --shoulders): header ${shoulder.header}, window ${shoulder.window}`);
+if (argv.includes("--shoulders")) { console.log("\nSHOULDERS:"); for (const f of shoulders) console.log(`  ${f.id} [${f.discipline}] ${f.on} "${f.on === "header" ? f.header : f.window.slice(0, 60)}" ends on risky ${f.riskyEnd} · ${f.calendar}`); }
 if (argv.includes("--headers")) { console.log("\nHEADERS READ OFF THE ROUTE'S OWN WINDOW:"); for (const h of headers) console.log(`  ${h.id}: "${h.header}"  <=  "${h.window.slice(0, 90)}"`); }
-const j = argv.indexOf("--json"); if (j >= 0) fs.writeFileSync(argv[j + 1], JSON.stringify({ N, shoulder, F, headers }, null, 1));
+const j = argv.indexOf("--json"); if (j >= 0) fs.writeFileSync(argv[j + 1], JSON.stringify({ N, shoulder, F, headers, shoulders }, null, 1));

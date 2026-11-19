@@ -1,0 +1,638 @@
+{
+ "wa_snowfield_peak_neve_glacier": {
+  "area": "wa_snowfield_peak",
+  "ledger": [
+   {
+    "field": "gain_ft",
+    "value": 7500,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/snowfield-peak-neve-glacier",
+      "retrieved_at": "2026-11-18",
+      "fact": "Snowfield Peak/Neve Glacier: Length 16.0 mi, Elevation Gain 7,500 ft, High Point 8,347 ft."
+     },
+     {
+      "url": "https://www.mazamas.org/activity/instance/12286/detail/",
+      "retrieved_at": "2026-11-18",
+      "fact": "Mazamas Snowfield Peak, Neve Glacier route: ELEVATION GAIN 7,200ft (4% below 7,500)."
+     }
+    ]
+   }
+  ],
+  "set": {
+   "gain_ft": 7500
+  },
+  "note": "replaced 7400 -> 7500 on two agreeing pages (deep pass 2026-11-18)"
+ },
+ "wa_johannesburg_mountain_northeast_rib_1951_route": {
+  "area": "wa_johannesburg_mountain",
+  "ledger": [
+   {
+    "field": "gain_ft",
+    "value": 4600,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://stephabegg.com/trip-reports/washington/johannesburg-ne-rib/",
+      "retrieved_at": "2026-11-18",
+      "fact": "4,600' of climbing from the parking lot to summit via NE Rib."
+     },
+     {
+      "url": "https://www.peakbagger.com/climber/ascent.aspx?aid=3317033",
+      "retrieved_at": "2026-11-18",
+      "fact": "Route NE Rib '51 variation; gain on way in 4811 ft from a 3400 ft start."
+     }
+    ]
+   }
+  ],
+  "set": {
+   "gain_ft": 4600
+  },
+  "note": "replaced 5000 -> 4600 on two agreeing pages (deep pass 2026-11-18)"
+ },
+ "wa_eagle_rock_scramble": {
+  "area": "wa_eagle_rock",
+  "ledger": [
+   {
+    "field": "gain_ft",
+    "value": 1400,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/eagle-rock",
+      "retrieved_at": "2026-11-18",
+      "fact": "Mountaineers Eagle Rock: elevation gain 1,400 ft."
+     },
+     {
+      "url": "https://www.peakbagger.com/climber/ascent.aspx?aid=1247792",
+      "retrieved_at": "2026-11-18",
+      "fact": "Trailhead end of road 4110 ft; elevation gain 1504 ft to the 5,614 ft summit (simple up-and-back)."
+     }
+    ]
+   }
+  ],
+  "set": {
+   "gain_ft": 1400
+  },
+  "note": "replaced 1464 -> 1400 on two agreeing pages (deep pass 2026-11-18)"
+ },
+ "wa_kyes_peak_glaciated_scramble": {
+  "area": "wa_kyes_peak",
+  "ledger": [
+   {
+    "field": "gain_ft",
+    "value": 6500,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/kyes-peak",
+      "retrieved_at": "2026-11-18",
+      "fact": "Mountaineers Kyes Peak: elevation gain 6,500 ft from Blanca Lake TH."
+     },
+     {
+      "url": "https://www.peakbagger.com/climber/ascent.aspx?aid=2592027",
+      "retrieved_at": "2026-11-18",
+      "fact": "Blanca Lake + Columbia Glacier route, start 1960 ft: gain on way in 6522 ft."
+     }
+    ]
+   }
+  ],
+  "set": {
+   "gain_ft": 6500
+  },
+  "note": "replaced 6023 -> 6500 on two agreeing pages (deep pass 2026-11-18)"
+ },
+ "wa_cadet_peak_scramble": {
+  "area": "wa_cadet_peak",
+  "ledger": [
+   {
+    "field": "gain_ft",
+    "value": 5000,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/monte-cristo-barlow-pass-area/cadet-peak",
+      "retrieved_at": "2026-11-18",
+      "fact": "Mountaineers Cadet Peak scramble from Barlow Pass: elevation gain 5,000 ft."
+     },
+     {
+      "url": "https://www.peakbagger.com/climber/ascent.aspx?aid=1719805",
+      "retrieved_at": "2026-11-18",
+      "fact": "From a 2363 ft start (Barlow Pass): gain on way in 4822 ft to Cadet Peak."
+     }
+    ]
+   }
+  ],
+  "set": {
+   "gain_ft": 5000
+  },
+  "note": "replaced 4826 -> 5000 on two agreeing pages (deep pass 2026-11-18)"
+ },
+ "co_maroon_peak_south_ridge": {
+  "area": "co_maroon_peak",
+  "ledger": [
+   {
+    "field": "gain_ft",
+    "value": 4800,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=maro1",
+      "retrieved_at": "2026-11-18",
+      "fact": "South Ridge standard route: 12 miles, 4,800 feet, Class 3, from Maroon Lake Trailhead."
+     },
+     {
+      "url": "https://stavislost.com/hikes/trail/maroon-peak/",
+      "retrieved_at": "2026-11-18",
+      "fact": "Out/back from Maroon Lake via Crater Lake: 11.9 mi, Net Gain 5,200 ft (7.7% from 4,800)."
+     }
+    ]
+   }
+  ],
+  "set": {
+   "gain_ft": 4800
+  },
+  "note": "replaced 4600 -> 4800 on two agreeing pages (deep pass 2026-11-18)"
+ },
+ "wa_mix_up_peak_east_face": {
+  "area": "wa_mixup_peak",
+  "ledger": [
+   {
+    "field": "gain_ft",
+    "value": 3800,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://mazamas.org/activity/217/",
+      "retrieved_at": "2026-11-18",
+      "fact": "Mazamas Mix up Peak, East Face: Elevation Gain 3,800 ft; hike to Cascade Pass then traverse to the glacier basin."
+     },
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/cascade-pass-area-review/mixup-peak-e-face",
+      "retrieved_at": "2026-11-18",
+      "fact": "Mountaineers Mixup Peak/East Face: Elevation Gain 3,900 ft from Cascade Pass trailhead."
+     }
+    ]
+   }
+  ],
+  "note": "ledger-only lock: two pages agree with the stored value (deep pass 2026-11-18)"
+ },
+ "wa_lane_peak_r1": {
+  "area": "wa_lane_peak",
+  "ledger": [
+   {
+    "field": "gain_ft",
+    "value": 2000,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.willhiteweb.com/mount_rainier_national_park/lane_peak/tatoosh_range_301.htm",
+      "retrieved_at": "2026-11-18",
+      "fact": "Lane Peak: Distance 2 miles, Elevation Gain 2,000 feet, summit 6,012; winter approach from Narada Falls; Zipper described."
+     },
+     {
+      "url": "https://mazamas.org/activity/instance/9144/detail/",
+      "retrieved_at": "2026-11-18",
+      "fact": "Mazamas Lane Peak, The Zipper from Reflection Lakes trailhead: 2,000 ft elevation gain."
+     }
+    ]
+   }
+  ],
+  "note": "ledger-only lock: two pages agree with the stored value (deep pass 2026-11-18)"
+ },
+ "wa_news_nw_corner": {
+  "area": "wa_north_early_winters_spire",
+  "ledger": [
+   {
+    "field": "gain_ft",
+    "value": 2372,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-early-winter-spire-northwest-corner",
+      "retrieved_at": "2026-11-18",
+      "fact": "North Early Winter Spire/Northwest Corner, Grade III 5.9+: Elevation Gain 2,372 ft."
+     },
+     {
+      "url": "https://mazamas.org/activity/105/",
+      "retrieved_at": "2026-11-18",
+      "fact": "Mazamas NEWS NW Corner/Boving Route climb page: Elevation Gain 2,200 ft."
+     }
+    ]
+   }
+  ],
+  "set": {
+   "gain_ft": 2372
+  },
+  "note": "replaced 2600 -> 2372 on two agreeing pages (deep pass 2026-11-18)"
+ },
+ "wa_del_campo_peak_standard": {
+  "area": "wa_del_campo_peak",
+  "ledger": [
+   {
+    "field": "gain_ft",
+    "value": 4200,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/del-campo-peak",
+      "retrieved_at": "2026-11-18",
+      "fact": "Del Campo Peak: 11.0 miles roundtrip, 4,200 feet gain, highest point 6,610 feet, Barlow Pass trailhead."
+     },
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/monte-cristo-barlow-pass-area/del-campo-gothic-peaks",
+      "retrieved_at": "2026-11-18",
+      "fact": "Del Campo Peak (6,610 ft): 12 miles round trip with 4,400 feet of elevation gain from Barlow Pass."
+     }
+    ]
+   }
+  ],
+  "note": "ledger-only lock: two pages agree with the stored value (deep pass 2026-11-18)"
+ },
+ "co_bell_cord_couloir": {
+  "area": "co_maroon_bells",
+  "ledger": [
+   {
+    "field": "gain_ft",
+    "value": 4556,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=maro3",
+      "retrieved_at": "2026-11-18",
+      "fact": "Bell Cord Couloir route: 8 miles, 4,556 feet gain, Class 4."
+     },
+     {
+      "url": "https://www.jamesjusthiking.com/2013-trip-reports/south-maroon-peak-3",
+      "retrieved_at": "2026-11-18",
+      "fact": "Bell Cord Couloir, 7.0 miles, elevation gain 4,600 ft, single summit of South Maroon (Maroon Peak)."
+     }
+    ]
+   }
+  ],
+  "set": {
+   "gain_ft": 4556
+  },
+  "note": "replaced 4600 -> 4556 on two agreeing pages (deep pass 2026-11-18)"
+ },
+ "wa_chair_peak_north_face": {
+  "area": "wa_chair_peak",
+  "ledger": [
+   {
+    "field": "gain_ft",
+    "value": 3000,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/chair-peak-n-face-winter",
+      "retrieved_at": "2026-11-18",
+      "fact": "Trailhead to Summit: 3,000 ft elevation gain, from upper Alpental parking lot."
+     },
+     {
+      "url": "https://www.peakbagger.com/climber/ascent.aspx?aid=222842",
+      "retrieved_at": "2026-11-18",
+      "fact": "North Face AI3-4, gain on way in 2,910 ft, start Upper Alpental Parking Lot."
+     }
+    ]
+   }
+  ],
+  "set": {
+   "gain_ft": 3000
+  },
+  "note": "replaced 3138 -> 3000 on two agreeing pages (deep pass 2026-11-18)"
+ },
+ "wa_mount_constance_north_chute": {
+  "area": "wa_mount_constance",
+  "ledger": [
+   {
+    "field": "gain_ft",
+    "value": 7300,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mt-constance-n-chute",
+      "retrieved_at": "2026-11-18",
+      "fact": "North Chute route: Elevation Gain 7,300 ft, High Point 7,756 ft."
+     },
+     {
+      "url": "https://www.peakbagger.com/climber/ascent.aspx?aid=269741",
+      "retrieved_at": "2026-11-18",
+      "fact": "Gain on way in 7,204 ft from a 645 ft start; route North Chute per the linked NWHikers report."
+     }
+    ]
+   }
+  ],
+  "set": {
+   "gain_ft": 7300
+  },
+  "note": "replaced 7100 -> 7300 on two agreeing pages (deep pass 2026-11-18)"
+ },
+ "wa_mount_rainier_fuhrer_finger": {
+  "area": "wa_mount_rainier",
+  "ledger": [
+   {
+    "field": "gain_ft",
+    "value": 10000,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/paradise-area-review/mount-rainier-fuhrer-finger",
+      "retrieved_at": "2026-11-18",
+      "fact": "Fuhrer Finger route page: elevation gain 10,000 ft from Paradise."
+     },
+     {
+      "url": "https://mazamas.org/activity/instance/129/detail/",
+      "retrieved_at": "2026-11-18",
+      "fact": "Elevation Gain 10,000ft; Trailhead: Paradise Trailhead; elevation 14,411 ft."
+     }
+    ]
+   }
+  ],
+  "set": {
+   "gain_ft": 10000
+  },
+  "note": "replaced 9010 -> 10000 on two agreeing pages (deep pass 2026-11-18)"
+ },
+ "wa_hoodoo_peak_sawtooth_scramble": {
+  "area": "wa_hoodoo_peak_sawtooth",
+  "ledger": [
+   {
+    "field": "gain_ft",
+    "value": 4500,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.willhiteweb.com/north_cascades/hoodoo_peak/libby_lake_017.htm",
+      "retrieved_at": "2026-11-18",
+      "fact": "5.5 miles one-way, Elevation Gain 4,500 feet, Libby Lake trailhead."
+     },
+     {
+      "url": "https://www.peakbagger.com/climber/ascent.aspx?aid=2656032",
+      "retrieved_at": "2026-11-18",
+      "fact": "Libby Creek Trail to Hoodoo Peak: gain on way in 4,297 ft, distance 11.8 mi round trip."
+     }
+    ]
+   }
+  ],
+  "set": {
+   "gain_ft": 4500
+  },
+  "note": "replaced 4600 -> 4500 on two agreeing pages (deep pass 2026-11-18)"
+ },
+ "wa_iron_peak_teanaway_scramble": {
+  "area": "wa_iron_peak_teanaway",
+  "ledger": [
+   {
+    "field": "gain_ft",
+    "value": 2543,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://besthikesbc.ca/hiking-iron-peak-in-the-teanaway-region/",
+      "retrieved_at": "2026-11-18",
+      "fact": "Elevation gain 775 m (2,543 ft) to Iron Peak summit."
+     },
+     {
+      "url": "https://www.peakbagger.com/climber/ascent.aspx?aid=824375",
+      "retrieved_at": "2026-11-18",
+      "fact": "Iron Peak summit, gain on way in 2,557 ft, start trailhead 3,953 ft, GPS track."
+     }
+    ]
+   }
+  ],
+  "set": {
+   "gain_ft": 2543
+  },
+  "note": "replaced 2710 -> 2543 on two agreeing pages (deep pass 2026-11-18)"
+ },
+ "wa_sloan_peak_corkscrew": {
+  "area": "wa_sloan_peak",
+  "ledger": [
+   {
+    "field": "gain_ft",
+    "value": 5900,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/sloan-peak-corkscrew-route",
+      "retrieved_at": "2026-11-18",
+      "fact": "Corkscrew Route: Elevation Gain 5,900 ft, length 12.0 mi."
+     },
+     {
+      "url": "https://www.peakbagger.com/climber/ascent.aspx?aid=145426",
+      "retrieved_at": "2026-11-18",
+      "fact": "Sloan Peak 2010-10-02, gain on way in 5,939 ft, start trailhead 1,900 ft; linked report is the Corkscrew Route."
+     }
+    ]
+   }
+  ],
+  "set": {
+   "gain_ft": 5900
+  },
+  "note": "replaced 5935 -> 5900 on two agreeing pages (deep pass 2026-11-18)"
+ },
+ "wa_chair_peak_northeast_buttress": {
+  "area": "wa_chair_peak",
+  "ledger": [
+   {
+    "field": "gain_ft",
+    "value": 3238,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/chair-peak-northeast-buttress",
+      "retrieved_at": "2026-11-18",
+      "fact": "Elevation Gain 3,238 ft for Chair Peak NE Buttress from Alpental."
+     },
+     {
+      "url": "https://www.hippohamster.com/posts/chair-peak-ne-buttress",
+      "retrieved_at": "2026-11-18",
+      "fact": "Elevation Gain: 3,100 ft, starting at the Snow Lake trailhead, NE Buttress."
+     }
+    ]
+   }
+  ],
+  "set": {
+   "gain_ft": 3238
+  },
+  "note": "replaced 3100 -> 3238 on two agreeing pages (deep pass 2026-11-18)"
+ },
+ "wa_warrior_peak_standard": {
+  "area": "wa_warrior_peak",
+  "ledger": [
+   {
+    "field": "gain_ft",
+    "value": 4800,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://mazamas.org/activity/instance/15252/detail/",
+      "retrieved_at": "2026-11-18",
+      "fact": "Mazamas Warrior Peak: 4,800 ft elevation gain from the Upper Dungeness approach."
+     },
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/warrior-peak-southeast-summit",
+      "retrieved_at": "2026-11-18",
+      "fact": "Elevation Gain 5,000 ft, 18.0 mi, from the Dungeness River Bridge parking area (2,500 ft)."
+     }
+    ]
+   }
+  ],
+  "set": {
+   "gain_ft": 4800
+  },
+  "note": "replaced 4900 -> 4800 on two agreeing pages (deep pass 2026-11-18)"
+ },
+ "wa_azurite_peak_southeast": {
+  "area": "wa_azurite_peak",
+  "ledger": [
+   {
+    "field": "gain_ft",
+    "value": 6000,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/azurite-peak",
+      "retrieved_at": "2026-11-18",
+      "fact": "Elevation Gain: 6,000 ft; trailhead 2,700 ft on Lost River Road past River Bend Campground."
+     },
+     {
+      "url": "https://www.peakbagger.com/climber/ascent.aspx?aid=457574",
+      "retrieved_at": "2026-11-18",
+      "fact": "Gain on way in: 5845 ft; start trailhead 2600 ft; Methow River trail to PCT to Mill Creek/Azurite Pass."
+     }
+    ]
+   }
+  ],
+  "set": {
+   "gain_ft": 6000
+  },
+  "note": "replaced 6700 -> 6000 on two agreeing pages (deep pass 2026-11-18)"
+ },
+ "wa_chair_peak_voie_de_chaise": {
+  "area": "wa_summer_fall_rock_2",
+  "ledger": [
+   {
+    "field": "gain_ft",
+    "value": 3000,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/chair-peak-voie-de-chaise",
+      "retrieved_at": "2026-11-18",
+      "fact": "Voie de Chaise route page: Elevation Gain 3,000 ft."
+     },
+     {
+      "url": "https://www.peakbagger.com/climber/ascent.aspx?aid=3290097",
+      "retrieved_at": "2026-11-18",
+      "fact": "Route: Voie de Chaise; Total Elevation Gain 3127 ft; Trailhead 3113 ft."
+     }
+    ]
+   }
+  ],
+  "set": {
+   "gain_ft": 3000
+  },
+  "note": "replaced 3138 -> 3000 on two agreeing pages (deep pass 2026-11-18)"
+ },
+ "wa_ingalls_peak_east_route": {
+  "area": "wa_ingalls_peak_east",
+  "ledger": [
+   {
+    "field": "gain_ft",
+    "value": 3500,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/ingalls-stuart-area/ingalls-peak-east-peak-southwest-face",
+      "retrieved_at": "2026-11-18",
+      "fact": "Ingalls East Peak SW Face: Elevation Gain 3,500 ft."
+     },
+     {
+      "url": "https://www.peakbagger.com/climber/ascent.aspx?aid=697840",
+      "retrieved_at": "2026-11-18",
+      "fact": "Ingalls Peak East Peak via Ingalls Way Trail #1390, TH 4250 ft: Total Elevation Gain 3277 ft."
+     }
+    ]
+   }
+  ],
+  "set": {
+   "gain_ft": 3500
+  },
+  "note": "replaced 3300 -> 3500 on two agreeing pages (deep pass 2026-11-18)"
+ },
+ "wa_mount_shuksan_north_face": {
+  "area": "wa_mount_shuksan_climbs",
+  "ledger": [
+   {
+    "field": "gain_ft",
+    "value": 6100,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mt-shuksan-n-face",
+      "retrieved_at": "2026-11-18",
+      "fact": "Mount Shuksan/North Face: Elevation Gain 6,100 ft; White Salmon Road (FR 3075) end trailhead."
+     },
+     {
+      "url": "https://mazamas.org/activity/1014/",
+      "retrieved_at": "2026-11-18",
+      "fact": "Mt. Shuksan, North Face: Elevation gain 6,100 ft; trailhead Mt. Baker Ski Area White Salmon Lodge."
+     }
+    ]
+   }
+  ],
+  "set": {
+   "gain_ft": 6100
+  },
+  "note": "replaced 5558 -> 6100 on two agreeing pages (deep pass 2026-11-18)"
+ },
+ "wa_south_ridge_3": {
+  "area": "wa_black_peak",
+  "ledger": [
+   {
+    "field": "gain_ft",
+    "value": 4700,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.theoutbound.com/washington/hiking/scramble-up-black-peak-s-south-ridge",
+      "retrieved_at": "2026-11-18",
+      "fact": "Black Peak South Ridge scramble: elevation gain 4,700 ft from Rainy Pass."
+     },
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/black-peak",
+      "retrieved_at": "2026-11-18",
+      "fact": "Black Peak: elevation gain 5,100 ft, high point 8,970 ft, 12.0 mi roundtrip."
+     }
+    ]
+   }
+  ],
+  "note": "ledger-only lock: two pages agree with the stored value (deep pass 2026-11-18)"
+ }
+}

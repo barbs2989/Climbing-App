@@ -1,0 +1,359 @@
+{
+ "wa_c_orange_wall_orange_crush": {
+  "area": "wa_orange_wall_2",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/122129899/orange-crush",
+    "https://www.mountainproject.com/area/108280640/orange-wall",
+    "https://rakkup.com/guidebook/mt-erie-rock-climbing/orange-crush/c30325",
+    "https://www.anacorteswa.gov/DocumentCenter/View/32255/Anacortes-Community-Forest-Lands-Plan",
+    "https://www.anacorteswa.gov/Facilities/Facility/Details/Anacortes-Community-Forest-Lands-7",
+    "https://www.anacorteswa.gov/517/Community-Forest-Lands-ACFL"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "length_m",
+    "value": 27,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/122129899/orange-crush",
+      "fact": "Sport, 90 ft (27 m)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 1,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/122129899/orange-crush",
+      "fact": "single 90 ft bolted line, 9 bolts to a chain anchor",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_c_orange_wall_orange_crush",
+    "column": "bolts",
+    "from": null,
+    "to": 9,
+    "why": "Mountain Project: 9 bolts. Single source (the guidebook on rakkup is paywalled, theCrag 403); locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/122129899/orange-crush"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_c_orange_wall_orange_crush",
+    "column": "anchor",
+    "from": null,
+    "to": "Chain anchor",
+    "why": "Mountain Project: chain anchor. Single source.",
+    "evidence": [
+     "https://www.mountainproject.com/route/122129899/orange-crush"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_c_orange_wall_orange_crush",
+    "column": "access",
+    "from": null,
+    "to": {
+     "fees": null,
+     "rules": "Climbing and scrambling are allowed only in the Mt. Erie summit and south/west face area. The forest lands are open 6 am to 10 pm. New fixed anchors and new climbing areas need Forest Advisory Board approval.",
+     "permit": "No permit for individual climbers. Groups should send their planned climbing dates to Anacortes Parks & Recreation ahead of time.",
+     "group_limit": null,
+     "land_manager": "City of Anacortes Parks & Recreation (Anacortes Community Forest Lands)",
+     "parking_pass": null
+    },
+    "why": "Access is empty. City of Anacortes owns the Community Forest Lands (Parks & Recreation manages them); its Oct 2025 ACFL plan names the Mt. Erie summit and S/W faces as the only climbing area, ACFL hours 6am-10pm, climbing dates submitted in advance, anchors need Forest Advisory Board approval. No fee or pass is stated, so fees/parking_pass stay null. Lockable official-1 (12 months) after apply.",
+    "evidence": [
+     "https://www.anacorteswa.gov/DocumentCenter/View/32255/Anacortes-Community-Forest-Lands-Plan",
+     "https://www.anacorteswa.gov/Facilities/Facility/Details/Anacortes-Community-Forest-Lands-7",
+     "https://www.anacorteswa.gov/517/Community-Forest-Lands-ACFL"
+    ]
+   }
+  ],
+  "disputed": [
+   "grade: stored 5.10a = Mountain Project 5.10a; the Mt. Erie guidebook (Kloke/Thompson/Bryant, rakkup listing) gives 5.10d, and a 2021 MP comment says the first ascensionist called it 10d. One vs one - not changed, not locked.",
+   "fa: MP 'TR: J. Matzko (1997)'; rakkup says Matzko first top-roped it in 1997 under another name (Moonwalk) and it was bolted later. A top-rope ascent is not a lead FA - not written."
+  ],
+  "notes": "Discipline sport matches MP (9 bolts) only; not locked (MP alone). No pins written: OSM has two summit lots (ways 36806443 and 36806450) and no source names which one climbers use for the Orange Wall."
+ },
+ "wa_d_the_cirque_turtleback_arete": {
+  "area": "wa_cirque_the",
+  "set": {
+   "fa": "R. Tindall, D. Kloke"
+  },
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/123173300/turtleback-arete",
+    "https://rakkup.com/guidebook/mt-erie-rock-climbing/the-cirque/s12652",
+    "https://www.anacorteswa.gov/DocumentCenter/View/32255/Anacortes-Community-Forest-Lands-Plan",
+    "https://www.anacorteswa.gov/Facilities/Facility/Details/Anacortes-Community-Forest-Lands-7",
+    "https://www.anacorteswa.gov/517/Community-Forest-Lands-ACFL"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.8",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/123173300/turtleback-arete",
+      "fact": "Turtleback Arete 5.8, Trad",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://rakkup.com/guidebook/mt-erie-rock-climbing/the-cirque/s12652",
+      "fact": "Turtleback Arete 5.8, two stars (Mt. Erie Climbing guidebook)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "length_m",
+    "value": 30,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/123173300/turtleback-arete",
+      "fact": "Trad, 100 ft (30 m), 2 pitches",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "R. Tindall, D. Kloke",
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/123173300/turtleback-arete",
+      "fact": "FA: R. Tindall, D. Kloke (1964)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_d_the_cirque_turtleback_arete",
+    "column": "access",
+    "from": null,
+    "to": {
+     "fees": null,
+     "rules": "Climbing and scrambling are allowed only in the Mt. Erie summit and south/west face area. The forest lands are open 6 am to 10 pm. New fixed anchors and new climbing areas need Forest Advisory Board approval.",
+     "permit": "No permit for individual climbers. Groups should send their planned climbing dates to Anacortes Parks & Recreation ahead of time.",
+     "group_limit": null,
+     "land_manager": "City of Anacortes Parks & Recreation (Anacortes Community Forest Lands)",
+     "parking_pass": null
+    },
+    "why": "Access is empty. City of Anacortes owns the Community Forest Lands (Parks & Recreation manages them); its Oct 2025 ACFL plan names the Mt. Erie summit and S/W faces as the only climbing area, ACFL hours 6am-10pm, climbing dates submitted in advance, anchors need Forest Advisory Board approval. No fee or pass is stated, so fees/parking_pass stay null. Lockable official-1 (12 months) after apply.",
+    "evidence": [
+     "https://www.anacorteswa.gov/DocumentCenter/View/32255/Anacortes-Community-Forest-Lands-Plan",
+     "https://www.anacorteswa.gov/Facilities/Facility/Details/Anacortes-Community-Forest-Lands-7",
+     "https://www.anacorteswa.gov/517/Community-Forest-Lands-ACFL"
+    ]
+   }
+  ],
+  "disputed": [
+   "pitches: stored 2 = MP 2 pitches, but the MP description says the guidebook notes the FA party used 3 short leads for the left finish (variation #1), and the route has 4 finishes. Not locked.",
+   "fa: MP only (R. Tindall, D. Kloke, 1964). Written as names only, unconfirmed; the year 1964 has no column here."
+  ],
+  "notes": "MP warns the 2019 guidebook topo swaps the labels of Turtleback Arete and Turtleback Direct. Rack per MP: doubles 0.3-3, one fixed pin, chain anchor (not written - rack is not an enrich:apply column)."
+ },
+ "wa_f_black_wall_the_abyss": {
+  "area": "wa_black_wall",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/107602744/the-abyss",
+    "https://www.mountainproject.com/area/107602709/black-wall",
+    "https://rakkup.com/guidebook/mt-erie-rock-climbing/the-abyss/c30348",
+    "https://rakkup.com/guidebook/mt-erie-rock-climbing/black-wall/s12659",
+    "https://www.anacorteswa.gov/DocumentCenter/View/32255/Anacortes-Community-Forest-Lands-Plan",
+    "https://www.anacorteswa.gov/Facilities/Facility/Details/Anacortes-Community-Forest-Lands-7",
+    "https://www.anacorteswa.gov/517/Community-Forest-Lands-ACFL"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.7",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107602744/the-abyss",
+      "fact": "The Abyss 5.7, Trad, Sport, 2 pitches",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://rakkup.com/guidebook/mt-erie-rock-climbing/the-abyss/c30348",
+      "fact": "The Abyss, 5.7, one star (Mt. Erie Climbing guidebook)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "length_m",
+    "value": 58,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107602744/the-abyss",
+      "fact": "190 ft (58 m), 2 pitches",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 2,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107602744/the-abyss",
+      "fact": "2 pitches: bolted Lower Abyss to a ledge with rap rings, then mixed Upper Abyss",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_f_black_wall_the_abyss",
+    "column": "access",
+    "from": null,
+    "to": {
+     "fees": null,
+     "rules": "Climbing and scrambling are allowed only in the Mt. Erie summit and south/west face area. The forest lands are open 6 am to 10 pm. New fixed anchors and new climbing areas need Forest Advisory Board approval.",
+     "permit": "No permit for individual climbers. Groups should send their planned climbing dates to Anacortes Parks & Recreation ahead of time.",
+     "group_limit": null,
+     "land_manager": "City of Anacortes Parks & Recreation (Anacortes Community Forest Lands)",
+     "parking_pass": null
+    },
+    "why": "Access is empty. City of Anacortes owns the Community Forest Lands (Parks & Recreation manages them); its Oct 2025 ACFL plan names the Mt. Erie summit and S/W faces as the only climbing area, ACFL hours 6am-10pm, climbing dates submitted in advance, anchors need Forest Advisory Board approval. No fee or pass is stated, so fees/parking_pass stay null. Lockable official-1 (12 months) after apply.",
+    "evidence": [
+     "https://www.anacorteswa.gov/DocumentCenter/View/32255/Anacortes-Community-Forest-Lands-Plan",
+     "https://www.anacorteswa.gov/Facilities/Facility/Details/Anacortes-Community-Forest-Lands-7",
+     "https://www.anacorteswa.gov/517/Community-Forest-Lands-ACFL"
+    ]
+   }
+  ],
+  "disputed": [
+   "bolts: MP protection says 'Five bolts' but the upper pitch is mixed and the lower clips Revelation's last bolt - count unclear, not proposed.",
+   "fa: MP 'unknown'."
+  ],
+  "notes": "disciplines [trad, sport] fits MP (bolted lower pitch, mixed upper). MP: lower part wet until late summer; rap rings on the belay ledge since April 2020."
+ },
+ "wa_treeshadow": {
+  "area": "wa_powerline_wall_west",
+  "set": {
+   "fa": "R. Tindall, D. Kloke"
+  },
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/106511445/treeshadow",
+    "https://www.mountainproject.com/area/201580423/powerline-wall-west",
+    "https://rakkup.com/guidebook/mt-erie-rock-climbing/tree-shadow/c30256",
+    "https://sverdina.com/Eerie1.asp",
+    "https://www.anacorteswa.gov/DocumentCenter/View/32255/Anacortes-Community-Forest-Lands-Plan",
+    "https://www.anacorteswa.gov/Facilities/Facility/Details/Anacortes-Community-Forest-Lands-7",
+    "https://www.anacorteswa.gov/517/Community-Forest-Lands-ACFL"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "fa",
+    "value": "R. Tindall, D. Kloke",
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106511445/treeshadow",
+      "fact": "FA: R. Tindall, D. Kloke (1967)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_treeshadow",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "0 is invalid. Mountain Project describes one short crack climb ending at a fir tree about 50 ft up (no multi-pitch count). Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/106511445/treeshadow"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_treeshadow",
+    "column": "length_m",
+    "from": null,
+    "to": 15,
+    "why": "Mountain Project: 50 ft (15 m). Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/106511445/treeshadow"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_treeshadow",
+    "column": "anchor",
+    "from": null,
+    "to": "Chain anchor",
+    "why": "Mountain Project: chain anchor. Single source.",
+    "evidence": [
+     "https://www.mountainproject.com/route/106511445/treeshadow"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_treeshadow",
+    "column": "access",
+    "from": null,
+    "to": {
+     "fees": null,
+     "rules": "Climbing and scrambling are allowed only in the Mt. Erie summit and south/west face area. The forest lands are open 6 am to 10 pm. New fixed anchors and new climbing areas need Forest Advisory Board approval.",
+     "permit": "No permit for individual climbers. Groups should send their planned climbing dates to Anacortes Parks & Recreation ahead of time.",
+     "group_limit": null,
+     "land_manager": "City of Anacortes Parks & Recreation (Anacortes Community Forest Lands)",
+     "parking_pass": null
+    },
+    "why": "Access is empty. City of Anacortes owns the Community Forest Lands (Parks & Recreation manages them); its Oct 2025 ACFL plan names the Mt. Erie summit and S/W faces as the only climbing area, ACFL hours 6am-10pm, climbing dates submitted in advance, anchors need Forest Advisory Board approval. No fee or pass is stated, so fees/parking_pass stay null. Lockable official-1 (12 months) after apply.",
+    "evidence": [
+     "https://www.anacorteswa.gov/DocumentCenter/View/32255/Anacortes-Community-Forest-Lands-Plan",
+     "https://www.anacorteswa.gov/Facilities/Facility/Details/Anacortes-Community-Forest-Lands-7",
+     "https://www.anacorteswa.gov/517/Community-Forest-Lands-ACFL"
+    ]
+   }
+  ],
+  "disputed": [
+   "grade: stored 5.8 = Mt. Erie guidebook (rakkup) 5.8; Mountain Project 5.8+; a personal trip report (sverdina.com) calls it 5.7. Not locked.",
+   "fa: stored 'R. Tindall, D. Kloke 1967' held the year inside the names field (shape rule: names only); set to names only, unconfirmed (MP only). Year 1967."
+  ],
+  "notes": "Rakkup spells it 'Tree Shadow' (alias candidate). MP: gear to 2 in plus 2 or more bolts from newer routes crossing it, so it climbs as mixed. Stored hazard text is generic area text, left as is."
+ }
+}

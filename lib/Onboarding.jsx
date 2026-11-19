@@ -50,7 +50,7 @@ import ActionIcon from "../src/components/ActionIcon.tsx";
 import Av from "../src/components/Av.tsx";
 
 // The Settings > Notifications switches, in the words that screen uses.
-const NOTIF_COPY = { crew: ["Crew updates", "Day proposals, members joining, ready to climb"], conditions: ["Condition reports", "Your condition reports and logged climbs"], objectives: ["Your objectives", "Another climber logs a climb you saved"], requests: ["Requests & vouches", "Friend / crew requests and vouches"] };
+const NOTIF_COPY = { crew: ["Crew updates", "Members joining, a climb coming up, how it went"], conditions: ["Condition reports", "Someone reports conditions on a climb you logged"], objectives: ["Your objectives", "Someone logs a climb you saved, or one you didn’t send is back in season"], requests: ["Requests & vouches", "Friend / crew requests and vouches"] };
 
 // A Google account's photo, at a size worth keeping: its URL ends in a size suffix (=s96-c).
 const bigGooglePhoto = (u) => String(u || "").replace(/=s\d+(-c)?$/, "=s400-c");
