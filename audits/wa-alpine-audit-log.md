@@ -39482,3 +39482,47 @@ per the no-guessing rule; nothing to flag since nothing could be checked either 
 
 1 confirmed error fixed, 2 newly flagged for human review, 5 clean.
 Next batch will continue id-ascending from `wa_chianti_spire_north_face` (pass 9).
+
+## Batch 564 — 2026-11-19 (pass 9)
+
+Routes: Chimney Peak (The Chimney), and Chimney Rock (East Face Direct, North Ridge, Northeast
+Ridge, Northwest Ridge, Southeast Ridge, Southeast Shoulder, West Face) — 8 routes across 2 peaks.
+
+Verified against independent sources and found correct: The Chimney's FA ("Mike Banner and Vern
+Johnson, 1970," class 5.3) and Chimney Peak's own 1941 first-summit-ascent date both match
+Wikipedia's Chimney Peak (Olympic Mountains) article; its ~13.9 mi approach to Enchanted Valley
+sits inside the range independent sources give (NPS 13 mi, other guides 15 mi) — not a
+contradiction. East Face Direct's `gain_ft` (4,900) matches The Mountaineers' club page (4,900 ft,
+16 mi RT) almost exactly; its `high_point_ft` (7,727) is close to Lemke Climbs' 7,731 ft, ordinary
+survey variance. No confirmed errors with a clean, sourced fix this batch.
+
+**Clean (3):** The Chimney (one soft, unconfirmable note below); North Ridge (5.7) and Northwest
+Ridge (no grade stored) carry no claims beyond a grade and could not be corroborated or
+contradicted by any source found — left alone per the rule against flagging what can't be checked.
+
+**Flagged for human review (4):**
+- The Chimney's bear-canister rental location names "South Shore Lake Quinault Ranger Station,"
+  but a secondary (non-NPS) source names a different station ("Quinault Rain Forest Ranger
+  Station on North Shore Road") for the same rental. NPS's own page is unreachable from this
+  sandbox to confirm either name, so this is a staleness/citation risk rather than a resolved
+  error.
+- East Face Direct's stored pitch count (9) is contradicted by Mountain Project, which lists this
+  exact route as 7 pitches, but corroborated by a Lemke Climbs trip report describing 9 pitches.
+  Two independent sources disagree and neither could be weighted as more authoritative.
+- Three of Chimney Rock's bare rows — Northeast Ridge (Class 2), Southeast Ridge (Class 2),
+  Southeast Shoulder (Class 3) — plus the row filed as West Face (next item) carry non-technical
+  scrambling grades, while the `areas` row for Chimney Rock states in its own blurb "No walk-up
+  exists — every route to the summit involves roped 5th-class rock." That's an internal
+  contradiction between the area's own description and four of its own routes, worth a human look
+  at whether these routes actually reach the 7,727 ft main summit or stop at a lesser point.
+- Most notably: the row stored as `wa_chimney_rock_west_face` is internally named "South Peak via
+  East Gully," and every content field (`overview`, `beta`, `aspect`="E", `face`="South Peak
+  (7,440 ft) summit block") describes an east-aspect Class 4 gully/ledge route to the subsidiary
+  South Peak — not a west-aspect route to the main 7,727 ft summit. No source (Mountain Project,
+  SummitPost, Lemke Climbs) confirms a "West Face" route exists on this peak at all. This looks
+  like the same id/content conflation this audit has flagged before (batch 4's Cascade Peak East
+  Ridge, Boston Peak Southwest Face) and needs a human rename or split decision, not a
+  field-level SQL patch.
+
+0 confirmed errors fixed, 4 newly flagged for human review, 3 clean.
+Next batch will continue id-ascending from `wa_chimney_rock_west_face` (pass 9).
