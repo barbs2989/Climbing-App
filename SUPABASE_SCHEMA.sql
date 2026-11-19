@@ -9,7 +9,7 @@
 -- and commit the result in the same PR. `npm run gen:schema -- --check` exits 1 when this
 -- file has drifted from the live database.
 --
--- Counts: 86 tables, 846 columns, 454 keyed/checked constraints (150 foreign keys), 254 RLS policies.
+-- Counts: 86 tables, 847 columns, 455 keyed/checked constraints (150 foreign keys), 254 RLS policies.
 -- Not covered here: views, functions, triggers, standalone indexes (see supabase/migrations/).
 
 -- ── Foreign keys ───────────────────────────────────────────────────────────────
@@ -1411,8 +1411,10 @@ CREATE TABLE public.notification_state (
   seen_ids text[] NOT NULL DEFAULT '{}'::text[],
   dismissed_ids text[] NOT NULL DEFAULT '{}'::text[],
   updated_at timestamp with time zone NOT NULL DEFAULT now(),
+  prefs jsonb NOT NULL DEFAULT '{}'::jsonb,
   CONSTRAINT notification_state_pkey PRIMARY KEY (user_id),
   CONSTRAINT notification_state_dismissed_ids_check CHECK (((cardinality(dismissed_ids) <= 300) AND (pg_column_size(dismissed_ids) < 40000))),
+  CONSTRAINT notification_state_prefs_check CHECK (((jsonb_typeof(prefs) = 'object'::text) AND (pg_column_size(prefs) < 2000))),
   CONSTRAINT notification_state_seen_ids_check CHECK (((cardinality(seen_ids) <= 300) AND (pg_column_size(seen_ids) < 40000))),
   CONSTRAINT notification_state_user_id_fkey FOREIGN KEY (user_id) REFERENCES profiles(id) ON DELETE CASCADE
 );

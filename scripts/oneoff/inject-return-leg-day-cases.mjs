@@ -155,11 +155,20 @@ const CASES = [
          "the Plan tab while sitting ON it, past the Trip plan rendered directly above. A gate fix " +
          "that left this would have made a circular pointer visible for the first time",
     edits: [{
-      find: '{"This route is typically done over "+itinDayCount(route)+" days. The single-push estimate below is a reference only — the "}<b style={{color:C.amber}}>Trip plan</b>{" above is the realistic one."}',
+      find: '{"This route is typically done over "+itinDayCount(route)+" days. The single-push estimate below is a reference only — the "}<b style={{color:C.amber}}>Trip plan</b>{" below is the realistic one."}',
       repl: 'This route is typically done over multiple days. The single-push estimate below is a reference only — use the <b style={{color:C.amber}}>Plan</b> tab for a realistic day-by-day plan.',
     }],
     expect: "fail",
     must: /already on/,
+  },
+  {
+    name: "multiday-pointer-says-the-wrong-way",
+    why: "The pointer must say which way the Trip plan is, truthfully. Since 2026-11-18 the alpine Plan " +
+         "tab draws Full trip time ABOVE the trip plan; copy that still said 'above' would send a reader " +
+         "up the page to a section that is below them",
+    edits: [{ find: '<b style={{color:C.amber}}>Trip plan</b>{" below is the realistic one."}', repl: '<b style={{color:C.amber}}>Trip plan</b>{" above is the realistic one."}' }],
+    expect: "fail",
+    must: /really is above/,
   },
   {
     name: "SILENT-multiday-copy-reworded-but-still-honest",
