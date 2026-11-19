@@ -5,7 +5,6 @@ import { DISC_LABELS as DL } from "./discLabels";
 import { clickable } from "./clickable";
 import { useState } from "react";
 import { useWideScreen } from "./wideLayout.js";
-import { useSwipeTabs } from "./pageSwipe.js";
 import { useLeaderboard, useTopClimbs, useAreaChildren, useAreaPath, dbRouteToCamel, useVerifiedUsers, useCragRegular } from "./db";
 import { C, CAT, summitedLog, CLIMBERS, DEMO_FILLERS, FILLER_CLIMBERS, ME, MOUNTAINS, NONCOMPLETION_TICKS, ROUTES, catOf, distMiles, haveMyLoc, inArea, lbRowName, pubName, routeAscentFt, seedHistoryFor, uDistMi, uDistMiUnitLong, uElev } from "../ClimbMatchCore.jsx";
 import Av from "../src/components/Av.tsx";
@@ -30,7 +29,6 @@ export default function Leaderboards({meLive,onView,onClimb,logs,connections,sho
   const [scope,setScope]=useState("overall");const [lbN,setLbN]=useState(15);
   const [areaId,setAreaId]=useState("usa");
   const [radiusMi,setRadiusMi]=useState(120);
-  /* Swipe between Overall / Near me / Friends / By area on a phone (owner, 2026-11-14), SCOPES's order; lib/pageSwipe.js. */const sw=useSwipeTabs({ids:["overall","near","friends","area"],cur:scope,onChange:setScope});
   const disc=rankDisc,setDisc=setRankDisc;
   const gv=g=>{const m=g&&g.match(/5\.(\d+)([a-d]?)/);return m?parseInt(m[1])+(m[2]?("abcd".indexOf(m[2])+1)/4:0.5):0;};
   const vv=g=>{const m=g&&g.match(/V(\d+)/);return m?parseInt(m[1]):-1;};const wv=g=>{const m=g&&g.match(/WI(\d+)/);return m?parseInt(m[1]):-1;};
@@ -196,7 +194,7 @@ export default function Leaderboards({meLive,onView,onClimb,logs,connections,sho
   const lbWhere=pp=>[pp.location,(real&&logBoard&&pp._logged)?(pp._backed+" of "+pp._logged+" backed"):""].filter(Boolean).join(" · ");
   const lbRow=(pp,i,last)=>{const isMe=pp.id===0;const n=isMe&&myRank!=null?myRank:rankAt(i);return <div key={pp.id} style={{display:"flex",alignItems:"center",gap:10,/* content-box: the row draws minHeight + padding + border, so 36+6+1 = 43px on the website, 42+14+1 = 57 on a phone */minHeight:wide?36:42,padding:wide?"3px 8px":"7px 8px",background:isMe?C.blueBg:(i%2?C.surface:"transparent"),boxShadow:isMe?`inset 3px 0 0 ${C.blue}`:"none",borderBottom:last?"none":`1px solid ${C.borderLight}`}}>{/* NOT a button holding buttons (axe nested-interactive, WCAG 4.1.2; found 2026-11-18): the profile button, the points button and the Report button sit SIDE BY SIDE, so each is reachable and announced on its own. */}<button onClick={()=>onView&&onView(viewOf(pp))} aria-label={lbRowName("#"+n,pubName(pp),isMe,pp.verified,lbWhere(pp),disp(pp),cur.suffix)} style={{display:"flex",alignItems:"center",gap:10,flex:1,minWidth:0,alignSelf:"stretch",margin:0,padding:0,background:"transparent",border:"none",color:"inherit",font:"inherit",textAlign:"left",cursor:"pointer"}}><div style={{width:30,textAlign:"center",flexShrink:0,fontSize:14,fontWeight:800,color:rankColor(n),fontVariantNumeric:"tabular-nums"}}>{n}</div>{" "}<Av src={pp.avatar} size={32}/>{" "}<div style={{flex:1,minWidth:0}}><div style={{fontSize:14,fontWeight:600,overflowWrap:"anywhere",lineHeight:wide?1.25:undefined}}>{pubName(pp)}{isMe?<>{" "}<span style={{marginLeft:2,fontSize:12,fontWeight:700,color:C.blue,background:C.surface,border:`1px solid ${C.blueDim}`,borderRadius:5,padding:"1px 5px",verticalAlign:"middle"}}>YOU</span></>:pp.verified?<span style={{marginLeft:5,fontSize:12,color:C.green}}>✓</span>:null}</div>{" "}<div style={{fontSize:12,color:C.textMuted,overflowWrap:"anywhere",lineHeight:wide?1.25:undefined}}>{lbWhere(pp)}</div></div>{canBreak(pp)?null:<>{" "}<div style={{minWidth:60,textAlign:"right",flexShrink:0,fontSize:15,fontWeight:700,color:isMe?"#fff":C.blue,fontVariantNumeric:"tabular-nums"}}>{disp(pp)}</div></>}</button>{canBreak(pp)?<button onClick={()=>openBreak(pp)} aria-label={"How "+(isMe?"you got ":pubName(pp)+" got ")+disp(pp)+" "+cur.suffix} style={{minWidth:60,minHeight:36,textAlign:"right",flexShrink:0,fontSize:15,fontWeight:700,color:isMe?"#fff":C.blue,fontVariantNumeric:"tabular-nums",background:"transparent",border:"none",padding:0,cursor:"pointer"}}>{disp(pp)}</button>:null}</div>;};
   const lbUnavailable=real&&(cur.routes?topQ.isError:lbQ.isError),lbLoading=real&&!atAllCountries&&!lbUnavailable&&(cur.routes?topQ.isPending:lbQ.isPending);
-  return (<div ref={sw.ref} {...sw.bind} style={sw.dragStyle||undefined}>
+  return (<div>
     {/* Your OWN row is `{...ME,routesLogged:logs.length,vertYr,...}`, so a failed climb_logs read
         does not blank this board -- it silently reports you as having climbed nothing and drops
         you down it. The "0 climbs to go" shape again, on a screen whose whole subject is counts.
