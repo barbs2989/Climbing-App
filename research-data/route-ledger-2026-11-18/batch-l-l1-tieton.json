@@ -1,0 +1,677 @@
+{
+ "wa_orange_sunshine": {
+  "area": "wa_orange_sunshine_area",
+  "set": {
+   "waypoints": [
+    {
+     "lat": 46.727836,
+     "lng": -120.810334,
+     "elev": 1724,
+     "name": "Oak Creek Wildlife Area parking",
+     "note": "WDFW lot on the north side of the Tieton River off US 12; cross the river on the Tieton Nature Trail footbridge to reach the crag trail. Discover Pass or WDFW Vehicle Access Pass.",
+     "type": "Trailhead",
+     "distMi": 0,
+     "elevFt": 1724
+    }
+   ],
+   "overview": "Finger crack in a smooth orange wall right where the trail arrives at the cliff, beside Thriller Pillar; the overhanging top section looks worse than it is. Gear to 2 inches."
+  },
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/105922178/orange-sunshine",
+    "https://www.mountainproject.com/area/105922171/orange-sunshine-area",
+    "https://chossclimbers.com/testing/us/washington/tieton-cragging/royal-columns-2015",
+    "https://wdfw.wa.gov/places-to-go/wildlife-areas/oak-creek-wildlife-area-unit",
+    "https://wdfw.wa.gov/places-to-go/wildlife-areas/oak-creek-wildlife-area",
+    "https://wdfw.wa.gov/newsroom/news-release/climbing-area-oak-creek-wildlife-area-yakima-county-closed-after-basalt-column-collapses",
+    "https://www.openstreetmap.org/way/446937772",
+    "https://www.mountainproject.com/area/105922165/royal-columns"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.10b",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105922178/orange-sunshine",
+      "fact": "5.10b YDS, Trad",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://chossclimbers.com/testing/us/washington/tieton-cragging/royal-columns-2015",
+      "fact": "Orange Sunshine 5.10b",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Dale Farnham 1974",
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105922178/orange-sunshine",
+      "fact": "FA: Dale Farnham, 1974",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "waypoints/Oak Creek Wildlife Area parking",
+    "value": {
+     "name": "Oak Creek Wildlife Area parking",
+     "lat": 46.727836,
+     "lng": -120.810334
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.openstreetmap.org/way/446937772",
+      "fact": "amenity=parking polygon centroid 46.727836,-120.810334 (reused from batch G); USGS 3DEP 1,724 ft",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_orange_sunshine",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "0 is invalid. MP: a 70 ft crack, so one pitch. Count implied, not stated: record as unconfirmed after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/105922178/orange-sunshine"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_orange_sunshine",
+    "column": "length_m",
+    "from": null,
+    "to": 21,
+    "why": "MP states 70 ft (21 m). Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/105922178/orange-sunshine"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_orange_sunshine",
+    "column": "detailed_rack",
+    "from": null,
+    "to": "Gear to 2 in; the upper crack takes small wires.",
+    "why": "Rack empty. MP: gear to two inches, upper crack takes wires. Paragraph, not lockable.",
+    "evidence": [
+     "https://www.mountainproject.com/route/105922178/orange-sunshine"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_orange_sunshine",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Washington Department of Fish and Wildlife (Oak Creek Wildlife Area)",
+     "parking_pass": "Discover Pass or WDFW Vehicle Access Pass in the wildlife area lot"
+    },
+    "why": "access is empty. WDFW 2017 release places Royal Columns on WDFW's Oak Creek Wildlife Area (trail starts across the Tieton from the HQ off US 12); WDFW Oak Creek unit page: a Discover Pass is required on WDFW lands, a Vehicle Access Pass may be used instead. Same live value as wa_bridger (batch G). official-1, expires 2027-11-18.",
+    "evidence": [
+     "https://wdfw.wa.gov/newsroom/news-release/climbing-area-oak-creek-wildlife-area-yakima-county-closed-after-basalt-column-collapses",
+     "https://wdfw.wa.gov/places-to-go/wildlife-areas/oak-creek-wildlife-area-unit",
+     "https://wdfw.wa.gov/places-to-go/wildlife-areas/oak-creek-wildlife-area"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_orange_sunshine",
+    "column": "permit",
+    "from": null,
+    "to": "A Discover Pass, or a WDFW Vehicle Access Pass, is needed to park in the Oak Creek Wildlife Area lot.",
+    "why": "permit is empty. Same official pages and same live value as wa_bridger (batch G). official-1, expires 2027-11-18.",
+    "evidence": [
+     "https://wdfw.wa.gov/places-to-go/wildlife-areas/oak-creek-wildlife-area-unit",
+     "https://wdfw.wa.gov/newsroom/news-release/climbing-area-oak-creek-wildlife-area-yakima-county-closed-after-basalt-column-collapses"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "Overview corrected: it said gear to 1 inch; MP says gear to 2 inches (rest of the sentence unchanged). ffa duplicates fa (both Dale Farnham 1974); MP states only the FA. Held, not written: WDFW's Oak Creek unit page bars rock climbing near nesting golden eagles from Feb 1 until nesting ends (boundary posted on site) but does not name Royal Columns; climber pages put a Feb 1 - Apr 1 Tieton raptor closure on the Royal Columns/Bend cliffs. No official page ties that closure to this crag, so no closure text is proposed. Land manager: WDFW Oak Creek Wildlife Area (WDFW 2017 release names Royal Columns on it; access trail starts across the Tieton from the HQ off US 12). Access, permit and parking pin copy the LIVE values already applied to wa_bridger / wa_ball_and_chain / wa_cactus_love (batch G). The stored hazards string calls the rock andesite; WDFW says basalt (paragraph, not touched)."
+ },
+ "wa_jam_exam": {
+  "area": "wa_orange_sunshine_area",
+  "set": {
+   "waypoints": [
+    {
+     "lat": 46.727836,
+     "lng": -120.810334,
+     "elev": 1724,
+     "name": "Oak Creek Wildlife Area parking",
+     "note": "WDFW lot on the north side of the Tieton River off US 12; cross the river on the Tieton Nature Trail footbridge to reach the crag trail. Discover Pass or WDFW Vehicle Access Pass.",
+     "type": "Trailhead",
+     "distMi": 0,
+     "elevFt": 1724
+    }
+   ]
+  },
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/106022092/jam-exam",
+    "https://www.mountainproject.com/area/105922171/orange-sunshine-area",
+    "https://chossclimbers.com/testing/us/washington/tieton-cragging/royal-columns-2015",
+    "https://wdfw.wa.gov/places-to-go/wildlife-areas/oak-creek-wildlife-area-unit",
+    "https://wdfw.wa.gov/places-to-go/wildlife-areas/oak-creek-wildlife-area",
+    "https://wdfw.wa.gov/newsroom/news-release/climbing-area-oak-creek-wildlife-area-yakima-county-closed-after-basalt-column-collapses",
+    "https://www.openstreetmap.org/way/446937772",
+    "https://www.mountainproject.com/area/105922165/royal-columns"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.9",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106022092/jam-exam",
+      "fact": "5.9 YDS, Trad",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://chossclimbers.com/testing/us/washington/tieton-cragging/royal-columns-2015",
+      "fact": "Jam Exam 5.9 (photo caption)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "waypoints/Oak Creek Wildlife Area parking",
+    "value": {
+     "name": "Oak Creek Wildlife Area parking",
+     "lat": 46.727836,
+     "lng": -120.810334
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.openstreetmap.org/way/446937772",
+      "fact": "amenity=parking polygon centroid 46.727836,-120.810334 (reused from batch G); USGS 3DEP 1,724 ft",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_jam_exam",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "0 is invalid. MP: a 60 ft crack, so one pitch. Count implied, not stated: record as unconfirmed after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/106022092/jam-exam"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_jam_exam",
+    "column": "length_m",
+    "from": null,
+    "to": 18,
+    "why": "MP states 60 ft (18 m). Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/106022092/jam-exam"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_jam_exam",
+    "column": "fa",
+    "from": "??",
+    "to": null,
+    "why": "'??' is a placeholder copied from MP's 'FA: ??' (first ascent unknown); it renders as junk. Null until a source names the party.",
+    "evidence": [
+     "https://www.mountainproject.com/route/106022092/jam-exam"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_jam_exam",
+    "column": "detailed_rack",
+    "from": null,
+    "to": "Cams from 0.5 to 3 in plus a few medium nuts; a long sling helps extend a toprope over the edge.",
+    "why": "Rack empty. MP: cams .5 to 3 in, some medium nuts, long webbing to extend a toprope over the edge. Paragraph, not lockable.",
+    "evidence": [
+     "https://www.mountainproject.com/route/106022092/jam-exam"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_jam_exam",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Washington Department of Fish and Wildlife (Oak Creek Wildlife Area)",
+     "parking_pass": "Discover Pass or WDFW Vehicle Access Pass in the wildlife area lot"
+    },
+    "why": "access is empty. WDFW 2017 release places Royal Columns on WDFW's Oak Creek Wildlife Area (trail starts across the Tieton from the HQ off US 12); WDFW Oak Creek unit page: a Discover Pass is required on WDFW lands, a Vehicle Access Pass may be used instead. Same live value as wa_bridger (batch G). official-1, expires 2027-11-18.",
+    "evidence": [
+     "https://wdfw.wa.gov/newsroom/news-release/climbing-area-oak-creek-wildlife-area-yakima-county-closed-after-basalt-column-collapses",
+     "https://wdfw.wa.gov/places-to-go/wildlife-areas/oak-creek-wildlife-area-unit",
+     "https://wdfw.wa.gov/places-to-go/wildlife-areas/oak-creek-wildlife-area"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_jam_exam",
+    "column": "permit",
+    "from": null,
+    "to": "A Discover Pass, or a WDFW Vehicle Access Pass, is needed to park in the Oak Creek Wildlife Area lot.",
+    "why": "permit is empty. Same official pages and same live value as wa_bridger (batch G). official-1, expires 2027-11-18.",
+    "evidence": [
+     "https://wdfw.wa.gov/places-to-go/wildlife-areas/oak-creek-wildlife-area-unit",
+     "https://wdfw.wa.gov/newsroom/news-release/climbing-area-oak-creek-wildlife-area-yakima-county-closed-after-basalt-column-collapses"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "MP places it right of Orange Sunshine; the stored overview's 'next to the Morning After pillar' is not confirmed by an opened page (paragraph, left as is). Held, not written: WDFW's Oak Creek unit page bars rock climbing near nesting golden eagles from Feb 1 until nesting ends (boundary posted on site) but does not name Royal Columns; climber pages put a Feb 1 - Apr 1 Tieton raptor closure on the Royal Columns/Bend cliffs. No official page ties that closure to this crag, so no closure text is proposed. Land manager: WDFW Oak Creek Wildlife Area (WDFW 2017 release names Royal Columns on it; access trail starts across the Tieton from the HQ off US 12). Access, permit and parking pin copy the LIVE values already applied to wa_bridger / wa_ball_and_chain / wa_cactus_love (batch G). The stored hazards string calls the rock andesite; WDFW says basalt (paragraph, not touched)."
+ },
+ "wa_twin_cracks": {
+  "area": "wa_main_face",
+  "set": {
+   "waypoints": [
+    {
+     "lat": 46.727836,
+     "lng": -120.810334,
+     "elev": 1724,
+     "name": "Oak Creek Wildlife Area parking",
+     "note": "WDFW lot on the north side of the Tieton River off US 12; cross the river on the Tieton Nature Trail footbridge to reach the crag trail. Discover Pass or WDFW Vehicle Access Pass.",
+     "type": "Trailhead",
+     "distMi": 0,
+     "elevFt": 1724
+    }
+   ],
+   "descent_text": "Lower off the chains at the top, or scramble down around the north end of the crag."
+  },
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/106799818/twin-cracks",
+    "https://www.mountainproject.com/area/105922174/main-face",
+    "https://wdfw.wa.gov/places-to-go/wildlife-areas/oak-creek-wildlife-area-unit",
+    "https://wdfw.wa.gov/places-to-go/wildlife-areas/oak-creek-wildlife-area",
+    "https://wdfw.wa.gov/newsroom/news-release/climbing-area-oak-creek-wildlife-area-yakima-county-closed-after-basalt-column-collapses",
+    "https://www.openstreetmap.org/way/446937772",
+    "https://www.mountainproject.com/area/105922165/royal-columns"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.7",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106799818/twin-cracks",
+      "fact": "5.7 YDS, Trad",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "waypoints/Oak Creek Wildlife Area parking",
+    "value": {
+     "name": "Oak Creek Wildlife Area parking",
+     "lat": 46.727836,
+     "lng": -120.810334
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.openstreetmap.org/way/446937772",
+      "fact": "amenity=parking polygon centroid 46.727836,-120.810334 (reused from batch G); USGS 3DEP 1,724 ft",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_twin_cracks",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "0 is invalid. MP: 100 ft to a chain lower-off, so one pitch. Count implied, not stated: record as unconfirmed after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/106799818/twin-cracks"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_twin_cracks",
+    "column": "length_m",
+    "from": null,
+    "to": 30,
+    "why": "MP states 100 ft (30 m). Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/106799818/twin-cracks"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_twin_cracks",
+    "column": "anchor",
+    "from": null,
+    "to": "Chain anchor",
+    "why": "anchor empty. MP: chains with permanent steel carabiners at the top of the wide left-hand crack. Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/106799818/twin-cracks"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_twin_cracks",
+    "column": "detailed_rack",
+    "from": null,
+    "to": "Large nuts and cams up to 4 in, with two or three each of the 2 and 3 in sizes; smaller pieces down to half an inch are optional in the side cracks.",
+    "why": "Rack empty. MP: large stoppers and cams to 4 in, doubles/triples of #2-#3, small pieces optional. Paragraph, not lockable.",
+    "evidence": [
+     "https://www.mountainproject.com/route/106799818/twin-cracks"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_twin_cracks",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Washington Department of Fish and Wildlife (Oak Creek Wildlife Area)",
+     "parking_pass": "Discover Pass or WDFW Vehicle Access Pass in the wildlife area lot"
+    },
+    "why": "access is empty. WDFW 2017 release places Royal Columns on WDFW's Oak Creek Wildlife Area (trail starts across the Tieton from the HQ off US 12); WDFW Oak Creek unit page: a Discover Pass is required on WDFW lands, a Vehicle Access Pass may be used instead. Same live value as wa_bridger (batch G). official-1, expires 2027-11-18.",
+    "evidence": [
+     "https://wdfw.wa.gov/newsroom/news-release/climbing-area-oak-creek-wildlife-area-yakima-county-closed-after-basalt-column-collapses",
+     "https://wdfw.wa.gov/places-to-go/wildlife-areas/oak-creek-wildlife-area-unit",
+     "https://wdfw.wa.gov/places-to-go/wildlife-areas/oak-creek-wildlife-area"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_twin_cracks",
+    "column": "permit",
+    "from": null,
+    "to": "A Discover Pass, or a WDFW Vehicle Access Pass, is needed to park in the Oak Creek Wildlife Area lot.",
+    "why": "permit is empty. Same official pages and same live value as wa_bridger (batch G). official-1, expires 2027-11-18.",
+    "evidence": [
+     "https://wdfw.wa.gov/places-to-go/wildlife-areas/oak-creek-wildlife-area-unit",
+     "https://wdfw.wa.gov/newsroom/news-release/climbing-area-oak-creek-wildlife-area-yakima-county-closed-after-basalt-column-collapses"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "Only MP opened with facts (rockclimbing.com unreachable; SummitPost/theCrag not tried per brief). MP places it at the west end of the wall, left of Double Trouble. Held, not written: WDFW's Oak Creek unit page bars rock climbing near nesting golden eagles from Feb 1 until nesting ends (boundary posted on site) but does not name Royal Columns; climber pages put a Feb 1 - Apr 1 Tieton raptor closure on the Royal Columns/Bend cliffs. No official page ties that closure to this crag, so no closure text is proposed. Land manager: WDFW Oak Creek Wildlife Area (WDFW 2017 release names Royal Columns on it; access trail starts across the Tieton from the HQ off US 12). Access, permit and parking pin copy the LIVE values already applied to wa_bridger / wa_ball_and_chain / wa_cactus_love (batch G). The stored hazards string calls the rock andesite; WDFW says basalt (paragraph, not touched)."
+ },
+ "wa_journeyman_crack": {
+  "area": "wa_main_face",
+  "set": {
+   "waypoints": [
+    {
+     "lat": 46.727836,
+     "lng": -120.810334,
+     "elev": 1724,
+     "name": "Oak Creek Wildlife Area parking",
+     "note": "WDFW lot on the north side of the Tieton River off US 12; cross the river on the Tieton Nature Trail footbridge to reach the crag trail. Discover Pass or WDFW Vehicle Access Pass.",
+     "type": "Trailhead",
+     "distMi": 0,
+     "elevFt": 1724
+    }
+   ]
+  },
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/119325815/journeyman-crack",
+    "https://www.mountainproject.com/area/105922174/main-face",
+    "https://wdfw.wa.gov/places-to-go/wildlife-areas/oak-creek-wildlife-area-unit",
+    "https://wdfw.wa.gov/places-to-go/wildlife-areas/oak-creek-wildlife-area",
+    "https://wdfw.wa.gov/newsroom/news-release/climbing-area-oak-creek-wildlife-area-yakima-county-closed-after-basalt-column-collapses",
+    "https://www.openstreetmap.org/way/446937772",
+    "https://www.mountainproject.com/area/105922165/royal-columns"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "waypoints/Oak Creek Wildlife Area parking",
+    "value": {
+     "name": "Oak Creek Wildlife Area parking",
+     "lat": 46.727836,
+     "lng": -120.810334
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.openstreetmap.org/way/446937772",
+      "fact": "amenity=parking polygon centroid 46.727836,-120.810334 (reused from batch G); USGS 3DEP 1,724 ft",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_journeyman_crack",
+    "column": "grade",
+    "from": "5.9",
+    "to": "5.10a",
+    "why": "MP's route page and Main Face list both give 5.10a; no source found for the stored 5.9. Single source, so the owner decides; grade_num goes with it.",
+    "evidence": [
+     "https://www.mountainproject.com/route/119325815/journeyman-crack",
+     "https://www.mountainproject.com/area/105922174/main-face"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_journeyman_crack",
+    "column": "grade_num",
+    "from": 9,
+    "to": 10.25,
+    "why": "gradeNumFrom('5.10a','yds') = 10.25, with the grade fix only.",
+    "evidence": [
+     "https://www.mountainproject.com/route/119325815/journeyman-crack"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_journeyman_crack",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "0 is invalid. MP describes a fist crack up two pillars on a single-pitch crag. Count implied, not stated: record as unconfirmed after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/119325815/journeyman-crack"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_journeyman_crack",
+    "column": "detailed_rack",
+    "from": null,
+    "to": "Gear to 3 in.",
+    "why": "Rack empty. MP: gear to 3 in. Paragraph, not lockable.",
+    "evidence": [
+     "https://www.mountainproject.com/route/119325815/journeyman-crack"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_journeyman_crack",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Washington Department of Fish and Wildlife (Oak Creek Wildlife Area)",
+     "parking_pass": "Discover Pass or WDFW Vehicle Access Pass in the wildlife area lot"
+    },
+    "why": "access is empty. WDFW 2017 release places Royal Columns on WDFW's Oak Creek Wildlife Area (trail starts across the Tieton from the HQ off US 12); WDFW Oak Creek unit page: a Discover Pass is required on WDFW lands, a Vehicle Access Pass may be used instead. Same live value as wa_bridger (batch G). official-1, expires 2027-11-18.",
+    "evidence": [
+     "https://wdfw.wa.gov/newsroom/news-release/climbing-area-oak-creek-wildlife-area-yakima-county-closed-after-basalt-column-collapses",
+     "https://wdfw.wa.gov/places-to-go/wildlife-areas/oak-creek-wildlife-area-unit",
+     "https://wdfw.wa.gov/places-to-go/wildlife-areas/oak-creek-wildlife-area"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_journeyman_crack",
+    "column": "permit",
+    "from": null,
+    "to": "A Discover Pass, or a WDFW Vehicle Access Pass, is needed to park in the Oak Creek Wildlife Area lot.",
+    "why": "permit is empty. Same official pages and same live value as wa_bridger (batch G). official-1, expires 2027-11-18.",
+    "evidence": [
+     "https://wdfw.wa.gov/places-to-go/wildlife-areas/oak-creek-wildlife-area-unit",
+     "https://wdfw.wa.gov/newsroom/news-release/climbing-area-oak-creek-wildlife-area-yakima-county-closed-after-basalt-column-collapses"
+    ]
+   }
+  ],
+  "disputed": [
+   "grade: stored 5.9; Mountain Project 5.10a (route page and Main Face list). No second source found. Not locked."
+  ],
+  "notes": "MP gives no length, FA or anchor. Held, not written: WDFW's Oak Creek unit page bars rock climbing near nesting golden eagles from Feb 1 until nesting ends (boundary posted on site) but does not name Royal Columns; climber pages put a Feb 1 - Apr 1 Tieton raptor closure on the Royal Columns/Bend cliffs. No official page ties that closure to this crag, so no closure text is proposed. Land manager: WDFW Oak Creek Wildlife Area (WDFW 2017 release names Royal Columns on it; access trail starts across the Tieton from the HQ off US 12). Access, permit and parking pin copy the LIVE values already applied to wa_bridger / wa_ball_and_chain / wa_cactus_love (batch G). The stored hazards string calls the rock andesite; WDFW says basalt (paragraph, not touched)."
+ },
+ "wa_slot_machine_3": {
+  "area": "wa_main_face",
+  "set": {
+   "waypoints": [
+    {
+     "lat": 46.727836,
+     "lng": -120.810334,
+     "elev": 1724,
+     "name": "Oak Creek Wildlife Area parking",
+     "note": "WDFW lot on the north side of the Tieton River off US 12; cross the river on the Tieton Nature Trail footbridge to reach the crag trail. Discover Pass or WDFW Vehicle Access Pass.",
+     "type": "Trailhead",
+     "distMi": 0,
+     "elevFt": 1724
+    }
+   ]
+  },
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/119325787/slot-machine",
+    "https://www.mountainproject.com/area/105922174/main-face",
+    "https://wdfw.wa.gov/places-to-go/wildlife-areas/oak-creek-wildlife-area-unit",
+    "https://wdfw.wa.gov/places-to-go/wildlife-areas/oak-creek-wildlife-area",
+    "https://wdfw.wa.gov/newsroom/news-release/climbing-area-oak-creek-wildlife-area-yakima-county-closed-after-basalt-column-collapses",
+    "https://www.openstreetmap.org/way/446937772",
+    "https://www.mountainproject.com/area/105922165/royal-columns"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.8",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119325787/slot-machine",
+      "fact": "5.8 YDS, Trad",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "waypoints/Oak Creek Wildlife Area parking",
+    "value": {
+     "name": "Oak Creek Wildlife Area parking",
+     "lat": 46.727836,
+     "lng": -120.810334
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.openstreetmap.org/way/446937772",
+      "fact": "amenity=parking polygon centroid 46.727836,-120.810334 (reused from batch G); USGS 3DEP 1,724 ft",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_slot_machine_3",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "0 is invalid. MP: about 75 ft to a ledge, then ~15 ft more crack to a bolted lower-off at the top. Count implied, not stated: record as unconfirmed after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/119325787/slot-machine"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_slot_machine_3",
+    "column": "anchor",
+    "from": null,
+    "to": "Two-bolt anchor",
+    "why": "anchor empty. MP: a pair of bolts with steel lower-off carabiners (new in 2025), shared with Not So Easy. Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/119325787/slot-machine"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_slot_machine_3",
+    "column": "detailed_rack",
+    "from": null,
+    "to": "Gear to 2.5 in; a 4 in cam is optional for the middle section.",
+    "why": "Rack empty. MP quotes the guidebook: gear to 2.5 in; optional 4 in cam mid-route. Paragraph, not lockable.",
+    "evidence": [
+     "https://www.mountainproject.com/route/119325787/slot-machine"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_slot_machine_3",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Washington Department of Fish and Wildlife (Oak Creek Wildlife Area)",
+     "parking_pass": "Discover Pass or WDFW Vehicle Access Pass in the wildlife area lot"
+    },
+    "why": "access is empty. WDFW 2017 release places Royal Columns on WDFW's Oak Creek Wildlife Area (trail starts across the Tieton from the HQ off US 12); WDFW Oak Creek unit page: a Discover Pass is required on WDFW lands, a Vehicle Access Pass may be used instead. Same live value as wa_bridger (batch G). official-1, expires 2027-11-18.",
+    "evidence": [
+     "https://wdfw.wa.gov/newsroom/news-release/climbing-area-oak-creek-wildlife-area-yakima-county-closed-after-basalt-column-collapses",
+     "https://wdfw.wa.gov/places-to-go/wildlife-areas/oak-creek-wildlife-area-unit",
+     "https://wdfw.wa.gov/places-to-go/wildlife-areas/oak-creek-wildlife-area"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_slot_machine_3",
+    "column": "permit",
+    "from": null,
+    "to": "A Discover Pass, or a WDFW Vehicle Access Pass, is needed to park in the Oak Creek Wildlife Area lot.",
+    "why": "permit is empty. Same official pages and same live value as wa_bridger (batch G). official-1, expires 2027-11-18.",
+    "evidence": [
+     "https://wdfw.wa.gov/places-to-go/wildlife-areas/oak-creek-wildlife-area-unit",
+     "https://wdfw.wa.gov/newsroom/news-release/climbing-area-oak-creek-wildlife-area-yakima-county-closed-after-basalt-column-collapses"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "length_m left null: MP gives only partial figures (~75 ft + ~15 ft), and a sum would be a derived value. Held, not written: WDFW's Oak Creek unit page bars rock climbing near nesting golden eagles from Feb 1 until nesting ends (boundary posted on site) but does not name Royal Columns; climber pages put a Feb 1 - Apr 1 Tieton raptor closure on the Royal Columns/Bend cliffs. No official page ties that closure to this crag, so no closure text is proposed. Land manager: WDFW Oak Creek Wildlife Area (WDFW 2017 release names Royal Columns on it; access trail starts across the Tieton from the HQ off US 12). Access, permit and parking pin copy the LIVE values already applied to wa_bridger / wa_ball_and_chain / wa_cactus_love (batch G). The stored hazards string calls the rock andesite; WDFW says basalt (paragraph, not touched)."
+ }
+}
