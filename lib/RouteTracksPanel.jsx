@@ -133,25 +133,34 @@ export default function RouteTracksPanel({ reports, seedTracks, tracks, profiles
         const c2c = !crag && r.c2cText ? r.c2cText + " car to car" : null;
         const trackFacts = t ? ["GPS track", uDistMi(t.stats.km * 0.621371), t.stats.gainFt != null ? uElev(t.stats.gainFt) + " up" : null, !crag && t.stats.secs != null && t.stats.timed ? fmtDuration(t.stats.secs) : null].filter(Boolean).join(" · ") : r.seedPts ? "GPS track" : null;
         const label = r.who + "'s" + (t || r.seedPts ? " track" : " report") + " from " + shortDate(r.date);
+        // THE ROW IS NAMED BY WHAT IT SHOWS (WCAG 2.5.3, check:axe label-content-name-mismatch): the same
+        // fragments, in the order drawn, joined once. It read "<who>'s report from <date>, show details",
+        // which held none of the stars, outcome or season a sighted climber reads off the row, so a voice
+        // user saying what they saw could not reach it. aria-expanded already says it opens. axe glues the
+        // row's raw text nodes together and wants that run of WORDS inside the name, so (1) each fragment
+        // below is followed by a {" "} text node, or "BarberJun" and "aroundSummer" are single words no
+        // name holds, and (2) the stars, drawn as glyphs the rule drops, sit in the name in parentheses,
+        // which it drops too -- between commas they would split "2026" from the outcome.
+        const rowLabel = [r.who, shortDate(r.date) + (a && a.stars ? " (" + a.stars + " of 5 stars)" : ""), outcome, c2c, trackFacts ? trackFacts + (on ? " · on the map" : "") : null, sn].filter(Boolean).join(", ");
         const canRead = !!(a && onOpenReport && !r.seedOnly);
         return (
           <div key={r.key} style={{ background: C.card, border: `1px solid ${on && col ? col : C.border}`, borderRadius: 12, marginBottom: 8, overflow: "hidden" }}>
-            <div {...clickable(() => setOpenKey(op ? null : r.key))} aria-expanded={op} aria-label={label + (op ? ", hide details" : ", show details")} style={{ minHeight: 44, boxSizing: "border-box", display: "flex", alignItems: "center", gap: 10, padding: "10px 12px", cursor: "pointer" }}>
+            <div {...clickable(() => setOpenKey(op ? null : r.key))} aria-expanded={op} aria-label={rowLabel} style={{ minHeight: 44, boxSizing: "border-box", display: "flex", alignItems: "center", gap: 10, padding: "10px 12px", cursor: "pointer" }}>
               <Av src={r.avatar} size={30}/>
               <div style={{ flex: 1, minWidth: 0 }}>
-                <div style={{ fontSize: 13, fontWeight: 600, overflowWrap: "anywhere" }}>{r.who}</div>
+                <div style={{ fontSize: 13, fontWeight: 600, overflowWrap: "anywhere" }}>{r.who}</div>{" "}
                 <div style={{ fontSize: 12, color: C.textMuted, marginTop: 1, display: "flex", flexWrap: "wrap", alignItems: "center", columnGap: 6 }}>
-                  <span>{shortDate(r.date)}</span>
-                  {a && a.stars ? <span role="img" aria-label={a.stars + " of 5 stars"}><Stars n={a.stars} size={11}/></span> : null}
-                  {outcome ? <span style={{ color: outcome === "Turned back" ? C.amber : C.textSub }}>{outcome}</span> : null}
-                  {c2c ? <span>{c2c}</span> : null}
-                </div>
+                  <div>{shortDate(r.date)}</div>{" "}
+                  {a && a.stars ? <div role="img" aria-label={a.stars + " of 5 stars"}><Stars n={a.stars} size={11}/></div> : null}{" "}
+                  {outcome ? <div style={{ color: outcome === "Turned back" ? C.amber : C.textSub }}>{outcome}</div> : null}{" "}
+                  {c2c ? <div>{c2c}</div> : null}
+                </div>{" "}
                 {trackFacts ? <div style={{ fontSize: 12, color: C.textSub, marginTop: 2, display: "flex", alignItems: "center", gap: 6 }}>
                   <span aria-hidden="true" style={{ width: 10, height: 10, borderRadius: 5, flexShrink: 0, background: on && col ? col : "transparent", border: "2px solid " + (on && col ? col : C.blue) }}/>
                   <span>{trackFacts}{on ? " · on the map" : ""}</span>
                 </div> : null}
-              </div>
-              <span style={{ flexShrink: 0, fontSize: 11, fontWeight: 700, color: sc, background: sc + "22", border: `1px solid ${sc}55`, borderRadius: 20, padding: "2px 8px" }}>{sn}</span>
+              </div>{" "}
+              <div style={{ flexShrink: 0, fontSize: 11, fontWeight: 700, color: sc, background: sc + "22", border: `1px solid ${sc}55`, borderRadius: 20, padding: "2px 8px" }}>{sn}</div>
               <span style={{ display: "flex" }}><Chevron open={op} size={15} color={C.textMuted}/></span>
             </div>
             {op ? <div style={{ borderTop: `1px solid ${C.borderLight}`, padding: "9px 12px" }}>
