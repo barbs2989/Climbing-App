@@ -27,6 +27,7 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", ".
 const RD = path.join(ROOT, "src", "components", "RoutePlanTab.tsx");   // the tracks section moved here out of RouteDetail (PR60)
 const CORE = path.join(ROOT, "ClimbMatchCore.jsx");
 const HELP = path.join(ROOT, "lib", "Help.jsx");   // the FAQ moved out of core with Help
+const PANEL = path.join(ROOT, "lib", "RouteTracksPanel.jsx");   // the rows and the empty state, since the section became one list (2026-11-18)
 const LOCK = path.join(ROOT, ".tracks-heading-injection.lock");
 
 try { fs.writeFileSync(LOCK, String(process.pid), { flag: "wx" }); }
@@ -41,7 +42,7 @@ const run = () => {
   return { code: r.status, out: (r.stdout || "") + (r.stderr || "") };
 };
 
-const STAGED_FILES = [RD, CORE, HELP];
+const STAGED_FILES = [RD, CORE, HELP, PANEL];
 const ORIGINAL = Object.fromEntries(STAGED_FILES.map((f) => [f, fs.readFileSync(f, "utf8")]));
 const BASE = Object.fromEntries(STAGED_FILES.map((f) => [f, sha(f)]));
 const restore = () => { for (const f of STAGED_FILES) fs.writeFileSync(f, ORIGINAL[f]); };
@@ -73,7 +74,7 @@ const cases = [
   },
   {
     name: "the empty state goes back to covering less than the heading above it",
-    edits: [[RD, EMPTY, "No recent tracks yet — be the first to share one after you climb it."]],
+    edits: [[PANEL, EMPTY, "No recent tracks yet — be the first to share one after you climb it."]],
     expect: "covers less than the heading",
   },
   {
@@ -106,7 +107,7 @@ const cases = [
   },
   {
     name: "SILENT: a comment naming the old heading",
-    edits: [[RD, "const ctSeed=(route.communityTracks||[]);", "/* was headed Recent recorded tracks */const ctSeed=(route.communityTracks||[]);"]],
+    edits: [[PANEL, "const FIRST = 3;", "/* was headed Recent recorded tracks */const FIRST = 3;"]],
     expect: null,
   },
 ];

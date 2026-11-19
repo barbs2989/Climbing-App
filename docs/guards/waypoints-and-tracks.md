@@ -505,6 +505,11 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     - **BOTH DIRECTIONS**, because a rule that only forbids the old wording is satisfied by deleting
       the section, and one demanding *"trip reports"* alone would be false on a seed route, which
       really does carry a recorded line. The heading must still name **tracks** as well.
+    - **Since 2026-11-18 the section IS tracks and reports** (one list, `lib/RouteTracksPanel.jsx`: a
+      climber's `climb_logs.gpx_track` joins their report's row), so the heading is now true on a DB
+      route too. The rows no longer print *"Trip report — no recorded track."*, so the non-vacuity
+      check anchors on the REPORTER'S NAME, and the empty-state case in
+      `inject-tracks-heading-cases.mjs` edits the panel file, where that line now lives.
     - **Measured rather than reasoned** by `scripts/oneoff/measure-recorded-tracks-heading.mjs`,
       which renders both shapes with a seed CONTROL — without it a null result would just mean the
       section never rendered. **Its own first fixture was wrong**: it put the reports on
