@@ -1,0 +1,152 @@
+[
+ {
+  "id": "wa_mount_adams_north_ridge",
+  "season": "Jun-Sep",
+  "seasonal_guidance": {
+   "optimalWindow": "June through mid-July",
+   "monthBreakdown": {
+    "May": {
+     "reason": "Killen Creek road access is often still snow-gated and the approach carries deep, unstable spring snowpack",
+     "status": "risky"
+    },
+    "July": {
+     "reason": "First half of the month remains solid; rockfall from the warming ridge crest increases later in July",
+     "status": "good"
+    },
+    "June": {
+     "reason": "Firm snow with minimized rockfall and crevasse hazard",
+     "status": "optimal"
+    },
+    "August": {
+     "reason": "Outside the June-to-mid-July window; expect increased rockfall and more open crevasses on the glaciers beside the ridge",
+     "status": "risky"
+    }
+   }
+  }
+ },
+ {
+  "id": "wa_mount_adams_lava_glacier_headwall",
+  "season": "Jun",
+  "seasonal_guidance": {
+   "optimalWindow": "May to June",
+   "monthBreakdown": {
+    "May": {
+     "reason": "Within the best-season window; firm alpine ice/snow on the headwall",
+     "status": "optimal"
+    },
+    "July": {
+     "reason": "Outside the best-season window; expect an unstable, warmed-out headwall",
+     "status": "risky"
+    },
+    "June": {
+     "reason": "Still within the season window, but rockfall increases as the headwall warms",
+     "status": "good"
+    },
+    "April": {
+     "reason": "Still full winter/early-spring conditions with deep, unconsolidated snow and difficult access",
+     "status": "risky"
+    }
+   }
+  }
+ },
+ {
+  "id": "wa_tye_peak_e_route",
+  "season": "Nov-Apr",
+  "seasonal_guidance": {
+   "optimalWindow": "Jul-Oct; core dry-talus conditions are most reliable August-September",
+   "monthBreakdown": {
+    "July": {
+     "reason": "Early-season snow patches can still linger on the east slopes and old ski runs; talus and heather may be partly snow-covered",
+     "status": "good"
+    },
+    "August": {
+     "reason": "Slopes typically fully melted out to open heather and talus; most reliable dry scrambling conditions",
+     "status": "optimal"
+    },
+    "October": {
+     "reason": "Early snow can return to the upper slopes and ski area boundary zones, adding route-finding and traction difficulty",
+     "status": "marginal"
+    },
+    "September": {
+     "reason": "Stable, dry conditions continue; cooler temps and fewer bugs make this a favored month",
+     "status": "optimal"
+    }
+   }
+  }
+ },
+ {
+  "id": "wa_honeymoon_route",
+  "season": "Apr-Jun",
+  "seasonal_guidance": {
+   "optimalWindow": "Late June (once Royal Basin permits open, before rock fully dries out)",
+   "monthBreakdown": {
+    "May": {
+     "reason": "Approach often still snow-covered; a documented serious accident occurred this month (May 2026 rescue)",
+     "status": "risky"
+    },
+    "July": {
+     "reason": "Rock reportedly becomes nightmarishly loose as snow melts out of the gullies; rockfall risk rises through the month",
+     "status": "marginal"
+    },
+    "June": {
+     "reason": "Climbing before July 1 is recommended while gullies remain snow-covered, holding the loose pillow-lava rock in place; Royal Basin permits open June 15",
+     "status": "good"
+    },
+    "August": {
+     "reason": "Gullies fully melted to scree/choss; reportedly the least favorable month of the summer",
+     "status": "risky"
+    },
+    "September": {
+     "reason": "Rock remains dry/loose like August, but cooler temps and lower party traffic reduce triggered-rockfall exposure",
+     "status": "marginal"
+    }
+   }
+  }
+ },
+ {
+  "id": "wa_mount_lawson_standard",
+  "season": "Jun-Aug",
+  "seasonal_guidance": {
+   "optimalWindow": "June through August; August is the most reliable window",
+   "monthBreakdown": {
+    "July": {
+     "reason": "In season; early in the month snow can linger and rivers may still run high",
+     "status": "good"
+    },
+    "June": {
+     "reason": "Trail network and approach terrain still largely snowbound at elevation; river fords are dangerous with peak snowmelt, so treat a high river as a reason to turn back",
+     "status": "risky"
+    },
+    "August": {
+     "reason": "Most stable weather and driest approach/scramble conditions of the year",
+     "status": "optimal"
+    },
+    "October": {
+     "reason": "Falls outside the season; full winter conditions can arrive on this long, remote approach",
+     "status": "risky"
+    },
+    "September": {
+     "reason": "Just past the usual season; cooler and generally stable, but early-season snow becomes a real possibility by late month",
+     "status": "good"
+    }
+   }
+  }
+ },
+ {
+  "id": "wa_south_spur",
+  "season": "Jul-Sep",
+  "seasonal_guidance": {
+   "optimalWindow": "Late July — solid snow cover for a manageable glacier crossing",
+   "monthBreakdown": {
+    "July": {
+     "reason": "A documented late-July ascent found solid snow cover and a manageable glacier crossing",
+     "status": "optimal"
+    },
+    "August": {
+     "reason": "A late-August NPS ranger visit found bare ice, open crevasses, and a summit-blocking moat (~5 ft wide) that turned the party back",
+     "status": "risky"
+    }
+   }
+  }
+ }
+]

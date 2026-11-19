@@ -1,0 +1,533 @@
+{
+ "wa_silver_star_glacier": {
+  "area": "wa_silver_star_mountain_okanogan",
+  "review": {
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/silver-star-mountain-silver-star-glacier",
+    "https://www.mountainproject.com/route/111875736/silver-star-glacier",
+    "https://wsdot.wa.gov/travel/roads-bridges/mountain-pass-closure-and-opening-dates",
+    "https://wsdot.com/travel/real-time/mountainpasses/North-Cascade-Hwy",
+    "https://stephabegg.com/?p=8704",
+    "https://www.openstreetmap.org/way/775811756",
+    "USGS GNIS DomesticNames_WA 1525796",
+    "USGS EPQS 3DEP elevation"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "road",
+    "value": {
+     "name": "SR-20 / North Cascades Highway",
+     "status": "Paved and open in summer; unmarked climbers' pullout near milepost 165-166.",
+     "driveNote": "Park at the pullout near MP 165-166, about 4 miles east of Washington Pass, near the Silver Star trail sign.",
+     "seasonalGate": "WSDOT closes this stretch of SR 20 every winter, usually in mid-to-late November, and reopens it between mid-April and May; check WSDOT before an early- or late-season attempt."
+    },
+    "method": "official-1",
+    "level": "locked",
+    "expires_at": "2027-02-16T00:00:00Z",
+    "evidence": [
+     {
+      "url": "https://wsdot.wa.gov/travel/roads-bridges/mountain-pass-closure-and-opening-dates",
+      "official": true,
+      "fact": "SR 20 closed 2021-2025: Nov 15, Nov 3, Nov 30, Nov 18, Dec 4; opened Apr 19-May 11",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://wsdot.com/travel/real-time/mountainpasses/North-Cascade-Hwy",
+      "official": true,
+      "fact": "North Cascade Hwy pass report 18 Nov 2026 7:57 AM: bare and dry, frost and ice in places",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/silver-star-mountain-silver-star-glacier",
+      "fact": "park at pull-off near mile marker 166, about 4 mi east of Washington Pass",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "disputed": [
+   "grade/rock_grade 'Class 4' / '4th class': Mountain Project 4th; Abegg Class 3 (batch C); Mountaineers: scramble via an easy ramp ~40 ft below the top, else a short low-5th pitch. No two agree - not locked.",
+   "discipline: stays mountaineering under the app rule (glacier + Class 3-4 scramble, no required 5th-class pitch; low 5th only if the ramp is missed). No source supports alpine; no change proposed.",
+   "fa: still the batch C dispute - the 1952 Beckey/Hieb/Staley/Wilde party climbed the WEST peak (AAJ 1953 'Environs of Silver Star' confirms the west peak, no route named); this route ends on the east summit. Owner decision.",
+   "permit text ('no parking pass is needed at the SR-20 pullout'): Mountaineers lists Northwest Forest Pass; no USFS page for this pullout found. Not locked.",
+   "Trailhead pin (48.55,-120.6306): no OSM parking at the pullout; the OSM climbers' path 775811756 leaves SR 20 at 48.55128,-120.63110, 147 m north. Not moved, not locked."
+  ],
+  "notes": "Batch C already locked high_point_ft, the East Summit pin, commitment, alpine_grade and length_m; gain 4,626 applied. Spire check: USGS point 1525796 reads 8,844 ft; 3DEP high cell 8,880 ft is 12 m away (36 ft gap < 50 ft), so the USGS point stands. Road locked official-1 from WSDOT (closure-date table + today's pass report: SR 20 is OPEN on 18 Nov 2026, no 2026 closure date posted yet). Road status will change when WSDOT closes the pass for winter."
+ },
+ "wa_silver_star_ne_ridge": {
+  "area": "wa_silver_star_mountain_okanogan",
+  "set": {
+   "road": {
+    "name": "SR-20 / North Cascades Highway",
+    "status": "Paved and open in summer; unmarked climbers' pullout near milepost 165-166.",
+    "driveNote": "Park at the pullout near MP 165-166, about 4 miles east of Washington Pass, near the Silver Star trail sign.",
+    "seasonalGate": "WSDOT closes this stretch of SR 20 every winter, usually in mid-to-late November, and reopens it between mid-April and May; check WSDOT before an early- or late-season attempt."
+   }
+  },
+  "review": {
+   "sources": [
+    "https://wsdot.wa.gov/travel/roads-bridges/mountain-pass-closure-and-opening-dates",
+    "https://wsdot.com/travel/real-time/mountainpasses/North-Cascade-Hwy",
+    "https://www.mountaineers.org/activities/routes-places/silver-star-mountain-silver-star-glacier",
+    "https://publications.americanalpineclub.org/articles/12195354100",
+    "USGS EPQS 3DEP elevation"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "road",
+    "value": {
+     "name": "SR-20 / North Cascades Highway",
+     "status": "Paved and open in summer; unmarked climbers' pullout near milepost 165-166.",
+     "driveNote": "Park at the pullout near MP 165-166, about 4 miles east of Washington Pass, near the Silver Star trail sign.",
+     "seasonalGate": "WSDOT closes this stretch of SR 20 every winter, usually in mid-to-late November, and reopens it between mid-April and May; check WSDOT before an early- or late-season attempt."
+    },
+    "method": "official-1",
+    "level": "locked",
+    "expires_at": "2027-02-16T00:00:00Z",
+    "evidence": [
+     {
+      "url": "https://wsdot.wa.gov/travel/roads-bridges/mountain-pass-closure-and-opening-dates",
+      "official": true,
+      "fact": "SR 20 closed 2021-2025: Nov 15, Nov 3, Nov 30, Nov 18, Dec 4; opened Apr 19-May 11",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://wsdot.com/travel/real-time/mountainpasses/North-Cascade-Hwy",
+      "official": true,
+      "fact": "North Cascade Hwy pass report 18 Nov 2026 7:57 AM: bare and dry, frost and ice in places",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/silver-star-mountain-silver-star-glacier",
+      "fact": "park at pull-off near mile marker 166, about 4 mi east of Washington Pass",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "disputed": [
+   "grade 5.9 / commitment III: only SummitPost (blocked to agents, not read) carries this route per search listings; no open page found. Unconfirmed.",
+   "high_point_ft 8840 (West summit): no USGS point or source opened; USGS 3DEP 8 m grid puts the West summit top at 48.54823,-120.58806, ~8,863 ft, 220 m west of the USGS East summit point. Not changed.",
+   "fa: AAJ 1953 confirms Beckey, Hieb, Staley, Wilde climbed the western peak in 1952 but names no route; the stored beta's 'northeast aspect' claim is unconfirmed."
+  ],
+  "notes": "STUCK: no usable open source for this route's grade, length, pitches or FA (Mountain Project has no Silver Star 'Northeast Ridge'; the MP hit for that name is a Colorado route). Road replaced with the Silver Star Glacier row's road object, locked in this batch from WSDOT: the old seasonalGate 'closed roughly early December to mid/late April' contradicts WSDOT's 2021-2025 dates (closed Nov 3-Dec 4, opened Apr 19-May 11). Row has no Trailhead or Summit pin; a West-summit pin would rest on the 3DEP top alone (one method), so none added."
+ },
+ "wa_northwest_buttress": {
+  "area": "wa_sloan_peak",
+  "set": {
+   "waypoints": [
+    {
+     "lat": 48.09702,
+     "lng": -121.387058,
+     "elev": 1246,
+     "name": "Bedal Campground, Mountain Loop Highway",
+     "type": "Campsite"
+    },
+    {
+     "lat": 48.073457,
+     "lng": -121.376681,
+     "elev": 2784,
+     "name": "Bedal Creek / Bedal Basin Trailhead (end of FR 4096)",
+     "note": "End of FR-4096, ~3 mi off the Mountain Loop Highway south of Bedal Campground.",
+     "type": "Trailhead",
+     "distMi": 0,
+     "directions": "From the Mountain Loop Highway take FR-4096 and follow the spur about 3 miles to its end, south of Bedal Campground, at the Bedal Creek Trailhead around 2,790 ft. Bedal Creek Trail #705 leaves from the parking at the road end. Aim for mid-to-late season, July through September, once snowmelt has cleared the lower approach.",
+     "elevFt": 2784
+    },
+    {
+     "lat": 48.05601,
+     "lng": -121.36307,
+     "elev": 3500,
+     "name": "Climber's trail junction (leaves Bedal Creek trail for the basin)",
+     "type": "Junction",
+     "distMi": 1.5,
+     "elevFt": 3500,
+     "directions": "Follow Bedal Creek Trail #705 up the creek through old growth until the maintained tread ends at a washout below the West Face basin. Scramble the washout to the cairned exit, usually flagged pink, where the climbers' path leaves left around 3,500 ft."
+    },
+    {
+     "lat": 48.0413767,
+     "lng": -121.3402434,
+     "elev": 7835,
+     "name": "Sloan Peak Summit",
+     "note": "Longest route on the peak; shared summit with good bivy spots along the buttress.",
+     "type": "Summit",
+     "distMi": 4.5,
+     "directions": "Climb the path steeply through forest to about 4,900 ft, cross talus and a meadow bench to the Bedal-Sloan saddle, and stay in the meadows below the West Face rather than heading toward the glacier. Start on the corner of darker rock at the lowest, leftmost point of the face, climb nine pitches up the buttress, exit by a short hand crack, and scramble third and fourth class to the sub-summit and summit.",
+     "elevFt": 7835
+    }
+   ],
+   "road": {
+    "name": "Bedal Creek Trailhead (FR-4096), off Mountain Loop Highway",
+    "status": "Closed for the winter. The Forest Service shut the Mountain Loop Highway from Bedal Campground south to Barlow Pass on 16 November 2026, and the FR 4096 turnoff lies inside that stretch; it sets the reopening date each spring. Walking, snowshoeing and skiing stay allowed.",
+    "driveNote": "Roughly 1.5-2 hours from Seattle via US-2/SR-92/Mountain Loop Highway to the Bedal Creek Trailhead.",
+    "seasonalGate": "FR roads off the Mountain Loop Highway are typically only reliably open late spring through fall; check Darrington Ranger District/USFS alerts for current status."
+   }
+  },
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/119519445/northwest-buttress",
+    "https://cascadeclimbers.com/forum/topic/101927-tr-central-cascades-nw-butress-sloan-peak-fa-09232000/",
+    "https://www.mountainproject.com/area/117523878/sloan-peak",
+    "https://www.fs.usda.gov/r06/mbs/alerts/mountain-loop-highway-bedal-campground-barlow-pass-closed-winter-nov-16",
+    "https://www.fs.usda.gov/r06/mbs/alerts",
+    "https://www.openstreetmap.org/node/50819875",
+    "https://www.openstreetmap.org/node/356546463",
+    "USGS GNIS DomesticNames_WA 1525950",
+    "USGS EPQS 3DEP elevation"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.9+",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119519445/northwest-buttress",
+      "fact": "YDS 5.9+",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 9,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119519445/northwest-buttress",
+      "fact": "Trad, Alpine, 1800 ft, 9 pitches, Grade IV",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "length_m",
+    "value": 549,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119519445/northwest-buttress",
+      "fact": "1800 ft (545 m)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "waypoints/Sloan Peak Summit",
+    "value": {
+     "name": "Sloan Peak Summit",
+     "lat": 48.0413767,
+     "lng": -121.3402434
+    },
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "measurement": "USGS GNIS feature 1525950 'Sloan Peak' (Summit) primary point; reused from batch C (Corkscrew)",
+      "fact": "48.0413767, -121.3402434"
+     },
+     {
+      "url": "https://www.openstreetmap.org/node/356546463",
+      "fact": "OSM natural=peak Sloan Peak (gnis 1525950), 17 m away; reused from batch C",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "road",
+    "value": {
+     "name": "Bedal Creek Trailhead (FR-4096), off Mountain Loop Highway",
+     "status": "Closed for the winter. The Forest Service shut the Mountain Loop Highway from Bedal Campground south to Barlow Pass on 16 November 2026, and the FR 4096 turnoff lies inside that stretch; it sets the reopening date each spring. Walking, snowshoeing and skiing stay allowed.",
+     "driveNote": "Roughly 1.5-2 hours from Seattle via US-2/SR-92/Mountain Loop Highway to the Bedal Creek Trailhead.",
+     "seasonalGate": "FR roads off the Mountain Loop Highway are typically only reliably open late spring through fall; check Darrington Ranger District/USFS alerts for current status."
+    },
+    "method": "official-1",
+    "level": "locked",
+    "expires_at": "2027-02-15T00:00:00Z",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r06/mbs/alerts/mountain-loop-highway-bedal-campground-barlow-pass-closed-winter-nov-16",
+      "official": true,
+      "fact": "MLH Bedal Campground to Barlow Pass closed for winter 16 Nov; still listed 18 Nov 2026 (reused from batch C)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_northwest_buttress",
+    "column": "dist_km",
+    "from": 17.7,
+    "to": null,
+    "why": "Round trip: 17.7 km is 2.4x the route's own summit pin distMi (4.5 mi = 7.2 km) and ~2x the sibling Corkscrew one-way 7.65 km; no published one-way figure for this route.",
+    "evidence": []
+   },
+   {
+    "table": "routes",
+    "id": "wa_northwest_buttress",
+    "column": "gpx",
+    "from": "3 points (old trailhead, summit, junction)",
+    "to": null,
+    "why": "The stored line is only three of the route pins joined, out of order (route-waypoints rule: a pins-only line is removed).",
+    "evidence": []
+   }
+  ],
+  "disputed": [
+   "fa 'M. Preiss & M. Bunker, 2000': Mountain Project names them (2000); the CascadeClimbers FA trip report (user kukuzka1, trip date 09/23/2000) is first-person with partner 'mark b'. MP's description repeats that report's wording, so likely one author - not independent; not locked.",
+   "commitment/alpine_grade IV: MP Grade IV and the same author's report 'IV 5.8/9' - one source; not locked.",
+   "grade: the FA report gives the route overall as 5.8/9 with a 5.9+ section; MP 5.9+. Locked at 1-source as 5.9+.",
+   {
+    "field": "gain_ft",
+    "note": "Stored 5039 is 12 ft under summit minus the OLD trailhead pin; within measuring error and the trailhead moved 384 m, so not cleared (orchestrator, 2026-11-18)."
+   }
+  ],
+  "notes": "Trailhead pin moved 384 m north onto OSM 'Bedal Creek Trailhead' node 50819875 (end of FR 4096; 3DEP 2,784 ft), the same pin the Corkscrew row carries; OSM only, so not locked. Summit pin snapped 16 m onto the USGS point locked on the Corkscrew row, elevation 7,835 (locked high_point_ft). Road replaced with the Corkscrew row's live road (locked official-1 by batch C, expires 2027-02-15): the Bedal-Barlow Pass winter closure from 16 Nov 2026 covers the FR 4096 turnoff, so the trailhead cannot be driven to now. Old road text said 'reopening in mid-May' with no official page."
+ },
+ "wa_mount_daniel_lynch_glacier": {
+  "area": "wa_mount_daniel",
+  "set": {
+   "waypoints": [
+    {
+     "lat": 47.5435484,
+     "lng": -121.0965346,
+     "elev": 3370,
+     "elevFt": 3370,
+     "name": "Tucquala Meadows Trailhead",
+     "type": "Trailhead",
+     "distMi": 0
+    },
+    {
+     "lat": 47.55617,
+     "lng": -121.141647,
+     "elev": 5560,
+     "name": "Peggy's Pond, below Cathedral Rock",
+     "type": "Campsite"
+    },
+    {
+     "lat": 47.565031,
+     "lng": -121.180891,
+     "elev": 7960,
+     "name": "Mount Daniel summit",
+     "type": "Summit",
+     "distMi": null,
+     "elevFt": 7960
+    }
+   ],
+   "road": {
+    "name": "SR 903 and Forest Road 4330 to the Tucquala Meadows / Cathedral Pass trailhead",
+    "status": "Gravel Forest Road 4330 to the road end.",
+    "driveNote": "From Cle Elum drive SR 903 north 19 miles to Salmon La Sac, bear right onto FR 4330 and follow it 11 miles to the trailhead at its end (3,370 ft). Parking is limited.",
+    "seasonalGate": "Check the Cle Elum Ranger District, (509) 852-1100, for road status before an early- or late-season trip."
+   }
+  },
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/124973025/lynch-glacier",
+    "https://www.mountaineers.org/activities/routes-places/mount-daniel-lynch-glacier",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/tucquala-meadows-fish-lake-trailhead",
+    "https://www.openstreetmap.org/way/368014720"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "Class 3",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/124973025/lynch-glacier",
+      "fact": "YDS 3rd, Mod. Snow",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "length_m",
+    "value": 457,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/124973025/lynch-glacier",
+      "fact": "Snow, Alpine, 1500 ft (455 m)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "waypoints/Tucquala Meadows Trailhead",
+    "value": {
+     "name": "Tucquala Meadows Trailhead",
+     "lat": 47.5435484,
+     "lng": -121.0965346
+    },
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "measurement": "OSM parking way 368014720 'Cathedral Pass Trailhead' centre; reused from batch C (Daniel Glacier)",
+      "fact": "47.5435484,-121.0965346"
+     },
+     {
+      "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/tucquala-meadows-fish-lake-trailhead",
+      "official": true,
+      "fact": "Latitude 47.5435, Longitude -121.0966 (reused from batch C)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "road",
+    "value": {
+     "name": "SR 903 and Forest Road 4330 to the Tucquala Meadows / Cathedral Pass trailhead",
+     "status": "Gravel Forest Road 4330 to the road end.",
+     "driveNote": "From Cle Elum drive SR 903 north 19 miles to Salmon La Sac, bear right onto FR 4330 and follow it 11 miles to the trailhead at its end (3,370 ft). Parking is limited.",
+     "seasonalGate": "Check the Cle Elum Ranger District, (509) 852-1100, for road status before an early- or late-season trip."
+    },
+    "method": "official-1",
+    "level": "locked",
+    "expires_at": "2027-02-17T00:00:00Z",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/tucquala-meadows-fish-lake-trailhead",
+      "official": true,
+      "fact": "SR 903 19 mi to Salmon La Sac; FR 4330 11 mi to road end; 3,370 ft; parking limited (reused from batch C)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_mount_daniel_lynch_glacier",
+    "column": "high_point_ft",
+    "from": null,
+    "to": 7960,
+    "why": "Same summit as wa_mount_daniel_daniel_glacier, whose high_point_ft 7,960 is locked (Mountaineers + ListsOfJohn map figure, batch C); the stored Summit pin already says 7960.",
+    "evidence": [
+     "https://www.mountaineers.org/activities/routes-places/mount-daniel-daniel-glacier",
+     "https://listsofjohn.com/peak/16876"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_mount_daniel_lynch_glacier",
+    "column": "permit",
+    "from": null,
+    "to": "Free self-issue Alpine Lakes Wilderness permit at the trailhead; no quota or fee. Northwest Forest Pass to park at most trailheads.",
+    "why": "Same trailhead as the Daniel Glacier row; that permit text is locked official-1 from the USFS Tucquala Meadows page (batch C, to 2027-11-18).",
+    "evidence": [
+     "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/tucquala-meadows-fish-lake-trailhead"
+    ]
+   }
+  ],
+  "disputed": [
+   "gain_ft 5000: Mountaineers Lynch page 'Elevation Gain 5,000 ft' (via Peggy's Pond); one source - not locked. Net-climb floor 7,960 - 3,370 = 4,590 ft, so not impossible.",
+   "dist_km null: Mountaineers gives Length 16.0 mi (round trip, Peggy's Pond approach); MP's Dip Top Gap approach has no mileage. Left null (convention).",
+   "fa 'The Mountaineers, 1925': Mountaineers route page says the 1925 first recorded ascent took a glacier line on the north side; MP says FA unknown. One source - not locked.",
+   "high point: Mountaineers Lynch page says 7,986 ft; its Daniel Glacier page and the locked sibling say 7,960. Kept 7,960.",
+   "approach: the row (and MP) uses Deception Pass / Dip Top Gap / Pea Soup Lake; Mountaineers uses Peggy's Pond and the east ridge. Both leave the Tucquala Meadows road end; batch C noted a second OSM lot 155 m north that may serve the Deception Pass trail - the locked Cathedral Pass lot pin was used."
+  ],
+  "notes": "Row had no Trailhead pin and no road: added the locked Tucquala Meadows pin and the locked road object from the Daniel Glacier row (same lot). Mountaineers names Mount Baker-Snoqualmie NF / Skykomish RD as land manager for the Lynch side; the trailhead and access are Okanogan-Wenatchee (Cle Elum RD) - access text left as is. Discipline mountaineering fits (Class 3 glacier, no rock pitch)."
+ },
+ "wa_mount_pugh_pika_slab": {
+  "area": "wa_mount_pugh",
+  "set": {
+   "road": {
+    "name": "Mountain Loop Highway (FR 20) to Forest Road 2095",
+    "status": "A wildlife gate where FR 2095 leaves the Mountain Loop Highway stays shut every year from 16 October through 1 June, so the trailhead cannot be driven to in that window. Call the Darrington Ranger District, (360) 436-1155, for current conditions.",
+    "driveNote": "FR 2095 leaves the Mountain Loop Highway on the left at a prominent Mount Pugh sign, roughly 12.5-14 miles from Darrington. It is narrow, one-lane and unpaved, and it is reportedly tight enough that potholes are simply unavoidable — passenger cars generally manage it but take it slowly. The signed trailhead is on the right at the second switchback about 1-1.5 miles up, at 1,900-1,920 ft. Parking is limited and there are no facilities, no toilet and no water at the trailhead; the lot fills on summer weekends and parties describe it as busier than expected.",
+    "seasonalGate": "FR 2095 is gated at the highway each year from 16 October to 1 June."
+   }
+  },
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/202261318/pika-slab",
+    "https://www.mountainproject.com/area/202261312/mount-pugh",
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/mt-pugh-trail-644",
+    "https://www.fs.usda.gov/r06/mbs/alerts",
+    "https://www.openstreetmap.org/node/1884907895",
+    "USGS GNIS DomesticNames_WA 1528468, 1526648",
+    "USGS EPQS 3DEP elevation"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.0",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/202261318/pika-slab",
+      "fact": "YDS 5.0, protection rating R",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "length_m",
+    "value": 6,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/202261318/pika-slab",
+      "fact": "Trad, 20 ft (6 m)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "road",
+    "value": {
+     "name": "Mountain Loop Highway (FR 20) to Forest Road 2095",
+     "status": "A wildlife gate where FR 2095 leaves the Mountain Loop Highway stays shut every year from 16 October through 1 June, so the trailhead cannot be driven to in that window. Call the Darrington Ranger District, (360) 436-1155, for current conditions.",
+     "driveNote": "FR 2095 leaves the Mountain Loop Highway on the left at a prominent Mount Pugh sign, roughly 12.5-14 miles from Darrington. It is narrow, one-lane and unpaved, and it is reportedly tight enough that potholes are simply unavoidable — passenger cars generally manage it but take it slowly. The signed trailhead is on the right at the second switchback about 1-1.5 miles up, at 1,900-1,920 ft. Parking is limited and there are no facilities, no toilet and no water at the trailhead; the lot fills on summer weekends and parties describe it as busier than expected.",
+     "seasonalGate": "FR 2095 is gated at the highway each year from 16 October to 1 June."
+    },
+    "method": "official-1",
+    "level": "locked",
+    "expires_at": "2027-02-16T00:00:00Z",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r06/mbs/recreation/trails/mt-pugh-trail-644",
+      "official": true,
+      "fact": "road 2095 gated at Mt. Loop Oct. 16 to June 1 for wildlife; page updated Oct 6 2026",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_mount_pugh_pika_slab",
+    "column": "discipline",
+    "from": "alpine",
+    "to": "trad",
+    "why": "PROPOSAL, one source (do not lock): Mountain Project types it Trad, 20 ft, one move-up to a ledge beside the trail; it reaches no summit, so it is a single-pitch crag route, not an alpine route.",
+    "evidence": [
+     "https://www.mountainproject.com/route/202261318/pika-slab"
+    ]
+   }
+  ],
+  "disputed": [
+   "fa: Mountain Project lists 'Leland Windham, 7/2023' OR 'Harry Bedal & Nels Skaar, 1919'; one source - not locked.",
+   "high_point_ft 6594 and gain_ft/loss_ft 4694: no source states the slab's elevation (MP: between the rock step and the summit); 4,694 = 6,594 - 1,900, a derived value. Not impossible (6,594 - 1,949 ft 3DEP at the trailhead = 4,645), but unsourced.",
+   "pitches 1: MP states no pitch count; a 20 ft climb to a ledge is one pitch - kept, not locked.",
+   "rock_grade '5.0 R': the R is MP's protection rating (no protection), consistent."
+  ],
+  "notes": "Old road.status described a December 2025 storm closure (Shoofly Curve) as current; the MBS alerts page on 18 Nov 2026 lists no such alert, only the Bedal-Barlow Pass winter closure (south of the FR 2095 turnoff). Replaced with the official FR 2095 gate (USFS Mt. Pugh Trail 644 page): the gate is SHUT now (16 Oct - 1 Jun). The old seasonalGate ('snowbound through April') contradicted that page. Trailhead pin already sits exactly on OSM parking node 1884907895 'Mount Pugh Trailhead' (3DEP 1,949 ft; stored elev 1,920); no second placement method (USFS page has no coordinates), so not locked. USFS: the hiking trail ends at Stujack Pass, 5,700 ft; Lake Metan 2,800 ft on that page vs 3,260 stored on the Water pin (not changed). The sibling Stujack row's trailhead pin is 45 m from this one."
+ }
+}
