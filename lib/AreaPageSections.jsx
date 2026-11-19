@@ -221,6 +221,9 @@ export function GradeSpread({ stats, C, standalone, bare, onGrade }) {
   const axis = countAxis(max), top = axis[axis.length - 1];
   const W = 100, H = 56, gap = 2, bw = (W - gap * (full.length - 1)) / full.length, every = full.length > 9 ? 2 : 1;
   const label = c => bucketLabel(sys, c.b);
+  // Every other grade is named when there are many, and always the last. When the last is not on that stride the
+  // one before it stays blank: side by side on a phone the two ran together ("5.145.15", seen at 390 and 320px).
+  const last = full.length - 1, showLabel = i => i === last || (i % every === 0 && !(every > 1 && last % every !== 0 && i === last - 1));
   const desc = full.filter(c => c.n).map(c => label(c) + ": " + c.n).join(", ");
   const named = discs.some(k => k);
   const chip = on => ({ ...CHIP, flexShrink: 0, border: "1px solid " + (on ? C.blue : C.border), background: on ? C.blueBg : C.surface, color: on ? "#fff" : C.textSub });
@@ -248,7 +251,7 @@ export function GradeSpread({ stats, C, standalone, bare, onGrade }) {
     </div>
     </div>
     <div style={{ display: "flex", gap: gap + "px", marginTop: 3, marginLeft: Y_AXIS_W + Y_GAP }}>
-      {full.map((c, i) => <div key={c.b} style={{ flex: 1, minWidth: 0, textAlign: "center", fontSize: 9.5, color: C.textMuted, whiteSpace: "nowrap", overflow: "visible" }}>{i % every === 0 || i === full.length - 1 ? label(c) : ""}</div>)}
+      {full.map((c, i) => <div key={c.b} style={{ flex: 1, minWidth: 0, textAlign: "center", fontSize: 9.5, color: C.textMuted, whiteSpace: "nowrap", overflow: "visible" }}>{showLabel(i) ? label(c) : ""}</div>)}
     </div>
   </div>;
 }
