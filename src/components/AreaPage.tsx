@@ -166,8 +166,14 @@ export interface AreaPageProps {
   onCrewsHere?: PartnersHereCardProps["onCrewsHere"];
   onGroupsHere?: PartnersHereCardProps["onGroupsHere"];
   openCrewCountAt?: PartnersHereCardProps["openCrewCountAt"];
+  /** The area browser's Back and the path above this area, drawn in this page's header card (DbAreaBrowser
+   *  areaNav); `names` are the areas on that path, so the facts line does not print one of them again. */
+  headerNav?: { back: ReactNode; path: ReactNode; names: string[] } | null;
 }
-export default function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, booked, onToggleSave, onDrill, onFinder, onNear, onObjectives, onAllAreas, onOpenRoute, onJumpToArea, C, onAddClimb, onAddArea, TopContributors, onFireMap, onSuggestAreaEdit, myId, PartnerRow, uid, myListings, onListMe, onFindPartnersInArea, onViewProfile, notify, onStartCrew, onCrewsHere, onGroupsHere, openCrewCountAt}: AreaPageProps) {
+// THE HEADER CARD'S BUTTONS: Save area, Area tree and Fire map are ONE size (owner, 2026-11-18: "fire map needs to be
+// the same size as save area") -- 34px, the height Save was given on 2026-11-14 -- and one width; only the colour differs.
+const HEAD_BTN: CSSProperties = { flexShrink: 0, boxSizing: "border-box", display: "inline-flex", alignItems: "center", justifyContent: "center", gap: 5, height: 34, minWidth: 100, padding: "0 12px", borderRadius: 9, fontSize: 12, fontWeight: 800, cursor: "pointer", lineHeight: 1, whiteSpace: "nowrap" };
+export default function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, booked, onToggleSave, onDrill, onFinder, onNear, onObjectives, onAllAreas, onOpenRoute, onJumpToArea, C, onAddClimb, onAddArea, TopContributors, onFireMap, onSuggestAreaEdit, myId, PartnerRow, uid, myListings, onListMe, onFindPartnersInArea, onViewProfile, notify, onStartCrew, onCrewsHere, onGroupsHere, openCrewCountAt, headerNav}: AreaPageProps) {
   const [wrongOpen, setWrongOpen] = useState(false);
   const listEndRef = useRef(null);
   const [listSort, setListSort] = useState("lr");
@@ -261,10 +267,10 @@ export default function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, book
   // A grade column opens the Route finder on that grade (the chart is the way in, not a picture).
   const onGrade = (sys: string, b: number) => { const fl = gradeFinderFilters(sys, b, stats.data); if (fl) onFinder(fl); else onFinder(); };
 
-  // THE PAGE, top to bottom (owner, 2026-11-11, area page redesign): the header; then ONE bordered sheet -- grade
-  // spread (Climbs here by type behind a dropdown), the description, the Route finder · objectives · Map row, the
-  // sub-areas (phone), the classic climbs, the photo strip, Getting there -- and under the sheet everything else
-  // in its old order. On the website the sub-areas are a column to the left of all of it, as Mountain Project
+  // THE PAGE, top to bottom (owner, 2026-11-11, area page redesign): the header; then the grade spread (Climbs here
+  // by type behind a dropdown), the description, the Route finder · objectives · Map row, the sub-areas (phone), the
+  // classic climbs, the photo strip, Getting there -- and under them everything else in its old order. A CRAG OR WALL
+  // reads climb first instead (owner, 2026-11-18): Route finder row, the climbs, description, grade spread, classics. On the website the sub-areas are a column to the left of all of it, as Mountain Project
   // lays out its area pages, so you never scroll past the page to reach the areas below.
   const showAbout = formation || !!(area.blurb && String(area.blurb).trim());
   const childRows = !loading && children && children.length > 0 ? children : null;
@@ -278,7 +284,7 @@ export default function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, book
     ? (classicsUp.error ? <div role="status" style={{ fontSize: 12, color: C.textMuted, padding: "10px 14px", borderTop: "1px solid " + C.border }}>Couldn't load the classic climbs here.</div>
       : classicsUp.data && classicsUp.data.length ? <ClassicsList rows={classicsUp.data} total={classicsUp.data[0].total} withWall dense={wide} onOpen={onOpenRoute} C={C} /> : null)
     : !loading && isLeaf && routes && routes.length > 1 ? (() => { const cl = areaClassics(routes); if (cl.length) return <ClassicsList rows={cl} dense={wide} onOpen={onOpenRoute} C={C} />; const top = routes.filter(r => r.stars > 0).sort((a, b) => b.stars - a.stars || a.name.localeCompare(b.name)).slice(0, 5); return top.length ? <ClassicsList rows={top} title="Top rated here" dense={wide} onOpen={onOpenRoute} C={C} /> : null; })() : null;
-  const metaParts = [area.region && area.region !== area.name ? area.region : null, area.elevation_ft ? (uElev ? uElev(area.elevation_ft) : area.elevation_ft.toLocaleString() + " ft") : null, area.prominence_ft ? ((uElev ? uElev(area.prominence_ft) : area.prominence_ft.toLocaleString() + " ft") + " prom") : null, area.rock ? String(area.rock).replace(/^./, (x: string) => x.toUpperCase()) : null, area.approach_min != null && Number(area.approach_min) > 0 ? Number(area.approach_min) + " min walk" : null].filter(Boolean);
+  const metaParts = [area.region && area.region !== area.name && !(headerNav && headerNav.names.includes(area.region)) ? area.region : null, area.elevation_ft ? (uElev ? uElev(area.elevation_ft) : area.elevation_ft.toLocaleString() + " ft") : null, area.prominence_ft ? ((uElev ? uElev(area.prominence_ft) : area.prominence_ft.toLocaleString() + " ft") + " prom") : null, area.rock ? String(area.rock).replace(/^./, (x: string) => x.toUpperCase()) : null, area.approach_min != null && Number(area.approach_min) > 0 ? Number(area.approach_min) + " min walk" : null].filter(Boolean);
 
   // Partners here and the area/route search are placed differently on the website and the phone (see their sites below).
   const partnersEl = PARTNER_CARD_TYPES.includes(area.area_type) ? <PartnersHereCard area={area} C={C} uid={uid} myListings={myListings} onListMe={onListMe} onFindPartnersInArea={onFindPartnersInArea} onViewProfile={onViewProfile} PartnerRow={PartnerRow} notify={notify} onStartCrew={onStartCrew} onCrewsHere={onCrewsHere} onGroupsHere={onGroupsHere} openCrewCountAt={openCrewCountAt} /> : null;
@@ -290,64 +296,13 @@ export default function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, book
   // (2026-11-18). A crag or peak still waits for its list: it may be a leaf, which has no search.
   const searchEl = aboveLeaf && (!error || (children && children.length > 0)) ? <DbSearchSplit scope={area} onJumpToArea={onJumpToArea} onOpenRoute={onOpenRoute} C={C} endRef={listEndRef} /> : null;
   const phoneSearch = !wide && !!searchEl;
+  // On a crag or wall -- and while a crag, peak or wall is still finding out whether it has walls, so its loading
+  // line is drawn where the climbs will be -- the climbs list is the card under the Route finder row.
+  const listUp = isLeaf || (!Array.isArray(children) && formation);
   const section = (el: ReactNode) => <div style={areaSheet(C)}><div style={{ marginTop: -1 }}>{el}</div></div>;
-  const main = (
-    <div style={{ minWidth: 0 }}>
-      {/* The area's box IS the Climbs tab's header once you are in an area: App's generic "Climbs"
-          box is drawn only on the picker (rootHeader), so Florida heads Florida. */}
-      <ScreenHero C={C} title={area.name} right={area.area_type !== "country" && area.area_type !== "state" ? (
-          <button onClick={onToggleSave} aria-label={booked ? "Remove from Saved" : area.area_type === "peak" ? "Save this peak" : "Save this area"} style={{ flexShrink: 0, display: "flex", alignItems: "center", gap: 5, height: 34, padding: "0 12px", background: booked ? C.amber : "rgba(255,255,255,0.08)", border: "1px solid " + (booked ? C.amber : C.border), borderRadius: 9, fontSize: 12, fontWeight: 800, color: booked ? "#1a1200" : C.text, cursor: "pointer", lineHeight: 1, whiteSpace: "nowrap" }}>{booked ? "Saved" : area.area_type === "peak" ? "Save peak" : "Save area"}</button>
-        ) : null}>
-        {/* Two columns: the facts on the left and the Fire map button on the right. The facts are ONE line now --
-            region, elevation, rock, walk-in (the area facts a visit needs first) -- with the in-season pill. */}
-        <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-          <div style={{ flex: 1, minWidth: 0 }}>
-            <div style={{ marginTop: 6, marginBottom: 4, display: "flex", gap: 6, flexWrap: "wrap", alignItems: "center" }}>
-              <Pill label={ATYPE[area.area_type] || "Area"} color={C.blue} bg={C.blueBg} sm />
-              {inSeason != null ? <Pill label={inSeason ? "In season" : "Off season"} color={inSeason ? C.green : C.textMuted} bg={inSeason ? C.greenBg : "rgba(255,255,255,0.06)"} sm /> : null}
-            </div>
-            {metaParts.length ? <div style={{ fontSize: 12, color: C.textSub }}>{metaParts.join(" · ")}</div> : null}
-            {parentPeak ? <div style={{ fontSize: 12, color: C.textMuted, marginTop: 3 }}>{"Parent peak — " + parentPeak}</div> : null}
-            {area.coords_approx ? <div style={{ fontSize: 11.5, color: C.amber, marginTop: 4, lineHeight: 1.45 }}>Coordinates are approximate — the map pin, any distance shown, and the Directions link are rough.</div> : null}
-            {chips.length ? <div style={{ display: "flex", gap: 6, flexWrap: "wrap", marginTop: 7 }}>{chips.map((t, i) => <span key={i} style={{ fontSize: 11.5, fontWeight: 600, color: C.text, background: "rgba(255,255,255,0.12)", border: "1px solid " + C.border, borderRadius: 7, padding: "3px 9px" }}>{t}</span>)}</div> : null}
-            <div style={{ fontSize: 13, color: C.blue, marginTop: 7 }}>{children && children.length ? children.length + " " + noun + " · " + area.route_count.toLocaleString() + " climb" + (area.route_count !== 1 ? "s" : "") : area.route_count.toLocaleString() + " climb" + (area.route_count !== 1 ? "s" : "")}</div>
-          </div>
-          {/* The Fire map entry, on the area it opens focused on. Not drawn on a country or state page (owner,
-              2026-10-24): far too broad a place to ask "is anything burning near here?". Sized like the Save area
-              button above it (34px tall, 12px text; owner, 2026-11-14) — it was a 44px button that outweighed the page. */}
-          {onFireMap && area.area_type !== "country" && area.area_type !== "state" ? (
-            <button onClick={() => onFireMap(area)} aria-label={"Fire map — active wildfires and red-flag warnings near " + area.name} style={{ flexShrink: 0, display: "inline-flex", alignItems: "center", gap: 5, height: 34, background: C.redBg, border: "1px solid " + C.red + "66", color: C.red, borderRadius: 9, padding: "0 12px", fontSize: 12, fontWeight: 800, cursor: "pointer", lineHeight: 1, whiteSpace: "nowrap" }}>
-              <svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2c1 3.5 5 6 5 11a5 5 0 0 1-10 0c0-2.5 1.5-4 2.5-5 .3 1.7 1.2 2.7 2.5 3 0-3.5-1-6.5 0-9z" /></svg>
-              {"Fire map"}
-            </button>
-          ) : null}
-        </div>
-      </ScreenHero>
-
-      {formation && areaEdits.data && areaEdits.data.length ? <PendingAreaEdits rows={areaEdits.data} C={C} myId={myId} /> : null}
-
-      {/* EVERY SECTION ITS OWN CARD, with space between (owner, 2026-11-18: "every section needs to be it's own
-          with spacing"): the grade spread, the search, the description, the Route finder row, the sub-areas, the
-          classics, the photos and Getting there were one bordered sheet split by hairlines. Each is drawn by
-          section(), which clips the 1px top rule a section draws to divide itself inside a shared sheet. */}
-      {chartable ? section(<GradeSpreadDisclosure first stats={stats.data} loading={stats.isLoading} error={stats.error} C={C} discOptions={discOptions} onDisc={onFinder} onGrade={onGrade} />) : null}
-      {phoneSearch ? section(<div style={{ padding: "12px 14px 4px" }}>{searchEl}</div>) : null}
-      {showAbout ? section(<AboutCard area={area} C={C} onEdit={editOn} flat first />) : null}
-      {section(<AreaActionRow C={C} first routeCount={area.route_count} onFinder={() => onFinder()} inlineDiscs={wide && chartable ? inlineDiscs : []} myGrades={myGrades} onFindInline={fl => onFinder(fl)} objectivesHere={objectivesHere} onObjectives={onObjectives} onNear={onNear} />)}
-      {/* DESKTOP: the area/route search sits directly under the Route finder · Objectives · Map row (owner,
-          2026-11-14), not below the facts and Partners cards. The phone draws it under the grade spread above. */}
-      {wide && searchEl ? section(<div style={{ padding: "12px 14px 4px" }}>{searchEl}</div>) : null}
-      {!leftEl && childRows ? section(<div style={{ padding: "12px 14px 4px" }}>{childList("section")}</div>) : null}
-      {classicsEl ? section(classicsEl) : null}
-      {area.area_type !== "world" && area.area_type !== "country" ? section(<AreaPhotoStrip area={{ id: String(area.id), name: area.name }} C={C} signedIn={!!(myId || uid)} onSignIn={onSignIn} onOpenRoute={r => onOpenRoute(r as unknown as RouteRowRoute)} />) : null}
-      {/* GETTING THERE -- the one drive control on the area page: the words first, then the map. ONLY where a
-          destination is actionable: "Directions to Colorado" routes you to a state centroid. A crag, peak or
-          wall has somewhere you can actually park (check:area-surfaces reads this gate). */}
-      {["crag", "peak", "wall"].includes(area.area_type) ? section(<AreaGettingThere area={area} C={C} onEdit={editOn} flat />) : null}
-
-      {formation ? <AreaFactsCard area={area} C={C} uElev={uElev} onEdit={editOn} loggedMonths={wide && logged.data ? logged.data : null} /> : null}
-      {wide ? null : partnersEl}
-
+  // THE CLIMBS LIST: the loading and error lines, the summit briefing and (on a crag or wall) the rows with their
+  // Filters and sorts. On a crag or wall it is a card right under the Route finder row (listUp, below).
+  const listBlock = (<>
       {/* Sits directly above the route rows it summarises. It renders nothing unless the routes support it. */}
       {!loading && routes && routes.length ? <SummitBriefing area={area} routes={routes} uElev={uElev} uDistMi={uDistMi} C={C} /> : null}
       {loading && <LoadingRows C={C} label="Loading…"/>}
@@ -413,12 +368,98 @@ export default function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, book
             </>
           /* Only claim the crag is empty when the load actually succeeded — otherwise a
              failed refetch reports "no routes" about a crag it never managed to read. */
-          : !error ? <div style={{ color: C.textMuted, fontSize: 12 }}>No climbs in this crag yet.</div> : null
+          : !error ? <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 10, flexWrap: "wrap" }}><span style={{ color: C.textMuted, fontSize: 12.5 }}>No climbs here yet.</span>{onAddClimb ? <button onClick={() => onAddClimb(area)} style={{ ...HEAD_BTN, background: C.blueBg, border: "1px solid " + C.blue, color: C.text }}>Add a climb</button> : null}</div> : null
       )}
+  </>);
+  const main = (
+    <div style={{ minWidth: 0 }}>
+      {/* The area's box IS the Climbs tab's header once you are in an area: App's generic "Climbs"
+          box is drawn only on the picker (rootHeader), so Florida heads Florida. */}
+      {/* ONE HEADER CARD (owner, 2026-11-18: "combine this ... so that the name of the area is the top section"): the
+          name and Save, the path above the area (it was a separate bar over this box, ending on the same name), the
+          pills, ONE facts line, and a foot row -- the browser's Back (the phone's top bar takes it over, lib/pageBack.js)
+          on the left, Area tree and Fire map on the right. */}
+      <ScreenHero C={C} title={area.name} right={area.area_type !== "country" && area.area_type !== "state" ? (
+          <button onClick={onToggleSave} aria-label={booked ? "Remove from Saved" : area.area_type === "peak" ? "Save this peak" : "Save this area"} style={{ ...HEAD_BTN, background: booked ? C.amber : "rgba(255,255,255,0.08)", border: "1px solid " + (booked ? C.amber : C.border), color: booked ? "#1a1200" : C.text }}>{booked ? "Saved" : area.area_type === "peak" ? "Save peak" : "Save area"}</button>
+        ) : null}>
+        {headerNav ? <div style={{ marginTop: 6 }}>{headerNav.path}</div> : null}
+        <div style={{ marginTop: 10, display: "flex", gap: 6, flexWrap: "wrap", alignItems: "center" }}>
+          <Pill label={ATYPE[area.area_type] || "Area"} color={C.blue} bg={C.blueBg} sm />
+          {inSeason != null ? <Pill label={inSeason ? "In season" : "Off season"} color={inSeason ? C.green : C.textMuted} bg={inSeason ? C.greenBg : "rgba(255,255,255,0.06)"} sm /> : null}
+          {chips.map((t, i) => <span key={i} style={{ fontSize: 11.5, fontWeight: 600, color: C.text, background: "rgba(255,255,255,0.12)", border: "1px solid " + C.border, borderRadius: 7, padding: "3px 9px" }}>{t}</span>)}
+        </div>
+        <div style={{ fontSize: 13, color: C.textSub, marginTop: 9, lineHeight: 1.45 }}>
+          <span style={{ color: C.text, fontWeight: 800 }}>{children && children.length ? children.length + " " + noun + " · " + area.route_count.toLocaleString() + " climb" + (area.route_count !== 1 ? "s" : "") : area.route_count.toLocaleString() + " climb" + (area.route_count !== 1 ? "s" : "")}</span>
+          {metaParts.length ? " · " + metaParts.join(" · ") : null}
+        </div>
+        {parentPeak ? <div style={{ fontSize: 12, color: C.textMuted, marginTop: 3 }}>{"Parent peak — " + parentPeak}</div> : null}
+        {area.coords_approx ? <div style={{ fontSize: 11.5, color: C.amber, marginTop: 4, lineHeight: 1.45 }}>Coordinates are approximate — the map pin, any distance shown, and the Directions link are rough.</div> : null}
+        {/* The Fire map entry, on the area it opens focused on. Not drawn on a country or state page (owner,
+            2026-10-24): far too broad a place to ask "is anything burning near here?". */}
+        {(() => {
+          const fire = onFireMap && area.area_type !== "country" && area.area_type !== "state" ? (
+            <button onClick={() => onFireMap(area)} aria-label={"Fire map — active wildfires and red-flag warnings near " + area.name} style={{ ...HEAD_BTN, background: C.redBg, border: "1px solid " + C.red + "66", color: C.red }}>
+              <svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2c1 3.5 5 6 5 11a5 5 0 0 1-10 0c0-2.5 1.5-4 2.5-5 .3 1.7 1.2 2.7 2.5 3 0-3.5-1-6.5 0-9z" /></svg>
+              {"Fire map"}
+            </button>
+          ) : null;
+          // AREA TREE is a labelled button (owner, 2026-11-14: the tree was "difficult to find ... make that more clear that is a button").
+          const tree = headerNav ? (
+            <button onClick={onAllAreas} aria-haspopup="dialog" style={{ ...HEAD_BTN, background: "rgba(255,255,255,0.08)", border: "1px solid " + C.blue, color: C.text }}>
+              <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="6" height="5" rx="1" /><rect x="15" y="10" width="6" height="5" rx="1" /><rect x="15" y="17" width="6" height="5" rx="1" /><path d="M6 8v11h9M6 12.5h9" /></svg>
+              {"Area tree"}
+            </button>
+          ) : null;
+          if (!fire && !tree && !headerNav) return null;
+          return (
+            <div style={{ display: "flex", alignItems: "center", gap: 8, marginTop: 12, paddingTop: 12, borderTop: "1px solid " + C.border }}>
+              {headerNav ? headerNav.back : null}
+              <div style={{ marginLeft: "auto", display: "flex", gap: 8, flexShrink: 0 }}>{tree}{fire}</div>
+            </div>
+          );
+        })()}
+      </ScreenHero>
 
-      {/* "Don't see a climb? Add it" sits DIRECTLY UNDER the areas/climbs list (owner, 2026-10-15 and again
-          2026-10-23): a climber who has just read to the end of the list and not found their climb is the one
-          who adds it. It is NOT gated on the list rendering — an empty crag is exactly where a missing route is likeliest. */}
+      {formation && areaEdits.data && areaEdits.data.length ? <PendingAreaEdits rows={areaEdits.data} C={C} myId={myId} /> : null}
+
+      {/* EVERY SECTION ITS OWN CARD, with space between (owner, 2026-11-18: "every section needs to be it's own
+          with spacing"): the grade spread, the search, the description, the Route finder row, the sub-areas, the
+          classics, the photos and Getting there were one bordered sheet split by hairlines. Each is drawn by
+          section(), which clips the 1px top rule a section draws to divide itself inside a shared sheet. */}
+      {/* A CRAG OR WALL reads climb first (owner, 2026-11-18: "the list of actual climbs is too far down"): the Route
+          finder · Objectives · Map row, the climbs, the description, Climbs here by type, the classics. The chart is
+          left off under 3 climbs and the classics at 5 or fewer: there both only repeat the list right above them. */}
+      {listUp ? <>
+        {section(<AreaActionRow C={C} first routeCount={area.route_count} onFinder={() => onFinder()} inlineDiscs={wide && chartable ? inlineDiscs : []} myGrades={myGrades} onFindInline={fl => onFinder(fl)} objectivesHere={objectivesHere} onObjectives={onObjectives} onNear={onNear} />)}
+        {section(<div style={{ padding: "4px 14px 12px" }}>{listBlock}</div>)}
+        {showAbout ? section(<AboutCard area={area} C={C} onEdit={editOn} flat first />) : null}
+        {chartable && !(isLeaf && routes && routes.length < 3) ? section(<GradeSpreadDisclosure first stats={stats.data} loading={stats.isLoading} error={stats.error} C={C} discOptions={discOptions} onDisc={onFinder} onGrade={onGrade} />) : null}
+        {classicsEl && !(isLeaf && routes && routes.length <= 5) ? section(classicsEl) : null}
+      </> : <>
+        {chartable ? section(<GradeSpreadDisclosure first stats={stats.data} loading={stats.isLoading} error={stats.error} C={C} discOptions={discOptions} onDisc={onFinder} onGrade={onGrade} />) : null}
+        {phoneSearch ? section(<div style={{ padding: "12px 14px 4px" }}>{searchEl}</div>) : null}
+        {showAbout ? section(<AboutCard area={area} C={C} onEdit={editOn} flat first />) : null}
+        {section(<AreaActionRow C={C} first routeCount={area.route_count} onFinder={() => onFinder()} inlineDiscs={wide && chartable ? inlineDiscs : []} myGrades={myGrades} onFindInline={fl => onFinder(fl)} objectivesHere={objectivesHere} onObjectives={onObjectives} onNear={onNear} />)}
+        {/* DESKTOP: the area/route search sits directly under the Route finder · Objectives · Map row (owner,
+            2026-11-14), not below the facts and Partners cards. The phone draws it under the grade spread above. */}
+        {wide && searchEl ? section(<div style={{ padding: "12px 14px 4px" }}>{searchEl}</div>) : null}
+        {!leftEl && childRows ? section(<div style={{ padding: "12px 14px 4px" }}>{childList("section")}</div>) : null}
+        {classicsEl ? section(classicsEl) : null}
+      </>}
+      {area.area_type !== "world" && area.area_type !== "country" ? section(<AreaPhotoStrip area={{ id: String(area.id), name: area.name }} C={C} signedIn={!!(myId || uid)} onSignIn={onSignIn} onOpenRoute={r => onOpenRoute(r as unknown as RouteRowRoute)} />) : null}
+      {/* GETTING THERE -- the one drive control on the area page: the words first, then the map. ONLY where a
+          destination is actionable: "Directions to Colorado" routes you to a state centroid. A crag, peak or
+          wall has somewhere you can actually park (check:area-surfaces reads this gate). */}
+      {["crag", "peak", "wall"].includes(area.area_type) ? section(<AreaGettingThere area={area} C={C} onEdit={editOn} flat />) : null}
+
+      {formation ? <AreaFactsCard area={area} C={C} uElev={uElev} onEdit={editOn} loggedMonths={wide && logged.data ? logged.data : null} /> : null}
+      {wide ? null : partnersEl}
+
+      {listUp ? null : listBlock}
+
+      {/* "Don't see a climb? Add it" stays at the FOOT of the page (owner, 2026-11-18), though a crag's climbs list
+          now sits near the top; an empty crag's list card carries its own "Add a climb". It used to sit directly
+          under the list (2026-10-15, 2026-10-23). It is NOT gated on the list rendering — an empty crag is exactly where a missing route is likeliest. */}
       <div ref={listEndRef} />
       {/* DESKTOP: ONE ROW, NOT A STACK (owner 2026-11-05). On a monitor the three prompts sat one under another
           as label-wide buttons down the left of the column; side by side, each is its question with its button
