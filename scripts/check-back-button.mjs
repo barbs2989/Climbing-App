@@ -30,6 +30,9 @@ for (const f of files) {
   scanned++;
   ok(!/useSwipeTabs|pageSwipe/.test(read(f)), f + " does not change the page on a sideways swipe");
 }
+// The browser's own sideways "back a page" drag is off too: without this rule a right drag on Home leaves the app
+// (measured 2026-11-18 with scripts/oneoff/probe-no-page-swipe.mjs, which is the proof; this only keeps the rule).
+ok(/html, body, #appscroll { overscroll-behavior-x: none; touch-action: pan-y pinch-zoom; }/.test(read("index.html")), "index.html keeps the page to up-and-down panning (touch-action: pan-y pinch-zoom), so no sideways drag goes back a page");
 ok(scanned > 50, "the no-swipe scan read the app's files (" + scanned + ")");
 
 if (bad) { console.error(bad + " back-button check(s) failed."); process.exit(1); }
