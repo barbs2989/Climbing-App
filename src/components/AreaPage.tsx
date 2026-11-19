@@ -219,9 +219,11 @@ export default function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, book
   const [leftEl, setLeftEl] = useState<HTMLElement | null>(null);
   useEffect(() => { setLeftEl(wide && full ? document.getElementById("cm-left-panel") : null); }, [wide, full]);
   const logged: AreaPageQuery<number[]> = useAreaLoggedMonths(wide && formation ? area.id : null);
-  const { profile } = useContext(ClimberCtx);
-  const prof = (profile || null) as { sportGrade?: string | null; tradGrade?: string | null; boulderGrade?: string | null } | null;
-  const myGrades = prof ? { sport: prof.sportGrade || null, trad: prof.tradGrade || null, boulder: prof.boulderGrade || null } : null;
+  // The grades the climber typed on their profile (ClimberCtx.stated). This read `profile` until 2026-11-19, which is
+  // the LOGBOOK's summary and carries no stated grade, so the finder's "Up to your grade" preset never fired.
+  const { stated } = useContext(ClimberCtx);
+  const said = (g?: string | null) => (g && g !== "N/A" ? g : null);
+  const myGrades = stated ? { sport: said(stated.sport), trad: said(stated.trad), boulder: said(stated.bouldering) } : null;
   const discOptions = DISCIPLINES.map(d => d[0]).filter(Boolean);
   const inlineDiscs: string[] = stats.data && Array.isArray(stats.data.by_disc) ? stats.data.by_disc.filter((d: { disc: string; n: number }) => d && Number(d.n) > 0 && discOptions.includes(d.disc)).map((d: { disc: string }) => d.disc) : [];
   // The mini grade chart on each child's card (item 13, 2026-11-04) is a website thing: one call for
@@ -310,6 +312,11 @@ export default function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, book
   // TYPE, which is known on the first paint, not by whether it has children, which is not: deciding by children
   // drew a crag like Jackson Falls climb-first while it loaded and then reordered it (2026-11-18).
   const listUp = formation || isLeaf;
+  /* SUGGESTED CLIMBS sits directly UNDER CLASSIC CLIMBS (owner, 2026-11-19: "Move suggested climbs dropdown box under
+     classic climbs"), in both page orders, and in that slot on a page that draws no classics. It was in the page's
+     tail, under the photos, Getting there, Partners and the "Add it" prompts. Its own box, not a section(): it is a
+     dropdown that draws nothing at all when it has nothing to suggest, and a section would leave an empty card. */
+  const suggestedEl = <DbSuggestedClimbs area={area} onOpen={onOpenRoute} C={C} />;
   const section = (el: ReactNode) => <div style={areaSheet(C)}><div style={{ marginTop: -1 }}>{el}</div></div>;
   // AREA FACTS sits directly under the description (owner, 2026-11-18: "area facts should go under description"),
   // in both page orders. It was below the photos and Getting there.
@@ -455,6 +462,7 @@ export default function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, book
         {factsEl}
         {chartable && !(isLeaf && routes && routes.length < 3) ? section(<GradeSpreadDisclosure first stats={stats.data} loading={stats.isLoading} error={stats.error} C={C} discOptions={discOptions} onDisc={onFinder} onGrade={onGrade} />) : null}
         {classicsEl && !(isLeaf && routes && routes.length <= 5) ? section(classicsEl) : null}
+        {suggestedEl}
       </> : <>
         {chartable ? section(<GradeSpreadDisclosure first stats={stats.data} loading={stats.isLoading} error={stats.error} C={C} discOptions={discOptions} onDisc={onFinder} onGrade={onGrade} />) : null}
         {phoneSearch ? section(<div style={{ padding: "12px 14px 4px" }}>{searchEl}</div>) : null}
@@ -466,6 +474,7 @@ export default function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, book
         {wide && searchEl ? section(<div style={{ padding: "12px 14px 4px" }}>{searchEl}</div>) : null}
         {!leftEl && childRows ? section(<div style={{ padding: "12px 14px 4px" }}>{childList("section")}</div>) : null}
         {classicsEl ? section(classicsEl) : null}
+        {suggestedEl}
       </>}
       {area.area_type !== "world" && area.area_type !== "country" ? section(<AreaPhotoStrip area={{ id: String(area.id), name: area.name }} C={C} signedIn={!!(myId || uid)} onSignIn={onSignIn} onOpenRoute={r => onOpenRoute(r as unknown as RouteRowRoute)} />) : null}
       {/* GETTING THERE -- the one drive control on the area page: the words first, then the map. ONLY where a
@@ -515,10 +524,10 @@ export default function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, book
       </>}
       {wrongOpen ? <AreaWrongSpot area={area} C={C} onClose={() => setWrongOpen(false)} onSubmit={(note: string, place: string) => submitAreaPlacementClaim(area.id, note, place)} onSignIn={onSignIn} /> : null}
 
-      {/* Tail order is the owner's (2026-10-15): suggested climbs, then nearby peaks, then Top contributors LAST —
+      {/* Tail order is the owner's (2026-10-15): nearby peaks, then Top contributors LAST (Suggested climbs sat
+          here until 2026-11-19; it is under Classic climbs now, suggestedEl) —
           App mounts the area Discussion directly after this component, so Discussion ends the page. */}
       <AreaLatestReports area={area} onOpenRoute={onOpenRoute} C={C} />
-      <DbSuggestedClimbs area={area} onOpen={onOpenRoute} C={C} />
 
       <NearbyPeaks area={area} onJumpToArea={onJumpToArea} C={C} uDistMi={uDistMi} />
 
