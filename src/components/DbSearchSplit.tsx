@@ -1,5 +1,6 @@
 import { useState, useMemo, useEffect } from "react";
 import { usePinnedBar } from "../../lib/usePinnedBar.js";
+import { useWideScreen } from "../../lib/wideLayout.js";
 import { useAreaSearch, useSubtreeRoutes, useAreaNamesByIds, areaSearchTotal } from "../../lib/db";
 import { clickable } from "../../lib/clickable";
 import LoadingRows from "./LoadingRows.tsx";
@@ -36,10 +37,15 @@ export interface DbSearchSplitProps {
 // areas and routes ... sticky to the top of the view as they scroll down"), as the route finder's
 // has since 2026-10-21 — and lets go once the list (`endRef`, a marker AreaPage puts after it) has
 // scrolled past, so it does not ride over the rest of the page.
+// ON THE WEBSITE IT DOES NOT PIN (owner, 2026-11-18: "on desktop only ... we don't need the areas and routes
+// search bar to be sticky since we already have it on the top of the page always"): the fixed header's own
+// search is on screen at every scroll position there. The phone, whose header search scrolls away, keeps the pin.
 export default function DbSearchSplit({ scope, onJumpToArea, onOpenRoute, C, onModeChange, endRef }: DbSearchSplitProps) {
   const [mode, setMode] = useState("areas");
   const [q, setQ] = useState("");
-  const { wrapRef, barRef, pin } = usePinnedBar(endRef);
+  const wide = useWideScreen();
+  const { wrapRef, barRef, pin: pinned } = usePinnedBar(endRef);
+  const pin = wide ? null : pinned;
   const qq = q.trim();
   const { data: areaHits, isLoading: la, error: ea, isPlaceholderData: ha } = useAreaSearch(scope.id, qq);
   // Asked only for typed words on the Routes tab: the list shows nothing else. With no words it read a whole
