@@ -8,7 +8,6 @@ import type { C as Palette } from "../../ClimbMatchCore.jsx";
 import { childSortOptions, sortChildren, childSortFigure, getChildSort, setChildSort, CHILD_SORT_DEFAULT } from "../../lib/areaChildSort.js";
 import type { ChildDiscCounts, ChildSortPoint } from "../../lib/areaChildSort.js";
 import { DISC_LABELS } from "../../lib/discLabels.js";
-import { DISC_COLORS } from "../../lib/disciplines";
 
 export interface AreaChildRow { id: string | number; name: string; route_count: number; path?: string | null; [column: string]: unknown }
 export interface AreaChildrenListProps<T extends AreaChildRow> {
@@ -94,19 +93,27 @@ export default function AreaChildrenList<T extends AreaChildRow>({ rows: given, 
     const n = a.route_count;
     return n.toLocaleString() + (side ? "" : " climb" + (n !== 1 ? "s" : ""));
   };
-  // What kind of climbing is in a child, largest first, as a muted line under its name (phone), so a climber
-  // can tell a boulder field from a sport crag before tapping. From the counts when they loaded, else the
-  // row's own disciplines[] list.
+  // What kind of climbing is in a child, as a muted line of words under its name (phone), so a climber can
+  // tell a boulder field from a sport crag before tapping: "Alpine 820 · Trad 310 · Sport 110", largest
+  // first, each with its own count. No colour dots (owner, 2026-11-18: "the discipline dots can be removed
+  // ... we need a better ui for listing the disciplines") -- a dot said a discipline was present, never how
+  // much of it. A child of one discipline reads the word alone, since the count above is already that number;
+  // under a "Most sport" sort the sorted discipline is left out, since the figure above is its count. Before
+  // the counts load (or when that read fails) the row's own disciplines[] list gives the words, no numbers.
   const discLine = (a: T) => {
     const c = discCounts ? discCounts[String(a.id)] : null;
-    const ds = c ? Object.keys(c).filter(d => c[d] > 0 && d in DISC_LABELS).sort((x, y) => c[y] - c[x] || DISC_ROW_ORDER.indexOf(x) - DISC_ROW_ORDER.indexOf(y))
+    const all = c ? Object.keys(c).filter(d => c[d] > 0 && d in DISC_LABELS).sort((x, y) => c[y] - c[x] || DISC_ROW_ORDER.indexOf(x) - DISC_ROW_ORDER.indexOf(y))
       : (Array.isArray(a.disciplines) ? (a.disciplines as string[]) : []).filter(d => d in DISC_LABELS).sort((x, y) => DISC_ROW_ORDER.indexOf(x) - DISC_ROW_ORDER.indexOf(y));
+    const ds = disc ? all.filter(d => d !== key.slice(5)) : all;
     if (!ds.length) return null;
-    const shown = ds.slice(0, 3); // three fit one line at 390px beside the count; the rest fold into "+N more"
-    return <span style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: "2px 10px", fontSize: 11.5, color: C.textMuted, fontWeight: 600, lineHeight: 1.35 }}>
-      {shown.map(d => <span key={d} style={{ display: "inline-flex", alignItems: "center", gap: 4 }}><span aria-hidden="true" style={{ width: 7, height: 7, borderRadius: 4, background: (DISC_COLORS as Record<string, string>)[d] || C.blue }} />{(DISC_LABELS as Record<string, string>)[d]}</span>)}
-      {ds.length > shown.length ? <span>{"+" + (ds.length - shown.length) + " more"}</span> : null}
-    </span>;
+    const shown = ds.slice(0, 3); // three fit one line at 390px; the rest fold into "+N more"
+    const withN = all.length > 1;
+    // A label and its count never split across lines (no-break space); the line wraps only AFTER a "·", so no
+    // line starts with one. It is drawn under the name-and-button row, at the row's full width: beside the
+    // View area button three counts wrapped on most rows at 390px.
+    const parts = shown.map(d => ((DISC_LABELS as Record<string, string>)[d] + (c && withN ? " " + c[d].toLocaleString() : "")).replace(/ /g, "\u00a0"));
+    if (ds.length > shown.length) parts.push("+" + (ds.length - shown.length) + "\u00a0more");
+    return <span style={{ fontSize: 12, color: C.textMuted, fontWeight: 600, lineHeight: 1.4, fontVariantNumeric: "tabular-nums" }}>{parts.join("\u00a0· ")}</span>;
   };
   return <div>
     {side && map ? <div style={{ position: "relative", marginBottom: 10 }}>
@@ -131,11 +138,11 @@ export default function AreaChildrenList<T extends AreaChildRow>({ rows: given, 
             <span style={{ flex: 1, minWidth: 0, display: "flex", flexDirection: "column", gap: 3 }}>
               <span style={{ fontSize: side ? 13 : 15, fontWeight: 700, color: side ? C.blue : C.text, overflowWrap: "anywhere", lineHeight: 1.3 }}>{a.name}</span>
               {side ? null : <span style={{ fontSize: 12, color: disc ? C.text : C.textMuted, fontWeight: disc ? 700 : 600, fontVariantNumeric: "tabular-nums" }}>{count(a)}</span>}
-              {dl}
             </span>
             {badge(a.id)}
             {side ? <span style={{ flexShrink: 0, fontSize: 12, color: disc ? C.text : C.textMuted, fontWeight: disc ? 700 : 600, fontVariantNumeric: "tabular-nums" }}>{count(a)}</span> : <ViewAreaPill C={C} />}
           </div>
+          {dl}
           {g && g.length ? <WallGradeBars rows={g} name={a.name} total={a.route_count} C={C} /> : null}
         </div>;
       })}
