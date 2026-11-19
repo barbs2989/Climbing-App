@@ -1,4 +1,4 @@
--- 0464 — The Black Wall (Mt Blue Sky, CO) stays ALPINE: 0462's 11 Black Wall rows go back.
+-- 0465 — The Black Wall (Mt Blue Sky, CO) stays ALPINE: 0462's 11 Black Wall rows go back.
 --
 -- 0462 (crag pass 3) moved 11 Black Wall routes from alpine to trad on a stated 40-minute walk from Summit Lake. The
 -- owner's review (2026-11-18: "do what research says") checked them against the pass's own rule, which files glacier or
