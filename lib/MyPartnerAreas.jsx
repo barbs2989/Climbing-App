@@ -32,6 +32,8 @@ import ActionIcon from "../src/components/ActionIcon.tsx";
 const TYPE_LABEL = { state: "State", region: "Region", range: "Range", canyon: "Canyon", crag: "Crag", wall: "Wall", peak: "Peak", boulder: "Boulder", sector: "Sector" };
 // How many search hits the box shows; `total` says how many matched, so a cut is never silent.
 const HIT_LIM = 30;
+// A long list of your own listings folds to this many (owner, 2026-11-18): 14 of them put the area finder a screen down.
+const LIST_FOLD = 4;
 const NO_LISTING = new Set(["world", "country"]);
 // What a climber can want at a place: crag types at a crag, the alpine family at a peak (0456 allows both).
 const discsFor = (areaType) => areaType === "peak" ? ALPINE_COND_DISCIPLINES : CRAG_CATS;
@@ -81,6 +83,7 @@ export default function MyPartnerAreas({ uid, listings, listingsError, prefill, 
   const leaveDraft = () => { if (direct) onClose(); else setDraft(null); };
   const [draft, setDraft] = useState(null); // {areaId,name,areaType,parentName, disciplines[], freeFrom, freeTo, note, pick}
   const [q, setQ] = useState("");
+  const [allListings, setAllListings] = useState(false); // more than LIST_FOLD + 1 listings: the first LIST_FOLD until "Show all N" is opened
   const [finderChain, setFinderChain] = useState([]); // where the area finder is; kept here so it survives the listing form
   const [busy, setBusy] = useState(false);
   // The whole catalog, every state: the same search (and spelling rules) as Add a climb's area picker.
@@ -140,6 +143,8 @@ export default function MyPartnerAreas({ uid, listings, listingsError, prefill, 
   }
 
   const listingsN = (listings || []).length;
+  const foldable = listingsN > LIST_FOLD + 1, folded = foldable && !allListings; // 5 listings show whole: a row that reveals one row is not worth a tap
+  const hiddenPast = folded ? (listings || []).slice(LIST_FOLD).filter((l) => l.freeTo && l.freeTo < today).length : 0; // an ended window is flagged on its card; say so when the card is folded away
   const editing = draft && listed.has(draft.areaId);
   const title = draft ? (editing ? "Edit listing" : "List me here") : "Listed areas";
   return createPortal(<div onKeyDown={(e) => { if (e.key === "Escape") { if (draft) leaveDraft(); else onClose(); } }} tabIndex={-1} role="dialog" aria-label="My listed areas" aria-modal="true" style={{ position: "fixed", inset: 0, background: C.bg, zIndex: 1200, overflowY: "auto", overscrollBehavior: "contain", maxWidth: 520, margin: "0 auto", boxSizing: "border-box" }}>
@@ -187,7 +192,7 @@ export default function MyPartnerAreas({ uid, listings, listingsError, prefill, 
           {/* YOUR LISTINGS COME FIRST (owner, 2026-11-18): what you came to see or change sits right under the search box; the suggestions and the open-ended area finder follow it, so a long state list never pushes your own listings off the screen. */}
           <SL>{listingsN ? "Listed at " + listingsN + " area" + (listingsN === 1 ? "" : "s") : "Your listings"}</SL>
           {listingsError ? <div style={{ fontSize: 12.5, color: C.amber, marginBottom: 10 }}>Couldn’t load your listed areas — try again in a moment.</div> : null}
-          {listingsN ? (listings || []).map((l) => { const past = l.freeTo && l.freeTo < today; return <div key={l.areaId} style={{ ...card, display: "flex", alignItems: "center", gap: 10, padding: "4px 8px 4px 4px", marginBottom: 8 }}>
+          {listingsN ? (listings || []).slice(0, folded ? LIST_FOLD : listingsN).map((l) => { const past = l.freeTo && l.freeTo < today; return <div key={l.areaId} style={{ ...card, display: "flex", alignItems: "center", gap: 10, padding: "4px 8px 4px 4px", marginBottom: 8 }}>
             <button onClick={() => startEdit(l)} aria-label={"Edit " + l.name} style={{ flex: 1, minWidth: 0, textAlign: "left", background: "none", border: "none", padding: "8px 10px", cursor: "pointer", color: C.text }}>
               <span style={{ display: "block", fontSize: 14.5, fontWeight: 700 }}>{l.name}<span style={{ fontSize: 11.5, fontWeight: 700, color: C.textMuted, marginLeft: 7 }}>{TYPE_LABEL[l.areaType] || ""}</span></span>
               <span style={{ display: "block", fontSize: 12.5, color: C.textSub, marginTop: 2 }}>{(l.disciplines && l.disciplines.length ? l.disciplines.map((d) => discLabel(d)).join(", ") : l.areaType === "peak" ? "Any discipline" : "Any crag type") + " · "}<span style={{ color: past ? C.amber : C.textSub }}>{past ? "Window ended " + fmtDay(l.freeTo) + tx(" — tap to update") : windowText(l)}</span></span>
@@ -195,6 +200,7 @@ export default function MyPartnerAreas({ uid, listings, listingsError, prefill, 
             </button>
             <button onClick={() => remove(l)} aria-label={"Remove " + l.name} style={POP_REMOVE}>✕</button>
           </div>; }) : !listingsError ? <div style={{ fontSize: 12.5, color: C.textMuted, lineHeight: 1.5, padding: "12px 14px", border: "1px dashed " + C.border, borderRadius: 12 }}>You’re not listed anywhere yet. Search above or browse below{suggestions.length ? tx(", or tap one of the areas from your climbs") : ""}, or use “List me here” on any area page.</div> : null}
+          {foldable ? <button type="button" aria-expanded={!folded} onClick={() => setAllListings(folded)} style={{ width: "100%", minHeight: 44, padding: "10px 12px", borderRadius: 12, border: "1px solid " + C.border, background: C.surface, color: C.blue, fontSize: 13.5, fontWeight: 700, cursor: "pointer", textAlign: "left" }}>{folded ? "Show all " + listingsN + (hiddenPast ? " · " + hiddenPast + " window" + (hiddenPast === 1 ? "" : "s") + " ended" : "") : "Show fewer"}</button> : null}
           <div aria-hidden="true" style={{ height: 10 }} />
           {!q.trim() && suggestions.length ? <div style={{ marginBottom: 16 }}>
             <SL>From your climbs</SL>

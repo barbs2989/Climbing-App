@@ -137,6 +137,24 @@ try {
   await dlg.locator('button[aria-label="Close"]').click(); await p.waitForTimeout(2500);
   ok(/climb\.$/.test((await box.innerText()).split("\n")[0].trim()), "the box drops the count again");
 
+  // 3b. Six listings fold to four behind "Show all 6".
+  await box.locator("button", { hasText: /^My areas$/ }).click(); await p.waitForTimeout(2500);
+  await dlg.locator('button[aria-label="Open United States"]').click(); await p.waitForTimeout(3500);
+  await dlg.locator('button[aria-label="Open Washington"]').click(); await p.waitForTimeout(3500);
+  for (let i = 0; i < 6; i++) { await dlg.locator('button[aria-label^="List me at "]').nth(1).click(); await p.waitForTimeout(900); await dlg.locator("button", { hasText: /^List me at / }).click(); await p.waitForTimeout(3500); }
+  ok(/Listed at 6 areas/i.test(await dlg.innerText()), "listed at 6 areas");
+  const editRows = () => dlg.locator('button[aria-label^="Edit "]:not([aria-label^="Edit your listing at"])').count();
+  ok(await editRows() === 4, "six listings show the first four (" + await editRows() + ")");
+  const fold = dlg.locator("button[aria-expanded]", { hasText: /^Show all 6/ });
+  ok(await fold.count() === 1 && (await fold.boundingBox()).height >= 44, "a 44px Show all 6 row");
+  const fy = await dlg.locator("text=Browse areas").boundingBox(); note("folded: Browse areas heading at y=" + Math.round(fy.y));
+  await dlg.evaluate((el) => { el.scrollTop = 0; }); await shot(p, "9b-folded");
+  await fold.click(); await p.waitForTimeout(500);
+  ok(await editRows() === 6, "Show all 6 shows all six");
+  ok(await dlg.locator('button[aria-expanded="true"]', { hasText: /^Show fewer$/ }).count() === 1, "the row now reads Show fewer and says it is open");
+  await dlg.locator('button[aria-label="Close"]').click(); await p.waitForTimeout(2500);
+  ok(/listed at 6 places\./.test(await box.innerText()), "the box counts 6 places");
+
   // 4. Desktop.
   const d = await open(1280, 900, "desktop");
   await shot(d, "10-desktop");
