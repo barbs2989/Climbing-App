@@ -373,8 +373,8 @@ if (!writableViews) ok(`all ${views.size} view(s) are read-only to anon and auth
 // Each entry was read in full on 2026-11-14 (latest body in the migration named by the FAIL line).
 const PUBLIC_DEFINER = {
   // ── public route / area reads: aggregates or ids, no identities ──
-  area_top_contributors: "area board: contributor ids + point totals, the same numbers the public board shows",
-  user_top_contributor_areas: "profile badge: area ids/names where a contributor ranks #1 — public by design",
+  // area_top_contributors and user_top_contributor_areas left this list in 0477: the board now reads
+  // auth.uid() to leave out climbers in a block with the reader, and the badge ranks through the board.
   route_star_summary: "average stars + rater count; per-log stars only from trip_report_visibility = 'public'",
   route_field_level: "confidence level of one public route field; reads routes + contribution metadata only",
   route_field_confidence_map: "per-field confidence for a public route plus the moderator's public reason text",
