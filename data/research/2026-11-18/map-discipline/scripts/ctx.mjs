@@ -1,4 +1,3 @@
-import fs from "fs";
 const { selectAll, requireServiceKey } = await import("file:///C:/Users/nate_/dev/Climbing-App/.claude/worktrees/map-pins-per-discipline/scripts/lib/supabase-env.mjs");
 const key = requireServiceKey();
 const want = { ny_couchsachraga_peak_via_santanoni_ridge:"upper works", ny_mount_marshall_herbert_brook_herd_path:"upper works", ny_mount_redfield_uphill_brook_herd_path:"upper works", ny_panther_peak_panther_brook_herd_path:"upper works" };

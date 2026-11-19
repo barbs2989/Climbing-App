@@ -27,7 +27,7 @@ for (const r of own) {
     const c = ths.find(t => m(t, p) < 300); if (c) { c.from.push(p.from); c.names.add(p.name); } else ths.push({ ...p, from: [p.from], names: new Set([p.name]) });
   }
   if (!ths.length) continue;
-  const text = Object.entries(r).filter(([k, v]) => v != null && !/^(id|area_id|waypoints|gpx|gpx_track)$/.test(k)).map(([k, v]) => typeof v === "string" ? v : JSON.stringify(v)).join(" \n ").toLowerCase();
+  const text = Object.entries(r).filter(([k, v]) => v != null && !/^(id|area_id|waypoints|gpx|gpx_track)$/.test(k)).map(([, v]) => typeof v === "string" ? v : JSON.stringify(v)).join(" \n ").toLowerCase();
   const hit = ths.filter(t => [...t.names].some(n => { const p = phrase(n); return p.length >= 4 && toks(p).length && text.includes(p); }));
   out.push({ id: r.id, area: r.area_id, verdict: audit.find(f => f.id === r.id).verdict, storedTh: al.trailhead || null, ths: ths.map(t => ({ names: [...t.names], lat: t.lat, lng: t.lng, from: t.from })), named: hit.map(t => [...t.names][0]) });
 }
