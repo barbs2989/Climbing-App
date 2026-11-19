@@ -59,8 +59,9 @@ export interface NearMePanelProps {
   onOpenFull?: (view: NearMePanelView | null) => void;
   /** The first zoom, overriding the area type's (a view handed over from Home's map). */
   zoom0?: number | null;
-  /** Centre on the climber when location is already granted (Near me). `compact` implies it. */
-  autoLocate?: boolean;
+  /** A "Near me" tap opened the map (a new number per tap): find the climber and centre there, ASKING
+      for location if the browser has not been told yet. `compact` alone centres only when already granted. */
+  autoLocate?: number | false | null;
 }
 export interface NearMePanelView { lat: number; lng: number; zoom: number }
 const COMPACT_ROWS = 5;
@@ -278,8 +279,14 @@ export default function NearMePanel({ center0, areaType, name, onBack, onOpenAre
   // Your dot is on the map from the start when location is already allowed -- without moving the
   // map off the area you opened it on. Never asks: the button above does that.
   useEffect(() => { if (ready) me.showDot(); }, [ready]); // eslint-disable-line react-hooks/exhaustive-deps -- shows the dot once when the map becomes ready; me is a per-render hook result
-  // Compact (Home) and Near me: centre on the climber, but only when the browser says location is already granted.
-  const locateOnOpen = !!(compact || autoLocate);
+  // A NEAR ME TAP IS THE ASK (owner, 2026-11-18: "when i click near me it doesn't show climbs or areas
+  // near me"). It used to centre on the climber only when the browser said location was ALREADY
+  // granted; a phone that still had to ask (Safari answers "prompt" most days) stayed on the whole
+  // country until a second press on "Me". The tap now requests the position itself, once per tap.
+  useEffect(() => { if (ready && autoLocate) me.locate(); }, [ready, autoLocate]); // eslint-disable-line react-hooks/exhaustive-deps -- once per Near me tap, when the map is ready; me is a per-render hook result
+  // Compact (Home) is drawn on page load, with no tap behind it: centre on the climber only when the
+  // browser says location is already granted, and never ask.
+  const locateOnOpen = !!compact && !autoLocate;
   useEffect(() => {
     if (!ready || !locateOnOpen || typeof navigator === "undefined" || !navigator.permissions || !navigator.permissions.query) return;
     let live = true;
