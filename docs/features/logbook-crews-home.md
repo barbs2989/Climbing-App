@@ -25,6 +25,9 @@ Three top-level `tab` values in `ClimbMatch.jsx` (`tab==="today"`, `tab==="crew"
   (*View & share* with a write-up, *View log* without) and an edit button (*Edit report*; *Edit log* on a crag climb with no write-up, which
   opens the form at its top; *Add trip report* otherwise), and on the website's table the same two sit on a line under each climb's row (the row opens only the climb; the
   table is wider than its column, so a ninth column would be clipped off screen). The opened report shows *Edit* on your own log (`onEdit`, passed by App only for a row from `logs`).
+  **What counts as a report** is one test, `logHasReport` (`lib/logReport.js`): any report content (conditions, tags, times, notes, beta, photos, a plan, or the typed
+  write-up), not only the write-up; a style, date, rating and party size alone are a tick. "With a write-up" in this paragraph means that test, except that only a typed
+  write-up opens the form at the write-up box (a report without one opens at the top, titled *Edit your report*).
   `LogAscent` opened on an existing log outside the write-up box reads as an edit: *Edit your log*, *✓ Save changes*, and its delete is *Delete this log* when
   there is no write-up (the delete removes the whole `climb_logs` row, so a report's confirm says the logged climb goes with it; the toast is *Logged climb deleted* without a write-up).
   A **conditions-only report** has *View report* beside *Edit report* (`onViewCond`; the opened report carries `_condIdx`, an index into `condReports`, never `_idx`, which App matches against `logs`).
