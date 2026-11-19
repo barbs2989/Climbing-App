@@ -253,6 +253,25 @@ The search, the rail, the avatar menu, the footer and `DocTitle` live in `lib/De
 same `useRouteSearch` / `usePlaceSearch` the pickers use, and says so when a search fails rather than
 showing "no matches".
 
+**A new page opens at the top** (owner 2026-11-19; the exception is a control that edits one specific field, or a link to one
+spot). Three mechanisms keep it:
+- *The page.* `scrollAppTop` in `ClimbMatch.jsx` runs on `tab`, `selRoute`, `selArea`, `routeView`, `safetyCrew`, `crewView`,
+  `logbookTab`, `partnersMode`, `groupsTab` and `meTab`; `RouteDetail.jsx` does the same for its own sub-tab, and
+  `scrollAppToTop` (`lib/climbsReturn.js`) covers navigation App cannot see (the area browser, the Ranks area picker).
+- *A popup* is built fresh on every open, so it starts at its top by itself.
+- *A pane that stays mounted while its content becomes another page* is sent back by `usePaneTop(ref, dep)`
+  (`lib/usePaneTop.js`; `null` for the ref means the page): the safety views (`lib/SafetyTab.jsx`) and questionnaire steps,
+  onboarding steps, the Inbox tabs, the sign-in screen's modes (`lib/AuthModal.jsx`), the new-list steps
+  (`lib/ListsManager.jsx`), another climber in the open profile sheet (`FullProfile`) and another group in the open group page.
+  A chat thread opens at its NEWEST message instead (`_threadKey` in `ClimbMatch.jsx`).
+
+Left where they are on purpose: an edit pencil lands on its field (the route and area edit sheets, the profile editor, *Edit
+report* on a typed write-up), jump links and notification or shared links land on their target, coming back to Climbs restores
+where you were (`restoreAppScroll`), closing a popup returns the page behind to where it was, and filters or toggles on one page
+(the Saved chips, the Logbook's Table / Cards, the partner and crew finders' search-by, the tabs inside a group page or a
+profile, whose tab bar sits under the cover unpinned so the content already starts where you tapped) keep your place.
+`check:pinned-dismiss` fails a popup that opens scrolled; a reused pane is not walked by any guard.
+
 **The scroll-lock trap.** `lib/dialogA11y.js` locks the page behind any fixed, opaque, full-height
 element, which is how it spots a popup. The old left sidebar was all three, so it froze every desktop page
 until #2560 taught the lock to skip `role="navigation"`. The header (not full height), the rail (starts

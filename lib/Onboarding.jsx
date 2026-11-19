@@ -36,7 +36,8 @@
 // onFinish, which writes the same columns saveEdit writes.
 import { USE_DB } from "./supabase";
 import { clickable } from "./clickable";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { usePaneTop } from "./usePaneTop.js";
 import { C, DISC, GENDERS, HERO_BG, HERO_SHEEN, LEVEL_DESC, LVL, MOUNTAINS, PROFILE_GRADES, VL, YDSL, fuzzyMatch } from "../ClimbMatchCore.jsx";
 import { isUsernameFree, saveProfileAvatar, uploadProfilePhoto } from "./db";
 import { saveProfile } from "./auth";
@@ -95,7 +96,7 @@ export default function Onboarding({onFinish,onSkip,onSignOut,onUsernameSaved,on
   const [unState,setUnState]=useState("");
   /* The photo step needs somewhere to keep the photo: an account. Signed out there is no step rather than one that previews and forgets. */
   const steps=editing?(needUser?["username","climb"]:["climb"]):["intro"].concat(needUser?["username"]:[],required?["photo"]:[],["home","climb","about","alerts"]);
-  const [si,setSi]=useState(0);const step=steps[si];
+  const [si,setSi]=useState(0);const step=steps[si];const paneRef=useRef(null);usePaneTop(paneRef,si);
   const [doneShown,setDoneShown]=useState(false);
   const next=()=>setSi(i=>Math.min(i+1,steps.length-1));const back=()=>setSi(i=>Math.max(i-1,0));
   const counted=steps.filter(s=>s!=="intro");const stepNo=counted.indexOf(step)+1;
@@ -289,7 +290,7 @@ export default function Onboarding({onFinish,onSkip,onSignOut,onUsernameSaved,on
           </div>
           {editing?null:<div role="progressbar" aria-label="Setup progress" aria-valuemin={1} aria-valuemax={counted.length} aria-valuenow={stepNo} aria-valuetext={"Step "+stepNo+" of "+counted.length} style={{height:5,borderRadius:3,background:C.borderLight,overflow:"hidden",marginTop:8}}><div style={{width:(stepNo/counted.length*100)+"%",height:"100%",background:C.blue,borderRadius:3,transition:"width .25s ease"}}/></div>}
         </div>:null}
-        <div style={{flex:1,minHeight:0,overflowY:"auto",overscrollBehavior:"contain",padding:wide?"26px 44px 30px":(step==="intro"&&!doneShown?"8px 20px 20px":"14px 20px 24px")}}><div style={{maxWidth:wide?560:520,margin:"0 auto"}}>{body}</div></div>
+        <div ref={paneRef} style={{flex:1,minHeight:0,overflowY:"auto",overscrollBehavior:"contain",padding:wide?"26px 44px 30px":(step==="intro"&&!doneShown?"8px 20px 20px":"14px 20px 24px")}}><div style={{maxWidth:wide?560:520,margin:"0 auto"}}>{body}</div></div>
         {foot}
       </div>
     </div>
