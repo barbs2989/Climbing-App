@@ -139,7 +139,6 @@ Hand-run probes: `scripts/oneoff/probe-ranks-anti-padding.sql`, `probe-ranks-ant
 - **True top 100 (0379)**: the 500-climber cap is gone; every board is ranked on the server, and your standing comes with your row.
 
 ## 8. Known gaps
-- TOP CONTRIBUTORS and the profile’s Top Contributor badge do not read *Show me on leaderboards* or blocks yet (`area_top_contributors` ranks everyone in the ledger), though Ranks does: a climber hidden from Ranks is still named on an area’s card, and a climber blocked by a contributor sees that contributor as a nameless *Climber* row. Measured with real accounts 2026-11-19; the fix is a change to that one function.
 - A tie on an area’s card is broken by account id, so one of two climbers level on points gets the ★ pill and the badge; Ranks gives both the same rank.
 - `rank_breakdown()` copies `leaderboard()`'s counting rather than sharing it; a change to the scoring must
   change both (no guard holds them equal yet).
