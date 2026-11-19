@@ -1,0 +1,1020 @@
+{
+ "note": "Triage of the 193 areas crag pass 3 left alpine (owner-review.json still_unsure_areas_stay_alpine), 2026-11-18. Buckets in order of how easy the decision is. settled_* stay alpine by the pass rule; easy_route_type_only has a stated walk <=60 min and lacks only the Mountain Project route type (batch 1, researched next); needs_* lack a stated total walk time.",
+ "buckets": {
+  "needs_stated_total_legs_only": [
+   {
+    "area_id": "mt_bud_wall_the",
+    "routes": 10,
+    "why": "PASS2 hand: 1 h to Wolverine Bowl, then an untimed trail"
+   },
+   {
+    "area_id": "mt_summer_triangle_aka_upper_replica",
+    "routes": 9,
+    "why": "PASS2 hand: 1 h to Wolverine Bowl, then an untimed trail"
+   },
+   {
+    "area_id": "mt_rain_cave_the",
+    "routes": 2,
+    "why": "PASS2 hand: 1 h to Wolverine; the uphill to the cave is untimed"
+   },
+   {
+    "area_id": "nh_03_main_slab",
+    "routes": 22,
+    "why": "PASS2 hand: the only whole time (20-25 min) is the old track walk the page calls trespassing; the recommended path is timed only in legs"
+   },
+   {
+    "area_id": "nh_02_gulley_no_1_buttress",
+    "routes": 14,
+    "why": "PASS2 hand: timed in legs only (10-15 min + ~10 min); no stated total — adding legs is our own math"
+   },
+   {
+    "area_id": "nh_04_upper_face_upper_tier",
+    "routes": 4,
+    "why": "PASS2 area research unsure: Mt Willard page gives legs only: '(about 10 min)' to Hattie's Garden, then 'another 10-12 min' to Buttress No. 1; Upper Tier itself is reached by climbing the Main Face"
+   },
+   {
+    "area_id": "nm_yucca_flower_tower",
+    "routes": 8,
+    "why": "PASS2 hand: 0.5 mi untimed + 10 min + rap in; no total time stated"
+   },
+   {
+    "area_id": "co_eyrie_sector_the",
+    "routes": 1,
+    "why": "PASS2 hand: 20-25 min walk then an untimed 2-pitch approach climb"
+   }
+  ],
+  "settled_alpine_over_an_hour": [
+   {
+    "area_id": "mt_denmark",
+    "routes": 4,
+    "why": "PASS2 hand: 1 h to Wolverine Bowl, then an untimed trail: total over the stated hour"
+   },
+   {
+    "area_id": "mt_cooler_the",
+    "routes": 2,
+    "why": "PASS2 area research unsure: Parent Ainger Lake page: 'About an hour and half to two hours from the car will get you there.'"
+   },
+   {
+    "area_id": "mt_lower_replica",
+    "routes": 13,
+    "why": "PASS2 hand: the stated 1 hour reaches Wolverine meadow; the replica walls lie beyond on an untimed trail"
+   },
+   {
+    "area_id": "nh_utopia_ledges_true_summit_ledges",
+    "routes": 16,
+    "why": "PASS2 area research unsure: I do the approach in an hour or so (approach described from the top of Bonsai trail)"
+   },
+   {
+    "area_id": "nh_henderson_s_buttress",
+    "routes": 9,
+    "why": "PASS2 area research unsure: Whitney-Gilman Ridge (whose trail Henderson's approach follows, then continues left): 'The approach is long. Expect about one hour of hiking.'"
+   },
+   {
+    "area_id": "ut_devil_s_dip_cliff",
+    "routes": 2,
+    "why": "PASS2 area research unsure: Hike guide: Silver Lake to Twin Lakes Reservoir 'Approximate hiking time - 1 to 2 hours' for a 2.6-mile roundtrip. MP: cliff 'A mere 100m up canyon (East) of the Reservoir."
+   },
+   {
+    "area_id": "wy_scab_creek_buttress_2",
+    "routes": 2,
+    "why": "PASS2 hand: pages disagree: 30-60 min vs up to 1.5 h"
+   },
+   {
+    "area_id": "ca_cathedral_wall",
+    "routes": 1,
+    "why": "PASS2 crag area (stated this 1000' face is only about an hour from the road) but no Sport/Trad/TR type found for this route"
+   },
+   {
+    "area_id": "nv_the_toiyabe_fitzroy",
+    "routes": 7,
+    "why": "PASS2 hand: exactly 1 hour, 2100 ft to a 10-pitch dome — owner's call"
+   },
+   {
+    "area_id": "ca_leopold_dome",
+    "routes": 1,
+    "why": "PASS2 area research unsure: 'It took us 2 hours in spite of all the various guides simply stated 1.'"
+   }
+  ],
+  "needs_research_nothing_found": [
+   {
+    "area_id": "mt_fins_the_2",
+    "routes": 1,
+    "why": "PASS2 area research unsure: "
+   },
+   {
+    "area_id": "mt_britney_spears_ar_te",
+    "routes": 2,
+    "why": "PASS2 area research unsure: "
+   },
+   {
+    "area_id": "mt_white_wall_the",
+    "routes": 1,
+    "why": "PASS2 hand: 45-60 min is to the START of the Upper Tier; wall further along, no total stated"
+   },
+   {
+    "area_id": "mt_pollock_mountain",
+    "routes": 2,
+    "why": "PASS2 area research unsure: "
+   },
+   {
+    "area_id": "nh_wonderland",
+    "routes": 13,
+    "why": "PASS2 area research unsure: "
+   },
+   {
+    "area_id": "nh_big_wall_2",
+    "routes": 8,
+    "why": "PASS2 area research unsure: Moby Grape only: 'The approach is a 45 min hike, over a talus field, from the parking lot.' Big Wall: 'Hike the Moby Grape trail and head left.' (no time)"
+   },
+   {
+    "area_id": "nm_mother_mountain",
+    "routes": 3,
+    "why": "PASS2 area research unsure: "
+   },
+   {
+    "area_id": "nm_santa_maria",
+    "routes": 5,
+    "why": "PASS2 area research unsure: "
+   },
+   {
+    "area_id": "nm_hole_in_the_wall",
+    "routes": 20,
+    "why": "PASS2 area research unsure: "
+   },
+   {
+    "area_id": "nm_keep_the",
+    "routes": 1,
+    "why": "PASS2 area research unsure: "
+   },
+   {
+    "area_id": "nm_elevenses_crag",
+    "routes": 1,
+    "why": "PASS2 area research unsure: "
+   },
+   {
+    "area_id": "nv_zip_world_aka_boulder_garden",
+    "routes": 1,
+    "why": "PASS2 area research unsure: Canyon page only: 'relatively short bushwhack from the road' (no minutes)"
+   },
+   {
+    "area_id": "nv_crenellation_crag",
+    "routes": 3,
+    "why": "PASS2 area research unsure: "
+   },
+   {
+    "area_id": "nv_mineral_wall",
+    "routes": 2,
+    "why": "PASS2 area research unsure: "
+   },
+   {
+    "area_id": "nv_dead_snag_aka_great_white_wall",
+    "routes": 4,
+    "why": "PASS2 area research unsure: All of the Lamoille canyon crags are a relatively short bushwhack from the road (no minutes)"
+   },
+   {
+    "area_id": "nv_eden_wall",
+    "routes": 2,
+    "why": "PASS2 area research unsure: "
+   },
+   {
+    "area_id": "nv_lichen_this_rock",
+    "routes": 2,
+    "why": "PASS2 area research unsure: "
+   },
+   {
+    "area_id": "nv_amphitheater_wall",
+    "routes": 2,
+    "why": "PASS2 area research unsure: 'relatively short bushwhack from the road' (no minutes)"
+   },
+   {
+    "area_id": "nv_sport_wall",
+    "routes": 6,
+    "why": "PASS2 area research unsure: "
+   },
+   {
+    "area_id": "nv_gecko_wall",
+    "routes": 2,
+    "why": "PASS2 area research unsure: "
+   },
+   {
+    "area_id": "ny_z_loft",
+    "routes": 7,
+    "why": "PASS2 crag call without a stated time (\"Beginning of the rocks and parking area are marked by an oil derrick, dirt lot, and large burnt overhanging boulder.\")"
+   },
+   {
+    "area_id": "or_eagle_rock_2",
+    "routes": 2,
+    "why": "PASS2 area research unsure: "
+   },
+   {
+    "area_id": "or_lee_s_peak",
+    "routes": 1,
+    "why": "PASS2 area research unsure: "
+   },
+   {
+    "area_id": "or_lake_s_lookout",
+    "routes": 1,
+    "why": "PASS2 area research unsure: "
+   },
+   {
+    "area_id": "ut_green_meadow_crags",
+    "routes": 1,
+    "why": "PASS2 crag area but the row text carries a strong alpine signal: bivy/camp [overview: \"arge cave on its right; the cave could serve as a bivy.\"]"
+   },
+   {
+    "area_id": "ut_echo_lake_comeposer_wall",
+    "routes": 3,
+    "why": "PASS2 area research unsure: "
+   },
+   {
+    "area_id": "ut_surprise_buttress",
+    "routes": 1,
+    "why": "PASS2 area research unsure: "
+   },
+   {
+    "area_id": "ut_baby_alien",
+    "routes": 1,
+    "why": "PASS2 area research unsure: "
+   },
+   {
+    "area_id": "ut_pacman_wall",
+    "routes": 1,
+    "why": "PASS2 area research unsure: "
+   },
+   {
+    "area_id": "ut_dolphin_spire",
+    "routes": 1,
+    "why": "PASS2 area research unsure: "
+   },
+   {
+    "area_id": "ut_big_cliff",
+    "routes": 1,
+    "why": "PASS2 area research unsure: "
+   },
+   {
+    "area_id": "wy_trail_lake_pinnacle",
+    "routes": 9,
+    "why": "PASS2 area research unsure: "
+   },
+   {
+    "area_id": "wy_steamboat_mountain",
+    "routes": 1,
+    "why": "PASS2 area research unsure: "
+   },
+   {
+    "area_id": "wy_last_call_wall",
+    "routes": 2,
+    "why": "PASS2 area research unsure: Total approach time is roughly 30 minutes"
+   },
+   {
+    "area_id": "ca_real_cloud_ripper_tower_the",
+    "routes": 8,
+    "why": "PASS2 area research unsure: "
+   },
+   {
+    "area_id": "ca_black_bluff_west_face",
+    "routes": 4,
+    "why": "PASS2 area research unsure: "
+   },
+   {
+    "area_id": "ca_hinterland_corridor",
+    "routes": 7,
+    "why": "PASS2 area research unsure: "
+   },
+   {
+    "area_id": "ca_icehouse_canyon",
+    "routes": 6,
+    "why": "PASS2 area research unsure: "
+   },
+   {
+    "area_id": "ca_doda_dome",
+    "routes": 4,
+    "why": "PASS2 area research unsure: "
+   },
+   {
+    "area_id": "ca_sky_wall",
+    "routes": 4,
+    "why": "PASS2 area research unsure: Sky Wall: 'Very long and steep approach hike.' (no time). Mountaineer Walls: '1st tier approach can be done in 30-40 mins'."
+   },
+   {
+    "area_id": "ca_hinterland_wall",
+    "routes": 6,
+    "why": "PASS2 area research unsure: "
+   },
+   {
+    "area_id": "ca_grouse_tor",
+    "routes": 2,
+    "why": "PASS2 area research unsure: "
+   },
+   {
+    "area_id": "ca_central_cottage_dome",
+    "routes": 12,
+    "why": "PASS2 area research unsure: Only a leg: \"Walk north from West Cottage Dome for about 5 minutes.\""
+   },
+   {
+    "area_id": "ca_west_face_16",
+    "routes": 13,
+    "why": "PASS2 area research unsure: "
+   },
+   {
+    "area_id": "ca_siberia_creek_tower_south_face",
+    "routes": 4,
+    "why": "PASS2 area research unsure: "
+   },
+   {
+    "area_id": "ca_lizard_gallery_the",
+    "routes": 3,
+    "why": "PASS2 hand: 5-10 min reaches PSOM Slab; the Gallery is then reached by roped climbing"
+   },
+   {
+    "area_id": "ca_upper_north_wall",
+    "routes": 2,
+    "why": "PASS2 area research unsure: "
+   },
+   {
+    "area_id": "ca_short_crag",
+    "routes": 2,
+    "why": "PASS2 area research unsure: "
+   },
+   {
+    "area_id": "ca_swagrocrag",
+    "routes": 2,
+    "why": "PASS2 area research unsure: "
+   },
+   {
+    "area_id": "ca_siberia_creek_tower_southeast_face",
+    "routes": 3,
+    "why": "PASS2 area research unsure: "
+   },
+   {
+    "area_id": "ca_key_hole_tower",
+    "routes": 5,
+    "why": "PASS2 area research unsure: "
+   },
+   {
+    "area_id": "ca_second_terrace",
+    "routes": 1,
+    "why": "PASS2 area research unsure: "
+   },
+   {
+    "area_id": "ca_buzz_buckets",
+    "routes": 2,
+    "why": "PASS2 area research unsure: "
+   },
+   {
+    "area_id": "ca_toe_of_hinterland_butress",
+    "routes": 6,
+    "why": "PASS2 area research unsure: "
+   },
+   {
+    "area_id": "ca_mini_pyramid",
+    "routes": 1,
+    "why": "PASS2 area research unsure: "
+   },
+   {
+    "area_id": "ca_wart_aka_lake_of_the_domes_dome_the",
+    "routes": 7,
+    "why": "PASS2 area research unsure: "
+   },
+   {
+    "area_id": "ca_chicken_foot_cracks",
+    "routes": 3,
+    "why": "PASS2 area research unsure: "
+   },
+   {
+    "area_id": "ca_light_bender_tower",
+    "routes": 1,
+    "why": "PASS2 area research unsure: "
+   },
+   {
+    "area_id": "ca_love_supreme_boulder",
+    "routes": 1,
+    "why": "PASS2 area research unsure: "
+   },
+   {
+    "area_id": "ca_television_skies_crag",
+    "routes": 2,
+    "why": "PASS2 area research unsure: "
+   },
+   {
+    "area_id": "ca_manta_buttress_the",
+    "routes": 2,
+    "why": "PASS2 area research unsure: "
+   },
+   {
+    "area_id": "ca_east_temple_aka_the_beta",
+    "routes": 3,
+    "why": "PASS2 area research unsure: "
+   },
+   {
+    "area_id": "ca_queen_jane_area",
+    "routes": 3,
+    "why": "PASS2 area research unsure: "
+   },
+   {
+    "area_id": "ca_supernova_pillar",
+    "routes": 3,
+    "why": "PASS2 area research unsure: "
+   },
+   {
+    "area_id": "ca_wilderness_wall_2",
+    "routes": 2,
+    "why": "PASS2 area research unsure: "
+   },
+   {
+    "area_id": "ca_siberia_creek_tower_southwest_face",
+    "routes": 3,
+    "why": "PASS2 area research unsure: "
+   },
+   {
+    "area_id": "ca_peanut_gallery",
+    "routes": 2,
+    "why": "PASS2 area research unsure: "
+   },
+   {
+    "area_id": "ca_east_face_6",
+    "routes": 15,
+    "why": "PASS2 area research unsure: "
+   },
+   {
+    "area_id": "ca_west_buttress",
+    "routes": 1,
+    "why": "PASS2 area research unsure: Parent Horseshoe Piles: \"The approach takes 15-20 minutes if you hit it right.\"; Storm Crag: \"After 3 or 4 minutes you will see the crag up hill.\""
+   },
+   {
+    "area_id": "ca_southside_overview_crag",
+    "routes": 1,
+    "why": "PASS2 area research unsure: "
+   },
+   {
+    "area_id": "ca_grandstand_the",
+    "routes": 5,
+    "why": "PASS2 area research unsure: "
+   },
+   {
+    "area_id": "ca_false_cloud_ripper_tower_the",
+    "routes": 1,
+    "why": "PASS2 area research unsure: "
+   },
+   {
+    "area_id": "ca_spirit_nebula_aka_the_eagle_pillar_the",
+    "routes": 1,
+    "why": "PASS2 area research unsure: "
+   },
+   {
+    "area_id": "ca_mini_rippers_the",
+    "routes": 1,
+    "why": "PASS2 area research unsure: "
+   },
+   {
+    "area_id": "ca_dog_wall",
+    "routes": 1,
+    "why": "PASS2 area research unsure: Horseshoe Piles: \"The approach takes 15-20 minutes if you hit it right.\"; Dog Wall: \"15 min approach uphill.\" from Horseshoe Piles"
+   },
+   {
+    "area_id": "ca_north_face_13",
+    "routes": 1,
+    "why": "PASS2 area research unsure: "
+   },
+   {
+    "area_id": "co_porky_s_wall",
+    "routes": 1,
+    "why": "PASS2 area research unsure: "
+   },
+   {
+    "area_id": "co_tan_buttresses_the",
+    "routes": 16,
+    "why": "PASS2 area research unsure: "
+   },
+   {
+    "area_id": "co_lincoln_lake_slabs",
+    "routes": 25,
+    "why": "PASS2 area research unsure: "
+   },
+   {
+    "area_id": "co_main_wall",
+    "routes": 5,
+    "why": "PASS2 area research unsure: "
+   },
+   {
+    "area_id": "co_prow_the",
+    "routes": 1,
+    "why": "PASS2 area research unsure: "
+   },
+   {
+    "area_id": "co_three_streaks_the",
+    "routes": 1,
+    "why": "PASS2 area research unsure: Clam Shell parent: \"From the upper, 30+ minute hike\" (from the upper meadows, not the car)"
+   },
+   {
+    "area_id": "co_dog_s_crag",
+    "routes": 5,
+    "why": "PASS2 area research unsure: "
+   },
+   {
+    "area_id": "co_snowdon_peak_2",
+    "routes": 1,
+    "why": "PASS2 area research unsure: "
+   },
+   {
+    "area_id": "co_perry_mansfield_peak_10_790",
+    "routes": 1,
+    "why": "PASS2 area research unsure: "
+   },
+   {
+    "area_id": "co_rock_hard_tower",
+    "routes": 2,
+    "why": "PASS2 area research unsure: "
+   },
+   {
+    "area_id": "co_little_possibility_wall",
+    "routes": 1,
+    "why": "PASS2 area research unsure: "
+   },
+   {
+    "area_id": "co_eldora_wall",
+    "routes": 1,
+    "why": "PASS2 area research unsure: "
+   },
+   {
+    "area_id": "co_atat_rk_s_vision",
+    "routes": 1,
+    "why": "PASS2 area research unsure: "
+   },
+   {
+    "area_id": "id_portal_the",
+    "routes": 4,
+    "why": "PASS2 area research unsure: "
+   },
+   {
+    "area_id": "id_grandjean",
+    "routes": 1,
+    "why": "PASS2 area research unsure: "
+   },
+   {
+    "area_id": "id_crooked_rock",
+    "routes": 6,
+    "why": "PASS2 area research unsure: "
+   },
+   {
+    "area_id": "id_troll_hole_gray_slab",
+    "routes": 3,
+    "why": "PASS2 area research unsure: "
+   },
+   {
+    "area_id": "id_lion_s_creek",
+    "routes": 1,
+    "why": "PASS2 area research unsure: "
+   },
+   {
+    "area_id": "id_ramshorn_canyon_climbs",
+    "routes": 1,
+    "why": "PASS2 area research unsure: "
+   },
+   {
+    "area_id": "md_ferry_hill",
+    "routes": 6,
+    "why": "PASS2 area research unsure: Walk the canal upstream until you see the cliff on your right. (no time)"
+   },
+   {
+    "area_id": "me_test_sub_area_to_contain_routes",
+    "routes": 2,
+    "why": "PASS2 no area research"
+   },
+   {
+    "area_id": "mt_hidden_gold_wall",
+    "routes": 2,
+    "why": "PASS2 area research unsure: "
+   },
+   {
+    "area_id": "mt_phat_one_buttress",
+    "routes": 2,
+    "why": "PASS2 crag call without a stated time ('either hike up the 4x4 road until you see the buttress, or simply cross the road from where you've parked')"
+   },
+   {
+    "area_id": "mt_eagle_s_head_buttress",
+    "routes": 2,
+    "why": "PASS2 hand: stated 45-60 min is to the start of the Upper Tier; the buttress is further up, no total stated"
+   },
+   {
+    "area_id": "mt_double_book",
+    "routes": 1,
+    "why": "PASS2 area research unsure: Double Book page: no time. Sibling Tower of Poor Rock: 'Walk straight up through talus for 20-25 minutes to the base of the routes.'"
+   },
+   {
+    "area_id": "nh_eagle_cliff_climbs",
+    "routes": 2,
+    "why": "PASS2 hand: place inferred from route-name theme; sample routes not on MP"
+   },
+   {
+    "area_id": "nm_watchtower",
+    "routes": 8,
+    "why": "PASS2 area research unsure: "
+   },
+   {
+    "area_id": "nv_paint_tester",
+    "routes": 1,
+    "why": "PASS2 area research unsure: "
+   },
+   {
+    "area_id": "nv_barbarian_cliff",
+    "routes": 2,
+    "why": "PASS2 area research unsure: Canyon page only: 'All of the Lamoille canyon crags are a relatively short bushwhack from the road.' (no minutes)"
+   },
+   {
+    "area_id": "nv_tower_of_wotan",
+    "routes": 2,
+    "why": "PASS2 area research unsure: "
+   },
+   {
+    "area_id": "nv_trader_joe_s",
+    "routes": 1,
+    "why": "PASS2 area research unsure: "
+   },
+   {
+    "area_id": "or_hoffer_lake",
+    "routes": 2,
+    "why": "PASS2 area research unsure: "
+   },
+   {
+    "area_id": "or_deer_leap",
+    "routes": 1,
+    "why": "PASS2 area research unsure: "
+   },
+   {
+    "area_id": "pa_hay_s_wall",
+    "routes": 2,
+    "why": "PASS2 area research unsure: "
+   },
+   {
+    "area_id": "tx_dad_boulder",
+    "routes": 1,
+    "why": "PASS2 area research unsure: "
+   },
+   {
+    "area_id": "ut_distant_drum",
+    "routes": 1,
+    "why": "PASS2 area research unsure: "
+   },
+   {
+    "area_id": "ut_patsy_marley",
+    "routes": 1,
+    "why": "PASS2 area research unsure: "
+   },
+   {
+    "area_id": "ut_sunny_slabs_the",
+    "routes": 1,
+    "why": "PASS2 area research unsure: "
+   },
+   {
+    "area_id": "ut_suburbia",
+    "routes": 1,
+    "why": "PASS2 area research unsure: "
+   },
+   {
+    "area_id": "wy_arrowhead_wall",
+    "routes": 2,
+    "why": "PASS2 crag call without a stated time (From the parking area, it is the wall on your right.)"
+   },
+   {
+    "area_id": "wy_boulder_island",
+    "routes": 3,
+    "why": "PASS2 area research unsure: "
+   },
+   {
+    "area_id": "wy_gros_ventre_tower",
+    "routes": 2,
+    "why": "PASS2 area research unsure: "
+   },
+   {
+    "area_id": "wy_upper_blacktail_butte",
+    "routes": 1,
+    "why": "PASS2 area research unsure: From the Blacktail parking lot, walk South on a well developed trail for 10-15 minutes ... After about 5-10 minutes heading uphill, look for a trail to the left through the"
+   },
+   {
+    "area_id": "wy_clarks_fork_canyon_climbs",
+    "routes": 1,
+    "why": "PASS2 area research unsure: "
+   },
+   {
+    "area_id": "ca_dusy_dome",
+    "routes": 6,
+    "why": "PASS2 area research unsure: "
+   },
+   {
+    "area_id": "ca_evolution_wall_the",
+    "routes": 1,
+    "why": "PASS2 area research unsure: "
+   },
+   {
+    "area_id": "ca_dome_of_the_immaculate_conception_aka_notre_dome",
+    "routes": 1,
+    "why": "PASS2 area research unsure: "
+   },
+   {
+    "area_id": "ca_cracks_at_the_dam_wall",
+    "routes": 3,
+    "why": "PASS2 hand: 'off the road' at the dam, no minutes"
+   },
+   {
+    "area_id": "ca_black_bluff_upper_face",
+    "routes": 1,
+    "why": "PASS2 area research unsure: "
+   },
+   {
+    "area_id": "ca_sideshow_wall",
+    "routes": 3,
+    "why": "PASS2 area research unsure: "
+   },
+   {
+    "area_id": "ca_swiss_cheese_wall",
+    "routes": 3,
+    "why": "PASS2 area research unsure: "
+   },
+   {
+    "area_id": "ca_obelisk_the_3",
+    "routes": 1,
+    "why": "PASS2 area research unsure: "
+   },
+   {
+    "area_id": "ca_hinterland_back_side",
+    "routes": 1,
+    "why": "PASS2 area research unsure: "
+   },
+   {
+    "area_id": "ca_killer_pillar",
+    "routes": 1,
+    "why": "PASS2 area research unsure: "
+   },
+   {
+    "area_id": "ca_swooped",
+    "routes": 1,
+    "why": "PASS2 area research unsure: "
+   },
+   {
+    "area_id": "ca_dark_angel_buttress_the",
+    "routes": 1,
+    "why": "PASS2 area research unsure: "
+   },
+   {
+    "area_id": "ca_trinity_tower_the",
+    "routes": 1,
+    "why": "PASS2 area research unsure: "
+   },
+   {
+    "area_id": "ca_budd_creek",
+    "routes": 1,
+    "why": "PASS2 area research unsure: "
+   },
+   {
+    "area_id": "ca_tiger_wall",
+    "routes": 1,
+    "why": "PASS2 hand: 'easily accessed from the main road' — no minutes, not roadside wording"
+   },
+   {
+    "area_id": "ca_tiger_cage_upper_tier",
+    "routes": 4,
+    "why": "PASS2 area research unsure: No time: \"Easy approach (the same approach as to the lower tier anchors).\""
+   },
+   {
+    "area_id": "ca_tiger_cage",
+    "routes": 1,
+    "why": "PASS2 area research unsure: "
+   },
+   {
+    "area_id": "co_compensation_crag",
+    "routes": 1,
+    "why": "PASS2 area research unsure: "
+   },
+   {
+    "area_id": "co_wave_the_2",
+    "routes": 1,
+    "why": "PASS2 hand: 30 min reaches Wild Ridge; The Wave is then reached by climbing a lower-tier route"
+   },
+   {
+    "area_id": "co_pike_s_peak_2",
+    "routes": 1,
+    "why": "PASS2 area research unsure: "
+   },
+   {
+    "area_id": "id_quator_lake",
+    "routes": 2,
+    "why": "PASS2 area research unsure: "
+   },
+   {
+    "area_id": "id_lookout_dome",
+    "routes": 2,
+    "why": "PASS2 area research unsure: "
+   },
+   {
+    "area_id": "id_gfc_wall",
+    "routes": 1,
+    "why": "PASS2 area research unsure: "
+   },
+   {
+    "area_id": "id_east_gully",
+    "routes": 2,
+    "why": "PASS2 hand: 'roadside' appears only in a winter-climbing sentence on the parent page"
+   }
+  ],
+  "needs_better_source": [
+   {
+    "area_id": "nh_duet_area_etc",
+    "routes": 21,
+    "why": "PASS2 hand: pages disagree: about 1 h vs 45-90 min"
+   },
+   {
+    "area_id": "ut_mt_timpanogos",
+    "routes": 1,
+    "why": "PASS2 hand: time only in a photo caption; route tops out on a pillar"
+   },
+   {
+    "area_id": "ca_black_bluff_n_face_right_side",
+    "routes": 7,
+    "why": "PASS2 hand: 20 min only on an unattributed aggregator page (advcollective)"
+   },
+   {
+    "area_id": "ca_black_bluff_n_face_left_side",
+    "routes": 4,
+    "why": "PASS2 hand: 20 min only on an unattributed aggregator page (advcollective)"
+   },
+   {
+    "area_id": "ca_just_another_social_distancing_crag",
+    "routes": 2,
+    "why": "PASS2 hand: time is still only a photo caption"
+   },
+   {
+    "area_id": "id_south_dome",
+    "routes": 3,
+    "why": "PASS2 hand: time only in a photo caption"
+   }
+  ],
+  "easy_route_type_only": [
+   {
+    "area_id": "nm_el_tecolote",
+    "routes": 2,
+    "why": "PASS2 crag area (stated 'Approach time to here is ~35 minutes from the car.') but no Sport/Trad/TR type found for this route"
+   },
+   {
+    "area_id": "co_guide_route",
+    "routes": 1,
+    "why": "PASS2 crag area (stated a steady push will have you at the routes start in 30 minutes or faster with a light load) but no Sport/Trad/TR type found for this route"
+   },
+   {
+    "area_id": "co_easter_island_pinnacle",
+    "routes": 1,
+    "why": "PASS2 crag area (stated Alpine Lite is a 20 minute walk directly over the saddle (it was about 50 minutes overall)) but no Sport/Trad/TR type found for this route"
+   },
+   {
+    "area_id": "id_right_flank_the",
+    "routes": 3,
+    "why": "PASS2 crag area (stated \"The crag is plainly obvious and the walk is about 40 minutes.\") but no Sport/Trad/TR type found for this route"
+   },
+   {
+    "area_id": "mt_tower_of_poor_rock",
+    "routes": 1,
+    "why": "PASS2 crag area (stated \"Walk straight up through talus for 20-25 minutes to the base of the routes.\") but no Sport/Trad/TR type found for this route"
+   },
+   {
+    "area_id": "nh_slabs",
+    "routes": 2,
+    "why": "PASS2 crag area (stated \"Overall, the approach is 30-40 minutes, depending on fitness and pack weight.\") but no Sport/Trad/TR type found for this route"
+   },
+   {
+    "area_id": "nv_iron_horse_wall",
+    "routes": 1,
+    "why": "PASS2 crag area (stated 12-15 min hike) but no Sport/Trad/TR type found for this route"
+   },
+   {
+    "area_id": "nv_hinkey_summit",
+    "routes": 1,
+    "why": "PASS2 crag area (stated The approach to the base of the climbing wall is extremely easy and takes just a few minutes) but no Sport/Trad/TR type found for this route"
+   },
+   {
+    "area_id": "ca_north_buttress_2",
+    "routes": 1,
+    "why": "PASS2 crag area (stated Follow the John Muir Trail (aka Cathedral Lakes Trail) for 1.3 miles (40 - 50 minutes).) but no Sport/Trad/TR type found for this route"
+   },
+   {
+    "area_id": "ca_stately_pleasure_dome",
+    "routes": 2,
+    "why": "PASS2 crag area (stated roadside: Roadside: \"Easy parking all along the base.\") but no Sport/Trad/TR type found for this route"
+   },
+   {
+    "area_id": "ca_north_face_3",
+    "routes": 3,
+    "why": "PASS2 crag area (stated the crag is a pleasant 20 minutes walk around the far side of the lake) but no Sport/Trad/TR type found for this route"
+   },
+   {
+    "area_id": "co_mind_dump",
+    "routes": 2,
+    "why": "PASS2 crag area (stated 'It is about 5 minutes from where you park.') but no Sport/Trad/TR type found for this route"
+   }
+  ],
+  "needs_time_distance_only": [
+   {
+    "area_id": "or_west_limpy",
+    "routes": 1,
+    "why": "PASS2 area research unsure: From the pullout hike down the easy ridge a short distance to the upper west rock (no time)"
+   },
+   {
+    "area_id": "ca_bing_bing_buttress",
+    "routes": 1,
+    "why": "PASS2 area research unsure: Adventure Collective (Black Bart page): Black Bluff north-face trail 'takes about 20 minutes' (start not named). MP: about 1.5 miles from Bluff Mesa campground, no time."
+   },
+   {
+    "area_id": "co_chicago_creek_rock",
+    "routes": 4,
+    "why": "PASS2 area research unsure: 'The walk is refreshingly brief', 'less than a quarter-mile' (no time)"
+   },
+   {
+    "area_id": "id_savage_wall",
+    "routes": 1,
+    "why": "PASS2 area research unsure: The first eastside sector, this route is just over fifty meters off the road. (distance, no time)"
+   },
+   {
+    "area_id": "ca_aqueduct_wall",
+    "routes": 1,
+    "why": "PASS2 area research unsure: At the Tiger Wall parking area a gate with road leads 1/2 mile down to the Aqueduct Wall. (distance only)"
+   }
+  ],
+  "settled_alpine_summit_snow": [
+   {
+    "area_id": "ut_cobrazone",
+    "routes": 2,
+    "why": "PASS2 crag area but the row text carries a strong alpine signal: summit [overview: \"s top. The 5.8 crux is probably the pull onto the summit.\"]"
+   },
+   {
+    "area_id": "wy_north_side",
+    "routes": 5,
+    "why": "PASS2 area research unsure: MP JHMR: from the tram top 'hike down to either Rock Springs Buttress (50 minutes) or Corbett's Couloir (10 minutes)'."
+   },
+   {
+    "area_id": "ca_punk_rock_west_face",
+    "routes": 1,
+    "why": "PASS2 crag area but the row text carries a strong alpine signal: summit [overview: \" arch, then stiff climbing (12-) continues to the summit.\"]"
+   },
+   {
+    "area_id": "co_black_wall_the",
+    "routes": 10,
+    "why": "PASS2 crag area but the row text carries a strong alpine signal: snow travel [overview: \"ght. Plan on all day; some pitches are dirty, and snow may need stepping through at the start. A hazard \"]"
+   }
+  ],
+  "settled_alpine_lift_only": [
+   {
+    "area_id": "ut_middle_bowl_slab",
+    "routes": 1,
+    "why": "PASS2 area research unsure: \"By getting a gondola ride up to the Lodge, about a 15 minute approach brings you to the base of the slab.\""
+   },
+   {
+    "area_id": "wy_first_round_wall_left",
+    "routes": 4,
+    "why": "PASS2 area research unsure: Only from the lift: 'a quick hike along the cirque trail from either the top of the tram or the gondola' (MP: roughly 30 minutes from the gondola)"
+   },
+   {
+    "area_id": "wy_salutations_wall",
+    "routes": 5,
+    "why": "PASS2 area research unsure: \"You'll want to take the Bridger Gondola.\" ... \"Total approach time is roughly 30 minutes.\""
+   },
+   {
+    "area_id": "wy_first_round_wall_right",
+    "routes": 6,
+    "why": "PASS2 area research unsure: MP: 'Total approach time is roughly 30 minutes' (via the Bridger Gondola and Cirque Trail)."
+   }
+  ]
+ },
+ "summary": {
+  "needs_stated_total_legs_only": {
+   "areas": 8,
+   "routes": 70
+  },
+  "settled_alpine_over_an_hour": {
+   "areas": 10,
+   "routes": 57
+  },
+  "needs_research_nothing_found": {
+   "areas": 144,
+   "routes": 437
+  },
+  "needs_better_source": {
+   "areas": 6,
+   "routes": 38
+  },
+  "easy_route_type_only": {
+   "areas": 12,
+   "routes": 20
+  },
+  "needs_time_distance_only": {
+   "areas": 5,
+   "routes": 8
+  },
+  "settled_alpine_summit_snow": {
+   "areas": 4,
+   "routes": 18
+  },
+  "settled_alpine_lift_only": {
+   "areas": 4,
+   "routes": 16
+  }
+ }
+}
