@@ -7,8 +7,9 @@
 //   - a fact that is not stored is not printed (no "Unknown", no zero posing as a value);
 //   - the chart's headline is the SUM OF ITS BARS, and a remainder the bars do not show is
 //     said in words ("+N not typed") rather than hidden in the headline;
-//   - the grade spread draws ONE scale at a time and offers every scale the area has as a chip
-//     (Rock first), so no climb sits on a scale the climber cannot pick.
+//   - the grade spread draws ONE discipline on ONE scale at a time, and offers every discipline the area
+//     has as a chip (and every scale that discipline is graded on), so no climb sits on a chart the
+//     climber cannot pick.
 import { useState } from "react";
 import { AREA_EDIT_FIELDS, MONTH_ABBR, monthsLabel, myPendingAreaEdits } from "./areaFields";
 import { DISC_COLORS } from "./disciplines";
@@ -141,12 +142,25 @@ export function ClimbsChart({ stats, loading, error, C, discOptions, onDisc, chi
   </div>;
 }
 
-// ── GRADE SPREAD — columns over the area's main grading scale ──
-// THE DISCIPLINE PICKER (owner, 2026-11-18: "you should be able to select the discipline to view the chart.
-// Start with the default as rock"): one chip per grading scale the area has, in this order, Rock selected first.
+// ── GRADE SPREAD — columns over one discipline's grades ──
+// THE DISCIPLINE PICKER (owner, 2026-11-18: "grade spread needs to have trad, sport, top rope be it's own
+// discipline. Make sure every dicipline is its own chip if there's that type of climbing in that area"): one
+// chip per DISCIPLINE with a graded climb here (area_climb_stats.by_grade_disc, 0476), in this order. It was one
+// chip per grading scale, which drew trad, sport and top rope as a single "Rock". A discipline graded on more
+// than one scale here (alpine: 5.x and Class) gets a second chip row for the scale, so no climb is on a chart
+// nobody can open.
+const DISC_ORDER = ["trad", "sport", "toprope", "bouldering", "alpine", "ice", "mixed", "aid", "mountaineering", "scrambling", "hiking"];
+const ROPED_ROCK = ["trad", "sport", "toprope"];
 const SYS_ORDER = ["yds", "v", "wi", "m", "aid", "class", "snow"];
-const SYS_PICK = { yds: "Rock", v: DS.bouldering, wi: DL.ice, m: DL.mixed, aid: DL.aid, class: DS.scrambling, snow: "Snow" };
+const SYS_PICK = { yds: "5.x", v: "V", wi: "WI", m: "M", aid: "Aid", class: "Class", snow: "Snow" };
 const SYS_NAME = { yds: "rock grades", v: "V grades", wi: "ice grades", m: "mixed grades", aid: "aid grades", class: "class grades", snow: "snow grades" };
+const discName = d => d ? (DL[d] || d) : "No type";
+// The chart's rows, one per (discipline, scale, bucket). A response cached from before 0476 has no
+// by_grade_disc: its by_grade rows are drawn with no discipline, so the scale chips alone remain.
+function spreadRows(stats) {
+  const src = stats && Array.isArray(stats.by_grade_disc) ? stats.by_grade_disc : stats && Array.isArray(stats.by_grade) ? stats.by_grade : [];
+  return src.filter(g => g && g.n > 0 && g.sys).map(g => ({ disc: g.disc || "", sys: g.sys, b: Number(g.bucket), n: Number(g.n) }));
+}
 export function bucketLabel(sys, b) {
   b = Number(b);
   if (sys === "yds") return "5." + b;
@@ -173,22 +187,32 @@ const countTick = t => t >= 1000 ? (t / 1000) + "k" : String(t);
 // Whether GradeSpread would draw anything: the area page lays the two charts side by side on the
 // website only when both exist.
 export function hasGradeSpread(stats) {
-  return !!(stats && Array.isArray(stats.by_grade) && stats.by_grade.some(g => g && g.n > 0 && g.sys));
+  return spreadRows(stats).length > 0;
 }
 // `standalone` draws it as its own card (beside CLIMBS HERE on the website) instead of a ruled
 // section under the discipline bars.
-// `bare`: no wrapper (the disclosure draws the section). `onGrade(sys, bucket)`: each column is a button that
-// opens the Route finder on that grade -- the chart is the way into the finder, not a picture beside it.
+// `bare`: no wrapper (the disclosure draws the section). `onGrade(sys, bucket, disc)`: each column is a button
+// that opens the Route finder on that grade and discipline -- the chart is the way into the finder, not a picture
+// beside it.
 export function GradeSpread({ stats, C, standalone, bare, onGrade }) {
   const [picked, setPicked] = useState(null);
-  const rows = stats && Array.isArray(stats.by_grade) ? stats.by_grade.filter(g => g && g.n > 0 && g.sys) : [];
+  const [pickedSys, setPickedSys] = useState(null);
+  const rows = spreadRows(stats);
   if (!rows.length) return null;
+  const byDisc = {};
+  for (const g of rows) byDisc[g.disc] = (byDisc[g.disc] || 0) + g.n;
+  // Every discipline with a graded climb is a chip; climbs filed with no type come last. It opens on the biggest
+  // of trad, sport and top rope (the owner's "start with the default as rock"), else the biggest discipline.
+  const discs = [...DISC_ORDER.filter(k => byDisc[k]), ...Object.keys(byDisc).filter(k => k && !DISC_ORDER.includes(k)), ...(byDisc[""] ? [""] : [])];
+  const biggest = list => list.slice().sort((x, y) => byDisc[y] - byDisc[x])[0];
+  const disc = picked !== null && byDisc[picked] ? picked : biggest(discs.some(k => ROPED_ROCK.includes(k)) ? discs.filter(k => ROPED_ROCK.includes(k)) : discs);
+  const mine = rows.filter(g => g.disc === disc);
   const bySys = {};
-  for (const g of rows) bySys[g.sys] = (bySys[g.sys] || 0) + Number(g.n);
-  // Every scale with a climb on it is a chip. Rock opens first; an area with no rock opens on its biggest scale.
+  for (const g of mine) bySys[g.sys] = (bySys[g.sys] || 0) + g.n;
+  // Every scale the picked discipline is graded on is a chip too; it opens on the one with the most climbs.
   const scales = [...SYS_ORDER.filter(k => bySys[k]), ...Object.keys(bySys).filter(k => !SYS_ORDER.includes(k))];
-  const sys = picked && bySys[picked] ? picked : bySys.yds ? "yds" : scales.slice().sort((a, b) => bySys[b] - bySys[a])[0];
-  const cols = rows.filter(g => g.sys === sys).map(g => ({ b: Number(g.bucket), n: Number(g.n) })).sort((a, b) => a.b - b.b);
+  const sys = pickedSys && bySys[pickedSys] ? pickedSys : scales.slice().sort((x, y) => bySys[y] - bySys[x])[0];
+  const cols = mine.filter(g => g.sys === sys).map(g => ({ b: g.b, n: g.n })).sort((x, y) => x.b - y.b);
   if (!cols.length) return null;
   // Fill the gaps so the axis is a scale, not a list of whatever happened to exist.
   const lo = cols[0].b, hi = cols[cols.length - 1].b, full = [];
@@ -198,22 +222,28 @@ export function GradeSpread({ stats, C, standalone, bare, onGrade }) {
   const W = 100, H = 56, gap = 2, bw = (W - gap * (full.length - 1)) / full.length, every = full.length > 9 ? 2 : 1;
   const label = c => bucketLabel(sys, c.b);
   const desc = full.filter(c => c.n).map(c => label(c) + ": " + c.n).join(", ");
+  const named = discs.some(k => k);
+  const chip = on => ({ ...CHIP, flexShrink: 0, border: "1px solid " + (on ? C.blue : C.border), background: on ? C.blueBg : C.surface, color: on ? "#fff" : C.textSub });
+  const chipRow = { display: "flex", gap: 6, overflowX: "auto", paddingBottom: 3, marginBottom: 8 };
   return <div style={bare ? null : standalone ? card(C) : { marginTop: 12, paddingTop: 10, borderTop: "1px solid " + C.border }}>
     <div style={{ ...headRow, marginBottom: 6 }}><Head C={C}>Grade spread</Head>{scales.length > 1 ? null : <span style={{ fontSize: 11.5, color: C.textMuted }}>{SYS_NAME[sys] || sys}</span>}</div>
-    {scales.length > 1 ? <div role="group" aria-label="Grade spread discipline" className="cm-hscroll" style={{ display: "flex", gap: 6, overflowX: "auto", paddingBottom: 3, marginBottom: 8 }}>
-      {scales.map(k => <button key={k} onClick={() => setPicked(k)} aria-pressed={k === sys} style={{ ...CHIP, flexShrink: 0, border: "1px solid " + (k === sys ? C.blue : C.border), background: k === sys ? C.blueBg : C.surface, color: k === sys ? "#fff" : C.textSub }}>{SYS_PICK[k] || k}</button>)}
+    {named ? <div role="group" aria-label="Grade spread discipline" className="cm-hscroll" style={chipRow}>
+      {discs.map(k => <button key={k || "none"} onClick={() => { setPicked(k); setPickedSys(null); }} aria-pressed={k === disc} style={chip(k === disc)}>{discName(k)}</button>)}
+    </div> : null}
+    {scales.length > 1 ? <div role="group" aria-label="Grade spread grading scale" className="cm-hscroll" style={chipRow}>
+      {scales.map(k => <button key={k} onClick={() => setPickedSys(k)} aria-pressed={k === sys} aria-label={SYS_NAME[k] || k} style={chip(k === sys)}>{SYS_PICK[k] || k}</button>)}
     </div> : null}
     <div style={{ display: "flex", gap: Y_GAP }}>
     <div aria-hidden="true" style={{ position: "relative", width: Y_AXIS_W, flexShrink: 0, height: 56 }}>
       {axis.map(t => <span key={t} style={{ position: "absolute", right: 0, bottom: (t / top * 100) + "%", transform: "translateY(50%)", fontSize: 9.5, lineHeight: 1, color: C.textMuted, fontVariantNumeric: "tabular-nums", whiteSpace: "nowrap" }}>{countTick(t)}</span>)}
     </div>
     <div style={{ position: "relative", flex: 1, minWidth: 0 }}>
-    <svg role="img" aria-label={"Climbs by grade (" + (SYS_NAME[sys] || sys) + "): " + desc} viewBox={"0 0 " + W + " " + H} preserveAspectRatio="none" style={{ width: "100%", height: 56, display: "block" }}>
+    <svg role="img" aria-label={(disc ? discName(disc) + " climbs" : "Climbs") + " by grade (" + (SYS_NAME[sys] || sys) + "): " + desc} viewBox={"0 0 " + W + " " + H} preserveAspectRatio="none" style={{ width: "100%", height: 56, display: "block" }}>
       {axis.map(t => t ? <line key={"t" + t} x1={0} x2={W} y1={H - t / top * H} y2={H - t / top * H} stroke={C.border} strokeWidth={1} vectorEffect="non-scaling-stroke" /> : null)}
       {full.map((c, i) => { const h = Math.max(c.n ? 1.5 : 0, c.n / top * H); return <rect key={c.b} x={i * (bw + gap)} y={H - h} width={bw} height={h} rx={0} fill={C.blueSolid} />; })}
     </svg>
     {onGrade && gradeFinderRange(sys, lo) ? <div style={{ position: "absolute", inset: 0, display: "flex", gap: gap + "px" }}>
-      {full.map(c => c.n ? <button key={c.b} onClick={() => onGrade(sys, c.b)} aria-label={label(c) + ": " + c.n.toLocaleString() + " climb" + (c.n !== 1 ? "s" : "") + ", open in Route finder"} style={{ flex: 1, minWidth: 0, background: "transparent", border: "none", padding: 0, cursor: "pointer" }} /> : <span key={c.b} aria-hidden="true" style={{ flex: 1, minWidth: 0 }} />)}
+      {full.map(c => c.n ? <button key={c.b} onClick={() => onGrade(sys, c.b, disc)} aria-label={label(c) + ": " + c.n.toLocaleString() + " climb" + (c.n !== 1 ? "s" : "") + ", open in Route finder"} style={{ flex: 1, minWidth: 0, background: "transparent", border: "none", padding: 0, cursor: "pointer" }} /> : <span key={c.b} aria-hidden="true" style={{ flex: 1, minWidth: 0 }} />)}
     </div> : null}
     </div>
     </div>
@@ -235,9 +265,12 @@ export function gradeFinderRange(sys, b) {
   const l = bucketLabel(sys, b);
   return [l, l];
 }
-export function gradeFinderFilters(sys, b, stats) {
+// `disc`: the discipline chip the column was drawn under. The caller passes it only when the finder can filter
+// that discipline on that scale; without it the finder opens on every discipline graded on the scale.
+export function gradeFinderFilters(sys, b, stats, disc) {
   const r = gradeFinderRange(sys, b);
   if (!r) return null;
+  if (disc) return { discs: [disc], gSys: sys, gLo: r[0], gHi: r[1], sortBy: "lr" };
   const here = stats && Array.isArray(stats.by_disc) ? stats.by_disc.filter(d => d && d.n > 0).map(d => d.disc) : [];
   const discs = SYS_DISCS[sys].filter(d => here.includes(d));
   return { discs: discs.length ? discs : SYS_DISCS[sys], gSys: sys, gLo: r[0], gHi: r[1], sortBy: "lr" };

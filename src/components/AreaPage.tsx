@@ -24,6 +24,7 @@ import LoadingRows from "./LoadingRows.tsx";
 import { discLabel } from "../../lib/areaDiscLabel.js";
 import { gradeNumFor, gradeSystemForDiscipline } from "../../lib/grade.js";
 import RouteRow from "./RouteRow.tsx";
+import { DISC_GRADE_SCALES } from "./RouteFinderPanel.tsx";
 import AddHereFooter from "./AddHereFooter.tsx";
 import AreaWrongSpot from "../../lib/AreaWrongSpot";
 import DbSuggestedClimbs from "./DbSuggestedClimbs.tsx";
@@ -265,7 +266,8 @@ export default function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, book
   const season = Array.isArray(area.season_months) && area.season_months.length ? (area.season_months as unknown[]).map(Number) : null;
   const inSeason = season ? season.includes(new Date().getMonth() + 1) : null;
   // A grade column opens the Route finder on that grade (the chart is the way in, not a picture).
-  const onGrade = (sys: string, b: number) => { const fl = gradeFinderFilters(sys, b, stats.data); if (fl) onFinder(fl); else onFinder(); };
+  // It opens on the chip's own discipline when the finder can filter that discipline on that scale; else on every discipline the scale grades.
+  const onGrade = (sys: string, b: number, disc?: string) => { const fl = gradeFinderFilters(sys, b, stats.data, disc && discOptions.includes(disc) && (DISC_GRADE_SCALES[disc] || []).includes(sys) ? disc : undefined); if (fl) onFinder(fl); else onFinder(); };
 
   // THE PAGE, top to bottom (owner, 2026-11-11, area page redesign): the header; then the grade spread (Climbs here
   // by type behind a dropdown), the description, the Route finder · objectives · Map row, the sub-areas (phone), the
