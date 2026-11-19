@@ -62,20 +62,22 @@ language sql stable security definer set search_path = public, pg_temp as $$
   ),
   matched as (
     select * from pub p
-     where (disc is null or p.discipline = disc)
-       and (since is null or p.date_climbed >= since)
-       and (kind is null or p.kind = kind)
+     -- Every argument is written with the function's name: `pub` has a column called `kind`, and a bare
+     -- `kind` here is that COLUMN, so `p.kind = kind` was true of every row and the filter did nothing.
+     where (area_latest_reports.disc is null or p.discipline = area_latest_reports.disc)
+       and (area_latest_reports.since is null or p.date_climbed >= area_latest_reports.since)
+       and (area_latest_reports.kind is null or p.kind = area_latest_reports.kind)
   ),
   latest as (
     select m.*,
            row_number() over (order by
-             case when sort = 'oldest' then m.date_climbed end asc nulls last,
-             case when sort = 'oldest' then m.created_at end asc,
+             case when area_latest_reports.sort = 'oldest' then m.date_climbed end asc nulls last,
+             case when area_latest_reports.sort = 'oldest' then m.created_at end asc,
              m.date_climbed desc nulls last, m.created_at desc, m.id) as rn
       from matched m
   ),
   page as (
-    select * from latest where rn <= greatest(1, least(coalesce(lim, 4), 100))
+    select * from latest where rn <= greatest(1, least(coalesce(area_latest_reports.lim, 4), 100))
   )
   select jsonb_build_object(
     'latest', coalesce((select jsonb_agg(x.id order by x.rn) from page x), '[]'::jsonb),
