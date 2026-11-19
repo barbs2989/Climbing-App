@@ -1,0 +1,945 @@
+[
+ {
+  "table": "routes",
+  "id": "wa_saints",
+  "column": "length_m",
+  "from": null,
+  "to": 91,
+  "why": "MP states 300 ft (91 m). theCrag blocked (403); WO gives no length. MP-alone length: locked-1src after apply.",
+  "evidence": [
+   "https://www.mountainproject.com/route/108401793/saints"
+  ],
+  "batch": "m1"
+ },
+ {
+  "table": "routes",
+  "id": "wa_saints",
+  "column": "permit",
+  "from": null,
+  "to": "No recreation pass is needed to park at the Castle Rock Trailhead.",
+  "why": "permit empty. Official-1: USFS Castle Rock Trailhead page (re-opened 2026-11-18) says no parking pass required, no fees. Copies the live wording on wa_saber / wa_canary / wa_catapult. Lock official-1, expires 2027-11-18.",
+  "evidence": [
+   "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/castle-rock-trailhead"
+  ],
+  "batch": "m1"
+ },
+ {
+  "table": "routes",
+  "id": "wa_saints",
+  "column": "access",
+  "from": null,
+  "to": {
+   "fees": "None.",
+   "rules": "Castle Rock is outside designated wilderness. The seasonal raptor closure (April 1 to July 31) covers nearby Midnight and Noontime Rocks, not Castle Rock.",
+   "permit": "None needed to climb.",
+   "land_manager": "Okanogan-Wenatchee National Forest (Wenatchee River Ranger District)",
+   "parking_pass": "None. No recreation pass is needed to park at the Castle Rock Trailhead."
+  },
+  "why": "access empty. Copies the live object on wa_saber / wa_catapult (batch I). Re-verified 2026-11-18: USFS trailhead page names Okanogan-Wenatchee NF, Wenatchee River RD, no pass, no fees, raptor closure Apr 1-Jul 31 on Midnight and Noontime Rocks only; USFS ownership layer at the USGS 'Castle Rock' pillar point (47.59957,-120.71176) and at the lot = USDA Forest Service, Okanogan-Wenatchee NF; USFS wilderness layer returns none. Not WSDOT or private. Lock official-1, expires 2027-11-18.",
+  "evidence": [
+   "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/castle-rock-trailhead",
+   "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0",
+   "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_Wilderness_01/MapServer/0"
+  ],
+  "batch": "m1"
+ },
+ {
+  "table": "routes",
+  "id": "wa_crack_of_doom",
+  "column": "pitches",
+  "from": 0,
+  "to": 1,
+  "why": "0 is invalid. MP lists 80 ft and a photo caption calls it one pitch of nearly 30 m (only a caption, so ledger unconfirmed). A 2008 trip report climbs it as a 3-pitch link-up via Old Gray Mare; the route proper is the crack above.",
+  "evidence": [
+   "https://www.mountainproject.com/route/105809789/crack-of-doom",
+   "https://chossclimbers.com/?p=8255"
+  ],
+  "batch": "m1"
+ },
+ {
+  "table": "routes",
+  "id": "wa_crack_of_doom",
+  "column": "length_m",
+  "from": null,
+  "to": 24,
+  "why": "MP states 80 ft (24 m). theCrag blocked. MP-alone length: locked-1src after apply.",
+  "evidence": [
+   "https://www.mountainproject.com/route/105809789/crack-of-doom"
+  ],
+  "batch": "m1"
+ },
+ {
+  "table": "routes",
+  "id": "wa_crack_of_doom",
+  "column": "permit",
+  "from": null,
+  "to": "No recreation pass is needed to park at the Castle Rock Trailhead.",
+  "why": "permit empty. Official-1: USFS Castle Rock Trailhead page (re-opened 2026-11-18) says no parking pass required, no fees. Copies the live wording on wa_saber / wa_canary / wa_catapult. Lock official-1, expires 2027-11-18.",
+  "evidence": [
+   "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/castle-rock-trailhead"
+  ],
+  "batch": "m1"
+ },
+ {
+  "table": "routes",
+  "id": "wa_crack_of_doom",
+  "column": "access",
+  "from": null,
+  "to": {
+   "fees": "None.",
+   "rules": "Castle Rock is outside designated wilderness. The seasonal raptor closure (April 1 to July 31) covers nearby Midnight and Noontime Rocks, not Castle Rock.",
+   "permit": "None needed to climb.",
+   "land_manager": "Okanogan-Wenatchee National Forest (Wenatchee River Ranger District)",
+   "parking_pass": "None. No recreation pass is needed to park at the Castle Rock Trailhead."
+  },
+  "why": "access empty. Copies the live object on wa_saber / wa_catapult (batch I). Re-verified 2026-11-18: USFS trailhead page names Okanogan-Wenatchee NF, Wenatchee River RD, no pass, no fees, raptor closure Apr 1-Jul 31 on Midnight and Noontime Rocks only; USFS ownership layer at the USGS 'Castle Rock' pillar point (47.59957,-120.71176) and at the lot = USDA Forest Service, Okanogan-Wenatchee NF; USFS wilderness layer returns none. Not WSDOT or private. Lock official-1, expires 2027-11-18.",
+  "evidence": [
+   "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/castle-rock-trailhead",
+   "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0",
+   "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_Wilderness_01/MapServer/0"
+  ],
+  "batch": "m1"
+ },
+ {
+  "table": "routes",
+  "id": "wa_directissima",
+  "column": "pitches",
+  "from": 0,
+  "to": 2,
+  "why": "0 is invalid. MP states 'Trad, 300 ft (91 m), 2 pitches'. Only MP (=OpenBeta) describes this route; theCrag blocked (403), WO does not list it. locked-1src after apply.",
+  "evidence": [
+   "https://www.mountainproject.com/route/119762252/directissima"
+  ],
+  "batch": "m1"
+ },
+ {
+  "table": "routes",
+  "id": "wa_directissima",
+  "column": "permit",
+  "from": null,
+  "to": "No recreation pass is needed to park at the Castle Rock Trailhead.",
+  "why": "permit empty. Official-1: USFS Castle Rock Trailhead page (re-opened 2026-11-18) says no parking pass required, no fees. Copies the live wording on wa_saber / wa_canary / wa_catapult. Lock official-1, expires 2027-11-18.",
+  "evidence": [
+   "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/castle-rock-trailhead"
+  ],
+  "batch": "m1"
+ },
+ {
+  "table": "routes",
+  "id": "wa_directissima",
+  "column": "access",
+  "from": null,
+  "to": {
+   "fees": "None.",
+   "rules": "Castle Rock is outside designated wilderness. The seasonal raptor closure (April 1 to July 31) covers nearby Midnight and Noontime Rocks, not Castle Rock.",
+   "permit": "None needed to climb.",
+   "land_manager": "Okanogan-Wenatchee National Forest (Wenatchee River Ranger District)",
+   "parking_pass": "None. No recreation pass is needed to park at the Castle Rock Trailhead."
+  },
+  "why": "access empty. Copies the live object on wa_saber / wa_catapult (batch I). Re-verified 2026-11-18: USFS trailhead page names Okanogan-Wenatchee NF, Wenatchee River RD, no pass, no fees, raptor closure Apr 1-Jul 31 on Midnight and Noontime Rocks only; USFS ownership layer at the USGS 'Castle Rock' pillar point (47.59957,-120.71176) and at the lot = USDA Forest Service, Okanogan-Wenatchee NF; USFS wilderness layer returns none. Not WSDOT or private. Lock official-1, expires 2027-11-18.",
+  "evidence": [
+   "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/castle-rock-trailhead",
+   "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0",
+   "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_Wilderness_01/MapServer/0"
+  ],
+  "batch": "m1"
+ },
+ {
+  "table": "routes",
+  "id": "wa_south_face_jello_tower",
+  "column": "pitches",
+  "from": 0,
+  "to": 1,
+  "why": "0 is invalid. MP: 80 ft ending at the bolts on top of Jello Tower (one pitch implied, not stated - ledger unconfirmed). If an implied count is not acceptable, use null instead.",
+  "evidence": [
+   "https://www.mountainproject.com/route/105792847/south-face-jello-tower"
+  ],
+  "batch": "m1"
+ },
+ {
+  "table": "routes",
+  "id": "wa_south_face_jello_tower",
+  "column": "length_m",
+  "from": null,
+  "to": 24,
+  "why": "MP states 80 ft (24 m). theCrag blocked; WO gives no length. locked-1src after apply.",
+  "evidence": [
+   "https://www.mountainproject.com/route/105792847/south-face-jello-tower"
+  ],
+  "batch": "m1"
+ },
+ {
+  "table": "routes",
+  "id": "wa_south_face_jello_tower",
+  "column": "permit",
+  "from": null,
+  "to": "No recreation pass is needed to park at the Castle Rock Trailhead.",
+  "why": "permit empty. Official-1: USFS Castle Rock Trailhead page (re-opened 2026-11-18) says no parking pass required, no fees. Copies the live wording on wa_saber / wa_canary / wa_catapult. Lock official-1, expires 2027-11-18.",
+  "evidence": [
+   "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/castle-rock-trailhead"
+  ],
+  "batch": "m1"
+ },
+ {
+  "table": "routes",
+  "id": "wa_south_face_jello_tower",
+  "column": "access",
+  "from": null,
+  "to": {
+   "fees": "None.",
+   "rules": "Castle Rock is outside designated wilderness. The seasonal raptor closure (April 1 to July 31) covers nearby Midnight and Noontime Rocks, not Castle Rock.",
+   "permit": "None needed to climb.",
+   "land_manager": "Okanogan-Wenatchee National Forest (Wenatchee River Ranger District)",
+   "parking_pass": "None. No recreation pass is needed to park at the Castle Rock Trailhead."
+  },
+  "why": "access empty. Copies the live object on wa_saber / wa_catapult (batch I). Re-verified 2026-11-18: USFS trailhead page names Okanogan-Wenatchee NF, Wenatchee River RD, no pass, no fees, raptor closure Apr 1-Jul 31 on Midnight and Noontime Rocks only; USFS ownership layer at the USGS 'Castle Rock' pillar point (47.59957,-120.71176) and at the lot = USDA Forest Service, Okanogan-Wenatchee NF; USFS wilderness layer returns none. Not WSDOT or private. Lock official-1, expires 2027-11-18.",
+  "evidence": [
+   "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/castle-rock-trailhead",
+   "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0",
+   "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_Wilderness_01/MapServer/0"
+  ],
+  "batch": "m1"
+ },
+ {
+  "table": "routes",
+  "id": "wa_mr_clean_2",
+  "column": "pitches",
+  "from": 0,
+  "to": 1,
+  "why": "0 is invalid. WO states one pitch; MP gives no count (ledger unconfirmed, single-source).",
+  "evidence": [
+   "https://wenatcheeoutdoors.org/2016/04/27/castle-rock-lower-wall/",
+   "https://www.mountainproject.com/route/105870903/mr-clean"
+  ],
+  "batch": "m1"
+ },
+ {
+  "table": "routes",
+  "id": "wa_mr_clean_2",
+  "column": "permit",
+  "from": null,
+  "to": "No recreation pass is needed to park at the Castle Rock Trailhead.",
+  "why": "permit empty. Official-1: USFS Castle Rock Trailhead page (re-opened 2026-11-18) says no parking pass required, no fees. Copies the live wording on wa_saber / wa_canary / wa_catapult. Lock official-1, expires 2027-11-18.",
+  "evidence": [
+   "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/castle-rock-trailhead"
+  ],
+  "batch": "m1"
+ },
+ {
+  "table": "routes",
+  "id": "wa_mr_clean_2",
+  "column": "access",
+  "from": null,
+  "to": {
+   "fees": "None.",
+   "rules": "Castle Rock is outside designated wilderness. The seasonal raptor closure (April 1 to July 31) covers nearby Midnight and Noontime Rocks, not Castle Rock.",
+   "permit": "None needed to climb.",
+   "land_manager": "Okanogan-Wenatchee National Forest (Wenatchee River Ranger District)",
+   "parking_pass": "None. No recreation pass is needed to park at the Castle Rock Trailhead."
+  },
+  "why": "access empty. Copies the live object on wa_saber / wa_catapult (batch I). Re-verified 2026-11-18: USFS trailhead page names Okanogan-Wenatchee NF, Wenatchee River RD, no pass, no fees, raptor closure Apr 1-Jul 31 on Midnight and Noontime Rocks only; USFS ownership layer at the USGS 'Castle Rock' pillar point (47.59957,-120.71176) and at the lot = USDA Forest Service, Okanogan-Wenatchee NF; USFS wilderness layer returns none. Not WSDOT or private. Lock official-1, expires 2027-11-18.",
+  "evidence": [
+   "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/castle-rock-trailhead",
+   "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0",
+   "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_Wilderness_01/MapServer/0"
+  ],
+  "batch": "m1"
+ },
+ {
+  "table": "routes",
+  "id": "wa_west_face_8",
+  "column": "detailed_rack",
+  "from": "Gear to 3 inches.",
+  "to": "Quickdraws only; the route is bolted.",
+  "why": "A bolted sport line stored with a trad rack. MP: protection draws only, 8 bolts to a two-bolt rappel anchor; Wenatchee Outdoors: West Face 5.8, bolts. Two sources agree it takes draws, neither mentions gear to 3 in (that matches Lightning Crack beside it).",
+  "evidence": [
+   "https://www.mountainproject.com/route/105875473/west-face",
+   "https://wenatcheeoutdoors.org/2016/05/02/peshastin-pinnacles/"
+  ],
+  "batch": "m2"
+ },
+ {
+  "table": "routes",
+  "id": "wa_west_face_8",
+  "column": "bolts",
+  "from": null,
+  "to": 8,
+  "why": "MP states 8 bolts to the anchor. Single source (locked-1src after apply).",
+  "evidence": [
+   "https://www.mountainproject.com/route/105875473/west-face"
+  ],
+  "batch": "m2"
+ },
+ {
+  "table": "routes",
+  "id": "wa_west_face_8",
+  "column": "anchor",
+  "from": null,
+  "to": "Two-bolt rappel anchor",
+  "why": "MP states a two-bolt rappel anchor. Single source.",
+  "evidence": [
+   "https://www.mountainproject.com/route/105875473/west-face"
+  ],
+  "batch": "m2"
+ },
+ {
+  "table": "routes",
+  "id": "wa_west_face_8",
+  "column": "fa",
+  "from": "Dave Collins, Tom Miller, 1959. FFA: Fred Beckey.",
+  "to": "Dave Collins, Tom Miller, 1959.",
+  "why": "fa holds the FFA too; split it into ffa (proposed together, as batch K did). MP only.",
+  "evidence": [
+   "https://www.mountainproject.com/route/105875473/west-face"
+  ],
+  "batch": "m2"
+ },
+ {
+  "table": "routes",
+  "id": "wa_west_face_8",
+  "column": "ffa",
+  "from": null,
+  "to": "Fred Beckey.",
+  "why": "Moved out of fa (see above). MP only.",
+  "evidence": [
+   "https://www.mountainproject.com/route/105875473/west-face"
+  ],
+  "batch": "m2"
+ },
+ {
+  "table": "routes",
+  "id": "wa_west_face_8",
+  "column": "permit",
+  "from": null,
+  "to": "Discover Pass required to park. The park is open 6:30 a.m. to dusk and closed Nov 1 to Mar 15; climbers must be off the rocks half an hour before closing, and bolting or drilling is not allowed.",
+  "why": "permit is empty. Same live wording as wa_lightning_crack_3 / wa_windward_direct (batch J). Re-opened the WA State Parks park page 2026-11-18: closed Nov 1 - Mar 15, summer hours 6:30 a.m. - dusk, off the rocks half an hour before closing, no bolting or drilling. Discover Pass page: a Discover Pass is required for parking at Washington State Parks. official-1, expires 2027-11-18.",
+  "evidence": [
+   "https://parks.wa.gov/find-parks/state-parks/peshastin-pinnacles-state-park",
+   "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass"
+  ],
+  "batch": "m2"
+ },
+ {
+  "table": "routes",
+  "id": "wa_west_face_8",
+  "column": "access",
+  "from": null,
+  "to": {
+   "land_manager": "Washington State Parks (Peshastin Pinnacles State Park)",
+   "permit": "None needed to climb.",
+   "parking_pass": "Discover Pass.",
+   "fees": "Discover Pass: $10 for one day or $45 for a year.",
+   "rules": "Closed Nov 1 to Mar 15. Open 6:30 a.m. to dusk; be off the rocks half an hour before closing. No bolting or drilling."
+  },
+  "why": "access is empty. Copied from the live wa_lightning_crack_3 value. Land manager Washington State Parks (park page); Discover Pass $10 day / $45 year (park page + Discover Pass page); closure, hours and no-bolting rule from the park page. official-1, expires 2027-11-18.",
+  "evidence": [
+   "https://parks.wa.gov/find-parks/state-parks/peshastin-pinnacles-state-park",
+   "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass"
+  ],
+  "batch": "m2"
+ },
+ {
+  "table": "routes",
+  "id": "wa_national_velvet",
+  "column": "anchor",
+  "from": null,
+  "to": "Two-bolt anchor",
+  "why": "MP states a (rusty) two-bolt anchor. Single source.",
+  "evidence": [
+   "https://www.mountainproject.com/route/108963486/national-velvet"
+  ],
+  "batch": "m2"
+ },
+ {
+  "table": "routes",
+  "id": "wa_national_velvet",
+  "column": "permit",
+  "from": null,
+  "to": "Discover Pass required to park. The park is open 6:30 a.m. to dusk and closed Nov 1 to Mar 15; climbers must be off the rocks half an hour before closing, and bolting or drilling is not allowed.",
+  "why": "permit is empty. Same live wording as wa_lightning_crack_3 / wa_windward_direct (batch J). Re-opened the WA State Parks park page 2026-11-18: closed Nov 1 - Mar 15, summer hours 6:30 a.m. - dusk, off the rocks half an hour before closing, no bolting or drilling. Discover Pass page: a Discover Pass is required for parking at Washington State Parks. official-1, expires 2027-11-18.",
+  "evidence": [
+   "https://parks.wa.gov/find-parks/state-parks/peshastin-pinnacles-state-park",
+   "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass"
+  ],
+  "batch": "m2"
+ },
+ {
+  "table": "routes",
+  "id": "wa_national_velvet",
+  "column": "access",
+  "from": null,
+  "to": {
+   "land_manager": "Washington State Parks (Peshastin Pinnacles State Park)",
+   "permit": "None needed to climb.",
+   "parking_pass": "Discover Pass.",
+   "fees": "Discover Pass: $10 for one day or $45 for a year.",
+   "rules": "Closed Nov 1 to Mar 15. Open 6:30 a.m. to dusk; be off the rocks half an hour before closing. No bolting or drilling."
+  },
+  "why": "access is empty. Copied from the live wa_lightning_crack_3 value. Land manager Washington State Parks (park page); Discover Pass $10 day / $45 year (park page + Discover Pass page); closure, hours and no-bolting rule from the park page. official-1, expires 2027-11-18.",
+  "evidence": [
+   "https://parks.wa.gov/find-parks/state-parks/peshastin-pinnacles-state-park",
+   "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass"
+  ],
+  "batch": "m2"
+ },
+ {
+  "table": "routes",
+  "id": "wa_tippy_toes",
+  "column": "pitches",
+  "from": 0,
+  "to": 1,
+  "why": "0 is invalid. MP: a 50 ft sport line with 4 bolts; one pitch implied, not stated (ledger unconfirmed).",
+  "evidence": [
+   "https://www.mountainproject.com/route/118731153/tippy-toes"
+  ],
+  "batch": "m2"
+ },
+ {
+  "table": "routes",
+  "id": "wa_tippy_toes",
+  "column": "length_m",
+  "from": null,
+  "to": 15,
+  "why": "MP states 50 ft (15 m). Single source (locked-1src after apply).",
+  "evidence": [
+   "https://www.mountainproject.com/route/118731153/tippy-toes"
+  ],
+  "batch": "m2"
+ },
+ {
+  "table": "routes",
+  "id": "wa_tippy_toes",
+  "column": "bolts",
+  "from": null,
+  "to": 4,
+  "why": "MP states 4 bolts. Single source (locked-1src after apply).",
+  "evidence": [
+   "https://www.mountainproject.com/route/118731153/tippy-toes"
+  ],
+  "batch": "m2"
+ },
+ {
+  "table": "routes",
+  "id": "wa_tippy_toes",
+  "column": "permit",
+  "from": null,
+  "to": "Discover Pass required to park. The park is open 6:30 a.m. to dusk and closed Nov 1 to Mar 15; climbers must be off the rocks half an hour before closing, and bolting or drilling is not allowed.",
+  "why": "permit is empty. Same live wording as wa_lightning_crack_3 / wa_windward_direct (batch J). Re-opened the WA State Parks park page 2026-11-18: closed Nov 1 - Mar 15, summer hours 6:30 a.m. - dusk, off the rocks half an hour before closing, no bolting or drilling. Discover Pass page: a Discover Pass is required for parking at Washington State Parks. official-1, expires 2027-11-18.",
+  "evidence": [
+   "https://parks.wa.gov/find-parks/state-parks/peshastin-pinnacles-state-park",
+   "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass"
+  ],
+  "batch": "m2"
+ },
+ {
+  "table": "routes",
+  "id": "wa_tippy_toes",
+  "column": "access",
+  "from": null,
+  "to": {
+   "land_manager": "Washington State Parks (Peshastin Pinnacles State Park)",
+   "permit": "None needed to climb.",
+   "parking_pass": "Discover Pass.",
+   "fees": "Discover Pass: $10 for one day or $45 for a year.",
+   "rules": "Closed Nov 1 to Mar 15. Open 6:30 a.m. to dusk; be off the rocks half an hour before closing. No bolting or drilling."
+  },
+  "why": "access is empty. Copied from the live wa_lightning_crack_3 value. Land manager Washington State Parks (park page); Discover Pass $10 day / $45 year (park page + Discover Pass page); closure, hours and no-bolting rule from the park page. official-1, expires 2027-11-18.",
+  "evidence": [
+   "https://parks.wa.gov/find-parks/state-parks/peshastin-pinnacles-state-park",
+   "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass"
+  ],
+  "batch": "m2"
+ },
+ {
+  "table": "routes",
+  "id": "wa_sunset_slab_green_velvet",
+  "column": "grade",
+  "from": "5.8- R",
+  "to": "5.8-",
+  "why": "The protection rating is welded into grade; it belongs in prot_rating (proposed together), as in batch L. grade_num stays 8 (gradeNumFrom('5.8-','yds') = 8). MP: 5.8- R. Wenatchee Outdoors gives 5.8.",
+  "evidence": [
+   "https://www.mountainproject.com/route/122780991/green-velvet",
+   "https://wenatcheeoutdoors.org/2016/05/02/peshastin-pinnacles/"
+  ],
+  "batch": "m2"
+ },
+ {
+  "table": "routes",
+  "id": "wa_sunset_slab_green_velvet",
+  "column": "prot_rating",
+  "from": null,
+  "to": "R",
+  "why": "Split from grade (proposed together). MP rates it R and calls the protection scant and marginal; Wenatchee Outdoors also says the first pitch has marginal pro.",
+  "evidence": [
+   "https://www.mountainproject.com/route/122780991/green-velvet",
+   "https://wenatcheeoutdoors.org/2016/05/02/peshastin-pinnacles/"
+  ],
+  "batch": "m2"
+ },
+ {
+  "table": "routes",
+  "id": "wa_sunset_slab_green_velvet",
+  "column": "permit",
+  "from": null,
+  "to": "Discover Pass required to park. The park is open 6:30 a.m. to dusk and closed Nov 1 to Mar 15; climbers must be off the rocks half an hour before closing, and bolting or drilling is not allowed.",
+  "why": "permit is empty. Same live wording as wa_lightning_crack_3 / wa_windward_direct (batch J). Re-opened the WA State Parks park page 2026-11-18: closed Nov 1 - Mar 15, summer hours 6:30 a.m. - dusk, off the rocks half an hour before closing, no bolting or drilling. Discover Pass page: a Discover Pass is required for parking at Washington State Parks. official-1, expires 2027-11-18.",
+  "evidence": [
+   "https://parks.wa.gov/find-parks/state-parks/peshastin-pinnacles-state-park",
+   "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass"
+  ],
+  "batch": "m2"
+ },
+ {
+  "table": "routes",
+  "id": "wa_sunset_slab_green_velvet",
+  "column": "access",
+  "from": null,
+  "to": {
+   "land_manager": "Washington State Parks (Peshastin Pinnacles State Park)",
+   "permit": "None needed to climb.",
+   "parking_pass": "Discover Pass.",
+   "fees": "Discover Pass: $10 for one day or $45 for a year.",
+   "rules": "Closed Nov 1 to Mar 15. Open 6:30 a.m. to dusk; be off the rocks half an hour before closing. No bolting or drilling."
+  },
+  "why": "access is empty. Copied from the live wa_lightning_crack_3 value. Land manager Washington State Parks (park page); Discover Pass $10 day / $45 year (park page + Discover Pass page); closure, hours and no-bolting rule from the park page. official-1, expires 2027-11-18.",
+  "evidence": [
+   "https://parks.wa.gov/find-parks/state-parks/peshastin-pinnacles-state-park",
+   "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass"
+  ],
+  "batch": "m2"
+ },
+ {
+  "table": "routes",
+  "id": "wa_lichen_delight",
+  "column": "pitches",
+  "from": 0,
+  "to": 1,
+  "why": "0 is invalid. MP: up past 3 bolts to a rappel anchor; one pitch implied, not stated (ledger unconfirmed).",
+  "evidence": [
+   "https://www.mountainproject.com/route/105877161/lichen-delight"
+  ],
+  "batch": "m2"
+ },
+ {
+  "table": "routes",
+  "id": "wa_lichen_delight",
+  "column": "bolts",
+  "from": null,
+  "to": 3,
+  "why": "MP states 3 bolts. Single source (locked-1src after apply).",
+  "evidence": [
+   "https://www.mountainproject.com/route/105877161/lichen-delight"
+  ],
+  "batch": "m2"
+ },
+ {
+  "table": "routes",
+  "id": "wa_lichen_delight",
+  "column": "permit",
+  "from": null,
+  "to": "Discover Pass required to park. The park is open 6:30 a.m. to dusk and closed Nov 1 to Mar 15; climbers must be off the rocks half an hour before closing, and bolting or drilling is not allowed.",
+  "why": "permit is empty. Same live wording as wa_lightning_crack_3 / wa_windward_direct (batch J). Re-opened the WA State Parks park page 2026-11-18: closed Nov 1 - Mar 15, summer hours 6:30 a.m. - dusk, off the rocks half an hour before closing, no bolting or drilling. Discover Pass page: a Discover Pass is required for parking at Washington State Parks. official-1, expires 2027-11-18.",
+  "evidence": [
+   "https://parks.wa.gov/find-parks/state-parks/peshastin-pinnacles-state-park",
+   "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass"
+  ],
+  "batch": "m2"
+ },
+ {
+  "table": "routes",
+  "id": "wa_lichen_delight",
+  "column": "access",
+  "from": null,
+  "to": {
+   "land_manager": "Washington State Parks (Peshastin Pinnacles State Park)",
+   "permit": "None needed to climb.",
+   "parking_pass": "Discover Pass.",
+   "fees": "Discover Pass: $10 for one day or $45 for a year.",
+   "rules": "Closed Nov 1 to Mar 15. Open 6:30 a.m. to dusk; be off the rocks half an hour before closing. No bolting or drilling."
+  },
+  "why": "access is empty. Copied from the live wa_lightning_crack_3 value. Land manager Washington State Parks (park page); Discover Pass $10 day / $45 year (park page + Discover Pass page); closure, hours and no-bolting rule from the park page. official-1, expires 2027-11-18.",
+  "evidence": [
+   "https://parks.wa.gov/find-parks/state-parks/peshastin-pinnacles-state-park",
+   "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass"
+  ],
+  "batch": "m2"
+ },
+ {
+  "table": "routes",
+  "id": "wa_zig_zag",
+  "column": "pitches",
+  "from": 0,
+  "to": 2,
+  "why": "0 is invalid. Mountain Project states 2 pitches and the Mt. Erie guidebook page calls it a two-pitch route: agree-2, locked after apply.",
+  "evidence": [
+   "https://www.mountainproject.com/route/106517013/zig-zag",
+   "https://rakkup.com/guidebook/mt-erie-rock-climbing/zig-zag/c28767"
+  ],
+  "batch": "m3"
+ },
+ {
+  "table": "routes",
+  "id": "wa_zig_zag",
+  "column": "length_m",
+  "from": null,
+  "to": 61,
+  "why": "Mountain Project states 200 ft (61 m). Single source (guidebook paywalled); locked-1src after apply.",
+  "evidence": [
+   "https://www.mountainproject.com/route/106517013/zig-zag"
+  ],
+  "batch": "m3"
+ },
+ {
+  "table": "routes",
+  "id": "wa_zig_zag",
+  "column": "anchor",
+  "from": null,
+  "to": "Chain anchor",
+  "why": "Mountain Project: 2 or 3 chain anchors depending on how it is pitched. Single source; locked-1src after apply.",
+  "evidence": [
+   "https://www.mountainproject.com/route/106517013/zig-zag"
+  ],
+  "batch": "m3"
+ },
+ {
+  "table": "routes",
+  "id": "wa_zig_zag",
+  "column": "access",
+  "from": null,
+  "to": {
+   "fees": null,
+   "rules": "Climbing and scrambling are allowed only in the Mt. Erie summit and south/west face area. The forest lands are open 6 am to 10 pm. New fixed anchors and new climbing areas need Forest Advisory Board approval.",
+   "permit": "No permit for individual climbers. Groups should send their planned climbing dates to Anacortes Parks & Recreation ahead of time.",
+   "group_limit": null,
+   "land_manager": "City of Anacortes Parks & Recreation (Anacortes Community Forest Lands)",
+   "parking_pass": null
+  },
+  "why": "Access is empty. Same object now live on the batch-I Mt. Erie routes (Orange Crush, The Abyss, Treeshadow), re-checked today: City of Anacortes owns the forest lands, Parks & Recreation manages them; the Oct 2025 ACFL plan limits climbing to the summit and S/W faces, sets 6am-10pm hours, asks for climbing dates in advance and requires Forest Advisory Board approval for fixed anchors. No fee or pass stated. Lockable official-1 (12 months) after apply.",
+  "evidence": [
+   "https://www.anacorteswa.gov/DocumentCenter/View/32255/Anacortes-Community-Forest-Lands-Plan",
+   "https://www.anacorteswa.gov/Facilities/Facility/Details/Anacortes-Community-Forest-Lands-7",
+   "https://www.anacorteswa.gov/517/Community-Forest-Lands-ACFL"
+  ],
+  "batch": "m3"
+ },
+ {
+  "table": "routes",
+  "id": "wa_springboard",
+  "column": "pitches",
+  "from": 0,
+  "to": 1,
+  "why": "0 is invalid. Mountain Project: a single 65 ft crack started from the horizontal tree on the ledge atop Zig Zag. Count implied, not stated: unconfirmed after apply.",
+  "evidence": [
+   "https://www.mountainproject.com/route/106517047/springboard"
+  ],
+  "batch": "m3"
+ },
+ {
+  "table": "routes",
+  "id": "wa_springboard",
+  "column": "length_m",
+  "from": null,
+  "to": 20,
+  "why": "Mountain Project states 65 ft (20 m). Single source; locked-1src after apply.",
+  "evidence": [
+   "https://www.mountainproject.com/route/106517047/springboard"
+  ],
+  "batch": "m3"
+ },
+ {
+  "table": "routes",
+  "id": "wa_springboard",
+  "column": "anchor",
+  "from": null,
+  "to": "Chain anchor",
+  "why": "Mountain Project protection: gear to 2 in, a fixed pin that may be gone, chain anchor. Single source; locked-1src after apply.",
+  "evidence": [
+   "https://www.mountainproject.com/route/106517047/springboard"
+  ],
+  "batch": "m3"
+ },
+ {
+  "table": "routes",
+  "id": "wa_springboard",
+  "column": "access",
+  "from": null,
+  "to": {
+   "fees": null,
+   "rules": "Climbing and scrambling are allowed only in the Mt. Erie summit and south/west face area. The forest lands are open 6 am to 10 pm. New fixed anchors and new climbing areas need Forest Advisory Board approval.",
+   "permit": "No permit for individual climbers. Groups should send their planned climbing dates to Anacortes Parks & Recreation ahead of time.",
+   "group_limit": null,
+   "land_manager": "City of Anacortes Parks & Recreation (Anacortes Community Forest Lands)",
+   "parking_pass": null
+  },
+  "why": "Access is empty. Same object now live on the batch-I Mt. Erie routes (Orange Crush, The Abyss, Treeshadow), re-checked today: City of Anacortes owns the forest lands, Parks & Recreation manages them; the Oct 2025 ACFL plan limits climbing to the summit and S/W faces, sets 6am-10pm hours, asks for climbing dates in advance and requires Forest Advisory Board approval for fixed anchors. No fee or pass stated. Lockable official-1 (12 months) after apply.",
+  "evidence": [
+   "https://www.anacorteswa.gov/DocumentCenter/View/32255/Anacortes-Community-Forest-Lands-Plan",
+   "https://www.anacorteswa.gov/Facilities/Facility/Details/Anacortes-Community-Forest-Lands-7",
+   "https://www.anacorteswa.gov/517/Community-Forest-Lands-ACFL"
+  ],
+  "batch": "m3"
+ },
+ {
+  "table": "routes",
+  "id": "wa_cat_from_outer_space",
+  "column": "pitches",
+  "from": 0,
+  "to": 1,
+  "why": "0 is invalid. Mountain Project: one 70 ft bolted line that starts from the left anchors atop Zig Zag pitch 1. Count implied, not stated: unconfirmed after apply.",
+  "evidence": [
+   "https://www.mountainproject.com/route/112008680/cat-from-outer-space"
+  ],
+  "batch": "m3"
+ },
+ {
+  "table": "routes",
+  "id": "wa_cat_from_outer_space",
+  "column": "length_m",
+  "from": null,
+  "to": 21,
+  "why": "Mountain Project states 70 ft (21 m). Single source; locked-1src after apply.",
+  "evidence": [
+   "https://www.mountainproject.com/route/112008680/cat-from-outer-space"
+  ],
+  "batch": "m3"
+ },
+ {
+  "table": "routes",
+  "id": "wa_cat_from_outer_space",
+  "column": "bolts",
+  "from": null,
+  "to": 9,
+  "why": "Mountain Project: 9 bolts. Single source; locked-1src after apply.",
+  "evidence": [
+   "https://www.mountainproject.com/route/112008680/cat-from-outer-space"
+  ],
+  "batch": "m3"
+ },
+ {
+  "table": "routes",
+  "id": "wa_cat_from_outer_space",
+  "column": "anchor",
+  "from": null,
+  "to": "Chain anchor",
+  "why": "Mountain Project: chain anchor. Single source; locked-1src after apply.",
+  "evidence": [
+   "https://www.mountainproject.com/route/112008680/cat-from-outer-space"
+  ],
+  "batch": "m3"
+ },
+ {
+  "table": "routes",
+  "id": "wa_cat_from_outer_space",
+  "column": "access",
+  "from": null,
+  "to": {
+   "fees": null,
+   "rules": "Climbing and scrambling are allowed only in the Mt. Erie summit and south/west face area. The forest lands are open 6 am to 10 pm. New fixed anchors and new climbing areas need Forest Advisory Board approval.",
+   "permit": "No permit for individual climbers. Groups should send their planned climbing dates to Anacortes Parks & Recreation ahead of time.",
+   "group_limit": null,
+   "land_manager": "City of Anacortes Parks & Recreation (Anacortes Community Forest Lands)",
+   "parking_pass": null
+  },
+  "why": "Access is empty. Same object now live on the batch-I Mt. Erie routes (Orange Crush, The Abyss, Treeshadow), re-checked today: City of Anacortes owns the forest lands, Parks & Recreation manages them; the Oct 2025 ACFL plan limits climbing to the summit and S/W faces, sets 6am-10pm hours, asks for climbing dates in advance and requires Forest Advisory Board approval for fixed anchors. No fee or pass stated. Lockable official-1 (12 months) after apply.",
+  "evidence": [
+   "https://www.anacorteswa.gov/DocumentCenter/View/32255/Anacortes-Community-Forest-Lands-Plan",
+   "https://www.anacorteswa.gov/Facilities/Facility/Details/Anacortes-Community-Forest-Lands-7",
+   "https://www.anacorteswa.gov/517/Community-Forest-Lands-ACFL"
+  ],
+  "batch": "m3"
+ },
+ {
+  "table": "routes",
+  "id": "wa_c_snag_buttress_snag_buttress_direct",
+  "column": "anchor",
+  "from": null,
+  "to": "Chain anchor",
+  "why": "Mountain Project protection: pro to 2 in (short version) or 3 in (full length), chain anchors. Single source; locked-1src after apply.",
+  "evidence": [
+   "https://www.mountainproject.com/route/117263998/snag-buttress-direct"
+  ],
+  "batch": "m3"
+ },
+ {
+  "table": "routes",
+  "id": "wa_c_snag_buttress_snag_buttress_direct",
+  "column": "access",
+  "from": null,
+  "to": {
+   "fees": null,
+   "rules": "Climbing and scrambling are allowed only in the Mt. Erie summit and south/west face area. The forest lands are open 6 am to 10 pm. New fixed anchors and new climbing areas need Forest Advisory Board approval.",
+   "permit": "No permit for individual climbers. Groups should send their planned climbing dates to Anacortes Parks & Recreation ahead of time.",
+   "group_limit": null,
+   "land_manager": "City of Anacortes Parks & Recreation (Anacortes Community Forest Lands)",
+   "parking_pass": null
+  },
+  "why": "Access is empty. Same object now live on the batch-I Mt. Erie routes (Orange Crush, The Abyss, Treeshadow), re-checked today: City of Anacortes owns the forest lands, Parks & Recreation manages them; the Oct 2025 ACFL plan limits climbing to the summit and S/W faces, sets 6am-10pm hours, asks for climbing dates in advance and requires Forest Advisory Board approval for fixed anchors. No fee or pass stated. Lockable official-1 (12 months) after apply.",
+  "evidence": [
+   "https://www.anacorteswa.gov/DocumentCenter/View/32255/Anacortes-Community-Forest-Lands-Plan",
+   "https://www.anacorteswa.gov/Facilities/Facility/Details/Anacortes-Community-Forest-Lands-7",
+   "https://www.anacorteswa.gov/517/Community-Forest-Lands-ACFL"
+  ],
+  "batch": "m3"
+ },
+ {
+  "table": "routes",
+  "id": "wa_b_pigeon_stool_wall_east_great_balls_of_fire",
+  "column": "bolts",
+  "from": null,
+  "to": 5,
+  "why": "Mountain Project protection: 5 bolts. Single source; locked-1src after apply.",
+  "evidence": [
+   "https://www.mountainproject.com/route/126270456/great-balls-of-fire"
+  ],
+  "batch": "m3"
+ },
+ {
+  "table": "routes",
+  "id": "wa_b_pigeon_stool_wall_east_great_balls_of_fire",
+  "column": "anchor",
+  "from": null,
+  "to": "Chain anchor",
+  "why": "Mountain Project: chain anchor shared with Desperation. Single source; locked-1src after apply.",
+  "evidence": [
+   "https://www.mountainproject.com/route/126270456/great-balls-of-fire"
+  ],
+  "batch": "m3"
+ },
+ {
+  "table": "routes",
+  "id": "wa_b_pigeon_stool_wall_east_great_balls_of_fire",
+  "column": "access",
+  "from": null,
+  "to": {
+   "fees": null,
+   "rules": "Climbing and scrambling are allowed only in the Mt. Erie summit and south/west face area. The forest lands are open 6 am to 10 pm. New fixed anchors and new climbing areas need Forest Advisory Board approval.",
+   "permit": "No permit for individual climbers. Groups should send their planned climbing dates to Anacortes Parks & Recreation ahead of time.",
+   "group_limit": null,
+   "land_manager": "City of Anacortes Parks & Recreation (Anacortes Community Forest Lands)",
+   "parking_pass": null
+  },
+  "why": "Access is empty. Same object now live on the batch-I Mt. Erie routes (Orange Crush, The Abyss, Treeshadow), re-checked today: City of Anacortes owns the forest lands, Parks & Recreation manages them; the Oct 2025 ACFL plan limits climbing to the summit and S/W faces, sets 6am-10pm hours, asks for climbing dates in advance and requires Forest Advisory Board approval for fixed anchors. No fee or pass stated. Lockable official-1 (12 months) after apply.",
+  "evidence": [
+   "https://www.anacorteswa.gov/DocumentCenter/View/32255/Anacortes-Community-Forest-Lands-Plan",
+   "https://www.anacorteswa.gov/Facilities/Facility/Details/Anacortes-Community-Forest-Lands-7",
+   "https://www.anacorteswa.gov/517/Community-Forest-Lands-ACFL"
+  ],
+  "batch": "m3"
+ },
+ {
+  "table": "routes",
+  "id": "wa_nevermind_wall_strip_clip_direct",
+  "column": "bolts",
+  "from": null,
+  "to": 8,
+  "why": "Mountain Project states 8 bolts (the guidebook says the direct is a 2-bolt start joining Strip Clip). Lock locked-1src after apply.",
+  "evidence": [
+   "https://www.mountainproject.com/route/108185839/strip-clip-direct"
+  ],
+  "batch": "m4"
+ },
+ {
+  "table": "routes",
+  "id": "wa_nevermind_wall_strip_clip_direct",
+  "column": "anchor",
+  "from": null,
+  "to": "Chain anchor",
+  "why": "Mountain Project: chain anchor with lower-offs. Lock locked-1src after apply.",
+  "evidence": [
+   "https://www.mountainproject.com/route/108185839/strip-clip-direct"
+  ],
+  "batch": "m4"
+ },
+ {
+  "table": "routes",
+  "id": "wa_nevermind_wall_trundling_for_glory_hangerville",
+  "column": "bolts",
+  "from": null,
+  "to": 10,
+  "why": "Mountain Project states 10 bolts. Lock locked-1src after apply.",
+  "evidence": [
+   "https://www.mountainproject.com/route/112295823/trundling-for-glory-hangerville"
+  ],
+  "batch": "m4"
+ },
+ {
+  "table": "routes",
+  "id": "wa_nevermind_wall_trundling_for_glory_hangerville",
+  "column": "anchor",
+  "from": null,
+  "to": "Chain anchor",
+  "why": "Mountain Project: chain anchor with lower-offs. Lock locked-1src after apply.",
+  "evidence": [
+   "https://www.mountainproject.com/route/112295823/trundling-for-glory-hangerville"
+  ],
+  "batch": "m4"
+ },
+ {
+  "table": "routes",
+  "id": "wa_change_creek_fin_chump_change",
+  "column": "bolts",
+  "from": null,
+  "to": 4,
+  "why": "Mountain Project states four bolts straight up the prow. Lock locked-1src after apply.",
+  "evidence": [
+   "https://www.mountainproject.com/route/126584539/chump-change"
+  ],
+  "batch": "m4"
+ },
+ {
+  "table": "routes",
+  "id": "wa_change_creek_fin_chump_change",
+  "column": "anchor",
+  "from": null,
+  "to": "Quick-link anchor",
+  "why": "Mountain Project: anchors with quick links at the top (or walk off left). Lock locked-1src after apply.",
+  "evidence": [
+   "https://www.mountainproject.com/route/126584539/chump-change"
+  ],
+  "batch": "m4"
+ },
+ {
+  "table": "routes",
+  "id": "wa_i_can_fly_2",
+  "column": "pitches",
+  "from": 0,
+  "to": 1,
+  "why": "0 is invalid. The Exit 38 guidebook calls it the next pitch above Rat Face, i.e. one pitch; implied, single source, so ledger unconfirmed (single-source).",
+  "evidence": [
+   "https://rakkup.com/guidebook/exit-38-rock-climbing/i-can-fly/c26562"
+  ],
+  "batch": "m4"
+ },
+ {
+  "table": "routes",
+  "id": "wa_i_can_fly_2",
+  "column": "access",
+  "from": null,
+  "to": {
+   "rules": "Day use only, 6:30 a.m. to dusk. Climbing at Deception Crags can be closed between February and August while peregrine falcons nest; check the park's alerts before going.",
+   "land_manager": "Washington State Parks (Olallie State Park)",
+   "parking_pass": "Discover Pass required to park at Washington State Parks ($10 one day, $45 a year)."
+  },
+  "why": "access is empty. Reuses the LIVE value already on wa_jiffy_pop / wa_underground_economy (same wall, batch J). Re-checked today: the Olallie State Park page says Homestead Valley Trailhead reaches Deception Crags, day use 6:30 a.m. to dusk, Discover Pass $10/$45; the Discover Pass page says a pass is required to park at State Parks; the State Parks post (May 20, 2026) names Deception Crags at Olallie for Feb-Aug falcon closures. The DNR public-lands layer puts the Deception Wall point in the Palouse to Cascades State Park Trail (State Parks); no DNR NRCA. Lock official-1 after apply, expires 2027-11-18.",
+  "evidence": [
+   "https://parks.wa.gov/find-parks/state-parks/olallie-state-park",
+   "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass",
+   "https://parks.wa.gov/node/3529",
+   "https://gis.dnr.wa.gov/site3/rest/services/Public_Boundaries/WADNR_PUBLIC_Major_Public_Lands_NonDNR/MapServer/1"
+  ],
+  "batch": "m4"
+ },
+ {
+  "table": "routes",
+  "id": "wa_i_can_fly_2",
+  "column": "permit",
+  "from": null,
+  "to": "No climbing permit. A Discover Pass is needed to park at Olallie State Park.",
+  "why": "permit is empty. Same live value as the other Deception Wall rows; official-1 from the same State Parks pages, expires 2027-11-18.",
+  "evidence": [
+   "https://parks.wa.gov/find-parks/state-parks/olallie-state-park",
+   "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass"
+  ],
+  "batch": "m4"
+ }
+]
