@@ -1,0 +1,82 @@
+// A route with a free (YDS) grade and a free style is that style FIRST and aid SECOND
+// (owner, 2026-11-18, on Stripe Rock's Valhalla: "a sport climb, the second option is aid").
+//
+// The Mountain Project import filed every route TYPED Aid under `discipline = 'aid'`, ahead of the
+// trad / sport type the same row carries: Valhalla, a bolted 5.8 with one pulled move ("5.8 A0",
+// typed Sport + Aid), drew the aid glyph in search and read "Aid · Sport" on its page.
+//
+// THE RULE, one row at a time:
+//   discipline = 'aid', `grade` carries a YDS 5.x, grade_system = 'yds', and `disciplines` names a
+//   free style  ->  that style becomes `discipline` (trad, then sport, then toprope, then alpine —
+//   the importer's own order) and moves to the FRONT of `disciplines`; aid keeps its place behind it.
+// Nothing else moves: `grade` already leads with the YDS grade, and grade_system / grade_num are
+// already the free grade's.
+//
+// NOT TOUCHED, and listed by --report: an aid route whose `disciplines` names no free style (the
+// list is empty or just ["aid"]). Its free style is not recorded anywhere in the row, and trad vs
+// sport is not something to guess.
+//
+//   node scripts/oneoff/fix-free-discipline-before-aid.mjs            dry run: counts + samples
+//   node scripts/oneoff/fix-free-discipline-before-aid.mjs --apply    writes, paced, then re-reads
+//   node scripts/oneoff/fix-free-discipline-before-aid.mjs --only id  one row (with or without --apply)
+import fs from "fs";
+import path from "path";
+import { fileURLToPath } from "url";
+import { selectAll, patchRow, requireServiceKey } from "../lib/supabase-env.mjs";
+
+const HERE = path.dirname(fileURLToPath(import.meta.url));
+const APPLY = process.argv.includes("--apply");
+const ONLY = process.argv.includes("--only") ? process.argv[process.argv.indexOf("--only") + 1] : null;
+const ROLLBACK = path.join(HERE, "..", "data", "free-discipline-before-aid-rollback.json");
+
+const FREE = ["trad", "sport", "toprope", "alpine"];
+const YDS = /5\.\d/;
+
+export function plan(r) {
+  if (r.discipline !== "aid") return null;
+  const list = Array.isArray(r.disciplines) ? r.disciplines : [];
+  const primary = FREE.find(d => list.includes(d));
+  if (!primary) return null;
+  if (!YDS.test(String(r.grade || "")) || r.grade_system !== "yds") return null;
+  return { discipline: primary, disciplines: [primary, ...list.filter(d => d !== primary)] };
+}
+
+const key = requireServiceKey();
+const SEL = "id,name,area_id,discipline,disciplines,grade,grade_system,grade_num,aid_grade";
+const rows = await selectAll("routes", SEL, ONLY ? `id=eq.${encodeURIComponent(ONLY)}` : "discipline=eq.aid", { key, pageSize: 1000 });
+const todo = [], left = [];
+for (const r of rows) { const p = plan(r); if (p) todo.push({ r, p }); else left.push(r); }
+
+const tally = {};
+for (const { r, p } of todo) { const k = JSON.stringify(r.disciplines) + " -> " + JSON.stringify(p.disciplines); tally[k] = (tally[k] || 0) + 1; }
+console.log(`${rows.length} routes with aid as the primary discipline`);
+console.log(`${todo.length} have a free grade and a free style: that style goes first`);
+for (const [k, n] of Object.entries(tally).sort((a, b) => b[1] - a[1])) console.log(`  ${String(n).padStart(4)}  ${k}`);
+const leftYds = left.filter(r => YDS.test(String(r.grade || "")));
+console.log(`${left.length} left as aid: ${left.length - leftYds.length} with no free grade, ${leftYds.length} with a free grade but no free style on record`);
+if (process.argv.includes("--report")) for (const r of leftYds) console.log(`  ${r.id}  [${r.grade}]  aid ${r.aid_grade || "-"}  ${JSON.stringify(r.disciplines)}`);
+
+if (!APPLY) { console.log("\ndry run — pass --apply to write"); process.exit(0); }
+
+// The rollback file is written BEFORE the first write, and appended to on a re-run, so it always
+// holds every row's value from before this script touched it.
+const prior = fs.existsSync(ROLLBACK) ? JSON.parse(fs.readFileSync(ROLLBACK, "utf8")) : [];
+const had = new Set(prior.map(x => x.id));
+fs.writeFileSync(ROLLBACK, JSON.stringify(prior.concat(todo.filter(t => !had.has(t.r.id)).map(({ r }) => ({ id: r.id, discipline: r.discipline, disciplines: r.disciplines }))), null, 0) + "\n");
+
+let done = 0;
+for (const { r, p } of todo) {
+  // The filter repeats the precondition, so a row somebody changed since the read is not overwritten
+  // (patchRow throws when it matched nothing).
+  await patchRow("routes", r.id, p, { filter: "discipline=eq.aid" });
+  if (++done % 50 === 0) console.log(`  ${done} / ${todo.length}`);
+}
+
+// A 200 is not evidence: read every row back and compare.
+const ids = new Set(todo.map(t => t.r.id));
+const after = (await selectAll("routes", SEL, ONLY ? `id=eq.${encodeURIComponent(ONLY)}` : `disciplines=cs.${encodeURIComponent('["aid"]')}`, { key, pageSize: 1000 })).filter(r => ids.has(r.id));
+const byId = new Map(after.map(r => [r.id, r]));
+let bad = 0;
+for (const { r, p } of todo) { const a = byId.get(r.id); if (!a || a.discipline !== p.discipline || JSON.stringify(a.disciplines) !== JSON.stringify(p.disciplines)) { bad++; console.log(`  NOT AS WRITTEN: ${r.id} -> ${a ? a.discipline + " " + JSON.stringify(a.disciplines) : "missing"}`); } }
+console.log(`${done} written, ${after.length} re-read, ${bad} not as written`);
+process.exit(bad ? 1 : 0);
