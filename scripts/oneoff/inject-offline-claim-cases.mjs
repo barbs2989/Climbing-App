@@ -140,15 +140,15 @@ const CASES = [
     why: "§5 — Manage areas promises photos and map tiles the download never stores",
     find: "\" downloads it: the full catalog — areas,", repl: "\" downloads it with every photo and map tile to this device: the full catalog — areas," },
   { name: "claims-photos-home", file: TODAY, must: "fail", expect: "claims something is on the device",
-    why: "§5 — Home's Pinned states card promises photos",
-    find: "\" downloads its climbs to this device so they open with no signal", repl: "\" downloads its climbs and their photos to this device so they open with no signal" },
+    why: "§5 — Home's Pinned states card (the guest line; the signed-in one was removed 2026-11-18) promises photos",
+    find: "\" you download are saved in this browser and open in one tap", repl: "\" you download are saved with their photos on this device and open in one tap" },
   { name: "claims-topos-help", file: HELP, must: "fail", expect: "claims something is on the device",
     why: "§5 — the Help FAQ promises topos",
     find: "its climbs, areas, gear and beta.", repl: "its climbs, areas, gear, beta and topos, all saved to your phone." },
   /* MUST STAY SILENT: a true claim about the CATALOG, in the no-signal idiom. */
   { name: "honest-claim", file: TODAY, must: "pass",
     why: "MUST PASS — the catalog really is on the device and opens with no signal",
-    find: "\" downloads its climbs to this device so they open with no signal", repl: "\" saves its climbs on this device, so they open with no signal" },
+    find: "\" you download are saved in this browser and open in one tap", repl: "\" you download are saved on this device and open in one tap" },
 
   /* Fail closed — a rename blinds a surface. The Manage areas dialog is found by its aria-label,
    * and the trigger regions alone would keep ClimbMatch's floor satisfied without it. */

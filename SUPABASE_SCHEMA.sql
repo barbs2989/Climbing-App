@@ -9,7 +9,7 @@
 -- and commit the result in the same PR. `npm run gen:schema -- --check` exits 1 when this
 -- file has drifted from the live database.
 --
--- Counts: 86 tables, 847 columns, 455 keyed/checked constraints (150 foreign keys), 254 RLS policies.
+-- Counts: 86 tables, 848 columns, 456 keyed/checked constraints (150 foreign keys), 254 RLS policies.
 -- Not covered here: views, functions, triggers, standalone indexes (see supabase/migrations/).
 
 -- ── Foreign keys ───────────────────────────────────────────────────────────────
@@ -1575,16 +1575,18 @@ CASE
     ELSE NULL::jsonb
 END) STORED,
   skill_practiced jsonb,
+  pronouns text[],
   CONSTRAINT profiles_pkey PRIMARY KEY (id),
   CONSTRAINT profiles_username_key UNIQUE (username),
   CONSTRAINT profiles_account_type_check CHECK ((account_type = ANY (ARRAY['primary'::text, 'secondary'::text]))),
   CONSTRAINT profiles_avail_week_values CHECK ((avail_week <@ ARRAY['mon_am'::text, 'mon_pm'::text, 'tue_am'::text, 'tue_pm'::text, 'wed_am'::text, 'wed_pm'::text, 'thu_am'::text, 'thu_pm'::text, 'fri_am'::text, 'fri_pm'::text, 'sat_am'::text, 'sat_pm'::text, 'sun_am'::text, 'sun_pm'::text])),
   CONSTRAINT profiles_availability_values CHECK ((availability <@ ARRAY['weekends'::text, 'weekday_am'::text, 'weekday_pm'::text, 'flexible'::text])),
   CONSTRAINT profiles_climbing_since_range CHECK (((climbing_since IS NULL) OR ((climbing_since >= 1930) AND (climbing_since <= 2100)))),
-  CONSTRAINT profiles_gender_known CHECK (((gender IS NULL) OR (gender = ANY (ARRAY['woman'::text, 'man'::text, 'non_binary'::text])))),
+  CONSTRAINT profiles_gender_known CHECK (((gender IS NULL) OR (gender = ANY (ARRAY['woman'::text, 'man'::text, 'non_binary'::text, 'genderqueer'::text, 'genderfluid'::text, 'agender'::text, 'two_spirit'::text])))),
   CONSTRAINT profiles_hiking_speed_range CHECK (((hiking_speed_ft_hr IS NULL) OR ((hiking_speed_ft_hr >= 100) AND (hiking_speed_ft_hr <= 6000)))),
   CONSTRAINT profiles_level_check CHECK (((level IS NULL) OR (level = ANY (ARRAY['Beginner'::text, 'Intermediate'::text, 'Advanced'::text, 'Expert'::text])))),
   CONSTRAINT profiles_photo_alts_is_object CHECK (((photo_alts IS NULL) OR (jsonb_typeof(photo_alts) = 'object'::text))),
+  CONSTRAINT profiles_pronouns_known CHECK (((pronouns IS NULL) OR (((cardinality(pronouns) >= 1) AND (cardinality(pronouns) <= 4)) AND (pronouns <@ ARRAY['she_her'::text, 'he_him'::text, 'they_them'::text, 'ze_hir'::text, 'ze_zir'::text, 'xe_xem'::text, 'ey_em'::text, 'fae_faer'::text, 'any'::text])))),
   CONSTRAINT profiles_requests_from_chk CHECK ((requests_from = ANY (ARRAY['everyone'::text, 'friends_of_friends'::text, 'nobody'::text]))),
   CONSTRAINT profiles_trip_reports_default_check CHECK ((trip_reports_default = ANY (ARRAY['public'::text, 'friends'::text, 'private'::text]))),
   CONSTRAINT profiles_id_fkey FOREIGN KEY (id) REFERENCES auth.users(id) ON DELETE CASCADE,

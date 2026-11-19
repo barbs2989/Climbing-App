@@ -1,0 +1,462 @@
+{
+ "wa_blueberry_hill_proxima_wall_rainman": {
+  "area": "wa_blueberry_hill_proxima_wall",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/202209750/rainman",
+    "http://www.mattsea.com/Darr/dome.htm",
+    "https://www.mountainproject.com/area/108546462/blueberry-hill-proxima-wall",
+    "https://www.mountainproject.com/area/113757263/exfoliation-dome",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_Wilderness_01/MapServer/0",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_RangerDistricts_01/MapServer/1",
+    "https://www.fs.usda.gov/r06/mbs/alerts",
+    "https://www.fs.usda.gov/r06/mbs/offices/darrington-ranger-station"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.10c",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/202209750/rainman",
+      "fact": "5.10c YDS",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "http://www.mattsea.com/Darr/dome.htm",
+      "fact": "Rainman (5.10c)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 7,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/202209750/rainman",
+      "fact": "Trad, 900 ft, 7 pitches, Grade III",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "http://www.mattsea.com/Darr/dome.htm",
+      "fact": "Seven pitches lead to the Blueberry Terrace",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "length_m",
+    "value": 274,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/202209750/rainman",
+      "fact": "900 ft (273 m)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_blueberry_hill_proxima_wall_rainman",
+    "column": "detailed_rack",
+    "from": null,
+    "to": "A full rack to 3.5 in, wired stoppers included, and about 13 quickdraws.",
+    "why": "Rack empty. MP: an extensive rack down through wired stoppers; mattsea: gear to 3.5 in and 13 draws. Paragraph, not lockable; wording our own.",
+    "evidence": [
+     "https://www.mountainproject.com/route/202209750/rainman",
+     "http://www.mattsea.com/Darr/dome.htm"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "MP and mattsea.com (Darrington Rock Climbing) agree on 5.10c and 7 pitches; both pages come from people on the 2001 FA party (MP page shared by David Whitelaw; mattsea credits Matt Perkins), but neither cites the other - treated as independent, owner may disagree. FA (Greyell, Tower, Perkins, Hanna, Whitelaw, Packard, 2001) and commitment III are MP only - not set. Trad->alpine (0413/0418): stays trad. Exfoliation Dome is a 3,900 ft valley dome reached from FS 2060 pullouts; 0413 already ruled its Witch Doctor Wall route Sunday Cruise 'Darrington valley crag with a short approach'. Blueberry Hill approach = about 1,000-1,500 ft up the Granite Sidewalk slabs; the route ends at Blueberry Terrace and is not a summit route. Land check (official USFS EDW map layers, queried 2026-11-18): Exfoliation Dome is USDA Forest Service land, Mt. Baker-Snoqualmie NF, Darrington Ranger District, and is NOT inside any wilderness - the Boulder River Wilderness boundary is about 1.5-2 km away. NW Forest Pass: no official page names the FS 2060 pullouts as a fee site (the Darrington Ranger Station page only says where to buy passes) - HELD. Road: the MBS alerts page lists no closure for FS 2060 (Clear Creek Rd); absence is not evidence, so no road text is written (unconfirmed). The Mountain Loop Hwy Bedal-Barlow Pass winter closure does not affect FS 2060, which leaves the highway just south of Darrington."
+ },
+ "wa_blueberry_hill_proxima_wall_westward_ho": {
+  "area": "wa_blueberry_hill_proxima_wall",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/110454382/westward-ho",
+    "http://www.mattsea.com/Darr/dome.htm",
+    "https://www.mountainproject.com/area/108546462/blueberry-hill-proxima-wall",
+    "https://www.mountainproject.com/area/113757263/exfoliation-dome",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_Wilderness_01/MapServer/0",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_RangerDistricts_01/MapServer/1",
+    "https://www.fs.usda.gov/r06/mbs/alerts"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "pitches",
+    "value": 4,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/110454382/westward-ho",
+      "fact": "Trad, 600 ft, 4 pitches",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "http://www.mattsea.com/Darr/dome.htm",
+      "fact": "Four pitches lead to a chain belay",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "length_m",
+    "value": 183,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/110454382/westward-ho",
+      "fact": "600 ft (182 m)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_blueberry_hill_proxima_wall_westward_ho",
+    "column": "detailed_rack",
+    "from": null,
+    "to": "Eight or so quickdraws and a few small cams and nuts to 2 in for the bolted pitches; carry a medium rack of cams and nuts if you go on to the summit.",
+    "why": "Rack empty. MP: bolted pitches, small cams for P4 overlaps, medium rack for the summit extension; mattsea: small gear to 2 in and eight draws. Paragraph; wording our own.",
+    "evidence": [
+     "https://www.mountainproject.com/route/110454382/westward-ho",
+     "http://www.mattsea.com/Darr/dome.htm"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_blueberry_hill_proxima_wall_westward_ho",
+    "column": "anchor",
+    "from": null,
+    "to": "Bolted chain anchors",
+    "why": "MP: pitches 1-4 bolted with fixed anchors; mattsea: four pitches to a chain belay. Two sources.",
+    "evidence": [
+     "https://www.mountainproject.com/route/110454382/westward-ho",
+     "http://www.mattsea.com/Darr/dome.htm"
+    ]
+   }
+  ],
+  "disputed": [
+   "grade: MP 5.9+ (pitches 5.9+, 5.8, 5.9, 5.9); mattsea 5.9. Stored 5.9+ left unlocked - one each, no majority."
+  ],
+  "notes": "MP: most parties rappel from P4 with double ropes; four more gear pitches go to the summit. FA (Whitelaw, Greyell, Hanna, 2001) and commitment II are MP only - not set. Trad->alpine (0413/0418): stays trad. Exfoliation Dome is a 3,900 ft valley dome reached from FS 2060 pullouts; 0413 already ruled its Witch Doctor Wall route Sunday Cruise 'Darrington valley crag with a short approach'. Land check (official USFS EDW map layers, queried 2026-11-18): Exfoliation Dome is USDA Forest Service land, Mt. Baker-Snoqualmie NF, Darrington Ranger District, and is NOT inside any wilderness - the Boulder River Wilderness boundary is about 1.5-2 km away. NW Forest Pass: no official page names the FS 2060 pullouts as a fee site (the Darrington Ranger Station page only says where to buy passes) - HELD. Road: the MBS alerts page lists no closure for FS 2060 (Clear Creek Rd); absence is not evidence, so no road text is written (unconfirmed). The Mountain Loop Hwy Bedal-Barlow Pass winter closure does not affect FS 2060, which leaves the highway just south of Darrington."
+ },
+ "wa_witch_doctor_wall_thunder_road": {
+  "area": "wa_witch_doctor_wall",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/202188057/thunder-road",
+    "https://www.mountainproject.com/area/113757284/witch-doctor-wall",
+    "https://www.mountainproject.com/area/113757263/exfoliation-dome",
+    "https://alpinedave.com/darrington/Voodoo/Voodoo_Wall.htm",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_Wilderness_01/MapServer/0",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_RangerDistricts_01/MapServer/1",
+    "https://www.fs.usda.gov/r06/mbs/alerts"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "aid_grade",
+    "value": "A3",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/202188057/thunder-road",
+      "fact": "A3",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 10,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/202188057/thunder-road",
+      "fact": "Trad, Aid, 1000 ft (303 m), 10 pitches, Grade IV",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "length_m",
+    "value": 305,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/202188057/thunder-road",
+      "fact": "1000 ft (303 m)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_witch_doctor_wall_thunder_road",
+    "column": "discipline",
+    "from": "trad",
+    "to": "aid",
+    "why": "A 10-pitch A3 aid line with only 5.6 free climbing between aid sections; MP types it Trad, Aid and the stored overview calls it a lengthy aid climb. disciplines already holds ['trad','aid']. MP only, so discipline will not lock - owner call.",
+    "evidence": [
+     "https://www.mountainproject.com/route/202188057/thunder-road"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_witch_doctor_wall_thunder_road",
+    "column": "grade",
+    "from": "5.6 A3",
+    "to": "5.6",
+    "why": "The aid grade is welded into grade while aid_grade already holds A3 (same defect batch K reported on SEWS East Buttress Direct). grade_num stays 6. Owner call: check the page still shows A3 in the header after the split.",
+    "evidence": [
+     "https://www.mountainproject.com/route/202188057/thunder-road"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "Only MP describes this route (Don Brooks solo 1973; original rack 25 pitons to 1.5 in, mostly Lost Arrows, plus nuts - a 1970s list, stale). FA and commitment IV are MP only - not set/locked. Grade '5.6 A3' not locked because a split is proposed. Witch Doctor Wall approach: about 30 min handrailing the creek from a FS 2060 pullout (MP area page) - a short approach, so not alpine. Land check (official USFS EDW map layers, queried 2026-11-18): Exfoliation Dome is USDA Forest Service land, Mt. Baker-Snoqualmie NF, Darrington Ranger District, and is NOT inside any wilderness - the Boulder River Wilderness boundary is about 1.5-2 km away. NW Forest Pass: no official page names the FS 2060 pullouts as a fee site (the Darrington Ranger Station page only says where to buy passes) - HELD. Road: the MBS alerts page lists no closure for FS 2060 (Clear Creek Rd); absence is not evidence, so no road text is written (unconfirmed). The Mountain Loop Hwy Bedal-Barlow Pass winter closure does not affect FS 2060, which leaves the highway just south of Darrington."
+ },
+ "wa_witch_doctor_wall_witch_doctor_s_elixir": {
+  "area": "wa_witch_doctor_wall",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/202187864/witch-doctors-elixir",
+    "https://www.mountainproject.com/area/113757284/witch-doctor-wall",
+    "https://www.mountainproject.com/area/113757263/exfoliation-dome",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_Wilderness_01/MapServer/0",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_RangerDistricts_01/MapServer/1",
+    "https://www.fs.usda.gov/r06/mbs/alerts"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "pitches",
+    "value": 6,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/202187864/witch-doctors-elixir",
+      "fact": "Trad, 500 ft (152 m), 6 pitches, Grade III",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "length_m",
+    "value": 152,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/202187864/witch-doctors-elixir",
+      "fact": "500 ft (152 m)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_witch_doctor_wall_witch_doctor_s_elixir",
+    "column": "grade",
+    "from": "5.9 PG13",
+    "to": "5.9",
+    "why": "The protection rating is welded into grade; it belongs in prot_rating (proposed together). grade_num stays 9. MP: 5.9 PG13.",
+    "evidence": [
+     "https://www.mountainproject.com/route/202187864/witch-doctors-elixir"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_witch_doctor_wall_witch_doctor_s_elixir",
+    "column": "prot_rating",
+    "from": null,
+    "to": "PG13",
+    "why": "Split from grade (proposed together). MP only.",
+    "evidence": [
+     "https://www.mountainproject.com/route/202187864/witch-doctors-elixir"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_witch_doctor_wall_witch_doctor_s_elixir",
+    "column": "bolts",
+    "from": null,
+    "to": 0,
+    "why": "MP: no bolts or fixed gear. Single source (locked-1src after apply).",
+    "evidence": [
+     "https://www.mountainproject.com/route/202187864/witch-doctors-elixir"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_witch_doctor_wall_witch_doctor_s_elixir",
+    "column": "anchor",
+    "from": null,
+    "to": "Trees",
+    "why": "MP: descend by rappels from trees down the gully/corner; bring spare webbing. Single source.",
+    "evidence": [
+     "https://www.mountainproject.com/route/202187864/witch-doctors-elixir"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_witch_doctor_wall_witch_doctor_s_elixir",
+    "column": "detailed_rack",
+    "from": null,
+    "to": "Double cams to 4 in, a set of wired stoppers, and spare webbing for the tree rappels; two ropes.",
+    "why": "Rack empty. MP only. Paragraph; wording our own.",
+    "evidence": [
+     "https://www.mountainproject.com/route/202187864/witch-doctors-elixir"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "Only MP describes this route (FA Sprague Ackley, Hope Barns 1982 - MP only, not set; commitment III MP only). The route does not reach the ridge crest. Grade not locked because a split is proposed. Trad->alpine (0413/0418): stays trad. Exfoliation Dome is a 3,900 ft valley dome reached from FS 2060 pullouts; 0413 already ruled its Witch Doctor Wall route Sunday Cruise 'Darrington valley crag with a short approach'. Land check (official USFS EDW map layers, queried 2026-11-18): Exfoliation Dome is USDA Forest Service land, Mt. Baker-Snoqualmie NF, Darrington Ranger District, and is NOT inside any wilderness - the Boulder River Wilderness boundary is about 1.5-2 km away. NW Forest Pass: no official page names the FS 2060 pullouts as a fee site (the Darrington Ranger Station page only says where to buy passes) - HELD. Road: the MBS alerts page lists no closure for FS 2060 (Clear Creek Rd); absence is not evidence, so no road text is written (unconfirmed). The Mountain Loop Hwy Bedal-Barlow Pass winter closure does not affect FS 2060, which leaves the highway just south of Darrington."
+ },
+ "wa_snagglepuss": {
+  "area": "wa_salami_slabs",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/117623596/snagglepuss",
+    "https://www.mountainproject.com/area/113757263/exfoliation-dome",
+    "https://www.mountainproject.com/area/117599669/north-exfo-crags",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_Wilderness_01/MapServer/0",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_RangerDistricts_01/MapServer/1",
+    "https://www.fs.usda.gov/r06/mbs/alerts",
+    "https://www.fs.usda.gov/r06/mbs/offices/darrington-ranger-station"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.8+",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/117623596/snagglepuss",
+      "fact": "5.8+ YDS",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Veldhuisen, Heiser and Hanna, 2018",
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/117623596/snagglepuss",
+      "fact": "FA: Veldhuisen, Heiser and Hanna, 2018",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_snagglepuss",
+    "column": "pitches",
+    "from": 0,
+    "to": 7,
+    "why": "0 is invalid. MP states 7 pitches (5.7, 5.8+, 5.4, 5.8, 5.8+, 5.7, 5.6). Single source (locked-1src after apply).",
+    "evidence": [
+     "https://www.mountainproject.com/route/117623596/snagglepuss"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_snagglepuss",
+    "column": "length_m",
+    "from": null,
+    "to": 303,
+    "why": "MP states 1000 ft (303 m). Single source (locked-1src after apply).",
+    "evidence": [
+     "https://www.mountainproject.com/route/117623596/snagglepuss"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_snagglepuss",
+    "column": "anchor",
+    "from": null,
+    "to": "Bolted anchors",
+    "why": "MP: bolted rap/belay stations, chains at the first belay. Single source.",
+    "evidence": [
+     "https://www.mountainproject.com/route/117623596/snagglepuss"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_snagglepuss",
+    "column": "detailed_rack",
+    "from": null,
+    "to": "Mostly bolts: a single rack of cams from the smallest to 2 in is enough, nuts optional; two 60 m ropes for the rappels.",
+    "why": "Rack empty. MP only. Paragraph; wording our own.",
+    "evidence": [
+     "https://www.mountainproject.com/route/117623596/snagglepuss"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_snagglepuss",
+    "column": "access",
+    "from": {
+     "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+     "rules": "Group size capped at 12 (people + stock combined) inside Glacier Peak Wilderness; larger groups must split with 1-mile separation. Campfires prohibited above 3,500 ft in wilderness.",
+     "permit": "None required — free self-issue wilderness permits available at trailheads/ranger stations for day/overnight travel where the peak is inside designated wilderness.",
+     "group_limit": 12,
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Darrington Ranger District)",
+     "parking_pass": "Northwest Forest Pass required at Mountain Loop Highway trailheads — $5/day or $30/year."
+    },
+    "to": {
+     "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Darrington Ranger District)",
+     "parking_pass": "Northwest Forest Pass required at Mountain Loop Highway trailheads — $5/day or $30/year."
+    },
+    "why": "Templated text is wrong: it puts Snagglepuss in the Glacier Peak Wilderness (12-person group cap, campfire rule, wilderness permits). Official USFS EDW layers: the Salami Slabs / Exfoliation Dome are Mt. Baker-Snoqualmie NF, Darrington Ranger District land outside every wilderness (Boulder River Wilderness boundary ~1.5 km away). Drop the rules, permit and group_limit keys. land_manager already matches the official layer. parking_pass and fees left as stored but UNVERIFIED (no official page names these pullouts as a NW Forest Pass site) - held, owner call. Official USFS map layers, retrieved 2026-11-18.",
+    "evidence": [
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_Wilderness_01/MapServer/0",
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0",
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_RangerDistricts_01/MapServer/1",
+     "https://www.fs.usda.gov/r06/mbs/offices/darrington-ranger-station"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "MP is the only source (OpenBeta copies it). Stored approach_variants text checks out against MP (left fork of FS 2060 at ~5 mi, unmarked path, start on the leftmost line where the path reaches lower Salami Slab). MP descent: reverse the route, using Purdie Shuffle straight down to Salami Ledge from pitches 4/5; double 60 m ropes. Trad->alpine (0413/0418): stays trad. Exfoliation Dome is a 3,900 ft valley dome reached from FS 2060 pullouts; 0413 already ruled its Witch Doctor Wall route Sunday Cruise 'Darrington valley crag with a short approach'. Land check (official USFS EDW map layers, queried 2026-11-18): Exfoliation Dome is USDA Forest Service land, Mt. Baker-Snoqualmie NF, Darrington Ranger District, and is NOT inside any wilderness - the Boulder River Wilderness boundary is about 1.5-2 km away. NW Forest Pass: no official page names the FS 2060 pullouts as a fee site (the Darrington Ranger Station page only says where to buy passes) - HELD. Road: the MBS alerts page lists no closure for FS 2060 (Clear Creek Rd); absence is not evidence, so no road text is written (unconfirmed). The Mountain Loop Hwy Bedal-Barlow Pass winter closure does not affect FS 2060, which leaves the highway just south of Darrington."
+ }
+}
