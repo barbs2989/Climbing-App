@@ -7,7 +7,9 @@
 //   node scripts/oneoff/probe-no-page-swipe.mjs --css "<rules>" # try a stylesheet rule before writing it into index.html
 //   node scripts/oneoff/probe-no-page-swipe.mjs --root <dir>    # another checkout (one that still has the swipe
 //                                                               # proves the probe can see a swipe when there is one)
-// Exit 1 when a swipe changed the page, or when a tap or an up-down drag stopped working.
+// It also drags the things that OWN a sideways drag, which must keep it: a swipe row (archive / delete) must follow
+// the finger, and a map must pan.
+// Exit 1 when a swipe changed the page, or when a tap, an up-down drag, a swipe row or a map stopped working.
 import { chromium } from "playwright-core";
 import { spawn } from "node:child_process";
 import fs from "node:fs";
@@ -70,6 +72,52 @@ async function drag(x0, y0, x1, y1) {
   await cdp.send("Input.dispatchTouchEvent", { type: "touchEnd", touchPoints: [] });
   await page.waitForTimeout(650);
 }
+// A drag that is HELD at its far end while `read` looks at the page, then released back where it started (so a
+// swipe row springs back and nothing is archived or deleted).
+async function dragAndRead(x0, y0, x1, read) {
+  await cdp.send("Input.dispatchTouchEvent", { type: "touchStart", touchPoints: [{ x: x0, y: y0 }] });
+  for (let i = 1; i <= 10; i++) { await cdp.send("Input.dispatchTouchEvent", { type: "touchMove", touchPoints: [{ x: x0 + ((x1 - x0) * i) / 10, y: y0 }] }); await page.waitForTimeout(14); }
+  const mid = await read();
+  for (let i = 9; i >= 0; i--) { await cdp.send("Input.dispatchTouchEvent", { type: "touchMove", touchPoints: [{ x: x0 + ((x1 - x0) * i) / 10, y: y0 }] }); await page.waitForTimeout(10); }
+  await cdp.send("Input.dispatchTouchEvent", { type: "touchEnd", touchPoints: [] });
+  await page.waitForTimeout(500);
+  return mid;
+}
+// SWIPE ROWS (archive / delete a row) and MAPS own their sideways drag; the page's pan-y rule must not take it.
+let rowsTried = 0, mapsTried = 0;
+async function ownGestures(name) {
+  // The first swipe row on screen: SwipeRow's moving layer is the one with touch-action pan-y and a translateX.
+  const row = await page.evaluate(() => {
+    document.querySelectorAll("[data-probe-row]").forEach((e) => e.removeAttribute("data-probe-row"));
+    const el = [...document.querySelectorAll("div")].find((e) => { if (e.style.touchAction !== "pan-y" || !/translateX/.test(e.style.transform)) return false; const r = e.getBoundingClientRect(); return r.width > 200 && r.top > 90 && r.bottom < window.innerHeight - 90; });
+    if (!el) return null; el.setAttribute("data-probe-row", ""); const r = el.getBoundingClientRect(); return { y: Math.round(r.top + r.height / 2) };
+  });
+  if (row) {
+    rowsTried++;
+    const before = await sig();
+    // 110px left: past the row's 30px slack, short of its 140px "release to act" line.
+    const mid = await dragAndRead(300, row.y, 190, () => page.evaluate(() => { const e = document.querySelector("[data-probe-row]"); return e ? e.style.transform : "gone"; }));
+    const moved = /translateX\(-\d/.test(mid) && mid !== "translateX(0px)";
+    const still = await page.evaluate(() => !!document.querySelector("[data-probe-row]"));
+    if (!moved) { broken++; console.log("  ROW: a swipe row on " + name + " did not follow the finger (mid-drag " + mid + ")"); }
+    else if (!still || before !== (await sig())) { broken++; console.log("  ROW: a short drag on " + name + "'s swipe row acted or changed the page"); }
+    else console.log("  swipe row on " + name + ": follows the finger (" + mid + "), springs back, nothing acted");
+  }
+  const map = await page.evaluate(() => {
+    const m = [...document.querySelectorAll(".leaflet-container")].find((e) => { const r = e.getBoundingClientRect(); return r.width > 200 && r.height > 120 && r.top > 60 && r.bottom < window.innerHeight - 70; });
+    if (!m) return null; document.querySelectorAll("[data-probe-map]").forEach((e) => e.removeAttribute("data-probe-map")); m.setAttribute("data-probe-map", ""); const r = m.getBoundingClientRect(); return { y: Math.round(r.top + r.height / 2) };
+  });
+  if (map) {
+    mapsTried++;
+    const pane = () => page.evaluate(() => { const p = document.querySelector("[data-probe-map] .leaflet-map-pane"); return p ? p.style.transform : "none"; });
+    const before = await sig(), p0 = await pane();
+    await drag(280, map.y, 130, map.y);
+    const p1 = await pane();
+    if (p0 === p1) { broken++; console.log("  MAP: a sideways drag on " + name + "'s map did not pan it (" + p0 + ")"); }
+    else if (before !== (await sig())) { broken++; console.log("  MAP: panning " + name + "'s map changed the page"); }
+    else console.log("  map on " + name + ": a sideways drag pans it  " + p0 + " -> " + p1);
+  }
+}
 async function tapNav(label) {
   const ok = await page.evaluate((t) => { const b = [...document.querySelectorAll('[aria-label="Primary"] button,[aria-label="Primary"] [role="button"],[aria-label="Primary"] a')].find((e) => (e.textContent || "").trim().endsWith(t)); if (!b) return false; b.click(); return true; }, label);
   await page.waitForTimeout(1800);
@@ -102,7 +150,12 @@ try {
   for (const label of navLabels) {
     if (!(await tapNav(label))) { console.log("  (could not open " + label + ")"); broken++; continue; }
     await swipeScreen(label);
+    await ownGestures(label);
   }
+  // The bell's list is all swipe rows.
+  await tapNav("Home");
+  const bell = await page.evaluate(() => { const b = [...document.querySelectorAll('button,[role="button"]')].find((e) => /notification/i.test(e.getAttribute("aria-label") || "") && e.getBoundingClientRect().width > 0); if (!b) return false; b.click(); return true; });
+  if (bell) { await page.waitForTimeout(1500); await ownGestures("Notifications"); await page.evaluate(() => { const b = [...document.querySelectorAll('button,[role="button"]')].find((e) => /^(← )?Back$|^Close|^✕/.test((e.textContent || "").trim()) || /^(close|back)/i.test(e.getAttribute("aria-label") || "")); if (b) b.click(); }); await page.waitForTimeout(800); }
   // Tapping a tab still changes it, and an up-down drag still scrolls.
   await tapNav("Logbook");
   const before = await sig();
@@ -125,6 +178,18 @@ try {
       await page.waitForTimeout(2500);
       await css();
       await swipeScreen("Route page · Overview (" + routeId + ")");
+      // The route map: on whichever tab draws one (Leaflet loads late, so wait for it).
+      for (const t of ["Overview", "Plan", "Photos"]) {
+        await page.evaluate((label) => { const x = [...document.querySelectorAll("[data-cm-route-tabs] button")].find((e) => (e.textContent || "").trim() === label); if (x) x.click(); }, t);
+        let found = false;
+        for (let i = 0; i < 8 && !found; i++) { await page.waitForTimeout(800); found = await page.evaluate(() => { const m = [...document.querySelectorAll(".leaflet-container")].find((e) => e.getBoundingClientRect().height > 120); if (!m) return false; m.scrollIntoView({ block: "center" }); return true; }); }
+        if (!found) continue;
+        await page.waitForTimeout(1500);
+        await ownGestures("the route page (" + t + " tab)");
+        break;
+      }
+      await page.evaluate(() => { const x = [...document.querySelectorAll("[data-cm-route-tabs] button")].find((e) => (e.textContent || "").trim() === "Overview"); if (x) x.click(); const a = document.getElementById("appscroll"); if (a) a.scrollTop = 0; window.scrollTo(0, 0); });
+      await page.waitForTimeout(500);
       const rb = await sig();
       const t = await page.evaluate(() => { const b = [...document.querySelectorAll("[data-cm-route-tabs] button")].find((e) => (e.textContent || "").trim() === "Safety"); if (!b) return false; b.click(); return true; });
       await page.waitForTimeout(1500);
@@ -138,8 +203,10 @@ try {
     }
   } else console.log("  (no route id: route page not probed)");
 
+  if (!rowsTried) console.log("  (no swipe row was on screen: rows not probed)");
+  if (!mapsTried) console.log("  (no map was on screen: maps not probed)");
   if (errors.length) { broken++; console.log("  PAGE ERRORS: " + errors.join(" || ")); }
-  console.log(`\n${drags} sideways swipes: ${changed} changed the page. ${broken} other failure(s). ${errors.length} page error(s).`);
+  console.log(`\n${drags} sideways swipes: ${changed} changed the page. ${rowsTried} swipe row(s) and ${mapsTried} map(s) driven. ${broken} other failure(s). ${errors.length} page error(s).`);
 } finally {
   await browser.close();
 }
