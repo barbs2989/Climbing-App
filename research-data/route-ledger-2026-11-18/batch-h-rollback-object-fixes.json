@@ -1,0 +1,139 @@
+{
+ "note": "jsonb fixes, 2026-11-18",
+ "rollback": [
+  {
+   "table": "routes",
+   "id": "wa_air_guitar",
+   "before": {
+    "access": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_party_in_your_pants",
+   "before": {
+    "access": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_throbbing_gristle",
+   "before": {
+    "access": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_george_and_martha",
+   "before": {
+    "access": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_seven_virgins_and_a_mule",
+   "before": {
+    "access": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_dreamer_direct",
+   "before": {
+    "access": {
+     "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+     "rules": "Group size capped at 12 (people + stock combined) inside Glacier Peak Wilderness; larger groups must split with 1-mile separation. Campfires prohibited above 3,500 ft in wilderness.",
+     "permit": "None required — free self-issue wilderness permits available at trailheads/ranger stations for day/overnight travel where the peak is inside designated wilderness.",
+     "group_limit": 12,
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Darrington Ranger District)",
+     "parking_pass": "Northwest Forest Pass required at Mountain Loop Highway trailheads — $5/day or $30/year."
+    }
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_safe_sex",
+   "before": {
+    "access": {
+     "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+     "rules": "Group size capped at 12 (people + stock combined) inside Glacier Peak Wilderness; larger groups must split with 1-mile separation. Campfires prohibited above 3,500 ft in wilderness.",
+     "permit": "None required — free self-issue wilderness permits available at trailheads/ranger stations for day/overnight travel where the peak is inside designated wilderness.",
+     "group_limit": 12,
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Darrington Ranger District)",
+     "parking_pass": "Northwest Forest Pass required at Mountain Loop Highway trailheads — $5/day or $30/year."
+    }
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_urban_bypass",
+   "before": {
+    "access": {
+     "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+     "rules": "Group size capped at 12 (people + stock combined) inside Glacier Peak Wilderness; larger groups must split with 1-mile separation. Campfires prohibited above 3,500 ft in wilderness.",
+     "permit": "None required — free self-issue wilderness permits available at trailheads/ranger stations for day/overnight travel where the peak is inside designated wilderness.",
+     "group_limit": 12,
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Darrington Ranger District)",
+     "parking_pass": "Northwest Forest Pass required at Mountain Loop Highway trailheads — $5/day or $30/year."
+    }
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_three_o_clock_rock_big_tree_2000",
+   "before": {
+    "access": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_three_o_clock_rock_charlie_chan_s_number_one_suspect",
+   "before": {
+    "access": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_glacier_peak_cool_glacier_gerdine",
+   "before": {
+    "access": {
+     "fees": "None beyond the parking or entrance fee this route already lists.",
+     "notes": "Free wilderness permit required at trailhead (Glacier Peak Wilderness). Day-use parking fee: $5/vehicle/day or $30 annual pass. No strict seasonal closure, but route inaccessible before June due to snow depth. Avalanche danger highest May-June; check Northwest Avalanche Center. Recommended May-October overall, with July as optimal month.",
+     "rules": "Group size capped at 12 (people + stock combined) in Glacier Peak Wilderness; larger groups must split with 1-mile separation. Campfires prohibited above 3,500 ft.",
+     "permit": "Self-Issue Wilderness Permit",
+     "seasonal": "Mountain Loop Highway has a seasonal gate closure (Deer Creek–Bedal, ~14 mi), typically Nov–mid/late May. Suiattle River Road (FSR 26), the primary Glacier Peak access, has had storm-damage closures — check current conditions before a trip.",
+     "group_limit": 12,
+     "land_manager": "U.S. Forest Service",
+     "parking_pass": "Northwest Forest Pass",
+     "overnight_permit": {
+      "url": null,
+      "what": "Free self-issue Glacier Peak Wilderness permit",
+      "where": "Fill one out at the trailhead kiosk and carry it with you."
+     }
+    }
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_glacier_peak_sitkum_glacier",
+   "before": {
+    "access": {
+     "fees": "None beyond the parking or entrance fee this route already lists.",
+     "notes": "Northwest Forest Pass required for parking. No climbing permits or camping fees required. Trail status: The White Chuck River Trail was severely damaged by a 2003 flood; contact Darrington Ranger Station for current conditions.",
+     "rules": "Group size capped at 12 (people + stock combined) in Glacier Peak Wilderness; larger groups must split with 1-mile separation. Campfires prohibited above 3,500 ft.",
+     "permit": "Self-Issue Wilderness Permit",
+     "closures": "Closed: White Chuck Road (FR 23) is closed to vehicles from milepost 3.7 to its end, and Rat Trap Pass Road (FR 27) from milepost 4, for flood damage, since 19 March 2025, with no end date given, as listed on the Mt. Baker-Snoqualmie National Forest alert last updated 30 June 2026. White Chuck River Trail #643 is listed as inaccessible, with no road or trail access, since the 2003 flood. Use the North Fork Sauk River Trailhead and the Pacific Crest Trail instead. Darrington Ranger District: (360) 436-1155.",
+     "seasonal": "Mountain Loop Highway has a seasonal gate closure (Deer Creek–Bedal, ~14 mi), typically Nov–mid/late May. Suiattle River Road (FSR 26), the primary Glacier Peak access, has had storm-damage closures — check current conditions before a trip.",
+     "group_limit": 12,
+     "land_manager": "U.S. Forest Service",
+     "parking_pass": "Northwest Forest Pass",
+     "overnight_permit": {
+      "url": null,
+      "what": "Free self-issue Glacier Peak Wilderness permit",
+      "where": "Fill one out at the trailhead kiosk and carry it with you."
+     }
+    }
+   }
+  }
+ ]
+}

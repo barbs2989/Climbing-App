@@ -9,6 +9,10 @@
 // panel (under Requests), Home's Notifications list and the desktop rail -- as Strava's "tagged you
 // in an activity" and Facebook's friend requests are answered in the notification itself. Ranks
 // keeps only a one-line link while any wait, because the answers change its boards.
+//
+// AND ON CREW › REQUESTS (2026-11-18). The bell's row swipes and clears like every notification, which
+// took the question with it: nothing else listed it, and Ranks kept saying one was waiting. Requests is
+// the one place everything pending lives, so every unanswered tag is listed there too, and Ranks opens it.
 import { useState } from "react";
 import { useQueryClient } from "@tanstack/react-query";
 import { respondToLogTag } from "./db";
@@ -44,6 +48,7 @@ export function LogTagRow({ tag: t, showToast, compact = false }) {
       .then(() => {
         const followed = verdict === "confirmed" && confirmedHandler ? confirmedHandler(t) : false;
         if (showToast && !followed) showToast(verdict === "confirmed" ? "Confirmed — thanks for backing up " + who + "’s climb." : "Marked as not with you — " + who + "’s climb no longer counts on Ranks.");
+        qc.invalidateQueries({ queryKey: ["leaderboard"] });
         return qc.invalidateQueries({ queryKey: ["log-tags-for-me"] });
       })
       .catch(() => { if (showToast) showToast("Couldn’t save your answer — nothing changed. Try again."); })

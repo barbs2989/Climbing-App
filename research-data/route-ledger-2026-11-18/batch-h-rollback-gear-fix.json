@@ -1,0 +1,12 @@
+{
+ "note": "jsonb-string gear fix, batch H, 2026-11-18",
+ "rollback": [
+  {
+   "table": "routes",
+   "id": "wa_party_in_your_pants",
+   "before": {
+    "gear": "Cams to about 2 in; a #4 is handy for the belay"
+   }
+  }
+ ]
+}

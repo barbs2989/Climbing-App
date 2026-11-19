@@ -42,6 +42,9 @@ const addDays = (d, n) => { const x = new Date(d); x.setDate(x.getDate() + n); r
 function weekendFrom(now, weeksOut) { const dow = now.getDay(); const sat = dow === 0 ? addDays(now, -1) : addDays(now, 6 - dow); const s = addDays(sat, 7 * weeksOut); return { freeFrom: localYmd(dow === 0 && !weeksOut ? now : s), freeTo: localYmd(addDays(s, 1)) }; }
 
 export default function MyPartnerAreas({ uid, listings, listingsError, prefill, discoverable, onOpenPrivacy, onClose, notify, suggestIds }) {
+  /* OPENED ON ONE LISTING (a chip under Partners › My areas, review 2026-11-18): Back, Escape and Save return to Partners, where you came from. They used to drop you on the full Listed areas list, one more screen to leave. */
+  const direct = !!(prefill && prefill.areaId);
+  const leaveDraft = () => { if (direct) onClose(); else setDraft(null); };
   const [draft, setDraft] = useState(null); // {areaId,name,areaType,parentName, disciplines[], freeFrom, freeTo, note, pick}
   const [q, setQ] = useState("");
   const [busy, setBusy] = useState(false);
@@ -104,10 +107,10 @@ export default function MyPartnerAreas({ uid, listings, listingsError, prefill, 
   const listingsN = (listings || []).length;
   const editing = draft && listed.has(draft.areaId);
   const title = draft ? (editing ? "Edit listing" : "List me here") : "Listed areas";
-  return createPortal(<div onKeyDown={(e) => { if (e.key === "Escape") { if (draft) setDraft(null); else onClose(); } }} tabIndex={-1} role="dialog" aria-label="My listed areas" aria-modal="true" style={{ position: "fixed", inset: 0, background: C.bg, zIndex: 1200, overflowY: "auto", overscrollBehavior: "contain", maxWidth: 520, margin: "0 auto", boxSizing: "border-box" }}>
+  return createPortal(<div onKeyDown={(e) => { if (e.key === "Escape") { if (draft) leaveDraft(); else onClose(); } }} tabIndex={-1} role="dialog" aria-label="My listed areas" aria-modal="true" style={{ position: "fixed", inset: 0, background: C.bg, zIndex: 1200, overflowY: "auto", overscrollBehavior: "contain", maxWidth: 520, margin: "0 auto", boxSizing: "border-box" }}>
     <div style={{ minHeight: "100%" }}>
       <div style={{ position: "sticky", top: 0, background: C.surface, borderBottom: "1px solid " + C.border, padding: "calc(env(safe-area-inset-top) + 10px) 16px 10px", display: "flex", alignItems: "center", gap: 10, zIndex: 2 }}>
-        {draft ? <button onClick={() => setDraft(null)} style={POP_BACK}>← Back</button> : <button onClick={onClose} style={POP_CLOSE} aria-label="Close">✕</button>}
+        {draft ? <button onClick={leaveDraft} style={POP_BACK}>← Back</button> : <button onClick={onClose} style={POP_CLOSE} aria-label="Close">✕</button>}
         <div style={{ fontSize: 17, fontWeight: 800, color: C.text, minWidth: 0, overflowWrap: "anywhere" }}>{title}</div>
       </div>
       <div style={{ padding: "14px 16px calc(env(safe-area-inset-bottom) + 40px)" }}>
