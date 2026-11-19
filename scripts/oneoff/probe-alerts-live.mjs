@@ -29,6 +29,9 @@ import os from "node:os";
 import { createFixture, sessionForStorage, STORAGE_KEY } from "../lib/ui-fixture.mjs";
 import { SUPABASE_URL, anonKey, requireServiceKey, headers } from "../lib/supabase-env.mjs";
 import { settledText } from "../lib/render-settle.mjs";
+import { assertQuietBox } from "../lib/quiet-box.mjs";
+
+assertQuietBox("probe-alerts-live.mjs");
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
 const STATE = process.env.ALERTS_PROBE_STATE || path.join(os.tmpdir(), "climbmatch-alerts-probe-state.json");
