@@ -15,10 +15,11 @@ whole guide feature on 2026-11-14 (owner). This doc covers the partners mode (`l
   title that STATES the search ("Climbers who climb where you do", "Climbers in Index", "Climbers who want
   Liberty Crack"; the distance is on its own pill, not repeated in the title), then — signed in — the **You card**, then ONE wrapping row of pills (`role="group"` *Narrow the list*): **Search by ▾** (the five modes, a native select drawn
   as a pill), **Distance ▾** (ONE pill: Anywhere · Within 10 / 25 / 50 / 100 / 200 / 500 mi of <zip> · Near me now, then the same radii "of you now" once located),
-  **Discipline ▾**, **Leads ▾** once a roped discipline (sport, trad, ice, mixed, aid) is picked, **Experience ▾**, the **Only women / men / non-binary
-  climbers** switch (`role="switch"`), and **More filters** on the example-list modes. The More filters panel opens right under the row (speed match,
-  available to climb, max distance and **Sort** for the examples — Sort only where there are two ways to sort, i.e. a seed coordinate; its badge
-  counts the panel filters). The pills are 44px on a phone and 36px on the website (#3156). The name
+  **Discipline ▾**, **Leads ▾** once a roped discipline (sport, trad, ice, mixed, aid) is picked, **Experience ▾**, and **More filters** (on the example-list
+  modes, and on every mode for a signed-in climber). The More filters panel opens right under the row: first **Show only**, one chip per gender
+  (Women · Men · Non-binary · Genderqueer · Genderfluid · Agender · Two-Spirit, `aria-pressed`; tick several), then, on the example-list modes, speed match,
+  available to climb, max distance and **Sort** for the examples — Sort only where there are two ways to sort, i.e. a seed coordinate. Its badge
+  counts the panel filters that are on, one per picked gender. The pills are 44px on a phone and 36px on the website (#3156). The name
   search is an icon pill (*Name*, `aria-expanded`) beside the title that opens the box. Partner cards stay one per row (owner).
 - **The You card — how other climbers find you** (owner, climber walkthrough 2026-11-13): one compact card above the pills holding
   everything about YOUR visibility, so the pill row is only "who am I looking for". Its first row is the sentence and button the Join a crew
@@ -31,7 +32,7 @@ whole guide feature on 2026-11-14 (owner). This doc covers the partners mode (`l
 - **Distance defaults to Anywhere in the place modes** (My areas, Pick an area; walkthrough 2026-11-14): with a zip on file it defaulted
   to *within 50 mi of <zip>* everywhere, so a Bellingham climber listed at Smith Rock saw nobody there. Near my zip stays the default for
   Everyone and My objectives, and is one pick away in every mode.
-- **Area search finds every state** (*+ Add an area* and Pick an area, whose box now sits above the state dropdowns): partial names,
+- **Area search finds every state** (the Listed areas search behind *My areas*, and Pick an area, whose box now sits above the state dropdowns): partial names,
   mt/mount, apostrophes, climber nicknames (`PLACE_NICKNAMES` in lib/search.js: rrg, jtree, nrg, hcr, lcc, bcc, shawangunks) and, when
   nothing matched, typos via `search_names_fuzzy` ("closest names"). Audit 2026-11-14 (`scripts/oneoff/audit-area-search.mjs`): 67/67
   corpus places found, against 22/67 for the old one-state box.
@@ -73,12 +74,14 @@ whole guide feature on 2026-11-14 (owner). This doc covers the partners mode (`l
   out of every browse list (name search still finds them), and a viewer without one is told they are not shown.
   **Sending a request** to a real climber without your own photo is refused (`sendReq` in `ClimbMatch.jsx`: *Didn't send
   it — add a profile photo first*) and opens Edit profile on the photo.
-- **Only climbers of my gender** (0359, 2026-10-24): a switch under *Climbers on ClimbMatch*'s distance chips, worded by
-  your own gender (*Only women* / *Only men* / *Only non-binary climbers*), offered once you have set one (otherwise a line
-  points to Edit profile). On, every real browse list shows only climbers who stated the same gender (`usePartnerGenders`, one
-  read of `profiles.gender` for the rows on screen); someone who has not stated one is not shown. A loading or failed read
-  shows nobody and says so, never everyone. Name search is not narrowed. Remembered on this device
-  (`lib/partner-gender-pref.js`). The same filter RockBase and GoWith offer; there is no filter by any OTHER gender.
+- **Show only these genders** (0359; several at once since 2026-11-18, owner: "they only want to climb with women and non binary"): the
+  *Show only* chips in the *More filters* panel, one per gender a profile can state (`GENDERS` in core), offered to every signed-in
+  climber whether or not they have stated their own. With any picked, every real browse list shows only climbers who stated one of
+  the picked genders (`usePartnerGenders`, one read of `profiles.gender` for the rows on screen); someone who has not stated one is
+  not shown. A loading or failed read shows nobody and says so, never everyone. Name search is not narrowed. Remembered on this
+  device as a list (`lib/partner-gender-pref.js`); a device that still holds the old single *Only my gender* switch ON keeps it as the
+  climber's own gender until they change the chips. *Clear filters* does not clear it. Pronouns are shown on profiles and filter nothing.
+  The You card's hint for a climber with no gender now reads *so climbers who filter by gender can find you*.
 - **Filters** (all narrow the real lists as well as the example profiles): Discipline and Experience (level) as pills; Speed match,
   Available to climb (Weekend AM / Weekend PM / Weekday AM / Weekday PM / Flexible) and Max distance (examples) behind *More filters*.
   The panel starts CLOSED (its badge counts the active panel filters), on Find partners and on Join a crew alike, so the results come first.
@@ -131,13 +134,13 @@ whole guide feature on 2026-11-14 (owner). This doc covers the partners mode (`l
 | `lib/PartnerSearch.jsx` | `PartnerSearch` (modes incl. Near my areas, Saved areas (`savedAreaIds`, `onOpenSaved`, `SAVED_SEARCH_LIM`) and listing-based By Area, filters, near/objective/area/browse lists, the example list (drawn by `RealClimberRow`), `cardExtras`, route picker, `initialArea` deep link) |
 | `lib/cardStyles.js` | `CARD(C, edge?)` / `EYEBROW(color)` — the crew card's look (radius 16, padding 14, a 1px edge in the state colour, its shadow; the uppercase label over a title), read by the crew card and the Partners boxes: the You card, the empty card, the More filters panel and the list-me box (owner 2026-11-14: "make it consistent" with crew cards). NOT the climber cards: the owner asked for those back on their own look (2026-11-18) |
 | `src/components/ListMeInAreaBox.tsx` | `ListMeInAreaBox` — By Area's and A peak's *List me at <place>* box, under the picker and above the climbers (optimistic `savePartnerArea` / `removePartnerArea`, then `onListMe` for dates and types) |
-| `lib/MyPartnerAreas.jsx` | `MyPartnerAreas` — the My listed areas screen (add/edit/remove a listing, `windowText`): a full-screen view in the 520px column, search first over every area in every state (`useCatalogAreaSearch`, the Add-a-climb picker's search and the Climbs tab's spelling rules; it searched one state from a dropdown until 2026-11-14), each hit with its type, its trail (*Oregon › Central Oregon*) and climb count, one-tap suggestions from the climber's own crag climbs and saved areas (`suggestIds`, a wall offered as its crag), then **Browse areas** (`AreaFinder`, owner 2026-11-18: the Climbs tab's hierarchy read through `useAreaChildren` — country, state, region, crag; a row opens what is inside it, *+ List* lists you there, a country cannot be listed, and a trail of crumbs walks back up; hidden while a search is typed), the search box under an *Add an area* heading with a clear button, *Remove this listing* under a rule 57px below *Save changes*, date presets This weekend / Next weekend / Pick dates, an ended window flagged on its card |
+| `lib/MyPartnerAreas.jsx` | `MyPartnerAreas` — the My listed areas screen (add/edit/remove a listing, `windowText`): a full-screen view in the 520px column, search first over every area in every state (`useCatalogAreaSearch`, the Add-a-climb picker's search and the Climbs tab's spelling rules; it searched one state from a dropdown until 2026-11-14), each hit with its type, its trail (*Oregon › Central Oregon*) and climb count, one-tap suggestions from the climber's own crag climbs and saved areas (`suggestIds`, a wall offered as its crag), then **Browse areas** (`AreaFinder`, owner 2026-11-18: the Climbs tab's hierarchy read through `useAreaChildren` — country, state, region, crag; a row opens what is inside it, *+ List* lists you there, a country cannot be listed, and a trail of crumbs walks back up; it keeps its place while a listing form is open, so several crags in one region are listed without re-walking the tree; hidden while a search is typed), the search box under an *Add an area* heading with a clear button, *Remove this listing* under a rule 57px below *Save changes*, date presets This weekend / Next weekend / Pick dates, an ended window flagged on its card |
 | `ClimbMatch.jsx` | `partnersMode` state, mounts `MyPartnerAreas`; `myAreasOpen`, `openMyAreas`, `onFindPartnersInArea`, `ME.matchObjectiveIds` |
 | `src/components/DiscoverTab.tsx` | `DiscoverTab`, the tab body (lifted from App, PR61): the mode switch, hero/help copy, mounts `PartnerSearch`, `CrewFinder` |
 | `ClimbMatchCore.jsx` | `compat`, `compatParts`, `compatWhy`, `CMAX_*`/`COMPAT_*`, `CMAX_AREA`, `areaPathsOverlap`, `CRAG_CATS`, `AVAIL_OPTS`, `AVAIL_FILTER_OPTS`, `weekOf`, `availFits`, `availMatch`, `availOf`, `ALL_CLIMBERS`/`CLIMBERS`, `ME`, `distMiles`, `paceOf`, `PARTNER_NUMBERS` (also read by `lib/Help.jsx`) |
 | `src/components/RealClimberRow.tsx` | `RealClimberRow` — THE partner card, for every climber (real, or an example one passed as `cand`): match % or its refusal, ✓ Verified, level/years, the listed-areas line, pace and discipline chips, bio, `extras`, climbs/vouches chips, `action`, + Add friend and Full profile |
 | `src/components/RoutePartnersTab.tsx` | The route page's Partners tab: its real, area and example climbers on the same card (reads `partner_signals` and `partner_counts` itself; `onResume` from RouteDetail opens the résumé) |
-| `lib/partner-gender-pref.js` | `partnersMyGenderPref`, `savePartnersMyGender` |
+| `lib/partner-gender-pref.js` | `partnerGendersPref`, `savePartnerGenders`, `partnersMyGenderLegacy` |
 | `lib/db.js` | `PARTNER_COLS`, `usePartnerGenders`, `useDiscoverableProfiles`, `useProfileSearch`, `useMyZip`, `usePartnersNear`, `usePartnersByObjective`, `usePartnerSignals`, `useMatchObjectivesOfUsers`, `useVerifiedUsers`, `useMyPartnerAreas`, `savePartnerArea`, `removePartnerArea`, `usePartnersInArea`, `usePartnersInAreas`, `usePartnersForMyAreas`, `usePartnerAreaCounts`, `usePartnerAreasOfUsers`, zip save/delete |
 | `lib/EditProfileScreen.jsx` | Zip code field (owner-only, feeds the origin; a typed zip is checked live by `useZipCentroid`). The home city is a label only — it places nobody |
 | `supabase/migrations/0189, 0211, 0232, 0295, 0300, 0303, 0311, 0456` | RPCs and tables below |

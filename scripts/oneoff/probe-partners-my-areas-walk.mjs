@@ -2,11 +2,11 @@
 import { NPX, NPX_PRE } from "../lib/npx.mjs";
 // TWO CLIMBERS FIND EACH OTHER THROUGH "MY AREAS" (owner, 2026-11-14). Signs in the two fresh fixture climbers
 // (deleted at the end) at 390px, the way a climber would:
-//   1. Robin opens Partners, sees the My areas box, taps "+ Add an area", types "smith" and lists at Smith Rock
-//      (Sport, this weekend). The box now names Smith Rock.
+//   1. Robin opens Partners, sees the short listing box, taps "My areas", types "smith" and lists at Smith Rock
+//      (Sport, this weekend). The box now counts 1 place.
 //   2. The other climber opens Partners, tries the search the way people type (a nickname, one letter, nonsense,
 //      a half name), lists at Smith Rock too, and finds Robin under My areas; opens Robin's profile.
-//   3. Taps the Smith Rock chip (edits that listing), then By area: searches "red river" with no state picked.
+//   3. Opens the Smith Rock listing from My areas, then By area: searches "red river" with no state picked.
 //   4. One desktop shot (1280px). No sideways scroll anywhere.
 // Screenshots go to argv[2].   node scripts/oneoff/probe-partners-my-areas-walk.mjs <shot-dir>
 import { chromium } from "playwright-core";
@@ -38,7 +38,9 @@ async function open(sess, w, h, name) {
   page.on("pageerror", (e) => { fails.push("page error (" + name + "): " + e.message.slice(0, 200)); console.log("PAGEERROR " + e.message.slice(0, 300)); });
   await page.addInitScript(({ key, value }) => { try { localStorage.setItem(key, value); } catch {} }, { key: STORAGE_KEY, value: JSON.stringify(sessionForStorage(sess)) });
   await page.goto(base, { waitUntil: "domcontentloaded", timeout: 180000 }); await page.waitForTimeout(12000);
-  await page.locator('button[aria-label="Partners"], button:has-text("Partners")').first().click(); await page.waitForTimeout(6000);
+  try { await page.locator('button[aria-label="Partners"], button:has-text("Partners")').first().click({ timeout: 15000 }); }
+  catch (e) { await page.screenshot({ path: path.join(OUT, "stuck-" + name + ".png") }); console.log("STUCK (" + name + "): " + (await page.locator("body").innerText()).slice(0, 400).replace(/\n/g, " / ")); throw e; }
+  await page.waitForTimeout(6000);
   return page;
 }
 const shot = (page, n) => page.screenshot({ path: path.join(OUT, n + ".png") });
@@ -46,9 +48,9 @@ const noSideScroll = async (page, where) => ok(await page.evaluate(() => documen
 async function searchIn(dlg, page, q, ms = 6000) { await dlg.locator('input[aria-label="Search for an area to add"]').fill(q); await page.waitForTimeout(ms); }
 async function hitRows(dlg) { return (await dlg.locator("button:has-text('+ Add'), button:has-text('Listed ✓'), button:has-text('matched by route')").allInnerTexts()).map((t) => t.replace(/\n/g, " · ")); }
 async function listAt(page, q, want, extra) {
-  await page.locator('section[aria-label="How climbers find you"] button', { hasText: /^\+ Add an area$/ }).click(); await page.waitForTimeout(1500);
+  await page.locator('section[aria-label="How climbers find you"] button', { hasText: /^My areas$/ }).click(); await page.waitForTimeout(1500);
   const dlg = page.locator('[role="dialog"][aria-label="My listed areas"]');
-  ok(await dlg.count() === 1, "+ Add an area opens the My listed areas screen");
+  ok(await dlg.count() === 1, "My areas opens the My listed areas screen");
   ok(await dlg.locator("select").count() === 0, "no state dropdown to fill in first");
   if (extra) await extra(dlg);
   await searchIn(dlg, page, q);
@@ -82,7 +84,7 @@ try {
   ok(await rbox.count() === 1, "Robin: the You card (My areas) is on the Partners tab");
   note("box (unlisted): " + (await rbox.innerText()).replace(/\n/g, " / "));
   const bh = await rbox.boundingBox(); note("box size: " + Math.round(bh.width) + "x" + Math.round(bh.height));
-  ok(bh.height >= 110, "the box is a box, not a pill (>=110px tall)");
+  ok(bh.height <= 150, "the box is one short row plus the switch (<=150px tall)");
   ok(!/My areas ·|List the areas I climb/.test(await rp.locator('[role="group"][aria-label="Narrow the list"]').innerText()), "no My areas pill left in the filter row");
   await shot(rp, "1-robin-unlisted");
   const rdlg = await listAt(rp, "smith", "smith rock");
@@ -91,7 +93,7 @@ try {
   await rdlg.locator("button", { hasText: /^List me at / }).click(); await rp.waitForTimeout(3500);
   ok(/Listed at 1 area/i.test(await rdlg.innerText()), "Robin is listed at 1 area");
   await rdlg.locator('button[aria-label="Close"]').click(); await rp.waitForTimeout(2500);
-  ok((await rbox.locator("button").allInnerTexts()).some((t) => /Smith Rock/.test(t)), "Robin's box now names Smith Rock");
+  ok(/listed at 1 place\./.test(await rbox.innerText()), "Robin's box now counts 1 place");
   await shot(rp, "2-robin-listed");
   await noSideScroll(rp, "Robin, Partners");
 
@@ -108,7 +110,7 @@ try {
   });
   await mdlg.locator("button", { hasText: /^List me at / }).click(); await mp.waitForTimeout(3500);
   await mdlg.locator('button[aria-label="Close"]').click(); await mp.waitForTimeout(6000);
-  ok((await mbox.locator("button").allInnerTexts()).some((t) => /Smith Rock/.test(t)), "my box names Smith Rock");
+  ok(/listed at 1 place\./.test(await mbox.innerText()), "my box counts 1 place");
   const by = mp.locator('select[aria-label="Search by"]');
   note("mode: " + await by.inputValue());
   // Partners lists real climbers once a zip is on file (owner, 0420): type it into the card, as a climber would.
@@ -123,8 +125,9 @@ try {
   if (await robinRow.count()) { await robinRow.click(); await mp.waitForTimeout(3000); const t = await mp.locator("body").innerText(); note("profile actions: " + ["Connect", "Message", "Add friend", "Plan a session"].filter((w) => t.includes(w)).join(", ")); await shot(mp, "4-robin-profile"); await mp.keyboard.press("Escape"); await mp.waitForTimeout(1500); }
 
   // 3. The chip edits that listing; By area finds a crag in another state with no state picked.
-  await mp.locator('section[aria-label="How climbers find you"] button', { hasText: /^Smith Rock$/ }).click(); await mp.waitForTimeout(1500);
-  ok(/Edit listing/.test(await mp.locator('[role="dialog"][aria-label="My listed areas"]').innerText()), "tapping the Smith Rock chip opens that listing");
+  await mbox.locator("button", { hasText: /^My areas$/ }).click(); await mp.waitForTimeout(1500);
+  await mp.locator('[role="dialog"][aria-label="My listed areas"] button[aria-label="Edit Smith Rock"]').click(); await mp.waitForTimeout(1000);
+  ok(/Edit listing/.test(await mp.locator('[role="dialog"][aria-label="My listed areas"]').innerText()), "the Smith Rock row under My areas opens that listing");
   await mp.locator('[role="dialog"] button', { hasText: /Back/ }).click(); await mp.waitForTimeout(500);
   await mp.locator('[role="dialog"] button[aria-label="Close"]').click(); await mp.waitForTimeout(1000);
   await by.selectOption("area"); await mp.waitForTimeout(2500);

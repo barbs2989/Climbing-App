@@ -100,6 +100,20 @@ try {
   await dlg.locator("button", { hasText: /^List me at / }).click(); await p.waitForTimeout(4000);
   ok(/Listed at 1 area/i.test(await dlg.innerText()), "listed at 1 area");
   await shot(p, "7-listed-one");
+  // The finder keeps its place, marks the row, and that row edits the listing.
+  const crumbs2 = await dlg.locator('[role="group"][aria-label="Where you are in the areas"]').innerText().catch(() => "");
+  ok(/Washington/.test(crumbs2), "after listing, the finder is still in Washington (" + crumbs2.replace(/\n/g, " ") + ")");
+  const mark = dlg.locator(`button[aria-label="Edit your listing at ${lname}"]`);
+  ok(await mark.count() === 1 && /Listed ✓/.test(await mark.innerText().catch(() => "")), "the finder row reads Listed ✓ for " + lname);
+  if (await mark.count()) { await mark.click(); await p.waitForTimeout(1000); ok(/Edit listing/.test(await dlg.innerText()), "Listed ✓ opens Edit listing"); await dlg.locator("button", { hasText: /Back/ }).click(); await p.waitForTimeout(800); }
+  // Opening the LAST state in the list brings the finder's heading back on screen.
+  await dlg.locator('[role="group"][aria-label="Where you are in the areas"] button', { hasText: /^United States$/ }).click(); await p.waitForTimeout(2500);
+  ok(/\d,\d{3} climbs/.test((await rows()).join(" ")), "climb counts carry thousands separators");
+  const last = dlg.locator('button[aria-label^="Open "]').last(); await last.scrollIntoViewIfNeeded(); const lastName = (await last.getAttribute("aria-label")).replace("Open ", "");
+  await last.click(); await p.waitForTimeout(4000);
+  const hy = await dlg.locator("text=Browse areas").boundingBox(); note("after opening " + lastName + ", Browse areas heading at y=" + (hy ? Math.round(hy.y) : "?"));
+  ok(hy && hy.y >= 50 && hy.y < 400, "opening the last state scrolls the finder back into view");
+  await shot(p, "7b-last-state");
 
   // 3. Edit: Save and Remove apart.
   await dlg.locator(`button[aria-label="Edit ${lname}"]`).click(); await p.waitForTimeout(1200);

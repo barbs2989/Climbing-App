@@ -44,14 +44,18 @@ function weekendFrom(now, weeksOut) { const dow = now.getDay(); const sat = dow 
 // THE AREA FINDER (owner, 2026-11-18: "the hierarchy for finding climbs, but for listing areas"). The Climbs tab's own tree,
 // read the same way (useAreaChildren, A to Z): country, state, region, crag. Tapping a row opens what is inside it; the button
 // at its right lists you there, at any level below a country. A climber who does not know a crag's spelling can walk to it.
-function AreaFinder({ listed, onPick }) {
-  const [chain, setChain] = useState([]); // root-first: the areas opened so far
+function AreaFinder({ listed, onPick, chain, setChain }) {
+  // `chain` (root-first: the areas opened so far) is the SCREEN's state, not this component's: the listing form replaces the list
+  // while it is open, and a finder that kept its own place came back at the country level after every listing saved.
   const cur = chain.length ? chain[chain.length - 1] : null;
+  // Opening an area from far down a long list (the 40th state) left the page scrolled past its shorter list; bring the heading back.
+  const topRef = useRef(null), seen = useRef(cur ? cur.id : "");
+  useEffect(() => { const k = cur ? cur.id : ""; if (seen.current === k) return; seen.current = k; if (topRef.current && topRef.current.scrollIntoView) topRef.current.scrollIntoView({ block: "start" }); }, [cur]);
   const kq = useAreaChildren(cur ? cur.id : null, { enabled: USE_DB });
   const kids = (Array.isArray(kq.data) ? kq.data : []).filter((a) => a && a.id && a.name);
   const crumb = { background: "none", border: "none", padding: "6px 2px", minHeight: 32, color: C.blue, fontSize: 13, fontWeight: 700, cursor: "pointer", textAlign: "left", overflowWrap: "anywhere" };
   const listBtn = (a, parent, wide) => { const on = listed.has(a.id); return <button type="button" onClick={() => onPick(a, parent)} aria-label={(on ? "Edit your listing at " : "List me at ") + a.name} style={{ flexShrink: 0, minHeight: wide ? 44 : 40, width: wide ? "100%" : undefined, padding: "8px 12px", borderRadius: 9, border: "1px solid " + (on ? C.green : C.blueDim), background: on ? C.surface : C.blueBg, color: on ? C.green : C.onSolid, fontSize: 12.5, fontWeight: 800, cursor: "pointer", overflowWrap: "anywhere" }}>{wide ? (on ? "Listed at " + a.name + " ✓ — edit" : "List me at " + a.name) : (on ? "Listed ✓" : "+ List")}</button>; };
-  return <div style={{ marginBottom: 16 }}>
+  return <div ref={topRef} style={{ marginBottom: 16, scrollMarginTop: 70 }}>
     <SL>Browse areas</SL>
     {cur ? <div role="group" aria-label="Where you are in the areas" style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: 4, marginBottom: 6 }}>
       <button type="button" onClick={() => setChain([])} style={crumb}>All areas</button>
@@ -63,7 +67,7 @@ function AreaFinder({ listed, onPick }) {
       : !kids.length ? (cur ? <div style={{ fontSize: 12.5, color: C.textMuted, lineHeight: 1.5 }}>{"No smaller areas inside " + cur.name + "."}</div> : null)
       : kids.map((a) => { const no = NO_LISTING.has(a.area_type); return <div key={a.id} style={{ display: "flex", alignItems: "center", gap: 8, background: C.card, border: "1px solid " + C.border, borderRadius: 12, padding: "4px 8px 4px 4px", marginBottom: 6 }}>
         <button type="button" onClick={() => setChain(chain.concat([{ id: a.id, name: a.name, area_type: a.area_type }]))} aria-label={"Open " + a.name} style={{ /* flexGrow, not flex:1: lib/wideLayout.js shrinks a lone flex:1 button to its text on the website, and a country row has no + List beside it */ flexGrow: 1, flexBasis: 0, minWidth: 0, minHeight: 44, display: "flex", alignItems: "center", gap: 8, textAlign: "left", background: "none", border: "none", padding: "6px 8px", cursor: "pointer", color: C.text }}>
-          <span style={{ flex: 1, minWidth: 0 }}><span style={{ display: "block", fontSize: 14, fontWeight: 700, overflowWrap: "anywhere" }}>{a.name}</span><span style={{ display: "block", fontSize: 12, color: C.textMuted }}>{[TYPE_LABEL[a.area_type] || "", a.route_count ? a.route_count + " climb" + (a.route_count === 1 ? "" : "s") : ""].filter(Boolean).join(" · ")}</span></span>
+          <span style={{ flex: 1, minWidth: 0 }}><span style={{ display: "block", fontSize: 14, fontWeight: 700, overflowWrap: "anywhere" }}>{a.name}</span><span style={{ display: "block", fontSize: 12, color: C.textMuted }}>{[TYPE_LABEL[a.area_type] || "", a.route_count ? Number(a.route_count).toLocaleString() + " climb" + (a.route_count === 1 ? "" : "s") : ""].filter(Boolean).join(" · ")}</span></span>
           <span aria-hidden="true" style={{ color: C.textMuted, fontSize: 18, flexShrink: 0 }}>›</span>
         </button>
         {no ? null : listBtn(a, cur, false)}
@@ -77,6 +81,7 @@ export default function MyPartnerAreas({ uid, listings, listingsError, prefill, 
   const leaveDraft = () => { if (direct) onClose(); else setDraft(null); };
   const [draft, setDraft] = useState(null); // {areaId,name,areaType,parentName, disciplines[], freeFrom, freeTo, note, pick}
   const [q, setQ] = useState("");
+  const [finderChain, setFinderChain] = useState([]); // where the area finder is; kept here so it survives the listing form
   const [busy, setBusy] = useState(false);
   // The whole catalog, every state: the same search (and spelling rules) as Add a climb's area picker.
   const searchQ = useCatalogAreaSearch(USE_DB ? q : "", HIT_LIM);
@@ -183,7 +188,7 @@ export default function MyPartnerAreas({ uid, listings, listingsError, prefill, 
             <SL>From your climbs</SL>
             <div style={{ display: "flex", gap: 7, flexWrap: "wrap" }}>{suggestions.map((s) => <button key={s.areaId} onClick={() => startEdit(s)} aria-label={"Add " + s.name} style={pill(false)}>{"+ " + s.name}</button>)}</div>
           </div> : null}
-          {!q.trim() && USE_DB ? <AreaFinder listed={listed} onPick={(a, parent) => startEdit(listed.has(a.id) ? (listings || []).find((l) => l.areaId === a.id) : { areaId: a.id, name: a.name, areaType: a.area_type, parentName: parent ? parent.name : null, disciplines: [] })} /> : null}
+          {!q.trim() && USE_DB ? <AreaFinder listed={listed} chain={finderChain} setChain={setFinderChain} onPick={(a, parent) => startEdit(listed.has(a.id) ? (listings || []).find((l) => l.areaId === a.id) : { areaId: a.id, name: a.name, areaType: a.area_type, parentName: parent ? parent.name : null, disciplines: [] })} /> : null}
           <SL>{listingsN ? "Listed at " + listingsN + " area" + (listingsN === 1 ? "" : "s") : "Your listings"}</SL>
           {listingsError ? <div style={{ fontSize: 12.5, color: C.amber, marginBottom: 10 }}>Couldn’t load your listed areas — try again in a moment.</div> : null}
           {listingsN ? (listings || []).map((l) => { const past = l.freeTo && l.freeTo < today; return <div key={l.areaId} style={{ ...card, display: "flex", alignItems: "center", gap: 10, padding: "4px 8px 4px 4px", marginBottom: 8 }}>

@@ -1,0 +1,48 @@
+[
+ {"route_id":"wa_mount_lago_south_slope_south_face","verdict":"unresolved","final_gain":null,"trailhead_today":"Robinson Creek Trailhead (pinned); WTA describes summer access to the upper Middle Fork via Slate Pass instead","trailhead_elev_official":null,"summit_elev_official":8745,
+  "figures":[
+   {"value":12466,"trailhead":"unnamed (peakery logged GPS route)","one_way":false,"url":"https://peakery.com/mount-lago-washington/","fact":"Popular route: Mount Lago 40.4 mi route, 12,466 ft gain, 51h 6m (whole outing)."},
+   {"value":1940,"trailhead":"Slate Pass via Whistler Cutoff to Robinson Pass (not Lago)","one_way":false,"url":"https://www.wta.org/go-hiking/hikes/middle-fork-pasayten-river","fact":"Robinson Creek (Middle Fork Pasayten): 25.6 miles roundtrip, 1,940 ft gain, highest point 6,220 ft."}
+  ],
+  "evidence":[],
+  "closures":"none found",
+  "note":"Summit 8,745 ft per peakery page (Wikipedia/listsofjohn/USFS pages denied, Peakbagger behind Cloudflare). No page gives a one-way gain to Lago from any trailhead. Stored 2,800 ft cannot be from Robinson Creek (~6,200 ft net rise) and is probably from a high camp, but no page names that camp."},
+ {"route_id":"wa_forbidden_peak_northeast_face","verdict":"unresolved","final_gain":null,"trailhead_today":"Boston Basin Trailhead (pullout on Cascade River Road)","trailhead_elev_official":3200,"summit_elev_official":8815,
+  "figures":[
+   {"value":5600,"trailhead":"Boston Basin Trailhead (3,200 ft)","one_way":true,"url":"https://www.mountaineers.org/activities/routes-places/boston-basin-area-review/forbidden-peak-west-ridge","fact":"Trip profile: trailhead to camp 3,300 ft, camp to summit 2,300 ft; Elevation Gain 5,600 ft; High Point 8,815 ft."},
+   {"value":5600,"trailhead":"Boston Basin Trailhead (about 3,200 ft)","one_way":true,"url":"https://summitborn.com/forbidden-peak-west-ridge-scrambling-guide/","fact":"About 5,600 ft cumulative: about 3,300 ft to high camp, about 2,300 ft to summit (elevations from The Mountaineers)."}
+  ],
+  "evidence":[],
+  "closures":"Summitborn (Nov 6, 2026): NPS lists Cascade River Road open; no fire closure on Boston Basin.",
+  "note":"Both 5,600 ft figures are for the West Ridge, and Summitborn takes its elevations from The Mountaineers, so they count as ONE source. No independent second page for the NE face. Mountaineers gives trailhead 3,200 ft and summit 8,815 ft (Mountain Madness says 8,816). The pins look right and stored 4,600 looks low, but only one source says so."},
+ {"route_id":"wa_mount_barnes_scramble","verdict":"unresolved","final_gain":null,"trailhead_today":"Sol Duc Trailhead (pinned); no page found naming a Sol Duc route to Mount Barnes","trailhead_elev_official":null,"summit_elev_official":5987,
+  "figures":[],"evidence":[],"closures":"not checked (no route page found)",
+  "note":"Peakery page: Mount Barnes 5,987 ft, an interior Bailey Range peak, no climbs logged. No page gives any gain to Barnes from Sol Duc or any other trailhead (Wikipedia/listsofjohn unreadable here). Stored 3,200 has no support. The summit pin height matches peakery."},
+ {"route_id":"wa_blood_orgy","verdict":"unresolved","final_gain":null,"trailhead_today":"Hannegan Pass Trailhead (end of Ruth Creek Road, FR 32)","trailhead_elev_official":null,"summit_elev_official":null,
+  "figures":[
+   {"value":3100,"trailhead":"Hannegan Pass Trailhead to Hannegan Peak (not this climb)","one_way":false,"url":"https://www.wta.org/go-hiking/hikes/hannegan-pass-and-peak","fact":"Hannegan Pass and Peak: 10.4 miles roundtrip, 3,100 ft gain, highest point 6,200 ft."}
+  ],"evidence":[],
+  "closures":"Steph Abegg (2018): a washout just before the Hannegan Pass trailhead; park on the road shoulder before it.",
+  "note":"Blood Orgy is a ~90 ft single-pitch 5.8 on Mamie Peak (theCrag search snippet only; the page rendered nothing). Steph Abegg's Ellation report gives 5,000 ft as the TOP of the 700 ft Ellation wall, about 1 hr from the trailhead. The summit pin 'Top of Mamie Peak wall 5,000' is probably that figure rather than the top of a one-pitch route, so the pin is suspect, but no page states this route's height."},
+ {"route_id":"wa_golden_horn_southwest_route","verdict":"gain_other_start","final_gain":null,"trailhead_today":"Rainy Pass north trailhead (PCT), SR 20","trailhead_elev_official":4800,"summit_elev_official":8366,
+  "figures":[
+   {"value":2700,"trailhead":"Rainy Pass north (PCT) to Snowy Lakes, not the summit","one_way":false,"url":"https://www.wta.org/go-hiking/hikes/golden-horn","fact":"Golden Horn - Snowy Lakes: 23.0 miles roundtrip, 2,700 ft gain, highest point 6,900 ft; trailhead elevation 4800 ft."},
+   {"value":5500,"trailhead":"Rainy Pass Trailhead","one_way":null,"url":"https://mazamas.org/activity/903/","fact":"Golden Horn, Snowy Lakes climb route: elevation 8,336, elevation gain 5,500, trailhead Rainy Pass, 25 miles round trip."}
+  ],"evidence":[],
+  "closures":"SR 20 over Rainy Pass closes every winter (seasonal); nothing route-specific found.",
+  "note":"Stored 2,700 is WTA's figure for the Snowy Lakes backpack (high point 6,900 ft), not for the summit climb, so it measures a different endpoint. Mountaineers gives Golden Horn 8,366 ft and Rainy Pass 4,900 ft (WTA says 4,800). Only Mazamas gives a summit gain (5,500, and may be round trip). With one source there is no final_gain."},
+ {"route_id":"wa_wright_pond","verdict":"unresolved","final_gain":null,"trailhead_today":null,"trailhead_elev_official":null,"summit_elev_official":null,
+  "figures":[],"evidence":[],"closures":"unknown",
+  "note":"Three searches found no page for a climb named 'Wright Pond' near Early Winters, Cutthroat Creek or Little Liberty Bell. The trailhead pin is a creek crossing, not a named trailhead. The route row itself may be misnamed or filed under the wrong place."},
+ {"route_id":"wa_mount_rainier_ptarmigan_ridge","verdict":"gain_wrong","final_gain":11000,"trailhead_today":"White River Campground (Sunrise Road); Mowich Lake is the alternative start","trailhead_elev_official":4300,"summit_elev_official":14112,
+  "figures":[
+   {"value":11000,"trailhead":"White River Campground (4,300 ft) or Mowich Lake","one_way":true,"url":"https://www.mountaineers.org/activities/routes-places/mount-rainier-ptarmigan-ridge","fact":"Trip profile: trailhead to camp 1 3,300; to high camp 3,500; to summit 4,200; Elevation Gain 11,000 ft."},
+   {"value":11400,"trailhead":"White River Campground (4,400 ft)","one_way":true,"url":"https://stephabegg.com/trip-reports/washington/rainier-ptarmigan/","fact":"Elevation gain 11,400 feet; approach White River; White River Campground 4,400 ft; Liberty Cap 14,112 ft; Columbia Crest 14,411."}
+  ],
+  "evidence":[
+   {"url":"https://www.mountaineers.org/activities/routes-places/mount-rainier-ptarmigan-ridge","retrieved_at":"2026-11-18","fact":"Ptarmigan Ridge via White River: trip profile gains 3,300 + 3,500 + 4,200; Elevation Gain 11,000 ft."},
+   {"url":"https://stephabegg.com/trip-reports/washington/rainier-ptarmigan/","retrieved_at":"2026-11-18","fact":"Ptarmigan Ridge, approach White River Campground (4,400 ft): elevation gain 11,400 feet."}
+  ],
+  "closures":"Sunrise Road and the White River Campground road close every winter (seasonal); Mountaineers notes the Mowich Lake road opens a few weeks later.",
+  "note":"Two independent pages within 10% (11,000 vs 11,400). The White River approach descends onto the Winthrop and Carbon glaciers, so total gain exceeds the net rise. Abegg's 11,400 runs to Columbia Crest; Mountaineers' 11,000 runs to a 'summit 14,100'. I picked 11,000, the club's route figure; 11,400 is the alternative if the route ends at Columbia Crest. The trailhead elevation is from Mountaineers, not NPS."}
+]
