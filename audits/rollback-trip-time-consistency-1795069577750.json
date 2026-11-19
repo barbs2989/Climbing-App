@@ -1,0 +1,572 @@
+[
+ {
+  "id": "wa_der_dihedral",
+  "before": {
+   "timing": {
+    "totalHrs": 17.3,
+    "summitTimeHrs": 11,
+    "descentTimeHrs": 2.5,
+    "approachTimeHrs": 3.8,
+    "recommendedStart": "3:30 AM from camp",
+    "sectionBreakdown": [
+     {
+      "hrs": 3.8,
+      "note": "Hike the Stuart Lake Trail to Colchuck Lake and camp below the north face, the shared base for this and the neighboring Backbone Ridge.",
+      "fromTo": "Approach to Colchuck Lake camp",
+      "section": "Approach"
+     },
+     {
+      "hrs": 11,
+      "note": "Pre-dawn approach to a start a couple of ridges below the standard Backbone base, climb a clean dihedral a couple of pitches up, then join the Backbone Ridge for its finish to the …",
+      "fromTo": "Climb Der Dihedral into Backbone Ridge, descend to camp",
+      "section": "Climb"
+     },
+     {
+      "hrs": 2.5,
+      "note": "Break camp and hike back out to the trailhead.",
+      "fromTo": "Hike out",
+      "section": "Descent"
+     }
+    ]
+   },
+   "itinerary": {
+    "cal": "Requires a Colchuck Lake overnight permit (May 15-Oct 31 lottery) if camping; the route is drier/less traveled than Backbone Ridge proper, so expect more route-finding on the lower pitches.",
+    "days": [
+     {
+      "n": 1,
+      "note": "Hike the Stuart Lake Trail to Colchuck Lake and camp below the north face, the shared base for this and the neighboring Backbone Ridge.",
+      "hours": 3.75,
+      "miles": 4.3,
+      "title": "Approach to Colchuck Lake camp",
+      "gainFt": 2300,
+      "lossFt": 0,
+      "packLb": 40,
+      "schedule": [],
+      "objective": "Reach camp at Colchuck Lake"
+     },
+     {
+      "n": 2,
+      "note": "Pre-dawn approach to a start a couple of ridges below the standard Backbone base, climb a clean dihedral a couple of pitches up, then join the 1972 Northeast Arete for its finish to the summit (6 pitches total). Descend via Aasgard Pass back to camp.",
+      "hours": 11,
+      "miles": 3.3,
+      "title": "Climb Der Dihedral into the Northeast Arete, descend to camp",
+      "gainFt": 3050,
+      "lossFt": 3050,
+      "packLb": 18,
+      "schedule": [
+       {
+        "time": "3:30 AM",
+        "label": "Leave camp",
+        "detail": ""
+       },
+       {
+        "time": "5:00 AM",
+        "label": "Start climbing",
+        "detail": "Dihedral pitches low on the formation."
+       },
+       {
+        "time": "7:00 AM",
+        "label": "Join the Northeast Arete",
+        "detail": "Merge with the 1972 Northeast Arete."
+       },
+       {
+        "time": "3:00 PM",
+        "label": "Summit",
+        "detail": ""
+       },
+       {
+        "time": "4:00 PM",
+        "label": "Begin descent",
+        "detail": "Aasgard Pass scramble route."
+       },
+       {
+        "time": "7:00 PM",
+        "label": "Back at camp",
+        "detail": ""
+       }
+      ],
+      "objective": "Summit via Der Dihedral and the Northeast Arete finish"
+     },
+     {
+      "n": 3,
+      "note": "Break camp and hike back out to the trailhead.",
+      "hours": 2.5,
+      "miles": 4.3,
+      "title": "Hike out",
+      "gainFt": 0,
+      "lossFt": 2300,
+      "packLb": 38,
+      "schedule": [],
+      "objective": "Return to trailhead"
+     }
+    ],
+    "totalNote": "A 2-3 day trip: camp at Colchuck Lake, then a full alpine day (10-12 hrs) climbing the dihedral into the Northeast Arete finish and descending to camp before hiking out."
+   }
+  },
+  "after": {
+   "timing": {
+    "totalHrs": 17.25,
+    "summitTimeHrs": 11,
+    "descentTimeHrs": 2.5,
+    "approachTimeHrs": 3.75,
+    "recommendedStart": "3:30 AM from camp",
+    "sectionBreakdown": [
+     {
+      "hrs": 3.75,
+      "note": "Hike the Stuart Lake Trail to Colchuck Lake and camp below the north face, the shared base for this and the neighboring Backbone Ridge.",
+      "fromTo": "Approach to Colchuck Lake camp",
+      "section": "Approach"
+     },
+     {
+      "hrs": 11,
+      "note": "Pre-dawn approach to a start a couple of ridges below the standard Backbone base, climb a clean dihedral a couple of pitches up, then join the Backbone Ridge for its finish to the …",
+      "fromTo": "Climb Der Dihedral into Backbone Ridge, descend to camp",
+      "section": "Climb"
+     },
+     {
+      "hrs": 2.5,
+      "note": "Break camp and hike back out to the trailhead.",
+      "fromTo": "Hike out",
+      "section": "Descent"
+     }
+    ]
+   },
+   "itinerary": {
+    "cal": "Requires a Colchuck Lake overnight permit (May 15-Oct 31 lottery) if camping; the route is drier/less traveled than Backbone Ridge proper, so expect more route-finding on the lower pitches.",
+    "days": [
+     {
+      "n": 1,
+      "note": "Hike the Stuart Lake Trail to Colchuck Lake and camp below the north face, the shared base for this and the neighboring Backbone Ridge.",
+      "hours": 3.75,
+      "miles": 4.3,
+      "title": "Approach to Colchuck Lake camp",
+      "gainFt": 2300,
+      "lossFt": 0,
+      "packLb": 40,
+      "schedule": [],
+      "objective": "Reach camp at Colchuck Lake"
+     },
+     {
+      "n": 2,
+      "note": "Pre-dawn approach to a start a couple of ridges below the standard Backbone base, climb a clean dihedral a couple of pitches up, then join the 1972 Northeast Arete for its finish to the summit (6 pitches total). Descend via Aasgard Pass back to camp.",
+      "hours": 11,
+      "miles": 3.3,
+      "title": "Climb Der Dihedral into the Northeast Arete, descend to camp",
+      "gainFt": 3050,
+      "lossFt": 3050,
+      "packLb": 18,
+      "schedule": [
+       {
+        "time": "3:30 AM",
+        "label": "Leave camp",
+        "detail": ""
+       },
+       {
+        "time": "5:00 AM",
+        "label": "Start climbing",
+        "detail": "Dihedral pitches low on the formation."
+       },
+       {
+        "time": "7:00 AM",
+        "label": "Join the Northeast Arete",
+        "detail": "Merge with the 1972 Northeast Arete."
+       },
+       {
+        "time": "3:00 PM",
+        "label": "Summit",
+        "detail": ""
+       },
+       {
+        "time": "4:00 PM",
+        "label": "Begin descent",
+        "detail": "Aasgard Pass scramble route."
+       },
+       {
+        "time": "7:00 PM",
+        "label": "Back at camp",
+        "detail": ""
+       }
+      ],
+      "objective": "Summit via Der Dihedral and the Northeast Arete finish"
+     },
+     {
+      "n": 3,
+      "note": "Break camp and hike back out to the trailhead.",
+      "hours": 2.5,
+      "miles": 4.3,
+      "title": "Hike out",
+      "gainFt": 0,
+      "lossFt": 2300,
+      "packLb": 38,
+      "schedule": [],
+      "objective": "Return to trailhead"
+     }
+    ],
+    "totalNote": "A 2-3 day trip: camp at Colchuck Lake, then a full alpine day (10-12 hrs) climbing the dihedral into the Northeast Arete finish and descending to camp before hiking out."
+   }
+  }
+ },
+ {
+  "id": "wa_dragontail_peak_r3",
+  "before": {
+   "timing": {
+    "totalHrs": 15.3,
+    "summitTimeHrs": 9,
+    "descentTimeHrs": 2.5,
+    "approachTimeHrs": 3.8,
+    "recommendedStart": "4:00 AM from camp",
+    "sectionBreakdown": [
+     {
+      "hrs": 3.8,
+      "note": "Hike the Stuart Lake Trail to Colchuck Lake and camp below the north face, the base for the approach up toward the Colchuck-Dragontail col.",
+      "fromTo": "Approach to Colchuck Lake camp",
+      "section": "Approach"
+     },
+     {
+      "hrs": 9,
+      "note": "Climb steep snow (up to ~45 degrees near the top) up the couloir from near the Colchuck-Dragontail col to the summit ridge. Descend the standard Aasgard Pass scramble back to camp.",
+      "fromTo": "Climb Pandora's Box (W Couloir), descend to camp",
+      "section": "Climb"
+     },
+     {
+      "hrs": 2.5,
+      "note": "Break camp and hike out.",
+      "fromTo": "Hike out",
+      "section": "Descent"
+     }
+    ]
+   },
+   "itinerary": {
+    "cal": "Best climbed on firm spring snow (April-June) via the Colchuck-Dragontail col; this window is largely before/around the start of the May 15-Oct 31 permit season.",
+    "days": [
+     {
+      "n": 1,
+      "note": "Hike the Stuart Lake Trail to Colchuck Lake and camp below the north face, the base for the approach up toward the Colchuck-Dragontail col.",
+      "hours": 3.75,
+      "miles": 4.3,
+      "title": "Approach to Colchuck Lake camp",
+      "gainFt": 2300,
+      "lossFt": 0,
+      "packLb": 40,
+      "schedule": [],
+      "objective": "Reach camp at Colchuck Lake"
+     },
+     {
+      "n": 2,
+      "note": "Climb steep snow (up to ~45 degrees near the top) up the couloir from near the Colchuck-Dragontail col to the summit ridge. Descend the standard Aasgard Pass scramble back to camp.",
+      "hours": 9,
+      "miles": 3.6,
+      "title": "Climb Pandora's Box (W Couloir), descend to camp",
+      "gainFt": 3200,
+      "lossFt": 3200,
+      "packLb": 18,
+      "schedule": [
+       {
+        "time": "4:00 AM",
+        "label": "Leave camp",
+        "detail": ""
+       },
+       {
+        "time": "6:00 AM",
+        "label": "Enter the couloir",
+        "detail": "Near the Colchuck-Dragontail col."
+       },
+       {
+        "time": "9:30 AM",
+        "label": "Top out",
+        "detail": "Steepest section (~45°) near the top."
+       },
+       {
+        "time": "10:30 AM",
+        "label": "Summit",
+        "detail": ""
+       },
+       {
+        "time": "11:30 AM",
+        "label": "Begin descent",
+        "detail": "Aasgard Pass scramble route."
+       },
+       {
+        "time": "1:30 PM",
+        "label": "Back at camp",
+        "detail": ""
+       }
+      ],
+      "objective": "Summit via Pandora's Box"
+     },
+     {
+      "n": 3,
+      "note": "Break camp and hike out.",
+      "hours": 2.5,
+      "miles": 4.3,
+      "title": "Hike out",
+      "gainFt": 0,
+      "lossFt": 2300,
+      "packLb": 38,
+      "schedule": [],
+      "objective": "Return to trailhead"
+     }
+    ],
+    "totalNote": "A 2-3 day trip: camp at Colchuck Lake, then a moderate snow-climbing day (8-10 hrs) up Pandora's Box to the summit and back to camp before hiking out."
+   }
+  },
+  "after": {
+   "timing": {
+    "totalHrs": 15.25,
+    "summitTimeHrs": 9,
+    "descentTimeHrs": 2.5,
+    "approachTimeHrs": 3.75,
+    "recommendedStart": "4:00 AM from camp",
+    "sectionBreakdown": [
+     {
+      "hrs": 3.75,
+      "note": "Hike the Stuart Lake Trail to Colchuck Lake and camp below the north face, the base for the approach up toward the Colchuck-Dragontail col.",
+      "fromTo": "Approach to Colchuck Lake camp",
+      "section": "Approach"
+     },
+     {
+      "hrs": 9,
+      "note": "Climb steep snow (up to ~45 degrees near the top) up the couloir from near the Colchuck-Dragontail col to the summit ridge. Descend the standard Aasgard Pass scramble back to camp.",
+      "fromTo": "Climb Pandora's Box (W Couloir), descend to camp",
+      "section": "Climb"
+     },
+     {
+      "hrs": 2.5,
+      "note": "Break camp and hike out.",
+      "fromTo": "Hike out",
+      "section": "Descent"
+     }
+    ]
+   },
+   "itinerary": {
+    "cal": "Best climbed on firm spring snow (April-June) via the Colchuck-Dragontail col; this window is largely before/around the start of the May 15-Oct 31 permit season.",
+    "days": [
+     {
+      "n": 1,
+      "note": "Hike the Stuart Lake Trail to Colchuck Lake and camp below the north face, the base for the approach up toward the Colchuck-Dragontail col.",
+      "hours": 3.75,
+      "miles": 4.3,
+      "title": "Approach to Colchuck Lake camp",
+      "gainFt": 2300,
+      "lossFt": 0,
+      "packLb": 40,
+      "schedule": [],
+      "objective": "Reach camp at Colchuck Lake"
+     },
+     {
+      "n": 2,
+      "note": "Climb steep snow (up to ~45 degrees near the top) up the couloir from near the Colchuck-Dragontail col to the summit ridge. Descend the standard Aasgard Pass scramble back to camp.",
+      "hours": 9,
+      "miles": 3.6,
+      "title": "Climb Pandora's Box (W Couloir), descend to camp",
+      "gainFt": 3200,
+      "lossFt": 3200,
+      "packLb": 18,
+      "schedule": [
+       {
+        "time": "4:00 AM",
+        "label": "Leave camp",
+        "detail": ""
+       },
+       {
+        "time": "6:00 AM",
+        "label": "Enter the couloir",
+        "detail": "Near the Colchuck-Dragontail col."
+       },
+       {
+        "time": "9:30 AM",
+        "label": "Top out",
+        "detail": "Steepest section (~45°) near the top."
+       },
+       {
+        "time": "10:30 AM",
+        "label": "Summit",
+        "detail": ""
+       },
+       {
+        "time": "11:30 AM",
+        "label": "Begin descent",
+        "detail": "Aasgard Pass scramble route."
+       },
+       {
+        "time": "1:30 PM",
+        "label": "Back at camp",
+        "detail": ""
+       }
+      ],
+      "objective": "Summit via Pandora's Box"
+     },
+     {
+      "n": 3,
+      "note": "Break camp and hike out.",
+      "hours": 2.5,
+      "miles": 4.3,
+      "title": "Hike out",
+      "gainFt": 0,
+      "lossFt": 2300,
+      "packLb": 38,
+      "schedule": [],
+      "objective": "Return to trailhead"
+     }
+    ],
+    "totalNote": "A 2-3 day trip: camp at Colchuck Lake, then a moderate snow-climbing day (8-10 hrs) up Pandora's Box to the summit and back to camp before hiking out."
+   }
+  }
+ },
+ {
+  "id": "wa_mount_teneriffe_kamikaze_trail",
+  "before": {
+   "timing": {
+    "totalHrs": 7,
+    "summitTimeHrs": 2.5,
+    "descentTimeHrs": 2.5,
+    "approachTimeHrs": 1.5,
+    "recommendedStart": "Early morning (6-7am) given the added exertion and slip risk of the boot track"
+   },
+   "itinerary": {
+    "cal": "Typically a day trip with an early-morning start.",
+    "days": [
+     {
+      "n": 1,
+      "note": "Start early in the morning; it is about 1-1.5 hours to the Teneriffe Falls/Kamikaze junction (2.8 mi), then 2-2.5 hours of steep boot-track climbing to the ridge crest and summit (~4.1 mi, about 4,000 ft of gain). Take a short summit break, then descend either back down Kamikaze (~2.5 hours) or via the standard trail loop (~3-3.5 hours).",
+      "hours": 6.5,
+      "miles": 8.2,
+      "title": "Kamikaze Trail to the summit",
+      "gainFt": 4000,
+      "lossFt": 4000,
+      "packLb": 18,
+      "schedule": [],
+      "objective": "Climb the Kamikaze Trail to the summit and descend"
+     }
+    ],
+    "totalNote": "A steep day trip: trail to Teneriffe Falls, the Kamikaze boot track to the ridge crest and summit (~4.1 mi, ~4,000 ft), then down Kamikaze or the standard trail loop."
+   }
+  },
+  "after": {
+   "timing": {
+    "totalHrs": 7,
+    "summitTimeHrs": 2.5,
+    "descentTimeHrs": 2.5,
+    "approachTimeHrs": 1.5,
+    "recommendedStart": "Early morning (6-7am) given the added exertion and slip risk of the boot track"
+   },
+   "itinerary": {
+    "cal": "Typically a day trip with an early-morning start.",
+    "days": [
+     {
+      "n": 1,
+      "note": "Start early in the morning; it is about 1-1.5 hours to the Teneriffe Falls/Kamikaze junction (2.8 mi), then 2-2.5 hours of steep boot-track climbing to the ridge crest and summit (~4.1 mi, about 4,000 ft of gain). Take a short summit break, then descend either back down Kamikaze (~2.5 hours) or via the standard trail loop (~3-3.5 hours).",
+      "hours": 7,
+      "miles": 8.2,
+      "title": "Kamikaze Trail to the summit",
+      "gainFt": 4000,
+      "lossFt": 4000,
+      "packLb": 18,
+      "schedule": [],
+      "objective": "Climb the Kamikaze Trail to the summit and descend"
+     }
+    ],
+    "totalNote": "A steep day trip: trail to Teneriffe Falls, the Kamikaze boot track to the ridge crest and summit (~4.1 mi, ~4,000 ft), then down Kamikaze or the standard trail loop."
+   }
+  }
+ },
+ {
+  "id": "wa_the_tipping_point",
+  "before": {
+   "timing": {
+    "totalHrs": 17,
+    "summitTimeHrs": 8,
+    "descentTimeHrs": 4,
+    "approachTimeHrs": 3.75,
+    "recommendedStart": "Leave the Stuart Lake Trailhead well before first light for a car-to-car day — a 3 a.m. departure puts you at Colchuck Lake near sunrise and at the base of the wall by mid-morning. If you hold an overnight Colchuck-zone permit, hike in the previous afternoon and start from the basin at first light instead."
+   },
+   "itinerary": {
+    "cal": "The day push is the common choice and needs no overnight permit. The two-day version requires winning or walking up an Enchantment Permit Area overnight permit for the Colchuck zone; parties hike in on day one to a bivy near the lake or on the boulders in the west basin, climb rested on day two and hike out that evening, which is the version most parties who send the route describe.",
+    "days": [
+     {
+      "n": 1,
+      "note": "Leave before first light, reach Colchuck Lake around sunrise and the base of the wall by mid-morning after 3-4 hours of approach. The west face is in shade all morning and gets sun in the afternoon; allow 8 hours or more on the route, 1 hour to descend to the base and 3 hours to hike out, for a realistic 14 to 17 hours car-to-car.",
+      "hours": 15.5,
+      "miles": 10,
+      "title": "Car-to-car on The Tipping Point",
+      "gainFt": 4760,
+      "lossFt": 4760,
+      "packLb": 20,
+      "schedule": [
+       {
+        "time": "Before first light",
+        "label": "Leave the Stuart Lake Trailhead",
+        "detail": "Pre-dawn start."
+       },
+       {
+        "time": "Sunrise",
+        "label": "Colchuck Lake",
+        "detail": "Continue toward the Aasgard Pass gully."
+       },
+       {
+        "time": "Mid-morning",
+        "label": "Base of the wall",
+        "detail": "After 3-4 hours of approach."
+       },
+       {
+        "time": "Late morning",
+        "label": "Start climbing",
+        "detail": "Allow 8 hours or more on the route."
+       }
+      ],
+      "objective": "Climb the route and return to the car"
+     }
+    ],
+    "totalNote": "A 14-17 hour car-to-car push from the Stuart Lake Trailhead via Colchuck Lake to the west face of Colchuck Balanced Rock."
+   }
+  },
+  "after": {
+   "timing": {
+    "totalHrs": 17,
+    "summitTimeHrs": 8,
+    "descentTimeHrs": 4,
+    "approachTimeHrs": 3.75,
+    "recommendedStart": "Leave the Stuart Lake Trailhead well before first light for a car-to-car day — a 3 a.m. departure puts you at Colchuck Lake near sunrise and at the base of the wall by mid-morning. If you hold an overnight Colchuck-zone permit, hike in the previous afternoon and start from the basin at first light instead."
+   },
+   "itinerary": {
+    "cal": "The day push is the common choice and needs no overnight permit. The two-day version requires winning or walking up an Enchantment Permit Area overnight permit for the Colchuck zone; parties hike in on day one to a bivy near the lake or on the boulders in the west basin, climb rested on day two and hike out that evening, which is the version most parties who send the route describe.",
+    "days": [
+     {
+      "n": 1,
+      "note": "Leave before first light, reach Colchuck Lake around sunrise and the base of the wall by mid-morning after 3-4 hours of approach. The west face is in shade all morning and gets sun in the afternoon; allow 8 hours or more on the route, 1 hour to descend to the base and 3 hours to hike out, for a realistic 14 to 17 hours car-to-car.",
+      "hours": 17,
+      "miles": 10,
+      "title": "Car-to-car on The Tipping Point",
+      "gainFt": 4760,
+      "lossFt": 4760,
+      "packLb": 20,
+      "schedule": [
+       {
+        "time": "Before first light",
+        "label": "Leave the Stuart Lake Trailhead",
+        "detail": "Pre-dawn start."
+       },
+       {
+        "time": "Sunrise",
+        "label": "Colchuck Lake",
+        "detail": "Continue toward the Aasgard Pass gully."
+       },
+       {
+        "time": "Mid-morning",
+        "label": "Base of the wall",
+        "detail": "After 3-4 hours of approach."
+       },
+       {
+        "time": "Late morning",
+        "label": "Start climbing",
+        "detail": "Allow 8 hours or more on the route."
+       }
+      ],
+      "objective": "Climb the route and return to the car"
+     }
+    ],
+    "totalNote": "A 14-17 hour car-to-car push from the Stuart Lake Trailhead via Colchuck Lake to the west face of Colchuck Balanced Rock."
+   }
+  }
+ }
+]

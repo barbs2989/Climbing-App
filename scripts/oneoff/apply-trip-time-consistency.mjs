@@ -8,7 +8,7 @@
 // as apply-timing-fixes.mjs does: a row whose live timing/itinerary is no longer `from` is REFUSED.
 //
 // THE ONE-TOTAL RULE, checked on every `to` before anything is written (tolerance 0.05 hr):
-//   totalHrs == approach + summit + descent           (all three present)
+//   totalHrs == approach + summit + descent           (all three present; or up to 25% more: stops)
 //   totalHrs == the trip plan's day hours, summed      (when the plan has days)
 //   totalHrs == the section breakdown's hours, summed  (when there is one)
 // On a multi-day trip the total is MOVING time: the plan's own tile says "Moving", and the day
@@ -39,10 +39,15 @@ export function oneTotalErrors(t, it, before, beforeTiming) {
   const { approachTimeHrs: a, summitTimeHrs: s, descentTimeHrs: d, totalHrs: tot } = t;
   for (const [k, v] of Object.entries({ a, s, d, tot })) if (!isNum(v)) out.push(`leg ${k} is ${v}`);
   if (out.length) return out;
-  if (!near(a + s + d, tot)) out.push(`legs sum to ${a + s + d}, total is ${tot}`);
+  // STOPS (owner 2026-11-18: "rest time is usually a part of it"): a published total may run past the
+  // three legs by the rest it counts. The Planner card prints that difference as a Stops tile, so the
+  // card still adds up. Allowed up to a quarter of the total; never a total SHORT of the legs.
+  const stops = tot - (a + s + d);
+  if (stops < -0.05 || stops > tot * 0.25) out.push(`legs sum to ${a + s + d}, total is ${tot}`);
   const sec = Array.isArray(t.sectionBreakdown) ? t.sectionBreakdown : [];
+  const secSum = sec.reduce((x, y) => x + (y && isNum(y.hrs) ? y.hrs : 0), 0);
   if (sec.some((x) => !isNum(x && x.hrs))) out.push("a section has no hrs");
-  else if (sec.length && !near(sec.reduce((x, y) => x + y.hrs, 0), tot)) out.push(`sections sum to ${sec.reduce((x, y) => x + y.hrs, 0)}, total is ${tot}`);
+  else if (sec.length && !near(secSum, tot) && !near(secSum, a + s + d)) out.push(`sections sum to ${secSum}, total is ${tot}`);
   if (it != null) {
     const had = new Set(before ? itineraryShapeErrors(before, { complete: true }) : []);
     out.push(...itineraryShapeErrors(it, { complete: true }).filter((e) => !had.has(e)).map((e) => "trip plan: " + e));
