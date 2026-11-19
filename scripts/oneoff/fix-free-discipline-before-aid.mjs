@@ -12,9 +12,12 @@
 // Nothing else moves: `grade` already leads with the YDS grade, and grade_system / grade_num are
 // already the free grade's.
 //
-// NOT TOUCHED, and listed by --report: an aid route whose `disciplines` names no free style (the
-// list is empty or just ["aid"]). Its free style is not recorded anywhere in the row, and trad vs
-// sport is not something to guess.
+// AN AID ROUTE WHOSE `disciplines` NAMES NO FREE STYLE (the list is empty or just ["aid"]) has
+// nothing in the row to say trad or sport, and that is not something to guess. Its style is
+// RESEARCHED instead: scripts/data/aid-route-free-style-research.json holds one verdict per route
+// (trad / sport / toprope, or aid-only when the route has no free style), read from the route's
+// own published type line. --styles applies those; a route with no verdict stays aid and is
+// listed by --report.
 //
 //   node scripts/oneoff/fix-free-discipline-before-aid.mjs            dry run: counts + samples
 //   node scripts/oneoff/fix-free-discipline-before-aid.mjs --apply    writes, paced, then re-reads
@@ -29,16 +32,22 @@ const APPLY = process.argv.includes("--apply");
 const ONLY = process.argv.includes("--only") ? process.argv[process.argv.indexOf("--only") + 1] : null;
 const ROLLBACK = path.join(HERE, "..", "data", "free-discipline-before-aid-rollback.json");
 
+// --styles: also apply the researched verdicts (with or without --apply).
+const STYLES = process.argv.includes("--styles") ? new Map(JSON.parse(fs.readFileSync(path.join(HERE, "..", "data", "aid-route-free-style-research.json"), "utf8")).map(x => [x.id, x.verdict])) : new Map();
+
 const FREE = ["trad", "sport", "toprope", "alpine"];
+const RESEARCHED = ["trad", "sport", "toprope"];
 const YDS = /5\.\d/;
 
 export function plan(r) {
   if (r.discipline !== "aid") return null;
   const list = Array.isArray(r.disciplines) ? r.disciplines : [];
-  const primary = FREE.find(d => list.includes(d));
+  // The row's own list decides first; a researched style only fills a row that names none.
+  const researched = STYLES.get(r.id);
+  const primary = FREE.find(d => list.includes(d)) || (RESEARCHED.includes(researched) ? researched : null);
   if (!primary) return null;
   if (!YDS.test(String(r.grade || "")) || r.grade_system !== "yds") return null;
-  return { discipline: primary, disciplines: [primary, ...list.filter(d => d !== primary)] };
+  return { discipline: primary, disciplines: [primary, ...(list.includes("aid") ? list : list.concat("aid")).filter(d => d !== primary)] };
 }
 
 const key = requireServiceKey();
