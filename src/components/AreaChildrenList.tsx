@@ -111,9 +111,9 @@ export default function AreaChildrenList<T extends AreaChildRow>({ rows: given, 
     // A label and its count never split across lines (no-break space); the line wraps only AFTER a "·", so no
     // line starts with one. It is drawn under the name-and-button row, at the row's full width: beside the
     // View area button three counts wrapped on most rows at 390px.
-    const parts = shown.map(d => ((DISC_LABELS as Record<string, string>)[d] + (c && withN ? " " + c[d].toLocaleString() : "")).replace(/ /g, " "));
-    if (ds.length > shown.length) parts.push("+" + (ds.length - shown.length) + " more");
-    return <span style={{ fontSize: 12, color: C.textMuted, fontWeight: 600, lineHeight: 1.4, fontVariantNumeric: "tabular-nums" }}>{parts.join(" · ")}</span>;
+    const parts = shown.map(d => ((DISC_LABELS as Record<string, string>)[d] + (c && withN ? " " + c[d].toLocaleString() : "")).replace(/ /g, "\u00a0"));
+    if (ds.length > shown.length) parts.push("+" + (ds.length - shown.length) + "\u00a0more");
+    return <span style={{ fontSize: 12, color: C.textMuted, fontWeight: 600, lineHeight: 1.4, fontVariantNumeric: "tabular-nums" }}>{parts.join("\u00a0· ")}</span>;
   };
   return <div>
     {side && map ? <div style={{ position: "relative", marginBottom: 10 }}>
