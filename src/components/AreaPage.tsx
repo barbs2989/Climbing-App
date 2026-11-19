@@ -36,6 +36,7 @@ import type { RouteRowRoute } from "./RouteRow.tsx";
 import type { ClassicsListRow } from "./ClassicsList.tsx";
 import type { NearbyPeaksRow } from "./NearbyPeaks.tsx";
 import type { PartnersHereCardProps } from "./PartnersHereCard.tsx";
+import type { ViewableClimber } from "./TopContributors.tsx";
 import type { DbSearchSplitArea, DbSearchSplitRoute } from "./DbSearchSplit.tsx";
 import type { AreaGettingThereArea } from "./AreaGettingThere.tsx";
 import type { AddHereFooterArea } from "./AddHereFooter.tsx";
@@ -151,7 +152,9 @@ export interface AreaPageProps {
   C: typeof Palette;
   onAddClimb?: ((area: AddHereFooterArea) => void) | null;
   onAddArea?: ((area: AddHereFooterArea) => void) | null;
-  TopContributors?: ComponentType<{ areaId: string; mb?: number }> | null;
+  TopContributors?: ComponentType<{ areaId: string; mb?: number; onViewProfile?: (climber: ViewableClimber) => void }> | null;
+  /** Opens the profile of a climber named on TOP CONTRIBUTORS (its rows hand over a different shape than PARTNERS HERE). */
+  onViewContributor?: (climber: ViewableClimber) => void;
   onFireMap?: ((area: AreaPageArea) => void) | null;
   /** Absent hides every edit control; null opens the editor with no field chosen. */
   onSuggestAreaEdit?: ((area: AreaPageArea, field: string | null) => void) | null;
@@ -174,7 +177,7 @@ export interface AreaPageProps {
 // THE HEADER CARD'S BUTTONS: Save area, Area tree and Fire map are ONE size (owner, 2026-11-18: "fire map needs to be
 // the same size as save area") -- 34px, the height Save was given on 2026-11-14 -- and one width; only the colour differs.
 const HEAD_BTN: CSSProperties = { flexShrink: 0, boxSizing: "border-box", display: "inline-flex", alignItems: "center", justifyContent: "center", gap: 5, height: 34, minWidth: 100, padding: "0 12px", borderRadius: 9, fontSize: 12, fontWeight: 800, cursor: "pointer", lineHeight: 1, whiteSpace: "nowrap" };
-export default function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, booked, onToggleSave, onDrill, onFinder, onNear, onObjectives, onAllAreas, onOpenRoute, onJumpToArea, C, onAddClimb, onAddArea, TopContributors, onFireMap, onSuggestAreaEdit, myId, PartnerRow, uid, myListings, onListMe, onFindPartnersInArea, onViewProfile, notify, onStartCrew, onCrewsHere, onGroupsHere, openCrewCountAt, headerNav}: AreaPageProps) {
+export default function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, booked, onToggleSave, onDrill, onFinder, onNear, onObjectives, onAllAreas, onOpenRoute, onJumpToArea, C, onAddClimb, onAddArea, TopContributors, onViewContributor, onFireMap, onSuggestAreaEdit, myId, PartnerRow, uid, myListings, onListMe, onFindPartnersInArea, onViewProfile, notify, onStartCrew, onCrewsHere, onGroupsHere, openCrewCountAt, headerNav}: AreaPageProps) {
   const [wrongOpen, setWrongOpen] = useState(false);
   const listEndRef = useRef(null);
   const [listSort, setListSort] = useState("lr");
@@ -519,7 +522,7 @@ export default function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, book
           Nearby peaks shown the gap is 14, not 14 + its own 10. Below it, 20: the Discussion App mounts next opens
           with a divider line (marginTop 10, collapsing with this), and at 8 that line sat ~11px under the box and read
           as part of it (owner, 2026-11-18: "needs spacing"). */}
-      {TopContributors ? <div style={{ marginTop: 14 }}><TopContributors areaId={area.id} mb={20}/></div> : null}
+      {TopContributors ? <div style={{ marginTop: 14 }}><TopContributors areaId={area.id} mb={20} onViewProfile={onViewContributor}/></div> : null}
     </div>
   );
   // The website: the map and the sub-areas in the left panel beside the page (owner chose "Sidebar on web, early on

@@ -26,6 +26,7 @@
   area rows and the search results, which no browser walk reaches (30/30). The picker keeps one slot in
   `Leaderboards`' tree, open or closed, so it stays mounted: opening puts focus on the area's name, leaving hands it back to
   Change, and while a path loads the header reads *Loading…*, never the root's name.
+- **TOP CONTRIBUTORS card** (area page, and the route page’s Overview in its compact form): the top three by contribution points for that area and everything inside it. A row opens that climber’s profile (your own row opens yours) on both pages; a contributor whose profile cannot be read is drawn as *Climber* with their points, as plain text. Checked against the raw rows with real accounts on 2026-11-19 (27 areas × 5 viewers).
 - **A row is not a button holding buttons** (fixed 2026-11-18, owner "fix it"; axe `nested-interactive`, WCAG 4.1.2,
   found by that probe): the row is a plain container, and rank + avatar + name are ONE real `<button>` that opens the
   profile and carries the row's `lbRowName` name ("#1, …", which probes find rows by). The points button (*How X got
@@ -138,6 +139,8 @@ Hand-run probes: `scripts/oneoff/probe-ranks-anti-padding.sql`, `probe-ranks-ant
 - **True top 100 (0379)**: the 500-climber cap is gone; every board is ranked on the server, and your standing comes with your row.
 
 ## 8. Known gaps
+- TOP CONTRIBUTORS and the profile’s Top Contributor badge do not read *Show me on leaderboards* or blocks yet (`area_top_contributors` ranks everyone in the ledger), though Ranks does: a climber hidden from Ranks is still named on an area’s card, and a climber blocked by a contributor sees that contributor as a nameless *Climber* row. Measured with real accounts 2026-11-19; the fix is a change to that one function.
+- A tie on an area’s card is broken by account id, so one of two climbers level on points gets the ★ pill and the badge; Ranks gives both the same rank.
 - `rank_breakdown()` copies `leaderboard()`'s counting rather than sharing it; a change to the scoring must
   change both (no guard holds them equal yet).
 - The board values `leaderboard()` ranks (0379's `scored` CTE) mirror the `val` of each board in `B` in
