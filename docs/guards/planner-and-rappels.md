@@ -110,8 +110,10 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     time, now 30.5 on the move. 14 more after that (46 of the 103 in all): NW Mox's and Primus's
     summit legs were round trips; the East Fury traverse's 5 hr total was the ridge alone, now 30.
     **STILL OPEN:** 57 rows, all researched but held — no timed report of the climb itself, or a
-    climb time borrowed from a neighbouring route; their proposals are in the audit. Sinister and
-    Spire Point still count a 16-mile walk on the Suiattle road, which reports since 2018 drive. Re-run with the same brief per row; a row whose summit day already equals its leg is
+    climb time borrowed from a neighbouring route; their proposals are in the audit. The Suiattle
+    River Road routes (Sinister, Spire Point, Gunsight, Dome, Frostbite Ridge) now walk the 8 closed
+    road miles of the order in force since 2026-11-05 IN their day hours; the earlier closure pass had
+    added the road miles but not the hours (`audits/closure-distance/README.md`). Re-run with the same brief per row; a row whose summit day already equals its leg is
     read as a round trip by the camp rule meanwhile.
   - **ACCURACY, measured 2026-11-18** (`audits/2026-11-18-multiday-estimate-accuracy.json`): on 15 of a
     28-route sample with reported leg times, the summit-day view's time up from camp was 0.98x reported
