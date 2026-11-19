@@ -1,0 +1,2746 @@
+[
+ {
+  "id": "wa_mount_triumph_northeast_ridge",
+  "before": {
+   "timing": {
+    "totalHrs": 21,
+    "summitTimeHrs": 6,
+    "descentTimeHrs": 10,
+    "approachTimeHrs": 5,
+    "recommendedStart": "Early (around 6:00 am) departure from the bivy col"
+   },
+   "itinerary": {
+    "cal": "The standard plan is 3 days. Strong parties occasionally push it as a long 2-day trip with one bivy, but the extra day is usually recommended given the length and complexity.",
+    "days": [
+     {
+      "n": 1,
+      "note": "Hike to the bivy col above Thornton Lakes, about 5 hours.",
+      "hours": 5,
+      "miles": 6.2,
+      "title": "Hike to the bivy col",
+      "gainFt": 3850,
+      "lossFt": 450,
+      "packLb": 40,
+      "schedule": [],
+      "objective": "Reach the bivy col above Thornton Lakes"
+     },
+     {
+      "n": 2,
+      "note": "Climb the Northeast Ridge round trip from the col, roughly 6 hours up and 6 hours down, for a 12-13+ hour day. Sleep again at the col.",
+      "hours": 12.5,
+      "miles": 1.6,
+      "title": "Climb the Northeast Ridge",
+      "gainFt": 1500,
+      "lossFt": 1500,
+      "packLb": 15,
+      "schedule": [],
+      "objective": "Climb the ridge round trip from the col"
+     },
+     {
+      "n": 3,
+      "note": "Hike out.",
+      "hours": null,
+      "miles": 6.2,
+      "title": "Hike out",
+      "gainFt": 450,
+      "lossFt": 3850,
+      "packLb": 38,
+      "schedule": [],
+      "objective": "Return to the Thornton Lakes Trailhead"
+     }
+    ],
+    "totalNote": "Hike past Thornton Lakes to the bivy col (~5 hrs), climb the Northeast Ridge round trip in a 12-13+ hour day, and hike out on day 3."
+   }
+  },
+  "after": {
+   "timing": {
+    "totalHrs": 22,
+    "summitTimeHrs": 6.5,
+    "descentTimeHrs": 10.5,
+    "approachTimeHrs": 5,
+    "recommendedStart": "Early (around 6:00 am) departure from the bivy col"
+   },
+   "itinerary": {
+    "cal": "The standard plan is 3 days. Strong parties occasionally push it as a long 2-day trip with one bivy, but the extra day is usually recommended given the length and complexity.",
+    "days": [
+     {
+      "n": 1,
+      "note": "Hike to the bivy col above Thornton Lakes, about 5 hours.",
+      "hours": 5,
+      "miles": 6.2,
+      "title": "Hike to the bivy col",
+      "gainFt": 3850,
+      "lossFt": 450,
+      "packLb": 40,
+      "schedule": [],
+      "objective": "Reach the bivy col above Thornton Lakes"
+     },
+     {
+      "n": 2,
+      "note": "Climb the Northeast Ridge from the col, roughly 6.5 hours up and about as long back down, for a day of about 13 hours. Sleep again at the col.",
+      "hours": 13,
+      "miles": 1.6,
+      "title": "Climb the Northeast Ridge",
+      "gainFt": 1500,
+      "lossFt": 1500,
+      "packLb": 15,
+      "schedule": [],
+      "objective": "Climb the ridge round trip from the col"
+     },
+     {
+      "n": 3,
+      "note": "Hike out.",
+      "hours": 4,
+      "miles": 6.2,
+      "title": "Hike out",
+      "gainFt": 450,
+      "lossFt": 3850,
+      "packLb": 38,
+      "schedule": [],
+      "objective": "Return to the Thornton Lakes Trailhead"
+     }
+    ],
+    "totalNote": "Hike past Thornton Lakes to the bivy col (~5 hrs), climb the Northeast Ridge and return to the col in a day of about 13 hours, and hike out on day 3 (~4 hrs)."
+   }
+  }
+ },
+ {
+  "id": "wa_northwest_mox_peak_standard",
+  "before": {
+   "timing": {
+    "totalHrs": 34.7,
+    "summitTimeHrs": 14.2,
+    "descentTimeHrs": 8,
+    "approachTimeHrs": 12.5,
+    "recommendedStart": "6:30 AM from camp",
+    "sectionBreakdown": [
+     {
+      "hrs": 9.3,
+      "note": "From the Depot Creek Road trailhead (BC side, ~2,350 ft), hike past Monument 65 and up through old-growth forest and brush to Depot Creek Falls, then continue to Lake Ouzel (~5,700…",
+      "fromTo": "Approach to Lake Ouzel",
+      "section": "Approach"
+     },
+     {
+      "hrs": 3.2,
+      "note": "Short but steep carry above Lake Ouzel over ledgey rock onto the toe of the Redoubt Glacier, roping up for the flat, low-crevasse-hazard glacier crossing to a rock-outcrop camp on …",
+      "fromTo": "Move to Redoubt Glacier saddle high camp",
+      "section": "Approach"
+     },
+     {
+      "hrs": 14.2,
+      "note": "A long roped traverse of the Redoubt Glacier (visibility can drop to ~50 yards in cloud) leads to the base of the NE ridge headwall, where two pitches of low 5th class rock gain th…",
+      "fromTo": "Summit push: Northwest Spire (Easy Mox)",
+      "section": "Climb"
+     },
+     {
+      "hrs": 8,
+      "note": "Break camp and reverse the full approach in one long push — down off the glacier, past Lake Ouzel, Depot Creek Falls and Monument 65 back to the road. Some parties split this into …",
+      "fromTo": "Hike out",
+      "section": "Descent"
+     }
+    ]
+   },
+   "itinerary": {
+    "cal": "NPS backcountry permit required (issued at the Marblemount Wilderness Information Center); best done July-September once the road and upper glacier/saddle are clear.",
+    "days": [
+     {
+      "n": 1,
+      "note": "From the Depot Creek Road trailhead (BC side, ~2,350 ft), hike past Monument 65 and up through old-growth forest and brush to Depot Creek Falls, then continue to Lake Ouzel (~5,700 ft). This is notoriously slow, bushwhacky terrain despite the modest mileage — expect roughly 6-9 hours for this leg.",
+      "hours": 9.3,
+      "miles": 7.5,
+      "title": "Approach to Lake Ouzel",
+      "gainFt": 3550,
+      "lossFt": 0,
+      "packLb": 45,
+      "schedule": [
+       {
+        "time": "8:50 AM",
+        "label": "Leave trailhead",
+        "detail": "Depot Creek Road parking, ~2,350 ft."
+       },
+       {
+        "time": "+1.4 hr",
+        "label": "Monument 65",
+        "detail": "Border marker; +500 ft."
+       },
+       {
+        "time": "+4.8 hr",
+        "label": "Depot Creek Falls",
+        "detail": "~1,600 ft cumulative gain."
+       },
+       {
+        "time": "+9.3 hr",
+        "label": "Arrive Lake Ouzel camp",
+        "detail": "~5,700 ft, ~3,550 ft cumulative gain."
+       }
+      ],
+      "objective": "Reach the Lake Ouzel bivy/camp"
+     },
+     {
+      "n": 2,
+      "note": "Short but steep carry above Lake Ouzel over ledgey rock onto the toe of the Redoubt Glacier, roping up for the flat, low-crevasse-hazard glacier crossing to a rock-outcrop camp on the saddle. Many parties use this as a half-day and rest/prep gear in the afternoon.",
+      "hours": 3.2,
+      "miles": 2,
+      "title": "Move to Redoubt Glacier saddle high camp",
+      "gainFt": 1550,
+      "lossFt": 100,
+      "packLb": 45,
+      "objective": "Establish high camp at ~7,150-7,400 ft"
+     },
+     {
+      "n": 3,
+      "note": "A long roped traverse of the Redoubt Glacier (visibility can drop to ~50 yards in cloud) leads to the base of the NE ridge headwall, where two pitches of low 5th class rock gain the ridge crest before class 3-4 scrambling to the 8,407 ft summit. \"Easy\" is relative — this is a full, long day with real exposure and route-finding.",
+      "hours": 14.2,
+      "miles": 5,
+      "title": "Summit push: Northwest Spire (Easy Mox)",
+      "gainFt": 1900,
+      "lossFt": 1900,
+      "packLb": 18,
+      "schedule": [
+       {
+        "time": "6:30 AM",
+        "label": "Leave high camp",
+        "detail": "Roped travel across the Redoubt Glacier."
+       },
+       {
+        "time": "+4.1 hr",
+        "label": "Reach ridge crest",
+        "detail": "Via the headwall's low 5th class rock, ~900 ft gained."
+       },
+       {
+        "time": "3:30 PM",
+        "label": "Summit",
+        "detail": "8.9 hr from camp; final scrambling to the 8,407 ft top."
+       },
+       {
+        "time": "~4:00 PM",
+        "label": "Begin descent",
+        "detail": "Reverse the ridge and headwall, downclimbing/rappelling as needed."
+       },
+       {
+        "time": "Just before dark",
+        "label": "Back at high camp",
+        "detail": "~5.3 hr descent."
+       }
+      ],
+      "objective": "Climb the Northeast Ridge to the NW (Easy Mox) summit and return to high camp"
+     },
+     {
+      "n": 4,
+      "note": "Break camp and reverse the full approach in one long push — down off the glacier, past Lake Ouzel, Depot Creek Falls and Monument 65 back to the road. Some parties split this into two days if the crew is tired or the crossings are running high.",
+      "hours": 8,
+      "miles": 9.5,
+      "title": "Hike out",
+      "gainFt": 0,
+      "lossFt": 5050,
+      "packLb": 40,
+      "objective": "Return to the Depot Creek trailhead"
+     }
+    ],
+    "totalNote": "A remote 4-day trip (strong parties compress to 3): roughly 21-24 miles round trip with ~6,000-7,000 ft of cumulative gain to the 8,407 ft summit, with two long, slow approach/exit days bracketing a hard Class 4-5 glacier-and-headwall summit day from a Redoubt Glacier saddle camp."
+   }
+  },
+  "after": {
+   "timing": {
+    "totalHrs": 29.5,
+    "summitTimeHrs": 8,
+    "descentTimeHrs": 11.5,
+    "approachTimeHrs": 10,
+    "recommendedStart": "6:30 AM from camp",
+    "sectionBreakdown": [
+     {
+      "hrs": 7,
+      "note": "From the Depot Creek Road trailhead (BC side, ~2,350 ft), hike past Monument 65 and up through old-growth forest and brush to Depot Creek Falls, then continue to Lake Ouzel (~5,700…",
+      "fromTo": "Approach to Lake Ouzel",
+      "section": "Approach"
+     },
+     {
+      "hrs": 3,
+      "note": "Short but steep carry above Lake Ouzel over ledgey rock onto the toe of the Redoubt Glacier, roping up for the flat, low-crevasse-hazard glacier crossing to a rock-outcrop camp on …",
+      "fromTo": "Move to Redoubt Glacier saddle high camp",
+      "section": "Approach"
+     },
+     {
+      "hrs": 8,
+      "note": "A long roped traverse of the Redoubt Glacier (visibility can drop to ~50 yards in cloud) leads to the base of the NE ridge headwall, where two pitches of low 5th class rock gain th…",
+      "fromTo": "Summit push: Northwest Spire (Easy Mox)",
+      "section": "Climb"
+     },
+     {
+      "hrs": 11.5,
+      "note": "Reverse the ridge and headwall to high camp the same afternoon, then on the last day break camp and reverse the full approach in one long push — down off the glacier, past Lake Ouzel, Depot Creek Falls and Monument 65 back to the road. Some parties split this into …",
+      "fromTo": "Back to high camp, then hike out",
+      "section": "Descent"
+     }
+    ]
+   },
+   "itinerary": {
+    "cal": "NPS backcountry permit required (issued at the Marblemount Wilderness Information Center); best done July-September once the road and upper glacier/saddle are clear.",
+    "days": [
+     {
+      "n": 1,
+      "note": "From the Depot Creek Road trailhead (BC side, ~2,350 ft), hike past Monument 65 and up through old-growth forest and brush to Depot Creek Falls, then continue to Lake Ouzel (~5,700 ft). This is notoriously slow, bushwhacky terrain despite the modest mileage — expect roughly 6-9 hours for this leg.",
+      "hours": 7,
+      "miles": 7.5,
+      "title": "Approach to Lake Ouzel",
+      "gainFt": 3550,
+      "lossFt": 0,
+      "packLb": 45,
+      "schedule": [
+       {
+        "time": "8:50 AM",
+        "label": "Leave trailhead",
+        "detail": "Depot Creek Road parking, ~2,350 ft."
+       },
+       {
+        "time": "+1 hr",
+        "label": "Monument 65",
+        "detail": "Border marker; +500 ft."
+       },
+       {
+        "time": "+3.5 hr",
+        "label": "Depot Creek Falls",
+        "detail": "~1,600 ft cumulative gain."
+       },
+       {
+        "time": "+7 hr",
+        "label": "Arrive Lake Ouzel camp",
+        "detail": "~5,700 ft, ~3,550 ft cumulative gain."
+       }
+      ],
+      "objective": "Reach the Lake Ouzel bivy/camp"
+     },
+     {
+      "n": 2,
+      "note": "Short but steep carry above Lake Ouzel over ledgey rock onto the toe of the Redoubt Glacier, roping up for the flat, low-crevasse-hazard glacier crossing to a rock-outcrop camp on the saddle. Many parties use this as a half-day and rest/prep gear in the afternoon.",
+      "hours": 3,
+      "miles": 2,
+      "title": "Move to Redoubt Glacier saddle high camp",
+      "gainFt": 1550,
+      "lossFt": 100,
+      "packLb": 45,
+      "objective": "Establish high camp at ~7,150-7,400 ft"
+     },
+     {
+      "n": 3,
+      "note": "A long roped traverse of the Redoubt Glacier (visibility can drop to ~50 yards in cloud) leads to the base of the NE ridge headwall, where two pitches of low 5th class rock gain the ridge crest before class 3-4 scrambling to the 8,407 ft summit. \"Easy\" is relative — this is a full, long day with real exposure and route-finding.",
+      "hours": 12.5,
+      "miles": 5,
+      "title": "Summit push: Northwest Spire (Easy Mox)",
+      "gainFt": 1900,
+      "lossFt": 1900,
+      "packLb": 18,
+      "schedule": [
+       {
+        "time": "6:30 AM",
+        "label": "Leave high camp",
+        "detail": "Roped travel across the Redoubt Glacier."
+       },
+       {
+        "time": "+3.5 hr",
+        "label": "Reach ridge crest",
+        "detail": "Via the headwall's low 5th class rock, ~900 ft gained."
+       },
+       {
+        "time": "2:30 PM",
+        "label": "Summit",
+        "detail": "8 hr from camp; final scrambling to the 8,407 ft top."
+       },
+       {
+        "time": "~2:45 PM",
+        "label": "Begin descent",
+        "detail": "Reverse the ridge and headwall, downclimbing/rappelling as needed."
+       },
+       {
+        "time": "About 7:00 PM",
+        "label": "Back at high camp",
+        "detail": "~4.5 hr descent."
+       }
+      ],
+      "objective": "Climb the Northeast Ridge to the NW (Easy Mox) summit and return to high camp"
+     },
+     {
+      "n": 4,
+      "note": "Break camp and reverse the full approach in one long push — down off the glacier, past Lake Ouzel, Depot Creek Falls and Monument 65 back to the road. Some parties split this into two days if the crew is tired or the crossings are running high.",
+      "hours": 7,
+      "miles": 9.5,
+      "title": "Hike out",
+      "gainFt": 0,
+      "lossFt": 5050,
+      "packLb": 40,
+      "objective": "Return to the Depot Creek trailhead"
+     }
+    ],
+    "totalNote": "A remote 4-day trip (strong parties compress to 3): roughly 21-24 miles round trip with ~6,000-7,000 ft of cumulative gain to the 8,407 ft summit, with two long, slow approach/exit days bracketing a hard Class 4-5 glacier-and-headwall summit day from a Redoubt Glacier saddle camp."
+   }
+  }
+ },
+ {
+  "id": "wa_primus_peak_south_ridge",
+  "before": {
+   "timing": {
+    "totalHrs": 25,
+    "summitTimeHrs": 6,
+    "descentTimeHrs": 7,
+    "approachTimeHrs": 12,
+    "recommendedStart": "5:30 AM from camp",
+    "sectionBreakdown": [
+     {
+      "hrs": 6.5,
+      "note": "Standard Eldorado Trailhead approach: trail through forest then boot track up the Eldorado Glacier's lower slopes to a campsite near or above treeline, carrying full overnight glac…",
+      "fromTo": "Approach to Eldorado high camp",
+      "section": "Approach"
+     },
+     {
+      "hrs": 5.5,
+      "note": "Rope up for glacier travel across the Eldorado and Inspiration Glaciers to Klawatti Col, weaving around crevasses; camp on rock or snow near the col.",
+      "fromTo": "Cross Eldorado/Inspiration Glaciers to Klawatti Col",
+      "section": "Approach"
+     },
+     {
+      "hrs": 6,
+      "note": "Drop packs or carry light gear across the North Klawatti/McAllister Glacier to the Primus massif, then pick a Class 2-4 line up the south side to the summit before returning to the…",
+      "fromTo": "Traverse to Primus and climb the south side",
+      "section": "Climb"
+     },
+     {
+      "hrs": 7,
+      "note": "Reverse the Inspiration/Eldorado Glacier crossing and descend the boot track and trail back to the Eldorado Trailhead; a long day given the elevation lost.",
+      "fromTo": "Return to Eldorado Trailhead",
+      "section": "Descent"
+     }
+    ]
+   },
+   "itinerary": {
+    "cal": "A backcountry permit from the Marblemount Wilderness Information Center is required for the overnight camps.",
+    "days": [
+     {
+      "n": 1,
+      "note": "Standard Eldorado Trailhead approach: trail through forest then boot track up the Eldorado Glacier's lower slopes to a campsite near or above treeline, carrying full overnight glacier gear.",
+      "hours": 6.5,
+      "miles": 7,
+      "title": "Approach to Eldorado high camp",
+      "gainFt": 4400,
+      "lossFt": 0,
+      "packLb": 45,
+      "schedule": [],
+      "objective": "Reach a treeline/high camp near or above the Eldorado Glacier"
+     },
+     {
+      "n": 2,
+      "note": "Rope up for glacier travel across the Eldorado and Inspiration Glaciers to Klawatti Col, weaving around crevasses; camp on rock or snow near the col.",
+      "hours": 5.5,
+      "miles": 3.5,
+      "title": "Cross Eldorado/Inspiration Glaciers to Klawatti Col",
+      "gainFt": 2000,
+      "lossFt": 400,
+      "packLb": 40,
+      "schedule": [],
+      "objective": "Camp near Klawatti Col (~7,500-7,800 ft)"
+     },
+     {
+      "n": 3,
+      "note": "Drop packs or carry light gear across the North Klawatti/McAllister Glacier to the Primus massif, then pick a Class 2-4 line up the south side to the summit before returning to the col camp.",
+      "hours": 6,
+      "miles": 3,
+      "title": "Traverse to Primus and climb the south side",
+      "gainFt": 1400,
+      "lossFt": 1400,
+      "packLb": 15,
+      "schedule": [
+       {
+        "time": "5:30 AM",
+        "label": "Leave Klawatti Col camp",
+        "detail": "Rope up for the glacier crossing."
+       },
+       {
+        "time": "7:30 AM",
+        "label": "Reach base of Primus's south side",
+        "detail": "Stow crampons if terrain goes to rock/talus."
+       },
+       {
+        "time": "9:30 AM",
+        "label": "Summit Primus Peak",
+        "detail": "Class 2-4 scrambling on the south aspect."
+       },
+       {
+        "time": "11:30 AM",
+        "label": "Back at Klawatti Col camp",
+        "detail": "Reverse the glacier crossing."
+       }
+      ],
+      "objective": "Summit Primus Peak (8,508 ft) via the Class 2-4 south side"
+     },
+     {
+      "n": 4,
+      "note": "Reverse the Inspiration/Eldorado Glacier crossing and descend the boot track and trail back to the Eldorado Trailhead; a long day given the elevation lost.",
+      "hours": 7,
+      "miles": 6.5,
+      "title": "Return to Eldorado Trailhead",
+      "gainFt": 200,
+      "lossFt": 5700,
+      "packLb": 35,
+      "schedule": [],
+      "objective": "Hike/glacier-travel out to the car"
+     }
+    ],
+    "totalNote": "A remote 3-4 day glacier backpack from the Eldorado side: roughly 20 miles round trip with on the order of 8,000 ft of cumulative gain; most parties budget a buffer day for weather and glacier routefinding."
+   }
+  },
+  "after": {
+   "timing": {
+    "totalHrs": 21.5,
+    "summitTimeHrs": 4,
+    "descentTimeHrs": 8.5,
+    "approachTimeHrs": 9,
+    "recommendedStart": "5:30 AM from camp",
+    "sectionBreakdown": [
+     {
+      "hrs": 6,
+      "note": "Standard Eldorado Trailhead approach: trail through forest then boot track up the Eldorado Glacier's lower slopes to a campsite near or above treeline, carrying full overnight glac…",
+      "fromTo": "Approach to Eldorado high camp",
+      "section": "Approach"
+     },
+     {
+      "hrs": 3,
+      "note": "Rope up for glacier travel across the Eldorado and Inspiration Glaciers to Klawatti Col, weaving around crevasses; camp on rock or snow near the col.",
+      "fromTo": "Cross Eldorado/Inspiration Glaciers to Klawatti Col",
+      "section": "Approach"
+     },
+     {
+      "hrs": 4,
+      "note": "Drop packs or carry light gear across the North Klawatti/McAllister Glacier to the Primus massif, then pick a Class 2-4 line up the south side to the summit.",
+      "fromTo": "Traverse to Primus and climb the south side to the summit",
+      "section": "Climb"
+     },
+     {
+      "hrs": 3,
+      "note": "Retrace the scramble and the glacier crossing back to the camp at Klawatti Col.",
+      "fromTo": "Return from the summit to Klawatti Col camp",
+      "section": "Descent"
+     },
+     {
+      "hrs": 5.5,
+      "note": "Reverse the Inspiration/Eldorado Glacier crossing and descend the boot track and trail back to the Eldorado Trailhead; a long day given the elevation lost.",
+      "fromTo": "Return to Eldorado Trailhead",
+      "section": "Descent"
+     }
+    ]
+   },
+   "itinerary": {
+    "cal": "A backcountry permit from the Marblemount Wilderness Information Center is required for the overnight camps.",
+    "days": [
+     {
+      "n": 1,
+      "note": "Standard Eldorado Trailhead approach: trail through forest then boot track up the Eldorado Glacier's lower slopes to a campsite near or above treeline, carrying full overnight glacier gear.",
+      "hours": 6,
+      "miles": 7,
+      "title": "Approach to Eldorado high camp",
+      "gainFt": 4400,
+      "lossFt": 0,
+      "packLb": 45,
+      "schedule": [],
+      "objective": "Reach a treeline/high camp near or above the Eldorado Glacier"
+     },
+     {
+      "n": 2,
+      "note": "Rope up for glacier travel across the Eldorado and Inspiration Glaciers to Klawatti Col, weaving around crevasses; camp on rock or snow near the col.",
+      "hours": 3,
+      "miles": 3.5,
+      "title": "Cross Eldorado/Inspiration Glaciers to Klawatti Col",
+      "gainFt": 2000,
+      "lossFt": 400,
+      "packLb": 40,
+      "schedule": [],
+      "objective": "Camp near Klawatti Col (~7,500-7,800 ft)"
+     },
+     {
+      "n": 3,
+      "note": "Drop packs or carry light gear across the North Klawatti/McAllister Glacier to the Primus massif, then pick a Class 2-4 line up the south side to the summit before returning to the col camp.",
+      "hours": 7,
+      "miles": 3,
+      "title": "Traverse to Primus and climb the south side",
+      "gainFt": 1400,
+      "lossFt": 1400,
+      "packLb": 15,
+      "schedule": [
+       {
+        "time": "5:30 AM",
+        "label": "Leave Klawatti Col camp",
+        "detail": "Rope up for the glacier crossing."
+       },
+       {
+        "time": "7:30 AM",
+        "label": "Reach base of Primus's south side",
+        "detail": "Stow crampons if terrain goes to rock/talus."
+       },
+       {
+        "time": "9:30 AM",
+        "label": "Summit Primus Peak",
+        "detail": "Class 2-4 scrambling on the south aspect."
+       },
+       {
+        "time": "12:30 PM",
+        "label": "Back at Klawatti Col camp",
+        "detail": "Reverse the glacier crossing."
+       }
+      ],
+      "objective": "Summit Primus Peak (8,508 ft) via the Class 2-4 south side"
+     },
+     {
+      "n": 4,
+      "note": "Reverse the Inspiration/Eldorado Glacier crossing and descend the boot track and trail back to the Eldorado Trailhead; a long day given the elevation lost.",
+      "hours": 5.5,
+      "miles": 6.5,
+      "title": "Return to Eldorado Trailhead",
+      "gainFt": 200,
+      "lossFt": 5700,
+      "packLb": 35,
+      "schedule": [],
+      "objective": "Hike/glacier-travel out to the car"
+     }
+    ],
+    "totalNote": "A remote 3-4 day glacier backpack from the Eldorado side: roughly 20 miles round trip with on the order of 8,000 ft of cumulative gain; most parties budget a buffer day for weather and glacier routefinding."
+   }
+  }
+ },
+ {
+  "id": "wa_eldorado_peak_northeast_face",
+  "before": {
+   "timing": {
+    "totalHrs": 19,
+    "summitTimeHrs": 6.5,
+    "descentTimeHrs": 6.5,
+    "approachTimeHrs": 6,
+    "recommendedStart": "Pre-dawn/alpine start (parties reported waking and roping up before sunrise)",
+    "sectionBreakdown": [
+     {
+      "hrs": 6,
+      "fromTo": "Trailhead to high camp",
+      "section": "Approach"
+     },
+     {
+      "hrs": 6.5,
+      "fromTo": "Summit day: the Northeast Face, then back down to camp",
+      "section": "Climb"
+     },
+     {
+      "hrs": 6.5,
+      "fromTo": "Hike out",
+      "section": "Descent"
+     }
+    ]
+   },
+   "itinerary": {
+    "cal": "",
+    "days": [
+     {
+      "n": 1,
+      "note": "Same steep Eldorado/Roush Creek approach used for the East Ridge (this route diverges onto the Northeast Face), to a camp on glacier or moraine near the base of the peak's east side (~7,500-7,800 ft).",
+      "hours": 6.5,
+      "miles": 3.9,
+      "title": "Approach to glacier/moraine camp",
+      "gainFt": 5700,
+      "lossFt": 0,
+      "packLb": 45,
+      "schedule": [],
+      "objective": "Reach a camp near the base of the Northeast Face/East Ridge"
+     },
+     {
+      "n": 2,
+      "note": "Alpine start to climb the Northeast Face's snow and ice pitches, joining the upper mountain near the summit snowfields. Descend the standard East Ridge/Eldorado Glacier route back to camp.",
+      "hours": 9,
+      "miles": 4.3,
+      "title": "Northeast Face summit push",
+      "gainFt": 1100,
+      "lossFt": 1100,
+      "packLb": 18,
+      "schedule": [
+       {
+        "time": "2:30 AM",
+        "label": "Leave camp",
+        "detail": "Alpine start."
+       },
+       {
+        "time": "4:00 AM",
+        "label": "Reach base of Northeast Face",
+        "detail": ""
+       },
+       {
+        "time": "4:30 AM",
+        "label": "Begin climbing",
+        "detail": "Snow/ice/mixed pitches up the face."
+       },
+       {
+        "time": "8:30 AM",
+        "label": "Join upper mountain",
+        "detail": "Merge with East Ridge summit snowfields."
+       },
+       {
+        "time": "10:00 AM",
+        "label": "Summit",
+        "detail": "8,872 ft."
+       },
+       {
+        "time": "2:30 PM",
+        "label": "Back at camp",
+        "detail": "Via standard East Ridge / Eldorado Glacier descent."
+       }
+      ],
+      "objective": "Climb the Northeast Face to the 8,872 ft summit and return to camp"
+     },
+     {
+      "n": 3,
+      "note": "Break camp and hike back down to the Cascade River approach trailhead.",
+      "hours": 4,
+      "miles": 3.9,
+      "title": "Hike out",
+      "gainFt": 0,
+      "lossFt": 5700,
+      "packLb": 35,
+      "schedule": [],
+      "objective": "Break camp and return to the trailhead"
+     }
+    ],
+    "totalNote": "A 3-day trip similar in shape to the East Ridge (this route diverges onto the Northeast Face): approach to camp, an alpine-start day climbing the Northeast Face to the 8,872 ft summit, then hike out (~6,900 ft gain, ~12 mi round trip)."
+   }
+  },
+  "after": {
+   "timing": {
+    "totalHrs": 17,
+    "summitTimeHrs": 4.5,
+    "descentTimeHrs": 6.5,
+    "approachTimeHrs": 6,
+    "recommendedStart": "Pre-dawn/alpine start (parties reported waking and roping up before sunrise)",
+    "sectionBreakdown": [
+     {
+      "hrs": 6,
+      "fromTo": "Trailhead to high camp",
+      "section": "Approach"
+     },
+     {
+      "hrs": 4.5,
+      "fromTo": "Summit day: camp up the Northeast Face to the summit",
+      "section": "Climb"
+     },
+     {
+      "hrs": 6.5,
+      "fromTo": "Back down to camp, then hike out",
+      "section": "Descent"
+     }
+    ]
+   },
+   "itinerary": {
+    "cal": "",
+    "days": [
+     {
+      "n": 1,
+      "note": "Same steep Eldorado/Roush Creek approach used for the East Ridge (this route diverges onto the Northeast Face), to a camp on glacier or moraine near the base of the peak's east side (~7,500-7,800 ft).",
+      "hours": 6,
+      "miles": 3.9,
+      "title": "Approach to glacier/moraine camp",
+      "gainFt": 5700,
+      "lossFt": 0,
+      "packLb": 45,
+      "schedule": [],
+      "objective": "Reach a camp near the base of the Northeast Face/East Ridge"
+     },
+     {
+      "n": 2,
+      "note": "Alpine start to climb the Northeast Face's snow and ice pitches, joining the upper mountain near the summit snowfields. Descend the standard East Ridge/Eldorado Glacier route back to camp.",
+      "hours": 6.5,
+      "miles": 4.3,
+      "title": "Northeast Face summit push",
+      "gainFt": 1100,
+      "lossFt": 1100,
+      "packLb": 18,
+      "schedule": [
+       {
+        "time": "3:00 AM",
+        "label": "Leave camp",
+        "detail": "Alpine start."
+       },
+       {
+        "time": "4:00 AM",
+        "label": "Reach base of Northeast Face",
+        "detail": ""
+       },
+       {
+        "time": "4:30 AM",
+        "label": "Begin climbing",
+        "detail": "Snow/ice/mixed pitches up the face."
+       },
+       {
+        "time": "6:30 AM",
+        "label": "Join upper mountain",
+        "detail": "Merge with East Ridge summit snowfields."
+       },
+       {
+        "time": "7:30 AM",
+        "label": "Summit",
+        "detail": "8,872 ft."
+       },
+       {
+        "time": "9:30 AM",
+        "label": "Back at camp",
+        "detail": "Via standard East Ridge / Eldorado Glacier descent."
+       }
+      ],
+      "objective": "Climb the Northeast Face to the 8,872 ft summit and return to camp"
+     },
+     {
+      "n": 3,
+      "note": "Break camp and hike back down to the Cascade River approach trailhead.",
+      "hours": 4.5,
+      "miles": 3.9,
+      "title": "Hike out",
+      "gainFt": 0,
+      "lossFt": 5700,
+      "packLb": 35,
+      "schedule": [],
+      "objective": "Break camp and return to the trailhead"
+     }
+    ],
+    "totalNote": "A 3-day trip similar in shape to the East Ridge (this route diverges onto the Northeast Face): approach to camp, an alpine-start day climbing the Northeast Face to the 8,872 ft summit, then hike out (~6,900 ft gain, ~12 mi round trip)."
+   }
+  }
+ },
+ {
+  "id": "wa_prusik_peak_south_face_burgner_stanley",
+  "before": {
+   "timing": {
+    "totalHrs": 19.5,
+    "summitTimeHrs": 6.5,
+    "descentTimeHrs": 13,
+    "approachTimeHrs": null,
+    "recommendedStart": "Early start",
+    "sectionBreakdown": [
+     {
+      "hrs": 6.5,
+      "note": "Hike past Colchuck Lake and up Aasgard Pass into the core Enchantments, passing Tranquil, Isolation, and Perfection Lakes. Camp at Gnome Tarn, close to the south face.",
+      "fromTo": "Approach to Gnome Tarn camp",
+      "section": "Climb"
+     },
+     {
+      "hrs": 7.5,
+      "note": "Chimneys and corner systems for 6 pitches (~650 ft); pitches 1-2 and 3-4 link easily with a 60m rope. Car-to-car parties log about 5.5 hrs of pure climbing, then rappel the north face…",
+      "fromTo": "Climb the South Face (Burgner-Stanley)",
+      "section": "Descent"
+     },
+     {
+      "hrs": 5.5,
+      "note": "Break camp and hike back out over Aasgard Pass and past Colchuck Lake to the trailhead.",
+      "fromTo": "Hike out",
+      "section": "Descent"
+     }
+    ]
+   },
+   "itinerary": {
+    "cal": "Core Enchantments overnight permits are competitive; fit parties without one sometimes push the whole route car-to-car in ~20-24 hrs instead.",
+    "days": [
+     {
+      "n": 1,
+      "note": "Hike past Colchuck Lake and up Aasgard Pass into the core Enchantments, passing Tranquil, Isolation, and Perfection Lakes. Camp at Gnome Tarn, close to the south face.",
+      "hours": 6.5,
+      "miles": 8.8,
+      "title": "Approach to Gnome Tarn camp",
+      "gainFt": 4600,
+      "lossFt": 700,
+      "packLb": 38,
+      "schedule": [],
+      "objective": "Reach camp below Prusik Peak"
+     },
+     {
+      "n": 2,
+      "note": "Chimneys and corner systems for 6 pitches (~650 ft); pitches 1-2 and 3-4 link easily with a 60m rope. Car-to-car parties log about 5.5 hrs of pure climbing, then descend by rappelling the north face.",
+      "hours": 7.5,
+      "miles": 1.4,
+      "title": "Climb the South Face (Burgner-Stanley)",
+      "gainFt": 700,
+      "lossFt": 700,
+      "packLb": 12,
+      "schedule": [
+       {
+        "time": "5:30 AM",
+        "label": "Leave camp",
+        "detail": "~15-20 min to the base of the south face"
+       },
+       {
+        "time": "6:00 AM",
+        "label": "Start climbing",
+        "detail": "P1 chimney or crack (5.7-5.8+) to a tree belay"
+       },
+       {
+        "time": "",
+        "label": "Continue P2-P5",
+        "detail": "Corner systems and a chockstone chimney (5.8-5.9)"
+       },
+       {
+        "time": "11:30 AM",
+        "label": "Top out",
+        "detail": "P6 strenuous crack/corner to the summit; ~5.5 hrs of climbing typical"
+       },
+       {
+        "time": "12:00 PM",
+        "label": "Descend",
+        "detail": "Rappel the north face, then walk back around to the base"
+       },
+       {
+        "time": "2:00 PM",
+        "label": "Back at camp"
+       }
+      ],
+      "objective": "Send the Burgner-Stanley route (5.9+/5.10a, 6 pitches)"
+     },
+     {
+      "n": 3,
+      "note": "Break camp and hike back out over Aasgard Pass and past Colchuck Lake to the trailhead.",
+      "hours": 5.5,
+      "miles": 8.8,
+      "title": "Hike out",
+      "gainFt": 700,
+      "lossFt": 4600,
+      "packLb": 30,
+      "schedule": [],
+      "objective": "Return to the trailhead"
+     }
+    ],
+    "totalNote": "A 3-day trip (~19.5 mi, ~6,000 ft round-trip) around Prusik's classic 6-pitch 5.9+ south-face line, descending by rappel down the north face."
+   }
+  },
+  "after": {
+   "timing": {
+    "totalHrs": 19,
+    "summitTimeHrs": 5.5,
+    "descentTimeHrs": 7,
+    "approachTimeHrs": 6.5,
+    "recommendedStart": "Early start",
+    "sectionBreakdown": [
+     {
+      "hrs": 6.5,
+      "note": "Hike past Colchuck Lake and up Aasgard Pass into the core Enchantments, passing Tranquil, Isolation, and Perfection Lakes. Camp at Gnome Tarn, close to the south face.",
+      "fromTo": "Approach to Gnome Tarn camp",
+      "section": "Approach"
+     },
+     {
+      "hrs": 5.5,
+      "note": "Chimneys and corner systems for 6 pitches (~650 ft); pitches 1-2 and 3-4 link easily with a 60m rope. Expect about 5 hrs of pure climbing after a short walk from camp to the base.",
+      "fromTo": "Climb the South Face (Burgner-Stanley) to the summit",
+      "section": "Climb"
+     },
+     {
+      "section": "Descent",
+      "fromTo": "Rappel the north face and return to camp",
+      "note": "Rappel the north face, then walk back around to the base and on to camp.",
+      "hrs": 1.5
+     },
+     {
+      "hrs": 5.5,
+      "note": "Break camp and hike back out over Aasgard Pass and past Colchuck Lake to the trailhead.",
+      "fromTo": "Hike out",
+      "section": "Descent"
+     }
+    ]
+   },
+   "itinerary": {
+    "cal": "Core Enchantments overnight permits are competitive; fit parties without one sometimes push the whole route car-to-car in ~20-24 hrs instead.",
+    "days": [
+     {
+      "n": 1,
+      "note": "Hike past Colchuck Lake and up Aasgard Pass into the core Enchantments, passing Tranquil, Isolation, and Perfection Lakes. Camp at Gnome Tarn, close to the south face.",
+      "hours": 6.5,
+      "miles": 8.8,
+      "title": "Approach to Gnome Tarn camp",
+      "gainFt": 4600,
+      "lossFt": 700,
+      "packLb": 38,
+      "schedule": [],
+      "objective": "Reach camp below Prusik Peak"
+     },
+     {
+      "n": 2,
+      "note": "Chimneys and corner systems for 6 pitches (~650 ft); pitches 1-2 and 3-4 link easily with a 60m rope. Car-to-car parties log about 5 hrs of pure climbing, then descend by rappelling the north face.",
+      "hours": 7,
+      "miles": 1.4,
+      "title": "Climb the South Face (Burgner-Stanley)",
+      "gainFt": 700,
+      "lossFt": 700,
+      "packLb": 12,
+      "schedule": [
+       {
+        "time": "5:30 AM",
+        "label": "Leave camp",
+        "detail": "~15-20 min to the base of the south face"
+       },
+       {
+        "time": "6:00 AM",
+        "label": "Start climbing",
+        "detail": "P1 chimney or crack (5.7-5.8+) to a tree belay"
+       },
+       {
+        "time": "",
+        "label": "Continue P2-P5",
+        "detail": "Corner systems and a chockstone chimney (5.8-5.9)"
+       },
+       {
+        "time": "11:00 AM",
+        "label": "Top out",
+        "detail": "P6 strenuous crack/corner to the summit; ~5 hrs of climbing typical"
+       },
+       {
+        "time": "11:00 AM",
+        "label": "Descend",
+        "detail": "Rappel the north face, then walk back around to the base"
+       },
+       {
+        "time": "12:30 PM",
+        "label": "Back at camp"
+       }
+      ],
+      "objective": "Send the Burgner-Stanley route (5.9+/5.10a, 6 pitches)"
+     },
+     {
+      "n": 3,
+      "note": "Break camp and hike back out over Aasgard Pass and past Colchuck Lake to the trailhead.",
+      "hours": 5.5,
+      "miles": 8.8,
+      "title": "Hike out",
+      "gainFt": 700,
+      "lossFt": 4600,
+      "packLb": 30,
+      "schedule": [],
+      "objective": "Return to the trailhead"
+     }
+    ],
+    "totalNote": "A 3-day trip (~19.5 mi, ~6,000 ft round-trip) around Prusik's classic 6-pitch 5.9+ south-face line, descending by rappel down the north face."
+   }
+  }
+ },
+ {
+  "id": "wa_ridge_traverse_from_east_fury",
+  "before": {
+   "timing": {
+    "totalHrs": 5,
+    "summitTimeHrs": 2.5,
+    "descentTimeHrs": 2,
+    "approachTimeHrs": 0.5,
+    "recommendedStart": "0600 from Luna Col"
+   },
+   "itinerary": {
+    "cal": "Season is July to September.",
+    "days": [
+     {
+      "n": 1,
+      "note": "Take the water taxi from Ross Dam to the Big Beaver landing, then hike 9.4 miles up the Big Beaver Trail to Luna Camp.",
+      "hours": null,
+      "miles": 9.4,
+      "title": "Water taxi and hike to Luna Camp",
+      "gainFt": null,
+      "lossFt": null,
+      "packLb": 45,
+      "schedule": [],
+      "objective": "Reach Luna Camp"
+     },
+     {
+      "n": 2,
+      "note": "Climb Access Creek and over Access Col to a high camp at Luna Col (about 7,200 ft).",
+      "hours": null,
+      "miles": null,
+      "title": "Climb Access Creek to Luna Col",
+      "gainFt": 4770,
+      "lossFt": null,
+      "packLb": 45,
+      "schedule": [],
+      "objective": "Reach high camp at Luna Col"
+     },
+     {
+      "n": 3,
+      "note": "From Luna Col, ascend East Fury, traverse to West Fury, and return over East Fury to Luna Col.",
+      "hours": null,
+      "miles": null,
+      "title": "Traverse East Fury to West Fury",
+      "gainFt": null,
+      "lossFt": null,
+      "packLb": 18,
+      "schedule": [],
+      "objective": "Summit East and West Fury"
+     },
+     {
+      "n": 4,
+      "note": "Descend Access Creek and the Big Beaver Trail to Ross Lake for the water taxi return.",
+      "hours": null,
+      "miles": null,
+      "title": "Hike out to Ross Lake",
+      "gainFt": null,
+      "lossFt": 4770,
+      "packLb": 40,
+      "schedule": [],
+      "objective": "Catch the water taxi back"
+     }
+    ],
+    "totalNote": "Four days: water taxi and Big Beaver valley to Luna Camp, up Access Creek to Luna Col, an East-to-West Fury traverse day, and the walk out."
+   }
+  },
+  "after": {
+   "timing": {
+    "totalHrs": 30,
+    "summitTimeHrs": 6,
+    "descentTimeHrs": 12,
+    "approachTimeHrs": 12,
+    "recommendedStart": "0600 from Luna Col"
+   },
+   "itinerary": {
+    "cal": "Season is July to September.",
+    "days": [
+     {
+      "n": 1,
+      "note": "Take the water taxi from Ross Dam to the Big Beaver landing, then hike 9.4 miles up the Big Beaver Trail to Luna Camp.",
+      "hours": 4,
+      "miles": 9.4,
+      "title": "Water taxi and hike to Luna Camp",
+      "gainFt": null,
+      "lossFt": null,
+      "packLb": 45,
+      "schedule": [],
+      "objective": "Reach Luna Camp"
+     },
+     {
+      "n": 2,
+      "note": "Climb Access Creek and over Access Col to a high camp at Luna Col (about 7,200 ft).",
+      "hours": 8,
+      "miles": null,
+      "title": "Climb Access Creek to Luna Col",
+      "gainFt": 4770,
+      "lossFt": null,
+      "packLb": 45,
+      "schedule": [],
+      "objective": "Reach high camp at Luna Col"
+     },
+     {
+      "n": 3,
+      "note": "From Luna Col, ascend East Fury, traverse to West Fury, and return over East Fury to Luna Col.",
+      "hours": 11,
+      "miles": null,
+      "title": "Traverse East Fury to West Fury",
+      "gainFt": null,
+      "lossFt": null,
+      "packLb": 18,
+      "schedule": [],
+      "objective": "Summit East and West Fury"
+     },
+     {
+      "n": 4,
+      "note": "Descend Access Creek and the Big Beaver Trail to Ross Lake for the water taxi return.",
+      "hours": 7,
+      "miles": null,
+      "title": "Hike out to Ross Lake",
+      "gainFt": null,
+      "lossFt": 4770,
+      "packLb": 40,
+      "schedule": [],
+      "objective": "Catch the water taxi back"
+     }
+    ],
+    "totalNote": "Four days: water taxi and Big Beaver valley to Luna Camp, up Access Creek to Luna Col, an East-to-West Fury traverse day, and the walk out."
+   }
+  }
+ },
+ {
+  "id": "wa_south_spur",
+  "before": {
+   "timing": {
+    "totalHrs": 32,
+    "summitTimeHrs": 9.3,
+    "descentTimeHrs": 14.2,
+    "approachTimeHrs": 8.5,
+    "recommendedStart": "Alpine start from high camp",
+    "sectionBreakdown": [
+     {
+      "hrs": 8.5,
+      "note": "From the Hannegan Trailhead, cross Hannegan Pass, ford the Chilliwack River, and climb the old climbers' trail onto Easy Ridge to camp near Easy Saddle.",
+      "fromTo": "Trailhead to Easy Ridge camp",
+      "section": "Approach"
+     },
+     {
+      "hrs": 9.3,
+      "note": "Traverse Easy Ridge, bypass the Imperfect Impasse cliff band (drop to ~4,400 ft and re-climb), and continue to Perfect Pass. From there, a long straightforward snowfield on the south…",
+      "fromTo": "Easy Ridge to Perfect Pass, climb the South Spur",
+      "section": "Climb"
+     },
+     {
+      "hrs": 8.8,
+      "note": "Descend from Perfect Pass toward Whatcom Pass (via the low east-side traverse or the Whatcom Glacier if conditions allow), then follow the Brush Creek/Chilliwack River Trail, cross…",
+      "fromTo": "Perfect Pass to US Cabin Camp",
+      "section": "Descent"
+     },
+     {
+      "hrs": 5.4,
+      "note": "Climb back up to Hannegan Pass and descend Ruth Creek to the trailhead.",
+      "fromTo": "Out to the trailhead",
+      "section": "Descent"
+     }
+    ]
+   },
+   "itinerary": {
+    "cal": "Overnight camps (Easy Saddle, Perfect Pass, US Cabin Camp) require a North Cascades NP wilderness permit from the Marblemount Wilderness Information Center; best conditions on the south-face snowfield are typically July-August before it thins out.",
+    "days": [
+     {
+      "n": 1,
+      "note": "From the Hannegan Trailhead, cross Hannegan Pass, ford the Chilliwack River, and climb the old climbers' trail onto Easy Ridge to camp near Easy Saddle.",
+      "hours": 8.5,
+      "miles": 9,
+      "title": "Trailhead to Easy Ridge camp",
+      "gainFt": 4600,
+      "lossFt": 300,
+      "packLb": 42,
+      "schedule": [],
+      "objective": "Reach a camp near Easy Saddle on Easy Ridge"
+     },
+     {
+      "n": 2,
+      "note": "Traverse Easy Ridge, bypass the Imperfect Impasse cliff band (drop to ~4,400 ft and re-climb), and continue to Perfect Pass. From there, a long straightforward snowfield on the south face leads to the base of the south ridge, followed by an exposed but enjoyable Class 3-4 scramble along the ridge crest to the summit.",
+      "hours": 9.3,
+      "miles": 7,
+      "title": "Easy Ridge to Perfect Pass, climb the South Spur",
+      "gainFt": 3200,
+      "lossFt": 2600,
+      "packLb": 35,
+      "schedule": [
+       {
+        "time": "Morning",
+        "label": "Leave camp, cross Easy Peak, bypass the Imperfect Impasse",
+        "detail": ""
+       },
+       {
+        "time": "+8.4 hr total",
+        "label": "Reach Perfect Pass, drop overnight gear",
+        "detail": "Camp on the rock knoll north of the pass."
+       },
+       {
+        "time": "+0.5 hr",
+        "label": "South-face snowfield to the base of the south ridge",
+        "detail": ""
+       },
+       {
+        "time": "+0.9 hr",
+        "label": "Exposed Class 3-4 scramble up the south ridge crest to the summit",
+        "detail": "7,574 ft; often a foggy summit."
+       }
+      ],
+      "objective": "Bypass the Imperfect Impasse, reach Perfect Pass, and climb the south ridge to the summit"
+     },
+     {
+      "n": 3,
+      "note": "Descend from Perfect Pass toward Whatcom Pass (via the low east-side traverse or the Whatcom Glacier if conditions allow), then follow the Brush Creek/Chilliwack River Trail, crossing the river by cable car, to camp near US Cabin.",
+      "hours": 8.8,
+      "miles": 11,
+      "title": "Perfect Pass to US Cabin Camp",
+      "gainFt": 300,
+      "lossFt": 4400,
+      "packLb": 40,
+      "schedule": [],
+      "objective": "Descend to Whatcom Pass and out toward the Chilliwack River"
+     },
+     {
+      "n": 4,
+      "note": "Climb back up to Hannegan Pass and descend Ruth Creek to the trailhead.",
+      "hours": 5.4,
+      "miles": 9,
+      "title": "Out to the trailhead",
+      "gainFt": 2900,
+      "lossFt": 2000,
+      "packLb": 35,
+      "schedule": [],
+      "objective": "Hike out via Hannegan Pass"
+     }
+    ],
+    "totalNote": "A 4-day/3-night loop via Easy Ridge in and Whatcom Pass out — essentially the same approach as the Southwest Route, but the summit day climbs the exposed Class 3-4 south ridge crest directly rather than traversing the glacier. Roughly 37-39 mi round trip with over 10,000 ft of cumulative gain."
+   }
+  },
+  "after": {
+   "timing": {
+    "totalHrs": 32.75,
+    "summitTimeHrs": 9.25,
+    "descentTimeHrs": 15,
+    "approachTimeHrs": 8.5,
+    "recommendedStart": "Alpine start from high camp",
+    "sectionBreakdown": [
+     {
+      "hrs": 8.5,
+      "note": "From the Hannegan Trailhead, cross Hannegan Pass, ford the Chilliwack River, and climb the old climbers' trail onto Easy Ridge to camp near Easy Saddle.",
+      "fromTo": "Trailhead to Easy Ridge camp",
+      "section": "Approach"
+     },
+     {
+      "hrs": 9.25,
+      "note": "Traverse Easy Ridge, bypass the Imperfect Impasse cliff band (drop to ~4,400 ft and re-climb), and continue to Perfect Pass. From there, a long straightforward snowfield on the south…",
+      "fromTo": "Easy Ridge to Perfect Pass, climb the South Spur",
+      "section": "Climb"
+     },
+     {
+      "hrs": 9.5,
+      "note": "Descend from Perfect Pass toward Whatcom Pass (via the low east-side traverse or the Whatcom Glacier if conditions allow), then follow the Brush Creek/Chilliwack River Trail, cross…",
+      "fromTo": "Summit back to Perfect Pass, then on to US Cabin Camp",
+      "section": "Descent"
+     },
+     {
+      "hrs": 5.5,
+      "note": "Climb back up to Hannegan Pass and descend Ruth Creek to the trailhead.",
+      "fromTo": "Out to the trailhead",
+      "section": "Descent"
+     }
+    ]
+   },
+   "itinerary": {
+    "cal": "Overnight camps (Easy Saddle, Perfect Pass, US Cabin Camp) require a North Cascades NP wilderness permit from the Marblemount Wilderness Information Center; best conditions on the south-face snowfield are typically July-August before it thins out.",
+    "days": [
+     {
+      "n": 1,
+      "note": "From the Hannegan Trailhead, cross Hannegan Pass, ford the Chilliwack River, and climb the old climbers' trail onto Easy Ridge to camp near Easy Saddle.",
+      "hours": 8.5,
+      "miles": 9,
+      "title": "Trailhead to Easy Ridge camp",
+      "gainFt": 4600,
+      "lossFt": 300,
+      "packLb": 42,
+      "schedule": [],
+      "objective": "Reach a camp near Easy Saddle on Easy Ridge"
+     },
+     {
+      "n": 2,
+      "note": "Traverse Easy Ridge, bypass the Imperfect Impasse cliff band (drop to ~4,400 ft and re-climb), and continue to Perfect Pass. From there, a long straightforward snowfield on the south face leads to the base of the south ridge, followed by an exposed but enjoyable Class 3-4 scramble along the ridge crest to the summit.",
+      "hours": 10,
+      "miles": 7,
+      "title": "Easy Ridge to Perfect Pass, climb the South Spur",
+      "gainFt": 3200,
+      "lossFt": 2600,
+      "packLb": 35,
+      "schedule": [
+       {
+        "time": "Morning",
+        "label": "Leave camp, cross Easy Peak, bypass the Imperfect Impasse",
+        "detail": ""
+       },
+       {
+        "time": "+7.75 hr total",
+        "label": "Reach Perfect Pass, drop overnight gear",
+        "detail": "Camp on the rock knoll north of the pass."
+       },
+       {
+        "time": "+0.5 hr",
+        "label": "South-face snowfield to the base of the south ridge",
+        "detail": ""
+       },
+       {
+        "time": "+1 hr",
+        "label": "Exposed Class 3-4 scramble up the south ridge crest to the summit",
+        "detail": "7,574 ft; often a foggy summit."
+       },
+       {
+        "time": "+0.75 hr",
+        "label": "Back down to the Perfect Pass camp",
+        "detail": ""
+       }
+      ],
+      "objective": "Bypass the Imperfect Impasse, reach Perfect Pass, and climb the south ridge to the summit"
+     },
+     {
+      "n": 3,
+      "note": "Descend from Perfect Pass toward Whatcom Pass (via the low east-side traverse or the Whatcom Glacier if conditions allow), then follow the Brush Creek/Chilliwack River Trail, crossing the river by cable car, to camp near US Cabin.",
+      "hours": 8.75,
+      "miles": 11,
+      "title": "Perfect Pass to US Cabin Camp",
+      "gainFt": 300,
+      "lossFt": 4400,
+      "packLb": 40,
+      "schedule": [],
+      "objective": "Descend to Whatcom Pass and out toward the Chilliwack River"
+     },
+     {
+      "n": 4,
+      "note": "Climb back up to Hannegan Pass and descend Ruth Creek to the trailhead.",
+      "hours": 5.5,
+      "miles": 9,
+      "title": "Out to the trailhead",
+      "gainFt": 2900,
+      "lossFt": 2000,
+      "packLb": 35,
+      "schedule": [],
+      "objective": "Hike out via Hannegan Pass"
+     }
+    ],
+    "totalNote": "A 4-day/3-night loop via Easy Ridge in and Whatcom Pass out — essentially the same approach as the Southwest Route, but the summit day climbs the exposed Class 3-4 south ridge crest directly rather than traversing the glacier. Roughly 37-39 mi round trip with over 10,000 ft of cumulative gain."
+   }
+  }
+ },
+ {
+  "id": "wa_southeast_mox_peak_beckey_route_west_ridge",
+  "before": {
+   "timing": null,
+   "itinerary": {
+    "cal": "A remote Chilliwack peak climbed from a high camp at the head of Depot Creek. The gully to the Ridge of the Gendarmes holds snow early, and the slope to the Col of the Wild turns to loose scree later in summer.",
+    "days": [
+     {
+      "n": 1,
+      "note": "Walk and scramble up the Depot Creek valley from about 2,300 ft to Lake Ouzel at about 5,700 ft and camp there.",
+      "hours": 6.25,
+      "miles": null,
+      "title": "Depot Creek trailhead to Lake Ouzel",
+      "gainFt": null,
+      "lossFt": null,
+      "packLb": null,
+      "schedule": [],
+      "objective": "Reach a camp at Lake Ouzel (5,700 ft)"
+     },
+     {
+      "n": 2,
+      "note": "Climb from Lake Ouzel to the divide at the head of the Redoubt Glacier and Depot Creek. The move is short, which leaves time for Redoubt or a rest.",
+      "hours": 2,
+      "miles": null,
+      "title": "Move camp to the head of the Redoubt Glacier",
+      "gainFt": 1500,
+      "lossFt": null,
+      "packLb": null,
+      "schedule": [],
+      "objective": "Set up a high camp near 7,200 ft"
+     },
+     {
+      "n": 3,
+      "note": "Traverse easily to the Col of the Wild, angle south on ledges onto the Ridge of the Gendarmes, pass a short vertical step and follow third-class ground to the biggest notch. Drop east to the snow gully, take the right-hand of two gullies against the spire's western walls (missing it is the usual error), and scramble to the notch under the west face. Three short pitches on very loose rock, never harder than 5.5, reach the top. Make three single-rope rappels back to the notch, downclimb the gully, and return to camp. Test every hold.",
+      "hours": 8.5,
+      "miles": null,
+      "title": "Climb Southeast Mox by the Beckey route",
+      "gainFt": 4000,
+      "lossFt": 4000,
+      "packLb": null,
+      "schedule": [
+       {
+        "time": "Start",
+        "label": "Leave high camp",
+        "detail": "About 1.5 hours to the Col of the Wild."
+       },
+       {
+        "time": "~5.5 hr",
+        "label": "Summit (8,509 ft)",
+        "detail": "About four hours from the col."
+       },
+       {
+        "time": "~8.5 hr",
+        "label": "Back at camp",
+        "detail": "Three rappels, then downclimb the gully."
+       }
+      ],
+      "objective": "Summit Southeast (Hard) Mox and return to high camp"
+     },
+     {
+      "n": 4,
+      "note": "Break camp and descend past Lake Ouzel and down the Depot Creek valley to the trailhead.",
+      "hours": 5.8,
+      "miles": 9.1,
+      "title": "Hike out to Depot Creek trailhead",
+      "gainFt": null,
+      "lossFt": 5720,
+      "packLb": null,
+      "schedule": [],
+      "objective": "Return to the car"
+     }
+    ],
+    "totalNote": "Four days from the Depot Creek trailhead: walk in to Lake Ouzel, move up to a high camp near 7,200 ft at the head of the Redoubt Glacier, spend a full day on the loose three-pitch Beckey route, and walk out. Parties often fold in Redoubt, Spickard or the other Chilliwack peaks along the way."
+   }
+  },
+  "after": {
+   "timing": {
+    "approachTimeHrs": 8.5,
+    "summitTimeHrs": 6,
+    "descentTimeHrs": 9.75,
+    "totalHrs": 24.25
+   },
+   "itinerary": {
+    "cal": "A remote Chilliwack peak climbed from a high camp at the head of Depot Creek. The gully to the Ridge of the Gendarmes holds snow early, and the slope to the Col of the Wild turns to loose scree later in summer.",
+    "days": [
+     {
+      "n": 1,
+      "note": "Walk and scramble up the Depot Creek valley from about 2,300 ft to Lake Ouzel at about 5,700 ft and camp there.",
+      "hours": 6.5,
+      "miles": null,
+      "title": "Depot Creek trailhead to Lake Ouzel",
+      "gainFt": null,
+      "lossFt": null,
+      "packLb": null,
+      "schedule": [],
+      "objective": "Reach a camp at Lake Ouzel (5,700 ft)"
+     },
+     {
+      "n": 2,
+      "note": "Climb from Lake Ouzel to the divide at the head of the Redoubt Glacier and Depot Creek. The move is short, which leaves time for Redoubt or a rest.",
+      "hours": 2,
+      "miles": null,
+      "title": "Move camp to the head of the Redoubt Glacier",
+      "gainFt": 1500,
+      "lossFt": null,
+      "packLb": null,
+      "schedule": [],
+      "objective": "Set up a high camp near 7,200 ft"
+     },
+     {
+      "n": 3,
+      "note": "Traverse easily to the Col of the Wild, angle south on ledges onto the Ridge of the Gendarmes, pass a short vertical step and follow third-class ground to the biggest notch. Drop east to the snow gully, take the right-hand of two gullies against the spire's western walls (missing it is the usual error), and scramble to the notch under the west face. Three short pitches on very loose rock, never harder than 5.5, reach the top. Make three single-rope rappels back to the notch, downclimb the gully, and return to camp. Test every hold.",
+      "hours": 10,
+      "miles": null,
+      "title": "Climb Southeast Mox by the Beckey route",
+      "gainFt": 4000,
+      "lossFt": 4000,
+      "packLb": null,
+      "schedule": [
+       {
+        "time": "Start",
+        "label": "Leave high camp",
+        "detail": "About 1.5 hours to the Col of the Wild."
+       },
+       {
+        "time": "~6 hr",
+        "label": "Summit (8,509 ft)",
+        "detail": "About four and a half hours from the col."
+       },
+       {
+        "time": "~10 hr",
+        "label": "Back at camp",
+        "detail": "Three rappels, then downclimb the gully."
+       }
+      ],
+      "objective": "Summit Southeast (Hard) Mox and return to high camp"
+     },
+     {
+      "n": 4,
+      "note": "Break camp and descend past Lake Ouzel and down the Depot Creek valley to the trailhead.",
+      "hours": 5.75,
+      "miles": 9.1,
+      "title": "Hike out to Depot Creek trailhead",
+      "gainFt": null,
+      "lossFt": 5720,
+      "packLb": null,
+      "schedule": [],
+      "objective": "Return to the car"
+     }
+    ],
+    "totalNote": "Four days from the Depot Creek trailhead: walk in to Lake Ouzel, move up to a high camp near 7,200 ft at the head of the Redoubt Glacier, spend a full day on the loose three-pitch Beckey route, and walk out. Parties often fold in Redoubt, Spickard or the other Chilliwack peaks along the way."
+   }
+  }
+ },
+ {
+  "id": "wa_southeast_mox_peak_se_rib",
+  "before": {
+   "timing": {
+    "totalHrs": 33.5,
+    "summitTimeHrs": 13,
+    "descentTimeHrs": 8,
+    "approachTimeHrs": 12.5,
+    "recommendedStart": "4:00 AM from the Redoubt Glacier saddle camp",
+    "sectionBreakdown": [
+     {
+      "hrs": 9,
+      "note": "Old road grade to the border, climbers' path to Depot Creek Falls, the handline slabs and the outwash plain to camp at Ouzel Lake.",
+      "fromTo": "Depot Creek parking to Ouzel Lake",
+      "section": "Approach"
+     },
+     {
+      "hrs": 3.5,
+      "note": "Roped glacier walk from Ouzel Lake up to the high camp on the Redoubt Glacier saddle.",
+      "fromTo": "Ouzel Lake to the Redoubt Glacier saddle",
+      "section": "Approach"
+     },
+     {
+      "hrs": 13,
+      "note": "Snow traverse to the Col of the Wild, through the Ridge of Gendarmes to the west ridge, three pitches to the summit, rappels and the gully back down, and the traverse to camp.",
+      "fromTo": "Summit day on the West Ridge",
+      "section": "Climb"
+     },
+     {
+      "hrs": 8,
+      "note": "Down the glacier to Ouzel Lake, back down beside Depot Creek Falls and out to the car.",
+      "fromTo": "High camp to the Depot Creek parking",
+      "section": "Descent"
+     }
+    ]
+   },
+   "itinerary": {
+    "cal": "A North Cascades National Park wilderness permit covers the camps at Ouzel Lake and the Redoubt Glacier saddle. Best from mid-July into September, once the slabs beside Depot Creek Falls are free of snow.",
+    "days": [
+     {
+      "n": 1,
+      "note": "Walk the old road grade to the border at Monument 65, then follow the unmarked climbers' path through old growth to Depot Creek Falls. Scramble the steep, often wet slabs beside the falls with the help of the fixed handline, cross the outwash plain above, and climb into the basin to camp at Ouzel Lake.",
+      "hours": 9,
+      "miles": 6.2,
+      "title": "Depot Creek to Ouzel Lake",
+      "gainFt": 3550,
+      "lossFt": 200,
+      "packLb": 45,
+      "schedule": [
+       {
+        "time": "",
+        "label": "Leave the Depot Creek parking",
+        "detail": "About 2,350 ft on the spur off Chilliwack Lake Road."
+       },
+       {
+        "time": "+0.5 hr",
+        "label": "Monument 65",
+        "detail": "Cross into the national park."
+       },
+       {
+        "time": "+5 hr",
+        "label": "Depot Creek Falls",
+        "detail": "Handline scramble on wet slabs; the approach's main hazard."
+       },
+       {
+        "time": "+9 hr total",
+        "label": "Ouzel Lake camp",
+        "detail": "About 5,700 ft."
+       }
+      ],
+      "objective": "Reach the Ouzel Lake camp"
+     },
+     {
+      "n": 2,
+      "note": "Scramble around the lake and climb onto the Redoubt Glacier, roped, to the broad saddle at about 7,150 ft, the high camp closest to the Mox peaks. A short day that leaves the afternoon to scout the traverse toward the Col of the Wild.",
+      "hours": 3.5,
+      "miles": 1.8,
+      "title": "Ouzel Lake to the Redoubt Glacier saddle",
+      "gainFt": 1550,
+      "lossFt": 100,
+      "packLb": 45,
+      "schedule": [],
+      "objective": "Move camp up to the saddle below Mount Redoubt"
+     },
+     {
+      "n": 3,
+      "note": "Traverse east on snow beneath Easy Mox and climb the loose talus to the Col of the Wild, then scramble through the notch in the Ridge of Gendarmes and find the gully to the high notch on the west ridge. Three short pitches (5.5, then easier) reach the summit tower. Descend by about three single-rope rappels to the high notch, then downclimb or rappel the gully depending on its snow, and reverse the traverse to camp.",
+      "hours": 13,
+      "miles": 4.6,
+      "title": "Summit day on Southeast Mox",
+      "gainFt": 2000,
+      "lossFt": 2000,
+      "packLb": 15,
+      "schedule": [
+       {
+        "time": "4:00 AM",
+        "label": "Leave high camp",
+        "detail": "Snow traverse toward the Col of the Wild by headlamp."
+       },
+       {
+        "time": "~6:00 AM",
+        "label": "Col of the Wild",
+        "detail": "Helmets on well before the col; the talus is loose."
+       },
+       {
+        "time": "~7:00 AM",
+        "label": "Gendarme notch",
+        "detail": "Ledges lead through the Ridge of Gendarmes."
+       },
+       {
+        "time": "~11:00 AM",
+        "label": "Summit",
+        "detail": "Three pitches of the West Ridge to the 8,504 ft top."
+       },
+       {
+        "time": "~5:00 PM",
+        "label": "Back at high camp",
+        "detail": "After the rappels, the gully and the traverse."
+       }
+      ],
+      "objective": "Climb the West Ridge and return to high camp"
+     },
+     {
+      "n": 4,
+      "note": "Descend from the saddle across the Redoubt Glacier to Ouzel Lake, then reverse the approach down the outwash plain, back down the handline slabs beside Depot Creek Falls, and out through the forest to the car. Some parties split this with a second night at Ouzel Lake.",
+      "hours": 8,
+      "miles": 8,
+      "title": "Hike out",
+      "gainFt": 100,
+      "lossFt": 4900,
+      "packLb": 40,
+      "schedule": [],
+      "objective": "Return to the Depot Creek parking"
+     }
+    ],
+    "totalNote": "A 4-day trip from the Depot Creek parking in British Columbia: in to Ouzel Lake, up to a high camp on the Redoubt Glacier saddle, a long summit day on the West Ridge, and out - roughly 20 miles round trip with about 7,200 ft of gain and the same loss."
+   }
+  },
+  "after": {
+   "timing": {
+    "totalHrs": 24.25,
+    "summitTimeHrs": 6,
+    "descentTimeHrs": 9.75,
+    "approachTimeHrs": 8.5,
+    "recommendedStart": "4:00 AM from the Redoubt Glacier saddle camp",
+    "sectionBreakdown": [
+     {
+      "hrs": 6.5,
+      "note": "Old road grade to the border, climbers' path to Depot Creek Falls, the handline slabs and the outwash plain to camp at Ouzel Lake.",
+      "fromTo": "Depot Creek parking to Ouzel Lake",
+      "section": "Approach"
+     },
+     {
+      "hrs": 2,
+      "note": "Roped glacier walk from Ouzel Lake up to the high camp on the Redoubt Glacier saddle.",
+      "fromTo": "Ouzel Lake to the Redoubt Glacier saddle",
+      "section": "Approach"
+     },
+     {
+      "hrs": 6,
+      "note": "Snow traverse to the Col of the Wild, through the Ridge of Gendarmes to the west ridge, and three pitches to the summit.",
+      "fromTo": "High camp to the summit by the West Ridge",
+      "section": "Climb"
+     },
+     {
+      "hrs": 9.75,
+      "note": "Rappels and the gully back down and the traverse to camp, then down the glacier to Ouzel Lake, back down beside Depot Creek Falls and out to the car.",
+      "fromTo": "Summit back to high camp, then out to the Depot Creek parking",
+      "section": "Descent"
+     }
+    ]
+   },
+   "itinerary": {
+    "cal": "A North Cascades National Park wilderness permit covers the camps at Ouzel Lake and the Redoubt Glacier saddle. Best from mid-July into September, once the slabs beside Depot Creek Falls are free of snow.",
+    "days": [
+     {
+      "n": 1,
+      "note": "Walk the old road grade to the border at Monument 65, then follow the unmarked climbers' path through old growth to Depot Creek Falls. Scramble the steep, often wet slabs beside the falls with the help of the fixed handline, cross the outwash plain above, and climb into the basin to camp at Ouzel Lake.",
+      "hours": 6.5,
+      "miles": 6.2,
+      "title": "Depot Creek to Ouzel Lake",
+      "gainFt": 3550,
+      "lossFt": 200,
+      "packLb": 45,
+      "schedule": [
+       {
+        "time": "",
+        "label": "Leave the Depot Creek parking",
+        "detail": "About 2,350 ft on the spur off Chilliwack Lake Road."
+       },
+       {
+        "time": "+0.5 hr",
+        "label": "Monument 65",
+        "detail": "Cross into the national park."
+       },
+       {
+        "time": "+3.5 hr",
+        "label": "Depot Creek Falls",
+        "detail": "Handline scramble on wet slabs; the approach's main hazard."
+       },
+       {
+        "time": "+6.5 hr total",
+        "label": "Ouzel Lake camp",
+        "detail": "About 5,700 ft."
+       }
+      ],
+      "objective": "Reach the Ouzel Lake camp"
+     },
+     {
+      "n": 2,
+      "note": "Scramble around the lake and climb onto the Redoubt Glacier, roped, to the broad saddle at about 7,150 ft, the high camp closest to the Mox peaks. A short day that leaves the afternoon to scout the traverse toward the Col of the Wild.",
+      "hours": 2,
+      "miles": 1.8,
+      "title": "Ouzel Lake to the Redoubt Glacier saddle",
+      "gainFt": 1550,
+      "lossFt": 100,
+      "packLb": 45,
+      "schedule": [],
+      "objective": "Move camp up to the saddle below Mount Redoubt"
+     },
+     {
+      "n": 3,
+      "note": "Traverse east on snow beneath Easy Mox and climb the loose talus to the Col of the Wild, then scramble through the notch in the Ridge of Gendarmes and find the gully to the high notch on the west ridge. Three short pitches (5.5, then easier) reach the summit tower. Descend by about three single-rope rappels to the high notch, then downclimb or rappel the gully depending on its snow, and reverse the traverse to camp.",
+      "hours": 10,
+      "miles": 4.6,
+      "title": "Summit day on Southeast Mox",
+      "gainFt": 2000,
+      "lossFt": 2000,
+      "packLb": 15,
+      "schedule": [
+       {
+        "time": "4:00 AM",
+        "label": "Leave high camp",
+        "detail": "Snow traverse toward the Col of the Wild by headlamp."
+       },
+       {
+        "time": "~5:30 AM",
+        "label": "Col of the Wild",
+        "detail": "Helmets on well before the col; the talus is loose."
+       },
+       {
+        "time": "~6:30 AM",
+        "label": "Gendarme notch",
+        "detail": "Ledges lead through the Ridge of Gendarmes."
+       },
+       {
+        "time": "~10:00 AM",
+        "label": "Summit",
+        "detail": "Three pitches of the West Ridge to the 8,504 ft top."
+       },
+       {
+        "time": "~2:00 PM",
+        "label": "Back at high camp",
+        "detail": "After the rappels, the gully and the traverse."
+       }
+      ],
+      "objective": "Climb the West Ridge and return to high camp"
+     },
+     {
+      "n": 4,
+      "note": "Descend from the saddle across the Redoubt Glacier to Ouzel Lake, then reverse the approach down the outwash plain, back down the handline slabs beside Depot Creek Falls, and out through the forest to the car. Some parties split this with a second night at Ouzel Lake.",
+      "hours": 5.75,
+      "miles": 8,
+      "title": "Hike out",
+      "gainFt": 100,
+      "lossFt": 4900,
+      "packLb": 40,
+      "schedule": [],
+      "objective": "Return to the Depot Creek parking"
+     }
+    ],
+    "totalNote": "A 4-day trip from the Depot Creek parking in British Columbia: in to Ouzel Lake, up to a high camp on the Redoubt Glacier saddle, a long summit day on the West Ridge, and out - roughly 20 miles round trip with about 7,200 ft of gain and the same loss."
+   }
+  }
+ },
+ {
+  "id": "wa_soviet_route",
+  "before": {
+   "timing": {
+    "totalHrs": 33.5,
+    "summitTimeHrs": 13,
+    "descentTimeHrs": 14.5,
+    "approachTimeHrs": 6,
+    "recommendedStart": "Early start",
+    "sectionBreakdown": [
+     {
+      "hrs": 6,
+      "note": "Ferry to Lucerne and bus to Holden Village, then hike the Railroad Creek Trail to Hart Lake before ascending rock-and-heather terraces to a camp just below the 7,100 ft col between…",
+      "fromTo": "Ferry, bus, and approach to camp below the pass",
+      "section": "Approach"
+     },
+     {
+      "hrs": 21.5,
+      "note": "An alpine-start, all-day-and-into-the-night push: about an hour of talus to the base, then 14 pitches of clean climbing up the North Face to the Southwest Peak, followed by a slow,…",
+      "fromTo": "North Face to the Southwest Peak, then out along the ridge",
+      "section": "Climb"
+     },
+     {
+      "hrs": 6,
+      "note": "Break camp, descend the drainage back to the Railroad Creek Trail (some bushwhacking involved), and hustle to make the afternoon ferry from Lucerne back to Chelan.",
+      "fromTo": "Hike out and catch the ferry",
+      "section": "Descent"
+     }
+    ]
+   },
+   "itinerary": {
+    "cal": "Same Lucerne ferry / Holden shuttle logistics as the other Bonanza routes. This is a full free-climbing day (14 pitches, up to 5.10a) with a real chance of finishing in the dark, so a strong, fast team and headlamps are essential.",
+    "days": [
+     {
+      "n": 1,
+      "note": "Ferry to Lucerne and bus to Holden Village, then hike the Railroad Creek Trail to Hart Lake before ascending rock-and-heather terraces to a camp just below the 7,100 ft col between Bonanza and North Star Mountain — a different approach and camp than the Mary Green Glacier routes use.",
+      "hours": 6,
+      "miles": 5.5,
+      "title": "Ferry, bus, and approach to camp below the pass",
+      "gainFt": 3000,
+      "lossFt": 0,
+      "packLb": 40,
+      "schedule": [],
+      "objective": "Reach a camp just below the 7,100 ft pass between Bonanza and North Star"
+     },
+     {
+      "n": 2,
+      "note": "An alpine-start, all-day-and-into-the-night push: about an hour of talus to the base, then 14 pitches of clean climbing up the North Face to the Southwest Peak, followed by a slow, gendarme-choked ridge traverse to the West Peak and a rappel/talus descent back to camp in the dark.",
+      "hours": 21.5,
+      "miles": 3,
+      "title": "North Face to the Southwest Peak, then out along the ridge",
+      "gainFt": 2300,
+      "lossFt": 2300,
+      "packLb": 18,
+      "schedule": [
+       {
+        "time": "5:00 AM",
+        "label": "Leave camp",
+        "detail": "About an hour of talus approach to the base of the buttress."
+       },
+       {
+        "time": "6:00 AM",
+        "label": "Start climbing",
+        "detail": "First of 14 pitches up the North Face."
+       },
+       {
+        "time": "~6:00 PM",
+        "label": "Reach the Southwest Peak summit",
+        "detail": "Just under 12 hours on route from the base."
+       },
+       {
+        "time": "~8:00 PM",
+        "label": "Arrive West Peak",
+        "detail": "About 2 hours traversing the gendarmed ridge crest, arriving at sunset."
+       },
+       {
+        "time": "~9:00 PM",
+        "label": "Begin descent",
+        "detail": "Two 200-ft rappels in the dark, then talus down-climbing."
+       },
+       {
+        "time": "2:30 AM",
+        "label": "Back at camp",
+        "detail": "About 21.5 hours after leaving."
+       }
+      ],
+      "objective": "Climb the Soviet Route and traverse to the West Peak"
+     },
+     {
+      "n": 3,
+      "note": "Break camp, descend the drainage back to the Railroad Creek Trail (some bushwhacking involved), and hustle to make the afternoon ferry from Lucerne back to Chelan.",
+      "hours": 6,
+      "miles": 5.5,
+      "title": "Hike out and catch the ferry",
+      "gainFt": 0,
+      "lossFt": 3000,
+      "packLb": 35,
+      "schedule": [],
+      "objective": "Return to Holden and connect with the bus/ferry"
+     }
+    ],
+    "totalNote": "A serious 3-day trip built around one massive 21+ hour summit day: 14 pitches up the North Face to the Southwest Peak, a roughly 2-hour gendarmed ridge traverse to the West Peak, and a rappel/talus descent finishing well after dark."
+   }
+  },
+  "after": {
+   "timing": {
+    "totalHrs": 33.5,
+    "summitTimeHrs": 13,
+    "descentTimeHrs": 14.5,
+    "approachTimeHrs": 6,
+    "recommendedStart": "Early start",
+    "sectionBreakdown": [
+     {
+      "hrs": 6,
+      "note": "Ferry to Lucerne and bus to Holden Village, then hike the Railroad Creek Trail to Hart Lake before ascending rock-and-heather terraces to a camp just below the 7,100 ft col between…",
+      "fromTo": "Ferry, bus, and approach to camp below the pass",
+      "section": "Approach"
+     },
+     {
+      "hrs": 13,
+      "note": "An alpine-start push: about an hour of talus to the base, then 14 pitches of clean climbing up the North Face, reaching the Southwest Peak in roughly 13 hours from camp.",
+      "fromTo": "Camp to the Southwest Peak via the North Face",
+      "section": "Climb"
+     },
+     {
+      "hrs": 8.5,
+      "note": "A slow, gendarme-choked ridge traverse to the West Peak, then two rappels and talus down-climbing back to camp, usually well after dark.",
+      "fromTo": "Ridge traverse to the West Peak and back down to camp",
+      "section": "Descent"
+     },
+     {
+      "hrs": 6,
+      "note": "Break camp, descend the drainage back to the Railroad Creek Trail (some bushwhacking involved), and hustle to make the afternoon ferry from Lucerne back to Chelan.",
+      "fromTo": "Hike out and catch the ferry",
+      "section": "Descent"
+     }
+    ]
+   },
+   "itinerary": {
+    "cal": "Same Lucerne ferry / Holden shuttle logistics as the other Bonanza routes. This is a full free-climbing day (14 pitches, up to 5.10a) with a real chance of finishing in the dark, so a strong, fast team and headlamps are essential.",
+    "days": [
+     {
+      "n": 1,
+      "note": "Ferry to Lucerne and bus to Holden Village, then hike the Railroad Creek Trail to Hart Lake before ascending rock-and-heather terraces to a camp just below the 7,100 ft col between Bonanza and North Star Mountain — a different approach and camp than the Mary Green Glacier routes use.",
+      "hours": 6,
+      "miles": 5.5,
+      "title": "Ferry, bus, and approach to camp below the pass",
+      "gainFt": 3000,
+      "lossFt": 0,
+      "packLb": 40,
+      "schedule": [],
+      "objective": "Reach a camp just below the 7,100 ft pass between Bonanza and North Star"
+     },
+     {
+      "n": 2,
+      "note": "An alpine-start, all-day-and-into-the-night push: about an hour of talus to the base, then 14 pitches of clean climbing up the North Face to the Southwest Peak, followed by a slow, gendarme-choked ridge traverse to the West Peak and a rappel/talus descent back to camp in the dark.",
+      "hours": 21.5,
+      "miles": 3,
+      "title": "North Face to the Southwest Peak, then out along the ridge",
+      "gainFt": 2300,
+      "lossFt": 2300,
+      "packLb": 18,
+      "schedule": [
+       {
+        "time": "5:00 AM",
+        "label": "Leave camp",
+        "detail": "About an hour of talus approach to the base of the buttress."
+       },
+       {
+        "time": "6:00 AM",
+        "label": "Start climbing",
+        "detail": "First of 14 pitches up the North Face."
+       },
+       {
+        "time": "~6:00 PM",
+        "label": "Reach the Southwest Peak summit",
+        "detail": "Just under 12 hours on route from the base."
+       },
+       {
+        "time": "~8:00 PM",
+        "label": "Arrive West Peak",
+        "detail": "About 2 hours traversing the gendarmed ridge crest, arriving at sunset."
+       },
+       {
+        "time": "~9:00 PM",
+        "label": "Begin descent",
+        "detail": "Two 200-ft rappels in the dark, then talus down-climbing."
+       },
+       {
+        "time": "2:30 AM",
+        "label": "Back at camp",
+        "detail": "About 21.5 hours after leaving."
+       }
+      ],
+      "objective": "Climb the Soviet Route and traverse to the West Peak"
+     },
+     {
+      "n": 3,
+      "note": "Break camp, descend the drainage back to the Railroad Creek Trail (some bushwhacking involved), and hustle to make the afternoon ferry from Lucerne back to Chelan.",
+      "hours": 6,
+      "miles": 5.5,
+      "title": "Hike out and catch the ferry",
+      "gainFt": 0,
+      "lossFt": 3000,
+      "packLb": 35,
+      "schedule": [],
+      "objective": "Return to Holden and connect with the bus/ferry"
+     }
+    ],
+    "totalNote": "A serious 3-day trip built around one massive 21+ hour summit day: 14 pitches up the North Face to the Southwest Peak, a roughly 2-hour gendarmed ridge traverse to the West Peak, and a rappel/talus descent finishing well after dark."
+   }
+  }
+ },
+ {
+  "id": "wa_spider_mountain_north_ridge",
+  "before": {
+   "timing": {
+    "totalHrs": 8,
+    "summitTimeHrs": 3,
+    "descentTimeHrs": null,
+    "approachTimeHrs": null,
+    "recommendedStart": "Alpine/pre-dawn start from the high camp recommended to cross the Middle Cascade Glacier and climb the gully on firmer snow/rock before daytime warming increases rockfall."
+   },
+   "itinerary": {
+    "cal": "Season is July to September. Many parties combine Spider Mountain with Mount Formidable from the same camp.",
+    "days": [
+     {
+      "n": 1,
+      "note": "Hike from the Cascade Pass Trailhead via Cascade Pass and Cache Col to a base camp at Kool-Aid Lake or Spider-Formidable Col, roughly 6-8 miles.",
+      "hours": null,
+      "miles": 7,
+      "title": "Hike in to Kool-Aid Lake",
+      "gainFt": 3300,
+      "lossFt": 780,
+      "packLb": 42,
+      "schedule": [],
+      "objective": "Camp at Kool-Aid Lake or Spider-Formidable Col"
+     },
+     {
+      "n": 2,
+      "note": "Climb Spider Mountain via the southeast gully and east ridge, about 3 hours from the col to the summit and roughly 8 hours round trip from Kool-Aid Lake. Downclimb the same buttress and gully back to the col and return to camp.",
+      "hours": 8,
+      "miles": null,
+      "title": "Climb Spider Mountain",
+      "gainFt": 2200,
+      "lossFt": 2200,
+      "packLb": 16,
+      "schedule": [],
+      "objective": "Summit via the southeast gully and east ridge"
+     },
+     {
+      "n": 3,
+      "note": "Hike out over Cache Col and Cascade Pass to the trailhead.",
+      "hours": null,
+      "miles": 7,
+      "title": "Hike out",
+      "gainFt": 780,
+      "lossFt": 3300,
+      "packLb": 38,
+      "schedule": [],
+      "objective": "Return to the Cascade Pass Trailhead"
+     }
+    ],
+    "totalNote": "Three days: hike over Cache Col to Kool-Aid Lake, climb Spider Mountain from camp, and hike out."
+   }
+  },
+  "after": {
+   "timing": {
+    "totalHrs": 18,
+    "summitTimeHrs": 4.5,
+    "descentTimeHrs": 8,
+    "approachTimeHrs": 5.5,
+    "recommendedStart": "Alpine/pre-dawn start from the high camp recommended to cross the Middle Cascade Glacier and climb the gully on firmer snow/rock before daytime warming increases rockfall."
+   },
+   "itinerary": {
+    "cal": "Season is July to September. Many parties combine Spider Mountain with Mount Formidable from the same camp.",
+    "days": [
+     {
+      "n": 1,
+      "note": "Hike from the Cascade Pass Trailhead via Cascade Pass and Cache Col to a base camp at Kool-Aid Lake or Spider-Formidable Col, roughly 6-8 miles.",
+      "hours": 5.5,
+      "miles": 7,
+      "title": "Hike in to Kool-Aid Lake",
+      "gainFt": 3300,
+      "lossFt": 780,
+      "packLb": 42,
+      "schedule": [],
+      "objective": "Camp at Kool-Aid Lake or Spider-Formidable Col"
+     },
+     {
+      "n": 2,
+      "note": "Climb Spider Mountain via the southeast gully and east ridge, about 3 hours from the col to the summit and roughly 8 hours round trip from Kool-Aid Lake. Downclimb the same buttress and gully back to the col and return to camp.",
+      "hours": 8,
+      "miles": null,
+      "title": "Climb Spider Mountain",
+      "gainFt": 2200,
+      "lossFt": 2200,
+      "packLb": 16,
+      "schedule": [],
+      "objective": "Summit via the southeast gully and east ridge"
+     },
+     {
+      "n": 3,
+      "note": "Hike out over Cache Col and Cascade Pass to the trailhead.",
+      "hours": 4.5,
+      "miles": 7,
+      "title": "Hike out",
+      "gainFt": 780,
+      "lossFt": 3300,
+      "packLb": 38,
+      "schedule": [],
+      "objective": "Return to the Cascade Pass Trailhead"
+     }
+    ],
+    "totalNote": "Three days: hike over Cache Col to Kool-Aid Lake, climb Spider Mountain from camp, and hike out."
+   }
+  }
+ },
+ {
+  "id": "wa_spire_point_southwest_face",
+  "before": {
+   "timing": {
+    "totalHrs": 27,
+    "summitTimeHrs": 10,
+    "descentTimeHrs": 3.5,
+    "approachTimeHrs": 13.5,
+    "recommendedStart": "6:00 AM from camp",
+    "sectionBreakdown": [
+     {
+      "hrs": 4.5,
+      "note": "An easy, well-graded old-growth forest trail up the Downey Creek valley to the established Sixmile Camp, used as camp one by nearly every party heading for Spire Point or the Ptarm…",
+      "fromTo": "Approach to Sixmile Camp",
+      "section": "Approach"
+     },
+     {
+      "hrs": 9,
+      "note": "The crux logistics day: cross Bachelor Creek and fight through notoriously dense, wet brush on the Bachelor Creek Trail to Bachelor Meadows, cross the Cub Lake pass, then follow It…",
+      "fromTo": "Grind to Spire Col high camp",
+      "section": "Approach"
+     },
+     {
+      "hrs": 10,
+      "note": "A short, exposed technical climb from camp followed by a long hike back out. From the col, an ascending traverse onto the southeast face leads up slabs to the ridge crest, across t…",
+      "fromTo": "Summit Spire Point, hike back to Sixmile Camp",
+      "section": "Climb"
+     },
+     {
+      "hrs": 3.5,
+      "note": "A straightforward, mostly downhill walk back down the Downey Creek Trail to the car, closing out the ~29-mile round trip.",
+      "fromTo": "Hike out to trailhead",
+      "section": "Descent"
+     }
+    ]
+   },
+   "itinerary": {
+    "cal": "Best climbed June-September once Bachelor Creek brush has leafed out and snow on Itswoot Ridge has consolidated; a North Cascades National Park backcountry permit may be required for the Spire Col camp depending on exact site.",
+    "days": [
+     {
+      "n": 1,
+      "note": "Walk or bike the 16 closed miles of Suiattle River Road from the washout to the Downey Creek trailhead first. An easy, well-graded old-growth forest trail up the Downey Creek valley to the established Sixmile Camp, used as camp one by nearly every party heading for Spire Point or the Ptarmigan Traverse. Mellow day to bank energy for the brutal Bachelor Creek day ahead.",
+      "hours": 4.5,
+      "miles": 22.5,
+      "title": "Approach to Sixmile Camp",
+      "gainFt": 1300,
+      "lossFt": 0,
+      "packLb": 45,
+      "schedule": [],
+      "objective": "Reach Sixmile Camp on the Downey Creek Trail"
+     },
+     {
+      "n": 2,
+      "note": "The crux logistics day: cross Bachelor Creek and fight through notoriously dense, wet brush on the Bachelor Creek Trail to Bachelor Meadows, cross the Cub Lake pass, then follow Itswoot Ridge (staying on talus left/west of the crest to dodge towers) to the Spire Col saddle at ~7,760 ft. Crampons typically go on around 6,800 ft where snow covers the ridge; camp at the col with big views north to Dome Glacier and Dome Peak.",
+      "hours": 9,
+      "miles": 7.8,
+      "title": "Grind to Spire Col high camp",
+      "gainFt": 5000,
+      "lossFt": 300,
+      "packLb": 45,
+      "schedule": [
+       {
+        "time": "6:00 AM",
+        "label": "Leave Sixmile Camp",
+        "detail": "Early start expected given the brush and distance ahead."
+       },
+       {
+        "time": "",
+        "label": "Cross Bachelor Creek, ascend to Bachelor Meadows",
+        "detail": "Reportedly the wettest, brushiest section of the whole approach."
+       },
+       {
+        "time": "",
+        "label": "Cross Cub Lake pass onto Itswoot Ridge",
+        "detail": ""
+       },
+       {
+        "time": "~6,800 ft",
+        "label": "Rope up / crampons on",
+        "detail": "Where the ridge route hits continuous snow."
+       },
+       {
+        "time": "Late afternoon",
+        "label": "Arrive Spire Col, make camp",
+        "detail": "~7,760 ft; only the tip of Spire Point is visible from camp."
+       }
+      ],
+      "objective": "Reach Spire Col via Bachelor Meadows, Cub Lake pass, and Itswoot Ridge"
+     },
+     {
+      "n": 3,
+      "note": "A short, exposed technical climb from camp followed by a long hike back out. From the col, an ascending traverse onto the southeast face leads up slabs to the ridge crest, across to the west side, and along airy Class 3 ledges above 1,000+ ft of exposure to the base of the summit block, which goes at Class 4-5 to a horn that fits one person. Two 60m rappels return the party to the col, where camp is broken down before retracing Itswoot Ridge, Cub Lake, and Bachelor Meadows back to Sixmile Camp.",
+      "hours": 10,
+      "miles": 8.3,
+      "title": "Summit Spire Point, hike back to Sixmile Camp",
+      "gainFt": 500,
+      "lossFt": 5500,
+      "packLb": 40,
+      "schedule": [
+       {
+        "time": "6:00 AM",
+        "label": "Leave Spire Col camp for the base of the climb",
+        "detail": "~0.25 mi along the ridge to the start of the route."
+       },
+       {
+        "time": "~7:30 AM",
+        "label": "Reach the ridge crest, traverse west-side ledges",
+        "detail": "Class 3 with major exposure over the west face."
+       },
+       {
+        "time": "~9:00 AM",
+        "label": "Summit",
+        "detail": "Tiny horn, room for one; parties often take turns and linger over an hour total at the top in shifts."
+       },
+       {
+        "time": "~9:30-10:30 AM",
+        "label": "Two 60m rappels back to the col",
+        "detail": "Some parties rap from a lower ledge instead of the true summit horn."
+       },
+       {
+        "time": "11:00 AM",
+        "label": "Break camp, begin hike out",
+        "detail": "Reverse Itswoot Ridge / Cub Lake / Bachelor Meadows."
+       },
+       {
+        "time": "Evening",
+        "label": "Arrive Sixmile Camp",
+        "detail": "Long day; some strong parties push all the way to the trailhead instead (skipping this camp)."
+       }
+      ],
+      "objective": "Climb Spire Point via the southwest/southeast face, then descend to Sixmile Camp"
+     },
+     {
+      "n": 4,
+      "note": "A straightforward, mostly downhill walk back down the Downey Creek Trail to the car, closing out the ~29-mile round trip.",
+      "hours": 3.5,
+      "miles": 22.5,
+      "title": "Hike out to trailhead",
+      "gainFt": 0,
+      "lossFt": 1300,
+      "packLb": 40,
+      "schedule": [],
+      "objective": "Return to Downey Creek Trailhead"
+     }
+    ],
+    "totalNote": "A 4-day, roughly 29-mile round-trip backpack from Downey Creek Trailhead, gaining about 6,800 ft net to the 8,264 ft summit; the Bachelor Creek/Itswoot Ridge approach day is the crux of the logistics, and the summit itself is a short but airy Class 4-5 pitch with two 60m rappels to descend. Strong parties sometimes compress the return into a single long day instead of a second night at Sixmile Camp."
+   }
+  },
+  "after": {
+   "timing": {
+    "totalHrs": 27,
+    "summitTimeHrs": 3,
+    "descentTimeHrs": 10.5,
+    "approachTimeHrs": 13.5,
+    "recommendedStart": "6:00 AM from camp",
+    "sectionBreakdown": [
+     {
+      "hrs": 4.5,
+      "note": "An easy, well-graded old-growth forest trail up the Downey Creek valley to the established Sixmile Camp, used as camp one by nearly every party heading for Spire Point or the Ptarm…",
+      "fromTo": "Approach to Sixmile Camp",
+      "section": "Approach"
+     },
+     {
+      "hrs": 9,
+      "note": "The crux logistics day: cross Bachelor Creek and fight through notoriously dense, wet brush on the Bachelor Creek Trail to Bachelor Meadows, cross the Cub Lake pass, then follow It…",
+      "fromTo": "Grind to Spire Col high camp",
+      "section": "Approach"
+     },
+     {
+      "hrs": 3,
+      "note": "From the col, an ascending traverse onto the southeast face leads up slabs to the crest, then airy Class 3 ledges and a Class 4-5 summit block; about three hours from camp to the top.",
+      "fromTo": "Spire Col camp to the summit",
+      "section": "Climb"
+     },
+     {
+      "hrs": 7,
+      "note": "Two 60m rappels back to the col, break camp, then retrace Itswoot Ridge, Cub Lake and Bachelor Meadows down to Sixmile Camp.",
+      "fromTo": "Rappel to the col, then hike back to Sixmile Camp",
+      "section": "Descent"
+     },
+     {
+      "hrs": 3.5,
+      "note": "A straightforward, mostly downhill walk back down the Downey Creek Trail to the car, closing out the ~29-mile round trip.",
+      "fromTo": "Hike out to trailhead",
+      "section": "Descent"
+     }
+    ]
+   },
+   "itinerary": {
+    "cal": "Best climbed June-September once Bachelor Creek brush has leafed out and snow on Itswoot Ridge has consolidated; a North Cascades National Park backcountry permit may be required for the Spire Col camp depending on exact site.",
+    "days": [
+     {
+      "n": 1,
+      "note": "Walk or bike the 16 closed miles of Suiattle River Road from the washout to the Downey Creek trailhead first. An easy, well-graded old-growth forest trail up the Downey Creek valley to the established Sixmile Camp, used as camp one by nearly every party heading for Spire Point or the Ptarmigan Traverse. Mellow day to bank energy for the brutal Bachelor Creek day ahead.",
+      "hours": 4.5,
+      "miles": 22.5,
+      "title": "Approach to Sixmile Camp",
+      "gainFt": 1300,
+      "lossFt": 0,
+      "packLb": 45,
+      "schedule": [],
+      "objective": "Reach Sixmile Camp on the Downey Creek Trail"
+     },
+     {
+      "n": 2,
+      "note": "The crux logistics day: cross Bachelor Creek and fight through notoriously dense, wet brush on the Bachelor Creek Trail to Bachelor Meadows, cross the Cub Lake pass, then follow Itswoot Ridge (staying on talus left/west of the crest to dodge towers) to the Spire Col saddle at ~7,760 ft. Crampons typically go on around 6,800 ft where snow covers the ridge; camp at the col with big views north to Dome Glacier and Dome Peak.",
+      "hours": 9,
+      "miles": 7.8,
+      "title": "Grind to Spire Col high camp",
+      "gainFt": 5000,
+      "lossFt": 300,
+      "packLb": 45,
+      "schedule": [
+       {
+        "time": "6:00 AM",
+        "label": "Leave Sixmile Camp",
+        "detail": "Early start expected given the brush and distance ahead."
+       },
+       {
+        "time": "",
+        "label": "Cross Bachelor Creek, ascend to Bachelor Meadows",
+        "detail": "Reportedly the wettest, brushiest section of the whole approach."
+       },
+       {
+        "time": "",
+        "label": "Cross Cub Lake pass onto Itswoot Ridge",
+        "detail": ""
+       },
+       {
+        "time": "~6,800 ft",
+        "label": "Rope up / crampons on",
+        "detail": "Where the ridge route hits continuous snow."
+       },
+       {
+        "time": "Late afternoon",
+        "label": "Arrive Spire Col, make camp",
+        "detail": "~7,760 ft; only the tip of Spire Point is visible from camp."
+       }
+      ],
+      "objective": "Reach Spire Col via Bachelor Meadows, Cub Lake pass, and Itswoot Ridge"
+     },
+     {
+      "n": 3,
+      "note": "A short, exposed technical climb from camp followed by a long hike back out. From the col, an ascending traverse onto the southeast face leads up slabs to the ridge crest, across to the west side, and along airy Class 3 ledges above 1,000+ ft of exposure to the base of the summit block, which goes at Class 4-5 to a horn that fits one person. Two 60m rappels return the party to the col, where camp is broken down before retracing Itswoot Ridge, Cub Lake, and Bachelor Meadows back to Sixmile Camp.",
+      "hours": 10,
+      "miles": 8.3,
+      "title": "Summit Spire Point, hike back to Sixmile Camp",
+      "gainFt": 500,
+      "lossFt": 5500,
+      "packLb": 40,
+      "schedule": [
+       {
+        "time": "6:00 AM",
+        "label": "Leave Spire Col camp for the base of the climb",
+        "detail": "~0.25 mi along the ridge to the start of the route."
+       },
+       {
+        "time": "~7:30 AM",
+        "label": "Reach the ridge crest, traverse west-side ledges",
+        "detail": "Class 3 with major exposure over the west face."
+       },
+       {
+        "time": "~9:00 AM",
+        "label": "Summit",
+        "detail": "Tiny horn, room for one; parties often take turns and linger over an hour total at the top in shifts."
+       },
+       {
+        "time": "~9:30-10:30 AM",
+        "label": "Two 60m rappels back to the col",
+        "detail": "Some parties rap from a lower ledge instead of the true summit horn."
+       },
+       {
+        "time": "11:00 AM",
+        "label": "Break camp, begin hike out",
+        "detail": "Reverse Itswoot Ridge / Cub Lake / Bachelor Meadows."
+       },
+       {
+        "time": "Evening",
+        "label": "Arrive Sixmile Camp",
+        "detail": "Long day; some strong parties push all the way to the trailhead instead (skipping this camp)."
+       }
+      ],
+      "objective": "Climb Spire Point via the southwest/southeast face, then descend to Sixmile Camp"
+     },
+     {
+      "n": 4,
+      "note": "A straightforward, mostly downhill walk back down the Downey Creek Trail to the car, closing out the ~29-mile round trip.",
+      "hours": 3.5,
+      "miles": 22.5,
+      "title": "Hike out to trailhead",
+      "gainFt": 0,
+      "lossFt": 1300,
+      "packLb": 40,
+      "schedule": [],
+      "objective": "Return to Downey Creek Trailhead"
+     }
+    ],
+    "totalNote": "A 4-day, roughly 29-mile round-trip backpack from Downey Creek Trailhead, gaining about 6,800 ft net to the 8,264 ft summit; the Bachelor Creek/Itswoot Ridge approach day is the crux of the logistics, and the summit itself is a short but airy Class 4-5 pitch with two 60m rappels to descend. Strong parties sometimes compress the return into a single long day instead of a second night at Sixmile Camp."
+   }
+  }
+ },
+ {
+  "id": "wa_the_tempest",
+  "before": {
+   "timing": {
+    "totalHrs": 20,
+    "summitTimeHrs": 12,
+    "descentTimeHrs": 5,
+    "approachTimeHrs": 3,
+    "recommendedStart": "Early start",
+    "sectionBreakdown": [
+     {
+      "hrs": 3,
+      "note": "The Tempest is a serious 9-pitch aid line, slower per pitch than the free routes on this wall, so most parties base out of a Colchuck Lake camp rather than pushing it car-to-car.",
+      "fromTo": "Hike in to Colchuck Lake",
+      "section": "Approach"
+     },
+     {
+      "hrs": 14,
+      "note": "Alpine start from camp up to the base, then a long day of aid and free climbing on sustained 5.9-5.11/A2 terrain before rappelling back down to the basin.",
+      "fromTo": "Climb The Tempest",
+      "section": "Climb"
+     },
+     {
+      "hrs": 3,
+      "note": "An easy morning hike back down to the car after a long climbing day.",
+      "fromTo": "Hike out",
+      "section": "Descent"
+     }
+    ]
+   },
+   "itinerary": {
+    "cal": "Requires the Enchantments overnight lottery permit for Colchuck Lake (May 15-Oct 31); apply well in advance or plan around walk-up availability.",
+    "days": [
+     {
+      "n": 1,
+      "note": "The Tempest is a serious 9-pitch aid line, slower per pitch than the free routes on this wall, so most parties base out of a Colchuck Lake camp rather than pushing it car-to-car.",
+      "hours": 3,
+      "miles": 4.3,
+      "title": "Hike in to Colchuck Lake",
+      "gainFt": 2280,
+      "lossFt": 0,
+      "packLb": 35,
+      "schedule": [],
+      "objective": "Establish camp at Colchuck Lake"
+     },
+     {
+      "n": 2,
+      "note": "Alpine start from camp up to the base, then a long day of aid and free climbing on sustained 5.9-5.11/A2 terrain before rappelling back down to the basin.",
+      "hours": 14,
+      "miles": 2.6,
+      "title": "Climb The Tempest",
+      "gainFt": 2480,
+      "lossFt": 2480,
+      "packLb": 18,
+      "schedule": [
+       {
+        "time": "3:00 AM",
+        "label": "Leave camp",
+        "detail": ""
+       },
+       {
+        "time": "4:15 AM",
+        "label": "Start climbing",
+        "detail": "9 pitches, mixed aid and free."
+       },
+       {
+        "time": "3:00 PM",
+        "label": "Top out",
+        "detail": "~10.5 hrs of climbing is typical for this grade of aid route."
+       },
+       {
+        "time": "3:15 PM",
+        "label": "Begin rappel descent",
+        "detail": ""
+       },
+       {
+        "time": "5:00 PM",
+        "label": "Back at camp",
+        "detail": ""
+       }
+      ],
+      "objective": "Aid/free climb all 9 pitches and return to camp"
+     },
+     {
+      "n": 3,
+      "note": "An easy morning hike back down to the car after a long climbing day.",
+      "hours": 3,
+      "miles": 4.3,
+      "title": "Hike out",
+      "gainFt": 0,
+      "lossFt": 2280,
+      "packLb": 30,
+      "schedule": [],
+      "objective": "Return to the trailhead"
+     }
+    ],
+    "totalNote": "A 3-day trip for most parties: hike in and camp, a long aid-climbing day, then hike out; very strong/fast aid teams could compress this to a single very long day."
+   }
+  },
+  "after": {
+   "timing": {
+    "totalHrs": 17.25,
+    "summitTimeHrs": 10.75,
+    "descentTimeHrs": 4,
+    "approachTimeHrs": 2.5,
+    "recommendedStart": "Early start",
+    "sectionBreakdown": [
+     {
+      "hrs": 2.5,
+      "note": "The Tempest is a serious 9-pitch aid line, slower per pitch than the free routes on this wall, so most parties base out of a Colchuck Lake camp rather than pushing it car-to-car.",
+      "fromTo": "Hike in to Colchuck Lake",
+      "section": "Approach"
+     },
+     {
+      "hrs": 10.75,
+      "note": "Alpine start from camp up to the base, then a long day of aid and free climbing on sustained 5.9-5.11/A2 terrain to the top.",
+      "fromTo": "Camp to the summit of The Tempest",
+      "section": "Climb"
+     },
+     {
+      "hrs": 4,
+      "note": "Rappel and scramble back down to the basin and camp after the climb, then an easy morning hike back down to the car.",
+      "fromTo": "Descend to camp, then hike out",
+      "section": "Descent"
+     }
+    ]
+   },
+   "itinerary": {
+    "cal": "Requires the Enchantments overnight lottery permit for Colchuck Lake (May 15-Oct 31); apply well in advance or plan around walk-up availability.",
+    "days": [
+     {
+      "n": 1,
+      "note": "The Tempest is a serious 9-pitch aid line, slower per pitch than the free routes on this wall, so most parties base out of a Colchuck Lake camp rather than pushing it car-to-car.",
+      "hours": 2.5,
+      "miles": 4.3,
+      "title": "Hike in to Colchuck Lake",
+      "gainFt": 2280,
+      "lossFt": 0,
+      "packLb": 35,
+      "schedule": [],
+      "objective": "Establish camp at Colchuck Lake"
+     },
+     {
+      "n": 2,
+      "note": "Alpine start from camp up to the base, then a long day of aid and free climbing on sustained 5.9-5.11/A2 terrain before rappelling back down to the basin.",
+      "hours": 12.75,
+      "miles": 2.6,
+      "title": "Climb The Tempest",
+      "gainFt": 2480,
+      "lossFt": 2480,
+      "packLb": 18,
+      "schedule": [
+       {
+        "time": "3:00 AM",
+        "label": "Leave camp",
+        "detail": ""
+       },
+       {
+        "time": "4:45 AM",
+        "label": "Start climbing",
+        "detail": "9 pitches, mixed aid and free."
+       },
+       {
+        "time": "1:45 PM",
+        "label": "Top out",
+        "detail": "~9 hrs of climbing is typical for this grade of aid route."
+       },
+       {
+        "time": "2:00 PM",
+        "label": "Begin rappel descent",
+        "detail": ""
+       },
+       {
+        "time": "3:45 PM",
+        "label": "Back at camp",
+        "detail": ""
+       }
+      ],
+      "objective": "Aid/free climb all 9 pitches and return to camp"
+     },
+     {
+      "n": 3,
+      "note": "An easy morning hike back down to the car after a long climbing day.",
+      "hours": 2,
+      "miles": 4.3,
+      "title": "Hike out",
+      "gainFt": 0,
+      "lossFt": 2280,
+      "packLb": 30,
+      "schedule": [],
+      "objective": "Return to the trailhead"
+     }
+    ],
+    "totalNote": "A 3-day trip for most parties: hike in and camp, a long aid-climbing day, then hike out; very strong/fast aid teams could compress this to a single very long day."
+   }
+  }
+ },
+ {
+  "id": "wa_west_face_2",
+  "before": {
+   "timing": {
+    "totalHrs": 33.8,
+    "summitTimeHrs": 7.5,
+    "descentTimeHrs": 5,
+    "approachTimeHrs": 21.3,
+    "recommendedStart": "6:00 AM from high camp (Chikamin-Dome Col)"
+   },
+   "itinerary": {
+    "days": [
+     {
+      "n": 1,
+      "note": "Hike the Downey Creek Trail and the brushy Bachelor Creek path to camp at Bachelor Flats (about 4,500 ft), or push on to Cub Lake (long day with significant brush and blowdown on Bachelor Creek).",
+      "hours": null,
+      "miles": null,
+      "title": "Day 1",
+      "gainFt": null,
+      "lossFt": null,
+      "packLb": null,
+      "schedule": [],
+      "objective": ""
+     },
+     {
+      "n": 2,
+      "note": "Over the pass to Cub Lake, up Itswoot Ridge and across the Dome Glacier to a high camp at the Dome-Chickamin col (about 8,500 ft).",
+      "hours": null,
+      "miles": null,
+      "title": "Day 2",
+      "gainFt": null,
+      "lossFt": null,
+      "packLb": null,
+      "schedule": [],
+      "objective": ""
+     },
+     {
+      "n": 3,
+      "note": "Cross the Chickamin Glacier to the base of the West Face, climb the route (5-6 pitches), rappel, and return to the col. Days 4-5: Hike out over Itswoot Ridge and Cub Lake and down the Bachelor Creek and Downey Creek trails. Carry a spare day for weather.",
+      "hours": null,
+      "miles": null,
+      "title": "Day 3",
+      "gainFt": null,
+      "lossFt": null,
+      "packLb": null,
+      "schedule": [],
+      "objective": ""
+     }
+    ]
+   }
+  },
+  "after": {
+   "timing": {
+    "totalHrs": 41,
+    "summitTimeHrs": 10.5,
+    "descentTimeHrs": 17.5,
+    "approachTimeHrs": 13,
+    "recommendedStart": "6:00 AM from high camp (Chikamin-Dome Col)"
+   },
+   "itinerary": {
+    "days": [
+     {
+      "n": 1,
+      "note": "Hike the Downey Creek Trail and the brushy Bachelor Creek path to camp at Bachelor Flats (about 4,500 ft), or push on to Cub Lake (long day with significant brush and blowdown on Bachelor Creek).",
+      "hours": 7,
+      "miles": null,
+      "title": "Day 1",
+      "gainFt": null,
+      "lossFt": null,
+      "packLb": null,
+      "schedule": [],
+      "objective": ""
+     },
+     {
+      "n": 2,
+      "note": "Over the pass to Cub Lake, up Itswoot Ridge and across the Dome Glacier to a high camp at the Dome-Chickamin col (about 8,500 ft).",
+      "hours": 6,
+      "miles": null,
+      "title": "Day 2",
+      "gainFt": null,
+      "lossFt": null,
+      "packLb": null,
+      "schedule": [],
+      "objective": ""
+     },
+     {
+      "n": 3,
+      "note": "Cross the Chickamin Glacier to the base of the West Face, climb the route (5-6 pitches), rappel, and return to the col. Carry a spare day for weather.",
+      "hours": 15.5,
+      "miles": null,
+      "title": "Day 3",
+      "gainFt": null,
+      "lossFt": null,
+      "packLb": null,
+      "schedule": [],
+      "objective": ""
+     },
+     {
+      "n": 4,
+      "note": "Pack up the high camp and head back over Itswoot Ridge and past Cub Lake to a camp along Bachelor Creek.",
+      "hours": 7,
+      "miles": null,
+      "title": "Day 4",
+      "gainFt": null,
+      "lossFt": null,
+      "packLb": null,
+      "schedule": [],
+      "objective": ""
+     },
+     {
+      "n": 5,
+      "note": "Finish down the Bachelor Creek path and the Downey Creek Trail to the car.",
+      "hours": 5.5,
+      "miles": null,
+      "title": "Day 5",
+      "gainFt": null,
+      "lossFt": null,
+      "packLb": null,
+      "schedule": [],
+      "objective": ""
+     }
+    ]
+   }
+  }
+ }
+]
