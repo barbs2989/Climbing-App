@@ -331,7 +331,10 @@ eq("the disclaimer names the section it points at", box.includes("Trip plan"), t
 /* ...and the direction it gives is TRUE. The trip plan sat above Full trip time until 2026-11-18, when the
    alpine Plan tab put timing before the itinerary (owner) and the copy turned to "below". Read the word the
    box uses and check the page against it, so neither a reorder nor a copy edit can make it point the wrong way. */
-const says = /\babove\b/.test(box) ? "above" : /\bbelow\b/.test(box) ? "below" : null;
+/* The box also says "the single-push estimate below", so a bare /below/ reads THAT word: match the direction
+   written right after the Trip plan name. */
+const _dir = box.match(/Trip plan<\/b>[^<.]*?\b(above|below)\b/);
+const says = _dir ? _dir[1] : null;
 eq("the disclaimer says which way the Trip plan is (above or below)", !!says, true);
 eq("...and the Trip plan really is " + (says || "there"), iPlan >= 0 && (says === "above" ? iDiscl > iPlan : says === "below" ? iPlan > iDiscl : false), true);
 eq("...and no longer sends a reader to the tab they are already on", /use the .?Plan.? tab/.test(text(md3Html)), false);

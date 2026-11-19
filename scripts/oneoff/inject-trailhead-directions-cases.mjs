@@ -89,8 +89,10 @@ const CASES = [
     // Google Maps / Apple Maps pair on the crag Overview.
     file: PLANTAB,
     name: "4b. a crag offers TrailheadCard's drive control AND the crag card's again",
-    find: '{cragOnly?null:<Capped><TrailheadCard',
-    repl: '{<Capped><TrailheadCard',
+    // REPOINTED 2026-11-18: RoutePlanTab now composes a crag's order and the alpine order as two
+    // branches, and only the alpine one draws TrailheadCard; the way back is the card in the CRAG branch.
+    find: 'return <div>{part==="getThere"?null:climbEl()}',
+    repl: 'return <div><Capped><TrailheadCard route={route} onEdit={()=>{openFix("approach");}}/></Capped>{part==="getThere"?null:climbEl()}',
     expect: "fail",
     expectText: "expected exactly the Google Maps + Apple Maps pair",
   },
