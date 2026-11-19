@@ -112,7 +112,7 @@ function Tile({label,value,color,big}: {label: string; value: string|null; color
 }
 
 /** The DAY N tag at the head of a day card. */
-function DayTag({n}: {n: number}){return <span style={{flexShrink:0,fontSize:10.5,fontWeight:800,letterSpacing:0.6,color:C.blue,background:C.blueChip,border:"1px solid "+C.blueDim,borderRadius:6,padding:"3px 7px",lineHeight:1.2}}>{"DAY "+n}</span>;}
+function DayTag({n}: {n: number}){return <span style={{flexShrink:0,fontSize:10.5,fontWeight:800,letterSpacing:0.6,color:C.onSolid,background:C.blueChip,border:"1px solid "+C.blueDim,borderRadius:6,padding:"3px 7px",lineHeight:1.2}}>{"DAY "+n}</span>;}
 
 /** A day's hour-by-hour schedule, folded behind a toggle that names its first and last stop. */
 function ScheduleFold({schedule}: {schedule: NonNullable<StoredDay["schedule"]>}){
@@ -173,7 +173,8 @@ export default function ItineraryView({route,activity,onSeeReports,onSeeSeason,s
   const conf=k.confidence;const confC=conf==="High"?C.green:conf==="Medium"?C.amber:C.red;
   const flagged=k.hazards.filter(h=>!h.official&&h.count>=2).length;
   const peakish=!["trad","sport"].includes(catOf(route));
-  const chip=(t: string,col: string,ic?: ReactNode)=><span style={{display:"inline-flex",alignItems:"center",gap:4,fontSize:12,fontWeight:700,color:col,background:col+"22",borderRadius:7,padding:"4px 8px"}}>{ic}{t}</span>;
+  // `ink` draws the words in another colour than the tint: blue words on a blue box read badly (owner: "change text to white", check:blue-on-blue).
+  const chip=(t: string,col: string,ic?: ReactNode,ink?: string)=><span style={{display:"inline-flex",alignItems:"center",gap:4,fontSize:12,fontWeight:700,color:ink||col,background:col+"22",borderRadius:7,padding:"4px 8px"}}>{ic}{t}</span>;
   const hasPlan=!!(days.length||proseIt);
   // A plan object with a summary but no days still has something to say (review, 2026-11-11).
   const showSummary=hasPlan||!!(it&&it.totalNote);
@@ -183,7 +184,7 @@ export default function ItineraryView({route,activity,onSeeReports,onSeeSeason,s
   // at-a-glance card when there is one, and on their own above "No trip plan yet" when there is not.
   const chipRow=<div style={{display:"flex",gap:6,flexWrap:"wrap"}}>
         {chip(conf+" confidence",confC)}
-        {repN?<span {...clickable(()=>onSeeReports&&onSeeReports())} style={{cursor:"pointer"}} title="Jump to trip reports">{chip(repN+(repN===1?" trip report":" trip reports")+" →",C.blue)}</span>:chip("0 trip reports",C.textMuted)}
+        {repN?<span {...clickable(()=>onSeeReports&&onSeeReports())} style={{cursor:"pointer"}} title="Jump to trip reports">{chip(repN+(repN===1?" trip report":" trip reports")+" →",C.blue,undefined,C.onSolid)}</span>:chip("0 trip reports",C.textMuted)}
         {route.season&&peakish?chip("Season: "+seasonShort(route.season),C.teal,<ActionIcon name="calendar" size={12} color={C.teal}/>):null}
         {/* The month-by-month guide, as a chip that GOES there (owner note 2026-10-28). */}
         {route.seasonalGuidance&&onSeeSeason&&peakish?<span {...clickable(onSeeSeason)} style={{cursor:"pointer"}} title="Open the month-by-month season guide">{chip(seasonOnConditions?"Month by month · Conditions tab →":"Month by month →",C.blue)}</span>:null}
