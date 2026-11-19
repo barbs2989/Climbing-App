@@ -369,7 +369,7 @@ export default function NearMePanel({ center0, areaType, name, onBack, onOpenAre
       </div>
     </section>
   ) : null;
-  const errUI = geoErr ? <div role="status" style={{ color: C.red, fontSize: 12, marginTop: 6 }}>{geoErr}</div> : null;
+  const errUI = geoErr ? <div role="status" style={{ color: me.asking ? C.textMuted : C.red, fontSize: 12, marginTop: 6 }}>{geoErr}</div> : null;
   const title = "Map" + (name ? " · " + name : "");
   // The areas in view (type filter applied), busiest first, as 3D pins: each opens its area.
   const view3dEl = view3d && bounds ? (
