@@ -132,9 +132,10 @@ const findB = <T extends [string, ...unknown[]]>(list: T[], k: string | undefine
    gradeNumFrom (lib/grade.js). Each entry is [label, lo, hi]: `lo` is the bound used when the
    grade is the MINIMUM, `hi` when it is the MAXIMUM, so a pick means "this grade" at either end.
    YDS letters sit inside their number (5.10a = 10.25, b 10.5, c 10.75, d 10.9 — lib/grade.js, 0464).
-   A bare "5.10" stores 10, so 5.10a as the MINIMUM uses 10 — otherwise a route written without a
-   letter falls out of the 5.10 band it belongs to. 5.10d used to be 11, the number of a bare 5.11,
-   so "up to 5.10d" took in every 5.11 and the grade chart filed every 5.10d under 5.11 (2026-11-18). */
+   A 5.10- / 5.10 / 5.10+ sits on a / b / c (10.25 / 10.5 / 10.75, 0466), so "5.10c and up" finds a 5.10+.
+   5.10a as the MINIMUM still uses the whole number, so nothing in the 5.10 band can fall below it.
+   5.10d used to be 11, the number of a bare 5.11, so "up to 5.10d" took in every 5.11 and the grade
+   chart filed every 5.10d under 5.11 (2026-11-18). */
 export const GRADE_SCALES: Record<string, RouteFinderPanelGrade[]> = (() => {
   const yds: RouteFinderPanelGrade[] = [];
   for (let i = 0; i <= 9; i++) yds.push(["5." + i, i, i]);
