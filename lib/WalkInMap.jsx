@@ -11,8 +11,8 @@ export const walkInPts = (gpx) => (Array.isArray(gpx) ? gpx : []).map((p) => (Ar
 // `zoom`: the zoom to open at when there is only one point to frame (a pin, no line) -- an area page's map thumbnail
 // shows a whole region, where fitting one point would open at street level. `label` replaces the walk-in description.
 // `center`: a point to frame with NO pin. A state, region or range is not a crag, so its thumbnail must not draw a "C".
-// `on3d`: puts the route and area maps' 3D button in the same top-left corner. Only the map of a recorded line
-// passes it: the 3D view exists to show the ground a line crosses, and a lone pin has no line.
+// `on3d`: puts the route and area maps' 3D button in the same top-left corner. The crag page passes it (its walk in,
+// or its pins where no walk in is on file); the region thumbnails and the owner's trail queue do not.
 /** @param {{ pts: any, park: any, crag: any, center?: { lat: number, lng: number } | null, height?: number, zoom?: number, label?: string, on3d?: () => void }} props */
 export default function WalkInMap({ pts, park, crag, center = null, height = 200, zoom, label, on3d }) {
   const div = useRef(null), mapRef = useRef(null), tileRef = useRef(null);
@@ -41,7 +41,7 @@ export default function WalkInMap({ pts, park, crag, center = null, height = 200
   }, []);
   return <div style={{ position: "relative" }}>
     <div ref={div} role="img" aria-label={label || "Map of the walk in from the parking pin (P) to the crag (C)"} style={{ height, borderRadius: 9, border: "1px solid " + C.border, overflow: "hidden", background: C.surface }} />
-    {on3d && !fail ? <button type="button" onClick={on3d} aria-label="View the walk in in 3D" style={{ position: "absolute", top: 10, left: 10, zIndex: 1000, padding: "9px 11px", borderRadius: 8, border: "1px solid " + C.border, background: C.surface, color: C.text, fontSize: 11, fontWeight: 800, cursor: "pointer", boxShadow: "0 2px 8px rgba(0,0,0,0.4)" }}>3D</button> : null}
+    {on3d && !fail ? <button type="button" onClick={on3d} aria-label="View in 3D" style={{ position: "absolute", top: 10, left: 10, zIndex: 1000, padding: "9px 11px", borderRadius: 8, border: "1px solid " + C.border, background: C.surface, color: C.text, fontSize: 11, fontWeight: 800, cursor: "pointer", boxShadow: "0 2px 8px rgba(0,0,0,0.4)" }}>3D</button> : null}
     {fail ? <div style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 12, color: C.textMuted }}>The map couldn't load.</div> : null}
   </div>;
 }

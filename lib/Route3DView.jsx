@@ -50,11 +50,13 @@ const lineFeature = (pts) => ({ type: "Feature", properties: {}, geometry: { typ
  * @param {{ line?: Array<Array<number|null>>|null,
  *   waypoints?: Array<{lat:number,lng:number,name?:string|null,type?:string|null,color?:string,iconHtml?:string|null,sub?:string|null,onOpen?:() => void,openLabel?:string}>,
  *   tracks?: Array<{id:string,color:string,label:string,pts:Array<Array<number|null>>}>, title?: string,
- *   view?: {minLat:number,maxLat:number,minLng:number,maxLng:number}|null, kind?: string, maxZoom?: number, onClose: () => void }} props
+ *   view?: {minLat:number,maxLat:number,minLng:number,maxLng:number}|null, kind?: string, maxZoom?: number, exaggeration?: number, onClose: () => void }} props
  */
 // `kind` names the map for a screen reader when it is neither of the two below. `maxZoom` is how close the view may
 // open: 15 frames a route, but a crag's walk in is a few hundred feet and at 15 its two pins sit on top of each other.
-export default function Route3DView({ line, waypoints, tracks, title, view, kind: kindProp, maxZoom = 15, onClose }) {
+// `exaggeration` raises the ground so relief reads from far off. Up close it only stretches the picture down a steep
+// face (the terrain is far coarser than the imagery), so a crag's own map passes 1.
+export default function Route3DView({ line, waypoints, tracks, title, view, kind: kindProp, maxZoom = 15, exaggeration = 1.3, onClose }) {
   const kind = kindProp || (view ? "map" : "route map");
   const div = useRef(null), mapRef = useRef(null);
   const [state, setState] = useState("loading");
@@ -87,14 +89,13 @@ export default function Route3DView({ line, waypoints, tracks, title, view, kind
               dem: { type: "raster-dem", tiles: [TERRAIN_TILES], tileSize: 256, maxzoom: 14, encoding: "terrarium", attribution: TERRAIN_CREDIT },
             },
             layers: [{ id: "sat", type: "raster", source: "sat" }],
-            terrain: { source: "dem", exaggeration: 1.3 },
+            terrain: { source: "dem", exaggeration },
           },
           center: view ? [(view.minLng + view.maxLng) / 2, (view.minLat + view.maxLat) / 2] : all[0], zoom: 12,
         });
       } catch { setState("nogl"); return; }
       mapRef.current = map;
       map.addControl(new ml.NavigationControl({ visualizePitch: true }), "top-right");
-      map.addControl(new ml.AttributionControl({ compact: true }), "bottom-right");
       map.on("error", () => { /* a tile that fails is drawn as a gap; the rest of the map stands */ });
       map.on("load", () => {
         if (cancelled) return;
@@ -158,13 +159,17 @@ export default function Route3DView({ line, waypoints, tracks, title, view, kind
       </div>
       <div style={{ position: "relative", flex: 1, minHeight: 0 }}>
         <div ref={div} style={{ position: "absolute", inset: 0, borderRadius: 9, border: "1px solid " + C.border, overflow: "hidden", background: "#0a0f1a" }} />
+        {/* The credit, in the map's corner and always shown, as on the flat maps (index.html styles theirs the same). MapLibre's own
+            control opened as a white box three lines deep on a phone, over the map. It says what TERRAIN_CREDIT and
+            TILE_CREDIT.sat say; keep the three in step. */}
+        <div style={{ position: "absolute", right: 1, bottom: 1, maxWidth: "calc(100% - 2px)", boxSizing: "border-box", borderRadius: "0 0 8px 0", fontSize: 9, lineHeight: 1.35, padding: "1px 5px", background: "rgba(0,0,0,0.55)", color: "#d6d6d6", textAlign: "right" }}>Terrain: <a href="https://github.com/tilezen/joerd" target="_blank" rel="noopener noreferrer" style={{ color: "#fff" }}>Mapzen / Tilezen</a> · Powered by <a href="https://www.esri.com" target="_blank" rel="noopener noreferrer" style={{ color: "#fff" }}>Esri</a> · Esri, Maxar, Earthstar Geographics, and the GIS User Community</div>
         {msg ? <div style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "center", color: C.textMuted, fontSize: 13, textAlign: "center", padding: 16, pointerEvents: "none" }}>{msg}</div> : null}
       </div>
       <div style={{ paddingTop: 8, display: "flex", flexWrap: "wrap", gap: "4px 12px", fontSize: 12, color: C.textSub }}>
         {line && line.length >= 2 ? <span style={{ display: "inline-flex", alignItems: "center", gap: 5 }}><span aria-hidden="true" style={{ width: 16, height: 0, borderTop: "3px solid " + C.blue }} />Route line</span> : null}
         {(tracks || []).map((t) => <span key={t.id} style={{ display: "inline-flex", alignItems: "center", gap: 5 }}><span aria-hidden="true" style={{ width: 16, height: 0, borderTop: "3px solid " + t.color }} />{t.label}</span>)}
       </div>
-      <div style={{ fontSize: 11.5, color: C.textMuted, paddingTop: 4 }}>Drag with two fingers to tilt, twist to turn. On a computer, right-drag. The ground is raised 1.3× so slopes read clearly.</div>
+      <div style={{ fontSize: 11.5, color: C.textMuted, paddingTop: 4 }}>Drag with two fingers to tilt, twist to turn. On a computer, right-drag.{exaggeration !== 1 ? " The ground is raised " + exaggeration + "× so slopes read clearly." : ""}</div>
     </div>,
     document.body
   );

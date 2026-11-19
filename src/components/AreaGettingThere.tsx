@@ -76,16 +76,17 @@ export default function AreaGettingThere({ area, C, onEdit, flat }: AreaGettingT
     </div> : null}
     </div>
     {long ? <button onClick={() => setMore(m => !m)} aria-expanded={more} style={{ minHeight: 44, display: "inline-flex", alignItems: "center", background: "none", border: "none", padding: "0 0 6px", color: C.blue, fontSize: 12.5, fontWeight: 700, cursor: "pointer" }}>{more ? "Show less" : "Show more"}</button> : null}
-    {pinMap && dest ? <div style={{ marginBottom: 10 }}><WalkInMap pts={[]} park={park} crag={crag} height={180} zoom={14} label={"Map of " + area.name + (park ? " with the parking pin (P)" : "")} /></div> : null}
+    {pinMap && dest ? <div style={{ marginBottom: 10 }}><WalkInMap pts={[]} park={park} crag={crag} height={180} zoom={14} label={"Map of " + area.name + (park ? " with the parking pin (P)" : "")} on3d={() => setView3d(true)} /></div> : null}
     {trail ? <div style={{ marginBottom: 10 }}>
       <div style={lbl}>{"Trail to the crag · " + fmtTrailLen(trailLenM(trail))}</div>
       <WalkInMap pts={trail} park={park} crag={crag} on3d={() => setView3d(true)} />
       <div style={{ fontSize: 11.5, color: C.textMuted, lineHeight: 1.45, marginTop: 6 }}>{"From the parking (P) to the crag (C). " + (area.walkin_kind === "traced" ? "A climber traced it on the map; it is not a GPS recording. " : "") + "Every climb here shows it on its crag map."}</div>
     </div> : null}
-    {/* The walk in over the terrain: the same line and the same two pins as the flat map above, and the same
-        caveat when the line was traced rather than recorded. "P" and "C" are fixed letters, not data. */}
-    {trail && view3d ? <Suspense fallback={null}><WalkIn3DView title={area.name + " walk in"} kind="walk-in map" maxZoom={17.5} onClose={() => setView3d(false)}
-      tracks={[{ id: "walkin", color: C.orange, label: "Trail to the crag" + (area.walkin_kind === "traced" ? " (traced on the map, not a GPS recording)" : ""), pts: trail }]}
+    {/* The crag over the terrain: the same pins as the flat map above, and the walk in where one is on file, with the
+        same caveat when the line was traced rather than recorded. No crag has a walk in on file yet (2026-11-18), so the
+        pin map is the one climbers meet. "P" and "C" are fixed letters, not data. */}
+    {(trail || pinMap) && view3d ? <Suspense fallback={null}><WalkIn3DView title={trail ? area.name + " walk in" : area.name} kind={trail ? "walk-in map" : "crag map"} maxZoom={trail || (park && crag) ? 17.5 : 16} exaggeration={1} onClose={() => setView3d(false)}
+      tracks={trail ? [{ id: "walkin", color: C.orange, label: "Trail to the crag" + (area.walkin_kind === "traced" ? " (traced on the map, not a GPS recording)" : ""), pts: trail }] : []}
       waypoints={(park ? [{ lat: park.lat, lng: park.lng, name: area.parking_name && area.parking_name !== "Trailhead" ? area.parking_name : "Parking", color: C.blue, iconHtml: "P" }] : []).concat(crag ? [{ lat: crag.lat, lng: crag.lng, name: area.name, color: C.orange, iconHtml: "C" }] : [])} /></Suspense> : null}
     {dest ? <div>
       <div style={lbl}>{park ? "Directions to parking" : "Directions"}</div>
