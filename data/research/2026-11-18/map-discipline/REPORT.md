@@ -161,3 +161,29 @@ point is a campground (Hozomeen x3, every Goodell route), or the owner reverted 
   separate Santanoni / Bradley Pond trailhead on the same road. The stored text contradicts itself; it needs
   an owner or prose fix before a pin.
 - **Audit now:** SUMMIT_ONLY 258, NO_SUMMIT 40, CRAG_SUMMIT 0.
+
+## Multi-start pass (2026-11-18, 8 agents, `BRIEF6.md`)
+
+38 routes: the 36 stuck because two or more starts are in use, plus Panther and Couchsachraga. A start counted
+only if an authoritative page names it standard for this route, or three opened trip reports show a clear
+majority. 11 got an answer, 27 stay stuck (`out6/`).
+
+- **Written (4, `batch-r6.json`, unconfirmed, verified on re-read):** Lippincott Mountain (NPS Sawtooth,
+  Mineral King), Mount Corcoran (USFS Meysan Lake TH), Chianti Spire North Face (USFS Burgundy Col site at
+  the SR 20 pullout; ground 4,305 ft against the stored 4,250 ft), Culebra Peak NW Ridge (Cielo Vista Ranch
+  gate; 14ers.com and climb13ers agree). Each row was read for drive text first; none conflicts.
+- **Answered but not pinned:**
+  - Panther and Couchsachraga: Santanoni Range (Bradley Pond) trailhead on Santanoni Road, three pages each.
+    No official or OSM trailhead point (Photon finds only the trail and the pond). Stored "Starts at Upper
+    Works" is wrong for both.
+  - Mount Rainier East Success Couloir: Paradise in three of four opened reports (mostly ski trips). The NPS
+    list has no Paradise trailhead point. Held for the owner.
+  - Lincoln Peak standard: FR-38 in three reports; parking is an unsigned switchback near mile 12.3 with no
+    coordinate. The row already names FR-38; no pin.
+  - Mount Ballard East Face: locked gate on the Slate Creek road in three reports; no coordinate.
+  - Spanish Needle North Ridge: PCT at Canebrake Road, called standard by one report; the only coordinate is
+    Chimney Creek Campground (never pin a campground).
+  - Angora Mountain: Lewis Camp 3 pages to 2; too thin.
+- North Peak Southeast Buttress: Mountain Project's North Peak sits about 28 km from the catalog's coordinate;
+  the peak may be misidentified.
+- **Audit now:** SUMMIT_ONLY 254, NO_SUMMIT 40, CRAG_SUMMIT 0.

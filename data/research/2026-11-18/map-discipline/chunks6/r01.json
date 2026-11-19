@@ -1,0 +1,772 @@
+[
+ {
+  "id": "ca_angora_mountain_standard_route",
+  "name": "Standard route",
+  "discipline": "scrambling",
+  "grade": "Class 2",
+  "verdict": "SUMMIT_ONLY",
+  "state": "ca",
+  "peak": {
+   "id": "ca_angora_mountain",
+   "name": "Angora Mountain",
+   "lat": 36.2643,
+   "lng": -118.446,
+   "elevation_ft": 10198,
+   "region": null,
+   "path": "usa.california.ca_high_sierra.ca_11_great_western_kings_kern_divide.ca_angora_mountain"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Lewis Camp Trailhead",
+    "lat": 36.181305,
+    "lng": -118.515181,
+    "km": 11.1
+   },
+   {
+    "src": "USFS",
+    "name": "Jerkey Trailhead",
+    "lat": 36.167611,
+    "lng": -118.485535,
+    "km": 11.3
+   },
+   {
+    "src": "USFS",
+    "name": "Forks Of The Kern Trailhead",
+    "lat": 36.1379,
+    "lng": -118.455968,
+    "km": 14.1
+   },
+   {
+    "src": "USFS",
+    "name": "Magician (needles) Trailhead",
+    "lat": 36.109583,
+    "lng": -118.484775,
+    "km": 17.6
+   },
+   {
+    "src": "USFS",
+    "name": "Blackrock Trailhead",
+    "lat": 36.178129,
+    "lng": -118.267418,
+    "km": 18.7
+   },
+   {
+    "src": "NPS",
+    "name": "Farewell Gap - Franklin Lakes",
+    "lat": 36.44753,
+    "lng": -118.594135,
+    "km": 24.3
+   },
+   {
+    "src": "NPS",
+    "name": "Eagle-Mosquito",
+    "lat": 36.448545,
+    "lng": -118.595366,
+    "km": 24.5
+   },
+   {
+    "src": "NPS",
+    "name": "Sawtooth",
+    "lat": 36.453305,
+    "lng": -118.596761,
+    "km": 25
+   }
+  ],
+  "firstPass": {
+   "why": "stuck: Route has no stored approach text naming a trailhead; page lookups not possible this run (OSM 429/406, no page evidence gathered). Not guessed.",
+   "trailhead": null,
+   "notes": "Route has no stored approach text naming a trailhead; page lookups not possible this run (OSM 429/406, no page evidence gathered). Not guessed."
+  },
+  "earlierPasses": {
+   "why": "held: agent flagged the identification as inferred/weak",
+   "trailhead": {
+    "name": "Lewis Camp Trailhead",
+    "identifiedBy": {
+     "kind": "page",
+     "url": "https://climber.org/reports/1996/89.html",
+     "fact": "trip report Trailhead field: Lewis Camp trailhead 7,680 ft, then Jordan Trail to Little Kern bridge, Deep Creek, west side to Angora; climber.org driving page also calls Lewis Camp the most efficient trailhead for Coyote and Angora"
+    },
+    "placements": [
+     {
+      "source": "USFS",
+      "name": "Lewis Camp Trailhead",
+      "lat": 36.181305,
+      "lng": -118.515181,
+      "url": ""
+     }
+    ]
+   },
+   "notes": "Weaker identification: Angora has several starts (Lewis Camp, Jerkey Meadow, Lloyd Meadow, Kern Lake side). Lewis Camp is the one a page about Angora actually used and climber.org calls it the most efficient. Only one placement (USFS point); OSM to be matched by script on the name. Mountain Home and Mineral King are other approaches. USFS Jerkey Trailhead 36.167611,-118.485535 is the alternative."
+  },
+  "priorPass": {
+   "kind": "stuck",
+   "why": "Several starts (Lewis Camp, Jerkey Meadow, Lloyd Meadow, Kern Lake); only one report uses Lewis Camp. Lead: USFS Lewis Camp Trailhead 36.181305,-118.515181 (cli"
+  },
+  "lastPassNote": "Re-opened climber.org 1996/89: starts Lewis Camp (Jordan Trail). A search summary of a guide site says Jerkey Meadow and Lewis Camp are the two most popular sou"
+ },
+ {
+  "id": "ca_caltech_peak_standard_route",
+  "name": "Standard route",
+  "discipline": "scrambling",
+  "grade": "Class 2",
+  "verdict": "SUMMIT_ONLY",
+  "state": "ca",
+  "peak": {
+   "id": "ca_caltech_peak",
+   "name": "Caltech Peak",
+   "lat": 36.6889,
+   "lng": -118.3907,
+   "elevation_ft": 13832,
+   "region": null,
+   "path": "usa.california.ca_high_sierra.ca_13_shepherd_pass.ca_caltech_peak"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Onion Valley Campground",
+    "lat": 36.772538,
+    "lng": -118.341244,
+    "km": 10.3
+   },
+   {
+    "src": "USFS",
+    "name": "Shepherd Pass Th",
+    "lat": 36.726905,
+    "lng": -118.278912,
+    "km": 10.8
+   },
+   {
+    "src": "USFS",
+    "name": "Whitney Portal Trailhead",
+    "lat": 36.586905,
+    "lng": -118.240112,
+    "km": 17.6
+   },
+   {
+    "src": "USFS",
+    "name": "MEYSAN LAKE TH",
+    "lat": 36.589789,
+    "lng": -118.230163,
+    "km": 18.1
+   },
+   {
+    "src": "USFS",
+    "name": "Baxter Pass Trailhead",
+    "lat": 36.844705,
+    "lng": -118.297612,
+    "km": 19.2
+   },
+   {
+    "src": "NPS",
+    "name": "River Trail",
+    "lat": 36.79427,
+    "lng": -118.584209,
+    "km": 20.8
+   },
+   {
+    "src": "NPS",
+    "name": "Bubbs Creek, Woods Creek, and Rae Lakes  ",
+    "lat": 36.794924,
+    "lng": -118.582577,
+    "km": 20.8
+   },
+   {
+    "src": "NPS",
+    "name": "Cemetery Parking",
+    "lat": 36.725198,
+    "lng": -118.162135,
+    "km": 20.8
+   },
+   {
+    "src": "NPS",
+    "name": "Cemetery Parking",
+    "lat": 36.725769,
+    "lng": -118.161778,
+    "km": 20.8
+   },
+   {
+    "src": "USFS",
+    "name": "Whitney Portal NRT Trailhead",
+    "lat": 36.597405,
+    "lng": -118.186412,
+    "km": 20.9
+   },
+   {
+    "src": "USFS",
+    "name": "Cedar Grove",
+    "lat": 36.796368,
+    "lng": -118.58291,
+    "km": 20.9
+   },
+   {
+    "src": "NPS",
+    "name": "Copper Creek",
+    "lat": 36.796495,
+    "lng": -118.583551,
+    "km": 20.9
+   },
+   {
+    "src": "NPS",
+    "name": "Zumwalt Meadow/River Trail",
+    "lat": 36.793648,
+    "lng": -118.59852,
+    "km": 21.9
+   },
+   {
+    "src": "NPS",
+    "name": " ",
+    "lat": 36.728353,
+    "lng": -118.146862,
+    "km": 22.2
+   },
+   {
+    "src": "USFS",
+    "name": "TUTTLE CREEK TH",
+    "lat": 36.553705,
+    "lng": -118.184212,
+    "km": 23.8
+   },
+   {
+    "src": "USFS",
+    "name": "SUGARLOAF HILL STAGING",
+    "lat": 36.728002,
+    "lng": -118.663445,
+    "km": 24.7
+   }
+  ],
+  "firstPass": {
+   "why": "stuck: Route has no stored approach text naming a trailhead; page lookups not possible this run (OSM 429/406, no page evidence gathered). Not guessed.",
+   "trailhead": null,
+   "notes": "Route has no stored approach text naming a trailhead; page lookups not possible this run (OSM 429/406, no page evidence gathered). Not guessed."
+  },
+  "earlierPasses": {
+   "why": "held: agent flagged the identification as inferred/weak",
+   "trailhead": {
+    "name": "Onion Valley Trailhead",
+    "identifiedBy": {
+     "kind": "page",
+     "url": "https://climber.org/reports/2008/1646.html",
+     "fact": "Onion Valley parking lot, University Pass, Center Basin, Forester Pass, then Caltech east ridge; 1999 report entered at Kearsarge Pass (same trailhead)"
+    },
+    "placements": [
+     {
+      "source": "USFS",
+      "name": "Onion Valley Campground",
+      "lat": 36.772538,
+      "lng": -118.341244,
+      "url": ""
+     }
+    ]
+   },
+   "notes": "WEAK identification: two trip reports (2008, 1999), no guidebook or land-manager page; 'Standard route' does not say which line, and Shepherd Pass TH (USFS 36.726905,-118.278912, 10.8 km) is the other plausible start (the peak sits in the Shepherd Pass region) but no page I read used it. The USFS point is the campground just below the Onion Valley road-end parking, so the pin may be a few hundred metres off. One placement only. Suggest holding for review."
+  },
+  "priorPass": {
+   "kind": "stuck",
+   "why": "Onion Valley (2008 and 1999 reports) vs Shepherd Pass TH both plausible; stays stuck. Lead: USFS Onion Valley Campground 36.772538,-118.341244."
+  },
+  "lastPassNote": "Still stuck: pages show Onion Valley (climber.org 2008, east ridge class 2/3, via University/Forester Pass) and Shepherd Pass as both used; 'Standard route' tie"
+ },
+ {
+  "id": "ca_dicks_peak_standard_route",
+  "name": "Standard route",
+  "discipline": "scrambling",
+  "grade": "Class 2",
+  "verdict": "SUMMIT_ONLY",
+  "state": "ca",
+  "peak": {
+   "id": "ca_dicks_peak",
+   "name": "Dicks Peak",
+   "lat": 38.9006,
+   "lng": -120.1509,
+   "elevation_ft": 9974,
+   "region": null,
+   "path": "usa.california.ca_lake_tahoe.ca_south_shore_2.ca_dicks_peak"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Bayview Trailhead",
+    "lat": 38.943878,
+    "lng": -120.099979,
+    "km": 6.5
+   },
+   {
+    "src": "USFS",
+    "name": "Glen Alpine Trailhead",
+    "lat": 38.877119,
+    "lng": -120.080238,
+    "km": 6.6
+   },
+   {
+    "src": "USFS",
+    "name": "Angora Resort Parking",
+    "lat": 38.871399,
+    "lng": -120.063109,
+    "km": 8.3
+   },
+   {
+    "src": "USFS",
+    "name": "Twin Lakes Trailhead",
+    "lat": 38.849635,
+    "lng": -120.225775,
+    "km": 8.6
+   },
+   {
+    "src": "USFS",
+    "name": "Rockbound Trailhead",
+    "lat": 38.84819,
+    "lng": -120.239447,
+    "km": 9.6
+   },
+   {
+    "src": "USFS",
+    "name": "Pyramid Creek Trailhead",
+    "lat": 38.811695,
+    "lng": -120.123655,
+    "km": 10.2
+   },
+   {
+    "src": "USFS",
+    "name": "RALSTON PEAK TRAILHEAD",
+    "lat": 38.805057,
+    "lng": -120.11549,
+    "km": 11.1
+   },
+   {
+    "src": "USFS",
+    "name": "Echo Lakes Trailhead",
+    "lat": 38.833938,
+    "lng": -120.043734,
+    "km": 11.9
+   },
+   {
+    "src": "USFS",
+    "name": "LYONS CREEK TRAILHEAD",
+    "lat": 38.810388,
+    "lng": -120.239486,
+    "km": 12.6
+   },
+   {
+    "src": "USFS",
+    "name": "VAN VLECK TRAILHEAD",
+    "lat": 38.931154,
+    "lng": -120.32134,
+    "km": 15.1
+   },
+   {
+    "src": "USFS",
+    "name": "Meeks Bay Trailhead",
+    "lat": 39.037325,
+    "lng": -120.126348,
+    "km": 15.4
+   },
+   {
+    "src": "USFS",
+    "name": "Mckinney Rubicon Trailhead",
+    "lat": 39.045881,
+    "lng": -120.167754,
+    "km": 16.2
+   },
+   {
+    "src": "USFS",
+    "name": "Loon Lake Trailhead",
+    "lat": 38.98236,
+    "lng": -120.314679,
+    "km": 16.8
+   },
+   {
+    "src": "USFS",
+    "name": "Big Meadow Trailhead",
+    "lat": 38.789155,
+    "lng": -120.000415,
+    "km": 18
+   },
+   {
+    "src": "USFS",
+    "name": "Ellis Peak",
+    "lat": 39.071988,
+    "lng": -120.231349,
+    "km": 20.3
+   }
+  ],
+  "firstPass": {
+   "why": "stuck: Route has no stored approach text naming a trailhead; page lookups not possible this run (OSM 429/406, no page evidence gathered). Not guessed.",
+   "trailhead": null,
+   "notes": "Route has no stored approach text naming a trailhead; page lookups not possible this run (OSM 429/406, no page evidence gathered). Not guessed."
+  },
+  "earlierPasses": {
+   "why": "stuck: No stored text. Dicks Peak (9974 ft, Desolation Wilderness high point) is reached from Bayview, Eagle Falls (Emerald Bay), Glen Alpine/Fallen Leaf and others; s",
+   "trailhead": null,
+   "notes": "No stored text. Dicks Peak (9974 ft, Desolation Wilderness high point) is reached from Bayview, Eagle Falls (Emerald Bay), Glen Alpine/Fallen Leaf and others; search summaries call Bayview and Emerald Bay/Eagle Falls the easiest. No page opened that defines a single 'standard route' trailhead (only search summaries; pages fetched blocked or not opened). Leads: USFS Bayview Trailhead 38.943878,-120.099979 (6.5 km). Not guessed."
+  },
+  "priorPass": {
+   "kind": "stuck",
+   "why": "Wikipedia: easiest route class 2 via Dicks Pass (0.5 mi E of summit) but names no trailhead. Bayview (USFS 38.943878,-120.099979) is a lead only."
+  },
+  "lastPassNote": "Search summaries only: Bayview and Eagle Falls (Emerald Bay) both commonly used (Eagle Falls north-ridge class 2 log; Bayview to Dicks Pass); also Glen Alpine. "
+ },
+ {
+  "id": "ca_electra_peak_standard_route",
+  "name": "Standard route",
+  "discipline": "scrambling",
+  "grade": "Class 2",
+  "verdict": "SUMMIT_ONLY",
+  "state": "ca",
+  "peak": {
+   "id": "ca_electra_peak",
+   "name": "Electra Peak",
+   "lat": 37.705,
+   "lng": -119.2601,
+   "elevation_ft": 12442,
+   "region": null,
+   "path": "usa.california.ca_high_sierra.ca_03_lyell_group.ca_electra_peak"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "FERN/YOST TH",
+    "lat": 37.761788,
+    "lng": -119.113341,
+    "km": 14.4
+   },
+   {
+    "src": "USFS",
+    "name": "YOST LAKE TH",
+    "lat": 37.761811,
+    "lng": -119.113265,
+    "km": 14.4
+   },
+   {
+    "src": "USFS",
+    "name": "Shadow Lake Trailhead",
+    "lat": 37.682096,
+    "lng": -119.08618,
+    "km": 15.5
+   },
+   {
+    "src": "USFS",
+    "name": "High Trail Trailhead",
+    "lat": 37.682905,
+    "lng": -119.084413,
+    "km": 15.7
+   },
+   {
+    "src": "USFS",
+    "name": "Agnew Mead. Wildflower Th",
+    "lat": 37.681083,
+    "lng": -119.080672,
+    "km": 16
+   },
+   {
+    "src": "USFS",
+    "name": "JOHN MUIR TRAIL NORTH TH",
+    "lat": 37.6272,
+    "lng": -119.085702,
+    "km": 17.6
+   },
+   {
+    "src": "USFS",
+    "name": "MINARET LAKE TH",
+    "lat": 37.62724,
+    "lng": -119.085818,
+    "km": 17.6
+   },
+   {
+    "src": "USFS",
+    "name": "FERN LAKE (D52)TH",
+    "lat": 37.62725,
+    "lng": -119.085834,
+    "km": 17.6
+   },
+   {
+    "src": "USFS",
+    "name": "Sotcher Lake Trailhead",
+    "lat": 37.627205,
+    "lng": -119.076613,
+    "km": 18.3
+   },
+   {
+    "src": "USFS",
+    "name": "FISH CREEK TH",
+    "lat": 37.614231,
+    "lng": -119.076571,
+    "km": 19
+   },
+   {
+    "src": "NPS",
+    "name": "Rainbow Falls Trailhead",
+    "lat": 37.614303,
+    "lng": -119.076609,
+    "km": 19
+   },
+   {
+    "src": "USFS",
+    "name": "Rainbow Falls Trailhead",
+    "lat": 37.613905,
+    "lng": -119.076613,
+    "km": 19.1
+   },
+   {
+    "src": "USFS",
+    "name": "Fernandez Pass Trailhead",
+    "lat": 37.534696,
+    "lng": -119.298678,
+    "km": 19.2
+   },
+   {
+    "src": "USFS",
+    "name": "PARKER LAKE TH",
+    "lat": 37.853005,
+    "lng": -119.134513,
+    "km": 19.8
+   },
+   {
+    "src": "NPS",
+    "name": "Elizabeth Lake Trailhead",
+    "lat": 37.870604,
+    "lng": -119.355807,
+    "km": 20.2
+   },
+   {
+    "src": "NPS",
+    "name": "Dog Lake Trailhead Parking",
+    "lat": 37.878162,
+    "lng": -119.338857,
+    "km": 20.5
+   },
+   {
+    "src": "NPS",
+    "name": "Dog Lake Trailhead",
+    "lat": 37.878407,
+    "lng": -119.338986,
+    "km": 20.5
+   },
+   {
+    "src": "USFS",
+    "name": "Walker Lake Trailhead",
+    "lat": 37.872305,
+    "lng": -119.159113,
+    "km": 20.6
+   },
+   {
+    "src": "NPS",
+    "name": "Elizabeth Lake Parking",
+    "lat": 37.873556,
+    "lng": -119.358045,
+    "km": 20.6
+   },
+   {
+    "src": "NPS",
+    "name": "Tuolumne Meadows Wilderness Center Parking",
+    "lat": 37.876938,
+    "lng": -119.346071,
+    "km": 20.6
+   }
+  ],
+  "firstPass": {
+   "why": "stuck: Route has no stored approach text naming a trailhead; page lookups not possible this run (OSM 429/406, no page evidence gathered). Not guessed.",
+   "trailhead": null,
+   "notes": "Route has no stored approach text naming a trailhead; page lookups not possible this run (OSM 429/406, no page evidence gathered). Not guessed."
+  },
+  "earlierPasses": {
+   "why": "stuck: No single standard trailhead: climber.org 1999/442 starts at Tuolumne Meadows (Lyell Canyon), climber.org 1998/382 at Isberg trailhead (Clover Meadow), a 2021 t",
+   "trailhead": null,
+   "notes": "No single standard trailhead: climber.org 1999/442 starts at Tuolumne Meadows (Lyell Canyon), climber.org 1998/382 at Isberg trailhead (Clover Meadow), a 2021 trip from Sunrise Lakes, others suggest Rush Creek or Agnew Meadows. SummitPost and listsofjohn blocked (403). Stored route has no text, so none of these is proven THIS route's start. Not guessed."
+  },
+  "priorPass": {
+   "kind": "stuck",
+   "why": "Not re-researched (Peakbagger/Chrome unavailable); earlier passes found multiple equal starts."
+  },
+  "lastPassNote": "Stuck: no stored text; sources give several equal starts (Rush Creek/Silver Lake, Agnew Meadows, Tuolumne/Lyell Canyon, Clover Meadow). SummitPost 403. No page "
+ },
+ {
+  "id": "ca_gemini_standard_route",
+  "name": "Standard route",
+  "discipline": "scrambling",
+  "grade": "Class 2",
+  "verdict": "SUMMIT_ONLY",
+  "state": "ca",
+  "peak": {
+   "id": "ca_gemini",
+   "name": "Gemini",
+   "lat": 37.2977,
+   "lng": -118.8181,
+   "elevation_ft": 12880,
+   "region": null,
+   "path": "usa.california.ca_high_sierra.ca_07_humphreys_basin_pine_creek_granite_park.ca_gemini"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "PINE CREEK TH",
+    "lat": 37.361005,
+    "lng": -118.691613,
+    "km": 13.2
+   },
+   {
+    "src": "USFS",
+    "name": "GABLE LAKES TH",
+    "lat": 37.360905,
+    "lng": -118.691213,
+    "km": 13.2
+   },
+   {
+    "src": "USFS",
+    "name": "Florence Trailhead",
+    "lat": 37.276204,
+    "lng": -118.974298,
+    "km": 14
+   },
+   {
+    "src": "USFS",
+    "name": "Dutch/hidden Trailhead",
+    "lat": 37.276405,
+    "lng": -118.977113,
+    "km": 14.3
+   },
+   {
+    "src": "USFS",
+    "name": "Bear Creek Trailhead",
+    "lat": 37.335376,
+    "lng": -118.974645,
+    "km": 14.5
+   },
+   {
+    "src": "USFS",
+    "name": "Mosquito Flat  Trailhead",
+    "lat": 37.435105,
+    "lng": -118.747113,
+    "km": 16.5
+   },
+   {
+    "src": "USFS",
+    "name": "MONO PASS TH",
+    "lat": 37.435105,
+    "lng": -118.747213,
+    "km": 16.5
+   },
+   {
+    "src": "USFS",
+    "name": "Bear Ridge Cutoff",
+    "lat": 37.362469,
+    "lng": -118.98554,
+    "km": 16.5
+   },
+   {
+    "src": "USFS",
+    "name": "HORTON LAKES TH",
+    "lat": 37.312105,
+    "lng": -118.624913,
+    "km": 17.2
+   },
+   {
+    "src": "USFS",
+    "name": "Mono Creek Trailhead",
+    "lat": 37.381365,
+    "lng": -118.997556,
+    "km": 18.4
+   },
+   {
+    "src": "USFS",
+    "name": "LAMARCK LAKES TH",
+    "lat": 37.227305,
+    "lng": -118.627513,
+    "km": 18.6
+   },
+   {
+    "src": "USFS",
+    "name": "TAMARACK LAKES TH",
+    "lat": 37.451705,
+    "lng": -118.734313,
+    "km": 18.7
+   },
+   {
+    "src": "USFS",
+    "name": "North Lake  Trailhead",
+    "lat": 37.230685,
+    "lng": -118.616614,
+    "km": 19.3
+   },
+   {
+    "src": "USFS",
+    "name": "BEAR CREEK",
+    "lat": 37.382877,
+    "lng": -119.01976,
+    "km": 20.2
+   },
+   {
+    "src": "USFS",
+    "name": "SABRINA LAKE TH",
+    "lat": 37.213605,
+    "lng": -118.610013,
+    "km": 20.7
+   }
+  ],
+  "firstPass": {
+   "why": "stuck: Only a SummitPost search snippet suggests Pine Creek from the east; page 403, not evidence.",
+   "trailhead": null,
+   "notes": "Only a SummitPost search snippet suggests Pine Creek from the east; page 403, not evidence."
+  },
+  "earlierPasses": {
+   "why": "stuck: Gemini is a west-of-crest peak 1.2 mi SE of Seven Gables (Sierra NF). 2022 trip came in from the Pine Creek side via Pine Lake, Honeymoon Lake, Granite Park, Gr",
+   "trailhead": null,
+   "notes": "Gemini is a west-of-crest peak 1.2 mi SE of Seven Gables (Sierra NF). 2022 trip came in from the Pine Creek side via Pine Lake, Honeymoon Lake, Granite Park, Granite Bear Pass (multi-day, no named trailhead on the page); a search snippet says the Pine Creek approach is ~15 mi each way and the popular route is the NW slope from Seven Gables Pass. Bear Creek and Lake Edison trailheads also plausible. SummitPost and listsofjohn 403. The first pass's Pine Creek suggestion is a plausible lead only. Left stuck."
+  },
+  "priorPass": {
+   "kind": "stuck",
+   "why": "Not re-researched; Pine Creek only a plausible lead."
+  },
+  "lastPassNote": "Two equally used starts in opened pages: Italy Pass Trailhead (backcountrysights, 3 days via Granite Park and Seven Gables Pass) and Bear Creek Diversion Dam (t"
+ }
+]
