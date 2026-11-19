@@ -7,18 +7,23 @@
 ## 1. What it does today
 - **Scope** row: Overall · Near me (home zip + radius) · Friends · By area —
   four equal-width boxes across the full row, 46px tall at 14px type (a 44px touch target), not small scrolling chips.
-- **By area's picker** (`RankAreaPicker`, owner 2026-11-18): a *Ranking in* card names the area (plain text with
-  `aria-current`, its trail from the country down under it) beside a 44px **Change** button (`aria-expanded`). Change
-  opens, under the card: a search over the whole catalog (`GroupPlaceSearch` → `useCatalogAreaSearch`, signed in only;
-  picking a hit ranks it and closes the picker), *Your areas* — the climber's partner listings (`useMyPartnerAreas`)
-  as one-tap chips — then one *Up to <parent>* row and *Inside <area>*, every child that holds climbs as a 44px row
-  (name · climb count · ›), 8 first and then *Show all N*; nothing is cut (it used to stop at 24). A failed children
-  read says so rather than drawing an area with nothing inside. The level above the countries (*All countries*,
-  which ranks nothing) opens with the picker already shown. Signed out it walks the seed tree, with no search. A failed path read names the
-  area *Couldn't load this area's name*, not "this area". Every row's accessible name is its visible text in order
-  (WCAG 2.5.3; axe's `label-content-name-mismatch`), and so are the search hits' and the Crag regular row's —
-  `scripts/oneoff/probe-ranks-area-picker.mjs` runs axe on the open picker, the search results and Show all, which
-  no browser walk reaches.
+- **By area is chosen the way a climb is found** (`RankAreaPicker`, owner 2026-11-18: "ranks by area on phone needs
+  a better ui like how we would find a climb"). Over the board, a *Ranking in* card names the area (plain text with
+  `aria-current`, its trail without the country under it) beside a 44px **Change** button. Change opens the
+  **Choose-an-area page** in place of the board (the scope row and the table are not drawn while it is open;
+  `pickId` in `Leaderboards`), laid out as the Climbs tab is: a header card with the area’s name, the path above it
+  as links (*All countries › United States*) and one **See rankings for <area>** button; under it the countries or
+  states as two-column cards with their climb counts, A to Z (the look of `StatePicker`’s phone cards), and below a
+  state the Climbs area page’s own sub-area list (`AreaChildrenList`: every child that holds climbs, A to Z, the same
+  Sort, the discipline line, a *View area* button on each row). Walking the page ranks nothing; See rankings does, and
+  so do a search hit (`GroupPlaceSearch` → `useCatalogAreaSearch`, signed in only) and a *Your areas* chip (the
+  climber’s partner listings, `useMyPartnerAreas`). **Back to rankings** leaves it unchanged; on a phone the top bar
+  draws that Back (`data-cm-step-back`). Each step starts at the top with the area’s name in focus. *All countries*
+  ranks nothing, so it has no See rankings. A failed children read says so rather than drawing an area with nothing
+  inside; a wall with nothing inside says that, and keeps its path. Signed out it walks the seed tree, with no search.
+  A failed path read names the area *Couldn’t load this area’s name*, not "this area".
+  `scripts/oneoff/probe-ranks-area-picker.mjs` drives all of it signed in at 390px and runs axe on the state cards, the
+  area rows and the search results, which no browser walk reaches (27/27).
 - **A row is not a button holding buttons** (fixed 2026-11-18, owner "fix it"; axe `nested-interactive`, WCAG 4.1.2,
   found by that probe): the row is a plain container, and rank + avatar + name are ONE real `<button>` that opens the
   profile and carries the row's `lbRowName` name ("#1, …", which probes find rows by). The points button (*How X got
@@ -51,7 +56,7 @@
   scorecard (the ascents a score is summed from) and theCrag's CPR timeline (the ascent list under a column).
 - **Top climbs**: routes, not climbers, from `leaderboard_top_climbs`.
 - **Crag regular, under By area** (competitor review batch C, item 22, 2026-11-05 — Strava's Local Legend): below the area's
-  *Ranking in* card and its picker, one row names the climber with the most logged DAYS under that area in the last 90
+  *Ranking in* card, one row names the climber with the most logged DAYS under that area in the last 90
   (two at least, visible logs, no conditions reports, the same people the boards rank, ties by logs then last day) with the
   count; the row opens their profile. `useCragRegular` → `crag_regular` (0404), signed-in only; nothing is drawn when nobody
   has two days there, and a failed read draws nothing rather than a wrong name. The same row sits on the area page's PARTNERS HERE card.

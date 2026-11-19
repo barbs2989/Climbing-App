@@ -1,7 +1,8 @@
-// One-off: drive Ranks › By area's picker (src/components/RankAreaPicker.tsx) SIGNED IN, at 390px, against a
-// running dev server. Asserts: the card names the area; Change opens a catalog search that ranks a picked hit;
-// Up walks to United States, whose states list past the old 24 cap behind "Show all N"; All countries opens the
-// picker with no Change; nothing runs off the phone. Creates a throwaway account (service key) and deletes it.
+// One-off: drive Ranks › By area (src/components/RankAreaPicker.tsx) SIGNED IN, at 390px, against a running dev
+// server. Asserts: the card names the area; Change opens the Choose-an-area PAGE in place of the board, laid out as
+// the Climbs tab is (state cards A to Z, then the area page’s own sub-area list with its Sort); walking it ranks
+// nothing until See rankings; the path links jump up; a search hit and a Your areas chip rank at once; Back leaves
+// it unchanged; nothing runs off the phone. Creates a throwaway account (service key) and deletes it.
 //   node scripts/oneoff/probe-ranks-area-picker.mjs http://localhost:5287/Climbing-App/ [shotDir]
 import { chromium } from "playwright-core";
 import path from "node:path";
@@ -58,69 +59,102 @@ try {
   ok(true, "the card names United States");
   await shot("1-card");
 
-  await page.getByRole("button", { name: "Change the area these rankings cover" }).click();
+  const change = page.getByRole("button", { name: "Change the area these rankings cover" });
+  const title = () => page.locator('h2[tabindex="-1"]').first();
+  const onLevel = (n) => page.waitForFunction((nn) => document.querySelector('h2[tabindex="-1"]')?.textContent === nn, n, { timeout: 30000 });
+  const ranking = (n) => page.waitForFunction((nn) => document.querySelector('[aria-current="location"]')?.textContent === nn, n, { timeout: 30000 });
+  const boardShown = () => page.getByLabel("Ranking discipline").count();
+  const seeBtn = (n) => page.getByRole("button", { name: "See rankings for " + n, exact: true });
+  const pathLink = (n) => page.locator('nav[aria-label="Area path"] button', { hasText: n }).first();
+  ok(await boardShown() === 1, "the board is under the card");
+
+  await change.click();
+  await onLevel("United States");
   const box = page.getByLabel("Search any crag, peak or area");
-  ok(await box.count() === 1, "Change opens the catalog search");
+  ok(await box.count() === 1, "Change opens the Choose-an-area page, with the catalog search");
+  ok(await boardShown() === 0, "the page stands in place of the board, not above it");
+  ok(await seeBtn("United States").count() === 1, "the page's header offers See rankings for United States");
   const mineChip = page.getByRole("button", { name: "Rank World Wall" });
   if (Array.isArray(insRows) && insRows.length === 1) {
     await mineChip.waitFor({ timeout: 30000 }).catch(() => {});
     ok(await mineChip.count() === 1, "Your areas offers the climber's partner listing (World Wall)");
   }
+  await page.getByRole("heading", { name: "Pick a state" }).waitFor({ timeout: 30000 });
+  const cardNames = () => page.evaluate(() => [...document.querySelectorAll("button")].filter((b) => /\d climbs?$/.test((b.textContent || "").trim()) && b.children.length === 2).map((b) => b.children[0].textContent));
+  await page.waitForFunction(() => [...document.querySelectorAll("button")].some((b) => /^Washington[\d,]+ climbs$/.test((b.textContent || "").trim())), null, { timeout: 30000 });
+  const states = await cardNames();
+  ok(states.length > 24, "every state is a card, past the old cap of 24 (" + states.length + ")");
+  ok(states.join("|") === [...states].sort((x, y) => x.localeCompare(y)).join("|") && states[0] === "Alabama", "the states read A to Z, as the Climbs tab lists them (first: " + states[0] + ")");
+  const backs = await page.evaluate(() => [...document.querySelectorAll("button")].filter((b) => /Back to rankings/.test(b.getAttribute("aria-label") || b.textContent || "")).map((b) => { const r = b.getBoundingClientRect(); return { shown: r.width > 0 && r.height > 0, y: Math.round(r.top) }; }));
+  ok(backs.filter((x) => x.shown).length === 1 && backs.filter((x) => x.shown)[0].y < 110, "one Back to rankings is drawn, in the phone's top bar (" + JSON.stringify(backs) + ")");
   await page.waitForTimeout(800);
-  await shot("2a-open");
-  await axeScan(page, "with the picker open");
+  await shot("2a-page-united-states");
+  await axeScan(page, "on the Choose-an-area page (state cards)");
+
+  await page.locator("button", { hasText: /^Washington[\d,]+ climbs$/ }).click();
+  await onLevel("Washington");
+  ok((await card().count()) === 0 && await boardShown() === 0, "walking to Washington stays on the page and ranks nothing yet");
+  const sort = page.getByLabel("Sort areas");
+  await sort.waitFor({ timeout: 30000 });
+  ok(await sort.inputValue() === "az", "below a state the Climbs area list is used, with its Sort, A to Z first");
+  const rowNames = () => page.evaluate(() => [...document.querySelectorAll('[role="button"]')].filter((b) => /View area/.test(b.textContent || "")).map((b) => (b.querySelector("span span") || b).textContent));
+  const rows = await rowNames();
+  const headN = +((await page.getByRole("heading", { name: /^Areas \(\d+\)$/i }).first().textContent()).match(/\d+/)[0]);
+  ok(rows.length === headN && rows.length > 0, "every area inside Washington is a row: " + rows.length + " of " + headN);
+  ok(await pathLink("United States").count() === 1 && await pathLink("All countries").count() === 1, "the header's path links every level above");
+  await page.waitForTimeout(1500);
+  await shot("2b-page-washington");
+  await axeScan(page, "on the Choose-an-area page (area rows)");
+  const sw = await page.evaluate(() => document.documentElement.scrollWidth);
+  ok(sw <= 390, "nothing runs off a 390px phone (scrollWidth " + sw + ")");
+
+  await page.locator('[role="button"]', { hasText: rows[0] }).first().click();
+  await onLevel(rows[0]);
+  await seeBtn(rows[0]).click();
+  await ranking(rows[0]);
+  ok(await boardShown() === 1 && await box.count() === 0, "See rankings for \"" + rows[0] + "\" ranks it and returns to the board");
+  await page.getByText(/Climbers who have logged climbs in/).first().waitFor({ timeout: 30000 });
+  await page.waitForTimeout(1500);
+  await shot("3-ranked");
+
+  await change.click();
+  await onLevel(rows[0]);
+  ok(true, "Change reopens the page on the area being ranked");
+  await pathLink("Washington").click();
+  await onLevel("Washington");
+  await page.evaluate(() => [...document.querySelectorAll("button")].filter((b) => /Back to rankings/.test(b.getAttribute("aria-label") || b.textContent || "")).pop().click());
+  await ranking(rows[0]);
+  ok(await boardShown() === 1, "Back leaves the page without changing the ranked area (" + rows[0] + ")");
+
+  await change.click();
+  await onLevel(rows[0]);
   await box.fill("index");
   const hit = page.locator('[aria-label^="Index"]').first();
   await hit.waitFor({ timeout: 30000 });
-  await shot("2-search");
+  await shot("4-search");
   await axeScan(page, "with search results showing");
   const hitName = (await hit.getAttribute("aria-label")).split(" · ")[0];
   await hit.click();
-  await page.waitForFunction((n) => document.querySelector('[aria-current="location"]')?.textContent === n, hitName, { timeout: 30000 });
-  ok(true, "picking \"" + hitName + "\" ranks it");
-  ok(await box.count() === 0, "the picker closes after a search pick");
-  await page.getByText(/Climbers who have logged climbs in/).first().waitFor({ timeout: 30000 });
-  await shot("3-picked");
+  await ranking(hitName);
+  ok(await boardShown() === 1, "picking the search hit \"" + hitName + "\" ranks it at once");
 
-  await page.getByRole("button", { name: "Change the area these rankings cover" }).click();
-  for (let g = 0; g < 8 && (await card().textContent()) !== "United States"; g++) {
-    const before = await card().textContent();
-    await page.locator('button[aria-label^="Up to "]').click();
-    await page.waitForFunction((b) => document.querySelector('[aria-current="location"]')?.textContent !== b, before, { timeout: 30000 });
-  }
-  ok((await card().textContent()) === "United States", "Up walks back to United States");
-  const more = page.getByRole("button", { name: /^Show all \d+$/ });
-  await more.waitFor({ timeout: 30000 });
-  const n = +((await more.textContent()).match(/\d+/)[0]);
-  await more.click();
-  const rows = await page.evaluate(() => [...document.querySelectorAll("button[aria-label]")].filter((b) => /^.+ [\d,]+ climbs?$/.test(b.getAttribute("aria-label"))).length);
-  ok(rows === n, "Show all lists every state: " + rows + " of " + n);
-  ok(n > 24, "more than the old cap of 24 is reachable (" + n + ")");
-  await shot("4-show-all");
-  await axeScan(page, "with every state listed");
-  const sw = await page.evaluate(() => document.documentElement.scrollWidth);
-  ok(sw <= 390, "nothing runs off a 390px phone (scrollWidth " + sw + ")");
-  await page.locator('button[aria-label^="Washington "]').click();
-  await page.waitForFunction(() => document.querySelector('[aria-current="location"]')?.textContent === "Washington", null, { timeout: 30000 });
-  await page.getByRole("button", { name: /^Show all \d+$/ }).or(page.getByText(/^Inside Washington$/i)).first().waitFor({ timeout: 30000 });
-  await page.waitForTimeout(1500);
-  await shot("4b-washington");
-  await page.locator('button[aria-label="Up to United States"]').click();
-  await page.waitForFunction(() => document.querySelector('[aria-current="location"]')?.textContent === "United States", null, { timeout: 30000 });
-
-  await page.locator('button[aria-label="Up to All countries"]').click();
-  await page.waitForFunction(() => document.querySelector('[aria-current="location"]')?.textContent === "All countries", null, { timeout: 30000 });
-  ok(await page.getByRole("button", { name: "Change the area these rankings cover" }).count() === 0 && await box.count() === 1, "All countries opens with the picker shown and no Change");
-  const usRow = page.locator('button[aria-label^="United States "]');
-  await usRow.waitFor({ timeout: 30000 }).catch(() => {});
-  ok(await usRow.count() === 1 && await page.getByText("Loading areas…").count() === 0, "All countries finishes loading and lists the countries (United States among them)");
+  await change.click();
+  await onLevel(hitName);
+  await pathLink("All countries").click();
+  await onLevel("All countries");
+  await page.getByRole("heading", { name: "Pick a country" }).waitFor({ timeout: 30000 });
+  await page.locator("button", { hasText: /^United States[\d,]+ climbs$/ }).waitFor({ timeout: 30000 });
+  ok(await page.getByRole("button", { name: /^See rankings for/ }).count() === 0, "All countries lists the countries and offers no See rankings (it ranks nothing)");
   await shot("5-all-countries");
   if (Array.isArray(insRows) && insRows.length === 1) {
     await mineChip.click();
-    await page.waitForFunction(() => document.querySelector('[aria-current="location"]')?.textContent === "World Wall", null, { timeout: 30000 });
+    await ranking("World Wall");
     ok(true, "tapping the Your areas chip ranks World Wall");
-    await page.waitForTimeout(2500);
-    await shot("6-world-wall");
+    await change.click();
+    await onLevel("World Wall");
+    await page.getByText(/No smaller areas inside World Wall/).waitFor({ timeout: 30000 });
+    ok(true, "a wall with nothing inside says so, and still offers See rankings and its path");
+    await shot("6-leaf");
   }
   ok(errs.length === 0, "no page errors" + (errs.length ? ": " + errs.join(" | ") : ""));
 } finally {
