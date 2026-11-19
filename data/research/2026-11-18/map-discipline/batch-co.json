@@ -1,0 +1,788 @@
+{
+ "co_jupiter_mountain_southwest_slopes": {
+  "area": "co_jupiter_mountain",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Needleton (Durango & Silverton train stop)",
+    "trailheadLat": 37.63333,
+    "trailheadLng": -107.69278
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Needleton (Durango & Silverton train stop)",
+     "trailheadLat": 37.63333,
+     "trailheadLng": -107.69278
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/php14ers/trailhead.php?thparm=sj09",
+      "fact": "Needleton 8,220 ft 37.63333,-107.69278",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.openstreetmap.org/node/3975606993",
+      "fact": "Needleton railway halt 37.63352,-107.69281 (within 21 m)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://www.climb13ers.com/colorado-13ers/jupiter-mountain",
+    "fact": "SW Slopes route starts at Needleton Bridge TH, train only, 6 mi to Chicago Basin"
+   },
+   "chunk": "out5/q10.json"
+  }
+ },
+ "co_mount_eolus_northeast_ridge": {
+  "area": "co_mount_eolus",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Needleton (Durango & Silverton train stop)",
+    "trailheadLat": 37.63333,
+    "trailheadLng": -107.69278
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Needleton (Durango & Silverton train stop)",
+     "trailheadLat": 37.63333,
+     "trailheadLng": -107.69278
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/php14ers/trailhead.php?thparm=sj09",
+      "fact": "Needleton 8,220 ft 37.63333,-107.69278",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.openstreetmap.org/node/3975606993",
+      "fact": "Needleton railway halt 37.63352,-107.69281 (within 21 m)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://www.14ers.com/route.php?route=eolu3",
+    "fact": "Needleton 11,100 ft; 18 mi RT from Needleton, 6 mi from Chicago Basin; not in USFS list"
+   },
+   "chunk": "out/c08.json"
+  }
+ },
+ "co_sunlight_peak_south_face": {
+  "area": "co_sunlight_peak",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Needleton (Durango & Silverton train stop)",
+    "trailheadLat": 37.63333,
+    "trailheadLng": -107.69278
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Needleton (Durango & Silverton train stop)",
+     "trailheadLat": 37.63333,
+     "trailheadLng": -107.69278
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/php14ers/trailhead.php?thparm=sj09",
+      "fact": "Needleton 8,220 ft 37.63333,-107.69278",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.openstreetmap.org/node/3975606993",
+      "fact": "Needleton railway halt 37.63352,-107.69281 (within 21 m)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "page",
+    "fact": "Sunlight South Face from Needleton via Chicago Basin",
+    "url": "https://www.14ers.com/route.php?route=sunl2"
+   },
+   "chunk": "out/c09.json"
+  }
+ },
+ "co_turret_peak_northwest_slope": {
+  "area": "co_turret_peak",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Needleton (Durango & Silverton train stop)",
+    "trailheadLat": 37.63333,
+    "trailheadLng": -107.69278
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Needleton (Durango & Silverton train stop)",
+     "trailheadLat": 37.63333,
+     "trailheadLng": -107.69278
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/php14ers/trailhead.php?thparm=sj09",
+      "fact": "Needleton 8,220 ft 37.63333,-107.69278",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.openstreetmap.org/node/3975606993",
+      "fact": "Needleton railway halt 37.63352,-107.69281 (within 21 m)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://www.climb13ers.com/colorado-13ers/turret-peak",
+    "fact": "Turret NW slope trailhead is Needleton Bridge; camp in Chicago Basin / Ruby Creek, traverse to Pigeon-Turret saddle"
+   },
+   "chunk": "out5/q25.json"
+  }
+ },
+ "co_windom_peak_west_ridge": {
+  "area": "co_windom_peak",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Needleton (Durango & Silverton train stop)",
+    "trailheadLat": 37.63333,
+    "trailheadLng": -107.69278
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Needleton (Durango & Silverton train stop)",
+     "trailheadLat": 37.63333,
+     "trailheadLng": -107.69278
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/php14ers/trailhead.php?thparm=sj09",
+      "fact": "Needleton 8,220 ft 37.63333,-107.69278",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.openstreetmap.org/node/3975606993",
+      "fact": "Needleton railway halt 37.63352,-107.69281 (within 21 m)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://www.14ers.com/route.php?route=wind1",
+    "fact": "Windom West Ridge from Twin Lakes in Chicago Basin; trailhead Needleton (train), 18 mi RT / 6000 ft from Needleton"
+   },
+   "chunk": "out5/q25.json"
+  }
+ },
+ "co_california_peak_south_ridge": {
+  "area": "co_california_peak",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Lily Lake Trailhead (Huerfano)",
+    "trailheadLat": 37.62361,
+    "trailheadLng": -105.47278
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Lily Lake Trailhead (Huerfano)",
+     "trailheadLat": 37.62361,
+     "trailheadLng": -105.47278
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/php14ers/trailhead.php?thparm=sc02",
+      "fact": "Huerfano/Lily Lake 10,700 ft 37.62361,-105.47278",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.openstreetmap.org/way/1303355331",
+      "fact": "parking 37.62352,-105.47289 (within 14 m)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "route_text",
+    "fact": "accessed from the Lily Lake road"
+   },
+   "chunk": "out5/q02.json"
+  }
+ },
+ "co_huerfano_peak_south_slopes": {
+  "area": "co_huerfano_peak",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Lily Lake Trailhead (Huerfano)",
+    "trailheadLat": 37.62361,
+    "trailheadLng": -105.47278
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Lily Lake Trailhead (Huerfano)",
+     "trailheadLat": 37.62361,
+     "trailheadLng": -105.47278
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/php14ers/trailhead.php?thparm=sc02",
+      "fact": "Huerfano/Lily Lake 10,700 ft 37.62361,-105.47278",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.openstreetmap.org/way/1303355331",
+      "fact": "parking 37.62352,-105.47289 (within 14 m)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://www.14ers.com/route.php?route=202106260615593",
+    "fact": "Huerfano/Lily Lake TH ~10,700 ft via CR 550 west of Gardner, 4WD for last ~2 mi; USFS Zapata Trailhead (4.8 km) is on a different side and not it"
+   },
+   "chunk": "out/c08.json"
+  }
+ },
+ "co_mount_princeton_east_slopes": {
+  "area": "co_mount_princeton",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Mt. Princeton Road Trailhead (2WD)",
+    "trailheadLat": 38.73994,
+    "trailheadLng": -106.17558
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Mt. Princeton Road Trailhead (2WD)",
+     "trailheadLat": 38.73994,
+     "trailheadLng": -106.17558
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/php14ers/trailhead.php?thparm=sw20",
+      "fact": "Mt. Princeton Road 8,900 ft 38.73994,-106.17558",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.openstreetmap.org/way/186667224",
+      "fact": "parking 38.74020,-106.17574 (within 32 m)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://www.14ers.com/route.php?route=prin1",
+    "fact": "2WD TH 8,900 ft via CR 306/321/322; 4WD to ~11,000 ft. No USFS candidate matches (Mt. Antero TH is a different road)"
+   },
+   "chunk": "out/c08.json"
+  }
+ },
+ "co_mount_sherman_southwest_ridge": {
+  "area": "co_mount_sherman",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Fourmile Creek Trailhead",
+    "trailheadLat": 39.20575,
+    "trailheadLng": -106.1622
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Fourmile Creek Trailhead",
+     "trailheadLat": 39.20575,
+     "trailheadLng": -106.1622
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/php14ers/trailhead.php?thparm=mr05",
+      "fact": "Fourmile Creek 39.20575,-106.1622",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.openstreetmap.org/way/1090547605",
+      "fact": "parking 39.20589,-106.16229 (within 17 m)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "route_text",
+    "fact": "From the Fourmile Creek side",
+    "url": "https://www.14ers.com/route.php?route=sher1"
+   },
+   "chunk": "out/c09.json"
+  }
+ },
+ "co_fletcher_mountain_southeast_ridge": {
+  "area": "co_fletcher_mountain",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Blue Lakes Trailhead (upper, Blue Lakes Road)",
+    "trailheadLat": 39.386744,
+    "trailheadLng": -106.100372
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Blue Lakes Trailhead (upper, Blue Lakes Road)",
+     "trailheadLat": 39.386744,
+     "trailheadLng": -106.100372
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.openstreetmap.org/node/178091518",
+      "fact": "Upper Blue Lakes Trailhead 39.38674,-106.10037",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.14ers.com/php14ers/trailhead.php?thparm=tm02",
+      "fact": "Blue Lakes 11,700 ft 39.38695,-106.09995 (within 40 m)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://www.14ers.com/route.php?route=flet1",
+    "fact": "14ers.com Fletcher Mountain Southeast Ridge route: trailhead Blue Lakes, ~11,700 ft, via Blue Lakes road (850) from CO 9"
+   },
+   "chunk": "out5/q07.json",
+   "note": "the lower Blue Lakes trailhead node is 978 m away; the route page gives 11,700 ft, which is the upper one"
+  }
+ },
+ "co_trinity_peak_west_ridge": {
+  "area": "co_trinity_peak",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Molas Pass - Elk Park Trailhead",
+    "trailheadLat": 37.7479,
+    "trailheadLng": -107.68879
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Molas Pass - Elk Park Trailhead",
+     "trailheadLat": 37.7479,
+     "trailheadLng": -107.68879
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.climb13ers.com/colorado-13ers/trinity-peak",
+      "fact": "Molas Pass - Elk Park Trailhead 37 44 52.44 N 107 41 19.63 W = 37.74790,-107.68879",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.openstreetmap.org/way/194487892",
+      "fact": "parking 37.74789,-107.68885 (within 6 m)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://www.climb13ers.com/colorado-13ers/trinity-peak",
+    "fact": "Trinity Peak West Ridge (class 4) page lists Molas Pass - Elk Park Trailhead, 10630 ft; route text says Vestal Basin"
+   },
+   "chunk": "out5/q24.json"
+  }
+ },
+ "co_red_mountain_north_ridge_from_culebra_peak": {
+  "area": "co_red_mountain",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Cielo Vista Ranch gate (Culebra main trailhead)",
+    "trailheadLat": 37.14981,
+    "trailheadLng": -105.29256
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Cielo Vista Ranch gate (Culebra main trailhead)",
+     "trailheadLat": 37.14981,
+     "trailheadLng": -105.29256
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.climb13ers.com/colorado-13ers/trailhead/culebra-peak-cielo-vista-ranch",
+      "fact": "ranch gate 37.14981,-105.29256",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.14ers.com/php14ers/trailhead.php?thparm=sc07",
+      "fact": "Culebra (Main) Trailhead 37.15,-105.2925 (rounded; agrees)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://www.climb13ers.com/colorado-13ers/red-mountain_north-ridge",
+    "fact": "North Ridge page: Cielo Vista trailhead (ranch HQ check-in), route measured from the four-way junction; reached via Culebra"
+   },
+   "chunk": "out2/r13.json",
+   "note": "same point as the Culebra Northwest Ridge route; every party checks in at the gate"
+  }
+ },
+ "co_emerald_peak_south_southwest_ridge": {
+  "area": "co_emerald_peak",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Rockdale Trailhead (Clohesy Lake road)",
+    "trailheadLat": 38.99016,
+    "trailheadLng": -106.41195
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Rockdale Trailhead (Clohesy Lake road)",
+     "trailheadLat": 38.99016,
+     "trailheadLng": -106.41195
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/php14ers/trailhead.php?thparm=sw18",
+      "fact": "Rockdale 9,200 ft 38.99016,-106.41195",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://www.climb13ers.com/colorado-13ers/emerald-peak",
+    "fact": "S/SW Ridge from Rockdale/Clohesy Lake TH, 8.8 mi RT, 3515 ft; route text also says Clohesy Lake above Winfield"
+   },
+   "chunk": "out5/q06.json",
+   "note": "single source; no mapped parking within 350 m"
+  }
+ },
+ "co_clinton_peak_south_slope": {
+  "area": "co_clinton_peak",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Montgomery Reservoir / Wheeler Lake Trailhead",
+    "trailheadLat": 39.356808,
+    "trailheadLng": -106.082851
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Montgomery Reservoir / Wheeler Lake Trailhead",
+     "trailheadLat": 39.356808,
+     "trailheadLng": -106.082851
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/php14ers/trailhead.php?thparm=mr04",
+      "fact": "Montgomery Res. 10,950 ft 39.35681,-106.08285",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.climb13ers.com/colorado-13ers/clinton-peak",
+      "fact": "Wheeler Lake-Montgomery Reservoir trailhead 39.35677,-106.08287 (within 4 m)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://www.climb13ers.com/colorado-13ers/clinton-peak",
+    "fact": "Clinton Peak SSW ridge from Wheeler Lake-Montgomery Reservoir TH, climbed with Traver and McNamee, matching the route text 'with neighboring McNamee and Traver'"
+   },
+   "chunk": "out2/r11.json"
+  }
+ },
+ "co_snowmass_mountain_east_slopes": {
+  "area": "co_snowmass_mountain",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Snowmass Creek Trailhead",
+    "trailheadLat": 39.20016,
+    "trailheadLng": -106.99414
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Snowmass Creek Trailhead",
+     "trailheadLat": 39.20016,
+     "trailheadLng": -106.99414
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/php14ers/trailhead.php?thparm=er04",
+      "fact": "Snowmass Creek 8,400 ft 39.20016,-106.99414, at the end of the road",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.openstreetmap.org/way/422887961",
+      "fact": "parking 39.20009,-106.99397 (within 17 m)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://www.14ers.com/route.php?route=snow1",
+    "fact": "East Slopes route starts at Snowmass Creek trailhead, 8400 ft, 11.3 mi up Snowmass Creek Rd from CO 82; 22 mi RT, 5800 ft gain"
+   },
+   "chunk": "out5/q22.json",
+   "note": "CORRECTION: replaces the USFS Snowmass Trailhead point 39.19890,-107.00057 written earlier the same day; that point is 570 m west with no mapped lot"
+  }
+ },
+ "me_crocker_mountain_appalachian_trail_from_route_27": {
+  "area": "me_crocker_mountain",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Appalachian Trail parking, Route 27",
+    "trailheadLat": 45.102861,
+    "trailheadLng": -70.356609
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Appalachian Trail parking, Route 27",
+     "trailheadLat": 45.102861,
+     "trailheadLng": -70.356609
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.openstreetmap.org/node/3716857840",
+      "fact": "Appalachian Trail Parking 45.10286,-70.35661",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "route_text",
+    "fact": "Appalachian Trail from Route 27"
+   },
+   "chunk": "out/c09.json"
+  }
+ },
+ "me_saddleback_mountain_appalachian_trail_north_from_route_4": {
+  "area": "me_saddleback_mountain",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Appalachian Trail parking, Route 4",
+    "trailheadLat": 44.886953,
+    "trailheadLng": -70.54091
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Appalachian Trail parking, Route 4",
+     "trailheadLat": 44.886953,
+     "trailheadLng": -70.54091
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.openstreetmap.org/way/912968328",
+      "fact": "parking west of ME 4 at the Appalachian Trail crossing 44.88695,-70.54091",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.mainetrailfinder.com/print/trails/trail/appalachian-trail-saddleback-mountain",
+      "fact": "lot west of ME 4, 9 mi south of Rangeley; trail north on the AT",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://www.mainetrailfinder.com/print/trails/trail/appalachian-trail-saddleback-mountain",
+    "fact": "Park in the lot west of ME 4, cross carefully, head north on the AT; 30 mi north of Farmington or 9 mi south of Rangeley"
+   },
+   "chunk": "out5/q21.json"
+  }
+ },
+ "me_the_horn_saddleback_appalachian_trail_north_from_route_4_past_saddleback": {
+  "area": "me_the_horn_saddleback",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Appalachian Trail parking, Route 4",
+    "trailheadLat": 44.886953,
+    "trailheadLng": -70.54091
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Appalachian Trail parking, Route 4",
+     "trailheadLat": 44.886953,
+     "trailheadLng": -70.54091
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.openstreetmap.org/way/912968328",
+      "fact": "parking west of ME 4 at the Appalachian Trail crossing 44.88695,-70.54091",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.mainetrailfinder.com/print/trails/trail/appalachian-trail-saddleback-mountain",
+      "fact": "lot west of ME 4, 9 mi south of Rangeley; trail north on the AT",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://mainebyfoot.com/saddleback-mountain-rangeley/",
+    "fact": "large lot on Route 4 about 10 mi east of Rangeley; AT north 5.7 mi to Saddleback, 7.3 mi to The Horn; route name says from Route 4"
+   },
+   "chunk": "out5/q24.json"
+  }
+ },
+ "me_baxter_peak_hunt_trail": {
+  "area": "me_baxter_peak",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Katahdin Stream day-use lot (Hunt Trail / Appalachian Trail)",
+    "trailheadLat": 45.885544,
+    "trailheadLng": -69.000229
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Katahdin Stream day-use lot (Hunt Trail / Appalachian Trail)",
+     "trailheadLat": 45.885544,
+     "trailheadLng": -69.000229
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.openstreetmap.org/node/102213852",
+      "fact": "Appalachian Trailhead 45.88554,-69.00023, with a parking lot 10 m away",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://jerrybryan.com/hiking/hunt.html",
+    "fact": "Hunt Trail runs from Katahdin Stream Campground to Baxter Peak; campground about 5.2 mi south of the summit on the AT"
+   },
+   "chunk": "out5/q01.json",
+   "note": "trailhead node, not the campground point 260 m north"
+  }
+ }
+}
