@@ -285,7 +285,10 @@ export default function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, book
   // PHONE: the area/route search sits DIRECTLY UNDER "Climbs here by type" (owner, 2026-11-18), the first
   // thing in the sheet after the grade spread, and pins near the top as you scroll (usePinnedBar, released at
   // listEndRef at the foot of the page). The website keeps it under the Route finder · Objectives · Map row.
-  const searchEl = !loading && (!error || (children && children.length > 0)) && isLeaf === false ? <DbSearchSplit scope={area} onJumpToArea={onJumpToArea} onOpenRoute={onOpenRoute} C={C} endRef={listEndRef} /> : null;
+  // It is drawn from the FIRST paint wherever the page already knows there are areas below (aboveLeaf: a state,
+  // region or range), so it does not appear late and push every card under it down once the list arrives
+  // (2026-11-18). A crag or peak still waits for its list: it may be a leaf, which has no search.
+  const searchEl = aboveLeaf && (!error || (children && children.length > 0)) ? <DbSearchSplit scope={area} onJumpToArea={onJumpToArea} onOpenRoute={onOpenRoute} C={C} endRef={listEndRef} /> : null;
   const phoneSearch = !wide && !!searchEl;
   const section = (el: ReactNode) => <div style={areaSheet(C)}><div style={{ marginTop: -1 }}>{el}</div></div>;
   const main = (
