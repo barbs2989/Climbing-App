@@ -540,6 +540,7 @@ export function pinHtml(nm, n, d, color, brd, iconMarkup) {
 // The map follows you until you drag it; the button then re-centres and resumes following.
 export { FIX_STALE_MS, FIX_LOST_MS, acceptFix };
 
+const ASK_MSG = "Your browser is asking to use your location — choose Allow to see where you are.";
 /**
  * @param {import("react").MutableRefObject<any>} mapRef the Leaflet map, once built
  * @param {{ C?: any, zoom?: number, onFix?: (fix: any, first: boolean) => void }} [opts]
@@ -555,6 +556,9 @@ export function useFollowMe(mapRef, { C, zoom = 15, onFix } = {}) {
   onFixRef.current = onFix;
   const stop = () => { if (watchRef.current != null) { try { navigator.geolocation.clearWatch(watchRef.current); } catch (e) {} watchRef.current = null; } };
   useEffect(() => stop, []);
+  // Has the browser been told whether this site may use location? "prompt" = it is still asking.
+  // null when the browser cannot say (no Permissions API), which reads as "not asking".
+  const askState = (then) => { try { if (!navigator.permissions || !navigator.permissions.query) { then(null); return; } navigator.permissions.query({ name: "geolocation" }).then((p) => then(p ? p.state : null), () => then(null)); } catch (e) { then(null); } };
   // A fix that has stopped arriving must not keep reading as current: say how old it is.
   useEffect(() => {
     if (!following) return;
@@ -628,10 +632,16 @@ export function useFollowMe(mapRef, { C, zoom = 15, onFix } = {}) {
         if (quietRef.current) { if (e && e.code === 1) stop(); return; }
         if (e && e.code === 1) { stop(); centredRef.current = false; setLocating(false); setFollowing(false); setErr("Location permission is off for this site — allow it in your browser or device settings to see where you are."); return; }
         // A timeout or a lost signal is not the end of a watch: it keeps trying.
-        if (!curRef.current) setErr("Still looking for a GPS signal — step out from under trees or the wall.");
+        // ...unless nobody has ANSWERED the browser's question yet: then no signal is being looked for.
+        if (!curRef.current) askState((s) => { if (!curRef.current && watchRef.current != null) setErr(s === "prompt" ? ASK_MSG : "Still looking for a GPS signal — step out from under trees or the wall."); });
       },
       { enableHighAccuracy: true, maximumAge: 0, timeout: 20000 }
     );
+    // WAITING ON THE CLIMBER, NOT ON A SATELLITE (owner's own Chrome, 2026-11-18: a Near me tap sat on
+    // "Locating…" over the whole country, then said "Still looking for a GPS signal — step out from
+    // under trees" on a desktop PC whose location prompt had never been answered). While the browser
+    // is still asking, the map says so from the start; the first fix, or a refusal, replaces it.
+    if (!quiet) askState((s) => { if (s === "prompt" && !curRef.current && watchRef.current != null && !quietRef.current) setErr(ASK_MSG); });
   };
   // A view the climber asked for (Reset view, Fit all) must not be yanked back by the next fix.
   // The dot keeps moving; the button resumes following.
