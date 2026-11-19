@@ -1,0 +1,509 @@
+{
+ "wa_smilodon_fatalis": {
+  "area": "wa_beetle_bailey_slab",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/119198566/smilodon-fatalis",
+    "https://www.mountainproject.com/area/108405624/beetle-bailey-slab",
+    "https://www.mountainproject.com/route/125911087/mosasaurus",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5776339,47.8167428&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.9",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119198566/smilodon-fatalis",
+      "fact": "5.9 YDS, Sport",
+      "retrieved_at": "2026-11-19"
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Douglas Taylor, Gabe Webster, Gabe Shank",
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119198566/smilodon-fatalis",
+      "fact": "FA: Douglas Taylor, Gabe Webster, Gabe Shank (no year)",
+      "retrieved_at": "2026-11-19"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_smilodon_fatalis",
+    "column": "access",
+    "from": {
+     "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+     "notes": "Many of these peaks (Mount Persis, Gunn Peak, Baring Mountain area) sit outside designated wilderness — administratively unrestricted despite serious technical terrain.",
+     "permit": "None required.",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+     "parking_pass": "Northwest Forest Pass or America the Beautiful pass required at developed trailheads."
+    },
+    "to": {
+     "land_manager": "Washington State Parks (Forks of the Sky State Park)"
+    },
+    "why": "Wrong template: names Mt. Baker-Snoqualmie NF and a Northwest Forest Pass. Beetle Bailey Slab lies inside Forks of the Sky State Park: the official WA State Parks Park Boundaries layer returns 'Forks of the Sky, State Park Property' at the slab (OSM crag node 9763591102), re-queried 2026-11-19; the State Parks release of 2026-03-13 says the donated Index Town Wall land joins Forks of the Sky. Object copied field for field from the live, verified wa_beetle_bailey_slab_flying_salamanders_short. Parking pass HELD (no official page states one). permit column is already null; no other column carries the NW Forest Pass text.",
+    "evidence": [
+     "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5776339,47.8167428&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+     "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_smilodon_fatalis",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "One 70 ft sport lead to an anchor (MP); the Mosasaurus page starts its own pitch from the Smilodon anchor, so this row is one pitch. Ledger after apply: unconfirmed, single-source (count implied, not stated).",
+    "evidence": [
+     "https://www.mountainproject.com/route/119198566/smilodon-fatalis",
+     "https://www.mountainproject.com/route/125911087/mosasaurus"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_smilodon_fatalis",
+    "column": "length_m",
+    "from": null,
+    "to": 21,
+    "why": "Mountain Project states 70 ft (21 m). Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/119198566/smilodon-fatalis"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "Bolt count not stated (MP gives '9 QDs + 2 extended draws'), so bolts left null. Row has no lat/lng. Ledger entries for length_m, pitches left out until the sql_fixes apply (the checker compares against the live row); each fix says its level."
+ },
+ "wa_racer_x": {
+  "area": "wa_beetle_bailey_slab",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/105805970/racer-x",
+    "https://www.mountainproject.com/area/108405624/beetle-bailey-slab",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5776339,47.8167428&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.10b",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105805970/racer-x",
+      "fact": "5.10b YDS, Sport",
+      "retrieved_at": "2026-11-19"
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Darryl Cramer, Terry Lien",
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105805970/racer-x",
+      "fact": "FA: Darryl Cramer, Terry Lien (no year)",
+      "retrieved_at": "2026-11-19"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_racer_x",
+    "column": "access",
+    "from": {
+     "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+     "notes": "Many of these peaks (Mount Persis, Gunn Peak, Baring Mountain area) sit outside designated wilderness — administratively unrestricted despite serious technical terrain.",
+     "permit": "None required.",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+     "parking_pass": "Northwest Forest Pass or America the Beautiful pass required at developed trailheads."
+    },
+    "to": {
+     "land_manager": "Washington State Parks (Forks of the Sky State Park)"
+    },
+    "why": "Wrong template: names Mt. Baker-Snoqualmie NF and a Northwest Forest Pass. Beetle Bailey Slab lies inside Forks of the Sky State Park: the official WA State Parks Park Boundaries layer returns 'Forks of the Sky, State Park Property' at the slab (OSM crag node 9763591102), re-queried 2026-11-19; the State Parks release of 2026-03-13 says the donated Index Town Wall land joins Forks of the Sky. Object copied field for field from the live, verified wa_beetle_bailey_slab_flying_salamanders_short. Parking pass HELD (no official page states one). permit column is already null; no other column carries the NW Forest Pass text.",
+    "evidence": [
+     "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5776339,47.8167428&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+     "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_racer_x",
+    "column": "pitches",
+    "from": 0,
+    "to": 3,
+    "why": "Mountain Project states 3 pitches (P1 5.7 ramp to a bolted belay, P2 5.10a knobby slab, P3 short 5.9+ arch). Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/105805970/racer-x"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "P1 may be swapped for Beetle Bailey P1 (own row wa_beetle_bailey_slab_beetle_bailey_p1); P1 option on the 5.7 ramp needs small cams and nuts, so 'sport' is loose but not changed (discipline never from MP alone). Length and bolt count not stated. Ledger entries for pitches left out until the sql_fixes apply (the checker compares against the live row); each fix says its level."
+ },
+ "wa_hedge_trimmer": {
+  "area": "wa_beetle_bailey_slab",
+  "set": {},
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/119199051/hedge-trimmer",
+    "https://www.mountainproject.com/area/108405624/beetle-bailey-slab",
+    "https://www.mountainproject.com/route/117824423/flying-salamanders-short",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5776339,47.8167428&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.6",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119199051/hedge-trimmer",
+      "fact": "5.6 YDS, Trad",
+      "retrieved_at": "2026-11-19"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_hedge_trimmer",
+    "column": "access",
+    "from": {
+     "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+     "notes": "Many of these peaks (Mount Persis, Gunn Peak, Baring Mountain area) sit outside designated wilderness — administratively unrestricted despite serious technical terrain.",
+     "permit": "None required.",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+     "parking_pass": "Northwest Forest Pass or America the Beautiful pass required at developed trailheads."
+    },
+    "to": {
+     "land_manager": "Washington State Parks (Forks of the Sky State Park)"
+    },
+    "why": "Wrong template: names Mt. Baker-Snoqualmie NF and a Northwest Forest Pass. Beetle Bailey Slab lies inside Forks of the Sky State Park: the official WA State Parks Park Boundaries layer returns 'Forks of the Sky, State Park Property' at the slab (OSM crag node 9763591102), re-queried 2026-11-19; the State Parks release of 2026-03-13 says the donated Index Town Wall land joins Forks of the Sky. Object copied field for field from the live, verified wa_beetle_bailey_slab_flying_salamanders_short. Parking pass HELD (no official page states one). permit column is already null; no other column carries the NW Forest Pass text.",
+    "evidence": [
+     "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5776339,47.8167428&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+     "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_hedge_trimmer",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "One 50 ft trad lead that shares the Flying Salamanders (Short) anchor (MP): one length to one anchor. Ledger after apply: unconfirmed, single-source (count implied, not stated).",
+    "evidence": [
+     "https://www.mountainproject.com/route/119199051/hedge-trimmer"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_hedge_trimmer",
+    "column": "length_m",
+    "from": null,
+    "to": 15,
+    "why": "Mountain Project states 50 ft (15 m). Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/119199051/hedge-trimmer"
+    ]
+   }
+  ],
+  "disputed": [
+   {
+    "field": "fa",
+    "note": "Held by orchestrator: MP alone adds Doug Taylor; an FA never changes on one source."
+   }
+  ],
+  "notes": "fa: the row lists 'Adam Wood and Gabe Shank'; MP names a third party member, Doug Taylor. set adds him (adds a fact, drops none). Rack per MP: one set of cams 0.2-2, a medium nut, slings, plus 1 bolt low; not proposed (gear column empty, single source). Ledger entries for length_m, pitches left out until the sql_fixes apply (the checker compares against the live row); each fix says its level."
+ },
+ "wa_michal_s_5_5_5_8": {
+  "area": "wa_beetle_bailey_slab",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/108405624/beetle-bailey-slab",
+    "https://www.mountainproject.com/area/108405613/lower-lump-area",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5776339,47.8167428&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+   ]
+  },
+  "ledger": [],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_michal_s_5_5_5_8",
+    "column": "access",
+    "from": {
+     "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+     "notes": "Many of these peaks (Mount Persis, Gunn Peak, Baring Mountain area) sit outside designated wilderness — administratively unrestricted despite serious technical terrain.",
+     "permit": "None required.",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+     "parking_pass": "Northwest Forest Pass or America the Beautiful pass required at developed trailheads."
+    },
+    "to": {
+     "land_manager": "Washington State Parks (Forks of the Sky State Park)"
+    },
+    "why": "Wrong template: names Mt. Baker-Snoqualmie NF and a Northwest Forest Pass. Beetle Bailey Slab lies inside Forks of the Sky State Park: the official WA State Parks Park Boundaries layer returns 'Forks of the Sky, State Park Property' at the slab (OSM crag node 9763591102), re-queried 2026-11-19; the State Parks release of 2026-03-13 says the donated Index Town Wall land joins Forks of the Sky. Object copied field for field from the live, verified wa_beetle_bailey_slab_flying_salamanders_short. Parking pass HELD (no official page states one). permit column is already null; no other column carries the NW Forest Pass text.",
+    "evidence": [
+     "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5776339,47.8167428&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+     "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_michal_s_5_5_5_8",
+    "column": "pitches",
+    "from": 0,
+    "to": null,
+    "why": "pitches 0 is invalid. No source found for this route at all (see notes), so no pitch count can be stated: null.",
+    "evidence": [
+     "https://www.mountainproject.com/area/108405624/beetle-bailey-slab"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "CATALOG DEFECT (owner call): no route named 'Michal's 5.5' (or anything with 'Michal') is listed on Mountain Project's Beetle Bailey Slab page today (35 routes listed) or found by search; OpenBeta search also empty. The row may be a removed or renamed route. Its FA party (M Rynkiewicz, Adam Wood, Doug Taylor, Will Buchanan, Doug Teague) matches the 2020s Beetle Bailey Slab bolting group, and the name/grade oddity ('5.5 (5.8)' as a name, graded 5.8) looks like a placeholder name. Grade, FA and name could not be verified; nothing locked. Only the wrong-template access and the invalid pitches 0 are proposed (both wrong whatever the row is); drop them if the owner retires the row."
+ },
+ "wa_larry_s_gaily_colored_lycra": {
+  "area": "wa_beetle_bailey_slab",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/116789445/larrys-gaily-colored-lycra",
+    "https://www.mountainproject.com/area/108405624/beetle-bailey-slab",
+    "https://www.mountainproject.com/route/107891389/beetle-bailey-p2",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5776339,47.8167428&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.10b/c",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/116789445/larrys-gaily-colored-lycra",
+      "fact": "5.10b/c YDS, Trad",
+      "retrieved_at": "2026-11-19"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_larry_s_gaily_colored_lycra",
+    "column": "access",
+    "from": {
+     "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+     "notes": "Many of these peaks (Mount Persis, Gunn Peak, Baring Mountain area) sit outside designated wilderness — administratively unrestricted despite serious technical terrain.",
+     "permit": "None required.",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+     "parking_pass": "Northwest Forest Pass or America the Beautiful pass required at developed trailheads."
+    },
+    "to": {
+     "land_manager": "Washington State Parks (Forks of the Sky State Park)"
+    },
+    "why": "Wrong template: names Mt. Baker-Snoqualmie NF and a Northwest Forest Pass. Beetle Bailey Slab lies inside Forks of the Sky State Park: the official WA State Parks Park Boundaries layer returns 'Forks of the Sky, State Park Property' at the slab (OSM crag node 9763591102), re-queried 2026-11-19; the State Parks release of 2026-03-13 says the donated Index Town Wall land joins Forks of the Sky. Object copied field for field from the live, verified wa_beetle_bailey_slab_flying_salamanders_short. Parking pass HELD (no official page states one). permit column is already null; no other column carries the NW Forest Pass text.",
+    "evidence": [
+     "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5776339,47.8167428&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+     "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_larry_s_gaily_colored_lycra",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "One 65 ft trad pitch from the first Beetle Bailey anchor up to the Beetle Bailey anchor (MP): one length to one anchor.",
+    "evidence": [
+     "https://www.mountainproject.com/route/116789445/larrys-gaily-colored-lycra"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "PARTIAL ROUTE (catalog defect, owner call): MP says to climb to the first Beetle Bailey anchor by either route, then start as for Beetle Bailey P2 and cut right; the Beetle Bailey P2 page says cutting right ~15 ft off the P1 belay puts you on this line. So the row is a second-pitch variant of Beetle Bailey, not a route from the ground; length (65 ft) not proposed for that reason. fa 'FA TR Cramer Lein  FFA Grafton Gerberding' mixes a top-rope ascent and the FFA (defect, not rewritten; 'Lein' vs 'Lien' spelling as on other rows). Name: MP itself shows the curly apostrophe (Larry’s), and siblings (Master Wong’s) use it too, so no change proposed."
+ },
+ "wa_beetle_bailey_p2": {
+  "area": "wa_beetle_bailey_slab",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/107891389/beetle-bailey-p2",
+    "https://www.mountainproject.com/area/108405624/beetle-bailey-slab",
+    "https://www.mountainproject.com/route/119108504/beetle-bailey-p1",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5776339,47.8167428&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.11a",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107891389/beetle-bailey-p2",
+      "fact": "5.11a YDS, Trad",
+      "retrieved_at": "2026-11-19"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_beetle_bailey_p2",
+    "column": "access",
+    "from": {
+     "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+     "notes": "Many of these peaks (Mount Persis, Gunn Peak, Baring Mountain area) sit outside designated wilderness — administratively unrestricted despite serious technical terrain.",
+     "permit": "None required.",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+     "parking_pass": "Northwest Forest Pass or America the Beautiful pass required at developed trailheads."
+    },
+    "to": {
+     "land_manager": "Washington State Parks (Forks of the Sky State Park)"
+    },
+    "why": "Wrong template: names Mt. Baker-Snoqualmie NF and a Northwest Forest Pass. Beetle Bailey Slab lies inside Forks of the Sky State Park: the official WA State Parks Park Boundaries layer returns 'Forks of the Sky, State Park Property' at the slab (OSM crag node 9763591102), re-queried 2026-11-19; the State Parks release of 2026-03-13 says the donated Index Town Wall land joins Forks of the Sky. Object copied field for field from the live, verified wa_beetle_bailey_slab_flying_salamanders_short. Parking pass HELD (no official page states one). permit column is already null; no other column carries the NW Forest Pass text.",
+    "evidence": [
+     "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5776339,47.8167428&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+     "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_beetle_bailey_p2",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "One 100 ft trad pitch straight up from the Beetle Bailey P1 anchor (MP).",
+    "evidence": [
+     "https://www.mountainproject.com/route/107891389/beetle-bailey-p2"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "PARTIAL ROUTE (catalog defect, owner call): this row is pitch 2 of Beetle Bailey; MP starts it at the P1 anchor. A P1 row EXISTS: wa_beetle_bailey_slab_beetle_bailey_p1 (5.10d, pitches 1), plus wa_beetle_bailey_slab_beetle_bailey_p_1_var (5.10c/d PG13). The owner may want one 'Beetle Bailey' row with two pitches. Length 100 ft and '4 bolts' are P2-only facts, not proposed. fa mixes the FA, the P2 FFA and a P2 variation FA (defect, not rewritten). MP: descend with two raps on a 60 m rope."
+ },
+ "wa_36_volts_to_anywhere": {
+  "area": "wa_beetle_bailey_slab",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/119257893/36-volts-to-anywhere",
+    "https://www.mountainproject.com/area/108405624/beetle-bailey-slab",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5776339,47.8167428&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "fa",
+    "value": "p1 A.Wood, G. Shank, D.Taylor p2-3, A. Wood, D. Taylor, M. Rynkiewicz, G. Webster",
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119257893/36-volts-to-anywhere",
+      "fact": "FA p1 Wood, Shank, Taylor; p2-3 Wood, Taylor, Rynkiewicz, Webster (no year)",
+      "retrieved_at": "2026-11-19"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_36_volts_to_anywhere",
+    "column": "access",
+    "from": {
+     "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+     "notes": "Many of these peaks (Mount Persis, Gunn Peak, Baring Mountain area) sit outside designated wilderness — administratively unrestricted despite serious technical terrain.",
+     "permit": "None required.",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+     "parking_pass": "Northwest Forest Pass or America the Beautiful pass required at developed trailheads."
+    },
+    "to": {
+     "land_manager": "Washington State Parks (Forks of the Sky State Park)"
+    },
+    "why": "Wrong template: names Mt. Baker-Snoqualmie NF and a Northwest Forest Pass. Beetle Bailey Slab lies inside Forks of the Sky State Park: the official WA State Parks Park Boundaries layer returns 'Forks of the Sky, State Park Property' at the slab (OSM crag node 9763591102), re-queried 2026-11-19; the State Parks release of 2026-03-13 says the donated Index Town Wall land joins Forks of the Sky. Object copied field for field from the live, verified wa_beetle_bailey_slab_flying_salamanders_short. Parking pass HELD (no official page states one). permit column is already null; no other column carries the NW Forest Pass text.",
+    "evidence": [
+     "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5776339,47.8167428&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+     "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_36_volts_to_anywhere",
+    "column": "pitches",
+    "from": 0,
+    "to": 3,
+    "why": "Mountain Project states 3 pitches. Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/119257893/36-volts-to-anywhere"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_36_volts_to_anywhere",
+    "column": "length_m",
+    "from": null,
+    "to": 55,
+    "why": "Mountain Project states 180 ft (55 m). Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/119257893/36-volts-to-anywhere"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_36_volts_to_anywhere",
+    "column": "grade",
+    "from": "5.10d",
+    "to": "5.11a",
+    "why": "Mountain Project now states 5.11a; the stored 5.10d is most likely an older copy of the same publisher's data (no other source found). Owner call; hold if a second source is wanted. Ledger after apply: locked-1src.",
+    "evidence": [
+     "https://www.mountainproject.com/route/119257893/36-volts-to-anywhere"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_36_volts_to_anywhere",
+    "column": "grade_num",
+    "from": 10.9,
+    "to": 11.25,
+    "why": "Follows the grade fix: gradeNumFrom('5.11a','yds') = 11.25.",
+    "evidence": [
+     "https://www.mountainproject.com/route/119257893/36-volts-to-anywhere"
+    ]
+   }
+  ],
+  "disputed": [
+   "grade: catalog 5.10d, Mountain Project 5.11a today; no independent second source found"
+  ],
+  "notes": "If the grade fix is held, drop the grade ledger entry too (it holds 5.11a). rock_grade is null, so not touched. Protection per MP: single rack to 0.75, mostly bolts. Ledger entries for grade, pitches, length_m left out until the sql_fixes apply (the checker compares against the live row); each fix says its level."
+ }
+}
