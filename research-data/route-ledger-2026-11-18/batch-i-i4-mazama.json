@@ -1,0 +1,543 @@
+{
+ "wa_prime_rib_2": {
+  "area": "wa_goat_wall_climbs",
+  "set": {
+   "rappels": "Rappel the line with a single 60 m rope, about 13 rappels (about 11 with a 70 m). Every station has chains except the lowest, which has rings."
+  },
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/107730934/prime-rib",
+    "https://www.mountainproject.com/area/107192115/goat-wall",
+    "https://wenatcheeoutdoors.org/?p=14617",
+    "https://wenatcheeoutdoors.org/2017/01/23/goat-wall-routes/",
+    "https://www.ncmountainguides.com/node/51",
+    "https://gethighonaltitude.com/2022/10/03/mazamas-methow-valley-moderates/",
+    "https://cascadeclimbers.com/forum/topic/74790-tr-goat-wall-sisyphus-511a-or-510bc-a0-732010",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_RangerDistricts_03/MapServer/1",
+    "https://washingtonclimbers.org/index.php/2015/10/13/mazama/"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.9-",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107730934/prime-rib",
+      "fact": "5.9-",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://wenatcheeoutdoors.org/2017/01/23/goat-wall-routes/",
+      "fact": "Prime Rib III, 5.9- (Wenatchee Outdoors guidebook)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "discipline",
+    "value": "sport",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107730934/prime-rib",
+      "fact": "Sport, 11 pitches",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://wenatcheeoutdoors.org/?p=14617",
+      "fact": "sport route, quickdraws only",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.ncmountainguides.com/node/51",
+      "fact": "multi-pitch sport climb, bolt protected",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "rappels",
+    "value": "Rappel the line with a single 60 m rope, about 13 rappels (about 11 with a 70 m). Every station has chains except the lowest, which has rings.",
+    "method": "agree-2",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107730934/prime-rib",
+      "fact": "13 raps 60 m, 11 raps 70 m; chains, last station rings",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.ncmountainguides.com/node/51",
+      "fact": "about 14 rappels to base",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_prime_rib_2",
+    "column": "pitches",
+    "from": 0,
+    "to": 11,
+    "why": "0 is invalid. Mountain Project 11; Wenatchee Outdoors 11-pitch route (9-11 by linking); a 2022 trip blog 11; NC Mountain Guides header 11 (its text says 12, theoutbound says 12). Majority 11. Lockable agree-2 after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/107730934/prime-rib",
+     "https://wenatcheeoutdoors.org/?p=14617",
+     "https://gethighonaltitude.com/2022/10/03/mazamas-methow-valley-moderates/",
+     "https://www.ncmountainguides.com/node/51"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_prime_rib_2",
+    "column": "length_m",
+    "from": null,
+    "to": 396,
+    "why": "Mountain Project 1300 ft (396 m). Single source; no other page states a total. Approve only if an MP-only length is acceptable (locked-1src after apply).",
+    "evidence": [
+     "https://www.mountainproject.com/route/107730934/prime-rib"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_prime_rib_2",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)"
+    },
+    "why": "access is empty. Forest Service ownership and ranger-district layers put the USGS Goat Wall point (48.6201,-120.4473) on Okanogan-Wenatchee NF land, Methow Valley RD, outside any wilderness; the Washington Climbers Coalition lists Goat Wall as USFS, Okanogan NF. No permit, pass or fee claim is proposed: none was found on an official page. Lockable official-1 after apply.",
+    "evidence": [
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0",
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_RangerDistricts_03/MapServer/1",
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_Wilderness_01/MapServer/0",
+     "https://washingtonclimbers.org/index.php/2015/10/13/mazama/"
+    ]
+   }
+  ],
+  "disputed": [
+   "pitches: NC Mountain Guides page says 11 in its header and 12 in its text; theoutbound says 12. MP, Wenatchee Outdoors and a 2022 blog say 11.",
+   "grade: Wenatchee Outdoors locals call it 5.8 at hardest; NCMG gives 5.9 max. 5.9- kept."
+  ],
+  "notes": "fa 'Bryan Burdo, Scott Johnson' matches Mountain Project only; left unlocked (FA never locks from one source). Walk-off: car shuttle to Goat Creek Road (cattle guard, ~5,500 ft), ~10 min walk to the top (Wenatchee Outdoors, MP). Methow Valley Climbers rebolted the route."
+ },
+ "wa_sisyphus": {
+  "area": "wa_goat_wall_climbs",
+  "set": {
+   "rappels": "Rappel the route on its bolted anchors with one 60 m rope. Many parties go down from the top of pitch 7, where the rock gets worse above."
+  },
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/107192123/sisyphus",
+    "https://www.mountainproject.com/area/107192115/goat-wall",
+    "https://www.ncmountainguides.com/node/52",
+    "https://cascadeclimbers.com/forum/topic/74790-tr-goat-wall-sisyphus-511a-or-510bc-a0-732010",
+    "https://wenatcheeoutdoors.org/2017/01/23/goat-wall-routes/",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_RangerDistricts_03/MapServer/1",
+    "https://washingtonclimbers.org/index.php/2015/10/13/mazama/"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.11a",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107192123/sisyphus",
+      "fact": "5.11a",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.ncmountainguides.com/node/52",
+      "fact": "5.11a max, one short crux",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/74790-tr-goat-wall-sisyphus-511a-or-510bc-a0-732010",
+      "fact": "Sisyphus 5.11a or 5.10b/c A0, 2010 trip report",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "discipline",
+    "value": "sport",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107192123/sisyphus",
+      "fact": "Sport, 10 pitches",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.ncmountainguides.com/node/52",
+      "fact": "bolt protected; all wall routes bolted",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "rappels",
+    "value": "Rappel the route on its bolted anchors with one 60 m rope. Many parties go down from the top of pitch 7, where the rock gets worse above.",
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107192123/sisyphus",
+      "fact": "10 raps single 60 m, bolted anchors; some descend after P7, rock quality declines",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.ncmountainguides.com/node/52",
+      "fact": "rappel from big ledge about two-thirds up",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_sisyphus",
+    "column": "pitches",
+    "from": 0,
+    "to": 10,
+    "why": "0 is invalid. Mountain Project 10 (P8 is a 3rd-class ledge); NC Mountain Guides header 10 (text 9); a 2010 CascadeClimbers trip report 10. Lockable agree-2 after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/107192123/sisyphus",
+     "https://www.ncmountainguides.com/node/52",
+     "https://cascadeclimbers.com/forum/topic/74790-tr-goat-wall-sisyphus-511a-or-510bc-a0-732010"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_sisyphus",
+    "column": "length_m",
+    "from": null,
+    "to": 305,
+    "why": "Mountain Project 1000 ft (305 m). Single source. Approve only if an MP-only length is acceptable.",
+    "evidence": [
+     "https://www.mountainproject.com/route/107192123/sisyphus"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_sisyphus",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)"
+    },
+    "why": "access is empty. Forest Service ownership and ranger-district layers put the USGS Goat Wall point (48.6201,-120.4473) on Okanogan-Wenatchee NF land, Methow Valley RD, outside any wilderness; the Washington Climbers Coalition lists Goat Wall as USFS, Okanogan NF. No permit, pass or fee claim is proposed: none was found on an official page. Lockable official-1 after apply.",
+    "evidence": [
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0",
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_RangerDistricts_03/MapServer/1",
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_Wilderness_01/MapServer/0",
+     "https://washingtonclimbers.org/index.php/2015/10/13/mazama/"
+    ]
+   }
+  ],
+  "disputed": [
+   "pitches: NC Mountain Guides text says 9 (header 10).",
+   "fa: MP 'Larry Goldie and Scott Johnston' (stored); NCMG says only 'established by NCMG guides'. Not locked."
+  ],
+  "notes": "Raptors nest on the buttress above May-July (MP; not on an official page). Crux P6 can be aided at A0 (5.10b/c A0)."
+ },
+ "wa_restless_natives": {
+  "area": "wa_goat_wall_climbs",
+  "set": {
+   "fa": "Bryan Burdo, Sarah Lenard, Leland Windham",
+   "rappels": "Descend by rappel down the line on one 60 m rope."
+  },
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/108455478/restless-natives",
+    "https://www.mountainproject.com/area/107192115/goat-wall",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_RangerDistricts_03/MapServer/1",
+    "https://washingtonclimbers.org/index.php/2015/10/13/mazama/"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.11c",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108455478/restless-natives",
+      "fact": "5.11c; no second page found stating a grade",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Bryan Burdo, Sarah Lenard, Leland Windham",
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108455478/restless-natives",
+      "fact": "FA party: Burdo; Lenard; Windham (2000-07)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_restless_natives",
+    "column": "pitches",
+    "from": 0,
+    "to": 11,
+    "why": "0 is invalid. Mountain Project 11 pitches (P1-P11 graded). Single source; no other page found. locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/108455478/restless-natives"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_restless_natives",
+    "column": "length_m",
+    "from": null,
+    "to": 335,
+    "why": "Mountain Project 1100 ft (335 m). Single source.",
+    "evidence": [
+     "https://www.mountainproject.com/route/108455478/restless-natives"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_restless_natives",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)"
+    },
+    "why": "access is empty. Forest Service ownership and ranger-district layers put the USGS Goat Wall point (48.6201,-120.4473) on Okanogan-Wenatchee NF land, Methow Valley RD, outside any wilderness; the Washington Climbers Coalition lists Goat Wall as USFS, Okanogan NF. No permit, pass or fee claim is proposed: none was found on an official page. Lockable official-1 after apply.",
+    "evidence": [
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0",
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_RangerDistricts_03/MapServer/1",
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_Wilderness_01/MapServer/0",
+     "https://washingtonclimbers.org/index.php/2015/10/13/mazama/"
+    ]
+   }
+  ],
+  "disputed": [
+   "grade: a search snippet attributed 'IV 5.12a' to an MP Goat Wall description; not seen on the opened pages. 5.11c kept (crux P10 5.11c or 5.10a A0).",
+   "pitches: a search snippet of OpenBeta (same publisher as MP) showed 10 pitches; MP's own page lists 11."
+  ],
+  "notes": "fa: stored 'Bryan Burdo' is incomplete; MP names the full party (July 2000). Single source, so the fa write is unconfirmed - owner may hold it. Lead to check: a search snippet of OpenBeta said a loose section of the Flyboys rappel line is directly above this route (rockfall); page 404'd, not verified."
+ },
+ "wa_promised_land": {
+  "area": "wa_goat_wall_climbs",
+  "set": {
+   "rappels": "Rappel by way of Sisyphus, or scramble to the top. Rappelling from below the treed ledge takes two 60 m ropes."
+  },
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/108455662/promised-land",
+    "https://www.mountainproject.com/area/107192115/goat-wall",
+    "https://wenatcheeoutdoors.org/2017/01/23/goat-wall-routes/",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_RangerDistricts_03/MapServer/1",
+    "https://washingtonclimbers.org/index.php/2015/10/13/mazama/"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.11a",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108455662/promised-land",
+      "fact": "5.11a A1, Grade IV",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://wenatcheeoutdoors.org/2017/01/23/goat-wall-routes/",
+      "fact": "IV, 5.11a/A2 full route (credits Mountain Project)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Bryan Burdo and Peter Dorrish",
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108455662/promised-land",
+      "fact": "FA Bryan Burdo, Peter Dorrish, 1989",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_promised_land",
+    "column": "pitches",
+    "from": 0,
+    "to": 12,
+    "why": "0 is invalid. Mountain Project 12; Wenatchee Outdoors: 3 bolted pitches plus 9 trad pitches (12), but it credits MP, so one source. locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/108455662/promised-land",
+     "https://wenatcheeoutdoors.org/2017/01/23/goat-wall-routes/"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_promised_land",
+    "column": "length_m",
+    "from": null,
+    "to": 457,
+    "why": "Mountain Project 1500 ft (MP prints 455 m; 1500 ft = 457 m). Single source.",
+    "evidence": [
+     "https://www.mountainproject.com/route/108455662/promised-land"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_promised_land",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)"
+    },
+    "why": "access is empty. Forest Service ownership and ranger-district layers put the USGS Goat Wall point (48.6201,-120.4473) on Okanogan-Wenatchee NF land, Methow Valley RD, outside any wilderness; the Washington Climbers Coalition lists Goat Wall as USFS, Okanogan NF. No permit, pass or fee claim is proposed: none was found on an official page. Lockable official-1 after apply.",
+    "evidence": [
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0",
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_RangerDistricts_03/MapServer/1",
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_Wilderness_01/MapServer/0",
+     "https://washingtonclimbers.org/index.php/2015/10/13/mazama/"
+    ]
+   }
+  ],
+  "disputed": [
+   "discipline: NOT a free sport route. Only pitches 1-3 are bolted (5.6-5.10c, a sport outing on their own); the pitches above take gear (doubles to #4, one #5) and the upper route has a short aid section. MP files it Trad, Aid; Wenatchee Outdoors (crediting MP) agrees. Stored 'aid' is defensible; 'trad' with disciplines [trad, aid] is the alternative. Owner's call - discipline cannot lock from MP alone, so no fix proposed.",
+   "aid_grade: MP A1 (stored); Wenatchee Outdoors A2. Not locked."
+  ],
+  "notes": "Raptors nest above the route May-July; MP asks parties to leave promptly after pitch 7 then (not on an official page). Approach shares the Sisyphus trail (~20 min from the pullout 3.1 mi from the Mazama store)."
+ },
+ "wa_goat_wall_goat_s_beard_ice": {
+  "area": "wa_goat_wall_climbs",
+  "set": {
+   "fa": "Tom Kimbrell, Jack Lewis"
+  },
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/112449319/goats-beard-ice",
+    "https://www.mountainproject.com/area/107192115/goat-wall",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_RangerDistricts_03/MapServer/1",
+    "https://washingtonclimbers.org/index.php/2015/10/13/mazama/"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "WI5",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112449319/goats-beard-ice",
+      "fact": "WI5; no second page found",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "ice_grade",
+    "value": "WI5",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112449319/goats-beard-ice",
+      "fact": "WI5",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 7,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112449319/goats-beard-ice",
+      "fact": "7 pitches",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "length_m",
+    "value": 305,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112449319/goats-beard-ice",
+      "fact": "1000 ft (303 m)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Tom Kimbrell, Jack Lewis",
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112449319/goats-beard-ice",
+      "fact": "FA Tom Kimbrell, Jack Lewis, 1990, two days, Left Var. WI5+ 5.8 A2",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_goat_wall_goat_s_beard_ice",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)"
+    },
+    "why": "access is empty. Forest Service ownership and ranger-district layers put the USGS Goat Wall point (48.6201,-120.4473) on Okanogan-Wenatchee NF land, Methow Valley RD, outside any wilderness; the Washington Climbers Coalition lists Goat Wall as USFS, Okanogan NF. No permit, pass or fee claim is proposed: none was found on an official page. Lockable official-1 after apply.",
+    "evidence": [
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0",
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_RangerDistricts_03/MapServer/1",
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_Wilderness_01/MapServer/0",
+     "https://washingtonclimbers.org/index.php/2015/10/13/mazama/"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "Season and conditions deliberately not touched or locked (ice). Second ascent / first free: Craig Gyselinck and Vern Nelson, 2013 (MP only; ffa is not settable - owner may add). Route faces the southern sky and has unavoidable overhead hazard (MP). WA-20 over the passes closes in winter (mid-Nov to mid-Apr), so in ice season Mazama is reached via Winthrop (WCC)."
+ }
+}
