@@ -1648,32 +1648,6 @@
  ],
  "held": [
   {
-   "id": "adams_avalanche_glacier",
-   "confidence": "low",
-   "reason": "low; would change a complete 5/6/4/15 row on a neighbouring route's times",
-   "proposed": [
-    5,
-    6,
-    6,
-    17
-   ],
-   "why": "No timed report of this exact glacier route was found (search snippets only). Used the neighbouring South Climb figures from the same trailhead: about 5 h in, 6 h camp to summit, about 3 h summit to camp, about 3 h out. The old 4 h descent was too short for summit-to-camp plus the walk out.",
-   "evidence": [
-    {
-     "url": "https://webarchive.library.unt.edu/eot2008/20090116014615/http://www.fs.fed.us/gpnf/recreation/mount-adams",
-     "says": "South Climb 6-8 h up, 5-8 h down from the summit (snippet)"
-    },
-    {
-     "url": "https://www.alpineinstitute.com/catalog/mt-adams-skills-and-climb/",
-     "says": "Cold Springs to Lunch Counter high camp about 5 h (snippet)"
-    },
-    {
-     "url": "https://www.mountainshop.net/4-mountains-in-4-weeks-mount-adams-summit/",
-     "says": "south side 12 mi, about 6,700 ft gain (snippet)"
-    }
-   ]
-  },
-  {
    "id": "wa_gilbert_peak_west_route",
    "confidence": "low",
    "reason": "low; would change a complete 3/4/3/10 row (three-peak day estimated)",
@@ -1696,54 +1670,6 @@
    ]
   },
   {
-   "id": "adams_northwest_ridge",
-   "confidence": "low",
-   "reason": "low; would change a complete 5/6/4/15 row on one partial report of another ridge",
-   "proposed": [
-    3.5,
-    6,
-    5,
-    14.5
-   ],
-   "why": "Day hours were blank and the 15-hour total did not follow the three-day plan. High camp takes about 3 hours light, the face about 6 hours one way, the return to camp 2-3 hours and the hike out about 2.5 hours; one partial timed report on the neighbouring north ridge supports the legs, none gives the face itself.",
-   "evidence": [
-    {
-     "url": "https://apps.yellowleaf.org/scramble/g/r/2004-09-03-Mount-Adams-via-north-ridge.html",
-     "says": "Snippet: about 3 h trailhead to high camp, 3.5 h camp to 9,700 ft on the north ridge, 2 h high camp to trailhead."
-    },
-    {
-     "url": "https://www.mountaineers.org/activities/routes-places/adams-creek-meadows-high-camp",
-     "says": "Snippet: high camp 2,300 ft gain, 8.4 mi round trip."
-    },
-    {
-     "url": "https://www.summitpost.org/route/158220/northwest-ridge.html",
-     "says": "Snippet: one to two days."
-    }
-   ]
-  },
-  {
-   "id": "wa_j_tnar",
-   "confidence": "low",
-   "reason": "the 168 hr leg is clearly elapsed time, but the fix needs a restructured plan (a 48 hr 'day'), not new hours",
-   "proposed": [
-    5,
-    36,
-    12,
-    53
-   ],
-   "why": "The 168-hour summit leg was elapsed time over about seven days and the 2.5 h approach omitted the cirque and scouting. The 2-day plan is really a short first day and one block of wall days; repeat parties report 3-4 days, so about 3.5 days at roughly 10 h of climbing gives 36 h, plus a 10-12 h rappel descent. Kept two day rows.",
-   "evidence": [
-    {
-     "url": "https://www.mountainproject.com/route/120300835/jotnar",
-     "says": "Repeat by experienced wall climbers in 3-4 days; first ascent took 14 days over two trips."
-    },
-    {
-     "url": "https://publications.americanalpineclub.org/articles/13201215809",
-     "says": "First ascent took seven days of climbing to the summit."
-    }
-   ]
-  },
-  {
    "id": "wa_mount_buckindy_scramble",
    "confidence": "low",
    "reason": "an 11.5 hr first day contradicts the day notes' two or three days to the basin camp; the plan needs restructuring",
@@ -1762,54 +1688,6 @@
     {
      "url": "https://cascadeclimbers.com/forum/topic/88006-tr-buckindy-range-solo-traverse-7252012",
      "says": "(snippet) four-day solo traverse of the Kindy Creek cirque; huge crevasses on the north glacier"
-    }
-   ]
-  },
-  {
-   "id": "wa_mount_challenger_challenger_glacier",
-   "confidence": "low",
-   "reason": "low; 26 -> 37 with section labels moved to a different approach than its notes describe",
-   "proposed": [
-    16,
-    4,
-    17,
-    37
-   ],
-   "why": "Stored 26 total only fit one version of the legs; the day plan is 8.5 + 7.5 to Perfect Pass, a summit day and a 13 hr exit, so approach is 16, summit 4 up, descent 4 back plus 13 out. Summit day round trip about 8 hr (a 2016 party was back at the pass 6 hr after leaving; a 2006 party took far longer).",
-   "evidence": [
-    {
-     "url": "https://www.yellowleaf.org/scramble/g/r/2006-07-13-16-challenger.html",
-     "says": "snippet: trailhead to Hannegan Pass 2h20, to ford 2h52, to Easy Ridge camp 3h16 (about 8.5 hr)"
-    },
-    {
-     "url": "https://cascadeclimbers.com/forum/topic/99704-tr-mt-challenger-easy-ridge-perfect-pass-7242016",
-     "says": "snippet only: back at Perfect Pass 6 hr after leaving"
-    },
-    {
-     "url": "https://www.mountaineers.org/activities/trip-reports/intermediate-alpine-climb-mount-challenger-challenger-glacier",
-     "says": "snippet: about 10 hr trailhead to first camp in 2024"
-    },
-    {
-     "url": "https://summitpost.org/mount-challenger/climbers-log/151237",
-     "says": "snippet: fast party did whole round trip from Hannegan Pass in about 8h20"
-    }
-   ]
-  },
-  {
-   "id": "wa_north_ridge_7",
-   "confidence": "low",
-   "reason": "low; would change a complete 3.5/2.5/1.5/7.5 row on one snippet",
-   "proposed": [
-    3.5,
-    2.5,
-    3,
-    9
-   ],
-   "why": "Route is a half-day from camp; stored descent of 1.5 hr could not include the hike down 3,200 ft to the car (about 2 hr) so summit to car is about 3 hr. Day 2 split per the walk-out rule. No timed report found.",
-   "evidence": [
-    {
-     "url": "https://www.alpineinstitute.com/route-profile-aiguille-de-i-m-north-ridge/",
-     "says": "snippet: easily a half-day climb from Boston Basin"
     }
    ]
   },
@@ -1868,36 +1746,202 @@
      "says": "comparable Elwha-side peak; no Dana times"
     }
    ]
-  },
-  {
-   "id": "wa_ragged_ridge",
-   "confidence": "low",
-   "reason": "a 16 hr two-day total beside the plan's 13-14 hr car-to-car wording",
-   "proposed": [
-    5,
-    5.5,
-    5.5,
-    16
-   ],
-   "why": "Stored total 13.5 was a one-day car-to-car figure with the legs blank. For the 2-day plan: 5 hr to the high camp, 5.5 hr along the four peaks to Cosho, and 5.5 hr down to Fisher Creek and back over Easy Pass. Moderate evidence only.",
-   "evidence": [
-    {
-     "url": "https://fastestknowntime.com/fkt/kegan-buchhop-ragged-ridge-wa-2023-09-22",
-     "says": "Fast one-day Ragged Ridge in 14 hr"
-    },
-    {
-     "url": "https://www.mountaineers.org/activities/trip-reports/intermediate-alpine-climb-cosho-peak",
-     "says": "Hike out from Cosho camp to the trailhead took about 4 hr (snippet)"
-    },
-    {
-     "url": "https://www.turns-all-year.com/trip-reports/april-30-may-1-2016-ragged-loop",
-     "says": "About 4 hr from Easy Pass to the col (snippet)"
-    },
-    {
-     "url": "https://cascadeclimbers.com/forum/topic/102994-tr-ragged-ridge-mesahchie-katsuk-kimtah-cosho-standards-07272019",
-     "says": "403, snippet only"
-    }
-   ]
   }
- ]
+ ],
+ "secondDecision": {
+  "ask": "Owner: \"do what you recommend\" on the 10 held rows.",
+  "rollback": "audits/rollback-trip-time-consistency-1795071517288.json",
+  "applied": [
+   {
+    "id": "adams_avalanche_glacier",
+    "confidence": "low",
+    "before": {
+     "legs": [
+      5,
+      6,
+      4,
+      15
+     ],
+     "days": [
+      null,
+      null,
+      null
+     ]
+    },
+    "after": {
+     "legs": [
+      5,
+      6,
+      6,
+      17
+     ],
+     "days": [
+      5,
+      9,
+      3
+     ]
+    },
+    "why": "Day hours were blank; the stored 4 hr descent cannot cover the summit back to camp and the walk out (it would leave a 1.5 hr last day). Researched: 5 in, 6 up, about 3 back to camp, 3 out."
+   },
+   {
+    "id": "adams_northwest_ridge",
+    "confidence": "low",
+    "before": {
+     "legs": [
+      5,
+      6,
+      4,
+      15
+     ],
+     "days": [
+      null,
+      null,
+      null
+     ]
+    },
+    "after": {
+     "legs": [
+      3.5,
+      6,
+      5,
+      14.5
+     ],
+     "days": [
+      3.5,
+      8.5,
+      2.5
+     ]
+    },
+    "why": "Day hours were blank; filled from the researched legs: about 3.5 hr for the 4 miles to High Camp, 6 hr up, about 2.5 back to camp and 2.5 out."
+   },
+   {
+    "id": "wa_north_ridge_7",
+    "confidence": "low",
+    "before": {
+     "legs": [
+      3.5,
+      2.5,
+      1.5,
+      7.5
+     ],
+     "days": [
+      null,
+      null
+     ]
+    },
+    "after": {
+     "legs": [
+      3.5,
+      2.5,
+      3,
+      9
+     ],
+     "days": [
+      3.5,
+      5.5
+     ]
+    },
+    "why": "Day hours were blank; the stored 1.5 hr descent could not include the 3,200 ft walk down to the car that the plan's second day includes. Summit back to camp and out is about 3 hr."
+   },
+   {
+    "id": "wa_ragged_ridge",
+    "confidence": "low",
+    "before": {
+     "legs": [
+      2,
+      null,
+      2.5,
+      13.5
+     ],
+     "days": [
+      null,
+      null
+     ]
+    },
+    "after": {
+     "legs": [
+      5,
+      5.5,
+      5.5,
+      16
+     ],
+     "days": [
+      5,
+      11
+     ]
+    },
+    "why": "Legs and day hours were blank beside a one-day 13.5 hr total. The plan is the two-day trip; its calendar note keeps the one-day 13-14 hr figure, clearly labelled as the single-day option."
+   },
+   {
+    "id": "wa_mount_challenger_challenger_glacier",
+    "confidence": "low",
+    "before": {
+     "legs": [
+      7.5,
+      11,
+      7.5,
+      26
+     ],
+     "days": [
+      8.5,
+      7.5,
+      null,
+      13
+     ]
+    },
+    "after": {
+     "legs": [
+      16,
+      4,
+      17,
+      37
+     ],
+     "days": [
+      8.5,
+      7.5,
+      8,
+      13
+     ]
+    },
+    "why": "The day plan and summary are the 4-day Easy Ridge trip (8.5 and 7.5 hr in, a summit day, a 13 hr exit), but the legs and section notes described the Whatcom Pass approach. Legs now follow the plan: 16 in, about 4 up from Perfect Pass, 4 back and the 13 hr exit; the summit day is 8 hr. Section notes rewritten to the same route."
+   },
+   {
+    "id": "wa_j_tnar",
+    "confidence": "low",
+    "before": {
+     "legs": [
+      2.5,
+      168,
+      12,
+      182.5
+     ],
+     "days": [
+      null,
+      null
+     ]
+    },
+    "after": {
+     "legs": [
+      5,
+      24,
+      12,
+      41
+     ],
+     "days": [
+      5,
+      12,
+      12,
+      12
+     ]
+    },
+    "why": "The 168 hr summit leg was the first ascent's elapsed week, not moving time, and the two-day plan had no hours. Restructured as the four days repeat parties report: 5 hr in, two 12 hr wall days, 12 hr to rappel and walk out."
+   }
+  ],
+  "left": {
+   "wa_mount_buckindy_scramble": "The route's own text says two or three days each way; the one timed report reached the basin in an 11.5 hr day. Settling it means choosing between them, which one report cannot do. Its stored times stay.",
+   "wa_gilbert_peak_west_route": "The day plan is a three-peak trip and the stored legs a one-peak outing; the research did not settle which the page should describe. Day hours stay blank, so nothing on screen disagrees.",
+   "wa_mount_dana_scramble": "No report of Dana itself; the proposal was mileage alone. Day hours stay blank.",
+   "wa_bacon_peak_diobsud": "The stored legs mix two different approaches; settling it needs the route's text rewritten to one, not new hours. Day hours stay blank."
+  }
+ }
 }

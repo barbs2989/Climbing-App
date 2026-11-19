@@ -122,11 +122,14 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     climber's logged time is the way. **Blank day hours** (same day, `audits/2026-11-18-trip-time-blank-days.json`):
     the catalog census found 45 multi-day plans with some or all day hours blank and 4 rows with three
     legs but no total. The 4 got the sum of their legs; 35 of the 45 were researched and written (11
-    medium, 24 low on blank or fragmentary times). **STILL OPEN:** 10 held — 6 low proposals that would
-    change an already-complete row (Adams Avalanche and NW Ridge, Gilbert, Aiguille North Ridge, Dana,
-    Bacon), 3 whose own text would then contradict them (Buckindy's "two or three days" to the basin,
-    Ragged Ridge's 13-14 hr one-day wording, Challenger's Whatcom Pass notes), and Jötnar, whose 168 hr
-    summit leg is elapsed wall time and needs a restructured plan, not new hours. The 129 crag routes
+    medium, 24 low on blank or fragmentary times). 10 were held, and on the owner's "do what you
+    recommend" 6 were then written (`secondDecision` in the audit): both Adams routes and Aiguille North
+    Ridge (their stored descents could not cover the walk out), Ragged Ridge (its 13-14 hr wording is
+    the labelled one-day option), Challenger (legs and section notes moved to the Easy Ridge trip its
+    day plan and summary describe; 26 -> 37 hr), and Jötnar (168 hr was the first ascent's elapsed
+    week; now a four-day plan, 41 hr). **STILL OPEN:** 4 left as they are — Buckindy (its text says two
+    or three days each way, one timed report did it in a day), Gilbert (three-peak plan, one-peak
+    legs), Dana (no reports) and Bacon (legs mix two approaches). The 129 crag routes
     with only an approach figure and no total print one number and contradict nothing; left. The Suiattle
     River Road routes (Sinister, Spire Point, Gunsight, Dome, Frostbite Ridge) now walk the 8 closed
     road miles of the order in force since 2026-11-05 IN their day hours; the earlier closure pass had

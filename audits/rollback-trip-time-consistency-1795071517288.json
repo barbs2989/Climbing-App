@@ -1,0 +1,639 @@
+[
+ {
+  "id": "adams_avalanche_glacier",
+  "before": {
+   "timing": {
+    "totalHrs": 15,
+    "summitTimeHrs": 6,
+    "descentTimeHrs": 4,
+    "approachTimeHrs": 5,
+    "recommendedStart": "Alpine start to summit before the SW-facing snow softens"
+   },
+   "itinerary": {
+    "days": [
+     {
+      "n": 1,
+      "note": "Approach to a high camp near Mad Cat Meadow or Salt Creek.",
+      "hours": null,
+      "miles": null,
+      "title": "Day 1",
+      "gainFt": null,
+      "lossFt": null,
+      "packLb": null,
+      "schedule": [],
+      "objective": ""
+     },
+     {
+      "n": 2,
+      "note": "Alpine start, climb the Avalanche/White Salmon Glaciers to the summit, descend via the South Spur to camp.",
+      "hours": null,
+      "miles": null,
+      "title": "Day 2",
+      "gainFt": null,
+      "lossFt": null,
+      "packLb": null,
+      "schedule": [],
+      "objective": ""
+     },
+     {
+      "n": 3,
+      "note": "Hike out.",
+      "hours": null,
+      "miles": null,
+      "title": "Day 3",
+      "gainFt": null,
+      "lossFt": null,
+      "packLb": null,
+      "schedule": [],
+      "objective": ""
+     }
+    ]
+   }
+  },
+  "after": {
+   "timing": {
+    "totalHrs": 17,
+    "summitTimeHrs": 6,
+    "descentTimeHrs": 6,
+    "approachTimeHrs": 5,
+    "recommendedStart": "Alpine start to summit before the SW-facing snow softens"
+   },
+   "itinerary": {
+    "days": [
+     {
+      "n": 1,
+      "note": "Approach to a high camp near Mad Cat Meadow or Salt Creek.",
+      "hours": 5,
+      "miles": null,
+      "title": "Day 1",
+      "gainFt": null,
+      "lossFt": null,
+      "packLb": null,
+      "schedule": [],
+      "objective": ""
+     },
+     {
+      "n": 2,
+      "note": "Alpine start, climb the Avalanche/White Salmon Glaciers to the summit, descend via the South Spur to camp.",
+      "hours": 9,
+      "miles": null,
+      "title": "Day 2",
+      "gainFt": null,
+      "lossFt": null,
+      "packLb": null,
+      "schedule": [],
+      "objective": ""
+     },
+     {
+      "n": 3,
+      "note": "Hike out.",
+      "hours": 3,
+      "miles": null,
+      "title": "Day 3",
+      "gainFt": null,
+      "lossFt": null,
+      "packLb": null,
+      "schedule": [],
+      "objective": ""
+     }
+    ]
+   }
+  }
+ },
+ {
+  "id": "adams_northwest_ridge",
+  "before": {
+   "timing": {
+    "totalHrs": 15,
+    "summitTimeHrs": 6,
+    "descentTimeHrs": 4,
+    "approachTimeHrs": 5,
+    "recommendedStart": "Alpine start to climb the face while neve is firm, ahead of solar warming and sluff"
+   },
+   "itinerary": {
+    "cal": "Expect a 3-day trip from the Killen Creek trailhead.",
+    "days": [
+     {
+      "n": 1,
+      "note": "Hike the Killen Creek Trail to the Pacific Crest Trail and continue on the High Camp Trail to a high camp near Trail Divide or the Adams Glacier basin, about four miles and 2,300 ft of gain.",
+      "hours": null,
+      "miles": 4,
+      "title": "Hike in to High Camp",
+      "gainFt": 2300,
+      "lossFt": 0,
+      "packLb": 40,
+      "schedule": [],
+      "objective": "Reach High Camp near Trail Divide or the Adams Glacier basin"
+     },
+     {
+      "n": 2,
+      "note": "Make an alpine start and climb the face to the ridge crest and on to the summit. Descend via the North Ridge back to camp.",
+      "hours": null,
+      "miles": null,
+      "title": "Climb the face to the summit",
+      "gainFt": 5376,
+      "lossFt": 5376,
+      "packLb": 18,
+      "schedule": [],
+      "objective": "Summit via the North Face of the Northwest Ridge"
+     },
+     {
+      "n": 3,
+      "note": "Pack up camp and hike out to the trailhead.",
+      "hours": null,
+      "miles": 4,
+      "title": "Hike out",
+      "gainFt": 0,
+      "lossFt": 2300,
+      "packLb": 38,
+      "schedule": [],
+      "objective": "Return to the Killen Creek trailhead"
+     }
+    ],
+    "totalNote": "A 3-day north-side trip: hike to High Camp near Trail Divide or the Adams Glacier basin, climb the North Face of the Northwest Ridge to the summit and descend the North Ridge, then hike out."
+   }
+  },
+  "after": {
+   "timing": {
+    "totalHrs": 14.5,
+    "summitTimeHrs": 6,
+    "descentTimeHrs": 5,
+    "approachTimeHrs": 3.5,
+    "recommendedStart": "Alpine start to climb the face while neve is firm, ahead of solar warming and sluff"
+   },
+   "itinerary": {
+    "cal": "Expect a 3-day trip from the Killen Creek trailhead.",
+    "days": [
+     {
+      "n": 1,
+      "note": "Hike the Killen Creek Trail to the Pacific Crest Trail and continue on the High Camp Trail to a high camp near Trail Divide or the Adams Glacier basin, about four miles and 2,300 ft of gain.",
+      "hours": 3.5,
+      "miles": 4,
+      "title": "Hike in to High Camp",
+      "gainFt": 2300,
+      "lossFt": 0,
+      "packLb": 40,
+      "schedule": [],
+      "objective": "Reach High Camp near Trail Divide or the Adams Glacier basin"
+     },
+     {
+      "n": 2,
+      "note": "Make an alpine start and climb the face to the ridge crest and on to the summit. Descend via the North Ridge back to camp.",
+      "hours": 8.5,
+      "miles": null,
+      "title": "Climb the face to the summit",
+      "gainFt": 5376,
+      "lossFt": 5376,
+      "packLb": 18,
+      "schedule": [],
+      "objective": "Summit via the North Face of the Northwest Ridge"
+     },
+     {
+      "n": 3,
+      "note": "Pack up camp and hike out to the trailhead.",
+      "hours": 2.5,
+      "miles": 4,
+      "title": "Hike out",
+      "gainFt": 0,
+      "lossFt": 2300,
+      "packLb": 38,
+      "schedule": [],
+      "objective": "Return to the Killen Creek trailhead"
+     }
+    ],
+    "totalNote": "A 3-day north-side trip: hike to High Camp near Trail Divide or the Adams Glacier basin, climb the North Face of the Northwest Ridge to the summit and descend the North Ridge, then hike out."
+   }
+  }
+ },
+ {
+  "id": "wa_north_ridge_7",
+  "before": {
+   "timing": {
+    "totalHrs": 7.5,
+    "summitTimeHrs": 2.5,
+    "descentTimeHrs": 1.5,
+    "approachTimeHrs": 3.5,
+    "recommendedStart": "Early morning from Boston Basin camps"
+   },
+   "itinerary": {
+    "cal": "Overnight parties in Boston Basin need a North Cascades National Park wilderness permit.",
+    "days": [
+     {
+      "n": 1,
+      "note": "From the Boston Basin trailhead (~3,200 ft), hike about 3-4 miles and ~3,000 ft of gain to high camp at about 6,400 ft.",
+      "hours": null,
+      "miles": 3.5,
+      "title": "Hike to Boston Basin high camp",
+      "gainFt": 3200,
+      "lossFt": 0,
+      "packLb": 38,
+      "schedule": [],
+      "objective": "Reach Boston Basin high camp at ~6,400 ft"
+     },
+     {
+      "n": 2,
+      "note": "Make an early start from camp and climb to the col and up the North Ridge to the tower and back, typically a half-day round trip. Hike out or stay a second night.",
+      "hours": null,
+      "miles": 4,
+      "title": "Climb the North Ridge and hike out",
+      "gainFt": 800,
+      "lossFt": 4000,
+      "packLb": 30,
+      "schedule": [],
+      "objective": "Climb the tower and return, then hike out"
+     }
+    ],
+    "totalNote": "Hike ~3-4 mi and ~3,000 ft to Boston Basin high camp, then climb the North Ridge to the tower and back in a half day and hike out or stay a second night."
+   }
+  },
+  "after": {
+   "timing": {
+    "totalHrs": 9,
+    "summitTimeHrs": 2.5,
+    "descentTimeHrs": 3,
+    "approachTimeHrs": 3.5,
+    "recommendedStart": "Early morning from Boston Basin camps"
+   },
+   "itinerary": {
+    "cal": "Overnight parties in Boston Basin need a North Cascades National Park wilderness permit.",
+    "days": [
+     {
+      "n": 1,
+      "note": "From the Boston Basin trailhead (~3,200 ft), hike about 3-4 miles and ~3,000 ft of gain to high camp at about 6,400 ft.",
+      "hours": 3.5,
+      "miles": 3.5,
+      "title": "Hike to Boston Basin high camp",
+      "gainFt": 3200,
+      "lossFt": 0,
+      "packLb": 38,
+      "schedule": [],
+      "objective": "Reach Boston Basin high camp at ~6,400 ft"
+     },
+     {
+      "n": 2,
+      "note": "Make an early start from camp and climb to the col and up the North Ridge to the tower and back, typically a half-day round trip. Hike out or stay a second night.",
+      "hours": 5.5,
+      "miles": 4,
+      "title": "Climb the North Ridge and hike out",
+      "gainFt": 800,
+      "lossFt": 4000,
+      "packLb": 30,
+      "schedule": [],
+      "objective": "Climb the tower and return, then hike out"
+     }
+    ],
+    "totalNote": "Hike ~3-4 mi and ~3,000 ft to Boston Basin high camp, then climb the North Ridge to the tower and back in a half day and hike out or stay a second night."
+   }
+  }
+ },
+ {
+  "id": "wa_ragged_ridge",
+  "before": {
+   "timing": {
+    "totalHrs": 13.5,
+    "summitTimeHrs": null,
+    "descentTimeHrs": 2.5,
+    "approachTimeHrs": 2,
+    "recommendedStart": "Pre-dawn (roughly 5:00-6:30 AM) for single-day attempts, to allow enough daylight for route-finding on the ridge"
+   },
+   "itinerary": {
+    "cal": "Commonly done either as a long single day (~13-14 hrs car-to-car) from Easy Pass, or as a 2-day trip:",
+    "days": [
+     {
+      "n": 1,
+      "note": "Approach via Easy Pass and Fisher Creek to a high camp (~6,700 ft) on Mesahchie's south shoulder",
+      "hours": null,
+      "miles": null,
+      "title": "Day 1",
+      "gainFt": null,
+      "lossFt": null,
+      "packLb": null,
+      "schedule": [],
+      "objective": ""
+     },
+     {
+      "n": 2,
+      "note": "Traverse Mesahchie-Katsuk-Kimtah-Cosho and descend to the Fisher Creek trail.",
+      "hours": null,
+      "miles": null,
+      "title": "Day 2",
+      "gainFt": null,
+      "lossFt": null,
+      "packLb": null,
+      "schedule": [],
+      "objective": ""
+     }
+    ]
+   }
+  },
+  "after": {
+   "timing": {
+    "totalHrs": 16,
+    "summitTimeHrs": 5.5,
+    "descentTimeHrs": 5.5,
+    "approachTimeHrs": 5,
+    "recommendedStart": "Pre-dawn (roughly 5:00-6:30 AM) for single-day attempts, to allow enough daylight for route-finding on the ridge"
+   },
+   "itinerary": {
+    "cal": "Commonly done either as a long single day (~13-14 hrs car-to-car) from Easy Pass, or as a 2-day trip:",
+    "days": [
+     {
+      "n": 1,
+      "note": "Approach via Easy Pass and Fisher Creek to a high camp (~6,700 ft) on Mesahchie's south shoulder",
+      "hours": 5,
+      "miles": null,
+      "title": "Day 1",
+      "gainFt": null,
+      "lossFt": null,
+      "packLb": null,
+      "schedule": [],
+      "objective": ""
+     },
+     {
+      "n": 2,
+      "note": "Traverse Mesahchie-Katsuk-Kimtah-Cosho and descend to the Fisher Creek trail.",
+      "hours": 11,
+      "miles": null,
+      "title": "Day 2",
+      "gainFt": null,
+      "lossFt": null,
+      "packLb": null,
+      "schedule": [],
+      "objective": ""
+     }
+    ]
+   }
+  }
+ },
+ {
+  "id": "wa_mount_challenger_challenger_glacier",
+  "before": {
+   "timing": {
+    "totalHrs": 26,
+    "summitTimeHrs": 11,
+    "descentTimeHrs": 7.5,
+    "approachTimeHrs": 7.5,
+    "recommendedStart": "7:00 AM from camp",
+    "sectionBreakdown": [
+     {
+      "hrs": 7.5,
+      "note": "From the Hannegan Pass trailhead, climb to Hannegan Pass (~5,000 ft), then drop roughly 2,500 ft into the Chilliwack River valley before re-climbing to camp at Whatcom Pass. Long d…",
+      "fromTo": "Approach to Whatcom Pass camp",
+      "section": "Approach"
+     },
+     {
+      "hrs": 11,
+      "note": "An early alpine start traverses below Whatcom Peak (dipping to ~5,300 ft) to Perfect Pass, then climbs the Challenger Glacier, crosses the bergschrund, and finishes with a short 5.…",
+      "fromTo": "Summit day via Perfect Pass and the Challenger Glacier",
+      "section": "Climb"
+     },
+     {
+      "hrs": 7.5,
+      "note": "Reverse the approach over Hannegan Pass and back down to the car. Parties commonly treat this as a full day given the up-and-down profile; many build in a spare contingency day bef…",
+      "fromTo": "Exit to trailhead",
+      "section": "Descent"
+     }
+    ]
+   },
+   "itinerary": {
+    "cal": "Best climbed June-Sept once the Chilliwack River ford, the Impasse and the Challenger Glacier are in reasonable shape; the Ross Lake Resort water taxi (used for the Beaver Pass variant) requires advance reservations.",
+    "days": [
+     {
+      "n": 1,
+      "note": "From the Hannegan Pass trailhead climb about 2,000 ft in 4 miles to Hannegan Pass, drop past Boundary Camp into the Chilliwack valley, and leave the trail where the faint, unsigned climbers' path for Easy Ridge fords the Chilliwack (log crossings here are unreliable). Climb steeply onto Easy Ridge and camp near the tarns on its crest. A long day with a loaded pack: about 8 hours on foot is typical.",
+      "hours": 8.5,
+      "miles": 12,
+      "title": "Hannegan Pass and the Chilliwack to Easy Ridge",
+      "gainFt": 4800,
+      "lossFt": 2300,
+      "packLb": 40,
+      "schedule": [],
+      "objective": "Camp on the crest of Easy Ridge"
+     },
+     {
+      "n": 2,
+      "note": "Follow the faint path along the crest over Easy Peak, which has more tent sites and a tarn, to the notch called the Impasse. Where the direct crossing is unsafe, drop off the crest around it and re-climb an exposed class 4 step beyond, then cross the snowfields to Perfect Pass. In fog, keep away from Whatcom Peak's summit wall, which steepens where the pass levels into a saddle.",
+      "hours": 7.5,
+      "miles": 3.5,
+      "title": "Easy Ridge over the Impasse to Perfect Pass",
+      "gainFt": 2000,
+      "lossFt": 1300,
+      "packLb": 40,
+      "schedule": [],
+      "objective": "Camp at Perfect Pass (about 6,300 ft)"
+     },
+     {
+      "n": 3,
+      "note": "Get down from Perfect Pass onto the Challenger Glacier (depending on melt-out, about 200 ft of wet class 4 downclimbing and sometimes a short rappel across a moat), rope up, cross the bergschrund and climb steepening snow to the summit rocks, watching for the moat below them. A class 3 scramble leads to the 50 ft, 5.5-5.7 summit pitch; rappel it once and reverse the glacier to Perfect Pass. Some parties pack up the same afternoon and recross the Impasse to shorten the walk out.",
+      "hours": null,
+      "miles": 3.5,
+      "title": "Summit day via the Challenger Glacier",
+      "gainFt": 2100,
+      "lossFt": 2100,
+      "packLb": 15,
+      "schedule": [],
+      "objective": "Climb Mount Challenger via the Challenger Glacier and return to camp"
+     },
+     {
+      "n": 4,
+      "note": "Reverse the approach: back along Easy Ridge, down to the Chilliwack ford, and up the long climb to Hannegan Pass before the easy descent to the car.",
+      "hours": 13,
+      "miles": 15.5,
+      "title": "Exit to trailhead",
+      "gainFt": 3500,
+      "lossFt": 6700,
+      "packLb": 40,
+      "schedule": [],
+      "objective": "Hike back out to the Hannegan Pass trailhead"
+     }
+    ],
+    "totalNote": "A remote 4-day trip via Easy Ridge (add a spare day for weather), with camps on Easy Ridge and at Perfect Pass and one glacier summit day from Perfect Pass."
+   }
+  },
+  "after": {
+   "timing": {
+    "totalHrs": 37,
+    "summitTimeHrs": 4,
+    "descentTimeHrs": 17,
+    "approachTimeHrs": 16,
+    "recommendedStart": "7:00 AM from camp",
+    "sectionBreakdown": [
+     {
+      "hrs": 16,
+      "note": "From the Hannegan Pass trailhead climb to Hannegan Pass, drop into the Chilliwack valley, ford the river and climb steeply onto Easy Ridge to camp. The second day follows the crest over Easy Peak and around the Impasse to camp at Perfect Pass.",
+      "fromTo": "Approach over Easy Ridge to the Perfect Pass camp",
+      "section": "Approach"
+     },
+     {
+      "hrs": 4,
+      "note": "An early start down from Perfect Pass onto the Challenger Glacier, roped across the bergschrund and up steepening snow to the summit rocks, then a class 3 scramble and a short 5.5-5.7 pitch to the top.",
+      "fromTo": "Perfect Pass up the Challenger Glacier to the summit",
+      "section": "Climb"
+     },
+     {
+      "hrs": 17,
+      "note": "Rappel the summit pitch and reverse the glacier to Perfect Pass, then pack up and retrace Easy Ridge, the Chilliwack ford and the long climb back over Hannegan Pass to the car. Many parties keep a spare day for weather.",
+      "fromTo": "Back to Perfect Pass, then Easy Ridge and out to the trailhead",
+      "section": "Descent"
+     }
+    ]
+   },
+   "itinerary": {
+    "cal": "Best climbed June-Sept once the Chilliwack River ford, the Impasse and the Challenger Glacier are in reasonable shape; the Ross Lake Resort water taxi (used for the Beaver Pass variant) requires advance reservations.",
+    "days": [
+     {
+      "n": 1,
+      "note": "From the Hannegan Pass trailhead climb about 2,000 ft in 4 miles to Hannegan Pass, drop past Boundary Camp into the Chilliwack valley, and leave the trail where the faint, unsigned climbers' path for Easy Ridge fords the Chilliwack (log crossings here are unreliable). Climb steeply onto Easy Ridge and camp near the tarns on its crest. A long day with a loaded pack: about 8 hours on foot is typical.",
+      "hours": 8.5,
+      "miles": 12,
+      "title": "Hannegan Pass and the Chilliwack to Easy Ridge",
+      "gainFt": 4800,
+      "lossFt": 2300,
+      "packLb": 40,
+      "schedule": [],
+      "objective": "Camp on the crest of Easy Ridge"
+     },
+     {
+      "n": 2,
+      "note": "Follow the faint path along the crest over Easy Peak, which has more tent sites and a tarn, to the notch called the Impasse. Where the direct crossing is unsafe, drop off the crest around it and re-climb an exposed class 4 step beyond, then cross the snowfields to Perfect Pass. In fog, keep away from Whatcom Peak's summit wall, which steepens where the pass levels into a saddle.",
+      "hours": 7.5,
+      "miles": 3.5,
+      "title": "Easy Ridge over the Impasse to Perfect Pass",
+      "gainFt": 2000,
+      "lossFt": 1300,
+      "packLb": 40,
+      "schedule": [],
+      "objective": "Camp at Perfect Pass (about 6,300 ft)"
+     },
+     {
+      "n": 3,
+      "note": "Get down from Perfect Pass onto the Challenger Glacier (depending on melt-out, about 200 ft of wet class 4 downclimbing and sometimes a short rappel across a moat), rope up, cross the bergschrund and climb steepening snow to the summit rocks, watching for the moat below them. A class 3 scramble leads to the 50 ft, 5.5-5.7 summit pitch; rappel it once and reverse the glacier to Perfect Pass. Some parties pack up the same afternoon and recross the Impasse to shorten the walk out.",
+      "hours": 8,
+      "miles": 3.5,
+      "title": "Summit day via the Challenger Glacier",
+      "gainFt": 2100,
+      "lossFt": 2100,
+      "packLb": 15,
+      "schedule": [],
+      "objective": "Climb Mount Challenger via the Challenger Glacier and return to camp"
+     },
+     {
+      "n": 4,
+      "note": "Reverse the approach: back along Easy Ridge, down to the Chilliwack ford, and up the long climb to Hannegan Pass before the easy descent to the car.",
+      "hours": 13,
+      "miles": 15.5,
+      "title": "Exit to trailhead",
+      "gainFt": 3500,
+      "lossFt": 6700,
+      "packLb": 40,
+      "schedule": [],
+      "objective": "Hike back out to the Hannegan Pass trailhead"
+     }
+    ],
+    "totalNote": "A remote 4-day trip via Easy Ridge (add a spare day for weather), with camps on Easy Ridge and at Perfect Pass and one glacier summit day from Perfect Pass."
+   }
+  }
+ },
+ {
+  "id": "wa_j_tnar",
+  "before": {
+   "timing": {
+    "totalHrs": 182.5,
+    "summitTimeHrs": 168,
+    "descentTimeHrs": 12,
+    "approachTimeHrs": 2.5,
+    "recommendedStart": "Early morning (before 6 AM) for multiday climbs to maximize daylight"
+   },
+   "itinerary": {
+    "days": [
+     {
+      "n": 1,
+      "note": "Hike Lake Serene trail (4.1 miles, 2000 ft gain, 2-2.5 hours), approach cirque (30 min), scout wall and bivy location (1-2 hours).",
+      "hours": null,
+      "miles": null,
+      "title": "Day 1",
+      "gainFt": null,
+      "lossFt": null,
+      "packLb": null,
+      "schedule": [],
+      "objective": ""
+     },
+     {
+      "n": 2,
+      "note": "5: Climbing days with portaledge camps. First ascensionists climbed Pitches 1-3 with bivy on Pitch 3. Pitch 4 (crux A3+) and Pitch 8 (Fang Roof) are highlights. Days 6-7: Finish upper pitches to summit, then full rappel descent (10-12 hours). Multiday success requires disciplined pacing and weather monitoring.",
+      "hours": null,
+      "miles": null,
+      "title": "Day 2",
+      "gainFt": null,
+      "lossFt": null,
+      "packLb": null,
+      "schedule": [],
+      "objective": ""
+     }
+    ]
+   }
+  },
+  "after": {
+   "timing": {
+    "totalHrs": 41,
+    "summitTimeHrs": 24,
+    "descentTimeHrs": 12,
+    "approachTimeHrs": 5,
+    "recommendedStart": "Early morning (before 6 AM) for multiday climbs to maximize daylight"
+   },
+   "itinerary": {
+    "days": [
+     {
+      "n": 1,
+      "note": "Hike the Lake Serene trail, about 4 miles and 2,000 ft in 2-2.5 hours, cross to the cirque below the wall in about half an hour, then scout the line and the bivy site.",
+      "hours": 5,
+      "miles": 4.5,
+      "title": "Lake Serene to the base of the wall",
+      "gainFt": 2000,
+      "lossFt": null,
+      "packLb": null,
+      "schedule": [],
+      "objective": "Bivy below the wall"
+     },
+     {
+      "n": 2,
+      "note": "Climb the lower pitches and set up the portaledge; the first ascent party slept on pitch 3.",
+      "hours": 12,
+      "miles": null,
+      "title": "Lower wall",
+      "gainFt": null,
+      "lossFt": null,
+      "packLb": null,
+      "schedule": [],
+      "objective": "Portaledge camp on the lower wall"
+     },
+     {
+      "n": 2,
+      "note": "Climb through the hard aid of the crux pitch and the roof higher up, then finish the upper pitches to the top.",
+      "hours": 12,
+      "miles": null,
+      "title": "Upper wall to the summit",
+      "gainFt": null,
+      "lossFt": null,
+      "packLb": null,
+      "schedule": [],
+      "objective": "Reach the summit"
+     },
+     {
+      "n": 2,
+      "note": "Rappel the full route, most of the day with haul bags, then walk back down the Lake Serene trail.",
+      "hours": 12,
+      "miles": 4.5,
+      "title": "Rappel and hike out",
+      "gainFt": 0,
+      "lossFt": null,
+      "packLb": null,
+      "schedule": [],
+      "objective": "Back to the Lake Serene trailhead"
+     }
+    ],
+    "totalNote": "About four days for a repeat party: a day to the base, two days on the wall and a day to rappel and walk out. The first ascent took seven."
+   }
+  }
+ }
+]
