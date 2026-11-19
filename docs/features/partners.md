@@ -15,10 +15,11 @@ whole guide feature on 2026-11-14 (owner). This doc covers the partners mode (`l
   title that STATES the search ("Climbers who climb where you do", "Climbers in Index", "Climbers who want
   Liberty Crack"; the distance is on its own pill, not repeated in the title), then — signed in — the **You card**, then ONE wrapping row of pills (`role="group"` *Narrow the list*): **Search by ▾** (the five modes, a native select drawn
   as a pill), **Distance ▾** (ONE pill: Anywhere · Within 10 / 25 / 50 / 100 / 200 / 500 mi of <zip> · Near me now, then the same radii "of you now" once located),
-  **Discipline ▾**, **Leads ▾** once a roped discipline (sport, trad, ice, mixed, aid) is picked, **Experience ▾**, the **Only women / men / non-binary
-  climbers** switch (`role="switch"`), and **More filters** on the example-list modes. The More filters panel opens right under the row (speed match,
-  available to climb, max distance and **Sort** for the examples — Sort only where there are two ways to sort, i.e. a seed coordinate; its badge
-  counts the panel filters). The pills are 44px on a phone and 36px on the website (#3156). The name
+  **Discipline ▾**, **Leads ▾** once a roped discipline (sport, trad, ice, mixed, aid) is picked, **Experience ▾**, and **More filters** (on the example-list
+  modes, and on every mode once you have set a gender). The More filters panel opens right under the row: first the **Only women / men / non-binary
+  climbers** switch (`role="switch"`; owner 2026-11-18, it was a pill of its own), then, on the example-list modes, speed match,
+  available to climb, max distance and **Sort** for the examples — Sort only where there are two ways to sort, i.e. a seed coordinate. Its badge
+  counts the panel filters that are on, the gender switch included. The pills are 44px on a phone and 36px on the website (#3156). The name
   search is an icon pill (*Name*, `aria-expanded`) beside the title that opens the box. Partner cards stay one per row (owner).
 - **The You card — how other climbers find you** (owner, climber walkthrough 2026-11-13): one compact card above the pills holding
   everything about YOUR visibility, so the pill row is only "who am I looking for". **My areas · N** (owner 2026-11-14: "a larger and more clear box",
@@ -72,7 +73,7 @@ whole guide feature on 2026-11-14 (owner). This doc covers the partners mode (`l
   out of every browse list (name search still finds them), and a viewer without one is told they are not shown.
   **Sending a request** to a real climber without your own photo is refused (`sendReq` in `ClimbMatch.jsx`: *Didn't send
   it — add a profile photo first*) and opens Edit profile on the photo.
-- **Only climbers of my gender** (0359, 2026-10-24): a switch under *Climbers on ClimbMatch*'s distance chips, worded by
+- **Only climbers of my gender** (0359, 2026-10-24): a switch in the *More filters* panel (since 2026-11-18), worded by
   your own gender (*Only women* / *Only men* / *Only non-binary climbers*), offered once you have set one (otherwise a line
   points to Edit profile). On, every real browse list shows only climbers who stated the same gender (`usePartnerGenders`, one
   read of `profiles.gender` for the rows on screen); someone who has not stated one is not shown. A loading or failed read
