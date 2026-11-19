@@ -1,0 +1,430 @@
+{
+ "wa_chunkyard_the_the_deconstructionist": {
+  "area": "wa_chunkyard_the",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/125984707/the-deconstructionist",
+    "https://www.mountainproject.com/area/108873653/the-chunkyard",
+    "https://www.mountainproject.com/route/112180669/bite-sized-chunk",
+    "https://www.openstreetmap.org/way/453131149",
+    "https://geodataservices.wdfw.wa.gov/arcgis/rest/services/WP_Misc/DNR_ForestFireProtectionAssessment/MapServer/0",
+    "https://geodataservices.wdfw.wa.gov/arcgis/rest/services/WP_RealEstate/WildlifeAreas/MapServer/0",
+    "https://wdfw.wa.gov/places-to-go/wildlife-areas/oak-creek-wildlife-area-unit",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.11a",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/125984707/the-deconstructionist",
+      "fact": "5.11a YDS, Sport",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Andy Fitz 2024",
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/125984707/the-deconstructionist",
+      "fact": "FA: Andy Fitz, 2024",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_chunkyard_the_the_deconstructionist",
+    "column": "bolts",
+    "from": null,
+    "to": 9,
+    "why": "bolts empty. MP states 9 bolts (stored detailed_rack already says nine bolts). Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/125984707/the-deconstructionist"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_chunkyard_the_the_deconstructionist",
+    "column": "anchor",
+    "from": null,
+    "to": "Two-bolt anchor",
+    "why": "anchor empty. MP states a 2-bolt anchor set up for lowering. Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/125984707/the-deconstructionist"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_chunkyard_the_the_deconstructionist",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Washington Department of Fish and Wildlife (Oak Creek Wildlife Area)",
+     "parking_pass": "Discover Pass or WDFW Vehicle Access Pass in the wildlife area lot"
+    },
+    "why": "access is empty. The Chunkyard sits just east of Moon Rocks; every node of the OSM cliff \"Moon Rocks\" (way 453131149) and points 500 m east of it fall inside a WDFW-OWNED LAND parcel (Oak Creek, ObjectID 4085, 247.17 ac) in WDFW's DFWOwnedParcels layer. WDFW Oak Creek unit page: a Discover Pass is required on WDFW lands; a Vehicle Access Pass may be used instead. USFS ownership layer returns no National Forest land there. Object copied field for field from the LIVE value on wa_bridger / wa_orange_sunshine (Royal Columns, batches G/L); no sibling at this crag has access yet. official-1, expires 2027-11-18.",
+    "evidence": [
+     "https://geodataservices.wdfw.wa.gov/arcgis/rest/services/WP_Misc/DNR_ForestFireProtectionAssessment/MapServer/0",
+     "https://geodataservices.wdfw.wa.gov/arcgis/rest/services/WP_RealEstate/WildlifeAreas/MapServer/0",
+     "https://wdfw.wa.gov/places-to-go/wildlife-areas/oak-creek-wildlife-area-unit",
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_chunkyard_the_the_deconstructionist",
+    "column": "permit",
+    "from": null,
+    "to": "A Discover Pass, or a WDFW Vehicle Access Pass, is needed to park in the Oak Creek Wildlife Area lot.",
+    "why": "permit is empty. Same official WDFW pages; same LIVE string as wa_bridger / wa_orange_sunshine. official-1, expires 2027-11-18.",
+    "evidence": [
+     "https://wdfw.wa.gov/places-to-go/wildlife-areas/oak-creek-wildlife-area-unit",
+     "https://geodataservices.wdfw.wa.gov/arcgis/rest/services/WP_Misc/DNR_ForestFireProtectionAssessment/MapServer/0"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "Grade from MP only: theCrag returned Forbidden in Chrome, no other open page lists this 2024 route. FA (Andy Fitz 2024) is MP-only, recorded unconfirmed. length_m stays null (MP gives none); pitches 1 kept (MP gives none, but a 9-bolt single lower-off line). Row lat/lng (46.71486,-120.86458) is the MP coordinate, 91 m from the OSM Moon Rocks cliff; not evidence, left alone. CATALOG DEFECT (area pin): areas.wa_chunkyard_the lat/lng 46.68425,-120.95838 is 7.8 km WSW of the OSM Moon Rocks cliff, which MP puts right beside the Chunkyard; reported, not moved. Eleven Chunkyard siblings (wa_chunk_in_the_trunk, wa_bite_your_tongue, wa_salvaged, wa_hidden_in_plain_view, wa_superchunk, wa_chunked_and_formed, wa_a_chunk_is_blown, wa_yellow_bell, wa_arrowleaf, wa_deadbeat_descendant, wa_bite_sized_chunk) store pitches 0, and wa_chunk_in_the_trunk stores 5.10a where MP lists 5.10a/b — not in this batch. Parking pin held: MP gives only \"via the Moon Rocks main trail\", no lot. Closure: WDFW's Oak Creek unit page bars rock climbing near nesting golden eagles from Feb 1 until nesting ends (boundary posted) and names no cliff; MP shows no closure for the Chunkyard. No closure text proposed."
+ },
+ "wa_bend_center_riptide": {
+  "area": "wa_bend_center",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/107952708/riptide",
+    "https://www.mountainproject.com/area/105929563/bend-center",
+    "https://www.mountainproject.com/area/105929507/the-bend",
+    "https://www.mountaineers.org/activities/routes-places/tieton-river-the-bend",
+    "https://www.openstreetmap.org/way/688667624",
+    "https://geodataservices.wdfw.wa.gov/arcgis/rest/services/WP_Misc/DNR_ForestFireProtectionAssessment/MapServer/0",
+    "https://geodataservices.wdfw.wa.gov/arcgis/rest/services/WP_RealEstate/WildlifeAreas/MapServer/0",
+    "https://wdfw.wa.gov/places-to-go/wildlife-areas/oak-creek-wildlife-area-unit",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.9",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107952708/riptide",
+      "fact": "5.9 YDS, Trad",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "length_m",
+    "value": 43,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107952708/riptide",
+      "fact": "140 ft (42 m)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_bend_center_riptide",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Washington Department of Fish and Wildlife (Oak Creek Wildlife Area)",
+     "parking_pass": "Discover Pass or WDFW Vehicle Access Pass in the wildlife area lot"
+    },
+    "why": "access is empty. Every node of the OSM cliff \"The Bend\" (way 688667624, 46.7165-46.7182 N) falls inside a WDFW-OWNED LAND parcel (Oak Creek, ObjectID 5448, 160.54 ac) in WDFW's DFWOwnedParcels layer, and inside the Oak Creek unit of WDFW's wildlife-area layer. WDFW Oak Creek unit page: a Discover Pass is required on WDFW lands; a Vehicle Access Pass may be used instead. USFS ownership layer returns no National Forest land there. Object copied field for field from the LIVE value on wa_bridger / wa_orange_sunshine (Royal Columns, batches G/L); no sibling at this crag has access yet. official-1, expires 2027-11-18.",
+    "evidence": [
+     "https://geodataservices.wdfw.wa.gov/arcgis/rest/services/WP_Misc/DNR_ForestFireProtectionAssessment/MapServer/0",
+     "https://geodataservices.wdfw.wa.gov/arcgis/rest/services/WP_RealEstate/WildlifeAreas/MapServer/0",
+     "https://wdfw.wa.gov/places-to-go/wildlife-areas/oak-creek-wildlife-area-unit",
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_bend_center_riptide",
+    "column": "permit",
+    "from": null,
+    "to": "A Discover Pass, or a WDFW Vehicle Access Pass, is needed to park in the Oak Creek Wildlife Area lot.",
+    "why": "permit is empty. Same official WDFW pages; same LIVE string as wa_bridger / wa_orange_sunshine. official-1, expires 2027-11-18.",
+    "evidence": [
+     "https://wdfw.wa.gov/places-to-go/wildlife-areas/oak-creek-wildlife-area-unit",
+     "https://geodataservices.wdfw.wa.gov/arcgis/rest/services/WP_Misc/DNR_ForestFireProtectionAssessment/MapServer/0"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "FA held (MP only, never set from MP alone): Jim Matthews / Mike Lasater, June 2012. MP: anchor on top plus a second rap anchor ~90 ft down, two 60 m raps to the ground; may start from the ground below Ed's Jam or from the class 3 ramp ledge, so 1 vs 2 pitches is unclear; pitches left at 1. Rack per MP: one set of nuts, double cams to 0.75 Camalot, one #1 (rack not written: paragraph field, no prose this pass). Grade and length from MP only: theCrag returned Forbidden in Chrome; The Mountaineers' Bend page lists no routes (it does name Oak Creek Wildlife Area as land manager and a Discover Pass, consistent with WDFW); four chossclimbers Bend trip reports name none of these routes. pitches 1 kept: MP states no pitch count. Held, not written: WDFW's Oak Creek unit page bars rock climbing near nesting golden eagles from Feb 1 until nesting ends (boundary posted in the field) but names no cliff; MP marks the Bend \"closed (2021) due to nesting eagles\" with no end date. No official page ties a closure to this crag now, so no closure text is proposed. Parking pin held: MP says park at the gravel lot by the Quonset hut and cross the Tieton on the suspension footbridge, then walk west on the Tieton Nature Trail; which OSM lot that is (the Royal Columns lot, way 446937772, vs the WDFW \"Oak Creek Wildlife Area\" lot, way 446939272, ~250 m N of the cliff across the river) is an inference, so no pin is proposed."
+ },
+ "wa_bend_center_fat_bastard": {
+  "area": "wa_bend_center",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/119474865/fat-bastard",
+    "https://www.mountainproject.com/area/105929563/bend-center",
+    "https://www.mountainproject.com/area/105929507/the-bend",
+    "https://www.mountaineers.org/activities/routes-places/tieton-river-the-bend",
+    "https://www.openstreetmap.org/way/688667624",
+    "https://geodataservices.wdfw.wa.gov/arcgis/rest/services/WP_Misc/DNR_ForestFireProtectionAssessment/MapServer/0",
+    "https://geodataservices.wdfw.wa.gov/arcgis/rest/services/WP_RealEstate/WildlifeAreas/MapServer/0",
+    "https://wdfw.wa.gov/places-to-go/wildlife-areas/oak-creek-wildlife-area-unit",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.9",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119474865/fat-bastard",
+      "fact": "5.9 YDS, Trad",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "length_m",
+    "value": 30,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119474865/fat-bastard",
+      "fact": "100 ft (30 m)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_bend_center_fat_bastard",
+    "column": "anchor",
+    "from": null,
+    "to": "Bolted anchor with chains",
+    "why": "anchor empty. MP states a bolted anchor with chains. Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/119474865/fat-bastard"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_bend_center_fat_bastard",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Washington Department of Fish and Wildlife (Oak Creek Wildlife Area)",
+     "parking_pass": "Discover Pass or WDFW Vehicle Access Pass in the wildlife area lot"
+    },
+    "why": "access is empty. Every node of the OSM cliff \"The Bend\" (way 688667624, 46.7165-46.7182 N) falls inside a WDFW-OWNED LAND parcel (Oak Creek, ObjectID 5448, 160.54 ac) in WDFW's DFWOwnedParcels layer, and inside the Oak Creek unit of WDFW's wildlife-area layer. WDFW Oak Creek unit page: a Discover Pass is required on WDFW lands; a Vehicle Access Pass may be used instead. USFS ownership layer returns no National Forest land there. Object copied field for field from the LIVE value on wa_bridger / wa_orange_sunshine (Royal Columns, batches G/L); no sibling at this crag has access yet. official-1, expires 2027-11-18.",
+    "evidence": [
+     "https://geodataservices.wdfw.wa.gov/arcgis/rest/services/WP_Misc/DNR_ForestFireProtectionAssessment/MapServer/0",
+     "https://geodataservices.wdfw.wa.gov/arcgis/rest/services/WP_RealEstate/WildlifeAreas/MapServer/0",
+     "https://wdfw.wa.gov/places-to-go/wildlife-areas/oak-creek-wildlife-area-unit",
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_bend_center_fat_bastard",
+    "column": "permit",
+    "from": null,
+    "to": "A Discover Pass, or a WDFW Vehicle Access Pass, is needed to park in the Oak Creek Wildlife Area lot.",
+    "why": "permit is empty. Same official WDFW pages; same LIVE string as wa_bridger / wa_orange_sunshine. official-1, expires 2027-11-18.",
+    "evidence": [
+     "https://wdfw.wa.gov/places-to-go/wildlife-areas/oak-creek-wildlife-area-unit",
+     "https://geodataservices.wdfw.wa.gov/arcgis/rest/services/WP_Misc/DNR_ForestFireProtectionAssessment/MapServer/0"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "MP lists FA unknown. Wide crack left of MX; MP rack: singles to 3 in, doubles to 8 in (offwidth gear) — not written (paragraph). Grade and length from MP only: theCrag returned Forbidden in Chrome; The Mountaineers' Bend page lists no routes (it does name Oak Creek Wildlife Area as land manager and a Discover Pass, consistent with WDFW); four chossclimbers Bend trip reports name none of these routes. pitches 1 kept: MP states no pitch count. Held, not written: WDFW's Oak Creek unit page bars rock climbing near nesting golden eagles from Feb 1 until nesting ends (boundary posted in the field) but names no cliff; MP marks the Bend \"closed (2021) due to nesting eagles\" with no end date. No official page ties a closure to this crag now, so no closure text is proposed. Parking pin held: MP says park at the gravel lot by the Quonset hut and cross the Tieton on the suspension footbridge, then walk west on the Tieton Nature Trail; which OSM lot that is (the Royal Columns lot, way 446937772, vs the WDFW \"Oak Creek Wildlife Area\" lot, way 446939272, ~250 m N of the cliff across the river) is an inference, so no pin is proposed."
+ },
+ "wa_bend_center_stone_archer_1st_pitch_only": {
+  "area": "wa_bend_center",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/122959414/stone-archer-1st-pitch-only",
+    "https://www.mountainproject.com/area/105929563/bend-center",
+    "https://www.mountainproject.com/area/105929507/the-bend",
+    "https://www.mountaineers.org/activities/routes-places/tieton-river-the-bend",
+    "https://www.openstreetmap.org/way/688667624",
+    "https://geodataservices.wdfw.wa.gov/arcgis/rest/services/WP_Misc/DNR_ForestFireProtectionAssessment/MapServer/0",
+    "https://geodataservices.wdfw.wa.gov/arcgis/rest/services/WP_RealEstate/WildlifeAreas/MapServer/0",
+    "https://wdfw.wa.gov/places-to-go/wildlife-areas/oak-creek-wildlife-area-unit",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.9",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/122959414/stone-archer-1st-pitch-only",
+      "fact": "5.9 YDS, Trad",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "length_m",
+    "value": 18,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/122959414/stone-archer-1st-pitch-only",
+      "fact": "60 ft (18 m)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_bend_center_stone_archer_1st_pitch_only",
+    "column": "anchor",
+    "from": null,
+    "to": "Bolted anchor",
+    "why": "anchor empty. MP states a bolted anchor (webbing and two lockers as of Aug 2022). Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/122959414/stone-archer-1st-pitch-only"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_bend_center_stone_archer_1st_pitch_only",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Washington Department of Fish and Wildlife (Oak Creek Wildlife Area)",
+     "parking_pass": "Discover Pass or WDFW Vehicle Access Pass in the wildlife area lot"
+    },
+    "why": "access is empty. Every node of the OSM cliff \"The Bend\" (way 688667624, 46.7165-46.7182 N) falls inside a WDFW-OWNED LAND parcel (Oak Creek, ObjectID 5448, 160.54 ac) in WDFW's DFWOwnedParcels layer, and inside the Oak Creek unit of WDFW's wildlife-area layer. WDFW Oak Creek unit page: a Discover Pass is required on WDFW lands; a Vehicle Access Pass may be used instead. USFS ownership layer returns no National Forest land there. Object copied field for field from the LIVE value on wa_bridger / wa_orange_sunshine (Royal Columns, batches G/L); no sibling at this crag has access yet. official-1, expires 2027-11-18.",
+    "evidence": [
+     "https://geodataservices.wdfw.wa.gov/arcgis/rest/services/WP_Misc/DNR_ForestFireProtectionAssessment/MapServer/0",
+     "https://geodataservices.wdfw.wa.gov/arcgis/rest/services/WP_RealEstate/WildlifeAreas/MapServer/0",
+     "https://wdfw.wa.gov/places-to-go/wildlife-areas/oak-creek-wildlife-area-unit",
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_bend_center_stone_archer_1st_pitch_only",
+    "column": "permit",
+    "from": null,
+    "to": "A Discover Pass, or a WDFW Vehicle Access Pass, is needed to park in the Oak Creek Wildlife Area lot.",
+    "why": "permit is empty. Same official WDFW pages; same LIVE string as wa_bridger / wa_orange_sunshine. official-1, expires 2027-11-18.",
+    "evidence": [
+     "https://wdfw.wa.gov/places-to-go/wildlife-areas/oak-creek-wildlife-area-unit",
+     "https://geodataservices.wdfw.wa.gov/arcgis/rest/services/WP_Misc/DNR_ForestFireProtectionAssessment/MapServer/0"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "Duplicate check: NOT a duplicate. The catalog holds no other \"Stone Archer\" row anywhere (name search), and MP lists only this \"(1st Pitch Only)\" entry in Bend Center, Bend North and Bend West. It is a PARTIAL of a longer line that has no record in either place; the \"(1st Pitch Only)\" qualifier sits in the name. Reported for the owner (name/partial-route question), no fix proposed. FA held (MP only): Chuck Buzzard 1992. MP: #3 hand crack to fingers, then double cracks to the anchor; gear to 3 in. Grade and length from MP only: theCrag returned Forbidden in Chrome; The Mountaineers' Bend page lists no routes (it does name Oak Creek Wildlife Area as land manager and a Discover Pass, consistent with WDFW); four chossclimbers Bend trip reports name none of these routes. pitches 1 kept: MP states no pitch count. Held, not written: WDFW's Oak Creek unit page bars rock climbing near nesting golden eagles from Feb 1 until nesting ends (boundary posted in the field) but names no cliff; MP marks the Bend \"closed (2021) due to nesting eagles\" with no end date. No official page ties a closure to this crag now, so no closure text is proposed. Parking pin held: MP says park at the gravel lot by the Quonset hut and cross the Tieton on the suspension footbridge, then walk west on the Tieton Nature Trail; which OSM lot that is (the Royal Columns lot, way 446937772, vs the WDFW \"Oak Creek Wildlife Area\" lot, way 446939272, ~250 m N of the cliff across the river) is an inference, so no pin is proposed."
+ },
+ "wa_bend_center_janet_s_route": {
+  "area": "wa_bend_center",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/112012942/janets-route",
+    "https://www.mountainproject.com/area/105929563/bend-center",
+    "https://www.mountainproject.com/area/105929507/the-bend",
+    "https://www.mountaineers.org/activities/routes-places/tieton-river-the-bend",
+    "https://www.openstreetmap.org/way/688667624",
+    "https://geodataservices.wdfw.wa.gov/arcgis/rest/services/WP_Misc/DNR_ForestFireProtectionAssessment/MapServer/0",
+    "https://geodataservices.wdfw.wa.gov/arcgis/rest/services/WP_RealEstate/WildlifeAreas/MapServer/0",
+    "https://wdfw.wa.gov/places-to-go/wildlife-areas/oak-creek-wildlife-area-unit",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.9+",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112012942/janets-route",
+      "fact": "5.9+ YDS, Trad",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "length_m",
+    "value": 40,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112012942/janets-route",
+      "fact": "130 ft (39 m)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_bend_center_janet_s_route",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Washington Department of Fish and Wildlife (Oak Creek Wildlife Area)",
+     "parking_pass": "Discover Pass or WDFW Vehicle Access Pass in the wildlife area lot"
+    },
+    "why": "access is empty. Every node of the OSM cliff \"The Bend\" (way 688667624, 46.7165-46.7182 N) falls inside a WDFW-OWNED LAND parcel (Oak Creek, ObjectID 5448, 160.54 ac) in WDFW's DFWOwnedParcels layer, and inside the Oak Creek unit of WDFW's wildlife-area layer. WDFW Oak Creek unit page: a Discover Pass is required on WDFW lands; a Vehicle Access Pass may be used instead. USFS ownership layer returns no National Forest land there. Object copied field for field from the LIVE value on wa_bridger / wa_orange_sunshine (Royal Columns, batches G/L); no sibling at this crag has access yet. official-1, expires 2027-11-18.",
+    "evidence": [
+     "https://geodataservices.wdfw.wa.gov/arcgis/rest/services/WP_Misc/DNR_ForestFireProtectionAssessment/MapServer/0",
+     "https://geodataservices.wdfw.wa.gov/arcgis/rest/services/WP_RealEstate/WildlifeAreas/MapServer/0",
+     "https://wdfw.wa.gov/places-to-go/wildlife-areas/oak-creek-wildlife-area-unit",
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_bend_center_janet_s_route",
+    "column": "permit",
+    "from": null,
+    "to": "A Discover Pass, or a WDFW Vehicle Access Pass, is needed to park in the Oak Creek Wildlife Area lot.",
+    "why": "permit is empty. Same official WDFW pages; same LIVE string as wa_bridger / wa_orange_sunshine. official-1, expires 2027-11-18.",
+    "evidence": [
+     "https://wdfw.wa.gov/places-to-go/wildlife-areas/oak-creek-wildlife-area-unit",
+     "https://geodataservices.wdfw.wa.gov/arcgis/rest/services/WP_Misc/DNR_ForestFireProtectionAssessment/MapServer/0"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "FA held (MP only): Jim Matthews, John Stanfield 1995. Descent per MP: one 60 m rope reaches the newer midway rap station on Voice of the Whirlwind. MP places it right of Voice of the Whirlwind and left of \"Amigos\", a route with no Bend Center row in the catalog or on MP's Bend Center list. Rack per MP: double cams blue Alien to #3 (paragraph, not written). A search-engine summary claimed MP lists this at 5.8; the page itself says 5.9+, which matches the row. Grade and length from MP only: theCrag returned Forbidden in Chrome; The Mountaineers' Bend page lists no routes (it does name Oak Creek Wildlife Area as land manager and a Discover Pass, consistent with WDFW); four chossclimbers Bend trip reports name none of these routes. pitches 1 kept: MP states no pitch count. Held, not written: WDFW's Oak Creek unit page bars rock climbing near nesting golden eagles from Feb 1 until nesting ends (boundary posted in the field) but names no cliff; MP marks the Bend \"closed (2021) due to nesting eagles\" with no end date. No official page ties a closure to this crag now, so no closure text is proposed. Parking pin held: MP says park at the gravel lot by the Quonset hut and cross the Tieton on the suspension footbridge, then walk west on the Tieton Nature Trail; which OSM lot that is (the Royal Columns lot, way 446937772, vs the WDFW \"Oak Creek Wildlife Area\" lot, way 446939272, ~250 m N of the cliff across the river) is an inference, so no pin is proposed."
+ }
+}

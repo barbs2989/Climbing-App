@@ -1,0 +1,117 @@
+{
+ "note": "jsonb fixes, 2026-11-18",
+ "rollback": [
+  {
+   "table": "routes",
+   "id": "wa_beetle_bailey_slab_flying_salamanders_short",
+   "before": {
+    "access": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_tiki_heads_yellow_fever",
+   "before": {
+    "access": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_chunkyard_the_the_deconstructionist",
+   "before": {
+    "access": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_bend_center_riptide",
+   "before": {
+    "access": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_bend_center_fat_bastard",
+   "before": {
+    "access": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_bend_center_stone_archer_1st_pitch_only",
+   "before": {
+    "access": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_bend_center_janet_s_route",
+   "before": {
+    "access": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_blm_2",
+   "before": {
+    "access": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_winter_s_coat_of_armor",
+   "before": {
+    "access": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_human_foot",
+   "before": {
+    "access": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_cranium_teaser",
+   "before": {
+    "access": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_stumblesome_fridge",
+   "before": {
+    "access": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_z_crack_2",
+   "before": {
+    "access": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_dogleg_crack",
+   "before": {
+    "access": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_alphabet_soup",
+   "before": {
+    "access": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_jaws_of_life",
+   "before": {
+    "access": null
+   }
+  }
+ ]
+}
