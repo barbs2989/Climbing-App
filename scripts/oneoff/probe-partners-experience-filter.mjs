@@ -69,6 +69,10 @@ try {
   const grp = page.locator('[role="group"][aria-label="Filter by experience level"]');
   ok(await grp.count() === 1, "the panel opens under My areas and holds the experience group");
   ok((await grp.locator("button").allInnerTexts()).join("|") === "Any|" + LEVELS.join("|"), "chips: Any | " + LEVELS.join(" | "));
+  // The gender chips (#3603) share the panel: Show only first, Experience under it, both under My areas.
+  const gy = await page.locator('[role="group"][aria-label="Show only these genders"]').boundingBox(), ey = await grp.boundingBox();
+  ok(!!gy && !!ey && gy.y < ey.y, "Show only (gender) sits above Experience in the panel under My areas");
+  ok(await page.locator("button", { hasText: /^Speed match$/ }).count() === 1, "Speed match is in the panel under My areas too");
   const pressed = async () => grp.locator('button[aria-pressed="true"]').allInnerTexts();
   ok((await pressed()).join() === "Any", "Any is the pressed chip to start");
   await shot("2-panel-my-areas-390");
@@ -113,6 +117,15 @@ try {
   const bgOn = await disc.evaluate((e) => getComputedStyle(e).backgroundColor);
   const byBg = await by.evaluate((e) => getComputedStyle(e).backgroundColor);
   ok(bgOn !== bgOff && bgOn === byBg, "a set dropdown fills blue like the chosen Search by (" + bgOff + " → " + bgOn + ")");
+  // 7b. EVERY label fits its box: the two-across boxes are narrower than the pills were, and a select clips
+  // its text silently. Each option's text is measured in the select's own font against the room inside it.
+  const fit = async () => row.evaluate((el) => { const cv = document.createElement("canvas").getContext("2d"), out = []; el.querySelectorAll("select").forEach((s) => { const c = getComputedStyle(s); cv.font = c.fontWeight + " " + c.fontSize + " " + c.fontFamily; const room = s.clientWidth - parseFloat(c.paddingLeft) - parseFloat(c.paddingRight); [...s.options].filter((o) => !o.disabled).forEach((o) => { const w = cv.measureText(o.text).width; if (w > room) out.push(s.getAttribute("aria-label") + ": “" + o.text + "” needs " + Math.round(w) + "px, has " + Math.round(room)); }); }); el.querySelectorAll(":scope > button").forEach((b) => { if (b.scrollWidth > b.clientWidth) out.push("button “" + b.innerText.trim() + "” overflows"); }); return out; });
+  const clipped = await fit();
+  clipped.forEach((c) => note("CLIPPED " + c));
+  ok(clipped.length === 0, "every dropdown label fits its box at 390px, Leads shown (" + clipped.length + " clipped)");
+  const rowN = await row.evaluate((el) => el.children.length);
+  note("controls in the row with a roped discipline picked: " + rowN);
+  await row.scrollIntoViewIfNeeded(); await page.waitForTimeout(300);
   await shot("4-row-with-lead-390");
   await disc.selectOption("All");
   // 8. Desktop.
