@@ -29,7 +29,7 @@ const CASES = [
   // a comment. The guard correctly ignored it and the case read as a miss. Pick an anchor that is
   // genuinely between two sibling elements, or the case tests the opposite of what it claims.
   { file: "src/components/RoutePlanTab.tsx", name: "a NEW leaked comment elsewhere, in real children position",
-    edit: s => s.replace(">Recent tracks & trip reports</SL>{_tracksPanel}", ">Recent tracks & trip reports</SL>/* injected leak */{_tracksPanel}"),
+    edit: s => s.replace(">Recent logged climbs</SL>}{_tracksPanel}", ">Recent logged climbs</SL>}/* injected leak */{_tracksPanel}"),
     wantFail: true, want: /RoutePlanTab\.tsx:\d+ renders a comment/ },
 
   // Exercise the fail-closed path directly. Renaming the visitor key makes babel-traverse THROW
@@ -42,7 +42,7 @@ const CASES = [
   // Precision: one delimiter is not a comment. The guard requires BOTH, so real copy containing a
   // stray slash-star is left alone — flagging it would be flagging correct work.
   { file: "src/components/RoutePlanTab.tsx", name: "children text with only an opening /* and no closer must PASS",
-    edit: s => s.replace(">Recent tracks & trip reports</SL>{_tracksPanel}", ">Recent tracks & trip reports</SL>/* no closer here {_tracksPanel}"),
+    edit: s => s.replace(">Recent logged climbs</SL>}{_tracksPanel}", ">Recent logged climbs</SL>}/* no closer here {_tracksPanel}"),
     wantFail: false, want: /no comment is rendered as copy/ },
 ];
 

@@ -22,6 +22,16 @@ import Av from "../src/components/Av.tsx";
 import Chevron from "../src/components/Chevron.tsx";
 import Stars from "../src/components/Stars.tsx";
 
+/* A sport, trad, top-rope or boulder line has no recorded walk and no trip to report: what a climber leaves
+   on it is a LOGGED CLIMB (owner, 2026-11-18). So its list is "Recent logged climbs", built from the logs
+   alone: no seed tracks, no scout reports, each row naming its tick. Aid is a crag discipline too, but a
+   wall can carry an approach track, so it keeps the tracks heading. A walk-in recording a climber attached
+   to their log still shows on that log's row. */
+export const LOGGED_ONLY_CATS = ["sport", "trad", "toprope", "bouldering"];
+/* A conditions-only report (LogAscent's "I only scouted it") is not a climb. Its tick type is "Conditions";
+   `scoutOnly` alone is not proof, because hydrating your own logs marks any starless log scoutOnly. */
+export function isScoutReport(a) { return a.tickType === "Conditions" || (!!a.scoutOnly && !a.tickType); }
+
 // The first rows a page shows; the rest behind "Show N more".
 const FIRST = 3;
 const SEASON_TONE = { Winter: C.blue, Spring: C.green, Summer: C.amber, Fall: C.orange };
@@ -49,9 +59,9 @@ function outcomeOf(a) {
  * @param {{ reports: Array<any>, seedTracks?: Array<any> | null, tracks: Array<{id:string,user_id:string,date:string,stats:{km:number,gainFt:number|null,secs:number|null,timed:boolean},gpx:any}>,
  *   profiles: Record<string, any>, tracksLoading: boolean, tracksFailed: boolean, reportsFailed: boolean,
  *   shown: string[], colorOf: (id: string) => string|null, onToggle: (id: string) => void,
- *   onOpenReport?: ((report: any) => void) | null, onLog?: (() => void) | null, routeName: string, crag?: boolean }} props
+ *   onOpenReport?: ((report: any) => void) | null, onLog?: (() => void) | null, routeName: string, crag?: boolean, loggedOnly?: boolean }} props
  */
-export default function RouteTracksPanel({ reports, seedTracks, tracks, profiles, tracksLoading, tracksFailed, reportsFailed, shown, colorOf, onToggle, onOpenReport, onLog, routeName, crag }) {
+export default function RouteTracksPanel({ reports, seedTracks, tracks, profiles, tracksLoading, tracksFailed, reportsFailed, shown, colorOf, onToggle, onOpenReport, onLog, routeName, crag, loggedOnly }) {
   const [sort, setSort] = useState("latest");
   const [season, setSeason] = useState("all");
   const [openKey, setOpenKey] = useState(null);
@@ -62,7 +72,7 @@ export default function RouteTracksPanel({ reports, seedTracks, tracks, profiles
   const rows = useMemo(() => {
     const out = [], byLog = {}, byWho = {};
     (reports || []).forEach((a, i) => {
-      if (!a || a._anon || !a.date) return;
+      if (!a || a._anon || !a.date || (loggedOnly && isScoutReport(a))) return;
       const c2c = a.cond && a.cond.carToCarMin != null && a.cond.carToCarMin > 0 ? a.cond.carToCarMin * 60 : null;
       const row = { key: a._dbId != null ? "d" + a._dbId : a.id != null ? "s" + a.id : "i" + i, who: a.user || "A climber", avatar: a.avatar || "", date: a.date, report: a, c2cText: a.cond && a.cond.carToCar, secs: c2c, track: null, seedPts: null };
       out.push(row);
@@ -75,7 +85,7 @@ export default function RouteTracksPanel({ reports, seedTracks, tracks, profiles
       const p = profiles[t.user_id];
       out.push({ key: "t" + t.id, who: (p && pubName(p)) || "A climber", avatar: (p && p.avatar) || "", date: t.date, report: null, c2cText: null, secs: t.stats.secs, track: t, seedPts: null });
     });
-    (seedTracks || []).forEach((t, i) => {
+    (loggedOnly ? [] : seedTracks || []).forEach((t, i) => {
       if (!t || !t.date) return;
       const pts = Array.isArray(t.gpxPts) && t.gpxPts.length >= 2 ? t.gpxPts : null;
       const mine = byWho[(t.who || "") + "|" + t.date];
@@ -83,7 +93,7 @@ export default function RouteTracksPanel({ reports, seedTracks, tracks, profiles
       out.push({ key: "c" + i, who: t.who || "A climber", avatar: t.avatar || "", date: t.date, report: t.report ? { user: t.who, avatar: t.avatar, date: t.date, text: t.report } : null, seedOnly: true, c2cText: null, secs: null, track: null, seedPts: pts });
     });
     return out;
-  }, [reports, tracks, seedTracks, profiles]);
+  }, [reports, tracks, seedTracks, profiles, loggedOnly]);
 
   const sorts = crag ? TRACK_SORTS.filter((s) => s.id === "latest") : TRACK_SORTS;
   const sortNow = sorts.some((s) => s.id === sort) ? sort : "latest";
@@ -96,8 +106,8 @@ export default function RouteTracksPanel({ reports, seedTracks, tracks, profiles
 
   if (!rows.length) {
     if (reportsFailed) return <div style={{ fontSize: 12.5, color: C.amber, lineHeight: 1.5 }}>Trip reports couldn’t load. Pull to refresh, or try again later.</div>;
-    if (tracksLoading) return <LoadingRows C={C} label="Loading recent tracks and trip reports…"/>;
-    return <div style={{ fontSize: 12.5, color: C.textSub, background: C.card, border: `1px solid ${C.border}`, borderRadius: 12, padding: "11px 13px" }}>No recent tracks or trip reports yet — share one after you climb it.{onLog ? <> <button onClick={onLog} style={{ ...LINK, minHeight: 0 }}>Log this climb</button></> : null}{tracksFailed ? <div style={{ color: C.amber, marginTop: 6 }}>GPS tracks couldn’t load, so there may be some.</div> : null}</div>;
+    if (tracksLoading) return <LoadingRows C={C} label={loggedOnly ? "Loading recent logged climbs…" : "Loading recent tracks and trip reports…"}/>;
+    return <div style={{ fontSize: 12.5, color: C.textSub, background: C.card, border: `1px solid ${C.border}`, borderRadius: 12, padding: "11px 13px" }}>{loggedOnly ? "No logged climbs yet — log yours after you climb it." : "No recent tracks or trip reports yet — share one after you climb it."}{onLog ? <> <button onClick={onLog} style={{ ...LINK, minHeight: 0 }}>Log this climb</button></> : null}{tracksFailed ? <div style={{ color: C.amber, marginTop: 6 }}>GPS tracks couldn’t load, so there may be some.</div> : null}</div>;
   }
   const visible = all ? list : list.slice(0, FIRST);
   const more = list.length - FIRST;
@@ -146,7 +156,7 @@ export default function RouteTracksPanel({ reports, seedTracks, tracks, profiles
             </div>
             {op ? <div style={{ borderTop: `1px solid ${C.borderLight}`, padding: "9px 12px" }}>
               {a && a.text ? <div style={{ fontSize: 12.5, color: C.text, lineHeight: 1.55, fontStyle: "italic", marginBottom: 8, display: "-webkit-box", WebkitLineClamp: 6, WebkitBoxOrient: "vertical", overflow: "hidden" }}>{"“" + a.text + "”"}</div>
-                : a ? null : <div style={{ fontSize: 12.5, color: C.textSub, marginBottom: 8 }}>Their trip report is not shared with you, only the track.</div>}
+                : a ? (loggedOnly ? <div style={{ fontSize: 12, color: C.textMuted, lineHeight: 1.4, marginBottom: 8 }}>No notes with this log.</div> : null) : <div style={{ fontSize: 12.5, color: C.textSub, marginBottom: 8 }}>Their trip report is not shared with you, only the track.</div>}
               <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: 8 }}>
                 {canRead ? <button onClick={() => onOpenReport(a)} style={btn(false)}>Read the full report</button> : null}
                 {t ? <button onClick={() => onToggle(t.id)} disabled={!on && full} aria-pressed={on} aria-label={(on ? "Hide " : "Show ") + label + " on the map"} style={{ ...btn(on), opacity: !on && full ? 0.5 : 1, cursor: !on && full ? "default" : "pointer" }}>{on ? "On the map" : "Show on map"}</button> : null}
