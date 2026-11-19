@@ -1,10 +1,14 @@
 import { EditIconButton, CopyCoordButton, NO_PARKING_PIN_BUT_NOTE_LINE, NO_PARKING_PIN_LINE } from "../../lib/areaChrome";
-import { useState } from "react";
+import { lazy, Suspense, useState } from "react";
 import type { CSSProperties } from "react";
 import WalkInMap, { walkInPts } from "../../lib/WalkInMap.jsx";
 import { fmtTrailLen, trailLenM } from "../../lib/TrailDrawMap.jsx";
 import { MIN_RECORDED_PTS } from "../../lib/track.js";
 import type { C as Palette } from "../../ClimbMatchCore.jsx";
+
+// MapLibre is fetched only when a climber asks for 3D, as on the route and area maps.
+// Named apart from NearMePanel's own lazy Route3DView: the guards read both components as one file's code.
+const WalkIn3DView = lazy(() => import("../../lib/Route3DView.jsx"));
 
 export interface AreaGettingThereArea {
   name: string;
@@ -37,6 +41,7 @@ const FLAT_CLAMP_CHARS = 320, FLAT_CLAMP_PX = 108;
 // ── GETTING THERE: drive & park, walk in, and the maps links — the area's own columns only ──
 export default function AreaGettingThere({ area, C, onEdit, flat }: AreaGettingThereProps) {
   const [more, setMore] = useState(false);
+  const [view3d, setView3d] = useState(false);
   const note = area.parking_note && String(area.parking_note).trim();
   const walk = area.approach && String(area.approach).trim();
   const park = area.parking_lat != null && area.parking_lng != null && isFinite(Number(area.parking_lat)) && isFinite(Number(area.parking_lng)) ? { lat: Number(area.parking_lat), lng: Number(area.parking_lng) } : null;
@@ -74,9 +79,14 @@ export default function AreaGettingThere({ area, C, onEdit, flat }: AreaGettingT
     {pinMap && dest ? <div style={{ marginBottom: 10 }}><WalkInMap pts={[]} park={park} crag={crag} height={180} zoom={14} label={"Map of " + area.name + (park ? " with the parking pin (P)" : "")} /></div> : null}
     {trail ? <div style={{ marginBottom: 10 }}>
       <div style={lbl}>{"Trail to the crag · " + fmtTrailLen(trailLenM(trail))}</div>
-      <WalkInMap pts={trail} park={park} crag={crag} />
+      <WalkInMap pts={trail} park={park} crag={crag} on3d={() => setView3d(true)} />
       <div style={{ fontSize: 11.5, color: C.textMuted, lineHeight: 1.45, marginTop: 6 }}>{"From the parking (P) to the crag (C). " + (area.walkin_kind === "traced" ? "A climber traced it on the map; it is not a GPS recording. " : "") + "Every climb here shows it on its crag map."}</div>
     </div> : null}
+    {/* The walk in over the terrain: the same line and the same two pins as the flat map above, and the same
+        caveat when the line was traced rather than recorded. "P" and "C" are fixed letters, not data. */}
+    {trail && view3d ? <Suspense fallback={null}><WalkIn3DView title={area.name + " walk in"} onClose={() => setView3d(false)}
+      tracks={[{ id: "walkin", color: C.orange, label: "Trail to the crag" + (area.walkin_kind === "traced" ? " (traced on the map, not a GPS recording)" : ""), pts: trail }]}
+      waypoints={(park ? [{ lat: park.lat, lng: park.lng, name: area.parking_name && area.parking_name !== "Trailhead" ? area.parking_name : "Parking", color: C.blue, iconHtml: "P" }] : []).concat(crag ? [{ lat: crag.lat, lng: crag.lng, name: area.name, color: C.orange, iconHtml: "C" }] : [])} /></Suspense> : null}
     {dest ? <div>
       <div style={lbl}>{park ? "Directions to parking" : "Directions"}</div>
       {park ? null : <div style={{ fontSize: 11.5, color: C.textMuted, lineHeight: 1.45, marginBottom: 6 }}>{note ? NO_PARKING_PIN_BUT_NOTE_LINE : NO_PARKING_PIN_LINE}{onEdit ? <>{" "}<button onClick={() => onEdit("parking_pin")} style={pinLink}>Add the parking pin</button></> : null}</div>}
