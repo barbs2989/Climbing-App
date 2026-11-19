@@ -92,6 +92,25 @@ if (at0 >= 0) {
   if (!/import \{[^}]*\bisReloadPending\b[^}]*\} from "\.\/chunkReload\.js"/.test(bb) || guarded < 2) fail.push(`lib/backButton.js steps history (${backs} history.back() calls) without asking isReloadPending() in both its disarm and its unmount cleanup — a deploy reload is cancelled and the climber is left on the error card`);
 }
 
+// THE ENTRY BUNDLE itself can be the missing file (owner's Chrome, 2026-11-18: a page reused from the
+// HTTP cache named an entry a second deploy had deleted; the splash spun for good). Everything above
+// lives INSIDE that bundle, so index.html must carry its own classic-script fallback, BEFORE the entry.
+{
+  const html = read("index.html");
+  const entry = html.indexOf('<script type="module"');
+  const inline = [...html.matchAll(/<script>([\s\S]*?)<\/script>/g)].find((m) => m.index < entry && /addEventListener\("error"/.test(m[1]));
+  if (entry < 0) fail.push("index.html has no module entry script — update this check");
+  else if (!inline) fail.push("index.html has no classic inline script listening for \"error\" before the module entry — a cached page naming an entry bundle a deploy removed leaves the splash spinning forever");
+  else {
+    const b = inline[1];
+    if (!/\},\s*true\s*\)/.test(b)) fail.push("index.html's boot fallback does not listen in the CAPTURE phase — a script's load error does not bubble, so it would never hear one");
+    if (!/tagName\s*!==\s*"SCRIPT"/.test(b)) fail.push("index.html's boot fallback no longer limits itself to a failed SCRIPT — any broken image would reload the app");
+    if (!/sessionStorage\.getItem\(/.test(b) || !/sessionStorage\.setItem\(/.test(b)) fail.push("index.html's boot fallback has no sessionStorage guard — an entry missing for any other reason would reload forever");
+    if (!/cache:\s*"reload"/.test(b)) fail.push("index.html's boot fallback no longer re-fetches the page past the HTTP cache before reloading — the reload can be handed the same stale page");
+    if (!/location\.reload\(\)/.test(b)) fail.push("index.html's boot fallback no longer reloads the page");
+  }
+}
+
 if (fail.length) {
   console.error("check:chunk-reload FAILED:\n" + fail.map((f) => "  - " + f).join("\n"));
   process.exit(1);
