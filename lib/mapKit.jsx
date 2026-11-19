@@ -549,6 +549,9 @@ export function useFollowMe(mapRef, { C, zoom = 15, onFix } = {}) {
   const [locating, setLocating] = useState(false);
   const [following, setFollowing] = useState(false);
   const [acc, setAcc] = useState(null);
+  // Where the dot is, for a caller that measures from the climber (the Near me list). Set by a quiet
+  // watch too, and only when it has moved ~30 m, so a list is not re-sorted on every GPS reading.
+  const [at, setAt] = useState(null);
   const [lost, setLost] = useState(false);
   const [err, setErr] = useState("");
   const watchRef = useRef(null), curRef = useRef(null), estRef = useRef(null), zoomPendingRef = useRef(false), autoRef = useRef(false), quietRef = useRef(false);
@@ -625,6 +628,7 @@ export function useFollowMe(mapRef, { C, zoom = 15, onFix } = {}) {
         const centre = !q && !centredRef.current;
         if (!q) { setLocating(false); setFollowing(true); setErr(""); centredRef.current = true; }
         setAcc(Number.isFinite(fix.acc) ? fix.acc : null);
+        setAt((p) => (p && Math.abs(p.lat - shown.lat) < 0.0003 && Math.abs(p.lng - shown.lng) < 0.0003 ? p : { lat: shown.lat, lng: shown.lng }));
         draw(shown, centre);
         if (onFixRef.current && !q) onFixRef.current(shown, centre);
       },
@@ -655,7 +659,7 @@ export function useFollowMe(mapRef, { C, zoom = 15, onFix } = {}) {
     } catch (e) {}
   };
   // `asking`: err is the browser's-question line, an instruction and not a failure, so a map can draw it calmly.
-  return { locate: () => locate(false), showDot, release, locating, following, acc, lost, err, asking: err === ASK_MSG };
+  return { locate: () => locate(false), showDot, release, locating, following, acc, lost, err, asking: err === ASK_MSG, at };
 }
 // The locate button's words. Once following, the label IS the accuracy, in the climber's units, so
 // "a little off" is something the screen states rather than something you discover at the crag.

@@ -299,12 +299,19 @@ export default function NearMePanel({ center0, areaType, name, onBack, onOpenAre
   // point the map opened at — otherwise, once you've panned somewhere else, the
   // "closest" areas at the top of the list stop matching what's actually
   // showing on screen, which reads as broken.
+  // THE MILES ON A ROW ARE FROM THE CLIMBER, OR THERE ARE NONE (owner, 2026-11-18: "fix distance before
+  // location is allowed"). They were measured from the middle of the map view, so before any fix the
+  // rows read "194 mi" from the middle of the country, and after a pan they were miles from nowhere
+  // the screen named. With a position the list is nearest-to-you first; without one it keeps the
+  // middle-of-the-view order and prints no distance.
+  const here = me.at;
   const viewCenter = useMemo(() => bounds ? { lat: (bounds.minLat + bounds.maxLat) / 2, lng: (bounds.minLng + bounds.maxLng) / 2 } : center, [bounds, center]);
   const sorted = useMemo(() => {
     if (!nearby) return [];
-    const withDist = viewCenter ? nearby.map(a => ({ ...a, _mi: haversineMi(viewCenter, a) })) : nearby.map(a => ({ ...a, _mi: null }));
-    return withDist.sort((a, b) => (a._mi ?? 1e9) - (b._mi ?? 1e9)).slice(0, 60);
-  }, [nearby, viewCenter]);
+    const from = here || viewCenter;
+    const withDist = nearby.map(a => ({ ...a, _key: from ? haversineMi(from, a) : 1e9, _mi: here ? haversineMi(here, a) : null }));
+    return withDist.sort((a, b) => a._key - b._key).slice(0, 60);
+  }, [nearby, viewCenter, here]);
   const discChip = (k: NearMePanelDisc | null, label: string, on: boolean) => <button key={k || "all"} onClick={() => setDisc(k)} aria-pressed={on} style={{ ...CHIP, border: "1px solid " + (on ? C.blue : C.border), background: on ? C.blueBg : C.surface, color: on ? C.onSolid : C.textSub, fontSize: 12.5, fontWeight: 700, cursor: "pointer", whiteSpace: "nowrap", flexShrink: 0 }}>{label}</button>;
 
   const searchUI = (
@@ -339,7 +346,7 @@ export default function NearMePanel({ center0, areaType, name, onBack, onOpenAre
     </div>
   );
   // The tapped circle's areas, nearest the middle of the map first.
-  const pickRows = pick ? pick.areas.map(a => ({ ...a, _mi: viewCenter ? haversineMi(viewCenter, a) : null })).sort((a, b) => (a._mi ?? 1e9) - (b._mi ?? 1e9)) : [];
+  const pickRows = pick ? pick.areas.map(a => { const from = here || viewCenter; return { ...a, _key: from ? haversineMi(from, a) : 1e9, _mi: here ? haversineMi(here, a) : null }; }).sort((a, b) => a._key - b._key) : [];
   const pickClimbs = pickRows.reduce((n, a) => n + (a.route_count || 0), 0);
   const pickUI = pick ? (
     <section aria-label={tx("Areas you tapped on the map")} style={{ marginTop: 8, flexShrink: 0, maxHeight: fullscreen ? "42%" : "none", display: "flex", flexDirection: "column", minHeight: 0, background: C.surface, border: "1px solid " + C.blue + "66", borderRadius: 12 }}>
