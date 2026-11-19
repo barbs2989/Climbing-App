@@ -304,6 +304,9 @@ export default function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, book
   // drew a crag like Jackson Falls climb-first while it loaded and then reordered it (2026-11-18).
   const listUp = formation || isLeaf;
   const section = (el: ReactNode) => <div style={areaSheet(C)}><div style={{ marginTop: -1 }}>{el}</div></div>;
+  // AREA FACTS sits directly under the description (owner, 2026-11-18: "area facts should go under description"),
+  // in both page orders. It was below the photos and Getting there.
+  const factsEl = formation ? <AreaFactsCard area={area} C={C} uElev={uElev} onEdit={editOn} loggedMonths={wide && logged.data ? logged.data : null} /> : null;
   // THE CLIMBS LIST: the loading and error lines, the summit briefing and (on a crag or wall) the rows with their
   // Filters and sorts. On a crag or wall it is a card right under the Route finder row (listUp, below).
   const listBlock = (<>
@@ -442,12 +445,14 @@ export default function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, book
           {listBlock}
         </> : section(<div style={{ padding: "4px 14px 12px" }}>{listBlock}</div>)}
         {showAbout ? section(<AboutCard area={area} C={C} onEdit={editOn} flat first />) : null}
+        {factsEl}
         {chartable && !(isLeaf && routes && routes.length < 3) ? section(<GradeSpreadDisclosure first stats={stats.data} loading={stats.isLoading} error={stats.error} C={C} discOptions={discOptions} onDisc={onFinder} onGrade={onGrade} />) : null}
         {classicsEl && !(isLeaf && routes && routes.length <= 5) ? section(classicsEl) : null}
       </> : <>
         {chartable ? section(<GradeSpreadDisclosure first stats={stats.data} loading={stats.isLoading} error={stats.error} C={C} discOptions={discOptions} onDisc={onFinder} onGrade={onGrade} />) : null}
         {phoneSearch ? section(<div style={{ padding: "12px 14px 4px" }}>{searchEl}</div>) : null}
         {showAbout ? section(<AboutCard area={area} C={C} onEdit={editOn} flat first />) : null}
+        {factsEl}
         {section(<AreaActionRow C={C} first routeCount={area.route_count} onFinder={() => onFinder()} inlineDiscs={wide && chartable ? inlineDiscs : []} myGrades={myGrades} onFindInline={fl => onFinder(fl)} objectivesHere={objectivesHere} onObjectives={onObjectives} onNear={onNear} />)}
         {/* DESKTOP: the area/route search sits directly under the Route finder · Objectives · Map row (owner,
             2026-11-14), not below the facts and Partners cards. The phone draws it under the grade spread above. */}
@@ -461,7 +466,6 @@ export default function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, book
           wall has somewhere you can actually park (check:area-surfaces reads this gate). */}
       {["crag", "peak", "wall"].includes(area.area_type) ? section(<AreaGettingThere area={area} C={C} onEdit={editOn} flat />) : null}
 
-      {formation ? <AreaFactsCard area={area} C={C} uElev={uElev} onEdit={editOn} loggedMonths={wide && logged.data ? logged.data : null} /> : null}
       {wide ? null : partnersEl}
 
       {listUp ? null : listBlock}
