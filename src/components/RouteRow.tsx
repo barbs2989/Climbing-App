@@ -14,6 +14,7 @@ export interface RouteRowRoute {
   stars?: number | null;
   pitches: number;
   discipline?: keyof typeof DL;
+  /** The wall position, left to right. The row does not print it; the lists that draw these rows sort by it. */
   sort_order?: number | null;
   /** The catalog's classic flag (routes.classic / area_classics). */
   classic?: boolean | null;
@@ -43,7 +44,6 @@ export interface RouteRowProps {
    glyph, a classic marker, and whether YOU have done or saved the climb. Done and saved come from
    ClimberCtx, which DbAreaBrowser already provides around every list that draws these rows (area page,
    finder, suggestions, objectives); outside it the defaults are empty and no marker shows. */
-const NO_POSITION: Record<string, true> = { bouldering: true, alpine: true, mountaineering: true, scrambling: true };
 export default function RouteRow({ r, onOpen, C, areaName, dense, savedMark = true, classicMark = true, highlight }: RouteRowProps) {
   const { completedIds, wishlist } = useContext(ClimberCtx);
   const name = highlight ? hlMatch(r.name || "", highlight) : r.name;
@@ -52,10 +52,9 @@ export default function RouteRow({ r, onOpen, C, areaName, dense, savedMark = tr
   // the stored count, exactly as the route page's Pitches stat shows it. A boulder has no pitches, and neither
   // does a scramble (never roped: owner note, 2026-10-25), so a scrambling row shows none here either.
   const pitches = r.pitches > 0 && r.discipline !== "bouldering" && r.discipline !== "scrambling" ?r.pitches + " pitch" + (r.pitches !== 1 ? "es" : "") : null;
-  // "#3 in this area" is a place along a crag's base, left to right. A boulder has none, and neither does a peak's
-  // route (owner, 2026-11-14: a peak's routes are faces and ridges, not a line along a cliff base), so on an alpine,
-  // mountaineering or scrambling row the number read as a ranking (2026-11-18).
-  const sub = [areaName || null, r.discipline ? (DL[r.discipline] || r.discipline) : null, pitches, r.sort_order != null && !NO_POSITION[r.discipline || ""] ? "#" + r.sort_order + " in this area" : null].filter(Boolean).join(" · ");
+  // No "#3 in this area" (owner, 2026-11-18): the wall position read as a ranking beside the stars. The area list is
+  // already in wall order, and NEXT DOOR on the route page names the climbs either side.
+  const sub = [areaName || null, r.discipline ? (DL[r.discipline] || r.discipline) : null, pitches].filter(Boolean).join(" · ");
   const id = r.id == null ? null : String(r.id);
   const done = id != null && !!completedIds && (completedIds.has(id) || completedIds.has(r.id as string | number));
   const saved = savedMark && !done && id != null && (wishlist || []).some(w => String(w) === id);

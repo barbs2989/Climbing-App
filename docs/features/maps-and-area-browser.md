@@ -67,8 +67,8 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
   offered only when at least one climb in the list has one; climbs without a position go last, by name, under a line counting them.
   A **boulder problem** is never part of the wall order (owner's note, 2026-10-21: "there's no left to right or right to left order ... with
   bouldering"): its stored `sort_order` (MP's) does not make a list offer Left → right, a problem sorts with the unplaced, by name, is not
-  counted as "no position on the wall yet", and its row prints no "#n in this area" (`RouteRow`). A list of problems sorts A → Z by default.
-  Nor does an alpine, mountaineering or scrambling row print "#n in this area" (2026-11-18): a peak's routes are faces and ridges, not a line along a cliff base.
+  counted as "no position on the wall yet". A list of problems sorts A → Z by default.
+  No row prints its wall position: the "#n in this area" sub-line was removed (owner, 2026-11-18) because beside the stars it read as a ranking. The position shows as the list's own order here and as NEXT DOOR on the route page.
   Neither import kept a position (the OpenBeta ETL dropped `metadata.leftRightIndex`; MP's route-finder CSV has none), so on 2026-10-21
   **1 of 314,360 routes** had one.
 - **Filters on a wall's list** (owner note, 2026-10-25): **Filters** over a leaf area's climb list narrows it by discipline (the disciplines the wall holds, plus All) and a star minimum (Any / 2+ / 3+ stars; a climb nobody has rated stays in). The button is drawn as the Route finder draws its Filters button (full width, `BTN_LG`, the text colour, a turning chevron), not as a chip -- as a muted chip it matched the sort chips under it and was missed (owner, 2026-11-05). It filters the rows `useAreaRoutes` already loaded, so it costs no query. The sort adds **By discipline** (one heading per discipline, in `DISCIPLINES` order, A → Z under each). Grade is deliberately NOT a sort key: `grade_num` is only comparable within one scale.
