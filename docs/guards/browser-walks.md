@@ -339,6 +339,14 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   management compared `ownerId` against the seed id `0`, so a DB group's own owner got no
   controls), and **#688** (four more, below). Same shape every time: *seed-id logic meeting a
   uuid.*
+  - **The fixture accounts carry a USERNAME** (2026-11-18). Since 0420/0432 an account with none
+    is sent to setup on every screen, so this walk (and `check:outage`'s healthy
+    run, which shares the fixture) measured the "Choose your username" step and reported 7
+    failures that read like crew and group bugs. Each name is `<first name>_<run stamp>`: the
+    first name keeps "robin" findable in `pubName`'s `@robin_…`, the stamp keeps the unique
+    index on `lower(username)` from colliding between parallel runs. Its `clickText` breaks a
+    length TIE toward a real control: the crew card's "Crew chat" button sits in a div of the
+    same text, which came first and pressed nothing.
   - Two accounts, created and destroyed **per run** (`scripts/lib/ui-fixture.mjs`). The
     second one is the point — a solo fixture reproduces none of the bugs above, which is why
     the 2026-08-05 `--signed-in` attempt was injection-tested, **missed**, and was reverted.
