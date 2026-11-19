@@ -227,7 +227,10 @@ export function WideSearch({ onOpenRoute, onOpenArea, onOpenFinder, width, left,
   /* LEFT (App passes the geometry's searchL, lined up with the nav strip's tabs) wins; without it the
      box is centred on the window as before. */
   const wrap = { position: "absolute", top: 12, left: left || "calc(50vw - (" + w + ") / 2)", width: w };
-  const panel = { position: "absolute", top: 46, left: 0, right: 0, background: C.surface, border: "1px solid " + C.border, borderRadius: 14, boxShadow: "0 18px 50px rgba(0,0,0,0.55)", padding: 6, maxHeight: "min(70vh, 520px)", overflowY: "auto", overscrollBehavior: "contain", zIndex: 2 };
+  /* THE AREAS LIST IS WIDER THAN ITS BOX (walkthrough 2026-11-18): each place row now carries a "View area"
+     button, and in the half-width box at 1024px that left the name ~45px, broken mid-word ("Yosem / ite").
+     The list reaches over the Routes box beside it (out of use while you type here); the Routes box keeps its width. */
+  const panel = { position: "absolute", top: 46, left: 0, ...(only === "places" ? { width: "max(100%, 420px)" } : { right: 0 }), background: C.surface, border: "1px solid " + C.border, borderRadius: 14, boxShadow: "0 18px 50px rgba(0,0,0,0.55)", padding: 6, maxHeight: "min(70vh, 520px)", overflowY: "auto", overscrollBehavior: "contain", zIndex: 2 };
   const plain = { ...ROW, minHeight: 44 };
   // A section's own state line, under its heading; a section with no rows to head gets a heading of its own.
   const note = (kind, st) => st === "error" ? <div key={"note-" + kind} role="alert" style={{ padding: "2px 10px 6px", fontSize: 12.5, color: C.amber }}>{kind === "place" ? "Couldn’t search places — try again." : "Couldn’t search climbs — try again."}</div>
