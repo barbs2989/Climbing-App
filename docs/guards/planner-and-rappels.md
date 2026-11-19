@@ -103,9 +103,11 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     the leg one way"). 16 rewritten 2026-11-18 (`audits/2026-11-18-trip-time-camp-summit-days.json`):
     Forbidden North Ridge 13 hr "up" was ridge + whole descent, now 5 up from the bivy; Eldorado East
     Ridge 7 was a round trip, now 3; Beckey-Davis, Boving-Christensen and Energizer Bunny had every
-    section label shifted one row. **STILL OPEN:** 87 rows — 24 researched but held (too few timed
-    reports: the session's web search budget ran out; their proposals are in the audit) and 63 never
-    researched. Re-run with the same brief per row; a row whose summit day already equals its leg is
+    section label shifted one row. 16 more the same day: Baker North Ridge's summit leg also held the
+    Coleman-Deming descent; Huckleberry's 1.3 hr descent could not cover camp plus a 7-mile walk out;
+    Klawatti's 1 hr was only the col-to-summit scramble; Torment-Forbidden's "~40 hr" was elapsed
+    time, now 30.5 on the move. **STILL OPEN:** 71 rows — 36 researched but held (no timed report of
+    the route, or too few; their proposals are in the audit) and 35 never researched. Re-run with the same brief per row; a row whose summit day already equals its leg is
     read as a round trip by the camp rule meanwhile.
   - **ACCURACY, measured 2026-11-18** (`audits/2026-11-18-multiday-estimate-accuracy.json`): on 15 of a
     28-route sample with reported leg times, the summit-day view's time up from camp was 0.98x reported
