@@ -1,7 +1,7 @@
 import fs from "fs";
 const { selectAll, requireServiceKey } = await import("file:///C:/Users/nate_/dev/Climbing-App/.claude/worktrees/map-pins-per-discipline/scripts/lib/supabase-env.mjs");
 const key = requireServiceKey();
-const want = { or_diamond_peak_southwest_ridge:"summit lake", wa_american_border_peak_northeast_face:"twin lakes", wa_chimney_peak_the_chimney:"graves creek", wa_dome_peak_indian_summer:"downey creek", wa_enchantment_peak_east_ridge:"stuart lake", wa_esmeralda_peaks_east_gully:"de roux", wa_baring_mountain_oatmeal_man:"barclay lake", wa_hozomeen_mountain_south_peak_north_ridge:"hozomeen", wa_hozomeen_mountain_south_peak_southeast_buttress:"hozomeen", wa_hozomeen_mountain_southwest_buttress:"hozomeen", wa_mount_adams_avalanche_white_salmon_glaciers:"cold springs", wa_mount_fury_east_direct_east_ridge:"ross dam", wa_this_my_friend:"stuart lake", wa_mount_triumph_west_route:"thornton", wa_north_star_mountain_cloudy_peak_traverse:"holden", wa_old_guard_peak_east_side_route:"cascade pass" };
+const want = { ny_couchsachraga_peak_via_santanoni_ridge:"upper works", ny_mount_marshall_herbert_brook_herd_path:"upper works", ny_mount_redfield_uphill_brook_herd_path:"upper works", ny_panther_peak_panther_brook_herd_path:"upper works" };
 const rows = await selectAll("routes", "*", `id=in.(${Object.keys(want).map(x => `"${x}"`).join(",")})`, { key, pageSize: 100 });
 for (const r of rows) { console.log("\n##", r.id, "->", want[r.id]);
   for (const [k, v] of Object.entries(r)) { if (v == null || /^(id|waypoints|gpx)/.test(k)) continue; const s = typeof v === "string" ? v : JSON.stringify(v); const low = s.toLowerCase();

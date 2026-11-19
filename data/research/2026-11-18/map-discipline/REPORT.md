@@ -145,3 +145,19 @@ point is a campground (Hozomeen x3, every Goodell route), or the owner reverted 
   (`batch-sib.json`, re-read): Cold Springs for Adams Avalanche/White Salmon Glaciers (USFS South Climb Trailhead
   16 m away cited as official evidence) and Ross Dam for Fury East Direct (sibling pin only; unconfirmed).
 - **Audit now:** SUMMIT_ONLY 259, NO_SUMMIT 40, CRAG_SUMMIT 0.
+
+## Official-dataset and Photon pass (2026-11-18)
+
+- `scripts/official-match.mjs`: matched held trailhead names against the USFS and NPS dumps within 30 km of
+  the peak, with every word of the name required. 2 matches, both rejected on reading.
+- `scripts/photon.mjs`: Photon (OSM) search for the 68 held routes that have no point, or only a
+  non-land-manager point. One query at a time, 1.5 s apart. 4 matches, all to OSM "Upper Works Parking Area"
+  (way 1082600068).
+- Read by hand (`scripts/ctx.mjs`): the Mount Marshall (Herbert Brook) and Mount Redfield (Uphill Brook)
+  routes follow the Calamity Brook trail, which leaves from the Upper Works lot. Both are **written**
+  (`batch-uw.json`, unconfirmed, verified on re-read). No other column on either row describes the drive.
+- Rejected: Panther Peak (Panther Brook) and Couchsachraga (Santanoni ridge). Their stored description says
+  "Starts at Upper Works", but the trails it names (Bradley Pond trail, Santanoni Express) start at the
+  separate Santanoni / Bradley Pond trailhead on the same road. The stored text contradicts itself; it needs
+  an owner or prose fix before a pin.
+- **Audit now:** SUMMIT_ONLY 258, NO_SUMMIT 40, CRAG_SUMMIT 0.
