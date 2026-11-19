@@ -75,5 +75,37 @@
    {"url":"https://www.peakbagger.com/climber/ascent.aspx?aid=3227755","retrieved_at":"2026-11-18","fact":"West ridge from a 1214 ft start (the gate): gain on way in 5787 ft."},
    {"url":"https://www.peakbagger.com/climber/ascent.aspx?aid=3190588","retrieved_at":"2026-11-18","fact":"From a 1206 ft start: gain on way in 6049 ft to South Twin."}
   ],
-  "note":"Also a trailhead split: 3,700 is right for Dailey Prairie, but the gate (~1,210 ft) is the start in use now (road behind it walked or biked). From the gate, 5787 and 6049 agree with each other (4.3%) and with stored 6100 (5.1% / 0.8%). Final = Wilson's route-named west-ridge figure; keeping 6100 is also within the rule."}
+  "note":"Also a trailhead split: 3,700 is right for Dailey Prairie, but the gate (~1,210 ft) is the start in use now (road behind it walked or biked). From the gate, 5787 and 6049 agree with each other (4.3%) and with stored 6100 (5.1% / 0.8%). Final = Wilson's route-named west-ridge figure; keeping 6100 is also within the rule."},
+ {"route_id":"wa_southeast_mox_peak_se_rib","field":"gain_ft","stored_value":7200,"found_value":7400,"verdict":"unresolved","final_value":null,"trailhead":"Depot Creek, via Chilliwack Lake Road (BC), rough 4x4 road",
+  "figures":[
+   {"value":7400,"trailhead":"Chilliwack Lake Rd / Depot Creek","url":"https://www.wta.org/go-hiking/hikes/mox-peaks-southeast-peak","one_way":true,"fact":"WTA Southeast Mox Peak: 7,400 ft gain, 15 mi one-way (prior pass)."},
+   {"value":7506,"trailhead":"Depot Creek Road 2600 ft","url":"https://www.peakbagger.com/climber/ascent.aspx?aid=341254","one_way":false,"fact":"Boos 2013, route West face, Total Elevation Gain 7506 ft incl. 800 extra, 18 mi round trip - trip total, not stated one-way; different route."},
+   {"value":11200,"trailhead":"Depot Creek","url":"https://trailcatjim.com/hard-mox-peak-easy-mox-peak-depot-creek-falls/","one_way":false,"fact":"Both Mox peaks plus side trip: '24 miles traveled; 11,200 feet gained & lost' - multi-peak round trip."},
+   {"value":8280,"trailhead":"not shown","url":"https://www.peakbagger.com/climber/PeakAscents.aspx?pid=1616&sort=AscentDate&u=ft&y=9999","one_way":false,"fact":"Lavigueure 2026, West Ridge (5.5), 8280 ft, 25.4 mi - likely whole-trip figure, different route."}
+  ],
+  "evidence":[],
+  "note":"No second one-way trailhead-to-summit gain found. Peakbagger entries for SE Mox name West face / West Ridge routes and give trip totals; Steven Song's Hard Mox page gives only segment metres; no 'SE Rib' page with a gain. 7,200 vs 7,400 differ only 2.7%, so they would agree if a second page existed. Access is from Canada on a rough HC 4x4 road."},
+ {"route_id":"wa_south_face_5","field":"gain_ft","stored_value":7291,"found_value":7500,"verdict":"unresolved","final_value":null,"trailhead":"Goodell Creek TH (600 ft) via Terror Basin",
+  "figures":[
+   {"value":7500,"trailhead":"Goodell Creek TH","url":"https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/inspiration-peak-south-face","one_way":true,"fact":"Mountaineers Inspiration Peak/South Face: Elevation Gain 7,500 ft, length 16.0 (prior pass)."},
+   {"value":9483,"trailhead":"bad data (start -1520 ft)","url":"https://www.peakbagger.com/climber/ascent.aspx?aid=2637962","one_way":false,"fact":"Rogerson 2024, South Face, 'Glee on day 1, Inspiration south face day 2' - multi-peak trip, invalid start elevation."},
+   {"value":4000,"trailhead":"Goodell Creek trail to Terror Basin","url":"https://spokalpine.com/2024/08/09/inspiration-peak-east-ridge-iii-5-9/","one_way":false,"fact":"'4000 feet of unrelentingly steep, forested hillside' - approach segment only, East Ridge trip."},
+   {"value":2132,"trailhead":"camp","url":"https://www.peakbagger.com/climber/PeakAscents.aspx?pid=38262&sort=AscentDate&u=ft&y=9999","one_way":false,"fact":"Pipolo 2024, East Ridge 5.9, 2132 ft, 3.0 mi - from Terror Basin camp, different route."}
+  ],
+  "evidence":[],
+  "note":"Abegg's Southern Pickets 2 report lists only elevations (Goodell Creek TH 600 ft, Terror Basin camp 5,800 ft, summit 7,880 ft+), no gain figure, and adding them up would be our own math. No other page states a TH-to-summit gain. 7,291 vs 7,500 differ 2.8%. Terror Basin needs an overnight permit and was closed in 2023 after a bear incident (spokalpine)."},
+ {"route_id":"wa_cadet_peak_scramble","field":"gain_ft","stored_value":4826,"found_value":5000,"verdict":"found_confirmed","final_value":5000,"trailhead":"Barlow Pass (~2,360 ft), via the closed Monte Cristo road and Glacier Basin",
+  "figures":[
+   {"value":5000,"trailhead":"Barlow Pass","url":"https://www.mountaineers.org/activities/routes-places/monte-cristo-barlow-pass-area/cadet-peak","one_way":true,"fact":"Mountaineers Cadet Peak: gain 5,000 ft (identical to WTA's 5,000, counted as one source)."},
+   {"value":4822,"trailhead":"start 2363 ft (Barlow Pass)","url":"https://www.peakbagger.com/climber/ascent.aspx?aid=1719805","one_way":true,"fact":"Wilson 2021: start trailhead 2363 ft, gain on way in 4822 ft, 18.1 mi; route not named."},
+   {"value":4799,"trailhead":"not shown","url":"https://www.peakbagger.com/climber/PeakAscents.aspx?pid=1809&sort=AscentDate&u=ft&y=9999","one_way":true,"fact":"Krystad 1989, South Slope, gain 4799 ft."},
+   {"value":4820,"trailhead":"not shown","url":"https://www.peakbagger.com/climber/PeakAscents.aspx?pid=1809&sort=AscentDate&u=ft&y=9999","one_way":true,"fact":"Bajwa 2025-07-26, gain 4820 ft."},
+   {"value":5217,"trailhead":"start 1968 ft (different, lower start)","url":"https://www.peakbagger.com/climber/ascent.aspx?aid=3313946","one_way":true,"fact":"Henriksen 2026: start 1968 ft, gain on way in 5217 ft, 15.8 mi - lower trailhead than Barlow Pass."},
+   {"value":4900,"trailhead":"Barlow Pass","url":"https://trailcatjim.com","one_way":false,"fact":"trailcatjim '4900 feet gained & lost' - whole outing (prior pass), not counted."}
+  ],
+  "evidence":[
+   {"url":"https://www.mountaineers.org/activities/routes-places/monte-cristo-barlow-pass-area/cadet-peak","retrieved_at":"2026-11-18","fact":"Mountaineers Cadet Peak scramble from Barlow Pass: elevation gain 5,000 ft."},
+   {"url":"https://www.peakbagger.com/climber/ascent.aspx?aid=1719805","retrieved_at":"2026-11-18","fact":"From a 2363 ft start (Barlow Pass): gain on way in 4822 ft to Cadet Peak."}
+  ],
+  "note":"4822 agrees with 5000 (3.6%) and is essentially stored 4826 (0.1%); the Peakbagger figures from Barlow Pass equal summit minus start (net). Final = the Mountaineers figure, which agrees. The Barlow Pass - Monte Cristo road is closed to cars (walk or bike ~4 mi each way)."}
 ]
