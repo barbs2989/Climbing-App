@@ -49,7 +49,7 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     crag routes (RouteDetail's `CRAG_CATS`); before, they fell into the alpine layout and a bare one
     printed "Season TBD". On every crag discipline a BARE route must gain no fact row and no
     "Season TBD"; an enriched one must show every row WITH its value (a label alone does not pass);
-    season reaches the header strap; and a crag route whose `pitch_detail`/`climate` cannot open a
+    the header strap prints NO season on any discipline (owner, 2026-11-18; until then this section asserted the season REACHED the strap) and a protection rating stored on the grade ("5.9 PG13") is its own pill right after the grade pill; and a crag route whose `pitch_detail`/`climate` cannot open a
     Plan tab shows them on Overview — and only there, so a route WITH a Plan tab must not repeat them.
     Injection-tested: removing the Season row, reverting the strap, and reverting `cragOnly` to three
     disciplines each fail by name.

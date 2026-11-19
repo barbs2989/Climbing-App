@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { DISC_LABELS as DL } from "../../lib/discLabels";
 import { clickable } from "../../lib/clickable";
 import { rowGrade } from "../../lib/areaBrowserShared.js";
+import { splitProtection } from "../../lib/grade.js";
 import { ClimberCtx } from "../../lib/climberCtx.js";
 import DiscIcon from "./DiscIcon.tsx";
 import type { CSSProperties } from "react";
@@ -55,7 +56,10 @@ export default function RouteRow({ r, onOpen, C, areaName, dense, savedMark = tr
   // "#3 in this area" is a place along a crag's base, left to right. A boulder has none, and neither does a peak's
   // route (owner, 2026-11-14: a peak's routes are faces and ridges, not a line along a cliff base), so on an alpine,
   // mountaineering or scrambling row the number read as a ranking (2026-11-18).
-  const sub = [areaName || null, r.discipline ? (DL[r.discipline] || r.discipline) : null, pitches, r.sort_order != null && !NO_POSITION[r.discipline || ""] ? "#" + r.sort_order + " in this area" : null].filter(Boolean).join(" · ");
+  // The protection rating (PG13, R, X) is stored welded onto the grade. It reads on the line under the name, beside
+  // the discipline, and the grade at the right is the grade alone (owner, 2026-11-18).
+  const { grade, prot } = splitProtection(rowGrade(r));
+  const sub = [areaName || null, r.discipline ? (DL[r.discipline] || r.discipline) : null, prot || null, pitches, r.sort_order != null && !NO_POSITION[r.discipline || ""] ? "#" + r.sort_order + " in this area" : null].filter(Boolean).join(" · ");
   const id = r.id == null ? null : String(r.id);
   const done = id != null && !!completedIds && (completedIds.has(id) || completedIds.has(r.id as string | number));
   const saved = savedMark && !done && id != null && (wishlist || []).some(w => String(w) === id);
@@ -76,7 +80,7 @@ export default function RouteRow({ r, onOpen, C, areaName, dense, savedMark = tr
         {classicMark && r.classic || done || saved ? <span style={{ display: "inline-flex", gap: 4, marginRight: 6, verticalAlign: "1px" }}>{marks}</span> : null}
         <span style={{ fontSize: 11, color: C.textMuted }}>{sub}</span>
       </div>
-      <span style={{ fontSize: 12, color: C.textMuted, flexShrink: 0, fontWeight: 700 }}>{rowGrade(r)}</span>
+      <span style={{ fontSize: 12, color: C.textMuted, flexShrink: 0, fontWeight: 700 }}>{grade}</span>
     </div>
   );
   return (
@@ -92,7 +96,7 @@ export default function RouteRow({ r, onOpen, C, areaName, dense, savedMark = tr
           <span style={{ overflowWrap: "anywhere" }}>{sub}</span>
         </div>
       </div>
-      <span style={{ fontSize: 12, color: C.textMuted, flexShrink: 0, maxWidth: "38%", fontWeight: 700, overflowWrap: "anywhere" }}>{rowGrade(r)}</span>
+      <span style={{ fontSize: 12, color: C.textMuted, flexShrink: 0, maxWidth: "38%", fontWeight: 700, overflowWrap: "anywhere" }}>{grade}</span>
     </div>
   );
 }

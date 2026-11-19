@@ -245,8 +245,8 @@ export default function TechStats({route,onEdit,part,onEditArea}: TechStatsProps
        pitons/bolt ladders already in place. Short stated values, so each is a facts row, not a tile. */
     [["Wet",route.wet],["Rock quality",route.rockQuality],["Fixed gear",route.fixedGear]].forEach(function(f){const v=String(f[1]||"").trim();if(v&&(_factSec||v.length<=160))facts.push([f[0] as string,v]);else if(v)_longOnFile.push(f[0] as string);});
     /* SEASON is the crag's, wall's or peak's unless the route states its own (owner, 2026-11-13: consolidate
-       to the crag, sub-area or peak). The route header already shows it (routeSeasonShort); the card said
-       "Not on file yet" beside it on 100% of crag routes. Up to four ancestors, as the header reads it. */
+       to the crag, sub-area or peak). The card said "Not on file yet" on 100% of crag routes while the area had one. Up to four ancestors. Since
+       2026-11-18 this row is where the page states the season: the header strap no longer prints it (owner). */
     const _sea=String(route.season||"").trim();const _arM=_ar?((_ar.seasonMonths&&_ar.seasonMonths.length)?_ar.seasonMonths:_ar.ancestorSeasonMonths):null;const _seaA=_sea?"":monthsLabel(_arM);if(_sea)facts.push(["Season",_sea]);else if(_seaA)facts.push(["Season",_seaA+" ("+(_ar&&_ar.seasonMonths&&_ar.seasonMonths.length?"the "+_arNoun+"'s season":"the area's season")+")"]);
     /* ROPE. Rope length, rope type and the ropework note were read only by RouteRackBox and RopeworkBox,
        which mount OFF the crag disciplines, so on a trad, sport or aid route all three reached no screen
