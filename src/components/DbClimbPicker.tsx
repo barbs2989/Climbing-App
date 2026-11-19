@@ -41,7 +41,7 @@ export interface DbClimbPickerProps {
   pickLabel?: string;
 }
 
-/** THE CLIMB PICKER for the log form, the lists manager, the partner search and the catch sheet: search every area, or drill country → state → crag → climb; a tapped climb comes back as a `dbRouteToCamel` row. */
+/** THE CLIMB PICKER for the log form, the lists manager and the partner search: search every area, or drill country → state → crag → climb; a tapped climb comes back as a `dbRouteToCamel` row. */
 export default function DbClimbPicker({onPickRoute,selectedIds,onViewRoute,start,onExit,pickLabel}: DbClimbPickerProps){
   /* `start` opens the drill-down AT a place (a search hit the climber tapped), and `onExit` is
      where its first ← goes: back to the results they tapped it from, not to the country list. */

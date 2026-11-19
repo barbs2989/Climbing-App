@@ -328,12 +328,12 @@ export default function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, book
           classics, the photos and Getting there were one bordered sheet split by hairlines. Each is drawn by
           section(), which clips the 1px top rule a section draws to divide itself inside a shared sheet. */}
       {chartable ? section(<GradeSpreadDisclosure first stats={stats.data} loading={stats.isLoading} error={stats.error} C={C} discOptions={discOptions} onDisc={onFinder} onGrade={onGrade} />) : null}
-      {phoneSearch ? section(<div style={{ padding: "12px 14px 0" }}>{searchEl}</div>) : null}
+      {phoneSearch ? section(<div style={{ padding: "12px 14px 4px" }}>{searchEl}</div>) : null}
       {showAbout ? section(<AboutCard area={area} C={C} onEdit={editOn} flat first />) : null}
       {section(<AreaActionRow C={C} first routeCount={area.route_count} onFinder={() => onFinder()} inlineDiscs={wide && chartable ? inlineDiscs : []} myGrades={myGrades} onFindInline={fl => onFinder(fl)} objectivesHere={objectivesHere} onObjectives={onObjectives} onNear={onNear} />)}
       {/* DESKTOP: the area/route search sits directly under the Route finder · Objectives · Map row (owner,
           2026-11-14), not below the facts and Partners cards. The phone draws it under the grade spread above. */}
-      {wide && searchEl ? section(<div style={{ padding: "12px 14px 0" }}>{searchEl}</div>) : null}
+      {wide && searchEl ? section(<div style={{ padding: "12px 14px 4px" }}>{searchEl}</div>) : null}
       {!leftEl && childRows ? section(<div style={{ padding: "12px 14px 4px" }}>{childList("section")}</div>) : null}
       {classicsEl ? section(classicsEl) : null}
       {area.area_type !== "world" && area.area_type !== "country" ? section(<AreaPhotoStrip area={{ id: String(area.id), name: area.name }} C={C} signedIn={!!(myId || uid)} onSignIn={onSignIn} onOpenRoute={r => onOpenRoute(r as unknown as RouteRowRoute)} />) : null}
