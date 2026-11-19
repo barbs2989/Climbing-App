@@ -1,0 +1,133 @@
+{
+ "wa_south_east_corner": {
+  "area": "wa_south_face_4",
+  "descent_text": null
+ },
+ "wa_jill_s_thrill": {
+  "area": "wa_south_face_4",
+  "fa": "FA '85 McGown, Opdycke, Jill Green",
+  "descent_text": null
+ },
+ "wa_free_for_all_direct": {
+  "area": "wa_south_face_4",
+  "descent_text": null
+ },
+ "wa_northwest_face_pioneer_iron_spike_route": {
+  "area": "wa_northwest_face",
+  "fa": null,
+  "descent_text": null,
+  "hazards": null
+ },
+ "wa_city_park": {
+  "area": "wa_dwarf_tossing_to_narrow_arrow",
+  "fa": "Roger Johnson, Richard Mathies, 1966 FFA: Todd Skinner, 1986"
+ },
+ "wa_chockstone_route": {
+  "area": "wa_north_early_winters_spire",
+  "waypoints": [
+   {
+    "lat": 48.518965,
+    "lng": -120.67436,
+    "elev": 5400,
+    "name": "Blue Lake TH",
+    "note": "SR 20 pullout about 1 mi west of Washington Pass.",
+    "type": "Trailhead",
+    "distMi": 0,
+    "directions": "Drive SR-20 (the North Cascades Highway) to the Blue Lake Trailhead on the south side of the highway just west of Washington Pass. The highway over the pass closes in winter. A Northwest Forest Pass or day fee is required to park."
+   },
+   {
+    "lat": null,
+    "lng": null,
+    "elev": 6900,
+    "name": "Spire col (gully base)",
+    "note": "Base of the gully between North and South Early Winters Spires, below the giant chockstones.",
+    "type": "Junction",
+    "distMi": null,
+    "directions": "Hike the Blue Lake Trail about a mile and a half to the signed Liberty Bell Trail #727 climbing-access junction, then take the climbers' path up through slabs, talus and heather into the basin below the west faces. Head for the foot of the huge cleft that splits North and South Early Winters Spires; this is the west-side gully, not the east-side couloir reached from the highway hairpin."
+   },
+   {
+    "lat": null,
+    "lng": null,
+    "elev": 7300,
+    "name": "Chockstone crux",
+    "note": "5.7 pitch bypassing the first giant chockstone on the left.",
+    "type": "Hazard",
+    "distMi": null,
+    "directions": "Climb a short step of low fifth-class slab and layback moves, then walk up the gully bed, taking cracks and ramps along its left edge, to below the first giant chockstone. Early in the season the gully can hold snow, so carry an axe and crampons."
+   },
+   {
+    "lat": 48.51291,
+    "lng": -120.65557,
+    "elev": 7760,
+    "name": "North Early Winters Spire",
+    "type": "Summit",
+    "distMi": 2.5,
+    "directions": "Pass the chockstone on the left over blocky ground to an exposed lieback and a delicate slab, then continue on good, bolted rock with a rightward traverse and finish up a loose gully and chimney onto the summit plateau."
+   }
+  ]
+ },
+ "wa_the_west_face": {
+  "area": "wa_north_early_winters_spire",
+  "waypoints": [
+   {
+    "lat": 48.518965,
+    "lng": -120.67436,
+    "elev": 5400,
+    "name": "Blue Lake TH",
+    "type": "Trailhead",
+    "distMi": 0,
+    "directions": "Drive SR-20 to the Blue Lake Trailhead, about 1 mile west of Washington Pass at roughly 5,400 ft, and park in the trailhead lot. This is the west-side start for the Liberty Bell Group; the Blue Lake Trail leaves from here and runs about a mile and a half to the climbers' path. Plan the trip for the June to September window."
+   },
+   {
+    "lat": null,
+    "lng": null,
+    "elev": 6900,
+    "name": "Base of West Face",
+    "note": "Low-angle cracks lead to a tree-topped chimney on the left side of the west face; shares the start with the NW Corner.",
+    "type": "Junction",
+    "distMi": null,
+    "directions": "Hike the Blue Lake Trail about 1.5 miles and turn left onto the climbers' trail marked by wooden posts into the basin below the Liberty Bell Group. Walk past South Early Winters Spire and the chockstone-filled chasm that splits the two spires, then traverse left along the base of North Early Winters Spire to the shared start with the Northwest Corner."
+   },
+   {
+    "lat": 48.51291,
+    "lng": -120.65557,
+    "elev": 7760,
+    "name": "North Early Winters Spire",
+    "type": "Summit",
+    "distMi": null,
+    "directions": "Climb the West Face from the shared start with the Northwest Corner: a dirty chimney to a sandy ledge, a steep right-facing corner, a lieback and undercling pitch, then the thin tips-crack crux, and finish on low-angle cracks with a friction-slab traverse right to the top."
+   }
+  ],
+  "road": {
+   "name": "Blue Lake Trailhead, SR-20, Washington Pass",
+   "status": "Paved highway parking at the Blue Lake Trailhead; no unpaved road driving required.",
+   "driveNote": "Roughly 3-3.5 hours from Seattle via SR-20 to the Washington Pass area.",
+   "seasonalGate": "SR-20 closes seasonally over Washington Pass due to avalanche danger (closed Dec 12, 2025-June 14, 2026 in the 2025-26 season, with exact dates varying by year)."
+  }
+ },
+ "wa_boving_roofs": {
+  "area": "wa_south_early_winters_spire",
+  "waypoints": [
+   {
+    "lat": 48.5191,
+    "lng": -120.6742,
+    "elev": 5400,
+    "name": "Blue Lake Trailhead",
+    "note": "Blue Lake Trail #314 trailhead on SR-20; shared approach for Liberty Bell and South Early Winters Spire (NW Forest Pass required).",
+    "type": "Trailhead",
+    "distMi": 0,
+    "directions": "Drive SR-20 (the North Cascades Highway) to the Blue Lake Trailhead on the south side of the highway just west of Washington Pass. The highway over the pass closes in winter. A Northwest Forest Pass or day fee is required to park."
+   },
+   {
+    "lat": 48.51217,
+    "lng": -120.65536,
+    "elev": 7807,
+    "name": "South Early Winters Spire",
+    "note": "True summit of South Early Winters Spire, between Liberty Bell and Blue Lake Peak.",
+    "type": "Summit",
+    "distMi": 2.3,
+    "directions": "Hike the Blue Lake Trail about 1.25 miles to the clearing where the main trail bends right toward the lake, and take the climbers' path up into the basin to the Y-shaped larch at the base of the Southwest Rib, left of the Southwest Couloir. Climb the first three pitches of the rib, go left at the ledge where the two stacked roofs come into view, pull through them, and finish up the remaining rib pitches to the summit."
+   }
+  ]
+ }
+}

@@ -119,8 +119,11 @@ export function WideSearch({ onOpenRoute, onOpenArea, onOpenFinder, width, left,
       if (slash && !document.querySelector('[aria-modal="true"]') && input.current) { e.preventDefault(); input.current.focus(); }
     };
     const away = e => { if (box.current && !box.current.contains(e.target)) setOpen(false); };
-    document.addEventListener("keydown", key); document.addEventListener("mousedown", away);
-    return () => { document.removeEventListener("keydown", key); document.removeEventListener("mousedown", away); };
+    /* FOCUS GOING ELSEWHERE CLOSES IT too (check, 2026-11-18): only a mousedown closed the list, so Tab
+       from Areas to Routes left both drop-downs open, one over the other. focusin, not blur: a click on
+       the list's heading or scrollbar blurs the input without focusing anything, and must not close it. */
+    document.addEventListener("keydown", key); document.addEventListener("mousedown", away); document.addEventListener("focusin", away);
+    return () => { document.removeEventListener("keydown", key); document.removeEventListener("mousedown", away); document.removeEventListener("focusin", away); };
   }, [wantPlaces]);
   useEffect(() => { setHi(0); }, [qq]);
   const seedHits = !USE_DB && qq && wantRoutes ? ROUTES.filter(r => r.name.toLowerCase().includes(qq.toLowerCase())).slice(0, 6) : [];
@@ -204,7 +207,7 @@ export function WideSearch({ onOpenRoute, onOpenArea, onOpenFinder, width, left,
          scrolls on its own, "Show more climbs" sat out of sight while namesakes in other states filled
          the view. */
       const sticky = h.what === "routes";
-      return <button key={"more-" + h.what} id={OPT + i} role="option" aria-selected={on} aria-disabled={h.state !== "more" || undefined} onMouseDown={e => e.preventDefault()} onMouseEnter={() => setHi(i)} onClick={click(h)} style={{ ...ROW, minHeight: 44, background: on ? C.card : sticky ? C.surface : "transparent", cursor: h.state === "more" ? "pointer" : "default", ...(sticky ? { position: "sticky", bottom: 0, zIndex: 1, boxShadow: "0 -6px 10px " + C.surface } : null) }}><ActionIcon name={h.state === "more" ? "more" : "search"} size={16} color={h.state === "more" ? C.blue : C.textMuted}/><span style={{ fontSize: 13.5, fontWeight: 700, color: h.state === "more" ? C.blue : C.textMuted }}>{label}</span></button>;
+      return <button key={"more-" + h.what} id={OPT + i} role="option" aria-selected={on} aria-disabled={h.state !== "more" || undefined} onMouseDown={e => e.preventDefault()} onMouseEnter={() => setHi(i)} onClick={click(h)} style={{ ...ROW, minHeight: 44, background: on ? C.card : sticky ? C.surface : "transparent", cursor: h.state === "more" ? "pointer" : "default", ...(sticky ? { position: "sticky", bottom: -6, borderRadius: "10px 10px 0 0", zIndex: 1, boxShadow: "0 -6px 10px " + C.surface } : null) }}>{/* bottom -6 = the panel's padding: at 0 the rows scrolled through a 6px strip UNDER the button (2026-11-18). */}<ActionIcon name={h.state === "more" ? "more" : "search"} size={16} color={h.state === "more" ? C.blue : C.textMuted}/><span style={{ fontSize: 13.5, fontWeight: 700, color: h.state === "more" ? C.blue : C.textMuted }}>{label}</span></button>;
     }
     const name = h.kind === "finder" ? h.t.label + " in " + h.scope.name : h.kind === "place" ? h.a.name : h.r.name;
     /* A climb row carries ITS discipline's glyph and colours its grade the same way (the competitor
