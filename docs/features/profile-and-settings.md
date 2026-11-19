@@ -171,7 +171,7 @@ profile can also open as `FullProfile` and `Resume` overlays from anywhere (part
 6. **Units / date**: `units` and `dateFmt` are `App` state; each render calls `__set_UNITS(units)` and `__set_DLOCALE(dateFmtToLocale(dateFmt))`
    so module-level `UNITS` / `DLOCALE` (read by formatters) follow. Stored on-device by `loadUnits`/`saveUnits` (`lib/units-pref.js`, key `climbmatch-units`)
    and `loadDateFmt`/`saveDateFmt` (`lib/date-pref.js`); `currentDateLocale()` reads it outside React.
-7. **Notification and browse switches** are device-local flag sets: `loadNotifPrefs`/`saveNotifPrefs` (`lib/notif-pref.js`, `climbmatch-notif-prefs`),
+7. **Notification and browse switches** are flag sets: `loadNotifPrefs`/`saveNotifPrefs` (`lib/notif-pref.js`, `climbmatch-notif-prefs`) — the notification switches ALSO follow a signed-in account since 0469 (`notification_state.prefs`, read and saved with the alerts read-state by `useMyNotificationState`/`saveMyNotificationState`; a switch the account saved wins over the device, and the device's are written up on first load),
    `visibleWhileBrowsingPref`/`saveVisibleWhileBrowsing` (`lib/browse-visibility-pref.js`), built on `lib/prefs.js` (`defineFlagSet`). Onboarding shown-once: `lib/onboard-pref.js`.
 8. **Server counts**: gone. `my_trust_counts` (0203) and its reader `useMyTrustCounts` were removed with belay catches (0417, 2026-11-12). A future per-user count RPC keys its query on the user only, never on another query's `dataUpdatedAt` — that fired the RPC on every logs refetch.
 
@@ -250,6 +250,6 @@ Real climbers, batch 3: the résumé header, export title and "hasn't shared" li
 ## 8. Known gaps
 - **No app store listing yet.** Rate app names a store only once `VITE_APP_STORE_ID` / `VITE_PLAY_STORE_ID` are set in the deploy env (`.github/workflows/deploy.yml`); until then ratings come only to the team. A new feedback note has no email alert, only the Review tile badge.
 - The email alert for a new accessibility report (`notify-accessibility-report`) sends nothing until `RESEND_API_KEY` is set (the company-email wait in pending actions); until then the Menu › Review tile badge is the only signal, and only while the owner has the app open.
-- Units, date format, notification and browse-visibility switches live in localStorage only (`lib/units-pref.js`, `lib/date-pref.js`, `lib/notif-pref.js`, `lib/browse-visibility-pref.js`): not synced across devices.
+- Units, date format and browse-visibility switches live in localStorage only (`lib/units-pref.js`, `lib/date-pref.js`, `lib/browse-visibility-pref.js`): not synced across devices. The notification switches (`lib/notif-pref.js`) sync through the account since 0469.
 - `saveProfile` PATCHes any object it is handed; safety depends on callers sending only loaded fields (enforced by `check:profile-edit-gate`, not by the function).
 - `ME.* = ...` mutation per render remains a second source of truth that the codebase asks not to extend.
