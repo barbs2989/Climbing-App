@@ -1,0 +1,453 @@
+{
+ "note": "Values replaced by the owner-approved batch-B fixes, 2026-11-18",
+ "rollback": [
+  {
+   "table": "routes",
+   "id": "wa_windward_direct",
+   "before": {
+    "pitches": 0
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_windward_direct",
+   "before": {
+    "bolts": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_windward_direct",
+   "before": {
+    "detailed_rack": "Quickdraws; some old bolts remain."
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_windward_direct",
+   "before": {
+    "permit": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_lightning_crack_3",
+   "before": {
+    "bolts": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_lightning_crack_3",
+   "before": {
+    "permit": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_austrian_slab",
+   "before": {
+    "pitches": 0
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_austrian_slab",
+   "before": {
+    "bolts": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_austrian_slab",
+   "before": {
+    "detailed_rack": "Draws, wires and small to mid-size cams (to roughly 1.5 in)."
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_austrian_slab",
+   "before": {
+    "permit": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_diagonal_direct",
+   "before": {
+    "pitches": 0
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_diagonal_direct",
+   "before": {
+    "bolts": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_diagonal_direct",
+   "before": {
+    "detailed_rack": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_diagonal_direct",
+   "before": {
+    "permit": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_martian_diagonal",
+   "before": {
+    "pitches": 0
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_martian_diagonal",
+   "before": {
+    "bolts": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_martian_diagonal",
+   "before": {
+    "permit": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_rpm",
+   "before": {
+    "pitches": 0
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_rpm",
+   "before": {
+    "permit": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_rpm",
+   "before": {
+    "disciplines": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_edge_of_space",
+   "before": {
+    "permit": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_edge_of_space",
+   "before": {
+    "disciplines": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_snow_creek_wall_tarkus",
+   "before": {
+    "permit": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_snow_creek_wall_tarkus",
+   "before": {
+    "disciplines": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_snow_creek_wall_grand_arch",
+   "before": {
+    "permit": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_snow_creek_wall_grand_arch",
+   "before": {
+    "disciplines": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_snow_creek_wall_april_fool_s_tower",
+   "before": {
+    "permit": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_snow_creek_wall_april_fool_s_tower",
+   "before": {
+    "disciplines": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_jiffy_pop",
+   "before": {
+    "pitches": 0
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_jiffy_pop",
+   "before": {
+    "length_m": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_jiffy_pop",
+   "before": {
+    "bolts": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_jiffy_pop",
+   "before": {
+    "anchor": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_jiffy_pop",
+   "before": {
+    "permit": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_underground_economy",
+   "before": {
+    "pitches": 0
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_underground_economy",
+   "before": {
+    "length_m": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_underground_economy",
+   "before": {
+    "bolts": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_underground_economy",
+   "before": {
+    "anchor": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_underground_economy",
+   "before": {
+    "permit": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_won_t_get_fooled_again",
+   "before": {
+    "pitches": 0
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_won_t_get_fooled_again",
+   "before": {
+    "length_m": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_won_t_get_fooled_again",
+   "before": {
+    "bolts": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_won_t_get_fooled_again",
+   "before": {
+    "anchor": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_won_t_get_fooled_again",
+   "before": {
+    "permit": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_repo_man",
+   "before": {
+    "pitches": 0
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_repo_man",
+   "before": {
+    "length_m": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_repo_man",
+   "before": {
+    "bolts": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_repo_man",
+   "before": {
+    "anchor": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_repo_man",
+   "before": {
+    "permit": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_chronic",
+   "before": {
+    "pitches": 0
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_chronic",
+   "before": {
+    "length_m": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_technorigine",
+   "before": {
+    "pitches": 0
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_technorigine",
+   "before": {
+    "length_m": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_technorigine",
+   "before": {
+    "bolts": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_propaganda",
+   "before": {
+    "grade": "5.12+"
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_propaganda",
+   "before": {
+    "grade_num": 12.75
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_propaganda",
+   "before": {
+    "pitches": 0
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_propaganda",
+   "before": {
+    "length_m": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_propaganda",
+   "before": {
+    "bolts": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_psychosomatic",
+   "before": {
+    "pitches": 0
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_psychosomatic",
+   "before": {
+    "length_m": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_psychosomatic",
+   "before": {
+    "bolts": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_psychosomatic",
+   "before": {
+    "anchor": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_world_wall_psycho_wussy",
+   "before": {
+    "bolts": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_world_wall_psycho_wussy",
+   "before": {
+    "anchor": null
+   }
+  }
+ ]
+}
