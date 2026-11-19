@@ -52,11 +52,14 @@
       html { -webkit-text-size-adjust: 100%; }
       * { -webkit-tap-highlight-color: transparent; }
       body { overscroll-behavior-y: none; }
-      /* A sideways swipe on a page changes its tab (lib/pageSwipe.js, 2026-11-14). Chrome also reads a sideways
-         drag on a page with nothing to scroll that way as "go back a page in history" and left the app mid-swipe
-         (measured: a right swipe on a route's Send Reports tab landed on about:blank). This turns off only the
-         browser's in-page history swipe; the phone's own edge-back gesture and every sideways scroller are untouched. */
-      html, body, #appscroll { overscroll-behavior-x: none; }
+      /* NO SIDEWAYS SWIPE CHANGES THE PAGE (owner, 2026-11-18). Chrome reads a sideways drag on a page with nothing
+         to scroll that way as "go back a page in history": measured with the tab swipe removed, a right drag left
+         the app from Home (about:blank) and jumped to Home from every other section. overscroll-behavior-x alone
+         did not stop it; touch-action does, by telling the browser the page itself pans only up and down. A row
+         that scrolls sideways (tab strips, photo strips, chips) is its own scroller and keeps its drag, and maps,
+         sliders and swipe rows set their own touch-action. Pinch zoom stays. scripts/oneoff/probe-no-page-swipe.mjs
+         drags a finger across every section and proves it. */
+      html, body, #appscroll { overscroll-behavior-x: none; touch-action: pan-y pinch-zoom; }
       /* WCAG 2.4.11 Focus Not Obscured. Below the desktop breakpoint (lib/wideLayout.js WIDE_MIN) the
          nav is a sticky bar at the bottom of the window, and a control scrolled into view by Tab
          could land underneath it. The padding makes the browser stop short of the bar. */
@@ -343,6 +346,38 @@
       </div>
       <div class="b-nav"><div><b></b>Home</div><div><b></b>Climbs</div><div><b></b>Partners</div><div><b></b>Crews</div><div class="b-wide"><b></b>Groups</div><div><b></b>Logbook</div><div><b></b>Ranks</div><div><b></b>Profile</div></div>
     </div></div>
+    <!-- THE ENTRY BUNDLE ITSELF CAN BE GONE (owner's own Chrome, 2026-11-18: the app sat on the splash
+         for good, no error). Pages lets a browser reuse this page for 10 minutes, and two deploys
+         landed inside that window: the reused page named an entry bundle the second deploy had
+         deleted, so the script 404'd. main.jsx's own reload-on-missing-file handler lives INSIDE that
+         bundle and never ran. This classic script needs nothing to load: when the module entry (or
+         a file it imports) fails, it re-fetches this page past the HTTP cache and reloads, ONCE.
+         A second failure inside 30s is not a stale page (offline, a genuinely broken build), so the
+         splash then says so instead of spinning. No sessionStorage = the guard cannot be recorded,
+         so no reload at all. Kept by check:chunk-reload. -->
+    <script>
+      (function () {
+        var KEY = "climbmatch:boot-reload-at";
+        window.addEventListener("error", function (e) {
+          var t = e && e.target;
+          if (!t || t.tagName !== "SCRIPT" || t.type !== "module") return;
+          var tell = function () {
+            var tag = document.querySelector("#cm-splash .s-tag"), bar = document.querySelector("#cm-splash .s-bar");
+            if (tag) tag.style.cssText = "text-align:center;padding:0 28px;line-height:1.45;margin-top:0";
+            if (tag) tag.textContent ="ClimbMatch could not load. Check your connection, then reload the page.";
+            if (bar) bar.style.display = "none";
+          };
+          if (navigator.onLine === false) { tell(); return; }
+          try {
+            var last = Number(window.sessionStorage.getItem(KEY)) || 0;
+            if (Date.now() - last < 30 * 1000) { tell(); return; }
+            window.sessionStorage.setItem(KEY, String(Date.now()));
+          } catch (err) { tell(); return; }
+          var go = function () { window.location.reload(); };
+          try { fetch(window.location.href, { cache: "reload" }).then(go, go); } catch (err) { go(); }
+        }, true);
+      })();
+    </script>
     <script type="module" src="/main.jsx"></script>
   </body>
 </html>

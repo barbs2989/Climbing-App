@@ -556,3 +556,17 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   drive controls means one of them is the un-captioned one). Static, in the build; same injection
   suite. Its first run caught a code COMMENT containing the `maps/dir` literal — the rule is on
   the file, not the markup, and a comment counts; the comment was reworded rather than the rule.
+  **Grade spread (2026-11-18).** The guard used to require the chart's "N of M list a 5.x grade ·
+  K on other scales" line (`total > shown`). The owner removed that line and asked for a
+  discipline picker, so the rule became: every scale the area has is a chip (`const scales`,
+  including a scale missing from `SYS_ORDER`), the picked chip says `aria-pressed`, and the
+  removed line may not come back. What it cannot see: climbs with NO parseable grade are on no
+  scale and no chip; the CLIMBS HERE headline is still where the whole count is read.
+  **One chip per discipline (2026-11-18, later the same day).** The owner asked for trad, sport
+  and top rope as their own chips, and every discipline the area has. The guard now also requires
+  `const discs` to keep a discipline missing from `DISC_ORDER` and the climbs filed with no type,
+  the picked discipline chip to say `aria-pressed`, the columns to be the picked discipline's rows
+  (`const mine`), the file to read `by_grade_disc` (0476), and no chip labelled "Rock". The scale
+  anchors above still hold: they now guard the picked discipline's second chip row. What it cannot
+  see: whether the database's answer carries `by_grade_disc` (a response without it falls back to
+  scale chips only), and a route's SECOND discipline, which the rollup does not count.

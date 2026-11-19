@@ -172,6 +172,14 @@ const CASES = [
     must: /really is above/,
   },
   {
+    name: "multiday-pointer-loses-its-direction",
+    why: "The box also says the single-push estimate is BELOW, so a check reading the first direction word in it " +
+         "would pass a pointer that names no direction at all. The direction must be read after the Trip plan name",
+    edits: [{ find: "<b style={{color:C.amber}}>Trip plan</b>{\" below is the realistic one.\"}", repl: "<b style={{color:C.amber}}>Trip plan</b>{\" is the realistic one.\"}" }],
+    expect: "fail",
+    must: /says which way the Trip plan is/,
+  },
+  {
     name: "SILENT-multiday-copy-reworded-but-still-honest",
     why: "MUST STAY SILENT. Section 3 pins the day COUNT, the pointer's destination and the " +
          "ordering — never one phrasing. A guard pinned to the sentence would forbid improving it",

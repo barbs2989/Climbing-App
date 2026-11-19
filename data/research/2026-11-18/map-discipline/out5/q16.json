@@ -1,0 +1,246 @@
+[
+ {
+  "id": "ca_mount_mcgee_standard_route",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "SummitPost 403. Search summary only: approach from Florence Lake (west) or from east via Wanda Lake/McGee Canyon; no page names a standard-route trailhead. North Lake remains a weak lead only (climber.org 1997/235, multi-day)."
+ },
+ {
+  "id": "ca_mount_newcomb_southwest_slope",
+  "status": "found",
+  "trailhead": {
+   "name": "Whitney Portal Trailhead",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://www.snwburd.com/bob/trip_reports/newcomb_1.html",
+    "fact": "Whitney Trail from Whitney Portal to Discovery Pass, drop to Crabtree drainage, Crabtree Pass, Newcomb"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "Whitney Portal Trailhead",
+     "lat": 36.586905,
+     "lng": -118.240112,
+     "url": ""
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "approach",
+    "value": "Whitney Trail to Discovery Pass, ~1000 ft drop to Crabtree drainage, Crabtree Pass, ridge",
+    "url": "https://www.snwburd.com/bob/trip_reports/newcomb_1.html"
+   }
+  ],
+  "notes": "MODERATE/INFERRED: route's own text names the Discovery Pass + Crabtree Pass approach, which only the Whitney Portal trail gives; trip report confirms that line from Whitney Portal. But the SW slope itself is also reached from Cottonwood Lakes/Cottonwood Pass via Crabtree Lakes (search summary), so a pure SW-slope climber may start elsewhere. Placement is USFS only."
+ },
+ {
+  "id": "ca_mount_perkins_west_slope",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "West slope is reached from the lake basin on the west side of the crest (JMT side); plausible starts Sawmill Pass TH (SAWTH, USFS 36.938805,-118.290212) over Colosseum Col, Taboose via Pinchot Pass, or Armstrong Canyon. No page ties this route to one. Wikipedia names no trailhead; SummitPost 403."
+ },
+ {
+  "id": "wa_mount_persis_the_hexorcist",
+  "status": "found",
+  "trailhead": {
+   "name": "Mount Persis Trailhead (pullout near FR 62/6220 road end)",
+   "identifiedBy": {
+    "kind": "route_text",
+    "fact": "leaves West Ridge boot path / FR 6220 Anderson Creek drainage"
+   },
+   "placements": [
+    {
+     "source": "WTA",
+     "name": "Mount Persis trailhead",
+     "lat": 47.7931,
+     "lng": -121.6449,
+     "url": "https://www.wta.org/go-hiking/hikes/mount-persis"
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "road",
+    "value": "US 2 to FR 62, 3.5 mi to FR 6220, ~2 mi more, rough; may not suit passenger cars",
+    "url": "https://www.wta.org/go-hiking/hikes/mount-persis"
+   },
+   {
+    "field": "permit",
+    "value": "private land access, Hampton Resources recreation permit",
+    "url": "https://www.wta.org/go-hiking/hikes/mount-persis"
+   }
+  ],
+  "notes": "WEAK: no page about the north face found (searches returned nothing on this route). Start inferred from the route's own text and the West Ridge trailhead; one WTA placement, no USFS/NPS match."
+ },
+ {
+  "id": "ca_mount_pinchot_east_ridge_from_armstrong_canyon",
+  "status": "found",
+  "trailhead": {
+   "name": "Armstrong Canyon trailhead (ARMS03, passenger-car, road 12S01)",
+   "identifiedBy": {
+    "kind": "route_text",
+    "fact": "route name: East Ridge from Armstrong Canyon"
+   },
+   "placements": []
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "trailhead",
+    "value": "ARMS03 passenger-car; 4WD only beyond; not Scotty Spring",
+    "url": "https://climber.org/driving/sawmill.html"
+   }
+  ],
+  "notes": "Identified strongly (route name; climber.org 2008/1680, driving/sawmill.html). No coordinate printed (climber.org gpx 404); unplaced, needs OSM name match or none. Do NOT use Sawmill Pass TH (different road end, ~10 km)."
+ },
+ {
+  "id": "co_mount_princeton_east_slopes",
+  "status": "found",
+  "trailhead": {
+   "name": "Mt. Princeton Road 2WD Trailhead",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://www.14ers.com/route.php?route=prin1",
+    "fact": "East Slopes: CR 322 0.8 mi to the 2WD lot at 8,900 ft; 4WD pullouts at 10,800-11,000 ft"
+   },
+   "placements": []
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "distance_mi",
+    "value": "13.25 RT from 2WD; 6.5 RT from 4WD ~11,000 ft",
+    "url": "https://www.14ers.com/route.php?route=prin1"
+   },
+   {
+    "field": "gain_ft",
+    "value": "5400 from 2WD; 3200 from 4WD",
+    "url": "https://www.14ers.com/route.php?route=prin1"
+   },
+   {
+    "field": "grade",
+    "value": "Class 2",
+    "url": "https://www.14ers.com/route.php?route=prin1"
+   }
+  ],
+  "notes": "14ers.com prints no trailhead coordinate (only the summit). No USFS candidate matches (Mt. Antero TH is a different road). Also an upper 4WD start at radio towers 10,800 ft (3.2 mi up CR 322)."
+ },
+ {
+  "id": "wa_mount_rahm_custer_traverse",
+  "status": "found",
+  "trailhead": {
+   "name": "Depot Creek Trailhead (BC, off Chilliwack Lake Road)",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://stephabegg.com/trip-reports/washington/chilliwack-slam/",
+    "fact": "Depot Creek TH 2300 ft; to Ouzel Lake camp, then Rahm and ridge to Custer"
+   },
+   "placements": []
+  },
+  "reachesSummit": true,
+  "summitEvidence": {
+   "kind": "page",
+   "fact": "traverse runs Rahm summit to Custer summit, ~1 mi Class 3, ~2:45 h, descent by Custer South Ridge",
+   "url": "https://stephabegg.com/trip-reports/washington/chilliwack-slam/"
+  },
+  "otherFacts": [
+   {
+    "field": "traverse_length_mi",
+    "value": "about 1",
+    "url": "https://stephabegg.com/trip-reports/washington/chilliwack-slam/"
+   },
+   {
+    "field": "gate",
+    "value": "locked gate near 0.9 mi on Depot Creek Rd (2021)",
+    "url": "https://stephabegg.com/trip-reports/washington/chilliwack-slam/"
+   }
+  ],
+  "notes": "Launched from Ouzel Lake camp, not a trailhead of its own; trailhead is the shared Depot Creek TH. No coordinate; official candidates are on the other side of the border and do not match. Report is of a SW-route Rahm then traverse."
+ },
+ {
+  "id": "wa_glacier_peak_south_tahoma_headwall",
+  "status": "found",
+  "trailhead": {
+   "name": "Westside Road: Dry Creek Trailhead",
+   "identifiedBy": {
+    "kind": "route_text",
+    "fact": "closed Westside Road beyond the Dry Creek gate, ~12 mi walk in"
+   },
+   "placements": []
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "parking",
+    "value": "small lot south of the Dry Creek barricade; open May-Nov",
+    "url": "https://www.nps.gov/places/westside-road-dry-creek-trailhead.htm"
+   }
+  ],
+  "notes": "Peak is Rainier (id says glacier_peak). NPS Dry Creek page prints no coordinate and no candidate matches; unplaced."
+ },
+ {
+  "id": "wa_glacier_peak_tahoma_cleaver",
+  "status": "found",
+  "trailhead": {
+   "name": "Westside Road: Dry Creek Trailhead",
+   "identifiedBy": {
+    "kind": "route_text",
+    "fact": "From Westside Road - Dry Creek Trailhead, walk closed road to Tahoma Creek Trail"
+   },
+   "placements": []
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "parking",
+    "value": "small lot south of the Dry Creek barricade; open May-Nov",
+    "url": "https://www.nps.gov/places/westside-road-dry-creek-trailhead.htm"
+   }
+  ],
+  "notes": "Own text names it; NPS page confirms the lot. No coordinate printed anywhere (NPS page checked). A SummitPost snippet says Tahoma Creek Trail closed by floods; verify."
+ },
+ {
+  "id": "wa_mount_rainier_east_success_couloir",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "grade",
+    "value": "Grade III",
+    "url": "https://www.mountainproject.com/route/120834949/east-success-couloir"
+   },
+   {
+    "field": "first_ascent",
+    "value": "George Senner, Dick Walstrom, 1960-07-17",
+    "url": "https://www.mountainproject.com/route/120834949/east-success-couloir"
+   }
+  ],
+  "notes": "Mountain Project text, like the route's own, offers Van Trump Meadows (Comet Falls), Westside Road or Paradise; easiest said to be Paradise/Van Trump via Kautz Glacier and Cleaver. Nothing ties it to one."
+ },
+ {
+  "id": "wa_mount_rainier_north_mowich_icefall",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "No page about this route found. Mowich Lake is the usual approach to the North Mowich/Mowich Glacier side (Ptarmigan Ridge via Spray Park), but only as a neighbouring-route inference; Mountaineers 403, SummitPost 403."
+ }
+]

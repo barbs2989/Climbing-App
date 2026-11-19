@@ -51,20 +51,11 @@ export interface NearMePanelProps {
   uDistMi?: (mi: number) => string;
   /** Opens a climb straight from the map (the tapped crag's climbs, listed under it); absent lists areas only. */
   onOpenRoute?: (r: RouteRowRoute) => void;
-  /** HOME'S "NEAR ME" (owner 2026-11-18): no List/Map switch (there is no list to switch to), the five
-      nearest areas under the map, and the map centred on the climber when location is ALREADY allowed —
-      it never asks on page load; the "Me" button still does. */
-  compact?: boolean;
-  /** With `compact`: opens the full Climbs map, under the short list, handed the view this map is on. */
-  onOpenFull?: (view: NearMePanelView | null) => void;
-  /** The first zoom, overriding the area type's (a view handed over from Home's map). */
-  zoom0?: number | null;
-  /** Centre on the climber when location is already granted (Near me). `compact` implies it. */
-  autoLocate?: boolean;
+  /** A "Near me" tap opened the map (a new number per tap): find the climber and centre there, ASKING
+      for location if the browser has not been told yet. */
+  autoLocate?: number | false | null;
 }
-export interface NearMePanelView { lat: number; lng: number; zoom: number }
-const COMPACT_ROWS = 5;
-export default function NearMePanel({ center0, areaType, name, onBack, onOpenArea, C, uDistMi, onOpenRoute, compact, onOpenFull, zoom0, autoLocate }: NearMePanelProps) {
+export default function NearMePanel({ center0, areaType, name, onBack, onOpenArea, C, uDistMi, onOpenRoute, autoLocate }: NearMePanelProps) {
   const mapDiv = useRef<HTMLDivElement | null>(null), mapRef = useRef<LeafletAny>(null), markRef = useRef<LeafletAny>(null), tileRef = useRef<LeafletAny>(null), placeMarkRef = useRef<LeafletAny>(null);
   const [ready, setReady] = useState(false);
   const [mapFail, setMapFail] = useState(false);
@@ -170,7 +161,7 @@ export default function NearMePanel({ center0, areaType, name, onBack, onOpenAre
       // Zoom sits BOTTOM-LEFT, a corner nothing else on this map uses (the fire map moved its own
       // to a free corner the same way). Top-left it shared with the Street/Satellite/Topo/Snow row,
       // and pushing it 56px down (#2411) still left the owner reporting the row over the + / −.
-      const map = L.map(mapDiv.current, { attributionControl: false, zoomControl: false }).setView(center ? [center.lat, center.lng] : [39.5, -98.5], center ? (zoom0 || ZOOM_BY_AREA_TYPE[areaType] || 10) : 4);
+      const map = L.map(mapDiv.current, { attributionControl: false, zoomControl: false }).setView(center ? [center.lat, center.lng] : [39.5, -98.5], center ? (ZOOM_BY_AREA_TYPE[areaType] || 10) : 4);
       L.control.zoom({ position: "bottomleft" }).addTo(map);
       applyBaseLayer(map, tileRef, baseLayer);
       markRef.current = L.layerGroup().addTo(map);
@@ -272,20 +263,14 @@ export default function NearMePanel({ center0, areaType, name, onBack, onOpenAre
   // A list reads "44 mi", not "43.51 mi" (walkthrough 2026-11-18): whole numbers from 10 up, one
   // decimal below, in whichever unit the climber set (uDistMi picks it; this only rounds its number).
   const fmtMi = (mi: number) => (uDistMi ? uDistMi(mi) : mi.toFixed(1) + " mi").replace(/^\d+(?:\.\d+)?/, n => { const v = parseFloat(n); return String(v >= 10 ? Math.round(v) : Math.round(v * 10) / 10); });
-  // Home's Near me before any fix: the list is sorted from the MIDDLE OF THE MAP (the middle of the
-  // country), so it is not near the climber. It says so and offers the climber's own position.
-  const noFix = me.acc == null;
   // Your dot is on the map from the start when location is already allowed -- without moving the
   // map off the area you opened it on. Never asks: the button above does that.
   useEffect(() => { if (ready) me.showDot(); }, [ready]); // eslint-disable-line react-hooks/exhaustive-deps -- shows the dot once when the map becomes ready; me is a per-render hook result
-  // Compact (Home) and Near me: centre on the climber, but only when the browser says location is already granted.
-  const locateOnOpen = !!(compact || autoLocate);
-  useEffect(() => {
-    if (!ready || !locateOnOpen || typeof navigator === "undefined" || !navigator.permissions || !navigator.permissions.query) return;
-    let live = true;
-    navigator.permissions.query({ name: "geolocation" }).then(st => { if (live && st.state === "granted") me.locate(); }, () => { /* no permissions API answer: stay on the country, the Me button asks */ });
-    return () => { live = false; };
-  }, [ready, locateOnOpen]); // eslint-disable-line react-hooks/exhaustive-deps -- runs once when the map becomes ready; me is a per-render hook result
+  // A NEAR ME TAP IS THE ASK (owner, 2026-11-18: "when i click near me it doesn't show climbs or areas
+  // near me"). It used to centre on the climber only when the browser said location was ALREADY
+  // granted; a phone that still had to ask (Safari answers "prompt" most days) stayed on the whole
+  // country until a second press on "Me". The tap now requests the position itself, once per tap.
+  useEffect(() => { if (ready && autoLocate) me.locate(); }, [ready, autoLocate]); // eslint-disable-line react-hooks/exhaustive-deps -- once per Near me tap, when the map is ready; me is a per-render hook result
 
   const goToPlace = (p: NearMePanelPlace) => {
     const L = window.L, map = mapRef.current;
@@ -314,12 +299,19 @@ export default function NearMePanel({ center0, areaType, name, onBack, onOpenAre
   // point the map opened at — otherwise, once you've panned somewhere else, the
   // "closest" areas at the top of the list stop matching what's actually
   // showing on screen, which reads as broken.
+  // THE MILES ON A ROW ARE FROM THE CLIMBER, OR THERE ARE NONE (owner, 2026-11-18: "fix distance before
+  // location is allowed"). They were measured from the middle of the map view, so before any fix the
+  // rows read "194 mi" from the middle of the country, and after a pan they were miles from nowhere
+  // the screen named. With a position the list is nearest-to-you first; without one it keeps the
+  // middle-of-the-view order and prints no distance.
+  const here = me.at;
   const viewCenter = useMemo(() => bounds ? { lat: (bounds.minLat + bounds.maxLat) / 2, lng: (bounds.minLng + bounds.maxLng) / 2 } : center, [bounds, center]);
   const sorted = useMemo(() => {
     if (!nearby) return [];
-    const withDist = viewCenter ? nearby.map(a => ({ ...a, _mi: haversineMi(viewCenter, a) })) : nearby.map(a => ({ ...a, _mi: null }));
-    return withDist.sort((a, b) => (a._mi ?? 1e9) - (b._mi ?? 1e9)).slice(0, 60);
-  }, [nearby, viewCenter]);
+    const from = here || viewCenter;
+    const withDist = nearby.map(a => ({ ...a, _key: from ? haversineMi(from, a) : 1e9, _mi: here ? haversineMi(here, a) : null }));
+    return withDist.sort((a, b) => a._key - b._key).slice(0, 60);
+  }, [nearby, viewCenter, here]);
   const discChip = (k: NearMePanelDisc | null, label: string, on: boolean) => <button key={k || "all"} onClick={() => setDisc(k)} aria-pressed={on} style={{ ...CHIP, border: "1px solid " + (on ? C.blue : C.border), background: on ? C.blueBg : C.surface, color: on ? C.onSolid : C.textSub, fontSize: 12.5, fontWeight: 700, cursor: "pointer", whiteSpace: "nowrap", flexShrink: 0 }}>{label}</button>;
 
   const searchUI = (
@@ -354,7 +346,7 @@ export default function NearMePanel({ center0, areaType, name, onBack, onOpenAre
     </div>
   );
   // The tapped circle's areas, nearest the middle of the map first.
-  const pickRows = pick ? pick.areas.map(a => ({ ...a, _mi: viewCenter ? haversineMi(viewCenter, a) : null })).sort((a, b) => (a._mi ?? 1e9) - (b._mi ?? 1e9)) : [];
+  const pickRows = pick ? pick.areas.map(a => { const from = here || viewCenter; return { ...a, _key: from ? haversineMi(from, a) : 1e9, _mi: here ? haversineMi(here, a) : null }; }).sort((a, b) => a._key - b._key) : [];
   const pickClimbs = pickRows.reduce((n, a) => n + (a.route_count || 0), 0);
   const pickUI = pick ? (
     <section aria-label={tx("Areas you tapped on the map")} style={{ marginTop: 8, flexShrink: 0, maxHeight: fullscreen ? "42%" : "none", display: "flex", flexDirection: "column", minHeight: 0, background: C.surface, border: "1px solid " + C.blue + "66", borderRadius: 12 }}>
@@ -384,8 +376,8 @@ export default function NearMePanel({ center0, areaType, name, onBack, onOpenAre
       </div>
     </section>
   ) : null;
-  const errUI = geoErr ? <div role="status" style={{ color: C.red, fontSize: 12, marginTop: 6 }}>{geoErr}</div> : null;
-  const title = compact ? "Near me" : "Map" + (name ? " · " + name : "");
+  const errUI = geoErr ? <div role="status" style={{ color: me.asking ? C.textMuted : C.red, fontSize: 12, marginTop: 6 }}>{geoErr}</div> : null;
+  const title = "Map" + (name ? " · " + name : "");
   // The areas in view (type filter applied), busiest first, as 3D pins: each opens its area.
   const view3dEl = view3d && bounds ? (
     <Suspense fallback={null}>
@@ -400,7 +392,7 @@ export default function NearMePanel({ center0, areaType, name, onBack, onOpenAre
   ) : null;
   return (
     <div>
-      {compact ? null : <ViewToggle mode="map" onList={onBack} onMap={() => {}} C={C} />}
+      <ViewToggle mode="map" onList={onBack} onMap={() => {}} C={C} />
       {view3dEl}
       {fullscreen ? null : searchUI}
       {/* The inline slot the map's host div sits in when it is not full screen. React renders it
@@ -441,15 +433,9 @@ export default function NearMePanel({ center0, areaType, name, onBack, onOpenAre
               <div style={{ fontSize: 11, color: C.textMuted, marginTop: 2 }}>Shows areas with at least one climb of that type — on the map too.</div>
             </div>
           ) : null}
-          {!compact && data && data.total != null && !disc && data.total > sorted.length ? <div style={{ color: C.textMuted, fontSize: 11.5, marginBottom: 8 }}>{"Showing the busiest " + sorted.length + " of " + data.total + " areas in view — zoom in to see more."}</div> : null}
-          {!compact && disc && ((nearby as unknown[]).length > sorted.length || (data && (data.total as number) > (nearbyAll as unknown[]).length)) ? <div style={{ color: C.textMuted, fontSize: 11.5, marginBottom: 8 }}>{"Showing " + sorted.length + " " + (DL[disc] || disc).toLowerCase() + (sorted.length === 1 ? " area" : " areas") + " — zoom in to see more."}</div> : null}
-          {compact && noFix && sorted.length ? (
-            <div style={{ display: "flex", alignItems: "center", gap: 10, background: C.surface, border: "1px solid " + C.border, borderRadius: 12, padding: "10px 12px", marginBottom: 8 }}>
-              <span style={{ flex: 1, minWidth: 0, fontSize: 12.5, color: C.textSub, lineHeight: 1.4 }}>{tx("Closest to the middle of the map. Use your location to see what's near you.")}</span>
-              <button onClick={() => locate()} disabled={locating} style={{ ...BTN, flexShrink: 0, minHeight: 40, background: C.blueSolid, color: C.onSolid, border: "none", fontWeight: 700 }}>{locating ? "Finding you…" : "Use my location"}</button>
-            </div>
-          ) : null}
-          {(compact ? sorted.slice(0, COMPACT_ROWS) : sorted).map(a => (
+          {data && data.total != null && !disc && data.total > sorted.length ? <div style={{ color: C.textMuted, fontSize: 11.5, marginBottom: 8 }}>{"Showing the busiest " + sorted.length + " of " + data.total + " areas in view — zoom in to see more."}</div> : null}
+          {disc && ((nearby as unknown[]).length > sorted.length || (data && (data.total as number) > (nearbyAll as unknown[]).length)) ? <div style={{ color: C.textMuted, fontSize: 11.5, marginBottom: 8 }}>{"Showing " + sorted.length + " " + (DL[disc] || disc).toLowerCase() + (sorted.length === 1 ? " area" : " areas") + " — zoom in to see more."}</div> : null}
+          {sorted.map(a => (
             <div key={a.id} {...clickable(() => onOpenArea(a))} style={{ background: C.card, border: "1px solid " + (wlByArea[a.id] ? C.amber : C.border), borderRadius: 12, padding: "11px 13px", marginBottom: 8, cursor: "pointer", display: "flex", justifyContent: "space-between", alignItems: "center", gap: 10 }}>
               <span style={{ minWidth: 0 }}>
                 <span style={{ display: "block", fontWeight: 700, fontSize: 14.5, color: C.text }}>{a.name}</span>
@@ -458,7 +444,6 @@ export default function NearMePanel({ center0, areaType, name, onBack, onOpenAre
               <span style={{ color: C.textMuted, fontSize: 12 }}>{a._mi != null ? fmtMi(a._mi) + " · " : ""}{a.route_count} climb{a.route_count !== 1 ? "s" : ""}</span>
             </div>
           ))}
-          {compact && onOpenFull && sorted.length ? <button onClick={() => { const map = mapRef.current; let view: NearMePanelView | null = null; try { if (map) { const c = map.getCenter(); view = { lat: c.lat, lng: c.lng, zoom: map.getZoom() }; } } catch (e) { view = null; } onOpenFull(view); }} style={{ ...BTN, width: "100%", minHeight: 44, marginBottom: 8, background: C.surface, border: "1px solid " + C.border, color: C.blue, fontWeight: 700 }}>{(() => { const n = !disc && data && data.total != null ? Number(data.total) : null; return n != null && n > COMPACT_ROWS ? "See all " + n.toLocaleString() + " areas on the Climbs map" : "Open the Climbs map"; })()}</button> : null}
           {!isLoading && bounds && !sorted.length && !error ? <div style={{ color: C.textMuted, fontSize: 12.5 }}>{disc && nearbyAll && nearbyAll.length ? "No " + (DL[disc] || disc).toLowerCase() + tx(" areas in view — pan, zoom out, or tap All.") : "No climbs in view — pan or zoom out to see more."}</div> : null}
         </>
       ) : null}

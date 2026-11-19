@@ -24,6 +24,7 @@ import LoadingRows from "./LoadingRows.tsx";
 import { discLabel } from "../../lib/areaDiscLabel.js";
 import { gradeNumFor, gradeSystemForDiscipline } from "../../lib/grade.js";
 import RouteRow from "./RouteRow.tsx";
+import { DISC_GRADE_SCALES } from "./RouteFinderPanel.tsx";
 import AddHereFooter from "./AddHereFooter.tsx";
 import AreaWrongSpot from "../../lib/AreaWrongSpot";
 import DbSuggestedClimbs from "./DbSuggestedClimbs.tsx";
@@ -265,7 +266,8 @@ export default function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, book
   const season = Array.isArray(area.season_months) && area.season_months.length ? (area.season_months as unknown[]).map(Number) : null;
   const inSeason = season ? season.includes(new Date().getMonth() + 1) : null;
   // A grade column opens the Route finder on that grade (the chart is the way in, not a picture).
-  const onGrade = (sys: string, b: number) => { const fl = gradeFinderFilters(sys, b, stats.data); if (fl) onFinder(fl); else onFinder(); };
+  // It opens on the chip's own discipline when the finder can filter that discipline on that scale; else on every discipline the scale grades.
+  const onGrade = (sys: string, b: number, disc?: string) => { const fl = gradeFinderFilters(sys, b, stats.data, disc && discOptions.includes(disc) && (DISC_GRADE_SCALES[disc] || []).includes(sys) ? disc : undefined); if (fl) onFinder(fl); else onFinder(); };
 
   // THE PAGE, top to bottom (owner, 2026-11-11, area page redesign): the header; then the grade spread (Climbs here
   // by type behind a dropdown), the description, the Route finder · objectives · Map row, the sub-areas (phone), the
@@ -296,9 +298,11 @@ export default function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, book
   // (2026-11-18). A crag or peak still waits for its list: it may be a leaf, which has no search.
   const searchEl = aboveLeaf && (!error || (children && children.length > 0)) ? <DbSearchSplit scope={area} onJumpToArea={onJumpToArea} onOpenRoute={onOpenRoute} C={C} endRef={listEndRef} /> : null;
   const phoneSearch = !wide && !!searchEl;
-  // On a crag or wall -- and while a crag, peak or wall is still finding out whether it has walls, so its loading
-  // line is drawn where the climbs will be -- the climbs list is the card under the Route finder row.
-  const listUp = isLeaf || (!Array.isArray(children) && formation);
+  // A CRAG, PEAK OR WALL (and any area with climbs and nothing under it) reads list first: under the Route finder row
+  // comes its climbs, or -- when it has walls or boulders under it -- its search and that list. Decided by the area's
+  // TYPE, which is known on the first paint, not by whether it has children, which is not: deciding by children
+  // drew a crag like Jackson Falls climb-first while it loaded and then reordered it (2026-11-18).
+  const listUp = formation || isLeaf;
   const section = (el: ReactNode) => <div style={areaSheet(C)}><div style={{ marginTop: -1 }}>{el}</div></div>;
   // THE CLIMBS LIST: the loading and error lines, the summit briefing and (on a crag or wall) the rows with their
   // Filters and sorts. On a crag or wall it is a card right under the Route finder row (listUp, below).
@@ -341,17 +345,17 @@ export default function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, book
                     <button onClick={() => setWallFilterOpen(o => !o)} aria-expanded={wallFilterOpen} style={{ ...BTN_LG, width: "100%", minHeight: 44, display: "flex", alignItems: "center", justifyContent: "space-between", gap: 8, border: "1px solid " + (filtersOn ? C.blue : C.border), background: filtersOn ? C.blueBg : C.surface, color: filtersOn ? C.onSolid : C.text }}>{"Filters" + (filtersOn ? " (" + filtersOn + ")" : "")}<span aria-hidden="true" style={{ display: "flex", flexShrink: 0 }}><Chevron open={wallFilterOpen} size={16} color={"currentColor"} /></span></button>
                     {wallFilterOpen ? <div style={{ marginTop: 8, padding: "10px 11px", background: C.card, borderRadius: 10, border: "1px solid " + C.border }}>
                       <div id="wall-filter-disc" style={{ fontSize: 11.5, color: C.textMuted, marginBottom: 6 }}>Discipline</div>
-                      <div role="group" aria-labelledby="wall-filter-disc" style={{ display: "flex", gap: 6, overflowX: "auto", paddingBottom: 3, marginBottom: 10 }}>{[["", "All"], ...discsHere.map(d => [d, discLabel(d)])].map(o => <button key={o[0] || "all"} onClick={() => setWallDisc(o[0])} aria-pressed={wallDisc === o[0]} style={wallChip(wallDisc === o[0])}>{o[1]}</button>)}</div>
+                      <div role="group" aria-labelledby="wall-filter-disc" className="cm-hscroll" style={{ display: "flex", gap: 6, overflowX: "auto", paddingBottom: 3, marginBottom: 10 }}>{[["", "All"], ...discsHere.map(d => [d, discLabel(d)])].map(o => <button key={o[0] || "all"} onClick={() => setWallDisc(o[0])} aria-pressed={wallDisc === o[0]} style={wallChip(wallDisc === o[0])}>{o[1]}</button>)}</div>
                       <div id="wall-filter-stars" style={{ fontSize: 11.5, color: C.textMuted, marginBottom: 6 }}>Stars</div>
-                      <div role="group" aria-labelledby="wall-filter-stars" style={{ display: "flex", gap: 6, overflowX: "auto", paddingBottom: 3 }}>{[[0, "Any"] as [number, string], [2, "2+ stars"] as [number, string], [3, "3+ stars"] as [number, string]].map(o => <button key={o[0]} onClick={() => setWallStars(o[0])} aria-pressed={wallStars === o[0]} style={wallChip(wallStars === o[0])}>{o[1]}</button>)}</div>
+                      <div role="group" aria-labelledby="wall-filter-stars" className="cm-hscroll" style={{ display: "flex", gap: 6, overflowX: "auto", paddingBottom: 3 }}>{[[0, "Any"] as [number, string], [2, "2+ stars"] as [number, string], [3, "3+ stars"] as [number, string]].map(o => <button key={o[0]} onClick={() => setWallStars(o[0])} aria-pressed={wallStars === o[0]} style={wallChip(wallStars === o[0])}>{o[1]}</button>)}</div>
                       {pitchChoice || wallPitch ? <>
                         <div id="wall-filter-pitch" style={{ fontSize: 11.5, color: C.textMuted, margin: "10px 0 6px" }}>Pitches</div>
-                        <div role="group" aria-labelledby="wall-filter-pitch" style={{ display: "flex", gap: 6, overflowX: "auto", paddingBottom: 3 }}>{[["", "Any"], ["single", "Single pitch"], ["multi", "Multi-pitch"]].map(o => <button key={o[0] || "any"} onClick={() => setWallPitch(o[0])} aria-pressed={wallPitch === o[0]} style={wallChip(wallPitch === o[0])}>{o[1]}</button>)}</div>
+                        <div role="group" aria-labelledby="wall-filter-pitch" className="cm-hscroll" style={{ display: "flex", gap: 6, overflowX: "auto", paddingBottom: 3 }}>{[["", "Any"], ["single", "Single pitch"], ["multi", "Multi-pitch"]].map(o => <button key={o[0] || "any"} onClick={() => setWallPitch(o[0])} aria-pressed={wallPitch === o[0]} style={wallChip(wallPitch === o[0])}>{o[1]}</button>)}</div>
                       </> : null}
                       <div style={{ fontSize: 11.5, color: C.textMuted, marginTop: 8, lineHeight: 1.45 }}>{"Climbs nobody has rated yet stay in the list when a star minimum is set."}</div>
                     </div> : null}
                   </div> : null}
-                  {routes.length > 1 ? <div role="group" aria-label="Sort climbs" style={{ display: "flex", gap: 6, overflowX: "auto", paddingBottom: 3, marginBottom: 8 }}>{opts.map(o => <button key={o[0]} onClick={() => setListSort(o[0])} aria-pressed={key === o[0]} style={{ ...CHIP, flexShrink: 0, border: "1px solid " + (key === o[0] ? C.blue : C.border), background: key === o[0] ? C.blueBg : C.surface, color: key === o[0] ? "#fff" : C.textSub, fontSize: 12.5, fontWeight: 700, cursor: "pointer", whiteSpace: "nowrap" }}>{o[1]}</button>)}</div> : null}
+                  {routes.length > 1 ? <div role="group" aria-label="Sort climbs" className="cm-hscroll" style={{ display: "flex", gap: 6, overflowX: "auto", paddingBottom: 3, marginBottom: 8 }}>{opts.map(o => <button key={o[0]} onClick={() => setListSort(o[0])} aria-pressed={key === o[0]} style={{ ...CHIP, flexShrink: 0, border: "1px solid " + (key === o[0] ? C.blue : C.border), background: key === o[0] ? C.blueBg : C.surface, color: key === o[0] ? "#fff" : C.textSub, fontSize: 12.5, fontWeight: 700, cursor: "pointer", whiteSpace: "nowrap" }}>{o[1]}</button>)}</div> : null}
                   {unplaced ? <div style={{ fontSize: 11.5, color: C.textMuted, marginBottom: 8, lineHeight: 1.45 }}>{unplaced + (unplaced !== 1 ? " climbs have" : " climb has") + " no position on the wall yet, so " + (unplaced !== 1 ? "they are" : "it is") + " listed last, by name."}</div> : null}
                   {shownAll.length ? (() => {
                     // By discipline: one heading per run of the same discipline, rows under it in name order.
@@ -426,12 +430,17 @@ export default function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, book
           with spacing"): the grade spread, the search, the description, the Route finder row, the sub-areas, the
           classics, the photos and Getting there were one bordered sheet split by hairlines. Each is drawn by
           section(), which clips the 1px top rule a section draws to divide itself inside a shared sheet. */}
-      {/* A CRAG OR WALL reads climb first (owner, 2026-11-18: "the list of actual climbs is too far down"): the Route
-          finder · Objectives · Map row, the climbs, the description, Climbs here by type, the classics. The chart is
+      {/* A CRAG, PEAK OR WALL reads climb first (owner, 2026-11-18: "the list of actual climbs is too far down"): the
+          Route finder · Objectives · Map row, the climbs (or its search and walls), the description, Climbs here by
+          type, the classics. The chart is
           left off under 3 climbs and the classics at 5 or fewer: there both only repeat the list right above them. */}
       {listUp ? <>
         {section(<AreaActionRow C={C} first routeCount={area.route_count} onFinder={() => onFinder()} inlineDiscs={wide && chartable ? inlineDiscs : []} myGrades={myGrades} onFindInline={fl => onFinder(fl)} objectivesHere={objectivesHere} onObjectives={onObjectives} onNear={onNear} />)}
-        {section(<div style={{ padding: "4px 14px 12px" }}>{listBlock}</div>)}
+        {childRows ? <>
+          {searchEl ? section(<div style={{ padding: "12px 14px 4px" }}>{searchEl}</div>) : null}
+          {!leftEl ? section(<div style={{ padding: "12px 14px 4px" }}>{childList("section")}</div>) : null}
+          {listBlock}
+        </> : section(<div style={{ padding: "4px 14px 12px" }}>{listBlock}</div>)}
         {showAbout ? section(<AboutCard area={area} C={C} onEdit={editOn} flat first />) : null}
         {chartable && !(isLeaf && routes && routes.length < 3) ? section(<GradeSpreadDisclosure first stats={stats.data} loading={stats.isLoading} error={stats.error} C={C} discOptions={discOptions} onDisc={onFinder} onGrade={onGrade} />) : null}
         {classicsEl && !(isLeaf && routes && routes.length <= 5) ? section(classicsEl) : null}
