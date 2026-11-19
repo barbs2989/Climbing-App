@@ -59,7 +59,6 @@ export default function DbAreaBrowser({ areaDiscussion, jumpToFinderReq, onSignI
   const [treeOpen, setTreeOpen] = useState(false);
   const wide = useWideScreen();
   // A view handed in with a Near me request (Home's map: { lat, lng, zoom }), and whether to centre on the climber.
-  const [nearAt, setNearAt] = useState(null);
   const [nearLocate, setNearLocate] = useState(0);
   const climber = useMemo(() => ({ wishlist, profile, completedIds, rankSuggested, discSlots }), [wishlist, profile, completedIds, rankSuggested, discSlots]);
   // The jump requests below are App props that STAY set once handled, so a remount would re-run the
@@ -196,12 +195,11 @@ export default function DbAreaBrowser({ areaDiscussion, jumpToFinderReq, onSignI
     cancelJump(); // the map is where the climber asked to be; a jump landing later would leave it
     setTreeOpen(false);
     // NEAR ME IS ABOUT WHERE YOU ARE, not the area you last looked at (walkthrough 2026-11-18: Home's
-    // "See all" opened "Map · Rock City" because Rock City was where the Climbs tab last stood). The
-    // map opens from the top level: on the view Home's map handed over, else centred on you (the tap
+    // way in opened "Map · Rock City" because Rock City was where the Climbs tab last stood). The
+    // map opens from the top level, centred on you (the tap
     // is the ask: the browser prompts for location if it has not been told yet). "List" then lands on the state picker.
     setStateNode(null); setStack([]);
-    setNearAt(jumpToNearReq.at || null);
-    setNearLocate(jumpToNearReq.at ? 0 : jumpToNearReq.id); // the tap's id: a second Near me tap, already on the map, finds you again
+    setNearLocate(jumpToNearReq.id); // the tap's id: a second Near me tap, already on the map, finds you again
     setScreen("near");
   }, [jumpToNearReq]);
 
@@ -306,7 +304,7 @@ export default function DbAreaBrowser({ areaDiscussion, jumpToFinderReq, onSignI
         </div>
       ) : null}
       {screen === "near" ? (
-        <><ScreenHero C={C} title={"Map" + (current ? " · " + current.name : "")} /><NearMePanel key={nearAt ? nearAt.lat + "," + nearAt.lng + "," + nearAt.zoom : current ? current.id : "root"} uDistMi={uDistMi} autoLocate={!current && nearLocate ? nearLocate : null} zoom0={!current && nearAt ? nearAt.zoom : null} name={current ? current.name : null} center0={current && current.lat != null ? { lat: current.lat, lng: current.lng } : !current && nearAt ? { lat: nearAt.lat, lng: nearAt.lng } : null} areaType={current && current.area_type} onBack={() => setScreen("areas")} onOpenArea={jumpToArea} onOpenRoute={onOpenRoute} C={C} /></>
+        <><ScreenHero C={C} title={"Map" + (current ? " · " + current.name : "")} /><NearMePanel key={current ? current.id : "root"} uDistMi={uDistMi} autoLocate={!current && nearLocate ? nearLocate : null} name={current ? current.name : null} center0={current && current.lat != null ? { lat: current.lat, lng: current.lng } : null} areaType={current && current.area_type} onBack={() => setScreen("areas")} onOpenArea={jumpToArea} onOpenRoute={onOpenRoute} C={C} /></>
       ) : !stateNode ? (
         <>{rootHeader || null}<StatePicker onPick={pickState} C={C} /></>
       ) : screen === "finder" ? (

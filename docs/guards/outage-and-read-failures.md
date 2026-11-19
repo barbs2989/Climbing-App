@@ -1401,6 +1401,15 @@ that they had none — on the one screen whose whole subject is who you climb wi
     404 a chunk with `page.route` in a context with `serviceWorkers: "block"` — `sw.js` precaches
     chunks and its fetches bypass `page.route`, so without the block an interception reports ZERO
     requests and proves nothing.
+  - **The ENTRY bundle can be the missing file** (2026-11-18, owner's Chrome, live). Pages sends
+    `max-age=600` on the page; two deploys landed inside ten minutes, Chrome reused the page from the
+    first, and its entry bundle 404'd. Nothing in `main.jsx` can answer that: it is in the file that
+    did not load. `index.html` carries a classic inline script before the entry: on a failed module
+    script it re-fetches the page with `cache: "reload"`, then reloads, once per 30s (its own key,
+    `climbmatch:boot-reload-at`); a second failure, or offline, rewrites the splash tagline. The check
+    asserts the script sits before the entry, listens in capture, is limited to scripts, keeps its
+    guard and the cache-bypassing fetch. Driven by hand: `vite preview`, `serviceWorkers: "block"`,
+    `page.route` 404ing the entry once (reloads, app mounts) and always (one reload, then the message).
   - **`preventDefault()` makes the import resolve to UNDEFINED** (2026-11-18, signed-in walk). Vite rethrows only
     when the event is NOT prevented; prevented, the import yields `undefined`, and `React.lazy` throws its own
     *Cannot read properties of undefined (reading 'default')* into the boundary while the reload is in flight.

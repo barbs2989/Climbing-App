@@ -1,0 +1,592 @@
+{
+ "held_crag_calls": [
+  {
+   "area_id": "ak_guardian_the",
+   "place": "The Guardian (Archangel Valley, Hatcher Pass)",
+   "why": "hand: 'a hard hour-ish hike' sits at the limit and another page calls it 'the long approach'"
+  },
+  {
+   "area_id": "ak_ramparts_wall",
+   "place": "Ramparts Wall (above Independence Mine, Hatcher Pass)",
+   "why": "hand: 15 min is timed from Independence Mine, not from the car (partly-timed walk)"
+  },
+  {
+   "area_id": "ca_64th_birthday_area_on_se_face",
+   "place": "Punk Rock, 64th Birthday Area (SE face), Courtright Reservoir, CA",
+   "why": "hand: the only time is the whole dome's 'closest climbs about 5 minutes', not stated for this wall"
+  },
+  {
+   "area_id": "ca_campground_crags",
+   "place": "Campground Crags, Boulder Basin (Black Mountain, San Jacinto)",
+   "why": "hand: the time is the parent Boulder Basin page's general '5 seconds and 5 minutes', not stated for this crag"
+  },
+  {
+   "area_id": "ca_cracks_at_the_dam_wall",
+   "place": "Cracks At The Dam Wall, Courtright Reservoir",
+   "why": "hand: only 'off the road' with no time; pass 3 held this area as unsure for the same reason"
+  },
+  {
+   "area_id": "ca_golden_rock",
+   "place": "Golden Rock, Ellery Bowl (Lee Vining / Tioga Road)",
+   "why": "crag call but summit/glacier noted: small seasonal snowfield directly beneath the buttress; no glacier; routes top out on Golden Rock bu"
+  },
+  {
+   "area_id": "ca_right_side_of_east_face",
+   "place": "Punk Rock, Right Side of East Face, Courtright Reservoir, CA",
+   "why": "hand: the only time is the whole dome's 'closest climbs about 5 minutes', not stated for this wall"
+  },
+  {
+   "area_id": "co_innuendo_spire",
+   "place": "Innuendo Spire, Alpine Lite Cliffs, Mt. Blue Sky, CO",
+   "why": "hand: its time is taken from the neighbouring Easter Island page, not stated for this spire"
+  },
+  {
+   "area_id": "wa_lichen_rock",
+   "place": "Lichen Rock, Minnehaha Rocks (John C. Shields Park), Spokane, WA",
+   "why": "hand: Mountain Project's Lichen Rock holds only boulders; our 'Northeast Rib' 5.9 is not there (route likely misfiled)"
+  }
+ ],
+ "unsure_areas": [
+  {
+   "area_id": "ak_bpr_wall",
+   "place": "BPR Wall (Fairangel Gap, Archangel Valley, Hatcher Pass)",
+   "approach_stated": "From Fairangel gap, (Tunnel vision wall), continue straight up hill for about 30 minutes to the base of the wall.",
+   "note": "Only a partial timed leg (30 min from Tunnel Vision Wall); the car-to-gap leg is given as distance only. Not summed."
+  },
+  {
+   "area_id": "ak_bear_s_den",
+   "place": "Bear's Den (Lane Prospect Area, Archangel Valley, Hatcher Pass)",
+   "approach_stated": null,
+   "note": "No timed approach anywhere; distances only (not converted)."
+  },
+  {
+   "area_id": "ak_rogers_roof",
+   "place": "Roger's Roof (Lane Prospect Area, Archangel Valley, Hatcher Pass)",
+   "approach_stated": "First obvious wall ~10min. uphill from the \"hut\", on the left side of the valley.",
+   "note": "Car-to-hut leg has distance only; not summed. Route 'Rogers Roof' left null: MP spells it \"Roger's Roof\" (Trad, 5.11+) - not an exact name match."
+  },
+  {
+   "area_id": "ak_didilkama",
+   "place": "Didilkama (east face, Glacier Creek drainage, Hatcher Pass)",
+   "approach_stated": "Up the glacier creek drainage, past the snowbird mine, and up one more bench. 20 minutes of uphill talus to the base.",
+   "note": "Only the last leg is timed (20 min); car-to-mine leg untimed. Two routes go to the summit (which ones not named); a route-level split may be needed."
+  },
+  {
+   "area_id": "ak_whale_beak_buttress",
+   "place": "Whale Beak Buttress (north of Didilkama, Snowbird Glacier trail, Hatcher Pass)",
+   "approach_stated": null,
+   "note": "No timed approach; parent's 2-6 h refers to the full Snowbird Glacier approach, which this buttress (below the pass) may not need."
+  },
+  {
+   "area_id": "ak_independence_crag",
+   "place": "Independence Crag (above Independence Mine, Hatcher Pass)",
+   "approach_stated": null,
+   "note": "Short trail from the mine parking described, but no page states a time. Slabbyville is Sport (Sport, Alpine)."
+  },
+  {
+   "area_id": "ak_moai_wall",
+   "place": "Moai Wall (shoulder of Microdot above Gold Cord Lake, Hatcher Pass)",
+   "approach_stated": null,
+   "note": "Only the approach to Gold Cord Lake is timed; the shoulder leg beyond is not. Not summed."
+  },
+  {
+   "area_id": "co_ship_s_prow",
+   "place": "Ship's Prow, Chasm Lake, Longs Peak, RMNP",
+   "approach_stated": null,
+   "note": "Only a partly-timed walk (3.5 mi untimed + 20 min). Bologna Pony is typed 'Trad, Sport, Alpine' on MP and the area page calls it an exception to all-trad; left null."
+  },
+  {
+   "area_id": "co_obelisk_the",
+   "place": "The Obelisk, Astrid's Area, Grand Turk (Molas Pass/Silverton)",
+   "approach_stated": "From the upper or lower meadow ... 30-45 minutes to get there.",
+   "note": "Partly-timed walk: only the meadow-to-base leg is timed; car-to-meadow untimed."
+  },
+  {
+   "area_id": "co_atat_rk_s_vision",
+   "place": "Atatürk's Vision, Grand Turk (Molas Pass/Silverton)",
+   "approach_stated": null,
+   "note": "Single-pitch conglomerate; no stated time."
+  },
+  {
+   "area_id": "co_gothic_windows",
+   "place": "Gothic Windows, Grand Turk (Molas Pass/Silverton)",
+   "approach_stated": null,
+   "note": "Grand Turk parent page describes camping above arduous benches; no time."
+  },
+  {
+   "area_id": "co_coxcomb_peak",
+   "place": "Coxcomb Peak, Uncompahgre Wilderness, San Juans",
+   "approach_stated": null,
+   "note": "Wilderness 13er but no time, and the route page does not state a summit finish; likely alpine but not stated."
+  },
+  {
+   "area_id": "co_dog_s_crag",
+   "place": "Dog's Crag, Ice Lakes Basin (South Mineral Creek, Silverton)",
+   "approach_stated": null,
+   "note": "Bolted single-pitch crag, but no page found stating the walk time."
+  },
+  {
+   "area_id": "id_billy_goat_buttress",
+   "place": "Billy Goat Buttress, Silver Creek road north of Ketchum, Idaho",
+   "approach_stated": null,
+   "note": "Gain/terrain given but no walk time."
+  },
+  {
+   "area_id": "id_myrtle_2_aka_turtle_arches",
+   "place": "Myrtle 2 aka Turtle Arches, Selkirks (Myrtle Creek Rd, Bonners Ferry), Idaho",
+   "approach_stated": "Hike/bike up the old road/trail for about an hour (2.3 miles) ... This is about 10-15 minutes (1/3 mile) walk from trail #268.",
+   "note": "Two timed legs, no single stated total; legs not summed per rule. Both legs together clearly exceed an hour, so it likely belongs as alpine if the owner accepts two stated legs."
+  },
+  {
+   "area_id": "id_crooked_rock",
+   "place": null,
+   "approach_stated": null,
+   "note": "Place not identified: MP search finds no Idaho 'Crooked Rock' area and no Idaho route named 'Axilla'; DuckDuckGo returned no results."
+  },
+  {
+   "area_id": "wa_garfield_mountain",
+   "place": "Mount Garfield, Middle Fork Snoqualmie, WA",
+   "approach_stated": "none for the Southeast Face; same mountain's Infinite Bliss: \"the approach is about 45 minutes long\"",
+   "note": "No page states the walk to the Southeast Face; Infinite Bliss's 45 min is for another route. Not on MP; type null."
+  },
+  {
+   "area_id": "wa_granite_mountain",
+   "place": "Granite Mountain, Snoqualmie Pass (I-90 exit 47), WA",
+   "approach_stated": "none to the base; whole hike to the lookout \"5 to 7 hours (we estimate)\" round trip",
+   "note": "Only distances to the rocks; no stated time to the base."
+  },
+  {
+   "area_id": "wa_winter_spring_ice_snow_mixed_2",
+   "place": "Snoqualmie Mountain NW Face, Winter-Spring (ice, snow, mixed), Snoqualmie Pass, WA",
+   "approach_stated": "none stated",
+   "note": "MP type Trad (with Mixed tag). Winter snow/mixed objective but no stated time."
+  },
+  {
+   "area_id": "wa_crater_mountain",
+   "place": "Crater Crag on Crater Mountain (Canyon Creek trailhead, Hwy 20)",
+   "approach_stated": null,
+   "note": "Only a distance and gain are stated (6 miles, 4,400 ft), no time; not converted, per the rules. Very likely well over an hour, but no page says so."
+  },
+  {
+   "area_id": "wy_medicine_bow_peak_area",
+   "place": "Medicine Bow Peak east-face slabs (The Diamond), Snowy Range",
+   "approach_stated": null,
+   "note": "Every page calls the approach short, but none gives minutes. Seasonal snow on the approach until July. theCrag area page has no approach text; SummitPost skipped (403)."
+  },
+  {
+   "area_id": "ak_upper_tier_walls",
+   "place": "Upper Tier walls, above Independence Mine boulders, Hatcher Pass AK",
+   "approach_stated": null,
+   "note": "Distance/position only."
+  },
+  {
+   "area_id": "ak_barnyard_the",
+   "place": "The Barnyard, Reed Lakes trail, Hatcher Pass AK",
+   "approach_stated": null,
+   "note": "Distance only (~2.5 mi). Reed Lakes hiking pages (alaska.org, adventuresoflilnicki) give no intermediate times."
+  },
+  {
+   "area_id": "ak_birds_of_prey",
+   "place": "Birds of Prey, Reed Lakes trail, Hatcher Pass AK",
+   "approach_stated": null,
+   "note": "Curse and The Heretic listed Trad, TR on MP (Trad primary)."
+  },
+  {
+   "area_id": "ak_crack_garden_the_2",
+   "place": "The Crack Garden, Reed Lakes trail, Hatcher Pass AK",
+   "approach_stated": "The approach can take anywhere from 45min - 1hr 15min depending on conditions and fitness.",
+   "note": "Stated range straddles 60 min, so unsure. Chickenheads on a Chopping Board is filed under Hanging Garden on MP (Trad)."
+  },
+  {
+   "area_id": "ak_garden_party_buttress",
+   "place": "Garden Party Buttress, Crack Garden, Hatcher Pass AK",
+   "approach_stated": "The approach can take anywhere from 45min - 1hr 15min depending on conditions and fitness. (parent Crack Garden page)",
+   "note": "Range straddles 60 min."
+  },
+  {
+   "area_id": "ak_hanging_garden",
+   "place": "Hanging Garden, Crack Garden, Hatcher Pass AK",
+   "approach_stated": "The approach can take anywhere from 45min - 1hr 15min depending on conditions and fitness. (parent Crack Garden page)",
+   "note": "Range straddles 60 min."
+  },
+  {
+   "area_id": "ak_pulp_culture_wall",
+   "place": "Pulp Culture Wall, Reed Lakes trail, Hatcher Pass AK",
+   "approach_stated": null,
+   "note": "Distance only."
+  },
+  {
+   "area_id": "ak_nugget_boulder",
+   "place": "Nugget Boulder, Reed Lakes trail, Hatcher Pass AK",
+   "approach_stated": null,
+   "note": "Distance only. Banana Show listed T,TR (Trad primary)."
+  },
+  {
+   "area_id": "ak_o_malley_peak_3",
+   "place": "O'Malley Peak West Buttress, Chugach Front Range, Anchorage AK",
+   "approach_stated": null,
+   "note": "Likely alpine (summit option, above O'Malley Ballfield) but no stated approach time found."
+  },
+  {
+   "area_id": "ak_101_wall_worthington",
+   "place": "101 Wall, Worthington Glacier, Thompson Pass AK",
+   "approach_stated": null,
+   "note": "No time stated."
+  },
+  {
+   "area_id": "ak_27_mile",
+   "place": "27 Mile crag (Odyssey Lake pullout), Thompson Pass, Valdez AK",
+   "approach_stated": null,
+   "note": "Distance only (1/4 mi). MP lists 'Razors Edge, The' (sorted form) and The Swarm."
+  },
+  {
+   "area_id": "ak_lower_wall",
+   "place": "Lower Wall, 43 Mile crag, Richardson Hwy AK",
+   "approach_stated": null,
+   "note": "Effectively above the parking but no time or 'roadside' word stated; 'short approach' only."
+  },
+  {
+   "area_id": "ak_mcalpine_sector",
+   "place": "McAlpine Sector, 43 Mile crag, Richardson Hwy AK",
+   "approach_stated": null,
+   "note": "Two Trees listed S,TR (Sport primary)."
+  },
+  {
+   "area_id": "ak_upper_wall",
+   "place": "Upper Wall, 43 Mile crag, Richardson Hwy AK",
+   "approach_stated": null,
+   "note": "Route 1-5 Upper Wall are filed under MP's separate '43 Mile' area."
+  },
+  {
+   "area_id": "ak_blueberry_block",
+   "place": "Blueberry Block, hairpin below Thompson Pass, Valdez AK",
+   "approach_stated": null,
+   "note": "MP grades differ slightly (Bluebies 5.10-, Unknown 5.10a/b) but names match exactly."
+  },
+  {
+   "area_id": "ak_castle_the",
+   "place": "The Castle, Worthington Glacier buttress, Thompson Pass AK",
+   "approach_stated": null,
+   "note": ""
+  },
+  {
+   "area_id": "ak_department_of_defense_wall",
+   "place": "Department of Defense Wall, Thompson Pass, Valdez AK",
+   "approach_stated": null,
+   "note": ""
+  },
+  {
+   "area_id": "ak_glacier_view",
+   "place": "Glacier View, Worthington Glacier, Thompson Pass AK",
+   "approach_stated": null,
+   "note": "No time stated; approach ends at glacier edge."
+  },
+  {
+   "area_id": "ak_tiekle_wall",
+   "place": "Tiekle Wall (Tiekel River, Richardson Highway, AK)",
+   "approach_stated": null,
+   "note": "No walking time stated. Route page: base of Mount Tiekle beside a major avalanche gully; 2-pitch route, rappel with a single 60 m rope."
+  },
+  {
+   "area_id": "ak_valdez_glacier_campground",
+   "place": "Valdez Glacier Campground Wall (Airport Rd, Valdez, AK)",
+   "approach_stated": null,
+   "note": "Only a distance (about 200 ft) is stated, no time; by the no-conversion rule this stays unsure, though effectively roadside. Scanned 12 MP route pages: none state a time. MP lists 'Good Book, The' and 'Little Waterfall That Could, The' (article inverted)."
+  },
+  {
+   "area_id": "ak_worthington_ridge_trail_routes",
+   "place": "Worthington Ridge Trail Routes (Worthington Glacier SRS, Thompson Pass, AK)",
+   "approach_stated": null,
+   "note": "Distance only. The approach trail (Worthington Glacier Ridge Trail) is reported closed for rockslide danger; MP warns not to approach from the glacier."
+  },
+  {
+   "area_id": "ak_slab_salad",
+   "place": null,
+   "approach_stated": null,
+   "note": "Area deleted from MP; route names Impossible gold / Janitors Closet / Sloppy Joe not found on MP search or the web. Nothing stated about the approach."
+  },
+  {
+   "area_id": "ak_developer_n_a",
+   "place": "Developer N/A, Chilkat State Park, Haines",
+   "approach_stated": null,
+   "note": "Only distances (0.8 mi + 0.5 mi) stated, no time; 4 short bolted single-pitch lines, clearly crag-like. Route pages give no time either."
+  },
+  {
+   "area_id": "az_brown_s_peak",
+   "place": "Brown's Peak, Four Peaks Wilderness",
+   "approach_stated": "Plan on at least 2.5 hours from central Phoenix to the base/start of the hiker's gully.",
+   "note": "No page states the walk time from the trailhead to the base alone (MP's 2.5 h includes the drive from Phoenix; HikeArizona blocked by Cloudflare). Distance only (~2.5 mi)."
+  },
+  {
+   "area_id": "ca_grouse_tor",
+   "place": "Grouse Tor, Grouse Ridge (Bowman/Emeralds, I-80)",
+   "approach_stated": null,
+   "note": "Distance only (1/4 mile), no time stated; likely short but not decided by rule."
+  },
+  {
+   "area_id": "ca_buzz_buckets",
+   "place": "Buzz Buckets, Big Cove North, Frenchman Lake",
+   "approach_stated": null,
+   "note": "Campground-side crag, no time stated anywhere opened. Buzz Buckets route: TR, Alpine, 70 ft on MP search."
+  },
+  {
+   "area_id": "ca_karst_crag",
+   "place": "Karst Crag, Marble Mountain Wilderness (off PCT / Marble Gap Trail)",
+   "approach_stated": null,
+   "note": "Wilderness crag several trail miles in (Marble Valley ~5-6 mi from Lovers Camp per hiking pages) but no page states a time to the crag."
+  },
+  {
+   "area_id": "ca_black_bluff_n_face_right_side",
+   "place": "Black Bluff - North Face (Right Side), Big Bear South",
+   "approach_stated": null,
+   "note": "Distance only. advcollective.com says ~20 min to north face but it reads as AI-generated, not used. Black Bart / Black Beard: Trad, Alpine per MP search/route page. Area under temporary Line Fire closure per MP."
+  },
+  {
+   "area_id": "ca_black_bluff_upper_face",
+   "place": "Black Bluff - Upper Face, Big Bear South",
+   "approach_stated": null,
+   "note": "Distance only."
+  },
+  {
+   "area_id": "ca_black_bluff_west_face",
+   "place": "Black Bluff - West Face, Big Bear South",
+   "approach_stated": null,
+   "note": "Black and Tan: Sport, Alpine, 60 ft per MP search (Black Bluff path). Distance only."
+  },
+  {
+   "area_id": "ca_short_crag",
+   "place": "Short Crag, Black Bluff, Big Bear South",
+   "approach_stated": null,
+   "note": "Chicken Chat: Trad, TR, Alpine, 30 ft per MP search (first listed Trad). Distance only."
+  },
+  {
+   "area_id": "ca_siberia_creek_tower_southeast_face",
+   "place": "Siberia Creek Tower - Southeast Face, Big Bear South",
+   "approach_stated": null,
+   "note": "Distance only (~1 mile)."
+  },
+  {
+   "area_id": "ca_grubbs_notch",
+   "place": "Grubbs Notch, Palm Springs Aerial Tramway (Mountain Station), San Jacinto",
+   "approach_stated": "\"About a .5 mile hike from the mountain station.\"",
+   "note": "Lift-top access with distance only; per rules undecided."
+  },
+  {
+   "area_id": "ca_just_another_social_distancing_crag",
+   "place": "Just Another Social Distancing Crag (above Dinosaur Crag / Queen Jane, Ellery Lake)",
+   "approach_stated": null,
+   "note": "Only distances (1/2 mi road, 1/4 mi, 500 yd) stated; no time. Route types from MP search (Trad, Alpine)."
+  },
+  {
+   "area_id": "ca_sphinx_the",
+   "place": "The Sphinx (Pope's Hat), Tioga Road above Ellery Lake",
+   "approach_stated": "Proceed boldly uphill over shattered slabs above the road to access the base.",
+   "note": "Parking directly beneath but no time stated; summit register on formation suggests summit finish (not explicit)."
+  },
+  {
+   "area_id": "ca_television_skies_crag",
+   "place": "Television Skies Crag (below Ellery Dam spillway)",
+   "approach_stated": null,
+   "note": "No walk time on any page found (Demonology Cliff page gives only 1/2 mile)."
+  },
+  {
+   "area_id": "ca_east_face_3",
+   "place": "Dike Wall East Face, Lake George (Mammoth)",
+   "approach_stated": null,
+   "note": "Every page gives route/distance but no walk time (UKC page also none). Clearly a cragging area; no stated minutes."
+  },
+  {
+   "area_id": "ca_north_face_3",
+   "place": "Dike Wall North Face, Lake George (Mammoth)",
+   "approach_stated": null,
+   "note": "No walk time stated anywhere found."
+  },
+  {
+   "area_id": "ca_anaerobia",
+   "place": "Anaerobia cliff, T J Lake (Mammoth)",
+   "approach_stated": null,
+   "note": "Only a round-trip hiking time found (1-2 h incl. lakes); sierradayhikes says 0.8 mi, no time. Not decisive."
+  },
+  {
+   "area_id": "ca_t_j_swan_cliff",
+   "place": "T J Swan Cliff, T J Lake (Mammoth)",
+   "approach_stated": null,
+   "note": "Distance only. Hula Hoop name matches MP except capitalization."
+  },
+  {
+   "area_id": "ca_dark_angel_buttress_the",
+   "place": "The Dark Angel Buttress, Devils Staircase (The Others, Tahquitz)",
+   "approach_stated": null,
+   "note": "Input lat/lng (32.266,-116.326) is wrong; MP GPS is 33.76058,-116.6745 (Tahquitz). No walk time stated."
+  },
+  {
+   "area_id": "ca_hinterland_back_side",
+   "place": "Hinterland Back Side (Echo Canyon, The Others, Tahquitz)",
+   "approach_stated": null,
+   "note": "No time on any page; descriptions suggest a long approach but nothing stated."
+  },
+  {
+   "area_id": "ca_hinterland_corridor",
+   "place": "Hinterland Corridor (The Hinterland, Tahquitz)",
+   "approach_stated": null,
+   "note": "MP route is 'Autopia' (Sport), not 'Atopia' — name differs, left null."
+  },
+  {
+   "area_id": "ca_key_hole_tower",
+   "place": "Key Hole Tower (The Hinterland/Echo Canyon, Tahquitz)",
+   "approach_stated": null,
+   "note": "MP grades Crystal Skull 5.10b (input 5.9). No walk time found."
+  },
+  {
+   "area_id": "ca_indian_buttress_formation_the",
+   "place": "The Indian Buttress Formation (Echo Canyon, Tahquitz)",
+   "approach_stated": "Follow North Talus approach to North face/North Gully Descent of Tahquitz. Now hike four times that distance further.",
+   "note": "Relative distance only, no minutes stated; likely long but not stated."
+  },
+  {
+   "area_id": "ca_sun_dial_the",
+   "place": "The Sun Dial (Pillars of Creation, The Others, Tahquitz)",
+   "approach_stated": null,
+   "note": "No walk time found."
+  },
+  {
+   "area_id": "ca_north_temple_aka_the_alpha",
+   "place": "North Temple aka The Alpha (Pyramids of Pleiades, Tahquitz)",
+   "approach_stated": null,
+   "note": "No walk time found."
+  },
+  {
+   "area_id": "ca_obelisk_the_3",
+   "place": "The Obelisk (Wall of Echos, Echo Canyon, Tahquitz)",
+   "approach_stated": null,
+   "note": "Beyond Indian Buttress ('deep in the back country'); no time stated."
+  },
+  {
+   "area_id": "ca_aqueduct_wall",
+   "place": "Aqueduct Wall, Courtright Reservoir",
+   "approach_stated": null,
+   "note": "Distance only (1/2 mile), no time stated."
+  },
+  {
+   "area_id": "ca_broken_tiers_transformer_wall",
+   "place": "Broken Tiers/Transformer Wall, Courtright Reservoir dam",
+   "approach_stated": null,
+   "note": "Short approach implied by parking at dam but no time stated."
+  },
+  {
+   "area_id": "ca_east_face_6",
+   "place": "Power Dome East Face, Courtright Reservoir, CA",
+   "approach_stated": null,
+   "note": "Route only described, never timed, on MP area, Power Dome, Courtright, A Little Nukey and theCrag pages."
+  },
+  {
+   "area_id": "ca_west_face_4",
+   "place": "Power Dome West Face, Courtright Reservoir, CA",
+   "approach_stated": null,
+   "note": "Access is by rappel into Helms Creek canyon; no page states a time. 'Aplodonita' is listed on MP as 'Aplodontia' (no exact match, left null)."
+  },
+  {
+   "area_id": "ca_tiger_cage",
+   "place": "Tiger Cage, Courtright Reservoir, CA",
+   "approach_stated": null,
+   "note": "Distance only, no time stated. Bonsai Crack is 'Trad, TR' on MP; first type given."
+  },
+  {
+   "area_id": "ca_tiger_wall",
+   "place": "Tiger Wall, Courtright Reservoir, CA",
+   "approach_stated": null,
+   "note": "No time stated anywhere opened. Bearded Tiger is 'Trad, TR' on MP; first type given."
+  },
+  {
+   "area_id": "ca_wilderness_wall_2",
+   "place": "Wilderness Wall, Kaiser Pass Rd near Huntington Lake, CA",
+   "approach_stated": null,
+   "note": "Only a distance (about 100 m) is stated, no time. MP type 'TR, Alpine'."
+  },
+  {
+   "area_id": "ca_central_cottage_dome",
+   "place": "Central Cottage Dome, Daff Area, Tuolumne Meadows, Yosemite NP, CA",
+   "approach_stated": "Walk north from West Cottage Dome for about 5 minutes.",
+   "note": "Only a partial leg is timed; car-to-West-Cottage leg untimed. theCrag Cottage Domes pages state nothing; SuperTopo unreachable. MP type 'Trad, TR, Alpine'; Trad given."
+  },
+  {
+   "area_id": "ca_west_face_16",
+   "place": "East Cottage Dome (Erratic Dome) West Face, Tuolumne Meadows, Yosemite NP, CA",
+   "approach_stated": null,
+   "note": "No time stated anywhere opened. MP type 'Trad, Alpine'."
+  },
+  {
+   "area_id": "ca_don_t_call_me_dome",
+   "place": "Don't Call Me Dome, Twin Bridges (Glen Aulin trail), Tuolumne Meadows, CA",
+   "approach_stated": null,
+   "note": "About 4 miles stated, no time; NPS 'Twin Bridges' entry is a different place (Dog Lake/Lyell). MP types list Sport/Trad first then 'TR, Alpine'; first type given."
+  },
+  {
+   "area_id": "ca_grandstand_the",
+   "place": "The Grandstand, Twin Bridges (Glen Aulin trail), Tuolumne Meadows, CA",
+   "approach_stated": null,
+   "note": "Distance only. MP types 'Trad, TR, Alpine' and 'Sport, TR, Alpine'; first type given."
+  },
+  {
+   "area_id": "co_tool_wall_tool_tower",
+   "place": "Tool Wall / Tool Tower (by Bob's Rock), Buena Vista, CO",
+   "approach_stated": null,
+   "note": "Bob's Rock is stated as just off the road, but no time is stated for the path up to Tool Wall. MP types 'Sport, Alpine' / 'Trad, Alpine'."
+  },
+  {
+   "area_id": "co_cataract_lake_heeney_colorado",
+   "place": "Cataract Lake (Heeney), Gore Range, CO",
+   "approach_stated": null,
+   "note": "Distance only, no time. MP type 'TR, Alpine'."
+  },
+  {
+   "area_id": "co_porky_s_wall",
+   "place": "Porky's Wall, West Rim, Castlewood Canyon SP, CO",
+   "approach_stated": null,
+   "note": "No time stated. MP type 'Trad, Alpine'."
+  },
+  {
+   "area_id": "co_temple_of_solitude_the",
+   "place": "The Temple of Solitude, Land of the Lost, Pine River trail, Vallecito (Durango), CO",
+   "approach_stated": null,
+   "note": "Distances only; Into Darkness is a 1200 ft Trad, Alpine route. Pine River Area page says 'if you do not mind a bit of an approach' (no time)."
+  },
+  {
+   "area_id": "co_casual_delight_buttress",
+   "place": "Casual Delight Buttress, Abyss Lake Basin (Mt. Evans side), Mt. Blue Sky, CO",
+   "approach_stated": null,
+   "note": "No page states a time (checked area, parent, Girlfriend Wall sibling, route page). Road access depends on Mt. Blue Sky Road being open."
+  },
+  {
+   "area_id": "co_wind_tower",
+   "place": "Wind Tower, Abyss Lake Basin (Mt. Evans side), Mt. Blue Sky, CO",
+   "approach_stated": null,
+   "note": "No time stated anywhere checked."
+  },
+  {
+   "area_id": "co_black_wall_the",
+   "place": "The Black Wall, Mt. Blue Sky (above Summit Lake), CO",
+   "approach_stated": "about 40 minutes of hiking, look for a bolted rap anchor at the edge of Black Wall (then four rappels to the base)",
+   "note": "Partly timed: 40 min hike plus four untimed rappels. co_harry_cary: no MP route of that exact name (likely duplicate of Harry Caray), left null."
+  },
+  {
+   "area_id": "co_little_possibility_wall",
+   "place": "Little Possibility Wall, Possibility Area, Mt. Blue Sky, CO",
+   "approach_stated": null,
+   "note": "Distances only, no total time. co_batshit_crazy: MP route is named 'Batshit' (not exact match), left null."
+  },
+  {
+   "area_id": "co_cathedral_wall",
+   "place": "Cathedral Wall, Loch Vale (RMNP), CO",
+   "approach_stated": null,
+   "note": "No page opened states a time; advcollective page also gives none."
+  }
+ ],
+ "data_flags": [
+  "co_tijeras_peak lat/lng 40.2565,-105.6569 sits in RMNP, not the Sangre de Cristo",
+  "Innuendo Spire latitude 36.61 looks wrong; MP has ~39.61",
+  "Dark Angel Buttress coordinates wrong; MP 33.76058,-116.6745",
+  "Lichen Rock (Spokane): MP lists only boulders; our Northeast Rib 5.9 likely misfiled",
+  "Bugaboo Spire filed under Purcell Mountains; MP files it under Columbia-Shushwap > Bugaboos"
+ ]
+}
