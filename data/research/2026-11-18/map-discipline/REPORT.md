@@ -208,3 +208,21 @@ Falls coordinate, so the layer is the land manager's own. 21 held New York route
 - Photon finds a lot when asked for "<trail name> parking"; the earlier pass asked only for the agent's
   trailhead name.
 - **Audit now:** SUMMIT_ONLY 233, NO_SUMMIT 40, CRAG_SUMMIT 0.
+
+## Hand release of word-filter holds (2026-11-18)
+
+49 routes were held ONLY because the research note contained a caution word. Read by hand: 12 have a
+route-specific identification and an official point, and the caution word concerned something else (an
+alternative for a different route, a placement distance, an unopened page). Written (`batch-rel.json`, all
+unconfirmed, verified on re-read; each row read first, no conflicting drive text): Mount Bago (Onion
+Valley), Mount Baxter (Baxter Pass), Mount Guyot (Cottonwood Pass), Red Peak (Mono Meadow), Rockhouse Peak
+(South Manter Meadow, OSM), Vandever (Eagle-Mosquito), Needham (Sawtooth), Colosseum (Sawmill Pass), Castle
+Peak via Castle Pass (Donner Summit PCT), Cathedral Peak CO (Cathedral Lake), Snowmass East Slopes (USFS
+"Snowmass Trailhead", ground 8,427 ft against the route page's 8,400 ft), Little Annapurna South Face
+(Ingalls Creek, from the route's own text).
+
+Still held on reading: peak-level-only Washington answers (Chimney Rock x3, Colchuck Balanced Rock x2,
+Hibox x2, Colchuck NE Gully, Mixup, Apex, Castle Peak Pasayten), notes that name a second start in use
+(Black Mountain, Mokelumne, Striped, Red Kaweah, Twin Peaks, Hilgard, Joe Devel, Overcoat, Vermilion,
+Clinton), campground points (Black Hawk, Katahdin Hunt Trail), and earlier hand holds.
+- **Audit now:** SUMMIT_ONLY 221, NO_SUMMIT 40, CRAG_SUMMIT 0.
