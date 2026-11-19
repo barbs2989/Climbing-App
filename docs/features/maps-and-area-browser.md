@@ -247,7 +247,7 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
    `NearMePanel` re-centres only on the first fix.
 8. Place search: `searchPlaces(q, bounds)` calls Nominatim with `countrycodes=us,ca&limit=5&dedupe=1`, `postalcode=` for a 5-digit zip else `q=`, and a `viewbox` from the map bounds.
    It returns `{ name, sub, lat, lng, bbox }`; `NearMePanel` flies the map there.
-9. Offline: `lib/offlineTiles.js` (`saveRouteMapOffline`, `routeTileKeys`, `OFFLINE_MAX_Z`) caches tiles along a route's way in (USGS layers); `offlineFallbackLayer` in the kit falls back to the cache. The climber saves one with **⤓ Save map offline** under the route map (`SaveMapOffline` in `lib/SaveMapOffline.jsx`, via `packRouteWithSnapshot`: the tiles plus the route row, reports and corrections, so the page opens with no signal in a state never downloaded; never a forecast). It shows progress, then "✓ Map saved offline · N ago" with Remove, or the saved % and Retry. Every saved map is listed under **Manage areas › Saved route maps** (`SavedRouteMaps`), to open or remove. Proven live by `scripts/oneoff/probe-live-route-map-save.mjs`.
+9. Offline: `lib/offlineTiles.js` (`saveRouteMapOffline`, `routeTileKeys`, `OFFLINE_MAX_Z`) caches tiles along a route's way in (USGS layers); `offlineFallbackLayer` in the kit falls back to the cache. The climber saves one with **⤓ Save offline** under the route map (called *Save map offline* until 2026-11-19) (`SaveMapOffline` in `lib/SaveMapOffline.jsx`, via `packRouteWithSnapshot`: the tiles plus the route row, reports and corrections, so the page opens with no signal in a state never downloaded; never a forecast). It shows progress, then "✓ Saved offline · N ago" with Remove, or "Saved offline · N% of the map" / "· map not saved" with Retry. **The page is kept when the map fails** (no tiles for the place, no signal, no room): before 2026-11-19 a save with no tiles was deleted whole, so a climb outside USGS coverage could not be saved at all. Every saved climb is listed under **Logbook › Saved › Offline** and in **Manage areas** (`SavedRouteMaps`, reading `usePackMetaStrict` so a device store that cannot be opened is an error line, not "nothing saved"): tap to open the route page, *Update* to save it again, swipe to remove. Proven live by `scripts/oneoff/probe-live-route-map-save.mjs`.
 
 ## 3. Files
 | File | Key symbols |
@@ -288,7 +288,7 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
 | `lib/db.js` | `useAreaClimbStats`, `useAreaContributions`, `useArea`, `useAreaRoutes`, `useAreaChildren`, `useNearbyAreas`, `useNearbyPeaks`, `useSubtreeRoutes`, `useSubtreeRouteCount`, `useAreaSearch`, `useStates`, `useCountries`, `useAreaPath` |
 | `lib/search.js` | `SEARCH_FORMS`, `searchNorm`, `searchCanon`, `searchMatches` |
 | `lib/offlineTiles.js` | `saveRouteMapOffline`, `removeRouteMapOffline`, `routeMapLines` |
-| `lib/SaveMapOffline.jsx` | `SaveMapOffline` (under the route map), `SavedRouteMaps` (Manage areas) |
+| `lib/SaveMapOffline.jsx` | `SaveMapOffline` (under the route map), `SavedRouteMaps` (Logbook › Saved › Offline, Manage areas) |
 | `lib/FireMap.jsx` | default export `FireMap`, `FireAlertSheet` |
 | `lib/fire.js` | `useActiveFires`, `useFirePerimeters`, `useFireWeather`, `useHeat`, `useSmokeWindow`, `smokeHours`, `smokeTileUrl`, `SMOKE_BANDS`, `useFireAlert`, `nwsPointPage`, `fireLevel` |
 | `src/components/GPXMap.tsx` | `GPXMap` — the route page map (extracted from core, PR13) |
