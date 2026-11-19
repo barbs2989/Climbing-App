@@ -16,10 +16,10 @@ whole guide feature on 2026-11-14 (owner). This doc covers the partners mode (`l
   Liberty Crack"; the distance is on its own pill, not repeated in the title), then — signed in — the **You card**, then ONE wrapping row of pills (`role="group"` *Narrow the list*): **Search by ▾** (the five modes, a native select drawn
   as a pill), **Distance ▾** (ONE pill: Anywhere · Within 10 / 25 / 50 / 100 / 200 / 500 mi of <zip> · Near me now, then the same radii "of you now" once located),
   **Discipline ▾**, **Leads ▾** once a roped discipline (sport, trad, ice, mixed, aid) is picked, **Experience ▾**, and **More filters** (on the example-list
-  modes, and on every mode once you have set a gender). The More filters panel opens right under the row: first the **Only women / men / non-binary
-  climbers** switch (`role="switch"`; owner 2026-11-18, it was a pill of its own), then, on the example-list modes, speed match,
+  modes, and on every mode for a signed-in climber). The More filters panel opens right under the row: first **Show only**, one chip per gender
+  (Women · Men · Non-binary · Genderqueer · Genderfluid · Agender · Two-Spirit, `aria-pressed`; tick several), then, on the example-list modes, speed match,
   available to climb, max distance and **Sort** for the examples — Sort only where there are two ways to sort, i.e. a seed coordinate. Its badge
-  counts the panel filters that are on, the gender switch included. The pills are 44px on a phone and 36px on the website (#3156). The name
+  counts the panel filters that are on, one per picked gender. The pills are 44px on a phone and 36px on the website (#3156). The name
   search is an icon pill (*Name*, `aria-expanded`) beside the title that opens the box. Partner cards stay one per row (owner).
 - **The You card — how other climbers find you** (owner, climber walkthrough 2026-11-13): one compact card above the pills holding
   everything about YOUR visibility, so the pill row is only "who am I looking for". **My areas · N** (owner 2026-11-14: "a larger and more clear box",
@@ -73,12 +73,14 @@ whole guide feature on 2026-11-14 (owner). This doc covers the partners mode (`l
   out of every browse list (name search still finds them), and a viewer without one is told they are not shown.
   **Sending a request** to a real climber without your own photo is refused (`sendReq` in `ClimbMatch.jsx`: *Didn't send
   it — add a profile photo first*) and opens Edit profile on the photo.
-- **Only climbers of my gender** (0359, 2026-10-24): a switch in the *More filters* panel (since 2026-11-18), worded by
-  your own gender (*Only women* / *Only men* / *Only non-binary climbers*), offered once you have set one (otherwise a line
-  points to Edit profile). On, every real browse list shows only climbers who stated the same gender (`usePartnerGenders`, one
-  read of `profiles.gender` for the rows on screen); someone who has not stated one is not shown. A loading or failed read
-  shows nobody and says so, never everyone. Name search is not narrowed. Remembered on this device
-  (`lib/partner-gender-pref.js`). The same filter RockBase and GoWith offer; there is no filter by any OTHER gender.
+- **Show only these genders** (0359; several at once since 2026-11-18, owner: "they only want to climb with women and non binary"): the
+  *Show only* chips in the *More filters* panel, one per gender a profile can state (`GENDERS` in core), offered to every signed-in
+  climber whether or not they have stated their own. With any picked, every real browse list shows only climbers who stated one of
+  the picked genders (`usePartnerGenders`, one read of `profiles.gender` for the rows on screen); someone who has not stated one is
+  not shown. A loading or failed read shows nobody and says so, never everyone. Name search is not narrowed. Remembered on this
+  device as a list (`lib/partner-gender-pref.js`); a device that still holds the old single *Only my gender* switch ON keeps it as the
+  climber's own gender until they change the chips. *Clear filters* does not clear it. Pronouns are shown on profiles and filter nothing.
+  The You card's hint for a climber with no gender now reads *so climbers who filter by gender can find you*.
 - **Filters** (all narrow the real lists as well as the example profiles): Discipline and Experience (level) as pills; Speed match,
   Available to climb (Weekend AM / Weekend PM / Weekday AM / Weekday PM / Flexible) and Max distance (examples) behind *More filters*.
   The panel starts CLOSED (its badge counts the active panel filters), on Find partners and on Join a crew alike, so the results come first.
@@ -137,7 +139,7 @@ whole guide feature on 2026-11-14 (owner). This doc covers the partners mode (`l
 | `ClimbMatchCore.jsx` | `compat`, `compatParts`, `compatWhy`, `CMAX_*`/`COMPAT_*`, `CMAX_AREA`, `areaPathsOverlap`, `CRAG_CATS`, `AVAIL_OPTS`, `AVAIL_FILTER_OPTS`, `weekOf`, `availFits`, `availMatch`, `availOf`, `ALL_CLIMBERS`/`CLIMBERS`, `ME`, `distMiles`, `paceOf`, `PARTNER_NUMBERS` (also read by `lib/Help.jsx`) |
 | `src/components/RealClimberRow.tsx` | `RealClimberRow` — THE partner card, for every climber (real, or an example one passed as `cand`): match % or its refusal, ✓ Verified, level/years, the listed-areas line, pace and discipline chips, bio, `extras`, climbs/vouches chips, `action`, + Add friend and Full profile |
 | `src/components/RoutePartnersTab.tsx` | The route page's Partners tab: its real, area and example climbers on the same card (reads `partner_signals` and `partner_counts` itself; `onResume` from RouteDetail opens the résumé) |
-| `lib/partner-gender-pref.js` | `partnersMyGenderPref`, `savePartnersMyGender` |
+| `lib/partner-gender-pref.js` | `partnerGendersPref`, `savePartnerGenders`, `partnersMyGenderLegacy` |
 | `lib/db.js` | `PARTNER_COLS`, `usePartnerGenders`, `useDiscoverableProfiles`, `useProfileSearch`, `useMyZip`, `usePartnersNear`, `usePartnersByObjective`, `usePartnerSignals`, `useMatchObjectivesOfUsers`, `useVerifiedUsers`, `useMyPartnerAreas`, `savePartnerArea`, `removePartnerArea`, `usePartnersInArea`, `usePartnersInAreas`, `usePartnersForMyAreas`, `usePartnerAreaCounts`, `usePartnerAreasOfUsers`, zip save/delete |
 | `lib/EditProfileScreen.jsx` | Zip code field (owner-only, feeds the origin; a typed zip is checked live by `useZipCentroid`). The home city is a label only — it places nobody |
 | `supabase/migrations/0189, 0211, 0232, 0295, 0300, 0303, 0311, 0456` | RPCs and tables below |
