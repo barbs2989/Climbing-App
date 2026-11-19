@@ -55,6 +55,7 @@ export interface AreaPageRoute extends Omit<RouteRowRoute, "stars"> {
 export interface AreaPageArea extends Omit<AreaGettingThereArea, "area_type" | "lat" | "lng">, AddHereFooterArea {
   area_type: keyof typeof ATYPE;
   region?: string | null;
+  parent_id?: string | null;
   elevation_ft?: number | null;
   prominence_ft?: number | null;
   avy_zone?: string | null;
@@ -227,7 +228,13 @@ export default function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, book
   // the whole list, only where there is a list to draw it on. The phone card is unchanged.
   // The desktop "add / edit / wrong place" row's cells (see the row under the climb list).
   // A state, country or the world has its place fixed by the map: no "Wrong place?" (owner, 2026-11-11).
-  const fixedPlace = ["world", "country", "state"].includes(area.area_type);
+  // So has a state's own top-level division (Washington's Northwest Region; owner, 2026-11-19): a region or range
+  // filed DIRECTLY under a state or country. The parent decides it, not the type: most `region` rows sit under
+  // another region and many of those are crags, which can be misfiled. Until the parent row is read (it is
+  // normally cached from the drill down) a region or range shows no button, so a failed read cannot offer it.
+  const division = ["region", "range"].includes(area.area_type);
+  const { data: parentArea }: AreaPageQuery<AreaPageArea> = useArea(division ? area.parent_id || null : null);
+  const fixedPlace = ["world", "country", "state"].includes(area.area_type) || (division && (!parentArea ||parentArea.id !== area.parent_id || ["state", "country"].includes(parentArea.area_type)));
   const cellBox: CSSProperties = { flex: "1 1 180px", minWidth: 0, display: "flex", flexDirection: "column", justifyContent: "space-between" };
   const cellQ: CSSProperties = { fontSize: 13.5, fontWeight: 700, color: C.text, marginBottom: 8, overflowWrap: "anywhere" };
   const cellBtn: CSSProperties = { ...BTN_LG, background: C.surface, display: "flex", alignItems: "center", justifyContent: "center", gap: 6 };
@@ -500,7 +507,8 @@ export default function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, book
 
         {/* WRONG PLACE (0372): a claim only. The page does not change; the owner moves the area and resolves it.
             Not on a state/province, country or the world (owner, 2026-11-11): their place is fixed by the map,
-            so "Tell us where Alabama belongs" made no sense. */}
+            so "Tell us where Alabama belongs" made no sense. Nor on a state's top-level region or range
+            (owner, 2026-11-19; see fixedPlace). */}
         {!fixedPlace ? <button onClick={() => setWrongOpen(true)} style={{ ...BTN_LG, width: "100%", border: "1px solid " + C.border, background: C.surface, color: C.textSub, marginBottom: 14 }}>
           {"Wrong place? Tell us where " + area.name + " belongs"}
         </button> : null}
