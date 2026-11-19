@@ -71,10 +71,7 @@ const KNOWN = {
   updateTopoLine: "no control — the app has no edit-a-topo-line UI at all (searched for Edit/Delete topo).",
   deleteTopoLine: "no control, same as updateTopoLine.",
   deleteTopoPhoto: "no control, same as updateTopoLine.",
-  fetchCrewMessages: "superseded, not missing. fetchOlderCrewMessages(id, MSG_PAGE, null) serves both the first page and paging — a null cursor means most recent. Called twice.",
   fetchComments: "superseded by the useComments hook, which is called.",
-  markMessageAsRead: "superseded by markDmThreadRead / markCrewRead, both called twice.",
-  myOpenDataRequests: "a READ with no screen, and the policy promise is kept anyway: the Privacy Policy says requests are RECORDED against your account, and raiseDataRequest IS wired at both call sites with three honest outcomes. Nothing yet SHOWS you your open requests.",
 };
 console.log("\nWHY EACH IS UNWIRED (reasons, not passes — a stale entry fails):");
 let stale = 0;

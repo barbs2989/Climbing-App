@@ -418,7 +418,9 @@ else ok("predicate: a two-point waypoint join yields to the waypoint-line caveat
     else ok("the heading names trip reports too");
 
     // Non-vacuity: the rows must really be there, or every assertion above is about an empty box.
-    if (!/Trip report/.test(dbBody.slice(ci, ci + 900))) fail("no trip-report row rendered - section 5's heading assertions would be vacuous");
+    // Anchored on the REPORTER, not on row copy: the row used to read "Trip report - no recorded
+    // track." and that line was cut when the section became one list of reports and tracks (2026-11-18).
+    if (!dbBody.slice(ci, ci + 900).includes(REPORTS[0].user)) fail("no trip-report row rendered - section 5's heading assertions would be vacuous");
     else ok("a trip report really does render under that heading");
   }
 

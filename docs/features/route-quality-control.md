@@ -189,7 +189,7 @@ empty field fill at once and two agreeing climbers change one; the owner withdre
 - **Add-a-climb audit, discipline fit and OTHER DETAILS** (owner 2026-11-18, 0461). Each discipline is asked only what
   it carries, measured against 1,000 live routes per discipline and Mountain Project / theCrag / OpenBeta:
   - **Grades** (`ADDR_GRADES` in `ClimbMatchCore.jsx`, shared with the edit sheet): alpine is YDS (`ADDR_ALPINE`: Class 3–4,
-    5.0 up), mountaineering a class or a snow grade (`ADDR_MTN`: Class 1–4, Easy / Mod. / Steep Snow); `ADDR_ALPS` offered
+    5.0 up), mountaineering a class or a snow grade (`ADDR_MTN`: Class 1–4, Easy / Mod. / Steep Snow); the old alpine list offered
     neither. **Commitment** is the I–VI grade (`ADDR_COMMIT`) that `routes.commitment` holds and Tech Stats prints; it was
     "Half day" / "Full day". The alpine-grade dropdown keeps the IFAS letters only, since I–VI is asked as Commitment.
   - **Scope** (`lib/fieldScope.js`, so the edit sheet agrees): first free ascent only on trad, aid, alpine and mixed; hardest
@@ -252,7 +252,7 @@ Deferred by the owner (2026-10-15): CAPTCHA on sign-up.
    log to `moderation_actions`, notify through `_notify`, and (on reject) call
    `_add_contribution_strike`. `set_contribution_standing` is the owner's override;
    `set_route_field_confidence` locks or unlocks a field by hand.
-5. **Flags.** `file_route_flag` / `resolve_route_flag` (0309); `useMyRouteFlags`,
+5. **Flags.** `file_route_flag` / `resolve_route_flag` (0309);
    `useOpenRouteFlags`.
 6. **Notices.** `useMyNotices` is merged into `mergedNotifs` in `ClimbMatch.jsx` with
    `cat:"contributions"`; `markNoticeRead` sets `read_at`.
@@ -279,7 +279,7 @@ Deferred by the owner (2026-10-15): CAPTCHA on sign-up.
 | `lib/SafetyNotices.jsx` | `ContributionStandingNotice`, `AppealSheet` |
 | `ClimbMatchCore.jsx` | `sameEditValue` (clustering) |
 | `src/components/Contributions.tsx` | `Contributions` — the "Your contributions" ledger (`ST` statuses) |
-| `lib/db.js` | `submitContribution`, `useRouteContributions`, `useRouteFieldConfidence`, `setRouteFieldConfidence`, `useFieldContributions`, `approveFieldContribution`, `rejectFieldContribution`, `useMyContributionStanding`, `useContributionStandings`, `setContributionStanding`, `fileRouteFlag`, `useMyRouteFlags`, `useOpenRouteFlags`, `resolveRouteFlag`, `useMyNotices`, `markNoticeRead`, `useAdminQueueCounts`, `useContributionFields`, `useRouteRowsByIds` |
+| `lib/db.js` | `submitContribution`, `useRouteContributions`, `useRouteFieldConfidence`, `setRouteFieldConfidence`, `useFieldContributions`, `approveFieldContribution`, `rejectFieldContribution`, `useMyContributionStanding`, `useContributionStandings`, `setContributionStanding`, `fileRouteFlag`, `useOpenRouteFlags`, `resolveRouteFlag`, `useMyNotices`, `markNoticeRead`, `useAdminQueueCounts`, `useContributionFields`, `useRouteRowsByIds` |
 | `scripts/check-contrib-field-columns.mjs` | the guard that keeps `contribution_fields` equal to the form |
 | `supabase/migrations/0307_route_quality_control_tables.sql` | `contribution_fields`, `route_field_confidence`, `contribution_standing`, `route_flags`, `user_notices`, `applied_value` |
 | `supabase/migrations/0351_a_removal_waits_for_the_owner.sql` | `contributions.reason`, `route_field_page_value`, `_edit_removes`, `contribution_consensus` with the removal exit |
