@@ -161,7 +161,7 @@ Part of the current-state docs. The Conditions tab has its own doc: [conditions.
 | `lib/roadReports.js` | `ROAD_TONE`, `roadReportsOf` — the tone a road status is drawn in, and the road reports newest first (moved out of RouteDetail.jsx, PR56) |
 | `src/components/ClimbingRouteTable.tsx` | `ClimbingRouteTable` — CLIMBING ROUTE: the technical ground section by section, each with its class chip (re-exported by RouteDetail.jsx) (moved out of RouteDetail.jsx, PR57) |
 | `src/components/Capped.tsx` | `Capped` — caps a long route-page section at 400px under a fade, with Show more / Show less (moved out of RouteDetail.jsx, PR57) |
-| `lib/pinnedTop.js` | `pinnedTopBottom` / `scrollBelowPinned` — how far down the pinned app bar and route sub-tab bar reach, and a scroll that lands its target below them (Capped's Show less, SectionJumps, the route page's jump chips) |
+| `lib/pinnedTop.js` | `pinnedTopBottom` / `scrollBelowPinned` — how far down the pinned app bar and route sub-tab bar reach, and a scroll that lands its target below them (Capped's Show less, SectionJumps, the route page's jump chips); `scrollPageTop` — hold the page at its very top after a link opens another tab (Overview's *View all reports & conditions*) |
 | `src/components/GradePicker.tsx` | `GradePicker` — the edit sheet's two-step grade picker: the number, then a-d or +/- (moved out of RouteDetail.jsx, PR57) |
 | `src/components/RappelTable.tsx` | `RappelTable` — RAPPELS: the station list with its known total and the single-rope warning (moved out of RouteDetail.jsx, PR57) |
 | `src/components/RappelRow.tsx` | `RappelRow` — one rappel station as a dropdown: R#, length and anchor, then station, hazards, pull and notes (moved out of RouteDetail.jsx, PR57) |

@@ -296,9 +296,11 @@ export default function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, book
   // (2026-11-18). A crag or peak still waits for its list: it may be a leaf, which has no search.
   const searchEl = aboveLeaf && (!error || (children && children.length > 0)) ? <DbSearchSplit scope={area} onJumpToArea={onJumpToArea} onOpenRoute={onOpenRoute} C={C} endRef={listEndRef} /> : null;
   const phoneSearch = !wide && !!searchEl;
-  // On a crag or wall -- and while a crag, peak or wall is still finding out whether it has walls, so its loading
-  // line is drawn where the climbs will be -- the climbs list is the card under the Route finder row.
-  const listUp = isLeaf || (!Array.isArray(children) && formation);
+  // A CRAG, PEAK OR WALL (and any area with climbs and nothing under it) reads list first: under the Route finder row
+  // comes its climbs, or -- when it has walls or boulders under it -- its search and that list. Decided by the area's
+  // TYPE, which is known on the first paint, not by whether it has children, which is not: deciding by children
+  // drew a crag like Jackson Falls climb-first while it loaded and then reordered it (2026-11-18).
+  const listUp = formation || isLeaf;
   const section = (el: ReactNode) => <div style={areaSheet(C)}><div style={{ marginTop: -1 }}>{el}</div></div>;
   // THE CLIMBS LIST: the loading and error lines, the summit briefing and (on a crag or wall) the rows with their
   // Filters and sorts. On a crag or wall it is a card right under the Route finder row (listUp, below).
@@ -426,12 +428,17 @@ export default function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, book
           with spacing"): the grade spread, the search, the description, the Route finder row, the sub-areas, the
           classics, the photos and Getting there were one bordered sheet split by hairlines. Each is drawn by
           section(), which clips the 1px top rule a section draws to divide itself inside a shared sheet. */}
-      {/* A CRAG OR WALL reads climb first (owner, 2026-11-18: "the list of actual climbs is too far down"): the Route
-          finder · Objectives · Map row, the climbs, the description, Climbs here by type, the classics. The chart is
+      {/* A CRAG, PEAK OR WALL reads climb first (owner, 2026-11-18: "the list of actual climbs is too far down"): the
+          Route finder · Objectives · Map row, the climbs (or its search and walls), the description, Climbs here by
+          type, the classics. The chart is
           left off under 3 climbs and the classics at 5 or fewer: there both only repeat the list right above them. */}
       {listUp ? <>
         {section(<AreaActionRow C={C} first routeCount={area.route_count} onFinder={() => onFinder()} inlineDiscs={wide && chartable ? inlineDiscs : []} myGrades={myGrades} onFindInline={fl => onFinder(fl)} objectivesHere={objectivesHere} onObjectives={onObjectives} onNear={onNear} />)}
-        {section(<div style={{ padding: "4px 14px 12px" }}>{listBlock}</div>)}
+        {childRows ? <>
+          {searchEl ? section(<div style={{ padding: "12px 14px 4px" }}>{searchEl}</div>) : null}
+          {!leftEl ? section(<div style={{ padding: "12px 14px 4px" }}>{childList("section")}</div>) : null}
+          {listBlock}
+        </> : section(<div style={{ padding: "4px 14px 12px" }}>{listBlock}</div>)}
         {showAbout ? section(<AboutCard area={area} C={C} onEdit={editOn} flat first />) : null}
         {chartable && !(isLeaf && routes && routes.length < 3) ? section(<GradeSpreadDisclosure first stats={stats.data} loading={stats.isLoading} error={stats.error} C={C} discOptions={discOptions} onDisc={onFinder} onGrade={onGrade} />) : null}
         {classicsEl && !(isLeaf && routes && routes.length <= 5) ? section(classicsEl) : null}
