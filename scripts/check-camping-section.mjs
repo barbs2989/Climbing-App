@@ -152,13 +152,14 @@ else fail("a Campsite waypoint does not reach CAMPING & BIVY — the two stores 
     bivy: [SITE], waypoints: [{ name: "Boston Basin", type: "Campsite", lat: 48.4, lng: -121.0 }],
   }), "planner"));
   const start = t.indexOf(HEAD);
-  // Skip the panel's OWN intro sentence ("...also a pin under ROUTE TRACK."): since a same-named pin
-  // now lends its distance and on-track chip to the researched site, that sentence renders here too,
-  // and bounding on it sliced the panel off before its first site.
-  const intro = t.indexOf("pin under ROUTE TRACK", start);
-  const after = t.indexOf("ROUTE TRACK", intro >= 0 ? intro + "pin under ROUTE TRACK".length : start);
+  // The panel ends at the next section heading. Since 2026-11-18 the alpine Plan tab puts ROUTE TRACK
+  // (the map) ABOVE the climb, and CAMPING & BIVY is followed by CROWDS & SOLITUDE (when mounted) and then
+  // the recent tracks list, so bound on whichever of those comes first after the panel's heading.
+  const NEXT = ["CROWDS", "Recent tracks", "Recent logged climbs", "ROUTE TRACK", "WAYPOINTS"];
+  const afters = NEXT.map((h) => t.indexOf(h, start + HEAD.length)).filter((i) => i > start);
+  const after = afters.length ? Math.min(...afters) : -1;
   if (start < 0) fail("dedupe case: the panel did not render at all");
-  else if (after < 0) fail("ANCHOR LOST: 'ROUTE TRACK' no longer follows the panel — this slice cannot be bounded");
+  else if (after < 0) fail("ANCHOR LOST: no section heading (" + NEXT.join(", ") + ") follows the panel — this slice cannot be bounded");
   else {
     const panel = t.slice(start, after);
     const n = (panel.match(/Boston Basin/g) || []).length;
