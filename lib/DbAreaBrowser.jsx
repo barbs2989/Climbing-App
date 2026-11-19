@@ -58,6 +58,9 @@ export default function DbAreaBrowser({ areaDiscussion, jumpToFinderReq, onSignI
   const [finderInit, setFinderInit] = useState(saved ? saved.finderInit : null); // a search handed in from outside: { id, q, filters }
   const [treeOpen, setTreeOpen] = useState(false);
   const wide = useWideScreen();
+  // A view handed in with a Near me request (Home's map: { lat, lng, zoom }), and whether to centre on the climber.
+  const [nearAt, setNearAt] = useState(null);
+  const [nearLocate, setNearLocate] = useState(false);
   const climber = useMemo(() => ({ wishlist, profile, completedIds, rankSuggested, discSlots }), [wishlist, profile, completedIds, rankSuggested, discSlots]);
   // The jump requests below are App props that STAY set once handled, so a remount would re-run the
   // last one (a search from an hour ago) over the position restored above. The ids already handled
@@ -192,6 +195,13 @@ export default function DbAreaBrowser({ areaDiscussion, jumpToFinderReq, onSignI
     HANDLED.near = jumpToNearReq.id;
     cancelJump(); // the map is where the climber asked to be; a jump landing later would leave it
     setTreeOpen(false);
+    // NEAR ME IS ABOUT WHERE YOU ARE, not the area you last looked at (walkthrough 2026-11-18: Home's
+    // "See all" opened "Map · Rock City" because Rock City was where the Climbs tab last stood). The
+    // map opens from the top level: on the view Home's map handed over, else centred on you when
+    // location is already allowed. "List" then lands on the state picker.
+    setStateNode(null); setStack([]);
+    setNearAt(jumpToNearReq.at || null);
+    setNearLocate(!jumpToNearReq.at);
     setScreen("near");
   }, [jumpToNearReq]);
 
@@ -274,7 +284,7 @@ export default function DbAreaBrowser({ areaDiscussion, jumpToFinderReq, onSignI
         </div>
       ) : null}
       {screen === "near" ? (
-        <><ScreenHero C={C} title={"Map" + (current ? " · " + current.name : "")} /><NearMePanel uDistMi={uDistMi} name={current ? current.name : null} center0={current && current.lat != null ? { lat: current.lat, lng: current.lng } : null} areaType={current && current.area_type} onBack={() => setScreen("areas")} onOpenArea={jumpToArea} onOpenRoute={onOpenRoute} C={C} /></>
+        <><ScreenHero C={C} title={"Map" + (current ? " · " + current.name : "")} /><NearMePanel key={nearAt ? nearAt.lat + "," + nearAt.lng + "," + nearAt.zoom : current ? current.id : "root"} uDistMi={uDistMi} autoLocate={!current && nearLocate} zoom0={!current && nearAt ? nearAt.zoom : null} name={current ? current.name : null} center0={current && current.lat != null ? { lat: current.lat, lng: current.lng } : !current && nearAt ? { lat: nearAt.lat, lng: nearAt.lng } : null} areaType={current && current.area_type} onBack={() => setScreen("areas")} onOpenArea={jumpToArea} onOpenRoute={onOpenRoute} C={C} /></>
       ) : !stateNode ? (
         <>{rootHeader || null}<StatePicker onPick={pickState} C={C} /></>
       ) : screen === "finder" ? (
