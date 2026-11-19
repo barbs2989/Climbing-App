@@ -1,0 +1,74 @@
+{
+ "ny_mount_marshall_herbert_brook_herd_path": {
+  "area": "ny_mount_marshall",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Upper Works Trailhead",
+    "trailheadLat": 44.086202,
+    "trailheadLng": -74.055542
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Upper Works Trailhead",
+     "trailheadLat": 44.086202,
+     "trailheadLng": -74.055542
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.openstreetmap.org/way/1082600068",
+      "fact": "Upper Works Parking Area 44.08620,-74.05554",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "stored",
+    "fact": "route text: Calamity Brook trail to Flowed Lands, then Herbert Brook herd path; starts at Upper Works"
+   },
+   "chunk": "photon.json"
+  }
+ },
+ "ny_mount_redfield_uphill_brook_herd_path": {
+  "area": "ny_mount_redfield",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Upper Works Trailhead",
+    "trailheadLat": 44.086202,
+    "trailheadLng": -74.055542
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Upper Works Trailhead",
+     "trailheadLat": 44.086202,
+     "trailheadLng": -74.055542
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.openstreetmap.org/way/1082600068",
+      "fact": "Upper Works Parking Area 44.08620,-74.05554",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "stored",
+    "fact": "route text: Calamity Brook trail to the Uphill Brook herd path; starts at Upper Works; Loj approach not the usual way"
+   },
+   "chunk": "photon.json"
+  }
+ }
+}

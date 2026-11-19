@@ -112,7 +112,7 @@ const CASES = [
     file: RD,
     why: "RouteDetail stops OWNING the planner inputs, so they sit inside the branch a sub-tab switch unmounts.",
     edit: (s) => s.replace(
-      'const [calcInputs,setCalcInputs]=useState({fit:"intermediate",pack:10,party:2,depart:6});', ""),
+      'const [calcInputs,setCalcInputs]=useState({fit:"intermediate",pack:10,party:2,depart:6,camp:4});', ""), // camp: the summit day's leave-camp time (2026-11-18)
   },
   {
     name: "calc-local-copy-returns",

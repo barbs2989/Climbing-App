@@ -1,0 +1,351 @@
+{
+ "date": "2026-11-18",
+ "what": "Full research on the four multi-day routes the accuracy check found off (Goode NE Buttress, Dark Peak, Daniel, Shasta Avalanche Gulch). Each leg sourced separately; applied with apply-trip-time-consistency.mjs.",
+ "routes": [
+  {
+   "id": "wa_mount_goode_northeast_buttress",
+   "from": [
+    6,
+    9,
+    15,
+    32
+   ],
+   "to": [
+    8.5,
+    9,
+    14,
+    31.5
+   ],
+   "confidence": "medium",
+   "legs": {
+    "thToCamp": 8.5,
+    "campToSummit": 9,
+    "summitToCamp": null,
+    "campToTh": null,
+    "summitToTh": 14
+   },
+   "why": "Approach leg said 6 hr while day 1 and its section said 8, and 6+9+15 did not make 32. Reports put trailhead-to-high-camp at 8-9 hr (6.5-11), camp-to-summit at 8-9 hr (7-12; course table 9-12), and summit-to-car at 13-15 hr (10-18) usually over two days; the row now reads 8.5 + 9 + 14 = 31.5 everywhere.",
+   "evidence": [
+    {
+     "url": "https://www.mountaineers.org/activities/activities/intermediate-alpine-climb-mount-goode-northeast",
+     "says": "Course reference table (search snippet; page 403): TH to camp 10 hr (~17 mi), camp to summit 9-12 hr (+3,500 ft), summit to cars 13-15 hr (~20 mi)."
+    },
+    {
+     "url": "https://www.mountaineers.org/activities/routes-places/goode-mountain-northeast-buttress",
+     "says": "Route page (403; snippet): camp to summit 9-12 hr, about 10 hr trailhead to camp, 3-4 days recommended."
+    },
+    {
+     "url": "https://climberkyle.com/2020/07/18/mt-goode-ne-buttress-5-5/",
+     "says": "Fetched: TH to glacier-toe camp ~6.5 hr; camp to summit just under 8 hr (7.5); summit bivy; summit to car 10 hr over 24 mi in one day; 3 days."
+    },
+    {
+     "url": "https://www.rajahamid.com/journal/2025/7/14/goode-mountain-climb-beta",
+     "says": "Fetched: TH to high camp 8.5 hr; camp to summit ~10 hr, summit bivy; summit to Bridge Creek Camp ~10 hr; 1.5 hr out to High Bridge (Stehekin side); 4 days."
+    },
+    {
+     "url": "https://www.jeffreyjhebert.com/adventures/northeast-buttress-on-goode-mountain",
+     "says": "Fetched: TH to ~5,400 ft camp ~8 hr; camp to summit 7:00-3:15 (~8.25 hr); summit to meadow camp ~2 hr; next day 2.75 hr to valley floor then a long 20-mile walk out (untimed)."
+    },
+    {
+     "url": "https://engineeredforadventure.com/goode-mountain-northeast-buttress/",
+     "says": "Fetched: car to summit bivy in one 16-hr push; summit (up 5 AM) to car 7:30 PM, ~14.5 hr, including ~6 hr from Park Creek Trail."
+    },
+    {
+     "url": "http://w.ericsbasecamp.net/trips/Goode/Goode.htm",
+     "says": "Fetched: off-route ledge bivy; ledge to summit 6:20-10:00; summit to North Fork camp 10:00-4:20 (~6.3 hr); camp to car 5:00-10:15 PM (~5.25 hr); summit to car ~12.25 hr incl. a 40-min stop."
+    },
+    {
+     "url": "https://sverdina.com/goode1.asp",
+     "says": "Fetched: same party as above: summit 10 AM, back at camp 4:20 PM, car about 11:20 PM; 14 mi camp to car."
+    },
+    {
+     "url": "https://stephabegg.com/?p=8941",
+     "says": "Fetched: Bridge Creek TH to high camp 11:15 (heavy multi-week packs); NE Buttress camp to summit camp 11:55."
+    },
+    {
+     "url": "https://www.wta.org/go-hiking/trip-reports/trip_report.2022-08-16.4035302077",
+     "says": "403; snippet: TH to 5,500 ft bivy 14.9 mi in 9 hr; bivy to summit 1.5 mi/3,400 ft in 11 hr; summit to TH via Park Creek 21.8 mi in 18 hr."
+    },
+    {
+     "url": "https://lemkeclimbs.com/mount-goode-ne-buttress-and-storm-king",
+     "says": "Fetched: fast soloing party; camp left at sunrise, ~2 hr to glacier edge, moat 9 AM, summit about 1 PM (~7 hr camp to summit); exited via Stehekin, not Hwy 20."
+    },
+    {
+     "url": "https://cascadeclimbers.com/forum/profile/25325-alpinweiss/content/page/2/",
+     "says": "403; snippet (2009): 8.5 hours up, 6.5 hours down (start/end points unclear)."
+    },
+    {
+     "url": "https://cascadeclimbers.com/forum/topic/26125-tr-goode-ne-buttess-792004",
+     "says": "403; snippet: summit 12:45 PM, 7.5 hr after leaving camp."
+    },
+    {
+     "url": "https://www.mountaineers.org/activities/trip-reports/intermediate-alpine-climb-goode-mountain-northeast-buttress-2",
+     "says": "403; snippet (Aug 2025): TH to bivy 8 hr; climb plus descent to second bivy 15 hr."
+    },
+    {
+     "url": "https://fastestknowntime.com/route/goode-mountain-northeast-buttress",
+     "says": "Fetched: most parties take 2-3 days; descent via Park Creek and the PCT about 20 mi; FKT 12.5-14 hr car to car."
+    },
+    {
+     "url": "https://www.14ers.com/php14ers/tripreport.php?trip=23213",
+     "says": "Fetched: low-camp (North Fork Camp) variant, TH to camp under 4 hr, summit ~8 hr after 5:30 alarm, summit back to low camp ~7.5 hr; not used for the high-camp legs."
+    }
+   ]
+  },
+  {
+   "id": "wa_dark_peak_dark_glacier_route",
+   "from": [
+    4,
+    9,
+    10.25,
+    23.25
+   ],
+   "to": [
+    4,
+    14,
+    3.5,
+    21.5
+   ],
+   "confidence": "medium",
+   "legs": {
+    "thToCamp": 4,
+    "campToSummit": 8,
+    "summitToCamp": 6,
+    "campToTh": 3.5,
+    "summitToTh": null
+   },
+   "why": "The summit leg (9 hr) held only the climb up while descent (10.25) folded the return to camp into the hike-out day, and no day had hours. Reports put camp to summit at about 7-9 hr and back to camp at about 5-7 hr (a 14-15 hr summit day across four accounts), with about 3.5-4 hr each way on the trail; the row now reads 4 + 14 + 3.5 = 21.5 hr over the three days.",
+   "evidence": [
+    {
+     "url": "https://summitpost.org/swamp-creek-route/165326",
+     "says": "(403; search snippets) 7-9 hr from Swamp Creek Camp to the summit, 5-7 hr back to camp; about 5 hr to the base of the Dark Glacier then 3-5 hr up the glacier; add 2 hr round trip from Fivemile Camp; author did it from Fivemile in 16 hr camp-to-camp (so about 14 from Swamp Creek); ~6 mi and ~6,000 ft from Swamp Creek Camp"
+    },
+    {
+     "url": "https://www.mountaineers.org/activities/routes-places/dark-peak-dark-glacier",
+     "says": "(403; search snippets) strong parties have taken 15 hr or more on the summit day (day 2) because of ~6,000 ft of gain plus routefinding and bushwhacking"
+    },
+    {
+     "url": "https://www.mountaineers.org/activities/activities/basic-glacier-climb-dark-peak-dark-glacier-7",
+     "says": "(403; snippets) club trip run as 3 days, 6,800 ft gain, 28 mi"
+    },
+    {
+     "url": "https://turns-all-year.com/trip-reports/may-4-6-2018-dark-peak-second-descent",
+     "says": "(fetched) left High Bridge ~2pm, camp near Swamp Creek ~7:30pm (~5.5 hr, early season with ski loads); summit day: headwall ~9am, summit 3pm, skied ~4pm, back in camp 8pm, a 14-hour day (about 9 hr up, 4 hr down on skis); out to High Bridge shortly after noon next day"
+    },
+    {
+     "url": "https://countryhighpoints.com/dark-peak-attempt",
+     "says": "(fetched) morning shuttle to High Bridge, 8 mi on the PCT to Swamp Creek Camp by ~12:30pm (about 3-3.5 hr); then 'the next few hours' of alder up Swamp Creek to the 4,300 ft basin"
+    },
+    {
+     "url": "https://cascadeclimbers.com/forum/topic/76128-tr-dark-peak-swamp-creek-8212010",
+     "says": "(403; snippets) 4 hr from Swamp Creek Camp to the lower basin (~3 mi); party got back to Swamp Creek Camp about 7pm after the return through the alder"
+    },
+    {
+     "url": "https://lemkeclimbs.com/?p=2838",
+     "says": "(fetched) traverse party: summit ~3pm, then down the Dark Glacier and bushwhacked Swamp Creek to a 3,800 ft camp at dark, part of a 16-hour day that began on Bonanza; hiked ~6 mi out to High Bridge next day (no time); context only, not a standard ascent"
+    },
+    {
+     "url": "https://www.countryhighpoints.com/dark-peak-bonanza-peak-and-martin-peak/",
+     "says": "(fetched) Hemlock Camp variant with a bivy below the glacier, top of glacier by 8am; not used for figures (different approach)"
+    },
+    {
+     "url": "https://onehikeaweek.com/2015/06/07/dark-peak/",
+     "says": "(fetched) High Bridge to the lower basin via ~8 mi of PCT plus Swamp Creek brush in one day, arriving after dark; no clock times"
+    },
+    {
+     "url": "https://www.wta.org/go-hiking/hikes/dark-peak",
+     "says": "(fetched) 16 mi round trip; no hiking time listed"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_daniel_daniel_glacier",
+   "from": [
+    4.5,
+    11,
+    4,
+    19.5
+   ],
+   "to": [
+    3.5,
+    4.5,
+    6,
+    14
+   ],
+   "confidence": "medium",
+   "legs": {
+    "thToCamp": 3.5,
+    "campToSummit": 4.5,
+    "summitToCamp": 2.5,
+    "campToTh": 3,
+    "summitToTh": 6,
+    "summitToThNote": "2.5 summit to camp + 0.5 breaking camp + 3 camp to trailhead"
+   },
+   "why": "The row put 15 hr on the summit-and-walk-out day (8.5 hr camp to summit) and 4.5 hr on the walk in, a 19.5 hr total. Two reports of this exact glacier line give 4.5 hr camp to summit; reports and a route profile give about 2.5 hr back to camp, about 3 hr camp to car and about 3.5 hr car to camp with an overnight pack, so the trip is about 14 hr moving (3.5 + 10.5), in line with 11-13 hr single-day ascents.",
+   "evidence": [
+    {
+     "url": "https://www.wta.org/go-hiking/trip-reports/trip_report.2014-07-02.0865585021",
+     "says": "Daniel Glacier route from Peggy's Pond: ~6.5 hr trailhead to the pond in heavy early-season snow; 4.5 hr camp to West summit; 2.5 hr summit back to camp (down the SE ridge); 4 hr camp to car with packs."
+    },
+    {
+     "url": "https://www.wta.org/go-hiking/trip-reports/trip_report.2016-06-06.5381773686",
+     "says": "Daniel Glacier crossing: left camp just after 3 am, West summit 7:30 am (~4.5 hr one way); back at trailhead around 3-4 pm after breaking camp and resting."
+    },
+    {
+     "url": "https://www.mountaineers.org/activities/routes-places/mount-daniel-lynch-glacier",
+     "says": "Route profile (Lynch Glacier, the longer neighbouring route from the same camp): 2.5-4 hr trailhead to camp, 5-7 hr camp to summit, 2-3 hr summit to camp, 3-4 hr camp to trailhead."
+    },
+    {
+     "url": "https://mazamas.org/activity/instance/10822/detail/",
+     "says": "SE Ridge from Peggy's Pond: hike in about 4 hr; 5-6 hr up and 4 down on climb day."
+    },
+    {
+     "url": "https://www.mountaineers.org/activities/trip-reports/basic-glacier-climb-mount-daniel-lynch-glacier-2",
+     "says": "Lynch Glacier from Peggy's Pond: left camp 4:30 am, summit 10:30 (6 hr), back at camp 1 pm (2 hr), left 2 pm, trailhead 4:45 pm (2.75 hr camp to car)."
+    },
+    {
+     "url": "https://www.summitpost.org/mount-daniel/climbers-log/150409/p1",
+     "says": "Climber log: 5.5 hr camp to camp from Peggy's Pond (SE side scramble); a fast party 3h15 up, 2h25 down; one party 7:30 start and above Peggy's Pond by 10:15 (2.75 hr, light pack)."
+    },
+    {
+     "url": "https://www.summitpost.org/mount-daniel/climbers-log/150409/p2",
+     "says": "Single-day ascents from the same side: summit in ~6 hr and ~11 hr car to car; another just short of 12 hr car to car."
+    },
+    {
+     "url": "https://www.mountaineers.org/activities/trip-reports/alpine-scramble-mount-daniel-2",
+     "says": "Single-day scramble: just under 12 hr car to car including an hour or two lost to misadventures."
+    },
+    {
+     "url": "https://www.mountaineers.org/activities/trip-reports/basic-glacier-climb-mount-daniel-lynch-glacier",
+     "says": "Single-day Lynch Glacier: a little under 3 hr car to Peggy's Pond; 13 hr car to car at a relaxed pace."
+    },
+    {
+     "url": "https://www.mountaineers.org/activities/trip-reports/glacier-climb-mount-daniel-lynch-glacier-2",
+     "says": "Single-day Lynch Glacier tagging all three summits: 15 hr 5 min car to car."
+    },
+    {
+     "url": "https://www.mountaineers.org/activities/trip-reports/basic-glacier-climb-mount-daniel-lynch-glacier-3",
+     "says": "Lynch Glacier: back at camp a little before 6 pm, left ~7 pm, at cars ~10 pm (~3 hr camp to car)."
+    },
+    {
+     "url": "https://www.wta.org/go-hiking/trip-reports/trip_report.2022-09-10.8058262793",
+     "says": "Peggy's Pond to the trailhead (~5 mi) in about 2 hr with full packs."
+    },
+    {
+     "url": "https://turns-all-year.com/trip-reports/july-5-2014-mt-daniel-and-lynch-glacier",
+     "says": "Ski day trip: 2.5 hr car to Peggy's Pond, 2.5 hr pond to car, 11 hr car to car."
+    },
+    {
+     "url": "https://www.summitpost.org/mount-daniel-9-8-2013/879042",
+     "says": "Day trip from 2:45 am, at Peggy's Pond before sunrise, summit at 10 am (then a 2 hr summit rest)."
+    }
+   ]
+  },
+  {
+   "id": "ca_mt_shasta_avalanche_gulch",
+   "from": [
+    3,
+    5,
+    4,
+    12
+   ],
+   "to": [
+    4.5,
+    5.5,
+    4.5,
+    14.5
+   ],
+   "confidence": "medium",
+   "legs": {
+    "thToCamp": 4.5,
+    "campToSummit": 5.5,
+    "summitToCamp": 2.5,
+    "campToTh": 2,
+    "summitToTh": 3.25
+   },
+   "why": "The row's total (12 hr) matched its own legs but the day plan did not (day 1 at 5 hr, summit day blank), and the legs ran short of reported times. Independent parties report about 3.25-5 hr to Helen Lake (middle ~4.5), 3.75-6.5 hr from Helen Lake to the top (middle ~5.5; guided parties 8-9), about 2-4 hr back to camp and about 2 hr camp to car, so the summit day that walks out is about 10 hr and the trip 14.5 hr of moving time.",
+   "evidence": [
+    {
+     "url": "https://www.shastaavalanche.org/climbing-route-trailhead-conditions/avalanche-gulch-helen-lake",
+     "says": "(search snippet) Avalanche center staff: Bunny Flat 9:15am to near Lake Helen 12:30pm, about 3.25 hr, winter."
+    },
+    {
+     "url": "https://summitpost.org/mount-shasta/climbers-log/150188/d-139044",
+     "says": "(search snippet; page 403) Aug 2012 splits: Bunny Flat 1:30pm, Lake Helen 4:45pm (3.25 hr); 4:28 from Helen Lake to summit."
+    },
+    {
+     "url": "https://www.mountaineers.org/activities/trip-reports/basic-alpine-climb-mount-shasta-avalanche-gap",
+     "says": "(search snippet; page 403) 2019 party reached Helen Lake at 3 PM, 3.5 hr from the trailhead, slowed by sun cups."
+    },
+    {
+     "url": "https://pehkialohsuann.blogspot.com/2017/07/mt-shasta-via-avalanche-gulch-july-22.html",
+     "says": "Fetched: moderate-fitness group, about 4.5 hr Bunny Flat to Helen Lake, about 5 hr to summit, about 2 hr back to camp glissading, about 2 hr camp to trailhead."
+    },
+    {
+     "url": "https://weekendsoutdoors.blogspot.com/2008/08/mt-shasta-summit-hike.html",
+     "says": "Fetched: about 5 hr from the start to Helen Lake; left Helen Lake 4 am."
+    },
+    {
+     "url": "https://left404.com/?p=696",
+     "says": "Fetched: start ~9AM, Helen Lake ~2PM (about 5 hr); summit day left 4AM, lower Misery Hill 7:30AM; Horse Camp 4PM to trailhead ~5PM on the walk out."
+    },
+    {
+     "url": "https://socalhiker.net/climbing-mount-shasta-via-avalanche-gulch/",
+     "says": "Fetched: met at Bunny Flat 7:00am, reached Helen Lake around lunchtime (~5 hr); 3am summit start; about an hour to break camp."
+    },
+    {
+     "url": "https://californiathroughmylens.com/?p=33323",
+     "says": "Fetched: left Helen Lake ~3:20 AM; Helen Lake to Red Banks 3.5-4 hr; Helen Lake to summit about 6.5 hr."
+    },
+    {
+     "url": "https://summitpost.org/mount-shasta/climbers-log/150188/d-22172",
+     "says": "(search snippet; page 403) 4 hr 45 min to summit from camp at Helen Lake; glissade from the Red Banks into camp."
+    },
+    {
+     "url": "https://www.summitpost.org/avalanche-gulch/climbers-log/155406/p1",
+     "says": "(search snippet) May 2026 log: 3.45 hr from Helen Lake to the top; hard snow slowed the descent."
+    },
+    {
+     "url": "https://www.summitpost.org/mount-shasta/climbers-log/150188/p9",
+     "says": "(search snippet) left camp 6am, summit 11:45 (about 5.75 hr); another log a little under 5 hr from Helen Lake."
+    },
+    {
+     "url": "https://mauve-parsnip-jwsg.squarespace.com/blog/shasta-2023",
+     "says": "Fetched: from a camp at 50/50 Flat (below Helen Lake), about 5 hr moving plus 2 hr breaks to the summit (~7 hr)."
+    },
+    {
+     "url": "https://swsmtns.com/?p=236719",
+     "says": "Fetched: guided 2-day, camp near 9,500 ft; ascent typically 8-9 hr; descent to camp 3-4 hr; trailhead by late afternoon."
+    },
+    {
+     "url": "https://shastaguides.com/expedition-style",
+     "says": "Fetched: guided 3-day; 2-3am start with 11am-12pm turnaround (~8-10 hr up); descent to camp 2.5-4.5 hr; back at Bunny Flat 5-7pm."
+    },
+    {
+     "url": "https://alpenglowexpeditions.com/adventure/2-day-avalanche-gulch-climb",
+     "says": "Fetched: guided; Bunny Flat 9:30am to 9,500 ft camp 3pm (~4.5 hr hiking plus lunch); summit day 1-3am start, 10am-12pm turnaround; Helen Lake 3pm to trailhead 4:30-5:30pm (1.5-2.5 hr)."
+    },
+    {
+     "url": "https://explore-share.com/trip/climb-summit-mt-shasta-california-via-avalanche-gulch-2-days",
+     "says": "(search snippet) 4-6 hr to base camp; 5-8 hr from base camp to summit."
+    },
+    {
+     "url": "https://www.14ers.com/php14ers/tripreport.php?trip=23263",
+     "says": "Fetched: one-day push, Bunny Flat 5:15am, summit 2:15pm (~9 hr), back at trailhead 5:45pm (~3.25 hr down); 12.5 hr round trip."
+    },
+    {
+     "url": "https://www.summitpost.org/mount-shasta/climbers-log/150188/p3",
+     "says": "(search snippet) day pushes: summit 10:00 to car 12:15 (2.25 hr, glissading); summit 10:28, 45 min on top, car 3pm; summit ~2:10pm to car ~5:30pm (3.3 hr)."
+    },
+    {
+     "url": "https://www.climber.org/reports/2004/1309.html",
+     "says": "Fetched: party left 4:30 am and was back at Bunny Flat by 2:00 pm (start point not stated)."
+    },
+    {
+     "url": "https://continuum-hypothesis.com/trips/shasta_09.php",
+     "says": "Fetched: camp at 50/50 Flat, 5 AM start, turned at base of Misery Hill 11:15 AM, back at car 5 PM (~12 hr elapsed, no summit)."
+    }
+   ]
+  }
+ ]
+}

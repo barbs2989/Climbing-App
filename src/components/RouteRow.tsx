@@ -20,6 +20,8 @@ export interface RouteRowRoute {
   classic?: boolean | null;
   /** A list row, not the full route (lib/db.js): opening it reads the full row first. */
   _thin?: boolean;
+  /** The route's own Protection fact (PG13, R, X): the grade resolver prints it beside a grade that does not already carry it. */
+  prot_rating?: string | null;
 }
 /** Marks a thin row for lib/routePrefetch.js, which starts that full-row read on touch or hover. */
 export const prefetchAttr = (r: RouteRowRoute): { "data-route-id"?: string } =>
@@ -54,6 +56,8 @@ export default function RouteRow({ r, onOpen, C, areaName, dense, savedMark = tr
   const pitches = r.pitches > 0 && r.discipline !== "bouldering" && r.discipline !== "scrambling" ?r.pitches + " pitch" + (r.pitches !== 1 ? "es" : "") : null;
   // No "#3 in this area" (owner, 2026-11-18): the wall position read as a ranking beside the stars. The area list is
   // already in wall order, and NEXT DOOR on the route page names the climbs either side.
+  // The grade at the right carries its protection rating right beside it ("5.8 PG13"; owner, 2026-11-18).
+  const grade = rowGrade(r);
   const sub = [areaName || null, r.discipline ? (DL[r.discipline] || r.discipline) : null, pitches].filter(Boolean).join(" · ");
   const id = r.id == null ? null : String(r.id);
   const done = id != null && !!completedIds && (completedIds.has(id) || completedIds.has(r.id as string | number));
@@ -75,7 +79,7 @@ export default function RouteRow({ r, onOpen, C, areaName, dense, savedMark = tr
         {classicMark && r.classic || done || saved ? <span style={{ display: "inline-flex", gap: 4, marginRight: 6, verticalAlign: "1px" }}>{marks}</span> : null}
         <span style={{ fontSize: 11, color: C.textMuted }}>{sub}</span>
       </div>
-      <span style={{ fontSize: 12, color: C.textMuted, flexShrink: 0, fontWeight: 700 }}>{rowGrade(r)}</span>
+      <span style={{ fontSize: 12, color: C.textMuted, flexShrink: 0, fontWeight: 700 }}>{grade}</span>
     </div>
   );
   return (
@@ -91,7 +95,7 @@ export default function RouteRow({ r, onOpen, C, areaName, dense, savedMark = tr
           <span style={{ overflowWrap: "anywhere" }}>{sub}</span>
         </div>
       </div>
-      <span style={{ fontSize: 12, color: C.textMuted, flexShrink: 0, maxWidth: "38%", fontWeight: 700, overflowWrap: "anywhere" }}>{rowGrade(r)}</span>
+      <span style={{ fontSize: 12, color: C.textMuted, flexShrink: 0, maxWidth: "38%", fontWeight: 700, overflowWrap: "anywhere" }}>{grade}</span>
     </div>
   );
 }

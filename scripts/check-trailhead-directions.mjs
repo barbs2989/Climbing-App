@@ -302,24 +302,24 @@ else fail("the TRAILHEAD card prints stat tiles again (" + tileHits.join(", ") +
    split at the summit (the walk is two legs since 2026-10-07), so ~50 km comes before Est. summit:
    LONGER than a 40 km one-way control. Read raw (70 km, halved: 35) or halved twice (25) it is
    shorter, so the control still separates all three readings. */
+/* READ THE TOTAL TRIP, NOT EST. SUMMIT (2026-11-18). Two of the four fixtures carry a 2-day itinerary
+   (it is what holds their miles), and a multi-day route now renders its SUMMIT DAY from camp
+   (summitDayPlan), whose summit clock leaves the walk in out: Est. summit no longer moves with the
+   distance on those two, so comparing it with a one-day control measured two different views. The
+   Total trip prints on both views and carries the whole walk, up and down. It separates the same three
+   readings: a point walks its ~100 km once (100) against a 40 km control walked up and down (80);
+   read raw (70) or halved twice (50) it is shorter. An outback's halved 50 km each way (100) is
+   shorter than its 100 km control (200). */
 const estSummit = (html) => {
   const t = text(html);
-  const i = t.indexOf("Est. summit");
-  if (i < 0) return null;
-  // fmt() emits "3:41 PM", optionally "≥"-prefixed (approach inputs incomplete) and optionally
-  // suffixed "(+1d)". Read the LAST such time before the label, since the planner tile prints the value
-  // immediately above its own caption.
-  const before = t.slice(0, i);
-  const m = [...before.matchAll(/(\d{1,2}):(\d{2})\s+(AM|PM)(?:\s*\(\+(\d+)d\))?/g)].pop();
-  if (!m) return null;
-  let h = Number(m[1]) % 12;
-  if (m[3] === "PM") h += 12;
-  return h * 60 + Number(m[2]) + Number(m[4] || 0) * 1440;
+  const one = /(\d+(?:\.\d+)?)hr Total trip/.exec(t), multi = /Total trip, moving, over \d+ days ≥?(\d+(?:\.\d+)?) hr/.exec(t);
+  const m = one || multi;
+  return m ? Math.round(Number(m[1]) * 60) : null;
 };
 const eOB = estSummit(itinOutback), eOBc = estSummit(rawKm100);
 const ePT = estSummit(estPoint), ePTc = estSummit(rawKm40);
 if (eOB == null || eOBc == null || ePT == null || ePTc == null) {
-  dead("an Est. summit time did not render on one of section 8's four fixtures - ANCHOR LOST, so nothing in section 8 was checked");
+  dead("a Total trip did not render on one of section 8's four fixtures - ANCHOR LOST, so nothing in section 8 was checked");
 }
 if (eOB !== eOBc) ok("the planner's estimate moves with the route's own itinerary, so it reads the same source TECH STATS does");
 else fail("the planner's estimate is UNCHANGED by the route's itinerary - it is reading the raw dist_km column, so this page states the approach distance one way and computes its times from another");

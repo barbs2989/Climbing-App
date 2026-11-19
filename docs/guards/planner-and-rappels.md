@@ -68,6 +68,63 @@ Part of the guard notes — see [README.md](README.md) for the full index.
 - **`check:return-leg`** holds the planner's time maths, which live in **`lib/planTimes.js`** since
   2026-10-07 (the Conditions tab's alpine start counts back from the same estimate, so neither may
   compute it for itself). Static SSR through the real `<Calculator/>`, so it sits in `npm run build`.
+  - **A MULTI-DAY ROUTE IS RENDERED AS DAYS since 2026-11-18** (owner: "What if the trip is multiple
+    days?"). The single push added every day into one run from Depart, so 445 of 507 multi-day WA
+    routes showed a red After dark / Overnight (Forbidden's West Ridge summited at 3:54 PM, day 1's
+    walk in stacked on day 2's climb). `summitDayPlan` lays the same `planTimes` estimate out as the
+    walk in, the summit day timed from camp (Depart reads *Leave camp*), and the walk out; reds fell
+    to 115 / 109, and those are a 6 AM camp start that is genuinely late
+    (`scripts/oneoff/measure-multiday-estimate.mjs`). The camp fixture's single-push clocks are now
+    asserted on `planTimes` itself (the Conditions tab still counts back from them), and the rendered
+    summit day on its own two clocks: leave 6:00, summit after 0.59 of the leg, back at camp after the
+    rest. A stored summit leg planTimes did NOT split (walk in and out outside `CAMP_LEG_MATCH`) is
+    split for the CLOCK only when days follow it, 61 WA rows; the trip total and planTimes never move.
+    A climb longer than `SUMMIT_DAY_MAX_H` (20 hr, a traverse) gets no clock, and its days are counted
+    from the plan's hours. Injection: `inject-return-leg-day-cases.mjs` 25/25, its two banner cases
+    repointed at the new copy.
+  - **THE CAMP RULE NEEDS A DAY AFTER THE SUMMIT DAY (2026-11-18, `summitDayIndex`).** When the summit
+    day walks out to the car, the one-total rule stores the summit leg as camp to summit ONE WAY, so the
+    0.59 split halved the climb: Shasta's Avalanche Gulch 2.95 hr up from Helen Lake against 4-6 reported
+    (20 sources), Mount Daniel 2.7 against 4.5, Courtney Peak 1.2. `summitDayFromCamp` now also requires
+    a later day (the summit day is found where the walk-in hours end on the plan). It errs SAFE: a row
+    that still stores a round trip there summits late, and the Conditions start counts back from a
+    longer climb. Pinned by "a 2-day trip whose summit day ends at the CAR"; injection case
+    `camp-rule-on-a-summit-day-that-walks-out` (26/26). The display-only split of an unsplit leg was
+    REMOVED the same day: Goode's NE Buttress ends its summit day at a bivy ON the summit, so splitting
+    put it on top in 5.3 hr against 9. *Leave camp* defaults to 4:00 AM (`calc.camp`, its own input).
+  - **THE 32 SUMMIT DAYS THAT WALK OUT were researched and rewritten the same day**
+    (`audits/2026-11-18-trip-time-summit-day-walks-out.json`, 31 rows; Dragontail's Triple Couloirs was
+    already right): summit leg = camp to summit one way, descent = summit to car. Forbidden's West Ridge
+    6 hr up (10 sources), Stuart's Ice Cliff Glacier 7, Argonaut South Face 6. A summit reached ON THE
+    WALK IN (Courtney Peak: approach 5 + summit 1 inside a 7.5 hr day 1) gets no clock (`why: "enroute"`).
+    **102 multi-day rows whose summit leg the camp rule left unsplit with later days after it** (plus
+    Eldorado NE Face) are being researched to ONE convention: summit leg = camp to summit one way, the
+    summit day's hours = that leg + the way back to camp, so the plan's own hours say which way the leg
+    runs (`summitLegOneWay` in `lib/planTimes.js`; guard "a summit day LONGER than the summit leg reads
+    the leg one way"). 16 rewritten 2026-11-18 (`audits/2026-11-18-trip-time-camp-summit-days.json`):
+    Forbidden North Ridge 13 hr "up" was ridge + whole descent, now 5 up from the bivy; Eldorado East
+    Ridge 7 was a round trip, now 3; Beckey-Davis, Boving-Christensen and Energizer Bunny had every
+    section label shifted one row. 16 more the same day: Baker North Ridge's summit leg also held the
+    Coleman-Deming descent; Huckleberry's 1.3 hr descent could not cover camp plus a 7-mile walk out;
+    Klawatti's 1 hr was only the col-to-summit scramble; Torment-Forbidden's "~40 hr" was elapsed
+    time, now 30.5 on the move. 14 more after that (46 of the 103 in all): NW Mox's and Primus's
+    summit legs were round trips; the East Fury traverse's 5 hr total was the ridge alone, now 30.
+    **STILL OPEN:** 57 rows, all researched but held — no timed report of the climb itself, or a
+    climb time borrowed from a neighbouring route; their proposals are in the audit. The Suiattle
+    River Road routes (Sinister, Spire Point, Gunsight, Dome, Frostbite Ridge) now walk the 8 closed
+    road miles of the order in force since 2026-11-05 IN their day hours; the earlier closure pass had
+    added the road miles but not the hours (`audits/closure-distance/README.md`). Re-run with the same brief per row; a row whose summit day already equals its leg is
+    read as a round trip by the camp rule meanwhile.
+  - **ACCURACY, measured 2026-11-18** (`audits/2026-11-18-multiday-estimate-accuracy.json`): on 15 of a
+    28-route sample with reported leg times, the summit-day view's time up from camp was 0.98x reported
+    where the summit day ends at the car and 1.02x where later days follow; the whole summit day ran
+    1.14-1.17x (long, the safe side). Reading a car-ending summit leg as ONE WAY instead of the camp
+    rule's round trip scored worse (1.67x), so `CAMP_LEG_MATCH` stays: the stored leg's meaning varies
+    by row, and the misses are row data (Goode NE Buttress up 5.3 hr vs 10.5 reported, Dark Peak 5.3 vs
+    8, Daniel's summit day 15 vs 7, Shasta's Avalanche Gulch 2.95 vs 4.5). The evidence is search
+    snippets, mostly low confidence; do not bulk-rewrite rows from it. A whole-trip-only route shows
+    the total alone: the walk-model legs beside it never added up to it (Indian Head, 9.5 + 13.6 + 8.6
+    over 13.6).
   - **THE WALK IS TWO LEGS.** One `scarfHrs()` used to charge gain AND loss before the summit, so the
     descent was walked on the way UP: on the 352 gain≈loss rows Est. summit EQUALLED Est. return, and a
     pitched route's return had no walk out at all. Now `up` = distance + gain, `down` = distance +
