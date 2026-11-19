@@ -1,0 +1,349 @@
+{
+ "ca_deerhorn_mountain_northeast_buttress": {
+  "area": "ca_deerhorn_mountain",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Onion Valley Trailhead",
+    "trailheadLat": 36.772538,
+    "trailheadLng": -118.341244
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Onion Valley Trailhead",
+     "trailheadLat": 36.772538,
+     "trailheadLng": -118.341244
+    },
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_InfraRecreationSites_01/MapServer/0/query?where=site_cn%3D%275340.003721%27&outFields=site_name&f=json",
+      "fact": "Onion Valley Trailhead 36.77254,-118.34124",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     },
+     {
+      "url": "https://www.openstreetmap.org/node/4391057696",
+      "fact": "Onion Valley Trailhead (within 12 m) 36.77254,-118.34124",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://peaksforfreaks.blogspot.com/2014/09/the-minster-deerhorn-mountain-northwest.html",
+    "fact": "party climbed the NE buttress (class 3) after starting at Onion Valley, Kearsarge Pass, JMT to Bubbs Creek, up Vidette Creek"
+   },
+   "chunk": "out5/q05.json",
+   "kmFromPeak": 9
+  }
+ },
+ "ca_mount_eisen_southeast_ridge_from_black_rock_pass": {
+  "area": "ca_mount_eisen",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Sawtooth Pass Trailhead, Mineral King",
+    "trailheadLat": 36.453305,
+    "trailheadLng": -118.596761
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Sawtooth Pass Trailhead, Mineral King",
+     "trailheadLat": 36.453305,
+     "trailheadLng": -118.596761
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://mapservices.nps.gov/arcgis/rest/services/NationalDatasets/NPS_Public_POIs_Geographic/FeatureServer/0/query?where=POINAME%3D'Sawtooth%20Pass%20Trailhead%2C%20Mineral%20King'&outFields=POINAME&f=json",
+      "fact": "Sawtooth Pass Trailhead, Mineral King 36.45331,-118.59676",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://www.climber.org/reports/1998/355.html",
+    "fact": "Trailhead Mineral King; Sawtooth Pass trail, cross-country over Glacier Pass to Blackrock Pass, traverse north to Eisen; matches route text's Glacier Pass / Black Rock Pass crossing"
+   },
+   "chunk": "out5/q13.json",
+   "kmFromPeak": 5.8
+  }
+ },
+ "wa_dragontail_peak_northwest_face": {
+  "area": "wa_dragontail_peak",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Stuart Lake Trailhead (Colchuck Lake / Mountaineer Creek trailhead, Eightmile Rd)",
+    "trailheadLat": 47.527806,
+    "trailheadLng": -120.820515
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Stuart Lake Trailhead (Colchuck Lake / Mountaineer Creek trailhead, Eightmile Rd)",
+     "trailheadLat": 47.527806,
+     "trailheadLng": -120.820515
+    },
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_InfraRecreationSites_01/MapServer/0/query?where=site_cn%3D%276221.005511%27&outFields=site_name&f=json",
+      "fact": "Stuart Lake Trailhead (Colchuck Lake / Mountaineer Creek trailhead, Eightmile Rd) 47.52781,-120.82052",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     },
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/colchuck-lake",
+      "fact": "Stuart Lake Trailhead (Colchuck Lake / Mountaineer Creek trailhead, Eightmile Rd) (within 38 m) 47.52781,-120.82052",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://journeysfromseatosky.blogspot.com/2016/08/dragontail-peak-via-backbone-ridge.html",
+    "fact": "Backbone Ridge on the NW face approached from Stuart Lake Trailhead via Colchuck Lake; Lemke says north-side rock routes are approached via Colchuck Lake"
+   },
+   "chunk": "out5/q05.json",
+   "kmFromPeak": 5.5
+  }
+ },
+ "ca_giraud_peak_standard_route": {
+  "area": "ca_giraud_peak",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "South Lake Trailhead (Bishop Pass trail)",
+    "trailheadLat": 37.169305,
+    "trailheadLng": -118.565813
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "South Lake Trailhead (Bishop Pass trail)",
+     "trailheadLat": 37.169305,
+     "trailheadLng": -118.565813
+    },
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_InfraRecreationSites_01/MapServer/0/query?where=site_cn%3D%275325.003721%27&outFields=site_name&f=json",
+      "fact": "South Lake Trailhead (Bishop Pass trail) 37.16931,-118.56581",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     },
+     {
+      "url": "https://www.americansouthwest.net/california/eastern-sierra/bishop-pass-trail.html",
+      "fact": "South Lake Trailhead (Bishop Pass trail) (within 40 m) 37.16931,-118.56581",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://climber.org/reports/2013/1841.html",
+    "fact": "Trailhead: South Lake; over Bishop Pass, Dusy Basin, north ridge to notch, SE face chute"
+   },
+   "chunk": "out5/q07.json (released by hand)",
+   "kmFromPeak": null
+  }
+ },
+ "ca_lassen_peak_trail": {
+  "area": "ca_lassen_peak",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Lassen Peak Trailhead",
+    "trailheadLat": 40.474249,
+    "trailheadLng": -121.505568
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Lassen Peak Trailhead",
+     "trailheadLat": 40.474249,
+     "trailheadLng": -121.505568
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://mapservices.nps.gov/arcgis/rest/services/NationalDatasets/NPS_Public_POIs_Geographic/FeatureServer/0/query?where=POINAME%3D'Lassen%20Peak%20Trailhead'&outFields=POINAME&f=json",
+      "fact": "Lassen Peak Trailhead 40.47425,-121.50557",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://www.nps.gov/thingstodo/hikelassenpeak.htm",
+    "fact": "Start: Lassen Peak Trailhead; 5 mi round trip, 1957 ft gain from 8500 ft"
+   },
+   "chunk": "out2/r04.json (released by hand)",
+   "kmFromPeak": null
+  }
+ },
+ "ca_thunder_mountain_sierra_thunder_col_and_east_ridge": {
+  "area": "ca_thunder_mountain_sierra",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Roads End Trailhead (Cedar Grove, Kings Canyon NP)",
+    "trailheadLat": 36.794924,
+    "trailheadLng": -118.582577
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Roads End Trailhead (Cedar Grove, Kings Canyon NP)",
+     "trailheadLat": 36.794924,
+     "trailheadLng": -118.582577
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://mapservices.nps.gov/arcgis/rest/services/NationalDatasets/NPS_Public_POIs_Geographic/FeatureServer/0/query?where=POINAME%3D'Roads%20End%20Trailhead%20(Cedar%20Grove%2C%20Kings%20Canyon%20NP)'&outFields=POINAME&f=json",
+      "fact": "Roads End Trailhead (Cedar Grove, Kings Canyon NP) 36.79492,-118.58258",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://www.snwburd.com/bob/trip_reports/thunder_s_1.html",
+    "fact": "Bob Burd trip report: Roads End, Bubbs Creek trail, East Lake, Lake Reflection, pass south, east ridge to summit"
+   },
+   "chunk": "out5/q24.json (released by hand)",
+   "kmFromPeak": null
+  }
+ },
+ "ny_mount_colvin_gill_brook_trail": {
+  "area": "ny_mount_colvin",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "AMR parking area, St. Huberts (Route 73)",
+    "trailheadLat": 44.14915,
+    "trailheadLng": -73.7694
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "AMR parking area, St. Huberts (Route 73)",
+     "trailheadLat": 44.14915,
+     "trailheadLng": -73.7694
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://dec.ny.gov/places/adirondack-mountain-reserve-conservation-easement-tract",
+      "fact": "AMR parking area, St. Huberts (Route 73) 44.14915,-73.76940",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://www.lakeplacid.com/hiking/mount-colvin",
+    "fact": "Colvin via Gill Brook Trail starts at AMR lot on Route 73; ~0.6 mi to entrance station, 2.5 mi more on Lake Road, then left onto Gill Brook Trail"
+   },
+   "chunk": "out2/r13.json (released by hand)",
+   "kmFromPeak": null
+  }
+ },
+ "wa_mount_rahm_custer_traverse": {
+  "area": "wa_mount_rahm",
+  "set": {
+   "waypoints": [
+    {
+     "lat": 48.96444,
+     "lng": -121.26472,
+     "elev": 5700,
+     "name": "Ouzel Lake basin, head of Depot Creek",
+     "type": "Campsite"
+    },
+    {
+     "lat": 48.9891,
+     "lng": -121.2497,
+     "name": "Route reference point (Custer-Rahm ridge, near Mount Custer)",
+     "type": "landmark",
+     "distMi": null,
+     "elevFt": null
+    },
+    {
+     "name": "Mount Rahm",
+     "type": "Summit",
+     "lat": 48.997074,
+     "lng": -121.228744,
+     "elevFt": 8485
+    }
+   ]
+  },
+  "ledger": [
+   {
+    "field": "waypoints/Mount Rahm",
+    "value": {
+     "name": "Mount Rahm",
+     "type": "Summit",
+     "lat": 48.997074,
+     "lng": -121.228744,
+     "elevFt": 8485
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://carto.nationalmap.gov/arcgis/rest/services/geonames/MapServer/5/query?where=gaz_id%3D1848454&outFields=gaz_name&f=json",
+      "fact": "USGS GNIS 1848454 Mount Rahm summit",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     }
+    ]
+   }
+  ],
+  "review": {
+   "summit": {
+    "evidence": {
+     "kind": "page",
+     "fact": "traverse runs Rahm summit to Custer summit, ~1 mi Class 3, ~2:45 h, descent by Custer South Ridge",
+     "url": "https://stephabegg.com/trip-reports/washington/chilliwack-slam/"
+    }
+   }
+  }
+ }
+}

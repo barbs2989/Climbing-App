@@ -104,3 +104,30 @@ To pin Heliotrope properly, the directions, road and approach must be researched
 or Heliotrope added as a second way in (`approach_variants`).
 **Lesson: before writing a trailhead that differs from the stored one, read every field that describes
 the drive (approach_logistics.trailheadDirection, road, approach); a pin alone can make the page lie.**
+
+## Fourth batch: pass 5 (fresh web-search budget) on the 270 still open
+Owner: "continue". 25 Sonnet agents (`BRIEF5.md`, `chunks5/` → `out5/`), at most 2 searches per peak, WebFetch
+only. SummitPost, the Mountaineers, CascadeClimbers and Wenatchee Outdoors answered 403 throughout.
+Agents named a start for about 150 of the 270, but most rest on one page, are flagged weak by the agent
+itself, or carry only a tourism / climb13ers / climber.org GPX coordinate; verify still requires a USFS,
+NPS, state-agency or OSM point. Nominatim, rerun for the new names (cache now keyed on the NAME, so a renamed
+trailhead is looked up again), added only 9 points.
+- **Applied: 7 trailheads + 1 summit pin** (`batch5.json`, 8 of 8 re-read): Onion Valley (Deerhorn NE
+  Buttress, locked), Stuart Lake (Dragontail NW Face, locked), South Lake (Giraud, locked), Sawtooth / Mineral
+  King (Eisen), Lassen Peak Trailhead (Lassen), Roads End (Thunder Col + East Ridge), AMR lot (Colvin Gill
+  Brook); USGS Mount Rahm summit on the Custer-Rahm Traverse.
+- Released by hand (`scripts/build-batch.mjs` RELEASE): Thunder (note said "upgraded FROM inferred" and
+  tripped the weak-word filter), Lassen (park's own page), Giraud (the name matcher reduced "South Lake" to
+  "lake" and matched Red Lake / Lake Sabrina — a matcher flaw to fix if this runs again), Colvin (the
+  "conflict" was a page's summit elevation, not the trailhead).
+- Held by hand: every Goodell Creek start (East Twin / West Twin Needle, East McMillan, Chopping Block —
+  same campground point as Himmelhorn), Earl Peak (two points 2 km apart), Mount Baldwin (USFS + OSM agree at
+  the lake-side start, 550 m from the signed lot), Mount Stuart Direct North Ridge (its stored trip plan and
+  location text start at Esmeralda — the Lincoln Peak trap).
+- Read before applying: `scripts/drivecheck.mjs` greps every column of each batch row for trailhead / road /
+  parking text, so no pin contradicts stored drive prose.
+- Worth an owner look: `wa_glacier_peak_south_tahoma_headwall` and `wa_glacier_peak_tahoma_cleaver` are
+  Mount Rainier routes (Westside Road start) whose ids say Glacier Peak — possibly misfiled.
+- **Audit now:** SUMMIT_ONLY 261, NO_SUMMIT 40, CRAG_SUMMIT 0.
+- What is left is mostly genuine: two or more equally used starts, or the only page that would settle it
+  blocks fetching. Another search pass would mostly re-find the same pages.
