@@ -42,6 +42,10 @@ views under `groupsTab`: For you · Your groups · Your activity · Discover · 
   for a screen reader still says tap to leave, and leaving asks first).
 - **Removing a member** (the ✕ on Members) is for the owner and moderators only, never on yourself or the owner, and
   a moderator cannot remove another moderator.
+- **Repeating events** (`seriesDates` in `GroupEventForm`): Weekly, Every 2 weeks and Monthly write 10, 8 and 6 separate
+  `group_events` rows sharing a `series_id`, in one insert; the form says how many and that the series then ends. Monthly keeps
+  the day of the month, clamped to a short month's last day (Jan 31, Feb 28, Mar 31). Each event is cancelled on its own;
+  there is no event editor, no whole-series cancel and no renewal.
 - **Share an event** (owner 2026-11-13). A public group's event sheet offers *Share this event*: Text, Email,
   Facebook, Copy link and More… (`ShareVia` with `facebook`). Facebook's dialog takes only the link, so the message is
   copied first, to paste into a post or a Facebook group. The message carries the title, date, time, place and group,
