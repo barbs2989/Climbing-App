@@ -1,0 +1,23 @@
+{
+ "note": "Crag pass 3 follow-up, batch 3 (2026-11-18, owner: 'keep going'): a SAMPLE of the 144 areas in unsure-triage.json's needs_research_nothing_found bucket — the 15 holding the most routes (174 routes) — researched again under CRAG3.md's rule, beyond Mountain Project's own area pages. Result: NONE move. With the largest 15 yielding nothing, the remaining 129 smaller areas were not researched; they stay alpine. Every area here stays alpine; this file records why.",
+ "moved": 0,
+ "not_researched_remaining": 129,
+ "what_would_move_some": "Each near-miss fails on a kind of evidence the rule rejects: an unattributed aggregator ('10 to 15 minutes', East Cottage Dome West Face), a photo caption (Tan Buttresses '45 minutes from the road'), a time stated for a neighbouring sector (Cannon Big Wall via Moby Grape '45 min'), or a distance with no minutes. Relaxing the rule to accept any of these is the owner's call.",
+ "areas": [
+  {"area_id": "co_lincoln_lake_slabs", "stays": "unsure", "why": "park by the road ~1000 ft below the rock; no time stated; ~12,000 ft, routes typed Alpine", "evidence": ["https://www.mountainproject.com/area/106199323/lincoln-lake-slabs"]},
+  {"area_id": "nm_hole_in_the_wall", "stays": "unsure", "why": "0.6 mi + switchbacks + climbers trail; distances and legs only", "evidence": ["https://www.mountainproject.com/area/105994493/hole-in-the-wall"]},
+  {"area_id": "co_tan_buttresses_the", "stays": "unsure", "why": "only time is a photo caption ('45 minutes from the road'); approach traverses above the Black Wall at ~12,700 ft, snow until late June", "evidence": ["https://www.mountainproject.com/area/106226367/the-tan-buttresses"]},
+  {"area_id": "ca_east_face_6", "stays": "unsure", "why": "Power Dome East Face: directions only, no time", "evidence": ["https://www.mountainproject.com/area/114793291/east-face"]},
+  {"area_id": "nh_wonderland", "stays": "unsure", "why": "Rumney: 'hike towards the Hinterlands', no time", "evidence": ["https://www.mountainproject.com/area/106720266"]},
+  {"area_id": "ca_west_face_16", "stays": "unsure", "why": "'10 to 15 minutes' only on an unattributed aggregator; Mountain Project gives directions only", "evidence": ["https://app.advcollective.com/climbing/life-in-the-cretaceous-tuolumnes-steep-sport-alpine-challenge", "https://www.mountainproject.com/area/105865957/west-face"]},
+  {"area_id": "ca_central_cottage_dome", "stays": "unsure", "why": "'about 5 minutes' is a leg from West Cottage Dome; no total from the road", "evidence": ["https://mountainproject.com/area/119046586/central-cottage-dome"]},
+  {"area_id": "wy_trail_lake_pinnacle", "stays": "unsure", "why": "no approach time; road crosses private land by easement", "evidence": ["https://www.mountainproject.com/route/113856385/behemoth"]},
+  {"area_id": "nh_big_wall_2", "stays": "unsure", "why": "'Hike the Moby Grape trail and head left'; the 45 min is stated for Moby Grape, not Big Wall; 7-11 pitch Grade IV-V routes typed Trad, Alpine", "evidence": ["https://www.mountainproject.com/area/107340314/big-wall"]},
+  {"area_id": "ca_real_cloud_ripper_tower_the", "stays": "unsure", "why": "landmark directions only; shares the Hinterland approach, which a route page states as 1 h 15 min", "evidence": ["https://www.mountainproject.com/area/109909589"]},
+  {"area_id": "nm_watchtower", "stays": "unsure", "why": "rappel in (three 35 m raps) and climb out; no time", "evidence": ["https://www.mountainproject.com/area/106014542/watchtower"]},
+  {"area_id": "ny_z_loft", "stays": "unsure", "why": "parking described at the rocks but no time or distance stated", "evidence": ["https://mountainproject.com/area/107093207/z-loft"]},
+  {"area_id": "ca_hinterland_corridor", "stays": "alpine", "why": "a route page here states 'Approach time: 1 hr. 15 min.'", "evidence": ["https://www.mountainproject.com/route/118074943/deadwood"]},
+  {"area_id": "ca_wart_aka_lake_of_the_domes_dome_the", "stays": "unsure", "why": "three approaches by distance and gain only (0.85 mi, 1000 ft)", "evidence": ["https://www.mountainproject.com/area/114784820/the-wart-aka-lake-of-the-domes-dome"]},
+  {"area_id": "nv_sport_wall", "stays": "unsure", "why": "'a short bushwhack from the road'; no minutes", "evidence": ["https://www.mountainproject.com/area/110562223/sport-wall", "https://www.mountainproject.com/area/105790926/lamoille-canyon"]}
+ ]
+}

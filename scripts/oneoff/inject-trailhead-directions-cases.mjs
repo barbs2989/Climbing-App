@@ -91,8 +91,9 @@ const CASES = [
     name: "4b. a crag offers TrailheadCard's drive control AND the crag card's again",
     // REPOINTED 2026-11-18: RoutePlanTab now composes a crag's order and the alpine order as two
     // branches, and only the alpine one draws TrailheadCard; the way back is the card in the CRAG branch.
-    find: 'return <div>{part==="getThere"?null:climbEl()}',
-    repl: 'return <div><Capped><TrailheadCard route={route} onEdit={()=>{openFix("approach");}}/></Capped>{part==="getThere"?null:climbEl()}',
+    // REPOINTED again 2026-11-18: the orders are data now (PLAN_ORDER); the way back is "trailhead" in a crag's list.
+    find: 'cragGetThere: ["itin", "shape", "camp", "map", "road",',
+    repl: 'cragGetThere: ["itin", "shape", "camp", "map", "road", "trailhead",',
     expect: "fail",
     expectText: "expected exactly the Google Maps + Apple Maps pair",
   },
