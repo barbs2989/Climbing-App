@@ -65,7 +65,7 @@ for (const f of assertCovered(walk(ROOT), ROOT, "check:disc-labels")) {
         if (allowed(k).includes(label)) continue;
         // Only single capitalised words are display labels. This deliberately
         // excludes three things that are keyed by discipline but are not its name:
-        //   - other discipline KEYS, e.g. DISC_TO_REPLY_POOL's {sport:"rock"} —
+        //   - other discipline KEYS, e.g. a map like {sport:"rock"} —
         //     lowercase, so a mapping between disciplines, not a spelling of one
         //   - prose keyed by discipline, e.g. {sport:"Send hard, clip smart."}
         //   - combined-category labels, e.g. "Ice & Mixed", "Scrambling / hiking",
