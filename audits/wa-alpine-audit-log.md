@@ -39572,3 +39572,48 @@ itself).
 
 0 confirmed errors fixed, 1 newly flagged for human review, 7 clean.
 Next batch will continue id-ascending from `wa_colchuck_balanced_rock_west_face` (pass 9).
+
+## Batch 566 — 2026-11-19 (pass 9)
+
+Routes: Colchuck Balanced Rock (West Face P3 "1984 Variation"), and Colchuck Peak (Colchuck
+Glacier, Holsten-Hilden, North Buttress Couloir, Northeast Couloir, Northeast Gully, South Face,
+South Route, West Ridge) — 9 routes across 2 peaks.
+
+Verified against independent sources and found correct: Colchuck Glacier's FA ("Elvin and Norma
+Johnson, William and Kathy Long, August 1948") matches SummitPost and Mountain Project exactly
+(same four climbers, same month); its `high_point_ft` (8,705) and `length_m` (945, matching
+Mountain Project's 3,100 ft) both check out. North Buttress Couloir's FA ("Ray Lilleby and Jim
+Wickwire, July 1962") matches SummitPost and Mountain Project exactly (July 15, 1962); its
+`high_point_ft` (8,705) agrees with Colchuck Glacier's. Colchuck Peak's 8,705 ft elevation matches
+Wikipedia, Mountain Project and SummitPost exactly across all four routes on file that store it.
+Holsten-Hilden's documented grade conflict (Mountain Project's current Grade III/WI3 vs. the 2011
+AAC first-ascent account's IV M6 AI3+) is already correctly captured in the row's own
+`corrections` field — re-confirmed, no change needed; its `length_m` (488, matching Mountain
+Project's 1,600 ft) checks out. Colchuck Balanced Rock West Face P3 "1984 Variation"'s coordinates
+(47.49184, -120.81797) sit within ~40m of the peak's own published location — plausible.
+
+No confirmed errors with a clean, sourced fix this batch.
+
+**Clean (6):** West Face P3 "1984 Variation", Colchuck Glacier, Holsten-Hilden, North Buttress
+Couloir (all verified above); Northeast Gully (fully bare row, no claims to check); South Route
+(bare row, grade only).
+
+**Flagged for human review (3):**
+- Northeast Couloir: `fa` ("Skip Edmunds, Clark Gerhardt, Paula Kregel, and Greg Markov, January
+  1975") could not be found in any source searched — Mountain Project's and SummitPost's own pages
+  for this exact route were unreachable from this sandbox (DNS blocked) to check directly, and no
+  secondary source names this party. Its stored `season` (Jun-Sep) also doesn't obviously match
+  either account already hedged in its own `best_season` text (late May-early June once bridged,
+  vs. a winter/early-spring high-pressure window) — a possible internal mismatch, but the exact
+  source page needed to confirm it one way or the other couldn't be reached this run, so this is
+  left as a flag rather than a guess.
+- South Face: `fa` ("Ed Cooper and Ron Niccoli on August 7, 1958") could not be confirmed or
+  contradicted by any source found.
+- West Ridge: `fa` ("Rick La Belle, Glen Sterr, and Pat Carney on July 18, 1971") could not be
+  confirmed or contradicted by any source found.
+
+All three are left as-is per the audit's rule against flagging or fixing what can't be verified
+either way.
+
+0 confirmed errors fixed, 3 newly flagged for human review, 6 clean.
+Next batch will continue id-ascending from `wa_colchuck_peak_west_ridge` (pass 9).
