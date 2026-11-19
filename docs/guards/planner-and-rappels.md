@@ -119,7 +119,15 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     already add up but whose split the evidence questions (Willis Wall, Ghost, Dot, Dragontail
     Gerber-Sink, Barnes, Sentinel, Ferry, North Star) — left as they are. The forum and guide pages
     that would settle them refuse automated fetches, so a third web pass is unlikely to move them; a
-    climber's logged time is the way. The Suiattle
+    climber's logged time is the way. **Blank day hours** (same day, `audits/2026-11-18-trip-time-blank-days.json`):
+    the catalog census found 45 multi-day plans with some or all day hours blank and 4 rows with three
+    legs but no total. The 4 got the sum of their legs; 35 of the 45 were researched and written (11
+    medium, 24 low on blank or fragmentary times). **STILL OPEN:** 10 held — 6 low proposals that would
+    change an already-complete row (Adams Avalanche and NW Ridge, Gilbert, Aiguille North Ridge, Dana,
+    Bacon), 3 whose own text would then contradict them (Buckindy's "two or three days" to the basin,
+    Ragged Ridge's 13-14 hr one-day wording, Challenger's Whatcom Pass notes), and Jötnar, whose 168 hr
+    summit leg is elapsed wall time and needs a restructured plan, not new hours. The 129 crag routes
+    with only an approach figure and no total print one number and contradict nothing; left. The Suiattle
     River Road routes (Sinister, Spire Point, Gunsight, Dome, Frostbite Ridge) now walk the 8 closed
     road miles of the order in force since 2026-11-05 IN their day hours; the earlier closure pass had
     added the road miles but not the hours (`audits/closure-distance/README.md`). Re-run with the same brief per row; a row whose summit day already equals its leg is
