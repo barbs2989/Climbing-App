@@ -1,0 +1,717 @@
+{
+ "wa_a_good_first_trad_climb": {
+  "area": "wa_grandeur_buttress",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/114588405/a-good-first-trad-climb",
+    "https://www.mountainproject.com/area/108125690/grandeur-buttress",
+    "https://rakkup.com/guidebook/index-rock-climbing/delusions-of-grandeur---agent-orange/s11507",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5757454,47.8192651&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.575678,47.8192274&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5755887,47.8191776&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5756447,47.8192171&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.5757454,47.8192651&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,taxprname,parcel_id&returnGeometry=false&f=json",
+    "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.575678,47.8192274&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,taxprname,parcel_id&returnGeometry=false&f=json",
+    "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.5755887,47.8191776&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,taxprname,parcel_id&returnGeometry=false&f=json",
+    "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.5756447,47.8192171&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,taxprname,parcel_id&returnGeometry=false&f=json",
+    "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.5755439,47.8191691&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,taxprname,parcel_id&returnGeometry=false&f=json",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0/query?geometry=-121.5757454,47.8192651&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownerclassification,forestname&returnGeometry=false&f=json",
+    "https://www.openstreetmap.org/node/13124267906",
+    "https://www.openstreetmap.org/node/13124267907",
+    "https://www.openstreetmap.org/node/13113494729",
+    "https://www.openstreetmap.org/relation/19555100",
+    "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.6",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114588405/a-good-first-trad-climb",
+      "fact": "5.6 YDS, Trad, 50 ft (15 m)",
+      "retrieved_at": "2026-11-19"
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Isabel Melchor, Ben Egbers, Maria Hines, Doug Taylor",
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114588405/a-good-first-trad-climb",
+      "fact": "FA: Isabel Melchor, Ben Egbers, Maria Hines, Doug Taylor (no year)",
+      "retrieved_at": "2026-11-19"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_a_good_first_trad_climb",
+    "column": "access",
+    "from": {
+     "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+     "notes": "Many of these peaks (Mount Persis, Gunn Peak, Baring Mountain area) sit outside designated wilderness — administratively unrestricted despite serious technical terrain.",
+     "permit": "None required.",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+     "parking_pass": "Northwest Forest Pass or America the Beautiful pass required at developed trailheads."
+    },
+    "to": null,
+    "why": "access holds a template naming Mt. Baker-Snoqualmie NF (Skykomish RD), a Northwest Forest Pass and unrelated peaks (Persis, Gunn, Baring). No Forest Service land is involved: the USFS BasicOwnership layer classes the buttress NON-FS. This line has no OSM node; MP places it just right of Corner Flash, i.e. at the parcel line itself. The buttress straddles a State Parks / private line: Snohomish County parcels put the OSM Undertow, The Last Delusion and Agent Orange nodes and the OSM Grandeur Buttress relation centre in PRIVATE parcel 27101900102100 (individual owner) while Corner Flash falls in WA State Parks parcel 27101900203000; the WA State Parks Park Boundaries layer (2026-06-01) draws that private parcel as a hole whose edge passes 4-6 m from every one of those points, and puts the points just on the park side. The two official layers disagree by a few metres, so the route cannot be placed inside Forks of the Sky; per brief P, propose null rather than Forks of the Sky. HELD for the owner only in the sense that a correct land manager needs an official statement (State Parks or the parcel owner); removing the wrong one is safe.",
+    "evidence": [
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0/query?geometry=-121.5757454,47.8192651&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownerclassification,forestname&returnGeometry=false&f=json",
+     "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5757454,47.8192651&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+     "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.5757454,47.8192651&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,taxprname,parcel_id&returnGeometry=false&f=json",
+     "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.5755439,47.8191691&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,taxprname,parcel_id&returnGeometry=false&f=json",
+     "https://www.openstreetmap.org/relation/19555100",
+     "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_a_good_first_trad_climb",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "pitches 0 is invalid. MP: Trad, one 50 ft line; no pitch count stated, so 1 is implied (one short length), not stated. unconfirmed (single-source) after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/114588405/a-good-first-trad-climb"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_a_good_first_trad_climb",
+    "column": "length_m",
+    "from": null,
+    "to": 15,
+    "why": "MP states Trad, 50 ft (15 m). locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/114588405/a-good-first-trad-climb"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_a_good_first_trad_climb",
+    "column": "gear",
+    "from": null,
+    "to": [
+     "nuts",
+     "cams to #0.75 Camalot"
+    ],
+    "why": "MP rack: nuts and cams to .75. locked-1src (rack) after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/114588405/a-good-first-trad-climb"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "MP: a large tree has fallen over the start (photo caption) - a conditions note, not written. Anchor and descent not stated. Second sources tried: the Index guide on Rakkup lists only Agent Orange and Corner Flash in its Delusions of Grandeur / Agent Orange sector (rest paywalled); theCrag 403 (WebFetch) and bot-checked batch O in Chrome, not retried; a web search found nothing else. So grade/length/rack rest on Mountain Project alone."
+ },
+ "wa_delusions_of_grandeur": {
+  "area": "wa_grandeur_buttress",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/108125718/delusions-of-grandeur",
+    "https://www.mountainproject.com/area/108125690/grandeur-buttress",
+    "https://rakkup.com/guidebook/index-rock-climbing/delusions-of-grandeur---agent-orange/s11507",
+    "https://rakkup.com/guidebook/index-rock-climbing/the-inner-walls/s10839",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5757454,47.8192651&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.575678,47.8192274&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5755887,47.8191776&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5756447,47.8192171&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.5757454,47.8192651&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,taxprname,parcel_id&returnGeometry=false&f=json",
+    "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.575678,47.8192274&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,taxprname,parcel_id&returnGeometry=false&f=json",
+    "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.5755887,47.8191776&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,taxprname,parcel_id&returnGeometry=false&f=json",
+    "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.5756447,47.8192171&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,taxprname,parcel_id&returnGeometry=false&f=json",
+    "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.5755439,47.8191691&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,taxprname,parcel_id&returnGeometry=false&f=json",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0/query?geometry=-121.5757454,47.8192651&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownerclassification,forestname&returnGeometry=false&f=json",
+    "https://www.openstreetmap.org/node/13124267906",
+    "https://www.openstreetmap.org/node/13124267907",
+    "https://www.openstreetmap.org/node/13113494729",
+    "https://www.openstreetmap.org/relation/19555100",
+    "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.10c",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108125718/delusions-of-grandeur",
+      "fact": "5.10c YDS, Trad",
+      "retrieved_at": "2026-11-19"
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "G. White, J. Nelson, S. Strong '82",
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108125718/delusions-of-grandeur",
+      "fact": "FA: G. White, J. Nelson, S. Strong '82",
+      "retrieved_at": "2026-11-19"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_delusions_of_grandeur",
+    "column": "access",
+    "from": {
+     "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+     "notes": "Many of these peaks (Mount Persis, Gunn Peak, Baring Mountain area) sit outside designated wilderness — administratively unrestricted despite serious technical terrain.",
+     "permit": "None required.",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+     "parking_pass": "Northwest Forest Pass or America the Beautiful pass required at developed trailheads."
+    },
+    "to": null,
+    "why": "access holds a template naming Mt. Baker-Snoqualmie NF (Skykomish RD), a Northwest Forest Pass and unrelated peaks (Persis, Gunn, Baring). No Forest Service land is involved: the USFS BasicOwnership layer classes the buttress NON-FS. MP places this line in the centre of the buttress, between the OSM Undertow/Last Delusion nodes, all at the parcel line. The buttress straddles a State Parks / private line: Snohomish County parcels put the OSM Undertow, The Last Delusion and Agent Orange nodes and the OSM Grandeur Buttress relation centre in PRIVATE parcel 27101900102100 (individual owner) while Corner Flash falls in WA State Parks parcel 27101900203000; the WA State Parks Park Boundaries layer (2026-06-01) draws that private parcel as a hole whose edge passes 4-6 m from every one of those points, and puts the points just on the park side. The two official layers disagree by a few metres, so the route cannot be placed inside Forks of the Sky; per brief P, propose null rather than Forks of the Sky. HELD for the owner only in the sense that a correct land manager needs an official statement (State Parks or the parcel owner); removing the wrong one is safe.",
+    "evidence": [
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0/query?geometry=-121.5757454,47.8192651&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownerclassification,forestname&returnGeometry=false&f=json",
+     "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5757454,47.8192651&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+     "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.5757454,47.8192651&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,taxprname,parcel_id&returnGeometry=false&f=json",
+     "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.5755439,47.8191691&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,taxprname,parcel_id&returnGeometry=false&f=json",
+     "https://www.openstreetmap.org/relation/19555100",
+     "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_delusions_of_grandeur",
+    "column": "pitches",
+    "from": 0,
+    "to": null,
+    "why": "pitches 0 is invalid. MP states no length and no pitch count (only that it ends near a small tree on top, starting lower than the right-side routes), so a single pitch is not clear; null per brief P.",
+    "evidence": [
+     "https://www.mountainproject.com/route/108125718/delusions-of-grandeur"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_delusions_of_grandeur",
+    "column": "gear",
+    "from": null,
+    "to": [
+     "wired nuts",
+     "cams to 3 in"
+    ],
+    "why": "MP rack: full range from wired stoppers to 3 in. locked-1src (rack) after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/108125718/delusions-of-grandeur"
+    ]
+   }
+  ],
+  "disputed": [
+   "prot_rating: row holds PG13; MP states no protection rating. Not verified, left as is."
+  ],
+  "notes": "MP: base may be overgrown and the line may need recleaning. No length, anchor or descent stated. Second sources tried: the Index guide on Rakkup lists only Agent Orange and Corner Flash in its Delusions of Grandeur / Agent Orange sector (rest paywalled); theCrag 403 (WebFetch) and bot-checked batch O in Chrome, not retried; a web search found nothing else. So grade/length/rack rest on Mountain Project alone."
+ },
+ "wa_undertow": {
+  "area": "wa_grandeur_buttress",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/114963522/undertow",
+    "https://www.mountainproject.com/area/108125690/grandeur-buttress",
+    "https://rakkup.com/guidebook/index-rock-climbing/delusions-of-grandeur---agent-orange/s11507",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5757454,47.8192651&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.575678,47.8192274&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5755887,47.8191776&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5756447,47.8192171&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.5757454,47.8192651&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,taxprname,parcel_id&returnGeometry=false&f=json",
+    "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.575678,47.8192274&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,taxprname,parcel_id&returnGeometry=false&f=json",
+    "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.5755887,47.8191776&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,taxprname,parcel_id&returnGeometry=false&f=json",
+    "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.5756447,47.8192171&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,taxprname,parcel_id&returnGeometry=false&f=json",
+    "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.5755439,47.8191691&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,taxprname,parcel_id&returnGeometry=false&f=json",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0/query?geometry=-121.5757454,47.8192651&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownerclassification,forestname&returnGeometry=false&f=json",
+    "https://www.openstreetmap.org/node/13124267906",
+    "https://www.openstreetmap.org/node/13124267907",
+    "https://www.openstreetmap.org/node/13113494729",
+    "https://www.openstreetmap.org/relation/19555100",
+    "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "fa",
+    "value": "Michal Rynkiewicz, Sara Price",
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114963522/undertow",
+      "fact": "FA: Michal Rynkiewicz, Sara Price (no year)",
+      "retrieved_at": "2026-11-19"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_undertow",
+    "column": "access",
+    "from": {
+     "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+     "notes": "Many of these peaks (Mount Persis, Gunn Peak, Baring Mountain area) sit outside designated wilderness — administratively unrestricted despite serious technical terrain.",
+     "permit": "None required.",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+     "parking_pass": "Northwest Forest Pass or America the Beautiful pass required at developed trailheads."
+    },
+    "to": null,
+    "why": "access holds a template naming Mt. Baker-Snoqualmie NF (Skykomish RD), a Northwest Forest Pass and unrelated peaks (Persis, Gunn, Baring). No Forest Service land is involved: the USFS BasicOwnership layer classes the buttress NON-FS. OSM node 13124267906 (Undertow) is in the private county parcel, 4.0 m from the State Parks hole edge. The buttress straddles a State Parks / private line: Snohomish County parcels put the OSM Undertow, The Last Delusion and Agent Orange nodes and the OSM Grandeur Buttress relation centre in PRIVATE parcel 27101900102100 (individual owner) while Corner Flash falls in WA State Parks parcel 27101900203000; the WA State Parks Park Boundaries layer (2026-06-01) draws that private parcel as a hole whose edge passes 4-6 m from every one of those points, and puts the points just on the park side. The two official layers disagree by a few metres, so the route cannot be placed inside Forks of the Sky; per brief P, propose null rather than Forks of the Sky. HELD for the owner only in the sense that a correct land manager needs an official statement (State Parks or the parcel owner); removing the wrong one is safe.",
+    "evidence": [
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0/query?geometry=-121.5757454,47.8192651&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownerclassification,forestname&returnGeometry=false&f=json",
+     "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5757454,47.8192651&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+     "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.5757454,47.8192651&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,taxprname,parcel_id&returnGeometry=false&f=json",
+     "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.5755439,47.8191691&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,taxprname,parcel_id&returnGeometry=false&f=json",
+     "https://www.openstreetmap.org/relation/19555100",
+     "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_undertow",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "pitches 0 is invalid. MP: Trad, 90 ft, on the middle left of a ~50-90 ft buttress; no pitch count stated, so 1 is implied, not stated. unconfirmed (single-source) after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/114963522/undertow"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_undertow",
+    "column": "length_m",
+    "from": null,
+    "to": 27,
+    "why": "MP states Trad, 90 ft (27 m). locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/114963522/undertow"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_undertow",
+    "column": "grade",
+    "from": "5.10+",
+    "to": "5.10d",
+    "why": "MP (route page and Grandeur Buttress area list) states 5.10d; the row's 5.10+ is a coarser form of the same grade. locked-1src after apply. rock_grade is null, unchanged. Drop together with the grade_num fix if the owner prefers to keep 5.10+.",
+    "evidence": [
+     "https://www.mountainproject.com/route/114963522/undertow",
+     "https://www.mountainproject.com/area/108125690/grandeur-buttress"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_undertow",
+    "column": "grade_num",
+    "from": 10.75,
+    "to": 10.9,
+    "why": "gradeNumFrom('5.10d','yds') = 10.9 (lib/grade.js); goes with the grade fix.",
+    "evidence": [
+     "https://www.mountainproject.com/route/114963522/undertow"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_undertow",
+    "column": "bolts",
+    "from": null,
+    "to": 5,
+    "why": "MP rack line states 5 bolts. locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/114963522/undertow"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_undertow",
+    "column": "gear",
+    "from": null,
+    "to": [
+     "double cams to #2 Camalot",
+     "quickdraws for 5 bolts"
+    ],
+    "why": "MP rack: doubles to #2 Camalot, 5 bolts. locked-1src (rack) after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/114963522/undertow"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "Mixed gear + 5 bolts; discipline trad kept (MP Type: Trad). Anchor/descent not stated. Second sources tried: the Index guide on Rakkup lists only Agent Orange and Corner Flash in its Delusions of Grandeur / Agent Orange sector (rest paywalled); theCrag 403 (WebFetch) and bot-checked batch O in Chrome, not retried; a web search found nothing else. So grade/length/rack rest on Mountain Project alone."
+ },
+ "wa_delusions_of_adequacy": {
+  "area": "wa_grandeur_buttress",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/114794873/delusions-of-adequacy",
+    "https://www.mountainproject.com/area/108125690/grandeur-buttress",
+    "https://rakkup.com/guidebook/index-rock-climbing/delusions-of-grandeur---agent-orange/s11507",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5757454,47.8192651&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.575678,47.8192274&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5755887,47.8191776&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5756447,47.8192171&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.5757454,47.8192651&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,taxprname,parcel_id&returnGeometry=false&f=json",
+    "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.575678,47.8192274&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,taxprname,parcel_id&returnGeometry=false&f=json",
+    "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.5755887,47.8191776&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,taxprname,parcel_id&returnGeometry=false&f=json",
+    "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.5756447,47.8192171&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,taxprname,parcel_id&returnGeometry=false&f=json",
+    "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.5755439,47.8191691&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,taxprname,parcel_id&returnGeometry=false&f=json",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0/query?geometry=-121.5757454,47.8192651&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownerclassification,forestname&returnGeometry=false&f=json",
+    "https://www.openstreetmap.org/node/13124267906",
+    "https://www.openstreetmap.org/node/13124267907",
+    "https://www.openstreetmap.org/node/13113494729",
+    "https://www.openstreetmap.org/relation/19555100",
+    "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.11a",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114794873/delusions-of-adequacy",
+      "fact": "5.11a YDS, Trad, 70 ft (21 m)",
+      "retrieved_at": "2026-11-19"
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "July 2018  Gabe Webster, Jonah, Ashley and Dan Wiseman, Doug Taylor",
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114794873/delusions-of-adequacy",
+      "fact": "FA: July 2018, Gabe Webster, Jonah, Ashley and Dan Wiseman, Doug Taylor",
+      "retrieved_at": "2026-11-19"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_delusions_of_adequacy",
+    "column": "access",
+    "from": {
+     "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+     "notes": "Many of these peaks (Mount Persis, Gunn Peak, Baring Mountain area) sit outside designated wilderness — administratively unrestricted despite serious technical terrain.",
+     "permit": "None required.",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+     "parking_pass": "Northwest Forest Pass or America the Beautiful pass required at developed trailheads."
+    },
+    "to": null,
+    "why": "access holds a template naming Mt. Baker-Snoqualmie NF (Skykomish RD), a Northwest Forest Pass and unrelated peaks (Persis, Gunn, Baring). No Forest Service land is involved: the USFS BasicOwnership layer classes the buttress NON-FS. MP: starts just below Agent Orange and runs parallel to it; OSM Agent Orange node 13113494729 is in the private county parcel, 5.8 m from the State Parks hole edge. The buttress straddles a State Parks / private line: Snohomish County parcels put the OSM Undertow, The Last Delusion and Agent Orange nodes and the OSM Grandeur Buttress relation centre in PRIVATE parcel 27101900102100 (individual owner) while Corner Flash falls in WA State Parks parcel 27101900203000; the WA State Parks Park Boundaries layer (2026-06-01) draws that private parcel as a hole whose edge passes 4-6 m from every one of those points, and puts the points just on the park side. The two official layers disagree by a few metres, so the route cannot be placed inside Forks of the Sky; per brief P, propose null rather than Forks of the Sky. HELD for the owner only in the sense that a correct land manager needs an official statement (State Parks or the parcel owner); removing the wrong one is safe.",
+    "evidence": [
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0/query?geometry=-121.5757454,47.8192651&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownerclassification,forestname&returnGeometry=false&f=json",
+     "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5757454,47.8192651&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+     "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.5757454,47.8192651&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,taxprname,parcel_id&returnGeometry=false&f=json",
+     "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.5755439,47.8191691&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,taxprname,parcel_id&returnGeometry=false&f=json",
+     "https://www.openstreetmap.org/relation/19555100",
+     "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_delusions_of_adequacy",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "pitches 0 is invalid. MP: Trad, one 70 ft line beside Agent Orange; MP says it can be previewed by toproping Corner Flash and scrambling to its anchor (one anchor). No pitch count stated, so 1 is implied. unconfirmed (single-source) after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/114794873/delusions-of-adequacy"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_delusions_of_adequacy",
+    "column": "length_m",
+    "from": null,
+    "to": 21,
+    "why": "MP states Trad, 70 ft (21 m). locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/114794873/delusions-of-adequacy"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_delusions_of_adequacy",
+    "column": "gear",
+    "from": null,
+    "to": [
+     "small cams to #0.75",
+     "one #2 and one #3 cam",
+     "2 quickdraws"
+    ],
+    "why": "MP rack: a #3, a #2, two draws and small cams to about .75. locked-1src (rack) after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/114794873/delusions-of-adequacy"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "fa string holds a double space after '2018' (as stored; not reformatted). Bolt count not stated (2 draws only implies it). Second sources tried: the Index guide on Rakkup lists only Agent Orange and Corner Flash in its Delusions of Grandeur / Agent Orange sector (rest paywalled); theCrag 403 (WebFetch) and bot-checked batch O in Chrome, not retried; a web search found nothing else. So grade/length/rack rest on Mountain Project alone."
+ },
+ "wa_the_last_delusion": {
+  "area": "wa_grandeur_buttress",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/115365488/the-last-delusion",
+    "https://www.mountainproject.com/area/108125690/grandeur-buttress",
+    "https://rakkup.com/guidebook/index-rock-climbing/delusions-of-grandeur---agent-orange/s11507",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5757454,47.8192651&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.575678,47.8192274&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5755887,47.8191776&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5756447,47.8192171&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.5757454,47.8192651&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,taxprname,parcel_id&returnGeometry=false&f=json",
+    "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.575678,47.8192274&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,taxprname,parcel_id&returnGeometry=false&f=json",
+    "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.5755887,47.8191776&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,taxprname,parcel_id&returnGeometry=false&f=json",
+    "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.5756447,47.8192171&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,taxprname,parcel_id&returnGeometry=false&f=json",
+    "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.5755439,47.8191691&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,taxprname,parcel_id&returnGeometry=false&f=json",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0/query?geometry=-121.5757454,47.8192651&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownerclassification,forestname&returnGeometry=false&f=json",
+    "https://www.openstreetmap.org/node/13124267906",
+    "https://www.openstreetmap.org/node/13124267907",
+    "https://www.openstreetmap.org/node/13113494729",
+    "https://www.openstreetmap.org/relation/19555100",
+    "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.10c",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/115365488/the-last-delusion",
+      "fact": "5.10c YDS, Trad, 80 ft (24 m)",
+      "retrieved_at": "2026-11-19"
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Sept 2018, Doug Taylor, Matt Trabun, Geoff Georges, Gabe Webster, Nate Redon",
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/115365488/the-last-delusion",
+      "fact": "FA: September 2018, Doug Taylor, Matt Trabun, Geoff Georges, Gabe Webster, Nate Redon",
+      "retrieved_at": "2026-11-19"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_the_last_delusion",
+    "column": "access",
+    "from": {
+     "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+     "notes": "Many of these peaks (Mount Persis, Gunn Peak, Baring Mountain area) sit outside designated wilderness — administratively unrestricted despite serious technical terrain.",
+     "permit": "None required.",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+     "parking_pass": "Northwest Forest Pass or America the Beautiful pass required at developed trailheads."
+    },
+    "to": null,
+    "why": "access holds a template naming Mt. Baker-Snoqualmie NF (Skykomish RD), a Northwest Forest Pass and unrelated peaks (Persis, Gunn, Baring). No Forest Service land is involved: the USFS BasicOwnership layer classes the buttress NON-FS. OSM node 13124267907 (The Last Delusion) is in the private county parcel, 4.8 m from the State Parks hole edge. The buttress straddles a State Parks / private line: Snohomish County parcels put the OSM Undertow, The Last Delusion and Agent Orange nodes and the OSM Grandeur Buttress relation centre in PRIVATE parcel 27101900102100 (individual owner) while Corner Flash falls in WA State Parks parcel 27101900203000; the WA State Parks Park Boundaries layer (2026-06-01) draws that private parcel as a hole whose edge passes 4-6 m from every one of those points, and puts the points just on the park side. The two official layers disagree by a few metres, so the route cannot be placed inside Forks of the Sky; per brief P, propose null rather than Forks of the Sky. HELD for the owner only in the sense that a correct land manager needs an official statement (State Parks or the parcel owner); removing the wrong one is safe.",
+    "evidence": [
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0/query?geometry=-121.5757454,47.8192651&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownerclassification,forestname&returnGeometry=false&f=json",
+     "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5757454,47.8192651&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+     "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.5757454,47.8192651&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,taxprname,parcel_id&returnGeometry=false&f=json",
+     "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.5755439,47.8191691&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,taxprname,parcel_id&returnGeometry=false&f=json",
+     "https://www.openstreetmap.org/relation/19555100",
+     "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_the_last_delusion",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "pitches 0 is invalid. MP: Trad, 80 ft from the boulder at the buttress's low point to anchors beside a tree (one length, one anchor; a mid-route ledge is not called a belay). No pitch count stated, so unconfirmed (single-source) after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/115365488/the-last-delusion"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_the_last_delusion",
+    "column": "length_m",
+    "from": null,
+    "to": 24,
+    "why": "MP states Trad, 80 ft (24 m). locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/115365488/the-last-delusion"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_the_last_delusion",
+    "column": "gear",
+    "from": null,
+    "to": [
+     "single rack to 2 in",
+     "nuts",
+     "5 quickdraws",
+     "slings"
+    ],
+    "why": "MP rack: 5 QDs, single rack to 2 in with nuts, some runners. locked-1src (rack) after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/115365488/the-last-delusion"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "Bolt count not stated as a number (5 QDs; bolted to just below the crux). Second sources tried: the Index guide on Rakkup lists only Agent Orange and Corner Flash in its Delusions of Grandeur / Agent Orange sector (rest paywalled); theCrag 403 (WebFetch) and bot-checked batch O in Chrome, not retried; a web search found nothing else. So grade/length/rack rest on Mountain Project alone."
+ },
+ "wa_seizure": {
+  "area": "wa_bend_center",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/110809216/seizure",
+    "https://mountainproject.com/area/105929507/the-bend",
+    "https://chossclimbers.com/?p=2200",
+    "https://chossclimbers.com/testing/us/washington/tieton-cragging/the-bend-2021-again/",
+    "https://wdfw.wa.gov/places-to-go/wildlife-areas/oak-creek-wildlife-area-unit",
+    "https://www.openstreetmap.org/way/688667624",
+    "https://geodataservices.wdfw.wa.gov/arcgis/rest/services/WP_RealEstate/WildlifeAreas/MapServer/0/query?geometry=-120.8282155,46.718158&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=WildlifeAreaUnitName&returnGeometry=false&f=json",
+    "https://geodataservices.wdfw.wa.gov/arcgis/rest/services/WP_RealEstate/WildlifeAreas/MapServer/0/query?geometry=-120.8294019,46.7179717&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=WildlifeAreaUnitName&returnGeometry=false&f=json",
+    "https://geodataservices.wdfw.wa.gov/arcgis/rest/services/WP_RealEstate/WildlifeAreas/MapServer/0/query?geometry=-120.8299123,46.7176672&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=WildlifeAreaUnitName&returnGeometry=false&f=json",
+    "https://geodataservices.wdfw.wa.gov/arcgis/rest/services/WP_RealEstate/WildlifeAreas/MapServer/0/query?geometry=-120.8301244,46.7170583&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=WildlifeAreaUnitName&returnGeometry=false&f=json",
+    "https://geodataservices.wdfw.wa.gov/arcgis/rest/services/WP_RealEstate/WildlifeAreas/MapServer/0/query?geometry=-120.8306082,46.7164585&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=WildlifeAreaUnitName&returnGeometry=false&f=json",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0/query?geometry=-120.8294019,46.7179717&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownerclassification,forestname&returnGeometry=false&f=json"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.10b",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/110809216/seizure",
+      "fact": "5.10b YDS, Trad, 140 ft (42 m)",
+      "retrieved_at": "2026-11-19"
+     },
+     {
+      "url": "https://chossclimbers.com/testing/us/washington/tieton-cragging/the-bend-2021-again/",
+      "fact": "Seizure 5.10b (trip report, Oct 2021; grade likely taken from a guide, not counted independent)",
+      "retrieved_at": "2026-11-19"
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Ed Mosshart, Andy Fitz, Oct. 1987",
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/110809216/seizure",
+      "fact": "FA: Ed Mosshart, Andy Fitz, October 1987",
+      "retrieved_at": "2026-11-19"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_seizure",
+    "column": "pitches",
+    "from": 0,
+    "to": null,
+    "why": "pitches 0 is invalid. MP: 140 ft, shares its top anchor with MX (stored as 2 pitches); a photo is titled '2nd pitch', and a 70 m rope reaches 'the big ledge' from the top. May be one or two pitches and no source states a count: null per brief P.",
+    "evidence": [
+     "https://www.mountainproject.com/route/110809216/seizure"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_seizure",
+    "column": "length_m",
+    "from": null,
+    "to": 43,
+    "why": "MP states Trad, 140 ft (42 m); 140 ft = 42.7 m, stored as 43 like sibling wa_bend_center_riptide (also 140 ft). locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/110809216/seizure"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_seizure",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Washington Department of Fish and Wildlife (Oak Creek Wildlife Area)",
+     "parking_pass": "Discover Pass or WDFW Vehicle Access Pass in the wildlife area lot"
+    },
+    "why": "access is empty. Copied field for field from the LIVE value on wa_bend_center_riptide (read from the DB 2026-11-19). Every sampled node of the OSM cliff 'The Bend' (way 688667624) falls in the Oak Creek unit of WDFW's WildlifeAreas layer; the USFS ownership layer returns no Forest land there. WDFW Oak Creek unit page (re-read 2026-11-19): Discover Pass required on WDFW lands; a Vehicle Access Pass also works. official-1, expires 2027-11-19.",
+    "evidence": [
+     "https://wdfw.wa.gov/places-to-go/wildlife-areas/oak-creek-wildlife-area-unit",
+     "https://geodataservices.wdfw.wa.gov/arcgis/rest/services/WP_RealEstate/WildlifeAreas/MapServer/0/query?geometry=-120.8282155,46.718158&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=WildlifeAreaUnitName&returnGeometry=false&f=json",
+     "https://geodataservices.wdfw.wa.gov/arcgis/rest/services/WP_RealEstate/WildlifeAreas/MapServer/0/query?geometry=-120.8294019,46.7179717&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=WildlifeAreaUnitName&returnGeometry=false&f=json",
+     "https://geodataservices.wdfw.wa.gov/arcgis/rest/services/WP_RealEstate/WildlifeAreas/MapServer/0/query?geometry=-120.8299123,46.7176672&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=WildlifeAreaUnitName&returnGeometry=false&f=json",
+     "https://geodataservices.wdfw.wa.gov/arcgis/rest/services/WP_RealEstate/WildlifeAreas/MapServer/0/query?geometry=-120.8301244,46.7170583&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=WildlifeAreaUnitName&returnGeometry=false&f=json",
+     "https://geodataservices.wdfw.wa.gov/arcgis/rest/services/WP_RealEstate/WildlifeAreas/MapServer/0/query?geometry=-120.8306082,46.7164585&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=WildlifeAreaUnitName&returnGeometry=false&f=json",
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0/query?geometry=-120.8294019,46.7179717&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownerclassification,forestname&returnGeometry=false&f=json"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_seizure",
+    "column": "permit",
+    "from": null,
+    "to": "A Discover Pass, or a WDFW Vehicle Access Pass, is needed to park in the Oak Creek Wildlife Area lot.",
+    "why": "permit is empty. Same LIVE string as wa_bend_center_riptide; WDFW Oak Creek unit page states the Discover Pass / Vehicle Access Pass rule. official-1, expires 2027-11-19.",
+    "evidence": [
+     "https://wdfw.wa.gov/places-to-go/wildlife-areas/oak-creek-wildlife-area-unit"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_seizure",
+    "column": "gear",
+    "from": null,
+    "to": [
+     "double cams to 3 in",
+     "one #4 cam",
+     "nuts"
+    ],
+    "why": "MP rack: double rack to 3 in, a #4 useful midway, prehung nuts. locked-1src (rack) after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/110809216/seizure"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "Eagle closure HELD (as in batch O): WDFW's Oak Creek page bars climbing near nesting golden eagles from Feb 1 to the end of nesting, boundary posted on site, but names no cliff; MP marks the Bend 'closed (2021)' with no end date. No closure text proposed. MP: tape or jam the first roof; a #4 helps midway; descent by rappelling MX. Chossclimbers' Oct 2021 report agrees on 5.10b and used one #4 (blog, likely guide-derived grade, so not counted as a second independent source). The stored hazards sentence mentions a past rockfall closure; not verified, left."
+ }
+}

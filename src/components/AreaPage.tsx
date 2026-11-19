@@ -234,7 +234,7 @@ export default function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, book
   // normally cached from the drill down) a region or range shows no button, so a failed read cannot offer it.
   const division = ["region", "range"].includes(area.area_type);
   const { data: parentArea }: AreaPageQuery<AreaPageArea> = useArea(division ? area.parent_id || null : null);
-  const fixedPlace = ["world", "country", "state"].includes(area.area_type) || (division && (!parentArea ||parentArea.id !== area.parent_id || ["state", "country"].includes(parentArea.area_type)));
+  const fixedPlace = ["world", "country", "state"].includes(area.area_type) || (division && (!parentArea || parentArea.id !== area.parent_id || ["state", "country"].includes(parentArea.area_type)));
   const cellBox: CSSProperties = { flex: "1 1 180px", minWidth: 0, display: "flex", flexDirection: "column", justifyContent: "space-between" };
   const cellQ: CSSProperties = { fontSize: 13.5, fontWeight: 700, color: C.text, marginBottom: 8, overflowWrap: "anywhere" };
   const cellBtn: CSSProperties = { ...BTN_LG, background: C.surface, display: "flex", alignItems: "center", justifyContent: "center", gap: 6 };
