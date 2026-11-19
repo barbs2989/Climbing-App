@@ -1,0 +1,79 @@
+[
+ {"route_id":"wa_johannesburg_mountain_northeast_rib_1951_route","field":"gain_ft","stored_value":5000,"found_value":4600,"verdict":"found_confirmed","final_value":4600,"trailhead":"Cascade Pass trailhead road (climb starts just below the TH lot)",
+  "figures":[
+   {"value":4600,"trailhead":"Cascade Pass TH parking","url":"https://stephabegg.com/trip-reports/washington/johannesburg-ne-rib/","one_way":true,"fact":"Elevation gain: 4,600' of climbing from the parking lot to summit, NE Rib 1951 route."},
+   {"value":4811,"trailhead":"Start trailhead 3400 ft (Cascade River Rd)","url":"https://www.peakbagger.com/climber/ascent.aspx?aid=3317033","one_way":true,"fact":"Peakbagger ascent 2026-08-20, Route NE Rib '51 variation, Gain on way in 4811 ft, start 3400 ft."},
+   {"value":4711,"trailhead":"not shown on list","url":"https://www.peakbagger.com/climber/PeakAscents.aspx?pid=1863&sort=AscentDate&u=ft&y=9999","one_way":true,"fact":"Peakbagger ascents list: Newman 2017-08-26, route NE Rib, gain 4711 ft."},
+   {"value":4653,"trailhead":"not shown","url":"https://www.peakbagger.com/climber/PeakAscents.aspx?pid=1863&sort=AscentDate&u=ft&y=9999","one_way":true,"fact":"Le Gallo 2023-07-01, route 'NE Buttress', gain 4653 ft (route name ambiguous)."}
+  ],
+  "evidence":[
+   {"url":"https://stephabegg.com/trip-reports/washington/johannesburg-ne-rib/","retrieved_at":"2026-11-18","fact":"4,600' of climbing from the parking lot to summit via NE Rib."},
+   {"url":"https://www.peakbagger.com/climber/ascent.aspx?aid=3317033","retrieved_at":"2026-11-18","fact":"Route NE Rib '51 variation; gain on way in 4811 ft from a 3400 ft start."}
+  ],
+  "note":"4811 is within 10% of BOTH 4600 (4.4%) and stored 5000 (3.8%); 4600 vs 5000 also agree (8%). Peakbagger figures equal summit minus start (net), which fits this route (straight up from the road, no intermediate loss). Final = the route-precise page, Abegg 4600. No closure seen."},
+ {"route_id":"wa_magic_mountain_south_ridge","field":"gain_ft","stored_value":4800,"found_value":4000,"verdict":"found_confirmed","final_value":4000,"trailhead":"Cascade Pass trailhead (via Cascade Pass, Cache Col, Kool-Aid Lake)",
+  "figures":[
+   {"value":4000,"trailhead":"Cascade Pass TH","url":"https://www.mountaineers.org/activities/routes-places/cascade-pass-area-review/magic-mountain-south-ridge","one_way":true,"fact":"Mountaineers route page, gain 4,000 ft (prior pass)."},
+   {"value":4158,"trailhead":"Start trailhead 3500 ft","url":"https://www.peakbagger.com/climber/ascent.aspx?aid=364032","one_way":true,"fact":"Peakbagger ascent 1990-07-24 (Myers): gain on way in 4158 ft, start 3500 ft; route not stated."},
+   {"value":4458,"trailhead":"Start trailhead 3200 ft","url":"https://www.peakbagger.com/climber/ascent.aspx?aid=1207245","one_way":true,"fact":"Peakbagger ascent 2019-07-26 (Osborn): gain on way in 4458 ft, start 3200 ft, 14 mi; route not stated."},
+   {"value":1500,"trailhead":"camp (Kool-Aid Lake)","url":"https://www.peakbagger.com/climber/PeakAscents.aspx?pid=1868&sort=AscentDate&u=ft&y=9999","one_way":false,"fact":"Krystad 2001, South Ridge, 1500 ft, 2.0 mi - from camp, not trailhead."}
+  ],
+  "evidence":[
+   {"url":"https://www.mountaineers.org/activities/routes-places/cascade-pass-area-review/magic-mountain-south-ridge","retrieved_at":"2026-11-18","fact":"Mountaineers Magic Mountain South Ridge: elevation gain 4,000 ft from Cascade Pass TH."},
+   {"url":"https://www.peakbagger.com/climber/ascent.aspx?aid=364032","retrieved_at":"2026-11-18","fact":"Gain on way in 4158 ft from a 3500 ft trailhead (within 3.8% of 4,000)."}
+  ],
+  "note":"WEAK agreement: both Peakbagger entries equal summit (7658) minus start exactly, i.e. net, and name no route; Osborn's 4458 agrees with stored 4800 (7.1%) but not 4000 (10.3%). The route crosses Cache Col (6,900) and descends to Kool-Aid Lake (6,120) per the Mountaineers page, so a net figure likely understates cumulative gain. Treat as provisional; owner may prefer unresolved."},
+ {"route_id":"wa_eagle_rock_scramble","field":"gain_ft","stored_value":1464,"found_value":1400,"verdict":"found_confirmed","final_value":1400,"trailhead":"High trailhead at end of the logging road (~4,110-4,150 ft), east of Baring",
+  "figures":[
+   {"value":1400,"trailhead":"end-of-road TH","url":"https://www.mountaineers.org/activities/routes-places/eagle-rock","one_way":true,"fact":"Mountaineers Eagle Rock route page, gain 1,400 ft (prior pass)."},
+   {"value":1504,"trailhead":"End of Rd 4110 ft","url":"https://www.peakbagger.com/climber/ascent.aspx?aid=1247792","one_way":true,"fact":"Slayden 2019: E Route-N Ridge, trailhead end of road 4110 ft, elevation gain 1504 ft, 2.2 mi round trip."},
+   {"value":1494,"trailhead":"not shown","url":"https://www.peakbagger.com/climber/PeakAscents.aspx?pid=2000&sort=AscentDate&u=ft&y=9999","one_way":true,"fact":"Ken Russell 2018-08-12, North side gully, gain 1494 ft, 1.6 mi."},
+   {"value":1674,"trailhead":"not shown","url":"https://www.peakbagger.com/climber/PeakAscents.aspx?pid=2000&sort=AscentDate&u=ft&y=9999","one_way":true,"fact":"Eric Noel 2022-07-23, route 'Standard', gain 1674 ft, 2.5 mi."}
+  ],
+  "evidence":[
+   {"url":"https://www.mountaineers.org/activities/routes-places/eagle-rock","retrieved_at":"2026-11-18","fact":"Mountaineers Eagle Rock: elevation gain 1,400 ft."},
+   {"url":"https://www.peakbagger.com/climber/ascent.aspx?aid=1247792","retrieved_at":"2026-11-18","fact":"Trailhead end of road 4110 ft; elevation gain 1504 ft to the 5,614 ft summit (simple up-and-back)."}
+  ],
+  "note":"1504 is within 10% of both 1400 (6.9%) and stored 1464 (2.7%); either value is supported. Slayden's figure is labelled total gain but the outing is a plain up-and-back with no intermediate climbs, so it is the trailhead-to-summit gain (equals summit minus TH). Access: 10+ mi of rough road to the high TH, high-clearance 4x4 advised (Slayden 2019)."},
+ {"route_id":"wa_kyes_peak_glaciated_scramble","field":"gain_ft","stored_value":6023,"found_value":6500,"verdict":"found_confirmed","final_value":6500,"trailhead":"Blanca Lake TH (1,960 ft), via Blanca Lake and the Columbia Glacier",
+  "figures":[
+   {"value":6500,"trailhead":"Blanca Lake TH","url":"https://www.mountaineers.org/activities/routes-places/kyes-peak","one_way":true,"fact":"Mountaineers Kyes Peak page, gain 6,500 ft; closure walk stated separately (prior pass)."},
+   {"value":6522,"trailhead":"Blanca Lake TH, start 1960 ft","url":"https://www.peakbagger.com/climber/ascent.aspx?aid=2592027","one_way":true,"fact":"Mullen 2024: up Blanca Lake and Columbia Glacier; gain on way in 6522 ft (net 5322 + 1200 extra), 8.8 mi."},
+   {"value":6023,"trailhead":"Blanca Lake TH","url":"https://www.washingtonstatehiking.com/reportslist/kyes_peak","one_way":false,"fact":"Standard (Virgin Lake ridge) route, Total Ascent 6023 ft, 13.8 mi - a whole-outing GPS total, not one-way, different route."},
+   {"value":6032,"trailhead":"not shown","url":"https://www.peakbagger.com/climber/PeakAscents.aspx?pid=1812&sort=AscentDate&u=ft&y=9999","one_way":true,"fact":"Slayden 2015-09-12, S Ridge (standard, not glacier), gain 6032 ft, 13.4 mi."},
+   {"value":7500,"trailhead":"Blanca Lake TH","url":"https://climberkyle.com/2025/06/29/kyes-peak/","one_way":false,"fact":"Up the Columbia Glacier, down the standard trail: 'The route was 14 miles and 7500 ft gain' - round trip."}
+  ],
+  "evidence":[
+   {"url":"https://www.mountaineers.org/activities/routes-places/kyes-peak","retrieved_at":"2026-11-18","fact":"Mountaineers Kyes Peak: elevation gain 6,500 ft from Blanca Lake TH."},
+   {"url":"https://www.peakbagger.com/climber/ascent.aspx?aid=2592027","retrieved_at":"2026-11-18","fact":"Blanca Lake + Columbia Glacier route, start 1960 ft: gain on way in 6522 ft."}
+  ],
+  "note":"Stored 6023 matches washingtonstatehiking.com's round-trip Total Ascent for the STANDARD ridge route, so it is a different route and scope. The glacier route drops ~1,200 ft to Blanca Lake on the way in, which is why it gains more. Climber Kyle (2025) notes the North Fork Skykomish River Road has reopened; Mountaineers page still carries a closure note - check before use."},
+ {"route_id":"wa_olympus_traverse","field":"gain_ft","stored_value":10700,"found_value":8100,"verdict":"unresolved","final_value":null,"trailhead":"Hoh Rain Forest TH (~600 ft)",
+  "figures":[
+   {"value":8100,"trailhead":"Hoh TH","url":"https://www.mountaineers.org/activities/routes-places/mount-olympus-blue-glacier","one_way":false,"fact":"'Mount Olympus Traverse: 45 miles with 8,100 feet' - whole multi-peak traverse outing."},
+   {"value":7149,"trailhead":"Hoh TH, start 608 ft","url":"https://www.peakbagger.com/climber/ascent.aspx?aid=3236038","one_way":false,"fact":"East Peak + Athena via Glacier Pass (not the W-M-E traverse); gain on way in 7149 ft, 50.4 mi, multi-peak."},
+   {"value":null,"trailhead":"Glacier Meadows","url":"https://www.nps.gov/olym/planyourvisit/climbing-mount-olympus.htm","one_way":false,"fact":"NPS gives only 'Elevation change: 4,400 feet to 7,980 feet', 4-6 mi from Glacier Meadows - camp-based, no TH figure."}
+  ],
+  "evidence":[],
+  "note":"The route is inherently multi-peak (West, Middle, East), which rule 3 excludes, and no page states a trailhead-to-final-summit one-way gain for it. Peakbagger Middle/East Peak ascent lists hold no traverse entry with a usable gain; Olympus main-peak 2025 entries (7,396-15,475) mix routes and whole-trip totals. Neither 10,700 nor 8,100 is supported as a one-way figure."},
+ {"route_id":"wa_buckner_mountain_north_face","field":"gain_ft","stored_value":7000,"found_value":5400,"verdict":"unresolved","final_value":null,"trailhead":"Boston Basin TH (3,200 ft) via Quien Sabe Glacier, Sahale-Boston col, Boston Glacier",
+  "figures":[
+   {"value":5400,"trailhead":"Boston Basin TH","url":"https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/mount-buckner-north-face","one_way":true,"fact":"Mountaineers Buckner North Face route page, gain 5,400 ft (prior pass)."},
+   {"value":6000,"trailhead":"Boston Basin TH 2200 ft","url":"https://www.peakbagger.com/climber/ascent.aspx?aid=1685492","one_way":false,"fact":"North Face attempt 2020, turned back at 8,200 ft (not the summit); 6000 ft total, 11 mi round trip."},
+   {"value":1916,"trailhead":"camp","url":"https://www.peakbagger.com/climber/PeakAscents.aspx?pid=1852&sort=AscentDate&u=ft&y=9999","one_way":false,"fact":"Painter 2011 North Face 1916 ft and Newman 2018 N Face 1802 ft - from a high camp, not the trailhead."}
+  ],
+  "evidence":[],
+  "note":"Also checked: Northwest Mountain School itinerary (Boston Basin TH 3,200 ft; camp on Boston Glacier; no gain figure), Mountain Madness trip page (no gain), Lauder 2020 North Face PB report (no gain), DDG searches. Peakbagger North Face entries with gains are camp-based or a failed attempt. SummitPost 403. No independent trailhead-to-summit figure found."},
+ {"route_id":"wa_south_twin_sister_west_ridge","field":"gain_ft","stored_value":6100,"found_value":3700,"verdict":"stored_confirmed","final_value":5787,"trailhead":"Middle Fork Nooksack bridge gate (~1,210 ft), road walked or biked",
+  "figures":[
+   {"value":3700,"trailhead":"Dailey Prairie (beyond the gate)","url":"https://www.mountaineers.org/activities/routes-places/south-twin-sister-west-ridge","one_way":true,"fact":"Mountaineers West Ridge page: gain 3,700 ft from the upper logging-road start (prior pass)."},
+   {"value":5787,"trailhead":"gate, start 1214 ft","url":"https://www.peakbagger.com/climber/ascent.aspx?aid=3227755","one_way":true,"fact":"Wilson 2026-06-13: route west ridge, start 1214 ft, gain on way in 5787 ft, 8.1 mi (biked the road)."},
+   {"value":6049,"trailhead":"start 1206 ft","url":"https://www.peakbagger.com/climber/ascent.aspx?aid=3190588","one_way":true,"fact":"Digel 2026-05-10: start 1206 ft, gain on way in 6049 ft (net 5729 + 320 extra); route not named."},
+   {"value":6102,"trailhead":"gate","url":"https://www.thewildoutsiders.com/adventure-journal/south-twin-sister","one_way":false,"fact":"Whole-outing GPS total (prior pass), not counted."}
+  ],
+  "evidence":[
+   {"url":"https://www.peakbagger.com/climber/ascent.aspx?aid=3227755","retrieved_at":"2026-11-18","fact":"West ridge from a 1214 ft start (the gate): gain on way in 5787 ft."},
+   {"url":"https://www.peakbagger.com/climber/ascent.aspx?aid=3190588","retrieved_at":"2026-11-18","fact":"From a 1206 ft start: gain on way in 6049 ft to South Twin."}
+  ],
+  "note":"Also a trailhead split: 3,700 is right for Dailey Prairie, but the gate (~1,210 ft) is the start in use now (road behind it walked or biked). From the gate, 5787 and 6049 agree with each other (4.3%) and with stored 6100 (5.1% / 0.8%). Final = Wilson's route-named west-ridge figure; keeping 6100 is also within the rule."}
+]
