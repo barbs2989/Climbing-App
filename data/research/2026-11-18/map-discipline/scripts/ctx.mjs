@@ -1,0 +1,9 @@
+import fs from "fs";
+const { selectAll, requireServiceKey } = await import("file:///C:/Users/nate_/dev/Climbing-App/.claude/worktrees/map-pins-per-discipline/scripts/lib/supabase-env.mjs");
+const key = requireServiceKey();
+const want = { or_diamond_peak_southwest_ridge:"summit lake", wa_american_border_peak_northeast_face:"twin lakes", wa_chimney_peak_the_chimney:"graves creek", wa_dome_peak_indian_summer:"downey creek", wa_enchantment_peak_east_ridge:"stuart lake", wa_esmeralda_peaks_east_gully:"de roux", wa_baring_mountain_oatmeal_man:"barclay lake", wa_hozomeen_mountain_south_peak_north_ridge:"hozomeen", wa_hozomeen_mountain_south_peak_southeast_buttress:"hozomeen", wa_hozomeen_mountain_southwest_buttress:"hozomeen", wa_mount_adams_avalanche_white_salmon_glaciers:"cold springs", wa_mount_fury_east_direct_east_ridge:"ross dam", wa_this_my_friend:"stuart lake", wa_mount_triumph_west_route:"thornton", wa_north_star_mountain_cloudy_peak_traverse:"holden", wa_old_guard_peak_east_side_route:"cascade pass" };
+const rows = await selectAll("routes", "*", `id=in.(${Object.keys(want).map(x => `"${x}"`).join(",")})`, { key, pageSize: 100 });
+for (const r of rows) { console.log("\n##", r.id, "->", want[r.id]);
+  for (const [k, v] of Object.entries(r)) { if (v == null || /^(id|waypoints|gpx)/.test(k)) continue; const s = typeof v === "string" ? v : JSON.stringify(v); const low = s.toLowerCase();
+    let i = low.indexOf(want[r.id]); if (i >= 0) console.log("  [" + k + "]", s.slice(Math.max(0, i - 160), i + 120).replace(/\s+/g, " "));
+    const oth = s.match(/[A-Z][\w'.-]+(?: [A-Z][\w'.-]+)* (?:Trailhead|trailhead|TH)\b/g); if (oth) { const o = [...new Set(oth)].filter(x => !x.toLowerCase().includes(want[r.id])); if (o.length) console.log("    other THs in", k + ":", o.slice(0, 4).join(" | ")); } } }
