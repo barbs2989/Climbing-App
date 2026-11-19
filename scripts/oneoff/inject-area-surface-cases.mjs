@@ -61,7 +61,7 @@ const CASES = [
     says: /Directions link is gone from lib\/DbAreaBrowser\.jsx/,
     why: "a climber cannot navigate to a crag again" },
   { name: "directions: ungate area_type", file: path.join(ROOT, "src/components/AreaPage.tsx") /* since PR66 */, expect: "fail",
-    find: '["crag", "peak", "wall"].includes(area.area_type) ? <AreaGettingThere', repl: "true ? <AreaGettingThere",
+    find: '["crag", "peak", "wall"].includes(area.area_type) ? section(<AreaGettingThere', repl: "true ? section(<AreaGettingThere",
     says: /no longer gated on area_type/,
     why: "every area has a coordinate, so this offers directions to a state centroid" },
   { name: "caveat: stop mentioning the link", file: path.join(ROOT, "src/components/AreaPage.tsx") /* since PR66 */, expect: "fail",
