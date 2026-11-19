@@ -1,0 +1,109 @@
+[
+ {
+  "route_id": "wa_mount_si_trail",
+  "verdict": "gain_wrong",
+  "final_gain": 3360,
+  "trailhead_today": "Mount Si Trailhead (DNR, Mt. Si Road)",
+  "trailhead_elev_official": "660 ft (Mountaineers route page; no DNR figure found)",
+  "summit_elev_official": "4,167 ft NGVD29 (Wikipedia citing Peakbagger/GNIS); Mountaineers gives Haystack 4,180 ft",
+  "figures": [
+   {"value": 3150, "trailhead": "Mount Si Trailhead", "one_way": true, "url": "https://www.wta.org/go-hiking/hikes/mount-si", "fact": "WTA: 8.0 mi roundtrip, 3,150 ft gain, highest point 3,900 ft (trail end meadow, not the Haystack summit)."},
+   {"value": 3150, "trailhead": "Mount Si Trailhead (660 ft)", "one_way": true, "url": "https://www.mountaineers.org/activities/routes-places/mount-si-main-trail", "fact": "Mountaineers main trail: 3,150 ft gain, high point 3,900 ft, ends in the meadow below the Haystack."},
+   {"value": 3360, "trailhead": "Mount Si Trailhead (660 ft)", "one_way": true, "url": "https://www.mountaineers.org/activities/routes-places/mount-si-main-trail", "fact": "Mountaineers: Mount Si Haystack (4,180 ft) scramble, 8 miles round trip, 3,360 ft elevation gain."},
+   {"value": 3500, "trailhead": "Mount Si Trailhead", "one_way": true, "url": "https://en.wikipedia.org/wiki/Mount_Si", "fact": "Wikipedia (citing Peakbagger): the four-mile Mount Si trail climbs 3,500 ft to the summit ridge; Haystack is class 3."}
+  ],
+  "evidence": [
+   {"url": "https://www.mountaineers.org/activities/routes-places/mount-si-main-trail", "retrieved_at": "2026-11-18", "fact": "Haystack (4,180 ft) scramble from the 660 ft trailhead: 8 mi round trip, 3,360 ft of elevation gain."},
+   {"url": "https://en.wikipedia.org/wiki/Mount_Si", "retrieved_at": "2026-11-18", "fact": "Mount Si trail climbs 3,500 ft to the summit ridge; summit elevation 4,167 ft (Peakbagger)."}
+  ],
+  "closures": "DNR alert: Mount Si Trailhead closed Tuesday Nov 3 for parking-area grading (one day); trails open.",
+  "note": "Stored 3,150 is the published gain to the hiking trail's end at 3,900 ft (WTA + Mountaineers agree), not to the 4,167 ft summit the pin marks. Summit figures 3,360 and 3,500 agree within 10%; Mountaineers figure is route-precise (names the Haystack)."
+ },
+ {
+  "route_id": "wa_hadley_peak_skyline_divide",
+  "verdict": "unresolved",
+  "final_gain": null,
+  "trailhead_today": "Skyline Divide Trailhead (#678, end of FR 37) -- road CLOSED until further notice",
+  "trailhead_elev_official": null,
+  "summit_elev_official": "7,515 ft (Mountaineers Hadley Peak route page high point; no GNIS/NGS page opened)",
+  "figures": [
+   {"value": 4700, "trailhead": "Skyline Divide Trailhead", "one_way": false, "url": "https://www.mountaineers.org/activities/routes-places/hadley-peak", "fact": "Mountaineers: Hadley Peak scramble, 13.0 mi with 4,700 ft of gain; high point 7,515 ft. Whole-outing figure."},
+   {"value": 2500, "trailhead": "Skyline Divide Trailhead", "one_way": false, "url": "https://www.wta.org/go-hiking/hikes/skyline-divide", "fact": "WTA Skyline Divide hike only: 9.0 mi roundtrip, 2,500 ft gain, highest point 6,563 ft (sixth knoll, not Hadley)."}
+  ],
+  "evidence": [],
+  "closures": "WTA 6.3.26: Deadhorse Creek Road (FR 37) closed until further notice due to flood damage. A 2023 Mountaineers listing also noted a washout.",
+  "note": "No opened page gives a one-way gain to Hadley Peak from the Skyline Divide trailhead; 4,700 is a 13-mile outing total with ridge ups and downs. Summit pin 7,515 agrees with Mountaineers. Stored 2,818 matches no published figure. stevensong.com unreadable (extension permission)."
+ },
+ {
+  "route_id": "wa_woodland_critter_christmas",
+  "verdict": "pin_wrong",
+  "final_gain": null,
+  "trailhead_today": "Hannegan Pass Trailhead (end of FR 32 / Ruth Creek Road)",
+  "trailhead_elev_official": null,
+  "summit_elev_official": "No published top elevation for this 90 ft pitch; the 5,000 ft pin is the top of 700 ft Ellation (stephabegg.com)",
+  "figures": [
+   {"value": 1200, "trailhead": "Hannegan Pass Trailhead", "one_way": true, "url": "https://www.mountainproject.com/area/110668839/mamie-peak", "fact": "Mamie Peak approach from the Hannegan Pass trailhead to the base of the crag: about an hour with 1200' of gain."}
+  ],
+  "evidence": [
+   {"url": "https://www.mountainproject.com/route/110668862/woodland-critter-christmas", "retrieved_at": "2026-11-18", "fact": "Woodland Critter Christmas: Trad, Alpine, 90 ft; a single-pitch climb on a buttress near the base of Ellation."},
+   {"url": "https://stephabegg.com/trip-reports/washington/mamie-ellation/", "retrieved_at": "2026-11-18", "fact": "Ellation is a 700 ft, 8-pitch route on Mamie Peak; top of route 5,000 ft (summit of Mamie 6,108 ft)."}
+  ],
+  "closures": "Abegg (2018): washout just before the Hannegan Pass trailhead, park before it. WTA Hannegan page shows no current alert.",
+  "note": "Stored 1,200 is the published approach gain to the crag base (MP). The 5,000 ft top pin is the top of Ellation, not this 90 ft pitch near Ellation's base; move it to the crag. Stored gain is right for this route."
+ },
+ {
+  "route_id": "wa_mount_rainier_edmunds_headwall",
+  "verdict": "unresolved",
+  "final_gain": null,
+  "trailhead_today": "Mowich Lake (SR 165) -- NO public access: SR165/Fairfax Bridge closed to vehicles, bikes and pedestrians, no alternate route",
+  "trailhead_elev_official": null,
+  "summit_elev_official": "Liberty Cap 14,112 ft (Wikipedia, Mount Rainier subsidiary peaks)",
+  "figures": [],
+  "evidence": [],
+  "closures": "NPS Carbon River and Mowich page: no public access to Carbon River & Mowich Lake from SR 165; Fairfax Bridge closed (WSDOT 4/22/25), no alternate route.",
+  "note": "No opened page gives a one-way gain for the Edmunds Headwall from Mowich Lake (cascadeclimber.com TR and Mountaineers Mowich Face listing have none). Summit pin 14,112 matches Liberty Cap. Bigger issue: the pinned trailhead cannot be reached at all today."
+ },
+ {
+  "route_id": "wa_amphitheater_mountain_west_route",
+  "verdict": "unresolved",
+  "final_gain": null,
+  "trailhead_today": "Andrews Creek Trailhead (#504, end of FR 51 pavement)",
+  "trailhead_elev_official": null,
+  "summit_elev_official": "8,358 ft (Wikipedia citing Peakbagger/GNIS)",
+  "figures": [
+   {"value": 4000, "trailhead": "Andrews Creek Trailhead", "one_way": false, "url": "https://www.wta.org/go-hiking/hikes/andrews-creek", "fact": "WTA Andrews Creek trail only (to Boundary Trail): 31.0 mi roundtrip, 4,000 ft gain, highest point 6,700 ft; not to the summit."}
+  ],
+  "evidence": [],
+  "closures": "None found on WTA. Gilbertson (2018) notes the Thirtymile trailhead road was washed out then.",
+  "note": "Gilbertson (countryhighpoints.com, 2018) calls Andrews Creek an 18-mile approach with the most gain of the three approaches but gives no figure. No opened page gives a one-way gain to Amphitheater from Andrews Creek; stored 3,000 is far too low for that start and may belong to a Cathedral Lakes camp start, unconfirmed."
+ },
+ {
+  "route_id": "wa_east_face",
+  "verdict": "unresolved",
+  "final_gain": null,
+  "trailhead_today": "Downey Creek Trailhead (Suiattle River Road)",
+  "trailhead_elev_official": null,
+  "summit_elev_official": null,
+  "figures": [],
+  "evidence": [],
+  "closures": "None found. CascadeClimbers TR (July 2025): Downey approach straightforward, trail work done all the way to Bachelor Creek.",
+  "note": "Middle Gunsight East Face (7 pitches, 5.10d) is reached from Downey Creek via Bachelor Creek, Cub Lake, Itswoot Ridge and the Chikamin Glacier, a multi-day approach (CascadeClimbers 108169). No opened page gives a one-way gain or an official Middle Peak elevation. SummitPost skipped (403)."
+ },
+ {
+  "route_id": "wa_mount_meany_standard",
+  "verdict": "unresolved",
+  "final_gain": null,
+  "trailhead_today": "North Fork Quinault River Trailhead (North Fork Road; may close in winter)",
+  "trailhead_elev_official": "519 ft (NPS North Fork Quinault River Trail page: elevation change 519 to 3,602 ft)",
+  "summit_elev_official": "6,695 ft (trailcatjim.com trip report title; no GNIS page opened)",
+  "figures": [
+   {"value": 9300, "trailhead": "North Fork Quinault Trailhead (500 ft)", "one_way": false, "url": "https://trailcatjim.com/mt-meany-via-quinault-river-seattle-basin-southeast-ridge-northeast-face/", "fact": "Brisbine 2020, six days via Low Divide and Seattle Basin: approximately 42 miles traveled, 9,300 feet gained and lost."},
+   {"value": 2200, "trailhead": "Seattle Basin camp (4,900 ft)", "one_way": true, "url": "https://trailcatjim.com/mt-meany-via-quinault-river-seattle-basin-southeast-ridge-northeast-face/", "fact": "Summit day from the 4,900 ft Seattle Basin camp: reached Meany summit in 5.6 hours with 2,200 feet gained."}
+  ],
+  "evidence": [
+   {"url": "https://www.nps.gov/olym/planyourvisit/north-for-quinault.htm", "retrieved_at": "2026-11-18", "fact": "North Fork Quinault River Trail: 16 miles to Low Divide, elevation change 519 feet to 3,602 feet."}
+  ],
+  "closures": "NPS: North Fork Road may be closed during winter; the 16-Mile ford can be hazardous or impassable at high water.",
+  "note": "Trailhead pin (515) agrees with NPS 519. Stored 2,500 is not a trailhead figure; it is near the 2,200 ft summit-day gain from a Seattle Basin high camp (one source only, and not equal), so it probably belongs to a camp start. No one-way trailhead-to-summit figure published."
+ }
+]
