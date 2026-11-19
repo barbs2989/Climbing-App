@@ -187,3 +187,24 @@ majority. 11 got an answer, 27 stay stuck (`out6/`).
 - North Peak Southeast Buttress: Mountain Project's North Peak sits about 28 km from the catalog's coordinate;
   the peak may be misidentified.
 - **Audit now:** SUMMIT_ONLY 254, NO_SUMMIT 40, CRAG_SUMMIT 0.
+
+## New York state parking layer (2026-11-18)
+
+A new official source: NYSDEC's `NYS_State_Land_Assets` PARKING layer (services6.arcgis.com, layer 38; 270
+points in the High Peaks box, `nydec-parking.json`). DEC's Giant Mountain page prints the same Roaring Brook
+Falls coordinate, so the layer is the land manager's own. 21 held New York routes written
+(`batch-ny.json`, all unconfirmed, verified on re-read). Each row's own text names the start.
+
+- DEC layer points: Seward Trailhead on Coreys Road (DEC calls the lot "Ampersand Parking Lot"; a tourism
+  page's Coreys Road trailhead is 52 m away) for Donaldson, Emmons, Seward, Seymour; ASRC lot for Esther; Elk
+  Lake for South Dix; AMR lot for Sawteeth and Upper Wolfjaw (same point as Colvin); Roaring Brook Falls for
+  Rocky Peak Ridge via Giant; East River for Allen.
+- Cliff: the OSM Upper Works lot, same as Marshall and Redfield (the DEC point is 330 m north of it).
+- Adirondak Loj (private lot, not in the DEC layer): OSM High Peaks Information Center, with another site's
+  lot coordinate 32 m away, for Gray, Iroquois, Skylight, Nye, Phelps, Street, Table Top.
+- Santanoni Range: OSM "Bradley Pond Parking Area" (way 307706607), 6 m from the tourism coordinate, for
+  Panther, Couchsachraga and Santanoni Express. Their descriptions still say "Starts at Upper Works,
+  Newcomb"; the lot is on Upper Works Road 2 km short of the Upper Works lot. Prose fix still open.
+- Photon finds a lot when asked for "<trail name> parking"; the earlier pass asked only for the agent's
+  trailhead name.
+- **Audit now:** SUMMIT_ONLY 233, NO_SUMMIT 40, CRAG_SUMMIT 0.
