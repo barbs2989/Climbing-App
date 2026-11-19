@@ -175,7 +175,7 @@ const CASES = [
     name: "multiday-pointer-loses-its-direction",
     why: "The box also says the single-push estimate is BELOW, so a check reading the first direction word in it " +
          "would pass a pointer that names no direction at all. The direction must be read after the Trip plan name",
-    edits: [{ find: "<b style={{color:C.amber}}>Trip plan</b>{\" below is the realistic one.\"}", repl: "<b style={{color:C.amber}}>Trip plan</b>{\" is the realistic one.\"}" }],
+    edits: [{ find: "<b style={{color:C.amber}}>Trip plan</b>{\" below has each day.\"}", repl: "<b style={{color:C.amber}}>Trip plan</b>{\" has each day.\"}" }],
     expect: "fail",
     must: /says which way the Trip plan is/,
   },
