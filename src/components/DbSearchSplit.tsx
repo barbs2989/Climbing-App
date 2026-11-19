@@ -1,7 +1,6 @@
 import { useState, useMemo, useEffect } from "react";
 import { usePinnedBar } from "../../lib/usePinnedBar.js";
 import { useAreaSearch, useSubtreeRoutes, useAreaNamesByIds, areaSearchTotal } from "../../lib/db";
-import { SL } from "../../lib/areaBrowserParts.jsx";
 import { clickable } from "../../lib/clickable";
 import LoadingRows from "./LoadingRows.tsx";
 import EmptyState from "./EmptyState.tsx";
@@ -59,10 +58,13 @@ export default function DbSearchSplit({ scope, onJumpToArea, onOpenRoute, C, onM
   const tab = (on: boolean): CSSProperties => ({ flex: 1, padding: "7px 0", textAlign: "center", fontSize: 12.5, fontWeight: 700, cursor: "pointer", borderRadius: 7, background: on ? C.blueSolid : "transparent", color: on ? C.onSolid : C.textSub });
   const row = { display: "flex", alignItems: "center", gap: 10, padding: "9px 4px", cursor: "pointer", borderBottom: "1px solid " + C.borderLight };
   return (
-    <div style={{ marginBottom: 14 }}>
-      <SL C={C}>{"Search " + scope.name}</SL>
+    // A CARD OF ITS OWN on the area page (owner, 2026-11-18): headed like the page's other cards (Classic climbs,
+    // Photos), with no outer margin -- the card's own gap spaces it -- and the bar painted with the page colour only
+    // while it is pinned, so at rest it does not draw a dark band across the card.
+    <div>
+      <h2 style={{ margin: 0, fontSize: 12, fontWeight: 800, color: C.text, letterSpacing: 0.4, textTransform: "uppercase" }}>{"Search " + scope.name}</h2>
       <div ref={wrapRef} style={{ margin: "0 -14px", height: pin ? pin.height : undefined }}>
-      <div ref={barRef} style={{ ...(pin ? { position: "fixed", top: pin.top, left: pin.left, width: pin.width, zIndex: 25, boxShadow: "0 6px 12px rgba(0,0,0,0.25)", borderBottom: "1px solid " + C.borderLight } : {}), boxSizing: "border-box", background: C.bg, padding: "6px 14px 8px" }}>
+      <div ref={barRef} style={{ ...(pin ? { position: "fixed", top: pin.top, left: pin.left, width: pin.width, zIndex: 25, boxShadow: "0 6px 12px rgba(0,0,0,0.25)", borderBottom: "1px solid " + C.borderLight } : {}), boxSizing: "border-box", background: pin ? C.bg : "transparent", padding: "8px 14px 8px" }}>
       <div style={{ display: "flex", gap: 4, background: C.surface, border: "1px solid " + C.border, borderRadius: 9, padding: 3, marginBottom: 8 }}>
         <div {...clickable(() => setMode("areas"))} aria-pressed={mode === "areas"} style={tab(mode === "areas")}>Areas</div>
         <div {...clickable(() => setMode("routes"))} aria-pressed={mode === "routes"} style={tab(mode === "routes")}>Routes</div>
