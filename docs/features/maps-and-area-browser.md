@@ -203,6 +203,7 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
   `npm run audit:water-pins` lists the ones that are not. The Water pins `scripts/oneoff/add-water-pins.mjs` adds are measured from
   OpenStreetMap geometry (where the named creek crosses the RECORDED track or a mapped trail; a lake's shore nearest the track), never
   placed on our own lines; water named without a place ("snowmelt at camp") is never pinned.
+- **Latest from this area (`AreaLatestReports`, on the area page above *More climbs in this area*)**: the public trip reports and logged climbs under the area's whole subtree, newest first, with the red *N hazard reports · last 45 days* badge. It shows four. With more than four (owner 2026-11-19, migration 0477) it adds four selects — *Newest first / Oldest first*, a discipline (only the ones reported on here, each with its count), *Any time / Last 30 days / Last 90 days / Last 12 months* by the day climbed, and *Reports and logs / Trip reports only / Logged climbs only* — and a **See N more** dropdown under the fourth row that opens ten more at a time (*Show 10 more*), up to 100. The database applies the sort and filters over the whole area (`area_latest_reports`, read by `useAreaLatestReports`), so a filter never answers from only the rows on screen; a filter that matches nothing says so and offers *Clear filters*. A row with a write-up is a *Trip report*, one with condition tags only a *Logged climb*. Tapping a row opens that report or log itself over the area page (the same `TripReport` document the route page's Reports tab opens; RoutesTab's `onOpenReport`), and each row carries two buttons: **View trip report** / **View logged climb** and **Route page**. Renders nothing for an area with no public report and no recent hazard tag.
 
 ## 2. How it works
 1. `App` mounts `DbAreaBrowser` (props include `onOpenRoute`, `bookmarks`, `wishlist`, `completedIds`, `jumpToState`) when `USE_DB`; otherwise the seed tree.
@@ -266,6 +267,7 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
 | `src/components/DbAreaTree.tsx` | `DbAreaTree`, the area tree |
 | `src/components/ViewAreaPill.tsx` | `ViewAreaPill`, the solid blue *View area ›* at the end of every row that opens an area |
 | `src/components/DbSuggestedClimbs.tsx` | `DbSuggestedClimbs`, More climbs in this area |
+| `src/components/AreaLatestReports.tsx` | `AreaLatestReports`, Latest from this area: sort, filter, See more, open the report or the route page |
 | `src/components/SummitBriefing.tsx` | `SummitBriefing`, the peak summary above an area's route list |
 | `src/components/RouteRow.tsx` | `RouteRow`, one climb row in an area list |
 | `src/components/ClassicsList.tsx` | `ClassicsList`, Classic climbs here |
