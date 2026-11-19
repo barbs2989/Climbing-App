@@ -1,0 +1,708 @@
+[
+ {
+  "area_id": "ab_mount_louis",
+  "place_name": "Mount Louis (Sawback Range, Banff NP)",
+  "verdict": "alpine",
+  "approach_stated": null,
+  "from": "parking",
+  "summit_or_glacier": "summit finish (\"easy but exposed, to the summit cross\"); bivy sites on upper route and summit",
+  "route_types": {
+   "ab_mount_louis_the_kain_route": "Trad"
+  },
+  "evidence": [
+   {
+    "url": "https://www.mountainproject.com/route/110824105/the-kain-route",
+    "retrieved_at": "2026-11-18",
+    "fact": "Trad, Alpine; ridge crest 'easy but exposed, to the summit cross'; many bivy sites on upper route and summit."
+   }
+  ],
+  "note": "Summit finish; no approach time stated on the page."
+ },
+ {
+  "area_id": "ab_mount_whyte",
+  "place_name": "Mount Whyte (Lake Louise, Banff NP)",
+  "verdict": "alpine",
+  "approach_stated": "5-6 h round trip from Lake Agnes",
+  "from": "trailhead",
+  "summit_or_glacier": "summit finish (\"Follow the ridge to the summit\")",
+  "route_types": {
+   "ab_mount_whyte_perren_route_east_ridge": "Trad"
+  },
+  "evidence": [
+   {
+    "url": "https://www.mountainproject.com/route/126680520/perren-route-east-ridge",
+    "retrieved_at": "2026-11-18",
+    "fact": "Trad, Alpine, Grade II, 7 pitches; '5-6 h round trip from Lake Agnes'; 'Follow the ridge to the summit.'"
+   }
+  ],
+  "note": "Ridge route to summit; start is Lake Agnes (itself a hike above Lake Louise)."
+ },
+ {
+  "area_id": "ab_grand_sentinel",
+  "place_name": "Grand Sentinel (Sentinel Pass, Banff NP)",
+  "verdict": "alpine",
+  "approach_stated": "From Moraine Lake we hike up to Larch Valley, over Sentinel Pass, and down a bit to Grand Sentinel (2-2.5hrs)",
+  "from": "parking",
+  "summit_or_glacier": "summit of a free-standing spire; approach crosses Sentinel Pass",
+  "route_types": {
+   "ab_grand_sentinel_south_face": "Trad"
+  },
+  "evidence": [
+   {
+    "url": "https://ridgelineguiding.com/rock-route/grand-sentinel/",
+    "retrieved_at": "2026-11-18",
+    "fact": "Park at Moraine Lake; hike over Sentinel Pass to Grand Sentinel (2-2.5hrs)."
+   },
+   {
+    "url": "https://www.mountainproject.com/area/107256601/grand-sentinel",
+    "retrieved_at": "2026-11-18",
+    "fact": "South Face listed Trad, Alpine, 4 pitches; located about 1 km beyond the pass."
+   }
+  ],
+  "note": ""
+ },
+ {
+  "area_id": "ab_mt_babel",
+  "place_name": "Mt. Babel (Consolation Lakes, Banff NP)",
+  "verdict": "alpine",
+  "approach_stated": "From Moraine Lake to the base of the wall should take no more than two hours.",
+  "from": "parking",
+  "summit_or_glacier": "summit finish; descent 'From the summit, work your way down the N. Ridge'",
+  "route_types": {
+   "ab_mt_babel_east_face": "Trad"
+  },
+  "evidence": [
+   {
+    "url": "https://www.mountainproject.com/route/112070631/east-face",
+    "retrieved_at": "2026-11-18",
+    "fact": "Trad, Alpine, Grade IV, 2200 ft; 'From Moraine Lake to the base of the wall should take no more than two hours.'"
+   }
+  ],
+  "note": "Approach stated only as an upper bound (<=2 h); verdict rests on the summit finish and Grade IV wall."
+ },
+ {
+  "area_id": "ab_mt_deltaform",
+  "place_name": "Mt. Deltaform (Valley of the Ten Peaks, Banff NP)",
+  "verdict": "alpine",
+  "approach_stated": null,
+  "from": "parking",
+  "summit_or_glacier": "800 m mixed line to the East Ridge and summit",
+  "route_types": {
+   "ab_mt_deltaform_flying_buttress": "Trad"
+  },
+  "evidence": [
+   {
+    "url": "https://gripped.com/news/marc-andre-leclerc-solos-big-rockies-lines-in-spring-2017/",
+    "retrieved_at": "2026-11-18",
+    "fact": "Flying Buttress is an 800-metre 5.7 mixed line up the north buttress, to the East Ridge and summit."
+   },
+   {
+    "url": "https://www.mountainproject.com/search?q=Mt.+Deltaform",
+    "retrieved_at": "2026-11-18",
+    "fact": "Flying Buttress 5.8 PG13: Trad, Alpine, 15 pitches, 2600 ft."
+   }
+  ],
+  "note": "Summit/ridge finish; no approach time stated."
+ },
+ {
+  "area_id": "ab_lady_macdonald",
+  "place_name": "Mount Lady Macdonald (Canmore, Bow Valley)",
+  "verdict": "alpine",
+  "approach_stated": null,
+  "from": "trailhead",
+  "summit_or_glacier": "summit ridge finish: \"join up with the Lady Mac scramble on the summit ridge to top out\"",
+  "route_types": {
+   "ab_lady_macdonald_east_south_east_ridge": "Trad"
+  },
+  "evidence": [
+   {
+    "url": "https://www.mountainproject.com/route/117083388/east-south-east-ridge",
+    "retrieved_at": "2026-11-18",
+    "fact": "Trad, Alpine, 3000 ft; join the Lady Mac scramble on the summit ridge to top out."
+   }
+  ],
+  "note": "No approach time stated; ridge-to-summit route."
+ },
+ {
+  "area_id": "ab_rim_wall",
+  "place_name": "Rimwall (Goat Range, SW of Canmore; East face above Wind Valley)",
+  "verdict": "alpine",
+  "approach_stated": "\"Hike up a good trail to the pass in about 45 minutes.\" then \"From here it takes about 45 minutes to traverse below the cliff on exposed goat trails.\"",
+  "from": "trailhead",
+  "summit_or_glacier": "summit finish: \"10 minutes of hiking and a few 3rd class scrambling moves leads to the summit\"; snow bowl above drains route until mid July",
+  "route_types": {
+   "ab_rim_wall_on_the_wings_of_maybe": "Trad"
+  },
+  "evidence": [
+   {
+    "url": "https://www.mountainproject.com/route/201698612/on-the-wings-of-maybe",
+    "retrieved_at": "2026-11-18",
+    "fact": "Trad, Alpine, 10 pitches; West Wind Pass trailhead, ~45 min to the pass, ~45 min traverse; scramble to the 2680 m summit."
+   }
+  ],
+  "note": "Two separately timed legs (not summed); verdict from summit finish and 400 m alpine face."
+ },
+ {
+  "area_id": "ab_mount_alberta",
+  "place_name": "Mount Alberta (Columbia Icefield area, Jasper NP)",
+  "verdict": "alpine",
+  "approach_stated": null,
+  "from": "hut",
+  "summit_or_glacier": "hut access; snow slopes; \"traversing under snow on the east side to the summit\"",
+  "route_types": {
+   "ab_mount_alberta_northeast_ridge": "Trad"
+  },
+  "evidence": [
+   {
+    "url": "https://www.mountainproject.com/route/122956126/northeast-ridge",
+    "retrieved_at": "2026-11-18",
+    "fact": "Trad, Alpine, Grade V, 12 pitches; from the hut traverse snow slopes to the ridge; finishes on the summit."
+   }
+  ],
+  "note": "MP files it under Icefields Parkway > Mt Alberta (same peak, same route name and grade). No approach time stated."
+ },
+ {
+  "area_id": "ab_mount_edith_cavell",
+  "place_name": "Mount Edith Cavell (Jasper NP)",
+  "verdict": "alpine",
+  "approach_stated": null,
+  "from": "parking",
+  "summit_or_glacier": "5000 ft ridge to the summit; \"snow and ice requiring crampons and an axe\" possible",
+  "route_types": {
+   "ab_mount_edith_cavell_east_ridge": "Trad"
+  },
+  "evidence": [
+   {
+    "url": "https://www.mountainproject.com/route/105946596/east-ridge",
+    "retrieved_at": "2026-11-18",
+    "fact": "Trad, Snow, Alpine, 5000 ft, Grade III; from parking lot trail to Cavell Meadows then moraines to ridge."
+   }
+  ],
+  "note": "No approach time stated; snow/summit route."
+ },
+ {
+  "area_id": "ab_mount_temple",
+  "place_name": "Mount Temple (Paradise Valley / Lake Annette, Banff NP)",
+  "verdict": "alpine",
+  "approach_stated": null,
+  "from": "parking",
+  "summit_or_glacier": "\"Follow the corniced summit ridge to the top\"; \"An ice axe and crampons are needed for the summit ridge\"; passes left of a glacier",
+  "route_types": {
+   "ab_mount_temple_greenwood_jones": "Trad",
+   "ab_mount_temple_squashed_bones": "Trad"
+  },
+  "evidence": [
+   {
+    "url": "https://www.mountainproject.com/route/107672196/greenwood-jones",
+    "retrieved_at": "2026-11-18",
+    "fact": "Trad, Alpine, Grade V, 4500 ft; hike to Lake Annette; corniced summit ridge; axe and crampons needed."
+   },
+   {
+    "url": "https://www.mountainproject.com/search?q=Squashed+Bones",
+    "retrieved_at": "2026-11-18",
+    "fact": "Squashed Bones 5.8: Trad, Alpine, 3600 ft, Mt. Temple (Valley of the Ten Peaks)."
+   }
+  ],
+  "note": "No approach time stated; north face routes to a glaciated summit."
+ },
+ {
+  "area_id": "ab_adams_lake_wall",
+  "place_name": "Adams Lake Wall (Windsor Ridge near Castle Peak, Castle Wildland PP)",
+  "verdict": "alpine",
+  "approach_stated": null,
+  "from": "parking",
+  "summit_or_glacier": "\"scramble along the whole of Windsor ridge to the summit\"; backcountry camp at the lake",
+  "route_types": {
+   "ab_adams_lake_wall_wonderous_wanderer": "Trad"
+  },
+  "evidence": [
+   {
+    "url": "https://www.mountainproject.com/area/126678009/adams-lake-wall",
+    "retrieved_at": "2026-11-18",
+    "fact": "Approach: 8-9km 600m vert from Mill Creek parking; small backcountry camp near the lake. No time stated."
+   },
+   {
+    "url": "https://www.mountainproject.com/route/127050475/wonderous-wanderer",
+    "retrieved_at": "2026-11-18",
+    "fact": "Trad, Alpine, 4 pitches; finish: scramble along Windsor ridge to the summit."
+   }
+  ],
+  "note": "Approach given only as distance/gain (not converted); verdict from ridge-to-summit finish and backcountry camp."
+ },
+ {
+  "area_id": "ab_mt_colin",
+  "place_name": "Mt. Colin (Colin Range, Jasper NP)",
+  "verdict": "alpine",
+  "approach_stated": "From the Hut ... about 1.5 hours (300 m)",
+  "from": "hut",
+  "summit_or_glacier": "ridge crest finish: \"Short rope and short pitch to the summit.\"",
+  "route_types": {
+   "ab_mt_colin_nw_traverse": "Trad"
+  },
+  "evidence": [
+   {
+    "url": "https://www.mountainproject.com/route/113550167/nw-traverse",
+    "retrieved_at": "2026-11-18",
+    "fact": "Trad, Alpine, 2600 ft; approach from the hut about 1.5 hours to Hawk-Colin col; short rope to the summit."
+   }
+  ],
+  "note": "Approach timed from a hut, not the car; still >60 min and a summit finish."
+ },
+ {
+  "area_id": "ab_outpost_peak",
+  "place_name": "Outpost Peak (Tonquin Valley, Jasper NP)",
+  "verdict": "alpine",
+  "approach_stated": "1.5 - 2 hours from the hut to gearing up to climb",
+  "from": "hut",
+  "summit_or_glacier": "summit of Outpost Peak, then glacier traverse to Memorial \"navigating crevasses as needed\"; 10-14 hours hut to hut",
+  "route_types": {
+   "ab_outpost_peak_north_buttress": "Trad"
+  },
+  "evidence": [
+   {
+    "url": "https://www.mountainproject.com/route/121324309/north-buttress",
+    "retrieved_at": "2026-11-18",
+    "fact": "Trad, Snow, Alpine; start Wates-Gibson hut, '1.5 - 2 hours from the hut'; glacier traverse with crevasses on return."
+   }
+  ],
+  "note": "Hut-based backcountry objective."
+ },
+ {
+  "area_id": "ab_roche_a_perdrix",
+  "place_name": "Roche a Perdrix (east edge of Jasper NP, near Hinton)",
+  "verdict": "alpine",
+  "approach_stated": "Can take a couple hours and is ~800m of elevation gain. But includes lots of fun scrambling.",
+  "from": "parking",
+  "summit_or_glacier": "approach up NW ridge; option to \"scramble up to the peak and follow the scramble down\"",
+  "route_types": {
+   "ab_roche_a_perdrix_chimney_route": "Trad"
+  },
+  "evidence": [
+   {
+    "url": "https://www.mountainproject.com/route/124273248/chimney-route",
+    "retrieved_at": "2026-11-18",
+    "fact": "Trad, Alpine, 5 pitches; park in gravel pullout; approach 'Can take a couple hours and is ~800m of elevation gain.'"
+   }
+  ],
+  "note": "Stated approach >60 min from the car."
+ },
+ {
+  "area_id": "ak_deep_water_bay",
+  "place_name": "Deep Water Bay (Prince William Sound)",
+  "verdict": "alpine",
+  "approach_stated": null,
+  "from": "float plane / boat",
+  "summit_or_glacier": "roadless: \"Take a float plane out of Anchorage ... or a boat out of the closest port, which is Whittier.\"",
+  "route_types": {
+   "ak_hard_rain": "Trad",
+   "ak_perpetual_motion": "Trad"
+  },
+  "evidence": [
+   {
+    "url": "https://www.mountainproject.com/area/110562421/deep-water-bay",
+    "retrieved_at": "2026-11-18",
+    "fact": "900 m granite intrusion in Prince William Sound; access by float plane from Anchorage or boat from Whittier."
+   },
+   {
+    "url": "https://www.mountainproject.com/search?q=Deep+Water+Bay",
+    "retrieved_at": "2026-11-18",
+    "fact": "Hard rain 5.9 A3: Trad, Aid, Alpine, 15 pitches; Perpetual motion 5.11a: Trad, Alpine, 2700 ft."
+   }
+  ],
+  "note": "Roadless fly-in/boat-in big wall."
+ },
+ {
+  "area_id": "ak_goat_rock",
+  "place_name": "Goat Rock (Chugach State Park, near West Twin)",
+  "verdict": "alpine",
+  "approach_stated": null,
+  "from": "trailhead",
+  "summit_or_glacier": "summit finish: \"relatively flat and broad terrain near the summit\"; descend the West Ridge (4th class walk-off); starts from the West Twin-Goat Rock col",
+  "route_types": {
+   "ak_east_ridge": "Trad"
+  },
+  "evidence": [
+   {
+    "url": "https://www.mountainproject.com/route/113572439/east-ridge",
+    "retrieved_at": "2026-11-18",
+    "fact": "Trad, Alpine, 3 pitches; start from the col between West Twin and Goat Rock; ends near the summit; West Ridge walk-off."
+   },
+   {
+    "url": "https://www.mountainproject.com/area/113572394/goat-rock",
+    "retrieved_at": "2026-11-18",
+    "fact": "Getting There: 'a variety of approach options'; best cross private property; no time stated."
+   }
+  ],
+  "note": "No approach time stated; ridge-to-summit peak route."
+ },
+ {
+  "area_id": "ak_bpr_wall",
+  "place_name": "BPR Wall (Fairangel Gap, Archangel Valley, Hatcher Pass)",
+  "verdict": "unsure",
+  "approach_stated": "From Fairangel gap, (Tunnel vision wall), continue straight up hill for about 30 minutes to the base of the wall.",
+  "from": "Fairangel Gap (not the car)",
+  "summit_or_glacier": "none stated",
+  "route_types": {
+   "ak_75_cents_to_ride": "Trad",
+   "ak_the_growler": "Trad",
+   "ak_the_pipeline": "Trad"
+  },
+  "evidence": [
+   {
+    "url": "https://www.mountainproject.com/area/110696690/bpr-wall",
+    "retrieved_at": "2026-11-18",
+    "fact": "From Fairangel gap (Tunnel Vision wall) continue uphill about 30 minutes to the base of the wall."
+   },
+   {
+    "url": "https://www.mountainproject.com/area/108787479/tunnel-vision-wall",
+    "retrieved_at": "2026-11-18",
+    "fact": "Park near the outhouse; path toward Fairangel Gap; wall after about 3/4 miles. No time given for this leg."
+   }
+  ],
+  "note": "Only a partial timed leg (30 min from Tunnel Vision Wall); the car-to-gap leg is given as distance only. Not summed."
+ },
+ {
+  "area_id": "ak_guardian_the",
+  "place_name": "The Guardian (Archangel Valley, Hatcher Pass)",
+  "verdict": "crag",
+  "approach_stated": "It's a hard hour-ish hike.",
+  "from": "parking",
+  "summit_or_glacier": "none; route ends at an anchor, rappel",
+  "route_types": {
+   "ak_god_s_country": "Trad"
+  },
+  "evidence": [
+   {
+    "url": "https://www.mountainproject.com/area/113227087/the-guardian",
+    "retrieved_at": "2026-11-18",
+    "fact": "Take main trail by outhouse up Archangel Road to creek crossing, up slope past Toto, Diamond... 'It's a hard hour-ish hike.'"
+   },
+   {
+    "url": "https://www.mountainproject.com/route/113227100/gods-country",
+    "retrieved_at": "2026-11-18",
+    "fact": "Trad, Alpine, 2 pitches, 180 ft; 'With the long approach comes amazing position'; rappel from anchor."
+   }
+  ],
+  "note": "BORDERLINE: 'hour-ish' sits at the 60 min threshold; route page calls it 'the long approach'. Owner may prefer unsure."
+ },
+ {
+  "area_id": "ak_bear_s_den",
+  "place_name": "Bear's Den (Lane Prospect Area, Archangel Valley, Hatcher Pass)",
+  "verdict": "unsure",
+  "approach_stated": null,
+  "from": "old Lane Hut site (not the car)",
+  "summit_or_glacier": "near Lane Prospect and the (old) Lane glacier; no summit",
+  "route_types": {
+   "ak_barbara_s_nine": "TR",
+   "ak_fine_nine": "Trad",
+   "ak_straight_eight": "Trad",
+   "ak_turecki_s_ten": "Trad"
+  },
+  "evidence": [
+   {
+    "url": "https://www.mountainproject.com/area/113377344/bears-den",
+    "retrieved_at": "2026-11-18",
+    "fact": "Take the trail past the old hut site uphill towards Lane Prospect, glacier, and SW Didilkama. No time given."
+   },
+   {
+    "url": "https://hikingalaska.net/2019/12/21/lane-hut/",
+    "retrieved_at": "2026-11-18",
+    "fact": "Lane Hut site visible at 1.9 miles from the Archangel Road trailhead; no hiking time given."
+   }
+  ],
+  "note": "No timed approach anywhere; distances only (not converted)."
+ },
+ {
+  "area_id": "ak_rogers_roof",
+  "place_name": "Roger's Roof (Lane Prospect Area, Archangel Valley, Hatcher Pass)",
+  "verdict": "unsure",
+  "approach_stated": "First obvious wall ~10min. uphill from the \"hut\", on the left side of the valley.",
+  "from": "old Lane Hut site (not the car)",
+  "summit_or_glacier": "none",
+  "route_types": {
+   "ak_lost_in_the_bush": "Trad"
+  },
+  "evidence": [
+   {
+    "url": "https://www.mountainproject.com/area/115146251/rogers-roof",
+    "retrieved_at": "2026-11-18",
+    "fact": "First obvious wall ~10 min uphill from the 'hut', left side of the valley."
+   },
+   {
+    "url": "https://hikingalaska.net/2019/12/21/lane-hut/",
+    "retrieved_at": "2026-11-18",
+    "fact": "Lane Hut site at 1.9 miles from the trailhead at the end of Archangel Road; no time given."
+   }
+  ],
+  "note": "Car-to-hut leg has distance only; not summed. Route 'Rogers Roof' left null: MP spells it \"Roger's Roof\" (Trad, 5.11+) - not an exact name match."
+ },
+ {
+  "area_id": "ak_because_it_s_there_wall",
+  "place_name": "Because it's there Wall (Snowbird Glacier, Hatcher Pass)",
+  "verdict": "alpine",
+  "approach_stated": "requires an approach that is between 2 to 6 hours depending on season and fitness",
+  "from": "parking (Reed Lakes lot)",
+  "summit_or_glacier": "glacier: \"Heading up the glacier from the hut, this wall is on the right\"; Snowbird Glacier has moulins",
+  "route_types": {
+   "ak_alaskan_vermin": "Trad",
+   "ak_direct": "Trad",
+   "ak_lost_zero": "Trad",
+   "ak_the_burning_ring_of_fire": "Trad",
+   "ak_toothy": "Trad"
+  },
+  "evidence": [
+   {
+    "url": "https://www.mountainproject.com/area/109699901/glacier-creek-drainage-and-snowbird-glacier",
+    "retrieved_at": "2026-11-18",
+    "fact": "From Reed Lakes parking; approach 'between 2 to 6 hours depending on season and fitness'; descend Snowbird glacier (moulins) to the hut."
+   },
+   {
+    "url": "https://www.mountainproject.com/area/106470541/because-its-there-wall",
+    "retrieved_at": "2026-11-18",
+    "fact": "Head up the glacier from the Snowbird hut; wall on the right. All five routes listed T (Trad)."
+   }
+  ],
+  "note": "Glacier-access wall above the Snowbird hut."
+ },
+ {
+  "area_id": "ak_didilkama",
+  "place_name": "Didilkama (east face, Glacier Creek drainage, Hatcher Pass)",
+  "verdict": "unsure",
+  "approach_stated": "Up the glacier creek drainage, past the snowbird mine, and up one more bench. 20 minutes of uphill talus to the base.",
+  "from": "bench above the Snowbird mine (not the car)",
+  "summit_or_glacier": "\"2 of which climb both the first and second buttress to the summit for nearly 2000 feet\"",
+  "route_types": {
+   "ak_can_you_see_my_colon_yet": "Trad",
+   "ak_didilkama_traverse": "Trad",
+   "ak_poseurs_are_hosers": "Trad",
+   "ak_the_quartz_crack": "Trad"
+  },
+  "evidence": [
+   {
+    "url": "https://www.mountainproject.com/area/109700731/didilkama",
+    "retrieved_at": "2026-11-18",
+    "fact": "Up Glacier Creek drainage past the Snowbird mine, one more bench, '20 minutes of uphill talus to the base.' Routes all T."
+   },
+   {
+    "url": "https://www.mountainproject.com/area/109699901/glacier-creek-drainage-and-snowbird-glacier",
+    "retrieved_at": "2026-11-18",
+    "fact": "Parent: from Reed Lakes lot, old building at 1.25 miles; full approach to Snowbird glacier '2 to 6 hours'."
+   }
+  ],
+  "note": "Only the last leg is timed (20 min); car-to-mine leg untimed. Two routes go to the summit (which ones not named); a route-level split may be needed."
+ },
+ {
+  "area_id": "ak_nunatak",
+  "place_name": "Nunatak (Snowbird Glacier, Hatcher Pass)",
+  "verdict": "alpine",
+  "approach_stated": "requires an approach that is between 2 to 6 hours depending on season and fitness",
+  "from": "parking (Reed Lakes lot)",
+  "summit_or_glacier": "rock island in the Snowbird Glacier (glacier split into two lobes below it)",
+  "route_types": {
+   "ak_chasing_the_sun": "Trad",
+   "ak_nunatak_kissing_up_the_choss_pile": "Trad"
+  },
+  "evidence": [
+   {
+    "url": "https://www.mountainproject.com/area/111959100/nunatak",
+    "retrieved_at": "2026-11-18",
+    "fact": "Formation tied to Snowbird Glacier; approach from Reed Lakes 'variable depending on season, fitness'. Routes: Chasing the Sun T, Kissing up the choss pile T."
+   },
+   {
+    "url": "https://www.mountainproject.com/area/109699901/glacier-creek-drainage-and-snowbird-glacier",
+    "retrieved_at": "2026-11-18",
+    "fact": "Approach 'between 2 to 6 hours depending on season and fitness'; Snowbird glacier travel with moulins."
+   }
+  ],
+  "note": ""
+ },
+ {
+  "area_id": "ak_whale_beak_buttress",
+  "place_name": "Whale Beak Buttress (north of Didilkama, Snowbird Glacier trail, Hatcher Pass)",
+  "verdict": "unsure",
+  "approach_stated": null,
+  "from": "Snowbird Glacier trail",
+  "summit_or_glacier": "none stated",
+  "route_types": {
+   "ak_breaching": "Trad"
+  },
+  "evidence": [
+   {
+    "url": "https://www.mountainproject.com/route/113367331/breaching",
+    "retrieved_at": "2026-11-18",
+    "fact": "Trad, Alpine, 3 pitches; turn left at mossy lips on Snowbird glacier trail, up second gully north of Didilkama. No time."
+   },
+   {
+    "url": "https://www.mountainproject.com/area/113367287/whale-beak-buttress",
+    "retrieved_at": "2026-11-18",
+    "fact": "Getting There: 'Bike, hike, scramble'. No time stated."
+   }
+  ],
+  "note": "No timed approach; parent's 2-6 h refers to the full Snowbird Glacier approach, which this buttress (below the pass) may not need."
+ },
+ {
+  "area_id": "ak_gold_cord_lake",
+  "place_name": "Gold Cord Lake (Independence Mine, Hatcher Pass)",
+  "verdict": "crag",
+  "approach_stated": "If you park at the visitor center about a 30 minute approach. Add 10-15 minutes from the lower lot",
+  "from": "parking (Independence Mine visitor center)",
+  "summit_or_glacier": "none",
+  "route_types": {
+   "ak_double_micros": "Trad"
+  },
+  "evidence": [
+   {
+    "url": "https://www.mountainproject.com/area/117946914/gold-cord-lake",
+    "retrieved_at": "2026-11-18",
+    "fact": "Park at the visitor center: about a 30 minute approach; add 10-15 minutes from the lower lot. Double micros listed T."
+   }
+  ],
+  "note": "Access warning on MP: private property / landowner conflict."
+ },
+ {
+  "area_id": "ak_independence_crag",
+  "place_name": "Independence Crag (above Independence Mine, Hatcher Pass)",
+  "verdict": "unsure",
+  "approach_stated": null,
+  "from": "parking (Independence Mine)",
+  "summit_or_glacier": "none",
+  "route_types": {
+   "ak_23_karat": "Trad",
+   "ak_24_karat": "Trad",
+   "ak_999": "Trad",
+   "ak_avoid_the_noid": "Trad",
+   "ak_harvest_mode": "Trad",
+   "ak_ivan_the_impaler": "Trad",
+   "ak_project_steeptitude": "Trad",
+   "ak_slabbyville": "Sport",
+   "ak_tbd": "Trad"
+  },
+  "evidence": [
+   {
+    "url": "https://www.mountainproject.com/area/109080449/independence-crag",
+    "retrieved_at": "2026-11-18",
+    "fact": "From Independence Mine parking up paved trail, Mill Loop Trail, crag visible above the tailings pile. No time stated."
+   },
+   {
+    "url": "https://www.mountainproject.com/route/110861440/avoid-the-noid",
+    "retrieved_at": "2026-11-18",
+    "fact": "Trad, Alpine, 95 ft; no approach time on route page."
+   }
+  ],
+  "note": "Short trail from the mine parking described, but no page states a time. Slabbyville is Sport (Sport, Alpine)."
+ },
+ {
+  "area_id": "ak_mine_the",
+  "place_name": "The Mine (up valley from Independence Mine, Hatcher Pass)",
+  "verdict": "crag",
+  "approach_stated": "From the upper lot, its about a 45 minute hike up valley",
+  "from": "parking (Independence Mine visitor center / upper lot)",
+  "summit_or_glacier": "none",
+  "route_types": {
+   "ak_by_others": "Trad",
+   "ak_gold_spot": "Trad",
+   "ak_goldrunner": "Trad",
+   "ak_no_bolts": "Trad",
+   "ak_paydirt": "Trad",
+   "ak_pws_training_run": "Trad",
+   "ak_stellar_cruise": "Trad",
+   "ak_under_the_drip": "Trad",
+   "ak_up_and_at_em": "Trad"
+  },
+  "evidence": [
+   {
+    "url": "https://www.mountainproject.com/area/114940351/the-mine",
+    "retrieved_at": "2026-11-18",
+    "fact": "Park at Independence Mine Visitor Center or lower lot; 'From the upper lot, its about a 45 minute hike up valley'. All routes T."
+   }
+  ],
+  "note": "MP access warning: private property closed."
+ },
+ {
+  "area_id": "ak_moai_wall",
+  "place_name": "Moai Wall (shoulder of Microdot above Gold Cord Lake, Hatcher Pass)",
+  "verdict": "unsure",
+  "approach_stated": null,
+  "from": "Independence Mine",
+  "summit_or_glacier": "none",
+  "route_types": {
+   "ak_birdman_cult": "Trad",
+   "ak_rapa_nui": "Sport",
+   "ak_route_2": "Sport",
+   "ak_welcome_to_easter_island": "Trad"
+  },
+  "evidence": [
+   {
+    "url": "https://www.mountainproject.com/area/111992708/moai-wall",
+    "retrieved_at": "2026-11-18",
+    "fact": "From Independence Mine hike towards Gold Cord lake; at the lake go right up the shoulder of Microdot. No time stated."
+   },
+   {
+    "url": "https://www.mountainproject.com/area/117946914/gold-cord-lake",
+    "retrieved_at": "2026-11-18",
+    "fact": "Gold Cord Lake routes about 30 minutes from the visitor center (a different, lower point; not summed)."
+   }
+  ],
+  "note": "Only the approach to Gold Cord Lake is timed; the shoulder leg beyond is not. Not summed."
+ },
+ {
+  "area_id": "ak_ramparts_wall",
+  "place_name": "Ramparts Wall (above Independence Mine, Hatcher Pass)",
+  "verdict": "crag",
+  "approach_stated": "This area is about 15 minutes further hike up and left of Independence Mine.",
+  "from": "Independence Mine (the parking/historic site)",
+  "summit_or_glacier": "none",
+  "route_types": {
+   "ak_castle_direct": "Trad",
+   "ak_corona_crack": "Trad",
+   "ak_dead_marmot": "Sport",
+   "ak_diggin_it": "Trad",
+   "ak_ep2": "Trad",
+   "ak_get_your_ass_to_the_pass_gyattp": "Trad",
+   "ak_hand_crack": "Trad",
+   "ak_necessary_evil": "Trad",
+   "ak_rampart_rampage": "Trad",
+   "ak_shelter_in_place": "Trad",
+   "ak_slabby": "Trad",
+   "ak_storm_the_castle": "Trad",
+   "ak_the_big_eddie": "Trad",
+   "ak_the_snowshoes_of_eddie_phay": "Trad"
+  },
+  "evidence": [
+   {
+    "url": "https://www.mountainproject.com/area/114946004/ramparts-wall",
+    "retrieved_at": "2026-11-18",
+    "fact": "'This area is about 15 minutes further hike up and left of Independence Mine.' Mostly crack climbs 5.9-5.10."
+   }
+  ],
+  "note": "'Further' is measured from Independence Mine (where the parking is); slight ambiguity whether a short walk to the mine precedes it. Dead Marmot listed S (Sport)."
+ },
+ {
+  "area_id": "ak_renaissance_wall",
+  "place_name": "Renaissance Wall (Pinnacle bowl off Gold Cord trail, Hatcher Pass)",
+  "verdict": "crag",
+  "approach_stated": "It takes about an hour to get to the base.",
+  "from": "parking (Independence Mine parking)",
+  "summit_or_glacier": "none; 'requires some exposed ledges' to reach the base",
+  "route_types": {
+   "ak_cold_day_at_the_fair": "Trad",
+   "ak_larping_on_acid": "Trad",
+   "ak_renaissance_man": "Trad",
+   "ak_retroed_art": "Trad",
+   "ak_science_is_sorcery": "Trad",
+   "ak_socal_dj": "Sport",
+   "ak_tavern_time": "Trad",
+   "ak_the_jester": "Trad",
+   "ak_walkman_and_button_heads": "Trad",
+   "ak_warm_up_with_a_little_fisting": "Trad"
+  },
+  "evidence": [
+   {
+    "url": "https://www.mountainproject.com/area/117325924/renaissance-wall",
+    "retrieved_at": "2026-11-18",
+    "fact": "'It takes about an hour to get to the base.' From the Independence Mine parking lot walk up the Gold Cord trail then to Pinnacle bowl."
+   }
+  ],
+  "note": "About 60 min, at the threshold. SoCal DJ listed S (Sport)."
+ }
+]
