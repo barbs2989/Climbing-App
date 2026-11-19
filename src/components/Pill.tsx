@@ -11,6 +11,8 @@ export interface PillProps {
   bg?: string;
   /** The compact size used in rows and headers. */
   sm?: boolean;
+  /** The larger size the route header's discipline, grade and protection pills use. */
+  lg?: boolean;
   /** An optional leading icon, drawn before the label. */
   icon?: ReactNode;
 }
@@ -19,16 +21,16 @@ export interface PillProps {
  *  The text is lifted to 4.5:1 against its own tinted background (WCAG 1.4.3): at 11px, purple and red
  *  on their own tint read 3.9:1 and 4.1:1. A colour that already passes is drawn as given. Blue on a blue
  *  tint is drawn white instead (owner note, 2026-10). */
-export default function Pill({ label, color, bg, sm, icon }: PillProps) {
+export default function Pill({ label, color, bg, sm, lg, icon }: PillProps) {
   return (
     <span
       style={{
         background: bg,
         color: color && bg ? (blueOnBlue(color, bg, C.card) ? "#fff" : readableOn(color, bg, C.card)) : color,
-        padding: sm ? "2px 7px" : "3px 10px",
+        padding: lg ? "4px 11px" : sm ? "2px 7px" : "3px 10px",
         borderRadius: 20,
-        fontSize: sm ? 11 : 12,
-        fontWeight: 600,
+        fontSize: lg ? 13.5 : sm ? 11 : 12,
+        fontWeight: lg ? 700 : 600,
         whiteSpace: "nowrap",
         display: "inline-flex",
         alignItems: "center",

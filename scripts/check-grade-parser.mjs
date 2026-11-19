@@ -197,6 +197,13 @@ const CASES = [
   [{ rock_grade: "3rd-4th class (unroped scramble)" }, "Class 4", "...the ordinal spelling too"],
   [{ alpine_grade: "Grade II", grade: "Grade II, Class 2-3" }, "Class 3", "...and a range promoted out of a compound commitment string"],
   [{ rock_grade: "Class 3 (Class 3-4 on the final ridge)" }, "Class 3", "MUST NOT MOVE: a range inside the QUALIFIER is prose, not the grade"],
+  // THE PROTECTION RATING SITS RIGHT BESIDE THE GRADE, wherever a grade is printed (owner, 2026-11-18).
+  [{ discipline: "trad", grade: "5.8 PG13" }, "5.8 PG13", "a rating stored ON the grade stays beside it"],
+  [{ discipline: "trad", grade: "5.8", prot_rating: "PG13" }, "5.8 PG13", "a rating stored only as the route's own Protection fact is printed beside the grade"],
+  [{ discipline: "trad", grade: "5.10a", protRating: "r" }, "5.10a R", "...under the camelCase spelling too, in capitals"],
+  [{ discipline: "trad", grade: "5.9 R", prot_rating: "R" }, "5.9 R", "MUST NOT DOUBLE: a rating the grade already carries is not appended again"],
+  [{ discipline: "sport", grade: "5.9", prot_rating: "G" }, "5.9", "MUST NOT MOVE: a well-protected route prints its grade alone"],
+  [{ discipline: "trad", prot_rating: "X" }, "", "MUST NOT MOVE: a rating with no grade to sit beside is not a grade"],
 ];
 let ran = 0;
 for (const [route, want, why] of CASES) {
