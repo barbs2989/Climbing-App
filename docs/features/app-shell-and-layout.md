@@ -59,9 +59,9 @@ room for side-panel ads later. The phone app keeps its own look.
   - A full-width fixed **header** of two rows (112px). First the **top bar** (64px): a bare ☰ at the far left (no box, no "Menu" label on
     desktop — owner 2026-11-04; its accessible name is still "Menu"), the logo (the app mark beside a
     26px ClimbMatch wordmark, → Home), a
-    search box for every climb and place **centred in the window** (owner 2026-11-04; `WideSearch` sits on
+    search **split into two boxes, Areas then Routes** (owner 2026-11-18: `WideSearch only="places"` and `only="routes"`, sharing the band one box held, each with its own recent words; the Areas box keeps `/` and *Near me*, the Routes box the typed-filter row that opens the Route finder — words that are ONLY a filter ("WI4", "5.10a") skip the name search, which timed out on them; with no rows to hold, a running search says *Searching…*, never "No … match" for words not yet looked up; the area search also lists names that CONTAIN every word after the exact names, so "yosemite" finds Yosemite National Park — `findPlaces` in `lib/db.js`) — before that one box for every climb and place, **centred in the window** (owner 2026-11-04; `WideSearch` sits on
     the 50vw midline out of the row's flow, 220–680px wide so it never reaches either end; `/` jumps to
-    it; arrow keys and Enter pick a hit; **its list opens at 8 places and 10 climbs and grows in place** (owner 2026-11-13, "when i click mt only 6 show up"): *Show all N places* lists every place the search matched, *Show more climbs* adds 30 at a time up to 200, the same ranked search only longer, reset when the words change; the phone Climbs tab draws the same list inline), and at the right Saved · Alerts · Calendar · Messages and your
+    it; arrow keys and Enter pick a hit; **its list opens at 8 places and 10 climbs and grows in place** (owner 2026-11-13, "when i click mt only 6 show up"): *Show all N places* lists every place the search matched, *Show more climbs* adds 30 at a time up to 200, the same ranked search only longer, reset when the words change; the phone Climbs tab no longer draws it — it searches only what is downloaded, `DownloadedSearch`), and at the right Saved · Alerts · Calendar · Messages and your
     avatar. **The avatar opens a small account menu** (owner 2026-11-11, "add it, keep ☰"; `AvatarMenu` in
     `lib/DesktopShell.jsx`): your name, then Your profile · Settings · Help & FAQ · Send feedback, and Sign out
     when signed in. It is a WAI-ARIA menu button (↑ ↓ Home End, Esc returns focus to the avatar, a click
@@ -93,8 +93,8 @@ room for side-panel ads later. The phone app keeps its own look.
     real website would"; `wideNavStrip`): Home · Climbs · Partners · Crews · Groups · Logbook · Ranks in a
     row, each an icon and its label, starting at the page column's left edge. The active tab is underlined
     in blue. It carries **no count badges** (owner 2026-11-11: they overlapped the labels): crew chat unread
-    shows on the Messages icon and the rail's *Your crews*, unfinished climbs inside Logbook. It keeps the name *Primary*. It replaced the
-    fixed left sidebar, which held the tabs, then *Your crews* and *Your groups* (those are rail cards now).
+    shows on the Messages icon, unfinished climbs inside Logbook. It keeps the name *Primary*. It replaced the
+    fixed left sidebar, which held the tabs, then *Your crews* and *Your groups* (they moved to the rail, and left it 2026-11-18).
     Profile is the avatar, not a tab. No site links: those are the footer's.
   - The **page column**, and at **1280px and wider** a 300px **right rail** (`WideRail`): *Coming up*
     (agreed crew days); *Alerts*, which starts **open on the newest three** (owner 2026-11-04; it started
@@ -109,11 +109,9 @@ room for side-panel ads later. The phone app keeps its own look.
     make it new again, so a new message or newly proposed days bring it back. Only a log-tag row (*Were you
     there?*) keeps its own taller card, for its two answer buttons. The count holds unread notifications
     back until the account's read-state (`notifStateQ`) has answered, so it no longer reads *1 new* and
-    then drops to none. A guest is told to sign in. Then **Your crews** (owner 2026-11-11: crews
-    and crew chats combined; `RailCrews`): each active crew, newest chat message first, named for its
-    place, its last message under the name and its chat's unread count; a click opens the crew; five,
-    then *See all N crews ›*. Then **Your groups** (`RailGroups`): five, a red dot when a group has posts
-    you have not seen (`groupUnreadN`), drawn only when you are in a group. Both fold like Alerts. **Direct
+    then drops to none. A guest is told to sign in. **Your crews and Your groups are not in the rail** (owner 2026-11-18:
+    "remove your crews and your groups from right panel"; they were rail cards from 2026-11-11): the Crews
+    tab and the Groups screen hold them. **Direct
     messages are not in the rail** (owner 2026-11-11): the top bar's Messages drop-down holds them and counts
     them. The rail's last slot is an ad (`ad`, off everywhere but route pages for now).
   - Between 1024 and 1279px there is no rail; the column is centred alone. Crews and groups are reached
@@ -271,7 +269,7 @@ taken focus from it by the time the hook looks.
 |---|---|
 | `lib/wideLayout.js` | `useWideScreen`, `useFullWidth`, `useAdSideWidth`, `wideGeom`, `wideColumn`, `wideRail`, `wideTopBar`, `wideTopRow`, `wideNavStrip`, `wideCss`, `WIDE_MIN`, `FULL_MIN`, `AD_SIDE_MIN`, `TOP_H`, `NAV_H`, `HEAD_H` |
 | `lib/MonthGrid.jsx` | `MonthGrid` |
-| `lib/DesktopShell.jsx` | `WideSearch`, `WideRail` (`RailCrews`, `RailGroups`, `FoldCard`), `AvatarMenu`, `WideFooter`, `DocTitle` |
+| `lib/DesktopShell.jsx` | `WideSearch`, `WideRail`, `AvatarMenu`, `WideFooter`, `DocTitle` |
 | `lib/installPrompt.js` | `useInstallPrompt` |
 | `lib/Ads.jsx` | `ADS_ON`, `adsActive`, `SideAd`, `RailAd`, `useRailFollow`, `FollowColumn` |
 | `lib/dialogA11y.js` | `coveringLayer`, `pinDismiss`, `pinLayers`, `findPageBacks`, `PAGE_BACK_ATTR`, `STEP_BACK_ATTR` |

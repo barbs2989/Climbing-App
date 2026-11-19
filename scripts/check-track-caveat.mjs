@@ -418,7 +418,9 @@ else ok("predicate: a two-point waypoint join yields to the waypoint-line caveat
     else ok("the heading names trip reports too");
 
     // Non-vacuity: the rows must really be there, or every assertion above is about an empty box.
-    if (!/Trip report/.test(dbBody.slice(ci, ci + 900))) fail("no trip-report row rendered - section 5's heading assertions would be vacuous");
+    // Anchored on the REPORTER, not on row copy: the row used to read "Trip report - no recorded
+    // track." and that line was cut when the section became one list of reports and tracks (2026-11-18).
+    if (!dbBody.slice(ci, ci + 900).includes(REPORTS[0].user)) fail("no trip-report row rendered - section 5's heading assertions would be vacuous");
     else ok("a trip report really does render under that heading");
   }
 
@@ -460,7 +462,8 @@ else ok("predicate: a two-point waypoint join yields to the waypoint-line caveat
 
   // A SPORT, TRAD, TOP-ROPE OR BOULDER LINE HAS NO TRACK AND NO TRIP (owner, 2026-11-18): what it carries
   // is logged climbs, so the same section is headed "Recent logged climbs", its rows name the tick, a
-  // conditions-only scout report is not listed as a climb, and no GPX is offered. Aid keeps the tracks heading.
+  // conditions-only scout report is not listed as a climb, and no GPX is offered. Aid too (owner, same day);
+  // alpine keeps the tracks heading.
   {
     const LOGS = [
       { user: "Maya Chen", date: "2026-07-12", tickType: "Redpoint", stars: 3, text: "Crux is the third bolt.", avatar: "" },
@@ -490,8 +493,8 @@ else ok("predicate: a two-point waypoint join yields to the waypoint-line caveat
     const aid = render(route({ discipline: "aid", grade: "C2", pitches: 6 }), "planner", REPORTS);
     const ai = aid.indexOf(MARK);
     const aidHead = ai < 0 ? "" : text(((aid.slice(ai).match(/>([^<]*[^<s][^<]*)</) || [])[1]) || "");
-    if (!/tracks/i.test(aidHead)) fail(`an aid route lost the tracks heading ("${aidHead.trim()}") - a wall can carry an approach track`);
-    else ok("an aid route keeps the tracks heading");
+    if (aidHead.trim() !== "Recent logged climbs") fail(`an aid route is headed "${aidHead.trim()}", not "Recent logged climbs"`);
+    else ok("an aid route is headed Recent logged climbs too");
     const faqAt = readCoreSource().indexOf("recorded GPX tracks?");
     if (faqAt >= 0 && !readCoreSource().slice(faqAt, faqAt + 900).includes("Recent logged climbs"))
       fail('the Help FAQ does not name "Recent logged climbs", the heading a sport route renders');

@@ -1,11 +1,11 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { parseTypedSearch } from "./typedSearch.js";
+import { searchMatches } from "./search.js";
 import { C, CAT, ROUTES, catOf, gradeLabel, routeLocText, shortDate, daysUntil } from "../ClimbMatchCore.jsx";
 import Av from "../src/components/Av.tsx";
 import DiscIcon from "../src/components/DiscIcon.tsx";
 import ActionIcon from "../src/components/ActionIcon.tsx";
-import { photoThumb, thumbFallback } from "./photoThumb";
 import { discLabel } from "./discLabels";
 import { useMyHomeStatePaths, usePlaceSearch, useRouteSearch, useStates } from "./db.js";
 import { USE_DB } from "./supabase";
@@ -17,8 +17,8 @@ import BrandMark from "../src/components/BrandMark.tsx";
 import { LogTagRow } from "./LogTagConfirmations.jsx";
 
 /* THE WEBSITE'S OWN PIECES (lib/wideLayout.js). Everything here renders only at 1024px and up — the
-   phone app never mounts it — except WideSearch, which the phone's Climbs tab also mounts INLINE
-   (owner 2026-11-04). The top bar's search, the right rail's widgets and the site footer. */
+   phone app never mounts it (its Climbs tab searches the DEVICE instead: src/components/DownloadedSearch.tsx).
+   The top bar's two search boxes, the right rail's widgets and the site footer. */
 
 const SECTION = { fontSize: 11, fontWeight: 800, letterSpacing: 0.5, textTransform: "uppercase", color: C.label };
 const CARD = { background: C.surface, border: "1px solid " + C.border, borderRadius: 14, padding: "14px 14px 12px" };
@@ -59,15 +59,19 @@ const editable = el => !!el && (el.isContentEditable || /^(INPUT|TEXTAREA|SELECT
    midline the shell is centred on, out of the row's flow, so Menu + logo on the left and the icons on
    the right do not push it off centre. `width` is App's: it shrinks the box before it could reach
    either side (the row's ends need ~270px each). */
-/* `inline` (owner 2026-11-04, from the competitor review: KAYA, Gaia and Komoot all open on a search
-   box): the same search drawn in the page's flow — the phone Climbs tab puts it under its title, the
-   way those apps lead with search — with its results running down the page instead of a drop-down.
-   `onNearMe` opens the Climbs map at the climber's position. */
+/* TWO BOXES, AREAS AND ROUTES (owner 2026-11-18: "have the search bar at the top just always be there
+   ... but also have it separated by 2 search box, areas and routes"). `only` is "places" or "routes":
+   each box runs its own half of the search, keeps its own recent words, and lists one kind. The routes
+   box carries the typed-filter row (it opens the Route finder); the areas box carries Near me and the
+   "/" shortcut. With no `only` the one box searches both, as it did before.
+   `onNearMe` opens the Climbs map at the climber's position. (The phone's in-page copy of this box,
+   `inline`, was replaced on 2026-11-18 by DownloadedSearch, which searches only what is downloaded.) */
 /* RECENT SEARCHES (Gaia, AllTrails): the last five things typed here, on THIS DEVICE only (localStorage,
    never the database), offered when the box is focused and empty. A tap refills the box with the words,
    so there is nothing to refetch and nothing to go stale. */
 const RECENT_KEY = "cm_recent_search";
-const readRecent = () => { try { const v = JSON.parse(localStorage.getItem(RECENT_KEY) || "[]"); return Array.isArray(v) ? v.filter(s => typeof s === "string").slice(0, 5) : []; } catch (_e) { return []; } };
+const recentKey = only => RECENT_KEY + (only ? "_" + only : "");
+const readRecent = key => { try { const v = JSON.parse(localStorage.getItem(key) || "[]"); return Array.isArray(v) ? v.filter(s => typeof s === "string").slice(0, 5) : []; } catch (_e) { return []; } };
 /* TYPED SEARCH (item 12 of the competitor review, owner 2026-11-04): "5.9 trad near Leavenworth",
    "WI4", "V4 in Squamish" describe a FILTER, and the name search finds nothing for them. When
    lib/typedSearch.js reads a grade or a discipline out of the words, the FIRST row offers the Route
@@ -81,20 +85,27 @@ const readRecent = () => { try { const v = JSON.parse(localStorage.getItem(RECEN
    more climbs" asks for 30 more, up to 200. It is the same ranked search, only longer, so the rows a
    climber already saw keep their order. The limits reset whenever the words change. */
 const PLACES_FIRST = 8, ROUTES_FIRST = 10, ROUTES_STEP = 30, MORE_MAX = 200, CLICK_SETTLE_MS = 350;
-export function WideSearch({ onOpenRoute, onOpenArea, onOpenFinder, width, left, inline, onNearMe }) {
+export function WideSearch({ onOpenRoute, onOpenArea, onOpenFinder, width, left, onNearMe, only }) {
+  const RK = recentKey(only), LIST = "wide-search-list" + (only ? "-" + only : ""), OPT = "wide-search-" + (only ? only + "-" : "");
+  const wantPlaces = only !== "routes", wantRoutes = only !== "places";
   const [q, setQ] = useState("");
   const [open, setOpen] = useState(false);
   const [hi, setHi] = useState(0);
-  const [recent, setRecent] = useState(readRecent);
+  const [recent, setRecent] = useState(() => readRecent(RK));
   const box = useRef(null), input = useRef(null);
   const qq = q.trim();
-  const remember = term => { const next = [term].concat(recent.filter(s => s.toLowerCase() !== term.toLowerCase())).slice(0, 5); setRecent(next); try { localStorage.setItem(RECENT_KEY, JSON.stringify(next)); } catch (_e) { /* private mode: the list is for this visit only */ } };
-  const forget = () => { setRecent([]); try { localStorage.removeItem(RECENT_KEY); } catch (_e) { /* nothing stored */ } };
+  const remember = term => { const next = [term].concat(recent.filter(s => s.toLowerCase() !== term.toLowerCase())).slice(0, 5); setRecent(next); try { localStorage.setItem(RK, JSON.stringify(next)); } catch (_e) { /* private mode: the list is for this visit only */ } };
+  const forget = () => { setRecent([]); try { localStorage.removeItem(RK); } catch (_e) { /* nothing stored */ } };
   const [lims, setLims] = useState({ q: "", places: PLACES_FIRST, routes: ROUTES_FIRST });
   const lim = lims.q === qq ? lims : { q: qq, places: PLACES_FIRST, routes: ROUTES_FIRST };
-  const routesQ = useRouteSearch(USE_DB ? qq : "", lim.routes);
-  const placesQ = usePlaceSearch(USE_DB ? qq : "", lim.places);
-  const typed = useMemo(() => (USE_DB && onOpenFinder ? parseTypedSearch(qq) : null), [qq, onOpenFinder]);
+  const typed = useMemo(() => (USE_DB && onOpenFinder && wantRoutes ? parseTypedSearch(qq) : null), [qq, onOpenFinder, wantRoutes]);
+  /* A FILTER IS NOT A NAME (walkthrough 2026-11-18): "WI4", "V10" and "5.10a" are read as Route finder
+     filters, and the name search for them found nothing useful and timed out (57014 at 6 s) under
+     the finder row, adding "Couldn't search climbs". Words that are ONLY a filter (no place left
+     over) skip the name search; with a place left over ("5.10 sport near Leavenworth") it still runs. */
+  const filterOnly = !!typed && !typed.place;
+  const routesQ = useRouteSearch(USE_DB && wantRoutes && !filterOnly ? qq : "", lim.routes);
+  const placesQ = usePlaceSearch(USE_DB && wantPlaces ? qq : "", lim.places);
   const typedPlaceQ = usePlaceSearch(typed && typed.place ? typed.place : "", 1);
   const homePaths = useMyHomeStatePaths();
   const { data: allStates } = useStates();
@@ -104,17 +115,22 @@ export function WideSearch({ onOpenRoute, onOpenArea, onOpenFinder, width, left,
   const finderHit = typed && scope ? { kind: "finder", t: typed, scope } : null;
   useEffect(() => {
     const key = e => {
-      const slash = e.key === "/" && !e.metaKey && !e.ctrlKey && !e.altKey && !editable(e.target);
+      const slash = wantPlaces && e.key === "/" && !e.metaKey && !e.ctrlKey && !e.altKey && !editable(e.target);
       if (slash && !document.querySelector('[aria-modal="true"]') && input.current) { e.preventDefault(); input.current.focus(); }
     };
     const away = e => { if (box.current && !box.current.contains(e.target)) setOpen(false); };
     document.addEventListener("keydown", key); document.addEventListener("mousedown", away);
     return () => { document.removeEventListener("keydown", key); document.removeEventListener("mousedown", away); };
-  }, []);
+  }, [wantPlaces]);
   useEffect(() => { setHi(0); }, [qq]);
-  const seedHits = !USE_DB && qq ? ROUTES.filter(r => r.name.toLowerCase().includes(qq.toLowerCase())).slice(0, 6) : [];
+  const seedHits = !USE_DB && qq && wantRoutes ? ROUTES.filter(r => r.name.toLowerCase().includes(qq.toLowerCase())).slice(0, 6) : [];
   const places = USE_DB ? ((placesQ.data && placesQ.data.rows) || []) : [];
-  const routes = USE_DB ? (routesQ.data || []) : seedHits;
+  /* IN THE ROUTES BOX A NAME MATCH LEADS (walkthrough 2026-11-18): the shared route search also finds the
+     routes OF an area named like the words (so a picker can list a whole peak), and "outer space" put
+     "Major Tom" (a climb at the crag Outer Space) above the climbs named Outer Space. Here, climbs whose own
+     name holds every word come first; the search's order is kept within each group. */
+  const routes0 = USE_DB ? (routesQ.data || []) : seedHits;
+  const routes = only === "routes" && qq ? routes0.map((r, i) => ({ r, i, k: searchMatches(qq, r.name) ? 0 : 1 })).sort((x, y) => x.k - y.k || x.i - y.i).map(x => x.r) : routes0;
   const placesTotal = USE_DB ? ((placesQ.data && placesQ.data.total) || 0) : 0;
   // Asked for more and still showing the shorter list: say it is coming rather than drop the row.
   const placesMore = !USE_DB || !places.length ? null
@@ -132,16 +148,18 @@ export function WideSearch({ onOpenRoute, onOpenArea, onOpenFinder, width, left,
      first size means the words changed (the limits reset with them); above it, the same words asked
      for more, which the "Loading more" row already says. */
   const sectionState = (sq, fresh) => !USE_DB || !qq ? null : sq.isLoading || (sq.isPlaceholderData && fresh) ? "busy" : sq.isError ? "error" : null;
-  const placesState = sectionState(placesQ, lim.places === PLACES_FIRST);
-  const routesState = sectionState(routesQ, lim.routes === ROUTES_FIRST);
+  const placesState = wantPlaces ? sectionState(placesQ, lim.places === PLACES_FIRST) : null;
+  const routesState = wantRoutes ? sectionState(routesQ, lim.routes === ROUTES_FIRST) : null;
   /* A LATE ANSWER MOVES THE ROWS (walkthrough 2026-11-14: a click on the place "Liberty Bell Mountain"
      opened the climb "Liberty Crack" — the climb list re-rendered and slid a climb under the pointer).
      A pointer click within CLICK_SETTLE_MS of the row list changing is dropped; Enter is unaffected. */
   const rowsKey = hits.map(h => h.kind + ":" + (h.kind === "place" ? h.a.id : h.kind === "route" ? h.r.id : h.kind === "more" ? h.what : "")).join("|");
   const rowsChangedAt = useRef(0);
   useEffect(() => { rowsChangedAt.current = Date.now(); }, [rowsKey]);
-  const failed = USE_DB && (routesQ.isError || placesQ.isError) && !hits.length;
-  const busy = USE_DB && (routesQ.isLoading || placesQ.isLoading) && !hits.length;
+  const failed = USE_DB && ((wantRoutes && routesQ.isError) || (wantPlaces && placesQ.isError)) && !hits.length;
+  // Held rows from the LAST words are not an answer for these: with none held, a search still running says
+  // "Searching…", never "No … match" for words it has not looked up yet (walkthrough 2026-11-18).
+  const busy = USE_DB && ((wantRoutes && (routesQ.isLoading || routesState === "busy" || (filterOnly && !finderHit))) || (wantPlaces && (placesQ.isLoading || placesState === "busy"))) && !hits.length;
   const pick = h => {
     if (h.kind === "more") {
       if (h.state !== "more") return;
@@ -184,9 +202,9 @@ export function WideSearch({ onOpenRoute, onOpenArea, onOpenFinder, width, left,
         : h.what === "places" ? (placesTotal > MORE_MAX ? "Show " + MORE_MAX + " of " + placesTotal + " places" : "Show all " + placesTotal + " places") : "Show more climbs";
       /* PINNED TO THE DROP-DOWN'S FOOT (walkthrough 2026-11-14): last under ten climbs in a list that
          scrolls on its own, "Show more climbs" sat out of sight while namesakes in other states filled
-         the view. Inline, the list runs down the page and has no foot to pin to. */
-      const sticky = !inline && h.what === "routes";
-      return <button key={"more-" + h.what} id={"wide-search-" + i} role="option" aria-selected={on} aria-disabled={h.state !== "more" || undefined} onMouseDown={e => e.preventDefault()} onMouseEnter={() => setHi(i)} onClick={click(h)} style={{ ...ROW, minHeight: 44, background: on ? C.card : sticky ? C.surface : "transparent", cursor: h.state === "more" ? "pointer" : "default", ...(sticky ? { position: "sticky", bottom: 0, zIndex: 1, boxShadow: "0 -6px 10px " + C.surface } : null) }}><ActionIcon name={h.state === "more" ? "more" : "search"} size={16} color={h.state === "more" ? C.blue : C.textMuted}/><span style={{ fontSize: 13.5, fontWeight: 700, color: h.state === "more" ? C.blue : C.textMuted }}>{label}</span></button>;
+         the view. */
+      const sticky = h.what === "routes";
+      return <button key={"more-" + h.what} id={OPT + i} role="option" aria-selected={on} aria-disabled={h.state !== "more" || undefined} onMouseDown={e => e.preventDefault()} onMouseEnter={() => setHi(i)} onClick={click(h)} style={{ ...ROW, minHeight: 44, background: on ? C.card : sticky ? C.surface : "transparent", cursor: h.state === "more" ? "pointer" : "default", ...(sticky ? { position: "sticky", bottom: 0, zIndex: 1, boxShadow: "0 -6px 10px " + C.surface } : null) }}><ActionIcon name={h.state === "more" ? "more" : "search"} size={16} color={h.state === "more" ? C.blue : C.textMuted}/><span style={{ fontSize: 13.5, fontWeight: 700, color: h.state === "more" ? C.blue : C.textMuted }}>{label}</span></button>;
     }
     const name = h.kind === "finder" ? h.t.label + " in " + h.scope.name : h.kind === "place" ? h.a.name : h.r.name;
     /* A climb row carries ITS discipline's glyph and colours its grade the same way (the competitor
@@ -194,10 +212,10 @@ export function WideSearch({ onOpenRoute, onOpenArea, onOpenFinder, width, left,
        an AI3 ice route looked alike before anyone read them). Places keep the pin; the finder row the compass. */
     const disc = h.kind === "route" ? (h.r.discipline || catOf(h.r) || "") : "";
     const discColor = (CAT[disc] || {}).color || C.textMuted;
-    const where = h.kind === "finder" ? "Open the Route finder with these filters" : h.kind === "place" ? [h.a.where, h.a.route_count ? h.a.route_count.toLocaleString() + (h.a.route_count === 1 ? " climb" : " climbs") : ""].filter(Boolean).join(" · ") : routeWhere(h.r);
+    const where = h.kind === "finder" ? "Open the Route finder with these filters" : h.kind === "place" ? [h.a.where, h.a.route_count ? Number(h.a.route_count).toLocaleString() + (Number(h.a.route_count) === 1 ? " climb" : " climbs") : ""].filter(Boolean).join(" · ") : routeWhere(h.r);
     const grade = h.kind === "route" ? h.r.grade : "";
     const held = (h.kind === "place" && placesState === "busy") || (h.kind === "route" && routesState === "busy");
-    return <button key={h.kind + (h.kind === "finder" ? "" : h.kind === "place" ? h.a.id : h.r.id)} id={"wide-search-" + i} role="option" aria-selected={on} onMouseDown={e => e.preventDefault()} onMouseEnter={() => setHi(i)} onClick={click(h)} aria-busy={held || undefined} style={{ ...ROW, background: on ? C.card : "transparent", opacity: held ? 0.5 : 1 }}>{h.kind === "route" ? <DiscIcon d={disc} size={17}/> : <ActionIcon name={h.kind === "finder" ? "explore" : "pin"} size={17} color={C.textMuted}/>}<span style={{ minWidth: 0, flex: 1 }}><span style={{ display: "block", fontSize: 14, fontWeight: 700, overflowWrap: "anywhere" }}>{name}</span>{grade || where ? <span style={{ display: "block", fontSize: 12, color: C.textMuted, overflowWrap: "anywhere" }}>{grade ? <span style={{ color: discColor, fontWeight: 700 }}>{grade}</span> : null}{grade && where ? " · " : ""}{where}</span> : null}</span>{h.kind === "place" ? <ViewAreaPill C={C}/> : null}</button>;
+    return <button key={h.kind + (h.kind === "finder" ? "" : h.kind === "place" ? h.a.id : h.r.id)} id={OPT + i} role="option" aria-selected={on} onMouseDown={e => e.preventDefault()} onMouseEnter={() => setHi(i)} onClick={click(h)} aria-busy={held || undefined} style={{ ...ROW, background: on ? C.card : "transparent", opacity: held ? 0.5 : 1 }}>{h.kind === "route" ? <DiscIcon d={disc} size={17}/> : <ActionIcon name={h.kind === "finder" ? "explore" : "pin"} size={17} color={C.textMuted}/>}<span style={{ minWidth: 0, flex: 1 }}><span style={{ display: "block", fontSize: 14, fontWeight: 700, overflowWrap: "anywhere" }}>{name}</span>{grade || where ? <span style={{ display: "block", fontSize: 12, color: C.textMuted, overflowWrap: "anywhere" }}>{grade ? <span style={{ color: discColor, fontWeight: 700 }}>{grade}</span> : null}{grade && where ? " · " : ""}{where}</span> : null}</span>{h.kind === "place" ? <ViewAreaPill C={C}/> : null}</button>;
   };
   const showList = open && !!qq;
   // The EMPTY box, focused: recent words and Near me (nothing when there is neither).
@@ -207,102 +225,39 @@ export function WideSearch({ onOpenRoute, onOpenArea, onOpenFinder, width, left,
   const w = width || "460px";
   /* LEFT (App passes the geometry's searchL, lined up with the nav strip's tabs) wins; without it the
      box is centred on the window as before. */
-  const wrap = inline ? { position: "relative", width: "100%" } : { position: "absolute", top: 12, left: left || "calc(50vw - (" + w + ") / 2)", width: w };
-  // Inline, the list runs DOWN THE PAGE (as DbSearchSplit's does): no inner scroll, no drop-down.
-  const panel = inline ? { marginTop: 6, background: C.surface, border: "1px solid " + C.border, borderRadius: 14, padding: 6 }
-    : { position: "absolute", top: 46, left: 0, right: 0, background: C.surface, border: "1px solid " + C.border, borderRadius: 14, boxShadow: "0 18px 50px rgba(0,0,0,0.55)", padding: 6, maxHeight: "min(70vh, 520px)", overflowY: "auto", overscrollBehavior: "contain", zIndex: 2 };
+  const wrap = { position: "absolute", top: 12, left: left || "calc(50vw - (" + w + ") / 2)", width: w };
+  /* THE AREAS LIST IS WIDER THAN ITS BOX (walkthrough 2026-11-18): each place row now carries a "View area"
+     button, and in the half-width box at 1024px that left the name ~45px, broken mid-word ("Yosem / ite").
+     The list reaches over the Routes box beside it (out of use while you type here); the Routes box keeps its width. */
+  const panel = { position: "absolute", top: 46, left: 0, ...(only === "places" ? { width: "max(100%, 420px)" } : { right: 0 }), background: C.surface, border: "1px solid " + C.border, borderRadius: 14, boxShadow: "0 18px 50px rgba(0,0,0,0.55)", padding: 6, maxHeight: "min(70vh, 520px)", overflowY: "auto", overscrollBehavior: "contain", zIndex: 2 };
   const plain = { ...ROW, minHeight: 44 };
   // A section's own state line, under its heading; a section with no rows to head gets a heading of its own.
   const note = (kind, st) => st === "error" ? <div key={"note-" + kind} role="alert" style={{ padding: "2px 10px 6px", fontSize: 12.5, color: C.amber }}>{kind === "place" ? "Couldn’t search places — try again." : "Couldn’t search climbs — try again."}</div>
     : st === "busy" ? <div key={"note-" + kind} style={{ padding: "0 10px 4px", fontSize: 12.5, color: C.textMuted }}>Searching…</div> : null;
-  const section = (kind, st) => [<div key={"head-" + kind} style={{ ...SECTION, padding: "8px 10px 4px" }}>{kind === "place" ? "Places" : "Climbs"}</div>, note(kind, st)];
+  const headOf = kind => kind === "place" ? (only ? "Areas" : "Places") : (only ? "Routes" : "Climbs");
+  const section = (kind, st) => [<div key={"head-" + kind} style={{ ...SECTION, padding: "8px 10px 4px" }}>{headOf(kind)}</div>, note(kind, st)];
   const placesOrphan = !!placesState && !places.length, routesOrphan = !!routesState && !routes.length;
   return <div ref={box} style={wrap}>
-    <span aria-hidden="true" style={{ position: "absolute", left: 12, top: 0, height: inline ? 44 : 40, display: "flex", alignItems: "center", pointerEvents: "none" }}><ActionIcon name="search" size={18} color={C.textMuted}/></span>
-    <input ref={input} value={q} onChange={e => { setQ(e.target.value); setOpen(true); }} onFocus={() => setOpen(true)} onKeyDown={onKey} aria-label="Search climbs and places" role="combobox" aria-expanded={showList || showEmpty} aria-controls="wide-search-list" aria-activedescendant={showList && hits.length ? "wide-search-" + Math.min(hi, hits.length - 1) : undefined} aria-autocomplete="list" placeholder="Search climbs & crags" style={{ width: "100%", height: inline ? 44 : 40, boxSizing: "border-box", padding: "0 38px 0 38px", borderRadius: inline ? 12 : 20, border: "1px solid " + C.border, background: C.card, color: C.text, fontSize: inline ? 15 : 14.5, outline: "none" }}/>
-    {!q && !inline ? <kbd aria-hidden="true" title="Press / to search" style={{ position: "absolute", right: 12, top: 10, fontSize: 11.5, fontFamily: "inherit", color: C.textMuted, border: "1px solid " + C.border, borderRadius: 5, padding: "1px 6px", pointerEvents: "none" }}>/</kbd> : null}
-    {showList ? <div id="wide-search-list" role="listbox" aria-label="Search results" style={panel}>
+    <span aria-hidden="true" style={{ position: "absolute", left: 12, top: 0, height: 40, display: "flex", alignItems: "center", pointerEvents: "none" }}><ActionIcon name="search" size={18} color={C.textMuted}/></span>
+    <input ref={input} value={q} onChange={e => { setQ(e.target.value); setOpen(true); }} onFocus={() => setOpen(true)} onKeyDown={onKey} aria-label={only === "places" ? "Search all areas" : only === "routes" ? "Search all routes" : "Search climbs and places"} role="combobox" aria-expanded={showList || showEmpty} aria-controls={LIST} aria-activedescendant={showList && hits.length ? OPT + Math.min(hi, hits.length - 1) : undefined} aria-autocomplete="list" placeholder={only === "places" ? "Search areas" : only === "routes" ? "Search routes" : "Search climbs & crags"} style={{ width: "100%", height: 40, boxSizing: "border-box", padding: "0 38px 0 38px", borderRadius: 20, border: "1px solid " + C.border, background: C.card, color: C.text, fontSize: 14.5, outline: "none" }}/>
+    {!q && wantPlaces ? <kbd aria-hidden="true" title="Press / to search" style={{ position: "absolute", right: 12, top: 10, fontSize: 11.5, fontFamily: "inherit", color: C.textMuted, border: "1px solid " + C.border, borderRadius: 5, padding: "1px 6px", pointerEvents: "none" }}>/</kbd> : null}
+    {showList ? <div id={LIST} role="listbox" aria-label="Search results" style={panel}>
       {failed ? <div role="alert" style={{ padding: "12px 10px", fontSize: 13, color: C.amber }}>Search isn’t reachable right now — check your connection and try again.</div>
         : busy ? <div style={{ padding: "12px 10px", fontSize: 13, color: C.textMuted }}>Searching…</div>
-        : !hits.length ? <div style={{ padding: "12px 10px", fontSize: 13, color: C.textMuted }}>{"No climbs or places match “" + qq + "”."}</div>
-        : hits.map((h, i) => { const head = (h.kind === "place" || h.kind === "route") && (i === 0 || hits[i - 1].kind !== h.kind) ? (h.kind === "place" ? "Places" : "Climbs") : ""; return head ? [h.kind === "route" && placesOrphan ? section("place", placesState) : null, <div key={"head-" + h.kind} style={{ ...SECTION, padding: head === "Places" ? "6px 10px 4px" : "8px 10px 4px" }}>{head}</div>, note(h.kind, h.kind === "place" ? placesState : routesState), row(h, i)] : row(h, i); }).concat(placesOrphan && !routes.length ? [section("place", placesState)] : [], routesOrphan ? [section("route", routesState)] : [])}
-    </div> : showEmpty ? <div id="wide-search-list" role="listbox" aria-label="Search shortcuts" style={panel}>
-      {onNearMe ? <button role="option" aria-selected={false} onMouseDown={e => e.preventDefault()} onClick={() => { setOpen(false); if (input.current) input.current.blur(); onNearMe(); }} style={plain}><ActionIcon name="pin" size={17} color={C.blue}/><span style={{ fontSize: 14, fontWeight: 700, color: C.blue }}>Near me</span><span style={{ fontSize: 12, color: C.textMuted }}>climbs around your position, on the map</span></button> : null}
+        : !hits.length ? <div style={{ padding: "12px 10px", fontSize: 13, color: C.textMuted }}>{(only === "places" ? "No areas match “" : only === "routes" ? "No routes match “" : "No climbs or places match “") + qq + "”."}</div>
+        : hits.map((h, i) => { const head = (h.kind === "place" || h.kind === "route") && (i === 0 || hits[i - 1].kind !== h.kind) ? headOf(h.kind) : ""; return head ? [h.kind === "route" && placesOrphan ? section("place", placesState) : null, <div key={"head-" + h.kind} style={{ ...SECTION, padding: h.kind === "place" ? "6px 10px 4px" : "8px 10px 4px" }}>{head}</div>, note(h.kind, h.kind === "place" ? placesState : routesState), row(h, i)] : row(h, i); }).concat(placesOrphan && !routes.length ? [section("place", placesState)] : [], routesOrphan ? [section("route", routesState)] : [])}
+    </div> : showEmpty ? <div id={LIST} role="listbox" aria-label="Search shortcuts" style={panel}>
+      {onNearMe ? <button role="option" aria-selected={false} onMouseDown={e => e.preventDefault()} onClick={() => { setOpen(false); if (input.current) input.current.blur(); onNearMe(); }} style={plain}><ActionIcon name="pin" size={17} color={C.blue}/>{/* Stacked, not side by side: in the half-width box the two wrapped against each other ("Near / me"). */}<span style={{ minWidth: 0 }}><span style={{ display: "block", fontSize: 14, fontWeight: 700, color: C.blue }}>Near me</span><span style={{ display: "block", fontSize: 12, color: C.textMuted }}>Climbs around your position, on the map</span></span></button> : null}
       {recent.length ? <><div style={{ ...SECTION, padding: "8px 10px 4px", display: "flex", justifyContent: "space-between", alignItems: "center" }}><span>Recent</span><button onMouseDown={e => e.preventDefault()} onClick={forget} style={{ border: "none", background: "transparent", color: C.textMuted, fontSize: 11.5, fontWeight: 700, cursor: "pointer", padding: "4px 0", textTransform: "none", letterSpacing: 0 }}>Clear</button></div>
         {recent.map(s => <button key={s} role="option" aria-selected={false} onMouseDown={e => e.preventDefault()} onClick={() => { setQ(s); setOpen(true); if (input.current) input.current.focus(); }} style={plain}><ActionIcon name="search" size={16} color={C.textMuted}/><span style={{ fontSize: 14, fontWeight: 600, overflowWrap: "anywhere" }}>{s}</span></button>)}</> : null}
     </div> : null}
   </div>;
 }
 
-/* RIGHT RAIL. Widgets drawn from what App already holds — the next agreed crew days, alerts, your
-   crews and your groups. Ads take the last slot in this column (desktop only; `ad`). */
-
-const badgeN = n => n ? <span aria-hidden="true" style={{ minWidth: 18, height: 18, borderRadius: 9, background: C.redSolid, color: C.onSolid, fontSize: 11, fontWeight: 800, display: "inline-flex", alignItems: "center", justifyContent: "center", padding: "0 5px", boxSizing: "border-box" }}>{n}</span> : null;
-const PER = 5;
-const seeAllBtn = { padding: "4px 10px", border: "none", background: "transparent", color: C.blue, fontSize: 13, fontWeight: 700, cursor: "pointer" };
-
-/* A rail card whose header folds it — the Alerts card's header shape (44px, chevron, aria-expanded),
-   carrying the card's unread count so a folded card still says what waits. Starts open. */
-function FoldCard({ id, title, unread, unreadWord, children }) {
-  const [open, setOpen] = useState(true);
-  return <section aria-labelledby={id} style={{ ...CARD, paddingBottom: 6 }}>
-    <button id={id} onClick={() => setOpen(o => !o)} aria-expanded={open} aria-label={title + (unread ? ", " + unread + " " + unreadWord : "")} style={{ minHeight: 44, ...SECTION, width: "100%", display: "flex", alignItems: "center", gap: 8, padding: 0, border: "none", background: "transparent", cursor: "pointer", textAlign: "left" }}><span style={{ flex: 1 }}>{title}</span>{badgeN(unread)}<span aria-hidden="true" style={{ display: "flex" }}><Chevron open={open} size={14} color={C.blue} /></span></button>
-    {open ? <div style={{ marginBottom: 4 }}>{children}</div> : null}
-  </section>;
-}
-
-/* YOUR CREWS, WITH THEIR CHATS (owner 2026-11-11: "move your crews to the right… combine your crews
-   with crew chats", and "remove the direct chats from the right panel" — direct messages stay one
-   click away in the top bar's Messages drop-down, which carries their unread count). One row per
-   active crew (App's activeCrews, the Crews tab's own list), newest chat message first, named for its
-   place, with the last message under the name (read the way the inbox reads it: "You: …", "Photo")
-   and the chat's unread count. While the read is in flight it says so, never "No crews yet." (the
-   empty-account claim check:outage guards against). A click opens the CREW (owner: the crew page, as the sidebar's rows
-   did), where its chat is. A failed crews read says so rather than listing nothing. */
-function RailCrews({ crews, crewMsgs, crewUnread, placeOf, unavailable, loading, onOpenCrew, onAllCrews, onFindPartners }) {
-  const last = arr => (arr && arr.length ? arr[arr.length - 1] : null);
-  const rows = (crews || []).map(cr => {
-    const p = placeOf(cr);
-    const m = last((crewMsgs || {})[cr.id]);
-    return { cr, name: (p && p.kind !== "missing" && p.name) || "Crew", sub: (p && p.kind !== "missing" && p.parentName && p.parentName !== p.name) ? p.parentName : null, m, ts: (m && m.ts) || 0, unread: Number((crewUnread || {})[cr.id]) || 0 };
-  }).sort((a, b) => b.ts - a.ts);
-  const unread = rows.reduce((n, r) => n + r.unread, 0);
-  const preview = m => (m ? (m.from === "me" ? "You: " : (m.name ? m.name + ": " : "")) + (m.image && !m.text ? "Photo" : String(m.text || "")) : "");
-  return <FoldCard id="rail-crews" title={"Your crews" + (rows.length ? " · " + rows.length : "")} unread={unread} unreadWord="unread">
-    {unavailable ? <div style={{ fontSize: 13, color: C.amber, lineHeight: 1.45, padding: "0 2px 8px" }}>Couldn’t load your crews just now.</div>
-      : !rows.length && loading ? <div style={{ fontSize: 13, color: C.textMuted, padding: "0 2px 8px" }}>Loading your crews…</div>
-      : !rows.length ? <div style={{ fontSize: 13, color: C.textMuted, lineHeight: 1.45, padding: "0 2px 8px" }}>No crews yet.<button onClick={onFindPartners} style={{ ...seeAllBtn, display: "block", padding: 0, marginTop: 8 }}>Find partners ›</button></div>
-      : <>{rows.slice(0, PER).map(r => <button key={r.cr.id} onClick={() => onOpenCrew(r.cr)} aria-label={r.name + " crew" + (r.unread ? ", " + r.unread + " unread" : "")} style={{ ...ROW, alignItems: "flex-start" }}>
-          <span aria-hidden="true" style={{ width: 28, height: 28, borderRadius: 10, background: C.card, border: "1px solid " + C.border, display: "inline-flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}><ActionIcon name="crews" size={15} color={C.textSub} /></span>
-          <span style={{ flex: 1, minWidth: 0 }}>
-            <span style={{ display: "block", fontSize: 13.5, fontWeight: r.unread ? 800 : 700, overflowWrap: "anywhere" }}>{r.name}{r.sub ? <span style={{ display: "block", fontSize: 11.5, fontWeight: 600, color: C.textMuted }}>{r.sub}</span> : null}</span>
-            {r.m ? <span style={{ display: "block", fontSize: 12.5, lineHeight: 1.4, color: r.unread ? C.textSub : C.textMuted, overflowWrap: "anywhere" }}>{preview(r.m)}</span> : null}
-          </span>
-          {badgeN(r.unread)}
-        </button>)}
-        {rows.length > PER ? <button onClick={onAllCrews} style={seeAllBtn}>{"See all " + rows.length + " crews ›"}</button> : null}</>}
-  </FoldCard>;
-}
-
-/* YOUR GROUPS (owner 2026-11-04 put them in the sidebar, from the competitor review — Facebook lists
-   your groups; owner 2026-11-11 moved them here): up to five, a red dot when a group has posts you have
-   not seen (App's groupUnreadN, the Groups tab's own count). Drawn only when you are in a group. */
-function RailGroups({ groups, groupUnreadN, onOpenGroup, onAllGroups }) {
-  const list = groups || [];
-  if (!list.length) return null;
-  const newN = list.filter(g => groupUnreadN(g) > 0).length;
-  return <FoldCard id="rail-groups" title={"Your groups · " + list.length} unread={newN} unreadWord={newN === 1 ? "group with new posts" : "groups with new posts"}>
-    {list.slice(0, PER).map(g => {
-      const nn = groupUnreadN(g);
-      return <button key={g.id} onClick={() => onOpenGroup(g)} aria-label={g.name + (nn ? ", " + nn + " new post" + (nn === 1 ? "" : "s") : "")} style={ROW}>
-        {/* The group's own avatar (0454) when it has one, else the groups icon. */}<span aria-hidden="true" style={{ width: 28, height: 28, borderRadius: 10, background: C.card, border: "1px solid " + C.border, display: "inline-flex", alignItems: "center", justifyContent: "center", flexShrink: 0, overflow: "hidden" }}>{g.avatarUrl ? <img src={photoThumb(g.avatarUrl, 28)} onError={thumbFallback} alt="" loading="lazy" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} /> : <ActionIcon name="partners" size={15} color={C.textSub} />}</span>
-        <span style={{ flex: 1, minWidth: 0, fontSize: 13.5, fontWeight: nn ? 800 : 700, overflowWrap: "anywhere" }}>{g.name}</span>
-        {nn ? <span aria-hidden="true" style={{ width: 8, height: 8, borderRadius: 4, background: C.red, flexShrink: 0 }} /> : null}
-      </button>;
-    })}
-    {list.length > PER ? <button onClick={onAllGroups} style={seeAllBtn}>{"See all " + list.length + " groups ›"}</button> : null}
-  </FoldCard>;
-}
+/* RIGHT RAIL. Widgets drawn from what App already holds — the next agreed crew days and alerts. Your
+   crews and your groups left it (owner 2026-11-18: "remove your crews and your groups from right
+   panel"); they stay on the Crews tab and the Groups screen. Ads take the last slot in this column
+   (desktop only; `ad`). */
 
 /* THE AVATAR'S MENU (owner 2026-11-11: "add it, keep ☰"): on the website the avatar opens a small
    drop-down under it, as Strava's, GitHub's and Facebook's do, instead of going straight to the
@@ -353,7 +308,7 @@ export function AvatarMenu({ avatar, name, items }) {
 
 /* UPCOMING-UNAVAILABLE: the crews read failed, so the agreed days are unknown, not none (check:overlay-absence:
    "No crew days agreed yet" over a failed read told a climber with crew days that they had none). */
-export function WideRail({ upcoming, upcomingUnavailable, alerts, waiting, newN: newCount, guest, onSignIn, onOpenCal, onOpenAlerts, onFindPartners, crews, groups, ad, showToast }) {
+export function WideRail({ upcoming, upcomingUnavailable, alerts, waiting, newN: newCount, guest, onSignIn, onOpenCal, onOpenAlerts, onFindPartners, ad, showToast }) {
   const unread = alerts.filter(n => !n.read);
   /* ONE ALERTS LIST (owner, 2026-10-23, #2734): this card shows what Home's Alerts button shows —
      `waiting` (requests, invites, unread chats, a day or a climb to confirm; amber, first) and then
@@ -386,8 +341,6 @@ export function WideRail({ upcoming, upcomingUnavailable, alerts, waiting, newN:
       {guest ? null : unreadShown.length ? unreadShown.map(n => <button key={n.id} onClick={onOpenAlerts} style={{ ...ROW, alignItems: "flex-start", boxSizing: "border-box", height: 53 }}><span aria-hidden="true" style={{ width: 7, height: 7, marginTop: 6, borderRadius: 4, background: C.blue, flexShrink: 0 }}/><span style={{ minWidth: 0, fontSize: 13, lineHeight: 1.4, color: C.text, display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical", overflow: "hidden", overflowWrap: "anywhere" }}>{n.text}</span></button>) : waiting.length ? null : <div style={{ fontSize: 13, color: C.textMuted, padding: "2px 2px 4px" }}>You’re all caught up.</div>}
       {alerts.length || moreN > 0 ? <button onClick={onOpenAlerts} style={{ marginTop: 4, padding: "4px 10px", border: "none", background: "transparent", color: C.blue, fontSize: 13, fontWeight: 700, cursor: "pointer" }}>{moreN > 0 ? "See all notifications · " + moreN + " more ›" : "See all notifications ›"}</button> : null}</div>}
     </section>
-    {crews ? <RailCrews {...crews} onFindPartners={onFindPartners} /> : null}
-    {groups ? <RailGroups {...groups} /> : null}
     {ad ? <RailAd /> : null}
   </aside>;
 }

@@ -25,8 +25,8 @@ const CASES = [
     why: "THE REAL DEFECT: a switch whose category no notification carries. Restored verbatim.",
     file: NOTIFS,
     edit: (s) => s.replace(
-      '[["crew","Crew updates","Day proposals, members joining, ready to climb"],',
-      '[["crew","Crew updates","Day proposals, members joining, ready to climb"],["messages","Messages","New direct & crew messages"],'),
+      '[["crew","Crew updates","Members joining, a climb coming up, how it went"],',
+      '[["crew","Crew updates","Members joining, a climb coming up, how it went"],["messages","Messages","New direct & crew messages"],'),
     expect: /suppresses nothing/,
   },
   {
