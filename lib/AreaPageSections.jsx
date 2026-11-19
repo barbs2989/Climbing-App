@@ -157,6 +157,19 @@ export function bucketLabel(sys, b) {
   if (sys === "class") return "Class " + b;
   return String(b);
 }
+// THE COUNT AXIS (owner, 2026-11-18: "there should be a number on the y axis to give context to how many
+// climbs"): the tick values up the left of the chart, 0 first. The top tick is the first round number at or
+// above the tallest column, in at most four steps of 1, 2 or 5 times a power of ten, so every tick is a whole
+// number of climbs and the bars are drawn against the top tick, not against the tallest column.
+const Y_AXIS_W = 24, Y_GAP = 5;
+export function countAxis(max) {
+  max = Math.max(1, Math.ceil(Number(max) || 0));
+  for (let p = 1; ; p *= 10) for (const m of [1, 2, 5]) {
+    const step = m * p, n = Math.ceil(max / step);
+    if (n <= 4) return Array.from({ length: n + 1 }, (_, i) => i * step);
+  }
+}
+const countTick = t => t >= 1000 ? (t / 1000) + "k" : String(t);
 // Whether GradeSpread would draw anything: the area page lays the two charts side by side on the
 // website only when both exist.
 export function hasGradeSpread(stats) {
@@ -181,24 +194,34 @@ export function GradeSpread({ stats, C, standalone, bare, onGrade }) {
   const lo = cols[0].b, hi = cols[cols.length - 1].b, full = [];
   for (let b = lo; b <= hi; b++) { const f = cols.find(c => c.b === b); full.push({ b, n: f ? f.n : 0 }); }
   const max = Math.max(...full.map(c => c.n));
+  const axis = countAxis(max), top = axis[axis.length - 1];
   const W = 100, H = 56, gap = 2, bw = (W - gap * (full.length - 1)) / full.length, every = full.length > 9 ? 2 : 1;
   const label = c => bucketLabel(sys, c.b);
+  // Every other grade is named when there are many, and always the last. When the last is not on that stride the
+  // one before it stays blank: side by side on a phone the two ran together ("5.145.15", seen at 390 and 320px).
+  const last = full.length - 1, showLabel = i => i === last || (i % every === 0 && !(every > 1 && last % every !== 0 && i === last - 1));
   const desc = full.filter(c => c.n).map(c => label(c) + ": " + c.n).join(", ");
   return <div style={bare ? null : standalone ? card(C) : { marginTop: 12, paddingTop: 10, borderTop: "1px solid " + C.border }}>
     <div style={{ ...headRow, marginBottom: 6 }}><Head C={C}>Grade spread</Head>{scales.length > 1 ? null : <span style={{ fontSize: 11.5, color: C.textMuted }}>{SYS_NAME[sys] || sys}</span>}</div>
     {scales.length > 1 ? <div role="group" aria-label="Grade spread discipline" className="cm-hscroll" style={{ display: "flex", gap: 6, overflowX: "auto", paddingBottom: 3, marginBottom: 8 }}>
       {scales.map(k => <button key={k} onClick={() => setPicked(k)} aria-pressed={k === sys} style={{ ...CHIP, flexShrink: 0, border: "1px solid " + (k === sys ? C.blue : C.border), background: k === sys ? C.blueBg : C.surface, color: k === sys ? "#fff" : C.textSub }}>{SYS_PICK[k] || k}</button>)}
     </div> : null}
-    <div style={{ position: "relative" }}>
+    <div style={{ display: "flex", gap: Y_GAP }}>
+    <div aria-hidden="true" style={{ position: "relative", width: Y_AXIS_W, flexShrink: 0, height: 56 }}>
+      {axis.map(t => <span key={t} style={{ position: "absolute", right: 0, bottom: (t / top * 100) + "%", transform: "translateY(50%)", fontSize: 9.5, lineHeight: 1, color: C.textMuted, fontVariantNumeric: "tabular-nums", whiteSpace: "nowrap" }}>{countTick(t)}</span>)}
+    </div>
+    <div style={{ position: "relative", flex: 1, minWidth: 0 }}>
     <svg role="img" aria-label={"Climbs by grade (" + (SYS_NAME[sys] || sys) + "): " + desc} viewBox={"0 0 " + W + " " + H} preserveAspectRatio="none" style={{ width: "100%", height: 56, display: "block" }}>
-      {full.map((c, i) => { const h = max ? Math.max(c.n ? 1.5 : 0, c.n / max * (H - 2)) : 0; return <rect key={c.b} x={i * (bw + gap)} y={H - h} width={bw} height={h} rx={0} fill={C.blueSolid} />; })}
+      {axis.map(t => t ? <line key={"t" + t} x1={0} x2={W} y1={H - t / top * H} y2={H - t / top * H} stroke={C.border} strokeWidth={1} vectorEffect="non-scaling-stroke" /> : null)}
+      {full.map((c, i) => { const h = Math.max(c.n ? 1.5 : 0, c.n / top * H); return <rect key={c.b} x={i * (bw + gap)} y={H - h} width={bw} height={h} rx={0} fill={C.blueSolid} />; })}
     </svg>
     {onGrade && gradeFinderRange(sys, lo) ? <div style={{ position: "absolute", inset: 0, display: "flex", gap: gap + "px" }}>
       {full.map(c => c.n ? <button key={c.b} onClick={() => onGrade(sys, c.b)} aria-label={label(c) + ": " + c.n.toLocaleString() + " climb" + (c.n !== 1 ? "s" : "") + ", open in Route finder"} style={{ flex: 1, minWidth: 0, background: "transparent", border: "none", padding: 0, cursor: "pointer" }} /> : <span key={c.b} aria-hidden="true" style={{ flex: 1, minWidth: 0 }} />)}
     </div> : null}
     </div>
-    <div style={{ display: "flex", gap: gap + "px", marginTop: 3 }}>
-      {full.map((c, i) => <div key={c.b} style={{ flex: 1, minWidth: 0, textAlign: "center", fontSize: 9.5, color: C.textMuted, whiteSpace: "nowrap", overflow: "visible" }}>{i % every === 0 || i === full.length - 1 ? label(c) : ""}</div>)}
+    </div>
+    <div style={{ display: "flex", gap: gap + "px", marginTop: 3, marginLeft: Y_AXIS_W + Y_GAP }}>
+      {full.map((c, i) => <div key={c.b} style={{ flex: 1, minWidth: 0, textAlign: "center", fontSize: 9.5, color: C.textMuted, whiteSpace: "nowrap", overflow: "visible" }}>{showLabel(i) ? label(c) : ""}</div>)}
     </div>
   </div>;
 }
