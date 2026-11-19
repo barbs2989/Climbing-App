@@ -26,6 +26,7 @@ import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 import { selectAll, patchRow, requireServiceKey } from "../lib/supabase-env.mjs";
+import { gradeNumFor } from "../../lib/grade.js";
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const APPLY = process.argv.includes("--apply");
@@ -47,7 +48,13 @@ export function plan(r) {
   const primary = FREE.find(d => list.includes(d)) || (RESEARCHED.includes(researched) ? researched : null);
   if (!primary) return null;
   if (!YDS.test(String(r.grade || "")) || r.grade_system !== "yds") return null;
-  return { discipline: primary, disciplines: [primary, ...(list.includes("aid") ? list : list.concat("aid")).filter(d => d !== primary)] };
+  const out = { discipline: primary, disciplines: [primary, ...(list.includes("aid") ? list : list.concat("aid")).filter(d => d !== primary)] };
+  // grade_num was parsed under the aid scale while the row was aid ("5.9 A1" stored 1). Under its free
+  // style the same string parses to the free grade; 21 of the 1,644 rows moved before this line existed
+  // kept the aid number and were corrected by hand (2026-11-18).
+  const num = gradeNumFor(r.grade, primary);
+  if (num != null && num !== r.grade_num) out.grade_num = num;
+  return out;
 }
 
 const key = requireServiceKey();
@@ -71,7 +78,7 @@ if (!APPLY) { console.log("\ndry run — pass --apply to write"); process.exit(0
 // holds every row's value from before this script touched it.
 const prior = fs.existsSync(ROLLBACK) ? JSON.parse(fs.readFileSync(ROLLBACK, "utf8")) : [];
 const had = new Set(prior.map(x => x.id));
-fs.writeFileSync(ROLLBACK, JSON.stringify(prior.concat(todo.filter(t => !had.has(t.r.id)).map(({ r }) => ({ id: r.id, discipline: r.discipline, disciplines: r.disciplines }))), null, 0) + "\n");
+fs.writeFileSync(ROLLBACK, JSON.stringify(prior.concat(todo.filter(t => !had.has(t.r.id)).map(({ r }) => ({ id: r.id, discipline: r.discipline, disciplines: r.disciplines, grade_num: r.grade_num }))), null, 0) + "\n");
 
 let done = 0;
 for (const { r, p } of todo) {
@@ -86,6 +93,6 @@ const ids = new Set(todo.map(t => t.r.id));
 const after = (await selectAll("routes", SEL, ONLY ? `id=eq.${encodeURIComponent(ONLY)}` : `disciplines=cs.${encodeURIComponent('["aid"]')}`, { key, pageSize: 1000 })).filter(r => ids.has(r.id));
 const byId = new Map(after.map(r => [r.id, r]));
 let bad = 0;
-for (const { r, p } of todo) { const a = byId.get(r.id); if (!a || a.discipline !== p.discipline || JSON.stringify(a.disciplines) !== JSON.stringify(p.disciplines)) { bad++; console.log(`  NOT AS WRITTEN: ${r.id} -> ${a ? a.discipline + " " + JSON.stringify(a.disciplines) : "missing"}`); } }
+for (const { r, p } of todo) { const a = byId.get(r.id); if (!a || a.discipline !== p.discipline || JSON.stringify(a.disciplines) !== JSON.stringify(p.disciplines) || (p.grade_num != null && a.grade_num !== p.grade_num)) { bad++; console.log(`  NOT AS WRITTEN: ${r.id} -> ${a ? a.discipline + " " + JSON.stringify(a.disciplines) : "missing"}`); } }
 console.log(`${done} written, ${after.length} re-read, ${bad} not as written`);
 process.exit(bad ? 1 : 0);
