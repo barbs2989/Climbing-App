@@ -1,0 +1,581 @@
+{
+ "wa_south_east_corner": {
+  "area": "wa_south_face_4",
+  "set": {
+   "descent_text": "Unrope at the top and walk off to the north (climber's right), then follow a path through the trees to the hiking trail and take it down."
+  },
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/105800483/south-east-corner",
+    "https://www.mountainproject.com/area/111087707/south-face",
+    "https://mazamas.org/activity/991/",
+    "https://chossclimbers.com/?p=9128",
+    "https://parks.wa.gov/find-parks/state-parks/beacon-rock-state-park",
+    "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass",
+    "https://www.openstreetmap.org/way/455598750"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.7",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105800483/south-east-corner",
+      "fact": "5.7 YDS, Trad",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "John Orenshall, Gene Todd 1954",
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105800483/south-east-corner",
+      "fact": "FA: John Orenshall, Gene Todd, 1954",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_south_east_corner",
+    "column": "pitches",
+    "from": 0,
+    "to": 6,
+    "why": "0 is invalid. MP states 6 pitches (600 ft, Grade II; a 7th short pitch is often soloed). Ledger level unconfirmed: a 2003 trip report counted 7-8 roped pitches by its own belays and forum posts call only 2-3 of them real pitches, so the count depends on convention.",
+    "evidence": [
+     "https://www.mountainproject.com/route/105800483/south-east-corner",
+     "https://chossclimbers.com/?p=9128"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_south_east_corner",
+    "column": "length_m",
+    "from": null,
+    "to": 182,
+    "why": "MP states 600 ft (182 m). Single source (theCrag 403, SummitPost not tried per brief); locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/105800483/south-east-corner"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_south_east_corner",
+    "column": "commitment",
+    "from": null,
+    "to": "II",
+    "why": "MP states Grade II. Single source.",
+    "evidence": [
+     "https://www.mountainproject.com/route/105800483/south-east-corner"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_south_east_corner",
+    "column": "detailed_rack",
+    "from": null,
+    "to": "Nuts and doubles in cams to 3 in; newer leaders may want a third set of the small cams.",
+    "why": "Rack empty; MP lists a standard rack of nuts with double cams to 3 in, triples in small sizes for novice leaders. Paragraph, not lockable.",
+    "evidence": [
+     "https://www.mountainproject.com/route/105800483/south-east-corner"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_south_east_corner",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Washington State Parks (Beacon Rock State Park)",
+     "parking_pass": "Discover Pass.",
+     "fees": "Discover Pass: $10 for one day or $45 for a year.",
+     "rules": "The south and southeast faces close every Feb 1 for nesting peregrine falcons and are expected to reopen around mid-July. The east face is closed for good. Park hours are 8 a.m. to dusk."
+    },
+    "why": "access is empty. Land manager = Washington State Parks: the Beacon Rock State Park page (WA State Parks and Recreation Commission) states the south and southeast faces close annually Feb 1 and tentatively reopen mid-July, the northwest face is open year-round, the east face is permanently closed, hours 8 a.m. to dusk, Discover Pass $10 day / $45 annual. parks.wa.gov Discover Pass page: a Discover Pass is required for parking at Washington State Parks. OSM tags the Beacon Rock lots 'Washington State Parks discover pass needed'. No climbing permit is mentioned on the park page, so no permit key is written (absence is not evidence). official-1, expires 2027-11-18.",
+    "evidence": [
+     "https://parks.wa.gov/find-parks/state-parks/beacon-rock-state-park",
+     "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass",
+     "https://www.openstreetmap.org/way/455598750"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_south_east_corner",
+    "column": "permit",
+    "from": null,
+    "to": "Discover Pass required to park. The south and southeast faces close each year on Feb 1 for nesting peregrine falcons and should reopen around mid-July; the east face is closed for good.",
+    "why": "permit is empty. Same official pages as the access fix (park page re-opened 2026-11-18: July 2026 alert says the south face reopened 7/9/2026). Wording is our own. official-1, expires 2027-11-18.",
+    "evidence": [
+     "https://parks.wa.gov/find-parks/state-parks/beacon-rock-state-park",
+     "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass"
+    ]
+   }
+  ],
+  "disputed": [
+   "pitches: MP 6 (+ an often-soloed 7th); 2003 chossclimbers report counted 7-8 roped pitches; CascadeClimbers forum says 2-3 real pitches plus 4th/low 5th. Proposed 6 (MP's stated count) as unconfirmed."
+  ],
+  "notes": "Only Mountain Project states the facts; theCrag returned 403 in Chrome, the Mazamas activity page copies MP word for word (not independent). Beacon Rock Trail (the walk-off) is closed Tue-Thu from Oct 1 to the end of May for decking replacement (park alert; it was to close again 11/17/2026) - relevant to the descent, conditions only. No pins added: OSM has two Beacon Rock lots (ways 455598750 and 455598751) and no official map point was opened, so the parking pin is left for a later pass."
+ },
+ "wa_south_face_4_blownout_to_1st_anchor": {
+  "area": "wa_south_face_4",
+  "review": {
+   "sources": [
+    "https://mountainproject.com/route/113482815/blownout-to-1st-anchor",
+    "https://www.mountainproject.com/route/107198195/blownout",
+    "https://www.mountainproject.com/area/111087707/south-face",
+    "https://parks.wa.gov/find-parks/state-parks/beacon-rock-state-park",
+    "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass",
+    "https://www.openstreetmap.org/way/455598750"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.9+",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://mountainproject.com/route/113482815/blownout-to-1st-anchor",
+      "fact": "5.9+ YDS, Trad",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "length_m",
+    "value": 18,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://mountainproject.com/route/113482815/blownout-to-1st-anchor",
+      "fact": "60 ft (18 m)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 1,
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://mountainproject.com/route/113482815/blownout-to-1st-anchor",
+      "fact": "ends at the first anchor; pitch count not stated (one pitch implied)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Jim Opdycke and Scott Tracy, autumn 1990",
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://mountainproject.com/route/113482815/blownout-to-1st-anchor",
+      "fact": "FA: Scott Tracy and Jim Opdycke, Fall 1990",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_south_face_4_blownout_to_1st_anchor",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Washington State Parks (Beacon Rock State Park)",
+     "parking_pass": "Discover Pass.",
+     "fees": "Discover Pass: $10 for one day or $45 for a year.",
+     "rules": "The south and southeast faces close every Feb 1 for nesting peregrine falcons and are expected to reopen around mid-July. The east face is closed for good. Park hours are 8 a.m. to dusk."
+    },
+    "why": "access is empty. Land manager = Washington State Parks: the Beacon Rock State Park page (WA State Parks and Recreation Commission) states the south and southeast faces close annually Feb 1 and tentatively reopen mid-July, the northwest face is open year-round, the east face is permanently closed, hours 8 a.m. to dusk, Discover Pass $10 day / $45 annual. parks.wa.gov Discover Pass page: a Discover Pass is required for parking at Washington State Parks. OSM tags the Beacon Rock lots 'Washington State Parks discover pass needed'. No climbing permit is mentioned on the park page, so no permit key is written (absence is not evidence). official-1, expires 2027-11-18.",
+    "evidence": [
+     "https://parks.wa.gov/find-parks/state-parks/beacon-rock-state-park",
+     "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass",
+     "https://www.openstreetmap.org/way/455598750"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_south_face_4_blownout_to_1st_anchor",
+    "column": "permit",
+    "from": null,
+    "to": "Discover Pass required to park. The south and southeast faces close each year on Feb 1 for nesting peregrine falcons and should reopen around mid-July; the east face is closed for good.",
+    "why": "permit is empty. Same official pages as the access fix (park page re-opened 2026-11-18: July 2026 alert says the south face reopened 7/9/2026). Wording is our own. official-1, expires 2027-11-18.",
+    "evidence": [
+     "https://parks.wa.gov/find-parks/state-parks/beacon-rock-state-park",
+     "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "CATALOG DEFECT (not fixed): wa_blownout_direct ('Blownout Direct', 5.9+, pitches 0, FA 'Scott Tracy, Jim Opdycke, Fall 1990', same area) looks like the same line as this row: MP's Blownout page says everyone now climbs 'Blownout Direct (5.9+)', MP's South Face area no longer lists a 'Blownout Direct' route, and MP's 'Blownout (to 1st anchor)' carries the same grade and the same Tracy/Opdycke Fall 1990 FA. Owner to decide which row survives. Stored lat/lng 45.6268,-122.01974 equals the GPS on the MP page (and the area's coordinate): MP coordinates are not evidence, so the pin is neither locked nor changed. The full Blownout (wa_blownout) is 5.10b/c, 2 pitches, 220 ft, FA Jeff Thomas and Ken Currens 1976 per MP; its stored FA 'Steve Strauch and Danny Gates, 1969' disagrees (not my row; reported only)."
+ },
+ "wa_jill_s_thrill": {
+  "area": "wa_south_face_4",
+  "set": {
+   "fa": "McGown, Opdycke, Jill Green, 1985.",
+   "descent_text": "Three rappels from the bolted belays take you back to Snag Ledge or all the way to the ground."
+  },
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/106985373/jills-thrill",
+    "https://www.mountainproject.com/route/105800483/south-east-corner",
+    "https://www.mountainproject.com/area/111087707/south-face",
+    "https://chossclimbers.com/?p=23184",
+    "https://ropewiki.com/Beacon_Rock",
+    "https://parks.wa.gov/find-parks/state-parks/beacon-rock-state-park",
+    "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass",
+    "https://www.openstreetmap.org/way/455598750"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.9",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106985373/jills-thrill",
+      "fact": "5.9 YDS, Trad",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://chossclimbers.com/?p=23184",
+      "fact": "Jill's Thrill (5.9...soft), Sept 2015 report",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "McGown, Opdycke, Jill Green, 1985.",
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106985373/jills-thrill",
+      "fact": "FA: 1985, McGown, Opdycke, Jill Green",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_jill_s_thrill",
+    "column": "pitches",
+    "from": 0,
+    "to": 3,
+    "why": "0 is invalid. MP: 3 pitches (20 m, 18 m, 20 m); chossclimbers 2015 report: '3 mini pitches'. Two independent sources agree (agree-2).",
+    "evidence": [
+     "https://www.mountainproject.com/route/106985373/jills-thrill",
+     "https://chossclimbers.com/?p=23184"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_jill_s_thrill",
+    "column": "length_m",
+    "from": null,
+    "to": 67,
+    "why": "MP states 220 ft (67 m). Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/106985373/jills-thrill"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_jill_s_thrill",
+    "column": "commitment",
+    "from": null,
+    "to": "II",
+    "why": "MP states Grade II. Single source.",
+    "evidence": [
+     "https://www.mountainproject.com/route/106985373/jills-thrill"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_jill_s_thrill",
+    "column": "detailed_rack",
+    "from": null,
+    "to": "Cams from 0.2 to #2 Camalot with the 0.2-0.4 sizes doubled, plus offset nuts. Some fixed pitons on the first pitch; bolted belays at the top of pitches 2 and 3.",
+    "why": "Rack empty. MP lists a single rack 0.2-#2 with doubles 0.2-0.4 and offset nuts; pitons on P1; bolted anchors at P2 and P3 belays. Paragraph, not lockable.",
+    "evidence": [
+     "https://www.mountainproject.com/route/106985373/jills-thrill"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_jill_s_thrill",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Washington State Parks (Beacon Rock State Park)",
+     "parking_pass": "Discover Pass.",
+     "fees": "Discover Pass: $10 for one day or $45 for a year.",
+     "rules": "The south and southeast faces close every Feb 1 for nesting peregrine falcons and are expected to reopen around mid-July. The east face is closed for good. Park hours are 8 a.m. to dusk."
+    },
+    "why": "access is empty. Land manager = Washington State Parks: the Beacon Rock State Park page (WA State Parks and Recreation Commission) states the south and southeast faces close annually Feb 1 and tentatively reopen mid-July, the northwest face is open year-round, the east face is permanently closed, hours 8 a.m. to dusk, Discover Pass $10 day / $45 annual. parks.wa.gov Discover Pass page: a Discover Pass is required for parking at Washington State Parks. OSM tags the Beacon Rock lots 'Washington State Parks discover pass needed'. No climbing permit is mentioned on the park page, so no permit key is written (absence is not evidence). official-1, expires 2027-11-18.",
+    "evidence": [
+     "https://parks.wa.gov/find-parks/state-parks/beacon-rock-state-park",
+     "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass",
+     "https://www.openstreetmap.org/way/455598750"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_jill_s_thrill",
+    "column": "permit",
+    "from": null,
+    "to": "Discover Pass required to park. The south and southeast faces close each year on Feb 1 for nesting peregrine falcons and should reopen around mid-July; the east face is closed for good.",
+    "why": "permit is empty. Same official pages as the access fix (park page re-opened 2026-11-18: July 2026 alert says the south face reopened 7/9/2026). Wording is our own. official-1, expires 2027-11-18.",
+    "evidence": [
+     "https://parks.wa.gov/find-parks/state-parks/beacon-rock-state-park",
+     "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "Stored fa 'FA '85 McGown, Opdycke, Jill Green' carries an 'FA '85' prefix; set rewrites it as names then year (same facts, MP only, unconfirmed). Usually started from Little Wing or SE Corner pitch 1 (MP). A climber died rappelling this route in July 2011 (RopeWiki) - not written anywhere."
+ },
+ "wa_free_for_all_direct": {
+  "area": "wa_south_face_4",
+  "set": {
+   "descent_text": "Rappel from the bolted hangers on the right-hand wall of the belay corner."
+  },
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/108282892/free-for-all-direct",
+    "https://mountainproject.com/route/108372532/free-for-all",
+    "https://www.mountainproject.com/area/111087707/south-face",
+    "https://parks.wa.gov/find-parks/state-parks/beacon-rock-state-park",
+    "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass",
+    "https://www.openstreetmap.org/way/455598750"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.10a",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108282892/free-for-all-direct",
+      "fact": "5.10a YDS, Trad",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_free_for_all_direct",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "0 is invalid. MP does not state a count; it gives 125 ft to a bolted anchor and a rappel from it, so one pitch is implied. Ledger level unconfirmed (single-source, implied).",
+    "evidence": [
+     "https://www.mountainproject.com/route/108282892/free-for-all-direct"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_free_for_all_direct",
+    "column": "length_m",
+    "from": null,
+    "to": 38,
+    "why": "MP states 125 ft (38 m). Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/108282892/free-for-all-direct"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_free_for_all_direct",
+    "column": "detailed_rack",
+    "from": null,
+    "to": "Gear to 3 in; the belay has a bolted anchor.",
+    "why": "Rack empty. MP: gear to 3 in, bolted anchor. Paragraph, not lockable.",
+    "evidence": [
+     "https://www.mountainproject.com/route/108282892/free-for-all-direct"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_free_for_all_direct",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Washington State Parks (Beacon Rock State Park)",
+     "parking_pass": "Discover Pass.",
+     "fees": "Discover Pass: $10 for one day or $45 for a year.",
+     "rules": "The south and southeast faces close every Feb 1 for nesting peregrine falcons and are expected to reopen around mid-July. The east face is closed for good. Park hours are 8 a.m. to dusk."
+    },
+    "why": "access is empty. Land manager = Washington State Parks: the Beacon Rock State Park page (WA State Parks and Recreation Commission) states the south and southeast faces close annually Feb 1 and tentatively reopen mid-July, the northwest face is open year-round, the east face is permanently closed, hours 8 a.m. to dusk, Discover Pass $10 day / $45 annual. parks.wa.gov Discover Pass page: a Discover Pass is required for parking at Washington State Parks. OSM tags the Beacon Rock lots 'Washington State Parks discover pass needed'. No climbing permit is mentioned on the park page, so no permit key is written (absence is not evidence). official-1, expires 2027-11-18.",
+    "evidence": [
+     "https://parks.wa.gov/find-parks/state-parks/beacon-rock-state-park",
+     "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass",
+     "https://www.openstreetmap.org/way/455598750"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_free_for_all_direct",
+    "column": "permit",
+    "from": null,
+    "to": "Discover Pass required to park. The south and southeast faces close each year on Feb 1 for nesting peregrine falcons and should reopen around mid-July; the east face is closed for good.",
+    "why": "permit is empty. Same official pages as the access fix (park page re-opened 2026-11-18: July 2026 alert says the south face reopened 7/9/2026). Wording is our own. official-1, expires 2027-11-18.",
+    "evidence": [
+     "https://parks.wa.gov/find-parks/state-parks/beacon-rock-state-park",
+     "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "FA unknown per MP (fa stays null). Starts left of the pillar, between the Free For Some start and the regular Free For All start (MP). Sister row wa_free_for_all is stored 5.8; MP lists Free for All as 5.8+ (not my row; reported only)."
+ },
+ "wa_northwest_face_pioneer_iron_spike_route": {
+  "area": "wa_northwest_face",
+  "set": {
+   "fa": "Charles Church, George Purser, Frank J. Smith, 1901.",
+   "descent_text": "Walk down the park's hiking trail from the summit.",
+   "hazards": [
+    "The iron spikes left by the 1901 party cannot be trusted: some have been bent over or broken off by rockfall."
+   ]
+  },
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/110737394/pioneeriron-spike-route",
+    "https://www.mountainproject.com/area/111087716/northwest-face",
+    "https://en.wikipedia.org/wiki/Beacon_Rock_State_Park",
+    "https://beaconrockclimbingassociation.blogspot.com",
+    "https://parks.wa.gov/find-parks/state-parks/beacon-rock-state-park",
+    "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass",
+    "https://www.openstreetmap.org/way/455598750",
+    "https://epqs.nationalmap.gov/v1/json (USGS 3DEP point query)"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.7",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/110737394/pioneeriron-spike-route",
+      "fact": "5.7 YDS, Trad",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 4,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/110737394/pioneeriron-spike-route",
+      "fact": "4 pitches",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "length_m",
+    "value": 305,
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/110737394/pioneeriron-spike-route",
+      "fact": "1000 ft (303 m), 4 pitches",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Charles Church, George Purser, Frank J. Smith, 1901.",
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/110737394/pioneeriron-spike-route",
+      "fact": "FA: Charles Church, George Purser, Frank J. Smith, August 24, 1901",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_northwest_face_pioneer_iron_spike_route",
+    "column": "detailed_rack",
+    "from": null,
+    "to": "Long slings for trees, a few large nuts, and #2 and #3 Camalots for the crux pitch.",
+    "why": "Rack empty. MP lists a couple of large nuts, long slings for trees, and #2 and #3 Camalots for the crux. Paragraph, not lockable.",
+    "evidence": [
+     "https://www.mountainproject.com/route/110737394/pioneeriron-spike-route"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_northwest_face_pioneer_iron_spike_route",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Washington State Parks (Beacon Rock State Park)",
+     "parking_pass": "Discover Pass.",
+     "fees": "Discover Pass: $10 for one day or $45 for a year.",
+     "rules": "The northwest face is open all year. The south and southeast faces close every Feb 1 for nesting peregrine falcons until about mid-July, and the east face is closed for good. Park hours are 8 a.m. to dusk."
+    },
+    "why": "access is empty. Land manager = Washington State Parks: the Beacon Rock State Park page (WA State Parks and Recreation Commission) states the south and southeast faces close annually Feb 1 and tentatively reopen mid-July, the northwest face is open year-round, the east face is permanently closed, hours 8 a.m. to dusk, Discover Pass $10 day / $45 annual. parks.wa.gov Discover Pass page: a Discover Pass is required for parking at Washington State Parks. OSM tags the Beacon Rock lots 'Washington State Parks discover pass needed'. No climbing permit is mentioned on the park page, so no permit key is written (absence is not evidence). official-1, expires 2027-11-18.",
+    "evidence": [
+     "https://parks.wa.gov/find-parks/state-parks/beacon-rock-state-park",
+     "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass",
+     "https://www.openstreetmap.org/way/455598750"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_northwest_face_pioneer_iron_spike_route",
+    "column": "permit",
+    "from": null,
+    "to": "Discover Pass required to park. The northwest face stays open all year; the south and southeast faces close from Feb 1 to about mid-July for nesting falcons, and the east face is closed for good.",
+    "why": "permit is empty. Same official pages as the access fix (park page re-opened 2026-11-18: July 2026 alert says the south face reopened 7/9/2026). Wording is our own. official-1, expires 2027-11-18.",
+    "evidence": [
+     "https://parks.wa.gov/find-parks/state-parks/beacon-rock-state-park",
+     "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass"
+    ]
+   }
+  ],
+  "disputed": [
+   "length_m: MP says 1000 ft (303 m) in 4 pitches; stored 305 m. Implausible as a climbing length: Beacon Rock's summit is 848 ft (WA State Parks / Wikipedia) and the USGS 3DEP reads 249 ft at the west Beacon Rock lot beside the NW face, so the rock above the route's base is roughly 600 ft; 1000 ft in 4 pitches would need ~250 ft pitches. Kept unconfirmed, no change proposed."
+  ],
+  "notes": "CATALOG DEFECT (not fixed): wa_pioneer_spike_route ('Pioneer (Spike) Route', 5.7, pitches 0, same area wa_northwest_face) is a second row for this same line (MP: 'Pioneer/Iron Spike Route, also called the Spike Route'). Owner decides which survives. FA is MP only (Church, Purser, Smith, Aug 24 1901); a WCC page and a 1914 Mazama account quoted on the Beacon Rock Climbing Association blog are said to name the same party, but neither page rendered the fact when opened, so fa stays unconfirmed. Discipline note: a 1901 route with fixed iron spikes is graded 5.7 trad by MP; no reason to change discipline. MP says helmets are required by State Park rules; not confirmed on an official page, not written. NW face is open year-round per the park page."
+ }
+}

@@ -125,6 +125,30 @@
    "kmFromPeak": 6.9
   },
   {
+   "id": "ca_deerhorn_mountain_northeast_buttress",
+   "area": "ca_deerhorn_mountain",
+   "trailhead": "Onion Valley Trailhead",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://peaksforfreaks.blogspot.com/2014/09/the-minster-deerhorn-mountain-northwest.html",
+    "fact": "party climbed the NE buttress (class 3) after starting at Onion Valley, Kearsarge Pass, JMT to Bubbs Creek, up Vidette Creek"
+   },
+   "chunk": "out5/q05.json",
+   "notes": "Strong: page about this very buttress, trailhead stated. Trailhead elevation 9,210 ft. Placement is USFS Onion Valley Campground point (~100 m from road-end lot, per earlier pass).",
+   "lat": 36.772538,
+   "lng": -118.341244,
+   "pub": "usfs",
+   "url": "",
+   "corroborated": [
+    {
+     "pub": "osm",
+     "url": "https://www.openstreetmap.org/node/4391057696",
+     "d": 12
+    }
+   ],
+   "kmFromPeak": 9
+  },
+  {
    "id": "ca_diamond_peak_standard_route",
    "area": "ca_diamond_peak",
    "trailhead": "Baxter Pass Trailhead",
@@ -548,6 +572,24 @@
     }
    ],
    "kmFromPeak": 4.9
+  },
+  {
+   "id": "ca_mount_eisen_southeast_ridge_from_black_rock_pass",
+   "area": "ca_mount_eisen",
+   "trailhead": "Sawtooth Pass Trailhead, Mineral King",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://www.climber.org/reports/1998/355.html",
+    "fact": "Trailhead Mineral King; Sawtooth Pass trail, cross-country over Glacier Pass to Blackrock Pass, traverse north to Eisen; matches route text's Glacier Pass / Black Rock Pass crossing"
+   },
+   "chunk": "out5/q13.json",
+   "notes": "MEDIUM: Glacier Pass is crossed only from the Mineral King side, so the text itself points there. A 2026 report starts at Mineral King and ends at Sawtooth Pass TH. Only one placement; Hamilton Lakes ",
+   "lat": 36.453305,
+   "lng": -118.596761,
+   "pub": "nps",
+   "url": "",
+   "corroborated": [],
+   "kmFromPeak": 5.8
   },
   {
    "id": "ca_mount_ericsson_west_ridge_from_lucys_foot_pass",
@@ -2518,6 +2560,72 @@
    "kmFromPeak": 5.5
   },
   {
+   "id": "wa_dragontail_peak_northwest_face",
+   "area": "wa_dragontail_peak",
+   "trailhead": "Stuart Lake Trailhead (Colchuck Lake / Mountaineer Creek trailhead, Eightmile Rd)",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://journeysfromseatosky.blogspot.com/2016/08/dragontail-peak-via-backbone-ridge.html",
+    "fact": "Backbone Ridge on the NW face approached from Stuart Lake Trailhead via Colchuck Lake; Lemke says north-side rock routes are approached via Colchuck Lake"
+   },
+   "chunk": "out5/q05.json",
+   "notes": "Medium: pages are about other routes on the same NW face (Backbone Ridge, Serpentine), not this one; NW-face routes are reached from Colchuck Lake.",
+   "lat": 47.527806,
+   "lng": -120.820515,
+   "pub": "usfs",
+   "url": "",
+   "corroborated": [
+    {
+     "pub": "wta",
+     "url": "https://www.wta.org/go-hiking/hikes/colchuck-lake",
+     "d": 38
+    }
+   ],
+   "kmFromPeak": 5.5
+  },
+  {
+   "id": "wa_earl_peak_standup_creek_route",
+   "area": "wa_earl_peak",
+   "trailhead": "Standup Creek Trailhead (#1369)",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://www.wta.org/go-hiking/hikes/standup-creek",
+    "fact": "trailhead Standup Creek #1369, Road 112 about 1.5 mi from FR 9737 near 29 Pines Campground; matches route text"
+   },
+   "chunk": "out5/q06.json",
+   "notes": "Strong identification (route text, WTA and trip reports all say Standup Creek trail via Road 112). Only one placement (WTA). Earlier OSM parking 47.3691,-120.8387 is ~2 km from the WTA point; WTA says",
+   "lat": 47.369128,
+   "lng": -120.838703,
+   "pub": "osm",
+   "url": "https://www.openstreetmap.org/node/8853906741",
+   "corroborated": [],
+   "kmFromPeak": 4.5
+  },
+  {
+   "id": "wa_east_twin_needle_thread_of_ice",
+   "area": "wa_east_twin_needle",
+   "trailhead": "Goodell Creek Campground (roadhead)",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://stephabegg.com/?p=8734",
+    "fact": "approach from Goodell Creek to Crescent Creek Basin, camp on Chopping Block Ridge; also the route's own roadhead pin"
+   },
+   "chunk": "out5/q06.json",
+   "notes": "Ends at a col, no summit. Trailhead from the route's own pin plus a trip report saying Goodell Creek.",
+   "lat": 48.672953,
+   "lng": -121.267161,
+   "pub": "osm",
+   "url": "https://www.openstreetmap.org/relation/20164855",
+   "corroborated": [
+    {
+     "pub": "other",
+     "url": "https://campflare.com/campground/246852",
+     "d": 13
+    }
+   ],
+   "kmFromPeak": 12
+  },
+  {
    "id": "wa_himmelhorn_stonehenge",
    "area": "wa_himmelhorn",
    "trailhead": "Goodell Creek Trailhead",
@@ -2974,6 +3082,24 @@
    "kmFromPeak": 3.8
   },
   {
+   "id": "wa_mount_stuart_direct_north_ridge",
+   "area": "wa_mount_stuart",
+   "trailhead": "Stuart Lake Trailhead",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://stephabegg.com/?p=8737",
+    "fact": "Direct North Ridge climbed 2006 and 2016 from the Stuart Lake / Colchuck Lake trailhead; climbers trail up Mountaineer Creek; base of north ridge about 3.2 h from car"
+   },
+   "chunk": "out5/q17.json",
+   "notes": "One trip report page covering two climbs of this exact route, so identification is for this route. The Eightmile lot is a separate USFS point; the Stuart Lake/Colchuck lot is the Mountaineer Creek one",
+   "lat": 47.527806,
+   "lng": -120.820515,
+   "pub": "usfs",
+   "url": "",
+   "corroborated": [],
+   "kmFromPeak": 8.5
+  },
+  {
    "id": "wa_mount_washington_olympic_winter_direct",
    "area": "wa_mount_washington_olympic",
    "trailhead": "Jefferson Pass Trailhead (end of FR 2419)",
@@ -3392,6 +3518,30 @@
  ],
  "hold": [
   {
+   "id": "bc_ossa_mountain_east_ridge",
+   "area": "bc_ossa_mountain",
+   "trailhead": "Sigurd Creek Trailhead (Ashlu Creek Road, spur A-200)",
+   "identifiedBy": {
+    "kind": "page",
+    "fact": "2013 VOC Ossa Mountain trip: Sigurd Creek trailhead via Ashlu Creek road, branch A-200 about 2.3 km past the bridges, park on the right just past the fork",
+    "url": "https://wiki.ubc-voc.com/Archive:2013_Ossa_Mountain"
+   },
+   "chunk": "out5/q19.json",
+   "notes": "Moderate, weak on the ridge: the VOC page does not say east or west ridge, and other sources call the west ridge the usual line via Sigurd Creek. Sigurd Creek is the only road-access trailhead found f",
+   "reasons": [
+    "agent flagged the identification as inferred/weak"
+   ],
+   "placements": [
+    {
+     "pub": "osm",
+     "name": "Sigurd Creek Trail / Crooked Falls",
+     "lat": 49.9105873,
+     "lng": -123.322825,
+     "url": "https://www.openstreetmap.org/node/519294543"
+    }
+   ]
+  },
+  {
    "id": "ca_black_hawk_mountain_via_summit_creek_and_mosquito_pass",
    "area": "ca_black_hawk_mountain",
    "trailhead": "Kennedy Meadows Trailhead (Summit Creek trail start)",
@@ -3502,21 +3652,21 @@
   {
    "id": "ca_castle_peak_summit_via_castle_pass",
    "area": "ca_castle_peak_summit",
-   "trailhead": "Donner Summit / Boreal Ridge PCT trailhead (south parking area, Castle Peak Road exit)",
+   "trailhead": "Donner Summit / Boreal Ridge PCT trailhead (Castle Peak Road exit 176, I-80)",
    "identifiedBy": {
     "kind": "page",
-    "url": "https://climber.org/driving/DonnerSummit.html",
-    "fact": "Boreal Ridge / Castle Peak Road exit off I-80; parking north and south of freeway; PCT trailhead there; route text starts on the PCT under I-80 to Castle Pass"
+    "url": "https://www.donnersummitca.com/adventures/castle-peak/",
+    "fact": "hike starts at exit 176 I-80; PCT trailhead south side; parking north side lot or sno-park; route reaches Castle Pass then northeast along ridge to NW turret"
    },
-   "chunk": "out2/r01.json",
-   "notes": "Moderate: the route text puts the start on the PCT passing under I-80, which is the PCT crossing at Boreal. The two placements agree within about 90 m. The north lot (DONERN 39.34100,-120.34748) is th",
+   "chunk": "out5/q02.json",
+   "notes": "Moderate: donnersummitca page confirms Castle Pass route and exit 176 start, but names no trailhead and gives no coordinate (sno-park Google link ~39.3397,-120.3432, consistent). The climber.org GPX p",
    "reasons": [
     "agent flagged the identification as inferred/weak"
    ],
    "placements": [
     {
      "pub": "usfs",
-     "name": "Donner Summit Trailhead",
+     "name": "Donner Summit  Trailhead",
      "lat": 39.339885,
      "lng": -120.343949,
      "url": ""
@@ -3569,36 +3719,6 @@
    ]
   },
   {
-   "id": "ca_deerhorn_mountain_northeast_buttress",
-   "area": "ca_deerhorn_mountain",
-   "trailhead": "Onion Valley Trailhead",
-   "identifiedBy": {
-    "kind": "route_text",
-    "fact": "Cross Kearsarge Pass, descend to Bubbs Creek (Kearsarge Pass trail starts at Onion Valley)"
-   },
-   "chunk": "out2/r02.json",
-   "notes": "First pass missed that the text names Kearsarge Pass. Kearsarge Pass is reached only from Onion Valley on the east side (Onion Valley road end); the Kearsarge Pass trail from Onion Valley is documente",
-   "reasons": [
-    "agent flagged the identification as inferred/weak"
-   ],
-   "placements": [
-    {
-     "pub": "usfs",
-     "name": "Onion Valley Campground",
-     "lat": 36.772538,
-     "lng": -118.341244,
-     "url": ""
-    },
-    {
-     "pub": "osm",
-     "name": "Onion Valley Trailhead",
-     "lat": 36.7724976,
-     "lng": -118.3411219,
-     "url": "https://www.openstreetmap.org/node/4391057696"
-    }
-   ]
-  },
-  {
    "id": "ca_devils_crag_1_standard_route",
    "area": "ca_devils_crag_1",
    "trailhead": "South Lake Trailhead",
@@ -3645,18 +3765,34 @@
    ]
   },
   {
+   "id": "ca_foerster_peak_standard_route",
+   "area": "ca_foerster_peak",
+   "trailhead": "Isberg Pass Trailhead (Isberg Trailhead, Sierra National Forest, near Granite Creek Campground)",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://themtsarecalling.com/foerester/",
+    "fact": "trip report starts at Isberg Trailhead, Isberg Pass trail via the Niche, Sadler Lake; pantilat.wordpress.com 2013 also uses Isberg Pass Trailhead"
+   },
+   "chunk": "out5/q07.json",
+   "notes": "WEAK. Two opened trip reports use Isberg TH; SummitPost (search summary only, page 403, NOT opened) calls Isberg Pass the most direct and lists Tuolumne Meadows and Devils Postpile starts as alternati",
+   "reasons": [
+    "no placement",
+    "agent flagged the identification as inferred/weak"
+   ],
+   "placements": []
+  },
+  {
    "id": "ca_giraud_peak_standard_route",
    "area": "ca_giraud_peak",
    "trailhead": "South Lake Trailhead (Bishop Pass trail)",
    "identifiedBy": {
     "kind": "page",
-    "url": "https://climber.org/reports/2001/758.html",
-    "fact": "Trailhead field: South Lake; over Bishop Pass, Dusy Basin, SE face of Giraud. Second report climber.org 2013/1841 also Trailhead: South Lake"
+    "url": "https://climber.org/reports/2013/1841.html",
+    "fact": "Trailhead: South Lake; over Bishop Pass, Dusy Basin, north ridge to notch, SE face chute"
    },
-   "chunk": "out2/r03.json",
-   "notes": "The first pass's inference is now stated outright: two climber.org reports list South Lake as the trailhead field. Stored class 2 vs page class 3 on SE face. Single coordinate source (USFS).",
+   "chunk": "out5/q07.json",
+   "notes": "Climber.org 2013/1841 (opened) states South Lake outright; an earlier pass also had 2001/758. Search results show every approach going Bishop Pass and Dusy Basin. The two placements are ~35 m apart. T",
    "reasons": [
-    "agent flagged the identification as inferred/weak",
     "placements disagree by > 300 m"
    ],
    "placements": [
@@ -3666,6 +3802,13 @@
      "lat": 37.169305,
      "lng": -118.565813,
      "url": ""
+    },
+    {
+     "pub": "other",
+     "name": "South Lake trailhead (Bishop Pass Trail)",
+     "lat": 37.16965,
+     "lng": -118.565671,
+     "url": "https://www.americansouthwest.net/california/eastern-sierra/bishop-pass-trail.html"
     },
     {
      "pub": "osm",
@@ -3680,13 +3823,68 @@
      "lat": 37.213716,
      "lng": -118.610071,
      "url": "https://www.openstreetmap.org/node/88323865"
+    }
+   ]
+  },
+  {
+   "id": "ca_joe_devel_peak_standard_route",
+   "area": "ca_joe_devel_peak",
+   "trailhead": "Cottonwood Lakes Trailhead (Horseshoe Meadow)",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://www.climber.org/TripReports/2012/1805.html",
+    "fact": "Trailhead field: Cottonwood Lakes; Old Army Pass then Perrin Creek, class 2 rib to Joe Devel"
+   },
+   "chunk": "out5/q10.json",
+   "notes": "WEAK-to-moderate. Two pages agree on the Horseshoe Meadow area: climber.org (Cottonwood Lakes TH, Old Army Pass) and backcountrysights (Horseshoe Meadows, Cottonwood Pass Trail to PCT then Rock Creek,",
+   "reasons": [
+    "agent flagged the identification as inferred/weak"
+   ],
+   "placements": [
+    {
+     "pub": "usfs",
+     "name": "Cottonwood Lakes Trailhead",
+     "lat": 36.453362,
+     "lng": -118.169987,
+     "url": ""
+    },
+    {
+     "pub": "other",
+     "name": "Cottonwood Lakes trailhead",
+     "lat": 36.4532,
+     "lng": -118.1699,
+     "url": "https://www.hikespeak.com/trails/cottonwood-lakes-trail-new-army-pass/"
     },
     {
      "pub": "osm",
-     "name": "South Lake Trailhead",
-     "lat": 37.1692908,
-     "lng": -118.5658261,
-     "url": "https://www.openstreetmap.org/node/3710095154"
+     "name": "Cottonwood Lakes Trailhead",
+     "lat": 36.4530973,
+     "lng": -118.1698934,
+     "url": "https://www.openstreetmap.org/node/3424755204"
+    }
+   ]
+  },
+  {
+   "id": "ca_lamont_peak_lamont_peak_trail",
+   "area": "ca_lamont_peak",
+   "trailhead": "Lamont Peak trailhead, Canebrake Road saddle (CANLAM)",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://climber.org/driving/canebrake.html",
+    "fact": "Lamont Peak/Spanish Needle trailhead at the saddle on Canebrake Road, lot west side, trail east; matches route text"
+   },
+   "chunk": "out5/q10.json",
+   "notes": "Placement is a GPS waypoint from a driving-guide site (not a land manager); lies 2.6 km from the summit. SummitPost 403.",
+   "reasons": [
+    "only non-land-manager placements (other)"
+   ],
+   "placements": [
+    {
+     "pub": "other",
+     "name": "CANEBRAKE RD AT LAMONT TRAILHEAD",
+     "lat": 35.787783,
+     "lng": -118.071883,
+     "url": "https://climber.org/driving/images/canebrake.gpx"
     }
    ]
   },
@@ -3727,11 +3925,11 @@
    "trailhead": "Tanglefoot Trailhead",
    "identifiedBy": {
     "kind": "page",
-    "url": "https://climber.org/reports/2001/793.html",
-    "fact": "Mokelumne Peak climbed from Tanglefoot Trailhead (dirt road from Bear River Reservoir); search summary of SummitPost calls it the most common and quickest approach"
+    "url": "https://climber.org/reports/2010/1760.html",
+    "fact": "2010 report starts at Tanglefoot TH via Lower Bear River Reservoir road; USFS page says Tanglefoot trail skirts the W and N slopes of the peak"
    },
-   "chunk": "out2/r05.json",
-   "notes": "Weak-ish: route text is empty, so identification rests on Tanglefoot being the commonly described route (one opened page; SummitPost 403, hikearizona 403). Alternatives exist (Munson Meadows from Plas",
+   "chunk": "out5/q12.json",
+   "notes": "MODERATE: USFS and climber.org confirm Tanglefoot as a start; 'standard' rests on search summaries (SummitPost 403). Alternatives exist (Munson Meadows, Hwy 88 in winter). USFS page prints no coordina",
    "reasons": [
     "agent flagged the identification as inferred/weak"
    ],
@@ -3795,15 +3993,23 @@
    "area": "ca_mount_baldwin",
    "trailhead": "Convict Lake Trailhead",
    "identifiedBy": {
-    "kind": "route_text",
-    "fact": "Follow the trail up from Convict Lake to Bright Dot Lake"
+    "kind": "page",
+    "url": "https://themtsarecalling.com/baldwin",
+    "fact": "Route text: trail up from Convict Lake to Bright Dot Lake; two opened reports (themtsarecalling, climber.org 2004/1313) start and return at the Convict Lake trailhead"
    },
-   "chunk": "out4/p03.json",
-   "notes": "The USFS Convict Lake Trail point and OSM agree (~5 m) at the lake's trail start; the other USFS point is ~600 m north, probably the road-side lot lower down. I could not confirm which is the lot, so ",
+   "chunk": "out5/q12.json",
+   "notes": "Identification strong. Two USFS points about 0.55 km apart: the signed-name 'Convict Lake Trailhead' (northern) is the lot; 'Convict Lake Trail' is the lake-side trail start (earlier pass: OSM agrees ",
    "reasons": [
     "placements disagree by > 300 m"
    ],
    "placements": [
+    {
+     "pub": "usfs",
+     "name": "Convict Lake Trailhead",
+     "lat": 37.600105,
+     "lng": -118.853813,
+     "url": ""
+    },
     {
      "pub": "usfs",
      "name": "Convict Lake Trail",
@@ -3814,23 +4020,62 @@
     {
      "pub": "osm",
      "name": "Convict Lake Loop Trailhead",
-     "lat": 37.59512,
-     "lng": -118.85269,
+     "lat": 37.5951204,
+     "lng": -118.8526936,
      "url": "https://www.openstreetmap.org/node/89673138"
     },
     {
+     "pub": "osm",
+     "name": "Convict Lake Day Use Parking",
+     "lat": 37.5893401,
+     "lng": -118.854191,
+     "url": "https://www.openstreetmap.org/node/320949967"
+    }
+   ]
+  },
+  {
+   "id": "ca_mount_barnard_standard_route",
+   "area": "ca_mount_barnard",
+   "trailhead": "Whitney Portal Trailhead",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://www.scaruffi.com/travel/wales.html",
+    "fact": "SW slope of Barnard climbed from Whitney Portal over Carillon-Cleaver Pass and Wallace Lake; ridge to summit easy class 2"
+   },
+   "chunk": "out5/q12.json",
+   "notes": "WEAK: one personal trip report. Other starts exist (Shepherd Pass, George Creek, open only Apr 15-May 15 and Dec 15-Jan 1 per search summary). SummitPost 403, hikearizona 403. Whitney Portal is the be",
+   "reasons": [
+    "agent flagged the identification as inferred/weak",
+    "placements disagree by > 300 m"
+   ],
+   "placements": [
+    {
      "pub": "usfs",
-     "name": "Convict Lake Trailhead",
-     "lat": 37.600105,
-     "lng": -118.853813,
+     "name": "Whitney Portal Trailhead",
+     "lat": 36.586905,
+     "lng": -118.240112,
      "url": ""
     },
     {
      "pub": "osm",
-     "name": "Convict Lake Loop Trailhead",
-     "lat": 37.5951204,
-     "lng": -118.8526936,
-     "url": "https://www.openstreetmap.org/node/89673138"
+     "name": "Whitney Portal National Recreation Trail Upper Trailhead",
+     "lat": 36.5861395,
+     "lng": -118.2408494,
+     "url": "https://www.openstreetmap.org/node/88405221"
+    },
+    {
+     "pub": "osm",
+     "name": "Whitney Portal Trailhead",
+     "lat": 36.5868781,
+     "lng": -118.2401401,
+     "url": "https://www.openstreetmap.org/node/88405285"
+    },
+    {
+     "pub": "osm",
+     "name": "Whitney Portal National Recreation Trail Lower Trailhead",
+     "lat": 36.5974831,
+     "lng": -118.1863982,
+     "url": "https://www.openstreetmap.org/node/87948949"
     }
    ]
   },
@@ -3871,6 +4116,23 @@
      "url": "https://www.openstreetmap.org/node/88255655"
     }
    ]
+  },
+  {
+   "id": "ca_mount_florence_standard_route",
+   "area": "ca_mount_florence",
+   "trailhead": "Tuolumne Meadows (Rafferty Creek / JMT south start near Tuolumne Lodge)",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://www.snwburd.com/bob/trip_reports/florence_n_1.html",
+    "fact": "Parked near Tuolumne Lodge, Rafferty Creek Trail, Vogelsang Pass, Lewis Creek, cross-country to Florence"
+   },
+   "chunk": "out5/q13.json",
+   "notes": "WEAK: one opened report (snwburd) plus a SummitPost search summary (403 when opened) say Tuolumne Meadows; earlier Happy Isles reports are a far longer start and not chosen. No exact lot coordinate pr",
+   "reasons": [
+    "no placement",
+    "agent flagged the identification as inferred/weak"
+   ],
+   "placements": []
   },
   {
    "id": "ca_mount_guyot_guyot_pass_route",
@@ -3971,6 +4233,44 @@
    ]
   },
   {
+   "id": "ca_mount_maclure_standard_route",
+   "area": "ca_mount_maclure",
+   "trailhead": "Lyell Canyon Trailhead (Dog Lake lot, Tuolumne Meadows)",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "http://peaksforfreaks.blogspot.com/2012/07/mt-lyell-mt-maclure_21.html",
+    "fact": "Lyell/Maclure trip starts at Tuolumne Meadows Lodge Road lots, second lot is the Lyell Canyon TH; JMT up Lyell Canyon, leave trail, Lyell-Maclure saddle, Maclure SE ridge"
+   },
+   "chunk": "out5/q15.json",
+   "notes": "Fairly solid: the blog names the second lot as Lyell Canyon TH and says either lot works; NPS Dog Lake Trailhead Parking matches its coordinate to ~10 m. yosemitehikes.com says the trailhead is at the",
+   "reasons": [
+    "placements disagree by > 300 m"
+   ],
+   "placements": [
+    {
+     "pub": "nps",
+     "name": "Dog Lake Trailhead Parking",
+     "lat": 37.878162,
+     "lng": -119.338857,
+     "url": ""
+    },
+    {
+     "pub": "other",
+     "name": "second lot / Lyell Canyon TH",
+     "lat": 37.8781,
+     "lng": -119.3388,
+     "url": "http://peaksforfreaks.blogspot.com/2012/07/mt-lyell-mt-maclure_21.html"
+    },
+    {
+     "pub": "osm",
+     "name": "Lyell Canyon Trailhead",
+     "lat": 37.8766313,
+     "lng": -119.3456662,
+     "url": "https://www.openstreetmap.org/node/2443957941"
+    }
+   ]
+  },
+  {
    "id": "ca_mount_mcadie_via_arc_pass",
    "area": "ca_mount_mcadie",
    "trailhead": "Whitney Portal Trailhead",
@@ -4016,20 +4316,119 @@
    ]
   },
   {
+   "id": "ca_mount_newcomb_southwest_slope",
+   "area": "ca_mount_newcomb",
+   "trailhead": "Whitney Portal Trailhead",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://www.snwburd.com/bob/trip_reports/newcomb_1.html",
+    "fact": "Whitney Trail from Whitney Portal to Discovery Pass, drop to Crabtree drainage, Crabtree Pass, Newcomb"
+   },
+   "chunk": "out5/q16.json",
+   "notes": "MODERATE/INFERRED: route's own text names the Discovery Pass + Crabtree Pass approach, which only the Whitney Portal trail gives; trip report confirms that line from Whitney Portal. But the SW slope i",
+   "reasons": [
+    "agent flagged the identification as inferred/weak",
+    "placements disagree by > 300 m"
+   ],
+   "placements": [
+    {
+     "pub": "usfs",
+     "name": "Whitney Portal Trailhead",
+     "lat": 36.586905,
+     "lng": -118.240112,
+     "url": ""
+    },
+    {
+     "pub": "osm",
+     "name": "Whitney Portal National Recreation Trail Upper Trailhead",
+     "lat": 36.5861395,
+     "lng": -118.2408494,
+     "url": "https://www.openstreetmap.org/node/88405221"
+    },
+    {
+     "pub": "osm",
+     "name": "Whitney Portal Trailhead",
+     "lat": 36.5868781,
+     "lng": -118.2401401,
+     "url": "https://www.openstreetmap.org/node/88405285"
+    },
+    {
+     "pub": "osm",
+     "name": "Whitney Portal National Recreation Trail Lower Trailhead",
+     "lat": 36.5974831,
+     "lng": -118.1863982,
+     "url": "https://www.openstreetmap.org/node/87948949"
+    }
+   ]
+  },
+  {
+   "id": "ca_mount_young_standard_route",
+   "area": "ca_mount_young",
+   "trailhead": "Whitney Portal Trailhead",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://www.snwburd.com/bob/trip_reports/hale_1.html",
+    "fact": "WEAK/inferred: Hale+Young day trips start at Whitney Portal (earlier passes); search results call Whitney Portal the obvious trailhead, shortest via North Fork Lone Pine Creek; Guitar Lake / High Sierra Trail starts exist for long trips"
+   },
+   "chunk": "out5/q17.json",
+   "notes": "Weak: peak-level, no page names a standard start; SummitPost 403. Owner may prefer to hold.",
+   "reasons": [
+    "agent flagged the identification as inferred/weak",
+    "placements disagree by > 300 m"
+   ],
+   "placements": [
+    {
+     "pub": "usfs",
+     "name": "Whitney Portal Trailhead",
+     "lat": 36.586905,
+     "lng": -118.240112,
+     "url": ""
+    },
+    {
+     "pub": "osm",
+     "name": "Whitney Portal National Recreation Trail Upper Trailhead",
+     "lat": 36.5861395,
+     "lng": -118.2408494,
+     "url": "https://www.openstreetmap.org/node/88405221"
+    },
+    {
+     "pub": "osm",
+     "name": "Whitney Portal Trailhead",
+     "lat": 36.5868781,
+     "lng": -118.2401401,
+     "url": "https://www.openstreetmap.org/node/88405285"
+    },
+    {
+     "pub": "osm",
+     "name": "Whitney Portal National Recreation Trail Lower Trailhead",
+     "lat": 36.5974831,
+     "lng": -118.1863982,
+     "url": "https://www.openstreetmap.org/node/87948949"
+    }
+   ]
+  },
+  {
    "id": "ca_muah_mountain_via_mulkey_pass",
    "area": "ca_muah_mountain",
    "trailhead": "Mulkey Pass Trailhead (Horseshoe Meadow Road)",
    "identifiedBy": {
     "kind": "route_text",
-    "fact": "From Horseshoe Meadow climb to Mulkey Pass",
-    "url": "https://climber.org/reports/2003/1781.html"
+    "fact": "From Horseshoe Meadow climb to Mulkey Pass; climber.org driving page names the unmarked Mulkey Pass trailhead as the efficient start for Mulkey Pass"
    },
-   "chunk": "out/c05.json",
-   "notes": "Report trailhead field Mulkey Pass and Sage Flat. Mulkey Pass TH is an unmarked old road off Horseshoe Meadow Road, not the USFS Cottonwood TH points; no placement found.",
+   "chunk": "out5/q18.json",
+   "notes": "Mulkey Pass TH is an unmarked dirt road with a closed-to-vehicles sign; parking is a horse-trailer lot on the north side of the paved road. Placement is one non-land-manager source; Cottonwood Pass TH",
    "reasons": [
-    "no placement"
+    "only non-land-manager placements (other)"
    ],
-   "placements": []
+   "placements": [
+    {
+     "pub": "other",
+     "name": "Mulkey Pass Trailhead",
+     "lat": 36.450649977,
+     "lng": -118.161360025,
+     "url": "https://climber.org/driving/images/HorseshoeMdw.gpx"
+    }
+   ]
   },
   {
    "id": "ca_needham_mountain_standard_route",
@@ -4183,14 +4582,14 @@
   {
    "id": "ca_recess_peak_standard_route",
    "area": "ca_recess_peak",
-   "trailhead": "Bear Ridge Trailhead (Lake Edison dam vista)",
+   "trailhead": "Bear Ridge Trailhead (Lake Thomas Edison dam overlook)",
    "identifiedBy": {
     "kind": "page",
-    "fact": "Two Recess Peak reports start at Bear Ridge TH near the Lake Thomas Edison dam overlook: Bear Ridge trail about 5 mi to JMT/PCT junction, cross-country SE to the SW ridge/arete (class 3)",
-    "url": "https://themtsarecalling.com/recess/"
+    "fact": "Burd SPS trip report starts at Bear Ridge TH near Lake Edison dam overlook, Bear Ridge Cutoff to JMT junction, cross-country to SW arete; SummitPost summary also calls Bear Ridge the normal route",
+    "url": "https://www.snwburd.com/bob/trip_reports/recess_1.html"
    },
-   "chunk": "out2/r09.json",
-   "notes": "REPLACES the first pass (Bear Creek Diversion Dam, from a 1999 Hilgard-Gabb multi-peak trip). The two peak-specific day reports use Bear Ridge, which is the west-side day approach. The USFS 'Bear Ridg",
+   "chunk": "out5/q20.json",
+   "notes": "Moderate. Bear Ridge is the normal route per Burd's report and the SummitPost summary (summary only; page 403). Alternative: Bear Creek Diversion Dam by OHV road (4WD), Mosquito Flat from the east. US",
    "reasons": [
     "agent flagged the identification as inferred/weak",
     "placements disagree by > 300 m"
@@ -4204,18 +4603,42 @@
      "url": ""
     },
     {
-     "pub": "other",
-     "name": "Bear Creek Trail parking, Lake Edison",
-     "lat": 37.36225,
-     "lng": -118.98574,
-     "url": "https://climber.org/driving/images/KaiserPass.gpx"
-    },
-    {
      "pub": "osm",
      "name": "Bear Ridge Trailhead",
      "lat": 37.3690275,
      "lng": -118.9806864,
      "url": "https://www.openstreetmap.org/node/2129407583"
+    }
+   ]
+  },
+  {
+   "id": "ca_red_kaweah_west_face",
+   "area": "ca_red_kaweah",
+   "trailhead": "Sawtooth Trailhead, Mineral King",
+   "identifiedBy": {
+    "kind": "page",
+    "fact": "Burd report of the West Face: Sawtooth TH, Glacier Pass, Hands and Knees Pass, Little Five Lakes, Big Arroyo, then cross-country N to cirque lakes and West Face",
+    "url": "https://www.snwburd.com/bob/trip_reports/red_kaweah_1.html"
+   },
+   "chunk": "out5/q20.json",
+   "notes": "Weak-to-moderate: the report describes this exact west-face route and starts at Sawtooth, and the SummitPost summary says Mineral King is the nearest trailhead to Big Arroyo. Big Arroyo is also reacha",
+   "reasons": [
+    "agent flagged the identification as inferred/weak"
+   ],
+   "placements": [
+    {
+     "pub": "nps",
+     "name": "Sawtooth",
+     "lat": 36.453305,
+     "lng": -118.596761,
+     "url": ""
+    },
+    {
+     "pub": "osm",
+     "name": "Sawtooth Trailhead",
+     "lat": 36.4533013,
+     "lng": -118.5967614,
+     "url": "https://www.openstreetmap.org/node/4875372925"
     }
    ]
   },
@@ -4249,15 +4672,22 @@
    "trailhead": "South Manter Meadow Trailhead (Big Meadow)",
    "identifiedBy": {
     "kind": "page",
-    "fact": "Southern Manter Meadow trailhead is the usual one for Rockhouse; Manter Creek Trail 35E12 to Little Manter Meadow, saddle, then about 1 mi off trail north to the summit, class 2 north gully",
-    "url": "https://climber.org/driving/BigMeadow.html"
+    "url": "https://climber.org/driving/BigMeadow.html",
+    "fact": "South Manter Meadow is the trailhead most people use for Rockhouse; Manter Creek Trail 35E12 east, then about 1 mi off trail north"
    },
-   "chunk": "out2/r09.json",
-   "notes": "Moderate: two pages (climber.org driving guide, Kern River Sierra guide) name the south Manter trailhead as the usual one. Also Long Valley/Canebrake (east, via locked-gate spur) is an alternative wit",
+   "chunk": "out5/q21.json",
+   "notes": "Two pages (climber.org driving guide, Kern River Sierra) name South Manter as the usual start; the east approach via Long Valley/Rockhouse Basin (LNGRCK 35.8916,-118.1239, gated junction about 6800 ft",
    "reasons": [
     "agent flagged the identification as inferred/weak"
    ],
    "placements": [
+    {
+     "pub": "other",
+     "name": "South Manter Meadow Trailhead",
+     "lat": 35.867609978,
+     "lng": -118.326259971,
+     "url": "https://climber.org/driving/images/Canebrake.gpx"
+    },
     {
      "pub": "other",
      "name": "South Manter Meadow Trailhead",
@@ -4275,47 +4705,16 @@
    ]
   },
   {
-   "id": "ca_rodgers_peak_standard_route",
-   "area": "ca_rodgers_peak",
-   "trailhead": "Agnew Meadows (Shadow Lake / River trailhead)",
-   "identifiedBy": {
-    "kind": "page",
-    "url": "https://climber.org/reports/2006/1567.html",
-    "fact": "Trailhead: Agnew Meadow; Rodgers Peak climbed from Twin Island Lakes basin via PCT/Thousand Island Lake; class 2 summit ridge. A 1999 loop report (climber.org/reports/1999/446.html) climbs Rodgers by a SE-face ramp, class 2"
-   },
-   "chunk": "out2/r10.json",
-   "notes": "Moderate confidence. Agnew Meadows is the start of the PCT/Thousand Island approach used by the 2006 report. The USFS 'Agnew Mead. Wildflower Th' point the first pass used is 0.5 km east of the Shadow",
-   "reasons": [
-    "agent flagged the identification as inferred/weak"
-   ],
-   "placements": [
-    {
-     "pub": "usfs",
-     "name": "Shadow Lake Trailhead",
-     "lat": 37.682096,
-     "lng": -119.08618,
-     "url": ""
-    },
-    {
-     "pub": "other",
-     "name": "AGNWSR Agnew Mdw Shadow and River trailhead 8300",
-     "lat": 37.68209,
-     "lng": -119.08613,
-     "url": "https://climber.org/driving/images/395Waypoints.gpx"
-    }
-   ]
-  },
-  {
    "id": "ca_san_joaquin_mountain_san_joaquin_ridge",
    "area": "ca_san_joaquin_mountain",
-   "trailhead": "Minaret Summit Trailhead",
+   "trailhead": "Minaret Summit / Minaret Vista (gated road above Mammoth Mountain)",
    "identifiedBy": {
     "kind": "page",
-    "url": "https://climber.org/reports/2002/1010.html",
-    "fact": "Climber.org report: drove from Mammoth Lakes to the Minaret Summit trailhead for San Joaquin Mountain; route text follows jeep road along the ridge"
+    "url": "https://www.tedmuller.us/Outdoor/Hiking/2012/120727-SanJoaquinRidge.htm",
+    "fact": "San Joaquin Ridge hike starts near Minaret Summit where the road is gated; 5 mi west of Mammoth Lakes on SR-203 then 2.5 mi north on dirt road"
    },
-   "chunk": "out/c06.json",
-   "notes": "No official candidate or OSM point matches Minaret Summit (road summit above Mammoth Mountain, roughly 37.65,-119.09 is my recollection only, not a placement). Other reports 1999/515 and 2000/682 star",
+   "chunk": "out5/q21.json",
+   "notes": "Consistent with the route text (jeep road then ridge trail). No coordinate on any opened page. A search summary (unopened SummitPost) claimed a 4WD Deadman Pass trailhead at about 37.685,-119.066; not",
    "reasons": [
     "no placement"
    ],
@@ -4324,18 +4723,34 @@
   {
    "id": "ca_sawtooth_peak_sierra_standard_route",
    "area": "ca_sawtooth_peak_sierra",
-   "trailhead": "PCT crossing at Canebrake Road",
+   "trailhead": "Pacific Crest Trail crossing of Canebrake Road (park at Chimney Peak Campground)",
    "identifiedBy": {
     "kind": "page",
-    "url": "https://climber.org/reports/2013/1828.html",
-    "fact": "Climber.org 2013 report on Sawtooth Peak and Spanish Needle lists Trailhead: PCT crossing at Canebrake Rd"
+    "url": "https://climber.org/driving/canebrake.html",
+    "fact": "PCT trailhead (CANPCT) serves Sawtooth (S); small easily missed sign; parking is at Chimney Peak campground, not at the crossing"
    },
-   "chunk": "out/c06.json",
-   "notes": "No official candidates in chunk. Other climber.org Sawtooth Peak reports are the Mineral King Sawtooth, a different peak. One report only; name only, needs placing (PCT crossing of Canebrake Road, Ker",
+   "chunk": "out5/q21.json",
+   "notes": "CANPCT and the campground are about 330 m apart; the campground is where cars park. SAWTOS waypoint matches the peak coordinate. Moderate confidence (one guide family; a search summary, unopened, agre",
    "reasons": [
-    "no placement"
+    "only non-land-manager placements (other)",
+    "agent flagged the identification as inferred/weak"
    ],
-   "placements": []
+   "placements": [
+    {
+     "pub": "other",
+     "name": "CANPCT PCT crossing",
+     "lat": 35.835716605,
+     "lng": -118.043983221,
+     "url": "https://climber.org/driving/images/Canebrake.gpx"
+    },
+    {
+     "pub": "other",
+     "name": "CHMCMP Chimney Peak Campground",
+     "lat": 35.83884,
+     "lng": -118.04312,
+     "url": "https://climber.org/driving/images/Canebrake.gpx"
+    }
+   ]
   },
   {
    "id": "ca_scylla_northwest_slope",
@@ -4383,22 +4798,6 @@
    ]
   },
   {
-   "id": "ca_silver_peak_standard_route",
-   "area": "ca_silver_peak",
-   "trailhead": "Onion Spring Trailhead (Lake Edison)",
-   "identifiedBy": {
-    "kind": "page",
-    "url": "https://climber.org/reports/2018/1878.html",
-    "fact": "Climber.org 2018 report: Silver Peak 11878 class 2 started from Vermilion Resort on Lake Thomas Edison via the little-used Onion Spring trailhead"
-   },
-   "chunk": "out/c06.json",
-   "notes": "Not in USFS list (Mono Creek TH is on the far side of the lake). Report 2013/1835 also lists Lake Edison as trailhead. Name only, needs placing.",
-   "reasons": [
-    "no placement"
-   ],
-   "placements": []
-  },
-  {
    "id": "ca_sirretta_peak_standard_route",
    "area": "ca_sirretta_peak",
    "trailhead": "Sirretta Trailhead (North Big Meadow), Kern Plateau",
@@ -4423,58 +4822,36 @@
    ]
   },
   {
-   "id": "ca_spanish_mountain_north_ridge",
-   "area": "ca_spanish_mountain",
-   "trailhead": "Crown Valley Trailhead",
+   "id": "ca_smith_mountain_albanita_trail_and_northeast_ridge",
+   "area": "ca_smith_mountain",
+   "trailhead": "Albanita Trail parking area at end of paved Monache Jeep Road (Smith Mountain)",
    "identifiedBy": {
     "kind": "page",
-    "url": "https://climber.org/reports/2006/1581.html",
-    "fact": "Report: started at Crown Valley Trailhead, trail to Statham Meadow, use trail to saddle just north of Geraldine Lakes, climbed Spanish Mountain"
+    "url": "https://kernriversierra.com/hike/Smith_Mountain_Hike.html",
+    "fact": "Signed trailhead at end of Monache Jeep Rd pavement; from parking take old road signed Albanita Trail; 3.3 mi RT, 1100 ft gain"
    },
-   "chunk": "out/c06.json",
-   "notes": "Strong match to the route text (Statham Meadow, Geraldine Lakes saddle). Not in the official candidates list; name only, needs placing (Crown Valley, Sierra NF).",
+   "chunk": "out5/q22.json",
+   "notes": "Identified by a page about this very route. No coordinate on any page opened. USFS Blackrock Trailhead is a different place; climber.org SMITHJ is only a road junction. Name only for OSM match; USFS A",
    "reasons": [
     "no placement"
    ],
    "placements": []
   },
   {
-   "id": "ca_spanish_needle_north_ridge",
-   "area": "ca_spanish_needle",
-   "trailhead": "Pacific Crest Trail at Canebrake Road (park at Chimney Creek Campground)",
+   "id": "ca_spanish_mountain_north_ridge",
+   "area": "ca_spanish_mountain",
+   "trailhead": "Crown Valley Trailhead",
    "identifiedBy": {
     "kind": "page",
-    "url": "https://climber.org/reports/2013/1828.html",
-    "fact": "Trailhead: PCT crossing at Canebrake Rd; PCT south to a broad saddle ~1/2 mi north of the peak; traverse east of the north ridge, class 3. Route text here: PCT saddle north of summit"
+    "url": "https://www.climber.org/reports/2006/1581.html",
+    "fact": "Trailhead Crown Valley; via Statham Meadow, Spanish Lake, 8632 ft junction, use trail to saddle north of Geraldine Lakes, class 1 to summit"
    },
-   "chunk": "out2/r10.json",
-   "notes": "Confirmed by the report, climber.org's Canebrake driving page and BLM (PCT crosses Canebrake Rd just south of the campground). The 2006 report (1559) also started at Chimney Creek. Another start (Rode",
+   "chunk": "out5/q22.json",
+   "notes": "Matches route text (Statham Meadow, Geraldine saddle). Rancheria is an alternative that joins the same trail, so Crown Valley is the route-text-consistent start. Climber.org page opened; SummitPost an",
    "reasons": [
-    "only non-land-manager placements (other)"
+    "no placement"
    ],
-   "placements": [
-    {
-     "pub": "other",
-     "name": "Chimney Creek Campground",
-     "lat": 35.83917,
-     "lng": -118.0423,
-     "url": "https://www.blm.gov/visit/chimney-creek-campground"
-    },
-    {
-     "pub": "other",
-     "name": "CHMCMP Chimney Peak campground",
-     "lat": 35.83884,
-     "lng": -118.04312,
-     "url": "https://climber.org/driving/images/canebrake.gpx"
-    },
-    {
-     "pub": "other",
-     "name": "CANPCT Canebrake Rd at Pacific Crest Tr",
-     "lat": 35.835717,
-     "lng": -118.043983,
-     "url": "https://climber.org/driving/canebrake.html"
-    }
-   ]
+   "placements": []
   },
   {
    "id": "ca_striped_mountain_standard_route",
@@ -4482,11 +4859,11 @@
    "trailhead": "Taboose Pass Trailhead",
    "identifiedBy": {
     "kind": "page",
-    "fact": "Wikipedia lists Taboose Pass first among routes, easiest class 2; climber.org 2013/1838 climbed from Taboose Pass camp",
-    "url": "https://en.wikipedia.org/wiki/Striped_Mountain"
+    "url": "https://peaksforfreaks.blogspot.com/2014/05/striped-mountain-goodale-mountain.html",
+    "fact": "Taboose Pass trail, leave it ~0.3 mi before the pass, SE into basin, climb Striped; a second 2019 report also used Taboose Pass and the NE slope class 2"
    },
-   "chunk": "out4/p07.json",
-   "notes": "Moderate confidence: Wikipedia names Taboose Pass and West Ridge as routes without naming a trailhead; Sawmill Pass is a possible alternative.",
+   "chunk": "out5/q23.json",
+   "notes": "Moderate: two trip reports plus a search summary say Taboose is the usual start; Sawmill Pass (USFS 36.9388,-118.2902) is an alternative and no page ranks them. Placements agree within ~35 m.",
    "reasons": [
     "agent flagged the identification as inferred/weak"
    ],
@@ -4500,10 +4877,10 @@
     },
     {
      "pub": "other",
-     "name": "TABCRK Taboose Pass trailhead 5400",
-     "lat": 37.009199,
-     "lng": -118.3269,
-     "url": "https://climber.org/driving/images/395Waypoints.gpx"
+     "name": "TABCRK Taboose Pass Trailhead 5400",
+     "lat": 37.009199977,
+     "lng": -118.326900005,
+     "url": "https://climber.org/driving/images/TaboosePass.gpx"
     },
     {
      "pub": "osm",
@@ -4517,28 +4894,45 @@
   {
    "id": "ca_taylor_dome_west_ridge",
    "area": "ca_taylor_dome",
-   "trailhead": "Big Meadow Trailhead",
+   "trailhead": "Big Meadow Trailhead (Taylor Dome trailhead on the Big Meadow loop, FR 23S07)",
    "identifiedBy": {
-    "kind": "route_text",
-    "fact": "Take the Big Meadow Trail"
+    "kind": "page",
+    "url": "https://kernriversierra.com/hike/Taylor_Dome.html",
+    "fact": "Big Meadow Trail from upper (Big Meadow) trailhead 7825 ft, leave at saddle ~1.3 mi in at head of Taylor Creek, ~2 mi off trail round trip to Taylor Dome; matches route text"
    },
-   "chunk": "out/c06.json",
-   "notes": "Page agrees with route text. Frog Meadow (USFS candidate) is a different trailhead, 24 km away; not used. Name only, needs placing.",
+   "chunk": "out5/q23.json",
+   "notes": "Good. Placements are from a climbing-site GPS file, not a land manager; USFS Frog Meadow is a different trailhead 24 km away (not used). Big Meadow trailhead sits ~100 yd from South Manter TH.",
    "reasons": [
-    "no placement"
+    "only non-land-manager placements (other)"
    ],
-   "placements": []
+   "placements": [
+    {
+     "pub": "other",
+     "name": "TAYLTH Taylor Meadow Trailhead 7800",
+     "lat": 35.86761,
+     "lng": -118.32626,
+     "url": "https://climber.org/driving/images/BigMeadow.gpx"
+    },
+    {
+     "pub": "other",
+     "name": "MANTRS South Manter Mdw Trailhead 7800 (adjacent, ~100 yd)",
+     "lat": 35.86883,
+     "lng": -118.32632,
+     "url": "https://climber.org/driving/images/BigMeadow.gpx"
+    }
+   ]
   },
   {
    "id": "ca_thunder_mountain_sierra_thunder_col_and_east_ridge",
    "area": "ca_thunder_mountain_sierra",
-   "trailhead": "Road's End Trailhead (Bubbs Creek), Cedar Grove",
+   "trailhead": "Roads End Trailhead (Cedar Grove, Kings Canyon NP)",
    "identifiedBy": {
-    "kind": "route_text",
-    "fact": "Go up the Bubbs Creek and East Lake drainages past Lake Reflection to Thunder Col"
+    "kind": "page",
+    "url": "https://www.snwburd.com/bob/trip_reports/thunder_s_1.html",
+    "fact": "Bob Burd trip report: Roads End, Bubbs Creek trail, East Lake, Lake Reflection, pass south, east ridge to summit"
    },
-   "chunk": "out2/r10.json",
-   "notes": "WEAK: no trip report or route page for Thunder Mountain was readable (SummitPost 403, search budget exhausted). Identification rests on the route's own text naming the Bubbs Creek drainage, whose trai",
+   "chunk": "out5/q24.json",
+   "notes": "Upgraded from inferred: a trip report of this exact line (pass then east ridge) starts at Roads End. Placements ~150 m apart; Cedar Grove point is the general area.",
    "reasons": [
     "agent flagged the identification as inferred/weak"
    ],
@@ -4549,13 +4943,6 @@
      "lat": 36.794924,
      "lng": -118.582577,
      "url": ""
-    },
-    {
-     "pub": "other",
-     "name": "ROADND Roads End permit kiosk",
-     "lat": 36.795272,
-     "lng": -118.582812,
-     "url": "https://climber.org/driving/images/SequoiaKings.gpx"
     },
     {
      "pub": "usfs",
@@ -4644,18 +5031,33 @@
   {
    "id": "ca_vandever_mountain_south_slope_from_farewell_gap",
    "area": "ca_vandever_mountain",
-   "trailhead": "Mineral King Trailhead",
+   "trailhead": "Eagle/Mosquito trailhead (Mineral King road end)",
    "identifiedBy": {
     "kind": "page",
-    "url": "https://themtsarecalling.com/vandever/",
-    "fact": "hike to Vandever started at Mineral King trailhead; route goes via Farewell Gap"
+    "url": "https://hikingwalking.com/destinations/ca/ca_sws/mineral_king/white_chief",
+    "fact": "Eagle/Mosquito parking at the end of Mineral King Road; Farewell Gap trail starts at the Eagle Creek trailhead at road end (search summary of a guide)"
    },
-   "chunk": "out/c07.json",
-   "notes": "Nominatim/Overpass not used per brief v2. Route text says hike to Farewell Gap. NPS candidate Farewell Gap - Franklin Lakes is a trail junction, not the lot. Needs a placement for Mineral King TH.",
+   "chunk": "out5/q25.json",
+   "notes": "Moderate: SummitPost 403, so the Eagle Creek/Farewell Gap statement is from a search summary; the hikingwalking page confirms the Eagle/Mosquito lot at road end. NPS Eagle-Mosquito point is the road-e",
    "reasons": [
-    "no placement"
+    "agent flagged the identification as inferred/weak"
    ],
-   "placements": []
+   "placements": [
+    {
+     "pub": "nps",
+     "name": "Eagle-Mosquito",
+     "lat": 36.448545,
+     "lng": -118.595366,
+     "url": ""
+    },
+    {
+     "pub": "osm",
+     "name": "Eagle-Mosquito Trailhead",
+     "lat": 36.4484539,
+     "lng": -118.5953495,
+     "url": "https://www.openstreetmap.org/node/2382074194"
+    }
+   ]
   },
   {
    "id": "co_atlantic_peak_north_ridge",
@@ -4663,30 +5065,46 @@
    "trailhead": "McCullough Gulch Trailhead",
    "identifiedBy": {
     "kind": "route_text",
-    "fact": "Trail up McCullough Gulch ... parking is restricted at this trailhead"
+    "fact": "Trail up McCullough Gulch then a talus ridge; parking restricted; climb13ers lists the Atlantic North Ridge from McCullough Gulch TH"
    },
-   "chunk": "out/c07.json",
-   "notes": "Nominatim/Overpass not used per brief v2. No official candidate matches (Gold Hill is the Mayflower side). 14ers.com lists McCullough Gulch TH at 11,100 ft (search summary). Parking permit/shuttle res",
+   "chunk": "out5/q01.json",
+   "notes": "Only one printed coordinate (climb13ers, converted from DMS). 14ers.com route page prints none and says small lot 1.4 mi up CR 851, then 0.3 mi walk past gate. Not the North McCullough TH (different f",
    "reasons": [
-    "no placement"
+    "only non-land-manager placements (other)"
    ],
-   "placements": []
+   "placements": [
+    {
+     "pub": "other",
+     "name": "McCullough Gulch TH",
+     "lat": 39.39851,
+     "lng": -106.06926,
+     "url": "https://www.climb13ers.com/colorado-13ers/un13841--atlantic-peak"
+    }
+   ]
   },
   {
    "id": "co_california_peak_south_ridge",
    "area": "co_california_peak",
    "trailhead": "Lily Lake / Huerfano Creek Trailhead",
    "identifiedBy": {
-    "kind": "page",
-    "url": "https://www.climb13ers.com/colorado-13ers/california-peak",
-    "fact": "Lily Lake/Huerfano Creek TH (10,725 ft); 8.7 mi RT, 3,815 ft"
+    "kind": "route_text",
+    "fact": "accessed from the Lily Lake road"
    },
-   "chunk": "out/c07.json",
-   "notes": "Nominatim/Overpass not used per brief v2. Route text: accessed from Lily Lake road. Page lists only the North Ridge; south ridge is an optional descent. Zapata TH candidate is not this one.",
+   "chunk": "out5/q02.json",
+   "notes": "Moderate: route text names the Lily Lake road; climb13ers lists only the North Ridge (south ridge is a descent option) from that TH. Alternate Zapata/Raspberry TH (37.637533,-105.471567 per climb13ers",
    "reasons": [
-    "no placement"
+    "only non-land-manager placements (other)",
+    "agent flagged the identification as inferred/weak"
    ],
-   "placements": []
+   "placements": [
+    {
+     "pub": "other",
+     "name": "Lily Lake/Huerfano Creek TH",
+     "lat": 37.623486,
+     "lng": -105.472903,
+     "url": "https://www.climb13ers.com/colorado-13ers/california-peak"
+    }
+   ]
   },
   {
    "id": "co_casco_peak_north_ridge",
@@ -4695,14 +5113,22 @@
    "identifiedBy": {
     "kind": "page",
     "url": "https://www.climb13ers.com/colorado-13ers/casco-peak",
-    "fact": "Casco North Ridge from South Halfmoon Creek TH, 11.85 mi RT, 4,555 ft"
+    "fact": "North Ridge (Class 2+) from Frasco Benchmark, combined with French Mountain, starts at South Halfmoon Creek TH, 10,290 ft"
    },
-   "chunk": "out/c07.json",
-   "notes": "Nominatim/Overpass not used per brief v2. Not in official candidates (North Halfmoon TH is a different road). Alternate: North Fork Lake Creek TH off CO-82 (USFS 39.121339,-106.534909) for the Lackawa",
+   "chunk": "out5/q02.json",
+   "notes": "Page is about this exact route and matches the stored text (combined with French and Frasco). Placement is climb13ers only (converted from DMS); not in USFS candidates (North Halfmoon TH is a differen",
    "reasons": [
-    "no placement"
+    "only non-land-manager placements (other)"
    ],
-   "placements": []
+   "placements": [
+    {
+     "pub": "other",
+     "name": "South Halfmoon Creek TH",
+     "lat": 39.150567,
+     "lng": -106.455289,
+     "url": "https://www.climb13ers.com/colorado-13ers/casco-peak"
+    }
+   ]
   },
   {
    "id": "co_cathedral_peak_south_ridge_and_couloir",
@@ -4767,16 +5193,40 @@
    ]
   },
   {
-   "id": "co_culebra_peak_northwest_ridge",
-   "area": "co_culebra_peak",
-   "trailhead": "Cielo Vista Ranch headquarters (Culebra Peak, private)",
+   "id": "co_dyer_mountain_southeast_slopes",
+   "area": "co_dyer_mountain",
+   "trailhead": "Iowa Gulch - Leadville Trailhead",
    "identifiedBy": {
     "kind": "page",
-    "url": "https://www.14ers.com/route.php?route=cule1",
-    "fact": "start from ranch; upper 4WD TH 11,650, Four Way 11,250, ranch HQ; $150 fee; no other legal route"
+    "url": "https://www.climb13ers.com/colorado-13ers/dyer-mountain",
+    "fact": "SE flank is part of the circuit from Iowa Gulch TH (11,650 ft, 4.5 mi, 2205 ft); Hiking Project describes the easy south side from the same Iowa Gulch cul-de-sac"
    },
-   "chunk": "out/c07.json",
-   "notes": "Nominatim/Overpass not used per brief v2. Private land, fee. None of the official candidates (16+ km north) applies. Needs a coordinate for the ranch North HQ gate.",
+   "chunk": "out5/q05.json",
+   "notes": "Medium: no page titled southeast slopes; stored text 'short climb from a high trailhead' fits Iowa Gulch, not the 12 mi SE Ridge from Fourmile. Placement is climb13ers printed coordinate (N39 13 46.98",
+   "reasons": [
+    "only non-land-manager placements (other)"
+   ],
+   "placements": [
+    {
+     "pub": "other",
+     "name": "Iowa Gulch - Leadville TH",
+     "lat": 39.22972,
+     "lng": -106.20085,
+     "url": "https://www.climb13ers.com/colorado-13ers/trailhead/iowa-gulch---leadville"
+    }
+   ]
+  },
+  {
+   "id": "co_emerald_peak_south_southwest_ridge",
+   "area": "co_emerald_peak",
+   "trailhead": "Rockdale / Clohesy Lake Trailhead",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://www.climb13ers.com/colorado-13ers/emerald-peak",
+    "fact": "S/SW Ridge from Rockdale/Clohesy Lake TH, 8.8 mi RT, 3515 ft; route text also says Clohesy Lake above Winfield"
+   },
+   "chunk": "out5/q06.json",
+   "notes": "Page prints no TH coordinate. USFS Cloyses Trailhead (38.950901,-106.407437) may be this lake but the name does not match, so not reported as a placement. Place by name/OSM.",
    "reasons": [
     "no placement"
    ],
@@ -4785,14 +5235,14 @@
   {
    "id": "co_fletcher_mountain_southeast_ridge",
    "area": "co_fletcher_mountain",
-   "trailhead": "Blue Lakes / Monte Cristo Creek Trailhead",
+   "trailhead": "Blue Lakes Trailhead (Blue Lakes Road, CR 850)",
    "identifiedBy": {
     "kind": "page",
-    "url": "https://www.climb13ers.com/colorado-13ers/fletcher-mountain",
-    "fact": "Blue Lakes - Monte Cristo Ck TH, 5 mi RT, 2,250 ft (SW Ridge figures)"
+    "url": "https://www.14ers.com/route.php?route=flet1",
+    "fact": "14ers.com Fletcher Mountain Southeast Ridge route: trailhead Blue Lakes, ~11,700 ft, via Blue Lakes road (850) from CO 9"
    },
-   "chunk": "out/c07.json",
-   "notes": "Nominatim/Overpass not used per brief v2. Route text: from the Blue Lakes road. Not in official candidates.",
+   "chunk": "out5/q07.json",
+   "notes": "Page is for this exact route (name matches). No trailhead coordinate printed (only a summit-area pair); not in officialCandidates. Name for OSM match: Blue Lakes Trailhead, Summit County CO. The gate/",
    "reasons": [
     "placements disagree by > 300 m"
    ],
@@ -4820,14 +5270,22 @@
    "identifiedBy": {
     "kind": "page",
     "url": "https://www.climb13ers.com/colorado-13ers/french-mountain",
-    "fact": "French SE ridge: South Halfmoon Creek TH, 10 mi RT, 3,650 ft"
+    "fact": "climb13ers 'French Mtn. SE Ridge & flank Route' trailhead: South Halfmoon Creek TH, 10,290 ft, FR110J"
    },
-   "chunk": "out/c07.json",
-   "notes": "Nominatim/Overpass not used per brief v2. Route text: Halfmoon drainage.",
+   "chunk": "out5/q07.json",
+   "notes": "Strong identification: climb13ers' only French Mountain route is named SE Ridge. Coordinate converted from the DMS printed on that page (39 09 02.04 N, 106 27 19.04 W). Not in officialCandidates (USFS",
    "reasons": [
-    "no placement"
+    "only non-land-manager placements (other)"
    ],
-   "placements": []
+   "placements": [
+    {
+     "pub": "other",
+     "name": "South Halfmoon Creek TH",
+     "lat": 39.150567,
+     "lng": -106.455289,
+     "url": "https://www.climb13ers.com/colorado-13ers/french-mountain"
+    }
+   ]
   },
   {
    "id": "co_half_peak_northwest_ridge",
@@ -4854,22 +5312,6 @@
    ]
   },
   {
-   "id": "co_horseshoe_mountain_east_slopes",
-   "area": "co_horseshoe_mountain",
-   "trailhead": "Fourmile Creek Trailhead",
-   "identifiedBy": {
-    "kind": "page",
-    "url": "https://www.14ers.com/route.php?route=201208120738083",
-    "fact": "Fourmile Creek TH 11,600 ft via CR 18 from Fairplay; none of the USFS candidates is it"
-   },
-   "chunk": "out/c08.json",
-   "notes": "Fourmile Creek TH 11,600 ft via CR 18 from Fairplay; none of the USFS candidates is it",
-   "reasons": [
-    "no placement"
-   ],
-   "placements": []
-  },
-  {
    "id": "co_huerfano_peak_south_slopes",
    "area": "co_huerfano_peak",
    "trailhead": "Lily Lake Trailhead (Huerfano)",
@@ -4891,39 +5333,47 @@
    "trailhead": "Burns Gulch Trailhead",
    "identifiedBy": {
     "kind": "page",
-    "url": "https://www.climb13ers.com/colorado-13ers/niagara-peak",
-    "fact": "Jones Mtn NE Ridge (1.2 mi / 540 ft one way) is climbed from the Burns Gulch TH in the American-Jones-Niagara sequence"
+    "url": "https://www.climb13ers.com/colorado-13ers/jones-mountain-2",
+    "fact": "Page for Jones Mountain (A) lists an NE Ridge Route from Burns Gulch via American Peak, 9.6 mi / 4150 ft round trip"
    },
-   "chunk": "out2/r12.json",
-   "notes": "Replaces first pass (American Basin, Lake City side). Summit-to-TH only ~4 km. A climb13ers page named jones-mountain is a different Jones (Sawatch, Ptarmigan Lake TH): ignore. Single placement; this ",
+   "chunk": "out5/q10.json",
+   "notes": "Now from the page titled Jones Mountain (A), which names the NE Ridge Route. Single placement (climb13ers coordinate); no land-manager point matches. Other starts mentioned there: Cuba Gulch (east) an",
    "reasons": [
     "only non-land-manager placements (other)"
    ],
    "placements": [
     {
      "pub": "other",
-     "name": "Burns Gulch TH",
+     "name": "Burns Gulch Trailhead",
      "lat": 37.91798,
      "lng": -107.558,
-     "url": "https://www.climb13ers.com/colorado-13ers/niagara-peak"
+     "url": "https://www.climb13ers.com/colorado-13ers/jones-mountain-2"
     }
    ]
   },
   {
    "id": "co_jupiter_mountain_southwest_slopes",
    "area": "co_jupiter_mountain",
-   "trailhead": "Needleton (Durango & Silverton train stop)",
+   "trailhead": "Needleton Bridge Trailhead (Durango & Silverton train stop)",
    "identifiedBy": {
     "kind": "page",
-    "url": "https://www.14ers.com/route.php?route=eolu3",
-    "fact": "Chicago Basin is reached from the Needleton stop (14ers Eolus route page); Jupiter page itself has no route text, only Chicago Basin trip titles. Route text says reached by train. Needleton not in USFS list"
+    "url": "https://www.climb13ers.com/colorado-13ers/jupiter-mountain",
+    "fact": "SW Slopes route starts at Needleton Bridge TH, train only, 6 mi to Chicago Basin"
    },
-   "chunk": "out/c08.json",
-   "notes": "Chicago Basin is reached from the Needleton stop (14ers Eolus route page); Jupiter page itself has no route text, only Chicago Basin trip titles. Route text says reached by train. Needleton not in USF",
+   "chunk": "out5/q10.json",
+   "notes": "Strong identification (route page plus 14ers Chicago Basin approach). 14ers prints no trailhead coordinate (its map centre 37.62195,-107.62272 is not the stop). Needleton not in USFS list; the stop is",
    "reasons": [
-    "no placement"
+    "only non-land-manager placements (other)"
    ],
-   "placements": []
+   "placements": [
+    {
+     "pub": "other",
+     "name": "Needleton Bridge TH",
+     "lat": 37.6335,
+     "lng": -107.69282,
+     "url": "https://www.climb13ers.com/colorado-13ers/jupiter-mountain"
+    }
+   ]
   },
   {
    "id": "co_mount_eolus_northeast_ridge",
@@ -5000,18 +5450,26 @@
   {
    "id": "co_north_apostle_southwest_ridge",
    "area": "co_north_apostle",
-   "trailhead": "Clear Creek/Winfield/Apostles Trailhead",
+   "trailhead": "Clear Creek / Winfield / Apostles Trailhead (South Winfield)",
    "identifiedBy": {
     "kind": "page",
-    "fact": "North Apostle SW Ridge from Clear Creek/Winfield/Apostles TH",
+    "fact": "North Apostle SW Ridge Route Class 2 from Clear Creek/Winfield/Apostles TH 10,880 ft, 8 mi RT 3,320 ft",
     "url": "https://www.climb13ers.com/colorado-13ers/north-apostle"
    },
-   "chunk": "out/c09.json",
-   "notes": "Winfield area; USFS South Fork Clear Creek TH (4 km) is a different place, not matched. Needs OSM match. Alt Clohesy Lake TH 10,880 ft.",
+   "chunk": "out5/q18.json",
+   "notes": "Coordinate converted from printed DMS N38 57 15.17 W106 24 32.46. Page elevation 10,880 equals its Clohesy Lake figure; 14ers reports call South Winfield TH 10,600, so the two names may be adjacent lo",
    "reasons": [
-    "no placement"
+    "only non-land-manager placements (other)"
    ],
-   "placements": []
+   "placements": [
+    {
+     "pub": "other",
+     "name": "Clear Creek/Winfield/Apostles TH",
+     "lat": 38.954214,
+     "lng": -106.409017,
+     "url": "https://www.climb13ers.com/colorado-13ers/north-apostle"
+    }
+   ]
   },
   {
    "id": "co_red_mountain_north_ridge_from_culebra_peak",
@@ -5057,15 +5515,23 @@
    "trailhead": "Snowmass Creek Trailhead",
    "identifiedBy": {
     "kind": "page",
-    "fact": "Snowmass East Slopes from Snowmass Creek, 8,400 ft",
-    "url": "https://www.14ers.com/route.php?route=snow1"
+    "url": "https://www.14ers.com/route.php?route=snow1",
+    "fact": "East Slopes route starts at Snowmass Creek trailhead, 8400 ft, 11.3 mi up Snowmass Creek Rd from CO 82; 22 mi RT, 5800 ft gain"
    },
-   "chunk": "out/c09.json",
-   "notes": "Not in USFS list (Geneva Lake/Silver Creek TH are south-side approaches, a different route). Needs OSM match.",
+   "chunk": "out5/q22.json",
+   "notes": "USFS placement is an INFERRED match by position and road (end of Snowmass Creek road, 10.6 km north of the peak); the USFS name is 'Snowmass Trailhead', not 'Snowmass Creek', and 'East Snowmass Trailh",
    "reasons": [
-    "no placement"
+    "agent flagged the identification as inferred/weak"
    ],
-   "placements": []
+   "placements": [
+    {
+     "pub": "usfs",
+     "name": "Snowmass Trailhead",
+     "lat": 39.198895,
+     "lng": -107.000566,
+     "url": ""
+    }
+   ]
   },
   {
    "id": "co_stewart_peak_east_ridge",
@@ -5105,15 +5571,23 @@
    "trailhead": "Molas Pass - Elk Park Trailhead",
    "identifiedBy": {
     "kind": "page",
-    "fact": "Trinity West Ridge via Elk Creek / Vestal Creek from Molas Pass - Elk Park TH",
-    "url": "https://www.climb13ers.com/colorado-13ers/trinity-peak"
+    "url": "https://www.climb13ers.com/colorado-13ers/trinity-peak",
+    "fact": "Trinity Peak West Ridge (class 4) page lists Molas Pass - Elk Park Trailhead, 10630 ft; route text says Vestal Basin"
    },
-   "chunk": "out/c09.json",
-   "notes": "Route text says Vestal Basin; page agrees (via Elk Park). Other Vestal access is Needleton by train. Not in USFS list; needs OSM.",
+   "chunk": "out5/q24.json",
+   "notes": "Coordinate converted from printed 37 44 52.44 N, 107 41 19.63 W. Alternate Needleton/Elk Park by train exists. Long backpack (about 18 mi approach).",
    "reasons": [
-    "no placement"
+    "only non-land-manager placements (other)"
    ],
-   "placements": []
+   "placements": [
+    {
+     "pub": "other",
+     "name": "Molas Pass - Elk Park Trailhead",
+     "lat": 37.7479,
+     "lng": -107.68879,
+     "url": "https://www.climb13ers.com/colorado-13ers/trinity-peak"
+    }
+   ]
   },
   {
    "id": "co_turret_peak_northwest_slope",
@@ -5121,15 +5595,23 @@
    "trailhead": "Needleton Bridge Trailhead",
    "identifiedBy": {
     "kind": "page",
-    "fact": "Turret NW Slope from Needleton Bridge (narrow-gauge drop), 8,235 ft",
-    "url": "https://www.climb13ers.com/colorado-13ers/turret-peak"
+    "url": "https://www.climb13ers.com/colorado-13ers/turret-peak",
+    "fact": "Turret NW slope trailhead is Needleton Bridge; camp in Chicago Basin / Ruby Creek, traverse to Pigeon-Turret saddle"
    },
-   "chunk": "out/c09.json",
-   "notes": "Train-only access per page; boarding in Silverton for Needleton reportedly not possible since 2021, check. Route text says Chicago Basin; same Needleton start.",
+   "chunk": "out5/q25.json",
+   "notes": "Single page with printed coordinate (37 38 00.61 N, 107 41 34.14 W); no USFS match. Train/foot-only start.",
    "reasons": [
-    "no placement"
+    "only non-land-manager placements (other)"
    ],
-   "placements": []
+   "placements": [
+    {
+     "pub": "other",
+     "name": "Needleton Bridge",
+     "lat": 37.6335,
+     "lng": -107.69282,
+     "url": "https://www.climb13ers.com/colorado-13ers/turret-peak"
+    }
+   ]
   },
   {
    "id": "co_vermilion_peak_southeast_ridge",
@@ -5158,34 +5640,57 @@
   {
    "id": "co_windom_peak_west_ridge",
    "area": "co_windom_peak",
-   "trailhead": "Needleton Trailhead",
+   "trailhead": "Needleton Bridge Trailhead",
    "identifiedBy": {
     "kind": "page",
-    "fact": "Windom West Ridge from Needleton via Chicago Basin",
-    "url": "https://www.14ers.com/route.php?route=wind1"
+    "url": "https://www.14ers.com/route.php?route=wind1",
+    "fact": "Windom West Ridge from Twin Lakes in Chicago Basin; trailhead Needleton (train), 18 mi RT / 6000 ft from Needleton"
    },
-   "chunk": "out/c09.json",
-   "notes": "Same Needleton start as Sunlight; 14ers.com 11,100 ft is Chicago Basin. Route text says Twin Lakes basin, consistent.",
+   "chunk": "out5/q25.json",
+   "notes": "Placement is climb13ers' Needleton Bridge coordinate from the Turret page (Windom's own climb13ers URL 404'd); 14ers.com gives no trailhead coordinate. Train/foot-only.",
    "reasons": [
-    "no placement"
+    "only non-land-manager placements (other)"
    ],
-   "placements": []
+   "placements": [
+    {
+     "pub": "other",
+     "name": "Needleton Bridge",
+     "lat": 37.6335,
+     "lng": -107.69282,
+     "url": "https://www.climb13ers.com/colorado-13ers/turret-peak"
+    }
+   ]
   },
   {
    "id": "me_baxter_peak_hunt_trail",
    "area": "me_baxter_peak",
-   "trailhead": "Katahdin Stream Trailhead",
+   "trailhead": "Katahdin Stream Campground (Hunt Trail trailhead)",
    "identifiedBy": {
     "kind": "page",
-    "fact": "Hunt Trail starts at Katahdin Stream trailhead",
-    "url": "https://en.wikipedia.org/wiki/Katahdin"
+    "url": "https://jerrybryan.com/hiking/hunt.html",
+    "fact": "Hunt Trail runs from Katahdin Stream Campground to Baxter Peak; campground about 5.2 mi south of the summit on the AT"
    },
-   "chunk": "out/c09.json",
-   "notes": "Hunt Trail = final AT leg to Baxter Peak. Not in NPS list. Campground coordinate seen only in a search summary (TopoQuest 45.88727,-68.99671), so not reported as a placement; trailhead is at the campg",
+   "chunk": "out5/q01.json",
+   "notes": "One personal-page GPS fix; no official coordinate found. Search summaries (not opened) give campground at about 45.8870,-68.9996 (The Dyrt) and 45.88697,-68.99887 (AllTrails): all within about 100 m. ",
    "reasons": [
-    "no placement"
+    "agent flagged the identification as inferred/weak"
    ],
-   "placements": []
+   "placements": [
+    {
+     "pub": "other",
+     "name": "Hunt Trail trailhead GPS",
+     "lat": 45.88744,
+     "lng": -68.99822,
+     "url": "https://jerrybryan.com/hiking/hunt.html"
+    },
+    {
+     "pub": "osm",
+     "name": "Katahdin Stream Campground",
+     "lat": 45.8871166,
+     "lng": -68.9988205,
+     "url": "https://www.openstreetmap.org/way/1104853913"
+    }
+   ]
   },
   {
    "id": "me_crocker_mountain_appalachian_trail_from_route_27",
@@ -5205,13 +5710,14 @@
   {
    "id": "me_saddleback_mountain_appalachian_trail_north_from_route_4",
    "area": "me_saddleback_mountain",
-   "trailhead": "Appalachian Trail Route 4 Trailhead (Saddleback)",
+   "trailhead": "Appalachian Trail Route 4 trailhead (Sandy River Plantation), lot west of ME 4",
    "identifiedBy": {
-    "kind": "route_text",
-    "fact": "Appalachian Trail north from Route 4"
+    "kind": "page",
+    "url": "https://www.mainetrailfinder.com/print/trails/trail/appalachian-trail-saddleback-mountain",
+    "fact": "Park in the lot west of ME 4, cross carefully, head north on the AT; 30 mi north of Farmington or 9 mi south of Rangeley"
    },
-   "chunk": "out/c09.json",
-   "notes": "Route name names it; no page opened. Search summary: lot west/southwest of ME 4, Sandy River Plantation, ~9 mi south of Rangeley. Needs OSM/ATC placement.",
+   "chunk": "out5/q21.json",
+   "notes": "Route name itself names the start. The page printed only a geocache link coordinate near 44.912,-70.521, not labelled as the trailhead, so not reported as a placement. Place by OSM name match.",
    "reasons": [
     "no placement"
    ],
@@ -5222,28 +5728,90 @@
    "area": "me_spaulding_mountain",
    "trailhead": "Caribou Pond Road (Caribou Valley Road) gate parking",
    "identifiedBy": {
-    "kind": "route_text",
-    "fact": "route name: Appalachian Trail from Caribou Pond Road"
+    "kind": "page",
+    "url": "https://mainebyfoot.com/spaulding-mountain-near-carrabassett-valley/",
+    "fact": "3.8 mi up Caribou Pond Rd to yellow gate and large lot, then ~0.5 mi dirt road north to the AT; route name itself says Caribou Pond Road"
    },
-   "chunk": "out/c10.json",
-   "notes": "Page (mainebyfoot.com Spaulding): from the Sugarloaf access road go 1 mi west on Route 27, left onto Caribou Pond Rd, 3.8 mi to a yellow gate and large parking area, then 0.5 mi dirt road to the AT. N",
+   "chunk": "out5/q23.json",
+   "notes": "Identification strong (route name + page). Placement WEAK: one Backpacker waypoint, not a land manager; a search summary showed a different value (45.0407,-70.3596) for the same page, and Waymarking 4",
    "reasons": [
-    "no placement"
+    "only non-land-manager placements (other)",
+    "agent flagged the identification as inferred/weak"
    ],
-   "placements": []
+   "placements": [
+    {
+     "pub": "other",
+     "name": "Caribou Valley Road parking",
+     "lat": 45.0395317,
+     "lng": -70.3446198,
+     "url": "https://www.backpacker.com/trips/appalachian-trail-caribou-valley-road-to-me-16/?scope=anon"
+    }
+   ]
+  },
+  {
+   "id": "me_sugarloaf_mountain_appalachian_trail_to_sugarloaf",
+   "area": "me_sugarloaf_mountain",
+   "trailhead": "Caribou Pond Road (Caribou Valley Road) gate parking",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://mainebyfoot.com/sugarloaf-mountain-carrabassett-valley/",
+    "fact": "AT route starts at Caribou Valley Road: 3.8 mi up to large lot and yellow gate, 0.5 mi road walk to AT, 2.8 mi AT + 0.6 mi side trail to summit; mainetrailfinder lists Caribou Pond Rd as one of two AT trailheads"
+   },
+   "chunk": "out5/q23.json",
+   "notes": "Route name says only Appalachian Trail; the Route 27 crossing is a second real start (mainetrailfinder), so identification is moderate. Placement WEAK: single Backpacker waypoint, not a land manager; ",
+   "reasons": [
+    "only non-land-manager placements (other)",
+    "agent flagged the identification as inferred/weak"
+   ],
+   "placements": [
+    {
+     "pub": "other",
+     "name": "Caribou Valley Road parking",
+     "lat": 45.0395317,
+     "lng": -70.3446198,
+     "url": "https://www.backpacker.com/trips/appalachian-trail-caribou-valley-road-to-me-16/?scope=anon"
+    }
+   ]
   },
   {
    "id": "me_the_horn_saddleback_appalachian_trail_north_from_route_4_past_saddleback",
    "area": "me_the_horn_saddleback",
-   "trailhead": "Appalachian Trail Route 4 trailhead (Piazza Rock / Saddleback, MATC lot)",
+   "trailhead": "Appalachian Trailhead on Route 4 (Saddleback / Piazza Rock lot)",
    "identifiedBy": {
-    "kind": "route_text",
-    "fact": "route name: AT north from Route 4, past Saddleback"
+    "kind": "page",
+    "url": "https://mainebyfoot.com/saddleback-mountain-rangeley/",
+    "fact": "large lot on Route 4 about 10 mi east of Rangeley; AT north 5.7 mi to Saddleback, 7.3 mi to The Horn; route name says from Route 4"
    },
-   "chunk": "out/c10.json",
-   "notes": "Page: large lot on Route 4 about 10 mi east of Rangeley; Piazza Rock 1.8 mi, Saddleback summit 5.7 mi, Horn 7.3 mi. Route name matches. No coordinate found.",
+   "chunk": "out5/q24.json",
+   "notes": "Placement is a single onX driving-directions point, not labeled as the trailhead on the page: weak; prefer an OSM name match.",
    "reasons": [
-    "no placement"
+    "only non-land-manager placements (other)",
+    "agent flagged the identification as inferred/weak"
+   ],
+   "placements": [
+    {
+     "pub": "other",
+     "name": "Appalachian Trailhead on Route 4 (driving-directions point)",
+     "lat": 44.8868563,
+     "lng": -70.5406393,
+     "url": "https://www.onxmaps.com/backcountry/trails/hiking/us/maine/saddleback-mountain-and-the-horn-via-appalachian-trail-rezkkkppezlk"
+    }
+   ]
+  },
+  {
+   "id": "nv_mount_rose_mount_rose_trail",
+   "area": "nv_mount_rose",
+   "trailhead": "Mount Rose Summit Trailhead (SR 431 pass lot)",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://climber.org/driving/MtRoseTahoe.html",
+    "fact": "WEAK-moderate: route text says trail from the highway pass; climber.org calls the pass lot the highest trailhead (8,900 ft); earlier pass cited tahoetrailguide, which I did not reopen"
+   },
+   "chunk": "out5/q17.json",
+   "notes": "No land-manager coordinate found (climber.org only links a GPX waypoint ROSETH; SummitPost trailhead page 403). Earlier Wikipedia pass point (39.31333,-119.89722) is pass-level only. USFS Tahoe Meadow",
+   "reasons": [
+    "no placement",
+    "agent flagged the identification as inferred/weak"
    ],
    "placements": []
   },
@@ -5253,14 +5821,23 @@
    "trailhead": "Upper Works Trailhead",
    "identifiedBy": {
     "kind": "route_text",
-    "fact": "Starts at Upper Works / Tahawus Road"
+    "fact": "Starts at Upper Works / Tahawus Road; confirmed by pureadirondacks page (Upper Works Rd trailhead, East River trail, herd path)"
    },
-   "chunk": "out/c10.json",
-   "notes": "Tahawus Road dead end, Newcomb. NYSDEC backcountry page confirms Upper Works parking. A search summary said a newer lot by MacNaughton Cottage replaced the old lot (unverified). No coordinate found.",
+   "chunk": "out5/q01.json",
+   "notes": "Name is right; coordinate is WEAK: one waterfall-hobby page, about 10 years old, no land-manager coordinate. A search summary (not opened) mentions a lot about 0.6 mi south of Upper Works and a newer ",
    "reasons": [
-    "no placement"
+    "only non-land-manager placements (other)",
+    "agent flagged the identification as inferred/weak"
    ],
-   "placements": []
+   "placements": [
+    {
+     "pub": "other",
+     "name": "Upper Works trailhead (just past old McIntyre Furnace)",
+     "lat": 44.080845,
+     "lng": -74.054883,
+     "url": "https://nnywaterfalls.com/allenbrookessexco/allenfalls/index.html"
+    }
+   ]
   },
   {
    "id": "ny_cliff_mountain_uphill_brook_herd_path",
@@ -5268,14 +5845,23 @@
    "trailhead": "Upper Works Trailhead",
    "identifiedBy": {
     "kind": "route_text",
-    "fact": "Starts at Upper Works, Newcomb"
+    "fact": "Starts at Upper Works, Newcomb; Calamity Brook Trail to unmarked herd path"
    },
-   "chunk": "out/c10.json",
-   "notes": "NYSDEC backcountry page: Calamity Brook Trail starts at Upper Works. No coordinate found.",
+   "chunk": "out5/q03.json",
+   "notes": "Identification solid (route's own text; Newcomb town page confirms Calamity Brook trail starts at the Upper Works lot). Placement weak: one coordinate from a hub page tied to the address, no official ",
    "reasons": [
-    "no placement"
+    "only non-land-manager placements (other)",
+    "agent flagged the identification as inferred/weak"
    ],
-   "placements": []
+   "placements": [
+    {
+     "pub": "other",
+     "name": "Upper Works parking area (page address point, not labelled trailhead)",
+     "lat": 44.086533,
+     "lng": -74.055815,
+     "url": "https://adirondackhub.com/hiking/cliff-mountain"
+    }
+   ]
   },
   {
    "id": "ny_couchsachraga_peak_via_santanoni_ridge",
@@ -5310,13 +5896,14 @@
   {
    "id": "ny_esther_mountain_herd_path_from_marble_mountain",
    "area": "ny_esther_mountain",
-   "trailhead": "Atmospheric Science Research Center road (Marble Mountain trail), Wilmington",
+   "trailhead": "Atmospheric Science Research Center (ASRC) trailhead, Wilmington",
    "identifiedBy": {
-    "kind": "route_text",
-    "fact": "Starts at Atmospheric Science Research Center road, Wilmington"
+    "kind": "page",
+    "url": "https://www.lakeplacid.com/hiking/esther-mountain",
+    "fact": "ASRC route: Rt 431 2.4 mi from Wilmington stop, left on ASRC Road, parking on right; over Marble Mtn, cairn junction ~2.5 mi in, herd path right to Esther"
    },
-   "chunk": "out/c10.json",
-   "notes": "No coordinate found; place by hand.",
+   "chunk": "out5/q06.json",
+   "notes": "Page coordinate (44.3945,-73.8578) marks the Reservoir Lane address, not ASRC, so not used. No signed DEC trailhead at ASRC. Place by name.",
    "reasons": [
     "no placement"
    ],
@@ -5355,32 +5942,18 @@
   {
    "id": "ny_iroquois_peak_via_algonquin_peak",
    "area": "ny_iroquois_peak",
-   "trailhead": "High Peaks Information Center / Adirondak Loj (Heart Lake Program Center) hiker lot",
+   "trailhead": "Adirondak Loj / High Peaks Information Center",
    "identifiedBy": {
-    "kind": "route_text",
-    "fact": "Starts at Adirondak Loj / High Peaks Information Center; Algonquin Peak trail then herd path"
+    "kind": "page",
+    "url": "https://pureadirondacks.com/blogs/adirondack-hiking/iroquois-peak",
+    "fact": "Hike starts at Adirondack Loj at Heart Lake; Van Hoevenberg then Algonquin trail, then herd path over Boundary Peak to Iroquois; also route text"
    },
-   "chunk": "out2/r13.json",
-   "notes": "Same lot as Gray Peak. Not checked against an Iroquois-specific page; route text is explicit.",
+   "chunk": "out5/q09.json",
+   "notes": "Strong identification (route text plus page). No land-manager coordinate found: DEC page 404/redirect. Earlier passes' lakeplacid.com and myhikes.org points (44.1824,-73.9664 / 44.1831,-73.9638) are n",
    "reasons": [
-    "only non-land-manager placements (other)"
+    "no placement"
    ],
-   "placements": [
-    {
-     "pub": "other",
-     "name": "High Peak Information Center, ADK lot",
-     "lat": 44.182389,
-     "lng": -73.966441,
-     "url": "https://www.lakeplacid.com/hiking/mount-marcy"
-    },
-    {
-     "pub": "other",
-     "name": "Heart Lake / ADK Loj parking lot",
-     "lat": 44.18307,
-     "lng": -73.963799,
-     "url": "https://myhikes.org/trails/heart-lake-loop-trail"
-    }
-   ]
+   "placements": []
   },
   {
    "id": "ny_mount_colvin_gill_brook_trail",
@@ -5416,17 +5989,25 @@
   {
    "id": "ny_mount_emmons_seward_range_herd_path",
    "area": "ny_mount_emmons",
-   "trailhead": "Corey's Road parking area (Ward Brook Truck Trail)",
+   "trailhead": "Corey's Road parking area (end of Ampersand Road), Blueberry Trail start",
    "identifiedBy": {
     "kind": "route_text",
-    "fact": "Starts at Corey's Road parking area"
+    "fact": "Starts at Corey's Road parking area; Blueberry Trail and Seward Range herd path"
    },
-   "chunk": "out/c10.json",
-   "notes": "No coordinate found.",
+   "chunk": "out5/q13.json",
+   "notes": "One printed coordinate only (lakeplacid.com); no second placement.",
    "reasons": [
-    "no placement"
+    "only non-land-manager placements (other)"
    ],
-   "placements": []
+   "placements": [
+    {
+     "pub": "other",
+     "name": "Corey's Road trailhead, Tupper Lake",
+     "lat": 44.192139,
+     "lng": -74.263451,
+     "url": "https://www.lakeplacid.com/hiking/seward-range"
+    }
+   ]
   },
   {
    "id": "ny_mount_marshall_herbert_brook_herd_path",
@@ -5536,47 +6117,73 @@
   {
    "id": "ny_rocky_peak_ridge_via_giant_mountain",
    "area": "ny_rocky_peak_ridge",
-   "trailhead": "Roaring Brook Trailhead (Route 73)",
+   "trailhead": "Roaring Brook Trailhead (NY 73, St. Huberts)",
    "identifiedBy": {
     "kind": "route_text",
-    "fact": "Roaring Brook Trail over Giant, then ridge trail"
+    "fact": "Path: Roaring Brook Trail over Giant, then the ridge trail"
    },
-   "chunk": "out/c11.json",
-   "notes": "Named by the route text; NYSDEC/ADK pages opened gave no trailhead coordinate, so placement is left to the script (OSM name match).",
+   "chunk": "out5/q21.json",
+   "notes": "Coordinate printed as degrees-minutes on a hiking site (CNY Hiking), converted by me; not a land-manager page. Search results (not opened) gave the same lot at about 44.1504,-73.7677. Roaring Brook lo",
    "reasons": [
-    "no placement"
+    "only non-land-manager placements (other)"
    ],
-   "placements": []
+   "placements": [
+    {
+     "pub": "other",
+     "name": "Roaring Brook trailhead parking",
+     "lat": 44.1505,
+     "lng": -73.76783,
+     "url": "https://cnyhiking.com/GiantMountain.htm"
+    }
+   ]
   },
   {
    "id": "ny_santanoni_peak_santanoni_express",
    "area": "ny_santanoni_peak",
-   "trailhead": "Upper Works Trailhead (Tahawus)",
+   "trailhead": "Upper Works Trailhead (Tahawus, Newcomb)",
    "identifiedBy": {
     "kind": "route_text",
-    "fact": "Starts at Upper Works, Newcomb"
+    "fact": "Starts at Upper Works, Newcomb; Bradley Pond Trail then Santanoni Express herd path"
    },
-   "chunk": "out/c11.json",
-   "notes": "Named by the route text; NYSDEC/ADK pages opened gave no trailhead coordinate, so placement is left to the script (OSM name match).",
+   "chunk": "out5/q21.json",
+   "notes": "Placement is a community site's map link (not land-manager), weak; the page does not cover Santanoni. A search result (unopened Trailforks) put the Bradley Pond trailhead near 44.1419,-74.1069, a diff",
    "reasons": [
-    "no placement"
+    "only non-land-manager placements (other)",
+    "agent flagged the identification as inferred/weak"
    ],
-   "placements": []
+   "placements": [
+    {
+     "pub": "other",
+     "name": "Upper Works",
+     "lat": 44.089134,
+     "lng": -74.056277,
+     "url": "https://www.adirondackhub.com/hiking/upper-works"
+    }
+   ]
   },
   {
    "id": "ny_sawteeth_weld_trail",
    "area": "ny_sawteeth",
-   "trailhead": "St. Huberts parking (Adirondack Mountain Reserve)",
+   "trailhead": "St. Huberts parking area (Adirondack Mountain Reserve lot, NY 73)",
    "identifiedBy": {
-    "kind": "route_text",
-    "fact": "Starts at St. Huberts parking (AMR)"
+    "kind": "page",
+    "url": "https://www.lakeplacid.com/hiking/sawteeth",
+    "fact": "Sawteeth Trailhead is the St Huberts AMR lot, across NY 73 from the Roaring Brook Falls trailhead; Weld Trail out and back"
    },
-   "chunk": "out/c11.json",
-   "notes": "Named by the route text; NYSDEC/ADK pages opened gave no trailhead coordinate, so placement is left to the script (OSM name match).",
+   "chunk": "out5/q21.json",
+   "notes": "Roaring Brook lot (44.1505,-73.7678) is about 100 m away across the road, consistent.",
    "reasons": [
-    "no placement"
+    "only non-land-manager placements (other)"
    ],
-   "placements": []
+   "placements": [
+    {
+     "pub": "other",
+     "name": "Sawteeth Trailhead (St Huberts parking area)",
+     "lat": 44.14985,
+     "lng": -73.768387,
+     "url": "https://www.lakeplacid.com/hiking/sawteeth"
+    }
+   ]
   },
   {
    "id": "ny_seward_mountain_seward_herd_path",
@@ -5628,45 +6235,72 @@
    "area": "ny_street_mountain",
    "trailhead": "Adirondak Loj / High Peaks Information Center",
    "identifiedBy": {
-    "kind": "route_text",
-    "fact": "Starts at Adirondak Loj / High Peaks Information Center"
+    "kind": "page",
+    "url": "https://www.lakeplacid.com/hiking/street-and-nye-mountains",
+    "fact": "route starts at the High Peaks Information Center / Adirondak Loj, follows Heart Lake, Street-Nye path branches past the Mt. Jo junction; Indian Pass Brook herd path"
    },
-   "chunk": "out/c11.json",
-   "notes": "Named by the route text; NYSDEC/ADK pages opened gave no trailhead coordinate, so placement is left to the script (OSM name match).",
+   "chunk": "out5/q23.json",
+   "notes": "Matches route text. Placement is a tourism-board page, not a land manager; the sibling lakeplacid Tabletop page gives 44.183066,-73.964424 (agrees within ~10 m). ADK page gave only the address 1002 Ad",
    "reasons": [
-    "no placement"
+    "only non-land-manager placements (other)",
+    "agent flagged the identification as inferred/weak"
    ],
-   "placements": []
+   "placements": [
+    {
+     "pub": "other",
+     "name": "Street and Nye hike start",
+     "lat": 44.183143,
+     "lng": -73.964467,
+     "url": "https://www.lakeplacid.com/hiking/street-and-nye-mountains"
+    }
+   ]
   },
   {
    "id": "ny_table_top_mountain_herd_path_from_the_van_hoevenberg_trail",
    "area": "ny_table_top_mountain",
    "trailhead": "Adirondak Loj / High Peaks Information Center",
    "identifiedBy": {
-    "kind": "route_text",
-    "fact": "Starts at Adirondak Loj / High Peaks Information Center"
+    "kind": "page",
+    "url": "https://www.lakeplacid.com/hiking/tabletop-mountain",
+    "fact": "hike starts at Adirondak Loj; herd path turns off ~4 mi in, ~0.1 mi before Indian Falls, 0.7 mi to summit"
    },
-   "chunk": "out/c11.json",
-   "notes": "Named by the route text; NYSDEC/ADK pages opened gave no trailhead coordinate, so placement is left to the script (OSM name match).",
+   "chunk": "out5/q23.json",
+   "notes": "Matches route text. Placement is a tourism-board page, not a land manager. Route text says the herd path leaves past Marcy Dam, but guides put the turnoff before Indian Falls; irrelevant to the trailh",
    "reasons": [
-    "no placement"
+    "only non-land-manager placements (other)"
    ],
-   "placements": []
+   "placements": [
+    {
+     "pub": "other",
+     "name": "Tabletop hike trailhead",
+     "lat": 44.183066,
+     "lng": -73.964424,
+     "url": "https://www.lakeplacid.com/hiking/tabletop-mountain"
+    }
+   ]
   },
   {
    "id": "ny_upper_wolfjaw_mountain_wedge_brook_trail",
    "area": "ny_upper_wolfjaw_mountain",
-   "trailhead": "St. Huberts parking (Adirondack Mountain Reserve)",
+   "trailhead": "St. Huberts parking area (Adirondack Mountain Reserve)",
    "identifiedBy": {
     "kind": "route_text",
-    "fact": "Starts at St. Huberts parking (AMR); text also offers The Garden as a longer alternative"
+    "fact": "Starts at St. Huberts parking (Adirondack Mountain Reserve)"
    },
-   "chunk": "out/c11.json",
-   "notes": "Named by the route text; NYSDEC/ADK pages opened gave no trailhead coordinate, so placement is left to the script (OSM name match).",
+   "chunk": "out5/q25.json",
+   "notes": "Coordinate from a tourism site (not a land manager); OSM name match by script still advised.",
    "reasons": [
-    "no placement"
+    "only non-land-manager placements (other)"
    ],
-   "placements": []
+   "placements": [
+    {
+     "pub": "other",
+     "name": "St. Huberts parking area/trailhead (AMR), 24-78 Ausable Road",
+     "lat": 44.149766,
+     "lng": -73.767962,
+     "url": "https://www.lakeplacid.com/hiking/upper-wolfjaw-mountain"
+    }
+   ]
   },
   {
    "id": "or_diamond_peak_southwest_ridge",
@@ -5682,6 +6316,37 @@
     "no placement"
    ],
    "placements": []
+  },
+  {
+   "id": "wa_apex_mountain_pasayten_apex_buttress",
+   "area": "wa_apex_mountain_pasayten",
+   "trailhead": "Thirtymile Trailhead",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://www.wta.org/go-hiking/hikes/tungsten",
+    "fact": "Tungsten Lake has no trailhead of its own; start at Thirtymile, Tungsten Creek trail 6.2 mi from Chewuch trail; lake sits high on Apex Mountain"
+   },
+   "chunk": "out5/q01.json",
+   "notes": "WEAK/INFERRED: the page is about Tungsten Lake (which the buttress overlooks), not the buttress. Alternative start per search summary (not opened): Chewuch Trailhead via Cathedral Driveway 2.2 mi to t",
+   "reasons": [
+    "agent flagged the identification as inferred/weak"
+   ],
+   "placements": [
+    {
+     "pub": "usfs",
+     "name": "Thirty Mile Trailhead",
+     "lat": 48.822806,
+     "lng": -120.019715,
+     "url": ""
+    },
+    {
+     "pub": "wta",
+     "name": "Thirtymile Trailhead",
+     "lat": 48.8236,
+     "lng": -120.0189,
+     "url": "https://www.wta.org/go-hiking/hikes/tungsten"
+    }
+   ]
   },
   {
    "id": "wa_booker_mountain_northwest_route",
@@ -5707,16 +6372,57 @@
    ]
   },
   {
+   "id": "wa_burgundy_spire_corkscrew_route",
+   "area": "wa_burgundy_spire",
+   "trailhead": "SR 20 pullout below Burgundy Col (Early Winters Creek, climbers trail to Burgundy Col)",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://stephabegg.com/trip-reports/washington/paisano-burgundy/",
+    "fact": "large pullout on Hwy 20 about 4 miles east of Washington Pass at ~4250 ft; log crossing of Early Winters Creek; climbers trail up Burgundy Creek rib to col at 7720 ft"
+   },
+   "chunk": "out5/q02.json",
+   "notes": "WEAK/area-level: every page (Steph Abegg, MP area page, search summary) describes one approach to Burgundy Col for the spire generally; none is specific to Corkscrew. Corkscrew's own text is silent bu",
+   "reasons": [
+    "no placement",
+    "agent flagged the identification as inferred/weak"
+   ],
+   "placements": []
+  },
+  {
+   "id": "wa_castle_peak_pasayten_east_ridge",
+   "area": "wa_castle_peak_pasayten",
+   "trailhead": "Monument 78/83 Trailhead (Hwy 3, Manning Provincial Park, BC)",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://trailcatjim.com/crow-creek-basin-castle-peak-via-east-ridge-couloir-southeast-ridge/",
+    "fact": "East Ridge Couloir to the east-ridge col then SE ridge started at Monument 78/83 TH at ~3750 ft; Monument 78 trail ~7 mi to the border, then off-trail through Crow Creek Basin"
+   },
+   "chunk": "out5/q02.json",
+   "notes": "WEAK/inferred: the page is a trip report on the east side but of the East Ridge Couloir plus SE ridge, not a plain 'East Ridge' (Wikipedia lists East-southeast Ridge class 3). Sibling scramble starts ",
+   "reasons": [
+    "agent flagged the identification as inferred/weak"
+   ],
+   "placements": [
+    {
+     "pub": "osm",
+     "name": "Monument 78/83 Trailhead",
+     "lat": 49.0566386,
+     "lng": -120.7360874,
+     "url": "https://www.openstreetmap.org/way/556170917"
+    }
+   ]
+  },
+  {
    "id": "wa_chair_peak_south_ridge",
    "area": "wa_chair_peak",
    "trailhead": "Snow Lake Trailhead (Alpental)",
    "identifiedBy": {
     "kind": "page",
-    "url": "https://www.yellowleaf.org/scramble/g/r/2017-08-12-chair.html",
-    "fact": "Chair Peak scramble approached from Snow Lake Trailhead via Snow Lake / Source Lake, 7 mi RT, 3,200 ft gain; stevensong 2024 report: scramble route on west side of south ridge, under 2.5 h from Snow Lake trail"
+    "url": "https://stevensong.com/usa/washington/chair-peak/",
+    "fact": "2024 report: scramble to south shoulder starts at Snow Lake trailhead, Alpental lot 3,100 ft, trail 1013, Snow Lake trail ~45 min then climber trail"
    },
-   "chunk": "out2/r15.json",
-   "notes": "Moderate: names the peak's single scramble route (south-ridge west side), not the title South Ridge. WTA Chair Peak page lists 47.4154,-121.4433 (Denny Creek side), 9 mi / 3,793 ft, no route descripti",
+   "chunk": "out5/q03.json",
+   "notes": "WEAK/inferred: page body too large for WebFetch, so read via search summary, not opened text; report says south shoulder, not South Ridge; peak has one Snoqualmie-side scramble. SummitPost 403.",
    "reasons": [
     "agent flagged the identification as inferred/weak"
    ],
@@ -5730,10 +6436,251 @@
     },
     {
      "pub": "wta",
-     "name": "Snow Lake trailhead (Alpental lot)",
+     "name": "Snow Lake hike trailhead",
      "lat": 47.4454,
      "lng": -121.423,
      "url": "https://www.wta.org/go-hiking/hikes/snow-lake"
+    }
+   ]
+  },
+  {
+   "id": "wa_chimney_rock_north_ridge",
+   "area": "wa_chimney_rock",
+   "trailhead": "Pete Lake Trailhead",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://lemkeclimbs.com/chimney-rock-2",
+    "fact": "Chimney Rock climbs from Pete Lake TH via Pete Lake trail, Lemah Meadow trail, PCT north (East Face trip, not this line)"
+   },
+   "chunk": "out5/q03.json",
+   "notes": "WEAK peak-level: every page found (Lemke, climberkyle, search snippets of MP/SummitPost) uses Pete Lake TH for Chimney Rock; none describes this ridge. SummitPost 403.",
+   "reasons": [
+    "agent flagged the identification as inferred/weak"
+   ],
+   "placements": [
+    {
+     "pub": "usfs",
+     "name": "Pete Lake Trailhead",
+     "lat": 47.434106,
+     "lng": -121.186915,
+     "url": ""
+    },
+    {
+     "pub": "wta",
+     "name": "Pete Lake hike trailhead",
+     "lat": 47.435,
+     "lng": -121.1855,
+     "url": "https://www.wta.org/go-hiking/hikes/pete-lake"
+    }
+   ]
+  },
+  {
+   "id": "wa_chimney_rock_northeast_ridge",
+   "area": "wa_chimney_rock",
+   "trailhead": "Pete Lake Trailhead",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://lemkeclimbs.com/chimney-rock-2",
+    "fact": "Chimney Rock climbs from Pete Lake TH via Pete Lake trail, Lemah Meadow trail, PCT north (East Face trip, not this line)"
+   },
+   "chunk": "out5/q03.json",
+   "notes": "WEAK peak-level: every page found (Lemke, climberkyle, search snippets of MP/SummitPost) uses Pete Lake TH for Chimney Rock; none describes this ridge. SummitPost 403.",
+   "reasons": [
+    "agent flagged the identification as inferred/weak"
+   ],
+   "placements": [
+    {
+     "pub": "usfs",
+     "name": "Pete Lake Trailhead",
+     "lat": 47.434106,
+     "lng": -121.186915,
+     "url": ""
+    },
+    {
+     "pub": "wta",
+     "name": "Pete Lake hike trailhead",
+     "lat": 47.435,
+     "lng": -121.1855,
+     "url": "https://www.wta.org/go-hiking/hikes/pete-lake"
+    }
+   ]
+  },
+  {
+   "id": "wa_chimney_rock_northwest_ridge",
+   "area": "wa_chimney_rock",
+   "trailhead": "Pete Lake Trailhead",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://lemkeclimbs.com/chimney-rock-2",
+    "fact": "Chimney Rock climbs from Pete Lake TH via Pete Lake trail, Lemah Meadow trail, PCT north (East Face trip, not this line)"
+   },
+   "chunk": "out5/q03.json",
+   "notes": "WEAK peak-level: every page found (Lemke, climberkyle, search snippets of MP/SummitPost) uses Pete Lake TH for Chimney Rock; none describes this ridge. SummitPost 403.",
+   "reasons": [
+    "agent flagged the identification as inferred/weak"
+   ],
+   "placements": [
+    {
+     "pub": "usfs",
+     "name": "Pete Lake Trailhead",
+     "lat": 47.434106,
+     "lng": -121.186915,
+     "url": ""
+    },
+    {
+     "pub": "wta",
+     "name": "Pete Lake hike trailhead",
+     "lat": 47.435,
+     "lng": -121.1855,
+     "url": "https://www.wta.org/go-hiking/hikes/pete-lake"
+    }
+   ]
+  },
+  {
+   "id": "wa_colchuck_balanced_rock_east_route",
+   "area": "wa_colchuck_balanced_rock",
+   "trailhead": "Stuart Lake Trailhead",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://www.wta.org/go-hiking/hikes/colchuck-lake",
+    "fact": "Stuart Lake trailhead (FR 7601) serves Colchuck Lake; search results for Mountaineers page say Colchuck-area climbs go via Stuart Lake Trail; no page names this East Route"
+   },
+   "chunk": "out5/q04.json",
+   "notes": "WEAK/peak-level: Stuart Lake TH is the only road access to Colchuck Lake; route itself not described by any page opened. WTA page does not mention Balanced Rock. SummitPost 403.",
+   "reasons": [
+    "agent flagged the identification as inferred/weak"
+   ],
+   "placements": [
+    {
+     "pub": "usfs",
+     "name": "Stuart Lake Trailhead",
+     "lat": 47.527806,
+     "lng": -120.820515,
+     "url": ""
+    },
+    {
+     "pub": "wta",
+     "name": "Stuart Lake trailhead",
+     "lat": 47.5277,
+     "lng": -120.821,
+     "url": "https://www.wta.org/go-hiking/hikes/colchuck-lake"
+    }
+   ]
+  },
+  {
+   "id": "wa_colchuck_balanced_rock_south_route",
+   "area": "wa_colchuck_balanced_rock",
+   "trailhead": "Stuart Lake Trailhead",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://www.wta.org/go-hiking/hikes/colchuck-lake",
+    "fact": "peak-level only, as East Route"
+   },
+   "chunk": "out5/q04.json",
+   "notes": "WEAK/peak-level, same as East Route. A south-side approach from another valley was not ruled out by any page.",
+   "reasons": [
+    "agent flagged the identification as inferred/weak"
+   ],
+   "placements": [
+    {
+     "pub": "usfs",
+     "name": "Stuart Lake Trailhead",
+     "lat": 47.527806,
+     "lng": -120.820515,
+     "url": ""
+    },
+    {
+     "pub": "wta",
+     "name": "Stuart Lake trailhead",
+     "lat": 47.5277,
+     "lng": -120.821,
+     "url": "https://www.wta.org/go-hiking/hikes/colchuck-lake"
+    }
+   ]
+  },
+  {
+   "id": "wa_colchuck_peak_northeast_gully",
+   "area": "wa_colchuck_peak",
+   "trailhead": "Stuart Lake Trailhead",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://www.wta.org/go-hiking/hikes/colchuck-lake",
+    "fact": "Colchuck Peak's NE face/buttress/couloir routes are done from Colchuck Lake (search listing of SummitPost/Mountaineers pages, not opened: 403); lake reached only via Stuart Lake trail"
+   },
+   "chunk": "out5/q04.json",
+   "notes": "WEAK/inferred: NE-side routes rise from Colchuck Lake; no opened page names this gully.",
+   "reasons": [
+    "agent flagged the identification as inferred/weak"
+   ],
+   "placements": [
+    {
+     "pub": "usfs",
+     "name": "Stuart Lake Trailhead",
+     "lat": 47.527806,
+     "lng": -120.820515,
+     "url": ""
+    },
+    {
+     "pub": "wta",
+     "name": "Stuart Lake trailhead",
+     "lat": 47.5277,
+     "lng": -120.821,
+     "url": "https://www.wta.org/go-hiking/hikes/colchuck-lake"
+    }
+   ]
+  },
+  {
+   "id": "wa_cutthroat_the_swarm",
+   "area": "wa_cutthroat_peak",
+   "trailhead": "Cutthroat Peak climbers trail pullout (Hwy 20, ~1.5 mi W of Washington Pass)",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://publications.americanalpineclub.org/articles/13201216751",
+    "fact": "FA party hiked two miles from Highway 20 then cut right into the basin east of the peak; MP text: approach as South Buttress, cross rib into east basin"
+   },
+   "chunk": "out5/q04.json",
+   "notes": "AAC page names no trailhead or coordinates; ~2 mi from Hwy 20 fits the South Buttress pullout, not Rainy Pass. Prior pass placement (geocaching) carried over; single placement.",
+   "reasons": [
+    "only non-land-manager placements (other)"
+   ],
+   "placements": [
+    {
+     "pub": "other",
+     "name": "Trailhead parking, South of Cutthroat Peak cache",
+     "lat": 48.513367,
+     "lng": -120.68825,
+     "url": "https://www.geocaching.com/geocache/GC1VM77"
+    }
+   ]
+  },
+  {
+   "id": "wa_dome_peak_indian_summer",
+   "area": "wa_dome_peak",
+   "trailhead": "Downey Creek Trailhead",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://www.wta.org/go-hiking/hikes/downey-creek",
+    "fact": "Downey Creek trail leads to Bachelor Creek trail; the route's own descent exits via Cub Lake, Cub Pass, Bachelor Creek; search summaries of Mountaineers Dome Glacier page and a 2011 Cascade Climbers report give the same Downey Creek approach (not opened, 403)"
+   },
+   "chunk": "out5/q05.json",
+   "notes": "Medium: Downey Creek is the standard Dome Glacier / Cub Lake approach; the route's 'Ptarmigan Traverse western approach' wording is off. Closure milepost conflict stands. Cascade Climbers and Mountain",
+   "reasons": [
+    "agent flagged the identification as inferred/weak"
+   ],
+   "placements": [
+    {
+     "pub": "usfs",
+     "name": "Downey Creek Trailhead",
+     "lat": 48.259506,
+     "lng": -121.222915,
+     "url": ""
+    },
+    {
+     "pub": "wta",
+     "name": "Downey Creek trailhead",
+     "lat": 48.2595,
+     "lng": -121.2229,
+     "url": "https://www.wta.org/go-hiking/hikes/downey-creek"
     }
    ]
   },
@@ -5769,6 +6716,146 @@
    ]
   },
   {
+   "id": "wa_east_mcmillan_spire_northeast_buttress",
+   "area": "wa_east_mcmillan_spire",
+   "trailhead": "Upper Goodell Creek Group Campground (Goodell Creek climbers' access)",
+   "identifiedBy": {
+    "kind": "route_text",
+    "fact": "Trailhead is the Upper Goodell Creek Group Campground (~600 ft) off SR 20 near Newhalem"
+   },
+   "chunk": "out5/q06.json",
+   "notes": "Weak: identification is the route's OWN text only. No page about this route names a start (AAJ and CascadeClimbers pages for neighbouring lines say Goodell Creek to Terror Basin, no lot). The two plac",
+   "reasons": [
+    "only non-land-manager placements (wta,other)",
+    "agent flagged the identification as inferred/weak"
+   ],
+   "placements": [
+    {
+     "pub": "wta",
+     "name": "Goodell Creek trailhead (West McMillan Spire)",
+     "lat": 48.6733,
+     "lng": -121.2658,
+     "url": "https://www.wta.org/go-hiking/hikes/west-mcmillan-spire"
+    },
+    {
+     "pub": "other",
+     "name": "Upper Goodell Group Campground",
+     "lat": 48.6733333,
+     "lng": -121.2658333,
+     "url": "https://campflare.com/campground/upper-goodell-group-campground-089"
+    }
+   ]
+  },
+  {
+   "id": "wa_east_twin_needle_north_buttress",
+   "area": "wa_east_twin_needle",
+   "trailhead": "Goodell Creek trailhead (Lower Goodell Creek, Newhalem)",
+   "identifiedBy": {
+    "kind": "route_text",
+    "fact": "From the Lower Goodell Creek trailhead; park off SR-20 near Newhalem"
+   },
+   "chunk": "out5/q06.json",
+   "notes": "Weak on which lot: 'Lower Goodell Creek trailhead' is not a signed name; every Goodell campground listing is within ~0.5 km. Pages read (Abegg Thread of Ice report; CascadeClimbers 2022 snippet via se",
+   "reasons": [
+    "only non-land-manager placements (wta,other)",
+    "agent flagged the identification as inferred/weak"
+   ],
+   "placements": [
+    {
+     "pub": "wta",
+     "name": "Goodell Creek trailhead (West McMillan Spire)",
+     "lat": 48.6733,
+     "lng": -121.2658,
+     "url": "https://www.wta.org/go-hiking/hikes/west-mcmillan-spire"
+    },
+    {
+     "pub": "other",
+     "name": "Goodell Creek Campground",
+     "lat": 48.673,
+     "lng": -121.267,
+     "url": "https://campflare.com/campground/246852"
+    }
+   ]
+  },
+  {
+   "id": "wa_garfield_mountain_south_route",
+   "area": "wa_garfield_mountain",
+   "trailhead": "South Route pullout at gravel wash, Middle Fork Snoqualmie Rd (FR 56), 2.6 mi past Taylor River bridge",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://www.yellowleaf.org/scramble/g/r/2007-08-04-MF-approaches.html",
+    "fact": "park on Middle Fork Road 2.6 mi from the Taylor River Bridge at a wash like a gravel pit; hike up the wash to the falls (Garfield south approach)"
+   },
+   "chunk": "out5/q07.json",
+   "notes": "Matches the route's own text. No coordinate printed by any opened page; unsigned pullout, probably not in OSM. Placement empty.",
+   "reasons": [
+    "no placement"
+   ],
+   "placements": []
+  },
+  {
+   "id": "wa_hibox_mountain_south_face",
+   "area": "wa_hibox_mountain",
+   "trailhead": "Rachel Lake Trailhead",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://www.wta.org/go-hiking/hikes/hibox-mountain",
+    "fact": "WTA Hibox hike start 47.4008,-121.2840; peak-level, only access to the peak"
+   },
+   "chunk": "out5/q08.json",
+   "notes": "WEAK/inferred: peak-level page, not route-specific; WTA and USFS points are the same location. A search summary mentions the standard route reaching the ridge SE of the summit block, and one climber l",
+   "reasons": [
+    "agent flagged the identification as inferred/weak"
+   ],
+   "placements": [
+    {
+     "pub": "usfs",
+     "name": "Rachel Lake Trailhead",
+     "lat": 47.400706,
+     "lng": -121.283915,
+     "url": ""
+    },
+    {
+     "pub": "wta",
+     "name": "Hibox Mountain hike start",
+     "lat": 47.4008,
+     "lng": -121.284,
+     "url": "https://www.wta.org/go-hiking/hikes/hibox-mountain"
+    }
+   ]
+  },
+  {
+   "id": "wa_hibox_mountain_southeast_ridge",
+   "area": "wa_hibox_mountain",
+   "trailhead": "Rachel Lake Trailhead",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://www.wta.org/go-hiking/hikes/hibox-mountain",
+    "fact": "WTA Hibox hike start 47.4008,-121.2840; peak-level, only access to the peak"
+   },
+   "chunk": "out5/q08.json",
+   "notes": "WEAK/inferred: peak-level page, not route-specific; WTA and USFS points are the same location. A search summary mentions the standard route reaching the ridge SE of the summit block, and one climber l",
+   "reasons": [
+    "agent flagged the identification as inferred/weak"
+   ],
+   "placements": [
+    {
+     "pub": "usfs",
+     "name": "Rachel Lake Trailhead",
+     "lat": 47.400706,
+     "lng": -121.283915,
+     "url": ""
+    },
+    {
+     "pub": "wta",
+     "name": "Hibox Mountain hike start",
+     "lat": 47.4008,
+     "lng": -121.284,
+     "url": "https://www.wta.org/go-hiking/hikes/hibox-mountain"
+    }
+   ]
+  },
+  {
    "id": "wa_himmelhorn_wild_hair_crack",
    "area": "wa_himmelhorn",
    "trailhead": "Goodell Creek Trailhead",
@@ -5792,16 +6879,56 @@
    ]
   },
   {
-   "id": "wa_iron_cap_mountain_northeast_shoulder",
-   "area": "wa_iron_cap_mountain",
-   "trailhead": "Necklace Valley Trailhead",
+   "id": "wa_hozomeen_mountain_south_peak_southeast_buttress",
+   "area": "wa_hozomeen_mountain",
+   "trailhead": "Lightning Creek trailhead (Ross Lake)",
    "identifiedBy": {
     "kind": "page",
-    "url": "https://www.wta.org/go-hiking/hikes/necklace-valley",
-    "fact": "WTA: Necklace Valley also accesses Tank/Foehn Lakes; route text says Tank Lakes side via Foss River trails, not Chetwoot Lake (West Fork Foss side)"
+    "url": "http://publications.americanalpineclub.org/articles/12198914401/Hozomeen-Southeast-Buttress-of-South-Peak",
+    "fact": "AAJ first-ascent account (June 1988): start at Lightning Creek trailhead at Ross Lake, east past Willow Lake, then off trail"
    },
-   "chunk": "out4/p14.json",
-   "notes": "Medium confidence: Necklace Valley chosen by elimination (text excludes Chetwoot/West Fork Foss). Three placements agree within ~100 m. No page about this route itself.",
+   "chunk": "out5/q09.json",
+   "notes": "Identified by the route's own text and the AAJ page. NO coordinate from any page (NPS page prints none; no official candidate; Nominatim previously had only the river). Name is a boat/trail landing on",
+   "reasons": [
+    "no placement"
+   ],
+   "placements": []
+  },
+  {
+   "id": "wa_hozomeen_mountain_west_face",
+   "area": "wa_hozomeen_mountain",
+   "trailhead": "Skyline II Trailhead",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://colinhaley.com/west-coast-mountains-mini-road-trip/",
+    "fact": "Zorro Face (west face) approach made on the Hozomeen Ridge Trail, which is reached from Skyline II (NWHikers 2007) and matches the route's own text naming Skyline II near km 55"
+   },
+   "chunk": "out5/q09.json",
+   "notes": "WEAK/inferred: Haley says approach is on the Hozomeen Ridge Trail and AAJ names no trailhead; Skyline II is the usual entry to that trail (NWHikers) and the route's own road text says so. Alternative ",
+   "reasons": [
+    "agent flagged the identification as inferred/weak"
+   ],
+   "placements": [
+    {
+     "pub": "nps",
+     "name": "Skyline II Trailhead (BC)",
+     "lat": 49.041545,
+     "lng": -121.068734,
+     "url": ""
+    }
+   ]
+  },
+  {
+   "id": "wa_iron_cap_mountain_northeast_shoulder",
+   "area": "wa_iron_cap_mountain",
+   "trailhead": "Necklace Valley Trailhead (East Fork Foss River)",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://trailcatjim.com/alpine-lakes-traverse-2021/",
+    "fact": "Descent via North Ridge / Northeast Nose to Iron Cap Pass, 1 mi to Tank Lakes, then down to Necklace Valley and out to the East Fork Foss trailhead"
+   },
+   "chunk": "out5/q09.json",
+   "notes": "Medium: the Tank Lakes side connects to Necklace Valley TH on a page (trailcatjim finished the traverse there), and route text excludes Chetwoot/West Fork Foss; but no page names a start for this exac",
    "reasons": [
     "agent flagged the identification as inferred/weak"
    ],
@@ -5812,13 +6939,6 @@
      "lat": 47.665562,
      "lng": -121.287237,
      "url": ""
-    },
-    {
-     "pub": "osm",
-     "name": "Necklace Valley Trailhead",
-     "lat": 47.6647943,
-     "lng": -121.2881568,
-     "url": "https://www.openstreetmap.org/node/2523603738"
     },
     {
      "pub": "wta",
@@ -5849,6 +6969,30 @@
      "lat": 48.5136,
      "lng": -121.1964,
      "url": "https://www.wta.org/go-hiking/hikes/eldorado-peak"
+    }
+   ]
+  },
+  {
+   "id": "wa_liberty_bell_the_barber_pole",
+   "area": "wa_liberty_bell",
+   "trailhead": "Washington Pass hairpin turnout (east side)",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://www.mountainproject.com/area/105797864/liberty-bell",
+    "fact": "East-side Liberty Bell routes: park at the overlook just above the hairpin on the east side of Washington Pass; Barber Pole is an East Face route"
+   },
+   "chunk": "out5/q10.json",
+   "notes": "WEAK/inferred. Barber Pole is on the East Face; the MP area page says east-side routes park above the east-side hairpin; the trip report says only 'met at Washington Pass' (lot not named). Route is no",
+   "reasons": [
+    "agent flagged the identification as inferred/weak"
+   ],
+   "placements": [
+    {
+     "pub": "usfs",
+     "name": "Hairpin",
+     "lat": 48.514336,
+     "lng": -120.642715,
+     "url": ""
     }
    ]
   },
@@ -5888,11 +7032,11 @@
    "trailhead": "Cascade Pass Trailhead",
    "identifiedBy": {
     "kind": "page",
-    "url": "https://cascadeclimbers.com/forum/topic/108657-trip-report-mix-up-peak-pbs-late-night-special-08102026/",
-    "fact": "Route report: standard approach to Gunsight Notch, then the Mix-up arm, noting Cache Col on day 1 of the Ptarmigan Traverse; trailhead itself not named, inferred"
+    "url": "https://www.wta.org/go-hiking/hikes/cascade-pass",
+    "fact": "WTA page ties Mixup Peak and the Ptarmigan Traverse to the Cascade Pass road-end lot; INFERRED, the PBS report (CascadeClimbers 108657) returned 403 and never named the lot per earlier pass"
    },
-   "chunk": "out2/r20.json",
-   "notes": "Moderate confidence: report never names the lot; Cascade Pass is the road-end for the Mix-up arm / Cache Col approach (WTA page puts the Ptarmigan Traverse and Mixup Peak above that lot). Only a WTA c",
+   "chunk": "out5/q12.json",
+   "notes": "WEAK/inferred: no opened page is about this route's own start; Cascade Pass is the only road-end for Mixup (Mountaineers summary: 3.5 mi trail to pass, then Mixup Arm). No USFS/NPS candidate. OSM by n",
    "reasons": [
     "agent flagged the identification as inferred/weak"
    ],
@@ -5990,6 +7134,22 @@
    ]
   },
   {
+   "id": "wa_mount_rahm_custer_traverse",
+   "area": "wa_mount_rahm",
+   "trailhead": "Depot Creek Trailhead (BC, off Chilliwack Lake Road)",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://stephabegg.com/trip-reports/washington/chilliwack-slam/",
+    "fact": "Depot Creek TH 2300 ft; to Ouzel Lake camp, then Rahm and ridge to Custer"
+   },
+   "chunk": "out5/q16.json",
+   "notes": "Launched from Ouzel Lake camp, not a trailhead of its own; trailhead is the shared Depot Creek TH. No coordinate; official candidates are on the other side of the border and do not match. Report is of",
+   "reasons": [
+    "no placement"
+   ],
+   "placements": []
+  },
+  {
    "id": "wa_glacier_peak_south_tahoma_headwall",
    "area": "wa_mount_rainier",
    "trailhead": "Westside Road: Dry Creek Trailhead",
@@ -6035,61 +7195,110 @@
    "placements": []
   },
   {
-   "id": "wa_north_star_mountain_cloudy_peak_traverse",
-   "area": "wa_north_star_mountain",
-   "trailhead": "Holden Village / Railroad Creek Trailhead",
+   "id": "wa_northwest_mox_peak_northeast_ridge",
+   "area": "wa_northwest_mox_peak",
+   "trailhead": "Depot Creek Road parking (Chilliwack Lake Road, BC), then walk the old road to the border at Monument 65",
    "identifiedBy": {
-    "kind": "route_text",
-    "fact": "Approach as for the East Route to Lyman Lake (sibling East Route starts at Holden Village / Railroad Creek)"
+    "kind": "page",
+    "fact": "Easy Mox NE Ridge party parked at a small lot at a fork on Depot Creek Road near milepost 1.5 (about 2,350 ft), walked old road about 2 miles to the border, then Ouzel Lake and Redoubt Glacier to the NE ridge",
+    "url": "https://trailcatjim.com/hard-mox-peak-easy-mox-peak-depot-creek-falls/"
    },
-   "chunk": "out/c18.json",
-   "notes": "Route text offers two approaches (Lucerne/Holden Village, or Phelps Creek over Spider Gap); both reported closed in recent seasons. Holden is the sibling's choice and has no coordinate in the official",
+   "chunk": "out5/q19.json",
+   "notes": "Strong for the start (page is this exact route, NE Ridge of Easy Mox, and agrees with the sibling's Depot Creek Road Trailhead). No coordinate on any page; official candidates are only BC points 17+ k",
    "reasons": [
     "no placement"
    ],
    "placements": []
   },
   {
-   "id": "wa_northwest_mox_peak_northeast_ridge",
-   "area": "wa_northwest_mox_peak",
-   "trailhead": "Depot Creek Road Trailhead",
+   "id": "wa_old_guard_peak_east_side_route",
+   "area": "wa_old_guard_peak",
+   "trailhead": "Cascade Pass Trailhead",
    "identifiedBy": {
-    "kind": "page_peak",
-    "url": "https://www.mountaineers.org/activities/trip-reports/intermediate-alpine-climb-mox-peaks-twin-spires",
-    "fact": "Mountaineers climb of Easy Mox (NW Mox) started at Depot Creek TH, via Lake Ouzel and Glacier Col; route's own text calls the NE ridge the standard route on this spire"
+    "kind": "page",
+    "fact": "LeConte Glacier / Old Guard trips start at Cascade Pass Trailhead at the end of Cascade River Road, then Cascade Pass and Cache Col; route text also names Cascade River Road",
+    "url": "https://onehikeaweek.com/2020/07/05/sentinel-peak/"
    },
-   "chunk": "out/c18.json",
-   "notes": "Depot Creek Road is on the Canadian side (Chilliwack Lake Road); official candidates are only BC points 17+ km away and none is named Depot Creek. Lower lot used when the road is rough. Needs placemen",
+   "chunk": "out5/q19.json",
+   "notes": "Moderate: pages open describe the NW side of Old Guard from the same LeConte Glacier, all starting at Cascade Pass; no page opened describes the east route itself (SummitPost 403, search summary only)",
    "reasons": [
-    "no placement"
+    "agent flagged the identification as inferred/weak"
    ],
-   "placements": []
+   "placements": [
+    {
+     "pub": "wta",
+     "name": "Cascade Pass trailhead",
+     "lat": 48.4754,
+     "lng": -121.0751,
+     "url": "https://www.wta.org/go-hiking/hikes/cascade-pass"
+    },
+    {
+     "pub": "osm",
+     "name": "Cascade Pass Trailhead",
+     "lat": 48.4754883,
+     "lng": -121.0751562,
+     "url": "https://www.openstreetmap.org/node/1420498929"
+    }
+   ]
+  },
+  {
+   "id": "wa_overcoat_peak_north_face",
+   "area": "wa_overcoat_peak",
+   "trailhead": "Dutch Miller Gap Trailhead",
+   "identifiedBy": {
+    "kind": "page",
+    "fact": "North-side route: snow finger in the north gully from Overcoat Glacier, descent east gully with two rappels; trip started at Dutch Miller Gap Trailhead (gated, bike about 7 mi to Hardscrabble Horse Camp)",
+    "url": "https://onehikeaweek.com/2024/07/13/overcoat-peak/"
+   },
+   "chunk": "out5/q19.json",
+   "notes": "Moderate. Replaces the earlier Dingford guess: that is the Mountaineers' listed start (Dingford Creek TH, FR 5620, 26 mi, via search summary, page 403) and the route is the same long approach, but the",
+   "reasons": [
+    "agent flagged the identification as inferred/weak"
+   ],
+   "placements": [
+    {
+     "pub": "osm",
+     "name": "Dutch Miller Gap Trailhead",
+     "lat": 47.517262,
+     "lng": -121.4542459,
+     "url": "https://www.openstreetmap.org/node/6196962005"
+    }
+   ]
   },
   {
    "id": "wa_rock_mountain_northeast_ridge",
    "area": "wa_rock_mountain",
-   "trailhead": "Old Merritt Lake Trailhead",
+   "trailhead": "Old Merritt Lake Trailhead (US 2)",
    "identifiedBy": {
     "kind": "route_text",
     "fact": "Begin at the Old Merritt Lake Trailhead off US-2 (~2,950 ft)"
    },
-   "chunk": "out/c18.json",
-   "notes": "No official point named Old Merritt Lake. Descent ends at the Rock Mountain Trailhead (USFS 47.775232,-120.957772), a different one, so the route needs a shuttle. Needs placement by you.",
+   "chunk": "out5/q20.json",
+   "notes": "Trailhead named by route text; the only placement is the USFS 'Merritt Lake Trailhead' (the route says 'Old'; the old road start may sit a little lower than this point, ~2,950 ft stated). WTA pages do",
    "reasons": [
-    "no placement"
+    "agent flagged the identification as inferred/weak"
    ],
-   "placements": []
+   "placements": [
+    {
+     "pub": "usfs",
+     "name": "Merritt Lake Trailhead",
+     "lat": 47.790506,
+     "lng": -120.885015,
+     "url": ""
+    }
+   ]
   },
   {
    "id": "wa_ruby_mountain_northwest_ridge",
    "area": "wa_ruby_mountain",
-   "trailhead": "SR 20 turnout opposite the boulder field (about 1,900 ft, 0.4 mi west of Horsetail Creek)",
+   "trailhead": "SR 20 turnout across from the large boulder field, about 1,900 ft, 0.4 mi west of Horsetail Creek (about 12 mi east of Newhalem)",
    "identifiedBy": {
-    "kind": "route_text",
-    "fact": "turnout about 12 mi east of Newhalem, directly across from a large boulder field"
+    "kind": "page",
+    "url": "https://stephabegg.com/?p=8877",
+    "fact": "Turnout on the north side of Hwy 20 across from the boulder field on Ruby's NW side; route starts just left of the boulder field; winter closure gate at MP 134 shortly after"
    },
-   "chunk": "out/c18.json",
-   "notes": "An unsigned highway pullout with no official trailhead point (Happy Creek Forest Walk lot, 3.9 km away, is a different route's start). Needs a coordinate from the map or a ground check. Route text say",
+   "chunk": "out5/q21.json",
+   "notes": "Matches the route's own text; an unsigned pullout so no coordinate printed on any page opened. Needs placing from map/ground (about 0.4 mi west of the Horsetail Creek crossing on SR 20). Happy Creek l",
    "reasons": [
     "no placement"
    ],
@@ -6098,33 +7307,42 @@
   {
    "id": "wa_sharkfin_tower_flakes_and_chimneys_south_face",
    "area": "wa_sharkfin_tower",
-   "trailhead": "Boston Basin Trailhead",
+   "trailhead": "Boston Basin Trailhead (Cascade River Road end)",
    "identifiedBy": {
-    "kind": "page_peak",
-    "url": "https://www.mountaineers.org/activities/routes-places/boston-basin-area-review/forbidden-peak-west-ridge",
-    "fact": "Boston Basin climbs start at the Boston Basin Trailhead, 21.7 mi up Cascade River Road, a pull-out just before Cascade Pass TH; NPS 2017 conditions report places the Sharkfin approach in Boston Basin"
+    "kind": "page",
+    "url": "https://www.nps.gov/noca/blogs/sharkfin-tower-8-2-17.htm",
+    "fact": "INFERRED/WEAK: every Sharkfin approach page describes the Boston Basin approach; NPS 2017 report lists the South Face as a rappel option off the same basin; no page names this route's start"
    },
-   "chunk": "out/c18.json",
-   "notes": "No official point matches (nearest candidates are more than 13 km). WTA gives 48.5021,-121.0676 for Boston Basin, the basin itself, not the lot. Needs placement by you. The route name turned up on no ",
+   "chunk": "out5/q22.json",
+   "notes": "Route name 'Flakes and Chimneys' found on no page. Inferred from the only approach in use (Boston Basin). WTA Boston Basin coordinate 48.5021,-121.0676 is the basin/hike listing, not the lot, so not o",
    "reasons": [
-    "no placement"
+    "no placement",
+    "agent flagged the identification as inferred/weak"
    ],
    "placements": []
   },
   {
    "id": "wa_silver_star_ne_ridge",
    "area": "wa_silver_star_mountain_okanogan",
-   "trailhead": "SR-20 pullout near milepost 165-166 (Silver Star / Wine Spires)",
+   "trailhead": "Silver Star Mountain trailhead (SR-20 pullout near milepost 165, first pullout after the Cutthroat Creek turnout)",
    "identifiedBy": {
     "kind": "route_text",
-    "fact": "approach_logistics: trailhead SR-20 pullout near milepost 165-166, first pullout after the Cutthroat Creek trailhead turnout; approach same as the Silver Star Glacier route"
+    "fact": "Same as the Silver Star Glacier route to Burgundy Col"
    },
-   "chunk": "out/c18.json",
-   "notes": "The route's own stored coordinate 48.549,-120.630965 is in its text; no independent placement (USFS list has Cutthroat Trailhead 48.556306,-120.654715, a different lot about 1.7 km west). Needs placem",
+   "chunk": "out5/q22.json",
+   "notes": "WTA coordinate agrees with the route's own stored 48.549,-120.630965 (about 100 m). USFS 'Cutthroat Trailhead' is a different lot 1.7 km west. Summit reach left unknown: the text implies a summit line",
    "reasons": [
-    "no placement"
+    "only non-land-manager placements (wta)"
    ],
-   "placements": []
+   "placements": [
+    {
+     "pub": "wta",
+     "name": "Silver Star Mountain (Okanogan) trailhead",
+     "lat": 48.55,
+     "lng": -120.6306,
+     "url": "https://www.wta.org/go-hiking/hikes/silver-star-mountain-okanogan"
+    }
+   ]
   },
   {
    "id": "wa_southeast_mox_peak_beckey_route_west_ridge",
@@ -6162,11 +7380,12 @@
    "area": "wa_the_chopping_block",
    "trailhead": "Goodell Creek Trailhead",
    "identifiedBy": {
-    "kind": "route_text",
-    "fact": "Via the multi-day Goodell Creek approach"
+    "kind": "page",
+    "url": "https://stephabegg.com/trip-reports/washington/pickets/",
+    "fact": "Pickets approaches (incl. Chopping Block, Approaches 6/7) start at the end of Goodell Creek road near Newhalem; route text also says Goodell Creek approach"
    },
-   "chunk": "out/c19.json",
-   "notes": "No official point matches (candidates are Gorge Overlook etc.). Goodell Creek trailhead is on the unpaved road across SR-20 from Newhalem campground per trip reports.",
+   "chunk": "out5/q24.json",
+   "notes": "Route's own text names Goodell Creek; a page confirms the Goodell Creek road-end start for Chopping Block. No page gave a coordinate and no official point matches; report signed name only (OSM match b",
    "reasons": [
     "no placement"
    ],
@@ -6177,42 +7396,12 @@
    "area": "wa_the_chopping_block",
    "trailhead": "Goodell Creek Trailhead",
    "identifiedBy": {
-    "kind": "route_text",
-    "fact": "Via the multi-day Goodell Creek approach"
+    "kind": "page",
+    "url": "https://stephabegg.com/trip-reports/washington/pickets/",
+    "fact": "Chopping Block reached by Goodell Creek road-end approaches; route text names Goodell Creek approach"
    },
-   "chunk": "out/c19.json",
-   "notes": "No official point matches (candidates are Gorge Overlook etc.). Goodell Creek trailhead is on the unpaved road across SR-20 from Newhalem campground per trip reports.",
-   "reasons": [
-    "no placement"
-   ],
-   "placements": []
-  },
-  {
-   "id": "wa_the_pyramid_picket_east_ridge",
-   "area": "wa_the_pyramid_picket",
-   "trailhead": "Goodell Creek Trailhead",
-   "identifiedBy": {
-    "kind": "page_peak",
-    "url": "https://lemkeclimbs.com/southern-pickets-traverse",
-    "fact": "Southern Pickets traverse, which includes Pyramid, starts at Goodell Creek Trailhead (~600 ft) then Terror Basin"
-   },
-   "chunk": "out/c19.json",
-   "notes": "Peak-level only: no page describes this route alone; Southern Pickets all approach via Goodell Creek, and the sibling South Route uses it. No official point matches (candidates are Gorge Overlook etc.",
-   "reasons": [
-    "no placement"
-   ],
-   "placements": []
-  },
-  {
-   "id": "wa_tupshin_peak_east_face",
-   "area": "wa_tupshin_peak",
-   "trailhead": "Stehekin Landing",
-   "identifiedBy": {
-    "kind": "route_text",
-    "fact": "Ferry/floatplane to Stehekin (no road access), then the Company Creek Trail roughly 3 miles"
-   },
-   "chunk": "out/c19.json",
-   "notes": "Boat start: Lady of the Lake dock at Stehekin; no page opened to confirm the exact Company Creek trailhead or coordinates. Official candidates (Imus Creek Loop, 7 km) do not match. Needs manual placem",
+   "chunk": "out5/q24.json",
+   "notes": "Same as NE Ridge: same camp and approach. No coordinate found.",
    "reasons": [
     "no placement"
    ],
@@ -6235,6 +7424,21 @@
   }
  ],
  "summit": [
+  {
+   "id": "wa_american_border_peak_northeast_face",
+   "area": "wa_american_border_peak",
+   "name": "American Border Peak",
+   "lat": 48.99525073370242,
+   "lng": -121.66494688114733,
+   "elevFt": 7998,
+   "gaz_id": 1515847,
+   "evidence": {
+    "kind": "route_text",
+    "fact": "overview: climbs mixed snow and rock via class 3 with occasional class 4 rock to the summit",
+    "url": ""
+   },
+   "chunk": "out5/q01.json"
+  },
   {
    "id": "wa_colfax_peak_kimchi_suicide_volcano",
    "area": "wa_colfax_peak",
@@ -6263,7 +7467,7 @@
     "fact": "technical climbing ends just below the top, a short scramble reaches the summit",
     "url": ""
    },
-   "chunk": "out4/p11.json"
+   "chunk": "out5/q05.json"
   },
   {
    "id": "wa_dragontail_peak_r4",
@@ -6339,6 +7543,21 @@
    "chunk": "out/c16.json"
   },
   {
+   "id": "wa_mount_rahm_custer_traverse",
+   "area": "wa_mount_rahm",
+   "name": "Mount Rahm",
+   "lat": 48.99707429935532,
+   "lng": -121.22874360035644,
+   "elevFt": 8485,
+   "gaz_id": 1848454,
+   "evidence": {
+    "kind": "page",
+    "fact": "traverse runs Rahm summit to Custer summit, ~1 mi Class 3, ~2:45 h, descent by Custer South Ridge",
+    "url": "https://stephabegg.com/trip-reports/washington/chilliwack-slam/"
+   },
+   "chunk": "out5/q16.json"
+  },
+  {
    "id": "wa_mount_sefrit_southeast_ridge",
    "area": "wa_mount_sefrit",
    "name": "Mount Sefrit",
@@ -6378,25 +7597,10 @@
    "gaz_id": 1525146,
    "evidence": {
     "kind": "route_text",
-    "fact": "descent from the summit by the South Ridge and East Slope to the Rock Mountain Trailhead",
+    "fact": "descent text starts 'From the summit' and overview climbs Rock Mountain's northeast side",
     "url": ""
    },
-   "chunk": "out/c18.json"
-  },
-  {
-   "id": "wa_silver_star_ne_ridge",
-   "area": "wa_silver_star_mountain_okanogan",
-   "name": "Silver Star Mountain",
-   "lat": 48.54794520957118,
-   "lng": -120.58512495739073,
-   "elevFt": 8876,
-   "gaz_id": 1525796,
-   "evidence": {
-    "kind": "route_text",
-    "fact": "technical rock line up the west summit's northeast aspect, reached via the Silver Star Glacier",
-    "url": ""
-   },
-   "chunk": "out/c18.json"
+   "chunk": "out5/q20.json"
   },
   {
    "id": "wa_tenpeak_mountain_north_couloir",
@@ -6469,12 +7673,6 @@
    "chunk": "out/c11.json"
   },
   {
-   "id": "wa_american_border_peak_northeast_face",
-   "reaches": "unknown",
-   "why": "route does not (or may not) reach the summit",
-   "chunk": "out4/p09.json"
-  },
-  {
    "id": "wa_big_snow_mountain_southwest_ridge",
    "reaches": "unknown",
    "why": "route does not (or may not) reach the summit",
@@ -6502,7 +7700,7 @@
    "id": "wa_east_twin_needle_thread_of_ice",
    "reaches": false,
    "why": "route does not (or may not) reach the summit",
-   "chunk": "out4/p11.json"
+   "chunk": "out5/q06.json"
   },
   {
    "id": "wa_esmeralda_peaks_east_gully",
@@ -6532,7 +7730,7 @@
    "id": "wa_hozomeen_mountain_north_peak_south_ridge",
    "reaches": "unknown",
    "why": "route does not (or may not) reach the summit",
-   "chunk": "out4/p13.json"
+   "chunk": "out5/q09.json"
   },
   {
    "id": "wa_lane_peak_r1",
@@ -6601,12 +7799,6 @@
    "chunk": "out/c17.json"
   },
   {
-   "id": "wa_mount_rahm_custer_traverse",
-   "reaches": "unknown",
-   "why": "route does not (or may not) reach the summit",
-   "chunk": "out4/p16.json"
-  },
-  {
    "id": "wa_mount_sefrit_bloody_head_couloir",
    "reaches": "unknown",
    "why": "route does not (or may not) reach the summit",
@@ -6628,13 +7820,19 @@
    "id": "wa_old_guard_peak_east_side_route",
    "reaches": "unknown",
    "why": "route does not (or may not) reach the summit",
-   "chunk": "out4/p17.json"
+   "chunk": "out5/q19.json"
   },
   {
    "id": "wa_prusik_peak_solid_gold",
    "reaches": false,
    "why": "route does not (or may not) reach the summit",
    "chunk": "out/c18.json"
+  },
+  {
+   "id": "wa_silver_star_ne_ridge",
+   "reaches": "unknown",
+   "why": "route does not (or may not) reach the summit",
+   "chunk": "out5/q22.json"
   },
   {
    "id": "wa_storm_king_north_face",
@@ -6687,209 +7885,164 @@
  ],
  "stuck": [
   {
-   "id": "bc_ossa_mountain_east_ridge",
-   "why": "No new evidence; VOC wiki unreachable (DNS). Peakbagger unusable this pass (Chrome script access failed).",
-   "chunk": "out4/p01.json"
-  },
-  {
    "id": "ca_adams_peak_standard_route",
-   "why": "Earlier: west (Frenchman Lake/Spring Creek road) and east (US 395) both used; no named trailhead. climber.org peak page 404. Peakbagger unusable this pass.",
-   "chunk": "out4/p01.json"
+   "why": "Opened climber.org driving page (no coordinates; waypoints only): west start at Frenchman Lake / Spring Creek road, snow decides how far you drive; summit regis",
+   "chunk": "out5/q01.json"
   },
   {
    "id": "ca_angora_mountain_standard_route",
-   "why": "Several starts (Lewis Camp, Jerkey Meadow, Lloyd Meadow, Kern Lake); only one report uses Lewis Camp. Lead: USFS Lewis Camp Trailhead 36.181305,-118.515181 (cli",
-   "chunk": "out4/p01.json"
+   "why": "Re-opened climber.org 1996/89: starts Lewis Camp (Jordan Trail). A search summary of a guide site says Jerkey Meadow and Lewis Camp are the two most popular sou",
+   "chunk": "out5/q01.json"
   },
   {
    "id": "ca_black_giant_west_slope_from_black_giant_pass",
-   "why": "climber.org 2006/1514 (opened) starts at Sabrina Lake via Echo Col, the east variant. West Slope probably South Lake via Bishop Pass/JMT but no page says so.",
-   "chunk": "out4/p01.json"
+   "why": "Opened Burd 2009: day trip from Lake Sabrina over Echo Col (east variant). Other pages (climber.org 2006/1514, thebackcountry ski report) also start at Sabrina/",
+   "chunk": "out5/q01.json"
   },
   {
    "id": "ca_caltech_peak_standard_route",
-   "why": "Onion Valley (2008 and 1999 reports) vs Shepherd Pass TH both plausible; stays stuck. Lead: USFS Onion Valley Campground 36.772538,-118.341244.",
-   "chunk": "out4/p01.json"
+   "why": "Still stuck: pages show Onion Valley (climber.org 2008, east ridge class 2/3, via University/Forester Pass) and Shepherd Pass as both used; 'Standard route' tie",
+   "chunk": "out5/q02.json"
   },
   {
    "id": "ca_charybdis_northeast_ridge",
-   "why": "Text starts from a high camp (Ionian Basin); Sabrina/Echo Col, South Lake/Bishop Pass and Courtwright are all documented; no page says which.",
-   "chunk": "out4/p01.json"
+   "why": "Route text starts from a high camp. Sabrina, South Lake (Bishop Pass/Black Giant), North Lake all documented; no page ties the NE ridge to one. One NE ridge tri",
+   "chunk": "out5/q03.json"
   },
   {
    "id": "ca_dicks_peak_standard_route",
-   "why": "Wikipedia: easiest route class 2 via Dicks Pass (0.5 mi E of summit) but names no trailhead. Bayview (USFS 38.943878,-120.099979) is a lead only.",
-   "chunk": "out4/p02.json"
+   "why": "Search summaries only: Bayview and Eagle Falls (Emerald Bay) both commonly used (Eagle Falls north-ridge class 2 log; Bayview to Dicks Pass); also Glen Alpine. ",
+   "chunk": "out5/q05.json"
   },
   {
    "id": "ca_disappointment_peak_standard_route",
-   "why": "Wikipedia: easiest route class 4+, FA via Southwest Chute 1919; no trailhead stated.",
-   "chunk": "out4/p02.json"
+   "why": "Search summary of SummitPost (403 on open) says the peak is most easily reached from Glacier Lodge / Big Pine Creek trailhead and the standard route needs the M",
+   "chunk": "out5/q05.json"
   },
   {
    "id": "ca_electra_peak_standard_route",
-   "why": "Not re-researched (Peakbagger/Chrome unavailable); earlier passes found multiple equal starts.",
-   "chunk": "out4/p02.json"
+   "why": "Stuck: no stored text; sources give several equal starts (Rush Creek/Silver Lake, Agnew Meadows, Tuolumne/Lyell Canyon, Clover Meadow). SummitPost 403. No page ",
+   "chunk": "out5/q06.json"
   },
   {
    "id": "ca_english_mountain_standard_route",
-   "why": "Not re-researched; earlier passes found three unplaceable starts.",
-   "chunk": "out4/p02.json"
-  },
-  {
-   "id": "ca_foerster_peak_standard_route",
-   "why": "Not re-researched; earlier passes found multiple starts.",
-   "chunk": "out4/p02.json"
+   "why": "Stuck: climber.org gives a road junction (no signed trailhead); another report starts near Catfish Lake / Bowman Rd; SummitPost mentions a 4WD route from Meadow",
+   "chunk": "out5/q06.json"
   },
   {
    "id": "ca_gemini_standard_route",
-   "why": "Not re-researched; Pine Creek only a plausible lead.",
-   "chunk": "out4/p02.json"
+   "why": "Two equally used starts in opened pages: Italy Pass Trailhead (backcountrysights, 3 days via Granite Park and Seven Gables Pass) and Bear Creek Diversion Dam (t",
+   "chunk": "out5/q07.json"
   },
   {
    "id": "ca_glacier_ridge_standard_route",
-   "why": "Weak: one trip report via Wolverton; several approaches exist.",
-   "chunk": "out4/p02.json"
+   "why": "SummitPost (403, search summary only) says the approach is via upper Cloud Canyon from three trailheads (Marvin Pass, Avalanche Pass, High Sierra Trail via Copp",
+   "chunk": "out5/q07.json"
   },
   {
    "id": "ca_granite_chief_granite_chief_trail_from_olympic_valley",
-   "why": "Start named by route text (behind Olympic Valley fire station) but only placement is onX (not acceptable); OSM unreachable.",
-   "chunk": "out4/p02.json"
-  },
-  {
-   "id": "ca_joe_devel_peak_standard_route",
-   "why": "Weak: one report on a Pickering trip via Cottonwood Lakes.",
-   "chunk": "out4/p02.json"
-  },
-  {
-   "id": "ca_lamont_peak_lamont_peak_trail",
-   "why": "Trailhead identified: Canebrake Road saddle, ~7 mi up from Hwy 178, lot west side, trail east (climber.org/driving/canebrake.html, waypoint CANLAM, no coordinat",
-   "chunk": "out4/p02.json"
+   "why": "Name identified by route text and search summary of a USFS doc (trail starts just behind the Squaw/Olympic Valley fire station, parking across the road in the s",
+   "chunk": "out5/q08.json"
   },
   {
    "id": "ca_lippincott_mountain_standard_route",
-   "why": "Peakbagger unresponsive (fetches timed out). Earlier pass only names Mineral King generally (climber.org 1998/355), not the exact lot, and the High Sierra Trail",
-   "chunk": "out4/p03.json"
+   "why": "Two equally plausible starts: Mineral King via Glacier Pass or Timber Gap to Black Rock Pass and Little Five Lakes (climber.org 1998/355, which names Mineral Ki",
+   "chunk": "out5/q10.json"
   },
   {
    "id": "ca_marion_peak_northeast_ridge",
-   "why": "Text offers Cartridge Pass or Marion Lake; starts could be Roads End or Taboose/Sawmill. Peakbagger unresponsive; no page opened naming one start for this ridge",
-   "chunk": "out4/p03.json"
+   "why": "SummitPost (403, not opened) reportedly says Taboose Pass trail is the closest approach and Road's End is for western routes: a search summary only, so not evid",
+   "chunk": "out5/q11.json"
   },
   {
    "id": "ca_merced_peak_standard_route",
-   "why": "Two equally used starts: Quartz Mountain (USFS 37.530826,-119.447315) and Mono Meadow/Glacier Point road. Peakbagger unresponsive; not resolved.",
-   "chunk": "out4/p03.json"
+   "why": "Two equally used starts confirmed: Quartz Mountain TH (USFS 37.530826,-119.447315; shortest, ~16 mi, per SummitPost summary) and Mono Meadow TH (NPS 37.671453,-",
+   "chunk": "out5/q11.json"
   },
   {
    "id": "ca_midway_mountain_west_slope",
-   "why": "Own text: multi-day approach to Colby Lake, Cloud Canyon; candidate starts Crescent Meadow, Roads End/Sugarloaf via Colby Pass, all multi-day. Not resolved.",
-   "chunk": "out4/p03.json"
+   "why": "Search summary of SummitPost (403, not opened) gives Road's End via Bubbs Creek, Sphinx Creek, Avalanche Pass, ~10 mi up Cloud Canyon to Colby Lake: summary onl",
+   "chunk": "out5/q11.json"
   },
   {
    "id": "ca_milestone_mountain_standard_route",
-   "why": "Shepherd Pass (east) and Cloud Canyon (west) both page-confirmed; no page says which is the standard route.",
-   "chunk": "out4/p03.json"
+   "why": "Searched; SummitPost 403 (not opened), Burd page 404. Search-summary only: Shepherd Pass (east, East Ridge via Milestone Basin, ~23 mi) vs Road's End/Cloud Cany",
+   "chunk": "out5/q12.json"
   },
   {
    "id": "ca_moses_mountain_standard_route",
-   "why": "Many ways, none standard (Balch Park Road, Hidden Falls, Kings Canyon east); no single start.",
-   "chunk": "out4/p03.json"
-  },
-  {
-   "id": "ca_mount_barnard_standard_route",
-   "why": "Three real approaches (Whitney Portal, Shepherd Pass, George Creek); no standard identified.",
-   "chunk": "out4/p03.json"
+   "why": "climber.org driving page (opened) labels Shake Camp and Hidden Falls together as the 'standard Moses and Maggie approach'; no coordinates printed (GPX only). Tw",
+   "chunk": "out5/q12.json"
   },
   {
    "id": "ca_mount_bolton_brown_standard_route",
-   "why": "No page tying this route to one start; candidates Red Lake (Prater traverse), McMurry Meadows, Tinemaha. Peakbagger read in Chrome was too slow/aborted per coor",
-   "chunk": "out4/p04.json"
+   "why": "Opened peaksforfreaks: Red Lake TH route via Prater is class 3-4 with 5.3 moves, not this 'class 2 then class 3 block' route. Search summary (not opened): Birch",
+   "chunk": "out5/q12.json"
   },
   {
    "id": "ca_mount_corcoran_standard_route",
-   "why": "Earlier pass: Meysan Lakes/Whitney Portal east side from two climber.org reports (1609, 1710), also west approach via Horseshoe Meadow. Not strengthened; no pag",
-   "chunk": "out4/p04.json"
+   "why": "SummitPost 403. Search summary: three approaches (Meysan Lakes off Whitney Portal Rd, Turtle Creek via Horseshoe Meadows Rd, Miter Basin from Horseshoe Meadow);",
+   "chunk": "out5/q13.json"
   },
   {
    "id": "ca_mount_davis_southeast_slopes_from_north_glacier_pass",
-   "why": "Agnew Meadows (3 pages) vs Rush Creek both reach Thousand Island Lake; equally used, so stuck. Wikipedia names no trailhead.",
-   "chunk": "out4/p04.json"
-  },
-  {
-   "id": "ca_mount_eisen_southeast_ridge_from_black_rock_pass",
-   "why": "Mineral King/Sawtooth Pass (climber.org 1998/355) vs Hamilton Lakes via High Sierra Trail unconfirmed. Single placement only; stuck.",
-   "chunk": "out4/p04.json"
+   "why": "Two equally used starts to Thousand Island Lake: Rush Creek (themtsarecalling.com, opened) and Agnew Meadows (earlier climber.org report; a one-day report per s",
+   "chunk": "out5/q13.json"
   },
   {
    "id": "ca_mount_elwell_mt_elwell_trail",
-   "why": "Wikipedia 404; no page opened naming the start. Candidates USFS Round Lake TH 39.693405,-120.655213, Smith Lake and Long Lake TH 39.724905,-120.661813.",
-   "chunk": "out4/p04.json"
+   "why": "Blog loop starts at Smith Lake Trailhead (spur off Gray Eagle Lodge road; map link ~39.726,-120.663, not a printed coordinate); it says Lakes Basin Trailhead al",
+   "chunk": "out5/q13.json"
   },
   {
    "id": "ca_mount_fiske_standard_route",
-   "why": "Two equally documented starts: Lake Sabrina via Echo Col and South Lake over Bishop Pass.",
-   "chunk": "out4/p04.json"
-  },
-  {
-   "id": "ca_mount_florence_standard_route",
-   "why": "Only Happy Isles (climber.org 1996/110, 2002/998) found; Tuolumne alternatives. No standard established.",
-   "chunk": "out4/p04.json"
+   "why": "Lake Sabrina (2025 report, opened) and South Lake over Bishop Pass (climber.org 2011/1876 per earlier pass) are both documented; Sabrina is called the most dire",
+   "chunk": "out5/q13.json"
   },
   {
    "id": "ca_mount_genevra_standard_route",
-   "why": "Onion Valley and Shepherd Pass both used; Roads End possible. No standard.",
-   "chunk": "out4/p04.json"
+   "why": "No text; no page opened this pass. Onion Valley/Kearsarge, Shepherd Pass, Road's End all used; no standard. Not searched further (budget).",
+   "chunk": "out5/q14.json"
   },
   {
    "id": "ca_mount_gibbs_standard_route",
-   "why": "Wikipedia (opened) names two starts: Tioga Road west side and Walker Lake via Bloody Canyon east side; earlier pass also found Tioga Pass entrance and Horse Mea",
-   "chunk": "out4/p04.json"
+   "why": "Two equally used starts: Walker Lake (east, one trip report opened) and Mono Pass/Parker Pass trailhead on Tioga Rd (west; USFS/NPS 37.89091,-119.262696 candida",
+   "chunk": "out5/q14.json"
   },
   {
    "id": "ca_mount_goddard_standard_route",
-   "why": "Wikipedia: class 2 Starr route or East Slope, no trailhead. At least four trailheads used (North Lake, Sabrina, South Lake, Woodchuck).",
-   "chunk": "out4/p04.json"
+   "why": "No text; four trailheads (North Lake, Sabrina, South Lake, Woodchuck) all used; no page defines a standard. Not searched this pass.",
+   "chunk": "out5/q14.json"
   },
   {
    "id": "ca_mount_hale_standard_route",
-   "why": "Wikipedia: south slope class 2, JMT passes below; no trailhead named. Earlier snwburd report used Whitney Portal via Whitney Col, one report only; JMT from Cott",
-   "chunk": "out4/p04.json"
+   "why": "Wikipedia (opened) names no trailhead. JMT is reached from Whitney Portal (via Whitney Trail) or Cottonwood/Horseshoe Meadow, or Sequoia side; only one earlier ",
+   "chunk": "out5/q14.json"
   },
   {
    "id": "ca_mount_hooper_southwest_ridge_via_tombstone_pass",
-   "why": "Not re-researched: Chrome/Peakbagger unusable. No page found describing the Tombstone Pass approach.",
-   "chunk": "out4/p05.json"
+   "why": "No page describes Tombstone Creek/Pass approach (search found none). Florence Lake (ferry), Bear Creek and Lake Edison all plausible. Stuck.",
+   "chunk": "out5/q14.json"
   },
   {
    "id": "ca_mount_jordan_standard_route",
-   "why": "Peakbagger page fetches hung. Onion Valley and Shepherd Pass both plausible; not chosen.",
-   "chunk": "out4/p05.json"
-  },
-  {
-   "id": "ca_mount_maclure_standard_route",
-   "why": "Not re-researched. Candidate only: NPS Dog Lake Trailhead Parking (37.878162,-119.338857), unverified.",
-   "chunk": "out4/p05.json"
+   "why": "Wikipedia gives no trailhead; SummitPost 403 (search snippet only: Shepherd Pass and Kearsarge/Onion Valley nearest east-side trailheads, west approach via Bubb",
+   "chunk": "out5/q15.json"
   },
   {
    "id": "ca_mount_mcduffie_standard_route",
-   "why": "Not re-researched. Florence Lake, North Lake and others all used; no standard.",
-   "chunk": "out4/p05.json"
+   "why": "Wikipedia names no trailhead. Burd's report climbed it from South Lake over Bishop Pass and the JMT, but does not call it standard. Search snippet (not opened; ",
+   "chunk": "out5/q15.json"
   },
   {
    "id": "ca_mount_mcgee_standard_route",
-   "why": "Not re-researched. No standard-route trailhead stated.",
-   "chunk": "out4/p05.json"
-  },
-  {
-   "id": "ca_mount_newcomb_southwest_slope",
-   "why": "Not re-researched. Cottonwood Lakes, Cottonwood Pass, Whitney Portal all used.",
-   "chunk": "out4/p05.json"
+   "why": "SummitPost 403. Search summary only: approach from Florence Lake (west) or from east via Wanda Lake/McGee Canyon; no page names a standard-route trailhead. Nort",
+   "chunk": "out5/q16.json"
   },
   {
    "id": "ca_mount_perkins_west_slope",
-   "why": "Not re-researched. Sawmill Pass TH is a possible start per an unverified summary.",
-   "chunk": "out4/p05.json"
+   "why": "West slope is reached from the lake basin on the west side of the crest (JMT side); plausible starts Sawmill Pass TH (SAWTH, USFS 36.938805,-118.290212) over Co",
+   "chunk": "out5/q16.json"
   },
   {
    "id": "ca_mount_pinchot_east_ridge_from_armstrong_canyon",
@@ -6898,123 +8051,98 @@
   },
   {
    "id": "ca_mount_reinstein_standard_route",
-   "why": "Not re-researched. Maxson, Rancheria, Florence Lake ferry all used; no standard.",
-   "chunk": "out4/p05.json"
-  },
-  {
-   "id": "ca_mount_young_standard_route",
-   "why": "Whitney Portal is peak-level only (multi-peak reports); no page states a standard start; held stuck.",
-   "chunk": "out4/p05.json"
+   "why": "Search results only (not opened as evidence): Maxson, Woodchuck, Rancheria all reach Blackcap Basin; Maxson called closest all-trail by one source; Florence Lak",
+   "chunk": "out5/q17.json"
   },
   {
    "id": "ca_observation_peak_standard_route",
-   "why": "Remote multi-day peak, reachable from Taboose, Sabrina, Big Pine, etc.; only report-level inference. No standard start established. Not re-verified this pass (C",
-   "chunk": "out4/p06.json"
+   "why": "Two real starts with one report each: Bob Burd started at South Lake (Bishop Pass, Dusy Basin, Knapsack Pass, Palisade Creek, Cataract Creek, Amphitheater Lake,",
+   "chunk": "out5/q19.json"
   },
   {
    "id": "ca_pettit_peak_standard_route",
-   "why": "Single report from Tuolumne side; peak also reached from north (Virginia Lakes etc.). Not a standard start. Not re-verified this pass. (No new fetches this pass",
-   "chunk": "out4/p06.json"
+   "why": "Burd's Tuolumne Meadows trip (Glen Aulin trail) is presented as unusually hard; the same page says a companion day-hiked Pettit and Volunteer from Virginia Lake",
+   "chunk": "out5/q19.json"
   },
   {
    "id": "ca_picket_guard_peak_standard_route",
-   "why": "Climber.org reports start at two different trailheads (Mineral King, Rowell Meadow); no standard. Candidates: Mineral King Sawtooth, Rowell Meadow. (No new fetc",
-   "chunk": "out4/p06.json"
+   "why": "Three equal-weight starts in opened reports: Mineral King, Whitney Portal, Rowell Meadow (earlier pass). Remote multi-day peak with no standard day start.",
+   "chunk": "out5/q19.json"
   },
   {
    "id": "ca_pyramid_peak_south_standard_route",
-   "why": "Taboose, Sawmill and Baxter passes all plausible; single peak-specific report. Not equally used proof either way; left stuck. (No new fetches this pass: Chrome ",
-   "chunk": "out4/p06.json"
+   "why": "Several equally used starts: Taboose Pass (climber.org 2016/1872), Roads End/Cedar Grove via Paradise Valley (Burd trip report, fetched, ~16 h round trip), Sawm",
+   "chunk": "out5/q20.json"
   },
   {
-   "id": "ca_red_kaweah_west_face",
-   "why": "Route text only says from Big Arroyo, reachable from Mineral King (~20 mi) or Crescent Meadow HST (~30 mi); one report used Mineral King. Two plausible starts, ",
-   "chunk": "out4/p06.json"
+   "id": "ca_rodgers_peak_standard_route",
+   "why": "Only one opened trip report (climber.org 2006/1567) starts at Agnew Meadows, as a multi-day backpack. Search results (not opened; SummitPost and highsierratopix",
+   "chunk": "out5/q21.json"
   },
   {
-   "id": "ca_smith_mountain_albanita_trail_and_northeast_ridge",
-   "why": "Identified earlier (parking at end of paved Monache Jeep Rd, Albanita Trail) but no land-manager coordinate. OSM only has the Albanita Trail path way (way 71123",
-   "chunk": "out4/p07.json"
+   "id": "ca_silver_peak_standard_route",
+   "why": "Two equally used starts: Lake Edison / Vermilion Valley Resort trailhead (2013, 2018 reports) and Onion Springs OHV-road trailhead (2002 report, about 5 mi up O",
+   "chunk": "out5/q22.json"
+  },
+  {
+   "id": "ca_spanish_needle_north_ridge",
+   "why": "Three real starts (Chimney campground + PCT, Canebrake Rd saddle/Lamont TH, Rodecker Flat). Route text (PCT saddle north of summit) fits the PCT/Chimney start b",
+   "chunk": "out5/q23.json"
   },
   {
    "id": "ca_tinker_knob_via_the_pacific_crest_trail",
-   "why": "Wikipedia says approach is by PCT from Donner Pass or Palisades Tahoe, no trailhead named for the shorter way. Cold Stream TH (USFS 39.271123,-120.284665) remai",
-   "chunk": "out4/p07.json"
+   "why": "Ted Muller page: standard PCT trailheads are Donner Summit (7 mi) and Squaw Valley (8 mi); other starts are Coldstream and Truckee forest roads. Nothing ties th",
+   "chunk": "out5/q24.json"
   },
   {
    "id": "ca_triple_divide_peak_standard_route",
-   "why": "Earlier Marvin Pass lead is a long approach report, ~25 km away, with a climber.org-only coordinate. No page found naming a standard-route start (Wikipedia page",
-   "chunk": "out4/p07.json"
+   "why": "Searches show Marvin Pass/Horse Corral, Shepherd Pass/Symmes Creek and Roads End all used; no page names one as the standard route. Wikipedia: easiest is East R",
+   "chunk": "out5/q24.json"
   },
   {
    "id": "ca_trojan_peak_standard_route",
-   "why": "Two equal class 2 approaches (George Creek east side; Shepherd Pass NW face). Wikipedia names no trailhead. Stays stuck.",
-   "chunk": "out4/p07.json"
+   "why": "Two equal class 2 approaches: George Creek (east, shortest, no signed trailhead) and Shepherd Pass. Sierra Club ratings list both. SummitPost not opened. Stays ",
+   "chunk": "out5/q24.json"
   },
   {
    "id": "ca_volunteer_peak_standard_route",
-   "why": "Only the long West Face line from Twin Lakes is documented; the page calls the SW ridge easiest but names no start. Not the standard route's trailhead.",
-   "chunk": "out4/p07.json"
+   "why": "No standard route exists: reports start from Twin Lakes (Seavey Pass), Virginia Lakes (Benson Pass), or Tuolumne (PCT/Rodgers Lake). Each is a multi-day approac",
+   "chunk": "out5/q25.json"
   },
   {
    "id": "ca_wheel_mountain_standard_route",
-   "why": "Chrome tab refused scripts, so no Peakbagger data. Only page is one multi-peak report starting at South Lake (Bishop Pass, Le Conte Canyon, Rambaud Creek), 20+ ",
-   "chunk": "out4/p08.json"
+   "why": "Reports reach it from South Lake (Bishop Pass), Lake Sabrina (via Echo Col, a loop), or the west side; 20+ mi from any lot. No standard-route page tying 'Standa",
+   "chunk": "out5/q25.json"
   },
   {
-   "id": "co_dyer_mountain_southeast_slopes",
-   "why": "Two plausible starts: Iowa Gulch-Leadville TH (circuit using the SE flank; fits text short climb from a high trailhead) and Fourmile-Leavick TH (SE Ridge, 12.2 ",
-   "chunk": "out4/p08.json"
+   "id": "co_culebra_peak_northwest_ridge",
+   "why": "Stuck: three equally listed starts, and the page prints no coordinates for any. All parties check in at ranch HQ. Official candidates 16+ km away do not apply.",
+   "chunk": "out5/q04.json"
   },
   {
-   "id": "co_emerald_peak_south_southwest_ridge",
-   "why": "Trailhead identified (Rockdale/Clohesy Lake, climb13ers) but not placed. USFS Cloyses Trailhead (38.950901,-106.407437) is about 400 m NE of OSM Clohesy Lake (w",
-   "chunk": "out4/p08.json"
-  },
-  {
-   "id": "me_sugarloaf_mountain_appalachian_trail_to_sugarloaf",
-   "why": "Earlier pass identified the Caribou Valley Road gate lot (mainebyfoot page). No coordinate for the gate lot found: Nominatim only returns Caribou Valley Road wa",
-   "chunk": "out4/p09.json"
-  },
-  {
-   "id": "nv_mount_rose_mount_rose_trail",
-   "why": "Identification (Mount Rose Summit lot on SR 431, tahoetrailguide + Wikipedia) was already inferred in earlier pass. OSM has unnamed parking ways at the pass: wa",
-   "chunk": "out4/p09.json"
+   "id": "co_horseshoe_mountain_east_slopes",
+   "why": "Stuck: page covers the NE Ridge, not an East Slopes route; nothing ties East Slopes to a start. Fourmile-Leavick is the only start the page gives (inferred, wea",
+   "chunk": "out5/q08.json"
   },
   {
    "id": "wa_american_border_peak_northeast_face",
-   "why": "Overview text says the route goes to the summit (lean true) but no page checked. Trailhead still not identified for this face: Twin Lakes Trailhead is likely (U",
-   "chunk": "out4/p09.json"
-  },
-  {
-   "id": "wa_apex_mountain_pasayten_apex_buttress",
-   "why": "Thirtymile still only inferred from the Tungsten Lake hike, not this buttress. Placements exist if accepted: USFS Thirty Mile Trailhead 48.822806,-120.019715; O",
-   "chunk": "out4/p09.json"
+   "why": "SummitPost 403 to WebFetch. Search summaries only (not evidence): all sources start at Twin Lakes (FR 3065, high-clearance to Twin Lakes, else Yellow Aster/Tomy",
+   "chunk": "out5/q01.json"
   },
   {
    "id": "wa_big_snow_mountain_sasquatch_s_breath",
-   "why": "No page about this route found; face unknown. Dingford Creek (USFS 47.517325,-121.4543; OSM way 122088962 47.51727,-121.45426) only applies if the route is on t",
-   "chunk": "out4/p09.json"
-  },
-  {
-   "id": "wa_burgundy_spire_corkscrew_route",
-   "why": "Pullout identified only at area level; Nominatim finds no parking or trailhead within 1 km of Burgundy Col area. No placement.",
-   "chunk": "out4/p09.json"
-  },
-  {
-   "id": "wa_castle_peak_pasayten_east_ridge",
-   "why": "No page found naming this route's start; SummitPost 403, Chrome tab unusable this pass (extension refused my tab), so Peakbagger unread. Wikipedia lists no 'Eas",
-   "chunk": "out4/p10.json"
+   "why": "Mountain Project area page lists the route with no description, approach or face. Search found no page on it. Peak approaches: Dingford Creek (gated Middle Fork",
+   "chunk": "out5/q01.json"
   },
   {
    "id": "wa_castle_peak_pasayten_north_ridge",
-   "why": "No page found naming this route's start; SummitPost 403, Chrome tab unusable this pass (extension refused my tab), so Peakbagger unread. Wikipedia lists no 'Eas",
-   "chunk": "out4/p10.json"
+   "why": "No page describes a north ridge (Wikipedia lists north face and buttress routes only; Jim Brisbine report mentions none). Access from the north would be Monumen",
+   "chunk": "out5/q02.json"
   },
   {
    "id": "wa_chair_peak_southeast_face",
-   "why": "Steep snow face; no page about SE face start; Snow Lake TH is a peak-level inference only. Candidate: Snow Lake Trailhead (USFS 47.445656,-121.423665; OSM node ",
-   "chunk": "out4/p10.json"
+   "why": "No page about the SE snow face found; Snow Lake/Alpental is only a peak-level inference (as earlier passes). SummitPost, Mountaineers blocked.",
+   "chunk": "out5/q03.json"
   },
   {
    "id": "wa_chianti_spire_lichen_bouquet",
@@ -7027,114 +8155,49 @@
    "chunk": "out4/p10.json"
   },
   {
-   "id": "wa_chimney_rock_north_ridge",
-   "why": "Peak-level only: WTA Pete Lake page says climbers use Pete Lake as staging for Chimney Rock; no page ties this ridge to a start. Candidate Pete Lake Trailhead (",
-   "chunk": "out4/p10.json"
-  },
-  {
-   "id": "wa_chimney_rock_northeast_ridge",
-   "why": "Peak-level only: WTA Pete Lake page says climbers use Pete Lake as staging for Chimney Rock; no page ties this ridge to a start. Candidate Pete Lake Trailhead (",
-   "chunk": "out4/p10.json"
-  },
-  {
-   "id": "wa_chimney_rock_northwest_ridge",
-   "why": "Peak-level only: WTA Pete Lake page says climbers use Pete Lake as staging for Chimney Rock; no page ties this ridge to a start. Candidate Pete Lake Trailhead (",
-   "chunk": "out4/p10.json"
-  },
-  {
    "id": "wa_chimney_rock_southeast_ridge",
-   "why": "Peak-level only: WTA Pete Lake page says climbers use Pete Lake as staging for Chimney Rock; no page ties this ridge to a start. Candidate Pete Lake Trailhead (",
-   "chunk": "out4/p10.json"
+   "why": "WEAK peak-level: every page found (Lemke, climberkyle, search snippets of MP/SummitPost) uses Pete Lake TH for Chimney Rock; none describes this ridge. SummitPo",
+   "chunk": "out5/q03.json"
   },
   {
    "id": "wa_chimney_rock_southeast_shoulder",
-   "why": "Peak-level only: WTA Pete Lake page says climbers use Pete Lake as staging for Chimney Rock; no page ties this ridge to a start. Candidate Pete Lake Trailhead (",
-   "chunk": "out4/p10.json"
-  },
-  {
-   "id": "wa_colchuck_balanced_rock_east_route",
-   "why": "Only Stuart Lake TH used by any source (stephabegg NW Ridge report), but no page describes this route. Candidate Stuart Lake Trailhead (USFS 47.527806,-120.8205",
-   "chunk": "out4/p10.json"
-  },
-  {
-   "id": "wa_colchuck_balanced_rock_south_route",
-   "why": "Only Stuart Lake TH used by any source (stephabegg NW Ridge report), but no page describes this route. Candidate Stuart Lake Trailhead (USFS 47.527806,-120.8205",
-   "chunk": "out4/p10.json"
-  },
-  {
-   "id": "wa_colchuck_peak_northeast_gully",
-   "why": "Still inferred only; no page names this gully. Stuart Lake TH (placements USFS 47.527806,-120.820515; OSM node 11298873822 47.5277547,-120.8208662) is the proba",
-   "chunk": "out4/p11.json"
+   "why": "WEAK peak-level: every page found (Lemke, climberkyle, search snippets of MP/SummitPost) uses Pete Lake TH for Chimney Rock; none describes this ridge. SummitPo",
+   "chunk": "out5/q03.json"
   },
   {
    "id": "wa_colchuck_peak_south_face",
-   "why": "No page naming this face opened (Peakbagger lists only most-recent-year ascents by route name: Via Colchuck Lake, Banshee Pass). Likely Colchuck Lake side via S",
-   "chunk": "out4/p11.json"
+   "why": "Search found no distinct South Face route on Colchuck Peak; sources differ on whether the south side is a separate route or just the approach to the col. Likely",
+   "chunk": "out5/q04.json"
   },
   {
    "id": "wa_crater_mountain_appassionata_smothered_in_smoke",
-   "why": "Own text describes a short crag face with a hueco, 5.1 R; probably misfiled onto Crater Mountain. No page found; Canyon Creek TH not supported.",
-   "chunk": "out4/p11.json"
-  },
-  {
-   "id": "wa_cutthroat_the_swarm",
-   "why": "Only one placement (geocaching, parking pullout); no official candidate matches the pullout (USFS Cutthroat Trailhead 48.556,-120.655 is a different, north-side",
-   "chunk": "out4/p11.json"
-  },
-  {
-   "id": "wa_dome_peak_indian_summer",
-   "why": "Summit answered from own descent text. Trailhead not researched this pass (earlier pass: Downey Creek TH, weak; road-closure milepost conflict MP 4-4.5 vs WTA 1",
-   "chunk": "out4/p11.json"
+   "why": "Search found no page naming this route. Text describes a short crag face (hueco, class 3 exit), not a peak route; likely misfiled onto Crater Mountain. Canyon C",
+   "chunk": "out5/q04.json"
   },
   {
    "id": "wa_dragontail_peak_boving_route",
-   "why": "lemkeclimbs.com/dragontail-peak does not mention this route; no page about it. Probable Stuart Lake TH only inferred.",
-   "chunk": "out4/p11.json"
-  },
-  {
-   "id": "wa_dragontail_peak_northwest_face",
-   "why": "No page names this route; page offers Colchuck Lake (Stuart Lake TH) or Snow Lakes TH approaches, so two starts are plausible.",
-   "chunk": "out4/p11.json"
-  },
-  {
-   "id": "wa_earl_peak_standup_creek_route",
-   "why": "Identity is strong, but the two placements are ~2 km apart (WTA 47.3515,-120.8412 vs OSM parking 47.3691,-120.8387); WTA says the trailhead is 1.5 mi up Road 11",
-   "chunk": "out4/p11.json"
-  },
-  {
-   "id": "wa_east_mcmillan_spire_northeast_buttress",
-   "why": "Route text names Upper Goodell Creek Group Campground; WTA page (West McMillan Spire) gives 48.6733,-121.2658 for Goodell Creek, which does not mention East McM",
-   "chunk": "out4/p11.json"
-  },
-  {
-   "id": "wa_east_twin_needle_north_buttress",
-   "why": "Own text says Lower Goodell Creek trailhead; no signed name and no independent placement (WTA 48.6733,-121.2658 is the Goodell Creek campground area).",
-   "chunk": "out4/p11.json"
-  },
-  {
-   "id": "wa_east_twin_needle_thread_of_ice",
-   "why": "Does not reach the summit; ends at the col. Trailhead (Goodell Creek Campground, own pin) not placed independently this pass.",
-   "chunk": "out4/p11.json"
+   "why": "No opened page names Boving. Search summary only (Mountain Project, not opened) puts the Boving/Christensen line above the toe of the Colchuck Glacier, implying",
+   "chunk": "out5/q05.json"
   },
   {
    "id": "wa_elephant_head_lower_west_face",
-   "why": "Chrome page scripts unavailable this pass, Peakbagger unreadable; WTA and Wikipedia fetches gave no route-specific start. Peak-level leads only, nothing ties th",
-   "chunk": "out4/p12.json"
+   "why": "Stuck: no stored text. Only a ListsOfJohn entry (Dome Peak quad, 48.3177,-121.0365) and an OpenBeta listing. No approach page found in 2 searches. Mountain Proj",
+   "chunk": "out5/q06.json"
   },
   {
    "id": "wa_elephant_head_variation_p1_west_face",
-   "why": "Chrome page scripts unavailable this pass, Peakbagger unreadable; WTA and Wikipedia fetches gave no route-specific start. Peak-level leads only, nothing ties th",
-   "chunk": "out4/p12.json"
+   "why": "Stuck: same as Lower West Face; no page names a start.",
+   "chunk": "out5/q06.json"
   },
   {
    "id": "wa_enchantment_peak_east_ridge",
-   "why": "Route text names two starts (Stuart Lake TH via Aasgard, or Snow Lakes TH); no page chosen. Wikipedia has no route detail. Two equally plausible starts, left st",
-   "chunk": "out4/p12.json"
+   "why": "Stuck: Mountaineers summary says Colchuck Lake or Snow Lake both used; route text the same. Two equally used starts, nothing ties the east ridge to one. Leads: ",
+   "chunk": "out5/q06.json"
   },
   {
    "id": "wa_garfield_mountain_east_rib",
-   "why": "Chrome page scripts unavailable this pass, Peakbagger unreadable; WTA and Wikipedia fetches gave no route-specific start. Peak-level leads only, nothing ties th",
-   "chunk": "out4/p12.json"
+   "why": "No page found describing this route's own start. Opened yellowleaf approaches (south approach 2.6 mi past Taylor River bridge; Infinite Bliss 1.1 mi), Mountain ",
+   "chunk": "out5/q07.json"
   },
   {
    "id": "wa_garfield_mountain_leaning_spire_west_route",
@@ -7143,98 +8206,68 @@
   },
   {
    "id": "wa_garfield_mountain_north_route",
-   "why": "Chrome page scripts unavailable this pass, Peakbagger unreadable; WTA and Wikipedia fetches gave no route-specific start. Peak-level leads only, nothing ties th",
-   "chunk": "out4/p12.json"
-  },
-  {
-   "id": "wa_garfield_mountain_south_route",
-   "why": "Identification strong (route text + yellowleaf.org) but no coordinate from USFS/OSM; nearest USFS points are other trailheads. Not placed.",
-   "chunk": "out4/p12.json"
+   "why": "No page found describing this route's own start. Opened yellowleaf approaches, Mountain Project Mount Garfield area page (no North Route entry), WCC Middle Fork",
+   "chunk": "out5/q07.json"
   },
   {
    "id": "wa_garfield_mountain_southeast_face",
-   "why": "Chrome page scripts unavailable this pass, Peakbagger unreadable; WTA and Wikipedia fetches gave no route-specific start. Peak-level leads only, nothing ties th",
-   "chunk": "out4/p12.json"
+   "why": "No page found describing this route's own start. Opened yellowleaf approaches, Mountain Project Mount Garfield area page (no Southeast Face entry), WCC Middle F",
+   "chunk": "out5/q07.json"
   },
   {
    "id": "wa_goat_mountain_eastern_route",
-   "why": "Chrome page scripts unavailable this pass, Peakbagger unreadable; WTA and Wikipedia fetches gave no route-specific start. Peak-level leads only, nothing ties th",
-   "chunk": "out4/p12.json"
+   "why": "Stuck. No page opened ties the Eastern Route to a start. SummitPost 403, WTA trip report 403, Mountaineers 403. Opened pages (USFS TH page, turns-all-year 2019 ",
+   "chunk": "out5/q08.json"
   },
   {
    "id": "wa_goat_mountain_southeast_face",
-   "why": "Chrome page scripts unavailable this pass, Peakbagger unreadable; WTA and Wikipedia fetches gave no route-specific start. Peak-level leads only, nothing ties th",
-   "chunk": "out4/p12.json"
+   "why": "Stuck. No page opened ties the Southeast Face to a start. SummitPost 403, WTA trip report 403, Mountaineers 403. Opened pages (USFS TH page, turns-all-year 2019",
+   "chunk": "out5/q08.json"
   },
   {
    "id": "wa_goat_mountain_southeast_route",
-   "why": "Chrome page scripts unavailable this pass, Peakbagger unreadable; WTA and Wikipedia fetches gave no route-specific start. Peak-level leads only, nothing ties th",
-   "chunk": "out4/p12.json"
+   "why": "Stuck. No page opened ties the Southeast Route to a start. SummitPost 403, WTA trip report 403, Mountaineers 403. Opened pages (USFS TH page, turns-all-year 201",
+   "chunk": "out5/q08.json"
   },
   {
    "id": "wa_goat_mountain_southwest_route",
-   "why": "Chrome page scripts unavailable this pass, Peakbagger unreadable; WTA and Wikipedia fetches gave no route-specific start. Peak-level leads only, nothing ties th",
-   "chunk": "out4/p12.json"
+   "why": "Stuck. No page opened ties the Southwest Route to a start. SummitPost 403, WTA trip report 403, Mountaineers 403. Opened pages (USFS TH page, turns-all-year 201",
+   "chunk": "out5/q08.json"
   },
   {
    "id": "wa_half_moon_uncle_wehrly_s_toupee",
-   "why": "Own text silent. Only the sibling Southwest Slopes lead (SR-20 Hairpin / Pond Pullout). No page about this route's approach opened this pass; Chrome/Peakbagger ",
-   "chunk": "out4/p13.json"
-  },
-  {
-   "id": "wa_hibox_mountain_south_face",
-   "why": "Rachel Lake Trailhead is the standard route's start (earlier WTA page); nothing ties this south-face route to it. Weak, not upgraded.",
-   "chunk": "out4/p13.json"
-  },
-  {
-   "id": "wa_hibox_mountain_southeast_ridge",
-   "why": "Same as South Face: only peak-level WTA Rachel Lake lead; no route-specific page found.",
-   "chunk": "out4/p13.json"
+   "why": "AAC article opened: no approach given. Search snippet (SummitPost, unopened, 403) says Half Moon access is from SR-20 near milepost 163 (the Hairpin), cairns we",
+   "chunk": "out5/q08.json"
   },
   {
    "id": "wa_hozomeen_mountain_north_peak_south_ridge",
-   "why": "Text says it ascends toward the South Peak saddle, so it may not reach the North Peak summit; nothing confirms either way. Waypoints already include Hozomeen Ca",
-   "chunk": "out4/p13.json"
+   "why": "No page describes this route's start. North Peak approaches in use: Skyline II/Hozomeen Ridge trail (NWHikers 2007, ~8 mi, 4400 ft to ridge camp) or Hozomeen Ca",
+   "chunk": "out5/q09.json"
   },
   {
    "id": "wa_hozomeen_mountain_south_peak_north_ridge",
-   "why": "No page found; only the sibling Hozomeen Campground lead.",
-   "chunk": "out4/p13.json"
-  },
-  {
-   "id": "wa_hozomeen_mountain_south_peak_southeast_buttress",
-   "why": "Named by own text but unplaced. OSM Nominatim has only the Lightning Creek river (way 370470953), no trailhead; no official candidate matches. Stuck on placemen",
-   "chunk": "out4/p13.json"
+   "why": "No page describes this route's approach (the AAJ north-face and Zorro pages name no trailhead). South Peak routes generally use Hozomeen Lake trailhead at Hozom",
+   "chunk": "out5/q09.json"
   },
   {
    "id": "wa_hozomeen_mountain_southwest_buttress",
-   "why": "No page found; sibling Hozomeen Campground lead only.",
-   "chunk": "out4/p13.json"
-  },
-  {
-   "id": "wa_hozomeen_mountain_west_face",
-   "why": "Own text: 11+ mile haul from the road to a camp north of the peak; also names Skyline II trailhead near km 55 as serving the northern approach, but the start is",
-   "chunk": "out4/p13.json"
+   "why": "No page found that describes this route's approach; SummitPost and Mountaineers returned 403. Only lead is the sibling's Hozomeen Campground, unverified.",
+   "chunk": "out5/q09.json"
   },
   {
    "id": "wa_huckleberry_mountain_north_route",
-   "why": "No page describes a north route; not re-researched this pass.",
-   "chunk": "out4/p13.json"
+   "why": "Mountain Project (East Ridge, South Face, West Face only), Wikipedia, trailcatjim: no north route described. Standard access is the PCT north trailhead at Snoqu",
+   "chunk": "out5/q09.json"
   },
   {
    "id": "wa_huckleberry_mountain_north_spur",
-   "why": "No page describes a north spur; not re-researched this pass.",
-   "chunk": "out4/p13.json"
+   "why": "No page describes a north spur. Same as North Route: PCT Snoqualmie Pass and Gold Creek are the two used starts, nothing ties this route to either.",
+   "chunk": "out5/q09.json"
   },
   {
    "id": "wa_huckleberry_mountain_southwest_slope",
-   "why": "No page ties a Southwest Slope to a start; PCT Snoqualmie Pass lead is for the East Ridge only.",
-   "chunk": "out4/p13.json"
-  },
-  {
-   "id": "wa_liberty_bell_the_barber_pole",
-   "why": "No page about this route readable without Peakbagger/Chrome; sibling's Washington Pass hairpin start (USFS Hairpin 48.514336,-120.642715) is a weak inference on",
-   "chunk": "out4/p14.json"
+   "why": "No page describes a southwest slope. A 2024 trailcatjim report says they searched the south side for the guidebook route and did not find it. Two starts in use ",
+   "chunk": "out5/q09.json"
   },
   {
    "id": "wa_lincoln_peak_standard",
@@ -7243,193 +8276,188 @@
   },
   {
    "id": "wa_little_annapurna_boola_boola_buttress",
-   "why": "No page found; climber.org URL 404. Not assuming Stuart Lake.",
-   "chunk": "out4/p14.json"
+   "why": "No readable page about this buttress (CascadeClimbers/Mountaineers/SummitPost 403; WebSearch results name no Boola Boola). Peak standard route uses Stuart Lake ",
+   "chunk": "out5/q11.json"
   },
   {
    "id": "wa_little_annapurna_northeast_face",
-   "why": "No readable page about this face.",
-   "chunk": "out4/p14.json"
+   "why": "No page about this face. Two plausible Enchantments starts (Stuart Lake TH, Snow Creek TH); nothing ties this face to one. Two searches done, no route page.",
+   "chunk": "out5/q11.json"
   },
   {
    "id": "wa_little_annapurna_northwest_buttress",
-   "why": "No readable page about this buttress.",
-   "chunk": "out4/p14.json"
+   "why": "Same as Northeast Face: no page about the buttress; Stuart Lake vs Snow Creek both plausible. Not guessed.",
+   "chunk": "out5/q11.json"
   },
   {
    "id": "wa_little_big_chief_mountain_southwest_face",
-   "why": "No page about the SW face; sibling NE face uses Dingford Creek/Dutch Miller Gap, not assumed.",
-   "chunk": "out4/p14.json"
+   "why": "No page describes the southwest face. Other pages describe NW face (Dingford Creek), north ridge via Waptus Lake, and Dutch Miller Gap; the SW face start could ",
+   "chunk": "out5/q11.json"
   },
   {
    "id": "wa_lundin_peak_northwest_face",
-   "why": "No page about a NW face; not inferred from East Ridge PCT lot.",
-   "chunk": "out4/p14.json"
+   "why": "No page about a northwest face (search found only west ridge, southeast ridge, a low-5th north-side face). Snoqualmie Pass PCT lot is the usual access to the wh",
+   "chunk": "out5/q11.json"
   },
   {
    "id": "wa_middle_peak_north_face",
-   "why": "No readable page without Peakbagger; Downey Creek only a sibling lead.",
-   "chunk": "out4/p14.json"
+   "why": "No page about the north face. The one page read (WildSnow, about Middle Gunsight SW ridge and east face) approaches from Stehekin side, not Downey Creek, so the",
+   "chunk": "out5/q11.json"
   },
   {
    "id": "wa_middle_peak_traverse_route",
-   "why": "Traverse likely has no single start; no page.",
-   "chunk": "out4/p14.json"
+   "why": "No page; a traverse has no single start. See North Face note (Stehekin-side approach for Gunsight peaks).",
+   "chunk": "out5/q11.json"
   },
   {
    "id": "wa_mount_ballard_east_face",
-   "why": "Text gives a locked gate on Slate Creek road (~3,800 ft), not a named trailhead; Wikipedia Ballard page is a disambiguation with no access info; no land-manager",
-   "chunk": "out4/p15.json"
+   "why": "Start identified strongly (route text plus two opened pages) but it is an unnamed gate with no printed coordinate and no USFS/NPS match; Harts Pass candidates a",
+   "chunk": "out5/q12.json"
   },
   {
    "id": "wa_mount_chaval_north_ridge",
-   "why": "Text only says same approach as West Route via Grade Creek Rd/Illabot Creek Rd; no page names a lot. Sibling Arrow Creek switchback is a different spur; not ass",
-   "chunk": "out4/p15.json"
+   "why": "SummitPost (403) and CascadeClimbers pages unreadable. Only readable page (turns-all-year, West face) starts from the car on Illabot Road, no named lot. A 2017 ",
+   "chunk": "out5/q13.json"
   },
   {
    "id": "wa_mount_despair_northeast_buttress",
-   "why": "Text names no trailhead (Goodell Creek drainage); SR 20 start unconfirmed. Thornton Lakes is only the FA exit.",
-   "chunk": "out4/p15.json"
+   "why": "CascadeClimbers 403, skisickness 404 earlier, AAJ PDF was the wrong article. Search summary repeats that the party approached via Goodell Creek and exited Trium",
+   "chunk": "out5/q13.json"
   },
   {
    "id": "wa_mount_hinman_east_route",
-   "why": "No route text; Wikipedia has no routes. East side plausibly Middle Fork Snoqualmie (Tucquala/Dutch Miller) but unconfirmed; Necklace Valley sibling is not proof",
-   "chunk": "out4/p15.json"
+   "why": "No page defines a separate 'East Route'. Middle Fork Snoqualmie (Dingford Creek / Dutch Miller Gap) is the common approach but it is for the Chain Lakes/La Bohn",
+   "chunk": "out5/q14.json"
   },
   {
    "id": "wa_mount_johnson_deception_chimney",
-   "why": "No route text; Wikipedia and WTA Royal Basin name no Johnson route; SummitPost 403. Upper Dungeness (Royal Basin) is the likely standard start but not tied to t",
-   "chunk": "out4/p15.json"
+   "why": "Mount Johnson routes: no page opened ties this named route to a start. Wikipedia and WTA Royal Basin name no route; peakery 2019 report approaches from upper Ro",
+   "chunk": "out5/q15.json"
   },
   {
    "id": "wa_mount_johnson_northwest_face",
-   "why": "No route text; Wikipedia and WTA Royal Basin name no Johnson route; SummitPost 403. Upper Dungeness (Royal Basin) is the likely standard start but not tied to t",
-   "chunk": "out4/p15.json"
+   "why": "Mount Johnson routes: no page opened ties this named route to a start. Wikipedia and WTA Royal Basin name no route; peakery 2019 report approaches from upper Ro",
+   "chunk": "out5/q15.json"
   },
   {
    "id": "wa_mount_johnson_rumble_gully",
-   "why": "No route text; Wikipedia and WTA Royal Basin name no Johnson route; SummitPost 403. Upper Dungeness (Royal Basin) is the likely standard start but not tied to t",
-   "chunk": "out4/p15.json"
+   "why": "Mount Johnson routes: no page opened ties this named route to a start. Wikipedia and WTA Royal Basin name no route; peakery 2019 report approaches from upper Ro",
+   "chunk": "out5/q15.json"
   },
   {
    "id": "wa_mount_johnson_south_terrace_route",
-   "why": "No route text; Wikipedia and WTA Royal Basin name no Johnson route; SummitPost 403. Upper Dungeness (Royal Basin) is the likely standard start but not tied to t",
-   "chunk": "out4/p15.json"
+   "why": "Mount Johnson routes: no page opened ties this named route to a start. Wikipedia and WTA Royal Basin name no route; peakery 2019 report approaches from upper Ro",
+   "chunk": "out5/q15.json"
   },
   {
    "id": "wa_mount_johnson_southwest_route",
-   "why": "No route text; Wikipedia and WTA Royal Basin name no Johnson route; SummitPost 403. Upper Dungeness (Royal Basin) is the likely standard start but not tied to t",
-   "chunk": "out4/p15.json"
+   "why": "Mount Johnson routes: no page opened ties this named route to a start. Wikipedia and WTA Royal Basin name no route; peakery 2019 report approaches from upper Ro",
+   "chunk": "out5/q15.json"
   },
   {
    "id": "wa_mount_johnson_staircase_route",
-   "why": "No route text; Wikipedia and WTA Royal Basin name no Johnson route; SummitPost 403. Upper Dungeness (Royal Basin) is the likely standard start but not tied to t",
-   "chunk": "out4/p15.json"
-  },
-  {
-   "id": "wa_mount_rahm_custer_traverse",
-   "why": "Carried over stuck. Wikipedia Mount Rahm says only Rahm is at NE end of Custer Ridge; no route page found; reachesSummit unknown (own text says it connects the ",
-   "chunk": "out4/p16.json"
+   "why": "Mount Johnson routes: no page opened ties this named route to a start. Wikipedia and WTA Royal Basin name no route; peakery 2019 report approaches from upper Ro",
+   "chunk": "out5/q15.json"
   },
   {
    "id": "wa_mount_rainier_east_success_couloir",
-   "why": "Carried over stuck. NPS climbing page lists Paradise, Westside Road, White River, Mowich as trailheads but maps no route to one; own text offers three starts.",
-   "chunk": "out4/p16.json"
+   "why": "Mountain Project text, like the route's own, offers Van Trump Meadows (Comet Falls), Westside Road or Paradise; easiest said to be Paradise/Van Trump via Kautz ",
+   "chunk": "out5/q16.json"
   },
   {
    "id": "wa_mount_rainier_north_mowich_icefall",
-   "why": "Carried over stuck. No route text; Mowich Lake only a sibling lead; NPS climbing page confirms Mowich Lake is a climbing trailhead but ties no route.",
-   "chunk": "out4/p16.json"
-  },
-  {
-   "id": "wa_mount_stuart_direct_north_ridge",
-   "why": "Carried over stuck. Wikipedia Mount Stuart names no trailhead or north ridge; SummitPost 403. Stuart Lake (north) vs Esmeralda (south) unresolved.",
-   "chunk": "out4/p16.json"
+   "why": "No page about this route found. Mowich Lake is the usual approach to the North Mowich/Mowich Glacier side (Ptarmigan Ridge via Spray Park), but only as a neighb",
+   "chunk": "out5/q16.json"
   },
   {
    "id": "wa_mount_stuart_gorillas_in_the_mist",
-   "why": "Carried over stuck. No page found tying it to a side; Esmeralda is only a lead.",
-   "chunk": "out4/p16.json"
+   "why": "CascadeClimbers and SummitPost 403; the Mountain Project id I tried was a different (South Dakota) route. Lead only: Ingalls-side approach implies Esmeralda Bas",
+   "chunk": "out5/q17.json"
   },
   {
    "id": "wa_mount_stuart_stuart_range_traverse",
-   "why": "Carried over stuck: multi-peak traverse, no single trailhead.",
-   "chunk": "out4/p16.json"
+   "why": "Multi-peak traverse, no route text, no single trailhead. Not pursued further.",
+   "chunk": "out5/q17.json"
   },
   {
    "id": "wa_mount_triumph_west_route",
-   "why": "Carried over stuck. Wikipedia Mount Triumph URL 404; no page names the start of the Triumph Pass climbers route.",
-   "chunk": "out4/p16.json"
+   "why": "Wikipedia (opened) names the Triumph Pass climbers route as the approach but no trailhead. A search summary says it is reached via the Thornton Lakes Trail; the",
+   "chunk": "out5/q17.json"
   },
   {
    "id": "wa_north_early_winter_spire_christianson_roskelley",
-   "why": "Carried over stuck. WTA Blue Lake page says climbers on that trail are likely headed to Early Winters Spire, but no page about Christianson-Roskelley or this sp",
-   "chunk": "out4/p16.json"
+   "why": "Weak only: sources (MP area page, Gaia, search summaries) say most NEWS routes are approached from the west via Blue Lake Trail #314 (USFS Blue Lake Trailhead 4",
+   "chunk": "out5/q18.json"
   },
   {
    "id": "wa_north_early_winter_spire_twitch_of_the_death_nerve",
-   "why": "Carried over stuck. WTA Blue Lake page says climbers on that trail are likely headed to Early Winters Spire, but no page about Twitch of the Death Nerve or this",
-   "chunk": "out4/p16.json"
+   "why": "Same as Christianson-Roskelley: no page names this route. Inferred lead only, Blue Lake TH (west-side approach shared by most NEWS routes). SummitPost 403, MP a",
+   "chunk": "out5/q18.json"
   },
   {
    "id": "wa_north_early_winter_spire_vulcan_death_grip",
-   "why": "Carried over stuck. WTA Blue Lake page says climbers on that trail are likely headed to Early Winters Spire, but no page about Vulcan Death Grip or this spire. ",
-   "chunk": "out4/p16.json"
+   "why": "A targeted search for 'Vulcan Death Grip' returned nothing relevant. Inferred lead only, Blue Lake TH. Not confirmed.",
+   "chunk": "out5/q18.json"
   },
   {
    "id": "wa_north_peak_north_ridge",
-   "why": "Carried over stuck. No page opened about North Peak (Gunsight Range).",
-   "chunk": "out4/p16.json"
+   "why": "Identity of North Peak unresolved. Searches suggest North Peak = North Gunsight Peak (8,160 ft), whose West Face is reached by Downey Creek trail + Bachelor Cre",
+   "chunk": "out5/q18.json"
   },
   {
    "id": "wa_north_peak_southeast_buttress",
-   "why": "Carried over stuck. No page opened about North Peak (Gunsight Range).",
-   "chunk": "out4/p16.json"
+   "why": "Same as North Ridge: no page about the Southeast Buttress; a southeast side may be approached from the east (Agnes Creek/Stehekin or Entiat) rather than Downey ",
+   "chunk": "out5/q18.json"
   },
   {
-   "id": "wa_old_guard_peak_east_side_route",
-   "why": "Pass 3: WTA and Wikipedia pages opened gave nothing on Old Guard. Link to Cascade Pass lot remains inferred; summit not stated.",
-   "chunk": "out4/p17.json"
-  },
-  {
-   "id": "wa_overcoat_peak_north_face",
-   "why": "Pass 3: Wikipedia has no access info. Dingford sibling stays a weak guess.",
-   "chunk": "out4/p17.json"
+   "id": "wa_north_star_mountain_cloudy_peak_traverse",
+   "why": "Three plausible starts, none tied to this route: Holden Village/Railroad Creek (Lucerne ferry + bus; Lyman Lake ~16 mi from Holden), Phelps Creek TH over Spider",
+   "chunk": "out5/q18.json"
   },
   {
    "id": "wa_red_mountain_snoqualmie_east_face",
-   "why": "Pass 3: WTA/Wikipedia 404, snwburd 403. No page names this side's start. Candidates Snow Lake / PCT North unverified.",
-   "chunk": "out4/p17.json"
+   "why": "No readable page about the east side. WTA describes only the west slope from the PCT/Commonwealth Basin; SummitPost east-side pages (red-mountain-from-its-east/",
+   "chunk": "out5/q20.json"
   },
   {
    "id": "wa_red_mountain_snoqualmie_east_ridge",
-   "why": "Pass 3: same as East Face; nothing readable.",
-   "chunk": "out4/p17.json"
+   "why": "Same as East Face. A SummitPost page titled 'East Ridge from Red Mtn Pass' exists (403), which suggests it starts from the PCT/Commonwealth Basin side to Red Pa",
+   "chunk": "out5/q20.json"
   },
   {
    "id": "wa_red_mountain_snoqualmie_southeast_face",
-   "why": "Pass 3: same as East Face; nothing readable.",
-   "chunk": "out4/p17.json"
+   "why": "Same as East Face. Search summary (not opened) says the SE face is Class 4 and its SummitPost page is a 2002 east-side climb; page 403. Probable: PCT North TH, ",
+   "chunk": "out5/q20.json"
   },
   {
    "id": "wa_skookum_peak_twinsisters_jaw_s_tooth_and_northwest_ridge",
-   "why": "Pass 3: Wikipedia 404. Earlier lead Dailey Prairie remains unplaced.",
-   "chunk": "out4/p17.json"
+   "why": "Only Mountain Project (text) gives Dailey Prairie, a place not a signed trailhead, and no page placed it or tied it to a lot. Cascadeclimbers TR 403; WTA/Mounta",
+   "chunk": "out5/q22.json"
+  },
+  {
+   "id": "wa_the_pyramid_picket_east_ridge",
+   "why": "Page (stephabegg.com Pickets) has Pyramid reached via Goodell Creek and Crescent Creek Basin, but nothing about this East Ridge specifically; peak-level inferen",
+   "chunk": "out5/q24.json"
   },
   {
    "id": "wa_the_temple_west_face",
-   "why": "Pass 3: no new page opened; earlier held identification carried over, not upgraded.",
-   "chunk": "out4/p17.json"
+   "why": "Lead still Snow Lakes Trailhead (WTA 47.5441,-120.7097 opened; USFS 47.544106,-120.709515), via Nada Lake 5.2 mi, per search results for the Mountaineers West S",
+   "chunk": "out5/q24.json"
+  },
+  {
+   "id": "wa_tupshin_peak_east_face",
+   "why": "Two equally used starts, neither tied to this route: Company Creek trail (the route's own first-listed approach, Lemke 2018) vs Devore Creek trail from Weaver P",
+   "chunk": "out5/q25.json"
   },
   {
    "id": "wa_whistler_mountain_north_ridge",
-   "why": "Pass 3: Wikipedia and WTA (404) gave nothing. Unsigned pullout, no official point; place by hand. Earlier SummitPost snippet said 0.25 mi, unverified.",
-   "chunk": "out4/p17.json"
+   "why": "Route text itself identifies the start: unsigned SR-20 shoulder about 0.75 mi west of the Blue Lake lot, north side (search summaries variously say 0.25 mi or n",
+   "chunk": "out5/q25.json"
   },
   {
    "id": "wa_witches_tower_northwest_buttress",
-   "why": "Pass 3: Wikipedia has no page on the peak. Stuart Lake TH is peak-level only.",
-   "chunk": "out4/p17.json"
+   "why": "Peak-level only: every Witches Tower approach found uses the Stuart Lake/Colchuck trailhead (USFS 47.527806,-120.820515), but no page on this route or its face ",
+   "chunk": "out5/q25.json"
   }
  ]
 }

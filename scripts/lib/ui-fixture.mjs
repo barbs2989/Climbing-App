@@ -152,7 +152,12 @@ async function createUser(tag, name) {
     }),
   });
   if (status >= 300 || !body?.id) throw new Error(`admin create user failed (${status}): ${JSON.stringify(body)}`);
-  return { id: body.id, email, password, name };
+  // A USERNAME, because since #3306 (0420/0432) an account without one is sent to setup on every
+  // screen: check:signed-in's whole walk then measured the "Choose your username" step (2026-11-18,
+  // 7 failures). It starts with the first name so pubName's "@robin_…" still names the climber the
+  // walk looks for, and carries the run's stamp so the unique index on lower(username) never collides.
+  const username = (name.split(" ")[0].toLowerCase().replace(/[^a-z0-9]/g, "") + "_" + stamp).slice(0, 20);
+  return { id: body.id, email, password, name, username };
 }
 
 // The session the browser will run as. Fetched over the auth API rather than typed into
@@ -233,6 +238,7 @@ export async function createFixture(log = () => {}) {
       const { status } = await rest(`profiles?id=eq.${u.id}`, {
         method: "PATCH",
         body: JSON.stringify({
+          username: u.username,
           location: "Bellingham, WA",
           disciplines: ["alpine", "trad"],
           trad_grade: "5.9",
