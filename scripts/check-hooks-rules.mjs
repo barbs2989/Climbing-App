@@ -136,5 +136,5 @@ console.error(`\n${added.length} NEW rules-of-hooks violation(s):\n`);
 for (const [, v] of added) console.error(`  ${v.file}:${v.line}  ${v.hook}()  ${v.why}  (in ${v.owner})`);
 console.error(`\nHooks may only run during render, from a component or another hook.`);
 console.error(`To load data from an event handler, call a plain async function instead —`);
-console.error(`see fetchCrewMessages in lib/db.js for the pattern.\n`);
+console.error(`see fetchOlderCrewMessages in lib/db.js for the pattern.\n`);
 process.exit(1);

@@ -221,7 +221,6 @@ EnrichmentPanels.jsx
 └── DataQualityPanel
 
 enrichment-db.js
-├── enrichmentTiers (FULL, ALPINE, ROCK, MINIMAL)
 ├── validateEnrichmentData()
 ├── determineTier()
 ├── getEnrichment()
