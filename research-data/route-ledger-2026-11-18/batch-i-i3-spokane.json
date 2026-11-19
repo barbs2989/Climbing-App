@@ -1,0 +1,368 @@
+{
+ "wa_main_crack": {
+  "area": "wa_main_wall_7",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/106315348/main-crack",
+    "https://www.mountainproject.com/area/109486845/main-wall",
+    "https://www.spokanecounty.gov/5054/John-H-Shields-Park---Make-Beacon-Hill-P",
+    "https://www.spokesman.com/stories/2012/aug/02/minnehaha-great-place-to-hike-learn-rock-climbing/"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.5",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106315348/main-crack",
+      "fact": "5.5 YDS, trad/TR",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_main_crack",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "0 is invalid. Mountain Project: one 60 ft crack to a shared anchor (single pitch). Single source.",
+    "evidence": [
+     "https://www.mountainproject.com/route/106315348/main-crack"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_main_crack",
+    "column": "length_m",
+    "from": null,
+    "to": 18,
+    "why": "Mountain Project: 60 ft (18 m). Single source.",
+    "evidence": [
+     "https://www.mountainproject.com/route/106315348/main-crack"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_main_crack",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Spokane County Parks, Recreation & Golf (John H. Shields Park, the county-owned part of the Beacon Hill recreation area)"
+    },
+    "why": "Spokane County project page: John H. Shields Park, known as Minnehaha Rocks, is the county-owned portion of Beacon Hill, known for its climbing. Official-1; lock after applying (expires 2027-11-18). A 2012 Spokesman-Review article says city and county co-own it; the county page names the county as owner and the City of Spokane as Phase 2 partner.",
+    "evidence": [
+     "https://www.spokanecounty.gov/5054/John-H-Shields-Park---Make-Beacon-Hill-P",
+     "https://www.spokesman.com/stories/2012/aug/02/minnehaha-great-place-to-hike-learn-rock-climbing/"
+    ]
+   }
+  ],
+  "disputed": [
+   "grade: MP route page and lists say 5.5; MP's own Main Wall description calls it 5.4 (same publisher). A photo caption on the route page suggests a 5.8 crux low and that the line may be Apprentice Route. Kept 5.5 at locked-1src; theCrag returned a bot-processing page in Chrome so no second source was reached."
+  ],
+  "notes": "Gear: MP says a single rack plus #5 and #6 cams protects it well, more runout without them; shares an anchor with the face to its left. FA unknown. Land manager verified on Spokane County's own page (county-owned John H. Shields Park), not Washington State Parks. The same page, under 'Closures & Impacts to Operations', says there are current closures or restrictions to the park, and dates Phase 2 construction (parking, accessible trail, boulder play space) to spring-summer 2026, subject to change. Whether any closure touches the climbing is not stated, so no closure text is proposed; worth a re-check. No pass or fee found on an official page."
+ },
+ "wa_z_crack": {
+  "area": "wa_don_quixote_face",
+  "set": {
+   "fa": "Jeff Curtis"
+  },
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/106278633/z-crack",
+    "https://cascadeclimbers.com/forum/topic/22914-minnehaha-invasion/",
+    "https://www.spokanecounty.gov/5054/John-H-Shields-Park---Make-Beacon-Hill-P",
+    "https://www.spokesman.com/stories/2012/aug/02/minnehaha-great-place-to-hike-learn-rock-climbing/"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.10a",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106278633/z-crack",
+      "fact": "5.10a YDS, trad/TR",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/22914-minnehaha-invasion/",
+      "fact": "Z Crack - 5.10A (2004 post)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Jeff Curtis",
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106278633/z-crack",
+      "fact": "FA Jeff Curtis, 1960",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_z_crack",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "0 is invalid. Mountain Project: a 30 ft crack, top-rope anchor at the top (single pitch). Single source.",
+    "evidence": [
+     "https://www.mountainproject.com/route/106278633/z-crack"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_z_crack",
+    "column": "length_m",
+    "from": null,
+    "to": 9,
+    "why": "Mountain Project: 30 ft (9 m). Single source.",
+    "evidence": [
+     "https://www.mountainproject.com/route/106278633/z-crack"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_z_crack",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Spokane County Parks, Recreation & Golf (John H. Shields Park, the county-owned part of the Beacon Hill recreation area)"
+    },
+    "why": "Spokane County project page: John H. Shields Park, known as Minnehaha Rocks, is the county-owned portion of Beacon Hill, known for its climbing. Official-1; lock after applying (expires 2027-11-18). A 2012 Spokesman-Review article says city and county co-own it; the county page names the county as owner and the City of Spokane as Phase 2 partner.",
+    "evidence": [
+     "https://www.spokanecounty.gov/5054/John-H-Shields-Park---Make-Beacon-Hill-P",
+     "https://www.spokesman.com/stories/2012/aug/02/minnehaha-great-place-to-hike-learn-rock-climbing/"
+    ]
+   }
+  ],
+  "disputed": [
+   "overview gear: stored 'Gear to 2 inches, small cams useful'; Mountain Project gives gear to about 0.5 in, mostly finger-size cams. One source against the stored text; not changed. Stored 'zigs right then zags left' is not stated by MP (it says Z-shaped)."
+  ],
+  "notes": "fa: the year 1960 was removed from fa (names only); year per MP is 1960. On the far right of the Don Quixote Face, first route met walking around the south end of the main wall. Land manager verified on Spokane County's own page (county-owned John H. Shields Park), not Washington State Parks. The same page, under 'Closures & Impacts to Operations', says there are current closures or restrictions to the park, and dates Phase 2 construction (parking, accessible trail, boulder play space) to spring-summer 2026, subject to change. Whether any closure touches the climbing is not stated, so no closure text is proposed; worth a re-check. No pass or fee found on an official page."
+ },
+ "wa_the_dihedral_3": {
+  "area": "wa_main_wall_7",
+  "set": {
+   "fa": "Tom Nephew, Ron Burgner"
+  },
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/106198776/the-dihedral",
+    "https://www.mountainproject.com/area/109486845/main-wall",
+    "https://cascadeclimbers.com/forum/topic/22914-minnehaha-invasion/",
+    "https://outthereoutdoors.com/polished-holds-popular-spokane-climbing-routes-to-take-on-this-summer/",
+    "https://www.spokanecounty.gov/5054/John-H-Shields-Park---Make-Beacon-Hill-P",
+    "https://www.spokesman.com/stories/2012/aug/02/minnehaha-great-place-to-hike-learn-rock-climbing/"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "fa",
+    "value": "Tom Nephew, Ron Burgner",
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106198776/the-dihedral",
+      "fact": "FA Tom Nephew, Ron Burgner, 1973",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_the_dihedral_3",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "0 is invalid. Mountain Project: an 80 ft corner to a two-bolt anchor with a walk-off (single pitch). Single source.",
+    "evidence": [
+     "https://www.mountainproject.com/route/106198776/the-dihedral"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_the_dihedral_3",
+    "column": "length_m",
+    "from": null,
+    "to": 24,
+    "why": "Mountain Project: 80 ft (24 m). Single source.",
+    "evidence": [
+     "https://www.mountainproject.com/route/106198776/the-dihedral"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_the_dihedral_3",
+    "column": "anchor",
+    "from": null,
+    "to": "Two-bolt anchor",
+    "why": "Mountain Project: two-bolt anchor on top; bring webbing to rig a top rope. Single source.",
+    "evidence": [
+     "https://www.mountainproject.com/route/106198776/the-dihedral"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_the_dihedral_3",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Spokane County Parks, Recreation & Golf (John H. Shields Park, the county-owned part of the Beacon Hill recreation area)"
+    },
+    "why": "Spokane County project page: John H. Shields Park, known as Minnehaha Rocks, is the county-owned portion of Beacon Hill, known for its climbing. Official-1; lock after applying (expires 2027-11-18). A 2012 Spokesman-Review article says city and county co-own it; the county page names the county as owner and the City of Spokane as Phase 2 partner.",
+    "evidence": [
+     "https://www.spokanecounty.gov/5054/John-H-Shields-Park---Make-Beacon-Hill-P",
+     "https://www.spokesman.com/stories/2012/aug/02/minnehaha-great-place-to-hike-learn-rock-climbing/"
+    ]
+   }
+  ],
+  "disputed": [
+   "grade: stored 5.9+. CascadeClimbers 2004 post 5.9+; Mountain Project route page 5.10a (its description calls it an old-school 5.9 and a photo is titled 5.9+); Out There Outdoors 5.9 and notes many think it is 5.10. No two sources give the same grade exactly; kept 5.9+, not locked."
+  ],
+  "notes": "fa: the year '73 removed from fa (names only); MP gives 1973. Gear per MP: stoppers and cams to 2 in. Center of the main wall, left-facing corner; crux mid-height after a rest. Land manager verified on Spokane County's own page (county-owned John H. Shields Park), not Washington State Parks. The same page, under 'Closures & Impacts to Operations', says there are current closures or restrictions to the park, and dates Phase 2 construction (parking, accessible trail, boulder play space) to spring-summer 2026, subject to change. Whether any closure touches the climbing is not stated, so no closure text is proposed; worth a re-check. No pass or fee found on an official page."
+ },
+ "wa_they_call_the_wind_mariah": {
+  "area": "wa_east_face_5",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/112317191/they-call-the-wind-mariah",
+    "https://www.mountainproject.com/area/105853957/rocks-of-sharon",
+    "https://www.spokesman.com/stories/2012/nov/04/climbers-get-rise-out-of-rocks-of-sharon/",
+    "https://www.spokanecounty.gov/5038/Iller-Creek-Trailhead-Improvements"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.10-",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112317191/they-call-the-wind-mariah",
+      "fact": "5.10- YDS, sport, 2 pitches",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_they_call_the_wind_mariah",
+    "column": "pitches",
+    "from": 0,
+    "to": 2,
+    "why": "0 is invalid. Mountain Project: 2 pitches (P1 5.8, P2 5.10-), each to an anchor; it notes the route is easily linked as one. Single source.",
+    "evidence": [
+     "https://www.mountainproject.com/route/112317191/they-call-the-wind-mariah"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_they_call_the_wind_mariah",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Spokane County Parks, Recreation & Golf (Iller Creek Conservation Area)"
+    },
+    "why": "UNCONFIRMED (news, not an official page): Spokesman-Review 2012 says the county took over the Rocks of Sharon in 2012 and added it to the Iller Creek Conservation Area; the county trailhead page ties Iller Creek to Rocks of Sharon access. Hold until an official page states it.",
+    "evidence": [
+     "https://www.spokesman.com/stories/2012/nov/04/climbers-get-rise-out-of-rocks-of-sharon/",
+     "https://www.spokanecounty.gov/5038/Iller-Creek-Trailhead-Improvements"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "Big Rock East Face, just left of Northern Aggression and sharing its first bolt; MP warns the reachy second bolt before the chimney step must be clipped before any fall; alpine draws help if linking. No length or bolt count published. FA unknown. Land manager NOT verified on an official page: a 2012 Spokesman-Review article says Dishman Hills Conservancy bought the 80-acre Rocks of Sharon in 2009 and Spokane County took it over in spring 2012 under Conservation Futures, adding it to Iller Creek Conservation Area; the county's Iller Creek trailhead page says the trailhead gives access to the Rocks of Sharon but does not name the owner. Later Conservancy purchases near Big Rock (2019 news) mean parcels may differ. Proposed access is unconfirmed; approve only after an official ownership page confirms it. Parking per MP: Stevens Creek Rd lot (the county's Iller Creek trailhead on Holman Rd is the longer way in)."
+ },
+ "wa_rock_2_standard_route": {
+  "area": "wa_rock_2",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/126724261/standard-route",
+    "https://www.mountainproject.com/area/126720262/rock-2",
+    "https://www.spokesman.com/stories/2012/nov/04/climbers-get-rise-out-of-rocks-of-sharon/",
+    "https://www.spokanecounty.gov/5038/Iller-Creek-Trailhead-Improvements"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.7",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/126724261/standard-route",
+      "fact": "5.7 YDS trad, from the Loomis guide",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "length_m",
+    "value": 15,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/126724261/standard-route",
+      "fact": "50 ft (15 m)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 1,
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/126724261/standard-route",
+      "fact": "one 50 ft line of diagonal cracks and ramps",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_rock_2_standard_route",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Spokane County Parks, Recreation & Golf (Iller Creek Conservation Area)"
+    },
+    "why": "UNCONFIRMED (news, not an official page): Spokesman-Review 2012 says the county took over the Rocks of Sharon in 2012 and added it to the Iller Creek Conservation Area; the county trailhead page ties Iller Creek to Rocks of Sharon access. Hold until an official page states it.",
+    "evidence": [
+     "https://www.spokesman.com/stories/2012/nov/04/climbers-get-rise-out-of-rocks-of-sharon/",
+     "https://www.spokanecounty.gov/5038/Iller-Creek-Trailhead-Improvements"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "Row matches Mountain Project (Rock #2, west face, right of Teeter Totter; MP credits the Loomis guide). Not the same route as Big Rock's 'Standard Route' (5.4, 2 pitches). fa 'Unknown' is a placeholder, not a name; consider null. Pitches stated only by implication (one 50 ft line); drop that lock if a stated count is required. Land manager NOT verified on an official page: a 2012 Spokesman-Review article says Dishman Hills Conservancy bought the 80-acre Rocks of Sharon in 2009 and Spokane County took it over in spring 2012 under Conservation Futures, adding it to Iller Creek Conservation Area; the county's Iller Creek trailhead page says the trailhead gives access to the Rocks of Sharon but does not name the owner. Later Conservancy purchases near Big Rock (2019 news) mean parcels may differ. Proposed access is unconfirmed; approve only after an official ownership page confirms it. Parking per MP: Stevens Creek Rd lot (the county's Iller Creek trailhead on Holman Rd is the longer way in)."
+ }
+}

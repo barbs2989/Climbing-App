@@ -918,6 +918,9 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     (Conditions card, Home tile) go through `fetchCragForecastMeasured`, so they cannot disagree. Measured
     on 2026-10-15: RRG's past 96 h 3.46" modelled vs 2.34" measured, Gunks 0.98" vs 1.48". A time not yet
     analysed is an XML error, a point outside the analysis is `{}`: both are "not measured", never zero.
+    Since 2026-11-18 every window is asked at once (the server refuses a TIME list, a range and two LAYERS,
+    and speaks HTTP/1.1), FINAL values are kept on the device and a preliminary one never is, and the old and
+    new reads returned the same windows at Index, Smith Rock, RRG, Squamish and Red Rock (null).
     The guard pins the merge (amount from the measurement, timing from the model inside a window, gaps keep
     the model, a measured dry window dries a modelled soaking). The two crag-fetch URL checks now match
     `fetchCragForecast\(` exactly — `fetchCragForecastMeasured` shares the prefix and was read in its place.

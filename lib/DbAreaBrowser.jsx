@@ -60,7 +60,7 @@ export default function DbAreaBrowser({ areaDiscussion, jumpToFinderReq, onSignI
   const wide = useWideScreen();
   // A view handed in with a Near me request (Home's map: { lat, lng, zoom }), and whether to centre on the climber.
   const [nearAt, setNearAt] = useState(null);
-  const [nearLocate, setNearLocate] = useState(false);
+  const [nearLocate, setNearLocate] = useState(0);
   const climber = useMemo(() => ({ wishlist, profile, completedIds, rankSuggested, discSlots }), [wishlist, profile, completedIds, rankSuggested, discSlots]);
   // The jump requests below are App props that STAY set once handled, so a remount would re-run the
   // last one (a search from an hour ago) over the position restored above. The ids already handled
@@ -197,11 +197,11 @@ export default function DbAreaBrowser({ areaDiscussion, jumpToFinderReq, onSignI
     setTreeOpen(false);
     // NEAR ME IS ABOUT WHERE YOU ARE, not the area you last looked at (walkthrough 2026-11-18: Home's
     // "See all" opened "Map · Rock City" because Rock City was where the Climbs tab last stood). The
-    // map opens from the top level: on the view Home's map handed over, else centred on you when
-    // location is already allowed. "List" then lands on the state picker.
+    // map opens from the top level: on the view Home's map handed over, else centred on you (the tap
+    // is the ask: the browser prompts for location if it has not been told yet). "List" then lands on the state picker.
     setStateNode(null); setStack([]);
     setNearAt(jumpToNearReq.at || null);
-    setNearLocate(!jumpToNearReq.at);
+    setNearLocate(jumpToNearReq.at ? 0 : jumpToNearReq.id); // the tap's id: a second Near me tap, already on the map, finds you again
     setScreen("near");
   }, [jumpToNearReq]);
 
@@ -222,6 +222,25 @@ export default function DbAreaBrowser({ areaDiscussion, jumpToFinderReq, onSignI
   }, [stateNode, stack, screen, finderDisc, finderInit]);
 
   const treeBtn = stateNode ? <button onClick={() => setTreeOpen(true)} aria-haspopup="dialog" aria-label={"Area tree of " + stateNode.name} style={{ ...POP_BACK, flexShrink: 0, padding: "0 13px", marginLeft: "auto" }}><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="6" height="5" rx="1" /><rect x="15" y="10" width="6" height="5" rx="1" /><rect x="15" y="17" width="6" height="5" rx="1" /><path d="M6 8v11h9M6 12.5h9" /></svg><span>Area tree</span></button> : null;
+  // THE AREA PAGE'S HEADER CARD draws these two (AreaPage headerNav): a Back that names where it goes, and the path
+  // ABOVE the area (the card's title names the area itself). The Back is marked data-cm-step-back because it sits at
+  // the foot of the card, past the 140px a page Back is looked for in: the phone's top bar takes it over wherever it
+  // is (lib/pageBack.js), and the website draws it where it stands.
+  const onAreaPage = screen === "areas" && !!stateNode && !!current && crumbs.length > 0;
+  const areaNav = onAreaPage ? {
+    names: crumbs.map(c => c.name),
+    back: <button data-cm-step-back="true" onClick={back} style={{ ...POP_BACK, flexShrink: 1, minWidth: 0, maxWidth: "100%" }}><span aria-hidden="true">{"←"}</span><span style={{ minWidth: 0, overflow: "hidden", textOverflow: "ellipsis" }}>{"Back to " + (crumbs.length >= 2 ? crumbs[crumbs.length - 2].name : "All areas")}</span></button>,
+    path: (
+      <nav aria-label="Area path" style={{ display: "flex", alignItems: "center", flexWrap: "wrap", rowGap: 2, columnGap: 5, minWidth: 0 }}>
+        {[null, ...crumbs.slice(0, -1)].map((c, i) => (
+          <span key={c ? c.id : "root"} style={{ display: "inline-flex", alignItems: "center", gap: 5, minWidth: 0, maxWidth: "100%" }}>
+            {i > 0 ? <span aria-hidden="true" style={{ color: C.textMuted, fontSize: 14, fontWeight: 700 }}>{"›"}</span> : null}
+            <button onClick={() => jump(c ? i - 1 : -1)} style={{ background: "transparent", border: "none", color: C.blue, fontSize: 13.5, cursor: "pointer", fontWeight: 700, padding: "3px 0", textAlign: "left", lineHeight: 1.3, overflowWrap: "anywhere" }}>{c ? c.name : "All areas"}</button>
+          </span>
+        ))}
+      </nav>
+    ),
+  } : null;
 
   return (
     <ClimberCtx.Provider value={climber}>
@@ -243,7 +262,10 @@ export default function DbAreaBrowser({ areaDiscussion, jumpToFinderReq, onSignI
           44px tall with a bright edge, so it is still easy to find without its own colour), and under it the full path, WRAPPING rather than scrolling,
           so every level above you is visible and tappable. */}
       {screen === "areas" && current && current.name ? <AreaDocTitle name={current.name} /> : null}
-      {crumbs.length ? (
+      {/* ON THE AREA PAGE this bar is not drawn (owner, 2026-11-18: "combine this ... so that the name of the area is
+          the top section"): the page's own header card carries the name, the path under it and the Back (areaNav,
+          below), so the place is named once. Route finder, Map and Objectives keep the bar. */}
+      {crumbs.length && !onAreaPage ? (
         <div style={{ position: "sticky", top: 0, zIndex: 30, background: C.bg, paddingBottom: 10, marginBottom: 2 }}>
           <div style={{ display: "flex", flexDirection: "column", alignItems: "stretch", gap: wide ? 10 : 0, background: C.surface, border: "1px solid " + C.borderHi, borderRadius: 12, padding: "11px 12px" }}>
             {/* THE AREA TREE has its own labelled button here, beside Back (owner, 2026-11-14: the tree was "difficult to
@@ -284,7 +306,7 @@ export default function DbAreaBrowser({ areaDiscussion, jumpToFinderReq, onSignI
         </div>
       ) : null}
       {screen === "near" ? (
-        <><ScreenHero C={C} title={"Map" + (current ? " · " + current.name : "")} /><NearMePanel key={nearAt ? nearAt.lat + "," + nearAt.lng + "," + nearAt.zoom : current ? current.id : "root"} uDistMi={uDistMi} autoLocate={!current && nearLocate} zoom0={!current && nearAt ? nearAt.zoom : null} name={current ? current.name : null} center0={current && current.lat != null ? { lat: current.lat, lng: current.lng } : !current && nearAt ? { lat: nearAt.lat, lng: nearAt.lng } : null} areaType={current && current.area_type} onBack={() => setScreen("areas")} onOpenArea={jumpToArea} onOpenRoute={onOpenRoute} C={C} /></>
+        <><ScreenHero C={C} title={"Map" + (current ? " · " + current.name : "")} /><NearMePanel key={nearAt ? nearAt.lat + "," + nearAt.lng + "," + nearAt.zoom : current ? current.id : "root"} uDistMi={uDistMi} autoLocate={!current && nearLocate ? nearLocate : null} zoom0={!current && nearAt ? nearAt.zoom : null} name={current ? current.name : null} center0={current && current.lat != null ? { lat: current.lat, lng: current.lng } : !current && nearAt ? { lat: nearAt.lat, lng: nearAt.lng } : null} areaType={current && current.area_type} onBack={() => setScreen("areas")} onOpenArea={jumpToArea} onOpenRoute={onOpenRoute} C={C} /></>
       ) : !stateNode ? (
         <>{rootHeader || null}<StatePicker onPick={pickState} C={C} /></>
       ) : screen === "finder" ? (
@@ -295,7 +317,7 @@ export default function DbAreaBrowser({ areaDiscussion, jumpToFinderReq, onSignI
         // `areaDiscussion` (App's area comment thread) is drawn HERE, in the area-page branch only:
         // never under the Map, the Route finder or Objectives (owner 2026-11-11, "Remove discussion
         // from area maps"). Placed by this component, so it switches in the same render as the screen.
-        <><AreaPage key={current.id} onSignIn={onSignIn} TopContributors={TopContributors} onFireMap={onFireMap} onAddClimb={onAddClimb} onAddArea={onAddArea} PartnerRow={PartnerRow} uid={uid} myListings={myListings} onListMe={onListMe} onFindPartnersInArea={onFindPartnersInArea} onViewProfile={onViewProfile} notify={notify} onStartCrew={onStartCrew} onCrewsHere={onCrewsHere} onGroupsHere={onGroupsHere} openCrewCountAt={openCrewCountAt} uElev={uElev} uDistMi={uDistMi} area={current} booked={bookmarks.includes(current.id)} onToggleSave={() => onToggleBookmark(current.id)} onDrill={drill} onFinder={d => { /* A chart bar hands a discipline; the inline form on the website hands a whole filter set, opened the way a saved search is (item 15). */ if (d && typeof d === "object") { setFinderInit({ id: "inline-" + Date.now(), q: "", filters: d }); setFinderDisc(""); } else { setFinderInit(null); setFinderDisc(typeof d === "string" ? d : ""); } setScreen("finder"); }} onSuggestAreaEdit={onSuggestAreaEdit} myId={myId} onNear={() => setScreen("near")} onObjectives={() => setScreen("objectives")} onAllAreas={() => setTreeOpen(true)} onOpenRoute={onOpenRoute} onJumpToArea={jumpToArea} C={C} />{areaDiscussion}</>
+        <><AreaPage key={current.id} headerNav={areaNav} onSignIn={onSignIn} TopContributors={TopContributors} onFireMap={onFireMap} onAddClimb={onAddClimb} onAddArea={onAddArea} PartnerRow={PartnerRow} uid={uid} myListings={myListings} onListMe={onListMe} onFindPartnersInArea={onFindPartnersInArea} onViewProfile={onViewProfile} notify={notify} onStartCrew={onStartCrew} onCrewsHere={onCrewsHere} onGroupsHere={onGroupsHere} openCrewCountAt={openCrewCountAt} uElev={uElev} uDistMi={uDistMi} area={current} booked={bookmarks.includes(current.id)} onToggleSave={() => onToggleBookmark(current.id)} onDrill={drill} onFinder={d => { /* A chart bar hands a discipline; the inline form on the website hands a whole filter set, opened the way a saved search is (item 15). */ if (d && typeof d === "object") { setFinderInit({ id: "inline-" + Date.now(), q: "", filters: d }); setFinderDisc(""); } else { setFinderInit(null); setFinderDisc(typeof d === "string" ? d : ""); } setScreen("finder"); }} onSuggestAreaEdit={onSuggestAreaEdit} myId={myId} onNear={() => setScreen("near")} onObjectives={() => setScreen("objectives")} onAllAreas={() => setTreeOpen(true)} onOpenRoute={onOpenRoute} onJumpToArea={jumpToArea} C={C} />{areaDiscussion}</>
       )}
       {treeOpen && stateNode ? (
         <DbAreaTree stateRoot={stateNode} current={current} ancestorIds={stack.map(a => a.id)} onNavigate={jumpToArea} onClose={() => setTreeOpen(false)} C={C} />

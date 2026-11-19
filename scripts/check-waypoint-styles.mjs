@@ -389,7 +389,8 @@ export function render(route, tab) {
   else {
     if (/>WAYPOINTS</.test(cragHtml)) bad("a sport route off a crag still renders a WAYPOINTS section");
     else ok("a crag route renders no WAYPOINTS section");
-    if (cragHtml.includes(">What to expect<")) bad("a sport route off a crag still renders the \"What to expect\" card");
+    /* "What to expect" lost its own heading on 2026-11-18: it is a block inside Conditions & recent activity now, so match its card head. */
+    if (cragHtml.includes("Typical conditions")) bad("a sport route off a crag still renders the \"What to expect\" (Typical conditions) block");
     else ok("a crag route renders no \"What to expect\" card");
   }
   if (html && !/>WAYPOINTS</.test(html)) bad("the ALPINE probe renders no WAYPOINTS heading — the crag rule has over-reached");

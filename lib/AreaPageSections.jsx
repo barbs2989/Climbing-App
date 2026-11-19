@@ -221,6 +221,7 @@ export function gradeFinderFilters(sys, b, stats) {
 // The open/closed choice is remembered on this device (a convenience, so storage failing is fine).
 const TYPES_OPEN_KEY = "cm.area.typesOpen";
 function readTypesOpen() { try { return typeof localStorage !== "undefined" && localStorage.getItem(TYPES_OPEN_KEY) === "1"; } catch { return false; } }
+const SKELETON_BARS = [28, 52, 70, 86, 64, 52, 42, 34, 26, 18, 12, 8];
 export function GradeSpreadDisclosure({ stats, loading, error, C, discOptions, onDisc, onGrade, first }) {
   const [open, setOpenRaw] = useState(readTypesOpen);
   const setOpen = v => { setOpenRaw(v); try { localStorage.setItem(TYPES_OPEN_KEY, v ? "1" : "0"); } catch { /* storage off: still toggles */ } };
@@ -229,7 +230,13 @@ export function GradeSpreadDisclosure({ stats, loading, error, C, discOptions, o
   const spread = hasGradeSpread(stats);
   return <div style={areaSection(C, first)}>
     {spread ? <GradeSpread stats={stats} C={C} bare onGrade={onGrade} /> : null}
-    {loading && !stats ? <div style={{ fontSize: 12, color: C.textMuted }}>Counting…</div> : null}
+    {/* LOADING HOLDS THE LOADED SHAPE (2026-11-18): faint bars where the chart will be and "Counting…" where
+        "Climbs here by type" will be, about as tall as both (145-178px measured), so every card under it does not
+        drop ~150px when the counts arrive. */}
+    {loading && !stats ? <div aria-busy="true">
+      <div aria-hidden="true" style={{ height: 105, display: "flex", alignItems: "flex-end", gap: 4, paddingBottom: 18, boxSizing: "border-box" }}>{SKELETON_BARS.map((h, i) => <span key={i} style={{ flex: 1, height: h + "%", background: C.border, borderRadius: 2, opacity: 0.6 }} />)}</div>
+      <div style={{ marginTop: 8, minHeight: 44, display: "flex", alignItems: "center", borderTop: "1px dashed " + C.border, fontSize: 12.5, color: C.textMuted }}>Counting…</div>
+    </div> : null}
     {error && !stats ? <div style={{ fontSize: 12.5, color: C.textMuted, lineHeight: 1.5 }}>Couldn't count the climbs here just now — check your connection and try again.</div> : null}
     {rows.length ? <button onClick={() => setOpen(!open)} aria-expanded={open} style={{ marginTop: spread ? 8 : 0, width: "100%", textAlign: "left", minHeight: 44, display: "flex", alignItems: "center", gap: 8, background: "none", border: "none", borderTop: spread ? "1px dashed " + C.border : "none", padding: "8px 0 0", cursor: "pointer", color: C.text }}>
       <span style={{ flex: 1, textAlign: "left", fontSize: 12.5, fontWeight: 700 }}>{"Climbs here by type"}</span>
