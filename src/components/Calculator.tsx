@@ -12,6 +12,9 @@ export interface CalcInputs {
   pack: number;
   party: number;
   depart: number;
+  /** When the party leaves CAMP on a multi-day trip's summit day (summitDayPlan). Its own input, default
+   *  4:00 AM, the alpine start: a 6:00 AM camp start put 115 of 507 multi-day summits after 1 PM. */
+  camp?: number;
 }
 /** One leg of the published plan. */
 interface SectionRow {
@@ -124,13 +127,14 @@ export default function Calculator({route,activity,fit:fitProp,setFit:setFitProp
      existed and the single call site passed neither, so `fitProp` was undefined and it fell back to
      local state like the other three. A lift nothing hands state to is not a lift. The props are
      kept so a caller can still drive fitness alone; `calc`/`onCalc` carry all four. */
-  const [own,setOwn]=useState<CalcInputs>({fit:"intermediate",pack:10,party:2,depart:6});
+  const [own,setOwn]=useState<CalcInputs>({fit:"intermediate",pack:10,party:2,depart:6,camp:4});
   const st=calc||own,setSt=onCalc||setOwn;
   const setK=(k: keyof CalcInputs)=>(v: string|number)=>setSt(x=>({...x,[k]:v}));
   const fit=fitProp||st.fit,setFit=setFitProp||setK("fit");
   const pack=st.pack,setPack=setK("pack");
   const party=st.party,setParty=setK("party");
   const depart=st.depart,setDepart=setK("depart");
+  const camp=st.camp!=null?st.camp:4,setCamp=setK("camp");
   /* The time maths -- stored legs vs the walk model, the up/down split, the whole-day rows -- live in
      lib/planTimes.js, because the Conditions tab's alpine start counts back from the same estimate. */
   const P=planTimes(route,{fit,pack,party,depart});
@@ -199,7 +203,7 @@ export default function Calculator({route,activity,fit:fitProp,setFit:setFitProp
      showed a red After dark or Overnight for a trip that sleeps in camp. summitDayPlan (lib/planTimes.js)
      lays the same estimate out as the walk in, the summit day timed from camp, and the walk out; Depart
      becomes the time the party leaves camp. */
-  const sd=multiDay?summitDayPlan(route,P,{depart,party}):null;
+  const sd=multiDay?summitDayPlan(route,P,{depart:camp,party}):null;
   // The N/A on the Approach tile was only half that fix. Total, Est. summit and Est. return
   // all still add hikeH, and hikeH is 0 whenever the approach inputs are missing -- 204,469
   // of the catalog's 205,492 routes. It used to be obvious (0.0hr Total, summit at the
@@ -276,7 +280,7 @@ export default function Calculator({route,activity,fit:fitProp,setFit:setFitProp
       {/* `pack` is kilograms because scarfHrs' penalty tiers are kg (>8, >15), but this was the one input in the app that ignored the unit setting — hardcoded "PACK (KG)" while UNITS defaults to imperial. A US climber typing 30 for a 30 lb pack had it read as 30 kg and got the heaviest slowdown applied to a planning estimate. Show and accept the reader's unit; keep kg in state. */}
       <div><div style={{fontSize:12,color:C.textMuted,marginBottom:3,fontWeight:700}}>{uImp()?"PACK (LB)":"PACK (KG)"}</div><input aria-label="Pack weight" type="number" value={uImp()?Math.round(pack/0.4536):pack} onChange={e=>{const n=Number(e.target.value);if(isNaN(n))return;setPack(uImp()?n*0.4536:n);}} style={{width:"100%",padding:"7px 8px",borderRadius:8,border:`1px solid ${C.border}`,background:C.surface,color:C.text,fontSize:13,boxSizing:"border-box",outline:"none"}}/></div>
       <div><div style={{...SUB_LABEL,marginBottom:3}}>PARTY SIZE</div><input aria-label="Party size" type="number" value={party} onChange={e=>setParty(Number(e.target.value))} style={{width:"100%",padding:"7px 8px",borderRadius:8,border:`1px solid ${C.border}`,background:C.surface,color:C.text,fontSize:13,boxSizing:"border-box",outline:"none"}}/></div>
-      <div><div style={{...SUB_LABEL,marginBottom:3}}>{sd&&sd.timed?"LEAVE CAMP":"DEPART"}</div><select aria-label={sd&&sd.timed?"Time you leave camp on the summit day":"Departure time"} value={depart} onChange={e=>setDepart(Number(e.target.value))} style={{width:"100%",padding:"7px 8px",borderRadius:8,border:`1px solid ${C.border}`,background:C.surface,color:C.text,fontSize:13}}>{Array.from({length:25},(_,i)=>2+i*0.5).map(h=><option key={h} value={h}>{fmt(h)}</option>)}</select></div>
+      <div><div style={{...SUB_LABEL,marginBottom:3}}>{sd&&sd.timed?"LEAVE CAMP":"DEPART"}</div><select aria-label={sd&&sd.timed?"Time you leave camp on the summit day":"Departure time"} value={sd&&sd.timed?camp:depart} onChange={e=>(sd&&sd.timed?setCamp:setDepart)(Number(e.target.value))} style={{width:"100%",padding:"7px 8px",borderRadius:8,border:`1px solid ${C.border}`,background:C.surface,color:C.text,fontSize:13}}>{Array.from({length:25},(_,i)=>2+i*0.5).map(h=><option key={h} value={h}>{fmt(h)}</option>)}</select></div>
     </div>
     <div style={{background:C.surface,borderRadius:10,padding:"12px 14px",marginBottom:10}}>
       {sd?(function(){
@@ -292,7 +296,7 @@ export default function Calculator({route,activity,fit:fitProp,setFit:setFitProp
           {whole?null:row("in",dayLbl(1,sd.inDays),sd.inDays===1?"Walk in to camp":"Walk in, camping on the way",(walkInKnown?"":"≥")+hr(sd.walkInH),C.green)}
           {sd.timed?<div style={{padding:"8px 0",borderBottom:sd.outDays?`1px solid ${C.borderLight}`:"none"}}>
             <div style={{fontSize:11,fontWeight:700,color:C.textMuted,textTransform:"uppercase",letterSpacing:0.3}}>{"Day "+sdN+" · summit day"}</div>
-            <div style={{fontSize:13,color:C.text,fontWeight:600,marginBottom:8}}>{"Leaving camp at "+fmt(depart)+(sd.endAt==="car"?", out to the car the same day":"")}</div>
+            <div style={{fontSize:13,color:C.text,fontWeight:600,marginBottom:8}}>{"Leaving camp at "+fmt(camp)+(sd.endAt==="car"?", out to the car the same day":"")}</div>
             <div style={{display:"grid",gridTemplateColumns:sd.endClock!=null?"1fr 1fr":"1fr",gap:9}}>
               {clock("Est. summit",sd.summitClock as number,!!sd.sumLate,"Leave camp earlier")}
               {sd.endClock!=null?clock(sd.endAt==="car"?"Back at the car":"Back at camp",sd.endClock,!!sd.late,"After dark"):null}

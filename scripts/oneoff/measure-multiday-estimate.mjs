@@ -36,7 +36,8 @@ for (const r of rows) {
     distKm: r.dist_km, itinerary: r.itinerary, outingShape: r.outing_shape, timing: r.timing,
   };
   const p = planTimes(route, {});
-  const sd = summitDayPlan(route, p, {});
+  // The Calculator's own defaults: Depart 6:00 for the single push, Leave camp 4:00 for the summit day.
+  const sd = summitDayPlan(route, p, { depart: 4 });
   const dayH = days.every((d) => typeof d.hours === "number") ? days.reduce((s, d) => s + d.hours, 0) : null;
   out.push({
     id: r.id, name: r.name, disc: r.discipline, nDays: days.length, dayH,
@@ -62,7 +63,7 @@ console.log(`  Total trip vs the plan's Moving hours (${withDays.length} with da
 const t = out.filter((x) => x.sd && x.sd.timed), u = out.filter((x) => x.sd && !x.sd.timed);
 console.log(`\nsummit-day view: timed ${t.length}, durations only ${u.length} (${["whole", "long", "noclimb"].map((w) => w + " " + u.filter((x) => x.sd.why === w).length).join(", ")})`);
 console.log(`  summit day ends at the car: ${t.filter((x) => x.sd.endAt === "car").length}; at camp with back-at-camp known: ${t.filter((x) => x.sd.endAt === "camp" && x.sd.endClock != null).length}, unknown: ${t.filter((x) => x.sd.endAt === "camp" && x.sd.endClock == null).length}`);
-console.log(`  red summit (after 1 PM, leaving camp 6 AM): ${t.filter((x) => x.sd.sumLate).length}; red return (after 6:30 PM): ${t.filter((x) => x.sd.late).length}`);
+console.log(`  red summit (after 1 PM, leaving camp 4 AM): ${t.filter((x) => x.sd.sumLate).length}; red return (after 6:30 PM): ${t.filter((x) => x.sd.late).length}`);
 const ups = t.map((x) => x.sd.upH).sort((a, b) => a - b);
 console.log(`  summit-day time up from camp: median ${ups[ups.length >> 1].toFixed(1)} hr, p90 ${ups[Math.floor(ups.length * 0.9)].toFixed(1)} hr`);
 const o = process.argv.indexOf("--out");

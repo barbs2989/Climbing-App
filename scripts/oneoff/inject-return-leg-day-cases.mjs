@@ -186,9 +186,19 @@ const CASES = [
     file: PLAN,
     why: "a single-day route whose walk in ~= walk out is a one-way climb; splitting it shortens the " +
          "time UP, which the storm start counts back from",
-    edits: [{ find: " && isMultiDayOuting(route) && ", repl: " && " }],
+    // Both conditions go: since 2026-11-18 "a day follows the summit day" also excludes a single day.
+    edits: [{ find: " && isMultiDayOuting(route) && hasDayAfterSummitDay && ", repl: " && " }],
     expect: "fail",
     must: /SINGLE-day route are a one-way climb/,
+  },
+  {
+    name: "camp-rule-on-a-summit-day-that-walks-out",
+    file: PLAN,
+    why: "THE SHASTA DEFECT, restored: a 2-day trip whose summit day walks out to the car stores its summit " +
+         "leg one way, and the camp split put Avalanche Gulch's summit 2.95 hr from Helen Lake against 4-6 reported",
+    edits: [{ find: " && hasDayAfterSummitDay && ", repl: " && " }],
+    expect: "fail",
+    must: /summit day ends at the CAR reads its summit leg one way/,
   },
   {
     name: "derived-leg-not-split",

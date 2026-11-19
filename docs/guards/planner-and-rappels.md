@@ -81,6 +81,16 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     A climb longer than `SUMMIT_DAY_MAX_H` (20 hr, a traverse) gets no clock, and its days are counted
     from the plan's hours. Injection: `inject-return-leg-day-cases.mjs` 25/25, its two banner cases
     repointed at the new copy.
+  - **THE CAMP RULE NEEDS A DAY AFTER THE SUMMIT DAY (2026-11-18, `summitDayIndex`).** When the summit
+    day walks out to the car, the one-total rule stores the summit leg as camp to summit ONE WAY, so the
+    0.59 split halved the climb: Shasta's Avalanche Gulch 2.95 hr up from Helen Lake against 4-6 reported
+    (20 sources), Mount Daniel 2.7 against 4.5, Courtney Peak 1.2. `summitDayFromCamp` now also requires
+    a later day (the summit day is found where the walk-in hours end on the plan). It errs SAFE: a row
+    that still stores a round trip there summits late, and the Conditions start counts back from a
+    longer climb. Pinned by "a 2-day trip whose summit day ends at the CAR"; injection case
+    `camp-rule-on-a-summit-day-that-walks-out` (26/26). The display-only split of an unsplit leg was
+    REMOVED the same day: Goode's NE Buttress ends its summit day at a bivy ON the summit, so splitting
+    put it on top in 5.3 hr against 9. *Leave camp* defaults to 4:00 AM (`calc.camp`, its own input).
   - **ACCURACY, measured 2026-11-18** (`audits/2026-11-18-multiday-estimate-accuracy.json`): on 15 of a
     28-route sample with reported leg times, the summit-day view's time up from camp was 0.98x reported
     where the summit day ends at the car and 1.02x where later days follow; the whole summit day ran
