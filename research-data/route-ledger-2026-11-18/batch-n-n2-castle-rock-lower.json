@@ -1,0 +1,653 @@
+{
+ "wa_smut": {
+  "area": "wa_lower_castle",
+  "set": {
+   "waypoints": [
+    {
+     "lat": 47.599736,
+     "lng": -120.713852,
+     "elev": 1399,
+     "name": "Castle Rock Trailhead",
+     "note": "Large roadside lot on US 2 below Castle Rock; no recreation pass is needed to park here.",
+     "type": "Trailhead",
+     "distMi": 0
+    }
+   ]
+  },
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/108952076/smut",
+    "https://wenatcheeoutdoors.org/2016/04/27/castle-rock-lower-wall/",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/castle-rock-trailhead",
+    "https://www.openstreetmap.org/way/301611553",
+    "https://www.mountainproject.com/area/105870900/lower-castle",
+    "https://epqs.nationalmap.gov/v1/json (USGS 3DEP point query, reused from batch I)"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "waypoints/Castle Rock Trailhead",
+    "value": {
+     "name": "Castle Rock Trailhead",
+     "lat": 47.599736,
+     "lng": -120.713852
+    },
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.openstreetmap.org/way/301611553",
+      "fact": "amenity=parking 'Castle Rock Trailhead' centre 47.59974,-120.71385 (reused from batch I/M; live locked on wa_saber, wa_mr_clean_2)",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/castle-rock-trailhead",
+      "fact": "Latitude 47.600101, Longitude -120.713997, about 42 m from the OSM lot (re-opened 2026-11-18)",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     },
+     {
+      "measurement": "USGS 3DEP point query at 47.599736,-120.713852 (reused from batch I)",
+      "fact": "1,399 ft"
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "5.10a",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108952076/smut",
+      "fact": "5.10a YDS",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://wenatcheeoutdoors.org/2016/04/27/castle-rock-lower-wall/",
+      "fact": "Smut (route A), 5.10a",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "discipline",
+    "value": "trad",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108952076/smut",
+      "fact": "Type: Trad; small cams to #1, brass nuts, 1 bolt",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://wenatcheeoutdoors.org/2016/04/27/castle-rock-lower-wall/",
+      "fact": "runout, needs good gear placement; gear to 1 in",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_smut",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "0 is invalid. MP: 70 ft, shares its upper cracks and anchor with Mr. Clean (one pitch, batch M). One pitch is implied, not stated: ledger unconfirmed, single-source.",
+    "evidence": [
+     "https://www.mountainproject.com/route/108952076/smut",
+     "https://wenatcheeoutdoors.org/2016/04/27/castle-rock-lower-wall/"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_smut",
+    "column": "length_m",
+    "from": null,
+    "to": 21,
+    "why": "MP states 70 ft (21 m). theCrag 403; WO gives no length. MP-alone length: locked-1src.",
+    "evidence": [
+     "https://www.mountainproject.com/route/108952076/smut"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_smut",
+    "column": "bolts",
+    "from": null,
+    "to": 1,
+    "why": "MP states 1 bolt; WO consistent (start aims for a bolt 20-25 ft up, count not stated). locked-1src (MP states it).",
+    "evidence": [
+     "https://www.mountainproject.com/route/108952076/smut",
+     "https://wenatcheeoutdoors.org/2016/04/27/castle-rock-lower-wall/"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_smut",
+    "column": "permit",
+    "from": null,
+    "to": "No recreation pass is needed to park at the Castle Rock Trailhead.",
+    "why": "permit empty. Official-1: USFS Castle Rock Trailhead page (re-opened 2026-11-18, page updated 2026-06-09) says no recreation pass to park, no fees. Copies the live wording on wa_saber / wa_mr_clean_2 (batch M). Lock official-1, expires 2027-11-18.",
+    "evidence": [
+     "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/castle-rock-trailhead"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_smut",
+    "column": "access",
+    "from": null,
+    "to": {
+     "fees": "None.",
+     "rules": "Castle Rock is outside designated wilderness. The seasonal raptor closure (April 1 to July 31) covers nearby Midnight and Noontime Rocks, not Castle Rock.",
+     "permit": "None needed to climb.",
+     "land_manager": "Okanogan-Wenatchee National Forest (Wenatchee River Ranger District)",
+     "parking_pass": "None. No recreation pass is needed to park at the Castle Rock Trailhead."
+    },
+    "why": "access empty. Copies the live object on wa_saber / wa_mr_clean_2 (verified batch M: USFS ownership layer = Okanogan-Wenatchee NF, no wilderness). Re-read 2026-11-18: USFS trailhead page names Okanogan-Wenatchee NF, Wenatchee River RD, no pass, no fees, raptor closure Apr 1-Jul 31 on Midnight and Noontime Rocks only. Lock official-1, expires 2027-11-18.",
+    "evidence": [
+     "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/castle-rock-trailhead",
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0 (batch M)"
+    ]
+   }
+  ],
+  "disputed": [
+   "fa: stored 'Dan Lepeska, John Tarver, 1980' = MP; no second source. Unchanged, unlocked."
+  ],
+  "notes": "First line left of The Fault chimney; shares upper cracks and anchor with Mr. Clean (MP). MP also lists a separate aid line 'Smut Aid' (C2 PG13, route 203329424) - check whether the catalog holds it; not a duplicate of this row."
+ },
+ "wa_idiot_s_delight": {
+  "area": "wa_lower_castle",
+  "set": {
+   "waypoints": [
+    {
+     "lat": 47.599736,
+     "lng": -120.713852,
+     "elev": 1399,
+     "name": "Castle Rock Trailhead",
+     "note": "Large roadside lot on US 2 below Castle Rock; no recreation pass is needed to park here.",
+     "type": "Trailhead",
+     "distMi": 0
+    }
+   ]
+  },
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/108401040/idiots-delight",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/castle-rock-trailhead",
+    "https://www.openstreetmap.org/way/301611553",
+    "https://www.mountainproject.com/area/105870900/lower-castle",
+    "https://epqs.nationalmap.gov/v1/json (USGS 3DEP point query, reused from batch I)"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "waypoints/Castle Rock Trailhead",
+    "value": {
+     "name": "Castle Rock Trailhead",
+     "lat": 47.599736,
+     "lng": -120.713852
+    },
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.openstreetmap.org/way/301611553",
+      "fact": "amenity=parking 'Castle Rock Trailhead' centre 47.59974,-120.71385 (reused from batch I/M; live locked on wa_saber, wa_mr_clean_2)",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/castle-rock-trailhead",
+      "fact": "Latitude 47.600101, Longitude -120.713997, about 42 m from the OSM lot (re-opened 2026-11-18)",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     },
+     {
+      "measurement": "USGS 3DEP point query at 47.599736,-120.713852 (reused from batch I)",
+      "fact": "1,399 ft"
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "5.9",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108401040/idiots-delight",
+      "fact": "5.9 YDS (theCrag 403; WO lower/upper wall pages do not list it)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_idiot_s_delight",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "0 is invalid. MP: one 130 ft line from the slab above the right end of Lower Castle to Logger's Ledge, anchored on cracks or a maple. One pitch implied, not stated: ledger unconfirmed, single-source.",
+    "evidence": [
+     "https://www.mountainproject.com/route/108401040/idiots-delight"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_idiot_s_delight",
+    "column": "length_m",
+    "from": null,
+    "to": 40,
+    "why": "MP states 130 ft (= 39.6 m; MP prints 39 m). theCrag 403; no other source gives a length. MP-alone length: locked-1src.",
+    "evidence": [
+     "https://www.mountainproject.com/route/108401040/idiots-delight"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_idiot_s_delight",
+    "column": "permit",
+    "from": null,
+    "to": "No recreation pass is needed to park at the Castle Rock Trailhead.",
+    "why": "permit empty. Official-1: USFS Castle Rock Trailhead page (re-opened 2026-11-18, page updated 2026-06-09) says no recreation pass to park, no fees. Copies the live wording on wa_saber / wa_mr_clean_2 (batch M). Lock official-1, expires 2027-11-18.",
+    "evidence": [
+     "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/castle-rock-trailhead"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_idiot_s_delight",
+    "column": "access",
+    "from": null,
+    "to": {
+     "fees": "None.",
+     "rules": "Castle Rock is outside designated wilderness. The seasonal raptor closure (April 1 to July 31) covers nearby Midnight and Noontime Rocks, not Castle Rock.",
+     "permit": "None needed to climb.",
+     "land_manager": "Okanogan-Wenatchee National Forest (Wenatchee River Ranger District)",
+     "parking_pass": "None. No recreation pass is needed to park at the Castle Rock Trailhead."
+    },
+    "why": "access empty. Copies the live object on wa_saber / wa_mr_clean_2 (verified batch M: USFS ownership layer = Okanogan-Wenatchee NF, no wilderness). Re-read 2026-11-18: USFS trailhead page names Okanogan-Wenatchee NF, Wenatchee River RD, no pass, no fees, raptor closure Apr 1-Jul 31 on Midnight and Noontime Rocks only. Lock official-1, expires 2027-11-18.",
+    "evidence": [
+     "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/castle-rock-trailhead",
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0 (batch M)"
+    ]
+   }
+  ],
+  "disputed": [
+   "fa: stored 'John Rupley, Joe Heib, 1957. FFA: Eric Bjornstad,Ed Cooper, 1960' = MP verbatim; no second source. Not split into ffa and not respaced: a reformat adds no fact (batch M lesson). Unchanged, unlocked."
+  ],
+  "notes": "MP: starts on the slab above the right end of Lower Castle, reached by the top of any second pitch below; crux turns a roof; ring piton on the upper half; doubles 0.5-#3 and long slings suggested. Not on either Wenatchee Outdoors Castle Rock page."
+ },
+ "wa_brass_balls_2": {
+  "area": "wa_lower_castle",
+  "set": {
+   "waypoints": [
+    {
+     "lat": 47.599736,
+     "lng": -120.713852,
+     "elev": 1399,
+     "name": "Castle Rock Trailhead",
+     "note": "Large roadside lot on US 2 below Castle Rock; no recreation pass is needed to park here.",
+     "type": "Trailhead",
+     "distMi": 0
+    }
+   ]
+  },
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/106745506/brass-balls",
+    "https://wenatcheeoutdoors.org/2016/04/27/castle-rock-lower-wall/",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/castle-rock-trailhead",
+    "https://www.openstreetmap.org/way/301611553",
+    "https://www.mountainproject.com/area/105870900/lower-castle",
+    "https://epqs.nationalmap.gov/v1/json (USGS 3DEP point query, reused from batch I)"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "waypoints/Castle Rock Trailhead",
+    "value": {
+     "name": "Castle Rock Trailhead",
+     "lat": 47.599736,
+     "lng": -120.713852
+    },
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.openstreetmap.org/way/301611553",
+      "fact": "amenity=parking 'Castle Rock Trailhead' centre 47.59974,-120.71385 (reused from batch I/M; live locked on wa_saber, wa_mr_clean_2)",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/castle-rock-trailhead",
+      "fact": "Latitude 47.600101, Longitude -120.713997, about 42 m from the OSM lot (re-opened 2026-11-18)",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     },
+     {
+      "measurement": "USGS 3DEP point query at 47.599736,-120.713852 (reused from batch I)",
+      "fact": "1,399 ft"
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "5.10b",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106745506/brass-balls",
+      "fact": "5.10b YDS",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://wenatcheeoutdoors.org/2016/04/27/castle-rock-lower-wall/",
+      "fact": "Brass Balls (not drawn on photo), 5.10b",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "discipline",
+    "value": "trad",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106745506/brass-balls",
+      "fact": "Type: Trad; pro to 3 in",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://wenatcheeoutdoors.org/2016/04/27/castle-rock-lower-wall/",
+      "fact": "gear to 3 inches",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_brass_balls_2",
+    "column": "pitches",
+    "from": 0,
+    "to": 2,
+    "why": "0 is invalid. MP states 2 pitches; WO describes a first pitch (roofs, twin cracks) and a second mid-fifth pitch. agree-2; lock after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/106745506/brass-balls",
+     "https://wenatcheeoutdoors.org/2016/04/27/castle-rock-lower-wall/"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_brass_balls_2",
+    "column": "permit",
+    "from": null,
+    "to": "No recreation pass is needed to park at the Castle Rock Trailhead.",
+    "why": "permit empty. Official-1: USFS Castle Rock Trailhead page (re-opened 2026-11-18, page updated 2026-06-09) says no recreation pass to park, no fees. Copies the live wording on wa_saber / wa_mr_clean_2 (batch M). Lock official-1, expires 2027-11-18.",
+    "evidence": [
+     "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/castle-rock-trailhead"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_brass_balls_2",
+    "column": "access",
+    "from": null,
+    "to": {
+     "fees": "None.",
+     "rules": "Castle Rock is outside designated wilderness. The seasonal raptor closure (April 1 to July 31) covers nearby Midnight and Noontime Rocks, not Castle Rock.",
+     "permit": "None needed to climb.",
+     "land_manager": "Okanogan-Wenatchee National Forest (Wenatchee River Ranger District)",
+     "parking_pass": "None. No recreation pass is needed to park at the Castle Rock Trailhead."
+    },
+    "why": "access empty. Copies the live object on wa_saber / wa_mr_clean_2 (verified batch M: USFS ownership layer = Okanogan-Wenatchee NF, no wilderness). Re-read 2026-11-18: USFS trailhead page names Okanogan-Wenatchee NF, Wenatchee River RD, no pass, no fees, raptor closure Apr 1-Jul 31 on Midnight and Noontime Rocks only. Lock official-1, expires 2027-11-18.",
+    "evidence": [
+     "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/castle-rock-trailhead",
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0 (batch M)"
+    ]
+   }
+  ],
+  "disputed": [
+   "fa: stored 'Jim Yoder, Paul Christiansen, 1980' = MP; no second source. Unchanged, unlocked.",
+   "length_m: no source states a length."
+  ],
+  "notes": "MP: start up The Fault, traverse left to a belay below the first roof; crux finger crack above the second roof; P2 low fifth class to Logger's Ledge. MP and WO agree."
+ },
+ "wa_clean_love": {
+  "area": "wa_lower_castle",
+  "set": {
+   "waypoints": [
+    {
+     "lat": 47.599736,
+     "lng": -120.713852,
+     "elev": 1399,
+     "name": "Castle Rock Trailhead",
+     "note": "Large roadside lot on US 2 below Castle Rock; no recreation pass is needed to park here.",
+     "type": "Trailhead",
+     "distMi": 0
+    }
+   ]
+  },
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/107828023/clean-love",
+    "https://wenatcheeoutdoors.org/2016/04/27/castle-rock-lower-wall/",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/castle-rock-trailhead",
+    "https://www.openstreetmap.org/way/301611553",
+    "https://www.mountainproject.com/area/105870900/lower-castle",
+    "https://epqs.nationalmap.gov/v1/json (USGS 3DEP point query, reused from batch I)"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "waypoints/Castle Rock Trailhead",
+    "value": {
+     "name": "Castle Rock Trailhead",
+     "lat": 47.599736,
+     "lng": -120.713852
+    },
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.openstreetmap.org/way/301611553",
+      "fact": "amenity=parking 'Castle Rock Trailhead' centre 47.59974,-120.71385 (reused from batch I/M; live locked on wa_saber, wa_mr_clean_2)",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/castle-rock-trailhead",
+      "fact": "Latitude 47.600101, Longitude -120.713997, about 42 m from the OSM lot (re-opened 2026-11-18)",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     },
+     {
+      "measurement": "USGS 3DEP point query at 47.599736,-120.713852 (reused from batch I)",
+      "fact": "1,399 ft"
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "5.10b",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107828023/clean-love",
+      "fact": "5.10b YDS (theCrag 403; not on the WO lower-wall page)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_clean_love",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "0 is invalid. MP: 85 ft, second line right of The Fault chimney. One pitch implied, not stated: ledger unconfirmed, single-source.",
+    "evidence": [
+     "https://www.mountainproject.com/route/107828023/clean-love"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_clean_love",
+    "column": "length_m",
+    "from": null,
+    "to": 26,
+    "why": "MP states 85 ft (26 m). theCrag 403. MP-alone length: locked-1src.",
+    "evidence": [
+     "https://www.mountainproject.com/route/107828023/clean-love"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_clean_love",
+    "column": "permit",
+    "from": null,
+    "to": "No recreation pass is needed to park at the Castle Rock Trailhead.",
+    "why": "permit empty. Official-1: USFS Castle Rock Trailhead page (re-opened 2026-11-18, page updated 2026-06-09) says no recreation pass to park, no fees. Copies the live wording on wa_saber / wa_mr_clean_2 (batch M). Lock official-1, expires 2027-11-18.",
+    "evidence": [
+     "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/castle-rock-trailhead"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_clean_love",
+    "column": "access",
+    "from": null,
+    "to": {
+     "fees": "None.",
+     "rules": "Castle Rock is outside designated wilderness. The seasonal raptor closure (April 1 to July 31) covers nearby Midnight and Noontime Rocks, not Castle Rock.",
+     "permit": "None needed to climb.",
+     "land_manager": "Okanogan-Wenatchee National Forest (Wenatchee River Ranger District)",
+     "parking_pass": "None. No recreation pass is needed to park at the Castle Rock Trailhead."
+    },
+    "why": "access empty. Copies the live object on wa_saber / wa_mr_clean_2 (verified batch M: USFS ownership layer = Okanogan-Wenatchee NF, no wilderness). Re-read 2026-11-18: USFS trailhead page names Okanogan-Wenatchee NF, Wenatchee River RD, no pass, no fees, raptor closure Apr 1-Jul 31 on Midnight and Noontime Rocks only. Lock official-1, expires 2027-11-18.",
+    "evidence": [
+     "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/castle-rock-trailhead",
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0 (batch M)"
+    ]
+   }
+  ],
+  "disputed": [
+   "fa: stored 'Doug and Karen Klewin, 1980'; MP gives 'Doug and Karen Klewin' with NO year. The 1980 has no source found; left unchanged (not removed on absence alone), unlocked. Owner may want it checked."
+  ],
+  "notes": "MP: gear to about 1 in, poor stances, somewhat run-out, tricky gear above the crack."
+ },
+ "wa_monkey_lip": {
+  "area": "wa_lower_castle",
+  "set": {
+   "waypoints": [
+    {
+     "lat": 47.599736,
+     "lng": -120.713852,
+     "elev": 1399,
+     "name": "Castle Rock Trailhead",
+     "note": "Large roadside lot on US 2 below Castle Rock; no recreation pass is needed to park here.",
+     "type": "Trailhead",
+     "distMi": 0
+    }
+   ]
+  },
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/116753580/monkey-lip",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/castle-rock-trailhead",
+    "https://www.openstreetmap.org/way/301611553",
+    "https://www.mountainproject.com/area/105870900/lower-castle",
+    "https://epqs.nationalmap.gov/v1/json (USGS 3DEP point query, reused from batch I)"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "waypoints/Castle Rock Trailhead",
+    "value": {
+     "name": "Castle Rock Trailhead",
+     "lat": 47.599736,
+     "lng": -120.713852
+    },
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.openstreetmap.org/way/301611553",
+      "fact": "amenity=parking 'Castle Rock Trailhead' centre 47.59974,-120.71385 (reused from batch I/M; live locked on wa_saber, wa_mr_clean_2)",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/castle-rock-trailhead",
+      "fact": "Latitude 47.600101, Longitude -120.713997, about 42 m from the OSM lot (re-opened 2026-11-18)",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     },
+     {
+      "measurement": "USGS 3DEP point query at 47.599736,-120.713852 (reused from batch I)",
+      "fact": "1,399 ft"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_monkey_lip",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "0 is invalid. MP: overhanging start and roof crack, then scruffy rock to a belay ledge (escape left via Clem's Layback). One pitch implied, not stated: ledger unconfirmed, single-source.",
+    "evidence": [
+     "https://www.mountainproject.com/route/116753580/monkey-lip"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_monkey_lip",
+    "column": "permit",
+    "from": null,
+    "to": "No recreation pass is needed to park at the Castle Rock Trailhead.",
+    "why": "permit empty. Official-1: USFS Castle Rock Trailhead page (re-opened 2026-11-18, page updated 2026-06-09) says no recreation pass to park, no fees. Copies the live wording on wa_saber / wa_mr_clean_2 (batch M). Lock official-1, expires 2027-11-18.",
+    "evidence": [
+     "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/castle-rock-trailhead"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_monkey_lip",
+    "column": "access",
+    "from": null,
+    "to": {
+     "fees": "None.",
+     "rules": "Castle Rock is outside designated wilderness. The seasonal raptor closure (April 1 to July 31) covers nearby Midnight and Noontime Rocks, not Castle Rock.",
+     "permit": "None needed to climb.",
+     "land_manager": "Okanogan-Wenatchee National Forest (Wenatchee River Ranger District)",
+     "parking_pass": "None. No recreation pass is needed to park at the Castle Rock Trailhead."
+    },
+    "why": "access empty. Copies the live object on wa_saber / wa_mr_clean_2 (verified batch M: USFS ownership layer = Okanogan-Wenatchee NF, no wilderness). Re-read 2026-11-18: USFS trailhead page names Okanogan-Wenatchee NF, Wenatchee River RD, no pass, no fees, raptor closure Apr 1-Jul 31 on Midnight and Noontime Rocks only. Lock official-1, expires 2027-11-18.",
+    "evidence": [
+     "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/castle-rock-trailhead",
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0 (batch M)"
+    ]
+   }
+  ],
+  "disputed": [
+   "grade: stored 5.11d; MP states only 5.11 (its sections are given as 5.11 and 5.11-). No second source (theCrag 403; WO pages omit it). HELD: no change, no lock. 5.11d has no source found.",
+   "fa: stored 'Jim Yoder & Peter Croft 1981' = MP; no second source. Unchanged, unlocked.",
+   "length_m: no source states a length."
+  ],
+  "notes": "Starts near the base of Brass Balls (MP). Grade held, see disputed."
+ }
+}
