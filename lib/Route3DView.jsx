@@ -50,10 +50,12 @@ const lineFeature = (pts) => ({ type: "Feature", properties: {}, geometry: { typ
  * @param {{ line?: Array<Array<number|null>>|null,
  *   waypoints?: Array<{lat:number,lng:number,name?:string|null,type?:string|null,color?:string,iconHtml?:string|null,sub?:string|null,onOpen?:() => void,openLabel?:string}>,
  *   tracks?: Array<{id:string,color:string,label:string,pts:Array<Array<number|null>>}>, title?: string,
- *   view?: {minLat:number,maxLat:number,minLng:number,maxLng:number}|null, onClose: () => void }} props
+ *   view?: {minLat:number,maxLat:number,minLng:number,maxLng:number}|null, kind?: string, maxZoom?: number, onClose: () => void }} props
  */
-export default function Route3DView({ line, waypoints, tracks, title, view, onClose }) {
-  const kind = view ? "map" : "route map";
+// `kind` names the map for a screen reader when it is neither of the two below. `maxZoom` is how close the view may
+// open: 15 frames a route, but a crag's walk in is a few hundred feet and at 15 its two pins sit on top of each other.
+export default function Route3DView({ line, waypoints, tracks, title, view, kind: kindProp, maxZoom = 15, onClose }) {
+  const kind = kindProp || (view ? "map" : "route map");
   const div = useRef(null), mapRef = useRef(null);
   const [state, setState] = useState("loading");
   useEffect(() => {
@@ -107,6 +109,7 @@ export default function Route3DView({ line, waypoints, tracks, title, view, onCl
           map.addLayer({ id: id + "-casing", type: "line", source: id, paint: { "line-color": "#000", "line-width": 5, "line-opacity": 0.4 }, layout: { "line-join": "round", "line-cap": "round" } });
           map.addLayer({ id, type: "line", source: id, paint: { "line-color": t.color, "line-width": 3 }, layout: { "line-join": "round", "line-cap": "round" } });
         });
+        const markers = [];
         (waypoints || []).forEach((w) => {
           const ty = w.color && !w.type ? null : wpType(w), st = ty ? WP_STYLE[ty] : null, col = w.color || (ty && WP_COLORS[ty]) || (st && st.color) || C.blue;
           const el = document.createElement("button");
@@ -130,13 +133,16 @@ export default function Route3DView({ line, waypoints, tracks, title, view, onCl
             card.appendChild(ob);
           }
           pop.setDOMContent(card);
-          new ml.Marker({ element: el }).setLngLat([w.lng, w.lat]).setPopup(pop).addTo(map);
+          markers.push(new ml.Marker({ element: el }).setLngLat([w.lng, w.lat]).setPopup(pop).addTo(map));
           // MapLibre's Marker overwrites the element's aria-label with "Map marker"; put the pin's own name back.
           el.setAttribute("aria-label", (w.name || ty || "Waypoint") + (ty && w.name ? ", " + ty : "") + (w.sub ? ", " + w.sub : ""));
         });
+        // A pin is placed at the height of the ground under it, and it is placed before the terrain tiles arrive, so on a
+        // slope it sat below its own line until the map next moved. Each time the map settles, seat the pins again.
+        map.on("idle", () => { markers.forEach((m) => m.setLngLat(m.getLngLat())); });
         // The area map opens on the box the flat map showed; the route map on everything it draws.
         const b = view ? new ml.LngLatBounds([view.minLng, view.minLat], [view.maxLng, view.maxLat]) : all.reduce((bb, c) => bb.extend(c), new ml.LngLatBounds(all[0], all[0]));
-        map.fitBounds(b, { padding: view ? 20 : 60, pitch: 62, bearing: -20, maxZoom: 15, duration: 0 });
+        map.fitBounds(b, { padding: view ? 20 : 60, pitch: 62, bearing: -20, maxZoom, duration: 0 });
         setState("ready");
       });
     }, () => { if (!cancelled) setState("fail"); });

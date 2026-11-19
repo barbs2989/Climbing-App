@@ -84,7 +84,7 @@ export default function AreaGettingThere({ area, C, onEdit, flat }: AreaGettingT
     </div> : null}
     {/* The walk in over the terrain: the same line and the same two pins as the flat map above, and the same
         caveat when the line was traced rather than recorded. "P" and "C" are fixed letters, not data. */}
-    {trail && view3d ? <Suspense fallback={null}><WalkIn3DView title={area.name + " walk in"} onClose={() => setView3d(false)}
+    {trail && view3d ? <Suspense fallback={null}><WalkIn3DView title={area.name + " walk in"} kind="walk-in map" maxZoom={17.5} onClose={() => setView3d(false)}
       tracks={[{ id: "walkin", color: C.orange, label: "Trail to the crag" + (area.walkin_kind === "traced" ? " (traced on the map, not a GPS recording)" : ""), pts: trail }]}
       waypoints={(park ? [{ lat: park.lat, lng: park.lng, name: area.parking_name && area.parking_name !== "Trailhead" ? area.parking_name : "Parking", color: C.blue, iconHtml: "P" }] : []).concat(crag ? [{ lat: crag.lat, lng: crag.lng, name: area.name, color: C.orange, iconHtml: "C" }] : [])} /></Suspense> : null}
     {dest ? <div>
