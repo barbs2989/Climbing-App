@@ -104,7 +104,7 @@ export default function RankAreaPicker({real,uid,ranked,trail,browseId,onBrowse,
   const card: CSSProperties={textAlign:"left",minWidth:0,minHeight:56,background:C.card,border:"1px solid "+C.border,borderRadius:12,padding:"10px 12px",cursor:"pointer",color:C.text,fontFamily:"inherit"};
   const noun=!lvl?"country":subdivisionNoun(lvl);
   const failed=<div role="alert" style={{fontSize:12.5,color:C.amber,lineHeight:1.45}}>{"Couldn’t load what’s inside "+name+" — this is not a claim it holds nothing. Try again in a moment."}</div>;
-  return <div data-swipe="off">
+  return <div>
     {/* The phone's top bar draws this Back beside the Menu (lib/pageBack.js); the website draws it here. */}
     <button data-cm-step-back="true" onClick={()=>onBrowse(null)} style={{...POP_BACK,marginBottom:12}}><span aria-hidden="true">{"←"}</span><span>Back to rankings</span></button>
     <div style={{fontSize:12.5,color:C.textMuted,lineHeight:1.45,marginBottom:10}}>{"Choose the area to rank. Now ranking "}<span style={{color:C.amber,fontWeight:700}}>{ranked.name||"this area"}</span>.</div>
