@@ -1,0 +1,740 @@
+{
+ "wa_slakin": {
+  "area": "wa_austrian_slab",
+  "set": {
+   "waypoints": [
+    {
+     "lat": 47.539612,
+     "lng": -120.520081,
+     "elev": 1024,
+     "name": "Peshastin Pinnacles State Park parking",
+     "type": "Trailhead",
+     "distMi": 0,
+     "note": "State park lot off North Dryden Road; a Discover Pass is required, and the park is closed Nov 1 to Mar 15."
+    }
+   ]
+  },
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/105877153/slakin",
+    "https://www.mountainproject.com/area/105874850/austrian-slab",
+    "https://wenatcheeoutdoors.org/2016/05/02/peshastin-pinnacles/",
+    "https://parks.wa.gov/find-parks/state-parks/peshastin-pinnacles-state-park",
+    "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass",
+    "https://www.openstreetmap.org/way/374991572",
+    "https://epqs.nationalmap.gov/v1/json (USGS 3DEP point query, reused from batch C)"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "waypoints/Peshastin Pinnacles State Park parking",
+    "value": {
+     "name": "Peshastin Pinnacles State Park parking",
+     "lat": 47.539612,
+     "lng": -120.520081
+    },
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.openstreetmap.org/way/374991572",
+      "fact": "amenity=parking, access=permit, fee=yes; centre 47.53961,-120.52008 (reused from batch C, wa_potholes)",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://parks.wa.gov/find-parks/state-parks/peshastin-pinnacles-state-park",
+      "fact": "Get Directions map point 47.5396,-120.5199, 14 m from OSM (reused from batch C, wa_potholes)",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     },
+     {
+      "measurement": "USGS 3DEP point query at 47.539612,-120.520081 (reused from batch C)",
+      "fact": "1,024 ft"
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "5.8",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105877153/slakin",
+      "fact": "5.8 YDS (R)",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://wenatcheeoutdoors.org/2016/05/02/peshastin-pinnacles/",
+      "fact": "Slakin: 5.8, bolts",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "discipline",
+    "value": "sport",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105877153/slakin",
+      "fact": "Type: Sport; protection: draws, 9 bolts",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://wenatcheeoutdoors.org/2016/05/02/peshastin-pinnacles/",
+      "fact": "Slakin: 5.8, bolts",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Don Brooks, Rick Le Duc, 1975.",
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105877153/slakin",
+      "fact": "FA: Don Brooks, Rick Le Duc, 1975",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_slakin",
+    "column": "pitches",
+    "from": 0,
+    "to": null,
+    "why": "0 is invalid. Neither source states a pitch count, and Wenatchee Outdoors says most Austrian Slab parties leave the ledge one pitch up because the second pitch is loose, so 1 vs 2 is unclear. Null claims nothing.",
+    "evidence": [
+     "https://www.mountainproject.com/route/105877153/slakin",
+     "https://wenatcheeoutdoors.org/2016/05/02/peshastin-pinnacles/"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_slakin",
+    "column": "bolts",
+    "from": null,
+    "to": 9,
+    "why": "MP states the route was retro-bolted and now has 9 bolts. Single source (locked-1src after apply).",
+    "evidence": [
+     "https://www.mountainproject.com/route/105877153/slakin"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_slakin",
+    "column": "permit",
+    "from": null,
+    "to": "Discover Pass required to park. The park is open 6:30 a.m. to dusk and closed Nov 1 to Mar 15; climbers must be off the rocks half an hour before closing, and bolting or drilling is not allowed.",
+    "why": "permit is empty. Same live wording as the batch M Peshastin rows (wa_tippy_toes, wa_national_velvet). Re-read the WA State Parks park page 2026-11-18: summer 6:30 a.m. - dusk, closed Nov 1 - Mar 15, no bolting or drilling, off the rocks a half hour before closing. Discover Pass page: required for parking at WA State Parks. official-1, expires 2027-11-18.",
+    "evidence": [
+     "https://parks.wa.gov/find-parks/state-parks/peshastin-pinnacles-state-park",
+     "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_slakin",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Washington State Parks (Peshastin Pinnacles State Park)",
+     "permit": "None needed to climb.",
+     "parking_pass": "Discover Pass.",
+     "fees": "Discover Pass: $10 for one day or $45 for a year.",
+     "rules": "Closed Nov 1 to Mar 15. Open 6:30 a.m. to dusk; be off the rocks half an hour before closing. No bolting or drilling."
+    },
+    "why": "access is empty. Same value batch M proposed for the Peshastin rows. Park page re-read 2026-11-18: land manager WA State Parks, Discover Pass $45 annual / $10 one-day, hours, winter closure, no bolting/drilling, off the rocks a half hour before closing; Discover Pass page confirms $45/$10. official-1, expires 2027-11-18.",
+    "evidence": [
+     "https://parks.wa.gov/find-parks/state-parks/peshastin-pinnacles-state-park",
+     "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass"
+    ]
+   }
+  ],
+  "disputed": [
+   "prot_rating: MP shows R; Wenatchee Outdoors says run out to the first bolt (not a rating). Held, one source for R."
+  ],
+  "notes": "MP: on the far right of the slab; retro-bolted. Held: prot_rating R (MP only)."
+ },
+ "wa_slender_thread": {
+  "area": "wa_austrian_slab",
+  "set": {
+   "waypoints": [
+    {
+     "lat": 47.539612,
+     "lng": -120.520081,
+     "elev": 1024,
+     "name": "Peshastin Pinnacles State Park parking",
+     "type": "Trailhead",
+     "distMi": 0,
+     "note": "State park lot off North Dryden Road; a Discover Pass is required, and the park is closed Nov 1 to Mar 15."
+    }
+   ]
+  },
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/105874889/slender-thread",
+    "https://www.mountainproject.com/area/105874850/austrian-slab",
+    "https://wenatcheeoutdoors.org/2016/05/02/peshastin-pinnacles/",
+    "https://parks.wa.gov/find-parks/state-parks/peshastin-pinnacles-state-park",
+    "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass",
+    "https://www.openstreetmap.org/way/374991572",
+    "https://epqs.nationalmap.gov/v1/json (USGS 3DEP point query, reused from batch C)"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "waypoints/Peshastin Pinnacles State Park parking",
+    "value": {
+     "name": "Peshastin Pinnacles State Park parking",
+     "lat": 47.539612,
+     "lng": -120.520081
+    },
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.openstreetmap.org/way/374991572",
+      "fact": "amenity=parking, access=permit, fee=yes; centre 47.53961,-120.52008 (reused from batch C, wa_potholes)",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://parks.wa.gov/find-parks/state-parks/peshastin-pinnacles-state-park",
+      "fact": "Get Directions map point 47.5396,-120.5199, 14 m from OSM (reused from batch C, wa_potholes)",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     },
+     {
+      "measurement": "USGS 3DEP point query at 47.539612,-120.520081 (reused from batch C)",
+      "fact": "1,024 ft"
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "5.9+",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105874889/slender-thread",
+      "fact": "5.9+ YDS",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://wenatcheeoutdoors.org/2016/05/02/peshastin-pinnacles/",
+      "fact": "Slender Thread: 5.9+, bolts",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "discipline",
+    "value": "sport",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105874889/slender-thread",
+      "fact": "Type: Sport; ten bolts, chained anchor",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://wenatcheeoutdoors.org/2016/05/02/peshastin-pinnacles/",
+      "fact": "Slender Thread: 5.9+, bolts",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Rich Doorish",
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105874889/slender-thread",
+      "fact": "FA: Rich Doorish",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_slender_thread",
+    "column": "pitches",
+    "from": 0,
+    "to": null,
+    "why": "0 is invalid. MP describes one bolted groove to a two-bolt top anchor but states no count; Wenatchee Outdoors, right after Slender Thread, says most parties leave the ledge one pitch up because the second pitch is loose. Unclear, so null.",
+    "evidence": [
+     "https://www.mountainproject.com/route/105874889/slender-thread",
+     "https://wenatcheeoutdoors.org/2016/05/02/peshastin-pinnacles/"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_slender_thread",
+    "column": "bolts",
+    "from": null,
+    "to": 10,
+    "why": "MP protection: ten bolts. Single source (locked-1src after apply).",
+    "evidence": [
+     "https://www.mountainproject.com/route/105874889/slender-thread"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_slender_thread",
+    "column": "anchor",
+    "from": null,
+    "to": "Two-bolt chained anchor",
+    "why": "MP: two bolt anchor at top; protection: chained anchor. Single source.",
+    "evidence": [
+     "https://www.mountainproject.com/route/105874889/slender-thread"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_slender_thread",
+    "column": "permit",
+    "from": null,
+    "to": "Discover Pass required to park. The park is open 6:30 a.m. to dusk and closed Nov 1 to Mar 15; climbers must be off the rocks half an hour before closing, and bolting or drilling is not allowed.",
+    "why": "permit is empty. Same live wording as the batch M Peshastin rows (wa_tippy_toes, wa_national_velvet). Re-read the WA State Parks park page 2026-11-18: summer 6:30 a.m. - dusk, closed Nov 1 - Mar 15, no bolting or drilling, off the rocks a half hour before closing. Discover Pass page: required for parking at WA State Parks. official-1, expires 2027-11-18.",
+    "evidence": [
+     "https://parks.wa.gov/find-parks/state-parks/peshastin-pinnacles-state-park",
+     "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_slender_thread",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Washington State Parks (Peshastin Pinnacles State Park)",
+     "permit": "None needed to climb.",
+     "parking_pass": "Discover Pass.",
+     "fees": "Discover Pass: $10 for one day or $45 for a year.",
+     "rules": "Closed Nov 1 to Mar 15. Open 6:30 a.m. to dusk; be off the rocks half an hour before closing. No bolting or drilling."
+    },
+    "why": "access is empty. Same value batch M proposed for the Peshastin rows. Park page re-read 2026-11-18: land manager WA State Parks, Discover Pass $45 annual / $10 one-day, hours, winter closure, no bolting/drilling, off the rocks a half hour before closing; Discover Pass page confirms $45/$10. official-1, expires 2027-11-18.",
+    "evidence": [
+     "https://parks.wa.gov/find-parks/state-parks/peshastin-pinnacles-state-park",
+     "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass"
+    ]
+   }
+  ],
+  "notes": "MP: straight-up groove on the left side of the slab. Wenatchee Outdoors: run out, especially before the first clip."
+ },
+ "wa_fakin_it": {
+  "area": "wa_austrian_slab",
+  "set": {
+   "waypoints": [
+    {
+     "lat": 47.539612,
+     "lng": -120.520081,
+     "elev": 1024,
+     "name": "Peshastin Pinnacles State Park parking",
+     "type": "Trailhead",
+     "distMi": 0,
+     "note": "State park lot off North Dryden Road; a Discover Pass is required, and the park is closed Nov 1 to Mar 15."
+    }
+   ]
+  },
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/105874893/fakin-it",
+    "https://www.mountainproject.com/area/105874850/austrian-slab",
+    "https://wenatcheeoutdoors.org/2016/05/02/peshastin-pinnacles/",
+    "https://parks.wa.gov/find-parks/state-parks/peshastin-pinnacles-state-park",
+    "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass",
+    "https://www.openstreetmap.org/way/374991572",
+    "https://epqs.nationalmap.gov/v1/json (USGS 3DEP point query, reused from batch C)"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "waypoints/Peshastin Pinnacles State Park parking",
+    "value": {
+     "name": "Peshastin Pinnacles State Park parking",
+     "lat": 47.539612,
+     "lng": -120.520081
+    },
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.openstreetmap.org/way/374991572",
+      "fact": "amenity=parking, access=permit, fee=yes; centre 47.53961,-120.52008 (reused from batch C, wa_potholes)",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://parks.wa.gov/find-parks/state-parks/peshastin-pinnacles-state-park",
+      "fact": "Get Directions map point 47.5396,-120.5199, 14 m from OSM (reused from batch C, wa_potholes)",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     },
+     {
+      "measurement": "USGS 3DEP point query at 47.539612,-120.520081 (reused from batch C)",
+      "fact": "1,024 ft"
+     }
+    ]
+   },
+   {
+    "field": "discipline",
+    "value": "sport",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105874893/fakin-it",
+      "fact": "Type: Sport; climb past 5 bolts; draws",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://wenatcheeoutdoors.org/2016/05/02/peshastin-pinnacles/",
+      "fact": "Faking it: 5.10b, bolts",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Mark Weigelt, Mead Hargis, 1971.",
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105874893/fakin-it",
+      "fact": "FA: Mark Weigelt, Mead Hargis, 1971",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_fakin_it",
+    "column": "pitches",
+    "from": 0,
+    "to": null,
+    "why": "0 is invalid. No source states a pitch count (the slab has a loose second pitch most parties skip, per Wenatchee Outdoors). Null claims nothing.",
+    "evidence": [
+     "https://www.mountainproject.com/route/105874893/fakin-it",
+     "https://wenatcheeoutdoors.org/2016/05/02/peshastin-pinnacles/"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_fakin_it",
+    "column": "bolts",
+    "from": null,
+    "to": 5,
+    "why": "MP: climb past 5 bolts (shares the first with Cajun Queen). Single source (locked-1src after apply).",
+    "evidence": [
+     "https://www.mountainproject.com/route/105874893/fakin-it"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_fakin_it",
+    "column": "permit",
+    "from": null,
+    "to": "Discover Pass required to park. The park is open 6:30 a.m. to dusk and closed Nov 1 to Mar 15; climbers must be off the rocks half an hour before closing, and bolting or drilling is not allowed.",
+    "why": "permit is empty. Same live wording as the batch M Peshastin rows (wa_tippy_toes, wa_national_velvet). Re-read the WA State Parks park page 2026-11-18: summer 6:30 a.m. - dusk, closed Nov 1 - Mar 15, no bolting or drilling, off the rocks a half hour before closing. Discover Pass page: required for parking at WA State Parks. official-1, expires 2027-11-18.",
+    "evidence": [
+     "https://parks.wa.gov/find-parks/state-parks/peshastin-pinnacles-state-park",
+     "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_fakin_it",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Washington State Parks (Peshastin Pinnacles State Park)",
+     "permit": "None needed to climb.",
+     "parking_pass": "Discover Pass.",
+     "fees": "Discover Pass: $10 for one day or $45 for a year.",
+     "rules": "Closed Nov 1 to Mar 15. Open 6:30 a.m. to dusk; be off the rocks half an hour before closing. No bolting or drilling."
+    },
+    "why": "access is empty. Same value batch M proposed for the Peshastin rows. Park page re-read 2026-11-18: land manager WA State Parks, Discover Pass $45 annual / $10 one-day, hours, winter closure, no bolting/drilling, off the rocks a half hour before closing; Discover Pass page confirms $45/$10. official-1, expires 2027-11-18.",
+    "evidence": [
+     "https://parks.wa.gov/find-parks/state-parks/peshastin-pinnacles-state-park",
+     "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass"
+    ]
+   }
+  ],
+  "disputed": [
+   "grade: MP 5.10a (R) vs Wenatchee Outdoors 5.10b (\"Faking it\"). Held at the stored 5.10a; needs a third source.",
+   "prot_rating: MP R only. Held."
+  ],
+  "notes": "Grade held (two sources disagree)."
+ },
+ "wa_cajun_queen": {
+  "area": "wa_austrian_slab",
+  "set": {
+   "waypoints": [
+    {
+     "lat": 47.539612,
+     "lng": -120.520081,
+     "elev": 1024,
+     "name": "Peshastin Pinnacles State Park parking",
+     "type": "Trailhead",
+     "distMi": 0,
+     "note": "State park lot off North Dryden Road; a Discover Pass is required, and the park is closed Nov 1 to Mar 15."
+    }
+   ]
+  },
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/105874896/cajun-queen",
+    "https://www.mountainproject.com/area/105874850/austrian-slab",
+    "https://wenatcheeoutdoors.org/2016/05/02/peshastin-pinnacles/",
+    "https://parks.wa.gov/find-parks/state-parks/peshastin-pinnacles-state-park",
+    "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass",
+    "https://www.openstreetmap.org/way/374991572",
+    "https://epqs.nationalmap.gov/v1/json (USGS 3DEP point query, reused from batch C)"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "waypoints/Peshastin Pinnacles State Park parking",
+    "value": {
+     "name": "Peshastin Pinnacles State Park parking",
+     "lat": 47.539612,
+     "lng": -120.520081
+    },
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.openstreetmap.org/way/374991572",
+      "fact": "amenity=parking, access=permit, fee=yes; centre 47.53961,-120.52008 (reused from batch C, wa_potholes)",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://parks.wa.gov/find-parks/state-parks/peshastin-pinnacles-state-park",
+      "fact": "Get Directions map point 47.5396,-120.5199, 14 m from OSM (reused from batch C, wa_potholes)",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     },
+     {
+      "measurement": "USGS 3DEP point query at 47.539612,-120.520081 (reused from batch C)",
+      "fact": "1,024 ft"
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "5.10b",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105874896/cajun-queen",
+      "fact": "5.10b YDS",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://wenatcheeoutdoors.org/2016/05/02/peshastin-pinnacles/",
+      "fact": "Cajun Queen: 5.10b, bolts",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "discipline",
+    "value": "sport",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105874896/cajun-queen",
+      "fact": "Type: Sport; protection: draws",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://wenatcheeoutdoors.org/2016/05/02/peshastin-pinnacles/",
+      "fact": "Cajun Queen: 5.10b, bolts",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Pat Timson, Mead Hargis, 1971.",
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105874896/cajun-queen",
+      "fact": "FA: Pat Timson, Mead Hargis, 1971",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_cajun_queen",
+    "column": "pitches",
+    "from": 0,
+    "to": null,
+    "why": "0 is invalid. No source states a pitch count; MP says continue up and left to the belay. Null claims nothing.",
+    "evidence": [
+     "https://www.mountainproject.com/route/105874896/cajun-queen",
+     "https://wenatcheeoutdoors.org/2016/05/02/peshastin-pinnacles/"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_cajun_queen",
+    "column": "permit",
+    "from": null,
+    "to": "Discover Pass required to park. The park is open 6:30 a.m. to dusk and closed Nov 1 to Mar 15; climbers must be off the rocks half an hour before closing, and bolting or drilling is not allowed.",
+    "why": "permit is empty. Same live wording as the batch M Peshastin rows (wa_tippy_toes, wa_national_velvet). Re-read the WA State Parks park page 2026-11-18: summer 6:30 a.m. - dusk, closed Nov 1 - Mar 15, no bolting or drilling, off the rocks a half hour before closing. Discover Pass page: required for parking at WA State Parks. official-1, expires 2027-11-18.",
+    "evidence": [
+     "https://parks.wa.gov/find-parks/state-parks/peshastin-pinnacles-state-park",
+     "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_cajun_queen",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Washington State Parks (Peshastin Pinnacles State Park)",
+     "permit": "None needed to climb.",
+     "parking_pass": "Discover Pass.",
+     "fees": "Discover Pass: $10 for one day or $45 for a year.",
+     "rules": "Closed Nov 1 to Mar 15. Open 6:30 a.m. to dusk; be off the rocks half an hour before closing. No bolting or drilling."
+    },
+    "why": "access is empty. Same value batch M proposed for the Peshastin rows. Park page re-read 2026-11-18: land manager WA State Parks, Discover Pass $45 annual / $10 one-day, hours, winter closure, no bolting/drilling, off the rocks a half hour before closing; Discover Pass page confirms $45/$10. official-1, expires 2027-11-18.",
+    "evidence": [
+     "https://parks.wa.gov/find-parks/state-parks/peshastin-pinnacles-state-park",
+     "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass"
+    ]
+   }
+  ],
+  "notes": "MP: starts at the first bolt of Fakin' It, then moves right to a hole. Bolt count not stated anywhere."
+ },
+ "wa_austrian_slab_empire_state": {
+  "area": "wa_austrian_slab",
+  "set": {
+   "waypoints": [
+    {
+     "lat": 47.539612,
+     "lng": -120.520081,
+     "elev": 1024,
+     "name": "Peshastin Pinnacles State Park parking",
+     "type": "Trailhead",
+     "distMi": 0,
+     "note": "State park lot off North Dryden Road; a Discover Pass is required, and the park is closed Nov 1 to Mar 15."
+    }
+   ]
+  },
+  "review": {
+   "sources": [
+    "https://wenatcheeoutdoors.org/2016/05/02/peshastin-pinnacles/",
+    "https://www.mountainproject.com/area/105874850/austrian-slab",
+    "https://www.mountainproject.com/area/105874380/grand-central-tower",
+    "https://parks.wa.gov/find-parks/state-parks/peshastin-pinnacles-state-park",
+    "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass",
+    "https://www.openstreetmap.org/way/374991572",
+    "https://epqs.nationalmap.gov/v1/json (USGS 3DEP point query, reused from batch C)"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "waypoints/Peshastin Pinnacles State Park parking",
+    "value": {
+     "name": "Peshastin Pinnacles State Park parking",
+     "lat": 47.539612,
+     "lng": -120.520081
+    },
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.openstreetmap.org/way/374991572",
+      "fact": "amenity=parking, access=permit, fee=yes; centre 47.53961,-120.52008 (reused from batch C, wa_potholes)",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://parks.wa.gov/find-parks/state-parks/peshastin-pinnacles-state-park",
+      "fact": "Get Directions map point 47.5396,-120.5199, 14 m from OSM (reused from batch C, wa_potholes)",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     },
+     {
+      "measurement": "USGS 3DEP point query at 47.539612,-120.520081 (reused from batch C)",
+      "fact": "1,024 ft"
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "5.8",
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://wenatcheeoutdoors.org/2016/05/02/peshastin-pinnacles/",
+      "fact": "Empire State Route: 5.8, gear to 3 in (Grand Central Tower back side)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_austrian_slab_empire_state",
+    "column": "permit",
+    "from": null,
+    "to": "Discover Pass required to park. The park is open 6:30 a.m. to dusk and closed Nov 1 to Mar 15; climbers must be off the rocks half an hour before closing, and bolting or drilling is not allowed.",
+    "why": "permit is empty. Same live wording as the batch M Peshastin rows (wa_tippy_toes, wa_national_velvet). Re-read the WA State Parks park page 2026-11-18: summer 6:30 a.m. - dusk, closed Nov 1 - Mar 15, no bolting or drilling, off the rocks a half hour before closing. Discover Pass page: required for parking at WA State Parks. official-1, expires 2027-11-18.",
+    "evidence": [
+     "https://parks.wa.gov/find-parks/state-parks/peshastin-pinnacles-state-park",
+     "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_austrian_slab_empire_state",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Washington State Parks (Peshastin Pinnacles State Park)",
+     "permit": "None needed to climb.",
+     "parking_pass": "Discover Pass.",
+     "fees": "Discover Pass: $10 for one day or $45 for a year.",
+     "rules": "Closed Nov 1 to Mar 15. Open 6:30 a.m. to dusk; be off the rocks half an hour before closing. No bolting or drilling."
+    },
+    "why": "access is empty. Same value batch M proposed for the Peshastin rows. Park page re-read 2026-11-18: land manager WA State Parks, Discover Pass $45 annual / $10 one-day, hours, winter closure, no bolting/drilling, off the rocks a half hour before closing; Discover Pass page confirms $45/$10. official-1, expires 2027-11-18.",
+    "evidence": [
+     "https://parks.wa.gov/find-parks/state-parks/peshastin-pinnacles-state-park",
+     "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass"
+    ]
+   }
+  ],
+  "disputed": [
+   "area: Wenatchee Outdoors lists Empire State Route on the BACK SIDE OF GRAND CENTRAL TOWER, not Austrian Slab; MP lists it under neither area."
+  ],
+  "notes": "CATALOG DEFECT: filed under wa_austrian_slab, but the only source (Wenatchee Outdoors) places it on the back side of Grand Central Tower (wa_grand_central_tower exists). Not moved; owner call. Stored gear \"gear to 3 in\" matches that source. Grade/discipline single-source, unconfirmed."
+ }
+}
