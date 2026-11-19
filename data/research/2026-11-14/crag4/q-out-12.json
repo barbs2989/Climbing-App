@@ -1,0 +1,630 @@
+[
+ {
+  "area_id": "wa_hozomeen_mountain",
+  "place_name": "Hozomeen Mountain (North and South Peaks), Ross Lake, North Cascades NP",
+  "verdict": "alpine",
+  "approach_stated": null,
+  "from": "trailhead",
+  "summit_or_glacier": "summit finish (South Peak 8,003 ft); routes are named for the North and South Peaks",
+  "route_types": {},
+  "evidence": [
+   {
+    "url": "https://onehikeaweek.com/2019/07/21/hozomeen-mountain-south-peak/",
+    "retrieved_at": "2026-11-18",
+    "fact": "South Peak 8,003 ft via Hozomeen Lake trailhead; round trip 12 miles; the climb to the summit took much of the day."
+   }
+  ],
+  "note": "Not on Mountain Project, so route types stay null. No page states a car-to-base time; the verdict rests on the summit finish of a remote peak at the north end of Ross Lake."
+ },
+ {
+  "area_id": "wa_northwest_mox_peak",
+  "place_name": "Northwest Mox Peak (Twin Spires), Chilliwack Range",
+  "verdict": "alpine",
+  "approach_stated": null,
+  "from": null,
+  "summit_or_glacier": "glacier crossing and summit finish",
+  "route_types": {
+   "wa_northwest_mox_peak_northeast_ridge": "Trad"
+  },
+  "evidence": [
+   {
+    "url": "https://www.mountainproject.com/route/203504305/northeast-ridge",
+    "retrieved_at": "2026-11-18",
+    "fact": "Type: Trad, Snow, Alpine. Scramble class 3/4 to summit; the glacier is quite crevassy, especially on the direct route from the lake."
+   }
+  ],
+  "note": "Mountain Project page is the Northeast Ridge of NW Mox (contrasted with the SE Spire). No car-to-base time stated."
+ },
+ {
+  "area_id": "wa_southeast_mox_peak",
+  "place_name": "Southeast Mox Peak (Hard Mox), Chilliwack Range",
+  "verdict": "alpine",
+  "approach_stated": null,
+  "from": null,
+  "summit_or_glacier": "summit finish (Southeast Spire, the summit of Hard Mox)",
+  "route_types": {
+   "wa_southeast_mox_peak_beckey_route_west_ridge": "Trad"
+  },
+  "evidence": [
+   {
+    "url": "https://www.mountainproject.com/route/124368565/beckey-route-west-ridge",
+    "retrieved_at": "2026-11-18",
+    "fact": "Type: Trad, Alpine, 3 pitches. Southeast Spire (the summit of Hard Mox); Beckey: one of the most difficult summits in the Cascades."
+   },
+   {
+    "url": "https://www.mountainproject.com/area/106363494/southeast-mox-peak",
+    "retrieved_at": "2026-11-18",
+    "fact": "West ridge first climbed by Fred and Helmy Beckey, 1941; described as a big alpine wall peak."
+   }
+  ],
+  "note": "No car-to-base time stated; summit finish decides."
+ },
+ {
+  "area_id": "wa_sharkfin_tower",
+  "place_name": "Sharkfin Tower, Boston Basin",
+  "verdict": "alpine",
+  "approach_stated": null,
+  "from": null,
+  "summit_or_glacier": "Quien Sabe Glacier approach; summit finish",
+  "route_types": {
+   "wa_sharkfin_tower_flakes_and_chimneys_south_face": "Trad"
+  },
+  "evidence": [
+   {
+    "url": "https://www.mountainproject.com/area/108338245/sharkfin-tower",
+    "retrieved_at": "2026-11-18",
+    "fact": "From Boston Basin, follow the approach for the Quien Sabe Glacier on Sahale; a gully leads from the glacier to a terrace."
+   },
+   {
+    "url": "https://www.mountainproject.com/route/203628552/flakes-and-chimneys-south-face",
+    "retrieved_at": "2026-11-18",
+    "fact": "Type: Trad, Snow, Alpine. Final exposed 15 feet to the summit."
+   }
+  ],
+  "note": "Glacier approach and summit finish; no car-to-base time stated."
+ },
+ {
+  "area_id": "wa_cascade_peak",
+  "place_name": "Cascade Peak (7,428 ft), above Cascade Pass",
+  "verdict": "alpine",
+  "approach_stated": null,
+  "from": null,
+  "summit_or_glacier": "summit peak; glacier remnants on the north side; standard route is glacier travel plus class 3-4",
+  "route_types": {},
+  "evidence": [
+   {
+    "url": "https://en.wikipedia.org/wiki/Cascade_Peak",
+    "retrieved_at": "2026-11-18",
+    "fact": "Summit 7,428 ft above Cascade Pass; small glacier remnants on the north side; easiest route is glacier travel and class 3-4 scramble."
+   }
+  ],
+  "note": "Northwest Chimney is not on Mountain Project, so type null. No car-to-base time stated; summit and glacier decide."
+ },
+ {
+  "area_id": "wa_crater_mountain",
+  "place_name": "Crater Crag on Crater Mountain (Canyon Creek trailhead, Hwy 20)",
+  "verdict": "unsure",
+  "approach_stated": null,
+  "from": "trailhead",
+  "summit_or_glacier": "none for the crag itself; it sits at a trail switchback below the summit",
+  "route_types": {
+   "wa_crater_mountain_appassionata_smothered_in_smoke": "Trad"
+  },
+  "evidence": [
+   {
+    "url": "https://www.mountainproject.com/area/201798196/crater-crag",
+    "retrieved_at": "2026-11-18",
+    "fact": "From Canyon Creek trailhead, trails 754/738/746 past Crater Lake to a switchback at ~6320 ft; crag 50 ft above. 6 miles, 4400 ft gain."
+   },
+   {
+    "url": "https://www.mountainproject.com/route/201798215/appassionata-smothered-in-smoke",
+    "retrieved_at": "2026-11-18",
+    "fact": "Type: Trad, Alpine, 40 ft."
+   }
+  ],
+  "note": "Only a distance and gain are stated (6 miles, 4,400 ft), no time; not converted, per the rules. Very likely well over an hour, but no page says so."
+ },
+ {
+  "area_id": "wa_early_morning_spire",
+  "place_name": "Early Morning Spire, Eldorado Peak area",
+  "verdict": "alpine",
+  "approach_stated": null,
+  "from": null,
+  "summit_or_glacier": "Inspiration and McAllister Glaciers on the approach",
+  "route_types": {
+   "wa_early_morning_spire_southwest_face": "Trad"
+  },
+  "evidence": [
+   {
+    "url": "https://www.mountainproject.com/route/201494808/southwest-face",
+    "retrieved_at": "2026-11-18",
+    "fact": "Type: Trad, Snow, Alpine. Approach from Eldorado Creek and the Inspiration Glacier, cross the McAllister Glacier."
+   },
+   {
+    "url": "https://www.mountainproject.com/area/105923547/eldorado-peak",
+    "retrieved_at": "2026-11-18",
+    "fact": "Eldorado summit guarded by a long, strenuous approach; probably best done as a 2-3 day climb."
+   }
+  ],
+  "note": "Southwest Face is the only route listed under MP's Early Morning Spire area."
+ },
+ {
+  "area_id": "wa_mixup_peak",
+  "place_name": "Mix-up Peak, Cascade Pass area",
+  "verdict": "alpine",
+  "approach_stated": null,
+  "from": null,
+  "summit_or_glacier": "Cache Glacier on the approach; climbing ends near the summit",
+  "route_types": {
+   "wa_mixup_peak_pbs_late_night_special": "Trad"
+  },
+  "evidence": [
+   {
+    "url": "https://www.mountainproject.com/area/110928479/mix-up-peak",
+    "retrieved_at": "2026-11-18",
+    "fact": "When you reach the Cache Glacier aim for the V-Notch gully; the climbing starts about 100 ft below the summit."
+   },
+   {
+    "url": "https://www.mountainproject.com/route/203647045/pbs-late-night-special",
+    "retrieved_at": "2026-11-18",
+    "fact": "Type: Trad, Alpine, 450 ft. Leave the trail just before it drops to the Cache Glacier."
+   }
+  ],
+  "note": "Glacier-side approach and summit finish; no car-to-base time stated."
+ },
+ {
+  "area_id": "wa_mount_chaval",
+  "place_name": "Mount Chaval, Darrington / Suiattle area",
+  "verdict": "alpine",
+  "approach_stated": "camp set up \"8.5 hours from the car\"",
+  "from": "car",
+  "summit_or_glacier": "small glacier on the NE side; snow slopes; summit",
+  "route_types": {},
+  "evidence": [
+   {
+    "url": "http://introspectivevagabond.blogspot.com/2009/07/mount-chaval-via-west-ridge-north-ridge.html",
+    "retrieved_at": "2026-11-18",
+    "fact": "Party set up camp 8.5 hours from the car; failed on the North Ridge; small glacier on Chaval's northeast side."
+   }
+  ],
+  "note": "Not on Mountain Project; route type null."
+ },
+ {
+  "area_id": "wa_the_triad",
+  "place_name": "The Triad, between Eldorado Peak and Hidden Lake Peaks",
+  "verdict": "alpine",
+  "approach_stated": "\"scrambled together to the true summit at 11:15am, 6 hours after leaving the car\"",
+  "from": "car",
+  "summit_or_glacier": "glacier travel (crampons) and summit",
+  "route_types": {},
+  "evidence": [
+   {
+    "url": "https://jeffreyjhebert.com/adventures/the-triad",
+    "retrieved_at": "2026-11-18",
+    "fact": "Reached the true summit 6 hours after leaving the car; descended to the glacier with crampons and axes."
+   }
+  ],
+  "note": "The Mountain Project 'Triad' area found by search is an unrelated crag; the traverse route is not on MP, so type null."
+ },
+ {
+  "area_id": "wa_davis_peak_nc",
+  "place_name": "Davis Peak (7,051 ft), outlier of the Southern Pickets above Diablo",
+  "verdict": "alpine",
+  "approach_stated": null,
+  "from": "trailhead",
+  "summit_or_glacier": "route tops out near the summit",
+  "route_types": {},
+  "evidence": [
+   {
+    "url": "https://publications.americanalpineclub.org/articles/12198813004",
+    "retrieved_at": "2026-11-18",
+    "fact": "Burdo and Cairns made a difficult approach to the northern cirque; topped out near the summit."
+   },
+   {
+    "url": "https://onehikeaweek.com/2016/06/04/davis-peak-north-cascades/",
+    "retrieved_at": "2026-11-18",
+    "fact": "The steep incline rises 6000 ft in three miles; summit 7,051 ft."
+   }
+  ],
+  "note": "Not on Mountain Project; type null. No time stated; summit finish decides."
+ },
+ {
+  "area_id": "wa_spectre_peak",
+  "place_name": "Spectre Peak, Northern Pickets",
+  "verdict": "alpine",
+  "approach_stated": null,
+  "from": "trailhead",
+  "summit_or_glacier": "route ends with a long ridge traverse to the summit; snow on the descent",
+  "route_types": {},
+  "evidence": [
+   {
+    "url": "https://publications.americanalpineclub.org/articles/12200713001/",
+    "retrieved_at": "2026-11-18",
+    "fact": "Haunted Wall (IV 5.9+): round trip 50 miles of hiking and 20,000 ft gain via Easy Ridge; long ridge traverse to summit."
+   }
+  ],
+  "note": "Not on Mountain Project; type null. Roadless multi-day backcountry."
+ },
+ {
+  "area_id": "wa_east_twin_needle",
+  "place_name": "East Twin Needle (7,840 ft), Southern Pickets",
+  "verdict": "alpine",
+  "approach_stated": "\"Beginning the 5-hr descent back to the car on Day 3\"",
+  "from": "car",
+  "summit_or_glacier": "summit; steep snow and ice on the Twin Needles",
+  "route_types": {},
+  "evidence": [
+   {
+    "url": "https://stephabegg.com/trip-reports/washington/pickets/twin-needles/",
+    "retrieved_at": "2026-11-18",
+    "fact": "Tagged both summits (East 7,840 ft); Thread of Gneiss attempted in 2007; 5-hr descent back to the car on day 3."
+   }
+  ],
+  "note": "The quoted time is the walk OUT, not in; the verdict rests on the summit finish and multi-day access. Not on Mountain Project; type null."
+ },
+ {
+  "area_id": "wa_the_pyramid_picket",
+  "place_name": "Pyramid Peak (The Pyramid, ~8,000 ft), Southern Pickets",
+  "verdict": "alpine",
+  "approach_stated": null,
+  "from": "trailhead",
+  "summit_or_glacier": "summit peak",
+  "route_types": {},
+  "evidence": [
+   {
+    "url": "https://www.mountainproject.com/area/119741530/pyramid-peak",
+    "retrieved_at": "2026-11-18",
+    "fact": "A peak in the Southern Pickets north of Inspiration; approach via Goodell Creek or Big Beaver Creek and Ross Lake."
+   },
+   {
+    "url": "https://lemkeclimbs.com/southern-pickets-traverse",
+    "retrieved_at": "2026-11-18",
+    "fact": "Pyramid Peak 8000 ft; party soloed the south side to the summit, bypassing the 5.8 chimney."
+   }
+  ],
+  "note": "MP Pyramid Peak lists no routes, so East Ridge type null. The MP 'The Pyramid' found by search is an unrelated High Desert crag."
+ },
+ {
+  "area_id": "wa_molar_tooth",
+  "place_name": "Molar Tooth (7,547 ft), Cutthroat Lake drainage, Washington Pass",
+  "verdict": "alpine",
+  "approach_stated": null,
+  "from": "trailhead",
+  "summit_or_glacier": "summit peak",
+  "route_types": {},
+  "evidence": [
+   {
+    "url": "https://www.mountainproject.com/area/117649096/molar-tooth",
+    "retrieved_at": "2026-11-18",
+    "fact": "Molar Tooth is a 7547 ft summit between Cutthroat Peak and Cutthroat Pass; approaches via PCT from Rainy Pass or Cutthroat Lake trailhead."
+   }
+  ],
+  "note": "MP lists only 'North Ridge - West Side'; NE Arete and NE Chimney are not on MP, so types null. No time stated; summit decides."
+ },
+ {
+  "area_id": "wa_cutthroat_peak",
+  "place_name": "Cutthroat Peak, Washington Pass",
+  "verdict": "alpine",
+  "approach_stated": null,
+  "from": null,
+  "summit_or_glacier": "route ends on the summit",
+  "route_types": {
+   "wa_cutthroat_the_swarm": "Trad"
+  },
+  "evidence": [
+   {
+    "url": "https://www.mountainproject.com/route/124537013/the-swarm",
+    "retrieved_at": "2026-11-18",
+    "fact": "Type: Trad, Alpine, 850 ft. A great way to get to the summit of Cutthroat via the large, steep East Face."
+   }
+  ],
+  "note": "No car-to-base time stated; summit finish decides."
+ },
+ {
+  "area_id": "wa_golden_horn",
+  "place_name": "Golden Horn, near Rainy Pass / PCT",
+  "verdict": "alpine",
+  "approach_stated": null,
+  "from": "trailhead",
+  "summit_or_glacier": "summit peak",
+  "route_types": {},
+  "evidence": [
+   {
+    "url": "https://www.mountainproject.com/area/126873196/golden-horn",
+    "retrieved_at": "2026-11-18",
+    "fact": "Remote granite peak; Northeast Arete 5.8 (Skoog and Walseth 1979) named in the description, not as a route page."
+   },
+   {
+    "url": "https://francisbaileyh.com/2024/10/12/golden-horn-5-0/",
+    "retrieved_at": "2026-11-18",
+    "fact": "Day trip total time 12 hours 24 minutes; party checked they were on the true summit."
+   }
+  ],
+  "note": "NE Arete has no MP route page; type null. No car-to-base time stated."
+ },
+ {
+  "area_id": "wa_half_moon",
+  "place_name": "Half Moon (Hai Tower), Kangaroo Ridge",
+  "verdict": "alpine",
+  "approach_stated": null,
+  "from": null,
+  "summit_or_glacier": "route on Hai Tower, the right-most summit of Half Moon",
+  "route_types": {
+   "wa_half_moon_uncle_wehrly_s_toupee": "Trad"
+  },
+  "evidence": [
+   {
+    "url": "https://www.mountainproject.com/route/121915408/uncle-wehrlys-toupee",
+    "retrieved_at": "2026-11-18",
+    "fact": "Type: Trad, Alpine, 5 pitches. On Hai Tower, the right-most summit of Half Moon as seen from the highway."
+   },
+   {
+    "url": "https://www.mountainproject.com/area/120749906/half-moon",
+    "retrieved_at": "2026-11-18",
+    "fact": "One of the more difficult pinnacles to overcome on Kangaroo Ridge; Getting There: same as the others."
+   }
+  ],
+  "note": "No time stated; summit pinnacle decides."
+ },
+ {
+  "area_id": "wa_liberty_bell",
+  "place_name": "Liberty Bell Mountain, Washington Pass",
+  "verdict": "alpine",
+  "approach_stated": null,
+  "from": "trailhead",
+  "summit_or_glacier": "summit (7,720 ft)",
+  "route_types": {},
+  "evidence": [
+   {
+    "url": "https://www.mountainproject.com/area/105797864/liberty-bell",
+    "retrieved_at": "2026-11-18",
+    "fact": "Northern summit of the Liberty Bell massif, 7720 ft; park at Blue Lakes trailhead or the east-side overlook; all 19 routes Trad, Alpine."
+   }
+  ],
+  "note": "The Barber Pole is not among MP's 19 Liberty Bell routes; type null. The neighbouring NEWS page states 1-2 hours for the approach."
+ },
+ {
+  "area_id": "wa_north_early_winters_spire",
+  "place_name": "North Early Winters Spire, Washington Pass",
+  "verdict": "alpine",
+  "approach_stated": "\"The approach will take most parties 1-2 hours.\"",
+  "from": "trailhead",
+  "summit_or_glacier": "summit (7,760 ft)",
+  "route_types": {
+   "wa_north_early_winters_spire_northwest_corner_a_k_a_boving_pollack_route": "Trad"
+  },
+  "evidence": [
+   {
+    "url": "https://www.mountainproject.com/area/105792196/north-early-winter-spire",
+    "retrieved_at": "2026-11-18",
+    "fact": "The summit is at 7760 ft. The approach will take most parties 1-2 hours."
+   },
+   {
+    "url": "https://www.mountainproject.com/route/105792199/northwest-corner-aka-boving-pollack-route",
+    "retrieved_at": "2026-11-18",
+    "fact": "Type: Trad, Alpine, 500 ft."
+   }
+  ],
+  "note": "Christianson-Roskelley, Twitch of the Death Nerve and Vulcan Death Grip are not listed under MP's NEWS area; types null."
+ },
+ {
+  "area_id": "wa_south_early_winters_spire",
+  "place_name": "South Early Winters Spire, Washington Pass",
+  "verdict": "alpine",
+  "approach_stated": "\"Blue Lake Trail - ~1 hour of hiking on the trail leads to a meadow and opening on the NW side of the spire\"",
+  "from": "trailhead",
+  "summit_or_glacier": "summit (7,807 ft, highest of the Liberty Bell Group)",
+  "route_types": {
+   "wa_south_early_winters_spire_backseat_driver": "Trad",
+   "wa_south_early_winters_spire_south_east_mank": "Trad",
+   "wa_south_early_winters_spire_the_rubbernecker": "Trad"
+  },
+  "evidence": [
+   {
+    "url": "https://www.mountainproject.com/area/106257377/south-early-winters-spire",
+    "retrieved_at": "2026-11-18",
+    "fact": "Highest summit of the Liberty Bell Group, 7807 ft; ~1 hour of hiking on the trail leads to a meadow on the NW side."
+   },
+   {
+    "url": "https://www.mountainproject.com/area/105792196/north-early-winter-spire",
+    "retrieved_at": "2026-11-18",
+    "fact": "Neighbouring spire: the approach will take most parties 1-2 hours."
+   }
+  ],
+  "note": "The ~1 hour reaches only the meadow, not the base, and the routes are on a summit spire. All three routes are typed Trad, Alpine on their MP pages."
+ },
+ {
+  "area_id": "wa_poster_peak",
+  "place_name": "Poster Peak, Washington Pass (from the Hwy 20 hairpin)",
+  "verdict": "alpine",
+  "approach_stated": "\"with a one-hour approach\" (stated for Blue's Buttress; House Buttress uses the same approach)",
+  "from": "car",
+  "summit_or_glacier": "route works up to the top; descent drops off the peak's southwest ridge and a couloir",
+  "route_types": {},
+  "evidence": [
+   {
+    "url": "https://www.alpineinstitute.com/route-profile-poster-peak-house-buttress-5-7-iii/",
+    "retrieved_at": "2026-11-18",
+    "fact": "Blue Buttress has a one-hour approach; approach House Buttress the same way. To descend the peak, drop off the short southwest ridge."
+   },
+   {
+    "url": "https://www.mountainproject.com/area/111086652/poster-peak",
+    "retrieved_at": "2026-11-18",
+    "fact": "From the Hairpin, wander SE through the rock field to cairns; a peak offering a couple of alpine routes."
+   }
+  ],
+  "note": "The approach is about one hour (borderline crag), but the route ends on the peak and descends from it: a summit finish. House Buttress is not on MP (only Blue's Buttress); type null."
+ },
+ {
+  "area_id": "wa_burgundy_spire",
+  "place_name": "Burgundy Spire, Wine Spires, Washington Pass",
+  "verdict": "alpine",
+  "approach_stated": null,
+  "from": "car",
+  "summit_or_glacier": "Corkscrew exits into a 400 ft snow couloir (to 50 degrees); summit spire",
+  "route_types": {
+   "wa_burgundy_spire_corkscrew_route": "Trad"
+  },
+  "evidence": [
+   {
+    "url": "https://www.mountainproject.com/route/122154391/corkscrew-route",
+    "retrieved_at": "2026-11-18",
+    "fact": "Type: Trad, Alpine. 8-10 pitches to 5.6 exiting into a 400 ft couloir up to 50 degrees with snow."
+   },
+   {
+    "url": "https://www.mountainproject.com/area/107231974/burgundy-spire",
+    "retrieved_at": "2026-11-18",
+    "fact": "Reputedly one of the hardest summits to reach in the Cascades; trail from the Hwy 20 pullout to Burgundy Col."
+   }
+  ],
+  "note": "No time stated; snow couloir and summit decide."
+ },
+ {
+  "area_id": "wa_juno_tower",
+  "place_name": "Juno Tower, Vasiliki Ridge, Washington Pass",
+  "verdict": "alpine",
+  "approach_stated": "\"Get to base of route (=2:42 for approach)\"",
+  "from": "car",
+  "summit_or_glacier": "summit reached at the end of the climb",
+  "route_types": {
+   "wa_zool_patch": "Trad"
+  },
+  "evidence": [
+   {
+    "url": "https://stephabegg.com/trip-reports/washington/juno-tower-clean-break/",
+    "retrieved_at": "2026-11-18",
+    "fact": "Reached base of route 7:40 am, 2:42 for approach; arrived on summit 3:12 pm."
+   },
+   {
+    "url": "https://www.mountainproject.com/route/200618690/zool-patch",
+    "retrieved_at": "2026-11-18",
+    "fact": "Zool Patch, listed under MP Juno Tower; Type: Trad, Alpine, 350 ft."
+   }
+  ],
+  "note": "The approach time is to the Clean Break (east face) base on the same tower."
+ },
+ {
+  "area_id": "wa_silver_star_mountain_okanogan",
+  "place_name": "Silver Star Mountain, Washington Pass",
+  "verdict": "alpine",
+  "approach_stated": null,
+  "from": "car",
+  "summit_or_glacier": "glacier route to the summit; largest mountain at Washington Pass",
+  "route_types": {},
+  "evidence": [
+   {
+    "url": "https://www.mountainproject.com/area/111875731/silver-star-mountain",
+    "retrieved_at": "2026-11-18",
+    "fact": "Largest mountain at Washington Pass; common glacier route with 4th/low 5th scrambling to the summit; approach from milepost 166."
+   }
+  ],
+  "note": "MP lists East Ridge, Silver Star Glacier and West Face Couloir only, so Northeast Ridge type null (the MP 'Northeast Ridge' found by search is on Sharkstooth, Colorado)."
+ },
+ {
+  "area_id": "wa_apex_mountain_pasayten",
+  "place_name": "Apex Mountain (8,302 ft), Pasayten Wilderness",
+  "verdict": "alpine",
+  "approach_stated": null,
+  "from": "trailhead",
+  "summit_or_glacier": "roadless backcountry; north face above Tungsten Lake cirque",
+  "route_types": {
+   "wa_apex_mountain_pasayten_apex_buttress": "Trad"
+  },
+  "evidence": [
+   {
+    "url": "https://rocknropenw.com/2024/07/10/amphitheater-cathedral-in-the-pasayten/",
+    "retrieved_at": "2026-11-18",
+    "fact": "From Thirtymile Trailhead via Tungsten Trail: Apex Pass at mile 16.0, 4600 ft gained."
+   },
+   {
+    "url": "https://www.mountainproject.com/route/109096841/apex-buttress",
+    "retrieved_at": "2026-11-18",
+    "fact": "Type: Trad, Alpine, 7 pitches, Grade II; north face of Apex above the Tungsten Lake cirque."
+   }
+  ],
+  "note": "Roadless wilderness, about 16 trail miles in; no time stated."
+ },
+ {
+  "area_id": "wa_mount_olympus",
+  "place_name": "Mount Olympus (West Peak), Olympic National Park",
+  "verdict": "alpine",
+  "approach_stated": "\"Typically done over 3 or 4 days. On day 1, hike into Glacier Meadows.\"",
+  "from": "trailhead",
+  "summit_or_glacier": "Blue Glacier; summit",
+  "route_types": {
+   "wa_mount_olympus_2_north_ridge_via_blue_glacier": "Trad"
+  },
+  "evidence": [
+   {
+    "url": "https://www.mountainproject.com/route/109143016/north-ridge-via-blue-glacier",
+    "retrieved_at": "2026-11-18",
+    "fact": "Type: Trad, Snow, Alpine. Typically done over 3 or 4 days; day 1 hike into Glacier Meadows; day 2 is summit day."
+   },
+   {
+    "url": "https://www.mountainproject.com/area/107743423/mount-olympus",
+    "retrieved_at": "2026-11-18",
+    "fact": "Travel out the Hoh River Trail to Glacier Meadows for 17.5 miles, then onto the Blue Glacier."
+   }
+  ],
+  "note": ""
+ },
+ {
+  "area_id": "wy_grand_teton",
+  "place_name": "Grand Teton, Grand Teton National Park",
+  "verdict": "alpine",
+  "approach_stated": null,
+  "from": "trailhead",
+  "summit_or_glacier": "summit; approach from Lupine Meadows via Garnet Canyon to the Lower Saddle",
+  "route_types": {
+   "wy_beyer_east_face_i": "Trad",
+   "wy_grand_teton_the_rainbow_bridge": "Trad"
+  },
+  "evidence": [
+   {
+    "url": "https://www.mountainproject.com/area/105803123/grand-teton",
+    "retrieved_at": "2026-11-18",
+    "fact": "Most approaches start from Lupine Meadows trailhead into Garnet Canyon, eventually reaching the Lower Saddle."
+   },
+   {
+    "url": "https://www.mountainproject.com/route/105843454/beyer-east-face-i",
+    "retrieved_at": "2026-11-18",
+    "fact": "Type: Trad, Alpine, 1000 ft; scrambling to the summit; Underhill ridge at about 12,900 ft."
+   },
+   {
+    "url": "https://www.mountainproject.com/route/201495561/the-rainbow-bridge",
+    "retrieved_at": "2026-11-18",
+    "fact": "Type: Trad, Alpine, 700 ft, 5 pitches, Grade IV."
+   }
+  ],
+  "note": "No car-to-base time stated; the high summit decides."
+ },
+ {
+  "area_id": "wy_medicine_bow_peak_area",
+  "place_name": "Medicine Bow Peak east-face slabs (The Diamond), Snowy Range",
+  "verdict": "unsure",
+  "approach_stated": null,
+  "from": "parking",
+  "summit_or_glacier": "no summit finish (walk off south to the Medicine Bow Peak trail); seasonal snow: crampons and ice axe useful to reach the base until July",
+  "route_types": {
+   "wy_red_spot_alternate_start": "Trad"
+  },
+  "evidence": [
+   {
+    "url": "https://www.mountainproject.com/area/105808437/medicine-bow-peak-area",
+    "retrieved_at": "2026-11-18",
+    "fact": "Shortest approach from Lake Marie recreation area; climbs start above treeline ~10,500 ft; until July crampons and ice axe useful to reach the base."
+   },
+   {
+    "url": "https://app.advcollective.com/climbing/medicine-bow-peak-area-alpine-quartzite-climbing-in-wyoming",
+    "retrieved_at": "2026-11-18",
+    "fact": "Approach from Lake Marie described as a short but cross-country trek; no minutes given."
+   },
+   {
+    "url": "https://www.mountainproject.com/route/111903925/red-spot-alternate-start",
+    "retrieved_at": "2026-11-18",
+    "fact": "Type: Trad, Alpine, 100 ft."
+   }
+  ],
+  "note": "Every page calls the approach short, but none gives minutes. Seasonal snow on the approach until July. theCrag area page has no approach text; SummitPost skipped (403)."
+ }
+]
