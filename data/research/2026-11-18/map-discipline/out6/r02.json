@@ -1,0 +1,89 @@
+[
+ {
+  "id": "ca_glacier_ridge_standard_route",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {"field": "elevation_ft", "value": "12360", "url": "https://climber.org/data/SierraPeaks/07/02.html"},
+   {"field": "class", "value": "2s4 (SPS list); summit block about 15 ft, roped", "url": "https://climber.org/reports/2003/1154.html"},
+   {"field": "approach_days", "value": "3 days in via Roaring River / Cloud Canyon", "url": "https://climber.org/reports/2003/1154.html"},
+   {"field": "route", "value": "east wall of Cloud Canyon, talus to ridge north of summit, class 3 moves to block", "url": "https://climber.org/reports/2003/1154.html"}
+  ],
+  "notes": "No authoritative page names a standard start (climber.org SPS entry 7.2 and peak list carry no route text; SummitPost 403). Starts in use: Rowell Meadow trailhead near Lodgepole (climber.org/reports/2003/1154.html, the only opened report that names a start and climbs it); Marvin Pass trailhead (climber.org/reports/1999/555.html names it only as where the author's car was for the hike out, weak); Wolverton/Lakes Trail via Lion Lake Pass (wacziarg 2024 page, earlier pass); High Sierra Trail/Copper Mine Pass and Avalanche Pass are from a search summary only, pages not opened. Rowell Meadow and Marvin Pass are adjacent trailheads off the same road. Fewer than 3 opened reports with a clear majority. Stuck."
+ },
+ {
+  "id": "ca_lippincott_mountain_standard_route",
+  "status": "found",
+  "trailhead": {
+   "name": "Sawtooth Pass / Timber Gap Trailhead, Mineral King",
+   "identifiedBy": {"kind": "page", "url": "https://climber.org/reports/1998/355.html", "fact": "trailhead Mineral King; via Glacier Pass and Black Rock Pass to Little Five Lakes; SE/south-face route. Also 2026 wacziarg report (Mineral King, returned to Sawtooth Pass TH) and climber.org 2008/1655 (Sawtooth Pass TH, attempt)"},
+   "placements": [
+    {"source": "NPS", "name": "Sawtooth", "lat": 36.453305, "lng": -118.596761, "url": ""},
+    {"source": "climber.org", "name": "SAW TIMBER TRAIL waypoint", "lat": 36.4532, "lng": -118.5972, "url": "https://climber.org/reports/1998/355.html"}
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {"field": "route", "value": "Little Five Lakes camp ~10,800 ft, ESE face/bowl, south ridge saddle ~11,800 ft, south face", "url": "https://climber.org/reports/1998/355.html"},
+   {"field": "class", "value": "2 by ESE face and south face; direct line has class 3 moves; east ridge disputed 3-4", "url": "https://climber.org/reports/1998/355.html"},
+   {"field": "gain_ft", "value": "about 6000 to Little Five Lakes camp", "url": "https://climber.org/reports/1998/355.html"},
+   {"field": "route", "value": "Southeast Slope class 3, climbed 2026-06-25 from Mineral King", "url": "https://sites.google.com/view/wacziarg-climbing/2026-06-mineral-king"},
+   {"field": "passes", "value": "Glacier Pass, Hands and Knees Pass, Black Rock Pass, Timber Gap", "url": "https://climber.org/reports/2008/1655.html"}
+  ],
+  "notes": "Found by rule b, MODERATE: three opened reports all start at Mineral King (1998/355 Mineral King, SAW TIMBER TRAIL waypoint; 2026 wacziarg Mineral King, returned to Sawtooth Pass TH; 2008/1655 Sawtooth Pass TH but only an attempt, weak). No opened page uses another start; the High Sierra Trail side was never opened. Mineral King has several lots within ~1 km (Sawtooth 36.4533, Eagle-Mosquito, Farewell Gap), all at the road end; the Sawtooth/Timber Gap lot is the one the reports and waypoint file match. A human may prefer to just label it Mineral King trailhead."
+ },
+ {
+  "id": "ca_merced_peak_standard_route",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {"field": "route", "value": "from Snow Pass saddle direct to NE ridgeline is class 2; otherwise class 3", "url": "https://www.climber.org/reports/1999/475.html"},
+   {"field": "distance", "value": "about 12 miles in to Lower Merced Pass Lake (Glacier Point road side)", "url": "https://www.climber.org/reports/1999/475.html"},
+   {"field": "route", "value": "Chiquito Pass trail 6 mi, Fernandez Pass trail, south bowl, south ridge, class 3, about 7 mi approach", "url": "https://climber.org/reports/2004/1314.html"},
+   {"field": "descent", "value": "south-east slope", "url": "https://climber.org/reports/2004/1314.html"}
+  ],
+  "notes": "Wikipedia (opened) says Quartz Mountain TH over Chiquito Pass or one of two trailheads on the Glacier Point road; names no standard and no start for the class 2 route. Opened reports: climber.org/reports/2004/1314.html Quartz Mountain (class 3 south ridge); themtsarecalling.com/merced Quartz Mountain (earlier pass); climber.org/reports/1999/475.html trailhead field Yosemite Valley, via Lower Merced Pass Lake and Snow Pass (class 2 NE ridge; hiked out via Glacier Point) - the Glacier Point road/Mono Meadow side. Quartz Mountain 2, Glacier Point side 1 (SummitPost summary, not opened, says Mono Meadow popular); the one class 2 report is from the other side. Evidence uneven, not a clear majority. Stuck. Candidates: Quartz Mountain TH (USFS 37.530826,-119.447315); Mono Meadow TH (NPS 37.671453,-119.584778)."
+ },
+ {
+  "id": "ca_mount_corcoran_standard_route",
+  "status": "found",
+  "trailhead": {
+   "name": "Meysan Lake Trailhead (off Whitney Portal road), Inyo NF",
+   "identifiedBy": {"kind": "page", "url": "https://www.climber.org/reports/2009/1710.html", "fact": "Meysan Lake trail from Whitney Portal; LeConte then traverse to North Notch and Corcoran. Same start in climber.org 2007/1609 (Whitney Portal), 2001/782 (camp at Meysan Lake), 1997/229 (from spring north of Meysan Lake)"},
+   "placements": [
+    {"source": "USFS", "name": "MEYSAN LAKE TH", "lat": 36.589789, "lng": -118.230163, "url": ""},
+    {"source": "USFS", "name": "Whitney Portal Trailhead", "lat": 36.586905, "lng": -118.240112, "url": ""}
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {"field": "first_ascent", "value": "Howard S. Gates, 1933", "url": "https://en.wikipedia.org/wiki/Mount_Corcoran"},
+   {"field": "class", "value": "easiest route class 2-3 (Secor)", "url": "https://en.wikipedia.org/wiki/Mount_Corcoran"},
+   {"field": "approach", "value": "Meysan Lake trail about 5 mi, 3600 ft gain, ~4 hr", "url": "https://www.climber.org/reports/2009/1710.html"},
+   {"field": "route", "value": "up LeConte, traverse eight gullies to gully 7 / North Notch, then gully 8, ~200 ft to summit; traverse under 2 h", "url": "https://www.climber.org/reports/2007/1609.html"},
+   {"field": "hazard", "value": "waterfall pitch ~12 ft below LeConte NW chute; handline or body rappel", "url": "https://www.climber.org/reports/2007/1609.html"}
+  ],
+  "notes": "Found by rule b, MODERATE. Of 6 climber.org reports opened, 4 use Meysan Lakes from the Whitney Portal side (2009/1710 and 2007/1609 name Meysan Lake TH / Whitney Portal; 2001/782 and 1997/229 say Meysan Lake only, trailhead inferred). 2 use other starts: 2001/783 Cottonwood (Horseshoe Meadow) via New Army Pass, Iridescent Lake; 2002/965 Tuttle Creek TH (which reaches LeConte/Corcoran North Notch but skipped Corcoran). 2001/783 author itself suggests Meysan as an alternative; none calls another start usual. Meysan Lake TH and Whitney Portal lot are ~0.9 km apart; the trail starts at the Meysan Lake TH signed point, parking is at Whitney Portal. Wikipedia names no trailhead. SummitPost 403."
+ },
+ {
+  "id": "ca_mount_davis_southeast_slopes_from_north_glacier_pass",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {"field": "route", "value": "Thousand Island Lake west end to North Glacier Pass, past Lake Catherine, SE slope; class 2", "url": "https://www.snwburd.com/bob/trip_reports/davis_1.html"},
+   {"field": "elevation_ft", "value": "12303 (12311 in one report)", "url": "https://www.climber.org/reports/2006/1567.html"},
+   {"field": "mileage", "value": "12 miles, 4900 ft gain via High Trail, with camp on Davis plateau", "url": "https://justindong.squarespace.com/journal/mt-davis"},
+   {"field": "mileage", "value": "30.4 miles round trip, 8000 ft gain via Rush Creek", "url": "https://themtsarecalling.com/davis/"},
+   {"field": "hazard", "value": "false summits; boulder field north of North Glacier Pass loose", "url": "https://themtsarecalling.com/davis/"}
+  ],
+  "notes": "Even split, no authority naming one. Agnew Meadow(s): climber.org/reports/2006/1567.html (Agnew Meadow, PCT, 4 h to Thousand Island Lake); justindong.squarespace.com/journal/mt-davis (High Trail from Agnew; wanted River Trail permit). Rush Creek (June Lake Loop): themtsarecalling.com/davis (explicit), climber.org/reports/1998/320.html (Rush Creek trail, Gem Lake, Thousand Island Lake, winter-ish). No trailhead named: snwburd davis_1 (camped at Thousand Island Lake), climber.org 1999/446 not opened, charliebrumbaugh (multi-day trip, TH not stated), climber.org 2002/984 (brief). A search summary says Agnew via River Trail is quickest (not evidence; summitpost 403). Candidates: Agnew Meadows (USFS 37.681083,-119.080672; High Trail TH 37.682905,-119.084413); Rush Creek TH not in officialCandidates list. Stuck."
+ }
+]
