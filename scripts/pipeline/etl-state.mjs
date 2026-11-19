@@ -29,7 +29,10 @@ const areas = [], routes = []; let dropped = 0, fetches = 0;
 
 function mapClimb(c, mid) {
   const t = c.type || {};
-  let discipline = t.bouldering ? "bouldering" : t.ice ? "ice" : t.mixed ? "mixed" : t.alpine ? "alpine" : t.aid ? "aid" : "rock";
+  // A FREE GRADE AND A FREE STYLE COME BEFORE AID (owner, 2026-11-18): a climb flagged aid that also
+  // has a YDS grade and a trad / sport / top-rope flag is that style first; aid stays in `disciplines`.
+  const freeFirst = !!(c.grades?.yds && (t.trad || t.sport || t.tr));
+  let discipline = t.bouldering ? "bouldering" : t.ice ? "ice" : t.mixed ? "mixed" : t.alpine ? "alpine" : t.aid && !freeFirst ? "aid" : "rock";
   const style = discipline === "rock" ? (t.trad ? "Trad" : t.sport ? "Sport" : null) : null;
   // No "rock" type in the app (0202). A climb flagged neither trad nor sport is a top-rope-only
   // one when OpenBeta flags `tr` (every crag probed matched exactly); with no flag at all there

@@ -5,7 +5,7 @@ import Chevron from "./Chevron.tsx";
 import { pinnedTopBottom, scrollBelowPinned } from "../../lib/pinnedTop.js";
 
 /* A long section is CAPPED, so one section cannot take the whole screen. Every section on the
-   route tabs mounts inside one of these; it measures its own content and does nothing until that
+   route tabs mounts inside one of these, except KNOWN HAZARDS, which always shows in full (owner, 2026-11-18); it measures its own content and does nothing until that
    content is taller than CAP_AT, at which point it shows the first CAP_SHOW px under a fade and a
    "Show more" control. The threshold is deliberately well above CAP_SHOW: collapsing a section to
    hide its last three lines costs a tap and saves nothing. The INNER box is what is observed —
