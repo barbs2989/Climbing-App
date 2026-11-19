@@ -293,7 +293,7 @@ export default function Calculator({route,activity,fit:fitProp,setFit:setFitProp
            (Indian Head printed a 9.5 hr walk in, a 13.6 hr climb and an 8.6 hr descent over a 13.6 hr total). */
         const whole=sd.why==="whole";
         return <div data-summit-day={sd.timed?"timed":sd.why}>
-          {whole?null:row("in",dayLbl(1,sd.inDays),sd.inDays===1?"Walk in to camp":"Walk in, camping on the way",(walkInKnown?"":"≥")+hr(sd.walkInH),C.green)}
+          {whole?null:row("in",dayLbl(1,sd.inDays),sd.why==="enroute"?"Walk in, over the summit, to camp":sd.inDays===1?"Walk in to camp":"Walk in, camping on the way",(walkInKnown?"":"≥")+hr(sd.why==="enroute"?sd.walkInH+techH:sd.walkInH),C.green)}
           {sd.timed?<div style={{padding:"8px 0",borderBottom:sd.outDays?`1px solid ${C.borderLight}`:"none"}}>
             <div style={{fontSize:11,fontWeight:700,color:C.textMuted,textTransform:"uppercase",letterSpacing:0.3}}>{"Day "+sdN+" · summit day"}</div>
             <div style={{fontSize:13,color:C.text,fontWeight:600,marginBottom:8}}>{"Leaving camp at "+fmt(camp)+(sd.endAt==="car"?", out to the car the same day":"")}</div>
@@ -305,7 +305,7 @@ export default function Calculator({route,activity,fit:fitProp,setFit:setFitProp
           {!whole&&sd.outDays>0?row("out",dayLbl(sd.nDays-sd.outDays+1,sd.nDays),"Walk out",(walkOutKnown||P.storedDescentH!=null?"":"≥")+hr(sd.timed?(sd.walkOutH as number):P.downH),C.blue):null}
           {!whole&&!sd.timed&&sd.outDays===0?row("down",dayLbl(sd.nDays,sd.nDays),"Descent to the car",(walkOutKnown||P.storedDescentH!=null?"":"≥")+hr(P.downH),C.blue):null}
           <div style={{display:"flex",justifyContent:"space-between",alignItems:"baseline",gap:10,paddingTop:9}}><div style={{fontSize:13,color:C.textSub}}>{"Total trip, moving, over "+sd.nDays+" days"}</div><div style={{fontSize:17,fontWeight:800,color:C.amber}}>{hasAnyEstimate?(lowerBound?"≥":"")+hr(P.tripH):"N/A"}</div></div>
-          {!sd.timed&&!(sd.why==="noclimb"&&climbUnknown)?<div style={{fontSize:12,color:C.textSub,lineHeight:1.5,marginTop:6}}>{whole?"Published as one time for the whole trip.":sd.why==="long"?"The climb spans several days, so there is no summit-day clock.":"No summit-day time on file."}</div>:null}
+          {!sd.timed&&!(sd.why==="noclimb"&&climbUnknown)?<div style={{fontSize:12,color:C.textSub,lineHeight:1.5,marginTop:6}}>{whole?"Published as one time for the whole trip.":sd.why==="long"?"The climb spans several days, so there is no summit-day clock.":sd.why==="enroute"?"The summit is reached on the walk in.":"No summit-day time on file."}</div>:null}
           <div style={{display:"grid",gridTemplateColumns:"1fr",gap:4,marginTop:6}}>{floorNotes}</div>
         </div>;})():<>
       {/* A ROUTE THAT PUBLISHES ONE CAR-TO-CAR FIGURE HAS NO LEGS TO SHOW. The four tiles used to print

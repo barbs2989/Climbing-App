@@ -33,7 +33,7 @@ const SOURCE_WORDS = /\b(mountain ?project|summitpost|peakbagger|guidebook|trip 
 // `before` is the stored plan: a shape problem it ALREADY had (a day title over 60 characters, a
 // placeholder "Day 1" with no figures) is not this fix's to make, and must not block a time repair.
 // Only a problem the proposal INTRODUCES is refused.
-export function oneTotalErrors(t, it, before) {
+export function oneTotalErrors(t, it, before, beforeTiming) {
   const out = [];
   if (!t || typeof t !== "object") return ["no timing"];
   const { approachTimeHrs: a, summitTimeHrs: s, descentTimeHrs: d, totalHrs: tot } = t;
@@ -51,8 +51,12 @@ export function oneTotalErrors(t, it, before) {
     if (days.every((x) => !(x && isNum(x.hours)))) { /* nothing on screen to disagree */ }
     else if (days.some((x) => !isNum(x && x.hours))) out.push("a day has no hours");
     else if (days.length && !near(days.reduce((x, y) => x + y.hours, 0), tot)) out.push(`days sum to ${days.reduce((x, y) => x + y.hours, 0)}, total is ${tot}`);
-    if (typeof it.totalNote === "string" && SOURCE_WORDS.test(it.totalNote)) out.push("totalNote names a source");
   }
+  // NO SOURCES ANYWHERE IN THE APP: any string this fix ADDS or CHANGES (day notes, schedule details,
+  // section notes, the summary) must not name one. Text already stored is not this fix's to judge.
+  const strs = (v, acc) => { if (typeof v === "string") acc.add(v); else if (v && typeof v === "object") Object.values(v).forEach((x) => strs(x, acc)); return acc; };
+  const stored = strs({ it: before, t: beforeTiming }, new Set());
+  for (const s of strs({ t, it }, new Set())) if (!stored.has(s) && SOURCE_WORDS.test(s)) out.push("names a source: " + JSON.stringify(s.slice(0, 80)));
   const shout = shoutedStrings({ timing: t, itinerary: it });
   if (shout.length) out.push("shouted prose: " + JSON.stringify(shout).slice(0, 120));
   return out;
@@ -61,7 +65,7 @@ export function oneTotalErrors(t, it, before) {
 const rollback = [];
 let ok = 0, refused = 0;
 for (const f of fixes) {
-  const bad = oneTotalErrors(f.to.timing, f.to.itinerary, f.from.itinerary);
+  const bad = oneTotalErrors(f.to.timing, f.to.itinerary, f.from.itinerary, f.from.timing);
   if (bad.length) { console.log(`REFUSED ${f.id}: ${bad.join("; ")}`); refused++; continue; }
   const r = await fetch(`${SUPABASE_URL}/rest/v1/routes?id=eq.${encodeURIComponent(f.id)}&select=id,timing,itinerary`, { headers: headers(key) });
   const rows = await r.json();
