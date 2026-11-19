@@ -15,6 +15,7 @@
 // Both are extracted from the real ClimbMatch.jsx source rather than reimplemented,
 // so this fails if either is edited into a wrong shape.
 import { readFileSync } from "node:fs";
+import * as MEETPIN from "../lib/meetPin.js";
 
 // The app is split across ClimbMatch.jsx (App) and ClimbMatchCore.jsx (helpers,
 // seed data, presentational components); markers may live in either. Core is
@@ -265,6 +266,83 @@ console.log(`  ${crew.members.length === 2 ? "ok  " : "FAIL"}  hydration carries
   for (const [name, ok] of wired) {
     if (!ok) failures.push(`backup days: ${name}`);
     console.log(`  ${ok ? "ok  " : "FAIL"}  backup days: ${name}`);
+  }
+}
+
+// THE MEET-UP PIN (0478, owner 2026-11-19: "paste the shared link into the app"). The organiser pastes a
+// Google or Apple Maps link, or a coordinate; lib/meetPin.js reads the POINT out of it and only the
+// point is stored. The cases are links as the apps really hand them out (the two Google ones are what
+// live maps.app.goo.gl links redirected to on 2026-11-19; the Apple ones are from Apple's "Adopting
+// unified Maps URLs"). What it must never do: take the centre of the map on screen for the place,
+// read a name-only link as a point, or treat any other website as a map.
+{
+  const P = MEETPIN;
+  if (P) {
+    const near = (r, la, ln) => !!r && r.kind === "pin" && Math.abs(r.lat - la) < 1e-6 && Math.abs(r.lng - ln) < 1e-6;
+    const cases = [
+      ["Google, a dropped pin (what a short link redirects to): the !3d/!4d point",
+        () => near(P.parseMapsLink("https://www.google.com/maps/place/-13.165331,-72.548991/data=!4m6!3m5!1s0!7e2!8m2!3d-13.1653311!4d-72.5489906?utm_source=mstt_1&entry=gps"), -13.165331, -72.548991)],
+      ["Google, a named place: the place's own point, NOT the @ centre of the map, and its name",
+        () => { const r = P.parseMapsLink("https://www.google.com/maps/place/Mercu+Buana+University/@-6.2099557,106.7352587,15z/data=!4m6!3m5!1s0x2e69f71f5a41c197:0x628259f9e8d6d7b4!8m2!3d-6.2093657!4d106.7386076!16s%2Fm%2F0cpdwh4?entry=tts"); return near(r, -6.209366, 106.738608) && r.name === "Mercu Buana University"; }],
+      ["Google, a place link with ONLY the @ centre is refused (the centre is not the place)",
+        () => P.parseMapsLink("https://www.google.com/maps/place/Index+Town+Walls/@47.8201,-121.5702,15z").kind === "unreadable"],
+      ["Google, a bare map view: its centre is the thing shared",
+        () => near(P.parseMapsLink("https://www.google.com/maps/@47.8201,-121.5702,15z"), 47.8201, -121.5702)],
+      ["Google, the Maps URLs forms: search query, ?q=, and a directions destination",
+        () => near(P.parseMapsLink("https://www.google.com/maps/search/?api=1&query=47.5201%2C-121.8203"), 47.5201, -121.8203) && near(P.parseMapsLink("https://maps.google.com/?q=47.5201,-121.8203"), 47.5201, -121.8203) && near(P.parseMapsLink("https://www.google.com/maps/dir/?api=1&destination=47.5201,-121.8203"), 47.5201, -121.8203)],
+      ["Google, a link that names a place by text or id only has no point to read",
+        () => P.parseMapsLink("https://www.google.com/maps?q=Index+Town+Walls&ftid=0x549a9f:0x1").kind === "unreadable"],
+      ["Apple, a dropped pin with a name (the unified /place form)",
+        () => { const r = P.parseMapsLink("https://maps.apple.com/place?coordinate=40.864791,-73.931723&name=My%20Favorite%20Place"); return near(r, 40.864791, -73.931723) && r.name === "My Favorite Place"; }],
+      ["Apple, the older ?ll=&q= form",
+        () => { const r = P.parseMapsLink("https://maps.apple.com/?ll=47.5201,-121.8203&q=Dropped%20Pin"); return near(r, 47.5201, -121.8203) && r.name === "Dropped Pin"; }],
+      ["Apple, a place-id or address link has no point to read; a search's centre is not the place",
+        () => P.parseMapsLink("https://maps.apple.com/place?place-id=IF149E70A3B3C4CB2").kind === "unreadable" && P.parseMapsLink("https://maps.apple.com/search?query=pizza&center=51.507984,-0.128015").kind === "unreadable"],
+      ["short links are handed to the resolver, never guessed at",
+        () => P.parseMapsLink("https://maps.app.goo.gl/7qWFiAfvRsBEKTz56").kind === "short" && P.parseMapsLink("https://maps.apple/p/AbCdEf123").kind === "short"],
+      ["the share sheet's text around the link: the name on the line above is kept",
+        () => { const r = P.parseMapsLink("Blue Lake Trailhead\nhttps://maps.apple.com/?ll=48.5190,-120.6740"); return near(r, 48.519, -120.674) && r.name === "Blue Lake Trailhead"; }],
+      ["any other website is not a map, whatever its path or query says",
+        () => P.parseMapsLink("https://example.com/maps/place/47.5,-121.8") === null && P.parseMapsLink("https://google.com.evil.example/maps?q=47.5,-121.8") === null && P.parseMapsLink("https://maps.apple.com.evil.example/?ll=47.5,-121.8") === null && P.parseMapsLink("Park & Ride lot") === null],
+      ["typed coordinates: decimal, with N/W letters, and never a bare pair of whole numbers",
+        () => near(P.parseCoordPair("47.5201, -121.8203"), 47.5201, -121.8203) && near(P.parseCoordPair("47.5201° N, 121.8203° W"), 47.5201, -121.8203) && P.parseCoordPair("12, 30") === null && P.parseCoordPair("lot 4.5, row 2") === null],
+      ["a point off the globe, or 0,0, is not a pin",
+        () => P.parseCoordPair("91.5, 10.2") === null && P.parseCoordPair("0.0, 0.0") === null && P.parseMapsLink("https://maps.apple.com/?ll=95.1,200.2").kind === "unreadable"],
+      ["the pin box calls anything else unreadable rather than saving it",
+        () => P.parseMeetPin("meet me at the gate").kind === "unreadable" && P.parseMeetPin("  ") === null],
+      ["both apps' links are built from the coordinate alone",
+        () => { const l = P.meetPinLinks(47.5201, -121.8203, "Blue Lake Trailhead"); return l.length === 2 && l[0].n === "Google Maps" && l[0].href === "https://www.google.com/maps/search/?api=1&query=47.5201,-121.8203" && l[1].n === "Apple Maps" && /^https:\/\/maps\.apple\.com\/\?ll=47\.5201,-121\.8203&q=Blue%20Lake%20Trailhead/.test(l[1].href) && P.meetPinLinks(null, null).length === 0; }],
+    ];
+    for (const [name, fn] of cases) {
+      let ok = false; try { ok = !!fn(); } catch (e) { failures.push(`meet-up pin: ${name} — threw: ${e.message}`); continue; }
+      if (!ok) failures.push(`meet-up pin: ${name}`);
+      console.log(`  ${ok ? "ok  " : "FAIL"}  meet-up pin: ${name}`);
+    }
+  }
+  // Hydration: the pin reaches the crew object as numbers, and its absence as null (never 0, 0).
+  let hp, hn; try {
+    hp = mod({ ...base, meet_lat: "47.5201", meet_lng: -121.8203 }, UID).crew; hn = mod(base, UID).crew;
+  } catch (e) { failures.push(`meet-up pin — hydration threw: ${e.message}`); }
+  if (hp && hn) {
+    const ok = hp.meetLat === 47.5201 && hp.meetLng === -121.8203 && hn.meetLat === null && hn.meetLng === null;
+    if (!ok) failures.push(`meet-up pin — hydration: got ${hp.meetLat},${hp.meetLng} and ${hn.meetLat},${hn.meetLng}; want the numbers, then null,null`);
+    console.log(`  ${ok ? "ok  " : "FAIL"}  meet-up pin: crews.meet_lat/meet_lng hydrate as numbers, and as null when unset`);
+  }
+  const card = readOpt(new URL("../lib/CrewCard.jsx", import.meta.url));
+  const db = readOpt(new URL("../lib/db.js", import.meta.url));
+  const fn = readOpt(new URL("../supabase/functions/resolve-map-link/index.ts", import.meta.url));
+  const wired = [
+    ["the pin is WRITTEN: updateCrew maps meetLat/meetLng to crews.meet_lat/meet_lng, as a pair, null included", /patch\.meetLat!==undefined\|\|patch\.meetLng!==undefined[^\n]*dbPatch\.meet_lat=_pin\?patch\.meetLat:null;dbPatch\.meet_lng=_pin\?patch\.meetLng:null/.test(SRC)],
+    ["no device-only pin is left: the card reads no meetCoords", !/meetCoords|coordsDraft/.test(card) && !/meetCoords/.test(SRC)],
+    ["the card saves only what parseMeetPin read as a pin, and refuses the rest with a reason", /r\.kind==="pin"\)\{const patch=\{meetLat:r\.lat,meetLng:r\.lng\}/.test(card) && /setPinErr\(r&&r\.kind==="failed"\?/.test(card)],
+    ["a short link goes through the resolver, and what comes back is parsed again, not trusted", /resolveMapLink\(r\.url\);r=parseMapsLink\(full\);if\(!r\|\|r\.kind!=="pin"\)r=\{kind:"unreadable"\}/.test(card) && /functions\.invoke\("resolve-map-link"/.test(db)],
+    ["members get the links too: the links row is drawn outside the organiser-only branch, from meetPinLinks", /_pinLinks\.map\(/.test(card) && /Open the meet-up pin in /.test(card)],
+    ["the resolver follows redirects BY HAND and only between maps hosts", /redirect:\s*"manual"/.test(fn) && /if \(!cur \|\| !isShort\(cur\)\)/.test(fn) && /if \(isMaps\(next\)\) return json\(\{ url: next\.href \}\);\s*if \(!isShort\(next\)\) return json\(/.test(fn) && !/redirect:\s*"follow"/.test(fn)],
+    ["the resolver is for a signed-in climber, rate limited, and never returns a page body", /auth\.getUser\(token\)/.test(fn) && /await allow\(supabase,/.test(fn) && /res\.body\?\.cancel\(\)/.test(fn) && !/res\.text\(\)|res\.json\(\)/.test(fn)],
+  ];
+  for (const [name, ok] of wired) {
+    if (!ok) failures.push(`meet-up pin: ${name}`);
+    console.log(`  ${ok ? "ok  " : "FAIL"}  meet-up pin: ${name}`);
   }
 }
 
