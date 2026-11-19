@@ -226,3 +226,32 @@ Hibox x2, Colchuck NE Gully, Mixup, Apex, Castle Peak Pasayten), notes that name
 (Black Mountain, Mokelumne, Striped, Red Kaweah, Twin Peaks, Hilgard, Joe Devel, Overcoat, Vermilion,
 Clinton), campground points (Black Hawk, Katahdin Hunt Trail), and earlier hand holds.
 - **Audit now:** SUMMIT_ONLY 221, NO_SUMMIT 40, CRAG_SUMMIT 0.
+
+## Colorado, Maine and Overpass pass (2026-11-18)
+
+Two more sources opened up:
+- **14ers.com trailhead pages** (`trailhead.php?thparm=..`) print a coordinate and elevation; plain fetch works.
+- **Overpass answers again when the request carries a client name** (a 406 without one). `scripts/op.mjs`
+  asks for parking / trailhead / halt features within a radius of each stored point; `scripts/op2.mjs` does
+  the same one route at a time with backoff. The 25 km name searches still failed (server at capacity).
+
+Written (`batch-co.json` 19, `batch-op.json` 5; all unconfirmed, verified on re-read, rows read first):
+- Needleton train stop (14ers + OSM halt within 21 m): Jupiter, Eolus NE Ridge, Sunlight South Face, Turret,
+  Windom West Ridge.
+- Lily Lake (14ers + mapped parking 14 m): California Peak South Ridge, Huerfano Peak.
+- Mt. Princeton Road 2WD, Fourmile Creek (Sherman), upper Blue Lakes (Fletcher), Molas (Trinity), Montgomery
+  Reservoir (Clinton), Rockdale (Emerald; single source), Cielo Vista gate (Red Mountain, as Culebra).
+- Maine: Appalachian Trail lots on Route 27 (Crocker) and Route 4 (Saddleback, The Horn); the trailhead node
+  at Katahdin Stream for the Hunt Trail (not the campground point 260 m north).
+- Booker (Thunder Creek trailhead parking, WTA within 3 m), Taylor Dome (Big Meadow trailhead), Sawtooth Peak
+  and Spanish Needle (PCT crossing of Canebrake Road, trail marker within 12 m of the driving guide's
+  waypoint), Burgundy Spire Corkscrew (same pullout as Chianti).
+- **Correction:** Snowmass East Slopes. The USFS "Snowmass Trailhead" point written in the hand-release pass
+  is 570 m west of the road-end lot; 14ers and a mapped parking lot agree on 39.20016,-106.99414. Rewritten.
+  Lesson: an elevation match does not confirm a point on flat valley ground; check for a mapped lot.
+
+Held: Stewart Peak (page says Nutras Creek, row says Stewart Creek road), Dyer (two "Iowa Gulch" points
+1.4 km apart), North Apostle (route-site point 4.5 km from the 14ers South Winfield lot), Atlantic (two
+McCullough Gulch points 870 m apart), Casco / French, Half Peak, Jones / Niagara (one unmapped coordinate),
+Vermilion (sources conflict), Spaulding / Sugarloaf (no mapped lot on Caribou Valley Road).
+- **Audit now:** SUMMIT_ONLY 198, NO_SUMMIT 40, CRAG_SUMMIT 0.
