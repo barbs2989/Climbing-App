@@ -2,7 +2,6 @@
   "note": "Success messages beside a session-gated write that are intentional (local-only state that really did change). Shrink this list; never grow it without a reason in the PR.",
   "allowed": [
     "ClimbMatch.jsx :: \"Crew removed\")",
-    "ClimbMatch.jsx :: \"Float plan saved — your crew's card shows it's set. \"+_done)",
     "ClimbMatch.jsx :: \"Group deleted from this device\")",
     "ClimbMatch.jsx :: \"Group deleted\")",
     "ClimbMatch.jsx :: \"Group settings saved\")",
@@ -25,6 +24,6 @@
     "src/components/BlockedClimbersSheet.tsx :: _ubn+\" unblocked — they can message you and invite you to crews again\"",
     "src/components/FriendsSheet.tsx :: _first+\" removed from friends\")",
     "src/components/LogClimbSheet.tsx :: \"Conditions report deleted\")",
-    "src/components/LogClimbSheet.tsx :: \"Trip report deleted\")"
+    "src/components/LogClimbSheet.tsx :: _delLog&&_delLog.text?\"Trip report deleted\":\"Logged climb deleted\")"
   ]
 }
