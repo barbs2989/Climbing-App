@@ -90,7 +90,7 @@ export interface PlanActivity {
   scoutOnly?: boolean;
   cond?: { camps?: string[] | null } | null;
 }
-/* LOGGED_ONLY_CATS (sport, trad, top-rope, bouldering) head the list "Recent logged climbs"; the rule and the
+/* LOGGED_ONLY_CATS (sport, trad, top-rope, aid, bouldering) head the list "Recent logged climbs"; the rule and the
    scout-report test live with the list, in lib/RouteTracksPanel.jsx. */
 /** What the Plan body itself reads off the route; the children's own route types are intersected below. */
 interface PlanOwnRoute {
