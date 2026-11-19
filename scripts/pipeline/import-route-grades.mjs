@@ -293,14 +293,17 @@ const km = (a, b) => { const R = 6371, r = x => x * Math.PI / 180, dLat = r(b.la
 // same name, in another area, is refused as a possible duplicate.
 const NEAR_KM = 5, ROUTE_NEAR_KM = 1;
 
-// A route TYPED ice / mixed / aid keeps the first import's precedence. An aid grade on a route not
-// typed Aid ("5.10 A0" on a trad line — a pendulum or a pulled bolt) no longer outranks its free
-// grade. A roped type then outranks Boulder ("TR, Boulder" is a top rope).
+// A route TYPED ice / mixed keeps the first import's precedence. An aid grade NEVER outranks a free
+// grade with a free style, typed Aid or not (owner, 2026-11-18, on Stripe Rock's Valhalla, "5.8 A0",
+// Sport + Aid: "a sport climb, the second option is aid"): the YDS grade's style is the discipline
+// and aid follows it in `disciplines`. Aid is the discipline only when the rating has no free grade,
+// or no trad / sport / top-rope type to file it under. A roped type then outranks Boulder
+// ("TR, Boulder" is a top rope).
 function disciplineOf(type, tk) {
   const t = String(type || "");
   if (/\bIce\b/.test(t) && tk.wi) return "ice";
   if (/\bMixed\b/.test(t) && tk.m) return "mixed";
-  if (/\bAid\b/.test(t) && tk.aid) return "aid";
+  if (/\bAid\b/.test(t) && tk.aid && !(tk.yds && /\b(?:Trad|Sport|TR)\b/.test(t))) return "aid";
   if (tk.wi) return "ice"; if (tk.m) return "mixed"; if (tk.aid && !tk.yds) return "aid";
   if (tk.yds) { if (/\bTrad\b/.test(t)) return "trad"; if (/\bSport\b/.test(t)) return "sport"; if (/\bTR\b/.test(t)) return "toprope"; }
   if (tk.aid) return "aid";

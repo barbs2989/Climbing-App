@@ -556,3 +556,9 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   drive controls means one of them is the un-captioned one). Static, in the build; same injection
   suite. Its first run caught a code COMMENT containing the `maps/dir` literal — the rule is on
   the file, not the markup, and a comment counts; the comment was reworded rather than the rule.
+  **Grade spread (2026-11-18).** The guard used to require the chart's "N of M list a 5.x grade ·
+  K on other scales" line (`total > shown`). The owner removed that line and asked for a
+  discipline picker, so the rule became: every scale the area has is a chip (`const scales`,
+  including a scale missing from `SYS_ORDER`), the picked chip says `aria-pressed`, and the
+  removed line may not come back. What it cannot see: climbs with NO parseable grade are on no
+  scale and no chip; the CLIMBS HERE headline is still where the whole count is read.
