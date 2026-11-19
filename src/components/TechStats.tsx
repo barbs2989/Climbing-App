@@ -1,7 +1,7 @@
 import { catOf, routeAscentFt, gainCoversWholeOuting, wpIs, uElev, shapeOf, uDist, uDistMi, C, CRAG_CATS, sunReadout, SUB_LABEL } from "../../ClimbMatchCore.jsx";
 import { effDistKm, recShapeOf, effDistIsWholeTrip, roadWalkMi } from "../../lib/outing.js";
 import { uLen } from "../../lib/uLen.js";
-import { cruxGrade, displayGrade, gradeConversions, gradeDetail, gradeRangeNote, singleGrade } from "../../lib/grade";
+import { cruxGrade, displayGrade, gradeConversions, gradeDetail, gradeRangeNote, singleGrade, splitProtection } from "../../lib/grade";
 import { routeRock } from "../../lib/rockType";
 import { pitchAnchorSummary } from "../../lib/pitchAnchors.js";
 import { fmtRopeLen, _ropeEdited } from "../../lib/rack";
@@ -167,7 +167,7 @@ export default function TechStats({route,onEdit,part,onEditArea}: TechStatsProps
        disagrees with the route's displayed grade (displayGrade, the header pill), which is
        information rather than an echo. */
     const _cx=(route.cruxGrade||route.grade)?cruxGrade(route.cruxGrade||route.grade):null;
-    const _cxEcho=_cx&&(disc==="sport"||disc==="trad"||disc==="toprope")&&displayGrade(route)===_cx;
+    const _cxEcho=_cx&&(disc==="sport"||disc==="trad"||disc==="toprope")&&(displayGrade(route)===_cx||splitProtection(displayGrade(route)).grade===_cx);
     if(_cx&&!_cxEcho)stats.push(["Crux grade",_cx,C.amber]);
     if(route.maxAngle)stats.push(["Max slope",route.maxAngle+"°",C.orange]);
     if(route.peakMetadata&&route.peakMetadata.prominence)stats.push(["Prominence",uElev(route.peakMetadata.prominence),C.purple]);

@@ -2,7 +2,6 @@ import { useContext } from "react";
 import { DISC_LABELS as DL } from "../../lib/discLabels";
 import { clickable } from "../../lib/clickable";
 import { rowGrade } from "../../lib/areaBrowserShared.js";
-import { splitProtection } from "../../lib/grade.js";
 import { ClimberCtx } from "../../lib/climberCtx.js";
 import DiscIcon from "./DiscIcon.tsx";
 import type { CSSProperties } from "react";
@@ -21,6 +20,8 @@ export interface RouteRowRoute {
   classic?: boolean | null;
   /** A list row, not the full route (lib/db.js): opening it reads the full row first. */
   _thin?: boolean;
+  /** The route's own Protection fact (PG13, R, X): the grade resolver prints it beside a grade that does not already carry it. */
+  prot_rating?: string | null;
 }
 /** Marks a thin row for lib/routePrefetch.js, which starts that full-row read on touch or hover. */
 export const prefetchAttr = (r: RouteRowRoute): { "data-route-id"?: string } =>
@@ -55,10 +56,9 @@ export default function RouteRow({ r, onOpen, C, areaName, dense, savedMark = tr
   const pitches = r.pitches > 0 && r.discipline !== "bouldering" && r.discipline !== "scrambling" ?r.pitches + " pitch" + (r.pitches !== 1 ? "es" : "") : null;
   // No "#3 in this area" (owner, 2026-11-18): the wall position read as a ranking beside the stars. The area list is
   // already in wall order, and NEXT DOOR on the route page names the climbs either side.
-  // The protection rating (PG13, R, X) is stored welded onto the grade. It reads on the line under the name, beside
-  // the discipline, and the grade at the right is the grade alone (owner, 2026-11-18).
-  const { grade, prot } = splitProtection(rowGrade(r));
-  const sub = [areaName || null, r.discipline ? (DL[r.discipline] || r.discipline) : null, prot || null, pitches].filter(Boolean).join(" · ");
+  // The grade at the right carries its protection rating right beside it ("5.8 PG13"; owner, 2026-11-18).
+  const grade = rowGrade(r);
+  const sub = [areaName || null, r.discipline ? (DL[r.discipline] || r.discipline) : null, pitches].filter(Boolean).join(" · ");
   const id = r.id == null ? null : String(r.id);
   const done = id != null && !!completedIds && (completedIds.has(id) || completedIds.has(r.id as string | number));
   const saved = savedMark && !done && id != null && (wishlist || []).some(w => String(w) === id);
