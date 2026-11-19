@@ -78,7 +78,7 @@ await db.exec(`
     ('${B}', 'b@example.test', '{"name":"Bob Shown"}'),
     ('${C}', 'c@example.test', '{"name":"Cara Blocked"}');
   update profiles set username = 'alice', show_name = false, photos = '{https://x.test/a.jpg}', photos_public = false,
-    photo_alts = '{"https://x.test/a.jpg":"a photo"}', location = 'Bellingham, WA', gender = 'woman',
+    photo_alts = '{"https://x.test/a.jpg":"a photo"}', location = 'Bellingham, WA', gender = 'genderqueer', pronouns = '{she_her,they_them}',
     terms_accepted_version = 'v9', discoverable = true, resume_public = true where id = '${A}';
   update profiles set username = 'bob', show_name = true, photos = '{https://x.test/b.jpg}', photos_public = true where id = '${B}';
   update profiles set username = 'cara' where id = '${C}';
@@ -115,7 +115,7 @@ const sqlCols = (list) => list.split(",").map((c) => c.trim()).filter(Boolean).m
   const shown = await as("anon", null, `select public_name, public_photos from profiles where id = $1`, [B]);
   if (shown.rows?.[0]?.public_name !== "Bob Shown" || !(shown.rows?.[0]?.public_photos || []).length) fail(`signed out, a SHOWN name/photos did not come back: ${JSON.stringify(shown)}`);
   else ok("signed out: a name and photos the climber shows do come back");
-  for (const col of ["name", "photos", "photo_alts", "location", "gender", "availability", "avail_week", "free_until", "climb_grades",
+  for (const col of ["name", "photos", "photo_alts", "location", "gender", "pronouns", "availability", "avail_week", "free_until", "climb_grades",
     "hiking_speed_ft_hr", "discoverable", "account_type", "primary_account_id", "terms_accepted_version", "terms_accepted_at",
     "pinned_states", "requests_from", "mutuals_visible", "trip_reports_default", "cert_expiry", "certifications"]) {
     const r = await as("anon", null, `select "${col}" from profiles limit 1`);
@@ -138,8 +138,8 @@ const sqlCols = (list) => list.split(",").map((c) => c.trim()).filter(Boolean).m
     const p = r.rows[0];
     if (p.name !== null) fail(`B reads A's hidden name: ${p.name}`);
     else if ((p.photos || []).length || p.photo_alts !== null) fail("B reads A's hidden photos");
-    else if (p.location !== "Bellingham, WA" || p.gender !== "woman") fail("B cannot read A's partner-matching columns");
-    else ok("B (signed in): A's hidden name and photos are null/empty; partner columns (location, gender) read");
+    else if (p.location !== "Bellingham, WA" || p.gender !== "genderqueer" || (p.pronouns || []).join() !== "she_her,they_them") fail("B cannot read A's partner-matching columns");
+    else ok("B (signed in): A's hidden name and photos are null/empty; partner columns (location, gender, pronouns) read");
   }
   for (const col of ["name", "photos", "photo_alts", "terms_accepted_version", "pinned_states", "requests_from", "mutuals_visible", "trip_reports_default", "account_type", "primary_account_id"]) {
     const x = await as("authenticated", B, `select "${col}" from profiles where id = $1`, [A]);
