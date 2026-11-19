@@ -122,6 +122,8 @@ console.log(`  ${crew.members.length === 2 ? "ok  " : "FAIL"}  hydration carries
        ${extractBraced("function localYmd(d)")}
        ${extractBraced("function crewInCrew(c)")}
        ${extractBraced("function datesAgreed(c)")}
+       ${extractBraced("function dayRankPos(c)")}
+       ${extractBraced("function rankAgreedDays(c,days,need)")}
        ${extractBraced("function agreedDate(c)")}
        ${extractBraced("function dayWaitingOnMe(c)")}
        ${extractBraced("function crewTimeLabel(t)")}
@@ -199,6 +201,70 @@ console.log(`  ${crew.members.length === 2 ? "ok  " : "FAIL"}  hydration carries
       if (!ok) failures.push(`dayWaitingOnMe: ${name} — got ${got}`);
       console.log(`  ${ok ? "ok  " : "FAIL"}  dayWaitingOnMe: ${name}`);
     }
+  }
+}
+
+// BACKUP DAYS (0477, owner 2026-11-19: "3rd, 4th, 5th, etc back up days"). A member's order of the
+// proposed days is crew_day_acks.rank. It used to be device-only state with two places (1st choice,
+// Backup), each allowed on ONE day, so nobody else ever saw it. Pinned here: the order is hydrated
+// for EVERY member, read as positions (a gap or a rank on a day taken back means nothing), named past
+// "2nd backup", used to choose between days everyone can make -- and it never makes a day agreed.
+{
+  const D = "2026-08-01", D2 = "2026-08-02", D3 = "2026-08-03", D4 = "2026-08-04";
+  let h; try {
+    h = mod({ ...base, dates: [D, D2, D3], crew_members: [{ user_id: UID, status: "confirmed" }, { user_id: PARTNER, status: "confirmed" }],
+      crew_day_acks: [{ user_id: UID, date: D, rank: 2 }, { user_id: UID, date: D2, rank: 1 }, { user_id: PARTNER, date: D2, rank: 3 }, { user_id: PARTNER, date: D3, rank: null }] }, UID).crew;
+  } catch (e) { failures.push(`backup days — hydration threw: ${e.message}`); }
+  if (h) {
+    const r = h.dayRanks || {};
+    const ok = (r[D] || {})[0] === 2 && (r[D2] || {})[0] === 1 && (r[D2] || {})[PARTNER] === 3 && !(r[D3] && PARTNER in r[D3]);
+    if (!ok) failures.push(`backup days — hydration dropped a member's order: dayRanks=${JSON.stringify(h.dayRanks)}`);
+    console.log(`  ${ok ? "ok  " : "FAIL"}  every member's order of the days (crew_day_acks.rank) is hydrated, a crewmate's included`);
+  }
+  let R; try { R = new Function(`${extractBraced("function dayRankPos(c)")}
+    ${extractBraced("function dayRankLabel(pos,short)")}
+    ${extractBraced("function rankAgreedDays(c,days,need)")}
+    ${extractBraced("function agreedDate(c)")}
+    return { dayRankPos, dayRankLabel, rankAgreedDays, agreedDate };`)(); } catch (e) { failures.push(`backup days — could not extract: ${e.message}`); }
+  if (R) {
+    const mates = [{ climberId: 0, status: "confirmed" }, { climberId: 7, status: "confirmed" }];
+    const all = { [D]: [0, 7], [D2]: [0, 7], [D3]: [0, 7], [D4]: [0, 7] };
+    const cases = [
+      ["positions come from the ORDER, so ranks 2, 5, 9 read 1st, 2nd, 3rd",
+        () => { const p = R.dayRankPos({ dayAcks: all, dayRanks: { [D]: { 0: 5 }, [D2]: { 0: 2 }, [D3]: { 0: 9 } } }); return p[D2][0] === 1 && p[D][0] === 2 && p[D3][0] === 3; }],
+      ["a rank on a day the member no longer says they can make is ignored",
+        () => { const p = R.dayRankPos({ dayAcks: { [D]: [7], [D2]: [0, 7] }, dayRanks: { [D]: { 0: 1 }, [D2]: { 0: 2 } } }); return !(p[D] && p[D][0]) && p[D2][0] === 1; }],
+      ["places are named past the second backup: 1st choice, Backup, 2nd, 3rd, 4th backup",
+        () => R.dayRankLabel(1) === "1st choice" && R.dayRankLabel(2) === "Backup" && R.dayRankLabel(3) === "2nd backup" && R.dayRankLabel(4) === "3rd backup" && R.dayRankLabel(5) === "4th backup" && R.dayRankLabel(10) === "9th backup" && R.dayRankLabel(0) === ""],
+      ["of two days everyone can make, the agreed day is the one the crew ranked best, not the earliest",
+        () => R.agreedDate({ dates: [D, D2], members: mates, dayAcks: all, dayRanks: { [D]: { 0: 2, 7: 2 }, [D2]: { 0: 1, 7: 1 } } }) === D2],
+      ["a day one member did not order counts as their LAST choice",
+        () => R.rankAgreedDays({ dates: [D, D2, D3], dayAcks: all, dayRanks: { [D]: { 0: 2 }, [D2]: { 0: 1, 7: 1 }, [D3]: { 0: 3, 7: 2 } } }, [D, D2, D3], [0, 7]).join() === [D2, D3, D].join()],
+      ["with no order at all, or a tie, the earlier day wins (the rule as it stood)",
+        () => R.agreedDate({ dates: [D, D2], members: mates, dayAcks: all }) === D && R.agreedDate({ dates: [D, D2], members: mates, dayAcks: all, dayRanks: { [D]: { 0: 1, 7: 2 }, [D2]: { 0: 2, 7: 1 } } }) === D],
+      ["an order never AGREES a day: a 1st choice that one member cannot make is not agreed",
+        () => R.agreedDate({ dates: [D, D2], members: mates, dayAcks: { [D]: [0], [D2]: [0] }, dayRanks: { [D]: { 0: 1 }, [D2]: { 0: 2 } } }) === null],
+      ["the organiser's locked day still wins over the ranking",
+        () => R.agreedDate({ date: D, dates: [D, D2], members: mates, dayAcks: all, dayRanks: { [D]: { 0: 2, 7: 2 }, [D2]: { 0: 1, 7: 1 } } }) === D],
+    ];
+    for (const [name, fn] of cases) {
+      let ok = false; try { ok = !!fn(); } catch (e) { failures.push(`backup days: ${name} — threw: ${e.message}`); continue; }
+      if (!ok) failures.push(`backup days: ${name}`);
+      console.log(`  ${ok ? "ok  " : "FAIL"}  backup days: ${name}`);
+    }
+  }
+  // The wiring: the card offers a place per day you can make, and the pick is WRITTEN (crew_rank_day).
+  const card = readOpt(new URL("../lib/CrewCard.jsx", import.meta.url));
+  const db = readOpt(new URL("../lib/db.js", import.meta.url));
+  const wired = [
+    ["the Day sheet offers as many places as the days you can make (not two fixed chips)", /Array\.from\(\{length:myDayN\}/.test(card) && /dayRankLabel\(n\)/.test(card) && !/\[\[1,"1st choice"\],\[2,"Backup"\]\]/.test(card)],
+    ["the card reads the order through dayRankPos, never crew.dayRanks raw", /dayRankPos\(crew\)/.test(card) && !/crew\.dayRanks/.test(card)],
+    ["lib/db.js writes the order through crew_rank_day", /rpc\("crew_rank_day",\s*\{\s*p_crew:\s*crewId,\s*p_date:\s*day,\s*p_rank:\s*rank\s*\}\)/.test(db)],
+    ["App's meRankDate sends the order to the database and reverts a refused write", /const meRankDate=[^\n]*rankCrewDay\(_cc\._dbId,day,at\)[^\n]*\.catch\([^\n]*dayRanks:prev\.dayRanks/.test(SRC)],
+  ];
+  for (const [name, ok] of wired) {
+    if (!ok) failures.push(`backup days: ${name}`);
+    console.log(`  ${ok ? "ok  " : "FAIL"}  backup days: ${name}`);
   }
 }
 
