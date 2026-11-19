@@ -457,6 +457,46 @@ else ok("predicate: a two-point waypoint join yields to the waypoint-line caveat
   if (!/No recent tracks or trip reports yet/.test(emptyBody))
     fail("the empty state does not name both kinds the section can hold");
   else ok("the empty state names both kinds");
+
+  // A SPORT, TRAD, TOP-ROPE OR BOULDER LINE HAS NO TRACK AND NO TRIP (owner, 2026-11-18): what it carries
+  // is logged climbs, so the same section is headed "Recent logged climbs", its rows name the tick, a
+  // conditions-only scout report is not listed as a climb, and no GPX is offered. Aid keeps the tracks heading.
+  {
+    const LOGS = [
+      { user: "Maya Chen", date: "2026-07-12", tickType: "Redpoint", stars: 3, text: "Crux is the third bolt.", avatar: "" },
+      { user: "Scout Only", date: "2026-07-14", tickType: "Conditions", scoutOnly: true, text: "Wet at the base.", avatar: "" },
+    ];
+    const sport = route({ discipline: "sport", grade: "5.10a", pitches: 1 });
+    const html = render(sport, "planner", LOGS);
+    const mi = html.indexOf(MARK);
+    const head = mi < 0 ? "" : text(((html.slice(mi).match(/>([^<]*[^<s][^<]*)</) || [])[1]) || "");
+    const body = text(html);
+    const at = body.indexOf(head.trim());
+    const seg = mi < 0 || at < 0 ? "" : body.slice(at, at + 900);
+    if (mi < 0 || at < 0) fail("ANCHOR LOST: the tracks section did not render on a sport route");
+    else {
+      if (head.trim() !== "Recent logged climbs") fail(`a sport route's section is headed "${head.trim()}", not "Recent logged climbs"`);
+      else ok("a sport route's section is headed Recent logged climbs");
+      if (!/Maya Chen/.test(seg) || !/Redpoint/.test(seg)) fail("a sport route's logged climb, with its tick, did not render under the heading");
+      else ok("a logged climb renders with its tick");
+      if (/Trip report|no recorded track/.test(seg)) fail("a sport route's log still reads Trip report - no recorded track.");
+      else ok("no log is called a trip report or a missing track");
+      if (/Scout Only/.test(seg)) fail("a conditions-only scout report is listed as a logged climb");
+      else ok("a conditions-only scout report is not listed");
+    }
+    const empty = text(render(sport, "planner", []));
+    if (!/No logged climbs yet/.test(empty)) fail("a sport route's empty section does not say it has no logged climbs");
+    else ok("a sport route's empty section says no logged climbs");
+    const aid = render(route({ discipline: "aid", grade: "C2", pitches: 6 }), "planner", REPORTS);
+    const ai = aid.indexOf(MARK);
+    const aidHead = ai < 0 ? "" : text(((aid.slice(ai).match(/>([^<]*[^<s][^<]*)</) || [])[1]) || "");
+    if (!/tracks/i.test(aidHead)) fail(`an aid route lost the tracks heading ("${aidHead.trim()}") - a wall can carry an approach track`);
+    else ok("an aid route keeps the tracks heading");
+    const faqAt = readCoreSource().indexOf("recorded GPX tracks?");
+    if (faqAt >= 0 && !readCoreSource().slice(faqAt, faqAt + 900).includes("Recent logged climbs"))
+      fail('the Help FAQ does not name "Recent logged climbs", the heading a sport route renders');
+    else if (faqAt >= 0) ok('the Help FAQ names "Recent logged climbs" too');
+  }
 }
 
 // ── 6. THE ROUTE LINE IS A RECORDED TRACK OR NOTHING (owner, 2026-10-25) ──────────────────────
