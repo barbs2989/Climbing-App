@@ -1,0 +1,151 @@
+[
+ {
+  "id": "wa_booker_mountain_northwest_route",
+  "status": "found",
+  "trailhead": {
+   "name": "Thunder Creek Trailhead (Colonial Creek Campground)",
+   "identifiedBy": {
+    "kind": "route_text",
+    "fact": "Thunder Creek Trail from Colonial Creek Campground to Park Creek Pass; road field names Colonial Creek Campground / Thunder Creek Trailhead"
+   },
+   "placements": [
+    {
+     "source": "WTA",
+     "name": "Park Creek / Thunder Creek trailhead at Colonial Creek Campground",
+     "lat": 48.6855,
+     "lng": -121.0926,
+     "url": "https://www.wta.org/go-hiking/hikes/park-creek-pass"
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "This run: every page host (WTA, NPS, USFS, climber.org, climb13ers, Peakbagger, SummitPost, AllTrails, Wikipedia) failed DNS and Nominatim answered 403, so no page was opened. Identification is the route's own text (strong). The single WTA placement is carried from an earlier pass, not re-read now; no USFS/NPS point within range. Hold for a second placement (script OSM match on 'Thunder Creek Trailhead' / Colonial Creek Campground)."
+ },
+ {
+  "id": "wa_burgundy_spire_corkscrew_route",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "This run: every page host (WTA, NPS, USFS, climber.org, climb13ers, Peakbagger, SummitPost, AllTrails, Wikipedia) failed DNS and Nominatim answered 403, so no page was opened. Route text silent; only area-level identification (SR-20 pullout below Burgundy Col, per earlier MP text). USFS 'Burgundy Col' is the col, not parking. No placement; sibling name 'SR-20 Burgundy Col Pullout' is the lead for a script OSM match."
+ },
+ {
+  "id": "co_california_peak_south_ridge",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "This run: every page host (WTA, NPS, USFS, climber.org, climb13ers, Peakbagger, SummitPost, AllTrails, Wikipedia) failed DNS and Nominatim answered 403, so no page was opened. Route text says only 'accessed from the Lily Lake road'. Lily Lake / Huerfano trailhead lead remains unplaced; USFS Zapata Trailhead (3.7 km) is a different road and not tied to this route."
+ },
+ {
+  "id": "ca_caltech_peak_standard_route",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "This run: every page host (WTA, NPS, USFS, climber.org, climb13ers, Peakbagger, SummitPost, AllTrails, Wikipedia) failed DNS and Nominatim answered 403, so no page was opened. Onion Valley (USFS Onion Valley Campground 36.772538,-118.341244) vs Shepherd Pass TH (36.726905,-118.278912) both plausible; route text silent and 'Standard route' names no line. Nothing stronger found."
+ },
+ {
+  "id": "ca_cartago_peak_standard_route",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "This run: every page host (WTA, NPS, USFS, climber.org, climb13ers, Peakbagger, SummitPost, AllTrails, Wikipedia) failed DNS and Nominatim answered 403, so no page was opened. Earlier lead Cartago Canal Trailhead (climber.org driving GPX CARCTH 36.32189,-118.0361) not re-verified; route is only 'Standard route', Horseshoe Meadow/Sage Flat is the other approach, and only a trip-report-site placement exists. Not promoted."
+ },
+ {
+  "id": "co_casco_peak_north_ridge",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "This run: every page host (WTA, NPS, USFS, climber.org, climb13ers, Peakbagger, SummitPost, AllTrails, Wikipedia) failed DNS and Nominatim answered 403, so no page was opened. Route text silent (combined with French Mtn and Frasco Benchmark). Leads: South Halfmoon Creek TH (no placement) or North Fork Lake Creek TH (USFS 39.121339,-106.534909); nothing ties the north ridge to either."
+ },
+ {
+  "id": "ca_castle_peak_summit_via_castle_pass",
+  "status": "found",
+  "trailhead": {
+   "name": "Donner Summit Trailhead (PCT at Boreal Ridge / Castle Peak Road exit, I-80)",
+   "identifiedBy": {
+    "kind": "route_text",
+    "fact": "Take the Pacific Crest Trail under I-80 to Castle Pass"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "Donner Summit  Trailhead",
+     "lat": 39.339885,
+     "lng": -120.343949,
+     "url": ""
+    },
+    {
+     "source": "climber.org driving GPX",
+     "name": "DONERS Donner Pass south parking area",
+     "lat": 39.33913,
+     "lng": -120.34334,
+     "url": "https://climber.org/driving/images/DonnerSummit.gpx"
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "This run: every page host (WTA, NPS, USFS, climber.org, climb13ers, Peakbagger, SummitPost, AllTrails, Wikipedia) failed DNS and Nominatim answered 403, so no page was opened. Identification rests on the route's own text (PCT under I-80), not a page naming this route; moderate. USFS point is 2.9 km from the summit pin; the climber.org GPX is carried from an earlier pass (about 90 m away). A north lot (DONERN 39.34100,-120.34748) also exists; text does not say which side."
+ },
+ {
+  "id": "wa_castle_peak_pasayten_east_ridge",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "This run: every page host (WTA, NPS, USFS, climber.org, climb13ers, Peakbagger, SummitPost, AllTrails, Wikipedia) failed DNS and Nominatim answered 403, so no page was opened. No route text; candidate starts (Hozomeen/Freezeout Creek, Ross Lake, Manning Park BC) all unconfirmed. Sibling's Ross Dam TH is for the scramble, not shown to apply. Official candidates listed are all in BC and unrelated."
+ },
+ {
+  "id": "wa_castle_peak_pasayten_north_ridge",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "This run: every page host (WTA, NPS, USFS, climber.org, climb13ers, Peakbagger, SummitPost, AllTrails, Wikipedia) failed DNS and Nominatim answered 403, so no page was opened. Same as East Ridge: no route text, no page read; starts unconfirmed."
+ },
+ {
+  "id": "co_cathedral_peak_south_ridge_and_couloir",
+  "status": "found",
+  "trailhead": {
+   "name": "Cathedral Lake Trailhead",
+   "identifiedBy": {
+    "kind": "route_text",
+    "fact": "Trail to Cathedral Lake, then loose gully and ridge scramble"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "Cathedral Trailhead",
+     "lat": 39.042686,
+     "lng": -106.80818,
+     "url": ""
+    },
+    {
+     "source": "climb13ers",
+     "name": "Cathedral Lake Trailhead",
+     "lat": 39.042842,
+     "lng": -106.808161,
+     "url": "https://www.climb13ers.com/colorado-13ers/cathedral-peak"
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "This run: every page host (WTA, NPS, USFS, climber.org, climb13ers, Peakbagger, SummitPost, AllTrails, Wikipedia) failed DNS and Nominatim answered 403, so no page was opened. Identification from route text plus an earlier-pass climb13ers read (South Ridge & Couloir from Cathedral Lake TH, 8.6 mi RT, 4,025 ft); not re-read now. USFS and climb13ers points agree within about 20 m. Only trailhead on this route's trail; 'Cathedral Trailhead' on USFS assumed to be the Cathedral Lake TH (Castle Creek Road)."
+ }
+]
