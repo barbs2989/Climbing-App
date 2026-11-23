@@ -703,6 +703,11 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     it. The scale was then fixed at the source (owner, same day): every number grade up to 5.9 is its own step, the
     spacing from 5.9 to 5.12 is unchanged, and the guard asserts 5.6 vs 5.10a is more than two steps while 5.9 vs 5.10a is
     one. A second review found the same lump at the top (5.13 and up were one step); it steps by letter now, pinned too.
+  - **THE WEEK GRID IS THE SCHEDULE (2026-11-23).** `availOf()` must read a climber's `availWeek` when it has one: a
+    stale `availability` ("weekends") on a test account put one schedule on its partner card and in the % and another on
+    its profile. Asserted on a grid of Wednesday evening and weekend mornings with stale tags; injection measured: the old
+    tags-only reader fails it. Over the 306 ordered example pairs only 2 moved, both the example viewer, whose grid had
+    never reached its empty tags.
   - **THE DEFECT WAS A CLAMP DOING THE WORK OF A FORMULA.** `compat()` ended `Math.min(99, …)`
     while two of its terms were UNCAPPED — shared disciplines ×16, shared objectives ×14 — and the
     BOUNDED terms alone summed to **78 of that 99**. So a climber with a broad profile saturated
