@@ -415,6 +415,14 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     database a day later anyway.
   - Injection-tested 9/9, listed at the bottom of the script. Case 1 is the real historical defect,
     reproduced by un-qualifying `0163`.
+  - **A DROP followed by a CREATE in the same file is not a dropped function** (2026-11-19, 0478).
+    The parser read every CREATE in a file and then every DROP, so a migration that changes a
+    function's argument list or `RETURNS TABLE` (which cannot be a `CREATE OR REPLACE`) left the
+    function marked gone, and every later rule skipped it. Six live definer functions were unseen
+    this way; one, `partner_signals` (0335), is client-callable without an identity test and is now
+    listed in `PUBLIC_DEFINER` with its reason. The drop loop now asks whether a CREATE of that name
+    follows the DROP in that file. It still cannot tell two OVERLOADS apart: the map is keyed by
+    name, so dropping one signature while another lives reads as whichever statement came last.
 - **`check:catalog-duplicates`** asks whether the catalog can gain a **duplicate route** again, and
   whether one already has. Built 2026-09-25 after `import-route-grades --create-areas` filed MP's
   `North Cascades › Mt. Baker` beside our `Bellingham and Mt Baker Hwy › Mount Baker` (~225 copy
