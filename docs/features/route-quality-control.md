@@ -196,6 +196,9 @@ empty field fill at once and two agreeing climbers change one; the owner withdre
       `review-flags-nightly` asks whether the climb or area exists where it is filed and whether its facts are
       right (`ai_value` = only the corrected keys). The Menu's proposal tiles still work.
     - Proved by `scripts/oneoff/verify-0505-proposals-share-the-edit-rules-pglite.mjs` (PGlite replay, 17 checks).
+    - *Signed out = sign in first.* Add a climb used to offer *Submit anonymously*, which 0165's "authed can
+      contribute" policy always refused. Its button now reads *Sign in to submit* and opens the sign-in sheet
+      (`onLogin`), as Add an area's `submitAreaProposal` already did.
 
 - **Add-a-climb asks for the same seven** (`lib/AddRoute.jsx`, 0327): first free / first winter
   ascent, other names, variations, sun and pro tips in group 8, the high point in the numeric row
