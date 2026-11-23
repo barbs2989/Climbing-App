@@ -39617,3 +39617,63 @@ either way.
 
 0 confirmed errors fixed, 3 newly flagged for human review, 6 clean.
 Next batch will continue id-ascending from `wa_colchuck_peak_west_ridge` (pass 9).
+
+---
+
+## 2026-11-23 — Pass 9, Batch 567
+
+Seven routes across 5 peaks, continuing id-ascending from `wa_colchuck_peak_west_ridge`: Colfax
+Peak (Cosley-Houston Couloir, Kimchi Suicide Volcano, Polish Route), Colonial Peak (West Ridge /
+Colonial Glacier), Cutthroat Peak (Complete South Buttress), Concord Tower (North Face), Copper
+Peak (South Route).
+
+Verified against independent sources and found correct: Colfax Peak's `high_point_ft` (9,440)
+matches a 2024 ground survey (9,439.9 ft ±0.1, Country High Points) almost to the foot, and is
+consistent across all three routes on the face. Kimchi Suicide Volcano's FA (Colin Haley and Sarah
+Hart, April 2015) and length (300 m / ~1,000 ft) match Haley's own write-up and the AAC's 2016
+publication (April 9, 2015; "M5 R AI4+, 1,000′") exactly. Polish Route's length (305 m / ~1,000
+ft) matches the same AAC account's figure for that route. Colonial Peak's FA (William Degenhardt
+and Herbert Strandberg, July 31, 1931) and elevation (7,771 ft) both match Wikipedia, PeakVisor and
+Peakbagger exactly, and its standard route is confirmed to be the West Ridge, a class 3 glacier/
+scramble, matching this row's own discipline and grade. Complete South Buttress's length (366 m /
+1,200 ft) and pitch count (22) match Mountain Project's dedicated page for this named route
+(1,200 ft / 364 m, 22 pitches) almost exactly; Cutthroat Peak's own elevation (8,066 ft) is close
+to the ~8,050 ft cited for its south (higher) summit, within normal survey variance. Concord
+Tower North Face's FA (Fred Beckey and John Parrott, June 12, 1956) and shape (5.7, 3 pitches,
+91 m / 300 ft) match Mountain Project's route page exactly. Copper Peak's elevation (8,965 ft) and
+FA (Franklin Bennet, Edgar Courtwright, Toivo Hagman, August 1937) both match Wikipedia exactly,
+and its grade (Class 4) is consistent with WTA's "Class 4-5" rating for the Southeast Glacier
+route.
+
+No confirmed errors with a clean, sourced fix this batch.
+
+**Clean (5):** Kimchi Suicide Volcano, Polish Route, Complete South Buttress, Concord Tower North
+Face, Copper Peak South Route (all verified above).
+
+**Flagged for human review (3):**
+- Cosley-Houston Couloir: stored `length_m` (305, ~1,001 ft) doesn't match either secondary
+  source found — Mountain Project's dedicated route page gives 800 ft (242 m, same 4 pitches as
+  our row), while SummitPost's area-listing figure is ~600 ft. The two secondary sources conflict
+  with each other and neither matches our stored value, so this is left as a flag rather than a
+  guess at which (if either) is right.
+- West Ridge / Colonial Glacier (Colonial Peak): the row's own `descent_text` describes
+  downclimbing "the east ridge back to the head of the Northeast Gully" — but an AAC publication
+  confirms Northeast Gully + East Ridge is a *separate*, distinctly-named route on this same peak
+  (a 1969 account), and neither term appears anywhere in this route's own ascent `waypoints`
+  (which only ever name the West Ridge and the Colonial-Snowfield col). Looks like a copy-paste
+  mixup from the other route rather than this route's real descent — the row's own `corrections`
+  field already hints at an id/content conflation here, re-confirming rather than resolving it.
+  Couldn't find the actual West Ridge descent detail in the sources reachable this run
+  (SummitPost's dedicated West Ridge page mentions "at least two descents off the summit" but its
+  full text wasn't in reach), so flagging rather than fabricating replacement text.
+- Copper Peak South Route: the row's `corrections` field argues the peak/route identity was
+  ambiguous between this North Cascades Copper Peak (SE Glacier, glaciated, reached via Holden
+  Village) and a same-named Olympics peak, and says it was resolved toward a Class 2-3 grade
+  matching the Olympics peak — but the row's own stored `grade` is "Class 4", not Class 2-3, and
+  every other field (coordinates, Holden Village/Railroad Creek approach, 8,965 ft elevation) is
+  confirmed to be the North Cascades peak. The note appears stale from an earlier pass and no
+  longer matches the row it's attached to; flagging for a human to clear it rather than editing a
+  free-text internal note on inference alone.
+
+0 confirmed errors fixed, 3 newly flagged for human review, 5 clean.
+Next batch will continue id-ascending from `wa_copper_peak_south_route` (pass 9).
