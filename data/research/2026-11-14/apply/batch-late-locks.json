@@ -1,0 +1,52 @@
+{
+ "wa_mount_rainier_liberty_ridge": {
+  "ledger": [
+   {
+    "field": "gain_ft",
+    "value": 11500,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://tahomawild.com/liberty-ridge-rainier-route/",
+      "retrieved_at": "2026-11-18",
+      "fact": "Liberty Ridge via White River: about 11,500 ft of elevation gain (figure attributed to the NPS route brief)."
+     },
+     {
+      "url": "https://stephabegg.com/trip-reports/washington/rainier-liberty/",
+      "retrieved_at": "2026-11-18",
+      "fact": "Rainier Liberty Ridge trip from White River: elevation gain 11,400 feet."
+     }
+    ]
+   }
+  ],
+  "set": { "gain_ft": 11500 },
+  "note": "late-list follow-up 2026-11-23: stored 11,500 = Tahomawild; Abegg 11,400 agrees (0.9%)",
+  "area": "wa_mount_rainier"
+ },
+ "wa_wallaby_peak_standard": {
+  "ledger": [
+   {
+    "field": "gain_ft",
+    "value": 2900,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/wallaby-peak-7995",
+      "retrieved_at": "2026-11-18",
+      "fact": "Wallaby Peak: 6.0 miles roundtrip, elevation gain 2,900 feet."
+     },
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/wallaby-peak",
+      "retrieved_at": "2026-11-18",
+      "fact": "Wallaby Peak route stats: elevation gain 2,800 ft."
+     }
+    ]
+   }
+  ],
+  "set": { "gain_ft": 2900 },
+  "note": "late-list follow-up 2026-11-23: stored 2,900 = WTA; Mountaineers 2,800 agrees (3.4%)",
+  "area": "wa_wallaby_peak"
+ }
+}

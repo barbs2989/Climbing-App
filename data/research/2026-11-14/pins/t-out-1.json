@@ -1,0 +1,72 @@
+[
+ {"route_id":"wa_flora_mountain_southwest_slope","verdict":"unresolved","final_gain":null,
+  "trailhead_today":"Harlequin Bridge (Stehekin Valley Rd, via Lake Chelan boat + shuttle) to Devore Creek Trail",
+  "trailhead_elev_official":null,
+  "summit_elev_official":"8,327.9 ft (Peakbagger, Lidar NAVD88; Wikipedia/NGS 8,325)",
+  "figures":[
+   {"value":10000,"trailhead":"Stehekin (Harlequin Bridge) via Devore Creek, 3-day trip","one_way":false,"url":"https://www.mountaineers.org/activities/activities/basic-alpine-climb-flora-mountain","fact":"Mileage 30.0 mi, Elevation Gain 10,000 ft, High Point 8,320 ft (whole trip)."},
+   {"value":3547,"trailhead":"Harlequin Bridge to Bird Creek Camp only","one_way":false,"url":"https://www.mountaineers.org/activities/trip-reports/basic-alpine-climb-flora-mountain","fact":"Day 1: 9.25 miles, 3,547 ft gain, Harlequin Bridge to Bird Creek Camp."},
+   {"value":4167,"trailhead":"start logged at 4,161 ft (not Harlequin Bridge)","one_way":true,"url":"https://www.peakbagger.com/climber/ascent.aspx?aid=554001","fact":"Scott Rice 2015: Gain on way in 4,167 ft, 14 mi, Start Trailhead 4,161 ft."},
+   {"value":4091,"trailhead":"start logged at 4,237 ft (not Harlequin Bridge)","one_way":true,"url":"https://www.peakbagger.com/climber/ascent.aspx?aid=1991107","fact":"2022-08-07: Gain on way in 4,091 ft, 17.2 mi, Start Trailhead 4,237 ft."},
+   {"value":6128,"trailhead":"start logged at 4,200 ft, multi-peak trip","one_way":false,"url":"https://www.peakbagger.com/climber/ascent.aspx?aid=673513","fact":"Sean Albert 2016: Total Elevation Gain 6,128 ft, start 4,200 ft, multi-day via Stehekin/Harlequin bridge."},
+   {"value":12500,"trailhead":"unnamed, whole trip","one_way":false,"url":"https://www.peakbagger.com/climber/ascent.aspx?aid=614053","fact":"2011-07-24 trip: 22 mi, 12,500' gain."}
+  ],
+  "evidence":[],
+  "closures":"None found for Devore Creek; a 2026 Peakbagger TR says the Devore Creek trail is very overgrown (crew logging it out).",
+  "note":"Peakbagger now read: the 30 TR ascents on the peak page checked; none gives a one-way gain from Harlequin Bridge. Logged one-way gains (4,091-4,167 ft) start at ~4,200 ft, not the pin. Stored 3,150 matches nothing. Summit pin 8,323 agrees with Peakbagger lidar 8,327.9; the gain is wrong but no replacement figure from the pinned start. ListsofJohn still behind Cloudflare."},
+ {"route_id":"wa_mount_meany_standard","verdict":"unresolved","final_gain":null,
+  "trailhead_today":"North Fork Quinault River Trailhead (North Fork Road; may close in winter)",
+  "trailhead_elev_official":"519 ft (NPS North Fork Quinault River Trail page: elevation change 519 to 3,602 ft)",
+  "summit_elev_official":"6,701.5 ft (Peakbagger, lidar NAVD88); 6,695 ft per Mountaineers N Fork Quinault page",
+  "figures":[
+   {"value":9300,"trailhead":"North Fork Quinault Trailhead (500 ft)","one_way":false,"url":"https://trailcatjim.com/mt-meany-via-quinault-river-seattle-basin-southeast-ridge-northeast-face/","fact":"Six days via Low Divide and Seattle Basin: ~42 miles, 9,300 feet gained and lost."},
+   {"value":2200,"trailhead":"Seattle Basin camp (4,900 ft)","one_way":true,"url":"https://trailcatjim.com/mt-meany-via-quinault-river-seattle-basin-southeast-ridge-northeast-face/","fact":"Summit day from the 4,900 ft Seattle Basin camp: 2,200 feet gained."},
+   {"value":3123,"trailhead":"start logged at 3,578 ft via Skyline trail (not North Fork TH)","one_way":true,"url":"https://www.peakbagger.com/climber/ascent.aspx?aid=1489718","fact":"2020-09-12: Gain on way in 3,123 ft, 12 mi, Start Trailhead 3,578 ft; traverse from Skyline trail."}
+  ],
+  "evidence":[{"url":"https://www.nps.gov/olym/planyourvisit/north-for-quinault.htm","retrieved_at":"2026-11-18","fact":"North Fork Quinault River Trail: 16 miles to Low Divide, elevation change 519 feet to 3,602 feet."}],
+  "closures":"NPS: North Fork Road may be closed during winter; the 16-Mile ford can be hazardous or impassable at high water.",
+  "note":"Peakbagger read (6 ascents): only one logs gain, from a 3,578 ft start, not the trailhead. Trailhead pin 515 agrees with NPS 519; summit pin 6,695 near Peakbagger lidar 6,701.5. Stored 2,500 is not a trailhead figure and matches no published camp start exactly; no one-way trailhead-to-summit figure published."},
+ {"route_id":"wa_mount_lago_south_slope_south_face","verdict":"unresolved","final_gain":null,
+  "trailhead_today":"Robinson Creek Trailhead (Lost River Rd / FR 5400), Trail #478",
+  "trailhead_elev_official":"2,500 ft (USFS Robinson Creek Trailhead page)",
+  "summit_elev_official":"8,747.9 ft (Peakbagger, lidar NAVD88)",
+  "figures":[
+   {"value":12466,"trailhead":"unnamed (peakery logged GPS route)","one_way":false,"url":"https://peakery.com/mount-lago-washington/","fact":"Popular route: 40.4 mi, 12,466 ft gain (whole outing)."},
+   {"value":17400,"trailhead":"unnamed, 4-day multi-peak trip","one_way":false,"url":"https://www.peakbagger.com/climber/ascent.aspx?aid=1510122","fact":"Overall 4 days, 51 miles, 17,400 ft gain."},
+   {"value":1865,"trailhead":"start logged at 6,883 ft (camp / previous peak, not Robinson Creek)","one_way":true,"url":"https://www.peakbagger.com/climber/ascent.aspx?aid=2336645","fact":"2023-10-07: Gain on way in 1,865 ft, Start Trailhead 6,883 ft."},
+   {"value":3003,"trailhead":"start logged at 5,745 ft (multi-peak trip leg)","one_way":true,"url":"https://www.peakbagger.com/climber/ascent.aspx?aid=266206","fact":"2012-09-02: Mount Lago leg 3,003 ft from 5,745 ft start; Total Trip Gain 16,331 ft."}
+  ],
+  "evidence":[{"url":"https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/robinson-creek-trailhead","retrieved_at":"2026-11-18","fact":"Robinson Creek Trailhead: Latitude 48.6617, Longitude -120.54201, Elevation 2,500 feet."}],
+  "closures":"None found on USFS trailhead/trail pages.",
+  "note":"Trailhead pin 2,500 = USFS 2,500; summit pin 8,745 agrees with Peakbagger 8,747.9. So the gain is wrong. Peakbagger (30 ascents) logs only legs from high camps/other peaks (1,548-3,003 ft) and whole trips; no page gives a one-way gain from Robinson Creek, and none states 2,800 from a named start."},
+ {"route_id":"wa_jack_mountain_northeast_glacier","verdict":"unresolved","final_gain":null,
+  "trailhead_today":"Canyon Creek Trailhead (SR 20 near MP 141) via Jackita Ridge Trail #738; East Bank Trailhead (Ross Lake) is the Nohokomeen start",
+  "trailhead_elev_official":"1,900 ft (USFS Canyon Creek Trailhead page)",
+  "summit_elev_official":"9,069.4 ft (Peakbagger, lidar NAVD88); 9,075 per Wikipedia/NGS",
+  "figures":[
+   {"value":11500,"trailhead":"Canyon Creek Trailhead (South Face), car to car","one_way":false,"url":"https://www.climbinginwa.com/blog/upk5k009yww688e8t3mjfpf485nxh8","fact":"Final Stats: 22.5 Miles, 11,500' Gain, 19 Hours Car to Car (South Face)."},
+   {"value":9069,"trailhead":"East Bank Trailhead, 3-day Nohokomeen Glacier trip","one_way":false,"url":"https://www.mountaineers.org/activities/activities/intermediate-alpine-climb-jack-mountain-nohokomeen-glacier","fact":"Mileage 30.0 mi, Elevation Gain 9,069 ft, High Point 9,069 ft; meet at East Bank Trailhead."},
+   {"value":7510,"trailhead":"Canyon Ck TH 1,900 ft (Jerry Lakes/S Face)","one_way":true,"url":"https://www.peakbagger.com/climber/ascent.aspx?aid=191805","fact":"2011: Route Jerry Lakes/S Face, Start Canyon Ck TH 1,900 ft, Gain on way in 7,510 ft."},
+   {"value":5920,"trailhead":"Canyon Creek Trailhead 1,880 ft (South Face)","one_way":true,"url":"https://www.peakbagger.com/climber/ascent.aspx?aid=351357","fact":"2013: South Face from Canyon Creek Trailhead 1,880 ft, Gain on way in 5,920 ft."},
+   {"value":9309,"trailhead":"Canyon Creek TH 1,900 ft (S Face-Jerry Lakes)","one_way":true,"url":"https://www.peakbagger.com/climber/ascent.aspx?aid=1484778","fact":"2020: S Face-Jerry Lakes from Canyon Creek TH 1,900 ft, Gain on way in 9,309 ft."},
+   {"value":10003,"trailhead":"Nohokomeen Headwall, start unnamed","one_way":false,"url":"https://www.peakbagger.com/climber/ascent.aspx?aid=1662202","fact":"2021 Nohokomeen Headwall: about 10,000 ft gain and 30 miles round trip."},
+   {"value":3104,"trailhead":"start logged at 5,965 ft (not a trailhead)","one_way":true,"url":"https://www.peakbagger.com/climber/ascent.aspx?aid=1507951","fact":"2020-10-04: Gain on way in 3,104 ft, 16.7 mi, Start Trailhead 5,965 ft."}
+  ],
+  "evidence":[{"url":"https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/canyon-creek-trailhead","retrieved_at":"2026-11-18","fact":"Canyon Creek Trailhead: Latitude 48.7065, Longitude -120.9183, Elevation 1,900 feet; near mile post 141."}],
+  "closures":"USFS: no bridge over Canyon Creek on Jackita Ridge Trail #738; hazardous ford in spring/early summer, normally fordable late summer.",
+  "note":"Trailhead pin 1,880 agrees with USFS 1,900; summit pin 9,075 near Peakbagger 9,069.4. Gain is wrong. Peakbagger one-way gains from Canyon Creek (South Face variants) are 5,920-9,309 ft, all one source and >10% apart; none is for the NE Glacier, and nothing published equals 4,501."},
+ {"route_id":"wa_amphitheater_mountain_west_route","verdict":"unresolved","final_gain":null,
+  "trailhead_today":"Andrews Creek Trailhead (#504, end of FR 51 pavement)",
+  "trailhead_elev_official":"3,050 ft (USFS Andrews Creek Trailhead page)",
+  "summit_elev_official":"8,374.2 ft (Peakbagger, lidar NAVD88); 8,358 ft per Wikipedia",
+  "figures":[
+   {"value":4000,"trailhead":"Andrews Creek Trailhead, trail only","one_way":false,"url":"https://www.wta.org/go-hiking/hikes/andrews-creek","fact":"WTA Andrews Creek trail: 31.0 mi roundtrip, 4,000 ft gain, highest point 6,700 ft; not to the summit."},
+   {"value":4927,"trailhead":"start logged at 3,447 ft (unnamed)","one_way":true,"url":"https://www.peakbagger.com/climber/ascent.aspx?aid=1776535","fact":"2021-10-04: Gain on way in 4,927 ft, 51.1 mi, Start Trailhead 3,447 ft (multi-day)."},
+   {"value":2856,"trailhead":"logged 'Thirtymile TH 6022 ft' but trip actually multi-day from Thirtymile","one_way":false,"url":"https://www.peakbagger.com/climber/ascent.aspx?aid=3368518","fact":"2026: 3-day trip 14,619' ascent, 63.1 mi; Day 2 Amphitheater & Cathedral 5,700' ascent, 25.6 mi."},
+   {"value":1146,"trailhead":"Upper Cathedral Lake 7,228 ft","one_way":true,"url":"https://www.peakbagger.com/climber/ascent.aspx?aid=2481861","fact":"2021: Start Upper Cathedral Lake 7,228 ft, Gain on way in 1,146 ft."},
+   {"value":7776,"trailhead":"unnamed, 4-day trip","one_way":false,"url":"https://www.peakbagger.com/climber/ascent.aspx?aid=824973","fact":"Over four days, 41 miles and 7,776 ft of elevation gain."}
+  ],
+  "evidence":[{"url":"https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/andrews-creek-trailhead","retrieved_at":"2026-11-18","fact":"Andrews Creek Trailhead: Latitude 48.7837, Longitude -120.1086, Elevation 3,050 feet."}],
+  "closures":"A 2026 Peakbagger TR (aid 3368518) mentions 2026 fire closures in the eastern Pasayten; only Thirtymile TH reopened for that party. Check USFS alerts before use.",
+  "note":"Trailhead pin 3,050 = USFS 3,050; summit pin 8,358 vs Peakbagger lidar 8,374.2. Gain is the wrong number. No page gives a one-way Andrews Creek-to-summit gain; nothing published equals 3,000 from a named start."}
+]

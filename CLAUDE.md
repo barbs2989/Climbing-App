@@ -110,7 +110,8 @@ npm run check:chunk-reload # a lazy screen whose file a DEPLOY removed reloads o
 
 # ── Honesty of what the screen claims — notes: docs/guards/honesty-claims.md ──
 npm run check:conditions-score # the crag CONDITIONS SCORE adds up, leaves out what it did not measure, and stays off alpine (in build)
-npm run check:alpine-conditions # the ALPINE Conditions tab: each discipline its own flags, a start counted back from the Planner, nothing it did not read (in build)
+npm run check:alpine-conditions # the ALPINE Conditions tab: each discipline its own flags, a start counted back from the Planner, nothing it did not read; snow bridges only where a route was REVIEWED as glacier travel (in build)
+npm run audit:glacier-travel -- --state wa # which routes still get snow / glacier warnings on a GUESS? (routes.glacier_travel / snow_in_season not settled; the per-state worklist, read-only)
 npm run check:no-sources  # no screen prints a field named source, or any text about sources or "auto-generated" (in build)
 npm run check:preview-claims # no toast tells a climber the app is a PREVIEW, a demo or a simulation (in build)
 npm run check:policy-claims # no legal surface claims a control or a capability the app lacks (in build)

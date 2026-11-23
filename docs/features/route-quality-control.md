@@ -73,7 +73,9 @@ empty field fill at once and two agreeing climbers change one; the owner withdre
   is_admin()-checked RPC the old Menu queues called; the AI only advises.
   A **suggested wall order** (kind `wall_order`, 0485) is a third row type, *Order*: the wall as listed now beside the climber's
   left-to-right line; *Use this order* / *Keep current order* call `resolveWallOrder`; the optional note is a reason, sent only when the current order is kept. The AI
-  checker does not look at these, and they are not counted as "not yet checked". See `docs/features/maps-and-area-browser.md`.
+  checker does not look at these, and they are not counted as "not yet checked". The first tab's count is held edits + open flags +
+  suggested wall orders (`useAdminQueueCounts().edits`), so one waiting is seen from any section; none of it badges the app's Menu.
+  See `docs/features/maps-and-area-browser.md`.
   **Two more sections** sit beside that table, switched by tabs at the top (owner, 2026-11-23, off the Menu):
   *Trails & GPS tracks* (`GpsSubmissionQueue`, 0397; `review.html#trails`) and *Accessibility reports*
   (`AccessibilityReportQueue`, 0343/0354; `review.html#access`). Each is the same component the Menu tile
