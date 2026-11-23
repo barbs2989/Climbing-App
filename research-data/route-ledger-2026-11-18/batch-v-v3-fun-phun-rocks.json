@@ -1,0 +1,366 @@
+{
+ "wa_f_phun_rock_main_wall_sunbug_slab_exodus_to_lilliput": {
+  "area": "wa_f_phun_rock_main_wall_sunbug_slab",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/124175840/exodus-to-lilliput",
+    "https://www.mountainproject.com/area/113680690/phun-rock-main-wall-sunbug-slab",
+    "https://www.thecrag.com/en/climbing/united-states/north-cascade-mountains/area/14395357",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0",
+    "https://www.mountaineers.org/conservation/advocacy/comment-letters/07-01-26-the-mountaineers-letter-to-okanogan-county-supporting-the-preservation-of-climbing-access-at-fun-rock.pdf",
+    "https://washingtonclimbers.org/index.php/wp-json/wp/v2/posts/12336",
+    "https://wenatcheeoutdoors.org/2017/01/19/mazama-fun-rock/"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.10d",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/124175840/exodus-to-lilliput",
+      "fact": "5.10d YDS, Sport",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "length_m",
+    "value": 15,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/124175840/exodus-to-lilliput",
+      "fact": "50 ft (15 m)",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_f_phun_rock_main_wall_sunbug_slab_exodus_to_lilliput",
+    "column": "bolts",
+    "from": null,
+    "to": 5,
+    "why": "Mountain Project states 5 bolts. Single source (theCrag's sector page does not list this route; theCrag then answered Forbidden); locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/124175840/exodus-to-lilliput"
+    ]
+   }
+  ],
+  "held": [
+   {
+    "table": "routes",
+    "id": "wa_f_phun_rock_main_wall_sunbug_slab_exodus_to_lilliput",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)"
+    },
+    "why": "HELD (brief V: copy only if an official source shows Fun Rock is National Forest land). Candidate copied field for field from wa_sisyphus (Goat Wall). The USFS Basic Ownership layer (official, queried 2026-11-23) returns NON-FS ownership at the crag's area coordinate (48.60499, -120.43204) and at points 300-400 m west and south, with USDA Forest Service land beginning roughly 200-300 m north and east, so the crag sits at or near an FS / non-FS boundary inside the forest's outer boundary. A July 1, 2026 letter from The Mountaineers to Okanogan County says the Fun Rock parking lot and access trails are part of Outward Bound's private property, with a pending sale of the lot and trails to the Access Fund. The Washington Climbers Coalition page names the Forest Service as owner/manager, but it is not an official page and conflicts with the layer. No official page places the cliff on National Forest land, so access stays null.",
+    "evidence": [
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0",
+     "https://www.mountaineers.org/conservation/advocacy/comment-letters/07-01-26-the-mountaineers-letter-to-okanogan-county-supporting-the-preservation-of-climbing-access-at-fun-rock.pdf",
+     "https://washingtonclimbers.org/index.php/wp-json/wp/v2/posts/12336"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "Grade 5.10d and 15 m confirmed by Mountain Project only (single source). Pitches 1 left as is (one short bolted line; count implied, not stated, so not locked). FA: Mountain Project credits Bryan Burdo (no year); one source only, so fa is not proposed. theCrag's Main Wall & Sunbug Slab sector does not list this route. Access: held (see held). theCrag was tried once in the owner's Chrome, in my own tab: the sector page and the Pothole Panhandler page opened, then the next route page answered Forbidden, so theCrag was dropped for the run and the tab closed."
+ },
+ "wa_f_phun_rock_main_wall_sunbug_slab_pothole_panhandler": {
+  "area": "wa_f_phun_rock_main_wall_sunbug_slab",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/124175780/pothole-panhandler",
+    "https://www.mountainproject.com/area/113680690/phun-rock-main-wall-sunbug-slab",
+    "https://www.thecrag.com/en/climbing/united-states/north-cascade-mountains/route/16774489",
+    "https://www.thecrag.com/en/climbing/united-states/north-cascade-mountains/area/14395357",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0",
+    "https://www.mountaineers.org/conservation/advocacy/comment-letters/07-01-26-the-mountaineers-letter-to-okanogan-county-supporting-the-preservation-of-climbing-access-at-fun-rock.pdf",
+    "https://washingtonclimbers.org/index.php/wp-json/wp/v2/posts/12336",
+    "https://wenatcheeoutdoors.org/2017/01/19/mazama-fun-rock/"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "length_m",
+    "value": 24,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/124175780/pothole-panhandler",
+      "fact": "80 ft (24 m)",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_f_phun_rock_main_wall_sunbug_slab_pothole_panhandler",
+    "column": "fa",
+    "from": null,
+    "to": "Bryan Burdo",
+    "why": "fa empty. Two publishers name Bryan Burdo as first ascensionist (no year on either): Mountain Project and theCrag. House spelling 'Bryan Burdo' already stored on sibling rows (e.g. wa_pygmalion). Caveat: if theCrag's entry was seeded from Mountain Project they are one source; theCrag cites the Rock Climbing Washington guidebook for the grade, which suggests it is independent.",
+    "evidence": [
+     "https://www.mountainproject.com/route/124175780/pothole-panhandler",
+     "https://www.thecrag.com/en/climbing/united-states/north-cascade-mountains/route/16774489"
+    ]
+   }
+  ],
+  "held": [
+   {
+    "table": "routes",
+    "id": "wa_f_phun_rock_main_wall_sunbug_slab_pothole_panhandler",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)"
+    },
+    "why": "HELD (brief V: copy only if an official source shows Fun Rock is National Forest land). Candidate copied field for field from wa_sisyphus (Goat Wall). The USFS Basic Ownership layer (official, queried 2026-11-23) returns NON-FS ownership at the crag's area coordinate (48.60499, -120.43204) and at points 300-400 m west and south, with USDA Forest Service land beginning roughly 200-300 m north and east, so the crag sits at or near an FS / non-FS boundary inside the forest's outer boundary. A July 1, 2026 letter from The Mountaineers to Okanogan County says the Fun Rock parking lot and access trails are part of Outward Bound's private property, with a pending sale of the lot and trails to the Access Fund. The Washington Climbers Coalition page names the Forest Service as owner/manager, but it is not an official page and conflicts with the layer. No official page places the cliff on National Forest land, so access stays null.",
+    "evidence": [
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0",
+     "https://www.mountaineers.org/conservation/advocacy/comment-letters/07-01-26-the-mountaineers-letter-to-okanogan-county-supporting-the-preservation-of-climbing-access-at-fun-rock.pdf",
+     "https://washingtonclimbers.org/index.php/wp-json/wp/v2/posts/12336"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_f_phun_rock_main_wall_sunbug_slab_pothole_panhandler",
+    "column": "bolts",
+    "from": null,
+    "to": 14,
+    "why": "HELD: two different counts. Mountain Project: 14 bolts (the line starts up Lay Z Daze). theCrag: 3 bolts. Not proposed.",
+    "evidence": [
+     "https://www.mountainproject.com/route/124175780/pothole-panhandler",
+     "https://www.thecrag.com/en/climbing/united-states/north-cascade-mountains/route/16774489"
+    ]
+   }
+  ],
+  "disputed": [
+   "grade: stored 5.7 = Mountain Project 5.7; theCrag 5.8 (citing the Rock Climbing Washington guidebook). Two sources disagree; no change, no lock until a third source settles it.",
+   "bolts: Mountain Project 14 vs theCrag 3."
+  ],
+  "notes": "Length 24 m confirmed by Mountain Project only (single source). Pitches 1 left as is (not stated). Mountain Project says it starts up Lay Z Daze (wa_f_phun_rock_main_wall_sunbug_slab_lay_z_daze), as does Idyll Worship; shared start, not a duplicate. theCrag files Pothole Panhandler in a different sector from its Main Wall & Sunbug Slab list (filing difference only, not moved). Access: held (see held). theCrag was tried once in the owner's Chrome, in my own tab: the sector page and the Pothole Panhandler page opened, then the next route page answered Forbidden, so theCrag was dropped for the run and the tab closed."
+ },
+ "wa_f_phun_rock_main_wall_sunbug_slab_idyll_worship": {
+  "area": "wa_f_phun_rock_main_wall_sunbug_slab",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/124175801/idyll-worship",
+    "https://www.mountainproject.com/area/113680690/phun-rock-main-wall-sunbug-slab",
+    "https://www.thecrag.com/en/climbing/united-states/north-cascade-mountains/area/14395357",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0",
+    "https://www.mountaineers.org/conservation/advocacy/comment-letters/07-01-26-the-mountaineers-letter-to-okanogan-county-supporting-the-preservation-of-climbing-access-at-fun-rock.pdf",
+    "https://washingtonclimbers.org/index.php/wp-json/wp/v2/posts/12336",
+    "https://wenatcheeoutdoors.org/2017/01/19/mazama-fun-rock/"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.7",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/124175801/idyll-worship",
+      "fact": "5.7 YDS, Sport",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "length_m",
+    "value": 20,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/124175801/idyll-worship",
+      "fact": "65 ft (20 m)",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [],
+  "held": [
+   {
+    "table": "routes",
+    "id": "wa_f_phun_rock_main_wall_sunbug_slab_idyll_worship",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)"
+    },
+    "why": "HELD (brief V: copy only if an official source shows Fun Rock is National Forest land). Candidate copied field for field from wa_sisyphus (Goat Wall). The USFS Basic Ownership layer (official, queried 2026-11-23) returns NON-FS ownership at the crag's area coordinate (48.60499, -120.43204) and at points 300-400 m west and south, with USDA Forest Service land beginning roughly 200-300 m north and east, so the crag sits at or near an FS / non-FS boundary inside the forest's outer boundary. A July 1, 2026 letter from The Mountaineers to Okanogan County says the Fun Rock parking lot and access trails are part of Outward Bound's private property, with a pending sale of the lot and trails to the Access Fund. The Washington Climbers Coalition page names the Forest Service as owner/manager, but it is not an official page and conflicts with the layer. No official page places the cliff on National Forest land, so access stays null.",
+    "evidence": [
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0",
+     "https://www.mountaineers.org/conservation/advocacy/comment-letters/07-01-26-the-mountaineers-letter-to-okanogan-county-supporting-the-preservation-of-climbing-access-at-fun-rock.pdf",
+     "https://washingtonclimbers.org/index.php/wp-json/wp/v2/posts/12336"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_f_phun_rock_main_wall_sunbug_slab_idyll_worship",
+    "column": "bolts",
+    "from": null,
+    "to": 14,
+    "why": "HELD as implausible on one source: Mountain Project states 14 bolts on a 65 ft line that starts up Lay Z Daze, the same 14 it gives for Pothole Panhandler, where theCrag says 3. Likely counts the shared start or is a copied figure; needs a second source.",
+    "evidence": [
+     "https://www.mountainproject.com/route/124175801/idyll-worship"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "Grade 5.7 and 20 m from Mountain Project only (single source). theCrag's sector list does not include it. FA Bryan Burdo per Mountain Project only (no year), not proposed. Pitches 1 left as is. Shares its start (Lay Z Daze) with Pothole Panhandler. Access: held (see held). theCrag was tried once in the owner's Chrome, in my own tab: the sector page and the Pothole Panhandler page opened, then the next route page answered Forbidden, so theCrag was dropped for the run and the tab closed."
+ },
+ "wa_f_phun_rock_main_wall_sunbug_slab_invasive_species": {
+  "area": "wa_f_phun_rock_main_wall_sunbug_slab",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/107286698/invasive-species",
+    "https://www.mountainproject.com/area/113680690/phun-rock-main-wall-sunbug-slab",
+    "https://www.thecrag.com/en/climbing/united-states/north-cascade-mountains/area/14395357",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0",
+    "https://www.mountaineers.org/conservation/advocacy/comment-letters/07-01-26-the-mountaineers-letter-to-okanogan-county-supporting-the-preservation-of-climbing-access-at-fun-rock.pdf",
+    "https://washingtonclimbers.org/index.php/wp-json/wp/v2/posts/12336",
+    "https://wenatcheeoutdoors.org/2017/01/19/mazama-fun-rock/"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.8",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107286698/invasive-species",
+      "fact": "5.8 YDS, Sport, TR",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://www.thecrag.com/en/climbing/united-states/north-cascade-mountains/area/14395357",
+      "fact": "Invasive Species 5.8 Sport",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_f_phun_rock_main_wall_sunbug_slab_invasive_species",
+    "column": "fa",
+    "from": null,
+    "to": "Bryan Burdo",
+    "why": "fa empty. Mountain Project and theCrag both name Bryan Burdo (no year). House spelling as on sibling rows. Same independence caveat as Pothole Panhandler.",
+    "evidence": [
+     "https://www.mountainproject.com/route/107286698/invasive-species",
+     "https://www.thecrag.com/en/climbing/united-states/north-cascade-mountains/area/14395357"
+    ]
+   }
+  ],
+  "held": [
+   {
+    "table": "routes",
+    "id": "wa_f_phun_rock_main_wall_sunbug_slab_invasive_species",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)"
+    },
+    "why": "HELD (brief V: copy only if an official source shows Fun Rock is National Forest land). Candidate copied field for field from wa_sisyphus (Goat Wall). The USFS Basic Ownership layer (official, queried 2026-11-23) returns NON-FS ownership at the crag's area coordinate (48.60499, -120.43204) and at points 300-400 m west and south, with USDA Forest Service land beginning roughly 200-300 m north and east, so the crag sits at or near an FS / non-FS boundary inside the forest's outer boundary. A July 1, 2026 letter from The Mountaineers to Okanogan County says the Fun Rock parking lot and access trails are part of Outward Bound's private property, with a pending sale of the lot and trails to the Access Fund. The Washington Climbers Coalition page names the Forest Service as owner/manager, but it is not an official page and conflicts with the layer. No official page places the cliff on National Forest land, so access stays null.",
+    "evidence": [
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0",
+     "https://www.mountaineers.org/conservation/advocacy/comment-letters/07-01-26-the-mountaineers-letter-to-okanogan-county-supporting-the-preservation-of-climbing-access-at-fun-rock.pdf",
+     "https://washingtonclimbers.org/index.php/wp-json/wp/v2/posts/12336"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "Discipline: both publishers list it as sport (Mountain Project: sport and top rope, matching stored disciplines). It follows a hand and finger crack that was later bolted (2016 comment); one commenter suggests adding gear in the crack. Stays sport; no change. No length or bolt count stated anywhere, so length_m and bolts stay null. Pitches 1 left as is. Can be top-roped by climbing Cream (wa_cream). Access: held (see held). theCrag was tried once in the owner's Chrome, in my own tab: the sector page and the Pothole Panhandler page opened, then the next route page answered Forbidden, so theCrag was dropped for the run and the tab closed."
+ },
+ "wa_f_phun_rock_main_wall_sunbug_slab_jam_sandwich": {
+  "area": "wa_f_phun_rock_main_wall_sunbug_slab",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/122984887/jam-sandwich",
+    "https://www.mountainproject.com/area/113680690/phun-rock-main-wall-sunbug-slab",
+    "https://www.thecrag.com/en/climbing/united-states/north-cascade-mountains/area/14395357",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0",
+    "https://www.mountaineers.org/conservation/advocacy/comment-letters/07-01-26-the-mountaineers-letter-to-okanogan-county-supporting-the-preservation-of-climbing-access-at-fun-rock.pdf",
+    "https://washingtonclimbers.org/index.php/wp-json/wp/v2/posts/12336",
+    "https://wenatcheeoutdoors.org/2017/01/19/mazama-fun-rock/"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.8+",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/122984887/jam-sandwich",
+      "fact": "5.8+ YDS, Sport",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_f_phun_rock_main_wall_sunbug_slab_jam_sandwich",
+    "column": "bolts",
+    "from": null,
+    "to": 7,
+    "why": "Mountain Project states 7 bolts. Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/122984887/jam-sandwich"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_f_phun_rock_main_wall_sunbug_slab_jam_sandwich",
+    "column": "anchor",
+    "from": null,
+    "to": "Chain anchor",
+    "why": "Mountain Project: chain anchors. House spelling 'Chain anchor' (stored on 51 routes). Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/122984887/jam-sandwich"
+    ]
+   }
+  ],
+  "held": [
+   {
+    "table": "routes",
+    "id": "wa_f_phun_rock_main_wall_sunbug_slab_jam_sandwich",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)"
+    },
+    "why": "HELD (brief V: copy only if an official source shows Fun Rock is National Forest land). Candidate copied field for field from wa_sisyphus (Goat Wall). The USFS Basic Ownership layer (official, queried 2026-11-23) returns NON-FS ownership at the crag's area coordinate (48.60499, -120.43204) and at points 300-400 m west and south, with USDA Forest Service land beginning roughly 200-300 m north and east, so the crag sits at or near an FS / non-FS boundary inside the forest's outer boundary. A July 1, 2026 letter from The Mountaineers to Okanogan County says the Fun Rock parking lot and access trails are part of Outward Bound's private property, with a pending sale of the lot and trails to the Access Fund. The Washington Climbers Coalition page names the Forest Service as owner/manager, but it is not an official page and conflicts with the layer. No official page places the cliff on National Forest land, so access stays null.",
+    "evidence": [
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0",
+     "https://www.mountaineers.org/conservation/advocacy/comment-letters/07-01-26-the-mountaineers-letter-to-okanogan-county-supporting-the-preservation-of-climbing-access-at-fun-rock.pdf",
+     "https://washingtonclimbers.org/index.php/wp-json/wp/v2/posts/12336"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "Grade 5.8+ from the Mountain Project route page only (theCrag's sector list does not include it). No length stated anywhere; length_m stays null. FA Bryan Burdo per Mountain Project only, not proposed. Pitches 1 left as is. Access: held (see held). theCrag was tried once in the owner's Chrome, in my own tab: the sector page and the Pothole Panhandler page opened, then the next route page answered Forbidden, so theCrag was dropped for the run and the tab closed."
+ }
+}
