@@ -1,0 +1,358 @@
+{
+ "wa_squish_baby": {
+  "area": "wa_baby_squish_rock",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/117091415/squish-baby",
+    "https://www.mountainproject.com/area/117091404/baby-squish-rock",
+    "https://www.mountainproject.com/area/105791955/deception-crags",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/ArcGIS/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.66508,47.43714&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=*&returnGeometry=false&f=json",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/ArcGIS/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.6643,47.43734&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=*&returnGeometry=false&f=json",
+    "https://gis.dnr.wa.gov/site3/rest/services/Public_Boundaries/WADNR_PUBLIC_Major_Public_Lands_NonDNR/MapServer/1/query?geometry=-121.66508,47.43714&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=*&returnGeometry=false&f=json",
+    "https://gis.dnr.wa.gov/site3/rest/services/Public_Boundaries/WADNR_PUBLIC_Major_Public_Lands_NonDNR/MapServer/1/query?geometry=-121.6643,47.43734&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=*&returnGeometry=false&f=json",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0/query?geometry=-121.66508,47.43714&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=*&returnGeometry=false&f=json",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0/query?geometry=-121.6643,47.43734&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=*&returnGeometry=false&f=json",
+    "https://parks.wa.gov/find-parks/state-parks/olallie-state-park",
+    "https://parks.wa.gov/node/3529",
+    "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.10a",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/117091415/squish-baby",
+      "fact": "5.10a YDS, Type: Sport",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "discipline",
+    "value": "sport",
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/117091415/squish-baby",
+      "fact": "Type: Sport, 30 ft; protection: 3 bolts and old chain",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_squish_baby",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "pitches 0 is invalid. Mountain Project gives one 30 ft sport line with 3 bolts and old chain: one length to one anchor, so a single pitch is clear. Implied, not stated: unconfirmed after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/117091415/squish-baby"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_squish_baby",
+    "column": "length_m",
+    "from": null,
+    "to": 9,
+    "why": "Mountain Project states 30 ft (9 m). Single source (no other publisher lists the route); locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/117091415/squish-baby"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_squish_baby",
+    "column": "bolts",
+    "from": null,
+    "to": 3,
+    "why": "Mountain Project protection: '3 bolts and old chain' (bolts, not clips). Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/117091415/squish-baby"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_squish_baby",
+    "column": "anchor",
+    "from": null,
+    "to": "Chain anchor",
+    "why": "Mountain Project: old chain, shared with Baby Squish. House spelling 'Chain anchor'. Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/117091415/squish-baby"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "Access HELD (none added): Baby Squish Rock sits on or near the line between the Palouse to Cascades State Park Trail strip and Mt. Baker-Snoqualmie NF. The catalog's area point (47.43714,-121.66508) falls 36 m OUTSIDE the trail strip on the WA State Parks boundary layer and inside MBS NF on the DNR public-lands and USFS ownership layers; Mountain Project's point (47.43734,-121.6643, a lead only) falls 13 m INSIDE the trail strip. The two points are ~63 m apart and no USGS/OSM feature fixes the rock, so the manager cannot be placed. Owner decision, or a field GPS fix of the rock, needed. The Discover Pass rule would hold either way only if parking is at a State Parks lot, which no official page states for this rock. FA 'Leland Windham & Lauri jae Sweetland (2007)' is on Mountain Project only; not set (FA never from MP alone). The rock is not in the Exit 38 guidebook's Substation section on Rakkup, and no second publisher lists these routes, so grade/length/bolts/anchor rest on MP alone (locked-1src after apply). Area-pin note: the catalog's Baby Squish Rock point is ~63 m from MP's; the USGS 3DEP elevation there reads 1,732 ft vs 1,577 ft at MP's point (MP states 1,856 ft), so the area pin is unreliable; not changed."
+ },
+ "wa_baby_love": {
+  "area": "wa_baby_squish_rock",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/117091409/baby-love",
+    "https://www.mountainproject.com/area/117091404/baby-squish-rock",
+    "https://www.mountainproject.com/area/105791955/deception-crags",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/ArcGIS/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.66508,47.43714&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=*&returnGeometry=false&f=json",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/ArcGIS/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.6643,47.43734&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=*&returnGeometry=false&f=json",
+    "https://gis.dnr.wa.gov/site3/rest/services/Public_Boundaries/WADNR_PUBLIC_Major_Public_Lands_NonDNR/MapServer/1/query?geometry=-121.66508,47.43714&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=*&returnGeometry=false&f=json",
+    "https://gis.dnr.wa.gov/site3/rest/services/Public_Boundaries/WADNR_PUBLIC_Major_Public_Lands_NonDNR/MapServer/1/query?geometry=-121.6643,47.43734&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=*&returnGeometry=false&f=json",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0/query?geometry=-121.66508,47.43714&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=*&returnGeometry=false&f=json",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0/query?geometry=-121.6643,47.43734&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=*&returnGeometry=false&f=json",
+    "https://parks.wa.gov/find-parks/state-parks/olallie-state-park",
+    "https://parks.wa.gov/node/3529",
+    "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.10b",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/117091409/baby-love",
+      "fact": "5.10b YDS, Type: Sport",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "discipline",
+    "value": "sport",
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/117091409/baby-love",
+      "fact": "Type: Sport, 25 ft; protection: 3 bolts and chain anchor with quicklinks",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_baby_love",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "pitches 0 is invalid. Mountain Project gives one 25 ft sport line with 3 bolts and chain anchor with quicklinks: one length to one anchor, so a single pitch is clear. Implied, not stated: unconfirmed after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/117091409/baby-love"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_baby_love",
+    "column": "length_m",
+    "from": null,
+    "to": 8,
+    "why": "Mountain Project states 25 ft (8 m). Single source (no other publisher lists the route); locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/117091409/baby-love"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_baby_love",
+    "column": "bolts",
+    "from": null,
+    "to": 3,
+    "why": "Mountain Project protection: '3 bolts and chain anchor with quicklinks' (bolts, not clips). Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/117091409/baby-love"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_baby_love",
+    "column": "anchor",
+    "from": null,
+    "to": "Chain anchor",
+    "why": "Mountain Project: chain anchor with quicklinks. House spelling 'Chain anchor'. Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/117091409/baby-love"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "Mountain Project: left-most route on the rock. Access HELD (none added): Baby Squish Rock sits on or near the line between the Palouse to Cascades State Park Trail strip and Mt. Baker-Snoqualmie NF. The catalog's area point (47.43714,-121.66508) falls 36 m OUTSIDE the trail strip on the WA State Parks boundary layer and inside MBS NF on the DNR public-lands and USFS ownership layers; Mountain Project's point (47.43734,-121.6643, a lead only) falls 13 m INSIDE the trail strip. The two points are ~63 m apart and no USGS/OSM feature fixes the rock, so the manager cannot be placed. Owner decision, or a field GPS fix of the rock, needed. The Discover Pass rule would hold either way only if parking is at a State Parks lot, which no official page states for this rock. FA 'Leland Windham & Lauri jae Sweetland (2007)' is on Mountain Project only; not set (FA never from MP alone). The rock is not in the Exit 38 guidebook's Substation section on Rakkup, and no second publisher lists these routes, so grade/length/bolts/anchor rest on MP alone (locked-1src after apply). Area-pin note: the catalog's Baby Squish Rock point is ~63 m from MP's; the USGS 3DEP elevation there reads 1,732 ft vs 1,577 ft at MP's point (MP states 1,856 ft), so the area pin is unreliable; not changed."
+ },
+ "wa_baby_squish": {
+  "area": "wa_baby_squish_rock",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/117091420/baby-squish",
+    "https://www.mountainproject.com/area/117091404/baby-squish-rock",
+    "https://www.mountainproject.com/area/105791955/deception-crags",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/ArcGIS/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.66508,47.43714&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=*&returnGeometry=false&f=json",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/ArcGIS/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.6643,47.43734&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=*&returnGeometry=false&f=json",
+    "https://gis.dnr.wa.gov/site3/rest/services/Public_Boundaries/WADNR_PUBLIC_Major_Public_Lands_NonDNR/MapServer/1/query?geometry=-121.66508,47.43714&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=*&returnGeometry=false&f=json",
+    "https://gis.dnr.wa.gov/site3/rest/services/Public_Boundaries/WADNR_PUBLIC_Major_Public_Lands_NonDNR/MapServer/1/query?geometry=-121.6643,47.43734&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=*&returnGeometry=false&f=json",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0/query?geometry=-121.66508,47.43714&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=*&returnGeometry=false&f=json",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0/query?geometry=-121.6643,47.43734&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=*&returnGeometry=false&f=json",
+    "https://parks.wa.gov/find-parks/state-parks/olallie-state-park",
+    "https://parks.wa.gov/node/3529",
+    "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.6",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/117091420/baby-squish",
+      "fact": "5.6 YDS, Type: Sport",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "discipline",
+    "value": "sport",
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/117091420/baby-squish",
+      "fact": "Type: Sport, 30 ft; protection: 3 bolts and old chain",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_baby_squish",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "pitches 0 is invalid. Mountain Project gives one 30 ft sport line with 3 bolts and old chain: one length to one anchor, so a single pitch is clear. Implied, not stated: unconfirmed after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/117091420/baby-squish"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_baby_squish",
+    "column": "length_m",
+    "from": null,
+    "to": 9,
+    "why": "Mountain Project states 30 ft (9 m). Single source (no other publisher lists the route); locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/117091420/baby-squish"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_baby_squish",
+    "column": "bolts",
+    "from": null,
+    "to": 3,
+    "why": "Mountain Project protection: '3 bolts and old chain' (bolts, not clips). Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/117091420/baby-squish"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_baby_squish",
+    "column": "anchor",
+    "from": null,
+    "to": "Chain anchor",
+    "why": "Mountain Project: old chain. House spelling 'Chain anchor'. Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/117091420/baby-squish"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "Mountain Project: right-most route on the slab. Not a duplicate of Squish Baby (different start; they share a chain anchor). Access HELD (none added): Baby Squish Rock sits on or near the line between the Palouse to Cascades State Park Trail strip and Mt. Baker-Snoqualmie NF. The catalog's area point (47.43714,-121.66508) falls 36 m OUTSIDE the trail strip on the WA State Parks boundary layer and inside MBS NF on the DNR public-lands and USFS ownership layers; Mountain Project's point (47.43734,-121.6643, a lead only) falls 13 m INSIDE the trail strip. The two points are ~63 m apart and no USGS/OSM feature fixes the rock, so the manager cannot be placed. Owner decision, or a field GPS fix of the rock, needed. The Discover Pass rule would hold either way only if parking is at a State Parks lot, which no official page states for this rock. FA 'Leland Windham & Lauri jae Sweetland (2007)' is on Mountain Project only; not set (FA never from MP alone). The rock is not in the Exit 38 guidebook's Substation section on Rakkup, and no second publisher lists these routes, so grade/length/bolts/anchor rest on MP alone (locked-1src after apply). Area-pin note: the catalog's Baby Squish Rock point is ~63 m from MP's; the USGS 3DEP elevation there reads 1,732 ft vs 1,577 ft at MP's point (MP states 1,856 ft), so the area pin is unreliable; not changed."
+ },
+ "wa_substation_glob_job_extension": {
+  "area": "wa_substation",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/126669158/glob-job-extension",
+    "https://www.mountainproject.com/area/106589594/substation",
+    "https://rakkup.com/guidebook/exit-38-rock-climbing/substation/s11465",
+    "https://www.mountainproject.com/route/106589615/glob-job",
+    "https://www.mountainproject.com/area/105791955/deception-crags",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/ArcGIS/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.6637343,47.4370112&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=*&returnGeometry=false&f=json",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/ArcGIS/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.66337,47.43698&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=*&returnGeometry=false&f=json",
+    "https://gis.dnr.wa.gov/site3/rest/services/Public_Boundaries/WADNR_PUBLIC_Major_Public_Lands_NonDNR/MapServer/1/query?geometry=-121.6637343,47.4370112&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=*&returnGeometry=false&f=json",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0/query?geometry=-121.6637343,47.4370112&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=*&returnGeometry=false&f=json",
+    "https://www.openstreetmap.org/node/4352830097",
+    "https://parks.wa.gov/find-parks/state-parks/olallie-state-park",
+    "https://parks.wa.gov/node/3529",
+    "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.7",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/126669158/glob-job-extension",
+      "fact": "5.7 YDS, Type: Sport",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "length_m",
+    "value": 5,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/126669158/glob-job-extension",
+      "fact": "Sport, 15 ft (5 m)",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_substation_glob_job_extension",
+    "column": "access",
+    "from": null,
+    "to": {
+     "rules": "Day use only, 6:30 a.m. to dusk. Climbing at Deception Crags can be closed between February and August while peregrine falcons nest; check the park's alerts before going.",
+     "land_manager": "Washington State Parks (Olallie State Park)",
+     "parking_pass": "Discover Pass required to park at Washington State Parks ($10 one day, $45 a year)."
+    },
+    "why": "access is empty. Substation (OSM crag node 4352830097 at 47.43701,-121.66373, and the catalog area point) falls 43-65 m inside the 'Palouse to Cascades' unit on the official WA State Parks boundary layer (re-queried 2026-11-23), confirmed by DNR's public-lands layer (Palouse to Cascades State Park Trail, WA State Parks); MP puts the crag just below the first trail bridge over Change Creek. WA State Parks itself files Deception Crags under Olallie State Park (park page: Homestead Valley Trailhead reaches Deception Crags; day use 6:30 a.m. to dusk; State Parks post of May 20, 2026: Deception Crags at Olallie, February-August falcon closures). Discover Pass page: a pass is required to park at State Parks, $10/$45. Copied field for field from the live verified sibling wa_jiffy_pop / wa_i_can_fly_2 (Deception Wall, same trail strip). official-1, 12 months, after apply.",
+    "evidence": [
+     "https://services5.arcgis.com/4LKAHwqnBooVDUlX/ArcGIS/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.6637343,47.4370112&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=*&returnGeometry=false&f=json",
+     "https://gis.dnr.wa.gov/site3/rest/services/Public_Boundaries/WADNR_PUBLIC_Major_Public_Lands_NonDNR/MapServer/1/query?geometry=-121.6637343,47.4370112&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=*&returnGeometry=false&f=json",
+     "https://parks.wa.gov/find-parks/state-parks/olallie-state-park",
+     "https://parks.wa.gov/node/3529",
+     "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "CATALOG DEFECT: Glob Job Extension is not a standalone route. Mountain Project describes a two-bolt, 15 ft extension that starts at the anchor shared by Glob Job (wa_glob_job) and Glom Don (wa_glom_don) and ends at Rug Monkey's (wa_rug_monkey) anchor; Subversive can also finish into it. The Exit 38 guidebook's Substation list on Rakkup has no such route. Owner call whether it stays its own row or becomes a variation/second pitch of Glob Job. Per the rules only access is proposed; not proposed: bolts null->2 (MP: two-bolt extension), fa stays null (MP: unknown), permit (siblings carry 'No climbing permit. A Discover Pass is needed to park at Olallie State Park.'). pitches 1 left as is. Land-manager nuance for the owner: on the State Parks layer the crag lies in the Palouse to Cascades State Park Trail unit, not the Olallie unit (Olallie polygon ~215 m away); the copied text says 'Olallie State Park' because State Parks' own pages place Deception Crags at Olallie and the verified Deception Wall siblings (also inside the trail strip) say so. The USFS ownership layer is split at this spot (OSM point 10 m inside FS land, area point 13 m inside NON-FS), so the State Parks layer, which is the managing agency's own, decides. In passing: all 19 other Substation rows store pitches 0 and no access."
+ }
+}

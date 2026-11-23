@@ -1,7 +1,7 @@
 import { DISCIPLINES, ATYPE } from "../../lib/areaBrowserShared.js";
 import { useState, useRef, useContext, useEffect, type CSSProperties } from "react";
 import { createPortal } from "react-dom";
-import { useArea, useAreaClimbStats, useAreaContributions, useAreaChildren, useAreaChildrenGradeCounts, useAreaChildrenDiscCounts, useAreaRoutes, useAreaClassics, useAreaLoggedMonths, useAreaNamesByIds, useScopedWishlistRoutes, submitAreaPlacementClaim } from "../../lib/db";
+import { useArea, useAreaClimbStats, useAreaContributions, useAreaChildren, useAreaChildrenGradeCounts, useAreaChildrenDiscCounts, useAreaRoutes, useAreaClassics, useAreaLoggedMonths, useAreaNamesByIds, useScopedWishlistRoutes, submitAreaPlacementClaim, submitWallOrderSuggestion } from "../../lib/db";
 import type { WallGradeRow } from "./WallGradeBars.tsx";
 import AreaActionRow from "./AreaActionRow.tsx";
 import AreaChildrenList from "./AreaChildrenList.tsx";
@@ -27,6 +27,7 @@ import RouteRow from "./RouteRow.tsx";
 import { DISC_GRADE_SCALES } from "./RouteFinderPanel.tsx";
 import AddHereFooter from "./AddHereFooter.tsx";
 import AreaWrongSpot from "../../lib/AreaWrongSpot";
+import WallOrderSuggest from "./WallOrderSuggest.tsx";
 import DbSuggestedClimbs from "./DbSuggestedClimbs.tsx";
 import AreaLatestReports from "./AreaLatestReports.tsx";
 import NearbyPeaks from "./NearbyPeaks.tsx";
@@ -36,6 +37,7 @@ import type { RouteRowRoute } from "./RouteRow.tsx";
 import type { ClassicsListRow } from "./ClassicsList.tsx";
 import type { NearbyPeaksRow } from "./NearbyPeaks.tsx";
 import type { PartnersHereCardProps } from "./PartnersHereCard.tsx";
+import type { ViewableClimber } from "./TopContributors.tsx";
 import type { DbSearchSplitArea, DbSearchSplitRoute } from "./DbSearchSplit.tsx";
 import type { AreaGettingThereArea } from "./AreaGettingThere.tsx";
 import type { AddHereFooterArea } from "./AddHereFooter.tsx";
@@ -152,7 +154,9 @@ export interface AreaPageProps {
   C: typeof Palette;
   onAddClimb?: ((area: AddHereFooterArea) => void) | null;
   onAddArea?: ((area: AddHereFooterArea) => void) | null;
-  TopContributors?: ComponentType<{ areaId: string; mb?: number }> | null;
+  TopContributors?: ComponentType<{ areaId: string; mb?: number; onViewProfile?: (climber: ViewableClimber) => void }> | null;
+  /** Opens the profile of a climber named on TOP CONTRIBUTORS (its rows hand over a different shape than PARTNERS HERE). */
+  onViewContributor?: (climber: ViewableClimber) => void;
   onFireMap?: ((area: AreaPageArea) => void) | null;
   /** Absent hides every edit control; null opens the editor with no field chosen. */
   onSuggestAreaEdit?: ((area: AreaPageArea, field: string | null) => void) | null;
@@ -175,8 +179,10 @@ export interface AreaPageProps {
 // THE HEADER CARD'S BUTTONS: Save area, Area tree and Fire map are ONE size (owner, 2026-11-18: "fire map needs to be
 // the same size as save area") -- 34px, the height Save was given on 2026-11-14 -- and one width; only the colour differs.
 const HEAD_BTN: CSSProperties = { flexShrink: 0, boxSizing: "border-box", display: "inline-flex", alignItems: "center", justifyContent: "center", gap: 5, height: 34, minWidth: 100, padding: "0 12px", borderRadius: 9, fontSize: 12, fontWeight: 800, cursor: "pointer", lineHeight: 1, whiteSpace: "nowrap" };
-export default function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, booked, onToggleSave, onDrill, onFinder, onNear, onObjectives, onAllAreas, onOpenRoute, onJumpToArea, C, onAddClimb, onAddArea, TopContributors, onFireMap, onSuggestAreaEdit, myId, PartnerRow, uid, myListings, onListMe, onFindPartnersInArea, onViewProfile, notify, onStartCrew, onCrewsHere, onGroupsHere, openCrewCountAt, headerNav}: AreaPageProps) {
+export default function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, booked, onToggleSave, onDrill, onFinder, onNear, onObjectives, onAllAreas, onOpenRoute, onJumpToArea, C, onAddClimb, onAddArea, TopContributors, onViewContributor, onFireMap, onSuggestAreaEdit, myId, PartnerRow, uid, myListings, onListMe, onFindPartnersInArea, onViewProfile, notify, onStartCrew, onCrewsHere, onGroupsHere, openCrewCountAt, headerNav}: AreaPageProps) {
   const [wrongOpen, setWrongOpen] = useState(false);
+  // ORDER WRONG? (0485): the sheet where a climber puts this wall's climbs in left-to-right order. A suggestion only.
+  const [orderOpen, setOrderOpen] = useState(false);
   const listEndRef = useRef(null);
   const [listSort, setListSort] = useState("lr");
   // Filters on a WALL's own climb list (owner note, 2026-10-25): discipline and a star minimum,
@@ -374,6 +380,12 @@ export default function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, book
                   </div> : null}
                   {routes.length > 1 ? <div role="group" aria-label="Sort climbs" className="cm-hscroll" style={{ display: "flex", gap: 6, overflowX: "auto", paddingBottom: 3, marginBottom: 8 }}>{opts.map(o => <button key={o[0]} onClick={() => setListSort(o[0])} aria-pressed={key === o[0]} style={{ ...CHIP, flexShrink: 0, border: "1px solid " + (key === o[0] ? C.blue : C.border), background: key === o[0] ? C.blueBg : C.surface, color: key === o[0] ? "#fff" : C.textSub, fontSize: 12.5, fontWeight: 700, cursor: "pointer", whiteSpace: "nowrap" }}>{o[1]}</button>)}</div> : null}
                   {unplaced ? <div style={{ fontSize: 11.5, color: C.textMuted, marginBottom: 8, lineHeight: 1.45 }}>{unplaced + (unplaced !== 1 ? " climbs have" : " climb has") + " no position on the wall yet, so " + (unplaced !== 1 ? "they are" : "it is") + " listed last, by name."}</div> : null}
+                  {/* ORDER WRONG? (owner, 2026-11-19): offered beside the wall orders it corrects, and on a wall with no
+                      order stored, where it asks for one. Never on a peak (its routes are not a line along a wall), and
+                      a boulder problem is never part of it. The sheet holds every roped climb, whatever the filters hide: the placed ones in line, the rest waiting to be placed. */}
+                  {area.area_type !== "peak" && (!placed || key === "lr" || key === "rl") && routes.filter(r => r.discipline !== "bouldering").length > 1 ? <div style={{ display: "flex", justifyContent: "flex-end", marginBottom: 8 }}>
+                    <button onClick={() => setOrderOpen(true)} style={{ ...BTN, minHeight: 44, border: "1px dashed " + C.border, background: C.surface, color: C.blue, fontSize: 12.5 }}>{placed ? "Order wrong? Suggest a different order" : "Know the left-to-right order? Add it"}</button>
+                  </div> : null}
                   {shownAll.length ? (() => {
                     // By discipline: one heading per run of the same discipline, rows under it in name order.
                     const out: ReactNode[] = []; let last: string | undefined | null = null;
@@ -522,6 +534,7 @@ export default function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, book
           {"Wrong place? Tell us where " + area.name + " belongs"}
         </button> : null}
       </>}
+      {orderOpen && routes ? <WallOrderSuggest area={area} routes={sortAreaRoutes(routes.filter(r => r.discipline !== "bouldering" && r.sort_order != null), "lr")} unplaced={sortAreaRoutes(routes.filter(r => r.discipline !== "bouldering" && r.sort_order == null), "az")} C={C} onClose={() => setOrderOpen(false)} onSubmit={(order, note) => submitWallOrderSuggestion(area.id, order, note)} onSignIn={onSignIn} /> : null}
       {wrongOpen ? <AreaWrongSpot area={area} C={C} onClose={() => setWrongOpen(false)} onSubmit={(note: string, place: string) => submitAreaPlacementClaim(area.id, note, place)} onSignIn={onSignIn} /> : null}
 
       {/* Tail order is the owner's (2026-10-15): nearby peaks, then Top contributors LAST (Suggested climbs sat
@@ -536,7 +549,7 @@ export default function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, book
           Nearby peaks shown the gap is 14, not 14 + its own 10. Below it, 20: the Discussion App mounts next opens
           with a divider line (marginTop 10, collapsing with this), and at 8 that line sat ~11px under the box and read
           as part of it (owner, 2026-11-18: "needs spacing"). */}
-      {TopContributors ? <div style={{ marginTop: 14 }}><TopContributors areaId={area.id} mb={20}/></div> : null}
+      {TopContributors ? <div style={{ marginTop: 14 }}><TopContributors areaId={area.id} mb={20} onViewProfile={onViewContributor}/></div> : null}
     </div>
   );
   // The website: the map and the sub-areas in the left panel beside the page (owner chose "Sidebar on web, early on
