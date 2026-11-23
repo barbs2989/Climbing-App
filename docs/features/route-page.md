@@ -99,7 +99,7 @@ Part of the current-state docs. The Conditions tab has its own doc: [conditions.
 | `RouteDetail.jsx` | The page: its state and queries, the sub-tab bar, and which sub-tab body to draw (each body is a component since PR60); `CRAG_CATS` (imported from core since 0300), `showPlan`, `cragOnly`, `photoLightbox` and `shareOpen` state, the crag Partners query (`usePartnersInArea`, `areaPartners`) |
 | `ClimbMatch.jsx` | `openRoute`, `selRoute`, `myStars`/`myRateQ`, route memo that merges `_contribFields`/`_pendingEdits`/`_contribAgreed` |
 | `ClimbMatchCore.jsx` | `scarfHrs`, `techHrs`, `buildConsensus`, `catOf`, `wpPlaced`, `WP_STYLE` |
-| `lib/GpsSubmissionQueue.jsx` | `GpsSubmissionQueue` — the owner's Review queue for traced crag trails and recorded tracks (0397) |
+| `lib/GpsSubmissionQueue.jsx` | `GpsSubmissionQueue` — the owner's queue for traced crag trails and recorded tracks (0397), a section of the Review desk (`review.html#trails`; a Menu tile until 2026-11-23) |
 | `lib/WalkInMap.jsx` | `WalkInMap` — read-only map of a crag's walk in over P and C (crag page, trail queue) |
 | `lib/TrailDrawMap.jsx` | `TrailDrawMap` — tap-to-trace the walk in from parking to the crag, inside the Add-the-trail sheet on crag routes: draggable anchors, midpoint handles, Undo/Redo, `fullscreen`, Follow trails |
 | `lib/trailRouting.js` | `routeLeg`, `pathLenM` — one leg of a drawn trail along the mapped footpaths (BRouter), or null so the leg stays straight |
