@@ -99,7 +99,7 @@ Three top-level `tab` values in `ClimbMatch.jsx` (`tab==="today"`, `tab==="crew"
   visibility lets you read) and `self={false}`: *Their challenges* shows the log-derived rows, never the vouch or log-conditions rows, which are only
   drawn where the caller passed them, nor the partners row (`resumeLogs` carries no partners). `pitchesClimbed` counts a log's route
   pitches, so a 5-pitch route finished counts 5, each lap again; Attempt/Turned around/Project add 0, a route with no count is 1 pitch
-  only on a roped crag discipline, an unresolved route adds 0. **Pitches climbed on a climb not finished** (0499,
+  only on a roped crag discipline, an unresolved route adds 0. **Pitches climbed on a climb not finished** (0500,
   `climb_logs.pitches_climbed`, owner 2026-11-23): `LogAscent` asks *PITCHES CLIMBED* on an Attempt, Turned around, Fell or Hung log of
   a 2+ pitch route; a stated number counts (capped at the route's count), blank keeps the rule above.
 - **Badges** are built by ONE hook, `useBadges` (`ClimbMatchCore.jsx`), on top of `useCuratedLists`, for three readers: the

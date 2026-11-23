@@ -182,6 +182,8 @@ for (const name of ["match_objectives_of_users", "partners_by_objective"]) {
     else fail("a route_partner_listings policy does not bind auth.uid() = user_id");
     const v = need("route_partner_listings_validate");
     if (v) ((CRAG_SQL.test(v.body) && /<>\s*'peak'/.test(v.body) && /raise\s+exception/i.test(v.body)) ? ok : fail)("route_partner_listings_validate refuses a crag-family route that is not on a peak — crag partners stay area-based");
+    if (v) (/route_id\s*<>\s*new\.route_id/.test(v.body) && !/tg_op\s*=\s*'INSERT'/.test(v.body) ? ok : fail)("the 30-listing cap leaves out the row being written, on every operation — an upsert fires BEFORE INSERT on an existing row, and counting it refused an EDIT at 30");
+    for (const name of ["route_partner_listings_validate", "partner_areas_validate"]) { const g = fns.get(name); if (g) (/screening_match\(\s*new\.note\s*\)/.test(g.body) && /raise\s+exception/i.test(g.body) ? ok : fail)(`${name} refuses a note that matches the screening floor — every signed-in climber who finds the listing reads it`); }
     const readers = [...fns].filter(([name, f]) => /\broute_partner_listings\b/.test(f.body) && name !== "route_partner_listings_validate").map(([name]) => name);
     (readers.length === 1 && readers[0] === "partners_by_objective" ? ok : fail)(`the only function that reads route_partner_listings across climbers is partners_by_objective (found: ${readers.join(", ") || "none"})`);
     const f = fns.get("partners_by_objective");
@@ -195,7 +197,7 @@ for (const name of ["match_objectives_of_users", "partners_by_objective"]) {
     }
   }
   const db = fs.readFileSync(path.join(ROOT, "lib", "db.js"), "utf8");
-  for (const h of ["useMyRouteListings", "saveRouteListing", "removeRouteListing"]) {
+  for (const h of ["useMyRouteListings", "addRouteListing", "saveRouteListing", "removeRouteListing"]) {
     (new RegExp(`export (?:async )?function ${h}\\b`).test(db) ? ok : fail)(`lib/db.js exports ${h}`);
   }
   (/routeListingReaders\s*=[^\n]*"partners-by-objective"/.test(db) ? ok : fail)("listing or unlisting on a route refreshes partners-by-objective, so the route page and the finder do not show a stale list");

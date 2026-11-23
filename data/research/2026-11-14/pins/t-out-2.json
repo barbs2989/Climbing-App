@@ -1,0 +1,76 @@
+[
+ {
+  "route_id": "wa_forbidden_peak_northeast_face",
+  "verdict": "unresolved",
+  "final_gain": null,
+  "trailhead_today": "Boston Basin Trailhead (Cascade River Road)",
+  "trailhead_elev_official": null,
+  "summit_elev_official": null,
+  "figures": [
+   {"value": 5600, "trailhead": "Boston Basin Trailhead (3,200 ft per Mountaineers)", "one_way": true, "url": "https://www.mountaineers.org/activities/routes-places/boston-basin-area-review/forbidden-peak-west-ridge", "fact": "West Ridge: Elevation Gain 5,600 ft; High Point 8,815 ft (from previous pass)."},
+   {"value": 6346, "trailhead": "Boston Basin (Peakbagger lists 2,498 ft)", "one_way": true, "url": "https://www.peakbagger.com/climber/ascent.aspx?aid=2304519", "fact": "Ascent Statistics: Gain on way in 6346 ft, Route West Ridge, Start Trailhead Boston Basin 2498 ft; total gain 6346 ft C2C."}
+  ],
+  "evidence": [],
+  "closures": "None found (previous pass: NPS lists Cascade River Road open).",
+  "note": "Both figures are for the West Ridge, not the NE Face, and 5,600 vs 6,346 differ by more than 10%. Peakbagger radius search gives Forbidden 8,843.7 ft, and one climber's log gives Boston Basin TH 2,498 ft; neither is an official land-manager figure. No NE Face page found. Both West Ridge figures exceed the stored 4,600, which suggests the stored gain is low, but that is not proven under the 10% rule."
+ },
+ {
+  "route_id": "wa_mount_shuksan_price_glacier",
+  "verdict": "unresolved",
+  "final_gain": null,
+  "trailhead_today": "Nooksack Cirque Trailhead (Ruth Creek ford at start; first log out in 2018 per Hebert)",
+  "trailhead_elev_official": null,
+  "summit_elev_official": null,
+  "figures": [
+   {"value": 4280, "trailhead": "Nooksack Cirque TH to day-1 bivy (approach only)", "one_way": false, "url": "https://cascadeclimbers.com/forum/topic/106304-tr-mt-shuksan-price-glacier-09022022/", "fact": "Day 1 - Approach (+4,280 ft, -1,150 ft, 6.52 mi) from Nooksack Cirque TH toward the Price Glacier."},
+   {"value": 6569, "trailhead": "FR 1152 (Sulphide Glacier route, 2,560 ft) - different route", "one_way": true, "url": "https://www.peakbagger.com/peak.aspx?pid=1630", "fact": "Route #1 Sulphide Glacier: Trailhead FR 1152 2560 ft; Vertical Gain 6569 ft; one way 6.5 mi. Not the Price route."}
+  ],
+  "evidence": [],
+  "closures": "None found. Hebert 2018: Ruth Creek forded at the trailhead; log crossing of North Fork Nooksack used toward Price Lake.",
+  "note": "Peakbagger gives Shuksan 9,129.5 ft (lidar, Bulger Project) vs the 9,131 pin: close, so the summit pin is not the cause. Hebert's Price report (jeffreyjhebert.com) gives camp at about 6,150 ft but no gain total. No page gives a one-way TH-to-summit gain for the Price Glacier. The 2022 TR loses 1,150 ft on the approach, so cumulative gain would be more than the net rise. Stored 6,000 matches nothing opened."
+ },
+ {
+  "route_id": "wa_east_face",
+  "verdict": "unresolved",
+  "final_gain": null,
+  "trailhead_today": "Downey Creek Trailhead (#768), Suiattle River Road",
+  "trailhead_elev_official": null,
+  "summit_elev_official": null,
+  "figures": [
+   {"value": 14000, "trailhead": "Downey Creek Trailhead (1,400 ft per report)", "one_way": false, "url": "https://trailcatjim.com/gunsight-peak-and-sinister-peak/", "fact": "Main Gunsight + Sinister multi-day trip: approx 34 miles, 14,000 feet gained and lost; start Downey Creek TH, elev. 1400 feet."}
+  ],
+  "evidence": [],
+  "closures": "The WTA Downey Creek page (opened 2026-11-18) still says Suiattle River Road is closed to vehicles at MP 10.5, with the trailhead reachable on foot or bike. The previous pass found a July 2025 TR describing a normal approach, so the WTA banner may be stale. Not confirmed with USFS.",
+  "note": "Downey Creek TH is 1,400 ft (trailcatjim) vs the 1,440 pin: close. WTA gives no TH elevation (Bachelor Creek is at 6.6 mi, 2,400 ft). The approach crosses Itswoot Ridge (Peakbagger 6,413.2 ft) and drops to the Chikamin Glacier, so any one-way gain is more than the net rise. No page gives a one-way figure or an elevation for Middle Gunsight (Wikipedia gives only Main Gunsight, 8,198 ft). Stored 5,000 has no support."
+ },
+ {
+  "route_id": "wa_mount_barnes_scramble",
+  "verdict": "gain_other_start",
+  "final_gain": null,
+  "trailhead_today": "No route from Sol Duc found; Wikipedia places Barnes above the Elwha Basin (upper Elwha), not the Sol Duc",
+  "trailhead_elev_official": null,
+  "summit_elev_official": 5987,
+  "figures": [
+   {"value": 3200, "trailhead": "Elwha Basin (relief, not a trail start)", "one_way": false, "url": "https://en.wikipedia.org/wiki/Mount_Barnes_(Washington)", "fact": "Summit rises 3,200 feet above Elwha Basin in approximately two miles (topographic relief)."}
+  ],
+  "evidence": [
+   {"url": "https://en.wikipedia.org/wiki/Mount_Barnes_(Washington)", "retrieved_at": "2026-11-18", "fact": "Mount Barnes 5,987 ft (cites GNIS); Bailey Range, Jefferson County; drains to Queets, Elwha and Goldie River; easiest route class 2."}
+  ],
+  "closures": "Not checked (no Sol Duc route page exists).",
+  "note": "Stored 3,200 exactly matches Wikipedia's relief figure above the Elwha Basin, so it probably came from there and not from the Sol Duc trailhead. That number is terrain relief, not a published route gain, and only one page gives it, so final_gain stays null. The Sol Duc trailhead pin is probably the wrong start for this peak (Wikipedia names no Sol Duc drainage). The summit is 5,987 ft (Wikipedia citing GNIS), which matches the pin. Treat this verdict as a lead to confirm, not a fix to apply."
+ },
+ {
+  "route_id": "wa_east_face_2",
+  "verdict": "unresolved",
+  "final_gain": null,
+  "trailhead_today": "SR-20 pullout near MP 166 (Wine Spires approach)",
+  "trailhead_elev_official": null,
+  "summit_elev_official": null,
+  "figures": [
+   {"value": 4000, "trailhead": "SR-20 pullout near MP 166, Wine Spires area generally (high point 8,500 ft)", "one_way": false, "url": "https://www.mountaineers.org/activities/routes-places/wine-spires", "fact": "Wine Spires: Length 6.0 mi, Elevation Gain 4,000 ft, High Point 8,500 ft (previous pass)."}
+  ],
+  "evidence": [],
+  "closures": "None found (SR-20 closes seasonally in winter).",
+  "note": "Peakbagger (pid 27548) gives Chablis Spire 8,458.6 ft (lidar, 3DEP 2024) vs 8,350 for the pin and Mountaineers. The pin may be about 100 ft low, but that widens the gap rather than explaining it. Peakbagger's ascent logs have no gain figures (their trip reports are only 4 words). No route-specific one-way gain found. Stored 2,850 still matches nothing opened."
+ }
+]

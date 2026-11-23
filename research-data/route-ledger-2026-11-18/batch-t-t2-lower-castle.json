@@ -1,0 +1,445 @@
+{
+ "wa_flying_frog_2": {
+  "area": "wa_lower_castle",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/108400552/flying-frog",
+    "https://www.mountainproject.com/area/105870900/lower-castle",
+    "https://www.thecrag.com/en/climbing/united-states/central-cascade-mountains/area/19196431",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/castle-rock-trailhead"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.9",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108400552/flying-frog",
+      "fact": "Flying Frog 5.9 YDS, Trad",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_flying_frog_2",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "Stored 0. One 100 ft length that ends at the anchor it shares with the hand crack on its right: a single pitch.",
+    "evidence": [
+     "https://www.mountainproject.com/route/108400552/flying-frog"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_flying_frog_2",
+    "column": "length_m",
+    "from": null,
+    "to": 30,
+    "why": "MP states 100 ft (30 m).",
+    "evidence": [
+     "https://www.mountainproject.com/route/108400552/flying-frog"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_flying_frog_2",
+    "column": "gear",
+    "from": null,
+    "to": [
+     "gear to 2 in",
+     "small cams and nuts for thin seams"
+    ],
+    "why": "MP states gear to 2 in, small cams or nuts for the thin seams.",
+    "evidence": [
+     "https://www.mountainproject.com/route/108400552/flying-frog"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_flying_frog_2",
+    "column": "access",
+    "from": null,
+    "to": {
+     "fees": "None.",
+     "rules": "Castle Rock is outside designated wilderness. The seasonal raptor closure (April 1 to July 31) covers nearby Midnight and Noontime Rocks, not Castle Rock.",
+     "permit": "None needed to climb.",
+     "land_manager": "Okanogan-Wenatchee National Forest (Wenatchee River Ranger District)",
+     "parking_pass": "None. No recreation pass is needed to park at the Castle Rock Trailhead."
+    },
+    "why": "Null access on a Lower Castle route. Copied field for field from wa_catapult (identical on wa_smut, wa_damnation_crack, wa_saints). Re-read the USFS Castle Rock Trailhead page (updated 2026-06-09): Wenatchee River RD, Okanogan-Wenatchee NF; no recreation pass needed to park, no fees; the Apr 1-Jul 31 raptor closure names Midnight and Noontime Rocks only. Both re-check points unchanged.",
+    "evidence": [
+     "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/castle-rock-trailhead"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_flying_frog_2",
+    "column": "permit",
+    "from": null,
+    "to": "No recreation pass is needed to park at the Castle Rock Trailhead.",
+    "why": "Null permit; copied from wa_catapult. USFS Castle Rock Trailhead page: no recreation pass needed to park.",
+    "evidence": [
+     "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/castle-rock-trailhead"
+    ]
+   }
+  ],
+  "held": [],
+  "disputed": [],
+  "notes": "Only Mountain Project describes this route; theCrag's Lower Castle list (15 routes) does not include it, so grade locks at the 1-source tier. FA 'jim Yoder, Paul Christiansen,1980' matches MP exactly (MP only, not locked; the lowercase 'jim' is a cosmetic issue, no fact to add, left alone). Anchor: shared with the neighbouring crack, type not stated, not proposed. MP calls it the furthest right line on Lower Castle; MP also suggests Idiot's Journey as a possible second pitch above it."
+ },
+ "wa_amy_carter": {
+  "area": "wa_lower_castle",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/108400544/amy-carter",
+    "https://www.mountainproject.com/area/105870900/lower-castle",
+    "https://www.thecrag.com/en/climbing/united-states/central-cascade-mountains/area/19196431",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/castle-rock-trailhead"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.9",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108400544/amy-carter",
+      "fact": "Amy Carter 5.9 YDS, Trad",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_amy_carter",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "Stored 0. One 100 ft length to a bolted anchor: a single pitch.",
+    "evidence": [
+     "https://www.mountainproject.com/route/108400544/amy-carter"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_amy_carter",
+    "column": "length_m",
+    "from": null,
+    "to": 30,
+    "why": "MP states 100 ft (30 m).",
+    "evidence": [
+     "https://www.mountainproject.com/route/108400544/amy-carter"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_amy_carter",
+    "column": "anchor",
+    "from": null,
+    "to": "Bolted anchor",
+    "why": "MP: bolted anchor left of the crack. House spelling 'Bolted anchor' (stored on 4 WA routes).",
+    "evidence": [
+     "https://www.mountainproject.com/route/108400544/amy-carter"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_amy_carter",
+    "column": "gear",
+    "from": null,
+    "to": [
+     "standard rack to 3 in"
+    ],
+    "why": "MP states a standard rack to 3 in.",
+    "evidence": [
+     "https://www.mountainproject.com/route/108400544/amy-carter"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_amy_carter",
+    "column": "access",
+    "from": null,
+    "to": {
+     "fees": "None.",
+     "rules": "Castle Rock is outside designated wilderness. The seasonal raptor closure (April 1 to July 31) covers nearby Midnight and Noontime Rocks, not Castle Rock.",
+     "permit": "None needed to climb.",
+     "land_manager": "Okanogan-Wenatchee National Forest (Wenatchee River Ranger District)",
+     "parking_pass": "None. No recreation pass is needed to park at the Castle Rock Trailhead."
+    },
+    "why": "Null access on a Lower Castle route. Copied field for field from wa_catapult (identical on wa_smut, wa_damnation_crack, wa_saints). Re-read the USFS Castle Rock Trailhead page (updated 2026-06-09): Wenatchee River RD, Okanogan-Wenatchee NF; no recreation pass needed to park, no fees; the Apr 1-Jul 31 raptor closure names Midnight and Noontime Rocks only. Both re-check points unchanged.",
+    "evidence": [
+     "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/castle-rock-trailhead"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_amy_carter",
+    "column": "permit",
+    "from": null,
+    "to": "No recreation pass is needed to park at the Castle Rock Trailhead.",
+    "why": "Null permit; copied from wa_catapult. USFS Castle Rock Trailhead page: no recreation pass needed to park.",
+    "evidence": [
+     "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/castle-rock-trailhead"
+    ]
+   }
+  ],
+  "held": [],
+  "disputed": [],
+  "notes": "Only Mountain Project describes this route (not on theCrag's Lower Castle list), so grade locks at the 1-source tier. FA 'Jim Yoder, 1980' matches MP only; not locked. The start is just right of the PG Advised bolts."
+ },
+ "wa_idiot_s_journey": {
+  "area": "wa_lower_castle",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/108400772/idiots-journey",
+    "https://www.mountainproject.com/area/105870900/lower-castle",
+    "https://www.thecrag.com/en/climbing/united-states/central-cascade-mountains/area/19196431",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/castle-rock-trailhead"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.9",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108400772/idiots-journey",
+      "fact": "Idiot's Journey 5.9 YDS, Trad",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_idiot_s_journey",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "Stored 0. MP gives one 70 ft length; no source gives more than one pitch.",
+    "evidence": [
+     "https://www.mountainproject.com/route/108400772/idiots-journey"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_idiot_s_journey",
+    "column": "length_m",
+    "from": null,
+    "to": 21,
+    "why": "MP states 70 ft (21 m).",
+    "evidence": [
+     "https://www.mountainproject.com/route/108400772/idiots-journey"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_idiot_s_journey",
+    "column": "gear",
+    "from": null,
+    "to": [
+     "standard rack"
+    ],
+    "why": "MP: standard rack, keep the #2 and #3 for the top-out.",
+    "evidence": [
+     "https://www.mountainproject.com/route/108400772/idiots-journey"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_idiot_s_journey",
+    "column": "access",
+    "from": null,
+    "to": {
+     "fees": "None.",
+     "rules": "Castle Rock is outside designated wilderness. The seasonal raptor closure (April 1 to July 31) covers nearby Midnight and Noontime Rocks, not Castle Rock.",
+     "permit": "None needed to climb.",
+     "land_manager": "Okanogan-Wenatchee National Forest (Wenatchee River Ranger District)",
+     "parking_pass": "None. No recreation pass is needed to park at the Castle Rock Trailhead."
+    },
+    "why": "Null access on a Lower Castle route. Copied field for field from wa_catapult (identical on wa_smut, wa_damnation_crack, wa_saints). Re-read the USFS Castle Rock Trailhead page (updated 2026-06-09): Wenatchee River RD, Okanogan-Wenatchee NF; no recreation pass needed to park, no fees; the Apr 1-Jul 31 raptor closure names Midnight and Noontime Rocks only. Both re-check points unchanged.",
+    "evidence": [
+     "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/castle-rock-trailhead"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_idiot_s_journey",
+    "column": "permit",
+    "from": null,
+    "to": "No recreation pass is needed to park at the Castle Rock Trailhead.",
+    "why": "Null permit; copied from wa_catapult. USFS Castle Rock Trailhead page: no recreation pass needed to park.",
+    "evidence": [
+     "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/castle-rock-trailhead"
+    ]
+   }
+  ],
+  "held": [],
+  "disputed": [],
+  "notes": "Only Mountain Project describes this route (not on theCrag). Grade locked at the 1-source tier. HELD: bolts. MP mentions two old 1/4 in bolts with Leeper hangers at a steep corner, but does not say whether they are protection or an old belay; not proposed. FA 'Geoff Georges & Jessica Todd' matches MP; MP gives no year (the 2013 date is when it was posted). POSSIBLE DEFECT for the owner: MP says the line could serve as a second pitch of Amy Carter or Flying Frog; it is still listed as its own route, so no defect is filed."
+ },
+ "wa_bird_s_nest_overhang": {
+  "area": "wa_lower_castle",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/109803443/birds-nest-overhang",
+    "https://www.mountainproject.com/area/105870900/lower-castle",
+    "https://www.thecrag.com/en/climbing/united-states/central-cascade-mountains/area/19196431",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/castle-rock-trailhead"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.8",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/109803443/birds-nest-overhang",
+      "fact": "Bird's Nest Overhang 5.8 YDS, Trad",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://www.thecrag.com/en/climbing/united-states/central-cascade-mountains/area/19196431",
+      "fact": "Bird's Nest Overhang 5.8 (Lower Castle Rock list, route 15)",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_bird_s_nest_overhang",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "Stored 0. One 100 ft length from below the roof to tree belays at the top: a single pitch.",
+    "evidence": [
+     "https://www.mountainproject.com/route/109803443/birds-nest-overhang"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_bird_s_nest_overhang",
+    "column": "length_m",
+    "from": null,
+    "to": 30,
+    "why": "MP states 100 ft (30 m).",
+    "evidence": [
+     "https://www.mountainproject.com/route/109803443/birds-nest-overhang"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_bird_s_nest_overhang",
+    "column": "anchor",
+    "from": null,
+    "to": "tree",
+    "why": "MP: no fixed anchors; belay from maple trees or a pine. House spelling 'tree' (stored on 6 WA routes).",
+    "evidence": [
+     "https://www.mountainproject.com/route/109803443/birds-nest-overhang"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_bird_s_nest_overhang",
+    "column": "gear",
+    "from": null,
+    "to": [
+     "standard rack to 3 in"
+    ],
+    "why": "MP states a standard rack to 3 in.",
+    "evidence": [
+     "https://www.mountainproject.com/route/109803443/birds-nest-overhang"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_bird_s_nest_overhang",
+    "column": "access",
+    "from": null,
+    "to": {
+     "fees": "None.",
+     "rules": "Castle Rock is outside designated wilderness. The seasonal raptor closure (April 1 to July 31) covers nearby Midnight and Noontime Rocks, not Castle Rock.",
+     "permit": "None needed to climb.",
+     "land_manager": "Okanogan-Wenatchee National Forest (Wenatchee River Ranger District)",
+     "parking_pass": "None. No recreation pass is needed to park at the Castle Rock Trailhead."
+    },
+    "why": "Null access on a Lower Castle route. Copied field for field from wa_catapult (identical on wa_smut, wa_damnation_crack, wa_saints). Re-read the USFS Castle Rock Trailhead page (updated 2026-06-09): Wenatchee River RD, Okanogan-Wenatchee NF; no recreation pass needed to park, no fees; the Apr 1-Jul 31 raptor closure names Midnight and Noontime Rocks only. Both re-check points unchanged.",
+    "evidence": [
+     "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/castle-rock-trailhead"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_bird_s_nest_overhang",
+    "column": "permit",
+    "from": null,
+    "to": "No recreation pass is needed to park at the Castle Rock Trailhead.",
+    "why": "Null permit; copied from wa_catapult. USFS Castle Rock Trailhead page: no recreation pass needed to park.",
+    "evidence": [
+     "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/castle-rock-trailhead"
+    ]
+   }
+  ],
+  "held": [],
+  "disputed": [],
+  "notes": "Grade 5.8 locked (MP + theCrag's Lower Castle list). FA 'Fred Beckey, Tom Hornbein 1957' matches MP only; theCrag's route page was rate-limited, so FA not locked. HELD (one source, not proposed): MP gives an FFA, Jim McCarthy and Jim Langdon, 1968; the `ffa` column is null. POSSIBLE CATALOG DEFECT (not my row): wa_lower_castle_wild_traverse (5.11) carries the identical FA string 'Fred Beckey, Tom Hornbein 1957'; it may be the same 1957 line under another name, or an FA filed on the wrong row. Neither MP nor theCrag lists a 'Wild Traverse' at Lower Castle."
+ },
+ "wa_lower_castle_endgame": {
+  "area": "wa_lower_castle",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/105870900/lower-castle",
+    "https://www.thecrag.com/en/climbing/united-states/central-cascade-mountains/area/19196431",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/castle-rock-trailhead"
+   ]
+  },
+  "ledger": [],
+  "sql_fixes": [],
+  "held": [
+   {
+    "table": "routes",
+    "id": "wa_lower_castle_endgame",
+    "column": "pitches",
+    "from": 7,
+    "to": null,
+    "why": "HELD: no publisher lists an Endgame at Castle Rock (MP Lower Castle, 24 routes; theCrag Lower Castle, 15 routes; searches found none). Seven pitches and grade IV cannot fit Lower Castle, whose listed routes are one or two pitches. With no source for the real count the value is unsourced, but the row itself is suspect, so the owner decides.",
+    "evidence": [
+     "https://www.mountainproject.com/area/105870900/lower-castle",
+     "https://www.thecrag.com/en/climbing/united-states/central-cascade-mountains/area/19196431"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_lower_castle_endgame",
+    "column": "access",
+    "from": null,
+    "to": "(wa_catapult object)",
+    "why": "HELD: the Castle Rock object would be correct for any Lower Castle route, but no source places this route at Castle Rock, so the land manager is not established.",
+    "evidence": [
+     "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/castle-rock-trailhead"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "CATALOG DEFECT (suspect row). Endgame 5.9, 7 pitches, commitment IV, guide_stars 0, no FA. Not on Mountain Project's Lower Castle page, not on theCrag's Lower Castle or Castle Rock lists, and two searches found no Leavenworth Endgame. A 7-pitch grade IV line cannot fit Castle Rock. It sits with three other chess-named rows absent from both lists (King's Indian, Four Knights, Nimzo Indian; two credit Pete Doorish and Don Leonard, 1979), which suggests a set of rows imported from another formation and filed under Lower Castle. Nothing proposed; owner decides whether the rows stay or move."
+ }
+}

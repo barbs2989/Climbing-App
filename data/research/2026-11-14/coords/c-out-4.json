@@ -1,0 +1,1398 @@
+[
+ {
+  "id": "va_rawley_springs",
+  "verdict": "misfiled",
+  "stored": [
+   38.50899,
+   -79.0626
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": "Shenandoah & NW VA Region",
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/117983104",
+    "retrieved_at": "2026-11-18",
+    "lat": 38.50899,
+    "lng": -79.0626,
+    "fact": "MP files Rawley Springs under Virginia > Shenandoah & NW VA Region; GPS equals stored."
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/Rawley_Springs,_Virginia",
+    "retrieved_at": "2026-11-18",
+    "lat": 38.50528,
+    "lng": -79.05639,
+    "fact": "Wikipedia infobox: Rawley Springs, Rockingham County, ~0.6 km from stored."
+   }
+  ],
+  "note": "Stored coordinate correct (two sources). MP files it under Shenandoah & NW VA Region, not DC & Northern VA."
+ },
+ {
+  "id": "az_santa_maria_s_surrounding_ranges",
+  "verdict": "ok",
+  "stored": [
+   34.74478,
+   -112.88843
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/116527826",
+    "retrieved_at": "2026-11-18",
+    "lat": 34.80707,
+    "lng": -112.85044,
+    "fact": "MP: Arizona > Central Arizona; GPS ~7.5 km from stored."
+   }
+  ],
+  "note": "Range-sized area; stored within ~8 km of MP centre. Parent Central Arizona is a large region; MP files it there too."
+ },
+ {
+  "id": "nv_jungo_columns",
+  "verdict": "ok",
+  "stored": [
+   40.77132,
+   -118.88737
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/126522353",
+    "retrieved_at": "2026-11-18",
+    "lat": 40.77132,
+    "lng": -118.88737,
+    "fact": "MP: Nevada > Western Nevada; GPS equals stored."
+   }
+  ],
+  "note": "Parent Western Nevada is a large region; MP files it there."
+ },
+ {
+  "id": "ca_bohna_peak",
+  "verdict": "ok",
+  "stored": [
+   35.75959,
+   -118.59431
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/123437538",
+    "retrieved_at": "2026-11-18",
+    "lat": 35.75959,
+    "lng": -118.59431,
+    "fact": "MP GPS equals stored; filed under Southern Sierra western slope."
+   },
+   {
+    "url": "https://edits.nationalmap.gov/apps/gaz-domestic/public/search/names/1660354",
+    "retrieved_at": "2026-11-18",
+    "lat": 35.7596156,
+    "lng": -118.5948214,
+    "fact": "GNIS summit Bohna Peak, Kern County CA."
+   }
+  ],
+  "note": "Stored correct (MP + GNIS). Parent Western Sierra is a large region."
+ },
+ {
+  "id": "va_high_knob_landform",
+  "verdict": "ok",
+  "stored": [
+   36.8547241753625,
+   -82.6669041940279
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/108293709",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.9193,
+    "lng": -82.62689,
+    "fact": "MP: Virginia > Southwest Virginia (Appalachia); ~8 km from stored."
+   }
+  ],
+  "note": "Region-sized landform; stored within 10 km of MP. Parent SW Virginia is large; MP files it there."
+ },
+ {
+  "id": "ca_limekiln_state_park",
+  "verdict": "ok",
+  "stored": [
+   36.01479,
+   -121.53067
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/203561168",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.01479,
+    "lng": -121.53067,
+    "fact": "MP: California > Central Coast; GPS equals stored."
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/Limekiln_State_Park",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.01,
+    "lng": -121.51833,
+    "fact": "Wikipedia infobox for Limekiln State Park, ~1.2 km from stored."
+   }
+  ],
+  "note": "Stored correct; parent Central Coast is a large region."
+ },
+ {
+  "id": "ca_camp_3_campground_boulders",
+  "verdict": "ok",
+  "stored": [
+   35.80942,
+   -118.45396
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/201489028",
+    "retrieved_at": "2026-11-18",
+    "lat": 35.80942,
+    "lng": -118.45396,
+    "fact": "MP GPS equals stored; Southern Sierra, Kern River."
+   }
+  ],
+  "note": "Parent Western Sierra is a large region (MP: Southern Sierra western slope)."
+ },
+ {
+  "id": "mt_bad_rock_canyon",
+  "verdict": "ok",
+  "stored": [
+   48.38554,
+   -114.10253
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/113703368",
+    "retrieved_at": "2026-11-18",
+    "lat": 48.38554,
+    "lng": -114.10253,
+    "fact": "MP: Montana > Northwest Region > Kalispell; GPS equals stored."
+   }
+  ],
+  "note": "Parent Northwest Region is a large region."
+ },
+ {
+  "id": "ca_doyle_area",
+  "verdict": "ok",
+  "stored": [
+   40.0631943611111,
+   -120.053439983333
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/116166857",
+    "retrieved_at": "2026-11-18",
+    "lat": 40.04583,
+    "lng": -120.10536,
+    "fact": "MP: California > Northeast California; ~5 km from stored."
+   }
+  ],
+  "note": "Area-sized; stored within ~5 km of MP. Parent Northeast California is a large region."
+ },
+ {
+  "id": "wy_t_rex_boulders",
+  "verdict": "fix_one_source",
+  "stored": [
+   43.0046,
+   -107.842
+  ],
+  "new_lat": 41.47623,
+  "new_lng": -109.30566,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/105837946",
+    "retrieved_at": "2026-11-18",
+    "lat": 41.47623,
+    "lng": -109.30566,
+    "fact": "MP: Wyoming > Rock Springs > T-Rex Boulders; GPS near Rock Springs."
+   }
+  ],
+  "note": "Stored 43.0046,-107.842 is ~150 km from Rock Springs; MP puts it at Rock Springs. Only MP gives a coordinate."
+ },
+ {
+  "id": "ca_death_valley_np",
+  "verdict": "ok",
+  "stored": [
+   36.05288,
+   -116.71888
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/112845124",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.49666,
+    "lng": -117.11418,
+    "fact": "MP: California > High Desert > Death Valley NP."
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/Death_Valley_National_Park",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.45,
+    "lng": -116.85,
+    "fact": "Wikipedia infobox point for Death Valley National Park."
+   }
+  ],
+  "note": "Park spans ~200 km; stored point lies inside it. Parent High Desert is a large region."
+ },
+ {
+  "id": "nm_tunnel_the",
+  "verdict": "ok",
+  "stored": [
+   32.9455466666667,
+   -105.860193333333
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/105916485",
+    "retrieved_at": "2026-11-18",
+    "lat": 32.9461,
+    "lng": -105.86018,
+    "fact": "MP: New Mexico > other Southern Areas > The Tunnel; equals stored."
+   }
+  ],
+  "note": "Parent is a statewide catch-all region."
+ },
+ {
+  "id": "nm_roy",
+  "verdict": "ok",
+  "stored": [
+   36.0476568703704,
+   -104.33574312963
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/116551105",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.05624,
+    "lng": -104.36164,
+    "fact": "MP: New Mexico > other Northern Areas > Roy; ~2.5 km from stored."
+   }
+  ],
+  "note": "Parent is a statewide catch-all region."
+ },
+ {
+  "id": "va_devil_s_marbleyard",
+  "verdict": "ok",
+  "stored": [
+   37.581109,
+   -79.471941
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/114031728",
+    "retrieved_at": "2026-11-18",
+    "lat": 37.58114,
+    "lng": -79.47191,
+    "fact": "MP: Virginia > Southwest Virginia (Appalachia); equals stored."
+   }
+  ],
+  "note": "Stored correct; MP files it under the same large region."
+ },
+ {
+  "id": "ca_domeland_wilderness",
+  "verdict": "ok",
+  "stored": [
+   35.9180786666667,
+   -118.2479665
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/111777675",
+    "retrieved_at": "2026-11-18",
+    "lat": 35.9317,
+    "lng": -118.23193,
+    "fact": "MP: Southern Sierra - Needles, Kern River, Domelands; ~2 km from stored."
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/Domeland_Wilderness",
+    "retrieved_at": "2026-11-18",
+    "lat": 35.88333,
+    "lng": -118.20917,
+    "fact": "Wikipedia infobox for Domeland Wilderness, ~5 km from stored."
+   }
+  ],
+  "note": "Wilderness-sized area; stored is inside it. Parent Western Sierra is large."
+ },
+ {
+  "id": "ca_old_woman_statue",
+  "verdict": "ok",
+  "stored": [
+   34.5216,
+   -115.1649
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/122018878",
+    "retrieved_at": "2026-11-18",
+    "lat": 34.52164,
+    "lng": -115.16511,
+    "fact": "MP: High Desert > Old Woman Mountains > Old Woman Statue; equals stored."
+   }
+  ],
+  "note": "Parent High Desert is a large region."
+ },
+ {
+  "id": "nc_eagle_rock",
+  "verdict": "fix_one_source",
+  "stored": [
+   35.526688,
+   -81.051083
+  ],
+  "new_lat": 35.48246,
+  "new_lng": -82.19042,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/106037528",
+    "retrieved_at": "2026-11-18",
+    "lat": 35.48246,
+    "lng": -82.19042,
+    "fact": "MP Eagle Rock (Chimney Rock State Park crags), Southern Mountains Region."
+   },
+   {
+    "url": "https://www.romanticasheville.com/eagle-rock",
+    "retrieved_at": "2026-11-18",
+    "lat": null,
+    "lng": null,
+    "fact": "Search snippet: Eagle Rock lies inside Chimney Rock State Park (no coordinate printed)."
+   }
+  ],
+  "note": "Stored lng -81.05 is ~100 km east of Chimney Rock SP, where MP and other pages put Eagle Rock. Only MP prints a coordinate."
+ },
+ {
+  "id": "nm_catfishin_hole",
+  "verdict": "ok",
+  "stored": [
+   33.25305,
+   -108.87661
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/116573205",
+    "retrieved_at": "2026-11-18",
+    "lat": 33.25305,
+    "lng": -108.87661,
+    "fact": "MP: New Mexico > other Southern Areas; equals stored."
+   }
+  ],
+  "note": "Parent is a statewide catch-all region."
+ },
+ {
+  "id": "az_lee_s_ferry",
+  "verdict": "ok",
+  "stored": [
+   36.8465,
+   -111.68364
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/111698992",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.8465,
+    "lng": -111.68364,
+    "fact": "MP: Northern Arizona > Marble Canyon; equals stored."
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/Lees_Ferry",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.8675,
+    "lng": -111.59528,
+    "fact": "Wikipedia infobox for Lees Ferry, ~8 km from stored."
+   }
+  ],
+  "note": "Parent Northern Arizona is a large region."
+ },
+ {
+  "id": "ca_tar_creek_the_swimming_hole",
+  "verdict": "ok",
+  "stored": [
+   34.4573,
+   -118.9232
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/105796891",
+    "retrieved_at": "2026-11-18",
+    "lat": 34.4573,
+    "lng": -118.9232,
+    "fact": "MP: California > Central Coast; equals stored."
+   }
+  ],
+  "note": "MP files it under Central Coast too; parent is a large region."
+ },
+ {
+  "id": "id_riggins_limestone",
+  "verdict": "ok",
+  "stored": [
+   45.385745,
+   -116.444894166667
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/109289537",
+    "retrieved_at": "2026-11-18",
+    "lat": 45.383,
+    "lng": -116.45447,
+    "fact": "MP: West Idaho > Riggins > Riggins Limestone; ~1 km from stored."
+   }
+  ],
+  "note": "Parent West Idaho is a large region."
+ },
+ {
+  "id": "id_salmon_river_road",
+  "verdict": "ok",
+  "stored": [
+   45.40379,
+   -116.19416
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/109289537/riggins-limestone",
+    "retrieved_at": "2026-11-18",
+    "lat": 45.40502,
+    "lng": -116.19447,
+    "fact": "MP sibling Riggins Bouldering and DWS (under Riggins) GPS, ~0.1 km from stored."
+   }
+  ],
+  "note": "No MP page named Salmon River Road found (Riggins children: Manning Crevice, Riggins Bouldering and DWS, Riggins Limestone). Stored sits beside MP Riggins Bouldering; parent West Idaho is large. Weak."
+ },
+ {
+  "id": "wa_bypass_the",
+  "verdict": "unresolved",
+  "stored": [
+   47.16536,
+   -121.95127
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/105882219",
+    "retrieved_at": "2026-11-18",
+    "lat": 47.16536,
+    "lng": -121.95127,
+    "fact": "MP GPS equals stored but MP labels it a best guess; text: 10 minutes from White Salmon."
+   }
+  ],
+  "note": "Stored (near Enumclaw) contradicts MP description (10 min from White Salmon, Columbia Gorge). No page prints a real coordinate."
+ },
+ {
+  "id": "ca_walker_river_canyon",
+  "verdict": "ok",
+  "stored": [
+   38.4205666666667,
+   -119.456036666667
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/107688415",
+    "retrieved_at": "2026-11-18",
+    "lat": 38.40273,
+    "lng": -119.45365,
+    "fact": "MP: Eastern Sierra > Northern; ~2 km from stored."
+   }
+  ],
+  "note": "Canyon-sized; parent Sierra Eastside is a large region."
+ },
+ {
+  "id": "nv_wild_granites_the",
+  "verdict": "ok",
+  "stored": [
+   39.070444,
+   -117.213874
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/110087262",
+    "retrieved_at": "2026-11-18",
+    "lat": 39.07203,
+    "lng": -117.21454,
+    "fact": "MP: Nevada > Western Nevada > The Wild Granites; equals stored."
+   }
+  ],
+  "note": "Parent Western Nevada is a large region."
+ },
+ {
+  "id": "az_mollies_nipple",
+  "verdict": "parent_wrong",
+  "stored": [
+   36.08409,
+   -113.36338
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://edits.nationalmap.gov/apps/gaz-domestic/public/search/names/8196",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.0838323,
+    "lng": -113.3638741,
+    "fact": "GNIS summit Mollies Nipple, Mohave County AZ (Whitmore Point SE quad)."
+   }
+  ],
+  "note": "Child correct per GNIS. No MP page found. Parent Unconventionals stores the Northern Arizona coordinate (a category list, not a place); no parent coordinate to give."
+ },
+ {
+  "id": "co_u_s_36",
+  "verdict": "unresolved",
+  "stored": [
+   38.9936,
+   -105.93
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/107996378",
+    "retrieved_at": "2026-11-18",
+    "lat": 38.9936,
+    "lng": -105.93,
+    "fact": "MP itself prints placeholder GPS 38.9936,-105.93 (CO Ice & Mixed > St Vrain ice)."
+   }
+  ],
+  "note": "Stored and MP both carry a generic Colorado placeholder; no page gives the real ice-climb location (Lyons area)."
+ },
+ {
+  "id": "co_boxcar_the",
+  "verdict": "parent_wrong",
+  "stored": [
+   37.30992,
+   -107.86253
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": 37.31105,
+  "parent_new_lng": -107.86121,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/105828006",
+    "retrieved_at": "2026-11-18",
+    "lat": 37.30992,
+    "lng": -107.86253,
+    "fact": "MP: Durango > X Rock > The Boxcar; equals stored."
+   },
+   {
+    "url": "https://www.mountainproject.com/area/105820409",
+    "retrieved_at": "2026-11-18",
+    "lat": 37.31105,
+    "lng": -107.86121,
+    "fact": "MP parent X Rock (Colorado > Durango) GPS; stored parent lng -109.48."
+   }
+  ],
+  "note": "Child correct; parent X Rock stored ~143 km west (lng -109.48); MP puts X Rock at -107.861 (one source for parent)."
+ },
+ {
+  "id": "co_east_of_peak_to_peak_s_st_vrain",
+  "verdict": "unresolved",
+  "stored": [
+   38.9936,
+   -105.93
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/105747064",
+    "retrieved_at": "2026-11-18",
+    "lat": 38.9936,
+    "lng": -105.93,
+    "fact": "MP prints placeholder GPS 38.9936,-105.93 (St Vrain ice)."
+   }
+  ],
+  "note": "MP placeholder copied; real location not printed on any page found."
+ },
+ {
+  "id": "co_west_of_peak_to_peak_middle_st_vrain",
+  "verdict": "unresolved",
+  "stored": [
+   38.9936,
+   -105.93
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/105747070",
+    "retrieved_at": "2026-11-18",
+    "lat": 38.9936,
+    "lng": -105.93,
+    "fact": "MP prints placeholder GPS 38.9936,-105.93 (St Vrain ice)."
+   }
+  ],
+  "note": "MP placeholder copied; real location not printed on any page found."
+ },
+ {
+  "id": "co_gullies_the",
+  "verdict": "parent_wrong",
+  "stored": [
+   37.31117,
+   -107.8611
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": 37.31105,
+  "parent_new_lng": -107.86121,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/105827539",
+    "retrieved_at": "2026-11-18",
+    "lat": 37.31117,
+    "lng": -107.8611,
+    "fact": "MP: Durango > X Rock > The Gullies; equals stored."
+   },
+   {
+    "url": "https://www.mountainproject.com/area/105820409",
+    "retrieved_at": "2026-11-18",
+    "lat": 37.31105,
+    "lng": -107.86121,
+    "fact": "MP parent X Rock (Colorado > Durango) GPS; stored parent lng -109.48."
+   }
+  ],
+  "note": "Child correct; parent X Rock stored ~143 km west (lng -109.48); MP puts X Rock at -107.861 (one source for parent)."
+ },
+ {
+  "id": "az_red_point",
+  "verdict": "ok",
+  "stored": [
+   36.05313,
+   -113.68845
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://edits.nationalmap.gov/apps/gaz-domestic/public/search/names/10103",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.0549867,
+    "lng": -113.6885561,
+    "fact": "GNIS cliff Red Point, Mohave County AZ (Tincanebitts Point quad)."
+   }
+  ],
+  "note": "Stored matches GNIS (0.2 km). No MP page. Parent Points is a category list (its GPS is not this place)."
+ },
+ {
+  "id": "co_dos_xx",
+  "verdict": "parent_wrong",
+  "stored": [
+   37.3124,
+   -107.8587
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": 37.31105,
+  "parent_new_lng": -107.86121,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/106948407",
+    "retrieved_at": "2026-11-18",
+    "lat": 37.3124,
+    "lng": -107.8587,
+    "fact": "MP: Durango > X Rock > Dos XX; equals stored."
+   },
+   {
+    "url": "https://www.mountainproject.com/area/105820409",
+    "retrieved_at": "2026-11-18",
+    "lat": 37.31105,
+    "lng": -107.86121,
+    "fact": "MP parent X Rock (Colorado > Durango) GPS; stored parent lng -109.48."
+   }
+  ],
+  "note": "Child correct; parent X Rock stored ~143 km west (lng -109.48); MP puts X Rock at -107.861 (one source for parent)."
+ },
+ {
+  "id": "co_ken_s_face",
+  "verdict": "parent_wrong",
+  "stored": [
+   37.3128,
+   -107.8583
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": 37.31105,
+  "parent_new_lng": -107.86121,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/106948278",
+    "retrieved_at": "2026-11-18",
+    "lat": 37.3128,
+    "lng": -107.8583,
+    "fact": "MP: Durango > X Rock > Ken's Face; equals stored."
+   },
+   {
+    "url": "https://www.mountainproject.com/area/105820409",
+    "retrieved_at": "2026-11-18",
+    "lat": 37.31105,
+    "lng": -107.86121,
+    "fact": "MP parent X Rock (Colorado > Durango) GPS; stored parent lng -109.48."
+   }
+  ],
+  "note": "Child correct; parent X Rock stored ~143 km west (lng -109.48); MP puts X Rock at -107.861 (one source for parent)."
+ },
+ {
+  "id": "ca_wagon_caves",
+  "verdict": "ok",
+  "stored": [
+   36.0815571428571,
+   -121.401985714286
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/105737114",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.0841,
+    "lng": -121.401,
+    "fact": "MP: California > Central Coast > Wagon Caves; equals stored."
+   }
+  ],
+  "note": "Parent Central Coast is a large region."
+ },
+ {
+  "id": "co_gold_wall",
+  "verdict": "parent_wrong",
+  "stored": [
+   37.31071,
+   -107.86172
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": 37.31105,
+  "parent_new_lng": -107.86121,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/105820435",
+    "retrieved_at": "2026-11-18",
+    "lat": 37.31071,
+    "lng": -107.86172,
+    "fact": "MP: Durango > X Rock > Gold Wall; equals stored."
+   },
+   {
+    "url": "https://www.mountainproject.com/area/105820409",
+    "retrieved_at": "2026-11-18",
+    "lat": 37.31105,
+    "lng": -107.86121,
+    "fact": "MP parent X Rock (Colorado > Durango) GPS; stored parent lng -109.48."
+   }
+  ],
+  "note": "Child correct; parent X Rock stored ~143 km west (lng -109.48); MP puts X Rock at -107.861 (one source for parent)."
+ },
+ {
+  "id": "co_x_rock_2",
+  "verdict": "parent_wrong",
+  "stored": [
+   37.31105,
+   -107.86121
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": 37.31105,
+  "parent_new_lng": -107.86121,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/105827216",
+    "retrieved_at": "2026-11-18",
+    "lat": 37.31099,
+    "lng": -107.86121,
+    "fact": "MP: Durango > X Rock > X Rock; equals stored."
+   },
+   {
+    "url": "https://www.mountainproject.com/area/105820409",
+    "retrieved_at": "2026-11-18",
+    "lat": 37.31105,
+    "lng": -107.86121,
+    "fact": "MP parent X Rock (Colorado > Durango) GPS; stored parent lng -109.48."
+   }
+  ],
+  "note": "Child correct; parent X Rock stored ~143 km west (lng -109.48); MP puts X Rock at -107.861 (one source for parent)."
+ },
+ {
+  "id": "ca_big_sur",
+  "verdict": "ok",
+  "stored": [
+   35.9664159259259,
+   -121.516976666667
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/105737120",
+    "retrieved_at": "2026-11-18",
+    "lat": 35.8386,
+    "lng": -121.4012,
+    "fact": "MP: California > Central Coast > Big Sur; ~17 km from stored."
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/Big_Sur",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.299216,
+    "lng": -121.873402,
+    "fact": "Wikipedia infobox point for the Big Sur region."
+   }
+  ],
+  "note": "Big Sur is a ~140 km coastline; stored lies within it. Parent Central Coast is large."
+ },
+ {
+  "id": "co_sweet_sandstone",
+  "verdict": "parent_wrong",
+  "stored": [
+   37.31119,
+   -107.86095
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": 37.31105,
+  "parent_new_lng": -107.86121,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/108238836",
+    "retrieved_at": "2026-11-18",
+    "lat": 37.31119,
+    "lng": -107.86095,
+    "fact": "MP: Durango > X Rock > Sweet Sandstone; equals stored."
+   },
+   {
+    "url": "https://www.mountainproject.com/area/105820409",
+    "retrieved_at": "2026-11-18",
+    "lat": 37.31105,
+    "lng": -107.86121,
+    "fact": "MP parent X Rock (Colorado > Durango) GPS; stored parent lng -109.48."
+   }
+  ],
+  "note": "Child correct; parent X Rock stored ~143 km west (lng -109.48); MP puts X Rock at -107.861 (one source for parent)."
+ },
+ {
+  "id": "co_dry_st_vrain",
+  "verdict": "unresolved",
+  "stored": [
+   38.9936,
+   -105.93
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/108032639",
+    "retrieved_at": "2026-11-18",
+    "lat": 38.9936,
+    "lng": -105.93,
+    "fact": "MP prints placeholder GPS 38.9936,-105.93 (St Vrain ice)."
+   }
+  ],
+  "note": "MP placeholder copied; real location not printed on any page found."
+ },
+ {
+  "id": "nm_san_andres_canyon",
+  "verdict": "ok",
+  "stored": [
+   32.78002,
+   -105.88157
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/119895658",
+    "retrieved_at": "2026-11-18",
+    "lat": 32.78002,
+    "lng": -105.88157,
+    "fact": "MP: New Mexico > other Southern Areas; equals stored."
+   }
+  ],
+  "note": "Parent is a statewide catch-all region."
+ },
+ {
+  "id": "co_elementary_wall",
+  "verdict": "parent_wrong",
+  "stored": [
+   37.31048,
+   -107.86225
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": 37.31105,
+  "parent_new_lng": -107.86121,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/105820412",
+    "retrieved_at": "2026-11-18",
+    "lat": 37.31048,
+    "lng": -107.86225,
+    "fact": "MP: Durango > X Rock > Elementary Wall; equals stored."
+   },
+   {
+    "url": "https://www.mountainproject.com/area/105820409",
+    "retrieved_at": "2026-11-18",
+    "lat": 37.31105,
+    "lng": -107.86121,
+    "fact": "MP parent X Rock (Colorado > Durango) GPS; stored parent lng -109.48."
+   }
+  ],
+  "note": "Child correct; parent X Rock stored ~143 km west (lng -109.48); MP puts X Rock at -107.861 (one source for parent)."
+ },
+ {
+  "id": "nm_steeple_rock",
+  "verdict": "ok",
+  "stored": [
+   32.7995,
+   -108.9441
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/106554173",
+    "retrieved_at": "2026-11-18",
+    "lat": 32.7995,
+    "lng": -108.9441,
+    "fact": "MP: New Mexico > other Southern Areas; equals stored."
+   }
+  ],
+  "note": "Parent is a statewide catch-all region."
+ },
+ {
+  "id": "mo_upper_limits_west_county",
+  "verdict": "ok",
+  "stored": [
+   38.69463,
+   -90.41254
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/110948354",
+    "retrieved_at": "2026-11-18",
+    "lat": 38.69463,
+    "lng": -90.41254,
+    "fact": "MP: Missouri > Indoor Walls; equals stored (St. Louis)."
+   }
+  ],
+  "note": "Parent Indoor Walls is a statewide list, not a place."
+ },
+ {
+  "id": "ak_angel_creek_rocks",
+  "verdict": "ok",
+  "stored": [
+   65.023735,
+   -146.2022425
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/105982597",
+    "retrieved_at": "2026-11-18",
+    "lat": 65.02788,
+    "lng": -146.19742,
+    "fact": "MP: Fairbanks & Vicinity > Angel Creek Rocks; ~0.5 km from stored."
+   }
+  ],
+  "note": "Parent Fairbanks and Vicinity is a large region."
+ },
+ {
+  "id": "nv_wheeler_peak",
+  "verdict": "ok",
+  "stored": [
+   38.98578,
+   -114.31392
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/105972685",
+    "retrieved_at": "2026-11-18",
+    "lat": 38.98578,
+    "lng": -114.31392,
+    "fact": "MP: Nevada > Eastern Nevada; equals stored."
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/Wheeler_Peak_(Nevada)",
+    "retrieved_at": "2026-11-18",
+    "lat": 38.9860572,
+    "lng": -114.3133307,
+    "fact": "Wikipedia infobox summit coordinate."
+   }
+  ],
+  "note": "Stored correct (two sources); parent Eastern Nevada is large."
+ },
+ {
+  "id": "co_x_rock",
+  "verdict": "fix_one_source",
+  "stored": [
+   37.3611433333333,
+   -109.477705555556
+  ],
+  "new_lat": 37.31105,
+  "new_lng": -107.86121,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/105820409",
+    "retrieved_at": "2026-11-18",
+    "lat": 37.31105,
+    "lng": -107.86121,
+    "fact": "MP parent X Rock (Colorado > Durango) GPS; stored parent lng -109.48."
+   }
+  ],
+  "note": "Stored lng -109.478 is ~142 km west of Durango; MP X Rock and all 8 MP child walls sit at ~37.311,-107.861. Only MP gives it."
+ },
+ {
+  "id": "id_split_rock",
+  "verdict": "ok",
+  "stored": [
+   42.98606,
+   -116.96526
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/201327850",
+    "retrieved_at": "2026-11-18",
+    "lat": 42.98606,
+    "lng": -116.96526,
+    "fact": "MP: Idaho > West Idaho > Split Rock; equals stored."
+   }
+  ],
+  "note": "Parent West Idaho is a large region."
+ },
+ {
+  "id": "or_harris_beach",
+  "verdict": "ok",
+  "stored": [
+   42.06651,
+   -124.31286
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/116785249",
+    "retrieved_at": "2026-11-18",
+    "lat": 42.06651,
+    "lng": -124.31286,
+    "fact": "MP Harris Beach GPS equals stored (MP files under Coastal Region)."
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/Harris_Beach_State_Park",
+    "retrieved_at": "2026-11-18",
+    "lat": 42.0670561,
+    "lng": -124.3070395,
+    "fact": "Wikipedia infobox for Harris Beach State Park."
+   }
+  ],
+  "note": "Stored correct (two sources); Brookings is in SW Oregon, parent is a large region."
+ },
+ {
+  "id": "va_trestles_the",
+  "verdict": "ok",
+  "stored": [
+   37.3559,
+   -79.4164
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/106886306",
+    "retrieved_at": "2026-11-18",
+    "lat": 37.3559,
+    "lng": -79.4164,
+    "fact": "MP: Central & Southern VA Region > The Trestles; equals stored."
+   }
+  ],
+  "note": "Parent Central & Southern VA is a large region."
+ },
+ {
+  "id": "az_chiricahua_national_monument",
+  "verdict": "ok",
+  "stored": [
+   32.01263,
+   -109.33875
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/106257506",
+    "retrieved_at": "2026-11-18",
+    "lat": 32.01263,
+    "lng": -109.33875,
+    "fact": "MP: Southern Arizona; equals stored."
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/Chiricahua_National_Monument",
+    "retrieved_at": "2026-11-18",
+    "lat": 32.00569,
+    "lng": -109.35672,
+    "fact": "Wikipedia infobox, ~1.8 km from stored."
+   }
+  ],
+  "note": "Stored correct; parent Southern Arizona is large."
+ },
+ {
+  "id": "nm_main_area_the",
+  "verdict": "unresolved",
+  "stored": [
+   36.00491,
+   -105.1222
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/108398604/the-main-area",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.00491,
+    "lng": -105.12219,
+    "fact": "MP Main Area, The under Three Gun prints this GPS, same as stored."
+   },
+   {
+    "url": "https://www.mountainproject.com/area/106388177",
+    "retrieved_at": "2026-11-18",
+    "lat": 35.0763,
+    "lng": -106.4442,
+    "fact": "MP Three Gun (Tres Pistolas), Sandia Foothills, Albuquerque."
+   }
+  ],
+  "note": "MP itself carries the wrong child GPS (~140 km from Three Gun). No page prints the real spot. Stored parent is also ~18 km off MP Three Gun."
+ },
+ {
+  "id": "or_mt_thielsen",
+  "verdict": "ok",
+  "stored": [
+   43.15208,
+   -122.06641
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/109205346",
+    "retrieved_at": "2026-11-18",
+    "lat": 43.15208,
+    "lng": -122.06639,
+    "fact": "MP: Oregon > Oregon Volcanoes > Mt. Thielsen; equals stored."
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/Mount_Thielsen",
+    "retrieved_at": "2026-11-18",
+    "lat": 43.152837292,
+    "lng": -122.066514283,
+    "fact": "Wikipedia infobox summit coordinate."
+   }
+  ],
+  "note": "Stored correct (two sources); parent Oregon Volcanoes is a statewide region."
+ },
+ {
+  "id": "nm_sugarite_canyon_state_park",
+  "verdict": "ok",
+  "stored": [
+   36.97986,
+   -104.39473
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/106186303",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.9798,
+    "lng": -104.3937,
+    "fact": "MP: New Mexico > other Northern Areas; equals stored."
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/Sugarite_Canyon_State_Park",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.94083,
+    "lng": -104.37972,
+    "fact": "Wikipedia infobox, ~4.5 km from stored (park-sized)."
+   }
+  ],
+  "note": "Stored inside the park; parent is a statewide catch-all region."
+ }
+]

@@ -1,0 +1,279 @@
+{
+ "wa_south_early_winters_spire_nothing": {
+  "area": "wa_south_early_winters_spire",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/124424403/nothing",
+    "https://www.mountainproject.com/area/106257377/south-early-winters-spire",
+    "https://www.mountainproject.com/route/106585962/the-passenger",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/blue-lake-trailhead",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_02/MapServer/0/query?geometry=-120.6554,48.5123&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownerclassification,forestname&returnGeometry=false&f=json",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_Wilderness_01/MapServer/0/query?geometry=-120.6554,48.5123&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=WILDERNESSNAME&returnGeometry=false&f=json"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.11d A0",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/124424403/nothing",
+      "fact": "5.11d YDS, A0 (aid)",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 12,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/124424403/nothing",
+      "fact": "12 pitches",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "length_m",
+    "value": 305,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/124424403/nothing",
+      "fact": "1000 ft (303 m)",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_south_early_winters_spire_nothing",
+    "column": "access",
+    "from": null,
+    "to": {
+     "fees": "$5/vehicle day-use e-Pass or $30 annual Northwest Forest Pass, purchasable via Recreation.gov",
+     "rules": "Leave No Trace; no camping within 0.25 mile of Blue Lake; no stock or mechanized travel on the climbers' path",
+     "permit": "No climbing or wilderness permit required",
+     "closures": "SR-20 (North Cascades Highway) is gated and closed for winter, typically early-to-mid December through mid-April/May depending on snowpack",
+     "seasonal": "WA-20 (North Cascades Highway) closes gate-to-gate roughly early December–mid/late April; the entire Washington Pass corridor is car-inaccessible in winter.",
+     "landManager": "Okanogan-Wenatchee National Forest, Methow Valley Ranger District",
+     "land_manager": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)",
+     "parking_pass": "Northwest Forest Pass required at Washington Pass Overlook, Blue Lake, and Cutthroat trailheads — $5/day or $30/annual (America the Beautiful pass also honored).",
+     "passRequired": "Northwest Forest Pass or Interagency (America the Beautiful) Pass",
+     "overnight_permit": {
+      "url": null,
+      "what": "No overnight permit required",
+      "where": "This is general Okanogan-Wenatchee National Forest land outside any wilderness boundary; parties bivy informally at the trailhead or a highway pullout. A Northwest Forest Pass or day-use fee is needed to park, and no camping is allowed within a quarter mile of Blue Lake itself."
+     }
+    },
+    "why": "access is empty. Copied field for field from the live object on wa_concord_tower_north_face. Same trailhead: the route starts about 150 ft right of the Hitchhiker on the slabs reached from the base of the South Arete (MP; the Passenger page puts these starts down and right of the South Arete base), and that base is reached from the Blue Lake Trail (MP spire page); the descent is the South Arete, back to the same trail. Re-read 2026-11-23: the USFS Blue Lake Trailhead page (updated 2026-06-09) names the Methow Valley RD, says the trailhead serves the Liberty Bell and Early Winters climbing areas, $5 per vehicle per day or $30 a year, Digital Day Pass, Northwest Forest Pass or Interagency passes, no stock, no motorized or mechanized travel, no camping within 0.25 mile of the lake, not reachable while SR-20 is closed in winter. USFS ownership layer = USDA Forest Service; wilderness layer = none. official-1, 12 months, after apply.",
+    "evidence": [
+     "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/blue-lake-trailhead",
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_02/MapServer/0/query?geometry=-120.6554,48.5123&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownerclassification,forestname&returnGeometry=false&f=json",
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_Wilderness_01/MapServer/0/query?geometry=-120.6554,48.5123&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=WILDERNESSNAME&returnGeometry=false&f=json",
+     "https://www.mountainproject.com/route/124424403/nothing",
+     "https://www.mountainproject.com/area/106257377/south-early-winters-spire",
+     "https://www.mountainproject.com/route/106585962/the-passenger"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_south_early_winters_spire_nothing",
+    "column": "permit",
+    "from": null,
+    "to": "No climbing or wilderness permit required; Northwest Forest Pass (or day fee) to park at developed trailheads.",
+    "why": "permit is empty. Copied from wa_concord_tower_north_face (same trailhead and manager). The USFS Blue Lake Trailhead page states fees only and no permit; the spire is outside any wilderness (USFS layer).",
+    "evidence": [
+     "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/blue-lake-trailhead",
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_Wilderness_01/MapServer/0/query?geometry=-120.6554,48.5123&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=WILDERNESSNAME&returnGeometry=false&f=json"
+    ]
+   }
+  ],
+  "held": [
+   {
+    "table": "routes",
+    "id": "wa_south_early_winters_spire_nothing",
+    "column": "discipline",
+    "from": "sport",
+    "to": "alpine",
+    "why": "HELD (owner rule question, not a source dispute): MP types it Sport, Aid, Alpine and the stored sport matches MP's first type. But it is a 12-pitch, 1000 ft, Grade III line on a Washington Pass spire with a roughly hour-long approach and a South Arete downclimb-and-rappel descent; the siblings on this spire are stored alpine (0413/0418 rule). Discipline never changes on one source; owner decides.",
+    "evidence": [
+     "https://www.mountainproject.com/route/124424403/nothing",
+     "https://www.mountainproject.com/area/106257377/south-early-winters-spire"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_south_early_winters_spire_nothing",
+    "column": "commitment",
+    "from": null,
+    "to": "III",
+    "why": "HELD: Grade III from MP alone (a commitment grade from MP alone is held).",
+    "evidence": [
+     "https://www.mountainproject.com/route/124424403/nothing"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "Checked as asked: MP states 5.11d A0, Sport/Aid/Alpine, 1000 ft (303 m), 12 pitches, Grade III, FA Ron Cotman and Leland Windham, July 2001; the stored grade, pitches, length and FA all match. Pitches 12 matches the only published topo (P1-P12 graded on MP). The route is nearly all bolted (MP gives per-pitch bolt counts; P8 5.4 has no protection) and MP's protection line is 20 quickdraws; no total bolt count is stated, so bolts not proposed (a sum would be derived). FA not locked (MP only; an FA never locks at the 1-source tier). theCrag sent my tab to its bot check on the second area page, so no second source could be read; grade, pitches and length are at the 1-source tier. MP's spire page recommends the SR-20 hairpin for routes on the EAST side; this route is on the south/southeast slabs reached from the South Arete base, so Blue Lake is its trailhead."
+ },
+ "wa_south_early_winters_spire_east_buttress_direct": {
+  "area": "wa_south_early_winters_spire",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/106883451/east-buttress-direct",
+    "https://www.mountainproject.com/area/106257377/south-early-winters-spire",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/blue-lake-trailhead",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_02/MapServer/0/query?geometry=-120.6554,48.5123&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownerclassification,forestname&returnGeometry=false&f=json",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_Wilderness_01/MapServer/0/query?geometry=-120.6554,48.5123&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=WILDERNESSNAME&returnGeometry=false&f=json"
+   ]
+  },
+  "ledger": [],
+  "sql_fixes": [],
+  "held": [
+   {
+    "table": "routes",
+    "id": "wa_south_early_winters_spire_east_buttress_direct",
+    "column": "access",
+    "from": null,
+    "to": "(wa_concord_tower_north_face object)",
+    "why": "HELD: the land manager is the same (OWNF, Methow Valley RD, outside wilderness), but the approach differs: MP's route page parks at the SR-20 hairpin and climbs Spire Gully, with Blue Lake only as an alternative, and MP's spire page recommends the hairpin for the east side. The Concord object names the Blue Lake/Overlook/Cutthroat fee sites, not the hairpin pullout, and no official page states a pass rule for the hairpin. Brief T: approach differs, so held.",
+    "evidence": [
+     "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/blue-lake-trailhead",
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_02/MapServer/0/query?geometry=-120.6554,48.5123&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownerclassification,forestname&returnGeometry=false&f=json",
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_Wilderness_01/MapServer/0/query?geometry=-120.6554,48.5123&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=WILDERNESSNAME&returnGeometry=false&f=json"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "CATALOG DEFECT (duplicate): this row and wa_south_early_winter_spire_direct_east_buttress ('Direct East Buttress', alpine, 5.11a, 9 pitches, 335 m, FA Fred Beckey and Doug Leen 1968, III, hairpin approach) are the same line under the same area. Per the duplicate rule nothing else is proposed here. For the owner: MP states 5.11a with A0 options on P4 and P6 (stored '5.11a A0' agrees), Trad, Alpine, 9 pitches (stored 9 agrees), Grade III (stored commitment null), no length, FA Beckey and Leen 1968 (agrees), no FFA. Discipline trad vs the twin's alpine: with a hairpin approach of about 1.5 h and a South Arete descent, the alpine rule fits; whichever row survives should be alpine."
+ },
+ "wa_north_early_winter_spire_constantino_whitelaw": {
+  "area": "wa_south_early_winters_spire",
+  "set": {
+   "fa": "Duane Constantino, David Whitelaw, 1977"
+  },
+  "review": {
+   "sources": [
+    "https://publications.americanalpineclub.org/articles/12197918305",
+    "https://www.mountainproject.com/area/106257377/south-early-winters-spire",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/blue-lake-trailhead",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_02/MapServer/0/query?geometry=-120.6554,48.5123&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownerclassification,forestname&returnGeometry=false&f=json",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_Wilderness_01/MapServer/0/query?geometry=-120.6554,48.5123&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=WILDERNESSNAME&returnGeometry=false&f=json"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "fa",
+    "value": "Duane Constantino, David Whitelaw, 1977",
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://publications.americanalpineclub.org/articles/12197918305",
+      "fact": "Duane Constantino and David Whitelaw, July 1977, SE face of South Early Winter Spire",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [],
+  "held": [
+   {
+    "table": "routes",
+    "id": "wa_north_early_winter_spire_constantino_whitelaw",
+    "column": "access",
+    "from": null,
+    "to": "(wa_concord_tower_north_face object)",
+    "why": "HELD: the manager is the same (OWNF, Methow Valley RD, outside wilderness), but no source places this route's start or says which trailhead it uses. It is on the southeast face (AAJ), and MP's spire page recommends the SR-20 hairpin for east-side routes. Same-trailhead condition not met.",
+    "evidence": [
+     "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/blue-lake-trailhead",
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_02/MapServer/0/query?geometry=-120.6554,48.5123&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownerclassification,forestname&returnGeometry=false&f=json",
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_Wilderness_01/MapServer/0/query?geometry=-120.6554,48.5123&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=WILDERNESSNAME&returnGeometry=false&f=json"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_north_early_winter_spire_constantino_whitelaw",
+    "column": "discipline",
+    "from": "trad",
+    "to": "alpine",
+    "why": "HELD: a multi-pitch Grade III-IV free/aid line on a Washington Pass spire fits the trad-to-alpine rule, but only one source describes it; discipline never changes on one source.",
+    "evidence": [
+     "https://publications.americanalpineclub.org/articles/12197918305"
+    ]
+   }
+  ],
+  "disputed": [
+   "aid_grade: stored C2; the 1979 AAJ report gives A2 (45 ft of aid on tube chocks) and also says the route goes clean. One source; not changed.",
+   "commitment: stored IV; the AAJ report says 'III or IV'. Not locked."
+  ],
+  "notes": "SETTLED which spire: SOUTH Early Winter Spire. The 1979 AAJ report written by David Whitelaw (AAJ vol. 22) places the Constantino-Whitelaw line on the southeast face of South Early Winter Spire: begun 1976, finished in one day in July 1977 with Duane Constantino; second ascent solo by Quin Koenig. So area_id (wa_south_early_winters_spire) is right and the ID is wrong: CATALOG DEFECT, the id says NORTH (not moved or renamed). Free grade F9 agrees with the stored 5.9 but is one source, not locked. No pitch total or length is given (four leads to a ledge, then several more). FA added from the first-ascent party's own AAJ report, unconfirmed (an FA never locks on one source). The route is not on Mountain Project's spire page; theCrag blocked my tab."
+ },
+ "wa_north_early_winter_spire_christianson_roskelley": {
+  "area": "wa_north_early_winters_spire",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/105792196/north-early-winter-spire",
+    "https://www.thecrag.com/en/climbing/united-states/north-cascade-mountains/area/14395285",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/blue-lake-trailhead"
+   ]
+  },
+  "ledger": [],
+  "sql_fixes": [],
+  "held": [
+   {
+    "table": "routes",
+    "id": "wa_north_early_winter_spire_christianson_roskelley",
+    "column": "access",
+    "from": null,
+    "to": "(wa_concord_tower_north_face object)",
+    "why": "HELD: manager is the same (OWNF, outside wilderness), but no source places this route on a face or names its trailhead. MP's NEWS page calls the Blue Lake approach best for the spire, but east-side NEWS lines (Early Winter Couloir) start at the hairpin.",
+    "evidence": [
+     "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/blue-lake-trailhead",
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_02/MapServer/0/query?geometry=-120.6554,48.5123&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownerclassification,forestname&returnGeometry=false&f=json",
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_Wilderness_01/MapServer/0/query?geometry=-120.6554,48.5123&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=WILDERNESSNAME&returnGeometry=false&f=json"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "STUCK / suspect row: no publisher names this route. It is not on Mountain Project's NEWS page (6 routes), not on theCrag's NEWS list (5 routes: NW Corner, West Face, East Buttress 5.10b III, Pangaea, Early Winter Couloir), and searches found no AAJ report. Stored grade 5.9, commitment III and guide_stars 0 are unverified. Possibly another name for theCrag's 'East Buttress' (5.10b III), but nothing links them. Owner decides whether the row stays."
+ },
+ "wa_north_early_winter_spire_twitch_of_the_death_nerve": {
+  "area": "wa_north_early_winters_spire",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/105792196/north-early-winter-spire",
+    "https://www.thecrag.com/en/climbing/united-states/north-cascade-mountains/area/14395285",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/blue-lake-trailhead"
+   ]
+  },
+  "ledger": [],
+  "sql_fixes": [],
+  "held": [
+   {
+    "table": "routes",
+    "id": "wa_north_early_winter_spire_twitch_of_the_death_nerve",
+    "column": "access",
+    "from": null,
+    "to": "(wa_concord_tower_north_face object)",
+    "why": "HELD: manager is the same, but no source places this route on a face or names its trailhead.",
+    "evidence": [
+     "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/blue-lake-trailhead",
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_02/MapServer/0/query?geometry=-120.6554,48.5123&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownerclassification,forestname&returnGeometry=false&f=json",
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_Wilderness_01/MapServer/0/query?geometry=-120.6554,48.5123&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=WILDERNESSNAME&returnGeometry=false&f=json"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "STUCK / suspect row: no publisher found for this route or its stored FA 'Greg Olson (solo) 1987'. Not on Mountain Project's or theCrag's NEWS lists; no AAJ report found by search. Grade 5.8+, prot_rating R and the FA are unverified. Owner decides."
+ }
+}

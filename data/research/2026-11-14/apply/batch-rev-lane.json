@@ -1,0 +1,29 @@
+{
+ "wa_lane_peak_r1": {
+  "ledger": [
+   {
+    "field": "gain_ft",
+    "value": 2000,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://mazamas.org/activity/instance/9144/detail/",
+      "retrieved_at": "2026-11-23",
+      "fact": "Lane Peak, The Zipper: Elevation Gain 2,000, Narada Falls Trailhead"
+     },
+     {
+      "url": "https://www.willhiteweb.com/mount_rainier_national_park/lane_peak/tatoosh_range_301.htm",
+      "retrieved_at": "2026-11-23",
+      "fact": "Lane Peak Elevation Gain: 2,000 feet; winter start Narada Falls; author did the Zipper"
+     }
+    ]
+   }
+  ],
+  "set": {
+   "gain_ft": 2000
+  },
+  "note": "owner-review pass 2026-11-23: stored 2,000 confirmed by two pages; Mountaineers 1,500 is the outlier",
+  "area": "wa_lane_peak"
+ }
+}

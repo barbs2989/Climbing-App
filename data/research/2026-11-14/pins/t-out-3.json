@@ -1,0 +1,75 @@
+[
+ {
+  "route_id": "wa_mount_rainier_edmunds_headwall",
+  "verdict": "unresolved",
+  "final_gain": null,
+  "trailhead_today": "Mowich Lake (SR 165) -- NO public access: SR165/Fairfax Bridge closed to vehicles, bikes and pedestrians (NPS, per previous pass)",
+  "trailhead_elev_official": 4929,
+  "summit_elev_official": 14112,
+  "figures": [],
+  "evidence": [
+   {"url": "https://en.wikipedia.org/wiki/Mowich_Lake", "retrieved_at": "2026-11-18", "fact": "Mowich Lake surface elevation 4,929 ft (1,502 m); GNIS cited. Lake surface, not the trailhead lot itself."},
+   {"url": "https://en.wikipedia.org/wiki/Mount_Rainier", "retrieved_at": "2026-11-18", "fact": "Liberty Cap, 14,112 ft (4,301 m), lowest of the three named summits, at the northwestern edge."}
+  ],
+  "closures": "NPS: no public access to Mowich Lake via SR165; Fairfax Bridge closed (WSDOT 4/22/25). 2009 cascadeclimbers TR also found the road gated 5 mi before the lake.",
+  "note": "Both pins check out (4,930 vs lake 4,929; 14,112 = Liberty Cap), so the stored 8,470 is the suspect number, but no opened page states a one-way gain. 2018 cascadeclimbers TR (topic 101926): the approach drops about 1,300 vertical ft off Ptarmigan Ridge to the N. Mowich Glacier, so real gain exceeds the net rise. Peakbagger/ListsofJohn pages returned 'permission denied' in this browser."
+ },
+ {
+  "route_id": "wa_mount_rainier_curtis_ridge",
+  "verdict": "unresolved",
+  "final_gain": null,
+  "trailhead_today": "White River Campground (White River Road, Mount Rainier NP); seasonal",
+  "trailhead_elev_official": 4440,
+  "summit_elev_official": 14410,
+  "figures": [],
+  "evidence": [
+   {"url": "https://en.wikipedia.org/wiki/Mount_Rainier", "retrieved_at": "2026-11-18", "fact": "NPS and USGS cite the summit as Columbia Crest at 14,410 ft (1956, NGVD29); infobox gives 14,406 ft (2025, NAVD88)."},
+   {"url": "https://en.wikipedia.org/wiki/Mount_Rainier", "retrieved_at": "2026-11-18", "fact": "Columbia Crest has melted to 14,394.6 ft; Southwest Rim measured 14,406.3 ft, now the highest point."}
+  ],
+  "closures": "White River Road/campground seasonal (Recreation.gov, previous pass: opens late June/early July).",
+  "note": "Summit pin 14,406 matches the 2025 NAVD88 highest point (Wikipedia); trailhead pin 4,400 vs Recreation.gov 4,440 (previous pass). Pins look fine, so stored 9,500 is the suspect, but no opened page gives a one-way gain for Curtis Ridge (cascadeclimbers 2014/2023 TRs: no numbers; supertopo TR page errored). Peakbagger/ListsofJohn returned 'permission denied' in this browser."
+ },
+ {
+  "route_id": "wa_hadley_peak_skyline_divide",
+  "verdict": "unresolved",
+  "final_gain": null,
+  "trailhead_today": "Skyline Divide Trailhead (#678, end of FR 37) -- INACCESSIBLE: FR 37 closed at mile 3.1 (2021 flood), no repair date",
+  "trailhead_elev_official": null,
+  "summit_elev_official": null,
+  "figures": [
+   {"value": 3100, "trailhead": "Skyline Divide Trailhead", "one_way": true, "url": "https://www.nwhikers.net/forums/viewtopic.php?p=416039", "fact": "NWHikers 2008 TR: 3,100 feet net gain to summit; ~4,700 cumulative gain; ~14 miles. Net figure, not cumulative."},
+   {"value": 4700, "trailhead": "Skyline Divide Trailhead", "one_way": false, "url": "https://www.nwhikers.net/forums/viewtopic.php?p=416039", "fact": "Same TR: ~4,700 cumulative gain for the ~14-mile trip (whole outing)."},
+   {"value": 4000, "trailhead": "Skyline Divide Trailhead (4,400 ft per this TR)", "one_way": false, "url": "https://cascadeclimbers.com/forum/topic/104208-tr-hadley-peak-7515-skyline-divide-trail-to-south-ridge-09252021/", "fact": "2021 TR: trailhead (4400'), summit 7515', about 15 miles, total elevation gain around 4000' (round trip)."},
+   {"value": 4700, "trailhead": "Skyline Divide Trailhead", "one_way": false, "url": "https://www.mountaineers.org/activities/routes-places/hadley-peak", "fact": "Previous pass: Mountaineers 13.0 mi, 4,700 ft gain, high point 7,515 ft (whole outing)."}
+  ],
+  "evidence": [],
+  "closures": "USFS Skyline Divide Trail 678 page (opened 2026-11-18): trailhead inaccessible due to road damage at mile 3.1; FS Road 37 Deadhorse Creek CLOSED until further notice; no estimated repair date.",
+  "note": "No two pages give a one-way cumulative gain. One TR gives 3,100 ft NET to the summit and another puts the trailhead at 4,400 ft (pin says 4,250), both pointing at a trailhead pin ~150 ft low, but each is a single source, so not settled. Stored 2,818 is below every published figure. USFS trail page gives no trailhead elevation; mt-baker.com (snippet only: trail begins at 4,400 ft) would not load."
+ },
+ {
+  "route_id": "wa_wright_pond",
+  "verdict": "unresolved",
+  "final_gain": null,
+  "trailhead_today": null,
+  "trailhead_elev_official": null,
+  "summit_elev_official": null,
+  "figures": [],
+  "evidence": [],
+  "closures": "unknown",
+  "note": "Three more searches ('Wright Pond' + climb/mountainproject; + Washington Pass/Early Winters/Cutthroat; + route Washington rock climb) found only Wright Pond Cliffs in New Jersey. No climb by this name exists near Early Winters/Little Liberty Bell on any page found. The route row is probably misnamed or misfiled; it needs a catalog check, not a gain fix."
+ },
+ {
+  "route_id": "wa_south_face_2",
+  "verdict": "unresolved",
+  "final_gain": null,
+  "trailhead_today": "SR-20 pullout near Milepost 166, east of Washington Pass; approach via Chablis Spire East Face to the Chablis-Pernod notch (Mountain Project)",
+  "trailhead_elev_official": null,
+  "summit_elev_official": null,
+  "figures": [
+   {"value": 4000, "trailhead": "SR-20 pullout near MP 166 (Wine Spires generally)", "one_way": false, "url": "https://www.mountaineers.org/activities/routes-places/wine-spires", "fact": "Previous pass: Wine Spires 6.0 mi, 4,000 ft gain, high point 8,500 ft; area-wide, not Pernod-specific."}
+  ],
+  "evidence": [],
+  "closures": "None found (SR-20 closes seasonally in winter).",
+  "note": "MP South Face page (opened) gives 150 ft, 2 pitches, approach via Chablis East Face, but no gain or elevations. ListsofJohn Pernod page (8,506 ft per search snippet only) and Peakbagger returned 'permission denied' in this browser; Peakbagger has no indexed Pernod page; Wikipedia has no Wine Spires article. No route-specific gain found."
+ }
+]

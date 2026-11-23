@@ -1,0 +1,1298 @@
+[
+ {
+  "id": "az_redwall_cavern",
+  "verdict": "ok",
+  "stored": [
+   36.49028,
+   -111.84007
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.openstreetmap.org/search?query=Redwall%20Cavern",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.490169,
+    "lng": -111.840133,
+    "fact": "Nominatim attraction Redwall Cavern, Coconino County"
+   },
+   {
+    "url": "https://www.mountainproject.com/area/107870670/redwall-cavern",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.10733,
+    "lng": -112.11205,
+    "fact": "MP shows a generic Grand Canyon placeholder point, not the cavern"
+   }
+  ],
+  "note": "Stored matches OSM (river mile ~33). Grand Canyon Bouldering is canyon-wide; MP point is itself a placeholder."
+ },
+ {
+  "id": "ca_walk_on_beach",
+  "verdict": "ok",
+  "stored": [
+   38.7335,
+   -123.4903
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/117395011/walk-on-beach",
+    "retrieved_at": "2026-11-18",
+    "lat": 38.7335,
+    "lng": -123.4903,
+    "fact": "MP GPS equals stored"
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/The_Sea_Ranch,_California",
+    "retrieved_at": "2026-11-18",
+    "lat": 38.71528,
+    "lng": -123.45444,
+    "fact": "Sea Ranch community where Walk On Beach lies"
+   }
+  ],
+  "note": "Wine Country is a large region; Sonoma-coast beach genuinely ~56 km from its centre."
+ },
+ {
+  "id": "az_sheba_temple",
+  "verdict": "parent_wrong",
+  "stored": [
+   36.06108,
+   -111.92946
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://en.wikipedia.org/wiki/Sheba_Temple",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.0605402,
+    "lng": -111.9301623,
+    "fact": "Infobox coordinate of Sheba Temple"
+   }
+  ],
+  "note": "Child right (0.1 km). Parent \"Temples\" is a category node with a bad point (35.556)."
+ },
+ {
+  "id": "az_solomon_temple",
+  "verdict": "parent_wrong",
+  "stored": [
+   36.05926,
+   -111.91433
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.openstreetmap.org/search?query=Solomon%20Temple%2C%20Arizona",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.057207,
+    "lng": -111.915439,
+    "fact": "Nominatim peak Solomon Temple, Coconino County"
+   }
+  ],
+  "note": "Child right (0.25 km). Parent \"Temples\" category node carries a bad point (35.556)."
+ },
+ {
+  "id": "ca_leconte_boulder",
+  "verdict": "parent_wrong",
+  "stored": [
+   37.73969,
+   -119.57922
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": 37.741417,
+  "parent_new_lng": -119.580083,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://en.wikipedia.org/wiki/Housekeeping_Camp",
+    "retrieved_at": "2026-11-18",
+    "lat": 37.741417,
+    "lng": -119.580083,
+    "fact": "Infobox coordinate of Housekeeping Camp, Yosemite Valley"
+   },
+   {
+    "url": "https://www.mountainproject.com/area/107360694/housekeeping",
+    "retrieved_at": "2026-11-18",
+    "lat": 37.74002,
+    "lng": -119.57915,
+    "fact": "MP Housekeeping bouldering area GPS"
+   }
+  ],
+  "note": "No MP area page for LeConte Boulder (forum mentions only); child unverified but sits with the Housekeeping boulders. Parent wrong."
+ },
+ {
+  "id": "az_colorado_city_area",
+  "verdict": "ok",
+  "stored": [
+   37.013455,
+   -112.975195
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/107491142/colorado-city-area",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.98557,
+    "lng": -112.9752,
+    "fact": "MP area GPS, ~3 km from stored"
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/Colorado_City,_Arizona",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.99028,
+    "lng": -112.98694,
+    "fact": "Town infobox coordinate"
+   }
+  ],
+  "note": "Region-sized area within 3 km of town; Arizona Strip is a large region."
+ },
+ {
+  "id": "ma_rubbish_boulder",
+  "verdict": "parent_wrong",
+  "stored": [
+   42.63705,
+   -70.63559
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": 42.63705,
+  "parent_new_lng": -70.63559,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/110493851/rubbish-boulder",
+    "retrieved_at": "2026-11-18",
+    "lat": 42.63705,
+    "lng": -70.63559,
+    "fact": "MP GPS equals stored"
+   },
+   {
+    "url": "https://www.openstreetmap.org/search?query=Cape%20Pond%2C%20Rockport%2C%20Massachusetts",
+    "retrieved_at": "2026-11-18",
+    "lat": 42.64012,
+    "lng": -70.62804,
+    "fact": "Nominatim reservoir Cape Pond, Rockport (0.7 km)"
+   }
+  ],
+  "note": "Parent Cape Pond Boulders stored at 42.148 (south shore); MP gives 42.63705,-70.63559."
+ },
+ {
+  "id": "ca_housekeeping",
+  "verdict": "fix",
+  "stored": [
+   37.42674,
+   -119.100598571429
+  ],
+  "new_lat": 37.741417,
+  "new_lng": -119.580083,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://en.wikipedia.org/wiki/Housekeeping_Camp",
+    "retrieved_at": "2026-11-18",
+    "lat": 37.741417,
+    "lng": -119.580083,
+    "fact": "Infobox coordinate of Housekeeping Camp, Yosemite Valley"
+   },
+   {
+    "url": "https://www.mountainproject.com/area/107360694/housekeeping",
+    "retrieved_at": "2026-11-18",
+    "lat": 37.74002,
+    "lng": -119.57915,
+    "fact": "MP Housekeeping bouldering area GPS"
+   }
+  ],
+  "note": "Stored 37.43,-119.10 is outside Yosemite Valley; two sources agree within 0.2 km."
+ },
+ {
+  "id": "ca_hidden_loaf",
+  "verdict": "parent_wrong",
+  "stored": [
+   37.74057,
+   -119.58016
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": 37.741417,
+  "parent_new_lng": -119.580083,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/119069151/hidden-loaf",
+    "retrieved_at": "2026-11-18",
+    "lat": 37.74057,
+    "lng": -119.58016,
+    "fact": "MP boulder GPS matches stored child"
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/Housekeeping_Camp",
+    "retrieved_at": "2026-11-18",
+    "lat": 37.741417,
+    "lng": -119.580083,
+    "fact": "Infobox coordinate of Housekeeping Camp, Yosemite Valley"
+   },
+   {
+    "url": "https://www.mountainproject.com/area/107360694/housekeeping",
+    "retrieved_at": "2026-11-18",
+    "lat": 37.74002,
+    "lng": -119.57915,
+    "fact": "MP Housekeeping bouldering area GPS"
+   }
+  ],
+  "note": "Child right; parent Housekeeping stored at 37.43,-119.10 (outside the Valley)."
+ },
+ {
+  "id": "ca_torque_boulder",
+  "verdict": "parent_wrong",
+  "stored": [
+   37.73924,
+   -119.58003
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": 37.741417,
+  "parent_new_lng": -119.580083,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/110627744/torque-boulder",
+    "retrieved_at": "2026-11-18",
+    "lat": 37.73924,
+    "lng": -119.58003,
+    "fact": "MP boulder GPS matches stored child"
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/Housekeeping_Camp",
+    "retrieved_at": "2026-11-18",
+    "lat": 37.741417,
+    "lng": -119.580083,
+    "fact": "Infobox coordinate of Housekeeping Camp, Yosemite Valley"
+   },
+   {
+    "url": "https://www.mountainproject.com/area/107360694/housekeeping",
+    "retrieved_at": "2026-11-18",
+    "lat": 37.74002,
+    "lng": -119.57915,
+    "fact": "MP Housekeeping bouldering area GPS"
+   }
+  ],
+  "note": "Child right; parent Housekeeping stored at 37.43,-119.10 (outside the Valley)."
+ },
+ {
+  "id": "ma_jukebox_boulders",
+  "verdict": "parent_wrong",
+  "stored": [
+   42.63705,
+   -70.63559
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": 42.63705,
+  "parent_new_lng": -70.63559,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/110493861/jukebox-boulders",
+    "retrieved_at": "2026-11-18",
+    "lat": 42.63705,
+    "lng": -70.63559,
+    "fact": "MP GPS equals stored"
+   },
+   {
+    "url": "https://www.openstreetmap.org/search?query=Cape%20Pond%2C%20Rockport%2C%20Massachusetts",
+    "retrieved_at": "2026-11-18",
+    "lat": 42.64012,
+    "lng": -70.62804,
+    "fact": "Nominatim reservoir Cape Pond, Rockport (0.7 km)"
+   }
+  ],
+  "note": "Parent Cape Pond Boulders stored at 42.148; belongs at Cape Pond, Rockport."
+ },
+ {
+  "id": "ca_housekeeping_boulder_the",
+  "verdict": "parent_wrong",
+  "stored": [
+   37.74049,
+   -119.58002
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": 37.741417,
+  "parent_new_lng": -119.580083,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/110627557/the-housekeeping-boulder",
+    "retrieved_at": "2026-11-18",
+    "lat": 37.74049,
+    "lng": -119.58002,
+    "fact": "MP boulder GPS matches stored child"
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/Housekeeping_Camp",
+    "retrieved_at": "2026-11-18",
+    "lat": 37.741417,
+    "lng": -119.580083,
+    "fact": "Infobox coordinate of Housekeeping Camp, Yosemite Valley"
+   },
+   {
+    "url": "https://www.mountainproject.com/area/107360694/housekeeping",
+    "retrieved_at": "2026-11-18",
+    "lat": 37.74002,
+    "lng": -119.57915,
+    "fact": "MP Housekeeping bouldering area GPS"
+   }
+  ],
+  "note": "Child right; parent Housekeeping stored at 37.43,-119.10 (outside the Valley)."
+ },
+ {
+  "id": "ca_athletes_die_young",
+  "verdict": "parent_wrong",
+  "stored": [
+   37.7393,
+   -119.5793
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": 37.741417,
+  "parent_new_lng": -119.580083,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/110627724/athletes-die-young",
+    "retrieved_at": "2026-11-18",
+    "lat": 37.7393,
+    "lng": -119.5793,
+    "fact": "MP boulder GPS matches stored child"
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/Housekeeping_Camp",
+    "retrieved_at": "2026-11-18",
+    "lat": 37.741417,
+    "lng": -119.580083,
+    "fact": "Infobox coordinate of Housekeeping Camp, Yosemite Valley"
+   },
+   {
+    "url": "https://www.mountainproject.com/area/107360694/housekeeping",
+    "retrieved_at": "2026-11-18",
+    "lat": 37.74002,
+    "lng": -119.57915,
+    "fact": "MP Housekeeping bouldering area GPS"
+   }
+  ],
+  "note": "Child right; parent Housekeeping stored at 37.43,-119.10 (outside the Valley)."
+ },
+ {
+  "id": "ca_yuba_pass",
+  "verdict": "ok",
+  "stored": [
+   39.61133,
+   -120.49456
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/127350918/yuba-pass",
+    "retrieved_at": "2026-11-18",
+    "lat": 39.61133,
+    "lng": -120.49456,
+    "fact": "MP GPS equals stored"
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/Yuba_Pass",
+    "retrieved_at": "2026-11-18",
+    "lat": 39.6175,
+    "lng": -120.49,
+    "fact": "Yuba Pass (Sierra County) infobox"
+   }
+  ],
+  "note": "0.8 km agreement; The Lost Sierra is a large region."
+ },
+ {
+  "id": "ca_king_tut_boulder",
+  "verdict": "parent_wrong",
+  "stored": [
+   37.73969,
+   -119.57921
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": 37.741417,
+  "parent_new_lng": -119.580083,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/110627595/king-tut-boulder",
+    "retrieved_at": "2026-11-18",
+    "lat": 37.73969,
+    "lng": -119.57921,
+    "fact": "MP boulder GPS matches stored child"
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/Housekeeping_Camp",
+    "retrieved_at": "2026-11-18",
+    "lat": 37.741417,
+    "lng": -119.580083,
+    "fact": "Infobox coordinate of Housekeeping Camp, Yosemite Valley"
+   },
+   {
+    "url": "https://www.mountainproject.com/area/107360694/housekeeping",
+    "retrieved_at": "2026-11-18",
+    "lat": 37.74002,
+    "lng": -119.57915,
+    "fact": "MP Housekeeping bouldering area GPS"
+   }
+  ],
+  "note": "Child right; parent Housekeeping stored at 37.43,-119.10 (outside the Valley)."
+ },
+ {
+  "id": "ca_pathway_boulders",
+  "verdict": "parent_wrong",
+  "stored": [
+   37.74048,
+   -119.58002
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": 37.741417,
+  "parent_new_lng": -119.580083,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/117100105/pathway-boulders",
+    "retrieved_at": "2026-11-18",
+    "lat": 37.74048,
+    "lng": -119.58002,
+    "fact": "MP boulder GPS matches stored child"
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/Housekeeping_Camp",
+    "retrieved_at": "2026-11-18",
+    "lat": 37.741417,
+    "lng": -119.580083,
+    "fact": "Infobox coordinate of Housekeeping Camp, Yosemite Valley"
+   },
+   {
+    "url": "https://www.mountainproject.com/area/107360694/housekeeping",
+    "retrieved_at": "2026-11-18",
+    "lat": 37.74002,
+    "lng": -119.57915,
+    "fact": "MP Housekeeping bouldering area GPS"
+   }
+  ],
+  "note": "Child right; parent Housekeeping stored at 37.43,-119.10 (outside the Valley)."
+ },
+ {
+  "id": "ca_backside_boulders",
+  "verdict": "fix_one_source",
+  "stored": [
+   35.02161,
+   -117.16688
+  ],
+  "new_lat": 34.31377,
+  "new_lng": -116.808,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/107883948/backside-boulders",
+    "retrieved_at": "2026-11-18",
+    "lat": 34.31377,
+    "lng": -116.808,
+    "fact": "MP Backside Boulders GPS; stored equals MP parent High Desert Bouldering point"
+   }
+  ],
+  "note": "Stored 35.02161,-117.16688 is MP High Desert Bouldering's own GPS copied onto the child."
+ },
+ {
+  "id": "az_fins_trails_park",
+  "verdict": "ok",
+  "stored": [
+   33.31905,
+   -112.44904
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/118689420/fins-trails-park",
+    "retrieved_at": "2026-11-18",
+    "lat": 33.31905,
+    "lng": -112.44904,
+    "fact": "MP GPS equals stored"
+   }
+  ],
+  "note": "Only MP checked; Phoenix Areas is a metro-wide region, 54 km plausible."
+ },
+ {
+  "id": "az_mount_acaba",
+  "verdict": "ok",
+  "stored": [
+   36.31716,
+   -112.63291
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.openstreetmap.org/search?query=Mount%20Akaba",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.316649,
+    "lng": -112.632689,
+    "fact": "Nominatim peak Mount Akaba (spelling), Coconino County"
+   }
+  ],
+  "note": "Stored matches OSM (0.05 km). Parent \"Mountains\" is a park-wide category."
+ },
+ {
+  "id": "vt_halifax_gorge",
+  "verdict": "ok",
+  "stored": [
+   42.74711,
+   -72.74563
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/122855516/halifax-gorge",
+    "retrieved_at": "2026-11-18",
+    "lat": 42.74711,
+    "lng": -72.74563,
+    "fact": "MP GPS equals stored"
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/Halifax,_Vermont",
+    "retrieved_at": "2026-11-18",
+    "lat": 42.77083,
+    "lng": -72.74944,
+    "fact": "Town infobox, 2.6 km away"
+   }
+  ],
+  "note": "Lonely Rocks - Southern is a southern-Vermont-wide region."
+ },
+ {
+  "id": "oh_rockhouse",
+  "verdict": "parent_wrong",
+  "stored": [
+   39.34107,
+   -82.0619
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": 39.3411,
+  "parent_new_lng": -82.06359,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/123971242/rockhouse",
+    "retrieved_at": "2026-11-18",
+    "lat": 39.34107,
+    "lng": -82.0619,
+    "fact": "MP GPS equals stored; MP parent Trailer Park Boulders 39.3411,-82.06359"
+   }
+  ],
+  "note": "Parent Trailer Park Boulders stored at 39.651,-82.539; MP has it beside this child (one source)."
+ },
+ {
+  "id": "ut_er_boulders",
+  "verdict": "ok",
+  "stored": [
+   37.7743375,
+   -111.42436
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/119214954/er-boulders",
+    "retrieved_at": "2026-11-18",
+    "lat": 37.77434,
+    "lng": -111.42436,
+    "fact": "MP GPS equals stored"
+   }
+  ],
+  "note": "Grand Staircase is a large region; beside Escalante Natural Bridge (OSM-verified)."
+ },
+ {
+  "id": "ca_boulder_gardens",
+  "verdict": "ok",
+  "stored": [
+   34.21146,
+   -116.55755
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/117995238/boulder-gardens",
+    "retrieved_at": "2026-11-18",
+    "lat": 34.21065,
+    "lng": -116.55936,
+    "fact": "MP GPS, 0.2 km from stored"
+   }
+  ],
+  "note": "High Desert Bouldering is a large region."
+ },
+ {
+  "id": "ca_j_paul_pebble_the",
+  "verdict": "ok",
+  "stored": [
+   34.04112,
+   -118.56571
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/118980946/the-j-paul-pebble",
+    "retrieved_at": "2026-11-18",
+    "lat": 34.04112,
+    "lng": -118.56571,
+    "fact": "MP GPS equals stored"
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/Getty_Villa",
+    "retrieved_at": "2026-11-18",
+    "lat": 34.045,
+    "lng": -118.565,
+    "fact": "Getty Villa infobox, 0.4 km"
+   }
+  ],
+  "note": "Beaches is an LA-wide region."
+ },
+ {
+  "id": "va_new_beginnings_area",
+  "verdict": "unresolved",
+  "stored": [
+   37.04411,
+   -81.763285
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/108774616/new-beginnings-area",
+    "retrieved_at": "2026-11-18",
+    "lat": 37.02657,
+    "lng": -81.52159,
+    "fact": "MP area GPS; its two child walls are 20 km apart"
+   },
+   {
+    "url": "https://www.mountainproject.com/area/108774619/new-beginnings-wall",
+    "retrieved_at": "2026-11-18",
+    "lat": 37.06165,
+    "lng": -81.65342,
+    "fact": "MP child wall GPS"
+   },
+   {
+    "url": "https://www.mountainproject.com/area/108774623/virtues-roof",
+    "retrieved_at": "2026-11-18",
+    "lat": 37.02657,
+    "lng": -81.87315,
+    "fact": "MP child GPS; text says hike right from New Beginnings Wall"
+   }
+  ],
+  "note": "MP coordinates internally inconsistent and far from Guest River Gorge (MP parent 36.89936,-82.42035). Needs owner."
+ },
+ {
+  "id": "ut_school_section_canyon",
+  "verdict": "ok",
+  "stored": [
+   39.22007,
+   -110.07888
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/126403708/school-section-canyon",
+    "retrieved_at": "2026-11-18",
+    "lat": 39.22007,
+    "lng": -110.07888,
+    "fact": "MP GPS equals stored"
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/Desolation_Canyon",
+    "retrieved_at": "2026-11-18",
+    "lat": 39.41667,
+    "lng": -110.01111,
+    "fact": "Desolation Canyon infobox point"
+   }
+  ],
+  "note": "Desolation Canyon runs ~135 km; child genuinely far from parent point."
+ },
+ {
+  "id": "oh_commitment_boulder",
+  "verdict": "parent_wrong",
+  "stored": [
+   39.34183,
+   -82.06438
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": 39.3411,
+  "parent_new_lng": -82.06359,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/106600816/commitment-boulder",
+    "retrieved_at": "2026-11-18",
+    "lat": 39.34358,
+    "lng": -82.06503,
+    "fact": "MP GPS, 0.2 km from stored; MP parent 39.3411,-82.06359"
+   }
+  ],
+  "note": "Parent Trailer Park Boulders stored wrong (one source)."
+ },
+ {
+  "id": "ak_scott_peak",
+  "verdict": "ok",
+  "stored": [
+   63.3417,
+   -150.1254
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/106357031/scott-peak",
+    "retrieved_at": "2026-11-18",
+    "lat": 63.3417,
+    "lng": -150.1254,
+    "fact": "MP GPS equals stored"
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/Scott_Peak_(Alaska)",
+    "retrieved_at": "2026-11-18",
+    "lat": 63.34472,
+    "lng": -150.12583,
+    "fact": "Infobox, 0.3 km"
+   }
+  ],
+  "note": "Denali NP is a huge region."
+ },
+ {
+  "id": "oh_daytrippin_wall",
+  "verdict": "unresolved",
+  "stored": [
+   39.9603,
+   -83.0127
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/106604594/daytrippin-wall",
+    "retrieved_at": "2026-11-18",
+    "lat": 39.9603,
+    "lng": -83.0127,
+    "fact": "MP flags this point as its best guess"
+   }
+  ],
+  "note": "Stored = MP placeholder (Columbus); real spot near Trailer Park Boulders unknown."
+ },
+ {
+  "id": "ut_escalante_natural_bridge",
+  "verdict": "ok",
+  "stored": [
+   37.77264,
+   -111.44441
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/200890553/escalante-natural-bridge",
+    "retrieved_at": "2026-11-18",
+    "lat": 37.77264,
+    "lng": -111.44441,
+    "fact": "MP GPS equals stored"
+   },
+   {
+    "url": "https://www.openstreetmap.org/search?query=Escalante%20Natural%20Bridge%2C%20Utah",
+    "retrieved_at": "2026-11-18",
+    "lat": 37.772312,
+    "lng": -111.444661,
+    "fact": "Nominatim arch, Garfield County"
+   }
+  ],
+  "note": "Grand Staircase is a large region."
+ },
+ {
+  "id": "ak_mt_sanford",
+  "verdict": "ok",
+  "stored": [
+   62.21052,
+   -144.12762
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/201515673/mt-sanford",
+    "retrieved_at": "2026-11-18",
+    "lat": 62.21052,
+    "lng": -144.12762,
+    "fact": "MP GPS equals stored"
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/Mount_Sanford_(Alaska)",
+    "retrieved_at": "2026-11-18",
+    "lat": 62.2138889,
+    "lng": -144.1288889,
+    "fact": "Infobox, 0.4 km"
+   }
+  ],
+  "note": "Wrangell Mountains is a large range."
+ },
+ {
+  "id": "ca_portola_potty",
+  "verdict": "ok",
+  "stored": [
+   39.77221,
+   -120.43353
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/117090476/portola-potty",
+    "retrieved_at": "2026-11-18",
+    "lat": 39.77221,
+    "lng": -120.43353,
+    "fact": "MP GPS equals stored"
+   }
+  ],
+  "note": "The Lost Sierra is a large region (one source)."
+ },
+ {
+  "id": "va_thunder_ridge_mile_74_1",
+  "verdict": "ok",
+  "stored": [
+   37.54328,
+   -79.48384
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/120611597/thunder-ridge-mile-741",
+    "retrieved_at": "2026-11-18",
+    "lat": 37.54327,
+    "lng": -79.48383,
+    "fact": "MP GPS equals stored"
+   }
+  ],
+  "note": "Blue Ridge Parkway is a 470-mile road; mile 74 is far from its centre."
+ },
+ {
+  "id": "ca_bonita_falls",
+  "verdict": "ok",
+  "stored": [
+   34.2307,
+   -117.50534
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/123290728/bonita-falls",
+    "retrieved_at": "2026-11-18",
+    "lat": 34.2307,
+    "lng": -117.50534,
+    "fact": "MP GPS equals stored"
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/Bonita_Falls",
+    "retrieved_at": "2026-11-18",
+    "lat": 34.23028,
+    "lng": -117.50472,
+    "fact": "Infobox coordinate"
+   }
+  ],
+  "note": "Right place (Lytle Creek, San Bernardino NF); MP also files it under Angeles NF."
+ },
+ {
+  "id": "ut_wahweap_bay_area",
+  "verdict": "ok",
+  "stored": [
+   36.95623,
+   -111.4894
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/111862265/wahweap-bay-area",
+    "retrieved_at": "2026-11-18",
+    "lat": 37.01136,
+    "lng": -111.48768,
+    "fact": "MP GPS, ~6 km N of stored"
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/Wahweap,_Arizona",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.99667,
+    "lng": -111.49028,
+    "fact": "Wahweap infobox, 4.5 km"
+   }
+  ],
+  "note": "Region-sized bay area within 10 km; Lake Powell is a huge region."
+ },
+ {
+  "id": "va_reid_hollow_road",
+  "verdict": "ok",
+  "stored": [
+   37.729662,
+   -79.310874
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/119608341/reid-hollow-road",
+    "retrieved_at": "2026-11-18",
+    "lat": 37.72967,
+    "lng": -79.31088,
+    "fact": "MP GPS equals stored"
+   }
+  ],
+  "note": "Charlottesville vicinity is a broad region (one source)."
+ },
+ {
+  "id": "wa_mount_pilchuck",
+  "verdict": "ok",
+  "stored": [
+   48.057974,
+   -121.797918
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://en.wikipedia.org/wiki/Mount_Pilchuck",
+    "retrieved_at": "2026-11-18",
+    "lat": 48.057972,
+    "lng": -121.797806,
+    "fact": "Infobox coordinate equals stored"
+   }
+  ],
+  "note": "Not on MP under Darrington; parent is a large region."
+ },
+ {
+  "id": "wa_oh8",
+  "verdict": "ok",
+  "stored": [
+   45.71055,
+   -121.37375
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/108491275/oh8",
+    "retrieved_at": "2026-11-18",
+    "lat": 45.71055,
+    "lng": -121.37375,
+    "fact": "MP GPS equals stored"
+   }
+  ],
+  "note": "Columbia Gorge is ~130 km long (one source)."
+ },
+ {
+  "id": "ca_lower_kern_river_canyon",
+  "verdict": "ok",
+  "stored": [
+   35.4842769230769,
+   -118.726604615385
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/111906818/lower-kern-river-canyon",
+    "retrieved_at": "2026-11-18",
+    "lat": 35.43935,
+    "lng": -118.79622,
+    "fact": "MP GPS, ~8 km from stored centroid"
+   }
+  ],
+  "note": "Canyon-sized area, within 10 km; parent spans Needles to Kern."
+ },
+ {
+  "id": "vt_bartlett_falls",
+  "verdict": "ok",
+  "stored": [
+   44.127465,
+   -73.046905
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/117758479/bartlett-falls",
+    "retrieved_at": "2026-11-18",
+    "lat": 44.12727,
+    "lng": -73.04679,
+    "fact": "MP GPS equals stored"
+   }
+  ],
+  "note": "Lonely Rocks - Central is a statewide region (one source)."
+ },
+ {
+  "id": "az_mount_wodo",
+  "verdict": "ok",
+  "stored": [
+   36.20525,
+   -112.64994
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.openstreetmap.org/search?query=Mount%20Wodo",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.20526,
+    "lng": -112.649911,
+    "fact": "Nominatim peak Mount Wodo, Coconino County"
+   }
+  ],
+  "note": "Stored matches OSM. Parent \"Mountains\" is a park-wide category."
+ },
+ {
+  "id": "az_panchos_kitchen",
+  "verdict": "unresolved",
+  "stored": [
+   36.39079,
+   -112.52092
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/107717076/panchos-kitchen",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.10733,
+    "lng": -112.11205,
+    "fact": "MP flags this as a best-guess placeholder"
+   }
+  ],
+  "note": "No independent page with coordinates; stored river point may be right but unverified."
+ },
+ {
+  "id": "tx_suicide_zone",
+  "verdict": "fix_one_source",
+  "stored": [
+   31.5424,
+   -97.11643
+  ],
+  "new_lat": 31.16025,
+  "new_lng": -97.48835,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/109528323/suicide-zone",
+    "retrieved_at": "2026-11-18",
+    "lat": 31.16025,
+    "lng": -97.48835,
+    "fact": "MP GPS beside its parent Rogers Park (31.1586,-97.4876)"
+   }
+  ],
+  "note": "Stored 31.54,-97.12 is Waco; MP puts it at Belton Lake."
+ },
+ {
+  "id": "nh_lower_cliff_2",
+  "verdict": "fix_one_source",
+  "stored": [
+   44.03683,
+   -71.119
+  ],
+  "new_lat": 43.1183,
+  "new_lng": -71.1797,
+  "parent_new_lat": 43.10194,
+  "parent_new_lng": -71.18111,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/106514935/lower-cliff",
+    "retrieved_at": "2026-11-18",
+    "lat": 43.1183,
+    "lng": -71.1797,
+    "fact": "MP Pawtuckaway Lower Cliff GPS; MP Pawtuckaway area GPS 43.08391,-71.17542"
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/Pawtuckaway_State_Park",
+    "retrieved_at": "2026-11-18",
+    "lat": 43.10194,
+    "lng": -71.18111,
+    "fact": "State park infobox"
+   }
+  ],
+  "note": "Stored child 44.04 (North Conway) and parent Pawtuckaway 43.58 both wrong; parent: Wikipedia+MP within 2 km."
+ },
+ {
+  "id": "ct_peace_sanctuary",
+  "verdict": "misfiled",
+  "stored": [
+   41.36616,
+   -71.97072
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": 41.35417,
+  "parent_new_lng": -71.96639,
+  "right_parent": "Connecticut > CT Bouldering > Mystic Areas (MP 106696759)",
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/108216305/peace-sanctuary",
+    "retrieved_at": "2026-11-18",
+    "lat": 41.36616,
+    "lng": -71.97072,
+    "fact": "MP GPS equals stored; filed under CT Bouldering > Mystic Areas"
+   },
+   {
+    "url": "https://www.mountainproject.com/area/106696759/mystic-areas",
+    "retrieved_at": "2026-11-18",
+    "lat": 41.36622,
+    "lng": -72.01403,
+    "fact": "MP Mystic Areas (CT Bouldering) lists Peace Sanctuary"
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/Mystic,_Connecticut",
+    "retrieved_at": "2026-11-18",
+    "lat": 41.35417,
+    "lng": -71.96639,
+    "fact": "Mystic infobox"
+   }
+  ],
+  "note": "Child right. Current parent (Eastern Coastal Slope Mystic Areas, empty on MP) stored at -72.58, ~50 km west of Mystic."
+ },
+ {
+  "id": "ny_joe_indian_island",
+  "verdict": "ok",
+  "stored": [
+   44.1676,
+   -74.8369
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/108113389/joe-indian-island",
+    "retrieved_at": "2026-11-18",
+    "lat": 44.1681,
+    "lng": -74.8372,
+    "fact": "MP GPS"
+   },
+   {
+    "url": "https://www.openstreetmap.org/search?query=Joe%20Indian%20Island%2C%20New%20York",
+    "retrieved_at": "2026-11-18",
+    "lat": 44.167703,
+    "lng": -74.830162,
+    "fact": "Nominatim islet, Town of Clifton"
+   }
+  ],
+  "note": "Northern Region of the Adirondacks is a large region."
+ }
+]

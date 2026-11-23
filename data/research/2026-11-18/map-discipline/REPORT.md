@@ -320,3 +320,20 @@ page about the route itself. Archived or cached copies of sites that refuse auto
 - **Audit:** SUMMIT_ONLY 170, NO_SUMMIT 40, CRAG_SUMMIT 0, measured after `batch-r7b.json`. The Spaulding pin
   was written afterwards and verified on re-read; the audit rerun behind it was still queued for the
   database when this was recorded, so the expected count of 169 is not yet measured.
+
+### Round 7 follow-up (2026-11-23)
+
+- **Audit, measured:** SUMMIT_ONLY 167, NO_SUMMIT 40, CRAG_SUMMIT 0 (196 before the round; 30 writes).
+- **Written (2 more, `batch-r7d.json`, unconfirmed, verified on re-read):** Rock Mountain Northeast Ridge (USFS
+  Merritt Lake Trailhead; the row names that trailhead at about 2,950 ft, the ground at the point is 3,027 ft,
+  and the catalog stores the same lot on the Mount Howard routes the traverse crosses) and Cutthroat "The
+  Swarm" (the climbers' pullout the catalog stores on the North Ridge; the row says to begin as for that route).
+- **Checked and left held:** 14ers.com lists only fourteener trailheads, so it gives no second publisher for
+  South Halfmoon, Burns Gulch, Carson Pass or the Horseshoe turnoff. Overpass around the driving-guide
+  waypoints for Lamont, Sirretta and Owens Peak found no lot, trailhead or sign within 400 m
+  (`scripts/op7b.mjs`).
+- **Catalog pins exist for peaks whose stuck routes have no approach text at all:** Chair Peak (Alpental),
+  Mount Johnson (Upper Dungeness), Chimney Rock (Pete Lake), North Early Winter Spire (Blue Lake), Red
+  Mountain (PCT at Snoqualmie Pass), Mount Hinman (Necklace Valley). Pinning those 20 or so routes would be
+  peak-level inference with no page and no row text behind it, so they were not written. This is an owner
+  decision: "same lot as the peak's other routes" is cheap to apply if wanted.
