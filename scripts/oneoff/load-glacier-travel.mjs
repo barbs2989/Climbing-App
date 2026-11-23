@@ -22,8 +22,13 @@ const DRY = process.argv.includes("--dry");
 const key = requireServiceKey();
 const col = (v) => (v === "yes" || v === "no" ? v : null);
 
-const fin = JSON.parse(fs.readFileSync(path.join(ROOT, "research-data", "glacier-travel-2026-11-23", "final.json"), "utf8"));
-const dry = JSON.parse(fs.readFileSync(path.join(ROOT, "research-data", "snow-in-season-2026-11-12", "decisions.json"), "utf8")).filter((d) => d.final === "no").map((d) => d.id);
+// --state <slug> loads research-data/glacier-travel-2026-11-23/<slug>/final.json (a later state's review) and
+// nothing else. With no --state it is the original Washington load: the top-level final.json plus the dry list.
+const SI = process.argv.indexOf("--state"), STATE = SI >= 0 ? process.argv[SI + 1] : null;
+if (SI >= 0 && !/^[a-z]{2}$/.test(String(STATE))) { console.error("--state needs a two-letter slug"); process.exit(2); }
+const fin = JSON.parse(fs.readFileSync(path.join(ROOT, "research-data", "glacier-travel-2026-11-23", ...(STATE ? [STATE] : []), "final.json"), "utf8"));
+const dry = STATE ? [] : JSON.parse(fs.readFileSync(path.join(ROOT, "research-data", "snow-in-season-2026-11-12", "decisions.json"), "utf8")).filter((d) => d.final === "no").map((d) => d.id);
+if (STATE) { const stray = fin.filter((r) => !String(r.id).startsWith(STATE + "_")); if (stray.length) console.log(`note: ${stray.length} reviewed ids do not start with ${STATE}_ (legacy ids); they are loaded by id as reviewed.`); }
 
 const want = new Map();
 for (const r of fin) {
@@ -56,7 +61,7 @@ console.log(`in the catalog: ${before.size}; no longer there: ${missing.length}$
 if (DRY) { console.log("--dry: nothing written."); process.exit(0); }
 
 if (todo.length) {
-  const rb = path.join(ROOT, "scripts", "oneoff", `rollback-glacier-travel-${Date.now()}.json`);
+  const rb = path.join(ROOT, "scripts", "oneoff", `rollback-glacier-travel-${STATE ? STATE + "-" : ""}${Date.now()}.json`);
   fs.writeFileSync(rb, JSON.stringify(todo.map((id) => ({ id, before: { glacier_travel: before.get(id).glacier_travel, snow_in_season: before.get(id).snow_in_season }, after: want.get(id) })), null, 1));
   console.log("rollback:", path.relative(ROOT, rb));
   let n = 0;
