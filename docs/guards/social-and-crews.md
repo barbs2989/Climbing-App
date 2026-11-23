@@ -12,6 +12,9 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     `crew_is_private`).
   - any new SECURITY DEFINER reader of `crew_members` granted to anon/authenticated must answer only a caller on that
     crew, or check `not private`; `crew_listings` and `crew_share_preview` do the latter.
+  **0496 closed the listed crews too**: `crew_visible_to_me` now answers only the organiser and row-holders for every
+  crew, and the bucket `topo-photos` can no longer be LISTED by anyone but a file's owner or an admin (images load
+  by public URL without RLS). The verifier below covers both.
   `scripts/oneoff/verify-0426-private-crew-pglite.mjs` replays every migration into PGlite and walks organiser,
   invitee, outsider and anon through a private and a listed crew (20 expectations, no live database).
 
