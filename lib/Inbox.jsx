@@ -12,6 +12,7 @@ import ActionIcon from "../src/components/ActionIcon.tsx";
 import { POP_BACK } from "./popupChrome.js";
 import { HEAD_H, ZOOM } from "./wideLayout.js";
 import { dmKey, crewKey, MUTE_CHOICES } from "./conversationState.js";
+import { usePaneTop } from "./usePaneTop.js";
 
 /* `pane` is the desktop website's placement (lib/wideLayout.js): "side" is the LEFT PANE of the
    two-pane Messages page — a 280px column at the page column's left edge, the open conversation
@@ -55,7 +56,7 @@ export default function Inbox({restrictedIds,dmUnavailable,crewUnavailable,dmLoa
      opens it is not "outside": it toggles the drop-down itself. */
   const rootRef=useRef(null);
   useEffect(function(){if(pane!=="drop"||!onDismiss)return undefined;const down=function(e){var t=e.target;if(rootRef.current&&!rootRef.current.contains(t)&&!(t.closest&&t.closest('[aria-label="Messages"]')))onDismiss();};const key=function(e){if(e.key==="Escape")onDismiss();};document.addEventListener("mousedown",down);document.addEventListener("keydown",key);return function(){document.removeEventListener("mousedown",down);document.removeEventListener("keydown",key);};},[pane,onDismiss]);
-  const [itab,setItab]=useState("friends");const [msgQ,setMsgQ]=useState("");const mqOk=str=>!msgQ.trim()||(str||"").toLowerCase().includes(msgQ.trim().toLowerCase());
+  const [itab,setItab]=useState("friends");usePaneTop(rootRef,itab);const [msgQ,setMsgQ]=useState("");const mqOk=str=>!msgQ.trim()||(str||"").toLowerCase().includes(msgQ.trim().toLowerCase());
   const [menuFor,setMenuFor]=useState(null);const [archOpen,setArchOpen]=useState(false);
   const convo=_convo||NO_CONVO,onAct=_onAct||function(){};
   const dmIds=Object.keys(msgs||{}).filter(id=>(msgs[id]||[]).length>0);
