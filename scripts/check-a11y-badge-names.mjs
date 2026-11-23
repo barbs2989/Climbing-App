@@ -482,7 +482,7 @@ if (!routeOpen) {
   };
   // "Reports" is "Send Reports" on a crag-only route, and Plan is content-gated, so a
   // sub-tab that is legitimately absent is reported rather than failed.
-  for (const sub of ["Reports", "Photos", "Partners", "Plan", "Safety"]) {
+  for (const sub of ["Reports", "Photos", "Find", "Plan", "Safety"]) {
     if (!(await tapSub(sub))) { log(`  route:${sub}`.padEnd(30) + "  sub-tab not present on this route"); continue; }
     await sweep("route:" + sub);
   }

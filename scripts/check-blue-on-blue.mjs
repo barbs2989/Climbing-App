@@ -43,7 +43,7 @@ const APP = fs.readFileSync(ROOT + "ClimbMatch.jsx", "utf8");
 const NAV = APP.match(/const NAV=\[(.*?)\];/);
 if (!NAV) { console.error("check:blue-on-blue: could not read NAV from ClimbMatch.jsx — its declaration moved"); process.exit(1); }
 const TABS = [...NAV[1].matchAll(/label:"([^"]+)"/g)].map((m) => m[1]);
-const SUBTABS = ["Overview", "Plan", "Conditions", "Reports", "Safety", "Partners", "Photos"];
+const SUBTABS = ["Overview", "Plan", "Conditions", "Reports", "Safety", "Find", "Photos"];
 const OVERLAYS = overlayStates(APP).map((s) => s.name).filter((n) => !NEEDS_EXTRA_STATE[n]);
 if (!OVERLAYS.length) { console.error("check:blue-on-blue: discovered no overlays — the scaffold's discovery has drifted"); process.exit(1); }
 
