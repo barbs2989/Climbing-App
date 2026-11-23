@@ -179,7 +179,11 @@ for (const f of files) {
   }
   for (const m of sql.matchAll(/drop\s+function\s+(?:if\s+exists\s+)?([a-z_0-9.]+)/gi)) {
     const name = m[1].replace(/^public\./, "");
-    if (functions.has(name)) functions.get(name).dropped = true;
+    // A migration that changes a function's ARGUMENT LIST must drop the old signature and create the
+    // new one in the same file (0478 area_latest_reports). The creates above were all read first, so
+    // only a drop with no CREATE of that name AFTER it in this file leaves the function gone.
+    const recreated = new RegExp("create\\s+(?:or\\s+replace\\s+)?function\\s+(?:public\\.)?" + name + "\\s*\\(", "i").test(sql.slice(m.index));
+    if (functions.has(name) && !recreated) functions.get(name).dropped = true;
   }
 
   // EXECUTE grants, in statement order — rule 6. No migration alters default privileges, so a NEW
@@ -373,8 +377,8 @@ if (!writableViews) ok(`all ${views.size} view(s) are read-only to anon and auth
 // Each entry was read in full on 2026-11-14 (latest body in the migration named by the FAIL line).
 const PUBLIC_DEFINER = {
   // ── public route / area reads: aggregates or ids, no identities ──
-  area_top_contributors: "area board: contributor ids + point totals, the same numbers the public board shows",
-  user_top_contributor_areas: "profile badge: area ids/names where a contributor ranks #1 — public by design",
+  // area_top_contributors and user_top_contributor_areas left this list in 0486: the board now reads
+  // auth.uid() to leave out climbers in a block with the reader, and the badge ranks through the board.
   route_star_summary: "average stars + rater count; per-log stars only from trip_report_visibility = 'public'",
   route_field_level: "confidence level of one public route field; reads routes + contribution metadata only",
   route_field_confidence_map: "per-field confidence for a public route plus the moderator's public reason text",
@@ -386,6 +390,10 @@ const PUBLIC_DEFINER = {
   // recent_tags pools cond_tags from private logs too, unattributed and undated across the whole
   // subtree — kept deliberately: conditions are a safety signal and public-only would gut them.
   area_latest_reports: "returns ids of PUBLIC trip reports only (rows then read under RLS) + unattributed cond tags",
+  // First SEEN by this guard on 2026-11-19: 0335 drops and re-creates it in one file, which the guard
+  // read as dropped until the drop loop learned statement order. Signed-in only (anon revoked), and it
+  // returns the two fields a partner row prints for any climber: level and climbing-since year.
+  partner_signals: "level + climbing-since year for the given climber ids, signed-in only — what every partner row shows (0295, 0299, 0335)",
   crew_share_preview: "gated by the crew's unguessable share_token AND share_on; returns first names only where show_name",
   // ── policy helpers: a policy calls these AS the caller, so the caller needs EXECUTE ──
   // 0441: the four standing helpers (is_active_user, can_flag, can_contribute_fields, group_user_banned)

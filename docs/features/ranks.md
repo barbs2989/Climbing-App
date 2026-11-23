@@ -26,6 +26,7 @@
   area rows and the search results, which no browser walk reaches (30/30). The picker keeps one slot in
   `Leaderboards`' tree, open or closed, so it stays mounted: opening puts focus on the area's name, leaving hands it back to
   Change, and while a path loads the header reads *Loading…*, never the root's name.
+- **TOP CONTRIBUTORS card** (area page, and the route page’s Overview in its compact form): the top three by contribution points for that area and everything inside it. A row opens that climber’s profile (your own row opens yours) on both pages; a contributor whose profile cannot be read is drawn as *Climber* with their points, as plain text. Checked against the raw rows with real accounts on 2026-11-19 (27 areas × 5 viewers).
 - **A row is not a button holding buttons** (fixed 2026-11-18, owner "fix it"; axe `nested-interactive`, WCAG 4.1.2,
   found by that probe): the row is a plain container, and rank + avatar + name are ONE real `<button>` that opens the
   profile and carries the row's `lbRowName` name ("#1, …", which probes find rows by). The points button (*How X got
@@ -100,6 +101,7 @@ Every number for a real climber comes from `leaderboard()` on the server; the cl
   the area, the state and the country. On Ranks By area only that area's points count, and a climber who
   contributed there without logging a climb there is listed. Since 0338 a logged climb (1, once per route) and a trip report (2, once per route per month) count too, only when shared with Everyone.
   Weights follow Mountain Project (area 15 · route 10 · photo 5 · comment 1); once-per-place follows theCrag's karma.
+- **Who is on an area’s TOP CONTRIBUTORS card (0486)**: `area_top_contributors` leaves out the climbers `leaderboard()` leaves out. A climber who turned *Show me on leaderboards* off is on nobody’s card (their own included: the card has no "you are hidden" line) and holds no Top Contributor badge; a signed-in reader is not shown a contributor they blocked or who blocked them. Signed out, blocks change nothing, as with profile reads (0095). Before 0486 the card ranked everyone in the ledger: a hidden climber stayed on it by name, and a blocked reader saw a nameless *Climber* row.
 - The demo board mirrors the same rules in `meStats` for your own row.
 
 ## 3. Files
@@ -111,7 +113,7 @@ Every number for a real climber comes from `leaderboard()` on the server; the cl
 | `lib/Help.jsx` | `Help` (its `topic` prop opens one section) |
 | `lib/db.js` | `useLeaderboard`, `useTopClimbs`, `useRankBreakdown` |
 | `ClimbMatchCore.jsx` | `HELP_FEATS` (the Ranks section holds the scoring text), `tickTypesFor`, `NONCOMPLETION_TICKS`, `lbRowName` |
-| `supabase/migrations` | 0194, 0203, 0208, 0235, 0323, 0333, 0338, 0357 (`rank_breakdown`), 0373, 0379 (top 100 per board) |
+| `supabase/migrations` | 0194, 0203, 0208, 0235, 0323, 0333, 0338, 0357 (`rank_breakdown`), 0373, 0379 (top 100 per board), 0486 (the area card honours the leaderboard switch and blocks) |
 
 ## 4. Data
 `climb_logs`, `climb_log_confirmations`, `routes` (`grade_system`, `grade_num`, `gain_ft`, `length_m`, `classic`,
@@ -127,7 +129,8 @@ Every number for a real climber comes from `leaderboard()` on the server; the cl
 ## 6. Guards
 `check:grade-parser` holds `lib/rankGrade.js` equal to `rank_grade()` in the newest migration that defines it.
 Hand-run probes: `scripts/oneoff/probe-ranks-anti-padding.sql`, `probe-ranks-anti-collusion.sql`,
-`probe-ranks-0323.sql`, `probe-ranks-0379.sql`; `scripts/oneoff/probe-ranks-renders.mjs`.
+`probe-ranks-0323.sql`, `probe-ranks-0379.sql`; `scripts/oneoff/probe-ranks-renders.mjs`;
+`scripts/oneoff/probe-top-contributors-0486.mjs` (replays the migrations offline, then reads the area card, the badge and Ranks By area as each role with a climber hidden and with a block: 36/36).
 
 ## 7. Last significant change
 - **Ranks audit (0323)**: one grade scale across V/WI/M, top-rope/follow a letter lower, conditions reports out,
@@ -138,6 +141,7 @@ Hand-run probes: `scripts/oneoff/probe-ranks-anti-padding.sql`, `probe-ranks-ant
 - **True top 100 (0379)**: the 500-climber cap is gone; every board is ranked on the server, and your standing comes with your row.
 
 ## 8. Known gaps
+- A tie on an area’s card is broken by account id, so one of two climbers level on points gets the ★ pill and the badge; Ranks gives both the same rank.
 - `rank_breakdown()` copies `leaderboard()`'s counting rather than sharing it; a change to the scoring must
   change both (no guard holds them equal yet).
 - The board values `leaderboard()` ranks (0379's `scored` CTE) mirror the `val` of each board in `B` in

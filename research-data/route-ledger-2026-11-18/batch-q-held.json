@@ -1,0 +1,28 @@
+[
+ {
+  "table": "routes",
+  "id": "wa_crowbar_crag_feelin_stabby",
+  "column": "gear",
+  "from": null,
+  "to": [
+   "gear to 2 in"
+  ],
+  "why": "duplicate row of wa_feeling_stabby (catalog defect)",
+  "evidence": [
+   "https://www.mountainproject.com/route/106900462/feeling-stabby"
+  ],
+  "batch": "q3"
+ },
+ {
+  "table": "routes",
+  "id": "wa_crowbar_crag_feelin_stabby",
+  "column": "anchor",
+  "from": null,
+  "to": "Bolted anchor",
+  "why": "duplicate row of wa_feeling_stabby (catalog defect)",
+  "evidence": [
+   "https://www.mountainproject.com/route/106900462/feeling-stabby"
+  ],
+  "batch": "q3"
+ }
+]

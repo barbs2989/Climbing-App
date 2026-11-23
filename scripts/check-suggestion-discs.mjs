@@ -55,7 +55,10 @@ function extractFn(src, marker, what) {
 const fns = [
   extractFn(CORE, "function _suggAccum(", "_suggAccum"),
   extractFn(CORE, "function _suggShape(", "_suggShape"),
+  extractFn(CORE, "function suggestLogWeight(", "suggestLogWeight"),
   extractFn(CORE, "function suggestionProfile(", "suggestionProfile"),
+  extractFn(CORE, "function _suggHere(", "_suggHere"),
+  extractFn(CORE, "function _suggStatedVal(", "_suggStatedVal"),
   extractFn(CORE, "function suggestDiscSlots(", "suggestDiscSlots"),
 ].join("\n");
 
@@ -67,6 +70,7 @@ const MAXN = Number(RegExp.$1);
 
 const run = new Function("logs", "routeById", "viewed", `
   var SUGGEST_DISC_MAX = ${MAXN};
+  var SUGGEST_HALF_LIFE_YEARS = 2;
   function catOf(r){ return r && r.disc; }
   function routeGradeVal(r){ return r && r.gv != null ? r.gv : -1; }
   function suggGainFt(r){ return r && r.gain != null ? r.gain : null; }
@@ -178,7 +182,7 @@ const check = (name, cond, detail) => {
   let F;
   try {
     F = new Function("displayGrade", "splitProtection", "gradeNumFor", "gradeSystemForDiscipline", "routeCompleted",
-      need.join("\n") + "\n" + lines.slice(a, b).join("\n") + "\nreturn {routeGradeVal,suggestDiscSlots,rankSimilarRoutes,suggestSlotQuery,suggestWindow,ADDR_GRADES};")(
+      need.join("\n") + "\n" + lines.slice(a, b).join("\n") + "\nreturn {routeGradeVal,suggestDiscSlots,rankSimilarRoutes,suggestSlotQuery,suggestWindow,suggestionProfile,suggestLogWeight,ADDR_GRADES};")(
       displayGrade, splitProtection, gradeNumFor, gradeSystemForDiscipline, (id, logs) => (logs || []).some(l => l.routeId === id));
   } catch (e) {
     console.error("check:suggestion-discs FAILED — the suggestion block no longer runs on its own: " + e.message);
@@ -206,6 +210,27 @@ const check = (name, cond, detail) => {
     names(F.rankSimilarRoutes([rt("plain", "sport", "5.10a"), rt("cl", "sport", "5.10b", { classic: true })], s10, { limit: 5 })) === "cl,plain");
   check("...but quality never pulls in a climb the window left out",
     names(F.rankSimilarRoutes([rt("plain", "sport", "5.10a"), rt("far", "sport", "5.12a", { classic: true, stars: 5 })], s10, { limit: 5 })) === "plain");
+  // PROTECTION (2026-11-23): a 5.7 trad climber was offered "The Asterisk 5.7 X".
+  check("an X-rated climb is never suggested, at the exact grade or as a classic",
+    names(F.rankSimilarRoutes([rt("x", "sport", "5.10a X", { classic: true, stars: 5 }), rt("rx", "sport", "5.10a R/X"), rt("plain", "sport", "5.10b")], s10, { limit: 5 })) === "plain");
+  check("an R-rated climb stays, behind an unrated climb at the same grade",
+    names(F.rankSimilarRoutes([rt("r", "sport", "5.10a R"), rt("plain", "sport", "5.10a")], s10, { limit: 5 })) === "plain,r");
+  check("PG13 is not a reason to demote", names(F.rankSimilarRoutes([rt("pg", "sport", "5.10a PG13"), rt("far", "sport", "5.10c")], s10, { limit: 5 })) === "pg,far");
+
+  // RECENCY (2026-11-23): the centre was the plain mean, so a 5.6 from six years ago weighed as much as last month's 5.11a.
+  const NOW = Date.UTC(2026, 10, 23), ago = y => new Date(NOW - y * 31557600000).toISOString().slice(0, 10);
+  const near = (a, b) => Math.abs(a - b) < 0.02;
+  check("a log's weight halves every two years, with a floor, and an undated log counts as two years old",
+    near(F.suggestLogWeight(ago(0), NOW), 1) && near(F.suggestLogWeight(ago(2), NOW), 0.5) && near(F.suggestLogWeight(ago(4), NOW), 0.25) && F.suggestLogWeight(ago(40), NOW) === 0.15 && F.suggestLogWeight(null, NOW) === 0.5 && F.suggestLogWeight("not a date", NOW) === 0.5);
+  const RR = { old: rt("old", "sport", "5.6"), neu: rt("neu", "sport", "5.11a"), t1: rt("t1", "trad", "5.7"), t2: rt("t2", "trad", "5.7"), t3: rt("t3", "trad", "5.7") };
+  const prof = F.suggestionProfile([{ routeId: "old", date: ago(6) }, { routeId: "neu", date: ago(0.1) }], id => RR[id], NOW);
+  const vOld = F.routeGradeVal(RR.old), vNew = F.routeGradeVal(RR.neu);
+  check("the centre leans to what you climbed lately, not the plain mean",
+    !!prof && prof.gradeVal > (vOld + vNew) / 2 + 0.05 && prof.gradeVal < vNew, prof ? `centre ${prof.gradeVal.toFixed(3)} between ${vOld.toFixed(3)} and ${vNew.toFixed(3)}, plain mean ${((vOld + vNew) / 2).toFixed(3)}` : "no profile");
+  const lead = F.suggestionProfile([{ routeId: "t1", date: ago(8) }, { routeId: "t2", date: ago(8) }, { routeId: "t3", date: ago(8) }, { routeId: "neu", date: ago(0.1) }], id => RR[id], NOW);
+  check("the discipline you climb NOW leads one you climbed more of years ago", !!lead && lead.discs[0].disc === "sport" && lead.discs.length === 2, lead ? lead.discs.map(d => d.disc).join(",") : "no profile");
+  check("...and the old discipline keeps its slot", !!lead && lead.discs.some(d => d.disc === "trad"));
+
   check("the other discipline is still never ranked into a slot",
     names(F.rankSimilarRoutes([rt("b", "bouldering", "V4"), rt("m", "sport", "5.10a")], s10, { limit: 5 })) === "m");
 
@@ -227,6 +252,36 @@ const check = (name, cond, detail) => {
   check("a logged discipline is never restated: what you climbed outranks what you said",
     both.filter(x => x.disc === "sport").length === 1 && both[0].src === "logged" && both[0].gradeVal === 0.3);
   check("...and a stated discipline you have not logged still gets its slot", both.some(x => x.disc === "trad" && x.src === "stated"));
+  // ICE, MIXED AND ALPINE (2026-11-23): the profile already stored an ice and a mixed grade (climb_grades), and
+  // gained an alpine one; none of the three reached a suggestion row.
+  const winter = F.suggestDiscSlots(null, [], undefined, { ice: "WI4", mixed: "M5", alpine: "5.6" });
+  check("an ice, a mixed and an alpine grade on the profile each earn a slot",
+    winter.length === 3 && ["alpine", "ice", "mixed"].every(d => winter.some(x => x.disc === d && x.src === "stated" && x.gradeVal >= 0)), JSON.stringify(winter.map(x => x.disc + ":" + x.gradeVal)));
+  check("an alpine grade given as a class lands on the alpine scale", (() => { const x = F.suggestDiscSlots(null, [], undefined, { alpine: "Class 4" }); return x.length === 1 && x[0].gradeVal === F.ADDR_GRADES.alpine.indexOf("Class 4") / F.ADDR_GRADES.alpine.length; })());
+  check("a stated ice grade ranks ice inside its window, and nothing else",
+    names(F.rankSimilarRoutes([rt("i4", "ice", "WI4"), rt("i7", "ice", "WI7"), rt("s", "sport", "5.10a")], winter.find(x => x.disc === "ice"), { limit: 5 })) === "i4");
+  // THE AREA'S OWN DISCIPLINES decide which slots are worth one of the three.
+  const all6 = { sport: "5.10a", trad: "5.8", bouldering: "V4", alpine: "5.6", ice: "WI4", mixed: "M5" };
+  check("with every grade stated and nothing known of the area, the cap still holds", F.suggestDiscSlots(null, [], undefined, all6).length === MAXN);
+  const atIce = F.suggestDiscSlots(null, [], undefined, all6, ["ice", "mixed", "trad"]);
+  check("at an ice crag the ice climber gets their ice row, not three rows for rock the crag lacks",
+    atIce.some(x => x.disc === "ice") && atIce.some(x => x.disc === "mixed") && atIce.every(x => ["ice", "mixed", "trad"].includes(x.disc)), JSON.stringify(atIce.map(x => x.disc)));
+  check("an alpine slot counts an area of mountaineering or scrambling climbs as its own",
+    F.suggestDiscSlots(null, [], undefined, { alpine: "5.6" }, ["mountaineering"]).length === 1 && F.suggestDiscSlots(null, [], undefined, { alpine: "5.6" }, ["sport"]).length === 0);
+  check("a LOGGED discipline the area has none of gives its slot up too",
+    (() => { const x = F.suggestDiscSlots({ discs: [{ disc: "ice", src: "logged", n: 3, gradeVal: 0.4, avgGainFt: null }] }, [], undefined, { sport: "5.10a" }, ["sport"]); return x.length === 1 && x[0].disc === "sport"; })());
+  // Found by a REAL ACCOUNT on the live site: its one alpine log is graded on the ice scale, so the slot had no centre.
+  const noCentre = { discs: [{ disc: "alpine", src: "logged", n: 1, gradeVal: null, avgGainFt: 5000 }] };
+  const borrowed = F.suggestDiscSlots(noCentre, [], undefined, { alpine: "5.6" });
+  check("a logged discipline with no readable grade borrows the profile's, and stays a logged row",
+    borrowed.length === 1 && borrowed[0].src === "logged" && borrowed[0].gradeVal === F.ADDR_GRADES.alpine.indexOf("5.6") / F.ADDR_GRADES.alpine.length && borrowed[0].avgGainFt === 5000, JSON.stringify(borrowed));
+  check("...so that climber is no longer offered 5.10d and 5.11-",
+    names(F.rankSimilarRoutes([rt("hard", "alpine", "5.10d"), rt("harder", "alpine", "5.11-"), rt("ice", "alpine", "AI3"), rt("fit", "alpine", "5.6")], borrowed[0], { limit: 5 })) === "fit");
+  check("with no stated grade either, the slot still has no centre (unchanged)", F.suggestDiscSlots(noCentre, [], undefined, {})[0].gradeVal === null);
+  check("a logged grade that IS readable is never overwritten by the profile's",
+    F.suggestDiscSlots({ discs: [{ disc: "alpine", src: "logged", n: 2, gradeVal: 0.2, avgGainFt: null }] }, [], undefined, { alpine: "5.10a" })[0].gradeVal === 0.2);
+  check("an unknown area (null) drops nothing", F.suggestDiscSlots(null, [], undefined, { ice: "WI4" }, null).length === 1);
+
   const sv = F.suggestDiscSlots(null, [rt("v", "ice", "WI4"), rt("v2", "sport", "5.9")], undefined, { sport: "5.11a" });
   check("stated sits ahead of browsed, and a discipline that is both is the stated slot",
     sv[0].disc === "sport" && sv[0].src === "stated" && sv.filter(x => x.disc === "sport").length === 1 && sv.some(x => x.disc === "ice" && x.src === "viewed"), JSON.stringify(sv.map(x => x.disc + ":" + x.src)));
@@ -257,6 +312,7 @@ check(`one pool read per slot the cap allows (SUGGEST_DISC_MAX = ${MAXN})`,
   slotCalls.length === MAXN && slotCalls.every((n, i) => n === i),
   `found slot reads for [${slotCalls.join(",")}]; a slot with no read of its own is never fetched for — raise or lower the hooks with the cap`);
 check("each slot's read is built from THAT slot (slotQuery(slots[i]))", /slotQuery\(\s*slots\[\s*i\s*\]\s*\)/.test(sugCode));
+check("an X-rated climb is kept out of the fallback list too", /const fresh\s*=[^;]*!tooBold\(r\)/.test(sugCode) && /tooBold\s*=[^;]*splitProtection\(/.test(sugCode));
 check("no read is keyed on the single top discipline", !/profile\.disc\b/.test(sugCode), "profile.disc is the busiest discipline only — the 2026-09 bug");
 const fallbackCall = sugCode.match(/useSubtreeRoutes\s*\([^;]*?\{\s*sortBy[^}]*\}\s*\)/);
 check("the fallback pool is discipline-blind and not sorted by name",
@@ -264,7 +320,25 @@ check("the fallback pool is discipline-blind and not sorted by name",
   fallbackCall ? fallbackCall[0].slice(0, 140) : "no fallback useSubtreeRoutes({ sortBy … }) call found");
 check("the pools are ranked per slot, each against its own read",
   /discSlots\s*\(/.test(sugCode) && /slots\.map\s*\(\s*\(\s*s\s*,\s*i\s*\)\s*=>/.test(sugCode) && /slotQs\[\s*i\s*\]/.test(sugCode));
-check("the stated grades reach the slots", /discSlots\s*\([^)]*\bstated\s*\)/.test(sugCode));
+check("the stated grades and the area's disciplines reach the slots", /discSlots\s*\([^)]*\bstated\s*,\s*here\s*\)/.test(sugCode));
+check("the area's disciplines come from the area row or its climb counts, never a guess", /area\.disciplines/.test(sugCode) && /useAreaClimbStats\(/.test(sugCode) && /by_disc/.test(sugCode));
+
+// ── 2a. the profile can HOLD the grades the slots read (2026-11-23) ───────────
+{
+  const APP = readAppFile(fileURLToPath(new URL("../ClimbMatch.jsx", import.meta.url)));
+  const sg = APP.match(/const statedGrades=useMemo\(function\(\)\{[\s\S]*?\},\[([^\]]*)\]\)/);
+  check("App hands over a stated grade for all six disciplines",
+    !!sg && ["sport:", "trad:", "bouldering:", "alpine:", "ice:", "mixed:"].every(k => sg[0].includes(k)), sg ? sg[0].slice(0, 160) : "statedGrades memo not found in ClimbMatch.jsx");
+  check("...and recomputes them when the per-discipline grades change", !!sg && /profile\.climbGrades/.test(sg[1]), sg ? "deps: " + sg[1] : "");
+  const pg = CORE.match(/const PROFILE_GRADES=\[[\s\S]*?\];/);
+  check("the profile's grade list has an Alpine entry with no column (stored in climb_grades)",
+    !!pg && /\{k:"alpine",label:"Alpine",ladder:/.test(pg[0]) && !/\{k:"alpine"[^}]*col:/.test(pg[0]));
+  const ONB = readFileSync(fileURLToPath(new URL("../lib/Onboarding.jsx", import.meta.url)), "utf8");
+  const gd = ONB.match(/const GRADED_DISC\s*=\s*\[([^\]]*)\]/);
+  const alp = pg && pg[0].match(/\{k:"alpine",label:"Alpine",ladder:\[([^\]]*)\]/);
+  check("the Alpine ladder holds no Class grade (the Leads filter's number scale ranks Class 4 above 5.3)", !!alp && !/class/i.test(alp[1]) && /"5\.0"/.test(alp[1]), alp ? alp[1] : "ladder not found");
+  check("onboarding asks an alpine climber for a grade", !!gd && /"alpine"/.test(gd[1]), gd ? gd[1] : "GRADED_DISC not found");
+}
 
 // ── 2b. the panel is COLLAPSED until the climber opens it — and can be opened ────
 // History: both components once shipped `useState(false)`; a later pass made them auto-open on
