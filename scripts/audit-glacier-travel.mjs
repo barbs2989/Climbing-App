@@ -13,7 +13,8 @@
 //   node scripts/audit-glacier-travel.mjs --state or --json out.json   # the worklist, for a review batch
 //
 // WHAT IT CANNOT SEE: the page's category (catOf) also turns a trad route on a peak into "alpine"; this reads
-// the stored discipline plus the 5.x-grade rule, so those trad rows are outside its count. And it cannot tell
+// the stored discipline plus the 5.x-grade rule, so those trad rows are outside its count. The route's length is not a column, so a long MIXED route with
+// under four pitches (the app reads 820 ft or more as alpine mixed) is read here as crag mixed. And it cannot tell
 // whether a settled answer is RIGHT — only that someone reviewed the route.
 import "./lib/load-env.mjs";
 import fs from "node:fs";
@@ -29,12 +30,14 @@ const key = (() => { try { return requireServiceKey(); } catch { return anonKey(
 
 // routes has no style / route_ft / gain_m column; the rest of the corpus is selected as lib/terrain.js names it.
 const cols = [...new Set(["id", "name", "area_id", "discipline", "grade", "pitches", "seasonal_hazards", "approach_variants", "glacier_travel", "snow_in_season", ...CORPUS_COLUMNS])];
-const rows = await selectAll("routes", cols.join(","), stateIdFilter(STATE) + `&discipline=in.(${ALPINE_COND_DISCIPLINES.join(",")})`, { key, pageSize: 300 });
+// The area's type rides along: condKind reads an ice or mixed route on a PEAK as alpine ice (route._dbArea), and
+// without it those rows would be read as waterfall ice, carry no snow logic, and never reach the worklist.
+const rows = await selectAll("routes", cols.join(",") + ",areas(area_type)", stateIdFilter(STATE) + `&discipline=in.(${ALPINE_COND_DISCIPLINES.join(",")})`, { key, pageSize: 300 });
 const fifth = (g) => /(^|[^\d.])5\.\d/.test(String(g || ""));
 
 const out = rows.map((r) => {
   const cat = (r.discipline === "mountaineering" || r.discipline === "scrambling") && fifth(r.grade) ? "alpine" : r.discipline;
-  const t = routeTerrain(r), kind = condKind(r, t, cat), legs = hasSnowLegs(kind, t);
+  const t = routeTerrain(r), kind = condKind(Object.assign({}, r, { _dbArea: { areaType: r.areas && r.areas.area_type } }), t, cat), legs = hasSnowLegs(kind, t);
   return { id: r.id, name: r.name, discipline: r.discipline, grade: r.grade, kind, legs, bridges: legs ? bridgeWord(kind, t) : false,
     glacier: r.glacier_travel || null, snow: r.snow_in_season || null, textGlacier: t.evidence.glacierSeen };
 });

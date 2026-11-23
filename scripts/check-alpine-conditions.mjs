@@ -183,7 +183,11 @@ eq("'bridges are weak' only where there may be a glacier: yes on a glacier, no o
   eq("routeTerrain: a reviewed snow_in_season is the answer; reviewed glacier travel is never dry", [routeTerrain(Object.assign({ snow_in_season: "no" }, named, { glacier_travel: "no" })).snowInSeason, routeTerrain({ discipline: "mountaineering", snow_in_season: "yes", glacier_travel: "no" }).snowInSeason, routeTerrain({ discipline: "mountaineering", snow_in_season: "no", glacier_travel: "yes" }).snowInSeason], ["no", "yes", "yes"]);
   const card = readAppFile(path.join(ROOT, "lib", "AlpineConditionsCard.jsx"));
   eq("the card has a title and a what-a-forecast-cannot-see line for the snow climb, with no bridge in it", [/snow: "Snow climb"/.test(readAppFile(path.join(ROOT, "lib", "alpineConditionsShared.js"))), /snow: "A forecast can’t see how firm the snow is[^"]*"/.test(card), GL.test((/snow: "(A forecast can’t see[^"]*)"/.exec(card) || [])[1] || "bridge")], [true, true, false]);
-  eq("...and its midday sentence does not speak of bridges on a snow climb", /kind === "snow" \? ": parties on snow climbs start early and plan to be off the snow by midday[^"]*softens it" : ": parties on glaciers[^"]*weakens the bridges"/.test(card), true);
+  eq("...and its midday sentence does not speak of bridges on a snow climb, states them only on reviewed glacier travel, and says 'any snow bridges' where nothing is settled", /kind === "snow" \? ": parties on snow climbs start early and plan to be off the snow by midday[^"]*softens it" : bridges === "yes" \? ": parties on glaciers[^"]*weakens the bridges" : ": parties on glacier and snow routes[^"]*weakens any snow bridges"/.test(card), true);
+  /* Review, 2026-11-23: the no-refreeze FLAG was hedged on an unsettled route while three sentences beside it
+     still stated bridges as fact (the what-a-forecast-cannot-see line, the midday reason, the serac caveat). */
+  eq("...the glacier card on an unsettled route does not state bridges or seracs as fact anywhere: its cannot-see line says 'any snow bridges', and the serac caveat needs reviewed glacier travel", [/const bridges = bridgeWord\(kind, terrain\)/.test(card), /kind === "glacier" && bridges !== "yes" \? BLIND_GLACIER_OPEN : BLIND\[kind\]/.test(card), /BLIND_GLACIER_OPEN = "[^"]*whether any snow bridges are open[^"]*"/.test(card), /kind === "glacier" && bridges === "yes" \? " No timing reduces serac fall\." : ""/.test(card)], [true, true, true, true]);
+  eq("...and the day's flags are rebuilt when the reviewed facts change (an approved edit can change the wording without changing the kind)", /faceSun, terrain && terrain\.glacierTravel, terrain && terrain\.snowInSeason\]/.test(card), true);
 }
 eq("...and the card says why, instead of a start beside a warning that the snow starts soft", /day\.noFreeze && floor\)[\s\S]{0,200}didn’t freeze overnight at[\s\S]{0,80}no frozen window to be back down in/.test(readAppFile(path.join(ROOT, "lib", "AlpineConditionsCard.jsx"))), true);
 const hot = run(forecast(() => ({ fl: 12000 })), { kind: "glacier", terrain: { snow: "yes" }, highFt: 10000, snowFt: 7000, legs: LEGS });
@@ -200,11 +204,14 @@ eq("...while one that crosses snow in season keeps them", [has(hotSnowRock, "fl-
 eq("'unsure' (no snowInSeason mark) keeps the snow legs; a dry mark never touches glacier or alpine ice", [A.hasSnowLegs("alpinerock", { snow: "yes" }), A.hasSnowLegs("alpinerock", dryRock), A.hasSnowLegs("glacier", dryRock), A.hasSnowLegs("alpineice", dryRock)], [true, false, true, true]);
 {
   const { routeTerrain } = await import(pathToFileURL(path.join(ROOT, "lib", "terrain.js")).href);
-  /* The dry review lives ON THE ROW now (routes.snow_in_season, 0490). The built-in id list it replaced must not
-     come back: two copies of one review drift, and the row is the one a climber can correct. */
+  /* The dry review lives ON THE ROW now (routes.snow_in_season, 0490), which is the copy a climber can correct.
+     The 2026-11-12 id list stays as a FROZEN FALLBACK for a row that carries no answer (an offline copy saved
+     before 0490, a row a load has not reached): removing it brought the freeze flags back on exactly those rows. */
+  const { SNOW_DRY_IN_SEASON } = await import(pathToFileURL(path.join(ROOT, "lib", "snowInSeasonDry.js")).href);
+  const anyDry = [...SNOW_DRY_IN_SEASON][0];
   const lingering = { discipline: "alpine", grade: "5.9", beta: "The approach gully holds snow into July; carry an ice axe early season." };
   eq("routeTerrain: a reviewed-dry route reads snowInSeason 'no'; an unreviewed one follows snow", [routeTerrain(Object.assign({ snow_in_season: "no" }, lingering)).snowInSeason, routeTerrain(Object.assign({ id: "zz_not_reviewed" }, lingering)).snowInSeason], ["no", "yes"]);
-  eq("...and the review is read from the row, not from a built-in list of ids", [fs.existsSync(path.join(ROOT, "lib", "snowInSeasonDry.js")), /SNOW_DRY_IN_SEASON/.test(fs.readFileSync(path.join(ROOT, "lib", "terrain.js"), "utf8"))], [false, false]);
+  eq("...a row with NO answer of its own (saved before 0490) still reads the 2026-11-12 review; the row's own answer wins over the list", [routeTerrain(Object.assign({ id: anyDry }, lingering)).snowInSeason, routeTerrain(Object.assign({ id: anyDry, snow_in_season: "yes" }, lingering)).snowInSeason], ["no", "yes"]);
   const snowOf = (beta) => routeTerrain({ discipline: "alpine", grade: "5.9", beta }).snow;
   eq("'névé' is a word, not a substring: 'never', 'whenever', 'Nineveh' are not snow; 'névé' and 'neve' are", ["You never need a rack.", "Whenever it rains.", "Nineveh", "Firm névé to the col.", "Hard neve."].map((s) => snowOf(s) === "yes"), [false, false, false, true, true]);
   eq("...and a route whose own text shows a glacier, with the glacier question NOT settled, is never read dry", routeTerrain({ discipline: "alpine", snow_in_season: "no", beta: "Cross the glacier to the col." }).snowInSeason, "yes");
@@ -225,7 +232,7 @@ eq("the noon rule is glacier and alpine ice only: a snowy scramble on a cold day
 const iceP = run(forecast(() => ({ fl: 4000 })), { kind: "alpineice", terrain: { snow: "yes" }, highFt: 10000, snowFt: 7000, legs: LEGS });
 eq("...and alpine ice gets it too", iceP.start && iceP.start.why, "snow-noon");
 const cardSrc = readAppFile(path.join(ROOT, "lib", "AlpineConditionsCard.jsx"));
-eq("the card says WHY the noon start, and shows the later start the forecast alone allows", /why === "snow-noon"[\s\S]{0,700}plan to be off the snow by midday[\s\S]{0,300}The forecast alone would allow a start as late as/.test(cardSrc), true);
+eq("the card says WHY the noon start, and shows the later start the forecast alone allows", /why === "snow-noon"[\s\S]{0,700}plan to be off the snow by midday[\s\S]{0,900}The forecast alone would allow a start as late as/.test(cardSrc), true);
 eq("the day strip says every section below is for that day", /every section below is for this day[\s\S]{0,200}role="group" aria-label="Day"/.test(cardSrc), true);
 /* Not sticky: #appscroll is overflow:auto yet grows to its content, so a sticky strip binds to a box that never
    scrolls and rides away with the page (measured live 2026-10-21). Each day section steps the day instead. */
@@ -528,7 +535,7 @@ console.log("\n10. SUN ON THE FACE — be above each height of the face before t
   eq("a start the sun decided says so, with the height and the hour", /day\.start\.why === "sun" \?[^\n]*" and be above " \+ uElev\(Math\.ceil\(day\.start\.sun\.ft \/ 50\) \* 50\) \+ " by "[^\n]*when the sun reaches steep ground that sheds onto the line above that height/.test(card), true);
   eq("...and says the line is the fall line from the summit, not a traced route, and reads one flank on a ridge", /The line is the fall line down the " \+ faceDir \+ " side from the summit, not a traced route — on a ridge it reads one flank\./.test(card), true);
   eq("the model's limits are said beside it — no lag counted, shade isn't frozen, cornices, seracs, narrow walls", /no lag is counted/.test(card) && /shade isn’t proof the snow is frozen/.test(card) && /misses cornices, seracs and narrow walls/.test(card), true);
-  eq("...and on a glacier, that no timing reduces serac fall", /kind === "glacier" \? " No timing reduces serac fall\." : ""/.test(card), true);
+  eq("...and on a glacier REVIEWED as glacier travel, that no timing reduces serac fall", /kind === "glacier" && bridges === "yes" \? " No timing reduces serac fall\." : ""/.test(card), true);
   eq("a night that never froze says the sun gives no deadline", /The sun gives no deadline today: with nothing frozen overnight/.test(card), true);
   eq("...and so does a day too cold for the sun to matter", /day\.sunCold \? "The sun reaches steep ground shedding onto the line, but the air there stays below freezing all day/.test(card), true);
   eq("what the start could not read is said, every time (no aspect, no summit pin, no start height, no terrain)", /This start doesn’t count in sun on the face: /.test(card) && /Couldn’t load the terrain, so this start doesn’t count in sun on the face\./.test(card), true);

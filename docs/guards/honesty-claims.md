@@ -1266,8 +1266,15 @@ read with the first verdict withheld, and any disagreement fell back to unsure (
 routes were researched online. Result: glacier travel yes 298 / no 414 / not settled 41; snow not settled 38.
 A "no" that rested on absence of evidence, or that the researcher called its thinnest, was held at not settled.
 `scripts/oneoff/load-glacier-travel.mjs` wrote them (unsure as NULL), together with the 2026-11-12 dry list as
-`snow_in_season = 'no'`, and re-read every row; the built-in id list that held that review, and the script
-that generated it, are gone (the guard fails if the list comes back).
+`snow_in_season = 'no'`, and re-read every row. `lib/snowInSeasonDry.js` stays as a FROZEN fallback, read only
+for a row that carries no answer of its own (an offline copy saved before 0490, a row a load has not reached):
+the first cut of this change deleted it, and review showed that brings the freeze flags back on exactly those
+rows. Its build script is gone; new reviews write the column.
+- **Every sentence that names a bridge goes through `bridgeWord`**, not `kind`: the flag, the
+  what-a-forecast-cannot-see line, the midday reason and the serac caveat. The first cut hedged only the flag,
+  so an unsettled route still read "weakens the bridges" beside "any snow bridges are weak".
+- **The card's day memo depends on `terrain.glacierTravel` / `snowInSeason`**: an approved edit can change the
+  wording without changing the kind.
 
 **Traps.**
 - **Wrongly dropping a warning is the dangerous direction**, so nothing unreviewed loses one: an unreviewed
