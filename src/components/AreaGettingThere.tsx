@@ -1,6 +1,7 @@
 import { EditIconButton, CopyCoordButton, NO_PARKING_PIN_BUT_NOTE_LINE, NO_PARKING_PIN_LINE } from "../../lib/areaChrome";
 import { lazy, Suspense, useState } from "react";
-import type { CSSProperties } from "react";
+import type { CSSProperties, ReactNode } from "react";
+import ActionIcon from "./ActionIcon";
 import WalkInMap, { walkInPts } from "../../lib/WalkInMap.jsx";
 import { fmtTrailLen, trailLenM } from "../../lib/TrailDrawMap.jsx";
 import { MIN_RECORDED_PTS } from "../../lib/track.js";
@@ -38,6 +39,22 @@ export interface AreaGettingThereProps {
 // description with maps below that").
 const FLAT_CLAMP_CHARS = 320, FLAT_CLAMP_PX = 108;
 
+// One leg of the way in: an icon in a tinted circle, a rail down to the next leg, then the leg's title and words
+// (owner, 2026-11-23: "update the ui of getting there"). The icon is decoration; the title says what the leg is.
+interface StepProps { icon: string; tone: "amber" | "green"; title: string; meta?: ReactNode; last?: boolean; children?: ReactNode; C: typeof Palette }
+function Step({ icon, tone, title, meta, last, children, C }: StepProps) {
+  return <div style={{ display: "flex", gap: 11 }}>
+    <div aria-hidden="true" style={{ display: "flex", flexDirection: "column", alignItems: "center", flexShrink: 0 }}>
+      <span style={{ width: 30, height: 30, borderRadius: 15, display: "flex", alignItems: "center", justifyContent: "center", background: tone === "amber" ? C.amberBg : C.greenBg, border: "1px solid " + (tone === "amber" ? C.amber : C.greenDim) }}><ActionIcon name={icon} size={16} color={tone === "amber" ? C.amber : C.green} /></span>
+      {last ? null : <span style={{ flex: 1, width: 2, minHeight: 10, margin: "4px 0", borderRadius: 1, background: C.border }} />}
+    </div>
+    <div style={{ flex: 1, minWidth: 0, paddingBottom: last ? 4 : 14 }}>
+      <div style={{ display: "flex", alignItems: "center", flexWrap: "wrap", gap: "4px 8px", minHeight: 30 }}><span style={{ fontSize: 13.5, fontWeight: 800, color: C.text }}>{title}</span>{meta}</div>
+      {children}
+    </div>
+  </div>;
+}
+
 // ── GETTING THERE: drive & park, walk in, and the maps links — the area's own columns only ──
 export default function AreaGettingThere({ area, C, onEdit, flat }: AreaGettingThereProps) {
   const [more, setMore] = useState(false);
@@ -51,8 +68,9 @@ export default function AreaGettingThere({ area, C, onEdit, flat }: AreaGettingT
   const trailPts = walkInPts(area.walkin_gpx);
   const trail = trailPts.length >= MIN_RECORDED_PTS ? trailPts : null;
   const lbl: CSSProperties = { fontSize: 10.5, fontWeight: 700, color: C.label, letterSpacing: 0.3, textTransform: "uppercase", marginBottom: 4 };
-  const linkSt: CSSProperties = { flex: "1 1 0", display: "flex", alignItems: "center", justifyContent: "center", boxSizing: "border-box", minHeight: 44, padding: "8px 10px", borderRadius: 8, border: "1px solid " + C.greenDim, background: C.greenBg, color: C.green, fontSize: 12.5, fontWeight: 700, textDecoration: "none", whiteSpace: "nowrap" };
-  const ll = dest ? dest.lat + "," + dest.lng : "";
+  const linkSt: CSSProperties = { flex: "1 1 0", display: "flex", alignItems: "center", justifyContent: "center", gap: 7, boxSizing: "border-box", minHeight: 44, padding: "8px 10px", borderRadius: 10, border: "1px solid " + C.greenDim, background: C.greenBg, color: C.green, fontSize: 12.5, fontWeight: 700, textDecoration: "none", whiteSpace: "nowrap" };
+  const chipSt: CSSProperties = { display: "inline-flex", alignItems: "center", gap: 4, padding: "2px 8px", borderRadius: 999, background: C.surface, border: "1px solid " + C.borderLight, color: C.textSub, fontSize: 11.5, fontWeight: 700, maxWidth: "100%", overflowWrap: "anywhere" };
+  const ll = dest ?dest.lat + "," + dest.lng : "";
   const to = park ? "parking" : "crag";
   // The crag-wide parking pin is a suggestable field (0378), so the page offers it where it is missing and where it sits.
   const pinLink = { display: "inline-flex", alignItems: "center", minHeight: 44, background: "none", border: "none", padding: 0, color: C.blue, fontSize: 12, fontWeight: 700, cursor: "pointer" };
@@ -64,20 +82,19 @@ export default function AreaGettingThere({ area, C, onEdit, flat }: AreaGettingT
     <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 8, marginBottom: 8 }}><div role="heading" aria-level={3} style={{ fontSize: 12, fontWeight: 800, color: C.text, letterSpacing: 0.4, textTransform: "uppercase" }}>Getting there</div>{onEdit ? <EditIconButton C={C} onClick={() => onEdit(note ? "approach" : "parking_note")} title={"Edit how to get to " + area.name} /> : null}</div>
     {!note && !walk ? <div style={{ fontSize: 12.5, color: C.textMuted, lineHeight: 1.5, marginBottom: dest ? 10 : 0 }}>{"No directions on file yet. Know the way in? "}{onEdit ? <button onClick={() => onEdit("parking_note")} style={{ background: "none", border: "none", padding: 0, color: C.blue, fontSize: 12.5, fontWeight: 700, cursor: "pointer" }}>Add it</button> : "Add it"}{"."}</div> : null}
     <div style={clampSt}>
-    {note || park ? <div style={{ marginBottom: 10 }}>
-      <div style={lbl}>{"Drive & park" + (area.parking_name && area.parking_name !== "Trailhead" ? " · " + area.parking_name : "")}</div>
-      {note ? <div style={{ fontSize: 13, color: C.textSub, lineHeight: 1.55, marginBottom: park ? 6 : 0 }}>{note}</div> : null}
+    {note || park ? <Step icon="car" tone="amber" title="Drive & park" last={!(walk || area.approach_min)} C={C} >
+      {area.parking_name && area.parking_name !== "Trailhead" ? <div style={{ display: "flex", alignItems: "flex-start", gap: 5, fontSize: 12.5, fontWeight: 700, color: C.text, lineHeight: 1.4, marginBottom: 4 }}><span aria-hidden="true" style={{ display: "flex", flexShrink: 0, marginTop: 2 }}><ActionIcon name="pin" size={13} color={C.amber} /></span><span style={{ minWidth: 0, overflowWrap: "anywhere" }}>{area.parking_name}</span></div> : null}
+      {note ? <div style={{ fontSize: 13, color: C.textSub, lineHeight: 1.55, marginTop: 2, marginBottom: park ? 8 : 0 }}>{note}</div> : null}
       {park ? <CopyCoordButton lat={park.lat} lng={park.lng} what="parking" C={C} /> : null}
       {park && onEdit ? <button onClick={() => onEdit("parking_pin")} style={pinLink}>Move the pin</button> : null}
-    </div> : null}
-    {walk || area.approach_min ? <div style={{ marginBottom: 10 }}>
-      <div style={lbl}>{"Walk in" + (area.approach_min ? " · about " + area.approach_min + " min" : "")}</div>
-      {walk ? <div style={{ fontSize: 13, color: C.textSub, lineHeight: 1.55 }}>{walk}</div> : null}
-    </div> : null}
+    </Step> : null}
+    {walk || area.approach_min ? <Step icon="walk" tone="green" title="Walk in" last C={C} meta={area.approach_min ? <span style={chipSt}><ActionIcon name="clock" size={12} color={C.green} />{"about " + area.approach_min + " min"}</span> : null}>
+      {walk ? <div style={{ fontSize: 13, color: C.textSub, lineHeight: 1.55, marginTop: 2 }}>{walk}</div> : null}
+    </Step> : null}
     </div>
-    {long ? <button onClick={() => setMore(m => !m)} aria-expanded={more} style={{ minHeight: 44, display: "inline-flex", alignItems: "center", background: "none", border: "none", padding: "0 0 6px", color: C.blue, fontSize: 12.5, fontWeight: 700, cursor: "pointer" }}>{more ? "Show less" : "Show more"}</button> : null}
-    {pinMap && dest ? <div style={{ marginBottom: 10 }}><WalkInMap pts={[]} park={park} crag={crag} height={180} zoom={14} label={"Map of " + area.name + (park ? " with the parking pin (P)" : "")} on3d={() => setView3d(true)} /></div> : null}
-    {trail ? <div style={{ marginBottom: 10 }}>
+    {long ? <button onClick={() => setMore(m => !m)} aria-expanded={more} style={{ minHeight: 44, display: "inline-flex", alignItems: "center", background: "none", border: "none", padding: "0 0 6px 41px", color: C.blue, fontSize: 12.5, fontWeight: 700, cursor: "pointer" }}>{more ? "Show less" : "Show more"}</button> : null}
+    {pinMap && dest ? <div style={{ marginTop: 4, marginBottom: 12 }}><WalkInMap pts={[]} park={park} crag={crag} height={180} zoom={14} label={"Map of " + area.name + (park ? " with the parking pin (P)" : "")} on3d={() => setView3d(true)} /></div> : null}
+    {trail ? <div style={{ marginTop: 4, marginBottom: 12 }}>
       <div style={lbl}>{"Trail to the crag · " + fmtTrailLen(trailLenM(trail))}</div>
       <WalkInMap pts={trail} park={park} crag={crag} on3d={() => setView3d(true)} />
       <div style={{ fontSize: 11.5, color: C.textMuted, lineHeight: 1.45, marginTop: 6 }}>{"From the parking (P) to the crag (C). " + (area.walkin_kind === "traced" ? "A climber traced it on the map; it is not a GPS recording. " : "") + "Every climb here shows it on its crag map."}</div>
@@ -88,14 +105,14 @@ export default function AreaGettingThere({ area, C, onEdit, flat }: AreaGettingT
     {(trail || pinMap) && view3d ? <Suspense fallback={null}><WalkIn3DView title={trail ? area.name + " walk in" : area.name} kind={trail ? "walk-in map" : "crag map"} maxZoom={trail || (park && crag) ? 17.5 : 16} exaggeration={1} onClose={() => setView3d(false)}
       tracks={trail ? [{ id: "walkin", color: C.orange, label: "Trail to the crag" + (area.walkin_kind === "traced" ? " (traced on the map, not a GPS recording)" : ""), pts: trail }] : []}
       waypoints={(park ? [{ lat: park.lat, lng: park.lng, name: area.parking_name && area.parking_name !== "Trailhead" ? area.parking_name : "Parking", color: C.blue, iconHtml: "P" }] : []).concat(crag ? [{ lat: crag.lat, lng: crag.lng, name: area.name, color: C.orange, iconHtml: "C" }] : [])} /></Suspense> : null}
-    {dest ? <div>
-      <div style={lbl}>{park ? "Directions to parking" : "Directions"}</div>
+    {dest ? <div style={{ padding: "10px 12px 12px", borderRadius: 10, background: C.surface, border: "1px solid " + C.borderLight }}>
+      <div style={{ ...lbl, display: "flex", alignItems: "center", gap: 6, marginBottom: 8 }}><ActionIcon name="nav" size={13} color={C.label} />{park ? "Directions to parking" : "Directions"}</div>
       {park ? null : <div style={{ fontSize: 11.5, color: C.textMuted, lineHeight: 1.45, marginBottom: 6 }}>{note ? NO_PARKING_PIN_BUT_NOTE_LINE : NO_PARKING_PIN_LINE}{onEdit ? <>{" "}<button onClick={() => onEdit("parking_pin")} style={pinLink}>Add the parking pin</button></> : null}</div>}
       {area.coords_approx ? <div style={{ fontSize: 11.5, color: C.amber, lineHeight: 1.45, marginBottom: 6 }}>Coordinates are approximate, so these are rough.</div> : null}
       {/* The mount above is gated on ["crag", "peak", "wall"].includes(area.area_type) — a drive link is offered only where there is somewhere to park. */}
       <div style={{ display: "flex", gap: 8 }}>
-        <a href={"https://www.google.com/maps/dir/?api=1&travelmode=driving&destination=" + ll} target="_blank" rel="noopener noreferrer" aria-label={"Driving directions to the " + to + " in Google Maps" + (area.coords_approx ? " (approximate location)" : "")} style={linkSt}>Google Maps</a>
-        <a href={"https://maps.apple.com/?dirflg=d&daddr=" + ll} target="_blank" rel="noopener noreferrer" aria-label={"Driving directions to the " + to + " in Apple Maps" + (area.coords_approx ? " (approximate location)" : "")} style={linkSt}>Apple Maps</a>
+        <a href={"https://www.google.com/maps/dir/?api=1&travelmode=driving&destination=" + ll} target="_blank" rel="noopener noreferrer" aria-label={"Driving directions to the " + to + " in Google Maps" + (area.coords_approx ? " (approximate location)" : "")} style={linkSt}><ActionIcon name="map" size={15} color={C.green} />Google Maps</a>
+        <a href={"https://maps.apple.com/?dirflg=d&daddr=" + ll} target="_blank" rel="noopener noreferrer" aria-label={"Driving directions to the " + to + " in Apple Maps" + (area.coords_approx ? " (approximate location)" : "")} style={linkSt}><ActionIcon name="map" size={15} color={C.green} />Apple Maps</a>
       </div>
     </div> : null}
   </div>;

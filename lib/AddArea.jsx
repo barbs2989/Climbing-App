@@ -14,6 +14,7 @@ import { POP_CLOSE } from "./popupChrome.js";
 import { BTN, CHIP, INPUT } from "./buttonStyles.js";
 import { clickable } from "./clickable";
 import WaypointMapPicker from "../src/components/WaypointMapPicker.tsx";
+import { MyContributionStandingNotice } from "./SafetyNotices.jsx";
 
 const KINDS = [["crag", "Crag, wall or boulder", "Has climbs on it"], ["peak", "Peak", "A summit with routes up it"], ["region", "Area", "Holds crags or peaks of its own"]];
 const NAME_MAX = 120, DESC_MAX = 1500;
@@ -64,6 +65,7 @@ export default function AddArea({ parent, defaultName, C, onClose, onSubmit, onO
         <div style={{ background: C.amberBg, border: "1px solid " + C.amber + "55", borderRadius: 11, padding: "11px 13px", fontSize: 12.5, color: C.text, lineHeight: 1.55, marginBottom: 12 }}>{"Every new area is checked before it shows. Once it’s live under " + (p.name || "its area") + ", you can add its climbs."}</div>
         <button onClick={onClose} style={{ ...BTN, width: "100%", background: C.blueSolid, color:C.onSolid, border: "none" }}>Done</button>
       </div> : <div style={{ minHeight: 0, padding: 16, overflowY: "auto", overscrollBehavior: "contain", flex: 1 }}>
+        <MyContributionStandingNotice />
         <div style={{ fontSize: 12.5, color: C.textSub, lineHeight: 1.55, background: C.card, border: "1px solid " + C.border, borderRadius: 12, padding: "10px 12px", marginBottom: 14 }}>{"A new crag, peak or area inside "}<b>{p.name || "this area"}</b>{". It’s checked before it shows on the page."}</div>
 
         <div style={{ marginBottom: 14 }}>

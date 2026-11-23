@@ -1,3 +1,4 @@
+import { FONT_DISPLAY } from "../../lib/fonts.js";
 import { useState } from "react";
 import { BTN_LG } from "../../lib/buttonStyles.js";
 import { createPortal } from "react-dom";
@@ -52,14 +53,14 @@ export default function ConnectModal({climber,onClose,onSend,routeById}: Connect
         <button onClick={onClose} aria-label="Close" style={POP_CLOSE}>✕</button>
       </div>
       {shared.length?<div style={{display:"flex",alignItems:"center",gap:9,background:C.greenBg,border:"1px solid "+C.greenDim,borderRadius:11,padding:"10px 12px",marginBottom:14}}><span style={{fontSize:17,flexShrink:0}}></span><div style={{fontSize:12.5,color:C.green,fontWeight:600,lineHeight:1.45}}>You both want to climb {shared.map(r=>r.name).join(", ")}</div></div>:null}
-      <div style={{fontSize:13,color:C.text,fontWeight:800,textTransform:"uppercase",letterSpacing:0.4,marginBottom:8,borderLeft:"3px solid "+C.blue,paddingLeft:9}}>Add a note (optional)</div>
+      <div style={{fontFamily:FONT_DISPLAY,fontSize:18,lineHeight:1.15,color:C.text,fontWeight:600,textTransform:"uppercase",letterSpacing:0.7,marginBottom:8}}>Add a note (optional)</div>
       <textarea aria-label="Add a note (optional)" value={note} onChange={e=>setNote(e.target.value.slice(0,MAX))} placeholder={suggested} rows={4} style={{width:"100%",padding:"11px 12px",borderRadius:11,border:"1px solid "+C.border,background:C.bg,color:C.text,fontSize:13.5,lineHeight:1.5,boxSizing:"border-box",resize:"vertical",fontFamily:"inherit",outline:"none"}}/>
       <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginTop:7,marginBottom:15}}>
         <button onClick={()=>setNote(suggested)} style={{background:"transparent",border:"none",color:C.blue,fontSize:12.5,fontWeight:600,cursor:"pointer",padding:0}}>Use suggested note</button>
         <span style={{fontSize:12,color:note.length>MAX-30?C.amber:C.textMuted}}>{note.length}/{MAX}</span>
       </div>
       <div style={{display:"flex",gap:12}}>
-        <button onClick={onClose} style={{flex:"0 0 auto",padding:"12px 17px",background:C.surface,color:C.textSub,border:"1px solid "+C.border,borderRadius:12,fontSize:14,fontWeight:600,cursor:"pointer"}}>Cancel</button>
+        <button onClick={onClose} style={{...BTN_LG,flex:"0 0 auto",padding:"13px 17px",background:C.surface,color:C.textSub,border:"1px solid "+C.border}}>Cancel</button>
         <button onClick={()=>onSend(note.trim())} style={{...BTN_LG,flex:1,background:C.blueSolid,color:C.onSolid,border:"none"}}>{note.trim()?"Send request":"Send without note"}</button>
       </div>
       <div style={{fontSize:12,color:C.textMuted,textAlign:"center",marginTop:11,lineHeight:1.5}}>A connection is mutual — {first} confirms before you’re connected.</div>

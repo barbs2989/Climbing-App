@@ -28,6 +28,7 @@ import {
 } from "../lib/db";
 import { GpsSubmissionQueue } from "../lib/GpsSubmissionQueue";
 import { AccessibilityReportQueue } from "../lib/AccessibilityReports";
+import { RouteProposalQueue, AreaProposalQueue } from "../lib/RouteProposals";
 import { C, DLOCALE, sameEditValue } from "../ClimbMatchCore";
 import { AREA_EDIT_FIELDS } from "../lib/areaFields";
 
@@ -118,7 +119,7 @@ export default function ReviewDesk() {
   const page = (body) => <div style={{ maxWidth: 1400, margin: "0 auto", padding: "16px 16px 60px" }}><style>{CSS}</style>
     <header style={{ display: "flex", alignItems: "baseline", gap: 12, flexWrap: "wrap", marginBottom: 12 }}>
       <h1 style={{ fontSize: 20, margin: 0 }}>Review desk</h1>
-      <span style={{ fontSize: 12.5, color: C.textMuted }}>Climber flags, suggested edits and wall orders, submitted trails and GPS tracks, and accessibility reports. Edits and flags are checked by AI overnight. Nothing changes until you act.</span>
+      <span style={{ fontSize: 12.5, color: C.textMuted }}>Climber flags, suggested edits and wall orders, proposed climbs and areas, submitted trails and GPS tracks, and accessibility reports. Edits, flags and proposals are checked by AI overnight. Nothing changes until you act.</span>
       <a href={BASE} style={{ marginLeft: "auto", color: C.blue, fontSize: 12.5, fontWeight: 700, textDecoration: "none" }}>Open ClimbMatch →</a>
     </header>{body}</div>;
   if (!supabase) return page(<p>This build has no database connection.</p>);
@@ -137,7 +138,9 @@ export default function ReviewDesk() {
 // (the first one too: held edits + open flags + suggested wall orders, so a wall order waiting is seen
 // from any section) is useAdminQueueCounts, the read that used to badge the Menu; a failed count shows no number rather
 // than a zero. A link can open a section directly: review.html#trails or review.html#access.
-const SECTIONS = [["edits", "Edits, flags & wall orders"], ["trails", "Trails & GPS tracks"], ["access", "Accessibility reports"]];
+// PROPOSED CLIMBS & AREAS (0505, owner 2026-11-23: quality control on people who add a climb or an area) are
+// the Menu's two proposal queues, with the AI checker's verdict on each card. review.html#proposals opens it.
+const SECTIONS = [["edits", "Edits, flags & wall orders"], ["proposals", "Proposed climbs & areas"], ["trails", "Trails & GPS tracks"], ["access", "Accessibility reports"]];
 const fromHash = () => { const h = (typeof window !== "undefined" && window.location.hash || "").slice(1); return SECTIONS.some(([k]) => k === h) ? h : "edits"; };
 function Desk() {
   const [sec, setSec] = useState(fromHash);
@@ -161,7 +164,19 @@ function Desk() {
     </div> : sec === "access" ? <div style={{ maxWidth: 640 }}>
       <p style={{ fontSize: 12.5, color: C.textMuted, lineHeight: 1.5, marginTop: 0 }}>Problems climbers and visitors reported from the Accessibility statement. The statement promises a reply within 5 business days; reply by email, then mark it answered.</p>
       <AccessibilityReportQueue notify={notify} />
-    </div> : <EditsTable />}
+    </div> : sec === "proposals" ? <ProposalsSection /> : <EditsTable />}
+  </div>;
+}
+
+function ProposalsSection() {
+  const aiQ = useAiVerdicts(true);
+  const ai = aiQ.data || {};
+  return <div style={{ maxWidth: 640 }}>
+    <p style={{ fontSize: 12.5, color: C.textMuted, lineHeight: 1.5, marginTop: 0 }}>Climbs and areas climbers added. Nothing shows in the app until you approve it. Read any possible duplicate first; turning one down tells the climber your reason and is a strike unless you tick honest mistake (3 pauses their contributing for 90 days, 5 closes it).{aiQ.error ? " AI verdicts could not load: " + aiQ.error.message : ""}</p>
+    <h2 style={{ fontSize: 15, margin: "14px 0 8px" }}>Proposed climbs</h2>
+    <RouteProposalQueue ai={ai} />
+    <h2 style={{ fontSize: 15, margin: "18px 0 8px" }}>Proposed areas</h2>
+    <AreaProposalQueue ai={ai} />
   </div>;
 }
 

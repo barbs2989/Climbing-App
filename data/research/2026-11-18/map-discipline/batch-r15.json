@@ -1,0 +1,128 @@
+{
+ "wa_north_star_mountain_cloudy_peak_traverse": {
+  "area": "wa_north_star_mountain",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Phelps Creek Trailhead",
+    "trailheadLat": 48.083206,
+    "trailheadLng": -120.835015
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Phelps Creek Trailhead",
+     "trailheadLat": 48.083206,
+     "trailheadLng": -120.835015
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_InfraRecreationSites_01/MapServer/0/query?where=site_cn%3D%276279.005511%27&outFields=site_name&f=json",
+      "fact": "Phelps Creek Trailhead 48.08321,-120.83501",
+      "retrieved_at": "2026-11-23",
+      "official": true
+     },
+     {
+      "url": "https://www.wta.org/go-hiking/trip-reports/trip_report.2018-09-15.9825258247",
+      "fact": "Start: Phelps Creek Trailhead",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "research",
+    "fact": "one route-specific report, no opened source names another start (owner-accepted bar 2026-11-23)"
+   },
+   "chunk": "round15"
+  }
+ },
+ "ca_mount_fiske_standard_route": {
+  "area": "ca_mount_fiske",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "South Lake Trailhead",
+    "trailheadLat": 37.169305,
+    "trailheadLng": -118.565813
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "South Lake Trailhead",
+     "trailheadLat": 37.169305,
+     "trailheadLng": -118.565813
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_InfraRecreationSites_01/MapServer/0/query?where=site_cn%3D%275325.003721%27&outFields=site_name&f=json",
+      "fact": "South Lake Trailhead 37.16931,-118.56581",
+      "retrieved_at": "2026-11-23",
+      "official": true
+     },
+     {
+      "url": "https://climber.org/reports/2011/1876.html",
+      "fact": "Start: South Lake Trailhead",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "research",
+    "fact": "one route-specific report, no opened source names another start (owner-accepted bar 2026-11-23)"
+   },
+   "chunk": "round15"
+  }
+ },
+ "ca_wheel_mountain_standard_route": {
+  "area": "ca_wheel_mountain",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "South Lake Trailhead",
+    "trailheadLat": 37.169305,
+    "trailheadLng": -118.565813
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "South Lake Trailhead",
+     "trailheadLat": 37.169305,
+     "trailheadLng": -118.565813
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_InfraRecreationSites_01/MapServer/0/query?where=site_cn%3D%275325.003721%27&outFields=site_name&f=json",
+      "fact": "South Lake Trailhead 37.16931,-118.56581",
+      "retrieved_at": "2026-11-23",
+      "official": true
+     },
+     {
+      "url": "https://sites.google.com/view/wacziarg-climbing/2020-06-wheel-mountain-devils-crag-1-mount-mcduffie",
+      "fact": "Start: South Lake Trailhead",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "research",
+    "fact": "one route-specific report, no opened source names another start (owner-accepted bar 2026-11-23)"
+   },
+   "chunk": "round15"
+  }
+ }
+}
