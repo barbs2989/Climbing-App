@@ -1493,6 +1493,16 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     the NAME, not their stored `name_search`, so an old pack cannot keep the old rule. The three
     remaining verbatim route/area-name boxes (add-route dupes seed half, AreaTree filter, inbox
     crew-thread route name) now use `searchMatches`.
+  - **Section 5 — the state/province table (0487).** Discover's groups are searched, filtered by
+    state and paged in the database, so a group's region is worked out in SQL
+    (`region_of_place`, stored as `groups.region`) while the climber's HOME region is still
+    worked out in JS (`regionOfPlace`, `lib/db.js`) and sent to `discover_groups()` to rank by.
+    The section reads the newest migration defining `place_regions()` and `REGION_ABBR`, and
+    fails unless they hold the same rows in the same order (the order decides a tie between two
+    names of one length). `ANCHOR LOST` under 50 rows on either side. It compares the TABLE, not
+    the three tests `region_of_place` applies to it; those are asserted by
+    `scripts/oneoff/verify-0487-discover-groups-pglite.mjs` (hand-run, PGlite). Injection: misspell
+    one SQL row and it names the row SQL lacks and the one it adds.
   - **Structurally cannot see** whether the live database runs that migration —
     `check:function-drift` does.
   - Injection-tested **4/4** (SQL drops a row, JS adds an alias SQL lacks, the SQL accent fold
