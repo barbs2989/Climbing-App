@@ -1,0 +1,973 @@
+{
+ "ca_devils_crag_1_standard_route": {
+  "area": "ca_devils_crag_1",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "South Lake Trailhead (Bishop Pass trail)",
+    "trailheadLat": 37.169305,
+    "trailheadLng": -118.565813
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "South Lake Trailhead (Bishop Pass trail)",
+     "trailheadLat": 37.169305,
+     "trailheadLng": -118.565813
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_InfraRecreationSites_01/MapServer/0/query?where=site_cn%3D%275325.003721%27&outFields=site_name&f=json",
+      "fact": "South Lake Trailhead 37.16931,-118.56581",
+      "retrieved_at": "2026-11-23",
+      "official": true
+     },
+     {
+      "url": "https://climber.org/reports/1996/106.html",
+      "fact": "Start: South Lake Trailhead (Bishop Pass trail)",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "research",
+    "fact": "start named on the cited page or in the route text"
+   },
+   "chunk": "round7"
+  }
+ },
+ "ca_disappointment_peak_standard_route": {
+  "area": "ca_disappointment_peak",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Big Pine Creek South Fork Trailhead (Glacier Lodge)",
+    "trailheadLat": 37.124805,
+    "trailheadLng": -118.438913
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Big Pine Creek South Fork Trailhead (Glacier Lodge)",
+     "trailheadLat": 37.124805,
+     "trailheadLng": -118.438913
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_InfraRecreationSites_01/MapServer/0/query?where=site_cn%3D%2720842010594%27&outFields=site_name&f=json",
+      "fact": "BIG PINE CREEK SO FORK TH 37.12481,-118.43891",
+      "retrieved_at": "2026-11-23",
+      "official": true
+     },
+     {
+      "url": "https://climber.org/reports/2008/1665.html",
+      "fact": "Start: Big Pine Creek South Fork Trailhead (Glacier Lodge)",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "research",
+    "fact": "start named on the cited page or in the route text"
+   },
+   "chunk": "round7"
+  }
+ },
+ "ca_mount_baldwin_via_convict_canyon_and_bright_dot_lake": {
+  "area": "ca_mount_baldwin",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Convict Lake Trailhead",
+    "trailheadLat": 37.600105,
+    "trailheadLng": -118.853813
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Convict Lake Trailhead",
+     "trailheadLat": 37.600105,
+     "trailheadLng": -118.853813
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_InfraRecreationSites_01/MapServer/0/query?where=site_cn%3D%275256.003721%27&outFields=site_name&f=json",
+      "fact": "Convict Lake Trailhead 37.60011,-118.85381",
+      "retrieved_at": "2026-11-23",
+      "official": true
+     },
+     {
+      "url": "https://sites.google.com/view/wacziarg-climbing/2016-10-07-mount-baldwin",
+      "fact": "Start: Convict Lake Trailhead",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "research",
+    "fact": "start named on the cited page or in the route text"
+   },
+   "chunk": "round7"
+  }
+ },
+ "ca_mount_maclure_standard_route": {
+  "area": "ca_mount_maclure",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Lyell Canyon Trailhead (Dog Lake parking, Tuolumne Meadows)",
+    "trailheadLat": 37.878162,
+    "trailheadLng": -119.338857
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Lyell Canyon Trailhead (Dog Lake parking, Tuolumne Meadows)",
+     "trailheadLat": 37.878162,
+     "trailheadLng": -119.338857
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://mapservices.nps.gov/arcgis/rest/services/NationalDatasets/NPS_Public_POIs_Geographic/FeatureServer/0/query?where=POINAME%3D%27Dog%20Lake%20Trailhead%20Parking%27&outFields=POINAME&f=json",
+      "fact": "Dog Lake Trailhead Parking 37.87816,-119.33886",
+      "retrieved_at": "2026-11-23",
+      "official": true
+     },
+     {
+      "url": "https://themtsarecalling.com/lyell/",
+      "fact": "Start: Lyell Canyon Trailhead (Dog Lake parking, Tuolumne Meadows)",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "research",
+    "fact": "start named on the cited page or in the route text"
+   },
+   "chunk": "round7"
+  }
+ },
+ "ca_mount_mcadie_via_arc_pass": {
+  "area": "ca_mount_mcadie",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Whitney Portal Trailhead",
+    "trailheadLat": 36.586905,
+    "trailheadLng": -118.240112
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Whitney Portal Trailhead",
+     "trailheadLat": 36.586905,
+     "trailheadLng": -118.240112
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_InfraRecreationSites_01/MapServer/0/query?where=site_cn%3D%275367.003721%27&outFields=site_name&f=json",
+      "fact": "Whitney Portal Trailhead 36.58691,-118.24011",
+      "retrieved_at": "2026-11-23",
+      "official": true
+     },
+     {
+      "url": "https://peaksforfreaks.blogspot.com/2014/11/mt-mcadie-crabtree-point-mt-newcomb-mt.html",
+      "fact": "Start: Whitney Portal Trailhead",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "research",
+    "fact": "start named on the cited page or in the route text"
+   },
+   "chunk": "round7"
+  }
+ },
+ "ca_tunnabora_peak_south_slope_from_tulainyo_lake": {
+  "area": "ca_tunnabora_peak",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Whitney Portal Trailhead",
+    "trailheadLat": 36.586905,
+    "trailheadLng": -118.240112
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Whitney Portal Trailhead",
+     "trailheadLat": 36.586905,
+     "trailheadLng": -118.240112
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_InfraRecreationSites_01/MapServer/0/query?where=site_cn%3D%275367.003721%27&outFields=site_name&f=json",
+      "fact": "Whitney Portal Trailhead 36.58691,-118.24011",
+      "retrieved_at": "2026-11-23",
+      "official": true
+     },
+     {
+      "url": "https://themtsarecalling.com/tunnabora/",
+      "fact": "Start: Whitney Portal Trailhead",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "research",
+    "fact": "start named on the cited page or in the route text"
+   },
+   "chunk": "round7"
+  }
+ },
+ "ca_muah_mountain_via_mulkey_pass": {
+  "area": "ca_muah_mountain",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Cottonwood Pass Trailhead (Horseshoe Meadow)",
+    "trailheadLat": 36.448305,
+    "trailheadLng": -118.170612
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Cottonwood Pass Trailhead (Horseshoe Meadow)",
+     "trailheadLat": 36.448305,
+     "trailheadLng": -118.170612
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_InfraRecreationSites_01/MapServer/0/query?where=site_cn%3D%275330.003721%27&outFields=site_name&f=json",
+      "fact": "Cottonwood Pass Trailhead 36.44831,-118.17061",
+      "retrieved_at": "2026-11-23",
+      "official": true
+     },
+     {
+      "url": "https://themtsarecalling.com/muah/",
+      "fact": "Start: Cottonwood Pass Trailhead (Horseshoe Meadow)",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "research",
+    "fact": "start named on the cited page or in the route text"
+   },
+   "chunk": "round7"
+  }
+ },
+ "ca_red_kaweah_west_face": {
+  "area": "ca_red_kaweah",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Sawtooth Pass Trailhead, Mineral King",
+    "trailheadLat": 36.453305,
+    "trailheadLng": -118.596761
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Sawtooth Pass Trailhead, Mineral King",
+     "trailheadLat": 36.453305,
+     "trailheadLng": -118.596761
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://mapservices.nps.gov/arcgis/rest/services/NationalDatasets/NPS_Public_POIs_Geographic/FeatureServer/0/query?where=POINAME%3D%27Sawtooth%27&outFields=POINAME&f=json",
+      "fact": "Sawtooth 36.45331,-118.59676",
+      "retrieved_at": "2026-11-23",
+      "official": true
+     },
+     {
+      "url": "https://climber.org/reports/2008/1684.html",
+      "fact": "Start: Sawtooth Pass Trailhead, Mineral King",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "research",
+    "fact": "start named on the cited page or in the route text"
+   },
+   "chunk": "round7"
+  }
+ },
+ "ca_striped_mountain_standard_route": {
+  "area": "ca_striped_mountain",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Taboose Pass Trailhead",
+    "trailheadLat": 37.009505,
+    "trailheadLng": -118.327312
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Taboose Pass Trailhead",
+     "trailheadLat": 37.009505,
+     "trailheadLng": -118.327312
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_InfraRecreationSites_01/MapServer/0/query?where=site_cn%3D%275359.003721%27&outFields=site_name&f=json",
+      "fact": "TABOOSE PASS TH 37.00951,-118.32731",
+      "retrieved_at": "2026-11-23",
+      "official": true
+     },
+     {
+      "url": "https://peaksforfreaks.blogspot.com/2014/05/striped-mountain-goodale-mountain.html",
+      "fact": "Start: Taboose Pass Trailhead",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "research",
+    "fact": "start named on the cited page or in the route text"
+   },
+   "chunk": "round7"
+  }
+ },
+ "ca_black_hawk_mountain_via_summit_creek_and_mosquito_pass": {
+  "area": "ca_black_hawk_mountain",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Kennedy Meadows Trailhead parking (Highway 108)",
+    "trailheadLat": 38.316876,
+    "trailheadLng": -119.747038
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Kennedy Meadows Trailhead parking (Highway 108)",
+     "trailheadLat": 38.316876,
+     "trailheadLng": -119.747038
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.openstreetmap.org/way/833681727",
+      "fact": "Kennedy Meadows Trailhead Parking 38.31688,-119.74704",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://climber.org/reports/1999/414.html",
+      "fact": "Start: Kennedy Meadows Trailhead parking (Highway 108)",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "research",
+    "fact": "start named on the cited page or in the route text"
+   },
+   "chunk": "round7"
+  }
+ },
+ "ca_mokelumne_peak_standard_route": {
+  "area": "ca_mokelumne_peak",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Tanglefoot Trailhead",
+    "trailheadLat": 38.523551,
+    "trailheadLng": -120.17351
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Tanglefoot Trailhead",
+     "trailheadLat": 38.523551,
+     "trailheadLng": -120.17351
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.openstreetmap.org/node/3939274836",
+      "fact": "Tanglefoot Trailhead 38.52355,-120.17351",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://climber.org/reports/2010/1760.html",
+      "fact": "Start: Tanglefoot Trailhead",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "research",
+    "fact": "start named on the cited page or in the route text"
+   },
+   "chunk": "round7"
+  }
+ },
+ "wa_colchuck_balanced_rock_east_route": {
+  "area": "wa_colchuck_balanced_rock",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Stuart Lake Trailhead",
+    "trailheadLat": 47.527806,
+    "trailheadLng": -120.820515
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Stuart Lake Trailhead",
+     "trailheadLat": 47.527806,
+     "trailheadLng": -120.820515
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_InfraRecreationSites_01/MapServer/0/query?where=site_cn%3D%276221.005511%27&outFields=site_name&f=json",
+      "fact": "Stuart Lake Trailhead 47.52781,-120.82051",
+      "retrieved_at": "2026-11-23",
+      "official": true
+     },
+     {
+      "url": "https://stephabegg.com/?p=8702",
+      "fact": "Start: Stuart Lake Trailhead",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "research",
+    "fact": "start named on the cited page or in the route text"
+   },
+   "chunk": "round7"
+  }
+ },
+ "wa_colchuck_balanced_rock_south_route": {
+  "area": "wa_colchuck_balanced_rock",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Stuart Lake Trailhead",
+    "trailheadLat": 47.527806,
+    "trailheadLng": -120.820515
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Stuart Lake Trailhead",
+     "trailheadLat": 47.527806,
+     "trailheadLng": -120.820515
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_InfraRecreationSites_01/MapServer/0/query?where=site_cn%3D%276221.005511%27&outFields=site_name&f=json",
+      "fact": "Stuart Lake Trailhead 47.52781,-120.82051",
+      "retrieved_at": "2026-11-23",
+      "official": true
+     },
+     {
+      "url": "https://stephabegg.com/?p=8702",
+      "fact": "Start: Stuart Lake Trailhead",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "research",
+    "fact": "start named on the cited page or in the route text"
+   },
+   "chunk": "round7"
+  }
+ },
+ "wa_colchuck_peak_northeast_gully": {
+  "area": "wa_colchuck_peak",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Stuart Lake Trailhead",
+    "trailheadLat": 47.527806,
+    "trailheadLng": -120.820515
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Stuart Lake Trailhead",
+     "trailheadLat": 47.527806,
+     "trailheadLng": -120.820515
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_InfraRecreationSites_01/MapServer/0/query?where=site_cn%3D%276221.005511%27&outFields=site_name&f=json",
+      "fact": "Stuart Lake Trailhead 47.52781,-120.82051",
+      "retrieved_at": "2026-11-23",
+      "official": true
+     },
+     {
+      "url": "https://lemkeclimbs.com/dragontail-peak",
+      "fact": "Start: Stuart Lake Trailhead",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "research",
+    "fact": "start named on the cited page or in the route text"
+   },
+   "chunk": "round7"
+  }
+ },
+ "wa_dragontail_peak_colchuck_col_buttress": {
+  "area": "wa_dragontail_peak",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Stuart Lake Trailhead",
+    "trailheadLat": 47.527806,
+    "trailheadLng": -120.820515
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Stuart Lake Trailhead",
+     "trailheadLat": 47.527806,
+     "trailheadLng": -120.820515
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_InfraRecreationSites_01/MapServer/0/query?where=site_cn%3D%276221.005511%27&outFields=site_name&f=json",
+      "fact": "Stuart Lake Trailhead 47.52781,-120.82051",
+      "retrieved_at": "2026-11-23",
+      "official": true
+     },
+     {
+      "url": "https://lemkeclimbs.com/dragontail-peak",
+      "fact": "Start: Stuart Lake Trailhead",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "research",
+    "fact": "start named on the cited page or in the route text"
+   },
+   "chunk": "round7"
+  }
+ },
+ "wa_hibox_mountain_south_face": {
+  "area": "wa_hibox_mountain",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Rachel Lake Trailhead",
+    "trailheadLat": 47.400706,
+    "trailheadLng": -121.283915
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Rachel Lake Trailhead",
+     "trailheadLat": 47.400706,
+     "trailheadLng": -121.283915
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_InfraRecreationSites_01/MapServer/0/query?where=site_cn%3D%275182010416%27&outFields=site_name&f=json",
+      "fact": "Rachel Lake Trailhead 47.40071,-121.28391",
+      "retrieved_at": "2026-11-23",
+      "official": true
+     },
+     {
+      "url": "https://mountainflamingo.com/2019-06-30-hibox-mountain/",
+      "fact": "Start: Rachel Lake Trailhead",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "research",
+    "fact": "start named on the cited page or in the route text"
+   },
+   "chunk": "round7"
+  }
+ },
+ "wa_hibox_mountain_southeast_ridge": {
+  "area": "wa_hibox_mountain",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Rachel Lake Trailhead",
+    "trailheadLat": 47.400706,
+    "trailheadLng": -121.283915
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Rachel Lake Trailhead",
+     "trailheadLat": 47.400706,
+     "trailheadLng": -121.283915
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_InfraRecreationSites_01/MapServer/0/query?where=site_cn%3D%275182010416%27&outFields=site_name&f=json",
+      "fact": "Rachel Lake Trailhead 47.40071,-121.28391",
+      "retrieved_at": "2026-11-23",
+      "official": true
+     },
+     {
+      "url": "https://mountainflamingo.com/2019-06-30-hibox-mountain/",
+      "fact": "Start: Rachel Lake Trailhead",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "research",
+    "fact": "start named on the cited page or in the route text"
+   },
+   "chunk": "round7"
+  }
+ },
+ "wa_dome_peak_indian_summer": {
+  "area": "wa_dome_peak",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Downey Creek Trailhead (Trail #768, Suiattle River Road)",
+    "trailheadLat": 48.259506,
+    "trailheadLng": -121.222915
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Downey Creek Trailhead (Trail #768, Suiattle River Road)",
+     "trailheadLat": 48.259506,
+     "trailheadLng": -121.222915
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_InfraRecreationSites_01/MapServer/0/query?where=site_cn%3D%275357010357%27&outFields=site_name&f=json",
+      "fact": "Downey Creek Trailhead 48.25951,-121.22291",
+      "retrieved_at": "2026-11-23",
+      "official": true
+     },
+     {
+      "url": "https://lemkeclimbs.com/dome-peak",
+      "fact": "Start: Downey Creek Trailhead (Trail #768, Suiattle River Road)",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "research",
+    "fact": "start named on the cited page or in the route text"
+   },
+   "chunk": "round7"
+  }
+ },
+ "wa_klawatti_peak_north_ridge": {
+  "area": "wa_klawatti_peak",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Eldorado Creek trailhead (Cascade River Road mile 20)",
+    "trailheadLat": 48.4926,
+    "trailheadLng": -121.1222
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Eldorado Creek trailhead (Cascade River Road mile 20)",
+     "trailheadLat": 48.4926,
+     "trailheadLng": -121.1222
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://lemkeclimbs.com/?p=2603",
+      "fact": "Start: Eldorado Creek trailhead (Cascade River Road mile 20)",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "research",
+    "fact": "the catalog already stores this pin on 17 neighbouring routes (e.g. wa_austera_peak); start named on the cited page or in the route text"
+   },
+   "chunk": "round7"
+  }
+ },
+ "wa_mixup_peak_pbs_late_night_special": {
+  "area": "wa_mixup_peak",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Cascade Pass Trailhead (Cascade River Road)",
+    "trailheadLat": 48.4755,
+    "trailheadLng": -121.07503
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Cascade Pass Trailhead (Cascade River Road)",
+     "trailheadLat": 48.4755,
+     "trailheadLng": -121.07503
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/cascade-pass",
+      "fact": "Start: Cascade Pass Trailhead (Cascade River Road)",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "research",
+    "fact": "the catalog already stores this pin on 16 neighbouring routes (e.g. wa_buckner_mountain_southwest_face); start named on the cited page or in the route text"
+   },
+   "chunk": "round7"
+  }
+ },
+ "wa_sharkfin_tower_flakes_and_chimneys_south_face": {
+  "area": "wa_sharkfin_tower",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Boston Basin climbers' trailhead (Cascade River Road)",
+    "trailheadLat": 48.48055,
+    "trailheadLng": -121.07979
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Boston Basin climbers' trailhead (Cascade River Road)",
+     "trailheadLat": 48.48055,
+     "trailheadLng": -121.07979
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://stephabegg.com/?p=58447",
+      "fact": "Start: Boston Basin climbers' trailhead (Cascade River Road)",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "research",
+    "fact": "the catalog already stores this pin on 10 neighbouring routes (e.g. wa_boston_peak_southeast_face); start named on the cited page or in the route text"
+   },
+   "chunk": "round7"
+  }
+ },
+ "wa_chianti_spire_lichen_bouquet": {
+  "area": "wa_chianti_spire",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "SR 20 pullout near milepost 166 (Burgundy Col trail)",
+    "trailheadLat": 48.551406,
+    "trailheadLng": -120.630895
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "SR 20 pullout near milepost 166 (Burgundy Col trail)",
+     "trailheadLat": 48.551406,
+     "trailheadLng": -120.630895
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_InfraRecreationSites_01/MapServer/0/query?where=site_cn%3D%276738221010602%27&outFields=site_name&f=json",
+      "fact": "Burgundy Col 48.55141,-120.63089",
+      "retrieved_at": "2026-11-23",
+      "official": true
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "research",
+    "fact": "start named on the cited page or in the route text"
+   },
+   "chunk": "round7"
+  }
+ },
+ "wa_mount_rahm_custer_traverse": {
+  "area": "wa_mount_rahm",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Depot Creek Road washout (via Chilliwack Lake, BC)",
+    "trailheadLat": 49.033,
+    "trailheadLng": -121.4025
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Depot Creek Road washout (via Chilliwack Lake, BC)",
+     "trailheadLat": 49.033,
+     "trailheadLng": -121.4025
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://stephabegg.com/trip-reports/washington/chilliwack-slam/",
+      "fact": "Start: Depot Creek Road washout (via Chilliwack Lake, BC)",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "research",
+    "fact": "the catalog already stores this pin on 2 neighbouring routes (e.g. wa_mount_rahm_south_side); start named on the cited page or in the route text"
+   },
+   "chunk": "round7"
+  }
+ },
+ "wa_northwest_mox_peak_northeast_ridge": {
+  "area": "wa_northwest_mox_peak",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Depot Creek Road washout (via Chilliwack Lake, BC)",
+    "trailheadLat": 49.033,
+    "trailheadLng": -121.4025
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Depot Creek Road washout (via Chilliwack Lake, BC)",
+     "trailheadLat": 49.033,
+     "trailheadLng": -121.4025
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://trailcatjim.com/hard-mox-peak-easy-mox-peak-depot-creek-falls/",
+      "fact": "Start: Depot Creek Road washout (via Chilliwack Lake, BC)",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "research",
+    "fact": "the catalog already stores this pin on 4 neighbouring routes (e.g. wa_mount_spickard_southwest); start named on the cited page or in the route text"
+   },
+   "chunk": "round7"
+  }
+ }
+}

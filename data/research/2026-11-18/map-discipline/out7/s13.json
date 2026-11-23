@@ -1,0 +1,188 @@
+[
+ {
+  "id": "wa_goat_mountain_eastern_route",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "nothing new. Opened USFS Goat Mountain Trailhead page (coords 48.897712,-121.645249; trail 673, no mention of east peak or this route) and USFS Hannegan page (no Goat mention). Mountaineers and WTA trip reports 403. Peak has several starts in use (Goat Mountain TH, Nooksack Cirque, Twin Lakes, Hannegan); nothing opened ties Eastern Route to one."
+ },
+ {
+  "id": "wa_goat_mountain_southeast_face",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "nothing new. Opened USFS Goat Mountain Trailhead page (coords 48.897712,-121.645249; trail 673, no mention of east peak or this route) and USFS Hannegan page (no Goat mention). Mountaineers and WTA trip reports 403. Peak has several starts in use (Goat Mountain TH, Nooksack Cirque, Twin Lakes, Hannegan); nothing opened ties Southeast Face to one."
+ },
+ {
+  "id": "wa_goat_mountain_southeast_route",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "nothing new. Opened USFS Goat Mountain Trailhead page (coords 48.897712,-121.645249; trail 673, no mention of east peak or this route) and USFS Hannegan page (no Goat mention). Mountaineers and WTA trip reports 403. Peak has several starts in use (Goat Mountain TH, Nooksack Cirque, Twin Lakes, Hannegan); nothing opened ties Southeast Route to one."
+ },
+ {
+  "id": "wa_goat_mountain_southwest_route",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "nothing new. Opened USFS Goat Mountain Trailhead page (coords 48.897712,-121.645249; trail 673, no mention of east peak or this route) and USFS Hannegan page (no Goat mention). Mountaineers and WTA trip reports 403. Peak has several starts in use (Goat Mountain TH, Nooksack Cirque, Twin Lakes, Hannegan); nothing opened ties Southwest Route to one."
+ },
+ {
+  "id": "wa_half_moon_uncle_wehrly_s_toupee",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "start",
+    "value": "SW end of Hai Tower, right-most summit of Half Moon from highway",
+    "url": "https://publications.americanalpineclub.org/articles/13201214567"
+   }
+  ],
+  "notes": "nothing new on the start. AAJ page opened: no parking or approach given. SummitPost 403. Search summary only suggests SR-20 pullout past the Hairpin (weak, unopened)."
+ },
+ {
+  "id": "wa_hibox_mountain_south_face",
+  "status": "found",
+  "trailhead": {
+   "name": "Rachel Lake Trailhead",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://mountainflamingo.com/2019-06-30-hibox-mountain/",
+    "fact": "Opened report describes the climbers path and east ridge from Rachel Lake TH."
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "Rachel Lake Trailhead",
+     "lat": 47.400706,
+     "lng": -121.283915,
+     "url": ""
+    },
+    {
+     "source": "WTA",
+     "name": "Hibox Mountain hike start",
+     "lat": 47.4008,
+     "lng": -121.284,
+     "url": "https://www.wta.org/go-hiking/hikes/hibox-mountain"
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "distance_mi",
+    "value": "7.1 round trip",
+    "url": "https://mountainflamingo.com/2019-06-30-hibox-mountain/"
+   },
+   {
+    "field": "gain_ft",
+    "value": "4000",
+    "url": "https://mountainflamingo.com/2019-06-30-hibox-mountain/"
+   },
+   {
+    "field": "approach",
+    "value": "leave Rachel Lake Trail at unmarked way trail ~2.2 mi, 450 ft gain",
+    "url": "https://mountainflamingo.com/2019-06-30-hibox-mountain/"
+   }
+  ],
+  "notes": "Peak has a single access (Rachel Lake Trail); WTA page (opened) puts hike start at 47.4008,-121.2840, same as USFS point. Opened report describes the climbers path and east ridge from Rachel Lake TH. WEAK for this face: no opened page names this specific route; peak-level single-access basis."
+ },
+ {
+  "id": "wa_hibox_mountain_southeast_ridge",
+  "status": "found",
+  "trailhead": {
+   "name": "Rachel Lake Trailhead",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://mountainflamingo.com/2019-06-30-hibox-mountain/",
+    "fact": "Opened report: east-ridge class 3 scramble reached from Rachel Lake Trail, same TH."
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "Rachel Lake Trailhead",
+     "lat": 47.400706,
+     "lng": -121.283915,
+     "url": ""
+    },
+    {
+     "source": "WTA",
+     "name": "Hibox Mountain hike start",
+     "lat": 47.4008,
+     "lng": -121.284,
+     "url": "https://www.wta.org/go-hiking/hikes/hibox-mountain"
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "distance_mi",
+    "value": "7.1 round trip",
+    "url": "https://mountainflamingo.com/2019-06-30-hibox-mountain/"
+   },
+   {
+    "field": "gain_ft",
+    "value": "4000",
+    "url": "https://mountainflamingo.com/2019-06-30-hibox-mountain/"
+   },
+   {
+    "field": "approach",
+    "value": "leave Rachel Lake Trail at unmarked way trail ~2.2 mi, 450 ft gain",
+    "url": "https://mountainflamingo.com/2019-06-30-hibox-mountain/"
+   }
+  ],
+  "notes": "Peak has a single access (Rachel Lake Trail); WTA page (opened) puts hike start at 47.4008,-121.2840, same as USFS point. Opened report: east-ridge class 3 scramble reached from Rachel Lake Trail, same TH. WEAK for this face: no opened page names this specific route; peak-level single-access basis."
+ },
+ {
+  "id": "wa_himmelhorn_stonehenge",
+  "status": "found",
+  "trailhead": {
+   "name": "Goodell Creek Trailhead",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://publications.americanalpineclub.org/articles/13201213408/Himmelhorn-South-Face-Stonehenge",
+    "fact": "AAJ 2015 account: packs hauled up the Goodell Creek jungle to camp below Chopping Block"
+   },
+   "placements": []
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "approach",
+    "value": "snow slope 1 hr from camp, ~600 ft ramps to grassy col",
+    "url": "https://publications.americanalpineclub.org/articles/13201213408/Himmelhorn-South-Face-Stonehenge"
+   }
+  ],
+  "notes": "Signed name only, no coordinate from an allowed source (no USFS/NPS candidate matches; earlier OSM placement not reused). AAJ page names no trailhead, only the Goodell Creek approach; Goodell Creek is the sole western access."
+ },
+ {
+  "id": "wa_himmelhorn_wild_hair_crack",
+  "status": "found",
+  "trailhead": {
+   "name": "Goodell Creek Trailhead",
+   "identifiedBy": {
+    "kind": "route_text",
+    "fact": "Via Goodell Creek Trailhead and the Stump Hollow approach"
+   },
+   "placements": []
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Signed name only, no coordinate from an allowed source (no USFS/NPS candidate matches; earlier OSM placement not reused). AAJ page names no trailhead, only the Goodell Creek approach; Goodell Creek is the sole western access."
+ }
+]

@@ -1,0 +1,1100 @@
+[
+ {
+  "id": "wa_american_border_peak_northeast_face",
+  "name": "Northeast Face",
+  "peakName": "American Border Peak",
+  "state": "Washington",
+  "discipline": "mountaineering",
+  "status": "held",
+  "peak": {
+   "id": "wa_american_border_peak",
+   "name": "American Border Peak",
+   "lat": 48.9954,
+   "lng": -121.6651,
+   "elevation_ft": 7998,
+   "region": "Washington",
+   "path": "usa.washington.wa_northwest.wa_shuksan_baker_neighbors.wa_american_border_peak"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": "A more remote alternative to the standard route, gained from the glacier below the peak's northeast face and climbing mixed snow and rock — including a large, ~45-degree snow gully — via mostly class 3 with occasional class 4 rock to the summit.",
+   "description": null,
+   "descent": null
+  },
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Twin Lakes Trailhead",
+    "lat": 48.951763,
+    "lng": -121.635355,
+    "km": 5.3
+   },
+   {
+    "src": "USFS",
+    "name": "Tomyhoi/Yellow Aster Butte Trailhead",
+    "lat": 48.943426,
+    "lng": -121.662795,
+    "km": 5.8
+   },
+   {
+    "src": "USFS",
+    "name": "Welcome Pass Trailhead",
+    "lat": 48.913529,
+    "lng": -121.699868,
+    "km": 9.5
+   },
+   {
+    "src": "USFS",
+    "name": "Hannegan Trailhead",
+    "lat": 48.910191,
+    "lng": -121.591986,
+    "km": 10.9
+   },
+   {
+    "src": "USFS",
+    "name": "Goat Mountain Trailhead",
+    "lat": 48.897718,
+    "lng": -121.645264,
+    "km": 11
+   },
+   {
+    "src": "USFS",
+    "name": "Damfino Lakes Trailhead",
+    "lat": 48.958998,
+    "lng": -121.807188,
+    "km": 11.1
+   },
+   {
+    "src": "USFS",
+    "name": "Nooksack Cirque Trailhead",
+    "lat": 48.894006,
+    "lng": -121.651015,
+    "km": 11.3
+   },
+   {
+    "src": "USFS",
+    "name": "Excelsior Pass Trailhead",
+    "lat": 48.9097,
+    "lng": -121.801697,
+    "km": 13.8
+   }
+  ],
+  "lastAnswer": {
+   "status": "stuck",
+   "trailhead": null,
+   "notes": "SummitPost 403 to WebFetch. Search summaries only (not evidence): all sources start at Twin Lakes (FR 3065, high-clearance to Twin Lakes, else Yellow Aster/Tomyhoi lot + 2 mi walk) and the NE face is reached across the glacier like Canadian Border Peak. That makes Twin Lakes Trailhead (USFS 48.951763,-121.635355) likely but no opened page ties the NE face to it. Not asserted. Mountaineers 403."
+  }
+ },
+ {
+  "id": "wa_apex_mountain_pasayten_apex_buttress",
+  "name": "Apex Buttress",
+  "peakName": "Apex Mountain",
+  "state": "Washington",
+  "discipline": "alpine",
+  "status": "held",
+  "peak": {
+   "id": "wa_apex_mountain_pasayten",
+   "name": "Apex Mountain",
+   "lat": 48.961174,
+   "lng": -120.14479,
+   "elevation_ft": 8302,
+   "region": "Pasayten Wilderness",
+   "path": "usa.washington.wa_okanogan.wa_pasayten.wa_apex_mountain_pasayten"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": "Seven pitches, climbing the buttress that stands out on the left of Tungsten Lake.",
+   "description": null,
+   "descent": null
+  },
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Chewuch  Trailhead",
+    "lat": 48.872106,
+    "lng": -120.003515,
+    "km": 14.3
+   },
+   {
+    "src": "USFS",
+    "name": "Thirty Mile Trailhead",
+    "lat": 48.822806,
+    "lng": -120.019715,
+    "km": 17.9
+   },
+   {
+    "src": "USFS",
+    "name": "Iron Gate  Trailhead",
+    "lat": 48.908506,
+    "lng": -119.904025,
+    "km": 18.5
+   },
+   {
+    "src": "USFS",
+    "name": "Long Swamp Trailhead",
+    "lat": 48.854806,
+    "lng": -119.947515,
+    "km": 18.6
+   },
+   {
+    "src": "USFS",
+    "name": "Lake Creek Trailhead - Methow",
+    "lat": 48.783016,
+    "lng": -120.161215,
+    "km": 19.8
+   },
+   {
+    "src": "USFS",
+    "name": "Andrews Creek Trailhead",
+    "lat": 48.783706,
+    "lng": -120.108615,
+    "km": 19.9
+   },
+   {
+    "src": "USFS",
+    "name": "Crystal Trailhead",
+    "lat": 48.756306,
+    "lng": -120.139215,
+    "km": 22.8
+   },
+   {
+    "src": "USFS",
+    "name": "Billygoat (upper) Trailhead",
+    "lat": 48.784326,
+    "lng": -120.317825,
+    "km": 23.4
+   }
+  ],
+  "lastAnswer": {
+   "status": "found",
+   "trailhead": {
+    "name": "Thirtymile Trailhead",
+    "identifiedBy": {
+     "kind": "page",
+     "url": "https://www.wta.org/go-hiking/hikes/tungsten",
+     "fact": "Tungsten Lake has no trailhead of its own; start at Thirtymile, Tungsten Creek trail 6.2 mi from Chewuch trail; lake sits high on Apex Mountain"
+    },
+    "placements": [
+     {
+      "source": "USFS",
+      "name": "Thirty Mile Trailhead",
+      "lat": 48.822806,
+      "lng": -120.019715,
+      "url": ""
+     },
+     {
+      "source": "WTA",
+      "name": "Thirtymile Trailhead",
+      "lat": 48.8236,
+      "lng": -120.0189,
+      "url": "https://www.wta.org/go-hiking/hikes/tungsten"
+     }
+    ]
+   },
+   "notes": "WEAK/INFERRED: the page is about Tungsten Lake (which the buttress overlooks), not the buttress. Alternative start per search summary (not opened): Chewuch Trailhead via Cathedral Driveway 2.2 mi to the same Chewuch trail. SummitPost Apex page 403. Placements agree within about 100 m."
+  }
+ },
+ {
+  "id": "wa_castle_peak_pasayten_east_ridge",
+  "name": "East Ridge",
+  "peakName": "Castle Peak",
+  "state": "Washington",
+  "discipline": "alpine",
+  "status": "held",
+  "peak": {
+   "id": "wa_castle_peak_pasayten",
+   "name": "Castle Peak",
+   "lat": 48.981991,
+   "lng": -120.862054,
+   "elevation_ft": 8343,
+   "region": "Pasayten Wilderness/Hozomeen",
+   "path": "usa.washington.wa_okanogan.wa_pasayten.wa_castle_peak_pasayten"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "siblingTrailheads": [
+   {
+    "route": "wa_castle_peak_pasayten_scramble",
+    "name": "Ross Dam Trailhead (SR-20 milepost 134)"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "NPS",
+    "name": "Skyline II Trailhead (BC)",
+    "lat": 49.041545,
+    "lng": -121.068734,
+    "km": 16.5
+   },
+   {
+    "src": "NPS",
+    "name": "Nepopekum Horse Trail Loop Trailhead (BC)",
+    "lat": 49.053337,
+    "lng": -121.094073,
+    "km": 18.7
+   },
+   {
+    "src": "NPS",
+    "name": "Strawberry Bar (BC)",
+    "lat": 49.076197,
+    "lng": -121.111462,
+    "km": 21
+   },
+   {
+    "src": "NPS",
+    "name": "Shawatum Day Use parking area (BC)",
+    "lat": 49.105168,
+    "lng": -121.138761,
+    "km": 24.4
+   }
+  ],
+  "lastAnswer": {
+   "status": "found",
+   "trailhead": {
+    "name": "Monument 78/83 Trailhead (Hwy 3, Manning Provincial Park, BC)",
+    "identifiedBy": {
+     "kind": "page",
+     "url": "https://trailcatjim.com/crow-creek-basin-castle-peak-via-east-ridge-couloir-southeast-ridge/",
+     "fact": "East Ridge Couloir to the east-ridge col then SE ridge started at Monument 78/83 TH at ~3750 ft; Monument 78 trail ~7 mi to the border, then off-trail through Crow Creek Basin"
+    },
+    "placements": []
+   },
+   "notes": "WEAK/inferred: the page is a trip report on the east side but of the East Ridge Couloir plus SE ridge, not a plain 'East Ridge' (Wikipedia lists East-southeast Ridge class 3). Sibling scramble starts at Ross Dam TH (another side). No coordinate printed; empty placements, name for OSM match. Trailhead is in Canada. Hold for review."
+  }
+ },
+ {
+  "id": "wa_castle_peak_pasayten_north_ridge",
+  "name": "North Ridge",
+  "peakName": "Castle Peak",
+  "state": "Washington",
+  "discipline": "alpine",
+  "status": "nopage",
+  "peak": {
+   "id": "wa_castle_peak_pasayten",
+   "name": "Castle Peak",
+   "lat": 48.981991,
+   "lng": -120.862054,
+   "elevation_ft": 8343,
+   "region": "Pasayten Wilderness/Hozomeen",
+   "path": "usa.washington.wa_okanogan.wa_pasayten.wa_castle_peak_pasayten"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "siblingTrailheads": [
+   {
+    "route": "wa_castle_peak_pasayten_scramble",
+    "name": "Ross Dam Trailhead (SR-20 milepost 134)"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "NPS",
+    "name": "Skyline II Trailhead (BC)",
+    "lat": 49.041545,
+    "lng": -121.068734,
+    "km": 16.5
+   },
+   {
+    "src": "NPS",
+    "name": "Nepopekum Horse Trail Loop Trailhead (BC)",
+    "lat": 49.053337,
+    "lng": -121.094073,
+    "km": 18.7
+   },
+   {
+    "src": "NPS",
+    "name": "Strawberry Bar (BC)",
+    "lat": 49.076197,
+    "lng": -121.111462,
+    "km": 21
+   },
+   {
+    "src": "NPS",
+    "name": "Shawatum Day Use parking area (BC)",
+    "lat": 49.105168,
+    "lng": -121.138761,
+    "km": 24.4
+   }
+  ],
+  "lastAnswer": {
+   "status": "stuck",
+   "trailhead": null,
+   "notes": "No page describes a north ridge (Wikipedia lists north face and buttress routes only; Jim Brisbine report mentions none). Access from the north would be Monument 78 (BC) and from south Ross Lake, but nothing ties this route to either."
+  }
+ },
+ {
+  "id": "wa_chair_peak_south_ridge",
+  "name": "South Ridge",
+  "peakName": "Chair Peak",
+  "state": "Washington",
+  "discipline": "alpine",
+  "status": "held",
+  "peak": {
+   "id": "wa_chair_peak",
+   "name": "Chair Peak",
+   "lat": 47.459595,
+   "lng": -121.466875,
+   "elevation_ft": 6238,
+   "region": "Washington",
+   "path": "usa.washington.wa_centralwest.wa_snoqualmie_pass_area.wa_chair_peak"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "siblingTrailheads": [
+   {
+    "route": "wa_chair_bryant_traverse",
+    "name": "Alpental Ski Area parking lot / Snow Lake Trailhead"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Snow Lake Trailhead",
+    "lat": 47.445656,
+    "lng": -121.423665,
+    "km": 3.6
+   },
+   {
+    "src": "USFS",
+    "name": "Pants - Snoqualmie South Trailhead",
+    "lat": 47.427228,
+    "lng": -121.420293,
+    "km": 5
+   },
+   {
+    "src": "USFS",
+    "name": "Denny Creek Trailhead",
+    "lat": 47.415956,
+    "lng": -121.441168,
+    "km": 5.2
+   },
+   {
+    "src": "USFS",
+    "name": "Pacific Crest Trail/Stevens Pass Trailhe",
+    "lat": 47.42841,
+    "lng": -121.415498,
+    "km": 5.2
+   },
+   {
+    "src": "USFS",
+    "name": "Pacific Crest Trail - Snoqualmie North T",
+    "lat": 47.428012,
+    "lng": -121.413484,
+    "km": 5.3
+   },
+   {
+    "src": "USFS",
+    "name": "Franklin Falls Trailhead",
+    "lat": 47.413339,
+    "lng": -121.441404,
+    "km": 5.5
+   },
+   {
+    "src": "USFS",
+    "name": "Dingford Creek Trailhead",
+    "lat": 47.517325,
+    "lng": -121.4543,
+    "km": 6.5
+   },
+   {
+    "src": "USFS",
+    "name": "Pratt Lake Trailhead",
+    "lat": 47.397861,
+    "lng": -121.48645,
+    "km": 7
+   }
+  ],
+  "lastAnswer": {
+   "status": "found",
+   "trailhead": {
+    "name": "Snow Lake Trailhead (Alpental)",
+    "identifiedBy": {
+     "kind": "page",
+     "url": "https://stevensong.com/usa/washington/chair-peak/",
+     "fact": "2024 report: scramble to south shoulder starts at Snow Lake trailhead, Alpental lot 3,100 ft, trail 1013, Snow Lake trail ~45 min then climber trail"
+    },
+    "placements": [
+     {
+      "source": "USFS",
+      "name": "Snow Lake Trailhead",
+      "lat": 47.445656,
+      "lng": -121.423665,
+      "url": ""
+     },
+     {
+      "source": "WTA",
+      "name": "Snow Lake hike trailhead",
+      "lat": 47.4454,
+      "lng": -121.423,
+      "url": "https://www.wta.org/go-hiking/hikes/snow-lake"
+     }
+    ]
+   },
+   "notes": "WEAK/inferred: page body too large for WebFetch, so read via search summary, not opened text; report says south shoulder, not South Ridge; peak has one Snoqualmie-side scramble. SummitPost 403."
+  }
+ },
+ {
+  "id": "wa_chair_peak_southeast_face",
+  "name": "Southeast Face",
+  "peakName": "Chair Peak",
+  "state": "Washington",
+  "discipline": "alpine",
+  "status": "nopage",
+  "peak": {
+   "id": "wa_chair_peak",
+   "name": "Chair Peak",
+   "lat": 47.459595,
+   "lng": -121.466875,
+   "elevation_ft": 6238,
+   "region": "Washington",
+   "path": "usa.washington.wa_centralwest.wa_snoqualmie_pass_area.wa_chair_peak"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "siblingTrailheads": [
+   {
+    "route": "wa_chair_bryant_traverse",
+    "name": "Alpental Ski Area parking lot / Snow Lake Trailhead"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Snow Lake Trailhead",
+    "lat": 47.445656,
+    "lng": -121.423665,
+    "km": 3.6
+   },
+   {
+    "src": "USFS",
+    "name": "Pants - Snoqualmie South Trailhead",
+    "lat": 47.427228,
+    "lng": -121.420293,
+    "km": 5
+   },
+   {
+    "src": "USFS",
+    "name": "Denny Creek Trailhead",
+    "lat": 47.415956,
+    "lng": -121.441168,
+    "km": 5.2
+   },
+   {
+    "src": "USFS",
+    "name": "Pacific Crest Trail/Stevens Pass Trailhe",
+    "lat": 47.42841,
+    "lng": -121.415498,
+    "km": 5.2
+   },
+   {
+    "src": "USFS",
+    "name": "Pacific Crest Trail - Snoqualmie North T",
+    "lat": 47.428012,
+    "lng": -121.413484,
+    "km": 5.3
+   },
+   {
+    "src": "USFS",
+    "name": "Franklin Falls Trailhead",
+    "lat": 47.413339,
+    "lng": -121.441404,
+    "km": 5.5
+   },
+   {
+    "src": "USFS",
+    "name": "Dingford Creek Trailhead",
+    "lat": 47.517325,
+    "lng": -121.4543,
+    "km": 6.5
+   },
+   {
+    "src": "USFS",
+    "name": "Pratt Lake Trailhead",
+    "lat": 47.397861,
+    "lng": -121.48645,
+    "km": 7
+   }
+  ],
+  "lastAnswer": {
+   "status": "stuck",
+   "trailhead": null,
+   "notes": "No page about the SE snow face found; Snow Lake/Alpental is only a peak-level inference (as earlier passes). SummitPost, Mountaineers blocked."
+  }
+ },
+ {
+  "id": "wa_chianti_spire_lichen_bouquet",
+  "name": "Lichen Bouquet (East Face)",
+  "peakName": "Chianti Spire",
+  "state": "Washington",
+  "discipline": "alpine",
+  "status": "nopage",
+  "peak": {
+   "id": "wa_chianti_spire",
+   "name": "Chianti Spire",
+   "lat": 48.553355,
+   "lng": -120.590487,
+   "elevation_ft": 8400,
+   "region": "Washington Pass",
+   "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_sub_wapass.wa_silver_star_and_wine_spires.wa_chianti_spire"
+  },
+  "text": {
+   "approach": "Identical to Rebel Yell. Drive SR 20 to Washington Pass, then about 4 miles east to a wide pullout on the south side of the highway near milepost 166, at roughly 4,250 ft (about 0.7 mile past the Cutthroat Lake road, about 2 miles east of the hairpin turn). No Northwest Forest Pass is required on the highway shoulder. Descend a steep, faint scree path about 300 ft to Early Winters Creek, cross on logs, then follow the climbers' trail steeply uphill to a wooded bench at 6,400-6,600 ft - the standard low camp, with a year-round spring about 200 yards north of the trail and a seasonal spring in the sandy gully above. Above the bench the trail fades; follow cairns up loose gullies, trending right and up, into the main gully below Burgundy Col at 7,800-7,950 ft. The gully holds a roughly 40-degree snow finger into midsummer. Roughly 3.5 miles and about 3,700 ft of gain to the col in 3-4 hours. From the col, descend 200-300 ft on the south side and traverse right beneath Burgundy Spire's east face on year-round snow with seasonal rock bands until Chianti's east face is in view. Rebel Yell's dihedral is the obvious feature on the right side of the face; Lichen Bouquet's ramp starts directly below the summit and leans left. Under an hour from the col.",
+   "approach_logistics": null,
+   "road": "{\"name\":\"SR 20 (North Cascades Highway / Washington Pass)\",\"status\":\"Paved two-lane state highway suitable for any passenger car; parking on the highway shoulder at a wide pullout near milepost 166. No forest-road driving involved.\",\"driveNote\":\"From Washington Pass drive about 4 miles east to a broad pullout on the south (right) side of the highway near milepost 166, at roughly 4,250 ft, directly across the valley from Silver Star Mountain - about 0.7 mile past the Cutthroat Lake road and about 2 miles east of the hairpin turn. Several smaller pullouts come first. From the east, a short drive",
+   "overview": "A 5.9 line on the same east face as Rebel Yell, following a long left-leaning ramp into a left-facing corner and an offwidth, then crossing Rebel Yell and continuing to the notch between Burgundy Spire and Chianti, where a short pitch on the normal route reaches the summit.",
+   "description": null,
+   "descent": "Most parties on the east face descend the way Rebel Yell parties do: from the summit pedestal, scramble to the two-bolt anchor at the southeast base of the summit block and make four double-rope rappels with two 60 m ropes back to the snow at the base of the face, trending generally to the rappeller's right and pulling the ropes carefully - the flake and offwidth features snag ropes readily. The a"
+  },
+  "siblingTrailheads": [
+   {
+    "route": "wa_chianti_spire_east_face",
+    "name": "SR-20 Wine Spires pullout (milepost 166)"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Burgundy Col",
+    "lat": 48.551406,
+    "lng": -120.630895,
+    "km": 3
+   },
+   {
+    "src": "USFS",
+    "name": "Cutthroat Trailhead",
+    "lat": 48.556306,
+    "lng": -120.654715,
+    "km": 4.7
+   },
+   {
+    "src": "USFS",
+    "name": "Hairpin",
+    "lat": 48.514336,
+    "lng": -120.642715,
+    "km": 5.8
+   },
+   {
+    "src": "USFS",
+    "name": "Blue Lake Trailhead",
+    "lat": 48.519016,
+    "lng": -120.674215,
+    "km": 7.3
+   },
+   {
+    "src": "USFS",
+    "name": "Driveway Butte Trailhead",
+    "lat": 48.598271,
+    "lng": -120.512721,
+    "km": 7.6
+   },
+   {
+    "src": "USFS",
+    "name": "Cedar Creek Trailhead",
+    "lat": 48.579106,
+    "lng": -120.478815,
+    "km": 8.7
+   },
+   {
+    "src": "USFS",
+    "name": "Gilbert Trailhead",
+    "lat": 48.458443,
+    "lng": -120.565926,
+    "km": 10.7
+   },
+   {
+    "src": "USFS",
+    "name": "Rattlesnake Trailhead",
+    "lat": 48.648664,
+    "lng": -120.571213,
+    "km": 10.7
+   }
+  ],
+  "lastAnswer": {
+   "status": "found",
+   "trailhead": {
+    "name": "SR-20 Wine Spires pullout (milepost 166)",
+    "identifiedBy": {
+     "kind": "route_text",
+     "fact": "wide pullout south side of highway near MP 166, ~0.7 mi past Cutthroat Lake road, ~4,250 ft"
+    },
+    "placements": []
+   },
+   "notes": "Identification from the route's own text (north face text begins at the notch via Burgundy Col; road text names the pullout). No page gives a coordinate; stephabegg and search confirm a highway trailhead at ~4,250 ft, no milepost or coordinate. No NW Forest Pass needed. Placement left to OSM script."
+  }
+ },
+ {
+  "id": "wa_chimney_rock_north_ridge",
+  "name": "North Ridge",
+  "peakName": "Chimney Rock",
+  "state": "Washington",
+  "discipline": "alpine",
+  "status": "held",
+  "peak": {
+   "id": "wa_chimney_rock",
+   "name": "Chimney Rock",
+   "lat": 47.50917,
+   "lng": -121.28556,
+   "elevation_ft": 7727,
+   "region": "Washington",
+   "path": "usa.washington.wa_centralwest.wa_western_alpine_lakes.wa_chimney_rock"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "siblingTrailheads": [
+   {
+    "route": "wa_chimney_rock_east_face_direct",
+    "name": "Pete Lake Trailhead (Trail #1323, FR-4616)"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Pete Lake Trailhead",
+    "lat": 47.434106,
+    "lng": -121.186915,
+    "km": 11.2
+   },
+   {
+    "src": "USFS",
+    "name": "Rachel Lake Trailhead",
+    "lat": 47.400706,
+    "lng": -121.283915,
+    "km": 12.1
+   },
+   {
+    "src": "USFS",
+    "name": "Snow Lake Trailhead",
+    "lat": 47.445656,
+    "lng": -121.423665,
+    "km": 12.6
+   },
+   {
+    "src": "USFS",
+    "name": "Dingford Creek Trailhead",
+    "lat": 47.517325,
+    "lng": -121.4543,
+    "km": 12.7
+   },
+   {
+    "src": "USFS",
+    "name": "Pacific Crest Trail - Snoqualmie North T",
+    "lat": 47.428012,
+    "lng": -121.413484,
+    "km": 13.2
+   },
+   {
+    "src": "USFS",
+    "name": "Dorothy Lake Trailhead",
+    "lat": 47.608617,
+    "lng": -121.384459,
+    "km": 13.3
+   },
+   {
+    "src": "USFS",
+    "name": "Pacific Crest Trail/Stevens Pass Trailhe",
+    "lat": 47.42841,
+    "lng": -121.415498,
+    "km": 13.3
+   },
+   {
+    "src": "USFS",
+    "name": "Pants - Snoqualmie South Trailhead",
+    "lat": 47.427228,
+    "lng": -121.420293,
+    "km": 13.6
+   }
+  ],
+  "lastAnswer": {
+   "status": "found",
+   "trailhead": {
+    "name": "Pete Lake Trailhead",
+    "identifiedBy": {
+     "kind": "page",
+     "url": "https://lemkeclimbs.com/chimney-rock-2",
+     "fact": "Chimney Rock climbs from Pete Lake TH via Pete Lake trail, Lemah Meadow trail, PCT north (East Face trip, not this line)"
+    },
+    "placements": [
+     {
+      "source": "USFS",
+      "name": "Pete Lake Trailhead",
+      "lat": 47.434106,
+      "lng": -121.186915,
+      "url": ""
+     },
+     {
+      "source": "WTA",
+      "name": "Pete Lake hike trailhead",
+      "lat": 47.435,
+      "lng": -121.1855,
+      "url": "https://www.wta.org/go-hiking/hikes/pete-lake"
+     }
+    ]
+   },
+   "notes": "WEAK peak-level: every page found (Lemke, climberkyle, search snippets of MP/SummitPost) uses Pete Lake TH for Chimney Rock; none describes this ridge. SummitPost 403."
+  }
+ },
+ {
+  "id": "wa_chimney_rock_northeast_ridge",
+  "name": "Northeast Ridge",
+  "peakName": "Chimney Rock",
+  "state": "Washington",
+  "discipline": "alpine",
+  "status": "held",
+  "peak": {
+   "id": "wa_chimney_rock",
+   "name": "Chimney Rock",
+   "lat": 47.50917,
+   "lng": -121.28556,
+   "elevation_ft": 7727,
+   "region": "Washington",
+   "path": "usa.washington.wa_centralwest.wa_western_alpine_lakes.wa_chimney_rock"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "siblingTrailheads": [
+   {
+    "route": "wa_chimney_rock_east_face_direct",
+    "name": "Pete Lake Trailhead (Trail #1323, FR-4616)"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Pete Lake Trailhead",
+    "lat": 47.434106,
+    "lng": -121.186915,
+    "km": 11.2
+   },
+   {
+    "src": "USFS",
+    "name": "Rachel Lake Trailhead",
+    "lat": 47.400706,
+    "lng": -121.283915,
+    "km": 12.1
+   },
+   {
+    "src": "USFS",
+    "name": "Snow Lake Trailhead",
+    "lat": 47.445656,
+    "lng": -121.423665,
+    "km": 12.6
+   },
+   {
+    "src": "USFS",
+    "name": "Dingford Creek Trailhead",
+    "lat": 47.517325,
+    "lng": -121.4543,
+    "km": 12.7
+   },
+   {
+    "src": "USFS",
+    "name": "Pacific Crest Trail - Snoqualmie North T",
+    "lat": 47.428012,
+    "lng": -121.413484,
+    "km": 13.2
+   },
+   {
+    "src": "USFS",
+    "name": "Dorothy Lake Trailhead",
+    "lat": 47.608617,
+    "lng": -121.384459,
+    "km": 13.3
+   },
+   {
+    "src": "USFS",
+    "name": "Pacific Crest Trail/Stevens Pass Trailhe",
+    "lat": 47.42841,
+    "lng": -121.415498,
+    "km": 13.3
+   },
+   {
+    "src": "USFS",
+    "name": "Pants - Snoqualmie South Trailhead",
+    "lat": 47.427228,
+    "lng": -121.420293,
+    "km": 13.6
+   }
+  ],
+  "lastAnswer": {
+   "status": "found",
+   "trailhead": {
+    "name": "Pete Lake Trailhead",
+    "identifiedBy": {
+     "kind": "page",
+     "url": "https://lemkeclimbs.com/chimney-rock-2",
+     "fact": "Chimney Rock climbs from Pete Lake TH via Pete Lake trail, Lemah Meadow trail, PCT north (East Face trip, not this line)"
+    },
+    "placements": [
+     {
+      "source": "USFS",
+      "name": "Pete Lake Trailhead",
+      "lat": 47.434106,
+      "lng": -121.186915,
+      "url": ""
+     },
+     {
+      "source": "WTA",
+      "name": "Pete Lake hike trailhead",
+      "lat": 47.435,
+      "lng": -121.1855,
+      "url": "https://www.wta.org/go-hiking/hikes/pete-lake"
+     }
+    ]
+   },
+   "notes": "WEAK peak-level: every page found (Lemke, climberkyle, search snippets of MP/SummitPost) uses Pete Lake TH for Chimney Rock; none describes this ridge. SummitPost 403."
+  }
+ },
+ {
+  "id": "wa_chimney_rock_northwest_ridge",
+  "name": "Northwest Ridge",
+  "peakName": "Chimney Rock",
+  "state": "Washington",
+  "discipline": "alpine",
+  "status": "held",
+  "peak": {
+   "id": "wa_chimney_rock",
+   "name": "Chimney Rock",
+   "lat": 47.50917,
+   "lng": -121.28556,
+   "elevation_ft": 7727,
+   "region": "Washington",
+   "path": "usa.washington.wa_centralwest.wa_western_alpine_lakes.wa_chimney_rock"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "siblingTrailheads": [
+   {
+    "route": "wa_chimney_rock_east_face_direct",
+    "name": "Pete Lake Trailhead (Trail #1323, FR-4616)"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Pete Lake Trailhead",
+    "lat": 47.434106,
+    "lng": -121.186915,
+    "km": 11.2
+   },
+   {
+    "src": "USFS",
+    "name": "Rachel Lake Trailhead",
+    "lat": 47.400706,
+    "lng": -121.283915,
+    "km": 12.1
+   },
+   {
+    "src": "USFS",
+    "name": "Snow Lake Trailhead",
+    "lat": 47.445656,
+    "lng": -121.423665,
+    "km": 12.6
+   },
+   {
+    "src": "USFS",
+    "name": "Dingford Creek Trailhead",
+    "lat": 47.517325,
+    "lng": -121.4543,
+    "km": 12.7
+   },
+   {
+    "src": "USFS",
+    "name": "Pacific Crest Trail - Snoqualmie North T",
+    "lat": 47.428012,
+    "lng": -121.413484,
+    "km": 13.2
+   },
+   {
+    "src": "USFS",
+    "name": "Dorothy Lake Trailhead",
+    "lat": 47.608617,
+    "lng": -121.384459,
+    "km": 13.3
+   },
+   {
+    "src": "USFS",
+    "name": "Pacific Crest Trail/Stevens Pass Trailhe",
+    "lat": 47.42841,
+    "lng": -121.415498,
+    "km": 13.3
+   },
+   {
+    "src": "USFS",
+    "name": "Pants - Snoqualmie South Trailhead",
+    "lat": 47.427228,
+    "lng": -121.420293,
+    "km": 13.6
+   }
+  ],
+  "lastAnswer": {
+   "status": "found",
+   "trailhead": {
+    "name": "Pete Lake Trailhead",
+    "identifiedBy": {
+     "kind": "page",
+     "url": "https://lemkeclimbs.com/chimney-rock-2",
+     "fact": "Chimney Rock climbs from Pete Lake TH via Pete Lake trail, Lemah Meadow trail, PCT north (East Face trip, not this line)"
+    },
+    "placements": [
+     {
+      "source": "USFS",
+      "name": "Pete Lake Trailhead",
+      "lat": 47.434106,
+      "lng": -121.186915,
+      "url": ""
+     },
+     {
+      "source": "WTA",
+      "name": "Pete Lake hike trailhead",
+      "lat": 47.435,
+      "lng": -121.1855,
+      "url": "https://www.wta.org/go-hiking/hikes/pete-lake"
+     }
+    ]
+   },
+   "notes": "WEAK peak-level: every page found (Lemke, climberkyle, search snippets of MP/SummitPost) uses Pete Lake TH for Chimney Rock; none describes this ridge. SummitPost 403."
+  }
+ },
+ {
+  "id": "wa_chimney_rock_southeast_ridge",
+  "name": "Southeast Ridge",
+  "peakName": "Chimney Rock",
+  "state": "Washington",
+  "discipline": "alpine",
+  "status": "nopage",
+  "peak": {
+   "id": "wa_chimney_rock",
+   "name": "Chimney Rock",
+   "lat": 47.50917,
+   "lng": -121.28556,
+   "elevation_ft": 7727,
+   "region": "Washington",
+   "path": "usa.washington.wa_centralwest.wa_western_alpine_lakes.wa_chimney_rock"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "siblingTrailheads": [
+   {
+    "route": "wa_chimney_rock_east_face_direct",
+    "name": "Pete Lake Trailhead (Trail #1323, FR-4616)"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Pete Lake Trailhead",
+    "lat": 47.434106,
+    "lng": -121.186915,
+    "km": 11.2
+   },
+   {
+    "src": "USFS",
+    "name": "Rachel Lake Trailhead",
+    "lat": 47.400706,
+    "lng": -121.283915,
+    "km": 12.1
+   },
+   {
+    "src": "USFS",
+    "name": "Snow Lake Trailhead",
+    "lat": 47.445656,
+    "lng": -121.423665,
+    "km": 12.6
+   },
+   {
+    "src": "USFS",
+    "name": "Dingford Creek Trailhead",
+    "lat": 47.517325,
+    "lng": -121.4543,
+    "km": 12.7
+   },
+   {
+    "src": "USFS",
+    "name": "Pacific Crest Trail - Snoqualmie North T",
+    "lat": 47.428012,
+    "lng": -121.413484,
+    "km": 13.2
+   },
+   {
+    "src": "USFS",
+    "name": "Dorothy Lake Trailhead",
+    "lat": 47.608617,
+    "lng": -121.384459,
+    "km": 13.3
+   },
+   {
+    "src": "USFS",
+    "name": "Pacific Crest Trail/Stevens Pass Trailhe",
+    "lat": 47.42841,
+    "lng": -121.415498,
+    "km": 13.3
+   },
+   {
+    "src": "USFS",
+    "name": "Pants - Snoqualmie South Trailhead",
+    "lat": 47.427228,
+    "lng": -121.420293,
+    "km": 13.6
+   }
+  ],
+  "lastAnswer": {
+   "status": "stuck",
+   "trailhead": null,
+   "notes": "WEAK peak-level: every page found (Lemke, climberkyle, search snippets of MP/SummitPost) uses Pete Lake TH for Chimney Rock; none describes this ridge. SummitPost 403. Class 2 south-side line could start elsewhere (Rachel Lake); unverified."
+  }
+ }
+]

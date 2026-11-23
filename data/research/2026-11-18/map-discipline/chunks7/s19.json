@@ -1,0 +1,828 @@
+[
+ {
+  "id": "wa_rock_mountain_northeast_ridge",
+  "name": "Northeast Ridge (Nason Ridge Traverse)",
+  "peakName": "Rock Mountain",
+  "state": "Washington",
+  "discipline": "mountaineering",
+  "status": "held",
+  "peak": {
+   "id": "wa_rock_mountain",
+   "name": "Rock Mountain",
+   "lat": 47.7997534,
+   "lng": -120.9745323,
+   "elevation_ft": 6841,
+   "region": "Washington",
+   "path": "usa.washington.wa_centraleast.wa_nason_ridge_chiwaukum.wa_rock_mountain"
+  },
+  "text": {
+   "approach": "Begin at the Old Merritt Lake Trailhead off US-2 (~2,950 ft). Climb via Mahar Creek Ridge to Merritt Lake, then continue over Mt. Mastiff's Southeast Ridge and Mt. Howard's Northeast Ridge (both reported as snow climbs/rock scrambles) before dropping to the Howard-Rock col and climbing Rock Mountain's northeast side.",
+   "approach_logistics": "{\"peakLat\":47.7997534,\"peakLng\":-120.9745323,\"trailhead\":\"Old Merritt Lake Trailhead\",\"trailheadDirection\":\"Begin at the Old Merritt Lake Trailhead off US-2 (~2,950 ft).\"}",
+   "road": null,
+   "overview": "A cross-country mountaineering line up Rock Mountain's northeast side, reached by crossing the Howard-Rock col at the far end of a multi-summit Nason Ridge traverse (Mt. Mastiff - Mt. Howard - Rock Mountain), rather than via the maintained West Route trail.",
+   "description": null,
+   "descent": "From the summit, descend the South Ridge and East Slope toward Rock Lake, picking up the maintained Rock Mountain Trail in the Rock Lake basin and following it down the switchbacks to the Rock Mountain Trailhead on US-2 (a different trailhead than the Old Merritt Lake start, so a car shuttle or hitch on US-2 is typically needed)."
+  },
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Snowy Creek Trailhead",
+    "lat": 47.807612,
+    "lng": -120.996295,
+    "km": 1.8
+   },
+   {
+    "src": "USFS",
+    "name": "Rock Mountain Trailhead",
+    "lat": 47.775232,
+    "lng": -120.957772,
+    "km": 3
+   },
+   {
+    "src": "USFS",
+    "name": "Bygone Byways Trailhead",
+    "lat": 47.784606,
+    "lng": -121.029415,
+    "km": 4.4
+   },
+   {
+    "src": "USFS",
+    "name": "Lanham Lake Trailhead",
+    "lat": 47.771506,
+    "lng": -121.015015,
+    "km": 4.4
+   },
+   {
+    "src": "USFS",
+    "name": "White Pine Trailhead",
+    "lat": 47.77083,
+    "lng": -120.927007,
+    "km": 4.8
+   },
+   {
+    "src": "USFS",
+    "name": "Lake Minotaur Trailhead",
+    "lat": 47.827879,
+    "lng": -121.02974,
+    "km": 5.2
+   },
+   {
+    "src": "USFS",
+    "name": "Merritt Lake Trailhead",
+    "lat": 47.790506,
+    "lng": -120.885015,
+    "km": 6.8
+   },
+   {
+    "src": "USFS",
+    "name": "Smithbrook Trailhead",
+    "lat": 47.802504,
+    "lng": -121.07666,
+    "km": 7.6
+   }
+  ],
+  "lastAnswer": {
+   "status": "found",
+   "trailhead": {
+    "name": "Old Merritt Lake Trailhead (US 2)",
+    "identifiedBy": {
+     "kind": "route_text",
+     "fact": "Begin at the Old Merritt Lake Trailhead off US-2 (~2,950 ft)"
+    },
+    "placements": [
+     {
+      "source": "USFS",
+      "name": "Merritt Lake Trailhead",
+      "lat": 47.790506,
+      "lng": -120.885015,
+      "url": ""
+     }
+    ]
+   },
+   "notes": "Trailhead named by route text; the only placement is the USFS 'Merritt Lake Trailhead' (the route says 'Old'; the old road start may sit a little lower than this point, ~2,950 ft stated). WTA pages do not give Merritt Lake coordinates; wenatcheeoutdoors 403. Descent ends at the Rock Mountain TH (USFS 47.775232,-120.957772; WTA 47.7757,-120.9581, agreeing within ~60 m), a different trailhead, so a shuttle is needed."
+  }
+ },
+ {
+  "id": "wa_ruby_mountain_northwest_ridge",
+  "name": "Northwest Ridge Route",
+  "peakName": "Ruby Mountain",
+  "state": "Washington",
+  "discipline": "mountaineering",
+  "status": "held",
+  "peak": {
+   "id": "wa_ruby_mountain",
+   "name": "Ruby Mountain",
+   "lat": 48.694408,
+   "lng": -121.042952,
+   "elevation_ft": 7426,
+   "region": "North Cascades / Stehekin",
+   "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_north_cascades_core.wa_ruby_mountain"
+  },
+  "text": {
+   "approach": "From Newhalem, drive or walk SR 20 east about 12 miles (0.4 mi west of Horsetail Creek, ~2.8 mi northeast of Colonial Creek Campground) to a turnout at about 1,900 ft elevation, directly across from a large boulder field on Ruby's northwest side.",
+   "approach_logistics": null,
+   "road": "{\"name\":\"North Cascades Highway (SR 20)\",\"status\":\"Paved; trailhead is a highway turnout ~12 mi east of Newhalem\",\"driveNote\":\"From Newhalem, drive/hike SR 20 east ~12 miles (0.4 mi west of Horsetail Creek) to a turnout opposite a large boulder field, ~2.8 mi northeast of Colonial Creek Campground.\",\"seasonalGate\":\"This route is typically approached while SR 20 is snow-gated (roughly Dec-Apr) — climbers park at the plowed road-end or walk in from the winter closure gate.\"}",
+   "overview": "A steep, direct hike/scramble straight up Ruby's northwest ridge from a Highway 20 turnout — the most popular way up during winter and spring, when SR 20 is gated for the season.",
+   "description": null,
+   "descent": "Retrace the ascent ridge, using snow ramps to negotiate cliff bands in winter/spring conditions; remove snowshoes for one cliffy section around 4,000 ft as needed on the way down as well."
+  },
+  "siblingTrailheads": [
+   {
+    "route": "wa_ruby_mountain_happy_creek",
+    "name": "Happy Creek trailhead (Happy Creek Forest Walk lot, SR 20)"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "NPS",
+    "name": "Happy Creek Forest Walk Trailhead",
+    "lat": 48.728543,
+    "lng": -121.055832,
+    "km": 3.9
+   },
+   {
+    "src": "USFS",
+    "name": "Canyon Creek Trailhead",
+    "lat": 48.706506,
+    "lng": -120.918315,
+    "km": 9.2
+   },
+   {
+    "src": "NPS",
+    "name": "Gorge Overlook Trail Trailhead",
+    "lat": 48.699938,
+    "lng": -121.21076,
+    "km": 12.3
+   },
+   {
+    "src": "NPS",
+    "name": "Gorge Overlook Trail Trailhead",
+    "lat": 48.700343,
+    "lng": -121.209709,
+    "km": 12.3
+   },
+   {
+    "src": "USFS",
+    "name": "East Creek Trailhead",
+    "lat": 48.667506,
+    "lng": -120.873115,
+    "km": 12.8
+   },
+   {
+    "src": "USFS",
+    "name": "Easy Pass Trailhead",
+    "lat": 48.587206,
+    "lng": -120.801615,
+    "km": 21.4
+   },
+   {
+    "src": "USFS",
+    "name": "Hidden Lake Trailhead",
+    "lat": 48.514161,
+    "lng": -121.221581,
+    "km": 24
+   }
+  ],
+  "lastAnswer": {
+   "status": "found",
+   "trailhead": {
+    "name": "SR 20 turnout across from the large boulder field, about 1,900 ft, 0.4 mi west of Horsetail Creek (about 12 mi east of Newhalem)",
+    "identifiedBy": {
+     "kind": "page",
+     "url": "https://stephabegg.com/?p=8877",
+     "fact": "Turnout on the north side of Hwy 20 across from the boulder field on Ruby's NW side; route starts just left of the boulder field; winter closure gate at MP 134 shortly after"
+    },
+    "placements": []
+   },
+   "notes": "Matches the route's own text; an unsigned pullout so no coordinate printed on any page opened. Needs placing from map/ground (about 0.4 mi west of the Horsetail Creek crossing on SR 20). Happy Creek lot (3.9 km away) is a different route."
+  }
+ },
+ {
+  "id": "wa_sharkfin_tower_flakes_and_chimneys_south_face",
+  "name": "Flakes and Chimneys (South Face)",
+  "peakName": "Sharkfin Tower",
+  "state": "Washington",
+  "discipline": "alpine",
+  "status": "held",
+  "peak": {
+   "id": "wa_sharkfin_tower",
+   "name": "Sharkfin Tower",
+   "lat": 48.4996,
+   "lng": -121.0398,
+   "elevation_ft": 8120,
+   "region": "Washington",
+   "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_north_cascades_core.wa_boston_basin.wa_sharkfin_tower"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "siblingTrailheads": [
+   {
+    "route": "wa_sharkfin_tower_southeast_ridge",
+    "name": "Boston Basin Trailhead"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Hidden Lake Trailhead",
+    "lat": 48.514161,
+    "lng": -121.221581,
+    "km": 13.5
+   },
+   {
+    "src": "USFS",
+    "name": "Lookout Mountain Trailhead",
+    "lat": 48.537501,
+    "lng": -121.291755,
+    "km": 19
+   },
+   {
+    "src": "USFS",
+    "name": "Easy Pass Trailhead",
+    "lat": 48.587206,
+    "lng": -120.801615,
+    "km": 20.1
+   },
+   {
+    "src": "USFS",
+    "name": "East Creek Trailhead",
+    "lat": 48.667506,
+    "lng": -120.873115,
+    "km": 22.3
+   },
+   {
+    "src": "USFS",
+    "name": "Rainy Pass Trailhead (PCT North)",
+    "lat": 48.515306,
+    "lng": -120.736025,
+    "km": 22.4
+   },
+   {
+    "src": "USFS",
+    "name": "Heather Maple Pass Trailhead Rainy Pass ",
+    "lat": 48.516606,
+    "lng": -120.735815,
+    "km": 22.5
+   },
+   {
+    "src": "USFS",
+    "name": "Bridge Creek Trailhead",
+    "lat": 48.504906,
+    "lng": -120.719115,
+    "km": 23.6
+   },
+   {
+    "src": "USFS",
+    "name": "Canyon Creek Trailhead",
+    "lat": 48.706506,
+    "lng": -120.918315,
+    "km": 24.7
+   }
+  ],
+  "lastAnswer": {
+   "status": "found",
+   "trailhead": {
+    "name": "Boston Basin Trailhead (Cascade River Road end)",
+    "identifiedBy": {
+     "kind": "page",
+     "url": "https://www.nps.gov/noca/blogs/sharkfin-tower-8-2-17.htm",
+     "fact": "INFERRED/WEAK: every Sharkfin approach page describes the Boston Basin approach; NPS 2017 report lists the South Face as a rappel option off the same basin; no page names this route's start"
+    },
+    "placements": []
+   },
+   "notes": "Route name 'Flakes and Chimneys' found on no page. Inferred from the only approach in use (Boston Basin). WTA Boston Basin coordinate 48.5021,-121.0676 is the basin/hike listing, not the lot, so not offered as a placement. SummitPost 403 on fetch."
+  }
+ },
+ {
+  "id": "wa_southeast_mox_peak_beckey_route_west_ridge",
+  "name": "Beckey Route (West Ridge)",
+  "peakName": "Southeast Mox Peak",
+  "state": "Washington",
+  "discipline": "alpine",
+  "status": "held",
+  "peak": {
+   "id": "wa_southeast_mox_peak",
+   "name": "Southeast Mox Peak",
+   "lat": 48.947089,
+   "lng": -121.256998,
+   "elevation_ft": 8504,
+   "region": "Chilliwack / Picket",
+   "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_chilliwack_range.wa_southeast_mox_peak"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "siblingTrailheads": [
+   {
+    "route": "wa_southeast_mox_peak_se_rib",
+    "name": "Depot Creek Road parking / trailhead"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "NPS",
+    "name": "Nepopekum Horse Trail Loop Trailhead (BC)",
+    "lat": 49.053337,
+    "lng": -121.094073,
+    "km": 16.8
+   },
+   {
+    "src": "NPS",
+    "name": "Skyline II Trailhead (BC)",
+    "lat": 49.041545,
+    "lng": -121.068734,
+    "km": 17.3
+   },
+   {
+    "src": "NPS",
+    "name": "Strawberry Bar (BC)",
+    "lat": 49.076197,
+    "lng": -121.111462,
+    "km": 17.9
+   },
+   {
+    "src": "NPS",
+    "name": "Shawatum Day Use parking area (BC)",
+    "lat": 49.105168,
+    "lng": -121.138761,
+    "km": 19.6
+   },
+   {
+    "src": "USFS",
+    "name": "Hannegan Trailhead",
+    "lat": 48.910191,
+    "lng": -121.591986,
+    "km": 24.8
+   }
+  ],
+  "lastAnswer": {
+   "status": "found",
+   "trailhead": {
+    "name": "Depot Creek Road trailhead (off Chilliwack Lake Road, BC side)",
+    "identifiedBy": {
+     "kind": "page",
+     "url": "https://stephabegg.com/trip-reports/washington/chilliwack-slam/",
+     "fact": "Hard Mox climbed from a camp at the head of Depot Creek; Depot Creek Road turns off Chilliwack Lake Rd about 0.1 mi before a gated yellow bridge; trailhead about 2300 ft; locked gate at 0.9 mi; 5.5 mi to Lake Ouzel"
+    },
+    "placements": []
+   },
+   "notes": "Identification is for the peak's approach (Mountain Project says Beckey route camps at head of Depot Creek), moderately strong. No coordinate; WTA 48.9472,-121.2569 equals the peak, not a trailhead. Trailhead is in British Columbia, 16+ km from the peak; border crossing implied. Name only."
+  }
+ },
+ {
+  "id": "wa_the_chopping_block_northeast_ridge",
+  "name": "Northeast Ridge",
+  "peakName": "The Chopping Block",
+  "state": "Washington",
+  "discipline": "alpine",
+  "status": "held",
+  "peak": {
+   "id": "wa_the_chopping_block",
+   "name": "The Chopping Block",
+   "lat": 48.7549246,
+   "lng": -121.3079051,
+   "elevation_ft": 6819,
+   "region": "Washington",
+   "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_picket_range.wa_southern_pickets.wa_the_chopping_block"
+  },
+  "text": {
+   "approach": "Via the multi-day Goodell Creek approach to a camp on the Chopping Block ridge (~6,400 ft) or the col separating the peak from the main Picket Range; from there, walk and scramble (some exposed 3rd class) southwest to the base of the ridge.",
+   "approach_logistics": null,
+   "road": "{\"name\":\"Goodell Creek Road (off SR-20) / North Cascades Highway\",\"status\":\"Goodell Creek spur road and trailhead are accessible year-round via SR-20 from the west (Sedro-Woolley/Marblemount/Newhalem side)\",\"driveNote\":\"From Newhalem on SR-20, turn north onto the unpaved Goodell Creek Road (across the highway from the Goodell Creek/Newhalem group campground) and continue to parking at the end of the road.\",\"seasonalGate\":\"The seasonal SR-20 closure gate is well east of here, near Ross Lake/Washington Pass, and does not affect access to Newhalem or the Goodell Creek Trailhead\"}",
+   "overview": "The peak's classic technical route: 4 pitches of alpine rock up the northeast ridge, established by the Firey party in 1970, with a steep 5.5 crux about 100 ft below the summit.",
+   "description": null,
+   "descent": "Descend by rappelling the ridge itself — most parties use a 70m rope to reach most stations comfortably; one reporting party got down on a 50m rope with a tagline. Existing fixed rap slings have been reported along the route."
+  },
+  "siblingTrailheads": [
+   {
+    "route": "wa_the_chopping_block_south_route",
+    "name": "Goodell Creek Trailhead"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "NPS",
+    "name": "Gorge Overlook Trail Trailhead",
+    "lat": 48.699938,
+    "lng": -121.21076,
+    "km": 9.4
+   },
+   {
+    "src": "NPS",
+    "name": "Gorge Overlook Trail Trailhead",
+    "lat": 48.700343,
+    "lng": -121.209709,
+    "km": 9.4
+   },
+   {
+    "src": "USFS",
+    "name": "Baker River Trailhead",
+    "lat": 48.750499,
+    "lng": -121.555348,
+    "km": 18.1
+   },
+   {
+    "src": "NPS",
+    "name": "Happy Creek Forest Walk Trailhead",
+    "lat": 48.728543,
+    "lng": -121.055832,
+    "km": 18.7
+   },
+   {
+    "src": "USFS",
+    "name": "Shannon Ridge Trailhead",
+    "lat": 48.767233,
+    "lng": -121.618094,
+    "km": 22.8
+   },
+   {
+    "src": "USFS",
+    "name": "Lookout Mountain Trailhead",
+    "lat": 48.537501,
+    "lng": -121.291755,
+    "km": 24.2
+   },
+   {
+    "src": "USFS",
+    "name": "Watson Lakes Trailhead",
+    "lat": 48.674907,
+    "lng": -121.615318,
+    "km": 24.2
+   }
+  ],
+  "lastAnswer": {
+   "status": "found",
+   "trailhead": {
+    "name": "Goodell Creek Trailhead",
+    "identifiedBy": {
+     "kind": "page",
+     "url": "https://stephabegg.com/trip-reports/washington/pickets/",
+     "fact": "Pickets approaches (incl. Chopping Block, Approaches 6/7) start at the end of Goodell Creek road near Newhalem; route text also says Goodell Creek approach"
+    },
+    "placements": []
+   },
+   "notes": "Route's own text names Goodell Creek; a page confirms the Goodell Creek road-end start for Chopping Block. No page gave a coordinate and no official point matches; report signed name only (OSM match by script). Mountaineers page 403."
+  }
+ },
+ {
+  "id": "wa_the_chopping_block_northwest_route",
+  "name": "Northwest Route",
+  "peakName": "The Chopping Block",
+  "state": "Washington",
+  "discipline": "alpine",
+  "status": "held",
+  "peak": {
+   "id": "wa_the_chopping_block",
+   "name": "The Chopping Block",
+   "lat": 48.7549246,
+   "lng": -121.3079051,
+   "elevation_ft": 6819,
+   "region": "Washington",
+   "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_picket_range.wa_southern_pickets.wa_the_chopping_block"
+  },
+  "text": {
+   "approach": "Via the multi-day Goodell Creek approach to a camp on the Chopping Block ridge (~6,400 ft); the route starts up the lower NE Ridge before diverging onto the north face traverse.",
+   "approach_logistics": null,
+   "road": "{\"name\":\"Goodell Creek Road (off SR-20) / North Cascades Highway\",\"status\":\"Goodell Creek spur road and trailhead are accessible year-round via SR-20 from the west (Sedro-Woolley/Marblemount/Newhalem side)\",\"driveNote\":\"From Newhalem on SR-20, turn north onto the unpaved Goodell Creek Road (across the highway from the Goodell Creek/Newhalem group campground) and continue to parking at the end of the road.\",\"seasonalGate\":\"The seasonal SR-20 closure gate is well east of here, near Ross Lake/Washington Pass, and does not affect access to Newhalem or the Goodell Creek Trailhead\"}",
+   "overview": "A new route rather than the peak's first ascent, climbed in 1961 by Ed Cooper and Glen Denny, ascending to the base of the north ridge, diagonally traversing the northwest face, and topping out via the west ridge. A 2008 party described a similar line as starting up the NE Ridge before an exposed class-4 traverse across the north face gains the NW ridge for an easy class-3 finish.",
+   "description": null,
+   "descent": "Rather than reverse the exposed class 4 ledges of the north face, rappel the Northeast Ridge on a single rope, using the fixed slings along it, back to the camp on the Chopping Block ridge (about 6,400 ft). The way out from there is long and steep: work across Stump Hollow, a mix of snow, slab and heather, up to the Barrier crest, follow a faint path down the crest from timberline (about 5,600 ft)"
+  },
+  "siblingTrailheads": [
+   {
+    "route": "wa_the_chopping_block_south_route",
+    "name": "Goodell Creek Trailhead"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "NPS",
+    "name": "Gorge Overlook Trail Trailhead",
+    "lat": 48.699938,
+    "lng": -121.21076,
+    "km": 9.4
+   },
+   {
+    "src": "NPS",
+    "name": "Gorge Overlook Trail Trailhead",
+    "lat": 48.700343,
+    "lng": -121.209709,
+    "km": 9.4
+   },
+   {
+    "src": "USFS",
+    "name": "Baker River Trailhead",
+    "lat": 48.750499,
+    "lng": -121.555348,
+    "km": 18.1
+   },
+   {
+    "src": "NPS",
+    "name": "Happy Creek Forest Walk Trailhead",
+    "lat": 48.728543,
+    "lng": -121.055832,
+    "km": 18.7
+   },
+   {
+    "src": "USFS",
+    "name": "Shannon Ridge Trailhead",
+    "lat": 48.767233,
+    "lng": -121.618094,
+    "km": 22.8
+   },
+   {
+    "src": "USFS",
+    "name": "Lookout Mountain Trailhead",
+    "lat": 48.537501,
+    "lng": -121.291755,
+    "km": 24.2
+   },
+   {
+    "src": "USFS",
+    "name": "Watson Lakes Trailhead",
+    "lat": 48.674907,
+    "lng": -121.615318,
+    "km": 24.2
+   }
+  ],
+  "lastAnswer": {
+   "status": "found",
+   "trailhead": {
+    "name": "Goodell Creek Trailhead",
+    "identifiedBy": {
+     "kind": "page",
+     "url": "https://stephabegg.com/trip-reports/washington/pickets/",
+     "fact": "Chopping Block reached by Goodell Creek road-end approaches; route text names Goodell Creek approach"
+    },
+    "placements": []
+   },
+   "notes": "Same as NE Ridge: same camp and approach. No coordinate found."
+  }
+ },
+ {
+  "id": "wa_the_pyramid_picket_east_ridge",
+  "name": "East Ridge",
+  "peakName": "The Pyramid",
+  "state": "Washington",
+  "discipline": "alpine",
+  "status": "nopage",
+  "peak": {
+   "id": "wa_the_pyramid_picket",
+   "name": "The Pyramid",
+   "lat": 48.77144,
+   "lng": -121.29193,
+   "elevation_ft": 7920,
+   "region": "Washington",
+   "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_picket_range.wa_southern_pickets.wa_the_pyramid_picket"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": "The technical line up Pyramid's east side, climbed as the 5th of 14 summits during the first complete Southern Pickets Enchainment; rated II 5.8, with rock the first party found 'surprisingly beautiful' despite the peak's chossy reputation.",
+   "description": null,
+   "descent": null
+  },
+  "siblingTrailheads": [
+   {
+    "route": "wa_the_pyramid_picket_south_route",
+    "name": "Goodell Creek Trailhead"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "NPS",
+    "name": "Gorge Overlook Trail Trailhead",
+    "lat": 48.699938,
+    "lng": -121.21076,
+    "km": 9.9
+   },
+   {
+    "src": "NPS",
+    "name": "Gorge Overlook Trail Trailhead",
+    "lat": 48.700343,
+    "lng": -121.209709,
+    "km": 9.9
+   },
+   {
+    "src": "NPS",
+    "name": "Happy Creek Forest Walk Trailhead",
+    "lat": 48.728543,
+    "lng": -121.055832,
+    "km": 18
+   },
+   {
+    "src": "USFS",
+    "name": "Baker River Trailhead",
+    "lat": 48.750499,
+    "lng": -121.555348,
+    "km": 19.4
+   },
+   {
+    "src": "USFS",
+    "name": "Shannon Ridge Trailhead",
+    "lat": 48.767233,
+    "lng": -121.618094,
+    "km": 23.9
+   }
+  ],
+  "lastAnswer": {
+   "status": "stuck",
+   "trailhead": null,
+   "notes": "Page (stephabegg.com Pickets) has Pyramid reached via Goodell Creek and Crescent Creek Basin, but nothing about this East Ridge specifically; peak-level inference only, same as prior pass. Goodell Creek is the only Southern Pickets approach found, so likely but not established for this route."
+  }
+ },
+ {
+  "id": "wa_the_temple_west_face",
+  "name": "West Face",
+  "peakName": "The Temple",
+  "state": "Washington",
+  "discipline": "alpine",
+  "status": "nopage",
+  "peak": {
+   "id": "wa_the_temple",
+   "name": "The Temple",
+   "lat": 47.490433,
+   "lng": -120.769569,
+   "elevation_ft": 8295,
+   "region": "Washington",
+   "path": "usa.washington.wa_centraleast.wa_stuart_range.wa_the_temple"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "siblingTrailheads": [
+   {
+    "route": "wa_the_temple_south_ridge",
+    "name": "Snow Lakes Trailhead"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Stuart Lake Trailhead",
+    "lat": 47.527806,
+    "lng": -120.820515,
+    "km": 5.6
+   },
+   {
+    "src": "USFS",
+    "name": "Eightmile Trailhead",
+    "lat": 47.536016,
+    "lng": -120.814025,
+    "km": 6.1
+   },
+   {
+    "src": "USFS",
+    "name": "Snow Lakes Trailhead",
+    "lat": 47.544106,
+    "lng": -120.709515,
+    "km": 7.5
+   },
+   {
+    "src": "USFS",
+    "name": "Ingalls Creek Trailhead",
+    "lat": 47.462906,
+    "lng": -120.673025,
+    "km": 7.9
+   },
+   {
+    "src": "USFS",
+    "name": "Fourth Of July Trailhead",
+    "lat": 47.578106,
+    "lng": -120.796015,
+    "km": 9.9
+   },
+   {
+    "src": "USFS",
+    "name": "Icicle Ridge Trailhead",
+    "lat": 47.568919,
+    "lng": -120.680113,
+    "km": 11
+   },
+   {
+    "src": "USFS",
+    "name": "Penstock Trailhead",
+    "lat": 47.586749,
+    "lng": -120.706609,
+    "km": 11.7
+   },
+   {
+    "src": "USFS",
+    "name": "Castle Rock Trailhead",
+    "lat": 47.600107,
+    "lng": -120.714012,
+    "km": 12.9
+   }
+  ],
+  "lastAnswer": {
+   "status": "stuck",
+   "trailhead": null,
+   "notes": "Lead still Snow Lakes Trailhead (WTA 47.5441,-120.7097 opened; USFS 47.544106,-120.709515), via Nada Lake 5.2 mi, per search results for the Mountaineers West Side page; both Mountaineers pages return 403 so no opened page ties this route. WTA Snow Lakes page does not mention Temple. Weak."
+  }
+ },
+ {
+  "id": "wa_west_twin_needle_west_slope",
+  "name": "West Slope - East Arete (Original Route)",
+  "peakName": "West Twin Needle",
+  "state": "Washington",
+  "discipline": "scrambling",
+  "status": "held",
+  "peak": {
+   "id": "wa_west_twin_needle",
+   "name": "West Twin Needle",
+   "lat": 48.7766,
+   "lng": -121.3125,
+   "elevation_ft": 7936,
+   "region": "Washington",
+   "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_picket_range.wa_southern_pickets.wa_west_twin_needle"
+  },
+  "text": {
+   "approach": "Same general Southern Pickets approach as the South Route — via Goodell Creek, The Barrier, and Crescent Creek Basin — continuing to the notch/saddle between Himmelhorn and West Twin Needle rather than climbing directly from the basin.",
+   "approach_logistics": null,
+   "road": "{\"name\":\"North Cascades Highway (SR 20) to Goodell Creek Road\",\"status\":\"Paved highway to a short NPS access road; open year-round at this low elevation (west of the seasonal Washington Pass closure)\",\"driveNote\":\"Trailhead is off SR 20 roughly 13 miles east of Marblemount and about 1 mile west of Newhalem (near milepost 119); follow signs from Newhalem toward Goodell Creek.\",\"seasonalGate\":null}",
+   "overview": "The peak's original 1932 line: a moderate class 2 scramble up the west slope from the Himmelhorn-West Twin Needle notch, most often climbed today as one link in the multi-day Southern Picket enchainment/traverse; continuing off the summit onto the class 3 east arete toward East Twin Needle is part of the full traverse rather than a stand-alone descent.",
+   "description": null,
+   "descent": null
+  },
+  "siblingTrailheads": [
+   {
+    "route": "wa_west_twin_needle_south_route",
+    "name": "Goodell Creek / Upper Goodell Group Camp trailhead (SR-20, Newhalem)"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "NPS",
+    "name": "Gorge Overlook Trail Trailhead",
+    "lat": 48.699938,
+    "lng": -121.21076,
+    "km": 11.3
+   },
+   {
+    "src": "NPS",
+    "name": "Gorge Overlook Trail Trailhead",
+    "lat": 48.700343,
+    "lng": -121.209709,
+    "km": 11.3
+   },
+   {
+    "src": "USFS",
+    "name": "Baker River Trailhead",
+    "lat": 48.750499,
+    "lng": -121.555348,
+    "km": 18
+   },
+   {
+    "src": "NPS",
+    "name": "Happy Creek Forest Walk Trailhead",
+    "lat": 48.728543,
+    "lng": -121.055832,
+    "km": 19.6
+   },
+   {
+    "src": "USFS",
+    "name": "Shannon Ridge Trailhead",
+    "lat": 48.767233,
+    "lng": -121.618094,
+    "km": 22.4
+   },
+   {
+    "src": "USFS",
+    "name": "Watson Lakes Trailhead",
+    "lat": 48.674907,
+    "lng": -121.615318,
+    "km": 24.9
+   }
+  ],
+  "lastAnswer": {
+   "status": "found",
+   "trailhead": {
+    "name": "Goodell Creek trailhead / Goodell Creek Campground (SR 20, Newhalem, milepost 119)",
+    "identifiedBy": {
+     "kind": "route_text",
+     "fact": "approach via Goodell Creek, The Barrier, Crescent Creek Basin; same as South Route"
+    },
+    "placements": []
+   },
+   "notes": "Name from route text and sibling route; no official coordinate (recreation.gov prints none; NPS lists don't match). Third-party listings give ~48.673,-121.267 (matches the route's own roadhead staging waypoint at 48.673235,-121.267375) but that is not a land-manager coordinate; leave to OSM name match."
+  }
+ }
+]
