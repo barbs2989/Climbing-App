@@ -25,7 +25,11 @@ import { SUPABASE_URL, headers, requireServiceKey, patchRow } from "../lib/supab
 import { elevationAt } from "../lib/terrain.mjs";
 import { metresBetween, pointOf } from "../../lib/track.js";
 
-const IDS = ["wa_crater_mountain_standard_route", "wa_jack_mountain_south_face", "wa_kaleetan_peak_south_ridge", "wa_little_tahoma_east_shoulder", "wa_mount_adams_south_climb", "wa_mount_baker_easton_glacier", "wa_mount_st_helens_monitor_ridge", "wa_robinson_mountain_southeast_ridge", "wa_snowfield_peak_neve_glacier", "wa_south_ridge_3"];
+const ALL = ["wa_crater_mountain_standard_route", "wa_jack_mountain_south_face", "wa_kaleetan_peak_south_ridge", "wa_little_tahoma_east_shoulder", "wa_mount_adams_south_climb", "wa_mount_baker_easton_glacier", "wa_mount_st_helens_monitor_ridge", "wa_robinson_mountain_southeast_ridge", "wa_snowfield_peak_neve_glacier", "wa_south_ridge_3"];
+// --only id,id runs a few at a time (each route takes a minute or two of ground readings); the rollback file is then named per batch
+const ONLY = process.argv.includes("--only") ? process.argv[process.argv.indexOf("--only") + 1].split(",") : null;
+if (ONLY && ONLY.some(id => !ALL.includes(id))) { console.error("--only names a route that is not one of the ten"); process.exit(2); }
+const IDS = ONLY || ALL;
 const WRITE = process.argv.includes("--write");
 const RB_DIR = process.argv.includes("--rollback") ? process.argv[process.argv.indexOf("--rollback") + 1] : null;
 if (WRITE && !RB_DIR) { console.error("--write needs --rollback DIR"); process.exit(2); }
@@ -91,7 +95,8 @@ for (const id of IDS) {
 }
 if (!WRITE) { console.log(`\ndry run: ${plan.length} of ${IDS.length} would be written. --write --rollback DIR to apply.`); process.exit(0); }
 fs.mkdirSync(RB_DIR, { recursive: true });
-const rb = path.join(RB_DIR, "rollback-regenerate-dense-track-profiles.json");
+if (!plan.length) { console.log("nothing to write."); process.exit(0); }
+const rb = path.join(RB_DIR, `rollback-regenerate-dense-track-profiles-${plan[0].id}.json`);
 fs.writeFileSync(rb, JSON.stringify({ note: "gpx/elev_pts before regenerate-dense-track-profiles.mjs; restore with patchRow('routes', id, before)", at: new Date().toISOString(), rows: plan.map(p => ({ id: p.id, before: p.before })) }));
 console.log(`rollback: ${rb}`);
 let bad = 0;
