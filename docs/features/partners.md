@@ -15,7 +15,7 @@ whole guide feature on 2026-11-14 (owner). This doc covers the partners mode (`l
   title that STATES the search ("Climbers who climb where you do", "Climbers in Index", "Climbers who want
   Liberty Crack"; the distance is on its own pill, not repeated in the title), then — signed in — the **You card**, then ONE wrapping row of pills (`role="group"` *Narrow the list*): **Search by ▾** (the five modes, a native select drawn
   as a pill), **Distance ▾** (ONE pill: Anywhere · Within 10 / 25 / 50 / 100 / 200 / 500 mi of <zip> · Near me now, then the same radii "of you now" once located),
-  **Discipline ▾**, **Leads ▾** once a roped discipline (sport, trad, ice, mixed, aid) is picked, and **More filters** in every mode, signed in or not
+  **Discipline ▾**, **Leads ▾** once a roped discipline (sport, trad, alpine, ice, mixed, aid) is picked, and **More filters** in every mode, signed in or not
   (since 2026-11-18; the non-gender filters were on the example-list modes only). The More filters panel opens right under the row: first **Show only**, one chip per gender
   (Women · Men · Non-binary · Genderqueer · Genderfluid · Agender · Two-Spirit, `aria-pressed`; tick several; signed in), then **Experience** — Any / Beginner /
   Intermediate / Advanced / Expert chips, moved in from the row (owner 2026-11-18) — speed match,
@@ -148,7 +148,7 @@ whole guide feature on 2026-11-14 (owner). This doc covers the partners mode (`l
 | `docs/codebase/algorithms.md` | `compat()` design history |
 
 ## 4. Data
-- **Supabase**: `profiles` (public read; `discoverable`, `level`, `avail_week`, `availability`, `hiking_speed_ft_hr`, grades; `climb_grades` holds ice, mixed and aid -- `PARTNER_COLS` selects it, and rows from the partner RPCs, which do not return it, get it from `usePartnerClimbGrades` by id), `profile_zips` (owner-only), `zip_centroids` (public Census gazetteer),
+- **Supabase**: `profiles` (public read; `discoverable`, `level`, `avail_week`, `availability`, `hiking_speed_ft_hr`, grades; `climb_grades` holds alpine, ice, mixed and aid -- `PARTNER_COLS` selects it, and rows from the partner RPCs, which do not return it, get it from `usePartnerClimbGrades` by id), `profile_zips` (owner-only), `zip_centroids` (public Census gazetteer),
   objectives per user, `verification_records` (owner-only; read via 0232).
 - **`partner_areas`** (0300): one row per climber and area (`disciplines text[]` within the crag family, one optional `free_from`/`free_to` window, `note`);
   owner-only RLS; a trigger refuses world/country (peaks allowed since 0456) and caps 30 per climber; `disciplines` takes the crag family and, since 0456, the alpine family. An expired window reads back as no window.
