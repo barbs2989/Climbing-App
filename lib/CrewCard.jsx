@@ -195,8 +195,11 @@ export default function CrewCard({num,pendingTag,showToast,blocked,crew,areaById
   /* ONE status chip for every roster row (owner 2026-11-14: "the In box isn't the same size; Invited is a
      different size too"). Your own "In" is a label and everyone else's is a button with a chevron; both now
      share this box -- 44px on the phone, centred in the same minimum width -- and data-chip lets
-     lib/wideLayout.js trim the label to the same 34px it trims the buttons to on the website. */
-  const CHIP=(fg,bg)=>({minHeight:44,minWidth:112,boxSizing:"border-box",flexShrink:0,display:"inline-flex",alignItems:"center",justifyContent:"center",gap:4,background:bg,border:"1px solid "+fg+"66",borderRadius:9,color:fg,fontSize:11.5,fontWeight:700,padding:"8px 11px"});
+     lib/wideLayout.js trim the label to the same 34px it trims the buttons to on the website.
+     The width is in EM (owner 2026-11-23, again "the In button is different sizes"): at 112px a phone with
+     its text size turned up grew "Asked to join" to 120-139px and left "In" at 112. 9.75em is 112px at the
+     chip's 11.5px and holds the widest label with its chevron at any text size, so every chip grows together. */
+  const CHIP=(fg,bg)=>({minHeight:44,minWidth:"9.75em",whiteSpace:"nowrap",boxSizing:"border-box",flexShrink:0,display:"inline-flex",alignItems:"center",justifyContent:"center",gap:4,background:bg,border:"1px solid "+fg+"66",borderRadius:9,color:fg,fontSize:11.5,fontWeight:700,padding:"8px 11px"});
   const suggestBtn=label=><button type="button" onClick={()=>leave(()=>onMessage&&onMessage(crew.id))} style={{...BTN_SECONDARY(C),width:"100%",minHeight:44,color:C.blue,display:"flex",alignItems:"center",justifyContent:"center",gap:7}}><ActionIcon name="chat" size={14} color={C.blue}/>{label}</button>;
 
   /* ---- JOIN REQUESTS: the next-step box shows them first, and so does the Crew sheet. Any member can approve. ---- */
