@@ -34,6 +34,11 @@ profile can also open as `FullProfile` and `Resume` overlays from anywhere (part
   ticked skill; the profile prints *practiced Mar 2026* beside the skill, and on your OWN profile *time for a refresher*
   after `REFRESH_MONTHS` (12, `lib/skillPractice.js`). Nothing is sent or pushed. A vouch with skills ticked can also say
   *We practiced these together* on a date (`practicedOn` in the vouch's JSON, no column): a practice record, never a rating.
+  **How climbers will see you** (the card at the foot of the editor, 2026-11-23): everything public the draft holds, as
+  the profile words it: photo, name or @username, home, level, years, gender and pronouns, bio, disciplines (by label),
+  grades, then Availability, Certifications (with expiry), Belay devices and Skills, each skill with *practiced Mar 2026*
+  when a month is set. An empty section is left out and named in one *Not on your profile yet* line. The refresher hint
+  is not drawn (only you see it), nor the zip or emergency contact (nobody does). Until then it stopped at the grades.
   - **Home city + state are a LABEL, never geocoded.** The city is free text with a `US_CITIES` datalist; the state comes
     from the dropdown. They show on your profile and partner rows, and the state orders namesakes in search
     (`homeStatePath`). They place you nowhere: partner and crew distance come only from the zip.

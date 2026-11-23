@@ -500,6 +500,11 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     `GRADED_DISC`. Six stated grades against a cap of three is why `suggestDiscSlots` takes `here`: a
     slot for a discipline the area lacks is dropped before the cap. Aid is deliberately not a slot: its
     scale mixes A and C grades, which a single window cannot range over.
+  - **A logged slot with no centre borrows the profile's grade (2026-11-23).** Found by driving a real
+    signed-in fixture account on the LIVE site, which no guest walk or stubbed test could: its one log
+    is Mount Baker's North Ridge, alpine but graded on the ice scale, so the alpine slot's `gradeVal`
+    was null and the ranking, with no centre, kept every alpine climb (5.10d and 5.11- for a profile
+    saying Alpine 5.6). The guest walk had passed because the seed climber's logs all carry rock grades.
   - Measured non-finding, do not re-derive: `catOf` files a trad climb on a peak as alpine, so the
     alpine pool could miss a peak's trad lines. It is 4 routes of the 1,110 filed on the 535 busiest
     peaks of six states; the catalog already stores peak climbs as alpine. A fix was built and removed.
