@@ -1,0 +1,1321 @@
+[
+ {
+  "id": "wi_oak_leaf_trail_north_point_lighthouse",
+  "verdict": "ok",
+  "stored": [
+   43.06514,
+   -87.87127
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/120161807/",
+    "retrieved_at": "2026-11-18",
+    "lat": 43.06514,
+    "lng": -87.87127,
+    "fact": "Mountain Project area page GPS line"
+   }
+  ],
+  "note": "Stored equals MP. Parent is a statewide buildering container; child is a Milwaukee/Appleton site, far from the statewide centre by design."
+ },
+ {
+  "id": "az_golden_buttress",
+  "verdict": "parent_wrong",
+  "stored": [
+   31.91694,
+   -109.99873
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/108595659/",
+    "retrieved_at": "2026-11-18",
+    "lat": 31.91694,
+    "lng": -109.99873,
+    "fact": "MP area page GPS; breadcrumb W Stronghold > Hands Canyon > Central Drainage"
+   },
+   {
+    "url": "https://www.mountainproject.com/area/108595553/",
+    "retrieved_at": "2026-11-18",
+    "lat": 31.91855,
+    "lng": -110.00077,
+    "fact": "MP Hands Canyon (parent) GPS"
+   }
+  ],
+  "note": "Child stored = MP GPS (Cochise West Stronghold, ~31.92,-110.00). PARENT Hands Canyon stored 32.55,-110.94 is wrong (~110 km NW); MP Hands Canyon GPS 31.91855,-110.00077 (MP only, so parent_new left null; see az_hands_canyon row)."
+ },
+ {
+  "id": "id_long_mountain_selkirk_mountains",
+  "verdict": "ok",
+  "stored": [
+   48.83486,
+   -116.61552
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/114621231/",
+    "retrieved_at": "2026-11-18",
+    "lat": 48.83486,
+    "lng": -116.61552,
+    "fact": "Mountain Project area page GPS line"
+   }
+  ],
+  "note": "Stored equals MP. Parent North Idaho is a large region."
+ },
+ {
+  "id": "nc_crowders_mountain",
+  "verdict": "ok",
+  "stored": [
+   35.2138550974462,
+   -81.3036127296147
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/106099514/",
+    "retrieved_at": "2026-11-18",
+    "lat": 35.24038,
+    "lng": -81.2694,
+    "fact": "Mountain Project area page GPS line"
+   }
+  ],
+  "note": "Stored (centroid of 3 children) ~4 km from MP point; Crowders Mountain park area. Parent Piedmont Region is large."
+ },
+ {
+  "id": "or_lobster_creek_deep_water_solo",
+  "verdict": "ok",
+  "stored": [
+   42.504,
+   -124.29415
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/119577511/",
+    "retrieved_at": "2026-11-18",
+    "lat": 42.504,
+    "lng": -124.29415,
+    "fact": "Mountain Project area page GPS line"
+   }
+  ],
+  "note": "Stored equals MP. Parent Southwest Oregon is large."
+ },
+ {
+  "id": "az_central_mogollon_rim",
+  "verdict": "ok",
+  "stored": [
+   34.5762318181818,
+   -111.587158787879
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/114488550/",
+    "retrieved_at": "2026-11-18",
+    "lat": 34.67218,
+    "lng": -111.62116,
+    "fact": "Mountain Project area page GPS line"
+   }
+  ],
+  "note": "Region-sized; stored ~11 km from MP point. Parent Northern Arizona is large."
+ },
+ {
+  "id": "co_narrows_redstone_mcclure_pass",
+  "verdict": "unresolved",
+  "stored": [
+   38.96694,
+   -105.95469
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/105747003/",
+    "retrieved_at": "2026-11-18",
+    "lat": 38.96694,
+    "lng": -105.95469,
+    "fact": "MP GPS for Narrows, Redstone, McClure Pass (under CO Ice & Mixed > Redstone)"
+   },
+   {
+    "url": "https://www.mountainproject.com/area/105744530/",
+    "retrieved_at": "2026-11-18",
+    "lat": 39.18075,
+    "lng": -107.24134,
+    "fact": "MP Redstone ice parent GPS"
+   }
+  ],
+  "note": "MP itself prints this wrong GPS (stored copies it): 38.96,-105.95 is near Buena Vista, not Redstone/McClure Pass (Crystal River valley, ~39.1-39.2,-107.2). MP parent CO Ice & Mixed > Redstone GPS 39.18075,-107.24134. No page gives this area its own correct coordinate."
+ },
+ {
+  "id": "id_teddy_bear_cove",
+  "verdict": "ok",
+  "stored": [
+   42.7203023809524,
+   -113.069047619048
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/118277486/",
+    "retrieved_at": "2026-11-18",
+    "lat": 42.71996,
+    "lng": -113.06806,
+    "fact": "Mountain Project area page GPS line"
+   }
+  ],
+  "note": "Stored matches MP (near Massacre Rocks). Parent East Idaho is large."
+ },
+ {
+  "id": "co_the_man_cave",
+  "verdict": "unresolved",
+  "stored": [
+   38.95694,
+   -105.96469
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/111488414/",
+    "retrieved_at": "2026-11-18",
+    "lat": 38.95694,
+    "lng": -105.96469,
+    "fact": "MP GPS for The Man Cave (CO Ice & Mixed > Redstone)"
+   },
+   {
+    "url": "https://www.mountainproject.com/area/105744530/",
+    "retrieved_at": "2026-11-18",
+    "lat": 39.18075,
+    "lng": -107.24134,
+    "fact": "MP Redstone ice parent GPS"
+   }
+  ],
+  "note": "MP itself prints this wrong GPS (stored copies it): 38.96,-105.95 is near Buena Vista, not Redstone/McClure Pass (Crystal River valley, ~39.1-39.2,-107.2). MP parent CO Ice & Mixed > Redstone GPS 39.18075,-107.24134. No page gives this area its own correct coordinate."
+ },
+ {
+  "id": "az_karma_mechanic",
+  "verdict": "parent_wrong",
+  "stored": [
+   31.9211,
+   -110.00534
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/108645621/",
+    "retrieved_at": "2026-11-18",
+    "lat": 31.9211,
+    "lng": -110.00534,
+    "fact": "MP area page GPS; breadcrumb W Stronghold > Hands Canyon > Central Drainage"
+   },
+   {
+    "url": "https://www.mountainproject.com/area/108595553/",
+    "retrieved_at": "2026-11-18",
+    "lat": 31.91855,
+    "lng": -110.00077,
+    "fact": "MP Hands Canyon (parent) GPS"
+   }
+  ],
+  "note": "Child stored = MP GPS (Cochise West Stronghold, ~31.92,-110.00). PARENT Hands Canyon stored 32.55,-110.94 is wrong (~110 km NW); MP Hands Canyon GPS 31.91855,-110.00077 (MP only, so parent_new left null; see az_hands_canyon row)."
+ },
+ {
+  "id": "az_eastern_aretes_of_the_hand",
+  "verdict": "parent_wrong",
+  "stored": [
+   31.92172,
+   -110.00224
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/121526869/",
+    "retrieved_at": "2026-11-18",
+    "lat": 31.92093,
+    "lng": -109.99891,
+    "fact": "MP area page GPS; breadcrumb W Stronghold > Hands Canyon > Central Drainage"
+   },
+   {
+    "url": "https://www.mountainproject.com/area/108595553/",
+    "retrieved_at": "2026-11-18",
+    "lat": 31.91855,
+    "lng": -110.00077,
+    "fact": "MP Hands Canyon (parent) GPS"
+   }
+  ],
+  "note": "Child stored = MP GPS (Cochise West Stronghold, ~31.92,-110.00). PARENT Hands Canyon stored 32.55,-110.94 is wrong (~110 km NW); MP Hands Canyon GPS 31.91855,-110.00077 (MP only, so parent_new left null; see az_hands_canyon row). MP name: Eastern Aretes of Hands Canyon (under NE Drainage); ~0.3 km from stored."
+ },
+ {
+  "id": "wi_appleton_peabody_park",
+  "verdict": "ok",
+  "stored": [
+   44.2671,
+   -88.3877
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/106458098/",
+    "retrieved_at": "2026-11-18",
+    "lat": 44.26709,
+    "lng": -88.38768,
+    "fact": "Mountain Project area page GPS line"
+   }
+  ],
+  "note": "Stored equals MP (Peabody Park, Appleton). Parent is a statewide buildering container; child is a Milwaukee/Appleton site, far from the statewide centre by design."
+ },
+ {
+  "id": "ca_h_boulder_aka_reed_s_boulder",
+  "verdict": "fix_one_source",
+  "stored": [
+   34.42267,
+   -117.86436
+  ],
+  "new_lat": 33.81528,
+  "new_lng": -116.75309,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/108579243/",
+    "retrieved_at": "2026-11-18",
+    "lat": 33.81528,
+    "lng": -116.75309,
+    "fact": "MP GPS; breadcrumb Black Mountain > OK Corral > Roadside Corral"
+   },
+   {
+    "url": "https://www.mountainproject.com/area/105991594/",
+    "retrieved_at": "2026-11-18",
+    "lat": 33.81519,
+    "lng": -116.75293,
+    "fact": "MP Roadside Corral parent GPS"
+   }
+  ],
+  "note": "Stored 34.42,-117.86 is ~112 km away; MP puts the boulder ~15 m from its Roadside Corral parent at Black Mountain."
+ },
+ {
+  "id": "wi_milwaukee_lakefront",
+  "verdict": "ok",
+  "stored": [
+   43.05113,
+   -87.8893
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/106323143/",
+    "retrieved_at": "2026-11-18",
+    "lat": 43.05113,
+    "lng": -87.8893,
+    "fact": "Mountain Project area page GPS line"
+   }
+  ],
+  "note": "Stored equals MP. Parent is a statewide buildering container; child is a Milwaukee/Appleton site, far from the statewide centre by design."
+ },
+ {
+  "id": "az_hand_the_2",
+  "verdict": "parent_wrong",
+  "stored": [
+   31.91964,
+   -110.00139
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/116531009/",
+    "retrieved_at": "2026-11-18",
+    "lat": 31.91964,
+    "lng": -110.00139,
+    "fact": "MP area page GPS; breadcrumb W Stronghold > Hands Canyon > Central Drainage"
+   },
+   {
+    "url": "https://www.mountainproject.com/area/108595553/",
+    "retrieved_at": "2026-11-18",
+    "lat": 31.91855,
+    "lng": -110.00077,
+    "fact": "MP Hands Canyon (parent) GPS"
+   }
+  ],
+  "note": "Child stored = MP GPS (Cochise West Stronghold, ~31.92,-110.00). PARENT Hands Canyon stored 32.55,-110.94 is wrong (~110 km NW); MP Hands Canyon GPS 31.91855,-110.00077 (MP only, so parent_new left null; see az_hands_canyon row). MP name: The Hand."
+ },
+ {
+  "id": "az_green_pinnacle",
+  "verdict": "parent_wrong",
+  "stored": [
+   31.9211,
+   -110.00245
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/108598249/",
+    "retrieved_at": "2026-11-18",
+    "lat": 31.9211,
+    "lng": -110.00245,
+    "fact": "MP area page GPS; breadcrumb W Stronghold > Hands Canyon > Central Drainage"
+   },
+   {
+    "url": "https://www.mountainproject.com/area/108595553/",
+    "retrieved_at": "2026-11-18",
+    "lat": 31.91855,
+    "lng": -110.00077,
+    "fact": "MP Hands Canyon (parent) GPS"
+   }
+  ],
+  "note": "Child stored = MP GPS (Cochise West Stronghold, ~31.92,-110.00). PARENT Hands Canyon stored 32.55,-110.94 is wrong (~110 km NW); MP Hands Canyon GPS 31.91855,-110.00077 (MP only, so parent_new left null; see az_hands_canyon row)."
+ },
+ {
+  "id": "or_mill_creek_park_boulder",
+  "verdict": "ok",
+  "stored": [
+   44.9889,
+   -123.4235
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/108227054/",
+    "retrieved_at": "2026-11-18",
+    "lat": 44.9889,
+    "lng": -123.4235,
+    "fact": "Mountain Project area page GPS line"
+   }
+  ],
+  "note": "Stored equals MP. Parent Willamette Valley is a ~200 km valley."
+ },
+ {
+  "id": "wi_lafayette_summit",
+  "verdict": "ok",
+  "stored": [
+   43.056,
+   -87.88611
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/105794824/",
+    "retrieved_at": "2026-11-18",
+    "lat": 43.056,
+    "lng": -87.88611,
+    "fact": "Mountain Project area page GPS line"
+   }
+  ],
+  "note": "Stored equals MP. Parent is a statewide buildering container; child is a Milwaukee/Appleton site, far from the statewide centre by design."
+ },
+ {
+  "id": "wa_cape_flattery",
+  "verdict": "ok",
+  "stored": [
+   48.35936,
+   -124.63294
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/113155467/",
+    "retrieved_at": "2026-11-18",
+    "lat": 48.35936,
+    "lng": -124.63294,
+    "fact": "Mountain Project area page GPS line"
+   },
+   {
+    "url": "https://edits.nationalmap.gov/apps/gaz-domestic/public/search/names/1503795",
+    "retrieved_at": "2026-11-18",
+    "lat": 48.3831179,
+    "lng": -124.7144109,
+    "fact": "GNIS Cape Flattery, Cape, Clallam County WA"
+   }
+  ],
+  "note": "Stored equals MP (pin near Neah Bay, ~6.5 km SE of the GNIS cape point). Parent Olympics & Pacific Coast is large."
+ },
+ {
+  "id": "nv_cleve_creek_crag",
+  "verdict": "ok",
+  "stored": [
+   39.21338,
+   -114.5462
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/117595989/",
+    "retrieved_at": "2026-11-18",
+    "lat": 39.21339,
+    "lng": -114.54633,
+    "fact": "Mountain Project area page GPS line"
+   }
+  ],
+  "note": "Stored matches MP. Parent Eastern Nevada is large."
+ },
+ {
+  "id": "mt_highline_trail",
+  "verdict": "unresolved",
+  "stored": [
+   47.61067,
+   -114.35774
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/117548896/",
+    "retrieved_at": "2026-11-18",
+    "lat": 47.61067,
+    "lng": -114.35774,
+    "fact": "MP GPS for Highline Trail under Kalispell Area > Glacier NP"
+   }
+  ],
+  "note": "MP itself prints 47.61,-114.36 (stored copies it), ~100 km south of Glacier NP (Highline Trail runs from Logan Pass, ~48.7,-113.7). GNIS search for Highline Trail in Montana returned nothing; no page gives a correct point."
+ },
+ {
+  "id": "wi_university_of_wisconsin_milwaukee",
+  "verdict": "ok",
+  "stored": [
+   43.07531,
+   -87.88285
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/105730041/",
+    "retrieved_at": "2026-11-18",
+    "lat": 43.07531,
+    "lng": -87.88285,
+    "fact": "Mountain Project area page GPS line"
+   }
+  ],
+  "note": "Stored equals MP. Parent is a statewide buildering container; child is a Milwaukee/Appleton site, far from the statewide centre by design."
+ },
+ {
+  "id": "ut_san_rafael_swell",
+  "verdict": "ok",
+  "stored": [
+   38.8825456309525,
+   -110.697272400096
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/105787863/",
+    "retrieved_at": "2026-11-18",
+    "lat": 38.8525,
+    "lng": -110.701,
+    "fact": "Mountain Project area page GPS line"
+   }
+  ],
+  "note": "Region; stored ~3 km from MP. Parent South Central Utah is large."
+ },
+ {
+  "id": "id_massacre_rocks",
+  "verdict": "ok",
+  "stored": [
+   42.6779775980392,
+   -113.008096470588
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/105886274/",
+    "retrieved_at": "2026-11-18",
+    "lat": 42.6752,
+    "lng": -112.99824,
+    "fact": "Mountain Project area page GPS line"
+   }
+  ],
+  "note": "Stored ~1 km from MP. Parent East Idaho is large."
+ },
+ {
+  "id": "mt_paradise_valley",
+  "verdict": "ok",
+  "stored": [
+   45.3853462554302,
+   -110.586628803049
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/107784380/",
+    "retrieved_at": "2026-11-18",
+    "lat": 45.618,
+    "lng": -110.5672,
+    "fact": "Mountain Project area page GPS line"
+   }
+  ],
+  "note": "Region-sized (long valley); stored is centroid of children, ~26 km from MP point. Parent Southwest Region is large. MP parent is Bozeman Area."
+ },
+ {
+  "id": "id_paris_ice_caves",
+  "verdict": "ok",
+  "stored": [
+   42.2319,
+   -111.56063
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/107026956/",
+    "retrieved_at": "2026-11-18",
+    "lat": 42.2319,
+    "lng": -111.56063,
+    "fact": "Mountain Project area page GPS line"
+   }
+  ],
+  "note": "Stored equals MP. Parent East Idaho is large (MP: Bear Lake - Caribou Area)."
+ },
+ {
+  "id": "az_homestead_the",
+  "verdict": "ok",
+  "stored": [
+   33.1734087179487,
+   -110.780531025641
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/105801318/",
+    "retrieved_at": "2026-11-18",
+    "lat": 33.17393,
+    "lng": -110.78162,
+    "fact": "Mountain Project area page GPS line"
+   }
+  ],
+  "note": "Stored matches MP. Parent Central Arizona is large."
+ },
+ {
+  "id": "wi_173_s_2nd_st",
+  "verdict": "ok",
+  "stored": [
+   43.03011,
+   -87.91284
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/202272589/",
+    "retrieved_at": "2026-11-18",
+    "lat": 43.03011,
+    "lng": -87.91284,
+    "fact": "Mountain Project area page GPS line"
+   }
+  ],
+  "note": "Stored equals MP. Parent is a statewide buildering container; child is a Milwaukee/Appleton site, far from the statewide centre by design."
+ },
+ {
+  "id": "id_rattlesnake_station",
+  "verdict": "ok",
+  "stored": [
+   43.2027,
+   -115.5552
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/108222409/",
+    "retrieved_at": "2026-11-18",
+    "lat": 43.2027,
+    "lng": -115.5552,
+    "fact": "Mountain Project area page GPS line"
+   }
+  ],
+  "note": "Stored equals MP. Parent West Idaho is large."
+ },
+ {
+  "id": "mt_emigrant_gulch",
+  "verdict": "misfiled",
+  "stored": [
+   45.286915,
+   -110.68404
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": "Paradise Valley (mt_paradise_valley)",
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/113558619/",
+    "retrieved_at": "2026-11-18",
+    "lat": 45.28685,
+    "lng": -110.68031,
+    "fact": "MP GPS; breadcrumb Bozeman Area > Paradise Valley > Emigrant Gulch"
+   }
+  ],
+  "note": "Coordinate right (stored ~0.3 km from MP). MP files it under Paradise Valley, which exists in our catalog as a sibling; otherwise Southwest Region is just large."
+ },
+ {
+  "id": "wa_columbia_gorge",
+  "verdict": "ok",
+  "stored": [
+   45.8669042989861,
+   -121.990879378256
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/120733498/",
+    "retrieved_at": "2026-11-18",
+    "lat": 45.64957,
+    "lng": -122.10506,
+    "fact": "Mountain Project area page GPS line"
+   }
+  ],
+  "note": "Region (~130 km gorge); stored centroid ~26 km from MP point. Parent South-West & Tacoma is large."
+ },
+ {
+  "id": "nv_cave_lake_state_park",
+  "verdict": "ok",
+  "stored": [
+   39.18143,
+   -114.70162
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/121648543/",
+    "retrieved_at": "2026-11-18",
+    "lat": 39.19379,
+    "lng": -114.69663,
+    "fact": "Mountain Project area page GPS line"
+   }
+  ],
+  "note": "Stored matches MP. Parent Eastern Nevada is large."
+ },
+ {
+  "id": "mt_lost_horse",
+  "verdict": "ok",
+  "stored": [
+   46.1022602142857,
+   -114.258829364286
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/105936708/",
+    "retrieved_at": "2026-11-18",
+    "lat": 46.10124,
+    "lng": -114.2538,
+    "fact": "Mountain Project area page GPS line"
+   }
+  ],
+  "note": "Stored matches MP (Bitterroot). Parent Northwest Region is large."
+ },
+ {
+  "id": "wa_san_juan_fidalgo_whidbey_islands",
+  "verdict": "ok",
+  "stored": [
+   48.4261490238095,
+   -122.686296380087
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/120298517/",
+    "retrieved_at": "2026-11-18",
+    "lat": 48.45714,
+    "lng": -122.63027,
+    "fact": "Mountain Project area page GPS line"
+   }
+  ],
+  "note": "Region; stored ~5 km from MP. Parent Northwest Region is large."
+ },
+ {
+  "id": "az_lone_mountain",
+  "verdict": "ok",
+  "stored": [
+   36.13334,
+   -113.31773
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://edits.nationalmap.gov/apps/gaz-domestic/public/search/names/7299",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.1333106,
+    "lng": -113.3176995,
+    "fact": "GNIS Lone Mountain, Summit, Mohave County AZ, Whitmore Point map"
+   }
+  ],
+  "note": "Stored matches GNIS within 0.1 km. Parent \"Mountains\" sits at the park village; Grand Canyon NP is large. Not found on MP."
+ },
+ {
+  "id": "az_hands_canyon",
+  "verdict": "fix_one_source",
+  "stored": [
+   32.5502966666667,
+   -110.941913333333
+  ],
+  "new_lat": 31.91855,
+  "new_lng": -110.00077,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/108595553/",
+    "retrieved_at": "2026-11-18",
+    "lat": 31.91855,
+    "lng": -110.00077,
+    "fact": "MP Hands Canyon GPS; breadcrumb Cochise Stronghold > W Stronghold"
+   }
+  ],
+  "note": "Stored 32.55,-110.94 is ~110 km from Cochise Stronghold; all 5 children and parent West Stronghold sit at ~31.92,-110.0. No independent coordinate found (not a GNIS name)."
+ },
+ {
+  "id": "id_lion_s_head_2",
+  "verdict": "ok",
+  "stored": [
+   48.7861866666667,
+   -116.719586666667
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/107831680/",
+    "retrieved_at": "2026-11-18",
+    "lat": 48.7862,
+    "lng": -116.71652,
+    "fact": "Mountain Project area page GPS line"
+   }
+  ],
+  "note": "Stored matches MP. Parent North Idaho is large."
+ },
+ {
+  "id": "ca_01_hoover_wilderness",
+  "verdict": "ok",
+  "stored": [
+   38.1084133333333,
+   -119.450783333333
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/111628664/",
+    "retrieved_at": "2026-11-18",
+    "lat": 38.2793,
+    "lng": -119.45277,
+    "fact": "Mountain Project area page GPS line"
+   }
+  ],
+  "note": "Wilderness-sized; stored centroid ~19 km from MP point. Parent High Sierra is large."
+ },
+ {
+  "id": "wi_oak_leaf_bike_trail_wilson",
+  "verdict": "ok",
+  "stored": [
+   43.10136,
+   -87.90486
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/108960329/",
+    "retrieved_at": "2026-11-18",
+    "lat": 43.10136,
+    "lng": -87.90486,
+    "fact": "Mountain Project area page GPS line"
+   }
+  ],
+  "note": "Stored equals MP. Parent is a statewide buildering container; child is a Milwaukee/Appleton site, far from the statewide centre by design."
+ },
+ {
+  "id": "mi_munising",
+  "verdict": "ok",
+  "stored": [
+   46.4969395833333,
+   -86.55252
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/105886705/",
+    "retrieved_at": "2026-11-18",
+    "lat": 46.41,
+    "lng": -86.6499,
+    "fact": "Mountain Project area page GPS line"
+   }
+  ],
+  "note": "Region; stored ~12 km from MP point. Parent Upper Peninsula is large."
+ },
+ {
+  "id": "ca_wonder_valley",
+  "verdict": "ok",
+  "stored": [
+   34.19368,
+   -115.72665
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/106792020/",
+    "retrieved_at": "2026-11-18",
+    "lat": 34.19368,
+    "lng": -115.72665,
+    "fact": "Mountain Project area page GPS line"
+   }
+  ],
+  "note": "Stored equals MP. Parent High Desert is large."
+ },
+ {
+  "id": "mi_rockport",
+  "verdict": "ok",
+  "stored": [
+   45.19822,
+   -83.39012
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/113520823/",
+    "retrieved_at": "2026-11-18",
+    "lat": 45.1957,
+    "lng": -83.38506,
+    "fact": "Mountain Project area page GPS line"
+   }
+  ],
+  "note": "Stored matches MP. Parent Lower Peninsula is large."
+ },
+ {
+  "id": "ut_comb_ridge",
+  "verdict": "ok",
+  "stored": [
+   37.3869714285714,
+   -109.66377
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/106286326/",
+    "retrieved_at": "2026-11-18",
+    "lat": 37.2733,
+    "lng": -109.6777,
+    "fact": "Mountain Project area page GPS line"
+   }
+  ],
+  "note": "Long ridge; stored centroid ~13 km from MP point. Parent Southeast Utah is large (MP: San Juan County)."
+ },
+ {
+  "id": "ca_pine_mountain_club",
+  "verdict": "ok",
+  "stored": [
+   34.81247,
+   -119.12264
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/119572629/",
+    "retrieved_at": "2026-11-18",
+    "lat": 34.81323,
+    "lng": -119.12408,
+    "fact": "Mountain Project area page GPS line"
+   }
+  ],
+  "note": "Stored matches MP. Parent Central Coast is large."
+ },
+ {
+  "id": "wi_radioshack_offwidth",
+  "verdict": "ok",
+  "stored": [
+   43.03887,
+   -87.93375
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/105801245/",
+    "retrieved_at": "2026-11-18",
+    "lat": 43.03887,
+    "lng": -87.93375,
+    "fact": "Mountain Project area page GPS line"
+   }
+  ],
+  "note": "Stored equals MP. Parent is a statewide buildering container; child is a Milwaukee/Appleton site, far from the statewide centre by design. MP files it under Buildering > Marquette Campus."
+ },
+ {
+  "id": "co_devil_s_slide",
+  "verdict": "fix_one_source",
+  "stored": [
+   39.93074,
+   -105.28382
+  ],
+  "new_lat": 38.73391,
+  "new_lng": -104.92572,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/105746764/",
+    "retrieved_at": "2026-11-18",
+    "lat": 38.73391,
+    "lng": -104.92572,
+    "fact": "MP GPS; breadcrumb Colorado Springs > Old Stage Rd"
+   }
+  ],
+  "note": "Stored 39.93,-105.28 is near Boulder; MP has Devil's Slide on Old Stage Road, ~5 km from MP Old Stage Road GPS 38.77168,-104.87853."
+ },
+ {
+  "id": "ut_red_canyon",
+  "verdict": "ok",
+  "stored": [
+   37.49401,
+   -110.18846
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/112046174/",
+    "retrieved_at": "2026-11-18",
+    "lat": 37.49398,
+    "lng": -110.18846,
+    "fact": "Mountain Project area page GPS line"
+   }
+  ],
+  "note": "Stored equals MP. Parent Southeast Utah is large. MP files it under Grand County > Misc Scattered Boulders though the point is farther south."
+ },
+ {
+  "id": "az_tower_of_babylon",
+  "verdict": "ok",
+  "stored": [
+   35.72444,
+   -113.2061
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://edits.nationalmap.gov/apps/gaz-domestic/public/search/names/21067",
+    "retrieved_at": "2026-11-18",
+    "lat": 35.7242634,
+    "lng": -113.2061712,
+    "fact": "GNIS Tower of Babylon, Summit, Robbers Roost Canyon map"
+   }
+  ],
+  "note": "Stored matches GNIS exactly. Parent \"Towers\" sits at the park village; Grand Canyon NP is large. Not on MP (MP Tower of Babylon is Maryland)."
+ },
+ {
+  "id": "mt_sun_river_canyon",
+  "verdict": "ok",
+  "stored": [
+   47.62182,
+   -112.71949
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/111924393/",
+    "retrieved_at": "2026-11-18",
+    "lat": 47.62009,
+    "lng": -112.72241,
+    "fact": "Mountain Project area page GPS line"
+   }
+  ],
+  "note": "Stored matches MP. Parent Northwest Region is large (MP: Great Falls Area)."
+ },
+ {
+  "id": "az_bridgers_knoll",
+  "verdict": "ok",
+  "stored": [
+   36.41723,
+   -112.44493
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://edits.nationalmap.gov/apps/gaz-domestic/public/search/names/1957",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.4177348,
+    "lng": -112.4448086,
+    "fact": "GNIS Bridgers Knoll, Summit, Coconino County AZ"
+   }
+  ],
+  "note": "Stored matches GNIS exactly. Parent Grand Canyon NP is large. Not found on MP."
+ },
+ {
+  "id": "az_blue_ridge_reservoir",
+  "verdict": "ok",
+  "stored": [
+   34.5549,
+   -111.1952
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/106914807/",
+    "retrieved_at": "2026-11-18",
+    "lat": 34.55489,
+    "lng": -111.19519,
+    "fact": "Mountain Project area page GPS line"
+   }
+  ],
+  "note": "Stored equals MP. Parent Northern AZ Bouldering is large."
+ },
+ {
+  "id": "va_amherst_county",
+  "verdict": "ok",
+  "stored": [
+   37.5565733333333,
+   -79.0660316666667
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/118562740/",
+    "retrieved_at": "2026-11-18",
+    "lat": 37.58177,
+    "lng": -79.04586,
+    "fact": "Mountain Project area page GPS line"
+   }
+  ],
+  "note": "County-sized; stored ~3 km from MP. Parent Central & Southern VA is large."
+ },
+ {
+  "id": "nc_north_eagle",
+  "verdict": "parent_wrong",
+  "stored": [
+   35.47432,
+   -82.2371
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/114312120/",
+    "retrieved_at": "2026-11-18",
+    "lat": 35.47432,
+    "lng": -82.2371,
+    "fact": "MP North Eagle GPS"
+   },
+   {
+    "url": "https://www.mountainproject.com/area/106037528/",
+    "retrieved_at": "2026-11-18",
+    "lat": 35.48246,
+    "lng": -82.19042,
+    "fact": "MP Eagle Rock parent GPS"
+   }
+  ],
+  "note": "Child stored = MP GPS. PARENT Eagle Rock stored 35.5267,-81.0511 is wrong (~100 km E); MP Eagle Rock GPS 35.48246,-82.19042 (MP only, parent_new left null)."
+ },
+ {
+  "id": "nc_lower_tier",
+  "verdict": "parent_wrong",
+  "stored": [
+   35.4736,
+   -82.23673
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/114312117/",
+    "retrieved_at": "2026-11-18",
+    "lat": 35.4736,
+    "lng": -82.23673,
+    "fact": "MP Lower Tier GPS"
+   },
+   {
+    "url": "https://www.mountainproject.com/area/106037528/",
+    "retrieved_at": "2026-11-18",
+    "lat": 35.48246,
+    "lng": -82.19042,
+    "fact": "MP Eagle Rock parent GPS"
+   }
+  ],
+  "note": "Child stored = MP GPS. PARENT Eagle Rock stored 35.5267,-81.0511 is wrong (~100 km E); MP Eagle Rock GPS 35.48246,-82.19042 (MP only, parent_new left null)."
+ }
+]

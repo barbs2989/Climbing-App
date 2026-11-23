@@ -1,0 +1,197 @@
+[
+{"id":"ut_gooseberry_mesa","verdict":"fix","stored":[37.13842,113.19652],"new_lat":37.1347578,"new_lng":-113.2112004,"parent_new_lat":null,"parent_new_lng":null,"right_parent":null,"sources":[
+ {"url":"https://www.mountainproject.com/area/201987714/gooseberry-mesa","retrieved_at":"2026-11-18","lat":37.13842,"lng":113.19652,"fact":"MP GPS line itself prints the positive longitude (garbled at source)."},
+ {"url":"https://edits.nationalmap.gov/apps/gaz-domestic/public/search/names/1428259","retrieved_at":"2026-11-18","lat":37.1347578,"lng":-113.2112004,"fact":"GNIS 1428259 Gooseberry Mesa, Summit, Washington County UT, primary point (High Point)."},
+ {"url":"https://www.openstreetmap.org/node/356672831","retrieved_at":"2026-11-18","lat":37.1416499,"lng":-113.167445,"fact":"OSM node Gooseberry Mesa, Washington County, Utah (about 4 km from GNIS point; mesa-sized)."}],
+ "note":"Mesa is region-sized (~10 km); GNIS and OSM agree within ~4 km. Used GNIS. MP page carries the same sign error."},
+{"id":"ut_aetschi_baetschi_tower","verdict":"fix_one_source","stored":[37.59884,111.34308],"new_lat":37.5992801,"new_lng":-111.3429366,"parent_new_lat":null,"parent_new_lng":null,"right_parent":null,"sources":[
+ {"url":"https://www.mountainproject.com/area/202199492/aetschi-baetschi-tower","retrieved_at":"2026-11-18","lat":37.59884,"lng":111.34308,"fact":"MP GPS line prints positive longitude; describes tower off Harris Wash Road, Grand Staircase-Escalante."},
+ {"url":"https://www.openstreetmap.org/node/6123010093","retrieved_at":"2026-11-18","lat":37.5992801,"lng":-111.3429366,"fact":"OSM node Aetschi Baetschi Tower, Garfield County, Utah."}],
+ "note":"Only OSM prints a valid coordinate (MP garbled at source); held for owner. Gaia GPS page printed no coordinate."},
+{"id":"co_the_vault","verdict":"unresolved","stored":[38.81132,106.73506],"new_lat":null,"new_lng":null,"parent_new_lat":null,"parent_new_lng":null,"right_parent":null,"sources":[
+ {"url":"https://www.mountainproject.com/area/202318721/the-vault","retrieved_at":"2026-11-18","lat":38.81132,"lng":106.73506,"fact":"MP GPS prints positive longitude; crag is 7.4 miles up Spring Creek canyon, left side."}],
+ "note":"MP is garbled at source and no other page gives a coordinate for this small crag."},
+{"id":"oh_left_side","verdict":"parent_wrong","stored":[41.12877,-81.48327],"new_lat":null,"new_lng":null,"parent_new_lat":41.12868,"parent_new_lng":-81.48331,"right_parent":null,"sources":[
+ {"url":"https://www.mountainproject.com/area/112852519/left-side","retrieved_at":"2026-11-18","lat":41.12877,"lng":-81.48327,"fact":"MP GPS for Left side matches stored value."},
+ {"url":"https://www.mountainproject.com/area/112852513/generic-area","retrieved_at":"2026-11-18","lat":41.12868,"lng":-81.48331,"fact":"MP GPS for parent Generic area; stored parent is 0,0."}],
+ "note":"Child right; parent Generic area stored at 0,0. Parent coordinate is one-source (MP) only."},
+{"id":"oh_pillar_of_color","verdict":"parent_wrong","stored":[41.12868,-81.4833],"new_lat":null,"new_lng":null,"parent_new_lat":41.12868,"parent_new_lng":-81.48331,"right_parent":null,"sources":[
+ {"url":"https://www.mountainproject.com/area/120876865/pillar-of-color","retrieved_at":"2026-11-18","lat":41.12868,"lng":-81.4833,"fact":"MP GPS for Pillar of color matches stored value."},
+ {"url":"https://www.mountainproject.com/area/120876792/right-side","retrieved_at":"2026-11-18","lat":41.12868,"lng":-81.48331,"fact":"MP GPS for parent Right side; stored parent is 0,0."}],
+ "note":"Child right; parent Right side (oh_right_side) stored at 0,0. Parent coordinate one-source (MP)."},
+{"id":"oh_diamond","verdict":"parent_wrong","stored":[41.12883,-81.48276],"new_lat":null,"new_lng":null,"parent_new_lat":41.12884,"parent_new_lng":-81.48276,"right_parent":null,"sources":[
+ {"url":"https://www.mountainproject.com/area/120859573/diamond","retrieved_at":"2026-11-18","lat":41.12883,"lng":-81.48276,"fact":"MP GPS for Diamond matches stored value."},
+ {"url":"https://www.mountainproject.com/area/120859561/middle-section","retrieved_at":"2026-11-18","lat":41.12884,"lng":-81.48276,"fact":"MP GPS for parent Middle Section; stored parent is 0,0."}],
+ "note":"Child right; parent Middle Section (oh_middle_section) stored at 0,0. Parent coordinate one-source (MP)."},
+{"id":"oh_generic_area_2","verdict":"fix_one_source","stored":[0,0],"new_lat":41.12868,"new_lng":-81.48331,"parent_new_lat":null,"parent_new_lng":null,"right_parent":null,"sources":[
+ {"url":"https://www.mountainproject.com/area/112852513/generic-area","retrieved_at":"2026-11-18","lat":41.12868,"lng":-81.48331,"fact":"MP GPS for Generic area, Cuyahoga Falls Glens; 10 climbs."}],
+ "note":"Stored 0,0. MP only source for this small sub-area; its children Left/Right/Middle sit within ~50 m of it."},
+{"id":"co_dihedrals","verdict":"unresolved","stored":[37.76057,-122.41259],"new_lat":null,"new_lng":null,"parent_new_lat":null,"parent_new_lng":null,"right_parent":null,"sources":[
+ {"url":"https://www.mountainproject.com/area/106652886/dihedrals","retrieved_at":"2026-11-18","lat":37.76057,"lng":-122.41259,"fact":"MP GPS itself prints a San Francisco point; text: short hike north of X-Rock gullies."},
+ {"url":"https://www.mountainproject.com/area/105820409/x-rock","retrieved_at":"2026-11-18","lat":37.31105,"lng":-107.86121,"fact":"MP GPS for parent X Rock, off US 550 north of Durango."}],
+ "note":"No page prints a coordinate for Dihedrals (MP wrong at source). Stored parent X Rock (37.36,-109.48) also differs from MP's X Rock GPS by ~145 km, likely averaged from this bad child."},
+{"id":"ca_buttress_of_cracks","verdict":"unresolved","stored":[39.46312,-116.0788],"new_lat":null,"new_lng":null,"parent_new_lat":null,"parent_new_lng":null,"right_parent":null,"sources":[
+ {"url":"https://www.mountainproject.com/area/108512498/buttress-of-cracks","retrieved_at":"2026-11-18","lat":39.46312,"lng":-116.0788,"fact":"MP GPS itself prints this Nevada point; text says right of Gravity Wall."}],
+ "note":"MP wrong at source (undeveloped wall, 0 climbs); no other page gives a coordinate."},
+{"id":"co_new_dark_ages_crag","verdict":"fix_one_source","stored":[31.57254,-106.54988],"new_lat":37.38138,"new_lng":-106.86107,"parent_new_lat":null,"parent_new_lng":null,"right_parent":null,"sources":[
+ {"url":"https://www.mountainproject.com/area/120173515/new-dark-ages-crag","retrieved_at":"2026-11-18","lat":37.38138,"lng":-106.86107,"fact":"MP GPS now; crag about 100 yards above East Fork Road near Pagosa Springs."}],
+ "note":"MP has since corrected its GPS; stored value (El Paso TX) is the old import. One source only."},
+{"id":"az_knuckles_the","verdict":"fix_one_source","stored":[35.70128,-115.64133],"new_lat":31.92054,"new_lng":-110.0023,"parent_new_lat":null,"parent_new_lng":null,"right_parent":null,"sources":[
+ {"url":"https://www.mountainproject.com/area/108598918/the-knuckles","retrieved_at":"2026-11-18","lat":31.92054,"lng":-110.0023,"fact":"MP GPS for The Knuckles, southwest-facing crag, Cochise Stronghold West."}],
+ "note":"MP now prints a Cochise Stronghold point; OSM search found no Knuckles. Stored parent Hands Canyon (32.55,-110.94) also looks off vs Cochise Stronghold."},
+{"id":"ma_magic_bean_boulder","verdict":"unresolved","stored":[44.49892,-77.62919],"new_lat":null,"new_lng":null,"parent_new_lat":null,"parent_new_lng":null,"right_parent":null,"sources":[
+ {"url":"https://www.mountainproject.com/area/108541067/magic-bean-boulder","retrieved_at":"2026-11-18","lat":44.49892,"lng":-77.62919,"fact":"MP GPS itself prints this Ontario point; text: smaller of the two Happy Valley boulders."}],
+ "note":"MP wrong at source; no other coordinate found. MP search lists it under Montague Wildlife Management Area."},
+{"id":"co_sunset_boulder_2","verdict":"fix_one_source","stored":[36.81999,-102.95114],"new_lat":40.3073,"new_lng":-105.53993,"parent_new_lat":null,"parent_new_lng":null,"right_parent":null,"sources":[
+ {"url":"https://www.mountainproject.com/area/108428007/sunset-boulder","retrieved_at":"2026-11-18","lat":40.3073,"lng":-105.53993,"fact":"MP GPS; boulder off the trail on north side of Lily Lake."}],
+ "note":"MP has since corrected its GPS; one source only (small boulder)."},
+{"id":"ut_eclipse_buttress","verdict":"unresolved","stored":[36.10893,-106.57041],"new_lat":null,"new_lng":null,"parent_new_lat":null,"parent_new_lng":null,"right_parent":null,"sources":[
+ {"url":"https://www.mountainproject.com/area/108676710/eclipse-buttress","retrieved_at":"2026-11-18","lat":36.10893,"lng":-106.57041,"fact":"MP GPS itself prints this New Mexico point; wall visible south of Castle Valley road mile 13."}],
+ "note":"MP wrong at source; no other page gives a coordinate."},
+{"id":"ca_freedom_boulder","verdict":"unresolved","stored":[35.54741,-116.22544],"new_lat":null,"new_lng":null,"parent_new_lat":null,"parent_new_lng":null,"right_parent":null,"sources":[
+ {"url":"https://www.mountainproject.com/area/111248538/freedom-boulder","retrieved_at":"2026-11-18","lat":35.54741,"lng":-116.22544,"fact":"MP GPS itself prints this Mojave point; text: uphill from LeConte Memorial parking."}],
+ "note":"MP wrong at source; no page prints a coordinate for the boulder itself."},
+{"id":"wy_lamar_valley","verdict":"fix","stored":[47.8117,-112.18276],"new_lat":44.9128904,"new_lng":-110.2808522,"parent_new_lat":null,"parent_new_lng":null,"right_parent":null,"sources":[
+ {"url":"https://www.mountainproject.com/area/105964754/lamar-valley","retrieved_at":"2026-11-18","lat":44.91456,"lng":-110.28291,"fact":"MP GPS for Lamar Valley boulder field, Yellowstone."},
+ {"url":"https://edits.nationalmap.gov/apps/gaz-domestic/public/search/names/2630095","retrieved_at":"2026-11-18","lat":44.9128904,"lng":-110.2808522,"fact":"GNIS 2630095 Lamar Valley, Valley, Park County WY (mouth point)."}],
+ "note":"MP and GNIS agree within ~0.3 km; stored value is in Montana. Used GNIS."},
+{"id":"ak_fairweather_range","verdict":"ok","stored":[58.78811,-137.05991],"new_lat":null,"new_lng":null,"parent_new_lat":null,"parent_new_lng":null,"right_parent":null,"sources":[
+ {"url":"https://www.mountainproject.com/area/106142536/fairweather-range","retrieved_at":"2026-11-18","lat":58.79811,"lng":-137.04991,"fact":"MP GPS for Fairweather Range, ~1 km from stored."},
+ {"url":"https://edits.nationalmap.gov/apps/gaz-domestic/public/search/names/1421837","retrieved_at":"2026-11-18","lat":58.6666667,"lng":-137.1666667,"fact":"GNIS 1421837 Fairweather Range, Range, Hoonah-Angoon AK."}],
+ "note":"Stored is within the range (~15 km from GNIS label point). Parent spans four Alaska ranges, so 345 km is real."},
+{"id":"az_kofa_mountains","verdict":"ok","stored":[33.36155,-114.09378],"new_lat":null,"new_lng":null,"parent_new_lat":null,"parent_new_lng":null,"right_parent":null,"sources":[
+ {"url":"https://www.mountainproject.com/area/109628677/kofa-mountains","retrieved_at":"2026-11-18","lat":33.36155,"lng":-114.09378,"fact":"MP GPS matches stored."},
+ {"url":"https://edits.nationalmap.gov/apps/gaz-domestic/public/search/names/6755","retrieved_at":"2026-11-18","lat":33.3590376,"lng":-114.0828067,"fact":"GNIS 6755 Kofa Mountains, Range, Yuma County AZ."}],
+ "note":"Agrees with GNIS within ~1 km. Parent Southern Arizona is a large region."},
+{"id":"az_twin_peaks","verdict":"ok","stored":[33.59749,-113.93369],"new_lat":null,"new_lng":null,"parent_new_lat":null,"parent_new_lng":null,"right_parent":null,"sources":[
+ {"url":"https://www.mountainproject.com/area/200559382/twin-peaks","retrieved_at":"2026-11-18","lat":33.59749,"lng":-113.93369,"fact":"MP GPS; peak east of Quartzsite via Ramsey Mine Rd; page also gives parking 33.61225,-113.94153."}],
+ "note":"Stored matches MP and the page's own parking point (~2 km). Parent Southern Arizona is a large region; only one source."},
+{"id":"ak_misty_fiords_national_monument","verdict":"ok","stored":[55.55209,-130.77545],"new_lat":null,"new_lng":null,"parent_new_lat":null,"parent_new_lng":null,"right_parent":null,"sources":[
+ {"url":"https://www.mountainproject.com/area/114783996/misty-fiords-national-monument","retrieved_at":"2026-11-18","lat":55.55209,"lng":-130.77545,"fact":"MP GPS matches stored."},
+ {"url":"https://en.wikipedia.org/wiki/Misty_Fjords_National_Monument","retrieved_at":"2026-11-18","lat":55.62167,"lng":-130.60722,"fact":"Wikipedia infobox coordinate for the monument."}],
+ "note":"Stored is inside the monument (~13 km from Wikipedia label; monument is very large). Parent covers all of SE Alaska."},
+{"id":"az_tinajas_altas","verdict":"ok","stored":[32.2957,-114.0403],"new_lat":null,"new_lng":null,"parent_new_lat":null,"parent_new_lng":null,"right_parent":null,"sources":[
+ {"url":"https://www.mountainproject.com/area/107897319/tinajas-altas","retrieved_at":"2026-11-18","lat":32.2957,"lng":-114.0403,"fact":"MP GPS matches stored."},
+ {"url":"https://edits.nationalmap.gov/apps/gaz-domestic/public/search/names/12490","retrieved_at":"2026-11-18","lat":32.3818316,"lng":-114.1281001,"fact":"GNIS 12490 Tinajas Altas Mountains, Range, Yuma County AZ."}],
+ "note":"Stored within the range (~12 km from GNIS label point). Parent Southern Arizona is a large region."},
+{"id":"ak_mount_drum_2","verdict":"fix","stored":[61.25675,-149.82004],"new_lat":62.1153861,"new_lng":-144.6395995,"parent_new_lat":null,"parent_new_lng":null,"right_parent":null,"sources":[
+ {"url":"https://www.mountainproject.com/area/108406331/mount-drum","retrieved_at":"2026-11-18","lat":61.25675,"lng":-149.82004,"fact":"MP GPS itself prints an Anchorage point (wrong at source)."},
+ {"url":"https://edits.nationalmap.gov/apps/gaz-domestic/public/search/names/1401406","retrieved_at":"2026-11-18","lat":62.1153861,"lng":-144.6395995,"fact":"GNIS 1401406 Mount Drum, Summit, Copper River Census Area AK."},
+ {"url":"https://en.wikipedia.org/wiki/Mount_Drum","retrieved_at":"2026-11-18","lat":62.1161111,"lng":-144.6377778,"fact":"Wikipedia infobox coordinate for Mount Drum."}],
+ "note":"GNIS and Wikipedia agree within ~0.15 km. Used GNIS."},
+{"id":"ak_ketchikan","verdict":"ok","stored":[55.45586,-131.75481],"new_lat":null,"new_lng":null,"parent_new_lat":null,"parent_new_lng":null,"right_parent":null,"sources":[
+ {"url":"https://www.mountainproject.com/area/113203846/ketchikan","retrieved_at":"2026-11-18","lat":55.34278,"lng":-131.64503,"fact":"MP GPS for Ketchikan area, ~14 km from stored."}],
+ "note":"Region-sized area with child crags; stored lies in the Ketchikan area. Parent covers all of SE Alaska, so 279 km is real. Could adopt MP's point (one source)."},
+{"id":"ak_revillagigedo_island","verdict":"ok","stored":[55.62498,-131.35651],"new_lat":null,"new_lng":null,"parent_new_lat":null,"parent_new_lng":null,"right_parent":null,"sources":[
+ {"url":"https://www.mountainproject.com/area/125703456/revillagigedo-island","retrieved_at":"2026-11-18","lat":55.62498,"lng":-131.35651,"fact":"MP GPS matches stored."},
+ {"url":"https://edits.nationalmap.gov/apps/gaz-domestic/public/search/names/1424816","retrieved_at":"2026-11-18","lat":55.6341667,"lng":-131.2975,"fact":"GNIS 1424816 Revillagigedo Island, Alaska."},
+ {"url":"https://en.wikipedia.org/wiki/Revillagigedo_Island","retrieved_at":"2026-11-18","lat":55.583,"lng":-131.333,"fact":"Wikipedia infobox coordinate for the island."}],
+ "note":"Stored within ~4 km of GNIS on a large island. Parent covers all of SE Alaska."},
+{"id":"nc_rodanthe_boulders","verdict":"ok","stored":[35.77386,-75.52502],"new_lat":null,"new_lng":null,"parent_new_lat":null,"parent_new_lng":null,"right_parent":null,"sources":[
+ {"url":"https://www.mountainproject.com/area/113152189/rodanthe-boulders","retrieved_at":"2026-11-18","lat":35.77386,"lng":-75.52502,"fact":"MP GPS matches stored; displaced boulders on the beach."}],
+ "note":"Outer Banks coast; parent Eastern Region is a large region (centroid near Raleigh). One source only."},
+{"id":"wi_uw_stout_campus","verdict":"ok","stored":[44.8972,-91.9254],"new_lat":null,"new_lng":null,"parent_new_lat":null,"parent_new_lng":null,"right_parent":null,"sources":[
+ {"url":"https://www.mountainproject.com/area/106628204/uw-stout-campus","retrieved_at":"2026-11-18","lat":44.8972,"lng":-91.9254,"fact":"MP GPS matches stored (Menomonie WI)."}],
+ "note":"Parent is statewide buildering list, so distance is real."},
+{"id":"mi_mackinac_island","verdict":"ok","stored":[45.85789,-84.60625],"new_lat":null,"new_lng":null,"parent_new_lat":null,"parent_new_lng":null,"right_parent":null,"sources":[
+ {"url":"https://edits.nationalmap.gov/apps/gaz-domestic/public/search/names/1620658","retrieved_at":"2026-11-18","lat":45.8644574,"lng":-84.625601,"fact":"GNIS 1620658 Mackinac Island, Island, Mackinac County MI."},
+ {"url":"https://en.wikipedia.org/wiki/Mackinac_Island","retrieved_at":"2026-11-18","lat":45.86111,"lng":-84.63056,"fact":"Wikipedia infobox coordinate for Mackinac Island."}],
+ "note":"Stored is on the island (~1.7 km from GNIS). MP search no longer lists this area. Parent Upper Peninsula is a large region."},
+{"id":"mt_buffalo_canyon_dark_canyon","verdict":"misfiled","stored":[46.76333,-109.99434],"new_lat":null,"new_lng":null,"parent_new_lat":null,"parent_new_lng":null,"right_parent":"Great Falls Area (Montana > Northwest Region > Great Falls Area)","sources":[
+ {"url":"https://www.mountainproject.com/area/113968157/buffalo-canyondark-canyon","retrieved_at":"2026-11-18","lat":46.76642,"lng":-109.99232,"fact":"MP GPS ~0.4 km from stored; MP files it under Great Falls Area."}],
+ "note":"Coordinate is right; MP nests it under Great Falls Area, not directly under Northwest Region (a large region, so distance alone is not an error)."},
+{"id":"nm_sitting_bull_falls","verdict":"ok","stored":[32.2452,-104.696],"new_lat":null,"new_lng":null,"parent_new_lat":null,"parent_new_lng":null,"right_parent":null,"sources":[
+ {"url":"https://www.mountainproject.com/area/105854414/sitting-bull-falls","retrieved_at":"2026-11-18","lat":32.2452,"lng":-104.696,"fact":"MP GPS matches stored."},
+ {"url":"https://edits.nationalmap.gov/apps/gaz-domestic/public/search/names/911096","retrieved_at":"2026-11-18","lat":32.2432632,"lng":-104.6973561,"fact":"GNIS 911096 Sitting Bull Falls, Falls, Eddy County NM."},
+ {"url":"https://en.wikipedia.org/wiki/Sitting_Bull_Falls","retrieved_at":"2026-11-18","lat":32.24528,"lng":-104.69639,"fact":"Wikipedia infobox coordinate."}],
+ "note":"Within 0.3 km of GNIS. Parent 'other Southern Areas' is a large region."},
+{"id":"ak_middle_triple_peak","verdict":"ok","stored":[62.394722,-152.768056],"new_lat":null,"new_lng":null,"parent_new_lat":null,"parent_new_lng":null,"right_parent":null,"sources":[
+ {"url":"https://en.wikipedia.org/wiki/Middle_Triple_Peak","retrieved_at":"2026-11-18","lat":62.39472,"lng":-152.76806,"fact":"Wikipedia infobox coordinate, identical to stored."}],
+ "note":"Kichatna Mountains; parent Interior Alaska/Alaska Range is a large region. MP search returned no area page."},
+{"id":"nv_paradise_valley","verdict":"ok","stored":[41.66085,-117.54385],"new_lat":null,"new_lng":null,"parent_new_lat":null,"parent_new_lng":null,"right_parent":null,"sources":[
+ {"url":"https://www.mountainproject.com/area/117236749/paradise-valley","retrieved_at":"2026-11-18","lat":41.66886,"lng":-117.54578,"fact":"MP GPS ~0.9 km from stored; MP path Western Nevada > Santa Rosa Range."}],
+ "note":"Coordinate right; parent Western Nevada is a large region. MP has an intermediate Santa Rosa Range level we lack."},
+{"id":"tx_spacefarm","verdict":"fix","stored":[33.12693,-96.83886],"new_lat":30.18651,"new_lng":-97.72233,"parent_new_lat":null,"parent_new_lng":null,"right_parent":null,"sources":[
+ {"url":"https://www.mountainproject.com/area/107373000/spacefarm","retrieved_at":"2026-11-18","lat":30.18651,"lng":-97.72233,"fact":"MP GPS now; 'probably the best wall at McKinney', right of Warm Up Wall."},
+ {"url":"https://en.wikipedia.org/wiki/McKinney_Falls_State_Park","retrieved_at":"2026-11-18","lat":30.18083,"lng":-97.72194,"fact":"Wikipedia infobox coordinate for McKinney Falls State Park, Austin TX."}],
+ "note":"MP and park coordinate agree within ~0.6 km; stored point is near McKinney TX (Dallas), a name mix-up. Used MP (more precise than park centre)."},
+{"id":"co_baby_turtle","verdict":"fix_one_source","stored":[42.42736,-105.91458],"new_lat":38.88222,"new_lng":-106.14766,"parent_new_lat":null,"parent_new_lng":null,"right_parent":"Turtle Rock Massif (MP: Colorado > Buena Vista > Turtle Rock Massif)","sources":[
+ {"url":"https://www.mountainproject.com/area/117578161/baby-turtle","retrieved_at":"2026-11-18","lat":38.88222,"lng":-106.14766,"fact":"MP GPS; crag southeast of Turtle Rocks, 5-minute approach."}],
+ "note":"Stored is in Wyoming. One source only. Stored parent (40.06,-106.07) is also far from Buena Vista, likely averaged from this child."},
+{"id":"nc_dark_side_closed_to_climbing_included_for_historic_refe","verdict":"unresolved","stored":[35.579805,-79.7671533333333],"new_lat":null,"new_lng":null,"parent_new_lat":null,"parent_new_lng":null,"right_parent":null,"sources":[
+ {"url":"https://www.mountainproject.com/area/106035087/the-dark-side-closed-to-climbing-included-for-historic-reference","retrieved_at":"2026-11-18","lat":35.33815,"lng":-82.60734,"fact":"MP GPS (page offers Fix Location); text: north side of Rumbling Bald mountain."},
+ {"url":"https://www.mountainproject.com/area/106036434/the-cougar-crag","retrieved_at":"2026-11-18","lat":35.46033,"lng":-82.21642,"fact":"MP GPS for child Cougar Crag, on Rumbling Bald."},
+ {"url":"https://www.mountainproject.com/area/106035096/the-main-wall","retrieved_at":"2026-11-18","lat":35.6037,"lng":-79.2773,"fact":"MP GPS for child Main Wall: central NC, wrong at source."},
+ {"url":"https://www.openstreetmap.org/node/357784171","retrieved_at":"2026-11-18","lat":35.4598419,"lng":-82.2267791,"fact":"OSM node Rumbling Bald Mountain, Rutherford County NC."}],
+ "note":"Stored is an average pulled east by garbled children (Main Wall). MP's own area GPS contradicts its text. No page gives the Dark Side's own point; child Main Wall needs fixing too."},
+{"id":"ca_santa_cruz","verdict":"ok","stored":[37.0110398333333,-122.077634833333],"new_lat":null,"new_lng":null,"parent_new_lat":null,"parent_new_lng":null,"right_parent":null,"sources":[
+ {"url":"https://www.mountainproject.com/area/111557766/santa-cruz","retrieved_at":"2026-11-18","lat":36.99868,"lng":-122.02371,"fact":"MP GPS for Santa Cruz area, ~5 km from stored."}],
+ "note":"Region with 6 child areas; stored is in Santa Cruz. Parent Central Coast is a large region."},
+{"id":"co_gateway_naturita","verdict":"unresolved","stored":[38.9936,-105.93],"new_lat":null,"new_lng":null,"parent_new_lat":null,"parent_new_lng":null,"right_parent":"CO Ice & Mixed (MP files it there)","sources":[
+ {"url":"https://www.mountainproject.com/area/106661298/gatewaynaturita","retrieved_at":"2026-11-18","lat":38.9936,"lng":-105.93,"fact":"MP GPS is the Colorado state default point; text: sandstone canyon reached south from Grand Junction/Whitewater."}],
+ "note":"Stored = MP's placeholder (state centre). No page gives a coordinate for this ice area."},
+{"id":"az_crane_cove","verdict":"ok","stored":[35.91291,-114.69805],"new_lat":null,"new_lng":null,"parent_new_lat":null,"parent_new_lng":null,"right_parent":null,"sources":[
+ {"url":"https://www.mountainproject.com/area/113924419/crane-cove","retrieved_at":"2026-11-18","lat":35.91291,"lng":-114.69805,"fact":"MP GPS matches stored; Black Canyon volcanic breccia above the river."}],
+ "note":"Parent Northern AZ Bouldering is a large region. One source."},
+{"id":"az_lake_havasu","verdict":"ok","stored":[34.52144625,-114.32247375],"new_lat":null,"new_lng":null,"parent_new_lat":null,"parent_new_lng":null,"right_parent":null,"sources":[
+ {"url":"https://www.mountainproject.com/area/106044328/lake-havasu","retrieved_at":"2026-11-18","lat":34.6194,"lng":-114.3401,"fact":"MP GPS for Lake Havasu area, ~11 km from stored."}],
+ "note":"Region with 2 children; stored lies by Lake Havasu. Parent Central Arizona is a large region."},
+{"id":"mt_wolf_butte","verdict":"misfiled","stored":[47.135645,-110.49603],"new_lat":null,"new_lng":null,"parent_new_lat":null,"parent_new_lng":null,"right_parent":"Great Falls Area (Montana > Northwest Region > Great Falls Area)","sources":[
+ {"url":"https://www.mountainproject.com/area/112568397/wolf-butte","retrieved_at":"2026-11-18","lat":47.13788,"lng":-110.49906,"fact":"MP GPS; MP files it under Great Falls Area."},
+ {"url":"https://edits.nationalmap.gov/apps/gaz-domestic/public/search/names/793445","retrieved_at":"2026-11-18","lat":47.1134386,"lng":-110.4681261,"fact":"GNIS 793445 Wolf Butte, Summit, Judith Basin County MT."}],
+ "note":"Coordinate right. Northwest Region is large, but MP nests it under Great Falls Area."},
+{"id":"nm_last_chance_canyon","verdict":"ok","stored":[32.2357075,-104.754399375],"new_lat":null,"new_lng":null,"parent_new_lat":null,"parent_new_lng":null,"right_parent":null,"sources":[
+ {"url":"https://www.mountainproject.com/area/105920274/last-chance-canyon","retrieved_at":"2026-11-18","lat":32.2336,"lng":-104.7537,"fact":"MP GPS ~0.3 km from stored; Guadalupe Mountains near Sitting Bull Falls."}],
+ "note":"Parent 'other Southern Areas' is a large region. GNIS lists Last Chance Canyon (907886, Eddy County) but no coordinate was read."},
+{"id":"mi_maple_hill","verdict":"ok","stored":[46.15945,-84.78131],"new_lat":null,"new_lng":null,"parent_new_lat":null,"parent_new_lng":null,"right_parent":null,"sources":[
+ {"url":"https://www.mountainproject.com/area/125323732/maple-hill","retrieved_at":"2026-11-18","lat":46.15945,"lng":-84.78131,"fact":"MP GPS matches stored; reached via East Lake Road and USFS road 3323."}],
+ "note":"Eastern UP; parent Upper Peninsula is a large region. One source."},
+{"id":"wi_eau_claire_water_treatment_plant","verdict":"ok","stored":[44.84519,-91.497],"new_lat":null,"new_lng":null,"parent_new_lat":null,"parent_new_lng":null,"right_parent":null,"sources":[
+ {"url":"https://www.mountainproject.com/area/107236451/eau-claire-water-treatment-plant","retrieved_at":"2026-11-18","lat":44.84519,"lng":-91.497,"fact":"MP GPS matches stored."}],
+ "note":"Parent is the statewide buildering list."},
+{"id":"mt_memorial_falls","verdict":"misfiled","stored":[46.9153466666667,-110.69713],"new_lat":null,"new_lng":null,"parent_new_lat":null,"parent_new_lng":null,"right_parent":"Great Falls Area (Montana > Northwest Region > Great Falls Area)","sources":[
+ {"url":"https://www.mountainproject.com/area/110963277/memorial-falls","retrieved_at":"2026-11-18","lat":46.91287,"lng":-110.69837,"fact":"MP GPS; MP files it under Great Falls Area."},
+ {"url":"https://edits.nationalmap.gov/apps/gaz-domestic/public/search/names/787183","retrieved_at":"2026-11-18","lat":46.9153646,"lng":-110.6929454,"fact":"GNIS 787183 Memorial Falls, Falls, Cascade County MT."}],
+ "note":"Coordinate right (within 0.4 km of GNIS). MP nests it under Great Falls Area."},
+{"id":"wi_eau_claire","verdict":"ok","stored":[44.81095,-91.49992],"new_lat":null,"new_lng":null,"parent_new_lat":null,"parent_new_lng":null,"right_parent":null,"sources":[
+ {"url":"https://www.mountainproject.com/area/106944313/eau-claire","retrieved_at":"2026-11-18","lat":44.81095,"lng":-91.49992,"fact":"MP GPS matches stored."}],
+ "note":"Parent is the statewide buildering list."},
+{"id":"co_colorado_national_monument_ice","verdict":"fix","stored":[38.9936,-105.93],"new_lat":39.0425,"new_lng":-108.68611,"parent_new_lat":null,"parent_new_lng":null,"right_parent":null,"sources":[
+ {"url":"https://www.mountainproject.com/area/107031852/colorado-national-monument-ice","retrieved_at":"2026-11-18","lat":38.9936,"lng":-105.93,"fact":"MP GPS is the Colorado state default point; text: monument just outside Grand Junction."},
+ {"url":"https://en.wikipedia.org/wiki/Colorado_National_Monument","retrieved_at":"2026-11-18","lat":39.0425,"lng":-108.68611,"fact":"Wikipedia infobox coordinate for the monument."},
+ {"url":"https://www.openstreetmap.org/relation/5453168","retrieved_at":"2026-11-18","lat":39.0511386,"lng":-108.6979455,"fact":"OSM relation Colorado National Monument, Mesa County."}],
+ "note":"Region-sized; Wikipedia and OSM agree within ~1.4 km. Stored copies MP's placeholder. Used Wikipedia (no GNIS/NPS point read)."},
+{"id":"va_big_meadows_area","verdict":"fix","stored":[36.79528,-76.17936],"new_lat":38.529535,"new_lng":-78.4411963,"parent_new_lat":null,"parent_new_lng":null,"right_parent":null,"sources":[
+ {"url":"https://www.mountainproject.com/area/107291618/big-meadows-area","retrieved_at":"2026-11-18","lat":36.79528,"lng":-76.17936,"fact":"MP GPS itself prints a Virginia Beach point; text: rocks near Big Meadows Lodge."},
+ {"url":"https://www.openstreetmap.org/way/451709351","retrieved_at":"2026-11-18","lat":38.529535,"lng":-78.4411963,"fact":"OSM way Big Meadows Lodge, Page County VA."},
+ {"url":"https://en.wikipedia.org/wiki/Big_Meadows","retrieved_at":"2026-11-18","lat":38.52222,"lng":-78.43694,"fact":"Wikipedia infobox coordinate for Big Meadows, Shenandoah NP."}],
+ "note":"OSM lodge and Wikipedia agree within ~0.9 km. Used the lodge point, which MP's text names."},
+{"id":"co_unaweep_canyon_2","verdict":"fix","stored":[38.9936,-105.93],"new_lat":38.976244,"new_lng":-108.4547108,"parent_new_lat":null,"parent_new_lng":null,"right_parent":null,"sources":[
+ {"url":"https://www.mountainproject.com/area/106661225/unaweep-canyon","retrieved_at":"2026-11-18","lat":38.97682,"lng":-108.45741,"fact":"MP GPS now (ice area); climbs begin ~12 miles up CO 141 from Whitewater."},
+ {"url":"https://edits.nationalmap.gov/apps/gaz-domestic/public/search/names/185224","retrieved_at":"2026-11-18","lat":38.976244,"lng":-108.4547108,"fact":"GNIS 185224 Unaweep Canyon, Valley, Mesa County CO."},
+ {"url":"https://en.wikipedia.org/wiki/Unaweep_Canyon","retrieved_at":"2026-11-18","lat":38.79056,"lng":-108.655,"fact":"Wikipedia infobox coordinate (mid-canyon)."}],
+ "note":"Stored = Colorado state-default placeholder. MP and GNIS agree within ~0.25 km. Used GNIS. MP files this one under CO Ice & Mixed."},
+{"id":"mt_monarch_area_camp_rotary","verdict":"misfiled","stored":[47.04262,-110.78899],"new_lat":null,"new_lng":null,"parent_new_lat":null,"parent_new_lng":null,"right_parent":"Great Falls Area (Montana > Northwest Region > Great Falls Area)","sources":[
+ {"url":"https://www.mountainproject.com/area/111007372/monarch-areacamp-rotary","retrieved_at":"2026-11-18","lat":47.04262,"lng":-110.78899,"fact":"MP GPS matches stored; MP files it under Great Falls Area."}],
+ "note":"Coordinate right; Northwest Region is large, but MP nests it under Great Falls Area."},
+{"id":"mt_monarch_canyon","verdict":"misfiled","stored":[47.13176,-110.82476],"new_lat":null,"new_lng":null,"parent_new_lat":null,"parent_new_lng":null,"right_parent":"Great Falls Area (Montana > Northwest Region > Great Falls Area)","sources":[
+ {"url":"https://www.mountainproject.com/area/112059060/monarch-canyon","retrieved_at":"2026-11-18","lat":47.13176,"lng":-110.82476,"fact":"MP GPS matches stored; MP search lists it under Great Falls Area."},
+ {"url":"https://edits.nationalmap.gov/apps/gaz-domestic/public/search/names/787549","retrieved_at":"2026-11-18","lat":47.0998712,"lng":-110.8369225,"fact":"GNIS 787549 Monarch Canyon, Valley, Cascade County MT."}],
+ "note":"Coordinate right (canyon, ~3.6 km from GNIS point). MP nests it under Great Falls Area."},
+{"id":"mo_ibex","verdict":"ok","stored":[39.1343,-94.576],"new_lat":null,"new_lng":null,"parent_new_lat":null,"parent_new_lng":null,"right_parent":null,"sources":[
+ {"url":"https://www.mountainproject.com/area/106100257/ibex","retrieved_at":"2026-11-18","lat":39.1343,"lng":-94.576,"fact":"MP GPS matches stored (Kansas City gym)."}],
+ "note":"Parent is the statewide Indoor Walls list."},
+{"id":"mo_rokc_climbing_gym","verdict":"ok","stored":[39.13613,-94.57273],"new_lat":null,"new_lng":null,"parent_new_lat":null,"parent_new_lng":null,"right_parent":null,"sources":[
+ {"url":"https://www.mountainproject.com/area/112546215/rokc-climbing-gym","retrieved_at":"2026-11-18","lat":39.13613,"lng":-94.57273,"fact":"MP GPS matches stored; address 1501 Howell St., North Kansas City."}],
+ "note":"Parent is the statewide Indoor Walls list."},
+{"id":"nm_ute_lake_mine_canyon","verdict":"ok","stored":[35.3338,-103.4907],"new_lat":null,"new_lng":null,"parent_new_lat":null,"parent_new_lng":null,"right_parent":null,"sources":[
+ {"url":"https://www.mountainproject.com/area/107549696/ute-lake-mine-canyon","retrieved_at":"2026-11-18","lat":35.3338,"lng":-103.4907,"fact":"MP GPS matches stored; reached from Tucumcari via Hwy 54 toward Logan."}],
+ "note":"Parent I-40 Corridor is a long statewide strip. One source."},
+{"id":"az_navajolands","verdict":"ok","stored":[36.349814,-109.633446],"new_lat":null,"new_lng":null,"parent_new_lat":null,"parent_new_lng":null,"right_parent":null,"sources":[
+ {"url":"https://www.mountainproject.com/area/105957146/navajolands","retrieved_at":"2026-11-18","lat":36.14052,"lng":-110.41849,"fact":"MP GPS for Navajolands, ~74 km from stored."}],
+ "note":"Very large region (6 child areas across the Navajo Nation); stored is likely the children's centroid and lies inside it. Parent Northern Arizona is a large region. Could adopt MP's point."},
+{"id":"mt_sluice_boxes_state_park","verdict":"misfiled","stored":[47.20864,-110.92969],"new_lat":null,"new_lng":null,"parent_new_lat":null,"parent_new_lng":null,"right_parent":"Great Falls Area (Montana > Northwest Region > Great Falls Area)","sources":[
+ {"url":"https://www.mountainproject.com/area/111862097/sluice-boxes-state-park","retrieved_at":"2026-11-18","lat":47.20864,"lng":-110.92968,"fact":"MP GPS matches stored; MP files it under Great Falls Area."},
+ {"url":"https://edits.nationalmap.gov/apps/gaz-domestic/public/search/names/790695","retrieved_at":"2026-11-18","lat":47.1921839,"lng":-110.9413388,"fact":"GNIS 790695 Sluice Boxes, Basin, Cascade County MT."}],
+ "note":"Coordinate right (~2 km from GNIS basin point). MP nests it under Great Falls Area."}
+]
