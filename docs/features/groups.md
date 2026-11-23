@@ -25,7 +25,10 @@ views under `groupsTab`: For you · Your groups · Your activity · Discover · 
   chips (`STATE_CHIPS`): your **home** state, then the states of the areas you listed yourself at for partners
   (`partner_areas`, 0300) — marked *You climb here* — then the states with the most groups. A chip filters the list to
   that whole state and combines with the search box. The list below (*Every state* or one state, alphabetical, with
-  counts) holds every state; it no longer offers each typed town, which ran to hundreds of spellings. A town is found
+  counts) holds every state with a group **and every state you downloaded** (`groupMyStates`, the account's pins, else
+  this device's downloads; owner 2026-11-23), a downloaded state with no group yet listed with a 0. It shows whenever
+  it has two or more states; before, it was built only from states that already had a group and hidden when the chips
+  covered them, so a climber whose only groups were at home could pick nothing but home. It no longer offers each typed town, which ran to hundreds of spellings. A town is found
   by the search box and a distance by *Near a place*. Results show 20 at a time with *Show more groups*
   (`DISC_PAGE`), reset whenever a filter changes.
 - **A group opens on About** (owner 2026-11-13), for members too; closing the group forgets the tab it was left on.

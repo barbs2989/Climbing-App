@@ -419,12 +419,19 @@ var SUGGEST_DISC_MAX=3;
    the three slots go to rows that can list something. Alpine also matches mountaineering and scrambling:
    catOf files their 5th-class climbs as alpine. */
 function _suggHere(d,here){if(!here)return true;if(here.indexOf(d)>=0)return true;return d==="alpine"&&(here.indexOf("mountaineering")>=0||here.indexOf("scrambling")>=0);}
+/* The stated grade for one discipline as a place on that discipline's scale, or null. */
+function _suggStatedVal(stated,d){var g=stated&&stated[d];if(typeof g!=="string"||!g||g==="N/A")return null;var gl=ADDR_GRADES[d];if(!gl)return null;var i=_gradeIdx(gl,splitProtection(g).grade,d);return i<0?null:i/gl.length;}
 function suggestDiscSlots(profile,viewedRoutes,max,stated,here){
   var lim=max||SUGGEST_DISC_MAX;
-  var logged=(profile&&profile.discs)||[];
+  /* A LOGGED DISCIPLINE WITH NO READABLE GRADE BORROWS THE PROFILE'S (real-account test on the live site,
+     2026-11-23). A climber whose one alpine log is Mount Baker's North Ridge, graded on the ice scale, has
+     an alpine slot with no centre; with nothing to measure from, the ranking kept every alpine climb and
+     offered 5.10d and 5.11- to a profile that says Alpine 5.6. The slot stays "logged" (they have climbed
+     alpine); only its centre comes from what they stated. With neither, there is still no centre. */
+  var logged=((profile&&profile.discs)||[]).map(function(s){if(s.gradeVal!=null)return s;var gv=_suggStatedVal(stated,s.disc);return gv==null?s:Object.assign({},s,{gradeVal:gv});});
   var seen={};logged.forEach(function(s){seen[s.disc]=1;});
   var said=[];
-  ["sport","trad","bouldering","alpine","ice","mixed"].forEach(function(d){var g=stated&&stated[d];if(seen[d]||typeof g!=="string"||!g||g==="N/A")return;var gl=ADDR_GRADES[d];var i=_gradeIdx(gl,splitProtection(g).grade,d);if(i<0)return;seen[d]=1;said.push({disc:d,src:"stated",n:0,gradeVal:i/gl.length,avgGainFt:null});});
+  ["sport","trad","bouldering","alpine","ice","mixed"].forEach(function(d){if(seen[d])return;var gv=_suggStatedVal(stated,d);if(gv==null)return;seen[d]=1;said.push({disc:d,src:"stated",n:0,gradeVal:gv,avgGainFt:null});});
   var byDisc={};
   (viewedRoutes||[]).forEach(function(r){_suggAccum(byDisc,r);});
   var viewed=Object.keys(byDisc).filter(function(d){return !seen[d];}).sort(function(x,y){return byDisc[y].n-byDisc[x].n;}).map(function(d){return _suggShape(d,byDisc[d],"viewed");});
