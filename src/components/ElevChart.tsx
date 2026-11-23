@@ -89,7 +89,7 @@ function ElevChartImpl({ pts, km, index, onIndex, color, partial }: ElevChartPro
   };
 
   return (
-    <div style={{ background: "#050d1a", borderRadius: 8, padding: "8px 10px 4px", border: `1px solid ${C.border}` }}>
+    <div style={{ background: "#0e0d0b", borderRadius: 8, padding: "8px 10px 4px", border: `1px solid ${C.border}` }}>
       <div style={{ display: "flex", justifyContent: "space-between", gap: 8, flexWrap: "wrap", fontSize: 12, color: C.textMuted, marginBottom: 4 }}>
         {partial
           ? <span>Track starts away from the trailhead</span>

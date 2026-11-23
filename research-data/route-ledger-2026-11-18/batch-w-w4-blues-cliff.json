@@ -1,0 +1,521 @@
+{
+ "wa_blue_in_the_face_2": {
+  "area": "wa_blues_cliff_the",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/106329295/blue-in-the-face",
+    "https://rakkup.com/guidebook/index-rock-climbing/blue-in-the-face/c28237",
+    "https://www.mountainproject.com/area/105808013/the-blues-cliff",
+    "https://rakkup.com/guidebook/index-rock-climbing/blues-cliff/s11510",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5696,47.81993&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.5696,47.81993&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,parcel_id&returnGeometry=false&f=json",
+    "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks",
+    "https://parks.wa.gov/node/3385"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.12c",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106329295/blue-in-the-face",
+      "fact": "5.12c YDS",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://rakkup.com/guidebook/index-rock-climbing/blue-in-the-face/c28237",
+      "fact": "5.12c (guide)",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "discipline",
+    "value": "sport",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106329295/blue-in-the-face",
+      "fact": "Type: sport",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://rakkup.com/guidebook/index-rock-climbing/blue-in-the-face/c28237",
+      "fact": "sport (guide icon)",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_blue_in_the_face_2",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "pitches 0 is invalid. Mountain Project: one 90 ft bolted line to fixed anchors, lowered on a 60 m rope (one length to one anchor). Count implied, not stated: unconfirmed after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/106329295/blue-in-the-face"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_blue_in_the_face_2",
+    "column": "length_m",
+    "from": null,
+    "to": 27,
+    "why": "Mountain Project states 90 ft (27 m). Single source (theCrag Forbidden; the guide teaser shows no length): locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/106329295/blue-in-the-face"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_blue_in_the_face_2",
+    "column": "access",
+    "from": {
+     "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+     "notes": "Many of these peaks (Mount Persis, Gunn Peak, Baring Mountain area) sit outside designated wilderness — administratively unrestricted despite serious technical terrain.",
+     "permit": "None required.",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+     "parking_pass": "Northwest Forest Pass or America the Beautiful pass required at developed trailheads."
+    },
+    "to": {
+     "land_manager": "Washington State Parks (Forks of the Sky State Park)"
+    },
+    "why": "Brief W: copy the State Parks object field for field from wa_twelve_gauge_iq (same cliff; settled with the owner in batches U/V). Re-read 2026-11-23: the State Parks boundary layer returns Forks of the Sky, State Park Property at the Blues Cliff point (47.81993,-121.5696), and the county parcel there is owned by WA State Parks & Rec; the parks.wa.gov release (2026-03-13) is unchanged and states no pass rule. Replaces the LEGACY object (Mt. Baker-Snoqualmie NF, Northwest Forest Pass, Mount Rainier NP fee line, Persis/Gunn/Baring note), which names the wrong manager.",
+    "evidence": [
+     "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5696,47.81993&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+     "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.5696,47.81993&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,parcel_id&returnGeometry=false&f=json",
+     "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks",
+     "https://parks.wa.gov/node/3385"
+    ]
+   }
+  ],
+  "held": [
+   {
+    "table": "routes",
+    "id": "wa_blue_in_the_face_2",
+    "column": "bolts",
+    "from": null,
+    "to": null,
+    "why": "Mountain Project gives two counts (\"7 or 8\"); held per the bolt rule. Values: 7 or 8.",
+    "evidence": [
+     "https://www.mountainproject.com/route/106329295/blue-in-the-face"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "Stored guide_stars 3 matches the guide (3 stars); not re-proposed. FA stored \"Greg Collum, Matt Kerns, 92\"; MP gives the same party, 1992. Reformatting the year adds no fact, so left alone. Anchor: fixed anchors, type not stated, so none proposed. Id carries a _2 suffix only because wa_blue_in_the_face is a boulder problem at Sherlock/Watson Boulder (different route, not a duplicate)."
+ },
+ "wa_blues_cliff_the_blues_riff": {
+  "area": "wa_blues_cliff_the",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/119444895/blues-riff",
+    "https://rakkup.com/guidebook/index-rock-climbing/blues-riff/c39476",
+    "https://www.mountainproject.com/area/105808013/the-blues-cliff",
+    "https://rakkup.com/guidebook/index-rock-climbing/blues-cliff/s11510",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5696,47.81993&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.5696,47.81993&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,parcel_id&returnGeometry=false&f=json",
+    "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks",
+    "https://parks.wa.gov/node/3385"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.11a",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119444895/blues-riff",
+      "fact": "5.11a YDS",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://rakkup.com/guidebook/index-rock-climbing/blues-riff/c39476",
+      "fact": "5.11a (guide)",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "discipline",
+    "value": "sport",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119444895/blues-riff",
+      "fact": "Type: sport",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://rakkup.com/guidebook/index-rock-climbing/blues-riff/c39476",
+      "fact": "sport (guide icon)",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_blues_cliff_the_blues_riff",
+    "column": "guide_stars",
+    "from": null,
+    "to": 2,
+    "why": "The Index guidebook's own entry (publisher's teaser page) rates it 2 stars.",
+    "evidence": [
+     "https://rakkup.com/guidebook/index-rock-climbing/blues-riff/c39476",
+     "https://rakkup.com/guidebook/index-rock-climbing/blues-cliff/s11510"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_blues_cliff_the_blues_riff",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Washington State Parks (Forks of the Sky State Park)"
+    },
+    "why": "Brief W: copy the State Parks object field for field from wa_twelve_gauge_iq (same cliff; settled with the owner in batches U/V). Re-read 2026-11-23: the State Parks boundary layer returns Forks of the Sky, State Park Property at the Blues Cliff point (47.81993,-121.5696), and the county parcel there is owned by WA State Parks & Rec; the parks.wa.gov release (2026-03-13) is unchanged and states no pass rule. The row stores no access.",
+    "evidence": [
+     "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5696,47.81993&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+     "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.5696,47.81993&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,parcel_id&returnGeometry=false&f=json",
+     "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks",
+     "https://parks.wa.gov/node/3385"
+    ]
+   }
+  ],
+  "held": [],
+  "disputed": [],
+  "notes": "FA: Mountain Project credits Greg and Larissa Collum (no year); FA never sets from MP alone and the guide teaser lists none, so not proposed. MP: the anchor is shared with Etch-A-Sketch; no length, bolt count or anchor type stated. Stored pitches 1 not locked (implied, not stated)."
+ },
+ "wa_blues_cliff_the_wedgie": {
+  "area": "wa_blues_cliff_the",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/121668176/wedgie",
+    "https://rakkup.com/guidebook/index-rock-climbing/wedgie/c39479",
+    "https://www.mountainproject.com/area/105808013/the-blues-cliff",
+    "https://rakkup.com/guidebook/index-rock-climbing/blues-cliff/s11510",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5696,47.81993&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.5696,47.81993&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,parcel_id&returnGeometry=false&f=json",
+    "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks",
+    "https://parks.wa.gov/node/3385"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.12a",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/121668176/wedgie",
+      "fact": "5.12a YDS",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "discipline",
+    "value": "sport",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/121668176/wedgie",
+      "fact": "Type: sport",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://rakkup.com/guidebook/index-rock-climbing/wedgie/c39479",
+      "fact": "sport (guide icon)",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "length_m",
+    "value": 15,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/121668176/wedgie",
+      "fact": "50 ft (15 m)",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_blues_cliff_the_wedgie",
+    "column": "guide_stars",
+    "from": null,
+    "to": 2,
+    "why": "The Index guidebook's own entry (publisher's teaser page) rates it 2 stars.",
+    "evidence": [
+     "https://rakkup.com/guidebook/index-rock-climbing/wedgie/c39479",
+     "https://rakkup.com/guidebook/index-rock-climbing/blues-cliff/s11510"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_blues_cliff_the_wedgie",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Washington State Parks (Forks of the Sky State Park)"
+    },
+    "why": "Brief W: copy the State Parks object field for field from wa_twelve_gauge_iq (same cliff; settled with the owner in batches U/V). Re-read 2026-11-23: the State Parks boundary layer returns Forks of the Sky, State Park Property at the Blues Cliff point (47.81993,-121.5696), and the county parcel there is owned by WA State Parks & Rec; the parks.wa.gov release (2026-03-13) is unchanged and states no pass rule. The row stores no access.",
+    "evidence": [
+     "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5696,47.81993&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+     "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.5696,47.81993&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,parcel_id&returnGeometry=false&f=json",
+     "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks",
+     "https://parks.wa.gov/node/3385"
+    ]
+   }
+  ],
+  "held": [],
+  "disputed": [],
+  "notes": "The guide teaser shows no grade for Wedgie, so the grade locks at the 1-source tier only (theCrag Forbidden). Condition: Mountain Project says the route needs cleaning and some new bolts (worth a condition note; not written). FA: MP gives \"Ron Farrel, early 1990s?\" (uncertain, MP only), not proposed."
+ },
+ "wa_blues_cliff_the_accidental_discharge": {
+  "area": "wa_blues_cliff_the",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/106329285/accidental-discharge",
+    "https://rakkup.com/guidebook/index-rock-climbing/accidental-discharge/c25504",
+    "https://www.mountainproject.com/area/105808013/the-blues-cliff",
+    "https://rakkup.com/guidebook/index-rock-climbing/blues-cliff/s11510",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5696,47.81993&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.5696,47.81993&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,parcel_id&returnGeometry=false&f=json",
+    "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks",
+    "https://parks.wa.gov/node/3385",
+    "https://www.mountainproject.com/route/203544317/open-project-accidental-discharge-p2"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.11b",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106329285/accidental-discharge",
+      "fact": "5.11b YDS",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://rakkup.com/guidebook/index-rock-climbing/accidental-discharge/c25504",
+      "fact": "5.11b (guide)",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "discipline",
+    "value": "sport",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106329285/accidental-discharge",
+      "fact": "Type: sport",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://rakkup.com/guidebook/index-rock-climbing/accidental-discharge/c25504",
+      "fact": "sport (guide icon)",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "length_m",
+    "value": 24,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106329285/accidental-discharge",
+      "fact": "80 ft (24 m)",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_blues_cliff_the_accidental_discharge",
+    "column": "bolts",
+    "from": null,
+    "to": 9,
+    "why": "Mountain Project states 9 bolts (one count). Single source (theCrag Forbidden; guide teaser silent): locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/106329285/accidental-discharge"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_blues_cliff_the_accidental_discharge",
+    "column": "guide_stars",
+    "from": null,
+    "to": 3,
+    "why": "The Index guidebook's own entry (publisher's teaser page) rates it 3 stars.",
+    "evidence": [
+     "https://rakkup.com/guidebook/index-rock-climbing/accidental-discharge/c25504",
+     "https://rakkup.com/guidebook/index-rock-climbing/blues-cliff/s11510"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_blues_cliff_the_accidental_discharge",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Washington State Parks (Forks of the Sky State Park)"
+    },
+    "why": "Brief W: copy the State Parks object field for field from wa_twelve_gauge_iq (same cliff; settled with the owner in batches U/V). Re-read 2026-11-23: the State Parks boundary layer returns Forks of the Sky, State Park Property at the Blues Cliff point (47.81993,-121.5696), and the county parcel there is owned by WA State Parks & Rec; the parks.wa.gov release (2026-03-13) is unchanged and states no pass rule. The row stores no access.",
+    "evidence": [
+     "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5696,47.81993&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+     "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.5696,47.81993&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,parcel_id&returnGeometry=false&f=json",
+     "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks",
+     "https://parks.wa.gov/node/3385"
+    ]
+   }
+  ],
+  "held": [],
+  "disputed": [],
+  "notes": "FA: MP credits Greg Collum and Matt Kerns (no year), not proposed (MP only). MP: optional gear for the first ~20 ft to the first bolt; a 60 m rope to get down; the anchor is a single rappel ring on webbing (no house spelling, not proposed). CATALOG DEFECT (not mine): wa_blues_cliff_the_open_project_accidental_discharge_p2 should not exist as a route. MP lists it as an Open Project above this route's anchor that still \"needs to be bolted\", FA unknown, no ascent recorded; the guide lists no such climb. The row nonetheless stores sport 5.12, 1 pitch, 24 m as if it were a finished route. Recommend the owner remove or hide it until it is bolted and climbed. The same applies to wa_blues_cliff_the_open_project_12_gauge_iq_p2 and wa_blues_cliff_the_project."
+ },
+ "wa_blues_cliff_the_black_cat_bone": {
+  "area": "wa_blues_cliff_the",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/106329275/black-cat-bone",
+    "https://rakkup.com/guidebook/index-rock-climbing/black-cat-bone/c25506",
+    "https://www.mountainproject.com/area/105808013/the-blues-cliff",
+    "https://rakkup.com/guidebook/index-rock-climbing/blues-cliff/s11510",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5696,47.81993&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.5696,47.81993&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,parcel_id&returnGeometry=false&f=json",
+    "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks",
+    "https://parks.wa.gov/node/3385"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.11c",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106329275/black-cat-bone",
+      "fact": "5.11c YDS",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://rakkup.com/guidebook/index-rock-climbing/black-cat-bone/c25506",
+      "fact": "5.11c (guide)",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "discipline",
+    "value": "trad",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106329275/black-cat-bone",
+      "fact": "Type: trad",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://rakkup.com/guidebook/index-rock-climbing/black-cat-bone/c25506",
+      "fact": "trad (guide icon)",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "length_m",
+    "value": 30,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106329275/black-cat-bone",
+      "fact": "100 ft (30 m)",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_blues_cliff_the_black_cat_bone",
+    "column": "gear",
+    "from": null,
+    "to": [
+     "finger-size cams",
+     "nuts",
+     "1-2 hand-size cams"
+    ],
+    "why": "Mountain Project rack: finger-size cams and stoppers, perhaps a couple of hand-size pieces. MP alone may set rack (locked-1src).",
+    "evidence": [
+     "https://www.mountainproject.com/route/106329275/black-cat-bone"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_blues_cliff_the_black_cat_bone",
+    "column": "guide_stars",
+    "from": null,
+    "to": 4,
+    "why": "The Index guidebook's own entry (publisher's teaser page) rates it 4 stars.",
+    "evidence": [
+     "https://rakkup.com/guidebook/index-rock-climbing/black-cat-bone/c25506",
+     "https://rakkup.com/guidebook/index-rock-climbing/blues-cliff/s11510"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_blues_cliff_the_black_cat_bone",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Washington State Parks (Forks of the Sky State Park)"
+    },
+    "why": "Brief W: copy the State Parks object field for field from wa_twelve_gauge_iq (same cliff; settled with the owner in batches U/V). Re-read 2026-11-23: the State Parks boundary layer returns Forks of the Sky, State Park Property at the Blues Cliff point (47.81993,-121.5696), and the county parcel there is owned by WA State Parks & Rec; the parks.wa.gov release (2026-03-13) is unchanged and states no pass rule. The row stores no access.",
+    "evidence": [
+     "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5696,47.81993&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+     "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.5696,47.81993&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,parcel_id&returnGeometry=false&f=json",
+     "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks",
+     "https://parks.wa.gov/node/3385"
+    ]
+   }
+  ],
+  "held": [],
+  "disputed": [],
+  "notes": "FA: MP credits Cal Folsom and David Feinberg, 1990; MP only, not proposed. Both sources say it was retro-bolted beside the crack and those bolts were later removed (trad now); bolts remain on the upper part where it can join Twelve Gauge IQ. Two finishes: continue on bolts into Twelve Gauge IQ, or step right to the Unicorn Blues anchor; a 60 m rope lowers from either."
+ }
+}

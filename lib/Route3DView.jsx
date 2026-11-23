@@ -158,7 +158,7 @@ export default function Route3DView({ line, waypoints, tracks, title, view, kind
         <button onClick={onClose} aria-label="Close 3D map" style={POP_CLOSE}>✕</button>
       </div>
       <div style={{ position: "relative", flex: 1, minHeight: 0 }}>
-        <div ref={div} style={{ position: "absolute", inset: 0, borderRadius: 9, border: "1px solid " + C.border, overflow: "hidden", background: "#0a0f1a" }} />
+        <div ref={div} style={{ position: "absolute", inset: 0, borderRadius: 9, border: "1px solid " + C.border, overflow: "hidden", background: "#0e0d0b" }} />
         {/* The credit, in the map's corner and always shown, as on the flat maps (index.html styles theirs the same). MapLibre's own
             control opened as a white box three lines deep on a phone, over the map. It says what TERRAIN_CREDIT and
             TILE_CREDIT.sat say; keep the three in step. */}

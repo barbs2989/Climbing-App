@@ -11,7 +11,7 @@ import { fileURLToPath } from "node:url";
 // owns text, its computed colour, and the colour actually behind it (every painted ancestor,
 // translucent washes composited over what is under them).
 //
-// "Blue text" is a saturated blue (C.blue #3b89f7, C.blueSolid #2a74de and their kin); "a blue box" is a
+// "Blue text" is a saturated blue (C.blue #62aee8, the Rock discipline's #2f81f7 and their kin; C.blueSolid is the brand's orange since 2026-11-23); "a blue box" is a
 // fill whose blue channel clearly leads the others (C.blueBg, C.blueChip, C.blueDim, C.blueSolid, a
 // blue wash). The app's neutral dark surfaces (C.bg, C.surface, C.card) lean blue by a few points and
 // are not boxes; the threshold sits well clear of them.
@@ -97,9 +97,12 @@ const probe = () => {
     }
     return c;
   };
-  const isBlueText = (c) => c && c.a > 0.5 && c.b >= 180 && c.b - c.r >= 110 && c.b - c.g >= 60;
-  // C.card leads by 20, C.surface by 12, C.bg by 10; C.blueBg by 55, C.blueChip by 50, C.blueDim by 81.
-  const isBlueBox = (c) => c.b - c.r >= 35 && c.b - c.g >= 20;
+  const isBlueText = (c) => c && c.a > 0.5 && c.b >= 180 && c.b - c.r >= 110 && c.b - c.g >= 50;
+  // Retuned 2026-11-23 for the warm palette: C.bg, C.surface and C.card are now WARM (blue trails red, so they
+  // can never pass), which lets the bar drop to catch the cool tints: C.blueBg leads red by 22, C.blueChip by 29,
+  // C.blueDim by 46, and a 13% Rock-blue wash over C.card by 20. At the old bar (35) every one of those was
+  // invisible to this guard, and C.blue's green gap (58) was under the old text bar (60) — it passed blind.
+  const isBlueBox = (c) => c.b - c.r >= 15 && c.b - c.g >= 6;
   const out = [];
   for (const el of document.querySelectorAll("body *")) {
     if (el.closest("svg")) continue;

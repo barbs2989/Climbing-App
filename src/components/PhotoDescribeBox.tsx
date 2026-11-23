@@ -22,7 +22,7 @@ interface SaveMsg { ok: boolean; t: string }
 export default function PhotoDescribeBox({initial,onSave,style}: PhotoDescribeBoxProps) {
   const [v,setV]=useState(initial||"");const [busy,setBusy]=useState(false);const [msg,setMsg]=useState<SaveMsg | null>(null);
   const dirty=String(v||"").trim()!==String(initial||"").trim();
-  return <div onClick={e=>e.stopPropagation()} style={{position:"absolute",left:20,right:20,margin:"0 auto",maxWidth:420,background:"rgba(13,17,23,0.94)",border:"1px solid "+C.border,borderRadius:12,padding:"10px 12px",boxSizing:"border-box",...style}}>
+  return <div onClick={e=>e.stopPropagation()} style={{position:"absolute",left:20,right:20,margin:"0 auto",maxWidth:420,background:"rgba(18,17,15,0.94)",border:"1px solid "+C.border,borderRadius:12,padding:"10px 12px",boxSizing:"border-box",...style}}>
     <PhotoAltField value={v} onChange={x=>{setV(x);setMsg(null);}}/>
     <div style={{display:"flex",alignItems:"center",gap:10,marginTop:8}}>
       <button disabled={!dirty||busy} onClick={()=>{setBusy(true);setMsg(null);Promise.resolve(onSave(String(v||"").trim())).then(()=>setMsg({ok:true,t:"Description saved"}),e=>setMsg({ok:false,t:"Couldn’t save the description — "+((e&&e.message)||"try again")})).finally(()=>setBusy(false));}} style={{padding:"7px 14px",borderRadius:8,border:"none",background:dirty&&!busy?C.blueSolid:C.border,color:dirty&&!busy?C.onSolid:C.textSub,fontSize:12.5,fontWeight:700,cursor:dirty&&!busy?"pointer":"default"}}>{busy?"Saving…":"Save description"}</button>

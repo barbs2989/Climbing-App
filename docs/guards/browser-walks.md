@@ -1475,6 +1475,13 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     no-op attribute edit it replaced proved neither and would have passed against a guard that
     never looked at that button.
 - **`check:blue-on-blue`** fails any element that owns text drawn in **blue on a blue box** (owner
+  — RETUNED 2026-11-23 with the warm palette, and the reason is the lesson: after the recolour it
+  passed 73 screens BLIND. `C.blue` became #62aee8, whose blue-over-green gap (58) sat under the old
+  text bar (60), and the selected fill became a cool tint that leads red by 22 against a box bar of
+  35, so neither side of the test could fire. The neutrals are warm now (blue trails red), which is
+  what lets the box bar drop to 15/6 without catching a plain surface. `blueOnBlue()` in
+  `lib/contrast.js` carries the same numbers and must move with it. A palette change re-derives
+  these thresholds; a pass straight after one is not evidence.
   note: "I don't like the blue text on blue boxes, change text to white"). It walks the screens
   check:axe walks signed in, at 390px only, and reads the RENDERED colours: the text's computed
   `color`, and the colour behind it, made by compositing every painted ancestor from the page down
