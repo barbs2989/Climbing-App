@@ -111,7 +111,12 @@ by row (0318); they return a member count and an order, never a roster row or a 
 `groups.search_text` are generated columns, so no client can write them.
 
 A guest (and a build with no database) keeps `discoverGroupList(q, sort, where, near)`, which filters the example
-groups and the ones made on this device in the browser, and the tab pages that list itself (`DISC_PAGE`). With a
+groups and the ones made on this device in the browser, and the tab pages that list itself (`DISC_PAGE`). Signed
+in, the example groups (`GROUPS`, while `DEMO_FILLERS` is on) are not in the database, so the same function matches
+them against the same filters and `groupDiscoverSort` merges them into the database's rows once the last page of
+real groups is loaded; they are counted in the total and the chips, as before, and an example group never pushes a
+real one onto a later page. If the read of the real groups fails while example groups are listed, a line above the
+list says it is not complete. With a
 place picked, *Recommended* becomes *Nearest* (`groupNearMi`). `openGroupsNear` is the area page's way in. Your home
 region comes from `regionOfPlace(location)` (`lib/db.js`), which reads a trailing two-letter code first and then the
 longest full state/province name; `region_of_place` is its SQL twin, and `check:search-norm` section 5 keeps the two
