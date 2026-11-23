@@ -427,7 +427,7 @@ Part of the guard notes — see [README.md](README.md) for the full index.
       honest wording, and *"logged"* once the branch really is fed logs.
 - **`check:offline-claims`** asserts that **an offline promise is backed by the mechanism that makes
   it true**. The offline feature is the **state download** (Home's Pinned states, Manage areas);
-  there has been **no per-route trip pack since #2368**. Static (Babel over `ClimbMatch.jsx`,
+  the per-route trip pack removed in #2368 came back as the route page's **Save offline** (`lib/SaveMapOffline.jsx`), and since 2026-11-19 **§11** asserts what that one-climb save promises: a failed map never unpacks the page; the save writes the route's photos and topos (`savePackMedia`, `pack: true`) and removing the climb removes exactly those; climbers' tracks, the area row and the neighbouring climbs are written at save time AND read back through `useRouteTracks`, `useArea` / `fetchRouteArea` and `useAreaRoutes`, with a failed read left out of the save. §5 lets a Help sentence that names the button (*Save offline*) mention photos, topos and the map, because §11 now backs it; the state-download sentences are still required to say photos and map tiles are not saved. Static (Babel over `ClimbMatch.jsx`,
   `ClimbMatchCore.jsx` and `lib/Help.jsx`, plus source reads of `RouteDetail.jsx`, `lib/db.js`,
   `lib/offline.js` and `scripts/build-state-snapshots.mjs`), so it sits in `npm run build`. The
   last timing on record, before the 2026-10-14 restore, was **1.34x `check:policy-claims`**.
@@ -546,7 +546,7 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     had deliberately removed comes back on the next load.
   - Fails **closed**: an unreadable or unparseable source; `ANCHOR LOST` for a missing
     `useRoutesByIds`, any §10 hook, `HELP_FEATS`, or the Manage areas dialog's aria-label; a
-    **per-surface** region/string floor in §5; and fewer than **34 assertions RUN** — a guard that
+    **per-surface** region/string floor in §5; and fewer than **40 assertions RUN** (34 until §11, 2026-11-19) — a guard that
     quietly stops asking half its questions still exits 0.
   - **The floors are PER SURFACE.** A global floor is satisfied by the other surface: renaming the
     download state in `ClimbMatch.jsx` alone leaves the Help strings standing, so the guard would

@@ -16,8 +16,10 @@ import { warmLeafletOffline } from "./mapKit";
    and a list of saved maps to open or delete. That is this file.
 
    WHAT A SAVE WRITES (lib/db.js packRouteWithSnapshot): the route row and its latest reports and
-   corrections, so the page OPENS with no signal even in a state that was never downloaded, and the
-   USGS tiles along the way in (lib/offlineTiles.js). Never a forecast (owner, 2026-10-21). The
+   corrections, so the page OPENS with no signal even in a state that was never downloaded, the
+   climbers' tracks, area row and neighbouring climbs, the route's photos and topos (newest 40
+   photos; lib/db.js savePackMedia), and the USGS tiles along the way in (lib/offlineTiles.js).
+   Never a forecast (owner, 2026-10-21). The
    message says how much of the map actually landed — a save that mostly failed does not say "saved".
 
    US only in practice: the USGS tiles hold little outside the US, and a save there reports what
@@ -49,13 +51,30 @@ function useSavedRoute(routeId) {
   return [info, load];
 }
 
+const plural = function (n, w) { return n + " " + w + (n === 1 ? "" : "s"); };
+// "12 photos · 2 topos · 8.4 MB": the images on the device for one climb; "" when there are none.
+function mediaNote(m) {
+  const parts = [];
+  if (m.photos) parts.push(plural(m.photos, "photo"));
+  if (m.topos) parts.push(plural(m.topos, "topo"));
+  if (parts.length && m.mediaBytes) parts.push(m.mediaBytes >= 1048576 ? (m.mediaBytes / 1048576).toFixed(1) + " MB" : Math.max(1, Math.round(m.mediaBytes / 1024)) + " KB");
+  return parts.join(" · ");
+}
+// What the save says about its images: how many landed, and never "saved" for ones that did not.
+function mediaMessage(md) {
+  if (!md || !(md.photosTotal + md.toposTotal)) return "";
+  const got = md.photos + md.topos, all = md.photosTotal + md.toposTotal;
+  if (md.full) return " This device is full: " + got + " of " + plural(all, "image") + " saved.";
+  if (got < all) return " " + got + " of " + plural(all, "image") + " saved — tap Update with a better signal for the rest.";
+  return " " + [md.photosTotal ? plural(md.photos, "photo") : "", md.toposTotal ? plural(md.topos, "topo") : ""].filter(Boolean).join(" and ") + " saved with it.";
+}
 // What to tell the climber once a save returns. The page is on the device in every branch.
 function savedMessage(res) {
-  const m = res && res.map;
-  if (!m || !m.total) return "Saved on this device — this page opens with no signal. No map was saved for this climb.";
-  if (!m.ok) return m.reason === "quota" ? "This page is saved, but the map didn’t fit on this device — free some space and tap Retry." : "This page is saved on this device. The map didn’t download — tap Retry with a better signal.";
-  if (m.missing) return "Saved with " + Math.round(100 * m.saved / m.total) + tx("% of the map — tap Retry with a better signal for the rest.");
-  return "Saved on this device — the way in and this page open with no signal.";
+  const m = res && res.map, pics = mediaMessage(res && res.media);
+  if (!m || !m.total) return "Saved on this device — this page opens with no signal. No map was saved for this climb." + pics;
+  if (!m.ok) return (m.reason === "quota" ? "This page is saved, but the map didn’t fit on this device — free some space and tap Retry." : "This page is saved on this device. The map didn’t download — tap Retry with a better signal.") + pics;
+  if (m.missing) return "Saved with " + Math.round(100 * m.saved / m.total) + tx("% of the map — tap Retry with a better signal for the rest.") + pics;
+  return "Saved on this device — the way in and this page open with no signal." + pics;
 }
 
 const btn = { padding: "7px 12px", borderRadius: 9, border: "1px solid " + C.border, background: C.surface, color: C.text, fontSize: 12.5, fontWeight: 700, cursor: "pointer", minHeight: 36 };
@@ -130,7 +149,7 @@ export function SavedRouteMaps({ onOpen, notify, card }) {
     {metas.map(function (m) {
       const r = byId[m.id];
       const name = r ? r.name : (rowsQ.isLoading ? "Loading…" : "A saved climb");
-      const note = mapNote(m), busy = busyId === m.id;
+      const note = mapNote(m), busy = busyId === m.id, pics = mediaNote(m);
       const where = r ? [r.grade, r.areas && r.areas.name].filter(Boolean).join(" · ") : "";
       return <SwipeRow key={m.id} radius={12} action="remove" hover onDelete={function () { remove(m.id); }}>
         <div style={{ display: "flex", alignItems: "center", gap: 10, padding: "11px 12px", background: C.card, border: "1px solid " + C.border, borderRadius: 12 }}>
@@ -138,6 +157,7 @@ export function SavedRouteMaps({ onOpen, notify, card }) {
             <div style={{ fontSize: 14, fontWeight: 700, overflowWrap: "anywhere" }}>{name}</div>
             {where ? <div style={{ fontSize: 11.5, color: C.textSub, overflowWrap: "anywhere" }}>{where}</div> : null}
             <div style={{ fontSize: 11.5, color: note ? C.amber : C.textMuted }}>{"Saved " + savedAgo(m.updatedAt) + (note ? " · " + note : " · with its map")}</div>
+            {pics ? <div style={{ fontSize: 11.5, color: C.textMuted }}>{pics}</div> : null}
           </button>
           <button onClick={function () { update(m.id); }} disabled={!!busyId} aria-label={(busy ? "Updating " : "Update the saved copy of ") + name} style={{ ...btn, color: busyId && !busy ? C.textMuted : C.blue, flexShrink: 0 }}>{busy ? "Updating…" : "Update"}</button>
         </div>

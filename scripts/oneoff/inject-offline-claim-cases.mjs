@@ -70,6 +70,22 @@ const CM = "ClimbMatch.jsx", RD = "RouteDetail.jsx", CORE = "ClimbMatchCore.jsx"
 
 const TRIGGER_FILES = ["src/components/ManageAreasSheet.tsx", "src/components/TodayTab.tsx", "src/components/LogbookTab.tsx"];
 const CASES = [
+  /* §11 — one climb saved whole (2026-11-19). The first is the regression itself; the others are
+   * each a silent half: the write stays, the read goes, nothing renders differently with a signal. */
+  { name: "map-fail-unpacks-again", file: "lib/SaveMapOffline.jsx", must: "fail", expect: "save handler unpacks the climb again",
+    why: "§11 — a failed map throws the whole save away, so a route outside tile coverage cannot be kept",
+    find: "packRouteWithSnapshot(routeId, { onMapProgress: setProg }).then(function (res) { say(savedMessage(res)); })",
+    repl: "packRouteWithSnapshot(routeId, { onMapProgress: setProg }).then(function (res) { say(savedMessage(res)); if (!res.map) return unpackRouteOffline(routeId); })" },
+  { name: "tracks-fallback-gone", file: DB, must: "fail", expect: "useRouteTracks lost its device fallback",
+    why: "§11 — tracks are written at save time and never read back",
+    find: "queryFn: () => orOfflineExact(() => fetchRouteTracks(routeId), () => offlinePackTracks(routeId)),",
+    repl: "queryFn: () => fetchRouteTracks(routeId)," },
+  { name: "siblings-fallback-gone", file: DB, must: "fail", expect: "useAreaRoutes lost its fallback to the saved neighbours",
+    why: "§11 — the neighbours are stored and NEXT DOOR still goes blank",
+    find: "return st.length || full ? st : offlinePackSiblings(areaId);", repl: "return st;" },
+  { name: "photos-not-saved", file: DB, must: "fail", expect: "no longer saves the route's photos and topos",
+    why: "§11 — Help says a saved climb keeps its photos; the save stops writing them",
+    find: "try { media = await savePackMedia(routeId, row, photoRows, people, reportRows); } catch (e) { media = null; }", repl: "media = null;" },
   /* THE SILENT HALF. Write, copy and hydration all stay; only the fallback goes. Nothing renders
    * differently, no name moves, and the pack empties the moment there is no signal. */
   { name: "read-gone", file: DB, must: "fail", expect: "fallback is not offlineRoutesByIds",
