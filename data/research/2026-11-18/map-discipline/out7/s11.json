@@ -1,0 +1,267 @@
+[
+ {
+  "id": "wa_chimney_rock_southeast_shoulder",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "nothing new. Opened MP Chimney Rock area (lists only East Face, East Face Direct; says Pete Lake Trail is the most common approach), WTA chimney-rock page (empty directions). No page names a Southeast Shoulder or another start (Spade/Rachel Lake). MP 'approach-to-chimney-rock' page is a different Chimney Rock (Horton Ridge) - ignored."
+ },
+ {
+  "id": "wa_colchuck_balanced_rock_east_route",
+  "status": "found",
+  "trailhead": {
+   "name": "Stuart Lake Trailhead (Colchuck Lake trail, FR 7601)",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://stephabegg.com/?p=8702",
+    "fact": "Balanced Rock is reached only via Colchuck Lake, whose trail starts at the Stuart Lake trailhead; both trip reports on the page start there. No page describes an east-side route or other start (WEAK, peak-level)"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "Stuart Lake Trailhead",
+     "lat": 47.527806,
+     "lng": -120.820515,
+     "url": ""
+    },
+    {
+     "source": "WTA",
+     "name": "Stuart Lake trailhead",
+     "lat": 47.5277,
+     "lng": -120.821,
+     "url": "https://www.wta.org/go-hiking/hikes/colchuck-lake"
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "approach",
+    "value": "north-end-of-lake outlet crossing then timbered hillside to cirque, ~1 to 1h45 from lake",
+    "url": "https://stephabegg.com/?p=8702"
+   },
+   {
+    "field": "trailhead_elev_ft",
+    "value": "3400-3540",
+    "url": "https://lemkeclimbs.com/dragontail-peak"
+   }
+  ],
+  "notes": "WEAK peak-level. Opened stephabegg.com CBR West Face (Stuart Lake / Colchuck Lake trailhead, same lot), wenatcheeoutdoors CBR (parking lot unnamed; approach via lake's west side then gully), WTA colchuck-lake (Stuart Lake trailhead 47.5277,-120.8210 only trailhead for Colchuck Lake). Pages mention east only as the descent side. Mountaineers 403."
+ },
+ {
+  "id": "wa_colchuck_balanced_rock_south_route",
+  "status": "found",
+  "trailhead": {
+   "name": "Stuart Lake Trailhead (Colchuck Lake trail, FR 7601)",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://stephabegg.com/?p=8702",
+    "fact": "same as East Route: Colchuck Lake trail is the only road access; pages describe a south/right approach around the lake's west side into the cirque, from the same trailhead (WEAK, peak-level)"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "Stuart Lake Trailhead",
+     "lat": 47.527806,
+     "lng": -120.820515,
+     "url": ""
+    },
+    {
+     "source": "WTA",
+     "name": "Stuart Lake trailhead",
+     "lat": 47.5277,
+     "lng": -120.821,
+     "url": "https://www.wta.org/go-hiking/hikes/colchuck-lake"
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "approach",
+    "value": "south option: trail around west side of lake, gully east of Jaberwocky Tower, 1.5-2h from north end of lake",
+    "url": "https://stephabegg.com/?p=8702"
+   }
+  ],
+  "notes": "WEAK peak-level, as East Route. No page names this South Route itself."
+ },
+ {
+  "id": "wa_colchuck_peak_northeast_gully",
+  "status": "found",
+  "trailhead": {
+   "name": "Stuart Lake Trailhead (Colchuck Lake trail, FR 7601)",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://lemkeclimbs.com/dragontail-peak",
+    "fact": "Lemke: Colchuck Glacier approach leaves the Colchuck Lake trail from the Mountaineer Creek (Stuart Lake) trailhead and climbs the glacier's left side to avoid crevasses near Colchuck's northeast face (WEAK: gully not named)"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "Stuart Lake Trailhead",
+     "lat": 47.527806,
+     "lng": -120.820515,
+     "url": ""
+    },
+    {
+     "source": "WTA",
+     "name": "Stuart Lake trailhead",
+     "lat": 47.5277,
+     "lng": -120.821,
+     "url": "https://www.wta.org/go-hiking/hikes/colchuck-lake"
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "col_gain_ft",
+    "value": "~2500 above lake",
+    "url": "https://lemkeclimbs.com/dragontail-peak"
+   },
+   {
+    "field": "road",
+    "value": "Eightmile Rd FR 7601, 3.7-4 mi from Icicle Creek Rd",
+    "url": "https://www.wta.org/go-hiking/hikes/colchuck-lake"
+   }
+  ],
+  "notes": "WEAK/inferred, same as prior pass but now with Lemke and WTA pages opened. Lemke names alternate Snow Lakes TH (2,200 ft) only for the Enchantments through route."
+ },
+ {
+  "id": "wa_crater_mountain_appassionata_smothered_in_smoke",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "nothing new. Search for the route name returned no page naming it; its stored text describes a short crag face with a hueco and class 3 exit, likely misfiled. Standard route uses Canyon Creek TH (SummitPost via search summary only) - not tied to this route."
+ },
+ {
+  "id": "wa_cutthroat_the_swarm",
+  "status": "found",
+  "trailhead": {
+   "name": "Cutthroat Peak climbers trail pullout (SR 20, ~1.5 mi west of Washington Pass)",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://publications.americanalpineclub.org/articles/13201216751",
+    "fact": "AAC: approach walked about 2 mi from Highway 20 near Washington Pass, then right into the basin east of the peak; MP Swarm text: approach as for N Ridge, cut up the face past the South Buttress base; MP South Buttress: park at long pullout ~1.5 mi W of Washington Pass"
+   },
+   "placements": []
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "coords_route",
+    "value": "48.52623,-120.70347 (MP, not used)",
+    "url": "https://www.mountainproject.com/route/124537013/the-swarm"
+   }
+  ],
+  "notes": "Medium. Opened AAC 13201216751 (no parking named; 'near Washington Pass'), AAC 12198716401 (no approach), MP Swarm and MP South Buttress (approach text only; MP says pullout on north side of highway). No official/WTA coordinate found, so placements empty; prior geocaching placement dropped as not an allowed source. Rainy Pass option in stored text not supported by any page."
+ },
+ {
+  "id": "wa_dome_peak_indian_summer",
+  "status": "found",
+  "trailhead": {
+   "name": "Downey Creek Trailhead",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://lemkeclimbs.com/dome-peak",
+    "fact": "2012 Dome Peak trip: biked Suiattle River Rd to Downey Creek, hiked Downey Creek trail past Bachelor Creek to the saddle above Cub Lake, summited via Dome Glacier; route's own descent text exits via Cub Lake/Cub Pass/Bachelor Creek"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "Downey Creek Trailhead",
+     "lat": 48.259506,
+     "lng": -121.222915,
+     "url": ""
+    },
+    {
+     "source": "WTA",
+     "name": "Downey Creek trailhead",
+     "lat": 48.2595,
+     "lng": -121.2229,
+     "url": "https://www.wta.org/go-hiking/hikes/downey-creek"
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "bachelor_creek_mi",
+    "value": "6.6 from trailhead",
+    "url": "https://www.wta.org/go-hiking/hikes/downey-creek"
+   },
+   {
+    "field": "road_closure",
+    "value": "Suiattle River Rd closed to motor vehicles at MP 10.5 per WTA (stored text says 4-4.5; conflict)",
+    "url": "https://www.wta.org/go-hiking/hikes/downey-creek"
+   }
+  ],
+  "notes": "Medium: peak-level (Dome Glacier base camp at Dome-Chickamin saddle), not this route. CascadeClimbers FA report (2011) 403. Search summary of that report says two-day approach, consistent. Stored text 'Ptarmigan Traverse western approach' unsupported."
+ },
+ {
+  "id": "wa_dragontail_peak_boving_route",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "nothing new. No opened page mentions Boving. Search summary (MP, unopened) places Boving/Christensen above the toe of the Colchuck Glacier, implying Stuart Lake TH, but Dragontail also has the Snow Lakes alternate (Lemke) and nothing ties this route to one."
+ },
+ {
+  "id": "wa_dragontail_peak_colchuck_col_buttress",
+  "status": "found",
+  "trailhead": {
+   "name": "Stuart Lake Trailhead (Colchuck Lake trail, FR 7601)",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://lemkeclimbs.com/dragontail-peak",
+    "fact": "Lemke: Colchuck Col is reached via Colchuck Lake trail and the glacier's left side from the Mountaineer Creek (Stuart Lake) trailhead; route starts at the col (WEAK: buttress not named)"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "Stuart Lake Trailhead",
+     "lat": 47.527806,
+     "lng": -120.820515,
+     "url": ""
+    },
+    {
+     "source": "WTA",
+     "name": "Stuart Lake trailhead",
+     "lat": 47.5277,
+     "lng": -120.821,
+     "url": "https://www.wta.org/go-hiking/hikes/colchuck-lake"
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "trailhead_elev_ft",
+    "value": "3540",
+    "url": "https://lemkeclimbs.com/dragontail-peak"
+   },
+   {
+    "field": "lake_to_col_gain_ft",
+    "value": "~2500",
+    "url": "https://lemkeclimbs.com/dragontail-peak"
+   },
+   {
+    "field": "approach",
+    "value": "~5 mi to lake north end",
+    "url": "https://www.alpineinstitute.com/?p=99974"
+   }
+  ],
+  "notes": "WEAK-MEDIUM, inferred. Alpine Institute page (Triple Couloirs) also names Stuart Lake/Mountaineer Creek TH 3,400 ft. Snow Lakes TH is only the Enchantments alternate."
+ }
+]

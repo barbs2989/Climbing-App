@@ -80,13 +80,17 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
   (*Take out* undoes it), and one the climber does not place is not sent, so approval never gives an unlooked-at climb a position.
   Send needs two climbs in the line and a line that differs from the stored one.
   `submitWallOrderSuggestion` (`lib/db.js`) files one `contributions` row of kind `wall_order` (`area_id` = the wall, `value` =
-  `{order: [route ids, left to right], note}`; migration 0485 refuses any other shape). Nothing on the page changes. The owner's *Wall order
-  suggestions* queue (`WallOrderQueue` in `lib/RouteProposals.jsx`, a Menu Review tile with a count) shows the list with each climb's place
+  `{order: [route ids, left to right], note}`; migration 0485 refuses any other shape). Nothing on the page changes. The suggestion reaches the
+  owner on the **Review desk** (`review.html`, `review/ReviewDesk.jsx`) as an *Order* row of the same table as held route edits and flags (owner,
+  2026-11-23: "I receive it in the admin like what would happen when people suggest edits"; it was a Menu Review tile for four days). The
+  row opens to the wall as listed now beside the suggested line, each climb marked with the place it holds
   now, and `resolve_wall_order` (0485, admin only) either writes it (*Use this order*: listed climbs still on the wall get `sort_order` 1..n,
   a placed climb the list does not name follows them in its old order, a boulder problem is never touched) or keeps the wall as it is
-  (*Keep current*). Either way the sender gets a notification that opens the wall, and *Your contributions* lists the suggestion as
-  *Wall order suggested* with its status. It earns its contribution point only once approved (`contribution_points()`, 0485). The wall's
-  list and the Route finder are refreshed on approval; a state downloaded to the device keeps its packed order until downloaded again.
+  (*Keep current order*). There is ONE order per wall: an approval rewrites the stored `sort_order`, which every climber's list, NEXT DOOR
+  and the Route finder read. Either way the sender gets a notification that opens the wall, and *Your contributions* lists the suggestion as
+  *Wall order suggested* with its status. It earns its contribution point only once approved (`contribution_points()`, 0485). An
+  approval happens on the Review desk, which has its own cache, so an app tab already open on the wall shows the new order on its next read of
+  the list (up to 15 minutes); a state downloaded to the device keeps its packed order until downloaded again.
   A signed-out climber gets a sign-in button and no write.
 - **Filters on a wall's list** (owner note, 2026-10-25): **Filters** over a leaf area's climb list narrows it by discipline (the disciplines the wall holds, plus All) and a star minimum (Any / 2+ / 3+ stars; a climb nobody has rated stays in). The button is drawn as the Route finder draws its Filters button (full width, `BTN_LG`, the text colour, a turning chevron), not as a chip -- as a muted chip it matched the sort chips under it and was missed (owner, 2026-11-05). It filters the rows `useAreaRoutes` already loaded, so it costs no query. The sort adds **By discipline** (one heading per discipline, in `DISCIPLINES` order, A → Z under each). Grade is deliberately NOT a sort key: `grade_num` is only comparable within one scale.
 - **Where the wall order comes from** (`scripts/pipeline/order-from-mp.mjs`, one area per run; the owner's reference is **Mountain Project**,
@@ -352,7 +356,7 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
 - Units: distances and elevations render through `uDistMi` / `uElev` (`check:units`).
 - Partners: By Area search picks an area from the same tree (see `docs/features/partners.md`). **Partners here** (0300): every crag-family area page and its
   ancestors below the state (`PARTNER_CARD_TYPES` — never a peak or a state) draws `PartnersHereCard`: the **Crag regular** (competitor review item 22, 2026-11-05 — Strava's Local Legend: the climber with the most logged DAYS under the area in the last 90, two at least, from `useCragRegular` / `crag_regular` 0404, signed-in only, the same people the boards rank, counts only; the row opens their profile; nothing is drawn when nobody has two days or the read failed), how many climbers are listed here or nearby, up to three rows
-  (the row component arrives from App as the `PartnerRow` prop — this file does not import core), a one-tap **List me here / Listed ✓** that writes this area's listing,
+  (the row component arrives from App as the `PartnerRow` prop — this file does not import core), a one-tap **List me here / Listed ✓** that writes this area's listing (a full-width button on its own line, above *Start a crew here* / *Crews here* — owner 2026-11-23),
   "Add dates or climbing types" (a full-width card button, shown once listed) into the My listed areas sheet (`onListMe`), and "See all →" into the Partners tab on this area (`onFindPartnersInArea`). Signed out it asks for sign-in.
   `check:area-surfaces` rule 3 pins it. Its crews row (0302): **Start a crew here** (`onStartCrew` → `StartCrewSheet` prefilled with this area) and **Crews here · N**
   (`onCrewsHere` → Join a crew, By Area preset to this area; `openCrewCountAt` counts open crews bound to exactly this area).

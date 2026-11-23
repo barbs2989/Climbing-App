@@ -1,0 +1,295 @@
+{
+ "ca_lamont_peak_trail": [],
+ "ca_granite_chief": [
+  {
+   "q": "Granite Chief Trailhead",
+   "name": "Granite Chief",
+   "key": "aerialway",
+   "val": "chair_lift",
+   "id": "way/30786856",
+   "lat": 39.1987586,
+   "lng": -120.2781281,
+   "km": 3.7
+  },
+  {
+   "q": "Granite Chief Trailhead",
+   "name": "Granite Chief upper lifthouse",
+   "key": "building",
+   "val": "yes",
+   "id": "way/315330687",
+   "lat": 39.1968602,
+   "lng": -120.2827376,
+   "km": 4.1
+  }
+ ],
+ "ca_mokelumne": [
+  {
+   "q": "Tanglefoot Trailhead",
+   "name": "Tanglefoot Trailhead",
+   "key": "highway",
+   "val": "trailhead",
+   "id": "node/3939274836",
+   "lat": 38.5235508,
+   "lng": -120.1735103,
+   "km": 7.1
+  },
+  {
+   "q": "Tanglefoot trail parking",
+   "name": "Shealor Lake Trailhead Parking",
+   "key": "amenity",
+   "val": "parking",
+   "id": "way/429398289",
+   "lat": 38.6552854,
+   "lng": -120.1348382,
+   "km": 13.5
+  },
+  {
+   "q": "Tanglefoot trail parking",
+   "name": "Emigrant Lake Trailhead parking lot",
+   "key": "amenity",
+   "val": "parking",
+   "id": "way/627204030",
+   "lat": 38.7031472,
+   "lng": -120.0654839,
+   "km": 18.5
+  }
+ ],
+ "ca_pinchot": [],
+ "ca_maggie": [
+  {
+   "q": "Shake Camp Trailhead",
+   "name": "Lewis Camp Trailhead",
+   "key": "highway",
+   "val": "trailhead",
+   "id": "node/4396793422",
+   "lat": 36.1817128,
+   "lng": -118.5152984,
+   "km": 12.9
+  },
+  {
+   "q": "Shake Camp Trailhead",
+   "name": "Shake Camp Campground",
+   "key": "tourism",
+   "val": "camp_site",
+   "id": "node/5215536523",
+   "lat": 36.2485548,
+   "lng": -118.6706259,
+   "km": 7.1
+  }
+ ],
+ "ca_sirretta": [
+  {
+   "q": "Big Meadow Trailhead",
+   "name": "Manter Meadow Trailhead",
+   "key": "highway",
+   "val": "trailhead",
+   "id": "node/8284671095",
+   "lat": 35.8688348,
+   "lng": -118.3264831,
+   "km": 6.6
+  }
+ ],
+ "ca_pyramid": [],
+ "ca_recess": [
+  {
+   "q": "Bear Ridge Trailhead",
+   "name": "Bear Ridge Trailhead",
+   "key": "highway",
+   "val": "trailhead",
+   "id": "node/2129407583",
+   "lat": 37.3690275,
+   "lng": -118.9806864,
+   "km": 8.4
+  },
+  {
+   "q": "Vermilion Valley dam trailhead",
+   "name": "Vermilion Valley Resort",
+   "key": "leisure",
+   "val": "resort",
+   "id": "way/854058884",
+   "lat": 37.3760626,
+   "lng": -119.0124006,
+   "km": 10.5
+  },
+  {
+   "q": "Vermilion Valley dam trailhead",
+   "name": "Little Lakes Valley Trailhead",
+   "key": "highway",
+   "val": "trailhead",
+   "id": "node/8426865350",
+   "lat": 37.4351876,
+   "lng": -118.7471876,
+   "km": 14
+  }
+ ],
+ "ca_spanish": [
+  {
+   "q": "Crown Valley Trailhead",
+   "name": "Rancheria Trailhead",
+   "key": "highway",
+   "val": "trailhead",
+   "id": "node/1527888043",
+   "lat": 36.9754743,
+   "lng": -118.956096,
+   "km": 9.4
+  }
+ ],
+ "ca_blackhawk": [
+  {
+   "q": "Kennedy Meadows Trailhead",
+   "name": "Kennedy Meadows Trailhead",
+   "key": "information",
+   "val": "guidepost",
+   "id": "node/4042465727",
+   "lat": 38.3165039,
+   "lng": -119.7473044,
+   "km": 6.1
+  },
+  {
+   "q": "Kennedy Meadows Trailhead",
+   "name": "Kennedy Meadows Trailhead Parking",
+   "key": "amenity",
+   "val": "parking",
+   "id": "way/833681727",
+   "lat": 38.3168764,
+   "lng": -119.747038,
+   "km": 6.1
+  },
+  {
+   "q": "Kennedy Meadows Resort",
+   "name": "Kennedy Meadows Pack Station & Resort",
+   "key": "leisure",
+   "val": "resort",
+   "id": "way/128898356",
+   "lat": 38.311553,
+   "lng": -119.7460936,
+   "km": 5.6
+  }
+ ],
+ "bc_ossa": [
+  {
+   "q": "Sigurd Creek Trailhead",
+   "name": "Sigurd Creek Trail / Crooked Falls",
+   "key": "highway",
+   "val": "trailhead",
+   "id": "node/519294543",
+   "lat": 49.9105873,
+   "lng": -123.322825,
+   "km": 5.5
+  },
+  {
+   "q": "Sigurd Creek Trailhead",
+   "name": "Rubble Creek Trailhead",
+   "key": "amenity",
+   "val": "parking",
+   "id": "relation/8515763",
+   "lat": 49.9577522,
+   "lng": -123.1202606,
+   "km": 15
+  },
+  {
+   "q": "Sigurd Creek Trailhead",
+   "name": "Esté-tiwilh/Sigurd Creek Conservancy",
+   "key": "leisure",
+   "val": "nature_reserve",
+   "id": "relation/2238471",
+   "lat": 49.8950933,
+   "lng": -123.3524593,
+   "km": 7.4
+  },
+  {
+   "q": "Sigurd Creek parking",
+   "name": "Chance / Roe Winter Parking",
+   "key": "amenity",
+   "val": "parking",
+   "id": "way/470311246",
+   "lat": 49.9694709,
+   "lng": -123.166345,
+   "km": 11.8
+  },
+  {
+   "q": "Sigurd Creek parking",
+   "name": "Lower Chek Parking",
+   "key": "amenity",
+   "val": "parking",
+   "id": "node/481249213",
+   "lat": 49.9063216,
+   "lng": -123.1620427,
+   "km": 13.4
+  },
+  {
+   "q": "Sigurd Creek parking",
+   "name": "Middle Chek Parking",
+   "key": "amenity",
+   "val": "parking",
+   "id": "way/163030667",
+   "lat": 49.9091889,
+   "lng": -123.1578713,
+   "km": 13.6
+  },
+  {
+   "q": "Sigurd Creek parking",
+   "name": "Upper Chek Parking",
+   "key": "amenity",
+   "val": "parking",
+   "id": "way/122837297",
+   "lat": 49.910225,
+   "lng": -123.1559782,
+   "km": 13.6
+  }
+ ],
+ "co_niagara": [
+  {
+   "q": "Burns Gulch parking",
+   "name": "Restroom Parking",
+   "key": "amenity",
+   "val": "parking",
+   "id": "way/1065744312",
+   "lat": 37.9268883,
+   "lng": -107.5637765,
+   "km": 3.8
+  }
+ ],
+ "ca_maclure": [
+  {
+   "q": "Lyell Canyon Trailhead",
+   "name": "Lyell Canyon Trailhead",
+   "key": "highway",
+   "val": "trailhead",
+   "id": "node/2443957941",
+   "lat": 37.8766313,
+   "lng": -119.3456662,
+   "km": 15.8
+  },
+  {
+   "q": "Dog Lake parking",
+   "name": "Dog Lake Parking",
+   "key": "amenity",
+   "val": "parking",
+   "id": "way/30184893",
+   "lat": 37.8781633,
+   "lng": -119.3387797,
+   "km": 15.8
+  },
+  {
+   "q": "John Muir Trail parking Tuolumne Meadows",
+   "name": "Yosemite Toulumne Meadows Visitor Center",
+   "key": "information",
+   "val": "visitor_centre",
+   "id": "way/131358465",
+   "lat": 37.871566,
+   "lng": -119.3741778,
+   "km": 16.4
+  },
+  {
+   "q": "John Muir Trail parking Tuolumne Meadows",
+   "name": "YARTS - John Muir Trailhead",
+   "key": "highway",
+   "val": "bus_stop",
+   "id": "node/14083724903",
+   "lat": 37.8736318,
+   "lng": -119.3580928,
+   "km": 16
+  }
+ ]
+}

@@ -49,7 +49,7 @@ function isOwnStorageUrl(u: string): boolean {
 }
 
 // kind -> where it lives and which columns are words / pictures.
-const KINDS: Record<string, { table: string; text: string[]; images?: (r: any) => string[] }> = {
+const KINDS: Record<string, { table: string; text: string[]; more?: (r: any) => string[]; images?: (r: any) => string[] }> = {
   message:      { table: "messages",       text: ["body"], images: (r) => (r.image_url && /^https?:/.test(r.image_url) ? [r.image_url] : []) },
   crew_message: { table: "crews_messages", text: ["body"], images: (r) => (r.image_url && /^https?:/.test(r.image_url) ? [r.image_url] : []) },
   group_post:   { table: "group_posts",    text: ["body"], images: (r) => photoUrls(r.photos) },
@@ -57,7 +57,12 @@ const KINDS: Record<string, { table: string; text: string[]; images?: (r: any) =
   comment:      { table: "comments",       text: ["text"] },
   trip_report:  { table: "climb_logs",     text: ["notes", "beta", "gear_beta", "road_note", "outcome_note", "sun_note"], images: (r) => photoUrls(r.photos) },
   group:        { table: "groups",         text: ["name", "blurb", "location"] },
-  topo:         { table: "topos",          text: ["alt", "photographer"] },
+  topo:         { table: "topos",          text: ["alt", "photographer", "caption"] },
+  // A line's words are not plain columns (0492): its name, a caption per variation, a note per marker.
+  topo_line:    { table: "topo_lines",     text: ["label"], more: (r) => [
+    ...(Array.isArray(r.variant_labels) ? r.variant_labels : []),
+    ...(Array.isArray(r.pins) ? r.pins.map((p: any) => p && p.note) : []),
+  ].filter((s: any) => typeof s === "string" && s.trim()) },
   list:         { table: "user_lists",     text: ["name", "description"] },
 };
 function photoUrls(p: unknown): string[] {
@@ -109,7 +114,7 @@ serve(async (req) => {
     if (!row) return DONE();
     if (row.moderation !== "visible") return DONE();
     if (kind === "trip_report" && row.trip_report_visibility === "private") return DONE();
-    const text = spec.text.map((c) => (typeof row[c] === "string" ? row[c] : "")).filter(Boolean).join("\n").slice(0, 12000);
+    const text = spec.text.map((c) => (typeof row[c] === "string" ? row[c] : "")).concat(spec.more ? spec.more(row) : []).filter(Boolean).join("\n").slice(0, 12000);
     // Only images in this project's own Storage are fetched; any other URL is skipped (never a
     // request to an arbitrary host on a row author's say-so).
     const images = (spec.images ? spec.images(row) : []).filter(isOwnStorageUrl);

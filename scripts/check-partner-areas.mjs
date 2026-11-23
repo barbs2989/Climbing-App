@@ -161,5 +161,49 @@ for (const name of ["match_objectives_of_users", "partners_by_objective"]) {
   }
 }
 
-console.log(`\ncheck:partner-areas: ${bad ? "FAILED — " + bad + " of " + ran : "ok — " + ran + " assertion(s)"}`);
+// ── rule 7: a ROUTE listing (0489) is owner-only too, never on a crag route, and has ONE gated reader ──
+// route_partner_listings is the route-level half of partner_areas: "list me for this route" on every route
+// that is not a crag route. It must not become a second `objectives` (public-read), a crag route must stay
+// area-based, and the one function that reads it across climbers must apply the same gate as the rest.
+{
+  let ddl = null; const pols = [];
+  for (const f of files) {
+    const sql = fs.readFileSync(path.join(MIG, f), "utf8");
+    if (/create\s+table\s+(?:public\.)?route_partner_listings\s*\(/i.test(sql)) ddl = f;
+    for (const p of sql.matchAll(/create\s+policy\s+"[^"]+"\s+on\s+(?:public\.)?route_partner_listings\s+for\s+(\w+)[\s\S]*?;/gi)) pols.push({ kind: p[1].toLowerCase(), text: p[0], file: f });
+  }
+  if (!ddl) fail("route_partner_listings is never created (0489) — the route page's List me box writes to nothing");
+  else {
+    const sel = pols.filter((p) => p.kind === "select" || p.kind === "all");
+    const pub = pols.filter((p) => /using\s*\(\s*true\s*\)/i.test(p.text));
+    if (!sel.length) fail("route_partner_listings has no select policy — the owner cannot read their own listings");
+    else if (pub.length) fail(`route_partner_listings has a PUBLIC policy (${pub[0].file}) — the opt-out and the block list would be walked around`);
+    else if (pols.every((p) => /auth\.uid\(\)\s*=\s*user_id/.test(p.text))) ok(`route_partner_listings (${ddl}) is owner-only (${pols.length} policy(ies), each binds auth.uid() = user_id)`);
+    else fail("a route_partner_listings policy does not bind auth.uid() = user_id");
+    const v = need("route_partner_listings_validate");
+    if (v) ((CRAG_SQL.test(v.body) && /<>\s*'peak'/.test(v.body) && /raise\s+exception/i.test(v.body)) ? ok : fail)("route_partner_listings_validate refuses a crag-family route that is not on a peak — crag partners stay area-based");
+    if (v) (/route_id\s*<>\s*new\.route_id/.test(v.body) && !/tg_op\s*=\s*'INSERT'/.test(v.body) ? ok : fail)("the 30-listing cap leaves out the row being written, on every operation — an upsert fires BEFORE INSERT on an existing row, and counting it refused an EDIT at 30");
+    for (const name of ["route_partner_listings_validate", "partner_areas_validate"]) { const g = fns.get(name); if (g) (/screening_match\(\s*new\.note\s*\)/.test(g.body) && /raise\s+exception/i.test(g.body) ? ok : fail)(`${name} refuses a note that matches the screening floor — every signed-in climber who finds the listing reads it`); }
+    const readers = [...fns].filter(([name, f]) => /\broute_partner_listings\b/.test(f.body) && name !== "route_partner_listings_validate").map(([name]) => name);
+    (readers.length === 1 && readers[0] === "partners_by_objective" ? ok : fail)(`the only function that reads route_partner_listings across climbers is partners_by_objective (found: ${readers.join(", ") || "none"})`);
+    const f = fns.get("partners_by_objective");
+    if (f) {
+      const definer = /security\s+definer/i.test(f.head);
+      const gate = /p\.discoverable\s*=\s*true/.test(f.body) && /profile_owner_blocked_me\(/.test(f.body);
+      const signedIn = /auth\.uid\(\)\s+is\s+null\s+then\s+raise/i.test(f.body);
+      const notSelf = /user_id\s*<>\s*auth\.uid\(\)/.test(f.body);
+      (definer && gate && signedIn && notSelf ? ok : fail)(`partners_by_objective is a definer that refuses a signed-out caller, leaves the caller out, and applies discoverable + the block list to listed climbers (definer:${definer} gate:${gate} signed-in:${signedIn} not-self:${notSelf})`);
+      (/\blisted\s+boolean\b/.test(f.head) && /\blisting_note\s+text\b/.test(f.head) ? ok : fail)("partners_by_objective returns listed + listing_note, so a row can say the climber LISTED themselves rather than only saved the route");
+    }
+  }
+  const db = fs.readFileSync(path.join(ROOT, "lib", "db.js"), "utf8");
+  for (const h of ["useMyRouteListings", "addRouteListing", "saveRouteListing", "removeRouteListing"]) {
+    (new RegExp(`export (?:async )?function ${h}\\b`).test(db) ? ok : fail)(`lib/db.js exports ${h}`);
+  }
+  (/routeListingReaders\s*=[^\n]*"partners-by-objective"/.test(db) ? ok : fail)("listing or unlisting on a route refreshes partners-by-objective, so the route page and the finder do not show a stale list");
+  const tab = readAppFile(path.join(ROOT, "RouteDetail.jsx"));
+  (/<ListMeOnRouteBox\b/.test(tab) ? ok : fail)("the route page's Find tab mounts ListMeOnRouteBox — a route that is not a crag route can be listed on");
+}
+
+console.log(`\ncheck:partner-areas: ${bad ?"FAILED — " + bad + " of " + ran : "ok — " + ran + " assertion(s)"}`);
 process.exit(bad ? 1 : 0);

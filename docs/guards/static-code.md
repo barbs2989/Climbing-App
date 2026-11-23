@@ -171,6 +171,13 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     `POLICY_VERSION` — i.e. **every signed-in account, every time the policy is bumped**, which its
     own copy has a branch for (*"Our Terms and Privacy Policy have changed"*). Its
     non-dismissibility is deliberate and correct; the missing reservation was the defect.
+  - **A POPUP IS NOT THE PAGE (2026-11-23).** `#appscroll`'s padding reserves nothing inside a `role="dialog"` layer, so the notice still
+    covered the foot of every sheet. Found by driving the wall-order sheet on the live site with the notice up: at 1568×726 its note box
+    and Send were wholly under the notice, and the centre of Send was the notice's *Read Terms*. The guard now also requires both halves of
+    the popup reservation: App writing `--cm-policy-h` and `data-policy-notice` to `<html>`, and `index.html` ending a `[role="dialog"]`
+    at `var(--cm-policy-h)`. It reads the two spellings; it cannot see whether a popup that is NOT pinned with `inset:0` is shortened.
+    Measured after the fix with a stand-in notice at 390×844, 1568×726 and 1456×819: the backdrop ends at the notice's top and a tap at the
+    centre of Send lands on Send. The browser guards never show the notice (their accounts are stamped as accepted), so none of them walks this.
   - **THE PROBE MEASURED THE WRONG SCROLLER FIRST, AND REPORTED A SMALLER, DIFFERENT FINDING.** It
     scrolled `#appscroll` — which is `overflowY:auto` and looks like the scroller — and got
     `905/905`, "fits, no scroll", on every tab. The **document** is the scroller here

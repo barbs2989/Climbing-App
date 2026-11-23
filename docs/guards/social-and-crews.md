@@ -12,6 +12,9 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     `crew_is_private`).
   - any new SECURITY DEFINER reader of `crew_members` granted to anon/authenticated must answer only a caller on that
     crew, or check `not private`; `crew_listings` and `crew_share_preview` do the latter.
+  **0496 closed the listed crews too**: `crew_visible_to_me` now answers only the organiser and row-holders for every
+  crew, and the bucket `topo-photos` can no longer be LISTED by anyone but a file's owner or an admin (images load
+  by public URL without RLS). The verifier below covers both.
   `scripts/oneoff/verify-0426-private-crew-pglite.mjs` replays every migration into PGlite and walks organiser,
   invitee, outsider and anon through a private and a listed crew (20 expectations, no live database).
 
@@ -854,6 +857,19 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   in both function bodies, demands `ME.matchObjectiveIds` is derived with the imported `CRAG_CATS`,
   and refuses the raw hook's return (10 injections). Probe: `partners_by_objective` finds B through
   the alpine objective and not through the sport one (47 assertions).
+
+- **A ROUTE LISTING IS OWNER-ONLY, NEVER ON A CRAG ROUTE, AND HAS ONE GATED READER (`0489`, `check:partner-areas` rule 7).**
+  Owner 2026-11-23: "you should be able to list yourself as a partner under the partners tab for all routes". A crag
+  route already listed by area; every other route had only the saved objective. `route_partner_listings` is the
+  route-level half, and rule 7 holds four things: every policy binds `auth.uid() = user_id` and none is public
+  (`objectives` is public-read and must not be the model); `route_partner_listings_validate` refuses a crag-family
+  route that is not on a peak, so crag partners stay area-based; `partners_by_objective` is the ONLY function that
+  reads the table across climbers, and it is a definer with the signed-in gate, the not-self filter and
+  `discoverable` + `profile_owner_blocked_me`; and `routeListingReaders` names `partners-by-objective`, so
+  listing or unlisting refreshes the route page and the finder. What it cannot see: whether a row RENDERS as listed
+  (the tab's `tag`), which is a browser check. The route sub-tab's label is *Find* since the same day; four
+  browser walks tap it by label (`check:axe`, `check:blue-on-blue`, `check:overflow`, `check:a11y-badges`), and
+  a walk still tapping "Partners" on a route page would land on the NAV tab of that name without failing.
 
 - **AREA CREWS CAN BE STARTED, FOUND AND JOINED (0302, Step 7).** `lib/StartCrewSheet.jsx` collects what the
   database demands of an area crew (the area, the session's discipline) and what a session needs to be

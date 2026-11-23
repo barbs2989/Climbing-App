@@ -102,28 +102,30 @@ async function run() {
   if (DRY) { say("\n[dry-run] stopping before any profile or fixture write."); return; }
 
   // discoverable:false is the safety contract, so it is written explicitly rather than left
-  // to a column default that could change.
+  // to a column default that could change. show_on_ranks:false is the other half (2026-11-23): with
+  // it on, the owner account sat at #2 of the real Send points board for every climber. Off keeps
+  // both accounts out of Ranks and off every TOP CONTRIBUTORS card (0486); each still sees its own row.
   for (const u of [owner, mate]) {
     const { status, body } = await rest(`profiles?on_conflict=id`, {
       method: "POST",
       body: JSON.stringify({
         id: u.user.id, name: NAMES[u.user.email], username: u.user.email.split("@")[0],
-        location: "CI", discoverable: false,
+        location: "CI", discoverable: false, show_on_ranks: false,
       }),
     });
     if (status >= 300) throw new Error(`profile for ${u.user.email} failed (${status}): ${JSON.stringify(body)}`);
   }
-  say("  profiles written with discoverable=false");
+  say("  profiles written with discoverable=false, show_on_ranks=false");
 
   // Verify the safety contract by READING IT BACK. A 200 on the write is not evidence the
   // flag landed, and this is the one property that keeps a permanent account acceptable.
   const ids = [owner.user.id, mate.user.id];
-  const { body: check } = await rest(`profiles?id=in.(${ids.join(",")})&select=id,name,discoverable`);
-  const bad = (check || []).filter((p) => p.discoverable !== false);
+  const { body: check } = await rest(`profiles?id=in.(${ids.join(",")})&select=id,name,discoverable,show_on_ranks`);
+  const bad = (check || []).filter((p) => p.discoverable !== false || p.show_on_ranks !== false);
   if ((check || []).length !== 2 || bad.length) {
-    throw new Error(`SAFETY CHECK FAILED — expected 2 profiles with discoverable=false, read back ${JSON.stringify(check)}. These accounts could appear in partner browse; fix before using them.`);
+    throw new Error(`SAFETY CHECK FAILED — expected 2 profiles with discoverable=false and show_on_ranks=false, read back ${JSON.stringify(check)}. These accounts could appear in partner browse or on the leaderboards; fix before using them.`);
   }
-  say("  verified: both profiles read back discoverable=false");
+  say("  verified: both profiles read back discoverable=false, show_on_ranks=false");
 
   say("\nAdd these to GitHub Actions secrets (Settings > Secrets > Actions):");
   say(`  CI_TEST_OWNER_EMAIL     ${OWNER}`);

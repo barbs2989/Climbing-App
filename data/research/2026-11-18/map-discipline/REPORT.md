@@ -274,3 +274,66 @@ search had failed went through Photon with several phrasings each (`scripts/phot
   "A Virtuous Circle", North Early Winter Spire "Constantino-Whitelaw", South Early Winters Spire "East
   Buttress Direct") have no approach text; searches found no page for the first two, and the one page opened
   for the third does not state where the party parked. Not pinned.
+
+## Round 7: second online pass over the held, no-page and never-researched routes (2026-11-23)
+
+165 routes in 19 chunks (`chunks7/`, brief `BRIEF7.md`, answers `out7/`): everything still open except the
+27 multi-start routes researched the week before. Each agent got the earlier answer and was told to find a
+page about the route itself. Archived or cached copies of sites that refuse automated access were not used.
+- **Agents returned:** 70 with a named start, 95 stuck. Most of the 70 are peak-level or have no coordinate.
+- **Written (27, unconfirmed, each verified on re-read):**
+  - `batch-r7.json` (24). Official points: Devils Crag and Striped (South Lake, Taboose Pass), Disappointment
+    (Big Pine Creek South Fork), Baldwin (Convict Lake), Maclure (NPS Dog Lake parking, the Lyell Canyon lot),
+    McAdie and Tunnabora (Whitney Portal), Muah (Cottonwood Pass, Horseshoe Meadow), Red Kaweah (NPS
+    Sawtooth), four Colchuck Lake routes (Stuart Lake), two Hibox routes (Rachel Lake), Dome Peak Indian
+    Summer (Downey Creek), Chianti Lichen Bouquet (Burgundy Col pullout; the row's own text names it).
+    Mapped points: Black Hawk (Kennedy Meadows Trailhead Parking, with a trailhead guidepost 47 m away),
+    Mokelumne (Tanglefoot Trailhead node). Pins the catalog already stores on neighbours: Klawatti North
+    Ridge (Eldorado Creek, 17 routes), Mixup (Cascade Pass, 16), Sharkfin Tower (Boston Basin, 10), Mount
+    Rahm Custer traverse and Northwest Mox Northeast Ridge (Depot Creek Road washout, 4).
+  - `batch-r7b.json` (2). Rainier Tahoma Cleaver and South Tahoma Headwall: both rows name the Dry Creek
+    gate on Westside Road. The NPS "Westside Road Trailhead" point is 15 m from a mapped gate; the pin is the
+    mapped lot just south of it. The existing drive directions on Tahoma Cleaver were kept.
+  - `batch-r7c.json` (1). Spaulding Mountain: an unnamed mapped lot on Caribou Pond Road about 0.45 mi before
+    the Appalachian Trail crossing, matching the page's "gate lot, then 0.5 mi to the trail". Photon had
+    missed it because it has no name; Overpass around the crossing found it (`scripts/op7.mjs`).
+- **Corrections to earlier notes:** the WTA coordinate carried for Klawatti (48.5136,-121.1964) is 6 km from
+  the Eldorado lot the catalog stores, so it was not used. The USFS "Standup Creek Trailhead" point is 28 km
+  from Earl Peak and is a different place.
+- **Still held after this round, with the reason:**
+  - One printed coordinate and no mapped lot within 400 m: Casco, French, Dyer, Half Peak, Horseshoe, Jones,
+    Niagara, Owens Peak, Pyramid Peak, Earl Peak. Atlantic has a mapped lot 154 m from the printed point but
+    the pages say parking there is restricted. North Apostle: nearest mapped feature is a gate 395 m away.
+  - Two candidate points: Recess Peak (Bear Ridge Trailhead node, and the Bear Ridge Cutoff lot 870 m away).
+  - Two starts in use: Vermilion Southeast Ridge (Hope Lake and Ice Lake Basin both reach the same saddle),
+    Mount Stuart Direct North Ridge (Stuart Lake and Esmeralda), Sugarloaf (Caribou Pond Road and Route 27).
+  - Named start with no coordinate from any allowed or mapped source: Smith Mountain, Spanish Mountain,
+    Granite Chief, Lamont, Pinchot, Stewart Peak (Nutras Creek), Diamond Peak (Pioneer Gulch), Garfield South
+    Route and Leaning Spire, Cutthroat The Swarm, Hozomeen Southeast Buttress, Ruby Mountain, Lincoln.
+  - Weak, peak-level or single trip report: Ossa, Wheel, Pettit, Sirretta, North Maggie (the only points are
+    a campground), Apex Buttress, Persis Hexorcist (row names a different drainage), Rock Mountain, Liberty
+    Bell Barber Pole.
+  - Goodell Creek routes (Himmelhorn x2, Chopping Block x2, Pyramid, West Twin Needle): held by rule.
+- **Possible misfiling found:** an American Alpine Journal report puts Constantino-Whitelaw on the South
+  Early Winter Spire, not the North. Crater Mountain "Appassionata / Smothered in Smoke" reads like a crag
+  face. Neither was changed.
+- **Audit:** SUMMIT_ONLY 170, NO_SUMMIT 40, CRAG_SUMMIT 0, measured after `batch-r7b.json`. The Spaulding pin
+  was written afterwards and verified on re-read; the audit rerun behind it was still queued for the
+  database when this was recorded, so the expected count of 169 is not yet measured.
+
+### Round 7 follow-up (2026-11-23)
+
+- **Audit, measured:** SUMMIT_ONLY 167, NO_SUMMIT 40, CRAG_SUMMIT 0 (196 before the round; 30 writes).
+- **Written (2 more, `batch-r7d.json`, unconfirmed, verified on re-read):** Rock Mountain Northeast Ridge (USFS
+  Merritt Lake Trailhead; the row names that trailhead at about 2,950 ft, the ground at the point is 3,027 ft,
+  and the catalog stores the same lot on the Mount Howard routes the traverse crosses) and Cutthroat "The
+  Swarm" (the climbers' pullout the catalog stores on the North Ridge; the row says to begin as for that route).
+- **Checked and left held:** 14ers.com lists only fourteener trailheads, so it gives no second publisher for
+  South Halfmoon, Burns Gulch, Carson Pass or the Horseshoe turnoff. Overpass around the driving-guide
+  waypoints for Lamont, Sirretta and Owens Peak found no lot, trailhead or sign within 400 m
+  (`scripts/op7b.mjs`).
+- **Catalog pins exist for peaks whose stuck routes have no approach text at all:** Chair Peak (Alpental),
+  Mount Johnson (Upper Dungeness), Chimney Rock (Pete Lake), North Early Winter Spire (Blue Lake), Red
+  Mountain (PCT at Snoqualmie Pass), Mount Hinman (Necklace Valley). Pinning those 20 or so routes would be
+  peak-level inference with no page and no row text behind it, so they were not written. This is an owner
+  decision: "same lot as the peak's other routes" is cheap to apply if wanted.

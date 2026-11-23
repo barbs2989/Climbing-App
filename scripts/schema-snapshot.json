@@ -1,6 +1,6 @@
 {
   "note": "Generated from the live database by scripts/refresh-schema-snapshot.mjs. Do not hand-edit.",
-  "generatedAt": "2026-11-19",
+  "generatedAt": "2026-11-23",
   "tables": {
     "accessibility_reports": [
       "assistive",
@@ -306,6 +306,7 @@
     "crew_day_acks": [
       "crew_id",
       "date",
+      "rank",
       "user_id"
     ],
     "crew_email_invites": [
@@ -392,6 +393,8 @@
       "id",
       "itinerary",
       "itinerary_by",
+      "meet_lat",
+      "meet_lng",
       "meet_place",
       "meet_time",
       "private",
@@ -583,7 +586,9 @@
       "moderation",
       "name",
       "policy",
+      "region",
       "rules",
+      "search_text",
       "visibility"
     ],
     "hazard_votes": [
@@ -837,6 +842,15 @@
       "region",
       "route_ids",
       "state"
+    ],
+    "route_partner_listings": [
+      "created_at",
+      "free_from",
+      "free_to",
+      "note",
+      "route_id",
+      "updated_at",
+      "user_id"
     ],
     "route_ratings": [
       "created_at",
