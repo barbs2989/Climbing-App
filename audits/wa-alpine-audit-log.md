@@ -39677,3 +39677,51 @@ Face, Copper Peak South Route (all verified above).
 
 0 confirmed errors fixed, 3 newly flagged for human review, 5 clean.
 Next batch will continue id-ascending from `wa_copper_peak_south_route` (pass 9).
+
+## 2026-11-23 — Pass 9, Batch 568
+
+Eight routes across 4 peaks, continuing id-ascending from `wa_copper_peak_south_route`: Corteo
+Peak (Southwest Ridge), Crater Mountain (Appassionata Smothered In Smoke, Standard Route), Crooked
+Thumb Peak (East Face, South Route), Cutthroat Peak (Cauthorn-Wilson Couloir, East Face — stored
+as `wa_cutthroat_peak_northeast_face`, South Buttress).
+
+Verified against independent sources and found correct: Corteo Peak's `high_point_ft` (8,107) and
+FA (John Lehmann and Hermann Ulrichs, July 1935) match Wikipedia and ListsOfJohn's LiDAR figure
+exactly. Crater Mountain Standard Route's `high_point_ft` (8,132) matches current Wikipedia
+(NAVD88); an older SummitPost figure of 8,128 ft is a minor non-contradicting variant, not worth
+flagging. Cauthorn-Wilson Couloir's length (244 m / 800 ft), pitch count (7), and FA party (Dan
+Cauthorn and Tim Wilson) match Mountain Project's dedicated route page almost exactly. Cutthroat
+Peak East Face's grade/shape (III 5.10, 6 pitches) and FA (Dale Bard, Yvon Chouinard, John
+Cunningham, 1976) match an AAC Publications editor's note describing this exact route exactly.
+South Buttress's length (259 m / 850 ft) and pitch count (12) match Mountain Project's South
+Buttress page almost exactly. Crooked Thumb Peak's elevation (8,129 ft) is confirmed on both
+routes against Wikipedia and Peakbagger.
+
+No confirmed errors with a clean, sourced fix this batch.
+
+**Clean (4):** Corteo Peak Southwest Ridge, Crater Mountain Standard Route, Cutthroat Peak East
+Face (plus, on their checked sub-fields, Cauthorn-Wilson Couloir and South Buttress).
+
+**Flagged for human review (4):**
+- Appassionata Smothered In Smoke (Crater Mountain): a brand-new 2025 micro-route (5.1 R, 1
+  pitch, 12 m, FA Leland Windham) isn't yet documented on Mountain Project, AAC, or anywhere else
+  reachable this run — too new to confirm or contradict.
+- Crooked Thumb Peak East Face and South Route: both routes' FA parties (Jackson/Jensen/Marts/
+  Schmechel and Ardussi/Magnusson/Mech/Swanson respectively, both "Mountaineers, July 31, 1963")
+  could not be confirmed by any source found — Wikipedia instead credits the peak's overall FA to
+  Fred and Helmy Beckey in 1940, which doesn't necessarily contradict a later named-route FA but
+  gives no primary source tying the 1963 party to either specific route. South Route's own
+  `corrections` field already flagged sparse sourcing from a prior pass; this re-confirms rather
+  than resolves it.
+- Cauthorn-Wilson Couloir's FA date ("April 1984"): the FA party is confirmed but no source found
+  gives a specific month, so the date itself is left unconfirmed rather than guessed.
+- South Buttress's `high_point_ft` (8,050) conflicts with the other two Cutthroat Peak routes in
+  this same batch (Cauthorn-Wilson Couloir, East Face), which both store 8,066 — and the sources
+  actively disagree with each other, not just with us: 8,050 ft is the older USGS "Washington
+  Pass" quad figure (also used by the Mountaineers' route page and an AAC note), while 8,066 ft is
+  a newer LiDAR-based figure (current Wikipedia, PeakVisor, ListsOfJohn's LiDAR column). Flagging
+  for a human to pick one canonical elevation across all of this peak's routes rather than
+  guessing between two sourced figures.
+
+0 confirmed errors fixed, 4 newly flagged for human review, 4 clean.
+Next batch will continue id-ascending from `wa_cutthroat_south_buttress` (pass 9).
