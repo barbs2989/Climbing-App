@@ -42,6 +42,17 @@ views under `groupsTab`: For you · Your groups · Your activity · Discover · 
   for a screen reader still says tap to leave, and leaving asks first).
 - **Removing a member** (the ✕ on Members) is for the owner and moderators only, never on yourself or the owner, and
   a moderator cannot remove another moderator.
+- **Repeating events** (`seriesDates` in `lib/eventSeries.js`): Weekly, Every 2 weeks and Monthly write 10, 8 and 6 separate
+  `group_events` rows sharing a `series_id`, in one insert; the form says how many and that the series then ends. Monthly keeps
+  the day of the month, clamped to a short month's last day (Jan 31, Feb 28, Mar 31).
+- **The host's event tools** (owner 2026-11-19; the open-event sheet in `ClimbMatch.jsx`, host only). **Edit** reopens
+  `GroupEventForm` on that event (`editId` in its draft: no group or repeat choice) and saves through `updateGroupEvents`;
+  on a series, a checkbox applies the title, time, meeting spot, details and cap to the later events too, whose dates
+  never move. A series event also shows a *This series* card: how many are left and the last date, **Add N more**
+  (`seriesExtension` continues after the last date and `createGroupEvents` writes the round under the same `series_id`),
+  and **Cancel this and the N after it** (`seriesLater`, `deleteGroupEvents`, one confirm). The host's 10-day reminder
+  for the last event of a series says it is the last. Only the host may edit (the `group events edited by the host`
+  policy); a group organizer can cancel but sees none of these tools on another host's event.
 - **Share an event** (owner 2026-11-13). A public group's event sheet offers *Share this event*: Text, Email,
   Facebook, Copy link and More… (`ShareVia` with `facebook`). Facebook's dialog takes only the link, so the message is
   copied first, to paste into a post or a Facebook group. The message carries the title, date, time, place and group,
@@ -103,10 +114,11 @@ treats it as a DELETE. Probe: `scripts/oneoff/probe-live-takedown.mjs`.
 | `src/components/GroupEventsTab.tsx` | `GroupEventsTab`, an open group's Events tab; past three past events, *All N past events →* opens a `ListPage` with a search by name or place and newest/oldest. Both group pages stack at 792, over the group view and under the event (795) or the Remove sheet (860) a row opens |
 | `src/components/GroupMediaTab.tsx` | `GroupMediaTab`, an open group's Media grid |
 | `src/components/GroupJoinQuestionsEditor.tsx` | `GroupJoinQuestionsEditor`, the membership-questions editor in the create-group form (PR63) |
-| `src/components/GroupEventForm.tsx` | `GroupEventForm`, the create-an-event sheet |
+| `src/components/GroupEventForm.tsx` | `GroupEventForm`, the create-an-event sheet, and the editor for one |
+| `lib/eventSeries.js` | `SERIES_COUNTS`, `seriesDates`, `seriesExtension`, `seriesLater`: the dates of a repeating series |
 | `lib/groupRules.js` | `groupVisOf`, `groupCanHostEvent`, `groupJoinPath`, `groupJoinLabel`, `GROUP_TOPICS`, `groupWhere` (moved out of `ClimbMatch.jsx`, PR62) |
 | `src/components/GroupsTab.tsx` | `GroupsTab`, the Groups screen body (For you / Your groups / Your activity / Discover / Events), lifted from App in PR61; App passes it the helpers above |
-| `lib/db.js` | `useMyGroups`, `createGroupRow`, `updateGroupSettings`, `uploadGroupPhoto`, `setGroupVisibility`, `createGroupEvents`, `regionOfPlace`, `regionAbbr`, `useMyPartnerAreas`, `useStates`, `useGroupFeed`, `useAreaPoint` |
+| `lib/db.js` | `useMyGroups`, `createGroupRow`, `updateGroupSettings`, `uploadGroupPhoto`, `setGroupVisibility`, `createGroupEvents`, `updateGroupEvents`, `deleteGroupEvents`, `regionOfPlace`, `regionAbbr`, `useMyPartnerAreas`, `useStates`, `useGroupFeed`, `useAreaPoint` |
 | `lib/search.js` | `searchMatches` |
 | `lib/live.js` | `useLiveQuery` — the Realtime subscription behind the live feed |
 | `src/components/GroupCrewPicker.tsx` | Form a crew from this group: pick members, then a saved climb or an area |

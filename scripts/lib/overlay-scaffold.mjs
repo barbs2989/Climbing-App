@@ -64,6 +64,24 @@ export const EXTRA_STATE_OPENERS = {
   areaTreeOpen: { open: 'setSelArea(MOUNTAINS.find(function(m){return m.areaType==="state";})||null);setAreaTreeOpen(true);' },
   reviewQueue: { open: 'window.__ovAdminGate=true;setReviewQueue("standing");' },
 };
+// WHERE A POPUP OPENS, for the cases a flag alone cannot build: reached with `?zp=<name>`.
+//
+// A new page opens at the TOP (owner, 2026-11-19); the one exception is a control that edits a
+// specific field, which lands on that field. check:pinned-dismiss asks every overlay it opens
+// whether it started at the top, but the `z` opener only ever sets an overlay's own state, and the
+// bug that prompted the rule needed three: "Add trip report" opened the log form with
+// logModalFocus="report", which scrolled it ~20 sections down. So each entry here builds one such
+// opening and says where it must land:
+//   expect "top"    — no pane in the popup may be scrolled.
+//   expect "target" — a pane MUST be scrolled. This is the control: it proves the probe can see a
+//                     scrolled pane at all, and that the fix did not flatten the deliberate case.
+// `open` runs inside App after the same 1200ms the other openers wait.
+export const TOP_PROBES = {
+  logReportNew: { expect: "top", what: "Add trip report on a climb with no write-up",
+    open: 'setLogEditData({_idx:0,routeId:ROUTES[0].id,date:"2026-01-01"});setLogModalFocus("report");setLogModal(ROUTES[0]);' },
+  logReportEdit: { expect: "target", what: "Edit report on a climb that has a write-up (lands on the write-up box)",
+    open: 'setLogEditData({_idx:0,routeId:ROUTES[0].id,date:"2026-01-01",text:"Overlay probe write-up."});setLogModalFocus("report");setLogModal(ROUTES[0]);' },
+};
 export const ADMIN_GATE = { from: "{reviewQueue&&isAdmin&&", to: "{reviewQueue&&(isAdmin||window.__ovAdminGate)&&" };
 
 // ---------------------------------------------------------------------------------------
@@ -692,6 +710,9 @@ export function buildOpener(code, anchor, label, coreCode, routeDetailNames_) {
       // `?zx=` opens an EXTRA_STATE_OPENERS entry, asked for by name (see that registry).
       "var zx=p.get('zx');var __X={" + Object.entries(EXTRA_STATE_OPENERS).map(([n, e]) => JSON.stringify(n) + ":function(){" + e.open + "}").join(",") + "};" +
       "if(zx&&__X[zx])setTimeout(function(){try{__X[zx]();}catch(e){(window.__overlayOpenErrors=window.__overlayOpenErrors||{})[zx]=String(e&&e.message||e);}window.__overlaysReady=true;},1200);" +
+      // `?zp=` opens a TOP_PROBES entry (see that registry).
+      "var zp=p.get('zp');var __P={" + Object.entries(TOP_PROBES).map(([n, e]) => JSON.stringify(n) + ":function(){" + e.open + "}").join(",") + "};" +
+      "if(zp&&__P[zp])setTimeout(function(){try{__P[zp]();}catch(e){(window.__overlayOpenErrors=window.__overlayOpenErrors||{})[zp]=String(e&&e.message||e);}window.__overlaysReady=true;},1200);" +
 "if(_zr){setTimeout(function(){openRoute(__zrPick());window.__routeOpen=true;window.__overlaysReady=true;},900);}" +
       // __overlaysReady means "the opener has RUN", not "the effect mounted". Every guard
       // waits on this flag and then asks what happened; setting it synchronously while the
@@ -714,7 +735,7 @@ export function buildOpener(code, anchor, label, coreCode, routeDetailNames_) {
       "if(z)setTimeout(function(){var _rd=__rdOv.indexOf(z)>=0;__ovOpen.current(z);" +
       "if(_rd)setTimeout(function(){window.__overlaysReady=true;},2500);" +
       "else window.__overlaysReady=true;},1200);" +
-      "else if(!_zr&&!zx)window.__overlaysReady=true;},[]);",
+      "else if(!_zr&&!zx&&!zp)window.__overlaysReady=true;},[]);",
   };
 }
 

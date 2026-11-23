@@ -5,6 +5,7 @@ import { useScopedWishlistRoutes, useSubtreeRoutes, useRoutesByIds, useAreaClass
 import { BTN } from "../../lib/buttonStyles.js";
 import LoadingRows from "./LoadingRows.tsx";
 import { DISCIPLINES, placeOf } from "../../lib/areaBrowserShared.js";
+import { displayGrade, splitProtection } from "../../lib/grade";
 import Chevron from "./Chevron.tsx";
 import RouteRow from "./RouteRow.tsx";
 import type { RouteRowRoute } from "./RouteRow.tsx";
@@ -69,7 +70,10 @@ export default function DbSuggestedClimbs({ area, onOpen, C }: DbSuggestedClimbs
     .sort((a, b) => (recentPos[a.id] ?? 99) - (recentPos[b.id] ?? 99))
     .slice(0, 5);
   const recentSet = new Set(recent.map(r => r.id));
-  const fresh = (r: DbSuggestedClimbsRow) => !completedIds.has(r.id) && !(wishlist || []).includes(r.id) && !recentSet.has(r.id);
+  /* An X or R/X climb is never SUGGESTED, in a ranked row or in the fallback list (suggestTooBold in core says
+     why). Your own objectives and the climbs you opened stay: those are your picks, not ours. */
+  const tooBold = (r: DbSuggestedClimbsRow) => /X/.test(splitProtection(displayGrade(r)).prot || "");
+  const fresh = (r: DbSuggestedClimbsRow) => !completedIds.has(r.id) && !(wishlist || []).includes(r.id) && !recentSet.has(r.id) && !tooBold(r);
   const classicPicks = ((classics || []) as DbSuggestedClimbsRow[]).filter(fresh);
   const classicIds = new Set(classicPicks.map(r => r.id));
   const behindClassics = (rows: unknown) => classicPicks.concat(((rows || []) as DbSuggestedClimbsRow[]).filter(r => fresh(r) && !classicIds.has(r.id)));

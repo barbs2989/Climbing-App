@@ -55,6 +55,7 @@ function extractFn(src, marker, what) {
 const fns = [
   extractFn(CORE, "function _suggAccum(", "_suggAccum"),
   extractFn(CORE, "function _suggShape(", "_suggShape"),
+  extractFn(CORE, "function suggestLogWeight(", "suggestLogWeight"),
   extractFn(CORE, "function suggestionProfile(", "suggestionProfile"),
   extractFn(CORE, "function suggestDiscSlots(", "suggestDiscSlots"),
 ].join("\n");
@@ -67,6 +68,7 @@ const MAXN = Number(RegExp.$1);
 
 const run = new Function("logs", "routeById", "viewed", `
   var SUGGEST_DISC_MAX = ${MAXN};
+  var SUGGEST_HALF_LIFE_YEARS = 2;
   function catOf(r){ return r && r.disc; }
   function routeGradeVal(r){ return r && r.gv != null ? r.gv : -1; }
   function suggGainFt(r){ return r && r.gain != null ? r.gain : null; }
@@ -178,7 +180,7 @@ const check = (name, cond, detail) => {
   let F;
   try {
     F = new Function("displayGrade", "splitProtection", "gradeNumFor", "gradeSystemForDiscipline", "routeCompleted",
-      need.join("\n") + "\n" + lines.slice(a, b).join("\n") + "\nreturn {routeGradeVal,suggestDiscSlots,rankSimilarRoutes,suggestSlotQuery,suggestWindow,ADDR_GRADES};")(
+      need.join("\n") + "\n" + lines.slice(a, b).join("\n") + "\nreturn {routeGradeVal,suggestDiscSlots,rankSimilarRoutes,suggestSlotQuery,suggestWindow,suggestionProfile,suggestLogWeight,ADDR_GRADES};")(
       displayGrade, splitProtection, gradeNumFor, gradeSystemForDiscipline, (id, logs) => (logs || []).some(l => l.routeId === id));
   } catch (e) {
     console.error("check:suggestion-discs FAILED — the suggestion block no longer runs on its own: " + e.message);
@@ -206,6 +208,27 @@ const check = (name, cond, detail) => {
     names(F.rankSimilarRoutes([rt("plain", "sport", "5.10a"), rt("cl", "sport", "5.10b", { classic: true })], s10, { limit: 5 })) === "cl,plain");
   check("...but quality never pulls in a climb the window left out",
     names(F.rankSimilarRoutes([rt("plain", "sport", "5.10a"), rt("far", "sport", "5.12a", { classic: true, stars: 5 })], s10, { limit: 5 })) === "plain");
+  // PROTECTION (2026-11-23): a 5.7 trad climber was offered "The Asterisk 5.7 X".
+  check("an X-rated climb is never suggested, at the exact grade or as a classic",
+    names(F.rankSimilarRoutes([rt("x", "sport", "5.10a X", { classic: true, stars: 5 }), rt("rx", "sport", "5.10a R/X"), rt("plain", "sport", "5.10b")], s10, { limit: 5 })) === "plain");
+  check("an R-rated climb stays, behind an unrated climb at the same grade",
+    names(F.rankSimilarRoutes([rt("r", "sport", "5.10a R"), rt("plain", "sport", "5.10a")], s10, { limit: 5 })) === "plain,r");
+  check("PG13 is not a reason to demote", names(F.rankSimilarRoutes([rt("pg", "sport", "5.10a PG13"), rt("far", "sport", "5.10c")], s10, { limit: 5 })) === "pg,far");
+
+  // RECENCY (2026-11-23): the centre was the plain mean, so a 5.6 from six years ago weighed as much as last month's 5.11a.
+  const NOW = Date.UTC(2026, 10, 23), ago = y => new Date(NOW - y * 31557600000).toISOString().slice(0, 10);
+  const near = (a, b) => Math.abs(a - b) < 0.02;
+  check("a log's weight halves every two years, with a floor, and an undated log counts as two years old",
+    near(F.suggestLogWeight(ago(0), NOW), 1) && near(F.suggestLogWeight(ago(2), NOW), 0.5) && near(F.suggestLogWeight(ago(4), NOW), 0.25) && F.suggestLogWeight(ago(40), NOW) === 0.15 && F.suggestLogWeight(null, NOW) === 0.5 && F.suggestLogWeight("not a date", NOW) === 0.5);
+  const RR = { old: rt("old", "sport", "5.6"), neu: rt("neu", "sport", "5.11a"), t1: rt("t1", "trad", "5.7"), t2: rt("t2", "trad", "5.7"), t3: rt("t3", "trad", "5.7") };
+  const prof = F.suggestionProfile([{ routeId: "old", date: ago(6) }, { routeId: "neu", date: ago(0.1) }], id => RR[id], NOW);
+  const vOld = F.routeGradeVal(RR.old), vNew = F.routeGradeVal(RR.neu);
+  check("the centre leans to what you climbed lately, not the plain mean",
+    !!prof && prof.gradeVal > (vOld + vNew) / 2 + 0.05 && prof.gradeVal < vNew, prof ? `centre ${prof.gradeVal.toFixed(3)} between ${vOld.toFixed(3)} and ${vNew.toFixed(3)}, plain mean ${((vOld + vNew) / 2).toFixed(3)}` : "no profile");
+  const lead = F.suggestionProfile([{ routeId: "t1", date: ago(8) }, { routeId: "t2", date: ago(8) }, { routeId: "t3", date: ago(8) }, { routeId: "neu", date: ago(0.1) }], id => RR[id], NOW);
+  check("the discipline you climb NOW leads one you climbed more of years ago", !!lead && lead.discs[0].disc === "sport" && lead.discs.length === 2, lead ? lead.discs.map(d => d.disc).join(",") : "no profile");
+  check("...and the old discipline keeps its slot", !!lead && lead.discs.some(d => d.disc === "trad"));
+
   check("the other discipline is still never ranked into a slot",
     names(F.rankSimilarRoutes([rt("b", "bouldering", "V4"), rt("m", "sport", "5.10a")], s10, { limit: 5 })) === "m");
 
@@ -257,6 +280,7 @@ check(`one pool read per slot the cap allows (SUGGEST_DISC_MAX = ${MAXN})`,
   slotCalls.length === MAXN && slotCalls.every((n, i) => n === i),
   `found slot reads for [${slotCalls.join(",")}]; a slot with no read of its own is never fetched for — raise or lower the hooks with the cap`);
 check("each slot's read is built from THAT slot (slotQuery(slots[i]))", /slotQuery\(\s*slots\[\s*i\s*\]\s*\)/.test(sugCode));
+check("an X-rated climb is kept out of the fallback list too", /const fresh\s*=[^;]*!tooBold\(r\)/.test(sugCode) && /tooBold\s*=[^;]*splitProtection\(/.test(sugCode));
 check("no read is keyed on the single top discipline", !/profile\.disc\b/.test(sugCode), "profile.disc is the busiest discipline only — the 2026-09 bug");
 const fallbackCall = sugCode.match(/useSubtreeRoutes\s*\([^;]*?\{\s*sortBy[^}]*\}\s*\)/);
 check("the fallback pool is discipline-blind and not sorted by name",

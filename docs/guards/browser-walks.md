@@ -1069,6 +1069,20 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   centre hits (`elementFromPoint`). Owner, 2026-10-24: *"The x out to close the page and back button
   need to be sticky when a popup page comes up."* Runs in CI as a second step of the overlay-scroll
   job in `render-guards.yml`; not in `npm run build`.
+  - **It also asks where each popup OPENED** (owner, 2026-11-19: *"it needs to start you at the top of the
+    page ... the only reason I wouldn't want you to start at the top of the page is when you are editing a
+    specific field"*). Before the scan moves anything it reads the furthest any pane in the top layer is
+    scrolled; more than 1px fails unless `OPENS_ELSEWHERE` in the script names the overlay with a reason
+    (empty, and expected to stay so: the walk opens an overlay by its own state, which carries no field).
+    The openings a flag cannot build are `TOP_PROBES` in `scripts/lib/overlay-scaffold.mjs`, opened with
+    `?zp=`: `logReportNew` (the log form asked for its report on a climb with no write-up: the bug that
+    prompted the rule, 3,647px down before the fix) must be at the top, and `logReportEdit` (the same with a
+    write-up) MUST be scrolled. The second is the control: if it ever reads 0 the probe has gone blind and
+    every "top" verdict is unproven. Injection: restoring the unconditional `scrollIntoView` in
+    `lib/LogAscent.jsx` fails `logReportNew`.
+    **Cannot see:** a pane that stays mounted while a sub-tab or step swaps its content (`lib/usePaneTop.js`
+    covers those; nothing walks them), the page itself on a tab change, or any opening not listed in
+    `TOP_PROBES` that carries a focus (a pencil's field, a Help topic).
   - **What it found before the fix:** 5 popups lost the ✕ with the demo's own content (Menu, Privacy,
     Log a climb at 3,124px of travel, Suggest a fix at 3,634px, the trip report), the sign-in sheet's ✕
     sat UNDER the app header, Settings › Your data's Back sat under a range-slider thumb (z 4 over a
