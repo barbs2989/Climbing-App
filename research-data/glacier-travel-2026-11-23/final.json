@@ -1400,12 +1400,13 @@
   "peak": "Corteo Peak",
   "discipline": "mountaineering",
   "kindToday": "glacier",
-  "glacier": "unsure",
+  "glacier": "no",
   "snowInSeason": "yes",
   "basis": "text",
   "why": "Lewis Glacier remnant crossed both ways; text contradicts itself on whether it is a glacier hazard.",
   "verified": false,
-  "webResearched": true
+  "webResearched": true,
+  "research2": "no/yes: A 2017 trip report says the Lewis Glacier has shrunk to a snowfield, climbed in crampons with the party roping only later on a rock ridge notch, and a 2008 report found it firm snow needing crampons."
  },
  {
   "id": "wa_cosho_peak_scramble",
@@ -2679,12 +2680,13 @@
   "peak": "Mount Goode",
   "discipline": "alpine",
   "kindToday": "glacier",
-  "glacier": "unsure",
+  "glacier": "no",
   "snowInSeason": "yes",
   "basis": "text",
   "why": "skirts the edge of the upper Goode Glacier and an icy moat high on the route, though the approach never crosses it",
   "verified": false,
-  "webResearched": true
+  "webResearched": true,
+  "research2": "no/unsure: The first-ascent account in the alpine club journal puts the route on the ridge above the glacier, with only an icy moat skirted near the final gendarmes and no glacier crossing."
  },
  {
   "id": "wa_goode_mountain_northeast_face",
@@ -2962,12 +2964,13 @@
   "peak": "Horseshoe Peak",
   "discipline": "alpine",
   "kindToday": "glacier",
-  "glacier": "unsure",
+  "glacier": "no",
   "snowInSeason": "yes",
   "basis": "text",
   "why": "approach crosses glaciated terrain near the Sahale Glacier; snowfield descent needs an axe",
   "verified": false,
-  "webResearched": true
+  "webResearched": true,
+  "research2": "no/unsure: A trip report describes leaving Sahale camp by a rock rib, crossing the easy snow tongue at the glacier's end and a basin snowfield, then a ledge and dirt gully to the summit, with no crevasse travel or rope."
  },
  {
   "id": "wa_hourglass_gully_winter",
@@ -3123,12 +3126,13 @@
   "discipline": "mountaineering",
   "kindToday": "glacier",
   "glacier": "no",
-  "snowInSeason": "unsure",
+  "snowInSeason": "no",
   "basis": "text",
   "why": "snow lingers on upper slopes in July only",
   "verified": true,
   "secondReview": "no/unsure: Indian Head Peak talus scramble, no glacier; steep snow only into July on upper slopes.",
-  "webResearched": true
+  "webResearched": true,
+  "research2": "unsure/no: An early-September trip report describes a bushy hillside then class 2 to 3 talus and ridge to both summits, with no snow on the peak's slopes."
  },
  {
   "id": "wa_indian_mountain_baker_scramble",
@@ -4764,12 +4768,13 @@
   "peak": "Mount Crowder",
   "discipline": "alpine",
   "kindToday": "glacier",
-  "glacier": "unsure",
+  "glacier": "no",
   "snowInSeason": "unsure",
   "basis": "text",
   "why": "Used as a descent on a Pickets traverse; text mentions glacier remnants on the east slope in early July only.",
   "verified": false,
-  "webResearched": true
+  "webResearched": true,
+  "research2": "no/unsure: A trip report describes the northeast ridge as grassy ledges and short rock moves down to a scree slope and snow, with no glacier ice mentioned."
  },
  {
   "id": "wa_mount_crowder_southwest_route",
@@ -5082,12 +5087,13 @@
   "peak": "Mount Hinman",
   "discipline": "mountaineering",
   "kindToday": "glacier",
-  "glacier": "unsure",
+  "glacier": "no",
   "snowInSeason": "yes",
   "basis": "text",
   "why": "Glacier largely gone but text says treat remnant as glaciated; permanent snowfield basin.",
   "verified": false,
-  "webResearched": true
+  "webResearched": true,
+  "research2": "no/unsure: Two trip reports describe a small, mostly melted-out remnant crossed on foot with an axe while the route is a ridge and talus scramble, with no crevasses mentioned."
  },
  {
   "id": "wa_mount_hinman_southeast_route",
@@ -5108,12 +5114,13 @@
   "peak": "Mount Hinman",
   "discipline": "mountaineering",
   "kindToday": "glacier",
-  "glacier": "unsure",
+  "glacier": "no",
   "snowInSeason": "yes",
   "basis": "text",
   "why": "Ascends the receding Hinman Glacier remnant; roping \"likely unnecessary\".",
   "verified": false,
-  "webResearched": true
+  "webResearched": true,
+  "research2": "no/unsure: Trip reports describe the west ridge from La Bohn Gap as boulder hopping past a small remnant glacier walked across unroped, with no crevasses mentioned."
  },
  {
   "id": "wa_mount_hinman_west_route",
@@ -8872,12 +8879,13 @@
   "peak": "Trapper Mountain",
   "discipline": "mountaineering",
   "kindToday": "glacier",
-  "glacier": "unsure",
+  "glacier": "no",
   "snowInSeason": "yes",
   "basis": "text",
   "why": "Spring snow couloir; glacier presence on line not stated.",
   "verified": false,
-  "webResearched": true
+  "webResearched": true,
+  "research2": "no/unsure: A trip report I read climbs the north couloir as a snow couloir reached by a col, a lake and a debris fan, with no glacier crossing described."
  },
  {
   "id": "wa_trapper_mountain_south_slopes",
@@ -9291,5 +9299,57 @@
   "basis": "text",
   "why": "Text says no glacier; snow only early or late squalls.",
   "verified": false
+ },
+ {
+  "id": "adams_avalanche_glacier",
+  "name": "Avalanche Glacier",
+  "peak": "Mount Adams",
+  "discipline": "mountaineering",
+  "kindToday": "glacier",
+  "glacier": "yes",
+  "snowInSeason": "yes",
+  "basis": "text",
+  "why": "Climbs the Avalanche Glacier itself; its own hazards name crevasses opening as the season goes on.",
+  "verified": false,
+  "legacyPrefix": true
+ },
+ {
+  "id": "adams_northwest_ridge",
+  "name": "North Face of the Northwest Ridge",
+  "peak": "Mount Adams",
+  "discipline": "alpine",
+  "kindToday": "glacier",
+  "glacier": "yes",
+  "snowInSeason": "yes",
+  "basis": "text",
+  "why": "Snow and ice face beside the Adams Glacier, approached from the Adams Glacier basin; its own hazards name crevasse and moat where it gains the face.",
+  "verified": false,
+  "legacyPrefix": true
+ },
+ {
+  "id": "rainier_north_mowich_headwall",
+  "name": "North Mowich Headwall",
+  "peak": "Mount Rainier",
+  "discipline": "mountaineering",
+  "kindToday": "glacier",
+  "glacier": "yes",
+  "snowInSeason": "yes",
+  "basis": "text",
+  "why": "Climbs the North Mowich Glacier headwall to Liberty Cap and descends Emmons-Winthrop; its own text names a glacier-crossing approach.",
+  "verified": false,
+  "legacyPrefix": true
+ },
+ {
+  "id": "rainier_central_mowich_face",
+  "name": "Central Mowich Face",
+  "peak": "Mount Rainier",
+  "discipline": "alpine",
+  "kindToday": "glacier",
+  "glacier": "yes",
+  "snowInSeason": "yes",
+  "basis": "text",
+  "why": "Drops onto the North Mowich Glacier and climbs a glaciated face to Liberty Cap; descends Emmons-Winthrop or Disappointment Cleaver.",
+  "verified": false,
+  "legacyPrefix": true
  }
 ]
