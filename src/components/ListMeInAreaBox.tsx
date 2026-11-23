@@ -58,7 +58,7 @@ export default function ListMeInAreaBox({ areaId, areaName, areaType, C, uid, my
     <div role="region" aria-label={"List yourself " + prep + " " + name} style={{ ...CARD(C, listed ? C.green : C.blueDim), marginTop: 12 }}>
       <div style={EYEBROW(listed ? C.green : C.blue)}>Your listing</div>
       <div style={{ fontSize: 14.5, fontWeight: 800, color: C.text, marginBottom: 4, overflowWrap: "anywhere" }}>{listed ? "You’re listed " + prep + " " + name + " ✓" : "Climb " + prep + " " + name + "?"}</div>
-      <div style={{ fontSize: 12.5, color: C.textSub, lineHeight: 1.5, marginBottom: 10 }}>{listed ? "Climbers who search " + name + " can find you and reach out." : "List yourself here so climbers searching " + name + " can find you — just like you’re finding them."}</div>
+      <div style={{ fontSize: 12.5, color: C.textSub, lineHeight: 1.5, marginBottom: 10 }}>{listed ? "Climbers who search " + name + " can find you and reach out." : "List yourself here so climbers searching " + name + " can find you."}</div>
       <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
         <button type="button" onClick={toggle} disabled={busy} aria-pressed={listed} aria-label={listed ? "Listed " + prep + " " + name + tx(" — tap to remove") : "List me " + prep + " " + name} style={{ flex: listed ? "0 0 auto" : "1 1 auto", minHeight: 44, padding: "0 16px", borderRadius: 10, border: listed ? "1px solid " + C.border : "none", background: listed ? C.surface : C.blueSolid, color: listed ? C.textSub : C.onSolid, fontSize: 13.5, fontWeight: 800, cursor: busy ? "default" : "pointer", opacity: busy ? 0.6 : 1, overflowWrap: "anywhere" }}>{listed ? "Remove listing" : "List me " + prep + " " + name}</button>
         {listed && onListMe ? (

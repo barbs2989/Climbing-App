@@ -44,7 +44,7 @@ function useAnswer(t, showToast) {
     respondToLogTag(t.log_id, verdict)
       .then(() => {
         const followed = verdict === "confirmed" && confirmedHandler ? confirmedHandler(t) : false;
-        if (showToast && !followed) showToast(verdict === "confirmed" ? "Confirmed — thanks for backing up " + who + "’s climb." : "Marked as not with you — " + who + "’s climb no longer counts on Ranks.");
+        if (showToast && !followed) showToast(verdict === "confirmed" ? "Confirmed" : "Marked as not with you — " + who + "’s climb no longer counts on Ranks.");
         qc.invalidateQueries({ queryKey: ["leaderboard"] });
         return qc.invalidateQueries({ queryKey: ["log-tags-for-me"] });
       })

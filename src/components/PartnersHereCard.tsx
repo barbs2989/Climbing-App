@@ -110,7 +110,7 @@ export default function PartnersHereCard({ area, C, uid, myListings, onListMe, o
           </span>
           <span style={{ flex: 1, minWidth: 0 }}>
             <span style={{ display: "block", fontSize: 13.5, fontWeight: 800, color: C.text }}>Add dates or climbing types</span>
-            <span style={{ display: "block", fontSize: 11.5, color: C.textMuted, marginTop: 2, lineHeight: 1.4 }}>When you can climb here, and what — so the right partners find you.</span>
+            <span style={{ display: "block", fontSize: 11.5, color: C.textMuted, marginTop: 2, lineHeight: 1.4 }}>When you can climb here, and what.</span>
           </span>
           <span aria-hidden="true" style={{display:"flex",flexShrink:0}}><Chevron size={16} color={C.textMuted}/></span>
         </button>

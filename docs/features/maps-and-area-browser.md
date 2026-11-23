@@ -62,7 +62,10 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
 - **A row's grade carries its protection rating right beside it** ("5.8 PG13"; owner, 2026-11-18: "right next to the grade on the list and when ever a grade is mentioned on the app"). Most routes store the rating on the grade; a route that states it only as its own Protection fact (`prot_rating`) gets it appended by `displayGrade()` (lib/grade.js), which is why the list's thin row selects `prot_rating`. Search and the route finder read full rows, so they carry it too; `area_classics` / `state_classics` return a fixed column set WITHOUT `prot_rating`, so a classics row shows a rating only when it is stored on the grade.
 - **Climb rows** (`RouteRow`, every route list in the browser): name, stars, discipline, then the **pitch count** ("Trad · 5 pitches",
   Mountain Project's order; the stored `routes.pitches`, as the route page's Pitches stat shows it; none on a boulder or with no count stored),
-  the crag's left-to-right number, and the grade at the right. `useAreaRoutes`' thin row selects `pitches` for it.
+  then the **length** ("Trad · 5 pitches · 600 ft", owner 2026-11-23: show it when searching for climbs; the stored `routes.length_m` in the
+  climber's units through `uElev`, as the route page's Height stat; none when no length is stored), and the grade at the right. The same row
+  draws the in-page search's route hits (`DbSearchSplit`, full rows) and the route finder. `useAreaRoutes`' thin row selects `pitches` and
+  `length_m` for it.
 - **Sorting a crag's own climb list** (`AREA_LIST_SORTS` / `sortAreaRoutes`, leaf areas only): chips over the list read **Left → right**
   (default, as Mountain Project and theCrag list a wall), **Right → left**, **A → Z**, **Z → A**. The wall orders read `routes.sort_order` and are
   offered only when at least one climb in the list has one; climbs without a position go last, by name, under a line counting them.
