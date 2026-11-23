@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { removePartnerArea, savePartnerArea } from "../../lib/db";
+import { addPartnerArea, removePartnerArea } from "../../lib/db";
 import { tx } from "../../lib/tapWords.js";
 import Chevron from "./Chevron.tsx";
 import { CARD, EYEBROW } from "../../lib/cardStyles.js";
@@ -26,7 +26,7 @@ export interface ListMeInAreaBoxProps {
    at a place, and the only ways in were the area page's "Partners here" card or the My areas editor —
    neither on the screen where a climber has just picked the place they want partners at. This box sits
    right under the picker, so the climber who is looking can be found by the next one with one tap.
-   Same write as the area page's card (savePartnerArea / removePartnerArea), optimistic the same way. */
+   Same write as the area page's card (addPartnerArea / removePartnerArea), optimistic the same way. */
 /* The DB refuses a listing at these (0300 `partner_areas` trigger, narrowed by 0456; My areas' NO_LISTING): too broad
    to search. A PEAK is listable since 0456 (owner 2026-11-18). The box steps aside rather than offer a tap that fails. */
 const NO_LISTING = new Set(["world", "country"]);
@@ -48,7 +48,7 @@ export default function ListMeInAreaBox({ areaId, areaName, areaType, C, uid, my
     setOptListed(!listed);
     try {
       if (listed) await removePartnerArea(uid, areaId);
-      else await savePartnerArea(uid, { areaId, disciplines: [] });
+      else await addPartnerArea(uid, areaId, []);
     } catch (e: unknown) {
       setOptListed(null);
       if (notify) notify((listed ? "Couldn’t remove your listing — " : "Couldn’t list you here — ") + ((e && (e as Error).message) || "try again"));
