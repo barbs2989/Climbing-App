@@ -1,4 +1,4 @@
--- 0489: climbers level on points at the top of an area's board are BOTH its top contributor.
+-- 0490: climbers level on points at the top of an area's board are BOTH its top contributor.
 --
 -- WHY (found 2026-11-19 testing the boards with real accounts; owner 2026-11-23: "fix"):
 -- user_top_contributor_areas picked #1 with row_number() ordered by points and then by account

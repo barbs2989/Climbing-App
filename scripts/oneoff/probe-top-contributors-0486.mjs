@@ -9,7 +9,7 @@
 //      Top Contributor badge, and B (now first of two) holds it;
 //   3. A blocks C: C does not see A, A does not see C, B and a signed-out reader see both;
 //   4. the people on an area's board are the people Ranks By area gives contribution points there;
-//   5. two climbers level on points at the top BOTH hold the badge (0489).
+//   5. two climbers level on points at the top BOTH hold the badge (0490).
 // Run it WITHOUT 0486 in supabase/migrations and steps 2 and 3 fail: that is the bug.
 //   node scripts/oneoff/probe-top-contributors-0486.mjs
 import fs from "node:fs";
@@ -116,11 +116,11 @@ await expectBoards("3 A blocked C", { "signed out": ALL, A: "A=3 B=2", B: ALL, C
 ok((await badge("authenticated", C, A)) === "", "3: C is not shown A's badge");
 ok((await badge("authenticated", B, A)) === "zz_crag,zz_state", "3: B still is");
 
-// ── 5. B draws level with A (0489): both hold the badge, C does not ──────────────────────────────────
+// ── 5. B draws level with A (0490): both hold the badge, C does not ──────────────────────────────────
 await db.exec(`delete from blocked_users where blocker = '${A}';
   insert into climb_logs (user_id, route_id, discipline, date_climbed, tick_type, trip_report_visibility) values ('${B}', 'zz_r3', 'sport', current_date - 2, 'Redpoint', 'public')`);
 ok((await board("anon", null, "zz_crag")) === "A=3 B=3 C=1", "5: A and B are level on 3 points");
-ok((await badge("anon", null, A)) === "zz_crag,zz_state" && (await badge("anon", null, B)) === "zz_crag,zz_state", "5: both climbers level at the top hold the badge (before 0489 only the lower account id did)");
+ok((await badge("anon", null, A)) === "zz_crag,zz_state" && (await badge("anon", null, B)) === "zz_crag,zz_state", "5: both climbers level at the top hold the badge (before 0490 only the lower account id did)");
 ok((await badge("anon", null, C)) === "", "5: C, third, holds none");
 
 console.log(`\nprobe-top-contributors-0486: ${passes} ok, ${failures} failed.`);
