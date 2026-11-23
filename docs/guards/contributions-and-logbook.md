@@ -488,6 +488,16 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     is fetched for*, so it now counts one `useSubtreeRoutes(… slotOpts(i))` per slot up to
     `SUGGEST_DISC_MAX`, forbids `profile.disc`, and keeps only the FALLBACK pool discipline-blind.
     Raising the cap without adding a hook fails here, which is the point: hooks cannot loop.
+  - **Protection and recency (2026-11-23).** Section 1b also pins that an X or R/X climb is never
+    ranked (and section 2 that `fresh` keeps it out of the fallback list), that an R sits behind an
+    unrated climb at the same grade, and that `suggestLogWeight` halves every two years so the centre
+    leans to recent climbs. Four injections, each caught by name: drop the X filter, drop the R
+    penalty, return a constant weight, and let X back into the fallback.
+  - Measured non-finding, do not re-derive: `catOf` files a trad climb on a peak as alpine, so the
+    alpine pool could miss a peak's trad lines. It is 4 routes of the 1,110 filed on the 535 busiest
+    peaks of six states; the catalog already stores peak climbs as alpine. A fix was built and removed.
+    A first count over fewer peaks read 0; it was not believed until a control with no discipline
+    filter returned rows from the same query.
   - Measured non-finding: where an area has classics (Smith Rock, Red River Gorge, Joshua Tree,
     Hyalite) the rows were already right, because classics lead every pool. The faults showed where
     there are none (all of Washington) or the climber's grade is far from the area's.

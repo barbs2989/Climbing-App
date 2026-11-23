@@ -8,7 +8,7 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
 ## 1. What it does today
 - **Area browser**: world > country > state > range > crag/peak drill-down. `StatePicker` is the entry (opening on the United States' regions on every width since 2026-11-04), headed on a phone by the **downloaded-only search** (`DownloadedSearch`, owner 2026-11-18: an *Areas | Routes* switch and box as an area page's `DbSearchSplit` has, searching ONLY what is on this device — every completed state download plus climbs saved one at a time — through `deviceAreaSearch` / `deviceRouteSearch` in `lib/offline.js` (a thin name index read once per session and rebuilt when a download changes; no network, so it answers the same with no signal), a line naming what it covers with a *Manage* link, and *Near me* → the map at your position via `jumpToNearReq`; with nothing downloaded it is a card offering *Manage areas*. Words that are a filter ("5.9 trad", "WI4", "5.10 sport near Leavenworth", read by `parseTypedSearch`) get a *Route finder* row on the downloaded place typed, else on each downloaded state; words with no letter or digit match nothing. The website draws no search here: its top bar has two boxes); `AreaPage` shows one area
   (`SummitBriefing` on peaks, its children or its routes, *Classic climbs here* with the `DbSuggestedClimbs` dropdown directly under it (owner, 2026-11-19; it was in the page's tail), then — in this order — *Don’t see a climb or area here?* (`AddHereFooter`: Add a climb · Add an area),
-  `NearbyPeaks`, Top contributors; App mounts the area Discussion straight after, so it ends the page). The Discussion is on the area page only: not under
+  `NearbyPeaks`, Top contributors (a row opens that climber’s profile, through `onViewContributor`); App mounts the area Discussion straight after, so it ends the page). The Discussion is on the area page only: not under
   the area **Map** (`screen` "near"), the Route finder or Objectives (owner, 2026-11-11). RoutesTab hands it to `DbAreaBrowser` as the
   `areaDiscussion` prop, and the browser draws it right after `<AreaPage>`.
   On the website (1024px+) *Don’t see a climb here?*, *Know <area>? Suggest an edit* and *Wrong place? Tell us where* are ONE row of
@@ -204,7 +204,9 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
   `rankSimilarRoutes` keeps only climbs inside the window (`suggestWindow`: on YDS, 5.8 to 5.10+ around 5.10a), nearest grade
   first, a classic or well-starred climb ahead of a no-name about a letter grade closer. A grade the scale does not list
   ("5.10b/c") scores as the nearest listed grade; one from another system, or none, is left out. The centre is the mean grade of
-  your completed logs in that discipline. With no row to show it falls back to *Classics in this area*, else the area's
+  your completed logs in that discipline, each weighted by how recent it is (`suggestLogWeight`: halves every two years, floor
+  0.15), and the same weight orders the disciplines. An X or R/X climb is never suggested, in a ranked row or the fallback
+  (`suggestTooBold`; your own objectives and recently opened climbs still list it); an R climb is ranked down. With no row to show it falls back to *Classics in this area*, else the area's
   best-rated climbs. Not read on a country or the world. Until 2026-11-19 every row shared one pool, the area's first 120
   climbs by name, and nothing capped the grade distance. Guard: `check:suggestion-discs`.
 - **Route page map** (`GPXMap`, `src/components/GPXMap.tsx`): track + waypoints + peak coordinate on the same base layers; a line
@@ -278,7 +280,7 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
 | `src/components/DbAreaTree.tsx` | `DbAreaTree`, the area tree |
 | `src/components/ViewAreaPill.tsx` | `ViewAreaPill`, the solid blue *View area ›* at the end of every row that opens an area |
 | `src/components/DbSuggestedClimbs.tsx` | `DbSuggestedClimbs`, More climbs in this area |
-| `ClimbMatchCore.jsx` | `suggestionProfile`, `suggestDiscSlots`, `suggestSlotQuery`, `suggestWindow`, `rankSimilarRoutes` |
+| `ClimbMatchCore.jsx` | `suggestionProfile`, `suggestDiscSlots`, `suggestSlotQuery`, `suggestWindow`, `rankSimilarRoutes`, `suggestLogWeight`, `suggestTooBold` |
 | `src/components/SummitBriefing.tsx` | `SummitBriefing`, the peak summary above an area's route list |
 | `src/components/RouteRow.tsx` | `RouteRow`, one climb row in an area list |
 | `src/components/ClassicsList.tsx` | `ClassicsList`, Classic climbs here |
