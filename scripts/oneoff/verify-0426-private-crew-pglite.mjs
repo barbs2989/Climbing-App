@@ -33,6 +33,7 @@ await db.exec(`
     name text, owner uuid, owner_id text, metadata jsonb, path_tokens text[], version text,
     created_at timestamptz default now(), updated_at timestamptz default now(), last_accessed_at timestamptz);
   alter table storage.objects enable row level security;
+  grant select, insert, update, delete on storage.objects to anon, authenticated;
   create function storage.foldername(name text) returns text[] language sql immutable as $$ select (string_to_array(name, '/'))[1:array_length(string_to_array(name, '/'), 1) - 1] $$;
   create function storage.filename(name text) returns text language sql immutable as $$ select (string_to_array(name, '/'))[array_length(string_to_array(name, '/'), 1)] $$;
   create publication supabase_realtime;
@@ -86,8 +87,11 @@ ok(((await roster("org", priv)).r || []).length === 2, "organiser reads the priv
 ok(((await roster("inv", priv)).r || []).length === 2, "an INVITED climber reads the private roster before answering");
 ok(((await roster("out", priv)).r || []).length === 0, "an outsider reads NONE of the private roster");
 ok(((await roster(null, priv)).r || []).length === 0, "anon reads NONE of the private roster");
-ok(((await roster("out", pub)).r || []).length === 2, "an outsider still reads a listed crew's roster (unchanged)");
-ok(((await roster(null, pub)).r || []).length === 2, "anon still reads a listed crew's roster (unchanged)");
+// 0496: a LISTED crew's rows (notes, gear, invited/pending) are no longer public either; Join a crew
+// reads crew_listings, checked just below, which still lists it with its confirmed member ids.
+ok(((await roster("inv", pub)).r || []).length === 2, "an invitee reads a listed crew's roster");
+ok(((await roster("out", pub)).r || []).length === 0, "an outsider reads NONE of a listed crew's roster (0496)");
+ok(((await roster(null, pub)).r || []).length === 0, "anon reads NONE of a listed crew's roster (0496)");
 
 const listed = async (who) => ((await as(who, async () => (await db.query("select id from public.crew_listings")).rows)).r || []).map((x) => x.id);
 const outList = await listed("out");
@@ -115,5 +119,17 @@ ok((await listed("out")).includes(priv.id), "…and then it shows under Join a c
 const flipBack = await as("inv", () => db.query("update public.crews set private = true where id = $1 returning id", [priv.id]));
 ok(!flipBack.e && flipBack.r.rows.length === 0, "a member who is not the organiser cannot change it");
 
-console.log(fails ? `\nverify-0426: ${fails} expectation(s) FAILED` : "\nverify-0426: ok — a private crew stays private, a listed crew is unchanged");
+// 0496: nobody can LIST another climber's uploaded photos; the owner still sees (and so can delete) their own.
+await db.query("insert into storage.objects (bucket_id, name) values ('topo-photos', $1), ('topo-photos', $2)", [U.org + "/a.jpg", U.inv + "/b.jpg"]);
+const files = (who) => as(who, async () => (await db.query("select name from storage.objects where bucket_id = 'topo-photos'")).rows.map((x) => x.name));
+const orgFiles = (await files("org")).r || [];
+ok(orgFiles.length === 1 && orgFiles[0].startsWith(U.org), "a climber lists only their OWN photo files (0496)");
+ok(((await files("out")).r || []).length === 0, "a stranger lists NONE of the photo files (0496)");
+ok(((await files(null)).r || []).length === 0, "anon lists NONE of the photo files (0496)");
+const del = await as("org", () => db.query("delete from storage.objects where name = $1 returning 1", [U.org + "/a.jpg"]));
+ok(!del.e && del.r.rows.length === 1, "a climber can still delete their own photo file");
+const delOther = await as("org", () => db.query("delete from storage.objects where name = $1 returning 1", [U.inv + "/b.jpg"]));
+ok(!delOther.e && delOther.r.rows.length === 0, "…and cannot delete someone else's");
+
+console.log(fails ? `\nverify-0426: ${fails} expectation(s) FAILED` : "\nverify-0426: ok — a private crew stays private; no crew roster or photo file is public (0496)");
 process.exit(fails ? 1 : 0);

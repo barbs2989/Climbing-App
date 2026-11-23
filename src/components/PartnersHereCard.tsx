@@ -1,5 +1,5 @@
 import { tx } from "../../lib/tapWords.js";
-import { usePartnerAreaCount, usePartnersInArea, removePartnerArea, savePartnerArea, useCragRegular } from "../../lib/db";
+import { usePartnerAreaCount, usePartnersInArea, removePartnerArea, savePartnerArea, useCragRegular, useMyBlocked } from "../../lib/db";
 import { useState, useEffect } from "react";
 import Chevron from "./Chevron.tsx";
 import Av from "./Av.tsx";
@@ -47,7 +47,12 @@ export default function PartnersHereCard({ area, C, uid, myListings, onListMe, o
   useEffect(() => { setOptListed(null); }, [serverListed]);
   const listed = optListed == null ? serverListed : optListed;
   const count = countQ.data == null ? countQ.data : Math.max(0, countQ.data + (listed === serverListed ? 0 : listed ? 1 : -1));
-  const rows = (rowsQ.data || []).filter((p: PartnerRow) => p && p.id && String(p.id) !== String(uid));
+  /* CLIMBERS YOU BLOCKED are not shown here (review 2026-11-23): the search hides a climber who blocked YOU; the other
+     direction is filtered on the screen, as Partners and the route page do, and this card did neither. Its count leaves
+     them out in the database since 0498. */
+  const blockedQ = useMyBlocked(on ? uid : null);
+  const blockedIds = new Set(((blockedQ.data || []) as Array<{ blockedId?: string }>).map((b) => String(b.blockedId)));
+  const rows = (rowsQ.data || []).filter((p: PartnerRow) => p && p.id && String(p.id) !== String(uid) && !blockedIds.has(String(p.id)));
   const toggle = async () => {
     if (!on || busy) return;
     setBusy(true);
@@ -87,7 +92,7 @@ export default function PartnersHereCard({ area, C, uid, myListings, onListMe, o
       {on && (count > 0 || rows.length) ? <button onClick={openAll} style={{ ...BTN_LINK(C), padding: "6px 0 0", fontSize: 12.5 }}>{"See all at " + area.name + " →"}</button> : null}
       {/* ACTIONS (owner 2026-11-23): List me here is a full-width button on its own line, ABOVE Start a crew here / Crews here. */}
       {on || onStartCrew || onCrewsHere ? <div style={{ marginTop: 10, paddingTop: 10, borderTop: "1px solid " + C.border }}>
-      {on ? <button onClick={toggle} disabled={busy} aria-pressed={listed} aria-label={listed ? "Listed at " + area.name + tx(" — tap to remove") : "List me at " + area.name} style={{ width: "100%", boxSizing: "border-box", minHeight: 44, padding: "0 13px", borderRadius: 10, border: "1px solid " + (listed ? C.green : C.blueDim), background: listed ? C.greenBg : C.blueBg, color: listed ? C.green : "#fff", fontSize: 13.5, fontWeight: 800, cursor: busy ? "default" : "pointer", opacity: busy ? 0.6 : 1 }}>{listed ? "Listed ✓" : "List me here"}</button> : null}
+      {on ? <button data-cm-fill="" onClick={toggle} disabled={busy} aria-pressed={listed} aria-label={listed ? "Listed at " + area.name + tx(" — tap to remove") : "List me at " + area.name} style={{ width: "100%", boxSizing: "border-box", minHeight: 44, padding: "0 13px", borderRadius: 10, border: "1px solid " + (listed ? C.green : C.blueDim), background: listed ? C.greenBg : C.blueBg, color: listed ? C.green : "#fff", fontSize: 13.5, fontWeight: 800, cursor: busy ? "default" : "pointer", opacity: busy ? 0.6 : 1 }}>{listed ? "Listed ✓" : "List me here"}</button> : null}
       {/* SAVE vs LIST ME (owner 2026-11-14: "whats the difference between saved areas and my areas?"). The page's
           Save area button is a private bookmark; this listing is what other climbers can see. One line says so. */}
       {on ? <div style={{ fontSize: 11.5, color: C.textMuted, lineHeight: 1.45, marginTop: 6, marginBottom: 2 }}>{listed ? "Climbers searching for partners here can find you. Saving the area is separate — only you see your saved areas." : "Listing makes you findable by climbers searching here. Saving the area just bookmarks it — only you see it."}</div> : null}

@@ -74,6 +74,11 @@ empty field fill at once and two agreeing climbers change one; the owner withdre
   A **suggested wall order** (kind `wall_order`, 0485) is a third row type, *Order*: the wall as listed now beside the climber's
   left-to-right line; *Use this order* / *Keep current order* call `resolveWallOrder`; the optional note is a reason, sent only when the current order is kept. The AI
   checker does not look at these, and they are not counted as "not yet checked". See `docs/features/maps-and-area-browser.md`.
+  **Two more sections** sit beside that table, switched by tabs at the top (owner, 2026-11-23, off the Menu):
+  *Trails & GPS tracks* (`GpsSubmissionQueue`, 0397; `review.html#trails`) and *Accessibility reports*
+  (`AccessibilityReportQueue`, 0343/0354; `review.html#access`). Each is the same component the Menu tile
+  used to open, so the review calls are unchanged; each tab shows its waiting count from `useAdminQueueCounts`,
+  which no longer counts these two into the Menu button's badge. "Open" on a track opens the route in the app in a new tab.
 - **The nightly AI checker**: `scripts/review-queue-export.mjs` (service key, read-only) lists items with
   no verdict or whose content changed since (`item_hash`); `.claude/workflows/review-flags-nightly.js`
   researches each (open web only; no AllTrails/Gaia/CalTopo/Strava/Wikiloc/Peakbagger/Mountain Project)
