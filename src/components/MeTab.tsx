@@ -25,6 +25,7 @@ import { askConfirm } from "../../lib/ConfirmSheet.jsx";
 
 import type { Dispatch, MutableRefObject, ReactNode, SetStateAction } from "react";
 import type { Vouch } from "./VouchCard.tsx";
+import { usePaneTop } from "../../lib/usePaneTop.js";
 
 /** The profile as App's editor keeps it; only what this tab reads is named. */
 interface MeTabProfile { gender?: string | null; /** 0475 */ pronouns?: string[] | null; [k: string]: unknown }
@@ -107,6 +108,8 @@ export interface MeTabProps {
 /* tab==="me"&& — the body of that branch of App, lifted verbatim by extract-from-parent.mjs (branch mode);
    every binding it read from App is a prop of the same name. */
 export default function MeTab({MeEdit,avaAdding,bookmarks,filedReportsUnavailable,givenVouches,logs,logsUnavailable,meLive,meTabOn,myAvail,myFiledQ,mySpeedFtHr,myVouchesShown,myWeek,objectivesUnavailable,openEdit,openMyPublicProfile,photoAddErr,photoAdding,profile,profileLoaded,profilePhotoAlts,profilePhotos,profileReadFailed,resumePublic,routeById,session,setAvaAdding,setGiveVouchWith,setGivenVouches,setLogbookTab,setMeTab,setMySpeedFtHr,setPhotoAddErr,setPhotoAdding,setProfile,setProfilePhotoAlts,setProfilePhotos,setRecapOpen,setResumeFor,setSettingsOpen,setShareOpen,setTab,setVerified,setVouchesGivenOpen,setVouchesInOpen,showRealName,showToast,toggleAvail,uid,verifHydratedRef,verificationUnavailable,verified,verifyNudge,vouchesGivenOpen,vouchesInOpen,vouchesInUnavailable,wishlist}: MeTabProps){
+  /* Profile / Activity is a new page: it opens at the top (the belay notification scrolls to its section afterwards). */
+  usePaneTop(null,meTabOn);
   /* ONE ROW of actions on the desktop website (owner 2026-11-04): Edit profile is the one primary
      button, Share / View public / Settings are secondary beside it. A phone keeps two rows — Share
      and View public under the résumé — in the same three looks. */

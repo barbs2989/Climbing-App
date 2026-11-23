@@ -9,6 +9,7 @@ import RiskBadge from "../src/components/RiskBadge.tsx";
 import Questionnaire from "../src/components/Questionnaire.tsx";
 import FloatPlan from "../src/components/FloatPlan.tsx";
 import { POP_BACK } from "./popupChrome.js";
+import { usePaneTop } from "./usePaneTop.js";
 
 export default function SafetyTab({floatDefaults,members,meAnswers,onComplete,who,scope,onFiled,onSendToCrew,serverMode,server,unavailable}){
   /* THE OTHER HALF OF THE SAME DEFECT, and the worse half. `{view==="float"?<FloatPlan/>:…}`
@@ -17,6 +18,7 @@ export default function SafetyTab({floatDefaults,members,meAnswers,onComplete,wh
      route tab was fixed first (#1577); this call site simply never opted in, and FloatPlan's
      own useState fallback is what kept it working while still losing eleven typed fields. */
   const [view,setView]=useState("alignment"),[show,setShow]=useState(false),[floatPlan,setFloatPlan]=useState(()=>floatPlanState(floatDefaults));
+  usePaneTop(null,view);
   /* A REAL crew (serverMode) is analysed by the server from answers only their owners can read (0314);
      until that arrives -- or if it failed -- nothing local stands in for it, because the local members
      carry no one else's answers and would read as "waiting for everyone". */

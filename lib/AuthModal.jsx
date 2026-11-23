@@ -3,7 +3,8 @@
 // Email pre-fills from the last sign-in; the session persists, so this appears only when signed
 // out -- with one exception: `recovery` opens it over a signed-in session, because a reset link
 // authenticates you before you have chosen the new password. Password is never stored.
-import { useState } from "react";
+import { useRef, useState } from "react";
+import { usePaneTop } from "./usePaneTop.js";
 import { createPortal } from "react-dom";
 import { signIn, signUp, rememberEmail, recallEmail, requestPasswordReset, updatePassword, useOAuthProviders, signInWithGoogle, signInWithApple } from "./auth";
 
@@ -58,6 +59,8 @@ const ACTION = { in: "Sign in", up: "Create account", forgot: "Email me a reset 
 // `arrival` ("climb" | "list") names what a shared link the visitor came in on will open.
 export default function LoginScreen({ onClose, onAuthed, recovery, onRecovered, onLegal, onGuest, arrival }) {
   const [mode, setMode] = useState(recovery ? "reset" : (recallEmail() ? "in" : "up")); // a NEW visitor lands on Create account (owner, 2026-11-14); a returning one, whose email this device remembers, on Sign in // "in" | "up" | "forgot" | "reset"
+  // Sign in, Create account and Forgot password are different screens on ONE pane, switched from its foot: each opens at the top.
+  const paneRef = useRef(null); usePaneTop(paneRef, mode);
   // AS THE APP'S FIRST SCREEN (no onClose: the real gate, or LOGIN_FIRST since #2688) the sign-in
   // form fills the screen under a branded header -- the mark, the wordmark and what the app is for --
   // the way Strava, AllTrails and Gora open, instead of a bare modal over a black page. It stays the
@@ -222,7 +225,7 @@ export default function LoginScreen({ onClose, onAuthed, recovery, onRecovered, 
   // context under the app header -- so the header drew over this sheet's ✕ and the ✕ could not be
   // tapped (2026-10-24, check:pinned-dismiss). check:overlays explains the trap.
   return createPortal(
-    <div onClick={onClose} role="dialog" aria-modal="true" aria-label={TITLE[mode]} style={gate ? { position: "fixed", inset: 0, background: "radial-gradient(120% 60% at 50% 0%, #10264a 0%, " + c.bg + " 58%)", zIndex: 2000, overflowY: "auto", overscrollBehavior: "contain", display: "flex", justifyContent: "center", padding: "calc(16px + env(safe-area-inset-top)) 16px 24px", boxSizing: "border-box" } : { position: "fixed", inset: 0, background: "rgba(0,0,0,0.6)", zIndex: 2000, display: "flex", alignItems: "center", justifyContent: "center", padding: 16 }}>
+    <div ref={paneRef} onClick={onClose} role="dialog" aria-modal="true" aria-label={TITLE[mode]} style={gate ? { position: "fixed", inset: 0, background: "radial-gradient(120% 60% at 50% 0%, #10264a 0%, " + c.bg + " 58%)", zIndex: 2000, overflowY: "auto", overscrollBehavior: "contain", display: "flex", justifyContent: "center", padding: "calc(16px + env(safe-area-inset-top)) 16px 24px", boxSizing: "border-box" } : { position: "fixed", inset: 0, background: "rgba(0,0,0,0.6)", zIndex: 2000, display: "flex", alignItems: "center", justifyContent: "center", padding: 16 }}>
       <div onClick={(e) => e.stopPropagation()} style={gate ? { width: "100%", maxWidth: 420, color: c.text } : { width: "100%", maxWidth: 380, background: c.card, border: "1px solid " + c.border, borderRadius: 16, padding: 20, color: c.text }}>
         {gate && (mode === "in" || mode === "up") && (
           <div style={{ textAlign: "center", margin: "18px 0 26px" }}>
