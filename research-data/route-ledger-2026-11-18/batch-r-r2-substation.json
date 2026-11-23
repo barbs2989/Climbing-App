@@ -1,0 +1,485 @@
+{
+ "wa_subversive": {
+  "area": "wa_substation",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/108512206/subversive",
+    "https://www.mountainproject.com/area/106589594/substation",
+    "https://rakkup.com/guidebook/exit-38-rock-climbing/substation/s11465",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/ArcGIS/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.6637343,47.4370112&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://parks.wa.gov/find-parks/state-parks/olallie-state-park",
+    "https://parks.wa.gov/node/3529",
+    "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.10d",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108512206/subversive",
+      "fact": "5.10d YDS, Type: Sport",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://rakkup.com/guidebook/exit-38-rock-climbing/substation/s11465",
+      "fact": "Subversive 5.10d (Exit 38 guidebook, Kutzke & Price)",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_subversive",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "pitches 0 is invalid. Mountain Project gives one 30 ft sport line, 3 bolts to a chain anchor: one length to one anchor, so a single pitch is clear. Implied, not stated: unconfirmed after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/108512206/subversive"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_subversive",
+    "column": "access",
+    "from": null,
+    "to": {
+     "rules": "Day use only, 6:30 a.m. to dusk. Climbing at Deception Crags can be closed between February and August while peregrine falcons nest; check the park's alerts before going.",
+     "land_manager": "Washington State Parks (Olallie State Park)",
+     "parking_pass": "Discover Pass required to park at Washington State Parks ($10 one day, $45 a year)."
+    },
+    "why": "access is empty. Copied field for field from the live verified sibling wa_substation_glob_job_extension (= wa_jiffy_pop), batch Q. Re-queried the official WA State Parks boundary layer at the Substation crag point 2026-11-23: 'Palouse to Cascades', State Park Trail; State Parks files Deception Crags under Olallie State Park. official-1, 12 months, after apply.",
+    "evidence": [
+     "https://services5.arcgis.com/4LKAHwqnBooVDUlX/ArcGIS/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.6637343,47.4370112&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+     "https://parks.wa.gov/find-parks/state-parks/olallie-state-park",
+     "https://parks.wa.gov/node/3529",
+     "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_subversive",
+    "column": "length_m",
+    "from": null,
+    "to": 9,
+    "why": "Mountain Project states 30 ft (9 m). Single source (theCrag 403, the Exit 38 guide's length is paywalled on Rakkup); locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/108512206/subversive"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_subversive",
+    "column": "bolts",
+    "from": null,
+    "to": 3,
+    "why": "Mountain Project protection: '3 bolts, chain anchor with loweroffs' (bolts, not clips; one count). Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/108512206/subversive"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_subversive",
+    "column": "anchor",
+    "from": null,
+    "to": "Chain anchor",
+    "why": "Mountain Project: chain anchor. House spelling 'Chain anchor'. Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/108512206/subversive"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "FA HELD: stored 'Bryan Burdo'; Mountain Project gives 'Bryan Burdo (1994)'; adding the year rests on one source, held. Glob Job Extension (wa_substation_glob_job_extension) notes Subversive can finish into it."
+ },
+ "wa_stick_boy": {
+  "area": "wa_substation",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/108512054/stick-boy",
+    "https://www.mountainproject.com/area/106589594/substation",
+    "https://rakkup.com/guidebook/exit-38-rock-climbing/substation/s11465",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/ArcGIS/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.6637343,47.4370112&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://parks.wa.gov/find-parks/state-parks/olallie-state-park",
+    "https://parks.wa.gov/node/3529",
+    "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass"
+   ]
+  },
+  "ledger": [],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_stick_boy",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "pitches 0 is invalid. Mountain Project gives one 40 ft sport line, 6 bolts to a chain anchor: one length to one anchor, so a single pitch is clear. Implied, not stated: unconfirmed after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/108512054/stick-boy"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_stick_boy",
+    "column": "access",
+    "from": null,
+    "to": {
+     "rules": "Day use only, 6:30 a.m. to dusk. Climbing at Deception Crags can be closed between February and August while peregrine falcons nest; check the park's alerts before going.",
+     "land_manager": "Washington State Parks (Olallie State Park)",
+     "parking_pass": "Discover Pass required to park at Washington State Parks ($10 one day, $45 a year)."
+    },
+    "why": "access is empty. Copied field for field from the live verified sibling wa_substation_glob_job_extension (= wa_jiffy_pop), batch Q. Re-queried the official WA State Parks boundary layer at the Substation crag point 2026-11-23: 'Palouse to Cascades', State Park Trail; State Parks files Deception Crags under Olallie State Park. official-1, 12 months, after apply.",
+    "evidence": [
+     "https://services5.arcgis.com/4LKAHwqnBooVDUlX/ArcGIS/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.6637343,47.4370112&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+     "https://parks.wa.gov/find-parks/state-parks/olallie-state-park",
+     "https://parks.wa.gov/node/3529",
+     "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_stick_boy",
+    "column": "length_m",
+    "from": null,
+    "to": 12,
+    "why": "Mountain Project states 40 ft (12 m). Single source (theCrag 403, the Exit 38 guide's length is paywalled on Rakkup); locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/108512054/stick-boy"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_stick_boy",
+    "column": "bolts",
+    "from": null,
+    "to": 6,
+    "why": "Mountain Project protection: '6 bolts, chain anchor' (bolts, not clips; one count). Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/108512054/stick-boy"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_stick_boy",
+    "column": "anchor",
+    "from": null,
+    "to": "Chain anchor",
+    "why": "Mountain Project: chain anchor. House spelling 'Chain anchor'. Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/108512054/stick-boy"
+    ]
+   }
+  ],
+  "disputed": [
+   "grade: Mountain Project 5.11+ (stored) vs the Exit 38 guidebook on Rakkup 5.12a. Two sources disagree; not locked, not changed."
+  ],
+  "notes": "Grade disputed (MP 5.11+ vs Rakkup 5.12a); held. FA HELD: stored 'Mike and Laura Orr'; Mountain Project gives 'Mike & Laura Orr (1994)'; adding the year is a one-source FA change, held."
+ },
+ "wa_glob_job": {
+  "area": "wa_substation",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/106589615/glob-job",
+    "https://www.mountainproject.com/area/106589594/substation",
+    "https://rakkup.com/guidebook/exit-38-rock-climbing/substation/s11465",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/ArcGIS/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.6637343,47.4370112&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://parks.wa.gov/find-parks/state-parks/olallie-state-park",
+    "https://parks.wa.gov/node/3529",
+    "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.7",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106589615/glob-job",
+      "fact": "5.7 YDS, Type: Sport",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://rakkup.com/guidebook/exit-38-rock-climbing/substation/s11465",
+      "fact": "Glob Job 5.7 (Exit 38 guidebook, Kutzke & Price)",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_glob_job",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "pitches 0 is invalid. Mountain Project gives one 40 ft sport line, 4 bolts to a chain anchor: one length to one anchor, so a single pitch is clear. Implied, not stated: unconfirmed after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/106589615/glob-job"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_glob_job",
+    "column": "access",
+    "from": null,
+    "to": {
+     "rules": "Day use only, 6:30 a.m. to dusk. Climbing at Deception Crags can be closed between February and August while peregrine falcons nest; check the park's alerts before going.",
+     "land_manager": "Washington State Parks (Olallie State Park)",
+     "parking_pass": "Discover Pass required to park at Washington State Parks ($10 one day, $45 a year)."
+    },
+    "why": "access is empty. Copied field for field from the live verified sibling wa_substation_glob_job_extension (= wa_jiffy_pop), batch Q. Re-queried the official WA State Parks boundary layer at the Substation crag point 2026-11-23: 'Palouse to Cascades', State Park Trail; State Parks files Deception Crags under Olallie State Park. official-1, 12 months, after apply.",
+    "evidence": [
+     "https://services5.arcgis.com/4LKAHwqnBooVDUlX/ArcGIS/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.6637343,47.4370112&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+     "https://parks.wa.gov/find-parks/state-parks/olallie-state-park",
+     "https://parks.wa.gov/node/3529",
+     "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_glob_job",
+    "column": "length_m",
+    "from": null,
+    "to": 12,
+    "why": "Mountain Project states 40 ft (12 m). Single source (theCrag 403, the Exit 38 guide's length is paywalled on Rakkup); locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/106589615/glob-job"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_glob_job",
+    "column": "bolts",
+    "from": null,
+    "to": 4,
+    "why": "Mountain Project protection: '4 bolts, chain anchor with loweroffs' (bolts, not clips; one count). Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/106589615/glob-job"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_glob_job",
+    "column": "anchor",
+    "from": null,
+    "to": "Chain anchor",
+    "why": "Mountain Project: chain anchor. House spelling 'Chain anchor'. Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/106589615/glob-job"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "FA 'Bryan Burdo, 1994' matches Mountain Project; not locked (FA never from MP alone). MP Type 'Sport, TR': a toprope can be set from the trestle. Glob Job Extension (wa_substation_glob_job_extension) is a separate catalog row for a 2-bolt continuation above this route's anchor (catalog defect reported in batch Q); Glob Job itself is a normal route, so all fixes are proposed."
+ },
+ "wa_subliminal": {
+  "area": "wa_substation",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/107616162/subliminal",
+    "https://www.mountainproject.com/area/106589594/substation",
+    "https://rakkup.com/guidebook/exit-38-rock-climbing/substation/s11465",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/ArcGIS/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.6637343,47.4370112&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://parks.wa.gov/find-parks/state-parks/olallie-state-park",
+    "https://parks.wa.gov/node/3529",
+    "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.10b",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107616162/subliminal",
+      "fact": "5.10b YDS, Type: Sport",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://rakkup.com/guidebook/exit-38-rock-climbing/substation/s11465",
+      "fact": "Subliminal 5.10b (Exit 38 guidebook, Kutzke & Price)",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_subliminal",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "pitches 0 is invalid. Mountain Project gives one 25 ft sport line, 3 bolts to a chain anchor: one length to one anchor, so a single pitch is clear. Implied, not stated: unconfirmed after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/107616162/subliminal"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_subliminal",
+    "column": "access",
+    "from": null,
+    "to": {
+     "rules": "Day use only, 6:30 a.m. to dusk. Climbing at Deception Crags can be closed between February and August while peregrine falcons nest; check the park's alerts before going.",
+     "land_manager": "Washington State Parks (Olallie State Park)",
+     "parking_pass": "Discover Pass required to park at Washington State Parks ($10 one day, $45 a year)."
+    },
+    "why": "access is empty. Copied field for field from the live verified sibling wa_substation_glob_job_extension (= wa_jiffy_pop), batch Q. Re-queried the official WA State Parks boundary layer at the Substation crag point 2026-11-23: 'Palouse to Cascades', State Park Trail; State Parks files Deception Crags under Olallie State Park. official-1, 12 months, after apply.",
+    "evidence": [
+     "https://services5.arcgis.com/4LKAHwqnBooVDUlX/ArcGIS/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.6637343,47.4370112&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+     "https://parks.wa.gov/find-parks/state-parks/olallie-state-park",
+     "https://parks.wa.gov/node/3529",
+     "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_subliminal",
+    "column": "length_m",
+    "from": null,
+    "to": 8,
+    "why": "Mountain Project states 25 ft (8 m). Single source (theCrag 403, the Exit 38 guide's length is paywalled on Rakkup); locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/107616162/subliminal"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_subliminal",
+    "column": "bolts",
+    "from": null,
+    "to": 3,
+    "why": "Mountain Project protection: '3 bolts, chain anchor with loweroffs' (bolts, not clips; one count). Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/107616162/subliminal"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_subliminal",
+    "column": "anchor",
+    "from": null,
+    "to": "Chain anchor",
+    "why": "Mountain Project: chain anchor. House spelling 'Chain anchor'. Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/107616162/subliminal"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "FA HELD: stored 'Brian Burdo' (misspelt); Mountain Project gives 'Bryan Burdo (1994)', and sibling rows store 'Bryan Burdo'. A one-source FA change is held; owner may approve the spelling fix (same 'Brian' spelling on wa_lovey_dovey, wa_namby_pamby)."
+ },
+ "wa_chain_smokin": {
+  "area": "wa_substation",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/110669139/chain-smokin",
+    "https://www.mountainproject.com/area/106589594/substation",
+    "https://rakkup.com/guidebook/exit-38-rock-climbing/substation/s11465",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/ArcGIS/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.6637343,47.4370112&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://parks.wa.gov/find-parks/state-parks/olallie-state-park",
+    "https://parks.wa.gov/node/3529",
+    "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.10c",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/110669139/chain-smokin",
+      "fact": "5.10c/d YDS, Type: Sport",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://rakkup.com/guidebook/exit-38-rock-climbing/substation/s11465",
+      "fact": "Chain Smoken 5.10c (Exit 38 guidebook, Kutzke & Price)",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_chain_smokin",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "pitches 0 is invalid. Mountain Project gives one 25 ft sport line, 3 bolts to a chain anchor: one length to one anchor, so a single pitch is clear. Implied, not stated: unconfirmed after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/110669139/chain-smokin"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_chain_smokin",
+    "column": "access",
+    "from": null,
+    "to": {
+     "rules": "Day use only, 6:30 a.m. to dusk. Climbing at Deception Crags can be closed between February and August while peregrine falcons nest; check the park's alerts before going.",
+     "land_manager": "Washington State Parks (Olallie State Park)",
+     "parking_pass": "Discover Pass required to park at Washington State Parks ($10 one day, $45 a year)."
+    },
+    "why": "access is empty. Copied field for field from the live verified sibling wa_substation_glob_job_extension (= wa_jiffy_pop), batch Q. Re-queried the official WA State Parks boundary layer at the Substation crag point 2026-11-23: 'Palouse to Cascades', State Park Trail; State Parks files Deception Crags under Olallie State Park. official-1, 12 months, after apply.",
+    "evidence": [
+     "https://services5.arcgis.com/4LKAHwqnBooVDUlX/ArcGIS/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.6637343,47.4370112&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+     "https://parks.wa.gov/find-parks/state-parks/olallie-state-park",
+     "https://parks.wa.gov/node/3529",
+     "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_chain_smokin",
+    "column": "length_m",
+    "from": null,
+    "to": 8,
+    "why": "Mountain Project states 25 ft (8 m). Single source (theCrag 403, the Exit 38 guide's length is paywalled on Rakkup); locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/110669139/chain-smokin"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_chain_smokin",
+    "column": "bolts",
+    "from": null,
+    "to": 3,
+    "why": "Mountain Project protection: '3 bolts, chain anchor with loweroffs' (bolts, not clips; one count). Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/110669139/chain-smokin"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_chain_smokin",
+    "column": "anchor",
+    "from": null,
+    "to": "Chain anchor",
+    "why": "Mountain Project: chain anchor. House spelling 'Chain anchor'. Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/110669139/chain-smokin"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "Grade lock: MP 5.10c/d agrees with the stored 5.10c (a slash grade agrees with either half) and the Exit 38 guidebook on Rakkup lists 'Chain Smoken' 5.10c: same crag, same grade, a spelling variant of the name. FA 'Curtis Gibson & Dale Fleshman (2001)' matches MP; not locked (FA never from MP alone)."
+ }
+}

@@ -1,0 +1,638 @@
+{
+ "wa_hurly_burly": {
+  "area": "wa_substation",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/106810808/hurly-burly",
+    "https://www.mountainproject.com/area/106589594/substation",
+    "https://rakkup.com/guidebook/exit-38-rock-climbing/substation/s11465",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/ArcGIS/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.6637343,47.4370112&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://parks.wa.gov/find-parks/state-parks/olallie-state-park",
+    "https://parks.wa.gov/node/3529",
+    "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.9",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106810808/hurly-burly",
+      "fact": "5.9 YDS, Type: Sport",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://rakkup.com/guidebook/exit-38-rock-climbing/substation/s11465",
+      "fact": "Exit 38 guidebook (Kutzke & Price) Substation list: 5.9, 2 stars",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "discipline",
+    "value": "sport",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106810808/hurly-burly",
+      "fact": "Sport, 25 ft (8 m)",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://rakkup.com/guidebook/exit-38-rock-climbing/substation/s11465",
+      "fact": "Exit 38 guidebook Substation list: every climb listed as sport",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_hurly_burly",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "pitches 0 is invalid. Mountain Project gives one 25 ft sport line (4 bolts, chain anchor with loweroffs): one length to one anchor, so a single pitch is clear. Implied, not stated: unconfirmed after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/106810808/hurly-burly"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_hurly_burly",
+    "column": "access",
+    "from": null,
+    "to": {
+     "rules": "Day use only, 6:30 a.m. to dusk. Climbing at Deception Crags can be closed between February and August while peregrine falcons nest; check the park's alerts before going.",
+     "land_manager": "Washington State Parks (Olallie State Park)",
+     "parking_pass": "Discover Pass required to park at Washington State Parks ($10 one day, $45 a year)."
+    },
+    "why": "access is empty. Copied field for field from the live verified object on wa_substation_glob_job_extension (same as wa_jiffy_pop), per batch R brief. Re-queried the official WA State Parks boundary layer 2026-11-23 at the Substation point (47.43701,-121.66373): inside 'Palouse to Cascades' (State Park Trail), consistent with batch Q; State Parks' own pages place Deception Crags at Olallie State Park (day use 6:30 a.m. to dusk, Feb-Aug falcon closures); Discover Pass page: $10/$45. official-1, 12 months, after apply.",
+    "evidence": [
+     "https://services5.arcgis.com/4LKAHwqnBooVDUlX/ArcGIS/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.6637343,47.4370112&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+     "https://parks.wa.gov/find-parks/state-parks/olallie-state-park",
+     "https://parks.wa.gov/node/3529",
+     "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_hurly_burly",
+    "column": "length_m",
+    "from": null,
+    "to": 8,
+    "why": "Mountain Project states 25 ft (8 m). Single source (the guidebook preview gives no lengths); locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/106810808/hurly-burly"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_hurly_burly",
+    "column": "bolts",
+    "from": null,
+    "to": 4,
+    "why": "Mountain Project protection: '4 bolts, chain anchor with loweroffs' (bolts, not clips; one count). Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/106810808/hurly-burly"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_hurly_burly",
+    "column": "anchor",
+    "from": null,
+    "to": "Chain anchor",
+    "why": "Mountain Project: '4 bolts, chain anchor with loweroffs'. House spelling 'Chain anchor'. Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/106810808/hurly-burly"
+    ]
+   }
+  ],
+  "held": [
+   {
+    "table": "routes",
+    "id": "wa_hurly_burly",
+    "column": "fa",
+    "from": "Bryan Burdo",
+    "to": "Bryan Burdo (1994)",
+    "why": "HELD: adds the year 1994 to the stored FA from Mountain Project alone (a one-source change to fa).",
+    "evidence": [
+     "https://www.mountainproject.com/route/106810808/hurly-burly"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "FA year HELD: Mountain Project gives 'Bryan Burdo (1994)'; stored 'Bryan Burdo'; one source, so not proposed. permit stays null (siblings carry 'No climbing permit. A Discover Pass is needed to park at Olallie State Park.'); not proposed, brief asks only for access."
+ },
+ "wa_savannah_daydreamin": {
+  "area": "wa_substation",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/117309036/savannah-daydreamin",
+    "https://www.mountainproject.com/area/106589594/substation",
+    "https://rakkup.com/guidebook/exit-38-rock-climbing/substation/s11465",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/ArcGIS/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.6637343,47.4370112&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://parks.wa.gov/find-parks/state-parks/olallie-state-park",
+    "https://parks.wa.gov/node/3529",
+    "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.10c",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/117309036/savannah-daydreamin",
+      "fact": "5.10c YDS, Type: Sport",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "discipline",
+    "value": "sport",
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/117309036/savannah-daydreamin",
+      "fact": "Sport, 30 ft (9 m); protection: 5 bolts, chain anchors with loweroffs",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Mack Johnson & Brad Albro (July 2000)",
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/117309036/savannah-daydreamin",
+      "fact": "FA: Mack Johnson & Brad Albro (July 2000)",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_savannah_daydreamin",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "pitches 0 is invalid. Mountain Project gives one 30 ft sport line (5 bolts, chain anchors with loweroffs): one length to one anchor, so a single pitch is clear. Implied, not stated: unconfirmed after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/117309036/savannah-daydreamin"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_savannah_daydreamin",
+    "column": "access",
+    "from": null,
+    "to": {
+     "rules": "Day use only, 6:30 a.m. to dusk. Climbing at Deception Crags can be closed between February and August while peregrine falcons nest; check the park's alerts before going.",
+     "land_manager": "Washington State Parks (Olallie State Park)",
+     "parking_pass": "Discover Pass required to park at Washington State Parks ($10 one day, $45 a year)."
+    },
+    "why": "access is empty. Copied field for field from the live verified object on wa_substation_glob_job_extension (same as wa_jiffy_pop), per batch R brief. Re-queried the official WA State Parks boundary layer 2026-11-23 at the Substation point (47.43701,-121.66373): inside 'Palouse to Cascades' (State Park Trail), consistent with batch Q; State Parks' own pages place Deception Crags at Olallie State Park (day use 6:30 a.m. to dusk, Feb-Aug falcon closures); Discover Pass page: $10/$45. official-1, 12 months, after apply.",
+    "evidence": [
+     "https://services5.arcgis.com/4LKAHwqnBooVDUlX/ArcGIS/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.6637343,47.4370112&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+     "https://parks.wa.gov/find-parks/state-parks/olallie-state-park",
+     "https://parks.wa.gov/node/3529",
+     "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_savannah_daydreamin",
+    "column": "length_m",
+    "from": null,
+    "to": 9,
+    "why": "Mountain Project states 30 ft (9 m). Single source (the guidebook preview gives no lengths); locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/117309036/savannah-daydreamin"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_savannah_daydreamin",
+    "column": "bolts",
+    "from": null,
+    "to": 5,
+    "why": "Mountain Project protection: '5 bolts, chain anchors with loweroffs' (bolts, not clips; one count). Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/117309036/savannah-daydreamin"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_savannah_daydreamin",
+    "column": "anchor",
+    "from": null,
+    "to": "Chain anchor",
+    "why": "Mountain Project: '5 bolts, chain anchors with loweroffs'. House spelling 'Chain anchor'. Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/117309036/savannah-daydreamin"
+    ]
+   }
+  ],
+  "held": [],
+  "disputed": [],
+  "notes": "Not in the Exit 38 guidebook's Substation list on Rakkup (20 climbs, which lists every other Substation row); MP only, so grade locked-1src and FA unconfirmed. MP: shares its chain anchor with Turf Safari and Bwana Be Your Man. Not a link-up or variation: MP gives it its own 5-bolt line. permit stays null (siblings carry 'No climbing permit. A Discover Pass is needed to park at Olallie State Park.'); not proposed, brief asks only for access."
+ },
+ "wa_slippery_when_wet": {
+  "area": "wa_substation",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/108512064/slippery-when-wet",
+    "https://www.mountainproject.com/area/106589594/substation",
+    "https://rakkup.com/guidebook/exit-38-rock-climbing/substation/s11465",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/ArcGIS/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.6637343,47.4370112&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://parks.wa.gov/find-parks/state-parks/olallie-state-park",
+    "https://parks.wa.gov/node/3529",
+    "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.10c",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108512064/slippery-when-wet",
+      "fact": "5.10c YDS, Type: Sport",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://rakkup.com/guidebook/exit-38-rock-climbing/substation/s11465",
+      "fact": "Exit 38 guidebook (Kutzke & Price) Substation list: 5.10c, 2 stars",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "discipline",
+    "value": "sport",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108512064/slippery-when-wet",
+      "fact": "Sport, 50 ft (15 m)",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://rakkup.com/guidebook/exit-38-rock-climbing/substation/s11465",
+      "fact": "Exit 38 guidebook Substation list: every climb listed as sport",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_slippery_when_wet",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "pitches 0 is invalid. Mountain Project gives one 50 ft sport line (7 bolts, chain anchor): one length to one anchor, so a single pitch is clear. Implied, not stated: unconfirmed after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/108512064/slippery-when-wet"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_slippery_when_wet",
+    "column": "access",
+    "from": null,
+    "to": {
+     "rules": "Day use only, 6:30 a.m. to dusk. Climbing at Deception Crags can be closed between February and August while peregrine falcons nest; check the park's alerts before going.",
+     "land_manager": "Washington State Parks (Olallie State Park)",
+     "parking_pass": "Discover Pass required to park at Washington State Parks ($10 one day, $45 a year)."
+    },
+    "why": "access is empty. Copied field for field from the live verified object on wa_substation_glob_job_extension (same as wa_jiffy_pop), per batch R brief. Re-queried the official WA State Parks boundary layer 2026-11-23 at the Substation point (47.43701,-121.66373): inside 'Palouse to Cascades' (State Park Trail), consistent with batch Q; State Parks' own pages place Deception Crags at Olallie State Park (day use 6:30 a.m. to dusk, Feb-Aug falcon closures); Discover Pass page: $10/$45. official-1, 12 months, after apply.",
+    "evidence": [
+     "https://services5.arcgis.com/4LKAHwqnBooVDUlX/ArcGIS/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.6637343,47.4370112&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+     "https://parks.wa.gov/find-parks/state-parks/olallie-state-park",
+     "https://parks.wa.gov/node/3529",
+     "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_slippery_when_wet",
+    "column": "length_m",
+    "from": null,
+    "to": 15,
+    "why": "Mountain Project states 50 ft (15 m). Single source (the guidebook preview gives no lengths); locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/108512064/slippery-when-wet"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_slippery_when_wet",
+    "column": "bolts",
+    "from": null,
+    "to": 7,
+    "why": "Mountain Project protection: '7 bolts, chain anchor' (bolts, not clips; one count). Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/108512064/slippery-when-wet"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_slippery_when_wet",
+    "column": "anchor",
+    "from": null,
+    "to": "Chain anchor",
+    "why": "Mountain Project: '7 bolts, chain anchor'. House spelling 'Chain anchor'. Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/108512064/slippery-when-wet"
+    ]
+   }
+  ],
+  "held": [
+   {
+    "table": "routes",
+    "id": "wa_slippery_when_wet",
+    "column": "fa",
+    "from": "Bryan Burdo",
+    "to": "Bryan Burdo (1994)",
+    "why": "HELD: adds the year 1994 to the stored FA from Mountain Project alone (a one-source change to fa).",
+    "evidence": [
+     "https://www.mountainproject.com/route/108512064/slippery-when-wet"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "FA year HELD: Mountain Project gives 'Bryan Burdo (1994)'; stored 'Bryan Burdo'; one source, so not proposed. permit stays null (siblings carry 'No climbing permit. A Discover Pass is needed to park at Olallie State Park.'); not proposed, brief asks only for access."
+ },
+ "wa_bwana_be_your_man": {
+  "area": "wa_substation",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/106589607/bwana-be-your-man",
+    "https://www.mountainproject.com/area/106589594/substation",
+    "https://rakkup.com/guidebook/exit-38-rock-climbing/substation/s11465",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/ArcGIS/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.6637343,47.4370112&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://parks.wa.gov/find-parks/state-parks/olallie-state-park",
+    "https://parks.wa.gov/node/3529",
+    "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.10b",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106589607/bwana-be-your-man",
+      "fact": "5.10b YDS, Type: Sport",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://rakkup.com/guidebook/exit-38-rock-climbing/substation/s11465",
+      "fact": "Exit 38 guidebook (Kutzke & Price) Substation list: 5.10b, 2 stars",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "discipline",
+    "value": "sport",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106589607/bwana-be-your-man",
+      "fact": "Sport, 30 ft (9 m)",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://rakkup.com/guidebook/exit-38-rock-climbing/substation/s11465",
+      "fact": "Exit 38 guidebook Substation list: every climb listed as sport",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Bryan Burdo (1994)",
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106589607/bwana-be-your-man",
+      "fact": "FA: Bryan Burdo (1994)",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_bwana_be_your_man",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "pitches 0 is invalid. Mountain Project gives one 30 ft sport line (5 bolts, anchor with loweroffs): one length to one anchor, so a single pitch is clear. Implied, not stated: unconfirmed after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/106589607/bwana-be-your-man"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_bwana_be_your_man",
+    "column": "access",
+    "from": null,
+    "to": {
+     "rules": "Day use only, 6:30 a.m. to dusk. Climbing at Deception Crags can be closed between February and August while peregrine falcons nest; check the park's alerts before going.",
+     "land_manager": "Washington State Parks (Olallie State Park)",
+     "parking_pass": "Discover Pass required to park at Washington State Parks ($10 one day, $45 a year)."
+    },
+    "why": "access is empty. Copied field for field from the live verified object on wa_substation_glob_job_extension (same as wa_jiffy_pop), per batch R brief. Re-queried the official WA State Parks boundary layer 2026-11-23 at the Substation point (47.43701,-121.66373): inside 'Palouse to Cascades' (State Park Trail), consistent with batch Q; State Parks' own pages place Deception Crags at Olallie State Park (day use 6:30 a.m. to dusk, Feb-Aug falcon closures); Discover Pass page: $10/$45. official-1, 12 months, after apply.",
+    "evidence": [
+     "https://services5.arcgis.com/4LKAHwqnBooVDUlX/ArcGIS/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.6637343,47.4370112&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+     "https://parks.wa.gov/find-parks/state-parks/olallie-state-park",
+     "https://parks.wa.gov/node/3529",
+     "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_bwana_be_your_man",
+    "column": "length_m",
+    "from": null,
+    "to": 9,
+    "why": "Mountain Project states 30 ft (9 m). Single source (the guidebook preview gives no lengths); locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/106589607/bwana-be-your-man"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_bwana_be_your_man",
+    "column": "bolts",
+    "from": null,
+    "to": 5,
+    "why": "Mountain Project protection: '5 bolts, anchor with loweroffs' (bolts, not clips; one count). Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/106589607/bwana-be-your-man"
+    ]
+   }
+  ],
+  "held": [],
+  "disputed": [],
+  "notes": "Anchor HELD: Mountain Project says only 'anchor with loweroffs' without naming its type; the Savannah Daydreamin' page says that route's chain anchor is shared with Turf Safari and Bwana Be Your Man, but that is indirect, so no anchor is proposed. Same start as Turf Safari (MP); own line, not a defect. permit stays null (siblings carry 'No climbing permit. A Discover Pass is needed to park at Olallie State Park.'); not proposed, brief asks only for access."
+ },
+ "wa_you_re_only_nice_to_me_when_i_tie_you_up": {
+  "area": "wa_substation",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/108512177/youre-only-nice-to-me-when-i-tie-you-up",
+    "https://www.mountainproject.com/area/106589594/substation",
+    "https://rakkup.com/guidebook/exit-38-rock-climbing/substation/s11465",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/ArcGIS/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.6637343,47.4370112&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://parks.wa.gov/find-parks/state-parks/olallie-state-park",
+    "https://parks.wa.gov/node/3529",
+    "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.10d",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108512177/youre-only-nice-to-me-when-i-tie-you-up",
+      "fact": "5.10d YDS, Type: Sport",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://rakkup.com/guidebook/exit-38-rock-climbing/substation/s11465",
+      "fact": "Exit 38 guidebook (Kutzke & Price) Substation list: 5.10d, 3 stars",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "discipline",
+    "value": "sport",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108512177/youre-only-nice-to-me-when-i-tie-you-up",
+      "fact": "Sport, 45 ft (14 m)",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://rakkup.com/guidebook/exit-38-rock-climbing/substation/s11465",
+      "fact": "Exit 38 guidebook Substation list: every climb listed as sport",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_you_re_only_nice_to_me_when_i_tie_you_up",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "pitches 0 is invalid. Mountain Project gives one 45 ft sport line (7 bolts, chain anchor): one length to one anchor, so a single pitch is clear. Implied, not stated: unconfirmed after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/108512177/youre-only-nice-to-me-when-i-tie-you-up"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_you_re_only_nice_to_me_when_i_tie_you_up",
+    "column": "access",
+    "from": null,
+    "to": {
+     "rules": "Day use only, 6:30 a.m. to dusk. Climbing at Deception Crags can be closed between February and August while peregrine falcons nest; check the park's alerts before going.",
+     "land_manager": "Washington State Parks (Olallie State Park)",
+     "parking_pass": "Discover Pass required to park at Washington State Parks ($10 one day, $45 a year)."
+    },
+    "why": "access is empty. Copied field for field from the live verified object on wa_substation_glob_job_extension (same as wa_jiffy_pop), per batch R brief. Re-queried the official WA State Parks boundary layer 2026-11-23 at the Substation point (47.43701,-121.66373): inside 'Palouse to Cascades' (State Park Trail), consistent with batch Q; State Parks' own pages place Deception Crags at Olallie State Park (day use 6:30 a.m. to dusk, Feb-Aug falcon closures); Discover Pass page: $10/$45. official-1, 12 months, after apply.",
+    "evidence": [
+     "https://services5.arcgis.com/4LKAHwqnBooVDUlX/ArcGIS/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.6637343,47.4370112&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+     "https://parks.wa.gov/find-parks/state-parks/olallie-state-park",
+     "https://parks.wa.gov/node/3529",
+     "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_you_re_only_nice_to_me_when_i_tie_you_up",
+    "column": "length_m",
+    "from": null,
+    "to": 14,
+    "why": "Mountain Project states 45 ft (14 m). Single source (the guidebook preview gives no lengths); locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/108512177/youre-only-nice-to-me-when-i-tie-you-up"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_you_re_only_nice_to_me_when_i_tie_you_up",
+    "column": "bolts",
+    "from": null,
+    "to": 7,
+    "why": "Mountain Project protection: '7 bolts, chain anchor' (bolts, not clips; one count). Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/108512177/youre-only-nice-to-me-when-i-tie-you-up"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_you_re_only_nice_to_me_when_i_tie_you_up",
+    "column": "anchor",
+    "from": null,
+    "to": "Chain anchor",
+    "why": "Mountain Project: '7 bolts, chain anchor'. House spelling 'Chain anchor'. Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/108512177/youre-only-nice-to-me-when-i-tie-you-up"
+    ]
+   }
+  ],
+  "held": [
+   {
+    "table": "routes",
+    "id": "wa_you_re_only_nice_to_me_when_i_tie_you_up",
+    "column": "fa",
+    "from": "Bryan Burdo",
+    "to": "Bryan Burdo (1994)",
+    "why": "HELD: adds the year 1994 to the stored FA from Mountain Project alone (a one-source change to fa).",
+    "evidence": [
+     "https://www.mountainproject.com/route/108512177/youre-only-nice-to-me-when-i-tie-you-up"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "FA year HELD: Mountain Project gives 'Bryan Burdo (1994)'; stored 'Bryan Burdo'; one source, so not proposed. Twin check: the source page is titled 'You're Only Nice to Me When I Tie You Up' (MP 108512177), not the 'When You're Wet' twin (108512160); Rakkup lists both separately (this one 5.10d). MP: same start as 'When You're Wet', then angles right to its own anchor; its own line, not a defect. permit stays null (siblings carry 'No climbing permit. A Discover Pass is needed to park at Olallie State Park.'); not proposed, brief asks only for access."
+ }
+}
