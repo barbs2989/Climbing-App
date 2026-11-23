@@ -12,8 +12,11 @@ NORMAL line (approach, climb, normal descent) on a NORMAL day in the season part
    - `basis` is `"text"` (the route's own sentences settle it), `"knowledge"` (a well-documented fact about this
      peak and line) or `"web"` (you checked it online).
    - `why` is one short sentence in your own words naming the evidence. Do not quote sources.
-4. When the text does not settle a route, use web search on that route and peak before answering. Answer
-   "unsure" when you still cannot tell. Unsure keeps the warnings, so it is the safe answer.
+4. When the text does not settle a route, use web search on THAT route and peak before answering, for every
+   such route, not a sample (load the tool with ToolSearch "select:WebSearch,WebFetch"). Answer "unsure" when
+   you still cannot tell. Unsure keeps the warnings, so it is the safe answer. A "no" from recall alone, with
+   no search, is not allowed: make it "unsure". Some sites refuse automated reads (SummitPost answers 403);
+   use another page about the same line.
 5. The dangerous error is a wrong "no". Answer "no" for `glacier` only on positive evidence that the line does
    not travel a crevassed glacier: absence of the word is not evidence. A permanent snowfield or stagnant
    remnant that parties cross unroped is "no" for glacier and "yes" for snow. `glacier: yes` requires

@@ -1,0 +1,75 @@
+[
+ {
+  "id": "yt_mount_logan_east_ridge",
+  "name": "East Ridge",
+  "peak": "Mount Logan",
+  "discipline": "ice",
+  "kindToday": "alpineice",
+  "glacier": "yes",
+  "snowInSeason": "yes",
+  "basis": "web",
+  "why": "Reached from a glacier landing and climbs steep snow with crevasses on the way, on the Mount Logan massif.",
+  "verified": false
+ },
+ {
+  "id": "yt_mount_logan_hummingbird_ridge",
+  "name": "Hummingbird Ridge",
+  "peak": "Mount Logan",
+  "discipline": "mountaineering",
+  "kindToday": "glacier",
+  "glacier": "yes",
+  "snowInSeason": "yes",
+  "basis": "web",
+  "why": "The ridge rises from the big glaciers of the Logan massif and is approached across crevassed glacier.",
+  "verified": false
+ },
+ {
+  "id": "yt_mount_logan_king_trench",
+  "name": "King Trench",
+  "peak": "Mount Logan",
+  "discipline": "mountaineering",
+  "kindToday": "glacier",
+  "glacier": "yes",
+  "snowInSeason": "yes",
+  "basis": "text",
+  "why": "Its own text calls for standard glacier-travel equipment.",
+  "verified": false
+ },
+ {
+  "id": "yt_mt_kelsall_area_unnamed_peak_honeymoon_arete",
+  "name": "Unnamed peak - Honeymoon Arete",
+  "peak": "Mt Kelsall area",
+  "discipline": "alpine",
+  "kindToday": "glacier",
+  "glacier": "yes",
+  "snowInSeason": "yes",
+  "basis": "text",
+  "why": "The approach says to cross a short glacier to reach the climb.",
+  "verified": false
+ },
+ {
+  "id": "yt_the_crystal_towers_radelet_peak_the_wizard",
+  "name": "The Wizard",
+  "peak": "The Crystal Towers/Radelet Peak",
+  "discipline": "ice",
+  "kindToday": "alpineice",
+  "glacier": "yes",
+  "snowInSeason": "yes",
+  "basis": "text",
+  "why": "A bergschrund and a 60 degree snow couloir with a cornice are stated, but a search could not confirm the glacier below.",
+  "verified": true,
+  "secondReview": "yes/yes: Couloir above a bergschrund in a glaciated Boundary Ranges massif."
+ },
+ {
+  "id": "yt_vulcan_mountain_vulcan_mountain",
+  "name": "Vulcan Mountain",
+  "peak": "Vulcan Mountain",
+  "discipline": "mountaineering",
+  "kindToday": "glacier",
+  "glacier": "unsure",
+  "snowInSeason": "unsure",
+  "basis": "web",
+  "why": "No text, and a search found nothing on this peak, so neither fact could be checked.",
+  "verified": true
+ }
+]
