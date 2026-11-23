@@ -10,7 +10,11 @@
 // what the finder drew. IT SENDS NO INVITE: the climbers the finder lists are real accounts.
 // The fixture accounts are deleted at the end, whatever happens.
 //
-//   node scripts/oneoff/probe-crew-invite-mode-signed-in.mjs [--shots DIR]
+//   node scripts/oneoff/probe-crew-invite-mode-signed-in.mjs [--shots DIR] [--send] [--rock]
+//
+//   --send  also sends ONE invite, only to an account whose bio declares it a QA test account,
+//           reads the crew_members row back with the service key, then deletes it
+//   --rock  also re-points the disposable route crew at a 5.10a trad route, to see grade-fit lines
 
 import { chromium } from "playwright-core";
 import { spawn } from "node:child_process";
@@ -18,7 +22,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { NPX, NPX_PRE } from "../lib/npx.mjs";
 import { createFixture, sessionForStorage, STORAGE_KEY } from "../lib/ui-fixture.mjs";
-import { patchRow } from "../lib/supabase-env.mjs";
+import { patchRow, SUPABASE_URL, requireServiceKey, headers } from "../lib/supabase-env.mjs";
 import { assertQuietBox } from "../lib/quiet-box.mjs";
 
 assertQuietBox("probe-crew-invite-mode-signed-in.mjs");
@@ -36,6 +40,8 @@ try {
   browser = await chromium.launch({ channel: "chrome", headless: true, timeout: 120000 });
   const page = await (await browser.newContext({ viewport: { width: 390, height: 844 } })).newPage();
   const errors = []; page.on("pageerror", e => errors.push(e.message.slice(0, 200)));
+  // The point each near search was measured FROM, and what came back: the card only prints the answer.
+  page.on("response", async r => { if (!/\/rpc\/partners_near/.test(r.url())) return; try { const rows = await r.json(); log("  partners_near", r.request().postData(), "→", Array.isArray(rows) ? rows.map(x => (x.name || x.username) + " " + x.dist_mi + "mi").join(", ") : r.status()); } catch { /* body gone */ } });
   fixture = await createFixture(log);
   await page.addInitScript(({ key, value }) => { try { window.localStorage.setItem(key, value); } catch { /* storage blocked */ } },
     { key: STORAGE_KEY, value: JSON.stringify(sessionForStorage(fixture.session)) });
@@ -70,8 +76,19 @@ try {
   // the owner. It is a disposable fixture row, removed by cleanup() like the rest.
   if (!process.argv.includes("--as-member")) { await patchRow("crews", fixture.areaCrew.id, { created_by: fixture.owner.id }); log("  area crew handed to the owner (organiser)"); }
   await home();
-  for (let pass = 0; pass < 4; pass++) {
+  const PASSES = process.argv.includes("--rock") ? 6 : 4;
+  for (let pass = 0; pass < PASSES; pass++) {
     const i = pass % 2;
+    if (pass === 4) {
+      // --rock: the fixture's route crew is an alpine climb graded WI3, where there is no rock grade
+      // to compare. Point that disposable crew at a 5.10a trad route so the grade-fit lines draw.
+      const H = headers(requireServiceKey());
+      const rr = await (await fetch(`${SUPABASE_URL}/rest/v1/routes?select=id,name,grade,discipline&discipline=eq.trad&grade=eq.5.10a&id=gte.wa&id=lt.wb&limit=1`, { headers: H })).json();
+      if (!Array.isArray(rr) || !rr.length) { log("\n##### no 5.10a trad route found; skipping the grade-fit passes"); break; }
+      await patchRow("crews", fixture.crew.id, { route_id: rr[0].id });
+      log(`\n##### route crew pointed at ${rr[0].name} (${rr[0].grade}, ${rr[0].discipline}) for the grade-fit passes`);
+      await home();
+    }
     if (pass === 2) {
       // Round two: save a zip THROUGH THE APP (profile_zips cascades with the account), so the
       // near-the-climb list is allowed to draw.
@@ -102,6 +119,37 @@ try {
     await page.evaluate(() => { const n = document.querySelector("[data-invite-near-climb]"); if (n) n.scrollIntoView({ block: "start" }); });
     await page.waitForTimeout(600);
     if (SHOTS) await page.screenshot({ path: path.join(SHOTS, `invite-mode-p${pass}-crew${i}-near.png`), fullPage: false });
+    if (pass === 3 && process.argv.includes("--send")) {
+      // --send: ONE real invite, and only to an account whose own bio declares it a QA test account
+      // ("TEST ACCOUNT for manual QA — not a real climber"). Anything else is left unpicked.
+      const picked = await page.evaluate(() => {
+        for (const b of [...document.querySelectorAll("button")].filter(x => x.textContent.trim() === "Select to invite")) {
+          let card = b; for (let k = 0; k < 8 && card.parentElement; k++) { card = card.parentElement; if (/Full profile/.test(card.innerText)) break; }
+          if (/TEST ACCOUNT for manual QA/.test(card.innerText) && card.innerText.length < 2500) { b.scrollIntoView({ block: "center" }); b.click(); return card.innerText.split("\n")[0]; }
+        }
+        return null;
+      });
+      log("\n--- SEND: picked", picked);
+      if (picked) {
+        await page.waitForTimeout(700);
+        log("bar after pick:", await page.evaluate(() => (document.querySelector('[aria-label="Inviting to a crew"]') || {}).innerText?.replace(/\n/g, " | ")));
+        await page.evaluate(() => { const b = [...document.querySelectorAll('[aria-label="Inviting to a crew"] button')].find(x => /^Invite \d/.test(x.textContent.trim())); if (b) b.click(); });
+        await page.waitForTimeout(900);
+        log("sheet:", await page.evaluate(() => (document.querySelector('[aria-label="Invite to crew"]') || {}).innerText?.split("\n").slice(0, 2).join(" | ")));
+        await page.locator('[aria-label="Invite to crew"] textarea').fill("Probe invite from a disposable fixture crew. It is removed with the crew.");
+        await page.evaluate(() => { const b = [...document.querySelectorAll('[aria-label="Invite to crew"] button')].find(x => /^Send/.test(x.textContent.trim())); if (b) b.click(); });
+        await page.waitForTimeout(4000);
+        log("after send:", JSON.stringify(await page.evaluate(() => ({ title: document.title, sheetOpen: !!document.querySelector('[aria-label="Invite to crew"]'), bar: (document.querySelector('[aria-label="Inviting to a crew"]') || {}).innerText?.replace(/\n/g, " | "), invitedLabels: [...document.querySelectorAll("div")].filter(e => e.children.length === 0 && e.textContent.trim() === "Invited").length }))));
+        const H = headers(requireServiceKey());
+        const rows = await (await fetch(`${SUPABASE_URL}/rest/v1/crew_members?crew_id=eq.${fixture.crew.id}&status=eq.invited&select=user_id,status,note,invited_by`, { headers: H })).json();
+        log("crew_members rows with status invited (service key):", JSON.stringify(rows));
+        log("invited_by is the fixture owner:", Array.isArray(rows) && rows.length === 1 && rows[0].invited_by === fixture.owner.id, "· note stored:", !!(rows[0] && rows[0].note));
+        // Take the invite back now rather than leaving it to the crew's deletion.
+        for (const r of Array.isArray(rows) ? rows : []) await fetch(`${SUPABASE_URL}/rest/v1/crew_members?crew_id=eq.${fixture.crew.id}&user_id=eq.${r.user_id}`, { method: "DELETE", headers: H });
+        const left = await (await fetch(`${SUPABASE_URL}/rest/v1/crew_members?crew_id=eq.${fixture.crew.id}&status=eq.invited&select=user_id`, { headers: H })).json();
+        log("invite rows left after removing them:", Array.isArray(left) ? left.length : left);
+      }
+    }
     const done = await page.evaluate(() => { const b = [...document.querySelectorAll('[aria-label="Inviting to a crew"] button')].find(x => x.textContent.trim() === "Done"); if (b) b.click(); return !!b; });
     await page.waitForTimeout(1500);
     log("Done pressed:", done, "→ now on:", await page.title());

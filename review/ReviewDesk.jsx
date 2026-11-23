@@ -13,6 +13,8 @@
 //   order → a climber's suggested LEFT-TO-RIGHT ORDER for a wall (contributions kind 'wall_order', 0485;
 //           owner, 2026-11-23): Use this order (resolve_wall_order rewrites the wall's one stored order)
 //           · Keep current order. Not sent to the AI checker.
+// Two more sections beside the table (owner, 2026-11-23): Trails & GPS tracks (gps_submissions, 0397)
+// and Accessibility reports (0343/0354), each the same queue component the app's Menu used to open.
 // Identical edits cluster with sameEditValue, exactly as the old queue did.
 import { useEffect, useMemo, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
@@ -22,7 +24,10 @@ import {
   useIsAdmin, useFieldContributions, useOpenRouteFlags, useContributionFields, useRouteRowsByIds,
   useAreaEditRowsByIds, approveFieldContribution, rejectFieldContribution, setRouteFieldConfidence,
   resolveRouteFlag, submitContribution, REMOVAL_NOTE, useWallOrderSuggestions, useWallRoutesByAreaIds, resolveWallOrder,
+  useAdminQueueCounts,
 } from "../lib/db";
+import { GpsSubmissionQueue } from "../lib/GpsSubmissionQueue";
+import { AccessibilityReportQueue } from "../lib/AccessibilityReports";
 import { C, DLOCALE, sameEditValue } from "../ClimbMatchCore";
 import { AREA_EDIT_FIELDS } from "../lib/areaFields";
 
@@ -113,7 +118,7 @@ export default function ReviewDesk() {
   const page = (body) => <div style={{ maxWidth: 1400, margin: "0 auto", padding: "16px 16px 60px" }}><style>{CSS}</style>
     <header style={{ display: "flex", alignItems: "baseline", gap: 12, flexWrap: "wrap", marginBottom: 12 }}>
       <h1 style={{ fontSize: 20, margin: 0 }}>Review desk</h1>
-      <span style={{ fontSize: 12.5, color: C.textMuted }}>Climber flags, suggested edits and suggested wall orders. Edits and flags are checked by AI overnight. Nothing changes until you act.</span>
+      <span style={{ fontSize: 12.5, color: C.textMuted }}>Climber flags, suggested edits and wall orders, submitted trails and GPS tracks, and accessibility reports. Edits and flags are checked by AI overnight. Nothing changes until you act.</span>
       <a href={BASE} style={{ marginLeft: "auto", color: C.blue, fontSize: 12.5, fontWeight: 700, textDecoration: "none" }}>Open ClimbMatch →</a>
     </header>{body}</div>;
   if (!supabase) return page(<p>This build has no database connection.</p>);
@@ -124,8 +129,43 @@ export default function ReviewDesk() {
   return page(<Desk />);
 }
 
-// ── the table ────────────────────────────────────────────────────────────────────────
+// ── sections ─────────────────────────────────────────────────────────────────────────
+// TRAILS & GPS TRACKS and ACCESSIBILITY REPORTS moved here off the app's Menu (owner, 2026-11-23: keep
+// them, but not as Menu boxes). Their shapes are not a row of the edits table (a line drawn on a map;
+// a report answered by email), so each is its own section, rendered by the SAME queue component the
+// Menu sheet used: the review calls and their admin checks are unchanged. The count beside each tab
+// is useAdminQueueCounts, the read that used to badge the Menu; a failed count shows no number rather
+// than a zero. A link can open a section directly: review.html#trails or review.html#access.
+const SECTIONS = [["edits", "Edits, flags & wall orders"], ["trails", "Trails & GPS tracks"], ["access", "Accessibility reports"]];
+const fromHash = () => { const h = (typeof window !== "undefined" && window.location.hash || "").slice(1); return SECTIONS.some(([k]) => k === h) ? h : "edits"; };
 function Desk() {
+  const [sec, setSec] = useState(fromHash);
+  const countsQ = useAdminQueueCounts(true);
+  const n = countsQ.data || null;
+  const [note, setNote] = useState(null);
+  const pick = (k) => { setSec(k); setNote(null); try { window.history.replaceState(null, "", k === "edits" ? window.location.pathname + window.location.search : "#" + k); } catch (_e) { /* the section still switches */ } };
+  const notify = (t) => { setNote(t); countsQ.refetch(); };
+  const openRoute = (id) => { window.open(BASE + "?route=" + encodeURIComponent(id), "_blank", "noopener"); };
+  return <div>
+    <div role="tablist" aria-label="Review sections" style={{ display: "flex", gap: 6, flexWrap: "wrap", marginBottom: 14, borderBottom: "1px solid " + C.border, paddingBottom: 10 }}>
+      {SECTIONS.map(([k, label]) => {
+        const c = n && k !== "edits" ? n[k] : null;
+        return <button key={k} role="tab" aria-selected={sec === k} className={"rd-btn" + (sec === k ? " rd-ok" : "")} onClick={() => pick(k)}>{label}{c ? " · " + c : ""}</button>;
+      })}
+    </div>
+    {sec !== "edits" && note ? <div role="status" style={{ background: C.surface, color: C.text, border: "1px solid " + C.border, borderRadius: 9, padding: "9px 11px", fontSize: 12.5, marginBottom: 10 }}>{note}</div> : null}
+    {sec === "trails" ? <div style={{ maxWidth: 640 }}>
+      <p style={{ fontSize: 12.5, color: C.textMuted, lineHeight: 1.5, marginTop: 0 }}>Trails to crags that climbers traced on the map or recorded, and GPS tracks of routes (0397). Check the line follows a real path from the parking pin (P) to the crag (C). Approving a crag trail saves it as the crag’s walk in, drawn on every climb there; it replaces any line already shown, and the old one is kept with the submission.</p>
+      <GpsSubmissionQueue notify={notify} onOpenRoute={openRoute} />
+    </div> : sec === "access" ? <div style={{ maxWidth: 640 }}>
+      <p style={{ fontSize: 12.5, color: C.textMuted, lineHeight: 1.5, marginTop: 0 }}>Problems climbers and visitors reported from the Accessibility statement. The statement promises a reply within 5 business days; reply by email, then mark it answered.</p>
+      <AccessibilityReportQueue notify={notify} />
+    </div> : <EditsTable />}
+  </div>;
+}
+
+// ── the table ────────────────────────────────────────────────────────────────────────
+function EditsTable() {
   const editsQ = useFieldContributions("pending", 1000);
   const flagsQ = useOpenRouteFlags(true);
   const fieldsQ = useContributionFields();

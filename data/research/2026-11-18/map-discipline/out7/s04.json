@@ -1,0 +1,191 @@
+[
+ {
+  "id": "ca_mount_genevra_standard_route",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Opened wacziarg Upper Kern Canyon 2025 (Shepherd Pass TH, Jordan only, no Genevra mention). Search snippets only (not evidence) say Genevra/Jordan trips used Road's End via Millys Foot Pass. Starts in use: Shepherd Pass, Road's End, Onion Valley; none tied to a Genevra standard route. Nothing new."
+ },
+ {
+  "id": "ca_mount_goddard_standard_route",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "class",
+    "value": "3 (Starr's Route NE ridge, short class 4 bypassable)",
+    "url": "https://climber.org/reports/2005/1456.html"
+   },
+   {
+    "field": "time",
+    "value": "17h45m round trip from North Lake",
+    "url": "https://climber.org/reports/2005/1456.html"
+   }
+  ],
+  "notes": "Opened climber.org 2005/1456 (North Lake -> Lamarck Col -> Darwin Canyon -> Starr's Route, 17h45m, class 3) and scaruffi.com/travel/goddard.html (offers Lake Sabrina via Haeckel-Darwin Pass as the recommended start, North Lake via Lamarck as the alternative). Two starts in use, nothing ties the standard route to one: North Lake, Lake Sabrina (also South Lake/Piute per earlier pass). Stuck."
+ },
+ {
+  "id": "ca_mount_hale_standard_route",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "time",
+    "value": "9h50m round trip incl. Mt Young",
+    "url": "https://www.snwburd.com/bob/trip_reports/hale_1.html"
+   },
+   {
+    "field": "class",
+    "value": "2-3 upper chute",
+    "url": "https://www.snwburd.com/bob/trip_reports/hale_1.html"
+   }
+  ],
+  "notes": "Opened snwburd hale_1 (start Whitney Portal via North Fork Lone Pine Creek, Whitney Col, chute north of the standard Secor route; 9h50m with Young) and Wikipedia (south slope class 2, JMT below south side, no trailhead named). One report only; JMT approach also possible from Cottonwood/Horseshoe Meadow. Weak, stuck."
+ },
+ {
+  "id": "ca_mount_hilgard_standard_route",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "time",
+    "value": "Hilgard summit ~5.5h from Mosquito Flat",
+    "url": "https://www.snwburd.com/bob/trip_reports/hilgard_1.html"
+   },
+   {
+    "field": "class",
+    "value": "3 SE flank",
+    "url": "https://www.snwburd.com/bob/trip_reports/hilgard_1.html"
+   }
+  ],
+  "notes": "Three starts in use on opened pages: snwburd hilgard_1 (Mosquito Flat via Morgan Pass trail and Cox Col, inferred), climber.org 2012/1814 (Pine Creek via Italy Pass, ~2100 ft from Lake Italy camp), and earlier-pass climber.org 1999/508 (Bear Creek Diversion Dam). Search snippet of SummitPost (403, not evidence) calls Mosquito Flat/Cox Col shortest. No page ties 'standard route' to one. Withdrawn previous found; stuck."
+ },
+ {
+  "id": "ca_mount_hooper_southwest_ridge_via_tombstone_pass",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Opened climber.org SierraPeaks 16/11 (peak index only, no route); SummitPost and listsofjohn 403. Search found no page naming Tombstone Pass/Creek. Snippets (not evidence) suggest Hooper Creek Diversion Dam by Florence Lake or Bear Creek dam. Nothing new."
+ },
+ {
+  "id": "ca_mount_jordan_standard_route",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "class",
+    "value": "4 East Slope, class 3 sections, class 4 step-across",
+    "url": "https://sites.google.com/view/wacziarg-climbing/2025-06-upper-kern-canyon"
+   },
+   {
+    "field": "gain_ft",
+    "value": "3533 (TH to Mahogany Flat day), 3956 (to Upper Kern lakes), 2781 (summit day)",
+    "url": "https://sites.google.com/view/wacziarg-climbing/2025-06-upper-kern-canyon"
+   }
+  ],
+  "notes": "Opened wacziarg 2025 (Shepherd Pass TH; Mahogany Flat, Upper Kern lakes; East Slope class 4, 12.09 mi last day) - one page, East Slope not necessarily 'standard'. Snippets (not evidence) mention Road's End and Milly's Foot Pass. Starts in use: Shepherd Pass, Road's End, Onion Valley. Stuck."
+ },
+ {
+  "id": "ca_mount_maclure_standard_route",
+  "status": "found",
+  "trailhead": {
+   "name": "Lyell Canyon Trailhead (Tuolumne Meadows, Dog Lake lot)",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://themtsarecalling.com/lyell/",
+    "fact": "Lyell and Maclure (SE ridge) from Tuolumne Lodge/Lyell Canyon trailhead up JMT; scaruffi.com also starts at Tuolumne Meadows JMT trailhead; earlier peaksforfreaks agrees"
+   },
+   "placements": [
+    {
+     "source": "NPS",
+     "name": "Dog Lake Trailhead Parking",
+     "lat": 37.878162,
+     "lng": -119.338857,
+     "url": ""
+    },
+    {
+     "source": "Peaks For Freaks (blog)",
+     "name": "second lot / Lyell Canyon TH",
+     "lat": 37.8781,
+     "lng": -119.3388,
+     "url": "http://peaksforfreaks.blogspot.com/2012/07/mt-lyell-mt-maclure_21.html"
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "route",
+    "value": "Lyell Canyon JMT, leave trail below Lyell, Lyell-Maclure col, SE ridge",
+    "url": "https://themtsarecalling.com/lyell/"
+   },
+   {
+    "field": "distance_mi",
+    "value": "28.3 round trip Lyell+Maclure (GPS)",
+    "url": "https://themtsarecalling.com/lyell/"
+   },
+   {
+    "field": "time",
+    "value": "17h20m car to car Lyell+Maclure",
+    "url": "https://themtsarecalling.com/lyell/"
+   }
+  ],
+  "notes": "Three pages (themtsarecalling, scaruffi.com Lyell, earlier peaksforfreaks) all start Tuolumne Meadows Lyell Canyon; alt Rush Creek/Silver Lake mentioned only for Lyell east side. Lot ambiguity: themtsarecalling says Tuolumne Lodge trailhead; scaruffi says Lodge lot is reserved, use lot ~200 m away; NPS Dog Lake lot used."
+ },
+ {
+  "id": "ca_mount_mcadie_via_arc_pass",
+  "status": "found",
+  "trailhead": {
+   "name": "Whitney Portal Trailhead",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://peaksforfreaks.blogspot.com/2014/11/mt-mcadie-crabtree-point-mt-newcomb-mt.html",
+    "fact": "Whitney Portal, Outpost Camp, Consultation Lake, then south to Arc Pass and west to McAdie; also climber.org 2009/1715"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "Whitney Portal Trailhead",
+     "lat": 36.586905,
+     "lng": -118.240112,
+     "url": ""
+    },
+    {
+     "source": "Wikipedia",
+     "name": "Whitney Portal",
+     "lat": 36.58611,
+     "lng": -118.24139,
+     "url": "https://en.wikipedia.org/wiki/Whitney_Portal"
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "distance_mi",
+    "value": "5.3 TH to Consultation Lake",
+    "url": "https://peaksforfreaks.blogspot.com/2014/11/mt-mcadie-crabtree-point-mt-newcomb-mt.html"
+   },
+   {
+    "field": "gain_ft",
+    "value": "~2080 TH to Outpost Camp",
+    "url": "https://peaksforfreaks.blogspot.com/2014/11/mt-mcadie-crabtree-point-mt-newcomb-mt.html"
+   }
+  ],
+  "notes": "Second independent page (peaksforfreaks 2014) confirms Whitney Portal for Arc Pass route. Meysan Lakes TH is an alternative only."
+ }
+]

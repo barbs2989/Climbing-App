@@ -68,16 +68,29 @@ export default function PartnersHereCard({ area, C, uid, myListings, onListMe, o
   const openRegular = () => { if (reg && onViewProfile) onViewProfile({ id: reg.user_id, name: reg.name || "Climber", username: reg.username, showName: !!reg.show_name, resumePublic: false, avatar: reg.avatar, disciplines: [], availability: [] } as unknown as Parameters<NonNullable<typeof onViewProfile>>[0]); };
   return (
     <div style={{ background: C.card, border: "1px solid " + C.border, borderRadius: 12, padding: "12px 13px", marginBottom: 14 }}>
-      <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 6 }}>
-        <div style={{ flex: 1, minWidth: 0 }}>
-          <div style={{ fontSize: 13, fontWeight: 800, color: C.text, letterSpacing: 0.4, textTransform: "uppercase" }}>Partners here</div>
-          <div style={{ fontSize: 12.5, color: C.textSub, marginTop: 2 }}>{!on ? "Sign in to see who climbs here." : countQ.isError ? "Couldn’t load who’s listed." : count == null ? "Counting…" : count === 0 ? "Nobody listed here yet — be the first." : count + " climber" + (count === 1 ? "" : "s") + " listed here or nearby"}</div>
-        </div>
-        {on ? <button onClick={toggle} disabled={busy} aria-pressed={listed} aria-label={listed ? "Listed at " + area.name + tx(" — tap to remove") : "List me at " + area.name} style={{ flexShrink: 0, minHeight: 40, padding: "0 13px", borderRadius: 10, border: "1px solid " + (listed ? C.green : C.blueDim), background: listed ? C.greenBg : C.blueBg, color: listed ? C.green : "#fff", fontSize: 12.5, fontWeight: 800, cursor: busy ? "default" : "pointer", opacity: busy ? 0.6 : 1 }}>{listed ? "Listed ✓" : "List me here"}</button> : null}
+      <div style={{ marginBottom: 6 }}>
+        <div style={{ fontSize: 13, fontWeight: 800, color: C.text, letterSpacing: 0.4, textTransform: "uppercase" }}>Partners here</div>
+        <div style={{ fontSize: 12.5, color: C.textSub, marginTop: 2 }}>{!on ? "Sign in to see who climbs here." : countQ.isError ? "Couldn’t load who’s listed." : count == null ? "Counting…" : count === 0 ? "Nobody listed here yet — be the first." : count + " climber" + (count === 1 ? "" : "s") + " listed here or nearby"}</div>
       </div>
+      {on && reg ? (
+        <div {...(onViewProfile ? clickable(openRegular) : {})} aria-label={"Crag regular: " + regName + ", " + reg.days + " days here in the last 90" + (onViewProfile ? " — open their profile" : "")} style={{ display: "flex", alignItems: "center", gap: 10, marginTop: 8, padding: "8px 10px", borderRadius: 11, background: C.surface, border: "1px solid " + C.border, cursor: onViewProfile ? "pointer" : "default" }}>
+          <Av src={reg.avatar} size={32} />
+          <div style={{ flex: 1, minWidth: 0 }}>
+            <div style={{ fontSize: 10.5, fontWeight: 800, color: C.amber, letterSpacing: 0.4, textTransform: "uppercase" }}>Crag regular</div>
+            <div style={{ fontSize: 13.5, fontWeight: 700, color: C.text, overflowWrap: "anywhere" }}>{regName}{reg.is_me ? <span style={{ fontWeight: 500, color: C.textMuted }}>{" — you"}</span> : null}</div>
+            <div style={{ fontSize: 11.5, color: C.textMuted, marginTop: 1 }}>{reg.days + " days here in the last 90"}</div>
+          </div>
+          {onViewProfile ? <span aria-hidden="true" style={{ display: "flex", flexShrink: 0 }}><Chevron size={16} color={C.textMuted} /></span> : null}
+        </div>
+      ) : null}
+      {on && rows.length && PartnerRow ? <div style={{ marginTop: 6 }}>{rows.map((p: PartnerRow) => <PartnerRow key={p.id} p={p} onOpen={onViewProfile} />)}</div> : null}
+      {on && (count > 0 || rows.length) ? <button onClick={openAll} style={{ ...BTN_LINK(C), padding: "6px 0 0", fontSize: 12.5 }}>{"See all at " + area.name + " →"}</button> : null}
+      {/* ACTIONS (owner 2026-11-23): List me here is a full-width button on its own line, ABOVE Start a crew here / Crews here. */}
+      {on || onStartCrew || onCrewsHere ? <div style={{ marginTop: 10, paddingTop: 10, borderTop: "1px solid " + C.border }}>
+      {on ? <button data-cm-fill="" onClick={toggle} disabled={busy} aria-pressed={listed} aria-label={listed ? "Listed at " + area.name + tx(" — tap to remove") : "List me at " + area.name} style={{ width: "100%", boxSizing: "border-box", minHeight: 44, padding: "0 13px", borderRadius: 10, border: "1px solid " + (listed ? C.green : C.blueDim), background: listed ? C.greenBg : C.blueBg, color: listed ? C.green : "#fff", fontSize: 13.5, fontWeight: 800, cursor: busy ? "default" : "pointer", opacity: busy ? 0.6 : 1 }}>{listed ? "Listed ✓" : "List me here"}</button> : null}
       {/* SAVE vs LIST ME (owner 2026-11-14: "whats the difference between saved areas and my areas?"). The page's
           Save area button is a private bookmark; this listing is what other climbers can see. One line says so. */}
-      {on ? <div style={{ fontSize: 11.5, color: C.textMuted, lineHeight: 1.45, marginBottom: 2 }}>{listed ? "Climbers searching for partners here can find you. Saving the area is separate — only you see your saved areas." : "Listing makes you findable by climbers searching here. Saving the area just bookmarks it — only you see it."}</div> : null}
+      {on ? <div style={{ fontSize: 11.5, color: C.textMuted, lineHeight: 1.45, marginTop: 6, marginBottom: 2 }}>{listed ? "Climbers searching for partners here can find you. Saving the area is separate — only you see your saved areas." : "Listing makes you findable by climbers searching here. Saving the area just bookmarks it — only you see it."}</div> : null}
       {/* Once listed, the follow-up — when you can climb here and what — is a real, full-width
           control, not a bare word. It and "See all" used to spread `BTN_LINK` as an object; it is a
           FUNCTION of C, so both rendered as the browser's default grey button: tiny, hard to see,
@@ -94,22 +107,10 @@ export default function PartnersHereCard({ area, C, uid, myListings, onListMe, o
           <span aria-hidden="true" style={{display:"flex",flexShrink:0}}><Chevron size={16} color={C.textMuted}/></span>
         </button>
       ) : null}
-      {on && reg ? (
-        <div {...(onViewProfile ? clickable(openRegular) : {})} aria-label={"Crag regular: " + regName + ", " + reg.days + " days here in the last 90" + (onViewProfile ? " — open their profile" : "")} style={{ display: "flex", alignItems: "center", gap: 10, marginTop: 8, padding: "8px 10px", borderRadius: 11, background: C.surface, border: "1px solid " + C.border, cursor: onViewProfile ? "pointer" : "default" }}>
-          <Av src={reg.avatar} size={32} />
-          <div style={{ flex: 1, minWidth: 0 }}>
-            <div style={{ fontSize: 10.5, fontWeight: 800, color: C.amber, letterSpacing: 0.4, textTransform: "uppercase" }}>Crag regular</div>
-            <div style={{ fontSize: 13.5, fontWeight: 700, color: C.text, overflowWrap: "anywhere" }}>{regName}{reg.is_me ? <span style={{ fontWeight: 500, color: C.textMuted }}>{" — you"}</span> : null}</div>
-            <div style={{ fontSize: 11.5, color: C.textMuted, marginTop: 1 }}>{reg.days + " days here in the last 90"}</div>
-          </div>
-          {onViewProfile ? <span aria-hidden="true" style={{ display: "flex", flexShrink: 0 }}><Chevron size={16} color={C.textMuted} /></span> : null}
-        </div>
-      ) : null}
-      {on && rows.length && PartnerRow ? <div style={{ marginTop: 6 }}>{rows.map((p: PartnerRow) => <PartnerRow key={p.id} p={p} onOpen={onViewProfile} />)}</div> : null}
-      {on && (count > 0 || rows.length) ? <button onClick={openAll} style={{ ...BTN_LINK(C), padding: "6px 0 0", fontSize: 12.5 }}>{"See all at " + area.name + " →"}</button> : null}
-      {onStartCrew || onCrewsHere ? <div style={{ display: "flex", gap: 8, marginTop: 10, paddingTop: 10, borderTop: "1px solid " + C.border }}>
+      {onStartCrew || onCrewsHere ? <div style={{ display: "flex", gap: 8, marginTop: on ? 8 : 0 }}>
         {onStartCrew ? <button onClick={() => onStartCrew(area)} style={{ ...BTN, flex: 1, border: "1px solid " + C.blueDim, background: C.blueBg, color:C.onSolid }}>Start a crew here</button> : null}
         {onCrewsHere ? <button onClick={() => onCrewsHere(area)} style={{ ...BTN, flex: 1, border: "1px solid " + C.border, background: C.surface, color: C.textSub }}>{"Crews here" + (crewN ? " · " + crewN : "")}</button> : null}
+      </div> : null}
       </div> : null}
       {/* GROUPS NEAR HERE (0396): a climber looking at a crag they are travelling to can find the local groups from it. */}
       {onGroupsHere ? <button onClick={() => onGroupsHere(area)} style={{ ...BTN_LINK(C), padding: "10px 0 0", fontSize: 12.5 }}>{"Climbing groups near " + area.name + " →"}</button> : null}

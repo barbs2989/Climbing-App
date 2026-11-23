@@ -1,0 +1,658 @@
+[
+ {
+  "id": "bc_ossa_mountain_east_ridge",
+  "name": "East Ridge",
+  "peakName": "Ossa Mountain",
+  "state": "British Columbia",
+  "discipline": "scrambling",
+  "status": "held",
+  "peak": {
+   "id": "bc_ossa_mountain",
+   "name": "Ossa Mountain",
+   "lat": 49.86333,
+   "lng": -123.36722,
+   "elevation_ft": 7418,
+   "region": "British Columbia",
+   "path": "canada.bc.bc_sea_to_sky_squamish_to_whistler.bc_tantalus_range.bc_ossa_mountain"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": "{\"trailhead\":\"Ossa Mountain trailhead, about 30 minutes from Squamish\"}",
+   "road": null,
+   "overview": "Ossa Mountain is climbed by its east ridge, a long day from the Squamish side with steep forest, meadows and creek crossings below a route-finding scramble. Near the top the route downclimbs into a notch and works through a chimney section before the summit.",
+   "description": null,
+   "descent": "Return the same way; the downclimbs and loose ground make the descent as serious as the ascent."
+  },
+  "siblingTrailheads": [],
+  "officialCandidates": [],
+  "lastAnswer": {
+   "status": "found",
+   "trailhead": {
+    "name": "Sigurd Creek Trailhead (Ashlu Creek Road, spur A-200)",
+    "identifiedBy": {
+     "kind": "page",
+     "fact": "2013 VOC Ossa Mountain trip: Sigurd Creek trailhead via Ashlu Creek road, branch A-200 about 2.3 km past the bridges, park on the right just past the fork",
+     "url": "https://wiki.ubc-voc.com/Archive:2013_Ossa_Mountain"
+    },
+    "placements": []
+   },
+   "notes": "Moderate, weak on the ridge: the VOC page does not say east or west ridge, and other sources call the west ridge the usual line via Sigurd Creek. Sigurd Creek is the only road-access trailhead found for Ossa. Stored text says 30 min from Squamish, consistent. No coordinate; Song page body unreadable via WebFetch."
+  }
+ },
+ {
+  "id": "ca_adams_peak_standard_route",
+  "name": "Standard route",
+  "peakName": "Adams Peak",
+  "state": "California",
+  "discipline": "scrambling",
+  "status": "nopage",
+  "peak": {
+   "id": "ca_adams_peak",
+   "name": "Adams Peak",
+   "lat": 39.9106,
+   "lng": -120.1003,
+   "elevation_ft": 8197,
+   "region": null,
+   "path": "usa.california.ca_northern_sierra.ca_adams_peak"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "siblingTrailheads": [],
+  "officialCandidates": [],
+  "lastAnswer": {
+   "status": "stuck",
+   "trailhead": null,
+   "notes": "Opened climber.org driving page (no coordinates; waypoints only): west start at Frenchman Lake / Spring Creek road, snow decides how far you drive; summit register also shows ascents from Hwy 395 (east). Reports start at different points (where pavement ends vs SPRJCT/SPRCK4 road junctions). No signed named trailhead; two sides in use. Not pinned."
+  }
+ },
+ {
+  "id": "ca_black_giant_west_slope_from_black_giant_pass",
+  "name": "West Slope from Black Giant Pass",
+  "peakName": "Black Giant",
+  "state": "California",
+  "discipline": "scrambling",
+  "status": "nopage",
+  "peak": {
+   "id": "ca_black_giant",
+   "name": "Black Giant",
+   "lat": 37.1023,
+   "lng": -118.6486,
+   "elevation_ft": 13330,
+   "region": null,
+   "path": "usa.california.ca_high_sierra.ca_08_bishop_pass_evolution.ca_black_giant"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": "A remote peak reached off the John Muir Trail near Muir Pass; leave the trail for Black Giant Pass, then walk up about half a mile of loose rock to the summit. The east-side approach over Echo Col from Lake Sabrina adds class 3 and possible snow.",
+   "descent": null
+  },
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "South Lake Trailhead",
+    "lat": 37.169305,
+    "lng": -118.565813,
+    "km": 10.5
+   },
+   {
+    "src": "USFS",
+    "name": "Baker/Green Lakes Th",
+    "lat": 37.186805,
+    "lng": -118.557713,
+    "km": 12.4
+   },
+   {
+    "src": "USFS",
+    "name": "TYEE TH",
+    "lat": 37.195805,
+    "lng": -118.564713,
+    "km": 12.8
+   },
+   {
+    "src": "USFS",
+    "name": "SABRINA LAKE TH",
+    "lat": 37.213605,
+    "lng": -118.610013,
+    "km": 12.8
+   },
+   {
+    "src": "USFS",
+    "name": "LAMARCK LAKES TH",
+    "lat": 37.227305,
+    "lng": -118.627513,
+    "km": 14
+   },
+   {
+    "src": "USFS",
+    "name": "North Lake  Trailhead",
+    "lat": 37.230685,
+    "lng": -118.616614,
+    "km": 14.6
+   },
+   {
+    "src": "USFS",
+    "name": "BIG PINE CREEK SO FORK TH",
+    "lat": 37.124805,
+    "lng": -118.438913,
+    "km": 18.8
+   },
+   {
+    "src": "USFS",
+    "name": "Big Pine Creek North Fork Trail Trailhea",
+    "lat": 37.128105,
+    "lng": -118.427713,
+    "km": 19.8
+   }
+  ],
+  "lastAnswer": {
+   "status": "stuck",
+   "trailhead": null,
+   "notes": "Opened Burd 2009: day trip from Lake Sabrina over Echo Col (east variant). Other pages (climber.org 2006/1514, thebackcountry ski report) also start at Sabrina/Aspendale. Search summary says SummitPost gives JMT 7 mi to Muir Pass and Peakware says nearest lot South Lake, 21 mi (not opened; SummitPost 403, Peakware unreachable). No single trailhead; Sabrina is the only one an opened page uses (lead: USFS SABRINA LAKE TH 37.213605,-118.610013)."
+  }
+ },
+ {
+  "id": "ca_black_hawk_mountain_via_summit_creek_and_mosquito_pass",
+  "name": "Via Summit Creek and Mosquito Pass",
+  "peakName": "Black Hawk Mountain",
+  "state": "California",
+  "discipline": "scrambling",
+  "status": "held",
+  "peak": {
+   "id": "ca_black_hawk_mountain",
+   "name": "Black Hawk Mountain",
+   "lat": 38.206,
+   "lng": -119.7089,
+   "elevation_ft": 10348,
+   "region": null,
+   "path": "usa.california.ca_high_sierra.ca_01_hoover_wilderness.ca_black_hawk_mountain"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": "Follow Summit Creek trail about 10 miles to Lunch Meadow, leave the trail before Mosquito Pass, and climb a drainage to the summit ridge.",
+   "descent": null
+  },
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Silver Mine",
+    "lat": 38.274705,
+    "lng": -119.759813,
+    "km": 8.8
+   },
+   {
+    "src": "USFS",
+    "name": "Upper Kennedy Meadow Trailhead",
+    "lat": 38.299605,
+    "lng": -119.740413,
+    "km": 10.8
+   },
+   {
+    "src": "USFS",
+    "name": "Leavitt Lake Trailhead",
+    "lat": 38.27341,
+    "lng": -119.612366,
+    "km": 11.3
+   },
+   {
+    "src": "USFS",
+    "name": "Kennedy Meadows Campground",
+    "lat": 38.316593,
+    "lng": -119.747204,
+    "km": 12.7
+   },
+   {
+    "src": "USFS",
+    "name": "Gianelli Cabin Trailhead",
+    "lat": 38.197505,
+    "lng": -119.883013,
+    "km": 15.2
+   },
+   {
+    "src": "USFS",
+    "name": "Sonora Pass Trailhead",
+    "lat": 38.329792,
+    "lng": -119.635133,
+    "km": 15.2
+   },
+   {
+    "src": "USFS",
+    "name": "Coyote Meadow Trailhead",
+    "lat": 38.24043,
+    "lng": -119.87956,
+    "km": 15.4
+   },
+   {
+    "src": "USFS",
+    "name": "Saint Marys Pass Trailhead",
+    "lat": 38.337162,
+    "lng": -119.645481,
+    "km": 15.6
+   }
+  ],
+  "lastAnswer": {
+   "status": "found",
+   "trailhead": {
+    "name": "Kennedy Meadows Trailhead (Summit Creek trail start)",
+    "identifiedBy": {
+     "kind": "page",
+     "url": "https://climber.org/reports/1999/414.html",
+     "fact": "carried from earlier pass (not re-opened): trip report on this exact route, Summit Creek trail south 10 mi to Lunch Meadow, leave before Mosquito Pass; trailhead off Hwy 108 near Kennedy Meadows Resort"
+    },
+    "placements": [
+     {
+      "source": "USFS",
+      "name": "Kennedy Meadows Campground",
+      "lat": 38.316593,
+      "lng": -119.747204,
+      "url": ""
+     },
+     {
+      "source": "climber.org trip report GPS",
+      "name": "1PARK trailhead waypoint",
+      "lat": 38.3167828,
+      "lng": -119.74683,
+      "url": "https://climber.org/reports/1999/414.html"
+     }
+    ]
+   },
+   "notes": "Carried from the earlier pass, which opened the page and found the two placements about 40 m apart. Route text itself (Summit Creek trail 10 mi to Lunch Meadow) matches. Not the USFS Upper Kennedy Meadow Trailhead (about 2 km south)."
+  }
+ },
+ {
+  "id": "ca_black_mountain_sierra_standard_route",
+  "name": "Standard route",
+  "peakName": "Black Mountain",
+  "state": "California",
+  "discipline": "scrambling",
+  "status": "held",
+  "peak": {
+   "id": "ca_black_mountain_sierra",
+   "name": "Black Mountain",
+   "lat": 36.809,
+   "lng": -118.3783,
+   "elevation_ft": 13291,
+   "region": null,
+   "path": "usa.california.ca_high_sierra.ca_12_kearsarge_pass_to_cedar_grove.ca_black_mountain_sierra"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Onion Valley Campground",
+    "lat": 36.772538,
+    "lng": -118.341244,
+    "km": 5.2
+   },
+   {
+    "src": "USFS",
+    "name": "Baxter Pass Trailhead",
+    "lat": 36.844705,
+    "lng": -118.297612,
+    "km": 8.2
+   },
+   {
+    "src": "USFS",
+    "name": "Shepherd Pass Th",
+    "lat": 36.726905,
+    "lng": -118.278912,
+    "km": 12.7
+   },
+   {
+    "src": "USFS",
+    "name": "SAWMILL PASS TH",
+    "lat": 36.938805,
+    "lng": -118.290212,
+    "km": 16.4
+   },
+   {
+    "src": "USFS",
+    "name": "Cedar Grove",
+    "lat": 36.796368,
+    "lng": -118.58291,
+    "km": 18.3
+   },
+   {
+    "src": "NPS",
+    "name": "Copper Creek",
+    "lat": 36.796495,
+    "lng": -118.583551,
+    "km": 18.3
+   },
+   {
+    "src": "NPS",
+    "name": "Bubbs Creek, Woods Creek, and Rae Lakes  ",
+    "lat": 36.794924,
+    "lng": -118.582577,
+    "km": 18.3
+   },
+   {
+    "src": "NPS",
+    "name": "River Trail",
+    "lat": 36.79427,
+    "lng": -118.584209,
+    "km": 18.4
+   }
+  ],
+  "lastAnswer": {
+   "status": "found",
+   "trailhead": {
+    "name": "Baxter Pass Trailhead",
+    "identifiedBy": {
+     "kind": "page",
+     "url": "https://climber.org/reports/2011/1779.html",
+     "fact": "carried from earlier pass (not re-opened): Baxter Pass trailhead BAXPTH 6,000 ft, camp at 10,800 ft, bowl between Diamond and Black, west ridge to summit; reports 2005/1415 and 1999/413 also start there"
+    },
+    "placements": [
+     {
+      "source": "USFS",
+      "name": "Baxter Pass Trailhead",
+      "lat": 36.844705,
+      "lng": -118.297612,
+      "url": ""
+     },
+     {
+      "source": "climber.org trip report GPS",
+      "name": "BAXPTH",
+      "lat": 36.84466,
+      "lng": -118.29752,
+      "url": "https://climber.org/reports/2011/1779.html"
+     }
+    ]
+   },
+   "notes": "WEAK-ish: three climber.org reports use Baxter Pass, but 'Standard route' is not tied to it by a page. A search summary of SummitPost (not opened) lists class 2 routes from Parker Lakes, Rae Lakes and Diamond Peak, and the 1954 Sierra Club guide gives a Rae Lakes to Onion Valley line, so Onion Valley / Kings Canyon sides are also used. Placements agree within 10 m."
+  }
+ },
+ {
+  "id": "ca_cartago_peak_standard_route",
+  "name": "Standard route",
+  "peakName": "Cartago Peak",
+  "state": "California",
+  "discipline": "scrambling",
+  "status": "held",
+  "peak": {
+   "id": "ca_cartago_peak",
+   "name": "Cartago Peak",
+   "lat": 36.3245,
+   "lng": -118.102,
+   "elevation_ft": 10480,
+   "region": null,
+   "path": "usa.california.ca_high_sierra.ca_14_whitney_surrounding_peaks.ca_cartago_peak"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": "Class 2 to the summit block, which is Class 3.",
+   "descent": null
+  },
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "OLANCHA PASS/SAGE FLAT TH",
+    "lat": 36.225667,
+    "lng": -118.061566,
+    "km": 11.6
+   },
+   {
+    "src": "USFS",
+    "name": "Cottonwood Pass Trailhead",
+    "lat": 36.448305,
+    "lng": -118.170612,
+    "km": 15.1
+   },
+   {
+    "src": "USFS",
+    "name": "Cottonwood Lakes Trailhead",
+    "lat": 36.453362,
+    "lng": -118.169987,
+    "km": 15.6
+   },
+   {
+    "src": "USFS",
+    "name": "Blackrock Trailhead",
+    "lat": 36.178129,
+    "lng": -118.267418,
+    "km": 22
+   }
+  ],
+  "lastAnswer": {
+   "status": "found",
+   "trailhead": {
+    "name": "Cartago Canal Trailhead",
+    "identifiedBy": {
+     "kind": "page",
+     "url": "https://climber.org/driving/CartagoCanal.html",
+     "fact": "trailhead at 3700 ft off Hwy 395 north of Cartago; waypoint CARTAP Cartago Peak about 4 miles away; cross aqueduct, dirt road south along canal"
+    },
+    "placements": [
+     {
+      "source": "climber.org driving GPX",
+      "name": "CARCTH Cartago Canal TH",
+      "lat": 36.32189,
+      "lng": -118.0361,
+      "url": "https://climber.org/driving/images/CartagoCanal.gpx"
+     }
+    ]
+   },
+   "notes": "WEAK/inferred: climber.org page is about the peak's desert-side approach and is the only documented one; route is named only 'Standard route' and Horseshoe Meadow/Sage Flat side not excluded. Single placement from climber.org's own GPX (re-read this pass). Page last revised 2012; 4WD road closed by boulders, park by aqueduct."
+  }
+ },
+ {
+  "id": "ca_charybdis_northeast_ridge",
+  "name": "Northeast Ridge",
+  "peakName": "Charybdis",
+  "state": "California",
+  "discipline": "scrambling",
+  "status": "nopage",
+  "peak": {
+   "id": "ca_charybdis",
+   "name": "Charybdis",
+   "lat": 37.0867,
+   "lng": -118.6682,
+   "elevation_ft": 13096,
+   "region": null,
+   "path": "usa.california.ca_high_sierra.ca_08_bishop_pass_evolution.ca_charybdis"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": "From a high camp, follow the south side of the northeast ridge, crossing snow patches and then rock. Near the top a traverse leads to a narrow chute and a notch below the summit monolith.",
+   "descent": null
+  },
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "South Lake Trailhead",
+    "lat": 37.169305,
+    "lng": -118.565813,
+    "km": 12.9
+   },
+   {
+    "src": "USFS",
+    "name": "Baker/Green Lakes Th",
+    "lat": 37.186805,
+    "lng": -118.557713,
+    "km": 14.8
+   },
+   {
+    "src": "USFS",
+    "name": "SABRINA LAKE TH",
+    "lat": 37.213605,
+    "lng": -118.610013,
+    "km": 15
+   },
+   {
+    "src": "USFS",
+    "name": "TYEE TH",
+    "lat": 37.195805,
+    "lng": -118.564713,
+    "km": 15.2
+   },
+   {
+    "src": "USFS",
+    "name": "LAMARCK LAKES TH",
+    "lat": 37.227305,
+    "lng": -118.627513,
+    "km": 16
+   },
+   {
+    "src": "USFS",
+    "name": "North Lake  Trailhead",
+    "lat": 37.230685,
+    "lng": -118.616614,
+    "km": 16.7
+   },
+   {
+    "src": "USFS",
+    "name": "BIG PINE CREEK SO FORK TH",
+    "lat": 37.124805,
+    "lng": -118.438913,
+    "km": 20.8
+   },
+   {
+    "src": "USFS",
+    "name": "Big Pine Creek North Fork Trail Trailhea",
+    "lat": 37.128105,
+    "lng": -118.427713,
+    "km": 21.8
+   }
+  ],
+  "lastAnswer": {
+   "status": "stuck",
+   "trailhead": null,
+   "notes": "Route text starts from a high camp. Sabrina, South Lake (Bishop Pass/Black Giant), North Lake all documented; no page ties the NE ridge to one. One NE ridge trip used Lake Sabrina (single trip, weak lead). SummitPost 403."
+  }
+ },
+ {
+  "id": "ca_devils_crag_1_standard_route",
+  "name": "Standard route",
+  "peakName": "Devil's Crag #1",
+  "state": "California",
+  "discipline": "mountaineering",
+  "status": "held",
+  "peak": {
+   "id": "ca_devils_crag_1",
+   "name": "Devil's Crag #1",
+   "lat": 37.0381,
+   "lng": -118.6125,
+   "elevation_ft": 12400,
+   "region": null,
+   "path": "usa.california.ca_high_sierra.ca_08_bishop_pass_evolution.ca_devils_crag_1"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "South Lake Trailhead",
+    "lat": 37.169305,
+    "lng": -118.565813,
+    "km": 15.2
+   },
+   {
+    "src": "USFS",
+    "name": "Baker/Green Lakes Th",
+    "lat": 37.186805,
+    "lng": -118.557713,
+    "km": 17.2
+   },
+   {
+    "src": "USFS",
+    "name": "TYEE TH",
+    "lat": 37.195805,
+    "lng": -118.564713,
+    "km": 18
+   },
+   {
+    "src": "USFS",
+    "name": "BIG PINE CREEK SO FORK TH",
+    "lat": 37.124805,
+    "lng": -118.438913,
+    "km": 18.2
+   },
+   {
+    "src": "USFS",
+    "name": "Big Pine Creek North Fork Trail Trailhea",
+    "lat": 37.128105,
+    "lng": -118.427713,
+    "km": 19.2
+   },
+   {
+    "src": "USFS",
+    "name": "SABRINA LAKE TH",
+    "lat": 37.213605,
+    "lng": -118.610013,
+    "km": 19.5
+   },
+   {
+    "src": "USFS",
+    "name": "LAMARCK LAKES TH",
+    "lat": 37.227305,
+    "lng": -118.627513,
+    "km": 21.1
+   },
+   {
+    "src": "USFS",
+    "name": "North Lake  Trailhead",
+    "lat": 37.230685,
+    "lng": -118.616614,
+    "km": 21.4
+   }
+  ],
+  "lastAnswer": {
+   "status": "found",
+   "trailhead": {
+    "name": "South Lake Trailhead",
+    "identifiedBy": {
+     "kind": "page",
+     "url": "https://www.snwburd.com/bob/trip_reports/devils_crags_1.html",
+     "fact": "Burd 2007 trip: South Lake, Bishop Pass, LeConte Canyon, Rambaud Pass, NW Arete"
+    },
+    "placements": [
+     {
+      "source": "USFS",
+      "name": "South Lake Trailhead",
+      "lat": 37.169305,
+      "lng": -118.565813,
+      "url": ""
+     }
+    ]
+   },
+   "notes": "Moderate: 'Standard route' assumed to be the NW Arete (the commonly named standard). SummitPost 403. Search summaries say South Lake or Ladder Lake are used as starts; South Lake is the one an opened page states. USFS point is 15.2 km from peak."
+  }
+ }
+]

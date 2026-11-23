@@ -1,0 +1,863 @@
+[
+ {
+  "id": "wa_mount_crowder_northeast_ridge",
+  "name": "Northeast Ridge",
+  "peakName": "Mount Crowder",
+  "state": "Washington",
+  "discipline": "alpine",
+  "status": "new",
+  "peak": {
+   "id": "wa_mount_crowder",
+   "name": "Mount Crowder",
+   "lat": 48.7976266,
+   "lng": -121.352631,
+   "elevation_ft": 7082,
+   "region": "Washington",
+   "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_picket_range.wa_mount_crowder"
+  },
+  "text": {
+   "approach": "Reached only by first climbing Mount Crowder by its Southwest Route, from the col between Phantom Peak and Crowder, and continuing down the far side; there is no separate trailhead approach to this ridge on its own.",
+   "approach_logistics": "{\"peakLat\":48.7976266,\"peakLng\":-121.352631,\"trailhead\":\"No separate trailhead — over Mount Crowder by its Southwest Route\"}",
+   "road": "{\"name\":\"Ruth Creek Rd / Hannegan Pass Rd (FR-32)\",\"status\":\"Seasonal USFS road, subject to washout\",\"driveNote\":\"From WA-542 (Mt. Baker Hwy), follow FR-32 about 5.3 mi to road's end at the Hannegan Pass Trailhead; recent storm damage has at times restricted vehicles to around mile 5.2 — check current Mt. Baker-Snoqualmie NF alerts before you go.\",\"seasonalGate\":\"Typically opens once snow clears in early-mid summer and closes with the first significant fall snow.\"}",
+   "overview": "A direct, technical ridge line dropping northeast off Crowder's summit toward Pickell Pass. It is documented as a descent used by parties continuing a Pickets high-route traverse northward, not as a recommended way to reach Crowder's summit, and is significantly harder and more hazardous than the Southwest Route.",
+   "description": null,
+   "descent": "From the summit, the ridge is down-climbed via a mix of loose, grassy Class 3-4 ledges with occasional low-5th-class moves, working around a large chasm partway down, and negotiating a final cliff band (found via a scree-slope break) before reaching Pickell Pass."
+  },
+  "siblingTrailheads": [
+   {
+    "route": "wa_mount_crowder_southwest_route",
+    "name": "Hannegan Pass Trailhead"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "NPS",
+    "name": "Gorge Overlook Trail Trailhead",
+    "lat": 48.699938,
+    "lng": -121.21076,
+    "km": 15
+   },
+   {
+    "src": "NPS",
+    "name": "Gorge Overlook Trail Trailhead",
+    "lat": 48.700343,
+    "lng": -121.209709,
+    "km": 15.1
+   },
+   {
+    "src": "USFS",
+    "name": "Baker River Trailhead",
+    "lat": 48.750499,
+    "lng": -121.555348,
+    "km": 15.8
+   },
+   {
+    "src": "USFS",
+    "name": "Shannon Ridge Trailhead",
+    "lat": 48.767233,
+    "lng": -121.618094,
+    "km": 19.7
+   },
+   {
+    "src": "USFS",
+    "name": "Hannegan Trailhead",
+    "lat": 48.910191,
+    "lng": -121.591986,
+    "km": 21.5
+   },
+   {
+    "src": "NPS",
+    "name": "Happy Creek Forest Walk Trailhead",
+    "lat": 48.728543,
+    "lng": -121.055832,
+    "km": 23.1
+   },
+   {
+    "src": "USFS",
+    "name": "Panorama Dome Trailhead",
+    "lat": 48.860749,
+    "lng": -121.656654,
+    "km": 23.3
+   },
+   {
+    "src": "USFS",
+    "name": "Watson Lakes Trailhead",
+    "lat": 48.674907,
+    "lng": -121.615318,
+    "km": 23.6
+   }
+  ],
+  "lastAnswer": {
+   "status": "found",
+   "trailhead": {
+    "name": "Hannegan Pass Trailhead",
+    "identifiedBy": {
+     "kind": "route_text",
+     "fact": "reached only by first climbing Mount Crowder by its Southwest Route; its road text names the Hannegan Pass Trailhead at FR-32 road's end"
+    },
+    "placements": [
+     {
+      "source": "USFS",
+      "name": "Hannegan Trailhead",
+      "lat": 48.910191,
+      "lng": -121.591986,
+      "url": ""
+     }
+    ]
+   },
+   "notes": "Route is a descent line off the summit; trailhead is the Southwest Route's (sibling pin Hannegan Pass). Search summaries (WTA Phantom Peak, AAC) place Pickets-side approaches at Hannegan; I did not find a page describing Crowder's Southwest Route itself. 15-20 km from peak, multi-day."
+  }
+ },
+ {
+  "id": "wa_mount_despair_northeast_buttress",
+  "name": "Northeast Buttress (\"Bipolar Buttress\")",
+  "peakName": "Mount Despair",
+  "state": "Washington",
+  "discipline": "alpine",
+  "status": "nopage",
+  "peak": {
+   "id": "wa_mount_despair",
+   "name": "Mount Despair",
+   "lat": 48.737185,
+   "lng": -121.376675,
+   "elevation_ft": 7296,
+   "region": "North Cascades Core",
+   "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_picket_range.wa_mount_despair"
+  },
+  "text": {
+   "approach": "Approach is up a brush-choked valley low in the Goodell Creek drainage — rough enough that even seasoned Cascades climbers have balked at it. This is the opposite (northeast) side of the peak from the standard Triumph Pass/Despair Lakes approach.",
+   "approach_logistics": null,
+   "road": null,
+   "overview": "A ~3,700 ft previously-unclimbed buttress line up Mt. Despair's northeast side to its north summit, opened in 2014: an easy 5.6 opening corner, a series of notches requiring short rappels, a stout 5.9 pitch through a deep summit-area cleft, a further steep pitch to the north ridge, and a snow-ridge finish.",
+   "description": null,
+   "descent": "From the north summit, the first-ascent party exited over Triumph Pass and out the Thornton Lakes Trail rather than retracing the Goodell Creek approach."
+  },
+  "siblingTrailheads": [
+   {
+    "route": "wa_mount_despair_east_route",
+    "name": "Thornton Lakes Trailhead"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "NPS",
+    "name": "Gorge Overlook Trail Trailhead",
+    "lat": 48.699938,
+    "lng": -121.21076,
+    "km": 12.9
+   },
+   {
+    "src": "NPS",
+    "name": "Gorge Overlook Trail Trailhead",
+    "lat": 48.700343,
+    "lng": -121.209709,
+    "km": 12.9
+   },
+   {
+    "src": "USFS",
+    "name": "Baker River Trailhead",
+    "lat": 48.750499,
+    "lng": -121.555348,
+    "km": 13.2
+   },
+   {
+    "src": "USFS",
+    "name": "Shannon Ridge Trailhead",
+    "lat": 48.767233,
+    "lng": -121.618094,
+    "km": 18
+   },
+   {
+    "src": "USFS",
+    "name": "Watson Lakes Trailhead",
+    "lat": 48.674907,
+    "lng": -121.615318,
+    "km": 18.8
+   },
+   {
+    "src": "USFS",
+    "name": "Lookout Mountain Trailhead",
+    "lat": 48.537501,
+    "lng": -121.291755,
+    "km": 23.1
+   },
+   {
+    "src": "NPS",
+    "name": "Happy Creek Forest Walk Trailhead",
+    "lat": 48.728543,
+    "lng": -121.055832,
+    "km": 23.6
+   },
+   {
+    "src": "USFS",
+    "name": "Baker Lake South Trailhead",
+    "lat": 48.645675,
+    "lng": -121.674648,
+    "km": 24.1
+   }
+  ],
+  "lastAnswer": {
+   "status": "stuck",
+   "trailhead": null,
+   "notes": "CascadeClimbers 403, skisickness 404 earlier, AAJ PDF was the wrong article. Search summary repeats that the party approached via Goodell Creek and exited Triumph Pass / Thornton Lakes, but no opened page names the starting point (likely SR 20 near Goodell Creek, unverified). Not pinned."
+  }
+ },
+ {
+  "id": "wa_mount_hinman_east_route",
+  "name": "East Route",
+  "peakName": "Mount Hinman",
+  "state": "Washington",
+  "discipline": "alpine",
+  "status": "nopage",
+  "peak": {
+   "id": "wa_mount_hinman",
+   "name": "Mount Hinman",
+   "lat": 47.568595,
+   "lng": -121.214785,
+   "elevation_ft": 7492,
+   "region": "Alpine Lakes",
+   "path": "usa.washington.wa_centralwest.wa_western_alpine_lakes.wa_mount_hinman"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "siblingTrailheads": [
+   {
+    "route": "wa_mount_hinman_hinman_glacier",
+    "name": "Necklace Valley Trailhead"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Tucquala Meadows Trailhead",
+    "lat": 47.543506,
+    "lng": -121.096615,
+    "km": 9.3
+   },
+   {
+    "src": "USFS",
+    "name": "West Fork Foss Lakes Trailhead",
+    "lat": 47.635006,
+    "lng": -121.303348,
+    "km": 9.9
+   },
+   {
+    "src": "USFS",
+    "name": "Paddy-Go-Easy Trailhead",
+    "lat": 47.532873,
+    "lng": -121.082797,
+    "km": 10.7
+   },
+   {
+    "src": "USFS",
+    "name": "Necklace Valley Trailhead",
+    "lat": 47.665562,
+    "lng": -121.287237,
+    "km": 12.1
+   },
+   {
+    "src": "USFS",
+    "name": "Tonga Ridge Trailhead",
+    "lat": 47.679173,
+    "lng": -121.263348,
+    "km": 12.8
+   },
+   {
+    "src": "USFS",
+    "name": "Evans Lake",
+    "lat": 47.658774,
+    "lng": -121.323083,
+    "km": 12.9
+   },
+   {
+    "src": "USFS",
+    "name": "Dorothy Lake Trailhead",
+    "lat": 47.608617,
+    "lng": -121.384459,
+    "km": 13.5
+   },
+   {
+    "src": "USFS",
+    "name": "Scatter Creek Trailhead",
+    "lat": 47.507206,
+    "lng": -121.059815,
+    "km": 13.5
+   }
+  ],
+  "lastAnswer": {
+   "status": "stuck",
+   "trailhead": null,
+   "notes": "No page defines a separate 'East Route'. Middle Fork Snoqualmie (Dingford Creek / Dutch Miller Gap) is the common approach but it is for the Chain Lakes/La Bohn Gap route; Necklace Valley is the sibling. SummitPost 403. Not tied to this route; stuck."
+  }
+ },
+ {
+  "id": "wa_mount_johnson_deception_chimney",
+  "name": "Deception Chimney",
+  "peakName": "Mount Johnson",
+  "state": "Washington",
+  "discipline": "alpine",
+  "status": "nopage",
+  "peak": {
+   "id": "wa_mount_johnson",
+   "name": "Mount Johnson",
+   "lat": 47.832625,
+   "lng": -123.237265,
+   "elevation_ft": 7680,
+   "region": "Olympic Mountains",
+   "path": "usa.washington.wa_olympics.wa_olympic_np.wa_north_central_olympics.wa_mount_johnson"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "siblingTrailheads": [
+   {
+    "route": "wa_mount_johnson_standard",
+    "name": "Upper Dungeness Trailhead"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Maynard Burn Trailhead",
+    "lat": 47.88195,
+    "lng": -123.144459,
+    "km": 8.8
+   },
+   {
+    "src": "USFS",
+    "name": "Dungeness - Upper Trailhead",
+    "lat": 47.877578,
+    "lng": -123.136942,
+    "km": 9
+   },
+   {
+    "src": "NPS",
+    "name": "Royal Creek",
+    "lat": 47.878049,
+    "lng": -123.13699,
+    "km": 9
+   },
+   {
+    "src": "NPS",
+    "name": "Dosewallips Ranger Station",
+    "lat": 47.73716,
+    "lng": -123.166871,
+    "km": 11.8
+   },
+   {
+    "src": "USFS",
+    "name": "Tubal Cain Trailhead",
+    "lat": 47.886321,
+    "lng": -123.091728,
+    "km": 12.4
+   },
+   {
+    "src": "NPS",
+    "name": "Upper Dungeness/Tubal Cain",
+    "lat": 47.886221,
+    "lng": -123.091482,
+    "km": 12.4
+   },
+   {
+    "src": "USFS",
+    "name": "Three O'Clock Ridge",
+    "lat": 47.912689,
+    "lng": -123.110819,
+    "km": 13
+   },
+   {
+    "src": "NPS",
+    "name": "Deer Park",
+    "lat": 47.948984,
+    "lng": -123.258232,
+    "km": 13
+   }
+  ],
+  "lastAnswer": {
+   "status": "stuck",
+   "trailhead": null,
+   "notes": "Mount Johnson routes: no page opened ties this named route to a start. Wikipedia and WTA Royal Basin name no route; peakery 2019 report approaches from upper Royal Basin (Upper Dungeness) over Surprise Basin to a class 4 chimney, but is not tied to this route name. SummitPost/Mountaineers/climbersguideolympics unreachable (403/DNS). Upper Dungeness (USFS 47.877578,-123.136942; WTA 47.8779,-123.1369) is a peak-level candidate only."
+  }
+ },
+ {
+  "id": "wa_mount_johnson_northwest_face",
+  "name": "Northwest Face",
+  "peakName": "Mount Johnson",
+  "state": "Washington",
+  "discipline": "alpine",
+  "status": "nopage",
+  "peak": {
+   "id": "wa_mount_johnson",
+   "name": "Mount Johnson",
+   "lat": 47.832625,
+   "lng": -123.237265,
+   "elevation_ft": 7680,
+   "region": "Olympic Mountains",
+   "path": "usa.washington.wa_olympics.wa_olympic_np.wa_north_central_olympics.wa_mount_johnson"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "siblingTrailheads": [
+   {
+    "route": "wa_mount_johnson_standard",
+    "name": "Upper Dungeness Trailhead"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Maynard Burn Trailhead",
+    "lat": 47.88195,
+    "lng": -123.144459,
+    "km": 8.8
+   },
+   {
+    "src": "USFS",
+    "name": "Dungeness - Upper Trailhead",
+    "lat": 47.877578,
+    "lng": -123.136942,
+    "km": 9
+   },
+   {
+    "src": "NPS",
+    "name": "Royal Creek",
+    "lat": 47.878049,
+    "lng": -123.13699,
+    "km": 9
+   },
+   {
+    "src": "NPS",
+    "name": "Dosewallips Ranger Station",
+    "lat": 47.73716,
+    "lng": -123.166871,
+    "km": 11.8
+   },
+   {
+    "src": "USFS",
+    "name": "Tubal Cain Trailhead",
+    "lat": 47.886321,
+    "lng": -123.091728,
+    "km": 12.4
+   },
+   {
+    "src": "NPS",
+    "name": "Upper Dungeness/Tubal Cain",
+    "lat": 47.886221,
+    "lng": -123.091482,
+    "km": 12.4
+   },
+   {
+    "src": "USFS",
+    "name": "Three O'Clock Ridge",
+    "lat": 47.912689,
+    "lng": -123.110819,
+    "km": 13
+   },
+   {
+    "src": "NPS",
+    "name": "Deer Park",
+    "lat": 47.948984,
+    "lng": -123.258232,
+    "km": 13
+   }
+  ],
+  "lastAnswer": {
+   "status": "stuck",
+   "trailhead": null,
+   "notes": "Mount Johnson routes: no page opened ties this named route to a start. Wikipedia and WTA Royal Basin name no route; peakery 2019 report approaches from upper Royal Basin (Upper Dungeness) over Surprise Basin to a class 4 chimney, but is not tied to this route name. SummitPost/Mountaineers/climbersguideolympics unreachable (403/DNS). Upper Dungeness (USFS 47.877578,-123.136942; WTA 47.8779,-123.1369) is a peak-level candidate only. Northwest Face: NW-side line from Royal Basin plausible, inferred only."
+  }
+ },
+ {
+  "id": "wa_mount_johnson_rumble_gully",
+  "name": "Rumble Gully",
+  "peakName": "Mount Johnson",
+  "state": "Washington",
+  "discipline": "alpine",
+  "status": "nopage",
+  "peak": {
+   "id": "wa_mount_johnson",
+   "name": "Mount Johnson",
+   "lat": 47.832625,
+   "lng": -123.237265,
+   "elevation_ft": 7680,
+   "region": "Olympic Mountains",
+   "path": "usa.washington.wa_olympics.wa_olympic_np.wa_north_central_olympics.wa_mount_johnson"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "siblingTrailheads": [
+   {
+    "route": "wa_mount_johnson_standard",
+    "name": "Upper Dungeness Trailhead"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Maynard Burn Trailhead",
+    "lat": 47.88195,
+    "lng": -123.144459,
+    "km": 8.8
+   },
+   {
+    "src": "USFS",
+    "name": "Dungeness - Upper Trailhead",
+    "lat": 47.877578,
+    "lng": -123.136942,
+    "km": 9
+   },
+   {
+    "src": "NPS",
+    "name": "Royal Creek",
+    "lat": 47.878049,
+    "lng": -123.13699,
+    "km": 9
+   },
+   {
+    "src": "NPS",
+    "name": "Dosewallips Ranger Station",
+    "lat": 47.73716,
+    "lng": -123.166871,
+    "km": 11.8
+   },
+   {
+    "src": "USFS",
+    "name": "Tubal Cain Trailhead",
+    "lat": 47.886321,
+    "lng": -123.091728,
+    "km": 12.4
+   },
+   {
+    "src": "NPS",
+    "name": "Upper Dungeness/Tubal Cain",
+    "lat": 47.886221,
+    "lng": -123.091482,
+    "km": 12.4
+   },
+   {
+    "src": "USFS",
+    "name": "Three O'Clock Ridge",
+    "lat": 47.912689,
+    "lng": -123.110819,
+    "km": 13
+   },
+   {
+    "src": "NPS",
+    "name": "Deer Park",
+    "lat": 47.948984,
+    "lng": -123.258232,
+    "km": 13
+   }
+  ],
+  "lastAnswer": {
+   "status": "stuck",
+   "trailhead": null,
+   "notes": "Mount Johnson routes: no page opened ties this named route to a start. Wikipedia and WTA Royal Basin name no route; peakery 2019 report approaches from upper Royal Basin (Upper Dungeness) over Surprise Basin to a class 4 chimney, but is not tied to this route name. SummitPost/Mountaineers/climbersguideolympics unreachable (403/DNS). Upper Dungeness (USFS 47.877578,-123.136942; WTA 47.8779,-123.1369) is a peak-level candidate only."
+  }
+ },
+ {
+  "id": "wa_mount_johnson_south_terrace_route",
+  "name": "South Terrace Route",
+  "peakName": "Mount Johnson",
+  "state": "Washington",
+  "discipline": "alpine",
+  "status": "nopage",
+  "peak": {
+   "id": "wa_mount_johnson",
+   "name": "Mount Johnson",
+   "lat": 47.832625,
+   "lng": -123.237265,
+   "elevation_ft": 7680,
+   "region": "Olympic Mountains",
+   "path": "usa.washington.wa_olympics.wa_olympic_np.wa_north_central_olympics.wa_mount_johnson"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "siblingTrailheads": [
+   {
+    "route": "wa_mount_johnson_standard",
+    "name": "Upper Dungeness Trailhead"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Maynard Burn Trailhead",
+    "lat": 47.88195,
+    "lng": -123.144459,
+    "km": 8.8
+   },
+   {
+    "src": "USFS",
+    "name": "Dungeness - Upper Trailhead",
+    "lat": 47.877578,
+    "lng": -123.136942,
+    "km": 9
+   },
+   {
+    "src": "NPS",
+    "name": "Royal Creek",
+    "lat": 47.878049,
+    "lng": -123.13699,
+    "km": 9
+   },
+   {
+    "src": "NPS",
+    "name": "Dosewallips Ranger Station",
+    "lat": 47.73716,
+    "lng": -123.166871,
+    "km": 11.8
+   },
+   {
+    "src": "USFS",
+    "name": "Tubal Cain Trailhead",
+    "lat": 47.886321,
+    "lng": -123.091728,
+    "km": 12.4
+   },
+   {
+    "src": "NPS",
+    "name": "Upper Dungeness/Tubal Cain",
+    "lat": 47.886221,
+    "lng": -123.091482,
+    "km": 12.4
+   },
+   {
+    "src": "USFS",
+    "name": "Three O'Clock Ridge",
+    "lat": 47.912689,
+    "lng": -123.110819,
+    "km": 13
+   },
+   {
+    "src": "NPS",
+    "name": "Deer Park",
+    "lat": 47.948984,
+    "lng": -123.258232,
+    "km": 13
+   }
+  ],
+  "lastAnswer": {
+   "status": "stuck",
+   "trailhead": null,
+   "notes": "Mount Johnson routes: no page opened ties this named route to a start. Wikipedia and WTA Royal Basin name no route; peakery 2019 report approaches from upper Royal Basin (Upper Dungeness) over Surprise Basin to a class 4 chimney, but is not tied to this route name. SummitPost/Mountaineers/climbersguideolympics unreachable (403/DNS). Upper Dungeness (USFS 47.877578,-123.136942; WTA 47.8779,-123.1369) is a peak-level candidate only."
+  }
+ },
+ {
+  "id": "wa_mount_johnson_southwest_route",
+  "name": "Southwest Route",
+  "peakName": "Mount Johnson",
+  "state": "Washington",
+  "discipline": "alpine",
+  "status": "nopage",
+  "peak": {
+   "id": "wa_mount_johnson",
+   "name": "Mount Johnson",
+   "lat": 47.832625,
+   "lng": -123.237265,
+   "elevation_ft": 7680,
+   "region": "Olympic Mountains",
+   "path": "usa.washington.wa_olympics.wa_olympic_np.wa_north_central_olympics.wa_mount_johnson"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "siblingTrailheads": [
+   {
+    "route": "wa_mount_johnson_standard",
+    "name": "Upper Dungeness Trailhead"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Maynard Burn Trailhead",
+    "lat": 47.88195,
+    "lng": -123.144459,
+    "km": 8.8
+   },
+   {
+    "src": "USFS",
+    "name": "Dungeness - Upper Trailhead",
+    "lat": 47.877578,
+    "lng": -123.136942,
+    "km": 9
+   },
+   {
+    "src": "NPS",
+    "name": "Royal Creek",
+    "lat": 47.878049,
+    "lng": -123.13699,
+    "km": 9
+   },
+   {
+    "src": "NPS",
+    "name": "Dosewallips Ranger Station",
+    "lat": 47.73716,
+    "lng": -123.166871,
+    "km": 11.8
+   },
+   {
+    "src": "USFS",
+    "name": "Tubal Cain Trailhead",
+    "lat": 47.886321,
+    "lng": -123.091728,
+    "km": 12.4
+   },
+   {
+    "src": "NPS",
+    "name": "Upper Dungeness/Tubal Cain",
+    "lat": 47.886221,
+    "lng": -123.091482,
+    "km": 12.4
+   },
+   {
+    "src": "USFS",
+    "name": "Three O'Clock Ridge",
+    "lat": 47.912689,
+    "lng": -123.110819,
+    "km": 13
+   },
+   {
+    "src": "NPS",
+    "name": "Deer Park",
+    "lat": 47.948984,
+    "lng": -123.258232,
+    "km": 13
+   }
+  ],
+  "lastAnswer": {
+   "status": "stuck",
+   "trailhead": null,
+   "notes": "Mount Johnson routes: no page opened ties this named route to a start. Wikipedia and WTA Royal Basin name no route; peakery 2019 report approaches from upper Royal Basin (Upper Dungeness) over Surprise Basin to a class 4 chimney, but is not tied to this route name. SummitPost/Mountaineers/climbersguideolympics unreachable (403/DNS). Upper Dungeness (USFS 47.877578,-123.136942; WTA 47.8779,-123.1369) is a peak-level candidate only."
+  }
+ },
+ {
+  "id": "wa_mount_johnson_staircase_route",
+  "name": "Staircase Route",
+  "peakName": "Mount Johnson",
+  "state": "Washington",
+  "discipline": "alpine",
+  "status": "nopage",
+  "peak": {
+   "id": "wa_mount_johnson",
+   "name": "Mount Johnson",
+   "lat": 47.832625,
+   "lng": -123.237265,
+   "elevation_ft": 7680,
+   "region": "Olympic Mountains",
+   "path": "usa.washington.wa_olympics.wa_olympic_np.wa_north_central_olympics.wa_mount_johnson"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "siblingTrailheads": [
+   {
+    "route": "wa_mount_johnson_standard",
+    "name": "Upper Dungeness Trailhead"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Maynard Burn Trailhead",
+    "lat": 47.88195,
+    "lng": -123.144459,
+    "km": 8.8
+   },
+   {
+    "src": "USFS",
+    "name": "Dungeness - Upper Trailhead",
+    "lat": 47.877578,
+    "lng": -123.136942,
+    "km": 9
+   },
+   {
+    "src": "NPS",
+    "name": "Royal Creek",
+    "lat": 47.878049,
+    "lng": -123.13699,
+    "km": 9
+   },
+   {
+    "src": "NPS",
+    "name": "Dosewallips Ranger Station",
+    "lat": 47.73716,
+    "lng": -123.166871,
+    "km": 11.8
+   },
+   {
+    "src": "USFS",
+    "name": "Tubal Cain Trailhead",
+    "lat": 47.886321,
+    "lng": -123.091728,
+    "km": 12.4
+   },
+   {
+    "src": "NPS",
+    "name": "Upper Dungeness/Tubal Cain",
+    "lat": 47.886221,
+    "lng": -123.091482,
+    "km": 12.4
+   },
+   {
+    "src": "USFS",
+    "name": "Three O'Clock Ridge",
+    "lat": 47.912689,
+    "lng": -123.110819,
+    "km": 13
+   },
+   {
+    "src": "NPS",
+    "name": "Deer Park",
+    "lat": 47.948984,
+    "lng": -123.258232,
+    "km": 13
+   }
+  ],
+  "lastAnswer": {
+   "status": "stuck",
+   "trailhead": null,
+   "notes": "Mount Johnson routes: no page opened ties this named route to a start. Wikipedia and WTA Royal Basin name no route; peakery 2019 report approaches from upper Royal Basin (Upper Dungeness) over Surprise Basin to a class 4 chimney, but is not tied to this route name. SummitPost/Mountaineers/climbersguideolympics unreachable (403/DNS). Upper Dungeness (USFS 47.877578,-123.136942; WTA 47.8779,-123.1369) is a peak-level candidate only. Name suggests a Staircase (Skokomish) approach, a different trailhead; unverified."
+  }
+ }
+]
