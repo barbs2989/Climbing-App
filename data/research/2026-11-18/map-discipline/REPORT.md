@@ -440,3 +440,32 @@ sites that answer. Results: 14 found, 99 stuck.
     (McMurry Meadows, nothing mapped), Mount Ballard (Slate Creek road gate; the road is mapped, the gate is
     not, so it stays on the hand-place list).
 - **Audit, measured:** SUMMIT_ONLY 141, NO_SUMMIT 40, TRAILHEAD_AND_SUMMIT 1060.
+
+### Round 12: sources re-read under the two-source rule, then shared lots (2026-11-23)
+
+No agents this round. Two things were done from the database and pages already opened, plus two new searches.
+- **Two held routes now meet the two-source rule (`batch-r12.json`, official USFS points):**
+  - Angora Mountain: Lewis Camp. Two opened reports (climber.org 1996/89, themtsarecalling) start there. The
+    one different start (wacziarg, Lloyd Meadows) climbed a different line, a northwest-slope variant.
+  - Merced Peak: Quartz Mountain. Two opened reports (climber.org 2004/1314, themtsarecalling) start there.
+    The Glacier Point and Yosemite starts came only from Wikipedia and search summaries, for other lines.
+  - Still held: Rodgers (2 Rush Creek vs 1 Agnew Meadows; the official "Rush Creek Trailhead" is a different
+    Rush Creek about 30 km south) and Silver Peak (2 vs 1, no point for the Lake Edison start).
+- **Shared lots (`batch-r12b.json`, 10 routes).** For each stuck route, the other pinned routes on its peak
+  were listed (`scripts/sib12.mjs`). A route was pinned where every pinned route on the peak uses one lot and
+  no opened page names another start, or where routes on the same face share a lot:
+  - Chimney Rock Southeast Ridge and Southeast Shoulder: Pete Lake (6 routes; USFS point).
+  - Dragontail Boving Route: Stuart Lake (16 routes; USFS point).
+  - Big Snow Sasquatch's Breath: Dingford Creek (3 routes; USFS point; turns-all-year 2008 via Dingford).
+  - Little Big Chief Southwest Face: Dingford Creek (3 routes; USFS point).
+  - Red Mountain (Snoqualmie) East Face, East Ridge, Southeast Face: PCT Snoqualmie North lot (3 routes;
+    USFS point).
+  - Rainier North Mowich Icefall: Mowich Lake, where all four Mowich-side routes start (turns-all-year 2012
+    Mowich Face circuit).
+  - SEWS "East Buttress Direct": the SR-20 hairpin. Its twin "Direct East Buttress" (same line, 5.11a)
+    stores the hairpin and its own text says to park there. The two rows look like a duplicate; not merged.
+  - Not pinned: Castle Peak (an opened page names a Manning Park start), Middle Peak (a second lot, High
+    Bridge), Witches Tower and Mount Hinman (only 2 pinned siblings).
+- The Sierra Peaks pages on climber.org (`data/SierraPeaks/<region>/<n>.html`) were checked as a new source.
+  They give elevation and UTM only, no trailhead.
+- **Audit, measured:** SUMMIT_ONLY 129, NO_SUMMIT 40, TRAILHEAD_AND_SUMMIT 1072.
