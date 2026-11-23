@@ -1,4 +1,4 @@
--- 0496: route and area listings — four fixes from the review of 0489 (2026-11-23).
+-- 0497: route and area listings — four fixes from the review of 0489 (2026-11-23).
 --
 --   1. THE 30-LISTING CAP REFUSED AN EDIT. route_partner_listings_validate counted every row of the climber
 --      on INSERT, and the app saves with an upsert, whose BEFORE INSERT trigger fires even when the row
