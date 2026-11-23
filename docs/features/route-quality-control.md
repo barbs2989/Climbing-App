@@ -173,6 +173,32 @@ empty field fill at once and two agreeing climbers change one; the owner withdre
     loaded yet opens thin through `openableRoute`; an area link opens through `openAreaById`.
   - The success screen no longer says a proposal is "visible to other climbers": no screen shows a pending
     proposal to anyone but the owner.
+  - **Proposals answer to the edit rules (0505, owner 2026-11-23: "How are we doing quality control on people
+    that add a climb or area/crag?")**. Until then three field-edit rules stopped at `kind = 'field'`:
+    - *Standing.* `guard_field_contribution` refuses a `new_route` / `new_area` row from a contributor
+      `can_contribute_fields` says no to (restricted or banned): "Adding climbs and areas is paused on your
+      account." The restrictive policy *contribution standing allows field edits* covers both kinds as a backstop.
+      Add a climb and Add an area show `MyContributionStandingNotice` (`lib/SafetyNotices.jsx`) at the top, with
+      the Appeal button.
+    - *Daily cap.* 5 proposals a day, climbs and areas counted together, 2 for an account under 7 days old.
+    - *Strikes.* `reject_new_route(id, note, strike default true)` needs an admin and a reason of 10+ characters
+      (the climber is shown it), refuses any kind but the two proposal kinds, logs to `moderation_actions`, and
+      calls `_add_contribution_strike` unless the owner ticks *Honest mistake: no strike* (`RejectBox` in
+      `lib/RouteProposals.jsx`, shared by both queues). The 2-argument form was dropped, so old callers get the
+      default and strike.
+    - *Duplicates.* Each proposal card lists what it may duplicate (`PossibleDuplicates`, `useProposalDuplicates`
+      in `lib/db.js`): a climb through `catalog_find_route(name, area)`, an area through `catalog_find_area`
+      across its parent's state (the path's second label), nearest first. Approval still refuses a same-named
+      copy nearby (0216); this shows the ones it cannot see: other spellings, or farther away.
+    - *Review desk and AI.* `review.html#proposals` (*Proposed climbs & areas*) renders the same two queues
+      with the nightly checker's verdict on each card (`AiNote`). `scripts/review-queue-export.mjs` exports
+      pending proposals as `item_kind 'contribution'`, `field` `new_route` / `new_area`, and
+      `review-flags-nightly` asks whether the climb or area exists where it is filed and whether its facts are
+      right (`ai_value` = only the corrected keys). The Menu's proposal tiles still work.
+    - Proved by `scripts/oneoff/verify-0505-proposals-share-the-edit-rules-pglite.mjs` (PGlite replay, 17 checks).
+    - *Signed out = sign in first.* Add a climb used to offer *Submit anonymously*, which 0165's "authed can
+      contribute" policy always refused. Its button now reads *Sign in to submit* and opens the sign-in sheet
+      (`onLogin`), as Add an area's `submitAreaProposal` already did.
 
 - **Add-a-climb asks for the same seven** (`lib/AddRoute.jsx`, 0327): first free / first winter
   ascent, other names, variations, sun and pro tips in group 8, the high point in the numeric row
@@ -279,6 +305,8 @@ Deferred by the owner (2026-10-15): CAPTCHA on sign-up.
 | `scripts/review-queue-export.mjs`, `scripts/review-verdicts-write.mjs`, `.claude/workflows/review-flags-nightly.js` | The nightly AI checker: export → research + verify → write verdicts |
 | `supabase/migrations/0436_review_ai_verdicts.sql`, `scripts/oneoff/verify-0436-review-ai-verdicts-pglite.mjs` | The verdicts table (admin read, service-key write) and its RLS check |
 | `lib/RouteQualityQueues.jsx` | `ContributorStandingQueue` |
+| `lib/RouteProposals.jsx` | `RouteProposalQueue`, `AreaProposalQueue`, `PossibleDuplicates`, `RejectBox`, `AiNote` (proposal review, 0505) |
+| `supabase/migrations/0505_proposals_share_the_edit_rules.sql` | `guard_field_contribution` with the proposal branch, the standing policy over both proposal kinds, `reject_new_route` with `p_strike` |
 | `lib/confidence.jsx` | `ConfidenceCtx`, `HEAD_KEYS`, `headKey`, `ConfChip` |
 | `lib/FlagRouteInfo.jsx` | `FlagRouteSheet` |
 | `ClimbMatchCore.jsx` | `SL` (renders the chip on a route page) |
@@ -331,6 +359,8 @@ Deferred by the owner (2026-10-15): CAPTCHA on sign-up.
 `check:correction-readers`, `check:rls`, `check:function-columns`, `check:migration-replay`.
 
 ## 7. Last significant change
+
+2026-11-23 (0505): proposed climbs and areas share the edit rules: standing, a daily cap, strikes on a turn-down, a duplicate list on each card, a Review desk tab and the nightly AI check.
 
 2026-11-14: held edits and flags moved off the Menu onto the standalone Review desk (`review.html`), as one table with the nightly AI checker's verdicts (0436). The Menu keeps only Contributor standing.
 

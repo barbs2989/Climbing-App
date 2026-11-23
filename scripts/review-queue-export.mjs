@@ -55,11 +55,13 @@ const stable = (v) => v == null || typeof v !== "object" ? JSON.stringify(v ?? n
   : "{" + Object.keys(v).sort().map((k) => JSON.stringify(k) + ":" + stable(v[k])).join(",") + "}";
 export const itemHash = (parts) => crypto.createHash("sha256").update(stable(parts)).digest("hex").slice(0, 24);
 
-const [edits, flags, fields, verdicts] = await Promise.all([
+const [edits, flags, fields, verdicts, proposals] = await Promise.all([
   get("contributions?select=id,route_id,area_id,field,value,reason,review_note,contributor,created_at&kind=eq.field&status=eq.pending&order=created_at.asc&limit=1000"),
   get("route_flags?select=id,route_id,field,note,created_at&status=eq.open&order=created_at.asc&limit=1000"),
   get("contribution_fields?select=form_key,column_name,label,is_prose"),
   get("review_ai_verdicts?select=item_kind,item_id,item_hash,verdict,confidence,checked_at&limit=5000"),
+  // 0505: proposed climbs and areas get a verdict too. area_id is the area a climb is filed in, or an area's PARENT.
+  get("contributions?select=id,kind,area_id,value,created_at&kind=in.(new_route,new_area)&status=eq.pending&order=created_at.asc&limit=1000"),
 ]);
 const fieldBy = Object.fromEntries(fields.map((f) => [f.form_key, f]));
 const verdictBy = Object.fromEntries(verdicts.map((v) => [v.item_kind + ":" + v.item_id, v]));
@@ -75,7 +77,7 @@ for (const e of edits) {
 const routeIds = [...edits.map((e) => e.route_id), ...flags.map((f) => f.route_id)];
 const routes = await byIds("routes", "*", routeIds);
 const routeBy = Object.fromEntries(routes.map((r) => [r.id, r]));
-const areaIds = [...routes.map((r) => r.area_id), ...edits.filter((e) => e.area_id && !e.route_id).map((e) => e.area_id)];
+const areaIds = [...routes.map((r) => r.area_id), ...edits.filter((e) => e.area_id && !e.route_id).map((e) => e.area_id), ...proposals.map((p) => p.area_id)];
 // `areas` has no state column: the state is the ltree path's second label (lib/stateSections.js).
 const areas = (await byIds("areas", "id,name,path,area_type", areaIds)).map((a) => ({ ...a, state: stateFromPath(a.path) }));
 const areaBy = Object.fromEntries(areas.map((a) => [a.id, a]));
@@ -120,9 +122,24 @@ for (const fl of flags) {
   });
 }
 
+// A proposal: is there such a climb / area where it is filed, and are the facts the climber gave right?
+for (const p of proposals) {
+  const a = areaBy[p.area_id] || (p.area_id ? { id: p.area_id } : null);
+  items.push({
+    item_kind: "contribution", item_id: p.id, item_hash: itemHash({ v: p.value, a: p.area_id }),
+    route_id: null, area_id: p.area_id || null, field: p.kind,
+    field_label: p.kind === "new_route" ? "Proposed new climb" : "Proposed new area", column: null,
+    route: null, area: a,
+    current_value: null, suggested_value: p.value,
+    climber_note: null, removes_something: false, also_ids: [], climbers: 1,
+    created_at: p.created_at,
+    previous_verdict: verdictBy["contribution:" + p.id] || null,
+  });
+}
+
 const due = items
   .filter((it) => ALL || !it.previous_verdict || it.previous_verdict.item_hash !== it.item_hash)
   .sort((a, b) => String(a.created_at).localeCompare(String(b.created_at)));
 const batch = due.slice(0, LIMIT);
 fs.writeFileSync(OUT, JSON.stringify({ exported_at: new Date().toISOString(), total_open: items.length, due: due.length, items: batch }, null, 1));
-console.log(`review-queue-export: ${edits.length} held edits (${clusters.size} distinct), ${flags.length} open flags; ${due.length} need an AI check; wrote ${batch.length} to ${OUT}`);
+console.log(`review-queue-export: ${edits.length} held edits (${clusters.size} distinct), ${flags.length} open flags, ${proposals.length} proposed climbs/areas; ${due.length} need an AI check; wrote ${batch.length} to ${OUT}`);
