@@ -1,0 +1,364 @@
+{
+ "wa_thriller_pillar": {
+  "area": "wa_orange_sunshine_area",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/107192057/thriller-pillar",
+    "https://www.mountainproject.com/area/105922171/orange-sunshine-area",
+    "https://www.mountainproject.com/forum/message/112860127",
+    "https://www.mountainproject.com/route/119325885/thriller-pillar-right-side",
+    "https://www.mountainproject.com/route/112217066/thriller-pillar-left-side",
+    "https://wdfw.wa.gov/places-to-go/wildlife-areas/oak-creek-wildlife-area-unit"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.9+",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107192057/thriller-pillar",
+      "fact": "5.9+ YDS, Sport, 70 ft",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_thriller_pillar",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "pitches 0 is invalid. Mountain Project: a 70 ft bolted face to anchors on top of the pillar (one length to one anchor). Count implied, not stated: unconfirmed after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/107192057/thriller-pillar"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_thriller_pillar",
+    "column": "length_m",
+    "from": null,
+    "to": 21,
+    "why": "Mountain Project states 70 ft (21 m). Single source, locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/107192057/thriller-pillar"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_thriller_pillar",
+    "column": "gear",
+    "from": null,
+    "to": [
+     "optional cam to 1 in"
+    ],
+    "why": "Mountain Project protection: quickdraws plus an optional 1 in cam for the easy runout to the anchor. Rack from MP alone, locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/107192057/thriller-pillar"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_thriller_pillar",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Washington Department of Fish and Wildlife (Oak Creek Wildlife Area)",
+     "parking_pass": "Discover Pass or WDFW Vehicle Access Pass in the wildlife area lot"
+    },
+    "why": "access null. Copied field for field from wa_orange_sunshine (live, settled with the owner in batches U and V). WDFW's Oak Creek unit page re-read 2026-11-23: unchanged (Discover Pass required on WDFW land, or a Vehicle Access Pass issued with a hunting/fishing licence; eagle-nest climbing rule from Feb 1 posted in the field, no cliff named; Tieton River Nature Trail open all year).",
+    "evidence": [
+     "https://wdfw.wa.gov/places-to-go/wildlife-areas/oak-creek-wildlife-area-unit"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_thriller_pillar",
+    "column": "permit",
+    "from": null,
+    "to": "A Discover Pass, or a WDFW Vehicle Access Pass, is needed to park in the Oak Creek Wildlife Area lot.",
+    "why": "permit null. Verbatim copy of wa_orange_sunshine's permit, same reason as access.",
+    "evidence": [
+     "https://wdfw.wa.gov/places-to-go/wildlife-areas/oak-creek-wildlife-area-unit"
+    ]
+   }
+  ],
+  "held": [],
+  "disputed": [
+   "anchor: MP's protection line says chains on top; an MP comment (Oct 2015) says there are no chains or rap rings, only hangers. Not proposed.",
+   "bolts: MP gives '6 QDs' (clips, not a bolt count). Held, not proposed."
+  ],
+  "notes": "PAIR (brief W): Thriller Pillar, Thriller Pillar Right Side and Thriller Pillar Left Side (wa_thriller_pillar_left_side, not mine) are three DIFFERENT lines on one pillar, each with its own MP page: the bolted face up the front (5.9+ sport), a chimney on the right that finishes in a wide crack (5.7 trad), and a chimney start behind the pillar on the left (5.7+ on MP; our row stores 5.7, not mine). Not duplicates. 2017 COLLAPSE: the pillar that fell on 2017-04-28 carried Price of Complacency and Stress Management, not this one. The MP forum thread says the falling pillar destroyed the boulder at Thriller Pillar's base; the route itself is not reported lost and the area reopened 2017-05-26. FA 'Ed Mosshart, Andy Fitz January, 1989' matches MP; FA never locks from MP alone. theCrag lists the route (one star) but sent the browser to its bot-check page on opening it; not used further."
+ },
+ "wa_thriller_pillar_right_side": {
+  "area": "wa_orange_sunshine_area",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/119325885/thriller-pillar-right-side",
+    "https://www.mountainproject.com/route/107192057/thriller-pillar",
+    "https://www.mountainproject.com/route/112217066/thriller-pillar-left-side",
+    "https://www.mountainproject.com/area/105922171/orange-sunshine-area",
+    "https://wdfw.wa.gov/places-to-go/wildlife-areas/oak-creek-wildlife-area-unit"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.7",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119325885/thriller-pillar-right-side",
+      "fact": "5.7 YDS, Trad",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_thriller_pillar_right_side",
+    "column": "pitches",
+    "from": 0,
+    "to": null,
+    "why": "pitches 0 is invalid. Mountain Project describes a chimney up the pillar's right side to a wide crack at the top but states no length, pitch count or anchor, so a single pitch is likely but not stated: null rather than a guess.",
+    "evidence": [
+     "https://www.mountainproject.com/route/119325885/thriller-pillar-right-side"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_thriller_pillar_right_side",
+    "column": "gear",
+    "from": null,
+    "to": [
+     "gear to 4 in"
+    ],
+    "why": "Mountain Project protection: gear to 4 inches. Rack from MP alone, locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/119325885/thriller-pillar-right-side"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_thriller_pillar_right_side",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Washington Department of Fish and Wildlife (Oak Creek Wildlife Area)",
+     "parking_pass": "Discover Pass or WDFW Vehicle Access Pass in the wildlife area lot"
+    },
+    "why": "access null. Copied field for field from wa_orange_sunshine (live, settled with the owner in batches U and V). WDFW's Oak Creek unit page re-read 2026-11-23: unchanged (Discover Pass required on WDFW land, or a Vehicle Access Pass issued with a hunting/fishing licence; eagle-nest climbing rule from Feb 1 posted in the field, no cliff named; Tieton River Nature Trail open all year).",
+    "evidence": [
+     "https://wdfw.wa.gov/places-to-go/wildlife-areas/oak-creek-wildlife-area-unit"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_thriller_pillar_right_side",
+    "column": "permit",
+    "from": null,
+    "to": "A Discover Pass, or a WDFW Vehicle Access Pass, is needed to park in the Oak Creek Wildlife Area lot.",
+    "why": "permit null. Verbatim copy of wa_orange_sunshine's permit, same reason as access.",
+    "evidence": [
+     "https://wdfw.wa.gov/places-to-go/wildlife-areas/oak-creek-wildlife-area-unit"
+    ]
+   }
+  ],
+  "held": [],
+  "disputed": [],
+  "notes": "A separate line from wa_thriller_pillar (bolted face) and wa_thriller_pillar_left_side: see the pair note on wa_thriller_pillar. MP lists the FA as unknown; row stores none. Not affected by the 2017 collapse (MP page, added 2020, describes it as a current route; no mention of damage)."
+ },
+ "wa_humpty_dumpty": {
+  "area": "wa_orange_sunshine_area",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/116573964/humpty-dumpty",
+    "https://www.mountainproject.com/area/105922171/orange-sunshine-area",
+    "https://www.mountainproject.com/forum/message/112860127",
+    "https://wdfw.wa.gov/places-to-go/wildlife-areas/oak-creek-wildlife-area-unit"
+   ]
+  },
+  "ledger": [],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_humpty_dumpty",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "pitches 0 is invalid. Mountain Project: a 70 ft crack to chains on top (one length to one anchor). Count implied, not stated: unconfirmed after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/116573964/humpty-dumpty"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_humpty_dumpty",
+    "column": "length_m",
+    "from": null,
+    "to": 21,
+    "why": "Mountain Project states 70 ft (21 m). Single source, locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/116573964/humpty-dumpty"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_humpty_dumpty",
+    "column": "anchor",
+    "from": null,
+    "to": "Chain anchor",
+    "why": "Mountain Project: chains on top, right of the bush. House spelling 'Chain anchor' (stored on 64 routes). Single source, locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/116573964/humpty-dumpty"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_humpty_dumpty",
+    "column": "gear",
+    "from": null,
+    "to": [
+     "gear to 3 in"
+    ],
+    "why": "Mountain Project protection: gear to 3 inches. Rack from MP alone, locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/116573964/humpty-dumpty"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_humpty_dumpty",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Washington Department of Fish and Wildlife (Oak Creek Wildlife Area)",
+     "parking_pass": "Discover Pass or WDFW Vehicle Access Pass in the wildlife area lot"
+    },
+    "why": "access null. Copied field for field from wa_orange_sunshine (live, settled with the owner in batches U and V). WDFW's Oak Creek unit page re-read 2026-11-23: unchanged (Discover Pass required on WDFW land, or a Vehicle Access Pass issued with a hunting/fishing licence; eagle-nest climbing rule from Feb 1 posted in the field, no cliff named; Tieton River Nature Trail open all year).",
+    "evidence": [
+     "https://wdfw.wa.gov/places-to-go/wildlife-areas/oak-creek-wildlife-area-unit"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_humpty_dumpty",
+    "column": "permit",
+    "from": null,
+    "to": "A Discover Pass, or a WDFW Vehicle Access Pass, is needed to park in the Oak Creek Wildlife Area lot.",
+    "why": "permit null. Verbatim copy of wa_orange_sunshine's permit, same reason as access.",
+    "evidence": [
+     "https://wdfw.wa.gov/places-to-go/wildlife-areas/oak-creek-wildlife-area-unit"
+    ]
+   }
+  ],
+  "held": [],
+  "disputed": [
+   "grade: MP lists 5.7 (the page's author, 2019, guessed 5.7 for a dirty crack); a later MP comment signed by first ascensionist Sam Sluys (Feb 2020) says the FA party rated it 5.5. One publisher, two values: grade left at 5.7 and NOT locked; owner or a third source decides."
+  ],
+  "notes": "2017 COLLAPSE: this route EXISTS because of it. MP says the crack was uncovered when the Price of Complacency pillar fell over (2017-04-28); it sits between The Overlord and X-Factor. FA 'Sam Eglin, Sam Sluys' matches MP and the FA's own comment (same publisher), not locked."
+ },
+ "wa_columns_holiday": {
+  "area": "wa_orange_sunshine_area",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/107588465/columns-holiday",
+    "https://www.mountainproject.com/area/105922171/orange-sunshine-area",
+    "https://www.mountainproject.com/forum/message/112860127",
+    "https://wdfw.wa.gov/places-to-go/wildlife-areas/oak-creek-wildlife-area-unit"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.10c",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107588465/columns-holiday",
+      "fact": "5.10c YDS, Trad, Sport, 70 ft",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_columns_holiday",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "pitches 0 is invalid. Mountain Project: a 70 ft bolted line on the pillar left of Orange Sunshine to an anchor on top (one length to one anchor). Count implied, not stated: unconfirmed after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/107588465/columns-holiday"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_columns_holiday",
+    "column": "length_m",
+    "from": null,
+    "to": 21,
+    "why": "Mountain Project states 70 ft (21 m). Single source, locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/107588465/columns-holiday"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_columns_holiday",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Washington Department of Fish and Wildlife (Oak Creek Wildlife Area)",
+     "parking_pass": "Discover Pass or WDFW Vehicle Access Pass in the wildlife area lot"
+    },
+    "why": "access null. Copied field for field from wa_orange_sunshine (live, settled with the owner in batches U and V). WDFW's Oak Creek unit page re-read 2026-11-23: unchanged (Discover Pass required on WDFW land, or a Vehicle Access Pass issued with a hunting/fishing licence; eagle-nest climbing rule from Feb 1 posted in the field, no cliff named; Tieton River Nature Trail open all year).",
+    "evidence": [
+     "https://wdfw.wa.gov/places-to-go/wildlife-areas/oak-creek-wildlife-area-unit"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_columns_holiday",
+    "column": "permit",
+    "from": null,
+    "to": "A Discover Pass, or a WDFW Vehicle Access Pass, is needed to park in the Oak Creek Wildlife Area lot.",
+    "why": "permit null. Verbatim copy of wa_orange_sunshine's permit, same reason as access.",
+    "evidence": [
+     "https://wdfw.wa.gov/places-to-go/wildlife-areas/oak-creek-wildlife-area-unit"
+    ]
+   }
+  ],
+  "held": [],
+  "disputed": [
+   "discipline: stored trad; MP types it 'Trad, Sport' (bolted, with small gear to the first bolt and between bolts 2 and 3). Discipline never changes on MP alone; left trad."
+  ],
+  "notes": "Not affected by the 2017 collapse (MP shows it as a current route; the collapse thread names other routes). Bolt count and anchor type not stated by MP, so neither proposed; rack sizes not stated ('small gear'), so no gear proposed. FA 'Andy Fitz, Ed Mosshart.  Jan 1989' matches MP (a comment by the first ascensionist describes his own line); FA not locked from MP; spacing cosmetic, not reformatted."
+ },
+ "wa_stress_management": {
+  "area": "wa_orange_sunshine_area",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/105922227/stress-management",
+    "https://www.mountainproject.com/forum/message/112860127",
+    "https://www.mountainproject.com/area/105922171/orange-sunshine-area"
+   ]
+  },
+  "ledger": [],
+  "sql_fixes": [],
+  "held": [],
+  "disputed": [],
+  "notes": "CATALOG DEFECT, ROUTE GONE: no fixes proposed (brief K rule for retired routes). Mountain Project's own page says the pillar this route climbed toppled on April 28, 2017, and the MP forum thread on the collapse names Price of Complacency and Stress Management as the two routes lost. MP still lists it without a 'gone' marker; our row is live as sport 5.10a, pitches 0, with an overview describing a column that no longer stands. Same defect as wa_the_price_of_complacency (reported in batch U). Owner decides whether to retire or delete the row. MP facts kept only for the record: 60 ft, a medium cam, a #1 Friend, one pin and 4 bolts to rap hangers."
+ }
+}
