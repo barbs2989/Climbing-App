@@ -1,0 +1,818 @@
+[
+ {
+  "id": "wa_goat_mountain_eastern_route",
+  "name": "Eastern Route",
+  "peakName": "Goat Mountain",
+  "state": "Washington",
+  "discipline": "alpine",
+  "status": "stuck",
+  "peak": {
+   "id": "wa_goat_mountain",
+   "name": "Goat Mountain",
+   "lat": 48.9287,
+   "lng": -121.6265,
+   "elevation_ft": 6891,
+   "region": "Washington",
+   "path": "usa.washington.wa_northwest.wa_shuksan_baker_neighbors.wa_goat_mountain"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "siblingTrailheads": [
+   {
+    "route": "wa_goat_mountain_south_ridge",
+    "name": "Goat Mountain Trailhead"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Twin Lakes Trailhead",
+    "lat": 48.951763,
+    "lng": -121.635355,
+    "km": 2.6
+   },
+   {
+    "src": "USFS",
+    "name": "Tomyhoi/Yellow Aster Butte Trailhead",
+    "lat": 48.943426,
+    "lng": -121.662795,
+    "km": 3.1
+   },
+   {
+    "src": "USFS",
+    "name": "Hannegan Trailhead",
+    "lat": 48.910191,
+    "lng": -121.591986,
+    "km": 3.3
+   },
+   {
+    "src": "USFS",
+    "name": "Goat Mountain Trailhead",
+    "lat": 48.897718,
+    "lng": -121.645264,
+    "km": 3.7
+   },
+   {
+    "src": "USFS",
+    "name": "Nooksack Cirque Trailhead",
+    "lat": 48.894006,
+    "lng": -121.651015,
+    "km": 4.3
+   },
+   {
+    "src": "USFS",
+    "name": "Welcome Pass Trailhead",
+    "lat": 48.913529,
+    "lng": -121.699868,
+    "km": 5.6
+   },
+   {
+    "src": "USFS",
+    "name": "Panorama Dome Trailhead",
+    "lat": 48.860749,
+    "lng": -121.656654,
+    "km": 7.9
+   },
+   {
+    "src": "USFS",
+    "name": "Picture Lake Path Trailhead",
+    "lat": 48.865889,
+    "lng": -121.676743,
+    "km": 7.9
+   }
+  ],
+  "lastAnswer": "nothing new. Opened USFS Goat Mountain Trailhead page (coords 48.897712,-121.645249; trail 673, no mention of east peak or this route) and USFS Hannegan page (no Goat mention). Mountaineers and WTA trip reports 403. Peak has several starts in use (Goat Mountain TH, Nooksack Cirque, Twin Lakes, Hannegan); nothing opened ties Eastern Route to one."
+ },
+ {
+  "id": "wa_goat_mountain_southeast_face",
+  "name": "Southeast Face",
+  "peakName": "Goat Mountain",
+  "state": "Washington",
+  "discipline": "alpine",
+  "status": "stuck",
+  "peak": {
+   "id": "wa_goat_mountain",
+   "name": "Goat Mountain",
+   "lat": 48.9287,
+   "lng": -121.6265,
+   "elevation_ft": 6891,
+   "region": "Washington",
+   "path": "usa.washington.wa_northwest.wa_shuksan_baker_neighbors.wa_goat_mountain"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "siblingTrailheads": [
+   {
+    "route": "wa_goat_mountain_south_ridge",
+    "name": "Goat Mountain Trailhead"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Twin Lakes Trailhead",
+    "lat": 48.951763,
+    "lng": -121.635355,
+    "km": 2.6
+   },
+   {
+    "src": "USFS",
+    "name": "Tomyhoi/Yellow Aster Butte Trailhead",
+    "lat": 48.943426,
+    "lng": -121.662795,
+    "km": 3.1
+   },
+   {
+    "src": "USFS",
+    "name": "Hannegan Trailhead",
+    "lat": 48.910191,
+    "lng": -121.591986,
+    "km": 3.3
+   },
+   {
+    "src": "USFS",
+    "name": "Goat Mountain Trailhead",
+    "lat": 48.897718,
+    "lng": -121.645264,
+    "km": 3.7
+   },
+   {
+    "src": "USFS",
+    "name": "Nooksack Cirque Trailhead",
+    "lat": 48.894006,
+    "lng": -121.651015,
+    "km": 4.3
+   },
+   {
+    "src": "USFS",
+    "name": "Welcome Pass Trailhead",
+    "lat": 48.913529,
+    "lng": -121.699868,
+    "km": 5.6
+   },
+   {
+    "src": "USFS",
+    "name": "Panorama Dome Trailhead",
+    "lat": 48.860749,
+    "lng": -121.656654,
+    "km": 7.9
+   },
+   {
+    "src": "USFS",
+    "name": "Picture Lake Path Trailhead",
+    "lat": 48.865889,
+    "lng": -121.676743,
+    "km": 7.9
+   }
+  ],
+  "lastAnswer": "nothing new. Opened USFS Goat Mountain Trailhead page (coords 48.897712,-121.645249; trail 673, no mention of east peak or this route) and USFS Hannegan page (no Goat mention). Mountaineers and WTA trip reports 403. Peak has several starts in use (Goat Mountain TH, Nooksack Cirque, Twin Lakes, Hannegan); nothing opened ties Southeast Face to one."
+ },
+ {
+  "id": "wa_goat_mountain_southeast_route",
+  "name": "Southeast Route",
+  "peakName": "Goat Mountain",
+  "state": "Washington",
+  "discipline": "alpine",
+  "status": "stuck",
+  "peak": {
+   "id": "wa_goat_mountain",
+   "name": "Goat Mountain",
+   "lat": 48.9287,
+   "lng": -121.6265,
+   "elevation_ft": 6891,
+   "region": "Washington",
+   "path": "usa.washington.wa_northwest.wa_shuksan_baker_neighbors.wa_goat_mountain"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "siblingTrailheads": [
+   {
+    "route": "wa_goat_mountain_south_ridge",
+    "name": "Goat Mountain Trailhead"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Twin Lakes Trailhead",
+    "lat": 48.951763,
+    "lng": -121.635355,
+    "km": 2.6
+   },
+   {
+    "src": "USFS",
+    "name": "Tomyhoi/Yellow Aster Butte Trailhead",
+    "lat": 48.943426,
+    "lng": -121.662795,
+    "km": 3.1
+   },
+   {
+    "src": "USFS",
+    "name": "Hannegan Trailhead",
+    "lat": 48.910191,
+    "lng": -121.591986,
+    "km": 3.3
+   },
+   {
+    "src": "USFS",
+    "name": "Goat Mountain Trailhead",
+    "lat": 48.897718,
+    "lng": -121.645264,
+    "km": 3.7
+   },
+   {
+    "src": "USFS",
+    "name": "Nooksack Cirque Trailhead",
+    "lat": 48.894006,
+    "lng": -121.651015,
+    "km": 4.3
+   },
+   {
+    "src": "USFS",
+    "name": "Welcome Pass Trailhead",
+    "lat": 48.913529,
+    "lng": -121.699868,
+    "km": 5.6
+   },
+   {
+    "src": "USFS",
+    "name": "Panorama Dome Trailhead",
+    "lat": 48.860749,
+    "lng": -121.656654,
+    "km": 7.9
+   },
+   {
+    "src": "USFS",
+    "name": "Picture Lake Path Trailhead",
+    "lat": 48.865889,
+    "lng": -121.676743,
+    "km": 7.9
+   }
+  ],
+  "lastAnswer": "nothing new. Opened USFS Goat Mountain Trailhead page (coords 48.897712,-121.645249; trail 673, no mention of east peak or this route) and USFS Hannegan page (no Goat mention). Mountaineers and WTA trip reports 403. Peak has several starts in use (Goat Mountain TH, Nooksack Cirque, Twin Lakes, Hannegan); nothing opened ties Southeast Route to one."
+ },
+ {
+  "id": "wa_goat_mountain_southwest_route",
+  "name": "Southwest Route",
+  "peakName": "Goat Mountain",
+  "state": "Washington",
+  "discipline": "alpine",
+  "status": "stuck",
+  "peak": {
+   "id": "wa_goat_mountain",
+   "name": "Goat Mountain",
+   "lat": 48.9287,
+   "lng": -121.6265,
+   "elevation_ft": 6891,
+   "region": "Washington",
+   "path": "usa.washington.wa_northwest.wa_shuksan_baker_neighbors.wa_goat_mountain"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "siblingTrailheads": [
+   {
+    "route": "wa_goat_mountain_south_ridge",
+    "name": "Goat Mountain Trailhead"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Twin Lakes Trailhead",
+    "lat": 48.951763,
+    "lng": -121.635355,
+    "km": 2.6
+   },
+   {
+    "src": "USFS",
+    "name": "Tomyhoi/Yellow Aster Butte Trailhead",
+    "lat": 48.943426,
+    "lng": -121.662795,
+    "km": 3.1
+   },
+   {
+    "src": "USFS",
+    "name": "Hannegan Trailhead",
+    "lat": 48.910191,
+    "lng": -121.591986,
+    "km": 3.3
+   },
+   {
+    "src": "USFS",
+    "name": "Goat Mountain Trailhead",
+    "lat": 48.897718,
+    "lng": -121.645264,
+    "km": 3.7
+   },
+   {
+    "src": "USFS",
+    "name": "Nooksack Cirque Trailhead",
+    "lat": 48.894006,
+    "lng": -121.651015,
+    "km": 4.3
+   },
+   {
+    "src": "USFS",
+    "name": "Welcome Pass Trailhead",
+    "lat": 48.913529,
+    "lng": -121.699868,
+    "km": 5.6
+   },
+   {
+    "src": "USFS",
+    "name": "Panorama Dome Trailhead",
+    "lat": 48.860749,
+    "lng": -121.656654,
+    "km": 7.9
+   },
+   {
+    "src": "USFS",
+    "name": "Picture Lake Path Trailhead",
+    "lat": 48.865889,
+    "lng": -121.676743,
+    "km": 7.9
+   }
+  ],
+  "lastAnswer": "nothing new. Opened USFS Goat Mountain Trailhead page (coords 48.897712,-121.645249; trail 673, no mention of east peak or this route) and USFS Hannegan page (no Goat mention). Mountaineers and WTA trip reports 403. Peak has several starts in use (Goat Mountain TH, Nooksack Cirque, Twin Lakes, Hannegan); nothing opened ties Southwest Route to one."
+ },
+ {
+  "id": "wa_half_moon_uncle_wehrly_s_toupee",
+  "name": "Uncle Wehrly's Toupee",
+  "peakName": "Half Moon",
+  "state": "Washington",
+  "discipline": "alpine",
+  "status": "stuck",
+  "peak": {
+   "id": "wa_half_moon",
+   "name": "Half Moon",
+   "lat": 48.50981,
+   "lng": -120.613587,
+   "elevation_ft": 7960,
+   "region": "Washington Pass",
+   "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_sub_wapass.wa_kangaroo_ridge.wa_half_moon"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": "Flare climbing of an adventurous sort, where horizontal stemming comes into play, leads through The Maw on pitch two, the crux. Beyond it come several more pitches with attractive finger cracks.",
+   "description": null,
+   "descent": null
+  },
+  "siblingTrailheads": [
+   {
+    "route": "wa_half_moon_southwest_slopes",
+    "name": "SR-20 Hairpin / Pond Pullout (east of Washington Pass)"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Hairpin",
+    "lat": 48.514336,
+    "lng": -120.642715,
+    "km": 2.2
+   },
+   {
+    "src": "USFS",
+    "name": "Blue Lake Trailhead",
+    "lat": 48.519016,
+    "lng": -120.674215,
+    "km": 4.6
+   },
+   {
+    "src": "USFS",
+    "name": "Burgundy Col",
+    "lat": 48.551406,
+    "lng": -120.630895,
+    "km": 4.8
+   },
+   {
+    "src": "USFS",
+    "name": "Cutthroat Trailhead",
+    "lat": 48.556306,
+    "lng": -120.654715,
+    "km": 6
+   },
+   {
+    "src": "USFS",
+    "name": "Gilbert Trailhead",
+    "lat": 48.458443,
+    "lng": -120.565926,
+    "km": 6.7
+   },
+   {
+    "src": "USFS",
+    "name": "Bridge Creek Trailhead",
+    "lat": 48.504906,
+    "lng": -120.719115,
+    "km": 7.8
+   },
+   {
+    "src": "USFS",
+    "name": "Rainy Pass Trailhead (PCT North)",
+    "lat": 48.515306,
+    "lng": -120.736025,
+    "km": 9
+   },
+   {
+    "src": "USFS",
+    "name": "Heather Maple Pass Trailhead Rainy Pass ",
+    "lat": 48.516606,
+    "lng": -120.735815,
+    "km": 9
+   }
+  ],
+  "lastAnswer": "nothing new on the start. AAJ page opened: no parking or approach given. SummitPost 403. Search summary only suggests SR-20 pullout past the Hairpin (weak, unopened)."
+ },
+ {
+  "id": "wa_hozomeen_mountain_south_peak_north_ridge",
+  "name": "North Ridge (South Peak)",
+  "peakName": "Hozomeen Mountain",
+  "state": "Washington",
+  "discipline": "alpine",
+  "status": "stuck",
+  "peak": {
+   "id": "wa_hozomeen_mountain",
+   "name": "Hozomeen Mountain",
+   "lat": 48.982185,
+   "lng": -121.012035,
+   "elevation_ft": 8071,
+   "region": "Ross Lake/Jack Mountain",
+   "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_hozomeen_mountain"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": "A sustained Grade IV+ line up the South Peak's north ridge, adjacent to the mountain's famously vertical 1,000-ft north face.",
+   "description": null,
+   "descent": null
+  },
+  "siblingTrailheads": [
+   {
+    "route": "wa_hozomeen_mountain_north_peak_north_route",
+    "name": "Hozomeen Campground / Hozomeen Lake Trailhead (upper loop)"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "NPS",
+    "name": "Skyline II Trailhead (BC)",
+    "lat": 49.041545,
+    "lng": -121.068734,
+    "km": 7.8
+   },
+   {
+    "src": "NPS",
+    "name": "Nepopekum Horse Trail Loop Trailhead (BC)",
+    "lat": 49.053337,
+    "lng": -121.094073,
+    "km": 9.9
+   },
+   {
+    "src": "NPS",
+    "name": "Strawberry Bar (BC)",
+    "lat": 49.076197,
+    "lng": -121.111462,
+    "km": 12.7
+   },
+   {
+    "src": "NPS",
+    "name": "Shawatum Day Use parking area (BC)",
+    "lat": 49.105168,
+    "lng": -121.138761,
+    "km": 16.5
+   }
+  ],
+  "lastAnswer": "Nothing new. Opened AAJ north face article (no trailhead named; approach is steep forest, brush to a col) and AAJ 'Hozomeen at Last' (1947 South Peak ascent via Silver-Skagit road, Jackass Pass, Hozomeen Lake: a different route). Candidate starts: Hozomeen Campground / Hozomeen Lake, Lightning Creek, Skyline II; nothing ties this north ridge to one. cascadeclimbers 403."
+ },
+ {
+  "id": "wa_hozomeen_mountain_southwest_buttress",
+  "name": "Southwest Buttress (North Peak)",
+  "peakName": "Hozomeen Mountain",
+  "state": "Washington",
+  "discipline": "alpine",
+  "status": "stuck",
+  "peak": {
+   "id": "wa_hozomeen_mountain",
+   "name": "Hozomeen Mountain",
+   "lat": 48.982185,
+   "lng": -121.012035,
+   "elevation_ft": 8071,
+   "region": "Ross Lake/Jack Mountain",
+   "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_hozomeen_mountain"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": "A serious, poorly-protected Grade IV technical rock route on the North Peak's southwest side; very few successful ascents are reported, and protection is difficult.",
+   "description": null,
+   "descent": null
+  },
+  "siblingTrailheads": [
+   {
+    "route": "wa_hozomeen_mountain_north_peak_north_route",
+    "name": "Hozomeen Campground / Hozomeen Lake Trailhead (upper loop)"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "NPS",
+    "name": "Skyline II Trailhead (BC)",
+    "lat": 49.041545,
+    "lng": -121.068734,
+    "km": 7.8
+   },
+   {
+    "src": "NPS",
+    "name": "Nepopekum Horse Trail Loop Trailhead (BC)",
+    "lat": 49.053337,
+    "lng": -121.094073,
+    "km": 9.9
+   },
+   {
+    "src": "NPS",
+    "name": "Strawberry Bar (BC)",
+    "lat": 49.076197,
+    "lng": -121.111462,
+    "km": 12.7
+   },
+   {
+    "src": "NPS",
+    "name": "Shawatum Day Use parking area (BC)",
+    "lat": 49.105168,
+    "lng": -121.138761,
+    "km": 16.5
+   }
+  ],
+  "lastAnswer": "Nothing new. No opened page describes the North Peak southwest buttress approach. Sibling start (Hozomeen Campground) unverified."
+ },
+ {
+  "id": "wa_hozomeen_mountain_west_face",
+  "name": "West Face (North Peak)",
+  "peakName": "Hozomeen Mountain",
+  "state": "Washington",
+  "discipline": "alpine",
+  "status": "stuck",
+  "peak": {
+   "id": "wa_hozomeen_mountain",
+   "name": "Hozomeen Mountain",
+   "lat": 48.982185,
+   "lng": -121.012035,
+   "elevation_ft": 8071,
+   "region": "Ross Lake/Jack Mountain",
+   "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_hozomeen_mountain"
+  },
+  "text": {
+   "approach": "A two-stage approach and the second stage is the part that stops people. Day one is a long haul of 11-plus miles under heavy loads from the road to a camp just north of the peak - the same Hozomeen Ridge / border-swath ground used by the north-side scrambling routes, reached from Silver-Skagit Road out of Hope, B.C. From that camp the approach to the base took the first ascent party a tedious and painstaking 4.5 hours: downclimb a loose third-class gully, which the party described as dangerous but the lesser of the two evils, then cross several precipitous rocky ribs and steep, unstable ground to traverse into the launch point below the wall. Budget the base approach as a half-day objective in its own right and do it in daylight. Confirm the NPS border-gate status before planning; the crossing at Hozomeen has been closed to vehicles and foot traffic since 2020, with no end date given on the park's fire-closure page updated 14 September 2026.",
+   "approach_logistics": null,
+   "road": "{\"name\":\"Silver-Skagit Road (Skagit Valley Road) from Hope, British Columbia\",\"status\":\"About 37 miles / 60 km of gravel, graded periodically but usually washboarded and potholed; carry a spare tire. Rebuilt after the 2021 B.C. flood washouts. Closed at km 6 as of 24 July 2026 for the Border 2 Fire, which crossed into B.C. 2.4 km east of Hozomeen.\",\"driveNote\":\"Hwy 1 Exit 168 at Hope, Flood-Hope Road, then Silver-Skagit Road south. 1 to 1.5 hours. Skyline II trailhead near km 55 serves the northern approach to a camp north of the peak.\",\"seasonalGate\":\"B.C. does not maintain Silver-Skagit Road",
+   "overview": "A Grade IV, 5.9 technical rock route on the North Peak's west face, very difficult to protect and among the hardest routes on the mountain.",
+   "description": null,
+   "descent": "From the summit, take the easy north-side ground: reverse the Northeast Buttress / North Route line, downclimbing the Class 2-3 northeast ridge, treating the short very exposed Class 4 eroded segment near 7,600 ft with maximum care, then descending the north cirque snowfields to the saddle and back to camp. In late summer, when this route is in condition, those snowfields will be thin or gone, lea"
+  },
+  "siblingTrailheads": [
+   {
+    "route": "wa_hozomeen_mountain_north_peak_north_route",
+    "name": "Hozomeen Campground / Hozomeen Lake Trailhead (upper loop)"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "NPS",
+    "name": "Skyline II Trailhead (BC)",
+    "lat": 49.041545,
+    "lng": -121.068734,
+    "km": 7.8
+   },
+   {
+    "src": "NPS",
+    "name": "Nepopekum Horse Trail Loop Trailhead (BC)",
+    "lat": 49.053337,
+    "lng": -121.094073,
+    "km": 9.9
+   },
+   {
+    "src": "NPS",
+    "name": "Strawberry Bar (BC)",
+    "lat": 49.076197,
+    "lng": -121.111462,
+    "km": 12.7
+   },
+   {
+    "src": "NPS",
+    "name": "Shawatum Day Use parking area (BC)",
+    "lat": 49.105168,
+    "lng": -121.138761,
+    "km": 16.5
+   }
+  ],
+  "lastAnswer": "Nothing new. Route's own text names Silver-Skagit Road and Skyline II (near km 55) as serving the northern approach to a camp north of the peak, but also describes the camp via the border swath; no opened page ties the west face to one start. Candidates: Skyline II (NPS 49.041545,-121.068734), Hozomeen Campground."
+ },
+ {
+  "id": "wa_huckleberry_mountain_north_route",
+  "name": "North Route",
+  "peakName": "Huckleberry Mountain",
+  "state": "Washington",
+  "discipline": "alpine",
+  "status": "stuck",
+  "peak": {
+   "id": "wa_huckleberry_mountain",
+   "name": "Huckleberry Mountain",
+   "lat": 47.47431,
+   "lng": -121.33417,
+   "elevation_ft": 6327,
+   "region": "Washington",
+   "path": "usa.washington.wa_centralwest.wa_western_alpine_lakes.wa_huckleberry_mountain"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "siblingTrailheads": [
+   {
+    "route": "wa_huckleberry_mountain_east_ridge",
+    "name": "PCT North Trailhead (Snoqualmie Pass)"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Snow Lake Trailhead",
+    "lat": 47.445656,
+    "lng": -121.423665,
+    "km": 7.4
+   },
+   {
+    "src": "USFS",
+    "name": "Pacific Crest Trail - Snoqualmie North T",
+    "lat": 47.428012,
+    "lng": -121.413484,
+    "km": 7.9
+   },
+   {
+    "src": "USFS",
+    "name": "Pacific Crest Trail/Stevens Pass Trailhe",
+    "lat": 47.42841,
+    "lng": -121.415498,
+    "km": 8
+   },
+   {
+    "src": "USFS",
+    "name": "Pants - Snoqualmie South Trailhead",
+    "lat": 47.427228,
+    "lng": -121.420293,
+    "km": 8.3
+   },
+   {
+    "src": "USFS",
+    "name": "Rachel Lake Trailhead",
+    "lat": 47.400706,
+    "lng": -121.283915,
+    "km": 9
+   },
+   {
+    "src": "USFS",
+    "name": "Gold Creek Trailhead",
+    "lat": 47.398629,
+    "lng": -121.380326,
+    "km": 9.1
+   },
+   {
+    "src": "USFS",
+    "name": "Kendall Peaks Trailhead",
+    "lat": 47.398249,
+    "lng": -121.394411,
+    "km": 9.6
+   },
+   {
+    "src": "USFS",
+    "name": "Dingford Creek Trailhead",
+    "lat": 47.517325,
+    "lng": -121.4543,
+    "km": 10.2
+   }
+  ],
+  "lastAnswer": "Nothing new. Opened hippohamster.vercel.app (east ridge via PCT from Snoqualmie Pass, no trailhead named, no north route). WTA/Mountaineers 403. Candidates: PCT north trailhead at Snoqualmie Pass, Gold Creek."
+ },
+ {
+  "id": "wa_iron_cap_mountain_northeast_shoulder",
+  "name": "North Ridge via Northeast Shoulder",
+  "peakName": "Iron Cap Mountain",
+  "state": "Washington",
+  "discipline": "scrambling",
+  "status": "stuck",
+  "peak": {
+   "id": "wa_iron_cap_mountain",
+   "name": "Iron Cap Mountain",
+   "lat": 47.554001,
+   "lng": -121.284819,
+   "elevation_ft": 6347,
+   "region": "Washington",
+   "path": "usa.washington.wa_centralwest.wa_stevens_pass_region.wa_iron_cap_mountain"
+  },
+  "text": {
+   "approach": "Reached from the Tank Lakes side of the Alpine Lakes high route, via the Foss River trails, not from Chetwoot Lake.",
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": "Reverse the ascent: down the north ridge, round the northeast nose, and across talus to the saddle below the Tank Lakes plateau."
+  },
+  "siblingTrailheads": [
+   {
+    "route": "wa_iron_cap_mountain_south_route",
+    "name": "West Fork Foss Trailhead"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "West Fork Foss Lakes Trailhead",
+    "lat": 47.635006,
+    "lng": -121.303348,
+    "km": 9.1
+   },
+   {
+    "src": "USFS",
+    "name": "Dorothy Lake Trailhead",
+    "lat": 47.608617,
+    "lng": -121.384459,
+    "km": 9.6
+   },
+   {
+    "src": "USFS",
+    "name": "Evans Lake",
+    "lat": 47.658774,
+    "lng": -121.323083,
+    "km": 12
+   },
+   {
+    "src": "USFS",
+    "name": "Necklace Valley Trailhead",
+    "lat": 47.665562,
+    "lng": -121.287237,
+    "km": 12.4
+   },
+   {
+    "src": "USFS",
+    "name": "Dingford Creek Trailhead",
+    "lat": 47.517325,
+    "lng": -121.4543,
+    "km": 13.4
+   },
+   {
+    "src": "USFS",
+    "name": "Tonga Ridge Trailhead",
+    "lat": 47.679173,
+    "lng": -121.263348,
+    "km": 14
+   },
+   {
+    "src": "USFS",
+    "name": "Tucquala Meadows Trailhead",
+    "lat": 47.543506,
+    "lng": -121.096615,
+    "km": 14.2
+   },
+   {
+    "src": "USFS",
+    "name": "Pete Lake Trailhead",
+    "lat": 47.434106,
+    "lng": -121.186915,
+    "km": 15.2
+   }
+  ],
+  "lastAnswer": "Nothing new. Opened WTA Iron Cap hike page (West Fork Foss access; printed coordinate equals the peak, not a trailhead; no north ridge route) and fastestknowntime Foss Lakes-Iron Cap loop (two trailheads, none named). WTA trip reports 403. Candidates: West Fork Foss (USFS 47.635006,-121.303348), Necklace Valley / East Fork Foss (USFS 47.665562,-121.287237)."
+ }
+]
