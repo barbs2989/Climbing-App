@@ -24,7 +24,7 @@ whole guide feature on 2026-11-14 (owner). This doc covers the partners mode (`l
   search is an icon pill (*Name*, `aria-expanded`) beside the title that opens the box. Partner cards stay one per row (owner).
 - **The You card — how other climbers find you** (owner, climber walkthrough 2026-11-13): one compact card above the pills holding
   everything about YOUR visibility, so the pill row is only "who am I looking for". Its first row is the sentence and button the Join a crew
-  pane shows (owner 2026-11-18: the heading, paragraph, a chip per listed area and a full-width add button ran a screen deep at 14 areas):
+  pane showed until 2026-11-19, when that pane moved its listings under *My climbs & areas* (owner 2026-11-18: the heading, paragraph, a chip per listed area and a full-width add button ran a screen deep at 14 areas):
   *Looking for partners? List the crags and peaks you climb — you’re listed at N places.* beside **My areas**, which opens
   `MyPartnerAreas` — the only way onto that screen here (the empty card no longer repeats it), and where each listing is changed or removed; then the **I'm free this weekend** switch (`role="switch"`; it writes your own
   `profiles.free_until`, which is why it left the filter row — as a pill there, a tap meant to find free climbers published your status),
