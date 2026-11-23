@@ -205,7 +205,7 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
   `rankSimilarRoutes` keeps only climbs inside the window (`suggestWindow`: on YDS, 5.8 to 5.10+ around 5.10a), nearest grade
   first, a classic or well-starred climb ahead of a no-name about a letter grade closer. A grade the scale does not list
   ("5.10b/c") scores as the nearest listed grade; one from another system, or none, is left out. The centre is the mean grade of
-  your completed logs in that discipline, each weighted by how recent it is (`suggestLogWeight`: halves every two years, floor
+  your completed logs in that discipline (the grade on your profile when none of those logs has a grade on that scale), each weighted by how recent it is (`suggestLogWeight`: halves every two years, floor
   0.15), and the same weight orders the disciplines. An X or R/X climb is never suggested, in a ranked row or the fallback
   (`suggestTooBold`; your own objectives and recently opened climbs still list it); an R climb is ranked down. With no row to show it falls back to *Classics in this area*, else the area's
   best-rated climbs. Not read on a country or the world. Until 2026-11-19 every row shared one pool, the area's first 120
