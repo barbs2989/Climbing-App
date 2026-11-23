@@ -669,7 +669,7 @@ CREATE TABLE public.contributions (
 );
 ALTER TABLE public.contributions ENABLE ROW LEVEL SECURITY;
 CREATE POLICY "authed can contribute" ON public.contributions AS PERMISSIVE FOR INSERT TO public WITH CHECK (((( SELECT auth.uid() AS uid) IS NOT NULL) AND (contributor = (( SELECT auth.uid() AS uid))::text)));
-CREATE POLICY "contribution standing allows field edits" ON public.contributions AS RESTRICTIVE FOR INSERT TO public WITH CHECK (((kind <> 'field'::text) OR can_contribute_fields(( SELECT auth.uid() AS uid))));
+CREATE POLICY "contribution standing allows field edits" ON public.contributions AS RESTRICTIVE FOR INSERT TO public WITH CHECK (((kind <> ALL (ARRAY['field'::text, 'new_route'::text, 'new_area'::text])) OR can_contribute_fields(auth.uid())));
 CREATE POLICY "contributions public read" ON public.contributions AS PERMISSIVE FOR SELECT TO public USING (true);
 CREATE POLICY "own photo or pairing, or an admin" ON public.contributions AS PERMISSIVE FOR DELETE TO public USING ((((kind = ANY (ARRAY['photo'::text, 'pair'::text])) AND (contributor IS NOT NULL) AND (contributor = (( SELECT auth.uid() AS uid))::text)) OR is_admin(( SELECT auth.uid() AS uid))));
 CREATE POLICY "restricted accounts cannot post" ON public.contributions AS RESTRICTIVE FOR INSERT TO public WITH CHECK (is_active_user(( SELECT auth.uid() AS uid)));
