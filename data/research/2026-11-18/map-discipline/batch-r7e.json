@@ -1,0 +1,91 @@
+{
+ "ca_granite_chief_granite_chief_trail_from_olympic_valley": {
+  "area": "ca_granite_chief",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Granite Chief Trailhead (Olympic Valley)",
+    "trailheadLat": 39.199899,
+    "trailheadLng": -120.237419
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Granite Chief Trailhead (Olympic Valley)",
+     "trailheadLat": 39.199899,
+     "trailheadLng": -120.237419
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_TrailNFSPublish_01/MapServer/0/query?where=UPPER(TRAIL_NAME)%20LIKE%20'%25GRANITE%20CHIEF%25'&outFields=trail_name,trail_no&returnGeometry=true&outSR=4326&f=json",
+      "fact": "Granite Chief trail line starts 39.19990,-120.23742",
+      "retrieved_at": "2026-11-23",
+      "official": true
+     },
+     {
+      "url": "https://www.openstreetmap.org/way/299583220",
+      "fact": "parking 39.20005,-120.23755",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "research",
+    "fact": "route is named for this trail; mapped parking 20 m from the official trail start"
+   },
+   "chunk": "round7"
+  }
+ },
+ "or_diamond_peak_southwest_ridge": {
+  "area": "or_diamond_peak",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Pioneer Gulch Trailhead (Rockpile Road, FR 2160)",
+    "trailheadLat": 43.498799,
+    "trailheadLng": -122.193909
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Pioneer Gulch Trailhead (Rockpile Road, FR 2160)",
+     "trailheadLat": 43.498799,
+     "trailheadLng": -122.193909
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_TrailNFSPublish_01/MapServer/0/query?where=UPPER(TRAIL_NAME)%20LIKE%20'%25PIONEER%20GULCH%25'&outFields=trail_name,trail_no&returnGeometry=true&outSR=4326&f=json",
+      "fact": "Pioneer Gulch trail line starts 43.49880,-122.19391",
+      "retrieved_at": "2026-11-23",
+      "official": true
+     },
+     {
+      "url": "https://www.openstreetmap.org/way/5459391",
+      "fact": "Rockpile Road NF 2160 passes the trail start",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://pages.uoregon.edu/dbelitz/db_virtual/db_climbing/peaks/diamond_pk.html",
+      "fact": "Start: Pioneer Gulch Trailhead",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "research",
+    "fact": "row says start at the Pioneer Gulch trailhead; the trail west end meets the road, the east end meets the Diamond Peak Trail"
+   },
+   "chunk": "round7"
+  }
+ }
+}
