@@ -409,3 +409,34 @@ mention were then read.
     (Spanish Needle).
 - **Audit:** the rerun hit HTTP 500 twice and stopped under the throttle rule. Expected count is 151
   (154 less these 3); it has not been measured yet.
+
+### Round 11: agents under the two-source rule (2026-11-23)
+
+The open routes were sorted by what blocks them: 84 had no named start, 30 were multi-start, 28 had a
+named start but no point or only a weak identification, and 9 are Goodell Creek. The first two groups went
+to 11 Sonnet agents (`BRIEF8.md`, `chunks8/`, `out8/`). Each agent got the two-source rule and the list of
+sites that answer. Results: 14 found, 99 stuck.
+- **Written (10, unconfirmed, verified on re-read, `batch-r11.json`), each with two agreeing sources:**
+  - At official points:
+    - Mount Hale and Mount Newcomb Southwest Slope: Whitney Portal.
+    - Volunteer Peak: Robinson Creek Trailhead at Twin Lakes. The first name match was a Washington trailhead
+      with the same name; it was caught and corrected to the California point before writing.
+    - Black Giant West Slope: Lake Sabrina.
+    - Goat Mountain Eastern Route: Goat Mountain Trailhead.
+    - Iron Cap Northeast Shoulder: Necklace Valley.
+    - Hozomeen West Face: NPS Skyline II.
+  - At pins the catalog already stores:
+    - Liberty Bell "The Barber Pole": the SR-20 hairpin pullout, where 10 Liberty Bell east-face routes
+      start.
+    - Southeast Mox Beckey Route: the Depot Creek Road washout.
+    - Rainier East Success Couloir: Paradise (8 routes). This settles one of the owner's hand-placement
+      items.
+  - Every pin is 1 to 18 km from its peak.
+- **Found but not written:**
+  - A source disagrees: Angora (Lewis Camp vs Mineral King / Lloyd Meadows), Merced (Quartz Mountain vs
+    Glacier Point / Yosemite Valley), Rodgers (Rush Creek vs Agnew Meadows), Silver Peak (Lake Edison vs
+    Onion Spring).
+  - Start named, no placement: Cartago (only the driving-guide waypoint, with no mapped lot), Bolton Brown
+    (McMurry Meadows, nothing mapped), Mount Ballard (Slate Creek road gate; the road is mapped, the gate is
+    not, so it stays on the hand-place list).
+- **Audit, measured:** SUMMIT_ONLY 141, NO_SUMMIT 40, TRAILHEAD_AND_SUMMIT 1060.
