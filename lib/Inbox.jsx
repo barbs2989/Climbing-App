@@ -77,6 +77,8 @@ export default function Inbox({restrictedIds,dmUnavailable,crewUnavailable,dmLoa
   const crewDesc=t=>{const key=crewKey(t.cr.id),lastTs=(t.last&&t.last.ts)||0;return {kind:"crew",key:key,id:t.cr.id,dbId:t.cr._dbId,name:(t.r.name||"Crew")+" crew",lastTs:lastTs,archived:convo.isArchived(key,lastTs)};};
   const dmLive=dmThreads.filter(t=>!dmDesc(t).archived),dmArch=dmThreads.filter(t=>dmDesc(t).archived&&!(restrictedIds&&restrictedIds.has(String(t.c.id))));
   const crewLive=crewThreads.filter(t=>!crewDesc(t).archived),crewArch=crewThreads.filter(t=>crewDesc(t).archived);
+  /* The Archived chats page closes with its last row: left set, the next Archive reopened it by itself (2026-11-23). */
+  const _archN=(itab==="crews"?crewArch:dmArch).length;useEffect(function(){if(!_archN)setArchOpen(false);},[_archN,itab]);
 
   const friendsNoDM=(connections||[]).filter(f=>dmIds.indexOf(String(f.id))<0);
   const lastTxt=m=>m?((m.from==="me"?"You: ":"")+(m.image?"Photo":m.text)):null;

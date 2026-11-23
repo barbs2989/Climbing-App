@@ -2,7 +2,7 @@
 // bundle. It is rendered only from App (ClimbMatch.jsx) behind React.lazy + Suspense.
 import { tx } from "./tapWords.js";
 import { clickable } from "./clickable";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useProfilesByIds } from "./db";
 import { C, CLIMBERS, SL, notifTarget, pubName } from "../ClimbMatchCore.jsx";
 import SwipeRow from "../src/components/SwipeRow.tsx";
@@ -21,7 +21,7 @@ const ROW_H=57;
 const CLAMP2={display:"-webkit-box",WebkitLineClamp:2,WebkitBoxOrient:"vertical",overflow:"hidden",overflowWrap:"anywhere"};
 const ELL={whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis"};
 
-export default function NotifPanel({requests,requestsUnavailable,notifs,onAccept,onDecline,onOpenProfile,onGo,onClose,onArchive,onDelete,onClearAll,archived,onRestore,page,onSeeAll,showToast}){const [archOpen,setArchOpen]=useState(false);const [archQ,setArchQ]=useState("");const [menuFor,setMenuFor]=useState(null);const [archOpenFor,setArchOpenFor]=useState(null);
+export default function NotifPanel({requests,requestsUnavailable,notifs,onAccept,onDecline,onOpenProfile,onGo,onClose,onArchive,onDelete,onClearAll,archived,onRestore,page,onSeeAll,showToast}){const [archOpen,setArchOpen]=useState(false);const [archQ,setArchQ]=useState("");/* The page closes with its last row: left set, the next Archive reopened it by itself (found driving it, 2026-11-23). */const _archN=(archived||[]).length;useEffect(function(){if(!_archN)setArchOpen(false);},[_archN]);const [menuFor,setMenuFor]=useState(null);const [archOpenFor,setArchOpenFor]=useState(null);
   /* WHO a notification is about. CLIMBERS alone gave a REAL climber's notification (a friend accept, kudos) no
      avatar, and tapping it opened nothing. Real ids resolve through one profiles read for the whole panel. */
   const _uids=Array.from(new Set(notifs.concat(archived||[]).map(n=>n.climberId).filter(id=>typeof id==="string")));const profQ=useProfilesByIds(_uids);
