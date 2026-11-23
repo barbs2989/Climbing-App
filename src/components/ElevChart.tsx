@@ -14,6 +14,9 @@ export interface ElevChartProps {
   onIndex?: (i: number | null) => void;
   /** Line and fill colour (default the palette blue). */
   color?: string;
+  /** The track starts well away from the route's trailhead, so its climb and descent are a piece of
+   *  the route's: the totals are not printed, and the line says why. */
+  partial?: boolean;
 }
 
 const W = 340, H = 92, P = 8;
@@ -28,7 +31,7 @@ function nearestIndex(km: readonly number[], target: number): number {
   return lo > 0 && target - km[lo - 1] < km[lo] - target ? lo - 1 : lo;
 }
 
-function ElevChartImpl({ pts, km, index, onIndex, color }: ElevChartProps) {
+function ElevChartImpl({ pts, km, index, onIndex, color, partial }: ElevChartProps) {
   const svgRef = useRef<SVGSVGElement | null>(null);
   const dragging = useRef(false);
   /* Once per track, not once per scrub step: the totals do not depend on where the marker is. */
@@ -88,7 +91,9 @@ function ElevChartImpl({ pts, km, index, onIndex, color }: ElevChartProps) {
   return (
     <div style={{ background: "#050d1a", borderRadius: 8, padding: "8px 10px 4px", border: `1px solid ${C.border}` }}>
       <div style={{ display: "flex", justifyContent: "space-between", gap: 8, flexWrap: "wrap", fontSize: 12, color: C.textMuted, marginBottom: 4 }}>
-        <span>Gain <strong style={{ color: col }}>{uElev(gain)}</strong> · Loss <strong style={{ color: C.red }}>{uElev(loss)}</strong></span>
+        {partial
+          ? <span>Track starts away from the trailhead</span>
+          : <span>Gain <strong style={{ color: col }}>{uElev(gain)}</strong> · Loss <strong style={{ color: C.red }}>{uElev(loss)}</strong></span>}
         <span style={{ color: C.text }}>{on != null && km ? `${uElev(pts[on])} at ${uDist(km[on])}` : km ? uDist(total) : `${n} samples`}</span>
       </div>
       <svg
