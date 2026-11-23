@@ -185,6 +185,8 @@ profile can also open as `FullProfile` and `Resume` overlays from anywhere (part
 6. **Units / date**: `units` and `dateFmt` are `App` state; each render calls `__set_UNITS(units)` and `__set_DLOCALE(dateFmtToLocale(dateFmt))`
    so module-level `UNITS` / `DLOCALE` (read by formatters) follow. Stored on-device by `loadUnits`/`saveUnits` (`lib/units-pref.js`, key `climbmatch-units`)
    and `loadDateFmt`/`saveDateFmt` (`lib/date-pref.js`); `currentDateLocale()` reads it outside React.
+   *Also show grades in* (French · UIAA · Ewbank · Font, all off by default) is `lib/grade-scales-pref.js` (`useGradeScales`/`setGradeScale`,
+   key `climbmatch-grade-scales`), read by the route page's Composite Grade line, not App state.
 7. **Notification and browse switches** are flag sets: `loadNotifPrefs`/`saveNotifPrefs` (`lib/notif-pref.js`, `climbmatch-notif-prefs`) — the notification switches ALSO follow a signed-in account since 0469 (`notification_state.prefs`, read and saved with the alerts read-state by `useMyNotificationState`/`saveMyNotificationState`; a switch the account saved wins over the device, and the device's are written up on first load),
    `visibleWhileBrowsingPref`/`saveVisibleWhileBrowsing` (`lib/browse-visibility-pref.js`), built on `lib/prefs.js` (`defineFlagSet`). Onboarding shown-once: `lib/onboard-pref.js`.
 8. **Server counts**: gone. `my_trust_counts` (0203) and its reader `useMyTrustCounts` were removed with belay catches (0417, 2026-11-12). A future per-user count RPC keys its query on the user only, never on another query's `dataUpdatedAt` — that fired the RPC on every logs refetch.
@@ -223,7 +225,7 @@ profile can also open as `FullProfile` and `Resume` overlays from anywhere (part
 | `lib/AppFeedback.jsx` | `FeedbackForm`, `RateForm` (the Menu's Feedback and Rate app sheets), `AppFeedbackQueue` (Menu › Review › Feedback & ratings), `devicePlatform`, `storeListing`, `APP_VERSION` |
 | `lib/AccessibilityReports.jsx` | `AccessibilityReportQueue` — the owner's queue of accessibility reports, a section of the Review desk (`review.html#access`) |
 | `supabase/functions/notify-accessibility-report/index.ts` | emails the owner when a report is filed (needs `RESEND_API_KEY`) |
-| `lib/units-pref.js`, `lib/date-pref.js`, `lib/notif-pref.js`, `lib/browse-visibility-pref.js`, `lib/inbox-pref.js`, `lib/onboard-pref.js`, `lib/prefs.js` | device-local preference modules |
+| `lib/units-pref.js`, `lib/date-pref.js`, `lib/notif-pref.js`, `lib/browse-visibility-pref.js`, `lib/inbox-pref.js`, `lib/onboard-pref.js`, `lib/grade-scales-pref.js`, `lib/prefs.js` | device-local preference modules |
 
 ## 4. Data
 - **Supabase tables**: `profiles` (0009; `show_name` 0175; `gender` 0359; `discoverable` 0104/0110; `resume_public` 0177; certifications 0181), `climber_resumes` (0342: owner, or anyone while `resume_public`), `profile_zips` (owner-only) + `zip_centroids` (0189),
