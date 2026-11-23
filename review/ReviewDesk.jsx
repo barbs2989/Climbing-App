@@ -196,21 +196,26 @@ function Desk() {
     const walls = wallsQ.data || null;
     orders.forEach((o) => {
       const rs = walls ? walls[o.area_id] || [] : null;
-      const names = {};
-      (rs || []).forEach((x) => { names[x.id] = x.name; });
+      const names = {}, inLine = {};
+      (rs || []).forEach((x) => { names[x.id] = x.name; if (x.discipline !== "bouldering") inLine[x.id] = true; });
       const now = (rs || []).filter((x) => x.sort_order != null && x.discipline !== "bouldering").sort((a, b) => a.sort_order - b.sort_order).map((x) => String(x.id));
       const list = Array.isArray(o.value && o.value.order) ? o.value.order.map(String) : [];
       const nm = (id) => names[id] || "(a climb no longer on this wall)";
+      // The place each listed climb WOULD take, numbered as resolve_wall_order numbers them: a climb that has left
+      // the wall, a boulder problem and a repeat are skipped, so they neither count nor shift the "now N" marks.
+      const place = {};
+      let n = 0;
+      list.forEach((id) => { if (inLine[id] && place[id] == null) place[id] = ++n; });
       out.push({
         key: "o:" + o.id, kind: "order", ids: [o.id], route_id: null, area_id: o.area_id, field: "wall_order", label: "Wall order",
         name: (o.areas && o.areas.name) || o.area_id, state: String(o.area_id || "").split("_")[0].toUpperCase(),
         cur: rs ? now.map(nm) : undefined, said: rs ? list.map(nm) : list.length + " climbs", note: (o.value && o.value.note) || "",
         removes: false, climbers: 1, created_at: o.created_at, ai: null,
-        order: { loaded: !!rs, now, list, known: list.filter((id) => names[id]).length, names },
+        order: { loaded: !!rs, failed: !rs && !!wallsQ.error, now, list, known: n, names, place },
       });
     });
     return out;
-  }, [edits, flags, orders, fieldsQ.data, routesQ.data, areasQ.data, aiQ.data, wallsQ.data]);
+  }, [edits, flags, orders, fieldsQ.data, routesQ.data, areasQ.data, aiQ.data, wallsQ.data, wallsQ.error]);
 
   const states = useMemo(() => Array.from(new Set(rows.map((r) => r.state))).filter(Boolean).sort(), [rows]);
   const fieldsList = useMemo(() => Array.from(new Set(rows.map((r) => r.label))).sort(), [rows]);
@@ -218,7 +223,7 @@ function Desk() {
     const q = f.q.trim().toLowerCase();
     const vRank = { disagree: 0, partly: 1, unsure: 2, agree: 3 };
     return rows.filter((r) => (f.type === "all" || r.kind === f.type)
-      && (f.verdict === "all" || (f.verdict === "none" ? !r.ai : r.ai && r.ai.verdict === f.verdict))
+      && (f.verdict === "all" || (f.verdict === "none" ? !r.ai && r.kind !== "order" : r.ai && r.ai.verdict === f.verdict))
       && (f.state === "all" || r.state === f.state) && (f.field === "all" || r.label === f.field)
       && (!q || (r.name + " " + r.note + " " + fmtVal(r.said)).toLowerCase().includes(q)))
       .sort((a, b) => {
@@ -295,28 +300,29 @@ function Desk() {
 // The wall as it is listed now beside the line the climber sent, each climb marked with the place it holds
 // now. "Use this order" writes it for EVERY climber (resolve_wall_order renumbers routes.sort_order: the one
 // stored order the wall's list, NEXT DOOR and the Route finder all read); "Keep current order" writes nothing
-// to the wall. Either way the sender gets a notice, with the note if one is typed.
+// to the wall. Either way the sender gets a notice. The note is a REASON: it goes out only with "Keep current
+// order" (0485 puts it in the rejection notice); on an approval it is kept on the record and not sent.
 function OrderDetail({ row: r, busy, act }) {
   const [note, setNote] = useState("");
   const o = r.order;
   const pos = {};
   o.now.forEach((id, i) => { pos[id] = i + 1; });
-  const can = o.loaded && o.known >= 2;
+  const can = o.loaded && !o.failed && o.known >= 2;
   const list = { ...box, margin: 0, paddingLeft: 34, whiteSpace: "normal" };
   return <div style={{ padding: "10px 4px 16px", display: "grid", gap: 12 }}>
     <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(240px,1fr))", gap: 10 }}>
       <div><div style={{ fontSize: 11, fontWeight: 700, color: C.textMuted }}>ON THE WALL NOW, LEFT TO RIGHT</div>
-        {!o.loaded ? <div style={box}>Loading the wall’s climbs…</div> : o.now.length ? <ol style={list}>{o.now.map((id) => <li key={id}>{o.names[id] || id}</li>)}</ol> : <div style={box}>(no order stored)</div>}</div>
+        {o.failed ? <div role="alert" style={{ ...box, color: C.red }}>Could not load this wall’s climbs, so the order cannot be shown or used. Reload the page to try again.</div> : !o.loaded ? <div style={box}>Loading the wall’s climbs…</div> : o.now.length ? <ol style={list}>{o.now.map((id) => <li key={id}>{o.names[id] || id}</li>)}</ol> : <div style={box}>(no order stored)</div>}</div>
       <div><div style={{ fontSize: 11, fontWeight: 700, color: C.blue }}>CLIMBER SUGGESTS, LEFT TO RIGHT</div>
         <ol style={list}>{o.list.map((id, i) => <li key={id + ":" + i} style={{ color: o.names[id] || !o.loaded ? C.text : C.textMuted }}>{o.loaded ? (o.names[id] || "(a climb no longer on this wall)") : id}
-          {o.loaded && o.names[id] ? (pos[id] == null ? <b style={{ color: C.amber }}> · no place now</b> : pos[id] !== i + 1 ? <b style={{ color: C.amber }}> · now {pos[id]}</b> : null) : null}</li>)}</ol>
+          {o.loaded && o.names[id] ? (o.place[id] == null ? <span style={{ color: C.textMuted }}> · a boulder problem, not part of the line</span> : pos[id] == null ? <b style={{ color: C.amber }}> · no place now</b> : pos[id] !== o.place[id] ? <b style={{ color: C.amber }}> · now {pos[id]}</b> : null) : null}</li>)}</ol>
         {r.note ? <div style={{ fontSize: 12, color: C.textSub, marginTop: 4 }}><b>Why:</b> {r.note}</div> : null}</div>
     </div>
-    {o.loaded && o.known < 2 ? <div style={{ fontSize: 12.5, color: C.textMuted }}>Fewer than two of these climbs are still on the wall, so there is nothing to order.</div> : null}
+    {o.loaded && o.known < 2 ? <div style={{ fontSize: 12.5, color: C.textMuted }}>Fewer than two of these climbs are still in the wall’s line, so there is nothing to order.</div> : null}
     <div style={{ display: "flex", gap: 8, flexWrap: "wrap", alignItems: "center" }}>
-      <button className="rd-btn rd-ok" disabled={busy || !can} onClick={() => act(r, () => resolveWallOrder(r.ids[0], "approved", note), "order written; every climber now sees the wall in this order, and the sender was told.")}>{busy ? "Working…" : "Use this order"}</button>
-      <input className="rd-in" aria-label="Note to the sender (optional)" placeholder="Note to the sender (optional)" value={note} onChange={(e) => setNote(e.target.value)} style={{ flex: "1 1 200px" }} />
-      <button className="rd-btn rd-bad" disabled={busy} onClick={() => act(r, () => resolveWallOrder(r.ids[0], "rejected", note), "kept the current order; the sender was told.")}>Keep current order</button>
+      <button className="rd-btn rd-ok" disabled={busy || !can} onClick={() => act(r, () => resolveWallOrder(r.ids[0], "approved", note), "order written; climbers see it the next time the wall’s list loads, and the sender was told it is live.")}>{busy ? "Working…" : "Use this order"}</button>
+      <input className="rd-in" aria-label="Reason, sent to the climber if you keep the current order (optional)" placeholder="Reason, sent to the climber if you keep the current order (optional)" value={note} onChange={(e) => setNote(e.target.value)} style={{ flex: "1 1 200px" }} />
+      <button className="rd-btn rd-bad" disabled={busy} onClick={() => act(r, () => resolveWallOrder(r.ids[0], "rejected", note), "kept the current order; the sender was told" + (note.trim() ? ", with your reason." : "."))}>Keep current order</button>
     </div>
   </div>;
 }

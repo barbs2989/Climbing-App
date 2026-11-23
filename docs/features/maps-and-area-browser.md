@@ -88,8 +88,9 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
   a placed climb the list does not name follows them in its old order, a boulder problem is never touched) or keeps the wall as it is
   (*Keep current order*). There is ONE order per wall: an approval rewrites the stored `sort_order`, which every climber's list, NEXT DOOR
   and the Route finder read. Either way the sender gets a notification that opens the wall, and *Your contributions* lists the suggestion as
-  *Wall order suggested* with its status. It earns its contribution point only once approved (`contribution_points()`, 0485). The wall's
-  list and the Route finder are refreshed on approval; a state downloaded to the device keeps its packed order until downloaded again.
+  *Wall order suggested* with its status. It earns its contribution point only once approved (`contribution_points()`, 0485). An
+  approval happens on the Review desk, which has its own cache, so an app tab already open on the wall shows the new order on its next read of
+  the list (up to 15 minutes); a state downloaded to the device keeps its packed order until downloaded again.
   A signed-out climber gets a sign-in button and no write.
 - **Filters on a wall's list** (owner note, 2026-10-25): **Filters** over a leaf area's climb list narrows it by discipline (the disciplines the wall holds, plus All) and a star minimum (Any / 2+ / 3+ stars; a climb nobody has rated stays in). The button is drawn as the Route finder draws its Filters button (full width, `BTN_LG`, the text colour, a turning chevron), not as a chip -- as a muted chip it matched the sort chips under it and was missed (owner, 2026-11-05). It filters the rows `useAreaRoutes` already loaded, so it costs no query. The sort adds **By discipline** (one heading per discipline, in `DISCIPLINES` order, A → Z under each). Grade is deliberately NOT a sort key: `grade_num` is only comparable within one scale.
 - **Where the wall order comes from** (`scripts/pipeline/order-from-mp.mjs`, one area per run; the owner's reference is **Mountain Project**,
