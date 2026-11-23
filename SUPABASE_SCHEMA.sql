@@ -9,7 +9,7 @@
 -- and commit the result in the same PR. `npm run gen:schema -- --check` exits 1 when this
 -- file has drifted from the live database.
 --
--- Counts: 86 tables, 848 columns, 456 keyed/checked constraints (150 foreign keys), 254 RLS policies.
+-- Counts: 86 tables, 851 columns, 458 keyed/checked constraints (150 foreign keys), 254 RLS policies.
 -- Not covered here: views, functions, triggers, standalone indexes (see supabase/migrations/).
 
 -- ── Foreign keys ───────────────────────────────────────────────────────────────
@@ -692,7 +692,9 @@ CREATE TABLE public.crew_day_acks (
   crew_id uuid NOT NULL,
   user_id uuid NOT NULL,
   date date NOT NULL,
+  rank smallint,
   CONSTRAINT crew_day_acks_pkey PRIMARY KEY (crew_id, user_id, date),
+  CONSTRAINT crew_day_acks_rank_positive CHECK (((rank IS NULL) OR (rank >= 1))),
   CONSTRAINT crew_day_acks_crew_id_fkey FOREIGN KEY (crew_id) REFERENCES crews(id) ON DELETE CASCADE,
   CONSTRAINT crew_day_acks_user_id_fkey FOREIGN KEY (user_id) REFERENCES profiles(id) ON DELETE CASCADE
 );
@@ -888,10 +890,13 @@ CREATE TABLE public.crews (
   share_on boolean NOT NULL DEFAULT true,
   private boolean NOT NULL DEFAULT false,
   date_proposers jsonb NOT NULL DEFAULT '{}'::jsonb,
+  meet_lat double precision,
+  meet_lng double precision,
   CONSTRAINT crews_pkey PRIMARY KEY (id),
   CONSTRAINT crews_area_needs_discipline CHECK (((area_id IS NULL) OR (discipline IS NOT NULL))),
   CONSTRAINT crews_discipline_values CHECK (((discipline IS NULL) OR (discipline = ANY (ARRAY['sport'::text, 'trad'::text, 'toprope'::text, 'aid'::text, 'bouldering'::text, 'scrambling'::text, 'hiking'::text, 'alpine'::text, 'mountaineering'::text, 'ice'::text, 'mixed'::text])))),
   CONSTRAINT crews_itinerary_size CHECK (((itinerary IS NULL) OR (pg_column_size(itinerary) < 65536))),
+  CONSTRAINT crews_meet_pin_valid CHECK ((((meet_lat IS NULL) AND (meet_lng IS NULL)) OR (((meet_lat >= ('-90'::integer)::double precision) AND (meet_lat <= (90)::double precision)) AND ((meet_lng >= ('-180'::integer)::double precision) AND (meet_lng <= (180)::double precision))))),
   CONSTRAINT crews_one_place CHECK (((((route_id IS NOT NULL))::integer + ((area_id IS NOT NULL))::integer) = 1)),
   CONSTRAINT crews_area_id_fkey FOREIGN KEY (area_id) REFERENCES areas(id),
   CONSTRAINT crews_created_by_fkey FOREIGN KEY (created_by) REFERENCES profiles(id) ON DELETE CASCADE,
