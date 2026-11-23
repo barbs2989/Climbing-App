@@ -16,10 +16,10 @@
      The scale below is not asserted from arithmetic — scripts/oneoff/render-app-icons.mjs
      measures the rendered pixels and fails if any painted pixel lands outside that circle. -->
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" role="img" aria-label="ClimbMatch">
-  <rect width="24" height="24" fill="#0d1117"/>
+  <rect width="24" height="24" fill="#12110f"/>
   <!-- translate = 12 - 12*scale, which centres the path's 2..22 / 3..21 bbox on the
        viewBox centre so the safe circle is measured from the right origin. -->
   <g transform="translate(4.8 4.8) scale(0.6)">
-    <path d="m8 3 4 8 5-5 5 15H2L8 3z" fill="none" stroke="#2f81f7" stroke-width="3.3" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="m8 3 4 8 5-5 5 15H2L8 3z" fill="none" stroke="#ff8a3d" stroke-width="3.3" stroke-linecap="round" stroke-linejoin="round"/>
   </g>
 </svg>

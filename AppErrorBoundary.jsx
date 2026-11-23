@@ -18,13 +18,13 @@ import { swallowedChunk } from "./lib/chunkReload.js";
 // It says only what it knows. No "we've been notified" (delivery is not confirmed), no invented error
 // code. The message is shown because a climber standing at a trailhead needs to know
 // whether to retry or give up, and the text is what they would paste into a bug report.
-const WRAP = { minHeight: "100vh", background: "#0d1117", color: "#e6edf3", display: "flex",
+const WRAP = { minHeight: "100vh", background: "#12110f", color: "#f1ede6", display: "flex",
   alignItems: "center", justifyContent: "center", padding: 24,
   font: "15px/1.5 -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" };
-const CARD = { maxWidth: 420, width: "100%", background: "#161b22", border: "1px solid #30363d",
+const CARD = { maxWidth: 420, width: "100%", background: "#1a1916", border: "1px solid #36322c",
   borderRadius: 14, padding: "20px 18px" };
 const BTN = { width: "100%", marginTop: 16, padding: "12px 14px", borderRadius: 10, border: "none",
-  background: "#2f81f7", color: "#fff", fontSize: 15, fontWeight: 700, cursor: "pointer" };
+  background: "#62aee8", color: "#fff", fontSize: 15, fontWeight: 700, cursor: "pointer" };
 
 // swallowedChunk: a deploy's missing file that main.jsx is already reloading for (lib/chunkReload.js).
 export default class AppErrorBoundary extends Component {
@@ -49,13 +49,13 @@ export default class AppErrorBoundary extends Component {
       <div style={WRAP} role="alert">
         <div style={CARD}>
           <div style={{ fontSize: 17, fontWeight: 700, marginBottom: 8 }}>{chunk ? "This screen couldn’t be downloaded" : "This screen hit a bug"}</div>
-          <div style={{ fontSize: 13.5, color: "#b8c0c8", lineHeight: 1.55 }}>
+          <div style={{ fontSize: 13.5, color: "#c9c1b5", lineHeight: 1.55 }}>
             {chunk ? "Either the connection dropped or ClimbMatch was just updated. Reload once you have signal. " : "Reloading usually clears it. "}
             Nothing you had saved to your account is affected — anything
             entered on this screen and not yet saved is lost.
           </div>
-          <div style={{ marginTop: 12, padding: "9px 11px", background: "#0d1117", border: "1px solid #30363d",
-            borderRadius: 9, fontSize: 12, color: "#b8c0c8", fontFamily: "ui-monospace, SFMono-Regular, Menlo, monospace",
+          <div style={{ marginTop: 12, padding: "9px 11px", background: "#12110f", border: "1px solid #36322c",
+            borderRadius: 9, fontSize: 12, color: "#c9c1b5", fontFamily: "ui-monospace, SFMono-Regular, Menlo, monospace",
             wordBreak: "break-word", maxHeight: 120, overflowY: "auto" }}>{msg}</div>
           <button style={BTN} onClick={() => window.location.reload()}>Reload ClimbMatch</button>
         </div>

@@ -314,7 +314,7 @@ export default function FireMap({ onClose, C, ActionIcon, uDistMi = mi => Math.r
     if (!show.fires) return;
     fires.forEach(f => {
       const color = fireColor(f, C);
-      L.circleMarker([f.lat, f.lng], { radius: radiusFor(f.acres), color: "#0d1117", weight: 1.5, fillColor: color, fillOpacity: 0.95 })
+      L.circleMarker([f.lat, f.lng], { radius: radiusFor(f.acres), color: "#12110f", weight: 1.5, fillColor: color, fillOpacity: 0.95 })
         .bindTooltip(f.name + " — " + fmtAcres(f.acres), { direction: "top" })
         .on("click", () => setSel(f.id))
         .addTo(grp);

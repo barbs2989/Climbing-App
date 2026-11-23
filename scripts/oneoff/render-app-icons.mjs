@@ -32,7 +32,7 @@ const ok = (cond, msg) => { console.log(`  ${cond ? "ok  " : "FAIL"}  ${msg}`); 
 
 // iOS composites touch icons on white, so a transparent mark would show white-on-white.
 // Only visible on a device, so it is asserted here instead.
-ok(/<rect[^>]*fill="#0d1117"/.test(SRC_ANY), "favicon.svg has an opaque background");
+ok(/<rect[^>]*fill="#12110f"/.test(SRC_ANY), "favicon.svg has an opaque background");
 // A maskable icon must be full bleed: the launcher supplies the shape. An `rx` here is
 // exactly the defect this check exists to prevent recurring.
 ok(/<rect width="24" height="24" fill=/.test(SRC_MASK), "favicon-maskable.svg background is full bleed");
@@ -50,7 +50,7 @@ try {
     writeFileSync(pub(name), await page.screenshot({ omitBackground: false }));
 
     // Measure where the ink actually lands, rather than trusting the transform arithmetic.
-    // Painted = differs from the #0d1117 background by more than antialiasing noise.
+    // Painted = differs from the #12110f background by more than antialiasing noise.
     const reach = await page.evaluate(async ([b64, s]) => {
       const img = new Image();
       img.src = "data:image/svg+xml;base64," + b64;
@@ -64,7 +64,7 @@ try {
       let max = 0;
       for (let y = 0; y < s; y++) for (let x = 0; x < s; x++) {
         const i = (y * s + x) * 4;
-        const painted = Math.abs(d[i] - 13) + Math.abs(d[i + 1] - 17) + Math.abs(d[i + 2] - 23) > 60;
+        const painted = Math.abs(d[i] - 18) + Math.abs(d[i + 1] - 17) + Math.abs(d[i + 2] - 15) > 60;
         if (!painted) continue;
         const r = Math.hypot(x + 0.5 - cx, y + 0.5 - cy);
         if (r > max) max = r;

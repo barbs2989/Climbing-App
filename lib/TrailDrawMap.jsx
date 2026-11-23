@@ -464,12 +464,12 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
   const status = n ? (n < need ? n + " of at least " + need + " points" : n + " points") + " · " + fmtTrailLen(pathLenM(flat)) + (anyPending ? " · following the trail…" : tx(" · tap to keep going")) : start ? tx("Tap the map along the trail, starting at " + mk.start) : tx("Tap where you park, then along the trail to " + mk.endName);
   const mapBox = (
     <div style={{ position: "relative", flex: fullscreen ? 1 : "none", minHeight: fullscreen ? 160 : 0 }}>
-      <div ref={mapDiv} role="application" aria-label={tx("Map: tap to add a point to the trail, drag a point to move it")} style={{ height: fullscreen ? "100%" : 300, borderRadius: 9, border: "1px solid " + C.border, overflow: "hidden", background: "#0a0f1a", cursor: "crosshair" }} />
+      <div ref={mapDiv} role="application" aria-label={tx("Map: tap to add a point to the trail, drag a point to move it")} style={{ height: fullscreen ? "100%" : 300, borderRadius: 9, border: "1px solid " + C.border, overflow: "hidden", background: "#0e0d0b", cursor: "crosshair" }} />
       {!ready ? <div style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "center", color: C.text70, fontSize: 13, pointerEvents: "none", textAlign: "center", padding: 16 }}>{mapFail ? "The map couldn't load. Upload or paste a recorded track instead." : "Loading map…"}</div> : null}
       {layerBtns}
       {/* ⤢ to go full screen and ✕ to leave it, in the SAME spot on the map, as the area map has it. */}
       {fullscreen ? null : <button ref={expandBtn} onClick={() => setFullscreen(true)} aria-label="Full screen" title="Full screen" style={Object.assign({}, POP_CLOSE_MEDIA, { position: "absolute", top: 7, right: 7, zIndex: 1000, background: C.bg, boxShadow: "0 2px 8px rgba(0,0,0,0.5)" })}>⤢</button>}
-      {ready ? <div style={{ position: "absolute", bottom: 7, left: 7, right: 7, zIndex: 1000, background: "rgba(13,17,23,0.85)", borderRadius: 7, padding: "4px 8px", fontSize: 12, color: "#fff", textAlign: "center", pointerEvents: "none" }}>{status}</div> : null}
+      {ready ? <div style={{ position: "absolute", bottom: 7, left: 7, right: 7, zIndex: 1000, background: "rgba(18,17,15,0.85)", borderRadius: 7, padding: "4px 8px", fontSize: 12, color: "#fff", textAlign: "center", pointerEvents: "none" }}>{status}</div> : null}
     </div>
   );
   const tools = (
