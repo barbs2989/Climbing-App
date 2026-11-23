@@ -139,7 +139,11 @@ export default function MyPartnerAreas({ uid, listings, listingsError, prefill, 
   }
   async function remove(l) {
     if (busy) return; setBusy(true);
-    try { await removePartnerArea(uid, l.areaId); if (draft && draft.areaId === l.areaId) setDraft(null); } catch (e) { notify && notify("Couldn’t remove that listing — " + ((e && e.message) || "try again")); } finally { setBusy(false); }
+    try { await removePartnerArea(uid, l.areaId);
+      // Opened ON this listing (a chip under Join a crew or Partners): removing it goes back where you came from, as Back and
+      // Save do (audit 2026-11-19). It used to drop you on the whole Listed areas list, one more screen to leave.
+      if (direct && prefill.areaId === l.areaId) { setDraft(null); onClose(); notify && notify("Listing removed"); return; }
+      if (draft && draft.areaId === l.areaId) setDraft(null); } catch (e) { notify && notify("Couldn’t remove that listing — " + ((e && e.message) || "try again")); } finally { setBusy(false); }
   }
 
   const listingsN = (listings || []).length;
