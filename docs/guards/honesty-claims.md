@@ -700,8 +700,8 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     nothing, and an unfilled profile, must get `null`, never a vague sentence. `FullProfile` must call it with the same
     two objects it scores. **Measured while building it:** the score's grade steps put 5.6 and 5.10a two steps apart,
     which the checklist calls *Close in grade*; the first draft of the sentence repeated that and this assertion caught
-    it. The sentence now also requires rope grades within one number grade. The score and the checklist line were left
-    as they are (changing the grade steps moves every match %).
+    it. The scale was then fixed at the source (owner, same day): every number grade up to 5.9 is its own step, the
+    spacing above 5.9 is unchanged, and the guard asserts 5.6 vs 5.10a is more than two steps while 5.9 vs 5.10a is one.
   - **THE DEFECT WAS A CLAMP DOING THE WORK OF A FORMULA.** `compat()` ended `Math.min(99, …)`
     while two of its terms were UNCAPPED — shared disciplines ×16, shared objectives ×14 — and the
     BOUNDED terms alone summed to **78 of that 99**. So a climber with a broad profile saturated

@@ -293,6 +293,12 @@ else fail(`the browse row no longer explains the missing match % (${JSON.stringi
   const lw = gOf({ sportGrade: "5.11a", tradGrade: "5.10a" }, { tradGrade: "5.9" });
   if (lw.known && lw.mine === "5.10a" && lw.theirs === "5.9" && lw.kind === "trad") ok("grade compares trad with trad when both set a trad grade (5.10a vs 5.9, not 5.11a sport vs 5.9 trad)");
   else fail(`grade compared ${lw.mine} with ${lw.theirs} (${lw.kind}) — a sport grade is being measured against a trad grade`);
+  // EVERY NUMBER GRADE IS A STEP (2026-11-23). 5.8 and below shared one step, so 5.6 against 5.10a was two steps: "Close in
+  // grade", and most of the grade term's points, for a pair four number grades apart.
+  const far = gOf({ sportGrade: "5.10a" }, { sportGrade: "5.6" }), near = gOf({ sportGrade: "5.10a" }, { sportGrade: "5.9" });
+  const farLine = M.compatWhy({ sportGrade: "5.10a" }, { sportGrade: "5.6" }).find((r) => r.k === "grade");
+  if (far.gap > 2 && farLine.tone !== "good" && near.gap === 1 && gOf({ sportGrade: "5.6" }, { sportGrade: "5.7" }).gap === 1) ok(`5.6 is ${far.gap} steps from 5.10a ("${farLine.text}"), and 5.9 is still 1`);
+  else fail(`5.6 vs 5.10a is a grade gap of ${far.gap} ("${farLine.text}"); 5.9 vs 5.10a is ${near.gap} — the grades below 5.9 are sharing a step again`);
   const both = gOf({ sportGrade: "5.12a", tradGrade: "5.10a" }, { sportGrade: "5.10a", tradGrade: "5.10a" });
   if (both.gap === 0 && both.kind === "trad") ok("when both set both, the CLOSER kind decides (same trad grade beats a sport gap)");
   else fail(`two climbers with the same trad grade scored a grade gap of ${both.gap} (${both.kind})`);
@@ -378,7 +384,7 @@ else fail(`the browse row no longer explains the missing match % (${JSON.stringi
 }
 
 // ---- Fail closed on a run that quietly stopped asking.
-const FLOOR = 24;
+const FLOOR = 25;
 if (ran < FLOOR) dead(`only ${ran} assertions ran, expected at least ${FLOOR} — this run proved less than it claims`);
 
 console.log(bad ? `\n${bad} problem(s).` : `\nok — the match % blends what the screen says it blends (${ran} assertions)`);
