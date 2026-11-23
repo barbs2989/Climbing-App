@@ -1,0 +1,458 @@
+{
+ "wa_orange_peel_2": {
+  "area": "wa_upper_castle",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/108677125/orange-peel",
+    "https://www.mountainproject.com/area/114816092/upper-castle",
+    "https://wenatcheeoutdoors.org/2016/05/02/castle-rock-upper-wall-west/",
+    "https://www.thecrag.com/en/climbing/united-states/central-cascade-mountains/area/19196407",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/castle-rock-trailhead"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.9",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108677125/orange-peel",
+      "fact": "Orange Peel 5.9, Trad, 50 ft",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_orange_peel_2",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "pitches 0 is invalid. Mountain Project: Trad, 50 ft, one short line from the big ledge atop pitch 1 of Saber or Canary (one length). Implied, not stated: unconfirmed after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/108677125/orange-peel"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_orange_peel_2",
+    "column": "length_m",
+    "from": null,
+    "to": 15,
+    "why": "Mountain Project states 50 ft (15 m). Single source (theCrag and Wenatchee Outdoors do not list this route); locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/108677125/orange-peel"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_orange_peel_2",
+    "column": "gear",
+    "from": null,
+    "to": [
+     "standard rack",
+     "long slings"
+    ],
+    "why": "Mountain Project protection: a standard rack with plenty of long slings. Single source.",
+    "evidence": [
+     "https://www.mountainproject.com/route/108677125/orange-peel"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_orange_peel_2",
+    "column": "access",
+    "from": null,
+    "to": {
+     "fees": "None.",
+     "rules": "Castle Rock is outside designated wilderness. The seasonal raptor closure (April 1 to July 31) covers nearby Midnight and Noontime Rocks, not Castle Rock.",
+     "permit": "None needed to climb.",
+     "land_manager": "Okanogan-Wenatchee National Forest (Wenatchee River Ranger District)",
+     "parking_pass": "None. No recreation pass is needed to park at the Castle Rock Trailhead."
+    },
+    "why": "access is empty. Copied field for field from the live sibling wa_catapult (identical on wa_smut, wa_damnation_crack and wa_saints). Re-read 2026-11-23: the USFS Castle Rock Trailhead page (updated 2026-06-09) names the Wenatchee River Ranger District, says no recreation pass is needed to park and no fees apply, and still limits the April 1 to July 31 raptor closure to the Midnight and Noontime Rocks vicinity. official-1, 12 months, after apply.",
+    "evidence": [
+     "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/castle-rock-trailhead"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_orange_peel_2",
+    "column": "permit",
+    "from": null,
+    "to": "No recreation pass is needed to park at the Castle Rock Trailhead.",
+    "why": "permit is empty. Copied from wa_catapult (same on wa_smut, wa_damnation_crack, wa_saints). USFS Castle Rock Trailhead page, re-read 2026-11-23: no recreation pass needed to park.",
+    "evidence": [
+     "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/castle-rock-trailhead"
+    ]
+   }
+  ],
+  "held": [],
+  "disputed": [],
+  "notes": "Starts from the large ledge at the top of pitch 1 of Saber or Canary, so a party reaches it by climbing another route's first pitch; MP lists it as its own route, theCrag and Wenatchee Outdoors do not list it. Flagged, not a defect claim. FA 'Rob Knudsen, Dick \"Duck\" Novikoff, Greg Olsen, 1978' matches MP exactly; FA never locks from MP alone. No anchor or bolt info on any source."
+ },
+ "wa_winter_solstice": {
+  "area": "wa_upper_castle",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/107322386/winter-solstice",
+    "https://www.mountainproject.com/area/114816092/upper-castle",
+    "https://wenatcheeoutdoors.org/2016/05/02/castle-rock-upper-wall-west/",
+    "https://www.thecrag.com/en/climbing/united-states/central-cascade-mountains/area/19196407",
+    "https://www.thecrag.com/en/climbing/united-states/central-cascade-mountains/route/21057889",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/castle-rock-trailhead"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.6",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://wenatcheeoutdoors.org/2016/05/02/castle-rock-upper-wall-west/",
+      "fact": "Winter Solstice 5.6, gear to 2.5 in",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://www.thecrag.com/en/climbing/united-states/central-cascade-mountains/route/21057889",
+      "fact": "Winter Solstice 5.6 (assigned grade)",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "discipline",
+    "value": "trad",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107322386/winter-solstice",
+      "fact": "Trad, 2 pitches, gear to 3 in",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://wenatcheeoutdoors.org/2016/05/02/castle-rock-upper-wall-west/",
+      "fact": "Winter Solstice, gear to 2.5 in; protection mostly trad placements",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_winter_solstice",
+    "column": "pitches",
+    "from": 0,
+    "to": 2,
+    "why": "pitches 0 is invalid. Mountain Project states 'Trad, 2 pitches' (bolted anchor atop pitch 1). Wenatchee Outdoors says most Upper Wall West routes run two pitches to the top. MP states the count: locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/107322386/winter-solstice",
+     "https://wenatcheeoutdoors.org/2016/05/02/castle-rock-upper-wall-west/"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_winter_solstice",
+    "column": "access",
+    "from": null,
+    "to": {
+     "fees": "None.",
+     "rules": "Castle Rock is outside designated wilderness. The seasonal raptor closure (April 1 to July 31) covers nearby Midnight and Noontime Rocks, not Castle Rock.",
+     "permit": "None needed to climb.",
+     "land_manager": "Okanogan-Wenatchee National Forest (Wenatchee River Ranger District)",
+     "parking_pass": "None. No recreation pass is needed to park at the Castle Rock Trailhead."
+    },
+    "why": "access is empty. Copied field for field from the live sibling wa_catapult (identical on wa_smut, wa_damnation_crack and wa_saints). Re-read 2026-11-23: the USFS Castle Rock Trailhead page (updated 2026-06-09) names the Wenatchee River Ranger District, says no recreation pass is needed to park and no fees apply, and still limits the April 1 to July 31 raptor closure to the Midnight and Noontime Rocks vicinity. official-1, 12 months, after apply.",
+    "evidence": [
+     "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/castle-rock-trailhead"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_winter_solstice",
+    "column": "permit",
+    "from": null,
+    "to": "No recreation pass is needed to park at the Castle Rock Trailhead.",
+    "why": "permit is empty. Copied from wa_catapult (same on wa_smut, wa_damnation_crack, wa_saints). USFS Castle Rock Trailhead page, re-read 2026-11-23: no recreation pass needed to park.",
+    "evidence": [
+     "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/castle-rock-trailhead"
+    ]
+   }
+  ],
+  "held": [
+   {
+    "table": "routes",
+    "id": "wa_winter_solstice",
+    "column": "fa",
+    "from": "Eric Bjornstad, Bill Hooper, 1960",
+    "to": "Eric Bjornstad, Bill Hooper, 1963",
+    "why": "HELD: Mountain Project gives the same party but 1963; stored says 1960. One source for a change to an existing FA (batch T rule). theCrag and Wenatchee Outdoors give no FA.",
+    "evidence": [
+     "https://www.mountainproject.com/route/107322386/winter-solstice"
+    ]
+   }
+  ],
+  "disputed": [
+   "grade: MP 5.7 vs Wenatchee Outdoors 5.6 and theCrag 5.6 (citing the Rock Climbing Washington guide). Majority 5.6 = stored value; locked agree-2.",
+   "gear: MP gear to 3 in vs Wenatchee Outdoors gear to 2.5 in; no gear proposed."
+  ],
+  "notes": "Right of Midway on the Upper Wall West. MP: bolted anchor at the top of pitch 1, none at the top of the route; walk-off descent trail from the top (Wenatchee Outdoors, wall-wide). Anchor not proposed (pitch-1 station only)."
+ },
+ "wa_rainshadow_direct": {
+  "area": "wa_upper_castle",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/109817765/rainshadow-direct",
+    "https://www.mountainproject.com/area/114816092/upper-castle",
+    "https://www.thecrag.com/en/climbing/united-states/central-cascade-mountains/area/19196407",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/castle-rock-trailhead"
+   ]
+  },
+  "ledger": [],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_rainshadow_direct",
+    "column": "pitches",
+    "from": 0,
+    "to": null,
+    "why": "pitches 0 is invalid. Mountain Project: Sport, 100 ft, no pitch count; the line began as a 2-pitch aid climb and MP mentions a LOWER 2-bolt anchor added in 2014, so whether the sport line is one pitch is unclear. 0 -> null per the batch P rule.",
+    "evidence": [
+     "https://www.mountainproject.com/route/109817765/rainshadow-direct"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_rainshadow_direct",
+    "column": "length_m",
+    "from": null,
+    "to": 30,
+    "why": "Mountain Project states 100 ft (30 m). Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/109817765/rainshadow-direct"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_rainshadow_direct",
+    "column": "access",
+    "from": null,
+    "to": {
+     "fees": "None.",
+     "rules": "Castle Rock is outside designated wilderness. The seasonal raptor closure (April 1 to July 31) covers nearby Midnight and Noontime Rocks, not Castle Rock.",
+     "permit": "None needed to climb.",
+     "land_manager": "Okanogan-Wenatchee National Forest (Wenatchee River Ranger District)",
+     "parking_pass": "None. No recreation pass is needed to park at the Castle Rock Trailhead."
+    },
+    "why": "access is empty. Copied field for field from the live sibling wa_catapult (identical on wa_smut, wa_damnation_crack and wa_saints). Re-read 2026-11-23: the USFS Castle Rock Trailhead page (updated 2026-06-09) names the Wenatchee River Ranger District, says no recreation pass is needed to park and no fees apply, and still limits the April 1 to July 31 raptor closure to the Midnight and Noontime Rocks vicinity. official-1, 12 months, after apply.",
+    "evidence": [
+     "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/castle-rock-trailhead"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_rainshadow_direct",
+    "column": "permit",
+    "from": null,
+    "to": "No recreation pass is needed to park at the Castle Rock Trailhead.",
+    "why": "permit is empty. Copied from wa_catapult (same on wa_smut, wa_damnation_crack, wa_saints). USFS Castle Rock Trailhead page, re-read 2026-11-23: no recreation pass needed to park.",
+    "evidence": [
+     "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/castle-rock-trailhead"
+    ]
+   }
+  ],
+  "held": [],
+  "disputed": [
+   "grade: stored 5.12b = Mountain Project 5.12b; theCrag lists 'Rainshadow' 5.12a in the same spot (first route, left of Das Musak). Not locked; no change."
+  ],
+  "notes": "History per MP: 2-pitch aid line (Beckey, Bjornstad, Stuart), freed mid-1980s (Child, Kerns, Yoder), later bolted; Kyle O'Meara credited with the sport FA (stick clip, trad gear on the upper crux), remaining bolts added by Dave Morales in spring 2014. Stored FA 'Kyle O'Meara' matches MP only. No bolt total stated anywhere; bolts not proposed. Anchor: MP names a lower 2-bolt anchor (house spelling would be 'Two-bolt anchor') but not the top anchor, so not proposed. Possible name issue: theCrag calls the line 'Rainshadow', MP 'Rainshadow Direct'; whether Direct is a distinct finish is unclear."
+ },
+ "wa_mf_direct": {
+  "area": "wa_upper_castle",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/108977845/mf-direct",
+    "https://www.mountainproject.com/area/114816092/upper-castle",
+    "https://www.thecrag.com/en/climbing/united-states/central-cascade-mountains/area/19196407",
+    "https://wenatcheeoutdoors.org/2016/05/02/castle-rock-upper-wall-west/",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/castle-rock-trailhead"
+   ]
+  },
+  "ledger": [],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_mf_direct",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "pitches 0 is invalid. Mountain Project: Trad, 70 ft up the north arete of Jello Tower (one length; Jello Tower routes end on its top). Implied, not stated: unconfirmed after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/108977845/mf-direct"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_mf_direct",
+    "column": "length_m",
+    "from": null,
+    "to": 21,
+    "why": "Mountain Project states 70 ft (21 m). Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/108977845/mf-direct"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_mf_direct",
+    "column": "gear",
+    "from": null,
+    "to": [
+     "gear to 2 in",
+     "slings"
+    ],
+    "why": "Mountain Project protection: gear to 2 in and some runners. Single source.",
+    "evidence": [
+     "https://www.mountainproject.com/route/108977845/mf-direct"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_mf_direct",
+    "column": "access",
+    "from": null,
+    "to": {
+     "fees": "None.",
+     "rules": "Castle Rock is outside designated wilderness. The seasonal raptor closure (April 1 to July 31) covers nearby Midnight and Noontime Rocks, not Castle Rock.",
+     "permit": "None needed to climb.",
+     "land_manager": "Okanogan-Wenatchee National Forest (Wenatchee River Ranger District)",
+     "parking_pass": "None. No recreation pass is needed to park at the Castle Rock Trailhead."
+    },
+    "why": "access is empty. Copied field for field from the live sibling wa_catapult (identical on wa_smut, wa_damnation_crack and wa_saints). Re-read 2026-11-23: the USFS Castle Rock Trailhead page (updated 2026-06-09) names the Wenatchee River Ranger District, says no recreation pass is needed to park and no fees apply, and still limits the April 1 to July 31 raptor closure to the Midnight and Noontime Rocks vicinity. official-1, 12 months, after apply.",
+    "evidence": [
+     "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/castle-rock-trailhead"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_mf_direct",
+    "column": "permit",
+    "from": null,
+    "to": "No recreation pass is needed to park at the Castle Rock Trailhead.",
+    "why": "permit is empty. Copied from wa_catapult (same on wa_smut, wa_damnation_crack, wa_saints). USFS Castle Rock Trailhead page, re-read 2026-11-23: no recreation pass needed to park.",
+    "evidence": [
+     "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/castle-rock-trailhead"
+    ]
+   }
+  ],
+  "held": [],
+  "disputed": [
+   "grade: stored 5.11- = Mountain Project 5.11-; theCrag lists 'M.F. Direct' 5.11b. Not locked; no change."
+  ],
+  "notes": "Shares its start with MF Overhang. FA 'Peter Croft' matches MP only (no year); FA never locks from MP alone."
+ },
+ "wa_lucky_charms": {
+  "area": "wa_upper_castle",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/107765791/lucky-charms",
+    "https://www.mountainproject.com/area/114816092/upper-castle",
+    "https://www.thecrag.com/en/climbing/united-states/central-cascade-mountains/area/19196407",
+    "https://wenatcheeoutdoors.org/2016/05/02/castle-rock-upper-wall-sw-face/",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/castle-rock-trailhead"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.9",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107765791/lucky-charms",
+      "fact": "Lucky Charms 5.9 PG13, Trad, 50 ft",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_lucky_charms",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "pitches 0 is invalid. Mountain Project: Trad, 50 ft, a dihedral and finger crack ending at the ledge below Crack of Doom (one length). Implied, not stated: unconfirmed after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/107765791/lucky-charms"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_lucky_charms",
+    "column": "length_m",
+    "from": null,
+    "to": 15,
+    "why": "Mountain Project states 50 ft (15 m). Single source (theCrag and Wenatchee Outdoors do not list it); locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/107765791/lucky-charms"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_lucky_charms",
+    "column": "gear",
+    "from": null,
+    "to": [
+     "gear to 2 in",
+     "small cams"
+    ],
+    "why": "Mountain Project protection: gear to 2 in, including some small pieces. Single source.",
+    "evidence": [
+     "https://www.mountainproject.com/route/107765791/lucky-charms"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_lucky_charms",
+    "column": "access",
+    "from": null,
+    "to": {
+     "fees": "None.",
+     "rules": "Castle Rock is outside designated wilderness. The seasonal raptor closure (April 1 to July 31) covers nearby Midnight and Noontime Rocks, not Castle Rock.",
+     "permit": "None needed to climb.",
+     "land_manager": "Okanogan-Wenatchee National Forest (Wenatchee River Ranger District)",
+     "parking_pass": "None. No recreation pass is needed to park at the Castle Rock Trailhead."
+    },
+    "why": "access is empty. Copied field for field from the live sibling wa_catapult (identical on wa_smut, wa_damnation_crack and wa_saints). Re-read 2026-11-23: the USFS Castle Rock Trailhead page (updated 2026-06-09) names the Wenatchee River Ranger District, says no recreation pass is needed to park and no fees apply, and still limits the April 1 to July 31 raptor closure to the Midnight and Noontime Rocks vicinity. official-1, 12 months, after apply.",
+    "evidence": [
+     "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/castle-rock-trailhead"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_lucky_charms",
+    "column": "permit",
+    "from": null,
+    "to": "No recreation pass is needed to park at the Castle Rock Trailhead.",
+    "why": "permit is empty. Copied from wa_catapult (same on wa_smut, wa_damnation_crack, wa_saints). USFS Castle Rock Trailhead page, re-read 2026-11-23: no recreation pass needed to park.",
+    "evidence": [
+     "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/castle-rock-trailhead"
+    ]
+   }
+  ],
+  "held": [],
+  "disputed": [],
+  "notes": "MP rates it PG13 (stored prot_rating null; one source, not proposed). FA unknown on MP; stored null is correct. Starts uphill and left of Old Gray Mare."
+ }
+}
