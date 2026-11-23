@@ -330,7 +330,7 @@
          bar -- the way a native app opens, instead of a skeleton that reads as a half-drawn page.
          The shell underneath stays (check:boot keeps it matched to NAV). React draws the SAME splash
          (lib/BootSplash.jsx) while it restores the session, so the hand-over does not flash. */
-      #cm-splash { position: fixed; inset: 0; z-index: 5; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; background: radial-gradient(120% 70% at 50% 0%, #2a1a12 0%, #12110f 62%); padding-bottom: env(safe-area-inset-bottom); }
+      #cm-splash { position: fixed; inset: 0; z-index: 5; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; background: url("%BASE_URL%topo.svg") right top / min(520px, 130vw) auto no-repeat, radial-gradient(120% 70% at 50% 0%, #2a1a12 0%, #12110f 62%); padding-bottom: env(safe-area-inset-bottom); }
       #cm-splash svg { width: 92px; height: 92px; filter: drop-shadow(0 10px 28px rgba(255,138,61,0.35)); }
       #cm-splash .s-word { font-size: 32px; font-weight: 800; letter-spacing: -0.7px; color: #f1ede6; }
       #cm-splash .s-word span { color: #ff8a3d; }

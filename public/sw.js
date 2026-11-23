@@ -139,11 +139,12 @@ self.addEventListener("install", (event) => {
         const cache = await caches.open(SHELL_CACHE);
         await cache.put(self.registration.scope, res);
         await precacheShellAssets(html, cache);
-        // The six font files (lib/fonts.js, declared in index.html). They sit outside /assets/, so
+        // The six font files (lib/fonts.js, declared in index.html) and the contour texture
+        // (public/topo.svg, lib/ScreenHero.jsx). They sit outside /assets/, so
         // the walk above never sees them, and the latin-ext ones are only requested when a name
         // needs them: without this a climber offline would get the fallback font for exactly the
         // names that need the extended set. Best-effort like everything else here.
-        await Promise.all(FONT_FILES.map((f) => fetch(new URL("fonts/" + f, self.registration.scope).toString())
+        await Promise.all(FONT_FILES.map((f) => "fonts/" + f).concat(["topo.svg"]).map((p) => fetch(new URL(p, self.registration.scope).toString())
           .then((r) => (r && r.ok ? cache.put(r.url, r) : null)).catch(() => null)));
       } catch (e) {
         /* offline or a failed fetch during install — nothing to precache, carry on */
