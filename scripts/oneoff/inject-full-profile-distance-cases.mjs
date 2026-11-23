@@ -28,7 +28,8 @@ const GUARD = ["node", ["scripts/check-units.mjs", "--only=profile"]];
 const sum = (f) => crypto.createHash("sha256").update(fs.readFileSync(f)).digest("hex");
 
 // A REAL climber's distance prints approximately ("~X" / "under 5"); the seed path still prints uDistMi to 1dp.
-const HEADER = '<span style={{color:C.blue}}>{(climber._real?(dist<=5?"under "+uApproxDist(5):"~"+uApproxDist(dist)):uDistMi(+dist.toFixed(1)))+" away"}</span>';
+// The dot is part of the fact's own text since 2026-11-23 (a dot in an element of its own failed check:zero).
+const HEADER = '<span style={{color:C.blue}}>{"· "+(climber._real?(dist<=5?"under "+uApproxDist(5):"~"+uApproxDist(dist)):uDistMi(+dist.toFixed(1)))+" away"}</span>';
 const CARD = '"Limited overlap")+(_unkN?" · based on limited info":"")+(dist!=null&&isFinite(dist)?" · "+(climber._real?(dist<=5?"under "+uApproxDist(5):"~"+uApproxDist(dist)):uDistMi(+dist.toFixed(1)))+" away":"")';
 const FIRELINE = "and {fires.length - 4} more within {uDistMi(radiusMi)}";
 
