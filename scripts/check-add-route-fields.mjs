@@ -439,6 +439,8 @@ if (!inverted) ok(`alpine ${alpine} >= rock ${counts.rock}, bouldering ${counts.
     permitUrl: "no routes column (contribution_fields.column_name is null) — held only as an edit overlay, so approval has nowhere to write it",
     permit: "asked as the Permit row of Permits & land manager (access.permit), which the page's permit line falls back to",
     aidGrade: "on an aid route the Grade picker IS the aid scale (ADDR_GRADES.aid)",
+    glacierTravel: "a reviewed verdict about the NORMAL line in its NORMAL season (0490), settled by research or by a correction on the route page; a new climb starts unsettled, which keeps the careful Conditions wording",
+    snowInSeason: "a reviewed verdict about the NORMAL line in its NORMAL season (0490), settled by research or by a correction on the route page; a new climb starts unsettled, which keeps the careful Conditions wording",
   };
   // Per type, where the edit sheet offers a fact the add form deliberately does not ask. (The crag exemptions
   // for High point, Trip shape and Published times went 2026-11-18: lib/fieldScope.js no longer offers them on a
