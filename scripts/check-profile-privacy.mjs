@@ -278,5 +278,49 @@ const sqlCols = (list) => list.split(",").map((c) => c.trim()).filter(Boolean).m
   if (!bad) ok(`${fns.length} definer functions return a name from profiles; none reads the raw name without show_name`);
 }
 
+// ── 7. climb_logs signed out: every column but WHO they climbed with (0501) ─────────────────────────
+// 0501 revoked anon's table-level SELECT on climb_logs and granted back every column except
+// `partners` by name. So a column ADDED later is unreadable signed out until its migration grants it,
+// and the app's trip-report reads (route page, a shared ?report= link) name it -- a guest would get an
+// error instead of the reports. This section fails on that, and on partners becoming readable again.
+{
+  const logCols = (await db.query(`select column_name from information_schema.columns
+     where table_schema = 'public' and table_name = 'climb_logs' order by ordinal_position`)).rows.map((r) => r.column_name);
+  if (!logCols.includes("partners")) fail("climb_logs has no partners column any more: re-read 0501 and this section");
+  const ungranted = [];
+  for (const c of logCols) {
+    const p = (await db.query(`select has_column_privilege('anon', 'public.climb_logs', $1, 'select') as p`, [c])).rows[0].p;
+    if (c === "partners" ? p : !p) ungranted.push(c);
+  }
+  if (ungranted.includes("partners")) fail("signed out can read climb_logs.partners (who a climber climbed with) — 0501 is undone");
+  const missing = ungranted.filter((c) => c !== "partners");
+  if (missing.length) fail(`climb_logs column(s) not granted to anon: ${missing.join(", ")} — a migration adding a climb_logs column must \`grant select (<col>) on public.climb_logs to anon\` (0501), or guests' trip reports fail`);
+  if (!ungranted.length) ok(`signed out: all ${logCols.length - 1} climb_logs columns but partners are readable, partners is not`);
+  const star = await as("anon", null, `select * from climb_logs limit 1`);
+  if (!star.error) fail("signed out, select * on climb_logs works — partners comes with it"); else ok("signed out: select * on climb_logs is refused");
+
+  const db_js = fs.readFileSync(path.join(ROOT, "lib", "db.js"), "utf8");
+  const base = (db_js.match(/const TRIP_REPORT_COLS = "([^"]+)"/) || [])[1];
+  const extra = (db_js.match(/TRIP_REPORT_COLS \+ "([^"]+)"/) || [])[1];
+  if (!base) fail("lib/db.js: TRIP_REPORT_COLS not found — this section can no longer test the trip-report reads");
+  const lists = new Map();
+  if (base) { lists.set("route_id, " + base, "TRIP_REPORT_COLS"); if (extra) lists.set("route_id, " + base + extra, "TRIP_REPORT_COLS + 0121 columns"); }
+  const srcFiles = [path.join(ROOT, "lib", "db.js")];
+  for (const f of fs.readdirSync(ROOT)) if (/\.jsx$/.test(f)) srcFiles.push(path.join(ROOT, f));
+  for (const f of srcFiles) {
+    const s = fs.readFileSync(f, "utf8"), rel = path.relative(ROOT, f);
+    for (const m of s.matchAll(/from\("climb_logs"\)\s*\.select\("([^"]*)"/g)) {
+      if (/^\s*\*?\s*$/.test(m[1])) fail(`${rel}: .from("climb_logs").select("${m[1]}") — select * is refused signed out since 0501; name the columns`);
+      else if (!lists.has(m[1])) lists.set(m[1], rel);
+    }
+  }
+  const before = failures;
+  for (const [list, where] of lists) {
+    const r = await as("anon", null, `select ${sqlCols(list)} from climb_logs limit 1`);
+    if (r.error) fail(`${where}: "${list.slice(0, 80)}…" signed out: ${r.error}`);
+  }
+  if (failures === before) ok(`${lists.size} app climb_logs select lists run signed out`);
+}
+
 if (failures) { console.error(`\ncheck:profile-privacy FAILED — ${failures} problem(s).`); process.exit(1); }
 console.log("\ncheck:profile-privacy: every check passed.");

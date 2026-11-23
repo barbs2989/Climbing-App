@@ -1,0 +1,555 @@
+{
+ "wa_west_face_7_beth_priestley_memorial_route": {
+  "area": "wa_west_face_7",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/120906349",
+    "https://www.mountainproject.com/area/114069401/west-face",
+    "https://www.mountainproject.com/route/203133513",
+    "https://parks.wa.gov/find-parks/state-parks/beacon-rock-state-park",
+    "https://discoverpass.wa.gov/about-pass/what-discover-pass"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.7+ C1",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/120906349",
+      "fact": "Beth Priestley Memorial Route: 5.7+ C1, Trad, Aid",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 3,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/120906349",
+      "fact": "400 ft, 3 pitches, Grade II",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "length_m",
+    "value": 122,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/120906349",
+      "fact": "400 ft (121 m), 3 pitches; 400 ft = 122 m",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_west_face_7_beth_priestley_memorial_route",
+    "column": "gear",
+    "from": null,
+    "to": [
+     "single rack 00 Metolius to #4 Camalot",
+     "extra small cams",
+     "offset nuts"
+    ],
+    "why": "gear is empty. Mountain Project protection: single rack 00 Metolius to #4 Camalot, optionally doubled in the small sizes, offset nuts useful. Single source.",
+    "evidence": [
+     "https://www.mountainproject.com/route/120906349"
+    ]
+   }
+  ],
+  "held": [
+   {
+    "table": "routes",
+    "id": "wa_west_face_7_beth_priestley_memorial_route",
+    "column": "commitment",
+    "from": null,
+    "to": "II",
+    "why": "HELD: Grade II from Mountain Project alone (commitment from MP alone is held).",
+    "evidence": [
+     "https://www.mountainproject.com/route/120906349"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_west_face_7_beth_priestley_memorial_route",
+    "column": "access",
+    "from": null,
+    "to": "(wa_northwest_face_pioneer_iron_spike_route object)",
+    "why": "HELD (brief U rule): the parks.wa.gov page states the NORTHWEST face is open year-round but never says that of the WEST face. Its only west-face statement is a July 13, 2026 alert that the west and northwest faces 'remain open' (time-bound, posted at the end of the closure). The falcon blog (May 20, 2026) names no faces. Not clearly year-round, so held; the NW object is the likely choice if the owner accepts the alert.",
+    "evidence": [
+     "https://parks.wa.gov/find-parks/state-parks/beacon-rock-state-park",
+     "https://parks.wa.gov/about/news-center/field-guide-blog/seasonal-climbing-closures-protect-nesting-peregrine-falcons-two-state-parks"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_west_face_7_beth_priestley_memorial_route",
+    "column": "permit",
+    "from": null,
+    "to": "(wa_northwest_face_pioneer_iron_spike_route permit)",
+    "why": "HELD with access, same reason.",
+    "evidence": [
+     "https://parks.wa.gov/find-parks/state-parks/beacon-rock-state-park"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "Grade, aid grade C1, 3 pitches and 400 ft all match MP; theCrag (the only other listing) returned Forbidden in Chrome, so locks are locked-1src. FA on MP: Eric Linthwaite and Geoff Silverman with Ty Gittins and Kyle Silverman, Juneteenth 2021 (Option 2: Linthwaite and Steve Wolford, Canada Day 2022); FA never set from MP alone, row stores none. POSSIBLE DUPLICATE/FREE VERSION: wa_west_face_7_beth_memorial_route_free (5.12a, 3 pitches, 84 m) is MP's 'Beth Memorial Route (Free)', whose page calls it the 2021 Linthwaite and Silverman aid line, freed June 2026. Same line in free vs aid form, though lengths differ (275 ft vs 400 ft). Reported, not merged. Descent: walk off, or two-rope raps."
+ },
+ "wa_west_face_7_heretic_s_highway": {
+  "area": "wa_west_face_7",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/121112192",
+    "https://www.mountainproject.com/route/117014193",
+    "https://www.mountainproject.com/area/114069401/west-face",
+    "https://parks.wa.gov/find-parks/state-parks/beacon-rock-state-park",
+    "https://discoverpass.wa.gov/about-pass/what-discover-pass"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.7 A1",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/121112192",
+      "fact": "Heretic's Highway: 5.7 A1, Trad, Aid",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 3,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/121112192",
+      "fact": "Trad, Aid, 225 ft (68 m), 3 pitches",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "length_m",
+    "value": 69,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/121112192",
+      "fact": "225 ft, 3 pitches; 225 ft = 68.6 m, stored 69",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_west_face_7_heretic_s_highway",
+    "column": "gear",
+    "from": null,
+    "to": [
+     "quickdraws",
+     "cams to 3 in"
+    ],
+    "why": "gear is empty. Mountain Project protection: bolts and gear to 3 inches. Single source.",
+    "evidence": [
+     "https://www.mountainproject.com/route/121112192"
+    ]
+   }
+  ],
+  "held": [
+   {
+    "table": "routes",
+    "id": "wa_west_face_7_heretic_s_highway",
+    "column": "access",
+    "from": null,
+    "to": "(wa_northwest_face_pioneer_iron_spike_route object)",
+    "why": "HELD (brief U rule): the parks.wa.gov page states the NORTHWEST face is open year-round but never says that of the WEST face. Its only west-face statement is a July 13, 2026 alert that the west and northwest faces 'remain open' (time-bound, posted at the end of the closure). The falcon blog (May 20, 2026) names no faces. Not clearly year-round, so held; the NW object is the likely choice if the owner accepts the alert.",
+    "evidence": [
+     "https://parks.wa.gov/find-parks/state-parks/beacon-rock-state-park",
+     "https://parks.wa.gov/about/news-center/field-guide-blog/seasonal-climbing-closures-protect-nesting-peregrine-falcons-two-state-parks"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_west_face_7_heretic_s_highway",
+    "column": "permit",
+    "from": null,
+    "to": "(wa_northwest_face_pioneer_iron_spike_route permit)",
+    "why": "HELD with access, same reason.",
+    "evidence": [
+     "https://parks.wa.gov/find-parks/state-parks/beacon-rock-state-park"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "NOT A DUPLICATE of wa_drill_s_thrill_aka_heretic_s_highway. On MP they are two routes by the same party (Linthwaite, G. and K. Silverman, Baylor, spring 2019): Drill's Thrill is a 90 ft single-pitch sport line (5.11b, FFA Feb 2021 Bedell & Cote); Heretic's Highway is a 3-pitch 5.7 A1 whose first pitch uses Drill's Thrill's bolts as a ladder, then moves the belay about 30 ft right and continues. They share pitch 1 only. CATALOG DEFECT on the other row: its name '(aka Heretic's Highway)' is wrong (MP gives no aka), it stores 5.11b/c where MP says 5.11b, and pitches 0. Reported, not fixed (not my row). Aid grade A1 matches MP. FA (MP: Spring 2019, Eric Linthwaite, Geoff Silverman, Kyle Silverman, Adam Baylor) not set from MP alone; row stores none."
+ },
+ "wa_northwest_face_jackie_treehorn_s_jungle_gym_of_joyous_delights": {
+  "area": "wa_northwest_face",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/124033227",
+    "https://www.mountainproject.com/area/111087716/northwest-face",
+    "https://parks.wa.gov/find-parks/state-parks/beacon-rock-state-park",
+    "https://discoverpass.wa.gov/about-pass/what-discover-pass"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.7 C1",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/124033227",
+      "fact": "Jackie Treehorn's Jungle Gym: 5.7 C1, Trad, Aid",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 5,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/124033227",
+      "fact": "Trad, Aid, 700 ft (212 m), 5 pitches, Grade III",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "length_m",
+    "value": 213,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/124033227",
+      "fact": "700 ft (212 m), 5 pitches; 700 ft = 213.4 m",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_northwest_face_jackie_treehorn_s_jungle_gym_of_joyous_delights",
+    "column": "access",
+    "from": null,
+    "to": {
+     "fees": "Discover Pass: $10 for one day or $45 for a year.",
+     "rules": "The northwest face is open all year. The south and southeast faces close every Feb 1 for nesting peregrine falcons until about mid-July, and the east face is closed for good. Park hours are 8 a.m. to dusk.",
+     "land_manager": "Washington State Parks (Beacon Rock State Park)",
+     "parking_pass": "Discover Pass."
+    },
+    "why": "access is empty. Copied field for field from the live sibling wa_northwest_face_pioneer_iron_spike_route (same face, same park). Re-read 2026-11-23: the parks.wa.gov Beacon Rock page still says the northwest face is open for climbing year-round, the south and southeast faces close Feb 1 and tentatively reopen mid-July, the east face is closed, and hours are 8 a.m. to dusk; discoverpass.wa.gov still gives $45 annual and $10 one-day. official-1, 12 months, after apply.",
+    "evidence": [
+     "https://parks.wa.gov/find-parks/state-parks/beacon-rock-state-park",
+     "https://discoverpass.wa.gov/about-pass/what-discover-pass"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_northwest_face_jackie_treehorn_s_jungle_gym_of_joyous_delights",
+    "column": "permit",
+    "from": null,
+    "to": "Discover Pass required to park. The northwest face stays open all year; the south and southeast faces close from Feb 1 to about mid-July for nesting falcons, and the east face is closed for good.",
+    "why": "permit is empty. Copied from wa_northwest_face_pioneer_iron_spike_route; same official re-read as the access fix.",
+    "evidence": [
+     "https://parks.wa.gov/find-parks/state-parks/beacon-rock-state-park",
+     "https://discoverpass.wa.gov/about-pass/what-discover-pass"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_northwest_face_jackie_treehorn_s_jungle_gym_of_joyous_delights",
+    "column": "gear",
+    "from": null,
+    "to": [
+     "cams 0 Metolius to #4 Camalot",
+     "offset nuts",
+     "brassies",
+     "2 hooks",
+     "many slings"
+    ],
+    "why": "gear is empty. Mountain Project protection: Metolius 0 to #4 Camalot (optional doubles), 1-2 sets of offset nuts, brassies, a hook for the leader and one for the follower, many draws and slings. Single source.",
+    "evidence": [
+     "https://www.mountainproject.com/route/124033227"
+    ]
+   }
+  ],
+  "held": [
+   {
+    "table": "routes",
+    "id": "wa_northwest_face_jackie_treehorn_s_jungle_gym_of_joyous_delights",
+    "column": "commitment",
+    "from": null,
+    "to": "III",
+    "why": "HELD: Grade III from Mountain Project alone.",
+    "evidence": [
+     "https://www.mountainproject.com/route/124033227"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "Mostly aid, with drilled hook placements; uses Burning Calves and Dorian's Dilemma bolts in passing. Descent is 6 raps (7 with a 60 m rope), the last three down Spike Route/Genesis. MP's FA credit is nicknames only ('Ivan n' Kyle the Kantankerous', June 10 2023), so no FA proposed. theCrag returned Forbidden, so locks are locked-1src. Stored 5.7 C1 / 5 pitches / 213 m all match MP."
+ },
+ "wa_the_steamboat_captain_s_dream": {
+  "area": "wa_northwest_face",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/111786929",
+    "https://www.mountainproject.com/area/111087716/northwest-face",
+    "https://parks.wa.gov/find-parks/state-parks/beacon-rock-state-park",
+    "https://discoverpass.wa.gov/about-pass/what-discover-pass"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.10d",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111786929",
+      "fact": "The Steamboat Captain's Dream: 5.10d, Trad",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_the_steamboat_captain_s_dream",
+    "column": "pitches",
+    "from": 0,
+    "to": 8,
+    "why": "pitches 0 is invalid. Mountain Project states 8 pitches (Trad, 700 ft, Grade II). Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/111786929"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_the_steamboat_captain_s_dream",
+    "column": "length_m",
+    "from": null,
+    "to": 213,
+    "why": "Mountain Project states 700 ft (212 m); 700 ft = 213 m. Single source.",
+    "evidence": [
+     "https://www.mountainproject.com/route/111786929"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_the_steamboat_captain_s_dream",
+    "column": "anchor",
+    "from": null,
+    "to": "Bolted anchor",
+    "why": "Mountain Project: bolted belay anchors at the end of every pitch. 'Bolted anchor' is a house spelling (5 rows). Single source.",
+    "evidence": [
+     "https://www.mountainproject.com/route/111786929"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_the_steamboat_captain_s_dream",
+    "column": "gear",
+    "from": null,
+    "to": [
+     "cams 0.1 to #3",
+     "doubles 0.3 to 0.5",
+     "nuts",
+     "offset nuts",
+     "6 quickdraws",
+     "13 slings"
+    ],
+    "why": "gear is empty. Mountain Project: micro cams 0.1-0.2, Camalots 0.3-#3 with doubles 0.3-0.5, small and medium nuts, offset nuts, 6 draws, 12 short and 1 long runner. Single source.",
+    "evidence": [
+     "https://www.mountainproject.com/route/111786929"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_the_steamboat_captain_s_dream",
+    "column": "access",
+    "from": null,
+    "to": {
+     "fees": "Discover Pass: $10 for one day or $45 for a year.",
+     "rules": "The northwest face is open all year. The south and southeast faces close every Feb 1 for nesting peregrine falcons until about mid-July, and the east face is closed for good. Park hours are 8 a.m. to dusk.",
+     "land_manager": "Washington State Parks (Beacon Rock State Park)",
+     "parking_pass": "Discover Pass."
+    },
+    "why": "access is empty. Copied field for field from the live sibling wa_northwest_face_pioneer_iron_spike_route (same face, same park). Re-read 2026-11-23: the parks.wa.gov Beacon Rock page still says the northwest face is open for climbing year-round, the south and southeast faces close Feb 1 and tentatively reopen mid-July, the east face is closed, and hours are 8 a.m. to dusk; discoverpass.wa.gov still gives $45 annual and $10 one-day. official-1, 12 months, after apply.",
+    "evidence": [
+     "https://parks.wa.gov/find-parks/state-parks/beacon-rock-state-park",
+     "https://discoverpass.wa.gov/about-pass/what-discover-pass"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_the_steamboat_captain_s_dream",
+    "column": "permit",
+    "from": null,
+    "to": "Discover Pass required to park. The northwest face stays open all year; the south and southeast faces close from Feb 1 to about mid-July for nesting falcons, and the east face is closed for good.",
+    "why": "permit is empty. Copied from wa_northwest_face_pioneer_iron_spike_route; same official re-read as the access fix.",
+    "evidence": [
+     "https://parks.wa.gov/find-parks/state-parks/beacon-rock-state-park",
+     "https://discoverpass.wa.gov/about-pass/what-discover-pass"
+    ]
+   }
+  ],
+  "held": [
+   {
+    "table": "routes",
+    "id": "wa_the_steamboat_captain_s_dream",
+    "column": "commitment",
+    "from": null,
+    "to": "II",
+    "why": "HELD: Grade II from Mountain Project alone.",
+    "evidence": [
+     "https://www.mountainproject.com/route/111786929"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "CATALOG DEFECT: fa mixes two ascents ('July 2018 Topher Dabrowski; April 1999 Andrew Leiner & J. Opdyke Pitch 1'); it matches MP verbatim but is reported, not rewritten. Pitch 1 is essentially the original Smoke Signals line (wa_smoke_signals, Leiner & Opdyke 1999) with a different start; MP lists both as separate 700 ft / 8-pitch routes. Possible overlap with wa_smoke_signals flagged, not a merge claim. Descent: walk the hiking trail or rap with a 70 m rope. theCrag returned Forbidden, so single source."
+ },
+ "wa_stone_soup": {
+  "area": "wa_northwest_face",
+  "review": {
+   "sources": [
+    "https://mountainproject.com/route/111770213/stone-soup",
+    "https://mountainproject.com/route/111770213/stone-soup?print=1",
+    "https://www.mountainproject.com/area/111087716/northwest-face",
+    "https://parks.wa.gov/find-parks/state-parks/beacon-rock-state-park",
+    "https://discoverpass.wa.gov/about-pass/what-discover-pass",
+    "https://cascadeclimbers.com/forum/topic/78583-tr-beacon-rawks-stone-soup-aid-solo-2102011"
+   ]
+  },
+  "ledger": [],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_stone_soup",
+    "column": "pitches",
+    "from": 0,
+    "to": 7,
+    "why": "pitches 0 is invalid. Mountain Project states 7 pitches (5.9 C2, Trad, Aid, Grade IV). Single source; locked-1src after apply.",
+    "evidence": [
+     "https://mountainproject.com/route/111770213/stone-soup?print=1"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_stone_soup",
+    "column": "anchor",
+    "from": null,
+    "to": "Bolted anchor",
+    "why": "Mountain Project: bolted belays on every pitch, all good bolts. House spelling 'Bolted anchor'. Single source.",
+    "evidence": [
+     "https://mountainproject.com/route/111770213/stone-soup"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_stone_soup",
+    "column": "gear",
+    "from": null,
+    "to": [
+     "doubles tiny cams to 0.5",
+     "0.75 to #3 cams",
+     "offset nuts",
+     "1 hook"
+    ],
+    "why": "gear is empty. Mountain Project: doubles tiny to 0.5, one or two 0.75, singles 1-3, at least one hook, offset nuts. Single source.",
+    "evidence": [
+     "https://mountainproject.com/route/111770213/stone-soup"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_stone_soup",
+    "column": "access",
+    "from": null,
+    "to": {
+     "fees": "Discover Pass: $10 for one day or $45 for a year.",
+     "rules": "The northwest face is open all year. The south and southeast faces close every Feb 1 for nesting peregrine falcons until about mid-July, and the east face is closed for good. Park hours are 8 a.m. to dusk.",
+     "land_manager": "Washington State Parks (Beacon Rock State Park)",
+     "parking_pass": "Discover Pass."
+    },
+    "why": "access is empty. Copied field for field from the live sibling wa_northwest_face_pioneer_iron_spike_route (same face, same park). Re-read 2026-11-23: the parks.wa.gov Beacon Rock page still says the northwest face is open for climbing year-round, the south and southeast faces close Feb 1 and tentatively reopen mid-July, the east face is closed, and hours are 8 a.m. to dusk; discoverpass.wa.gov still gives $45 annual and $10 one-day. official-1, 12 months, after apply.",
+    "evidence": [
+     "https://parks.wa.gov/find-parks/state-parks/beacon-rock-state-park",
+     "https://discoverpass.wa.gov/about-pass/what-discover-pass"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_stone_soup",
+    "column": "permit",
+    "from": null,
+    "to": "Discover Pass required to park. The northwest face stays open all year; the south and southeast faces close from Feb 1 to about mid-July for nesting falcons, and the east face is closed for good.",
+    "why": "permit is empty. Copied from wa_northwest_face_pioneer_iron_spike_route; same official re-read as the access fix.",
+    "evidence": [
+     "https://parks.wa.gov/find-parks/state-parks/beacon-rock-state-park",
+     "https://discoverpass.wa.gov/about-pass/what-discover-pass"
+    ]
+   }
+  ],
+  "held": [
+   {
+    "table": "routes",
+    "id": "wa_stone_soup",
+    "column": "grade",
+    "from": "5.9",
+    "to": "5.9 C2",
+    "why": "HELD (convention, one source): aid_grade is stored C2 but the grade text omits it; house convention keeps the aid grade in the text ('5.6 A3' with aid_grade set) and MP prints '5.9 C2'. grade_num stays 9 (gradeNumFrom). A 2011 climber trip report called it 5.7 C2F, so the free grade has no second publisher.",
+    "evidence": [
+     "https://mountainproject.com/route/111770213/stone-soup?print=1"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_stone_soup",
+    "column": "commitment",
+    "from": null,
+    "to": "IV",
+    "why": "HELD: Grade IV from Mountain Project alone.",
+    "evidence": [
+     "https://mountainproject.com/route/111770213/stone-soup?print=1"
+    ]
+   }
+  ],
+  "disputed": [
+   "grade: MP 5.9 C2; a 2011 CascadeClimbers trip report (a climber, not a publisher) 5.7 C2F; MP comments say most pitches go free around 5.10+ with ~10 ft of aid on pitch 5"
+  ],
+  "notes": "No grade lock: the stored '5.9' text differs from MP's '5.9 C2'. MP gives no total length (only per-pitch lengths), so length_m stays null. FA 'Eric Linthwaite and others' matches MP. The top pitch exits on third-class ground to the summit trail. theCrag returned Forbidden."
+ }
+}

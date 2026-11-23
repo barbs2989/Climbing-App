@@ -160,6 +160,7 @@ else fail("the Help tour (HELP_FEATS) no longer says photos and map tiles are NO
  * whose floor was "at least one" and which a PARTIAL restyle left checking 1 of 9. */
 const TRIGGERS = new Set(["downloadedStates", "setDownloadedStates", "myPins", "dlBusy", "downloadState", "removeState", "pinState"]);
 const DIALOGS = new Set(["Manage areas"]);
+const ROUTE_SAVE = /\bSave offline\b/;
 const NOT_STORED = /\b(?:photos?|topo images?|topos?|map tiles?|tiles|offline maps?)\b/i;
 /* `to this device` as well as `on this device`: the natural way to write this claim is
  * "Saves the beta and every photo TO this device", and a needle wanting only `on` missed it —
@@ -218,6 +219,10 @@ for (const s of SURFACES) {
     for (const raw of sentencesOf(x.v)) {
       const sentence = deIdiom(raw);
       if (NEGATED.test(sentence)) continue;
+      /* THE ONE CLIMB SAVE IS NOT THE STATE DOWNLOAD (2026-11-19). "Save offline" on a route page does
+       * store that climb's map, photos and topos, and §11 asserts the wiring; a sentence that names
+       * that button by its label is describing it, not the state download this section is about. */
+      if (ROUTE_SAVE.test(sentence)) continue;
       if (NOT_STORED.test(sentence) && STORED.test(sentence)) findings.push({ f: s.f, at: x.at, sentence: raw.trim() });
     }
   }
@@ -370,9 +375,49 @@ const SAVED = [
 ];
 for (const [cond, good, why] of SAVED) { if (cond) ok(good); else fail(why); }
 
+/* ── 11. ONE CLIMB, SAVED WHOLE (owner, 2026-11-19). ──────────────────────────────────────────
+ * "Save offline" on a route page keeps that climb: its row, reports and corrections (§10's
+ * readers), and since 2026-11-19 its photos and topos, climbers' tracks, its area row (the crag's
+ * walk-in line) and the names of the climbs beside it. Help says so, and §5 lets a sentence that
+ * names the button say so, which makes each of these a promise: WRITTEN at save time and READ
+ * BACK through the hook the page already uses. The silent half is again the read: drop one
+ * fallback and nothing renders differently until there is no signal.
+ *
+ * The first assertion is the regression this section was opened by: a save whose MAP failed used to
+ * unpack the whole climb, so a route outside the saved tiles' coverage could not be kept at all. */
+console.log("\n11. ONE CLIMB SAVED WHOLE — its photos, topos, tracks, area and neighbours are written and read back:");
+const smf = strip(read("lib/SaveMapOffline.jsx"));
+const saveFn = (smf.match(/const save = function \(\) \{[\s\S]*?\n  \};/) || [""])[0];
+const packFn = (dbS.match(/export async function packRouteWithSnapshot[\s\S]*?\n}/) || [""])[0];
+const mediaFn = (dbS.match(/async function savePackMedia[\s\S]*?\n}/) || [""])[0];
+const areaFn = (dbS.match(/export async function fetchRouteArea[\s\S]*?\n}/) || [""])[0];
+if (!saveFn || !packFn || !mediaFn || !areaFn) dead("ANCHOR LOST: SaveMapOffline's save, packRouteWithSnapshot, savePackMedia or fetchRouteArea was not found");
+const WHOLE = [
+  [!/unpackRouteOffline/.test(saveFn),
+    "a save whose map failed keeps the page (the save handler never unpacks)",
+    "lib/SaveMapOffline.jsx's save handler unpacks the climb again — a route whose map cannot download can no longer be saved at all"],
+  [/savePackMedia\(/.test(packFn) && /saveMediaOffline\(/.test(mediaFn) && /kind:\s*"photo"[^}]*pack:\s*true/.test(mediaFn) && /kind:\s*"report-photo"[^}]*pack:\s*true/.test(mediaFn) && /kind:\s*"topo"[^}]*pack:\s*true/.test(mediaFn),
+    "a route save writes its photos and topos to the device",
+    "packRouteWithSnapshot no longer saves the route's photos and topos (savePackMedia) — Help says a saved climb keeps them"],
+  [/m\.pack\s*&&\s*m\.routeId\s*===\s*routeId/.test(offS),
+    "removing a saved climb removes the images its save put there, and only those",
+    "unpackRouteOffline no longer removes the save's own images (or removes ones the climber saved by hand)"],
+  [/offlinePackTracks\(/.test(hookBody("useRouteTracks")) && /structuralSharing:\s*false/.test(hookBody("useRouteTracks")) && /if \(tracks\) snap\.tracks = tracks/.test(packFn),
+    "climbers' tracks are saved with the climb and read back, and a failed read is left OUT of the save",
+    "useRouteTracks lost its device fallback, or the save stores a failed tracks read as 'no tracks'"],
+  /* `useArea(` with its paren: hookBody("useArea") would match useAreaRoutes, which sits above it. */
+  [/offlinePackArea\(/.test((dbS.match(/export function useArea\([\s\S]*?\n}/) || [""])[0]) &&/offlinePackRouteAreaRow\(/.test(areaFn) && /snap\.area = area/.test(packFn),
+    "the climb's area (and the crag's walk-in line on it) is saved and read back",
+    "useArea or fetchRouteArea lost its fallback to the saved climb's area — a crag climb loses its walk-in line offline"],
+  [/offlinePackSiblings\(/.test(hookBody("useAreaRoutes")) && /snap\.siblings = siblings/.test(packFn),
+    "the climbs beside it are saved and read back (thin rows)",
+    "useAreaRoutes lost its fallback to the saved neighbours — NEXT DOOR and the peak's routes go blank offline"],
+];
+for (const [cond, good, why] of WHOLE) { if (cond) ok(good); else fail(why); }
+
 /* Fail closed on a run that quietly stopped asking. Raise this when you add an assertion; never
  * lower it to make a run pass. */
-const EXPECTED = 34;
+const EXPECTED = 40;
 if (ran < EXPECTED)
   dead("only " + ran + " assertion(s) RAN, expected " + EXPECTED
     + " — this guard stopped asking half its questions and still exited 0.");
@@ -385,4 +430,5 @@ if (bad) {
 }
 console.log("\ncheck:offline-claims: ok — a downloaded state is browsable, searchable and carries its\n"
   + "reports, corrections and names, dated (" + ran + " assertions), and the screens that describe it\n"
-  + "still say what is NOT on the device. There is no per-route trip pack.");
+  + "still say what is NOT on the device. One climb saved with Save offline carries its photos, topos,\n"
+  + "tracks, area and neighbours (§11).");

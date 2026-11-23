@@ -1,5 +1,5 @@
 import { tx } from "../../lib/tapWords.js";
-import { usePartnerAreaCount, usePartnersInArea, removePartnerArea, savePartnerArea, useCragRegular, useMyBlocked } from "../../lib/db";
+import { usePartnerAreaCount, usePartnersInArea, removePartnerArea, addPartnerArea, useCragRegular, useMyBlocked } from "../../lib/db";
 import { useState, useEffect } from "react";
 import Chevron from "./Chevron.tsx";
 import Av from "./Av.tsx";
@@ -59,7 +59,7 @@ export default function PartnersHereCard({ area, C, uid, myListings, onListMe, o
     setOptListed(!listed);
     try {
       if (listed) await removePartnerArea(uid, area.id);
-      else await savePartnerArea(uid, { areaId: area.id, disciplines: (area.disciplines || []).filter((d: string) => CRAG_FAMILY.includes(d)) });
+      else await addPartnerArea(uid, area.id, (area.disciplines || []).filter((d: string) => CRAG_FAMILY.includes(d)));
     } catch (e: unknown) { setOptListed(null); if (notify) notify((listed ? "Couldn’t remove your listing — " : "Couldn’t list you here — ") + ((e && (e as Error).message) || "try again")); }
     finally { setBusy(false); }
   };
