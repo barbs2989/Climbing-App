@@ -1,4 +1,4 @@
-import { C, DLOCALE, ME, availOf, profileDiscGrades, compat, compatSummary, compatUnknown, localYmd, pubNameRow, uApproxDist, uRate, availLabel } from "../../ClimbMatchCore.jsx";
+import { C, DLOCALE, ME, availOf, profileDiscGrades, compat, compatSummary, compatUnknown, localYmd, pubNameRow, uApproxDist, uRate, availSlotLabels } from "../../ClimbMatchCore.jsx";
 import { clickable } from "../../lib/clickable";
 import { tx } from "../../lib/tapWords.js";
 import type { ReactNode } from "react";
@@ -149,7 +149,7 @@ export default function RealClimberRow({p,distFrom,onOpen,objIds,objErr,verified
   const _sc=_pct,_band=_sc>=90?{bg:C.greenBg,bd:C.greenDim,fg:C.green}:_sc>=70?{bg:C.blueBg,bd:C.blueDim,fg:"#fff"}:_sc>=50?{bg:C.amberBg,bd:C.border,fg:C.amber}:{bg:C.redBg,bd:C.border,fg:C.red};
   const _open=onOpen?function(){onOpen(_c);}:null;
   const _gs=profileDiscGrades(_c) as [string, string][];const _gk=_gs.map(function(g){return g[0];});const _rest=(_c.disciplines||[]).filter(function(d){return _gk.indexOf(d)<0;});
-  const _av=availOf(_c) as string[];
+  const _av=availSlotLabels(_c) as string[];
   const fst=friendState?friendState(p.id):null;const _fs=fst==="friends"?{bg:C.greenBg,fg:C.green,bd:C.greenDim}:fst==="out"?{bg:C.amberBg,fg:C.amber,bd:C.amber}:fst==="in"?{bg:C.green,fg:C.onBright,bd:C.green}:{bg:C.blueSolid,fg:C.onSolid,bd:C.blueSolid};
   return <div key={p.id} data-real-climber-card="" style={{background:C.card,borderRadius:16,padding:"16px 16px",marginBottom:24,border:"1px solid "+C.borderHi,boxShadow:"0 1px 3px rgba(0,0,0,0.28)"}}>
     <div style={{display:"flex",gap:12,alignItems:"flex-start",marginBottom:12}}>
@@ -165,7 +165,7 @@ export default function RealClimberRow({p,distFrom,onOpen,objIds,objErr,verified
     {_sum?<div data-match-summary="" style={{fontSize:12.5,color:C.text,lineHeight:1.45,marginBottom:7,overflowWrap:"anywhere"}}>{_sum}</div>:null}
     {/* One line, facts split by " · " (polish 2026-11-18: two facts side by side read as one). */(p.location||_where.length)?<div style={{fontSize:12,color:C.text,marginBottom:6,overflowWrap:"anywhere"}}>{[p.location||null].concat(_where).filter(Boolean).join(" · ")}</div>:null}
     {(_gs.length||_rest.length)?<div style={{display:"flex",gap:5,flexWrap:"wrap",marginBottom:6}}>{_gs.map(function(g){return <DiscBadge key={g[0]} id={g[0]} grade={g[1]} sm/>;})}{_rest.map(function(d){return <DiscBadge key={d} id={d} sm/>;})}</div>:null}
-    {(_overlap||_av.length)?<div style={{display:"flex",alignItems:"center",gap:7,flexWrap:"wrap",marginBottom:7}}>{_overlap?<span style={{fontSize:12,fontWeight:700,color:C.onSolid,background:C.blueBg,border:"1px solid "+C.blueDim,borderRadius:7,padding:"2px 8px"}}>✓ Overlaps yours</span>:null}{_av.length?<span style={{fontSize:11.5,color:C.text}}>{"Usually free: "+_av.map(availLabel).join(" · ")}</span>:null}</div>:null}
+    {(_overlap||_av.length)?<div style={{display:"flex",alignItems:"center",gap:7,flexWrap:"wrap",marginBottom:7}}>{_overlap?<span style={{fontSize:12,fontWeight:700,color:C.onSolid,background:C.blueBg,border:"1px solid "+C.blueDim,borderRadius:7,padding:"2px 8px"}}>✓ Overlaps yours</span>:null}{_av.length?<span style={{fontSize:11.5,color:C.text}}>{"Usually free: "+_av.join(" · ")}</span>:null}</div>:null}
     {p.bio?<p style={{fontSize:13,color:C.text,lineHeight:1.55,margin:"0 0 14px",overflowWrap:"anywhere"}}>{p.bio}</p>:null}
     {extras||null}
     {(climbs!=null||vouches!=null)?<div style={{display:"grid",gridTemplateColumns:"repeat(2,minmax(0,1fr))",gap:6,marginBottom:10}}>{([["mountain",climbs,"climbs","climb",climbsPrivate?null:(onClimbs||null)],["award",vouches,"vouches","vouch",onVouches||null]] as [string, number | null | undefined, string, string, ((c: typeof _cand) => void) | null][]).map(function(st){if(st[1]==null)return <span key={st[2]}/>;const act=st[4];/* A PRIVATE résumé's chip is TEXT, not a dead button (it read as the résumé failing to open). */const priv=st[2]==="climbs"&&!!climbsPrivate;return <span key={st[2]} {...(act?clickable(function(){act(_c);}):{})} style={{display:"flex",flexWrap:"wrap",justifyContent:"center",alignItems:"center",gap:"0 4px",boxSizing:"border-box",minHeight:30,fontSize:11.5,color:act?C.onSolid:C.text,background:act?C.blueBg:C.surface,borderRadius:8,padding:"4px 6px",border:"1px solid "+(act?C.blueDim:C.border),cursor:act?"pointer":"default",textAlign:"center",whiteSpace:"nowrap"}}><ActionIcon name={st[0]} size={11} color={act?C.blue:C.text}/>{st[1]+" "+(st[1]===1?st[3]:st[2])}{priv?<>{" "}<span style={{width:"100%",fontSize:10,color:C.textSub}}>résumé private</span></>:null}</span>;})}</div>:null}
