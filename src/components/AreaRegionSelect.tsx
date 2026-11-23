@@ -1,3 +1,4 @@
+import { FONT_DISPLAY } from "../../lib/fonts.js";
 import { useEffect, type CSSProperties, type ReactNode } from "react";
 import { C, MOUNTAINS, inArea } from "../../ClimbMatchCore.jsx";
 import { useAreaChildren } from "../../lib/db.js";
@@ -53,7 +54,7 @@ export default function AreaRegionSelect({ areaCountry, setAreaCountry, areaStat
   const nameOf = (list: Place[], id: string) => { const hit = id ? list.find(a => a.id === id) : undefined; return (hit && hit.name) || ""; };
   const selName = nameOf(regions, areaId) || nameOf(states, areaState) || nameOf(countries, areaCountry);
   useEffect(() => { if (onName) onName(selName); }, [selName]); // eslint-disable-line react-hooks/exhaustive-deps -- the effect is about the NAME changing; onName is an inline arrow in its caller, so listing it would re-fire the effect on every render
-  const hd: CSSProperties = {fontSize:13,fontWeight:800,color:C.text,textTransform:"uppercase",letterSpacing:0.4,marginBottom:8,borderLeft:"3px solid "+C.blue,paddingLeft:9};
+  const hd: CSSProperties = {fontFamily:FONT_DISPLAY,fontSize:18,lineHeight:1.15,fontWeight:600,color:C.text,textTransform:"uppercase",letterSpacing:0.7,marginBottom:8};
   const box: CSSProperties = {width:"100%",height:44,boxSizing:"border-box",padding:"0 11px",borderRadius:10,border:"1px solid "+C.border,background:C.surface,color:C.text,fontWeight:600};
   const loading = (q: AreaQuery) => USE_DB && q.isLoading ? <option value="" disabled>Loading…</option> : null;
   const foot = typeof footer === "function" ? footer(selName) : footer;

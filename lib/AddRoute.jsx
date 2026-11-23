@@ -1,5 +1,6 @@
 // Moved out of ClimbMatchCore.jsx verbatim so it can load lazily, off the first-paint
 // bundle. It is rendered only from App (ClimbMatch.jsx) behind React.lazy + Suspense.
+import { FONT_DISPLAY } from "./fonts.js";
 import { tx } from "./tapWords.js";
 import { ACCESS_KEYS, ROAD_KEYS, TIMING_KEYS } from "./objKeys";
 import { USE_DB } from "./supabase";
@@ -207,7 +208,7 @@ export default function AddRoute({onClose,defaultArea,defaultAreaName,dbAreaId,s
   const hintS={fontSize:11.5,color:C.textMuted,margin:"-3px 0 7px",lineHeight:1.45};
   const Lab=(label,hk,own)=>{const h=own||(hk&&HINTS[hk]);return <><div style={lab}>{label}</div>{h?<div style={hintS}>{h}</div>:null}</>;};
   const NUM_HINT={h:"length",g:"gain",l:"loss",d:"dist"};
-  const grp={fontSize:13,fontWeight:800,letterSpacing:0.4,textTransform:"uppercase",color:C.text,borderLeft:"3px solid "+C.blue,paddingLeft:9,margin:"20px 0 2px"};
+  const grp={fontFamily:FONT_DISPLAY,fontSize:18,lineHeight:1.15,fontWeight:600,letterSpacing:0.7,textTransform:"uppercase",color:C.text,margin:"20px 0 2px"};
   const chip=on=>({padding:"7px 13px",borderRadius:18,border:"1.5px solid "+(on?C.blue:C.border),background:on?C.blueBg:C.surface,color:on?C.onSolid:C.textSub,fontSize:13,fontWeight:600,cursor:"pointer"});
   const sm=on=>({padding:"8px 12px",borderRadius:15,border:"1px solid "+(on?C.blue:C.border),background:on?C.blueBg:C.surface,color:on?C.onSolid:C.textSub,fontSize:12.5,fontWeight:600,cursor:"pointer"});
   const stepBtn={width:44,height:44,border:"1px solid "+C.border,background:C.card,color:C.blue,fontSize:17,fontWeight:800,cursor:"pointer",display:"flex",alignItems:"center",justifyContent:"center"};
