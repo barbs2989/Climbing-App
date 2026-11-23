@@ -33,7 +33,8 @@ const token = b64({ alg: "HS256", typ: "JWT" }) + "." + b64({ sub: UID, role: "a
 const user = { id: UID, aud: "authenticated", role: "authenticated", email: "probe@example.test", email_confirmed_at: "2026-01-01T00:00:00Z", app_metadata: {}, user_metadata: {}, created_at: "2026-01-01T00:00:00Z" };
 const session = { access_token: token, refresh_token: "r", expires_in: 7200, expires_at: exp, token_type: "bearer", user };
 
-const log = { storagePosts: [], topoInserts: 0, linePosts: 0, captionPatches: [], topoDeletes: 0, passedWrites: [] };
+const log = { storagePosts: [], topoInserts: 0, linePosts: 0, captionPatches: [], topoDeletes: 0, passedWrites: [], reports: [] };
+const OTHER = "99999999-2222-4333-8444-555555555555";
 let topos = []; let failNextLine = true;
 const results = []; const ok = (name, pass, detail) => { results.push({ name, pass, detail }); console.log((pass ? "PASS " : "FAIL ") + name + (detail ? " — " + detail : "")); };
 
@@ -62,7 +63,7 @@ await page.route(SB + "/**", async (route) => {
     if (m === "GET") return json(topos);
     if (m === "POST") { log.topoInserts++; const b = req.postDataJSON(); const row = { id: "aaaaaaaa-0000-4000-8000-00000000000" + log.topoInserts, ...b, caption: null, created_by: UID, created_at: new Date().toISOString(), moderation: "visible", topo_lines: [] }; topos = [row, ...topos]; return json(row, 201); }
     if (m === "PATCH") { const b = req.postDataJSON(); log.captionPatches.push(b); topos = topos.map((t) => ({ ...t, ...b })); return json({ id: topos[0] && topos[0].id, ...b }); }
-    if (m === "DELETE") { log.topoDeletes++; const gone = topos.map((t) => ({ id: t.id })); topos = []; return json(gone); }
+    if (m === "DELETE") { log.topoDeletes++; const id = (url.searchParams.get("id") || "").replace(/^eq\./, ""); const gone = topos.filter((t) => t.id === id).map((t) => ({ id: t.id })); topos = topos.filter((t) => t.id !== id); return json(gone); }
   }
   if (p === "/rest/v1/topo_lines" && m === "POST") {
     log.linePosts++;
@@ -72,6 +73,7 @@ await page.route(SB + "/**", async (route) => {
     topos = topos.map((t) => t.id === b.topo_id ? { ...t, topo_lines: [row] } : t); return json(row, 201);
   }
   if (m === "GET" || m === "HEAD") { const h = { ...req.headers(), authorization: "Bearer " + ANON }; return route.continue({ headers: h }); }
+  if (p === "/rest/v1/rpc/report_content") { log.reports.push(req.postDataJSON()); return json("cccccccc-0000-4000-8000-000000000001"); }
   log.passedWrites.push(m + " " + p); // never forwarded
   return json(p.startsWith("/rest/v1/rpc/") ? [] : [], 200);
 });
@@ -141,6 +143,39 @@ try {
   await dlg2.waitFor({ state: "detached", timeout: 10000 }); await page.waitForTimeout(500);
   ok("cancelling a new photo removes it", log.topoDeletes === 1);
   ok("no write was forwarded to the database", true, "answered locally: " + (log.passedWrites.length ? [...new Set(log.passedWrites)].join(", ") : "none besides the topo calls"));
+
+  // 5b. a photo that already shows its line goes up with nothing drawn on it
+  const before = log.linePosts;
+  // ...and somebody else's topo arrives with the next read, for the Report controls below
+  topos = [...topos, { id: "dddddddd-0000-4000-8000-000000000001", area_id: "x", route_id: ROUTE, storage_path: OTHER + "/theirs.jpg", alt: "Their photo", caption: "Theirs", created_by: OTHER, created_at: "2026-01-02T00:00:00Z", moderation: "visible",
+    topo_lines: [{ id: "eeeeeeee-0000-4000-8000-000000000001", topo_id: "dddddddd-0000-4000-8000-000000000001", route_id: ROUTE, points: [{ x: 20, y: 80 }, { x: 60, y: 20 }], pins: [], variants: [], variant_labels: [], label: "Their line", created_by: OTHER, created_at: "2026-01-02T00:00:00Z", moderation: "visible" }] }];
+  const tile2 = page.locator("div[role='button']").filter({ hasText: /^\+\s*Add photo$/ }).first();
+  const [fc3] = await Promise.all([page.waitForEvent("filechooser"), tile2.click()]);
+  await fc3.setFiles({ name: "scanned-topo.png", mimeType: "image/png", buffer: PHOTO });
+  const dlg3 = page.getByRole("dialog", { name: /Draw this/ }); await dlg3.waitFor({ timeout: 30000 });
+  const post = dlg3.getByRole("button", { name: "Post photo without a line" });
+  ok("with nothing drawn the button reads Post photo without a line, and is live", await post.isEnabled());
+  await post.scrollIntoViewIfNeeded(); await shot("6-post-without-line");
+  await post.evaluate((el) => el.click()); await dlg3.waitFor({ state: "detached", timeout: 15000 }); await page.waitForTimeout(700);
+  ok("the photo is posted and NO line is stored", log.linePosts === before && log.topoDeletes === 1 && topos.some((t) => t.storage_path.includes("scanned-topo")), "line posts " + before + " -> " + log.linePosts);
+  ok("it shows in the strip as a photo with no line yet", await page.getByRole("button", { name: /Open topo photo — no line drawn yet/ }).first().isVisible());
+
+  // 5c. Report: never on your own, offered on somebody else's photo and line
+  await page.getByRole("button", { name: /Open topo photo — no line drawn yet/ }).first().click();
+  const viewer = page.getByRole("dialog", { name: "Topo" }); await viewer.waitFor({ timeout: 10000 });
+  ok("your own photo has no Report control", (await viewer.getByRole("button", { name: /^Report this/ }).count()) === 0);
+  await viewer.getByRole("button", { name: "Close" }).click();
+  await page.getByRole("button", { name: "Open topo photo: Their photo" }).click();
+  await viewer.waitFor({ timeout: 10000 });
+  const rp = viewer.getByRole("button", { name: "Report this photo" }), rl = viewer.getByRole("button", { name: "Report this line" });
+  await rl.scrollIntoViewIfNeeded(); await shot("7-report-controls");
+  ok("somebody else's photo offers Report this photo and Report this line", await rp.isVisible() && await rl.isVisible());
+  await rl.click();
+  const sheet = page.getByRole("dialog", { name: "Report this line" }); await sheet.waitFor({ timeout: 10000 });
+  ok("Report this line opens the report sheet, on top (the viewer closed)", await sheet.isVisible() && (await viewer.count()) === 0);
+  await sheet.getByRole("button", { name: "Spam or scam" }).click(); await shot("8-report-sheet");
+  await sheet.getByRole("button", { name: /report/i }).last().click(); await page.waitForTimeout(800);
+  ok("the report is filed against the LINE", log.reports.length === 1 && log.reports[0].p_kind === "topo_line" && log.reports[0].p_id === "eeeeeeee-0000-4000-8000-000000000001", JSON.stringify(log.reports[0] || null));
 
   // 6. signed out: asked before the picker opens
   const ctx2 = await browser.newContext({ viewport: { width: 390, height: 844 }, deviceScaleFactor: 2 });

@@ -11,6 +11,7 @@ import { POP_CLOSE } from "../../lib/popupChrome.js";
 import ActionIcon from "./ActionIcon.tsx";
 import TopoThumb from "./TopoThumb.tsx";
 import { clickable } from "../../lib/clickable";
+import { canAppeal, canReportContent, openAppeal, openContentReport } from "../../lib/reportBus";
 import TopoPinLegend from "./TopoPinLegend.tsx";
 import TopoPhotoModal from "./TopoPhotoModal.tsx";
 import { createPortal } from "react-dom";
@@ -37,6 +38,8 @@ interface TopoRow {
   alt?: string | null;
   caption?: string | null;
   created_by?: string | null;
+  /** visible / held / removed (0263); only its uploader and admins are ever sent one that is not visible. */
+  moderation?: string | null;
   topo_lines?: TopoDbLine[] | null;
 }
 /** A line drawn with no database behind it. */
@@ -74,7 +77,7 @@ export default function TopoSection({route}: TopoSectionProps){
   /* A topo belongs to the route page it was posted from (0364): areaId is the whole PEAK on an alpine route, so reading by it put a north-face photo on every south-side route. */const dbTopos=useRouteTopos(USE_DB?route.id:null,areaId);const toposUnavailable=!!(USE_DB&&dbTopos&&dbTopos.isError);const topoCopy=topoEmptyCopy(toposUnavailable, climbNoun(route));/* No signal: useRouteTopos answered with the topos SAVED on this device, which may be fewer than the crag has. */const toposSavedOnly=!!(dbTopos&&dbTopos.data&&dbTopos.data._savedFrom==="media");
 
   const photos: TopoSectionPhoto[]=USE_DB
-    ?(dbTopos.data||[]).map(function(t: TopoRow){const _u=topoPhotoUrl(t.storage_path);return {id:t.id,url:_u,db:true,storagePath:t.storage_path,alt:t.alt||null,caption:t.caption||null,mine:!!(_topoUid&&t.created_by===_topoUid),saveEntry:{url:_u,kind:"topo",areaId:areaId,routeId:route.id,row:t},
+    ?(dbTopos.data||[]).map(function(t: TopoRow){const _u=topoPhotoUrl(t.storage_path);return {id:t.id,url:_u,db:true,storagePath:t.storage_path,alt:t.alt||null,caption:t.caption||null,moderation:t.moderation||"visible",mine:!!(_topoUid&&t.created_by===_topoUid),saveEntry:{url:_u,kind:"topo",areaId:areaId,routeId:route.id,row:t},
         lines:(t.topo_lines||[]).filter(function(l){return l.route_id===route.id;}).slice().sort(function(a,b){return (b.created_at||"").localeCompare(a.created_at||"");}).map(function(l){return Object.assign({},l,{mine:!!(_topoUid&&l.created_by===_topoUid)});}),
         /* Lines on this photo by anyone else, for ANY route: deleting the photo would take theirs with it (cascade). */
         othersDrew:(t.topo_lines||[]).some(function(l){return l.created_by!==_topoUid;})};})
@@ -126,10 +129,12 @@ export default function TopoSection({route}: TopoSectionProps){
       /* A caption typed over the new photo goes with the line: it had its own Save button, and Save topo closed the sheet without it. */
       const cap=photo.fresh?capDraft.current:null;
       const line=photo.editLine;
+      /* A NEW PHOTO CAN GO UP AS IT IS (topo audit, 2026-11-23): a scanned or marked-up topo already shows its line, and the only way to post one was to draw over it. With nothing drawn the photo (and its caption) is kept and no line is stored; anyone can draw one on it later. */
+      const noLine=!line&&data.points.length<2&&!(data.variants||[]).length&&!(data.pins||[]).length;
       (cap!=null?updateTopoCaption(photo.id,cap):Promise.resolve(null)).then(function(){
         return line
           ?updateTopoLine(line.id,{points:data.points,pins:data.pins,label:data.label||null,variants:data.variants||[],variant_labels:data.variantLabels||[]})
-          :submitTopoLine(photo.id,route.id,data.points,data.pins,data.label||null,data.variants,data.variantLabels);
+          :(noLine?null:submitTopoLine(photo.id,route.id,data.points,data.pins,data.label||null,data.variants,data.variantLabels));
       }).then(function(){
         drawDirty.current=false;capDraft.current=null;dbTopos.refetch();setDrawFor(null);
       }).catch(function(e){const m=String((e&&e.message)||(line?"Couldn't save your changes":"Couldn't save that line")).trim();setDrawErr(m+(/[.!?]$/.test(m)?"":".")+" Nothing you drew is lost — try Save topo again.");}).then(function(){savingRef.current=false;setSaving(false);});
@@ -143,6 +148,12 @@ export default function TopoSection({route}: TopoSectionProps){
     }
   };
 
+  /* REPORT AND APPEAL (topo audit, 2026-11-23). report_content has taken 'topo' since 0263 and nothing in the app
+     opened the sheet for one; a line's words became reportable with 0489. The sheets live in App under the
+     viewer (z-index), so the viewer closes first. Offered only where App registered the opener: a signed-out
+     or seed session shows no control rather than one that fails. */
+  const report=(USE_DB&&canReportContent())?function(kind: "topo"|"topo_line",id: string|number,label: string){setViewerIdx(null);openContentReport({kind:kind,id:String(id),label:label});}:undefined;
+  const appeal=(USE_DB&&canAppeal())?function(kind: "topo"|"topo_line",id: string|number,label: string){setViewerIdx(null);openAppeal({kind:kind,id:String(id),label:label});}:undefined;
   const saveCaption=function(p: TopoModalPhoto,t: string){return updateTopoCaption(p.id,t).then(function(){return dbTopos.refetch();});};
   /* YOUR OWN TOPO CAN BE FIXED OR TAKEN DOWN (topo audit, 2026-10-24). updateTopoLine, deleteTopoLine
      and deleteTopoPhoto were written with their RLS (0026: own update / own delete) and never called, so
@@ -193,7 +204,7 @@ export default function TopoSection({route}: TopoSectionProps){
     :<div style={{display:"flex",gap:9,overflowX:"auto",paddingBottom:2}}>
       {photos.map(function(p,i){
         /* The caption's opening lines sit under the thumbnail, so a reader sees there IS context before opening it. */
-        return <div key={p.id} style={{flexShrink:0,width:132}}><TopoThumb p={p} onOpen={function(){setViewerIdx(i);}}/>{p.caption?<div style={{fontSize:11.5,color:C.textSub,lineHeight:1.4,marginTop:5,overflowWrap:"anywhere"}}>{p.caption}</div>:null}</div>;
+        return <div key={p.id} style={{flexShrink:0,width:132}}><TopoThumb p={p} onOpen={function(){setViewerIdx(i);}}/>{(p.moderation&&p.moderation!=="visible")?<div style={{fontSize:11.5,fontWeight:700,color:C.amber,lineHeight:1.4,marginTop:5}}>{p.moderation==="removed"?"Removed by ClimbMatch Safety":"Under review — only you see it"}</div>:null}{p.caption?<div style={{fontSize:11.5,color:C.textSub,lineHeight:1.4,marginTop:5,overflowWrap:"anywhere"}}>{p.caption}</div>:null}</div>;
       })}
       <div {...clickable(pickFile)} style={{flexShrink:0,width:132,height:132,borderRadius:11,border:"1px dashed "+C.border,display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",cursor:"pointer",color:C.blue,fontSize:12,fontWeight:700,gap:6}}>
         <span style={{fontSize:22}}>+</span>Add photo
@@ -201,7 +212,7 @@ export default function TopoSection({route}: TopoSectionProps){
     </div>}
     {toposSavedOnly?<div style={{fontSize:11.5,color:C.amber,lineHeight:1.45,marginTop:8}}>{"No signal — showing the "+photos.length+" topo"+(photos.length!==1?"s":"")+" you saved on this device. Any others need a connection."}</div>:null}
     {photos.some(function(p){return p.lines[0]&&((p.lines[0].pins&&p.lines[0].pins.length)||(p.lines[0].variants&&p.lines[0].variants.length));})?<TopoPinLegend style={{marginTop:8}}/>:null}
-    {(viewerIdx!=null&&photos[viewerIdx])?<TopoPhotoModal key={photos[viewerIdx].id} photo={photos[viewerIdx]} pos={{i:viewerIdx,n:photos.length,onPrev:function(){setViewerIdx((viewerIdx+photos.length-1)%photos.length);},onNext:function(){setViewerIdx((viewerIdx+1)%photos.length);}}} onClose={function(){setViewerIdx(null);}} onDraw={function(p){setDrawFor(p as TopoSectionPhoto);}} onDescribe={(USE_DB&&photos[viewerIdx].db&&photos[viewerIdx].mine)?function(p,d){return updateTopoAlt(p.id,d).then(function(){return dbTopos.refetch();});}:undefined} onCaption={(USE_DB&&photos[viewerIdx].db&&photos[viewerIdx].mine)?saveCaption:undefined} onEditLine={USE_DB?editLine:undefined} onDeleteLine={USE_DB?removeLine:undefined} onDeletePhoto={(USE_DB&&photos[viewerIdx].db&&photos[viewerIdx].mine)?removePhoto:undefined}/>:null}
+    {(viewerIdx!=null&&photos[viewerIdx])?<TopoPhotoModal key={photos[viewerIdx].id} photo={photos[viewerIdx]} pos={{i:viewerIdx,n:photos.length,onPrev:function(){setViewerIdx((viewerIdx+photos.length-1)%photos.length);},onNext:function(){setViewerIdx((viewerIdx+1)%photos.length);}}} onClose={function(){setViewerIdx(null);}} onDraw={function(p){setDrawFor(p as TopoSectionPhoto);}} onDescribe={(USE_DB&&photos[viewerIdx].db&&photos[viewerIdx].mine)?function(p,d){return updateTopoAlt(p.id,d).then(function(){return dbTopos.refetch();});}:undefined} onCaption={(USE_DB&&photos[viewerIdx].db&&photos[viewerIdx].mine)?saveCaption:undefined} onEditLine={USE_DB?editLine:undefined} onDeleteLine={USE_DB?removeLine:undefined} onDeletePhoto={(USE_DB&&photos[viewerIdx].db&&photos[viewerIdx].mine)?removePhoto:undefined} onReport={photos[viewerIdx].db?report:undefined} onAppeal={photos[viewerIdx].db?appeal:undefined}/>:null}
     {drawFor?createPortal(<div onClick={closeDraw} role="dialog" aria-modal="true" aria-label={drawFor.editLine?"Edit your line":"Draw this "+climbNoun(route)+"'s line"} style={{position:"fixed",inset:0,background:C.scrimStrong,zIndex:9500,display:"flex",justifyContent:"center",overflowY:"auto",overscrollBehavior:"contain"}}>
       <div onClick={function(e){e.stopPropagation();}} style={{background:C.bg,borderTopLeftRadius:18,borderTopRightRadius:18,width:"100%",maxWidth:520,marginTop:"auto",padding:"16px 16px 22px",border:"1px solid "+C.border,maxHeight:"calc(100dvh - 12px)",overflowY:"auto",overscrollBehavior:"contain",boxSizing:"border-box"}}>
         <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:10}}>
@@ -210,7 +221,7 @@ export default function TopoSection({route}: TopoSectionProps){
         </div>
         {/* The photo was just posted: ask for its caption here, while the climber still remembers why they took it. Cancelling the drawer takes the photo (and its caption) down — see closeDraw. */}
         {(drawFor.fresh&&drawFor.db)?<TopoCaptionBox key={drawFor.id} initial={null} draftRef={capDraft} onSave={function(t){return saveCaption(drawFor,t);}} style={{marginBottom:12}}/>:null}
-        <TopoDrawer key={drawFor.id+":"+(drawFor.editLine?drawFor.editLine.id:"new")} dirtyRef={drawDirty} initial={drawFor.editLine?{photoUrl:drawFor.url,points:drawFor.editLine.points,variants:(drawFor.editLine.variants||[]) as TopoPoint[][],variantLabels:drawFor.editLine.variant_labels||[],pins:(drawFor.editLine.pins||[]) as TopoDrawerPin[],label:drawFor.editLine.label||""}:{photoUrl:drawFor.url}} discardAsk={(drawFor.fresh&&drawFor.db)?freshAsk:null} saving={saving} onCancel={dropDraw} onSubmit={function(data: TopoDrawerResult){submitLine(drawFor,data);}}/>
+        <TopoDrawer key={drawFor.id+":"+(drawFor.editLine?drawFor.editLine.id:"new")} dirtyRef={drawDirty} initial={drawFor.editLine?{photoUrl:drawFor.url,points:drawFor.editLine.points,variants:(drawFor.editLine.variants||[]) as TopoPoint[][],variantLabels:drawFor.editLine.variant_labels||[],pins:(drawFor.editLine.pins||[]) as TopoDrawerPin[],label:drawFor.editLine.label||""}:{photoUrl:drawFor.url}} discardAsk={(drawFor.fresh&&drawFor.db)?freshAsk:null} emptyLabel={(drawFor.fresh&&drawFor.db)?"Post photo without a line":null} saving={saving} onCancel={dropDraw} onSubmit={function(data: TopoDrawerResult){submitLine(drawFor,data);}}/>
         {drawErr?<div role="alert" ref={function(el: HTMLDivElement|null){if(el&&el.scrollIntoView)el.scrollIntoView({block:"nearest"});}} style={{background:C.redBg,border:"1px solid "+C.red+"66",borderRadius:10,padding:"9px 12px",marginTop:10,fontSize:12.5,color:C.red,lineHeight:1.45}}>{drawErr}</div>:null}
       </div>
     </div>,document.body):null}

@@ -47,6 +47,8 @@ export interface TopoDrawerProps {
   discardAsk?: {title: string; body: string; confirmLabel: string} | null;
   /** The save is on its way: Save topo reads "Saving…" and takes no second tap (a second tap stored the line twice), and Cancel waits. */
   saving?: boolean;
+  /** With nothing drawn, the save button is live and reads this, and hands back an empty drawing: a photo that already shows its line (a scanned or marked-up topo) can be posted as it is. Without it, Save topo waits for a line or a marker. */
+  emptyLabel?: string | null;
 }
 /** The handle under edit, or being dragged. */
 type Handle = {kind: "point"; l: number; i: number} | {kind: "pin"; i: number};
@@ -64,7 +66,7 @@ const LOUPE_PX = 112;
 /* Exported for lib/LogAscent.jsx, which lets a climber draw a topo while logging the climb (lazy import, so the
    log form does not pull this file into its chunk until the control is tapped).
    Moved verbatim from RouteDetail.jsx (PR58); only the types were added. */
-export default function TopoDrawer({initial,onCancel,onSubmit,dirtyRef,discardAsk,saving}: TopoDrawerProps){
+export default function TopoDrawer({initial,onCancel,onSubmit,dirtyRef,discardAsk,saving,emptyLabel}: TopoDrawerProps){
   // lines[0] is the route line; lines[1..] are its variations.
   const [lines,setLines]=useState<TopoPoint[][]>(function(){return [((initial&&initial.points)||[]).slice()].concat(((initial&&initial.variants)||[]).map(function(v){return v.slice();}));});
   const [act,setAct]=useState(0);         // which line a tap extends
@@ -311,6 +313,7 @@ export default function TopoDrawer({initial,onCancel,onSubmit,dirtyRef,discardAs
   const keptVar=lines.slice(1).map(function(v,i){return {v:v,t:String(varLabels[i]||"").trim()};}).filter(function(o){return o.v.length>=2;});
   const variants=keptVar.map(function(o){return o.v;});
   const canSave=points.length>=2||variants.length>0||cleanPins().length>0;
+  const canPost=canSave||!!emptyLabel;
   const lastEmpty=lines.length>1&&!lines[lines.length-1].length;
   const swatch=function(col: string,dashed: boolean){return <TopoSwatch color={col} dashed={dashed}/>;};
   return <div>
@@ -397,7 +400,7 @@ export default function TopoDrawer({initial,onCancel,onSubmit,dirtyRef,discardAs
     {mode==="line"?<input aria-label="Name this line (optional)" value={label} maxLength={60} onChange={function(e: ChangeEvent<HTMLInputElement>){setLabel(e.target.value);}} placeholder="Name this line (optional) — e.g. direct start, left-hand variation" style={{width:"100%",boxSizing:"border-box",padding:"8px 10px",borderRadius:8,border:"1px solid "+C.border,background:C.card,color:C.text,fontSize:13,outline:"none",marginBottom:10}}/>:null}
     <div style={{display:"flex",gap:12}}>
       <button onClick={cancel} disabled={!!saving} style={{flex:1,padding:9,background:C.surface,color:C.textSub,border:"1px solid "+C.border,borderRadius:9,fontSize:13,cursor:"pointer"}}>Cancel</button>
-      <button disabled={!canSave||!!saving} onClick={function(){if(saving)return;onSubmit({points:points,variants:variants,variantLabels:keptVar.map(function(o){return o.t;}),pins:cleanPins(),label:label.trim()||null});}} style={{flex:2,padding:9,background:canSave&&!saving?C.blueSolid:C.border,color:C.onSolid,border:"none",borderRadius:9,fontSize:13,fontWeight:700,cursor:canSave&&!saving?"pointer":"default"}}>{saving?"Saving…":"Save topo"}</button>
+      <button disabled={!canPost||!!saving} onClick={function(){if(saving)return;onSubmit({points:canSave?points:[],variants:variants,variantLabels:keptVar.map(function(o){return o.t;}),pins:cleanPins(),label:label.trim()||null});}} style={{flex:2,padding:9,background:canPost&&!saving?C.blueSolid:C.border,color:C.onSolid,border:"none",borderRadius:9,fontSize:13,fontWeight:700,cursor:canPost&&!saving?"pointer":"default"}}>{saving?"Saving…":(canSave?"Save topo":(emptyLabel||"Save topo"))}</button>
     </div>
   </div>;
 }
