@@ -400,7 +400,7 @@ export function WideFooter({ onOpenState, explore, links, legal, showStates }) {
     <div style={{ ...inner, padding: "28px 24px 14px" }}>
       <div style={{ display: "grid", gridTemplateColumns: "minmax(170px, 1.3fr) repeat(3, minmax(0, 1fr))", columnGap: 20, rowGap: 18 }}>
         <div style={{ minWidth: 0 }}>
-          <div style={{ display: "flex", alignItems: "center", gap: 10 }}><BrandMark size={32}/><span style={{ fontSize: 21, fontWeight: 800, letterSpacing: -0.5, color: C.text, whiteSpace: "nowrap" }}>Climb<span style={{ color: C.blue }}>Match</span></span></div>
+          <div style={{ display: "flex", alignItems: "center", gap: 10 }}><BrandMark size={32}/><span style={{ fontSize: 21, fontWeight: 800, letterSpacing: -0.5, color: C.text, whiteSpace: "nowrap" }}>Climb<span style={{ color: C.brand }}>Match</span></span></div>
           <div style={{ fontSize: 13, lineHeight: 1.45, color: C.textSub, marginTop: 10, maxWidth: 220 }}>Find climbing partners, plan your next objective, and see current conditions.</div>
         </div>
         {col("Explore", explore || [])}{col("ClimbMatch", links)}{col("Legal", legal)}

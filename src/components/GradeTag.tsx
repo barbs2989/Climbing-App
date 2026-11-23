@@ -19,5 +19,5 @@ export interface GradeTagProps {
  */
 export default function GradeTag({text,size,on,style}: GradeTagProps){
   return <span aria-hidden="true" style={Object.assign({display:"inline-block",whiteSpace:"nowrap",fontSize:size||12,fontWeight:800,lineHeight:1.1,color:C.onSolid,padding:"1px 3px",borderRadius:4,
-    textShadow:"0 0 2px #000,0 0 3px #000,1px 1px 1px #000",background:on?"rgba(140,200,232,0.45)":"transparent",outline:on?"1.5px solid #fff":"none",pointerEvents:"none"},style||{})}>{text||"?"}</span>;
+    textShadow:"0 0 2px #000,0 0 3px #000,1px 1px 1px #000",background:on?"rgba(98,174,232,0.45)":"transparent",outline:on?"1.5px solid #fff":"none",pointerEvents:"none"},style||{})}>{text||"?"}</span>;
 }

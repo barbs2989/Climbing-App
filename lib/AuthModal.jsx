@@ -19,7 +19,7 @@ import { TEXT_TAP, TEXT_TAP_INLINE } from "./buttonStyles.js";
 import { CAPTCHA_ON, Turnstile } from "./captcha.jsx";
 import BrandMark from "../src/components/BrandMark.tsx";
 
-const c = { bg: "#12110f", card: "#1a1916", border: "#36322c", text: "#f1ede6", sub: "#a69d90", blue: "#8cc8e8", red: "#f85149", green: "#3fb950" };
+const c = { bg: "#12110f", card: "#1a1916", border: "#36322c", text: "#f1ede6", sub: "#a69d90", blue: "#62aee8", red: "#f85149", green: "#3fb950" };
 const provBtn = { width: "100%", boxSizing: "border-box", display: "flex", alignItems: "center", justifyContent: "center", gap: 8, padding: 12, minHeight: 46, borderRadius: 11, border: "1px solid " + c.border, fontSize: 15, fontWeight: 600, cursor: "pointer" };
 // A provider the project has not switched on yet ("coming soon") is drawn DARK and outlined: as two
 // white slabs at 60% opacity they were the brightest thing on the sign-in screen and read as broken.
@@ -323,7 +323,7 @@ export default function LoginScreen({ onClose, onAuthed, recovery, onRecovered, 
         {needsCaptcha && <Turnstile resetKey={mode + ":" + captchaRound} onToken={(t) => { setCaptcha(t); if (t) setErr(""); }} onError={setErr} />}
         {err && <div role="alert" style={{ color: c.red, fontSize: 12.5, marginBottom: 10, lineHeight: 1.45 }}>{err}</div>}
         {info && <div role="status" style={{ color: c.green, fontSize: 12.5, marginBottom: 10, lineHeight: 1.45 }}>{info}</div>}
-        <button onClick={done ? () => onRecovered && onRecovered() : go} disabled={busy} style={{ width: "100%", padding: 12, borderRadius: 11, border: "none", background: "#bf4d10", color: "#fff", fontSize: 15, fontWeight: 700, cursor: busy ? "default" : "pointer", opacity: busy ? 0.7 : 1 }}>
+        <button onClick={done ? () => onRecovered && onRecovered() : go} disabled={busy} style={{ width: "100%", padding: 12, borderRadius: 11, border: "none", background: "#b45309", color: "#fff", fontSize: 15, fontWeight: 700, cursor: busy ? "default" : "pointer", opacity: busy ? 0.7 : 1 }}>
           {busy ? "…" : done ? "Continue to ClimbMatch" : ACTION[mode]}
         </button>
         {onGuest && (mode === "in" || mode === "up") && (

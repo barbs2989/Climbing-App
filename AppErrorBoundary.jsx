@@ -24,7 +24,7 @@ const WRAP = { minHeight: "100vh", background: "#12110f", color: "#f1ede6", disp
 const CARD = { maxWidth: 420, width: "100%", background: "#1a1916", border: "1px solid #36322c",
   borderRadius: 14, padding: "20px 18px" };
 const BTN = { width: "100%", marginTop: 16, padding: "12px 14px", borderRadius: 10, border: "none",
-  background: "#8cc8e8", color: "#fff", fontSize: 15, fontWeight: 700, cursor: "pointer" };
+  background: "#62aee8", color: "#fff", fontSize: 15, fontWeight: 700, cursor: "pointer" };
 
 // swallowedChunk: a deploy's missing file that main.jsx is already reloading for (lib/chunkReload.js).
 export default class AppErrorBoundary extends Component {
