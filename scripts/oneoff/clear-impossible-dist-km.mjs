@@ -3,7 +3,8 @@
 // published trailhead-to-summit figure that agrees (research-data/route-ledger-2026-11-23/, PR #3766).
 // Owner's go-ahead 2026-11-23 ("clear them"); null beats a figure known to be wrong.
 // Not touched: Mount Fernow (corrected to 12.2), Big Four Spindrift Couloir (1.6 km matches the walk to the
-// couloir), Mount Adams North Ridge (disputed in the ledger).
+// couloir). Mount Adams North Ridge was added on a second run the same day (owner: "go"); a re-run skips
+// every row already cleared, so give each run its own --rollback folder or the earlier file is overwritten.
 //
 //   node scripts/oneoff/clear-impossible-dist-km.mjs                          # dry run
 //   node scripts/oneoff/clear-impossible-dist-km.mjs --write --rollback DIR
@@ -28,6 +29,8 @@ const T = {
   wa_castle_in_the_sky: ["wa_whatcom_peak", 13.7, 17],
   wa_glacier_peak_kennedy_glacier: ["wa_glacier_peak", 12.4, 14.2],
   wa_storm_king_southwest_scramble: ["wa_storm_king", 21.7, 24.9],
+  // Added the same day (owner: "go"): disputed in the ledger, published 16.1 km vs the track's 13.5 km.
+  wa_mount_adams_north_ridge: ["wa_mount_adams", 5.6, 10.7],
 };
 const ids = Object.keys(T);
 const k = requireServiceKey();
