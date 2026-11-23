@@ -10,7 +10,7 @@ import { FONT_DISPLAY } from "./fonts.js";
 // The sign-in screen's look (#2687) carried into every header: a warm glow from the top centre (blue before the 2026-11-23 palette)
 // fading into the page background (#12110f is C.bg, written out because DbAreaBrowser does not
 // import core), and a soft shadow under the box. Was a flat 160deg navy gradient.
-// THE CONTOUR TEXTURE (owner, 2026-11-23: "i liked the topo look"). public/topo.svg is two sets of
+// THE CONTOUR TEXTURE (owner, 2026-11-23: "i liked the topo look"). public/topo.svg is one set of
 // contour rings, every fifth an index line in the brand orange, as on a topo map. It is DECORATION
 // and describes no real place ("its just for visual"), so it may sit behind any header; it is a
 // background layer only, never inside a map or a chart. Drawn at its natural size in the box's

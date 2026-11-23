@@ -23,7 +23,7 @@ import { TOPO } from "./ScreenHero";
 // The sign-in screen wears the splash's contour texture at the splash's size, so the hand-over does not jump.
 const TOPO_GATE = TOPO.replace("right top", "right top / min(520px, 130vw) auto");
 
-const c = { bg: "#12110f", card: "#1a1916", border: "#36322c", text: "#f1ede6", sub: "#a69d90", blue: "#62aee8", red: "#f85149", green: "#3fb950" };
+const c = { bg: "#12110f", card: "#1a1916", border: "#36322c", text: "#f1ede6", sub: "#a69d90", blue: "#62aee8", brand: "#ff8a3d", red: "#f85149", green: "#3fb950" };
 const provBtn = { width: "100%", boxSizing: "border-box", display: "flex", alignItems: "center", justifyContent: "center", gap: 8, padding: 12, minHeight: 46, borderRadius: 11, border: "1px solid " + c.border, fontSize: 15, fontWeight: 600, cursor: "pointer" };
 // A provider the project has not switched on yet ("coming soon") is drawn DARK and outlined: as two
 // white slabs at 60% opacity they were the brightest thing on the sign-in screen and read as broken.
@@ -233,8 +233,8 @@ export default function LoginScreen({ onClose, onAuthed, recovery, onRecovered, 
       <div onClick={(e) => e.stopPropagation()} style={gate ? { width: "100%", maxWidth: 420, color: c.text } : { width: "100%", maxWidth: 380, background: c.card, border: "1px solid " + c.border, borderRadius: 16, padding: 20, color: c.text }}>
         {gate && (mode === "in" || mode === "up") && (
           <div style={{ textAlign: "center", margin: "18px 0 26px" }}>
-            <BrandMark size={76} color={c.blue} glow style={{ margin: "0 auto 14px" }} />
-            <div style={{ fontSize: 31, fontWeight: 800, letterSpacing: -0.6 }}>Climb<span style={{ color: c.blue }}>Match</span></div>
+            <BrandMark size={76} color={c.brand} glow style={{ margin: "0 auto 14px" }} />
+            <div style={{ fontSize: 31, fontWeight: 800, letterSpacing: -0.6 }}>Climb<span style={{ color: c.brand }}>Match</span></div>
             <div style={{ fontSize: 14, color: c.sub, lineHeight: 1.5, marginTop: 6 }}>Find partners, trusted beta, and a climbing community built on trust.</div>
           </div>
         )}
