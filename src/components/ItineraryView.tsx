@@ -16,7 +16,7 @@ import ActionIcon from "./ActionIcon.tsx";
      · AT A GLANCE: the day count, the trip totals (gain, loss, distance, moving time) as labelled
        tiles, and the plan's own one-sentence summary. The totals used to sit at the BOTTOM, under
        every day, and the summary was one of four grey paragraphs above the first day.
-     · The trust chips (confidence, trip reports, season) and the planning note (`cal`) as one
+     · The trust chips (trip reports, season) and the planning note (`cal`) as one
        "Before you go" row with its icon, not loose text.
      · One card per day with a DAY N tag in its header. The 30px number rail beside each card was
        dropped: it cost 40px of a ~330px phone column and is what forced the stat pills to shrink.
@@ -170,7 +170,6 @@ export default function ItineraryView({route,activity,onSeeReports,onSeeSeason,s
   const sum=(f: keyof StoredDay)=>days.reduce((a: number,d: StoredDay)=>a+(Number(d[f])||0),0);
   const totG=sum("gainFt"),totL=sum("lossFt"),totMi=sum("miles"),totH=days.reduce((a: number,d: StoredDay)=>a+hoursNum(d.hours),0);
   const dayN=days.length||(parsed.multi?parsed.days.length:0);
-  const conf=k.confidence;const confC=conf==="High"?C.green:conf==="Medium"?C.amber:C.red;
   const flagged=k.hazards.filter(h=>!h.official&&h.count>=2).length;
   const peakish=!["trad","sport"].includes(catOf(route));
   // `ink` draws the words in another colour than the tint: blue words on a blue box read badly (owner: "change text to white", check:blue-on-blue).
@@ -179,11 +178,11 @@ export default function ItineraryView({route,activity,onSeeReports,onSeeSeason,s
   // A plan object with a summary but no days still has something to say (review, 2026-11-11).
   const showSummary=hasPlan||!!(it&&it.totalNote);
   const hasMine=!!(myItin&&myItin.days&&myItin.days.length);
-  // The chips (confidence, reports, season, month by month) were drawn on EVERY route before the
+  // The chips (reports, season, month by month) were drawn on EVERY route before the
   // redesign, plan or not: they are the Plan tab's way to Reports and the season guide. They sit in the
   // at-a-glance card when there is one, and on their own above "No trip plan yet" when there is not.
+  // No confidence chip here: the TRIP PLAN heading already shows the level, and the page said it twice (owner, 2026-11-19).
   const chipRow=<div style={{display:"flex",gap:6,flexWrap:"wrap"}}>
-        {chip(conf+" confidence",confC)}
         {repN?<span {...clickable(()=>onSeeReports&&onSeeReports())} style={{cursor:"pointer"}} title="Jump to trip reports">{chip(repN+(repN===1?" trip report":" trip reports")+" →",C.blue,undefined,C.onSolid)}</span>:chip("0 trip reports",C.textMuted)}
         {route.season&&peakish?chip("Season: "+seasonShort(route.season),C.teal,<ActionIcon name="calendar" size={12} color={C.teal}/>):null}
         {/* The month-by-month guide, as a chip that GOES there (owner note 2026-10-28). */}
