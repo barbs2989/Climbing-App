@@ -1,5 +1,6 @@
 // Moved out of ClimbMatchCore.jsx verbatim so it can load lazily, off the first-paint
 // bundle. It is rendered only from App (ClimbMatch.jsx) behind React.lazy + Suspense.
+import { FONT_DISPLAY } from "./fonts.js";
 import { clickable } from "./clickable";
 import { logHasReport } from "./logReport.js";
 import { BTN_LG } from "./buttonStyles.js";
@@ -62,7 +63,7 @@ export default function TripReport({blockedIds,onBlock,ascent,onClose,onViewClim
      descent, the write-up -- and a section with nothing in it is not drawn. Route facts live on the route
      page, one tap away on the title. */
   const ownTrack=(ascent.gpxTrack&&Array.isArray(ascent.gpxTrack.pts)&&ascent.gpxTrack.pts.length>1)?ascent.gpxTrack:((trackQ.data&&Array.isArray(trackQ.data.pts)&&trackQ.data.pts.length>1)?trackQ.data:null);
-  const SH={fontSize:13,fontWeight:800,color:C.text,textTransform:"uppercase",letterSpacing:0.4,marginBottom:8,borderLeft:"3px solid "+C.blue,paddingLeft:9};
+  const SH={fontFamily:FONT_DISPLAY,fontSize:18,lineHeight:1.15,fontWeight:600,color:C.text,textTransform:"uppercase",letterSpacing:0.7,marginBottom:8};
   const CARD={background:C.card,borderRadius:11,padding:"12px 14px",marginBottom:12,border:"1px solid "+C.border};
   /* A sub-header was 10.5px C.textMuted, so it read as a faint caption under the section heading. Now it is the same bright 12.5px header the Log form uses, and each sub-section starts under a rule. */
   const SUB={fontSize:12.5,fontWeight:800,color:C.text,textTransform:"uppercase",letterSpacing:0.6,marginTop:14,marginBottom:8,paddingTop:12,borderTop:"1px solid "+C.borderHi};
