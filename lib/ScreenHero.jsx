@@ -13,9 +13,10 @@ import { FONT_DISPLAY } from "./fonts.js";
 // THE CONTOUR TEXTURE (owner, 2026-11-23: "i liked the topo look"). public/topo.svg is two sets of
 // contour rings, every fifth an index line in the brand orange, as on a topo map. It is DECORATION
 // and describes no real place ("its just for visual"), so it may sit behind any header; it is a
-// background layer only, never inside a map or a chart. Regenerate it with
-// scripts/oneoff/gen-topo.mjs. The base path is read the way lib/offline.js reads it, so a guard
-// that loads this file under Node (no import.meta.env) still gets a string.
+// background layer only, never inside a map or a chart. Drawn at its natural size in the box's
+// top-right corner: stretched to the box height it ran orange lines through body text. Regenerate
+// it with scripts/oneoff/gen-topo.mjs. The base path is read the way lib/offline.js reads it, so a
+// guard that loads this file under Node (no import.meta.env) still gets a string.
 const BASE = (() => { try { return (import.meta.env && import.meta.env.BASE_URL) || "/"; } catch (e) { return "/"; } })();
 export const TOPO = 'url("' + BASE + 'topo.svg") right top no-repeat';
 export const HERO_BG = TOPO + ", radial-gradient(130% 120% at 50% 0%, #2a1a12 0%, #12110f 78%)";

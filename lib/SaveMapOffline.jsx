@@ -61,8 +61,9 @@ function mediaNote(m) {
   return parts.join(" · ");
 }
 // What the save says about its images: how many landed, and never "saved" for ones that did not.
-function mediaMessage(md) {
+function mediaMessage(md, mapRefused) {
   if (!md || !(md.photosTotal + md.toposTotal)) return "";
+  if (md.noWrite) return mapRefused ? "" : " This browser won’t keep its photos — a private browsing window doesn’t store them.";
   const got = md.photos + md.topos, all = md.photosTotal + md.toposTotal;
   if (md.full) return " This device is full: " + got + " of " + plural(all, "image") + " saved.";
   if (got < all) return " " + got + " of " + plural(all, "image") + " saved — tap Update with a better signal for the rest.";
@@ -70,7 +71,8 @@ function mediaMessage(md) {
 }
 // What to tell the climber once a save returns. The page is on the device in every branch.
 function savedMessage(res) {
-  const m = res && res.map, pics = mediaMessage(res && res.media);
+  const m = res && res.map, refused = !!(m && m.reason === "no_write"), pics = mediaMessage(res && res.media, refused);
+  if (refused) return "This page is saved, but this browser won’t keep its map or photos — a private browsing window doesn’t store them. Open the climb in a normal window and tap Save offline.";
   if (!m || !m.total) return "Saved on this device — this page opens with no signal. No map was saved for this climb." + pics;
   if (!m.ok) return (m.reason === "quota" ? "This page is saved, but the map didn’t fit on this device — free some space and tap Retry." : "This page is saved on this device. The map didn’t download — tap Retry with a better signal.") + pics;
   if (m.missing) return "Saved with " + Math.round(100 * m.saved / m.total) + tx("% of the map — tap Retry with a better signal for the rest.") + pics;
