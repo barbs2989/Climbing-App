@@ -101,7 +101,7 @@ Every number for a real climber comes from `leaderboard()` on the server; the cl
   the area, the state and the country. On Ranks By area only that area's points count, and a climber who
   contributed there without logging a climb there is listed. Since 0338 a logged climb (1, once per route) and a trip report (2, once per route per month) count too, only when shared with Everyone.
   Weights follow Mountain Project (area 15 · route 10 · photo 5 · comment 1); once-per-place follows theCrag's karma.
-- **Who is on an area’s TOP CONTRIBUTORS card (0479)**: `area_top_contributors` leaves out the climbers `leaderboard()` leaves out. A climber who turned *Show me on leaderboards* off is on nobody’s card (their own included: the card has no "you are hidden" line) and holds no Top Contributor badge; a signed-in reader is not shown a contributor they blocked or who blocked them. Signed out, blocks change nothing, as with profile reads (0095). Before 0479 the card ranked everyone in the ledger: a hidden climber stayed on it by name, and a blocked reader saw a nameless *Climber* row.
+- **Who is on an area’s TOP CONTRIBUTORS card (0486)**: `area_top_contributors` leaves out the climbers `leaderboard()` leaves out. A climber who turned *Show me on leaderboards* off is on nobody’s card (their own included: the card has no "you are hidden" line) and holds no Top Contributor badge; a signed-in reader is not shown a contributor they blocked or who blocked them. Signed out, blocks change nothing, as with profile reads (0095). Before 0486 the card ranked everyone in the ledger: a hidden climber stayed on it by name, and a blocked reader saw a nameless *Climber* row.
 - The demo board mirrors the same rules in `meStats` for your own row.
 
 ## 3. Files
@@ -113,7 +113,7 @@ Every number for a real climber comes from `leaderboard()` on the server; the cl
 | `lib/Help.jsx` | `Help` (its `topic` prop opens one section) |
 | `lib/db.js` | `useLeaderboard`, `useTopClimbs`, `useRankBreakdown` |
 | `ClimbMatchCore.jsx` | `HELP_FEATS` (the Ranks section holds the scoring text), `tickTypesFor`, `NONCOMPLETION_TICKS`, `lbRowName` |
-| `supabase/migrations` | 0194, 0203, 0208, 0235, 0323, 0333, 0338, 0357 (`rank_breakdown`), 0373, 0379 (top 100 per board), 0479 (the area card honours the leaderboard switch and blocks) |
+| `supabase/migrations` | 0194, 0203, 0208, 0235, 0323, 0333, 0338, 0357 (`rank_breakdown`), 0373, 0379 (top 100 per board), 0486 (the area card honours the leaderboard switch and blocks) |
 
 ## 4. Data
 `climb_logs`, `climb_log_confirmations`, `routes` (`grade_system`, `grade_num`, `gain_ft`, `length_m`, `classic`,
@@ -130,7 +130,7 @@ Every number for a real climber comes from `leaderboard()` on the server; the cl
 `check:grade-parser` holds `lib/rankGrade.js` equal to `rank_grade()` in the newest migration that defines it.
 Hand-run probes: `scripts/oneoff/probe-ranks-anti-padding.sql`, `probe-ranks-anti-collusion.sql`,
 `probe-ranks-0323.sql`, `probe-ranks-0379.sql`; `scripts/oneoff/probe-ranks-renders.mjs`;
-`scripts/oneoff/probe-top-contributors-0479.mjs` (replays the migrations offline, then reads the area card, the badge and Ranks By area as each role with a climber hidden and with a block: 36/36).
+`scripts/oneoff/probe-top-contributors-0486.mjs` (replays the migrations offline, then reads the area card, the badge and Ranks By area as each role with a climber hidden and with a block: 36/36).
 
 ## 7. Last significant change
 - **Ranks audit (0323)**: one grade scale across V/WI/M, top-rope/follow a letter lower, conditions reports out,
