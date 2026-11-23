@@ -69,7 +69,7 @@ handlers through `RouteDetail` and `TripReport` to `Comments`. Both were fixed i
 without an app-wide store:
 
 - **`ClimberCtx`**, a context local to `lib/DbAreaBrowser.jsx`. `DbAreaBrowser` provides
-  `{ wishlist, profile, completedIds, rankSuggested, discSlots }`; `DbSuggestedClimbs` and
+  `{ wishlist, profile, completedIds, rankSuggested, discSlots, slotQuery, stated }`; `DbSuggestedClimbs` and
   `ObjectivesPanel` read it with `useContext`. `AreaPage` no longer carries five props it never
   read. `onOpenRoute` and `uDistMi` stay props: `AreaPage` itself hands them to five children.
 - **`commentApi`**, one object prop `{ onAdd, onEdit, onDelete, onLike, onReply }` (plus
@@ -85,7 +85,7 @@ A new value for those panels goes into `ClimberCtx`; a new comment action goes i
 |---|---|---|---|
 | `AuthContext` (`src/AuthContext.tsx`) | the whole app (`main.jsx`) | `{ session, user, loading, login, logout }` | the session is read by screens in five files; one listener instead of one per caller |
 | `ConfidenceCtx` (`lib/confidence.jsx`) | `App` provides it around `RouteDetail` only | `{ levels, routeId, onFlag }` | the section headings (`SL` in core) are drawn by many components; null off the route page |
-| `ClimberCtx` (`lib/DbAreaBrowser.jsx`) | the Climbs area browser | `{ wishlist, profile, completedIds, rankSuggested, discSlots }` | the one measured drilling cluster, above |
+| `ClimberCtx` (`lib/DbAreaBrowser.jsx`) | the Climbs area browser | `{ wishlist, profile, completedIds, rankSuggested, discSlots, slotQuery, stated }` | the one measured drilling cluster, above |
 
 `usePasswordRecovery()` (`lib/auth.js`) keeps a listener of its own on purpose: it waits for the
 `PASSWORD_RECOVERY` event, which can fire before React mounts, and latches it at import time.

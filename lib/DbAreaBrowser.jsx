@@ -47,7 +47,7 @@ function AreaDocTitle({ name }) {
   return null;
 }
 
-export default function DbAreaBrowser({ areaDiscussion, jumpToFinderReq, onSignIn, onOpenRoute, onOpenReport, C, bookmarks, onToggleBookmark, wishlist, profile, completedIds, rankSuggested, discSlots, jumpToStateReq, jumpToAreaReq, jumpToNearReq, uElev, uElevN, uElevUnit, uDistMi, onAreaContext, onFireMap, onAddClimb, onAddArea, TopContributors, rootHeader, onSuggestAreaEdit, myId, PartnerRow, uid, myListings, onListMe, onFindPartnersInArea, onViewProfile, notify, onStartCrew, onCrewsHere, onGroupsHere, openCrewCountAt, onToggleWish, userLists, onToggleListRoute }) {
+export default function DbAreaBrowser({ areaDiscussion, jumpToFinderReq, onSignIn, onOpenRoute, onOpenReport, C, bookmarks, onToggleBookmark, wishlist, profile, completedIds, rankSuggested, discSlots, slotQuery, statedGrades, jumpToStateReq, jumpToAreaReq, jumpToNearReq, uElev, uElevN, uElevUnit, uDistMi, onAreaContext, onFireMap, onAddClimb, onAddArea, TopContributors, rootHeader, onSuggestAreaEdit, myId, PartnerRow, uid, myListings, onListMe, onFindPartnersInArea, onViewProfile, notify, onStartCrew, onCrewsHere, onGroupsHere, openCrewCountAt, onToggleWish, userLists, onToggleListRoute }) {
   // Start where the Climbs tab stood when you last left it (lib/climbsReturn.js): picking another tab
   // unmounts this component, and the owner wants Climbs to reopen on the page you were looking at.
   const saved = useRef(getClimbsAreaPos()).current;
@@ -60,7 +60,7 @@ export default function DbAreaBrowser({ areaDiscussion, jumpToFinderReq, onSignI
   const wide = useWideScreen();
   // A view handed in with a Near me request (Home's map: { lat, lng, zoom }), and whether to centre on the climber.
   const [nearLocate, setNearLocate] = useState(0);
-  const climber = useMemo(() => ({ wishlist, profile, completedIds, rankSuggested, discSlots }), [wishlist, profile, completedIds, rankSuggested, discSlots]);
+  const climber = useMemo(() => ({ wishlist, profile, completedIds, rankSuggested, discSlots, slotQuery: slotQuery || null, stated: statedGrades || null }), [wishlist, profile, completedIds, rankSuggested, discSlots, slotQuery, statedGrades]);
   // The jump requests below are App props that STAY set once handled, so a remount would re-run the
   // last one (a search from an hour ago) over the position restored above. The ids already handled
   // live in lib/climbsReturn.js with the position, mutated in place as each request is handled.
