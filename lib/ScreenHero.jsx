@@ -1,3 +1,4 @@
+import { FONT_DISPLAY } from "./fonts.js";
 // THE HEADLINE BOX at the top of a screen. Every main tab used to hand-inline its own copy, each
 // titled for the TAB ("Logbook") while the sub-view under it changed -- so Logbook › Completed drew
 // a SECOND box ("✓ My Ascents") mid-screen, and Climbs › Florida stacked Florida's box under a
@@ -6,9 +7,9 @@
 //
 // It lives in lib/ rather than ClimbMatchCore.jsx so DbAreaBrowser, which does not import core,
 // draws the same box (it used to keep its own copies of these two colours).
-// The sign-in screen's look (#2687) carried into every header: a blue glow from the top centre
+// The sign-in screen's look (#2687) carried into every header: a warm glow from the top centre (blue before the 2026-11-23 palette)
 // fading into the page background (#12110f is C.bg, written out because DbAreaBrowser does not
-// import core), and a soft blue shadow under the box. Was a flat 160deg navy gradient.
+// import core), and a soft shadow under the box. Was a flat 160deg navy gradient.
 export const HERO_BG = "radial-gradient(130% 120% at 50% 0%, #2a1a12 0%, #12110f 78%)";
 // Home's banner wears the sign-in screen's own background, unchanged: Home is the screen you land
 // on from it, so the hand-over keeps the same light.
@@ -40,7 +41,7 @@ export function ScreenHero({ C, title, sub, right, children, mb = 14, quiet = fa
   return (
     <div style={{ background: HERO_BG, boxShadow: HERO_SHEEN, borderRadius: 14, padding: 16, marginBottom: mb, border: "1px solid " + C.border }}>
       <div style={{ display: "flex", alignItems: "flex-start", gap: 10 }}>
-        <h1 style={{ flex: 1, minWidth: 0, margin: 0, fontSize: 24, fontWeight: 800, letterSpacing: -0.5, lineHeight: 1.25, color: C.text, overflowWrap: "anywhere" }}>{title}</h1>
+        <h1 style={{ flex: 1, minWidth: 0, margin: 0, fontFamily: FONT_DISPLAY, fontSize: 30, fontWeight: 700, letterSpacing: 0, lineHeight: 1.12, color: C.text, overflowWrap: "anywhere" }}>{title}</h1>
         {right || null}
       </div>
       {sub ? <div style={{ fontSize: 12.5, color: C.textMuted, lineHeight: 1.5, marginTop: 4 }}>{sub}</div> : null}
