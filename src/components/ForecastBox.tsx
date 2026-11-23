@@ -50,6 +50,7 @@ const ALERT_TTL = 10 * 60 * 1000; // alerts are issued and cancelled within the 
 // flags never reads as "it's in" or "it's safe".
 const BLIND = {
   glacier: "A forecast can’t see whether bridges are open or a boot track is in — check recent reports.",
+  snow: "A forecast can’t see how firm the snow is or whether a boot track is in — check recent reports.",
   alpineice: "A forecast can’t see whether there is ice on the line, or verglas in the shade — check recent reports.",
   waterfall: "A forecast can’t see whether the ice is in, or still attached — that takes a recent report.",
   cragmixed: "A forecast can’t see whether turf and loose blocks are frozen in — that takes a recent report.",
@@ -139,7 +140,7 @@ export default function ForecastBox({ route, calc, kind, terrain, pt }: Forecast
     days.forEach(function (d, k) {
       if (d.date < today) return;
       const fs = faceSun[d.date];
-      let r = dayFlags(fc, days, k, { kind, rockToo: kind === "glacier" && catOf(route) === "alpine", terrain, highFt: pt.elevFt != null ? pt.elevFt : groundFt(fc), snowFt: floor ? floor.ft : null, legs, sun: fs && fs.bands ? fs : null });
+      let r = dayFlags(fc, days, k, { kind, rockToo: kind === "glacier" && (catOf(route) === "alpine" || catOf(route) === "scrambling"), terrain, highFt: pt.elevFt != null ? pt.elevFt : groundFt(fc), snowFt: floor ? floor.ft : null, legs, sun: fs && fs.bands ? fs : null });
       const ms = sp ? modelSpread(sp, d.date, null, daySummary(fc, d).precip) : null;
       if (ms && ms.over.length) r = Object.assign({}, r, { flags: r.flags.concat([{ key: "models-disagree", level: "caution", v: ms }]) });
       const al = alerts && alerts.data && !alerts.data.outside ? alertsForDay(normAlerts(alerts.data), d.date, fc) : [];
@@ -213,14 +214,14 @@ export default function ForecastBox({ route, calc, kind, terrain, pt }: Forecast
     if (legs.floor) {
       startEl = <div style={{ fontSize: 12.5, color: C.textSub, lineHeight: 1.5 }}>{P.publishedIsWholeDay
         ? (fromCamp ? "No start time: this climb’s published time is one figure for the whole trip, with no summit day from camp to count back from."
-          : "No start time: this climb’s published time is one whole-day figure, with no split between the walk in and the climb, and a start for a glacier or ice climb is counted back from those two separately.")
+          : "No start time: this climb’s published time is one whole-day figure, with no split between the walk in and the climb, and a start for a " + (kind === "snow" ? "snow climb" : "glacier or ice climb") + " is counted back from those two separately.")
         : "No start time: the Plan tab’s estimate for this climb is only a minimum (part of the approach or the climbing isn’t on file), and a start counted back from a minimum would be too late."}</div>;
     } else if (day.start) {
       const st = floorQ(day.start.at), daysEarly = day.daysEarly;
       const offBy = clockOf(fc, day.start.at + legs.up * 3600), storm = day.thunder && day.thunder.likely ? "forecast" : "possible";
       const why = day.start.why === "snow"
         ? (legs.wholeDay ? "to do the " + hrs(legs.wholeDay) + " day and be back down by " : legs.fromCamp ? "to climb " + hrs(legs.up) + " from camp and be back down by " : "to climb " + hrs(legs.up) + " and walk " + hrs(legs.down) + " back down by ") + clockOf(fc, day.softAt) + ", when the snow at " + uElev(floor.ft) + " starts to soften"
-        : day.start.why === "snow-noon" ? (legs.wholeDay ? "to do the " + hrs(legs.wholeDay) + " day and be back down by " : legs.fromCamp ? "to climb " + hrs(legs.up) + " from camp and be back there by " : "to climb " + hrs(legs.up) + " and walk " + hrs(legs.down) + " back down by ") + clockOf(fc, day.start.backBy) + ": parties on glaciers start in the dark and plan to be off the snow by midday, while the night’s freeze still holds and before the sun softens it and weakens the bridges"
+        : day.start.why === "snow-noon" ? (legs.wholeDay ? "to do the " + hrs(legs.wholeDay) + " day and be back down by " : legs.fromCamp ? "to climb " + hrs(legs.up) + " from camp and be back there by " : "to climb " + hrs(legs.up) + " and walk " + hrs(legs.down) + " back down by ") + clockOf(fc, day.start.backBy) + (kind === "snow" ? ": parties on snow climbs start early and plan to be off the snow by midday, while the night’s freeze still holds and before the sun softens it" : ": parties on glaciers start in the dark and plan to be off the snow by midday, while the night’s freeze still holds and before the sun softens it and weakens the bridges")
           + (day.start.forecast ? ". The forecast alone would allow a start as late as " + clockOf(fc, floorQ(day.start.forecast.at)) + ", but that has no margin" : ". The forecast sets no earlier deadline today")
         : day.start.why === "sun" ? (legs.fromCamp ? "to climb " + hrs(legs.up) + " from camp" : "to walk in (" + hrs(legs.hike) + ") and climb " + hrs(legs.tech)) + " and be above " + uElev(Math.ceil(day.start.sun.ft / 50) * 50) + " by " + clockOf(fc, day.start.sun.sunAt) + ", when the sun reaches steep ground that sheds onto the line above that height"
         : day.start.why === "storm-descent" ? "to reach the top" + (legs.wholeDay ? "" : " (" + hrs(legs.up) + ")") + " and start down by " + offBy + ", before the thunderstorms " + storm + " this afternoon"

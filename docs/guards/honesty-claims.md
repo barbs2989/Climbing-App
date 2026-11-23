@@ -1225,6 +1225,64 @@ crevasse-bridge, snow-deadline, sun-on-face and avalanche-panel logic. An alpine
 `glacier: "yes"` is now kind `glacier`, and `ctx.rockToo` keeps the rock-weather flags (verglas, wet rock, showers)
 on it. The evidence is the terrain read, never the discipline. `check:alpine-conditions` holds it.
 
+## Glacier warnings only where there is a glacier (2026-11-23, migration 0490)
+
+Owner: "Some routes that don't have a glacier don't need overnight freeze warnings… We don't want to be giving
+warnings about snow bridges etc when there's usually not those when people typically climb that route."
+
+**What was wrong.** `condKind` sent EVERY `mountaineering` route to kind `glacier` unless its text proved there
+was no snow, and `dayFlags` set `glacier: true` on the no-refreeze flag for every kind-`glacier` route, so a
+Class 2 walk-up read "the snow starts soft and bridges are weak". `routeTerrain().glacier === "yes"` was a WORD
+match (glacier, crevasse, picket, rope team anywhere in the text), and the 2026-11-12 dry-in-season review only
+reached alpine rock and scrambles.
+
+**Measured on Washington (1,280 alpine-type routes, 753 carrying snow flags):** 409 routes on the glacier card,
+130 with no glacier travel, 72 of those dry in their normal season; 661 routes printing "bridges are weak", 296
+of them with no glacier; and 64 of the 328 routes the word match called glaciated were reviewed as no glacier
+travel. The reverse gap: 8 scrambles and 3 alpine-rock routes DO cross a crevassed glacier (Jack Mountain North
+Ridge on the Nohokomeen, Tricouni on the Borealis) and never had the glacier card.
+
+**What decides now: two reviewed facts per route**, `routes.glacier_travel` and `routes.snow_in_season`, each
+`'yes' | 'no' | null`, about the NORMAL line (approach, climb, normal descent) in its NORMAL season. The rule is
+`research-data/glacier-travel-2026-11-23/RULE.md`. `lib/terrain.js` reads them before the route's text:
+`glacierTravel` is `"yes"` / `"no"` from the column, `"likely"` for a glacier word in unreviewed text, else
+`"unknown"`; `snowInSeason` is the column, else the text's `snow`. Null is "not settled", never "no".
+
+| Route facts | Kind | Freeze / freezing-level flags |
+|---|---|---|
+| glacier travel reviewed yes (any of mountaineering, alpine, scrambling) | `glacier` | "…and bridges are weak" |
+| mountaineering, nothing settled, or a glacier word in unreviewed text | `glacier` | "…; any snow bridges are weak" |
+| mountaineering reviewed NO glacier, snow yes or not settled | `snow` ("Snow climb") | "…: slow steps and wet slides on steep slopes" |
+| mountaineering reviewed dry in season | `scramble` | none |
+| alpine ice, scramble, alpine rock | unchanged kinds | bridges only on evidence: reviewed yes states it, a word in the text says "any", nothing says nothing |
+
+`bridgeWord(kind, terrain)` is the one place that decides how a flag may speak of bridges; `isSnowKind` is the
+one list of kinds timed around the snow (the midday practice start, the sun on the face). The warm-afternoon
+flag says "rock and ice fall" only where there is ice above (`v.ice`), else "wet snow slides and rockfall".
+
+**The research (WA).** Each snow-flagged route's own snow and glacier sentences were read by one reviewer; the
+99 riskiest "no glacier" verdicts (text names a glacier, or the call was from memory) got an independent second
+read with the first verdict withheld, and any disagreement fell back to unsure (16 did); then all 223 unsure
+routes were researched online. Result: glacier travel yes 298 / no 414 / not settled 41; snow not settled 38.
+A "no" that rested on absence of evidence, or that the researcher called its thinnest, was held at not settled.
+`scripts/oneoff/load-glacier-travel.mjs` wrote them (unsure as NULL), together with the 2026-11-12 dry list as
+`snow_in_season = 'no'`, and re-read every row; the built-in id list that held that review, and the script
+that generated it, are gone (the guard fails if the list comes back).
+
+**Traps.**
+- **Wrongly dropping a warning is the dangerous direction**, so nothing unreviewed loses one: an unreviewed
+  mountaineering route in another state still gets the glacier card, now worded "any snow bridges".
+- **A text match must never be read as "yes" again.** `glacierTravelOf()` maps a terrain object without the
+  field (a fixture, an older cached row) to `"likely"`, not `"yes"`.
+- **Both facts are editable** (`glacierTravel`, `snowInSeason` in SuggestFix, `SS` and `contribution_fields`),
+  and an approved edit reaches the card through the client overlay onto `route.glacierTravel`, which is why the
+  form key and the route property are the same string. Not asked when a climb is ADDED (a new climb starts
+  unsettled): `NOT_AT_CREATION` in `check:add-route-fields` says why.
+- **`npm run audit:glacier-travel -- --state <slug>`** is the worklist for the next state: snow-flagged routes
+  with an unsettled answer. It reads the stored discipline, so a trad route the page calls alpine is outside it.
+- **Still on a guess:** every state but Washington. Section 1 and 2 of `check:alpine-conditions` hold the rule
+  (21 assertions); the data is only as good as the review.
+
   - **HOUR BY HOUR + THE GUST WINDOW (2026-10-08, owner: "clear and exact and accurate science").**
     Section 12 of the guard. Three things it holds, each measured, not assumed:
     - **Every box names its OWN period.** Open-Meteo (open-meteo.com/en/docs) stamps hour T and means the

@@ -129,6 +129,18 @@ eq("...while an alpine rock grade stays alpine rock", k({ discipline: "alpine", 
 eq("a GLACIATED alpine route (El Dorado East Ridge: Inspiration Glacier, then 5.7) keeps the GLACIER card", k({ discipline: "alpine", grade: "5.7" }, { glacier: "yes", snow: "yes" }, "alpine"), "glacier");
 eq("...but an alpine route with snow and NO glacier stays alpine rock (snow legs only)", k({ discipline: "alpine", grade: "5.7" }, { glacier: "no", snow: "yes" }, "alpine"), "alpinerock");
 eq("...and a glaciated alpine route graded AI/WI is still alpine ice", k({ discipline: "alpine", grade: "AI3" }, { glacier: "yes" }, "alpine"), "alpineice");
+/* GLACIER WARNINGS ONLY WHERE THERE IS A GLACIER (owner, 2026-11-23). The reviewed facts (routes.glacier_travel,
+   routes.snow_in_season, read by lib/terrain.js as glacierTravel / snowInSeason) decide the kind, not the
+   discipline alone. WA audit: 130 of 409 glacier-card routes had no glacier travel, 72 of them dry in season. */
+eq("mountaineering reviewed NO glacier, snow in season (Mount Adams South Climb) is a SNOW CLIMB, not a glacier", k({ discipline: "mountaineering" }, { glacierTravel: "no", glacier: "no", snow: "yes", snowInSeason: "yes" }), "snow");
+eq("...reviewed no glacier with the snow not settled is still a snow climb (the freeze may matter; bridges do not)", k({ discipline: "mountaineering" }, { glacierTravel: "no", glacier: "no", snow: "unknown", snowInSeason: "unknown" }), "snow");
+eq("...reviewed DRY on a normal day (a Class 2 walk-up) is read as a scramble: no snow card at all", k({ discipline: "mountaineering" }, { glacierTravel: "no", glacier: "no", snow: "yes", snowInSeason: "no" }), "scramble");
+eq("...reviewed glacier travel is the glacier card", k({ discipline: "mountaineering" }, { glacierTravel: "yes", glacier: "yes", snow: "yes", snowInSeason: "yes" }), "glacier");
+eq("...a glacier word in text nobody reviewed keeps the glacier card (the careful reading)", k({ discipline: "mountaineering" }, { glacierTravel: "likely", glacier: "yes", snow: "yes" }), "glacier");
+eq("a SCRAMBLE reviewed as crossing a crevassed glacier (Jack Mountain North Ridge) gets the GLACIER card", k({ discipline: "scrambling" }, { glacierTravel: "yes", glacier: "yes", snow: "yes", snowInSeason: "yes" }), "glacier");
+eq("...but a glacier WORD in an unreviewed scramble's text does not promote it", k({ discipline: "scrambling" }, { glacierTravel: "likely", glacier: "yes", snow: "yes" }), "scramble");
+eq("an alpine route reviewed NO glacier is alpine rock even when its text names one", k({ discipline: "alpine", grade: "5.7" }, { glacierTravel: "no", glacier: "no", snow: "yes" }, "alpine"), "alpinerock");
+eq("the snow climb carries the snow legs and the snow timing; it is one of the snow kinds", [A.hasSnowLegs("snow", {}), A.isSnowKind("snow"), A.isSnowKind("glacier"), A.isSnowKind("alpineice"), A.isSnowKind("scramble")], [true, true, true, true, false]);
 eq("a sport route gets no alpine kind", k({ discipline: "sport" }, {}, "sport"), null);
 eq("the alpine set and the crag score's set are DISJOINT", A.ALPINE_COND_DISCIPLINES.filter((d) => A.CRAG_SCORE_DISCIPLINES.includes(d)), []);
 
@@ -148,6 +160,31 @@ eq("a night with the freezing level above the snow is flagged: no refreeze (warn
 eq("...and that day gets NO snow-anchored start: there is no frozen window to be back down in", [warm.start, warm.noFreeze], [null, true]);
 const nfText = (kind, terrain) => { const r = run(forecast(() => ({ fl: 9000 })), { kind, terrain, highFt: 10000, snowFt: 7000, legs: LEGS }); const f = r.flags.find((x) => x.key === "no-refreeze"); return f ? A.flagText(f) : null; };
 eq("'bridges are weak' only where there may be a glacier: yes on a glacier, no on a snow scramble with none", [/bridges/.test(nfText("glacier", { snow: "yes", glacier: "yes" }) || ""), /bridges/.test(nfText("scramble", { snow: "yes", glacier: "no" }) || "x bridges")], [true, false]);
+/* Owner, 2026-11-23: "we don't want to be giving warnings about snow bridges etc when there's usually not those
+   when people typically climb that route". Bridges are STATED only on reviewed glacier travel, said as "any snow
+   bridges" where nothing is settled, and never mentioned on a route reviewed as having no glacier. */
+{
+  const GL = /bridge|crevasse|serac|ice fall/i;
+  const yes = { glacierTravel: "yes", glacier: "yes", snow: "yes", snowInSeason: "yes" }, none = { glacierTravel: "no", glacier: "no", snow: "yes", snowInSeason: "yes" }, open = { glacierTravel: "unknown", glacier: "unknown", snow: "unknown", snowInSeason: "unknown" }, word = { glacierTravel: "likely", glacier: "yes", snow: "yes", snowInSeason: "yes" };
+  eq("no-refreeze on reviewed glacier travel STATES the bridges", nfText("glacier", yes), "No overnight freeze at 7,000 ft — the snow starts soft and bridges are weak");
+  eq("...on a glacier card with nothing settled it says 'any snow bridges'", [nfText("glacier", open), nfText("glacier", word)], Array(2).fill("No overnight freeze at 7,000 ft — the snow starts soft; any snow bridges are weak"));
+  eq("...on a SNOW CLIMB it is worded for snow and never names a bridge", nfText("snow", none), "No overnight freeze at 7,000 ft — the snow starts soft: slow steps and wet slides on steep slopes");
+  eq("...nor on any kind whose route was reviewed as having NO glacier, the old glacier card included", ["glacier", "snow", "alpineice", "scramble", "alpinerock"].filter((kd) => GL.test(nfText(kd, none) || "")), []);
+  eq("...alpine ice, a scramble and alpine rock name bridges only on evidence: reviewed yes states it, a word in the text says 'any', nothing says nothing", ["alpineice", "scramble", "alpinerock"].map((kd) => [nfText(kd, yes), nfText(kd, word), nfText(kd, Object.assign({}, open, { snow: "yes", snowInSeason: "yes" }))].map((s) => /and bridges are weak/.test(s) ? "stated" : /any snow bridges/.test(s) ? "any" : "none").join("/")), Array(3).fill("stated/any/none"));
+  const flText = (kind, terrain) => { const r = run(forecast((d, h) => ({ fl: h >= 6 ? 13000 : 5000 })), { kind, terrain, highFt: 10000, snowFt: 7000, legs: LEGS }); const f = r.flags.find((x) => x.key === "fl-above"); return f ? A.flagText(f) : null; };
+  eq("a warm afternoon above the summit: 'rock and ice fall' where there is ice above (glacier, alpine ice), 'wet snow slides and rockfall' on a snow climb", [flText("glacier", yes), flText("alpineice", none), flText("snow", none)].map((s) => /rock and ice fall$/.test(s || "") ? "ice" : /wet snow slides and rockfall$/.test(s || "") ? "snow" : s), ["ice", "ice", "snow"]);
+  const dryWalkUp = run(forecast(() => ({ fl: 12000 })), { kind: A.condKind({ discipline: "mountaineering" }, { glacierTravel: "no", glacier: "no", snow: "yes", snowInSeason: "no" }), terrain: { glacierTravel: "no", glacier: "no", snow: "yes", snowInSeason: "no" }, highFt: 10000, snowFt: 7000, legs: LEGS });
+  eq("a MOUNTAINEERING walk-up reviewed dry in season gets NO freeze or freezing-level flags (it had all three)", ["fl-above-night", "fl-above", "no-refreeze"].filter((x) => has(dryWalkUp, x)), []);
+  const snowNoon = run(forecast(() => ({ fl: 4000 })), { kind: "snow", terrain: none, highFt: 10000, snowFt: 7000, legs: LEGS });
+  eq("a snow climb on a frozen night still starts early: back off the snow by noon, like a glacier", snowNoon.start && [clock(snowNoon.start.at), snowNoon.start.why], [2, "snow-noon"]);
+  const { routeTerrain } = await import(pathToFileURL(path.join(ROOT, "lib", "terrain.js")).href);
+  const named = { discipline: "mountaineering", grade: "Class 2", beta: "Fine views of the glacier across the valley; carry a picket for the steep snow." };
+  eq("routeTerrain: the reviewed column wins over the text, both ways and in both spellings; unreviewed text with a glacier word is only 'likely'", [routeTerrain(Object.assign({ glacier_travel: "no" }, named)).glacierTravel, routeTerrain(Object.assign({ glacierTravel: "no" }, named)).glacier, routeTerrain(Object.assign({ glacier_travel: "yes" }, { discipline: "scrambling", grade: "Class 3" })).glacierTravel, routeTerrain(named).glacierTravel, routeTerrain(Object.assign({ glacier_travel: "maybe" }, named)).glacierTravel], ["no", "no", "yes", "likely", "likely"]);
+  eq("routeTerrain: a reviewed snow_in_season is the answer; reviewed glacier travel is never dry", [routeTerrain(Object.assign({ snow_in_season: "no" }, named, { glacier_travel: "no" })).snowInSeason, routeTerrain({ discipline: "mountaineering", snow_in_season: "yes", glacier_travel: "no" }).snowInSeason, routeTerrain({ discipline: "mountaineering", snow_in_season: "no", glacier_travel: "yes" }).snowInSeason], ["no", "yes", "yes"]);
+  const card = readAppFile(path.join(ROOT, "lib", "AlpineConditionsCard.jsx"));
+  eq("the card has a title and a what-a-forecast-cannot-see line for the snow climb, with no bridge in it", [/snow: "Snow climb"/.test(readAppFile(path.join(ROOT, "lib", "alpineConditionsShared.js"))), /snow: "A forecast can’t see how firm the snow is[^"]*"/.test(card), GL.test((/snow: "(A forecast can’t see[^"]*)"/.exec(card) || [])[1] || "bridge")], [true, true, false]);
+  eq("...and its midday sentence does not speak of bridges on a snow climb", /kind === "snow" \? ": parties on snow climbs start early and plan to be off the snow by midday[^"]*softens it" : ": parties on glaciers[^"]*weakens the bridges"/.test(card), true);
+}
 eq("...and the card says why, instead of a start beside a warning that the snow starts soft", /day\.noFreeze && floor\)[\s\S]{0,200}didn’t freeze overnight at[\s\S]{0,80}no frozen window to be back down in/.test(readAppFile(path.join(ROOT, "lib", "AlpineConditionsCard.jsx"))), true);
 const hot = run(forecast(() => ({ fl: 12000 })), { kind: "glacier", terrain: { snow: "yes" }, highFt: 10000, snowFt: 7000, legs: LEGS });
 eq("the freezing level above the SUMMIT all night is its own warning", has(hot, "fl-above-night"), true);
@@ -163,13 +200,14 @@ eq("...while one that crosses snow in season keeps them", [has(hotSnowRock, "fl-
 eq("'unsure' (no snowInSeason mark) keeps the snow legs; a dry mark never touches glacier or alpine ice", [A.hasSnowLegs("alpinerock", { snow: "yes" }), A.hasSnowLegs("alpinerock", dryRock), A.hasSnowLegs("glacier", dryRock), A.hasSnowLegs("alpineice", dryRock)], [true, false, true, true]);
 {
   const { routeTerrain } = await import(pathToFileURL(path.join(ROOT, "lib", "terrain.js")).href);
-  const { SNOW_DRY_IN_SEASON } = await import(pathToFileURL(path.join(ROOT, "lib", "snowInSeasonDry.js")).href);
-  const anyDry = [...SNOW_DRY_IN_SEASON][0];
+  /* The dry review lives ON THE ROW now (routes.snow_in_season, 0490). The built-in id list it replaced must not
+     come back: two copies of one review drift, and the row is the one a climber can correct. */
   const lingering = { discipline: "alpine", grade: "5.9", beta: "The approach gully holds snow into July; carry an ice axe early season." };
-  eq("routeTerrain: a reviewed-dry route reads snowInSeason 'no'; an unreviewed one follows snow", [anyDry ? routeTerrain(Object.assign({ id: anyDry }, lingering)).snowInSeason : "no", routeTerrain(Object.assign({ id: "zz_not_reviewed" }, lingering)).snowInSeason], ["no", "yes"]);
+  eq("routeTerrain: a reviewed-dry route reads snowInSeason 'no'; an unreviewed one follows snow", [routeTerrain(Object.assign({ snow_in_season: "no" }, lingering)).snowInSeason, routeTerrain(Object.assign({ id: "zz_not_reviewed" }, lingering)).snowInSeason], ["no", "yes"]);
+  eq("...and the review is read from the row, not from a built-in list of ids", [fs.existsSync(path.join(ROOT, "lib", "snowInSeasonDry.js")), /SNOW_DRY_IN_SEASON/.test(fs.readFileSync(path.join(ROOT, "lib", "terrain.js"), "utf8"))], [false, false]);
   const snowOf = (beta) => routeTerrain({ discipline: "alpine", grade: "5.9", beta }).snow;
   eq("'névé' is a word, not a substring: 'never', 'whenever', 'Nineveh' are not snow; 'névé' and 'neve' are", ["You never need a rack.", "Whenever it rains.", "Nineveh", "Firm névé to the col.", "Hard neve."].map((s) => snowOf(s) === "yes"), [false, false, false, true, true]);
-  eq("...and a route whose own text shows a glacier is never read dry, even if listed", anyDry ? routeTerrain({ id: anyDry, discipline: "alpine", beta: "Cross the glacier to the col." }).snowInSeason : "yes", "yes");
+  eq("...and a route whose own text shows a glacier, with the glacier question NOT settled, is never read dry", routeTerrain({ discipline: "alpine", snow_in_season: "no", beta: "Cross the glacier to the col." }).snowInSeason, "yes");
 }
 const frozen = run(forecast(() => ({ fl: 4000 })), { kind: "glacier", terrain: { snow: "yes" }, highFt: 10000, snowFt: 7000, legs: LEGS });
 eq("snow that never thaws has no softening hour, so the forecast sets no start...", [frozen.softAt, frozen.start && frozen.start.forecast], [null, null]);
