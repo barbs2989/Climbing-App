@@ -39777,3 +39777,36 @@ for that open item.
 
 0 confirmed errors fixed, 1 newly flagged for human review, 7 clean.
 Next batch will continue id-ascending from `wa_diamond_in_the_rough` (pass 9).
+
+## Batch 570 (pass 9) — 2026-11-23
+
+Checked 10 routes across 7 peaks, continuing id-ascending from `wa_diamond_in_the_rough`: Bear
+Mountain (Direct North Buttress), Dorado Needle (Direct Southwest Buttress, East Ridge/
+Inspiration Glacier), Pernod Spire (Direct West Face), South Early Winters Spire (Dolphin
+Chimney), Dome Peak (Dome Glacier, Indian Summer), Dot Mountain (Standard Scramble), Dragontail
+Peak (A Kidney for a Friend, Backbone Ridge).
+
+Direct North Buttress's FA (Kearney/Knight 1980, FFA Burdo/Merrand 1985), Direct Southwest
+Buttress's FA (Preiss/Bunker 2006), East Ridge/Inspiration Glacier's FA (Firey/Hoesli/Knudson/
+Renz 1971, including its own "attribution uncertain" caveat), Direct West Face's FA (Bentley/
+Peritore July 2006), Dome Glacier's FA (Freed/Larson 1936), A Kidney for a Friend's length/pitch
+count, and Backbone Ridge's FA plus its Fin Direct variation (Cruver/Lewis 1975) all matched
+their best available sources (mostly Mountain Project route pages, AAJ/trip-report primary
+accounts, SummitPost, Wikipedia) exactly. Peak elevations for Bear Mountain, Dorado Needle,
+South Early Winters Spire, Dome Peak and Dragontail Peak all checked out against Wikipedia/
+WTA/SummitPost/Mountaineers.org. Dot Mountain's 8,224 ft sits inside the spread the row's own
+`data_quality.gaps` already discloses — not re-flagged. Dolphin Chimney's 1967 Beckey/Madsen FA
+and the route's existence/grade (5.9+ R) were checked against its own Mountain Project page;
+the FA itself has no source either way, left unconfirmed per the no-guessing rule.
+
+**1 confirmed error, fixed:** Indian Summer (Dome Peak) stored `pitches` as 7; the only source
+found — the first-ascent party's own 2011 Cascade Climbers trip report — states "III, 5.10, 8
+pitches, ~1000ft" plainly, with no counter-source. Corrected to 8 in
+`audits/sql/2026-11-23-batch-570.sql`.
+
+**Clean (9):** Direct North Buttress, Direct Southwest Buttress, Direct West Face, Dolphin
+Chimney, Dome Glacier, East Ridge/Inspiration Glacier, Standard Scramble (Dot Mountain), A
+Kidney for a Friend, Backbone Ridge.
+
+1 confirmed error fixed, 0 newly flagged for human review, 9 clean.
+Next batch will continue id-ascending from `wa_dragontail_peak_backbone_ridge` (pass 9).
