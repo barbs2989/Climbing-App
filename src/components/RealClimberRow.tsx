@@ -36,6 +36,10 @@ export interface PartnerRow {
   free_from?: string | null;
   free_to?: string | null;
   listed_above?: boolean | null;
+  /** 0489 (partners_by_objective): they listed themselves for one of the routes searched, their note, and whether they also SAVED one. */
+  listed?: boolean | null;
+  listing_note?: string | null;
+  saved?: boolean | null;
   free_until?: string | null;
 }
 /** One listed area (0300), from the list's `partner_areas_of_users` read or built from the row's own `listed_*` columns. */

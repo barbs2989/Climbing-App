@@ -23,7 +23,7 @@ import { BTN_LG } from "./buttonStyles.js";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { USE_DB } from "./supabase";
 import { POP_BACK, POP_CLOSE, POP_REMOVE } from "./popupChrome.js";
-import { removePartnerArea, savePartnerArea, useAreaCardsByIds, useAreaChildren, useCatalogAreaSearch } from "./db";
+import { removePartnerArea, removeRouteListing, savePartnerArea, useAreaCardsByIds, useAreaChildren, useCatalogAreaSearch } from "./db";
 import { discLabel } from "./discLabels.js";
 import { C, CRAG_CATS, DLOCALE, SL, haptic, localYmd } from "../ClimbMatchCore.jsx";
 import { ALPINE_COND_DISCIPLINES } from "./alpineConditions.js";
@@ -77,7 +77,7 @@ function AreaFinder({ listed, onPick, chain, setChain }) {
   </div>;
 }
 
-export default function MyPartnerAreas({ uid, listings, listingsError, prefill, discoverable, onOpenPrivacy, onClose, notify, suggestIds }) {
+export default function MyPartnerAreas({ uid, listings, listingsError, prefill, discoverable, onOpenPrivacy, onClose, notify, suggestIds, routeListings, routeListingsError }) {
   /* OPENED ON ONE LISTING (a chip under Partners › My areas, review 2026-11-18): Back, Escape and Save return to Partners, where you came from. They used to drop you on the full Listed areas list, one more screen to leave. */
   const direct = !!(prefill && prefill.areaId);
   const leaveDraft = () => { if (direct) onClose(); else setDraft(null); };
@@ -146,6 +146,12 @@ export default function MyPartnerAreas({ uid, listings, listingsError, prefill, 
       if (draft && draft.areaId === l.areaId) setDraft(null); } catch (e) { notify && notify("Couldn’t remove that listing — " + ((e && e.message) || "try again")); } finally { setBusy(false); }
   }
 
+  // CLIMBS YOU'RE LISTED ON (0489): a route listing is made on the route's own Find tab; this is the one place
+  // that shows them all, so one can be taken down without finding the route again.
+  async function removeRoute(l) {
+    if (busy) return; setBusy(true);
+    try { await removeRouteListing(uid, l.routeId); } catch (e) { notify && notify("Couldn’t remove that listing — " + ((e && e.message) || "try again")); } finally { setBusy(false); }
+  }
   const listingsN = (listings || []).length;
   const foldable = listingsN > LIST_FOLD + 1, folded = foldable && !allListings; // 5 listings show whole: a row that reveals one row is not worth a tap
   const hiddenPast = folded ? (listings || []).slice(LIST_FOLD).filter((l) => l.freeTo && l.freeTo < today).length : 0; // an ended window is flagged on its card; say so when the card is folded away
@@ -205,6 +211,18 @@ export default function MyPartnerAreas({ uid, listings, listingsError, prefill, 
             <button onClick={() => remove(l)} aria-label={"Remove " + l.name} style={POP_REMOVE}>✕</button>
           </div>; }) : !listingsError ? <div style={{ fontSize: 12.5, color: C.textMuted, lineHeight: 1.5, padding: "12px 14px", border: "1px dashed " + C.border, borderRadius: 12 }}>You’re not listed anywhere yet. Search above or browse below{suggestions.length ? tx(", or tap one of the areas from your climbs") : ""}, or use “List me here” on any area page.</div> : null}
           {foldable ? <button type="button" aria-expanded={!folded} onClick={() => setAllListings(folded)} style={{ width: "100%", minHeight: 44, padding: "10px 12px", borderRadius: 12, border: "1px solid " + C.border, background: C.surface, color: C.blue, fontSize: 13.5, fontWeight: 700, cursor: "pointer", textAlign: "left" }}>{folded ? "Show all " + listingsN + (hiddenPast ? " · " + hiddenPast + " window" + (hiddenPast === 1 ? "" : "s") + " ended" : "") : "Show fewer"}</button> : null}
+          {routeListingsError ? <div style={{ fontSize: 12.5, color: C.amber, lineHeight: 1.5, padding: "10px 2px 0" }}>Couldn’t load the climbs you’re listed on — check your connection and try again.</div> : (routeListings || []).length ? <div style={{ marginTop: 14 }}>
+            <SL>{"Climbs you’re listed on · " + routeListings.length}</SL>
+            <div style={{ fontSize: 12, color: C.textMuted, marginBottom: 8, lineHeight: 1.5 }}>Climbers who open one of these can find you on its Find tab. Change the dates or note there.</div>
+            {routeListings.map((l) => <div key={l.routeId} style={{ ...card, display: "flex", alignItems: "center", gap: 6, padding: "4px 6px 4px 4px", marginBottom: 8 }}>
+              <div style={{ flex: 1, minWidth: 0, padding: "8px 10px" }}>
+                <span style={{ display: "block", fontSize: 14.5, fontWeight: 700, color: C.text, overflowWrap: "anywhere" }}>{l.name}{l.grade ? <span style={{ fontSize: 11.5, fontWeight: 700, color: C.textMuted, marginLeft: 7 }}>{l.grade}</span> : null}</span>
+                <span style={{ display: "block", fontSize: 12.5, color: C.textSub, marginTop: 2 }}>{l.freeTo && l.freeTo < today ? "Dates ended " + fmtDay(l.freeTo) : windowText(l)}</span>
+                {l.note ? <span style={{ display: "block", fontSize: 12, color: C.textMuted, marginTop: 2, fontStyle: "italic", overflowWrap: "anywhere" }}>{l.note}</span> : null}
+              </div>
+              <button onClick={() => removeRoute(l)} aria-label={"Remove your listing on " + l.name} style={POP_REMOVE}>✕</button>
+            </div>)}
+          </div> : null}
           <div aria-hidden="true" style={{ height: 10 }} />
           {!q.trim() && suggestions.length ? <div style={{ marginBottom: 16 }}>
             <SL>From your climbs</SL>

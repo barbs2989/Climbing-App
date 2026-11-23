@@ -9,7 +9,7 @@
 -- and commit the result in the same PR. `npm run gen:schema -- --check` exits 1 when this
 -- file has drifted from the live database.
 --
--- Counts: 86 tables, 851 columns, 459 keyed/checked constraints (150 foreign keys), 254 RLS policies.
+-- Counts: 87 tables, 860 columns, 464 keyed/checked constraints (152 foreign keys), 258 RLS policies.
 -- Not covered here: views, functions, triggers, standalone indexes (see supabase/migrations/).
 
 -- ── Foreign keys ───────────────────────────────────────────────────────────────
@@ -143,6 +143,8 @@
 -- route_flags (route_flags_reporter_fkey): FOREIGN KEY (reporter) REFERENCES auth.users(id) ON DELETE CASCADE
 -- route_flags (route_flags_resolved_by_fkey): FOREIGN KEY (resolved_by) REFERENCES auth.users(id) ON DELETE SET NULL
 -- route_flags (route_flags_route_id_fkey): FOREIGN KEY (route_id) REFERENCES routes(id) ON DELETE CASCADE
+-- route_partner_listings (route_partner_listings_route_id_fkey): FOREIGN KEY (route_id) REFERENCES routes(id) ON DELETE CASCADE
+-- route_partner_listings (route_partner_listings_user_id_fkey): FOREIGN KEY (user_id) REFERENCES profiles(id) ON DELETE CASCADE
 -- route_ratings (route_ratings_route_id_fkey): FOREIGN KEY (route_id) REFERENCES routes(id) ON DELETE CASCADE
 -- route_ratings (route_ratings_user_id_fkey): FOREIGN KEY (user_id) REFERENCES auth.users(id) ON DELETE CASCADE
 -- route_views (route_views_route_id_fkey): FOREIGN KEY (route_id) REFERENCES routes(id) ON DELETE CASCADE
@@ -1290,6 +1292,8 @@ CREATE TABLE public.groups (
   lng double precision,
   avatar_url text,
   cover_url text,
+  region text GENERATED ALWAYS AS (region_of_place(location)) STORED,
+  search_text text GENERATED ALWAYS AS (group_search_text(name, disciplines, location, blurb)) STORED,
   CONSTRAINT groups_pkey PRIMARY KEY (id),
   CONSTRAINT groups_avatar_url_ours CHECK (((avatar_url IS NULL) OR ((length(avatar_url) <= 1000) AND (avatar_url ~ '^https://[a-z0-9]+\.supabase\.co/storage/v1/object/public/topo-photos/[0-9a-f-]{36}/[^?#]+$'::text)))),
   CONSTRAINT groups_cover_url_ours CHECK (((cover_url IS NULL) OR ((length(cover_url) <= 1000) AND (cover_url ~ '^https://[a-z0-9]+\.supabase\.co/storage/v1/object/public/topo-photos/[0-9a-f-]{36}/[^?#]+$'::text)))),
@@ -1790,6 +1794,26 @@ CREATE TABLE public.route_link_ups (
 );
 ALTER TABLE public.route_link_ups ENABLE ROW LEVEL SECURITY;
 CREATE POLICY route_link_ups_read ON public.route_link_ups AS PERMISSIVE FOR SELECT TO anon, authenticated USING (true);
+
+CREATE TABLE public.route_partner_listings (
+  user_id uuid NOT NULL,
+  route_id text NOT NULL,
+  free_from date,
+  free_to date,
+  note text,
+  created_at timestamp with time zone NOT NULL DEFAULT now(),
+  updated_at timestamp with time zone NOT NULL DEFAULT now(),
+  CONSTRAINT route_partner_listings_pkey PRIMARY KEY (user_id, route_id),
+  CONSTRAINT route_partner_listings_note_len CHECK (((note IS NULL) OR (length(note) <= 140))),
+  CONSTRAINT route_partner_listings_window CHECK ((((free_from IS NULL) = (free_to IS NULL)) AND ((free_to IS NULL) OR (free_to >= free_from)))),
+  CONSTRAINT route_partner_listings_route_id_fkey FOREIGN KEY (route_id) REFERENCES routes(id) ON DELETE CASCADE,
+  CONSTRAINT route_partner_listings_user_id_fkey FOREIGN KEY (user_id) REFERENCES profiles(id) ON DELETE CASCADE
+);
+ALTER TABLE public.route_partner_listings ENABLE ROW LEVEL SECURITY;
+CREATE POLICY "owner adds own route listings" ON public.route_partner_listings AS PERMISSIVE FOR INSERT TO public WITH CHECK ((auth.uid() = user_id));
+CREATE POLICY "owner reads own route listings" ON public.route_partner_listings AS PERMISSIVE FOR SELECT TO public USING ((auth.uid() = user_id));
+CREATE POLICY "owner removes own route listings" ON public.route_partner_listings AS PERMISSIVE FOR DELETE TO public USING ((auth.uid() = user_id));
+CREATE POLICY "owner updates own route listings" ON public.route_partner_listings AS PERMISSIVE FOR UPDATE TO public USING ((auth.uid() = user_id)) WITH CHECK ((auth.uid() = user_id));
 
 CREATE TABLE public.route_ratings (
   route_id text NOT NULL,

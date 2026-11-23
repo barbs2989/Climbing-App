@@ -329,7 +329,7 @@ All friends search: the *Search friends* box shows for any friends list, clears 
 Saved areas sync (0322): an area or peak unsaved in Logbook › Saved on one device is unsaved on its area page everywhere.
 Real climbers, batch 4 (0314): a real crew's safety questionnaire and safety-ready marks persist; alignment is computed server-side from owner-only answers and every flag is anonymous. Real climbers, batch 3: crew roster, plan, nudge and invite chips name members by `pubFirst`; the invite list treats a real friend as real (server trust, sorted by it); Home's unread line, past crews and the itinerary message use public names; `FriendsFeed` and FriendsList's activity include real friends' shared logs (`realFriendFeed`) with real kudos (`giveKudos` + log target); MyAscents never matches a real log's typed partner name to an example climber.
 #2441 / #2443 / Step 7 (0302): a crew has one place, a route or an area; `crewPlace()` is the one resolver for every surface that names a crew; area crews
-(crag sessions) are started from the area page, the Crews tab and a past crew, found under "My climbs & areas" / By Area, and listed on a crag route's Partners sub-tab. Before that
+(crag sessions) are started from the area page, the Crews tab and a past crew, found under "My climbs & areas" / By Area, and listed on a crag route's Find sub-tab (id `partners`), whose *Current crews* section also lists your own crews there and starts a new one: a listed route crew, or on a crag route a session at the crag (2026-11-23). Before that
 #2395: Crews audit: past-crew vouching, honest Archive/Clear, serialized gear writes, migration 0291 tightens `assign_crew_gear`.
 
 ## 8. Known gaps (verified)
