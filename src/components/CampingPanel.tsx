@@ -35,7 +35,7 @@ export default function CampingPanel({route,onEdit,calc,activity}: CampingPanelP
   /* The camps trip reports name that this list lacks: the climber's answer coming back as a gap to fill. */
   const named=slept.extra.length?<div style={{background:C.surface,border:"1px dashed "+C.purple+"66",borderRadius:12,padding:"11px 13px",marginTop:sites.length?ROUTE_GAP:0,marginBottom:sites.length?0:ROUTE_GAP}}>
     <div style={{fontSize:11.5,fontWeight:800,color:C.purple,letterSpacing:0.6}}>{"NAMED IN TRIP REPORTS · NOT LISTED YET"}</div>
-    <div style={{fontSize:11.5,color:C.textMuted,lineHeight:1.45,marginTop:2,marginBottom:8}}>{"Climbers logged a night at these. Know the spot? Add it with its height, water and permit so the next party can plan on it."}</div>
+    <div style={{fontSize:11.5,color:C.textMuted,lineHeight:1.45,marginTop:2,marginBottom:8}}>{"Climbers logged a night at these. Know the spot? Add it with its height, water and permit."}</div>
     {slept.extra.slice(0,6).map(function(x){return <div key={x.name} style={{display:"flex",justifyContent:"space-between",alignItems:"baseline",gap:10,padding:"5px 0",borderTop:"1px solid "+C.borderLight}}><span style={{fontSize:13,fontWeight:700,color:C.text,minWidth:0,wordBreak:"break-word"}}>{x.name}</span><span style={{fontSize:11.5,color:C.textSub,flexShrink:0}}>{x.n+" report"+(x.n===1?"":"s")+(x.last?" \u00b7 "+shortDate(x.last):"")}</span></div>;})}
     {onEdit?<button onClick={onEdit} style={{marginTop:9,padding:"8px 12px",background:C.card,color:C.blue,border:"1px solid "+C.border,borderRadius:9,fontSize:12.5,fontWeight:700,cursor:"pointer"}}>{"Add a camp"}</button>:null}
   </div>:null;
