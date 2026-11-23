@@ -160,7 +160,7 @@ export default function BaseCheckinPanel({route,who,spots,q}: BaseCheckinPanelPr
         <button onClick={function(){stopGuide();setGuide(null);stopCompass();setCompass(null);}} style={{marginTop:7,padding:0,background:"none",border:"none",color:C.blue,fontSize:12.5,fontWeight:600,cursor:"pointer"}}>Stop</button>
       </div>}
     </div>:null}
-    {st.phase==="done"?<div role="status" style={{fontSize:12.5,color:C.green,fontWeight:600,marginBottom:8}}>{st.late?"✓ Your saved check-in was sent and accepted — thanks for marking the start.":"✓ You’re checked in at the base — thanks for marking the start for the next party."}</div>
+    {st.phase==="done"?<div role="status" style={{fontSize:12.5,color:C.green,fontWeight:600,marginBottom:8}}>{st.late?"✓ Your saved check-in was sent and accepted — thanks for marking the start.":"✓ You’re checked in at the base."}</div>
     :st.phase==="refused"?<div role="status" style={{fontSize:12.5,color:C.amber,lineHeight:1.45,marginBottom:8}}>{baseCheckinMessage(st.res,_baseDist)}</div>
     :st.phase==="queued"?<div role="status" style={{fontSize:12.5,color:C.textSub,lineHeight:1.45,marginBottom:8}}>No signal here — your GPS reading is saved on this phone and will be sent, and checked, the next time you open this climb with a connection.</div>
     :st.phase==="error"?<div role="status" style={{fontSize:12.5,color:C.red,marginBottom:8}}>{st.withdraw?"Couldn’t remove your check-in — try again.":"Couldn’t check you in — try again."}</div>
