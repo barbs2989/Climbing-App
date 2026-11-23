@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import { C } from "../../ClimbMatchCore.jsx";
+import { FONT_MONO } from "../../lib/fonts.js";
 
 export interface StampProps {
   /** The value: a grade ("5.10a", "Class 3"), a commitment grade, a protection rating. */
@@ -29,9 +30,9 @@ export default function Stamp({ label, color, lg }: StampProps) {
         border: "1.5px solid " + ink,
         borderRadius: 4,
         padding: lg ? "2.5px 8px" : "1.5px 6px",
-        fontSize: lg ? 13.5 : 12,
-        fontWeight: 700,
-        fontVariantNumeric: "tabular-nums",
+        fontFamily: FONT_MONO,
+        fontSize: lg ? 13 : 11.5,
+        fontWeight: 600,
         lineHeight: 1.35,
       }}
     >

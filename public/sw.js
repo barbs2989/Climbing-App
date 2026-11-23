@@ -69,6 +69,7 @@ async function pruneIfNewDeploy(html) {
 // Bounded by `seen`, so a cycle cannot loop, and by MAX_DEPTH as a backstop against a bundler
 // output shape that makes the regex match something unexpected. Each fetch is independently
 // caught: one missing chunk must not abandon the rest.
+const FONT_FILES = ["barlow-condensed-latin-600-normal.woff2", "barlow-condensed-latin-ext-600-normal.woff2", "barlow-condensed-latin-700-normal.woff2", "barlow-condensed-latin-ext-700-normal.woff2", "ibm-plex-mono-latin-600-normal.woff2", "ibm-plex-mono-latin-ext-600-normal.woff2"];
 const CHUNK_RE = /"\.\/([A-Za-z0-9_.-]+\.js)"/g;
 const MAX_DEPTH = 6;
 
@@ -138,6 +139,12 @@ self.addEventListener("install", (event) => {
         const cache = await caches.open(SHELL_CACHE);
         await cache.put(self.registration.scope, res);
         await precacheShellAssets(html, cache);
+        // The six font files (lib/fonts.js, declared in index.html). They sit outside /assets/, so
+        // the walk above never sees them, and the latin-ext ones are only requested when a name
+        // needs them: without this a climber offline would get the fallback font for exactly the
+        // names that need the extended set. Best-effort like everything else here.
+        await Promise.all(FONT_FILES.map((f) => fetch(new URL("fonts/" + f, self.registration.scope).toString())
+          .then((r) => (r && r.ok ? cache.put(r.url, r) : null)).catch(() => null)));
       } catch (e) {
         /* offline or a failed fetch during install — nothing to precache, carry on */
       }
