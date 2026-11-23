@@ -1,0 +1,291 @@
+{
+ "wa_afterburner": {
+  "area": "wa_snow_creek_wall",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/119241477/afterburner",
+    "https://www.mountainproject.com/forum/message/119811840",
+    "https://www.mountainproject.com/area/105792154/snow-creek-wall",
+    "https://www.thecrag.com/en/climbing/united-states/central-cascade-mountains/area/16778125",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/snow-lakes-trailhead",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_Wilderness_01/MapServer/0/query?geometry=-120.7187,47.5296&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=WILDERNESSNAME&returnGeometry=false&f=json",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_02/MapServer/0/query?geometry=-120.7187,47.5296&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownerclassification,forestname&returnGeometry=false&f=json"
+   ]
+  },
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_afterburner",
+    "column": "pitches",
+    "from": 0,
+    "to": 7,
+    "why": "pitches 0 is invalid. Mountain Project states 7 pitches and lists all seven (70, 55, 30, 20, 50, 30, 30 m); the first ascensionist's own post on the same site says six new pitches plus one shared with Galaxy. MP states it: locked-1src tier.",
+    "evidence": [
+     "https://www.mountainproject.com/route/119241477/afterburner",
+     "https://www.mountainproject.com/forum/message/119811840"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_afterburner",
+    "column": "length_m",
+    "from": null,
+    "to": 242,
+    "why": "length_m is empty. Mountain Project states Trad, 800 ft (242 m). MP alone may set length (locked-1src); no second publisher lists the route (theCrag's Snow Creek Wall list has no Afterburner).",
+    "evidence": [
+     "https://www.mountainproject.com/route/119241477/afterburner"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_afterburner",
+    "column": "gear",
+    "from": null,
+    "to": [
+     "double small cams (tips)",
+     "double cams 0.3 to 2 in",
+     "nuts",
+     "12-14 quickdraws"
+    ],
+    "why": "gear is empty. Mountain Project's protection: doubles in the tips, doubles from about 0.3 to 2 in, wires, roughly 12-14 draws (the 70 m rope is left out: gear never holds a rope). Rack from MP alone, locked-1src tier.",
+    "evidence": [
+     "https://www.mountainproject.com/route/119241477/afterburner"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_afterburner",
+    "column": "access",
+    "from": null,
+    "to": {
+     "fees": "$5 a day or $30 a year to park.",
+     "rules": "The wall lies in the Alpine Lakes Wilderness. Dogs are not allowed on the Snow Lakes Trail.",
+     "permit": "A free self-issued day-use wilderness permit, filled out at the Snow Lakes Trailhead.",
+     "land_manager": "Okanogan-Wenatchee National Forest",
+     "parking_pass": "$5 per vehicle per day ($30 a year), or a Northwest Forest Pass or interagency pass, at the Snow Lakes Trailhead."
+    },
+    "why": "access is empty. Copied field for field from the live object on wa_rpm (identical on wa_snow_creek_wall_grand_arch). Re-read 2026-11-23: the USFS Snow Lakes Trailhead page (updated 2026-08-04) still says day-use wilderness permits are free and self-issued at the trailhead, $5 per vehicle per day or $30 annual, Northwest Forest Pass and Interagency passes honoured, dogs prohibited on all trails in the Enchantment Permit Area including the Snow Lakes Trail. The USFS wilderness layer puts the wall (47.5296 -120.7187) inside the Alpine Lakes Wilderness, and the USFS ownership layer on Okanogan-Wenatchee NF land. official-1, 12 months, after apply.",
+    "evidence": [
+     "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/snow-lakes-trailhead",
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_Wilderness_01/MapServer/0/query?geometry=-120.7187,47.5296&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=WILDERNESSNAME&returnGeometry=false&f=json",
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_02/MapServer/0/query?geometry=-120.7187,47.5296&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownerclassification,forestname&returnGeometry=false&f=json"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_afterburner",
+    "column": "permit",
+    "from": null,
+    "to": "Park at the Snow Lakes Trailhead with the $5 day-use fee, a Northwest Forest Pass or an interagency pass, and fill out the free self-issued day-use wilderness permit there.",
+    "why": "permit is empty. Copied word for word from the live permit on wa_rpm (same on wa_snow_creek_wall_grand_arch); the USFS Snow Lakes Trailhead page re-read 2026-11-23 states the same fee, passes and free self-issued day permit.",
+    "evidence": [
+     "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/snow-lakes-trailhead"
+    ]
+   }
+  ],
+  "held": [
+   "grade: stored 5.11; Mountain Project's route page says 5.11+ (its own classic list shows 5.11, and the FA party's post on the same site says '5.11/5.11+'). One publisher, inconsistent with itself; theCrag does not list the route. A one-source CHANGE is held (grade_num 11.5 would change with it)."
+  ],
+  "disputed": [
+   "grade: MP route page 5.11+ vs MP classic list 5.11 vs FA post 5.11/5.11+ (all one publisher)"
+  ],
+  "notes": "FA stored 'Jeromy Markee, Jacob Leonard' matches MP and Markee's own MP forum post (one publisher; an FA cannot lock on one source); FA spring 2020 (the year has no column). No bolt count is stated anywhere (P5 'Jimmy's Roof' passes 3 bolts; P3 and P6 end at bolted anchors) so bolts/anchor stay null. MP notes a 2014 peregrine pair at Snow Creek Wall with no official closure; the Bridge Creek Wall golden eagle closure (Jan 1 - Aug 15) is a different wall. The row's hazards line is the canyon-wide template - left alone."
+ },
+ "wa_snow_creek_wall_medusa_s_roof": {
+  "area": "wa_snow_creek_wall",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/105792154/snow-creek-wall",
+    "https://www.thecrag.com/en/climbing/united-states/central-cascade-mountains/area/16778125",
+    "https://stephabegg.com/trip-reports/washington/snow-creek-wall/"
+   ]
+  },
+  "held": [
+   "access/permit: NOT proposed. No independent publisher places a route of this name on Snow Creek Wall, so the land manager cannot be tied to it until the row itself is confirmed."
+  ],
+  "disputed": [
+   "existence/location: no source found for a Snow Creek Wall route named Medusa's Roof; the name matches a Liberty Bell East Face pitch"
+  ],
+  "notes": "CATALOG DEFECT (suspected misfiled or phantom row). Added by the 2026-10-02 WA guidebook audit (scripts/rollback-add-guidebook-routes-1790927493042.json). Neither Mountain Project's Snow Creek Wall list (16 routes), theCrag's Snow Creek Wall list (29 routes) nor Steph Abegg's Snow Creek Wall page names a 'Medusa's Roof'. The name is the known P12 roof on Liberty Bell's East Face / Freedom Rider (Washington Pass; audits/route-breakdown/2026-09-24-batch-B.json), and the row's commitment 'V' fits a long Washington Pass wall, not an 800 ft Snow Creek Wall line. Grade 5.10b, commitment V and guide_stars 2 have no source I could open. No fixes proposed; the owner decides whether the row is real."
+ },
+ "wa_snow_creek_wall_easter_tower": {
+  "area": "wa_snow_creek_wall",
+  "review": {
+   "sources": [
+    "https://www.thecrag.com/en/climbing/united-states/central-cascade-mountains/area/16778125",
+    "https://www.mountainproject.com/area/105792154/snow-creek-wall",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/snow-lakes-trailhead",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_Wilderness_01/MapServer/0/query?geometry=-120.7187,47.5296&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=WILDERNESSNAME&returnGeometry=false&f=json",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_02/MapServer/0/query?geometry=-120.7187,47.5296&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownerclassification,forestname&returnGeometry=false&f=json"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.8",
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.thecrag.com/en/climbing/united-states/central-cascade-mountains/area/16778125",
+      "fact": "theCrag Snow Creek Wall list: Easter Tower 5.8",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_snow_creek_wall_easter_tower",
+    "column": "access",
+    "from": null,
+    "to": {
+     "fees": "$5 a day or $30 a year to park.",
+     "rules": "The wall lies in the Alpine Lakes Wilderness. Dogs are not allowed on the Snow Lakes Trail.",
+     "permit": "A free self-issued day-use wilderness permit, filled out at the Snow Lakes Trailhead.",
+     "land_manager": "Okanogan-Wenatchee National Forest",
+     "parking_pass": "$5 per vehicle per day ($30 a year), or a Northwest Forest Pass or interagency pass, at the Snow Lakes Trailhead."
+    },
+    "why": "access is empty. Copied field for field from the live object on wa_rpm (identical on wa_snow_creek_wall_grand_arch). Re-read 2026-11-23: the USFS Snow Lakes Trailhead page (updated 2026-08-04) still says day-use wilderness permits are free and self-issued at the trailhead, $5 per vehicle per day or $30 annual, Northwest Forest Pass and Interagency passes honoured, dogs prohibited on all trails in the Enchantment Permit Area including the Snow Lakes Trail. The USFS wilderness layer puts the wall (47.5296 -120.7187) inside the Alpine Lakes Wilderness, and the USFS ownership layer on Okanogan-Wenatchee NF land. official-1, 12 months, after apply.",
+    "evidence": [
+     "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/snow-lakes-trailhead",
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_Wilderness_01/MapServer/0/query?geometry=-120.7187,47.5296&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=WILDERNESSNAME&returnGeometry=false&f=json",
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_02/MapServer/0/query?geometry=-120.7187,47.5296&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownerclassification,forestname&returnGeometry=false&f=json"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_snow_creek_wall_easter_tower",
+    "column": "permit",
+    "from": null,
+    "to": "Park at the Snow Lakes Trailhead with the $5 day-use fee, a Northwest Forest Pass or an interagency pass, and fill out the free self-issued day-use wilderness permit there.",
+    "why": "permit is empty. Copied word for word from the live permit on wa_rpm (same on wa_snow_creek_wall_grand_arch); the USFS Snow Lakes Trailhead page re-read 2026-11-23 states the same fee, passes and free self-issued day permit.",
+    "evidence": [
+     "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/snow-lakes-trailhead"
+    ]
+   }
+  ],
+  "notes": "Grade 5.8 agrees with theCrag only (Mountain Project has no page), so it stays unconfirmed. theCrag also lists an 'Easter Tower Alternate' at 5.10b (no catalog row). Pitches, length and FA: no source found."
+ },
+ "wa_snow_creek_wall_poodle_with_a_mohawk": {
+  "area": "wa_snow_creek_wall",
+  "review": {
+   "sources": [
+    "https://www.thecrag.com/en/climbing/united-states/central-cascade-mountains/area/16778125",
+    "https://www.mountainproject.com/area/105792154/snow-creek-wall",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/snow-lakes-trailhead",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_Wilderness_01/MapServer/0/query?geometry=-120.7187,47.5296&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=WILDERNESSNAME&returnGeometry=false&f=json",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_02/MapServer/0/query?geometry=-120.7187,47.5296&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownerclassification,forestname&returnGeometry=false&f=json"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.11c",
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.thecrag.com/en/climbing/united-states/central-cascade-mountains/area/16778125",
+      "fact": "theCrag Snow Creek Wall list: Poodle with a Mohawk 5.11c",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_snow_creek_wall_poodle_with_a_mohawk",
+    "column": "access",
+    "from": null,
+    "to": {
+     "fees": "$5 a day or $30 a year to park.",
+     "rules": "The wall lies in the Alpine Lakes Wilderness. Dogs are not allowed on the Snow Lakes Trail.",
+     "permit": "A free self-issued day-use wilderness permit, filled out at the Snow Lakes Trailhead.",
+     "land_manager": "Okanogan-Wenatchee National Forest",
+     "parking_pass": "$5 per vehicle per day ($30 a year), or a Northwest Forest Pass or interagency pass, at the Snow Lakes Trailhead."
+    },
+    "why": "access is empty. Copied field for field from the live object on wa_rpm (identical on wa_snow_creek_wall_grand_arch). Re-read 2026-11-23: the USFS Snow Lakes Trailhead page (updated 2026-08-04) still says day-use wilderness permits are free and self-issued at the trailhead, $5 per vehicle per day or $30 annual, Northwest Forest Pass and Interagency passes honoured, dogs prohibited on all trails in the Enchantment Permit Area including the Snow Lakes Trail. The USFS wilderness layer puts the wall (47.5296 -120.7187) inside the Alpine Lakes Wilderness, and the USFS ownership layer on Okanogan-Wenatchee NF land. official-1, 12 months, after apply.",
+    "evidence": [
+     "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/snow-lakes-trailhead",
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_Wilderness_01/MapServer/0/query?geometry=-120.7187,47.5296&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=WILDERNESSNAME&returnGeometry=false&f=json",
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_02/MapServer/0/query?geometry=-120.7187,47.5296&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownerclassification,forestname&returnGeometry=false&f=json"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_snow_creek_wall_poodle_with_a_mohawk",
+    "column": "permit",
+    "from": null,
+    "to": "Park at the Snow Lakes Trailhead with the $5 day-use fee, a Northwest Forest Pass or an interagency pass, and fill out the free self-issued day-use wilderness permit there.",
+    "why": "permit is empty. Copied word for word from the live permit on wa_rpm (same on wa_snow_creek_wall_grand_arch); the USFS Snow Lakes Trailhead page re-read 2026-11-23 states the same fee, passes and free self-issued day permit.",
+    "evidence": [
+     "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/snow-lakes-trailhead"
+    ]
+   }
+  ],
+  "notes": "Grade 5.11c agrees with theCrag only (no MP page); unconfirmed. theCrag rate-limited (403) before its route page could be read, so pitches, length, FA and the stored gear 'gear to 2 in' stay unverified."
+ },
+ "wa_snow_creek_wall_umbrella_tree": {
+  "area": "wa_snow_creek_wall",
+  "review": {
+   "sources": [
+    "https://www.thecrag.com/en/climbing/united-states/central-cascade-mountains/area/16778125",
+    "https://www.mountainproject.com/area/105792154/snow-creek-wall",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/snow-lakes-trailhead",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_Wilderness_01/MapServer/0/query?geometry=-120.7187,47.5296&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=WILDERNESSNAME&returnGeometry=false&f=json",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_02/MapServer/0/query?geometry=-120.7187,47.5296&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownerclassification,forestname&returnGeometry=false&f=json"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.7",
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.thecrag.com/en/climbing/united-states/central-cascade-mountains/area/16778125",
+      "fact": "theCrag Snow Creek Wall list: Umbrella Tree 5.7",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_snow_creek_wall_umbrella_tree",
+    "column": "access",
+    "from": null,
+    "to": {
+     "fees": "$5 a day or $30 a year to park.",
+     "rules": "The wall lies in the Alpine Lakes Wilderness. Dogs are not allowed on the Snow Lakes Trail.",
+     "permit": "A free self-issued day-use wilderness permit, filled out at the Snow Lakes Trailhead.",
+     "land_manager": "Okanogan-Wenatchee National Forest",
+     "parking_pass": "$5 per vehicle per day ($30 a year), or a Northwest Forest Pass or interagency pass, at the Snow Lakes Trailhead."
+    },
+    "why": "access is empty. Copied field for field from the live object on wa_rpm (identical on wa_snow_creek_wall_grand_arch). Re-read 2026-11-23: the USFS Snow Lakes Trailhead page (updated 2026-08-04) still says day-use wilderness permits are free and self-issued at the trailhead, $5 per vehicle per day or $30 annual, Northwest Forest Pass and Interagency passes honoured, dogs prohibited on all trails in the Enchantment Permit Area including the Snow Lakes Trail. The USFS wilderness layer puts the wall (47.5296 -120.7187) inside the Alpine Lakes Wilderness, and the USFS ownership layer on Okanogan-Wenatchee NF land. official-1, 12 months, after apply.",
+    "evidence": [
+     "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/snow-lakes-trailhead",
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_Wilderness_01/MapServer/0/query?geometry=-120.7187,47.5296&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=WILDERNESSNAME&returnGeometry=false&f=json",
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_02/MapServer/0/query?geometry=-120.7187,47.5296&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownerclassification,forestname&returnGeometry=false&f=json"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_snow_creek_wall_umbrella_tree",
+    "column": "permit",
+    "from": null,
+    "to": "Park at the Snow Lakes Trailhead with the $5 day-use fee, a Northwest Forest Pass or an interagency pass, and fill out the free self-issued day-use wilderness permit there.",
+    "why": "permit is empty. Copied word for word from the live permit on wa_rpm (same on wa_snow_creek_wall_grand_arch); the USFS Snow Lakes Trailhead page re-read 2026-11-23 states the same fee, passes and free self-issued day permit.",
+    "evidence": [
+     "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/snow-lakes-trailhead"
+    ]
+   }
+  ],
+  "notes": "Grade 5.7 agrees with theCrag only (no MP page); unconfirmed. Pitches, length, FA: no source found."
+ }
+}

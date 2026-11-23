@@ -1,0 +1,274 @@
+{
+ "wa_romancing_the_stone": {
+  "area": "wa_don_quixote_face",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/106479453/romancing-the-stone",
+    "https://www.mountainproject.com/area/109486848",
+    "https://www.spokanecounty.gov/5754/John-H-Shields-Park-Make-Beacon-Hill-Pub",
+    "https://www.spokanecounty.gov/facilities/facility/details/johnhshieldspark-52"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.12a",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106479453/romancing-the-stone",
+      "fact": "5.12a YDS, Sport, TR",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_romancing_the_stone",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "pitches 0 is invalid. Mountain Project: a two-bolt route, 2 bolts to anchors, no pitch count (single length to one anchor). Implied, not stated: unconfirmed after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/106479453/romancing-the-stone"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_romancing_the_stone",
+    "column": "bolts",
+    "from": null,
+    "to": 2,
+    "why": "Mountain Project protection: 2 bolts to anchors; description calls it a two-bolt route (bolts, not clips). Single source (no second publisher lists Minnehaha: theCrag has no entry, rockclimbing.com refused the connection); locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/106479453/romancing-the-stone"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_romancing_the_stone",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Spokane County Parks, Recreation & Golf (John H. Shields Park, the county-owned part of the Beacon Hill recreation area)"
+    },
+    "why": "access is empty. Copied field for field from the live sibling wa_main_crack (same object on wa_z_crack and wa_the_dihedral_3, batch I). Re-read 2026-11-23: the county's Shields Park project page names John H. Shields Park, 'Minnehaha Rocks', as the County-owned portion of Beacon Hill, known for its climbing; the county facility page lists climbing rocks among its amenities. official-1, 12 months, after apply.",
+    "evidence": [
+     "https://www.spokanecounty.gov/5754/John-H-Shields-Park-Make-Beacon-Hill-Pub",
+     "https://www.spokanecounty.gov/facilities/facility/details/johnhshieldspark-52"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "FA stored 'Jim Purdy & Curt Shannon '87' matches Mountain Project (Purdy & Shannon, 1987); not reformatted, and FA never locks from MP alone. guide_stars stored 1 left alone: no guidebook page was readable (MP's 2.5 average from 12 votes is not the guide's rating). MP says the Spokane Rock Climbs guidebook gives bad information on this route. Sits between the Oomph arete and Inside Corner; not a variation. Length not stated anywhere. Closure re-check (2026-11-23, official county pages): the Shields Park project page still says only that there are current closures or restrictions to the park, naming none and giving no dates; Phase 2 construction (trailhead parking, accessible trail, boulder play space) is scheduled spring to summer 2026, still awaiting RCO/NPS review, timeline subject to change. The county Alert Center's 8 Parks alerts (latest 2026-10-16) name no closure at Shields Park, Minnehaha or Beacon Hill; no raptor, fire or trail-work closure found. No closure text proposed. The county facility page states hours dawn to dusk unless posted, and joint County/City of Spokane ownership of the 26-acre park; the copied object carries neither (not reworded, per brief)."
+ },
+ "wa_dog_food": {
+  "area": "wa_don_quixote_face",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/118718170/dog-food",
+    "https://www.mountainproject.com/area/109486848",
+    "https://www.spokanecounty.gov/5754/John-H-Shields-Park-Make-Beacon-Hill-Pub",
+    "https://www.spokanecounty.gov/facilities/facility/details/johnhshieldspark-52"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.11a",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/118718170/dog-food",
+      "fact": "5.11a YDS, Trad, 30 ft (9 m)",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_dog_food",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "pitches 0 is invalid. Mountain Project: Trad, 30 ft (9 m), no pitch count: one short length. Implied, not stated: unconfirmed after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/118718170/dog-food"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_dog_food",
+    "column": "length_m",
+    "from": null,
+    "to": 9,
+    "why": "Mountain Project states 30 ft (9 m). Single source (no other publisher lists Minnehaha routes online); locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/118718170/dog-food"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_dog_food",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Spokane County Parks, Recreation & Golf (John H. Shields Park, the county-owned part of the Beacon Hill recreation area)"
+    },
+    "why": "access is empty. Copied field for field from the live sibling wa_main_crack (same object on wa_z_crack and wa_the_dihedral_3, batch I). Re-read 2026-11-23: the county's Shields Park project page names John H. Shields Park, 'Minnehaha Rocks', as the County-owned portion of Beacon Hill, known for its climbing; the county facility page lists climbing rocks among its amenities. official-1, 12 months, after apply.",
+    "evidence": [
+     "https://www.spokanecounty.gov/5754/John-H-Shields-Park-Make-Beacon-Hill-Pub",
+     "https://www.spokanecounty.gov/facilities/facility/details/johnhshieldspark-52"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "FA stored 'Larry Peterman' matches MP (no year given). MP: same start as Western Front (wa_western_front_2), then right up a seam; protection 'Mixed'; dirty, graffiti at the start. Its own line above a shared start, so a route, not a variation. Only one MP vote (1 star). Closure re-check (2026-11-23, official county pages): the Shields Park project page still says only that there are current closures or restrictions to the park, naming none and giving no dates; Phase 2 construction (trailhead parking, accessible trail, boulder play space) is scheduled spring to summer 2026, still awaiting RCO/NPS review, timeline subject to change. The county Alert Center's 8 Parks alerts (latest 2026-10-16) name no closure at Shields Park, Minnehaha or Beacon Hill; no raptor, fire or trail-work closure found. No closure text proposed. The county facility page states hours dawn to dusk unless posted, and joint County/City of Spokane ownership of the 26-acre park; the copied object carries neither (not reworded, per brief)."
+ },
+ "wa_mad_dog": {
+  "area": "wa_main_wall_7",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/107175770/mad-dog",
+    "https://www.mountainproject.com/area/109486845/main-wall",
+    "https://www.spokanecounty.gov/5754/John-H-Shields-Park-Make-Beacon-Hill-Pub",
+    "https://www.spokanecounty.gov/facilities/facility/details/johnhshieldspark-52"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.10b",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107175770/mad-dog",
+      "fact": "5.10b YDS, Sport, fully bolted",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_mad_dog",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "pitches 0 is invalid. Mountain Project: a fully bolted line up a bulge left of the Smokey Overhang roof onto an easy slab, no pitch count, on a wall of about 70 ft. Implied, not stated: unconfirmed after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/107175770/mad-dog",
+     "https://www.mountainproject.com/area/109486845/main-wall"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_mad_dog",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Spokane County Parks, Recreation & Golf (John H. Shields Park, the county-owned part of the Beacon Hill recreation area)"
+    },
+    "why": "access is empty. Copied field for field from the live sibling wa_main_crack (same object on wa_z_crack and wa_the_dihedral_3, batch I). Re-read 2026-11-23: the county's Shields Park project page names John H. Shields Park, 'Minnehaha Rocks', as the County-owned portion of Beacon Hill, known for its climbing; the county facility page lists climbing rocks among its amenities. official-1, 12 months, after apply.",
+    "evidence": [
+     "https://www.spokanecounty.gov/5754/John-H-Shields-Park-Make-Beacon-Hill-Pub",
+     "https://www.spokanecounty.gov/facilities/facility/details/johnhshieldspark-52"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "FA stored 'Paul Stevenson' matches MP (no year). Bolt count, length and anchor not stated by MP; left null. MP: the right-hand of two routes up the bulge left of Smokey Overhang that join on the slab above (the left one is not named); shared upper slab, not stated as a shared anchor. Closure re-check (2026-11-23, official county pages): the Shields Park project page still says only that there are current closures or restrictions to the park, naming none and giving no dates; Phase 2 construction (trailhead parking, accessible trail, boulder play space) is scheduled spring to summer 2026, still awaiting RCO/NPS review, timeline subject to change. The county Alert Center's 8 Parks alerts (latest 2026-10-16) name no closure at Shields Park, Minnehaha or Beacon Hill; no raptor, fire or trail-work closure found. No closure text proposed. The county facility page states hours dawn to dusk unless posted, and joint County/City of Spokane ownership of the 26-acre park; the copied object carries neither (not reworded, per brief)."
+ },
+ "wa_dihedral_arete": {
+  "area": "wa_main_wall_7",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/109486845/main-wall",
+    "https://www.mountainproject.com/route/106198776/the-dihedral",
+    "https://www.mountainproject.com/route/106487044/the-diagonal",
+    "https://www.spokanecounty.gov/5754/John-H-Shields-Park-Make-Beacon-Hill-Pub",
+    "https://www.spokanecounty.gov/facilities/facility/details/johnhshieldspark-52"
+   ]
+  },
+  "ledger": [],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_dihedral_arete",
+    "column": "pitches",
+    "from": 0,
+    "to": null,
+    "why": "pitches 0 is invalid, and no source now describes this route (see notes), so no count can be stated.",
+    "evidence": [
+     "https://www.mountainproject.com/area/109486845/main-wall"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_dihedral_arete",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Spokane County Parks, Recreation & Golf (John H. Shields Park, the county-owned part of the Beacon Hill recreation area)"
+    },
+    "why": "access is empty. Copied field for field from the live sibling wa_main_crack (same object on wa_z_crack and wa_the_dihedral_3, batch I). Re-read 2026-11-23: the county's Shields Park project page names John H. Shields Park, 'Minnehaha Rocks', as the County-owned portion of Beacon Hill, known for its climbing; the county facility page lists climbing rocks among its amenities. official-1, 12 months, after apply.",
+    "evidence": [
+     "https://www.spokanecounty.gov/5754/John-H-Shields-Park-Make-Beacon-Hill-Pub",
+     "https://www.spokanecounty.gov/facilities/facility/details/johnhshieldspark-52"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "CATALOG DEFECT: no current source lists 'Dihedral Arete'. Mountain Project's Main Wall page (41 routes) and the route sidebars on The Dihedral, The Diagonal and Maginot Line pages have no such route and link no page for it; a search-engine snippet of an older MP listing showed 'Dihedral Arete S 5.10d' (not evidence). Likely deleted or renamed on MP; possibly the bolted line beside The Dihedral (MP lists Starbabies as the first bolted route right of the dihedral). Grade 5.10d, sport, unverified; no fixes beyond pitches 0 and access. Owner decides. Closure re-check (2026-11-23, official county pages): the Shields Park project page still says only that there are current closures or restrictions to the park, naming none and giving no dates; Phase 2 construction (trailhead parking, accessible trail, boulder play space) is scheduled spring to summer 2026, still awaiting RCO/NPS review, timeline subject to change. The county Alert Center's 8 Parks alerts (latest 2026-10-16) name no closure at Shields Park, Minnehaha or Beacon Hill; no raptor, fire or trail-work closure found. No closure text proposed. The county facility page states hours dawn to dusk unless posted, and joint County/City of Spokane ownership of the 26-acre park; the copied object carries neither (not reworded, per brief)."
+ },
+ "wa_tar_babies": {
+  "area": "wa_main_wall_7",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/109486845/main-wall",
+    "https://www.mountainproject.com/route/127396206/tar-babiesright",
+    "https://www.mountainproject.com/route/106490254/starbabies",
+    "https://www.spokanecounty.gov/5754/John-H-Shields-Park-Make-Beacon-Hill-Pub",
+    "https://www.spokanecounty.gov/facilities/facility/details/johnhshieldspark-52"
+   ]
+  },
+  "ledger": [],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_tar_babies",
+    "column": "pitches",
+    "from": 0,
+    "to": null,
+    "why": "pitches 0 is invalid, and no source has a page for this route (see notes), so no count can be stated.",
+    "evidence": [
+     "https://www.mountainproject.com/area/109486845/main-wall"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_tar_babies",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Spokane County Parks, Recreation & Golf (John H. Shields Park, the county-owned part of the Beacon Hill recreation area)"
+    },
+    "why": "access is empty. Copied field for field from the live sibling wa_main_crack (same object on wa_z_crack and wa_the_dihedral_3, batch I). Re-read 2026-11-23: the county's Shields Park project page names John H. Shields Park, 'Minnehaha Rocks', as the County-owned portion of Beacon Hill, known for its climbing; the county facility page lists climbing rocks among its amenities. official-1, 12 months, after apply.",
+    "evidence": [
+     "https://www.spokanecounty.gov/5754/John-H-Shields-Park-Make-Beacon-Hill-Pub",
+     "https://www.spokanecounty.gov/facilities/facility/details/johnhshieldspark-52"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "CATALOG DEFECT, possible duplicate: Mountain Project has no page for plain 'Tar Babies'. Its 'Tar Babies(Right)' page (2024, Trad 5.8, 65 ft, two bolts plus gear) calls itself a variation sharing the start of 'the route Tar Babies', and a photo caption there labels Starbabies and Tar Babies separately, so a Tar Babies line may exist, but no publisher describes it. The catalog also holds wa_starbabies (sport 5.8, same wall, MP 'Starbabies' S,TR 5.8 R, FA John Eminger): same grade, same discipline, near-identical name. Either Tar Babies is a stale/renamed copy of Starbabies, or it is the unlisted line Tar Babies(Right) starts on; no source settles which. Grade 5.8 sport unverified; no fixes beyond pitches 0 and access. Tar Babies(Right) itself is not in the catalog. Owner decides. Closure re-check (2026-11-23, official county pages): the Shields Park project page still says only that there are current closures or restrictions to the park, naming none and giving no dates; Phase 2 construction (trailhead parking, accessible trail, boulder play space) is scheduled spring to summer 2026, still awaiting RCO/NPS review, timeline subject to change. The county Alert Center's 8 Parks alerts (latest 2026-10-16) name no closure at Shields Park, Minnehaha or Beacon Hill; no raptor, fire or trail-work closure found. No closure text proposed. The county facility page states hours dawn to dusk unless posted, and joint County/City of Spokane ownership of the 26-acre park; the copied object carries neither (not reworded, per brief)."
+ }
+}
