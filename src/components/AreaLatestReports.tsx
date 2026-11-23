@@ -42,7 +42,7 @@ const fmtDate = (d?: string | null) => { if (!d) return ""; const q = String(d).
    trip-report path; the hazard count covers every visible log of the last RECENT_DAYS days, anonymously,
    with the app's own isHazardTag rule. Renders nothing while an area has neither.
 
-   MORE THAN FOUR, SORTED AND FILTERED (owner, 2026-11-19; 0477). An area with more than FIRST reports
+   MORE THAN FOUR, SORTED AND FILTERED (owner, 2026-11-19; 0478). An area with more than FIRST reports
    gets four selects (order, discipline, when, trip reports or logged climbs) that the DATABASE applies
    over the whole area, and a "See N more" dropdown under the fourth row that opens the rest STEP at a
    time. A row no longer just opens its climb: it opens the trip report or logged climb itself, and

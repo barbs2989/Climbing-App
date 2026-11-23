@@ -415,7 +415,7 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     database a day later anyway.
   - Injection-tested 9/9, listed at the bottom of the script. Case 1 is the real historical defect,
     reproduced by un-qualifying `0163`.
-  - **A DROP followed by a CREATE in the same file is not a dropped function** (2026-11-19, 0477).
+  - **A DROP followed by a CREATE in the same file is not a dropped function** (2026-11-19, 0478).
     The parser read every CREATE in a file and then every DROP, so a migration that changes a
     function's argument list or `RETURNS TABLE` (which cannot be a `CREATE OR REPLACE`) left the
     function marked gone, and every later rule skipped it. Six live definer functions were unseen

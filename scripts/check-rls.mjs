@@ -180,7 +180,7 @@ for (const f of files) {
   for (const m of sql.matchAll(/drop\s+function\s+(?:if\s+exists\s+)?([a-z_0-9.]+)/gi)) {
     const name = m[1].replace(/^public\./, "");
     // A migration that changes a function's ARGUMENT LIST must drop the old signature and create the
-    // new one in the same file (0477 area_latest_reports). The creates above were all read first, so
+    // new one in the same file (0478 area_latest_reports). The creates above were all read first, so
     // only a drop with no CREATE of that name AFTER it in this file leaves the function gone.
     const recreated = new RegExp("create\\s+(?:or\\s+replace\\s+)?function\\s+(?:public\\.)?" + name + "\\s*\\(", "i").test(sql.slice(m.index));
     if (functions.has(name) && !recreated) functions.get(name).dropped = true;

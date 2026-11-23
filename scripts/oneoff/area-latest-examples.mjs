@@ -1,4 +1,4 @@
-// Example reports for LATEST FROM THIS AREA (0477), authored by the four TEST example accounts of
+// Example reports for LATEST FROM THIS AREA (0478), authored by the four TEST example accounts of
 // scripts/manual-test-accounts.mjs, so the card at Leavenworth, WA has enough to page, sort and filter:
 // 16 public rows — five sport, four trad, three bouldering, two ice, one top rope, one alpine; nine
 // with a write-up (trip reports), seven with condition tags only (logged climbs); five in the last 30

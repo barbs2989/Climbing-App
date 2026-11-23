@@ -1,4 +1,4 @@
--- 0477: LATEST FROM THIS AREA can show more than four, sorted and filtered.
+-- 0478: LATEST FROM THIS AREA can show more than four, sorted and filtered.
 --
 -- WHY (owner, 2026-11-19: "have a dropdown to see more after a certain amount and allow people to sort
 -- and filter by date, discipline, etc."): the card showed the four newest public reports and stopped.
@@ -104,7 +104,7 @@ $$;
 revoke all on function public.area_latest_reports(text, integer, integer, text, date, text, text) from public;
 grant execute on function public.area_latest_reports(text, integer, integer, text, date, text, text) to anon, authenticated;
 comment on function public.area_latest_reports(text, integer, integer, text, date, text, text) is
-  'Latest from this area (0414, 0428, 0477): ids of the public reports under an area''s subtree, optionally '
+  'Latest from this area (0414, 0428, 0478): ids of the public reports under an area''s subtree, optionally '
   'only one discipline, since a date, or only write-ups / only logged climbs, newest or oldest first; the '
   'same reports'' climb, author, discipline and kind (latest_refs); how many match (total), how many there '
   'are (total_all) and per discipline (discs); and the condition tags of every visible log there in the '
