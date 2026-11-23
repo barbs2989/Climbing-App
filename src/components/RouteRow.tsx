@@ -5,7 +5,7 @@ import { rowGrade } from "../../lib/areaBrowserShared.js";
 import { ClimberCtx } from "../../lib/climberCtx.js";
 import DiscIcon from "./DiscIcon.tsx";
 import type { CSSProperties } from "react";
-import { hlMatch } from "../../ClimbMatchCore.jsx";
+import { hlMatch, uElev } from "../../ClimbMatchCore.jsx";
 import type { C as Palette } from "../../ClimbMatchCore.jsx";
 
 export interface RouteRowRoute {
@@ -13,6 +13,8 @@ export interface RouteRowRoute {
   name?: string;
   stars?: number | null;
   pitches: number;
+  /** The climb's length in metres (routes.length_m): the route page's Height stat. The row prints it after the pitches. */
+  length_m?: number | null;
   discipline?: keyof typeof DL;
   /** The wall position, left to right. The row does not print it; the lists that draw these rows sort by it. */
   sort_order?: number | null;
@@ -58,7 +60,10 @@ export default function RouteRow({ r, onOpen, C, areaName, dense, savedMark = tr
   // already in wall order, and NEXT DOOR on the route page names the climbs either side.
   // The grade at the right carries its protection rating right beside it ("5.8 PG13"; owner, 2026-11-18).
   const grade = rowGrade(r);
-  const sub = [areaName || null, r.discipline ? (DL[r.discipline] || r.discipline) : null, pitches].filter(Boolean).join(" · ");
+  // The LENGTH follows the pitches ("Trad · 5 pitches · 600 ft", owner 2026-11-23: show it when searching for climbs),
+  // in the climber's units through uElev, exactly as the route page's Height stat. No stored length, no text.
+  const length = r.length_m != null && r.length_m > 0 ? uElev(r.length_m * 3.28084) : null;
+  const sub = [areaName || null, r.discipline ? (DL[r.discipline] || r.discipline) : null, pitches, length].filter(Boolean).join(" · ");
   const id = r.id == null ? null : String(r.id);
   const done = id != null && !!completedIds && (completedIds.has(id) || completedIds.has(r.id as string | number));
   const saved = savedMark && !done && id != null && (wishlist || []).some(w => String(w) === id);
