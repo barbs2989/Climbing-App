@@ -9,7 +9,7 @@
 -- and commit the result in the same PR. `npm run gen:schema -- --check` exits 1 when this
 -- file has drifted from the live database.
 --
--- Counts: 86 tables, 851 columns, 459 keyed/checked constraints (150 foreign keys), 254 RLS policies.
+-- Counts: 87 tables, 862 columns, 466 keyed/checked constraints (152 foreign keys), 258 RLS policies.
 -- Not covered here: views, functions, triggers, standalone indexes (see supabase/migrations/).
 
 -- ── Foreign keys ───────────────────────────────────────────────────────────────
@@ -143,6 +143,8 @@
 -- route_flags (route_flags_reporter_fkey): FOREIGN KEY (reporter) REFERENCES auth.users(id) ON DELETE CASCADE
 -- route_flags (route_flags_resolved_by_fkey): FOREIGN KEY (resolved_by) REFERENCES auth.users(id) ON DELETE SET NULL
 -- route_flags (route_flags_route_id_fkey): FOREIGN KEY (route_id) REFERENCES routes(id) ON DELETE CASCADE
+-- route_partner_listings (route_partner_listings_route_id_fkey): FOREIGN KEY (route_id) REFERENCES routes(id) ON DELETE CASCADE
+-- route_partner_listings (route_partner_listings_user_id_fkey): FOREIGN KEY (user_id) REFERENCES profiles(id) ON DELETE CASCADE
 -- route_ratings (route_ratings_route_id_fkey): FOREIGN KEY (route_id) REFERENCES routes(id) ON DELETE CASCADE
 -- route_ratings (route_ratings_user_id_fkey): FOREIGN KEY (user_id) REFERENCES auth.users(id) ON DELETE CASCADE
 -- route_views (route_views_route_id_fkey): FOREIGN KEY (route_id) REFERENCES routes(id) ON DELETE CASCADE
@@ -1290,6 +1292,8 @@ CREATE TABLE public.groups (
   lng double precision,
   avatar_url text,
   cover_url text,
+  region text GENERATED ALWAYS AS (region_of_place(location)) STORED,
+  search_text text GENERATED ALWAYS AS (group_search_text(name, disciplines, location, blurb)) STORED,
   CONSTRAINT groups_pkey PRIMARY KEY (id),
   CONSTRAINT groups_avatar_url_ours CHECK (((avatar_url IS NULL) OR ((length(avatar_url) <= 1000) AND (avatar_url ~ '^https://[a-z0-9]+\.supabase\.co/storage/v1/object/public/topo-photos/[0-9a-f-]{36}/[^?#]+$'::text)))),
   CONSTRAINT groups_cover_url_ours CHECK (((cover_url IS NULL) OR ((length(cover_url) <= 1000) AND (cover_url ~ '^https://[a-z0-9]+\.supabase\.co/storage/v1/object/public/topo-photos/[0-9a-f-]{36}/[^?#]+$'::text)))),
@@ -1791,6 +1795,26 @@ CREATE TABLE public.route_link_ups (
 ALTER TABLE public.route_link_ups ENABLE ROW LEVEL SECURITY;
 CREATE POLICY route_link_ups_read ON public.route_link_ups AS PERMISSIVE FOR SELECT TO anon, authenticated USING (true);
 
+CREATE TABLE public.route_partner_listings (
+  user_id uuid NOT NULL,
+  route_id text NOT NULL,
+  free_from date,
+  free_to date,
+  note text,
+  created_at timestamp with time zone NOT NULL DEFAULT now(),
+  updated_at timestamp with time zone NOT NULL DEFAULT now(),
+  CONSTRAINT route_partner_listings_pkey PRIMARY KEY (user_id, route_id),
+  CONSTRAINT route_partner_listings_note_len CHECK (((note IS NULL) OR (length(note) <= 140))),
+  CONSTRAINT route_partner_listings_window CHECK ((((free_from IS NULL) = (free_to IS NULL)) AND ((free_to IS NULL) OR (free_to >= free_from)))),
+  CONSTRAINT route_partner_listings_route_id_fkey FOREIGN KEY (route_id) REFERENCES routes(id) ON DELETE CASCADE,
+  CONSTRAINT route_partner_listings_user_id_fkey FOREIGN KEY (user_id) REFERENCES profiles(id) ON DELETE CASCADE
+);
+ALTER TABLE public.route_partner_listings ENABLE ROW LEVEL SECURITY;
+CREATE POLICY "owner adds own route listings" ON public.route_partner_listings AS PERMISSIVE FOR INSERT TO public WITH CHECK ((auth.uid() = user_id));
+CREATE POLICY "owner reads own route listings" ON public.route_partner_listings AS PERMISSIVE FOR SELECT TO public USING ((auth.uid() = user_id));
+CREATE POLICY "owner removes own route listings" ON public.route_partner_listings AS PERMISSIVE FOR DELETE TO public USING ((auth.uid() = user_id));
+CREATE POLICY "owner updates own route listings" ON public.route_partner_listings AS PERMISSIVE FOR UPDATE TO public USING ((auth.uid() = user_id)) WITH CHECK ((auth.uid() = user_id));
+
 CREATE TABLE public.route_ratings (
   route_id text NOT NULL,
   user_id uuid NOT NULL DEFAULT auth.uid(),
@@ -1935,6 +1959,8 @@ CREATE TABLE public.routes (
   approach_loss_ft integer,
   return_gain_ft integer,
   extra_facts jsonb,
+  glacier_travel text,
+  snow_in_season text,
   CONSTRAINT routes_pkey PRIMARY KEY (id),
   CONSTRAINT routes_anchor_len CHECK (((anchor IS NULL) OR ((char_length(anchor) >= 1) AND (char_length(anchor) <= 80)))),
   CONSTRAINT routes_approach_loss_ft_range CHECK (((approach_loss_ft IS NULL) OR ((approach_loss_ft >= 0) AND (approach_loss_ft <= 20000)))),
@@ -1942,6 +1968,7 @@ CREATE TABLE public.routes (
   CONSTRAINT routes_classic_score_check CHECK (((classic_score IS NULL) OR ((classic_score >= (0)::numeric) AND (classic_score <= (4)::numeric)))),
   CONSTRAINT routes_extra_facts_shape CHECK (extra_facts_ok(extra_facts)),
   CONSTRAINT routes_fixed_gear_len CHECK (((fixed_gear IS NULL) OR ((char_length(fixed_gear) >= 1) AND (char_length(fixed_gear) <= 160)))),
+  CONSTRAINT routes_glacier_travel_yn CHECK (((glacier_travel IS NULL) OR (glacier_travel = ANY (ARRAY['yes'::text, 'no'::text])))),
   CONSTRAINT routes_guide_stars_range CHECK (((guide_stars IS NULL) OR ((guide_stars >= 0) AND (guide_stars <= 4)))),
   CONSTRAINT routes_itinerary_is_day_by_day CHECK (((itinerary IS NULL) OR ((jsonb_typeof(itinerary) = 'object'::text) AND (jsonb_typeof((itinerary -> 'days'::text)) = 'array'::text) AND (jsonb_array_length((itinerary -> 'days'::text)) > 0)))),
   CONSTRAINT routes_location_len CHECK (((location IS NULL) OR ((char_length(location) >= 1) AND (char_length(location) <= 1000)))),
@@ -1949,6 +1976,7 @@ CREATE TABLE public.routes (
   CONSTRAINT routes_rack_items_array CHECK (((rack_items IS NULL) OR (jsonb_typeof(rack_items) = 'array'::text))),
   CONSTRAINT routes_return_gain_ft_range CHECK (((return_gain_ft IS NULL) OR ((return_gain_ft >= 0) AND (return_gain_ft <= 20000)))),
   CONSTRAINT routes_rock_quality_len CHECK (((rock_quality IS NULL) OR ((char_length(rock_quality) >= 1) AND (char_length(rock_quality) <= 160)))),
+  CONSTRAINT routes_snow_in_season_yn CHECK (((snow_in_season IS NULL) OR (snow_in_season = ANY (ARRAY['yes'::text, 'no'::text])))),
   CONSTRAINT routes_sun_len CHECK (((sun IS NULL) OR ((char_length(sun) >= 1) AND (char_length(sun) <= 160)))),
   CONSTRAINT routes_variations_is_array CHECK (((variations IS NULL) OR (jsonb_typeof(variations) = 'array'::text))),
   CONSTRAINT routes_wet_len CHECK (((wet IS NULL) OR ((char_length(wet) >= 1) AND (char_length(wet) <= 160)))),
