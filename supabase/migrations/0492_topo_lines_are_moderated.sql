@@ -1,4 +1,4 @@
--- 0489: the words on a topo LINE are moderated like every other thing a climber writes.
+-- 0492: the words on a topo LINE are moderated like every other thing a climber writes.
 --
 -- A line drawn on a topo photo carries free text that every reader of the route sees: the line's name
 -- (label), a caption per variation (variant_labels, 0362) and a note per marker (pins[].note). None of

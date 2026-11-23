@@ -1,4 +1,4 @@
-// One-off: are the words on a topo LINE moderated (0489), and is a topo's CAPTION (0488)?
+// One-off: are the words on a topo LINE moderated (0492), and is a topo's CAPTION (0488)?
 //
 // Replays every migration into PGlite with Supabase's default grants (no network, no production),
 // then acts as two real client roles, A (the author) and B (a reader):
@@ -10,8 +10,8 @@
 //   5. B can report A's line (the report copies its words and the photo), A cannot report their own;
 //   6. A can appeal the held line, B cannot;
 //   7. a topo CAPTION with a floor term is held, and a report of a topo copies its caption.
-// Run it WITHOUT 0489 in supabase/migrations and 2-6 fail: that is the gap.
-//   node scripts/oneoff/verify-0489-topo-lines-moderated-pglite.mjs
+// Run it WITHOUT 0492 in supabase/migrations and 2-6 fail: that is the gap.
+//   node scripts/oneoff/verify-0492-topo-lines-moderated-pglite.mjs
 import fs from "node:fs";
 import path from "node:path";
 
@@ -19,7 +19,7 @@ const ROOT = process.cwd();
 const DIR = path.join(ROOT, "supabase", "migrations");
 let failures = 0, passes = 0;
 const ok = (c, m) => { console.log((c ? "  ok    " : "  FAIL  ") + m); if (c) passes++; else failures++; };
-const dead = (m) => { console.error(`verify-0489 FAILED: ${m}. Nothing below was checked.`); process.exit(1); };
+const dead = (m) => { console.error(`verify-0492 FAILED: ${m}. Nothing below was checked.`); process.exit(1); };
 
 let PGlite, ltree, pg_trgm, pgcrypto, uuid_ossp;
 try {
@@ -49,7 +49,7 @@ for (const f of files) {
   try { await db.exec("begin"); await db.exec(fs.readFileSync(path.join(DIR, f), "utf8")); await db.exec("commit"); }
   catch (e) { await db.exec("rollback").catch(() => {}); dead(`${f} did not replay: ${e.message}`); }
 }
-console.log(`verify-0489: ${files.length} migrations replayed${files.some((f) => f.startsWith("0489_")) ? "" : " (0489 is NOT among them: expect 2-6 to fail)"}.`);
+console.log(`verify-0492: ${files.length} migrations replayed${files.some((f) => f.startsWith("0492_")) ? "" : " (0492 is NOT among them: expect 2-6 to fail)"}.`);
 
 const A = "00000000-0000-4000-8000-00000000000a", B = "00000000-0000-4000-8000-00000000000b";
 try {
@@ -134,5 +134,5 @@ ok(!repT.error && String(snapT).includes("North face from the notch"), "7: a rep
 const cap = await as(A, "update topos set caption = $2 where id = $1 returning moderation", [T, "see " + TERM]);
 ok(!cap.error && cap.rows[0].moderation === "held", "7: a caption with a floor term holds the topo (0488)" + (cap.error ? " — " + cap.error : ""));
 
-console.log(`\nverify-0489: ${passes} passed, ${failures} failed.`);
+console.log(`\nverify-0492: ${passes} passed, ${failures} failed.`);
 process.exit(failures ? 1 : 0);

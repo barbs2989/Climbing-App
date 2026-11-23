@@ -20,7 +20,7 @@ export interface TopoModalLine extends TopoLine {
   variant_labels?: (string | null)[] | null;
   /** The signed-in climber drew it: Edit and Delete are offered. */
   mine?: boolean;
-  /** visible / held / removed (0489); a line that is not visible is only ever sent to its author. */
+  /** visible / held / removed (0492); a line that is not visible is only ever sent to its author. */
   moderation?: string | null;
 }
 /** A topo photo as the viewer takes it. */

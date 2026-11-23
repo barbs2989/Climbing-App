@@ -58,7 +58,7 @@ const KINDS: Record<string, { table: string; text: string[]; more?: (r: any) => 
   trip_report:  { table: "climb_logs",     text: ["notes", "beta", "gear_beta", "road_note", "outcome_note", "sun_note"], images: (r) => photoUrls(r.photos) },
   group:        { table: "groups",         text: ["name", "blurb", "location"] },
   topo:         { table: "topos",          text: ["alt", "photographer", "caption"] },
-  // A line's words are not plain columns (0489): its name, a caption per variation, a note per marker.
+  // A line's words are not plain columns (0492): its name, a caption per variation, a note per marker.
   topo_line:    { table: "topo_lines",     text: ["label"], more: (r) => [
     ...(Array.isArray(r.variant_labels) ? r.variant_labels : []),
     ...(Array.isArray(r.pins) ? r.pins.map((p: any) => p && p.note) : []),

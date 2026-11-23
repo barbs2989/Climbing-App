@@ -149,7 +149,7 @@ export default function TopoSection({route}: TopoSectionProps){
   };
 
   /* REPORT AND APPEAL (topo audit, 2026-11-23). report_content has taken 'topo' since 0263 and nothing in the app
-     opened the sheet for one; a line's words became reportable with 0489. The sheets live in App under the
+     opened the sheet for one; a line's words became reportable with 0492. The sheets live in App under the
      viewer (z-index), so the viewer closes first. Offered only where App registered the opener: a signed-out
      or seed session shows no control rather than one that fails. */
   const report=(USE_DB&&canReportContent())?function(kind: "topo"|"topo_line",id: string|number,label: string){setViewerIdx(null);openContentReport({kind:kind,id:String(id),label:label});}:undefined;
