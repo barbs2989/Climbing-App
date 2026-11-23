@@ -1,7 +1,7 @@
 import { uImp, gainBelowOwnPins, RSL as SL, C, SUB_LABEL, loggedTimeStats, fmtDurMin, uElev, pitchedFraction, gn, scarfHrs, techHrs, uDist } from "../../ClimbMatchCore.jsx";
 import { useState } from "react";
 import type { Dispatch, SetStateAction } from "react";
-import { planTimes, realPitches, summitDayPlan } from "../../lib/planTimes";
+import { planTimes, summitDayPlan } from "../../lib/planTimes";
 import { isMultiDayOuting, itinDayCount } from "../../lib/outing.js";
 import Hr from "./Hr.tsx";
 import EditIconButton from "./EditIconButton.tsx";
@@ -139,8 +139,7 @@ export default function Calculator({route,activity,fit:fitProp,setFit:setFitProp
      lib/planTimes.js, because the Conditions tab's alpine start counts back from the same estimate. */
   const P=planTimes(route,{fit,pack,party,depart});
   const {hasPublishedSummitH,hasDerivedSummitH,publishedIsWholeDay}=P;
-  const hasHikeInputs=(route.distKm!=null&&route.distKm!=="")||(route.gainM!=null&&route.gainM!=="");
-  // hasHikeInputs is an OR, so ONE of the three is enough to render a confident total -- while
+  // The walk used to be shown only on a raw distance-or-gain test (hasHikeInputs), an OR, so ONE of the three is enough to render a confident total -- while
   // scarfHrs still charges every missing component as 0. Measured on the live catalog: 950
   // routes render a confident estimate and only 625 carry all three, so 325 of them (34%) were
   // quoting a number with a silently free leg. Worst case is dist-only, which drops both the
@@ -163,7 +162,11 @@ export default function Calculator({route,activity,fit:fitProp,setFit:setFitProp
      worded the same way and sit together. */
   const gainShort=gainBelowOwnPins(route);
   const missHikeLabel=_missHike.length===1?_missHike[0]:_missHike.slice(0,-1).join(", ")+" or "+_missHike[_missHike.length-1];
-  const hasAnyEstimate=hasHikeInputs||hasPublishedSummitH||hasDerivedSummitH||realPitches(route)>0||P.loneApproachH!=null||P.loneDescentH!=null;
+  /* WHETHER EACH LEG HAS A TIME is planTimes' own test (approachTimed / climbTimed / descentTimed / anyTimed),
+     the one SummitLegsCard and DescentLegStrip read, so a tile here can never say N/A beside a leg card that
+     times it. It used to be a raw-column test written here, which missed the trip plan's day miles and a pitch
+     count estimated from the length (owner, 2026-11-23). */
+  const hasAnyEstimate=P.anyTimed;
   const {hikeH,techH,sumH,retH,storedApproachH}=P;
   const dayOf=(h: number)=>Math.floor(Math.round(h*60)/1440);const fmt=(h: number)=>{let total=Math.round(h*60);const day=dayOf(h);total=total%1440;const hr=Math.floor(total/60),mn=total%60,ap=hr>=12?"PM":"AM",h12=hr%12||12;return `${h12}:${String(mn).padStart(2,"0")} ${ap}${day>0?" (+"+day+"d)":""}`;};
   /* THE TWO RED LABELS BELOW ARE COMPARED AGAINST A CLOCK HOUR, AND sumH/retH ARE UNBOUNDED.
@@ -243,7 +246,7 @@ export default function Calculator({route,activity,fit:fitProp,setFit:setFitProp
   /* A section of the Plan tab like TRIP PLAN above it, so it takes the same section header (owner's note,
      2026-10-25: "It should look like all the other headers"); it was a 14px blue title inside its own card. */
   /* The lower-bound notes, shared by the one-day clocks and the multi-day view below. */
-  const floorNotes=<>{approachUnknown?<div style={{gridColumn:"1 / -1",fontSize:12,color:C.textMuted,lineHeight:1.5,marginTop:2}}>{"Lower bounds only — no recorded "+missHikeLabel+"."}</div>:null}{climbUnknown?<div style={{gridColumn:"1 / -1",fontSize:12,color:C.textMuted,lineHeight:1.5,marginTop:2}}>{"Lower bounds only — no climbing time on file."}</div>:null}{gainShort?<div style={{gridColumn:"1 / -1",fontSize:12,color:C.textMuted,lineHeight:1.5,marginTop:2}}>{"Lower bound — the recorded gain of "+uElev(gainShort.gainFt)+" is less than the "+uElev(gainShort.riseFt)+" between this route’s own trailhead and summit pins. The times above are figured on the smaller number, so your real day will be longer."}</div>:null}{(!hasPublishedSummitH&&!hasDerivedSummitH&&route.pitches&&pitchedFraction(gn(route.grade as string))<1)?<div style={{gridColumn:"1 / -1",fontSize:12,color:C.textMuted,lineHeight:1.5,marginTop:2}}>{"Climbing time assumes a party moving continuously; pitching it out roughly doubles it."}</div>:null}</>;
+  const floorNotes=<>{approachUnknown?<div style={{gridColumn:"1 / -1",fontSize:12,color:C.textMuted,lineHeight:1.5,marginTop:2}}>{"Lower bounds only — no recorded "+missHikeLabel+"."}</div>:null}{climbUnknown?<div style={{gridColumn:"1 / -1",fontSize:12,color:C.textMuted,lineHeight:1.5,marginTop:2}}>{P.climbTimed?"Lower bounds only — no pitch count on file, so the climbing is estimated from the route’s length.":"Lower bounds only — no climbing time on file."}</div>:null}{gainShort?<div style={{gridColumn:"1 / -1",fontSize:12,color:C.textMuted,lineHeight:1.5,marginTop:2}}>{"Lower bound — the recorded gain of "+uElev(gainShort.gainFt)+" is less than the "+uElev(gainShort.riseFt)+" between this route’s own trailhead and summit pins. The times above are figured on the smaller number, so your real day will be longer."}</div>:null}{(!hasPublishedSummitH&&!hasDerivedSummitH&&route.pitches&&pitchedFraction(gn(route.grade as string))<1)?<div style={{gridColumn:"1 / -1",fontSize:12,color:C.textMuted,lineHeight:1.5,marginTop:2}}>{"Climbing time assumes a party moving continuously; pitching it out roughly doubles it."}</div>:null}</>;
   return <div><SL>Full trip time</SL><div style={{background:C.card,borderRadius:12,padding:"12px 14px",border:`1px solid ${C.border}`}}>
     {/* The heading used to read "PUBLISHED TIMES · CAR-TO-CAR", hardcoded on every route carrying a
         timing object, and it never asked whether the published plan WAS car-to-car. Measured over
@@ -298,7 +301,10 @@ export default function Calculator({route,activity,fit:fitProp,setFit:setFitProp
           {whole?null:row("in",dayLbl(1,sd.inDays),sd.why==="enroute"?"Walk in, over the summit, to camp":sd.inDays===1?"Walk in to camp":"Walk in, camping on the way",(walkInKnown?"":"≥")+hr(sd.why==="enroute"?sd.walkInH+techH:sd.walkInH),C.green)}
           {sd.timed?<div style={{padding:"8px 0",borderBottom:sd.outDays?`1px solid ${C.borderLight}`:"none"}}>
             <div style={{fontSize:11,fontWeight:700,color:C.textMuted,textTransform:"uppercase",letterSpacing:0.3}}>{"Day "+sdN+" · summit day"}</div>
-            <div style={{fontSize:13,color:C.text,fontWeight:600,marginBottom:8}}>{"Leaving camp at "+fmt(camp)+(sd.endAt==="car"?", out to the car the same day":"")}</div>
+            <div style={{fontSize:13,color:C.text,fontWeight:600,marginBottom:2}}>{"Leaving camp at "+fmt(camp)+(sd.endAt==="car"?", out to the car the same day":"")}</div>
+            {/* The summit day's own HOURS, not only its clocks: 467 multi-day routes timed the climb only as an
+                Est. summit clock, so the one leg the leg cards under GETTING THERE time had no duration here (owner, 2026-11-23). */}
+            <div data-summit-day-legs="1" style={{fontSize:12.5,color:C.textSub,marginBottom:8}}>{"Camp to summit "+(climbKnown?"":"≥")+hr(sd.upH as number)+(sd.endClock!=null?" · back "+(sd.endAt==="car"?"to the car ":"to camp ")+(sd.endAt==="car"&&!(walkOutKnown||P.storedDescentH!=null)?"≥":"")+hr(sd.endClock-(sd.summitClock as number)):"")}</div>
             <div style={{display:"grid",gridTemplateColumns:sd.endClock!=null?"1fr 1fr":"1fr",gap:9}}>
               {clock("Est. summit",sd.summitClock as number,!!sd.sumLate,"Leave camp earlier")}
               {sd.endClock!=null?clock(sd.endAt==="car"?"Back at the car":"Back at camp",sd.endClock,!!sd.late,"After dark"):null}
@@ -318,11 +324,14 @@ export default function Calculator({route,activity,fit:fitProp,setFit:setFitProp
         <div style={{fontSize:17,fontWeight:700,color:C.amber}}>{P.tripH.toFixed(1)+"hr"}</div><div style={{fontSize:12,color:C.textMuted}}>Total trip, car to car</div>
         <div style={{fontSize:12,color:C.textSub,lineHeight:1.5,marginTop:6,textAlign:"left"}}>{"Published as one car-to-car time, not split into legs."}</div>
       </div>:<div style={{display:"grid",gridTemplateColumns:"repeat(2,minmax(0,1fr))",gap:8,marginBottom:10,textAlign:"center"}}>
-        <div><div style={{fontSize:17,fontWeight:700,color:C.green}}>{(hasHikeInputs||storedApproachH!=null||P.loneApproachH!=null)?(walkInKnown?"":"≥")+hikeH.toFixed(1)+"hr":"N/A"}</div><div style={{fontSize:12,color:C.textMuted}}>Approach{route.timing&&route.timing.climbToStartHrs!=null?" · + "+route.timing.climbToStartHrs+" hr climbing to start (in Total)":""}</div></div>
-        <div><div style={{fontSize:17,fontWeight:700,color:C.blue}}>{climbKnown?techH.toFixed(1)+"hr":"N/A"}</div><div style={{fontSize:12,color:C.textMuted}}>Climbing</div></div>
+        <div><div style={{fontSize:17,fontWeight:700,color:C.green}}>{P.approachTimed?(walkInKnown?"":"≥")+hikeH.toFixed(1)+"hr":"N/A"}</div><div style={{fontSize:12,color:C.textMuted}}>Approach{route.timing&&route.timing.climbToStartHrs!=null?" · + "+route.timing.climbToStartHrs+" hr climbing to start (in Total)":""}</div></div>
+        {/* A pitch count estimated from the length (climbPitches) is timed and marked "≥", as the leg card under GETTING THERE marks it; N/A only when there is nothing to time. */}
+        <div><div style={{fontSize:17,fontWeight:700,color:C.blue}}>{P.climbTimed?(climbKnown?"":"≥")+techH.toFixed(1)+"hr":"N/A"}</div><div style={{fontSize:12,color:C.textMuted}}>Climbing</div></div>
         {/* N/A, like the Approach tile beside it, when nothing describes the way down: no stored descent, no walk out (distance or gain) and no rappels (#2336 printed "≥0.0hr"). */}
-        <div><div style={{fontSize:17,fontWeight:700,color:C.blue}}>{hasAnyEstimate&&(P.downH>0||P.storedDescentH!=null)?((walkOutKnown||P.storedDescentH!=null)?"":"≥")+P.downH.toFixed(1)+"hr":"N/A"}</div><div style={{fontSize:12,color:C.textMuted}}>Descent</div></div>
+        <div><div style={{fontSize:17,fontWeight:700,color:C.blue}}>{P.descentTimed?((walkOutKnown||P.storedDescentH!=null)?"":"≥")+P.downH.toFixed(1)+"hr":"N/A"}</div><div style={{fontSize:12,color:C.textMuted}}>Descent</div></div>
         <div><div style={{fontSize:17,fontWeight:700,color:C.amber}}>{hasAnyEstimate?(lowerBound?"≥":"")+P.tripH.toFixed(1)+"hr":"N/A"}</div><div style={{fontSize:12,color:C.textMuted}}>Total trip</div></div>
+        {/* A party over two adds time to the Total that no tile holds; named, so the four tiles add up to it. */}
+        {hasAnyEstimate&&P.partyH>0?<div style={{gridColumn:"1 / -1",fontSize:12,color:C.textMuted,lineHeight:1.5}}>{"Total includes + "+P.partyH.toFixed(1)+" hr for a party of "+party+"."}</div>:null}
       </div>}
       <Hr/>
       <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:9}}>
