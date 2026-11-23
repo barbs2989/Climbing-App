@@ -72,16 +72,17 @@ export default function LogAscent({route,onClose,onSave,connections,crewMates,me
   const alpiney=["alpine","mountaineering","ice","mixed","scrambling"].indexOf(_cat)>=0;
   const [showItinForm,setShowItinForm]=useState(false);const [myItin,setMyItin]=useState(x.itinerary?{days:itinDaysToDraft(x.itinerary.days)}:null);
   const tog=(a,set,v)=>set(a.includes(v)?a.filter(x=>x!==v):[...a,v]);
-  /* A control that says "Add trip report" / "Write a full report" opens THIS form, and used to
-     land on DATE CLIMBED at the top — the report box sits ~20 sections further down, so the
-     button that promised the report delivered the whole log. focus="report" scrolls the
-     TRIP REPORT heading to the top of the sheet and puts the caret at the end of the text. */
+  /* focus="report" titles the sheet "Trip report". It LANDS on the write-up box (heading at the
+     top of the sheet, caret at the end of the text) only when there is a write-up to edit: that
+     is editing one specific field. "Add trip report" on a climb with none opens at the TOP like
+     every other new page (owner, 2026-11-19; it used to jump ~20 sections down). */
   const reportRef=useRef(null),roadRef=useRef(null);
   /* "Report the road" on the route page opens this form at GETTING THERE, not at the top — same
      reason as focus="report" below. It also starts in "Conditions only": a climber reporting the
      road may not have climbed anything. */
   useEffect(function(){if(focus!=="road")return;var t=setTimeout(function(){try{if(roadRef.current)roadRef.current.scrollIntoView({block:"start"});}catch(e){}},0);return function(){clearTimeout(t);};},[focus]);
-  useEffect(function(){if(focus!=="report")return;var t=setTimeout(function(){try{if(reportRef.current)reportRef.current.scrollIntoView({block:"start"});if(notesRef.current)caretToEnd(notesRef.current);}catch(e){}},0);return function(){clearTimeout(t);};},[focus]);
+  const landOnReport=focus==="report"&&!!x.text;
+  useEffect(function(){if(!landOnReport)return;var t=setTimeout(function(){try{if(reportRef.current)reportRef.current.scrollIntoView({block:"start"});if(notesRef.current)caretToEnd(notesRef.current);}catch(e){}},0);return function(){clearTimeout(t);};},[landOnReport]);
   /* What a trip report usually covers, from how climbers write them (Mountaineers / WTA / guide
      writeups): the approach, the route and where it goes, the descent, water, times and the gear
      that was actually needed. One tap starts that line so nobody faces a blank box. */
