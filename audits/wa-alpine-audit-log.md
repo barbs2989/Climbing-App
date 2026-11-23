@@ -39725,3 +39725,55 @@ Face (plus, on their checked sub-fields, Cauthorn-Wilson Couloir and South Buttr
 
 0 confirmed errors fixed, 4 newly flagged for human review, 4 clean.
 Next batch will continue id-ascending from `wa_cutthroat_south_buttress` (pass 9).
+
+## 2026-11-23 — Pass 9, Batch 569
+
+Eight routes across 6 peaks, continuing id-ascending from `wa_cutthroat_south_buttress`: Cutthroat
+Peak (The Swarm, West Ridge), Dark Peak (Dark Glacier Route), Liberty Bell (Dark Side of Liberty),
+Davis Peak NC (Northeast Face Couloir, North Face / Burdo-Cairns), Dragontail Peak (Der Dihedral),
+Sloan Peak (Diamond In The Rough).
+
+Verified against independent sources and found correct: The Swarm's FA (Justin Willis and Alex
+Perz, July 2023) and shape (5.11c, 850 ft / 258 m, 8 pitches) match the AAC Publications
+first-ascent account and Mountain Project's dedicated route page exactly (our stored 259 m vs.
+258 m is rounding). Dark Peak's `high_point_ft` (8,507) sits inside a tight 8,501-8,520 ft range
+from TopoZone, a LiDAR listing and WTA — normal survey variance. Dark Side of Liberty's FA (Mikey
+Schaefer and Shanjean Lee, August 2019), grade (IV 5.13+) and length (1,100 ft) match Lee's own
+AAJ write-up exactly; a secondary blog giving 11 pitches / 350 m / 5.13d doesn't override the
+primary AAJ account our fields already match. Der Dihedral's existence and grade (5.9+) on
+Dragontail Peak are confirmed via a Mountain Project listing. Diamond In The Rough's FA (Rad
+Roberts and Brandon Workman, September 11, 2011), length (1,100 ft / 335 m) and pitch count (9)
+match the climbers' own CascadeClimbers first-ascent trip report exactly; that report's own
+on-the-day grade of 5.10 differs from our stored 5.11-, but 5.11- is the current Mountain Project
+consensus grade (confirmed via search), and the row's own `corrections` field already discloses
+this FA-vs-current-grade gap — not re-flagged. Sloan Peak (7,835 ft), Liberty Bell Mountain
+(7,720 ft) and Dragontail Peak (8,840 ft) elevations all check out exactly against
+Wikipedia/Mountain Project/SummitPost.
+
+North Face (Burdo-Cairns) on Davis Peak NC is a thin row (FA party named, no date, no independent
+source found either way) — nothing contradicted, left alone.
+
+No confirmed errors with a clean, sourced fix this batch.
+
+**Clean (7):** The Swarm, West Ridge, Dark Glacier Route, Dark Side of Liberty, North Face
+(Burdo-Cairns), Der Dihedral, Diamond In The Rough.
+
+**Flagged for human review (1):**
+- Northeast Face Couloir's stored first-winter-ascent date ("March 13, 2005", Stuart Taylor and
+  Ade Miller) matches the American Alpine Club's published annual summary, but conflicts by one
+  day with the climbers' own primary account — Ade Miller's personal trip page and his own
+  March 14, 2005 CascadeClimbers trip report both date the climb to March 12, 2005. Two source
+  types actively disagree (AAC editorial summary vs. the climbers' own first-person account);
+  flagging for a human to pick one rather than guessing. (Separately, SummitPost gives the
+  original 1976 Kloke-Simon FA a year of 1972, but that's a single weaker source against three
+  that agree on 1976 — our stored 1976 FA year is not disturbed by it, so not counted as a
+  separate flag.)
+
+Also worth noting: the AAC's own first-ascent account for The Swarm (checked this batch) states
+Cutthroat Peak's elevation as 8,050 ft, adding another citation to the existing 8,050-vs-8,066
+Cutthroat Peak elevation conflict already flagged in batch 568 (South Buttress vs.
+Cauthorn-Wilson Couloir / East Face) — not re-counted as a new flag here, just supporting evidence
+for that open item.
+
+0 confirmed errors fixed, 1 newly flagged for human review, 7 clean.
+Next batch will continue id-ascending from `wa_diamond_in_the_rough` (pass 9).
