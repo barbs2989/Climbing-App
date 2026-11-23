@@ -186,7 +186,7 @@ export default function ShadeMap({ lat, lng, rise, set, at0, dayKey, clock, C, p
   const btn = { background: C.surface, color: C.blue, border: "1px solid " + C.border, borderRadius: 8, padding: "7px 12px", fontSize: 12.5, fontWeight: 700, cursor: "pointer" };
   const sw = function (col) { return <span aria-hidden="true" style={{ display: "inline-block", width: 10, height: 10, borderRadius: 2, background: col, marginRight: 5, verticalAlign: "-1px" }} />; };
   return <div ref={boxRef} data-shade-map="1">
-    <div style={{ position: "relative", height: 260, borderRadius: 10, overflow: "hidden", border: "1px solid " + C.border, background: "#0a0f1a", isolation: "isolate" }}>
+    <div style={{ position: "relative", height: 260, borderRadius: 10, overflow: "hidden", border: "1px solid " + C.border, background: "#0e0d0b", isolation: "isolate" }}>
       {mapFail ? <div style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "center", padding: 16, fontSize: 12.5, color: C.amber, textAlign: "center", lineHeight: 1.5 }}>The map couldn’t load. The sun times below still come from the terrain.</div> : <div ref={mapDiv} style={{ position: "absolute", inset: 0 }} />}
       {ready ? <BaseLayerToggle baseLayer={baseLayer} setBaseLayer={setBaseLayer} C={C} /> : null}
       {seen && !terr ? <div aria-live="polite" style={{ position: "absolute", left: 10, bottom: 10, zIndex: 1000, background: C.surface, border: "1px solid " + C.border, borderRadius: 8, padding: "5px 9px", fontSize: 11.5, color: C.textSub }}>Loading the terrain…</div> : null}

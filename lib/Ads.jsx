@@ -30,8 +30,8 @@ export const adPreviewOn = () => !!(import.meta.env.DEV && typeof location !== "
 /** Draw the two slots at all? Real ads, or the dev server's preview boxes. */
 export const adsActive = () => ADS_ON || adPreviewOn();
 
-const BOX = (w, h) => ({ width: w, height: h, boxSizing: "border-box", border: "1px dashed #3d4552", borderRadius: 10, background: "repeating-linear-gradient(45deg,#161b22,#161b22 12px,#1a2029 12px,#1a2029 24px)", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", color: "#a7b0ba", fontSize: 12, gap: 6 });
-const Label = () => <div style={{ fontSize: 10.5, letterSpacing: 0.5, textTransform: "uppercase", color: "#a7b0ba", margin: "0 0 4px 2px" }}>Advertisement</div>;
+const BOX = (w, h) => ({ width: w, height: h, boxSizing: "border-box", border: "1px dashed #4a443c", borderRadius: 10, background: "repeating-linear-gradient(45deg,#1a1916,#1a1916 12px,#1a2029 12px,#1a2029 24px)", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", color: "#a69d90", fontSize: 12, gap: 6 });
+const Label = () => <div style={{ fontSize: 10.5, letterSpacing: 0.5, textTransform: "uppercase", color: "#a69d90", margin: "0 0 4px 2px" }}>Advertisement</div>;
 
 let scriptAsked = false;
 function askScript() {
@@ -53,7 +53,7 @@ function AdSlot({ w, h, slot, note }) {
     askScript();
     try { (window.adsbygoogle = window.adsbygoogle || []).push({}); } catch { /* the network's script is not here yet, or blocked: the slot stays empty */ }
   }, [live]);
-  if (!live) return <div style={BOX(w, h)}><b style={{ color: "#e6edf3" }}>{w + " × " + h}</b><span>{note}</span></div>;
+  if (!live) return <div style={BOX(w, h)}><b style={{ color: "#f1ede6" }}>{w + " × " + h}</b><span>{note}</span></div>;
   return <ins ref={ref} className="adsbygoogle" style={{ display: "inline-block", width: w, height: h }} data-ad-client={ADS_CLIENT} data-ad-slot={slot} />;
 }
 
