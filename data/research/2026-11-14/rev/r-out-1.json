@@ -1,0 +1,60 @@
+[
+ {"route_id":"wa_mount_shuksan_white_salmon_glacier","verdict":"unresolved","final_gain":null,
+  "figures":[
+   {"value":5400,"start":"White Salmon trailhead (Mt. Baker Ski Area)","one_way":true,"url":"https://mazamas.org/activity/306/","fact":"Mazamas: ELEVATION GAIN 5,400ft (from earlier pass)"},
+   {"value":7500,"start":"White Salmon Lodge parking lot, 3,600 ft","one_way":false,"url":"https://engineeredforadventure.com/trip-report-white-salmon-glacier-mt-shuksan-march-2020/","fact":"Trip statistics: 10 miles, 7500' vertical gain, 8 hours car-to-car; ski trip, stopped below summit pyramid"},
+   {"value":7500,"start":"White Salmon parking lot, Mt. Baker ski area","one_way":false,"url":"https://www.whereiskylemiller.com/mt-baker-542/mount-shuksan/","fact":"Stats: 9.5 miles, elevation gain: 7,500 feet; summit ski trip, car to car incl. regain from valley"}
+  ],
+  "evidence":[],
+  "note":"Two independent pages give 7,500 ft, but both are car-to-car outing totals (ski trips with the drop into the White Salmon valley and the climb back out), so they support 7,500 only as a whole-trip gain, not a one-way gain. Mazamas 5,400 is still the only one-way figure. Not resolved as one-way; the owner may want gain_ft read as a whole-trip figure."},
+ {"route_id":"wa_magic_mountain_south_ridge","verdict":"unresolved","final_gain":null,
+  "figures":[
+   {"value":4000,"start":"Cascade Pass Trailhead, 3,600 ft","one_way":true,"url":"https://www.mountaineers.org/activities/routes-places/cascade-pass-area-review/magic-mountain-south-ridge","fact":"Trip profile: Trailhead to Summit 7-9 hr, 4,000 ft; Length 12.0 mi; high point 7,610 ft"}
+  ],
+  "evidence":[],
+  "note":"Opened nwhikers TR t=7993280 (segment elevations only, no total gain; it says they drop to ~6,300 between the cols, and Kool-Aid Lake is 6,100 to Cache Col 7,100). Other DDG hits were WTA/CascadeClimbers TRs and ski-loop pages with no route gain figure. Peakbagger ascent 2906715 hit a Cloudflare check (not solved). No second figure found."},
+ {"route_id":"wa_mcclellan_peak_southwest_scramble","verdict":"start_differs","final_gain":null,
+  "figures":[
+   {"value":7200,"start":"Snow Lakes trailhead (north-side routes, per earlier pass)","one_way":true,"url":"https://www.mountaineers.org/activities/routes-places/enchantments-area-review/mcclellan-peak","fact":"Mountaineers McClellan Peak route page: 7,200 ft gain (from earlier pass)"},
+   {"value":6505,"start":"Ingalls Creek TH via Crystal Creek","one_way":false,"url":"https://www.mountaineers.org/activities/trip-reports/basic-alpine-climb-mcclellan-peak","fact":"Crystal Creek approach trip report: 23.64mi 6505' gain, car to car"},
+   {"value":6700,"start":"Ingalls Creek Trailhead via Crystal Lake, southwest face","one_way":false,"url":"https://trailcatjim.com/mcclellan-peak-crystal-lake-ingalls-creek/","fact":"Approximate Stats: 14 miles traveled; 6700 feet gained & lost; start and end Ingalls Creek TH"}
+  ],
+  "evidence":[],
+  "note":"The two Ingalls Creek/southwest-face pages agree with each other (6,505 vs 6,700, within 3%). Both are out-and-back totals, so they are recorded one_way:false. Neither supports the stored 8,100. The Mountaineers 7,200 is for the Snow Lakes/north-side start. If the owner accepts an out-and-back 'gained & lost' total as the ascent figure, the SW scramble from Ingalls Creek is ~6,500-6,700. Stored 8,100 has no source."},
+ {"route_id":"wa_north_ridge_west_side","verdict":"unresolved","final_gain":null,
+  "figures":[
+   {"value":2815,"start":"not stated on page (Rainy Pass / roadside)","one_way":true,"url":"https://www.mountaineers.org/activities/routes-places/incomplete-no-resposnse-works-in-progress/molar-tooth-north-ridge-westside","fact":"Mountaineers works-in-progress page: 2,815 ft gain (from earlier pass)"}
+  ],
+  "evidence":[],
+  "note":"DDG for Molar Tooth + gain returned nothing new. nwhikers TR t=8039800 (roadside start near Rainy Pass) gives no gain figure. SummitPost was skipped. Still only one source."},
+ {"route_id":"wa_lane_peak_r1","verdict":"keep","final_gain":2000,
+  "figures":[
+   {"value":1500,"start":"Narada Falls parking (winter), via the Reflection Lakes road","one_way":true,"url":"https://www.mountaineers.org/activities/routes-places/lane-peak-zipper-lovers-lane","fact":"Mountaineers Zipper & Lovers Lane page: 1,500 ft (from earlier pass); approach starts at the parking lot"},
+   {"value":2000,"start":"Narada Falls Trailhead","one_way":true,"url":"https://mazamas.org/activity/instance/9144/detail/","fact":"Lane Peak, The Zipper: Elevation Gain 2,000; Trailhead Narada Falls Trailhead"},
+   {"value":2000,"start":"Narada Falls (winter)","one_way":true,"url":"https://www.willhiteweb.com/mount_rainier_national_park/lane_peak/tatoosh_range_301.htm","fact":"Lane Peak: Distance 2 miles, Elevation Gain 2,000 feet; in winter drive to Narada Falls"}
+  ],
+  "evidence":[
+   {"url":"https://mazamas.org/activity/instance/9144/detail/","retrieved_at":"2026-11-23","fact":"Lane Peak, The Zipper: Elevation Gain 2,000, Narada Falls Trailhead"},
+   {"url":"https://www.willhiteweb.com/mount_rainier_national_park/lane_peak/tatoosh_range_301.htm","retrieved_at":"2026-11-23","fact":"Lane Peak Elevation Gain: 2,000 feet; winter start Narada Falls; author did the Zipper"}
+  ],
+  "note":"Two independent pages (Mazamas, WillhiteWeb) both give 2,000 ft from Narada Falls for the Zipper, matching the stored 2,000. Mountaineers 1,500 is the outlier. Check that route id r1 means the Zipper/winter Narada start."},
+ {"route_id":"wa_monte_cristo_peak_scramble","verdict":"unresolved","final_gain":null,
+  "figures":[
+   {"value":3900,"start":"Barlow Pass (road 4 mi to Monte Cristo, then Glacier Basin)","one_way":true,"url":"https://www.mountaineers.org/activities/routes-places/monte-cristo-barlow-pass-area/monte-cristo-north-col","fact":"Mountaineers Monte Cristo/North Col: 3,900 ft (from earlier pass); road 4 mi, Glacier Basin 4,500 ft"}
+  ],
+  "evidence":[],
+  "note":"The stored 5,200 rests on Mazamas alone (earlier notes). Two DDG searches found only Glacier Basin hike pages (AllTrails 2,211 ft, to the basin only), trailcatjim Monte Cristo ATTEMPTS that did not summit, and SummitPost (skipped). No second summit gain from Barlow Pass. Also not confirmed: whether the route id means the North Col route."},
+ {"route_id":"wa_morning_star_peak_standard","verdict":"unresolved","final_gain":null,
+  "figures":[
+   {"value":4200,"start":"Sunrise Mine TH (South Ridge route)","one_way":true,"url":"https://www.mountaineers.org/activities/routes-places/morning-star-peak-south-ridge","fact":"Mountaineers Morning Star Peak/South Ridge: 4,200 ft (from earlier pass)"},
+   {"value":3700,"start":"Sunrise Mine Trailhead, via Headlee Basin and Northwest Face","one_way":false,"url":"https://trailcatjim.com/morning-star-peak-headlee-basin-northwest-face/","fact":"Approximate Stats: 6 miles traveled; 3700 feet gained & lost; start/end Sunrise Mine Trailhead"}
+  ],
+  "evidence":[],
+  "note":"trailcatjim's 3,700 (out-and-back, NW Face) is close to the stored 3,670, but it is a single page and a different route from the South Ridge. The WTA hike page has no stats. A BC Adventure Guides snippet (~2,700 ft) is only to the base of Mile High Club; not opened and not counted. Need to confirm which route 'standard' means."},
+ {"route_id":"wa_olympus_traverse","verdict":"unresolved","final_gain":null,
+  "figures":[
+   {"value":8100,"start":"Hoh River TH; whole 45-mile traverse","one_way":false,"url":"https://www.mountaineers.org/activities/routes-places/mount-olympus-blue-glacier","fact":"Mount Olympus Traverse: 45 miles with 8,100 feet (from earlier pass); whole-traverse figure"}
+  ],
+  "evidence":[],
+  "note":"Not searched again this pass; the earlier pass covered it thoroughly. It is a multi-summit traverse, no page gives a one-way trailhead-to-summit figure, and neither 10,700 nor 8,100 is supported as one-way."}
+]

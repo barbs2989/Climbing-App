@@ -1,0 +1,57 @@
+[
+ {"route_id":"wa_mount_stickney_scramble","verdict":"unresolved","final_gain":null,
+  "figures":[
+   {"value":4000,"start":"Olney Creek Rd closure at 2,100 ft","one_way":true,"url":"https://www.mountaineers.org/activities/routes-places/mount-stickney","fact":"Stats panel: Length 13.0 mi, Elevation Gain 4,000 ft, High Point 5,367 ft."},
+   {"value":3500,"start":"Olney Creek Rd closure at 2,100 ft","one_way":true,"url":"https://www.mountaineers.org/activities/routes-places/mount-stickney","fact":"Same page's intro: a scramble of 13 miles and 3,500 feet of elevation gain."}
+  ],
+  "evidence":[],
+  "note":"The one source contradicts itself: its own intro says 3,500 (= stored), its stats panel says 4,000; both Mountaineers, so one source. A 2017 Mountaineers activity listing also says 3,500 (search snippet only, same org, not evidence). WTA TR 2003-02-08 (Roderick) gives no gain. Peakbagger ascents (pid=1799) hit a Cloudflare check, not solved. SummitPost skipped. No independent second figure found."},
+ {"route_id":"wa_se_ridge_aka_shield_wall","verdict":"unresolved","final_gain":null,
+  "figures":[
+   {"value":5255,"start":"Mount Washington trailhead (Mountaineers)","one_way":true,"url":"https://www.mountaineers.org/activities/routes-places/mount-washington-shield-wall","fact":"Mountaineers route page Elevation Gain 5,255 ft (from earlier pass; HP 6,255)."},
+   {"value":2000,"start":"Mount Washington trailhead, approach only to base of P1","one_way":true,"url":"https://hiking.andrewleader.net/routes/se-ridge-shield-wall/","fact":"Approach: probably 1 mile, 2,000 ft gain; stats panel Elevation gain 2000 (approach, not climb)."},
+   {"value":3200,"start":"summit down standard route to trailhead (descent)","one_way":true,"url":"https://hiking.andrewleader.net/routes/se-ridge-shield-wall/","fact":"Descent: follow the standard trail, 1.4 miles, 3,200 ft descent."}
+  ],
+  "evidence":[],
+  "note":"Andrew's Hikes (2021, based on Tobin's Peakbagger log) gives the approach (2,000) and the descent by the standard route (3,200), but no trailhead-to-summit gain for the Shield Wall route itself; the 3,200 descent is near the stored 3,229 but is the standard route's descent, not this route's gain. Mazamas route page (activity/1982) shows no gain figure. Nothing supports the Mountaineers 5,255."},
+ {"route_id":"wa_icy_peak_ruth_icy_traverse","verdict":"unresolved","final_gain":null,
+  "figures":[
+   {"value":6500,"start":"Hannegan Campground trailhead (3,000 ft), round trip over Ruth to Icy","one_way":false,"url":"https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/high-occupancy-xc-zones/ruth-mountain-icy-peak-traverse","fact":"Ruth Mountain & Icy Peak Traverse: Length 16.0 mi, Elevation Gain 6,500 ft, High Point 7,073 ft."},
+   {"value":7100,"start":"Hannegan Pass trailhead, car-to-car over Ruth to Icy and back","one_way":false,"url":"https://www.wta.org/go-hiking/trip-reports/tripreport-2005043003","fact":"Ruth then Icy day trip from Hannegan TH: Elevation gain 7100'; Distance 16 miles; car-to-car 13 hrs."}
+  ],
+  "evidence":[
+   {"url":"https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/high-occupancy-xc-zones/ruth-mountain-icy-peak-traverse","retrieved_at":"2026-11-23","fact":"Traverse stats: 16.0 mi, Elevation Gain 6,500 ft, from Hannegan Campground (3,000 ft)."},
+   {"url":"https://www.wta.org/go-hiking/trip-reports/tripreport-2005043003","retrieved_at":"2026-11-23","fact":"Collins 2005 TR, Hannegan TH over Ruth to Icy: Elevation gain 7100'; Distance 16 miles."}
+  ],
+  "note":"Two independent pages agree (6,500 vs 7,100, within 10% of 7,100) on the ROUND-TRIP Ruth+Icy outing gain from the Hannegan TH; neither is one-way, so the replace rule does not strictly apply. No page supports the stored 8,000, which is above even both round-trip totals. Mountaineers trip profile gives segments only (TH-camp 3,600, camp-Icy summit 1,270); no page prints a one-way TH-to-Icy total. Coordinator may choose to store the outing total with one_way=false."},
+ {"route_id":"wa_buckner_mountain_north_face","verdict":"unresolved","final_gain":null,
+  "figures":[
+   {"value":5400,"start":"Boston Basin / Eldorado trailhead (Mountaineers)","one_way":true,"url":"https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/mount-buckner-north-face","fact":"Mountaineers route page gain 5,400 ft (input figure, from earlier pass)."}
+  ],
+  "evidence":[],
+  "note":"This pass: CascadeClimbers TR 2019-05-14 (Alisse; Boston Basin TH, camp on Boston Glacier) states no gain. The Alpine Guide ski page hit a Cloudflare check then an error page, not read. Mountain Madness snippet only gives TH-to-Boston Basin 2,500 (snippet, and a segment). Earlier passes' sources (NWMS, Mountain Madness, PB) also gave none. No second figure found; nothing supports the stored 7,000 either."},
+ {"route_id":"wa_fire_on_the_mountain","verdict":"unresolved","final_gain":null,
+  "figures":[
+   {"value":5900,"start":"Bedal Creek trailhead (Mountaineers)","one_way":true,"url":"https://www.mountaineers.org/activities/routes-places/sloan-peak-fire-on-the-mountain","fact":"Mountaineers route page gain 5,900 ft (input figure)."}
+  ],
+  "evidence":[],
+  "note":"This pass, no gain figure on: Steph Abegg FotM TR (Bedal Creek TH; turned around below summit), CascadeClimbers TR 2013-09-12 (Bedal TH, bivy below face). Earlier pass: only FotM-specific PB log gives none; Bedal Creek Corkscrew logs cluster 5,000-5,100 (near stored 5,039) with a few 5,360-5,810, but those are a different route on top. No independent FotM-specific second figure."},
+ {"route_id":"wa_south_twin_sister_west_ridge","verdict":"start_differs","final_gain":null,
+  "figures":[
+   {"value":3700,"start":"Dailey Prairie (upper logging roads)","one_way":true,"url":"https://www.mountaineers.org/activities/routes-places/south-twin-sister-west-ridge","fact":"Approach from Dailey Prairie; Elevation Gain 3,700 ft, High Point 7,000 ft."},
+   {"value":6102,"start":"Middle Fork Nooksack gated road (48°46'01\", -122°02'22\"), bike approach","one_way":false,"url":"https://www.thewildoutsiders.com/adventure-journal/south-twin-sister","fact":"Trip stats: 41 mi, Elevation Gain 6,102 ft, moving time 11:16; started at the gated road."},
+   {"value":5400,"start":"Middle Fork Nooksack bridge/gate, bike, with 800 ft ridden in a truck","one_way":true,"url":"https://www.wta.org/go-hiking/trip-reports/tripreport-2003081014","fact":"TrailCat 2003: Elev gain 5400 feet earned, 800 feet unearned in truck; from Middle Fork gate."}
+  ],
+  "evidence":[],
+  "note":"Two starts. Mountaineers 3,700 is from Dailey Prairie (where cars once drove). The stored 6,100 matches the Wild Outsiders 6,102 from the Middle Fork gate (a GPS whole-trip figure), and the TrailCat WTA TR's gate start states 5,400 earned plus 800 ridden in a truck. No two independent one-way figures from the same start agree cleanly; the gate start appears to be the current one (road gated). Coordinator to choose start; 6,102 is one page's activity total, not one-way."},
+ {"route_id":"wa_mount_roosevelt_standard","verdict":"replace","final_gain":3500,
+  "figures":[
+   {"value":3500,"start":"Alpental / Snow Lake trailhead (3,100 ft)","one_way":true,"url":"https://www.wta.org/go-hiking/hikes/mount-roosevelt","fact":"WTA hike page: 12.0 miles roundtrip, Elevation Gain 3,500 feet, Highest Point 5,835; park at Alpental."},
+   {"value":3500,"start":"Alpental parking / Snow Lake trailhead (3,100 ft)","one_way":true,"url":"https://www.mountaineers.org/activities/routes-places/mount-roosevelt-kaleetan-peak","fact":"Mount Roosevelt (5,835 ft) alone: 14 miles round trip, Elevation Gain 3,500 ft, from Alpental (3,100)."}
+  ],
+  "evidence":[
+   {"url":"https://www.wta.org/go-hiking/hikes/mount-roosevelt","retrieved_at":"2026-11-23","fact":"Mount Roosevelt from Alpental: 12.0 miles roundtrip, elevation gain 3,500 feet."},
+   {"url":"https://www.mountaineers.org/activities/routes-places/mount-roosevelt-kaleetan-peak","retrieved_at":"2026-11-23","fact":"Roosevelt only, from Alpental 3,100 ft: 14 miles round trip, Elevation Gain 3,500 ft."}
+  ],
+  "note":"Same start (Alpental/Snow Lake TH), same 3,500; texts and mileages differ (12 vs 14 mi), so not copied, though WTA lists Goldman's Washington Scrambles (Mountaineers Books) as its guidebook, so a shared origin is possible. Stored 2,700 is outside 10% of 3,500 (it is near the bare TH-to-summit height difference). A SummitPost snippet also says 12 mi RT, about 3,500 ft (snippet, not counted). The gain is the ascent of an out-and-back."}
+]

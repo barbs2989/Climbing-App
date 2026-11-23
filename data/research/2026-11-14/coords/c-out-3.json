@@ -1,0 +1,1335 @@
+[
+ {
+  "id": "az_nothing",
+  "verdict": "ok",
+  "stored": [
+   34.481965,
+   -113.33487
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/120111386/nothing",
+    "retrieved_at": "2026-11-18",
+    "lat": 34.47969,
+    "lng": -113.33603,
+    "fact": "MP area GPS for Nothing (bouldering), Arizona > Central Arizona"
+   }
+  ],
+  "note": "Stored within 0.3 km of MP; Central Arizona is a large region."
+ },
+ {
+  "id": "az_chase_creek",
+  "verdict": "ok",
+  "stored": [
+   33.14059,
+   -109.37814
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/123469490/chase-creek",
+    "retrieved_at": "2026-11-18",
+    "lat": 33.14065,
+    "lng": -109.37814,
+    "fact": "MP area GPS; MP path Southern Arizona > Clifton/Morenci > Chase Creek"
+   }
+  ],
+  "note": "Matches MP. Southern Arizona is a large region; MP adds an intermediate Clifton/Morenci area."
+ },
+ {
+  "id": "ca_sawtooth_canyon_njc_bouldering",
+  "verdict": "fix",
+  "stored": [
+   33.04859,
+   -116.56724
+  ],
+  "new_lat": 34.670107,
+  "new_lng": -116.983935,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.blm.gov/visit/sawtooth-canyon-campground",
+    "retrieved_at": "2026-11-18",
+    "lat": 34.670107,
+    "lng": -116.983935,
+    "fact": "BLM: Sawtooth Canyon Campground aka New Jack City, geographic coordinates"
+   },
+   {
+    "url": "https://www.mountainproject.com/area/201176856/njc-bouldering",
+    "retrieved_at": "2026-11-18",
+    "lat": 34.66757,
+    "lng": -116.9819,
+    "fact": "MP GPS for NJC Bouldering under New Jack City (aka Sawtooth Canyon)"
+   },
+   {
+    "url": "https://www.mountainproject.com/area/105865045/new-jack-city",
+    "retrieved_at": "2026-11-18",
+    "lat": 34.66539,
+    "lng": -116.97834,
+    "fact": "MP: New Jack City, also known as Sawtooth Canyon, near Barstow"
+   }
+  ],
+  "note": "Stored 33.05,-116.57 is in San Diego County; NJC/Sawtooth Canyon is south of Barstow. BLM and MP agree within 0.35 km. MP no longer lists this exact area name."
+ },
+ {
+  "id": "ca_tehachapi_area",
+  "verdict": "ok",
+  "stored": [
+   35.1273275,
+   -118.5445925
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/106668977/tehachapi-area",
+    "retrieved_at": "2026-11-18",
+    "lat": 35.06748,
+    "lng": -118.48531,
+    "fact": "MP area GPS for Tehachapi Area under High Desert"
+   }
+  ],
+  "note": "Stored ~8 km from MP point, fine for a region-sized area; High Desert is a large region."
+ },
+ {
+  "id": "ak_mount_prindle",
+  "verdict": "ok",
+  "stored": [
+   65.4655,
+   -146.4391
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/105988149/mount-prindle",
+    "retrieved_at": "2026-11-18",
+    "lat": 65.4755,
+    "lng": -146.4291,
+    "fact": "MP area GPS for Mount Prindle under Fairbanks and Vicinity"
+   }
+  ],
+  "note": "Stored ~1.2 km from MP; parent is a large region."
+ },
+ {
+  "id": "or_leslie_gulch",
+  "verdict": "misfiled",
+  "stored": [
+   43.33778,
+   -117.31209
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": "Southeast Oregon",
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/110165274/leslie-gulch",
+    "retrieved_at": "2026-11-18",
+    "lat": 43.33778,
+    "lng": -117.31209,
+    "fact": "MP area GPS; MP files Leslie Gulch under Oregon > Southeast Oregon"
+   }
+  ],
+  "note": "Coordinate matches MP exactly; MP files it under Southeast Oregon, not Northeast Oregon."
+ },
+ {
+  "id": "ca_gleason_rock",
+  "verdict": "ok",
+  "stored": [
+   35.75009,
+   -118.0964
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/123552867/gleason-rock",
+    "retrieved_at": "2026-11-18",
+    "lat": 35.75009,
+    "lng": -118.0964,
+    "fact": "MP area GPS; MP files it under Southern Sierra - The Needles, Kern River, Domelands"
+   }
+  ],
+  "note": "Matches MP exactly. Western Sierra is a large region (MP: Southern Sierra Nevada - Western Slope > Needles/Kern/Domelands)."
+ },
+ {
+  "id": "ca_lamont_pinnacles",
+  "verdict": "ok",
+  "stored": [
+   35.79627,
+   -118.04628
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/123421630/lamont-pinnacles",
+    "retrieved_at": "2026-11-18",
+    "lat": 35.79627,
+    "lng": -118.04628,
+    "fact": "MP area GPS; under Southern Sierra - The Needles, Kern River, Domelands"
+   }
+  ],
+  "note": "Matches MP exactly; parent is a large region."
+ },
+ {
+  "id": "id_hells_gate",
+  "verdict": "ok",
+  "stored": [
+   46.3430833333333,
+   -117.038816666667
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/113994650/hells-gate",
+    "retrieved_at": "2026-11-18",
+    "lat": 46.34287,
+    "lng": -117.03763,
+    "fact": "MP area GPS for Hells Gate under North Idaho"
+   }
+  ],
+  "note": "Matches MP; Lewiston-area crag, parent North Idaho is a large region."
+ },
+ {
+  "id": "co_junk_show_pinnacle",
+  "verdict": "parent_wrong",
+  "stored": [
+   39.61272,
+   -105.62995
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": 39.58556,
+  "parent_new_lng": -105.64208,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/113242969/junk-show-pinnacle",
+    "retrieved_at": "2026-11-18",
+    "lat": 39.61272,
+    "lng": -105.62995,
+    "fact": "MP area GPS for Junk Show Pinnacle"
+   }
+  ],
+  "note": "Child matches MP; parent Alpine Lite Cliffs stored at lat 38.11 is wrong (MP 39.58556,-105.64208, one source)."
+ },
+ {
+  "id": "ca_the_fortress_5",
+  "verdict": "ok",
+  "stored": [
+   35.76814,
+   -118.11106
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/123533222/the-fortress",
+    "retrieved_at": "2026-11-18",
+    "lat": 35.76814,
+    "lng": -118.11106,
+    "fact": "MP area GPS; under Southern Sierra - The Needles, Kern River, Domelands"
+   }
+  ],
+  "note": "Matches MP exactly; parent is a large region."
+ },
+ {
+  "id": "nm_granite_gap",
+  "verdict": "ok",
+  "stored": [
+   32.09402,
+   -108.99178
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/107973683/granite-gap",
+    "retrieved_at": "2026-11-18",
+    "lat": 32.09402,
+    "lng": -108.99178,
+    "fact": "MP area GPS for Granite Gap"
+   }
+  ],
+  "note": "Matches MP exactly; parent is a statewide grab-bag region."
+ },
+ {
+  "id": "ca_burnt_granola",
+  "verdict": "ok",
+  "stored": [
+   35.76273,
+   -118.1143
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/123444975/burnt-granola",
+    "retrieved_at": "2026-11-18",
+    "lat": 35.76273,
+    "lng": -118.1143,
+    "fact": "MP area GPS; under Southern Sierra - The Needles, Kern River, Domelands"
+   }
+  ],
+  "note": "Matches MP exactly; parent is a large region."
+ },
+ {
+  "id": "co_easter_island",
+  "verdict": "parent_wrong",
+  "stored": [
+   39.61224,
+   -105.63025
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": 39.58556,
+  "parent_new_lng": -105.64208,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/110974950/easter-island",
+    "retrieved_at": "2026-11-18",
+    "lat": 39.61224,
+    "lng": -105.63025,
+    "fact": "MP area GPS for Easter Island"
+   }
+  ],
+  "note": "Child matches MP exactly; parent Alpine Lite Cliffs stored at lat 38.11 is wrong (MP 39.58556,-105.64208, one source)."
+ },
+ {
+  "id": "co_innuendo_spire",
+  "verdict": "unresolved",
+  "stored": [
+   36.6125,
+   -105.6309
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/107696403/innuendo-spire",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.6125,
+    "lng": -105.6309,
+    "fact": "MP GPS for Innuendo Spire - MP itself carries the garbled lat"
+   },
+   {
+    "url": "https://www.mountainproject.com/area/107696359/the-alpine-lite-cliffs",
+    "retrieved_at": "2026-11-18",
+    "lat": 39.58556,
+    "lng": -105.64208,
+    "fact": "MP GPS for parent The Alpine Lite Cliffs"
+   }
+  ],
+  "note": "Stored value is wrong (lat 36.61, NM border) but MP prints the same garbled value; no page found printing a spire-specific coordinate (theCrag bot-checked, outdooractive shows none). Parent cliff point 39.58556,-105.64208 is the nearest printed coordinate - owner call."
+ },
+ {
+  "id": "co_main_wall",
+  "verdict": "unresolved",
+  "stored": [
+   36.6125,
+   -105.6309
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/107961143/main-wall",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.6125,
+    "lng": -105.6309,
+    "fact": "MP GPS for Main Wall (Alpine Lite Cliffs) - same garbled value"
+   },
+   {
+    "url": "https://www.mountainproject.com/area/107696359/the-alpine-lite-cliffs",
+    "retrieved_at": "2026-11-18",
+    "lat": 39.58556,
+    "lng": -105.64208,
+    "fact": "MP GPS for parent The Alpine Lite Cliffs"
+   }
+  ],
+  "note": "Same as Innuendo Spire: MP carries the garbled lat 36.6125; no wall-specific coordinate printed anywhere found. Parent cliff point is the nearest printed coordinate - owner call."
+ },
+ {
+  "id": "id_john_day_basin",
+  "verdict": "ok",
+  "stored": [
+   45.59031,
+   -116.19414
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/111211776/john-day-basin",
+    "retrieved_at": "2026-11-18",
+    "lat": 45.59031,
+    "lng": -116.19414,
+    "fact": "MP area GPS for John Day Basin under West Idaho"
+   }
+  ],
+  "note": "Matches MP exactly; West Idaho is a large region."
+ },
+ {
+  "id": "ca_point_mugu",
+  "verdict": "misfiled",
+  "stored": [
+   34.0858733333333,
+   -119.059926666667
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": "Santa Monica Mountains (Los Angeles Basin)",
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/106508646/point-mugu",
+    "retrieved_at": "2026-11-18",
+    "lat": 34.0861,
+    "lng": -119.0589,
+    "fact": "MP area GPS; MP path Los Angeles Basin > Santa Monica Mountains > Point Mugu"
+   }
+  ],
+  "note": "Coordinate within 0.1 km of MP; MP files it under Santa Monica Mountains, not Central Coast."
+ },
+ {
+  "id": "ca_pinnacles_national_park",
+  "verdict": "ok",
+  "stored": [
+   36.4855442976852,
+   -121.196271733796
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/105733947/pinnacles-national-park",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.47103,
+    "lng": -121.20223,
+    "fact": "MP area GPS for Pinnacles National Park"
+   }
+  ],
+  "note": "Stored ~1.7 km from MP point (park-sized area); Central Coast is a large region."
+ },
+ {
+  "id": "ak_valdez_area_rock",
+  "verdict": "ok",
+  "stored": [
+   61.1571257692308,
+   -145.870988333333
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/107214554/valdez-area-rock",
+    "retrieved_at": "2026-11-18",
+    "lat": 61.13066,
+    "lng": -146.35117,
+    "fact": "MP area GPS for Valdez Area Rock under South Central Alaska"
+   }
+  ],
+  "note": "Stored ~26 km E of MP point; region of 25 child crags (stored likely their centroid). Parent is a huge region. Optionally adopt MP point."
+ },
+ {
+  "id": "mt_glacier_national_park",
+  "verdict": "ok",
+  "stored": [
+   48.5393011111111,
+   -113.815273888889
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/110740779/glacier-national-park",
+    "retrieved_at": "2026-11-18",
+    "lat": 48.69588,
+    "lng": -113.71736,
+    "fact": "MP area GPS; MP path Northwest Region > Kalispell Area > Glacier NP"
+   }
+  ],
+  "note": "Stored ~19 km from MP point, inside a park-sized area; Northwest Region is a large region."
+ },
+ {
+  "id": "ca_fossil_falls",
+  "verdict": "ok",
+  "stored": [
+   35.946235,
+   -117.90453
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/109857674/fossil-falls",
+    "retrieved_at": "2026-11-18",
+    "lat": 35.97175,
+    "lng": -117.91079,
+    "fact": "MP area GPS; MP path Eastern Sierra > Southern Area > Fossil Falls"
+   }
+  ],
+  "note": "Stored ~3 km from MP point; Sierra Eastside is a large region."
+ },
+ {
+  "id": "ak_the_wrangell_mountains",
+  "verdict": "ok",
+  "stored": [
+   61.7386666666667,
+   -144.196163333333
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/108406168/the-wrangell-mountains",
+    "retrieved_at": "2026-11-18",
+    "lat": 61.85997,
+    "lng": -143.13291,
+    "fact": "MP area GPS for The Wrangell Mountains"
+   }
+  ],
+  "note": "Stored ~57 km from MP point but this is a whole mountain range (stored likely child centroid); parent is a huge region."
+ },
+ {
+  "id": "nm_reserve",
+  "verdict": "ok",
+  "stored": [
+   33.60211,
+   -108.894
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/119946303/reserve",
+    "retrieved_at": "2026-11-18",
+    "lat": 33.71088,
+    "lng": -108.75952,
+    "fact": "MP area GPS for Reserve under NM other Southern Areas"
+   }
+  ],
+  "note": "Stored is ~17 km SW of MP's point (likely its one child crag); same area, parent is a statewide grab-bag. Optionally adopt MP point."
+ },
+ {
+  "id": "az_hells_bells",
+  "verdict": "ok",
+  "stored": [
+   36.99926,
+   -111.60224
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/122845465/hells-bells",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.99926,
+    "lng": -111.60224,
+    "fact": "MP area GPS for Hells Bells under Northern Arizona"
+   }
+  ],
+  "note": "Matches MP exactly; Northern Arizona is a large region."
+ },
+ {
+  "id": "az_five_mile_draw",
+  "verdict": "ok",
+  "stored": [
+   34.591705,
+   -110.083215
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/113437080/five-mile-draw",
+    "retrieved_at": "2026-11-18",
+    "lat": 34.59108,
+    "lng": -110.08362,
+    "fact": "MP area GPS for Five Mile Draw under Central Arizona"
+   }
+  ],
+  "note": "Stored within 0.4 km of MP; parent is a large region."
+ },
+ {
+  "id": "ca_conejo_mountain",
+  "verdict": "ok",
+  "stored": [
+   34.1955101785714,
+   -118.968401964286
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/105850674/conejo-mountain",
+    "retrieved_at": "2026-11-18",
+    "lat": 34.1978,
+    "lng": -118.9635,
+    "fact": "MP area GPS for Conejo Mountain under Central Coast"
+   }
+  ],
+  "note": "Matches MP; Central Coast is a large region."
+ },
+ {
+  "id": "az_cliff_dwellers",
+  "verdict": "ok",
+  "stored": [
+   36.74652,
+   -111.74539
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/109239061/cliff-dwellers",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.74652,
+    "lng": -111.74539,
+    "fact": "MP area GPS for Cliff Dwellers under Northern AZ Bouldering"
+   }
+  ],
+  "note": "Matches MP exactly; parent is a region-wide bouldering grouping."
+ },
+ {
+  "id": "ca_camarillo_springs_boulder_lonesome_cube",
+  "verdict": "ok",
+  "stored": [
+   34.20308,
+   -118.97227
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/107146192/camarillo-springs-boulder-lonesome-cube",
+    "retrieved_at": "2026-11-18",
+    "lat": 34.2029,
+    "lng": -118.972,
+    "fact": "MP area GPS for Camarillo Springs Boulder"
+   }
+  ],
+  "note": "Matches MP; Central Coast is a large region."
+ },
+ {
+  "id": "mo_climb_so_ill",
+  "verdict": "ok",
+  "stored": [
+   38.61504,
+   -90.20772
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/111701581/climb-so-ill",
+    "retrieved_at": "2026-11-18",
+    "lat": 38.61504,
+    "lng": -90.20772,
+    "fact": "MP area GPS for Climb So iLL (St. Louis gym)"
+   }
+  ],
+  "note": "Matches MP exactly; parent Indoor Walls is a statewide grouping."
+ },
+ {
+  "id": "ak_valdez_2",
+  "verdict": "ok",
+  "stored": [
+   61.114083452381,
+   -145.963311071429
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/107034714/valdez",
+    "retrieved_at": "2026-11-18",
+    "lat": 61.12452,
+    "lng": -145.89076,
+    "fact": "MP area GPS for Valdez (ice), South Central Alaska Ice and Alpine"
+   }
+  ],
+  "note": "Stored ~4 km from MP; region-sized ice area under a huge parent."
+ },
+ {
+  "id": "az_harquahala_range",
+  "verdict": "ok",
+  "stored": [
+   33.82729,
+   -113.36312
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/200510824/harquahala-range",
+    "retrieved_at": "2026-11-18",
+    "lat": 33.82729,
+    "lng": -113.36312,
+    "fact": "MP area GPS for Harquahala Range under Central Arizona"
+   }
+  ],
+  "note": "Matches MP exactly; parent is a large region."
+ },
+ {
+  "id": "nc_black_bear_buttress",
+  "verdict": "fix",
+  "stored": [
+   35.6037,
+   -79.2773
+  ],
+  "new_lat": 35.4738697,
+  "new_lng": -82.2374315,
+  "parent_new_lat": 35.4738697,
+  "parent_new_lng": -82.2374315,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/106037533/black-bear-buttress",
+    "retrieved_at": "2026-11-18",
+    "lat": 35.6037,
+    "lng": -79.2773,
+    "fact": "MP GPS for Black Bear Buttress - MP carries the same wrong value (central NC)"
+   },
+   {
+    "url": "https://www.openstreetmap.org/search?query=Eagle%20Rock%2C%20Rutherford%20County%2C%20North%20Carolina",
+    "retrieved_at": "2026-11-18",
+    "lat": 35.4738697,
+    "lng": -82.2374315,
+    "fact": "OSM: Peak Eagle Rock, Rutherford County, North Carolina"
+   },
+   {
+    "url": "https://www.mountainproject.com/area/114312117/lower-tier",
+    "retrieved_at": "2026-11-18",
+    "lat": 35.4736,
+    "lng": -82.23673,
+    "fact": "MP GPS for sibling Lower Tier at Eagle Rock, 0.07 km from OSM peak"
+   },
+   {
+    "url": "https://www.mountainproject.com/area/114312120/north-eagle",
+    "retrieved_at": "2026-11-18",
+    "lat": 35.47432,
+    "lng": -82.2371,
+    "fact": "MP GPS for sibling North Eagle at Eagle Rock"
+   },
+   {
+    "url": "https://www.mountainproject.com/area/106037528",
+    "retrieved_at": "2026-11-18",
+    "lat": 35.48246,
+    "lng": -82.19042,
+    "fact": "MP GPS for parent Eagle Rock area"
+   }
+  ],
+  "note": "Stored -79.28 is in the Piedmont ~160 km east; MP itself has this wrong value. New value is Eagle Rock peak (OSM), within 0.1 km of MP siblings; no page prints a wall-specific point. Parent Eagle Rock stored -81.05 is also wrong."
+ },
+ {
+  "id": "va_natural_tunnel_area",
+  "verdict": "ok",
+  "stored": [
+   36.70006,
+   -82.74327
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://en.wikipedia.org/wiki/Natural_Tunnel_State_Park",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.703,
+    "lng": -82.743,
+    "fact": "Wikipedia infobox: Natural Tunnel, Natural Tunnel State Park, Scott County, Virginia"
+   }
+  ],
+  "note": "Stored within 0.3 km of Natural Tunnel; MP no longer lists this area. Parent SW Virginia is a large region."
+ },
+ {
+  "id": "nc_upper_tier",
+  "verdict": "fix",
+  "stored": [
+   35.60369,
+   -79.27729
+  ],
+  "new_lat": 35.4738697,
+  "new_lng": -82.2374315,
+  "parent_new_lat": 35.4738697,
+  "parent_new_lng": -82.2374315,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/114312114/upper-tier",
+    "retrieved_at": "2026-11-18",
+    "lat": 35.60369,
+    "lng": -79.27729,
+    "fact": "MP GPS for Upper Tier - MP carries the same wrong value"
+   },
+   {
+    "url": "https://www.openstreetmap.org/search?query=Eagle%20Rock%2C%20Rutherford%20County%2C%20North%20Carolina",
+    "retrieved_at": "2026-11-18",
+    "lat": 35.4738697,
+    "lng": -82.2374315,
+    "fact": "OSM: Peak Eagle Rock, Rutherford County, North Carolina"
+   },
+   {
+    "url": "https://www.mountainproject.com/area/114312117/lower-tier",
+    "retrieved_at": "2026-11-18",
+    "lat": 35.4736,
+    "lng": -82.23673,
+    "fact": "MP GPS for sibling Lower Tier at Eagle Rock, 0.07 km from OSM peak"
+   },
+   {
+    "url": "https://www.mountainproject.com/area/114312120/north-eagle",
+    "retrieved_at": "2026-11-18",
+    "lat": 35.47432,
+    "lng": -82.2371,
+    "fact": "MP GPS for sibling North Eagle at Eagle Rock"
+   },
+   {
+    "url": "https://www.mountainproject.com/area/106037528",
+    "retrieved_at": "2026-11-18",
+    "lat": 35.48246,
+    "lng": -82.19042,
+    "fact": "MP GPS for parent Eagle Rock area"
+   }
+  ],
+  "note": "Same garble as Black Bear Buttress (both 22 routes, same point - possible duplicate). New value is Eagle Rock peak (OSM) agreeing with MP siblings; no wall-specific point printed. Parent Eagle Rock stored -81.05 also wrong."
+ },
+ {
+  "id": "nm_navajo_dam_ice",
+  "verdict": "ok",
+  "stored": [
+   36.80056,
+   -107.61662
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/200422378/navajo-dam-ice",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.80056,
+    "lng": -107.61662,
+    "fact": "MP area GPS for Navajo Dam (ice)"
+   }
+  ],
+  "note": "Matches MP exactly; parent is a statewide grab-bag region."
+ },
+ {
+  "id": "mo_upper_limits_original_location",
+  "verdict": "ok",
+  "stored": [
+   38.62656,
+   -90.21144
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/111701509/upper-limits-original-location",
+    "retrieved_at": "2026-11-18",
+    "lat": 38.62655,
+    "lng": -90.21109,
+    "fact": "MP GPS for Upper Limits (Original Location), ZM: Indoor Walls"
+   }
+  ],
+  "note": "Stored within 0.05 km of MP; St. Louis gym, parent Indoor Walls is statewide."
+ },
+ {
+  "id": "az_crozier_canyon",
+  "verdict": "ok",
+  "stored": [
+   35.46589875,
+   -113.673525
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/114330608/crozier-canyon",
+    "retrieved_at": "2026-11-18",
+    "lat": 35.46082,
+    "lng": -113.66759,
+    "fact": "MP area GPS for Crozier Canyon under Northern AZ Bouldering"
+   }
+  ],
+  "note": "Stored within 0.6 km of MP; parent is a region-wide grouping."
+ },
+ {
+  "id": "az_chiricahua_mountains",
+  "verdict": "ok",
+  "stored": [
+   31.89024,
+   -109.16031
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/118181469/chiricahua-mountains",
+    "retrieved_at": "2026-11-18",
+    "lat": 31.90004,
+    "lng": -109.15988,
+    "fact": "MP area GPS for Chiricahua Mountains under Southern Arizona"
+   }
+  ],
+  "note": "Stored ~1 km from MP; range-sized area under a large region."
+ },
+ {
+  "id": "az_porter_mountain_creek",
+  "verdict": "ok",
+  "stored": [
+   34.18546,
+   -109.95191
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/200309723/porter-mountain-creek",
+    "retrieved_at": "2026-11-18",
+    "lat": 34.18546,
+    "lng": -109.95191,
+    "fact": "MP area GPS for Porter Mountain Creek"
+   }
+  ],
+  "note": "Matches MP exactly; parent is a large region."
+ },
+ {
+  "id": "wi_fish_creek_peninsula_state_park",
+  "verdict": "ok",
+  "stored": [
+   45.16323,
+   -87.1961
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/124513352/fish-creek-peninsula-state-park",
+    "retrieved_at": "2026-11-18",
+    "lat": 45.16323,
+    "lng": -87.1961,
+    "fact": "MP area GPS for Fish Creek (Peninsula State Park)"
+   }
+  ],
+  "note": "Matches MP exactly; parent Niagara Escarpment spans eastern Wisconsin."
+ },
+ {
+  "id": "va_appalachia",
+  "verdict": "ok",
+  "stored": [
+   36.90314,
+   -82.769405
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/114018395/appalachia",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.90314,
+    "lng": -82.78187,
+    "fact": "MP area GPS for Appalachia under Southwest Virginia"
+   }
+  ],
+  "note": "Stored ~1.1 km from MP; parent is a large region."
+ },
+ {
+  "id": "pa_bilger_s_rocks",
+  "verdict": "ok",
+  "stored": [
+   40.992995,
+   -78.5924083333333
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/107181131/bilgers-rocks",
+    "retrieved_at": "2026-11-18",
+    "lat": 40.9939,
+    "lng": -78.61269,
+    "fact": "MP area GPS for Bilger's Rocks under South Central PA"
+   }
+  ],
+  "note": "Stored ~1.7 km from MP; parent is a large region."
+ },
+ {
+  "id": "ca_neanderthal_wall",
+  "verdict": "ok",
+  "stored": [
+   35.77526,
+   -118.34215
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/123437098/neanderthal-wall",
+    "retrieved_at": "2026-11-18",
+    "lat": 35.77526,
+    "lng": -118.34215,
+    "fact": "MP area GPS; under Southern Sierra - The Needles, Kern River, Domelands"
+   }
+  ],
+  "note": "Matches MP exactly; parent is a large region."
+ },
+ {
+  "id": "ca_bat_rock",
+  "verdict": "ok",
+  "stored": [
+   35.7324,
+   -118.50964
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/123437601/bat-rock",
+    "retrieved_at": "2026-11-18",
+    "lat": 35.7324,
+    "lng": -118.50964,
+    "fact": "MP area GPS; under Southern Sierra - The Needles, Kern River, Domelands"
+   }
+  ],
+  "note": "Matches MP exactly; parent is a large region."
+ },
+ {
+  "id": "co_alpine_lite_cliffs_the",
+  "verdict": "fix_one_source",
+  "stored": [
+   38.11249,
+   -105.6305
+  ],
+  "new_lat": 39.58556,
+  "new_lng": -105.64208,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/107696359/the-alpine-lite-cliffs",
+    "retrieved_at": "2026-11-18",
+    "lat": 39.58556,
+    "lng": -105.64208,
+    "fact": "MP area GPS for The Alpine Lite Cliffs, Mt. Blue Sky"
+   },
+   {
+    "url": "https://www.mountainproject.com/area/105744358",
+    "retrieved_at": "2026-11-18",
+    "lat": 39.5886,
+    "lng": -105.64298,
+    "fact": "MP GPS for parent Mt. Blue Sky (formerly Mt. Evans), 0.3 km away"
+   }
+  ],
+  "note": "Stored lat 38.11 is ~164 km south; MP puts the cliffs at 39.586 beside Mt Blue Sky. Only MP gives this cliff a coordinate."
+ },
+ {
+  "id": "az_antelope_pass",
+  "verdict": "ok",
+  "stored": [
+   36.65779,
+   -111.632605
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/112190959/antelope-pass",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.65661,
+    "lng": -111.6329,
+    "fact": "MP area GPS for Antelope Pass under Northern AZ Bouldering"
+   }
+  ],
+  "note": "Matches MP (~0.1 km); parent is a region-wide grouping."
+ },
+ {
+  "id": "ca_split_mountain_2",
+  "verdict": "ok",
+  "stored": [
+   35.7505,
+   -118.48249
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/123437715/split-mountain",
+    "retrieved_at": "2026-11-18",
+    "lat": 35.7505,
+    "lng": -118.48249,
+    "fact": "MP area GPS (Kern River Split Mountain, not the Palisades peak)"
+   }
+  ],
+  "note": "Matches MP exactly; parent is a large region."
+ },
+ {
+  "id": "nv_big_rocks_wilderness_aka_mecca",
+  "verdict": "ok",
+  "stored": [
+   37.6419622222222,
+   -114.992936666667
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/109083582/big-rocks-wilderness-aka-mecca",
+    "retrieved_at": "2026-11-18",
+    "lat": 37.66478,
+    "lng": -114.97482,
+    "fact": "MP area GPS for Big Rocks Wilderness (aka Mecca)"
+   }
+  ],
+  "note": "Stored ~3 km from MP (wilderness-sized area); Southern Nevada is a large region."
+ },
+ {
+  "id": "az_tollgate_pass",
+  "verdict": "misfiled",
+  "stored": [
+   32.843265,
+   -109.398895
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": "Black Hills (az_black_hills)",
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/107090232/tollgate-pass",
+    "retrieved_at": "2026-11-18",
+    "lat": 32.8429,
+    "lng": -109.3972,
+    "fact": "MP area GPS; MP path Southern Arizona > Black Hills > Tollgate Pass"
+   }
+  ],
+  "note": "Coordinate within 0.2 km of MP; MP files it under Black Hills, which is a sibling (az_black_hills) in our catalog."
+ },
+ {
+  "id": "az_black_hills",
+  "verdict": "ok",
+  "stored": [
+   32.85119,
+   -109.40232
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/121861582/black-hills",
+    "retrieved_at": "2026-11-18",
+    "lat": 32.84788,
+    "lng": -109.39583,
+    "fact": "MP area GPS for Black Hills under Southern Arizona"
+   }
+  ],
+  "note": "Stored ~0.6 km from MP; parent is a large region."
+ },
+ {
+  "id": "ak_denali_national_park",
+  "verdict": "ok",
+  "stored": [
+   63.0491681060606,
+   -150.960339848485
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/105909817/denali-national-park",
+    "retrieved_at": "2026-11-18",
+    "lat": 63.0649,
+    "lng": -151.17191,
+    "fact": "MP area GPS for Denali National Park"
+   }
+  ],
+  "note": "Stored ~11 km from MP point, fine for a park-sized area; parent is the whole Alaska Range."
+ },
+ {
+  "id": "az_shoen_s_dam",
+  "verdict": "ok",
+  "stored": [
+   34.41528,
+   -110.10164
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/113281352/shoens-dam",
+    "retrieved_at": "2026-11-18",
+    "lat": 34.41528,
+    "lng": -110.10164,
+    "fact": "MP area GPS for Shoen's Dam under Central Arizona"
+   }
+  ],
+  "note": "Matches MP exactly; parent is a large region."
+ },
+ {
+  "id": "mt_lost_wall",
+  "verdict": "ok",
+  "stored": [
+   48.3446,
+   -114.4942
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/106807348/lost-wall",
+    "retrieved_at": "2026-11-18",
+    "lat": 48.3446,
+    "lng": -114.4942,
+    "fact": "MP GPS for Lost Wall, Montana > Northwest Region > Kalispell Area"
+   }
+  ],
+  "note": "Matches MP exactly; Northwest Region is a large region (MP adds Kalispell Area)."
+ }
+]
