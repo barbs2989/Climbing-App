@@ -642,15 +642,17 @@ const myVouchesGivenQ=useUserVouches(uid);const vouchTargetIds=useMemo(function(
      accept one. */
   const dbJoinReqs=useMemo(function(){
     var out=[];
+    /* A climber you blocked does not reach your Requests or your bell (review 2026-11-23). The database refuses their request since 0498; this covers one made before the block. */
+    var _bl=new Set((blocked||[]).map(function(b){return String(b&&b.id);}));
     (crews||[]).forEach(function(cr){
       if(!cr._dbId)return;
       if(cr._organizerId!=null&&cr._organizerId!==0)return;
       (cr.members||[]).forEach(function(m){
-        if(m.status==="pending"&&m.climberId!==0)out.push({id:"jr_"+cr.id+"_"+m.climberId,crewId:cr.id,climberId:m.climberId,note:m.note||"",since:m.since||null});
+        if(m.status==="pending"&&m.climberId!==0&&!_bl.has(String(m.climberId)))out.push({id:"jr_"+cr.id+"_"+m.climberId,crewId:cr.id,climberId:m.climberId,note:m.note||"",since:m.since||null});
       });
     });
     return out;
-  },[crews]);
+  },[crews,blocked]);
   /* EVERY incoming join request, example and real, in one list: the counts, Home's list, the crew-row badge and
      the profile sheet each read crewJoinIn alone, so a real request reached CrewCard and nothing else. */
   const allJoinIn=crewJoinIn.concat(dbJoinReqs);
