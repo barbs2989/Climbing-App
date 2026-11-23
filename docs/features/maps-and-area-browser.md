@@ -72,6 +72,22 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
   No row prints its wall position: the "#n in this area" sub-line was removed (owner, 2026-11-18) because beside the stars it read as a ranking. The position shows as the list's own order here and as NEXT DOOR on the route page.
   Neither import kept a position (the OpenBeta ETL dropped `metadata.leftRightIndex`; MP's route-finder CSV has none), so on 2026-10-21
   **1 of 314,360 routes** had one.
+- **Order wrong?** (owner, 2026-11-19; `src/components/WallOrderSuggest.tsx`, button in `AreaPage`): under the sort chips of a wall's climb list, while
+  the list is in a wall order (*Order wrong? Suggest a different order*) or the wall has no order stored (*Know the left-to-right order? Add it*);
+  never on a peak, and only with two or more climbs that are not boulder problems. The sheet holds every such climb, whatever the list's filters hide, as the wall stood when it opened. Climbs that have a place are **the line**, left to right:
+  a climb moves one place with its ↑ / ↓ buttons or by typing its place number, and *Reverse the whole order* turns a line that is listed
+  backwards. Climbs with **no place on the wall yet** wait in their own list under it; *Place* puts one at the right-hand end of the line
+  (*Take out* undoes it), and one the climber does not place is not sent, so approval never gives an unlooked-at climb a position.
+  Send needs two climbs in the line and a line that differs from the stored one.
+  `submitWallOrderSuggestion` (`lib/db.js`) files one `contributions` row of kind `wall_order` (`area_id` = the wall, `value` =
+  `{order: [route ids, left to right], note}`; migration 0485 refuses any other shape). Nothing on the page changes. The owner's *Wall order
+  suggestions* queue (`WallOrderQueue` in `lib/RouteProposals.jsx`, a Menu Review tile with a count) shows the list with each climb's place
+  now, and `resolve_wall_order` (0485, admin only) either writes it (*Use this order*: listed climbs still on the wall get `sort_order` 1..n,
+  a placed climb the list does not name follows them in its old order, a boulder problem is never touched) or keeps the wall as it is
+  (*Keep current*). Either way the sender gets a notification that opens the wall, and *Your contributions* lists the suggestion as
+  *Wall order suggested* with its status. It earns its contribution point only once approved (`contribution_points()`, 0485). The wall's
+  list and the Route finder are refreshed on approval; a state downloaded to the device keeps its packed order until downloaded again.
+  A signed-out climber gets a sign-in button and no write.
 - **Filters on a wall's list** (owner note, 2026-10-25): **Filters** over a leaf area's climb list narrows it by discipline (the disciplines the wall holds, plus All) and a star minimum (Any / 2+ / 3+ stars; a climb nobody has rated stays in). The button is drawn as the Route finder draws its Filters button (full width, `BTN_LG`, the text colour, a turning chevron), not as a chip -- as a muted chip it matched the sort chips under it and was missed (owner, 2026-11-05). It filters the rows `useAreaRoutes` already loaded, so it costs no query. The sort adds **By discipline** (one heading per discipline, in `DISCIPLINES` order, A → Z under each). Grade is deliberately NOT a sort key: `grade_num` is only comparable within one scale.
 - **Where the wall order comes from** (`scripts/pipeline/order-from-mp.mjs`, one area per run; the owner's reference is **Mountain Project**,
   which holds more routes than OpenBeta). Each row of an MP area page's route table carries `data-lr`, its left-to-right index
