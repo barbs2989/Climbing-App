@@ -1,0 +1,1412 @@
+[
+ {
+  "id": "ca_barefoot_boulders",
+  "verdict": "ok",
+  "stored": [
+   38.84469,
+   -123.64207
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/121154650/barefoot-boulders",
+    "retrieved_at": "2026-11-18",
+    "lat": 38.84469,
+    "lng": -123.64207,
+    "fact": "MP GPS; filed under Wine Country/Northeast Bay"
+   }
+  ],
+  "note": "MP GPS equals stored. Parent \"Wine Country/Northeast Bay\" is a large region that also holds coastal crags (Fort Ross, Navarro Beach); 73 km is genuine. No independent page for a small boulder."
+ },
+ {
+  "id": "az_gunther_castle",
+  "verdict": "parent_wrong",
+  "stored": [
+   36.209697,
+   -111.872257
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://en.wikipedia.org/wiki/Gunther_Castle",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.2091469,
+    "lng": -111.8720286,
+    "fact": "Wikipedia infobox coordinates for Gunther Castle"
+   },
+   {
+    "url": "https://peakvisor.com/peak/gunther-castle.html",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.209382,
+    "lng": -111.872321,
+    "fact": "PeakVisor peak page coordinates"
+   }
+  ],
+  "note": "Child is right: Wikipedia infobox and PeakVisor agree with the stored point. Parent \"Castles\" is a Grand Canyon category with a bad point (35.556,-111.918, south of the canyon); it has no own location, so no parent coordinate given (GCNP itself now 36.0552608,-112.1218355)."
+ },
+ {
+  "id": "az_fern_glen_camp",
+  "verdict": "ok",
+  "stored": [
+   36.25958,
+   -112.92206
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/122200133/fern-glen-camp",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.25958,
+    "lng": -112.92206,
+    "fact": "Mountain Project area page GPS line"
+   },
+   {
+    "url": "https://www.openstreetmap.org/search?query=Fern%20Glen%20Canyon%2C%20Arizona",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.2810276,
+    "lng": -112.9182558,
+    "fact": "OSM Fern Glen Canyon stream, Mohave County (camp is at its river mouth)"
+   }
+  ],
+  "note": "Child is right (river camp at the mouth of Fern Glen Canyon). Parent \"Grand Canyon Bouldering\" (MP GPS 36.01077,-112.20058) covers the whole canyon; 73 km is genuine."
+ },
+ {
+  "id": "az_castor_temple",
+  "verdict": "parent_wrong",
+  "stored": [
+   36.12637,
+   -112.32159
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://en.wikipedia.org/wiki/Castor_Temple",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.1287892,
+    "lng": -112.3187167,
+    "fact": "Wikipedia infobox coordinates for Castor Temple"
+   },
+   {
+    "url": "https://peakvisor.com/peak/castor-temple.html",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.127159,
+    "lng": -112.321055,
+    "fact": "PeakVisor peak page coordinates"
+   }
+  ],
+  "note": "Child is right: Wikipedia infobox and PeakVisor agree with the stored point. Parent \"Temples\" is a Grand Canyon category with a bad point (35.556,-111.918, south of the canyon); it has no own location, so no parent coordinate given (GCNP itself now 36.0552608,-112.1218355)."
+ },
+ {
+  "id": "oh_wayne_national_forest_ironton_unit",
+  "verdict": "ok",
+  "stored": [
+   38.7097454166667,
+   -82.5420029166667
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/121724573/wayne-national-forest-ironton-unit",
+    "retrieved_at": "2026-11-18",
+    "lat": 38.738,
+    "lng": -82.54834,
+    "fact": "Mountain Project area page GPS line"
+   },
+   {
+    "url": "https://www.mountainproject.com/area/108007898/lake-vesuvius",
+    "retrieved_at": "2026-11-18",
+    "lat": 38.6067,
+    "lng": -82.6309,
+    "fact": "MP: Lake Vesuvius, a child of the Ironton Unit"
+   }
+  ],
+  "note": "Stored (average of children) is ~3 km from MP GPS, inside the Ironton Unit. Parent Wayne NF spans three separate units across SE Ohio; 73 km is genuine."
+ },
+ {
+  "id": "id_morgan_creek",
+  "verdict": "ok",
+  "stored": [
+   44.648245,
+   -114.20811
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/111389707/morgan-creek",
+    "retrieved_at": "2026-11-18",
+    "lat": 44.65304,
+    "lng": -114.2152,
+    "fact": "Mountain Project area page GPS line"
+   },
+   {
+    "url": "https://www.openstreetmap.org/search?query=Morgan%20Creek%2C%20Custer%20County%2C%20Idaho",
+    "retrieved_at": "2026-11-18",
+    "lat": 44.6608753,
+    "lng": -114.2236154,
+    "fact": "OSM Morgan Creek Road start, Custer County, north of Challis"
+   }
+  ],
+  "note": "Child is right (Morgan Creek north of Challis). Parent \"Lost River Range\" is a large range-level region; MP files Morgan Creek under it."
+ },
+ {
+  "id": "ak_mount_blackburn_2",
+  "verdict": "fix",
+  "stored": [
+   61.73537,
+   -142.8253
+  ],
+  "new_lat": 61.73167,
+  "new_lng": -143.43917,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://en.wikipedia.org/wiki/Mount_Blackburn",
+    "retrieved_at": "2026-11-18",
+    "lat": 61.73167,
+    "lng": -143.43917,
+    "fact": "Wikipedia infobox coordinates, Mount Blackburn, Wrangell Mountains"
+   },
+   {
+    "url": "https://peakvisor.com/peak/mount-blackburn.html",
+    "retrieved_at": "2026-11-18",
+    "lat": 61.731531,
+    "lng": -143.438072,
+    "fact": "PeakVisor: Mount Blackburn (4,996 m) coordinates"
+   },
+   {
+    "url": "https://www.mountainproject.com/area/108406184/mount-blackburn",
+    "retrieved_at": "2026-11-18",
+    "lat": 61.73537,
+    "lng": -142.8253,
+    "fact": "MP GPS equals stored and is ~33 km east of the summit"
+   }
+  ],
+  "note": "Stored copies MP, whose longitude is ~0.6 deg too far east. Wikipedia and PeakVisor agree within 100 m."
+ },
+ {
+  "id": "az_cleopatra_s_needle_area",
+  "verdict": "ok",
+  "stored": [
+   35.96218,
+   -108.98529
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/105957152/cleopatras-needle-area",
+    "retrieved_at": "2026-11-18",
+    "lat": 35.96218,
+    "lng": -108.98529,
+    "fact": "MP GPS; text: AZ/NM border about 17 miles north of Fort Defiance"
+   }
+  ],
+  "note": "MP GPS equals stored and matches its own description (AZ/NM border, ~17 mi N of Fort Defiance). Parent \"Navajolands\" is the whole Navajo Nation; 72 km is genuine. OSM had no entry; mapcarta Cloudflare-blocked."
+ },
+ {
+  "id": "az_pollux_temple",
+  "verdict": "parent_wrong",
+  "stored": [
+   36.12062,
+   -112.30253
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://en.wikipedia.org/wiki/Pollux_Temple",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.1206359,
+    "lng": -112.3025778,
+    "fact": "Wikipedia infobox coordinates for Pollux Temple"
+   },
+   {
+    "url": "https://peakvisor.com/peak/pollux-temple.html",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.120496,
+    "lng": -112.302763,
+    "fact": "PeakVisor peak page coordinates"
+   }
+  ],
+  "note": "Child is right: Wikipedia infobox and PeakVisor agree with the stored point. Parent \"Temples\" is a Grand Canyon category with a bad point (35.556,-111.918, south of the canyon); it has no own location, so no parent coordinate given (GCNP itself now 36.0552608,-112.1218355)."
+ },
+ {
+  "id": "ca_frenchman_lake",
+  "verdict": "ok",
+  "stored": [
+   39.89136,
+   -120.186114333333
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/117719289/frenchman-lake",
+    "retrieved_at": "2026-11-18",
+    "lat": 39.88067,
+    "lng": -120.18757,
+    "fact": "Mountain Project area page GPS line"
+   }
+  ],
+  "note": "Stored (average of 5 children) is 1.2 km from MP GPS, at Frenchman Lake north of Chilcoot. Parent \"The Lost Sierra\" spans Plumas/Sierra counties; 71 km is genuine."
+ },
+ {
+  "id": "ca_putah_creek",
+  "verdict": "ok",
+  "stored": [
+   38.5167666666667,
+   -122.055763333333
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/105795790/putah-creek",
+    "retrieved_at": "2026-11-18",
+    "lat": 38.5174,
+    "lng": -122.056,
+    "fact": "Mountain Project area page GPS line"
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/Putah_Creek",
+    "retrieved_at": "2026-11-18",
+    "lat": 38.51556,
+    "lng": -121.58889,
+    "fact": "Wikipedia Putah Creek (mouth coordinate; creek runs past Monticello Dam)"
+   }
+  ],
+  "note": "MP GPS within 100 m of stored. Parent \"Wine Country/Northeast Bay\" is a large region; 71 km is genuine."
+ },
+ {
+  "id": "ca_valley_of_the_moon",
+  "verdict": "fix",
+  "stored": [
+   32.9859305263158,
+   -116.075351052632
+  ],
+  "new_lat": 32.631,
+  "new_lng": -116.0788,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/105946815/valley-of-the-moon",
+    "retrieved_at": "2026-11-18",
+    "lat": 32.631,
+    "lng": -116.0788,
+    "fact": "MP GPS for Valley of the Moon, South San Diego County"
+   },
+   {
+    "url": "https://www.openstreetmap.org/search?query=Valley%20of%20the%20Moon%2C%20San%20Diego%20County",
+    "retrieved_at": "2026-11-18",
+    "lat": 32.6398413,
+    "lng": -116.1070601,
+    "fact": "OSM Valley of the Moon Trailhead, Old Highway 80"
+   }
+  ],
+  "note": "Stored 32.986 (average of 19 children) is ~39 km north of the area; some children likely carry bad points. MP and OSM trailhead agree within 3 km (region-sized). Still ~70 km from parent, which is genuine."
+ },
+ {
+  "id": "wv_copperhead_cove",
+  "verdict": "unresolved",
+  "stored": [
+   38.08601,
+   -79.60281
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/110119028/copperhead-cove",
+    "retrieved_at": "2026-11-18",
+    "lat": 38.08601,
+    "lng": -79.60281,
+    "fact": "MP GPS equals stored; text says walk downstream from Entrance Walls parking"
+   },
+   {
+    "url": "https://www.mountainproject.com/area/109582909/entrance-walls",
+    "retrieved_at": "2026-11-18",
+    "lat": 38.80891,
+    "lng": -79.28054,
+    "fact": "MP Entrance Walls GPS, the parking named in Copperhead Cove approach"
+   }
+  ],
+  "note": "MP's own GPS is the bad value (~70 km SW, in Virginia). Its approach text puts the cliff a short walk downstream of the Entrance Walls in Smoke Hole Canyon; no page prints a coordinate for the cove itself. Owner to decide."
+ },
+ {
+  "id": "az_shiva_temple",
+  "verdict": "parent_wrong",
+  "stored": [
+   36.16439,
+   -112.16105
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://en.wikipedia.org/wiki/Shiva_Temple_(Grand_Canyon)",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.1678508,
+    "lng": -112.1635251,
+    "fact": "Wikipedia infobox coordinates for Shiva Temple (Grand Canyon)"
+   },
+   {
+    "url": "https://peakvisor.com/peak/shiva-temple.html",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.165761,
+    "lng": -112.155027,
+    "fact": "PeakVisor peak page coordinates"
+   }
+  ],
+  "note": "Child is right within ~0.8 km (large summit plateau). Parent \"Temples\" is a Grand Canyon category with a bad point (35.556,-111.918, south of the canyon); it has no own location, so no parent coordinate given (GCNP itself now 36.0552608,-112.1218355)."
+ },
+ {
+  "id": "wy_lichen",
+  "verdict": "fix_one_source",
+  "stored": [
+   43.28613,
+   -109.86469
+  ],
+  "new_lat": 43.78699,
+  "new_lng": -110.73618,
+  "parent_new_lat": 43.78838,
+  "parent_new_lng": -110.73721,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/108406113/lichen",
+    "retrieved_at": "2026-11-18",
+    "lat": 43.78699,
+    "lng": -110.73618,
+    "fact": "MP GPS for lichen boulder, String Lake boulders"
+   },
+   {
+    "url": "https://www.mountainproject.com/area/108406098/string-lake-boulders",
+    "retrieved_at": "2026-11-18",
+    "lat": 43.78838,
+    "lng": -110.73721,
+    "fact": "MP GPS for parent String Lake boulders"
+   },
+   {
+    "url": "https://www.openstreetmap.org/search?query=String%20Lake%2C%20Teton%20County%2C%20Wyoming",
+    "retrieved_at": "2026-11-18",
+    "lat": 43.7895429,
+    "lng": -110.7323688,
+    "fact": "OSM String Lake, Teton County"
+   }
+  ],
+  "note": "Child stored (43.286,-109.865) is ~90 km off; boulder only on MP. Parent String Lake boulders is ALSO wrong (stored 43.929,-109.880): MP and OSM String Lake agree within 0.4 km."
+ },
+ {
+  "id": "az_siegfried_pyre",
+  "verdict": "parent_wrong",
+  "stored": [
+   36.19698,
+   -111.90802
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://en.wikipedia.org/wiki/Siegfried_Pyre",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.1972,
+    "lng": -111.908,
+    "fact": "Wikipedia infobox coordinates for Siegfried Pyre"
+   },
+   {
+    "url": "https://peakvisor.com/peak/siegfried-pyre.html",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.19697,
+    "lng": -111.908083,
+    "fact": "PeakVisor peak page coordinates"
+   }
+  ],
+  "note": "Child is right: Wikipedia infobox and PeakVisor agree with the stored point. Parent \"Unconventionals\" is a Grand Canyon category with a bad point (35.556,-111.918, south of the canyon); it has no own location, so no parent coordinate given (GCNP itself now 36.0552608,-112.1218355)."
+ },
+ {
+  "id": "az_the_colonade",
+  "verdict": "parent_wrong",
+  "stored": [
+   36.17146,
+   -112.11112
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://peakvisor.com/peak/the-colonnade.html",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.171405,
+    "lng": -112.110894,
+    "fact": "PeakVisor: The Colonnade peak coordinates"
+   },
+   {
+    "url": "https://www.openstreetmap.org/search?query=The%20Colonnade%2C%20Coconino%20County%2C%20Arizona",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.1672156,
+    "lng": -112.1180609,
+    "fact": "OSM ridge \"The Colonnade\", Coconino County (peak node at 36.1633,-112.1235)"
+   }
+  ],
+  "note": "Child is right: PeakVisor matches stored; OSM ridge centre ~0.8 km away (a long ridge). Parent \"Unconventionals\" is a category with a bad point (35.556,-111.918); no own location."
+ },
+ {
+  "id": "az_flatiron_butte",
+  "verdict": "ok",
+  "stored": [
+   36.25077,
+   -112.84922
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://peakvisor.com/peak/flatiron-butte-vcujoub0.html",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.251141,
+    "lng": -112.849545,
+    "fact": "PeakVisor: Flatiron Butte, Grand Canyon, coordinates"
+   },
+   {
+    "url": "https://www.openstreetmap.org/search?query=Flatiron%20Butte%2C%20Arizona",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.250815,
+    "lng": -112.848807,
+    "fact": "OSM peak Flatiron Butte, Coconino County"
+   }
+  ],
+  "note": "Child is right. Parent \"Buttes\" is a canyon-wide category placed near the South Rim village; this butte is in the western canyon, genuinely 70 km away."
+ },
+ {
+  "id": "ca_g_coxcomb_mountains",
+  "verdict": "ok",
+  "stored": [
+   34.03768,
+   -115.33971
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/106779192/coxcomb-mountains",
+    "retrieved_at": "2026-11-18",
+    "lat": 34.03768,
+    "lng": -115.33969,
+    "fact": "Mountain Project area page GPS line"
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/Coxcomb_Mountains",
+    "retrieved_at": "2026-11-18",
+    "lat": 33.93667,
+    "lng": -115.34194,
+    "fact": "Wikipedia infobox for the Coxcomb Mountains range"
+   }
+  ],
+  "note": "MP equals stored; Wikipedia range point 11 km south (a ~40 km range). Parent \"Highway 62 Crags\" spans the 62 corridor east of Joshua Tree; 70 km is genuine."
+ },
+ {
+  "id": "az_osiris_temple",
+  "verdict": "parent_wrong",
+  "stored": [
+   36.14533,
+   -112.18727
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://en.wikipedia.org/wiki/Osiris_Temple",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.1454,
+    "lng": -112.1871,
+    "fact": "Wikipedia infobox coordinates for Osiris Temple"
+   },
+   {
+    "url": "https://peakvisor.com/peak/osiris-temple.html",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.145242,
+    "lng": -112.187188,
+    "fact": "PeakVisor peak page coordinates"
+   }
+  ],
+  "note": "Child is right: Wikipedia infobox and PeakVisor agree with the stored point. Parent \"Temples\" is a Grand Canyon category with a bad point (35.556,-111.918, south of the canyon); it has no own location, so no parent coordinate given (GCNP itself now 36.0552608,-112.1218355)."
+ },
+ {
+  "id": "vt_east_hill",
+  "verdict": "ok",
+  "stored": [
+   44.29239,
+   -72.60545
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/200809571/east-hill",
+    "retrieved_at": "2026-11-18",
+    "lat": 44.29239,
+    "lng": -72.60545,
+    "fact": "Mountain Project area page GPS line"
+   }
+  ],
+  "note": "MP equals stored (Montpelier area). Parent \"Vermont's Lonely Rocks - Central\" is a statewide-region collection of lone rocks; 69 km is genuine."
+ },
+ {
+  "id": "ca_piru_creek",
+  "verdict": "ok",
+  "stored": [
+   34.61275125,
+   -118.74423875
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/112785290/piru-creek",
+    "retrieved_at": "2026-11-18",
+    "lat": 34.61621,
+    "lng": -118.74349,
+    "fact": "Mountain Project area page GPS line"
+   }
+  ],
+  "note": "MP within 0.4 km of stored. Parent Angeles National Forest is a large forest region (MP files Piru Creek under it); 69 km is genuine."
+ },
+ {
+  "id": "az_diana_temple",
+  "verdict": "parent_wrong",
+  "stored": [
+   36.10524,
+   -112.28211
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://en.wikipedia.org/wiki/Diana_Temple_(Grand_Canyon)",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.1118071,
+    "lng": -112.270048,
+    "fact": "Wikipedia infobox coordinates for Diana Temple (Grand Canyon)"
+   },
+   {
+    "url": "https://peakvisor.com/peak/diana-temple.html",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.101093,
+    "lng": -112.289341,
+    "fact": "PeakVisor peak page coordinates"
+   }
+  ],
+  "note": "Child is right within ~1.3 km: Wikipedia and PeakVisor bracket the stored point (they differ ~2 km from each other). Parent \"Temples\" is a Grand Canyon category with a bad point (35.556,-111.918, south of the canyon); it has no own location, so no parent coordinate given (GCNP itself now 36.0552608,-112.1218355)."
+ },
+ {
+  "id": "az_manu_temple",
+  "verdict": "parent_wrong",
+  "stored": [
+   36.16665,
+   -112.084
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://en.wikipedia.org/wiki/Manu_Temple",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.166661,
+    "lng": -112.0838942,
+    "fact": "Wikipedia infobox coordinates for Manu Temple"
+   },
+   {
+    "url": "https://peakvisor.com/peak/manu-temple.html",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.166506,
+    "lng": -112.084069,
+    "fact": "PeakVisor peak page coordinates"
+   }
+  ],
+  "note": "Child is right: Wikipedia infobox and PeakVisor agree with the stored point. Parent \"Temples\" is a Grand Canyon category with a bad point (35.556,-111.918, south of the canyon); it has no own location, so no parent coordinate given (GCNP itself now 36.0552608,-112.1218355)."
+ },
+ {
+  "id": "az_isis_temple",
+  "verdict": "parent_wrong",
+  "stored": [
+   36.14107,
+   -112.1374
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://en.wikipedia.org/wiki/Isis_Temple",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.1408156,
+    "lng": -112.137948,
+    "fact": "Wikipedia infobox coordinates for Isis Temple"
+   },
+   {
+    "url": "https://peakvisor.com/peak/isis-temple.html",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.14084,
+    "lng": -112.137276,
+    "fact": "PeakVisor peak page coordinates"
+   }
+  ],
+  "note": "Child is right: Wikipedia infobox and PeakVisor agree with the stored point. Parent \"Temples\" is a Grand Canyon category with a bad point (35.556,-111.918, south of the canyon); it has no own location, so no parent coordinate given (GCNP itself now 36.0552608,-112.1218355)."
+ },
+ {
+  "id": "az_buddha_temple",
+  "verdict": "parent_wrong",
+  "stored": [
+   36.15249,
+   -112.09937
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://en.wikipedia.org/wiki/Buddha_Temple",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.1527889,
+    "lng": -112.0986596,
+    "fact": "Wikipedia infobox coordinates for Buddha Temple"
+   },
+   {
+    "url": "https://peakvisor.com/peak/buddha-temple.html",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.152689,
+    "lng": -112.098838,
+    "fact": "PeakVisor peak page coordinates"
+   }
+  ],
+  "note": "Child is right: Wikipedia infobox and PeakVisor agree with the stored point. Parent \"Temples\" is a Grand Canyon category with a bad point (35.556,-111.918, south of the canyon); it has no own location, so no parent coordinate given (GCNP itself now 36.0552608,-112.1218355)."
+ },
+ {
+  "id": "az_horus_temple",
+  "verdict": "parent_wrong",
+  "stored": [
+   36.13217,
+   -112.17998
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://en.wikipedia.org/wiki/Horus_Temple",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.1379869,
+    "lng": -112.1779081,
+    "fact": "Wikipedia infobox coordinates for Horus Temple"
+   },
+   {
+    "url": "https://peakvisor.com/peak/horus-temple.html",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.138931,
+    "lng": -112.177579,
+    "fact": "PeakVisor peak page coordinates"
+   }
+  ],
+  "note": "Child is right within ~0.7 km. Parent \"Temples\" is a Grand Canyon category with a bad point (35.556,-111.918, south of the canyon); it has no own location, so no parent coordinate given (GCNP itself now 36.0552608,-112.1218355)."
+ },
+ {
+  "id": "ut_long_canyon_2",
+  "verdict": "ok",
+  "stored": [
+   37.86394,
+   -111.30147
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/105973758/long-canyon",
+    "retrieved_at": "2026-11-18",
+    "lat": 37.86394,
+    "lng": -111.30147,
+    "fact": "MP GPS; text: Burr Trail road east of Boulder, Utah"
+   }
+  ],
+  "note": "MP equals stored and matches its own text (Long Canyon on the Burr Trail east of Boulder). Parent \"Grand Staircase\" is the whole monument region; 68 km is genuine. OSM Long Canyon hit was a different canyon."
+ },
+ {
+  "id": "az_vesta_temple",
+  "verdict": "parent_wrong",
+  "stored": [
+   36.09341,
+   -112.26887
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://en.wikipedia.org/wiki/Vesta_Temple",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.0935096,
+    "lng": -112.2689987,
+    "fact": "Wikipedia infobox coordinates for Vesta Temple"
+   },
+   {
+    "url": "https://peakvisor.com/peak/vesta-temple.html",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.093345,
+    "lng": -112.269113,
+    "fact": "PeakVisor peak page coordinates"
+   }
+  ],
+  "note": "Child is right: Wikipedia infobox and PeakVisor agree with the stored point. Parent \"Temples\" is a Grand Canyon category with a bad point (35.556,-111.918, south of the canyon); it has no own location, so no parent coordinate given (GCNP itself now 36.0552608,-112.1218355)."
+ },
+ {
+  "id": "vt_project_face_boulder",
+  "verdict": "parent_wrong",
+  "stored": [
+   44.70994,
+   -72.04559
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": 44.70994,
+  "parent_new_lng": -72.04559,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/126998605/project-face-boulder",
+    "retrieved_at": "2026-11-18",
+    "lat": 44.70994,
+    "lng": -72.04559,
+    "fact": "Mountain Project area page GPS line"
+   },
+   {
+    "url": "https://www.mountainproject.com/area/106915027/red-light-district",
+    "retrieved_at": "2026-11-18",
+    "lat": 44.70994,
+    "lng": -72.04559,
+    "fact": "MP GPS for parent Red Light District, Mt Hor"
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/Mount_Hor_(Vermont)",
+    "retrieved_at": "2026-11-18",
+    "lat": 44.71333,
+    "lng": -72.05306,
+    "fact": "Wikipedia Mount Hor (Vermont), Lake Willoughby"
+   }
+  ],
+  "note": "Child is right (Mt Hor, Lake Willoughby). Parent Red Light District is stored at 44.247,-72.578 (Montpelier); MP and Wikipedia Mount Hor agree within 0.7 km."
+ },
+ {
+  "id": "vt_hubbard_park",
+  "verdict": "ok",
+  "stored": [
+   44.26747,
+   -72.57667
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/126950893/hubbard-park",
+    "retrieved_at": "2026-11-18",
+    "lat": 44.26747,
+    "lng": -72.57667,
+    "fact": "Mountain Project area page GPS line"
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/Hubbard_Park_(Montpelier,_Vermont)",
+    "retrieved_at": "2026-11-18",
+    "lat": 44.2712,
+    "lng": -72.5788,
+    "fact": "Wikipedia Hubbard Park, Montpelier"
+   }
+  ],
+  "note": "Child is right (Montpelier). Parent \"Vermont's Lonely Rocks - Central\" is a regional collection; 67 km is genuine."
+ },
+ {
+  "id": "vt_red_light_special",
+  "verdict": "parent_wrong",
+  "stored": [
+   44.70994,
+   -72.04559
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": 44.70994,
+  "parent_new_lng": -72.04559,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/127332204/red-light-special",
+    "retrieved_at": "2026-11-18",
+    "lat": 44.70994,
+    "lng": -72.04559,
+    "fact": "Mountain Project area page GPS line"
+   },
+   {
+    "url": "https://www.mountainproject.com/area/106915027/red-light-district",
+    "retrieved_at": "2026-11-18",
+    "lat": 44.70994,
+    "lng": -72.04559,
+    "fact": "MP GPS for parent Red Light District, Mt Hor"
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/Mount_Hor_(Vermont)",
+    "retrieved_at": "2026-11-18",
+    "lat": 44.71333,
+    "lng": -72.05306,
+    "fact": "Wikipedia Mount Hor (Vermont), Lake Willoughby"
+   }
+  ],
+  "note": "Child is right (Mt Hor, Lake Willoughby). Parent Red Light District is stored at 44.247,-72.578 (Montpelier); MP and Wikipedia Mount Hor agree within 0.7 km."
+ },
+ {
+  "id": "vt_bns_boulder",
+  "verdict": "parent_wrong",
+  "stored": [
+   44.70994,
+   -72.0456
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": 44.70994,
+  "parent_new_lng": -72.04559,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/126998638/bns-boulder",
+    "retrieved_at": "2026-11-18",
+    "lat": 44.70994,
+    "lng": -72.0456,
+    "fact": "Mountain Project area page GPS line"
+   },
+   {
+    "url": "https://www.mountainproject.com/area/106915027/red-light-district",
+    "retrieved_at": "2026-11-18",
+    "lat": 44.70994,
+    "lng": -72.04559,
+    "fact": "MP GPS for parent Red Light District, Mt Hor"
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/Mount_Hor_(Vermont)",
+    "retrieved_at": "2026-11-18",
+    "lat": 44.71333,
+    "lng": -72.05306,
+    "fact": "Wikipedia Mount Hor (Vermont), Lake Willoughby"
+   }
+  ],
+  "note": "Child is right (Mt Hor, Lake Willoughby). Parent Red Light District is stored at 44.247,-72.578 (Montpelier); MP and Wikipedia Mount Hor agree within 0.7 km."
+ },
+ {
+  "id": "vt_warmup_boulder",
+  "verdict": "parent_wrong",
+  "stored": [
+   44.70993,
+   -72.04559
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": 44.70994,
+  "parent_new_lng": -72.04559,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/126998611/warmup-boulder",
+    "retrieved_at": "2026-11-18",
+    "lat": 44.70993,
+    "lng": -72.04559,
+    "fact": "Mountain Project area page GPS line"
+   },
+   {
+    "url": "https://www.mountainproject.com/area/106915027/red-light-district",
+    "retrieved_at": "2026-11-18",
+    "lat": 44.70994,
+    "lng": -72.04559,
+    "fact": "MP GPS for parent Red Light District, Mt Hor"
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/Mount_Hor_(Vermont)",
+    "retrieved_at": "2026-11-18",
+    "lat": 44.71333,
+    "lng": -72.05306,
+    "fact": "Wikipedia Mount Hor (Vermont), Lake Willoughby"
+   }
+  ],
+  "note": "Child is right (Mt Hor, Lake Willoughby). Parent Red Light District is stored at 44.247,-72.578 (Montpelier); MP and Wikipedia Mount Hor agree within 0.7 km."
+ },
+ {
+  "id": "az_deva_temple",
+  "verdict": "parent_wrong",
+  "stored": [
+   36.15193,
+   -112.03215
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://en.wikipedia.org/wiki/Deva_Temple",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.1521473,
+    "lng": -112.0318004,
+    "fact": "Wikipedia infobox coordinates for Deva Temple"
+   },
+   {
+    "url": "https://peakvisor.com/peak/deva-temple.html",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.151947,
+    "lng": -112.032025,
+    "fact": "PeakVisor peak page coordinates"
+   }
+  ],
+  "note": "Child is right: Wikipedia infobox and PeakVisor agree with the stored point. Parent \"Temples\" is a Grand Canyon category with a bad point (35.556,-111.918, south of the canyon); it has no own location, so no parent coordinate given (GCNP itself now 36.0552608,-112.1218355)."
+ },
+ {
+  "id": "vt_granite_alleyway",
+  "verdict": "parent_wrong",
+  "stored": [
+   44.70993,
+   -72.0456
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": 44.70994,
+  "parent_new_lng": -72.04559,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/126998702/granite-alleyway",
+    "retrieved_at": "2026-11-18",
+    "lat": 44.70993,
+    "lng": -72.0456,
+    "fact": "Mountain Project area page GPS line"
+   },
+   {
+    "url": "https://www.mountainproject.com/area/106915027/red-light-district",
+    "retrieved_at": "2026-11-18",
+    "lat": 44.70994,
+    "lng": -72.04559,
+    "fact": "MP GPS for parent Red Light District, Mt Hor"
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/Mount_Hor_(Vermont)",
+    "retrieved_at": "2026-11-18",
+    "lat": 44.71333,
+    "lng": -72.05306,
+    "fact": "Wikipedia Mount Hor (Vermont), Lake Willoughby"
+   }
+  ],
+  "note": "Child is right (Mt Hor, Lake Willoughby). Parent Red Light District is stored at 44.247,-72.578 (Montpelier); MP and Wikipedia Mount Hor agree within 0.7 km."
+ },
+ {
+  "id": "az_chuar_lava_hill",
+  "verdict": "parent_wrong",
+  "stored": [
+   36.14499,
+   -111.82601
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://peakvisor.com/peak/chuar-lava-hill.html",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.144548,
+    "lng": -111.8261,
+    "fact": "PeakVisor: Chuar Lava Hill coordinates"
+   },
+   {
+    "url": "https://www.openstreetmap.org/search?query=Chuar%20Lava%20Hill%2C%20Arizona",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.144986,
+    "lng": -111.8259925,
+    "fact": "OSM peak Chuar Lava Hill, Coconino County"
+   }
+  ],
+  "note": "Child is right (both sources within 50 m of stored). Parent \"Unconventionals\" is a category with a bad point (35.556,-111.918); no own location."
+ },
+ {
+  "id": "az_juno_temple",
+  "verdict": "parent_wrong",
+  "stored": [
+   36.15018,
+   -111.89163
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://en.wikipedia.org/wiki/Juno_Temple_(Grand_Canyon)",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.1504,
+    "lng": -111.8917,
+    "fact": "Wikipedia infobox coordinates for Juno Temple (Grand Canyon)"
+   },
+   {
+    "url": "https://peakvisor.com/peak/juno-temple.html",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.1502,
+    "lng": -111.891777,
+    "fact": "PeakVisor peak page coordinates"
+   }
+  ],
+  "note": "Child is right: Wikipedia infobox and PeakVisor agree with the stored point. Parent \"Temples\" is a Grand Canyon category with a bad point (35.556,-111.918, south of the canyon); it has no own location, so no parent coordinate given (GCNP itself now 36.0552608,-112.1218355)."
+ },
+ {
+  "id": "ca_jacumba",
+  "verdict": "ok",
+  "stored": [
+   32.67669,
+   -116.07403
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/200551265/jacumba",
+    "retrieved_at": "2026-11-18",
+    "lat": 32.67669,
+    "lng": -116.07403,
+    "fact": "Mountain Project area page GPS line"
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/Jacumba_Hot_Springs,_California",
+    "retrieved_at": "2026-11-18",
+    "lat": 32.61694,
+    "lng": -116.18806,
+    "fact": "Wikipedia Jacumba Hot Springs town coordinates"
+   }
+  ],
+  "note": "MP equals stored, in the Jacumba area. Parent \"San Diego County Desert Area\" spans Anza-Borrego to the border; 66 km is genuine."
+ },
+ {
+  "id": "ut_moon_lake",
+  "verdict": "ok",
+  "stored": [
+   40.58797,
+   -110.51612
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/110773223/moon-lake",
+    "retrieved_at": "2026-11-18",
+    "lat": 40.58797,
+    "lng": -110.51612,
+    "fact": "Mountain Project area page GPS line"
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/Moon_Lake_(Utah)",
+    "retrieved_at": "2026-11-18",
+    "lat": 40.562447,
+    "lng": -110.489606,
+    "fact": "Wikipedia Moon Lake (Utah) coordinates"
+   }
+  ],
+  "note": "Child is right (Moon Lake, south Uintas). Parent \"Vernal Area\" is a regional area; 65 km is genuine."
+ },
+ {
+  "id": "az_brahma_temple",
+  "verdict": "parent_wrong",
+  "stored": [
+   36.13055,
+   -112.03882
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://en.wikipedia.org/wiki/Brahma_Temple_(Grand_Canyon)",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.1304634,
+    "lng": -112.038703,
+    "fact": "Wikipedia infobox coordinates for Brahma Temple (Grand Canyon)"
+   },
+   {
+    "url": "https://peakvisor.com/peak/brahma-temple.html",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.130311,
+    "lng": -112.03886,
+    "fact": "PeakVisor peak page coordinates"
+   }
+  ],
+  "note": "Child is right: Wikipedia infobox and PeakVisor agree with the stored point. Parent \"Temples\" is a Grand Canyon category with a bad point (35.556,-111.918, south of the canyon); it has no own location, so no parent coordinate given (GCNP itself now 36.0552608,-112.1218355)."
+ },
+ {
+  "id": "sd_third_world_assassin_boulder",
+  "verdict": "unresolved",
+  "stored": [
+   43.89692,
+   -102.54278
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/111158870/third-world-assassin-boulder",
+    "retrieved_at": "2026-11-18",
+    "lat": 43.89692,
+    "lng": -102.54278,
+    "fact": "MP GPS equals stored; filed under Breezy Point > North Seas"
+   }
+  ],
+  "note": "MP's own GPS is the bad value (~65 km east of Breezy Point, on the plains). No page prints a coordinate for this boulder. Owner to decide."
+ },
+ {
+  "id": "az_thor_temple",
+  "verdict": "parent_wrong",
+  "stored": [
+   36.13055,
+   -111.98073
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://en.wikipedia.org/wiki/Thor_Temple",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.1304645,
+    "lng": -111.9808601,
+    "fact": "Wikipedia infobox coordinates for Thor Temple"
+   },
+   {
+    "url": "https://peakvisor.com/peak/thor-temple.html",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.130898,
+    "lng": -111.98054,
+    "fact": "PeakVisor peak page coordinates"
+   }
+  ],
+  "note": "Child is right: Wikipedia infobox and PeakVisor agree with the stored point. Parent \"Temples\" is a Grand Canyon category with a bad point (35.556,-111.918, south of the canyon); it has no own location, so no parent coordinate given (GCNP itself now 36.0552608,-112.1218355)."
+ },
+ {
+  "id": "az_jupiter_temple",
+  "verdict": "parent_wrong",
+  "stored": [
+   36.13441,
+   -111.89019
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://en.wikipedia.org/wiki/Jupiter_Temple",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.1347185,
+    "lng": -111.8900647,
+    "fact": "Wikipedia infobox coordinates for Jupiter Temple"
+   },
+   {
+    "url": "https://peakvisor.com/peak/jupiter-temple.html",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.134617,
+    "lng": -111.890234,
+    "fact": "PeakVisor peak page coordinates"
+   }
+  ],
+  "note": "Child is right: Wikipedia infobox and PeakVisor agree with the stored point. Parent \"Temples\" is a Grand Canyon category with a bad point (35.556,-111.918, south of the canyon); it has no own location, so no parent coordinate given (GCNP itself now 36.0552608,-112.1218355)."
+ },
+ {
+  "id": "wa_tower_rock",
+  "verdict": "ok",
+  "stored": [
+   46.43292,
+   -121.87069
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/110834012/tower-rock",
+    "retrieved_at": "2026-11-18",
+    "lat": 46.43292,
+    "lng": -121.87069,
+    "fact": "Mountain Project area page GPS line"
+   },
+   {
+    "url": "https://www.openstreetmap.org/search?query=Tower%20Rock%2C%20Lewis%20County%2C%20Washington",
+    "retrieved_at": "2026-11-18",
+    "lat": 46.4323446,
+    "lng": -121.8696392,
+    "fact": "OSM peak Tower Rock, Lewis County"
+   }
+  ],
+  "note": "Child is right (Tower Rock near Randle, Cispus valley). MP files it under Columbia Gorge, a broad region; arguably Gifford Pinchot NF, but follows MP."
+ },
+ {
+  "id": "az_zoroaster_temple",
+  "verdict": "parent_wrong",
+  "stored": [
+   36.11902,
+   -112.04501
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://en.wikipedia.org/wiki/Zoroaster_Temple",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.1188141,
+    "lng": -112.0452408,
+    "fact": "Wikipedia infobox coordinates for Zoroaster Temple"
+   },
+   {
+    "url": "https://peakvisor.com/peak/zoroaster-temple.html",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.118763,
+    "lng": -112.045483,
+    "fact": "PeakVisor peak page coordinates"
+   }
+  ],
+  "note": "Child is right: Wikipedia infobox and PeakVisor agree with the stored point. Parent \"Temples\" is a Grand Canyon category with a bad point (35.556,-111.918, south of the canyon); it has no own location, so no parent coordinate given (GCNP itself now 36.0552608,-112.1218355)."
+ },
+ {
+  "id": "ca_upper_bidwell_park",
+  "verdict": "ok",
+  "stored": [
+   39.7832683333333,
+   -121.74808
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/110552615/upper-bidwell-park",
+    "retrieved_at": "2026-11-18",
+    "lat": 39.77165,
+    "lng": -121.76693,
+    "fact": "Mountain Project area page GPS line"
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/Bidwell_Park",
+    "retrieved_at": "2026-11-18",
+    "lat": 39.769888,
+    "lng": -121.779156,
+    "fact": "Wikipedia Bidwell Park, Chico"
+   }
+  ],
+  "note": "Stored (average of children) within 2 km of MP. MP files Chico's Upper Bidwell Park under The Lost Sierra, a broad region; 63 km is genuine."
+ }
+]
