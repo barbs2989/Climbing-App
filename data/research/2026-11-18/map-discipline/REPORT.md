@@ -469,3 +469,27 @@ No agents this round. Two things were done from the database and pages already o
 - The Sierra Peaks pages on climber.org (`data/SierraPeaks/<region>/<n>.html`) were checked as a new source.
   They give elevation and UTM only, no trailhead.
 - **Audit, measured:** SUMMIT_ONLY 129, NO_SUMMIT 40, TRAILHEAD_AND_SUMMIT 1072.
+
+### Round 13: OSM placement and climber.org report headers (2026-11-23)
+
+No agents. Two written (`batch-r13.json`, unconfirmed, verified on re-read):
+- Spanish Mountain North Ridge: Crown Valley Trailhead, placed at OSM node 1527888043 (`highway=trailhead`,
+  name "Rancheria Trailhead", alt_name "Crown Valley Trailhead"; confirmed through the OSM API). Two
+  independent reports start there and take the saddle north of Geraldine Lakes (Burd spanish_1, climber.org
+  2006/1581). The one other report (1995/68) climbed the west side from the Spanish OHV trail.
+- Dicks Peak: Glen Alpine Trailhead (USFS point). Four reports by four authors start there (climber.org
+  2009/1713, 2003/1136, 2001/833, 2001/745); one (2001/780) started at Eagle Falls.
+
+`scripts/cr2.mjs` reads each stuck California peak's climber.org reports and prints the report's own
+"Peaks:" and "Trailhead:" header lines. Held after reading:
+- Mount Florence: our peak is the Yosemite one (37.74 N). Most climber.org reports are for Florence Peak
+  in Mineral King, a different peak; only one report is about ours.
+- Split starts: Trojan and Barnard (George Creek vs Shepherd Pass/Cottonwood), Gemini (Bear Creek
+  Diversion Dam vs Florence Lake), Electra, Pyramid Peak South (Road's End vs Taboose Pass), Moses, Silver
+  Peak (Lake Edison 2 vs Onion Springs 1; the Wrights Lake and Squaw Valley reports are other Silver Peaks).
+- No placement: Pinchot (the climber.org driving GPX has ARMSCN, Armstrong Canyon road end
+  36.94505,-118.35353, but OSM maps no lot there), Bolton Brown (Burd parked in McMurry Meadows on the road,
+  not at the mapped Birch Lake Trailhead), Smith, Stewart, Earl and Persis (no mapped lot near the
+  published points), Sugarloaf (OSM lot 700 m from the published point, and the Route 27 start is still
+  named).
+- **Audit, measured:** SUMMIT_ONLY 127, NO_SUMMIT 40, TRAILHEAD_AND_SUMMIT 1074.
