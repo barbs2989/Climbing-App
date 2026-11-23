@@ -317,3 +317,6 @@ page about the route itself. Archived or cached copies of sites that refuse auto
 - **Possible misfiling found:** an American Alpine Journal report puts Constantino-Whitelaw on the South
   Early Winter Spire, not the North. Crater Mountain "Appassionata / Smothered in Smoke" reads like a crag
   face. Neither was changed.
+- **Audit:** SUMMIT_ONLY 170, NO_SUMMIT 40, CRAG_SUMMIT 0, measured after `batch-r7b.json`. The Spaulding pin
+  was written afterwards and verified on re-read; the audit rerun behind it was still queued for the
+  database when this was recorded, so the expected count of 169 is not yet measured.
