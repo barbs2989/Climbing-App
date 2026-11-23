@@ -1,0 +1,634 @@
+{
+ "wa_nimble_novice": {
+  "area": "wa_main_face",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/113124548/nimble-novice",
+    "https://www.mountainproject.com/area/105922174/main-face",
+    "https://wdfw.wa.gov/places-to-go/wildlife-areas/oak-creek-wildlife-area-unit"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.6",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/113124548/nimble-novice",
+      "fact": "5.6 YDS, Trad, 75 ft",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_nimble_novice",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "pitches 0 is invalid. Mountain Project: 75 ft, slab and crack then a short off-width onto a ledge with a two-bolt anchor (one length to one anchor). Count implied, not stated: unconfirmed after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/113124548/nimble-novice"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_nimble_novice",
+    "column": "length_m",
+    "from": null,
+    "to": 23,
+    "why": "Mountain Project states 75 ft (23 m). Single source, locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/113124548/nimble-novice"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_nimble_novice",
+    "column": "anchor",
+    "from": null,
+    "to": "Two-bolt anchor",
+    "why": "Mountain Project: two bolts with rap rings, about 5 ft left along the top ledge. House spelling 'Two-bolt anchor' (stored on 5+ routes, incl. wa_slot_machine_3 on this wall). Single source, locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/113124548/nimble-novice"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_nimble_novice",
+    "column": "gear",
+    "from": null,
+    "to": [
+     "gear to 5 in"
+    ],
+    "why": "Mountain Project protection: gear up to 5 in (to 2 in on the lower half; the off-width above is hard to protect). Rack from MP alone, locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/113124548/nimble-novice"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_nimble_novice",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Washington Department of Fish and Wildlife (Oak Creek Wildlife Area)",
+     "parking_pass": "Discover Pass or WDFW Vehicle Access Pass in the wildlife area lot"
+    },
+    "why": "access null. Copied field for field from wa_journeyman_crack (live, owner-approved in batches U-W; same object on wa_orange_sunshine). WDFW's Oak Creek unit page re-read 2026-11-23: unchanged (Discover Pass required on WDFW land unless a Vehicle Access Pass came with a hunting/fishing licence; eagle-nest climbing rule from Feb 1, boundary posted in the field, no cliff named; upland winter-range closure to May 1, no cliff named; Tieton River Nature Trail open all year; no 2026 notice).",
+    "evidence": [
+     "https://wdfw.wa.gov/places-to-go/wildlife-areas/oak-creek-wildlife-area-unit"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_nimble_novice",
+    "column": "permit",
+    "from": null,
+    "to": "A Discover Pass, or a WDFW Vehicle Access Pass, is needed to park in the Oak Creek Wildlife Area lot.",
+    "why": "permit null. Verbatim copy of wa_journeyman_crack's permit (same on wa_orange_sunshine), same reason as access.",
+    "evidence": [
+     "https://wdfw.wa.gov/places-to-go/wildlife-areas/oak-creek-wildlife-area-unit"
+    ]
+   }
+  ],
+  "held": [],
+  "disputed": [],
+  "notes": "Distinct line: Mountain Project puts it right of Belayer Slayer and left of Nimrod's Nemesis, on a slabby buttress left of a bush. Not the same as any 'Unknown' row (see wa_main_face_stopper_popper). FA unknown on MP; fa stays null. Not mentioned in any 2017 rockfall report. theCrag sent the browser to its bot-check page (Forbidden) on the first request; not used. The Mountaineers Royal Columns page names none of these routes. No Climb Tieton guide page found online."
+ },
+ "wa_extra_action": {
+  "area": "wa_main_face",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/117886596/extra-action",
+    "https://www.mountainproject.com/area/105922174/main-face",
+    "https://wdfw.wa.gov/places-to-go/wildlife-areas/oak-creek-wildlife-area-unit"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.7",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/117886596/extra-action",
+      "fact": "5.7 YDS, Trad, 70 ft",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_extra_action",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "pitches 0 is invalid. Mountain Project: a 70 ft off-width crack to the cliff top, one length (the follower lowers off a neighbouring anchor). Count implied, not stated: unconfirmed after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/117886596/extra-action"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_extra_action",
+    "column": "length_m",
+    "from": null,
+    "to": 21,
+    "why": "Mountain Project states 70 ft (21 m). Single source, locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/117886596/extra-action"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_extra_action",
+    "column": "gear",
+    "from": null,
+    "to": [
+     "gear to 5 in"
+    ],
+    "why": "Mountain Project protection: gear to 5 in. Rack from MP alone, locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/117886596/extra-action"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_extra_action",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Washington Department of Fish and Wildlife (Oak Creek Wildlife Area)",
+     "parking_pass": "Discover Pass or WDFW Vehicle Access Pass in the wildlife area lot"
+    },
+    "why": "access null. Copied field for field from wa_journeyman_crack (live, owner-approved in batches U-W; same object on wa_orange_sunshine). WDFW's Oak Creek unit page re-read 2026-11-23: unchanged (Discover Pass required on WDFW land unless a Vehicle Access Pass came with a hunting/fishing licence; eagle-nest climbing rule from Feb 1, boundary posted in the field, no cliff named; upland winter-range closure to May 1, no cliff named; Tieton River Nature Trail open all year; no 2026 notice).",
+    "evidence": [
+     "https://wdfw.wa.gov/places-to-go/wildlife-areas/oak-creek-wildlife-area-unit"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_extra_action",
+    "column": "permit",
+    "from": null,
+    "to": "A Discover Pass, or a WDFW Vehicle Access Pass, is needed to park in the Oak Creek Wildlife Area lot.",
+    "why": "permit null. Verbatim copy of wa_journeyman_crack's permit (same on wa_orange_sunshine), same reason as access.",
+    "evidence": [
+     "https://wdfw.wa.gov/places-to-go/wildlife-areas/oak-creek-wildlife-area-unit"
+    ]
+   }
+  ],
+  "held": [],
+  "disputed": [],
+  "notes": "ANCHOR HELD (one page, two answers): Mountain Project's protection line says a bolted anchor at the top, but its description says there are no chains, the follower builds a gear anchor, then walks to First Blood / Hard Last / Mush Maker's chains to lower down First Blood. No anchor proposed. Sits right of First Blood, left of Slash and Wild Child; loose rock near the top. FA unknown; fa stays null. theCrag sent the browser to its bot-check page (Forbidden) on the first request; not used. The Mountaineers Royal Columns page names none of these routes. No Climb Tieton guide page found online."
+ },
+ "wa_double_trouble_2": {
+  "area": "wa_main_face",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/106799796/double-trouble",
+    "https://www.mountainproject.com/area/105922174/main-face",
+    "https://wdfw.wa.gov/places-to-go/wildlife-areas/oak-creek-wildlife-area-unit"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.6",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106799796/double-trouble",
+      "fact": "5.6 YDS, Trad, 100 ft",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_double_trouble_2",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "pitches 0 is invalid. Mountain Project: 90-100 ft of twin cracks to the top, traversing right to the fixed anchor above Ignorant Pursuit (one length to one anchor). Count implied, not stated: unconfirmed after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/106799796/double-trouble"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_double_trouble_2",
+    "column": "length_m",
+    "from": null,
+    "to": 30,
+    "why": "Mountain Project states 100 ft (30 m) in the route data (description: 90-100 ft). Single source, locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/106799796/double-trouble"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_double_trouble_2",
+    "column": "gear",
+    "from": null,
+    "to": [
+     "cams to #3 Camalot"
+    ],
+    "why": "Mountain Project protection: a standard rack to a #3 Camalot. Rack from MP alone, locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/106799796/double-trouble"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_double_trouble_2",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Washington Department of Fish and Wildlife (Oak Creek Wildlife Area)",
+     "parking_pass": "Discover Pass or WDFW Vehicle Access Pass in the wildlife area lot"
+    },
+    "why": "access null. Copied field for field from wa_journeyman_crack (live, owner-approved in batches U-W; same object on wa_orange_sunshine). WDFW's Oak Creek unit page re-read 2026-11-23: unchanged (Discover Pass required on WDFW land unless a Vehicle Access Pass came with a hunting/fishing licence; eagle-nest climbing rule from Feb 1, boundary posted in the field, no cliff named; upland winter-range closure to May 1, no cliff named; Tieton River Nature Trail open all year; no 2026 notice).",
+    "evidence": [
+     "https://wdfw.wa.gov/places-to-go/wildlife-areas/oak-creek-wildlife-area-unit"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_double_trouble_2",
+    "column": "permit",
+    "from": null,
+    "to": "A Discover Pass, or a WDFW Vehicle Access Pass, is needed to park in the Oak Creek Wildlife Area lot.",
+    "why": "permit null. Verbatim copy of wa_journeyman_crack's permit (same on wa_orange_sunshine), same reason as access.",
+    "evidence": [
+     "https://wdfw.wa.gov/places-to-go/wildlife-areas/oak-creek-wildlife-area-unit"
+    ]
+   }
+  ],
+  "held": [],
+  "disputed": [],
+  "notes": "No anchor proposed: MP names fixed anchors (shared with Ignorant Pursuit) without their type here; Ignorant Pursuit's page calls them chains, but that is a different page about a shared anchor, so left for a second source. Location: twin cracks just left of the column with the big roof, Twin Cracks to the left, Ignorant Pursuit to the right. FA unknown; fa stays null. theCrag sent the browser to its bot-check page (Forbidden) on the first request; not used. The Mountaineers Royal Columns page names none of these routes. No Climb Tieton guide page found online."
+ },
+ "wa_too_far_out": {
+  "area": "wa_main_face",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/119325747/too-far-out",
+    "https://www.mountainproject.com/area/105922174/main-face",
+    "https://wdfw.wa.gov/places-to-go/wildlife-areas/oak-creek-wildlife-area-unit"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.7",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119325747/too-far-out",
+      "fact": "5.7 YDS, Trad",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_too_far_out",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "pitches 0 is invalid. Mountain Project: a wide corner crack to Talking Heads Ledge (~75 ft), then ~15 ft more of crack to the cliff top and a shared bolt anchor (one length to one anchor). Count implied, not stated: unconfirmed after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/119325747/too-far-out"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_too_far_out",
+    "column": "anchor",
+    "from": null,
+    "to": "Two-bolt anchor",
+    "why": "Mountain Project protection: a shared pair of bolts (added 2025) with steel lower-off carabiners at the top of the upper crack, between Not So Easy and Slot Machine. House spelling 'Two-bolt anchor' (stored on 5+ routes, incl. wa_slot_machine_3, its neighbour). Single source, locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/119325747/too-far-out"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_too_far_out",
+    "column": "gear",
+    "from": null,
+    "to": [
+     "gear to 4 in"
+    ],
+    "why": "Mountain Project protection: gear to 4 in (it adds that bigger pieces help). Rack from MP alone, locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/119325747/too-far-out"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_too_far_out",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Washington Department of Fish and Wildlife (Oak Creek Wildlife Area)",
+     "parking_pass": "Discover Pass or WDFW Vehicle Access Pass in the wildlife area lot"
+    },
+    "why": "access null. Copied field for field from wa_journeyman_crack (live, owner-approved in batches U-W; same object on wa_orange_sunshine). WDFW's Oak Creek unit page re-read 2026-11-23: unchanged (Discover Pass required on WDFW land unless a Vehicle Access Pass came with a hunting/fishing licence; eagle-nest climbing rule from Feb 1, boundary posted in the field, no cliff named; upland winter-range closure to May 1, no cliff named; Tieton River Nature Trail open all year; no 2026 notice).",
+    "evidence": [
+     "https://wdfw.wa.gov/places-to-go/wildlife-areas/oak-creek-wildlife-area-unit"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_too_far_out",
+    "column": "permit",
+    "from": null,
+    "to": "A Discover Pass, or a WDFW Vehicle Access Pass, is needed to park in the Oak Creek Wildlife Area lot.",
+    "why": "permit null. Verbatim copy of wa_journeyman_crack's permit (same on wa_orange_sunshine), same reason as access.",
+    "evidence": [
+     "https://wdfw.wa.gov/places-to-go/wildlife-areas/oak-creek-wildlife-area-unit"
+    ]
+   }
+  ],
+  "held": [],
+  "disputed": [],
+  "notes": "length_m NOT proposed: MP gives no route length, only ~75 ft to the ledge plus ~15 ft to the top; adding them would be a derived value. Shares the ledge with Not So Easy and the neighbouring routes. FA unknown; fa stays null. theCrag sent the browser to its bot-check page (Forbidden) on the first request; not used. The Mountaineers Royal Columns page names none of these routes. No Climb Tieton guide page found online."
+ },
+ "wa_ignorant_pursuit": {
+  "area": "wa_main_face",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/106799812/ignorant-pursuit",
+    "https://www.mountainproject.com/area/105922174/main-face",
+    "https://wdfw.wa.gov/places-to-go/wildlife-areas/oak-creek-wildlife-area-unit"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.9",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106799812/ignorant-pursuit",
+      "fact": "5.9 YDS, Trad, 90 ft",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_ignorant_pursuit",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "pitches 0 is invalid. Mountain Project: 90 ft, a widening crack under a big roof, past it on the left, then wide crack to a pair of chain anchors (one length to one anchor). Count implied, not stated: unconfirmed after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/106799812/ignorant-pursuit"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_ignorant_pursuit",
+    "column": "length_m",
+    "from": null,
+    "to": 27,
+    "why": "Mountain Project states 90 ft (27 m). Single source, locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/106799812/ignorant-pursuit"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_ignorant_pursuit",
+    "column": "anchor",
+    "from": null,
+    "to": "Chain anchor",
+    "why": "Mountain Project: a pair of chain anchors at the top. House spelling 'Chain anchor' (stored on 64 routes). Single source, locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/106799812/ignorant-pursuit"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_ignorant_pursuit",
+    "column": "gear",
+    "from": null,
+    "to": [
+     "gear to 6 in"
+    ],
+    "why": "Mountain Project protection: big gear to 6 in helps past the roof; smaller pieces also fit. Rack from MP alone, locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/106799812/ignorant-pursuit"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_ignorant_pursuit",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Washington Department of Fish and Wildlife (Oak Creek Wildlife Area)",
+     "parking_pass": "Discover Pass or WDFW Vehicle Access Pass in the wildlife area lot"
+    },
+    "why": "access null. Copied field for field from wa_journeyman_crack (live, owner-approved in batches U-W; same object on wa_orange_sunshine). WDFW's Oak Creek unit page re-read 2026-11-23: unchanged (Discover Pass required on WDFW land unless a Vehicle Access Pass came with a hunting/fishing licence; eagle-nest climbing rule from Feb 1, boundary posted in the field, no cliff named; upland winter-range closure to May 1, no cliff named; Tieton River Nature Trail open all year; no 2026 notice).",
+    "evidence": [
+     "https://wdfw.wa.gov/places-to-go/wildlife-areas/oak-creek-wildlife-area-unit"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_ignorant_pursuit",
+    "column": "permit",
+    "from": null,
+    "to": "A Discover Pass, or a WDFW Vehicle Access Pass, is needed to park in the Oak Creek Wildlife Area lot.",
+    "why": "permit null. Verbatim copy of wa_journeyman_crack's permit (same on wa_orange_sunshine), same reason as access.",
+    "evidence": [
+     "https://wdfw.wa.gov/places-to-go/wildlife-areas/oak-creek-wildlife-area-unit"
+    ]
+   }
+  ],
+  "held": [],
+  "disputed": [],
+  "notes": "Right of Double Trouble; the two share the anchor above the roof. No bolts on the route. FA unknown; fa stays null. theCrag sent the browser to its bot-check page (Forbidden) on the first request; not used. The Mountaineers Royal Columns page names none of these routes. No Climb Tieton guide page found online."
+ },
+ "wa_rolling_stone": {
+  "area": "wa_main_face",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/119325877/rolling-stone",
+    "https://www.mountainproject.com/area/105922174/main-face",
+    "https://wdfw.wa.gov/places-to-go/wildlife-areas/oak-creek-wildlife-area-unit"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.7",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119325877/rolling-stone",
+      "fact": "5.7 YDS, Trad",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_rolling_stone",
+    "column": "pitches",
+    "from": 0,
+    "to": null,
+    "why": "pitches 0 is invalid. Mountain Project describes only a bushy wide crack with good rests and states no length, pitch count or anchor, so one pitch is likely but not stated: null rather than a guess.",
+    "evidence": [
+     "https://www.mountainproject.com/route/119325877/rolling-stone"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_rolling_stone",
+    "column": "gear",
+    "from": null,
+    "to": [
+     "gear to 5 in"
+    ],
+    "why": "Mountain Project protection: gear to 5 in. Rack from MP alone, locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/119325877/rolling-stone"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_rolling_stone",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Washington Department of Fish and Wildlife (Oak Creek Wildlife Area)",
+     "parking_pass": "Discover Pass or WDFW Vehicle Access Pass in the wildlife area lot"
+    },
+    "why": "access null. Copied field for field from wa_journeyman_crack (live, owner-approved in batches U-W; same object on wa_orange_sunshine). WDFW's Oak Creek unit page re-read 2026-11-23: unchanged (Discover Pass required on WDFW land unless a Vehicle Access Pass came with a hunting/fishing licence; eagle-nest climbing rule from Feb 1, boundary posted in the field, no cliff named; upland winter-range closure to May 1, no cliff named; Tieton River Nature Trail open all year; no 2026 notice).",
+    "evidence": [
+     "https://wdfw.wa.gov/places-to-go/wildlife-areas/oak-creek-wildlife-area-unit"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_rolling_stone",
+    "column": "permit",
+    "from": null,
+    "to": "A Discover Pass, or a WDFW Vehicle Access Pass, is needed to park in the Oak Creek Wildlife Area lot.",
+    "why": "permit null. Verbatim copy of wa_journeyman_crack's permit (same on wa_orange_sunshine), same reason as access.",
+    "evidence": [
+     "https://wdfw.wa.gov/places-to-go/wildlife-areas/oak-creek-wildlife-area-unit"
+    ]
+   }
+  ],
+  "held": [],
+  "disputed": [],
+  "notes": "Thin page (one vote, no length, no anchor, no neighbours named). FA unknown; fa stays null. No second source found. theCrag sent the browser to its bot-check page (Forbidden) on the first request; not used. The Mountaineers Royal Columns page names none of these routes. No Climb Tieton guide page found online."
+ },
+ "wa_main_face_stopper_popper": {
+  "area": "wa_main_face",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/106022083/stopper-popper",
+    "https://www.mountainproject.com/area/105922174/main-face",
+    "https://wdfw.wa.gov/places-to-go/wildlife-areas/oak-creek-wildlife-area-unit"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "length_m",
+    "value": 12,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106022083/stopper-popper",
+      "fact": "40 ft (12 m)",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_main_face_stopper_popper",
+    "column": "anchor",
+    "from": null,
+    "to": "Bolted anchor",
+    "why": "Mountain Project protection: bolt anchors for top-roping or lowering (count not given), or walk off. House spelling 'Bolted anchor' (stored on 5+ routes, incl. wa_the_arete_acal on this wall). Single source, locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/106022083/stopper-popper"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_main_face_stopper_popper",
+    "column": "gear",
+    "from": null,
+    "to": [
+     "gear to 2 in"
+    ],
+    "why": "Mountain Project protection: small gear low, bigger (to 2 in) near the top. Rack from MP alone, locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/106022083/stopper-popper"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_main_face_stopper_popper",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Washington Department of Fish and Wildlife (Oak Creek Wildlife Area)",
+     "parking_pass": "Discover Pass or WDFW Vehicle Access Pass in the wildlife area lot"
+    },
+    "why": "access null. Copied field for field from wa_journeyman_crack (live, owner-approved in batches U-W; same object on wa_orange_sunshine). WDFW's Oak Creek unit page re-read 2026-11-23: unchanged (Discover Pass required on WDFW land unless a Vehicle Access Pass came with a hunting/fishing licence; eagle-nest climbing rule from Feb 1, boundary posted in the field, no cliff named; upland winter-range closure to May 1, no cliff named; Tieton River Nature Trail open all year; no 2026 notice).",
+    "evidence": [
+     "https://wdfw.wa.gov/places-to-go/wildlife-areas/oak-creek-wildlife-area-unit"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_main_face_stopper_popper",
+    "column": "permit",
+    "from": null,
+    "to": "A Discover Pass, or a WDFW Vehicle Access Pass, is needed to park in the Oak Creek Wildlife Area lot.",
+    "why": "permit null. Verbatim copy of wa_journeyman_crack's permit (same on wa_orange_sunshine), same reason as access.",
+    "evidence": [
+     "https://wdfw.wa.gov/places-to-go/wildlife-areas/oak-creek-wildlife-area-unit"
+    ]
+   }
+  ],
+  "held": [],
+  "disputed": [
+   "grade: Mountain Project lists 5.6 but its own description calls the route 5.7; stored 5.6 kept, not locked"
+  ],
+  "notes": "LIKELY DUPLICATE: wa_unknown_5_7 ('Unknown 5.7', grade stored 5.6, sort 2). Mountain Project captions three of Stopper Popper's four photos 'Unknown 5.7', calls it the second route from the left of the Main Face, and its own text calls the line '5.7' though it lists 5.6; that matches the Unknown 5.7 row's position and its 5.6 grade. Reported, not merged. RELATED (not mine): Watch Your Crotch's photos are captioned 'Unknown 5.6 (Left)' and its page calls it the leftmost route, so wa_unknown_5_6_left looks like a duplicate of wa_main_face_watch_your_crotch. 'Unknown 5.6' (wa_unknown_5_6) is captioned on Belayer Slayer's page as the crack beside it (Belayer Slayer's page says the face has two cracks and it is the right one); it may be a real unnamed line or Belayer Slayer itself, unsettled. MP lists no 'Unknown' route on the Main Face today (42 routes). None of my other six routes is one of the Unknown rows. GRADE NOT LOCKED: MP lists 5.6 but its own description calls the route 5.7 (soft); stored 5.6 kept, disputed. pitches 1 kept (MP states no count). FA '??' on MP; fa stays null. Can be walked off as well as lowered. theCrag sent the browser to its bot-check page (Forbidden) on the first request; not used. The Mountaineers Royal Columns page names none of these routes. No Climb Tieton guide page found online."
+ }
+}
