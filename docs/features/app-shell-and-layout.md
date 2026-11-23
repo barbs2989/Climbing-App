@@ -256,11 +256,11 @@ showing "no matches".
 **A new page opens at the top** (owner 2026-11-19; the exception is a control that edits one specific field, or a link to one
 spot). Three mechanisms keep it:
 - *The page.* `scrollAppTop` in `ClimbMatch.jsx` runs on `tab`, `selRoute`, `selArea`, `routeView`, `safetyCrew`, `crewView`,
-  `logbookTab`, `partnersMode`, `groupsTab` and `meTab`; `RouteDetail.jsx` does the same for its own sub-tab, and
+  `logbookTab`, `partnersMode` and `groupsTab`; `RouteDetail.jsx` does the same for its own sub-tab, and
   `scrollAppToTop` (`lib/climbsReturn.js`) covers navigation App cannot see (the area browser, the Ranks area picker).
 - *A popup* is built fresh on every open, so it starts at its top by itself.
 - *A pane that stays mounted while its content becomes another page* is sent back by `usePaneTop(ref, dep)`
-  (`lib/usePaneTop.js`; `null` for the ref means the page): the safety views (`lib/SafetyTab.jsx`) and questionnaire steps,
+  (`lib/usePaneTop.js`; `null` for the ref means the page): Profile / Activity (`MeTab`), the safety views (`lib/SafetyTab.jsx`) and questionnaire steps,
   onboarding steps, the Inbox tabs, the sign-in screen's modes (`lib/AuthModal.jsx`), the new-list steps
   (`lib/ListsManager.jsx`), another climber in the open profile sheet (`FullProfile`) and another group in the open group page.
   A chat thread opens at its NEWEST message instead (`_threadKey` in `ClimbMatch.jsx`).
