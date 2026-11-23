@@ -12,7 +12,8 @@
 //      rock) reads close to the real climb, while a clean recording reads exactly what the flat
 //      threshold reads. The same case under the FLAT threshold must read far too high: that is the
 //      proof this case can fail (Liberty Bell's Beckey Route printed 15,393 ft on 2,372 ft of relief);
-//   5. ElevChart counts through lib/elevGain.js, hands it the distances, and keeps no copy of its own.
+//   5. ElevChart counts through lib/elevGain.js, hands it the distances, and keeps no copy of its own;
+//   6. a track that starts more than 2 km from the trailhead pin prints no Gain and Loss at all.
 //
 // No database, no browser. Notes: docs/guards/route-page.md.
 import fs from "node:fs";
@@ -83,6 +84,22 @@ t("one sample, or none, is nothing", eq(gl([5]), 0, 0) && eq(gl([]), 0, 0));
   t("ElevChart imports elevationGainLoss from lib/elevGain.js", /import\s*\{[^}]*\belevationGainLoss\b[^}]*\}\s*from\s*"\.\.\/\.\.\/lib\/elevGain\.js"/.test(src));
   t("ElevChart hands it the distances (km), not the elevations alone", /elevationGainLoss\(\s*pts\s*,[^)]*\bkm\b/.test(src), (src.match(/elevationGainLoss\([^)]*\)/g) || []));
   t("ElevChart keeps no gain arithmetic of its own", !/function\s+elevationGainLoss/.test(src) && !/gain\s*\+=/.test(src));
+}
+
+// ── 6. a track that starts away from the trailhead prints no totals ──
+// Its climb is a piece of the route's (Rainier's Ingraham Direct stores the top 3.8 km from 10,078 ft).
+{
+  const chart = fs.readFileSync(path.join(ROOT, "src/components/ElevChart.tsx"), "utf8");
+  const wrap = fs.readFileSync(path.join(ROOT, "src/components/RouteMapProfile.tsx"), "utf8");
+  t("ElevChart prints Gain and Loss only when the track is not partial", /\{partial\s*\?[^:]*:\s*<span>Gain /.test(chart));
+  t("RouteMapProfile decides partial from trackCoverage's missingApproach", /trackCoverage\(pts,\s*waypoints\)\?\.missingApproach/.test(wrap));
+  t("RouteMapProfile hands partial to ElevChart", /<ElevChart[^>]*\bpartial=\{partial\}/.test(wrap));
+  const { trackCoverage } = await import("../lib/track.js");
+  const line = (lat0, n) => Array.from({ length: n }, (_, i) => [lat0 + i * 0.0005, -121.5003]); // 23 m beside the pins, so it is not a line joined between them
+  const wps = [{ type: "Trailhead", lat: 47.0, lng: -121.5 }, { type: "Summit", lat: 47.0 + 99 * 0.0005, lng: -121.5 }];
+  t("a track from the trailhead is not partial", !trackCoverage(line(47.0, 100), wps)?.missingApproach);
+  t("a track starting 3 km up the route is partial", trackCoverage(line(47.0 + 54 * 0.0005, 46), wps)?.missingApproach === true);
+  t("with no trailhead pin nothing is claimed", !trackCoverage(line(47.0 + 54 * 0.0005, 46), wps.slice(1))?.missingApproach);
 }
 
 if (failures) { console.log(`\ncheck:profile-gain: ${failures} failure(s)`); process.exit(1); }
