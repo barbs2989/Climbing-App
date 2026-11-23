@@ -1,5 +1,6 @@
-import { memo, useRef, type KeyboardEvent, type PointerEvent } from "react";
+import { memo, useMemo, useRef, type KeyboardEvent, type PointerEvent } from "react";
 import { C, uDist, uElev } from "../../ClimbMatchCore.jsx";
+import { elevationGainLoss } from "../../lib/elevGain.js";
 
 export interface ElevChartProps {
   /** Elevation of each recorded sample in feet (the route's elev_pts), index-aligned with the track. */
@@ -17,22 +18,6 @@ export interface ElevChartProps {
 
 const W = 340, H = 92, P = 8;
 
-/**
- * Total climb and descent over a profile, in the same units as `pts` (feet). A change counts only
- * once it is `threshold` feet away from the last level that counted, so the jitter of a GPS or a
- * barometer does not add up as hundreds of feet of gain on a flat walk.
- */
-export function elevationGainLoss(pts: readonly number[], threshold = 10): { gain: number; loss: number } {
-  let gain = 0, loss = 0;
-  if (pts.length < 2) return { gain, loss };
-  let base = pts[0];
-  for (const v of pts) {
-    if (v - base >= threshold) { gain += v - base; base = v; }
-    else if (base - v >= threshold) { loss += base - v; base = v; }
-  }
-  return { gain, loss };
-}
-
 /** The sample whose distance is nearest `target`; `km` is sorted ascending. */
 function nearestIndex(km: readonly number[], target: number): number {
   let lo = 0, hi = km.length - 1;
@@ -46,6 +31,8 @@ function nearestIndex(km: readonly number[], target: number): number {
 function ElevChartImpl({ pts, km, index, onIndex, color }: ElevChartProps) {
   const svgRef = useRef<SVGSVGElement | null>(null);
   const dragging = useRef(false);
+  /* Once per track, not once per scrub step: the totals do not depend on where the marker is. */
+  const { gain, loss } = useMemo(() => (pts && pts.length >= 2 ? elevationGainLoss(pts, km && km.length === pts.length ? km : null) : { gain: 0, loss: 0 }), [pts, km]);
   if (!pts || pts.length < 2 || (km && km.length !== pts.length)) return null;
   const n = pts.length;
   const total = km ? km[n - 1] : n - 1;
@@ -58,7 +45,6 @@ function ElevChartImpl({ pts, km, index, onIndex, color }: ElevChartProps) {
   const y = (v: number) => H - P - ((v - mn) / (mx - mn || 1)) * (H - 2 * P);
   const d = pts.map((v, i) => `${i ? "L" : "M"}${x(i).toFixed(1)},${y(v).toFixed(1)}`).join(" ");
   const col = color || C.blue;
-  const { gain, loss } = elevationGainLoss(pts);
   const on = index != null && index >= 0 && index < n ? index : null;
 
   /* A finger or a pen scrubs only while it is down, so a page scroll never moves the marker; a mouse

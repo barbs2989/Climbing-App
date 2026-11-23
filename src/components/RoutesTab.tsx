@@ -49,7 +49,7 @@ export interface RoutesTabProps {
   blockClimber: (c: CommentAuthor) => void;
   bookmarks: string[];
   climberProfile: unknown;
-  statedGrades: { sport?: string | null; trad?: string | null; bouldering?: string | null };
+  statedGrades: { sport?: string | null; trad?: string | null; bouldering?: string | null; alpine?: string | null; ice?: string | null; mixed?: string | null };
   /** The Climbs screen's quiet headline. */
   climbsHero: ReactNode;
   comments: ReadonlyArray<ThreadComment>;
