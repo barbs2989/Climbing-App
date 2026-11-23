@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { removePartnerArea, savePartnerArea } from "../../lib/db";
+import { addPartnerArea, removePartnerArea } from "../../lib/db";
 import type { C as Palette } from "../../ClimbMatchCore.jsx";
 
 export interface ListMeSwitchProps {
@@ -31,7 +31,7 @@ export default function ListMeSwitch({ areaId, name, C, uid, listed, notify }: L
     setOpt(!on);
     try {
       if (on) await removePartnerArea(uid, areaId);
-      else await savePartnerArea(uid, { areaId, disciplines: [] });
+      else await addPartnerArea(uid, areaId, []);
       if (notify) notify(on ? "No longer listed at " + name : "Listed at " + name + " — climbers searching it in Partners can find you");
     } catch (e: unknown) {
       setOpt(null);

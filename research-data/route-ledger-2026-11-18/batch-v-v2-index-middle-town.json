@@ -1,0 +1,482 @@
+{
+ "wa_folsom_blues": {
+  "area": "wa_mid_wall",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/108161862/folsom-blues",
+    "https://rakkup.com/guidebook/index-rock-climbing/folsom-blues/c25512",
+    "https://rakkup.com/guidebook/index-rock-climbing/mid-wall/s11509",
+    "https://www.mountainproject.com/area/106386407/mid-wall",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5719,47.8191&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.5719,47.8191&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,parcel_id&returnGeometry=false&f=json",
+    "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks",
+    "https://washingtonclimbers.org/index.php/wp-json/wp/v2/posts/13070",
+    "https://parks.wa.gov/node/3385"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.10c",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108161862/folsom-blues",
+      "fact": "5.10c YDS, Trad",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://rakkup.com/guidebook/index-rock-climbing/folsom-blues/c25512",
+      "fact": "5.10c, Trad",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "discipline",
+    "value": "trad",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108161862/folsom-blues",
+      "fact": "Type: Trad",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://rakkup.com/guidebook/index-rock-climbing/folsom-blues/c25512",
+      "fact": "Trad (guide icon)",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_folsom_blues",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "pitches 0 is invalid. Mountain Project: a single crack line to a fixed top anchor (Mussy hooks), no pitch count or length stated; the guide lists one climb. One length to one anchor, implied not stated: unconfirmed after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/108161862/folsom-blues",
+     "https://rakkup.com/guidebook/index-rock-climbing/folsom-blues/c25512"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_folsom_blues",
+    "column": "guide_stars",
+    "from": null,
+    "to": 3,
+    "why": "The Index guidebook's own entry (publisher's teaser page) rates it three stars.",
+    "evidence": [
+     "https://rakkup.com/guidebook/index-rock-climbing/folsom-blues/c25512",
+     "https://rakkup.com/guidebook/index-rock-climbing/mid-wall/s11509"
+    ]
+   }
+  ],
+  "held": [
+   {
+    "table": "routes",
+    "id": "wa_folsom_blues",
+    "column": "access",
+    "from": {
+     "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+     "notes": "Many of these peaks (Mount Persis, Gunn Peak, Baring Mountain area) sit outside designated wilderness — administratively unrestricted despite serious technical terrain.",
+     "permit": "None required.",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+     "parking_pass": "Northwest Forest Pass or America the Beautiful pass required at developed trailheads."
+    },
+    "to": {
+     "land_manager": "Washington State Parks (Forks of the Sky State Park)"
+    },
+    "why": "HELD (brief V: no official page names the Middle Town Walls). The candidate is the State Parks object live on wa_japanese_gardens_to_1st_anchor / wa_d_dana_s_arch_area_wildest_dreams. Supporting: the State Parks boundary layer returns 'Forks of the Sky, State Park Property' at this wall's catalog point (47.8191,-121.5719), and the county parcel there is owned by Washington State Parks; the WCC planning page says most of the Index climbing area lies in Forks of the Sky. Against copying: the catalog point is Mountain Project's own GPS (not evidence), no independent source (OSM has no crag mapped; theCrag Forbidden) places the wall, and the ownership around it is a patchwork: a BNSF parcel ~100 m south-west, a federal (U S A) parcel ~125 m east, and private parcels ~150 m north-west. The parks.wa.gov release of 2026-03-13 names only the Lower Town Wall (20 acres). No official page states a parking-pass rule for the town walls lot. The stored LEGACY object (Mt. Baker-Snoqualmie NF, Northwest Forest Pass, a Mount Rainier NP fee line and a note about Persis/Gunn/Baring peaks) is wrong on its fees and notes lines either way. Owner choice: copy the State Parks object, or access -> null.",
+    "evidence": [
+     "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5719,47.8191&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+     "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.5719,47.8191&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,parcel_id&returnGeometry=false&f=json",
+     "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks",
+     "https://washingtonclimbers.org/index.php/wp-json/wp/v2/posts/13070"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "FA: Mountain Project credits Ron Miller, 1992; the row stores none. An FA never sets from MP alone and the guide teaser lists no FA, so not proposed. Anchor: MP says Mussy hooks; no house spelling for that (only 'Mussy hook anchor' x1, 'Chains with Mussy hooks' x1), so not proposed. Rack: MP 'full range of sizes' only (too vague for gear[]). Length not stated by any source."
+ },
+ "wa_number_9": {
+  "area": "wa_blues_cliff_the",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/106462001/number-9",
+    "https://www.mountainproject.com/area/105808013/the-blues-cliff",
+    "https://rakkup.com/guidebook/index-rock-climbing/mid-wall/s11509",
+    "https://rakkup.com/guidebook/index-rock-climbing/blues-cliff/s11510",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5696,47.81993&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.5696,47.81993&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,parcel_id&returnGeometry=false&f=json",
+    "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks",
+    "https://washingtonclimbers.org/index.php/wp-json/wp/v2/posts/13070",
+    "https://parks.wa.gov/node/3385"
+   ]
+  },
+  "ledger": [],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_number_9",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "pitches 0 is invalid. Mountain Project: rappel in from a 2-bolt anchor to a treed ledge, then one 110 ft trad length back up (one length to one anchor). Count implied, not stated: unconfirmed after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/106462001/number-9"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_number_9",
+    "column": "length_m",
+    "from": null,
+    "to": 33,
+    "why": "Mountain Project states 110 ft (33 m). Single source (theCrag Forbidden; the guide has no stand-alone entry). locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/106462001/number-9"
+    ]
+   }
+  ],
+  "held": [
+   {
+    "table": "routes",
+    "id": "wa_number_9",
+    "column": "access",
+    "from": {
+     "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+     "notes": "Many of these peaks (Mount Persis, Gunn Peak, Baring Mountain area) sit outside designated wilderness — administratively unrestricted despite serious technical terrain.",
+     "permit": "None required.",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+     "parking_pass": "Northwest Forest Pass or America the Beautiful pass required at developed trailheads."
+    },
+    "to": {
+     "land_manager": "Washington State Parks (Forks of the Sky State Park)"
+    },
+    "why": "HELD (brief V: no official page names the Middle Town Walls). The candidate is the State Parks object live on wa_japanese_gardens_to_1st_anchor / wa_d_dana_s_arch_area_wildest_dreams. Supporting: the State Parks boundary layer returns 'Forks of the Sky, State Park Property' at this wall's catalog point (47.81993,-121.5696), and the county parcel there is owned by Washington State Parks; the WCC planning page says most of the Index climbing area lies in Forks of the Sky. Against copying: the catalog point is Mountain Project's own GPS (not evidence), no independent source (OSM has no crag mapped; theCrag Forbidden) places the wall, and the ownership around it is a patchwork: a BNSF parcel ~100 m south-west, a federal (U S A) parcel ~125 m east, and private parcels ~150 m north-west. The parks.wa.gov release of 2026-03-13 names only the Lower Town Wall (20 acres). No official page states a parking-pass rule for the town walls lot. The stored LEGACY object (Mt. Baker-Snoqualmie NF, Northwest Forest Pass, a Mount Rainier NP fee line and a note about Persis/Gunn/Baring peaks) is wrong on its fees and notes lines either way. Owner choice: copy the State Parks object, or access -> null.",
+    "evidence": [
+     "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5696,47.81993&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+     "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.5696,47.81993&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,parcel_id&returnGeometry=false&f=json",
+     "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks",
+     "https://washingtonclimbers.org/index.php/wp-json/wp/v2/posts/13070"
+    ]
+   }
+  ],
+  "disputed": [
+   "grade: MP 5.10a (stored 5.10a). The Index guide has no stand-alone Number 9; it lists '#9 and Starfish' as ONE entry at 5.9, 4 stars, on its Mid Wall page. Not locked: one source for 5.10a, and the guide's combined entry is not the same climb."
+  ],
+  "notes": "Possible filing/duplicate question for the owner: the guide treats Number 9 together with Starfish (MP route 108147094, 5.9 trad, Blues Cliff) and files the pair under Mid Wall, while MP and our row put Number 9 at the upper end of the Blues Cliff. Reported, not moved. FA 'Chris Henson' matches MP (one source; FA never locks from MP). MP: one protection bolt, standard rack to 2-3 in, 70 m rope to rappel in (else two ropes). Rack sizes ambiguous ('2 or 3 inches') so no gear proposed; no top-anchor type stated, so no anchor proposed."
+ },
+ "wa_twelve_gauge_iq": {
+  "area": "wa_blues_cliff_the",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/106329281/twelve-gauge-iq",
+    "https://rakkup.com/guidebook/index-rock-climbing/12-gauge-iq/c25505",
+    "https://rakkup.com/guidebook/index-rock-climbing/blues-cliff/s11510",
+    "https://www.mountainproject.com/area/105808013/the-blues-cliff",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5696,47.81993&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.5696,47.81993&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,parcel_id&returnGeometry=false&f=json",
+    "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks",
+    "https://washingtonclimbers.org/index.php/wp-json/wp/v2/posts/13070",
+    "https://parks.wa.gov/node/3385"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.12b",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://rakkup.com/guidebook/index-rock-climbing/12-gauge-iq/c25505",
+      "fact": "5.12b, Sport",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://www.mountainproject.com/route/106329281/twelve-gauge-iq",
+      "fact": "5.12a/b (slash grade agrees with either half)",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_twelve_gauge_iq",
+    "column": "discipline",
+    "from": "trad",
+    "to": "sport",
+    "why": "Stored trad; both independent publishers list it as sport: Mountain Project (Sport, 100 ft; a discontinuous bolted finger crack, fixed anchors, lowers on a 60 m rope) and the Index guide's own entry (Sport icon). Two sources agree.",
+    "evidence": [
+     "https://www.mountainproject.com/route/106329281/twelve-gauge-iq",
+     "https://rakkup.com/guidebook/index-rock-climbing/12-gauge-iq/c25505",
+     "https://rakkup.com/guidebook/index-rock-climbing/blues-cliff/s11510"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_twelve_gauge_iq",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "pitches 0 is invalid. Mountain Project: one 100 ft length to fixed anchors, lowered on a 60 m rope. MP lists a separate 'Open Project: 12 Gauge IQ P2' above, which is an unclimbed project, not part of this route. Count implied, not stated: unconfirmed after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/106329281/twelve-gauge-iq",
+     "https://www.mountainproject.com/area/105808013/the-blues-cliff"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_twelve_gauge_iq",
+    "column": "length_m",
+    "from": null,
+    "to": 30,
+    "why": "Mountain Project states 100 ft (30 m). Single source. locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/106329281/twelve-gauge-iq"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_twelve_gauge_iq",
+    "column": "guide_stars",
+    "from": null,
+    "to": 4,
+    "why": "The Index guidebook's own entry (publisher's teaser page) rates it four stars.",
+    "evidence": [
+     "https://rakkup.com/guidebook/index-rock-climbing/12-gauge-iq/c25505",
+     "https://rakkup.com/guidebook/index-rock-climbing/blues-cliff/s11510"
+    ]
+   }
+  ],
+  "held": [
+   {
+    "table": "routes",
+    "id": "wa_twelve_gauge_iq",
+    "column": "access",
+    "from": {
+     "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+     "notes": "Many of these peaks (Mount Persis, Gunn Peak, Baring Mountain area) sit outside designated wilderness — administratively unrestricted despite serious technical terrain.",
+     "permit": "None required.",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+     "parking_pass": "Northwest Forest Pass or America the Beautiful pass required at developed trailheads."
+    },
+    "to": {
+     "land_manager": "Washington State Parks (Forks of the Sky State Park)"
+    },
+    "why": "HELD (brief V: no official page names the Middle Town Walls). The candidate is the State Parks object live on wa_japanese_gardens_to_1st_anchor / wa_d_dana_s_arch_area_wildest_dreams. Supporting: the State Parks boundary layer returns 'Forks of the Sky, State Park Property' at this wall's catalog point (47.81993,-121.5696), and the county parcel there is owned by Washington State Parks; the WCC planning page says most of the Index climbing area lies in Forks of the Sky. Against copying: the catalog point is Mountain Project's own GPS (not evidence), no independent source (OSM has no crag mapped; theCrag Forbidden) places the wall, and the ownership around it is a patchwork: a BNSF parcel ~100 m south-west, a federal (U S A) parcel ~125 m east, and private parcels ~150 m north-west. The parks.wa.gov release of 2026-03-13 names only the Lower Town Wall (20 acres). No official page states a parking-pass rule for the town walls lot. The stored LEGACY object (Mt. Baker-Snoqualmie NF, Northwest Forest Pass, a Mount Rainier NP fee line and a note about Persis/Gunn/Baring peaks) is wrong on its fees and notes lines either way. Owner choice: copy the State Parks object, or access -> null.",
+    "evidence": [
+     "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5696,47.81993&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+     "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.5696,47.81993&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,parcel_id&returnGeometry=false&f=json",
+     "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks",
+     "https://washingtonclimbers.org/index.php/wp-json/wp/v2/posts/13070"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "Spelling: the guide writes '12 Gauge IQ', MP 'Twelve Gauge IQ' (= our name); no change. FA 'Greg Collum, Matt Kerns' matches MP only (FA never locks from MP). MP notes the corner may also take gear; bolt count not stated. A P2 open project exists above (MP 203544264): not a catalog route."
+ },
+ "wa_etch_a_sketch": {
+  "area": "wa_blues_cliff_the",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/119444914/etch-a-sketch",
+    "https://rakkup.com/guidebook/index-rock-climbing/etch-a-sketch/c39474",
+    "https://rakkup.com/guidebook/index-rock-climbing/blues-cliff/s11510",
+    "https://www.mountainproject.com/area/105808013/the-blues-cliff",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5696,47.81993&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.5696,47.81993&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,parcel_id&returnGeometry=false&f=json",
+    "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks",
+    "https://washingtonclimbers.org/index.php/wp-json/wp/v2/posts/13070",
+    "https://parks.wa.gov/node/3385"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "discipline",
+    "value": "sport",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119444914/etch-a-sketch",
+      "fact": "Type: Sport",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://rakkup.com/guidebook/index-rock-climbing/etch-a-sketch/c39474",
+      "fact": "Sport (guide icon)",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_etch_a_sketch",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "pitches 0 is invalid. Mountain Project: one bolted length that heads toward Written in Stone's bolts, then breaks right to the anchor it shares with Blues Riff (one length to one anchor). Count implied, not stated: unconfirmed after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/119444914/etch-a-sketch"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_etch_a_sketch",
+    "column": "guide_stars",
+    "from": 1,
+    "to": 2,
+    "why": "Stored 1; the Index guidebook's own entry (publisher's teaser page, both the route page and the Blues Cliff list) rates it two stars.",
+    "evidence": [
+     "https://rakkup.com/guidebook/index-rock-climbing/etch-a-sketch/c39474",
+     "https://rakkup.com/guidebook/index-rock-climbing/blues-cliff/s11510"
+    ]
+   }
+  ],
+  "held": [
+   {
+    "table": "routes",
+    "id": "wa_etch_a_sketch",
+    "column": "access",
+    "from": {
+     "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+     "notes": "Many of these peaks (Mount Persis, Gunn Peak, Baring Mountain area) sit outside designated wilderness — administratively unrestricted despite serious technical terrain.",
+     "permit": "None required.",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+     "parking_pass": "Northwest Forest Pass or America the Beautiful pass required at developed trailheads."
+    },
+    "to": {
+     "land_manager": "Washington State Parks (Forks of the Sky State Park)"
+    },
+    "why": "HELD (brief V: no official page names the Middle Town Walls). The candidate is the State Parks object live on wa_japanese_gardens_to_1st_anchor / wa_d_dana_s_arch_area_wildest_dreams. Supporting: the State Parks boundary layer returns 'Forks of the Sky, State Park Property' at this wall's catalog point (47.81993,-121.5696), and the county parcel there is owned by Washington State Parks; the WCC planning page says most of the Index climbing area lies in Forks of the Sky. Against copying: the catalog point is Mountain Project's own GPS (not evidence), no independent source (OSM has no crag mapped; theCrag Forbidden) places the wall, and the ownership around it is a patchwork: a BNSF parcel ~100 m south-west, a federal (U S A) parcel ~125 m east, and private parcels ~150 m north-west. The parks.wa.gov release of 2026-03-13 names only the Lower Town Wall (20 acres). No official page states a parking-pass rule for the town walls lot. The stored LEGACY object (Mt. Baker-Snoqualmie NF, Northwest Forest Pass, a Mount Rainier NP fee line and a note about Persis/Gunn/Baring peaks) is wrong on its fees and notes lines either way. Owner choice: copy the State Parks object, or access -> null.",
+    "evidence": [
+     "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5696,47.81993&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+     "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.5696,47.81993&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,parcel_id&returnGeometry=false&f=json",
+     "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks",
+     "https://washingtonclimbers.org/index.php/wp-json/wp/v2/posts/13070"
+    ]
+   }
+  ],
+  "disputed": [
+   "grade: stored 5.11b = the guide (5.11b); MP gives '5.11-'. Not locked: whether MP's minus grade agrees with 5.11b is a normalisation call, left to the owner."
+  ],
+  "notes": "Shares its anchor with Blues Riff (MP). FA 'Greg Collum, Matt Kerns, Oleg Ashirov' matches MP only. No length or bolt count stated anywhere. The stored 'variations' line (staying on Written in Stone adds a crux) is consistent with MP's description of the line meeting Written in Stone's bolts; left as is."
+ },
+ "wa_written_in_stone": {
+  "area": "wa_blues_cliff_the",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/106329290/written-in-stone",
+    "https://rakkup.com/guidebook/index-rock-climbing/written-in-stone/c32179",
+    "https://rakkup.com/guidebook/index-rock-climbing/blues-cliff/s11510",
+    "https://www.mountainproject.com/area/105808013/the-blues-cliff",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5696,47.81993&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.5696,47.81993&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,parcel_id&returnGeometry=false&f=json",
+    "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks",
+    "https://washingtonclimbers.org/index.php/wp-json/wp/v2/posts/13070",
+    "https://parks.wa.gov/node/3385"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.11b",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106329290/written-in-stone",
+      "fact": "5.11b YDS, Sport",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://rakkup.com/guidebook/index-rock-climbing/written-in-stone/c32179",
+      "fact": "5.11b, Sport",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "discipline",
+    "value": "sport",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106329290/written-in-stone",
+      "fact": "Type: Sport",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://rakkup.com/guidebook/index-rock-climbing/written-in-stone/c32179",
+      "fact": "Sport (guide icon)",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_written_in_stone",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "pitches 0 is invalid. Mountain Project: one 80 ft bolted slab length to a fixed anchor, descended on a 60 m rope. Count implied, not stated: unconfirmed after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/106329290/written-in-stone"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_written_in_stone",
+    "column": "length_m",
+    "from": null,
+    "to": 24,
+    "why": "Mountain Project states 80 ft (24 m). Single source. locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/106329290/written-in-stone"
+    ]
+   }
+  ],
+  "held": [
+   {
+    "table": "routes",
+    "id": "wa_written_in_stone",
+    "column": "access",
+    "from": {
+     "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+     "notes": "Many of these peaks (Mount Persis, Gunn Peak, Baring Mountain area) sit outside designated wilderness — administratively unrestricted despite serious technical terrain.",
+     "permit": "None required.",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+     "parking_pass": "Northwest Forest Pass or America the Beautiful pass required at developed trailheads."
+    },
+    "to": {
+     "land_manager": "Washington State Parks (Forks of the Sky State Park)"
+    },
+    "why": "HELD (brief V: no official page names the Middle Town Walls). The candidate is the State Parks object live on wa_japanese_gardens_to_1st_anchor / wa_d_dana_s_arch_area_wildest_dreams. Supporting: the State Parks boundary layer returns 'Forks of the Sky, State Park Property' at this wall's catalog point (47.81993,-121.5696), and the county parcel there is owned by Washington State Parks; the WCC planning page says most of the Index climbing area lies in Forks of the Sky. Against copying: the catalog point is Mountain Project's own GPS (not evidence), no independent source (OSM has no crag mapped; theCrag Forbidden) places the wall, and the ownership around it is a patchwork: a BNSF parcel ~100 m south-west, a federal (U S A) parcel ~125 m east, and private parcels ~150 m north-west. The parks.wa.gov release of 2026-03-13 names only the Lower Town Wall (20 acres). No official page states a parking-pass rule for the town walls lot. The stored LEGACY object (Mt. Baker-Snoqualmie NF, Northwest Forest Pass, a Mount Rainier NP fee line and a note about Persis/Gunn/Baring peaks) is wrong on its fees and notes lines either way. Owner choice: copy the State Parks object, or access -> null.",
+    "evidence": [
+     "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5696,47.81993&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+     "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.5696,47.81993&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,parcel_id&returnGeometry=false&f=json",
+     "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks",
+     "https://washingtonclimbers.org/index.php/wp-json/wp/v2/posts/13070"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "guide_stars 2 already equals the guide's own rating (two stars); no change. FA 'Cal Folsom, David Feinberg' matches MP only. Anchor type unknown (MP's author could not recall chains or webbing), so no anchor proposed. Bolt count not stated."
+ }
+}

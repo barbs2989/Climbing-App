@@ -145,7 +145,9 @@ if (!/function PartnersHereCard\(/.test(browser)) {
   else ok("the render is gated on that list");
   if (!/usePartnerAreaCount\(area\.id/.test(browser) || !/usePartnersInArea\(area\.id/.test(browser)) problems.push("PartnersHereCard no longer reads the count and the rows for THIS area (usePartnerAreaCount / usePartnersInArea on area.id).");
   else ok("the card reads the count and the rows for the area on screen");
-  if (!/savePartnerArea\(uid,\s*\{\s*areaId:\s*area\.id/.test(browser) || !/removePartnerArea\(uid,\s*area\.id\)/.test(browser)) problems.push("the one-tap List me here / Listed ✓ toggle no longer writes THIS area's listing (savePartnerArea / removePartnerArea on area.id).");
+  // addPartnerArea since 2026-11-23: an insert that leaves an existing listing alone. savePartnerArea, an upsert of a
+  // whole row, blanked a stored note and dates when the tap came before the climber's own listings had loaded.
+  if (!/addPartnerArea\(uid,\s*area\.id\b/.test(browser) || !/removePartnerArea\(uid,\s*area\.id\)/.test(browser)) problems.push("the one-tap List me here / Listed ✓ toggle no longer writes THIS area's listing (addPartnerArea / removePartnerArea on area.id).");
   else ok("List me here writes and removes this area's listing");
   if (!/Sign in to see who climbs here/.test(browser)) problems.push("the signed-out card no longer says to sign in — the count RPC refuses a signed-out caller, so the card would read as nobody listed.");
   else ok("signed out, the card asks for sign-in rather than claiming nobody is listed");

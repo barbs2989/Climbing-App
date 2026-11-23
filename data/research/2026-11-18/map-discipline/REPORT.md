@@ -337,3 +337,45 @@ page about the route itself. Archived or cached copies of sites that refuse auto
   Mountain (PCT at Snoqualmie Pass), Mount Hinman (Necklace Valley). Pinning those 20 or so routes would be
   peak-level inference with no page and no row text behind it, so they were not written. This is an owner
   decision: "same lot as the peak's other routes" is cheap to apply if wanted.
+
+### Round 8: official trail lines and mapped trail ends (2026-11-23)
+
+New method: compare the start a page names with where the trail itself begins. Two sources were used. The
+USFS `EDW_TrailNFSPublish_01` layer gives each official trail line and its end points (`scripts/usfstrail.mjs`).
+OSM trail and road geometry gives where each mapped trail begins (`scripts/opgeom.mjs`). A published
+coordinate within about 35 m of a mapped trail start counts as a second, independent placement.
+- **Written (7, unconfirmed, verified on re-read):**
+  - `batch-r7e.json`: Granite Chief (official trail start; a mapped lot is 20 m away) and Diamond Peak
+    Southwest Ridge (official Pioneer Gulch trail start on Rockpile Road; the row names this trailhead).
+  - `batch-r7f.json`:
+    - Lamont Peak: driving-guide waypoint 6 m from the mapped Lamont Peak trail start.
+    - Owens Peak: hundredpeaks coordinate 17 m from the mapped Owens Peak Trail end.
+    - Pyramid Peak via Rocky Canyon: published pullout 34 m from the mapped Pyramid Peak Trail start.
+    - Casco and French: the printed South Halfmoon coordinate is 7 m from where the mapped South Halfmoon
+      road leaves Halfmoon Road.
+- **Audit, measured:** SUMMIT_ONLY 160, NO_SUMMIT 40.
+- **Checked and still held:**
+  - Half Peak and Horseshoe: 23 m from a mapped road, but on the road, with no lot or trailhead there.
+  - Jones and Niagara: 171 m from the Burns Gulch road end.
+  - Dyer, North Apostle and Atlantic: 0.5 to 1.4 km from any mapped trail.
+  - North Maggie: 161 m from the trail start, which sits in a campground.
+  - Ossa: the trail is mapped, but the route is still only a peak-level answer.
+  - Sirretta: the official trail begins 0.86 km from the driving-guide point.
+
+### Round 9: peaks where every pinned route shares one lot (2026-11-23)
+
+Owner asked for the recommended option. `scripts/uni8.mjs` grouped the 160 open routes by peak and compared
+the trailhead pins the peak's other routes already carry. 34 peaks were unanimous (every pin within 150 m),
+10 split, 78 had no pinned neighbour. A route was written only when all of these held: at least three
+neighbouring routes share the lot, no page or row text names another start for the peak or that side of it,
+and the route is not a Goodell Creek route. Each write cites one opened page that starts at that lot.
+- **Written (6, unconfirmed, verified on re-read, `batch-r9.json`):** Chair Peak South Ridge and Southeast
+  Face (Alpental, 5 neighbours), Chimney Rock North, Northeast and Northwest Ridges (Pete Lake, 3
+  neighbours), Colchuck Peak South Face (Stuart Lake, 7 neighbours).
+- **Unanimous but left held:**
+  - Chimney Rock's two south-side lines: Rachel Lake is a possible start.
+  - Second start known: Big Snow, Castle Peak (Pasayten), Little Big Chief, Dragontail Boving Route, and
+    Cutthroat "A Virtuous Circle" (north side, Cutthroat Lake trail).
+  - Red Mountain east side: no page covers that side.
+  - Fewer than three neighbours: every peak with one or two.
+- **Audit, measured:** SUMMIT_ONLY 154, NO_SUMMIT 40.
