@@ -19,6 +19,12 @@ project documentation as a whole — `CLAUDE.md`, `docs/codebase/` and `docs/gua
     (sport, else trad), so a sport grade was measured against a trad grade: Avery (5.11a sport / 5.10a trad) read *Far
     apart* from Blake (5.9 trad). It now compares sport with sport and trad with trad, takes the closer when both set
     both, and falls back to the cross comparison only when they share no rope-grade kind. `check:match-percent` pins all three.
+  - **EVERY NUMBER GRADE IS A STEP (2026-11-23).** The grade term's scale gave 5.8 and below ONE step, so 5.6 was two
+    steps from 5.10a: *Close in grade*, and 22 of the term's 28 points, for a pair four number grades apart. It is now one
+    step per number grade up to 5.9 and one per letter grade above. 5.13 and up had shared one step too (5.13a read *Same
+    grade* as 5.14d) and now step by letter. 5.9 to 5.12 is spaced as before, so only pairs with a grade below 5.9 or
+    above 5.12 move.
+    Found when the one-sentence match summary repeated "close grades (5.10a and 5.6)". `check:match-percent` pins it.
   - **AVAILABILITY IS AN OVERLAP COEFFICIENT (2026-11-18).** It scored 6 per shared slot, so two weekends-only
     climbers (the same schedule) got 6 of 12 and an amber "partly". It now scores shared slots over the SMALLER side's
     slots (Szymkiewicz-Simpson), so one schedule wholly inside the other counts fully; flexible stays full. Chosen over
