@@ -1,5 +1,5 @@
 import { tx } from "../../lib/tapWords.js";
-import { usePartnerAreaCount, usePartnersInArea, removePartnerArea, addPartnerArea, useCragRegular, useMyBlocked } from "../../lib/db";
+import { usePartnerAreaCount, usePartnersInArea, removePartnerArea, addPartnerArea, useCragRegular, useMyBlocked, useMatchObjectivesOfUsers } from "../../lib/db";
 import { useState, useEffect } from "react";
 import Chevron from "./Chevron.tsx";
 import Av from "./Av.tsx";
@@ -46,11 +46,14 @@ export default function PartnersHereCard({ area, C, uid, myListings, onListMe, o
   const serverListed = !!(myListings || []).find((l: PartnersHereCardListing) => l && l.areaId === area.id);
   useEffect(() => { setOptListed(null); }, [serverListed]);
   const listed = optListed == null ? serverListed : optListed;
-  const count = countQ.data == null ? countQ.data : Math.max(0, countQ.data + (listed === serverListed ? 0 : listed ? 1 : -1));
+  /* The count is of OTHER climbers (partner_area_counts leaves the caller out), so your own tap does not move it. It added one for your own listing, read "1 climber listed here" at an empty crag, then "Nobody listed here yet" beside "Listed ✓" once the refetch landed (review 2026-11-23). */
+  const count = countQ.data;
   /* CLIMBERS YOU BLOCKED are not shown here (review 2026-11-23): the search hides a climber who blocked YOU; the other
      direction is filtered on the screen, as Partners and the route page do, and this card did neither. Its count leaves
      them out in the database since 0498. */
   const blockedQ = useMyBlocked(on ? uid : null);
+  /* Their match objectives, one read for the rows shown: without it every row said "Scoring match…" and never finished (review 2026-11-23). */
+  const objQ = useMatchObjectivesOfUsers(on ? (rowsQ.data || []).map((p: PartnerRow) => p.id) : []);
   const blockedIds = new Set(((blockedQ.data || []) as Array<{ blockedId?: string }>).map((b) => String(b.blockedId)));
   const rows = (rowsQ.data || []).filter((p: PartnerRow) => p && p.id && String(p.id) !== String(uid) && !blockedIds.has(String(p.id)));
   const toggle = async () => {
@@ -88,7 +91,7 @@ export default function PartnersHereCard({ area, C, uid, myListings, onListMe, o
           {onViewProfile ? <span aria-hidden="true" style={{ display: "flex", flexShrink: 0 }}><Chevron size={16} color={C.textMuted} /></span> : null}
         </div>
       ) : null}
-      {on && rows.length && PartnerRow ? <div style={{ marginTop: 6 }}>{rows.map((p: PartnerRow) => <PartnerRow key={p.id} p={p} onOpen={onViewProfile} />)}</div> : null}
+      {on && rows.length && PartnerRow ? <div style={{ marginTop: 6 }}>{rows.map((p: PartnerRow) => <PartnerRow key={p.id} p={p} objIds={objQ.data ? (objQ.data as Record<string, string[]>)[p.id] || [] : undefined} objErr={objQ.isError} onOpen={onViewProfile} />)}</div> : null}
       {on && (count > 0 || rows.length) ? <button onClick={openAll} style={{ ...BTN_LINK(C), padding: "6px 0 0", fontSize: 12.5 }}>{"See all at " + area.name + " →"}</button> : null}
       {/* ACTIONS (owner 2026-11-23): List me here is a full-width button on its own line, ABOVE Start a crew here / Crews here. */}
       {on || onStartCrew || onCrewsHere ? <div style={{ marginTop: 10, paddingTop: 10, borderTop: "1px solid " + C.border }}>

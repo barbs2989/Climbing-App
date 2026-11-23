@@ -1,0 +1,229 @@
+{
+ "note": "Values replaced by the owner-approved batch-V scalar fixes, 2026-11-23",
+ "rollback": [
+  {
+   "table": "routes",
+   "id": "wa_witch_doctor_wall_solaris",
+   "before": {
+    "commitment": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_witch_doctor_wall_sunday_cruise",
+   "before": {
+    "pitches": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_witch_doctor_wall_sunday_cruise",
+   "before": {
+    "length_m": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_folsom_blues",
+   "before": {
+    "pitches": 0
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_folsom_blues",
+   "before": {
+    "guide_stars": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_number_9",
+   "before": {
+    "pitches": 0
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_number_9",
+   "before": {
+    "length_m": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_twelve_gauge_iq",
+   "before": {
+    "discipline": "trad"
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_twelve_gauge_iq",
+   "before": {
+    "pitches": 0
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_twelve_gauge_iq",
+   "before": {
+    "length_m": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_twelve_gauge_iq",
+   "before": {
+    "guide_stars": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_etch_a_sketch",
+   "before": {
+    "pitches": 0
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_etch_a_sketch",
+   "before": {
+    "guide_stars": 1
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_written_in_stone",
+   "before": {
+    "pitches": 0
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_written_in_stone",
+   "before": {
+    "length_m": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_f_phun_rock_main_wall_sunbug_slab_exodus_to_lilliput",
+   "before": {
+    "bolts": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_f_phun_rock_main_wall_sunbug_slab_pothole_panhandler",
+   "before": {
+    "fa": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_f_phun_rock_main_wall_sunbug_slab_invasive_species",
+   "before": {
+    "fa": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_f_phun_rock_main_wall_sunbug_slab_jam_sandwich",
+   "before": {
+    "bolts": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_f_phun_rock_main_wall_sunbug_slab_jam_sandwich",
+   "before": {
+    "anchor": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_snake_charmer",
+   "before": {
+    "pitches": 0
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_voodoo_wall",
+   "before": {
+    "pitches": 0
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_voodoo_wall",
+   "before": {
+    "commitment": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_voodoo_wall",
+   "before": {
+    "length_m": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_voodoo_wall",
+   "before": {
+    "anchor": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_ancient_melodies",
+   "before": {
+    "pitches": 0
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_ancient_melodies",
+   "before": {
+    "anchor": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_dark_rhythm",
+   "before": {
+    "pitches": 0
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_dark_rhythm",
+   "before": {
+    "length_m": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_dark_rhythm",
+   "before": {
+    "anchor": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_jacobs_ladder_5_10b_a_1_or_5_11b",
+   "before": {
+    "pitches": 0
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_jacobs_ladder_5_10b_a_1_or_5_11b",
+   "before": {
+    "length_m": null
+   }
+  }
+ ]
+}

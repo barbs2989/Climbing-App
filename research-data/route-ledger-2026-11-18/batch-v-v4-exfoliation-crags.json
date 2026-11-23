@@ -1,0 +1,580 @@
+{
+ "wa_snake_charmer": {
+  "area": "wa_witch_doctor_wall",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/114980575/snake-charmer",
+    "https://www.mountainproject.com/area/113757284/witch-doctor-wall",
+    "https://stephabegg.com/?p=11089",
+    "https://cascadeclimbers.com/forum/topic/88687-tr-exfoliation-dome-snake-charmer-9302012",
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/eight-mile-trail-65402",
+    "https://www.fs.usda.gov/r06/mbs/alerts",
+    "https://www.fs.usda.gov/r06/passes/recreation-sites-where-day-use-fees-are-charged",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_Wilderness_01/MapServer/0",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_RangerDistricts_03/MapServer/1"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.11a",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114980575/snake-charmer",
+      "publisher": "Mountain Project",
+      "fact": "YDS 5.11a, Trad",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_snake_charmer",
+    "column": "pitches",
+    "from": 0,
+    "to": 6,
+    "why": "pitches 0 is invalid. Three independent publishers give 6 pitches: Mountain Project (Trad, 500 ft, 6 pitches), Steph Abegg's trip page (6 pitches, 5.11-) and a 2012 CascadeClimbers trip report (pitch 1 to pitch 6 described). agree-2.",
+    "evidence": [
+     "https://www.mountainproject.com/route/114980575/snake-charmer",
+     "https://stephabegg.com/?p=11089",
+     "https://cascadeclimbers.com/forum/topic/88687-tr-exfoliation-dome-snake-charmer-9302012"
+    ]
+   }
+  ],
+  "held": [
+   {
+    "table": "routes",
+    "id": "wa_snake_charmer",
+    "column": "length_m",
+    "from": null,
+    "to": null,
+    "why": "HELD: sources disagree. Mountain Project states 500 ft (152 m) but its own pitch lengths add to 190 m; Steph Abegg's pitch lengths add to 176 m. Outside the 10% / 50 ft tolerance, so no value proposed.",
+    "evidence": [
+     "https://www.mountainproject.com/route/114980575/snake-charmer",
+     "https://stephabegg.com/?p=11089"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_snake_charmer",
+    "column": "access",
+    "from": {
+     "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+     "rules": "Group size capped at 12 (people + stock combined) inside Glacier Peak Wilderness; larger groups must split with 1-mile separation. Campfires prohibited above 3,500 ft in wilderness.",
+     "permit": "None required — free self-issue wilderness permits available at trailheads/ranger stations for day/overnight travel where the peak is inside designated wilderness.",
+     "group_limit": 12,
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Darrington Ranger District)",
+     "parking_pass": "Northwest Forest Pass required at Mountain Loop Highway trailheads — $5/day or $30/year."
+    },
+    "to": {
+     "rules": "The Eight-Mile Trail to the rock enters the Boulder River Wilderness, where groups are capped at 12 people and stock combined.",
+     "group_limit": 12,
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Darrington Ranger District)"
+    },
+    "why": "HELD (brief V: approach and wilderness differ). The candidate is the pass-free object on wa_three_o_clock_rock_total_soul, but its rules line does not fit Exfoliation Dome. (1) Approach: the official Eight-Mile Trail 654.02 page (updated 2026-04-17) says the trail serves Three O'Clock Rock on Jumbo Mountain, reached 8 mi up FR 2060; it never mentions Exfoliation Dome. The dome is reached cross-country from pullouts on the LEFT fork of FR 2060 about 5 mi in, not by that trail. (2) Wilderness: the USFS EDW wilderness layer puts the Witch Doctor Wall and Blueberry Hill/Proxima Wall points OUTSIDE any wilderness (Boulder River Wilderness is the nearest, roughly 1.5-2.5 km away), while the Three O'Clock Rock point is inside it. The USFS ownership and ranger-district layers confirm Mt. Baker-Snoqualmie NF, Darrington Ranger District. (3) Pass: the Region 6 list of day-use fee sites (updated 2026-09-15) has no Darrington or FR 2060 site, so no official page backs the stored Northwest Forest Pass line. The stored LEGACY object is wrong either way: it names Glacier Peak Wilderness and a 12-person wilderness cap, a Mount Rainier NP fee line and a Mountain Loop Highway pass. Owner options: (a) a land_manager-only object, {\"land_manager\": \"Mt. Baker-Snoqualmie National Forest (Darrington Ranger District)\"}, which every official page read supports; or (b) access null. Road: no MBS alert names FR 2060 (only the Mountain Loop Hwy Bedal-Barlow Pass winter closure and washouts on FR 26/2660/2640/2642); absence of an alert is not proof the road is open, so road status stays unconfirmed.",
+    "evidence": [
+     "https://www.fs.usda.gov/r06/mbs/recreation/trails/eight-mile-trail-65402",
+     "https://www.fs.usda.gov/r06/mbs/alerts",
+     "https://www.fs.usda.gov/r06/passes/recreation-sites-where-day-use-fees-are-charged",
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_Wilderness_01/MapServer/0",
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0",
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_RangerDistricts_03/MapServer/1"
+    ]
+   }
+  ],
+  "disputed": [
+   "length_m: MP 152 m (pitch sum 190 m) vs Abegg pitch sum 176 m",
+   "grade: MP 5.11a, Abegg 5.11- (compatible, not identical); locked-1src from MP only"
+  ],
+  "notes": "FA stored equals Mountain Project's line exactly; Abegg gives the same six surnames and 2012, but not first names, and 'Ralpha Bodenner' looks like a typo for Ralph. Not locked and not changed (no source spells the first name). Rack per MP: doubles to #3, hardest moves bolt-protected; all belays bolted (Abegg: all but the last). Descent: single 70 m rope (both sources). Anchor not proposed: belays are described as bolted, with no anchor type that maps to a house spelling on two sources."
+ },
+ "wa_voodoo_wall": {
+  "area": "wa_witch_doctor_wall",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/112429199/voodoo-wall",
+    "https://www.mountainproject.com/area/113757284/witch-doctor-wall",
+    "https://alpinedave.com/darrington/Voodoo/Voodoo_Wall.htm",
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/eight-mile-trail-65402",
+    "https://www.fs.usda.gov/r06/mbs/alerts",
+    "https://www.fs.usda.gov/r06/passes/recreation-sites-where-day-use-fees-are-charged",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_Wilderness_01/MapServer/0",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_RangerDistricts_03/MapServer/1"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "aid_grade",
+    "value": "A2",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112429199/voodoo-wall",
+      "publisher": "Mountain Project",
+      "fact": "5.10a A2",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://alpinedave.com/darrington/Voodoo/Voodoo_Wall.htm",
+      "publisher": "alpinedave.com (first-ascent party's own page)",
+      "fact": "IV 5.10 A2",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "5.10a",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112429199/voodoo-wall",
+      "publisher": "Mountain Project",
+      "fact": "YDS 5.10a, A2",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_voodoo_wall",
+    "column": "pitches",
+    "from": 0,
+    "to": 7,
+    "why": "pitches 0 is invalid. Mountain Project: 800 ft, 7 pitches, with a grade for each of P1-P7. The first-ascent party's own page describes 6 pitches and says the last one was later split in two, which makes 7. Two publishers support 7.",
+    "evidence": [
+     "https://www.mountainproject.com/route/112429199/voodoo-wall",
+     "https://alpinedave.com/darrington/Voodoo/Voodoo_Wall.htm"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_voodoo_wall",
+    "column": "commitment",
+    "from": null,
+    "to": "IV",
+    "why": "Mountain Project gives Grade IV; the first-ascent party's own page grades it IV 5.10 A2. agree-2. 'IV' is the house form (112 routes).",
+    "evidence": [
+     "https://www.mountainproject.com/route/112429199/voodoo-wall",
+     "https://alpinedave.com/darrington/Voodoo/Voodoo_Wall.htm"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_voodoo_wall",
+    "column": "length_m",
+    "from": null,
+    "to": 242,
+    "why": "Mountain Project states 800 ft (242 m). Single source (theCrag and SummitPost refused in the browser; the FA page gives no total). locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/112429199/voodoo-wall"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_voodoo_wall",
+    "column": "anchor",
+    "from": null,
+    "to": "Chain anchor",
+    "why": "Mountain Project: bolted chain belays. House spelling 'Chain anchor' (60 routes). The FA page confirms drilled belay anchors. Single source for the chains, locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/112429199/voodoo-wall",
+     "https://alpinedave.com/darrington/Voodoo/Voodoo_Wall.htm"
+    ]
+   }
+  ],
+  "held": [
+   {
+    "table": "routes",
+    "id": "wa_voodoo_wall",
+    "column": "fa",
+    "from": "Dave Burdick, Mike Swanicke 2003",
+    "to": "Dave Burdick, Mike Swanike 2003",
+    "why": "HELD: the first-ascent party's own page spells the partner 'Mike Swanike' (ascent Oct 4-5, 2003); stored and Mountain Project spell 'Swanicke'. One independent source for a change to an existing FA. (Stored fa also carries the year inside the names string; not reformatted.)",
+    "evidence": [
+     "https://alpinedave.com/darrington/Voodoo/Voodoo_Wall.htm",
+     "https://www.mountainproject.com/route/112429199/voodoo-wall"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_voodoo_wall",
+    "column": "access",
+    "from": {
+     "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+     "rules": "Group size capped at 12 (people + stock combined) inside Glacier Peak Wilderness; larger groups must split with 1-mile separation. Campfires prohibited above 3,500 ft in wilderness.",
+     "permit": "None required — free self-issue wilderness permits available at trailheads/ranger stations for day/overnight travel where the peak is inside designated wilderness.",
+     "group_limit": 12,
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Darrington Ranger District)",
+     "parking_pass": "Northwest Forest Pass required at Mountain Loop Highway trailheads — $5/day or $30/year."
+    },
+    "to": {
+     "rules": "The Eight-Mile Trail to the rock enters the Boulder River Wilderness, where groups are capped at 12 people and stock combined.",
+     "group_limit": 12,
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Darrington Ranger District)"
+    },
+    "why": "HELD (brief V: approach and wilderness differ). The candidate is the pass-free object on wa_three_o_clock_rock_total_soul, but its rules line does not fit Exfoliation Dome. (1) Approach: the official Eight-Mile Trail 654.02 page (updated 2026-04-17) says the trail serves Three O'Clock Rock on Jumbo Mountain, reached 8 mi up FR 2060; it never mentions Exfoliation Dome. The dome is reached cross-country from pullouts on the LEFT fork of FR 2060 about 5 mi in, not by that trail. (2) Wilderness: the USFS EDW wilderness layer puts the Witch Doctor Wall and Blueberry Hill/Proxima Wall points OUTSIDE any wilderness (Boulder River Wilderness is the nearest, roughly 1.5-2.5 km away), while the Three O'Clock Rock point is inside it. The USFS ownership and ranger-district layers confirm Mt. Baker-Snoqualmie NF, Darrington Ranger District. (3) Pass: the Region 6 list of day-use fee sites (updated 2026-09-15) has no Darrington or FR 2060 site, so no official page backs the stored Northwest Forest Pass line. The stored LEGACY object is wrong either way: it names Glacier Peak Wilderness and a 12-person wilderness cap, a Mount Rainier NP fee line and a Mountain Loop Highway pass. Owner options: (a) a land_manager-only object, {\"land_manager\": \"Mt. Baker-Snoqualmie National Forest (Darrington Ranger District)\"}, which every official page read supports; or (b) access null. Road: no MBS alert names FR 2060 (only the Mountain Loop Hwy Bedal-Barlow Pass winter closure and washouts on FR 26/2660/2640/2642); absence of an alert is not proof the road is open, so road status stays unconfirmed.",
+    "evidence": [
+     "https://www.fs.usda.gov/r06/mbs/recreation/trails/eight-mile-trail-65402",
+     "https://www.fs.usda.gov/r06/mbs/alerts",
+     "https://www.fs.usda.gov/r06/passes/recreation-sites-where-day-use-fees-are-charged",
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_Wilderness_01/MapServer/0",
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0",
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_RangerDistricts_03/MapServer/1"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "Grade convention: this row stores grade '5.10a' with aid_grade A2 in its own column, while its siblings keep the aid grade in the grade text ('5.10b A2+'). Reported only, not changed. The FA page places the line on the 'Solar Wall' section at the east end of Witch Doctor Wall, starting from Bombardier Ledge; descent is 6 rappels down Solaris from Solar Ledge (60 m ropes). Rack per MP: double cams to 4 in, double nuts, a few KBs and LAs, rivet hangers, a Talon hook. MP pitch grades: 5.9, 5.8 C1, A1/C1, A2, 5.8 C2, 5.8, 5.10 (5.7 A0). Discipline trad with disciplines [trad, aid] matches MP (trad, aid)."
+ },
+ "wa_ancient_melodies": {
+  "area": "wa_blueberry_hill_proxima_wall",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/107773529/ancient-melodies",
+    "https://www.mountainproject.com/area/108546462/blueberry-hill-proxima-wall",
+    "https://stephabegg.com/?p=11089",
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/eight-mile-trail-65402",
+    "https://www.fs.usda.gov/r06/mbs/alerts",
+    "https://www.fs.usda.gov/r06/passes/recreation-sites-where-day-use-fees-are-charged",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_Wilderness_01/MapServer/0",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_RangerDistricts_03/MapServer/1"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.11-",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107773529/ancient-melodies",
+      "publisher": "Mountain Project",
+      "fact": "5.11- (P6 5.11- or 5.10 A0)",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://stephabegg.com/?p=11089",
+      "publisher": "Steph Abegg",
+      "fact": "5.11- or 5.10 A0, 7 pitches",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_ancient_melodies",
+    "column": "pitches",
+    "from": 0,
+    "to": null,
+    "why": "pitches 0 is invalid, and the count is disputed: Mountain Project says 10 pitches (1100 ft), which counts three approach pitches added in 2014 up the West Slabs; Steph Abegg counts the 7 pitches of the route itself and skipped the approach pitches. Both describe the same 7 route pitches. Never pick one: 0 -> null, both values held.",
+    "evidence": [
+     "https://www.mountainproject.com/route/107773529/ancient-melodies",
+     "https://stephabegg.com/?p=11089"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_ancient_melodies",
+    "column": "anchor",
+    "from": null,
+    "to": "Chain anchor",
+    "why": "Mountain Project: belays are chained. Abegg: bolted rappel anchors. House spelling 'Chain anchor' (60 routes). Chains stated by one source, locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/107773529/ancient-melodies",
+     "https://stephabegg.com/?p=11089"
+    ]
+   }
+  ],
+  "held": [
+   {
+    "table": "routes",
+    "id": "wa_ancient_melodies",
+    "column": "pitches",
+    "from": 0,
+    "to": "7 or 10",
+    "why": "HELD: 7 route pitches (Abegg) vs 10 including three West Slabs approach pitches (Mountain Project). Owner call which convention the row uses.",
+    "evidence": [
+     "https://www.mountainproject.com/route/107773529/ancient-melodies",
+     "https://stephabegg.com/?p=11089"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_ancient_melodies",
+    "column": "fa",
+    "from": "D. Coltrane, M. Hanna",
+    "to": "Coltrane, Hanna, Packard, Storms, 2012",
+    "why": "HELD: Steph Abegg lists a four-person FA party in 2012; stored and Mountain Project give two names and no year. One source for a change to an existing FA.",
+    "evidence": [
+     "https://stephabegg.com/?p=11089",
+     "https://www.mountainproject.com/route/107773529/ancient-melodies"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_ancient_melodies",
+    "column": "commitment",
+    "from": null,
+    "to": "III",
+    "why": "HELD: Grade III from Mountain Project only (a commitment grade from MP alone is held).",
+    "evidence": [
+     "https://www.mountainproject.com/route/107773529/ancient-melodies"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_ancient_melodies",
+    "column": "access",
+    "from": {
+     "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+     "rules": "Group size capped at 12 (people + stock combined) inside Glacier Peak Wilderness; larger groups must split with 1-mile separation. Campfires prohibited above 3,500 ft in wilderness.",
+     "permit": "None required — free self-issue wilderness permits available at trailheads/ranger stations for day/overnight travel where the peak is inside designated wilderness.",
+     "group_limit": 12,
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Darrington Ranger District)",
+     "parking_pass": "Northwest Forest Pass required at Mountain Loop Highway trailheads — $5/day or $30/year."
+    },
+    "to": {
+     "rules": "The Eight-Mile Trail to the rock enters the Boulder River Wilderness, where groups are capped at 12 people and stock combined.",
+     "group_limit": 12,
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Darrington Ranger District)"
+    },
+    "why": "HELD (brief V: approach and wilderness differ). The candidate is the pass-free object on wa_three_o_clock_rock_total_soul, but its rules line does not fit Exfoliation Dome. (1) Approach: the official Eight-Mile Trail 654.02 page (updated 2026-04-17) says the trail serves Three O'Clock Rock on Jumbo Mountain, reached 8 mi up FR 2060; it never mentions Exfoliation Dome. The dome is reached cross-country from pullouts on the LEFT fork of FR 2060 about 5 mi in, not by that trail. (2) Wilderness: the USFS EDW wilderness layer puts the Witch Doctor Wall and Blueberry Hill/Proxima Wall points OUTSIDE any wilderness (Boulder River Wilderness is the nearest, roughly 1.5-2.5 km away), while the Three O'Clock Rock point is inside it. The USFS ownership and ranger-district layers confirm Mt. Baker-Snoqualmie NF, Darrington Ranger District. (3) Pass: the Region 6 list of day-use fee sites (updated 2026-09-15) has no Darrington or FR 2060 site, so no official page backs the stored Northwest Forest Pass line. The stored LEGACY object is wrong either way: it names Glacier Peak Wilderness and a 12-person wilderness cap, a Mount Rainier NP fee line and a Mountain Loop Highway pass. Owner options: (a) a land_manager-only object, {\"land_manager\": \"Mt. Baker-Snoqualmie National Forest (Darrington Ranger District)\"}, which every official page read supports; or (b) access null. Road: no MBS alert names FR 2060 (only the Mountain Loop Hwy Bedal-Barlow Pass winter closure and washouts on FR 26/2660/2640/2642); absence of an alert is not proof the road is open, so road status stays unconfirmed.",
+    "evidence": [
+     "https://www.fs.usda.gov/r06/mbs/recreation/trails/eight-mile-trail-65402",
+     "https://www.fs.usda.gov/r06/mbs/alerts",
+     "https://www.fs.usda.gov/r06/passes/recreation-sites-where-day-use-fees-are-charged",
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_Wilderness_01/MapServer/0",
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0",
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_RangerDistricts_03/MapServer/1"
+    ]
+   }
+  ],
+  "disputed": [
+   "pitches: MP 10 (incl. 3 approach pitches) vs Abegg 7",
+   "length_m: MP 333 m (incl. approach pitches) vs Abegg pitch sum 240 m"
+  ],
+  "notes": "On Proxima Wall, the west-facing wall on the south flank of the dome; the start is a bolted prow with a large Metolius bolt (both sources). Crux pitch 6 is well bolted and can be aided at 5.10 A0. Descent: double-rope rappels down the route, skipping the pitch 5 anchors (MP: two 60 m ropes), then three more raps down the West Slabs or a downscramble of the approach gully. Rack: MP medium rack to 3 in; Abegg a single rack, gear needed on P4."
+ },
+ "wa_dark_rhythm": {
+  "area": "wa_blueberry_hill_proxima_wall",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/107192430/dark-rhythm",
+    "https://www.mountainproject.com/area/108546462/blueberry-hill-proxima-wall",
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/eight-mile-trail-65402",
+    "https://www.fs.usda.gov/r06/mbs/alerts",
+    "https://www.fs.usda.gov/r06/passes/recreation-sites-where-day-use-fees-are-charged",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_Wilderness_01/MapServer/0",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_RangerDistricts_03/MapServer/1"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.10c",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107192430/dark-rhythm",
+      "publisher": "Mountain Project",
+      "fact": "YDS 5.10c, Trad",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_dark_rhythm",
+    "column": "pitches",
+    "from": 0,
+    "to": 8,
+    "why": "pitches 0 is invalid. Mountain Project: Trad, 900 ft, 8 pitches, with a grade for each of P1-P8 ending at Blueberry Terrace, plus three optional 'bonus' pitches to the summit. Single source (theCrag and SummitPost both refused in the browser). A SummitPost listing seen only in search results counts 11, which equals 8 + the 3 summit pitches; not read, not evidence. locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/107192430/dark-rhythm"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_dark_rhythm",
+    "column": "length_m",
+    "from": null,
+    "to": 273,
+    "why": "Mountain Project states 900 ft (273 m) for the 8 pitches. Single source, locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/107192430/dark-rhythm"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_dark_rhythm",
+    "column": "anchor",
+    "from": null,
+    "to": "Chain anchor",
+    "why": "Mountain Project: each pitch ends at chains (Fixe rap chains). House spelling 'Chain anchor' (60 routes). Single source, locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/107192430/dark-rhythm"
+    ]
+   }
+  ],
+  "held": [
+   {
+    "table": "routes",
+    "id": "wa_dark_rhythm",
+    "column": "commitment",
+    "from": null,
+    "to": "III",
+    "why": "HELD: Grade III from Mountain Project only.",
+    "evidence": [
+     "https://www.mountainproject.com/route/107192430/dark-rhythm"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_dark_rhythm",
+    "column": "access",
+    "from": {
+     "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+     "rules": "Group size capped at 12 (people + stock combined) inside Glacier Peak Wilderness; larger groups must split with 1-mile separation. Campfires prohibited above 3,500 ft in wilderness.",
+     "permit": "None required — free self-issue wilderness permits available at trailheads/ranger stations for day/overnight travel where the peak is inside designated wilderness.",
+     "group_limit": 12,
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Darrington Ranger District)",
+     "parking_pass": "Northwest Forest Pass required at Mountain Loop Highway trailheads — $5/day or $30/year."
+    },
+    "to": {
+     "rules": "The Eight-Mile Trail to the rock enters the Boulder River Wilderness, where groups are capped at 12 people and stock combined.",
+     "group_limit": 12,
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Darrington Ranger District)"
+    },
+    "why": "HELD (brief V: approach and wilderness differ). The candidate is the pass-free object on wa_three_o_clock_rock_total_soul, but its rules line does not fit Exfoliation Dome. (1) Approach: the official Eight-Mile Trail 654.02 page (updated 2026-04-17) says the trail serves Three O'Clock Rock on Jumbo Mountain, reached 8 mi up FR 2060; it never mentions Exfoliation Dome. The dome is reached cross-country from pullouts on the LEFT fork of FR 2060 about 5 mi in, not by that trail. (2) Wilderness: the USFS EDW wilderness layer puts the Witch Doctor Wall and Blueberry Hill/Proxima Wall points OUTSIDE any wilderness (Boulder River Wilderness is the nearest, roughly 1.5-2.5 km away), while the Three O'Clock Rock point is inside it. The USFS ownership and ranger-district layers confirm Mt. Baker-Snoqualmie NF, Darrington Ranger District. (3) Pass: the Region 6 list of day-use fee sites (updated 2026-09-15) has no Darrington or FR 2060 site, so no official page backs the stored Northwest Forest Pass line. The stored LEGACY object is wrong either way: it names Glacier Peak Wilderness and a 12-person wilderness cap, a Mount Rainier NP fee line and a Mountain Loop Highway pass. Owner options: (a) a land_manager-only object, {\"land_manager\": \"Mt. Baker-Snoqualmie National Forest (Darrington Ranger District)\"}, which every official page read supports; or (b) access null. Road: no MBS alert names FR 2060 (only the Mountain Loop Hwy Bedal-Barlow Pass winter closure and washouts on FR 26/2660/2640/2642); absence of an alert is not proof the road is open, so road status stays unconfirmed.",
+    "evidence": [
+     "https://www.fs.usda.gov/r06/mbs/recreation/trails/eight-mile-trail-65402",
+     "https://www.fs.usda.gov/r06/mbs/alerts",
+     "https://www.fs.usda.gov/r06/passes/recreation-sites-where-day-use-fees-are-charged",
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_Wilderness_01/MapServer/0",
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0",
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_RangerDistricts_03/MapServer/1"
+    ]
+   }
+  ],
+  "disputed": [
+   "pitches: MP 8 to the terrace (11 with the summit pitches); SummitPost reportedly 11, unread (403)"
+  ],
+  "notes": "Safety fact worth the page: MP warns against rappelling the route itself (loose flakes cut ropes); descend via the summit and the west-side gully, Jacobs Ladder raps from Blueberry Terrace, or the Westward Ho raps; all terrace raps need two ropes. Rack per MP: small rack to 2 in with extra small pieces/offsets for P5, 14-16 draws. FA stored matches MP; no year on any source read."
+ },
+ "wa_jacobs_ladder_5_10b_a_1_or_5_11b": {
+  "area": "wa_blueberry_hill_proxima_wall",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/106006715/jacobs-ladder-510b-a-1-or-511b",
+    "https://www.mountainproject.com/area/108546462/blueberry-hill-proxima-wall",
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/eight-mile-trail-65402",
+    "https://www.fs.usda.gov/r06/mbs/alerts",
+    "https://www.fs.usda.gov/r06/passes/recreation-sites-where-day-use-fees-are-charged",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_Wilderness_01/MapServer/0",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_RangerDistricts_03/MapServer/1"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.11b",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106006715/jacobs-ladder-510b-a-1-or-511b",
+      "publisher": "Mountain Project",
+      "fact": "YDS 5.11b, Trad (title: 5.10b A-1 or 5.11b)",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_jacobs_ladder_5_10b_a_1_or_5_11b",
+    "column": "pitches",
+    "from": 0,
+    "to": 8,
+    "why": "pitches 0 is invalid. Mountain Project: Trad, 1000 ft, 8 pitches, Grade III. Single source (theCrag and SummitPost refused in the browser; no other publisher found). locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/106006715/jacobs-ladder-510b-a-1-or-511b"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_jacobs_ladder_5_10b_a_1_or_5_11b",
+    "column": "length_m",
+    "from": null,
+    "to": 303,
+    "why": "Mountain Project states 1000 ft (303 m). Single source, locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/106006715/jacobs-ladder-510b-a-1-or-511b"
+    ]
+   }
+  ],
+  "held": [
+   {
+    "table": "routes",
+    "id": "wa_jacobs_ladder_5_10b_a_1_or_5_11b",
+    "column": "commitment",
+    "from": null,
+    "to": "III",
+    "why": "HELD: Grade III from Mountain Project only.",
+    "evidence": [
+     "https://www.mountainproject.com/route/106006715/jacobs-ladder-510b-a-1-or-511b"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_jacobs_ladder_5_10b_a_1_or_5_11b",
+    "column": "access",
+    "from": {
+     "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+     "rules": "Group size capped at 12 (people + stock combined) inside Glacier Peak Wilderness; larger groups must split with 1-mile separation. Campfires prohibited above 3,500 ft in wilderness.",
+     "permit": "None required — free self-issue wilderness permits available at trailheads/ranger stations for day/overnight travel where the peak is inside designated wilderness.",
+     "group_limit": 12,
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Darrington Ranger District)",
+     "parking_pass": "Northwest Forest Pass required at Mountain Loop Highway trailheads — $5/day or $30/year."
+    },
+    "to": {
+     "rules": "The Eight-Mile Trail to the rock enters the Boulder River Wilderness, where groups are capped at 12 people and stock combined.",
+     "group_limit": 12,
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Darrington Ranger District)"
+    },
+    "why": "HELD (brief V: approach and wilderness differ). The candidate is the pass-free object on wa_three_o_clock_rock_total_soul, but its rules line does not fit Exfoliation Dome. (1) Approach: the official Eight-Mile Trail 654.02 page (updated 2026-04-17) says the trail serves Three O'Clock Rock on Jumbo Mountain, reached 8 mi up FR 2060; it never mentions Exfoliation Dome. The dome is reached cross-country from pullouts on the LEFT fork of FR 2060 about 5 mi in, not by that trail. (2) Wilderness: the USFS EDW wilderness layer puts the Witch Doctor Wall and Blueberry Hill/Proxima Wall points OUTSIDE any wilderness (Boulder River Wilderness is the nearest, roughly 1.5-2.5 km away), while the Three O'Clock Rock point is inside it. The USFS ownership and ranger-district layers confirm Mt. Baker-Snoqualmie NF, Darrington Ranger District. (3) Pass: the Region 6 list of day-use fee sites (updated 2026-09-15) has no Darrington or FR 2060 site, so no official page backs the stored Northwest Forest Pass line. The stored LEGACY object is wrong either way: it names Glacier Peak Wilderness and a 12-person wilderness cap, a Mount Rainier NP fee line and a Mountain Loop Highway pass. Owner options: (a) a land_manager-only object, {\"land_manager\": \"Mt. Baker-Snoqualmie National Forest (Darrington Ranger District)\"}, which every official page read supports; or (b) access null. Road: no MBS alert names FR 2060 (only the Mountain Loop Hwy Bedal-Barlow Pass winter closure and washouts on FR 26/2660/2640/2642); absence of an alert is not proof the road is open, so road status stays unconfirmed.",
+    "evidence": [
+     "https://www.fs.usda.gov/r06/mbs/recreation/trails/eight-mile-trail-65402",
+     "https://www.fs.usda.gov/r06/mbs/alerts",
+     "https://www.fs.usda.gov/r06/passes/recreation-sites-where-day-use-fees-are-charged",
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_Wilderness_01/MapServer/0",
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0",
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_RangerDistricts_03/MapServer/1"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "NAME DEFECT: the name (and id) carries the grade: 'Jacobs Ladder, 5.10b A-1 or 5.11b' is the source's title copied whole. The name should be 'Jacobs Ladder'. The row should keep grade 5.11b (the free grade Mountain Project lists as the headline); the 5.10b A1 option (aid the bolted 5.11 crux) is an alternative, matching how Ancient Melodies treats its A0 option. Not renamed (owner call; the id is name-derived). FA shape defect: stored fa '2003, Matt Perkins and friends' puts the year inside the names string (matches MP's line; not reformatted). Rack per MP: gear to 3 in, singles from small stoppers/tiny TCUs up, doubles 3/4-1 in help on P7; crux well bolted; rappel the route with two ropes, trending right (south) on P3-5 saves one rap."
+ }
+}
