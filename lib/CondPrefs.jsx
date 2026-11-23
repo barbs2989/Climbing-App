@@ -253,7 +253,7 @@ export function CondPrefsControls({ disc, only, onSignIn }) {
         {["cool", "standard", "warm"].map(function (k) { return chip(scope === "all" ? same(p.temp.all, TEMP_BANDS[k]) : same(p.temp[scope], TEMP_BANDS[k]), NAME[k] + " " + rangeText(TEMP_BANDS[k]), function () { setRange(TEMP_BANDS[k].slice()); }, k); })}
       </div>}
       <div style={NOTE}>{ownOnly
-        ? (own ? "Each day on the Conditions tab of " + scopeName.toLowerCase() + " routes says whether the forecast temperatures fall in " + rangeText(eff) + ". Drag either end to yours." : "No range set, so " + scopeName.toLowerCase() + " routes show no temperature line. There is no suggested range: set the temperatures you like.") + " Warnings about wind, snow, thunder and thaw never change."
+        ? (own ? "Each day on the Conditions tab of " + scopeName.toLowerCase() + " routes says whether the forecast temperatures fall in " + rangeText(eff) + ". Drag either end to yours." : "No range set, so " + scopeName.toLowerCase() + " routes show no temperature line. There is no suggested range: set the temperatures you like.")
         : "Anything from " + rangeText(eff) + " scores full marks for " + scopeName + (scope === "all" ? ", unless a discipline has its own range (marked ·)" : own ? "" : ", from your all-climbing range") + "; the score fades to nothing " + uTempDelta(25) + "° below it and " + uTempDelta(20) + "° above. Drag either end."}</div>
       {/* A range-only scope is on or off: one plain action says which way it goes (was two chips, "Not set" / "My range", that read as a choice of values). */}
       {ownOnly ? (own
