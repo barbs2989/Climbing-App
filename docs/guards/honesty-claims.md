@@ -1323,7 +1323,22 @@ rows. Its build script is gone; new reviews write the column.
   - **Misfiled text met on the way** (not fixed here): `wy_northeast_couloir` (Kagevah Peak) and `co_old_route`
     carry sentences that describe Washington routes, the name-derived id collision of
     [route-identity.md](../codebase/route-identity.md).
-- **Still on a guess:** every state not named above. Section 1 and 2 of `check:alpine-conditions` hold the rule
+- **Every other place with routes to review, 2026-11-23** (24 more; 393 routes). `glacier-travel-states.mjs`
+  sized every id prefix; 21 small ones had nothing to review (their alpine-type rows are all waterfall ice or
+  crag mixed, which carry no snow logic).
+  - **16 hold no glacier at all** (NH, VT, NY, QC, ON, NS, NB, MN, MI, WI, NC, NJ, ME, UT, NM, AZ; 149 routes):
+    a route its reads could not settle is settled by a REGIONAL FACT, `region.json` in the place's folder,
+    written by hand with its reason ("Utah holds no living glacier", per the Utah Geological Survey). The
+    decide script applies it only to a route still unsure, refuses a region.json that says anything but
+    glacier "no", and on winter-ice places (`iceSeason`) also settles snow in season as yes. Never written
+    for a place that holds a glacier (Idaho, Nevada and Labrador were left out on purpose).
+  - **8 hold glaciers** (BC, AB, YT, NT, NU, ID, NV, NL; 244 routes): first read, second read, no regional
+    fact. Glacier travel yes 116 / no 77 / not settled 51. BC's open ones are mostly where sources disagree
+    whether a small glacier approach is roped (Crescent Glacier and Stadium Glacier in the Bugaboos, Slesse),
+    so a research round was not run on them.
+  - **The web-search budget is shared** by every agent in a session (about 200 searches, refilled in about an
+    hour); eight agents at once spent it mid-batch. The second wave ran four agents with a per-agent cap.
+- **Still on a guess:** the two legacy id prefixes `adams_` and `rainier_` (2 routes each), not reviewed. Section 1 and 2 of `check:alpine-conditions` hold the rule
   (21 assertions); the data is only as good as the review.
 
   - **HOUR BY HOUR + THE GUST WINDOW (2026-10-08, owner: "clear and exact and accurate science").**

@@ -1,0 +1,24 @@
+[
+ {
+  "id": "nv_stella_by_starlight",
+  "before": {
+   "glacier_travel": null,
+   "snow_in_season": null
+  },
+  "after": {
+   "glacier_travel": null,
+   "snow_in_season": "yes"
+  }
+ },
+ {
+  "id": "nv_terminal_cancer_vicinity_ice_terminal_cancer",
+  "before": {
+   "glacier_travel": null,
+   "snow_in_season": null
+  },
+  "after": {
+   "glacier_travel": "no",
+   "snow_in_season": "yes"
+  }
+ }
+]
