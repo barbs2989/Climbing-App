@@ -1,0 +1,412 @@
+{
+ "wa_tour_of_duty": {
+  "area": "wa_a_quarry",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/108133815/tour-of-duty",
+    "https://rakkup.com/guidebook/index-rock-climbing/tour-of-duty/c39348",
+    "https://rakkup.com/guidebook/index-rock-climbing/the-quarry/s10836",
+    "https://www.mountainproject.com/area/108131221/quarry",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5703,47.8191&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.5703,47.8191&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,taxprname,parcel_id&returnGeometry=false&f=json",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_02/MapServer/0/query?geometry=-121.5683,47.8191&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownerclassification,forestname&returnGeometry=false&f=json",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?where=ParkName%3D%27Forks%20of%20the%20Sky%27&outFields=ParkName,Category&returnGeometry=true&outSR=4326&f=json",
+    "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.11b",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108133815/tour-of-duty",
+      "fact": "Mountain Project: 5.11b YDS",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://rakkup.com/guidebook/index-rock-climbing/tour-of-duty/c39348",
+      "fact": "Rakkup Index Rock Climbing guide lists it 5.11b, Trad",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "A Clifford, J. Wyland",
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108133815/tour-of-duty",
+      "fact": "FA: A Clifford, J. Wyland",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "discipline",
+    "value": "trad",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108133815/tour-of-duty",
+      "fact": "Type: Trad, 5 pitches",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://rakkup.com/guidebook/index-rock-climbing/tour-of-duty/c39348",
+      "fact": "Rakkup lists it as Trad",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_tour_of_duty",
+    "column": "access",
+    "from": {
+     "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+     "notes": "Many of these peaks (Mount Persis, Gunn Peak, Baring Mountain area) sit outside designated wilderness — administratively unrestricted despite serious technical terrain.",
+     "permit": "None required.",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+     "parking_pass": "Northwest Forest Pass or America the Beautiful pass required at developed trailheads."
+    },
+    "to": null,
+    "why": "Templated access names Mt. Baker-Snoqualmie NF (Skykomish RD), a Northwest Forest Pass, Mount Rainier NP and unrelated peaks (Persis, Gunn, Baring); none of that fits an Index Town Walls crag. Land check 2026-11-23: the Quarry's only coordinate (Mountain Project's area point 47.8191,-121.5703, not evidence) falls inside 'Forks of the Sky' State Park Property on the WA State Parks boundary layer, on Snohomish County parcel 27101900102500 owned by WA State Parks & Rec, and USFS basic ownership calls it NON-FS. But no independent source fixes where the wall sits: OSM has no Quarry/Country crag, and the park line is unclear here. USFS-owned Mt. Baker-Snoqualmie NF land begins about 150 m east (lng -121.5687), and a private inholding (parcel 27101900102100) cuts into the park about 150 m north-west, toward the Mid Wall where the Quarry tops out. The 2026-03-13 parks.wa.gov release names only the Lower Town Wall. So the known-wrong template is removed (access -> null), and the Forks of the Sky object ({land_manager: 'Washington State Parks (Forks of the Sky State Park)'}, live on wa_beetle_bailey_slab_flying_salamanders_short) is HELD until the wall's position is fixed. Held for the owner.",
+    "evidence": [
+     "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5703,47.8191&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+     "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.5703,47.8191&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,taxprname,parcel_id&returnGeometry=false&f=json",
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_02/MapServer/0/query?geometry=-121.5683,47.8191&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownerclassification,forestname&returnGeometry=false&f=json",
+     "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?where=ParkName%3D%27Forks%20of%20the%20Sky%27&outFields=ParkName,Category&returnGeometry=true&outSR=4326&f=json",
+     "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_tour_of_duty",
+    "column": "pitches",
+    "from": 0,
+    "to": 5,
+    "why": "Mountain Project states 5 pitches (Trad, 5 pitches (P1 11b, P2 11b, P3 5.9, P4 10b, P5 10c)). Rakkup's open page gives no count (paywalled). locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/108133815/tour-of-duty"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_tour_of_duty",
+    "column": "gear",
+    "from": null,
+    "to": [
+     "gear to 3.5 in"
+    ],
+    "why": "Mountain Project: Protection: gear to 3.5 in; bolts on P2 and P3. Short items only, no rope. Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/108133815/tour-of-duty"
+    ]
+   }
+  ],
+  "held": [
+   {
+    "column": "access",
+    "value": {
+     "land_manager": "Washington State Parks (Forks of the Sky State Park)"
+    },
+    "why": "MP's area point lies inside Forks of the Sky SP (boundary layer, parcel 27101900102500), but the wall's position is not independently fixed; NF land is 150 m east and a private inholding 150 m north-west.",
+    "source": [
+     "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5703,47.8191&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+     "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.5703,47.8191&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,taxprname,parcel_id&returnGeometry=false&f=json",
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_02/MapServer/0/query?geometry=-121.5683,47.8191&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownerclassification,forestname&returnGeometry=false&f=json",
+     "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?where=ParkName%3D%27Forks%20of%20the%20Sky%27&outFields=ParkName,Category&returnGeometry=true&outSR=4326&f=json",
+     "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "P1 (bouldery start from a gold bolt on a pedestal, then 4th class) is shared with Jonah Benkert's World Famous Homemade Humble Pie. Front Line Assignment (wa_a_quarry_front_line_assignment) is MP's alternate last pitch of this route. Length, bolt count and anchor are not stated by any open source."
+ },
+ "wa_jonah_benkert_s_world_famous_homemade_humble_pie": {
+  "area": "wa_a_quarry",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/108131237/jonah-benkerts-world-famous-homemade-humble-pie",
+    "https://rakkup.com/guidebook/index-rock-climbing/the-quarry/s10836",
+    "https://www.mountainproject.com/area/108131221/quarry",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5703,47.8191&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.5703,47.8191&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,taxprname,parcel_id&returnGeometry=false&f=json",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_02/MapServer/0/query?geometry=-121.5683,47.8191&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownerclassification,forestname&returnGeometry=false&f=json",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?where=ParkName%3D%27Forks%20of%20the%20Sky%27&outFields=ParkName,Category&returnGeometry=true&outSR=4326&f=json",
+    "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.11c",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108131237/jonah-benkerts-world-famous-homemade-humble-pie",
+      "fact": "Mountain Project: 5.11c YDS",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://rakkup.com/guidebook/index-rock-climbing/the-quarry/s10836",
+      "fact": "Rakkup Index Rock Climbing guide lists it 5.11c, Sport",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "N. Rosser, J. Wyland",
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108131237/jonah-benkerts-world-famous-homemade-humble-pie",
+      "fact": "FA: N. Rosser, J. Wyland",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "discipline",
+    "value": "sport",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108131237/jonah-benkerts-world-famous-homemade-humble-pie",
+      "fact": "Type: Sport, 5 pitches",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://rakkup.com/guidebook/index-rock-climbing/the-quarry/s10836",
+      "fact": "Rakkup lists it as Sport",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_jonah_benkert_s_world_famous_homemade_humble_pie",
+    "column": "access",
+    "from": {
+     "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+     "notes": "Many of these peaks (Mount Persis, Gunn Peak, Baring Mountain area) sit outside designated wilderness — administratively unrestricted despite serious technical terrain.",
+     "permit": "None required.",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+     "parking_pass": "Northwest Forest Pass or America the Beautiful pass required at developed trailheads."
+    },
+    "to": null,
+    "why": "Templated access names Mt. Baker-Snoqualmie NF (Skykomish RD), a Northwest Forest Pass, Mount Rainier NP and unrelated peaks (Persis, Gunn, Baring); none of that fits an Index Town Walls crag. Land check 2026-11-23: the Quarry's only coordinate (Mountain Project's area point 47.8191,-121.5703, not evidence) falls inside 'Forks of the Sky' State Park Property on the WA State Parks boundary layer, on Snohomish County parcel 27101900102500 owned by WA State Parks & Rec, and USFS basic ownership calls it NON-FS. But no independent source fixes where the wall sits: OSM has no Quarry/Country crag, and the park line is unclear here. USFS-owned Mt. Baker-Snoqualmie NF land begins about 150 m east (lng -121.5687), and a private inholding (parcel 27101900102100) cuts into the park about 150 m north-west, toward the Mid Wall where the Quarry tops out. The 2026-03-13 parks.wa.gov release names only the Lower Town Wall. So the known-wrong template is removed (access -> null), and the Forks of the Sky object ({land_manager: 'Washington State Parks (Forks of the Sky State Park)'}, live on wa_beetle_bailey_slab_flying_salamanders_short) is HELD until the wall's position is fixed. Held for the owner.",
+    "evidence": [
+     "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5703,47.8191&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+     "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.5703,47.8191&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,taxprname,parcel_id&returnGeometry=false&f=json",
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_02/MapServer/0/query?geometry=-121.5683,47.8191&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownerclassification,forestname&returnGeometry=false&f=json",
+     "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?where=ParkName%3D%27Forks%20of%20the%20Sky%27&outFields=ParkName,Category&returnGeometry=true&outSR=4326&f=json",
+     "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_jonah_benkert_s_world_famous_homemade_humble_pie",
+    "column": "pitches",
+    "from": 0,
+    "to": 5,
+    "why": "Mountain Project states 5 pitches (Sport, 5 pitches (P1 11b, P2 11b, P3 10b, P4 11c, P5 10b)). Rakkup's open page gives no count (paywalled). locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/108131237/jonah-benkerts-world-famous-homemade-humble-pie"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_jonah_benkert_s_world_famous_homemade_humble_pie",
+    "column": "gear",
+    "from": null,
+    "to": [
+     "quickdraws",
+     "optional blue TCU"
+    ],
+    "why": "Mountain Project: Protection: quickdraws, one optional blue TCU. Short items only, no rope. Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/108131237/jonah-benkerts-world-famous-homemade-humble-pie"
+    ]
+   }
+  ],
+  "held": [
+   {
+    "column": "access",
+    "value": {
+     "land_manager": "Washington State Parks (Forks of the Sky State Park)"
+    },
+    "why": "MP's area point lies inside Forks of the Sky SP (boundary layer, parcel 27101900102500), but the wall's position is not independently fixed; NF land is 150 m east and a private inholding 150 m north-west.",
+    "source": [
+     "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5703,47.8191&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+     "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.5703,47.8191&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,taxprname,parcel_id&returnGeometry=false&f=json",
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_02/MapServer/0/query?geometry=-121.5683,47.8191&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownerclassification,forestname&returnGeometry=false&f=json",
+     "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?where=ParkName%3D%27Forks%20of%20the%20Sky%27&outFields=ParkName,Category&returnGeometry=true&outSR=4326&f=json",
+     "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "P1 is the same as Tour of Duty's P1 (MP). The top can be reached by rappel from P5 or by joining Tales From Zahajko's last pitch. Length, bolt count and anchor not stated by any open source."
+ },
+ "wa_tales_from_zahajko": {
+  "area": "wa_a_quarry",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/108131619/tales-from-zahajko",
+    "https://rakkup.com/guidebook/index-rock-climbing/the-quarry/s10836",
+    "https://www.mountainproject.com/area/108131221/quarry",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5703,47.8191&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.5703,47.8191&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,taxprname,parcel_id&returnGeometry=false&f=json",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_02/MapServer/0/query?geometry=-121.5683,47.8191&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownerclassification,forestname&returnGeometry=false&f=json",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?where=ParkName%3D%27Forks%20of%20the%20Sky%27&outFields=ParkName,Category&returnGeometry=true&outSR=4326&f=json",
+    "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.11c",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108131619/tales-from-zahajko",
+      "fact": "Mountain Project: 5.11c YDS",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://rakkup.com/guidebook/index-rock-climbing/the-quarry/s10836",
+      "fact": "Rakkup Index Rock Climbing guide lists it 5.11c, Sport",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Brad Lignoski, James Wyland",
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108131619/tales-from-zahajko",
+      "fact": "FA: Brad Lignoski, James Wyland",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_tales_from_zahajko",
+    "column": "access",
+    "from": {
+     "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+     "notes": "Many of these peaks (Mount Persis, Gunn Peak, Baring Mountain area) sit outside designated wilderness — administratively unrestricted despite serious technical terrain.",
+     "permit": "None required.",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+     "parking_pass": "Northwest Forest Pass or America the Beautiful pass required at developed trailheads."
+    },
+    "to": null,
+    "why": "Templated access names Mt. Baker-Snoqualmie NF (Skykomish RD), a Northwest Forest Pass, Mount Rainier NP and unrelated peaks (Persis, Gunn, Baring); none of that fits an Index Town Walls crag. Land check 2026-11-23: the Quarry's only coordinate (Mountain Project's area point 47.8191,-121.5703, not evidence) falls inside 'Forks of the Sky' State Park Property on the WA State Parks boundary layer, on Snohomish County parcel 27101900102500 owned by WA State Parks & Rec, and USFS basic ownership calls it NON-FS. But no independent source fixes where the wall sits: OSM has no Quarry/Country crag, and the park line is unclear here. USFS-owned Mt. Baker-Snoqualmie NF land begins about 150 m east (lng -121.5687), and a private inholding (parcel 27101900102100) cuts into the park about 150 m north-west, toward the Mid Wall where the Quarry tops out. The 2026-03-13 parks.wa.gov release names only the Lower Town Wall. So the known-wrong template is removed (access -> null), and the Forks of the Sky object ({land_manager: 'Washington State Parks (Forks of the Sky State Park)'}, live on wa_beetle_bailey_slab_flying_salamanders_short) is HELD until the wall's position is fixed. Held for the owner.",
+    "evidence": [
+     "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5703,47.8191&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+     "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.5703,47.8191&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,taxprname,parcel_id&returnGeometry=false&f=json",
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_02/MapServer/0/query?geometry=-121.5683,47.8191&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownerclassification,forestname&returnGeometry=false&f=json",
+     "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?where=ParkName%3D%27Forks%20of%20the%20Sky%27&outFields=ParkName,Category&returnGeometry=true&outSR=4326&f=json",
+     "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_tales_from_zahajko",
+    "column": "pitches",
+    "from": 0,
+    "to": 5,
+    "why": "Mountain Project states 5 pitches (Trad, Sport, 5 pitches (P1 11b, P2 10c, P3 11c, P4 11b, P5 11c)). Rakkup's open page gives no count (paywalled). locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/108131619/tales-from-zahajko"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_tales_from_zahajko",
+    "column": "gear",
+    "from": null,
+    "to": [
+     "quickdraws",
+     "red Camalot",
+     "green Camalot"
+    ],
+    "why": "Mountain Project: Protection: quickdraws plus one red and one green Camalot for the last pitch. Short items only, no rope. Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/108131619/tales-from-zahajko"
+    ]
+   }
+  ],
+  "held": [
+   {
+    "column": "access",
+    "value": {
+     "land_manager": "Washington State Parks (Forks of the Sky State Park)"
+    },
+    "why": "MP's area point lies inside Forks of the Sky SP (boundary layer, parcel 27101900102500), but the wall's position is not independently fixed; NF land is 150 m east and a private inholding 150 m north-west.",
+    "source": [
+     "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5703,47.8191&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+     "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.5703,47.8191&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,taxprname,parcel_id&returnGeometry=false&f=json",
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_02/MapServer/0/query?geometry=-121.5683,47.8191&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownerclassification,forestname&returnGeometry=false&f=json",
+     "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?where=ParkName%3D%27Forks%20of%20the%20Sky%27&outFields=ParkName,Category&returnGeometry=true&outSR=4326&f=json",
+     "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+    ]
+   }
+  ],
+  "disputed": [
+   "discipline: stored trad (disciplines null); Mountain Project says Trad, Sport (mostly bolted, two cams on P5); Rakkup lists it Sport. Held for the owner: discipline never changes on this evidence."
+  ],
+  "notes": "P1 starts up Whipnatize (5.11b) per MP. Coach's Fables (wa_a_quarry_coach_s_fables) is a variation finish leaving this route's P3. Length, bolt count and anchor not stated by any open source."
+ },
+ "wa_a_quarry_front_line_assignment": {
+  "area": "wa_a_quarry",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/108136418/front-line-assignment",
+    "https://rakkup.com/guidebook/index-rock-climbing/the-quarry/s10836",
+    "https://www.mountainproject.com/area/108131221/quarry"
+   ]
+  },
+  "ledger": [],
+  "sql_fixes": [],
+  "disputed": [],
+  "notes": "CATALOG DEFECT: Mountain Project describes this as an alternate LAST PITCH of Tour of Duty (wa_tour_of_duty), sharing its start and most of its climbing (exits the left side of an overhang past 3 bolts to a finger crack). No fixes proposed (variation rule). It stores access null and pitches 1, so it has no wrong template and no pitches 0. For the owner: MP gives FA J. Tetzlaff, J. Wyland (one source); grade 5.11b agrees on MP and Rakkup."
+ },
+ "wa_a_quarry_coach_s_fables": {
+  "area": "wa_a_quarry",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/108133850/coachs-fables",
+    "https://rakkup.com/guidebook/index-rock-climbing/coach's-fables/c39352",
+    "https://rakkup.com/guidebook/index-rock-climbing/the-quarry/s10836",
+    "https://www.mountainproject.com/area/108131221/quarry"
+   ]
+  },
+  "ledger": [],
+  "sql_fixes": [],
+  "disputed": [],
+  "notes": "CATALOG DEFECT: a variation finish. Mountain Project says it leaves Tales From Zahajko (wa_tales_from_zahajko) midway up P3, and Rakkup calls it an alternate ending to Tales from Zahajko. No fixes proposed. Stored pitches 3 matches MP's 3 described pitches; access null. For the owner: MP gives FA J. Tetzlaff, J. Wyland and FFA C. Allen, J. Wyland (one source); grade 5.11d agrees on MP and Rakkup; protection gear to 1 in plus quickdraws (MP)."
+ }
+}
