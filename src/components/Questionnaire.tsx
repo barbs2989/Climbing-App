@@ -2,6 +2,7 @@ import { useState } from "react";
 import { C, PRE_QS, RISK_LEVELS } from "../../ClimbMatchCore.jsx";
 import { clickable } from "../../lib/clickable";
 import { POP_BACK } from "../../lib/popupChrome.js";
+import { usePaneTop } from "../../lib/usePaneTop.js";
 import ActionIcon from "./ActionIcon.tsx";
 
 /** What the questionnaire hands back: the chosen risk tolerance and, per pre-climb question id, the index of the option picked. */
@@ -19,6 +20,7 @@ export default function Questionnaire({onComplete}: QuestionnaireProps){
      and a hoisted copy would be a module-scope read if it ever named a core export. */
   const RISK_ICON: Record<string, string>={conservative:"shield",moderate:"balance",aggressive:"fire"};
   const [step,setStep]=useState(0),[risk,setRisk]=useState<string | null>(null),[ans,setAns]=useState<Record<string, number>>({});
+  usePaneTop(null,step);
   const total=PRE_QS.length+1,pct=Math.round((step/total)*100);
   if(step===0)return <div>
     <div style={{background:C.blueBg,borderRadius:12,padding:"12px 14px",marginBottom:16,border:`1px solid ${C.blueDim}`}}><div style={{fontSize:14,fontWeight:700,color:C.blue,marginBottom:4}}>Pre-climb questionnaire</div><div style={{fontSize:12,color:C.textSub,lineHeight:1.6}}>Your answers are shared anonymously with the group to surface alignment issues. No one sees your exact answers — only group-level flags. This removes social pressure.</div></div>
