@@ -317,7 +317,7 @@ const opened = await page.evaluate(() => {
 if (opened) await settledText(page, { min: 30, timeout: 45000 }).catch(() => {});
 if (opened) {
   log(`  route detail: opened ${JSON.stringify(opened)}`);
-  for (const sub of ["Overview", "Reports", "Photos", "Partners", "Plan", "Safety"]) {
+  for (const sub of ["Overview", "Reports", "Photos", "Find", "Plan", "Safety"]) {
     if (sub !== "Overview" && !(await tap(sub))) { log(`  route:${sub}`.padEnd(28) + "NOT REACHED"); continue; }
     const r = await scan();
     const wide = r.docScrollW > r.docClientW + 1;

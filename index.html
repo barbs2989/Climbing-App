@@ -188,6 +188,23 @@
       .cm-stagger > *:nth-child(6){animation-delay:.2s} .cm-stagger > *:nth-child(n+7){animation-delay:.24s}
       /* Bottom sheets (rounded-top containers) slide up when they open */
       [style*="18px 18px 0 0"], [style*="16px 16px 0 0"] { animation: cm-slideup .28s cubic-bezier(.2,.8,.2,1) both; }
+      /* WHILE THE POLICY NOTICE IS UP, A POPUP ENDS AT ITS TOP EDGE (2026-11-23). The notice is fixed to the
+         bottom, above every layer, and cannot be dismissed, so a popup that ran to the bottom of the screen
+         had its last rows -- usually its Send or Save -- underneath it. App writes the notice's measured
+         height to --cm-policy-h and sets data-policy-notice on <html> (ClimbMatch.jsx); every popup is a
+         role="dialog" backdrop pinned with inset:0, so moving its bottom edge up shortens all of them.
+         check:bottom-panels reads both halves. On a phone the card already takes the backdrop's height
+         (the rules below); on the website a centred CARD keeps its own max-height (92vh), so it is capped
+         to the room that is left. Only a card: a full-page view (no align-items) scrolls its backdrop, and
+         capping its child would cut its sticky header loose. */
+      html[data-policy-notice] [role="dialog"] { bottom: var(--cm-policy-h, 0px) !important; }
+      /* The notice is the app's 520px column wide, so on a wider screen the shortened backdrop left a strip
+         of undimmed, tappable page either side of it. While a modal popup is open the strip is dimmed and
+         takes the taps, one layer under the notice (Z_TOAST - 1 in ClimbMatch.jsx). */
+      html[data-policy-notice]:has([role="dialog"][aria-modal="true"]) body::after { content: ""; position: fixed; left: 0; right: 0; bottom: 0; height: var(--cm-policy-h, 0px); background: rgba(0,0,0,0.88); z-index: 999998; }
+      @media (min-width: 1024px) {
+        html[data-policy-notice] [role="dialog"][style*="align-items"] > div { max-height: calc(100vh - var(--cm-policy-h, 0px) - 24px) !important; }
+      }
       /* On a phone a popup FILLS THE SCREEN (owner 2026-10-23: "I don't like how some popups only show
          on the bottom of the screen"). Every bottom sheet is the same markup -- a role="dialog" backdrop
          with align-items:flex-end whose single child is the sheet -- so one rule turns all of them into

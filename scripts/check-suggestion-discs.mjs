@@ -58,6 +58,7 @@ const fns = [
   extractFn(CORE, "function suggestLogWeight(", "suggestLogWeight"),
   extractFn(CORE, "function suggestionProfile(", "suggestionProfile"),
   extractFn(CORE, "function _suggHere(", "_suggHere"),
+  extractFn(CORE, "function _suggStatedVal(", "_suggStatedVal"),
   extractFn(CORE, "function suggestDiscSlots(", "suggestDiscSlots"),
 ].join("\n");
 
@@ -269,6 +270,16 @@ const check = (name, cond, detail) => {
     F.suggestDiscSlots(null, [], undefined, { alpine: "5.6" }, ["mountaineering"]).length === 1 && F.suggestDiscSlots(null, [], undefined, { alpine: "5.6" }, ["sport"]).length === 0);
   check("a LOGGED discipline the area has none of gives its slot up too",
     (() => { const x = F.suggestDiscSlots({ discs: [{ disc: "ice", src: "logged", n: 3, gradeVal: 0.4, avgGainFt: null }] }, [], undefined, { sport: "5.10a" }, ["sport"]); return x.length === 1 && x[0].disc === "sport"; })());
+  // Found by a REAL ACCOUNT on the live site: its one alpine log is graded on the ice scale, so the slot had no centre.
+  const noCentre = { discs: [{ disc: "alpine", src: "logged", n: 1, gradeVal: null, avgGainFt: 5000 }] };
+  const borrowed = F.suggestDiscSlots(noCentre, [], undefined, { alpine: "5.6" });
+  check("a logged discipline with no readable grade borrows the profile's, and stays a logged row",
+    borrowed.length === 1 && borrowed[0].src === "logged" && borrowed[0].gradeVal === F.ADDR_GRADES.alpine.indexOf("5.6") / F.ADDR_GRADES.alpine.length && borrowed[0].avgGainFt === 5000, JSON.stringify(borrowed));
+  check("...so that climber is no longer offered 5.10d and 5.11-",
+    names(F.rankSimilarRoutes([rt("hard", "alpine", "5.10d"), rt("harder", "alpine", "5.11-"), rt("ice", "alpine", "AI3"), rt("fit", "alpine", "5.6")], borrowed[0], { limit: 5 })) === "fit");
+  check("with no stated grade either, the slot still has no centre (unchanged)", F.suggestDiscSlots(noCentre, [], undefined, {})[0].gradeVal === null);
+  check("a logged grade that IS readable is never overwritten by the profile's",
+    F.suggestDiscSlots({ discs: [{ disc: "alpine", src: "logged", n: 2, gradeVal: 0.2, avgGainFt: null }] }, [], undefined, { alpine: "5.10a" })[0].gradeVal === 0.2);
   check("an unknown area (null) drops nothing", F.suggestDiscSlots(null, [], undefined, { ice: "WI4" }, null).length === 1);
 
   const sv = F.suggestDiscSlots(null, [rt("v", "ice", "WI4"), rt("v2", "sport", "5.9")], undefined, { sport: "5.11a" });

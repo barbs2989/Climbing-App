@@ -1,0 +1,714 @@
+[
+ {
+  "id": "wa_lincoln_peak_standard",
+  "name": "X Couloir (Southwest Face) / Standard Route",
+  "peakName": "Lincoln Peak",
+  "state": "Washington",
+  "discipline": "alpine",
+  "status": "held",
+  "peak": {
+   "id": "wa_lincoln_peak",
+   "name": "Lincoln Peak",
+   "lat": 48.768354,
+   "lng": -121.858532,
+   "elevation_ft": 9085,
+   "region": "North Cascades",
+   "path": "usa.washington.wa_northwest.wa_shuksan_baker_neighbors.wa_lincoln_peak"
+  },
+  "text": {
+   "approach": "The X Couloir is most directly approached from the south via the Middle Fork Nooksack River Road (FR-38); the less direct alternative starts at Heliotrope Ridge and reaches the southwest face through the Thunder Glacier cirque. Drive FR-38 toward its mile-12.5 switchback and start hiking/bushwhacking the old decommissioned road around Pt. 4481 toward Rankin Creek — snow travel (often by bike or snowshoe on the lower stretch) leads past East Rankin Lake (~5,120 ft) and up into the basin to a sheltered camp at treeline around 6,100 ft, near the highest trees in the basin below Seward Peak. From camp, an alpine start gets the team into the southwest basin and across the bergschrund crux while it's still cold and firm, climbing roughly 1,500 ft of 30-40° snow and a steep serac step in the X Couloir to the 9,085 ft summit. Total approach is on the order of 7 miles and 3,350 ft of gain to the basin camp. Important — access note: FR-38 (Middle Fork Nooksack River Road), damaged in the December 2025 floods, has been closed to vehicles at milepost 7 by a washout since 27 July 2026, with no end date given on the Mt. Baker-Snoqualmie National Forest alert still posted on 25 September 2026, and a separate seasonal gate at Wallace Creek (~mile 10) closes the road December 1-June 15 for elk calving; confirm current road status with the Mount Baker Ranger District (Glacier Public Service Center) before a trip, since the drivable road-end — and therefore the length of the approach — varies y",
+   "approach_logistics": "{\"peakLat\":48.76833,\"peakLng\":-121.85861,\"trailhead\":\"NF-38 (Forest Service Road 38) / Middle Fork Nooksack\",\"trailheadLat\":null,\"trailheadLng\":null,\"trailheadDirection\":\"From SR-542 about 3 miles east of Deming, turn right onto Mosquito Lake Road, go 4.8 miles, then turn left onto Middle Fork Road (FR-38) and follow it about 12.3 miles to where the road begins switchbacking uphill; park there, or sooner if snow stops you. Since July 2026 Forest Road 38 has been closed to vehicles by a washout at milepost 7.\"}",
+   "road": "{\"name\":\"Forest Road 38 (Middle Fork Nooksack / Wallace Creek Road)\",\"status\":\"First ~2 miles passable by passenger car; remaining ~10.5 miles to the mile-12.5 switchback are rough, potholed, and brushy — high-clearance/4WD recommended.\",\"walkMi\":5.5,\"driveNote\":\"Road condition and washout status can change year to year; call the Glacier Public Service Center for current beta before driving.\",\"seasonalGate\":\"Reported gated at Wallace Creek (about 1.3 miles before a nearby trailhead) roughly Dec 1-Jun 15 in some seasons to protect elk breeding habitat; exact Road 38 gate point varies by year\"}",
+   "overview": "Lincoln Peak's SW Face route, known as the 'X Couloir' (sometimes referenced as 'X Couloir – Emancipation Proclamation'), is the historic line up this seldom-climbed, seriously loose Black Buttes summit. First climbed by Fred Beckey, Wesley Grande, John Rupley, and Herb Staley on July 22, 1956, it was the only documented route to the summit until a 2015 first ascent opened a second line on the NW Face. Only about a dozen ascents are known; the peak is guarded by near-vertical walls on every side",
+   "description": null,
+   "descent": "Most parties reverse the ascent line, downclimbing and rappelling the same southwest gully/couloir system (the X Couloir) back down into the southwest basin below the face. This is a real rappelling descent, not a walk-off: the most detailed documented descent (a repeat/'2nd descent' trip report) describes 10 double-rope rappels — 4 off pickets placed by the descending party, 1 off a sling around "
+  },
+  "siblingTrailheads": [
+   {
+    "route": "wa_lincoln_peak_north_ridge",
+    "name": "Heliotrope Ridge Trailhead"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Heliotrope Ridge Trailhead",
+    "lat": 48.802236,
+    "lng": -121.89559,
+    "km": 4.6
+   },
+   {
+    "src": "USFS",
+    "name": "Middle Fork Nooksack Trailhead",
+    "lat": 48.726672,
+    "lng": -121.900293,
+    "km": 5.6
+   },
+   {
+    "src": "USFS",
+    "name": "Park Butte Trailhead",
+    "lat": 48.707228,
+    "lng": -121.811323,
+    "km": 7.6
+   },
+   {
+    "src": "USFS",
+    "name": "Elbow Lake Trailhead",
+    "lat": 48.681054,
+    "lng": -121.895073,
+    "km": 10.1
+   },
+   {
+    "src": "USFS",
+    "name": "Boulder Ridge Trailhead",
+    "lat": 48.735219,
+    "lng": -121.710284,
+    "km": 11.5
+   },
+   {
+    "src": "USFS",
+    "name": "Skyline Divide Trailhead",
+    "lat": 48.880839,
+    "lng": -121.863348,
+    "km": 12.5
+   },
+   {
+    "src": "USFS",
+    "name": "Blue Lake/Dock Butte Trailhead",
+    "lat": 48.654167,
+    "lng": -121.784477,
+    "km": 13.8
+   },
+   {
+    "src": "USFS",
+    "name": "Boyd Creek",
+    "lat": 48.900561,
+    "lng": -121.863348,
+    "km": 14.7
+   }
+  ],
+  "lastAnswer": {
+   "status": "stuck",
+   "trailhead": null,
+   "notes": "Two equally cited starts: Heliotrope Ridge TH (Wikipedia: SW face via Thunder Glacier cirque from Heliotrope Ridge Trail; USFS 48.802236,-121.89559) and the FR-38 Middle Fork Nooksack road (route's own text calls this the direct one; Wikipedia also names it as alternate; road-end near mile-12.5 switchback unplaceable, FR-38 closed at milepost 7 since July 2026; USFS Middle Fork Nooksack TH 48.726672,-121.900293 is another candidate). Left for owner decision."
+  }
+ },
+ {
+  "id": "wa_little_annapurna_boola_boola_buttress",
+  "name": "Boola Boola Buttress",
+  "peakName": "Little Annapurna",
+  "state": "Washington",
+  "discipline": "alpine",
+  "status": "nopage",
+  "peak": {
+   "id": "wa_little_annapurna",
+   "name": "Little Annapurna",
+   "lat": 47.468226,
+   "lng": -120.814335,
+   "elevation_ft": 8485,
+   "region": "Washington",
+   "path": "usa.washington.wa_centraleast.wa_stuart_range.wa_little_annapurna"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "siblingTrailheads": [
+   {
+    "route": "wa_little_annapurna_south_slopes",
+    "name": "Stuart Lake Trailhead"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Stuart Lake Trailhead",
+    "lat": 47.527806,
+    "lng": -120.820515,
+    "km": 6.6
+   },
+   {
+    "src": "USFS",
+    "name": "Eightmile Trailhead",
+    "lat": 47.536016,
+    "lng": -120.814025,
+    "km": 7.5
+   },
+   {
+    "src": "USFS",
+    "name": "Beverly Bean Trailhead",
+    "lat": 47.389302,
+    "lng": -120.872266,
+    "km": 9.8
+   },
+   {
+    "src": "USFS",
+    "name": "Esmeralda Trailhead",
+    "lat": 47.436706,
+    "lng": -120.936915,
+    "km": 9.9
+   },
+   {
+    "src": "USFS",
+    "name": "Iron Peak Trailhead",
+    "lat": 47.421583,
+    "lng": -120.937341,
+    "km": 10.6
+   },
+   {
+    "src": "USFS",
+    "name": "Ingalls Creek Trailhead",
+    "lat": 47.462906,
+    "lng": -120.673025,
+    "km": 10.6
+   },
+   {
+    "src": "USFS",
+    "name": "Miller-bear Trailhead",
+    "lat": 47.368606,
+    "lng": -120.784615,
+    "km": 11.3
+   },
+   {
+    "src": "USFS",
+    "name": "Stafford Creek Trailhead",
+    "lat": 47.365806,
+    "lng": -120.803615,
+    "km": 11.4
+   }
+  ],
+  "lastAnswer": {
+   "status": "stuck",
+   "trailhead": null,
+   "notes": "No readable page about this buttress (CascadeClimbers/Mountaineers/SummitPost 403; WebSearch results name no Boola Boola). Peak standard route uses Stuart Lake TH (WTA prints 47.5280,-120.8207) but that is the hiking route, not shown to apply here. Not assumed."
+  }
+ },
+ {
+  "id": "wa_little_big_chief_mountain_southwest_face",
+  "name": "Southwest Face",
+  "peakName": "Little Big Chief Mountain",
+  "state": "Washington",
+  "discipline": "alpine",
+  "status": "nopage",
+  "peak": {
+   "id": "wa_little_big_chief_mountain",
+   "name": "Little Big Chief Mountain",
+   "lat": 47.5296806,
+   "lng": -121.2566659,
+   "elevation_ft": 7225,
+   "region": "Washington",
+   "path": "usa.washington.wa_centralwest.wa_western_alpine_lakes.wa_little_big_chief_mountain"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "siblingTrailheads": [
+   {
+    "route": "wa_little_big_chief_mountain_northeast_face",
+    "name": "Dingford Creek (Dutch Miller Gap) Trailhead"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Pete Lake Trailhead",
+    "lat": 47.434106,
+    "lng": -121.186915,
+    "km": 11.8
+   },
+   {
+    "src": "USFS",
+    "name": "Tucquala Meadows Trailhead",
+    "lat": 47.543506,
+    "lng": -121.096615,
+    "km": 12.1
+   },
+   {
+    "src": "USFS",
+    "name": "West Fork Foss Lakes Trailhead",
+    "lat": 47.635006,
+    "lng": -121.303348,
+    "km": 12.2
+   },
+   {
+    "src": "USFS",
+    "name": "Dorothy Lake Trailhead",
+    "lat": 47.608617,
+    "lng": -121.384459,
+    "km": 13
+   },
+   {
+    "src": "USFS",
+    "name": "Paddy-Go-Easy Trailhead",
+    "lat": 47.532873,
+    "lng": -121.082797,
+    "km": 13.1
+   },
+   {
+    "src": "USFS",
+    "name": "Rachel Lake Trailhead",
+    "lat": 47.400706,
+    "lng": -121.283915,
+    "km": 14.5
+   },
+   {
+    "src": "USFS",
+    "name": "Dingford Creek Trailhead",
+    "lat": 47.517325,
+    "lng": -121.4543,
+    "km": 14.9
+   },
+   {
+    "src": "USFS",
+    "name": "Scatter Creek Trailhead",
+    "lat": 47.507206,
+    "lng": -121.059815,
+    "km": 15
+   }
+  ],
+  "lastAnswer": {
+   "status": "stuck",
+   "trailhead": null,
+   "notes": "No page describes the southwest face. Other pages describe NW face (Dingford Creek), north ridge via Waptus Lake, and Dutch Miller Gap; the SW face start could be any. Not assumed."
+  }
+ },
+ {
+  "id": "wa_lundin_peak_northwest_face",
+  "name": "Northwest Face",
+  "peakName": "Lundin Peak",
+  "state": "Washington",
+  "discipline": "alpine",
+  "status": "nopage",
+  "peak": {
+   "id": "wa_lundin_peak",
+   "name": "Lundin Peak",
+   "lat": 47.4628774,
+   "lng": -121.400379,
+   "elevation_ft": 6057,
+   "region": "Washington",
+   "path": "usa.washington.wa_centralwest.wa_snoqualmie_pass_area.wa_lundin_peak"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "siblingTrailheads": [
+   {
+    "route": "wa_lundin_peak_east_ridge",
+    "name": "PCT North (Snoqualmie Pass) Trailhead"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Snow Lake Trailhead",
+    "lat": 47.445656,
+    "lng": -121.423665,
+    "km": 2.6
+   },
+   {
+    "src": "USFS",
+    "name": "Pacific Crest Trail - Snoqualmie North T",
+    "lat": 47.428012,
+    "lng": -121.413484,
+    "km": 4
+   },
+   {
+    "src": "USFS",
+    "name": "Pacific Crest Trail/Stevens Pass Trailhe",
+    "lat": 47.42841,
+    "lng": -121.415498,
+    "km": 4
+   },
+   {
+    "src": "USFS",
+    "name": "Pants - Snoqualmie South Trailhead",
+    "lat": 47.427228,
+    "lng": -121.420293,
+    "km": 4.2
+   },
+   {
+    "src": "USFS",
+    "name": "Denny Creek Trailhead",
+    "lat": 47.415956,
+    "lng": -121.441168,
+    "km": 6.1
+   },
+   {
+    "src": "USFS",
+    "name": "Franklin Falls Trailhead",
+    "lat": 47.413339,
+    "lng": -121.441404,
+    "km": 6.3
+   },
+   {
+    "src": "USFS",
+    "name": "Kendall Peaks Trailhead",
+    "lat": 47.398249,
+    "lng": -121.394411,
+    "km": 7.2
+   },
+   {
+    "src": "USFS",
+    "name": "Dingford Creek Trailhead",
+    "lat": 47.517325,
+    "lng": -121.4543,
+    "km": 7.3
+   }
+  ],
+  "lastAnswer": {
+   "status": "stuck",
+   "trailhead": null,
+   "notes": "No page about a northwest face (search found only west ridge, southeast ridge, a low-5th north-side face). Snoqualmie Pass PCT lot is the usual access to the whole peak but nothing ties this face to it; weak inference only. Mountaineers/SummitPost pages 403."
+  }
+ },
+ {
+  "id": "wa_middle_peak_north_face",
+  "name": "North Face",
+  "peakName": "Middle Peak",
+  "state": "Washington",
+  "discipline": "alpine",
+  "status": "nopage",
+  "peak": {
+   "id": "wa_middle_peak",
+   "name": "Middle Peak",
+   "lat": 48.30639,
+   "lng": -120.99403,
+   "elevation_ft": 8185,
+   "region": "Washington",
+   "path": "usa.washington.wa_northwest.wa_glacier_peak_region.wa_glacier_peak_wilderness.wa_gunsight_range_the.wa_middle_peak"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "siblingTrailheads": [
+   {
+    "route": "wa_east_face",
+    "name": "Downey Creek Trailhead"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Suiattle Trailhead",
+    "lat": 48.248106,
+    "lng": -121.192115,
+    "km": 16
+   },
+   {
+    "src": "USFS",
+    "name": "Downey Creek Trailhead",
+    "lat": 48.259506,
+    "lng": -121.222915,
+    "km": 17.7
+   },
+   {
+    "src": "USFS",
+    "name": "Green Mountain Trailhead",
+    "lat": 48.268149,
+    "lng": -121.236861,
+    "km": 18.5
+   },
+   {
+    "src": "NPS",
+    "name": "Imus Creek Loop Trail Trailhead",
+    "lat": 48.3085,
+    "lng": -120.65601,
+    "km": 25
+   }
+  ],
+  "lastAnswer": {
+   "status": "stuck",
+   "trailhead": null,
+   "notes": "No page about the north face. The one page read (WildSnow, about Middle Gunsight SW ridge and east face) approaches from Stehekin side, not Downey Creek, so the sibling Downey Creek lead is doubtful; but it does not cover the north face. Stuck."
+  }
+ },
+ {
+  "id": "wa_middle_peak_traverse_route",
+  "name": "Traverse Route",
+  "peakName": "Middle Peak",
+  "state": "Washington",
+  "discipline": "alpine",
+  "status": "nopage",
+  "peak": {
+   "id": "wa_middle_peak",
+   "name": "Middle Peak",
+   "lat": 48.30639,
+   "lng": -120.99403,
+   "elevation_ft": 8185,
+   "region": "Washington",
+   "path": "usa.washington.wa_northwest.wa_glacier_peak_region.wa_glacier_peak_wilderness.wa_gunsight_range_the.wa_middle_peak"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "siblingTrailheads": [
+   {
+    "route": "wa_east_face",
+    "name": "Downey Creek Trailhead"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Suiattle Trailhead",
+    "lat": 48.248106,
+    "lng": -121.192115,
+    "km": 16
+   },
+   {
+    "src": "USFS",
+    "name": "Downey Creek Trailhead",
+    "lat": 48.259506,
+    "lng": -121.222915,
+    "km": 17.7
+   },
+   {
+    "src": "USFS",
+    "name": "Green Mountain Trailhead",
+    "lat": 48.268149,
+    "lng": -121.236861,
+    "km": 18.5
+   },
+   {
+    "src": "NPS",
+    "name": "Imus Creek Loop Trail Trailhead",
+    "lat": 48.3085,
+    "lng": -120.65601,
+    "km": 25
+   }
+  ],
+  "lastAnswer": {
+   "status": "stuck",
+   "trailhead": null,
+   "notes": "No page; a traverse has no single start. See North Face note (Stehekin-side approach for Gunsight peaks)."
+  }
+ },
+ {
+  "id": "wa_mixup_peak_pbs_late_night_special",
+  "name": "PBS Late Night Special",
+  "peakName": "Mix-up Peak",
+  "state": "Washington",
+  "discipline": "alpine",
+  "status": "held",
+  "peak": {
+   "id": "wa_mixup_peak",
+   "name": "Mix-up Peak",
+   "lat": 48.4539,
+   "lng": -121.0604,
+   "elevation_ft": 7440,
+   "region": "Washington",
+   "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_north_cascades_core.wa_mixup_peak"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "siblingTrailheads": [
+   {
+    "route": "wa_mix_up_peak_east_face",
+    "name": "Cascade Pass Trailhead"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Hidden Lake Trailhead",
+    "lat": 48.514161,
+    "lng": -121.221581,
+    "km": 13.6
+   },
+   {
+    "src": "USFS",
+    "name": "Lookout Mountain Trailhead",
+    "lat": 48.537501,
+    "lng": -121.291755,
+    "km": 19.4
+   },
+   {
+    "src": "USFS",
+    "name": "Easy Pass Trailhead",
+    "lat": 48.587206,
+    "lng": -120.801615,
+    "km": 24.1
+   },
+   {
+    "src": "USFS",
+    "name": "Green Mountain Trailhead",
+    "lat": 48.268149,
+    "lng": -121.236861,
+    "km": 24.4
+   },
+   {
+    "src": "USFS",
+    "name": "Downey Creek Trailhead",
+    "lat": 48.259506,
+    "lng": -121.222915,
+    "km": 24.7
+   },
+   {
+    "src": "USFS",
+    "name": "Suiattle Trailhead",
+    "lat": 48.248106,
+    "lng": -121.192115,
+    "km": 24.9
+   },
+   {
+    "src": "USFS",
+    "name": "Rainy Pass Trailhead (PCT North)",
+    "lat": 48.515306,
+    "lng": -120.736025,
+    "km": 24.9
+   },
+   {
+    "src": "USFS",
+    "name": "Heather Maple Pass Trailhead Rainy Pass ",
+    "lat": 48.516606,
+    "lng": -120.735815,
+    "km": 24.9
+   }
+  ],
+  "lastAnswer": {
+   "status": "found",
+   "trailhead": {
+    "name": "Cascade Pass Trailhead",
+    "identifiedBy": {
+     "kind": "page",
+     "url": "https://www.wta.org/go-hiking/hikes/cascade-pass",
+     "fact": "WTA page ties Mixup Peak and the Ptarmigan Traverse to the Cascade Pass road-end lot; INFERRED, the PBS report (CascadeClimbers 108657) returned 403 and never named the lot per earlier pass"
+    },
+    "placements": [
+     {
+      "source": "WTA",
+      "name": "Cascade Pass trailhead",
+      "lat": 48.4754,
+      "lng": -121.0751,
+      "url": "https://www.wta.org/go-hiking/hikes/cascade-pass"
+     }
+    ]
+   },
+   "notes": "WEAK/inferred: no opened page is about this route's own start; Cascade Pass is the only road-end for Mixup (Mountaineers summary: 3.5 mi trail to pass, then Mixup Arm). No USFS/NPS candidate. OSM by name 'Cascade Pass Trailhead'."
+  }
+ },
+ {
+  "id": "wa_mount_chaval_north_ridge",
+  "name": "North Ridge",
+  "peakName": "Mount Chaval",
+  "state": "Washington",
+  "discipline": "alpine",
+  "status": "nopage",
+  "peak": {
+   "id": "wa_mount_chaval",
+   "name": "Mount Chaval",
+   "lat": 48.376055,
+   "lng": -121.325415,
+   "elevation_ft": 7127,
+   "region": "North Cascades / Stehekin",
+   "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_north_cascades_core.wa_mount_chaval"
+  },
+  "text": {
+   "approach": "Shares the same general approach drainage as the West Route (Jug Creek/Bluff Lake/Cliff Lake benches) to gain the west side of the mountain, then continues around/up to the base of the north ridge rather than the west-ridge saddle system.",
+   "approach_logistics": null,
+   "road": "{\"name\":\"Grade Creek Road (FR #2642/#2643) off Illabot Creek Road (FR-16)\",\"status\":\"Unpaved forest spur road; final approach section is an abandoned/unmaintained spur\",\"driveNote\":\"Same general access as the West Route via Illabot Creek Road off SR-530 north of Darrington.\",\"seasonalGate\":null}",
+   "overview": "A roughly 1,500-ft alpine rock route up Chaval's north ridge: mostly moderate 3rd/4th-class scrambling on solid, well-fractured granitic rock, with two harder pitches on the steepest section near the top.",
+   "description": null,
+   "descent": "Parties commonly traverse off the summit and descend the West Route's ramp/heather line rather than downclimbing the North Ridge."
+  },
+  "siblingTrailheads": [
+   {
+    "route": "wa_mount_chaval_scramble",
+    "name": "Arrow Creek switchback (Illabot Creek Road / FR-16)"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Huckleberry Mtn Trailhead",
+    "lat": 48.270539,
+    "lng": -121.349723,
+    "km": 11.9
+   },
+   {
+    "src": "USFS",
+    "name": "Green Mountain Trailhead",
+    "lat": 48.268149,
+    "lng": -121.236861,
+    "km": 13.7
+   },
+   {
+    "src": "USFS",
+    "name": "Downey Creek Trailhead",
+    "lat": 48.259506,
+    "lng": -121.222915,
+    "km": 15
+   },
+   {
+    "src": "USFS",
+    "name": "Hidden Lake Trailhead",
+    "lat": 48.514161,
+    "lng": -121.221581,
+    "km": 17.2
+   },
+   {
+    "src": "USFS",
+    "name": "Suiattle Trailhead",
+    "lat": 48.248106,
+    "lng": -121.192115,
+    "km": 17.3
+   },
+   {
+    "src": "USFS",
+    "name": "Lookout Mountain Trailhead",
+    "lat": 48.537501,
+    "lng": -121.291755,
+    "km": 18.1
+   },
+   {
+    "src": "USFS",
+    "name": "Meadow Mountain Trailhead",
+    "lat": 48.189381,
+    "lng": -121.370989,
+    "km": 21
+   },
+   {
+    "src": "USFS",
+    "name": "Crystal Creek Trailhead",
+    "lat": 48.174326,
+    "lng": -121.468355,
+    "km": 24.8
+   }
+  ],
+  "lastAnswer": {
+   "status": "stuck",
+   "trailhead": null,
+   "notes": "SummitPost (403) and CascadeClimbers pages unreadable. Only readable page (turns-all-year, West face) starts from the car on Illabot Road, no named lot. A 2017 SummitPost log (search summary only) says a party found the North Ridge too ambitious in a day and used the Illabot approach instead. Grade Creek spur may be undrivable. No page ties the North Ridge to a start."
+  }
+ }
+]

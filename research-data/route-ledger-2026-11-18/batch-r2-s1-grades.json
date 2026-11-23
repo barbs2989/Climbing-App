@@ -1,0 +1,188 @@
+{
+ "wa_stick_boy": {
+  "area": "wa_substation",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/108512054/stick-boy",
+    "https://rakkup.com/guidebook/exit-38-rock-climbing/substation/s11465",
+    "https://www.thecrag.com/en/climbing/united-states/central-cascade-mountains/route/21056275",
+    "https://www.thecrag.com/en/climbing/united-states/central-cascade-mountains/area/19195489"
+   ]
+  },
+  "ledger": [],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_stick_boy",
+    "column": "grade",
+    "from": "5.11+",
+    "to": "5.12a",
+    "why": "Majority of independent publishers: the Exit 38 guidebook (Kutzke & Price, on Rakkup) and theCrag both give 5.12a; only Mountain Project gives 5.11+. agree-2 (guide + theCrag); lock grade 5.12a after apply.",
+    "evidence": [
+     "https://rakkup.com/guidebook/exit-38-rock-climbing/substation/s11465",
+     "https://www.thecrag.com/en/climbing/united-states/central-cascade-mountains/route/21056275"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_stick_boy",
+    "column": "grade_num",
+    "from": 11.75,
+    "to": 12.25,
+    "why": "Moves with the grade: gradeNumFrom('5.12a') in lib/grade.js = 12.25.",
+    "evidence": [
+     "https://rakkup.com/guidebook/exit-38-rock-climbing/substation/s11465",
+     "https://www.thecrag.com/en/climbing/united-states/central-cascade-mountains/route/21056275"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "Resolved: 5.12a. Guide 5.12a (1 star, Sport); theCrag 5.12a (grade cited by its contributor Chad Hoggard, no source credited); Mountain Project 5.11+. rock_grade is null, so nothing else moves."
+ },
+ "wa_namby_pamby": {
+  "area": "wa_substation",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/107616268/namby-pamby",
+    "https://rakkup.com/guidebook/exit-38-rock-climbing/namby-pamby/c25558",
+    "https://rakkup.com/guidebook/exit-38-rock-climbing/substation/s11465",
+    "https://www.thecrag.com/en/climbing/united-states/central-cascade-mountains/route/21056467"
+   ]
+  },
+  "ledger": [],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_namby_pamby",
+    "column": "grade",
+    "from": "5.10b",
+    "to": "5.10c",
+    "why": "Majority of independent publishers: the Exit 38 guidebook (Kutzke & Price, on Rakkup) and theCrag both give 5.10c; only Mountain Project gives 5.10b. agree-2 (guide + theCrag); lock grade 5.10c after apply.",
+    "evidence": [
+     "https://rakkup.com/guidebook/exit-38-rock-climbing/namby-pamby/c25558",
+     "https://www.thecrag.com/en/climbing/united-states/central-cascade-mountains/route/21056467"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_namby_pamby",
+    "column": "grade_num",
+    "from": 10.5,
+    "to": 10.75,
+    "why": "Moves with the grade: gradeNumFrom('5.10c') in lib/grade.js = 10.75.",
+    "evidence": [
+     "https://rakkup.com/guidebook/exit-38-rock-climbing/namby-pamby/c25558",
+     "https://www.thecrag.com/en/climbing/united-states/central-cascade-mountains/route/21056467"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "Resolved: 5.10c. Guide 5.10c (2 stars, Sport); theCrag assigned grade 5.10c (one climber's suggested grade there is 5.10b, colour only); Mountain Project 5.10b."
+ },
+ "wa_turf_safari": {
+  "area": "wa_substation",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/106589599/turf-safari",
+    "https://rakkup.com/guidebook/exit-38-rock-climbing/substation/s11465",
+    "https://www.thecrag.com/en/climbing/united-states/central-cascade-mountains/route/21056179"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.7",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106589599/turf-safari",
+      "fact": "5.7 YDS",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://www.thecrag.com/en/climbing/united-states/central-cascade-mountains/route/21056179",
+      "fact": "Turf Safari 5.7, Sport (assigned grade)",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [],
+  "disputed": [
+   "grade: the Exit 38 guidebook (Rakkup) gives 5.7+; Mountain Project and theCrag give 5.7. Majority kept 5.7 (stored)."
+  ],
+  "notes": "Resolved: 5.7 stays, locked by Mountain Project + theCrag."
+ },
+ "wa_crack_n_the_code": {
+  "area": "wa_a_main_wall_west",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/107525212/crackn-the-code",
+    "https://rakkup.com/guidebook/mt-erie-rock-climbing/crackn'-the-code/c28763",
+    "https://www.thecrag.com/en/climbing/united-states/mount-erie/route/4515062082"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.7",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://rakkup.com/guidebook/mt-erie-rock-climbing/crackn'-the-code/c28763",
+      "fact": "Crackn' the Code 5.7, Trad, 1 star (Mt. Erie Climbing, Kloke, Thompson & Bryant)",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://www.thecrag.com/en/climbing/united-states/mount-erie/route/4515062082",
+      "fact": "Crack'n The Code 5.7, Trad, 40 ft (assigned grade)",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [],
+  "disputed": [
+   "grade: Mountain Project gives 5.7+; the Mt. Erie guidebook (Rakkup) and theCrag give 5.7. Majority kept 5.7 (stored)."
+  ],
+  "notes": "Resolved: 5.7 stays, locked by the guide + theCrag. theCrag also gives 40 ft, Trad (length_m 12 already set by batch R from MP; theCrag's 40 ft agrees, but not ledgered here since s1's scope is grade/discipline). The Mt. Erie guide is co-written by Dallas Kloke, whom MP names in the FA (s2's item)."
+ },
+ "wa_glom_don": {
+  "area": "wa_substation",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/106810822/glom-don",
+    "https://rakkup.com/guidebook/exit-38-rock-climbing/glom-don/c25568",
+    "https://rakkup.com/guidebook/exit-38-rock-climbing/substation/s11465",
+    "https://www.thecrag.com/en/climbing/united-states/central-cascade-mountains/route/21056755"
+   ]
+  },
+  "ledger": [],
+  "sql_fixes": [],
+  "disputed": [
+   "grade: three sources, three grades: Mountain Project 5.8- (stored), the Exit 38 guidebook (Rakkup) 5.7+, theCrag 5.7. No two agree; HELD, stored 5.8- left unlocked."
+  ],
+  "notes": "Still HELD. Also a catalog defect (variation of Glob Job, per batch R), so no grade fix would be proposed on it anyway."
+ },
+ "wa_primordial_blues": {
+  "area": "wa_substation",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/107783741/primordial-blues",
+    "https://rakkup.com/guidebook/exit-38-rock-climbing/primordial-blues/c25561",
+    "https://www.thecrag.com/en/climbing/united-states/central-cascade-mountains/route/21056563"
+   ]
+  },
+  "ledger": [],
+  "sql_fixes": [],
+  "disputed": [
+   "discipline: the Exit 38 guidebook (Rakkup) labels it Toprope; Mountain Project (2 bolts, very high first bolt) and theCrag label it Sport. Majority kept sport (stored)."
+  ],
+  "notes": [
+   "Resolved by majority: sport. Caveat for the owner: theCrag's page gives only the style tag (no bolt count or description), and every route on that wall is tagged Sport there, so the tag may be a wall default. If the owner thinks that too weak, drop this ledger entry and leave the field held. The grade 5.9 is already locked.",
+   "Orchestrator: discipline lock dropped and held. theCrag's Sport tag may be a wall default, and the guide says toprope."
+  ]
+ }
+}

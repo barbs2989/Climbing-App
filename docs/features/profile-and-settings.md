@@ -34,6 +34,13 @@ profile can also open as `FullProfile` and `Resume` overlays from anywhere (part
   ticked skill; the profile prints *practiced Mar 2026* beside the skill, and on your OWN profile *time for a refresher*
   after `REFRESH_MONTHS` (12, `lib/skillPractice.js`). Nothing is sent or pushed. A vouch with skills ticked can also say
   *We practiced these together* on a date (`practicedOn` in the vouch's JSON, no column): a practice record, never a rating.
+  **How climbers will see you** (the card at the foot of the editor, 2026-11-23): everything public the draft holds, as
+  the profile words it: photo, name or @username, home, level, years, gender and pronouns, bio, disciplines (by label),
+  grades, then Availability, Certifications (with expiry), Belay devices and Skills, each skill with *practiced Mar 2026*
+  when a month is set. An empty section is left out and named in one *Not on your profile yet* line. The refresher hint
+  is not drawn (only you see it), nor the zip or emergency contact (nobody does). Until then it stopped at the grades.
+  **Years climbing on the profile header** (2026-11-23): `FullProfile`'s header line reads *home · Nyr exp · gender ·
+  distance*, from `climbing_since` (`yearsSince`), as the Profile tab's own header, the résumé and the partner card do.
   - **Home city + state are a LABEL, never geocoded.** The city is free text with a `US_CITIES` datalist; the state comes
     from the dropdown. They show on your profile and partner rows, and the state orders namesakes in search
     (`homeStatePath`). They place you nowhere: partner and crew distance come only from the zip.
@@ -125,6 +132,10 @@ profile can also open as `FullProfile` and `Resume` overlays from anywhere (part
   When the Terms or Privacy Policy change, a signed-in account sees `PolicyUpdateNotice` pinned to the bottom (Read Terms ·
   Read Privacy · I accept; not dismissible). *I accept* records the version (`acceptCurrentPolicy`) and then closes the notice
   AND any document it opened, returning the climber to the app.
+  While it is up it covers nothing a climber needs: the page reserves its height (`#appscroll`'s `paddingBottom`), and every popup ends at its
+  top edge (2026-11-23). App writes the measured height to `--cm-policy-h` and sets `data-policy-notice` on `<html>`; one rule in `index.html`
+  moves the bottom of every `role="dialog"` backdrop up by that much, caps a centred card to the room left on the website, and dims the strip
+  of page beside the 520px notice while a modal popup is open. Before that the notice sat on the foot of every sheet (its Send or Save).
   The Accessibility document (`lib/LegalView.jsx`, its own `ACCESS_UPDATED` date) ends in a *Report an accessibility problem* form
   (`AccessReportForm` → `fileAccessibilityReport` → `file_accessibility_report()`, 0343/0354). A signed-out visitor can file one
   too, with an email to reply to: the sign-in screen links to the statement ("Accessibility — report a problem", `lib/AuthModal.jsx`),

@@ -20,6 +20,8 @@ export interface TopoModalLine extends TopoLine {
   variant_labels?: (string | null)[] | null;
   /** The signed-in climber drew it: Edit and Delete are offered. */
   mine?: boolean;
+  /** visible / held / removed (0492); a line that is not visible is only ever sent to its author. */
+  moderation?: string | null;
 }
 /** A topo photo as the viewer takes it. */
 export interface TopoModalPhoto {
@@ -32,6 +34,10 @@ export interface TopoModalPhoto {
   saveEntry?: SavedMediaEntry | null;
   /** Other climbers have drawn on it, so its uploader cannot take it down. */
   othersDrew?: boolean;
+  /** The signed-in climber posted it: no Report control on your own photo. */
+  mine?: boolean;
+  /** visible / held / removed (0263). */
+  moderation?: string | null;
 }
 /** Where this topo sits among the route's topos, and the buttons that step through them. */
 export interface TopoModalPos {
@@ -54,13 +60,20 @@ export interface TopoPhotoModalProps {
   /** Each delete resolves true once it landed (the viewer then goes back to the first line). */
   onDeleteLine?: ((photo: TopoModalPhoto, line: TopoModalLine) => Promise<boolean>) | null;
   onDeletePhoto?: ((photo: TopoModalPhoto) => Promise<boolean>) | null;
+  /** Opens the report sheet for the photo ("topo") or for the line on show ("topo_line"); without it there is no Report control. */
+  onReport?: ((kind: "topo" | "topo_line", id: string | number, label: string) => void) | null;
+  /** Opens the appeal sheet for the climber's own held or removed photo or line. */
+  onAppeal?: ((kind: "topo" | "topo_line", id: string | number, label: string) => void) | null;
 }
 
 /**
  * The enlarged topo: the zooming photo with its drawn line, then the caption, the key and the buttons to edit or delete.
  * A portalled dialog over the page. Reads `C` at render time. Moved verbatim from RouteDetail.jsx; only the types were added.
  */
-export default function TopoPhotoModal({photo,pos,onClose,onDraw,onDescribe,onCaption,onEditLine,onDeleteLine,onDeletePhoto}: TopoPhotoModalProps){
+export default function TopoPhotoModal({photo,pos,onClose,onDraw,onDescribe,onCaption,onEditLine,onDeleteLine,onDeletePhoto,onReport,onAppeal}: TopoPhotoModalProps){
+  /* What ClimbMatch Safety did to the climber's OWN photo or line, in the words Comments and messages use, with the way to ask for another look. */
+  const modNote=function(kind: "topo"|"topo_line",id: string|number|undefined,state: string|null|undefined,what: string){if(!state||state==="visible")return null;return <div style={{fontSize:12,fontWeight:700,color:C.amber,lineHeight:1.45,marginBottom:10}}>{(state==="removed"?"This "+what+" was removed by ClimbMatch Safety — only you can see it.":"This "+what+" is hidden while ClimbMatch Safety reviews it — only you can see it.")}{(onAppeal&&id!=null)?<button onClick={function(){onAppeal(kind,id,"this "+what+"’s removal");}} style={{background:"none",border:"none",padding:"0 0 0 6px",color:C.amber,fontSize:12,fontWeight:700,textDecoration:"underline",cursor:"pointer"}}>Ask for another look</button>:null}</div>;};
+  const linkBtn={background:"none",border:"none",padding:"12px 14px 0 0",color:C.textMuted,fontSize:12.5,fontWeight:700,cursor:"pointer"} as const;
   const [altIdx,setAltIdx]=useState(0);const [editCap,setEditCap]=useState(false);
   const active=photo.lines[altIdx]||null;const [delBusy,setDelBusy]=useState(false);
   const del=function(fn: () => Promise<boolean>){if(delBusy)return;setDelBusy(true);fn().then(function(ok){setDelBusy(false);if(ok)setAltIdx(0);});};
@@ -85,6 +98,8 @@ export default function TopoPhotoModal({photo,pos,onClose,onDraw,onDescribe,onCa
           `inset:0` box IS the painted photo at 1x; TopoZoomPhoto sizes the layer for any zoom. */}
       <TopoZoomPhoto photo={photo} active={active}/>
       <div style={{padding:"12px 14px"}}>
+        {modNote("topo",photo.id,photo.moderation,"photo")}
+        {active?modNote("topo_line",active.id,active.moderation,"line"):null}
         {editCap&&onCaption?<TopoCaptionBox key={photo.id} initial={photo.caption} onSave={function(t){return onCaption(photo,t);}} style={{marginBottom:12}}/>:<TopoCaption key={photo.id} text={photo.caption}/>}
         {(onCaption&&!editCap)?<button onClick={function(){setEditCap(true);}} style={{background:"none",border:"none",padding:"0 0 10px",color:C.blue,fontSize:12.5,fontWeight:700,cursor:"pointer"}}>{photo.caption?"Edit caption":"+ Add a caption"}</button>:null}
         {photo.saveEntry?<SaveOfflineChip key={photo.url} entry={photo.saveEntry} style={{marginBottom:12}}/>:null}
@@ -103,6 +118,8 @@ export default function TopoPhotoModal({photo,pos,onClose,onDraw,onDescribe,onCa
         {onDeletePhoto?(photo.othersDrew
           ?<div style={{fontSize:11.5,color:C.textMuted,lineHeight:1.45,marginTop:10}}>Other climbers have drawn their lines on this photo, so it stays up for them.</div>
           :<button onClick={function(){del(function(){return onDeletePhoto(photo);});}} disabled={delBusy} style={{background:"none",border:"none",padding:"12px 0 0",color:C.red,fontSize:12.5,fontWeight:700,cursor:delBusy?"default":"pointer"}}>{delBusy?"Deleting…":"Delete this photo"}</button>):null}
+        {/* Never on your own: report_content refuses it, and Edit / Delete are what you have instead. */}
+        {onReport?<div>{!photo.mine?<button onClick={function(){onReport("topo",photo.id,"this topo photo");}} style={linkBtn}>Report this photo</button>:null}{(active&&!active.mine&&active.id!=null)?<button onClick={function(){onReport("topo_line",active.id as string|number,"this line");}} style={linkBtn}>Report this line</button>:null}</div>:null}
       </div>
     </div>
   </div>,document.body);
