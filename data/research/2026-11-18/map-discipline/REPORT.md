@@ -493,3 +493,32 @@ No agents. Two written (`batch-r13.json`, unconfirmed, verified on re-read):
   published points), Sugarloaf (OSM lot 700 m from the published point, and the Route 27 start is still
   named).
 - **Audit, measured:** SUMMIT_ONLY 127, NO_SUMMIT 40, TRAILHEAD_AND_SUMMIT 1074.
+
+### Round 14: route-text scan, no writes (2026-11-23)
+
+The text of all 127 open routes was scanned for a named start. Leads only: North Star Cloudy Peak traverse
+(Phelps Creek), Tupshin East Face (Company Creek), Mount Triumph West Route (Thornton Lakes, no outside
+page). WTA trip-report pages now answer a browser user agent (HTTP 200); earlier rounds were refused. The
+WTA per-hike report listing is drawn by JavaScript, so reports have to be found by search.
+
+### Round 15: one route-specific report, no dissent (2026-11-23)
+
+The owner accepted a lower bar: one opened report about the route itself is enough when no opened source
+names a different start for that route. A multi-peak traverse is neither a source nor a dissent. A
+peak-level page is not route-specific. The coordinate rule is unchanged. Written (`batch-r15.json`, USFS
+points, verified on re-read):
+- North Star Mountain Cloudy Peak Traverse: Phelps Creek Trailhead (WTA trip report 2018-08-11: Spider Gap,
+  Lyman Lakes, Cloudy Pass, round Cloudy's south buttress to North Star). 16 km from the peak.
+- Mount Fiske Standard Route: South Lake Trailhead (climber.org 2011/1876, single-peak trip over Bishop
+  Pass). The other reports are 6- and 14-peak traverses.
+- Wheel Mountain Standard Route: South Lake Trailhead (wacziarg 2020 SE Ridge via Rambaud Pass, in and out
+  from South Lake). climber.org 2006/1514 is a six-peak traverse from Lake Sabrina to South Lake, so it does
+  not count either way.
+
+Held under the new bar: Tupshin (WTA's peak page names Weaver Point), Picket Guard (Sawtooth Pass vs Rowell
+Meadow), Caltech (Shepherd Pass vs Onion Valley), Goddard, Midway, Milestone, Perkins, Reinstein, Joe Devel
+(starts differ), Observation and Gibbs (no start named in a single-peak report), Vermilion (Hope Lake and
+Ice Lake Basin both used), Hozomeen Southeast Buttress (Lightning Creek is a lakeside campground), Mount
+Stuart Direct North Ridge (the same page logs an Esmeralda start), Colorado routes (coordinate rule).
+- **Audit, measured:** SUMMIT_ONLY 124, NO_SUMMIT 40, TRAILHEAD_AND_SUMMIT 1075. The audited total fell from 1241
+  to 1239 between rounds 13 and 15, during another session's route batch; not investigated here.
