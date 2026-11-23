@@ -468,9 +468,29 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     logged; that is deliberate, not a leak.
   - Fails **closed**: a truncated source, a renamed function (`ANCHOR LOST`), or a missing
     `SUGGEST_DISC_MAX` are reported as a broken scan, never as a clean app.
-  - What it does **not** prove: that the ranked routes are *good*, or that the section is
-    reachable on screen. It tests which disciplines survive and which query fetches them.
-    Grade/gain scoring is stubbed — unchanged by this work and drags in the whole grade scale.
+  - What it does **not** prove: that the section is reachable on screen, or that an area has
+    anything good to rank. Section 1 still stubs the grade scale.
+  - **Section 1b runs the REAL ranking (2026-11-19)**, the whole block from `function gradeLabel(` to
+    `const TRIP={` with `lib/grade.js`, because the stub hid three faults an audit on live rows
+    found: the pool every slot shared was the area's first 120 climbs BY NAME (on Joshua Tree's
+    8,238, names before "Ai"); `rankSimilarRoutes` took the five nearest grades WHATEVER the
+    distance (a 5.7 sport climber at Index got 5.10a and 5.10c, a 5.6 alpine climber on Mount
+    Stuart 5.10d and 5.11-); and `routeGradeVal` was an exact `indexOf`, so "5.10b/c" (about 1
+    climb in 12 of a pool) scored as unknown. It pins the window (`suggestWindow`), the classic
+    tie-break, the nearest-listed-grade lookup, the stated-grade slots, and that
+    `suggestSlotQuery`'s range COVERS every grade the ranking keeps.
+  - **That last check failed on its first run, on real code**: the range was read off the window's
+    two end grades, and the YDS list is not in number order (5.10d is 10.9, the 5.10+ after it
+    10.75), so a 5.10a climber's pool never fetched a 5.10d. The range is now the min and max over
+    every grade in the window. Do not simplify it back to the ends.
+  - **Section 2 was inverted, deliberately.** It pinned the pool as discipline-BLIND (the 2026-09
+    fix for a pool filtered to the one busiest discipline). The rule both bugs break is *every slot
+    is fetched for*, so it now counts one `useSubtreeRoutes(… slotOpts(i))` per slot up to
+    `SUGGEST_DISC_MAX`, forbids `profile.disc`, and keeps only the FALLBACK pool discipline-blind.
+    Raising the cap without adding a hook fails here, which is the point: hooks cannot loop.
+  - Measured non-finding: where an area has classics (Smith Rock, Red River Gorge, Joshua Tree,
+    Hyalite) the rows were already right, because classics lead every pool. The faults showed where
+    there are none (all of Washington) or the climber's grade is far from the area's.
 
 - **`check:route-tags`** pins the route page's chip row (`RouteTagRow`, the one consumer of
   `lib/routeTags.js`): every real `routes.lists` string reaches its list chip, every chip agrees

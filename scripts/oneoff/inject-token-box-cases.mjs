@@ -70,9 +70,11 @@ const CASES = [
     // live catalog ("Grade III, 5.10a (5 pitches, 900 ft: P1 5.9+, ...)"). Without this case the
     // extra screen could render nothing and the guard would still print ok.
     name: "5. tick-list row goes back to raw r.grade (the seventh screen)",
-    // The row's grade is plain inline text now (#2082), not a chip; the chip on this screen is the
-    // Logged/To do status pill, so the case puts the raw grade THERE to prove the screen is inspected.
-    edit: (s) => s.replace('borderRadius:6,padding:"2px 7px"}}>{dn?"Logged":"To do"}</span>', 'borderRadius:6,padding:"2px 7px"}}>{r.grade}</span>'),
+    // The row's grade is plain inline text now (#2082), not a chip. The chip the case used to fill was the
+    // Logged/To do status pill; since 2026-11-19 there is no To do pill (only a logged climb is marked), so a
+    // row that is still to do draws no pill at all. The chip every row always draws is its NUMBER BADGE, so
+    // the case puts the raw grade there to prove the screen is inspected.
+    edit: (s) => s.replace('{dn?"✓":(ri+1)}</span>', '{r.grade}</span>'),
     want: /box\(es\) hold text too long for their shape/,
   },
 ];
@@ -88,7 +90,10 @@ for (const c of CASES) {
   }
   fs.writeFileSync(FILE, edited);
   let out = "";
-  try { out = execSync("npm run check:token-boxes 2>&1", { encoding: "utf8" }); }
+  // maxBuffer: the guard prints a React server-render warning with a stack for every render, well over
+  // execSync's 1 MB default. Past the limit execSync throws with the output CUT SHORT, the verdict line is
+  // not in it, and every real catch read as a MISS (cases 1, 2 and 5, found 2026-11-19).
+  try { out = execSync("npm run check:token-boxes 2>&1", { encoding: "utf8", maxBuffer: 1 << 28 }); }
   catch (e) { out = (e.stdout || "") + (e.stderr || ""); }
   fs.writeFileSync(FILE, original);
 

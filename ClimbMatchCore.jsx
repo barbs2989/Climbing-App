@@ -22,7 +22,7 @@ import { routeInList, listPeaks, peakClimbed, FIFTY_CLASSICS } from "./lib/lists
 import { splitParagraphs, seasonWindowMonths } from "./EnrichmentPanels";
 import { renderToStaticMarkup } from "react-dom/server";
 import { loadLeaflet, applyBaseLayer, BaseLayerToggle, pinHtml, useFollowMe, locateLabel } from "./lib/mapKit";
-import { displayGrade, gradeSources, splitProtection } from "./lib/grade";
+import { displayGrade, gradeSources, splitProtection, gradeNumFor, gradeSystemForDiscipline } from "./lib/grade";
 import { useRecentRouteIds } from "./lib/recent";
 import { POP_BACK, POP_CLOSE, POP_REMOVE, POP_CHIP_X } from "./lib/popupChrome.js";
 import { fromThumb } from "./lib/photoThumb";
@@ -357,7 +357,15 @@ function gradeLabelRaw(r){return gradeSources(r)[0]||"";}
    COMMITMENT grade, not a difficulty. Slesse's NE Buttress read "V" in this pill while the CRUX
    GRADE tile below it read "5.9 A2". See displayGrade() in lib/grade.js. */
 function gradeLabel(r){return displayGrade(r);}
-function routeGradeVal(r){var gl=ADDR_GRADES[catOf(r)]||ADDR_YDS;var i=gl.indexOf(splitProtection(gradeLabel(r)).grade);return i<0?-1:i/gl.length;}
+/* A grade the scale does not LIST still has a place on it. The lookup was an exact indexOf, so
+   "5.10b/c", "5.12a/b", "V-easy" and "WI5-" (about 1 climb in 12 of a live crag's pool, 2026-11-19)
+   came back -1 and were scored as a climb of unknown grade: never suggested ahead of a graded one.
+   Such a grade now lands on the listed grade nearest its number (gradeNumFor, the one parser), and
+   only when the text is written in this discipline's own system: an "AI3" is not a "Class 3". */
+var _GV_NUMS={};
+var _GV_RX={yds:/5\.\d/,v:/\bV\s*-?\s*(\d|B|easy)/i,wi:/\bWI\s*\d/i,m:/\bM\s*\d/i,aid:/\b[AC]\d/i,"class":/\bclass\s*\d/i};
+function _gradeIdx(gl,g,d){var i=gl.indexOf(g);if(i>=0)return i;var rx=_GV_RX[gradeSystemForDiscipline(d)||"yds"];if(!g||!rx||!rx.test(g))return -1;var n=gradeNumFor(g,d);if(n==null)return -1;var nums=_GV_NUMS[d]||(_GV_NUMS[d]=gl.map(function(x){return rx.test(x)?gradeNumFor(x,d):null;}));var best=-1,bd=Infinity;for(var k=0;k<nums.length;k++){if(nums[k]==null)continue;var dd=Math.abs(nums[k]-n);if(dd<bd){bd=dd;best=k;}}return bd<=1?best:-1;}
+function routeGradeVal(r){var d=catOf(r);var gl=ADDR_GRADES[d]||ADDR_YDS;var i=_gradeIdx(gl,splitProtection(gradeLabel(r)).grade,d);return i<0?-1:i/gl.length;}
 function suggGainFt(r){return r.gainFt!=null?r.gainFt:(r.gain_ft!=null?r.gain_ft:null);}
 /* One climber's grade/gain centre for ONE discipline. Split out because three callers now
    accumulate the same shape from different evidence: completed logs, and climbs merely
@@ -390,16 +398,50 @@ var SUGGEST_DISC_MAX=3;
    — the two rows make different claims ("you've been climbing X" vs "you've been looking at
    X") and only one of them is true of a climb you have actually done. Logged always outranks
    browsed: a completed climb is a far stronger statement than a page view. */
-function suggestDiscSlots(profile,viewedRoutes,max){
+/* `stated` is the THIRD source: the grades on the climber's own profile ({sport,trad,bouldering}).
+   A new account has an empty logbook, so until this was read the only personal rows a real new
+   climber could get were from page views, and the experience they typed in at sign-up ranked nothing.
+   A stated grade earns a slot only for a discipline with NO logged climbs (what you have climbed
+   outranks what you said you climb), and it sits ahead of browsing: it is the climber's own
+   statement, a page view is a guess. A browsed discipline that is also stated is the stated slot. */
+function suggestDiscSlots(profile,viewedRoutes,max,stated){
   var lim=max||SUGGEST_DISC_MAX;
   var logged=(profile&&profile.discs)||[];
   var seen={};logged.forEach(function(s){seen[s.disc]=1;});
+  var said=[];
+  ["sport","trad","bouldering"].forEach(function(d){var g=stated&&stated[d];if(seen[d]||typeof g!=="string"||!g||g==="N/A")return;var gl=ADDR_GRADES[d];var i=_gradeIdx(gl,splitProtection(g).grade,d);if(i<0)return;seen[d]=1;said.push({disc:d,src:"stated",n:0,gradeVal:i/gl.length,avgGainFt:null});});
   var byDisc={};
   (viewedRoutes||[]).forEach(function(r){_suggAccum(byDisc,r);});
   var viewed=Object.keys(byDisc).filter(function(d){return !seen[d];}).sort(function(x,y){return byDisc[y].n-byDisc[x].n;}).map(function(d){return _suggShape(d,byDisc[d],"viewed");});
-  return logged.concat(viewed).slice(0,lim);
+  return logged.concat(said,viewed).slice(0,lim);
 }
-function rankSimilarRoutes(candidates,profile,opts){if(!profile)return [];var limit=(opts&&opts.limit)||5;return candidates.filter(function(r){return catOf(r)===profile.disc;}).map(function(r){var gv=routeGradeVal(r);var gd=(profile.gradeVal!=null&&gv>=0)?Math.abs(gv-profile.gradeVal):0.5;var af=suggGainFt(r);var ad=(profile.avgGainFt!=null&&af)?Math.min(1,Math.abs(af-profile.avgGainFt)/Math.max(profile.avgGainFt,500)):0.5;return {r:r,score:gd*0.65+ad*0.35};}).sort(function(x,y){return x.score-y.score;}).slice(0,limit).map(function(x){return x.r;});}
+/* HOW FAR FROM THE CLIMBER'S OWN GRADE A SUGGESTION MAY SIT. The ranking used to sort by grade
+   distance and take the first five WHATEVER the distance, so at a crag whose easiest sport climb is
+   5.12 a 5.8 climber was handed five 5.12s under "Because you've been climbing Sport". Now a climb
+   is suggested only inside this window around the centre of what they have climbed: about a number
+   grade below it and a little less above (on YDS, 5.10a reads 5.8 to 5.10+), never fewer than two
+   steps of the scale either way so the short scales (WI, M, Class) keep a neighbour. Fractions of
+   the scale's length, the unit routeGradeVal already speaks. */
+var SUGGEST_UP=0.09,SUGGEST_DOWN=0.11;
+function suggestWindow(d){var n=(ADDR_GRADES[d]||ADDR_YDS).length;return {up:Math.max(2,Math.round(SUGGEST_UP*n))/n,down:Math.max(2,Math.round(SUGGEST_DOWN*n))/n};}
+/* THE POOL ONE SLOT IS RANKED FROM, as a routes_in_subtree filter. The pool was the area's first
+   120 climbs BY NAME, shared by every slot: in a region of 8,000 climbs the "personal" rows were
+   picked from names sorting before "Ai". Each slot now asks for its own discipline, inside its own
+   grade window where the scale is one the database can range over, best-rated first. The bounds
+   are the window's outer steps (rankSimilarRoutes makes the exact cut), so nothing in the window
+   is missing from the pool. Alpine takes no grade range: its climbs are graded on three systems. */
+var _SLOT_SYS={sport:"yds",trad:"yds",toprope:"yds",bouldering:"v",ice:"wi",mixed:"m"};
+function suggestSlotQuery(slot){
+  var d=slot.disc,q={disc:d==="alpine"?"alpine,mountaineering,scrambling":d,sortBy:"stars_desc",pageSize:60};
+  var sys=_SLOT_SYS[d];
+  if(sys&&slot.gradeVal!=null){var gl=ADDR_GRADES[d]||ADDR_YDS,w=suggestWindow(d),n=gl.length;/* min and max over EVERY listed grade in the window, not its two ends: the lists are not in number order (5.10d is 10.9, the 5.10+ after it 10.75), and reading the ends left 5.10d out of a 5.10a climber's pool (check:suggestion-discs caught it). */var lo=null,hi=null;for(var k=Math.max(0,Math.floor((slot.gradeVal-w.down)*n+1e-6));k<=Math.min(n-1,Math.ceil((slot.gradeVal+w.up)*n-1e-6));k++){var gn=gradeNumFor(gl[k],d);if(gn==null)continue;if(lo==null||gn<lo)lo=gn;if(hi==null||gn>hi)hi=gn;}if(lo!=null&&hi!=null){q.gradeSys=sys;q.minGrade=lo;q.maxGrade=hi;}}
+  return q;
+}
+/* A climb known to be GOOD outranks a no-name at the same distance: an area classic or a 3.5-star
+   climb is worth about two and a half steps of grade, a 2.5-star one about one. Inside the window
+   only: quality never pulls in a climb the window left out. */
+function _suggQuality(r){var st=r.stars||0;return r.classic||st>=3.5?0.03:st>=2.5?0.015:0;}
+function rankSimilarRoutes(candidates,profile,opts){if(!profile)return [];var limit=(opts&&opts.limit)||5;var w=suggestWindow(profile.disc);return candidates.filter(function(r){return catOf(r)===profile.disc;}).map(function(r){var gv=routeGradeVal(r);var known=profile.gradeVal!=null&&gv>=0;var delta=known?gv-profile.gradeVal:0;var gd=known?Math.abs(delta):0.5;var af=suggGainFt(r);var ad=(profile.avgGainFt!=null&&af)?Math.min(1,Math.abs(af-profile.avgGainFt)/Math.max(profile.avgGainFt,500)):0.5;/* A climb whose grade is not on this scale (an AI3 couloir, to a climber whose alpine logs are 5.6 rock) is not "near your grade": with a centre to measure from, it is left out, not kept as filler. */return {r:r,out:profile.gradeVal!=null&&(gv<0||delta>w.up+1e-9||delta<-w.down-1e-9),score:gd*0.65+ad*0.35-_suggQuality(r)};}).filter(function(x){return !x.out;}).sort(function(x,y){return x.score-y.score;}).slice(0,limit).map(function(x){return x.r;});}
 
 
 const TRIP={
@@ -590,9 +632,10 @@ function renderMD(text){
   const blocks=[];let list=null;
   function flushList(){if(list){blocks.push(list);list=null;}}
   function inline(s,key){
-    const parts=s.split(/(\*\*[^*]+\*\*|_[^_]+_|\[[^\]\n]+\]\([^)\s]+\))/g).filter(Boolean);
+    const parts=s.split(/(\*\*[^*]+\*\*|~~[^~]+~~|_[^_]+_|\[[^\]\n]+\]\([^)\s]+\))/g).filter(Boolean);
     return parts.map(function(p,i){
       if(/^\*\*[^*]+\*\*$/.test(p))return <b key={key+"_"+i}>{p.slice(2,-2)}</b>;
+      if(/^~~[^~]+~~$/.test(p))return <s key={key+"_"+i}>{p.slice(2,-2)}</s>;
       if(/^_[^_]+_$/.test(p))return <i key={key+"_"+i}>{p.slice(1,-1)}</i>;
       const lk=/^\[([^\]\n]+)\]\(([^)\s]+)\)$/.exec(p);
       /* Only http(s) becomes a link. This text is climber-written and stored verbatim, so
@@ -608,7 +651,12 @@ function renderMD(text){
   lines.forEach(function(line,li){
     const bullet=/^\s*[-•]\s+(.*)/.exec(line);
     const numbered=/^\s*\d+[.)]\s+(.*)/.exec(line);
-    if(bullet){
+    /* "> " opens a QUOTE, the space required: a line that starts ">5.10 only" is a sentence. */
+    const quote=/^\s*>\s+(.*)/.exec(line);
+    if(quote){
+      if(!list||list.type!=="q"){flushList();list={type:"q",key:"l"+li,items:[]};}
+      list.items.push(quote[1]);
+    }else if(bullet){
       if(!list||list.type!=="ul"){flushList();list={type:"ul",key:"l"+li,items:[]};}
       list.items.push(bullet[1]);
     }else if(numbered){
@@ -623,6 +671,7 @@ function renderMD(text){
   return blocks.map(function(b){
     if(b.type==="ul")return <ul key={b.key} style={{margin:"4px 0",paddingLeft:20}}>{b.items.map(function(it,i){return <li key={i} style={{marginBottom:2}}>{inline(it,b.key+i)}</li>;})}</ul>;
     if(b.type==="ol")return <ol key={b.key} style={{margin:"4px 0",paddingLeft:20}}>{b.items.map(function(it,i){return <li key={i} style={{marginBottom:2}}>{inline(it,b.key+i)}</li>;})}</ol>;
+    if(b.type==="q")return <blockquote key={b.key} style={{margin:"4px 0 8px",padding:"1px 0 1px 10px",borderLeft:"3px solid "+C.border,color:C.textSub}}>{b.items.map(function(it,i){return <div key={i}>{inline(it,b.key+i)}</div>;})}</blockquote>;
     return <p key={b.key} style={{margin:"0 0 8px"}}>{inline(b.text,b.key)}</p>;
   });
 }
@@ -632,17 +681,19 @@ function renderMD(text){
    dash). A textarea cannot draw bold, so markers were the only way to show it. This is a
    contentEditable box instead: B turns bold ON, what you type next is bold, B again turns it off,
    and the list buttons draw real bullets. What it STORES is unchanged — the plain-text markdown
-   renderMD reads (**bold**, _italic_, "- " / "1. " lines, [label](url)) — so every row already
+   renderMD reads (**bold**, _italic_, ~~struck~~, "- " / "1. " / "> " lines, [label](url)) — so every row already
    written renders as before and nothing stored is HTML. The HTML lives only inside this box, is
    rebuilt from the stored text with every character escaped, and paste is taken as plain text,
    so no stored string can become markup. renderMD cannot nest, so bold+italic is stored bold. */
 function _mdEsc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");}
-function _mdInlineHtml(s){return String(s).split(/(\*\*[^*]+\*\*|_[^_]+_|\[[^\]\n]+\]\([^)\s]+\))/g).filter(Boolean).map(function(p){if(/^\*\*[^*]+\*\*$/.test(p))return "<b>"+_mdEsc(p.slice(2,-2))+"</b>";if(/^_[^_]+_$/.test(p))return "<i>"+_mdEsc(p.slice(1,-1))+"</i>";var lk=/^\[([^\]\n]+)\]\(([^)\s]+)\)$/.exec(p);if(lk&&/^https?:\/\//i.test(lk[2]))return "<a href=\""+_mdEsc(lk[2])+"\">"+_mdEsc(lk[1])+"</a>";return _mdEsc(p);}).join("");}
+function _mdInlineHtml(s){return String(s).split(/(\*\*[^*]+\*\*|~~[^~]+~~|_[^_]+_|\[[^\]\n]+\]\([^)\s]+\))/g).filter(Boolean).map(function(p){if(/^\*\*[^*]+\*\*$/.test(p))return "<b>"+_mdEsc(p.slice(2,-2))+"</b>";if(/^~~[^~]+~~$/.test(p))return "<s>"+_mdEsc(p.slice(2,-2))+"</s>";if(/^_[^_]+_$/.test(p))return "<i>"+_mdEsc(p.slice(1,-1))+"</i>";var lk=/^\[([^\]\n]+)\]\(([^)\s]+)\)$/.exec(p);if(lk&&/^https?:\/\//i.test(lk[2]))return "<a href=\""+_mdEsc(lk[2])+"\">"+_mdEsc(lk[1])+"</a>";return _mdEsc(p);}).join("");}
 function mdToEditorHtml(md){
   if(!md)return "";
   var out="",list=null;
   var close=function(){if(list){out+="</"+list+">";list=null;}};
   String(md).split("\n").forEach(function(line){
+    var q=/^\s*>\s+(.*)$/.exec(line);
+    if(q){if(list!=="blockquote"){close();out+="<blockquote>";list="blockquote";}out+="<div>"+(_mdInlineHtml(q[1])||"<br>")+"</div>";return;}
     var b=/^\s*[-•]\s+(.*)$/.exec(line),n=b?null:/^\s*\d+[.)]\s+(.*)$/.exec(line);
     if(b||n){var t=b?"ul":"ol";if(list!==t){close();out+="<"+t+">";list=t;}out+="<li>"+(_mdInlineHtml(b?b[1]:n[1])||"<br>")+"</li>";return;}
     close();out+="<div>"+(_mdInlineHtml(line)||"<br>")+"</div>";
@@ -657,20 +708,20 @@ function editorHtmlToMd(root){
   var flush=function(force){if(has||force||cur.pre){lines.push(cur);}cur={pre:"",runs:[]};has=false;};
   var BLOCK={DIV:1,P:1,H1:1,H2:1,H3:1,H4:1,BLOCKQUOTE:1,PRE:1};
   var walk=function(node,f){
-    if(node.nodeType===3){var parts=node.nodeValue.replace(/ /g," ").replace(/​/g,"").split("\n");parts.forEach(function(t,i){if(i>0)flush(true);if(t){cur.runs.push({t:t,b:f.b,i:f.i,h:f.h});has=true;}});return;}
+    if(node.nodeType===3){var parts=node.nodeValue.replace(/ /g," ").replace(/​/g,"").split("\n");parts.forEach(function(t,i){if(i>0)flush(true);if(t){cur.runs.push({t:t,b:f.b,i:f.i,h:f.h,s:f.s,q:f.q});has=true;}});return;}
     if(node.nodeType!==1)return;
     var tag=node.tagName,st=node.style||{};
     if(tag==="BR"){var last=!node.nextSibling&&node.parentNode!==root&&(BLOCK[node.parentNode.tagName]||node.parentNode.tagName==="LI");if(last&&has)return;flush(true);return;}
-    var g={b:f.b||tag==="B"||tag==="STRONG"||/^(bold|bolder|[6-9]00)$/.test(st.fontWeight||""),i:f.i||tag==="I"||tag==="EM"||st.fontStyle==="italic",h:f.h};
+    var g={b:f.b||tag==="B"||tag==="STRONG"||/^(bold|bolder|[6-9]00)$/.test(st.fontWeight||""),i:f.i||tag==="I"||tag==="EM"||st.fontStyle==="italic",h:f.h,s:f.s||tag==="S"||tag==="STRIKE"||tag==="DEL"||/line-through/.test((st.textDecoration||"")+" "+(st.textDecorationLine||"")),q:f.q||tag==="BLOCKQUOTE"};
     if(tag==="A"){var hr=node.getAttribute("href")||"";if(/^https?:\/\//i.test(hr))g.h=hr;}
     if(tag==="UL"||tag==="OL"){if(has)flush();var k=0;Array.prototype.forEach.call(node.childNodes,function(ch){if(ch.nodeType===1&&ch.tagName==="LI"){k++;cur.pre=tag==="OL"?k+". ":"- ";Array.prototype.forEach.call(ch.childNodes,function(c2){walk(c2,g);});flush(true);}else walk(ch,g);});return;}
     if(BLOCK[tag]){if(has)flush();var before=lines.length;Array.prototype.forEach.call(node.childNodes,function(ch){walk(ch,g);});if(has)flush();else if(lines.length===before)flush(true);return;}
     Array.prototype.forEach.call(node.childNodes,function(ch){walk(ch,g);});
   };
-  Array.prototype.forEach.call(root.childNodes,function(ch){walk(ch,{b:false,i:false,h:null});});
+  Array.prototype.forEach.call(root.childNodes,function(ch){walk(ch,{b:false,i:false,h:null,s:false,q:false});});
   if(has||cur.pre)flush();
   var wrap=function(s,m){if(!s.trim())return s;var lead=s.match(/^\s*/)[0],trail=s.match(/\s*$/)[0];return lead+m+s.trim()+m+trail;};
-  var md=lines.map(function(ln){var merged=[];ln.runs.forEach(function(r){var p=merged[merged.length-1];if(p&&p.b===r.b&&p.i===r.i&&p.h===r.h)p.t+=r.t;else merged.push(Object.assign({},r));});return ln.pre+merged.map(function(r){if(r.h)return r.t.trim()?"["+r.t+"]("+r.h+")":r.t;if(r.b)return wrap(r.t,"**");if(r.i)return wrap(r.t,"_");return r.t;}).join("");});
+  var md=lines.map(function(ln){var merged=[];ln.runs.forEach(function(r){var p=merged[merged.length-1];if(p&&p.b===r.b&&p.i===r.i&&p.h===r.h&&p.s===r.s)p.t+=r.t;else merged.push(Object.assign({},r));});return (ln.runs.some(function(r){return r.q;})?"> ":"")+ln.pre+merged.map(function(r){if(r.h)return r.t.trim()?"["+r.t+"]("+r.h+")":r.t;if(r.b)return wrap(r.t,"**");if(r.i)return wrap(r.t,"_");if(r.s)return wrap(r.t,"~~");return r.t;}).join("");});
   while(md.length&&!md[md.length-1].trim())md.pop();
   return md.join("\n");
 }
@@ -2788,4 +2839,4 @@ export function __set__cbBatch(v){_cbBatch=v;}
 export {ROAD_STATUS,ROAD_VEHICLE,ROAD_ISSUES,ROAD_LEGACY,ROAD_LABEL,isRoadTag,roadReportOf};
 export {floatPlanText,parseFloatPlanText,fpWhen};
 export {GENDERS,genderLabel,PRONOUNS,PRONOUNS_MAX,pronounsLabel,genderPronouns};
-export {summitedLog,SUMMIT_STYLES,TAG_HELP,GROUP_HELP,listLink,appLink,BadgeWatcher,wpDivIcon,CRAG_CATS,BASE_CHECKIN_CATS,CMAX_AREA,areaPathsOverlap,crewPlace,placeTrip,placeCap,placeLabel,placeSub,placeMatchesLog,rapSummary,campSummary,campLabel,rappelReportsOf,shareOrCopy,groupPostLink,chatText,localYmd,weekendEndYmd,printSheet,itinShareText,itinSheetHtml,escHtml,routeLink,routeShareBits,climbsAPeak,photoAlt,photoAltsOf,PHOTO_ALT_MAX,crewAllConfirmed,crewChatReaders,crewChatParticipantLine,uLenUnit,uLenN,uLenIn,groupEventsEmptyLine,nextMeetup,dayRankPos,dayRankLabel,rankAgreedDays,pubNameRow,groupMemberFromRow,mentionToken,floatPlanState,uTempU,uTempIn,uElevN,uElevIn,uElevUnit,uDistMiN,uDistMiIn,uDistMiUnit,uMassN,uMassIn,uMassUnit,itinDraftVal,itinStoreVal,uTemp,uTempN,uTempDelta,uWind,uWindN,uPrecip,uSnowfall,normEditStr,SET_FIELDS,climberLine,wpType,wpIs,trailheadPoint,DbAreaBrowser,_enrichmentDbCache,_loadEnrichmentDb,enrichedRoutes,getEnrichment,determineTier,useEnrichmentDb,enrichRoute,C,HERO_BG,HERO_SHEEN,SZ2,SZ3,SZ5,SZ6,DLOCALE,DISC,CAT,UNITS,RESPONSE_RATES,__set_MY_PACE,paceOf,RESPONSE_GRACE_MS,computeResponseRates,protOf,gradeVal,avgStars,uImp,uRateN,uRateUnit,uRate,NOVAL,_uNum,intOnly,uElev,uDist,uDistMi,uApproxDist,uDistMiUnitLong,ROUTE_LENGTHS,routeLengthLabel,routeAscentFt,gainCoversWholeOuting,gainBelowOwnPins,uMass,catOf,rDiscs,gradeLabelRaw,gradeLabel,routeGradeVal,suggGainFt,suggestionProfile,rankSimilarRoutes,suggestDiscSlots,TRIP,tripOf,SKILLS,SKILL_GROUPS,liveSkills,profileSkills,skillKeyOf,CERT_GROUPS,certMatches,VOUCH_RATINGS,VOUCH_RATINGS_RETIRED,VOUCH_RATING_LABEL,vouchRated,vouchAvg,TICKTYPES,NONCOMPLETION_TICKS,OUTCOME_REASONS,tickTypesFor,CONDITION_SETS,HAZARD_TAGS,HAZARD_KEYWORD_RE,isHazardTag,RECENT_DAYS,ago,isRecent,COND_ENUMS,condGroupsFor,condMetricsFor,missingFacts,renderMD,mdToEditorHtml,editorHtmlToMd,caretToEnd,useRichTextareas,gpxDownload,buildGpx,WP_TYPES,WP_SINGLE_TYPES,WP_STYLE,WP_COLORS,wpColor,wpGlyph,MAX_WAYPOINTS,MAX_BIVY,guessWpType,parseGpxText,aspectDirs,sunReadout,sunNow,shapeOf,passesFilters,LVL,LEVEL_DESC,MONTHS,FALLBACK_AV,FALLBACK_COVER,onImgErr,MOUNTAINS,ROUTE_EXTRAS,rxOf,ROUTES,areaHasChildren,auditAreaData,CLIMBERS,DEMO_FILLERS,PRIVACY_CONTROLS_LIVE,DEMO_AUTOLOGIN,LOGIN_FIRST,SHOW_COVERS,FILLER_CLIMBERS,ALL_CLIMBERS,ME,_PYR,RISK_LEVELS,PRE_QS,distMiles,rapStr,gn,compat,compatParts,compatWhy,CMAX_DISC,CMAX_GRADE,CMAX_OBJ,CMAX_VERIF,CMAX_PACE,CMAX_AVAIL,COMPAT_BASE,COMPAT_TOP,COMPAT_MAX,compatUnknown,scarfHrs,techHrs,pitchedFraction,loggedTimeStats,fmtDurMin,normTag,buildConsensus,DISC_GEAR,datesAgreed,relTime,agreedDate,dayWaitingOnMe,CREW_ARCHIVE_GRACE_DAYS,isReady,crewStage,crewTimeLabel,isArchivedCrew,daysUntil,futLabel,YDSL,VL,SL,RSL,ROUTE_GAP,FOLD_GAP,MeH,EMOJI_ICON,notifIcon,PARTNER_NUMBERS,EmergencyRescueCard,ticksFor,seedIdentity,pubName,suggestUsername,pubFirst,cById,GROUPS,REACTIONS,reactionEmoji,reactionCounts,groupMentionMatch,extractMentionIds,mutualsFor,mutualIds,mutualCount,mutualLabel,mutualFirstNames,gdisc,gdlabel,VOUCH_RATING_ORDER,trophies,BADWORDS,hasVulgarity,AVAIL_OPTS,availOf,availMatch,availLabel,DOW,weekOf,hasSlot,AVAIL_FILTER_OPTS,AVAIL_SLOT_OPTS,availSlotOn,availSlotToggle,availTagsOf,availFits,analyzeAlignment,alignmentFromServer,floatPlanSheetHtml,inArea,_lev,_tol,fuzzyMatch,fuzzyMatchAny,areaPathNames,hlMatch,mtnOf,routeLoc,routeLocText,PROFILE_GRADES,profileGradeRows,profileDiscGrades,roleLabel,BELAY_DEVICES,BELAY_LEVELS,belayLabel,certExpiryInfo,condRep,ADDR_YDS,ADDR_VS,ADDR_WIS,ADDR_MS,ADDR_AIDS,ADDR_CLS,ADDR_GRADES,gradeGroups,ADDR_HAZ,ADDR_COMMIT,numsClose,NUM_FIELD_TOL,wpClose,sameEditValue,blankItinDay,itinDaysToDraft,itinDraftToStructured,PACE_TIERS,scaleItinPace,getAvailableItineraries,itinToText,ATYPE,areaClimbCount,areaChildNoun,areaCover,gradeSystemFor,routeGradeSystem,GRADE_BANDS,routeBandIdx,seasonMonths,areaNearMi,areaSort,US_ST,CA_PROV,US_CITIES,US_STATES,fmtAgo,AreaBrowse,AreaLatest,AreaCrags,SuggestedClimbs,topContributors,topContribBadges,unfinishedRoutes,routeCompleted,AreaView,crewMax,_discIconCache,getDiscIconMarkup,OverviewMap,OPEN_CREWS,RESUME_STYLES,pitchesClimbed,useBadges,useCuratedLists,haptic,RouteFinder,TIME_BUDGETS,DIST_BUDGETS,QuickMatch,COMMENTS,commentWhen,mentionName,ClassicClimbs,GettingThere,crewInCrew,crewSize,crewIsFull,crewFullError,crewAskedToJoin,notifTarget,_cbBatch,_cbTimer,_toastT,_celebTimer,DB_UID,haveMyLoc,lbRowName,seedHistoryFor,resumeClimbCount,hoursNum,listShareText,listSheetHtml,HELP_FEATS,gradeRoleText};
+export {suggestSlotQuery,summitedLog,SUMMIT_STYLES,TAG_HELP,GROUP_HELP,listLink,appLink,BadgeWatcher,wpDivIcon,CRAG_CATS,BASE_CHECKIN_CATS,CMAX_AREA,areaPathsOverlap,crewPlace,placeTrip,placeCap,placeLabel,placeSub,placeMatchesLog,rapSummary,campSummary,campLabel,rappelReportsOf,shareOrCopy,groupPostLink,chatText,localYmd,weekendEndYmd,printSheet,itinShareText,itinSheetHtml,escHtml,routeLink,routeShareBits,climbsAPeak,photoAlt,photoAltsOf,PHOTO_ALT_MAX,crewAllConfirmed,crewChatReaders,crewChatParticipantLine,uLenUnit,uLenN,uLenIn,groupEventsEmptyLine,nextMeetup,dayRankPos,dayRankLabel,rankAgreedDays,pubNameRow,groupMemberFromRow,mentionToken,floatPlanState,uTempU,uTempIn,uElevN,uElevIn,uElevUnit,uDistMiN,uDistMiIn,uDistMiUnit,uMassN,uMassIn,uMassUnit,itinDraftVal,itinStoreVal,uTemp,uTempN,uTempDelta,uWind,uWindN,uPrecip,uSnowfall,normEditStr,SET_FIELDS,climberLine,wpType,wpIs,trailheadPoint,DbAreaBrowser,_enrichmentDbCache,_loadEnrichmentDb,enrichedRoutes,getEnrichment,determineTier,useEnrichmentDb,enrichRoute,C,HERO_BG,HERO_SHEEN,SZ2,SZ3,SZ5,SZ6,DLOCALE,DISC,CAT,UNITS,RESPONSE_RATES,__set_MY_PACE,paceOf,RESPONSE_GRACE_MS,computeResponseRates,protOf,gradeVal,avgStars,uImp,uRateN,uRateUnit,uRate,NOVAL,_uNum,intOnly,uElev,uDist,uDistMi,uApproxDist,uDistMiUnitLong,ROUTE_LENGTHS,routeLengthLabel,routeAscentFt,gainCoversWholeOuting,gainBelowOwnPins,uMass,catOf,rDiscs,gradeLabelRaw,gradeLabel,routeGradeVal,suggGainFt,suggestionProfile,rankSimilarRoutes,suggestDiscSlots,TRIP,tripOf,SKILLS,SKILL_GROUPS,liveSkills,profileSkills,skillKeyOf,CERT_GROUPS,certMatches,VOUCH_RATINGS,VOUCH_RATINGS_RETIRED,VOUCH_RATING_LABEL,vouchRated,vouchAvg,TICKTYPES,NONCOMPLETION_TICKS,OUTCOME_REASONS,tickTypesFor,CONDITION_SETS,HAZARD_TAGS,HAZARD_KEYWORD_RE,isHazardTag,RECENT_DAYS,ago,isRecent,COND_ENUMS,condGroupsFor,condMetricsFor,missingFacts,renderMD,mdToEditorHtml,editorHtmlToMd,caretToEnd,useRichTextareas,gpxDownload,buildGpx,WP_TYPES,WP_SINGLE_TYPES,WP_STYLE,WP_COLORS,wpColor,wpGlyph,MAX_WAYPOINTS,MAX_BIVY,guessWpType,parseGpxText,aspectDirs,sunReadout,sunNow,shapeOf,passesFilters,LVL,LEVEL_DESC,MONTHS,FALLBACK_AV,FALLBACK_COVER,onImgErr,MOUNTAINS,ROUTE_EXTRAS,rxOf,ROUTES,areaHasChildren,auditAreaData,CLIMBERS,DEMO_FILLERS,PRIVACY_CONTROLS_LIVE,DEMO_AUTOLOGIN,LOGIN_FIRST,SHOW_COVERS,FILLER_CLIMBERS,ALL_CLIMBERS,ME,_PYR,RISK_LEVELS,PRE_QS,distMiles,rapStr,gn,compat,compatParts,compatWhy,CMAX_DISC,CMAX_GRADE,CMAX_OBJ,CMAX_VERIF,CMAX_PACE,CMAX_AVAIL,COMPAT_BASE,COMPAT_TOP,COMPAT_MAX,compatUnknown,scarfHrs,techHrs,pitchedFraction,loggedTimeStats,fmtDurMin,normTag,buildConsensus,DISC_GEAR,datesAgreed,relTime,agreedDate,dayWaitingOnMe,CREW_ARCHIVE_GRACE_DAYS,isReady,crewStage,crewTimeLabel,isArchivedCrew,daysUntil,futLabel,YDSL,VL,SL,RSL,ROUTE_GAP,FOLD_GAP,MeH,EMOJI_ICON,notifIcon,PARTNER_NUMBERS,EmergencyRescueCard,ticksFor,seedIdentity,pubName,suggestUsername,pubFirst,cById,GROUPS,REACTIONS,reactionEmoji,reactionCounts,groupMentionMatch,extractMentionIds,mutualsFor,mutualIds,mutualCount,mutualLabel,mutualFirstNames,gdisc,gdlabel,VOUCH_RATING_ORDER,trophies,BADWORDS,hasVulgarity,AVAIL_OPTS,availOf,availMatch,availLabel,DOW,weekOf,hasSlot,AVAIL_FILTER_OPTS,AVAIL_SLOT_OPTS,availSlotOn,availSlotToggle,availTagsOf,availFits,analyzeAlignment,alignmentFromServer,floatPlanSheetHtml,inArea,_lev,_tol,fuzzyMatch,fuzzyMatchAny,areaPathNames,hlMatch,mtnOf,routeLoc,routeLocText,PROFILE_GRADES,profileGradeRows,profileDiscGrades,roleLabel,BELAY_DEVICES,BELAY_LEVELS,belayLabel,certExpiryInfo,condRep,ADDR_YDS,ADDR_VS,ADDR_WIS,ADDR_MS,ADDR_AIDS,ADDR_CLS,ADDR_GRADES,gradeGroups,ADDR_HAZ,ADDR_COMMIT,numsClose,NUM_FIELD_TOL,wpClose,sameEditValue,blankItinDay,itinDaysToDraft,itinDraftToStructured,PACE_TIERS,scaleItinPace,getAvailableItineraries,itinToText,ATYPE,areaClimbCount,areaChildNoun,areaCover,gradeSystemFor,routeGradeSystem,GRADE_BANDS,routeBandIdx,seasonMonths,areaNearMi,areaSort,US_ST,CA_PROV,US_CITIES,US_STATES,fmtAgo,AreaBrowse,AreaLatest,AreaCrags,SuggestedClimbs,topContributors,topContribBadges,unfinishedRoutes,routeCompleted,AreaView,crewMax,_discIconCache,getDiscIconMarkup,OverviewMap,OPEN_CREWS,RESUME_STYLES,pitchesClimbed,useBadges,useCuratedLists,haptic,RouteFinder,TIME_BUDGETS,DIST_BUDGETS,QuickMatch,COMMENTS,commentWhen,mentionName,ClassicClimbs,GettingThere,crewInCrew,crewSize,crewIsFull,crewFullError,crewAskedToJoin,notifTarget,_cbBatch,_cbTimer,_toastT,_celebTimer,DB_UID,haveMyLoc,lbRowName,seedHistoryFor,resumeClimbCount,hoursNum,listShareText,listSheetHtml,HELP_FEATS,gradeRoleText};
