@@ -1076,8 +1076,8 @@ const PRONOUNS=[["she_her","she/her"],["he_him","he/him"],["they_them","they/the
 const pronounsLabel=p=>Array.isArray(p)?PRONOUNS.filter(x=>p.includes(x[0])).map(x=>x[1]).join(", "):"";
 /* What a profile header prints for the two together: "Woman · she/her, they/them", either alone, or "". */
 const genderPronouns=(g,p)=>[genderLabel(g),pronounsLabel(p)].filter(Boolean).join(" · ");
-const FALLBACK_AV="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='100'%20height='100'%3E%3Crect%20width='100'%20height='100'%20fill='%231c2330'/%3E%3Ccircle%20cx='50'%20cy='40'%20r='16'%20fill='%2330363d'/%3E%3Crect%20x='24'%20y='60'%20width='52'%20height='40'%20rx='16'%20fill='%2330363d'/%3E%3C/svg%3E";
-const FALLBACK_COVER="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='700'%20height='300'%3E%3Crect%20width='700'%20height='300'%20fill='%23161b22'/%3E%3Cpath%20d='M0,300%20260,110%20380,200%20520,90%20700,300%20Z'%20fill='%230d2044'/%3E%3C/svg%3E";
+const FALLBACK_AV="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='100'%20height='100'%3E%3Crect%20width='100'%20height='100'%20fill='%231c2330'/%3E%3Ccircle%20cx='50'%20cy='40'%20r='16'%20fill='%2336322c'/%3E%3Crect%20x='24'%20y='60'%20width='52'%20height='40'%20rx='16'%20fill='%2336322c'/%3E%3C/svg%3E";
+const FALLBACK_COVER="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='700'%20height='300'%3E%3Crect%20width='700'%20height='300'%20fill='%231a1916'/%3E%3Cpath%20d='M0,300%20260,110%20380,200%20520,90%20700,300%20Z'%20fill='%230d2044'/%3E%3C/svg%3E";
 const onImgErr=fb=>e=>{const orig=fromThumb(e.target.src);if(orig){e.target.src=orig;return;}e.target.onerror=null;e.target.src=fb;};/* a resized photo the renderer refused falls back to the ORIGINAL first (lib/photoThumb.js) */
 const MOUNTAINS=[
   {id:"world",lat:20,lng:0,name:"World",region:"Global",areaType:"world",parentId:null,blurb:"The full climbing index — drill down by country, then region, to a crag or peak."},
