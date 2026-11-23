@@ -1,0 +1,53 @@
+{
+ "wa_mount_adams_north_ridge": {
+  "claims": [
+   {"field": "distance_round_trip", "value_as_stated": "10.0 miles, roundtrip", "from_trailhead": "Killen Creek (#113)", "to": "High Camp (6,900 ft)", "url": "https://www.wta.org/go-hiking/hikes/killen-creek", "publisher": "WTA", "quote_of_fact": "10.0 miles, roundtrip", "retrieved_at": "2026-11-23"},
+   {"field": "gain_round_trip", "value_as_stated": "2,300 feet", "from_trailhead": "Killen Creek", "to": "High Camp", "url": "https://www.wta.org/go-hiking/hikes/killen-creek", "publisher": "WTA", "quote_of_fact": "2,300 feet (highest point 6,900 ft)", "retrieved_at": "2026-11-23"},
+   {"field": "gain_ft_one_way", "value_as_stated": "2,400 ft trailhead to camp; 5,300 ft camp to summit", "from_trailhead": "Killen Creek", "to": "camp then summit (Adams Glacier route trip profile, same High Camp)", "url": "https://www.mountaineers.org/activities/routes-places/mt-adams-adams-glacier", "publisher": "The Mountaineers", "quote_of_fact": "Trailhead to Camp 2,400; Camp to Summit 5,300", "retrieved_at": "2026-11-23"}
+  ],
+  "trailhead_note": "Same Killen Creek trailhead as sources (WTA coords 46.2885, -121.5525). No published trailhead-to-summit mileage found. No sign our pin is a different trailhead. Peakbagger ascents list (pid 2365) showed only a South-side North Cleaver log in the latest year.",
+  "other_facts": [
+   {"fact": "Killen Creek trail meets the PCT just after 3 miles; continue straight toward High Camp", "url": "https://www.wta.org/go-hiking/hikes/killen-creek"},
+   {"fact": "Killen Creek trailhead is 5.7 mi down FR 2329 from FR 23; ~3 mi from Takhlakh Lake; trailhead elev 4,584 ft", "url": "https://www.mountaineers.org/activities/routes-places/mt-adams-adams-glacier"},
+   {"fact": "Camp to summit 7-9 hr; summit to trailhead 5-8 hr; trailhead to camp 3-4 hr (Adams Glacier profile)", "url": "https://www.mountaineers.org/activities/routes-places/mt-adams-adams-glacier"},
+   {"fact": "Descent is the North Ridge on loose scree and boulders; rockfall risk", "url": "https://www.mountaineers.org/activities/routes-places/mt-adams-adams-glacier"},
+   {"fact": "Registration at Randle Ranger Station", "url": "https://www.mountaineers.org/activities/routes-places/mt-adams-adams-glacier"}
+  ],
+  "not_found": ["Peakbagger ascents (no North Ridge one-way logs seen)", "Mountaineers North Ridge page (only Adams Glacier/ice routes page)"]
+ },
+ "adams_northwest_ridge": {
+  "claims": [
+   {"field": "distance_round_trip", "value_as_stated": "10.0 miles, roundtrip", "from_trailhead": "Killen Creek (#113)", "to": "High Camp", "url": "https://www.wta.org/go-hiking/hikes/killen-creek", "publisher": "WTA", "quote_of_fact": "10.0 miles, roundtrip", "retrieved_at": "2026-11-23"},
+   {"field": "gain_ft_one_way", "value_as_stated": "2,300 ft to High Camp", "from_trailhead": "Killen Creek", "to": "camp", "url": "https://www.wta.org/go-hiking/hikes/killen-creek", "publisher": "WTA", "quote_of_fact": "2,300 feet", "retrieved_at": "2026-11-23"},
+   {"field": "gain_ft_one_way", "value_as_stated": "5,300 ft camp to summit (Adams Glacier route)", "from_trailhead": "High Camp", "to": "summit", "url": "https://www.mountaineers.org/activities/routes-places/mt-adams-adams-glacier", "publisher": "The Mountaineers", "quote_of_fact": "Camp to Summit 5,300", "retrieved_at": "2026-11-23"}
+  ],
+  "trailhead_note": "Killen Creek is the standard trailhead for these north-side routes; no sign of a different trailhead. Nothing found specific to the NW Ridge North Face.",
+  "other_facts": [
+   {"fact": "Same as above: High Camp meadows at 6,900 ft; PCT crossing just after 3 mi", "url": "https://www.wta.org/go-hiking/hikes/killen-creek"}
+  ],
+  "not_found": ["SummitPost (not opened; others got 403)", "route-specific source for NW Ridge north face"]
+ },
+ "wa_jack_mountain_northeast_glacier": {
+  "claims": [
+   {"field": "gain_ft_one_way", "value_as_stated": "about 3,900 feet to Crater Lake", "from_trailhead": "Canyon Creek", "to": "Crater Lake", "url": "https://cascadeclimbers.com/forum/topic/88020-tr-the-jack-mountain-assault-a-4-day-epic/", "publisher": "CascadeClimbers trip report", "quote_of_fact": "about 62 switchbacks, about 3,900 feet of elevation gain", "retrieved_at": "2026-11-23"}
+  ],
+  "trailhead_note": "Canyon Creek TH confirmed as start; 2005 NE Glacier TR started from East Bank TH instead when Canyon Creek ford was too high (adds 3.5 mi each way from East Bank TH, as stated there). No published one-way mileage found on opened pages.",
+  "other_facts": [
+   {"fact": "Canyon Creek is a dangerous ford in high water", "url": "https://cascadeclimbers.com/forum/topic/33186-tr-jack-mountain-ne-glacier-4272005/"},
+   {"fact": "2005 TR route was NE Glacier, climbed late April", "url": "https://cascadeclimbers.com/forum/topic/33186-tr-jack-mountain-ne-glacier-4272005/"}
+  ],
+  "not_found": ["SummitPost 403", "Mountaineers has no NE Glacier page (jack-mountain-northeast-glacier redirected to search)", "Peakbagger page not found"]
+ },
+ "wa_castle_in_the_sky": {
+  "claims": [
+   {"field": "distance_round_trip", "value_as_stated": "10.4 miles, roundtrip (to Hannegan Pass/Peak)", "from_trailhead": "Hannegan", "to": "Hannegan Peak (not Whatcom)", "url": "https://www.wta.org/go-hiking/hikes/hannegan-pass", "publisher": "WTA", "quote_of_fact": "10.4 miles, roundtrip; gain 3,100 ft; highest 6,200 ft", "retrieved_at": "2026-11-23"}
+  ],
+  "trailhead_note": "Mountain Project lists access from Hannegan Pass (FS Road 32 off SR 542) to Whatcom Pass, or from Little Beaver via Ross Dam trailhead (Hwy 20). Hannegan trailhead is a valid start; Little Beaver/Ross Lake is the other. Hannegan Pass trailhead at road end, 3,120 ft (Mountaineers). No Hannegan-to-base distance found.",
+  "other_facts": [
+   {"fact": "Castle in the Sky climbs the left edge of Whatcom Peak south buttress; P1 5.7 150 ft, P2 5.8 190 ft, P3 5.9R 200 ft, P4 5.10b 120 ft", "url": "https://www.mountainproject.com/route/122896783/castle-in-the-sky"},
+   {"fact": "South side route reached from Whatcom Pass by low orbit east of peak, or from Easy Ridge to Perfect Pass; North Ridge from Whatcom Pass heading south", "url": "https://www.mountainproject.com/area/112032394/whatcom-peak"},
+   {"fact": "Hannegan Pass trail drops to the Chilliwack River then up to Whatcom Pass", "url": "https://www.mountaineers.org/activities/routes-places/hannegan-pass"}
+  ],
+  "not_found": ["SummitPost 403", "no published Hannegan-to-base mileage opened"]
+ }
+}

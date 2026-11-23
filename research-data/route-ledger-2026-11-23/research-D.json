@@ -1,0 +1,47 @@
+{
+ "wa_glacier_peak_kennedy_glacier": {
+  "claims": [
+   {"field": "dist_km_one_way", "value_as_stated": "18.3 mi (ascent leg; descent also 18.3 mi)", "from_trailhead": "North Fork Sauk", "to": "summit", "url": "https://www.peakbagger.com/climber/ascent.aspx?aid=3241290", "publisher": "Peakbagger ascent log (individual climber's GPS stats); route logged as Cool/Suiattle Glacier, NOT Kennedy Glacier", "quote_of_fact": "Distance: 18.3 mi (way in)", "retrieved_at": "2026-11-23"},
+   {"field": "gain_ft_one_way", "value_as_stated": "9854 ft gain on way in (Net 8450 ft; Extra 1404 ft)", "from_trailhead": "North Fork Sauk", "to": "summit", "url": "https://www.peakbagger.com/climber/ascent.aspx?aid=3241290", "publisher": "Peakbagger", "quote_of_fact": "Gain on way in: 9854 ft", "retrieved_at": "2026-11-23"},
+   {"field": "distance_round_trip", "value_as_stated": "33.3 mi / 33.9 mi (ascent-page 'Distance' for whole trip; list column Mi: 31.2 to 37.1 on other logs)", "from_trailhead": "not stated in the stat block (route likely North Fork Sauk)", "to": "summit and back", "url": "https://www.peakbagger.com/climber/PeakAscents.aspx?pid=1972", "publisher": "Peakbagger ascent logs aid 3236177, 3239727", "quote_of_fact": "33.3 mi; 33.9 mi", "retrieved_at": "2026-11-23"},
+   {"field": "gain_round_trip", "value_as_stated": "11492 ft; 11186 ft (logs aid 3236177, 3239727); list also 8480-12427 ft across logs", "from_trailhead": "not stated", "to": "summit and back", "url": "https://www.peakbagger.com/climber/PeakAscents.aspx?pid=1972", "publisher": "Peakbagger", "quote_of_fact": "Gain on way in: 11492 ft / 11186 ft", "retrieved_at": "2026-11-23"},
+   {"field": "distance_segments", "value_as_stated": "Trailhead to Mackinaw about 5 mi (1,000 ft); Mackinaw to PCT junction 3.5 mi (3,000 ft); then half mile to White Pass", "from_trailhead": "North Fork Sauk", "to": "White Pass camp", "url": "https://www.wta.org/go-hiking/hikes/glacier-peak", "publisher": "Washington Trails Association", "quote_of_fact": "just over 5 miles; 3.5 miles; half mile", "retrieved_at": "2026-11-23"}
+  ],
+  "trailhead_note": "Our pin is North Fork Sauk (WTA coordinates 48.0582, -121.2881; Peakbagger log gives 48.05838, -121.28809, 2070 ft). The approach text says the standard historical Kennedy Glacier approach is from White Chuck River TH (FS-23, road closed), with North Fork Sauk as the open alternate. Pin therefore matches the alternate, not the text's primary way in. No Kennedy-Glacier-specific one-way figure found; the 18.3 mi log is Cool/Suiattle Glacier from North Fork Sauk.",
+  "other_facts": [
+   {"fact": "Glacier Peak highest point 10,525 ft (WTA); Peakbagger 10,550.2 ft", "url": "https://www.wta.org/go-hiking/hikes/glacier-peak"},
+   {"fact": "Mackinaw camp: water at North Fork Sauk River and a pit toilet; White Pass camp has pit toilet and stream water; toilet at trailhead", "url": "https://www.wta.org/go-hiking/hikes/glacier-peak"},
+   {"fact": "Access: Mountain Loop Hwy about 16 mi SE of Darrington, left on Road 49 (North Fork Sauk/Sloan Creek), 6.5 mi to trailhead", "url": "https://www.wta.org/go-hiking/hikes/glacier-peak"},
+   {"fact": "Upper mountain technical; glacier climb gear (ice axe, crampons, rope) used per logs; typical trip 2 days+", "url": "https://www.peakbagger.com/climber/ascent.aspx?aid=3236177"}
+  ],
+  "not_found": ["No Kennedy Glacier specific distance from White Chuck found", "SummitPost 403", "Peakbagger site search form did not return results via URL; used pid 1972 from web search"]
+ },
+ "wa_storm_king_southwest_scramble": {
+  "claims": [
+   {"field": "distance_to_park_creek_pass_one_way", "value_as_stated": "19.6 miles, 4,900 ft gain (plus 1,000 ft loss/gain past Junction)", "from_trailhead": "SR 20 / Colonial Creek (Thunder Creek Trail)", "to": "Park Creek Pass (not summit)", "url": "https://www.nps.gov/noca/planyourvisit/thunder-creek-trail.htm", "publisher": "National Park Service", "quote_of_fact": "SR 20 to Park Creek Pass: 19.6 miles", "retrieved_at": "2026-11-23"},
+   {"field": "distance_segments", "value_as_stated": "SR 20 to first bridge 2 mi (105 ft gain); Park Creek Pass to Upper Stehekin Valley Trail (old road) 8 mi, 3,800 ft loss", "from_trailhead": "SR 20 / Colonial Creek", "to": "segments", "url": "https://www.nps.gov/noca/planyourvisit/thunder-creek-trail.htm", "publisher": "National Park Service", "quote_of_fact": "2 miles; 8 miles", "retrieved_at": "2026-11-23"}
+  ],
+  "trailhead_note": "No published trailhead-to-Storm-King-summit one-way figure found from Colonial Creek, Stehekin or Cascade Pass. NPS gives only to Park Creek Pass (19.6 mi), which exceeds our stored 21.7 km (13.5 mi) one-way, suggesting the stored dist_km is not a Colonial Creek trailhead to summit walk. Our pin is Colonial Creek, matching the approach text's most common line. A climber's Goode/Storm King trip started at Bridge Creek TH (PCT) instead, a fourth access.",
+  "other_facts": [
+   {"fact": "Thunder Creek trail use: hiker and stock; difficulty easy to strenuous", "url": "https://www.nps.gov/noca/planyourvisit/thunder-creek-trail.htm"},
+   {"fact": "Thunder Slam 2012 log: Day 1 from Bridge Creek trailhead (4400 ft) on HWY 20 followed PCT ~10 miles to North Fork Bridge Creek trail then ~5 miles; stated '18 miles, 3800 ft elev gain, 3000 ft elev loss' to high camp (~5200 ft) below Goode NE Buttress; Storm King SW basin route climbed from there with dropped packs; Storm King given as 8520 ft", "url": "https://stephabegg.com/?p=8941"},
+   {"fact": "Storm King summit 8,564.6 ft, prominence 659 ft, parent Goode West Tower (Peakbagger pid 1833); Peakbagger shows ascent entries but no distance/gain data for any", "url": "https://www.peakbagger.com/peak.aspx?pid=1833"}
+  ],
+  "not_found": ["SummitPost 403 (Storm King page 273954)", "Peakbagger ascents for pid 1833 carry no Distance/Gain", "Mountaineers has Goode NE Buttress pages (not read)"]
+ },
+ "wa_mount_fernow_southeast_face": {
+  "claims": [
+   {"field": "distance_one_way", "value_as_stated": "22.0 miles, one-way", "from_trailhead": "Phelps Creek trailhead (3500 ft; coordinates 48.1628, -120.8084)", "to": "summit (stated as the hike length; the page notes the hike ends N of Phelps Creek Campground requiring a 3-mile road walk, so this may be a loop/point-to-point total)", "url": "https://www.wta.org/go-hiking/hikes/mount-fernow", "publisher": "Washington Trails Association", "quote_of_fact": "LENGTH 22.0 miles, one-way", "retrieved_at": "2026-11-23"},
+   {"field": "gain_ft", "value_as_stated": "5,900 feet", "from_trailhead": "Phelps Creek trailhead", "to": "not stated", "url": "https://www.wta.org/go-hiking/hikes/mount-fernow", "publisher": "Washington Trails Association", "quote_of_fact": "ELEVATION GAIN 5,900 feet", "retrieved_at": "2026-11-23"},
+   {"field": "distance_day_segments", "value_as_stated": "Day 1: 5.4 mi, 2708 ft ascent; Day 2 summit day: 6.9 mi, 5428 ft ascent; Day 3: 5.3 mi, 148 ft ascent (camp at 6066 ft)", "from_trailhead": "Phelps Creek (start elevation 3509 ft)", "to": "Day1 trailhead to camp; Day2 camp-summit-camp; Day3 camp to trailhead", "url": "https://www.washingtonstatehiking.com/reportslist/mt_fernow", "publisher": "washingtonstatehiking.com (single climber's GPS, Sep 6-8 2024; also listed on Mountaineers trip report)", "quote_of_fact": "Distance 5.4mi / 6.9mi / 5.3mi", "retrieved_at": "2026-11-23"}
+  ],
+  "trailhead_note": "Pin and approach text agree: Phelps Creek Trailhead (3,500 ft). The 5.4 mi to camp on the log matches the approach text's 5.4 mi to Leroy Basin. Our brief's pin summit at 7.8 mi vs the trip report's camp-to-summit day (6.9 mi round trip from camp) is consistent with a roughly 11-13 mi one-way route, i.e. stored 8 km (5 mi) one-way is far short. Search summaries also mention Outdoor Project 15.00 mi / 7,900 ft (page not opened).",
+  "other_facts": [
+   {"fact": "Fernow: Class 4, exposed climbing; highest peak in the Entiat Mountains, 9,249 ft (WTA); log gives 9241 ft", "url": "https://www.wta.org/go-hiking/hikes/mount-fernow"},
+   {"fact": "Road: FR 62 Chiwawa River Rd, pavement ends 10.8 mi; bear right FR 6211 for 2.3 very rough miles to trailhead at 3500 ft; no pass/fee", "url": "https://www.wta.org/go-hiking/hikes/mount-fernow"},
+   {"fact": "Mountaineers trip report: Mount Fernow/Southwest Slope, done as 3 days from Phelps Creek, road high clearance only", "url": "https://www.mountaineers.org/activities/trip-reports/mount-fernow-summit-from-phelps-creek"},
+   {"fact": "Peakbagger pid 2012 lists only 4 ascents with no distance/gain", "url": "https://www.peakbagger.com/climber/PeakAscents.aspx?pid=2012"}
+  ],
+  "not_found": ["Outdoor Project and SummitPost pages not opened (SummitPost 403 elsewhere)", "Mountaineers routes-places 'Mount Fernow (Wild Sky)' is a DIFFERENT 6,190 ft peak; ignore"]
+ }
+}
