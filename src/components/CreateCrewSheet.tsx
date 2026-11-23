@@ -65,6 +65,8 @@ export interface CreateCrewSheetProps {
   onRoute: (routeId: string, opts?: { private: boolean }) => void;
   /** Ask Who can join? at the top (the main + Create a crew). Left out, the sheet asks nothing. */
   askWhoCanJoin?: boolean;
+  /** Who can join? opens on "Let others ask to join" (the route page's Find tab, whose Current crews lists it for the next climber). */
+  defaultListed?: boolean;
   /** Passed to SavedClimbList: a heading and line for the list instead of "From your saved climbs". */
   listHeading?: string;
   listIntro?: string;
@@ -80,12 +82,12 @@ export interface CreateCrewSheetProps {
    labels are faint, so a crag session, every saved list and "find it in Climbs" read as one run of options. Three headed sections
    now: a crag session, your saved climbs (SavedClimbList), and a climb you have not saved yet. Climb again with a past crew opens
    it too, titled for those climbers. */
-export default function CreateCrewSheet({ picks, formedIds, onClose, onRoute, onArea, onFindClimb, askWhoCanJoin = false, listHeading, listIntro, title = "Create a crew", subtitle = "Pick where. You invite people once the crew exists." }: CreateCrewSheetProps) {
+export default function CreateCrewSheet({ picks, formedIds, onClose, onRoute, onArea, onFindClimb, askWhoCanJoin = false, defaultListed = false, listHeading, listIntro, title = "Create a crew", subtitle = "Pick where. You invite people once the crew exists." }: CreateCrewSheetProps) {
   const total = picks.reduce((n, g) => n + g.rs.length, 0);
   /* WHO CAN JOIN, ASKED ONCE HERE (owner 2026-11-14). A new crew used to be listed for anyone to ask to join
      ("Open crew — 1 spot left") without the organiser ever being asked. Default: just the people you invite.
      It stays changeable under the crew's ⋯ More. */
-  const [invitesOnly, setInvitesOnly] = useState(true);
+  const [invitesOnly, setInvitesOnly] = useState(!defaultListed);
   const pickRoute = (id: string) => onRoute(id, askWhoCanJoin ? { private: invitesOnly } : undefined);
   return createPortal(<div onClick={onClose} tabIndex={-1} onKeyDown={e => { if (e.key === "Escape") onClose(); }} role="dialog" aria-modal="true" aria-label={title} style={{ position: "fixed", inset: 0, zIndex: 1150, background: C.scrimStrong, display: "flex", alignItems: "flex-end", justifyContent: "center" }}>
     <div onClick={e => e.stopPropagation()} style={{ background: C.surface, borderRadius: "18px 18px 0 0", border: "1px solid " + C.border, width: "100%", maxWidth: 520, padding: 16, boxSizing: "border-box", maxHeight: "90%", overflowY: "auto", overscrollBehavior: "contain" }}>

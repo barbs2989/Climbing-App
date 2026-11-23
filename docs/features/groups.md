@@ -19,15 +19,25 @@ views under `groupsTab`: For you · Your groups · Your activity · Discover · 
   the value they stored (a null still reads as Any member, on the screen and in the policy). A member of a
   moderators-only group sees a line saying so where *+ Create event* would be.
 - **Discover — search.** One box matches every word typed against a group's name, disciplines, typed location, its
-  **state or province in both spellings** ("Washington" and "WA" both find "Seattle, WA"), and its About text,
-  through the shared `searchMatches` rule (`lib/search.js`).
+  **state or province in both spellings** ("Washington" and "WA" both find "Seattle, WA"), and its About text.
+  Signed in, the match runs in the database against `groups.search_text` (0487), which holds those fields in
+  `search_norm`'s spelling-forgiving form, so "mount baker" finds "Mt Baker Alpine Club"; a guest's list of example
+  groups is matched in the browser by the same rule (`searchMatches`, `lib/search.js`).
 - **Discover — explore by state** (reworked 2026-11-13 for scale). Under *Explore by discipline*, at most six state
   chips (`STATE_CHIPS`): your **home** state, then the states of the areas you listed yourself at for partners
   (`partner_areas`, 0300) — marked *You climb here* — then the states with the most groups. A chip filters the list to
   that whole state and combines with the search box. The list below (*Every state* or one state, alphabetical, with
-  counts) holds every state; it no longer offers each typed town, which ran to hundreds of spellings. A town is found
-  by the search box and a distance by *Near a place*. Results show 20 at a time with *Show more groups*
-  (`DISC_PAGE`), reset whenever a filter changes.
+  counts) holds every state with a group **and every state you downloaded** (`groupMyStates`, the account's pins, else
+  this device's downloads; owner 2026-11-23), a downloaded state with no group yet listed with a 0. It shows whenever
+  it has two or more states; before, it was built only from states that already had a group and hidden when the chips
+  covered them, so a climber whose only groups were at home could pick nothing but home. It no longer offers each typed town, which ran to hundreds of spellings. A town is found
+  by the search box and a distance by *Near a place*. Results show 20 at a time with *Show more groups*, reset
+  whenever a filter changes. Signed in, each 20 is its own read (`discover_groups`, 0487) and the heading's count is
+  the database's total; the chip counts come from `discover_group_facets`. *Other* lists the groups whose typed
+  location names no state.
+- **Discover — sorts.** *Recommended* (or *Nearest* with a place picked), *Most active* (the most recent post that
+  is still up, newest first) and *Most members*. All three are ordered in the database, over every group the filters
+  match, not over the page on screen. A non-member is shown the order only, never a post or when it was made.
 - **A group opens on About** (owner 2026-11-13), for members too; closing the group forgets the tab it was left on.
 - **Its own avatar and cover photo** (owner 2026-11-18, 0454). The group form's *Photos* section (`GroupPhotoFields`)
   takes an avatar and a cover. Picking a file uploads it at once (`uploadGroupPhoto`: the camera's location stripped,
@@ -83,14 +93,34 @@ views under `groupsTab`: For you · Your groups · Your activity · Discover · 
 - **Long text opens in place** (2026-10-28): a post in *For you* (`groupPostPreview`) stops at five lines with *See more*, and a Discover card's blurb (`groupDiscoverCard`) at three. Both use the `groupPostMore` key the group's own post view uses, so a post opened in the feed is open in the group too.
 
 ## 2. How it works
-`useMyGroups` reads every group the viewer may see (RLS: public, or one you belong to) and copies it into
-`createdGroups`. `discoverGroupList(q, sort, where, near)` filters that list by the text query, by `where`
-(`""`, `"st:<region>"` or `"city:<location>"`, held in the `groupPlace` state) and by `near` (`groupNearPt`: the
-picked area's point from `useAreaPoint`, with the radius held in `groupNear`), and drops groups you are in. With a
-place picked, *Recommended* becomes *Nearest* (`groupNearMi`). `openGroupsNear` is the area page's way in. A
-group's region comes from `regionOfPlace(location)` (`lib/db.js`), which reads a trailing two-letter code first and
-then the longest full state/province name; `regionAbbr` gives the code back for search. Your climbing regions are
-your `partner_areas` paths matched against `useStates()`.
+**Two reads, since 0487.** `useMyGroups` reads the groups you have a row in (member, asked to join, or invited),
+with their rosters, and copies them into `createdGroups`: Your groups, For you, Events and Requests are built from
+that. The groups you are NOT in are never read whole. `useDiscoverGroups` asks `discover_groups()` for one page of
+20 (the text query, the state held in `groupPlace` as `"st:<region>"`, the point and radius from `groupNearPt`, the
+sort, and what *Recommended* ranks by: your disciplines, home region and climbing regions) and returns the loaded
+pages with the total; `useDiscoverGroupFacets` reads the chip counts; For you's *Recommended for you* is the same
+function with a limit of 3. App hands the tab one object, `groupDiscover`, and a failed read is
+`groupDiscoverUnavailable`, which the list says in place of its empty state. A group you are not in that is open on
+its own page or in the join sheet is read by id (`useGroupById`), so a filter change or your own join cannot pull it
+out from under the page; `groupsKnown` is the merged list those sheets look a group up in. Whenever your own groups
+are re-read (after every join, leave, request and edit) `refreshGroupDiscovery` marks the Discover reads stale.
+
+The database lists public groups that Safety has not taken down and that you are not an active member of. Both
+functions are `security definer` because *Most members* and *Most active* need numbers a non-member cannot read row
+by row (0318); they return a member count and an order, never a roster row or a post. `groups.region` and
+`groups.search_text` are generated columns, so no client can write them.
+
+A guest (and a build with no database) keeps `discoverGroupList(q, sort, where, near)`, which filters the example
+groups and the ones made on this device in the browser, and the tab pages that list itself (`DISC_PAGE`). Signed
+in, the example groups (`GROUPS`, while `DEMO_FILLERS` is on) are not in the database, so the same function matches
+them against the same filters and `groupDiscoverSort` merges them into the database's rows once the last page of
+real groups is loaded; they are counted in the total and the chips, as before, and an example group never pushes a
+real one onto a later page. If the read of the real groups fails while example groups are listed, a line above the
+list says it is not complete. With a
+place picked, *Recommended* becomes *Nearest* (`groupNearMi`). `openGroupsNear` is the area page's way in. Your home
+region comes from `regionOfPlace(location)` (`lib/db.js`), which reads a trailing two-letter code first and then the
+longest full state/province name; `region_of_place` is its SQL twin, and `check:search-norm` section 5 keeps the two
+region tables one. Your climbing regions are your `partner_areas` paths matched against `useStates()`.
 
 A group's feed is live (0326): `useGroupFeed` is a `useLiveQuery` (`lib/live.js`) subscribed over Supabase Realtime to
 `group_posts` and `group_post_reactions`, so a post, edit, pin, delete or reaction another member makes refetches the
@@ -105,34 +135,38 @@ treats it as a DELETE. Probe: `scripts/oneoff/probe-live-takedown.mjs`.
 ## 3. Files
 | File | Key symbols |
 |---|---|
-| `ClimbMatch.jsx` | `discoverGroupList`, `groupDiscoverCard`, `groupHomeRegion`, `groupClimbRegions`, `groupRegionRank`, `groupPlace`, `groupNear`, `groupNearPt`, `groupNearMi`, `openGroupsNear`, `groupsTab`, `openGroupId` |
+| `ClimbMatch.jsx` | `groupDiscover`, `groupDiscoverUnavailable`, `groupRecommended`, `groupsKnown`, `discoverGroupList` (guests), `groupDiscoverCard`, `groupHomeRegion`, `groupClimbRegions`, `groupRegionRank`, `groupPlace`, `groupNear`, `groupNearPt`, `groupNearMi`, `openGroupsNear`, `groupsTab`, `openGroupId` |
 | `src/components/GroupPlaceSearch.tsx` | `GroupPlaceSearch`, the catalog search behind *Near a place* and the form's *Where it climbs* |
 | `src/components/PartnersHereCard.tsx` | `onGroupsHere`, the area page's *Climbing groups near* link |
 | `src/components/GroupDiscussionTab.tsx` | `GroupDiscussionTab`, an open group's Discussion tab (lifted from App, PR62) |
 | `src/components/GroupAboutTab.tsx` | `GroupAboutTab`, an open group's About tab |
-| `src/components/GroupMembersTab.tsx` | `GroupMembersTab`, an open group's Members tab (roster and member requests) |
-| `src/components/GroupEventsTab.tsx` | `GroupEventsTab`, an open group's Events tab |
+| `src/components/GroupMembersTab.tsx` | `GroupMembersTab`, an open group's Members tab (roster and member requests); past six members, *All N members →* opens a `ListPage` with a name search and a sort (group order, name, moderators first) |
+| `src/components/GroupEventsTab.tsx` | `GroupEventsTab`, an open group's Events tab; past three past events, *All N past events →* opens a `ListPage` with a search by name or place and newest/oldest. Both group pages stack at 792, over the group view and under the event (795) or the Remove sheet (860) a row opens |
 | `src/components/GroupMediaTab.tsx` | `GroupMediaTab`, an open group's Media grid |
 | `src/components/GroupJoinQuestionsEditor.tsx` | `GroupJoinQuestionsEditor`, the membership-questions editor in the create-group form (PR63) |
 | `src/components/GroupEventForm.tsx` | `GroupEventForm`, the create-an-event sheet, and the editor for one |
 | `lib/eventSeries.js` | `SERIES_COUNTS`, `seriesDates`, `seriesExtension`, `seriesLater`: the dates of a repeating series |
 | `lib/groupRules.js` | `groupVisOf`, `groupCanHostEvent`, `groupJoinPath`, `groupJoinLabel`, `GROUP_TOPICS`, `groupWhere` (moved out of `ClimbMatch.jsx`, PR62) |
 | `src/components/GroupsTab.tsx` | `GroupsTab`, the Groups screen body (For you / Your groups / Your activity / Discover / Events), lifted from App in PR61; App passes it the helpers above |
-| `lib/db.js` | `useMyGroups`, `createGroupRow`, `updateGroupSettings`, `uploadGroupPhoto`, `setGroupVisibility`, `createGroupEvents`, `updateGroupEvents`, `deleteGroupEvents`, `regionOfPlace`, `regionAbbr`, `useMyPartnerAreas`, `useStates`, `useGroupFeed`, `useAreaPoint` |
+| `lib/db.js` | `useMyGroups`, `useDiscoverGroups`, `useDiscoverGroupFacets`, `useGroupById`, `refreshGroupDiscovery`, `createGroupRow`, `updateGroupSettings`, `uploadGroupPhoto`, `setGroupVisibility`, `createGroupEvents`, `updateGroupEvents`, `deleteGroupEvents`, `regionOfPlace`, `regionAbbr`, `useMyPartnerAreas`, `useStates`, `useGroupFeed`, `useAreaPoint` |
 | `lib/search.js` | `searchMatches` |
 | `lib/live.js` | `useLiveQuery` — the Realtime subscription behind the live feed |
 | `src/components/GroupCrewPicker.tsx` | Form a crew from this group: pick members, then a saved climb or an area |
 | `src/components/GroupPhotoFields.tsx` | `GroupPhotoFields`, the form's avatar and cover photo pickers (0454) |
-| `supabase/migrations` | 0090, 0178, 0230, 0258, 0260, 0318, 0326, 0396, 0454 (avatar and cover); 0426 (private crews, used by Form a crew) |
+| `supabase/migrations` | 0090, 0178, 0230, 0258, 0260, 0318, 0326, 0396, 0454 (avatar and cover); 0426 (private crews, used by Form a crew); 0487 (`discover_groups`, `discover_group_facets`, `region_of_place`, `groups.region`, `groups.search_text`) |
+| `scripts/oneoff/verify-0487-discover-groups-pglite.mjs` | Replays the migrations into PGlite and asks Discover's questions as real callers: who is listed, search, state, distance, each sort, paging, grants |
 
 ## 4. Data
-`groups` (`visibility`, `event_policy`, `policy`, `location`, `blurb`, `area_id`, `lat`, `lng`, `avatar_url`, `cover_url`), `group_members` (`role`, `status`),
+`groups` (`visibility`, `event_policy`, `policy`, `location`, `blurb`, `area_id`, `lat`, `lng`, `avatar_url`, `cover_url`; generated: `region`, `search_text`), `group_members` (`role`, `status`),
 `group_posts`, `group_post_reactions` (both in the `supabase_realtime` publication since 0326), `group_events`, `group_event_rsvps`, `partner_areas`, `areas` (state rows and `path`).
 
 ## 5. Known gaps
 - A group's location is free text; one typed with no state ("Squamish") has no region and is listed under *Other*.
 - Only groups that picked *Where it climbs* have a point; the rest are found by state and search, never by distance.
-- Discover still reads every visible group into the browser (`useMyGroups`) and filters there; paging the screen does
-  not page the read. Past a few thousand groups this wants a server-side search (state, text, distance) with paging.
+- Discover's pages are cut by offset, so a group created between two reads can shift a row onto the next page (the
+  list drops the repeat). *Most members* and *Most active* count members or find the last post for every group the
+  filters match before cutting the page; past tens of thousands of groups those two sorts want a stored count and
+  last-post time on `groups`.
+- A climber in a very large number of groups still reads all of their own groups and rosters at once (`useMyGroups`).
 - *Near a place* measures from a catalog area, not from a town or zip; a town-based group picks the crag or region it
   climbs at.

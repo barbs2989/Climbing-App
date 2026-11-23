@@ -21,6 +21,8 @@ export interface InviteRoute {
 }
 export interface CrewInviteModalProps {
   climber: InviteeClimber;
+  /** Everyone this ONE note goes to, when more than one climber was picked while browsing. */
+  climbers?: ReadonlyArray<InviteeClimber> | null;
   route: InviteRoute;
   onClose: () => void;
   /** Sends the invite with the trimmed note ("" when none). */
@@ -28,18 +30,21 @@ export interface CrewInviteModalProps {
 }
 
 /** The INVITE TO CREW sheet: who, for which climb, an optional note (with a suggested one), send. The backdrop is a mouse-only div by design (check:clickable baseline). */
-export default function CrewInviteModal({climber,route,onClose,onSend}: CrewInviteModalProps){
-  const c=climber,first=pubFirst(c);
-  const suggested="Hi "+first+", want to join my crew for "+route.name+"? "+(withProtection(route.grade,route)?("It’s "+withProtection(route.grade,route)+". "):"")+"Looking for a solid, safety-minded partner — let me know!";
+export default function CrewInviteModal({climber,climbers,route,onClose,onSend}: CrewInviteModalProps){
+  const many=climbers&&climbers.length>1?climbers:null;
+  const c=climber,first=many?"":pubFirst(c);
+  const names=many?many.map(x=>pubFirst(x)):[];
+  const nameList=names.length<3?names.join(" and "):names.slice(0,-1).join(", ")+" and "+names[names.length-1];
+  const suggested=(many?"Hi":"Hi "+first)+", want to join my crew for "+route.name+"? "+(withProtection(route.grade,route)?("It’s "+withProtection(route.grade,route)+". "):"")+"Looking for a solid, safety-minded partner — let me know!";
   const [note,setNote]=useState("");
   const MAX=300;
   return <div onClick={onClose} role="dialog" aria-modal="true" aria-label="Invite to crew" style={{position:"fixed",inset:0,zIndex:80,background:C.scrim,display:"flex",alignItems:"flex-end",justifyContent:"center"}}>
     <div onClick={e=>e.stopPropagation()} style={{background:C.surface,borderRadius:"18px 18px 0 0",border:"1px solid "+C.border,width:"100%",maxWidth:520,padding:18,boxShadow:"0 -10px 40px rgba(0,0,0,0.5)",maxHeight:"90%",overflowY:"auto",overscrollBehavior:"contain"}}>
       <div style={{display:"flex",alignItems:"center",gap:12,marginBottom:13}}>
-        <Av src={c.avatar} size={46} online={c.online}/>
+        {many?null:<Av src={c.avatar} size={46} online={c.online}/>}
         <div style={{flex:1,minWidth:0}}>
-          <div style={{fontSize:16,fontWeight:700}}>Invite {first} to your crew</div>
-          <div style={{fontSize:12,color:C.textMuted,marginTop:1}}>They join the trip for this objective</div>
+          <div style={{fontSize:16,fontWeight:700}}>{many?"Invite "+many.length+" climbers to your crew":"Invite "+first+" to your crew"}</div>
+          <div style={{fontSize:12,color:C.textMuted,marginTop:1,overflowWrap:"anywhere"}}>{many?nameList:"They join the trip for this objective"}</div>
         </div>
         <button onClick={onClose} aria-label="Close" style={POP_CLOSE}>✕</button>
       </div>
@@ -55,9 +60,9 @@ export default function CrewInviteModal({climber,route,onClose,onSend}: CrewInvi
       </div>
       <div style={{display:"flex",gap:12}}>
         <button onClick={onClose} style={{flex:"0 0 auto",padding:"12px 17px",background:C.surface,color:C.textSub,border:"1px solid "+C.border,borderRadius:12,fontSize:14,fontWeight:600,cursor:"pointer"}}>Cancel</button>
-        <button onClick={()=>onSend(note.trim())} style={{...BTN_LG,flex:1,background:C.blueSolid,color:C.onSolid,border:"none"}}>{note.trim()?"Send invite":"Send without note"}</button>
+        <button onClick={()=>onSend(note.trim())} style={{...BTN_LG,flex:1,background:C.blueSolid,color:C.onSolid,border:"none"}}>{many?(note.trim()?"Send "+many.length+" invites":"Send "+many.length+" without note"):note.trim()?"Send invite":"Send without note"}</button>
       </div>
-      <div style={{fontSize:12,color:C.textMuted,textAlign:"center",marginTop:11,lineHeight:1.5}}>{first} can accept or decline your invite.</div>
+      <div style={{fontSize:12,color:C.textMuted,textAlign:"center",marginTop:11,lineHeight:1.5}}>{many?"Each climber can accept or decline your invite.":first+" can accept or decline your invite."}</div>
     </div>
   </div>;
 }
