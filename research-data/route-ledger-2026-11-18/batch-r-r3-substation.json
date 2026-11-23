@@ -1,0 +1,503 @@
+{
+ "wa_rug_monkey": {
+  "area": "wa_substation",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/107783732/rug-monkey",
+    "https://www.mountainproject.com/area/106589594/substation",
+    "https://rakkup.com/guidebook/exit-38-rock-climbing/rug-monkey/c25560",
+    "https://rakkup.com/guidebook/exit-38-rock-climbing/substation/s11465",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/ArcGIS/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.6637343,47.4370112&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://parks.wa.gov/find-parks/state-parks/olallie-state-park",
+    "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.7",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107783732/rug-monkey",
+      "fact": "5.7 YDS",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://rakkup.com/guidebook/exit-38-rock-climbing/rug-monkey/c25560",
+      "fact": "Rug Monkey 5.7, two stars (Exit 38 Rock Climbs, Kutzke & Price)",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "discipline",
+    "value": "sport",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107783732/rug-monkey",
+      "fact": "Type: Sport, 75 ft (23 m)",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://rakkup.com/guidebook/exit-38-rock-climbing/rug-monkey/c25560",
+      "fact": "Rug Monkey listed as a Sport route",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_rug_monkey",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "pitches 0 is invalid. Mountain Project gives one line, 75 ft (23 m) with 5 bolts to a chain anchor with lower-offs: one length to one anchor, so a single pitch is clear. Implied, not stated: unconfirmed after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/107783732/rug-monkey"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_rug_monkey",
+    "column": "length_m",
+    "from": null,
+    "to": 23,
+    "why": "Mountain Project states 75 ft (23 m). Single source (Rakkup's free pages give no length, bolts or anchor; the rest is in the paid guide); locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/107783732/rug-monkey"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_rug_monkey",
+    "column": "bolts",
+    "from": null,
+    "to": 5,
+    "why": "Mountain Project protection: 5 bolts (bolts, not clips). Single source (Rakkup's free pages give no length, bolts or anchor; the rest is in the paid guide); locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/107783732/rug-monkey"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_rug_monkey",
+    "column": "anchor",
+    "from": null,
+    "to": "Chain anchor",
+    "why": "Mountain Project: chain anchor with lower-offs. House spelling 'Chain anchor'. Single source (Rakkup's free pages give no length, bolts or anchor; the rest is in the paid guide); locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/107783732/rug-monkey"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_rug_monkey",
+    "column": "access",
+    "from": null,
+    "to": {
+     "rules": "Day use only, 6:30 a.m. to dusk. Climbing at Deception Crags can be closed between February and August while peregrine falcons nest; check the park's alerts before going.",
+     "land_manager": "Washington State Parks (Olallie State Park)",
+     "parking_pass": "Discover Pass required to park at Washington State Parks ($10 one day, $45 a year)."
+    },
+    "why": "access is empty. Copied field for field from the live verified siblings wa_substation_glob_job_extension and wa_jiffy_pop (batch Q). Re-queried the official WA State Parks boundary layer on 2026-11-23 at the Substation crag point (47.43701,-121.66373): inside 'Palouse to Cascades', a State Park Trail, consistent with batch Q. official-1, 12 months, after apply.",
+    "evidence": [
+     "https://services5.arcgis.com/4LKAHwqnBooVDUlX/ArcGIS/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.6637343,47.4370112&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+     "https://parks.wa.gov/find-parks/state-parks/olallie-state-park",
+     "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "Both sources say Rug Monkey traditionally starts on Homo Erectus's first 3-4 bolts, then moves right to its own bolt line and its own chain anchor (MP also allows starting up Hurly-Burly). Own bolt line and anchor, so treated as a route, not a variation. Glob Job Extension (wa_substation_glob_job_extension) finishes at this anchor. FA left as stored ('Bryan Burdo, 1994' = MP 'Bryan Burdo (1994)'; a reformat adds no fact, and FA never locks from MP alone)."
+ },
+ "wa_homo_erectus": {
+  "area": "wa_substation",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/106810828/homo-erectus",
+    "https://www.mountainproject.com/area/106589594/substation",
+    "https://rakkup.com/guidebook/exit-38-rock-climbing/homo-erectus/c25567",
+    "https://rakkup.com/guidebook/exit-38-rock-climbing/substation/s11465",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/ArcGIS/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.6637343,47.4370112&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://parks.wa.gov/find-parks/state-parks/olallie-state-park",
+    "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.6",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106810828/homo-erectus",
+      "fact": "5.6 YDS",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://rakkup.com/guidebook/exit-38-rock-climbing/homo-erectus/c25567",
+      "fact": "Homo Erectus 5.6, two stars (Exit 38 Rock Climbs, Kutzke & Price)",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "discipline",
+    "value": "sport",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106810828/homo-erectus",
+      "fact": "Type: Sport, 75 ft (23 m)",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://rakkup.com/guidebook/exit-38-rock-climbing/homo-erectus/c25567",
+      "fact": "Homo Erectus listed as a Sport route",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_homo_erectus",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "pitches 0 is invalid. Mountain Project gives one line, 75 ft (23 m) with 6 bolts to a chain anchor with lower-offs: one length to one anchor, so a single pitch is clear. Implied, not stated: unconfirmed after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/106810828/homo-erectus"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_homo_erectus",
+    "column": "length_m",
+    "from": null,
+    "to": 23,
+    "why": "Mountain Project states 75 ft (23 m). Single source (Rakkup's free pages give no length, bolts or anchor; the rest is in the paid guide); locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/106810828/homo-erectus"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_homo_erectus",
+    "column": "bolts",
+    "from": null,
+    "to": 6,
+    "why": "Mountain Project protection: 6 bolts (bolts, not clips). Single source (Rakkup's free pages give no length, bolts or anchor; the rest is in the paid guide); locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/106810828/homo-erectus"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_homo_erectus",
+    "column": "anchor",
+    "from": null,
+    "to": "Chain anchor",
+    "why": "Mountain Project: chain anchor with lower-offs. House spelling 'Chain anchor'. Single source (Rakkup's free pages give no length, bolts or anchor; the rest is in the paid guide); locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/106810828/homo-erectus"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_homo_erectus",
+    "column": "access",
+    "from": null,
+    "to": {
+     "rules": "Day use only, 6:30 a.m. to dusk. Climbing at Deception Crags can be closed between February and August while peregrine falcons nest; check the park's alerts before going.",
+     "land_manager": "Washington State Parks (Olallie State Park)",
+     "parking_pass": "Discover Pass required to park at Washington State Parks ($10 one day, $45 a year)."
+    },
+    "why": "access is empty. Copied field for field from the live verified siblings wa_substation_glob_job_extension and wa_jiffy_pop (batch Q). Re-queried the official WA State Parks boundary layer on 2026-11-23 at the Substation crag point (47.43701,-121.66373): inside 'Palouse to Cascades', a State Park Trail, consistent with batch Q. official-1, 12 months, after apply.",
+    "evidence": [
+     "https://services5.arcgis.com/4LKAHwqnBooVDUlX/ArcGIS/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.6637343,47.4370112&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+     "https://parks.wa.gov/find-parks/state-parks/olallie-state-park",
+     "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "MP: first route right of the wet spot; wet start. Rakkup: the left of the two routes to the top of the slab. FA left as stored (matches MP; FA never locks from MP alone)."
+ },
+ "wa_primordial_blues": {
+  "area": "wa_substation",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/107783741/primordial-blues",
+    "https://www.mountainproject.com/area/106589594/substation",
+    "https://rakkup.com/guidebook/exit-38-rock-climbing/primordial-blues/c25561",
+    "https://rakkup.com/guidebook/exit-38-rock-climbing/substation/s11465",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/ArcGIS/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.6637343,47.4370112&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://parks.wa.gov/find-parks/state-parks/olallie-state-park",
+    "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.9",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107783741/primordial-blues",
+      "fact": "5.9 YDS",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://rakkup.com/guidebook/exit-38-rock-climbing/primordial-blues/c25561",
+      "fact": "Primordial Blues 5.9, two stars (Exit 38 Rock Climbs, Kutzke & Price)",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_primordial_blues",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "pitches 0 is invalid. Mountain Project gives one line, 25 ft (8 m) with 2 bolts to a chain anchor with lower-offs: one length to one anchor, so a single pitch is clear. Implied, not stated: unconfirmed after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/107783741/primordial-blues"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_primordial_blues",
+    "column": "length_m",
+    "from": null,
+    "to": 8,
+    "why": "Mountain Project states 25 ft (8 m). Single source (Rakkup's free pages give no length, bolts or anchor; the rest is in the paid guide); locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/107783741/primordial-blues"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_primordial_blues",
+    "column": "bolts",
+    "from": null,
+    "to": 2,
+    "why": "Mountain Project protection: 2 bolts (bolts, not clips); very high first bolt. Single source (Rakkup's free pages give no length, bolts or anchor; the rest is in the paid guide); locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/107783741/primordial-blues"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_primordial_blues",
+    "column": "anchor",
+    "from": null,
+    "to": "Chain anchor",
+    "why": "Mountain Project: chain anchor with lower-offs. House spelling 'Chain anchor'. Single source (Rakkup's free pages give no length, bolts or anchor; the rest is in the paid guide); locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/107783741/primordial-blues"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_primordial_blues",
+    "column": "access",
+    "from": null,
+    "to": {
+     "rules": "Day use only, 6:30 a.m. to dusk. Climbing at Deception Crags can be closed between February and August while peregrine falcons nest; check the park's alerts before going.",
+     "land_manager": "Washington State Parks (Olallie State Park)",
+     "parking_pass": "Discover Pass required to park at Washington State Parks ($10 one day, $45 a year)."
+    },
+    "why": "access is empty. Copied field for field from the live verified siblings wa_substation_glob_job_extension and wa_jiffy_pop (batch Q). Re-queried the official WA State Parks boundary layer on 2026-11-23 at the Substation crag point (47.43701,-121.66373): inside 'Palouse to Cascades', a State Park Trail, consistent with batch Q. official-1, 12 months, after apply.",
+    "evidence": [
+     "https://services5.arcgis.com/4LKAHwqnBooVDUlX/ArcGIS/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.6637343,47.4370112&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+     "https://parks.wa.gov/find-parks/state-parks/olallie-state-park",
+     "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass"
+    ]
+   }
+  ],
+  "disputed": [
+   "discipline: Mountain Project 'Sport, 25 ft, 2 bolts'; the Exit 38 guidebook (Rakkup) lists it as Toprope ('Nice TR problem... set this TR by climbing Rug Monkey'). Stored 'sport' left unchanged, not locked; owner call."
+  ],
+  "notes": "HELD: fa null -> 'Bryan Burdo (1994)' is on Mountain Project only (FA never from MP alone; Rakkup's free page gives no FA). The guidebook's toprope label plus MP's 'very high first bolt' suggests it is mostly toproped; bolts/length/anchor rest on MP alone."
+ },
+ "wa_glom_don": {
+  "area": "wa_substation",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/106810822/glom-don",
+    "https://www.mountainproject.com/area/106589594/substation",
+    "https://rakkup.com/guidebook/exit-38-rock-climbing/glom-don/c25568",
+    "https://rakkup.com/guidebook/exit-38-rock-climbing/substation/s11465",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/ArcGIS/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.6637343,47.4370112&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://parks.wa.gov/find-parks/state-parks/olallie-state-park",
+    "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass"
+   ]
+  },
+  "ledger": [],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_glom_don",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "pitches 0 is invalid. Mountain Project gives one line, 40 ft (12 m) with 4 bolts to a chain anchor shared with Glob Job: one length to one anchor, so a single pitch is clear. Implied, not stated: unconfirmed after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/106810822/glom-don"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_glom_don",
+    "column": "access",
+    "from": null,
+    "to": {
+     "rules": "Day use only, 6:30 a.m. to dusk. Climbing at Deception Crags can be closed between February and August while peregrine falcons nest; check the park's alerts before going.",
+     "land_manager": "Washington State Parks (Olallie State Park)",
+     "parking_pass": "Discover Pass required to park at Washington State Parks ($10 one day, $45 a year)."
+    },
+    "why": "access is empty. Copied field for field from the live verified siblings wa_substation_glob_job_extension and wa_jiffy_pop (batch Q). Re-queried the official WA State Parks boundary layer on 2026-11-23 at the Substation crag point (47.43701,-121.66373): inside 'Palouse to Cascades', a State Park Trail, consistent with batch Q. official-1, 12 months, after apply.",
+    "evidence": [
+     "https://services5.arcgis.com/4LKAHwqnBooVDUlX/ArcGIS/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.6637343,47.4370112&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+     "https://parks.wa.gov/find-parks/state-parks/olallie-state-park",
+     "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass"
+    ]
+   }
+  ],
+  "disputed": [
+   "grade: stored 5.8- = Mountain Project 5.8-; the Exit 38 guidebook (Rakkup) gives 5.7+. Not locked, not changed."
+  ],
+  "notes": "CATALOG DEFECT (variation): Mountain Project's Location reads 'Variation of Glob Job' and its description says it starts up Glob Job, goes left at the ledge to an easy arete and shares Glob Job's anchor; Rakkup likewise says start as for Glob Job, then cut left to the arete. Per the rules only pitches and access are proposed. Not proposed: length_m 12, bolts 4, anchor 'Chain anchor' (MP: 'Sport, TR, 40 ft (12 m)', '4 bolts, chain anchor with loweroffs'); fa 'Bryan Burdo (1994)' (MP only)."
+ },
+ "wa_hangover_helper": {
+  "area": "wa_substation",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/108273656/hangover-helper",
+    "https://www.mountainproject.com/area/106589594/substation",
+    "https://rakkup.com/guidebook/exit-38-rock-climbing/hangover-helper/c25559",
+    "https://rakkup.com/guidebook/exit-38-rock-climbing/substation/s11465",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/ArcGIS/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.6637343,47.4370112&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://parks.wa.gov/find-parks/state-parks/olallie-state-park",
+    "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.11a",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108273656/hangover-helper",
+      "fact": "5.11a YDS",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://rakkup.com/guidebook/exit-38-rock-climbing/hangover-helper/c25559",
+      "fact": "Hangover Helper 5.11a, three stars (Exit 38 Rock Climbs, Kutzke & Price)",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "discipline",
+    "value": "sport",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108273656/hangover-helper",
+      "fact": "Type: Sport, 45 ft (14 m)",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://rakkup.com/guidebook/exit-38-rock-climbing/hangover-helper/c25559",
+      "fact": "Hangover Helper listed as a Sport route",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_hangover_helper",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "pitches 0 is invalid. Mountain Project gives one line, 45 ft (14 m) with 5 bolts to a chain anchor with mussy hooks: one length to one anchor, so a single pitch is clear. Implied, not stated: unconfirmed after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/108273656/hangover-helper"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_hangover_helper",
+    "column": "length_m",
+    "from": null,
+    "to": 14,
+    "why": "Mountain Project states 45 ft (14 m). Single source (Rakkup's free pages give no length, bolts or anchor; the rest is in the paid guide); locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/108273656/hangover-helper"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_hangover_helper",
+    "column": "bolts",
+    "from": null,
+    "to": 5,
+    "why": "Mountain Project protection: 5 bolts (bolts, not clips). Single source (Rakkup's free pages give no length, bolts or anchor; the rest is in the paid guide); locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/108273656/hangover-helper"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_hangover_helper",
+    "column": "anchor",
+    "from": null,
+    "to": "Chain anchor",
+    "why": "Mountain Project: chain anchor with mussy hooks. House spelling 'Chain anchor'. Single source (Rakkup's free pages give no length, bolts or anchor; the rest is in the paid guide); locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/108273656/hangover-helper"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_hangover_helper",
+    "column": "access",
+    "from": null,
+    "to": {
+     "rules": "Day use only, 6:30 a.m. to dusk. Climbing at Deception Crags can be closed between February and August while peregrine falcons nest; check the park's alerts before going.",
+     "land_manager": "Washington State Parks (Olallie State Park)",
+     "parking_pass": "Discover Pass required to park at Washington State Parks ($10 one day, $45 a year)."
+    },
+    "why": "access is empty. Copied field for field from the live verified siblings wa_substation_glob_job_extension and wa_jiffy_pop (batch Q). Re-queried the official WA State Parks boundary layer on 2026-11-23 at the Substation crag point (47.43701,-121.66373): inside 'Palouse to Cascades', a State Park Trail, consistent with batch Q. official-1, 12 months, after apply.",
+    "evidence": [
+     "https://services5.arcgis.com/4LKAHwqnBooVDUlX/ArcGIS/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.6637343,47.4370112&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+     "https://parks.wa.gov/find-parks/state-parks/olallie-state-park",
+     "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "HELD: fa 'Bryan Burdo' -> 'Bryan Burdo (1994)' adds a year from Mountain Project alone (FA never from MP alone). guide_stars stored 1; Rakkup shows three stars (not a researched field here)."
+ }
+}

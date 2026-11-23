@@ -1,0 +1,504 @@
+{
+ "wa_undercover": {
+  "area": "wa_a_main_wall_west",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/106517028/undercover",
+    "https://rakkup.com/guidebook/mt-erie-rock-climbing/undercover/c28761",
+    "https://www.mountainproject.com/area/114859186/main-wall-west",
+    "https://rakkup.com/guidebook/mt-erie-rock-climbing/main-wall-west/s12345",
+    "https://www.anacorteswa.gov/517/Community-Forest-Lands-ACFL",
+    "https://www.anacorteswa.gov/Facilities/Facility/Details/Anacortes-Community-Forest-Lands-7",
+    "https://www.anacorteswa.gov/DocumentCenter/View/32255/Anacortes-Community-Forest-Lands-Plan"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.7",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106517028/undercover",
+      "fact": "Undercover 5.7 YDS, Trad, 120 ft (36 m)",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://rakkup.com/guidebook/mt-erie-rock-climbing/undercover/c28761",
+      "fact": "Undercover 5.7, Trad (Mt. Erie Climbing guidebook)",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_undercover",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "Mountain Project describes one 120 ft pitch from the Zig Zag P1 chains to an anchor on the Zig Zag ledge; one length to one anchor.",
+    "evidence": [
+     "https://www.mountainproject.com/route/106517028/undercover"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_undercover",
+    "column": "access",
+    "from": null,
+    "to": {
+     "fees": null,
+     "rules": "Climbing and scrambling are allowed only in the Mt. Erie summit and south/west face area. The forest lands are open 6 am to 10 pm. New fixed anchors and new climbing areas need Forest Advisory Board approval.",
+     "permit": "No permit for individual climbers. Groups should send their planned climbing dates to Anacortes Parks & Recreation ahead of time.",
+     "group_limit": null,
+     "land_manager": "City of Anacortes Parks & Recreation (Anacortes Community Forest Lands)",
+     "parking_pass": null
+    },
+    "why": "access is empty. Copied field for field from the live, verified object on wa_zig_zag (batch N; also on the batch Q Main Wall West rows). Re-read 2026-11-23: the city's ACFL page names Anacortes Parks & Recreation as manager; the hours and climbing-area rules come from the city's ACFL plan verified in batch Q. Nothing read today contradicts it. official-1, 12 months, after apply.",
+    "evidence": [
+     "https://www.anacorteswa.gov/517/Community-Forest-Lands-ACFL",
+     "https://www.anacorteswa.gov/Facilities/Facility/Details/Anacortes-Community-Forest-Lands-7",
+     "https://www.anacorteswa.gov/DocumentCenter/View/32255/Anacortes-Community-Forest-Lands-Plan"
+    ]
+   }
+  ],
+  "disputed": [
+   "anchor: Mountain Project's Protection says 'chain anchors' but its description says the pitch ends at a 'bolted anchor' (two wordings on one page); not proposed."
+  ],
+  "notes": "POSSIBLE CATALOG DEFECT (variation): per Mountain Project, Undercover starts from the top of Zig Zag's first-pitch chains, climbs under the overhang, rejoins Zig Zag's upper pitch and ends on Zig Zag's ledge. Both Mountain Project and the Mt. Erie guidebook (Rakkup) list it as its own route, so it may stay a row; owner call whether it is a variation of Zig Zag P2 (wa_zig_zag). Only pitches and access proposed. Not proposed (would be locked-1src from MP): length_m null->36 (120 ft), gear ['gear to 2 in']; the start also has a 5.9 slab option past 2 bolts shared with Cat from Outer Space. FA HELD: stored 'Seman, Kloke'; MP gives 'D. Seman, D. Kloke (1971)' (adds initials and a year) — one source, and FA never from MP alone. Trailhead pin not added on this row (defect row)."
+ },
+ "wa_crack_n_the_code": {
+  "area": "wa_a_main_wall_west",
+  "set": {
+   "waypoints": [
+    {
+     "lat": 48.4516,
+     "lng": -122.633088,
+     "elev": 157,
+     "name": "Heart Lake Road kiosk pullout",
+     "note": "Roadside gravel pullout on Heart Lake Road beside an information kiosk; trail 248 leaves from here toward trail 247 and the south-face crags.",
+     "type": "Trailhead",
+     "distMi": 0,
+     "elevFt": 157
+    }
+   ]
+  },
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/107525212/crackn-the-code",
+    "https://rakkup.com/guidebook/mt-erie-rock-climbing/crackn'-the-code/c28763",
+    "https://www.mountainproject.com/area/114859186/main-wall-west",
+    "https://rakkup.com/guidebook/mt-erie-rock-climbing/main-wall-west/s12345",
+    "https://www.openstreetmap.org/way/1268220847",
+    "https://www.openstreetmap.org/node/11778894534",
+    "https://www.anacorteswa.gov/517/Community-Forest-Lands-ACFL",
+    "https://www.anacorteswa.gov/Facilities/Facility/Details/Anacortes-Community-Forest-Lands-7",
+    "https://www.anacorteswa.gov/DocumentCenter/View/32255/Anacortes-Community-Forest-Lands-Plan"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "waypoints/Heart Lake Road kiosk pullout",
+    "value": {
+     "name": "Heart Lake Road kiosk pullout",
+     "lat": 48.4516,
+     "lng": -122.633088
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.openstreetmap.org/way/1268220847",
+      "fact": "amenity=parking layby, fee=no; info board node 11778894534 beside it; USGS 3DEP 157 ft at the pin (reused from batch Q)",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_crack_n_the_code",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "Mountain Project: a 40 ft line to the chain anchor shared with Zig Zag P1, Another Option and LGK; one length to one anchor.",
+    "evidence": [
+     "https://www.mountainproject.com/route/107525212/crackn-the-code"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_crack_n_the_code",
+    "column": "length_m",
+    "from": null,
+    "to": 12,
+    "why": "Mountain Project: Trad, 40 ft (12 m). Single source (the guidebook page is a teaser); locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/107525212/crackn-the-code"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_crack_n_the_code",
+    "column": "anchor",
+    "from": null,
+    "to": "Chain anchor",
+    "why": "Mountain Project protection: chain anchor (shared with Zig Zag P1, Another Option and LGK). Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/107525212/crackn-the-code"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_crack_n_the_code",
+    "column": "gear",
+    "from": null,
+    "to": [
+     "gear to 1 in"
+    ],
+    "why": "Mountain Project protection: gear to 1 in. Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/107525212/crackn-the-code"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_crack_n_the_code",
+    "column": "access",
+    "from": null,
+    "to": {
+     "fees": null,
+     "rules": "Climbing and scrambling are allowed only in the Mt. Erie summit and south/west face area. The forest lands are open 6 am to 10 pm. New fixed anchors and new climbing areas need Forest Advisory Board approval.",
+     "permit": "No permit for individual climbers. Groups should send their planned climbing dates to Anacortes Parks & Recreation ahead of time.",
+     "group_limit": null,
+     "land_manager": "City of Anacortes Parks & Recreation (Anacortes Community Forest Lands)",
+     "parking_pass": null
+    },
+    "why": "access is empty. Copied field for field from the live, verified object on wa_zig_zag (batch N; also on the batch Q Main Wall West rows). Re-read 2026-11-23: the city's ACFL page names Anacortes Parks & Recreation as manager; the hours and climbing-area rules come from the city's ACFL plan verified in batch Q. Nothing read today contradicts it. official-1, 12 months, after apply.",
+    "evidence": [
+     "https://www.anacorteswa.gov/517/Community-Forest-Lands-ACFL",
+     "https://www.anacorteswa.gov/Facilities/Facility/Details/Anacortes-Community-Forest-Lands-7",
+     "https://www.anacorteswa.gov/DocumentCenter/View/32255/Anacortes-Community-Forest-Lands-Plan"
+    ]
+   }
+  ],
+  "disputed": [
+   "grade: Mountain Project 5.7+, Mt. Erie guidebook (Rakkup) 5.7; stored 5.7 left, not locked.",
+   "bolts: Mountain Project lists 3 bolts, but they protect only one of two finishes (the slab; the other steps right over a bulge on gear); not proposed."
+  ],
+  "notes": "FA HELD: stored null; Mountain Project gives 'S. Trent, D. Kloke (2002)' — FA never from MP alone, and the guidebook page is a teaser with no FA. Trailhead pin copied from the batch Q Main Wall West siblings (same lot)."
+ },
+ "wa_namby_pamby": {
+  "area": "wa_substation",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/107616268/namby-pamby",
+    "https://rakkup.com/guidebook/exit-38-rock-climbing/namby-pamby/c25558",
+    "https://www.mountainproject.com/area/106589594/substation",
+    "https://rakkup.com/guidebook/exit-38-rock-climbing/substation/s11465",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/ArcGIS/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.6637343,47.4370112&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://parks.wa.gov/find-parks/state-parks/olallie-state-park",
+    "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass"
+   ]
+  },
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_namby_pamby",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "Mountain Project: Sport, 45 ft, bolts to a chain anchor; one length to one anchor.",
+    "evidence": [
+     "https://www.mountainproject.com/route/107616268/namby-pamby"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_namby_pamby",
+    "column": "length_m",
+    "from": null,
+    "to": 14,
+    "why": "Mountain Project: Sport, 45 ft (14 m). Single source (the guidebook page is a teaser); locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/107616268/namby-pamby"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_namby_pamby",
+    "column": "anchor",
+    "from": null,
+    "to": "Chain anchor",
+    "why": "Mountain Project protection: chain anchor. Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/107616268/namby-pamby"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_namby_pamby",
+    "column": "access",
+    "from": null,
+    "to": {
+     "rules": "Day use only, 6:30 a.m. to dusk. Climbing at Deception Crags can be closed between February and August while peregrine falcons nest; check the park's alerts before going.",
+     "land_manager": "Washington State Parks (Olallie State Park)",
+     "parking_pass": "Discover Pass required to park at Washington State Parks ($10 one day, $45 a year)."
+    },
+    "why": "access is empty. Copied field for field from the live object on wa_substation_glob_job_extension (= wa_jiffy_pop), verified in batch Q. Re-checked 2026-11-23: the Substation point (47.4370112,-121.6637343) falls inside 'Palouse to Cascades' (State Park Trail) on the official WA State Parks boundary layer; the Olallie State Park page says the Homestead Valley Trailhead reaches Deception Crags, day use 6:30 a.m. to dusk; the Discover Pass page: required to park at State Parks, $10 / $45. No contradiction. official-1, 12 months, after apply.",
+    "evidence": [
+     "https://services5.arcgis.com/4LKAHwqnBooVDUlX/ArcGIS/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.6637343,47.4370112&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+     "https://parks.wa.gov/find-parks/state-parks/olallie-state-park",
+     "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass"
+    ]
+   }
+  ],
+  "disputed": [
+   "grade: Mountain Project 5.10b, Exit 38 guidebook (Rakkup) 5.10c; stored 5.10b left, not locked.",
+   "bolts: Mountain Project Protection says 6 bolts, but a photo caption on the same page says 'only 3 bolts'; two counts, held."
+  ],
+  "notes": "FA HELD: stored 'Brian Burdo'; Mountain Project gives 'Bryan Burdo (1994)' — one source. The first-name spelling differs across Substation rows (Brian vs Bryan); owner may want one spelling. Rakkup says the route starts as for Lovey-Dovey then cuts right to an arete; both sources list it as its own route, so not treated as a variation."
+ },
+ "wa_turf_safari": {
+  "area": "wa_substation",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/106589599/turf-safari",
+    "https://rakkup.com/guidebook/exit-38-rock-climbing/turf-safari/c25566",
+    "https://www.mountainproject.com/area/106589594/substation",
+    "https://rakkup.com/guidebook/exit-38-rock-climbing/substation/s11465",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/ArcGIS/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.6637343,47.4370112&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://parks.wa.gov/find-parks/state-parks/olallie-state-park",
+    "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass"
+   ]
+  },
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_turf_safari",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "Mountain Project: Sport, 30 ft, ending with a traverse to a shared anchor; one length to one anchor.",
+    "evidence": [
+     "https://www.mountainproject.com/route/106589599/turf-safari"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_turf_safari",
+    "column": "length_m",
+    "from": null,
+    "to": 9,
+    "why": "Mountain Project: Sport, 30 ft (9 m). Single source (the guidebook page is a teaser); locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/106589599/turf-safari"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_turf_safari",
+    "column": "bolts",
+    "from": null,
+    "to": 6,
+    "why": "Mountain Project protection: 6 bolts (one count, stated as bolts). Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/106589599/turf-safari"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_turf_safari",
+    "column": "access",
+    "from": null,
+    "to": {
+     "rules": "Day use only, 6:30 a.m. to dusk. Climbing at Deception Crags can be closed between February and August while peregrine falcons nest; check the park's alerts before going.",
+     "land_manager": "Washington State Parks (Olallie State Park)",
+     "parking_pass": "Discover Pass required to park at Washington State Parks ($10 one day, $45 a year)."
+    },
+    "why": "access is empty. Copied field for field from the live object on wa_substation_glob_job_extension (= wa_jiffy_pop), verified in batch Q. Re-checked 2026-11-23: the Substation point (47.4370112,-121.6637343) falls inside 'Palouse to Cascades' (State Park Trail) on the official WA State Parks boundary layer; the Olallie State Park page says the Homestead Valley Trailhead reaches Deception Crags, day use 6:30 a.m. to dusk; the Discover Pass page: required to park at State Parks, $10 / $45. No contradiction. official-1, 12 months, after apply.",
+    "evidence": [
+     "https://services5.arcgis.com/4LKAHwqnBooVDUlX/ArcGIS/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.6637343,47.4370112&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+     "https://parks.wa.gov/find-parks/state-parks/olallie-state-park",
+     "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass"
+    ]
+   }
+  ],
+  "disputed": [
+   "grade: Mountain Project 5.7, Exit 38 guidebook (Rakkup) 5.7+; stored 5.7 left, not locked.",
+   "anchor: Mountain Project says 'fixed permadraw anchors' (no mention of bolts or chains); no house spelling fits without inference, held."
+  ],
+  "notes": "FA stored 'Bryan Burdo (1994)' matches Mountain Project, but FA never locks from MP alone; not locked. Mountain Project notes an unprotected traverse to the anchor, which it shares with a neighbour it does not name."
+ },
+ "wa_you_re_only_nice_to_me_when_you_re_wet": {
+  "area": "wa_substation",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/108512160/youre-only-nice-to-me-when-youre-wet",
+    "https://rakkup.com/guidebook/exit-38-rock-climbing/you're-only-nice-to-me-when-you're-wet/c25555",
+    "https://www.mountainproject.com/area/106589594/substation",
+    "https://rakkup.com/guidebook/exit-38-rock-climbing/substation/s11465",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/ArcGIS/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.6637343,47.4370112&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://parks.wa.gov/find-parks/state-parks/olallie-state-park",
+    "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.10c",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108512160/youre-only-nice-to-me-when-youre-wet",
+      "fact": "You're Only Nice to Me When You're Wet 5.10c YDS, Sport, 50 ft (15 m)",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://rakkup.com/guidebook/exit-38-rock-climbing/you're-only-nice-to-me-when-you're-wet/c25555",
+      "fact": "You're Only Nice to Me When You're Wet 5.10b/c, Sport (slash grade agrees with 5.10c)",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_you_re_only_nice_to_me_when_you_re_wet",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "Mountain Project: Sport, 50 ft to a chain anchor; one length to one anchor.",
+    "evidence": [
+     "https://www.mountainproject.com/route/108512160/youre-only-nice-to-me-when-youre-wet"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_you_re_only_nice_to_me_when_you_re_wet",
+    "column": "access",
+    "from": null,
+    "to": {
+     "rules": "Day use only, 6:30 a.m. to dusk. Climbing at Deception Crags can be closed between February and August while peregrine falcons nest; check the park's alerts before going.",
+     "land_manager": "Washington State Parks (Olallie State Park)",
+     "parking_pass": "Discover Pass required to park at Washington State Parks ($10 one day, $45 a year)."
+    },
+    "why": "access is empty. Copied field for field from the live object on wa_substation_glob_job_extension (= wa_jiffy_pop), verified in batch Q. Re-checked 2026-11-23: the Substation point (47.4370112,-121.6637343) falls inside 'Palouse to Cascades' (State Park Trail) on the official WA State Parks boundary layer; the Olallie State Park page says the Homestead Valley Trailhead reaches Deception Crags, day use 6:30 a.m. to dusk; the Discover Pass page: required to park at State Parks, $10 / $45. No contradiction. official-1, 12 months, after apply.",
+    "evidence": [
+     "https://services5.arcgis.com/4LKAHwqnBooVDUlX/ArcGIS/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.6637343,47.4370112&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+     "https://parks.wa.gov/find-parks/state-parks/olallie-state-park",
+     "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass"
+    ]
+   }
+  ],
+  "disputed": [
+   "bolts: Mountain Project gives '6 or 7 bolts' depending on where you leave I Tie You Up; two counts, held."
+  ],
+  "notes": "POSSIBLE CATALOG DEFECT (link-up): per Mountain Project and Rakkup, this line starts up 'You're Only Nice to Me When I Tie You Up' (wa_you_re_only_nice_to_me_when_i_tie_you_up, the r4 twin — checked: different MP id 108512177, 5.10d) and about two-thirds up exits left to finish on Slippery When Wet (wa_slippery_when_wet). Both publishers still list it as its own three-star route, so the owner may keep the row. Only pitches and access proposed. Not proposed (locked-1src from MP): length_m null->15, anchor 'Chain anchor'. FA HELD: stored 'Bryan Burdo'; MP gives 'Bryan Burdo (1994)' — adds a year from one source only."
+ },
+ "wa_lovey_dovey": {
+  "area": "wa_substation",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/107616232/lovey-dovey",
+    "https://rakkup.com/guidebook/exit-38-rock-climbing/lovey-dovey/c25557",
+    "https://www.mountainproject.com/area/106589594/substation",
+    "https://rakkup.com/guidebook/exit-38-rock-climbing/substation/s11465",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/ArcGIS/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.6637343,47.4370112&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://parks.wa.gov/find-parks/state-parks/olallie-state-park",
+    "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.10a",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107616232/lovey-dovey",
+      "fact": "Lovey-Dovey 5.10a YDS, Sport, 50 ft (15 m)",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://rakkup.com/guidebook/exit-38-rock-climbing/lovey-dovey/c25557",
+      "fact": "Lovey-Dovey 5.10a, Sport (Exit 38 guidebook)",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_lovey_dovey",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "Mountain Project: Sport, 50 ft, 7 bolts to a chain anchor; one length to one anchor.",
+    "evidence": [
+     "https://www.mountainproject.com/route/107616232/lovey-dovey"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_lovey_dovey",
+    "column": "length_m",
+    "from": null,
+    "to": 15,
+    "why": "Mountain Project: Sport, 50 ft (15 m). Single source (the guidebook page is a teaser); locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/107616232/lovey-dovey"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_lovey_dovey",
+    "column": "bolts",
+    "from": null,
+    "to": 7,
+    "why": "Mountain Project protection: 7 bolts. Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/107616232/lovey-dovey"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_lovey_dovey",
+    "column": "anchor",
+    "from": null,
+    "to": "Chain anchor",
+    "why": "Mountain Project protection: chain anchor with lower-offs. Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/107616232/lovey-dovey"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_lovey_dovey",
+    "column": "access",
+    "from": null,
+    "to": {
+     "rules": "Day use only, 6:30 a.m. to dusk. Climbing at Deception Crags can be closed between February and August while peregrine falcons nest; check the park's alerts before going.",
+     "land_manager": "Washington State Parks (Olallie State Park)",
+     "parking_pass": "Discover Pass required to park at Washington State Parks ($10 one day, $45 a year)."
+    },
+    "why": "access is empty. Copied field for field from the live object on wa_substation_glob_job_extension (= wa_jiffy_pop), verified in batch Q. Re-checked 2026-11-23: the Substation point (47.4370112,-121.6637343) falls inside 'Palouse to Cascades' (State Park Trail) on the official WA State Parks boundary layer; the Olallie State Park page says the Homestead Valley Trailhead reaches Deception Crags, day use 6:30 a.m. to dusk; the Discover Pass page: required to park at State Parks, $10 / $45. No contradiction. official-1, 12 months, after apply.",
+    "evidence": [
+     "https://services5.arcgis.com/4LKAHwqnBooVDUlX/ArcGIS/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.6637343,47.4370112&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+     "https://parks.wa.gov/find-parks/state-parks/olallie-state-park",
+     "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "FA HELD: stored 'Brian Burdo'; Mountain Project gives 'Bryan Burdo (1994)' (different first-name spelling, adds a year) — one source."
+ }
+}
