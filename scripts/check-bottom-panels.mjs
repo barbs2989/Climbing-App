@@ -125,6 +125,18 @@ for (const d of DECLARED) {
       "      screen is unreachable while it is up — measured at 39 controls across six tabs,\n" +
       "      including the whole footer. Re-run scripts/oneoff/probe-policy-notice-covers-content.mjs.");
   }
+  // ...AND A POPUP IS NOT THE PAGE. #appscroll's padding moves nothing inside a role="dialog" layer, so the
+  // notice covered the foot of every sheet (2026-11-23: the wall-order sheet's Send sat under "Read Terms").
+  // The reservation for popups is two halves: App publishes the height, index.html ends every popup above it.
+  const indexHtml = fs.readFileSync(path.join(ROOT, "index.html"), "utf8");
+  const publishes = app.includes('setProperty("--cm-policy-h",policyH+"px")') && app.includes('setAttribute("data-policy-notice","")');
+  const rule = indexHtml.includes('html[data-policy-notice] [role="dialog"] { bottom: var(--cm-policy-h, 0px) !important; }');
+  if ((!publishes || !rule) && !fails.some((f) => f.startsWith("PolicyUpdateNotice reserves no space inside POPUPS"))) {
+    fails.push(
+      "PolicyUpdateNotice reserves no space inside POPUPS: " + (!publishes ? "ClimbMatch.jsx no longer writes --cm-policy-h / data-policy-notice to <html>" : "index.html no longer ends a [role=\"dialog\"] at var(--cm-policy-h)") + ".\n" +
+      "      A popup is a fixed layer of its own, so the notice sits on its last rows -- its Send or Save --\n" +
+      "      for as long as the notice is up. Both halves are required.");
+  }
 }
 
 // FAILS CLOSED. This guard reports an absence, so a scan that matched nothing prints what a
