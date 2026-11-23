@@ -408,6 +408,17 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   every **other** climber's row exists only as `dbReports`. Both are opened into the same
   components (`ReportStats`, `TripReport`). So a column one hydration drops is a fact on
   screen for its author and for nobody else. Gated by `npm run build`.
+  **It assumed the rows arrive whole, and on 2026-11-23 they did not.** 0501 (#3736) narrowed
+  `useUserLogs` to five columns for the résumé; App hydrated your OWN logs from the same hook
+  (`myLogsQ`), so every column this guard proved "mapped back" arrived `undefined`, and it stayed
+  green. Found by a log-form audit that logged real climbs and read them back as the author: the
+  friend saw the conditions, the author did not. The guard now finds the hook `myLogsQ=use…(uid)`
+  calls, reads its `.select("…")` in `lib/db.js` and fails unless it is `*` or names every column
+  the hydration reads (own logs: `useMyLogs`); and `profLogsQ` (another climber's Activity) must
+  select `TRIP_REPORT_COLS` (`useClimberReports`). Injection-tested: pointing `myLogsQ` back at
+  `useUserLogs` fails naming 41 columns; pointing `profLogsQ` at it fails. Trap met: the first draft
+  ended a hook's body at the next `export`, ran on into the un-exported `fetchRouteTripReports`, found
+  `TRIP_REPORT_COLS` there and passed the broken case; the body now ends at any top-level declaration.
   - It has now caught that in **both directions**. #843: `car_to_car_minutes` was read by
     RouteDetail and not by ClimbMatch, so your car-to-car time showed while you typed (the
     form computes it), vanished on reload, and stayed visible to everyone else. #861: the

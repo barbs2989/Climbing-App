@@ -1589,3 +1589,4 @@ Owner rule: a peak route with rock-climbing pitches (5th class and above) is **a
     migration adding `climb_logs.zz_test` and no grant, it fails naming that column.
   - `check:migration-replay` cannot carry this: its stand-in database sets NO default grants, so anon holds nothing there and
     every column-privilege question answers "no".
+  **One list may name `partners`: `useMyLogs`** (your own logs, `.eq("user_id", userId)`, 2026-11-23). Section 7 runs every other `climb_logs` list signed out, and this one signed in as its author (`where user_id = auth.uid()`); a list naming `partners` anywhere else, or `useMyLogs` reading anything but its own rows, fails. Injection-tested by adding `partners` to `useUserLogs`. The exception exists because the author's own logbook and edit form need who they climbed with, which 0501 had taken from them along with every other column.
