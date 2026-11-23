@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
-import { removeRouteListing, saveRouteListing } from "../../lib/db";
-import { tx } from "../../lib/tapWords.js";
+import { addRouteListing, removeRouteListing, saveRouteListing } from "../../lib/db";
 import { CARD, EYEBROW } from "../../lib/cardStyles.js";
 import { DLOCALE, localYmd } from "../../ClimbMatchCore.jsx";
 import type { C as Palette } from "../../ClimbMatchCore.jsx";
@@ -18,6 +17,8 @@ export interface ListMeOnRouteBoxProps {
   myListings?: MyRouteListing[] | null;
   /** The read of those listings failed: the box must not say "not listed" as a fact. */
   listingsError?: boolean;
+  /** The read has not answered yet: the box says neither "listed" nor "not listed", and offers no button. */
+  listingsLoading?: boolean;
   /** profiles.discoverable; false means no partner search shows this climber at all. Undefined = not read. */
   discoverable?: boolean;
   onOpenPrivacy?: (() => void) | null;
@@ -33,7 +34,7 @@ export const routeListingWindow = (l: { freeFrom?: string | null; freeTo?: strin
    route had nothing, and a climber appeared on its page only by saving it as an objective. This box is the
    route-level listing (route_partner_listings, 0489): one tap lists you, and once listed you can say when
    you are free and add a line. Same shape and optimism as ListMeInAreaBox; the write is the truth. */
-export default function ListMeOnRouteBox({ routeId, noun, C, uid, myListings, listingsError, discoverable, onOpenPrivacy, notify }: ListMeOnRouteBoxProps) {
+export default function ListMeOnRouteBox({ routeId, noun, C, uid, myListings, listingsError, listingsLoading, discoverable, onOpenPrivacy, notify }: ListMeOnRouteBoxProps) {
   const [busy, setBusy] = useState(false);
   const [optListed, setOptListed] = useState<boolean | null>(null);
   const [editing, setEditing] = useState(false);
@@ -52,7 +53,7 @@ export default function ListMeOnRouteBox({ routeId, noun, C, uid, myListings, li
     setOptListed(!listed);
     try {
       if (listed) { await removeRouteListing(uid, routeId); setEditing(false); }
-      else await saveRouteListing(uid, { routeId });
+      else await addRouteListing(uid, routeId);
     } catch (e: unknown) {
       setOptListed(null);
       if (notify) notify((listed ? "Couldn’t remove your listing — " : "Couldn’t list you here — ") + ((e && (e as Error).message) || "try again"));
@@ -68,16 +69,20 @@ export default function ListMeOnRouteBox({ routeId, noun, C, uid, myListings, li
     finally { setBusy(false); }
   };
   if (listingsError && optListed == null) return <div role="status" style={{ ...CARD(C, C.amber), marginBottom: 12, fontSize: 12.5, color: C.amber, lineHeight: 1.5 }}>Couldn’t load whether you’re listed for this {noun} — check your connection and try again.</div>;
-  const win = routeListingWindow(mine);
+  /* NOT KNOWN YET IS NOT "NOT LISTED" (review, 2026-11-23): while the read was in flight the box offered List me to a climber who was already listed. */
+  if (listingsLoading && optListed == null && !mine) return <div role="status" style={{ ...CARD(C), marginBottom: 12, fontSize: 12.5, color: C.textMuted, lineHeight: 1.5 }}>Checking your listing…</div>;
+  /* DATES THAT HAVE PASSED are not "free": the search hands other climbers no window for them, so this box must not print one either. */
+  const ended = !!(mine && mine.freeTo && mine.freeTo < today);
+  const win = ended ? "" : routeListingWindow(mine);
   const field = { width: "100%", boxSizing: "border-box" as const, minHeight: 44, padding: "9px 12px", borderRadius: 10, border: "1px solid " + C.border, background: C.bg, color: C.text, fontFamily: "inherit", fontSize: 13.5 };
   return (
     <div role="region" aria-label={"List yourself as a partner for this " + noun} style={{ ...CARD(C, listed ? C.green : C.blueDim), marginBottom: 12 }}>
       <div style={EYEBROW(listed ? C.green : C.blue)}>Your listing</div>
       <div style={{ fontSize: 14.5, fontWeight: 800, color: C.text, marginBottom: 4, overflowWrap: "anywhere" }}>{listed ? "You’re listed for this " + noun + " ✓" : "Looking for a partner for this " + noun + "?"}</div>
-      <div style={{ fontSize: 12.5, color: C.textSub, lineHeight: 1.5, marginBottom: 10, overflowWrap: "anywhere" }}>{listed ? ("Climbers who open this " + noun + " can find you and start a crew with you." + (win ? " " + win + "." : "") + (mine && mine.note ? " “" + mine.note + "”" : "")) : "List yourself here so climbers looking at this " + noun + " can find you and start a crew with you."}</div>
+      <div style={{ fontSize: 12.5, color: C.textSub, lineHeight: 1.5, marginBottom: 10, overflowWrap: "anywhere" }}>{listed ? ((discoverable === false ? "Your listing for this " + noun + " is saved." : "Climbers who open this " + noun + " can find you and start a crew with you.") + (win ? " " + win + "." : "") + (ended && mine && mine.freeTo ? " Your dates ended " + fmtDay(mine.freeTo) + "." : "") + (mine && mine.note ? " “" + mine.note + "”" : "")) : "List yourself here so climbers looking at this " + noun + " can find you and start a crew with you."}</div>
       {listed && discoverable === false ? <div style={{ fontSize: 12.5, color: C.amber, background: C.amberBg, border: "1px solid " + C.amber + "55", borderRadius: 10, padding: "9px 11px", marginBottom: 10, lineHeight: 1.5 }}>You’re off the Partners list, so this listing isn’t shown to anyone. {onOpenPrivacy ? <button type="button" onClick={onOpenPrivacy} style={{ background: "none", border: "none", color: C.blue, fontWeight: 800, cursor: "pointer", padding: "8px 0", fontSize: 12.5, fontFamily: "inherit" }}>Turn it on in Privacy</button> : null}</div> : null}
       <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
-        <button type="button" onClick={toggle} disabled={busy} aria-pressed={listed} aria-label={listed ? "Listed for this " + noun + tx(" — tap to remove") : "List me for this " + noun} style={{ flex: listed ? "0 0 auto" : "1 1 auto", minHeight: 44, padding: "0 16px", borderRadius: 10, border: listed ? "1px solid " + C.border : "none", background: listed ? C.surface : C.blueSolid, color: listed ? C.textSub : C.onSolid, fontSize: 13.5, fontWeight: 800, cursor: busy ? "default" : "pointer", opacity: busy ? 0.6 : 1 }}>{listed ? "Remove listing" : "List me for this " + noun}</button>
+        <button type="button" onClick={toggle} disabled={busy} aria-pressed={listed} style={{ flex: listed ? "0 0 auto" : "1 1 auto", minHeight: 44, padding: "0 16px", borderRadius: 10, border: listed ? "1px solid " + C.border : "none", background: listed ? C.surface : C.blueSolid, color: listed ? C.textSub : C.onSolid, fontSize: 13.5, fontWeight: 800, cursor: busy ? "default" : "pointer", opacity: busy ? 0.6 : 1 }}>{listed ? "Remove listing" : "List me for this " + noun}</button>
         {listed && serverListed && !editing ? <button type="button" onClick={openEditor} style={{ flex: "1 1 auto", minHeight: 44, padding: "0 12px", borderRadius: 10, border: "1px solid " + C.border, background: C.surface, color: C.text, fontSize: 13, fontWeight: 700, cursor: "pointer", textAlign: "left" }}>{win || (mine && mine.note) ? "Change the dates or note" : "Add dates or a note"}</button> : null}
       </div>
       {listed && editing ? <div style={{ marginTop: 12, borderTop: "1px solid " + C.border, paddingTop: 12 }}>
