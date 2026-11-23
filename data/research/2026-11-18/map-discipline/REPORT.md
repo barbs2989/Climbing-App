@@ -379,3 +379,33 @@ and the route is not a Goodell Creek route. Each write cites one opened page tha
   - Red Mountain east side: no page covers that side.
   - Fewer than three neighbours: every peak with one or two.
 - **Audit, measured:** SUMMIT_ONLY 154, NO_SUMMIT 40.
+
+### Round 10: climber.org trip reports per peak; owner lowers the bar to two sources (2026-11-23)
+
+Owner: "feel free to use 2 sources instead of 3". A start now counts when two independent opened sources
+agree and no other opened source names a different start, or the agreeing sources are a clear majority.
+`scripts/crtally.mjs` pulled every climber.org trip report the site indexes for each open California
+peak (`reports/ByPeak<L>.html`, 49 peaks). Each report's "Trailhead:" header and its first trailhead
+mention were then read.
+- **Written (3, unconfirmed, verified on re-read):**
+  - `batch-r10.json`: Black Mountain (Baxter Pass; 3 independent reports, official point) and Mount McGee
+    (North Lake; 3 reports, official point).
+  - `batch-r10b.json`: Mount Hilgard. Three reports name "Trailhead: Bear Creek Diversion Dam" and one
+    starts at Pine Creek. Pinned at the mapped Bear Creek Trailhead at the end of the 4WD Bear Diversion
+    Road, where a trailhead, a board and a guidepost sit within 5 m. The official "Bear Creek Trailhead"
+    point is 200 m away and confirms the name.
+- **Checked and held:**
+  - Silver Peak: all 4 reports start at Onion Spring by Lake Edison, but three map points lie up to 1.2 km
+    apart.
+  - Sirretta: the reports agree on the Sirretta trailhead at the northwest end of Big Meadow. The driving
+    guide's point (7,822 ft, matching its "7800") is 860 m from where the official and mapped trail lines
+    begin (7,957 ft).
+  - Recess: Bear Creek Diversion Dam in three reports vs Bear Ridge on two route pages.
+  - Wheel: the South Lake reports are long traverses, not starts for the peak.
+  - Young and Hale: two reports, but both describe the same 1998 trip.
+  - Split between starts: Gemini, Davis, Electra, Rodgers, Observation, Dicks, Pinchot, Goddard, Barnard,
+    and the other multi-start peaks.
+  - Name collisions make the index unusable for Mount Florence (Florence Peak) and Spanish Mountain
+    (Spanish Needle).
+- **Audit:** the rerun hit HTTP 500 twice and stopped under the throttle rule. Expected count is 151
+  (154 less these 3); it has not been measured yet.
