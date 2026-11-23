@@ -1,0 +1,76 @@
+{
+  "wa_mount_cameron_standard": {
+    "area": "wa_mount_cameron",
+    "set": { "gain_ft": 5095 },
+    "ledger": [
+      {
+        "field": "gain_ft",
+        "value": 5095,
+        "method": "agree-2",
+        "level": "locked",
+        "evidence": [
+          {
+            "url": "https://www.peakbagger.com/climber/ascent.aspx?aid=3264027",
+            "publisher": "Peakbagger",
+            "fact": "Gain on way in 5095 ft; start Obstruction Point TH; route: trail to Cameron Pass, final W ridge",
+            "retrieved_at": "2026-11-23"
+          },
+          {
+            "measurement": "the route's stored recorded track (starts 1 m from the Obstruction Point trailhead pin, passes 10 m from the summit pin), trailhead to the summit-pin vertex, counted by lib/elevGain.js",
+            "fact": "5394 ft (5.9% off)",
+            "retrieved_at": "2026-11-23"
+          }
+        ]
+      },
+      {
+        "field": "dist_km",
+        "value": 19.3,
+        "method": "agree-2",
+        "level": "locked",
+        "evidence": [
+          {
+            "url": "https://www.peakbagger.com/climber/ascent.aspx?aid=3264027",
+            "publisher": "Peakbagger",
+            "fact": "Distance on the way in 12 mi / 19.3 km, Obstruction Point TH to the summit",
+            "retrieved_at": "2026-11-23"
+          },
+          {
+            "measurement": "the route's stored recorded track, trailhead to the summit-pin vertex",
+            "fact": "19.2 km (0.5% off)",
+            "retrieved_at": "2026-11-23"
+          }
+        ]
+      },
+      {
+        "field": "approach_loss_ft",
+        "value": null,
+        "method": "agree-2",
+        "level": "unconfirmed",
+        "evidence": [
+          {
+            "url": "https://www.peakbagger.com/climber/ascent.aspx?aid=3264027",
+            "publisher": "Peakbagger",
+            "fact": "Loss on way in 4000 ft",
+            "retrieved_at": "2026-11-23"
+          },
+          {
+            "measurement": "the route's stored recorded track, trailhead to the summit-pin vertex",
+            "fact": "4492 ft (12% off: outside the 10% tolerance, so not locked and not written)",
+            "retrieved_at": "2026-11-23"
+          }
+        ]
+      }
+    ],
+    "sql_fixes": [
+      {
+        "table": "routes",
+        "id": "wa_mount_cameron_standard",
+        "column": "dist_km",
+        "from": 5.3,
+        "to": 19.3,
+        "why": "5.3 km is shorter than the straight line from the Obstruction Point trailhead pin to the summit (10.9 km), so it is impossible. Peakbagger publishes 12 mi (19.3 km) one way from Obstruction Point TH; the stored track measures 19.2 km to the summit pin. dist_km is the walk in, one way."
+      }
+    ],
+    "notes": "Searched and not usable: SummitPost (403 in Chrome, skipped for the run); The Mountaineers (no Mount Cameron page); WTA gives trail segments only (Cameron Pass trail 3.3 mi one way, 2,401 ft), and summing them would be our own arithmetic; Backcountry Post and a WTA trip report stop at Cameron Basin. Other Peakbagger logs start from camps (2025-07-05, 2013-09-09, 2020-08-08) and do not describe the trailhead-to-summit walk. Peak facts on the Peakbagger peak page: summit 7,194.5 ft (West Peak, NAVD88), East Peak 7,163 ft, Middle Peak 7,120 ft, prominence 1,023 ft. loss_ft (6800) left as it stands: it is the sum of the stored itinerary's daily gains, a different convention."
+  }
+}
