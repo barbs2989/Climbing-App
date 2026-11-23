@@ -1,0 +1,105 @@
+{
+ "ca_spanish_mountain_north_ridge": {
+  "area": "ca_spanish_mountain",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Crown Valley Trailhead (Rancheria Trailhead, Wishon Reservoir)",
+    "trailheadLat": 36.975474,
+    "trailheadLng": -118.956096
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Crown Valley Trailhead (Rancheria Trailhead, Wishon Reservoir)",
+     "trailheadLat": 36.975474,
+     "trailheadLng": -118.956096
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.openstreetmap.org/node/1527888043",
+      "fact": "Crown Valley Trailhead 36.97547,-118.95610",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://www.snwburd.com/bob/trip_reports/spanish_1.html",
+      "fact": "Start: Crown Valley Trailhead",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://climber.org/reports/2006/1581.html",
+      "fact": "Start: Crown Valley Trailhead",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "research",
+    "fact": "two agreeing sources (owner two-source rule)"
+   },
+   "chunk": "round13"
+  }
+ },
+ "ca_dicks_peak_standard_route": {
+  "area": "ca_dicks_peak",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Glen Alpine Trailhead (Lily Lake, end of Fallen Leaf Lake Road)",
+    "trailheadLat": 38.877119,
+    "trailheadLng": -120.080238
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Glen Alpine Trailhead (Lily Lake, end of Fallen Leaf Lake Road)",
+     "trailheadLat": 38.877119,
+     "trailheadLng": -120.080238
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_InfraRecreationSites_01/MapServer/0/query?where=site_cn%3D%275090.004531%27&outFields=site_name&f=json",
+      "fact": "Glen Alpine Trailhead 38.87712,-120.08024",
+      "retrieved_at": "2026-11-23",
+      "official": true
+     },
+     {
+      "url": "https://climber.org/reports/2009/1713.html",
+      "fact": "Start: Glen Alpine Trailhead",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://climber.org/reports/2003/1136.html",
+      "fact": "Start: Glen Alpine Trailhead",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://climber.org/reports/2001/833.html",
+      "fact": "Start: Glen Alpine Trailhead",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://climber.org/reports/2001/745.html",
+      "fact": "Start: Glen Alpine Trailhead",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "research",
+    "fact": "4 independent reports start here; 1 (climber.org 2001/780) started at Eagle Falls"
+   },
+   "chunk": "round13"
+  }
+ }
+}
