@@ -14,7 +14,7 @@
 //           owner, 2026-11-23): Use this order (resolve_wall_order rewrites the wall's one stored order)
 //           · Keep current order. Not sent to the AI checker.
 // Identical edits cluster with sameEditValue, exactly as the old queue did.
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { useAuth } from "../src/AuthContext.tsx";
 import { supabase } from "../lib/supabase";
@@ -210,7 +210,7 @@ function Desk() {
         key: "o:" + o.id, kind: "order", ids: [o.id], route_id: null, area_id: o.area_id, field: "wall_order", label: "Wall order",
         name: (o.areas && o.areas.name) || o.area_id, state: String(o.area_id || "").split("_")[0].toUpperCase(),
         cur: rs ? now.map(nm) : undefined, said: rs ? list.map(nm) : list.length + " climbs", note: (o.value && o.value.note) || "",
-        removes: false, climbers: 1, created_at: o.created_at, ai: null,
+        removes: false, climbers: 1, created_at: o.created_at, ai: null, by: o.contributor || null,
         order: { loaded: !!rs, failed: !rs && !!wallsQ.error, now, list, known: n, names, place },
       });
     });
@@ -253,7 +253,7 @@ function Desk() {
     setMsg({ ok: !failed.length, text: "Approved " + done + " of " + bulk.length + "." + (failed.length ? " Not approved — " + failed.join("; ") : "") });
   };
 
-  const loadErr = editsQ.error || flagsQ.error || ordersQ.error || wallsQ.error;
+  const loadErr = editsQ.error || flagsQ.error || ordersQ.error;
   // A wall order is not sent to the nightly AI checker, so it never counts as "not yet checked".
   const counts = { edits: rows.filter((r) => r.kind === "edit").length, flags: rows.filter((r) => r.kind === "flag").length, orders: rows.filter((r) => r.kind === "order").length, unchecked: rows.filter((r) => !r.ai && r.kind !== "order").length };
   const th = (k, label) => <th onClick={() => setSort((s) => ({ k, dir: s.k === k ? -s.dir : 1 }))} aria-sort={sort.k === k ? (sort.dir > 0 ? "ascending" : "descending") : "none"}>{label}{sort.k === k ? (sort.dir > 0 ? " ▲" : " ▼") : ""}</th>;
@@ -283,13 +283,13 @@ function Desk() {
               <td><span className="rd-lab">Type</span><span style={{ fontWeight: 700, color: r.kind === "flag" ? C.orange : r.kind === "order" ? C.amber : C.blue }}>{r.kind === "flag" ? "⚑ Flag" : r.kind === "order" ? "⇄ Order" : "✎ Edit"}</span>{r.climbers > 1 ? <span style={{ color: C.textMuted }}> ×{r.climbers}</span> : null}{r.removes ? <div style={{ color: C.red, fontSize: 11, fontWeight: 700 }}>removes</div> : null}</td>
               <td><span className="rd-lab">Route</span><span style={{ fontWeight: 700 }}>{r.name}</span> <span style={{ color: C.textMuted, fontSize: 11.5 }}>{r.state}{r.kind === "order" ? " · wall" : r.area_id ? " · area" : ""}</span></td>
               <td><span className="rd-lab">Field</span>{r.label}</td>
-              <td style={{ color: C.textSub }}><span className="rd-lab">Now</span>{isEmpty(r.cur) ? <i style={{ color: C.textMuted }}>empty</i> : short(r.cur)}</td>
+              <td style={{ color: C.textSub }}><span className="rd-lab">Now</span>{r.kind === "order" && !r.order.loaded ? <i style={{ color: r.order.failed ? C.red : C.textMuted }}>{r.order.failed ? "could not load the wall" : "loading…"}</i> : isEmpty(r.cur) ? <i style={{ color: C.textMuted }}>{r.kind === "order" ? "no order stored" : "empty"}</i> : short(r.cur)}</td>
               <td><span className="rd-lab">Climber</span>{r.kind === "flag" ? <i>“{short(r.note, 120)}”</i> : short(r.said)}</td>
               <td><span className="rd-lab">AI</span>{r.kind === "order" ? <span style={{ color: C.textMuted }}>—</span> : <VerdictChip v={r.ai} />}</td>
               <td><span className="rd-lab">AI value</span>{r.ai && !isEmpty(r.ai.ai_value) ? short(r.ai.ai_value) : <span style={{ color: C.textMuted }}>—</span>}</td>
               <td style={{ whiteSpace: "nowrap", color: C.textMuted }}><span className="rd-lab">Age</span>{when(r.created_at)} · {ageDays(r.created_at)}d</td>
             </tr>,
-            isOpen ? <tr key={r.key + ":d"} className="rd-detail"><td colSpan={8}>{r.kind === "order" ? <OrderDetail row={r} busy={busy === r.key} act={act} /> : <Detail row={r} busy={busy === r.key} act={act} />}</td></tr> : null,
+            isOpen ? <tr key={r.key + ":d"} className="rd-detail"><td colSpan={8}>{r.kind === "order" ? <OrderDetail row={r} busy={busy === r.key} act={act} refresh={wallsQ.refetch} /> : <Detail row={r} busy={busy === r.key} act={act} />}</td></tr> : null,
           ];
         })}</tbody>
       </table>}
@@ -300,10 +300,14 @@ function Desk() {
 // The wall as it is listed now beside the line the climber sent, each climb marked with the place it holds
 // now. "Use this order" writes it for EVERY climber (resolve_wall_order renumbers routes.sort_order: the one
 // stored order the wall's list, NEXT DOOR and the Route finder all read); "Keep current order" writes nothing
-// to the wall. Either way the sender gets a notice. The note is a REASON: it goes out only with "Keep current
+// to the wall. Either way the sender gets a notice if their account still exists (the desk does not claim it
+// was told: the function does not say). The note is a REASON: it goes out only with "Keep current
 // order" (0485 puts it in the rejection notice); on an approval it is kept on the record and not sent.
-function OrderDetail({ row: r, busy, act }) {
+function OrderDetail({ row: r, busy, act, refresh }) {
   const [note, setNote] = useState("");
+  // The desk does not refetch on focus, and an approval renumbers from the LIVE rows: a tab left open could
+  // preview a wall that has since gained or lost climbs. Opening the row reads the wall again.
+  useEffect(() => { if (refresh) refresh(); }, [refresh]);
   const o = r.order;
   const pos = {};
   o.now.forEach((id, i) => { pos[id] = i + 1; });
@@ -316,13 +320,14 @@ function OrderDetail({ row: r, busy, act }) {
       <div><div style={{ fontSize: 11, fontWeight: 700, color: C.blue }}>CLIMBER SUGGESTS, LEFT TO RIGHT</div>
         <ol style={list}>{o.list.map((id, i) => <li key={id + ":" + i} style={{ color: o.names[id] || !o.loaded ? C.text : C.textMuted }}>{o.loaded ? (o.names[id] || "(a climb no longer on this wall)") : id}
           {o.loaded && o.names[id] ? (o.place[id] == null ? <span style={{ color: C.textMuted }}> · a boulder problem, not part of the line</span> : pos[id] == null ? <b style={{ color: C.amber }}> · no place now</b> : pos[id] !== o.place[id] ? <b style={{ color: C.amber }}> · now {pos[id]}</b> : null) : null}</li>)}</ol>
-        {r.note ? <div style={{ fontSize: 12, color: C.textSub, marginTop: 4 }}><b>Why:</b> {r.note}</div> : null}</div>
+        {r.note ? <div style={{ fontSize: 12, color: C.textSub, marginTop: 4 }}><b>Why:</b> {r.note}</div> : null}
+        <div style={{ fontSize: 12, color: C.textMuted, marginTop: 4 }}>Sent {when(r.created_at)} by {r.by ? String(r.by).slice(0, 8) : "an account that is gone"}</div></div>
     </div>
     {o.loaded && o.known < 2 ? <div style={{ fontSize: 12.5, color: C.textMuted }}>Fewer than two of these climbs are still in the wall’s line, so there is nothing to order.</div> : null}
     <div style={{ display: "flex", gap: 8, flexWrap: "wrap", alignItems: "center" }}>
-      <button className="rd-btn rd-ok" disabled={busy || !can} onClick={() => act(r, () => resolveWallOrder(r.ids[0], "approved", note), "order written; climbers see it the next time the wall’s list loads, and the sender was told it is live.")}>{busy ? "Working…" : "Use this order"}</button>
+      <button className="rd-btn rd-ok" disabled={busy || !can} onClick={() => act(r, () => resolveWallOrder(r.ids[0], "approved", note), "order written; climbers see it the next time the wall’s list loads.")}>{busy ? "Working…" : "Use this order"}</button>
       <input className="rd-in" aria-label="Reason, sent to the climber if you keep the current order (optional)" placeholder="Reason, sent to the climber if you keep the current order (optional)" value={note} onChange={(e) => setNote(e.target.value)} style={{ flex: "1 1 200px" }} />
-      <button className="rd-btn rd-bad" disabled={busy} onClick={() => act(r, () => resolveWallOrder(r.ids[0], "rejected", note), "kept the current order; the sender was told" + (note.trim() ? ", with your reason." : "."))}>Keep current order</button>
+      <button className="rd-btn rd-bad" disabled={busy} onClick={() => act(r, () => resolveWallOrder(r.ids[0], "rejected", note), "kept the current order.")}>Keep current order</button>
     </div>
   </div>;
 }
