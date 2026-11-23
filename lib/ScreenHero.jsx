@@ -7,13 +7,13 @@
 // It lives in lib/ rather than ClimbMatchCore.jsx so DbAreaBrowser, which does not import core,
 // draws the same box (it used to keep its own copies of these two colours).
 // The sign-in screen's look (#2687) carried into every header: a blue glow from the top centre
-// fading into the page background (#0d1117 is C.bg, written out because DbAreaBrowser does not
+// fading into the page background (#12110f is C.bg, written out because DbAreaBrowser does not
 // import core), and a soft blue shadow under the box. Was a flat 160deg navy gradient.
-export const HERO_BG = "radial-gradient(130% 120% at 50% 0%, #10264a 0%, #0d1117 78%)";
+export const HERO_BG = "radial-gradient(130% 120% at 50% 0%, #2a1a12 0%, #12110f 78%)";
 // Home's banner wears the sign-in screen's own background, unchanged: Home is the screen you land
 // on from it, so the hand-over keeps the same light.
-export const HOME_GLOW = "radial-gradient(120% 100% at 50% 0%, #10264a 0%, #0d1117 70%)";
-export const HERO_SHEEN = "inset 0 1px 0 rgba(255,255,255,0.07), 0 10px 26px -14px rgba(47,129,247,0.4)";
+export const HOME_GLOW = "radial-gradient(120% 100% at 50% 0%, #2a1a12 0%, #12110f 70%)";
+export const HERO_SHEEN = "inset 0 1px 0 rgba(255,255,255,0.07), 0 10px 26px -14px rgba(255,138,61,0.4)";
 
 // `right` sits beside the title (a Save button); `children` run under the line (a count, a button).
 // `quiet` (owner, 2026-10-25): the five top tabs (Climbs, Partners, Crew, Logbook, Ranks) lost the
