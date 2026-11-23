@@ -1,0 +1,667 @@
+[
+ {
+  "id": "wa_chiwawa_mountain_southwest",
+  "glacier": "no",
+  "snowInSeason": "unsure",
+  "basis": "text",
+  "why": "Text: standard SW route is non-glaciated; snow slope to the col is lingering but the text does not say it holds all season."
+ },
+ {
+  "id": "wa_cinderella_peak_scramble",
+  "glacier": "yes",
+  "snowInSeason": "yes",
+  "basis": "text",
+  "why": "Crosses the low-angle Green Creek (Sisters) Glacier to the notch, with a moat and crevasse hazard."
+ },
+ {
+  "id": "wa_clark_mountain_west_ridge",
+  "glacier": "yes",
+  "snowInSeason": "yes",
+  "basis": "text",
+  "why": "Walrus Glacier crossing with crevasses."
+ },
+ {
+  "id": "wa_classic_route_2",
+  "glacier": "no",
+  "snowInSeason": "unsure",
+  "basis": "knowledge",
+  "why": "Permanent snow patch beside the moraine, no glacier; the snow-patch rappel side is optional."
+ },
+ {
+  "id": "wa_cloudy_peak_southwest_slopes",
+  "glacier": "no",
+  "snowInSeason": "yes",
+  "basis": "text",
+  "why": "Approach crosses the permanent Spider Glacier snowfield remnant; text calls the route non-glaciated."
+ },
+ {
+  "id": "wa_colchuck_peak_colchuck_glacier",
+  "glacier": "yes",
+  "snowInSeason": "yes",
+  "basis": "text",
+  "why": "Colchuck Glacier is the route, crevasses open by late July."
+ },
+ {
+  "id": "wa_colchuck_peak_holsten_hilden",
+  "glacier": "yes",
+  "snowInSeason": "yes",
+  "basis": "text",
+  "why": "Walks up the Colchuck Glacier to the ice below the couloir."
+ },
+ {
+  "id": "wa_colchuck_peak_north_buttress_couloir",
+  "glacier": "unsure",
+  "snowInSeason": "yes",
+  "basis": "text",
+  "why": "Couloir rises from the Colchuck Glacier moraine; descent is over the glacier but crevasse hazard not stated."
+ },
+ {
+  "id": "wa_colchuck_peak_northeast_couloir",
+  "glacier": "unsure",
+  "snowInSeason": "yes",
+  "basis": "text",
+  "why": "Approach crosses the lower Colchuck Glacier, described as few crevasses."
+ },
+ {
+  "id": "wa_colfax_peak_cosley_houston",
+  "glacier": "yes",
+  "snowInSeason": "yes",
+  "basis": "text",
+  "why": "Roped Coleman Glacier approach with crevasses."
+ },
+ {
+  "id": "wa_colfax_peak_fords_theatre",
+  "glacier": "yes",
+  "snowInSeason": "yes",
+  "basis": "text",
+  "why": "Coleman Glacier approach, crevasses on ascent and descent."
+ },
+ {
+  "id": "wa_colfax_peak_kimchi_suicide_volcano",
+  "glacier": "yes",
+  "snowInSeason": "yes",
+  "basis": "text",
+  "why": "Coleman Glacier approach, rope up, crevasses."
+ },
+ {
+  "id": "wa_colfax_peak_polish_route",
+  "glacier": "yes",
+  "snowInSeason": "yes",
+  "basis": "text",
+  "why": "Roped Coleman Glacier approach with crevasse hazard."
+ },
+ {
+  "id": "wa_colonial_peak_west_ridge",
+  "glacier": "yes",
+  "snowInSeason": "yes",
+  "basis": "text",
+  "why": "Colonial Glacier crossing with crevasses."
+ },
+ {
+  "id": "wa_columbia_peak_scramble",
+  "glacier": "no",
+  "snowInSeason": "unsure",
+  "basis": "text",
+  "why": "Text: no glacier travel, avoids the Columbia Glacier; snow only lingers on ledges and a snow patch at 6,300 ft."
+ },
+ {
+  "id": "wa_complete_south_buttress",
+  "glacier": "no",
+  "snowInSeason": "no",
+  "basis": "text",
+  "why": "Text: dry granite, no glacier; snow only early-season in the gully."
+ },
+ {
+  "id": "wa_copper_peak_south_route",
+  "glacier": "yes",
+  "snowInSeason": "yes",
+  "basis": "text",
+  "why": "Crosses the Southeast Glacier remnant on approach and descent, crevasses documented, rope up."
+ },
+ {
+  "id": "wa_corteo_peak_southwest_ridge",
+  "glacier": "unsure",
+  "snowInSeason": "yes",
+  "basis": "text",
+  "why": "Lewis Glacier remnant crossed both ways; text contradicts itself on whether it is a glacier hazard."
+ },
+ {
+  "id": "wa_cosho_peak_scramble",
+  "glacier": "unsure",
+  "snowInSeason": "yes",
+  "basis": "text",
+  "why": "Skirts or crosses glacier ice near the col with minor crevasse hazard; carries axe for snow."
+ },
+ {
+  "id": "wa_crater_mountain_standard_route",
+  "glacier": "no",
+  "snowInSeason": "no",
+  "basis": "knowledge",
+  "why": "Crater Mountain standard route has no glacier; snow is early-season only per text."
+ },
+ {
+  "id": "wa_crooked_thumb_peak_east_face",
+  "glacier": "yes",
+  "snowInSeason": "yes",
+  "basis": "text",
+  "why": "Approach glacier with crevasse hazard."
+ },
+ {
+  "id": "wa_crooked_thumb_peak_south_route",
+  "glacier": "yes",
+  "snowInSeason": "yes",
+  "basis": "text",
+  "why": "Challenger Glacier approach with crevasses."
+ },
+ {
+  "id": "wa_cutthroat_peak_cauthorn_wilson_couloir",
+  "glacier": "no",
+  "snowInSeason": "yes",
+  "basis": "knowledge",
+  "why": "East Face couloir climbed on snow and ice; no glacier on the line."
+ },
+ {
+  "id": "wa_cutthroat_south_buttress",
+  "glacier": "no",
+  "snowInSeason": "no",
+  "basis": "text",
+  "why": "Text: no glacier travel; snow only early in the gully."
+ },
+ {
+  "id": "wa_dark_peak_dark_glacier_route",
+  "glacier": "yes",
+  "snowInSeason": "yes",
+  "basis": "text",
+  "why": "Dark Glacier is genuinely crevassed, roped travel."
+ },
+ {
+  "id": "wa_davis_peak_nc_north_face",
+  "glacier": "yes",
+  "snowInSeason": "yes",
+  "basis": "text",
+  "why": "Climbs the glacier to the bergschrund."
+ },
+ {
+  "id": "wa_davis_peak_nc_north_face_burdo_cairns",
+  "glacier": "unsure",
+  "snowInSeason": "unsure",
+  "basis": "text",
+  "why": "Little text; conditions depend on snow and ice."
+ },
+ {
+  "id": "wa_davis_peak_nc_south_slope_and_ridge",
+  "glacier": "no",
+  "snowInSeason": "yes",
+  "basis": "knowledge",
+  "why": "South-facing slope route with a snow ascent season (May-Jun); no glacier."
+ },
+ {
+  "id": "wa_del_campo_peak_standard",
+  "glacier": "no",
+  "snowInSeason": "yes",
+  "basis": "text",
+  "why": "No glacier travel; route climbs to the permanent snowfield below the summit walls."
+ },
+ {
+  "id": "wa_denny_mountain_north_slopes",
+  "glacier": "no",
+  "snowInSeason": "unsure",
+  "basis": "text",
+  "why": "No glacier; spring snow ascent and snow-free summer both described."
+ },
+ {
+  "id": "wa_der_dihedral",
+  "glacier": "unsure",
+  "snowInSeason": "yes",
+  "basis": "text",
+  "why": "Descent snow traverse and snowfield; Snow Creek Glacier basin may be involved."
+ },
+ {
+  "id": "wa_devore_peak_west_ridge",
+  "glacier": "no",
+  "snowInSeason": "unsure",
+  "basis": "text",
+  "why": "No glacier travel; snow on col approach into July, season is Late Jul-Sep."
+ },
+ {
+  "id": "wa_diamond_in_the_rough",
+  "glacier": "unsure",
+  "snowInSeason": "unsure",
+  "basis": "text",
+  "why": "Text conflicts: access ramp descent avoids glacier but Corkscrew glacier descent hazards are listed."
+ },
+ {
+  "id": "wa_direct_north_buttress",
+  "glacier": "unsure",
+  "snowInSeason": "yes",
+  "basis": "text",
+  "why": "Crosses a small glacier remnant below the buttress; crevasse hazard not stated."
+ },
+ {
+  "id": "wa_direct_southwest_buttress",
+  "glacier": "yes",
+  "snowInSeason": "yes",
+  "basis": "text",
+  "why": "Crevasse crossings on Eldorado, Inspiration and McAllister glaciers."
+ },
+ {
+  "id": "wa_direct_west_face",
+  "glacier": "no",
+  "snowInSeason": "yes",
+  "basis": "knowledge",
+  "why": "No glacier at Washington Pass; descent rappels to a neve and traverses it."
+ },
+ {
+  "id": "wa_dome_peak_dome_glacier",
+  "glacier": "yes",
+  "snowInSeason": "yes",
+  "basis": "text",
+  "why": "Dome Glacier actively crevassed, roped travel."
+ },
+ {
+  "id": "wa_dome_peak_indian_summer",
+  "glacier": "unsure",
+  "snowInSeason": "yes",
+  "basis": "text",
+  "why": "Rock route; camp on snow beside Dome Glacier, approach likely glaciated but not stated."
+ },
+ {
+  "id": "wa_dorado_needle_east_ridge",
+  "glacier": "yes",
+  "snowInSeason": "yes",
+  "basis": "text",
+  "why": "Roped traverse of Inspiration and McAllister glaciers."
+ },
+ {
+  "id": "wa_dot_mountain_scramble",
+  "glacier": "no",
+  "snowInSeason": "no",
+  "basis": "text",
+  "why": "Text: non-glaciated, axe early season only."
+ },
+ {
+  "id": "wa_dragontail_peak_2_direct_north_buttress",
+  "glacier": "unsure",
+  "snowInSeason": "yes",
+  "basis": "knowledge",
+  "why": "WI5 ice route, no text; ice climbing implies snow; glacier approach unverified."
+ },
+ {
+  "id": "wa_dragontail_peak_backbone_ridge",
+  "glacier": "no",
+  "snowInSeason": "unsure",
+  "basis": "text",
+  "why": "Moraine approach and a perennial snow patch, no glacier; crampons optional by midsummer."
+ },
+ {
+  "id": "wa_dragontail_peak_east_ridge_aasgard_pass",
+  "glacier": "no",
+  "snowInSeason": "yes",
+  "basis": "text",
+  "why": "Snow Creek Glacier basin is tame with virtually no crevasses, about 30 degrees; snow holds to late July."
+ },
+ {
+  "id": "wa_dragontail_peak_r2",
+  "glacier": "no",
+  "snowInSeason": "yes",
+  "basis": "text",
+  "why": "Text: no glacier travel; snow/ice spring route."
+ },
+ {
+  "id": "wa_dragontail_peak_r3",
+  "glacier": "unsure",
+  "snowInSeason": "yes",
+  "basis": "text",
+  "why": "Approach crosses the Colchuck Glacier, few if any crevasses."
+ },
+ {
+  "id": "wa_dragontail_peak_r4",
+  "glacier": "no",
+  "snowInSeason": "yes",
+  "basis": "knowledge",
+  "why": "Winter couloirs on the north face reached by moraine; no glacier on line."
+ },
+ {
+  "id": "wa_dragontail_peak_serpentine_arete",
+  "glacier": "no",
+  "snowInSeason": "unsure",
+  "basis": "text",
+  "why": "Moraine approach; snow finger to base with moat into July."
+ },
+ {
+  "id": "wa_dumbell_mountain_west",
+  "glacier": "no",
+  "snowInSeason": "unsure",
+  "basis": "text",
+  "why": "Text: non-glaciated; snow on approach gully mostly early season."
+ },
+ {
+  "id": "wa_e_se_face",
+  "glacier": "no",
+  "snowInSeason": "unsure",
+  "basis": "text",
+  "why": "Aasgard side snow patches persist to the base into midsummer."
+ },
+ {
+  "id": "wa_eagle_rock_scramble",
+  "glacier": "no",
+  "snowInSeason": "no",
+  "basis": "text",
+  "why": "Text: non-glaciated, early-season axe only."
+ },
+ {
+  "id": "wa_earl_peak_southwest_ridge",
+  "glacier": "no",
+  "snowInSeason": "no",
+  "basis": "text",
+  "why": "Text: no glacier travel; snow only early season or spring."
+ },
+ {
+  "id": "wa_earl_peak_standup_creek_route",
+  "glacier": "no",
+  "snowInSeason": "no",
+  "basis": "text",
+  "why": "Snow only early season on upper ridge."
+ },
+ {
+  "id": "wa_early_morning_spire_southwest_face",
+  "glacier": "yes",
+  "snowInSeason": "yes",
+  "basis": "text",
+  "why": "Crosses Inspiration and McAllister glaciers and Marble Creek glacier."
+ },
+ {
+  "id": "wa_early_winter_couloir",
+  "glacier": "no",
+  "snowInSeason": "yes",
+  "basis": "knowledge",
+  "why": "Winter snow couloir; no glacier in the Early Winters Spires."
+ },
+ {
+  "id": "wa_east_face",
+  "glacier": "yes",
+  "snowInSeason": "yes",
+  "basis": "text",
+  "why": "Crevassed Dome and Chickamin glacier approach."
+ },
+ {
+  "id": "wa_east_face_2",
+  "glacier": "no",
+  "snowInSeason": "unsure",
+  "basis": "text",
+  "why": "No glacier; steep snow or moats below Burgundy Col depending on season."
+ },
+ {
+  "id": "wa_east_face_3",
+  "glacier": "no",
+  "snowInSeason": "no",
+  "basis": "text",
+  "why": "Snow at base only early summer."
+ },
+ {
+  "id": "wa_east_face_6",
+  "glacier": "yes",
+  "snowInSeason": "yes",
+  "basis": "text",
+  "why": "Chimney Glacier with crevasses and icefall."
+ },
+ {
+  "id": "wa_east_mcmillan_spire_northeast_buttress",
+  "glacier": "yes",
+  "snowInSeason": "yes",
+  "basis": "text",
+  "why": "Approach via McMillan Creek glacier remnants with glacier gear."
+ },
+ {
+  "id": "wa_east_mcmillan_spire_west_ridge",
+  "glacier": "yes",
+  "snowInSeason": "yes",
+  "basis": "text",
+  "why": "Terror Glacier crossing, crevasses can open."
+ },
+ {
+  "id": "wa_east_ridge_2",
+  "glacier": "no",
+  "snowInSeason": "unsure",
+  "basis": "text",
+  "why": "Text: non-glaciated east ridge; snow mentions are about the standard route."
+ },
+ {
+  "id": "wa_east_ridge_3",
+  "glacier": "yes",
+  "snowInSeason": "yes",
+  "basis": "text",
+  "why": "Descent crosses the crevassed Silver Star Glacier."
+ },
+ {
+  "id": "wa_east_ridge_4",
+  "glacier": "yes",
+  "snowInSeason": "yes",
+  "basis": "text",
+  "why": "Heavily crevassed Terror Glacier crossing."
+ },
+ {
+  "id": "wa_east_ridge_8",
+  "glacier": "no",
+  "snowInSeason": "no",
+  "basis": "text",
+  "why": "Lingering snow patches only into mid-July."
+ },
+ {
+  "id": "wa_east_ridge_9",
+  "glacier": "no",
+  "snowInSeason": "unsure",
+  "basis": "text",
+  "why": "Gully holds snow into midsummer, often climbed on snow early."
+ },
+ {
+  "id": "wa_east_slope",
+  "glacier": "yes",
+  "snowInSeason": "yes",
+  "basis": "text",
+  "why": "Borealis Glacier roped travel, icefall."
+ },
+ {
+  "id": "wa_east_twin_needle_north_buttress",
+  "glacier": "yes",
+  "snowInSeason": "yes",
+  "basis": "text",
+  "why": "Crevassed Mustard Glacier crossing."
+ },
+ {
+  "id": "wa_east_twin_needle_south_route",
+  "glacier": "no",
+  "snowInSeason": "no",
+  "basis": "text",
+  "why": "Text: no glacier travel, residual snowfields early season only."
+ },
+ {
+  "id": "wa_east_twin_needle_thread_of_ice",
+  "glacier": "unsure",
+  "snowInSeason": "yes",
+  "basis": "text",
+  "why": "Snow/ice couloir on the Twin Needles north side; glacier on approach not stated."
+ },
+ {
+  "id": "wa_east_wilmans_spire",
+  "glacier": "no",
+  "snowInSeason": "unsure",
+  "basis": "text",
+  "why": "Glacier Basin is a trail name; snow gully early season, melted-out later."
+ },
+ {
+  "id": "wa_eldorado_peak_east_ridge",
+  "glacier": "yes",
+  "snowInSeason": "yes",
+  "basis": "text",
+  "why": "Inspiration Glacier with hidden crevasses, roped."
+ },
+ {
+  "id": "wa_eldorado_peak_eldorado_glacier_nw",
+  "glacier": "yes",
+  "snowInSeason": "yes",
+  "basis": "text",
+  "why": "Eldorado Glacier crevasses, roped."
+ },
+ {
+  "id": "wa_eldorado_peak_north_ridge",
+  "glacier": "yes",
+  "snowInSeason": "yes",
+  "basis": "text",
+  "why": "Crosses Inspiration Glacier, crevasses."
+ },
+ {
+  "id": "wa_eldorado_peak_northeast_face",
+  "glacier": "yes",
+  "snowInSeason": "yes",
+  "basis": "text",
+  "why": "East Ridge glacier approach, crevasse at the face."
+ },
+ {
+  "id": "wa_eldorado_peak_west_arete",
+  "glacier": "yes",
+  "snowInSeason": "yes",
+  "basis": "text",
+  "why": "Eldorado and Inspiration glacier crevasses."
+ },
+ {
+  "id": "wa_elephant_butte_standard_route",
+  "glacier": "no",
+  "snowInSeason": "no",
+  "basis": "text",
+  "why": "Only early-season snowfields; ridge route."
+ },
+ {
+  "id": "wa_emerald_peak_west_route",
+  "glacier": "no",
+  "snowInSeason": "no",
+  "basis": "text",
+  "why": "No snow crossings by early July; snow only early season; no glacier on West Route."
+ },
+ {
+  "id": "wa_enchantment_enchainment",
+  "glacier": "unsure",
+  "snowInSeason": "yes",
+  "basis": "text",
+  "why": "Steep snow throughout; glacier use not stated."
+ },
+ {
+  "id": "wa_enchantment_peak_east_ridge",
+  "glacier": "no",
+  "snowInSeason": "unsure",
+  "basis": "text",
+  "why": "No glacier; snow lingers across the basin well into summer."
+ },
+ {
+  "id": "wa_enchantment_peak_southwest_scramble",
+  "glacier": "no",
+  "snowInSeason": "no",
+  "basis": "text",
+  "why": "Text: non-glaciated, snow only Apr-Jun."
+ },
+ {
+  "id": "wa_esmeralda_peaks_scramble",
+  "glacier": "no",
+  "snowInSeason": "no",
+  "basis": "text",
+  "why": "Text: non-glaciated, early-season snow only."
+ },
+ {
+  "id": "wa_fantasy_falls",
+  "glacier": "no",
+  "snowInSeason": "yes",
+  "basis": "knowledge",
+  "why": "Winter WI5 ice route in Snow Lake cirque; no glacier."
+ },
+ {
+  "id": "wa_fifth_of_july_mountain_scramble",
+  "glacier": "no",
+  "snowInSeason": "no",
+  "basis": "text",
+  "why": "Text: non-glaciated, early snow only."
+ },
+ {
+  "id": "wa_fire_on_the_mountain",
+  "glacier": "no",
+  "snowInSeason": "no",
+  "basis": "text",
+  "why": "Text: reach the face without touching snow or ice."
+ },
+ {
+  "id": "wa_first_amendment",
+  "glacier": "no",
+  "snowInSeason": "no",
+  "basis": "text",
+  "why": "Approach snowfield early season only."
+ },
+ {
+  "id": "wa_fish_whistle",
+  "glacier": "no",
+  "snowInSeason": "no",
+  "basis": "text",
+  "why": "Snow on traverse is early-season."
+ },
+ {
+  "id": "wa_flora_mountain_southwest_slope",
+  "glacier": "no",
+  "snowInSeason": "no",
+  "basis": "text",
+  "why": "Early-season snow only."
+ },
+ {
+  "id": "wa_foggy_peak_scramble",
+  "glacier": "no",
+  "snowInSeason": "no",
+  "basis": "text",
+  "why": "Text: non-glaciated, residual snow only."
+ },
+ {
+  "id": "wa_forbidden_peak_east_ledges",
+  "glacier": "no",
+  "snowInSeason": "yes",
+  "basis": "text",
+  "why": "Text: no glacier terrain; snow slopes need axe and crampons."
+ },
+ {
+  "id": "wa_forbidden_peak_east_ridge",
+  "glacier": "unsure",
+  "snowInSeason": "yes",
+  "basis": "text",
+  "why": "Approach flanks the glacier but text also mentions crevassed glacier on descent traverse; snow gully wants crampons."
+ },
+ {
+  "id": "wa_forbidden_peak_north_ridge",
+  "glacier": "yes",
+  "snowInSeason": "yes",
+  "basis": "text",
+  "why": "Boston Glacier crossing, crevasses."
+ },
+ {
+  "id": "wa_forbidden_peak_northeast_face",
+  "glacier": "yes",
+  "snowInSeason": "yes",
+  "basis": "text",
+  "why": "Glacier travel with bergschrund crossing."
+ },
+ {
+  "id": "wa_forbidden_peak_northwest_face",
+  "glacier": "yes",
+  "snowInSeason": "yes",
+  "basis": "text",
+  "why": "Boston and/or Forbidden glacier crossing, crevasses."
+ },
+ {
+  "id": "wa_forbidden_peak_west_ridge",
+  "glacier": "yes",
+  "snowInSeason": "yes",
+  "basis": "text",
+  "why": "Remnant glacier with bergschrunds, rope up when snow-covered."
+ },
+ {
+  "id": "wa_fortress_mountain_east_ridge",
+  "glacier": "no",
+  "snowInSeason": "yes",
+  "basis": "text",
+  "why": "Snow slopes to the col need crampons and axe late season; no glacier named."
+ }
+]

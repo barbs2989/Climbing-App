@@ -39,6 +39,8 @@ profile can also open as `FullProfile` and `Resume` overlays from anywhere (part
   grades, then Availability, Certifications (with expiry), Belay devices and Skills, each skill with *practiced Mar 2026*
   when a month is set. An empty section is left out and named in one *Not on your profile yet* line. The refresher hint
   is not drawn (only you see it), nor the zip or emergency contact (nobody does). Until then it stopped at the grades.
+  **Years climbing on the profile header** (2026-11-23): `FullProfile`'s header line reads *home · Nyr exp · gender ·
+  distance*, from `climbing_since` (`yearsSince`), as the Profile tab's own header, the résumé and the partner card do.
   - **Home city + state are a LABEL, never geocoded.** The city is free text with a `US_CITIES` datalist; the state comes
     from the dropdown. They show on your profile and partner rows, and the state orders namesakes in search
     (`homeStatePath`). They place you nowhere: partner and crew distance come only from the zip.
