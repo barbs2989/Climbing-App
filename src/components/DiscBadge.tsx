@@ -1,4 +1,4 @@
-import { CAT } from "../../ClimbMatchCore.jsx";
+import { C, CAT } from "../../ClimbMatchCore.jsx";
 import DiscIcon from "./DiscIcon.tsx";
 import Pill from "./Pill.tsx";
 
@@ -26,9 +26,9 @@ function meta(id: string): DiscMeta | undefined {
   return table[id];
 }
 
-/** A pill naming a discipline in its own colour, with its icon and an optional grade. */
+/** A neutral pill naming a discipline, with an optional grade. The discipline colour lives in the ICON only (owner, 2026-11-23), so nine hues leave the surface and the brand can own orange. */
 export default function DiscBadge({ id, sm, grade }: DiscBadgeProps) {
   const d = meta(id);
   if (!d) return null;
-  return <Pill icon={<DiscIcon d={id} size={sm ? 11 : 13} />} label={grade ? d.label + " " + grade : d.label} color={d.color} bg={d.bg} sm={sm} />;
+  return <Pill icon={<DiscIcon d={id} size={sm ? 11 : 13} />} label={grade ? d.label + " " + grade : d.label} color={C.text} bg={C.borderLight} sm={sm} />;
 }
