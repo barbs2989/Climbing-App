@@ -90,7 +90,9 @@ const CASES = [
    * differently, no name moves, and the pack empties the moment there is no signal. */
   { name: "read-gone", file: DB, must: "fail", expect: "fallback is not offlineRoutesByIds",
     why: "§2 — the row is written and never read back; the defect no render assertion can see",
-    find: "}, () => offlineRoutesByIds(ids)) : async () => {", repl: "}, () => []) : async () => {"  },
+    // useRoutesByIds reads the device in TWO places (the orOffline fallback and the chunked path's own
+    // catch). Replacing one left the other standing, so the guard passed and this case proved nothing.
+    rx: [[/offlineRoutesByIds\(ids\)/g, "Promise.resolve([])"]] },
 
   { name: "reader-gone", file: OFF, must: "fail", expect: "no longer defines offlineRoutesByIds",
     why: "§2 — the reader itself is renamed out from under lib/db.js",
@@ -130,7 +132,8 @@ const CASES = [
     find: "cacheItineraries(userId, out).catch(() => {});", repl: "" },
   { name: "undated-reports", file: "src/components/RouteReportsTab.tsx", must: "fail", expect: "stopped dating the saved reports",
     why: "§10 — a saved copy of the reports reads as live",
-    find: "savedAgo(reportsPackedAt)", repl: "\"\"" },
+    // The Reports tab dates the saved copy twice on one line; a single-match find could not land.
+    rx: [[/savedAgo\(reportsPackedAt\)/g, "\"\""]] },
   { name: "photos-ignore-stamp", file: CM, must: "fail", expect: "photosUnavailable ignores the `_packedAt` stamp",
     why: "§10 — a route served from the device claims it has no photos",
     find: "(dbContribs.data&&dbContribs.data._packedAt)", repl: "false" },
