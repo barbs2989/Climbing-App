@@ -1296,7 +1296,29 @@ rows. Its build script is gone; new reviews write the column.
   unsettled): `NOT_AT_CREATION` in `check:add-route-fields` says why.
 - **`npm run audit:glacier-travel -- --state <slug>`** is the worklist for the next state: snow-flagged routes
   with an unsettled answer. It reads the stored discipline, so a trad route the page calls alpine is outside it.
-- **Still on a guess:** every state but Washington. Section 1 and 2 of `check:alpine-conditions` hold the rule
+- **Six more states reviewed, 2026-11-23** (Oregon, California, Colorado, Wyoming, Montana, Alaska; 775 routes):
+  glacier travel yes 160 / no 488 / not settled 127; snow in season yes 608 / no 96 / not settled 71. Per state,
+  `research-data/glacier-travel-2026-11-23/<state>/` holds the inputs, both reads, the research round and
+  `final.json`. The steps are three scripts in `scripts/oneoff/`: `glacier-travel-extract.mjs --state`
+  (the batches), `glacier-travel-decide.mjs --state --verify-in | --research-in | --final` (the second read takes
+  every risky "no glacier" call AND every unsure route; a disagreement moves toward the warning, never to
+  "no"; the research round settles only a fact still unsure, and only on a page that was read), and
+  `load-glacier-travel.mjs --state` (paced, rollback file, re-read and reconcile). The prompts are the three
+  `*-PROMPT.md` files beside `RULE.md`.
+  - **What the review found, so it is not re-derived:** Colorado has ONE glacier-travel route in the catalog
+    (Fair Glacier, Lone Eagle Peak); 23 of its routes sat on the glacier card only because "Glacier Gorge" or
+    "Andrews Glacier trail" is in their text. Alaska is the reverse: 97 of 130 are glacier travel, most by
+    their approach.
+  - **Held at not settled on purpose** (a "no" that rested on absence of evidence, or on a source that also
+    names a bergschrund): Shasta Avalanche Gulch, Mount Hooper via Tombstone Pass, Iron Maiden (Illumination
+    Rock), Large Ear Direct.
+  - **The review agents answer from recall unless made to search.** The first read used no web search in any
+    batch, and the first second-read batches searched a handful of routes; say "every entry, not a sample" in
+    the prompt, and read the agent's own count of what rests on a page.
+  - **Misfiled text met on the way** (not fixed here): `wy_northeast_couloir` (Kagevah Peak) and `co_old_route`
+    carry sentences that describe Washington routes, the name-derived id collision of
+    [route-identity.md](../codebase/route-identity.md).
+- **Still on a guess:** every state not named above. Section 1 and 2 of `check:alpine-conditions` hold the rule
   (21 assertions); the data is only as good as the review.
 
   - **HOUR BY HOUR + THE GUST WINDOW (2026-10-08, owner: "clear and exact and accurate science").**
