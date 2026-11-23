@@ -150,6 +150,8 @@ export interface AreaPageProps {
   onObjectives: () => void;
   onAllAreas: () => void;
   onOpenRoute: (r: RouteRowRoute | DbSearchSplitRoute) => void;
+  /** Opens a trip report or logged climb from LATEST FROM THIS AREA over this page, with the climb it is about. */
+  onOpenReport?: (ascent: Record<string, unknown>, route: RouteRowRoute) => void;
   onJumpToArea: (a: AreaPageJump) => void;
   C: typeof Palette;
   onAddClimb?: ((area: AddHereFooterArea) => void) | null;
@@ -179,7 +181,7 @@ export interface AreaPageProps {
 // THE HEADER CARD'S BUTTONS: Save area, Area tree and Fire map are ONE size (owner, 2026-11-18: "fire map needs to be
 // the same size as save area") -- 34px, the height Save was given on 2026-11-14 -- and one width; only the colour differs.
 const HEAD_BTN: CSSProperties = { flexShrink: 0, boxSizing: "border-box", display: "inline-flex", alignItems: "center", justifyContent: "center", gap: 5, height: 34, minWidth: 100, padding: "0 12px", borderRadius: 9, fontSize: 12, fontWeight: 800, cursor: "pointer", lineHeight: 1, whiteSpace: "nowrap" };
-export default function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, booked, onToggleSave, onDrill, onFinder, onNear, onObjectives, onAllAreas, onOpenRoute, onJumpToArea, C, onAddClimb, onAddArea, TopContributors, onViewContributor, onFireMap, onSuggestAreaEdit, myId, PartnerRow, uid, myListings, onListMe, onFindPartnersInArea, onViewProfile, notify, onStartCrew, onCrewsHere, onGroupsHere, openCrewCountAt, headerNav}: AreaPageProps) {
+export default function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, booked, onToggleSave, onDrill, onFinder, onNear, onObjectives, onAllAreas, onOpenRoute, onOpenReport, onJumpToArea, C, onAddClimb, onAddArea, TopContributors, onViewContributor, onFireMap, onSuggestAreaEdit, myId, PartnerRow, uid, myListings, onListMe, onFindPartnersInArea, onViewProfile, notify, onStartCrew, onCrewsHere, onGroupsHere, openCrewCountAt, headerNav}: AreaPageProps) {
   const [wrongOpen, setWrongOpen] = useState(false);
   // ORDER WRONG? (0485): the sheet where a climber puts this wall's climbs in left-to-right order. A suggestion only.
   const [orderOpen, setOrderOpen] = useState(false);
@@ -540,7 +542,7 @@ export default function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, book
       {/* Tail order is the owner's (2026-10-15): nearby peaks, then Top contributors LAST (Suggested climbs sat
           here until 2026-11-19; it is under Classic climbs now, suggestedEl) —
           App mounts the area Discussion directly after this component, so Discussion ends the page. */}
-      <AreaLatestReports area={area} onOpenRoute={onOpenRoute} C={C} />
+      <AreaLatestReports area={area} onOpenRoute={onOpenRoute} onOpenReport={onOpenReport} C={C} />
 
       <NearbyPeaks area={area} onJumpToArea={onJumpToArea} C={C} uDistMi={uDistMi} />
 
