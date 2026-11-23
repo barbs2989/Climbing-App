@@ -11,7 +11,7 @@ import { renderToStaticMarkup } from "react-dom/server";
 
 export const DISC_COLORS = {
   toprope: "#2f81f7", trad: "#a371f7", sport: "#39d353", scrambling: "#e3a008", alpine: "#56d4dd", mountaineering: "#f85149",
-  hiking: "#b07d3a", bouldering: "#f0883e", ice: "#79c0ff", mixed: "#f778ba", aid: "#9aa4b2",
+  hiking: "#b07d3a", bouldering: "#d9b38c", ice: "#79c0ff", mixed: "#f778ba", aid: "#9aa4b2",
 };
 // Re-exported so this module's public surface is unchanged; the labels
 // themselves live in ./discLabels alongside every other list's, because this
