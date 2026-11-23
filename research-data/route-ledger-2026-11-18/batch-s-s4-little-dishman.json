@@ -1,0 +1,472 @@
+{
+ "wa_little_dishman_30_feet_of_fury": {
+  "area": "wa_little_dishman",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/113193477/30-feet-of-fury",
+    "https://www.mountainproject.com/area/112215119/little-dishman",
+    "https://gismo.spokanecounty.org/arcgis/rest/services/SCOUT/PropertyLookup/MapServer/0/query?geometry=-117.28508,47.65414&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=*&returnGeometry=false&f=json",
+    "https://www.dnr.wa.gov/DishmanHills",
+    "https://www.dishmanhills.org/Home-Recreation",
+    "https://washingtonclimbers.org/index.php/wp-json/wp/v2/posts/12362"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.11b",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/113193477/30-feet-of-fury",
+      "fact": "5.11b YDS, Sport, 30 ft",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "length_m",
+    "value": 9,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/113193477/30-feet-of-fury",
+      "fact": "length 30 ft",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_little_dishman_30_feet_of_fury",
+    "column": "bolts",
+    "from": null,
+    "to": 5,
+    "why": "Mountain Project protection field: '5 bolts to lower-off stainless carabiners' (bolts, one count). Single source: theCrag was rate-limited (redirected) in Chrome and no guidebook page lists Little Dishman; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/113193477/30-feet-of-fury"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_little_dishman_30_feet_of_fury",
+    "column": "anchor",
+    "from": null,
+    "to": "Stainless lower-off carabiners",
+    "why": "Mountain Project: lower-off stainless carabiners. House spelling 'Stainless lower-off carabiners' (already live on another route). Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/113193477/30-feet-of-fury"
+    ]
+   }
+  ],
+  "held": [
+   {
+    "table": "routes",
+    "id": "wa_little_dishman_30_feet_of_fury",
+    "column": "fa",
+    "from": null,
+    "to": "David Donnelly",
+    "why": "HELD: Mountain Project is the only source for the FA ('David Donnelly: June 2011'); an FA never locks or is set from MP alone.",
+    "evidence": [
+     "https://www.mountainproject.com/route/113193477/30-feet-of-fury"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_little_dishman_30_feet_of_fury",
+    "column": "access",
+    "from": null,
+    "to": null,
+    "why": "HELD: land manager unclear, see notes.",
+    "evidence": [
+     "https://gismo.spokanecounty.org/arcgis/rest/services/SCOUT/PropertyLookup/MapServer/0/query?geometry=-117.28508,47.65414&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=*&returnGeometry=false&f=json",
+     "https://www.dnr.wa.gov/DishmanHills",
+     "https://www.dishmanhills.org/Home-Recreation",
+     "https://washingtonclimbers.org/index.php/wp-json/wp/v2/posts/12362"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "access stays null (HELD). Little Dishman's only placement is Mountain Project's coordinate and approach text (never evidence). The Spokane County parcel layer at that point is a Spokane County 'Park' parcel (45191.9107), and the gully east of the water tower is too (45191.9124), but the water tower itself and the parcels at the north end are Hutchinson Irrigation District No. 16 (the private owner of most of main Dishman, per the WCC), with Dishman Hills Natural Area Assn. parcels beside them. No official page (DNR NRCA page, Conservancy recreation page) mentions climbing, Little Dishman, the Appleway gate or its parking; the Spokane County Dishman Hills page answered 403. Manager unclear, so no object is built. pitches 1 is kept: one 25-30 ft line to one anchor (implied, not stated, so not locked). discipline not locked (MP alone)."
+ },
+ "wa_little_dishman_dad_club": {
+  "area": "wa_little_dishman",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/203249272/dad-club",
+    "https://www.mountainproject.com/area/112215119/little-dishman",
+    "https://gismo.spokanecounty.org/arcgis/rest/services/SCOUT/PropertyLookup/MapServer/0/query?geometry=-117.28508,47.65414&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=*&returnGeometry=false&f=json",
+    "https://www.dnr.wa.gov/DishmanHills",
+    "https://www.dishmanhills.org/Home-Recreation",
+    "https://washingtonclimbers.org/index.php/wp-json/wp/v2/posts/12362"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.11",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/203249272/dad-club",
+      "fact": "5.11 YDS, Sport/TR, 30 ft",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "length_m",
+    "value": 9,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/203249272/dad-club",
+      "fact": "length 30 ft",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_little_dishman_dad_club",
+    "column": "bolts",
+    "from": null,
+    "to": 3,
+    "why": "Mountain Project protection field: 'Three protection and two anchor bolts' (bolts, one count). Single source: theCrag was rate-limited (redirected) in Chrome and no guidebook page lists Little Dishman; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/203249272/dad-club"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_little_dishman_dad_club",
+    "column": "anchor",
+    "from": null,
+    "to": "Two-bolt anchor",
+    "why": "Mountain Project: three protection bolts and two anchor bolts (the anchor bolts sit over the edge). House spelling 'Two-bolt anchor'. Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/203249272/dad-club"
+    ]
+   }
+  ],
+  "held": [
+   {
+    "table": "routes",
+    "id": "wa_little_dishman_dad_club",
+    "column": "fa",
+    "from": null,
+    "to": "Kevin Peter",
+    "why": "HELD: Mountain Project is the only source for the FA ('Kevin Peter, June 2026'); an FA never locks or is set from MP alone.",
+    "evidence": [
+     "https://www.mountainproject.com/route/203249272/dad-club"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_little_dishman_dad_club",
+    "column": "access",
+    "from": null,
+    "to": null,
+    "why": "HELD: land manager unclear, see notes.",
+    "evidence": [
+     "https://gismo.spokanecounty.org/arcgis/rest/services/SCOUT/PropertyLookup/MapServer/0/query?geometry=-117.28508,47.65414&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=*&returnGeometry=false&f=json",
+     "https://www.dnr.wa.gov/DishmanHills",
+     "https://www.dishmanhills.org/Home-Recreation",
+     "https://washingtonclimbers.org/index.php/wp-json/wp/v2/posts/12362"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "access stays null (HELD). Little Dishman's only placement is Mountain Project's coordinate and approach text (never evidence). The Spokane County parcel layer at that point is a Spokane County 'Park' parcel (45191.9107), and the gully east of the water tower is too (45191.9124), but the water tower itself and the parcels at the north end are Hutchinson Irrigation District No. 16 (the private owner of most of main Dishman, per the WCC), with Dishman Hills Natural Area Assn. parcels beside them. No official page (DNR NRCA page, Conservancy recreation page) mentions climbing, Little Dishman, the Appleway gate or its parking; the Spokane County Dishman Hills page answered 403. Manager unclear, so no object is built. pitches 1 is kept: one 25-30 ft line to one anchor (implied, not stated, so not locked). discipline not locked (MP alone). CATALOG DEFECT: wa_little_dishman_dad_club_dyno_start is an alternate start of Dad Club (MP calls it that and its photo set is 'Dad Club and its two alternate starts'); it is its own row. Dad Club's FA date (June 2026) makes it a new line; MP gives a stick-clip note for a high first bolt."
+ },
+ "wa_little_dishman_ants_in_your_pants": {
+  "area": "wa_little_dishman",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/113225421/ants-in-your-pants",
+    "https://www.mountainproject.com/area/112215119/little-dishman",
+    "https://gismo.spokanecounty.org/arcgis/rest/services/SCOUT/PropertyLookup/MapServer/0/query?geometry=-117.28508,47.65414&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=*&returnGeometry=false&f=json",
+    "https://www.dnr.wa.gov/DishmanHills",
+    "https://www.dishmanhills.org/Home-Recreation",
+    "https://washingtonclimbers.org/index.php/wp-json/wp/v2/posts/12362"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.9",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/113225421/ants-in-your-pants",
+      "fact": "5.9 YDS, Sport/TR, 25 ft",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "length_m",
+    "value": 8,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/113225421/ants-in-your-pants",
+      "fact": "length 25 ft (7.6 m)",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_little_dishman_ants_in_your_pants",
+    "column": "bolts",
+    "from": null,
+    "to": 2,
+    "why": "Mountain Project protection field: '2 bolts to lower-off hooks' (bolts, one count). Single source: theCrag was rate-limited (redirected) in Chrome and no guidebook page lists Little Dishman; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/113225421/ants-in-your-pants"
+    ]
+   }
+  ],
+  "held": [
+   {
+    "table": "routes",
+    "id": "wa_little_dishman_ants_in_your_pants",
+    "column": "fa",
+    "from": null,
+    "to": "Steve Inman",
+    "why": "HELD: Mountain Project is the only source for the FA ('Steve Inman May 2012'); an FA never locks or is set from MP alone.",
+    "evidence": [
+     "https://www.mountainproject.com/route/113225421/ants-in-your-pants"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_little_dishman_ants_in_your_pants",
+    "column": "access",
+    "from": null,
+    "to": null,
+    "why": "HELD: land manager unclear, see notes.",
+    "evidence": [
+     "https://gismo.spokanecounty.org/arcgis/rest/services/SCOUT/PropertyLookup/MapServer/0/query?geometry=-117.28508,47.65414&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=*&returnGeometry=false&f=json",
+     "https://www.dnr.wa.gov/DishmanHills",
+     "https://www.dishmanhills.org/Home-Recreation",
+     "https://washingtonclimbers.org/index.php/wp-json/wp/v2/posts/12362"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_little_dishman_ants_in_your_pants",
+    "column": "anchor",
+    "from": null,
+    "to": null,
+    "why": "HELD: Mountain Project says 'lower-off hooks'; the hook type (Mussy, ram's horn…) is not named, so it fits no house spelling.",
+    "evidence": [
+     "https://www.mountainproject.com/route/113225421/ants-in-your-pants"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "access stays null (HELD). Little Dishman's only placement is Mountain Project's coordinate and approach text (never evidence). The Spokane County parcel layer at that point is a Spokane County 'Park' parcel (45191.9107), and the gully east of the water tower is too (45191.9124), but the water tower itself and the parcels at the north end are Hutchinson Irrigation District No. 16 (the private owner of most of main Dishman, per the WCC), with Dishman Hills Natural Area Assn. parcels beside them. No official page (DNR NRCA page, Conservancy recreation page) mentions climbing, Little Dishman, the Appleway gate or its parking; the Spokane County Dishman Hills page answered 403. Manager unclear, so no object is built. pitches 1 is kept: one 25-30 ft line to one anchor (implied, not stated, so not locked). discipline not locked (MP alone)."
+ },
+ "wa_little_dishman_bargain_hunter": {
+  "area": "wa_little_dishman",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/113193572/bargain-hunter",
+    "https://www.mountainproject.com/area/112215119/little-dishman",
+    "https://gismo.spokanecounty.org/arcgis/rest/services/SCOUT/PropertyLookup/MapServer/0/query?geometry=-117.28508,47.65414&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=*&returnGeometry=false&f=json",
+    "https://www.dnr.wa.gov/DishmanHills",
+    "https://www.dishmanhills.org/Home-Recreation",
+    "https://washingtonclimbers.org/index.php/wp-json/wp/v2/posts/12362"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.10a/b",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/113193572/bargain-hunter",
+      "fact": "5.10a/b YDS, Sport, 30 ft",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "length_m",
+    "value": 9,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/113193572/bargain-hunter",
+      "fact": "length 30 ft",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_little_dishman_bargain_hunter",
+    "column": "bolts",
+    "from": null,
+    "to": 5,
+    "why": "Mountain Project protection field: '5 bolts to lower-off stainless carabiners; anchor shared with The Price is Right' (bolts, one count). Single source: theCrag was rate-limited (redirected) in Chrome and no guidebook page lists Little Dishman; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/113193572/bargain-hunter"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_little_dishman_bargain_hunter",
+    "column": "anchor",
+    "from": null,
+    "to": "Stainless lower-off carabiners",
+    "why": "Mountain Project: lower-off stainless carabiners. House spelling 'Stainless lower-off carabiners' (already live on another route). Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/113193572/bargain-hunter"
+    ]
+   }
+  ],
+  "held": [
+   {
+    "table": "routes",
+    "id": "wa_little_dishman_bargain_hunter",
+    "column": "fa",
+    "from": null,
+    "to": "David Donnelly",
+    "why": "HELD: Mountain Project is the only source for the FA ('David Donnelly: April 2012'); an FA never locks or is set from MP alone.",
+    "evidence": [
+     "https://www.mountainproject.com/route/113193572/bargain-hunter"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_little_dishman_bargain_hunter",
+    "column": "access",
+    "from": null,
+    "to": null,
+    "why": "HELD: land manager unclear, see notes.",
+    "evidence": [
+     "https://gismo.spokanecounty.org/arcgis/rest/services/SCOUT/PropertyLookup/MapServer/0/query?geometry=-117.28508,47.65414&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=*&returnGeometry=false&f=json",
+     "https://www.dnr.wa.gov/DishmanHills",
+     "https://www.dishmanhills.org/Home-Recreation",
+     "https://washingtonclimbers.org/index.php/wp-json/wp/v2/posts/12362"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "access stays null (HELD). Little Dishman's only placement is Mountain Project's coordinate and approach text (never evidence). The Spokane County parcel layer at that point is a Spokane County 'Park' parcel (45191.9107), and the gully east of the water tower is too (45191.9124), but the water tower itself and the parcels at the north end are Hutchinson Irrigation District No. 16 (the private owner of most of main Dishman, per the WCC), with Dishman Hills Natural Area Assn. parcels beside them. No official page (DNR NRCA page, Conservancy recreation page) mentions climbing, Little Dishman, the Appleway gate or its parking; the Spokane County Dishman Hills page answered 403. Manager unclear, so no object is built. pitches 1 is kept: one 25-30 ft line to one anchor (implied, not stated, so not locked). discipline not locked (MP alone). Bargain Hunter shares its finishing anchor with The Price is Right (wa_the_price_is_right), per MP."
+ },
+ "wa_little_dishman_earth_day_boogie": {
+  "area": "wa_little_dishman",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/113189766/earth-day-boogie",
+    "https://www.mountainproject.com/area/112215119/little-dishman",
+    "https://gismo.spokanecounty.org/arcgis/rest/services/SCOUT/PropertyLookup/MapServer/0/query?geometry=-117.28508,47.65414&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=*&returnGeometry=false&f=json",
+    "https://www.dnr.wa.gov/DishmanHills",
+    "https://www.dishmanhills.org/Home-Recreation",
+    "https://washingtonclimbers.org/index.php/wp-json/wp/v2/posts/12362"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.10b/c",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/113189766/earth-day-boogie",
+      "fact": "5.10b/c YDS, Sport/TR, 30 ft",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "length_m",
+    "value": 9,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/113189766/earth-day-boogie",
+      "fact": "length 30 ft",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_little_dishman_earth_day_boogie",
+    "column": "bolts",
+    "from": null,
+    "to": 5,
+    "why": "Mountain Project protection field: '5 bolts to lower-off stainless carabiners' (bolts, one count). Single source: theCrag was rate-limited (redirected) in Chrome and no guidebook page lists Little Dishman; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/113189766/earth-day-boogie"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_little_dishman_earth_day_boogie",
+    "column": "anchor",
+    "from": null,
+    "to": "Stainless lower-off carabiners",
+    "why": "Mountain Project: lower-off stainless carabiners. House spelling 'Stainless lower-off carabiners' (already live on another route). Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/113189766/earth-day-boogie"
+    ]
+   }
+  ],
+  "held": [
+   {
+    "table": "routes",
+    "id": "wa_little_dishman_earth_day_boogie",
+    "column": "fa",
+    "from": null,
+    "to": "David Donnelly",
+    "why": "HELD: Mountain Project is the only source for the FA ('David Donnelly: June 22, 2011'); an FA never locks or is set from MP alone.",
+    "evidence": [
+     "https://www.mountainproject.com/route/113189766/earth-day-boogie"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_little_dishman_earth_day_boogie",
+    "column": "access",
+    "from": null,
+    "to": null,
+    "why": "HELD: land manager unclear, see notes.",
+    "evidence": [
+     "https://gismo.spokanecounty.org/arcgis/rest/services/SCOUT/PropertyLookup/MapServer/0/query?geometry=-117.28508,47.65414&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=*&returnGeometry=false&f=json",
+     "https://www.dnr.wa.gov/DishmanHills",
+     "https://www.dishmanhills.org/Home-Recreation",
+     "https://washingtonclimbers.org/index.php/wp-json/wp/v2/posts/12362"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "access stays null (HELD). Little Dishman's only placement is Mountain Project's coordinate and approach text (never evidence). The Spokane County parcel layer at that point is a Spokane County 'Park' parcel (45191.9107), and the gully east of the water tower is too (45191.9124), but the water tower itself and the parcels at the north end are Hutchinson Irrigation District No. 16 (the private owner of most of main Dishman, per the WCC), with Dishman Hills Natural Area Assn. parcels beside them. No official page (DNR NRCA page, Conservancy recreation page) mentions climbing, Little Dishman, the Appleway gate or its parking; the Spokane County Dishman Hills page answered 403. Manager unclear, so no object is built. pitches 1 is kept: one 25-30 ft line to one anchor (implied, not stated, so not locked). discipline not locked (MP alone)."
+ }
+}
