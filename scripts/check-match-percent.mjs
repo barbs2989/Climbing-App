@@ -80,7 +80,7 @@ const out = path.join(outdir, "b.cjs");
 const CORE = JSON.stringify(corePath);
 await build({
   stdin: {
-    contents: `export { compat, compatParts, compatWhy, compatSummary, compatUnknown, availOf, __set_MY_PACE, CLIMBERS, ME, CMAX_DISC, CMAX_GRADE, CMAX_OBJ, CMAX_VERIF, CMAX_PACE, CMAX_AVAIL, CMAX_AREA, COMPAT_BASE, COMPAT_TOP, COMPAT_MAX } from ${CORE};`,
+    contents: `export { compat, compatParts, compatWhy, compatSummary, compatUnknown, availOf, availSlotLabels, AVAIL_OPTS, AVAIL_SLOT_OPTS, __set_MY_PACE, CLIMBERS, ME, CMAX_DISC, CMAX_GRADE, CMAX_OBJ, CMAX_VERIF, CMAX_PACE, CMAX_AVAIL, CMAX_AREA, COMPAT_BASE, COMPAT_TOP, COMPAT_MAX } from ${CORE};`,
     resolveDir: ROOT, loader: "js",
   },
   bundle: true, format: "cjs", platform: "node", jsx: "automatic",
@@ -88,7 +88,7 @@ await build({
   outfile: out, logLevel: "error",
 });
 const M = require_(out);
-for (const k of ["compat", "compatParts", "compatWhy", "compatSummary", "compatUnknown", "availOf", "CMAX_DISC", "CMAX_GRADE", "CMAX_OBJ", "CMAX_VERIF", "CMAX_PACE", "CMAX_AVAIL", "CMAX_AREA", "COMPAT_BASE", "COMPAT_TOP", "COMPAT_MAX"]) {
+for (const k of ["compat", "compatParts", "compatWhy", "compatSummary", "compatUnknown", "availOf", "availSlotLabels", "AVAIL_OPTS", "AVAIL_SLOT_OPTS", "CMAX_DISC", "CMAX_GRADE", "CMAX_OBJ", "CMAX_VERIF", "CMAX_PACE", "CMAX_AVAIL", "CMAX_AREA", "COMPAT_BASE", "COMPAT_TOP", "COMPAT_MAX"]) {
   if (M[k] === undefined) dead(`core does not export ${k} — this guard cannot judge the formula`);
 }
 const { compat, CLIMBERS, ME, COMPAT_BASE, COMPAT_TOP, COMPAT_MAX } = M;
@@ -324,6 +324,15 @@ else fail(`the browse row no longer explains the missing match % (${JSON.stringi
   const st = M.availOf(stale);
   if (st.includes("weekday_pm") && st.includes("weekends") && M.availOf({ availability: ["weekday_am"] }).join() === "weekday_am") ok("a climber with a week grid is read from the grid, not from stale tags; one without a grid keeps their tags");
   else fail(`availOf read ${JSON.stringify(st)} for a grid of Wed evening and weekend mornings: the card and the % follow stale tags the profile does not show`);
+  // ONE SET OF WORDS FOR WHEN YOU ARE FREE (owner 2026-11-23, "make it consistent"). The card printed "Weekday PM" beside a
+  // profile reading "Weekday evenings". The card's line is the profile's lit chips, and no label anywhere says AM or PM.
+  const slotWords = M.AVAIL_SLOT_OPTS.map((o) => o[1]);
+  const cardWords = M.availSlotLabels(stale);
+  const rowSrc = fs.readFileSync(path.join(ROOT, "src/components/RealClimberRow.tsx"), "utf8");
+  const amPm = M.AVAIL_OPTS.concat(M.AVAIL_SLOT_OPTS).map((o) => o[1]).filter((w) => /\b[AP]M\b/.test(w));
+  const readsSlots = /availSlotLabels\(_c\)/.test(rowSrc), readsTags = /\bavailLabel\b/.test(rowSrc);
+  if (cardWords.join() === "Weekday evenings,Weekend mornings" && cardWords.every((w) => slotWords.includes(w)) && !amPm.length && readsSlots && !readsTags) ok("the partner card's \"Usually free\" uses the profile's own chip words, and no availability label says AM or PM");
+  else fail(`the card would print ${JSON.stringify(cardWords)} (profile chips: ${JSON.stringify(slotWords)}); AM/PM labels: ${JSON.stringify(amPm)}; card reads availSlotLabels: ${readsSlots}, still reads availLabel: ${readsTags}`);
   if (half.pts > 0 && half.pts < half.max && none.pts === 0) ok("half the smaller schedule shared counts partly; nothing shared counts nothing");
   else fail(`partial overlap scores ${half.pts}/${half.max} and no overlap ${none.pts}/${none.max}`);
   // PACE IS KNOWN THE SAME WAY BY BOTH (browser pass 2026-11-18). A signed-in viewer's pace is MY_PACE, not a field on
@@ -394,7 +403,7 @@ else fail(`the browse row no longer explains the missing match % (${JSON.stringi
 }
 
 // ---- Fail closed on a run that quietly stopped asking.
-const FLOOR = 27;
+const FLOOR = 28;
 if (ran < FLOOR) dead(`only ${ran} assertions ran, expected at least ${FLOOR} — this run proved less than it claims`);
 
 console.log(bad ? `\n${bad} problem(s).` : `\nok — the match % blends what the screen says it blends (${ran} assertions)`);
