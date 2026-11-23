@@ -1,0 +1,642 @@
+[
+ {
+  "id": "co_niagara_peak_northeast_ridge",
+  "name": "Northeast Ridge",
+  "peakName": "Niagara Peak",
+  "state": "Colorado",
+  "discipline": "scrambling",
+  "status": "held",
+  "peak": {
+   "id": "co_niagara_peak",
+   "name": "Niagara Peak",
+   "lat": 37.8893,
+   "lng": -107.5335,
+   "elevation_ft": 13816,
+   "region": null,
+   "path": "usa.colorado.co_san_juans.co_niagara_peak"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": "Ridge walk usually combined with American and Jones peaks.",
+   "descent": null
+  },
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Hayden Trailhead",
+    "lat": 37.959506,
+    "lng": -107.662211,
+    "km": 13.7
+   },
+   {
+    "src": "USFS",
+    "name": "Engineer Pass",
+    "lat": 37.98865,
+    "lng": -107.649329,
+    "km": 15
+   },
+   {
+    "src": "USFS",
+    "name": "Pole Creek Trailhead",
+    "lat": 37.761996,
+    "lng": -107.46662,
+    "km": 15.3
+   },
+   {
+    "src": "USFS",
+    "name": "Bear Creek Trailhead",
+    "lat": 38.002398,
+    "lng": -107.661335,
+    "km": 16.8
+   },
+   {
+    "src": "USFS",
+    "name": "Upper Cascade Falls",
+    "lat": 38.022036,
+    "lng": -107.660551,
+    "km": 18.5
+   },
+   {
+    "src": "USFS",
+    "name": "Bear Town Trail",
+    "lat": 37.715006,
+    "lng": -107.51001,
+    "km": 19.5
+   },
+   {
+    "src": "USFS",
+    "name": "Lost Trail Trailhead",
+    "lat": 37.771516,
+    "lng": -107.35757,
+    "km": 20.3
+   },
+   {
+    "src": "USFS",
+    "name": "Nellie Creek Trailhead",
+    "lat": 38.062606,
+    "lng": -107.42211,
+    "km": 21.6
+   }
+  ],
+  "lastAnswer": {
+   "status": "found",
+   "trailhead": {
+    "name": "Burns Gulch Trailhead",
+    "identifiedBy": {
+     "kind": "page",
+     "fact": "Niagara NE Ridge Route (Class 2) from Burns Gulch TH 10,790 ft, 9.6 mi RT 4,145 ft with Jones and American",
+     "url": "https://www.climb13ers.com/colorado-13ers/niagara-peak"
+    },
+    "placements": [
+     {
+      "source": "climb13ers page printed coordinate",
+      "name": "Burns Gulch TH",
+      "lat": 37.91798,
+      "lng": -107.558,
+      "url": "https://www.climb13ers.com/colorado-13ers/niagara-peak"
+     }
+    ]
+   },
+   "notes": "Page explicitly names the NE Ridge route from Burns Gulch. SummitPost search summary also gives Burns/Grouse Gulch TH ~10,700 ft; a different Snare Gulch start exists for other Niagara routes (not this). Only placement is the page's printed DMS N37 55 04.73 W107 33 28.78; no land-manager point in the list."
+  }
+ },
+ {
+  "id": "co_north_apostle_southwest_ridge",
+  "name": "Southwest Ridge",
+  "peakName": "North Apostle",
+  "state": "Colorado",
+  "discipline": "scrambling",
+  "status": "held",
+  "peak": {
+   "id": "co_north_apostle",
+   "name": "North Apostle",
+   "lat": 38.9197,
+   "lng": -106.4343,
+   "elevation_ft": 13869,
+   "region": null,
+   "path": "usa.colorado.co_sawatch_range.co_north_apostle"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": "Tundra and talus ridge in the Collegiate Peaks, often combined with Ice Mountain.",
+   "descent": null
+  },
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "South Fork Clear Creek Trailhead",
+    "lat": 38.949335,
+    "lng": -106.461038,
+    "km": 4
+   },
+   {
+    "src": "USFS",
+    "name": "Cloyses Trailhead",
+    "lat": 38.950901,
+    "lng": -106.407437,
+    "km": 4.2
+   },
+   {
+    "src": "USFS",
+    "name": "Texas Creek Trailhead",
+    "lat": 38.873006,
+    "lng": -106.42661,
+    "km": 5.2
+   },
+   {
+    "src": "USFS",
+    "name": "Silver Basin Trailhead",
+    "lat": 38.966162,
+    "lng": -106.458122,
+    "km": 5.6
+   },
+   {
+    "src": "USFS",
+    "name": "Texas Creek Horse Trailhead",
+    "lat": 38.865106,
+    "lng": -106.49681,
+    "km": 8.1
+   },
+   {
+    "src": "USFS",
+    "name": "Timberline Trailhead",
+    "lat": 38.844437,
+    "lng": -106.447315,
+    "km": 8.4
+   },
+   {
+    "src": "USFS",
+    "name": "La Plata (South) Trailhead",
+    "lat": 38.992531,
+    "lng": -106.469061,
+    "km": 8.6
+   },
+   {
+    "src": "USFS",
+    "name": "Sheep Gulch Trailhead",
+    "lat": 38.995019,
+    "lng": -106.404205,
+    "km": 8.8
+   }
+  ],
+  "lastAnswer": {
+   "status": "found",
+   "trailhead": {
+    "name": "Clear Creek / Winfield / Apostles Trailhead (South Winfield)",
+    "identifiedBy": {
+     "kind": "page",
+     "fact": "North Apostle SW Ridge Route Class 2 from Clear Creek/Winfield/Apostles TH 10,880 ft, 8 mi RT 3,320 ft",
+     "url": "https://www.climb13ers.com/colorado-13ers/north-apostle"
+    },
+    "placements": [
+     {
+      "source": "climb13ers page printed coordinate",
+      "name": "Clear Creek/Winfield/Apostles TH",
+      "lat": 38.954214,
+      "lng": -106.409017,
+      "url": "https://www.climb13ers.com/colorado-13ers/north-apostle"
+     }
+    ]
+   },
+   "notes": "Coordinate converted from printed DMS N38 57 15.17 W106 24 32.46. Page elevation 10,880 equals its Clohesy Lake figure; 14ers reports call South Winfield TH 10,600, so the two names may be adjacent lots; coordinate is near USFS Cloyses/South Fork Clear Creek points? Not matched (USFS South Fork Clear Creek TH is 4 km away). Non-land-manager placement only; OSM match by name afterwards."
+  }
+ },
+ {
+  "id": "co_stewart_peak_east_ridge",
+  "name": "East Ridge",
+  "peakName": "Stewart Peak",
+  "state": "Colorado",
+  "discipline": "scrambling",
+  "status": "held",
+  "peak": {
+   "id": "co_stewart_peak",
+   "name": "Stewart Peak",
+   "lat": 38.0231,
+   "lng": -106.9234,
+   "elevation_ft": 13988,
+   "region": null,
+   "path": "usa.colorado.co_san_juans.co_stewart_peak"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": "Long grassy ridge in the remote eastern San Juans; mileage depends heavily on how far a vehicle can drive up the Stewart Creek road.",
+   "descent": null
+  },
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Stewart Creek Trailhead",
+    "lat": 38.02479,
+    "lng": -106.841089,
+    "km": 7.2
+   },
+   {
+    "src": "USFS",
+    "name": "Eddiesville South Trailhead",
+    "lat": 38.023856,
+    "lng": -106.83642,
+    "km": 7.6
+   },
+   {
+    "src": "USFS",
+    "name": "Eddiesville North Trailhead",
+    "lat": 38.025723,
+    "lng": -106.83581,
+    "km": 7.7
+   },
+   {
+    "src": "USFS",
+    "name": "Mineral Creek Trailhead",
+    "lat": 38.053353,
+    "lng": -107.065346,
+    "km": 12.9
+   },
+   {
+    "src": "USFS",
+    "name": "Phoenix Park Trailhead",
+    "lat": 37.904527,
+    "lng": -106.91652,
+    "km": 13.2
+   },
+   {
+    "src": "USFS",
+    "name": "Rough Creek Trailhead",
+    "lat": 38.051757,
+    "lng": -107.088624,
+    "km": 14.8
+   },
+   {
+    "src": "USFS",
+    "name": "Middle Fork Trailhead",
+    "lat": 37.975302,
+    "lng": -106.74245,
+    "km": 16.7
+   },
+   {
+    "src": "USFS",
+    "name": "Miners Creek Trailhead",
+    "lat": 37.857866,
+    "lng": -106.9741,
+    "km": 18.9
+   }
+  ],
+  "lastAnswer": {
+   "status": "found",
+   "trailhead": {
+    "name": "Nutras Creek Trailhead (unsigned pullout at the Nutras Creek crossing on FR 794)",
+    "identifiedBy": {
+     "kind": "page",
+     "url": "https://thenextsummit.org/colorado-13ers/hiking-stewart-peak/",
+     "fact": "East Ridge route from Nutras Creek: small dirt parking at a bend just before the road crosses Nutras Creek; Stewart Creek TH is ~1-2 mi further and serves the SW ridge"
+    },
+    "placements": []
+   },
+   "notes": "One page about this route (CMC agrees on 8 mi / 3000 ft but names no trailhead; a search summary also said Nutras Creek). No page printed a coordinate; USFS Stewart Creek TH is a different trailhead, do not use. Route text says only that mileage depends on how far the Stewart Creek road can be driven (consistent). Name only."
+  }
+ },
+ {
+  "id": "co_vermilion_peak_southeast_ridge",
+  "name": "Southeast Ridge",
+  "peakName": "Vermilion Peak",
+  "state": "Colorado",
+  "discipline": "scrambling",
+  "status": "held",
+  "peak": {
+   "id": "co_vermilion_peak",
+   "name": "Vermilion Peak",
+   "lat": 37.7993,
+   "lng": -107.8285,
+   "elevation_ft": 13909,
+   "region": null,
+   "path": "usa.colorado.co_san_juans.co_vermilion_peak"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": "Open ridge and loose talus above Telluride's Ophir area with a short final scramble.",
+   "descent": null
+  },
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Hope Lake Trailhead",
+    "lat": 37.804939,
+    "lng": -107.851592,
+    "km": 2.1
+   },
+   {
+    "src": "USFS",
+    "name": "Ice Lake Trailhead",
+    "lat": 37.806406,
+    "lng": -107.773711,
+    "km": 4.9
+   },
+   {
+    "src": "USFS",
+    "name": "SWAMP CANYON",
+    "lat": 37.858706,
+    "lng": -107.809711,
+    "km": 6.8
+   },
+   {
+    "src": "USFS",
+    "name": "Matterhorn Nordic Trailhead",
+    "lat": 37.84344,
+    "lng": -107.883242,
+    "km": 6.9
+   },
+   {
+    "src": "USFS",
+    "name": "Galloping Goose/Lizard Head Trailhead",
+    "lat": 37.811036,
+    "lng": -107.908098,
+    "km": 7.1
+   },
+   {
+    "src": "USFS",
+    "name": "Lizard Head Trailhead",
+    "lat": 37.81193,
+    "lng": -107.908446,
+    "km": 7.2
+   },
+   {
+    "src": "USFS",
+    "name": "Cross Mountain Trailhead",
+    "lat": 37.796366,
+    "lng": -107.937501,
+    "km": 9.6
+   },
+   {
+    "src": "USFS",
+    "name": "ALTA LAKES",
+    "lat": 37.884506,
+    "lng": -107.846911,
+    "km": 9.6
+   }
+  ],
+  "lastAnswer": {
+   "status": "found",
+   "trailhead": {
+    "name": "Lake Hope Trailhead",
+    "identifiedBy": {
+     "kind": "page",
+     "url": "https://www.climb13ers.com/colorado-13ers/vermillion-peak",
+     "fact": "Vermilion SE Ridge (Class 2+) from Lake Hope trailhead, 10,745 ft; route text puts it above Ophir"
+    },
+    "placements": [
+     {
+      "source": "USFS",
+      "name": "Hope Lake Trailhead",
+      "lat": 37.804939,
+      "lng": -107.851592,
+      "url": ""
+     },
+     {
+      "source": "climb13ers",
+      "name": "Lake Hope Trailhead",
+      "lat": 37.80497,
+      "lng": -107.85162,
+      "url": "https://www.climb13ers.com/colorado-13ers/vermillion-peak"
+     }
+    ]
+   },
+   "notes": "Two placements agree (<15 m). Conflict noted: SE ridge also done from South Mineral Creek / Ice Lakes side (search summary), but the route text's Ophir/Telluride framing matches Lake Hope."
+  }
+ },
+ {
+  "id": "me_spaulding_mountain_appalachian_trail_from_caribou_pond_road",
+  "name": "Appalachian Trail from Caribou Pond Road",
+  "peakName": "Spaulding Mountain",
+  "state": "Maine",
+  "discipline": "walk-up",
+  "status": "held",
+  "peak": {
+   "id": "me_spaulding_mountain",
+   "name": "Spaulding Mountain",
+   "lat": 45.00294,
+   "lng": -70.3335,
+   "elevation_ft": null,
+   "region": "Maine",
+   "path": "usa.maine.me_a_western_mountains.me_spaulding_mountain"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "siblingTrailheads": [],
+  "officialCandidates": [],
+  "lastAnswer": {
+   "status": "found",
+   "trailhead": {
+    "name": "Caribou Pond Road (Caribou Valley Road) gate parking",
+    "identifiedBy": {
+     "kind": "page",
+     "url": "https://mainebyfoot.com/spaulding-mountain-near-carrabassett-valley/",
+     "fact": "3.8 mi up Caribou Pond Rd to yellow gate and large lot, then ~0.5 mi dirt road north to the AT; route name itself says Caribou Pond Road"
+    },
+    "placements": [
+     {
+      "source": "Backpacker (parking waypoint, pullouts on Caribou Valley Rd)",
+      "name": "Caribou Valley Road parking",
+      "lat": 45.0395317,
+      "lng": -70.3446198,
+      "url": "https://www.backpacker.com/trips/appalachian-trail-caribou-valley-road-to-me-16/?scope=anon"
+     }
+    ]
+   },
+   "notes": "Identification strong (route name + page). Placement WEAK: one Backpacker waypoint, not a land manager; a search summary showed a different value (45.0407,-70.3596) for the same page, and Waymarking 45.0537,-70.3448 is the Route 27 road junction, not the gate. Prefer the OSM name match."
+  }
+ },
+ {
+  "id": "me_sugarloaf_mountain_appalachian_trail_to_sugarloaf",
+  "name": "Appalachian Trail to Sugarloaf",
+  "peakName": "Sugarloaf Mountain",
+  "state": "Maine",
+  "discipline": "walk-up",
+  "status": "held",
+  "peak": {
+   "id": "me_sugarloaf_mountain",
+   "name": "Sugarloaf Mountain",
+   "lat": 45.03167,
+   "lng": -70.31333,
+   "elevation_ft": null,
+   "region": "Maine",
+   "path": "usa.maine.me_a_western_mountains.me_sugarloaf_mountain"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "siblingTrailheads": [],
+  "officialCandidates": [],
+  "lastAnswer": {
+   "status": "found",
+   "trailhead": {
+    "name": "Caribou Pond Road (Caribou Valley Road) gate parking",
+    "identifiedBy": {
+     "kind": "page",
+     "url": "https://mainebyfoot.com/sugarloaf-mountain-carrabassett-valley/",
+     "fact": "AT route starts at Caribou Valley Road: 3.8 mi up to large lot and yellow gate, 0.5 mi road walk to AT, 2.8 mi AT + 0.6 mi side trail to summit; mainetrailfinder lists Caribou Pond Rd as one of two AT trailheads"
+    },
+    "placements": [
+     {
+      "source": "Backpacker (parking waypoint, pullouts on Caribou Valley Rd)",
+      "name": "Caribou Valley Road parking",
+      "lat": 45.0395317,
+      "lng": -70.3446198,
+      "url": "https://www.backpacker.com/trips/appalachian-trail-caribou-valley-road-to-me-16/?scope=anon"
+     }
+    ]
+   },
+   "notes": "Route name says only Appalachian Trail; the Route 27 crossing is a second real start (mainetrailfinder), so identification is moderate. Placement WEAK: single Backpacker waypoint, not a land manager; the Waymarking point is the Route 27 road junction, not the lot."
+  }
+ },
+ {
+  "id": "or_diamond_peak_southwest_ridge",
+  "name": "Southwest Ridge",
+  "peakName": "Diamond Peak",
+  "state": "Oregon",
+  "discipline": "mountaineering",
+  "status": "held",
+  "peak": {
+   "id": "or_diamond_peak",
+   "name": "Diamond Peak",
+   "lat": 43.5207,
+   "lng": -122.14961,
+   "elevation_ft": 8744,
+   "region": "Oregon",
+   "path": "usa.oregon.or_oregon_volcanoes.or_diamond_peak"
+  },
+  "text": {
+   "approach": "Start at the Pioneer Gulch trailhead and follow the Pioneer Gulch Trail until it meets the Diamond Peak Trail. Leave the trail there and head straight uphill, trending toward climber's left, until you reach the southwest ridge. In winter, with the Summit Lake road shut, this is the easiest line to reach. In mid-May snow can still cover the forest road from about 4,900 ft, adding road miles on snowshoes, while the first mile of trail is often already bare.",
+   "approach_logistics": null,
+   "road": null,
+   "overview": "Easiest access when snow closes the Summit Lake road, and a handy way in for skiers after the bowls beneath the top. The trailhead at Pioneer Gulch gives a round trip of 7.5 miles and gains somewhat over 4000 feet. Hike until the trail joins the one named for Diamond Peak, then go directly uphill bearing climbers left to the southwest ridge. Stay on it until it merges with the south ridge, and continue to the top.",
+   "description": null,
+   "descent": null
+  },
+  "siblingTrailheads": [
+   {
+    "route": "or_diamond_peak_south_ridge",
+    "name": "Summit Lake Trailhead"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "CORRIGAN LAKE",
+    "lat": 43.516672,
+    "lng": -122.202236,
+    "km": 4.3
+   },
+   {
+    "src": "USFS",
+    "name": "ROCKPILE",
+    "lat": 43.48445,
+    "lng": -122.175292,
+    "km": 4.5
+   },
+   {
+    "src": "USFS",
+    "name": "BLUE LAKE",
+    "lat": 43.528061,
+    "lng": -122.212236,
+    "km": 5.1
+   },
+   {
+    "src": "USFS",
+    "name": "BEAR MOUNTAIN",
+    "lat": 43.517505,
+    "lng": -122.218903,
+    "km": 5.6
+   },
+   {
+    "src": "USFS",
+    "name": "DIAMOND PEAK TRAILHEAD (NORTH)",
+    "lat": 43.466672,
+    "lng": -122.151958,
+    "km": 6
+   },
+   {
+    "src": "USFS",
+    "name": "Emigrant Pass Trailhead",
+    "lat": 43.463702,
+    "lng": -122.134831,
+    "km": 6.4
+   },
+   {
+    "src": "USFS",
+    "name": "DIAMOND PEAK TRAILHEAD (SOUTH)",
+    "lat": 43.566117,
+    "lng": -122.200014,
+    "km": 6.5
+   },
+   {
+    "src": "USFS",
+    "name": "PCT EMIGRANT PASS",
+    "lat": 43.463399,
+    "lng": -122.134395,
+    "km": 6.5
+   }
+  ],
+  "lastAnswer": {
+   "status": "found",
+   "trailhead": {
+    "name": "Pioneer Gulch Trailhead",
+    "identifiedBy": {
+     "kind": "route_text",
+     "fact": "Start at the Pioneer Gulch trailhead and follow the Pioneer Gulch Trail"
+    },
+    "placements": []
+   },
+   "notes": "Name from route text. No opened page gave a coordinate; oregonhikers thread only mentions the Pioneer Gulch trail junction. Empty placements: needs OSM name match. Not the sibling's Summit Lake TH."
+  }
+ },
+ {
+  "id": "wa_cutthroat_peak_a_virtuous_circle",
+  "name": "A Virtuous Circle",
+  "peakName": "",
+  "state": "Washington",
+  "discipline": "trad",
+  "status": "new",
+  "officialCandidates": [],
+  "lastAnswer": {
+   "trailhead": null
+  }
+ },
+ {
+  "id": "wa_north_early_winter_spire_constantino_whitelaw",
+  "name": "Constantino-Whitelaw",
+  "peakName": "",
+  "state": "Washington",
+  "discipline": "trad",
+  "status": "new",
+  "officialCandidates": [],
+  "lastAnswer": {
+   "trailhead": null
+  }
+ }
+]

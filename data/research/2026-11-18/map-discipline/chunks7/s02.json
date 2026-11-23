@@ -1,0 +1,704 @@
+[
+ {
+  "id": "ca_disappointment_peak_standard_route",
+  "name": "Standard route",
+  "peakName": "Disappointment Peak",
+  "state": "California",
+  "discipline": "mountaineering",
+  "status": "nopage",
+  "peak": {
+   "id": "ca_disappointment_peak",
+   "name": "Disappointment Peak",
+   "lat": 37.0679,
+   "lng": -118.4675,
+   "elevation_ft": 13917,
+   "region": null,
+   "path": "usa.california.ca_high_sierra.ca_09_palisades_surrounding_peaks.ca_disappointment_peak"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "BIG PINE CREEK SO FORK TH",
+    "lat": 37.124805,
+    "lng": -118.438913,
+    "km": 6.8
+   },
+   {
+    "src": "USFS",
+    "name": "Big Pine Creek North Fork Trail Trailhea",
+    "lat": 37.128105,
+    "lng": -118.427713,
+    "km": 7.6
+   },
+   {
+    "src": "USFS",
+    "name": "BIRCH LAKE TH",
+    "lat": 37.087405,
+    "lng": -118.355412,
+    "km": 10.2
+   },
+   {
+    "src": "USFS",
+    "name": "RED LAKE TH",
+    "lat": 37.035704,
+    "lng": -118.35896,
+    "km": 10.3
+   },
+   {
+    "src": "USFS",
+    "name": "TABOOSE PASS TH",
+    "lat": 37.009505,
+    "lng": -118.327312,
+    "km": 14
+   },
+   {
+    "src": "USFS",
+    "name": "South Lake Trailhead",
+    "lat": 37.169305,
+    "lng": -118.565813,
+    "km": 14.3
+   },
+   {
+    "src": "USFS",
+    "name": "Baker/Green Lakes Th",
+    "lat": 37.186805,
+    "lng": -118.557713,
+    "km": 15.5
+   },
+   {
+    "src": "USFS",
+    "name": "TYEE TH",
+    "lat": 37.195805,
+    "lng": -118.564713,
+    "km": 16.6
+   }
+  ],
+  "lastAnswer": {
+   "status": "stuck",
+   "trailhead": null,
+   "notes": "Search summary of SummitPost (403 on open) says the peak is most easily reached from Glacier Lodge / Big Pine Creek trailhead and the standard route needs the Middle Palisade Glacier bergschrund. Not opened, so weak; Big Pine South Fork vs North Fork unresolved. Lead only: USFS BIG PINE CREEK SO FORK TH 37.124805,-118.438913."
+  }
+ },
+ {
+  "id": "ca_english_mountain_standard_route",
+  "name": "Standard route",
+  "peakName": "English Mountain",
+  "state": "California",
+  "discipline": "scrambling",
+  "status": "nopage",
+  "peak": {
+   "id": "ca_english_mountain",
+   "name": "English Mountain",
+   "lat": 39.4465,
+   "lng": -120.5512,
+   "elevation_ft": 8373,
+   "region": null,
+   "path": "usa.california.ca_northern_sierra.ca_english_mountain"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Woodcamp Creek-interpretive Trail",
+    "lat": 39.482639,
+    "lng": -120.556658,
+    "km": 4
+   },
+   {
+    "src": "USFS",
+    "name": "Little Lasier Pacific Crest Trail Access",
+    "lat": 39.488963,
+    "lng": -120.516113,
+    "km": 5.6
+   },
+   {
+    "src": "USFS",
+    "name": "Lindsey Creek",
+    "lat": 39.412825,
+    "lng": -120.647126,
+    "km": 9
+   },
+   {
+    "src": "USFS",
+    "name": "Loney Meadows Trailhead",
+    "lat": 39.418987,
+    "lng": -120.658801,
+    "km": 9.7
+   },
+   {
+    "src": "USFS",
+    "name": "MOSSY POND",
+    "lat": 39.353052,
+    "lng": -120.493374,
+    "km": 11.5
+   },
+   {
+    "src": "USFS",
+    "name": "Pierce Creek Wetland Trailhead",
+    "lat": 39.341352,
+    "lng": -120.597955,
+    "km": 12.4
+   },
+   {
+    "src": "USFS",
+    "name": "Indian Springs Trailhead",
+    "lat": 39.33017,
+    "lng": -120.570162,
+    "km": 13
+   },
+   {
+    "src": "USFS",
+    "name": "Wild Plum PCT Trailhead",
+    "lat": 39.566899,
+    "lng": -120.606175,
+    "km": 14.2
+   }
+  ],
+  "lastAnswer": {
+   "status": "stuck",
+   "trailhead": null,
+   "notes": "Stuck: climber.org gives a road junction (no signed trailhead); another report starts near Catfish Lake / Bowman Rd; SummitPost mentions a 4WD route from Meadow Lake Rd. Several equal starts, no named lot."
+  }
+ },
+ {
+  "id": "ca_foerster_peak_standard_route",
+  "name": "Standard route",
+  "peakName": "Foerster Peak",
+  "state": "California",
+  "discipline": "scrambling",
+  "status": "held",
+  "peak": {
+   "id": "ca_foerster_peak",
+   "name": "Foerster Peak",
+   "lat": 37.6899,
+   "lng": -119.2907,
+   "elevation_ft": 12057,
+   "region": null,
+   "path": "usa.california.ca_high_sierra.ca_03_lyell_group.ca_foerster_peak"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Fernandez Pass Trailhead",
+    "lat": 37.534696,
+    "lng": -119.298678,
+    "km": 17.3
+   },
+   {
+    "src": "USFS",
+    "name": "FERN/YOST TH",
+    "lat": 37.761788,
+    "lng": -119.113341,
+    "km": 17.5
+   },
+   {
+    "src": "USFS",
+    "name": "YOST LAKE TH",
+    "lat": 37.761811,
+    "lng": -119.113265,
+    "km": 17.5
+   },
+   {
+    "src": "USFS",
+    "name": "Shadow Lake Trailhead",
+    "lat": 37.682096,
+    "lng": -119.08618,
+    "km": 18
+   },
+   {
+    "src": "USFS",
+    "name": "High Trail Trailhead",
+    "lat": 37.682905,
+    "lng": -119.084413,
+    "km": 18.2
+   },
+   {
+    "src": "USFS",
+    "name": "Agnew Mead. Wildflower Th",
+    "lat": 37.681083,
+    "lng": -119.080672,
+    "km": 18.5
+   },
+   {
+    "src": "USFS",
+    "name": "JOHN MUIR TRAIL NORTH TH",
+    "lat": 37.6272,
+    "lng": -119.085702,
+    "km": 19.3
+   },
+   {
+    "src": "USFS",
+    "name": "MINARET LAKE TH",
+    "lat": 37.62724,
+    "lng": -119.085818,
+    "km": 19.3
+   }
+  ],
+  "lastAnswer": {
+   "status": "found",
+   "trailhead": {
+    "name": "Isberg Pass Trailhead (Isberg Trailhead, Sierra National Forest, near Granite Creek Campground)",
+    "identifiedBy": {
+     "kind": "page",
+     "url": "https://themtsarecalling.com/foerester/",
+     "fact": "trip report starts at Isberg Trailhead, Isberg Pass trail via the Niche, Sadler Lake; pantilat.wordpress.com 2013 also uses Isberg Pass Trailhead"
+    },
+    "placements": []
+   },
+   "notes": "WEAK. Two opened trip reports use Isberg TH; SummitPost (search summary only, page 403, NOT opened) calls Isberg Pass the most direct and lists Tuolumne Meadows and Devils Postpile starts as alternatives; earlier passes saw reports from Tuolumne Meadows (1999) and Sunrise Lakes (2021). No page calls any start the standard route. No coordinate from an allowed source; Isberg TH not in officialCandidates. Reviewer may prefer stuck."
+  }
+ },
+ {
+  "id": "ca_granite_chief_granite_chief_trail_from_olympic_valley",
+  "name": "Granite Chief Trail from Olympic Valley",
+  "peakName": "Granite Chief",
+  "state": "California",
+  "discipline": "scrambling",
+  "status": "nopage",
+  "peak": {
+   "id": "ca_granite_chief",
+   "name": "Granite Chief",
+   "lat": 39.1982,
+   "lng": -120.2871,
+   "elevation_ft": 9006,
+   "region": null,
+   "path": "usa.california.ca_lake_tahoe.ca_granite_chief"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": "Take the trail from behind the fire station along the ski area boundary to the Pacific Crest Trail, then follow the northeast ridge to the summit.",
+   "descent": null
+  },
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Talbot Equestrian Trailhead",
+    "lat": 39.18866,
+    "lng": -120.373202,
+    "km": 7.5
+   },
+   {
+    "src": "USFS",
+    "name": "Cold Stream Trailhead",
+    "lat": 39.271123,
+    "lng": -120.284665,
+    "km": 8.1
+   },
+   {
+    "src": "USFS",
+    "name": "Shanks Cove",
+    "lat": 39.131754,
+    "lng": -120.330463,
+    "km": 8.3
+   },
+   {
+    "src": "USFS",
+    "name": "Big Chief - North",
+    "lat": 39.269285,
+    "lng": -120.200476,
+    "km": 10.9
+   },
+   {
+    "src": "USFS",
+    "name": "Blackwood Canyon OHV",
+    "lat": 39.103308,
+    "lng": -120.204295,
+    "km": 12.7
+   },
+   {
+    "src": "USFS",
+    "name": "Donkey Town",
+    "lat": 39.309135,
+    "lng": -120.212023,
+    "km": 13.9
+   },
+   {
+    "src": "USFS",
+    "name": "Barker Pass Pacific Crest Trailhead",
+    "lat": 39.076927,
+    "lng": -120.235153,
+    "km": 14.2
+   },
+   {
+    "src": "USFS",
+    "name": "Ellis Peak",
+    "lat": 39.071988,
+    "lng": -120.231349,
+    "km": 14.8
+   }
+  ],
+  "lastAnswer": {
+   "status": "stuck",
+   "trailhead": {
+    "name": "Granite Chief Trailhead (behind Olympic Valley fire station)",
+    "identifiedBy": {
+     "kind": "route_text",
+     "fact": "trail from behind the fire station along the ski area boundary to the PCT"
+    },
+    "placements": []
+   },
+   "notes": "Name identified by route text and search summary of a USFS doc (trail starts just behind the Squaw/Olympic Valley fire station, parking across the road in the ski-area lot); USFS PDF unreadable, SummitPost 403. No land-manager coordinate found; onX point (39.1991284,-120.2357978) from earlier pass is not acceptable. Leave to OSM name match on Olympic Valley Fire Station."
+  }
+ },
+ {
+  "id": "ca_joe_devel_peak_standard_route",
+  "name": "Standard route",
+  "peakName": "Joe Devel Peak",
+  "state": "California",
+  "discipline": "scrambling",
+  "status": "held",
+  "peak": {
+   "id": "ca_joe_devel_peak",
+   "name": "Joe Devel Peak",
+   "lat": 36.5153,
+   "lng": -118.2967,
+   "elevation_ft": 13327,
+   "region": null,
+   "path": "usa.california.ca_high_sierra.ca_14_whitney_surrounding_peaks.ca_joe_devel_peak"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Whitney Portal Trailhead",
+    "lat": 36.586905,
+    "lng": -118.240112,
+    "km": 9.4
+   },
+   {
+    "src": "USFS",
+    "name": "MEYSAN LAKE TH",
+    "lat": 36.589789,
+    "lng": -118.230163,
+    "km": 10.2
+   },
+   {
+    "src": "USFS",
+    "name": "TUTTLE CREEK TH",
+    "lat": 36.553705,
+    "lng": -118.184212,
+    "km": 10.9
+   },
+   {
+    "src": "USFS",
+    "name": "Cottonwood Lakes Trailhead",
+    "lat": 36.453362,
+    "lng": -118.169987,
+    "km": 13.3
+   },
+   {
+    "src": "USFS",
+    "name": "Whitney Portal NRT Trailhead",
+    "lat": 36.597405,
+    "lng": -118.186412,
+    "km": 13.4
+   },
+   {
+    "src": "USFS",
+    "name": "Cottonwood Pass Trailhead",
+    "lat": 36.448305,
+    "lng": -118.170612,
+    "km": 13.5
+   },
+   {
+    "src": "USFS",
+    "name": "Shepherd Pass Th",
+    "lat": 36.726905,
+    "lng": -118.278912,
+    "km": 23.6
+   }
+  ],
+  "lastAnswer": {
+   "status": "found",
+   "trailhead": {
+    "name": "Cottonwood Lakes Trailhead (Horseshoe Meadow)",
+    "identifiedBy": {
+     "kind": "page",
+     "url": "https://www.climber.org/TripReports/2012/1805.html",
+     "fact": "Trailhead field: Cottonwood Lakes; Old Army Pass then Perrin Creek, class 2 rib to Joe Devel"
+    },
+    "placements": [
+     {
+      "source": "USFS",
+      "name": "Cottonwood Lakes Trailhead",
+      "lat": 36.453362,
+      "lng": -118.169987,
+      "url": ""
+     },
+     {
+      "source": "hikespeak",
+      "name": "Cottonwood Lakes trailhead",
+      "lat": 36.4532,
+      "lng": -118.1699,
+      "url": "https://www.hikespeak.com/trails/cottonwood-lakes-trail-new-army-pass/"
+     }
+    ]
+   },
+   "notes": "WEAK-to-moderate. Two pages agree on the Horseshoe Meadow area: climber.org (Cottonwood Lakes TH, Old Army Pass) and backcountrysights (Horseshoe Meadows, Cottonwood Pass Trail to PCT then Rock Creek, west ridge). No page ties this route to one lot; Cottonwood Pass TH (USFS 36.448305,-118.170612) is a second lot about 0.6 km away, same meadow. Whitney Portal supported by no page. The approach is multi-day (cross-country via Rock Creek), so the lot is far from the summit (about 13 km). SummitPost 403."
+  }
+ },
+ {
+  "id": "ca_lamont_peak_lamont_peak_trail",
+  "name": "Lamont Peak Trail",
+  "peakName": "Lamont Peak",
+  "state": "California",
+  "discipline": "scrambling",
+  "status": "held",
+  "peak": {
+   "id": "ca_lamont_peak",
+   "name": "Lamont Peak",
+   "lat": 35.7921,
+   "lng": -118.0436,
+   "elevation_ft": 7429,
+   "region": null,
+   "path": "usa.california.ca_southern_sierra.ca_lamont_peak"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": "A short, steep trail climbs the ridge from the Canebrake Road saddle, fades in places, then follows cairns up the final ridge to the summit rocks. Expect a bit of scrambling and boulder hopping near the top.",
+   "descent": null
+  },
+  "siblingTrailheads": [],
+  "officialCandidates": [],
+  "lastAnswer": {
+   "status": "found",
+   "trailhead": {
+    "name": "Lamont Peak trailhead, Canebrake Road saddle (CANLAM)",
+    "identifiedBy": {
+     "kind": "page",
+     "url": "https://climber.org/driving/canebrake.html",
+     "fact": "Lamont Peak/Spanish Needle trailhead at the saddle on Canebrake Road, lot west side, trail east; matches route text"
+    },
+    "placements": [
+     {
+      "source": "climber.org GPX waypoint CANLAM",
+      "name": "CANEBRAKE RD AT LAMONT TRAILHEAD",
+      "lat": 35.787783,
+      "lng": -118.071883,
+      "url": "https://climber.org/driving/images/canebrake.gpx"
+     }
+    ]
+   },
+   "notes": "Placement is a GPS waypoint from a driving-guide site (not a land manager); lies 2.6 km from the summit. SummitPost 403."
+  }
+ },
+ {
+  "id": "ca_marion_peak_northeast_ridge",
+  "name": "Northeast Ridge",
+  "peakName": "Marion Peak",
+  "state": "California",
+  "discipline": "scrambling",
+  "status": "nopage",
+  "peak": {
+   "id": "ca_marion_peak",
+   "name": "Marion Peak",
+   "lat": 36.9567,
+   "lng": -118.5223,
+   "elevation_ft": 12719,
+   "region": null,
+   "path": "usa.california.ca_high_sierra.ca_10_taboose_sawmill_baxter_passes.ca_marion_peak"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": "Reach Cartridge Pass or Marion Lake, then follow the northeast ridge on class 2 terrain.",
+   "descent": null
+  },
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "RED LAKE TH",
+    "lat": 37.035704,
+    "lng": -118.35896,
+    "km": 17
+   },
+   {
+    "src": "USFS",
+    "name": "TABOOSE PASS TH",
+    "lat": 37.009505,
+    "lng": -118.327312,
+    "km": 18.3
+   },
+   {
+    "src": "USFS",
+    "name": "Cedar Grove",
+    "lat": 36.796368,
+    "lng": -118.58291,
+    "km": 18.6
+   },
+   {
+    "src": "NPS",
+    "name": "Copper Creek",
+    "lat": 36.796495,
+    "lng": -118.583551,
+    "km": 18.6
+   },
+   {
+    "src": "NPS",
+    "name": "Bubbs Creek, Woods Creek, and Rae Lakes  ",
+    "lat": 36.794924,
+    "lng": -118.582577,
+    "km": 18.8
+   },
+   {
+    "src": "NPS",
+    "name": "River Trail",
+    "lat": 36.79427,
+    "lng": -118.584209,
+    "km": 18.9
+   },
+   {
+    "src": "NPS",
+    "name": "Zumwalt Meadow/River Trail",
+    "lat": 36.793648,
+    "lng": -118.59852,
+    "km": 19.4
+   },
+   {
+    "src": "USFS",
+    "name": "BIG PINE CREEK SO FORK TH",
+    "lat": 37.124805,
+    "lng": -118.438913,
+    "km": 20.1
+   }
+  ],
+  "lastAnswer": {
+   "status": "stuck",
+   "trailhead": null,
+   "notes": "SummitPost (403, not opened) reportedly says Taboose Pass trail is the closest approach and Road's End is for western routes: a search summary only, so not evidence. Wikipedia names no trailhead and lists the easiest route as east slope. Not placed."
+  }
+ },
+ {
+  "id": "ca_midway_mountain_west_slope",
+  "name": "West Slope",
+  "peakName": "Midway Mountain",
+  "state": "California",
+  "discipline": "scrambling",
+  "status": "nopage",
+  "peak": {
+   "id": "ca_midway_mountain",
+   "name": "Midway Mountain",
+   "lat": 36.6432,
+   "lng": -118.4836,
+   "elevation_ft": 13665,
+   "region": null,
+   "path": "usa.california.ca_high_sierra.ca_11_great_western_kings_kern_divide.ca_midway_mountain"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": "A multi-day approach reaches the Colby Lake area in Cloud Canyon. From there a class 2 slope leads up to the summit.",
+   "descent": null
+  },
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "SUGARLOAF HILL STAGING",
+    "lat": 36.728002,
+    "lng": -118.663445,
+    "km": 18.6
+   },
+   {
+    "src": "NPS",
+    "name": "River Trail",
+    "lat": 36.79427,
+    "lng": -118.584209,
+    "km": 19
+   },
+   {
+    "src": "NPS",
+    "name": "Bubbs Creek, Woods Creek, and Rae Lakes  ",
+    "lat": 36.794924,
+    "lng": -118.582577,
+    "km": 19
+   },
+   {
+    "src": "USFS",
+    "name": "Cedar Grove",
+    "lat": 36.796368,
+    "lng": -118.58291,
+    "km": 19.2
+   },
+   {
+    "src": "USFS",
+    "name": "Onion Valley Campground",
+    "lat": 36.772538,
+    "lng": -118.341244,
+    "km": 19.2
+   },
+   {
+    "src": "NPS",
+    "name": "Copper Creek",
+    "lat": 36.796495,
+    "lng": -118.583551,
+    "km": 19.2
+   },
+   {
+    "src": "NPS",
+    "name": "Zumwalt Meadow/River Trail",
+    "lat": 36.793648,
+    "lng": -118.59852,
+    "km": 19.6
+   },
+   {
+    "src": "USFS",
+    "name": "Shepherd Pass Th",
+    "lat": 36.726905,
+    "lng": -118.278912,
+    "km": 20.5
+   }
+  ],
+  "lastAnswer": {
+   "status": "stuck",
+   "trailhead": null,
+   "notes": "Search summary of SummitPost (403, not opened) gives Road's End via Bubbs Creek, Sphinx Creek, Avalanche Pass, ~10 mi up Cloud Canyon to Colby Lake: summary only, not evidence. Earlier pass found other reports via Crescent Meadow or Shepherd Pass. Wikipedia has no approach. Not placed."
+  }
+ }
+]

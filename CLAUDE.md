@@ -346,6 +346,7 @@ Everything else — crews, messages, connections, vouches, logs, trip reports, a
 - `routes` — explore climbs by area, and (when `selRoute` is set) the route detail screen. Route detail has its own sub-`tab` state: `overview`, `planner`, `forecast`, `conditions`, `safety`, `partners`, `photos`.
   - **`forecast` is labelled "Conditions"**: the crag conditions score on sport/trad/top-rope/bouldering, and FLAGS plus a start time (no stars) on alpine/mountaineering/scrambling/ice/mixed; `conditions` is
     labelled "Reports" / "Send Reports" and holds what climbers reported. Two tabs on purpose: they show different things.
+  - **`partners` is labelled "Find"** (owner, 2026-11-23): Current crews with Start a crew, then the climbers listed for the route. The NAV tab `discover` is still labelled "Partners", so a browser walk taps this sub-tab as "Find".
   - **Seven, and Ranks is NOT one of them** — that is a top-level NAV tab. This bullet used to say so, omitting Partners,
     which is the same wrong list `check:screen-lists` records as costing `check:token-boxes` a whole walk. The guard was
     fixed then and this sentence was not, so a reader starting here would reintroduce it; section 4 of that guard now

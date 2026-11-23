@@ -5,7 +5,7 @@ import { setMyCrewRide, useCrewRides } from "../../lib/db";
 /* RIDES on a crew (0377; the owner's Shredder audit, 2026-10-28). Shredder makes carpools a headline feature; for a
    climbing crew it matters more -- trailhead lots fill and permit zones cap the party. Each climber says, for
    themselves only, "Driving from <area> · N seats" or "Needs a ride from <area>". The area is what they type, a town
-   or a neighbourhood, never an address, and only the crew's confirmed members can read it (crew_members is public,
+   or a neighbourhood, never an address, and only the crew's confirmed members can read it (crew_members reaches every invitee and requester,
    so this is its own table). A climber who has only asked to join sees nothing here.
    An example crew (no database row) keeps the choice on this screen only, and says so. */
 

@@ -1,0 +1,87 @@
+{
+ "wa_rock_mountain_northeast_ridge": {
+  "area": "wa_rock_mountain",
+  "set": {
+   "approach_logistics": {
+    "peakLat": 47.7997534,
+    "peakLng": -120.9745323,
+    "trailhead": "Old Merritt Lake Trailhead",
+    "trailheadDirection": "Begin at the Old Merritt Lake Trailhead off US-2 (~2,950 ft).",
+    "trailheadLat": 47.790506,
+    "trailheadLng": -120.885015
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "peakLat": 47.7997534,
+     "peakLng": -120.9745323,
+     "trailhead": "Old Merritt Lake Trailhead",
+     "trailheadDirection": "Begin at the Old Merritt Lake Trailhead off US-2 (~2,950 ft).",
+     "trailheadLat": 47.790506,
+     "trailheadLng": -120.885015
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_InfraRecreationSites_01/MapServer/0/query?where=site_cn%3D%276294.005511%27&outFields=site_name&f=json",
+      "fact": "Merritt Lake Trailhead 47.79051,-120.88501",
+      "retrieved_at": "2026-11-23",
+      "official": true
+     },
+     {
+      "url": "https://epqs.nationalmap.gov/v1/json?x=-120.885015&y=47.790506&units=Feet&wkid=4326",
+      "fact": "ground 3,027 ft at the point",
+      "retrieved_at": "2026-11-23",
+      "official": true
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "research",
+    "fact": "row names the Merritt Lake trailhead off US-2 at about 2,950 ft; the catalog stores the same lot on the Mount Howard routes this traverse crosses"
+   },
+   "chunk": "round7"
+  }
+ },
+ "wa_cutthroat_the_swarm": {
+  "area": "wa_cutthroat_peak",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Cutthroat Peak Climbers Trail Pullout (Hwy 20, ~1.5 mi W of Washington Pass, north side)",
+    "trailheadLat": 48.5162,
+    "trailheadLng": -120.6836
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Cutthroat Peak Climbers Trail Pullout (Hwy 20, ~1.5 mi W of Washington Pass, north side)",
+     "trailheadLat": 48.5162,
+     "trailheadLng": -120.6836
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://publications.americanalpineclub.org/articles/13201216751",
+      "fact": "Start: Highway 20, about 2 mi walk to the basin east of the peak",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "research",
+    "fact": "row says begin as for the North Ridge; the catalog stores this pullout on wa_north_ridge_3 and two other Cutthroat routes"
+   },
+   "chunk": "round7"
+  }
+ }
+}

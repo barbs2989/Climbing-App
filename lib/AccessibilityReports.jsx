@@ -4,7 +4,9 @@
 // Before it the reports reached a table the owner had to remember to open in the Supabase dashboard,
 // while the statement promised "we reply". The 2026-10-22 accessibility risk audit counted that as
 // worse evidence than no form: a report nobody answers is a dated record of being told. So the
-// reports wait here, in Profile -> Review, counted into the Review badge (useAdminQueueCounts), and
+// reports wait here, on the owner's Review desk (review.html#access; it left the app's Menu on
+// 2026-11-23, owner), counted beside that section's tab (useAdminQueueCounts) and emailed to the
+// owner as they arrive (supabase/functions/notify-accessibility-report), and
 // each one shows the address to reply to and how long it has waited against the 5-business-day
 // reply the statement now promises (7 calendar days, so a weekend is not counted as late).
 //

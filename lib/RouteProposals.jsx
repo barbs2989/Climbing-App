@@ -12,7 +12,7 @@
 
 import { useState } from "react";
 import { useQueryClient } from "@tanstack/react-query";
-import { useRouteProposals, useAreaProposals, useAreaPlacementClaims, useAreaNamesByIds, resolveAreaPlacement, useWallOrderSuggestions, resolveWallOrder, useAreaRoutes, approveNewRoute, approveNewArea, rejectNewRoute, preferNetworkReads } from "./db";
+import { useRouteProposals, useAreaProposals, useAreaPlacementClaims, useAreaNamesByIds, resolveAreaPlacement, approveNewRoute, approveNewArea, rejectNewRoute, preferNetworkReads } from "./db";
 import { gradeNumFor } from "./grade";
 import { discLabel } from "./discLabels";
 import { C } from "../ClimbMatchCore";
@@ -237,69 +237,6 @@ export function AreaPlacementQueue() {
           </div>
         </div>;
       })}
-  </div>;
-}
-
-// A suggested LEFT-TO-RIGHT ORDER for a wall (0485). The climber's list, numbered, each climb with
-// the place it holds now, so the owner sees what would move. "Use this order" writes it
-// (resolve_wall_order renumbers the wall's climbs); "Keep current" writes nothing to the wall.
-function WallOrderCard({ r, busy, note, onNote, onResolve }) {
-  const { data: routes, isLoading, error } = useAreaRoutes(r.area_id);
-  const v = r.value || {};
-  const order = Array.isArray(v.order) ? v.order.map(String) : [];
-  const byId = new Map((routes || []).map(x => [String(x.id), x]));
-  // The place each climb holds now, counted as the wall's list counts it: placed climbs, 1..n.
-  const now = new Map((routes || []).filter(x => x.sort_order != null && x.discipline !== "bouldering").sort((a, b) => a.sort_order - b.sort_order).map((x, i) => [String(x.id), i + 1]));
-  const known = order.filter(id => byId.has(id)).length;
-  const can = !busy && !!routes && known >= 2;
-  return <div style={{ background: C.card, border: "1px solid " + C.border, borderRadius: 10, padding: "11px 12px", marginBottom: 9 }}>
-    <div style={{ fontSize: 14, fontWeight: 700, color: C.text }}>{(r.areas && r.areas.name) || r.area_id || "(no area)"}</div>
-    <Row label="Note">{v.note}</Row>
-    <Row label="Submitted">{r.created_at ? String(r.created_at).slice(0, 10) : null}</Row>
-    <Row label="By">{r.contributor ? String(r.contributor).slice(0, 8) : "anonymous"}</Row>
-    <div style={{ fontSize: 11.5, fontWeight: 700, color: C.label, textTransform: "uppercase", letterSpacing: 0.3, margin: "9px 0 5px" }}>Suggested order, left to right</div>
-    {isLoading ? <LoadingRows C={C} label="Loading the wall's climbs…" style={{ padding: "4px 0" }} />
-      : error ? <div role="alert" style={{ fontSize: 12.5, color: C.red, lineHeight: 1.5 }}>Could not load this wall's climbs, so the order cannot be shown or used yet.</div>
-      : <ol style={{ margin: 0, paddingLeft: 24, fontSize: 12.5, color: C.text, lineHeight: 1.6 }}>{order.map(function (id, i) {
-        const x = byId.get(id), was = now.get(id);
-        return <li key={id + "-" + i} style={{ color: x ? C.text : C.textMuted }}>{x ? x.name : "A climb that is no longer on this wall"}{x ? <span style={{ color: was === i + 1 ? C.textMuted : C.amber, fontWeight: was === i + 1 ? 400 : 700 }}>{was == null ? " · no place now" : was === i + 1 ? " · same place" : " · now " + was}</span> : null}</li>;
-      })}</ol>}
-    {routes && known < 2 ? <div style={{ fontSize: 12, color: C.textMuted, lineHeight: 1.5, marginTop: 6 }}>Fewer than two of these climbs are still on the wall, so there is nothing to order.</div> : null}
-    <textarea value={note || ""} onChange={e => onNote(e.target.value)} rows={2} aria-label="Note kept with this suggestion (optional)" placeholder="Note kept on the record (optional)"
-      style={{ width: "100%", boxSizing: "border-box", marginTop: 8, background: C.surface, color: C.text, border: "1px solid " + C.border, borderRadius: 8, padding: "7px 9px", fontSize: 12.5, fontFamily: "inherit", resize: "vertical" }} />
-    <div style={{ display: "flex", gap: 12, marginTop: 9 }}>
-      <button onClick={() => onResolve("approved")} disabled={!can} style={{ flex: 1, padding: 9, background: can ? C.blueSolid : C.surface, color: can ? C.onSolid : C.textMuted, border: can ? "none" : "1px solid " + C.border, borderRadius: 8, fontSize: 12.5, fontWeight: 700, cursor: can ? "pointer" : "default" }}>Use this order</button>
-      <button onClick={() => onResolve("rejected")} disabled={busy} style={{ flex: 1, padding: 9, background: C.surface, color: C.textSub, border: "1px solid " + C.border, borderRadius: 8, fontSize: 12.5, cursor: busy ? "default" : "pointer" }}>Keep current</button>
-    </div>
-  </div>;
-}
-export function WallOrderQueue() {
-  const { data: rows, isLoading, error } = useWallOrderSuggestions("pending");
-  const [busyId, setBusyId] = useState(null);
-  const [msg, setMsg] = useState(null);      // {kind:"ok"|"err", text}
-  const [note, setNote] = useState({});
-
-  const resolve = async (id, status) => {
-    setBusyId(id); setMsg(null);
-    try {
-      await resolveWallOrder(id, status, note[id] || "");
-      setMsg({ kind: "ok", text: status === "approved" ? "Order written to the wall." : "Kept the current order." });
-    } catch (e) {
-      setMsg({ kind: "err", text: (e && e.message) ? e.message : "That did not go through." });
-    } finally { setBusyId(null); }
-  };
-
-  if (isLoading) return <LoadingRows C={C} label="Loading suggestions…" style={{padding: "8px 0"}}/>;
-  if (error) return <div role="alert" style={{ fontSize: 12.5, color: C.red, padding: "8px 0" }}>
-    Could not load wall order suggestions — {(error && error.message) || "the request failed"}. This is not a report that there are none.
-  </div>;
-
-  const list = rows || [];
-  return <div>
-    {msg ? <div role={msg.kind === "err" ? "alert" : "status"} style={{ background: msg.kind === "err" ? C.redBg : C.greenBg, color: msg.kind === "err" ? C.red : C.green, border: "1px solid " + (msg.kind === "err" ? C.red : C.greenDim), borderRadius: 9, padding: "9px 11px", fontSize: 12.5, lineHeight: 1.5, marginBottom: 10 }}>{msg.text}</div> : null}
-    {!list.length
-      ? <div style={{ fontSize: 12.5, color: C.textMuted, lineHeight: 1.6, padding: "4px 0" }}>No wall order suggestions are waiting.</div>
-      : list.map(function (r) { return <WallOrderCard key={r.id} r={r} busy={busyId === r.id} note={note[r.id]} onNote={t => setNote({ ...note, [r.id]: t })} onResolve={s => resolve(r.id, s)} />; })}
   </div>;
 }
 
