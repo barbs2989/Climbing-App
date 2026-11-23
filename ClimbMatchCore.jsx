@@ -2009,7 +2009,8 @@ function hasVulgarity(str){const t=(str||"").toLowerCase().replace(/[^a-z0-9]/g,
 
 
 const AVAIL_OPTS=[["weekends","Weekends"],["weekday_am","Weekday AM"],["weekday_pm","Weekday PM"],["flexible","Flexible"]];
-const availOf=c=>(c&&Array.isArray(c.availability))?c.availability:[];
+/* THE WEEK GRID IS THE SCHEDULE (2026-11-23). Every save writes `avail_week` and derives `availability` from it (toggleAvail, setMyWeekExact), but a row written any other way kept a stale `availability`: a test account read "Usually free: Weekends" on its partner card while its profile, built from the grid, showed weekday evenings and weekend mornings, and the match % scored the stale tags. So a climber who has a grid is read from it, through the same availTagsOf() the saves use; one without a grid keeps their tags. */
+const availOf=c=>{if(c&&Array.isArray(c.availWeek)&&c.availWeek.length)return availTagsOf(c.availWeek);return (c&&Array.isArray(c.availability))?c.availability:[];};
 const availMatch=(A,B)=>{if(!A||!A.length||!B||!B.length)return true;if(A.indexOf("flexible")>=0||B.indexOf("flexible")>=0)return true;return A.some(x=>B.indexOf(x)>=0);};
 const availLabel=k=>{const o=AVAIL_OPTS.find(x=>x[0]===k);return o?o[1]:k;};
 const DOW=[["mon","Mon","M"],["tue","Tue","T"],["wed","Wed","W"],["thu","Thu","T"],["fri","Fri","F"],["sat","Sat","S"],["sun","Sun","S"]];
