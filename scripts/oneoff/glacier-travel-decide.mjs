@@ -52,7 +52,10 @@ if (argv.includes("--verify-in")) {
   const second = new Map(); for (const f of files(/^verify-out-\d+\.json$/)) read(f).forEach((r) => second.set(r.id, r));
   const research = new Map();
   if (!argv.includes("--research-in")) for (const f of files(/^research-out-\d+\.json$/)) read(f).forEach((r) => { if (!VALS.has(r.glacier) || !VALS.has(r.snowInSeason)) throw new Error(f + ": " + r.id + " has a bad value"); research.set(r.id, r); });
-  const missed = risky.filter((r) => !second.has(r.id));
+  const region = fs.existsSync(path.join(dir, "region.json")) ? read("region.json") : null;
+  if (region && (region.glacier !== "no" || !region.why)) throw new Error("region.json must say glacier: no and give its why");
+  // With a regional fact, a risky first-read call needs no second read: the place itself settles the glacier question.
+  const missed = region ? [] : risky.filter((r) => !second.has(r.id));
   if (missed.length) { console.error(`${missed.length} risky calls have no second read: ${missed.slice(0, 6).map((r) => r.id).join(", ")}`); process.exit(1); }
   const agree = (a, b) => a === b ? a : (a === "yes" || b === "yes") && (a === "unsure" || b === "unsure") ? "yes" : "unsure";
   const keep = (a, b, web) => a === "unsure" && web ? b : agree(a, b);
@@ -67,9 +70,17 @@ if (argv.includes("--verify-in")) {
       if (g === "unsure" && q.glacier !== "unsure") { g = q.glacier; researched = true; }
       if (s === "unsure" && q.snowInSeason !== "unsure") { s = q.snowInSeason; researched = true; }
     }
+    // REGIONAL FACT (optional, region.json): a state or province with NO glacier anywhere settles the glacier
+    // question as "no" for a route still unsure after the reads. A documented fact about the place (RULE.md:
+    // "a guidebook-level fact"), written by hand with its reason, never applied to a place that holds a glacier.
+    // `iceSeason: true` also settles snowInSeason "yes" on a route still unsure there: winter ice and snow lines,
+    // whose normal season IS the snow season (REVIEW-PROMPT step 6).
+    let regional = false;
+    if (region && g === "unsure") { g = "no"; regional = true; }
+    if (region && region.iceSeason && s === "unsure") { s = "yes"; regional = true; }
     if (g === "yes") s = "yes";
     const a = audit[r.id];
-    return { id: r.id, name: a.name, peak: a.area, discipline: a.disc, kindToday: a.kind, glacier: g, snowInSeason: s, basis: r.basis, why: r.why, verified: !!x, ...(x && (x.glacier !== r.glacier || x.snowInSeason !== r.snowInSeason) ? { secondReview: x.glacier + "/" + x.snowInSeason + ": " + x.why } : {}), ...(researched ? { research: q.glacier + "/" + q.snowInSeason + ": " + q.why } : {}) };
+    return { id: r.id, name: a.name, peak: a.area, discipline: a.disc, kindToday: a.kind, glacier: g, snowInSeason: s, basis: r.basis, why: r.why, verified: !!x, ...(x && (x.glacier !== r.glacier || x.snowInSeason !== r.snowInSeason) ? { secondReview: x.glacier + "/" + x.snowInSeason + ": " + x.why } : {}), ...(researched ? { research: q.glacier + "/" + q.snowInSeason + ": " + q.why } : {}), ...(regional ? { regional: region.why } : {}) };
   });
   if (argv.includes("--research-in")) {
     const open = out.filter((r) => r.glacier === "unsure" || r.snowInSeason === "unsure");
@@ -80,7 +91,7 @@ if (argv.includes("--verify-in")) {
     process.exit(0);
   }
   fs.writeFileSync(path.join(dir, "final.json"), JSON.stringify(out, null, 1));
-  console.log(`  second read of ${second.size}: moved glacier on ${changedG}, snow on ${changedS}`);
+  console.log(`  second read of ${second.size}: moved glacier on ${changedG}, snow on ${changedS}${region ? `; regional fact settled ${out.filter((r) => r.regional).length}` : ""}`);
   console.log(`  FINAL glacier ${JSON.stringify(tally(out, (r) => r.glacier))}; snow ${JSON.stringify(tally(out, (r) => r.snowInSeason))}`);
   console.log(`  by outcome ${JSON.stringify(tally(out, (r) => r.glacier === "yes" ? "glacier" : r.glacier === "unsure" ? "glacier not settled (warnings kept)" : r.snowInSeason === "yes" ? "snow, no glacier" : r.snowInSeason === "unsure" ? "no glacier, snow not settled" : "dry in season"))}`);
 } else { console.error("needs --verify-in or --final"); process.exit(2); }
