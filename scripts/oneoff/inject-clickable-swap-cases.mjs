@@ -57,12 +57,13 @@ const CASES = [
   {
     name: "2. a ONE-FOR-ONE SWAP is caught — the count is UNCHANGED",
     // Since PR61 the declared duplicate lives in the Crew views, so the swap is made inside one of
-    // them, CrewListView, against a converted control of its own (the past-crews toggle).
+    // them, CrewListView, against a converted control of its own (a pending request's organiser avatar; it was the
+    // past-crews Archived toggle until that dropdown became a filter chip, 2026-11-19).
     file: "src/components/CrewListView.tsx",
     // -1 mouse-only (convert a declared duplicate) and +1 (un-convert another). The count
     // baseline sees nothing; the classification sees an undeclared control AND a stale
     // declaration.
-    edit: (s) => s.replace(DECLARED_DUP, DUP_CONVERTED).replace("{...clickable(()=>setPastArchShown(o=>!o))}", "onClick={()=>setPastArchShown(o=>!o)}"),
+    edit: (s) => s.replace(DECLARED_DUP, DUP_CONVERTED).replace("{...clickable(()=>{setSharedRoute(null);setProfileModal(org);})}", "onClick={()=>{setSharedRoute(null);setProfileModal(org);}}"),
     expect: "fail",
     need: /NEW mouse-only control/,
     why: "THE POINT: a count baseline cannot see this; the classification can",

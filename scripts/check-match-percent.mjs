@@ -299,6 +299,10 @@ else fail(`the browse row no longer explains the missing match % (${JSON.stringi
   const farLine = M.compatWhy({ sportGrade: "5.10a" }, { sportGrade: "5.6" }).find((r) => r.k === "grade");
   if (far.gap > 2 && farLine.tone !== "good" && near.gap === 1 && gOf({ sportGrade: "5.6" }, { sportGrade: "5.7" }).gap === 1) ok(`5.6 is ${far.gap} steps from 5.10a ("${farLine.text}"), and 5.9 is still 1`);
   else fail(`5.6 vs 5.10a is a grade gap of ${far.gap} ("${farLine.text}"); 5.9 vs 5.10a is ${near.gap} — the grades below 5.9 are sharing a step again`);
+  // ...and so is every letter grade above 5.12: 5.13 and up shared one step, so 5.13a read "Same grade" as 5.14d.
+  const top = gOf({ sportGrade: "5.13a" }, { sportGrade: "5.14d" }), mid = gOf({ sportGrade: "5.12d" }, { sportGrade: "5.13a" });
+  if (top.gap === 7 && mid.gap === 1 && gOf({ sportGrade: "5.10a" }, { sportGrade: "5.12d" }).gap === 11) ok("5.13a is 7 steps from 5.14d and 1 from 5.12d; 5.10a to 5.12d is still 11");
+  else fail(`5.13a vs 5.14d is a grade gap of ${top.gap} and 5.12d vs 5.13a is ${mid.gap} — the grades above 5.12 are sharing a step again`);
   const both = gOf({ sportGrade: "5.12a", tradGrade: "5.10a" }, { sportGrade: "5.10a", tradGrade: "5.10a" });
   if (both.gap === 0 && both.kind === "trad") ok("when both set both, the CLOSER kind decides (same trad grade beats a sport gap)");
   else fail(`two climbers with the same trad grade scored a grade gap of ${both.gap} (${both.kind})`);
@@ -384,7 +388,7 @@ else fail(`the browse row no longer explains the missing match % (${JSON.stringi
 }
 
 // ---- Fail closed on a run that quietly stopped asking.
-const FLOOR = 25;
+const FLOOR = 26;
 if (ran < FLOOR) dead(`only ${ran} assertions ran, expected at least ${FLOOR} — this run proved less than it claims`);
 
 console.log(bad ? `\n${bad} problem(s).` : `\nok — the match % blends what the screen says it blends (${ran} assertions)`);

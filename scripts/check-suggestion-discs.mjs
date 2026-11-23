@@ -57,6 +57,8 @@ const fns = [
   extractFn(CORE, "function _suggShape(", "_suggShape"),
   extractFn(CORE, "function suggestLogWeight(", "suggestLogWeight"),
   extractFn(CORE, "function suggestionProfile(", "suggestionProfile"),
+  extractFn(CORE, "function _suggHere(", "_suggHere"),
+  extractFn(CORE, "function _suggStatedVal(", "_suggStatedVal"),
   extractFn(CORE, "function suggestDiscSlots(", "suggestDiscSlots"),
 ].join("\n");
 
@@ -250,6 +252,36 @@ const check = (name, cond, detail) => {
   check("a logged discipline is never restated: what you climbed outranks what you said",
     both.filter(x => x.disc === "sport").length === 1 && both[0].src === "logged" && both[0].gradeVal === 0.3);
   check("...and a stated discipline you have not logged still gets its slot", both.some(x => x.disc === "trad" && x.src === "stated"));
+  // ICE, MIXED AND ALPINE (2026-11-23): the profile already stored an ice and a mixed grade (climb_grades), and
+  // gained an alpine one; none of the three reached a suggestion row.
+  const winter = F.suggestDiscSlots(null, [], undefined, { ice: "WI4", mixed: "M5", alpine: "5.6" });
+  check("an ice, a mixed and an alpine grade on the profile each earn a slot",
+    winter.length === 3 && ["alpine", "ice", "mixed"].every(d => winter.some(x => x.disc === d && x.src === "stated" && x.gradeVal >= 0)), JSON.stringify(winter.map(x => x.disc + ":" + x.gradeVal)));
+  check("an alpine grade given as a class lands on the alpine scale", (() => { const x = F.suggestDiscSlots(null, [], undefined, { alpine: "Class 4" }); return x.length === 1 && x[0].gradeVal === F.ADDR_GRADES.alpine.indexOf("Class 4") / F.ADDR_GRADES.alpine.length; })());
+  check("a stated ice grade ranks ice inside its window, and nothing else",
+    names(F.rankSimilarRoutes([rt("i4", "ice", "WI4"), rt("i7", "ice", "WI7"), rt("s", "sport", "5.10a")], winter.find(x => x.disc === "ice"), { limit: 5 })) === "i4");
+  // THE AREA'S OWN DISCIPLINES decide which slots are worth one of the three.
+  const all6 = { sport: "5.10a", trad: "5.8", bouldering: "V4", alpine: "5.6", ice: "WI4", mixed: "M5" };
+  check("with every grade stated and nothing known of the area, the cap still holds", F.suggestDiscSlots(null, [], undefined, all6).length === MAXN);
+  const atIce = F.suggestDiscSlots(null, [], undefined, all6, ["ice", "mixed", "trad"]);
+  check("at an ice crag the ice climber gets their ice row, not three rows for rock the crag lacks",
+    atIce.some(x => x.disc === "ice") && atIce.some(x => x.disc === "mixed") && atIce.every(x => ["ice", "mixed", "trad"].includes(x.disc)), JSON.stringify(atIce.map(x => x.disc)));
+  check("an alpine slot counts an area of mountaineering or scrambling climbs as its own",
+    F.suggestDiscSlots(null, [], undefined, { alpine: "5.6" }, ["mountaineering"]).length === 1 && F.suggestDiscSlots(null, [], undefined, { alpine: "5.6" }, ["sport"]).length === 0);
+  check("a LOGGED discipline the area has none of gives its slot up too",
+    (() => { const x = F.suggestDiscSlots({ discs: [{ disc: "ice", src: "logged", n: 3, gradeVal: 0.4, avgGainFt: null }] }, [], undefined, { sport: "5.10a" }, ["sport"]); return x.length === 1 && x[0].disc === "sport"; })());
+  // Found by a REAL ACCOUNT on the live site: its one alpine log is graded on the ice scale, so the slot had no centre.
+  const noCentre = { discs: [{ disc: "alpine", src: "logged", n: 1, gradeVal: null, avgGainFt: 5000 }] };
+  const borrowed = F.suggestDiscSlots(noCentre, [], undefined, { alpine: "5.6" });
+  check("a logged discipline with no readable grade borrows the profile's, and stays a logged row",
+    borrowed.length === 1 && borrowed[0].src === "logged" && borrowed[0].gradeVal === F.ADDR_GRADES.alpine.indexOf("5.6") / F.ADDR_GRADES.alpine.length && borrowed[0].avgGainFt === 5000, JSON.stringify(borrowed));
+  check("...so that climber is no longer offered 5.10d and 5.11-",
+    names(F.rankSimilarRoutes([rt("hard", "alpine", "5.10d"), rt("harder", "alpine", "5.11-"), rt("ice", "alpine", "AI3"), rt("fit", "alpine", "5.6")], borrowed[0], { limit: 5 })) === "fit");
+  check("with no stated grade either, the slot still has no centre (unchanged)", F.suggestDiscSlots(noCentre, [], undefined, {})[0].gradeVal === null);
+  check("a logged grade that IS readable is never overwritten by the profile's",
+    F.suggestDiscSlots({ discs: [{ disc: "alpine", src: "logged", n: 2, gradeVal: 0.2, avgGainFt: null }] }, [], undefined, { alpine: "5.10a" })[0].gradeVal === 0.2);
+  check("an unknown area (null) drops nothing", F.suggestDiscSlots(null, [], undefined, { ice: "WI4" }, null).length === 1);
+
   const sv = F.suggestDiscSlots(null, [rt("v", "ice", "WI4"), rt("v2", "sport", "5.9")], undefined, { sport: "5.11a" });
   check("stated sits ahead of browsed, and a discipline that is both is the stated slot",
     sv[0].disc === "sport" && sv[0].src === "stated" && sv.filter(x => x.disc === "sport").length === 1 && sv.some(x => x.disc === "ice" && x.src === "viewed"), JSON.stringify(sv.map(x => x.disc + ":" + x.src)));
@@ -288,7 +320,25 @@ check("the fallback pool is discipline-blind and not sorted by name",
   fallbackCall ? fallbackCall[0].slice(0, 140) : "no fallback useSubtreeRoutes({ sortBy … }) call found");
 check("the pools are ranked per slot, each against its own read",
   /discSlots\s*\(/.test(sugCode) && /slots\.map\s*\(\s*\(\s*s\s*,\s*i\s*\)\s*=>/.test(sugCode) && /slotQs\[\s*i\s*\]/.test(sugCode));
-check("the stated grades reach the slots", /discSlots\s*\([^)]*\bstated\s*\)/.test(sugCode));
+check("the stated grades and the area's disciplines reach the slots", /discSlots\s*\([^)]*\bstated\s*,\s*here\s*\)/.test(sugCode));
+check("the area's disciplines come from the area row or its climb counts, never a guess", /area\.disciplines/.test(sugCode) && /useAreaClimbStats\(/.test(sugCode) && /by_disc/.test(sugCode));
+
+// ── 2a. the profile can HOLD the grades the slots read (2026-11-23) ───────────
+{
+  const APP = readAppFile(fileURLToPath(new URL("../ClimbMatch.jsx", import.meta.url)));
+  const sg = APP.match(/const statedGrades=useMemo\(function\(\)\{[\s\S]*?\},\[([^\]]*)\]\)/);
+  check("App hands over a stated grade for all six disciplines",
+    !!sg && ["sport:", "trad:", "bouldering:", "alpine:", "ice:", "mixed:"].every(k => sg[0].includes(k)), sg ? sg[0].slice(0, 160) : "statedGrades memo not found in ClimbMatch.jsx");
+  check("...and recomputes them when the per-discipline grades change", !!sg && /profile\.climbGrades/.test(sg[1]), sg ? "deps: " + sg[1] : "");
+  const pg = CORE.match(/const PROFILE_GRADES=\[[\s\S]*?\];/);
+  check("the profile's grade list has an Alpine entry with no column (stored in climb_grades)",
+    !!pg && /\{k:"alpine",label:"Alpine",ladder:/.test(pg[0]) && !/\{k:"alpine"[^}]*col:/.test(pg[0]));
+  const ONB = readFileSync(fileURLToPath(new URL("../lib/Onboarding.jsx", import.meta.url)), "utf8");
+  const gd = ONB.match(/const GRADED_DISC\s*=\s*\[([^\]]*)\]/);
+  const alp = pg && pg[0].match(/\{k:"alpine",label:"Alpine",ladder:\[([^\]]*)\]/);
+  check("the Alpine ladder holds no Class grade (the Leads filter's number scale ranks Class 4 above 5.3)", !!alp && !/class/i.test(alp[1]) && /"5\.0"/.test(alp[1]), alp ? alp[1] : "ladder not found");
+  check("onboarding asks an alpine climber for a grade", !!gd && /"alpine"/.test(gd[1]), gd ? gd[1] : "GRADED_DISC not found");
+}
 
 // ── 2b. the panel is COLLAPSED until the climber opens it — and can be opened ────
 // History: both components once shipped `useState(false)`; a later pass made them auto-open on

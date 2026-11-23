@@ -213,14 +213,15 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
   objectives* band of `DbSuggestedClimbs` uses the same line.
 - **Suggested climbs** (`DbSuggestedClimbs`, a closed dropdown under Classic climbs; draws nothing when it has nothing): *From your
   objectives*, *Pick up where you left off* (climbs opened recently, here), then up to three discipline rows of five
-  (`suggestDiscSlots`): disciplines you have LOGGED (*Because you've been climbing …*), then the sport / trad / bouldering grade
+  (`suggestDiscSlots`): disciplines you have LOGGED (*Because you've been climbing …*), then the sport / trad / bouldering / alpine / ice / mixed grade
   STATED on your profile where you have logged none (*… near the grade on your profile*; `ClimberCtx.stated`), then disciplines
-  you have only browsed (*Because you've been looking at …*). Each row reads its OWN pool (`suggestSlotQuery`: that discipline,
+  you have only browsed (*Because you've been looking at …*). A row for a discipline THIS AREA has no climb of is dropped before the
+  three are chosen (a crag or peak's own `disciplines`, else the area's climb counts), so an ice climber reaches their ice row. Each row reads its OWN pool (`suggestSlotQuery`: that discipline,
   best-rated first, inside the climber's grade window where the scale is YDS, V, WI or M) behind the area's classics, and
   `rankSimilarRoutes` keeps only climbs inside the window (`suggestWindow`: on YDS, 5.8 to 5.10+ around 5.10a), nearest grade
   first, a classic or well-starred climb ahead of a no-name about a letter grade closer. A grade the scale does not list
   ("5.10b/c") scores as the nearest listed grade; one from another system, or none, is left out. The centre is the mean grade of
-  your completed logs in that discipline, each weighted by how recent it is (`suggestLogWeight`: halves every two years, floor
+  your completed logs in that discipline (the grade on your profile when none of those logs has a grade on that scale), each weighted by how recent it is (`suggestLogWeight`: halves every two years, floor
   0.15), and the same weight orders the disciplines. An X or R/X climb is never suggested, in a ranked row or the fallback
   (`suggestTooBold`; your own objectives and recently opened climbs still list it); an R climb is ranked down. With no row to show it falls back to *Classics in this area*, else the area's
   best-rated climbs. Not read on a country or the world. Until 2026-11-19 every row shared one pool, the area's first 120
@@ -233,6 +234,7 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
   `npm run audit:water-pins` lists the ones that are not. The Water pins `scripts/oneoff/add-water-pins.mjs` adds are measured from
   OpenStreetMap geometry (where the named creek crosses the RECORDED track or a mapped trail; a lake's shore nearest the track), never
   placed on our own lines; water named without a place ("snowmelt at camp") is never pinned.
+- **Latest from this area (`AreaLatestReports`, on the area page above *More climbs in this area*)**: the public trip reports and logged climbs under the area's whole subtree, newest first, with the red *N hazard reports · last 45 days* badge. It shows four. With more than four (owner 2026-11-19, migration 0478) it adds four selects — *Newest first / Oldest first*, a discipline (only the ones reported on here, each with its count), *Any time / Last 30 days / Last 90 days / Last 12 months* by the day climbed, and *Reports and logs / Trip reports only / Logged climbs only* — and a **See N more** dropdown under the fourth row that opens ten more at a time (*Show 10 more*), up to 100. The database applies the sort and filters over the whole area (`area_latest_reports`, read by `useAreaLatestReports`), so a filter never answers from only the rows on screen; a filter that matches nothing says so and offers *Clear filters*. A row with a write-up is a *Trip report*, one with condition tags only a *Logged climb*. Tapping a row opens that report or log itself over the area page (the same `TripReport` document the route page's Reports tab opens; RoutesTab's `onOpenReport`), and each row carries two buttons: **View trip report** / **View logged climb** and **Route page**. Renders nothing for an area with no public report and no recent hazard tag.
 
 ## 2. How it works
 1. `App` mounts `DbAreaBrowser` (props include `onOpenRoute`, `bookmarks`, `wishlist`, `completedIds`, `jumpToState`) when `USE_DB`; otherwise the seed tree.
@@ -296,6 +298,8 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
 | `src/components/DbAreaTree.tsx` | `DbAreaTree`, the area tree |
 | `src/components/ViewAreaPill.tsx` | `ViewAreaPill`, the solid blue *View area ›* at the end of every row that opens an area |
 | `src/components/DbSuggestedClimbs.tsx` | `DbSuggestedClimbs`, More climbs in this area |
+| `ClimbMatchCore.jsx` | `suggestionProfile`, `suggestDiscSlots`, `suggestSlotQuery`, `suggestWindow`, `rankSimilarRoutes` |
+| `src/components/AreaLatestReports.tsx` | `AreaLatestReports`, Latest from this area: sort, filter, See more, open the report or the route page |
 | `ClimbMatchCore.jsx` | `suggestionProfile`, `suggestDiscSlots`, `suggestSlotQuery`, `suggestWindow`, `rankSimilarRoutes`, `suggestLogWeight`, `suggestTooBold` |
 | `src/components/SummitBriefing.tsx` | `SummitBriefing`, the peak summary above an area's route list |
 | `src/components/RouteRow.tsx` | `RouteRow`, one climb row in an area list |

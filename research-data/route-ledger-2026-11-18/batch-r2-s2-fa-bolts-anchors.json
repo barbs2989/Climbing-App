@@ -1,0 +1,506 @@
+{
+ "wa_subliminal": {
+  "area": "wa_substation",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/107616162/subliminal",
+    "https://rakkup.com/guidebook/exit-38-rock-climbing/substation/s11465",
+    "https://www.thecrag.com/en/climbing/united-states/central-cascade-mountains/area/19195489",
+    "https://publications.americanalpineclub.org/articles/12200812800/North-America-United-States-Washington-Summary-of-Activity",
+    "https://rss.com/podcasts/peakseasonpodcast/302899"
+   ]
+  },
+  "ledger": [],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_subliminal",
+    "column": "fa",
+    "from": "Brian Burdo",
+    "to": "Bryan Burdo",
+    "why": "Spelling only: the climber is 'Bryan Burdo' in the American Alpine Journal (2008 Washington summary) and on the Peak Season podcast (Mountain Bureau, 2021), two publishers independent of Mountain Project; Mountain Project credits this route to 'Bryan Burdo'. The 12 sibling Substation rows already store 'Bryan'. No year added (held separately).",
+    "evidence": [
+     "https://publications.americanalpineclub.org/articles/12200812800/North-America-United-States-Washington-Summary-of-Activity",
+     "https://rss.com/podcasts/peakseasonpodcast/302899",
+     "https://www.mountainproject.com/route/107616162/subliminal"
+    ]
+   }
+  ],
+  "held": [
+   {
+    "table": "routes",
+    "id": "wa_subliminal",
+    "column": "fa",
+    "from": "Bryan Burdo",
+    "to": "Bryan Burdo (1994)",
+    "why": "HELD: the year 1994 rests on Mountain Project alone. No third source states it: theCrag's Substation route pages carry no FA, bolt count or anchor; the Exit 38 guidebook (Kutzke & Price) pages on Rakkup are teasers with no FA, bolts or anchor; the WCC Exit 38 page gives only area history. The WCC page says the Exit 38 cliffs were explored in the early 1990s and published in a 1994 Rock & Ice mini-guide: consistent with 1994, but it names no route, so it is context, not a second source. (from = the value after the spelling fix above).",
+    "evidence": [
+     "https://www.mountainproject.com/route/107616162/subliminal",
+     "https://washingtonclimbers.org/index.php/2015/10/13/exit-38/"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "FA spelling settled: 'Bryan' (AAJ + Peak Season podcast, both independent of MP; no source found spelling it 'Brian'). The year 1994 stays held: MP is the only source naming this route's FA year."
+ },
+ "wa_namby_pamby": {
+  "area": "wa_substation",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/107616268/namby-pamby",
+    "https://rakkup.com/guidebook/exit-38-rock-climbing/namby-pamby/c25558",
+    "https://rakkup.com/guidebook/exit-38-rock-climbing/substation/s11465",
+    "https://www.thecrag.com/en/climbing/united-states/central-cascade-mountains/area/19195489",
+    "https://publications.americanalpineclub.org/articles/12200812800/North-America-United-States-Washington-Summary-of-Activity",
+    "https://rss.com/podcasts/peakseasonpodcast/302899"
+   ]
+  },
+  "ledger": [],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_namby_pamby",
+    "column": "fa",
+    "from": "Brian Burdo",
+    "to": "Bryan Burdo",
+    "why": "Spelling only: the climber is 'Bryan Burdo' in the American Alpine Journal (2008 Washington summary) and on the Peak Season podcast (Mountain Bureau, 2021), two publishers independent of Mountain Project; Mountain Project credits this route to 'Bryan Burdo'. The 12 sibling Substation rows already store 'Bryan'. No year added (held separately).",
+    "evidence": [
+     "https://publications.americanalpineclub.org/articles/12200812800/North-America-United-States-Washington-Summary-of-Activity",
+     "https://rss.com/podcasts/peakseasonpodcast/302899",
+     "https://www.mountainproject.com/route/107616268/namby-pamby"
+    ]
+   }
+  ],
+  "held": [
+   {
+    "table": "routes",
+    "id": "wa_namby_pamby",
+    "column": "fa",
+    "from": "Bryan Burdo",
+    "to": "Bryan Burdo (1994)",
+    "why": "HELD: the year 1994 rests on Mountain Project alone. No third source states it: theCrag's Substation route pages carry no FA, bolt count or anchor; the Exit 38 guidebook (Kutzke & Price) pages on Rakkup are teasers with no FA, bolts or anchor; the WCC Exit 38 page gives only area history. The WCC page says the Exit 38 cliffs were explored in the early 1990s and published in a 1994 Rock & Ice mini-guide: consistent with 1994, but it names no route, so it is context, not a second source. (from = the value after the spelling fix above).",
+    "evidence": [
+     "https://www.mountainproject.com/route/107616268/namby-pamby",
+     "https://washingtonclimbers.org/index.php/2015/10/13/exit-38/"
+    ]
+   }
+  ],
+  "disputed": [
+   "bolts: still HELD (null). Mountain Project's Protection says 6 bolts; a photo title on the same page says 'only 3 bolts' (it may describe the neighbouring line on the right rope). theCrag and the Rakkup guide page give no count; the visible MP comments give none."
+  ],
+  "notes": "FA spelling settled: 'Bryan' (AAJ + Peak Season podcast, both independent of MP; no source found spelling it 'Brian'). The year 1994 stays held: MP is the only source naming this route's FA year."
+ },
+ "wa_lovey_dovey": {
+  "area": "wa_substation",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/107616232/lovey-dovey",
+    "https://rakkup.com/guidebook/exit-38-rock-climbing/lovey-dovey/c25557",
+    "https://rakkup.com/guidebook/exit-38-rock-climbing/substation/s11465",
+    "https://www.thecrag.com/en/climbing/united-states/central-cascade-mountains/area/19195489",
+    "https://publications.americanalpineclub.org/articles/12200812800/North-America-United-States-Washington-Summary-of-Activity",
+    "https://rss.com/podcasts/peakseasonpodcast/302899"
+   ]
+  },
+  "ledger": [],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_lovey_dovey",
+    "column": "fa",
+    "from": "Brian Burdo",
+    "to": "Bryan Burdo",
+    "why": "Spelling only: the climber is 'Bryan Burdo' in the American Alpine Journal (2008 Washington summary) and on the Peak Season podcast (Mountain Bureau, 2021), two publishers independent of Mountain Project; Mountain Project credits this route to 'Bryan Burdo'. The 12 sibling Substation rows already store 'Bryan'. No year added (held separately).",
+    "evidence": [
+     "https://publications.americanalpineclub.org/articles/12200812800/North-America-United-States-Washington-Summary-of-Activity",
+     "https://rss.com/podcasts/peakseasonpodcast/302899",
+     "https://www.mountainproject.com/route/107616232/lovey-dovey"
+    ]
+   }
+  ],
+  "held": [
+   {
+    "table": "routes",
+    "id": "wa_lovey_dovey",
+    "column": "fa",
+    "from": "Bryan Burdo",
+    "to": "Bryan Burdo (1994)",
+    "why": "HELD: the year 1994 rests on Mountain Project alone. No third source states it: theCrag's Substation route pages carry no FA, bolt count or anchor; the Exit 38 guidebook (Kutzke & Price) pages on Rakkup are teasers with no FA, bolts or anchor; the WCC Exit 38 page gives only area history. The WCC page says the Exit 38 cliffs were explored in the early 1990s and published in a 1994 Rock & Ice mini-guide: consistent with 1994, but it names no route, so it is context, not a second source. (from = the value after the spelling fix above).",
+    "evidence": [
+     "https://www.mountainproject.com/route/107616232/lovey-dovey",
+     "https://washingtonclimbers.org/index.php/2015/10/13/exit-38/"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "FA spelling settled: 'Bryan' (AAJ + Peak Season podcast, both independent of MP; no source found spelling it 'Brian'). The year 1994 stays held: MP is the only source naming this route's FA year. Live anchor 'Chain anchor' and bolts 7 (batch R) unchanged."
+ },
+ "wa_subversive": {
+  "area": "wa_substation",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/108512206/subversive",
+    "https://rakkup.com/guidebook/exit-38-rock-climbing/substation/s11465",
+    "https://www.thecrag.com/en/climbing/united-states/central-cascade-mountains/area/19195489",
+    "https://washingtonclimbers.org/index.php/2015/10/13/exit-38/"
+   ]
+  },
+  "ledger": [],
+  "sql_fixes": [],
+  "held": [
+   {
+    "table": "routes",
+    "id": "wa_subversive",
+    "column": "fa",
+    "from": "Bryan Burdo",
+    "to": "Bryan Burdo (1994)",
+    "why": "HELD: the year 1994 rests on Mountain Project alone. No third source states it: theCrag's Substation route pages carry no FA, bolt count or anchor; the Exit 38 guidebook (Kutzke & Price) pages on Rakkup are teasers with no FA, bolts or anchor; the WCC Exit 38 page gives only area history. The WCC page says the Exit 38 cliffs were explored in the early 1990s and published in a 1994 Rock & Ice mini-guide: consistent with 1994, but it names no route, so it is context, not a second source.",
+    "evidence": [
+     "https://www.mountainproject.com/route/108512206/subversive",
+     "https://washingtonclimbers.org/index.php/2015/10/13/exit-38/"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "FA year 1994 still HELD: only Mountain Project states it. No third source states it: theCrag's Substation route pages carry no FA, bolt count or anchor; the Exit 38 guidebook (Kutzke & Price) pages on Rakkup are teasers with no FA, bolts or anchor; the WCC Exit 38 page gives only area history."
+ },
+ "wa_stick_boy": {
+  "area": "wa_substation",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/108512054/stick-boy",
+    "https://rakkup.com/guidebook/exit-38-rock-climbing/substation/s11465",
+    "https://www.thecrag.com/en/climbing/united-states/central-cascade-mountains/area/19195489",
+    "https://washingtonclimbers.org/index.php/2015/10/13/exit-38/"
+   ]
+  },
+  "ledger": [],
+  "sql_fixes": [],
+  "held": [
+   {
+    "table": "routes",
+    "id": "wa_stick_boy",
+    "column": "fa",
+    "from": "Mike and Laura Orr",
+    "to": "Mike and Laura Orr (1994)",
+    "why": "HELD: the year 1994 rests on Mountain Project alone ('Mike & Laura Orr (1994)'). No third source states it: theCrag's Substation route pages carry no FA, bolt count or anchor; the Exit 38 guidebook (Kutzke & Price) pages on Rakkup are teasers with no FA, bolts or anchor; the WCC Exit 38 page gives only area history.",
+    "evidence": [
+     "https://www.mountainproject.com/route/108512054/stick-boy",
+     "https://washingtonclimbers.org/index.php/2015/10/13/exit-38/"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "FA year still HELD: only Mountain Project states it; no other source names the Orrs at Exit 38."
+ },
+ "wa_hangover_helper": {
+  "area": "wa_substation",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/108273656/hangover-helper",
+    "https://rakkup.com/guidebook/exit-38-rock-climbing/hangover-helper/c25559",
+    "https://rakkup.com/guidebook/exit-38-rock-climbing/substation/s11465",
+    "https://www.thecrag.com/en/climbing/united-states/central-cascade-mountains/area/19195489",
+    "https://washingtonclimbers.org/index.php/2015/10/13/exit-38/"
+   ]
+  },
+  "ledger": [],
+  "sql_fixes": [],
+  "held": [
+   {
+    "table": "routes",
+    "id": "wa_hangover_helper",
+    "column": "fa",
+    "from": "Bryan Burdo",
+    "to": "Bryan Burdo (1994)",
+    "why": "HELD: the year 1994 rests on Mountain Project alone. No third source states it: theCrag's Substation route pages carry no FA, bolt count or anchor; the Exit 38 guidebook (Kutzke & Price) pages on Rakkup are teasers with no FA, bolts or anchor; the WCC Exit 38 page gives only area history. The WCC page says the Exit 38 cliffs were explored in the early 1990s and published in a 1994 Rock & Ice mini-guide: consistent with 1994, but it names no route, so it is context, not a second source.",
+    "evidence": [
+     "https://www.mountainproject.com/route/108273656/hangover-helper",
+     "https://washingtonclimbers.org/index.php/2015/10/13/exit-38/"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "FA year 1994 still HELD: only Mountain Project states it. No third source states it: theCrag's Substation route pages carry no FA, bolt count or anchor; the Exit 38 guidebook (Kutzke & Price) pages on Rakkup are teasers with no FA, bolts or anchor; the WCC Exit 38 page gives only area history."
+ },
+ "wa_hurly_burly": {
+  "area": "wa_substation",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/106810808/hurly-burly",
+    "https://rakkup.com/guidebook/exit-38-rock-climbing/substation/s11465",
+    "https://www.thecrag.com/en/climbing/united-states/central-cascade-mountains/area/19195489",
+    "https://washingtonclimbers.org/index.php/2015/10/13/exit-38/"
+   ]
+  },
+  "ledger": [],
+  "sql_fixes": [],
+  "held": [
+   {
+    "table": "routes",
+    "id": "wa_hurly_burly",
+    "column": "fa",
+    "from": "Bryan Burdo",
+    "to": "Bryan Burdo (1994)",
+    "why": "HELD: the year 1994 rests on Mountain Project alone. No third source states it: theCrag's Substation route pages carry no FA, bolt count or anchor; the Exit 38 guidebook (Kutzke & Price) pages on Rakkup are teasers with no FA, bolts or anchor; the WCC Exit 38 page gives only area history. The WCC page says the Exit 38 cliffs were explored in the early 1990s and published in a 1994 Rock & Ice mini-guide: consistent with 1994, but it names no route, so it is context, not a second source.",
+    "evidence": [
+     "https://www.mountainproject.com/route/106810808/hurly-burly",
+     "https://washingtonclimbers.org/index.php/2015/10/13/exit-38/"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "FA year 1994 still HELD: only Mountain Project states it. No third source states it: theCrag's Substation route pages carry no FA, bolt count or anchor; the Exit 38 guidebook (Kutzke & Price) pages on Rakkup are teasers with no FA, bolts or anchor; the WCC Exit 38 page gives only area history."
+ },
+ "wa_slippery_when_wet": {
+  "area": "wa_substation",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/108512064/slippery-when-wet",
+    "https://rakkup.com/guidebook/exit-38-rock-climbing/substation/s11465",
+    "https://www.thecrag.com/en/climbing/united-states/central-cascade-mountains/area/19195489",
+    "https://washingtonclimbers.org/index.php/2015/10/13/exit-38/"
+   ]
+  },
+  "ledger": [],
+  "sql_fixes": [],
+  "held": [
+   {
+    "table": "routes",
+    "id": "wa_slippery_when_wet",
+    "column": "fa",
+    "from": "Bryan Burdo",
+    "to": "Bryan Burdo (1994)",
+    "why": "HELD: the year 1994 rests on Mountain Project alone. No third source states it: theCrag's Substation route pages carry no FA, bolt count or anchor; the Exit 38 guidebook (Kutzke & Price) pages on Rakkup are teasers with no FA, bolts or anchor; the WCC Exit 38 page gives only area history. The WCC page says the Exit 38 cliffs were explored in the early 1990s and published in a 1994 Rock & Ice mini-guide: consistent with 1994, but it names no route, so it is context, not a second source.",
+    "evidence": [
+     "https://www.mountainproject.com/route/108512064/slippery-when-wet",
+     "https://washingtonclimbers.org/index.php/2015/10/13/exit-38/"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "FA year 1994 still HELD: only Mountain Project states it. No third source states it: theCrag's Substation route pages carry no FA, bolt count or anchor; the Exit 38 guidebook (Kutzke & Price) pages on Rakkup are teasers with no FA, bolts or anchor; the WCC Exit 38 page gives only area history."
+ },
+ "wa_you_re_only_nice_to_me_when_i_tie_you_up": {
+  "area": "wa_substation",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/108512177/youre-only-nice-to-me-when-i-tie-you-up",
+    "https://rakkup.com/guidebook/exit-38-rock-climbing/substation/s11465",
+    "https://www.thecrag.com/en/climbing/united-states/central-cascade-mountains/area/19195489",
+    "https://washingtonclimbers.org/index.php/2015/10/13/exit-38/"
+   ]
+  },
+  "ledger": [],
+  "sql_fixes": [],
+  "held": [
+   {
+    "table": "routes",
+    "id": "wa_you_re_only_nice_to_me_when_i_tie_you_up",
+    "column": "fa",
+    "from": "Bryan Burdo",
+    "to": "Bryan Burdo (1994)",
+    "why": "HELD: the year 1994 rests on Mountain Project alone. No third source states it: theCrag's Substation route pages carry no FA, bolt count or anchor; the Exit 38 guidebook (Kutzke & Price) pages on Rakkup are teasers with no FA, bolts or anchor; the WCC Exit 38 page gives only area history. The WCC page says the Exit 38 cliffs were explored in the early 1990s and published in a 1994 Rock & Ice mini-guide: consistent with 1994, but it names no route, so it is context, not a second source.",
+    "evidence": [
+     "https://www.mountainproject.com/route/108512177/youre-only-nice-to-me-when-i-tie-you-up",
+     "https://washingtonclimbers.org/index.php/2015/10/13/exit-38/"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "FA year 1994 still HELD: only Mountain Project states it. No third source states it: theCrag's Substation route pages carry no FA, bolt count or anchor; the Exit 38 guidebook (Kutzke & Price) pages on Rakkup are teasers with no FA, bolts or anchor; the WCC Exit 38 page gives only area history."
+ },
+ "wa_you_re_only_nice_to_me_when_you_re_wet": {
+  "area": "wa_substation",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/108512160/youre-only-nice-to-me-when-youre-wet",
+    "https://rakkup.com/guidebook/exit-38-rock-climbing/you're-only-nice-to-me-when-you're-wet/c25555",
+    "https://rakkup.com/guidebook/exit-38-rock-climbing/substation/s11465",
+    "https://www.thecrag.com/en/climbing/united-states/central-cascade-mountains/area/19195489",
+    "https://washingtonclimbers.org/index.php/2015/10/13/exit-38/"
+   ]
+  },
+  "ledger": [],
+  "sql_fixes": [],
+  "held": [
+   {
+    "table": "routes",
+    "id": "wa_you_re_only_nice_to_me_when_you_re_wet",
+    "column": "fa",
+    "from": "Bryan Burdo",
+    "to": "Bryan Burdo (1994)",
+    "why": "HELD: the year 1994 rests on Mountain Project alone. No third source states it: theCrag's Substation route pages carry no FA, bolt count or anchor; the Exit 38 guidebook (Kutzke & Price) pages on Rakkup are teasers with no FA, bolts or anchor; the WCC Exit 38 page gives only area history. The WCC page says the Exit 38 cliffs were explored in the early 1990s and published in a 1994 Rock & Ice mini-guide: consistent with 1994, but it names no route, so it is context, not a second source.",
+    "evidence": [
+     "https://www.mountainproject.com/route/108512160/youre-only-nice-to-me-when-youre-wet",
+     "https://washingtonclimbers.org/index.php/2015/10/13/exit-38/"
+    ]
+   }
+  ],
+  "disputed": [
+   "bolts: still HELD (null). Only Mountain Project gives a count, '6 or 7' depending on where you leave I Tie You Up; no other source gives one. As a link-up row (s3), a single number may never fit."
+  ],
+  "notes": "FA year 1994 still HELD: only Mountain Project states it. No third source states it: theCrag's Substation route pages carry no FA, bolt count or anchor; the Exit 38 guidebook (Kutzke & Price) pages on Rakkup are teasers with no FA, bolts or anchor; the WCC Exit 38 page gives only area history. Anchor stays null: MP says chain anchor, but this is a possible link-up row (s3), so no anchor fix proposed."
+ },
+ "wa_primordial_blues": {
+  "area": "wa_substation",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/107783741/primordial-blues",
+    "https://rakkup.com/guidebook/exit-38-rock-climbing/primordial-blues/c25561",
+    "https://rakkup.com/guidebook/exit-38-rock-climbing/substation/s11465",
+    "https://www.thecrag.com/en/climbing/united-states/central-cascade-mountains/area/19195489",
+    "https://washingtonclimbers.org/index.php/2015/10/13/exit-38/"
+   ]
+  },
+  "ledger": [],
+  "sql_fixes": [],
+  "held": [
+   {
+    "table": "routes",
+    "id": "wa_primordial_blues",
+    "column": "fa",
+    "from": null,
+    "to": "Bryan Burdo (1994)",
+    "why": "HELD: an FA is never set from Mountain Project alone. No third source states it: theCrag's Substation route pages carry no FA, bolt count or anchor; the Exit 38 guidebook (Kutzke & Price) pages on Rakkup are teasers with no FA, bolts or anchor; the WCC Exit 38 page gives only area history.",
+    "evidence": [
+     "https://www.mountainproject.com/route/107783741/primordial-blues",
+     "https://washingtonclimbers.org/index.php/2015/10/13/exit-38/"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "FA still HELD (MP only). Discipline is s1's item."
+ },
+ "wa_undercover": {
+  "area": "wa_a_main_wall_west",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/106517028/undercover",
+    "https://rakkup.com/guidebook/mt-erie-rock-climbing/undercover/c28761",
+    "https://www.thecrag.com/en/climbing/united-states/mount-erie/route/4515063069"
+   ]
+  },
+  "ledger": [],
+  "sql_fixes": [],
+  "held": [
+   {
+    "table": "routes",
+    "id": "wa_undercover",
+    "column": "fa",
+    "from": "Seman, Kloke",
+    "to": "D. Seman, D. Kloke (1971)",
+    "why": "HELD: initials and the year 1971 come from Mountain Project alone. theCrag's Undercover page carries no FA (its 36.58 m length is MP's 120 ft, so it is an MP import, not independent); the Mt. Erie guidebook (Kloke, Thompson & Bryant) on Rakkup is a paywalled teaser with no FA.",
+    "evidence": [
+     "https://www.mountainproject.com/route/106517028/undercover",
+     "https://www.thecrag.com/en/climbing/united-states/mount-erie/route/4515063069",
+     "https://rakkup.com/guidebook/mt-erie-rock-climbing/undercover/c28761"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_undercover",
+    "column": "anchor",
+    "from": null,
+    "to": "Chain anchor",
+    "why": "HELD: Mountain Project alone. Its Protection says 'chain anchors' and its description says the route ends at a 'bolted anchor' on Zig Zag's ledge; the two wordings do not conflict (chains hang on bolts), so 'Chain anchor' is the house spelling that fits. No second source: theCrag shows no anchor, the guidebook teaser none. Also a possible variation row (s3), so only proposable if the owner keeps it as its own route.",
+    "evidence": [
+     "https://www.mountainproject.com/route/106517028/undercover"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "No change proposed."
+ },
+ "wa_crack_n_the_code": {
+  "area": "wa_a_main_wall_west",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/107525212/crackn-the-code",
+    "https://rakkup.com/guidebook/mt-erie-rock-climbing/crackn'-the-code/c28763",
+    "https://www.thecrag.com/en/climbing/united-states/mount-erie/route/4515062082"
+   ]
+  },
+  "ledger": [],
+  "sql_fixes": [],
+  "held": [
+   {
+    "table": "routes",
+    "id": "wa_crack_n_the_code",
+    "column": "fa",
+    "from": null,
+    "to": "S. Trent, D. Kloke (2002)",
+    "why": "HELD: Mountain Project only. theCrag's page carries no FA (12.19 m = MP's 40 ft, an MP import); the Mt. Erie guidebook teaser on Rakkup gives none. Context only: sibling rows wa_redemption and wa_ride_m_cowgirl credit Trent and Kloke in 2002-2004.",
+    "evidence": [
+     "https://www.mountainproject.com/route/107525212/crackn-the-code",
+     "https://www.thecrag.com/en/climbing/united-states/mount-erie/route/4515062082",
+     "https://rakkup.com/guidebook/mt-erie-rock-climbing/crackn'-the-code/c28763"
+    ]
+   }
+  ],
+  "disputed": [
+   "bolts: recommend it stays NULL. Mountain Project lists 3 bolts, but they protect only the straight-up slab finish; the other finish steps right over a bulge on gear. No other source gives a count. A single bolts number would misdescribe the gear finish."
+  ],
+  "notes": "Anchor 'Chain anchor' (set in batch R) agrees with MP, which says the anchor is shared with Zig Zag P1, Another Option and LGK. FA held (MP only)."
+ },
+ "wa_turf_safari": {
+  "area": "wa_substation",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/106589599/turf-safari",
+    "https://rakkup.com/guidebook/exit-38-rock-climbing/turf-safari/c25566",
+    "https://rakkup.com/guidebook/exit-38-rock-climbing/substation/s11465",
+    "https://www.thecrag.com/en/climbing/united-states/central-cascade-mountains/area/19195489",
+    "https://www.mountainproject.com/route/117309036/savannah-daydreamin"
+   ]
+  },
+  "ledger": [],
+  "sql_fixes": [],
+  "held": [
+   {
+    "table": "routes",
+    "id": "wa_turf_safari",
+    "column": "anchor",
+    "from": null,
+    "to": "Bolted anchor with permadraws",
+    "why": "HELD: Mountain Project says 'fixed permadraw anchors'; the nearest house spelling is 'Bolted anchor with permadraws', but 'bolted' is not stated. Also, MP's Savannah Daydreamin' page says the anchor Turf Safari shares is a CHAIN anchor with lower-offs, so MP contradicts itself about this anchor. No third source names it.",
+    "evidence": [
+     "https://www.mountainproject.com/route/106589599/turf-safari",
+     "https://www.mountainproject.com/route/117309036/savannah-daydreamin"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "Anchor HELD (see held). FA 'Bryan Burdo (1994)' already stored; MP only, not locked. Grade is s1's item."
+ },
+ "wa_bwana_be_your_man": {
+  "area": "wa_substation",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/106589607/bwana-be-your-man",
+    "https://rakkup.com/guidebook/exit-38-rock-climbing/substation/s11465",
+    "https://www.thecrag.com/en/climbing/united-states/central-cascade-mountains/area/19195489",
+    "https://www.mountainproject.com/route/117309036/savannah-daydreamin"
+   ]
+  },
+  "ledger": [],
+  "sql_fixes": [],
+  "held": [
+   {
+    "table": "routes",
+    "id": "wa_bwana_be_your_man",
+    "column": "anchor",
+    "from": null,
+    "to": "Chain anchor",
+    "why": "HELD: Bwana's own MP page says only 'anchor with loweroffs' (type not named). MP's Savannah Daydreamin' page says Savannah's chain anchor is shared with Turf Safari and Bwana, but MP's Turf Safari page calls that same anchor permadraws. Indirect and self-contradicting within one publisher; no third source.",
+    "evidence": [
+     "https://www.mountainproject.com/route/106589607/bwana-be-your-man",
+     "https://www.mountainproject.com/route/117309036/savannah-daydreamin",
+     "https://www.mountainproject.com/route/106589599/turf-safari"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "Anchor HELD. Live row: bolts 5, anchor null, FA 'Bryan Burdo (1994)' (ledger unconfirmed)."
+ }
+}
