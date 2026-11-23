@@ -1,0 +1,560 @@
+{
+ "wa_purina_crags_crude_buddha": {
+  "area": "wa_purina_crags",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/123177194/crude-buddha",
+    "https://mountainproject.com/area/108381674/purina-crags",
+    "https://www.thecrag.com/en/climbing/world/search?S=Good+Gravy",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0/query?geometry=-120.70713,47.54647&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownerclassification,forestname&returnGeometry=false&f=json",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_Wilderness_01/MapServer/0/query?geometry=-120.70713,47.54647&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&distance=300&units=esriSRUnit_Meter&outFields=wildernessname&returnGeometry=false&f=json",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_RangerDistricts_01/MapServer/1/query?geometry=-120.70713,47.54647&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=districtname,forestname&returnGeometry=false&f=json",
+    "https://atlas.co.chelan.wa.us/arcgis/rest/services/GIS/ParcelsOwners/MapServer/identify?geometry=-120.70713,47.54647&geometryType=esriGeometryPoint&sr=4326&layers=all&tolerance=0&mapExtent=-121,47,-120,48&imageDisplay=400,400,96&returnGeometry=false&f=json",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/passes"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.11b",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/123177194/crude-buddha",
+      "fact": "5.11b YDS, Sport",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://www.thecrag.com/en/climbing/world/search?S=Good+Gravy",
+      "fact": "theCrag search answered 403 Forbidden (blocked); no second open source found",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "length_m",
+    "value": 21,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/123177194/crude-buddha",
+      "fact": "70 ft (21 m)",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://www.thecrag.com/en/climbing/world/search?S=Good+Gravy",
+      "fact": "theCrag search answered 403 Forbidden (blocked); no second open source found",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 1,
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/123177194/crude-buddha",
+      "fact": "Sport, 70 ft to one bolted anchor; pitch count not stated (implied one)",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Geoff Scherer, 1990",
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/123177194/crude-buddha",
+      "fact": "FA: Geoff Scherer, 1990",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_purina_crags_crude_buddha",
+    "column": "anchor",
+    "from": null,
+    "to": "Bolted anchor",
+    "why": "anchor is empty. MP protection: 'Bolts. Bolted anchor' (description: cordelette quad with two rap rings). House spelling 'Bolted anchor'. MP-alone anchor: locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/123177194/crude-buddha"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_purina_crags_crude_buddha",
+    "column": "access",
+    "from": null,
+    "to": {
+     "rules": "The crag is outside designated wilderness.",
+     "land_manager": "Okanogan-Wenatchee National Forest (Wenatchee River Ranger District)"
+    },
+    "why": "access is empty. Copies field for field the live object on wa_givler_s_crack (read from the DB, read-only). Checked 2026-11-23 at the Purina Crags point (47.54647,-120.70713): USFS basic-ownership layer = USDA Forest Service, Okanogan-Wenatchee NF; USFS ranger-district layer = Wenatchee River Ranger District; USFS wilderness layer = no wilderness within 300 m (Alpine Lakes Wilderness is farther off); Chelan County parcel owner = UNITED STATES OF AMERICA (parcel 241727000150). Parking pass left out (HELD): the OWNF passes page says a pass is needed only where a day-use fee applies and names no Icicle Road pullout. official-1 after apply, expires 2027-11-23.",
+    "evidence": [
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0/query?geometry=-120.70713,47.54647&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownerclassification,forestname&returnGeometry=false&f=json",
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_Wilderness_01/MapServer/0/query?geometry=-120.70713,47.54647&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&distance=300&units=esriSRUnit_Meter&outFields=wildernessname&returnGeometry=false&f=json",
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_RangerDistricts_01/MapServer/1/query?geometry=-120.70713,47.54647&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=districtname,forestname&returnGeometry=false&f=json",
+     "https://atlas.co.chelan.wa.us/arcgis/rest/services/GIS/ParcelsOwners/MapServer/identify?geometry=-120.70713,47.54647&geometryType=esriGeometryPoint&sr=4326&layers=all&tolerance=0&mapExtent=-121,47,-120,48&imageDisplay=400,400,96&returnGeometry=false&f=json",
+     "https://www.fs.usda.gov/r06/okanogan-wenatchee/passes"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "bolts HELD: MP gives no total, only 'two bolts' at the start and 'about four bolts' higher, an approximate count. Ownership: Forest Service at the stored point and 220 m north, but NON-FS land lies about 220 m south along the road corridor; the crag is uphill (north) of Icicle Road, so it sits on National Forest. Parking: MP says roadside parking on the north side is free and a pass is needed only in the Snow Lakes trailhead lot; no official page states this, so HELD. Raptor closure (Bridge Creek Wall golden eagles, Jan 1 to Aug 15) is on MP only; no official USFS page found; Purina is about 6 km from Bridge Creek, not affected. Route lat/lng equals the MP area coordinate (not evidence; base pin unverified)."
+ },
+ "wa_crowbar_crag_feelin_stabby": {
+  "area": "wa_crowbar_crag",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/106900462/feeling-stabby",
+    "https://www.mountainproject.com/area/106900442/crowbar-crag",
+    "https://www.mountainproject.com/area/111406358/bridge-creek-area",
+    "https://www.mountainproject.com/area/106611530/bridge-creek-wall",
+    "https://www.thecrag.com/en/climbing/world/search?S=Good+Gravy",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0/query?geometry=-120.78311,47.56361&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownerclassification,forestname&returnGeometry=false&f=json",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_Wilderness_01/MapServer/0/query?geometry=-120.78311,47.56361&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&distance=300&units=esriSRUnit_Meter&outFields=wildernessname&returnGeometry=false&f=json",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_RangerDistricts_01/MapServer/1/query?geometry=-120.78311,47.56361&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=districtname,forestname&returnGeometry=false&f=json",
+    "https://atlas.co.chelan.wa.us/arcgis/rest/services/GIS/ParcelsOwners/MapServer/identify?geometry=-120.78311,47.56361&geometryType=esriGeometryPoint&sr=4326&layers=all&tolerance=0&mapExtent=-121,47,-120,48&imageDisplay=400,400,96&returnGeometry=false&f=json",
+    "https://atlas.co.chelan.wa.us/arcgis/rest/services/GIS/ParcelsOwners/MapServer/identify?geometry=-120.78,47.5645&geometryType=esriGeometryPoint&sr=4326&layers=all&tolerance=0&mapExtent=-121,47,-120,48&imageDisplay=400,400,96&returnGeometry=false&f=json",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/passes",
+    "https://epqs.nationalmap.gov/v1/json?x=-120.78311&y=47.56361&units=Feet&wkid=4326"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.9",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106900462/feeling-stabby",
+      "fact": "5.9 YDS, Trad",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://www.thecrag.com/en/climbing/world/search?S=Good+Gravy",
+      "fact": "theCrag search answered 403 Forbidden (blocked); no second open source found",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "length_m",
+    "value": 20,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106900462/feeling-stabby",
+      "fact": "65 ft (20 m)",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://www.thecrag.com/en/climbing/world/search?S=Good+Gravy",
+      "fact": "theCrag search answered 403 Forbidden (blocked); no second open source found",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 1,
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106900462/feeling-stabby",
+      "fact": "Trad corner, 65 ft to a bolted rap station; pitch count not stated (implied one)",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Dave Bale, 2005",
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106900462/feeling-stabby",
+      "fact": "FA: Dave Bale, 2005",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_crowbar_crag_feelin_stabby",
+    "column": "gear",
+    "from": null,
+    "to": [
+     "gear to 2 in"
+    ],
+    "why": "gear is empty. MP protection: gear to 2 in, bolted rap station. Short item list; MP-alone rack: locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/106900462/feeling-stabby"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_crowbar_crag_feelin_stabby",
+    "column": "anchor",
+    "from": null,
+    "to": "Bolted anchor",
+    "why": "anchor is empty. MP: 'bolted rap station' (bolt count not stated). House spelling 'Bolted anchor'. MP-alone anchor: locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/106900462/feeling-stabby"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "ACCESS HELD (not proposed). The stored point (the MP crag coordinate, 47.56361,-120.78311) reads 2,085 ft on the USGS elevation model, i.e. road level beside the Bridge Creek area point, yet MP says the crag is a 30-40 min walk up a gully from the Little Bridge Creek Rock trailhead. The point itself is USFS / OWNF / Wenatchee River RD on every layer and a United States parcel (241613430100), with no wilderness within 3 km; but a private parcel (241613440050, owner a private individual) begins about 100-200 m north-east, uphill, so the real crag cannot be placed on National Forest without a better location. Copy the wa_givler_s_crack object once the crag is pinned. Raptor closure: MP (unofficial) asks for no climbing within 1/2 mile of Bridge Creek Wall, Jan 1 to Aug 15; Crowbar Crag is in the Bridge Creek area and may be inside that buffer; no official USFS page found, so nothing written. CATALOG DEFECTS: (1) DUPLICATE: wa_feeling_stabby ('Feeling Stabby', 5.9, 1 pitch) sits in the same area wa_crowbar_crag; MP lists only one line (Feelin' Stabby, 106900462). Owner decides which row survives. (2) The crag/route coordinate is a road-level placeholder, not the crag."
+ },
+ "wa_icicle_buttress_good_gravy": {
+  "area": "wa_icicle_buttress",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/123339552/good-gravy",
+    "https://www.mountainproject.com/area/106582062",
+    "https://www.thecrag.com/en/climbing/world/search?S=Good+Gravy",
+    "https://thetopo.com/crags/icicle-canyon/topos",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0/query?geometry=-120.75176,47.54818&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownerclassification,forestname&returnGeometry=false&f=json",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_Wilderness_01/MapServer/0/query?geometry=-120.75176,47.54818&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&distance=300&units=esriSRUnit_Meter&outFields=wildernessname&returnGeometry=false&f=json",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_RangerDistricts_01/MapServer/1/query?geometry=-120.75176,47.54818&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=districtname,forestname&returnGeometry=false&f=json",
+    "https://atlas.co.chelan.wa.us/arcgis/rest/services/GIS/ParcelsOwners/MapServer/identify?geometry=-120.75176,47.54818&geometryType=esriGeometryPoint&sr=4326&layers=all&tolerance=0&mapExtent=-121,47,-120,48&imageDisplay=400,400,96&returnGeometry=false&f=json",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/passes"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.10a/b",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/123339552/good-gravy",
+      "fact": "5.10a/b YDS, Sport",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://www.thecrag.com/en/climbing/world/search?S=Good+Gravy",
+      "fact": "theCrag search answered 403 Forbidden (blocked); no second open source found",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "length_m",
+    "value": 27,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/123339552/good-gravy",
+      "fact": "90 ft (27 m)",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://www.thecrag.com/en/climbing/world/search?S=Good+Gravy",
+      "fact": "theCrag search answered 403 Forbidden (blocked); no second open source found",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 1,
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/123339552/good-gravy",
+      "fact": "Sport, 90 ft, 8 bolts to chain anchors; pitch count not stated (implied one)",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "2001: Mike Croswaite, Viktor Kramar, Gordon Briody, Dave Bale",
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/123339552/good-gravy",
+      "fact": "FA: Dave Bale, Gordon Briody, Viktor Kramar, Mike Croswaite; 2001 (same four names, other order)",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_icicle_buttress_good_gravy",
+    "column": "bolts",
+    "from": null,
+    "to": 8,
+    "why": "bolts is empty. MP protection states '8 bolts'. MP-alone bolts: locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/123339552/good-gravy"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_icicle_buttress_good_gravy",
+    "column": "anchor",
+    "from": null,
+    "to": "Chain anchor",
+    "why": "anchor is empty. MP: 'chain anchors'. House spelling 'Chain anchor'. MP-alone anchor: locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/123339552/good-gravy"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_icicle_buttress_good_gravy",
+    "column": "gear",
+    "from": null,
+    "to": [
+     "optional cams #0.75 to #2"
+    ],
+    "why": "gear is empty. MP: optional cams #0.75 to #2 for a runout low-5th upper section. Short item list; MP-alone rack: locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/123339552/good-gravy"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_icicle_buttress_good_gravy",
+    "column": "access",
+    "from": null,
+    "to": {
+     "rules": "The crag is outside designated wilderness.",
+     "land_manager": "Okanogan-Wenatchee National Forest (Wenatchee River Ranger District)"
+    },
+    "why": "access is empty. Copies field for field the live object on wa_givler_s_crack (read from the DB, read-only). Checked 2026-11-23 at the Icicle Buttress point (47.54818,-120.75176): USFS basic-ownership layer = USDA Forest Service, Okanogan-Wenatchee NF; USFS ranger-district layer = Wenatchee River Ranger District; USFS wilderness layer = no wilderness within 300 m (Alpine Lakes Wilderness is farther off); Chelan County parcel owner = UNITED STATES OF AMERICA (parcel 241729230100). Parking pass left out (HELD): the OWNF passes page says a pass is needed only where a day-use fee applies and names no Icicle Road pullout. official-1 after apply, expires 2027-11-23.",
+    "evidence": [
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0/query?geometry=-120.75176,47.54818&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownerclassification,forestname&returnGeometry=false&f=json",
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_Wilderness_01/MapServer/0/query?geometry=-120.75176,47.54818&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&distance=300&units=esriSRUnit_Meter&outFields=wildernessname&returnGeometry=false&f=json",
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_RangerDistricts_01/MapServer/1/query?geometry=-120.75176,47.54818&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=districtname,forestname&returnGeometry=false&f=json",
+     "https://atlas.co.chelan.wa.us/arcgis/rest/services/GIS/ParcelsOwners/MapServer/identify?geometry=-120.75176,47.54818&geometryType=esriGeometryPoint&sr=4326&layers=all&tolerance=0&mapExtent=-121,47,-120,48&imageDisplay=400,400,96&returnGeometry=false&f=json",
+     "https://www.fs.usda.gov/r06/okanogan-wenatchee/passes"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "Roadside crag about 6.5 mi up Icicle Road (MP). CATALOG DEFECT: area wa_icicle_buttress ('Icicle Buttress Routes') is filed under wa_icicle_buttress_boulders, a bouldering sub-area, though it holds the roped routes (MP files Icicle Buttress directly under 'Icicle Buttress and Bob's Wall'); owner decides. Stored stars 4 vs MP average 2.6 (not changed). Route lat/lng equals the MP area coordinate (not evidence)."
+ },
+ "wa_30_rock_funcooker": {
+  "area": "wa_30_rock",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/122735873/funcooker",
+    "https://www.mountainproject.com/area/122735839/30-rock",
+    "https://www.thecrag.com/en/climbing/world/search?S=Good+Gravy",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0/query?geometry=-120.78764,47.57184&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownerclassification,forestname&returnGeometry=false&f=json",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_Wilderness_01/MapServer/0/query?geometry=-120.78764,47.57184&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&distance=300&units=esriSRUnit_Meter&outFields=wildernessname&returnGeometry=false&f=json",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_RangerDistricts_01/MapServer/1/query?geometry=-120.78764,47.57184&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=districtname,forestname&returnGeometry=false&f=json",
+    "https://atlas.co.chelan.wa.us/arcgis/rest/services/GIS/ParcelsOwners/MapServer/identify?geometry=-120.78764,47.57184&geometryType=esriGeometryPoint&sr=4326&layers=all&tolerance=0&mapExtent=-121,47,-120,48&imageDisplay=400,400,96&returnGeometry=false&f=json",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/passes"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.8",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/122735873/funcooker",
+      "fact": "5.8 YDS, Sport and TR",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://www.thecrag.com/en/climbing/world/search?S=Good+Gravy",
+      "fact": "theCrag search answered 403 Forbidden (blocked); no second open source found",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "length_m",
+    "value": 11,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/122735873/funcooker",
+      "fact": "35 ft (11 m)",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://www.thecrag.com/en/climbing/world/search?S=Good+Gravy",
+      "fact": "theCrag search answered 403 Forbidden (blocked); no second open source found",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 1,
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/122735873/funcooker",
+      "fact": "35 ft, 4 bolts to chains; pitch count not stated (implied one)",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_30_rock_funcooker",
+    "column": "bolts",
+    "from": null,
+    "to": 4,
+    "why": "bolts is empty. MP protection states '4 bolts and chains up top'. MP-alone bolts: locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/122735873/funcooker"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_30_rock_funcooker",
+    "column": "anchor",
+    "from": null,
+    "to": "Chain anchor",
+    "why": "anchor is empty. MP: 'chains up top'. House spelling 'Chain anchor'. MP-alone anchor: locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/122735873/funcooker"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_30_rock_funcooker",
+    "column": "access",
+    "from": null,
+    "to": {
+     "rules": "The crag is outside designated wilderness.",
+     "land_manager": "Okanogan-Wenatchee National Forest (Wenatchee River Ranger District)"
+    },
+    "why": "access is empty. Copies field for field the live object on wa_givler_s_crack (read from the DB, read-only). Checked 2026-11-23 at the 30 Rock point (47.57184,-120.78764): USFS basic-ownership layer = USDA Forest Service, Okanogan-Wenatchee NF; USFS ranger-district layer = Wenatchee River Ranger District; USFS wilderness layer = no wilderness within 300 m (Alpine Lakes Wilderness is farther off); Chelan County parcel owner = U S FOREST SERVICE (parcel 241613100050). Parking pass left out (HELD): the OWNF passes page says a pass is needed only where a day-use fee applies and names no Icicle Road pullout. official-1 after apply, expires 2027-11-23.",
+    "evidence": [
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0/query?geometry=-120.78764,47.57184&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownerclassification,forestname&returnGeometry=false&f=json",
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_Wilderness_01/MapServer/0/query?geometry=-120.78764,47.57184&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&distance=300&units=esriSRUnit_Meter&outFields=wildernessname&returnGeometry=false&f=json",
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_RangerDistricts_01/MapServer/1/query?geometry=-120.78764,47.57184&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=districtname,forestname&returnGeometry=false&f=json",
+     "https://atlas.co.chelan.wa.us/arcgis/rest/services/GIS/ParcelsOwners/MapServer/identify?geometry=-120.78764,47.57184&geometryType=esriGeometryPoint&sr=4326&layers=all&tolerance=0&mapExtent=-121,47,-120,48&imageDisplay=400,400,96&returnGeometry=false&f=json",
+     "https://www.fs.usda.gov/r06/okanogan-wenatchee/passes"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "fa HELD: MP alone gives 'Sean Woods, Jim Phillips, Viktor Kramar; 2017' (an FA never sets or locks from one source). Bolt line on the far right of the wall (MP). 30 Rock point reads 2,334 ft, uphill of the road, on a large Forest Service parcel; no wilderness within 3 km. Raptor closure: 30 Rock is about 1 km NNW of the Bridge Creek area point and may fall near the MP (unofficial) 1/2-mile Bridge Creek Wall buffer; no official page found, nothing written. Route has no lat/lng (area point only)."
+ },
+ "wa_30_rock_coming_in_quartz": {
+  "area": "wa_30_rock",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/122735849/coming-in-quartz",
+    "https://www.mountainproject.com/area/122735839/30-rock",
+    "https://www.thecrag.com/en/climbing/world/search?S=Good+Gravy",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0/query?geometry=-120.78764,47.57184&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownerclassification,forestname&returnGeometry=false&f=json",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_Wilderness_01/MapServer/0/query?geometry=-120.78764,47.57184&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&distance=300&units=esriSRUnit_Meter&outFields=wildernessname&returnGeometry=false&f=json",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_RangerDistricts_01/MapServer/1/query?geometry=-120.78764,47.57184&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=districtname,forestname&returnGeometry=false&f=json",
+    "https://atlas.co.chelan.wa.us/arcgis/rest/services/GIS/ParcelsOwners/MapServer/identify?geometry=-120.78764,47.57184&geometryType=esriGeometryPoint&sr=4326&layers=all&tolerance=0&mapExtent=-121,47,-120,48&imageDisplay=400,400,96&returnGeometry=false&f=json",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/passes"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.11-",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/122735849/coming-in-quartz",
+      "fact": "5.11- YDS, TR",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://www.thecrag.com/en/climbing/world/search?S=Good+Gravy",
+      "fact": "theCrag search answered 403 Forbidden (blocked); no second open source found",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "length_m",
+    "value": 9,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/122735849/coming-in-quartz",
+      "fact": "30 ft (9 m)",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://www.thecrag.com/en/climbing/world/search?S=Good+Gravy",
+      "fact": "theCrag search answered 403 Forbidden (blocked); no second open source found",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 1,
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/122735849/coming-in-quartz",
+      "fact": "TR, 30 ft, off Rural Juror's anchor; pitch count not stated (implied one)",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_30_rock_coming_in_quartz",
+    "column": "access",
+    "from": null,
+    "to": {
+     "rules": "The crag is outside designated wilderness.",
+     "land_manager": "Okanogan-Wenatchee National Forest (Wenatchee River Ranger District)"
+    },
+    "why": "access is empty. Copies field for field the live object on wa_givler_s_crack (read from the DB, read-only). Checked 2026-11-23 at the 30 Rock point (47.57184,-120.78764): USFS basic-ownership layer = USDA Forest Service, Okanogan-Wenatchee NF; USFS ranger-district layer = Wenatchee River Ranger District; USFS wilderness layer = no wilderness within 300 m (Alpine Lakes Wilderness is farther off); Chelan County parcel owner = U S FOREST SERVICE (parcel 241613100050). Parking pass left out (HELD): the OWNF passes page says a pass is needed only where a day-use fee applies and names no Icicle Road pullout. official-1 after apply, expires 2027-11-23.",
+    "evidence": [
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0/query?geometry=-120.78764,47.57184&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownerclassification,forestname&returnGeometry=false&f=json",
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_Wilderness_01/MapServer/0/query?geometry=-120.78764,47.57184&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&distance=300&units=esriSRUnit_Meter&outFields=wildernessname&returnGeometry=false&f=json",
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_RangerDistricts_01/MapServer/1/query?geometry=-120.78764,47.57184&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=districtname,forestname&returnGeometry=false&f=json",
+     "https://atlas.co.chelan.wa.us/arcgis/rest/services/GIS/ParcelsOwners/MapServer/identify?geometry=-120.78764,47.57184&geometryType=esriGeometryPoint&sr=4326&layers=all&tolerance=0&mapExtent=-121,47,-120,48&imageDisplay=400,400,96&returnGeometry=false&f=json",
+     "https://www.fs.usda.gov/r06/okanogan-wenatchee/passes"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "MP: TR off Rural Juror's anchor, left arete of the formation; FA 'unknown' on MP (stored fa null, correct). anchor left empty: it shares Rural Juror's anchor and MP does not say what that anchor is. Same 30 Rock land checks and unofficial raptor-buffer caveat as Funcooker."
+ }
+}

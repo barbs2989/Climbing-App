@@ -370,7 +370,16 @@ function suggGainFt(r){return r.gainFt!=null?r.gainFt:(r.gain_ft!=null?r.gain_ft
 /* One climber's grade/gain centre for ONE discipline. Split out because three callers now
    accumulate the same shape from different evidence: completed logs, and climbs merely
    opened (lib/recent.js). */
-function _suggAccum(byDisc,r){if(!r)return;var d=catOf(r);if(!d)return;var b=byDisc[d]||(byDisc[d]={n:0,gSum:0,gN:0,aSum:0,aN:0});b.n++;var gv=routeGradeVal(r);if(gv>=0){b.gSum+=gv;b.gN++;}var af=suggGainFt(r);if(af){b.aSum+=af;b.aN++;}}
+/* `w` is how much this climb counts (1 when not given: a page view has no age worth weighing). */
+function _suggAccum(byDisc,r,w){if(!r)return;var d=catOf(r);if(!d)return;if(w==null)w=1;var b=byDisc[d]||(byDisc[d]={n:0,wn:0,gSum:0,gN:0,aSum:0,aN:0});b.n++;b.wn+=w;var gv=routeGradeVal(r);if(gv>=0){b.gSum+=gv*w;b.gN+=w;}var af=suggGainFt(r);if(af){b.aSum+=af*w;b.aN+=w;}}
+/* WHAT YOU CLIMB NOW OUTWEIGHS WHAT YOU CLIMBED THEN (2026-11-23). The centre was the plain mean of
+   every completed log, so a 5.6 from six years ago pulled a 5.11 climber's suggestions down as hard
+   as last month's climb pulled them up. A log's weight now halves every two years (this year 1, two
+   years back 0.5, four 0.25), never below 0.15 so an old logbook still counts for something. A log
+   with no readable date is treated as two years old. The same weight orders the disciplines, so the
+   one you have been climbing lately leads. */
+var SUGGEST_HALF_LIFE_YEARS=2;
+function suggestLogWeight(date,now){var t=date?new Date(date).getTime():NaN;if(!isFinite(t))return 0.5;var yrs=Math.max(0,((now==null?Date.now():now)-t)/31557600000);return Math.max(0.15,Math.pow(0.5,yrs/SUGGEST_HALF_LIFE_YEARS));}
 function _suggShape(d,b,src){return {disc:d,src:src,n:b.n,gradeVal:b.gN?b.gSum/b.gN:null,avgGainFt:b.aN?b.aSum/b.aN:null};}
 /* Returns EVERY logged discipline, not just the busiest one.
    It used to end `…sort(by count)[0]` and throw the rest away, so a climber who logs 6 sport
@@ -380,10 +389,10 @@ function _suggShape(d,b,src){return {disc:d,src:src,n:b.n,gradeVal:b.gN?b.gSum/b
    amount of client-side ranking could have recovered them.
    `disc`/`gradeVal`/`avgGainFt` still describe the top discipline so existing readers are
    unaffected; `discs` is the new, complete answer. */
-function suggestionProfile(logs,routeById){
+function suggestionProfile(logs,routeById,now){
   var byDisc={};
-  (logs||[]).forEach(function(l){if(!routeCompleted(l.routeId,logs))return;_suggAccum(byDisc,routeById(l.routeId));});
-  var order=Object.keys(byDisc).sort(function(x,y){return byDisc[y].n-byDisc[x].n;});
+  (logs||[]).forEach(function(l){if(!routeCompleted(l.routeId,logs))return;_suggAccum(byDisc,routeById(l.routeId),suggestLogWeight(l.date,now));});
+  var order=Object.keys(byDisc).sort(function(x,y){return byDisc[y].wn-byDisc[x].wn||byDisc[y].n-byDisc[x].n;});
   if(!order.length)return null;
   var discs=order.map(function(d){return _suggShape(d,byDisc[d],"logged");});
   return {disc:discs[0].disc,gradeVal:discs[0].gradeVal,avgGainFt:discs[0].avgGainFt,discs:discs};
@@ -398,22 +407,35 @@ var SUGGEST_DISC_MAX=3;
    — the two rows make different claims ("you've been climbing X" vs "you've been looking at
    X") and only one of them is true of a climb you have actually done. Logged always outranks
    browsed: a completed climb is a far stronger statement than a page view. */
-/* `stated` is the THIRD source: the grades on the climber's own profile ({sport,trad,bouldering}).
+/* `stated` is the THIRD source: the grades on the climber's own profile ({sport,trad,bouldering,alpine,ice,mixed}).
    A new account has an empty logbook, so until this was read the only personal rows a real new
    climber could get were from page views, and the experience they typed in at sign-up ranked nothing.
    A stated grade earns a slot only for a discipline with NO logged climbs (what you have climbed
    outranks what you said you climb), and it sits ahead of browsing: it is the climber's own
    statement, a page view is a guess. A browsed discipline that is also stated is the stated slot. */
-function suggestDiscSlots(profile,viewedRoutes,max,stated){
+/* `here` (2026-11-23): the disciplines this AREA has, or null when not known. With six stated grades and
+   three slots, an ice climber who also gave sport, trad and boulder grades never reached their ice row,
+   on an ice crag included. A slot for a discipline the area has no climb of is dropped BEFORE the cap, so
+   the three slots go to rows that can list something. Alpine also matches mountaineering and scrambling:
+   catOf files their 5th-class climbs as alpine. */
+function _suggHere(d,here){if(!here)return true;if(here.indexOf(d)>=0)return true;return d==="alpine"&&(here.indexOf("mountaineering")>=0||here.indexOf("scrambling")>=0);}
+/* The stated grade for one discipline as a place on that discipline's scale, or null. */
+function _suggStatedVal(stated,d){var g=stated&&stated[d];if(typeof g!=="string"||!g||g==="N/A")return null;var gl=ADDR_GRADES[d];if(!gl)return null;var i=_gradeIdx(gl,splitProtection(g).grade,d);return i<0?null:i/gl.length;}
+function suggestDiscSlots(profile,viewedRoutes,max,stated,here){
   var lim=max||SUGGEST_DISC_MAX;
-  var logged=(profile&&profile.discs)||[];
+  /* A LOGGED DISCIPLINE WITH NO READABLE GRADE BORROWS THE PROFILE'S (real-account test on the live site,
+     2026-11-23). A climber whose one alpine log is Mount Baker's North Ridge, graded on the ice scale, has
+     an alpine slot with no centre; with nothing to measure from, the ranking kept every alpine climb and
+     offered 5.10d and 5.11- to a profile that says Alpine 5.6. The slot stays "logged" (they have climbed
+     alpine); only its centre comes from what they stated. With neither, there is still no centre. */
+  var logged=((profile&&profile.discs)||[]).map(function(s){if(s.gradeVal!=null)return s;var gv=_suggStatedVal(stated,s.disc);return gv==null?s:Object.assign({},s,{gradeVal:gv});});
   var seen={};logged.forEach(function(s){seen[s.disc]=1;});
   var said=[];
-  ["sport","trad","bouldering"].forEach(function(d){var g=stated&&stated[d];if(seen[d]||typeof g!=="string"||!g||g==="N/A")return;var gl=ADDR_GRADES[d];var i=_gradeIdx(gl,splitProtection(g).grade,d);if(i<0)return;seen[d]=1;said.push({disc:d,src:"stated",n:0,gradeVal:i/gl.length,avgGainFt:null});});
+  ["sport","trad","bouldering","alpine","ice","mixed"].forEach(function(d){if(seen[d])return;var gv=_suggStatedVal(stated,d);if(gv==null)return;seen[d]=1;said.push({disc:d,src:"stated",n:0,gradeVal:gv,avgGainFt:null});});
   var byDisc={};
   (viewedRoutes||[]).forEach(function(r){_suggAccum(byDisc,r);});
   var viewed=Object.keys(byDisc).filter(function(d){return !seen[d];}).sort(function(x,y){return byDisc[y].n-byDisc[x].n;}).map(function(d){return _suggShape(d,byDisc[d],"viewed");});
-  return logged.concat(said,viewed).slice(0,lim);
+  return logged.concat(said,viewed).filter(function(s){return _suggHere(s.disc,here);}).slice(0,lim);
 }
 /* HOW FAR FROM THE CLIMBER'S OWN GRADE A SUGGESTION MAY SIT. The ranking used to sort by grade
    distance and take the first five WHATEVER the distance, so at a crag whose easiest sport climb is
@@ -431,6 +453,9 @@ function suggestWindow(d){var n=(ADDR_GRADES[d]||ADDR_YDS).length;return {up:Mat
    are the window's outer steps (rankSimilarRoutes makes the exact cut), so nothing in the window
    is missing from the pool. Alpine takes no grade range: its climbs are graded on three systems. */
 var _SLOT_SYS={sport:"yds",trad:"yds",toprope:"yds",bouldering:"v",ice:"wi",mixed:"m"};
+/* MEASURED NON-FINDING (2026-11-23): catOf files a trad climb on a peak as alpine, so in principle the
+   alpine pool misses a peak's trad lines. In the catalog it is 4 routes of the 1,110 filed on the 535
+   busiest peaks of six states: peak climbs are already stored as alpine. Not worth a second pool shape. */
 function suggestSlotQuery(slot){
   var d=slot.disc,q={disc:d==="alpine"?"alpine,mountaineering,scrambling":d,sortBy:"stars_desc",pageSize:60};
   var sys=_SLOT_SYS[d];
@@ -441,7 +466,14 @@ function suggestSlotQuery(slot){
    climb is worth about two and a half steps of grade, a 2.5-star one about one. Inside the window
    only: quality never pulls in a climb the window left out. */
 function _suggQuality(r){var st=r.stars||0;return r.classic||st>=3.5?0.03:st>=2.5?0.015:0;}
-function rankSimilarRoutes(candidates,profile,opts){if(!profile)return [];var limit=(opts&&opts.limit)||5;var w=suggestWindow(profile.disc);return candidates.filter(function(r){return catOf(r)===profile.disc;}).map(function(r){var gv=routeGradeVal(r);var known=profile.gradeVal!=null&&gv>=0;var delta=known?gv-profile.gradeVal:0;var gd=known?Math.abs(delta):0.5;var af=suggGainFt(r);var ad=(profile.avgGainFt!=null&&af)?Math.min(1,Math.abs(af-profile.avgGainFt)/Math.max(profile.avgGainFt,500)):0.5;/* A climb whose grade is not on this scale (an AI3 couloir, to a climber whose alpine logs are 5.6 rock) is not "near your grade": with a centre to measure from, it is left out, not kept as filler. */return {r:r,out:profile.gradeVal!=null&&(gv<0||delta>w.up+1e-9||delta<-w.down-1e-9),score:gd*0.65+ad*0.35-_suggQuality(r)};}).filter(function(x){return !x.out;}).sort(function(x,y){return x.score-y.score;}).slice(0,limit).map(function(x){return x.r;});}
+/* A CLIMB WHERE A FALL IS LIKELY TO KILL IS NOT A SUGGESTION (owner, 2026-11-23, after a 5.7 trad
+   climber was offered "The Asterisk 5.7 X"). X and R/X are left out of every ranked row, however
+   near the grade and however classic; an R (serious, not usually fatal) stays but gives up what a
+   classic gains, so it never leads on quality alone. The rating is read off the displayed grade, the
+   one place it is stored. The climber can still find the climb: this is what we put in front of them. */
+function suggestProt(r){return splitProtection(gradeLabel(r)).prot||"";}
+function suggestTooBold(r){return /X/.test(suggestProt(r));}
+function rankSimilarRoutes(candidates,profile,opts){if(!profile)return [];var limit=(opts&&opts.limit)||5;var w=suggestWindow(profile.disc);return candidates.filter(function(r){return catOf(r)===profile.disc&&!suggestTooBold(r);}).map(function(r){var gv=routeGradeVal(r);var known=profile.gradeVal!=null&&gv>=0;var delta=known?gv-profile.gradeVal:0;var gd=known?Math.abs(delta):0.5;var af=suggGainFt(r);var ad=(profile.avgGainFt!=null&&af)?Math.min(1,Math.abs(af-profile.avgGainFt)/Math.max(profile.avgGainFt,500)):0.5;/* A climb whose grade is not on this scale (an AI3 couloir, to a climber whose alpine logs are 5.6 rock) is not "near your grade": with a centre to measure from, it is left out, not kept as filler. */return {r:r,out:profile.gradeVal!=null&&(gv<0||delta>w.up+1e-9||delta<-w.down-1e-9),score:gd*0.65+ad*0.35-_suggQuality(r)+(suggestProt(r)==="R"?0.03:0)};}).filter(function(x){return !x.out;}).sort(function(x,y){return x.score-y.score;}).slice(0,limit).map(function(x){return x.r;});}
 
 
 const TRIP={
@@ -508,7 +540,7 @@ function certMatches(q,have){var w=String(q||"").toLowerCase().split(/\s+/).filt
    "follow"); a leader may also state the harder grade they will follow in `climb_grades[k].follow`.
    Nothing older changes meaning: a row with no `follow` reads exactly as it did. */
 const _yds=["5.6","5.7","5.8","5.9"].concat([].concat.apply([],[10,11,12,13,14,15].map(function(n){return ["a","b","c","d"].map(function(l){return "5."+n+l;});})));
-const PROFILE_GRADES=[{k:"sport",label:"Sport",col:"sportGrade",ladder:_yds,roped:true},{k:"trad",label:"Trad",col:"tradGrade",ladder:_yds,roped:true},{k:"boulder",label:"Boulder",col:"boulderGrade",ladder:["VB"].concat(Array.from({length:18},function(_,i){return "V"+i;})),roped:false},{k:"ice",label:"Ice",ladder:["WI1","WI2","WI3","WI4","WI5","WI6","WI7"],roped:true},{k:"mixed",label:"Mixed",ladder:Array.from({length:14},function(_,i){return "M"+(i+1);}),roped:true},{k:"aid",label:"Aid",ladder:["C0","C1","C2","C3","C4","A0","A1","A2","A3","A4","A5"],roped:true}];
+const PROFILE_GRADES=[{k:"sport",label:"Sport",col:"sportGrade",ladder:_yds,roped:true},{k:"trad",label:"Trad",col:"tradGrade",ladder:_yds,roped:true},{k:"boulder",label:"Boulder",col:"boulderGrade",ladder:["VB"].concat(Array.from({length:18},function(_,i){return "V"+i;})),roped:false},/* ALPINE (owner, 2026-11-23: "do the profile grade"): the hardest alpine ROCK grade climbed, 5.0 up. NO Class 3 or Class 4 on this ladder: Find partners compares lead grades as numbers (gradeNumFrom), where "Class 4" is 4 and "5.3" is 3, so a class on the ladder would rank above the 5th-class grades that are harder than it. No column: it lives in climb_grades.alpine like ice, mixed and aid, so nothing in the database changed. Asked only of a climber who lists Alpine. */{k:"alpine",label:"Alpine",ladder:["5.0","5.1","5.2","5.3","5.4","5.5"].concat(_yds),roped:true},{k:"ice",label:"Ice",ladder:["WI1","WI2","WI3","WI4","WI5","WI6","WI7"],roped:true},{k:"mixed",label:"Mixed",ladder:Array.from({length:14},function(_,i){return "M"+(i+1);}),roped:true},{k:"aid",label:"Aid",ladder:["C0","C1","C2","C3","C4","A0","A1","A2","A3","A4","A5"],roped:true}];
 /* {label, grade, role, follow} for every discipline the climber has a grade or a role for, in ladder order. `follow` is the harder grade a LEADER will follow (empty for a follow-only climber, whose `grade` already is what they follow). */
 function profileGradeRows(c){var cg=(c&&c.climbGrades)||{};return PROFILE_GRADES.map(function(g){var x=cg[g.k]||{};var grade=g.col?c&&c[g.col]:(x.grade||(c&&c[g.k+"Grade"]));if(grade==="N/A"||grade==="-")grade="";var follow=g.roped&&x.role!=="follow"&&x.follow&&x.follow!=="N/A"&&x.follow!=="-"?x.follow:"";return {k:g.k,label:g.label,grade:grade||"",role:g.roped?(x.role||""):"",follow:follow};}).filter(function(r){return r.grade||r.role||r.follow;});}
 /* [discipline id, grade] for every profile grade, keyed the way DiscBadge and `disciplines` spell it (boulder -> bouldering), so a partner row shows an ice or mixed grade beside the sport one. */

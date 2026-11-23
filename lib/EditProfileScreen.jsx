@@ -6,8 +6,8 @@ import { USE_DB } from "./supabase";
 import { POP_REMOVE } from "./popupChrome.js";
 import { removeProfileAvatar, saveProfileAvatar, uploadProfilePhoto, useZipCentroid, zipState } from "./db";
 import { useEffect, useState } from "react";
-import { C, GENDERS, PRONOUNS, PRONOUNS_MAX, FALLBACK_AV, DOW, AVAIL_SLOT_OPTS, availSlotOn, availSlotToggle, US_CITIES, US_ST, CA_PROV, hasVulgarity, SKILLS, SKILL_GROUPS, skillKeyOf, CERT_GROUPS, certMatches, PROFILE_GRADES, BELAY_DEVICES, BELAY_LEVELS, certExpiryInfo, suggestUsername, profileGradeRows, gradeRoleText, ME, DLOCALE } from "../ClimbMatchCore.jsx";
-import { isPracticedMonth, thisMonth } from "./skillPractice.js";
+import { C, GENDERS, PRONOUNS, PRONOUNS_MAX, FALLBACK_AV, DOW, AVAIL_SLOT_OPTS, availSlotOn, availSlotToggle, US_CITIES, US_ST, CA_PROV, hasVulgarity, SKILLS, SKILL_GROUPS, skillKeyOf, CERT_GROUPS, certMatches, PROFILE_GRADES, BELAY_DEVICES, BELAY_LEVELS, certExpiryInfo, suggestUsername, profileGradeRows, gradeRoleText, genderPronouns, yearsSince, profileSkills, belayLabel, ME, DLOCALE } from "../ClimbMatchCore.jsx";
+import { isPracticedMonth, practicedLabel, thisMonth } from "./skillPractice.js";
 import { cleanUsername, usernameLock, usernameProblem } from "./username";
 import Av from "../src/components/Av.tsx";
 import DiscIcon from "../src/components/DiscIcon.tsx";
@@ -94,6 +94,11 @@ export default function EditProfileScreen({draft,setDraft,onSave,onCancel,onAvat
   const uShow=(uTouched||!draft.username.trim())&&uErr;
   const lbl={fontSize:12,color:C.label,textTransform:"uppercase",letterSpacing:0.4,marginBottom:5,marginTop:14};
   const inp=INPUT(C);
+  /* What the "How climbers will see you" card at the foot of the form reads from the draft. */
+  const pvYears=/^\d{4}$/.test(String(draft.climbingSince||"").trim())?yearsSince(draft.climbingSince):null;
+  const pvWeek=draft.availWeek||[],pvCerts=draft.certifications||[],pvBelay=Object.entries(draft.belayDevices||{}),pvSkills=profileSkills(draft.skills);
+  const pvMissing=[[draft.bio.trim(),"a bio"],[pvWeek.length,"availability"],[pvCerts.length,"certifications"],[pvBelay.length,"belay devices"],[pvSkills.length,"skills"]].filter(x=>!x[0]).map(x=>x[1]);
+  const pvSec={marginTop:12},pvHead={fontSize:11,fontWeight:800,color:C.textMuted,textTransform:"uppercase",letterSpacing:0.4,marginBottom:6},pvRow={display:"flex",gap:5,flexWrap:"wrap"},pvChip={fontSize:12,color:C.text,background:C.surface,border:"1px solid "+C.border,padding:"3px 9px",borderRadius:7};
   return (<div style={{position:"fixed",inset:0,background:C.bg,zIndex:1100,overflowY:"auto",overscrollBehavior:"contain",maxWidth:520,margin:"0 auto",boxSizing:"border-box"}}>
     <div style={{position:"sticky",top:0,background:C.surface,borderBottom:"1px solid "+C.border,padding:"12px 16px",display:"flex",alignItems:"center",justifyContent:"space-between",zIndex:2}}>
       <div style={{display:"flex",alignItems:"center",gap:12}}><button onClick={onCancel} style={{background:C.card,border:"1px solid "+C.border,color:C.text,borderRadius:8,padding:"9px 11px",fontSize:13,fontWeight:700,cursor:"pointer"}}>Cancel</button><div style={{fontSize:15,fontWeight:700,color:C.text}}>Edit profile</div></div>
@@ -152,15 +157,21 @@ export default function EditProfileScreen({draft,setDraft,onSave,onCancel,onAvat
       <div style={{borderTop:"1px solid "+C.border,marginTop:20,paddingTop:14}}>
         <div style={{fontSize:13,fontWeight:800,color:C.text,textTransform:"uppercase",letterSpacing:0.4,marginBottom:8,borderLeft:"3px solid "+C.blue,paddingLeft:9}}>How climbers will see you</div>
         <div style={{background:C.card,border:"1px solid "+C.border,borderRadius:12,padding:14}}>
-          <div style={{display:"flex",gap:12,alignItems:"center"}}><Av src={draft.avatar} size={48}/><div style={{minWidth:0}}>
+          <div style={{display:"flex",gap:12,alignItems:"center"}}><Av src={avaPreview||draft.avatar} size={48}/><div style={{minWidth:0}}>
             <div style={{fontSize:16,fontWeight:700,color:C.text}}>{draft.showRealName?(draft.name.trim()||"Your name"):("@"+(draft.username.trim()||"username"))}</div>
-            <div style={{fontSize:12,color:C.textSub,marginTop:1}}>{<Lbl s={"📍 "+(draft.location.trim()||"Location")+(draft.level?" · "+draft.level:"")}/>}</div>
+            <div style={{fontSize:12,color:C.textSub,marginTop:1}}>{<Lbl s={"📍 "+[draft.location.trim()||"Location",draft.level,pvYears!=null?pvYears+"yr exp":"",genderPronouns(draft.gender,draft.pronouns)].filter(Boolean).join(" · ")}/>}</div>
           </div></div>
           {draft.bio.trim()?<div style={{fontSize:13,color:C.textSub,lineHeight:1.5,marginTop:10}}>{draft.bio}</div>:null}
-          <div style={{display:"flex",flexWrap:"wrap",gap:5,marginTop:10}}>{draft.disciplines.map(d=><span key={d} style={{fontSize:12,color:C.textSub,background:C.surface,border:"1px solid "+C.border,borderRadius:6,padding:"2px 8px"}}>{d}</span>)}</div>
+          <div style={{display:"flex",flexWrap:"wrap",gap:5,marginTop:10}}>{draft.disciplines.map(d=><span key={d} style={{fontSize:12,color:C.textSub,background:C.surface,border:"1px solid "+C.border,borderRadius:6,padding:"2px 8px"}}>{DL[d]||d}</span>)}</div>
           <div style={{fontSize:11.5,color:C.textMuted,marginTop:9}}>{profileGradeRows(draft).map(g=>g.label+(g.grade?" "+g.grade:"")+(gradeRoleText(g)?" ("+gradeRoleText(g)+")":"")).join(" · ")}</div>
+          {/* THE REST OF WHAT THIS EDITOR COLLECTS AND A PROFILE SHOWS (owner, 2026-11-23): the preview stopped at the grades, so availability, certifications, belay devices and the skills with their last-practiced month were entered above and shown nowhere before Save. Worded as FullProfile words them; the "time for a refresher" hint is left out because only you see it. */}
+          {pvWeek.length?<div style={pvSec}><div style={pvHead}>Availability</div><div style={{display:"flex",gap:5}}>{AVAIL_SLOT_OPTS.map(o=>{const on=availSlotOn(pvWeek,o[0]);return <span key={o[0]} style={{flex:"1 1 0",minWidth:0,textAlign:"center",lineHeight:1.25,padding:"6px 2px",borderRadius:13,border:"1px solid "+(on?C.blue:C.border),background:on?C.blueBg:C.surface,color:on?C.onSolid:C.textMuted,fontSize:11.5,fontWeight:700}}>{o[1]}</span>;})}</div></div>:null}
+          {pvCerts.length?<div style={pvSec}><div style={pvHead}>Certifications</div><div style={pvRow}>{pvCerts.map(c=>{const ex=certExpiryInfo((draft.certExpiry||{})[c]);return <span key={c} style={{...pvChip,color:ex&&ex.expired?C.amber:C.text,background:ex&&ex.expired?C.amberBg:C.surface}}>{c}{ex?" · "+ex.label:""}</span>;})}</div></div>:null}
+          {pvBelay.length?<div style={pvSec}><div style={pvHead}>Belay devices</div><div style={pvRow}>{pvBelay.map(b=><span key={b[0]} style={pvChip}>{belayLabel(b[0])+" · "+b[1]}</span>)}</div></div>:null}
+          {pvSkills.length?<div style={pvSec}><div style={pvHead}>Skills</div><div style={pvRow}>{pvSkills.map(sk=>{const k=skillKeyOf(sk);const when=k?practicedLabel((draft.skillPracticed||{})[k]):"";return <span key={sk} style={pvChip}>{sk}{when?<span style={{color:C.textMuted}}>{" · practiced "+when}</span>:null}</span>;})}</div></div>:null}
+          {pvMissing.length?<div style={{fontSize:11.5,color:C.textMuted,marginTop:11,lineHeight:1.45}}>{"Not on your profile yet: "+pvMissing.join(", ")+"."}</div>:null}
         </div>
-        <div style={{fontSize:12,color:C.textMuted,marginTop:8,lineHeight:1.4}}>This preview reflects your privacy settings. Your real name stays hidden behind your @username unless the toggle above is on.</div>
+        <div style={{fontSize:12,color:C.textMuted,marginTop:8,lineHeight:1.4}}>This preview reflects your privacy settings. Your real name stays hidden behind your @username unless the toggle above is on. Your zip code and emergency contact are never shown to anyone.</div>
       </div>
     </div>
   </div>);

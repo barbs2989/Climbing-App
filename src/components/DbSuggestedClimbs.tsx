@@ -1,10 +1,11 @@
 import { useContext, useState } from "react";
 import { ClimberCtx } from "../../lib/climberCtx.js";
 import { useRecentRouteIds } from "../../lib/recent";
-import { useScopedWishlistRoutes, useSubtreeRoutes, useRoutesByIds, useAreaClassics } from "../../lib/db";
+import { useScopedWishlistRoutes, useSubtreeRoutes, useRoutesByIds, useAreaClassics, useAreaClimbStats } from "../../lib/db";
 import { BTN } from "../../lib/buttonStyles.js";
 import LoadingRows from "./LoadingRows.tsx";
 import { DISCIPLINES, placeOf } from "../../lib/areaBrowserShared.js";
+import { displayGrade, splitProtection } from "../../lib/grade";
 import Chevron from "./Chevron.tsx";
 import RouteRow from "./RouteRow.tsx";
 import type { RouteRowRoute } from "./RouteRow.tsx";
@@ -13,7 +14,7 @@ import type { C as Palette } from "../../ClimbMatchCore.jsx";
 interface DbSuggestedClimbsRow extends RouteRowRoute { id: string | number }
 export interface DbSuggestedClimbsProps {
   /** The area page the suggestions sit on. */
-  area: { id: string; name?: string; area_type?: string };
+  area: { id: string; name?: string; area_type?: string; disciplines?: string[] | null };
   onOpen: (r: RouteRowRoute) => void;
   C: typeof Palette;
 }
@@ -46,7 +47,17 @@ export default function DbSuggestedClimbs({ area, onOpen, C }: DbSuggestedClimbs
   const { data: recentAll } = useRoutesByIds(recentIds);
   /* The discipline slots: what the climber has LOGGED, then the grades STATED on their profile, then what
      they have been browsing (suggestDiscSlots). */
-  const slots = discSlots ? discSlots(profile, recentAll || [], undefined, stated) : [];
+  /* WHICH DISCIPLINES THIS AREA HAS, so no slot is spent on one it has no climb of. A crag or peak row lists
+     them (`disciplines`); above that the list is empty, and the area page's own climb counts say (the same
+     cached read its CLIMBS HERE chart makes). Until that answers there are no slots: firing three reads and
+     then swapping them would fetch for rows that are about to be dropped. A failed read means unknown, and
+     every slot is kept. */
+  const own = Array.isArray(area.disciplines) && area.disciplines.length ? area.disciplines : null;
+  const statsQ = useAreaClimbStats(scoped && !own ? area.id : null);
+  const byDisc = statsQ.data && Array.isArray(statsQ.data.by_disc) ? (statsQ.data.by_disc as Array<{ disc: string; n: number }>).filter(d => d && Number(d.n) > 0).map(d => d.disc) : null;
+  const here = own || byDisc;
+  const hereKnown = !!here || !scoped || statsQ.isError;
+  const slots = discSlots && hereKnown ? discSlots(profile, recentAll || [], undefined, stated, here) : [];
   /* EVERY SLOT RANKS ITS OWN POOL (2026-11-19). There was one pool for all of them: the area's first 120
      climbs BY NAME. On a region of 8,238 climbs that is the names sorting before "Ai", so "Because you've
      been climbing Sport" was the grade-nearest of whatever happened to start with a quote mark or a digit.
@@ -69,7 +80,10 @@ export default function DbSuggestedClimbs({ area, onOpen, C }: DbSuggestedClimbs
     .sort((a, b) => (recentPos[a.id] ?? 99) - (recentPos[b.id] ?? 99))
     .slice(0, 5);
   const recentSet = new Set(recent.map(r => r.id));
-  const fresh = (r: DbSuggestedClimbsRow) => !completedIds.has(r.id) && !(wishlist || []).includes(r.id) && !recentSet.has(r.id);
+  /* An X or R/X climb is never SUGGESTED, in a ranked row or in the fallback list (suggestTooBold in core says
+     why). Your own objectives and the climbs you opened stay: those are your picks, not ours. */
+  const tooBold = (r: DbSuggestedClimbsRow) => /X/.test(splitProtection(displayGrade(r)).prot || "");
+  const fresh = (r: DbSuggestedClimbsRow) => !completedIds.has(r.id) && !(wishlist || []).includes(r.id) && !recentSet.has(r.id) && !tooBold(r);
   const classicPicks = ((classics || []) as DbSuggestedClimbsRow[]).filter(fresh);
   const classicIds = new Set(classicPicks.map(r => r.id));
   const behindClassics = (rows: unknown) => classicPicks.concat(((rows || []) as DbSuggestedClimbsRow[]).filter(r => fresh(r) && !classicIds.has(r.id)));
@@ -83,7 +97,7 @@ export default function DbSuggestedClimbs({ area, onOpen, C }: DbSuggestedClimbs
   /* THE UNRANKED POOL, for the "nothing personal to show" row only: every discipline, best-rated first.
      Read only once the slots have answered and ranked nothing (or there are no slots), so a climber
      with personal rows does not pay for a list they will never be shown. */
-  const slotsPending = slotQs.some(q => q.isLoading);
+  const slotsPending = !hereKnown || slotQs.some(q => q.isLoading);
   const poolQ = useSubtreeRoutes(scoped && !slotsPending && !bands.length ? area.id : null, { sortBy: "stars_desc", pageSize: 60 });
   const candidates = behindClassics(poolQ.data);
   const noneYet = !objectives.length && !recent.length && !bands.length && !slotsPending;
@@ -95,7 +109,7 @@ export default function DbSuggestedClimbs({ area, onOpen, C }: DbSuggestedClimbs
      failed to load hid the whole section with nothing said. Loading and failure now show behind the
      same header; only a loaded, genuinely empty answer renders nothing. */
   const reads = [poolQ, ...slotQs];
-  const loading = !total && (reads.some(q => q.isLoading) || classicsQ.isLoading);
+  const loading = !total && (!hereKnown || reads.some(q => q.isLoading) || classicsQ.isLoading);
   const failed = !total && !loading && reads.some(q => q.isError) && (!!classicsQ.isError || !classics);
   if (!total && !loading && !failed) return null;
   const retry = () => { reads.forEach(q => { if (q.isError) q.refetch(); }); if (classicsQ.isError) classicsQ.refetch(); };

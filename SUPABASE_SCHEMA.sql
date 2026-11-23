@@ -9,7 +9,7 @@
 -- and commit the result in the same PR. `npm run gen:schema -- --check` exits 1 when this
 -- file has drifted from the live database.
 --
--- Counts: 86 tables, 851 columns, 458 keyed/checked constraints (150 foreign keys), 254 RLS policies.
+-- Counts: 86 tables, 851 columns, 459 keyed/checked constraints (150 foreign keys), 254 RLS policies.
 -- Not covered here: views, functions, triggers, standalone indexes (see supabase/migrations/).
 
 -- ── Foreign keys ───────────────────────────────────────────────────────────────
@@ -658,6 +658,7 @@ CREATE TABLE public.contributions (
   CONSTRAINT contributions_reason_len_ck CHECK (((reason IS NULL) OR (char_length(reason) <= 1000))),
   CONSTRAINT contributions_status_chk CHECK ((status = ANY (ARRAY['pending'::text, 'approved'::text, 'rejected'::text]))),
   CONSTRAINT contributions_value_len_ck CHECK (((value IS NULL) OR (length((value)::text) <= 20000))),
+  CONSTRAINT contributions_wall_order_shape_ck CHECK (((kind IS DISTINCT FROM 'wall_order'::text) OR COALESCE(((area_id IS NOT NULL) AND (route_id IS NULL) AND (jsonb_typeof(value) = 'object'::text) AND (jsonb_typeof((value -> 'order'::text)) = 'array'::text) AND ((jsonb_array_length((value -> 'order'::text)) >= 2) AND (jsonb_array_length((value -> 'order'::text)) <= 1000)) AND (length(COALESCE((value ->> 'note'::text), ''::text)) <= 400)), false))),
   CONSTRAINT contributions_area_id_fkey FOREIGN KEY (area_id) REFERENCES areas(id) ON DELETE CASCADE,
   CONSTRAINT contributions_reviewed_by_fkey FOREIGN KEY (reviewed_by) REFERENCES profiles(id) ON DELETE SET NULL,
   CONSTRAINT contributions_route_id_fkey FOREIGN KEY (route_id) REFERENCES routes(id) ON DELETE CASCADE

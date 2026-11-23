@@ -255,3 +255,22 @@ Held: Stewart Peak (page says Nutras Creek, row says Stewart Creek road), Dyer (
 McCullough Gulch points 870 m apart), Casco / French, Half Peak, Jones / Niagara (one unmapped coordinate),
 Vermilion (sources conflict), Spaulding / Sugarloaf (no mapped lot on Caribou Valley Road).
 - **Audit now:** SUMMIT_ONLY 198, NO_SUMMIT 40, CRAG_SUMMIT 0.
+
+## Photon retry for the ten untested routes (2026-11-23)
+
+Overpass was down on every server tried (502 "at capacity", 504, timeout), so the ten routes whose name
+search had failed went through Photon with several phrasings each (`scripts/photon3.mjs`).
+- **Written (2, `batch-p3.json`, unconfirmed, verified on re-read):** San Joaquin Mountain via San Joaquin
+  Ridge (Minaret Vista, where the ridge jeep road starts) and Mount Rose (the SR 431 pass point; the lot
+  adjoins it, so pass-level).
+- Storm King North Face already stores High Bridge, 70 m from the mapped campground point; nothing to do.
+- No match: Foerster (Isberg), Owens (Indian Wells Canyon), Smith Mountain (Albanita), Spanish Mountain
+  (Crown Valley), Stewart Peak (Nutras Creek), Diamond Peak OR (Pioneer Gulch), Sharkfin Tower (Boston
+  Basin), Spaulding / Sugarloaf (Caribou Valley Road). These starts are unsigned or unmapped.
+- **Audit now:** SUMMIT_ONLY 196, NO_SUMMIT 40, CRAG_SUMMIT 0.
+- What is left (audit JSON, 196 open): 78 stuck with no settling page, 27 stuck after the multi-start pass,
+  about 80 held (38 flagged weak, 17 with no placement, 21 with only a non-land-manager point, 9 with
+  placements that disagree), and 7 never in a batch. Of those 7, three Washington Pass routes (Cutthroat
+  "A Virtuous Circle", North Early Winter Spire "Constantino-Whitelaw", South Early Winters Spire "East
+  Buttress Direct") have no approach text; searches found no page for the first two, and the one page opened
+  for the third does not state where the party parked. Not pinned.
