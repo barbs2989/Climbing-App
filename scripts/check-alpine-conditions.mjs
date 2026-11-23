@@ -245,6 +245,16 @@ eq("the flags card and Sun and shade carry the ‹ › day step in their own hea
 eq("DAY BY DAY renders every forecast day, each a button that opens it in every section", /<DayByDay days=\{days\} di=\{di\} pick=\{setDayI\}/.test(cardSrc) && /function DayByDay(?:<[^>]*>)?\([\s\S]{0,1400}DAY BY DAY[\s\S]{0,200}days\.map\([\s\S]{0,2000}onClick=\{function \(\) \{ pick\(i\); \}\} aria-pressed=\{on\}/.test(cardSrc), true);
 eq("...and its start is the start box's own: none on a minimum estimate or past a one-day push", /startOn && !legs\.floor && d\.start && d\.daysEarly < 2/.test(cardSrc), true);
 eq("...and a missing neighbour day is a DISABLED button with a name, never a gap", /disabled=\{!n\} aria-label=\{n \? dir \+ " day: " \+ n\.name : "No "/.test(cardSrc), true);
+/* WHERE THE SNOW IS ASSUMED TO START (2026-11-23). The stored gain is the whole outing's climbing, so half
+   of it can reach below the trailhead on a long approach: Jack Mountain North Ridge read "No overnight
+   freeze at 1,643 ft". With a trailhead pin the midpoint is taken between the pin and the high point. */
+const JACK = { highPointFt: 9066, gainM: 14846 / 3.28084, waypoints: [{ type: "Trailhead", elev: 1900 }, { type: "Summit", elev: 9066 }] };
+eq("the snow floor is halfway between the TRAILHEAD pin and the high point, not half the outing's gain", A.snowFloorFt(JACK, null), { ft: 5483, basis: "trailhead" });
+eq("...a trailhead pin in metres is converted, and the source's 'trailhead/pass' spelling counts", A.snowFloorFt({ highPointFt: 9000, gainM: 3000, waypoints: [{ type: "trailhead/pass", elevM: 1000 }] }, null), { ft: 6140, basis: "trailhead" });
+eq("...a high camp still wins over both", A.snowFloorFt(JACK, 6200), { ft: 6200, basis: "camp" });
+eq("...no trailhead pin, or one with no height, falls back to half the gain and says so", [A.snowFloorFt({ highPointFt: 9000, gainM: 4000 / 3.28084 }, null), A.snowFloorFt({ highPointFt: 9000, gainM: 4000 / 3.28084, waypoints: [{ type: "Trailhead" }] }, null)], [{ ft: 7000, basis: "halfway" }, { ft: 7000, basis: "halfway" }]);
+eq("...a 'trailhead' at or above the high point is not measured from", A.snowFloorFt({ highPointFt: 9000, gainM: 4000 / 3.28084, waypoints: [{ type: "Trailhead", elev: 9400 }] }, null).basis, "halfway");
+eq("...and the card names which assumption it used", /floor\.basis === "trailhead" \? " Snow is assumed to reach down to " \+ uElev\(floor\.ft\) \+ ", halfway between the trailhead and the top\."/.test(cardSrc), true);
 
 console.log("\n3. SCRAMBLE — thunder sets the deadline; cold and wet is verglas, not a refreeze");
 const storm = run(forecast((d, h) => (d === T && h === 14 ? { code: 95 } : {})), { kind: "scramble", terrain: { snow: "no" }, highFt: 8000, snowFt: null, legs: { up: 4, down: 3, fromCamp: false, floor: false } });
