@@ -1,5 +1,6 @@
 import { tx } from "../../lib/tapWords.js";
 import { FONT_DISPLAY } from "../../lib/fonts.js";
+import { HOME_GLOW } from "../../lib/ScreenHero.jsx";
 import PullToRefresh from "./PullToRefresh.tsx";
 import { USE_DB } from "../../lib/supabase";
 import { ME, DLOCALE, C, ROUTES, seedIdentity, profileGradeRows, FALLBACK_AV, notifIcon, MOUNTAINS, isRecent, ago, fmtAgo } from "../../ClimbMatchCore.jsx";
@@ -170,7 +171,7 @@ export default function TodayTab({homeNearMe,_alerts,_condPrefs,_condSync,_isUid
    bare match handed a real connection the seed history of whoever shares their name — 11 rows
    for "Maya Chen", 8 for "Alex Torres". Same root cause as #735, on a surface its guard cannot
    see, because this never calls ticksFor. seedIdentity is the SAME predicate seedHistoryFor
-   uses, imported rather than restated. */.filter(function(x){return x.a&&x.a.date&&connections.some(function(c){return c.name===x.a.user&&seedIdentity(c);});}).concat(realFriendFeed).sort(function(x,y){return String(y.a.date).localeCompare(String(x.a.date));});return <div style={{padding:14,display:"flex",flexDirection:"column",gap:22}}><div><h1 style={{fontSize:21,fontWeight:800,lineHeight:1.15,margin:0,visibility:greetPending?"hidden":undefined}}>{greetLine}</h1><div style={{fontSize:12.5,color:C.textMuted,marginTop:3}}>{today}</div></div>{/* MOVED OFF CLIMBS. It reads `homeDismiss` -- a HOME list -- which is where it was always
+   uses, imported rather than restated. */.filter(function(x){return x.a&&x.a.date&&connections.some(function(c){return c.name===x.a.user&&seedIdentity(c);});}).concat(realFriendFeed).sort(function(x,y){return String(y.a.date).localeCompare(String(x.a.date));});return <div style={{padding:14,display:"flex",flexDirection:"column",gap:22}}><div style={wide?{background:HOME_GLOW,borderRadius:14,padding:"22px 18px 20px"}:undefined}><h1 style={{fontSize:21,fontWeight:800,lineHeight:1.15,margin:0,visibility:greetPending?"hidden":undefined}}>{greetLine}</h1><div style={{fontSize:12.5,color:C.textMuted,marginTop:3}}>{today}</div></div>{/* MOVED OFF CLIMBS. It reads `homeDismiss` -- a HOME list -- which is where it was always
        meant to live; on Climbs its dismiss button wrote to a list no other Climbs surface consults.
        It sits above "Finish setting up" because it is the broader action: that checklist fills gaps
        in a profile, this one starts it. */}
