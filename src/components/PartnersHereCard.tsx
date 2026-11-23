@@ -1,5 +1,5 @@
 import { tx } from "../../lib/tapWords.js";
-import { usePartnerAreaCount, usePartnersInArea, removePartnerArea, savePartnerArea, useCragRegular } from "../../lib/db";
+import { usePartnerAreaCount, usePartnersInArea, removePartnerArea, savePartnerArea, useCragRegular, useMyBlocked } from "../../lib/db";
 import { useState, useEffect } from "react";
 import Chevron from "./Chevron.tsx";
 import Av from "./Av.tsx";
@@ -47,7 +47,12 @@ export default function PartnersHereCard({ area, C, uid, myListings, onListMe, o
   useEffect(() => { setOptListed(null); }, [serverListed]);
   const listed = optListed == null ? serverListed : optListed;
   const count = countQ.data == null ? countQ.data : Math.max(0, countQ.data + (listed === serverListed ? 0 : listed ? 1 : -1));
-  const rows = (rowsQ.data || []).filter((p: PartnerRow) => p && p.id && String(p.id) !== String(uid));
+  /* CLIMBERS YOU BLOCKED are not shown here (review 2026-11-23): the search hides a climber who blocked YOU; the other
+     direction is filtered on the screen, as Partners and the route page do, and this card did neither. Its count leaves
+     them out in the database since 0498. */
+  const blockedQ = useMyBlocked(on ? uid : null);
+  const blockedIds = new Set(((blockedQ.data || []) as Array<{ blockedId?: string }>).map((b) => String(b.blockedId)));
+  const rows = (rowsQ.data || []).filter((p: PartnerRow) => p && p.id && String(p.id) !== String(uid) && !blockedIds.has(String(p.id)));
   const toggle = async () => {
     if (!on || busy) return;
     setBusy(true);
