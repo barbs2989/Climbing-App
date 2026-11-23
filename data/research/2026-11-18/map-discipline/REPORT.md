@@ -268,3 +268,9 @@ search had failed went through Photon with several phrasings each (`scripts/phot
   (Crown Valley), Stewart Peak (Nutras Creek), Diamond Peak OR (Pioneer Gulch), Sharkfin Tower (Boston
   Basin), Spaulding / Sugarloaf (Caribou Valley Road). These starts are unsigned or unmapped.
 - **Audit now:** SUMMIT_ONLY 196, NO_SUMMIT 40, CRAG_SUMMIT 0.
+- What is left (audit JSON, 196 open): 78 stuck with no settling page, 27 stuck after the multi-start pass,
+  about 80 held (38 flagged weak, 17 with no placement, 21 with only a non-land-manager point, 9 with
+  placements that disagree), and 7 never in a batch. Of those 7, three Washington Pass routes (Cutthroat
+  "A Virtuous Circle", North Early Winter Spire "Constantino-Whitelaw", South Early Winters Spire "East
+  Buttress Direct") have no approach text; searches found no page for the first two, and the one page opened
+  for the third does not state where the party parked. Not pinned.
