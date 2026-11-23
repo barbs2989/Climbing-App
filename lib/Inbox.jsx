@@ -10,6 +10,7 @@ import SwipeRow from "../src/components/SwipeRow.tsx";
 import Av from "../src/components/Av.tsx";
 import ActionIcon from "../src/components/ActionIcon.tsx";
 import { POP_BACK } from "./popupChrome.js";
+import ListPage, { ListPageEmpty } from "../src/components/ListPage.tsx";
 import { HEAD_H, ZOOM } from "./wideLayout.js";
 import { dmKey, crewKey, MUTE_CHOICES } from "./conversationState.js";
 import { usePaneTop } from "./usePaneTop.js";
@@ -55,9 +56,9 @@ export default function Inbox({restrictedIds,dmUnavailable,crewUnavailable,dmLoa
   /* The drop-down leaves on a click outside it or Esc, as a website's menus do. The chat icon that
      opens it is not "outside": it toggles the drop-down itself. */
   const rootRef=useRef(null);
-  useEffect(function(){if(pane!=="drop"||!onDismiss)return undefined;const down=function(e){var t=e.target;if(rootRef.current&&!rootRef.current.contains(t)&&!(t.closest&&t.closest('[aria-label="Messages"]')))onDismiss();};const key=function(e){if(e.key==="Escape")onDismiss();};document.addEventListener("mousedown",down);document.addEventListener("keydown",key);return function(){document.removeEventListener("mousedown",down);document.removeEventListener("keydown",key);};},[pane,onDismiss]);
+  useEffect(function(){if(pane!=="drop"||!onDismiss)return undefined;const down=function(e){var t=e.target;if(rootRef.current&&!rootRef.current.contains(t)&&!(t.closest&&t.closest('[aria-label="Messages"]'))&&!(t.closest&&/* a tap inside a page or sheet opened from here (Archived chats, a confirm) is not "outside" */t.closest('[role=dialog]')))onDismiss();};const key=function(e){if(e.key==="Escape")onDismiss();};document.addEventListener("mousedown",down);document.addEventListener("keydown",key);return function(){document.removeEventListener("mousedown",down);document.removeEventListener("keydown",key);};},[pane,onDismiss]);
   const [itab,setItab]=useState("friends");usePaneTop(rootRef,itab);const [msgQ,setMsgQ]=useState("");const mqOk=str=>!msgQ.trim()||(str||"").toLowerCase().includes(msgQ.trim().toLowerCase());
-  const [menuFor,setMenuFor]=useState(null);const [archOpen,setArchOpen]=useState(false);
+  const [menuFor,setMenuFor]=useState(null);const [archOpen,setArchOpen]=useState(false);const [archQ,setArchQ]=useState("");
   const convo=_convo||NO_CONVO,onAct=_onAct||function(){};
   const dmIds=Object.keys(msgs||{}).filter(id=>(msgs[id]||[]).length>0);
   const _realDmIds=dmIds.filter(id=>!/^\d+$/.test(id));const dmProfilesQ=useProfilesByIds(_realDmIds);
@@ -76,6 +77,8 @@ export default function Inbox({restrictedIds,dmUnavailable,crewUnavailable,dmLoa
   const crewDesc=t=>{const key=crewKey(t.cr.id),lastTs=(t.last&&t.last.ts)||0;return {kind:"crew",key:key,id:t.cr.id,dbId:t.cr._dbId,name:(t.r.name||"Crew")+" crew",lastTs:lastTs,archived:convo.isArchived(key,lastTs)};};
   const dmLive=dmThreads.filter(t=>!dmDesc(t).archived),dmArch=dmThreads.filter(t=>dmDesc(t).archived&&!(restrictedIds&&restrictedIds.has(String(t.c.id))));
   const crewLive=crewThreads.filter(t=>!crewDesc(t).archived),crewArch=crewThreads.filter(t=>crewDesc(t).archived);
+  /* The Archived chats page closes with its last row: left set, the next Archive reopened it by itself (2026-11-23). */
+  const _archN=(itab==="crews"?crewArch:dmArch).length;useEffect(function(){if(!_archN)setArchOpen(false);},[_archN,itab]);
 
   const friendsNoDM=(connections||[]).filter(f=>dmIds.indexOf(String(f.id))<0);
   const lastTxt=m=>m?((m.from==="me"?"You: ":"")+(m.image?"Photo":m.text)):null;
@@ -90,7 +93,7 @@ export default function Inbox({restrictedIds,dmUnavailable,crewUnavailable,dmLoa
   const Thread=function(d,nu,open,body,restricted){
     const muted=convo.isMuted(d.key),marked=convo.isMarkedUnread(d.key),unreadish=nu>0||marked;
     return <SwipeRow hover key={d.key} onDelete={()=>onAct("delete",d)} onArchive={d.archived?undefined:()=>onAct("archive",d)}><div style={row}><div style={rowTop}>
-      <div {...clickable(open)} style={SZ5}>{body(unreadish)}</div>
+      <div {...clickable(function(){/* a chat opened from the Archived chats page lands under it otherwise */setArchOpen(false);open();})} style={SZ5}>{body(unreadish)}</div>
       {muted?<span role="img" aria-label="Muted" style={{display:"inline-flex",flexShrink:0}}><ActionIcon name="bell-off" size={14} color={C.textMuted}/></span>:null}
       {nu>0?<span aria-label={nu+" unread"} style={{flexShrink:0,minWidth:18,height:18,borderRadius:9,background:muted?C.border:C.blueSolid,color:muted?C.textSub:C.onSolid,fontSize:11,fontWeight:800,display:"flex",alignItems:"center",justifyContent:"center",padding:"0 5px"}}>{nu}</span>:marked?<span role="img" aria-label="Marked unread" style={{flexShrink:0,width:10,height:10,borderRadius:5,background:muted?C.textMuted:C.blueSolid}}/>:null}
       <button onClick={()=>setMenuFor(m=>m===d.key?null:d.key)} aria-label={"Options for "+d.name} aria-expanded={menuFor===d.key} style={{minHeight:44,flexShrink:0,alignSelf:"stretch",minWidth:36,background:"none",border:"none",color:C.textMuted,fontSize:18,fontWeight:700,cursor:"pointer",padding:"0 8px"}}>⋯</button>
@@ -99,8 +102,9 @@ export default function Inbox({restrictedIds,dmUnavailable,crewUnavailable,dmLoa
   const dmRow=function(t){var d=dmDesc(t);var nu=(dmUnread||{})[t.c.id]||0;return Thread(d,nu,()=>onOpenDM(t.c),function(bold){return <><Av src={t.c.avatar} size={42} online={t.c.online}/><div style={{flex:1,minWidth:0}}><div style={{display:"flex",alignItems:"center",gap:5,minWidth:0}}><span style={{fontSize:14,fontWeight:700,overflowWrap:"anywhere"}}>{pubName(t.c)}</span></div>{(()=>{var sh=(t.c.objectiveIds||[]).filter(function(id){return (ME.objectiveIds||[]).indexOf(id)>=0;});var sr=sh.length?((routeById&&routeById(sh[0]))||ROUTES.find(function(r){return r.id===sh[0];})||null):null;return sr?<div style={{fontSize:11,color:C.blue,fontWeight:600,marginTop:1,overflowWrap:"anywhere"}}>{"↳ both want "+sr.name}</div>:null;})()}<div style={bold?Object.assign({},prev,{color:C.text,fontWeight:600}):prev}>{lastTxt(t.last)||tx("Tap to open")}</div></div></>;},!!(restrictedIds&&restrictedIds.has(String(t.c.id))));};
   const crewRow=function(t){var d=crewDesc(t);return Thread(d,0,()=>onOpenCrew(t.cr),function(bold){var muted=convo.isMuted(d.key);return <><div style={{width:42,height:42,borderRadius:10,background:C.blueBg,display:"flex",alignItems:"center",justifyContent:"center",flexShrink:0}}><ActionIcon name="crews" size={20} color={C.blue}/></div><div style={{flex:1,minWidth:0}}><div style={{fontSize:14,fontWeight:700}}>{t.r.name||"Crew"}{t.un?<span style={{marginLeft:6,fontSize:12,fontWeight:800,color:muted?C.textSub:C.onSolid,background:muted?C.border:C.blueSolid,borderRadius:9,padding:"1px 7px",verticalAlign:"middle"}}>{t.un+" new"}</span>:null}</div><div style={bold?Object.assign({},prev,{color:C.text,fontWeight:600}):prev}>{lastTxt(t.last)||(crewSize(t.cr)+" climber"+(crewSize(t.cr)===1?"":"s")+tx(" · tap to open"))}</div></div></>;});};
   /* Archived chats sit under their own heading, closed until asked for, as Messenger keeps them out of the
-     list without deleting anything. A new message brings a thread back by itself. */
-  const archBlock=function(list,render){if(!list.length)return null;return <div style={{marginTop:14}}><button onClick={()=>setArchOpen(o=>!o)} aria-expanded={archOpen} style={{display:"inline-flex",alignItems:"center",minHeight:44,background:"none",border:"none",padding:"0 2px",color:C.blue,fontSize:13,fontWeight:700,cursor:"pointer"}}>{(archOpen?"Hide archived chats":"Archived chats")+" ("+list.length+")"}</button>{archOpen?<div style={{marginTop:6}}>{list.map(render)}</div>:null}</div>;};
+     list without deleting anything. A new message brings a thread back by itself. Since 2026-11-19 (owner) the heading is a button and the
+     archived threads are a page with a search box: it was a dropdown at the foot of the tab. */
+  const archBlock=function(list,render,nameOf){if(!list.length)return null;const ql=archQ.trim().toLowerCase();const rows=list.filter(function(t){return !ql||String(nameOf(t)||"").toLowerCase().includes(ql);});return <div style={{marginTop:14}}><button type="button" aria-haspopup="dialog" onClick={()=>setArchOpen(true)} style={{display:"inline-flex",alignItems:"center",minHeight:44,background:"none",border:"none",padding:"0 2px",color:C.blue,fontSize:13,fontWeight:700,cursor:"pointer"}}>{"Archived chats ("+list.length+") →"}</button>{archOpen?<ListPage zIndex={1150} title={"Archived chats ("+list.length+")"} onClose={()=>setArchOpen(false)} search={{value:archQ,onChange:setArchQ,label:"Search archived chats",placeholder:"Search archived chats by name"}}>{rows.map(render)}{!rows.length?<ListPageEmpty>{"No archived chats match “"+archQ.trim()+"”."}</ListPageEmpty>:null}</ListPage>:null}</div>;};
   return (<div ref={rootRef} style={pane?PANE_STYLE[pane]:{position:"fixed",inset:0,background:C.bg,zIndex:1100,overflowY:"auto",overscrollBehavior:"contain",maxWidth:520,margin:"0 auto",boxSizing:"border-box"}}>
     <div style={{position:"sticky",top:0,background:C.surface,borderBottom:"1px solid "+C.border,padding:"12px 16px",display:"flex",alignItems:"center",gap:10,zIndex:2}}>
       {pane==="drop"?null:<button onClick={onClose} style={POP_BACK}>← Back</button>}
@@ -115,12 +119,12 @@ export default function Inbox({restrictedIds,dmUnavailable,crewUnavailable,dmLoa
         <div className="cm-stagger">{mainT.map(dmRow)}</div>
         {friendsNoDM.length?<div style={{marginTop:dmThreads.length?10:0}}><div style={lbl}>Start a chat</div><div style={{display:"flex",gap:12,flexWrap:"wrap"}}>{friendsNoDM.map(f=><button key={f.id} onClick={()=>onOpenDM(f)} style={{display:"flex",flexDirection:"column",alignItems:"center",gap:5,background:"transparent",border:"none",cursor:"pointer",width:64}}><Av src={f.avatar} size={46} online={f.online}/><span style={{fontSize:12,color:C.textSub,maxWidth:64,overflowWrap:"anywhere"}}>{pubFirst(f)}</span></button>)}</div></div>:null}
         {(!mainT.length&&!reqT.length&&!friendsNoDM.length)?<div style={{textAlign:"center",padding:archT.length?"28px 20px 8px":"48px 20px",color:C.textMuted}}><div style={{display:"flex",justifyContent:"center",marginBottom:10}}><ActionIcon name="chat" size={34} color={C.textMuted}/></div><div style={{fontSize:12,color:C.textMuted,fontWeight:600,marginBottom:5}}>{(dmUnavailable||dmNamesUnavailable)?"Couldn't load your chats":(dmLoading||dmNamesLoading)?"Loading your chats…":archT.length?"Every chat is archived":"No friend chats yet"}</div>{(dmLoading||dmNamesLoading)&&!(dmUnavailable||dmNamesUnavailable)?null:<div style={{fontSize:13,lineHeight:1.6}}>{(dmUnavailable||dmNamesUnavailable)?"Your conversations are still here — this list just couldn't be loaded. Try again in a moment.":archT.length?"They come back here when someone writes. Open Archived chats to read them now.":"Message a partner from their profile and your chats will live here."}</div>}</div>:null}
-        {archBlock(archT,dmRow)}
+        {archBlock(archT,dmRow,function(t){return pubName(t.c);})}
       </div>;})():null}
       {itab==="crews"?(()=>{const shown=t=>(!msgQ.trim()||searchMatches(msgQ,t.r.name));const liveT=crewLive.filter(shown),archT=crewArch.filter(shown);return <div>
         {crewUnavailable?<div style={{fontSize:12.5,color:C.textMuted,lineHeight:1.6,padding:"6px 0 10px"}}>Couldn’t check your crew chats for new messages — the counts here may be behind until the connection returns.</div>:null}
         {liveT.length?<>{hint}{liveT.map(crewRow)}</>:<div style={{textAlign:"center",padding:archT.length?"28px 20px 8px":"48px 20px",color:C.textMuted}}><div style={{display:"flex",justifyContent:"center",marginBottom:10}}><ActionIcon name="chat" size={34} color={C.textMuted}/></div><div style={{fontSize:12,color:C.textMuted,fontWeight:600,marginBottom:5}}>{archT.length?"Every crew chat is archived":"No crew chats yet"}</div><div style={{fontSize:13,lineHeight:1.6}}>{archT.length?"They come back here when someone writes. Open Archived chats to read them now.":"Start a crew on a climb and the conversation shows up here."}</div></div>}
-        {archBlock(archT,crewRow)}
+        {archBlock(archT,crewRow,function(t){return (t.r&&t.r.name)||"Crew";})}
       </div>;})():null}
     </div>
   </div>);
