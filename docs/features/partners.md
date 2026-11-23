@@ -94,7 +94,7 @@ whole guide feature on 2026-11-14 (owner). This doc covers the partners mode (`l
   ("Listed across Utah" for an ancestor match; it does not repeat the disciplines the chips show), the match box on the right (or its refusal);
   *where · ~distance · pace* on one line; the discipline/grade chips; *✓ Overlaps yours · Usually free: …*; the bio; then the list's extras
   (`cardExtras` in PartnerSearch: shared objectives with Form crew / Invite, *+ Invite <name> to <crew>* — one crew is one button, more fold under an
-  `aria-expanded` *+ Invite <name> to a crew · N* toggle with a chevron — and mutual friends); the *N climbs · N vouches* chips (`partner_counts`;
+  `aria-expanded` *+ Invite <name> to a crew · N* toggle with a chevron — and mutual friends); an invite opens the Invite to crew sheet and stays on this list, after which the card reads *Invited to <crew>* with **View crew** (`onOpenCrew`); shared objectives resolve through `pickLocal`, so a database route counts, not only an example one; the *N climbs · N vouches* chips (`partner_counts`;
   climbs opens the résumé when it is public, vouches opens the profile's Vouches tab; unknown counts are left out, never shown as 0); the action
   (*Plan a session at <place>* — under Pick an area, the climber's OWN matching listing, not a searched state — or *Form crew* on a route) spanning
   the card; then *+ Add friend* (friend state) and *Full profile & vouches*. An example climber passes its camelCase object as `cand`, so its score,

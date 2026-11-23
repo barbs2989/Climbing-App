@@ -566,7 +566,7 @@ try {
   // rendered fine. Comparing against this baseline asks the question that actually
   // matters: did opening the overlay change the screen at all?
   // No single tab hosts every overlay. Several are rendered inside one tab's subtree and
-  // simply do not exist elsewhere: alertsOpen and unfinishedOpen live on Home, crewListOpen
+  // simply do not exist elsewhere: alertsOpen and unfinishedOpen live on Home, crewAllOpen
   // on Crew, areaTreeOpen on Climbs. Opening those from the Profile tab leaves the screen
   // untouched, which reads as "the overlay is dead" when the truth is it was never mounted.
   //
