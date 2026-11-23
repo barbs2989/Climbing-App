@@ -36,7 +36,7 @@ const URGENT = new Set(["A child may be at risk", "Threats or violence", "Someon
 const KIND: Record<string, string> = {
   message: "a direct message", crew_message: "a crew-chat message", group_post: "a group post",
   group_event: "a group event", comment: "a comment", trip_report: "a trip report", group: "a group",
-  topo: "a topo", list: "a list", profile: "a profile",
+  topo: "a topo photo", topo_line: "a line drawn on a topo", list: "a list", profile: "a profile",
 };
 
 serve(async (req) => {

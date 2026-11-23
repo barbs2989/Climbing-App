@@ -9,7 +9,7 @@
 -- and commit the result in the same PR. `npm run gen:schema -- --check` exits 1 when this
 -- file has drifted from the live database.
 --
--- Counts: 87 tables, 862 columns, 466 keyed/checked constraints (152 foreign keys), 258 RLS policies.
+-- Counts: 87 tables, 863 columns, 467 keyed/checked constraints (152 foreign keys), 259 RLS policies.
 -- Not covered here: views, functions, triggers, standalone indexes (see supabase/migrations/).
 
 -- ── Foreign keys ───────────────────────────────────────────────────────────────
@@ -2019,12 +2019,15 @@ CREATE TABLE public.topo_lines (
   created_at timestamp with time zone NOT NULL DEFAULT now(),
   variants jsonb NOT NULL DEFAULT '[]'::jsonb,
   variant_labels jsonb NOT NULL DEFAULT '[]'::jsonb,
+  moderation text NOT NULL DEFAULT 'visible'::text,
   CONSTRAINT topo_lines_pkey PRIMARY KEY (id),
+  CONSTRAINT topo_lines_moderation_chk CHECK ((moderation = ANY (ARRAY['visible'::text, 'held'::text, 'removed'::text]))),
   CONSTRAINT topo_lines_created_by_fkey FOREIGN KEY (created_by) REFERENCES profiles(id) ON DELETE CASCADE,
   CONSTRAINT topo_lines_route_id_fkey FOREIGN KEY (route_id) REFERENCES routes(id) ON DELETE CASCADE,
   CONSTRAINT topo_lines_topo_id_fkey FOREIGN KEY (topo_id) REFERENCES topos(id) ON DELETE CASCADE
 );
 ALTER TABLE public.topo_lines ENABLE ROW LEVEL SECURITY;
+CREATE POLICY "moderation hides taken-down content" ON public.topo_lines AS RESTRICTIVE FOR SELECT TO public USING (((moderation = 'visible'::text) OR (created_by = auth.uid()) OR is_admin(auth.uid())));
 CREATE POLICY "topo_lines authed insert" ON public.topo_lines AS PERMISSIVE FOR INSERT TO public WITH CHECK (((( SELECT auth.uid() AS uid) IS NOT NULL) AND (( SELECT auth.uid() AS uid) = created_by)));
 CREATE POLICY "topo_lines own delete" ON public.topo_lines AS PERMISSIVE FOR DELETE TO public USING ((( SELECT auth.uid() AS uid) = created_by));
 CREATE POLICY "topo_lines own update" ON public.topo_lines AS PERMISSIVE FOR UPDATE TO public USING ((( SELECT auth.uid() AS uid) = created_by)) WITH CHECK ((( SELECT auth.uid() AS uid) = created_by));
@@ -2136,7 +2139,7 @@ CREATE TABLE public.user_reports (
   snapshot_at timestamp with time zone,
   CONSTRAINT user_reports_pkey PRIMARY KEY (id),
   CONSTRAINT user_reports_status_check CHECK ((status = ANY (ARRAY['open'::text, 'reviewing'::text, 'actioned'::text, 'dismissed'::text]))),
-  CONSTRAINT user_reports_target_kind_chk CHECK (((target_kind IS NULL) OR (target_kind = ANY (ARRAY['message'::text, 'crew_message'::text, 'group_post'::text, 'group_event'::text, 'comment'::text, 'trip_report'::text, 'group'::text, 'topo'::text, 'list'::text, 'profile'::text])))),
+  CONSTRAINT user_reports_target_kind_chk CHECK (((target_kind IS NULL) OR (target_kind = ANY (ARRAY['message'::text, 'crew_message'::text, 'group_post'::text, 'group_event'::text, 'comment'::text, 'trip_report'::text, 'group'::text, 'topo'::text, 'topo_line'::text, 'list'::text, 'profile'::text])))),
   CONSTRAINT user_reports_reporter_fkey FOREIGN KEY (reporter) REFERENCES auth.users(id) ON DELETE SET NULL,
   CONSTRAINT user_reports_reviewed_by_fkey FOREIGN KEY (reviewed_by) REFERENCES profiles(id) ON DELETE SET NULL
 );
