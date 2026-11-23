@@ -1,0 +1,353 @@
+{
+ "wa_three_o_clock_rock_rubber_soul": {
+  "area": "wa_three_o_clock_rock",
+  "review": {
+   "sources": [
+    "https://cascadeclimbers.com/forum/topic/50828-tr-darrington-three-oclock-rock-magic-bus-5112007",
+    "https://www.mountainproject.com/area/108543607/three-oclock-rock",
+    "https://www.mountainproject.com/route/106007016/total-soul",
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/eight-mile-trail-65402",
+    "https://www.fs.usda.gov/r06/passes/recreation-sites-where-day-use-fees-are-charged",
+    "https://www.fs.usda.gov/r06/mbs/passes",
+    "https://www.fs.usda.gov/r06/mbs/recreation/wilderness-regulations",
+    "https://www.fs.usda.gov/r06/mbs/alerts"
+   ]
+  },
+  "ledger": [],
+  "sql_fixes": [],
+  "held": [],
+  "disputed": [],
+  "notes": "CATALOG DEFECT (route largely absorbed by another row). No current publisher lists Rubber Soul: Mountain Project's Three O'Clock Rock area (27 routes) has no Rubber Soul page, and theCrag was refused (403, skipped for the run). The only account found (a 2009 CascadeClimbers post, read in the owner's Chrome) describes it as an older North Buttress line that started left of the bushy seam near the original Silent Running start, joined what is now Total Soul partway up its 3rd pitch and left it early on the 5th, and was rarely climbed. So most of it is now pitches of wa_three_o_clock_rock_total_soul. Stored grade 5.8, commitment III and gear 'gear to 2 in' have no source found; pitches null left as is. Duplicate/overlap pair to report: wa_three_o_clock_rock_rubber_soul vs wa_three_o_clock_rock_total_soul (not merged). Access: its current object (rules, group_limit 12, land_manager) is already the pass-free form and every field is supported by the Eight-Mile trail page and the forest wilderness rules page; copying wa_magic_bus would ADD the Northwest Forest Pass line, which no official page supports for this trailhead, so no access change proposed here (see the held access on the sibling rows)."
+ },
+ "wa_20th_century_clock": {
+  "area": "wa_three_o_clock_rock",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/110023376/20th-century-clock",
+    "https://www.mountainproject.com/area/108543607/three-oclock-rock",
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/eight-mile-trail-65402",
+    "https://www.fs.usda.gov/r06/passes/recreation-sites-where-day-use-fees-are-charged",
+    "https://www.fs.usda.gov/r06/mbs/passes",
+    "https://www.fs.usda.gov/r06/mbs/recreation/wilderness-regulations",
+    "https://www.fs.usda.gov/r06/mbs/alerts"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.10a",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/110023376/20th-century-clock",
+      "fact": "5.10a YDS, Sport",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_20th_century_clock",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "pitches 0 is invalid. Mountain Project: one 150 ft sport length from atop a small tree to its own chains, then a rappel to the C.C.N.O.S. anchor (one length to one anchor). Count implied, not stated: unconfirmed after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/110023376/20th-century-clock"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_20th_century_clock",
+    "column": "length_m",
+    "from": null,
+    "to": 45,
+    "why": "Mountain Project states 150 ft (45 m). Single source (theCrag refused the browser; no other publisher lists the route). locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/110023376/20th-century-clock"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_20th_century_clock",
+    "column": "anchor",
+    "from": null,
+    "to": "Chain anchor",
+    "why": "Mountain Project names the route's top anchor as chains ('the chains of 20th century clock'). House spelling 'Chain anchor' (stored on 58 routes). Single source, locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/110023376/20th-century-clock"
+    ]
+   }
+  ],
+  "held": [
+   {
+    "table": "routes",
+    "id": "wa_20th_century_clock",
+    "column": "access",
+    "from": {
+     "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+     "rules": "Group size capped at 12 (people + stock combined) inside Glacier Peak Wilderness; larger groups must split with 1-mile separation. Campfires prohibited above 3,500 ft in wilderness.",
+     "permit": "None required — free self-issue wilderness permits available at trailheads/ranger stations for day/overnight travel where the peak is inside designated wilderness.",
+     "group_limit": 12,
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Darrington Ranger District)",
+     "parking_pass": "Northwest Forest Pass required at Mountain Loop Highway trailheads — $5/day or $30/year."
+    },
+    "to": {
+     "rules": "The Eight-Mile Trail to the rock enters the Boulder River Wilderness, where groups are capped at 12 people and stock combined.",
+     "group_limit": 12,
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Darrington Ranger District)",
+     "parking_pass": "Northwest Forest Pass required at Mountain Loop Highway trailheads — $5/day or $30/year."
+    },
+    "why": "HELD (brief U: pass rule re-check differs). The Eight-Mile Trail 654.02 page (updated 2026-04-17) confirms the trail enters Boulder River Wilderness with a 12-person limit, and the forest's wilderness rules page counts people and stock together, so the rules/group_limit/land_manager fields of wa_magic_bus are supported. But the Eight-Mile trail page names no pass, and the Region 6 list of sites where day-use fees are charged (updated 2026-09-15) lists no Mt. Baker-Snoqualmie site on FR 2060 (no Eight-Mile, Squire Creek or Three O'Clock trailhead). The wa_magic_bus parking_pass line (Northwest Forest Pass at Mountain Loop Highway trailheads, $5/$30) is therefore not backed by an official page for THIS trailhead. Owner choice: copy wa_magic_bus anyway, or copy the pass-free object live on wa_three_o_clock_rock_rubber_soul / wa_three_o_clock_rock_total_soul / wa_three_o_clock_rock_till_broad_daylight / wa_three_o_clock_rock_conan_s_crack (rules, group_limit, land_manager only), which every official page read supports. Road: no MBS alert names FR 2060 (only the Bedal–Barlow Pass winter closure from Nov 16, not on this road); absence of an alert is not proof it is open, so road status is unconfirmed. The stored object is the LEGACY template (Glacier Peak Wilderness, a Mount Rainier NP fee line) and is wrong either way: Three O'Clock Rock is reached through Boulder River Wilderness.",
+    "evidence": [
+     "https://www.fs.usda.gov/r06/mbs/recreation/trails/eight-mile-trail-65402",
+     "https://www.fs.usda.gov/r06/passes/recreation-sites-where-day-use-fees-are-charged",
+     "https://www.fs.usda.gov/r06/mbs/passes",
+     "https://www.fs.usda.gov/r06/mbs/recreation/wilderness-regulations",
+     "https://www.fs.usda.gov/r06/mbs/alerts"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "Bolt count not stated (MP: 'a rack of quickdraws', maybe a couple of small cams if the top feels runout). FA 'unknown' on MP: no placeholder proposed. Discipline sport matches MP but never locks from MP alone."
+ },
+ "wa_three_o_clock_rock_gastroblast": {
+  "area": "wa_three_o_clock_rock",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/124705535/gastroblast",
+    "https://www.mountainproject.com/area/108543607/three-oclock-rock",
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/eight-mile-trail-65402",
+    "https://www.fs.usda.gov/r06/passes/recreation-sites-where-day-use-fees-are-charged",
+    "https://www.fs.usda.gov/r06/mbs/passes",
+    "https://www.fs.usda.gov/r06/mbs/recreation/wilderness-regulations",
+    "https://www.fs.usda.gov/r06/mbs/alerts"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.10a",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/124705535/gastroblast",
+      "fact": "5.10a YDS PG13, Trad",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_three_o_clock_rock_gastroblast",
+    "column": "anchor",
+    "from": null,
+    "to": "Chain anchor",
+    "why": "Mountain Project: every belay is two 3/8 in bolts with chains. House spelling 'Chain anchor' (stored on 58 routes). Single source, locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/124705535/gastroblast"
+    ]
+   }
+  ],
+  "held": [
+   {
+    "table": "routes",
+    "id": "wa_three_o_clock_rock_gastroblast",
+    "column": "pitches",
+    "from": 2,
+    "to": 5,
+    "why": "HELD: Mountain Project gives 'Trad, 450 ft, 5 pitches' with a pitch-by-pitch breakdown (P1-P2 shared with Tidbits, P3-P4 its own, P5 the Kone's last pitch); stored says 2. One source for a change to an existing non-zero count; theCrag refused (403) and no other publisher was found.",
+    "evidence": [
+     "https://www.mountainproject.com/route/124705535/gastroblast"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_three_o_clock_rock_gastroblast",
+    "column": "length_m",
+    "from": null,
+    "to": 136,
+    "why": "HELD with the pitch count: MP states 450 ft (136 m) for the 5-pitch line; it only makes sense if pitches becomes 5.",
+    "evidence": [
+     "https://www.mountainproject.com/route/124705535/gastroblast"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_three_o_clock_rock_gastroblast",
+    "column": "access",
+    "from": null,
+    "to": {
+     "rules": "The Eight-Mile Trail to the rock enters the Boulder River Wilderness, where groups are capped at 12 people and stock combined.",
+     "group_limit": 12,
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Darrington Ranger District)",
+     "parking_pass": "Northwest Forest Pass required at Mountain Loop Highway trailheads — $5/day or $30/year."
+    },
+    "why": "HELD (brief U: pass rule re-check differs). The Eight-Mile Trail 654.02 page (updated 2026-04-17) confirms the trail enters Boulder River Wilderness with a 12-person limit, and the forest's wilderness rules page counts people and stock together, so the rules/group_limit/land_manager fields of wa_magic_bus are supported. But the Eight-Mile trail page names no pass, and the Region 6 list of sites where day-use fees are charged (updated 2026-09-15) lists no Mt. Baker-Snoqualmie site on FR 2060 (no Eight-Mile, Squire Creek or Three O'Clock trailhead). The wa_magic_bus parking_pass line (Northwest Forest Pass at Mountain Loop Highway trailheads, $5/$30) is therefore not backed by an official page for THIS trailhead. Owner choice: copy wa_magic_bus anyway, or copy the pass-free object live on wa_three_o_clock_rock_rubber_soul / wa_three_o_clock_rock_total_soul / wa_three_o_clock_rock_till_broad_daylight / wa_three_o_clock_rock_conan_s_crack (rules, group_limit, land_manager only), which every official page read supports. Road: no MBS alert names FR 2060 (only the Bedal–Barlow Pass winter closure from Nov 16, not on this road); absence of an alert is not proof it is open, so road status is unconfirmed. The row stores no access, so either object is an improvement.",
+    "evidence": [
+     "https://www.fs.usda.gov/r06/mbs/recreation/trails/eight-mile-trail-65402",
+     "https://www.fs.usda.gov/r06/passes/recreation-sites-where-day-use-fees-are-charged",
+     "https://www.fs.usda.gov/r06/mbs/passes",
+     "https://www.fs.usda.gov/r06/mbs/recreation/wilderness-regulations",
+     "https://www.fs.usda.gov/r06/mbs/alerts"
+    ]
+   }
+  ],
+  "disputed": [
+   "pitches: stored 2 vs Mountain Project 5 (450 ft)"
+  ],
+  "notes": "MP FA 'David Whitelaw, Duane Constantino, John Downing, 1983' — FA never set from MP alone; not proposed. Gastroblast shares pitches with Tidbits (wa_tidbits_first_pitch, itself a 'first pitch' row) and the Kone; MP lists it as its own route, so it stays a route, flagged here. MP: descent is four double-rope rappels down Tidbits with two 60 m ropes; about 8 draws plus cams to 1 in on P2; PG13. Related area defect (not mine): wa_the_quin_konehead_pre_memorial_route_aka_the_kone and wa_three_o_clock_rock_the_kone look like one route stored twice."
+ },
+ "wa_ginsu": {
+  "area": "wa_three_o_clock_rock",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/108543471/ginsu",
+    "https://www.mountainproject.com/area/108543607/three-oclock-rock",
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/eight-mile-trail-65402",
+    "https://www.fs.usda.gov/r06/passes/recreation-sites-where-day-use-fees-are-charged",
+    "https://www.fs.usda.gov/r06/mbs/passes",
+    "https://www.fs.usda.gov/r06/mbs/recreation/wilderness-regulations",
+    "https://www.fs.usda.gov/r06/mbs/alerts"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.10b",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108543471/ginsu",
+      "fact": "5.10b YDS, Trad",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 4,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108543471/ginsu",
+      "fact": "Trad, 4 pitches",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [],
+  "held": [
+   {
+    "table": "routes",
+    "id": "wa_ginsu",
+    "column": "fa",
+    "from": "Robert Cobb and Scott Preshos",
+    "to": "Robert Cobb and Scott Presho",
+    "why": "HELD: Mountain Project spells the second climber 'Scott Presho'; stored 'Preshos'. One source for a change to an existing FA; no independent publisher found (searches returned nothing).",
+    "evidence": [
+     "https://www.mountainproject.com/route/108543471/ginsu"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_ginsu",
+    "column": "access",
+    "from": {
+     "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+     "rules": "Group size capped at 12 (people + stock combined) inside Glacier Peak Wilderness; larger groups must split with 1-mile separation. Campfires prohibited above 3,500 ft in wilderness.",
+     "permit": "None required — free self-issue wilderness permits available at trailheads/ranger stations for day/overnight travel where the peak is inside designated wilderness.",
+     "group_limit": 12,
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Darrington Ranger District)",
+     "parking_pass": "Northwest Forest Pass required at Mountain Loop Highway trailheads — $5/day or $30/year."
+    },
+    "to": {
+     "rules": "The Eight-Mile Trail to the rock enters the Boulder River Wilderness, where groups are capped at 12 people and stock combined.",
+     "group_limit": 12,
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Darrington Ranger District)",
+     "parking_pass": "Northwest Forest Pass required at Mountain Loop Highway trailheads — $5/day or $30/year."
+    },
+    "why": "HELD (brief U: pass rule re-check differs). The Eight-Mile Trail 654.02 page (updated 2026-04-17) confirms the trail enters Boulder River Wilderness with a 12-person limit, and the forest's wilderness rules page counts people and stock together, so the rules/group_limit/land_manager fields of wa_magic_bus are supported. But the Eight-Mile trail page names no pass, and the Region 6 list of sites where day-use fees are charged (updated 2026-09-15) lists no Mt. Baker-Snoqualmie site on FR 2060 (no Eight-Mile, Squire Creek or Three O'Clock trailhead). The wa_magic_bus parking_pass line (Northwest Forest Pass at Mountain Loop Highway trailheads, $5/$30) is therefore not backed by an official page for THIS trailhead. Owner choice: copy wa_magic_bus anyway, or copy the pass-free object live on wa_three_o_clock_rock_rubber_soul / wa_three_o_clock_rock_total_soul / wa_three_o_clock_rock_till_broad_daylight / wa_three_o_clock_rock_conan_s_crack (rules, group_limit, land_manager only), which every official page read supports. Road: no MBS alert names FR 2060 (only the Bedal–Barlow Pass winter closure from Nov 16, not on this road); absence of an alert is not proof it is open, so road status is unconfirmed. The stored object is the LEGACY template (Glacier Peak Wilderness, a Mount Rainier NP fee line) and is wrong either way.",
+    "evidence": [
+     "https://www.fs.usda.gov/r06/mbs/recreation/trails/eight-mile-trail-65402",
+     "https://www.fs.usda.gov/r06/passes/recreation-sites-where-day-use-fees-are-charged",
+     "https://www.fs.usda.gov/r06/mbs/passes",
+     "https://www.fs.usda.gov/r06/mbs/recreation/wilderness-regulations",
+     "https://www.fs.usda.gov/r06/mbs/alerts"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "On the North Buttress, uphill of Silent Running / Total Soul. Rack per MP: draws plus a Darrington rack to about a #2.5 Friend, TCUs and RPs; MP notes it may have been retro-bolted since the older guidebook and the 4th pitch once carried an X rating (not current). No length or bolt count stated. Knobulator (wa_three_o_clock_rock_knobulator) has the same grade but no stated link; not called a duplicate."
+ },
+ "wa_luke_9_25": {
+  "area": "wa_three_o_clock_rock",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/117812021/luke-925",
+    "https://www.mountainproject.com/area/108543607/three-oclock-rock",
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/eight-mile-trail-65402",
+    "https://www.fs.usda.gov/r06/passes/recreation-sites-where-day-use-fees-are-charged",
+    "https://www.fs.usda.gov/r06/mbs/passes",
+    "https://www.fs.usda.gov/r06/mbs/recreation/wilderness-regulations",
+    "https://www.fs.usda.gov/r06/mbs/alerts"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.8",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/117812021/luke-925",
+      "fact": "5.8 YDS, Sport",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [],
+  "held": [
+   {
+    "table": "routes",
+    "id": "wa_luke_9_25",
+    "column": "access",
+    "from": {
+     "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+     "rules": "Group size capped at 12 (people + stock combined) inside Glacier Peak Wilderness; larger groups must split with 1-mile separation. Campfires prohibited above 3,500 ft in wilderness.",
+     "permit": "None required — free self-issue wilderness permits available at trailheads/ranger stations for day/overnight travel where the peak is inside designated wilderness.",
+     "group_limit": 12,
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Darrington Ranger District)",
+     "parking_pass": "Northwest Forest Pass required at Mountain Loop Highway trailheads — $5/day or $30/year."
+    },
+    "to": {
+     "rules": "The Eight-Mile Trail to the rock enters the Boulder River Wilderness, where groups are capped at 12 people and stock combined.",
+     "group_limit": 12,
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Darrington Ranger District)",
+     "parking_pass": "Northwest Forest Pass required at Mountain Loop Highway trailheads — $5/day or $30/year."
+    },
+    "why": "HELD (brief U: pass rule re-check differs). The Eight-Mile Trail 654.02 page (updated 2026-04-17) confirms the trail enters Boulder River Wilderness with a 12-person limit, and the forest's wilderness rules page counts people and stock together, so the rules/group_limit/land_manager fields of wa_magic_bus are supported. But the Eight-Mile trail page names no pass, and the Region 6 list of sites where day-use fees are charged (updated 2026-09-15) lists no Mt. Baker-Snoqualmie site on FR 2060 (no Eight-Mile, Squire Creek or Three O'Clock trailhead). The wa_magic_bus parking_pass line (Northwest Forest Pass at Mountain Loop Highway trailheads, $5/$30) is therefore not backed by an official page for THIS trailhead. Owner choice: copy wa_magic_bus anyway, or copy the pass-free object live on wa_three_o_clock_rock_rubber_soul / wa_three_o_clock_rock_total_soul / wa_three_o_clock_rock_till_broad_daylight / wa_three_o_clock_rock_conan_s_crack (rules, group_limit, land_manager only), which every official page read supports. Road: no MBS alert names FR 2060 (only the Bedal–Barlow Pass winter closure from Nov 16, not on this road); absence of an alert is not proof it is open, so road status is unconfirmed. The stored object is the LEGACY template (Glacier Peak Wilderness, a Mount Rainier NP fee line) and is wrong either way.",
+    "evidence": [
+     "https://www.fs.usda.gov/r06/mbs/recreation/trails/eight-mile-trail-65402",
+     "https://www.fs.usda.gov/r06/passes/recreation-sites-where-day-use-fees-are-charged",
+     "https://www.fs.usda.gov/r06/mbs/passes",
+     "https://www.fs.usda.gov/r06/mbs/recreation/wilderness-regulations",
+     "https://www.fs.usda.gov/r06/mbs/alerts"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "FA matches MP ('Tom Heins & Mike Altig 1988 (rebolted 2019)'), not locked (FA never from MP alone). MP: 'Sport, 90 ft', 7 bolts to a fixed anchor, but that describes pitch 1 only (rebolted 2019); a 5.10a second pitch still has old 1/4 in bolts. Stored pitches 2 agrees with the description but MP does not state a count; bolts/length not proposed because they cover only one of the two pitches. A 5.10a pitch on a 5.8 route is worth a note on the page (owner call). Single 60 m rope descent."
+ }
+}
