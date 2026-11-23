@@ -51,7 +51,9 @@ function ElevChartImpl({ pts, km, index, onIndex, color }: ElevChartProps) {
   const total = km ? km[n - 1] : n - 1;
   if (!(total > 0)) return null;
   const scrub = !!km && !!onIndex;
-  const mn = Math.min(...pts), mx = Math.max(...pts);
+  /* A loop, not Math.min(...pts): spreading a very long track as arguments overflows the stack. */
+  let mn = pts[0], mx = pts[0];
+  for (const v of pts) { if (v < mn) mn = v; if (v > mx) mx = v; }
   const x = (i: number) => P + ((km ? km[i] : i) / total) * (W - 2 * P);
   const y = (v: number) => H - P - ((v - mn) / (mx - mn || 1)) * (H - 2 * P);
   const d = pts.map((v, i) => `${i ? "L" : "M"}${x(i).toFixed(1)},${y(v).toFixed(1)}`).join(" ");
