@@ -57,7 +57,7 @@ const NOTIF_COPY = { crew: ["Crew updates", "Members joining, a climb coming up,
 const bigGooglePhoto = (u) => String(u || "").replace(/=s\d+(-c)?$/, "=s400-c");
 
 // Disciplines with a grade ladder: picking one of these means a grade is asked for before Continue.
-const GRADED_DISC = ["rock", "bouldering", "ice", "mixed", "aid"];
+const GRADED_DISC = ["rock", "bouldering", "alpine", "ice", "mixed", "aid"];
 
 // Each step's name in the desktop rail and its icon above the question.
 const STEP_META = { username: ["Username", "user"], photo: ["Photo", "camera"], home: ["Home area", "pin"], climb: ["Your climbing", "mountain"], about: ["About you", "partners"], alerts: ["Notifications", "bell"] };
