@@ -313,10 +313,10 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     `crewListOpen`, `unfinishedOpen` and `alertsOpen` rendered *identically to the bare
     profile tab* and were counted as walked. One of them is the Unfinished business dropdown,
     i.e. the guard written for **#637** never opened the thing #637 broke. It now tries each
-    tab and **fails** if opening an overlay changes nothing on any of them. Two are exempt by
+    tab and **fails** if opening an overlay changes nothing on any of them. They are exempt by
     name in `NEEDS_EXTRA_STATE`, each recording its real gate (`areaTreeOpen` renders as
-    `areaTreeOpen && selArea`; `crewListOpen` is a disclosure inside the crew finder's
-    results) — and a name there that stops being an overlay **fails**, so the exemption list
+    `areaTreeOpen && selArea`; `crewListOpen`, a disclosure, was one until 2026-11-19, when it
+    became the All crews page, `crewAllOpen`, which the walks open like any flag) — and a name there that stops being an overlay **fails**, so the exemption list
     cannot rot. The summary counts overlays **opened**, not declared.
   - Injection-tested: restoring the four #674 defects trips 7 assertions, and breaking an
     anchor fails with `ANCHOR LOST` **plus** "nothing below was actually checked".
@@ -1115,7 +1115,7 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     the anchor is asserted, like the opener's). All three pass on their OWN structure — Compare and the
     Review queue hand-pin a sticky header, All areas keeps its header outside the list that scrolls —
     so disabling `pinLayers()` alone leaves them green; an opener that mounts nothing FAILS rather than
-    reverting to "skipped". `crewListOpen` stays skipped: an inline disclosure, not a popup.
+    reverting to "skipped". (`crewListOpen`, once skipped as an inline disclosure, is the All crews page since 2026-11-19 and is walked.)
   - **Cannot see:** popups whose only way out is Cancel/Done (Edit profile's sticky Cancel·Save bar),
     and the desktop layout except Compare. Listed at the end of every run: the overlays with no ✕ /
     Back at all.

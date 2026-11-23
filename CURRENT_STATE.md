@@ -25,6 +25,7 @@ Not yet documented here (add a doc when you next work in one): moderation/safety
 the catalog import pipeline (see [docs/BACKEND.md](docs/BACKEND.md)).
 
 ## Recent changes
+- **Crew tab lists open as pages** (owner 2026-11-19): *Start a crew with a friend* is a button that opens a page listing every friend (search, sort), and *Start crew* then lets you pick the climb; no friends are drawn on the tab. *Past crews* is a button too, and its page gained search, sort and *All · Climbed · Not logged · Archived* filters (Archived was a dropdown). *Quick view* became the *All crews* page. See [logbook-crews-home.md](docs/features/logbook-crews-home.md).
 - **Trip plan shows its confidence once** (owner 2026-11-19): the spelled-out *Medium confidence* chip in the plan's chip row is gone; the level chip on the *Trip plan* heading stays. See [route-page.md](docs/features/route-page.md).
 - **Objectives: one flat list, four sorts, clearer cards** (owner 2026-11-19): the Sections select is gone (the discipline chips and Location already do it), Sort is Newest first / Target day / Name / Grade with logged climbs always last, and each objective is its own inset card with a numbered badge. *Find partners* is white on blue. See [logbook-crews-home.md](docs/features/logbook-crews-home.md).
 - **Objectives rows are plainer** (owner 2026-11-19): no coloured line down the left of each objective (the status pill says it), no ✕ beside a set target day (clear it from the calendar), and the Status filter is gone. See [logbook-crews-home.md](docs/features/logbook-crews-home.md).

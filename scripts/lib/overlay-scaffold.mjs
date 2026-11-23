@@ -38,7 +38,6 @@ import { readCoreSource, readParentSource, MOVED, movedAsParentText } from "./gu
 // overlay at all, which is how a list like this normally rots.
 export const NEEDS_EXTRA_STATE = {
   areaTreeOpen: "rendered as `areaTreeOpen && selArea` — needs an area selected first",
-  crewListOpen: "a disclosure inside the crew finder's result list — needs crews to list",
   reviewQueue: "rendered as `reviewQueue&&isAdmin` — the Menu's Review queues (moved off Profile 2026-10-23) open only for an ADMIN account, and no walk signs in as one",
   // `sessionRestoring` deliberately gets NO entry — it is a derived const
   // (`realAuthGate && session===undefined`), not state, so discovery cannot return it and an
@@ -61,7 +60,6 @@ export const NEEDS_EXTRA_STATE = {
 //     A config that serves `zx` applies ADMIN_GATE, which lets window.__ovAdminGate stand in for it;
 //     only this opener sets that. The queue's own reads fail without an admin, which leaves its
 //     header (the subject) exactly as an admin sees it.
-// crewListOpen has no entry: it is an inline disclosure in the crew finder's results, not a popup.
 export const EXTRA_STATE_OPENERS = {
   areaTreeOpen: { open: 'setSelArea(MOUNTAINS.find(function(m){return m.areaType==="state";})||null);setAreaTreeOpen(true);' },
   reviewQueue: { open: 'window.__ovAdminGate=true;setReviewQueue("standing");' },
