@@ -1,0 +1,240 @@
+{
+ "wa_the_big_tree": {
+  "area": "wa_three_o_clock_rock",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/108543607/three-oclock-rock",
+    "https://www.mountainproject.com/route/106006701/the-big-tree",
+    "https://www.mountainproject.com/route/124772891/big-tree-2",
+    "https://cascadeclimbers.com/forum/topic/89066-favorite-pitches-at-darrington/",
+    "https://cascadeclimbers.com/forum/topic/97934-tr-three-oclock-rock-big-tree-shake-rattle-and-roll-8102015/",
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/eight-mile-trail-65402",
+    "https://www.fs.usda.gov/r06/mbs/alerts"
+   ]
+  },
+  "ledger": [],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_the_big_tree",
+    "column": "pitches",
+    "from": 0,
+    "to": 4,
+    "why": "pitches 0 is invalid. Mountain Project states 4 pitches and describes P1-P4 one by one. Single source (theCrag not reachable this run; no other publisher found). locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/106006701/the-big-tree"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_the_big_tree",
+    "column": "length_m",
+    "from": null,
+    "to": 152,
+    "why": "Mountain Project states 500 ft (152 m). Single source. locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/106006701/the-big-tree"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_the_big_tree",
+    "column": "gear",
+    "from": null,
+    "to": [
+     "gear to 3 in"
+    ],
+    "why": "Mountain Project: gear to 3 in plus long slings (an optional 4 in piece for the first two pitches). House spelling 'gear to 3 in' (already stored on sibling wa_three_o_clock_rock_rashionalization). Rack from MP alone may lock at the 1-source tier.",
+    "evidence": [
+     "https://www.mountainproject.com/route/106006701/the-big-tree"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_the_big_tree",
+    "column": "access",
+    "from": {
+     "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+     "rules": "Group size capped at 12 (people + stock combined) inside Glacier Peak Wilderness; larger groups must split with 1-mile separation. Campfires prohibited above 3,500 ft in wilderness.",
+     "permit": "None required — free self-issue wilderness permits available at trailheads/ranger stations for day/overnight travel where the peak is inside designated wilderness.",
+     "group_limit": 12,
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Darrington Ranger District)",
+     "parking_pass": "Northwest Forest Pass required at Mountain Loop Highway trailheads — $5/day or $30/year."
+    },
+    "to": {
+     "rules": "The Eight-Mile Trail to the rock enters the Boulder River Wilderness, where groups are capped at 12 people and stock combined.",
+     "group_limit": 12,
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Darrington Ranger District)"
+    },
+    "why": "Brief W: the stored object is the LEGACY template (it names Glacier Peak Wilderness and a Mount Rainier NP fee line, and adds a Northwest Forest Pass line no official page supports for this trailhead). Replace it with the pass-free Boulder River Wilderness object copied field for field from wa_20th_century_clock (settled with the owner in batches U and V). Re-read 2026-11-23: the Eight-Mile Trail 654.02 page (updated 2026-04-17, unchanged) says the trail enters Boulder River Wilderness, sets a group limit of 12, names climbers going to Three O'Clock Rock, and lists no pass or fee; the forest alerts page names no closure on FR 2060/2065, Clear Creek or the Eight-Mile trail. permit stays null.",
+    "evidence": [
+     "https://www.fs.usda.gov/r06/mbs/recreation/trails/eight-mile-trail-65402",
+     "https://www.fs.usda.gov/r06/mbs/alerts"
+    ]
+   }
+  ],
+  "held": [
+   {
+    "table": "routes",
+    "id": "wa_the_big_tree",
+    "column": "grade",
+    "from": "5.7",
+    "to": "5.8-",
+    "also": {
+     "column": "grade_num",
+     "from": 7,
+     "to": 8
+    },
+    "why": "HELD (one-source change to an existing grade). Mountain Project gives 5.8- for The Big Tree (and the same 5.8- on its separate Big Tree 2 page). No second publisher reachable. grade_num would go 7 -> 8 (gradeNumFrom('5.8-','yds')).",
+    "evidence": [
+     "https://www.mountainproject.com/route/106006701/the-big-tree"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_the_big_tree",
+    "column": "anchor",
+    "from": null,
+    "to": null,
+    "why": "HELD, no value proposed: Mountain Project gives mixed belays (a tree with slings at the top of P1, with a chain belay 15 ft away; chains at the top of P4, about 50 ft below and right of the big tree). No single anchor type fits the column.",
+    "evidence": [
+     "https://www.mountainproject.com/route/106006701/the-big-tree"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "FA 'Manuel Gonzalez, Don Williamson (1970)' and commitment II both match Mountain Project, but an FA never locks from one source and a commitment grade from MP alone is held, so no ledger entries. CATALOG NOTE (pair to report, not a duplicate to merge): wa_three_o_clock_rock_big_tree_2 stores 5.8- trad, 4 pitches, 152 m, which are the exact figures Mountain Project prints on BOTH its The Big Tree and Big Tree 2 pages (same FA party and year on both). The two are different lines that share the first pitch (Big Tree II goes right from the P1 tree and uses two bolts of Shake, Rattle and Roll), so the identical length and pitch count on Big Tree 2 look copied from the Big Tree page rather than measured for that line. wa_three_o_clock_rock_big_tree_2000 (5.10a, 2 pitches) is a third related line. MP also names an older original first pitch from the Cornucopia Flake, and the 2015 CascadeClimbers report describes a newer two-pitch extension above the route (Shake, Rattle and Roll) that has no catalog row. MP says none of these lines are set up for a single-rope descent."
+ },
+ "wa_three_o_clock_rock_rashionalization": {
+  "area": "wa_three_o_clock_rock",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/108543607/three-oclock-rock",
+    "https://cascadeclimbers.com/forum/topic/89066-favorite-pitches-at-darrington/",
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/eight-mile-trail-65402",
+    "https://www.fs.usda.gov/r06/mbs/alerts"
+   ]
+  },
+  "ledger": [],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_three_o_clock_rock_rashionalization",
+    "column": "access",
+    "from": null,
+    "to": {
+     "rules": "The Eight-Mile Trail to the rock enters the Boulder River Wilderness, where groups are capped at 12 people and stock combined.",
+     "group_limit": 12,
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Darrington Ranger District)"
+    },
+    "why": "access is null. Copy the pass-free Boulder River Wilderness object field for field from wa_20th_century_clock (brief W; settled with the owner in batches U and V). Re-read 2026-11-23: the Eight-Mile Trail 654.02 page (updated 2026-04-17, unchanged) says the trail enters Boulder River Wilderness, sets a group limit of 12, names climbers going to Three O'Clock Rock, and lists no pass or fee; the forest alerts page names no closure on FR 2060/2065, Clear Creek or the Eight-Mile trail. permit stays null.",
+    "evidence": [
+     "https://www.fs.usda.gov/r06/mbs/recreation/trails/eight-mile-trail-65402",
+     "https://www.fs.usda.gov/r06/mbs/alerts"
+    ]
+   }
+  ],
+  "held": [],
+  "disputed": [],
+  "notes": "No publisher found. Stored 5.7 trad, gear to 3 in, guide_stars 2, pitches null: none of these could be checked. The name is close to The Rash (wa_the_rash, 5.8, 2 pitches), but nothing shows they are the same line; no duplicate claimed. Sources tried for this route: Mountain Project's Three O'Clock Rock area list (27 routes; this route is not on it), theCrag (navigation in the owner's Chrome refused by the session's permission check, so not read), web search on the exact name (no climbing page found), CascadeClimbers threads read in the owner's Chrome (forum search needs a login; six Three O'Clock Rock threads scanned), the Mountaineers Darrington area page (no route pages), chossclimbers.com trip report, and alpinedave.com's Darrington guide sample (one sample page, The Kone only). rockclimbing.com refused the connection. STUCK: no usable source for any route fact; only access proposed."
+ },
+ "wa_three_o_clock_rock_beanberry_delight": {
+  "area": "wa_three_o_clock_rock",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/108543607/three-oclock-rock",
+    "https://cascadeclimbers.com/forum/topic/89066-favorite-pitches-at-darrington/",
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/eight-mile-trail-65402",
+    "https://www.fs.usda.gov/r06/mbs/alerts"
+   ]
+  },
+  "ledger": [],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_three_o_clock_rock_beanberry_delight",
+    "column": "access",
+    "from": null,
+    "to": {
+     "rules": "The Eight-Mile Trail to the rock enters the Boulder River Wilderness, where groups are capped at 12 people and stock combined.",
+     "group_limit": 12,
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Darrington Ranger District)"
+    },
+    "why": "access is null. Copy the pass-free Boulder River Wilderness object field for field from wa_20th_century_clock (brief W; settled with the owner in batches U and V). Re-read 2026-11-23: the Eight-Mile Trail 654.02 page (updated 2026-04-17, unchanged) says the trail enters Boulder River Wilderness, sets a group limit of 12, names climbers going to Three O'Clock Rock, and lists no pass or fee; the forest alerts page names no closure on FR 2060/2065, Clear Creek or the Eight-Mile trail. permit stays null.",
+    "evidence": [
+     "https://www.fs.usda.gov/r06/mbs/recreation/trails/eight-mile-trail-65402",
+     "https://www.fs.usda.gov/r06/mbs/alerts"
+    ]
+   }
+  ],
+  "held": [],
+  "disputed": [],
+  "notes": "No publisher found. Stored 5.8 trad, commitment II, gear 'quickdraws, gear to 2 in' (one string holding two items: a gear-shape defect to fix once a source gives the rack), pitches null: none could be checked. Sources tried for this route: Mountain Project's Three O'Clock Rock area list (27 routes; this route is not on it), theCrag (navigation in the owner's Chrome refused by the session's permission check, so not read), web search on the exact name (no climbing page found), CascadeClimbers threads read in the owner's Chrome (forum search needs a login; six Three O'Clock Rock threads scanned), the Mountaineers Darrington area page (no route pages), chossclimbers.com trip report, and alpinedave.com's Darrington guide sample (one sample page, The Kone only). rockclimbing.com refused the connection. STUCK: no usable source for any route fact; only access proposed."
+ },
+ "wa_three_o_clock_rock_the_jinx": {
+  "area": "wa_three_o_clock_rock",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/108543607/three-oclock-rock",
+    "https://cascadeclimbers.com/forum/topic/89066-favorite-pitches-at-darrington/",
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/eight-mile-trail-65402",
+    "https://www.fs.usda.gov/r06/mbs/alerts"
+   ]
+  },
+  "ledger": [],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_three_o_clock_rock_the_jinx",
+    "column": "access",
+    "from": null,
+    "to": {
+     "rules": "The Eight-Mile Trail to the rock enters the Boulder River Wilderness, where groups are capped at 12 people and stock combined.",
+     "group_limit": 12,
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Darrington Ranger District)"
+    },
+    "why": "access is null. Copy the pass-free Boulder River Wilderness object field for field from wa_20th_century_clock (brief W; settled with the owner in batches U and V). Re-read 2026-11-23: the Eight-Mile Trail 654.02 page (updated 2026-04-17, unchanged) says the trail enters Boulder River Wilderness, sets a group limit of 12, names climbers going to Three O'Clock Rock, and lists no pass or fee; the forest alerts page names no closure on FR 2060/2065, Clear Creek or the Eight-Mile trail. permit stays null.",
+    "evidence": [
+     "https://www.fs.usda.gov/r06/mbs/recreation/trails/eight-mile-trail-65402",
+     "https://www.fs.usda.gov/r06/mbs/alerts"
+    ]
+   }
+  ],
+  "held": [],
+  "disputed": [],
+  "notes": "No publisher of grade, pitches, length or FA found. A 2012 CascadeClimbers thread (climber comments, colour only, not a deciding source) describes The Jinx as starting right off the ground with a layback past an odd feature and then slab to an anchor, which reads like ONE pitch rather than a multi-pitch slab; another commenter there calls any original bolt on the route highly suspect (old 1/4 in hardware). Pitches therefore left null; the old-bolt note is a safety item for the owner. Stored FA 'Bob VanBelle, Doug White, Jeff Alington 1980' has no source; Doug White runs alpinedave.com (a Darrington guide), but its only online route page is a sample for The Kone. Sources tried for this route: Mountain Project's Three O'Clock Rock area list (27 routes; this route is not on it), theCrag (navigation in the owner's Chrome refused by the session's permission check, so not read), web search on the exact name (no climbing page found), CascadeClimbers threads read in the owner's Chrome (forum search needs a login; six Three O'Clock Rock threads scanned), the Mountaineers Darrington area page (no route pages), chossclimbers.com trip report, and alpinedave.com's Darrington guide sample (one sample page, The Kone only). rockclimbing.com refused the connection. STUCK: no usable source for any route fact; only access proposed."
+ },
+ "wa_three_o_clock_rock_when_butterflies_kiss_bumblebees": {
+  "area": "wa_three_o_clock_rock",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/108543607/three-oclock-rock",
+    "https://cascadeclimbers.com/forum/topic/89066-favorite-pitches-at-darrington/",
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/eight-mile-trail-65402",
+    "https://www.fs.usda.gov/r06/mbs/alerts"
+   ]
+  },
+  "ledger": [],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_three_o_clock_rock_when_butterflies_kiss_bumblebees",
+    "column": "access",
+    "from": null,
+    "to": {
+     "rules": "The Eight-Mile Trail to the rock enters the Boulder River Wilderness, where groups are capped at 12 people and stock combined.",
+     "group_limit": 12,
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Darrington Ranger District)"
+    },
+    "why": "access is null. Copy the pass-free Boulder River Wilderness object field for field from wa_20th_century_clock (brief W; settled with the owner in batches U and V). Re-read 2026-11-23: the Eight-Mile Trail 654.02 page (updated 2026-04-17, unchanged) says the trail enters Boulder River Wilderness, sets a group limit of 12, names climbers going to Three O'Clock Rock, and lists no pass or fee; the forest alerts page names no closure on FR 2060/2065, Clear Creek or the Eight-Mile trail. permit stays null.",
+    "evidence": [
+     "https://www.fs.usda.gov/r06/mbs/recreation/trails/eight-mile-trail-65402",
+     "https://www.fs.usda.gov/r06/mbs/alerts"
+    ]
+   }
+  ],
+  "held": [],
+  "disputed": [],
+  "notes": "No publisher found. Stored 5.8 trad, gear to 1 in, guide_stars 2, pitches null: none could be checked. Sources tried for this route: Mountain Project's Three O'Clock Rock area list (27 routes; this route is not on it), theCrag (navigation in the owner's Chrome refused by the session's permission check, so not read), web search on the exact name (no climbing page found), CascadeClimbers threads read in the owner's Chrome (forum search needs a login; six Three O'Clock Rock threads scanned), the Mountaineers Darrington area page (no route pages), chossclimbers.com trip report, and alpinedave.com's Darrington guide sample (one sample page, The Kone only). rockclimbing.com refused the connection. STUCK: no usable source for any route fact; only access proposed."
+ }
+}
