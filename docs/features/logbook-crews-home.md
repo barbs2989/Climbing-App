@@ -82,20 +82,36 @@ Three top-level `tab` values in `ClimbMatch.jsx` (`tab==="today"`, `tab==="crew"
   on faces (Half Dome, Cathedral Peak); `peakClimbed` and `routeInList` count a log on any of them.
   0347 gave four fourteeners (Handies, Bierstadt, Blue Sky, Quandary) a walk-up; the 14ers, Bulgers and Cascade rosters had four dead ids
   and six faces-only peaks re-pointed the same day, and `audit:list-coverage` now counts only peaks that can be ticked.
-  `Challenges` (`ClimbMatchCore.jsx`) has three parts: personal challenges (climbs this year, `pitchesClimbed`, conditions reported,
-  vouches given), curated lists, badges. All are DERIVED from the logs it is handed, so a new log updates them the moment it is
+  `Challenges` (`src/components/Challenges.tsx`) has three parts: personal challenges, curated lists, badges.
+  **Personal challenges count THIS CALENDAR YEAR** (owner 2026-11-23: *Your challenges · 2026*, starting again on January 1; the
+  badges count all time). Every count comes from ONE helper, `challengeStats(logs, routeById, {year})` over `challengeKeys(log, route)`
+  in core, which `useBadges` also reads, so a row and its badge cannot disagree. Each row is a LADDER showing its next unreached tier.
+  Groups: *Volume* (climbs 25/50/100, pitches 100/300/500/1,000, different days 25/50/100); *Disciplines* (different climbs sent
+  25/50/100, then one row per discipline the climber has EVER logged: sport, trad, top rope 25/50/100, problems 50/100/250, ice or
+  mixed 10/25, alpine/mountaineering/scrambling summits 5/10/25, multipitch routes 5/10/25 once a 2+ pitch route is logged);
+  *Grade* (per graded discipline: *New hardest grade*, beating the best sent before this year, and a *pyramid* of 1 at this
+  year's top level, 2 one level down, 4 two down, a level being the whole number of `gradeNumFor`); *Places & people* (crags or
+  areas 5/10/25 by `mountainId`, states or provinces 3/5/10 by `routeLoc`, partners 5/10/25, yours only); *Community* (conditions
+  reported, vouches given, yours only). A route counts once FINISHED (the `routeCompleted` ticks; alpine, mountaineering and
+  scrambling only on a summit); a day, area, state and partner count on any climb, an attempt included.
+  All are DERIVED from the logs it is handed, so a new log updates them the moment it is
   saved (`setLogs`; the logged route's row arrives through `useRoutesByIds`), and nothing is stored. Another climber's profile sheet
   (`FullProfile`) renders the same component with their logs (`__theirLogs`, read by `useUserLogs`, so only what their trip-report
   visibility lets you read) and `self={false}`: *Their challenges* shows the log-derived rows, never the vouch or log-conditions rows, which are only
-  drawn where the caller passed them. `pitchesClimbed` counts a log's route pitches; Attempt/Turned around/Project add 0, a route with
-  no count is 1 pitch only on a roped crag discipline, an unresolved route adds 0.
+  drawn where the caller passed them, nor the partners row (`resumeLogs` carries no partners). `pitchesClimbed` counts a log's route
+  pitches, so a 5-pitch route finished counts 5, each lap again; Attempt/Turned around/Project add 0, a route with no count is 1 pitch
+  only on a roped crag discipline, an unresolved route adds 0. **Pitches climbed on a climb not finished** (0500,
+  `climb_logs.pitches_climbed`, owner 2026-11-23): `LogAscent` asks *PITCHES CLIMBED* on an Attempt, Turned around, Fell or Hung log of
+  a 2+ pitch route; a stated number counts (capped at the route's count), blank keeps the rule above.
 - **Badges** are built by ONE hook, `useBadges` (`ClimbMatchCore.jsx`), on top of `useCuratedLists`, for three readers: the
   Badges grid at the foot of `Challenges` (`BadgeGrid`), the trophy case at the top of a profile (`FullProfile`, through `trophies()`),
   and App's *Badge earned* overlay (`BadgeWatcher`). The owner's bar (2026-10-22): a badge marks a REAL accomplishment, never a
   first step. The set: crag sends (sport, trad, top-rope, boulder, aid; different routes) 50/100/250/500; alpine summits (alpine,
   mountaineering, scrambling) 10/25/50/100, counting ONLY a log ticked *Summit*; ice & mixed 10/25/50; pitches 100/500/1,000;
   a 6/12/24-month logging streak (`monthRuns`); 50/100 climbs in one calendar year (`yearCounts`); Onsight ace (10 onsights or
-  flashes); All-rounder (5 disciplines); and one *finisher* badge per curated list. No badge for a
+  flashes); All-rounder (5 disciplines); since 2026-11-23, on `challengeKeys` like the Challenges rows: problems 50/100/250/500,
+  sport 50/100/250, trad 25/50/100, multipitch 10/25/50, different climbs 100/250/500, days out 100/250/500, areas 25/50/100,
+  states 5/10/25, partners 10/25/50; and one *finisher* badge per curated list. No badge for a
   first send, a single peak or a vouch. A PEAK list (Bulgers, 14ers, ADK 46, SPS…) counts a peak only when the climber stood on it:
   a route that can be ticked Summit (alpine, mountaineering, scrambling, ice, mixed) counts only through `summitedLog` (a Summit tick or
   the log's summit answer), and a crag climb on a list peak (a desert tower, a Half Dome face) counts when sent — `topped` in
