@@ -71,6 +71,9 @@ empty field fill at once and two agreeing climbers change one; the owner withdre
   AI confirmed (2-source)" approves, after a confirm, every edit the AI agreed with at 2-source that does
   not remove anything. Identical edits still cluster through `sameEditValue`. Every action is the same
   is_admin()-checked RPC the old Menu queues called; the AI only advises.
+  A **suggested wall order** (kind `wall_order`, 0485) is a third row type, *Order*: the wall as listed now beside the climber's
+  left-to-right line; *Use this order* / *Keep current order* call `resolveWallOrder`, with an optional note to the sender. The AI
+  checker does not look at these, and they are not counted as "not yet checked". See `docs/features/maps-and-area-browser.md`.
 - **The nightly AI checker**: `scripts/review-queue-export.mjs` (service key, read-only) lists items with
   no verdict or whose content changed since (`item_hash`); `.claude/workflows/review-flags-nightly.js`
   researches each (open web only; no AllTrails/Gaia/CalTopo/Strava/Wikiloc/Peakbagger/Mountain Project)

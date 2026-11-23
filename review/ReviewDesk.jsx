@@ -10,6 +10,9 @@
 //   edit  → Approve · Use AI value (approve with the AI's value) · Turn down · Keep & lock
 //   flag  → Use AI value (files the value as the owner's own edit, approves it, marks the flag
 //           fixed — an admin's edit passes the high-confidence lock, 0308) · Fixed it · No change
+//   order → a climber's suggested LEFT-TO-RIGHT ORDER for a wall (contributions kind 'wall_order', 0485;
+//           owner, 2026-11-23): Use this order (resolve_wall_order rewrites the wall's one stored order)
+//           · Keep current order. Not sent to the AI checker.
 // Identical edits cluster with sameEditValue, exactly as the old queue did.
 import { useMemo, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
@@ -18,7 +21,7 @@ import { supabase } from "../lib/supabase";
 import {
   useIsAdmin, useFieldContributions, useOpenRouteFlags, useContributionFields, useRouteRowsByIds,
   useAreaEditRowsByIds, approveFieldContribution, rejectFieldContribution, setRouteFieldConfidence,
-  resolveRouteFlag, submitContribution, REMOVAL_NOTE,
+  resolveRouteFlag, submitContribution, REMOVAL_NOTE, useWallOrderSuggestions, useWallRoutesByAreaIds, resolveWallOrder,
 } from "../lib/db";
 import { C, DLOCALE, sameEditValue } from "../ClimbMatchCore";
 import { AREA_EDIT_FIELDS } from "../lib/areaFields";
@@ -110,7 +113,7 @@ export default function ReviewDesk() {
   const page = (body) => <div style={{ maxWidth: 1400, margin: "0 auto", padding: "16px 16px 60px" }}><style>{CSS}</style>
     <header style={{ display: "flex", alignItems: "baseline", gap: 12, flexWrap: "wrap", marginBottom: 12 }}>
       <h1 style={{ fontSize: 20, margin: 0 }}>Review desk</h1>
-      <span style={{ fontSize: 12.5, color: C.textMuted }}>Climber flags and suggested edits, each checked by AI overnight. Nothing changes until you act.</span>
+      <span style={{ fontSize: 12.5, color: C.textMuted }}>Climber flags, suggested edits and suggested wall orders. Edits and flags are checked by AI overnight. Nothing changes until you act.</span>
       <a href={BASE} style={{ marginLeft: "auto", color: C.blue, fontSize: 12.5, fontWeight: 700, textDecoration: "none" }}>Open ClimbMatch →</a>
     </header>{body}</div>;
   if (!supabase) return page(<p>This build has no database connection.</p>);
@@ -132,6 +135,12 @@ function Desk() {
   const routesQ = useRouteRowsByIds(routeIds);
   const areaIds = useMemo(() => Array.from(new Set(edits.filter((r) => r.area_id && !r.route_id).map((r) => r.area_id))), [edits]);
   const areasQ = useAreaEditRowsByIds(areaIds);
+  // SUGGESTED WALL ORDERS (0485; owner, 2026-11-23: "I receive it in the admin like what would happen when people
+  // suggest edits"). A climber's left-to-right order for a wall is a row of this table, not a queue of its own.
+  const ordersQ = useWallOrderSuggestions("pending");
+  const orders = ordersQ.data || NONE;
+  const wallIds = useMemo(() => Array.from(new Set(orders.map((o) => o.area_id).filter(Boolean))), [orders]);
+  const wallsQ = useWallRoutesByAreaIds(wallIds);
 
   const [f, setF] = useState({ type: "all", verdict: "all", state: "all", field: "all", q: "" });
   const [sort, setSort] = useState({ k: "age", dir: -1 });
@@ -183,8 +192,25 @@ function Desk() {
         created_at: fl.created_at, ai: ai["flag:" + fl.id] || null,
       });
     });
+    // A suggested wall order: the wall's climbs as they stand now against the line the climber sent.
+    const walls = wallsQ.data || null;
+    orders.forEach((o) => {
+      const rs = walls ? walls[o.area_id] || [] : null;
+      const names = {};
+      (rs || []).forEach((x) => { names[x.id] = x.name; });
+      const now = (rs || []).filter((x) => x.sort_order != null && x.discipline !== "bouldering").sort((a, b) => a.sort_order - b.sort_order).map((x) => String(x.id));
+      const list = Array.isArray(o.value && o.value.order) ? o.value.order.map(String) : [];
+      const nm = (id) => names[id] || "(a climb no longer on this wall)";
+      out.push({
+        key: "o:" + o.id, kind: "order", ids: [o.id], route_id: null, area_id: o.area_id, field: "wall_order", label: "Wall order",
+        name: (o.areas && o.areas.name) || o.area_id, state: String(o.area_id || "").split("_")[0].toUpperCase(),
+        cur: rs ? now.map(nm) : undefined, said: rs ? list.map(nm) : list.length + " climbs", note: (o.value && o.value.note) || "",
+        removes: false, climbers: 1, created_at: o.created_at, ai: null,
+        order: { loaded: !!rs, now, list, known: list.filter((id) => names[id]).length, names },
+      });
+    });
     return out;
-  }, [edits, flags, fieldsQ.data, routesQ.data, areasQ.data, aiQ.data]);
+  }, [edits, flags, orders, fieldsQ.data, routesQ.data, areasQ.data, aiQ.data, wallsQ.data]);
 
   const states = useMemo(() => Array.from(new Set(rows.map((r) => r.state))).filter(Boolean).sort(), [rows]);
   const fieldsList = useMemo(() => Array.from(new Set(rows.map((r) => r.label))).sort(), [rows]);
@@ -222,16 +248,17 @@ function Desk() {
     setMsg({ ok: !failed.length, text: "Approved " + done + " of " + bulk.length + "." + (failed.length ? " Not approved — " + failed.join("; ") : "") });
   };
 
-  const loadErr = editsQ.error || flagsQ.error;
-  const counts = { edits: rows.filter((r) => r.kind === "edit").length, flags: rows.filter((r) => r.kind === "flag").length, unchecked: rows.filter((r) => !r.ai).length };
+  const loadErr = editsQ.error || flagsQ.error || ordersQ.error || wallsQ.error;
+  // A wall order is not sent to the nightly AI checker, so it never counts as "not yet checked".
+  const counts = { edits: rows.filter((r) => r.kind === "edit").length, flags: rows.filter((r) => r.kind === "flag").length, orders: rows.filter((r) => r.kind === "order").length, unchecked: rows.filter((r) => !r.ai && r.kind !== "order").length };
   const th = (k, label) => <th onClick={() => setSort((s) => ({ k, dir: s.k === k ? -s.dir : 1 }))} aria-sort={sort.k === k ? (sort.dir > 0 ? "ascending" : "descending") : "none"}>{label}{sort.k === k ? (sort.dir > 0 ? " ▲" : " ▼") : ""}</th>;
 
   return <div>
     <div style={{ display: "flex", gap: 8, flexWrap: "wrap", alignItems: "center", marginBottom: 10 }}>
-      <span style={{ fontSize: 12.5, color: C.textSub }}>{counts.edits} edit{counts.edits === 1 ? "" : "s"} · {counts.flags} flag{counts.flags === 1 ? "" : "s"} · {counts.unchecked} not yet checked by AI{aiQ.error ? " (AI verdicts could not load: " + aiQ.error.message + ")" : ""}</span>
+      <span style={{ fontSize: 12.5, color: C.textSub }}>{counts.edits} edit{counts.edits === 1 ? "" : "s"} · {counts.flags} flag{counts.flags === 1 ? "" : "s"} · {counts.orders} wall order{counts.orders === 1 ? "" : "s"} · {counts.unchecked} not yet checked by AI{aiQ.error ? " (AI verdicts could not load: " + aiQ.error.message + ")" : ""}</span>
     </div>
     <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginBottom: 12 }}>
-      <select aria-label="Type" className="rd-sel" value={f.type} onChange={(e) => setF({ ...f, type: e.target.value })}><option value="all">Edits + flags</option><option value="edit">Suggested edits</option><option value="flag">Flags</option></select>
+      <select aria-label="Type" className="rd-sel" value={f.type} onChange={(e) => setF({ ...f, type: e.target.value })}><option value="all">Everything</option><option value="edit">Suggested edits</option><option value="flag">Flags</option><option value="order">Wall orders</option></select>
       <select aria-label="AI verdict" className="rd-sel" value={f.verdict} onChange={(e) => setF({ ...f, verdict: e.target.value })}><option value="all">Any AI verdict</option><option value="agree">AI agrees</option><option value="disagree">AI disagrees</option><option value="partly">Partly right</option><option value="unsure">AI unsure</option><option value="none">Not checked yet</option></select>
       <select aria-label="State" className="rd-sel" value={f.state} onChange={(e) => setF({ ...f, state: e.target.value })}><option value="all">All states</option>{states.map((s) => <option key={s} value={s}>{s}</option>)}</select>
       <select aria-label="Field" className="rd-sel" value={f.field} onChange={(e) => setF({ ...f, field: e.target.value })}><option value="all">All fields</option>{fieldsList.map((s) => <option key={s} value={s}>{s}</option>)}</select>
@@ -240,27 +267,57 @@ function Desk() {
     </div>
     {msg ? <div role={msg.ok ? "status" : "alert"} style={{ background: msg.ok ? C.greenBg : C.redBg, color: msg.ok ? C.green : C.red, border: "1px solid " + (msg.ok ? C.greenDim : C.red), borderRadius: 9, padding: "9px 11px", fontSize: 12.5, marginBottom: 10 }}>{msg.text}</div> : null}
     {loadErr ? <div role="alert" style={{ color: C.red, fontSize: 13, marginBottom: 10 }}>Could not load the queue — {loadErr.message}. This is not a report that it is empty.</div> : null}
-    {editsQ.isLoading || flagsQ.isLoading ? <p style={{ color: C.textMuted }}>Loading the queue…</p>
-      : !shown.length ? <p style={{ color: C.textMuted }}>{rows.length ? "Nothing matches these filters." : "Nothing to review — no held edits and no open flags."}</p>
+    {editsQ.isLoading || flagsQ.isLoading || ordersQ.isLoading ? <p style={{ color: C.textMuted }}>Loading the queue…</p>
+      : !shown.length ? <p style={{ color: C.textMuted }}>{rows.length ? "Nothing matches these filters." : "Nothing to review — no held edits, no open flags and no suggested wall orders."}</p>
       : <table className="rd-table">
         <thead><tr>{th("kind", "TYPE")}{th("route", "ROUTE")}{th("field", "FIELD")}<th>ON THE PAGE NOW</th><th>CLIMBER SAYS</th>{th("verdict", "AI VERDICT")}<th>AI VALUE</th>{th("age", "AGE")}</tr></thead>
         <tbody>{shown.map((r) => {
           const isOpen = open === r.key;
           return [
             <tr key={r.key} className={"rd-row" + (isOpen ? " rd-open" : "")} onClick={() => setOpen(isOpen ? null : r.key)} tabIndex={0} onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); setOpen(isOpen ? null : r.key); } }} aria-expanded={isOpen}>
-              <td><span className="rd-lab">Type</span><span style={{ fontWeight: 700, color: r.kind === "flag" ? C.orange : C.blue }}>{r.kind === "flag" ? "⚑ Flag" : "✎ Edit"}</span>{r.climbers > 1 ? <span style={{ color: C.textMuted }}> ×{r.climbers}</span> : null}{r.removes ? <div style={{ color: C.red, fontSize: 11, fontWeight: 700 }}>removes</div> : null}</td>
-              <td><span className="rd-lab">Route</span><span style={{ fontWeight: 700 }}>{r.name}</span> <span style={{ color: C.textMuted, fontSize: 11.5 }}>{r.state}{r.area_id ? " · area" : ""}</span></td>
+              <td><span className="rd-lab">Type</span><span style={{ fontWeight: 700, color: r.kind === "flag" ? C.orange : r.kind === "order" ? C.amber : C.blue }}>{r.kind === "flag" ? "⚑ Flag" : r.kind === "order" ? "⇄ Order" : "✎ Edit"}</span>{r.climbers > 1 ? <span style={{ color: C.textMuted }}> ×{r.climbers}</span> : null}{r.removes ? <div style={{ color: C.red, fontSize: 11, fontWeight: 700 }}>removes</div> : null}</td>
+              <td><span className="rd-lab">Route</span><span style={{ fontWeight: 700 }}>{r.name}</span> <span style={{ color: C.textMuted, fontSize: 11.5 }}>{r.state}{r.kind === "order" ? " · wall" : r.area_id ? " · area" : ""}</span></td>
               <td><span className="rd-lab">Field</span>{r.label}</td>
               <td style={{ color: C.textSub }}><span className="rd-lab">Now</span>{isEmpty(r.cur) ? <i style={{ color: C.textMuted }}>empty</i> : short(r.cur)}</td>
               <td><span className="rd-lab">Climber</span>{r.kind === "flag" ? <i>“{short(r.note, 120)}”</i> : short(r.said)}</td>
-              <td><span className="rd-lab">AI</span><VerdictChip v={r.ai} /></td>
+              <td><span className="rd-lab">AI</span>{r.kind === "order" ? <span style={{ color: C.textMuted }}>—</span> : <VerdictChip v={r.ai} />}</td>
               <td><span className="rd-lab">AI value</span>{r.ai && !isEmpty(r.ai.ai_value) ? short(r.ai.ai_value) : <span style={{ color: C.textMuted }}>—</span>}</td>
               <td style={{ whiteSpace: "nowrap", color: C.textMuted }}><span className="rd-lab">Age</span>{when(r.created_at)} · {ageDays(r.created_at)}d</td>
             </tr>,
-            isOpen ? <tr key={r.key + ":d"} className="rd-detail"><td colSpan={8}><Detail row={r} busy={busy === r.key} act={act} /></td></tr> : null,
+            isOpen ? <tr key={r.key + ":d"} className="rd-detail"><td colSpan={8}>{r.kind === "order" ? <OrderDetail row={r} busy={busy === r.key} act={act} /> : <Detail row={r} busy={busy === r.key} act={act} />}</td></tr> : null,
           ];
         })}</tbody>
       </table>}
+  </div>;
+}
+
+// ── a suggested wall order, expanded ─────────────────────────────────────────────────
+// The wall as it is listed now beside the line the climber sent, each climb marked with the place it holds
+// now. "Use this order" writes it for EVERY climber (resolve_wall_order renumbers routes.sort_order: the one
+// stored order the wall's list, NEXT DOOR and the Route finder all read); "Keep current order" writes nothing
+// to the wall. Either way the sender gets a notice, with the note if one is typed.
+function OrderDetail({ row: r, busy, act }) {
+  const [note, setNote] = useState("");
+  const o = r.order;
+  const pos = {};
+  o.now.forEach((id, i) => { pos[id] = i + 1; });
+  const can = o.loaded && o.known >= 2;
+  const list = { ...box, margin: 0, paddingLeft: 34, whiteSpace: "normal" };
+  return <div style={{ padding: "10px 4px 16px", display: "grid", gap: 12 }}>
+    <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(240px,1fr))", gap: 10 }}>
+      <div><div style={{ fontSize: 11, fontWeight: 700, color: C.textMuted }}>ON THE WALL NOW, LEFT TO RIGHT</div>
+        {!o.loaded ? <div style={box}>Loading the wall’s climbs…</div> : o.now.length ? <ol style={list}>{o.now.map((id) => <li key={id}>{o.names[id] || id}</li>)}</ol> : <div style={box}>(no order stored)</div>}</div>
+      <div><div style={{ fontSize: 11, fontWeight: 700, color: C.blue }}>CLIMBER SUGGESTS, LEFT TO RIGHT</div>
+        <ol style={list}>{o.list.map((id, i) => <li key={id + ":" + i} style={{ color: o.names[id] || !o.loaded ? C.text : C.textMuted }}>{o.loaded ? (o.names[id] || "(a climb no longer on this wall)") : id}
+          {o.loaded && o.names[id] ? (pos[id] == null ? <b style={{ color: C.amber }}> · no place now</b> : pos[id] !== i + 1 ? <b style={{ color: C.amber }}> · now {pos[id]}</b> : null) : null}</li>)}</ol>
+        {r.note ? <div style={{ fontSize: 12, color: C.textSub, marginTop: 4 }}><b>Why:</b> {r.note}</div> : null}</div>
+    </div>
+    {o.loaded && o.known < 2 ? <div style={{ fontSize: 12.5, color: C.textMuted }}>Fewer than two of these climbs are still on the wall, so there is nothing to order.</div> : null}
+    <div style={{ display: "flex", gap: 8, flexWrap: "wrap", alignItems: "center" }}>
+      <button className="rd-btn rd-ok" disabled={busy || !can} onClick={() => act(r, () => resolveWallOrder(r.ids[0], "approved", note), "order written; every climber now sees the wall in this order, and the sender was told.")}>{busy ? "Working…" : "Use this order"}</button>
+      <input className="rd-in" aria-label="Note to the sender (optional)" placeholder="Note to the sender (optional)" value={note} onChange={(e) => setNote(e.target.value)} style={{ flex: "1 1 200px" }} />
+      <button className="rd-btn rd-bad" disabled={busy} onClick={() => act(r, () => resolveWallOrder(r.ids[0], "rejected", note), "kept the current order; the sender was told.")}>Keep current order</button>
+    </div>
   </div>;
 }
 

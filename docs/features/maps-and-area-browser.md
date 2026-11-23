@@ -80,11 +80,14 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
   (*Take out* undoes it), and one the climber does not place is not sent, so approval never gives an unlooked-at climb a position.
   Send needs two climbs in the line and a line that differs from the stored one.
   `submitWallOrderSuggestion` (`lib/db.js`) files one `contributions` row of kind `wall_order` (`area_id` = the wall, `value` =
-  `{order: [route ids, left to right], note}`; migration 0485 refuses any other shape). Nothing on the page changes. The owner's *Wall order
-  suggestions* queue (`WallOrderQueue` in `lib/RouteProposals.jsx`, a Menu Review tile with a count) shows the list with each climb's place
+  `{order: [route ids, left to right], note}`; migration 0485 refuses any other shape). Nothing on the page changes. The suggestion reaches the
+  owner on the **Review desk** (`review.html`, `review/ReviewDesk.jsx`) as an *Order* row of the same table as held route edits and flags (owner,
+  2026-11-23: "I receive it in the admin like what would happen when people suggest edits"; it was a Menu Review tile for four days). The
+  row opens to the wall as listed now beside the suggested line, each climb marked with the place it holds
   now, and `resolve_wall_order` (0485, admin only) either writes it (*Use this order*: listed climbs still on the wall get `sort_order` 1..n,
   a placed climb the list does not name follows them in its old order, a boulder problem is never touched) or keeps the wall as it is
-  (*Keep current*). Either way the sender gets a notification that opens the wall, and *Your contributions* lists the suggestion as
+  (*Keep current order*). There is ONE order per wall: an approval rewrites the stored `sort_order`, which every climber's list, NEXT DOOR
+  and the Route finder read. Either way the sender gets a notification that opens the wall, and *Your contributions* lists the suggestion as
   *Wall order suggested* with its status. It earns its contribution point only once approved (`contribution_points()`, 0485). The wall's
   list and the Route finder are refreshed on approval; a state downloaded to the device keeps its packed order until downloaded again.
   A signed-out climber gets a sign-in button and no write.
