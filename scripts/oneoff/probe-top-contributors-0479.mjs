@@ -1,4 +1,4 @@
-// One-off: does TOP CONTRIBUTORS leave out the climbers Ranks leaves out (0477)?
+// One-off: does TOP CONTRIBUTORS leave out the climbers Ranks leaves out (0479)?
 //
 // Replays every migration into PGlite with Supabase's default grants (as check:profile-privacy does;
 // no network, no production), builds a state > crag with three climbers who each logged public climbs
@@ -9,8 +9,8 @@
 //      Top Contributor badge, and B (now first of two) holds it;
 //   3. A blocks C: C does not see A, A does not see C, B and a signed-out reader see both;
 //   4. the people on an area's board are the people Ranks By area gives contribution points there.
-// Run it WITHOUT 0477 in supabase/migrations and steps 2 and 3 fail: that is the bug.
-//   node scripts/oneoff/probe-top-contributors-0477.mjs
+// Run it WITHOUT 0479 in supabase/migrations and steps 2 and 3 fail: that is the bug.
+//   node scripts/oneoff/probe-top-contributors-0479.mjs
 import fs from "node:fs";
 import path from "node:path";
 
@@ -18,7 +18,7 @@ const ROOT = process.cwd();
 const DIR = path.join(ROOT, "supabase", "migrations");
 let failures = 0, passes = 0;
 const ok = (c, m) => { console.log((c ? "  ok    " : "  FAIL  ") + m); if (c) passes++; else failures++; };
-const dead = (m) => { console.error(`probe-top-contributors-0477 FAILED: ${m}. Nothing below was checked.`); process.exit(1); };
+const dead = (m) => { console.error(`probe-top-contributors-0479 FAILED: ${m}. Nothing below was checked.`); process.exit(1); };
 
 let PGlite, ltree, pg_trgm, pgcrypto, uuid_ossp;
 try {
@@ -48,8 +48,8 @@ for (const f of files) {
   try { await db.exec("begin"); await db.exec(fs.readFileSync(path.join(DIR, f), "utf8")); await db.exec("commit"); }
   catch (e) { await db.exec("rollback").catch(() => {}); dead(`${f} did not replay: ${e.message}`); }
 }
-const has0477 = files.some((f) => f.startsWith("0477_"));
-console.log(`probe-top-contributors-0477: ${files.length} migrations replayed${has0477 ? "" : " (0477 is NOT among them: expect steps 2 and 3 to fail)"}.`);
+const has0479 = files.some((f) => f.startsWith("0479_"));
+console.log(`probe-top-contributors-0479: ${files.length} migrations replayed${has0479 ? "" : " (0479 is NOT among them: expect steps 2 and 3 to fail)"}.`);
 
 const A = "00000000-0000-4000-8000-00000000000a", B = "00000000-0000-4000-8000-00000000000b", C = "00000000-0000-4000-8000-00000000000c";
 const NAME = { [A]: "A", [B]: "B", [C]: "C" };
@@ -115,5 +115,5 @@ await expectBoards("3 A blocked C", { "signed out": ALL, A: "A=3 B=2", B: ALL, C
 ok((await badge("authenticated", C, A)) === "", "3: C is not shown A's badge");
 ok((await badge("authenticated", B, A)) === "zz_crag,zz_state", "3: B still is");
 
-console.log(`\nprobe-top-contributors-0477: ${passes} ok, ${failures} failed.`);
+console.log(`\nprobe-top-contributors-0479: ${passes} ok, ${failures} failed.`);
 process.exit(failures ? 1 : 0);

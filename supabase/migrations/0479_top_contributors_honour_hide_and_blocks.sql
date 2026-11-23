@@ -1,4 +1,4 @@
--- 0477: TOP CONTRIBUTORS leaves out the climbers Ranks already leaves out.
+-- 0479: TOP CONTRIBUTORS leaves out the climbers Ranks already leaves out.
 --
 -- WHY (found 2026-11-19, testing the boards with real accounts): Settings › Privacy says of
 -- "Show me on leaderboards" that "Off keeps you out of every ranking". leaderboard() honours it,
