@@ -1,0 +1,106 @@
+{
+ "ca_black_mountain_sierra_standard_route": {
+  "area": "ca_black_mountain_sierra",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Baxter Pass Trailhead",
+    "trailheadLat": 36.844705,
+    "trailheadLng": -118.297612
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Baxter Pass Trailhead",
+     "trailheadLat": 36.844705,
+     "trailheadLng": -118.297612
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_InfraRecreationSites_01/MapServer/0/query?where=site_cn%3D%275323.003721%27&outFields=site_name&f=json",
+      "fact": "Baxter Pass Trailhead 36.84470,-118.29761",
+      "retrieved_at": "2026-11-23",
+      "official": true
+     },
+     {
+      "url": "https://climber.org/reports/2011/1779.html",
+      "fact": "Start: Baxter Pass Trailhead",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://climber.org/reports/2005/1415.html",
+      "fact": "Start: Baxter Pass Trailhead",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://climber.org/reports/1999/413.html",
+      "fact": "Start: Baxter Pass Trailhead",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "research",
+    "fact": "three independent trip reports start at Baxter Pass; no other start found"
+   },
+   "chunk": "round10-climber-org"
+  }
+ },
+ "ca_mount_mcgee_standard_route": {
+  "area": "ca_mount_mcgee",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "North Lake Trailhead (Piute Pass trail)",
+    "trailheadLat": 37.230685,
+    "trailheadLng": -118.616614
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "North Lake Trailhead (Piute Pass trail)",
+     "trailheadLat": 37.230685,
+     "trailheadLng": -118.616614
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_InfraRecreationSites_01/MapServer/0/query?where=site_cn%3D%275351.003721%27&outFields=site_name&f=json",
+      "fact": "North Lake Trailhead 37.23069,-118.61661",
+      "retrieved_at": "2026-11-23",
+      "official": true
+     },
+     {
+      "url": "https://climber.org/reports/1997/235.html",
+      "fact": "Start: North Lake Trailhead",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://climber.org/reports/1997/201.html",
+      "fact": "Start: North Lake",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://climber.org/reports/2002/1019.html",
+      "fact": "Start: North Lake",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "research",
+    "fact": "three trip reports start at North Lake via Lamarck Col or Piute Pass; no other start found"
+   },
+   "chunk": "round10-climber-org"
+  }
+ }
+}
