@@ -1,0 +1,571 @@
+{
+ "wa_witch_doctor_wall_solaris": {
+  "area": "wa_witch_doctor_wall",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/202187897/solaris",
+    "https://alpinedave.com/darrington/Voodoo/Voodoo_Wall.htm",
+    "https://www.mountainproject.com/area/113757284/witch-doctor-wall",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_Wilderness_01/MapServer/0",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0",
+    "https://www.fs.usda.gov/r06/mbs/alerts",
+    "https://www.fs.usda.gov/r06/passes/recreation-sites-where-day-use-fees-are-charged"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.10b A2+",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/202187897/solaris",
+      "fact": "5.10b A2+",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://alpinedave.com/darrington/Voodoo/Voodoo_Wall.htm",
+      "fact": "IV 5.10b A2+",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "aid_grade",
+    "value": "A2+",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/202187897/solaris",
+      "fact": "A2+",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://alpinedave.com/darrington/Voodoo/Voodoo_Wall.htm",
+      "fact": "A2+",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 7,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/202187897/solaris",
+      "fact": "7 pitches",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "length_m",
+    "value": 259,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/202187897/solaris",
+      "fact": "850 ft (258 m)",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_witch_doctor_wall_solaris",
+    "column": "commitment",
+    "from": null,
+    "to": "IV",
+    "why": "Two independent publishers give Grade IV: Mountain Project (Grade IV) and the Voodoo Wall first ascensionist's own page (IV 5.10b A2+). agree-2 after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/202187897/solaris",
+     "https://alpinedave.com/darrington/Voodoo/Voodoo_Wall.htm"
+    ]
+   }
+  ],
+  "held": [
+   {
+    "table": "routes",
+    "id": "wa_witch_doctor_wall_solaris",
+    "column": "fa",
+    "from": null,
+    "to": "Chris Greyell, Mark Hanna, David Whitelaw 2003",
+    "why": "HELD: the two publishers agree on the party and year (2003) but spell the third climber differently: Mountain Project 'Mark Hanna', alpinedave.com 'Mark Hannah'. alpinedave also reports the team still working the line in July and on 4-5 October 2003. Needs a third source for the spelling.",
+    "evidence": [
+     "https://www.mountainproject.com/route/202187897/solaris",
+     "https://alpinedave.com/darrington/Voodoo/Voodoo_Wall.htm"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_witch_doctor_wall_solaris",
+    "column": "access",
+    "from": null,
+    "to": {
+     "rules": "The Eight-Mile Trail to the rock enters the Boulder River Wilderness, where groups are capped at 12 people and stock combined.",
+     "group_limit": 12,
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Darrington Ranger District)"
+    },
+    "why": "HELD (brief V: approach and wilderness differ). The candidate object from wa_three_o_clock_rock_total_soul does not fit Exfoliation Dome. The USFS wilderness layer (EDW_Wilderness_01) returns NO wilderness at the Witch Doctor Wall point (48.1486, -121.5906) or the dome; the nearest Boulder River Wilderness boundary vertex is about 2.0 km from the wall and 1.7 km from the summit. The approach is a climbers' path from a pullout on the Clear Creek road (FR 2060) via an old logging spur and a boulder field, not the Eight-Mile Trail. The USFS ownership layer (EDW_BasicOwnership_01) places the wall on Mt. Baker-Snoqualmie National Forest land, so only the land_manager field is supported. No Clear Creek road / FR 2060 site appears on the Region 6 day-use fee list (updated 2026-09-15), so no pass line. Owner choice: a land_manager-only object, or leave null.",
+    "evidence": [
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_Wilderness_01/MapServer/0",
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0",
+     "https://www.fs.usda.gov/r06/passes/recreation-sites-where-day-use-fees-are-charged",
+     "https://www.mountainproject.com/area/113757284/witch-doctor-wall"
+    ]
+   }
+  ],
+  "disputed": [
+   "fa: 'Mark Hanna' (Mountain Project) vs 'Mark Hannah' (alpinedave.com)"
+  ],
+  "notes": "Grade and aid grade agree (MP + alpinedave). MP: trad with bolted anchors and two bolt ladders; rappel the route with two ropes; pitches 6-7 end at trees, so no single anchor type is proposed. Commitment IV proposed (agree-2). FA held on a spelling. theCrag returned Forbidden in the owner's Chrome. Access held (see held)."
+ },
+ "wa_witch_doctor_wall_checkered_demon": {
+  "area": "wa_witch_doctor_wall",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/202188043/checkered-demon",
+    "https://cascadeclimbers.com/forum/topic/74893-tr-exfoliation-dome-darrington-rainman-510c-11p-sunday-cruise-59-8p-792010",
+    "https://www.mountainproject.com/area/113757284/witch-doctor-wall",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_Wilderness_01/MapServer/0",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0",
+    "https://www.fs.usda.gov/r06/mbs/alerts",
+    "https://www.fs.usda.gov/r06/passes/recreation-sites-where-day-use-fees-are-charged"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "commitment",
+    "value": "V",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/202188043/checkered-demon",
+      "fact": "Grade V",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/74893-tr-exfoliation-dome-darrington-rainman-510c-11p-sunday-cruise-59-8p-792010",
+      "fact": "Checkered Demon 5.7 A3 Grade V",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "aid_grade",
+    "value": "A3",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/202188043/checkered-demon",
+      "fact": "A3",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/74893-tr-exfoliation-dome-darrington-rainman-510c-11p-sunday-cruise-59-8p-792010",
+      "fact": "5.7 A3",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 10,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/202188043/checkered-demon",
+      "fact": "10 pitches",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "length_m",
+    "value": 305,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/202188043/checkered-demon",
+      "fact": "1000 ft (303 m)",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [],
+  "held": [
+   {
+    "table": "routes",
+    "id": "wa_witch_doctor_wall_checkered_demon",
+    "column": "rock_grade",
+    "from": "5.7",
+    "to": "5.6",
+    "why": "HELD: the row contradicts itself (grade '5.6 A3 PG13' but rock_grade '5.7'). Mountain Project gives 5.6 A3 PG13; a 2010 CascadeClimbers trip report calls it 5.7 A3 Grade V. Two sources disagree on the free grade, so neither grade nor rock_grade is changed; a third source should settle it.",
+    "evidence": [
+     "https://www.mountainproject.com/route/202188043/checkered-demon",
+     "https://cascadeclimbers.com/forum/topic/74893-tr-exfoliation-dome-darrington-rainman-510c-11p-sunday-cruise-59-8p-792010"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_witch_doctor_wall_checkered_demon",
+    "column": "fa",
+    "from": null,
+    "to": "Dave Davis, Don Leonard, Bill Lingley 1971",
+    "why": "HELD: Mountain Project only; a first ascent never locks or is set from one source.",
+    "evidence": [
+     "https://www.mountainproject.com/route/202188043/checkered-demon"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_witch_doctor_wall_checkered_demon",
+    "column": "access",
+    "from": null,
+    "to": {
+     "rules": "The Eight-Mile Trail to the rock enters the Boulder River Wilderness, where groups are capped at 12 people and stock combined.",
+     "group_limit": 12,
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Darrington Ranger District)"
+    },
+    "why": "HELD (brief V: approach and wilderness differ). The candidate object from wa_three_o_clock_rock_total_soul does not fit Exfoliation Dome. The USFS wilderness layer (EDW_Wilderness_01) returns NO wilderness at the Witch Doctor Wall point (48.1486, -121.5906) or the dome; the nearest Boulder River Wilderness boundary vertex is about 2.0 km from the wall and 1.7 km from the summit. The approach is a climbers' path from a pullout on the Clear Creek road (FR 2060) via an old logging spur and a boulder field, not the Eight-Mile Trail. The USFS ownership layer (EDW_BasicOwnership_01) places the wall on Mt. Baker-Snoqualmie National Forest land, so only the land_manager field is supported. No Clear Creek road / FR 2060 site appears on the Region 6 day-use fee list (updated 2026-09-15), so no pass line. Owner choice: a land_manager-only object, or leave null.",
+    "evidence": [
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_Wilderness_01/MapServer/0",
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0",
+     "https://www.fs.usda.gov/r06/passes/recreation-sites-where-day-use-fees-are-charged",
+     "https://www.mountainproject.com/area/113757284/witch-doctor-wall"
+    ]
+   }
+  ],
+  "disputed": [
+   "grade / rock_grade: 5.6 A3 (Mountain Project, and the stored grade) vs 5.7 A3 (CascadeClimbers 2010 TR, and the stored rock_grade)"
+  ],
+  "notes": "TWO DIFFERENT LINES, not a duplicate: MP's Witch Doctor Route page says that route starts well left of Checkered Demon; MP's Checkered Demon page says the Demon's last pitch traverses left to a cedar and joins the Witch Doctor Route for one more pitch. Both are listed by MP as 1000 ft / 10 pitches, so the identical stored 10 pitches / 305 m are each supported. The 2010 TR places the Demon in the center of the face (the right-facing corner with a white band mid-height). Thunder Road (not mine; also 5.6 A3, 10p, 305 m) is placed by MP well right of the Demon, so it is a third line. Grade not locked (disputed). theCrag Forbidden."
+ },
+ "wa_witch_doctor_wall_the_witch_doctor_route": {
+  "area": "wa_witch_doctor_wall",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/202188006/the-witch-doctor-route",
+    "https://www.mountainproject.com/area/113757284/witch-doctor-wall",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_Wilderness_01/MapServer/0",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0",
+    "https://www.fs.usda.gov/r06/mbs/alerts",
+    "https://www.fs.usda.gov/r06/passes/recreation-sites-where-day-use-fees-are-charged"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.7 A3 PG13",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/202188006/the-witch-doctor-route",
+      "fact": "5.7 A3 PG13",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "aid_grade",
+    "value": "A3",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/202188006/the-witch-doctor-route",
+      "fact": "A3",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 10,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/202188006/the-witch-doctor-route",
+      "fact": "10 pitches",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "length_m",
+    "value": 305,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/202188006/the-witch-doctor-route",
+      "fact": "1000 ft (303 m)",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [],
+  "held": [
+   {
+    "table": "routes",
+    "id": "wa_witch_doctor_wall_the_witch_doctor_route",
+    "column": "commitment",
+    "from": null,
+    "to": "V",
+    "why": "HELD: commitment grade from Mountain Project alone (brief M rule).",
+    "evidence": [
+     "https://www.mountainproject.com/route/202188006/the-witch-doctor-route"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_witch_doctor_wall_the_witch_doctor_route",
+    "column": "fa",
+    "from": null,
+    "to": "Fred Beckey, David Wagner, Tom Nephew 1969",
+    "why": "HELD: Mountain Project only (July 1969); no AAJ or other independent page found. A first ascent is never set from one source.",
+    "evidence": [
+     "https://www.mountainproject.com/route/202188006/the-witch-doctor-route"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_witch_doctor_wall_the_witch_doctor_route",
+    "column": "access",
+    "from": null,
+    "to": {
+     "rules": "The Eight-Mile Trail to the rock enters the Boulder River Wilderness, where groups are capped at 12 people and stock combined.",
+     "group_limit": 12,
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Darrington Ranger District)"
+    },
+    "why": "HELD (brief V: approach and wilderness differ). The candidate object from wa_three_o_clock_rock_total_soul does not fit Exfoliation Dome. The USFS wilderness layer (EDW_Wilderness_01) returns NO wilderness at the Witch Doctor Wall point (48.1486, -121.5906) or the dome; the nearest Boulder River Wilderness boundary vertex is about 2.0 km from the wall and 1.7 km from the summit. The approach is a climbers' path from a pullout on the Clear Creek road (FR 2060) via an old logging spur and a boulder field, not the Eight-Mile Trail. The USFS ownership layer (EDW_BasicOwnership_01) places the wall on Mt. Baker-Snoqualmie National Forest land, so only the land_manager field is supported. No Clear Creek road / FR 2060 site appears on the Region 6 day-use fee list (updated 2026-09-15), so no pass line. Owner choice: a land_manager-only object, or leave null.",
+    "evidence": [
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_Wilderness_01/MapServer/0",
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0",
+     "https://www.fs.usda.gov/r06/passes/recreation-sites-where-day-use-fees-are-charged",
+     "https://www.mountainproject.com/area/113757284/witch-doctor-wall"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "Distinct from Checkered Demon (see that row). MP: climbs the left side of the wall and finishes along the ridge crest south to the summit; two ropes; doubles to 4 in plus thin pins and baby angles. Grade/pitches/length at locked-1src (theCrag Forbidden; no other publisher found)."
+ },
+ "wa_witch_doctor_wall_orange_blossom_special": {
+  "area": "wa_witch_doctor_wall",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/202187849/orange-blossom-special",
+    "https://www.mountainproject.com/area/113757284/witch-doctor-wall",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_Wilderness_01/MapServer/0",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0",
+    "https://www.fs.usda.gov/r06/mbs/alerts",
+    "https://www.fs.usda.gov/r06/passes/recreation-sites-where-day-use-fees-are-charged"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.9 PG13",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/202187849/orange-blossom-special",
+      "fact": "5.9 PG13",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "length_m",
+    "value": 122,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/202187849/orange-blossom-special",
+      "fact": "400 ft (121 m)",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [],
+  "held": [
+   {
+    "table": "routes",
+    "id": "wa_witch_doctor_wall_orange_blossom_special",
+    "column": "commitment",
+    "from": null,
+    "to": "III",
+    "why": "HELD: commitment grade from Mountain Project alone.",
+    "evidence": [
+     "https://www.mountainproject.com/route/202187849/orange-blossom-special"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_witch_doctor_wall_orange_blossom_special",
+    "column": "fa",
+    "from": null,
+    "to": "Sprague Ackley, Hope Barns 1982",
+    "why": "HELD: Mountain Project only.",
+    "evidence": [
+     "https://www.mountainproject.com/route/202187849/orange-blossom-special"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_witch_doctor_wall_orange_blossom_special",
+    "column": "access",
+    "from": null,
+    "to": {
+     "rules": "The Eight-Mile Trail to the rock enters the Boulder River Wilderness, where groups are capped at 12 people and stock combined.",
+     "group_limit": 12,
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Darrington Ranger District)"
+    },
+    "why": "HELD (brief V: approach and wilderness differ). The candidate object from wa_three_o_clock_rock_total_soul does not fit Exfoliation Dome. The USFS wilderness layer (EDW_Wilderness_01) returns NO wilderness at the Witch Doctor Wall point (48.1486, -121.5906) or the dome; the nearest Boulder River Wilderness boundary vertex is about 2.0 km from the wall and 1.7 km from the summit. The approach is a climbers' path from a pullout on the Clear Creek road (FR 2060) via an old logging spur and a boulder field, not the Eight-Mile Trail. The USFS ownership layer (EDW_BasicOwnership_01) places the wall on Mt. Baker-Snoqualmie National Forest land, so only the land_manager field is supported. No Clear Creek road / FR 2060 site appears on the Region 6 day-use fee list (updated 2026-09-15), so no pass line. Owner choice: a land_manager-only object, or leave null.",
+    "evidence": [
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_Wilderness_01/MapServer/0",
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0",
+     "https://www.fs.usda.gov/r06/passes/recreation-sites-where-day-use-fees-are-charged",
+     "https://www.mountainproject.com/area/113757284/witch-doctor-wall"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "Stored pitches 4 left unlocked: MP's header says 4 pitches but its own description says 3-4. MP: starts up an orange chimney about 400 ft left of the Elixir descent gully; some orange rock is crumbly; descent unclear. theCrag Forbidden."
+ },
+ "wa_witch_doctor_wall_sunday_cruise": {
+  "area": "wa_witch_doctor_wall",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/202188018/sunday-cruise",
+    "https://cascadeclimbers.com/forum/topic/74893-tr-exfoliation-dome-darrington-rainman-510c-11p-sunday-cruise-59-8p-792010",
+    "https://cascadeclimbers.com/forum/topic/43843-tr-exfoliation-dome-sunday-cruise-witch-doctor",
+    "https://www.mountainproject.com/area/113757284/witch-doctor-wall",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_Wilderness_01/MapServer/0",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0",
+    "https://www.fs.usda.gov/r06/mbs/alerts",
+    "https://www.fs.usda.gov/r06/passes/recreation-sites-where-day-use-fees-are-charged"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.9",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/202188018/sunday-cruise",
+      "fact": "5.9",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/74893-tr-exfoliation-dome-darrington-rainman-510c-11p-sunday-cruise-59-8p-792010",
+      "fact": "Sunday Cruise 5.9 8P",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "commitment",
+    "value": "III",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/202188018/sunday-cruise",
+      "fact": "Grade III",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/43843-tr-exfoliation-dome-sunday-cruise-witch-doctor",
+      "fact": "Sunday Cruise (III 5.9)",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_witch_doctor_wall_sunday_cruise",
+    "column": "pitches",
+    "from": null,
+    "to": 8,
+    "why": "Mountain Project: 8 pitches; a 2010 CascadeClimbers trip report on Witch Doctor Wall: 'Sunday Cruise 5.9 8P'. Two independent publishers agree; agree-2 after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/202188018/sunday-cruise",
+     "https://cascadeclimbers.com/forum/topic/74893-tr-exfoliation-dome-darrington-rainman-510c-11p-sunday-cruise-59-8p-792010"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_witch_doctor_wall_sunday_cruise",
+    "column": "length_m",
+    "from": null,
+    "to": 305,
+    "why": "Mountain Project states 1000 ft (303 m); stored as 305 m to match the house convention for 1000 ft on this wall (Thunder Road, Checkered Demon, Witch Doctor Route). Single source, locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/202188018/sunday-cruise"
+    ]
+   }
+  ],
+  "held": [
+   {
+    "table": "routes",
+    "id": "wa_witch_doctor_wall_sunday_cruise",
+    "column": "gear",
+    "from": [
+     "gear to 3 in"
+    ],
+    "to": [
+     "doubles to 4 in",
+     "wired nuts",
+     "TCUs"
+    ],
+    "why": "HELD: Mountain Project lists at least doubles to 4 in, wired nuts and TCUs (no bolts, two ropes), which contradicts the stored 'gear to 3 in'. One source against a stored value.",
+    "evidence": [
+     "https://www.mountainproject.com/route/202188018/sunday-cruise"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_witch_doctor_wall_sunday_cruise",
+    "column": "access",
+    "from": null,
+    "to": {
+     "rules": "The Eight-Mile Trail to the rock enters the Boulder River Wilderness, where groups are capped at 12 people and stock combined.",
+     "group_limit": 12,
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Darrington Ranger District)"
+    },
+    "why": "HELD (brief V: approach and wilderness differ). The candidate object from wa_three_o_clock_rock_total_soul does not fit Exfoliation Dome. The USFS wilderness layer (EDW_Wilderness_01) returns NO wilderness at the Witch Doctor Wall point (48.1486, -121.5906) or the dome; the nearest Boulder River Wilderness boundary vertex is about 2.0 km from the wall and 1.7 km from the summit. The approach is a climbers' path from a pullout on the Clear Creek road (FR 2060) via an old logging spur and a boulder field, not the Eight-Mile Trail. The USFS ownership layer (EDW_BasicOwnership_01) places the wall on Mt. Baker-Snoqualmie National Forest land, so only the land_manager field is supported. No Clear Creek road / FR 2060 site appears on the Region 6 day-use fee list (updated 2026-09-15), so no pass line. Owner choice: a land_manager-only object, or leave null.",
+    "evidence": [
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_Wilderness_01/MapServer/0",
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0",
+     "https://www.fs.usda.gov/r06/passes/recreation-sites-where-day-use-fees-are-charged",
+     "https://www.mountainproject.com/area/113757284/witch-doctor-wall"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "Stored FA 'Dave Tower, Duane Constantino, Chris Greyell 1979' matches Mountain Project's party and year (different order); one source, so not locked. MP: no bolts, no fixed belays or rappel anchors, two ropes; lies between Checkered Demon and the original Witch Doctor route (the 2010 TR also puts it just left of the Demon). The 2006 TR quotes a guidebook breakdown of two easy pitches then three harder (5.8-5.9) ones; MP and the 2010 TR give 8 pitches. theCrag Forbidden."
+ }
+}

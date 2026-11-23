@@ -9,7 +9,7 @@
 -- and commit the result in the same PR. `npm run gen:schema -- --check` exits 1 when this
 -- file has drifted from the live database.
 --
--- Counts: 87 tables, 864 columns, 468 keyed/checked constraints (152 foreign keys), 259 RLS policies.
+-- Counts: 87 tables, 865 columns, 469 keyed/checked constraints (152 foreign keys), 259 RLS policies.
 -- Not covered here: views, functions, triggers, standalone indexes (see supabase/migrations/).
 
 -- ── Foreign keys ───────────────────────────────────────────────────────────────
@@ -458,10 +458,12 @@ CREATE TABLE public.climb_logs (
   nights_out integer,
   camp_names text[],
   summited boolean,
+  pitches_climbed integer,
   CONSTRAINT climb_logs_pkey PRIMARY KEY (id),
   CONSTRAINT climb_logs_camp_names_sane CHECK (((camp_names IS NULL) OR (((cardinality(camp_names) >= 1) AND (cardinality(camp_names) <= 10)) AND (char_length(array_to_string(camp_names, ''::text)) <= 1200)))),
   CONSTRAINT climb_logs_moderation_chk CHECK ((moderation = ANY (ARRAY['visible'::text, 'held'::text, 'removed'::text]))),
   CONSTRAINT climb_logs_nights_out_sane CHECK (((nights_out IS NULL) OR ((nights_out >= 0) AND (nights_out <= 60)))),
+  CONSTRAINT climb_logs_pitches_climbed_range CHECK (((pitches_climbed >= 1) AND (pitches_climbed <= 99))),
   CONSTRAINT climb_logs_rappel_count_sane CHECK (((rappel_count IS NULL) OR ((rappel_count >= 0) AND (rappel_count <= 200)))),
   CONSTRAINT climb_logs_rappel_longest_sane CHECK (((rappel_longest_m IS NULL) OR ((rappel_longest_m >= 1) AND (rappel_longest_m <= 200)))),
   CONSTRAINT climb_logs_stars_check CHECK (((stars >= 1) AND (stars <= 5))),
