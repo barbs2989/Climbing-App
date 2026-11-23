@@ -303,21 +303,39 @@ const sqlCols = (list) => list.split(",").map((c) => c.trim()).filter(Boolean).m
   const base = (db_js.match(/const TRIP_REPORT_COLS = "([^"]+)"/) || [])[1];
   const extra = (db_js.match(/TRIP_REPORT_COLS \+ "([^"]+)"/) || [])[1];
   if (!base) fail("lib/db.js: TRIP_REPORT_COLS not found — this section can no longer test the trip-report reads");
-  const lists = new Map();
+  const lists = new Map(), ownLists = new Map();
   if (base) { lists.set("route_id, " + base, "TRIP_REPORT_COLS"); if (extra) lists.set("route_id, " + base + extra, "TRIP_REPORT_COLS + 0121 columns"); }
   const srcFiles = [path.join(ROOT, "lib", "db.js")];
   for (const f of fs.readdirSync(ROOT)) if (/\.jsx$/.test(f)) srcFiles.push(path.join(ROOT, f));
   for (const f of srcFiles) {
     const s = fs.readFileSync(f, "utf8"), rel = path.relative(ROOT, f);
     for (const m of s.matchAll(/from\("climb_logs"\)\s*\.select\("([^"]*)"/g)) {
-      if (/^\s*\*?\s*$/.test(m[1])) fail(`${rel}: .from("climb_logs").select("${m[1]}") — select * is refused signed out since 0501; name the columns`);
-      else if (!lists.has(m[1])) lists.set(m[1], rel);
+      if (/^\s*\*?\s*$/.test(m[1])) { fail(`${rel}: .from("climb_logs").select("${m[1]}") — select * is refused signed out since 0501; name the columns`); continue; }
+      // `partners` is the author's own: ONE reader may name it, useMyLogs (your own logs, keyed on
+      // your id, enabled only signed in), which App hydrates `logs` from and the edit form fills
+      // from. Anywhere else, naming it is a list a guest would be refused. That one list is run
+      // signed in below, as its author would; anon is still proven refused partners above.
+      const cols = m[1].split(",").map((x) => x.trim());
+      if (cols.includes("partners")) {
+        const fnAt = s.lastIndexOf("export function ", m.index);
+        const fn = (s.slice(fnAt, fnAt + 60).match(/export function (\w+)/) || [])[1];
+        if (rel !== path.join("lib", "db.js") || fn !== "useMyLogs") fail(`${rel}: a climb_logs select naming partners outside useMyLogs (${fn || "?"}) — partners is refused signed out since 0501`);
+        else if (!/\.eq\("user_id", userId\)/.test(s.slice(m.index, m.index + m[0].length + 200))) fail("useMyLogs names partners but no longer reads only .eq(\"user_id\", userId) — it must stay the climber's OWN logs");
+        else ownLists.set(m[1], rel + " useMyLogs (own logs, signed in)");
+        continue;
+      }
+      if (!lists.has(m[1])) lists.set(m[1], rel);
     }
   }
   const before = failures;
   for (const [list, where] of lists) {
     const r = await as("anon", null, `select ${sqlCols(list)} from climb_logs limit 1`);
     if (r.error) fail(`${where}: "${list.slice(0, 80)}…" signed out: ${r.error}`);
+  }
+  for (const [list, where] of ownLists) {
+    const r = await as("authenticated", A, `select ${sqlCols(list)} from climb_logs where user_id = auth.uid() limit 1`);
+    if (r.error) fail(`${where}: "${list.slice(0, 80)}…" signed in as the author: ${r.error}`);
+    else ok(`${where} runs signed in (it names partners, the author's own)`);
   }
   if (failures === before) ok(`${lists.size} app climb_logs select lists run signed out`);
 }

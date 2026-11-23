@@ -285,6 +285,44 @@ console.log("  ok    the route-page hydration drops nothing a reader wants");
   console.log("  ok    the hydration and the bell both use isScoutRow");
 }
 
+// ---- the SELECT that feeds the hydration (2026-11-23) -----------------------
+// Everything above compares the payload with the mapping and assumed the rows arrive whole
+// ("useUserLogs selects *"). 0501 (#3736) narrowed useUserLogs to five columns for the résumé,
+// not knowing App hydrated your OWN logs from it too: every column above was mapped and every one
+// arrived undefined, so a signed-in climber's write-ups, conditions and times loaded blank, their
+// own route page lost their conditions, and an edit saved the blanks back. This reads the hook App
+// actually calls and fails unless it selects `*` or names every column the hydration reads.
+{
+  const DB = readFileSync(new URL("../lib/db.js", import.meta.url), "utf8");
+  const hookBody = (name) => {
+    const at = DB.indexOf("export function " + name + "(");
+    if (at < 0) fail(`could not find export function ${name}( in lib/db.js (the hook App's ${name === hookOwn ? "myLogsQ" : "profLogsQ"} calls).`);
+    // ends at the next TOP-LEVEL declaration, exported or not: the body must not run on into a
+    // neighbour that happens to name TRIP_REPORT_COLS (a first draft ended at "\nexport " and passed
+    // useUserLogs, because fetchRouteTripReports below it is not exported)
+    const rest = DB.slice(at + 10);
+    const m = rest.match(/\n(?:export |async function |function |const |let |\/\/ Query)/);
+    return DB.slice(at, m ? at + 10 + m.index : DB.length);
+  };
+  const ownM = SRC.match(/myLogsQ=(use[A-Za-z]+)\(uid\)/);
+  if (!ownM) fail("ANCHOR LOST: myLogsQ=use…(uid) not found in ClimbMatch.jsx — cannot tell which query feeds the hydration.");
+  var hookOwn = ownM[1];
+  const body = hookBody(hookOwn);
+  const sel = body.match(/\.select\(\s*"([^"]*)"\s*\)/);
+  if (!sel) fail(`${hookOwn} has no literal .select("...") — this check cannot read what it fetches.`);
+  if (sel[1].trim() !== "*") {
+    const got = new Set(sel[1].split(",").map((x) => x.trim()));
+    const short = [...readBack].filter((c) => !got.has(c)).sort();
+    if (short.length) fail(`${hookOwn} (myLogsQ, the rows App hydrates your own logs from) selects "${sel[1]}" and never fetches ${short.length} column(s) the hydration reads: ${short.join(", ")}. Each loads as blank, and an edit saves the blank back.`);
+  }
+  console.log(`  ok    ${hookOwn} (myLogsQ) fetches every column the hydration reads`);
+  const profM = SRC.match(/profLogsQ=(use[A-Za-z]+)\(_profUid\)/);
+  if (!profM) fail("ANCHOR LOST: profLogsQ=use…(_profUid) not found in ClimbMatch.jsx.");
+  const pBody = hookBody(profM[1]);
+  if (!/TRIP_REPORT_COLS/.test(pBody)) fail(`${profM[1]} (profLogsQ: another climber's Activity, opened as trip reports) does not select TRIP_REPORT_COLS — the reports it opens would be missing their write-up and conditions.`);
+  console.log(`  ok    ${profM[1]} (profLogsQ) selects the route page's report columns`);
+}
+
 console.log("\nclimb-log hydration: ok");
 
 // ---- injection cases, re-run these after touching depth1Keys ----------------
