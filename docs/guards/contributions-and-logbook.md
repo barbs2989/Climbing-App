@@ -272,6 +272,15 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     assertion cannot see this class at all.
   - **Fails closed:** a card that expands to no new rows, fewer than 5 cards, or a Fifty Classics
     list without both Liberty rows means nothing was measured.
+  - **A list is a PAGE, and it closes with Back (2026-11-23).** #3662 ("Lists open as pages") moved
+    each list out of the panel into `ListPage`, a dialog portalled beside it, and tapping the card's
+    header a second time stopped folding anything. This section read rows inside the panel and
+    "closed" a list by tapping its header again, so from that merge it failed 28 times on main with
+    nothing wrong on screen: half because the rows were in a dialog it did not read, half because
+    the previous list was still open. It now reads rows from every open dialog, closes a list with
+    its page's Back, and fails if a list is still open before the next one is measured. It runs in
+    `render-guards.yml` only (no PR trigger), which is why the PR that changed the layout never saw
+    it. Proven again: with the row selector made unmatchable it fails 26 times (13 lists × 2 widths).
   - **Proven:** with the row put back to one-line no-wrap columns, it failed with 42 findings,
     among them `"Liberty Bell Mountain · Washington" overlaps "Alpine · 5.11a C2"`; on main it
     passes on 13 lists at both widths.
