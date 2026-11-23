@@ -493,6 +493,13 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     unrated climb at the same grade, and that `suggestLogWeight` halves every two years so the centre
     leans to recent climbs. Four injections, each caught by name: drop the X filter, drop the R
     penalty, return a constant weight, and let X back into the fallback.
+  - **Alpine, ice and mixed profile grades (2026-11-23).** The profile already stored an ice and a mixed
+    grade (`climb_grades`, with aid); an earlier report in this work said it did not, from a grep for
+    grade COLUMNS only. They now feed slots, and `PROFILE_GRADES` gained an Alpine entry stored the same
+    way (no column, no migration). Section 2a pins the App memo, the Alpine entry and onboarding's
+    `GRADED_DISC`. Six stated grades against a cap of three is why `suggestDiscSlots` takes `here`: a
+    slot for a discipline the area lacks is dropped before the cap. Aid is deliberately not a slot: its
+    scale mixes A and C grades, which a single window cannot range over.
   - Measured non-finding, do not re-derive: `catOf` files a trad climb on a peak as alpine, so the
     alpine pool could miss a peak's trad lines. It is 4 routes of the 1,110 filed on the 535 busiest
     peaks of six states; the catalog already stores peak climbs as alpine. A fix was built and removed.

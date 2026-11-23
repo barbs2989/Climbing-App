@@ -1172,3 +1172,30 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     `&#x27;`. And a value read from a `const` declared later in `RouteDetail`'s body throws "Cannot
     access … before initialization" when the JSX reading it is built earlier — `check:bare` caught
     `areaFactEdit` doing exactly that on every tab; declare it before the first TechStats mount.
+
+- **`check:profile-gain`** asserts that **the Gain and Loss above the elevation profile add up, and
+  that GPS jitter on steep ground is not counted as climbing** (`lib/elevGain.js`, read by
+  `src/components/ElevChart.tsx`). In the build; no database, no browser.
+  - Why: a test of the profile on live data (2026-11-23, 430 drawn profiles) found 23 routes reading
+    more than twice their whole relief as gain. Liberty Bell's Beckey Route printed 15,393 ft on a
+    recording spanning 2,372 ft. Its stored elevations match the ground (USGS 3DEP) to within a foot
+    at the same points, so they are terrain heights read at each GPS point, and on steep rock a few
+    metres of sideways wander moves that height by tens of feet (neighbouring samples up to 266 ft
+    apart). The flat 10 ft deadband counted all of it.
+  - What was measured before choosing the method, so it is not re-derived: a wider flat threshold
+    does not cure it (8,248 ft at 80 ft); a distance-smoothing window wide enough to help erases real
+    climbing on clean recordings (at 250 m, 88 routes read below their own net climb); a running
+    deadband with a jitter-scaled threshold loses the top of the climb on 10-14 routes. Turning
+    points with the jitter-scaled threshold (5 x local RMS departure from a 150 m average, over 400 m)
+    lost nothing on any route, moved clean recordings by about 1%, and took routes within 10% of
+    their stored gain from 180 to 201 of 354.
+  - What it cannot see: whether a route's stored track is the right track. Dot Mountain's profile
+    reads 16,000 ft because the recording is 75 km of walking; no way of counting changes that. And
+    the worst jumpy recordings are halved, not cured (Colfax Cosley-Houston 20,427 -> 8,715 ft on
+    5,800 ft of relief), so a profile gain far above the headline gain is still worth reading as a
+    track question.
+  - Section 4 carries its own proof it can fail: the same jumpy recording under the flat threshold
+    must read over 1.5 times the real climb.
+  - Trap met: a sharp summit turnaround is itself a departure from the local average, so even a
+    perfect recording's threshold lifts to 20-30 ft for a few samples at the top. The guard asserts
+    that honestly (10 ft on the slopes, under 30 at the turnaround) and that the totals stay exact.
