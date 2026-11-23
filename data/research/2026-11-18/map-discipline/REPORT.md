@@ -361,3 +361,21 @@ coordinate within about 35 m of a mapped trail start counts as a second, indepen
   - North Maggie: 161 m from the trail start, which sits in a campground.
   - Ossa: the trail is mapped, but the route is still only a peak-level answer.
   - Sirretta: the official trail begins 0.86 km from the driving-guide point.
+
+### Round 9: peaks where every pinned route shares one lot (2026-11-23)
+
+Owner asked for the recommended option. `scripts/uni8.mjs` grouped the 160 open routes by peak and compared
+the trailhead pins the peak's other routes already carry. 34 peaks were unanimous (every pin within 150 m),
+10 split, 78 had no pinned neighbour. A route was written only when all of these held: at least three
+neighbouring routes share the lot, no page or row text names another start for the peak or that side of it,
+and the route is not a Goodell Creek route. Each write cites one opened page that starts at that lot.
+- **Written (6, unconfirmed, verified on re-read, `batch-r9.json`):** Chair Peak South Ridge and Southeast
+  Face (Alpental, 5 neighbours), Chimney Rock North, Northeast and Northwest Ridges (Pete Lake, 3
+  neighbours), Colchuck Peak South Face (Stuart Lake, 7 neighbours).
+- **Unanimous but left held:**
+  - Chimney Rock's two south-side lines: Rachel Lake is a possible start.
+  - Second start known: Big Snow, Castle Peak (Pasayten), Little Big Chief, Dragontail Boving Route, and
+    Cutthroat "A Virtuous Circle" (north side, Cutthroat Lake trail).
+  - Red Mountain east side: no page covers that side.
+  - Fewer than three neighbours: every peak with one or two.
+- **Audit, measured:** SUMMIT_ONLY 154, NO_SUMMIT 40.
