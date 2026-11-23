@@ -1338,7 +1338,22 @@ rows. Its build script is gone; new reviews write the column.
     so a research round was not run on them.
   - **The web-search budget is shared** by every agent in a session (about 200 searches, refilled in about an
     hour); eight agents at once spent it mid-batch. The second wave ran four agents with a per-agent cap.
-- **Still on a guess:** the two legacy id prefixes `adams_` and `rainier_` (2 routes each), not reviewed. Section 1 and 2 of `check:alpine-conditions` hold the rule
+- **Washington research round 2 (2026-11-23)** on its 72 still-unsettled routes
+  (`scripts/oneoff/glacier-travel-wa-research.mjs --in / --fold`): the shared search budget gave out after
+  12-21 searches per agent, and most climbing sites refuse automated page reads (403). 14 routes got a page
+  read; 7 glacier and 1 snow answer were taken. Four thin "no glacier" answers were held at unsure in the
+  fold's `HOLD_GLACIER` (Forbidden East Ridge, Bonanza Cascadian, both Chopping Block routes). Washington now:
+  glacier yes 298 / no 421 / not settled 34; snow not settled 37.
+- **Legacy id prefixes reviewed:** `adams_avalanche_glacier`, `adams_northwest_ridge`,
+  `rainier_north_mowich_headwall`, `rainier_central_mowich_face` are all glacier yes / snow yes from their own
+  text (crevasse hazards named, or the North Mowich Glacier climbed), added to Washington's `final.json`.
+- **A misfiled hazard list found on the way:** `wy_northeast_couloir` (Kagevah Peak, Wind Rivers) carried
+  Colchuck Peak's Northeast Couloir list (the Colchuck Glacier, its bergschrund, the February 2023 deaths), a
+  same-name collision. Cleared by `scripts/oneoff/clear-wy-northeast-couloir-watch-out.mjs`, rollback kept. A
+  scan of every non-Washington `watch_out`, `hazards` and `what_to_bring` for Enchantments names found no
+  other; `co_old_route`'s "Dragontail Couloir" is Flattop Mountain's own.
+- **Still on a guess:** the unsettled routes `npm run audit:glacier-travel -- --state <slug>` lists, about 300
+  across all states. Each needs a page read, and the search budget, not the method, is what limits it. Section 1 and 2 of `check:alpine-conditions` hold the rule
   (21 assertions); the data is only as good as the review.
 
   - **HOUR BY HOUR + THE GUST WINDOW (2026-10-08, owner: "clear and exact and accurate science").**
