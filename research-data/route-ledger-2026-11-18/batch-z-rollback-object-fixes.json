@@ -1,0 +1,271 @@
+{
+ "note": "Values replaced by the owner-approved batch-Z access/gear object fixes, 2026-11-23",
+ "rollback": [
+  {
+   "table": "routes",
+   "id": "wa_imperial_master",
+   "before": {
+    "access": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_rock_n_roll_chimney",
+   "before": {
+    "gear": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_rock_n_roll_chimney",
+   "before": {
+    "access": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_slash",
+   "before": {
+    "gear": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_slash",
+   "before": {
+    "access": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_not_so_easy",
+   "before": {
+    "access": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_nobody_loves_me",
+   "before": {
+    "gear": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_nobody_loves_me",
+   "before": {
+    "access": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_hard_last",
+   "before": {
+    "access": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_rattler",
+   "before": {
+    "gear": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_rattler",
+   "before": {
+    "access": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_first_blood",
+   "before": {
+    "gear": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_first_blood",
+   "before": {
+    "access": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_mush_maker",
+   "before": {
+    "gear": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_mush_maker",
+   "before": {
+    "access": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_nimrod_s_nemesis",
+   "before": {
+    "gear": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_nimrod_s_nemesis",
+   "before": {
+    "access": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_slacker",
+   "before": {
+    "gear": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_slacker",
+   "before": {
+    "access": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_chasing_amy",
+   "before": {
+    "gear": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_chasing_amy",
+   "before": {
+    "access": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_the_apprentice",
+   "before": {
+    "gear": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_the_apprentice",
+   "before": {
+    "access": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_humble_pie",
+   "before": {
+    "access": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_slime_puppy",
+   "before": {
+    "gear": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_slime_puppy",
+   "before": {
+    "access": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_gray_digger",
+   "before": {
+    "gear": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_gray_digger",
+   "before": {
+    "access": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_level_head",
+   "before": {
+    "gear": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_level_head",
+   "before": {
+    "access": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_switchback",
+   "before": {
+    "gear": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_switchback",
+   "before": {
+    "access": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_the_sorcerer",
+   "before": {
+    "gear": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_the_sorcerer",
+   "before": {
+    "access": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_good_timer",
+   "before": {
+    "gear": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_good_timer",
+   "before": {
+    "access": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_little_known_wonder",
+   "before": {
+    "gear": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_little_known_wonder",
+   "before": {
+    "access": null
+   }
+  }
+ ]
+}
