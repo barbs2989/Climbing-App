@@ -45,6 +45,8 @@ export interface TopoDrawerProps {
   dirtyRef?: { current: boolean } | null;
   /** Ask with this copy on Cancel even when nothing is drawn: the photo itself was just posted, so cancelling takes it down. */
   discardAsk?: {title: string; body: string; confirmLabel: string} | null;
+  /** The save is on its way: Save topo reads "Saving…" and takes no second tap (a second tap stored the line twice), and Cancel waits. */
+  saving?: boolean;
 }
 /** The handle under edit, or being dragged. */
 type Handle = {kind: "point"; l: number; i: number} | {kind: "pin"; i: number};
@@ -62,7 +64,7 @@ const LOUPE_PX = 112;
 /* Exported for lib/LogAscent.jsx, which lets a climber draw a topo while logging the climb (lazy import, so the
    log form does not pull this file into its chunk until the control is tapped).
    Moved verbatim from RouteDetail.jsx (PR58); only the types were added. */
-export default function TopoDrawer({initial,onCancel,onSubmit,dirtyRef,discardAsk}: TopoDrawerProps){
+export default function TopoDrawer({initial,onCancel,onSubmit,dirtyRef,discardAsk,saving}: TopoDrawerProps){
   // lines[0] is the route line; lines[1..] are its variations.
   const [lines,setLines]=useState<TopoPoint[][]>(function(){return [((initial&&initial.points)||[]).slice()].concat(((initial&&initial.variants)||[]).map(function(v){return v.slice();}));});
   const [act,setAct]=useState(0);         // which line a tap extends
@@ -394,8 +396,8 @@ export default function TopoDrawer({initial,onCancel,onSubmit,dirtyRef,discardAs
         draw line tab"): its "left-hand variation" example sat under the marker notes on Add pins. */}
     {mode==="line"?<input aria-label="Name this line (optional)" value={label} maxLength={60} onChange={function(e: ChangeEvent<HTMLInputElement>){setLabel(e.target.value);}} placeholder="Name this line (optional) — e.g. direct start, left-hand variation" style={{width:"100%",boxSizing:"border-box",padding:"8px 10px",borderRadius:8,border:"1px solid "+C.border,background:C.card,color:C.text,fontSize:13,outline:"none",marginBottom:10}}/>:null}
     <div style={{display:"flex",gap:12}}>
-      <button onClick={cancel} style={{flex:1,padding:9,background:C.surface,color:C.textSub,border:"1px solid "+C.border,borderRadius:9,fontSize:13,cursor:"pointer"}}>Cancel</button>
-      <button disabled={!canSave} onClick={function(){onSubmit({points:points,variants:variants,variantLabels:keptVar.map(function(o){return o.t;}),pins:cleanPins(),label:label.trim()||null});}} style={{flex:2,padding:9,background:canSave?C.blueSolid:C.border,color:C.onSolid,border:"none",borderRadius:9,fontSize:13,fontWeight:700,cursor:"pointer"}}>Save topo</button>
+      <button onClick={cancel} disabled={!!saving} style={{flex:1,padding:9,background:C.surface,color:C.textSub,border:"1px solid "+C.border,borderRadius:9,fontSize:13,cursor:"pointer"}}>Cancel</button>
+      <button disabled={!canSave||!!saving} onClick={function(){if(saving)return;onSubmit({points:points,variants:variants,variantLabels:keptVar.map(function(o){return o.t;}),pins:cleanPins(),label:label.trim()||null});}} style={{flex:2,padding:9,background:canSave&&!saving?C.blueSolid:C.border,color:C.onSolid,border:"none",borderRadius:9,fontSize:13,fontWeight:700,cursor:canSave&&!saving?"pointer":"default"}}>{saving?"Saving…":"Save topo"}</button>
     </div>
   </div>;
 }

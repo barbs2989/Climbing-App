@@ -81,7 +81,18 @@ export default function TopoSection({route}: TopoSectionProps){
     :localPhotos.map(function(p){return {id:p.id,url:p.url,db:false,
         lines:(localLines[p.id]||[]).slice().sort(function(a,b){return b.ts-a.ts;})};});
 
+  /* The save from the drawing sheet. Its failure is shown IN the sheet: `err` above renders in the
+     section, which the sheet covers, so a refused save used to look like a Save button that did nothing. */
+  const [saving,setSaving]=useState(false);const savingRef=useRef(false);
+  const [drawErr,setDrawErr]=useState<string|null>(null);
+  /* The caption typed over a photo just posted and not yet saved (TopoCaptionBox writes it). */
+  const capDraft=useRef<string|null>(null);
   const pickFile=function(){
+    /* One upload at a time: the strip's own Add tile stayed live during an upload, and a second upload
+       reset the first one's Cancel, so a cancelled photo was posted after all. */
+    if(busy)return;
+    /* Asked BEFORE the photo is chosen: a signed-out climber used to pick a photo and only then be told. */
+    if(USE_DB&&!_topoUid){setErr("Sign in to add a topo photo.");return;}
     const inp=document.createElement("input");inp.type="file";inp.accept="image/*";
     inp.onchange=function(e: Event){const f=(e.target as FileTarget).files&&(e.target as FileTarget).files[0];if(f)addPhoto(f);};
     inp.click();
@@ -107,22 +118,28 @@ export default function TopoSection({route}: TopoSectionProps){
     }
   };
   const submitLine=function(photo: TopoSectionPhoto,data: TopoDrawerResult){
-    setErr(null);
-    if(photo.db&&photo.editLine){
-      updateTopoLine(photo.editLine.id,{points:data.points,pins:data.pins,label:data.label||null,variants:data.variants||[],variant_labels:data.variantLabels||[]}).then(function(){
-        dbTopos.refetch();setDrawFor(null);
-      }).catch(function(e){setErr((e&&e.message)||"Couldn't save your changes.");});
-    } else if(photo.db){
-      submitTopoLine(photo.id,route.id,data.points,data.pins,data.label||null,data.variants,data.variantLabels).then(function(){
-        dbTopos.refetch();setDrawFor(null);
-      }).catch(function(e){setErr((e&&e.message)||"Couldn't save that line.");});
+    /* The ref, not the state: two taps inside one frame both read `saving` as false, and each stored a line. */
+    if(savingRef.current)return;
+    setErr(null);setDrawErr(null);
+    if(photo.db){
+      savingRef.current=true;setSaving(true);
+      /* A caption typed over the new photo goes with the line: it had its own Save button, and Save topo closed the sheet without it. */
+      const cap=photo.fresh?capDraft.current:null;
+      const line=photo.editLine;
+      (cap!=null?updateTopoCaption(photo.id,cap):Promise.resolve(null)).then(function(){
+        return line
+          ?updateTopoLine(line.id,{points:data.points,pins:data.pins,label:data.label||null,variants:data.variants||[],variant_labels:data.variantLabels||[]})
+          :submitTopoLine(photo.id,route.id,data.points,data.pins,data.label||null,data.variants,data.variantLabels);
+      }).then(function(){
+        drawDirty.current=false;capDraft.current=null;dbTopos.refetch();setDrawFor(null);
+      }).catch(function(e){const m=String((e&&e.message)||(line?"Couldn't save your changes":"Couldn't save that line")).trim();setDrawErr(m+(/[.!?]$/.test(m)?"":".")+" Nothing you drew is lost — try Save topo again.");}).then(function(){savingRef.current=false;setSaving(false);});
     } else {
       setLocalLines(function(m){
         const o=Object.assign({},m);
         o[photo.id]=(o[photo.id]||[]).concat([{id:"line_"+Date.now(),points:data.points,variants:data.variants||[],variant_labels:data.variantLabels||[],pins:data.pins,label:data.label||null,ts:Date.now()}]);
         return o;
       });
-      setDrawFor(null);
+      drawDirty.current=false;setDrawFor(null);
     }
   };
 
@@ -142,11 +159,11 @@ export default function TopoSection({route}: TopoSectionProps){
      photo that was already there (or editing a line) still only drops the drawing. */
   const freshAsk={title:"Cancel this topo?",body:"The photo you just added is removed from this route, along with anything you drew on it.",confirmLabel:"Remove photo"};
   const dropDraw=function(){
-    const d=drawFor;drawDirty.current=false;setDrawFor(null);
+    const d=drawFor;drawDirty.current=false;capDraft.current=null;setDrawErr(null);setDrawFor(null);
     if(!(d&&d.fresh&&d.db))return;
     setErr(null);deleteTopoPhoto(d.id,d.storagePath).then(function(){return dbTopos.refetch();}).catch(function(e){setErr((e&&e.message)||"Couldn't remove that photo.");});
   };
-  const closeDraw=function(){const fresh=!!(drawFor&&drawFor.fresh&&drawFor.db);if(!drawDirty.current&&!fresh)return dropDraw();askConfirm(fresh?freshAsk:{title:"Discard this drawing?",body:"The points and markers you placed are not saved.",confirmLabel:"Discard"}).then(function(ok){if(ok)dropDraw();});};
+  const closeDraw=function(){/* Mid-save, closing would take a new photo down while its line is being stored. */if(saving)return;const fresh=!!(drawFor&&drawFor.fresh&&drawFor.db);if(!drawDirty.current&&!fresh)return dropDraw();askConfirm(fresh?freshAsk:{title:"Discard this drawing?",body:"The points and markers you placed are not saved.",confirmLabel:"Discard"}).then(function(ok){if(ok)dropDraw();});};
   const editLine=function(p: TopoModalPhoto,l: TopoModalLine){setViewerIdx(null);setDrawFor(Object.assign({},p,{editLine:l}) as TopoSectionPhoto);};
   const removeLine=function(_p: TopoModalPhoto,l: TopoModalLine){
     return askConfirm({title:"Delete your line?",body:"Your line and its markers come off this photo for everyone. The photo stays.",confirmLabel:"Delete line"}).then(function(ok){
@@ -192,8 +209,9 @@ export default function TopoSection({route}: TopoSectionProps){
           <button onClick={closeDraw} style={POP_CLOSE} aria-label="Close">✕</button>
         </div>
         {/* The photo was just posted: ask for its caption here, while the climber still remembers why they took it. Cancelling the drawer takes the photo (and its caption) down — see closeDraw. */}
-        {(drawFor.fresh&&drawFor.db)?<TopoCaptionBox key={drawFor.id} initial={null} onSave={function(t){return saveCaption(drawFor,t);}} style={{marginBottom:12}}/>:null}
-        <TopoDrawer key={drawFor.id+":"+(drawFor.editLine?drawFor.editLine.id:"new")} dirtyRef={drawDirty} initial={drawFor.editLine?{photoUrl:drawFor.url,points:drawFor.editLine.points,variants:(drawFor.editLine.variants||[]) as TopoPoint[][],variantLabels:drawFor.editLine.variant_labels||[],pins:(drawFor.editLine.pins||[]) as TopoDrawerPin[],label:drawFor.editLine.label||""}:{photoUrl:drawFor.url}} discardAsk={(drawFor.fresh&&drawFor.db)?freshAsk:null} onCancel={dropDraw} onSubmit={function(data: TopoDrawerResult){drawDirty.current=false;submitLine(drawFor,data);}}/>
+        {(drawFor.fresh&&drawFor.db)?<TopoCaptionBox key={drawFor.id} initial={null} draftRef={capDraft} onSave={function(t){return saveCaption(drawFor,t);}} style={{marginBottom:12}}/>:null}
+        <TopoDrawer key={drawFor.id+":"+(drawFor.editLine?drawFor.editLine.id:"new")} dirtyRef={drawDirty} initial={drawFor.editLine?{photoUrl:drawFor.url,points:drawFor.editLine.points,variants:(drawFor.editLine.variants||[]) as TopoPoint[][],variantLabels:drawFor.editLine.variant_labels||[],pins:(drawFor.editLine.pins||[]) as TopoDrawerPin[],label:drawFor.editLine.label||""}:{photoUrl:drawFor.url}} discardAsk={(drawFor.fresh&&drawFor.db)?freshAsk:null} saving={saving} onCancel={dropDraw} onSubmit={function(data: TopoDrawerResult){submitLine(drawFor,data);}}/>
+        {drawErr?<div role="alert" ref={function(el: HTMLDivElement|null){if(el&&el.scrollIntoView)el.scrollIntoView({block:"nearest"});}} style={{background:C.redBg,border:"1px solid "+C.red+"66",borderRadius:10,padding:"9px 12px",marginTop:10,fontSize:12.5,color:C.red,lineHeight:1.45}}>{drawErr}</div>:null}
       </div>
     </div>,document.body):null}
   </div>;
