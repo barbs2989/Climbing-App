@@ -1,0 +1,1487 @@
+[
+ {
+  "id": "ok_lichen_wall",
+  "verdict": "fix_one_source",
+  "stored": [
+   32.7992,
+   -97.27743
+  ],
+  "new_lat": 34.69598,
+  "new_lng": -98.66703,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/105861388",
+    "retrieved_at": "2026-11-18",
+    "lat": 34.69598,
+    "lng": -98.66703,
+    "fact": "MP Lichen Wall GPS; breadcrumb Wichita Mountains WR > The Narrows"
+   }
+  ],
+  "note": "Stored 32.80,-97.28 is Fort Worth TX; MP places it in the Wichitas. Only MP prints a coordinate."
+ },
+ {
+  "id": "nc_cougar_crag_the",
+  "verdict": "parent_wrong",
+  "stored": [
+   35.46033,
+   -82.21642
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": 35.33815,
+  "parent_new_lng": -82.60734,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/106036434",
+    "retrieved_at": "2026-11-18",
+    "lat": 35.46033,
+    "lng": -82.21642,
+    "fact": "MP The Cougar Crag GPS, matches stored child"
+   },
+   {
+    "url": "https://www.mountainproject.com/area/106035087",
+    "retrieved_at": "2026-11-18",
+    "lat": 35.33815,
+    "lng": -82.60734,
+    "fact": "MP The Dark Side (parent) GPS"
+   },
+   {
+    "url": "https://www.mountainproject.com/area/106037541",
+    "retrieved_at": "2026-11-18",
+    "lat": 35.6037,
+    "lng": -79.2773,
+    "fact": "MP sibling Desperado Wall carries NC placeholder coordinate (also Main Wall, Survivor Wall)"
+   }
+  ],
+  "note": "Stored parent 35.58,-79.77 (Piedmont) looks built from siblings that carry MP's NC placeholder 35.6037,-79.2773. Parent value is ONE source (MP) and is still 38 km from the child per MP itself: hold for owner."
+ },
+ {
+  "id": "ak_skagway",
+  "verdict": "ok",
+  "stored": [
+   59.5190858333333,
+   -135.327761666667
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/106929987",
+    "retrieved_at": "2026-11-18",
+    "lat": 59.53667,
+    "lng": -135.32837,
+    "fact": "MP Skagway area GPS"
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/Skagway,_Alaska",
+    "retrieved_at": "2026-11-18",
+    "lat": 59.45833,
+    "lng": -135.31389,
+    "fact": "Skagway town coordinate (GNIS 1414754)"
+   }
+  ],
+  "note": "Parent is a large region; the child really is this far from its centre."
+ },
+ {
+  "id": "or_mt_mcloughlin",
+  "verdict": "ok",
+  "stored": [
+   42.4445,
+   -122.3156
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/125237145",
+    "retrieved_at": "2026-11-18",
+    "lat": 42.44444,
+    "lng": -122.31551,
+    "fact": "MP Mt. McLoughlin GPS"
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/Mount_McLoughlin",
+    "retrieved_at": "2026-11-18",
+    "lat": 42.444472,
+    "lng": -122.31562,
+    "fact": "Summit coordinate"
+   }
+  ],
+  "note": "Stored matches two sources; parent \"Oregon Volcanoes\" spans the state."
+ },
+ {
+  "id": "mt_testament_slabs",
+  "verdict": "ok",
+  "stored": [
+   48.6697,
+   -115.56725
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/111971383",
+    "retrieved_at": "2026-11-18",
+    "lat": 48.6697,
+    "lng": -115.56725,
+    "fact": "MP Testament Slabs GPS, filed Northwest Region > Kalispell Area"
+   }
+  ],
+  "note": "Parent is a large region; the child really is this far from its centre. One source only."
+ },
+ {
+  "id": "id_projects_the",
+  "verdict": "ok",
+  "stored": [
+   42.17087,
+   -116.510333333333
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/111113872",
+    "retrieved_at": "2026-11-18",
+    "lat": 42.17078,
+    "lng": -116.51223,
+    "fact": "MP The Projects (bouldering, West Idaho) GPS"
+   }
+  ],
+  "note": "Parent is a large region; the child really is this far from its centre. One source only."
+ },
+ {
+  "id": "co_fluted_peak",
+  "verdict": "fix",
+  "stored": [
+   40.2565,
+   -105.6569
+  ],
+  "new_lat": 38.0244548,
+  "new_lng": -105.6014082,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://edits.nationalmap.gov/apps/gaz-domestic/public/search/names/192287",
+    "retrieved_at": "2026-11-18",
+    "lat": 38.0244548,
+    "lng": -105.6014082,
+    "fact": "GNIS Fluted Peak, Summit, Saguache County CO"
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/Fluted_Peak_(Colorado)",
+    "retrieved_at": "2026-11-18",
+    "lat": 38.0244548,
+    "lng": -105.6014082,
+    "fact": "Infobox coordinate"
+   },
+   {
+    "url": "https://www.mountainproject.com/area/107618562",
+    "retrieved_at": "2026-11-18",
+    "lat": 40.2565,
+    "lng": -105.6569,
+    "fact": "MP GPS wrong; MP text says Sangre de Cristos just north of the Crestones"
+   }
+  ],
+  "note": "MP itself carries the bad coordinate (RMNP area). Wikipedia copies GNIS, so effectively one official source plus MP text agreeing on the range."
+ },
+ {
+  "id": "wy_laradise",
+  "verdict": "fix",
+  "stored": [
+   43.0046,
+   -107.842
+  ],
+  "new_lat": 41.3113669,
+  "new_lng": -105.5911007,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://edits.nationalmap.gov/apps/gaz-domestic/public/search/names/1590526",
+    "retrieved_at": "2026-11-18",
+    "lat": 41.3113669,
+    "lng": -105.5911007,
+    "fact": "GNIS Laramie, Albany County WY"
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/Laramie,_Wyoming",
+    "retrieved_at": "2026-11-18",
+    "lat": 41.31111,
+    "lng": -105.59361,
+    "fact": "Laramie city coordinate"
+   },
+   {
+    "url": "https://www.mountainproject.com/area/108032644",
+    "retrieved_at": "2026-11-18",
+    "lat": 43.0046,
+    "lng": -107.842,
+    "fact": "MP GPS is a WY placeholder; text: buildering downtown Laramie and on campus"
+   }
+  ],
+  "note": "Laradise is buildering in town; city coordinate (region-size area). MP 43.0046,-107.842 is a placeholder."
+ },
+ {
+  "id": "ak_glacier_bay_national_park",
+  "verdict": "ok",
+  "stored": [
+   58.6877,
+   -137.04282
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/120619181",
+    "retrieved_at": "2026-11-18",
+    "lat": 58.6877,
+    "lng": -137.04282,
+    "fact": "MP Glacier Bay National Park GPS"
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/Glacier_Bay_National_Park_and_Preserve",
+    "retrieved_at": "2026-11-18",
+    "lat": 58.5,
+    "lng": -137,
+    "fact": "Park coordinate"
+   }
+  ],
+  "note": "Parent is a large region; the child really is this far from its centre."
+ },
+ {
+  "id": "ca_carmel_bay",
+  "verdict": "ok",
+  "stored": [
+   36.5217276785714,
+   -121.928286607143
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/107798290",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.5388,
+    "lng": -121.92779,
+    "fact": "MP Carmel Bay and surrounding areas GPS"
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/Carmel_Bay",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.54333,
+    "lng": -121.95472,
+    "fact": "Bay coordinate"
+   }
+  ],
+  "note": "Parent is a large region; the child really is this far from its centre."
+ },
+ {
+  "id": "az_arizona_strip_the",
+  "verdict": "ok",
+  "stored": [
+   36.87960565625,
+   -113.57323990625
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/107448780",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.90348,
+    "lng": -113.88023,
+    "fact": "MP The Arizona Strip GPS"
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/Arizona_Strip",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.65,
+    "lng": -112.833,
+    "fact": "Region coordinate"
+   }
+  ],
+  "note": "Parent is a large region; the child really is this far from its centre."
+ },
+ {
+  "id": "ut_red_monster_the",
+  "verdict": "unresolved",
+  "stored": [
+   40.72623,
+   -111.85767
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/105916424",
+    "retrieved_at": "2026-11-18",
+    "lat": 40.72623,
+    "lng": -111.85767,
+    "fact": "MP GPS is Salt Lake City, contradicts its Ibex breadcrumb"
+   },
+   {
+    "url": "https://www.mountainproject.com/area/105916360",
+    "retrieved_at": "2026-11-18",
+    "lat": 38.9923,
+    "lng": -113.3883,
+    "fact": "MP Red Monster Area (parent) GPS"
+   }
+  ],
+  "note": "MP itself carries the garbled coordinate; no page prints the boulder's real one. Also: stored parent 39.165,-113.235 is ~23 km from MP parent 38.9923,-113.3883."
+ },
+ {
+  "id": "ak_haines",
+  "verdict": "ok",
+  "stored": [
+   59.3459833333333,
+   -135.558753333333
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/110206871",
+    "retrieved_at": "2026-11-18",
+    "lat": 59.23356,
+    "lng": -135.44492,
+    "fact": "MP Haines GPS"
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/Haines,_Alaska",
+    "retrieved_at": "2026-11-18",
+    "lat": 59.23389,
+    "lng": -135.44694,
+    "fact": "Haines town (GNIS 1422400)"
+   }
+  ],
+  "note": "Parent is a large region; the child really is this far from its centre. Stored is ~14 km from town (child-area average)."
+ },
+ {
+  "id": "az_kingman_area",
+  "verdict": "ok",
+  "stored": [
+   35.4419323703704,
+   -114.21731787037
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/107448717",
+    "retrieved_at": "2026-11-18",
+    "lat": 35.2209,
+    "lng": -114.0285,
+    "fact": "MP Kingman Area GPS"
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/Kingman,_Arizona",
+    "retrieved_at": "2026-11-18",
+    "lat": 35.217,
+    "lng": -114.0105,
+    "fact": "Kingman city (GNIS 2411547)"
+   }
+  ],
+  "note": "Parent is a large region; the child really is this far from its centre. Stored ~30 km NW of town (child-area average)."
+ },
+ {
+  "id": "id_bitterroot_mountains",
+  "verdict": "ok",
+  "stored": [
+   46.39596,
+   -114.73031
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/117079822",
+    "retrieved_at": "2026-11-18",
+    "lat": 46.39386,
+    "lng": -114.70061,
+    "fact": "MP Bitterroot Mountains (North Idaho) GPS"
+   }
+  ],
+  "note": "Parent is a large region; the child really is this far from its centre."
+ },
+ {
+  "id": "ca_beerhorn_crag",
+  "verdict": "ok",
+  "stored": [
+   35.4963,
+   -118.20202
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/119029240",
+    "retrieved_at": "2026-11-18",
+    "lat": 35.4963,
+    "lng": -118.20202,
+    "fact": "MP Beerhorn Crag GPS, filed Eastern Sierra > Southern Area"
+   }
+  ],
+  "note": "Parent is a large region; the child really is this far from its centre. One source only."
+ },
+ {
+  "id": "nm_tucumcari_mountain",
+  "verdict": "ok",
+  "stored": [
+   35.13408,
+   -103.69819
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/107119588",
+    "retrieved_at": "2026-11-18",
+    "lat": 35.13407,
+    "lng": -103.69817,
+    "fact": "MP Tucumcari Mountain (closed) GPS"
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/Tucumcari_Mountain",
+    "retrieved_at": "2026-11-18",
+    "lat": 35.134531,
+    "lng": -103.698718,
+    "fact": "Mountain coordinate"
+   }
+  ],
+  "note": "Parent is a large region; the child really is this far from its centre."
+ },
+ {
+  "id": "az_hall_creek",
+  "verdict": "ok",
+  "stored": [
+   34.06412,
+   -109.45935
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/112042874",
+    "retrieved_at": "2026-11-18",
+    "lat": 34.06412,
+    "lng": -109.45934,
+    "fact": "MP Hall Creek GPS"
+   }
+  ],
+  "note": "Parent is a large region; the child really is this far from its centre. One source only."
+ },
+ {
+  "id": "nm_monster_island",
+  "verdict": "ok",
+  "stored": [
+   34.3226544444444,
+   -107.978933333333
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/106889507",
+    "retrieved_at": "2026-11-18",
+    "lat": 34.32297,
+    "lng": -107.9762,
+    "fact": "MP Monster Island GPS"
+   }
+  ],
+  "note": "Parent is a large region; the child really is this far from its centre. One source only."
+ },
+ {
+  "id": "az_mr_rogers_neighborhood",
+  "verdict": "ok",
+  "stored": [
+   34.14753,
+   -109.50988
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/202523702",
+    "retrieved_at": "2026-11-18",
+    "lat": 34.14753,
+    "lng": -109.50988,
+    "fact": "MP Mr. Rogers Neighborhood GPS"
+   }
+  ],
+  "note": "Parent is a large region; the child really is this far from its centre. One source only."
+ },
+ {
+  "id": "mo_em_slu_south_campus",
+  "verdict": "ok",
+  "stored": [
+   38.62305,
+   -90.2366
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/123335446",
+    "retrieved_at": "2026-11-18",
+    "lat": 38.62305,
+    "lng": -90.2366,
+    "fact": "MP SLU South Campus GPS, under XM: Closed Areas"
+   }
+  ],
+  "note": "Parent \"Closed Areas\" is a statewide category, not a place."
+ },
+ {
+  "id": "nv_lone_mountain",
+  "verdict": "ok",
+  "stored": [
+   37.9736983333333,
+   -117.494628125
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/110236336",
+    "retrieved_at": "2026-11-18",
+    "lat": 37.99533,
+    "lng": -117.523,
+    "fact": "MP Lone Mountain (Western Nevada) GPS"
+   }
+  ],
+  "note": "Parent is a large region; the child really is this far from its centre. One source only."
+ },
+ {
+  "id": "ak_arctic_national_wildlife_refuge",
+  "verdict": "ok",
+  "stored": [
+   69.21256,
+   -144.97044
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/116695989",
+    "retrieved_at": "2026-11-18",
+    "lat": 69.21256,
+    "lng": -144.97044,
+    "fact": "MP ANWR GPS"
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/Arctic_National_Wildlife_Refuge",
+    "retrieved_at": "2026-11-18",
+    "lat": 68.75,
+    "lng": -143.5,
+    "fact": "Refuge coordinate"
+   }
+  ],
+  "note": "Parent is a large region; the child really is this far from its centre."
+ },
+ {
+  "id": "ak_finger_mountain",
+  "verdict": "ok",
+  "stored": [
+   66.3643155555556,
+   -150.469158333333
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/118893720",
+    "retrieved_at": "2026-11-18",
+    "lat": 66.35672,
+    "lng": -150.46236,
+    "fact": "MP Finger Mountain GPS"
+   }
+  ],
+  "note": "Parent is a large region; the child really is this far from its centre. One source only."
+ },
+ {
+  "id": "mo_zenith_climbing_center",
+  "verdict": "ok",
+  "stored": [
+   37.17746,
+   -93.22185
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/111814526",
+    "retrieved_at": "2026-11-18",
+    "lat": 37.17746,
+    "lng": -93.22185,
+    "fact": "MP Zenith Climbing Center GPS, under ZM: Indoor Walls"
+   }
+  ],
+  "note": "Parent \"Indoor Walls\" is a statewide category."
+ },
+ {
+  "id": "id_south_fork_of_the_clearwater",
+  "verdict": "ok",
+  "stored": [
+   45.8191011111111,
+   -115.83444787037
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/108042672",
+    "retrieved_at": "2026-11-18",
+    "lat": 45.82036,
+    "lng": -115.85298,
+    "fact": "MP South Fork of the Clearwater GPS"
+   }
+  ],
+  "note": "Parent is a large region; the child really is this far from its centre. One source only."
+ },
+ {
+  "id": "az_salome",
+  "verdict": "ok",
+  "stored": [
+   33.8488,
+   -113.68882
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/108014894",
+    "retrieved_at": "2026-11-18",
+    "lat": 33.8488,
+    "lng": -113.68882,
+    "fact": "MP Salome GPS"
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/Salome,_Arizona",
+    "retrieved_at": "2026-11-18",
+    "lat": 33.76361,
+    "lng": -113.60861,
+    "fact": "Salome town (GNIS 2409240)"
+   }
+  ],
+  "note": "Parent is a large region; the child really is this far from its centre."
+ },
+ {
+  "id": "nm_cox_canyon",
+  "verdict": "ok",
+  "stored": [
+   36.9861866666667,
+   -107.91053
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/117986760",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.9916,
+    "lng": -107.90923,
+    "fact": "MP Cox Canyon GPS"
+   }
+  ],
+  "note": "Parent is a large region; the child really is this far from its centre. One source only."
+ },
+ {
+  "id": "ca_selden_pass",
+  "verdict": "fix",
+  "stored": [
+   35.96713,
+   -118.48372
+  ],
+  "new_lat": 37.2896615,
+  "new_lng": -118.8723387,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://edits.nationalmap.gov/apps/gaz-domestic/public/search/names/265989",
+    "retrieved_at": "2026-11-18",
+    "lat": 37.2896615,
+    "lng": -118.8723387,
+    "fact": "GNIS Selden Pass, Gap, Fresno County CA"
+   },
+   {
+    "url": "https://www.openstreetmap.org/search?query=Selden%20Pass%2C%20California",
+    "retrieved_at": "2026-11-18",
+    "lat": 37.2899492,
+    "lng": -118.872925,
+    "fact": "OSM mountain pass Selden Pass, Fresno County"
+   },
+   {
+    "url": "https://www.mountainproject.com/area/122813231",
+    "retrieved_at": "2026-11-18",
+    "lat": 35.96713,
+    "lng": -118.48372,
+    "fact": "MP GPS wrong; text says JMT pass, 10,800 ft"
+   }
+  ],
+  "note": "MP itself carries the bad coordinate (~150 km south)."
+ },
+ {
+  "id": "az_slaughterhouse_boulder_kingman",
+  "verdict": "ok",
+  "stored": [
+   35.18436,
+   -114.02266
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/107055844",
+    "retrieved_at": "2026-11-18",
+    "lat": 35.18436,
+    "lng": -114.02266,
+    "fact": "MP Slaughterhouse Boulder (Kingman) GPS"
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/Kingman,_Arizona",
+    "retrieved_at": "2026-11-18",
+    "lat": 35.217,
+    "lng": -114.0105,
+    "fact": "Kingman city coordinate"
+   }
+  ],
+  "note": "Parent \"Northern AZ Bouldering\" is a regional collection centred on Flagstaff."
+ },
+ {
+  "id": "ca_indian_wells_canyon",
+  "verdict": "ok",
+  "stored": [
+   35.6918411666667,
+   -117.921569833333
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/107329966",
+    "retrieved_at": "2026-11-18",
+    "lat": 35.7155,
+    "lng": -117.9743,
+    "fact": "MP Indian Wells Canyon GPS"
+   }
+  ],
+  "note": "Parent is a large region; the child really is this far from its centre. One source only."
+ },
+ {
+  "id": "ca_heavenly_valley",
+  "verdict": "unresolved",
+  "stored": [
+   40.53363,
+   -120.06257
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/202702925",
+    "retrieved_at": "2026-11-18",
+    "lat": 40.53363,
+    "lng": -120.06257,
+    "fact": "MP GPS wrong; text: off Keller Road behind Whispering Pine Condos"
+   }
+  ],
+  "note": "Stored = MP, which is ~185 km north of South Lake Tahoe. No page prints the crag coordinate."
+ },
+ {
+  "id": "nm_tico_time_boulders",
+  "verdict": "ok",
+  "stored": [
+   36.9911666666667,
+   -107.864533333333
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/121274231",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.99136,
+    "lng": -107.8646,
+    "fact": "MP Tico Time Boulders GPS"
+   }
+  ],
+  "note": "Parent is a large region; the child really is this far from its centre. One source only."
+ },
+ {
+  "id": "mi_montreal_river",
+  "verdict": "ok",
+  "stored": [
+   46.56437,
+   -90.41524
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/116363734",
+    "retrieved_at": "2026-11-18",
+    "lat": 46.56437,
+    "lng": -90.41524,
+    "fact": "MP Montreal River GPS"
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/Montreal_River_(Wisconsin–Michigan)",
+    "retrieved_at": "2026-11-18",
+    "lat": 46.56556,
+    "lng": -90.41667,
+    "fact": "River coordinate"
+   }
+  ],
+  "note": "Parent is a large region; the child really is this far from its centre."
+ },
+ {
+  "id": "mt_cabinet_mountain_wilderness",
+  "verdict": "ok",
+  "stored": [
+   48.19628625,
+   -115.686375
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/112214482",
+    "retrieved_at": "2026-11-18",
+    "lat": 48.20779,
+    "lng": -115.67362,
+    "fact": "MP Cabinet Mountain Wilderness GPS"
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/Cabinet_Mountains_Wilderness",
+    "retrieved_at": "2026-11-18",
+    "lat": 48.217,
+    "lng": -115.683,
+    "fact": "Wilderness coordinate"
+   }
+  ],
+  "note": "Parent is a large region; the child really is this far from its centre."
+ },
+ {
+  "id": "az_woodruff",
+  "verdict": "ok",
+  "stored": [
+   34.74062,
+   -110.01709
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/116828809",
+    "retrieved_at": "2026-11-18",
+    "lat": 34.74062,
+    "lng": -110.01709,
+    "fact": "MP Woodruff GPS"
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/Woodruff,_Arizona",
+    "retrieved_at": "2026-11-18",
+    "lat": 34.78139,
+    "lng": -110.04056,
+    "fact": "Woodruff CDP (GNIS 2582910)"
+   }
+  ],
+  "note": "Parent \"Northern AZ Bouldering\" is a regional collection."
+ },
+ {
+  "id": "mi_grand_ledge_aka_oak_park",
+  "verdict": "ok",
+  "stored": [
+   42.75784,
+   -84.75339
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/105934381",
+    "retrieved_at": "2026-11-18",
+    "lat": 42.75784,
+    "lng": -84.75339,
+    "fact": "MP Grand Ledge GPS"
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/Grand_Ledge,_Michigan",
+    "retrieved_at": "2026-11-18",
+    "lat": 42.75333,
+    "lng": -84.745,
+    "fact": "City (GNIS 1626372)"
+   }
+  ],
+  "note": "Parent is a large region; the child really is this far from its centre."
+ },
+ {
+  "id": "co_parachute",
+  "verdict": "fix",
+  "stored": [
+   38.9936,
+   -105.93
+  ],
+  "new_lat": 39.4494426,
+  "new_lng": -108.05266,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://edits.nationalmap.gov/apps/gaz-domestic/public/search/names/2413110",
+    "retrieved_at": "2026-11-18",
+    "lat": 39.4494426,
+    "lng": -108.05266,
+    "fact": "GNIS Parachute, Garfield County CO"
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/Parachute,_Colorado",
+    "retrieved_at": "2026-11-18",
+    "lat": 39.45167,
+    "lng": -108.05167,
+    "fact": "Town coordinate"
+   },
+   {
+    "url": "https://www.mountainproject.com/area/106653990",
+    "retrieved_at": "2026-11-18",
+    "lat": 38.9936,
+    "lng": -105.93,
+    "fact": "MP Parachute (ice) GPS is CO placeholder; text: drainages on Roan Cliffs, go to Parachute"
+   }
+  ],
+  "note": "Region-size fix: town coordinate; climbs are scattered in Roan Cliffs drainages. MP parent Parachute/Battlement Mesa 39.43356,-107.99408."
+ },
+ {
+  "id": "id_riggins",
+  "verdict": "fix",
+  "stored": [
+   45.40157,
+   -116.11719
+  ],
+  "new_lat": 45.41373,
+  "new_lng": -116.32571,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": "West Idaho",
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/114587654",
+    "retrieved_at": "2026-11-18",
+    "lat": 45.41373,
+    "lng": -116.32571,
+    "fact": "MP Riggins GPS, filed Idaho > West Idaho"
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/Riggins,_Idaho",
+    "retrieved_at": "2026-11-18",
+    "lat": 45.42028,
+    "lng": -116.31778,
+    "fact": "Riggins city (GNIS 2410949)"
+   }
+  ],
+  "note": "Stored is ~16 km east of Riggins. Also misfiled: MP files Riggins under West Idaho, not Central Idaho."
+ },
+ {
+  "id": "ak_byers_lake",
+  "verdict": "ok",
+  "stored": [
+   62.72479,
+   -150.09638
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/121263755",
+    "retrieved_at": "2026-11-18",
+    "lat": 62.72557,
+    "lng": -150.09278,
+    "fact": "MP Byers Lake GPS, under Fairbanks and Vicinity"
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/Byers_Lake_(Alaska)",
+    "retrieved_at": "2026-11-18",
+    "lat": 62.73972,
+    "lng": -150.11111,
+    "fact": "Lake coordinate"
+   }
+  ],
+  "note": "Parent is a large region; the child really is this far from its centre."
+ },
+ {
+  "id": "nm_el_malpais",
+  "verdict": "ok",
+  "stored": [
+   34.8721,
+   -107.88679
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/106596104",
+    "retrieved_at": "2026-11-18",
+    "lat": 34.8721,
+    "lng": -107.88679,
+    "fact": "MP El Malpais GPS"
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/El_Malpais_National_Monument",
+    "retrieved_at": "2026-11-18",
+    "lat": 34.87722,
+    "lng": -108.05083,
+    "fact": "Monument coordinate"
+   }
+  ],
+  "note": "Parent is a large region; the child really is this far from its centre."
+ },
+ {
+  "id": "co_fish_creek_falls_2",
+  "verdict": "fix",
+  "stored": [
+   38.9936,
+   -105.93
+  ],
+  "new_lat": 40.481351,
+  "new_lng": -106.7712461,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://edits.nationalmap.gov/apps/gaz-domestic/public/search/names/172743",
+    "retrieved_at": "2026-11-18",
+    "lat": 40.481351,
+    "lng": -106.7712461,
+    "fact": "GNIS Fish Creek Falls, Falls, Routt County CO"
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/Fish_Creek_Falls",
+    "retrieved_at": "2026-11-18",
+    "lat": 40.481644,
+    "lng": -106.771159,
+    "fact": "Falls coordinate"
+   },
+   {
+    "url": "https://www.mountainproject.com/area/106690213",
+    "retrieved_at": "2026-11-18",
+    "lat": 38.9936,
+    "lng": -105.93,
+    "fact": "MP Fish Creek Falls (ice) GPS is CO placeholder"
+   }
+  ],
+  "note": "MP ice area carries placeholder 38.9936,-105.93; parent (rock area) 40.49147,-106.77043 is fine."
+ },
+ {
+  "id": "nv_white_mountains",
+  "verdict": "ok",
+  "stored": [
+   37.8461,
+   -118.3513
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/113980818",
+    "retrieved_at": "2026-11-18",
+    "lat": 37.83808,
+    "lng": -118.30079,
+    "fact": "MP White Mountains (Western Nevada) GPS"
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/White_Mountains_(California)",
+    "retrieved_at": "2026-11-18",
+    "lat": 37.5833,
+    "lng": -118.2675,
+    "fact": "Range coordinate"
+   }
+  ],
+  "note": "Parent is a large region; the child really is this far from its centre."
+ },
+ {
+  "id": "ut_devils_playground",
+  "verdict": "ok",
+  "stored": [
+   41.491175,
+   -113.62596
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/126195909",
+    "retrieved_at": "2026-11-18",
+    "lat": 41.52619,
+    "lng": -113.6939,
+    "fact": "MP Devil's Playground and Spires GPS"
+   },
+   {
+    "url": "https://www.mountainproject.com/area/125713782",
+    "retrieved_at": "2026-11-18",
+    "lat": 41.52211,
+    "lng": -113.69772,
+    "fact": "MP Devils Playground bouldering GPS"
+   }
+  ],
+  "note": "Parent is a large region; the child really is this far from its centre. Stored ~6 km from MP point (child average)."
+ },
+ {
+  "id": "az_organ_pipe_cactus_national_monument",
+  "verdict": "ok",
+  "stored": [
+   32.11485,
+   -112.70631
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/112471982",
+    "retrieved_at": "2026-11-18",
+    "lat": 31.95516,
+    "lng": -112.80151,
+    "fact": "MP Organ Pipe Cactus NM GPS"
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/Organ_Pipe_Cactus_National_Monument",
+    "retrieved_at": "2026-11-18",
+    "lat": 31.954,
+    "lng": -112.801,
+    "fact": "Monument coordinate"
+   }
+  ],
+  "note": "Parent is a large region; the child really is this far from its centre. Stored ~19 km N of the monument point, inside the monument."
+ },
+ {
+  "id": "ak_yukon_river_rapids_area",
+  "verdict": "unresolved",
+  "stored": [
+   65.29941,
+   -151.12984
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [],
+  "note": "Not found by MP search (\"Yukon River\", \"Rapids\") nor in Fairbanks and Vicinity listing; likely OpenBeta-only."
+ },
+ {
+  "id": "ut_mineral_mountains",
+  "verdict": "ok",
+  "stored": [
+   38.3737872530864,
+   -112.845783580247
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/113705049",
+    "retrieved_at": "2026-11-18",
+    "lat": 38.38422,
+    "lng": -112.83319,
+    "fact": "MP Mineral Mountains GPS"
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/Mineral_Mountains_(Utah)",
+    "retrieved_at": "2026-11-18",
+    "lat": 38.38278,
+    "lng": -112.81556,
+    "fact": "Range coordinate"
+   }
+  ],
+  "note": "Parent is a large region; the child really is this far from its centre."
+ },
+ {
+  "id": "az_burro_creek_boulders",
+  "verdict": "ok",
+  "stored": [
+   34.55778,
+   -113.35788
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/125769917",
+    "retrieved_at": "2026-11-18",
+    "lat": 34.55778,
+    "lng": -113.35788,
+    "fact": "MP Burro Creek Boulders GPS"
+   }
+  ],
+  "note": "Parent is a large region; the child really is this far from its centre. One source only."
+ },
+ {
+  "id": "nm_ruidoso_area",
+  "verdict": "ok",
+  "stored": [
+   33.4611272424242,
+   -105.697199424242
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/114277421",
+    "retrieved_at": "2026-11-18",
+    "lat": 33.33485,
+    "lng": -105.66881,
+    "fact": "MP Ruidoso Area GPS"
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/Ruidoso,_New_Mexico",
+    "retrieved_at": "2026-11-18",
+    "lat": 33.34361,
+    "lng": -105.665,
+    "fact": "Village (GNIS 2413585)"
+   }
+  ],
+  "note": "Parent is a large region; the child really is this far from its centre. Stored ~14 km N (child average)."
+ },
+ {
+  "id": "ak_skwetna",
+  "verdict": "ok",
+  "stored": [
+   61.92419,
+   -151.97833
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/124894527",
+    "retrieved_at": "2026-11-18",
+    "lat": 61.92419,
+    "lng": -151.97833,
+    "fact": "MP Skwetna GPS"
+   }
+  ],
+  "note": "Parent is a large region; the child really is this far from its centre. One source only."
+ },
+ {
+  "id": "wa_cape_disappointment",
+  "verdict": "ok",
+  "stored": [
+   46.2924690909091,
+   -124.070619090909
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/115161536",
+    "retrieved_at": "2026-11-18",
+    "lat": 46.29457,
+    "lng": -124.07441,
+    "fact": "MP Cape Disappointment GPS"
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/Cape_Disappointment_(Washington)",
+    "retrieved_at": "2026-11-18",
+    "lat": 46.28972,
+    "lng": -124.06056,
+    "fact": "Cape coordinate"
+   }
+  ],
+  "note": "Parent is a large region; the child really is this far from its centre. Parent 47.8,-123.4 is a rough region point."
+ },
+ {
+  "id": "or_sprague_river",
+  "verdict": "unresolved",
+  "stored": [
+   42.37433,
+   -120.97037
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [],
+  "note": "Not found by MP search (\"Sprague River\", \"Sprague\"); likely OpenBeta-only."
+ },
+ {
+  "id": "ca_scodie_spire",
+  "verdict": "ok",
+  "stored": [
+   35.69786,
+   -118.12885
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/120933768",
+    "retrieved_at": "2026-11-18",
+    "lat": 35.69786,
+    "lng": -118.12885,
+    "fact": "MP Scodie Spire GPS, filed Southern Sierra Western Slope > Needles"
+   }
+  ],
+  "note": "Parent is a large region; the child really is this far from its centre. One source only."
+ },
+ {
+  "id": "mt_ojibway_peak",
+  "verdict": "ok",
+  "stored": [
+   48.06487,
+   -115.62147
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/110948286",
+    "retrieved_at": "2026-11-18",
+    "lat": 48.06487,
+    "lng": -115.62147,
+    "fact": "MP Ojibway Peak GPS, filed Kalispell Area"
+   }
+  ],
+  "note": "Parent is a large region; the child really is this far from its centre. One source only."
+ }
+]

@@ -1,0 +1,1342 @@
+[
+ {
+  "id": "ut_bluff",
+  "verdict": "ok",
+  "stored": [
+   37.291216875,
+   -109.5527775
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/109346500/bluff",
+    "retrieved_at": "2026-11-18",
+    "lat": 37.28381,
+    "lng": -109.55488,
+    "fact": "MP Bluff area GPS, ~0.8 km from stored"
+   },
+   {
+    "url": "https://www.mountainproject.com/area/108438676/191-south",
+    "retrieved_at": "2026-11-18",
+    "lat": 38.40523,
+    "lng": -109.44675,
+    "fact": "MP parent 191 South GPS: a long highway-corridor region"
+   }
+  ],
+  "note": "Child matches MP (Bluff, UT). Parent 191 South is a corridor region spanning Moab to Bluff; distance is region size."
+ },
+ {
+  "id": "co_the_motherlode",
+  "verdict": "unresolved",
+  "stored": [
+   37.64726,
+   -106.53782
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/108050366/the-motherlode",
+    "retrieved_at": "2026-11-18",
+    "lat": 37.64726,
+    "lng": -106.53782,
+    "fact": "MP GPS equals stored, but text: ice ~500 ft from Mt Lindsey trailhead, Upper Huerfano Rd"
+   },
+   {
+    "url": "https://www.mountainproject.com/area/201518802/mount-lindsey",
+    "retrieved_at": "2026-11-18",
+    "lat": 37.58464,
+    "lng": -105.45004,
+    "fact": "MP Mount Lindsey parent GPS"
+   }
+  ],
+  "note": "MP's own GPS is garbled (~95 km west, near Creede); its description puts the ice beside the Lindsey trailhead. No page prints the ice's coordinate."
+ },
+ {
+  "id": "ut_stretchmarks",
+  "verdict": "fix_one_source",
+  "stored": [
+   39.58832,
+   -111.94561
+  ],
+  "new_lat": 40.44556,
+  "new_lng": -111.70189,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/110317342/stretchmarks",
+    "retrieved_at": "2026-11-18",
+    "lat": 40.44556,
+    "lng": -111.70189,
+    "fact": "MP Stretchmarks GPS, in American Fork Canyon"
+   }
+  ],
+  "note": "Stored point is ~95 km south; MP prints a point inside American Fork Canyon. Only MP gives one."
+ },
+ {
+  "id": "ut_hite_area",
+  "verdict": "ok",
+  "stored": [
+   37.890414,
+   -110.369658
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/111858524/hite-area",
+    "retrieved_at": "2026-11-18",
+    "lat": 37.85998,
+    "lng": -110.40381,
+    "fact": "MP Hite Area GPS, ~4.6 km from stored (region)"
+   }
+  ],
+  "note": "Hite is the north end of Lake Powell; parent Lake Powell is a ~300 km reservoir region."
+ },
+ {
+  "id": "az_masonic_temple",
+  "verdict": "parent_wrong",
+  "stored": [
+   36.27525,
+   -112.34546
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://en.wikipedia.org/wiki/Masonic_Temple_(Grand_Canyon)",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.2764984,
+    "lng": -112.3507455,
+    "fact": "Wikipedia infobox coordinate (GNIS-cited for most), within ~0.5 km of stored"
+   },
+   {
+    "url": "https://peakvisor.com/peak/masonic-temple.html",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.275083,
+    "lng": -112.345766,
+    "fact": "PeakVisor summit coordinate, agrees with stored"
+   }
+  ],
+  "note": "Child is right. The parent is a category bucket (Temples/Castles/Unconventionals/Colorado River) carrying a bad point near Flagstaff; it has no place of its own. Give it Grand Canyon NP's corrected point or none."
+ },
+ {
+  "id": "az_elaine_castle",
+  "verdict": "parent_wrong",
+  "stored": [
+   36.30403,
+   -112.28478
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://en.wikipedia.org/wiki/Elaine_Castle",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.3046447,
+    "lng": -112.2847365,
+    "fact": "Wikipedia infobox coordinate (GNIS-cited for most), within ~0.5 km of stored"
+   },
+   {
+    "url": "https://peakvisor.com/peak/elaine-castle.html",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.304572,
+    "lng": -112.284891,
+    "fact": "PeakVisor summit coordinate, agrees with stored"
+   }
+  ],
+  "note": "Child is right. The parent is a category bucket (Temples/Castles/Unconventionals/Colorado River) carrying a bad point near Flagstaff; it has no place of its own. Give it Grand Canyon NP's corrected point or none."
+ },
+ {
+  "id": "tn_point_trail_boulders",
+  "verdict": "fix_one_source",
+  "stored": [
+   36.10084,
+   -85.71919
+  ],
+  "new_lat": 36.09959,
+  "new_lng": -84.718,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/202789033/point-trail-boulders",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.10084,
+    "lng": -85.71919,
+    "fact": "MP page under Lilly Boulders prints the same garbled lng as stored"
+   },
+   {
+    "url": "https://www.mountainproject.com/area/121121874/point-trail-boulder",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.09959,
+    "lng": -84.718,
+    "fact": "MP Point Trail Boulder (Obed) GPS"
+   },
+   {
+    "url": "https://www.mountainproject.com/area/108541475/lilly-boulders",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.10277,
+    "lng": -84.72147,
+    "fact": "MP Lilly Boulders parent GPS"
+   }
+  ],
+  "note": "The MP page this row came from carries lng -85.72 (Cookeville area); MP's other Point Trail Boulder page is at Obed. MP only."
+ },
+ {
+  "id": "nc_lower_tier_4",
+  "verdict": "unresolved",
+  "stored": [
+   35.3121,
+   -82.66799
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/110866211/lower-tier",
+    "retrieved_at": "2026-11-18",
+    "lat": 35.3121,
+    "lng": -82.66799,
+    "fact": "MP GPS equals stored; text: first climbs on trail up to Borrowed Time/Gumfighter"
+   },
+   {
+    "url": "https://www.mountainproject.com/area/105887629/ship-rock",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.09911,
+    "lng": -81.8013,
+    "fact": "MP Ship Rock (Blue Ridge Pkwy) GPS"
+   }
+  ],
+  "note": "MP's own GPS for Lower Tier is ~90 km from Ship Rock (near Brevard); description says it is minutes up Ship Rock's trail. No page prints its true point."
+ },
+ {
+  "id": "az_fan_island",
+  "verdict": "parent_wrong",
+  "stored": [
+   36.25777,
+   -112.36445
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://en.wikipedia.org/wiki/Fan_Island",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.257544,
+    "lng": -112.3643134,
+    "fact": "Wikipedia infobox coordinate (GNIS-cited for most), within ~0.5 km of stored"
+   },
+   {
+    "url": "https://peakvisor.com/peak/fan-island.html",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.257933,
+    "lng": -112.364185,
+    "fact": "PeakVisor summit coordinate, agrees with stored"
+   }
+  ],
+  "note": "Child is right. The parent is a category bucket (Temples/Castles/Unconventionals/Colorado River) carrying a bad point near Flagstaff; it has no place of its own. Give it Grand Canyon NP's corrected point or none."
+ },
+ {
+  "id": "az_meteor_crater_rest_area_i_40_westbound",
+  "verdict": "ok",
+  "stored": [
+   35.10619,
+   -110.99049
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/112425805/meteor-crater-rest-area-i-40-westbound",
+    "retrieved_at": "2026-11-18",
+    "lat": 35.1039,
+    "lng": -110.99169,
+    "fact": "MP rest-area GPS, ~0.3 km from stored"
+   },
+   {
+    "url": "https://www.mountainproject.com/area/106907688/northern-az-bouldering",
+    "retrieved_at": "2026-11-18",
+    "lat": 35.1963,
+    "lng": -111.64989,
+    "fact": "MP Northern AZ Bouldering parent GPS: statewide-north region"
+   }
+  ],
+  "note": "Child matches MP; parent is a large region."
+ },
+ {
+  "id": "ut_jax_cliff",
+  "verdict": "fix_one_source",
+  "stored": [
+   40.747,
+   -111.87786
+  ],
+  "new_lat": 40.6674,
+  "new_lng": -110.9691,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/106046696/jax-cliff",
+    "retrieved_at": "2026-11-18",
+    "lat": 40.6674,
+    "lng": -110.9691,
+    "fact": "MP Jax Cliff GPS; text places it on the Mirror Lake side"
+   }
+  ],
+  "note": "Stored point is Salt Lake City (lng -111.88); MP prints a point in the Uintas. Only MP gives one."
+ },
+ {
+  "id": "az_holy_grail_temple",
+  "verdict": "parent_wrong",
+  "stored": [
+   36.27472,
+   -112.30439
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://en.wikipedia.org/wiki/Holy_Grail_Temple",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.2750519,
+    "lng": -112.3045998,
+    "fact": "Wikipedia infobox coordinate (GNIS-cited for most), within ~0.5 km of stored"
+   },
+   {
+    "url": "https://peakvisor.com/peak/holy-grail-temple.html",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.274983,
+    "lng": -112.304723,
+    "fact": "PeakVisor summit coordinate, agrees with stored"
+   }
+  ],
+  "note": "Child is right. The parent is a category bucket (Temples/Castles/Unconventionals/Colorado River) carrying a bad point near Flagstaff; it has no place of its own. Give it Grand Canyon NP's corrected point or none."
+ },
+ {
+  "id": "ut_mt_nebo",
+  "verdict": "ok",
+  "stored": [
+   39.82177,
+   -111.76063
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/125426444/mt-nebo",
+    "retrieved_at": "2026-11-18",
+    "lat": 39.82177,
+    "lng": -111.76063,
+    "fact": "MP Mt. Nebo GPS equals stored"
+   },
+   {
+    "url": "https://www.mountainproject.com/area/105739328/wasatch-alpine-areas",
+    "retrieved_at": "2026-11-18",
+    "lat": 40.52763,
+    "lng": -111.72408,
+    "fact": "MP parent Wasatch Alpine Areas GPS: range-wide region"
+   }
+  ],
+  "note": "Mt. Nebo is the south end of the Wasatch; parent is a range-wide region."
+ },
+ {
+  "id": "az_explorers_monument",
+  "verdict": "parent_wrong",
+  "stored": [
+   36.20473,
+   -112.44554
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://en.wikipedia.org/wiki/Explorers_Monument_(Grand_Canyon)",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.2046222,
+    "lng": -112.4451012,
+    "fact": "Wikipedia infobox coordinate (GNIS-cited for most), within ~0.5 km of stored"
+   },
+   {
+    "url": "https://peakvisor.com/peak/explorers-monument.html",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.204949,
+    "lng": -112.44535,
+    "fact": "PeakVisor summit coordinate, agrees with stored"
+   }
+  ],
+  "note": "Child is right. The parent is a category bucket (Temples/Castles/Unconventionals/Colorado River) carrying a bad point near Flagstaff; it has no place of its own. Give it Grand Canyon NP's corrected point or none."
+ },
+ {
+  "id": "nj_desperation_buildering",
+  "verdict": "unresolved",
+  "stored": [
+   39.83335,
+   -73.45905
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/118869564/desperation-buildering",
+    "retrieved_at": "2026-11-18",
+    "lat": 39.83335,
+    "lng": -73.45905,
+    "fact": "MP GPS equals stored; text only: north of Philly, 1.2 hours"
+   }
+  ],
+  "note": "Both MP and stored put it in the Atlantic Ocean off NJ; a joke quarantine buildering page with no locatable place. Consider removal."
+ },
+ {
+  "id": "az_grand_canyon_bouldering",
+  "verdict": "ok",
+  "stored": [
+   36.0519215384615,
+   -112.144745897436
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/108927431/grand-canyon-bouldering",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.01077,
+    "lng": -112.20058,
+    "fact": "MP Grand Canyon Bouldering GPS, ~7 km from stored (centroid of 15 children)"
+   }
+  ],
+  "note": "Child is at Grand Canyon; parent Northern AZ Bouldering is a large region."
+ },
+ {
+  "id": "id_liberator_of_baghdad_rock",
+  "verdict": "fix_one_source",
+  "stored": [
+   42.34381,
+   -112.64555
+  ],
+  "new_lat": 42.12384,
+  "new_lng": -113.67045,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/110786427/liberator-of-baghdad-rock",
+    "retrieved_at": "2026-11-18",
+    "lat": 42.12384,
+    "lng": -113.67045,
+    "fact": "MP GPS, inside Castle Rocks"
+   }
+  ],
+  "note": "Stored lng -112.65 is ~85 km east; MP puts the rock at Castle Rocks. Only MP gives one."
+ },
+ {
+  "id": "az_king_arthur_castle",
+  "verdict": "parent_wrong",
+  "stored": [
+   36.26446,
+   -112.271234
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://en.wikipedia.org/wiki/King_Arthur_Castle",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.2645481,
+    "lng": -112.2714262,
+    "fact": "Wikipedia infobox coordinate (GNIS-cited for most), within ~0.5 km of stored"
+   },
+   {
+    "url": "https://peakvisor.com/peak/king-arthur-castle.html",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.264412,
+    "lng": -112.271586,
+    "fact": "PeakVisor summit coordinate, agrees with stored"
+   }
+  ],
+  "note": "Child is right. The parent is a category bucket (Temples/Castles/Unconventionals/Colorado River) carrying a bad point near Flagstaff; it has no place of its own. Give it Grand Canyon NP's corrected point or none."
+ },
+ {
+  "id": "az_dox_castle",
+  "verdict": "parent_wrong",
+  "stored": [
+   36.24579,
+   -112.32236
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://en.wikipedia.org/wiki/Dox_Castle",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.245635,
+    "lng": -112.3222194,
+    "fact": "Wikipedia infobox coordinate (GNIS-cited for most), within ~0.5 km of stored"
+   },
+   {
+    "url": "https://peakvisor.com/peak/dox-castle.html",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.245507,
+    "lng": -112.322301,
+    "fact": "PeakVisor summit coordinate, agrees with stored"
+   }
+  ],
+  "note": "Child is right. The parent is a category bucket (Temples/Castles/Unconventionals/Colorado River) carrying a bad point near Flagstaff; it has no place of its own. Give it Grand Canyon NP's corrected point or none."
+ },
+ {
+  "id": "az_bass_camp",
+  "verdict": "unresolved",
+  "stored": [
+   36.237855,
+   -112.347208
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/114073922/bass-camp",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.10733,
+    "lng": -112.11205,
+    "fact": "MP Bass Camp shows only the Grand Canyon parent GPS (no own point)"
+   }
+  ],
+  "note": "Stored river-camp point near Bass Rapid looks plausible but no opened page prints its coordinate. Parent Colorado River category carries the same bad Flagstaff-area point."
+ },
+ {
+  "id": "az_excalibur",
+  "verdict": "parent_wrong",
+  "stored": [
+   36.26272,
+   -112.25416
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://en.wikipedia.org/wiki/Excalibur_(Arizona)",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.2624802,
+    "lng": -112.2548965,
+    "fact": "Wikipedia infobox coordinate (GNIS-cited for most), within ~0.5 km of stored"
+   },
+   {
+    "url": "https://peakvisor.com/peak/excalibur.html",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.262495,
+    "lng": -112.255282,
+    "fact": "PeakVisor summit coordinate, agrees with stored"
+   },
+   {
+    "url": "https://www.mountainproject.com/area/115343072/excalibur",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.26177,
+    "lng": -112.25511,
+    "fact": "MP Excalibur GPS, agrees with stored"
+   }
+  ],
+  "note": "Child is right. The parent is a category bucket (Temples/Castles/Unconventionals/Colorado River) carrying a bad point near Flagstaff; it has no place of its own. Give it Grand Canyon NP's corrected point or none."
+ },
+ {
+  "id": "oh_cascade_falls_park_ice",
+  "verdict": "misfiled",
+  "stored": [
+   41.66829,
+   -81.17882
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": "Northeast Ohio",
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/200478366/cascade-falls-park",
+    "retrieved_at": "2026-11-18",
+    "lat": 41.66829,
+    "lng": -81.17882,
+    "fact": "MP GPS equals stored; filed directly under Northeast Ohio; climbing not allowed"
+   },
+   {
+    "url": "https://www.mountainproject.com/area/107883627/cascade-and-elywood-park",
+    "retrieved_at": "2026-11-18",
+    "lat": 41.3743,
+    "lng": -82.10989,
+    "fact": "MP Cascade and Elywood Park (Elyria) GPS"
+   }
+  ],
+  "note": "MP files Cascade Falls Park (Painesville area) under Northeast Ohio, not under Elyria's Cascade and Elywood Park. MP says climbing is not allowed (historical)."
+ },
+ {
+  "id": "az_guinevere_castle",
+  "verdict": "parent_wrong",
+  "stored": [
+   36.259754,
+   -112.26544
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://en.wikipedia.org/wiki/Guinevere_Castle",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.2597825,
+    "lng": -112.2658488,
+    "fact": "Wikipedia infobox coordinate (GNIS-cited for most), within ~0.5 km of stored"
+   },
+   {
+    "url": "https://peakvisor.com/peak/guinevere-castle.html",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.259674,
+    "lng": -112.265676,
+    "fact": "PeakVisor summit coordinate, agrees with stored"
+   }
+  ],
+  "note": "Child is right. The parent is a category bucket (Temples/Castles/Unconventionals/Colorado River) carrying a bad point near Flagstaff; it has no place of its own. Give it Grand Canyon NP's corrected point or none."
+ },
+ {
+  "id": "ut_little_mountain",
+  "verdict": "ok",
+  "stored": [
+   42.02776,
+   -111.82636
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/201404729/little-mountain",
+    "retrieved_at": "2026-11-18",
+    "lat": 42.02776,
+    "lng": -111.82636,
+    "fact": "MP Little Mountain GPS equals stored, filed in Northern Wasatch"
+   }
+  ],
+  "note": "Matches MP; Northern Wasatch is a large region (Ogden to Idaho line)."
+ },
+ {
+  "id": "ut_dock_flat",
+  "verdict": "ok",
+  "stored": [
+   40.5618,
+   -111.687
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/106214647/dock-flat",
+    "retrieved_at": "2026-11-18",
+    "lat": 40.5618,
+    "lng": -111.687,
+    "fact": "MP Dock Flat GPS equals stored, filed in Northern Wasatch"
+   }
+  ],
+  "note": "Matches MP; MP itself files it under Northern Wasatch (a large region). Geographically near Alpine, UT."
+ },
+ {
+  "id": "az_courthouse_rock",
+  "verdict": "parent_wrong",
+  "stored": [
+   33.46406,
+   -113.36062
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": 33.4071802362,
+  "parent_new_lng": -113.390059307,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/105921368/courthouse-rock",
+    "retrieved_at": "2026-11-18",
+    "lat": 33.46406,
+    "lng": -113.36062,
+    "fact": "MP GPS equals stored"
+   },
+   {
+    "url": "https://www.blm.gov/visit/eagletail-mountains-wilderness",
+    "retrieved_at": "2026-11-18",
+    "lat": 33.4071802362,
+    "lng": -113.390059307,
+    "fact": "BLM map link coordinate; Courthouse Rock near north boundary, 75 mi west of Phoenix"
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/Eagletail_Mountains_Wilderness",
+    "retrieved_at": "2026-11-18",
+    "lat": 33.4455,
+    "lng": -113.39761,
+    "fact": "Wikipedia infobox coordinate for the wilderness"
+   },
+   {
+    "url": "https://peakvisor.com/peak/eagletail-peak.html",
+    "retrieved_at": "2026-11-18",
+    "lat": 33.403357,
+    "lng": -113.304735,
+    "fact": "PeakVisor Eagletail Peak coordinate"
+   }
+  ],
+  "note": "Child matches MP. Parent Eagletail Mountains is wrong: stored -112.50 (and MP's own parent GPS 33.4314,-112.0715) is near Phoenix; BLM puts the wilderness at 33.4072,-113.3901."
+ },
+ {
+  "id": "az_gray_castle",
+  "verdict": "parent_wrong",
+  "stored": [
+   36.275804,
+   -111.835039
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://peakvisor.com/peak/gray-castle.html",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.27596,
+    "lng": -111.833776,
+    "fact": "PeakVisor Gray Castle coordinate, ~0.1 km from stored"
+   }
+  ],
+  "note": "Child agrees with PeakVisor (one source; Wikipedia has no article, anyplaceamerica/mapcarta bot-blocked). Child is right. The parent is a category bucket (Temples/Castles/Unconventionals/Colorado River) carrying a bad point near Flagstaff; it has no place of its own. Give it Grand Canyon NP's corrected point or none."
+ },
+ {
+  "id": "ca_nut_tree_boulders_the",
+  "verdict": "ok",
+  "stored": [
+   38.3855806175595,
+   -121.986563474702
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/105734016/the-nut-tree-boulders",
+    "retrieved_at": "2026-11-18",
+    "lat": 38.38524,
+    "lng": -121.98691,
+    "fact": "MP Nut Tree Boulders (Vacaville) GPS equals stored"
+   }
+  ],
+  "note": "Matches MP; Wine Country is a multi-county region."
+ },
+ {
+  "id": "az_alula_tower_2",
+  "verdict": "parent_wrong",
+  "stored": [
+   33.44436,
+   -113.35499
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": 33.4071802362,
+  "parent_new_lng": -113.390059307,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/200381338/alula-tower",
+    "retrieved_at": "2026-11-18",
+    "lat": 33.44436,
+    "lng": -113.35499,
+    "fact": "MP GPS equals stored"
+   },
+   {
+    "url": "https://www.blm.gov/visit/eagletail-mountains-wilderness",
+    "retrieved_at": "2026-11-18",
+    "lat": 33.4071802362,
+    "lng": -113.390059307,
+    "fact": "BLM map link coordinate; Courthouse Rock near north boundary, 75 mi west of Phoenix"
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/Eagletail_Mountains_Wilderness",
+    "retrieved_at": "2026-11-18",
+    "lat": 33.4455,
+    "lng": -113.39761,
+    "fact": "Wikipedia infobox coordinate for the wilderness"
+   },
+   {
+    "url": "https://peakvisor.com/peak/eagletail-peak.html",
+    "retrieved_at": "2026-11-18",
+    "lat": 33.403357,
+    "lng": -113.304735,
+    "fact": "PeakVisor Eagletail Peak coordinate"
+   }
+  ],
+  "note": "Child matches MP. Parent Eagletail Mountains is wrong: stored -112.50 (and MP's own parent GPS 33.4314,-112.0715) is near Phoenix; BLM puts the wilderness at 33.4072,-113.3901."
+ },
+ {
+  "id": "az_little_dragon",
+  "verdict": "parent_wrong",
+  "stored": [
+   36.2413,
+   -112.15117
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://peakvisor.com/peak/little-dragon.html",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.251394,
+    "lng": -112.145325,
+    "fact": "PeakVisor Little Dragon coordinate, ~1.2 km NNE of stored"
+   },
+   {
+    "url": "https://peakvisor.com/peak/the-dragon.html",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.251394,
+    "lng": -112.145325,
+    "fact": "The Dragon page names Little Dragon 2.0 mi ENE as nearest higher neighbor"
+   }
+  ],
+  "note": "Stored is ~1.2 km from PeakVisor (one source; a summit-scale difference, not a garble). Held for owner; could take PeakVisor point. Child is right. The parent is a category bucket (Temples/Castles/Unconventionals/Colorado River) carrying a bad point near Flagstaff; it has no place of its own. Give it Grand Canyon NP's corrected point or none."
+ },
+ {
+  "id": "az_anvil_mountain",
+  "verdict": "parent_wrong",
+  "stored": [
+   33.41415,
+   -113.34109
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": 33.4071802362,
+  "parent_new_lng": -113.390059307,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/125810041/anvil-mountain",
+    "retrieved_at": "2026-11-18",
+    "lat": 33.41415,
+    "lng": -113.34109,
+    "fact": "MP GPS equals stored"
+   },
+   {
+    "url": "https://www.blm.gov/visit/eagletail-mountains-wilderness",
+    "retrieved_at": "2026-11-18",
+    "lat": 33.4071802362,
+    "lng": -113.390059307,
+    "fact": "BLM map link coordinate; Courthouse Rock near north boundary, 75 mi west of Phoenix"
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/Eagletail_Mountains_Wilderness",
+    "retrieved_at": "2026-11-18",
+    "lat": 33.4455,
+    "lng": -113.39761,
+    "fact": "Wikipedia infobox coordinate for the wilderness"
+   },
+   {
+    "url": "https://peakvisor.com/peak/eagletail-peak.html",
+    "retrieved_at": "2026-11-18",
+    "lat": 33.403357,
+    "lng": -113.304735,
+    "fact": "PeakVisor Eagletail Peak coordinate"
+   }
+  ],
+  "note": "Child matches MP. Parent Eagletail Mountains is wrong: stored -112.50 (and MP's own parent GPS 33.4314,-112.0715) is near Phoenix; BLM puts the wilderness at 33.4072,-113.3901."
+ },
+ {
+  "id": "az_grove_the",
+  "verdict": "ok",
+  "stored": [
+   36.003655,
+   -114.73202
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/113924133/the-grove",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.00371,
+    "lng": -114.73363,
+    "fact": "MP The Grove GPS, ~0.2 km from stored"
+   },
+   {
+    "url": "https://www.mountainproject.com/area/107448717/kingman-area",
+    "retrieved_at": "2026-11-18",
+    "lat": null,
+    "lng": null,
+    "fact": "MP Kingman Area: large region"
+   }
+  ],
+  "note": "Matches MP; Kingman Area reaches to the Colorado River below Hoover Dam."
+ },
+ {
+  "id": "az_golden_boy_tower",
+  "verdict": "parent_wrong",
+  "stored": [
+   33.43235,
+   -113.34179
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": 33.4071802362,
+  "parent_new_lng": -113.390059307,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/200380783/golden-boy-tower",
+    "retrieved_at": "2026-11-18",
+    "lat": 33.43235,
+    "lng": -113.34179,
+    "fact": "MP GPS equals stored"
+   },
+   {
+    "url": "https://www.blm.gov/visit/eagletail-mountains-wilderness",
+    "retrieved_at": "2026-11-18",
+    "lat": 33.4071802362,
+    "lng": -113.390059307,
+    "fact": "BLM map link coordinate; Courthouse Rock near north boundary, 75 mi west of Phoenix"
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/Eagletail_Mountains_Wilderness",
+    "retrieved_at": "2026-11-18",
+    "lat": 33.4455,
+    "lng": -113.39761,
+    "fact": "Wikipedia infobox coordinate for the wilderness"
+   },
+   {
+    "url": "https://peakvisor.com/peak/eagletail-peak.html",
+    "retrieved_at": "2026-11-18",
+    "lat": 33.403357,
+    "lng": -113.304735,
+    "fact": "PeakVisor Eagletail Peak coordinate"
+   }
+  ],
+  "note": "Child matches MP. Parent Eagletail Mountains is wrong: stored -112.50 (and MP's own parent GPS 33.4314,-112.0715) is near Phoenix; BLM puts the wilderness at 33.4072,-113.3901."
+ },
+ {
+  "id": "ca_hunter_s_hill_boulder_1",
+  "verdict": "ok",
+  "stored": [
+   38.13484,
+   -122.19689
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/201230232",
+    "retrieved_at": "2026-11-18",
+    "lat": 38.13484,
+    "lng": -122.19689,
+    "fact": "MP Hunter's Hill Boulder 1 GPS equals stored"
+   }
+  ],
+  "note": "Matches MP (Vallejo); Wine Country is a multi-county region."
+ },
+ {
+  "id": "az_monument_valley",
+  "verdict": "ok",
+  "stored": [
+   36.93989,
+   -110.06023
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/105964237/monument-valley",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.93989,
+    "lng": -110.06023,
+    "fact": "MP Monument Valley GPS equals stored"
+   }
+  ],
+  "note": "Matches MP; Navajolands is the whole reservation."
+ },
+ {
+  "id": "az_the_dragon",
+  "verdict": "fix",
+  "stored": [
+   36.21118,
+   -112.17375
+  ],
+  "new_lat": 36.233645,
+  "new_lng": -112.174253,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://peakvisor.com/peak/the-dragon.html",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.233645,
+    "lng": -112.174253,
+    "fact": "PeakVisor The Dragon coordinate"
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/The_Dragon_(Arizona)",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.2412,
+    "lng": -112.1728,
+    "fact": "Wikipedia: ~2.5 mi north of Dragon Head; coordinate 36.2412,-112.1728"
+   }
+  ],
+  "note": "Two sources agree within 0.85 km; stored point is ~2.5 km south (too close to Dragon Head). PeakVisor is the more precise. Parent category point is also bad."
+ },
+ {
+  "id": "az_dragon_head",
+  "verdict": "parent_wrong",
+  "stored": [
+   36.19761,
+   -112.18041
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://en.wikipedia.org/wiki/Dragon_Head_(Arizona)",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.198115,
+    "lng": -112.180165,
+    "fact": "Wikipedia infobox coordinate (GNIS-cited for most), within ~0.5 km of stored"
+   },
+   {
+    "url": "https://peakvisor.com/peak/dragon-head.html",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.197349,
+    "lng": -112.180377,
+    "fact": "PeakVisor summit coordinate, agrees with stored"
+   }
+  ],
+  "note": "Child is right. The parent is a category bucket (Temples/Castles/Unconventionals/Colorado River) carrying a bad point near Flagstaff; it has no place of its own. Give it Grand Canyon NP's corrected point or none."
+ },
+ {
+  "id": "az_canyon_diablo",
+  "verdict": "ok",
+  "stored": [
+   35.1586,
+   -111.1209
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/106914668/canyon-diablo",
+    "retrieved_at": "2026-11-18",
+    "lat": 35.1586,
+    "lng": -111.1209,
+    "fact": "MP Canyon Diablo GPS equals stored"
+   }
+  ],
+  "note": "Matches MP; parent is a large region."
+ },
+ {
+  "id": "az_ringbolt_hot_springs_and_white_rock_canyon",
+  "verdict": "ok",
+  "stored": [
+   35.96654,
+   -114.72047
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/113924343",
+    "retrieved_at": "2026-11-18",
+    "lat": 35.97219,
+    "lng": -114.706,
+    "fact": "MP Ringbolt Hot Springs GPS, ~1.5 km from stored"
+   }
+  ],
+  "note": "Matches MP; Kingman Area is a large region."
+ },
+ {
+  "id": "az_mencius_temple",
+  "verdict": "parent_wrong",
+  "stored": [
+   36.17455,
+   -112.23029
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://en.wikipedia.org/wiki/Mencius_Temple",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.1746632,
+    "lng": -112.2301414,
+    "fact": "Wikipedia infobox coordinate (GNIS-cited for most), within ~0.5 km of stored"
+   },
+   {
+    "url": "https://peakvisor.com/peak/mencius-temple.html",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.175224,
+    "lng": -112.229713,
+    "fact": "PeakVisor summit coordinate, agrees with stored"
+   }
+  ],
+  "note": "Child is right. The parent is a category bucket (Temples/Castles/Unconventionals/Colorado River) carrying a bad point near Flagstaff; it has no place of its own. Give it Grand Canyon NP's corrected point or none."
+ },
+ {
+  "id": "az_unknown",
+  "verdict": "unresolved",
+  "stored": [
+   34.49513,
+   -112.01963
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/108602819/unknown",
+    "retrieved_at": "2026-11-18",
+    "lat": 34.49513,
+    "lng": -112.01963,
+    "fact": "MP GPS equals stored; text: big boulder NW of the north gate, maybe Skunk Slab"
+   },
+   {
+    "url": "https://www.mountainproject.com/area/105787828/little-granite-mountain",
+    "retrieved_at": "2026-11-18",
+    "lat": 33.77406,
+    "lng": -111.80164,
+    "fact": "MP Little Granite Mountain parent GPS"
+   }
+  ],
+  "note": "MP's own point is ~75 km NNW of Little Granite Mountain; the page itself does not know the crag's name. No independent point."
+ },
+ {
+  "id": "az_central_reservation_climbs",
+  "verdict": "ok",
+  "stored": [
+   36.14052,
+   -110.41849
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/105957530",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.14052,
+    "lng": -110.418,
+    "fact": "MP Central Reservation Climbs GPS equals stored"
+   }
+  ],
+  "note": "Matches MP; Navajolands is the whole reservation."
+ },
+ {
+  "id": "ca_rocklin_deer_creek_park",
+  "verdict": "ok",
+  "stored": [
+   38.7870521428571,
+   -121.239480714286
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/107254240",
+    "retrieved_at": "2026-11-18",
+    "lat": 38.78712,
+    "lng": -121.24,
+    "fact": "MP Rocklin (Deer Creek Park) GPS equals stored"
+   }
+  ],
+  "note": "Matches MP; I-80 Corridor runs Sacramento to Truckee."
+ },
+ {
+  "id": "az_confucious_temple",
+  "verdict": "parent_wrong",
+  "stored": [
+   36.18027,
+   -112.22184
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://en.wikipedia.org/wiki/Confucius_Temple_(Grand_Canyon)",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.1802881,
+    "lng": -112.2217423,
+    "fact": "Wikipedia infobox coordinate (GNIS-cited for most), within ~0.5 km of stored"
+   },
+   {
+    "url": "https://peakvisor.com/peak/confucius-temple.html",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.180189,
+    "lng": -112.221927,
+    "fact": "PeakVisor summit coordinate, agrees with stored"
+   }
+  ],
+  "note": "Child is right. The parent is a category bucket (Temples/Castles/Unconventionals/Colorado River) carrying a bad point near Flagstaff; it has no place of its own. Give it Grand Canyon NP's corrected point or none."
+ },
+ {
+  "id": "ut_bear_lake_area",
+  "verdict": "ok",
+  "stored": [
+   41.8944,
+   -111.39105
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/107744778/bear-lake-area",
+    "retrieved_at": "2026-11-18",
+    "lat": 41.9513,
+    "lng": -111.3464,
+    "fact": "MP Bear Lake Area GPS, ~7 km from stored (region)"
+   }
+  ],
+  "note": "Matches MP; Northern Wasatch is a large region."
+ },
+ {
+  "id": "ca_folsom",
+  "verdict": "ok",
+  "stored": [
+   38.7278874829932,
+   -121.144935680272
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/108832569/folsom",
+    "retrieved_at": "2026-11-18",
+    "lat": 38.6766,
+    "lng": -121.18,
+    "fact": "MP Folsom GPS, ~6 km from stored centroid"
+   }
+  ],
+  "note": "Matches MP; Highway 50 Corridor runs Sacramento to Tahoe."
+ },
+ {
+  "id": "oh_wayne_national_forest_marietta_unit",
+  "verdict": "ok",
+  "stored": [
+   39.5000128888889,
+   -81.1830877777778
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/116370636/wayne-national-forest-marietta-unit",
+    "retrieved_at": "2026-11-18",
+    "lat": 39.52398,
+    "lng": -81.18106,
+    "fact": "MP Marietta Unit GPS, ~2.7 km from stored"
+   }
+  ],
+  "note": "Matches MP; Wayne NF has three separate units across SE Ohio."
+ }
+]

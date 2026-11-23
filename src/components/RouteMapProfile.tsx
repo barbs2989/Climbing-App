@@ -1,7 +1,7 @@
 import { useMemo, useState } from "react";
 import GPXMap, { type GPXMapProps } from "./GPXMap.tsx";
 import ElevChart from "./ElevChart.tsx";
-import { recordedTrackPts } from "../../lib/track.js";
+import { recordedTrackPts, trackCoverage } from "../../lib/track.js";
 
 export interface RouteMapProfileProps extends GPXMapProps {
   /** The recorded track's elevations in feet, one per sample of `pts` (the route's elev_pts). */
@@ -37,13 +37,19 @@ export default function RouteMapProfile({ elevPts, ...mapProps }: RouteMapProfil
   const aligned = !!line && !!elevPts && elevPts.length === line.length;
   const hasElev = aligned && !!elevPts && elevPts.length >= 2 && elevPts.every((v) => Number.isFinite(v));
   const km = useMemo(() => (aligned && line ? cumulativeKm(line) : null), [aligned, line]);
+  /* A track that starts more than 2 km from the trailhead pin is a piece of the route (the upper
+     mountain, or a walk from another trailhead), so its Gain and Loss are not the route's and are not
+     printed. Measured 2026-11-23: Rainier's Ingraham Direct stores the top 3.8 km from 10,078 ft, and
+     the profile read its 4,300 ft as the climb. `trackCoverage` is the same test the downloaded file's
+     caveat uses; a route with no trailhead pin makes no claim and keeps its totals. */
+  const partial = useMemo(() => !!trackCoverage(pts, waypoints)?.missingApproach, [pts, waypoints]);
   const on = aligned && line && idx != null && idx >= 0 && idx < line.length ? line[idx] : null;
   return (
     <>
       <GPXMap {...mapProps} cursor={on ? [on[0], on[1]] : null} />
       {hasElev && elevPts ? (
         <div style={{ marginTop: 10 }}>
-          <ElevChart pts={elevPts} km={km} index={on ? idx : null} onIndex={km ? setIdx : undefined} />
+          <ElevChart pts={elevPts} km={km} index={on ? idx : null} onIndex={km ? setIdx : undefined} partial={partial} />
         </div>
       ) : null}
     </>

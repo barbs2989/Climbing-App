@@ -134,7 +134,8 @@ export default function ReviewDesk() {
 // them, but not as Menu boxes). Their shapes are not a row of the edits table (a line drawn on a map;
 // a report answered by email), so each is its own section, rendered by the SAME queue component the
 // Menu sheet used: the review calls and their admin checks are unchanged. The count beside each tab
-// is useAdminQueueCounts, the read that used to badge the Menu; a failed count shows no number rather
+// (the first one too: held edits + open flags + suggested wall orders, so a wall order waiting is seen
+// from any section) is useAdminQueueCounts, the read that used to badge the Menu; a failed count shows no number rather
 // than a zero. A link can open a section directly: review.html#trails or review.html#access.
 const SECTIONS = [["edits", "Edits, flags & wall orders"], ["trails", "Trails & GPS tracks"], ["access", "Accessibility reports"]];
 const fromHash = () => { const h = (typeof window !== "undefined" && window.location.hash || "").slice(1); return SECTIONS.some(([k]) => k === h) ? h : "edits"; };
@@ -149,7 +150,7 @@ function Desk() {
   return <div>
     <div role="tablist" aria-label="Review sections" style={{ display: "flex", gap: 6, flexWrap: "wrap", marginBottom: 14, borderBottom: "1px solid " + C.border, paddingBottom: 10 }}>
       {SECTIONS.map(([k, label]) => {
-        const c = n && k !== "edits" ? n[k] : null;
+        const c = n ? n[k] : null;
         return <button key={k} role="tab" aria-selected={sec === k} className={"rd-btn" + (sec === k ? " rd-ok" : "")} onClick={() => pick(k)}>{label}{c ? " · " + c : ""}</button>;
       })}
     </div>

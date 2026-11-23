@@ -1,0 +1,213 @@
+{
+ "note": "Batch T (2026-11-23): held or disputed values and catalog defects, not written. Owner decides.",
+ "routes": {
+  "wa_orange_peel_2": {
+   "notes": "Starts from the large ledge at the top of pitch 1 of Saber or Canary, so a party reaches it by climbing another route's first pitch; MP lists it as its own route, theCrag and Wenatchee Outdoors do not list it. Flagged, not a defect claim. FA 'Rob Knudsen, Dick \"Duck\" Novikoff, Greg Olsen, 1978' matches MP exactly; FA never locks from MP alone. No anchor or bolt info on any source."
+  },
+  "wa_winter_solstice": {
+   "held": [
+    {
+     "table": "routes",
+     "id": "wa_winter_solstice",
+     "column": "fa",
+     "from": "Eric Bjornstad, Bill Hooper, 1960",
+     "to": "Eric Bjornstad, Bill Hooper, 1963",
+     "why": "HELD: Mountain Project gives the same party but 1963; stored says 1960. One source for a change to an existing FA (batch T rule). theCrag and Wenatchee Outdoors give no FA.",
+     "evidence": [
+      "https://www.mountainproject.com/route/107322386/winter-solstice"
+     ]
+    }
+   ],
+   "disputed": [
+    "grade: MP 5.7 vs Wenatchee Outdoors 5.6 and theCrag 5.6 (citing the Rock Climbing Washington guide). Majority 5.6 = stored value; locked agree-2.",
+    "gear: MP gear to 3 in vs Wenatchee Outdoors gear to 2.5 in; no gear proposed."
+   ],
+   "notes": "Right of Midway on the Upper Wall West. MP: bolted anchor at the top of pitch 1, none at the top of the route; walk-off descent trail from the top (Wenatchee Outdoors, wall-wide). Anchor not proposed (pitch-1 station only)."
+  },
+  "wa_rainshadow_direct": {
+   "disputed": [
+    "grade: stored 5.12b = Mountain Project 5.12b; theCrag lists 'Rainshadow' 5.12a in the same spot (first route, left of Das Musak). Not locked; no change."
+   ],
+   "notes": "History per MP: 2-pitch aid line (Beckey, Bjornstad, Stuart), freed mid-1980s (Child, Kerns, Yoder), later bolted; Kyle O'Meara credited with the sport FA (stick clip, trad gear on the upper crux), remaining bolts added by Dave Morales in spring 2014. Stored FA 'Kyle O'Meara' matches MP only. No bolt total stated anywhere; bolts not proposed. Anchor: MP names a lower 2-bolt anchor (house spelling would be 'Two-bolt anchor') but not the top anchor, so not proposed. Possible name issue: theCrag calls the line 'Rainshadow', MP 'Rainshadow Direct'; whether Direct is a distinct finish is unclear."
+  },
+  "wa_mf_direct": {
+   "disputed": [
+    "grade: stored 5.11- = Mountain Project 5.11-; theCrag lists 'M.F. Direct' 5.11b. Not locked; no change."
+   ],
+   "notes": "Shares its start with MF Overhang. FA 'Peter Croft' matches MP only (no year); FA never locks from MP alone."
+  },
+  "wa_lucky_charms": {
+   "notes": "MP rates it PG13 (stored prot_rating null; one source, not proposed). FA unknown on MP; stored null is correct. Starts uphill and left of Old Gray Mare."
+  },
+  "wa_flying_frog_2": {
+   "notes": "Only Mountain Project describes this route; theCrag's Lower Castle list (15 routes) does not include it, so grade locks at the 1-source tier. FA 'jim Yoder, Paul Christiansen,1980' matches MP exactly (MP only, not locked; the lowercase 'jim' is a cosmetic issue, no fact to add, left alone). Anchor: shared with the neighbouring crack, type not stated, not proposed. MP calls it the furthest right line on Lower Castle; MP also suggests Idiot's Journey as a possible second pitch above it."
+  },
+  "wa_amy_carter": {
+   "notes": "Only Mountain Project describes this route (not on theCrag's Lower Castle list), so grade locks at the 1-source tier. FA 'Jim Yoder, 1980' matches MP only; not locked. The start is just right of the PG Advised bolts."
+  },
+  "wa_idiot_s_journey": {
+   "notes": "Only Mountain Project describes this route (not on theCrag). Grade locked at the 1-source tier. HELD: bolts. MP mentions two old 1/4 in bolts with Leeper hangers at a steep corner, but does not say whether they are protection or an old belay; not proposed. FA 'Geoff Georges & Jessica Todd' matches MP; MP gives no year (the 2013 date is when it was posted). POSSIBLE DEFECT for the owner: MP says the line could serve as a second pitch of Amy Carter or Flying Frog; it is still listed as its own route, so no defect is filed."
+  },
+  "wa_bird_s_nest_overhang": {
+   "notes": "Grade 5.8 locked (MP + theCrag's Lower Castle list). FA 'Fred Beckey, Tom Hornbein 1957' matches MP only; theCrag's route page was rate-limited, so FA not locked. HELD (one source, not proposed): MP gives an FFA, Jim McCarthy and Jim Langdon, 1968; the `ffa` column is null. POSSIBLE CATALOG DEFECT (not my row): wa_lower_castle_wild_traverse (5.11) carries the identical FA string 'Fred Beckey, Tom Hornbein 1957'; it may be the same 1957 line under another name, or an FA filed on the wrong row. Neither MP nor theCrag lists a 'Wild Traverse' at Lower Castle."
+  },
+  "wa_lower_castle_endgame": {
+   "held": [
+    {
+     "table": "routes",
+     "id": "wa_lower_castle_endgame",
+     "column": "pitches",
+     "from": 7,
+     "to": null,
+     "why": "HELD: no publisher lists an Endgame at Castle Rock (MP Lower Castle, 24 routes; theCrag Lower Castle, 15 routes; searches found none). Seven pitches and grade IV cannot fit Lower Castle, whose listed routes are one or two pitches. With no source for the real count the value is unsourced, but the row itself is suspect, so the owner decides.",
+     "evidence": [
+      "https://www.mountainproject.com/area/105870900/lower-castle",
+      "https://www.thecrag.com/en/climbing/united-states/central-cascade-mountains/area/19196431"
+     ]
+    },
+    {
+     "table": "routes",
+     "id": "wa_lower_castle_endgame",
+     "column": "access",
+     "from": null,
+     "to": "(wa_catapult object)",
+     "why": "HELD: the Castle Rock object would be correct for any Lower Castle route, but no source places this route at Castle Rock, so the land manager is not established.",
+     "evidence": [
+      "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/castle-rock-trailhead"
+     ]
+    }
+   ],
+   "notes": "CATALOG DEFECT (suspect row). Endgame 5.9, 7 pitches, commitment IV, guide_stars 0, no FA. Not on Mountain Project's Lower Castle page, not on theCrag's Lower Castle or Castle Rock lists, and two searches found no Leavenworth Endgame. A 7-pitch grade IV line cannot fit Castle Rock. It sits with three other chess-named rows absent from both lists (King's Indian, Four Knights, Nimzo Indian; two credit Pete Doorish and Don Leonard, 1979), which suggests a set of rows imported from another formation and filed under Lower Castle. Nothing proposed; owner decides whether the rows stay or move."
+  },
+  "wa_velvet_elvis": {
+   "notes": "FA 'Al Givler' matches Mountain Project but FA never locks from MP alone; left as is. MP warns the route is long enough that a 60 m rope will not reach the ground lowering (ends must be knotted); no rope column proposed (derived). MP says the route carries new modern hardware, while the stored hazards sentence (shared by every Sunset Slab row) says about half the wedge bolts are worn or spinning: probably stale for this route; flagged, not rewritten. Not the same as the North Bend Exit 34 or Nevada routes of the same name."
+  },
+  "wa_booby_vinton": {
+   "notes": "POSSIBLE DUPLICATE with wa_sunset_slab_booby_trap (not mine): same slab, same grade 5.5, same discipline (sport). Neither Mountain Project (6 routes on Peshastin's Sunset Slab) nor the Wenatchee Outdoors guide lists any route called Booby Trap; both list Booby Vinton. MP places Booby Vinton as the rightmost of three routes on the left side of the slab, and an MP photo is captioned as two routes merging into one. Unproven: Booby Trap may come from a guidebook I could not read (theCrag refused, rate limit). Reported, not merged. FA: MP says unknown; left null. Anchor: MP says only 'rappel anchor', no type, so none proposed. Stored hazards sentence about worn wedge bolts is shared slab-wide template text; not checked per route."
+  },
+  "wa_sunset": {
+   "notes": "FA: Mountain Project gives Fred Beckey and Steve Johnson, 1960; stored fa is null. Not proposed (FA never from MP alone; no second publisher found). Discipline: MP says sport, the other guide says bolts plus gear to 3 in (stored detailed_rack 'Quickdraws and small cams' agrees with gear being useful); stored sport left alone. MP notes the line is heavily eroded and was rebolted with new solid bolts in recent years, which contradicts the slab-wide hazards sentence about worn wedge bolts; flagged, not rewritten."
+  },
+  "wa_austrian_slab_nirvana_ridge": {
+   "notes": "CATALOG DEFECT (name/area mismatch, one source): filed under Austrian Slab, but the only publisher that lists it (Wenatchee Outdoors) puts Nirvana Ridge on the FRONT side of Grand Central (we hold wa_grand_central_tower). Mountain Project lists it on neither Austrian Slab (7 routes) nor Grand Central Tower. Not moved. That guide: 5.9, bolts and gear to 2 in, crumbly rock and serious runouts, and the start may have been changed by a rockslide in winter 2010 (page dated 2016). Grade 5.9 agrees with the stored value but has one source only; not locked. Access is park-wide, so it is correct whichever formation the route is on. pitches is null (not 0), left alone."
+  },
+  "wa_austrian_slab_wind_cave": {
+   "notes": "CATALOG DEFECT (name/area mismatch, one source): filed under Austrian Slab, but the only publisher that lists it (Wenatchee Outdoors, spelled 'Windcave') puts it on Sickle Slab (we hold wa_sickle_slab; Mountain Project says Sickle Slab lies right of Austrian Slab). Mountain Project lists it on neither slab. Not moved. That guide: 5.8, fixed gear and gear to 2 in, matching the stored grade and gear ['gear to 2 in']. One source only, so nothing locked. pitches is null (not 0), left alone."
+  },
+  "wa_south_early_winters_spire_nothing": {
+   "held": [
+    {
+     "table": "routes",
+     "id": "wa_south_early_winters_spire_nothing",
+     "column": "discipline",
+     "from": "sport",
+     "to": "alpine",
+     "why": "HELD (owner rule question, not a source dispute): MP types it Sport, Aid, Alpine and the stored sport matches MP's first type. But it is a 12-pitch, 1000 ft, Grade III line on a Washington Pass spire with a roughly hour-long approach and a South Arete downclimb-and-rappel descent; the siblings on this spire are stored alpine (0413/0418 rule). Discipline never changes on one source; owner decides.",
+     "evidence": [
+      "https://www.mountainproject.com/route/124424403/nothing",
+      "https://www.mountainproject.com/area/106257377/south-early-winters-spire"
+     ]
+    },
+    {
+     "table": "routes",
+     "id": "wa_south_early_winters_spire_nothing",
+     "column": "commitment",
+     "from": null,
+     "to": "III",
+     "why": "HELD: Grade III from MP alone (a commitment grade from MP alone is held).",
+     "evidence": [
+      "https://www.mountainproject.com/route/124424403/nothing"
+     ]
+    }
+   ],
+   "notes": "Checked as asked: MP states 5.11d A0, Sport/Aid/Alpine, 1000 ft (303 m), 12 pitches, Grade III, FA Ron Cotman and Leland Windham, July 2001; the stored grade, pitches, length and FA all match. Pitches 12 matches the only published topo (P1-P12 graded on MP). The route is nearly all bolted (MP gives per-pitch bolt counts; P8 5.4 has no protection) and MP's protection line is 20 quickdraws; no total bolt count is stated, so bolts not proposed (a sum would be derived). FA not locked (MP only; an FA never locks at the 1-source tier). theCrag sent my tab to its bot check on the second area page, so no second source could be read; grade, pitches and length are at the 1-source tier. MP's spire page recommends the SR-20 hairpin for routes on the EAST side; this route is on the south/southeast slabs reached from the South Arete base, so Blue Lake is its trailhead."
+  },
+  "wa_south_early_winters_spire_east_buttress_direct": {
+   "held": [
+    {
+     "table": "routes",
+     "id": "wa_south_early_winters_spire_east_buttress_direct",
+     "column": "access",
+     "from": null,
+     "to": "(wa_concord_tower_north_face object)",
+     "why": "HELD: the land manager is the same (OWNF, Methow Valley RD, outside wilderness), but the approach differs: MP's route page parks at the SR-20 hairpin and climbs Spire Gully, with Blue Lake only as an alternative, and MP's spire page recommends the hairpin for the east side. The Concord object names the Blue Lake/Overlook/Cutthroat fee sites, not the hairpin pullout, and no official page states a pass rule for the hairpin. Brief T: approach differs, so held.",
+     "evidence": [
+      "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/blue-lake-trailhead",
+      "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_02/MapServer/0/query?geometry=-120.6554,48.5123&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownerclassification,forestname&returnGeometry=false&f=json",
+      "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_Wilderness_01/MapServer/0/query?geometry=-120.6554,48.5123&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=WILDERNESSNAME&returnGeometry=false&f=json"
+     ]
+    }
+   ],
+   "notes": "CATALOG DEFECT (duplicate): this row and wa_south_early_winter_spire_direct_east_buttress ('Direct East Buttress', alpine, 5.11a, 9 pitches, 335 m, FA Fred Beckey and Doug Leen 1968, III, hairpin approach) are the same line under the same area. Per the duplicate rule nothing else is proposed here. For the owner: MP states 5.11a with A0 options on P4 and P6 (stored '5.11a A0' agrees), Trad, Alpine, 9 pitches (stored 9 agrees), Grade III (stored commitment null), no length, FA Beckey and Leen 1968 (agrees), no FFA. Discipline trad vs the twin's alpine: with a hairpin approach of about 1.5 h and a South Arete descent, the alpine rule fits; whichever row survives should be alpine."
+  },
+  "wa_north_early_winter_spire_constantino_whitelaw": {
+   "held": [
+    {
+     "table": "routes",
+     "id": "wa_north_early_winter_spire_constantino_whitelaw",
+     "column": "access",
+     "from": null,
+     "to": "(wa_concord_tower_north_face object)",
+     "why": "HELD: the manager is the same (OWNF, Methow Valley RD, outside wilderness), but no source places this route's start or says which trailhead it uses. It is on the southeast face (AAJ), and MP's spire page recommends the SR-20 hairpin for east-side routes. Same-trailhead condition not met.",
+     "evidence": [
+      "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/blue-lake-trailhead",
+      "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_02/MapServer/0/query?geometry=-120.6554,48.5123&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownerclassification,forestname&returnGeometry=false&f=json",
+      "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_Wilderness_01/MapServer/0/query?geometry=-120.6554,48.5123&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=WILDERNESSNAME&returnGeometry=false&f=json"
+     ]
+    },
+    {
+     "table": "routes",
+     "id": "wa_north_early_winter_spire_constantino_whitelaw",
+     "column": "discipline",
+     "from": "trad",
+     "to": "alpine",
+     "why": "HELD: a multi-pitch Grade III-IV free/aid line on a Washington Pass spire fits the trad-to-alpine rule, but only one source describes it; discipline never changes on one source.",
+     "evidence": [
+      "https://publications.americanalpineclub.org/articles/12197918305"
+     ]
+    }
+   ],
+   "disputed": [
+    "aid_grade: stored C2; the 1979 AAJ report gives A2 (45 ft of aid on tube chocks) and also says the route goes clean. One source; not changed.",
+    "commitment: stored IV; the AAJ report says 'III or IV'. Not locked."
+   ],
+   "notes": "SETTLED which spire: SOUTH Early Winter Spire. The 1979 AAJ report written by David Whitelaw (AAJ vol. 22) places the Constantino-Whitelaw line on the southeast face of South Early Winter Spire: begun 1976, finished in one day in July 1977 with Duane Constantino; second ascent solo by Quin Koenig. So area_id (wa_south_early_winters_spire) is right and the ID is wrong: CATALOG DEFECT, the id says NORTH (not moved or renamed). Free grade F9 agrees with the stored 5.9 but is one source, not locked. No pitch total or length is given (four leads to a ledge, then several more). FA added from the first-ascent party's own AAJ report, unconfirmed (an FA never locks on one source). The route is not on Mountain Project's spire page; theCrag blocked my tab."
+  },
+  "wa_north_early_winter_spire_christianson_roskelley": {
+   "held": [
+    {
+     "table": "routes",
+     "id": "wa_north_early_winter_spire_christianson_roskelley",
+     "column": "access",
+     "from": null,
+     "to": "(wa_concord_tower_north_face object)",
+     "why": "HELD: manager is the same (OWNF, outside wilderness), but no source places this route on a face or names its trailhead. MP's NEWS page calls the Blue Lake approach best for the spire, but east-side NEWS lines (Early Winter Couloir) start at the hairpin.",
+     "evidence": [
+      "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/blue-lake-trailhead",
+      "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_02/MapServer/0/query?geometry=-120.6554,48.5123&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownerclassification,forestname&returnGeometry=false&f=json",
+      "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_Wilderness_01/MapServer/0/query?geometry=-120.6554,48.5123&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=WILDERNESSNAME&returnGeometry=false&f=json"
+     ]
+    }
+   ],
+   "notes": "STUCK / suspect row: no publisher names this route. It is not on Mountain Project's NEWS page (6 routes), not on theCrag's NEWS list (5 routes: NW Corner, West Face, East Buttress 5.10b III, Pangaea, Early Winter Couloir), and searches found no AAJ report. Stored grade 5.9, commitment III and guide_stars 0 are unverified. Possibly another name for theCrag's 'East Buttress' (5.10b III), but nothing links them. Owner decides whether the row stays."
+  },
+  "wa_north_early_winter_spire_twitch_of_the_death_nerve": {
+   "held": [
+    {
+     "table": "routes",
+     "id": "wa_north_early_winter_spire_twitch_of_the_death_nerve",
+     "column": "access",
+     "from": null,
+     "to": "(wa_concord_tower_north_face object)",
+     "why": "HELD: manager is the same, but no source places this route on a face or names its trailhead.",
+     "evidence": [
+      "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/blue-lake-trailhead",
+      "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_02/MapServer/0/query?geometry=-120.6554,48.5123&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownerclassification,forestname&returnGeometry=false&f=json",
+      "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_Wilderness_01/MapServer/0/query?geometry=-120.6554,48.5123&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=WILDERNESSNAME&returnGeometry=false&f=json"
+     ]
+    }
+   ],
+   "notes": "STUCK / suspect row: no publisher found for this route or its stored FA 'Greg Olson (solo) 1987'. Not on Mountain Project's or theCrag's NEWS lists; no AAJ report found by search. Grade 5.8+, prot_rating R and the FA are unverified. Owner decides."
+  }
+ }
+}

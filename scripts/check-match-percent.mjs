@@ -80,7 +80,7 @@ const out = path.join(outdir, "b.cjs");
 const CORE = JSON.stringify(corePath);
 await build({
   stdin: {
-    contents: `export { compat, compatParts, compatWhy, compatUnknown, __set_MY_PACE, CLIMBERS, ME, CMAX_DISC, CMAX_GRADE, CMAX_OBJ, CMAX_VERIF, CMAX_PACE, CMAX_AVAIL, CMAX_AREA, COMPAT_BASE, COMPAT_TOP, COMPAT_MAX } from ${CORE};`,
+    contents: `export { compat, compatParts, compatWhy, compatSummary, compatUnknown, __set_MY_PACE, CLIMBERS, ME, CMAX_DISC, CMAX_GRADE, CMAX_OBJ, CMAX_VERIF, CMAX_PACE, CMAX_AVAIL, CMAX_AREA, COMPAT_BASE, COMPAT_TOP, COMPAT_MAX } from ${CORE};`,
     resolveDir: ROOT, loader: "js",
   },
   bundle: true, format: "cjs", platform: "node", jsx: "automatic",
@@ -88,7 +88,7 @@ await build({
   outfile: out, logLevel: "error",
 });
 const M = require_(out);
-for (const k of ["compat", "compatParts", "compatWhy", "compatUnknown", "CMAX_DISC", "CMAX_GRADE", "CMAX_OBJ", "CMAX_VERIF", "CMAX_PACE", "CMAX_AVAIL", "CMAX_AREA", "COMPAT_BASE", "COMPAT_TOP", "COMPAT_MAX"]) {
+for (const k of ["compat", "compatParts", "compatWhy", "compatSummary", "compatUnknown", "CMAX_DISC", "CMAX_GRADE", "CMAX_OBJ", "CMAX_VERIF", "CMAX_PACE", "CMAX_AVAIL", "CMAX_AREA", "COMPAT_BASE", "COMPAT_TOP", "COMPAT_MAX"]) {
   if (M[k] === undefined) dead(`core does not export ${k} — this guard cannot judge the formula`);
 }
 const { compat, CLIMBERS, ME, COMPAT_BASE, COMPAT_TOP, COMPAT_MAX } = M;
@@ -293,6 +293,16 @@ else fail(`the browse row no longer explains the missing match % (${JSON.stringi
   const lw = gOf({ sportGrade: "5.11a", tradGrade: "5.10a" }, { tradGrade: "5.9" });
   if (lw.known && lw.mine === "5.10a" && lw.theirs === "5.9" && lw.kind === "trad") ok("grade compares trad with trad when both set a trad grade (5.10a vs 5.9, not 5.11a sport vs 5.9 trad)");
   else fail(`grade compared ${lw.mine} with ${lw.theirs} (${lw.kind}) — a sport grade is being measured against a trad grade`);
+  // EVERY NUMBER GRADE IS A STEP (2026-11-23). 5.8 and below shared one step, so 5.6 against 5.10a was two steps: "Close in
+  // grade", and most of the grade term's points, for a pair four number grades apart.
+  const far = gOf({ sportGrade: "5.10a" }, { sportGrade: "5.6" }), near = gOf({ sportGrade: "5.10a" }, { sportGrade: "5.9" });
+  const farLine = M.compatWhy({ sportGrade: "5.10a" }, { sportGrade: "5.6" }).find((r) => r.k === "grade");
+  if (far.gap > 2 && farLine.tone !== "good" && near.gap === 1 && gOf({ sportGrade: "5.6" }, { sportGrade: "5.7" }).gap === 1) ok(`5.6 is ${far.gap} steps from 5.10a ("${farLine.text}"), and 5.9 is still 1`);
+  else fail(`5.6 vs 5.10a is a grade gap of ${far.gap} ("${farLine.text}"); 5.9 vs 5.10a is ${near.gap} — the grades below 5.9 are sharing a step again`);
+  // ...and so is every letter grade above 5.12: 5.13 and up shared one step, so 5.13a read "Same grade" as 5.14d.
+  const top = gOf({ sportGrade: "5.13a" }, { sportGrade: "5.14d" }), mid = gOf({ sportGrade: "5.12d" }, { sportGrade: "5.13a" });
+  if (top.gap === 7 && mid.gap === 1 && gOf({ sportGrade: "5.10a" }, { sportGrade: "5.12d" }).gap === 11) ok("5.13a is 7 steps from 5.14d and 1 from 5.12d; 5.10a to 5.12d is still 11");
+  else fail(`5.13a vs 5.14d is a grade gap of ${top.gap} and 5.12d vs 5.13a is ${mid.gap} — the grades above 5.12 are sharing a step again`);
   const both = gOf({ sportGrade: "5.12a", tradGrade: "5.10a" }, { sportGrade: "5.10a", tradGrade: "5.10a" });
   if (both.gap === 0 && both.kind === "trad") ok("when both set both, the CLOSER kind decides (same trad grade beats a sport gap)");
   else fail(`two climbers with the same trad grade scored a grade gap of ${both.gap} (${both.kind})`);
@@ -352,12 +362,33 @@ else fail(`the browse row no longer explains the missing match % (${JSON.stringi
   else fail("the profile only has listed areas when the partner row passed them — opened from anywhere else it says \"Areas: not listed by both of you\"");
   if (meVar !== "ME" && new RegExp(meVar + "=Object\\.assign\\(\\{\\},ME,\\{objectiveIds:Array\\.isArray\\(ME\\.matchObjectiveIds\\)").test(fp)) ok("the profile scores with ME's mountain objectives, as the partner row does");
   else fail("the profile scores with ME.objectiveIds while the partner row scores ME.matchObjectiveIds — the same climber reads two different match %s");
+  // THE ONE-SENTENCE SUMMARY (2026-11-23) says only what the pair SHARES. It is read off the same rows, so each clause
+  // must go when its signal goes, and a climber who filled in nothing gets no sentence at all rather than a vague one.
+  {
+    const SUM = { name: "sum", disciplines: ["sport"], sportGrade: "5.10a", availability: ["weekends"], partnerAreaPaths: ["usa.wa.index"] };
+    const them = { ...SUM, sportGrade: "5.10c" };
+    const NAMES = { "usa.wa.index": "Index", "usa.ut.x": "X" };
+    const s0 = M.compatSummary(SUM, them, NAMES);
+    if (s0 === "You both climb 5.10 sport, list Index to climb, and are free Saturday and Sunday.") ok(`the match sentence names the shared grade, area and days ("${s0}")`);
+    else fail(`the match sentence for two 5.10 sport climbers, both listed at Index and free weekends, reads ${JSON.stringify(s0)}`);
+    const kept = [
+      ["grade", { ...them, sportGrade: "5.6" }, /5\.\d/],
+      ["listed area", { ...them, partnerAreaPaths: ["usa.ut.x"] }, /\blist\b/],
+      ["availability", { ...them, availability: ["weekday_am"] }, /\bfree\b/],
+    ].filter(([, v, re]) => re.test(M.compatSummary(SUM, v, NAMES) || ""));
+    if (!kept.length) ok("...and drops the grade, the area and the days when the pair no longer shares them");
+    else fail(`the match sentence still claims a shared ${kept.map((g) => g[0]).join(", ")} for a pair that does not share it`);
+    if (M.compatSummary(SUM, { name: "blank" }) === null && M.compatSummary(SUM, { ...SUM, disciplines: ["ice"], sportGrade: "5.6", availability: ["weekday_am"], partnerAreaPaths: ["usa.ut.x"] }) === null) ok("a pair with nothing in common, or an unfilled profile, gets NO sentence");
+    else fail("the match sentence says something about a pair that shares nothing: it is inventing agreement");
+    if (fp.includes("compatSummary(" + meVar + "," + themVar + ",")) ok("the profile writes its match sentence for the same pair it scores");
+    else fail("the profile does not write compatSummary() for the pair it scores, so the sentence would describe a different match than the %");
+  }
   if (fp.includes("compatWhy(" + meVar + "," + themVar + ")")) ok("the profile's \"How you match\" checklist explains that same score");
   else fail("the profile does not render compatWhy() for the viewer it scores — the match % has no explanation, or explains a different pair");
 }
 
 // ---- Fail closed on a run that quietly stopped asking.
-const FLOOR = 20;
+const FLOOR = 26;
 if (ran < FLOOR) dead(`only ${ran} assertions ran, expected at least ${FLOOR} — this run proved less than it claims`);
 
 console.log(bad ? `\n${bad} problem(s).` : `\nok — the match % blends what the screen says it blends (${ran} assertions)`);

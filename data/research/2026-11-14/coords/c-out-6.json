@@ -1,0 +1,1552 @@
+[
+ {
+  "id": "mt_castle_mountains",
+  "verdict": "ok",
+  "stored": [
+   46.5141333333333,
+   -110.55665
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/111954599",
+    "retrieved_at": "2026-11-18",
+    "lat": 46.45272,
+    "lng": -110.75324,
+    "fact": "MP Castle Mountains, filed under Southwest Region > Bozeman Area"
+   }
+  ],
+  "note": "Mountain range; stored point ~16 km from MP centre, inside the range. Parent Southwest Region is a large region."
+ },
+ {
+  "id": "nc_new_hope_creek_boulders",
+  "verdict": "ok",
+  "stored": [
+   35.98182,
+   -79.00761
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/121643833",
+    "retrieved_at": "2026-11-18",
+    "lat": 35.98182,
+    "lng": -79.00761,
+    "fact": "MP GPS identical to stored"
+   }
+  ],
+  "note": "Durham-area boulders; Piedmont Region is a large region. One source only."
+ },
+ {
+  "id": "mt_kila_crags",
+  "verdict": "ok",
+  "stored": [
+   48.098072,
+   -114.501688
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/106075527",
+    "retrieved_at": "2026-11-18",
+    "lat": 48.09368,
+    "lng": -114.50281,
+    "fact": "MP Kila Crags, Northwest Region > Kalispell Area"
+   },
+   {
+    "url": "https://nominatim.openstreetmap.org/search?format=json&q=Kila%2C%20Montana",
+    "retrieved_at": "2026-11-18",
+    "lat": 48.12023,
+    "lng": -114.4568,
+    "fact": "OSM hamlet of Kila, Flathead County"
+   }
+  ],
+  "note": "Correct; Northwest Region is a large region."
+ },
+ {
+  "id": "or_shore_acres_state_park",
+  "verdict": "ok",
+  "stored": [
+   43.326625,
+   -124.386075
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/119531498",
+    "retrieved_at": "2026-11-18",
+    "lat": 43.32663,
+    "lng": -124.38608,
+    "fact": "MP GPS matches stored"
+   },
+   {
+    "url": "https://nominatim.openstreetmap.org/search?format=json&q=Shore%20Acres%20State%20Park%2C%20Oregon",
+    "retrieved_at": "2026-11-18",
+    "lat": 43.31813,
+    "lng": -124.38487,
+    "fact": "OSM nature reserve, Coos County"
+   }
+  ],
+  "note": "Correct; Southwest Oregon is a large region (MP files it under Coastal Region)."
+ },
+ {
+  "id": "id_fins_the",
+  "verdict": "ok",
+  "stored": [
+   43.7285433333333,
+   -113.0825
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/108134051",
+    "retrieved_at": "2026-11-18",
+    "lat": 43.73145,
+    "lng": -113.08444,
+    "fact": "MP The Fins, Central Idaho"
+   }
+  ],
+  "note": "Correct; Central Idaho is a large region."
+ },
+ {
+  "id": "ut_devils_chair",
+  "verdict": "parent_wrong",
+  "stored": [
+   41.66752,
+   -111.80698
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": 41.66433,
+  "parent_new_lng": -111.79687,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/107473171",
+    "retrieved_at": "2026-11-18",
+    "lat": 41.66426,
+    "lng": -111.79459,
+    "fact": "MP Millville Canyon GPS (parent)"
+   },
+   {
+    "url": "https://nominatim.openstreetmap.org/search?format=json&q=Millville%20Canyon%2C%20Utah",
+    "retrieved_at": "2026-11-18",
+    "lat": 41.66433,
+    "lng": -111.79687,
+    "fact": "OSM locality Millville Canyon, Cache County"
+   },
+   {
+    "url": "https://www.mountainproject.com/area/107473174",
+    "retrieved_at": "2026-11-18",
+    "lat": 40.5618,
+    "lng": -111.687,
+    "fact": "MP Devils Chair GPS carries the same garbled 40.56 value as our parent"
+   }
+  ],
+  "note": "Child stored point is ~0.9 km from Millville Canyon (OSM); the parent Millville Canyon is stored a degree too far south."
+ },
+ {
+  "id": "wi_quarry_lake_park",
+  "verdict": "ok",
+  "stored": [
+   42.7467,
+   -87.82216
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/116780305",
+    "retrieved_at": "2026-11-18",
+    "lat": 42.7467,
+    "lng": -87.82216,
+    "fact": "MP GPS identical to stored"
+   },
+   {
+    "url": "https://nominatim.openstreetmap.org/search?format=json&q=Quarry%20Lake%20Park%2C%20Racine",
+    "retrieved_at": "2026-11-18",
+    "lat": 42.74863,
+    "lng": -87.82277,
+    "fact": "OSM park, Mount Pleasant, Racine County"
+   }
+  ],
+  "note": "Correct; Niagara Escarpment & Kettle Moraine is a large region."
+ },
+ {
+  "id": "or_port_orford_bouldering",
+  "verdict": "ok",
+  "stored": [
+   42.74036,
+   -124.48709
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/116839628",
+    "retrieved_at": "2026-11-18",
+    "lat": 42.74036,
+    "lng": -124.48709,
+    "fact": "MP GPS identical to stored"
+   },
+   {
+    "url": "https://nominatim.openstreetmap.org/search?format=json&q=Port%20Orford%2C%20Oregon",
+    "retrieved_at": "2026-11-18",
+    "lat": 42.74567,
+    "lng": -124.49733,
+    "fact": "OSM city of Port Orford"
+   }
+  ],
+  "note": "Correct; Southwest Oregon is a large region."
+ },
+ {
+  "id": "ut_valley_of_the_gods",
+  "verdict": "ok",
+  "stored": [
+   37.2818362962963,
+   -109.837456296296
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/105716760",
+    "retrieved_at": "2026-11-18",
+    "lat": 37.25489,
+    "lng": -109.83359,
+    "fact": "MP Valley of the Gods, Southeast Utah > San Juan County"
+   },
+   {
+    "url": "https://nominatim.openstreetmap.org/search?format=json&q=Valley%20of%20the%20Gods%2C%20Utah",
+    "retrieved_at": "2026-11-18",
+    "lat": 37.24272,
+    "lng": -109.86033,
+    "fact": "OSM locality, San Juan County"
+   }
+  ],
+  "note": "Correct (stored is ~3 km off MP, a large area); Southeast Utah is a large region."
+ },
+ {
+  "id": "va_glasgow_area",
+  "verdict": "ok",
+  "stored": [
+   37.60595,
+   -79.43201
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/118982626",
+    "retrieved_at": "2026-11-18",
+    "lat": 37.62327,
+    "lng": -79.43806,
+    "fact": "MP Glasgow Area, Shenandoah & NW VA Region"
+   },
+   {
+    "url": "https://nominatim.openstreetmap.org/search?format=json&q=Glasgow%2C%20Virginia",
+    "retrieved_at": "2026-11-18",
+    "lat": 37.63402,
+    "lng": -79.45031,
+    "fact": "OSM town of Glasgow, Rockbridge County"
+   }
+  ],
+  "note": "Correct; parent is a large region."
+ },
+ {
+  "id": "wi_potawatomi_state_park",
+  "verdict": "ok",
+  "stored": [
+   44.87322,
+   -87.42075
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/125333835",
+    "retrieved_at": "2026-11-18",
+    "lat": 44.87322,
+    "lng": -87.42075,
+    "fact": "MP GPS identical to stored"
+   },
+   {
+    "url": "https://nominatim.openstreetmap.org/search?format=json&q=Potawatomi%20State%20Park%2C%20Wisconsin",
+    "retrieved_at": "2026-11-18",
+    "lat": 44.86421,
+    "lng": -87.41436,
+    "fact": "OSM nature reserve, Door County"
+   }
+  ],
+  "note": "Correct; parent is a large region."
+ },
+ {
+  "id": "wi_redgranite_quarry",
+  "verdict": "ok",
+  "stored": [
+   44.04338,
+   -89.09805
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/109664397",
+    "retrieved_at": "2026-11-18",
+    "lat": 44.04338,
+    "lng": -89.09805,
+    "fact": "MP GPS identical to stored"
+   },
+   {
+    "url": "https://nominatim.openstreetmap.org/search?format=json&q=Redgranite%20Quarry",
+    "retrieved_at": "2026-11-18",
+    "lat": 44.04389,
+    "lng": -89.09858,
+    "fact": "OSM Redgranite Quarry, Waushara County"
+   }
+  ],
+  "note": "Correct; Central Wisconsin is a large region."
+ },
+ {
+  "id": "ca_schaffer_buttress_aka_the_wall_of_silence",
+  "verdict": "ok",
+  "stored": [
+   36.09796,
+   -118.42039
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/123695688",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.09796,
+    "lng": -118.42039,
+    "fact": "MP: under Southern Sierra Western Slope > The Needles/Kern"
+   }
+  ],
+  "note": "Matches MP; Western Sierra is a large region. One source only."
+ },
+ {
+  "id": "ak_grapefruit_rocks",
+  "verdict": "ok",
+  "stored": [
+   65.2777343434343,
+   -148.094868181818
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/110429126",
+    "retrieved_at": "2026-11-18",
+    "lat": 65.29056,
+    "lng": -148.17637,
+    "fact": "MP Grapefruit Rocks, Fairbanks and Vicinity"
+   }
+  ],
+  "note": "Correct (~4 km from MP point); Fairbanks and Vicinity is a large region."
+ },
+ {
+  "id": "mt_rumsey_road_boulders",
+  "verdict": "ok",
+  "stored": [
+   46.28727,
+   -113.28791
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/119324313",
+    "retrieved_at": "2026-11-18",
+    "lat": 46.28727,
+    "lng": -113.28792,
+    "fact": "MP: Southwest Region > Butte Area"
+   },
+   {
+    "url": "https://nominatim.openstreetmap.org/search?format=json&q=Philipsburg%2C%20Montana",
+    "retrieved_at": "2026-11-18",
+    "lat": 46.33219,
+    "lng": -113.2945,
+    "fact": "OSM Philipsburg town, 5 km north (context only)"
+   }
+  ],
+  "note": "Matches MP; Southwest Region is a large region."
+ },
+ {
+  "id": "ca_wine_country",
+  "verdict": "ok",
+  "stored": [
+   38.5942558342513,
+   -122.868614054142
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/111499894",
+    "retrieved_at": "2026-11-18",
+    "lat": 38.23425,
+    "lng": -122.44917,
+    "fact": "MP Wine Country/Northeast Bay region (Mt St Helena, Salt Point, Fort Ross)"
+   }
+  ],
+  "note": "Region-sized; stored point is a centroid of its spread-out children. SF Bay Area is a large region."
+ },
+ {
+  "id": "ak_delta_range",
+  "verdict": "ok",
+  "stored": [
+   63.4390804166667,
+   -145.5495925
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/106538321",
+    "retrieved_at": "2026-11-18",
+    "lat": 63.37178,
+    "lng": -145.22828,
+    "fact": "MP Delta Range, Interior Alaska/Alaska Range"
+   }
+  ],
+  "note": "Range-sized, ~17 km from MP point; parent is a huge region."
+ },
+ {
+  "id": "mt_crazy_mountains",
+  "verdict": "ok",
+  "stored": [
+   46.03594,
+   -110.33041
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/113518722",
+    "retrieved_at": "2026-11-18",
+    "lat": 46.05386,
+    "lng": -110.32551,
+    "fact": "MP Crazy Mountains, Southwest Region > Bozeman Area"
+   }
+  ],
+  "note": "Correct; parent is a large region."
+ },
+ {
+  "id": "ca_lover_s_leap_limestone",
+  "verdict": "misfiled",
+  "stored": [
+   41.3636172727273,
+   -122.692066363636
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": "Northwest California",
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/110085778",
+    "retrieved_at": "2026-11-18",
+    "lat": 41.3633,
+    "lng": -122.69197,
+    "fact": "MP files it under California > Northwest California"
+   }
+  ],
+  "note": "Coordinate matches MP; MP files it under Northwest California, not Northeast California."
+ },
+ {
+  "id": "va_harpers_ferry",
+  "verdict": "misfiled",
+  "stored": [
+   39.3228,
+   -77.727
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": "West Virginia > Eastern WV (wv_eastern_wv)",
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/107574380",
+    "retrieved_at": "2026-11-18",
+    "lat": 39.3226,
+    "lng": -77.7271,
+    "fact": "MP files Harpers Ferry under West Virginia > Eastern WV"
+   },
+   {
+    "url": "https://nominatim.openstreetmap.org/search?format=json&q=Harpers%20Ferry%2C%20West%20Virginia",
+    "retrieved_at": "2026-11-18",
+    "lat": 39.32342,
+    "lng": -77.73198,
+    "fact": "OSM town, Jefferson County, West Virginia"
+   }
+  ],
+  "note": "Coordinate correct; place is in West Virginia and MP files it under Eastern WV (wv_eastern_wv)."
+ },
+ {
+  "id": "id_bloomington_lake",
+  "verdict": "ok",
+  "stored": [
+   42.1441366666667,
+   -111.57517
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/114791159",
+    "retrieved_at": "2026-11-18",
+    "lat": 42.14493,
+    "lng": -111.57561,
+    "fact": "MP: East Idaho > Bear Lake - Caribou Area"
+   },
+   {
+    "url": "https://nominatim.openstreetmap.org/search?format=json&q=Bloomington%20Lake%2C%20Idaho",
+    "retrieved_at": "2026-11-18",
+    "lat": 42.14634,
+    "lng": -111.57562,
+    "fact": "OSM pond, Bear Lake County"
+   }
+  ],
+  "note": "Correct; East Idaho is a large region."
+ },
+ {
+  "id": "ut_millville_canyon",
+  "verdict": "fix",
+  "stored": [
+   40.5618,
+   -111.687
+  ],
+  "new_lat": 41.66433,
+  "new_lng": -111.79687,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://nominatim.openstreetmap.org/search?format=json&q=Millville%20Canyon%2C%20Utah",
+    "retrieved_at": "2026-11-18",
+    "lat": 41.66433,
+    "lng": -111.79687,
+    "fact": "OSM locality Millville Canyon, Cache County"
+   },
+   {
+    "url": "https://www.mountainproject.com/area/107473171",
+    "retrieved_at": "2026-11-18",
+    "lat": 41.66426,
+    "lng": -111.79459,
+    "fact": "MP Millville Canyon GPS, ~0.2 km from OSM"
+   }
+  ],
+  "note": "Stored 40.5618 is a degree too far south (in Utah County); two sources agree on 41.664."
+ },
+ {
+  "id": "az_racetrack_knoll",
+  "verdict": "parent_wrong",
+  "stored": [
+   36.4818,
+   -112.59108
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": 36.0552608,
+  "parent_new_lng": -112.1218355,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://nominatim.openstreetmap.org/search?format=json&q=Racetrack%20Knoll%2C%20Arizona",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.4818,
+    "lng": -112.59104,
+    "fact": "OSM peak Racetrack Knoll, Coconino County"
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/Grand_Canyon_National_Park",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.0552608,
+    "lng": -112.1218355,
+    "fact": "Park infobox coordinates"
+   },
+   {
+    "url": "https://www.mountainproject.com/area/105787841",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.10733,
+    "lng": -112.11205,
+    "fact": "MP Grand Canyon (Northern Arizona) GPS line; ~6 km from Wikipedia"
+   }
+  ],
+  "note": "Child matches OSM; parent Grand Canyon National Park stored at 35.556,-111.918, outside the park."
+ },
+ {
+  "id": "wi_razor_wall",
+  "verdict": "ok",
+  "stored": [
+   44.3936,
+   -89.8219
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/107691257",
+    "retrieved_at": "2026-11-18",
+    "lat": 44.3936,
+    "lng": -89.8219,
+    "fact": "MP GPS identical to stored, Buildering Sites (Statewide)"
+   }
+  ],
+  "note": "Parent is a statewide grouping. One source only."
+ },
+ {
+  "id": "az_scotty_s_castle",
+  "verdict": "parent_wrong",
+  "stored": [
+   36.447306,
+   -112.645123
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": 36.0552608,
+  "parent_new_lng": -112.1218355,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://en.wikipedia.org/wiki/Grand_Canyon_National_Park",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.0552608,
+    "lng": -112.1218355,
+    "fact": "Park infobox coordinates"
+   },
+   {
+    "url": "https://www.mountainproject.com/area/105787841",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.10733,
+    "lng": -112.11205,
+    "fact": "MP Grand Canyon (Northern Arizona) GPS line; ~6 km from Wikipedia"
+   }
+  ],
+  "note": "Parent Castles carries the wrong GCNP point 35.556,-111.918; child not on MP or OSM, so its own point is unverified (one-source, held)."
+ },
+ {
+  "id": "or_haystack_boulder",
+  "verdict": "ok",
+  "stored": [
+   43.08923,
+   -124.43453
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/120527189",
+    "retrieved_at": "2026-11-18",
+    "lat": 43.08923,
+    "lng": -124.43453,
+    "fact": "MP GPS identical to stored, Coastal Region"
+   },
+   {
+    "url": "https://nominatim.openstreetmap.org/search?format=json&q=Haystack%20Rock%2C%20Coos%20County%2C%20Oregon",
+    "retrieved_at": "2026-11-18",
+    "lat": 43.08628,
+    "lng": -124.43872,
+    "fact": "OSM islet Haystack Rock, Coos County"
+   }
+  ],
+  "note": "Correct; Southwest Oregon is a large region."
+ },
+ {
+  "id": "az_the_dome",
+  "verdict": "parent_wrong",
+  "stored": [
+   36.27616,
+   -112.90075
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": 36.0552608,
+  "parent_new_lng": -112.1218355,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://nominatim.openstreetmap.org/search?format=json&q=The%20Dome%2C%20Mohave%20County%2C%20Arizona",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.27582,
+    "lng": -112.9002,
+    "fact": "OSM peak The Dome, Mohave County"
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/Grand_Canyon_National_Park",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.0552608,
+    "lng": -112.1218355,
+    "fact": "Park infobox coordinates"
+   },
+   {
+    "url": "https://www.mountainproject.com/area/105787841",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.10733,
+    "lng": -112.11205,
+    "fact": "MP Grand Canyon (Northern Arizona) GPS line; ~6 km from Wikipedia"
+   }
+  ],
+  "note": "Child matches OSM; parent GCNP stored point is outside the park."
+ },
+ {
+  "id": "id_pine_creek",
+  "verdict": "ok",
+  "stored": [
+   45.36195,
+   -114.31008
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/120881584",
+    "retrieved_at": "2026-11-18",
+    "lat": 45.36195,
+    "lng": -114.31008,
+    "fact": "MP GPS identical to stored"
+   },
+   {
+    "url": "https://nominatim.openstreetmap.org/search?format=json&q=Pine%20Creek%2C%20Lemhi%20County%2C%20Idaho",
+    "retrieved_at": "2026-11-18",
+    "lat": 45.36354,
+    "lng": -114.30087,
+    "fact": "OSM Pine Creek Rapids, Lemhi County"
+   }
+  ],
+  "note": "Correct; Central Idaho is a large region."
+ },
+ {
+  "id": "az_diamond_peak",
+  "verdict": "ok",
+  "stored": [
+   35.76776,
+   -113.35383
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://nominatim.openstreetmap.org/search?format=json&q=Diamond%20Peak%2C%20Arizona",
+    "retrieved_at": "2026-11-18",
+    "lat": 35.76777,
+    "lng": -113.35382,
+    "fact": "OSM peak Diamond Peak, Mohave County"
+   }
+  ],
+  "note": "Correct; parent Peaks (36.10,-112.09) is fine and the park is ~120 km long. Grandparent GCNP point is wrong (see sibling rows)."
+ },
+ {
+  "id": "or_bandon",
+  "verdict": "ok",
+  "stored": [
+   43.11859,
+   -124.43151
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/114109687",
+    "retrieved_at": "2026-11-18",
+    "lat": 43.11859,
+    "lng": -124.43151,
+    "fact": "MP GPS identical to stored"
+   },
+   {
+    "url": "https://nominatim.openstreetmap.org/search?format=json&q=Bandon%2C%20Oregon",
+    "retrieved_at": "2026-11-18",
+    "lat": 43.11956,
+    "lng": -124.40941,
+    "fact": "OSM city of Bandon"
+   }
+  ],
+  "note": "Correct; Southwest Oregon is a large region."
+ },
+ {
+  "id": "ca_bridgeport",
+  "verdict": "ok",
+  "stored": [
+   38.20895,
+   -119.32191
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/120610853",
+    "retrieved_at": "2026-11-18",
+    "lat": 38.20895,
+    "lng": -119.32191,
+    "fact": "MP: Eastern Sierra > Northern Area, identical"
+   },
+   {
+    "url": "https://nominatim.openstreetmap.org/search?format=json&q=Bridgeport%2C%20California",
+    "retrieved_at": "2026-11-18",
+    "lat": 38.25596,
+    "lng": -119.22766,
+    "fact": "OSM village Bridgeport, Mono County"
+   }
+  ],
+  "note": "Matches MP; Sierra Eastside is a large region."
+ },
+ {
+  "id": "va_breaks_interstate_park",
+  "verdict": "ok",
+  "stored": [
+   37.2535285648148,
+   -82.3350786111111
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/111742350",
+    "retrieved_at": "2026-11-18",
+    "lat": 37.2859,
+    "lng": -82.29459,
+    "fact": "MP Breaks Interstate Park GPS"
+   },
+   {
+    "url": "https://nominatim.openstreetmap.org/search?format=json&q=Breaks%20Interstate%20Park",
+    "retrieved_at": "2026-11-18",
+    "lat": 37.28376,
+    "lng": -82.29668,
+    "fact": "OSM nature reserve, Dickenson County"
+   }
+  ],
+  "note": "Stored ~5 km from park point (child centroid); parent is a large region."
+ },
+ {
+  "id": "ar_lake_alma",
+  "verdict": "ok",
+  "stored": [
+   35.49618,
+   -94.21839
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/201379580",
+    "retrieved_at": "2026-11-18",
+    "lat": 35.49618,
+    "lng": -94.21839,
+    "fact": "MP GPS identical to stored"
+   },
+   {
+    "url": "https://nominatim.openstreetmap.org/search?format=json&q=Lake%20Alma%2C%20Arkansas",
+    "retrieved_at": "2026-11-18",
+    "lat": 35.5043,
+    "lng": -94.21946,
+    "fact": "OSM reservoir Lake Alma, Crawford County"
+   }
+  ],
+  "note": "Correct; parent is a large region."
+ },
+ {
+  "id": "ak_stikine_ice_cap",
+  "verdict": "ok",
+  "stored": [
+   57.091,
+   -132.37399
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/106363506",
+    "retrieved_at": "2026-11-18",
+    "lat": 57,
+    "lng": -132.3,
+    "fact": "MP GPS line prints 57, -132.3"
+   }
+  ],
+  "note": "Ice-cap sized; matches MP to ~10 km; parent is a huge region."
+ },
+ {
+  "id": "mn_wolf_den_boulders",
+  "verdict": "unresolved",
+  "stored": [
+   46.97703,
+   -89.20154
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/120123208",
+    "retrieved_at": "2026-11-18",
+    "lat": 46.97703,
+    "lng": -89.20154,
+    "fact": "MP Wolf Den Boulders GPS (in Michigan) though filed under Ely Area > Tomahawk Rd"
+   },
+   {
+    "url": "https://www.mountainproject.com/area/120030075",
+    "retrieved_at": "2026-11-18",
+    "lat": 47.7335,
+    "lng": -91.63994,
+    "fact": "MP Tomahawk Road GPS near Ely"
+   }
+  ],
+  "note": "MP itself prints the Michigan point; no page gives the real Ely-area spot. Our parent Tomahawk Road (47.47,-90.60) is also ~83 km from MP 47.7335,-91.63994."
+ },
+ {
+  "id": "mi_norwich_ledge",
+  "verdict": "ok",
+  "stored": [
+   46.65463,
+   -89.51436
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/106711093",
+    "retrieved_at": "2026-11-18",
+    "lat": 46.65463,
+    "lng": -89.51436,
+    "fact": "MP GPS identical to stored"
+   },
+   {
+    "url": "https://nominatim.openstreetmap.org/search?format=json&q=Norwich%20Bluff%2C%20Michigan",
+    "retrieved_at": "2026-11-18",
+    "lat": 46.65871,
+    "lng": -89.38481,
+    "fact": "OSM Norwich Bluff Trailhead, Ontonagon County (~10 km)"
+   }
+  ],
+  "note": "Ontonagon County; Upper Peninsula is a large region."
+ },
+ {
+  "id": "mi_little_norwich",
+  "verdict": "ok",
+  "stored": [
+   46.6594,
+   -89.50326
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/124876621",
+    "retrieved_at": "2026-11-18",
+    "lat": 46.6594,
+    "lng": -89.50326,
+    "fact": "MP GPS identical to stored"
+   }
+  ],
+  "note": "Next to Norwich Ledge; Upper Peninsula is a large region."
+ },
+ {
+  "id": "ak_golovin_cliffs",
+  "verdict": "ok",
+  "stored": [
+   64.54586,
+   -163.03141
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/201315083",
+    "retrieved_at": "2026-11-18",
+    "lat": 64.54586,
+    "lng": -163.03141,
+    "fact": "MP GPS identical to stored"
+   },
+   {
+    "url": "https://nominatim.openstreetmap.org/search?format=json&q=Golovin%2C%20Alaska",
+    "retrieved_at": "2026-11-18",
+    "lat": 64.54381,
+    "lng": -163.02979,
+    "fact": "OSM Golovin village"
+   }
+  ],
+  "note": "Correct; Seward Peninsula is a large region."
+ },
+ {
+  "id": "ut_ibex",
+  "verdict": "ok",
+  "stored": [
+   38.9784891679842,
+   -113.3943438083
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/105916340",
+    "retrieved_at": "2026-11-18",
+    "lat": 38.9926,
+    "lng": -113.3883,
+    "fact": "MP Ibex: West Desert > The Confusion Range"
+   }
+  ],
+  "note": "Correct; West Desert is a large region."
+ },
+ {
+  "id": "wv_devil_s_nose",
+  "verdict": "ok",
+  "stored": [
+   39.608415,
+   -78.1132675
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/112020985",
+    "retrieved_at": "2026-11-18",
+    "lat": 39.60818,
+    "lng": -78.11323,
+    "fact": "MP Devils Nose, Eastern WV"
+   },
+   {
+    "url": "https://nominatim.openstreetmap.org/search?format=json&q=Devils%20Nose%2C%20West%20Virginia",
+    "retrieved_at": "2026-11-18",
+    "lat": 39.60873,
+    "lng": -78.11313,
+    "fact": "OSM viewpoint, Tuscarora Trail, Morgan County"
+   }
+  ],
+  "note": "Correct; Eastern WV is a large region."
+ },
+ {
+  "id": "az_prescott_area",
+  "verdict": "ok",
+  "stored": [
+   34.6698710547784,
+   -112.469423481152
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/107448832",
+    "retrieved_at": "2026-11-18",
+    "lat": 34.54559,
+    "lng": -112.46908,
+    "fact": "MP Prescott Area GPS"
+   },
+   {
+    "url": "https://nominatim.openstreetmap.org/search?format=json&q=Prescott%2C%20Arizona",
+    "retrieved_at": "2026-11-18",
+    "lat": 34.53998,
+    "lng": -112.46881,
+    "fact": "OSM city of Prescott"
+   }
+  ],
+  "note": "Region-sized; stored ~14 km north (child centroid); Central Arizona is a large region."
+ },
+ {
+  "id": "id_yellow_pine_to_big_creek",
+  "verdict": "ok",
+  "stored": [
+   45.04336,
+   -115.42408
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/109447726",
+    "retrieved_at": "2026-11-18",
+    "lat": 45.13165,
+    "lng": -115.32197,
+    "fact": "MP Yellow Pine to Big Creek GPS"
+   },
+   {
+    "url": "https://nominatim.openstreetmap.org/search?format=json&q=Yellow%20Pine%2C%20Idaho",
+    "retrieved_at": "2026-11-18",
+    "lat": 44.96449,
+    "lng": -115.49333,
+    "fact": "OSM hamlet Yellow Pine"
+   }
+  ],
+  "note": "Corridor-sized area; stored lies between Yellow Pine and Big Creek. Central Idaho is a large region."
+ },
+ {
+  "id": "wa_observation_rock",
+  "verdict": "misfiled",
+  "stored": [
+   46.90179,
+   -121.80659
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": "Mount Rainier (South-West & Tacoma > Southwest Cascades)",
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/111722383",
+    "retrieved_at": "2026-11-18",
+    "lat": 46.90179,
+    "lng": -121.80659,
+    "fact": "MP: Southwest Cascades > Mount Rainier"
+   },
+   {
+    "url": "https://nominatim.openstreetmap.org/search?format=json&q=Observation%20Rock%2C%20Washington",
+    "retrieved_at": "2026-11-18",
+    "lat": 46.90177,
+    "lng": -121.80649,
+    "fact": "OSM peak, Pierce County"
+   }
+  ],
+  "note": "Coordinate correct (on Mount Rainier); filed under Columbia Gorge by mistake."
+ },
+ {
+  "id": "az_the_cork",
+  "verdict": "parent_wrong",
+  "stored": [
+   36.30327,
+   -112.80453
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": 36.0552608,
+  "parent_new_lng": -112.1218355,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://nominatim.openstreetmap.org/search?format=json&q=The%20Cork%2C%20Arizona",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.30304,
+    "lng": -112.80436,
+    "fact": "OSM peak The Cork, Mohave County"
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/Grand_Canyon_National_Park",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.0552608,
+    "lng": -112.1218355,
+    "fact": "Park infobox coordinates"
+   },
+   {
+    "url": "https://www.mountainproject.com/area/105787841",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.10733,
+    "lng": -112.11205,
+    "fact": "MP Grand Canyon (Northern Arizona) GPS line; ~6 km from Wikipedia"
+   }
+  ],
+  "note": "Child matches OSM; parent Unconventionals carries the wrong GCNP point 35.556,-111.918."
+ },
+ {
+  "id": "ca_hwy_33_ojai",
+  "verdict": "ok",
+  "stored": [
+   34.5445677029915,
+   -119.269237232906
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/108071705",
+    "retrieved_at": "2026-11-18",
+    "lat": 34.4873,
+    "lng": -119.30264,
+    "fact": "MP Hwy 33/Ojai Bouldering GPS"
+   },
+   {
+    "url": "https://nominatim.openstreetmap.org/search?format=json&q=Ojai%2C%20California",
+    "retrieved_at": "2026-11-18",
+    "lat": 34.48444,
+    "lng": -119.29928,
+    "fact": "OSM Ojai, Ventura County"
+   }
+  ],
+  "note": "Corridor along Hwy 33; Central Coast is a large region."
+ },
+ {
+  "id": "id_salmon_idaho_bouldering",
+  "verdict": "ok",
+  "stored": [
+   45.2735114285714,
+   -113.935885714286
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/119285969",
+    "retrieved_at": "2026-11-18",
+    "lat": 45.18121,
+    "lng": -113.90188,
+    "fact": "MP Salmon Idaho Bouldering GPS"
+   },
+   {
+    "url": "https://nominatim.openstreetmap.org/search?format=json&q=Salmon%2C%20Idaho",
+    "retrieved_at": "2026-11-18",
+    "lat": 45.17592,
+    "lng": -113.89577,
+    "fact": "OSM city of Salmon"
+   }
+  ],
+  "note": "Correct; Central Idaho is a large region."
+ },
+ {
+  "id": "mo_wm_the_quarry",
+  "verdict": "ok",
+  "stored": [
+   38.05332,
+   -93.71248
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/110967165",
+    "retrieved_at": "2026-11-18",
+    "lat": 38.05332,
+    "lng": -93.71248,
+    "fact": "MP WM: The Quarry under XM: Closed Areas, identical"
+   }
+  ],
+  "note": "Parent Closed Areas is a statewide grouping. One source only."
+ },
+ {
+  "id": "id_moscow_mountain",
+  "verdict": "ok",
+  "stored": [
+   46.81226,
+   -116.88094
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/112299431",
+    "retrieved_at": "2026-11-18",
+    "lat": 46.81167,
+    "lng": -116.88128,
+    "fact": "MP Moscow Mountain, North Idaho"
+   },
+   {
+    "url": "https://nominatim.openstreetmap.org/search?format=json&q=Moscow%20Mountain%2C%20Idaho",
+    "retrieved_at": "2026-11-18",
+    "lat": 46.8035,
+    "lng": -116.86877,
+    "fact": "OSM peak, Latah County"
+   }
+  ],
+  "note": "Correct; North Idaho is a large region."
+ },
+ {
+  "id": "co_narrows",
+  "verdict": "unresolved",
+  "stored": [
+   38.9936,
+   -105.93
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/105747100",
+    "retrieved_at": "2026-11-18",
+    "lat": 38.9936,
+    "lng": -105.93,
+    "fact": "MP Narrows GPS is a placeholder; text: Coal Creek Canyon, S side, 5-6 mi from Hwy 93"
+   },
+   {
+    "url": "https://www.mountainproject.com/area/108580517",
+    "retrieved_at": "2026-11-18",
+    "lat": 39.92043,
+    "lng": -105.36724,
+    "fact": "MP Coal Creek Canyon GPS"
+   }
+  ],
+  "note": "Stored point is MP placeholder (central CO), wrong; real spot is in Coal Creek Canyon but no page prints its coordinate."
+ },
+ {
+  "id": "ca_kangaroo_lake",
+  "verdict": "ok",
+  "stored": [
+   41.33285,
+   -122.63602
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/125104122",
+    "retrieved_at": "2026-11-18",
+    "lat": 41.33285,
+    "lng": -122.63602,
+    "fact": "MP GPS identical to stored, Northeast California"
+   },
+   {
+    "url": "https://nominatim.openstreetmap.org/search?format=json&q=Kangaroo%20Lake%2C%20California",
+    "retrieved_at": "2026-11-18",
+    "lat": 41.33412,
+    "lng": -122.63456,
+    "fact": "OSM water Kangaroo Lake, Siskiyou County"
+   }
+  ],
+  "note": "Correct; Northeast California is a large region."
+ },
+ {
+  "id": "nv_christmas_tree_pass",
+  "verdict": "ok",
+  "stored": [
+   35.2494063888889,
+   -114.708820555556
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/105797826",
+    "retrieved_at": "2026-11-18",
+    "lat": 35.22573,
+    "lng": -114.68117,
+    "fact": "MP Christmas Tree Pass GPS"
+   },
+   {
+    "url": "https://nominatim.openstreetmap.org/search?format=json&q=Christmas%20Tree%20Pass%2C%20Nevada",
+    "retrieved_at": "2026-11-18",
+    "lat": 35.26081,
+    "lng": -114.74481,
+    "fact": "OSM pass, Clark County"
+   }
+  ],
+  "note": "Correct; Southern Nevada is a large region."
+ },
+ {
+  "id": "wi_milwaukee_bayview",
+  "verdict": "ok",
+  "stored": [
+   42.99284,
+   -87.89071
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/118776053",
+    "retrieved_at": "2026-11-18",
+    "lat": 42.99746,
+    "lng": -87.89288,
+    "fact": "MP Milwaukee Bayview GPS"
+   },
+   {
+    "url": "https://nominatim.openstreetmap.org/search?format=json&q=Bay%20View%2C%20Milwaukee",
+    "retrieved_at": "2026-11-18",
+    "lat": 42.99593,
+    "lng": -87.89682,
+    "fact": "OSM Bay View neighbourhood"
+   }
+  ],
+  "note": "Correct; parent is a statewide buildering grouping."
+ },
+ {
+  "id": "az_fishtail",
+  "verdict": "parent_wrong",
+  "stored": [
+   36.43312,
+   -112.57658
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": 36.0552608,
+  "parent_new_lng": -112.1218355,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://nominatim.openstreetmap.org/search?format=json&q=Fishtail%20Mesa%2C%20Arizona",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.43332,
+    "lng": -112.57658,
+    "fact": "OSM peak Fishtail Mesa, Coconino County"
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/Grand_Canyon_National_Park",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.0552608,
+    "lng": -112.1218355,
+    "fact": "Park infobox coordinates"
+   },
+   {
+    "url": "https://www.mountainproject.com/area/105787841",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.10733,
+    "lng": -112.11205,
+    "fact": "MP Grand Canyon (Northern Arizona) GPS line; ~6 km from Wikipedia"
+   }
+  ],
+  "note": "Child matches OSM; parent Unconventionals carries the wrong GCNP point 35.556,-111.918."
+ },
+ {
+  "id": "az_yarnell_wall",
+  "verdict": "ok",
+  "stored": [
+   34.22867,
+   -112.7944
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/123784821",
+    "retrieved_at": "2026-11-18",
+    "lat": 34.22867,
+    "lng": -112.7944,
+    "fact": "MP GPS identical to stored"
+   },
+   {
+    "url": "https://nominatim.openstreetmap.org/search?format=json&q=Yarnell%2C%20Arizona",
+    "retrieved_at": "2026-11-18",
+    "lat": 34.22219,
+    "lng": -112.74709,
+    "fact": "OSM village Yarnell (~4 km)"
+   }
+  ],
+  "note": "Correct; Central Arizona is a large region."
+ }
+]
