@@ -1,0 +1,84 @@
+{
+ "ca_san_joaquin_mountain_san_joaquin_ridge": {
+  "area": "ca_san_joaquin_mountain",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Minaret Vista (Minaret Summit), start of the San Joaquin Ridge road",
+    "trailheadLat": 37.656612,
+    "trailheadLng": -119.060772
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Minaret Vista (Minaret Summit), start of the San Joaquin Ridge road",
+     "trailheadLat": 37.656612,
+     "trailheadLng": -119.060772
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.openstreetmap.org/way/42486448",
+      "fact": "Minaret Vista picnic area and lot 37.65661,-119.06077",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://www.openstreetmap.org/node/2149046478",
+      "fact": "Minaret Vista viewpoint 37.65670,-119.06135 (about 50 m away)",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "research",
+    "fact": "trip page: the ridge hike starts near Minaret Summit off SR-203, up the gated jeep road; route text: jeep road then ridge trail"
+   },
+   "chunk": "photon3"
+  }
+ },
+ "nv_mount_rose_mount_rose_trail": {
+  "area": "nv_mount_rose",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Mount Rose Summit Trailhead (SR 431 pass)",
+    "trailheadLat": 39.313219,
+    "trailheadLng": -119.897055
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Mount Rose Summit Trailhead (SR 431 pass)",
+     "trailheadLat": 39.313219,
+     "trailheadLng": -119.897055
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.openstreetmap.org/node/10157234309",
+      "fact": "Mount Rose Summit pass 39.31322,-119.89706; the trailhead lot is at the pass",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://climber.org/driving/MtRoseTahoe.html",
+      "fact": "the pass lot is the highest trailhead, about 8,900 ft",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "research",
+    "fact": "route text: trail from the highway pass; pass-level point, the lot adjoins it"
+   },
+   "chunk": "photon3"
+  }
+ }
+}
