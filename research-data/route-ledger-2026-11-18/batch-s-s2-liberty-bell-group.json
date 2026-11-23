@@ -1,0 +1,411 @@
+{
+ "wa_liberty_bell_the_barber_pole": {
+  "area": "wa_liberty_bell",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/105797864/liberty-bell",
+    "https://publications.americanalpineclub.org/articles/13201215339",
+    "https://en.wikipedia.org/wiki/Liberty_Bell_Mountain"
+   ]
+  },
+  "ledger": [],
+  "sql_fixes": [],
+  "held": [
+   {
+    "table": "routes",
+    "id": "wa_liberty_bell_the_barber_pole",
+    "column": "access",
+    "from": null,
+    "to": "(Concord North Face object)",
+    "why": "HELD: the land manager is the same (OWNF, Methow Valley RD, outside wilderness), but no source places this route's start or trailhead. The only source naming the route (AAJ 2020, Dark Side of Liberty) puts it beside that line on Liberty Bell's northeast side, which the catalog reaches from the SR-20 hairpin pullout, not Blue Lake. The brief's condition (same manager AND trailhead) is not met.",
+    "evidence": [
+     "https://publications.americanalpineclub.org/articles/13201215339",
+     "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/blue-lake-trailhead"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "CATALOG DEFECT (suspect row). No independent publisher gives this route a grade, pitch count, length, commitment or FA: it is not among the 19 routes on Mountain Project's Liberty Bell page, not in Wikipedia's Liberty Bell list, and theCrag could not be read (rate-limited). The only mention found is the AAJ's Dark Side of Liberty report (Shanjean Lee, 2020): the authors climbed the 'neighboring Barber Pole' in May 2018 to reach their line; no grade or history. The stored FA 'Sandy Bill, Cindy Wade, Ron Burgner, Frank Tarver 1966' nearly matches the 1966 FREE-ascent party of the Northwest Face (Bill, Burgner, Ian Martin, Tarver), so it may be filed on the wrong row. grade 5.9, commitment III, guide_stars 1 and gear are all unverified. Nothing proposed; owner decides whether the row stays."
+ },
+ "wa_the_cave_route": {
+  "area": "wa_concord_tower",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/106509917/the-cave-route",
+    "https://www.mountainproject.com/route/106543279/north-face",
+    "https://www.thecrag.com/en/climbing/united-states/north-cascade-mountains/area/14395237",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/blue-lake-trailhead",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_02/MapServer/0/query?geometry=-120.6583,48.5145&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownerclassification,forestname&returnGeometry=false&f=json",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_Wilderness_01/MapServer/0/query?geometry=-120.6583,48.5145&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=WILDERNESSNAME&returnGeometry=false&f=json"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.8",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106509917/the-cave-route",
+      "fact": "The Cave Route 5.8, Trad, Alpine, 3 pitches",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://www.thecrag.com/en/climbing/united-states/north-cascade-mountains/area/14395237",
+      "fact": "Tunnel Route 5.8 II, 300 ft, 3 pitches (Concord Tower list)",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "rock_grade",
+    "value": "5.8",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106509917/the-cave-route",
+      "fact": "5.8",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://www.thecrag.com/en/climbing/united-states/north-cascade-mountains/area/14395237",
+      "fact": "Tunnel Route 5.8",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 3,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106509917/the-cave-route",
+      "fact": "3 pitches",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://www.thecrag.com/en/climbing/united-states/north-cascade-mountains/area/14395237",
+      "fact": "Tunnel Route, 3 pitches",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [],
+  "held": [],
+  "disputed": [],
+  "notes": "theCrag lists this line as 'Tunnel Route'; MP's Concord North Face page says the Tunnel Route is the one MP calls the Cave Route, so the two pages describe one line. Suggest 'Tunnel Route' as an alias. Length: theCrag 300 ft (91 m) vs stored 95 m, within tolerance but one source, not locked. FA 'Ron Burgner & Don McPherson, 1968' matches MP only (theCrag route page refused, rate limit): not locked. theCrag gives grade II, stored alpine_grade/commitment II: one source, not locked. ACCESS: manager re-confirmed (USFS Blue Lake TH page, updated 2026-06-09: OWNF, Methow Valley RD, NW Forest Pass/day pass/Interagency, no camping within 0.25 mi of the lake, no stock or mechanized travel; USFS ownership layer = OWNF; wilderness layer = none). The stored object is NOT identical to wa_concord_tower_north_face's: it carries one extra key, `notes` (not in North Cascades NP; no Rainier-style climbing fee). Every other key matches. The note is true, so no fix proposed; owner may drop it to make the siblings identical."
+ },
+ "wa_south_face_center": {
+  "area": "wa_concord_tower",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/111944979/south-face-center",
+    "https://www.thecrag.com/en/climbing/united-states/north-cascade-mountains/area/14395237",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/blue-lake-trailhead",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_02/MapServer/0/query?geometry=-120.6583,48.5145&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownerclassification,forestname&returnGeometry=false&f=json",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_Wilderness_01/MapServer/0/query?geometry=-120.6583,48.5145&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=WILDERNESSNAME&returnGeometry=false&f=json"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.8+",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111944979/south-face-center",
+      "fact": "5.8+ YDS, Trad, Alpine",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "rock_grade",
+    "value": "5.8+",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111944979/south-face-center",
+      "fact": "5.8+",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "length_m",
+    "value": 67,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111944979/south-face-center",
+      "fact": "220 ft (67 m)",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [],
+  "held": [],
+  "disputed": [],
+  "notes": "Only Mountain Project describes this route: theCrag's Concord Tower list has no such line, SummitPost is blocked, the AAJ has nothing. Locked at the 1-source tier for grade and length (MP states both). Pitches 1 not locked: MP says one pitch only with a 70 m rope (two with a 60 m), not a stated count. FA: MP 'Not Known'; row null, correct. The stored overview calls it a 'variation'; MP lists it as its own route and does not call it one, so no defect. ACCESS: same finding as The Cave Route: the object equals wa_concord_tower_north_face's except one extra `notes` key; manager re-confirmed on the USFS Blue Lake TH page and the USFS ownership/wilderness layers."
+ },
+ "wa_up_in_arms": {
+  "area": "wa_concord_tower",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/125216004/up-in-arms",
+    "https://publications.americanalpineclub.org/articles/13201216754",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/blue-lake-trailhead",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_02/MapServer/0/query?geometry=-120.6583,48.5145&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownerclassification,forestname&returnGeometry=false&f=json",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_Wilderness_01/MapServer/0/query?geometry=-120.6583,48.5145&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=WILDERNESSNAME&returnGeometry=false&f=json"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.11",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/125216004/up-in-arms",
+      "fact": "5.11 YDS, Trad, Alpine, 700 ft, 6 pitches, Grade III",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://publications.americanalpineclub.org/articles/13201216754",
+      "fact": "Up in Arms, 5.11, six pitches, 700 ft (AAJ 2024, Aeschliman)",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "rock_grade",
+    "value": "5.11",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/125216004/up-in-arms",
+      "fact": "5.11",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://publications.americanalpineclub.org/articles/13201216754",
+      "fact": "5.11",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 6,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/125216004/up-in-arms",
+      "fact": "6 pitches",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://publications.americanalpineclub.org/articles/13201216754",
+      "fact": "six pitches",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "length_m",
+    "value": 213,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/125216004/up-in-arms",
+      "fact": "700 ft (212 m)",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://publications.americanalpineclub.org/articles/13201216754",
+      "fact": "700 ft",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Michael Telstad & Gabe Aeschliman, June 4, 2023",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/125216004/up-in-arms",
+      "fact": "FA Michael Telstad & Gabe Aeschliman June 4, 2023",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://publications.americanalpineclub.org/articles/13201216754",
+      "fact": "Michael Telstad and Gabe Aeschliman, June 4, 2023 (FA party's own report)",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_up_in_arms",
+    "column": "access",
+    "from": null,
+    "to": {
+     "fees": "$5/vehicle day-use e-Pass or $30 annual Northwest Forest Pass, purchasable via Recreation.gov",
+     "rules": "Leave No Trace; no camping within 0.25 mile of Blue Lake; no stock or mechanized travel on the climbers' path",
+     "permit": "No climbing or wilderness permit required",
+     "closures": "SR-20 (North Cascades Highway) is gated and closed for winter, typically early-to-mid December through mid-April/May depending on snowpack",
+     "seasonal": "WA-20 (North Cascades Highway) closes gate-to-gate roughly early December–mid/late April; the entire Washington Pass corridor is car-inaccessible in winter.",
+     "landManager": "Okanogan-Wenatchee National Forest, Methow Valley Ranger District",
+     "land_manager": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)",
+     "parking_pass": "Northwest Forest Pass required at Washington Pass Overlook, Blue Lake, and Cutthroat trailheads — $5/day or $30/annual (America the Beautiful pass also honored).",
+     "passRequired": "Northwest Forest Pass or Interagency (America the Beautiful) Pass",
+     "overnight_permit": {
+      "url": null,
+      "what": "No overnight permit required",
+      "where": "This is general Okanogan-Wenatchee National Forest land outside any wilderness boundary; parties bivy informally at the trailhead or a highway pullout. A Northwest Forest Pass or day-use fee is needed to park, and no camping is allowed within a quarter mile of Blue Lake itself."
+     }
+    },
+    "why": "access is empty. Copied field for field from wa_concord_tower_north_face (live, researched). Same tower and same trailhead: the AAJ report starts the route in the Concord-Lexington gully and calls it the closest route to the Blue Lake trailhead. Re-read the official USFS Blue Lake Trailhead page 2026-11-23 (OWNF, Methow Valley RD; NW Forest Pass / $5 day pass / Interagency honored; no camping within 0.25 mi of the lake; no stock or mechanized travel); USFS ownership layer = Okanogan-Wenatchee NF; USFS wilderness layer = no wilderness at Concord. official-1, 12 months, after apply.",
+    "evidence": [
+     "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/blue-lake-trailhead",
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_02/MapServer/0/query?geometry=-120.6583,48.5145&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownerclassification,forestname&returnGeometry=false&f=json",
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_Wilderness_01/MapServer/0/query?geometry=-120.6583,48.5145&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=WILDERNESSNAME&returnGeometry=false&f=json",
+     "https://publications.americanalpineclub.org/articles/13201216754"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_up_in_arms",
+    "column": "permit",
+    "from": null,
+    "to": "No climbing or wilderness permit required; Northwest Forest Pass (or day fee) to park at developed trailheads.",
+    "why": "permit is empty. Copied from wa_concord_tower_north_face, where this exact string is locked official-1 (batch D, expires 2027-11-18). The USFS Blue Lake Trailhead page re-read 2026-11-23 names only parking passes, no climbing or wilderness permit.",
+    "evidence": [
+     "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/blue-lake-trailhead",
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_Wilderness_01/MapServer/0/query?geometry=-120.6583,48.5145&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=WILDERNESSNAME&returnGeometry=false&f=json"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_up_in_arms",
+    "column": "bolts",
+    "from": null,
+    "to": 3,
+    "why": "The FA party's AAJ report states three protection bolts were added (plus one bolted anchor). MP mentions bolts but gives no count. Single source (not MP): unconfirmed after apply. Stored pitch_detail shows 2 bolts on P1, consistent with 3 in total.",
+    "evidence": [
+     "https://publications.americanalpineclub.org/articles/13201216754"
+    ]
+   }
+  ],
+  "held": [],
+  "disputed": [],
+  "notes": "Commitment III is MP's alone (the AAJ gives none): not locked. MP pitch grades: P1 5.11, P2 5.9, P3 5.10, P4 5.7, P5 5.9 PG13, P6 5.7. MP descent: two rappels on one 60 m rope to the Concord-Lexington notch, then walk down the gully, matching the stored text."
+ },
+ "wa_tooth_and_claw": {
+  "area": "wa_lexington_tower",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/112067014/tooth-and-claw",
+    "https://www.thecrag.com/en/climbing/united-states/north-cascade-mountains/route/16772425",
+    "https://en.wikipedia.org/wiki/Lexington_Tower",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/blue-lake-trailhead",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_02/MapServer/0/query?geometry=-120.6575,48.5143&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownerclassification,forestname&returnGeometry=false&f=json"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.12a",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112067014/tooth-and-claw",
+      "fact": "5.12a YDS, Trad, Alpine, 800 ft, 8 pitches",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://www.thecrag.com/en/climbing/united-states/north-cascade-mountains/route/16772425",
+      "fact": "5.12a, grade cited from the guidebook Rock Climbing Washington",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "rock_grade",
+    "value": "5.12a",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112067014/tooth-and-claw",
+      "fact": "5.12a",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://www.thecrag.com/en/climbing/united-states/north-cascade-mountains/route/16772425",
+      "fact": "5.12a (Rock Climbing Washington)",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "length_m",
+    "value": 244,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112067014/tooth-and-claw",
+      "fact": "800 ft (242 m)",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [],
+  "held": [
+   {
+    "table": "routes",
+    "id": "wa_tooth_and_claw",
+    "column": "pitches",
+    "from": 7,
+    "to": 8,
+    "why": "HELD: Mountain Project states 8 pitches (pitch grades P1 5.11, P2 5.10, P3 5.11, P4 5.10, P5 5.12a, P6-7 5.9); the row stores 7. theCrag gives no count; SummitPost (blocked) was only seen in a search summary, which is not evidence. A one-source change to a stored count is held.",
+    "evidence": [
+     "https://www.mountainproject.com/route/112067014/tooth-and-claw"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_tooth_and_claw",
+    "column": "access",
+    "from": "(legacy object with _raw)",
+    "to": "(Concord North Face object)",
+    "why": "HELD: the manager is the same (USFS ownership layer at Lexington = Okanogan-Wenatchee NF, no wilderness), but the trailhead is not: this route starts from the SR-20 hairpin/pond pullout east of the pass, while the Concord object's pass and camping lines are written for the Blue Lake trailhead. The brief's condition (same manager AND trailhead) is not met. The stored object's own non-_raw fields are not wrong; the _raw key is the defect.",
+    "evidence": [
+     "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/blue-lake-trailhead"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "FA 'Steve Risse, Dave Tower (June 1989)': MP names Risse and Tower with no date; Wikipedia's '1989' cites MP/Beckey/Smoot together, so it is not independent. Not locked. MP rack: doubles to 0.75 Camalot, singles #1-#3; two 70 m ropes to rappel (doubled 60s do not reach the P5 anchor). theCrag pages became rate-limited after three reads. The SR-20 hairpin pullout is shared by many east-side Liberty Bell rows that also carry the _raw legacy object: a hairpin-trailhead access object needs its own official pass check before it can replace them."
+ }
+}

@@ -1,4 +1,4 @@
--- 0496: a log can say how many pitches of a multipitch climb were climbed.
+-- 0499: a log can say how many pitches of a multipitch climb were climbed.
 --
 -- WHY (owner 2026-11-23, "If they climb a 5 pitch route, does that count as 5 pitches? It
 -- should."): Challenges' pitch count adds a route's own pitch count for every finished climb, so

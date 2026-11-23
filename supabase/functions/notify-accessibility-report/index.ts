@@ -11,7 +11,8 @@
 //
 // WHERE IT GOES: ACCESSIBILITY_ALERT_EMAIL, else SAFETY_ALERT_EMAIL, else the mailer's admin address.
 // Nothing is sent until RESEND_API_KEY is set (the shared mailer returns not_configured); the form
-// never claims an email went out, so an unconfigured mailer degrades to the Review badge.
+// never claims an email went out, so an unconfigured mailer degrades to the Review desk's
+// Accessibility reports section (review.html#access; off the app's Menu and its badge since 2026-11-23).
 //
 // Deploy:  npx supabase functions deploy notify-accessibility-report --no-verify-jwt
 //          (a guest has no session JWT for the gateway to verify; the checks above are the gate)

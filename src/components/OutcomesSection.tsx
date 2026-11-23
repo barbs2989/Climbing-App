@@ -4,7 +4,7 @@ import CardHead from "./CardHead.tsx";
 
 export interface OutcomesSectionReport {
   _dbId?: string | number; id?: string | number; date?: string | null; tickType?: string | null; summited?: boolean;
-  /** How many pitches a party that did not finish climbed (0496), when the reporter said. */
+  /** How many pitches a party that did not finish climbed (0499), when the reporter said. */
   pitchesClimbed?: number | null;
   outcomeReasons?: string[] | null; outcomeNote?: string | null;
 }
