@@ -1,0 +1,548 @@
+{
+ "wa_boltergeist": {
+  "area": "wa_f_phun_rock_main_wall_sunbug_slab",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/107286687/boltergeist",
+    "https://www.mountainproject.com/area/113680690/phun-rock-main-wall-sunbug-slab",
+    "https://www.thecrag.com/en/climbing/united-states/north-cascade-mountains/area/14395357"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "fa",
+    "value": "Bryan Burdo",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107286687/boltergeist",
+      "fact": "FA: Bryan Burdo",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://www.thecrag.com/en/climbing/united-states/north-cascade-mountains/area/14395357",
+      "fact": "FA: Bryan Burdo",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_boltergeist",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "pitches 0 is invalid. One bolted line up the slab to chains, so one pitch (count implied, not stated; not locked).",
+    "evidence": [
+     "https://www.mountainproject.com/route/107286687/boltergeist"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_boltergeist",
+    "column": "anchor",
+    "from": null,
+    "to": "Chain anchor",
+    "why": "Mountain Project states chains at the top. House spelling 'Chain anchor' (stored on 64 routes). Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/107286687/boltergeist"
+    ]
+   }
+  ],
+  "held": [
+   {
+    "table": "routes",
+    "id": "wa_boltergeist",
+    "column": "bolts",
+    "from": null,
+    "to": 8,
+    "why": "HELD: two different counts. Mountain Project states 8 bolts; theCrag's sector page lists 6.",
+    "evidence": [
+     "https://www.mountainproject.com/route/107286687/boltergeist",
+     "https://www.thecrag.com/en/climbing/united-states/north-cascade-mountains/area/14395357"
+    ]
+   }
+  ],
+  "disputed": [
+   "grade: stored 5.7+ = Mountain Project's grade; theCrag lists 5.8, and Mountain Project's own Bolterheist page also calls it 5.8. Not locked, not changed (one-source change held).",
+   "bolts: Mountain Project 8 vs theCrag 6."
+  ],
+  "notes": "Boltergeist and Bolterheist are TWO separate lines: both publishers list them as separate routes, on either side of a fissure at the right end of Sunbug Slab (Boltergeist left, the harder of the pair; Bolterheist right). Not a duplicate. Filed correctly in Main Wall & Sunbug Slab. Length not stated by either source. theCrag: the Main Wall & Sunbug Slab sector page opened once in my own tab; the next page (a route page) returned Forbidden, so theCrag was stopped and the tab closed. Access not proposed (brief X: stays null; the land is likely Outward Bound private property with an Access Fund purchase pending). No new page found saying the sale has closed."
+ },
+ "wa_bolterheist": {
+  "area": "wa_f_phun_rock_main_wall_sunbug_slab",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/108199806/bolterheist",
+    "https://www.mountainproject.com/area/113680690/phun-rock-main-wall-sunbug-slab",
+    "https://www.thecrag.com/en/climbing/united-states/north-cascade-mountains/area/14395357"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.7",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108199806/bolterheist",
+      "fact": "5.7 YDS, Sport",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://www.thecrag.com/en/climbing/united-states/north-cascade-mountains/area/14395357",
+      "fact": "5.7, Sport",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_bolterheist",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "pitches 0 is invalid. One bolted line up the slab to chains, so one pitch (count implied, not stated; not locked).",
+    "evidence": [
+     "https://www.mountainproject.com/route/108199806/bolterheist"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_bolterheist",
+    "column": "anchor",
+    "from": null,
+    "to": "Chain anchor",
+    "why": "Mountain Project states chains at the top. House spelling 'Chain anchor' (stored on 64 routes). Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/108199806/bolterheist"
+    ]
+   }
+  ],
+  "held": [
+   {
+    "table": "routes",
+    "id": "wa_bolterheist",
+    "column": "bolts",
+    "from": null,
+    "to": 6,
+    "why": "HELD: two different counts. Mountain Project states 6 bolts; theCrag's sector page lists 5.",
+    "evidence": [
+     "https://www.mountainproject.com/route/108199806/bolterheist",
+     "https://www.thecrag.com/en/climbing/united-states/north-cascade-mountains/area/14395357"
+    ]
+   }
+  ],
+  "disputed": [
+   "bolts: Mountain Project 6 vs theCrag 5.",
+   "fa: stored blank; theCrag credits Bryan Burdo, Mountain Project says unknown. One source only, so not filled."
+  ],
+  "notes": "Separate line from Boltergeist (right of the fissure at the right end of Sunbug Slab); not a duplicate. Mountain Project notes the rock right of the bolts is much easier than the grade. theCrag: the Main Wall & Sunbug Slab sector page opened once in my own tab; the next page (a route page) returned Forbidden, so theCrag was stopped and the tab closed. Access not proposed (brief X: stays null; the land is likely Outward Bound private property with an Access Fund purchase pending). No new page found saying the sale has closed."
+ },
+ "wa_cream": {
+  "area": "wa_f_phun_rock_main_wall_sunbug_slab",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/107286692/cream",
+    "https://www.mountainproject.com/area/113680690/phun-rock-main-wall-sunbug-slab",
+    "https://www.thecrag.com/en/climbing/united-states/north-cascade-mountains/area/14395357"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.7",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107286692/cream",
+      "fact": "5.7 YDS, Sport",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://www.thecrag.com/en/climbing/united-states/north-cascade-mountains/area/14395357",
+      "fact": "5.7, Sport",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Bryan Burdo",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107286692/cream",
+      "fact": "FA: Bryan Burdo",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://www.thecrag.com/en/climbing/united-states/north-cascade-mountains/area/14395357",
+      "fact": "FA: Bryan Burdo",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_cream",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "pitches 0 is invalid. One bolted diagonal to a first set of chains, so one pitch (count implied, not stated; not locked). The extension to higher chains is Creamsicle, its own row.",
+    "evidence": [
+     "https://www.mountainproject.com/route/107286692/cream"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_cream",
+    "column": "bolts",
+    "from": null,
+    "to": 5,
+    "why": "Mountain Project states 5 bolts to the chains (8 for the Creamsicle extension). theCrag gives no count. Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/107286692/cream"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_cream",
+    "column": "anchor",
+    "from": null,
+    "to": "Chain anchor",
+    "why": "Mountain Project states chains at the top. House spelling 'Chain anchor' (stored on 64 routes). Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/107286692/cream"
+    ]
+   }
+  ],
+  "held": [],
+  "disputed": [],
+  "notes": "Filed correctly: slab at the right of the main wall, just right of Megafauna; its first two bolts are shared with Swell, and its anchor sits above Invasive Species and Kids Nowadays. Creamsicle (wa_f_phun_rock_main_wall_sunbug_slab_creamsicle, 5.9) continues three more bolts to chains at about 80 ft; that is a separate row (Mountain Project lists both), so not a defect. Length of Cream itself not stated. theCrag: the Main Wall & Sunbug Slab sector page opened once in my own tab; the next page (a route page) returned Forbidden, so theCrag was stopped and the tab closed. Access not proposed (brief X: stays null; the land is likely Outward Bound private property with an Access Fund purchase pending). No new page found saying the sale has closed."
+ },
+ "wa_snake_fingers": {
+  "area": "wa_f_phun_rock_main_wall_sunbug_slab",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/107303058/snake-fingers",
+    "https://www.mountainproject.com/area/113680690/phun-rock-main-wall-sunbug-slab",
+    "https://www.thecrag.com/en/climbing/united-states/north-cascade-mountains/area/14395357"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.10a",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107303058/snake-fingers",
+      "fact": "5.10a YDS",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://www.thecrag.com/en/climbing/united-states/north-cascade-mountains/area/14395357",
+      "fact": "5.10a, Sport",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Bryan Burdo",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107303058/snake-fingers",
+      "fact": "FA: Bryan Burdo",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://www.thecrag.com/en/climbing/united-states/north-cascade-mountains/area/14395357",
+      "fact": "FA: Bryan Burdo (listed as Snakefingers)",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_snake_fingers",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "pitches 0 is invalid. One crack line of about 55-59 ft to a chained anchor, so one pitch (count implied, not stated; not locked).",
+    "evidence": [
+     "https://www.mountainproject.com/route/107303058/snake-fingers"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_snake_fingers",
+    "column": "discipline",
+    "from": "trad",
+    "to": "sport",
+    "why": "Two publishers: Mountain Project says the crack was fully retro-bolted and can be led on quickdraws alone (type listed 'Trad, Sport'); theCrag lists it as Sport with 6 bolts. Gear to 2 in is optional only.",
+    "evidence": [
+     "https://www.mountainproject.com/route/107303058/snake-fingers",
+     "https://www.thecrag.com/en/climbing/united-states/north-cascade-mountains/area/14395357"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_snake_fingers",
+    "column": "length_m",
+    "from": null,
+    "to": 17,
+    "why": "Two publishers agree within tolerance: Mountain Project 55 ft (17 m), theCrag 59 ft.",
+    "evidence": [
+     "https://www.mountainproject.com/route/107303058/snake-fingers",
+     "https://www.thecrag.com/en/climbing/united-states/north-cascade-mountains/area/14395357"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_snake_fingers",
+    "column": "bolts",
+    "from": null,
+    "to": 6,
+    "why": "theCrag's sector page lists 6 bolts. Mountain Project gives no count (only 'a handful of quickdraws', not used). Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.thecrag.com/en/climbing/united-states/north-cascade-mountains/area/14395357"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_snake_fingers",
+    "column": "anchor",
+    "from": null,
+    "to": "Chain anchor",
+    "why": "Mountain Project states chains at the top. House spelling 'Chain anchor' (stored on 64 routes). Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/107303058/snake-fingers"
+    ]
+   }
+  ],
+  "held": [],
+  "disputed": [],
+  "notes": "Discipline: stored trad on a sport wall; it is a bolted crack now (retro-bolted), so sport is proposed from two sources. Mountain Project's anchor is a 3-bolt anchor with chains for lowering. Filed correctly: left of the two bolted cracks on the left side of the main wall (Kids Nowadays is the right one); Guide's Day Off is on the face to its left. theCrag: the Main Wall & Sunbug Slab sector page opened once in my own tab; the next page (a route page) returned Forbidden, so theCrag was stopped and the tab closed. Access not proposed (brief X: stays null; the land is likely Outward Bound private property with an Access Fund purchase pending). No new page found saying the sale has closed."
+ },
+ "wa_guide_s_day_off": {
+  "area": "wa_f_phun_rock_main_wall_sunbug_slab",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/108153454/guides-day-off",
+    "https://www.mountainproject.com/area/113680690/phun-rock-main-wall-sunbug-slab",
+    "https://www.thecrag.com/en/climbing/united-states/north-cascade-mountains/area/14395357"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.10c",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108153454/guides-day-off",
+      "fact": "5.10c YDS, Sport",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://www.thecrag.com/en/climbing/united-states/north-cascade-mountains/area/14395357",
+      "fact": "5.10c, Sport",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Steve House",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108153454/guides-day-off",
+      "fact": "FA: Steve House",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://www.thecrag.com/en/climbing/united-states/north-cascade-mountains/area/14395357",
+      "fact": "FA: Steve House",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_guide_s_day_off",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "pitches 0 is invalid. Five bolts to chains, one pitch (count implied, not stated; not locked).",
+    "evidence": [
+     "https://www.mountainproject.com/route/108153454/guides-day-off"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_guide_s_day_off",
+    "column": "bolts",
+    "from": null,
+    "to": 5,
+    "why": "Two publishers agree on 5 bolts: Mountain Project ('5 bolts to the chains') and theCrag (5).",
+    "evidence": [
+     "https://www.mountainproject.com/route/108153454/guides-day-off",
+     "https://www.thecrag.com/en/climbing/united-states/north-cascade-mountains/area/14395357"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_guide_s_day_off",
+    "column": "length_m",
+    "from": null,
+    "to": 12,
+    "why": "Two publishers agree within the 50 ft tolerance: Mountain Project 40 ft (12 m), theCrag 49 ft. Mountain Project's figure used.",
+    "evidence": [
+     "https://www.mountainproject.com/route/108153454/guides-day-off",
+     "https://www.thecrag.com/en/climbing/united-states/north-cascade-mountains/area/14395357"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_guide_s_day_off",
+    "column": "anchor",
+    "from": null,
+    "to": "Chain anchor",
+    "why": "Mountain Project states chains at the top. House spelling 'Chain anchor' (stored on 64 routes). Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/108153454/guides-day-off"
+    ]
+   }
+  ],
+  "held": [],
+  "disputed": [],
+  "notes": "Filed correctly: face left of the broken Snake Fingers crack, low on the main wall. Length differs by 9 ft between the two publishers (40 vs 49 ft); the owner may prefer to hold length. theCrag: the Main Wall & Sunbug Slab sector page opened once in my own tab; the next page (a route page) returned Forbidden, so theCrag was stopped and the tab closed. Access not proposed (brief X: stays null; the land is likely Outward Bound private property with an Access Fund purchase pending). No new page found saying the sale has closed."
+ },
+ "wa_finger_food": {
+  "area": "wa_f_phun_rock_main_wall_sunbug_slab",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/117285336/finger-food",
+    "https://www.mountainproject.com/area/113680690/phun-rock-main-wall-sunbug-slab",
+    "https://www.thecrag.com/en/climbing/united-states/north-cascade-mountains/area/14395357"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.10b",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/117285336/finger-food",
+      "fact": "5.10b YDS, Sport",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_finger_food",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "pitches 0 is invalid. One bolted line of 80 ft to chains, so one pitch (count implied, not stated; not locked).",
+    "evidence": [
+     "https://www.mountainproject.com/route/117285336/finger-food"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_finger_food",
+    "column": "length_m",
+    "from": null,
+    "to": 24,
+    "why": "Mountain Project states 80 ft (24 m). Single source (theCrag's sector page does not list this route); locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/117285336/finger-food"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_finger_food",
+    "column": "bolts",
+    "from": null,
+    "to": 9,
+    "why": "Mountain Project states 9 bolts to chains. Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/117285336/finger-food"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_finger_food",
+    "column": "anchor",
+    "from": null,
+    "to": "Chain anchor",
+    "why": "Mountain Project states chains at the top. House spelling 'Chain anchor' (stored on 64 routes). Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/117285336/finger-food"
+    ]
+   }
+  ],
+  "held": [],
+  "disputed": [
+   "fa: unknown on Mountain Project; theCrag does not list the route. Left blank."
+  ],
+  "notes": "Filed correctly: starts left of Psychological Crutch, on the face right of the fault line, and finishes on the Crutch headwall. theCrag's Main Wall & Sunbug Slab page does not list it, so grade is Mountain Project only. theCrag: the Main Wall & Sunbug Slab sector page opened once in my own tab; the next page (a route page) returned Forbidden, so theCrag was stopped and the tab closed. Access not proposed (brief X: stays null; the land is likely Outward Bound private property with an Access Fund purchase pending). No new page found saying the sale has closed."
+ },
+ "wa_wide_load_2": {
+  "area": "wa_f_phun_rock_main_wall_sunbug_slab",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/117694456/wide-load",
+    "https://www.mountainproject.com/area/113680690/phun-rock-main-wall-sunbug-slab",
+    "https://www.thecrag.com/en/climbing/united-states/north-cascade-mountains/area/14395357"
+   ]
+  },
+  "ledger": [],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_wide_load_2",
+    "column": "pitches",
+    "from": 0,
+    "to": null,
+    "why": "pitches 0 is invalid. Mountain Project names a first set of chains, several lower-offs at the top and a belay stance above the first chains for bringing up a follower, so the line may be one or two pitches; no source states a count.",
+    "evidence": [
+     "https://www.mountainproject.com/route/117694456/wide-load"
+    ]
+   }
+  ],
+  "held": [],
+  "disputed": [
+   "grade: stored 5.6 = Mountain Project. theCrag lists only a 'Wide Lode Alternate' at 5.7 in this sector, which may be a different line (an alternate finish), so it is not used as agreement or disagreement. Not locked."
+  ],
+  "notes": "Filed in Main Wall & Sunbug Slab, which Mountain Project agrees with (the obvious chimney line on the right side of the lower ledges, topping out on the Sun Deck). Bolts: Mountain Project says bolts with no count; its anchor wording (several lower-offs) is not a house spelling, so neither proposed. FA Bryan Burdo stored = Mountain Project; theCrag has no matching row, so not locked. Catalog question for the owner: whether theCrag's 'Wide Lode Alternate' is a separate variation missing from the catalog. theCrag: the Main Wall & Sunbug Slab sector page opened once in my own tab; the next page (a route page) returned Forbidden, so theCrag was stopped and the tab closed. Access not proposed (brief X: stays null; the land is likely Outward Bound private property with an Access Fund purchase pending). No new page found saying the sale has closed."
+ }
+}
