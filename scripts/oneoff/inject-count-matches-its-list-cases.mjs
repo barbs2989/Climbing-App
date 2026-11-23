@@ -85,7 +85,7 @@ const CASES = [
     name: "SILENT-the-past-crews-control-changed",
     file: CREWS,
     why: "MUST PASS — a sibling control sharing the words \"View all\" opens somewhere else entirely",
-    edit: (s) => s.replace('"View all "+pastCrews.length+" past crews"', '"Show all "+pastCrews.length+" past crews"'),
+    edit: (s) => s.replace('"Past crews ("+pastCrews.length+")"', '"Earlier crews ("+pastCrews.length+")"'),
     expect: null,
   },
 ];
