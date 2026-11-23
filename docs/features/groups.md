@@ -11,7 +11,8 @@ views under `groupsTab`: For you · Your groups · Your activity · Discover · 
   `groups update by manager` (0090) admits `is_group_manager()` only, and `setGroupVisibility` /
   `updateGroupSettings` report a zero-row update as a refusal rather than a success. Deleting a group is the
   owner's alone.
-- **Event cards** (`groupEventRow` in `ClimbMatch.jsx`; competitor review batch A, item 7, owner 2026-11-04, Meetup's pattern): under the title, the first four faces of who is going (`_groupPerson`, so a real member's photo shows) with *N going*; a capped event wears an amber *N spots left* badge at its top-right corner and says *Full* at none; the row's name for a screen reader carries both. The Discover view's title names the place once one is picked: *Climbing groups near Index*.
+- **Event cards** (`groupEventRow` in `ClimbMatch.jsx`; competitor review batch A, item 7, owner 2026-11-04, Meetup's pattern): under the title, the first four faces of who is going (`_groupPerson`, so a real member's photo shows) with *N going*; a capped event wears an amber *N spots left* badge in that same line, beside *N going* (it hung off the card's top edge until 2026-11-23 and read as cut off), and says *Full* at none; the row's name for a screen reader carries both. **A past event takes no RSVP, invite or share** (owner 2026-11-23): from the day after its date (`daysUntil` < 0) the open-event sheet says *This event has ended* (*· you went* if you had RSVP'd) in place of the RSVP button, and drops *+ Invite* and *Share this event*; the invite sheet refuses to open on one. The app is the only writer; the database does not refuse a late RSVP.
+- **+ Create event leads the Events tab** (owner 2026-11-23): a wide, centred button above *Upcoming events*, for whoever the group's event policy lets create. The Discover view's title names the place once one is picked: *Climbing groups near Index*.
 - **Who may host events** is the group's own setting, *Who can create events?* — *Any member* or *Moderators only*
   (`groups.event_policy`), enforced by the `group events created per the group's event policy` insert policy (0230).
   **New groups default to Moderators only** (2026-10-16), as Meetup (organizer team), Strava clubs (admins) and
@@ -27,7 +28,7 @@ views under `groupsTab`: For you · Your groups · Your activity · Discover · 
   chips (`STATE_CHIPS`): your **home** state, then the states of the areas you listed yourself at for partners
   (`partner_areas`, 0300) — marked *You climb here* — then the states with the most groups. A chip filters the list to
   that whole state and combines with the search box. The list below (*Every state* or one state, alphabetical, with
-  counts) holds every state with a group **and every state you downloaded** (`groupMyStates`, the account's pins, else
+  counts) holds every state with a group **and every state you downloaded**, then, in its own *Every other state* section, **every other US state** at 0 (`US_STATES`; owner 2026-11-23, to find groups outside your home state) (`groupMyStates`, the account's pins, else
   this device's downloads; owner 2026-11-23), a downloaded state with no group yet listed with a 0. It shows whenever
   it has two or more states; before, it was built only from states that already had a group and hidden when the chips
   covered them, so a climber whose only groups were at home could pick nothing but home. It no longer offers each typed town, which ran to hundreds of spellings. A town is found
@@ -142,7 +143,7 @@ treats it as a DELETE. Probe: `scripts/oneoff/probe-live-takedown.mjs`.
 | `src/components/PartnersHereCard.tsx` | `onGroupsHere`, the area page's *Climbing groups near* link |
 | `src/components/GroupDiscussionTab.tsx` | `GroupDiscussionTab`, an open group's Discussion tab (lifted from App, PR62) |
 | `src/components/GroupAboutTab.tsx` | `GroupAboutTab`, an open group's About tab |
-| `src/components/GroupMembersTab.tsx` | `GroupMembersTab`, an open group's Members tab (roster and member requests); past six members, *All N members →* opens a `ListPage` with a name search and a sort (group order, name, moderators first) |
+| `src/components/GroupMembersTab.tsx` | `GroupMembersTab`, an open group's Members tab (roster and member requests); the first `MEMBERS_FIT` (7, the rows that fill a 390x844 phone, measured 2026-11-23), then *Show N more members* unfolds the rest in place; *Search members* by the heading opens a `ListPage` with a name search and a sort (group order, name, moderators first) |
 | `src/components/GroupEventsTab.tsx` | `GroupEventsTab`, an open group's Events tab; past three past events, *All N past events →* opens a `ListPage` with a search by name or place and newest/oldest. Both group pages stack at 792, over the group view and under the event (795) or the Remove sheet (860) a row opens |
 | `src/components/GroupMediaTab.tsx` | `GroupMediaTab`, an open group's Media grid |
 | `src/components/GroupJoinQuestionsEditor.tsx` | `GroupJoinQuestionsEditor`, the membership-questions editor in the create-group form (PR63) |
