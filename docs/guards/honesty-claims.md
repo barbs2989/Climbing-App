@@ -694,6 +694,14 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     with the SAME viewer object it scores with, built from `ME.matchObjectiveIds`. Injection measured:
     `compatWhy(ME,climber)` fails it. The refactor was proved score-identical on 20,036 pairs (seed
     population plus 20,000 random profiles) before the old body was dropped.
+  - **...AND THE ONE-SENTENCE SUMMARY SAYS ONLY WHAT IS SHARED (2026-11-23).** `compatSummary()` is asserted on a
+    fixed pair (two 5.10 sport climbers listed at Index, free weekends) for its exact sentence, then with the grade, the
+    listed area and the availability each taken away in turn: the clause must go with its signal. A pair sharing
+    nothing, and an unfilled profile, must get `null`, never a vague sentence. `FullProfile` must call it with the same
+    two objects it scores. **Measured while building it:** the score's grade steps put 5.6 and 5.10a two steps apart,
+    which the checklist calls *Close in grade*; the first draft of the sentence repeated that and this assertion caught
+    it. The sentence now also requires rope grades within one number grade. The score and the checklist line were left
+    as they are (changing the grade steps moves every match %).
   - **THE DEFECT WAS A CLAMP DOING THE WORK OF A FORMULA.** `compat()` ended `Math.min(99, …)`
     while two of its terms were UNCAPPED — shared disciplines ×16, shared objectives ×14 — and the
     BOUNDED terms alone summed to **78 of that 99**. So a climber with a broad profile saturated
