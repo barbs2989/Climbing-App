@@ -12,7 +12,7 @@
 
 import { useState } from "react";
 import { useQueryClient } from "@tanstack/react-query";
-import { useRouteProposals, useAreaProposals, useAreaPlacementClaims, resolveAreaPlacement, useWallOrderSuggestions, resolveWallOrder, useAreaRoutes, approveNewRoute, approveNewArea, rejectNewRoute, preferNetworkReads } from "./db";
+import { useRouteProposals, useAreaProposals, useAreaPlacementClaims, useAreaNamesByIds, resolveAreaPlacement, useWallOrderSuggestions, resolveWallOrder, useAreaRoutes, approveNewRoute, approveNewArea, rejectNewRoute, preferNetworkReads } from "./db";
 import { gradeNumFor } from "./grade";
 import { discLabel } from "./discLabels";
 import { C } from "../ClimbMatchCore";
@@ -194,6 +194,10 @@ export function AreaPlacementQueue() {
   const [busyId, setBusyId] = useState(null);
   const [msg, setMsg] = useState(null);      // {kind:"ok"|"err", text}
   const [note, setNote] = useState({});
+  // Where each claimed area is filed NOW, so "belongs under X" can be judged from the card.
+  const parentIds = [...new Set((rows || []).map(r => r.areas && r.areas.parent_id).filter(Boolean))];
+  const parentQ = useAreaNamesByIds(parentIds);
+  const parentNames = parentQ.data || {};
 
   const resolve = async (id, status) => {
     setBusyId(id); setMsg(null);
@@ -220,6 +224,7 @@ export function AreaPlacementQueue() {
         const busy = busyId === r.id;
         return <div key={r.id} style={{ background: C.card, border: "1px solid " + C.border, borderRadius: 10, padding: "11px 12px", marginBottom: 9 }}>
           <div style={{ fontSize: 14, fontWeight: 700, color: C.text }}>{(r.areas && r.areas.name) || r.area_id || "(no area)"}</div>
+          <Row label="Filed under">{r.areas && r.areas.parent_id ? parentNames[r.areas.parent_id] || null : null}</Row>
           <Row label="Says it belongs">{v.note}</Row>
           <Row label="In">{v.suggested}</Row>
           <Row label="Submitted">{r.created_at ? String(r.created_at).slice(0, 10) : null}</Row>
@@ -235,7 +240,7 @@ export function AreaPlacementQueue() {
   </div>;
 }
 
-// A suggested LEFT-TO-RIGHT ORDER for a wall (0477). The climber's list, numbered, each climb with
+// A suggested LEFT-TO-RIGHT ORDER for a wall (0485). The climber's list, numbered, each climb with
 // the place it holds now, so the owner sees what would move. "Use this order" writes it
 // (resolve_wall_order renumbers the wall's climbs); "Keep current" writes nothing to the wall.
 function WallOrderCard({ r, busy, note, onNote, onResolve }) {

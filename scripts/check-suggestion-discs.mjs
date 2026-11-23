@@ -20,6 +20,7 @@ import { fileURLToPath } from "node:url";
 // dependencies, so this cannot drift from the app. No browser, no DB — it sits in the build.
 import { readFileSync } from "node:fs";
 import { readCoreSource, readAppFile } from "./lib/guard-sources.mjs";
+import { displayGrade, splitProtection, gradeNumFor, gradeSystemForDiscipline } from "../lib/grade.js";
 
 const CORE = readCoreSource();
 const DBB = readAppFile(fileURLToPath(new URL("../lib/DbAreaBrowser.jsx", import.meta.url)));
@@ -160,8 +161,83 @@ const check = (name, cond, detail) => {
     profile.discs.length === 1 && profile.discs[0].disc === "sport");
 }
 
-// ── 2. the structural half: the DB pool must stay discipline-BLIND ────────────
-// This is what actually broke, and it is invisible to everything above.
+// ── 1b. WHICH CLIMBS a slot is handed, run for real (2026-11-19) ──────────────
+// Section 1 stubs the grade scale, so it could not see any of this: the ranking sorted by grade
+// distance and took the first five WHATEVER the distance (a 5.7 climber at a crag of 5.10s was
+// handed 5.10s under "Because you've been climbing Sport"), a grade the scale does not list
+// ("5.10b/c", 1 climb in 12 of a live pool) scored as unknown, and a new account's own stated
+// grades ranked nothing. Here the WHOLE suggestion block is lifted, with the real grade parser.
+{
+  const lines = CORE.split(/\r?\n/);
+  const a = lines.findIndex(x => x.startsWith("function gradeLabel(")), b = lines.findIndex(x => x.startsWith("const TRIP={"));
+  const need = [/^function catOf\(/, /^const ADDR_YDS=/, /^const ADDR_VS=/, /^const ADDR_WIS=/, /^const ADDR_MS=/, /^const ADDR_AIDS=/, /^const ADDR_CLS=/, /const ADDR_ALPINE=/].map(re => lines.find(x => re.test(x)));
+  if (a < 0 || b < a || need.some(x => !x)) {
+    console.error("check:suggestion-discs FAILED — ANCHOR LOST: the suggestion block (function gradeLabel( … const TRIP={) or a grade scale it reads is gone from ClimbMatchCore.jsx.");
+    process.exit(1);
+  }
+  let F;
+  try {
+    F = new Function("displayGrade", "splitProtection", "gradeNumFor", "gradeSystemForDiscipline", "routeCompleted",
+      need.join("\n") + "\n" + lines.slice(a, b).join("\n") + "\nreturn {routeGradeVal,suggestDiscSlots,rankSimilarRoutes,suggestSlotQuery,suggestWindow,ADDR_GRADES};")(
+      displayGrade, splitProtection, gradeNumFor, gradeSystemForDiscipline, (id, logs) => (logs || []).some(l => l.routeId === id));
+  } catch (e) {
+    console.error("check:suggestion-discs FAILED — the suggestion block no longer runs on its own: " + e.message);
+    console.error("  It now reads something outside (function gradeLabel( … const TRIP={). Pass it in above; do not delete the check.");
+    process.exit(1);
+  }
+  const rt = (id, discipline, grade, extra) => ({ id, name: id, discipline, grade, ...(extra || {}) });
+  const names = rows => rows.map(r => r.id).join(",");
+  const slot = (disc, grade) => ({ disc, src: "logged", n: 3, gradeVal: F.routeGradeVal(rt("c", disc, grade)), avgGainFt: null });
+
+  check("a slash grade the scale does not list still scores (5.10b/c)", F.routeGradeVal(rt("x", "sport", "5.10b/c")) >= 0);
+  check("...and lands on the grade nearest its number", F.routeGradeVal(rt("x", "sport", "5.10b/c")) === F.routeGradeVal(rt("y", "sport", "5.10b")));
+  check("a grade from ANOTHER system is not forced onto the scale (AI3 on an alpine rock scale)", F.routeGradeVal(rt("x", "alpine", "AI3")) < 0);
+
+  const s58 = slot("sport", "5.8");
+  check("a 5.8 climber is not handed 5.12s when that is all the crag has",
+    F.rankSimilarRoutes([rt("h1", "sport", "5.12a"), rt("h2", "sport", "5.12c"), rt("h3", "sport", "5.13a")], s58, { limit: 5 }).length === 0,
+    "the band must be empty so the honest fallback row shows instead");
+  const s10 = slot("sport", "5.10a");
+  const got = names(F.rankSimilarRoutes([rt("e57", "sport", "5.7"), rt("e58", "sport", "5.8"), rt("m", "sport", "5.10a"), rt("t", "sport", "5.10+"), rt("h", "sport", "5.11b")], s10, { limit: 5 }));
+  check("the window around 5.10a keeps 5.8 through 5.10+ and drops 5.7 and 5.11b", got === "m,t,e58" || got === "m,e58,t", "got " + got);
+  check("a climb with no grade on the scale is left out once there is a centre to measure from",
+    names(F.rankSimilarRoutes([rt("m", "sport", "5.10a"), rt("u", "sport", "")], s10, { limit: 5 })) === "m");
+  check("an area classic one step off outranks a no-name at the exact grade",
+    names(F.rankSimilarRoutes([rt("plain", "sport", "5.10a"), rt("cl", "sport", "5.10b", { classic: true })], s10, { limit: 5 })) === "cl,plain");
+  check("...but quality never pulls in a climb the window left out",
+    names(F.rankSimilarRoutes([rt("plain", "sport", "5.10a"), rt("far", "sport", "5.12a", { classic: true, stars: 5 })], s10, { limit: 5 })) === "plain");
+  check("the other discipline is still never ranked into a slot",
+    names(F.rankSimilarRoutes([rt("b", "bouldering", "V4"), rt("m", "sport", "5.10a")], s10, { limit: 5 })) === "m");
+
+  // The pool query must COVER the window the ranking keeps, or in-window climbs are never fetched.
+  const q = F.suggestSlotQuery(s10), gl = F.ADDR_GRADES.sport, w = F.suggestWindow("sport");
+  check("a sport slot asks for sport, on the YDS scale, with a grade range", q.disc === "sport" && q.gradeSys === "yds" && q.minGrade != null && q.maxGrade != null && q.minGrade <= q.maxGrade, JSON.stringify(q));
+  const missed = gl.filter((g, i) => { const d = i / gl.length - s10.gradeVal; if (d > w.up + 1e-9 || d < -w.down - 1e-9) return false; const n = gradeNumFor(g, "sport"); return n < q.minGrade || n > q.maxGrade; });
+  check("every grade the ranking would keep is inside the range the pool asks for", missed.length === 0, "outside the query: " + missed.join(" "));
+  check("the pool comes back best-rated first, not by name", q.sortBy === "stars_desc");
+  const qa = F.suggestSlotQuery(slot("alpine", "5.6"));
+  check("an alpine slot takes no grade range (its climbs are graded on three systems)", /\balpine\b/.test(qa.disc) && qa.gradeSys == null && qa.minGrade == null, JSON.stringify(qa));
+  check("a slot with no grade centre asks for the discipline alone", (() => { const x = F.suggestSlotQuery({ disc: "sport", src: "viewed", gradeVal: null }); return x.disc === "sport" && x.minGrade == null; })());
+
+  // EXPERIENCE: the grades on the climber's own profile.
+  const st = F.suggestDiscSlots(null, [], undefined, { sport: "5.11a", trad: "N/A", bouldering: "" });
+  check("a new account's stated grade earns a slot", st.length === 1 && st[0].disc === "sport" && st[0].src === "stated" && st[0].gradeVal >= 0, JSON.stringify(st));
+  check("N/A and blank are not grades", !st.some(x => x.disc === "trad" || x.disc === "bouldering"));
+  const both = F.suggestDiscSlots({ discs: [{ disc: "sport", src: "logged", n: 2, gradeVal: 0.3, avgGainFt: null }] }, [], undefined, { sport: "5.13a", trad: "5.9" });
+  check("a logged discipline is never restated: what you climbed outranks what you said",
+    both.filter(x => x.disc === "sport").length === 1 && both[0].src === "logged" && both[0].gradeVal === 0.3);
+  check("...and a stated discipline you have not logged still gets its slot", both.some(x => x.disc === "trad" && x.src === "stated"));
+  const sv = F.suggestDiscSlots(null, [rt("v", "ice", "WI4"), rt("v2", "sport", "5.9")], undefined, { sport: "5.11a" });
+  check("stated sits ahead of browsed, and a discipline that is both is the stated slot",
+    sv[0].disc === "sport" && sv[0].src === "stated" && sv.filter(x => x.disc === "sport").length === 1 && sv.some(x => x.disc === "ice" && x.src === "viewed"), JSON.stringify(sv.map(x => x.disc + ":" + x.src)));
+}
+
+// ── 2. the structural half: EVERY slot must get its OWN pool ──────────────────
+// This is what actually broke, and it is invisible to everything above. First (2026-09) the one
+// pool was filtered to the single most-logged discipline. Then it was made discipline-blind, and
+// became the area's first 120 climbs BY NAME for every slot: in a region of 8,238 climbs the
+// "personal" rows were the grade-nearest of the names sorting before "Ai" (2026-11-19). The rule
+// both failures break is the same: each slot the climber has must be FETCHED for.
 const sugStart = DBB.indexOf("function DbSuggestedClimbs(");
 if (sugStart < 0) {
   console.error("check:suggestion-discs FAILED — ANCHOR LOST: DbSuggestedClimbs is gone from lib/DbAreaBrowser.jsx.");
@@ -176,13 +252,19 @@ const sug = DBB.slice(sugStart, sugEnd < 0 ? DBB.length : sugEnd);
 // fix. Same trap check:ci-cancel and check:correction-readers both record.
 const sugCode = sug.replace(/\/\*[\s\S]*?\*\//g, "").replace(/(^|[^:])\/\/[^\n]*/g, "$1");
 
-const poolCall = sugCode.match(/useSubtreeRoutes\s*\([^)]*\)/);
-check("DbSuggestedClimbs still fetches a pool", !!poolCall);
-check("the pool query does NOT filter by discipline",
-  !!poolCall && !/\bdisc\s*:/.test(poolCall[0]),
-  poolCall ? poolCall[0].slice(0, 120) : "no useSubtreeRoutes call found");
-check("the pool is ranked per slot, not once for the whole profile",
-  /discSlots\s*\(/.test(sugCode) && /\.map\s*\(\s*s\s*=>/.test(sugCode));
+const slotCalls = [...sugCode.matchAll(/useSubtreeRoutes\s*\([^;]*?slotOpts\(\s*(\d+)\s*\)\s*\)/g)].map(m => Number(m[1]));
+check(`one pool read per slot the cap allows (SUGGEST_DISC_MAX = ${MAXN})`,
+  slotCalls.length === MAXN && slotCalls.every((n, i) => n === i),
+  `found slot reads for [${slotCalls.join(",")}]; a slot with no read of its own is never fetched for — raise or lower the hooks with the cap`);
+check("each slot's read is built from THAT slot (slotQuery(slots[i]))", /slotQuery\(\s*slots\[\s*i\s*\]\s*\)/.test(sugCode));
+check("no read is keyed on the single top discipline", !/profile\.disc\b/.test(sugCode), "profile.disc is the busiest discipline only — the 2026-09 bug");
+const fallbackCall = sugCode.match(/useSubtreeRoutes\s*\([^;]*?\{\s*sortBy[^}]*\}\s*\)/);
+check("the fallback pool is discipline-blind and not sorted by name",
+  !!fallbackCall && !/\bdisc\s*:/.test(fallbackCall[0]) && !/sortBy:\s*"name"/.test(fallbackCall[0]),
+  fallbackCall ? fallbackCall[0].slice(0, 140) : "no fallback useSubtreeRoutes({ sortBy … }) call found");
+check("the pools are ranked per slot, each against its own read",
+  /discSlots\s*\(/.test(sugCode) && /slots\.map\s*\(\s*\(\s*s\s*,\s*i\s*\)\s*=>/.test(sugCode) && /slotQs\[\s*i\s*\]/.test(sugCode));
+check("the stated grades reach the slots", /discSlots\s*\([^)]*\bstated\s*\)/.test(sugCode));
 
 // ── 2b. the panel is COLLAPSED until the climber opens it — and can be opened ────
 // History: both components once shipped `useState(false)`; a later pass made them auto-open on
@@ -211,10 +293,12 @@ for (const [label, src] of [["ClimbMatchCore.jsx", CORE], ["lib/DbAreaBrowser.js
   check(`${label}: says "been looking at" for a browsed one`, /been looking at/.test(src));
   check(`${label}: the two headings are chosen by src, never merged`, /src\s*===?\s*"viewed"/.test(src));
 }
+check('lib/DbAreaBrowser.jsx: a stated grade has its OWN heading, never "been climbing"',
+  /src\s*===?\s*"stated"/.test(sugCode) && /near the grade on your profile/.test(sugCode));
 
 if (failures.length) {
   console.error(`\ncheck:suggestion-discs FAILED — ${failures.length} problem(s):`);
   failures.forEach(f => console.error("  - " + f));
   process.exit(1);
 }
-console.log(`\ncheck:suggestion-discs: ok — every logged discipline reaches the feed, browsing earns its own row, and the DB pool stays discipline-blind.`);
+console.log(`\ncheck:suggestion-discs: ok — every logged discipline reaches the feed, a stated grade and browsing each earn their own row, every slot reads its own pool, and nothing outside the climber's grade window is suggested.`);

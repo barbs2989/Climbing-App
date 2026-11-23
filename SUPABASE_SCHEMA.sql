@@ -9,7 +9,7 @@
 -- and commit the result in the same PR. `npm run gen:schema -- --check` exits 1 when this
 -- file has drifted from the live database.
 --
--- Counts: 86 tables, 848 columns, 456 keyed/checked constraints (150 foreign keys), 254 RLS policies.
+-- Counts: 86 tables, 851 columns, 459 keyed/checked constraints (150 foreign keys), 254 RLS policies.
 -- Not covered here: views, functions, triggers, standalone indexes (see supabase/migrations/).
 
 -- ── Foreign keys ───────────────────────────────────────────────────────────────
@@ -658,6 +658,7 @@ CREATE TABLE public.contributions (
   CONSTRAINT contributions_reason_len_ck CHECK (((reason IS NULL) OR (char_length(reason) <= 1000))),
   CONSTRAINT contributions_status_chk CHECK ((status = ANY (ARRAY['pending'::text, 'approved'::text, 'rejected'::text]))),
   CONSTRAINT contributions_value_len_ck CHECK (((value IS NULL) OR (length((value)::text) <= 20000))),
+  CONSTRAINT contributions_wall_order_shape_ck CHECK (((kind IS DISTINCT FROM 'wall_order'::text) OR COALESCE(((area_id IS NOT NULL) AND (route_id IS NULL) AND (jsonb_typeof(value) = 'object'::text) AND (jsonb_typeof((value -> 'order'::text)) = 'array'::text) AND ((jsonb_array_length((value -> 'order'::text)) >= 2) AND (jsonb_array_length((value -> 'order'::text)) <= 1000)) AND (length(COALESCE((value ->> 'note'::text), ''::text)) <= 400)), false))),
   CONSTRAINT contributions_area_id_fkey FOREIGN KEY (area_id) REFERENCES areas(id) ON DELETE CASCADE,
   CONSTRAINT contributions_reviewed_by_fkey FOREIGN KEY (reviewed_by) REFERENCES profiles(id) ON DELETE SET NULL,
   CONSTRAINT contributions_route_id_fkey FOREIGN KEY (route_id) REFERENCES routes(id) ON DELETE CASCADE
@@ -692,7 +693,9 @@ CREATE TABLE public.crew_day_acks (
   crew_id uuid NOT NULL,
   user_id uuid NOT NULL,
   date date NOT NULL,
+  rank smallint,
   CONSTRAINT crew_day_acks_pkey PRIMARY KEY (crew_id, user_id, date),
+  CONSTRAINT crew_day_acks_rank_positive CHECK (((rank IS NULL) OR (rank >= 1))),
   CONSTRAINT crew_day_acks_crew_id_fkey FOREIGN KEY (crew_id) REFERENCES crews(id) ON DELETE CASCADE,
   CONSTRAINT crew_day_acks_user_id_fkey FOREIGN KEY (user_id) REFERENCES profiles(id) ON DELETE CASCADE
 );
@@ -888,10 +891,13 @@ CREATE TABLE public.crews (
   share_on boolean NOT NULL DEFAULT true,
   private boolean NOT NULL DEFAULT false,
   date_proposers jsonb NOT NULL DEFAULT '{}'::jsonb,
+  meet_lat double precision,
+  meet_lng double precision,
   CONSTRAINT crews_pkey PRIMARY KEY (id),
   CONSTRAINT crews_area_needs_discipline CHECK (((area_id IS NULL) OR (discipline IS NOT NULL))),
   CONSTRAINT crews_discipline_values CHECK (((discipline IS NULL) OR (discipline = ANY (ARRAY['sport'::text, 'trad'::text, 'toprope'::text, 'aid'::text, 'bouldering'::text, 'scrambling'::text, 'hiking'::text, 'alpine'::text, 'mountaineering'::text, 'ice'::text, 'mixed'::text])))),
   CONSTRAINT crews_itinerary_size CHECK (((itinerary IS NULL) OR (pg_column_size(itinerary) < 65536))),
+  CONSTRAINT crews_meet_pin_valid CHECK ((((meet_lat IS NULL) AND (meet_lng IS NULL)) OR (((meet_lat >= ('-90'::integer)::double precision) AND (meet_lat <= (90)::double precision)) AND ((meet_lng >= ('-180'::integer)::double precision) AND (meet_lng <= (180)::double precision))))),
   CONSTRAINT crews_one_place CHECK (((((route_id IS NOT NULL))::integer + ((area_id IS NOT NULL))::integer) = 1)),
   CONSTRAINT crews_area_id_fkey FOREIGN KEY (area_id) REFERENCES areas(id),
   CONSTRAINT crews_created_by_fkey FOREIGN KEY (created_by) REFERENCES profiles(id) ON DELETE CASCADE,

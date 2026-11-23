@@ -7,8 +7,8 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
 
 ## 1. What it does today
 - **Area browser**: world > country > state > range > crag/peak drill-down. `StatePicker` is the entry (opening on the United States' regions on every width since 2026-11-04), headed on a phone by the **downloaded-only search** (`DownloadedSearch`, owner 2026-11-18: an *Areas | Routes* switch and box as an area page's `DbSearchSplit` has, searching ONLY what is on this device — every completed state download plus climbs saved one at a time — through `deviceAreaSearch` / `deviceRouteSearch` in `lib/offline.js` (a thin name index read once per session and rebuilt when a download changes; no network, so it answers the same with no signal), a line naming what it covers with a *Manage* link, and *Near me* → the map at your position via `jumpToNearReq`; with nothing downloaded it is a card offering *Manage areas*. Words that are a filter ("5.9 trad", "WI4", "5.10 sport near Leavenworth", read by `parseTypedSearch`) get a *Route finder* row on the downloaded place typed, else on each downloaded state; words with no letter or digit match nothing. The website draws no search here: its top bar has two boxes); `AreaPage` shows one area
-  (`SummitBriefing` on peaks, its children or its routes, then — in this order — *Don’t see a climb or area here?* (`AddHereFooter`: Add a climb · Add an area), `DbSuggestedClimbs`
-  "More climbs in this area", `NearbyPeaks`, Top contributors; App mounts the area Discussion straight after, so it ends the page). The Discussion is on the area page only: not under
+  (`SummitBriefing` on peaks, its children or its routes, *Classic climbs here* with the `DbSuggestedClimbs` dropdown directly under it (owner, 2026-11-19; it was in the page's tail), then — in this order — *Don’t see a climb or area here?* (`AddHereFooter`: Add a climb · Add an area),
+  `NearbyPeaks`, Top contributors; App mounts the area Discussion straight after, so it ends the page). The Discussion is on the area page only: not under
   the area **Map** (`screen` "near"), the Route finder or Objectives (owner, 2026-11-11). RoutesTab hands it to `DbAreaBrowser` as the
   `areaDiscussion` prop, and the browser draws it right after `<AreaPage>`.
   On the website (1024px+) *Don’t see a climb here?*, *Know <area>? Suggest an edit* and *Wrong place? Tell us where* are ONE row of
@@ -57,7 +57,7 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
   reads the word alone; under a discipline sort the sorted discipline is left out of the line (the figure above is its count); while the
   counts are missing the line lists the row's `disciplines` as words only. The choice
   lasts for the visit (drilling down keeps *Most sport*), never on the device, so every visit opens A → Z.
-- **Wrong place?** (owner note, 2026-10-25; `lib/AreaWrongSpot.jsx`, button in `AreaPage`): a climber says where the area belongs (10–400 characters, optional *which place*). `submitAreaPlacementClaim` (`lib/db.js`) files a `contributions` row of kind `area_placement` (`area_id` = the area, `value` = `{note, suggested}`), a claim only. It shows nothing on the page; the owner's *Wrong place claims* queue (`AreaPlacementQueue` in `lib/RouteProposals.jsx`) lists it and `resolve_area_placement` (0372, admin only) marks it *approved* (moved) or *rejected* (already right). A signed-out climber gets a sign-in button and no write.
+- **Wrong place?** (owner note, 2026-10-25; `lib/AreaWrongSpot.jsx`, button in `AreaPage`): a climber says where the area belongs (10–400 characters, optional *which place*). `submitAreaPlacementClaim` (`lib/db.js`) files a `contributions` row of kind `area_placement` (`area_id` = the area, `value` = `{note, suggested}`), a claim only. It shows nothing on the page; the owner's *Wrong place claims* queue (`AreaPlacementQueue` in `lib/RouteProposals.jsx`) lists it and `resolve_area_placement` (0372, admin only) marks it *approved* (moved) or *rejected* (already right). A signed-out climber gets a sign-in button and no write. The button is not drawn where the place is fixed by the map (`fixedPlace` in `AreaPage`): the world, a country, a state or province (owner, 2026-11-11), and a state's own top-level division, a `region` or `range` whose PARENT is a state or country, such as Washington's *Northwest Region* (owner, 2026-11-19; 835 areas). The parent decides it, not the type: most `region` rows sit under another region and keep the button, as do crags filed directly under a state. Each claim card in the queue prints *Filed under* (the area's current parent), and a resolved claim leaves the list at once (`resolveAreaPlacement` refreshes it).
 - **Discipline areas are not areas** (owner note, 2026-10-25): ice, mixed and dry-tooling words name a discipline, not a place. A bucket such as *Adirondack Ice & Mixed*, *Vail Ice* or *Dry Tooling & Ice Climbing at Exit 38* is dissolved into the place above it: its crags move under that place and the empty bucket is deleted (`scripts/oneoff/plan-discipline-buckets.mjs` plans, `apply-discipline-buckets.mjs` applies, with `scripts/data/discipline-buckets-rollback.json`). Place names that carry the word stay (*Ice Park*, *Ice Box*, *Ice Pond*, *Ice Caves*). A bucket whose move would create a same-named sibling is held. A bucket that still holds a contribution, topo, saved area or partner area is held too, because those cascade on delete (`areas.area_id` is `ON DELETE CASCADE` for them). Leaf areas named by discipline still hold routes; those need a per-route place and are not moved by the script.
 - **A row's grade carries its protection rating right beside it** ("5.8 PG13"; owner, 2026-11-18: "right next to the grade on the list and when ever a grade is mentioned on the app"). Most routes store the rating on the grade; a route that states it only as its own Protection fact (`prot_rating`) gets it appended by `displayGrade()` (lib/grade.js), which is why the list's thin row selects `prot_rating`. Search and the route finder read full rows, so they carry it too; `area_classics` / `state_classics` return a fixed column set WITHOUT `prot_rating`, so a classics row shows a rating only when it is stored on the grade.
 - **Climb rows** (`RouteRow`, every route list in the browser): name, stars, discipline, then the **pitch count** ("Trad · 5 pitches",
@@ -74,15 +74,20 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
   **1 of 314,360 routes** had one.
 - **Order wrong?** (owner, 2026-11-19; `src/components/WallOrderSuggest.tsx`, button in `AreaPage`): under the sort chips of a wall's climb list, while
   the list is in a wall order (*Order wrong? Suggest a different order*) or the wall has no order stored (*Know the left-to-right order? Add it*);
-  never on a peak, and only with two or more climbs that are not boulder problems. The sheet lists every such climb as the page orders it now
-  (placed climbs left to right, then the unplaced by name), whatever the list's filters hide. A climb moves one place with its ↑ / ↓ buttons or
-  by typing its place number, and *Reverse the whole order* turns a wall that is listed backwards. Send is off until something moved.
+  never on a peak, and only with two or more climbs that are not boulder problems. The sheet holds every such climb, whatever the list's filters hide, as the wall stood when it opened. Climbs that have a place are **the line**, left to right:
+  a climb moves one place with its ↑ / ↓ buttons or by typing its place number, and *Reverse the whole order* turns a line that is listed
+  backwards. Climbs with **no place on the wall yet** wait in their own list under it; *Place* puts one at the right-hand end of the line
+  (*Take out* undoes it), and one the climber does not place is not sent, so approval never gives an unlooked-at climb a position.
+  Send needs two climbs in the line and a line that differs from the stored one.
   `submitWallOrderSuggestion` (`lib/db.js`) files one `contributions` row of kind `wall_order` (`area_id` = the wall, `value` =
-  `{order: [route ids, left to right], note}`; migration 0477 refuses any other shape). Nothing on the page changes. The owner's *Wall order
+  `{order: [route ids, left to right], note}`; migration 0485 refuses any other shape). Nothing on the page changes. The owner's *Wall order
   suggestions* queue (`WallOrderQueue` in `lib/RouteProposals.jsx`, a Menu Review tile with a count) shows the list with each climb's place
-  now, and `resolve_wall_order` (0477, admin only) either writes it (*Use this order*: listed climbs still on the wall get `sort_order` 1..n,
+  now, and `resolve_wall_order` (0485, admin only) either writes it (*Use this order*: listed climbs still on the wall get `sort_order` 1..n,
   a placed climb the list does not name follows them in its old order, a boulder problem is never touched) or keeps the wall as it is
-  (*Keep current*). A signed-out climber gets a sign-in button and no write.
+  (*Keep current*). Either way the sender gets a notification that opens the wall, and *Your contributions* lists the suggestion as
+  *Wall order suggested* with its status. It earns its contribution point only once approved (`contribution_points()`, 0485). The wall's
+  list and the Route finder are refreshed on approval; a state downloaded to the device keeps its packed order until downloaded again.
+  A signed-out climber gets a sign-in button and no write.
 - **Filters on a wall's list** (owner note, 2026-10-25): **Filters** over a leaf area's climb list narrows it by discipline (the disciplines the wall holds, plus All) and a star minimum (Any / 2+ / 3+ stars; a climb nobody has rated stays in). The button is drawn as the Route finder draws its Filters button (full width, `BTN_LG`, the text colour, a turning chevron), not as a chip -- as a muted chip it matched the sort chips under it and was missed (owner, 2026-11-05). It filters the rows `useAreaRoutes` already loaded, so it costs no query. The sort adds **By discipline** (one heading per discipline, in `DISCIPLINES` order, A → Z under each). Grade is deliberately NOT a sort key: `grade_num` is only comparable within one scale.
 - **Where the wall order comes from** (`scripts/pipeline/order-from-mp.mjs`, one area per run; the owner's reference is **Mountain Project**,
   which holds more routes than OpenBeta). Each row of an MP area page's route table carries `data-lr`, its left-to-right index
@@ -206,6 +211,18 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
   "Bear Mountain · Chilliwack Range · Alpine · 7 pitches"), as the Logbook's objectives rows do; a list
   gathered from a whole state is otherwise a column of names like "North Buttress". The *From your
   objectives* band of `DbSuggestedClimbs` uses the same line.
+- **Suggested climbs** (`DbSuggestedClimbs`, a closed dropdown under Classic climbs; draws nothing when it has nothing): *From your
+  objectives*, *Pick up where you left off* (climbs opened recently, here), then up to three discipline rows of five
+  (`suggestDiscSlots`): disciplines you have LOGGED (*Because you've been climbing …*), then the sport / trad / bouldering grade
+  STATED on your profile where you have logged none (*… near the grade on your profile*; `ClimberCtx.stated`), then disciplines
+  you have only browsed (*Because you've been looking at …*). Each row reads its OWN pool (`suggestSlotQuery`: that discipline,
+  best-rated first, inside the climber's grade window where the scale is YDS, V, WI or M) behind the area's classics, and
+  `rankSimilarRoutes` keeps only climbs inside the window (`suggestWindow`: on YDS, 5.8 to 5.10+ around 5.10a), nearest grade
+  first, a classic or well-starred climb ahead of a no-name about a letter grade closer. A grade the scale does not list
+  ("5.10b/c") scores as the nearest listed grade; one from another system, or none, is left out. The centre is the mean grade of
+  your completed logs in that discipline. With no row to show it falls back to *Classics in this area*, else the area's
+  best-rated climbs. Not read on a country or the world. Until 2026-11-19 every row shared one pool, the area's first 120
+  climbs by name, and nothing capped the grade distance. Guard: `check:suggestion-discs`.
 - **Route page map** (`GPXMap`, `src/components/GPXMap.tsx`): track + waypoints + peak coordinate on the same base layers; a line
   drawn between waypoints carries a "sketch" caveat rather than posing as GPS. A point the app worked out rather than one somebody
   pinned — the crag/peak coordinate (the orange ▲ on a crag map) and a derived trailhead — draws hollow and DASHED (`wpDivIcon`'s
@@ -277,6 +294,7 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
 | `src/components/DbAreaTree.tsx` | `DbAreaTree`, the area tree |
 | `src/components/ViewAreaPill.tsx` | `ViewAreaPill`, the solid blue *View area ›* at the end of every row that opens an area |
 | `src/components/DbSuggestedClimbs.tsx` | `DbSuggestedClimbs`, More climbs in this area |
+| `ClimbMatchCore.jsx` | `suggestionProfile`, `suggestDiscSlots`, `suggestSlotQuery`, `suggestWindow`, `rankSimilarRoutes` |
 | `src/components/SummitBriefing.tsx` | `SummitBriefing`, the peak summary above an area's route list |
 | `src/components/RouteRow.tsx` | `RouteRow`, one climb row in an area list |
 | `src/components/ClassicsList.tsx` | `ClassicsList`, Classic climbs here |
