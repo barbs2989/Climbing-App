@@ -79,6 +79,8 @@ export interface RealClimberCand {
 
 export interface RealClimberRowProps {
   p: PartnerRow;
+  /** What `p.dist_mi` was measured FROM when it is not the viewer ("the climb"): the line then reads "~40 mi from the climb", not "away". */
+  distFrom?: string | null;
   onOpen?: (climber: RealClimberCand) => void;
   /** Their match objectives from the list's one batched read; UNDEFINED means not read (or failed), and the row refuses to score. */
   objIds?: string[] | null;
@@ -119,7 +121,7 @@ const meView: MeView = ME;
    profile carries no level, catches or pace, so this renders only what the
    row actually has and says so when there is too little to score a match — reusing the
    seed climber card here is what produced the "undefined · 0" bug fixed in #715. */
-export default function RealClimberRow({p,onOpen,objIds,objErr,verified,listing,action,friendState,onConnect,cand,online,level,years,climbs,vouches,climbsPrivate,onClimbs,onVouches,extras,tag}: RealClimberRowProps){/* THE SCORE IS FED REAL SIGNALS NOW (0209). Until then `_cand` carried one of the four signals
+export default function RealClimberRow({p,distFrom,onOpen,objIds,objErr,verified,listing,action,friendState,onConnect,cand,online,level,years,climbs,vouches,climbsPrivate,onClimbs,onVouches,extras,tag}: RealClimberRowProps){/* THE SCORE IS FED REAL SIGNALS NOW (0209). Until then `_cand` carried one of the four signals
      compatUnknown counts -- it hardcoded `objectiveIds:[]`, and `profiles` had no availability or
      pace column -- so `_unk` was >= 3 for every real climber and the score never rendered. The row
      now gets availability, the week grid and pace from its own columns, and objectives from ONE
@@ -141,7 +143,7 @@ export default function RealClimberRow({p,onOpen,objIds,objErr,verified,listing,
   const _overlap=!!(meView.availability&&meView.availability.length&&availOf(_c).filter(function(x: string){return x!=="flexible"&&(meView.availability||[]).indexOf(x)>=0;}).length);
   /* REAL CLIMBERS WEAR THE EXAMPLE CLIMBER CARD (owner 2026-11-18: "i want the example climber card to be on the app"). Same box, same layout as PartnerSearch's example cards: a 52px photo, the name with its tick, a match box on the right, where/distance/pace, the discipline chips, when they are free, their bio, then the actions -- Plan a session (action), + Add friend and Full profile & vouches. The whole card is NOT one button any more: the name and photo open the profile, so buttons never nest in a button. */
   const _free=typeof p.free_until==="string"&&p.free_until>=localYmd();
-  const _where=[p.dist_mi!=null?(p.dist_mi<=5?"under "+uApproxDist(5)+" away":"~"+uApproxDist(p.dist_mi)+" away"):null,_c.hikingSpeedFtHr?uRate(_c.hikingSpeedFtHr)+" pace":null].filter(Boolean) as string[];
+  const _where=[p.dist_mi!=null?(p.dist_mi<=5?"under "+uApproxDist(5):"~"+uApproxDist(p.dist_mi))+(distFrom?" from "+distFrom:" away"):null,_c.hikingSpeedFtHr?uRate(_c.hikingSpeedFtHr)+" pace":null].filter(Boolean) as string[];
   const _sc=_pct,_band=_sc>=90?{bg:C.greenBg,bd:C.greenDim,fg:C.green}:_sc>=70?{bg:C.blueBg,bd:C.blueDim,fg:"#fff"}:_sc>=50?{bg:C.amberBg,bd:C.border,fg:C.amber}:{bg:C.redBg,bd:C.border,fg:C.red};
   const _open=onOpen?function(){onOpen(_c);}:null;
   const _gs=profileDiscGrades(_c) as [string, string][];const _gk=_gs.map(function(g){return g[0];});const _rest=(_c.disciplines||[]).filter(function(d){return _gk.indexOf(d)<0;});

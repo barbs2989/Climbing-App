@@ -9,7 +9,7 @@
 -- and commit the result in the same PR. `npm run gen:schema -- --check` exits 1 when this
 -- file has drifted from the live database.
 --
--- Counts: 87 tables, 860 columns, 464 keyed/checked constraints (152 foreign keys), 258 RLS policies.
+-- Counts: 87 tables, 862 columns, 466 keyed/checked constraints (152 foreign keys), 258 RLS policies.
 -- Not covered here: views, functions, triggers, standalone indexes (see supabase/migrations/).
 
 -- ── Foreign keys ───────────────────────────────────────────────────────────────
@@ -1959,6 +1959,8 @@ CREATE TABLE public.routes (
   approach_loss_ft integer,
   return_gain_ft integer,
   extra_facts jsonb,
+  glacier_travel text,
+  snow_in_season text,
   CONSTRAINT routes_pkey PRIMARY KEY (id),
   CONSTRAINT routes_anchor_len CHECK (((anchor IS NULL) OR ((char_length(anchor) >= 1) AND (char_length(anchor) <= 80)))),
   CONSTRAINT routes_approach_loss_ft_range CHECK (((approach_loss_ft IS NULL) OR ((approach_loss_ft >= 0) AND (approach_loss_ft <= 20000)))),
@@ -1966,6 +1968,7 @@ CREATE TABLE public.routes (
   CONSTRAINT routes_classic_score_check CHECK (((classic_score IS NULL) OR ((classic_score >= (0)::numeric) AND (classic_score <= (4)::numeric)))),
   CONSTRAINT routes_extra_facts_shape CHECK (extra_facts_ok(extra_facts)),
   CONSTRAINT routes_fixed_gear_len CHECK (((fixed_gear IS NULL) OR ((char_length(fixed_gear) >= 1) AND (char_length(fixed_gear) <= 160)))),
+  CONSTRAINT routes_glacier_travel_yn CHECK (((glacier_travel IS NULL) OR (glacier_travel = ANY (ARRAY['yes'::text, 'no'::text])))),
   CONSTRAINT routes_guide_stars_range CHECK (((guide_stars IS NULL) OR ((guide_stars >= 0) AND (guide_stars <= 4)))),
   CONSTRAINT routes_itinerary_is_day_by_day CHECK (((itinerary IS NULL) OR ((jsonb_typeof(itinerary) = 'object'::text) AND (jsonb_typeof((itinerary -> 'days'::text)) = 'array'::text) AND (jsonb_array_length((itinerary -> 'days'::text)) > 0)))),
   CONSTRAINT routes_location_len CHECK (((location IS NULL) OR ((char_length(location) >= 1) AND (char_length(location) <= 1000)))),
@@ -1973,6 +1976,7 @@ CREATE TABLE public.routes (
   CONSTRAINT routes_rack_items_array CHECK (((rack_items IS NULL) OR (jsonb_typeof(rack_items) = 'array'::text))),
   CONSTRAINT routes_return_gain_ft_range CHECK (((return_gain_ft IS NULL) OR ((return_gain_ft >= 0) AND (return_gain_ft <= 20000)))),
   CONSTRAINT routes_rock_quality_len CHECK (((rock_quality IS NULL) OR ((char_length(rock_quality) >= 1) AND (char_length(rock_quality) <= 160)))),
+  CONSTRAINT routes_snow_in_season_yn CHECK (((snow_in_season IS NULL) OR (snow_in_season = ANY (ARRAY['yes'::text, 'no'::text])))),
   CONSTRAINT routes_sun_len CHECK (((sun IS NULL) OR ((char_length(sun) >= 1) AND (char_length(sun) <= 160)))),
   CONSTRAINT routes_variations_is_array CHECK (((variations IS NULL) OR (jsonb_typeof(variations) = 'array'::text))),
   CONSTRAINT routes_wet_len CHECK (((wet IS NULL) OR ((char_length(wet) >= 1) AND (char_length(wet) <= 160)))),
