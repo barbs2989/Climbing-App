@@ -250,6 +250,8 @@ export default function App(){
      Its own height, not a constant: the buttons wrap and the copy has two wordings.
      scripts/oneoff/probe-policy-notice-covers-content.mjs is the measurement. */
   const [policyH,setPolicyH]=useState(0);
+  /* A POPUP MUST END ABOVE THE NOTICE TOO (2026-11-23). #appscroll reserves the notice's height (check:bottom-panels), but a popup is its own fixed layer over the page: the notice sat on the foot of every sheet, and on the wall-order sheet it covered the note box and Send -- a tap on Send landed on "Read Terms". The height goes on <html> and ONE rule in index.html ends every popup at the notice's top edge. */
+  useEffect(function(){const r=document.documentElement;if(_needsPolicy&&policyH){r.style.setProperty("--cm-policy-h",policyH+"px");r.setAttribute("data-policy-notice","");}else{r.style.removeProperty("--cm-policy-h");r.removeAttribute("data-policy-notice");}},[_needsPolicy,policyH]);
   const _policyEl=_needsPolicy?createPortal(<PolicyUpdateNotice z={Z_TOAST-1} previous={_accepted} busy={policyBusy} onRead={function(k){setLegal(k);}} onAccept={acceptPolicy} onHeight={setPolicyH}/>,document.body):null;
   /* The route-photo derivation and its two handlers live HERE, below `uid`, and moving them
      back up beside dbContribs would blank the route page for every signed-in user. They
