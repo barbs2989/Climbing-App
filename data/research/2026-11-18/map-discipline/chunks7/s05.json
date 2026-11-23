@@ -1,0 +1,761 @@
+[
+ {
+  "id": "ca_mount_mcduffie_standard_route",
+  "name": "Standard route",
+  "peakName": "Mount McDuffie",
+  "state": "California",
+  "discipline": "scrambling",
+  "status": "nopage",
+  "peak": {
+   "id": "ca_mount_mcduffie",
+   "name": "Mount McDuffie",
+   "lat": 37.0735,
+   "lng": -118.644,
+   "elevation_ft": 13282,
+   "region": null,
+   "path": "usa.california.ca_high_sierra.ca_08_bishop_pass_evolution.ca_mount_mcduffie"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "South Lake Trailhead",
+    "lat": 37.169305,
+    "lng": -118.565813,
+    "km": 12.7
+   },
+   {
+    "src": "USFS",
+    "name": "Baker/Green Lakes Th",
+    "lat": 37.186805,
+    "lng": -118.557713,
+    "km": 14.7
+   },
+   {
+    "src": "USFS",
+    "name": "TYEE TH",
+    "lat": 37.195805,
+    "lng": -118.564713,
+    "km": 15.3
+   },
+   {
+    "src": "USFS",
+    "name": "SABRINA LAKE TH",
+    "lat": 37.213605,
+    "lng": -118.610013,
+    "km": 15.9
+   },
+   {
+    "src": "USFS",
+    "name": "LAMARCK LAKES TH",
+    "lat": 37.227305,
+    "lng": -118.627513,
+    "km": 17.2
+   },
+   {
+    "src": "USFS",
+    "name": "North Lake  Trailhead",
+    "lat": 37.230685,
+    "lng": -118.616614,
+    "km": 17.6
+   },
+   {
+    "src": "USFS",
+    "name": "BIG PINE CREEK SO FORK TH",
+    "lat": 37.124805,
+    "lng": -118.438913,
+    "km": 19.1
+   },
+   {
+    "src": "USFS",
+    "name": "Big Pine Creek North Fork Trail Trailhea",
+    "lat": 37.128105,
+    "lng": -118.427713,
+    "km": 20.1
+   }
+  ],
+  "lastAnswer": {
+   "status": "stuck",
+   "trailhead": null,
+   "notes": "Wikipedia names no trailhead. Burd's report climbed it from South Lake over Bishop Pass and the JMT, but does not call it standard. Search snippet (not opened; SummitPost 403) says shortest approach is Lake Sabrina via Echo Col; climber.org reports use North Lake, Florence Lake, Sabrina. Several equally used starts, none tied to the standard route."
+  }
+ },
+ {
+  "id": "ca_mount_mcgee_standard_route",
+  "name": "Standard route",
+  "peakName": "Mount McGee",
+  "state": "California",
+  "discipline": "scrambling",
+  "status": "nopage",
+  "peak": {
+   "id": "ca_mount_mcgee",
+   "name": "Mount McGee",
+   "lat": 37.1389,
+   "lng": -118.7381,
+   "elevation_ft": 12944,
+   "region": null,
+   "path": "usa.california.ca_high_sierra.ca_08_bishop_pass_evolution.ca_mount_mcgee"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "LAMARCK LAKES TH",
+    "lat": 37.227305,
+    "lng": -118.627513,
+    "km": 13.9
+   },
+   {
+    "src": "USFS",
+    "name": "SABRINA LAKE TH",
+    "lat": 37.213605,
+    "lng": -118.610013,
+    "km": 14.1
+   },
+   {
+    "src": "USFS",
+    "name": "North Lake  Trailhead",
+    "lat": 37.230685,
+    "lng": -118.616614,
+    "km": 14.8
+   },
+   {
+    "src": "USFS",
+    "name": "South Lake Trailhead",
+    "lat": 37.169305,
+    "lng": -118.565813,
+    "km": 15.6
+   },
+   {
+    "src": "USFS",
+    "name": "TYEE TH",
+    "lat": 37.195805,
+    "lng": -118.564713,
+    "km": 16.6
+   },
+   {
+    "src": "USFS",
+    "name": "Baker/Green Lakes Th",
+    "lat": 37.186805,
+    "lng": -118.557713,
+    "km": 16.8
+   },
+   {
+    "src": "USFS",
+    "name": "Maxson Trailhead",
+    "lat": 37.082845,
+    "lng": -118.960333,
+    "km": 20.7
+   },
+   {
+    "src": "USFS",
+    "name": "HORTON LAKES TH",
+    "lat": 37.312105,
+    "lng": -118.624913,
+    "km": 21.7
+   }
+  ],
+  "lastAnswer": {
+   "status": "stuck",
+   "trailhead": null,
+   "notes": "SummitPost 403. Search summary only: approach from Florence Lake (west) or from east via Wanda Lake/McGee Canyon; no page names a standard-route trailhead. North Lake remains a weak lead only (climber.org 1997/235, multi-day)."
+  }
+ },
+ {
+  "id": "ca_mount_newcomb_southwest_slope",
+  "name": "Southwest Slope",
+  "peakName": "Mount Newcomb",
+  "state": "California",
+  "discipline": "scrambling",
+  "status": "held",
+  "peak": {
+   "id": "ca_mount_newcomb",
+   "name": "Mount Newcomb",
+   "lat": 36.54,
+   "lng": -118.2934,
+   "elevation_ft": 13422,
+   "region": null,
+   "path": "usa.california.ca_high_sierra.ca_14_whitney_surrounding_peaks.ca_mount_newcomb"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": "The easy side is the southwest slope above the Crabtree Lakes. A common long approach crosses Discovery Pass and Crabtree Pass; the ridge from Crabtree Pass is slower and reaches class 3.",
+   "descent": null
+  },
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Whitney Portal Trailhead",
+    "lat": 36.586905,
+    "lng": -118.240112,
+    "km": 7.1
+   },
+   {
+    "src": "USFS",
+    "name": "MEYSAN LAKE TH",
+    "lat": 36.589789,
+    "lng": -118.230163,
+    "km": 7.9
+   },
+   {
+    "src": "USFS",
+    "name": "TUTTLE CREEK TH",
+    "lat": 36.553705,
+    "lng": -118.184212,
+    "km": 9.9
+   },
+   {
+    "src": "USFS",
+    "name": "Whitney Portal NRT Trailhead",
+    "lat": 36.597405,
+    "lng": -118.186412,
+    "km": 11.5
+   },
+   {
+    "src": "USFS",
+    "name": "Cottonwood Lakes Trailhead",
+    "lat": 36.453362,
+    "lng": -118.169987,
+    "km": 14.6
+   },
+   {
+    "src": "USFS",
+    "name": "Cottonwood Pass Trailhead",
+    "lat": 36.448305,
+    "lng": -118.170612,
+    "km": 15
+   },
+   {
+    "src": "USFS",
+    "name": "Shepherd Pass Th",
+    "lat": 36.726905,
+    "lng": -118.278912,
+    "km": 20.8
+   },
+   {
+    "src": "NPS",
+    "name": "Cemetery Parking",
+    "lat": 36.725198,
+    "lng": -118.162135,
+    "km": 23.7
+   }
+  ],
+  "lastAnswer": {
+   "status": "found",
+   "trailhead": {
+    "name": "Whitney Portal Trailhead",
+    "identifiedBy": {
+     "kind": "page",
+     "url": "https://www.snwburd.com/bob/trip_reports/newcomb_1.html",
+     "fact": "Whitney Trail from Whitney Portal to Discovery Pass, drop to Crabtree drainage, Crabtree Pass, Newcomb"
+    },
+    "placements": [
+     {
+      "source": "USFS",
+      "name": "Whitney Portal Trailhead",
+      "lat": 36.586905,
+      "lng": -118.240112,
+      "url": ""
+     }
+    ]
+   },
+   "notes": "MODERATE/INFERRED: route's own text names the Discovery Pass + Crabtree Pass approach, which only the Whitney Portal trail gives; trip report confirms that line from Whitney Portal. But the SW slope itself is also reached from Cottonwood Lakes/Cottonwood Pass via Crabtree Lakes (search summary), so a pure SW-slope climber may start elsewhere. Placement is USFS only."
+  }
+ },
+ {
+  "id": "ca_mount_perkins_west_slope",
+  "name": "West Slope",
+  "peakName": "Mount Perkins",
+  "state": "California",
+  "discipline": "scrambling",
+  "status": "nopage",
+  "peak": {
+   "id": "ca_mount_perkins",
+   "name": "Mount Perkins",
+   "lat": 36.9272,
+   "lng": -118.3815,
+   "elevation_ft": 12566,
+   "region": null,
+   "path": "usa.california.ca_high_sierra.ca_10_taboose_sawmill_baxter_passes.ca_mount_perkins"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": "A straightforward class 2 line starts just south of the summit and angles up the west face to a broad gully.",
+   "descent": null
+  },
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "SAWMILL PASS TH",
+    "lat": 36.938805,
+    "lng": -118.290212,
+    "km": 8.2
+   },
+   {
+    "src": "USFS",
+    "name": "TABOOSE PASS TH",
+    "lat": 37.009505,
+    "lng": -118.327312,
+    "km": 10.3
+   },
+   {
+    "src": "USFS",
+    "name": "Baxter Pass Trailhead",
+    "lat": 36.844705,
+    "lng": -118.297612,
+    "km": 11.8
+   },
+   {
+    "src": "USFS",
+    "name": "RED LAKE TH",
+    "lat": 37.035704,
+    "lng": -118.35896,
+    "km": 12.2
+   },
+   {
+    "src": "USFS",
+    "name": "Onion Valley Campground",
+    "lat": 36.772538,
+    "lng": -118.341244,
+    "km": 17.6
+   },
+   {
+    "src": "USFS",
+    "name": "BIRCH LAKE TH",
+    "lat": 37.087405,
+    "lng": -118.355412,
+    "km": 18
+   },
+   {
+    "src": "USFS",
+    "name": "BIG PINE CREEK SO FORK TH",
+    "lat": 37.124805,
+    "lng": -118.438913,
+    "km": 22.6
+   },
+   {
+    "src": "USFS",
+    "name": "Big Pine Creek North Fork Trail Trailhea",
+    "lat": 37.128105,
+    "lng": -118.427713,
+    "km": 22.7
+   }
+  ],
+  "lastAnswer": {
+   "status": "stuck",
+   "trailhead": null,
+   "notes": "West slope is reached from the lake basin on the west side of the crest (JMT side); plausible starts Sawmill Pass TH (SAWTH, USFS 36.938805,-118.290212) over Colosseum Col, Taboose via Pinchot Pass, or Armstrong Canyon. No page ties this route to one. Wikipedia names no trailhead; SummitPost 403."
+  }
+ },
+ {
+  "id": "ca_mount_pinchot_east_ridge_from_armstrong_canyon",
+  "name": "East Ridge from Armstrong Canyon",
+  "peakName": "Mount Pinchot",
+  "state": "California",
+  "discipline": "scrambling",
+  "status": "nopage",
+  "peak": {
+   "id": "ca_mount_pinchot",
+   "name": "Mount Pinchot",
+   "lat": 36.9473,
+   "lng": -118.4054,
+   "elevation_ft": 13494,
+   "region": null,
+   "path": "usa.california.ca_high_sierra.ca_10_taboose_sawmill_baxter_passes.ca_mount_pinchot"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": "Climb the loose talus chute out of Armstrong Canyon to the crest, cross the high basin, and follow the talus of the east ridge to the summit. Water is scarce and the chute is loose.",
+   "descent": null
+  },
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "TABOOSE PASS TH",
+    "lat": 37.009505,
+    "lng": -118.327312,
+    "km": 9.8
+   },
+   {
+    "src": "USFS",
+    "name": "SAWMILL PASS TH",
+    "lat": 36.938805,
+    "lng": -118.290212,
+    "km": 10.3
+   },
+   {
+    "src": "USFS",
+    "name": "RED LAKE TH",
+    "lat": 37.035704,
+    "lng": -118.35896,
+    "km": 10.7
+   },
+   {
+    "src": "USFS",
+    "name": "Baxter Pass Trailhead",
+    "lat": 36.844705,
+    "lng": -118.297612,
+    "km": 14.9
+   },
+   {
+    "src": "USFS",
+    "name": "BIRCH LAKE TH",
+    "lat": 37.087405,
+    "lng": -118.355412,
+    "km": 16.2
+   },
+   {
+    "src": "USFS",
+    "name": "BIG PINE CREEK SO FORK TH",
+    "lat": 37.124805,
+    "lng": -118.438913,
+    "km": 20
+   },
+   {
+    "src": "USFS",
+    "name": "Big Pine Creek North Fork Trail Trailhea",
+    "lat": 37.128105,
+    "lng": -118.427713,
+    "km": 20.2
+   },
+   {
+    "src": "USFS",
+    "name": "Onion Valley Campground",
+    "lat": 36.772538,
+    "lng": -118.341244,
+    "km": 20.3
+   }
+  ],
+  "lastAnswer": {
+   "status": "found",
+   "trailhead": {
+    "name": "Armstrong Canyon trailhead (ARMS03, passenger-car, road 12S01)",
+    "identifiedBy": {
+     "kind": "route_text",
+     "fact": "route name: East Ridge from Armstrong Canyon"
+    },
+    "placements": []
+   },
+   "notes": "Identified strongly (route name; climber.org 2008/1680, driving/sawmill.html). No coordinate printed (climber.org gpx 404); unplaced, needs OSM name match or none. Do NOT use Sawmill Pass TH (different road end, ~10 km)."
+  }
+ },
+ {
+  "id": "ca_mount_reinstein_standard_route",
+  "name": "Standard route",
+  "peakName": "Mount Reinstein",
+  "state": "California",
+  "discipline": "scrambling",
+  "status": "nopage",
+  "peak": {
+   "id": "ca_mount_reinstein",
+   "name": "Mount Reinstein",
+   "lat": 37.0794,
+   "lng": -118.7384,
+   "elevation_ft": 12586,
+   "region": null,
+   "path": "usa.california.ca_western_sierra.ca_courtright_reservoir.ca_blackcap_basin_area.ca_mount_reinstein"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "South Lake Trailhead",
+    "lat": 37.169305,
+    "lng": -118.565813,
+    "km": 18.3
+   },
+   {
+    "src": "USFS",
+    "name": "SABRINA LAKE TH",
+    "lat": 37.213605,
+    "lng": -118.610013,
+    "km": 18.8
+   },
+   {
+    "src": "USFS",
+    "name": "LAMARCK LAKES TH",
+    "lat": 37.227305,
+    "lng": -118.627513,
+    "km": 19.2
+   },
+   {
+    "src": "USFS",
+    "name": "Maxson Trailhead",
+    "lat": 37.082845,
+    "lng": -118.960333,
+    "km": 19.7
+   },
+   {
+    "src": "USFS",
+    "name": "Baker/Green Lakes Th",
+    "lat": 37.186805,
+    "lng": -118.557713,
+    "km": 20
+   },
+   {
+    "src": "USFS",
+    "name": "North Lake  Trailhead",
+    "lat": 37.230685,
+    "lng": -118.616614,
+    "km": 20
+   },
+   {
+    "src": "USFS",
+    "name": "TYEE TH",
+    "lat": 37.195805,
+    "lng": -118.564713,
+    "km": 20.1
+   },
+   {
+    "src": "USFS",
+    "name": "Woodchuck Trailhead",
+    "lat": 36.992058,
+    "lng": -118.96353,
+    "km": 22.2
+   }
+  ],
+  "lastAnswer": {
+   "status": "stuck",
+   "trailhead": null,
+   "notes": "Search results only (not opened as evidence): Maxson, Woodchuck, Rancheria all reach Blackcap Basin; Maxson called closest all-trail by one source; Florence Lake ferry also used. No standard start. Leave stuck."
+  }
+ },
+ {
+  "id": "ca_mount_young_standard_route",
+  "name": "Standard route",
+  "peakName": "Mount Young",
+  "state": "California",
+  "discipline": "scrambling",
+  "status": "held",
+  "peak": {
+   "id": "ca_mount_young",
+   "name": "Mount Young",
+   "lat": 36.5809,
+   "lng": -118.3277,
+   "elevation_ft": 13176,
+   "region": null,
+   "path": "usa.california.ca_high_sierra.ca_14_whitney_surrounding_peaks.ca_mount_young"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Whitney Portal Trailhead",
+    "lat": 36.586905,
+    "lng": -118.240112,
+    "km": 7.8
+   },
+   {
+    "src": "USFS",
+    "name": "MEYSAN LAKE TH",
+    "lat": 36.589789,
+    "lng": -118.230163,
+    "km": 8.8
+   },
+   {
+    "src": "USFS",
+    "name": "Whitney Portal NRT Trailhead",
+    "lat": 36.597405,
+    "lng": -118.186412,
+    "km": 12.7
+   },
+   {
+    "src": "USFS",
+    "name": "TUTTLE CREEK TH",
+    "lat": 36.553705,
+    "lng": -118.184212,
+    "km": 13.2
+   },
+   {
+    "src": "USFS",
+    "name": "Shepherd Pass Th",
+    "lat": 36.726905,
+    "lng": -118.278912,
+    "km": 16.8
+   },
+   {
+    "src": "USFS",
+    "name": "Cottonwood Lakes Trailhead",
+    "lat": 36.453362,
+    "lng": -118.169987,
+    "km": 20
+   },
+   {
+    "src": "USFS",
+    "name": "Cottonwood Pass Trailhead",
+    "lat": 36.448305,
+    "lng": -118.170612,
+    "km": 20.4
+   },
+   {
+    "src": "USFS",
+    "name": "Onion Valley Campground",
+    "lat": 36.772538,
+    "lng": -118.341244,
+    "km": 21.3
+   }
+  ],
+  "lastAnswer": {
+   "status": "found",
+   "trailhead": {
+    "name": "Whitney Portal Trailhead",
+    "identifiedBy": {
+     "kind": "page",
+     "url": "https://www.snwburd.com/bob/trip_reports/hale_1.html",
+     "fact": "WEAK/inferred: Hale+Young day trips start at Whitney Portal (earlier passes); search results call Whitney Portal the obvious trailhead, shortest via North Fork Lone Pine Creek; Guitar Lake / High Sierra Trail starts exist for long trips"
+    },
+    "placements": [
+     {
+      "source": "USFS",
+      "name": "Whitney Portal Trailhead",
+      "lat": 36.586905,
+      "lng": -118.240112,
+      "url": ""
+     }
+    ]
+   },
+   "notes": "Weak: peak-level, no page names a standard start; SummitPost 403. Owner may prefer to hold."
+  }
+ },
+ {
+  "id": "ca_muah_mountain_via_mulkey_pass",
+  "name": "Via Mulkey Pass",
+  "peakName": "Muah Mountain",
+  "state": "California",
+  "discipline": "scrambling",
+  "status": "held",
+  "peak": {
+   "id": "ca_muah_mountain",
+   "name": "Muah Mountain",
+   "lat": 36.4005,
+   "lng": -118.1251,
+   "elevation_ft": 11016,
+   "region": null,
+   "path": "usa.california.ca_high_sierra.ca_14_whitney_surrounding_peaks.ca_muah_mountain"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": "From Horseshoe Meadow climb to Mulkey Pass, then follow the crest trail south and leave it for a cross-country climb through foxtail pines and talus to the summit rocks. About 12 miles round trip with roughly 2,900 ft of gain.",
+   "descent": null
+  },
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Cottonwood Pass Trailhead",
+    "lat": 36.448305,
+    "lng": -118.170612,
+    "km": 6.7
+   },
+   {
+    "src": "USFS",
+    "name": "Cottonwood Lakes Trailhead",
+    "lat": 36.453362,
+    "lng": -118.169987,
+    "km": 7.1
+   },
+   {
+    "src": "USFS",
+    "name": "TUTTLE CREEK TH",
+    "lat": 36.553705,
+    "lng": -118.184212,
+    "km": 17.8
+   },
+   {
+    "src": "USFS",
+    "name": "OLANCHA PASS/SAGE FLAT TH",
+    "lat": 36.225667,
+    "lng": -118.061566,
+    "km": 20.3
+   },
+   {
+    "src": "USFS",
+    "name": "Whitney Portal NRT Trailhead",
+    "lat": 36.597405,
+    "lng": -118.186412,
+    "km": 22.6
+   },
+   {
+    "src": "USFS",
+    "name": "MEYSAN LAKE TH",
+    "lat": 36.589789,
+    "lng": -118.230163,
+    "km": 23
+   },
+   {
+    "src": "USFS",
+    "name": "Whitney Portal Trailhead",
+    "lat": 36.586905,
+    "lng": -118.240112,
+    "km": 23.1
+   }
+  ],
+  "lastAnswer": {
+   "status": "found",
+   "trailhead": {
+    "name": "Mulkey Pass Trailhead (Horseshoe Meadow Road)",
+    "identifiedBy": {
+     "kind": "route_text",
+     "fact": "From Horseshoe Meadow climb to Mulkey Pass; climber.org driving page names the unmarked Mulkey Pass trailhead as the efficient start for Mulkey Pass"
+    },
+    "placements": [
+     {
+      "source": "climber.org driving GPX (waypoint MULKEY, 'Mulkey Pass Trailhead 9900')",
+      "name": "Mulkey Pass Trailhead",
+      "lat": 36.450649977,
+      "lng": -118.161360025,
+      "url": "https://climber.org/driving/images/HorseshoeMdw.gpx"
+     }
+    ]
+   },
+   "notes": "Mulkey Pass TH is an unmarked dirt road with a closed-to-vehicles sign; parking is a horse-trailer lot on the north side of the paved road. Placement is one non-land-manager source; Cottonwood Pass TH (USFS 36.4483,-118.1706, ~0.9 km west) is the alternative longer start, not this one. Mulkey GPX point is the closest placement; OSM name match by script."
+  }
+ }
+]

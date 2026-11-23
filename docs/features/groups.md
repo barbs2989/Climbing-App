@@ -35,6 +35,8 @@ views under `groupsTab`: For you · Your groups · Your activity · Discover · 
   whenever a filter changes. Signed in, each 20 is its own read (`discover_groups`, 0487) and the heading's count is
   the database's total; the chip counts come from `discover_group_facets`. *Other* lists the groups whose typed
   location names no state.
+- **Discover — explore by discipline.** One chip per discipline, whatever capitals a group typed it with ("alpine"
+  and "Alpine" are one chip, named as most groups spell it; `useDiscoverGroupFacets`). A chip fills the search box.
 - **Discover — sorts.** *Recommended* (or *Nearest* with a place picked), *Most active* (the most recent post that
   is still up, newest first) and *Most members*. All three are ordered in the database, over every group the filters
   match, not over the page on screen. A non-member is shown the order only, never a post or when it was made.
