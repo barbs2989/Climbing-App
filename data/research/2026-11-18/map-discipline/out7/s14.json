@@ -1,0 +1,142 @@
+[
+ {
+  "id": "wa_hozomeen_mountain_south_peak_north_ridge",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Nothing new. Opened AAJ north face article (no trailhead named; approach is steep forest, brush to a col) and AAJ 'Hozomeen at Last' (1947 South Peak ascent via Silver-Skagit road, Jackass Pass, Hozomeen Lake: a different route). Candidate starts: Hozomeen Campground / Hozomeen Lake, Lightning Creek, Skyline II; nothing ties this north ridge to one. cascadeclimbers 403."
+ },
+ {
+  "id": "wa_hozomeen_mountain_south_peak_southeast_buttress",
+  "status": "found",
+  "trailhead": {
+   "name": "Lightning Creek trailhead (Ross Lake)",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://publications.americanalpineclub.org/articles/12198914401/Hozomeen-Southeast-Buttress-of-South-Peak",
+    "fact": "AAJ first-ascent account: start at Lightning Creek trailhead, east past Willow Lake, then off trail; matches route's own approach text"
+   },
+   "placements": []
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "first_ascent",
+    "value": "June 1988",
+    "url": "https://publications.americanalpineclub.org/articles/12198914401/Hozomeen-Southeast-Buttress-of-South-Peak"
+   },
+   {
+    "field": "approach_time_to_bivy",
+    "value": "about 6 h to 6,200 ft saddle",
+    "url": "https://publications.americanalpineclub.org/articles/12198914401/Hozomeen-Southeast-Buttress-of-South-Peak"
+   }
+  ],
+  "notes": "Route text and AAJ agree. No coordinate from an allowed source; Lightning Creek is a boat/trail landing on Ross Lake, not a road trailhead. Name only."
+ },
+ {
+  "id": "wa_hozomeen_mountain_southwest_buttress",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Nothing new. No opened page describes the North Peak southwest buttress approach. Sibling start (Hozomeen Campground) unverified."
+ },
+ {
+  "id": "wa_hozomeen_mountain_west_face",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Nothing new. Route's own text names Silver-Skagit Road and Skyline II (near km 55) as serving the northern approach to a camp north of the peak, but also describes the camp via the border swath; no opened page ties the west face to one start. Candidates: Skyline II (NPS 49.041545,-121.068734), Hozomeen Campground."
+ },
+ {
+  "id": "wa_huckleberry_mountain_north_route",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Nothing new. Opened hippohamster.vercel.app (east ridge via PCT from Snoqualmie Pass, no trailhead named, no north route). WTA/Mountaineers 403. Candidates: PCT north trailhead at Snoqualmie Pass, Gold Creek."
+ },
+ {
+  "id": "wa_iron_cap_mountain_northeast_shoulder",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Nothing new. Opened WTA Iron Cap hike page (West Fork Foss access; printed coordinate equals the peak, not a trailhead; no north ridge route) and fastestknowntime Foss Lakes-Iron Cap loop (two trailheads, none named). WTA trip reports 403. Candidates: West Fork Foss (USFS 47.635006,-121.303348), Necklace Valley / East Fork Foss (USFS 47.665562,-121.287237)."
+ },
+ {
+  "id": "wa_klawatti_peak_north_ridge",
+  "status": "found",
+  "trailhead": {
+   "name": "Eldorado Peak Trailhead (Cascade River Road, mile 20)",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://lemkeclimbs.com/?p=2603",
+    "fact": "Lemke Aug 2012: Klawatti north ridge climbed via the Eldorado route (Cascade River crossing, steep trail), returned the same way; matches route's own text"
+   },
+   "placements": [
+    {
+     "source": "WTA",
+     "name": "Eldorado Peak trailhead, Cascade River Road mile 20",
+     "lat": 48.5136,
+     "lng": -121.1964,
+     "url": "https://www.wta.org/go-hiking/hikes/eldorado-peak"
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "rating_per_page",
+    "value": "Class 4 north ridge, 3rd-class knife-edge sections",
+    "url": "https://lemkeclimbs.com/?p=2603"
+   },
+   {
+    "field": "route",
+    "value": "traverse west face below Smokestack, SW face gully, class 2+/3 rib to summit",
+    "url": "https://lemkeclimbs.com/?p=2603"
+   }
+  ],
+  "notes": "Lemke page names the Eldorado route, not the lot by name. WTA coordinate carried from the earlier pass, not re-fetched."
+ },
+ {
+  "id": "wa_liberty_bell_the_barber_pole",
+  "status": "found",
+  "trailhead": {
+   "name": "Washington Pass hairpin / pond pullout (east of the pass)",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://stephabegg.com/trip-reports/washington/washington-pass/",
+    "fact": "Liberty Bell east-face routes: park at pond beside Hwy 20 just east of Washington Pass, short climbers trail to talus below east face; AAJ 13201215339 places Barber Pole beside the Dark Side line on that face"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "Hairpin",
+     "lat": 48.514336,
+     "lng": -120.642715,
+     "url": ""
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "approach_time",
+    "value": "about 45 min to Liberty Crack base",
+    "url": "https://stephabegg.com/trip-reports/washington/washington-pass/"
+   }
+  ],
+  "notes": "WEAK/inferred: no opened page describes Barber Pole's own approach; AAJ mentions it only in passing. Mountain Project area page also offers Washington Pass Overlook as alternative east-face parking. Pond pullout is near but not identical to the USFS Hairpin point."
+ }
+]

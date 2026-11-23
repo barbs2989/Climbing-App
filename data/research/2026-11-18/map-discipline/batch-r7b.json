@@ -1,0 +1,98 @@
+{
+ "wa_glacier_peak_tahoma_cleaver": {
+  "area": "wa_mount_rainier",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Westside Road — Dry Creek Trailhead",
+    "trailheadDirection": "Enter Mount Rainier National Park at the Nisqually entrance and, after 1 mile, turn left (north) onto Westside Road. Drive it to the Dry Creek barricade and park in the small lot just south of it; past the barricade the road is closed to vehicles.",
+    "trailheadLat": 46.778607,
+    "trailheadLng": -121.882979
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Westside Road — Dry Creek Trailhead",
+     "trailheadDirection": "Enter Mount Rainier National Park at the Nisqually entrance and, after 1 mile, turn left (north) onto Westside Road. Drive it to the Dry Creek barricade and park in the small lot just south of it; past the barricade the road is closed to vehicles.",
+     "trailheadLat": 46.778607,
+     "trailheadLng": -121.882979
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.openstreetmap.org/node/13286050175",
+      "fact": "parking 46.77861,-121.88298",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://mapservices.nps.gov/arcgis/rest/services/NationalDatasets/NPS_Public_POIs_Geographic/FeatureServer/0/query?where=POINAME%3D%27Westside%20Road%20Trailhead%27&outFields=POINAME&f=json",
+      "fact": "Westside Road Trailhead 46.77918,-121.88463",
+      "retrieved_at": "2026-11-23",
+      "official": true
+     },
+     {
+      "url": "https://www.openstreetmap.org/node/110644612",
+      "fact": "road gate 46.77906,-121.88452",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "research",
+    "fact": "route text names the Dry Creek gate on Westside Road; mapped lot just south of the mapped gate"
+   },
+   "chunk": "round7"
+  }
+ },
+ "wa_glacier_peak_south_tahoma_headwall": {
+  "area": "wa_mount_rainier",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Westside Road — Dry Creek Trailhead",
+    "trailheadLat": 46.778607,
+    "trailheadLng": -121.882979
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Westside Road — Dry Creek Trailhead",
+     "trailheadLat": 46.778607,
+     "trailheadLng": -121.882979
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.openstreetmap.org/node/13286050175",
+      "fact": "parking 46.77861,-121.88298",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://mapservices.nps.gov/arcgis/rest/services/NationalDatasets/NPS_Public_POIs_Geographic/FeatureServer/0/query?where=POINAME%3D%27Westside%20Road%20Trailhead%27&outFields=POINAME&f=json",
+      "fact": "Westside Road Trailhead 46.77918,-121.88463",
+      "retrieved_at": "2026-11-23",
+      "official": true
+     },
+     {
+      "url": "https://www.openstreetmap.org/node/110644612",
+      "fact": "road gate 46.77906,-121.88452",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "research",
+    "fact": "route text names the Dry Creek gate on Westside Road; mapped lot just south of the mapped gate"
+   },
+   "chunk": "round7"
+  }
+ }
+}
