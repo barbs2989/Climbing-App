@@ -9,7 +9,7 @@
 -- and commit the result in the same PR. `npm run gen:schema -- --check` exits 1 when this
 -- file has drifted from the live database.
 --
--- Counts: 87 tables, 863 columns, 467 keyed/checked constraints (152 foreign keys), 259 RLS policies.
+-- Counts: 87 tables, 865 columns, 469 keyed/checked constraints (152 foreign keys), 259 RLS policies.
 -- Not covered here: views, functions, triggers, standalone indexes (see supabase/migrations/).
 
 -- ── Foreign keys ───────────────────────────────────────────────────────────────
@@ -458,10 +458,12 @@ CREATE TABLE public.climb_logs (
   nights_out integer,
   camp_names text[],
   summited boolean,
+  pitches_climbed integer,
   CONSTRAINT climb_logs_pkey PRIMARY KEY (id),
   CONSTRAINT climb_logs_camp_names_sane CHECK (((camp_names IS NULL) OR (((cardinality(camp_names) >= 1) AND (cardinality(camp_names) <= 10)) AND (char_length(array_to_string(camp_names, ''::text)) <= 1200)))),
   CONSTRAINT climb_logs_moderation_chk CHECK ((moderation = ANY (ARRAY['visible'::text, 'held'::text, 'removed'::text]))),
   CONSTRAINT climb_logs_nights_out_sane CHECK (((nights_out IS NULL) OR ((nights_out >= 0) AND (nights_out <= 60)))),
+  CONSTRAINT climb_logs_pitches_climbed_range CHECK (((pitches_climbed >= 1) AND (pitches_climbed <= 99))),
   CONSTRAINT climb_logs_rappel_count_sane CHECK (((rappel_count IS NULL) OR ((rappel_count >= 0) AND (rappel_count <= 200)))),
   CONSTRAINT climb_logs_rappel_longest_sane CHECK (((rappel_longest_m IS NULL) OR ((rappel_longest_m >= 1) AND (rappel_longest_m <= 200)))),
   CONSTRAINT climb_logs_stars_check CHECK (((stars >= 1) AND (stars <= 5))),
@@ -778,7 +780,7 @@ CREATE TABLE public.crew_members (
   CONSTRAINT crew_members_user_id_fkey FOREIGN KEY (user_id) REFERENCES profiles(id) ON DELETE CASCADE
 );
 ALTER TABLE public.crew_members ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "crew membership readable unless the crew is private" ON public.crew_members AS PERMISSIVE FOR SELECT TO public USING (crew_visible_to_me(crew_id));
+CREATE POLICY "crew membership readable by its own people" ON public.crew_members AS PERMISSIVE FOR SELECT TO public USING (crew_visible_to_me(crew_id));
 CREATE POLICY "join or invite" ON public.crew_members AS PERMISSIVE FOR INSERT TO public WITH CHECK (((invited_by = auth.uid()) AND ((auth.uid() = ( SELECT crews.created_by
    FROM crews
   WHERE (crews.id = crew_members.crew_id))) OR ((auth.uid() = user_id) AND (status = 'pending'::text) AND (NOT crew_is_private(crew_id))))));
@@ -895,12 +897,14 @@ CREATE TABLE public.crews (
   date_proposers jsonb NOT NULL DEFAULT '{}'::jsonb,
   meet_lat double precision,
   meet_lng double precision,
+  open_note text,
   CONSTRAINT crews_pkey PRIMARY KEY (id),
   CONSTRAINT crews_area_needs_discipline CHECK (((area_id IS NULL) OR (discipline IS NOT NULL))),
   CONSTRAINT crews_discipline_values CHECK (((discipline IS NULL) OR (discipline = ANY (ARRAY['sport'::text, 'trad'::text, 'toprope'::text, 'aid'::text, 'bouldering'::text, 'scrambling'::text, 'hiking'::text, 'alpine'::text, 'mountaineering'::text, 'ice'::text, 'mixed'::text])))),
   CONSTRAINT crews_itinerary_size CHECK (((itinerary IS NULL) OR (pg_column_size(itinerary) < 65536))),
   CONSTRAINT crews_meet_pin_valid CHECK ((((meet_lat IS NULL) AND (meet_lng IS NULL)) OR (((meet_lat >= ('-90'::integer)::double precision) AND (meet_lat <= (90)::double precision)) AND ((meet_lng >= ('-180'::integer)::double precision) AND (meet_lng <= (180)::double precision))))),
   CONSTRAINT crews_one_place CHECK (((((route_id IS NOT NULL))::integer + ((area_id IS NOT NULL))::integer) = 1)),
+  CONSTRAINT crews_open_note_len CHECK (((open_note IS NULL) OR (char_length(open_note) <= 280))),
   CONSTRAINT crews_area_id_fkey FOREIGN KEY (area_id) REFERENCES areas(id),
   CONSTRAINT crews_created_by_fkey FOREIGN KEY (created_by) REFERENCES profiles(id) ON DELETE CASCADE,
   CONSTRAINT crews_itinerary_by_fkey FOREIGN KEY (itinerary_by) REFERENCES profiles(id) ON DELETE SET NULL
