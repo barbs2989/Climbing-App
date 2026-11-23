@@ -10,10 +10,18 @@ import { FONT_DISPLAY } from "./fonts.js";
 // The sign-in screen's look (#2687) carried into every header: a warm glow from the top centre (blue before the 2026-11-23 palette)
 // fading into the page background (#12110f is C.bg, written out because DbAreaBrowser does not
 // import core), and a soft shadow under the box. Was a flat 160deg navy gradient.
-export const HERO_BG = "radial-gradient(130% 120% at 50% 0%, #2a1a12 0%, #12110f 78%)";
+// THE CONTOUR TEXTURE (owner, 2026-11-23: "i liked the topo look"). public/topo.svg is two sets of
+// contour rings, every fifth an index line in the brand orange, as on a topo map. It is DECORATION
+// and describes no real place ("its just for visual"), so it may sit behind any header; it is a
+// background layer only, never inside a map or a chart. Regenerate it with
+// scripts/oneoff/gen-topo.mjs. The base path is read the way lib/offline.js reads it, so a guard
+// that loads this file under Node (no import.meta.env) still gets a string.
+const BASE = (() => { try { return (import.meta.env && import.meta.env.BASE_URL) || "/"; } catch (e) { return "/"; } })();
+export const TOPO = 'url("' + BASE + 'topo.svg") right top no-repeat';
+export const HERO_BG = TOPO + ", radial-gradient(130% 120% at 50% 0%, #2a1a12 0%, #12110f 78%)";
 // Home's banner wears the sign-in screen's own background, unchanged: Home is the screen you land
 // on from it, so the hand-over keeps the same light.
-export const HOME_GLOW = "radial-gradient(120% 100% at 50% 0%, #2a1a12 0%, #12110f 70%)";
+export const HOME_GLOW = TOPO + ", radial-gradient(120% 100% at 50% 0%, #2a1a12 0%, #12110f 70%)";
 export const HERO_SHEEN = "inset 0 1px 0 rgba(255,255,255,0.07), 0 10px 26px -14px rgba(255,138,61,0.4)";
 
 // `right` sits beside the title (a Save button); `children` run under the line (a count, a button).

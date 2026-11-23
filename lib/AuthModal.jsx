@@ -18,6 +18,10 @@ import { POP_CLOSE } from "./popupChrome.js";
 import { TEXT_TAP, TEXT_TAP_INLINE } from "./buttonStyles.js";
 import { CAPTCHA_ON, Turnstile } from "./captcha.jsx";
 import BrandMark from "../src/components/BrandMark.tsx";
+import { TOPO } from "./ScreenHero";
+
+// The sign-in screen wears the splash's contour texture at the splash's size, so the hand-over does not jump.
+const TOPO_GATE = TOPO.replace("right top", "right top / min(520px, 130vw) auto");
 
 const c = { bg: "#12110f", card: "#1a1916", border: "#36322c", text: "#f1ede6", sub: "#a69d90", blue: "#62aee8", red: "#f85149", green: "#3fb950" };
 const provBtn = { width: "100%", boxSizing: "border-box", display: "flex", alignItems: "center", justifyContent: "center", gap: 8, padding: 12, minHeight: 46, borderRadius: 11, border: "1px solid " + c.border, fontSize: 15, fontWeight: 600, cursor: "pointer" };
@@ -225,7 +229,7 @@ export default function LoginScreen({ onClose, onAuthed, recovery, onRecovered, 
   // context under the app header -- so the header drew over this sheet's ✕ and the ✕ could not be
   // tapped (2026-10-24, check:pinned-dismiss). check:overlays explains the trap.
   return createPortal(
-    <div ref={paneRef} onClick={onClose} role="dialog" aria-modal="true" aria-label={TITLE[mode]} style={gate ? { position: "fixed", inset: 0, background: "radial-gradient(120% 60% at 50% 0%, #2a1a12 0%, " + c.bg + " 58%)", zIndex: 2000, overflowY: "auto", overscrollBehavior: "contain", display: "flex", justifyContent: "center", padding: "calc(16px + env(safe-area-inset-top)) 16px 24px", boxSizing: "border-box" } : { position: "fixed", inset: 0, background: "rgba(0,0,0,0.6)", zIndex: 2000, display: "flex", alignItems: "center", justifyContent: "center", padding: 16 }}>
+    <div ref={paneRef} onClick={onClose} role="dialog" aria-modal="true" aria-label={TITLE[mode]} style={gate ? { position: "fixed", inset: 0, background: TOPO_GATE + ", radial-gradient(120% 60% at 50% 0%, #2a1a12 0%, " + c.bg + " 58%)", zIndex: 2000, overflowY: "auto", overscrollBehavior: "contain", display: "flex", justifyContent: "center", padding: "calc(16px + env(safe-area-inset-top)) 16px 24px", boxSizing: "border-box" } : { position: "fixed", inset: 0, background: "rgba(0,0,0,0.6)", zIndex: 2000, display: "flex", alignItems: "center", justifyContent: "center", padding: 16 }}>
       <div onClick={(e) => e.stopPropagation()} style={gate ? { width: "100%", maxWidth: 420, color: c.text } : { width: "100%", maxWidth: 380, background: c.card, border: "1px solid " + c.border, borderRadius: 16, padding: 20, color: c.text }}>
         {gate && (mode === "in" || mode === "up") && (
           <div style={{ textAlign: "center", margin: "18px 0 26px" }}>
