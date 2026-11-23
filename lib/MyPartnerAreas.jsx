@@ -188,7 +188,7 @@ export default function MyPartnerAreas({ uid, listings, listingsError, prefill, 
           <button onClick={save} disabled={busy} style={{ ...BTN_LG, width: "100%", minHeight: 48, border: "none", background: C.blueSolid, color:C.onSolid, opacity: busy ? 0.6 : 1 }}>{editing ? "Save changes" : "List me at " + draft.name}</button>
           {/* Apart from Save (owner, 2026-11-18: "too close together"): 10px under the save button put a thumb aimed at Save on the one tap that deletes the listing. A rule and 28px either side of it now. */}
           {editing ? <div aria-hidden="true" style={{ height: 1, background: C.border, margin: "28px 0" }} /> : null}
-          {editing ? <button onClick={() => remove({ areaId: draft.areaId })} disabled={busy} style={{ width: "100%", minHeight: 44, padding: "10px", borderRadius: 12, border: "1px solid " + C.border, background: C.surface, color: C.red, fontSize: 14, fontWeight: 700, cursor: "pointer" }}>Remove this listing</button> : null}
+          {editing ? <button onClick={() => remove({ areaId: draft.areaId })} disabled={busy} style={{ ...BTN_LG, width: "100%", minHeight: 48, border: "1px solid " + C.border, background: C.surface, color: C.red }}>Remove this listing</button> : null}
         </div> : <div>
           <div style={{ fontSize: 13, color: C.textSub, lineHeight: 1.5, marginBottom: 14 }}>List the crags, canyons and ranges you climb. Climbers looking for a partner there will find you, and you’ll see who climbs where you do.</div>
           <SL>Add an area</SL>

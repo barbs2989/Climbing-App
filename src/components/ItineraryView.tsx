@@ -224,7 +224,7 @@ export default function ItineraryView({route,activity,onSeeReports,onSeeSeason,s
     {!hasPlan?<div style={{...CARD,border:"1px dashed "+C.border,padding:"18px 14px",textAlign:"center"}}>
       <div style={{display:"flex",justifyContent:"center",marginBottom:6}}><ActionIcon name="calendar" size={22} color={C.textMuted}/></div>
       <div style={{fontSize:13.5,fontWeight:700,color:C.text,marginBottom:4}}>No trip plan yet</div>
-      <div style={{fontSize:12,color:C.textMuted,lineHeight:1.5,marginBottom:11}}>Climbed this? Add the day-by-day timing (approach, camps, car to car) to help the next party.</div>
+      <div style={{fontSize:12,color:C.textMuted,lineHeight:1.5,marginBottom:11}}>Climbed this? Add the day-by-day timing (approach, camps, car to car).</div>
       <button onClick={()=>onContribute&&onContribute()} style={{...BTN,border:"1px solid "+C.blueDim,background:C.blueBg,color:C.onSolid}}>Add a trip plan</button>
     </div>:null}
     {onSaveMyItin?<div>
