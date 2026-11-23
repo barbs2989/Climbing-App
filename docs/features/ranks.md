@@ -102,6 +102,8 @@ Every number for a real climber comes from `leaderboard()` on the server; the cl
   contributed there without logging a climb there is listed. Since 0338 a logged climb (1, once per route) and a trip report (2, once per route per month) count too, only when shared with Everyone.
   Weights follow Mountain Project (area 15 · route 10 · photo 5 · comment 1); once-per-place follows theCrag's karma.
 - **Who is on an area’s TOP CONTRIBUTORS card (0486)**: `area_top_contributors` leaves out the climbers `leaderboard()` leaves out. A climber who turned *Show me on leaderboards* off is on nobody’s card (their own included: the card has no "you are hidden" line) and holds no Top Contributor badge; a signed-in reader is not shown a contributor they blocked or who blocked them. Signed out, blocks change nothing, as with profile reads (0095). Before 0486 the card ranked everyone in the ledger: a hidden climber stayed on it by name, and a blocked reader saw a nameless *Climber* row.
+- **Ties on the card and the badge (0495)**: climbers level on points share a place, as on Ranks (1, 1, 3). Everyone level with the leader gets the ★ Top Contributor pill and the gold medal, and each holds the profile badge for that area (`user_top_contributor_areas` ranks with `rank()` over points). Before 0495 the account id decided which of two equals got them.
+- **Test accounts stay off the boards**: the two CI walk accounts (`scripts/oneoff/create-ci-test-accounts.mjs`) are written with `show_on_ranks = false`, and the script reads it back; until 2026-11-23 the owner account sat at #2 of the real Send points board.
 - The demo board mirrors the same rules in `meStats` for your own row.
 
 ## 3. Files
@@ -113,7 +115,7 @@ Every number for a real climber comes from `leaderboard()` on the server; the cl
 | `lib/Help.jsx` | `Help` (its `topic` prop opens one section) |
 | `lib/db.js` | `useLeaderboard`, `useTopClimbs`, `useRankBreakdown` |
 | `ClimbMatchCore.jsx` | `HELP_FEATS` (the Ranks section holds the scoring text), `tickTypesFor`, `NONCOMPLETION_TICKS`, `lbRowName` |
-| `supabase/migrations` | 0194, 0203, 0208, 0235, 0323, 0333, 0338, 0357 (`rank_breakdown`), 0373, 0379 (top 100 per board), 0486 (the area card honours the leaderboard switch and blocks) |
+| `supabase/migrations` | 0194, 0203, 0208, 0235, 0323, 0333, 0338, 0357 (`rank_breakdown`), 0373, 0379 (top 100 per board), 0486 (the area card honours the leaderboard switch and blocks), 0495 (ties share first) |
 
 ## 4. Data
 `climb_logs`, `climb_log_confirmations`, `routes` (`grade_system`, `grade_num`, `gain_ft`, `length_m`, `classic`,
@@ -141,7 +143,6 @@ Hand-run probes: `scripts/oneoff/probe-ranks-anti-padding.sql`, `probe-ranks-ant
 - **True top 100 (0379)**: the 500-climber cap is gone; every board is ranked on the server, and your standing comes with your row.
 
 ## 8. Known gaps
-- A tie on an area’s card is broken by account id, so one of two climbers level on points gets the ★ pill and the badge; Ranks gives both the same rank.
 - `rank_breakdown()` copies `leaderboard()`'s counting rather than sharing it; a change to the scoring must
   change both (no guard holds them equal yet).
 - The board values `leaderboard()` ranks (0379's `scored` CTE) mirror the `val` of each board in `B` in
