@@ -195,7 +195,7 @@ function Desk() {
     // A suggested wall order: the wall's climbs as they stand now against the line the climber sent.
     const walls = wallsQ.data || null;
     orders.forEach((o) => {
-      const rs = walls ? walls[o.area_id] || [] : null;
+      const rs = walls && Object.prototype.hasOwnProperty.call(walls, o.area_id) ? walls[o.area_id] : null;
       const names = {}, inLine = {};
       (rs || []).forEach((x) => { names[x.id] = x.name; if (x.discipline !== "bouldering") inLine[x.id] = true; });
       const now = (rs || []).filter((x) => x.sort_order != null && x.discipline !== "bouldering").sort((a, b) => a.sort_order - b.sort_order).map((x) => String(x.id));
@@ -211,7 +211,7 @@ function Desk() {
         name: (o.areas && o.areas.name) || o.area_id, state: String(o.area_id || "").split("_")[0].toUpperCase(),
         cur: rs ? now.map(nm) : undefined, said: rs ? list.map(nm) : list.length + " climbs", note: (o.value && o.value.note) || "",
         removes: false, climbers: 1, created_at: o.created_at, ai: null, by: o.contributor || null,
-        order: { loaded: !!rs, failed: !rs && !!wallsQ.error, now, list, known: n, names, place },
+        order: { loaded: !!rs, failed: !rs && !!wallsQ.error, now, list, known: n, names, place, rest: now.filter((id) => place[id] == null) },
       });
     });
     return out;
@@ -289,7 +289,7 @@ function Desk() {
               <td><span className="rd-lab">AI value</span>{r.ai && !isEmpty(r.ai.ai_value) ? short(r.ai.ai_value) : <span style={{ color: C.textMuted }}>—</span>}</td>
               <td style={{ whiteSpace: "nowrap", color: C.textMuted }}><span className="rd-lab">Age</span>{when(r.created_at)} · {ageDays(r.created_at)}d</td>
             </tr>,
-            isOpen ? <tr key={r.key + ":d"} className="rd-detail"><td colSpan={8}>{r.kind === "order" ? <OrderDetail row={r} busy={busy === r.key} act={act} refresh={wallsQ.refetch} /> : <Detail row={r} busy={busy === r.key} act={act} />}</td></tr> : null,
+            isOpen ? <tr key={r.key + ":d"} className="rd-detail"><td colSpan={8}>{r.kind === "order" ? <OrderDetail row={r} busy={busy === r.key} act={act} refresh={wallsQ.refetch} fetching={wallsQ.isFetching} readError={wallsQ.error} /> : <Detail row={r} busy={busy === r.key} act={act} />}</td></tr> : null,
           ];
         })}</tbody>
       </table>}
@@ -303,29 +303,40 @@ function Desk() {
 // to the wall. Either way the sender gets a notice if their account still exists (the desk does not claim it
 // was told: the function does not say). The note is a REASON: it goes out only with "Keep current
 // order" (0485 puts it in the rejection notice); on an approval it is kept on the record and not sent.
-function OrderDetail({ row: r, busy, act, refresh }) {
+function OrderDetail({ row: r, busy, act, refresh, fetching, readError }) {
   const [note, setNote] = useState("");
   // The desk does not refetch on focus, and an approval renumbers from the LIVE rows: a tab left open could
-  // preview a wall that has since gained or lost climbs. Opening the row reads the wall again.
+  // preview a wall that has since gained or lost climbs. Opening the row reads the wall again, and "Use this
+  // order" waits for that read: while it is in flight, or if it failed, the preview may not be the wall.
   useEffect(() => { if (refresh) refresh(); }, [refresh]);
   const o = r.order;
   const pos = {};
   o.now.forEach((id, i) => { pos[id] = i + 1; });
-  const can = o.loaded && !o.failed && o.known >= 2;
+  const can = o.loaded && !o.failed && !fetching && !readError && o.known >= 2;
+  const num = { display: "inline-block", minWidth: 24, color: C.textMuted };
   const list = { ...box, margin: 0, paddingLeft: 34, whiteSpace: "normal" };
   return <div style={{ padding: "10px 4px 16px", display: "grid", gap: 12 }}>
     <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(240px,1fr))", gap: 10 }}>
       <div><div style={{ fontSize: 11, fontWeight: 700, color: C.textMuted }}>ON THE WALL NOW, LEFT TO RIGHT</div>
         {o.failed ? <div role="alert" style={{ ...box, color: C.red }}>Could not load this wall’s climbs, so the order cannot be shown or used. Reload the page to try again.</div> : !o.loaded ? <div style={box}>Loading the wall’s climbs…</div> : o.now.length ? <ol style={list}>{o.now.map((id) => <li key={id}>{o.names[id] || id}</li>)}</ol> : <div style={box}>(no order stored)</div>}</div>
       <div><div style={{ fontSize: 11, fontWeight: 700, color: C.blue }}>CLIMBER SUGGESTS, LEFT TO RIGHT</div>
-        <ol style={list}>{o.list.map((id, i) => <li key={id + ":" + i} style={{ color: o.names[id] || !o.loaded ? C.text : C.textMuted }}>{o.loaded ? (o.names[id] || "(a climb no longer on this wall)") : id}
-          {o.loaded && o.names[id] ? (o.place[id] == null ? <span style={{ color: C.textMuted }}> · a boulder problem, not part of the line</span> : pos[id] == null ? <b style={{ color: C.amber }}> · no place now</b> : pos[id] !== o.place[id] ? <b style={{ color: C.amber }}> · now {pos[id]}</b> : null) : null}</li>)}</ol>
+        <ol style={{ ...list, listStyle: "none", paddingLeft: 9 }}>
+          {o.list.map((id, i) => {
+            const p = o.place[id], first = o.list.indexOf(id) === i;
+            const live = o.loaded && !!o.names[id] && p != null && first;
+            return <li key={id + ":" + i} style={{ color: live || !o.loaded ? C.text : C.textMuted }}><span style={num}>{live ? p + "." : "–"}</span>{o.loaded ? (o.names[id] || "(a climb no longer on this wall)") : id}
+              {!o.loaded || !o.names[id] ? null : !first ? <span style={{ color: C.textMuted }}> · listed twice</span> : p == null ? <span style={{ color: C.textMuted }}> · a boulder problem, not part of the line</span> : pos[id] == null ? <b style={{ color: C.amber }}> · no place now</b> : pos[id] !== p ? <b style={{ color: C.amber }}> · now {pos[id]}</b> : null}</li>;
+          })}
+          {/* resolve_wall_order keeps every placed climb the list does not name, AFTER the listed ones in its old order (a climb added to the wall since the suggestion was sent). It moves too, so it is shown. */}
+          {o.loaded ? o.rest.map((id, i) => <li key={"r:" + id} style={{ color: C.textSub }}><span style={num}>{o.known + i + 1}.</span>{o.names[id] || id}<span style={{ color: C.textMuted }}> · not in the suggestion, follows in its old order</span>{pos[id] !== o.known + i + 1 ? <b style={{ color: C.amber }}> · now {pos[id]}</b> : null}</li>) : null}
+        </ol>
         {r.note ? <div style={{ fontSize: 12, color: C.textSub, marginTop: 4 }}><b>Why:</b> {r.note}</div> : null}
         <div style={{ fontSize: 12, color: C.textMuted, marginTop: 4 }}>Sent {when(r.created_at)} by {r.by ? String(r.by).slice(0, 8) : "an account that is gone"}</div></div>
     </div>
+    {o.loaded && readError ? <div role="alert" style={{ fontSize: 12.5, color: C.red }}>Could not re-read this wall, so what is shown may be out of date and the order cannot be used. Reload the page to try again.</div> : null}
     {o.loaded && o.known < 2 ? <div style={{ fontSize: 12.5, color: C.textMuted }}>Fewer than two of these climbs are still in the wall’s line, so there is nothing to order.</div> : null}
     <div style={{ display: "flex", gap: 8, flexWrap: "wrap", alignItems: "center" }}>
-      <button className="rd-btn rd-ok" disabled={busy || !can} onClick={() => act(r, () => resolveWallOrder(r.ids[0], "approved", note), "order written; climbers see it the next time the wall’s list loads.")}>{busy ? "Working…" : "Use this order"}</button>
+      <button className="rd-btn rd-ok" disabled={busy || !can} onClick={() => act(r, () => resolveWallOrder(r.ids[0], "approved", note), "order written; climbers see it the next time the wall’s list loads.")}>{busy ? "Working…" : fetching ? "Checking the wall…" : "Use this order"}</button>
       <input className="rd-in" aria-label="Reason, sent to the climber if you keep the current order (optional)" placeholder="Reason, sent to the climber if you keep the current order (optional)" value={note} onChange={(e) => setNote(e.target.value)} style={{ flex: "1 1 200px" }} />
       <button className="rd-btn rd-bad" disabled={busy} onClick={() => act(r, () => resolveWallOrder(r.ids[0], "rejected", note), "kept the current order.")}>Keep current order</button>
     </div>
