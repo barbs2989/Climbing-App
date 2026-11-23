@@ -213,9 +213,10 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
   objectives* band of `DbSuggestedClimbs` uses the same line.
 - **Suggested climbs** (`DbSuggestedClimbs`, a closed dropdown under Classic climbs; draws nothing when it has nothing): *From your
   objectives*, *Pick up where you left off* (climbs opened recently, here), then up to three discipline rows of five
-  (`suggestDiscSlots`): disciplines you have LOGGED (*Because you've been climbing …*), then the sport / trad / bouldering grade
+  (`suggestDiscSlots`): disciplines you have LOGGED (*Because you've been climbing …*), then the sport / trad / bouldering / alpine / ice / mixed grade
   STATED on your profile where you have logged none (*… near the grade on your profile*; `ClimberCtx.stated`), then disciplines
-  you have only browsed (*Because you've been looking at …*). Each row reads its OWN pool (`suggestSlotQuery`: that discipline,
+  you have only browsed (*Because you've been looking at …*). A row for a discipline THIS AREA has no climb of is dropped before the
+  three are chosen (a crag or peak's own `disciplines`, else the area's climb counts), so an ice climber reaches their ice row. Each row reads its OWN pool (`suggestSlotQuery`: that discipline,
   best-rated first, inside the climber's grade window where the scale is YDS, V, WI or M) behind the area's classics, and
   `rankSimilarRoutes` keeps only climbs inside the window (`suggestWindow`: on YDS, 5.8 to 5.10+ around 5.10a), nearest grade
   first, a classic or well-starred climb ahead of a no-name about a letter grade closer. A grade the scale does not list
