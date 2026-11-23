@@ -1,0 +1,212 @@
+{
+ "wa_glom_don": {
+  "area": "wa_substation",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/106810822/glom-don",
+    "https://www.mountainproject.com/route/106589615/glob-job",
+    "https://www.mountainproject.com/area/106589594/substation",
+    "https://rakkup.com/guidebook/exit-38-rock-climbing/glom-don/c25568",
+    "https://rakkup.com/guidebook/exit-38-rock-climbing/glob-job/c25564",
+    "https://rakkup.com/guidebook/exit-38-rock-climbing/substation/s11465",
+    "https://www.thecrag.com/en/climbing/united-states/central-cascade-mountains/area/19195489",
+    "https://www.thecrag.com/en/climbing/united-states/central-cascade-mountains/route/21056755"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "discipline",
+    "value": "sport",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106810822/glom-don",
+      "fact": "Type: Sport, TR, 40 ft",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://rakkup.com/guidebook/exit-38-rock-climbing/glom-don/c25568",
+      "fact": "Glom Don listed as a Sport route (Exit 38 guide)",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://www.thecrag.com/en/climbing/united-states/central-cascade-mountains/route/21056755",
+      "fact": "Glom Don, SPORT, Substation Wall",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "variation_verdict": {
+   "verdict": "variation of Glob Job (shared start and shared anchor), but listed as its own route by all three publishers",
+   "sources_say": {
+    "mountain_project": "Location field: 'Variation of Glob Job'; starts up Glob Job, goes left at the ledge to an easy arete; shares Glob Job's anchor; 4 bolts, chain anchor (bolt count not said to be its own)",
+    "exit38_guide_rakkup": "its own entry (5.7+, 2 stars, sport) in the Substation list; starts as for Glob Job, then cuts left to the arete",
+    "thecrag": "its own route (5.7, sport) in the Substation Wall list, no description"
+   },
+   "shares": "start (Glob Job's lower bolts) and anchor (Glob Job's chains); only the upper arete moves are its own",
+   "own_numbered_route_in_guide": "Rakkup shows no route numbers at all; it is a separate entry with its own page and star rating",
+   "recommendation": "keep as its own route (every guide lists and rates it separately), but mark it as a variation of Glob Job in its text; do not research bolts/anchor on it separately"
+  },
+  "disputed": [
+   "grade: MP 5.8-, Exit 38 guide 5.7+, theCrag 5.7 (one grade citation) — no two agree; s1 owns this item."
+  ],
+  "notes": "theCrag lists 'Glom Job' (sic) beside Glom Don; that is its spelling of Glob Job."
+ },
+ "wa_undercover": {
+  "area": "wa_a_main_wall_west",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/106517028/undercover",
+    "https://www.mountainproject.com/area/114859186/main-wall-west",
+    "https://www.mountainproject.com/route/106517013/zig-zag",
+    "https://rakkup.com/guidebook/mt-erie-rock-climbing/undercover/c28761",
+    "https://rakkup.com/guidebook/mt-erie-rock-climbing/main-wall-west/s12345",
+    "https://www.alpineinstitute.com/route-profile-mt-erie-s-zig-zag-route-5-7-or-5-8-ii/"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "discipline",
+    "value": "trad",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106517028/undercover",
+      "fact": "Type: Trad, 120 ft",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://rakkup.com/guidebook/mt-erie-rock-climbing/undercover/c28761",
+      "fact": "Undercover 5.7, trad (Mt. Erie guide)",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "variation_verdict": {
+   "verdict": "an alternative middle pitch of Zig Zag (variation), listed as its own route by both readable publishers",
+   "sources_say": {
+    "mountain_project": "own route page (Trad, 5.7, 120 ft, 3.1 stars from 76 votes); start from the chains atop Zig Zag P1, climb under the overhang rightward, rejoin Zig Zag's upper pitch, end on Zig Zag's ledge; a 5.9 start passes 2 bolts shared with Cat from Outer Space. MP's Zig Zag page mentions climbers using it in place of Zig Zag P2",
+    "mt_erie_guide_rakkup": "its own entry (5.7, 2 stars, trad) in the Main Wall West list; visible text: a crack system under overhanging rock; no shared route named in the free text",
+    "summitpost": "search results show a page titled 'Zig Zag - Undercover variation' (object 498602) and an Undercover page (165202) — NOT READ: SummitPost is blocked even through the owner's Chrome, so not evidence",
+    "thecrag": "NOT READ: theCrag's Mount Erie West sector page returned Forbidden after 5 pages",
+    "alpine_institute": "Zig Zag route profile does not mention Undercover"
+   },
+   "shares": "starts at Zig Zag's P1 chain anchor and finishes on Zig Zag's ledge/anchor; the 5.9 start shares 2 bolts with Cat from Outer Space; the crack under the roof is its own",
+   "own_numbered_route_in_guide": "Rakkup shows no numbers; it is a separate entry with its own page and star rating",
+   "recommendation": "keep as its own route (both guides list and rate it separately); its text should say it is reached by Zig Zag P1 and finishes on Zig Zag's ledge"
+  },
+  "disputed": [
+   "anchor: MP says 'chain anchors' in Protection and 'bolted anchor' in the description; the anchor is Zig Zag's ledge anchor. s2 owns this item."
+  ]
+ },
+ "wa_you_re_only_nice_to_me_when_you_re_wet": {
+  "area": "wa_substation",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/108512160/youre-only-nice-to-me-when-youre-wet",
+    "https://www.mountainproject.com/route/108512177/youre-only-nice-to-me-when-i-tie-you-up",
+    "https://www.mountainproject.com/route/108512064/slippery-when-wet",
+    "https://www.mountainproject.com/area/106589594/substation",
+    "https://rakkup.com/guidebook/exit-38-rock-climbing/you're-only-nice-to-me-when-you're-wet/c25555",
+    "https://rakkup.com/guidebook/exit-38-rock-climbing/you're-only-nice-to-me-when-i-tie-you-up/c25556",
+    "https://rakkup.com/guidebook/exit-38-rock-climbing/slippery-when-wet/c25554",
+    "https://rakkup.com/guidebook/exit-38-rock-climbing/substation/s11465",
+    "https://www.thecrag.com/en/climbing/united-states/central-cascade-mountains/area/19195489",
+    "https://www.thecrag.com/en/climbing/united-states/central-cascade-mountains/route/21056371"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "discipline",
+    "value": "sport",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108512160/youre-only-nice-to-me-when-youre-wet",
+      "fact": "Type: Sport, 50 ft",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://rakkup.com/guidebook/exit-38-rock-climbing/you're-only-nice-to-me-when-you're-wet/c25555",
+      "fact": "listed as a Sport route (Exit 38 guide)",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://www.thecrag.com/en/climbing/united-states/central-cascade-mountains/route/21056371",
+      "fact": "SPORT, Substation Wall",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "variation_verdict": {
+   "verdict": "a link-up (Tie You Up start, Slippery When Wet finish), but listed as its own route by all three publishers",
+   "sources_say": {
+    "mountain_project": "own page (Sport, 5.10c, 50 ft, 5th route from left); same thin start as I Tie You Up for most of the way, exits left around two-thirds height to finish on Slippery When Wet; 6 or 7 bolts depending on where you leave I Tie You Up; chain anchor",
+    "exit38_guide_rakkup": "its own entry (5.10b/c, 3 stars, sport); begins on I Tie You Up, then cuts left (rest of text paywalled)",
+    "thecrag": "its own route (5.10b, sport, 1 star), no description"
+   },
+   "shares": "bolts on the lower two-thirds with I Tie You Up, and the top (and so almost certainly the anchor) with Slippery When Wet; MP does not say outright that it clips Slippery's chains, so the anchor share is inferred, not stated",
+   "own_numbered_route_in_guide": "Rakkup shows no numbers; it is a separate entry with its own page and a 3-star rating",
+   "recommendation": "keep as its own route (all three list it, the guide rates it 3 stars), but its text should say it is a link-up; leave bolts (6 or 7) and anchor unset because the line has no fixed gear of its own"
+  },
+  "disputed": [
+   "grade: MP 5.10c (locked agree-2 with the guide's 5.10b/c); theCrag 5.10b also fits the guide's slash — no change."
+  ]
+ },
+ "wa_substation_glob_job_extension": {
+  "area": "wa_substation",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/126669158/glob-job-extension",
+    "https://www.mountainproject.com/route/106589615/glob-job",
+    "https://www.mountainproject.com/area/106589594/substation",
+    "https://rakkup.com/guidebook/exit-38-rock-climbing/substation/s11465",
+    "https://www.thecrag.com/en/climbing/united-states/central-cascade-mountains/area/19195489"
+   ]
+  },
+  "variation_verdict": {
+   "verdict": "an extension (a second, 2-bolt section above Glob Job/Glom Don's anchor), not its own route; only Mountain Project lists it",
+   "sources_say": {
+    "mountain_project": "own page (Sport, 5.7, 15 ft, 0.7 stars from 3 votes, FA unknown): a two-bolt extension from the Glob Job/Glom Don anchor to Rug Monkey's anchor; can also be reached from Subversive",
+    "exit38_guide_rakkup": "ABSENT: not in the 18-route Substation list",
+    "thecrag": "ABSENT: not in the Substation Wall list"
+   },
+   "shares": "starts at the Glob Job/Glom Don anchor, ends at Rug Monkey's anchor; its only fixed gear of its own is 2 bolts",
+   "own_numbered_route_in_guide": "no — the guidebook does not list it at all",
+   "recommendation": "merge into Glob Job (as an extension noted in Glob Job's text) — the only one of the four the owner should consider merging; the decision is the owner's"
+  },
+  "notes": "No fixes proposed: it is a catalog defect. bolts null stays (MP's 2 bolts is one source on a defect row)."
+ },
+ "wa_hangover_helper": {
+  "area": "wa_substation",
+  "review": {
+   "sources": [
+    "https://rakkup.com/guidebook/exit-38-rock-climbing/hangover-helper/c25559",
+    "https://rakkup.com/guidebook/exit-38-rock-climbing/substation/s11465",
+    "https://www.mountainproject.com/route/108273656/hangover-helper",
+    "https://www.thecrag.com/en/climbing/united-states/central-cascade-mountains/area/19195489"
+   ]
+  },
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_hangover_helper",
+    "column": "guide_stars",
+    "from": 1,
+    "to": 3,
+    "why": "guide_stars is the guidebook's own rating. The Exit 38 guide (Kutzke & Price) on Rakkup rates Hangover Helper three stars on both its route page and the Substation list; the stored 1 matches no guidebook figure found (MP 2.5 avg and theCrag 1 star are climber ratings, not the guide's).",
+    "evidence": [
+     "https://rakkup.com/guidebook/exit-38-rock-climbing/hangover-helper/c25559",
+     "https://rakkup.com/guidebook/exit-38-rock-climbing/substation/s11465"
+    ]
+   }
+  ],
+  "notes": "Same mismatch on siblings, NOT proposed (outside this item): wa_you_re_only_nice_to_me_when_i_tie_you_up stores guide_stars 1, guide shows 3; wa_glob_job, wa_slippery_when_wet and wa_you_re_only_nice_to_me_when_you_re_wet store null, guide shows 2, 2 and 3. wa_glom_don (2) and wa_rug_monkey (2) match the guide. theCrag flags 'bad bolts' on Hangover Helper and 'missing hangers' on I Tie You Up (climber warnings, unverified)."
+ }
+}
