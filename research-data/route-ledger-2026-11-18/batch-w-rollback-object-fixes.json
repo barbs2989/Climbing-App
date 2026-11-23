@@ -1,0 +1,151 @@
+{
+ "note": "Values replaced by the owner-approved batch-W access/gear object fixes, 2026-11-23",
+ "rollback": [
+  {
+   "table": "routes",
+   "id": "wa_thriller_pillar",
+   "before": {
+    "gear": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_thriller_pillar",
+   "before": {
+    "access": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_thriller_pillar_right_side",
+   "before": {
+    "gear": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_thriller_pillar_right_side",
+   "before": {
+    "access": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_humpty_dumpty",
+   "before": {
+    "gear": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_humpty_dumpty",
+   "before": {
+    "access": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_columns_holiday",
+   "before": {
+    "access": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_the_big_tree",
+   "before": {
+    "gear": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_the_big_tree",
+   "before": {
+    "access": {
+     "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+     "rules": "Group size capped at 12 (people + stock combined) inside Glacier Peak Wilderness; larger groups must split with 1-mile separation. Campfires prohibited above 3,500 ft in wilderness.",
+     "permit": "None required — free self-issue wilderness permits available at trailheads/ranger stations for day/overnight travel where the peak is inside designated wilderness.",
+     "group_limit": 12,
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Darrington Ranger District)",
+     "parking_pass": "Northwest Forest Pass required at Mountain Loop Highway trailheads — $5/day or $30/year."
+    }
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_three_o_clock_rock_rashionalization",
+   "before": {
+    "access": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_three_o_clock_rock_beanberry_delight",
+   "before": {
+    "access": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_three_o_clock_rock_the_jinx",
+   "before": {
+    "access": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_three_o_clock_rock_when_butterflies_kiss_bumblebees",
+   "before": {
+    "access": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_blue_in_the_face_2",
+   "before": {
+    "access": {
+     "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+     "notes": "Many of these peaks (Mount Persis, Gunn Peak, Baring Mountain area) sit outside designated wilderness — administratively unrestricted despite serious technical terrain.",
+     "permit": "None required.",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+     "parking_pass": "Northwest Forest Pass or America the Beautiful pass required at developed trailheads."
+    }
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_blues_cliff_the_blues_riff",
+   "before": {
+    "access": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_blues_cliff_the_wedgie",
+   "before": {
+    "access": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_blues_cliff_the_accidental_discharge",
+   "before": {
+    "access": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_blues_cliff_the_black_cat_bone",
+   "before": {
+    "gear": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_blues_cliff_the_black_cat_bone",
+   "before": {
+    "access": null
+   }
+  }
+ ]
+}
