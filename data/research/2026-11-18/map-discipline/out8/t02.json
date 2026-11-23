@@ -1,0 +1,133 @@
+[
+ {
+  "id": "ca_mount_davis_southeast_slopes_from_north_glacier_pass",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Conflict: Rush Creek trail (climber.org/reports/1998/320.html, 2002/984.html; themtsarecalling earlier) vs Agnew Meadows (climber.org 2006/1567, justindong, earlier). Also opened snwburd.com davis_1 and charliebrumbaugh page: no trailhead named. Both starts reach Thousand Island Lake; nothing ties this route to one."
+ },
+ {
+  "id": "ca_mount_fiske_standard_route",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Opened wacziarg 2025-08-mount-fiske: Sabrina trailhead via Echo Col, SW ridge class 2 (one source only; South Lake via Bishop Pass also documented by climber.org 2011/1876 per earlier pass). No second independent source for Sabrina."
+ },
+ {
+  "id": "ca_mount_gibbs_standard_route",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Mono/Parker Pass trailhead on Tioga Rd: sites.google.com/site/mytrailmixx/sierra-day-hikes/mt-gibbs-2016 (plus continuum-hypothesis earlier). Walker Lake campground via Bloody Canyon/Mono Pass: wacziarg 2018-07-23 (class 1 south slope, ~13 mi, 4600 ft). Equal split, stuck."
+ },
+ {
+  "id": "ca_observation_peak_standard_route",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "nothing new. Remote multi-day, Taboose vs South Lake; no pages opened this pass."
+ },
+ {
+  "id": "ca_picket_guard_peak_standard_route",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "nothing new. Remote multi-day, Mineral King vs Rowell Meadow vs Whitney Portal."
+ },
+ {
+  "id": "ca_pyramid_peak_south_standard_route",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "nothing new. Taboose (2016/1872, 1999/532) vs Roads End (2002/993)."
+ },
+ {
+  "id": "ca_silver_peak_standard_route",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Opened climber.org 2018/1878 (Vermilion Resort, Lake Edison; west ridge class 2-3) and 2013/1835 (Lake Edison trailhead past Vermilion at 7500 ft, Devil's Bathtub; class 2 SW flank): two agree on Lake Edison, but the 2002 report (Onion Springs OHV road, NW ridge) names a different start, and no coordinate for the Edison trailhead was found (USFS Mono Creek TH is on the far side of the lake). Lean: Lake Edison/Vermilion; left stuck by the no-conflict rule."
+ },
+ {
+  "id": "ca_trojan_peak_standard_route",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "nothing new. George Creek vs Shepherd Pass, no page says which is standard (search only: climber.org 2006/1475 George Creek, 2012/1815 Shepherd Pass)."
+ },
+ {
+  "id": "ca_cartago_peak_standard_route",
+  "status": "found",
+  "trailhead": {
+   "name": "Cartago Canal Trailhead",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://climber.org/reports/1998/308.html",
+    "fact": "East-side route from north end of Cartago over the aqueduct bridge to the wilderness boundary posts; also climber.org/reports/2006/1479.html, ftp.climber.org/reports/1998/307.html and driving page https://climber.org/driving/CartagoCanal.html"
+   },
+   "placements": [
+    {
+     "source": "climber.org driving GPX (CARCTH, Cartago Canal TH 3800)",
+     "name": "Cartago Canal TH",
+     "lat": 36.321889997,
+     "lng": -118.03610003,
+     "url": "https://climber.org/driving/images/CartagoCanal.gpx"
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "gain_ft",
+    "value": "6500",
+    "url": "https://climber.org/reports/1998/308.html"
+   },
+   {
+    "field": "distance_mi_one_way",
+    "value": "4",
+    "url": "https://climber.org/reports/1998/308.html"
+   },
+   {
+    "field": "class",
+    "value": "2 with class 3 summit block",
+    "url": "https://climber.org/driving/CartagoCanal.html"
+   }
+  ],
+  "notes": "Four opened pages agree on the Cartago Canal start for the east-slopes route; Horseshoe Meadow trip (wacziarg 2021) is a different multi-day traverse."
+ },
+ {
+  "id": "wa_castle_peak_pasayten_east_ridge",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Opened countryhighpoints.com/castle-peak (SW ridge from Monument 78, Manning Park; different route) and WTA hikes/castle-peak (coordinate 48.9822,-120.8607 only, no trailhead). Nothing ties East Ridge to a start."
+ },
+ {
+  "id": "wa_castle_peak_pasayten_north_ridge",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "nothing new. No page about a north ridge found."
+ }
+]

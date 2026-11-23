@@ -60,7 +60,7 @@ export default function ConnectModal({climber,onClose,onSend,routeById}: Connect
         <span style={{fontSize:12,color:note.length>MAX-30?C.amber:C.textMuted}}>{note.length}/{MAX}</span>
       </div>
       <div style={{display:"flex",gap:12}}>
-        <button onClick={onClose} style={{flex:"0 0 auto",padding:"12px 17px",background:C.surface,color:C.textSub,border:"1px solid "+C.border,borderRadius:12,fontSize:14,fontWeight:600,cursor:"pointer"}}>Cancel</button>
+        <button onClick={onClose} style={{...BTN_LG,flex:"0 0 auto",padding:"13px 17px",background:C.surface,color:C.textSub,border:"1px solid "+C.border}}>Cancel</button>
         <button onClick={()=>onSend(note.trim())} style={{...BTN_LG,flex:1,background:C.blueSolid,color:C.onSolid,border:"none"}}>{note.trim()?"Send request":"Send without note"}</button>
       </div>
       <div style={{fontSize:12,color:C.textMuted,textAlign:"center",marginTop:11,lineHeight:1.5}}>A connection is mutual — {first} confirms before you’re connected.</div>

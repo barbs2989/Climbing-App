@@ -1,0 +1,444 @@
+{
+ "ca_mount_hale_standard_route": {
+  "area": "ca_mount_hale",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Whitney Portal Trailhead",
+    "trailheadLat": 36.586905,
+    "trailheadLng": -118.240112
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Whitney Portal Trailhead",
+     "trailheadLat": 36.586905,
+     "trailheadLng": -118.240112
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_InfraRecreationSites_01/MapServer/0/query?where=site_cn%3D%275367.003721%27&outFields=site_name&f=json",
+      "fact": "Whitney Portal Trailhead 36.58691,-118.24011",
+      "retrieved_at": "2026-11-23",
+      "official": true
+     },
+     {
+      "url": "https://climber.org/reports/1998/373.html",
+      "fact": "Start: Whitney Portal Trailhead",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://www.snwburd.com/bob/trip_reports/hale_1.html",
+      "fact": "Start: Whitney Portal Trailhead",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "research",
+    "fact": "two agreeing sources (owner two-source rule)"
+   },
+   "chunk": "round11"
+  }
+ },
+ "ca_mount_newcomb_southwest_slope": {
+  "area": "ca_mount_newcomb",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Whitney Portal Trailhead",
+    "trailheadLat": 36.586905,
+    "trailheadLng": -118.240112
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Whitney Portal Trailhead",
+     "trailheadLat": 36.586905,
+     "trailheadLng": -118.240112
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_InfraRecreationSites_01/MapServer/0/query?where=site_cn%3D%275367.003721%27&outFields=site_name&f=json",
+      "fact": "Whitney Portal Trailhead 36.58691,-118.24011",
+      "retrieved_at": "2026-11-23",
+      "official": true
+     },
+     {
+      "url": "https://climber.org/reports/1998/373.html",
+      "fact": "Start: Whitney Portal Trailhead",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://www.snwburd.com/bob/trip_reports/newcomb_1.html",
+      "fact": "Start: Whitney Portal Trailhead",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "research",
+    "fact": "two agreeing sources (owner two-source rule)"
+   },
+   "chunk": "round11"
+  }
+ },
+ "ca_volunteer_peak_standard_route": {
+  "area": "ca_volunteer_peak",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Robinson Creek Trailhead (Twin Lakes)",
+    "trailheadLat": 38.146801,
+    "trailheadLng": -119.389785
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Robinson Creek Trailhead (Twin Lakes)",
+     "trailheadLat": 38.146801,
+     "trailheadLng": -119.389785
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_InfraRecreationSites_01/MapServer/0/query?where=site_cn%3D%277241097010602%27&outFields=site_name&f=json",
+      "fact": "Robinson Creek Trailhead 38.14680,-119.38979",
+      "retrieved_at": "2026-11-23",
+      "official": true
+     },
+     {
+      "url": "https://climber.org/reports/2010/1774.html",
+      "fact": "Start: Robinson Creek Trailhead (Twin Lakes)",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://climber.org/reports/2001/841.html",
+      "fact": "Start: Robinson Creek Trailhead (Twin Lakes)",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "research",
+    "fact": "two agreeing sources (owner two-source rule)"
+   },
+   "chunk": "round11"
+  }
+ },
+ "ca_black_giant_west_slope_from_black_giant_pass": {
+  "area": "ca_black_giant",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Lake Sabrina Trailhead",
+    "trailheadLat": 37.213605,
+    "trailheadLng": -118.610013
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Lake Sabrina Trailhead",
+     "trailheadLat": 37.213605,
+     "trailheadLng": -118.610013
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_InfraRecreationSites_01/MapServer/0/query?where=site_cn%3D%275354.003721%27&outFields=site_name&f=json",
+      "fact": "SABRINA LAKE TH 37.21361,-118.61001",
+      "retrieved_at": "2026-11-23",
+      "official": true
+     },
+     {
+      "url": "https://climber.org/reports/2006/1514.html",
+      "fact": "Start: Lake Sabrina Trailhead",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://justindong.squarespace.com/journal/ionian-basin-redux-2025",
+      "fact": "Start: Lake Sabrina Trailhead",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "research",
+    "fact": "two agreeing sources (owner two-source rule)"
+   },
+   "chunk": "round11"
+  }
+ },
+ "wa_goat_mountain_eastern_route": {
+  "area": "wa_goat_mountain",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Goat Mountain Trailhead (Trail #673, FR 32)",
+    "trailheadLat": 48.897718,
+    "trailheadLng": -121.645264
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Goat Mountain Trailhead (Trail #673, FR 32)",
+     "trailheadLat": 48.897718,
+     "trailheadLng": -121.645264
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_InfraRecreationSites_01/MapServer/0/query?where=site_cn%3D%2711238010357%27&outFields=site_name&f=json",
+      "fact": "Goat Mountain Trailhead 48.89772,-121.64526",
+      "retrieved_at": "2026-11-23",
+      "official": true
+     },
+     {
+      "url": "https://besthikesbc.ca/?p=11433",
+      "fact": "Start: Goat Mountain Trailhead (Trail #673, FR 32)",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://onehikeaweek.com/2025/05/25/goat-mountain-east-peak/",
+      "fact": "Start: Goat Mountain Trailhead (Trail #673, FR 32)",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "research",
+    "fact": "two agreeing sources (owner two-source rule)"
+   },
+   "chunk": "round11"
+  }
+ },
+ "wa_iron_cap_mountain_northeast_shoulder": {
+  "area": "wa_iron_cap_mountain",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Necklace Valley Trailhead (East Fork Foss River)",
+    "trailheadLat": 47.665562,
+    "trailheadLng": -121.287237
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Necklace Valley Trailhead (East Fork Foss River)",
+     "trailheadLat": 47.665562,
+     "trailheadLng": -121.287237
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_InfraRecreationSites_01/MapServer/0/query?where=site_cn%3D%2711206010357%27&outFields=site_name&f=json",
+      "fact": "Necklace Valley Trailhead 47.66556,-121.28724",
+      "retrieved_at": "2026-11-23",
+      "official": true
+     },
+     {
+      "url": "https://www.nwhikers.net/forums/viewtopic.php?t=8033462",
+      "fact": "Start: Necklace Valley Trailhead (East Fork Foss River)",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "research",
+    "fact": "two agreeing sources (owner two-source rule)"
+   },
+   "chunk": "round11"
+  }
+ },
+ "wa_hozomeen_mountain_west_face": {
+  "area": "wa_hozomeen_mountain",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Skyline II Trailhead",
+    "trailheadLat": 49.041545,
+    "trailheadLng": -121.068734
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Skyline II Trailhead",
+     "trailheadLat": 49.041545,
+     "trailheadLng": -121.068734
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://mapservices.nps.gov/arcgis/rest/services/NationalDatasets/NPS_Public_POIs_Geographic/FeatureServer/0/query?where=POINAME%3D%27Skyline%20II%20Trailhead%20(BC)%27&outFields=POINAME&f=json",
+      "fact": "Skyline II Trailhead (BC) 49.04155,-121.06873",
+      "retrieved_at": "2026-11-23",
+      "official": true
+     },
+     {
+      "url": "https://onehikeaweek.com/2019/06/16/hozomeen-mountain/",
+      "fact": "Start: Skyline II Trailhead",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "research",
+    "fact": "two agreeing sources (owner two-source rule)"
+   },
+   "chunk": "round11"
+  }
+ },
+ "wa_liberty_bell_the_barber_pole": {
+  "area": "wa_liberty_bell",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "SR-20 Hairpin / Pond Pullout (east of Washington Pass)",
+    "trailheadLat": 48.51454,
+    "trailheadLng": -120.64332
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "SR-20 Hairpin / Pond Pullout (east of Washington Pass)",
+     "trailheadLat": 48.51454,
+     "trailheadLng": -120.64332
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://stephabegg.com/trip-reports/washington/washington-pass/",
+      "fact": "Start: SR-20 Hairpin / Pond Pullout (east of Washington Pass)",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://publications.americanalpineclub.org/articles/13201215339",
+      "fact": "Start: SR-20 Hairpin / Pond Pullout (east of Washington Pass)",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "research",
+    "fact": "10 Liberty Bell east-face routes store this pullout; two agreeing sources (owner two-source rule)"
+   },
+   "chunk": "round11"
+  }
+ },
+ "wa_southeast_mox_peak_beckey_route_west_ridge": {
+  "area": "wa_southeast_mox_peak",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Depot Creek Road washout (via Chilliwack Lake, BC)",
+    "trailheadLat": 49.033,
+    "trailheadLng": -121.4025
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Depot Creek Road washout (via Chilliwack Lake, BC)",
+     "trailheadLat": 49.033,
+     "trailheadLng": -121.4025
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://trailcatjim.com/hard-mox-peak-easy-mox-peak-depot-creek-falls/",
+      "fact": "Start: Depot Creek Road washout (via Chilliwack Lake, BC)",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "http://drdirtbag.com/2015/07/22/mox-peaks-redoubt-14h50/",
+      "fact": "Start: Depot Creek Road washout (via Chilliwack Lake, BC)",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "research",
+    "fact": "4 neighbouring Chilliwack-group routes store this point; two agreeing sources (owner two-source rule)"
+   },
+   "chunk": "round11"
+  }
+ },
+ "wa_mount_rainier_east_success_couloir": {
+  "area": "wa_mount_rainier",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Paradise (Skyline Trail)",
+    "trailheadLat": 46.78669,
+    "trailheadLng": -121.73454
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Paradise (Skyline Trail)",
+     "trailheadLat": 46.78669,
+     "trailheadLng": -121.73454
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://turns-all-year.com/trip-reports/may-30-mt-rainer-east-success-glacier-couloir",
+      "fact": "Start: Paradise (Skyline Trail)",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://turns-all-year.com/trip-reports/may-3-4-mrnp-thumb-e-success",
+      "fact": "Start: Paradise (Skyline Trail)",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "research",
+    "fact": "8 Rainier routes store this Paradise point; two agreeing sources (owner two-source rule)"
+   },
+   "chunk": "round11"
+  }
+ }
+}

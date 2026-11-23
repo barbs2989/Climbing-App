@@ -1,0 +1,131 @@
+[
+  {
+    "item": 1,
+    "ids": ["wa_blownout_direct", "wa_south_face_4_blownout_to_1st_anchor", "wa_blownout"],
+    "verdict": "CONFIRM",
+    "final_action": "MERGE wa_blownout_direct -> wa_south_face_4_blownout_to_1st_anchor (alt_name 'Blownout Direct'). Keep wa_blownout as the separate full route.",
+    "sources": [
+      "https://www.mountainproject.com/route/113482815/blownout-to-1st-anchor",
+      "https://www.mountainproject.com/route/107198195/blownout",
+      "https://chossclimbers.com/?p=21107"
+    ],
+    "note": "MP 'Blownout (to 1st anchor)' is 5.9+, 60 ft, three pitons, FA Scott Tracy, Jim Opdycke, Fall 1990. That FA string matches the drop row's FA word for word. MP's Blownout page says 'Nowadays everyone climbs Blownout Direct (5.9+)' and describes the same start: a detached flake/pillar, then a seam with three pitons to a stance. Chossclimbers also calls Blownout Direct the 5.9 start to Blownout. Same line. wa_blownout is a separate full route: MP 107198195 is 5.10b/c, 220 ft, 2 pitches. Side finding, not part of this item: wa_blownout stores FA 'Steve Strauch and Danny Gates, 1969' and pitches 0, but MP gives FA 'Jeff Thomas and Ken Currens, 1976' and 2 pitches. Review that FA separately."
+  },
+  {
+    "item": 2,
+    "ids": ["wa_dod_s_jam_dastardly_crack_linkup", "wa_south_face_4_dod_s_dastardly_jam"],
+    "verdict": "CONFIRM",
+    "final_action": "MERGE wa_dod_s_jam_dastardly_crack_linkup -> wa_south_face_4_dod_s_dastardly_jam (alt_name 'Dod's Jam + Dastardly Crack Linkup'); do not copy the FA.",
+    "sources": ["https://www.mountainproject.com/route/106249856"],
+    "note": "MP 106249856 is titled 'Dod's Dastardly Jam': 5.10c, 280 ft (85 m), 3 pitches, Grade II. It describes itself as a link-up of Dod's Jam and Dastardly Crack, so both rows are this one MP route. The FA 'Buncha different folks in different years' is MP's own placeholder, so leave the keeper's FA blank. 'Dod's Jam P1' (5.8 on MP) is a separate MP route, so wa_dod_s_jam_p1 stays."
+  },
+  {
+    "item": 3,
+    "ids": ["wa_west_face_7_beth_memorial_route_free", "wa_west_face_7_beth_priestley_memorial_route"],
+    "verdict": "CONFIRM",
+    "final_action": "KEEP both rows.",
+    "sources": [
+      "https://mountainproject.com/area/114069401/west-face",
+      "https://www.mountainproject.com/route/120906349/beth-priestley-memorial-route",
+      "https://www.mountainproject.com/route/203133513/beth-memorial-route-free"
+    ],
+    "note": "MP keeps two separate route pages on the Beacon Rock West Face. Beth Priestley Memorial Route: Trad/Aid, 5.7+ C1, 400 ft (121 m), 3 pitches, FA Eric Linthwaite and Geoff Silverman, Juneteenth 2021 (plus an Option 2 start, 2022). Beth Memorial Route (Free): 5.12a, 275 ft (83 m), 3 pitches, FFA Moe Sthilman and Jib Holmstead, June 2026. The free page calls itself the freeing of 'a great aid line' put up by Linthwaite and Silverman in 2021, so it is probably the same line in a different style. It differs from the aid route in length and start, and it follows the 0220/0271 precedent of keeping pairs that differ by grade or style. Our stored lengths (84 m and 122 m) match MP. Optional: the free row's blank FA could take MP's FFA string."
+  },
+  {
+    "item": 4,
+    "ids": ["wa_south_early_winters_spire_east_buttress_direct", "wa_south_early_winter_spire_direct_east_buttress"],
+    "verdict": "CONFIRM",
+    "final_action": "MERGE wa_south_early_winters_spire_east_buttress_direct -> wa_south_early_winter_spire_direct_east_buttress (alt_name 'East Buttress Direct'; repoint or drop the 1 unconfirmed evidence row).",
+    "sources": [
+      "https://summitpost.org/direct-east-buttress/236786",
+      "https://summitpost.org/east-butress-direct/157648",
+      "https://climbcanada.blogspot.com/2007/07/washington-pass-wa-sew-spire.html"
+    ],
+    "note": "Only one line on SEWS is credited to Fred Beckey and Doug Leen, 1968: III+ 5.9 A0 or 5.11, about 9 pitches. Publishers use both 'Direct East Buttress' and 'East Buttress Direct' for it (the SummitPost page slugs show both spellings). The two names are one route. These facts come from search-result text; SummitPost pages were not fetched (403 policy). In the Climb Canada post, the commenter who says he made the FA with Beckey is Doug Leen."
+  },
+  {
+    "item": 5,
+    "ids": ["wa_north_early_winters_spire_northwest_corner_a_k_a_boving_pollack_route", "wa_news_nw_corner"],
+    "verdict": "CONFIRM",
+    "final_action": "MERGE the a.k.a. row -> wa_news_nw_corner (fill stars, lat, lng; repoint 1 ev row; send the per-pitch overview to pitch_detail review rather than overwriting).",
+    "sources": [
+      "https://www.mountainproject.com/area/105792196/north-early-winter-spire",
+      "https://mountainproject.com/route/105792199/northwest-corner-aka-boving-pollack-route"
+    ],
+    "note": "MP's NEWS page lists 6 routes, and the only northwest-corner route is 'Northwest Corner (a.k.a. Boving-Pollack Route)', 5.9+, FA Paul Boving and Steve Pollack. The drop row's name is MP's spelling word for word. SummitPost search-result text dates the FA to 25 September 1976. Same line. The lengths differ (152 vs 180 m) and pitch counts vary 4-7 between publishers, so keep the keeper's locked values."
+  },
+  {
+    "item": 6,
+    "ids": ["wa_sunset_slab_booby_trap", "wa_booby_vinton"],
+    "verdict": "HOLD",
+    "final_action": "Do not merge yet. Leave the row until theCrag or a guidebook can be read, then merge (alt_name) or delete.",
+    "sources": [
+      "https://wenatcheeoutdoors.org/?p=1541",
+      "https://www.mountainproject.com/area/105874372/sunset-slab"
+    ],
+    "note": "No publisher found names a 'Booby Trap' at Peshastin. Wenatchee Outdoors lists Sunset Slab as Continuous BS, Green Velvet, National Velvet, Booby Vinton (5.5, bolts), Sunset and Sunrise. MP lists Booby Vinton too. Same slab, grade and style is suggestive, but nothing identifies Booby Trap as the same line, and the guidebook theCrag cites is unread. theCrag returned Forbidden in Chrome on the first page, so I stopped there. A merge is plausible, but the evidence does not meet 'clearly the same line'."
+  },
+  {
+    "item": 7,
+    "ids": ["wa_austrian_slab_wind_cave", "wa_austrian_slab_nirvana_ridge"],
+    "verdict": "CONFIRM",
+    "final_action": "MOVE wa_austrian_slab_wind_cave -> wa_sickle_slab; MOVE wa_austrian_slab_nirvana_ridge -> wa_grand_central_tower. Both rest on one source; no rename.",
+    "sources": [
+      "https://wenatcheeoutdoors.org/?p=1541",
+      "https://www.mountainproject.com/area/105874858/sickle-slab",
+      "https://www.mountainproject.com/route/105874902/windward-direct?print=1"
+    ],
+    "note": "Wind Cave: Wenatchee Outdoors lists '1) Windcave: 5.8, fixed gear and gear to 2\"' under Sickle Slab, which it calls the right side of the Austrian Slab crag. MP's Sickle Slab area page says it lies just right of Austrian Slab, but it lists only Windward Direct and never mentions Windcave. Nirvana Ridge: Wenatchee Outdoors lists '7) Nirvana Ridge: 5.9, bolts and gear to 2\"' under Grand Central Tower, Front Side, and warns that a 2010 rockslide probably affected the bottom of the route. MP, the AAJ and search found no second source for either. No source puts either route on Austrian Slab. Each move is to the only published location and is reversible, so I confirm it, but it is single-source, not two-source. The publisher spells it 'Windcave'; do not rename without a second source."
+  },
+  {
+    "item": 8,
+    "ids": ["wa_lower_castle_wild_traverse", "wa_bird_s_nest_overhang"],
+    "verdict": "HOLD",
+    "final_action": "Keep both; do not merge. Optionally clear the Wild Traverse FA, which looks copied from Bird's Nest and has no source.",
+    "sources": [
+      "https://www.mountainproject.com/route/109803443/birds-nest-overhang",
+      "https://www.mountainproject.com/area/105870900",
+      "https://www.thecrag.com/ko/climbing/united-states/central-cascade-mountains/area/14395891/guide",
+      "https://cascadeclimbers.com/forum/topic/67373-tr-castle-rock-tumwater-canyon-birdsnest-overhang-58-6202009"
+    ],
+    "note": "MP's Bird's Nest Overhang is 5.8, 100 ft, on the far right of the lower Castle. Its FA is Beckey and Hornbein 1957 (graded 5.3 A1), with an FFA by McCarthy and Langdon in 1968. It traverses left around the roof, and the page never says 'Wild Traverse'. MP's Lower Castle Rock page (24 routes) has no Wild Traverse. Correction to the dossier: theCrag's Lower Castle Rock guide does list 'Wild Traverse' at 5.9 III, one star, per search-result text (the page could not be fetched). Our row says 5.11 with no commitment. Nothing found ties Wild Traverse to Beckey and Hornbein, so the shared FA string is unsupported. The two are not shown to be the same line."
+  },
+  {
+    "item": 9,
+    "ids": ["wa_lower_castle_endgame", "wa_lower_castle_four_knights", "wa_lower_castle_king_s_indian", "wa_lower_castle_nimzo_indian"],
+    "verdict": "HOLD",
+    "final_action": "Keep, pending the guidebook. The source formation was not found online.",
+    "sources": [
+      "https://www.mountainproject.com/area/105870900",
+      "https://wenatcheeoutdoors.org/?p=1475",
+      "https://wenatcheeoutdoors.org/?p=1490",
+      "https://wenatcheeoutdoors.org/?p=1492"
+    ],
+    "note": "None of the four appear on MP's Lower Castle Rock list (24 routes), the Wenatchee Outdoors Lower Wall page (7 routes) or either Upper Wall page. Searches for each name, and for the FA 'Pete Doorish, Don Leonard, 1979', returned only chess material and no climbing publisher. The live rows carry commitment III-IV, and Endgame has 7 pitches. That cannot fit Lower Castle, whose routes run 1-2 pitches. They look like a set imported from another, larger formation, probably through theCrag's Lower Castle Rock list. Wild Traverse 5.9 III on that list is in the same style, so it may be the same import. I could not identify which crag."
+  },
+  {
+    "item": 10,
+    "ids": ["wa_north_early_winter_spire_christianson_roskelley", "wa_north_early_winter_spire_twitch_of_the_death_nerve"],
+    "verdict": "HOLD",
+    "final_action": "Keep, pending research; no publisher names either route.",
+    "sources": [
+      "https://www.mountainproject.com/area/105792196/north-early-winter-spire",
+      "https://wenatcheeoutdoors.org/?p=14661",
+      "https://publications.americanalpineclub.org/articles/12199116603/North-America-United-States-WashingtonCascade-Mountains-South-Early-Winter-Spire-North-Face-1988"
+    ],
+    "note": "MP's NEWS page lists 6 routes (Chockstone Route, Early Winter Couloir, Flycatcher Buttress, Labor Pains, Northwest Corner, West Face) and credits no Christianson, Roskelley or Greg Olson. The Wenatchee Outdoors Washington Pass page names neither. Search found no AAJ, Steph Abegg or cascadeclimbers mention of 'Twitch of the Death Nerve', a Christianson-Roskelley route, or a Greg Olson solo in 1987. I cannot name a spire or face for either."
+  },
+  {
+    "item": 11,
+    "ids": ["wa_lower_castle_zig_zag_iii", "wa_the_vertebrae"],
+    "verdict": "CHANGE",
+    "final_action": "Rename wa_the_vertebrae to 'The Vertebrae' (high confidence). Rename wa_lower_castle_zig_zag_iii to 'Zig Zag' (medium-low confidence). Do NOT write commitment 'III' without a source. The Zig Zag row may belong to the unsourced imported set in item 9.",
+    "sources": [
+      "https://www.mountainproject.com/route/108432142/the-vertebrae",
+      "https://www.mountainproject.com/area/105870900",
+      "https://wenatcheeoutdoors.org/?p=1475",
+      "https://www.thecrag.com/ko/climbing/united-states/central-cascade-mountains/area/14395891/guide"
+    ],
+    "note": "Vertebrae: MP's own title is 'The Vertebrae.' with the stray period, a typo our import copied. MP's FA string 'Yoder, Hoven, Christiansen. 1979' matches our row. theCrag (search-result text) gives 'The Vertebrae' with no period, and Wenatchee Outdoors misspells it 'The Vertabrae'. The name is 'The Vertebrae'. Zig Zag: no publisher was found listing a Zig Zag at Castle Rock. It is absent from MP Lower Castle, all three Wenatchee Castle Rock pages, and search; the only MP Zig-Zag 5.6 is on D'Arcy's Buttress, a different crag. 'Iii' is title-casing of the roman numeral III. In this suspect Lower Castle set, theCrag writes the commitment grade after the grade (Wild Traverse '5.9 III'), so III is most likely the commitment grade and not part of the name. It is unverified, so drop it from the name and do not store it as commitment."
+  }
+]

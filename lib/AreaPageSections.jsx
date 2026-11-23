@@ -16,6 +16,7 @@ import { DISC_COLORS } from "./disciplines";
 import { DISC_LABELS as DL, DISC_SHORT as DS } from "./discLabels";
 import { EditIconButton } from "./areaChrome";
 import { CHIP } from "./buttonStyles.js";
+import ActionIcon from "../src/components/ActionIcon.tsx";
 
 const card = C => ({ background: C.card, borderRadius: 12, padding: "12px 14px", border: "1px solid " + C.border, marginBottom: 12 });
 // THE AREA SHEET (owner, 2026-11-11: "create borders between each section so it reads nicely"): the area page's
@@ -81,7 +82,27 @@ export function loggedTopMonths(counts) {
 }
 
 // ── AREA FACTS ──
+// Each fact is a tile: an icon in a tinted square, the label, then the value (owner, 2026-11-23: "make the area facts
+// look nicer"). The icon and tint are keyed by the label and are decoration only -- the label still says what it is.
 // `loggedMonths`: the twelve counts from useAreaLoggedMonths, or null to draw no MOST LOGGED strip.
+const FACT_LOOK = { Rock: ["rock", "orange"], Faces: ["explore", "teal"], Elevation: ["mountain", "purple"], "Walk-in": ["clock", "green"], Parking: ["car", "amber"] };
+const factLbl = C => ({ fontSize: 10.5, fontWeight: 700, color: C.label, letterSpacing: 0.3, textTransform: "uppercase" });
+function FactTile({ label, value, C }) {
+  const [icon, tone] = FACT_LOOK[label] || ["info", "teal"];
+  // A long value (a parking lot described in a sentence) takes the whole row rather than wrapping into a tall, thin tile.
+  const wide = String(value).length > 22;
+  return <div style={{ gridColumn: wide ? "1 / -1" : undefined, display: "flex", alignItems: "center", gap: 10, minWidth: 0, padding: "9px 10px", borderRadius: 10, background: C.surface, border: "1px solid " + C.borderLight }}>
+    <span aria-hidden="true" style={{ width: 32, height: 32, flexShrink: 0, borderRadius: 9, display: "flex", alignItems: "center", justifyContent: "center", background: C[tone + "Bg"] }}><ActionIcon name={icon} size={17} color={C[tone]} /></span>
+    <div style={{ minWidth: 0 }}><div style={factLbl(C)}>{label}</div><div style={{ fontSize: 14, fontWeight: 700, color: C.text, lineHeight: 1.3, overflowWrap: "anywhere" }}>{value}</div></div>
+  </div>;
+}
+// A month strip with its heading on the left and what it says on the right, on the inset surface the tiles use.
+function MonthBlock({ title, summary, tone, first, children, C }) {
+  return <div style={{ marginTop: first ? 0 : 10, padding: "10px 12px", borderRadius: 10, background: C.surface, border: "1px solid " + C.borderLight }}>
+    <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", gap: 8, flexWrap: "wrap", marginBottom: 7 }}><span style={factLbl(C)}>{title}</span><span style={{ fontSize: 12.5, fontWeight: 700, color: C[tone] }}>{summary}</span></div>
+    {children}
+  </div>;
+}
 export function AreaFactsCard({ area, C, uElev, onEdit, loggedMonths }) {
   const facts = [];
   const logged = Array.isArray(loggedMonths) && loggedMonths.length === 12 && loggedMonths.some(n => Number(n) > 0) ? loggedMonths.map(Number) : null;
@@ -101,11 +122,11 @@ export function AreaFactsCard({ area, C, uElev, onEdit, loggedMonths }) {
   }
   return <div style={card(C)}>
     <div style={headRow}><Head C={C}>Area facts</Head>{onEdit ? <EditIconButton C={C} onClick={() => onEdit(facts.find(f => f[2]) ? facts.find(f => f[2])[2] : "rock")} title={"Edit the facts about " + area.name} /> : null}</div>
-    {facts.length ? <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "8px 12px" }}>
-      {facts.map(([l, v]) => <div key={l} style={{ minWidth: 0 }}><div style={{ fontSize: 10.5, fontWeight: 700, color: C.label, letterSpacing: 0.3, textTransform: "uppercase" }}>{l}</div><div style={{ fontSize: 13.5, fontWeight: 600, color: C.text, lineHeight: 1.35, overflowWrap: "anywhere" }}>{v}</div></div>)}
+    {facts.length ? <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))", gap: 8 }}>
+      {facts.map(([l, v]) => <FactTile key={l} label={l} value={v} C={C} />)}
     </div> : null}
-    {season ? <div style={{ marginTop: facts.length ? 10 : 0 }}><div style={{ fontSize: 10.5, fontWeight: 700, color: C.label, letterSpacing: 0.3, textTransform: "uppercase", marginBottom: 5 }}>{"Season · " + monthsLabel(season)}</div><MonthStrip months={season} C={C} /></div> : null}
-    {logged ? <div style={{ marginTop: facts.length || season ? 10 : 0 }}><div style={{ fontSize: 10.5, fontWeight: 700, color: C.label, letterSpacing: 0.3, textTransform: "uppercase", marginBottom: 5 }}>{"Most logged here · " + monthsLabel(loggedTopMonths(logged)) + " · " + loggedTotal.toLocaleString() + " log" + (loggedTotal !== 1 ? "s" : "")}</div><LoggedMonthStrip counts={logged} C={C} /></div> : null}
+    {season ? <MonthBlock title="Season" summary={monthsLabel(season)} tone="green" first={!facts.length} C={C}><MonthStrip months={season} C={C} /></MonthBlock> : null}
+    {logged ? <MonthBlock title="Most logged here" summary={monthsLabel(loggedTopMonths(logged)) + " · " + loggedTotal.toLocaleString() + " log" + (loggedTotal !== 1 ? "s" : "")} tone="blue" first={!facts.length && !season} C={C}><LoggedMonthStrip counts={logged} C={C} /></MonthBlock> : null}
   </div>;
 }
 

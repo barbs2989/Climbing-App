@@ -1,0 +1,972 @@
+[
+ {
+  "id": "ca_mount_perkins_west_slope",
+  "name": "West Slope",
+  "peakName": "Mount Perkins",
+  "state": "California",
+  "discipline": "scrambling",
+  "status": "stuck",
+  "peak": {
+   "id": "ca_mount_perkins",
+   "name": "Mount Perkins",
+   "lat": 36.9272,
+   "lng": -118.3815,
+   "elevation_ft": 12566,
+   "region": null,
+   "path": "usa.california.ca_high_sierra.ca_10_taboose_sawmill_baxter_passes.ca_mount_perkins"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": "A straightforward class 2 line starts just south of the summit and angles up the west face to a broad gully.",
+   "descent": null
+  },
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "SAWMILL PASS TH",
+    "lat": 36.938805,
+    "lng": -118.290212,
+    "km": 8.2
+   },
+   {
+    "src": "USFS",
+    "name": "TABOOSE PASS TH",
+    "lat": 37.009505,
+    "lng": -118.327312,
+    "km": 10.3
+   },
+   {
+    "src": "USFS",
+    "name": "Baxter Pass Trailhead",
+    "lat": 36.844705,
+    "lng": -118.297612,
+    "km": 11.8
+   },
+   {
+    "src": "USFS",
+    "name": "RED LAKE TH",
+    "lat": 37.035704,
+    "lng": -118.35896,
+    "km": 12.2
+   },
+   {
+    "src": "USFS",
+    "name": "Onion Valley Campground",
+    "lat": 36.772538,
+    "lng": -118.341244,
+    "km": 17.6
+   },
+   {
+    "src": "USFS",
+    "name": "BIRCH LAKE TH",
+    "lat": 37.087405,
+    "lng": -118.355412,
+    "km": 18
+   },
+   {
+    "src": "USFS",
+    "name": "BIG PINE CREEK SO FORK TH",
+    "lat": 37.124805,
+    "lng": -118.438913,
+    "km": 22.6
+   },
+   {
+    "src": "USFS",
+    "name": "Big Pine Creek North Fork Trail Trailhea",
+    "lat": 37.128105,
+    "lng": -118.427713,
+    "km": 22.7
+   }
+  ],
+  "lastAnswer": "nothing new. climber.org 2007/1580 (opened) climbed Perkins from Armstrong Canyon via the north ridge saddle (weak match, not the stored west-face line). Wikipedia redirect not read. Other starts (Sawmill, Taboose) unconfirmed. No page ties the west slope to a start."
+ },
+ {
+  "id": "wa_mount_rainier_north_mowich_icefall",
+  "name": "North Mowich Icefall",
+  "peakName": "Mount Rainier",
+  "state": "Washington",
+  "discipline": "mountaineering",
+  "status": "stuck",
+  "peak": {
+   "id": "wa_mount_rainier",
+   "name": "Mount Rainier",
+   "lat": 46.8528267,
+   "lng": -121.7604408,
+   "elevation_ft": 14406,
+   "region": "Washington",
+   "path": "usa.washington.wa_sw_tacoma.wa_southwest_cascades.wa_mount_rainier"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "siblingTrailheads": [
+   {
+    "route": "rainier_central_mowich_face",
+    "name": "Mowich Lake Trailhead"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "NPS",
+    "name": "4th Crossing Trailhead",
+    "lat": 46.79018,
+    "lng": -121.726702,
+    "km": 7.4
+   },
+   {
+    "src": "NPS",
+    "name": "Skyline Trailhead",
+    "lat": 46.786404,
+    "lng": -121.73639,
+    "km": 7.6
+   },
+   {
+    "src": "NPS",
+    "name": "Alta Vista Trailhead",
+    "lat": 46.784541,
+    "lng": -121.741355,
+    "km": 7.7
+   },
+   {
+    "src": "NPS",
+    "name": "Nisqually Vista Trailhead",
+    "lat": 46.785052,
+    "lng": -121.741604,
+    "km": 7.7
+   },
+   {
+    "src": "NPS",
+    "name": "Lower Lakes Trailhead",
+    "lat": 46.785505,
+    "lng": -121.733344,
+    "km": 7.8
+   },
+   {
+    "src": "NPS",
+    "name": "Comet Falls Trailhead",
+    "lat": 46.778817,
+    "lng": -121.783602,
+    "km": 8.4
+   },
+   {
+    "src": "NPS",
+    "name": "Narada Falls trailhead",
+    "lat": 46.775194,
+    "lng": -121.746062,
+    "km": 8.7
+   },
+   {
+    "src": "NPS",
+    "name": "Lower Lakes Trail",
+    "lat": 46.776604,
+    "lng": -121.737077,
+    "km": 8.7
+   }
+  ],
+  "lastAnswer": "nothing new. 3 searches; no page about a North Mowich Icefall route. AAJ page (opened) is the central Mowich Face from Westside Road St. Andrews Creek; the Mowich Lake lead is inferred from neighbouring routes only. Two starts plausible (Mowich Lake, Westside Road): not tied. SummitPost, Mountaineers 403."
+ },
+ {
+  "id": "ca_mount_reinstein_standard_route",
+  "name": "Standard route",
+  "peakName": "Mount Reinstein",
+  "state": "California",
+  "discipline": "scrambling",
+  "status": "stuck",
+  "peak": {
+   "id": "ca_mount_reinstein",
+   "name": "Mount Reinstein",
+   "lat": 37.0794,
+   "lng": -118.7384,
+   "elevation_ft": 12586,
+   "region": null,
+   "path": "usa.california.ca_western_sierra.ca_courtright_reservoir.ca_blackcap_basin_area.ca_mount_reinstein"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "South Lake Trailhead",
+    "lat": 37.169305,
+    "lng": -118.565813,
+    "km": 18.3
+   },
+   {
+    "src": "USFS",
+    "name": "SABRINA LAKE TH",
+    "lat": 37.213605,
+    "lng": -118.610013,
+    "km": 18.8
+   },
+   {
+    "src": "USFS",
+    "name": "LAMARCK LAKES TH",
+    "lat": 37.227305,
+    "lng": -118.627513,
+    "km": 19.2
+   },
+   {
+    "src": "USFS",
+    "name": "Maxson Trailhead",
+    "lat": 37.082845,
+    "lng": -118.960333,
+    "km": 19.7
+   },
+   {
+    "src": "USFS",
+    "name": "Baker/Green Lakes Th",
+    "lat": 37.186805,
+    "lng": -118.557713,
+    "km": 20
+   },
+   {
+    "src": "USFS",
+    "name": "North Lake  Trailhead",
+    "lat": 37.230685,
+    "lng": -118.616614,
+    "km": 20
+   },
+   {
+    "src": "USFS",
+    "name": "TYEE TH",
+    "lat": 37.195805,
+    "lng": -118.564713,
+    "km": 20.1
+   },
+   {
+    "src": "USFS",
+    "name": "Woodchuck Trailhead",
+    "lat": 36.992058,
+    "lng": -118.96353,
+    "km": 22.2
+   }
+  ],
+  "lastAnswer": "Wacziarg 2024 (opened) used Maxson trailhead, South Slope class 2, but it is one trip report; Burd blackcap_1 404. Search snippets (not opened) say Rancheria, Woodchuck, Florence Lake also used, Maxson called closest all-trail. Weak lean to Maxson (USFS 37.082845,-118.960333) but not tied as standard."
+ },
+ {
+  "id": "wa_mount_sefrit_southeast_ridge",
+  "name": "Southeast Ridge",
+  "peakName": "Mount Sefrit",
+  "state": "Washington",
+  "discipline": "mountaineering",
+  "status": "stuck",
+  "peak": {
+   "id": "wa_mount_sefrit",
+   "name": "Mount Sefrit",
+   "lat": 48.892,
+   "lng": -121.5942,
+   "elevation_ft": 7191,
+   "region": "Washington",
+   "path": "usa.washington.wa_northwest.wa_shuksan_baker_neighbors.wa_mount_sefrit"
+  },
+  "text": {
+   "approach": "Drive Mt. Baker Highway (SR 542) to Hannegan Pass Road (FS 32); at 1.3 miles bear left onto Ruth Creek Road and continue to a pullout near milepost 3, just past a creek flowing over a concrete weir (about 2,950 ft), well short of the road's end at Hannegan Campground. From the pullout, cross Ruth Creek (a log crossing has been used) and bushwhack roughly 45 minutes through slide alder and devil's club to the base of the Wall Street couloir.",
+   "approach_logistics": "{\"trailhead\":\"Ruth Creek Road pullout near milepost 3 (FS 32)\",\"trailheadDirection\":\"From a pullout near milepost 3 on Ruth Creek Road, just past a creek flowing over a concrete weir (~2,950 ft), off Hannegan Pass Road (FS 32) from the Mt. Baker Highway\"}",
+   "road": "{\"name\":\"Hannegan Pass Road (FS 32) / Ruth Creek Road\",\"status\":\"Gravel Forest Service road to Hannegan Campground/trailhead\",\"driveNote\":\"From Mt. Baker Hwy (SR 542) ~12.5 mi east of Glacier, turn onto Hannegan Pass Rd (FS 32); at 1.3 mi bear left onto Ruth Creek Rd and continue to a roadside pullout near milepost 3, just past a creek flowing over a concrete weir, across Ruth Creek from the Wall Street couloir; do not drive on to the road's end at Hannegan Campground.\",\"seasonalGate\":\"Snow-closed in winter/spring; check Mt. Baker-Snoqualmie NF alerts for opening date\"}",
+   "overview": "The classic north-side line: a steep snow gully ('Wall Street') gains the Northwest Glacier, which is crossed to a 6,500-ft saddle west of the summit, followed by a Class 2-3 scramble up the exposed southeast ridge to the top.",
+   "description": null,
+   "descent": "Reverse the southeast-ridge scramble to the 6,500-ft saddle, re-cross the Northwest Glacier, and plunge-step down the roughly 1,500-ft Wall Street couloir back to the bushwhack and Ruth Creek crossing."
+  },
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Hannegan Trailhead",
+    "lat": 48.910191,
+    "lng": -121.591986,
+    "km": 2
+   },
+   {
+    "src": "USFS",
+    "name": "Goat Mountain Trailhead",
+    "lat": 48.897718,
+    "lng": -121.645264,
+    "km": 3.8
+   },
+   {
+    "src": "USFS",
+    "name": "Nooksack Cirque Trailhead",
+    "lat": 48.894006,
+    "lng": -121.651015,
+    "km": 4.2
+   },
+   {
+    "src": "USFS",
+    "name": "Panorama Dome Trailhead",
+    "lat": 48.860749,
+    "lng": -121.656654,
+    "km": 5.7
+   },
+   {
+    "src": "USFS",
+    "name": "Picture Lake Path Trailhead",
+    "lat": 48.865889,
+    "lng": -121.676743,
+    "km": 6.7
+   },
+   {
+    "src": "USFS",
+    "name": "Bagley Lakes Trailhead",
+    "lat": 48.861566,
+    "lng": -121.682905,
+    "km": 7.3
+   },
+   {
+    "src": "USFS",
+    "name": "Twin Lakes Trailhead",
+    "lat": 48.951763,
+    "lng": -121.635355,
+    "km": 7.3
+   },
+   {
+    "src": "USFS",
+    "name": "Tomyhoi/Yellow Aster Butte Trailhead",
+    "lat": 48.943426,
+    "lng": -121.662795,
+    "km": 7.6
+   }
+  ],
+  "lastAnswer": "nothing new. Route's own text names a Ruth Creek Road pullout near milepost 3 (FS 32) before crossing Ruth Creek to Wall Street couloir. 1 search; SummitPost and CascadeClimbers 403, so no route page opened. A search snippet says a climber's log started from the Hannegan Pass trailhead, unopened, so the start is unconfirmed and a conflict is possible. USFS Hannegan Trailhead (48.910191,-121.591986) is the road end, not the pullout. No coordinate for the pullout."
+ },
+ {
+  "id": "wa_mount_stuart_gorillas_in_the_mist",
+  "name": "Gorillas in the Mist",
+  "peakName": "Mount Stuart",
+  "state": "Washington",
+  "discipline": "alpine",
+  "status": "stuck",
+  "peak": {
+   "id": "wa_mount_stuart",
+   "name": "Mount Stuart",
+   "lat": 47.4750106,
+   "lng": -120.9022286,
+   "elevation_ft": 9415,
+   "region": "Washington",
+   "path": "usa.washington.wa_centraleast.wa_stuart_range.wa_mount_stuart"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": "Crack and corner route. P1 (5.11- or 5.10+): hand and finger splitter from a small ledge to a broad ledge, then a mantle and a yellow corner. P2 (5.9): leftward through hanging corners and arete turns to a bolted ledge. P3 (5.10+): face holds to a 4 inch crack and a slung horn near big orange roofs, then diagonal cracks right; may be easier as two pitches. P4 (5.10-): finger cracks and stemming. P5 (5.10): rightward and upward, past a small tree. P6 (5th class): move the belay well right of a bi",
+   "description": null,
+   "descent": null
+  },
+  "siblingTrailheads": [
+   {
+    "route": "wa_gorillas_direct",
+    "name": "Esmeralda Basin Trailhead (North Fork Teanaway Rd)"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Esmeralda Trailhead",
+    "lat": 47.436706,
+    "lng": -120.936915,
+    "km": 5
+   },
+   {
+    "src": "USFS",
+    "name": "Iron Peak Trailhead",
+    "lat": 47.421583,
+    "lng": -120.937341,
+    "km": 6.5
+   },
+   {
+    "src": "USFS",
+    "name": "Stuart Lake Trailhead",
+    "lat": 47.527806,
+    "lng": -120.820515,
+    "km": 8.5
+   },
+   {
+    "src": "USFS",
+    "name": "Eightmile Trailhead",
+    "lat": 47.536016,
+    "lng": -120.814025,
+    "km": 9.5
+   },
+   {
+    "src": "USFS",
+    "name": "Beverly Bean Trailhead",
+    "lat": 47.389302,
+    "lng": -120.872266,
+    "km": 9.8
+   },
+   {
+    "src": "USFS",
+    "name": "Scatter Creek Trailhead",
+    "lat": 47.507206,
+    "lng": -121.059815,
+    "km": 12.4
+   },
+   {
+    "src": "USFS",
+    "name": "Fourth Of July Trailhead",
+    "lat": 47.578106,
+    "lng": -120.796015,
+    "km": 14
+   },
+   {
+    "src": "USFS",
+    "name": "Stafford Creek Trailhead",
+    "lat": 47.365806,
+    "lng": -120.803615,
+    "km": 14.2
+   }
+  ],
+  "lastAnswer": "Two starts reach the base: Esmeralda via Lake Ingalls and Goat Pass (stephabegg shows this approach to Stuart's base), or Stuart Lake via Stuart Pass. Opened MP route text (text only) and Alpinist newswire: neither names a trailhead. CascadeClimbers TRs 403. A search summary said the Ingalls Lake / Stuart Pass approach, unopened. Candidates: Esmeralda (47.436706,-120.936915), Stuart Lake (47.527806,-120.820515)."
+ },
+ {
+  "id": "wa_mount_stuart_stuart_range_traverse",
+  "name": "Stuart Range Traverse",
+  "peakName": "Mount Stuart",
+  "state": "Washington",
+  "discipline": "alpine",
+  "status": "stuck",
+  "peak": {
+   "id": "wa_mount_stuart",
+   "name": "Mount Stuart",
+   "lat": 47.4750106,
+   "lng": -120.9022286,
+   "elevation_ft": 9415,
+   "region": "Washington",
+   "path": "usa.washington.wa_centraleast.wa_stuart_range.wa_mount_stuart"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "siblingTrailheads": [
+   {
+    "route": "wa_gorillas_direct",
+    "name": "Esmeralda Basin Trailhead (North Fork Teanaway Rd)"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Esmeralda Trailhead",
+    "lat": 47.436706,
+    "lng": -120.936915,
+    "km": 5
+   },
+   {
+    "src": "USFS",
+    "name": "Iron Peak Trailhead",
+    "lat": 47.421583,
+    "lng": -120.937341,
+    "km": 6.5
+   },
+   {
+    "src": "USFS",
+    "name": "Stuart Lake Trailhead",
+    "lat": 47.527806,
+    "lng": -120.820515,
+    "km": 8.5
+   },
+   {
+    "src": "USFS",
+    "name": "Eightmile Trailhead",
+    "lat": 47.536016,
+    "lng": -120.814025,
+    "km": 9.5
+   },
+   {
+    "src": "USFS",
+    "name": "Beverly Bean Trailhead",
+    "lat": 47.389302,
+    "lng": -120.872266,
+    "km": 9.8
+   },
+   {
+    "src": "USFS",
+    "name": "Scatter Creek Trailhead",
+    "lat": 47.507206,
+    "lng": -121.059815,
+    "km": 12.4
+   },
+   {
+    "src": "USFS",
+    "name": "Fourth Of July Trailhead",
+    "lat": 47.578106,
+    "lng": -120.796015,
+    "km": 14
+   },
+   {
+    "src": "USFS",
+    "name": "Stafford Creek Trailhead",
+    "lat": 47.365806,
+    "lng": -120.803615,
+    "km": 14.2
+   }
+  ],
+  "lastAnswer": "nothing new. Opened MP page names no trailheads. Multi-peak traverse; start and finish not stated by any opened page."
+ },
+ {
+  "id": "wa_mount_triumph_west_route",
+  "name": "West Route",
+  "peakName": "Mount Triumph",
+  "state": "Washington",
+  "discipline": "scrambling",
+  "status": "stuck",
+  "peak": {
+   "id": "wa_mount_triumph",
+   "name": "Mount Triumph",
+   "lat": 48.706705,
+   "lng": -121.355985,
+   "elevation_ft": 7260,
+   "region": "North Cascades Core",
+   "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_picket_range.wa_mount_triumph"
+  },
+  "text": {
+   "approach": "Reached via the longer, rougher Triumph Pass climbers' route rather than the standard Thornton Lakes approach used for the Northeast Ridge; used far less often and much less documented than the NE Ridge approach.",
+   "approach_logistics": null,
+   "road": "{\"name\":\"Same regional access as Northeast Ridge (SR-20 corridor)\",\"status\":null,\"driveNote\":null,\"seasonalGate\":null}",
+   "overview": "The technically easiest way up Mount Triumph but the least climbed line: a long Class 4 route up the mountain's west side and south face to the southeast shoulder, reached via the much longer and rougher Triumph Pass climbers' route rather than the popular Thornton Lakes approach used for the Northeast Ridge.",
+   "description": null,
+   "descent": null
+  },
+  "siblingTrailheads": [
+   {
+    "route": "wa_mount_triumph_northeast_ridge",
+    "name": "Thornton Lakes Trailhead"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "NPS",
+    "name": "Gorge Overlook Trail Trailhead",
+    "lat": 48.699938,
+    "lng": -121.21076,
+    "km": 10.7
+   },
+   {
+    "src": "NPS",
+    "name": "Gorge Overlook Trail Trailhead",
+    "lat": 48.700343,
+    "lng": -121.209709,
+    "km": 10.8
+   },
+   {
+    "src": "USFS",
+    "name": "Baker River Trailhead",
+    "lat": 48.750499,
+    "lng": -121.555348,
+    "km": 15.4
+   },
+   {
+    "src": "USFS",
+    "name": "Lookout Mountain Trailhead",
+    "lat": 48.537501,
+    "lng": -121.291755,
+    "km": 19.4
+   },
+   {
+    "src": "USFS",
+    "name": "Watson Lakes Trailhead",
+    "lat": 48.674907,
+    "lng": -121.615318,
+    "km": 19.4
+   },
+   {
+    "src": "USFS",
+    "name": "Shannon Ridge Trailhead",
+    "lat": 48.767233,
+    "lng": -121.618094,
+    "km": 20.4
+   },
+   {
+    "src": "NPS",
+    "name": "Happy Creek Forest Walk Trailhead",
+    "lat": 48.728543,
+    "lng": -121.055832,
+    "km": 22.2
+   },
+   {
+    "src": "USFS",
+    "name": "Hidden Lake Trailhead",
+    "lat": 48.514161,
+    "lng": -121.221581,
+    "km": 23.6
+   }
+  ],
+  "lastAnswer": "Nothing new. Opened stevensong.com (no route text reached); cascadeclimbers 75198 returned 403. Search summary only (not opened, weak): SummitPost says leave Thornton Lakes Trail after about a mile for west face / NW ridge. Triumph Pass climbers route trailhead not confirmed."
+ },
+ {
+  "id": "ca_mount_young_standard_route",
+  "name": "Standard route",
+  "peakName": "Mount Young",
+  "state": "California",
+  "discipline": "scrambling",
+  "status": "stuck",
+  "peak": {
+   "id": "ca_mount_young",
+   "name": "Mount Young",
+   "lat": 36.5809,
+   "lng": -118.3277,
+   "elevation_ft": 13176,
+   "region": null,
+   "path": "usa.california.ca_high_sierra.ca_14_whitney_surrounding_peaks.ca_mount_young"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Whitney Portal Trailhead",
+    "lat": 36.586905,
+    "lng": -118.240112,
+    "km": 7.8
+   },
+   {
+    "src": "USFS",
+    "name": "MEYSAN LAKE TH",
+    "lat": 36.589789,
+    "lng": -118.230163,
+    "km": 8.8
+   },
+   {
+    "src": "USFS",
+    "name": "Whitney Portal NRT Trailhead",
+    "lat": 36.597405,
+    "lng": -118.186412,
+    "km": 12.7
+   },
+   {
+    "src": "USFS",
+    "name": "TUTTLE CREEK TH",
+    "lat": 36.553705,
+    "lng": -118.184212,
+    "km": 13.2
+   },
+   {
+    "src": "USFS",
+    "name": "Shepherd Pass Th",
+    "lat": 36.726905,
+    "lng": -118.278912,
+    "km": 16.8
+   },
+   {
+    "src": "USFS",
+    "name": "Cottonwood Lakes Trailhead",
+    "lat": 36.453362,
+    "lng": -118.169987,
+    "km": 20
+   },
+   {
+    "src": "USFS",
+    "name": "Cottonwood Pass Trailhead",
+    "lat": 36.448305,
+    "lng": -118.170612,
+    "km": 20.4
+   },
+   {
+    "src": "USFS",
+    "name": "Onion Valley Campground",
+    "lat": 36.772538,
+    "lng": -118.341244,
+    "km": 21.3
+   }
+  ],
+  "lastAnswer": "Burd hale_1 (opened) reaches Young only as a Hale traverse from Whitney Portal; not the Young standard route. Search snippets (not opened) list east slope from Arctic/Guitar Lake and south slope from JMT, i.e. Guitar Lake/High Sierra Trail starts. Weak lean Whitney Portal (USFS 36.586905,-118.240112); reverting to stuck."
+ },
+ {
+  "id": "wa_north_early_winter_spire_christianson_roskelley",
+  "name": "Christianson-Roskelley",
+  "peakName": "North Early Winters Spire",
+  "state": "Washington",
+  "discipline": "alpine",
+  "status": "stuck",
+  "peak": {
+   "id": "wa_north_early_winters_spire",
+   "name": "North Early Winters Spire",
+   "lat": 48.512935,
+   "lng": -120.655465,
+   "elevation_ft": 7760,
+   "region": "Washington",
+   "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_sub_wapass.wa_liberty_bell_group.wa_north_early_winters_spire"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "siblingTrailheads": [
+   {
+    "route": "wa_chockstone_route",
+    "name": "Blue Lake TH"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Hairpin",
+    "lat": 48.514336,
+    "lng": -120.642715,
+    "km": 1
+   },
+   {
+    "src": "USFS",
+    "name": "Blue Lake Trailhead",
+    "lat": 48.519016,
+    "lng": -120.674215,
+    "km": 1.5
+   },
+   {
+    "src": "USFS",
+    "name": "Burgundy Col",
+    "lat": 48.551406,
+    "lng": -120.630895,
+    "km": 4.6
+   },
+   {
+    "src": "USFS",
+    "name": "Bridge Creek Trailhead",
+    "lat": 48.504906,
+    "lng": -120.719115,
+    "km": 4.8
+   },
+   {
+    "src": "USFS",
+    "name": "Cutthroat Trailhead",
+    "lat": 48.556306,
+    "lng": -120.654715,
+    "km": 4.8
+   },
+   {
+    "src": "USFS",
+    "name": "Rainy Pass Trailhead (PCT North)",
+    "lat": 48.515306,
+    "lng": -120.736025,
+    "km": 5.9
+   },
+   {
+    "src": "USFS",
+    "name": "Heather Maple Pass Trailhead Rainy Pass ",
+    "lat": 48.516606,
+    "lng": -120.735815,
+    "km": 5.9
+   },
+   {
+    "src": "USFS",
+    "name": "Gilbert Trailhead",
+    "lat": 48.458443,
+    "lng": -120.565926,
+    "km": 9
+   }
+  ],
+  "lastAnswer": "Nothing new. Searches return no page naming this route; Blue Lake TH remains an unconfirmed inference."
+ },
+ {
+  "id": "wa_north_early_winter_spire_twitch_of_the_death_nerve",
+  "name": "Twitch of the Death Nerve",
+  "peakName": "North Early Winters Spire",
+  "state": "Washington",
+  "discipline": "alpine",
+  "status": "stuck",
+  "peak": {
+   "id": "wa_north_early_winters_spire",
+   "name": "North Early Winters Spire",
+   "lat": 48.512935,
+   "lng": -120.655465,
+   "elevation_ft": 7760,
+   "region": "Washington",
+   "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_sub_wapass.wa_liberty_bell_group.wa_north_early_winters_spire"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "siblingTrailheads": [
+   {
+    "route": "wa_chockstone_route",
+    "name": "Blue Lake TH"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Hairpin",
+    "lat": 48.514336,
+    "lng": -120.642715,
+    "km": 1
+   },
+   {
+    "src": "USFS",
+    "name": "Blue Lake Trailhead",
+    "lat": 48.519016,
+    "lng": -120.674215,
+    "km": 1.5
+   },
+   {
+    "src": "USFS",
+    "name": "Burgundy Col",
+    "lat": 48.551406,
+    "lng": -120.630895,
+    "km": 4.6
+   },
+   {
+    "src": "USFS",
+    "name": "Bridge Creek Trailhead",
+    "lat": 48.504906,
+    "lng": -120.719115,
+    "km": 4.8
+   },
+   {
+    "src": "USFS",
+    "name": "Cutthroat Trailhead",
+    "lat": 48.556306,
+    "lng": -120.654715,
+    "km": 4.8
+   },
+   {
+    "src": "USFS",
+    "name": "Rainy Pass Trailhead (PCT North)",
+    "lat": 48.515306,
+    "lng": -120.736025,
+    "km": 5.9
+   },
+   {
+    "src": "USFS",
+    "name": "Heather Maple Pass Trailhead Rainy Pass ",
+    "lat": 48.516606,
+    "lng": -120.735815,
+    "km": 5.9
+   },
+   {
+    "src": "USFS",
+    "name": "Gilbert Trailhead",
+    "lat": 48.458443,
+    "lng": -120.565926,
+    "km": 9
+   }
+  ],
+  "lastAnswer": "Nothing new. Searches return no page naming this route; Blue Lake TH remains an unconfirmed inference."
+ },
+ {
+  "id": "wa_north_early_winter_spire_vulcan_death_grip",
+  "name": "Vulcan Death Grip",
+  "peakName": "North Early Winters Spire",
+  "state": "Washington",
+  "discipline": "alpine",
+  "status": "stuck",
+  "peak": {
+   "id": "wa_north_early_winters_spire",
+   "name": "North Early Winters Spire",
+   "lat": 48.512935,
+   "lng": -120.655465,
+   "elevation_ft": 7760,
+   "region": "Washington",
+   "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_sub_wapass.wa_liberty_bell_group.wa_north_early_winters_spire"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "siblingTrailheads": [
+   {
+    "route": "wa_chockstone_route",
+    "name": "Blue Lake TH"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Hairpin",
+    "lat": 48.514336,
+    "lng": -120.642715,
+    "km": 1
+   },
+   {
+    "src": "USFS",
+    "name": "Blue Lake Trailhead",
+    "lat": 48.519016,
+    "lng": -120.674215,
+    "km": 1.5
+   },
+   {
+    "src": "USFS",
+    "name": "Burgundy Col",
+    "lat": 48.551406,
+    "lng": -120.630895,
+    "km": 4.6
+   },
+   {
+    "src": "USFS",
+    "name": "Bridge Creek Trailhead",
+    "lat": 48.504906,
+    "lng": -120.719115,
+    "km": 4.8
+   },
+   {
+    "src": "USFS",
+    "name": "Cutthroat Trailhead",
+    "lat": 48.556306,
+    "lng": -120.654715,
+    "km": 4.8
+   },
+   {
+    "src": "USFS",
+    "name": "Rainy Pass Trailhead (PCT North)",
+    "lat": 48.515306,
+    "lng": -120.736025,
+    "km": 5.9
+   },
+   {
+    "src": "USFS",
+    "name": "Heather Maple Pass Trailhead Rainy Pass ",
+    "lat": 48.516606,
+    "lng": -120.735815,
+    "km": 5.9
+   },
+   {
+    "src": "USFS",
+    "name": "Gilbert Trailhead",
+    "lat": 48.458443,
+    "lng": -120.565926,
+    "km": 9
+   }
+  ],
+  "lastAnswer": "Nothing new. Searches return no page naming this route; Blue Lake TH remains an unconfirmed inference."
+ }
+]

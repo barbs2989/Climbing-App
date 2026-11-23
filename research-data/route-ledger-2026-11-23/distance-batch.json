@@ -1,0 +1,69 @@
+{
+  "wa_mount_fernow_southeast_face": {
+    "area": "wa_mount_fernow",
+    "set": { "gain_ft": 7124 },
+    "ledger": [
+      {
+        "field": "dist_km",
+        "value": 12.2,
+        "method": "agree-2",
+        "level": "locked",
+        "evidence": [
+          { "url": "https://www.peakbagger.com/climber/ascent.aspx?aid=858863", "publisher": "Peakbagger", "fact": "Way in 7.6 mi / 12.2 km, Phelps Creek TH, route Leroy Creek/Gloomy Basin", "retrieved_at": "2026-11-23" },
+          { "measurement": "the route's stored recorded track (starts 98 m from the Phelps Creek trailhead pin, passes 4 m from the summit pin), trailhead to the summit-pin vertex", "fact": "11.9 km (2.5% off)", "retrieved_at": "2026-11-23" }
+        ]
+      },
+      {
+        "field": "gain_ft",
+        "value": 7124,
+        "method": "agree-2",
+        "level": "locked",
+        "evidence": [
+          { "url": "https://www.peakbagger.com/climber/ascent.aspx?aid=858863", "publisher": "Peakbagger", "fact": "Gain on way in 7124 ft, Phelps Creek TH", "retrieved_at": "2026-11-23" },
+          { "measurement": "the route's stored recorded track, trailhead to the summit-pin vertex, counted by lib/elevGain.js", "fact": "6854 ft (3.8% off)", "retrieved_at": "2026-11-23" }
+        ]
+      },
+      {
+        "field": "approach_loss_ft",
+        "value": null,
+        "method": "agree-2",
+        "level": "unconfirmed",
+        "evidence": [
+          { "url": "https://www.peakbagger.com/climber/ascent.aspx?aid=858863", "publisher": "Peakbagger", "fact": "Loss on way in 1297 ft", "retrieved_at": "2026-11-23" },
+          { "measurement": "the route's stored recorded track, trailhead to the summit-pin vertex", "fact": "1116 ft (14% off: outside the 10% tolerance, so not locked and not written)", "retrieved_at": "2026-11-23" }
+        ]
+      }
+    ],
+    "sql_fixes": [
+      { "table": "routes", "id": "wa_mount_fernow_southeast_face", "column": "dist_km", "from": 8, "to": 12.2,
+        "why": "8 km is shorter than the straight line from the Phelps Creek trailhead pin to the summit (9.1 km), so impossible; the route's own pins put the summit 7.8 mi out. Written by scripts/oneoff/fix-fernow-dist-km.mjs." }
+    ],
+    "notes": "A second Peakbagger log of the same line (aid 1981397, Phelps Creek Trailhead, Leroy Creek, 2022) gives 7.8 mi / 12.6 km and 6,846 ft on the way in: same publisher, so it does not add a source, but it agrees. Stored gain 8,100 ft matched neither (the 2017 log's whole-trip total is 8,421 ft). WTA's 22.0 mi 'one-way' for this hike describes a loop ending north of Phelps Creek Campground and was not used."
+  },
+  "wa_mount_adams_north_ridge": {
+    "area": "wa_mount_adams",
+    "ledger": [
+      {
+        "field": "gain_ft",
+        "value": 7691,
+        "method": "agree-2",
+        "level": "locked",
+        "evidence": [
+          { "url": "https://www.peakbagger.com/climber/ascent.aspx?aid=1213859", "publisher": "Peakbagger", "fact": "Gain on way in 7680 ft, Killen Creek Trailhead, route North Ridge", "retrieved_at": "2026-11-23" },
+          { "measurement": "the route's stored recorded track (starts 39 m from the Killen Creek trailhead pin, passes 10 m from the summit pin), trailhead to the summit-pin vertex", "fact": "7667 ft (0.3% off)", "retrieved_at": "2026-11-23" }
+        ]
+      },
+      {
+        "field": "dist_km",
+        "value": 5.6,
+        "method": "agree-2",
+        "level": "disputed",
+        "evidence": [
+          { "url": "https://www.peakbagger.com/climber/ascent.aspx?aid=1213859", "publisher": "Peakbagger", "fact": "Way in 10 mi / 16.1 km, Killen Creek Trailhead", "retrieved_at": "2026-11-23" },
+          { "measurement": "the route's stored recorded track, trailhead to the summit-pin vertex", "fact": "13.5 km (19% off the published figure; the stored 5.6 km is shorter than the 10.7 km straight line)", "retrieved_at": "2026-11-23" }
+        ]
+      }
+    ],
+    "notes": "Gain locks as it stands (7,691 ft). Distance stays open: the stored 5.6 km is impossible, but the only published one-way figure (16.1 km) and the track (13.5 km) are 19% apart. A 2026 log (aid 3204147) started 1 mile below the trailhead (8.8 mi, 7,574 ft) and was not used."
+  }
+}

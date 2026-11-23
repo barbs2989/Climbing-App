@@ -409,3 +409,87 @@ mention were then read.
     (Spanish Needle).
 - **Audit:** the rerun hit HTTP 500 twice and stopped under the throttle rule. Expected count is 151
   (154 less these 3); it has not been measured yet.
+
+### Round 11: agents under the two-source rule (2026-11-23)
+
+The open routes were sorted by what blocks them: 84 had no named start, 30 were multi-start, 28 had a
+named start but no point or only a weak identification, and 9 are Goodell Creek. The first two groups went
+to 11 Sonnet agents (`BRIEF8.md`, `chunks8/`, `out8/`). Each agent got the two-source rule and the list of
+sites that answer. Results: 14 found, 99 stuck.
+- **Written (10, unconfirmed, verified on re-read, `batch-r11.json`), each with two agreeing sources:**
+  - At official points:
+    - Mount Hale and Mount Newcomb Southwest Slope: Whitney Portal.
+    - Volunteer Peak: Robinson Creek Trailhead at Twin Lakes. The first name match was a Washington trailhead
+      with the same name; it was caught and corrected to the California point before writing.
+    - Black Giant West Slope: Lake Sabrina.
+    - Goat Mountain Eastern Route: Goat Mountain Trailhead.
+    - Iron Cap Northeast Shoulder: Necklace Valley.
+    - Hozomeen West Face: NPS Skyline II.
+  - At pins the catalog already stores:
+    - Liberty Bell "The Barber Pole": the SR-20 hairpin pullout, where 10 Liberty Bell east-face routes
+      start.
+    - Southeast Mox Beckey Route: the Depot Creek Road washout.
+    - Rainier East Success Couloir: Paradise (8 routes). This settles one of the owner's hand-placement
+      items.
+  - Every pin is 1 to 18 km from its peak.
+- **Found but not written:**
+  - A source disagrees: Angora (Lewis Camp vs Mineral King / Lloyd Meadows), Merced (Quartz Mountain vs
+    Glacier Point / Yosemite Valley), Rodgers (Rush Creek vs Agnew Meadows), Silver Peak (Lake Edison vs
+    Onion Spring).
+  - Start named, no placement: Cartago (only the driving-guide waypoint, with no mapped lot), Bolton Brown
+    (McMurry Meadows, nothing mapped), Mount Ballard (Slate Creek road gate; the road is mapped, the gate is
+    not, so it stays on the hand-place list).
+- **Audit, measured:** SUMMIT_ONLY 141, NO_SUMMIT 40, TRAILHEAD_AND_SUMMIT 1060.
+
+### Round 12: sources re-read under the two-source rule, then shared lots (2026-11-23)
+
+No agents this round. Two things were done from the database and pages already opened, plus two new searches.
+- **Two held routes now meet the two-source rule (`batch-r12.json`, official USFS points):**
+  - Angora Mountain: Lewis Camp. Two opened reports (climber.org 1996/89, themtsarecalling) start there. The
+    one different start (wacziarg, Lloyd Meadows) climbed a different line, a northwest-slope variant.
+  - Merced Peak: Quartz Mountain. Two opened reports (climber.org 2004/1314, themtsarecalling) start there.
+    The Glacier Point and Yosemite starts came only from Wikipedia and search summaries, for other lines.
+  - Still held: Rodgers (2 Rush Creek vs 1 Agnew Meadows; the official "Rush Creek Trailhead" is a different
+    Rush Creek about 30 km south) and Silver Peak (2 vs 1, no point for the Lake Edison start).
+- **Shared lots (`batch-r12b.json`, 10 routes).** For each stuck route, the other pinned routes on its peak
+  were listed (`scripts/sib12.mjs`). A route was pinned where every pinned route on the peak uses one lot and
+  no opened page names another start, or where routes on the same face share a lot:
+  - Chimney Rock Southeast Ridge and Southeast Shoulder: Pete Lake (6 routes; USFS point).
+  - Dragontail Boving Route: Stuart Lake (16 routes; USFS point).
+  - Big Snow Sasquatch's Breath: Dingford Creek (3 routes; USFS point; turns-all-year 2008 via Dingford).
+  - Little Big Chief Southwest Face: Dingford Creek (3 routes; USFS point).
+  - Red Mountain (Snoqualmie) East Face, East Ridge, Southeast Face: PCT Snoqualmie North lot (3 routes;
+    USFS point).
+  - Rainier North Mowich Icefall: Mowich Lake, where all four Mowich-side routes start (turns-all-year 2012
+    Mowich Face circuit).
+  - SEWS "East Buttress Direct": the SR-20 hairpin. Its twin "Direct East Buttress" (same line, 5.11a)
+    stores the hairpin and its own text says to park there. The two rows look like a duplicate; not merged.
+  - Not pinned: Castle Peak (an opened page names a Manning Park start), Middle Peak (a second lot, High
+    Bridge), Witches Tower and Mount Hinman (only 2 pinned siblings).
+- The Sierra Peaks pages on climber.org (`data/SierraPeaks/<region>/<n>.html`) were checked as a new source.
+  They give elevation and UTM only, no trailhead.
+- **Audit, measured:** SUMMIT_ONLY 129, NO_SUMMIT 40, TRAILHEAD_AND_SUMMIT 1072.
+
+### Round 13: OSM placement and climber.org report headers (2026-11-23)
+
+No agents. Two written (`batch-r13.json`, unconfirmed, verified on re-read):
+- Spanish Mountain North Ridge: Crown Valley Trailhead, placed at OSM node 1527888043 (`highway=trailhead`,
+  name "Rancheria Trailhead", alt_name "Crown Valley Trailhead"; confirmed through the OSM API). Two
+  independent reports start there and take the saddle north of Geraldine Lakes (Burd spanish_1, climber.org
+  2006/1581). The one other report (1995/68) climbed the west side from the Spanish OHV trail.
+- Dicks Peak: Glen Alpine Trailhead (USFS point). Four reports by four authors start there (climber.org
+  2009/1713, 2003/1136, 2001/833, 2001/745); one (2001/780) started at Eagle Falls.
+
+`scripts/cr2.mjs` reads each stuck California peak's climber.org reports and prints the report's own
+"Peaks:" and "Trailhead:" header lines. Held after reading:
+- Mount Florence: our peak is the Yosemite one (37.74 N). Most climber.org reports are for Florence Peak
+  in Mineral King, a different peak; only one report is about ours.
+- Split starts: Trojan and Barnard (George Creek vs Shepherd Pass/Cottonwood), Gemini (Bear Creek
+  Diversion Dam vs Florence Lake), Electra, Pyramid Peak South (Road's End vs Taboose Pass), Moses, Silver
+  Peak (Lake Edison 2 vs Onion Springs 1; the Wrights Lake and Squaw Valley reports are other Silver Peaks).
+- No placement: Pinchot (the climber.org driving GPX has ARMSCN, Armstrong Canyon road end
+  36.94505,-118.35353, but OSM maps no lot there), Bolton Brown (Burd parked in McMurry Meadows on the road,
+  not at the mapped Birch Lake Trailhead), Smith, Stewart, Earl and Persis (no mapped lot near the
+  published points), Sugarloaf (OSM lot 700 m from the published point, and the Route 27 start is still
+  named).
+- **Audit, measured:** SUMMIT_ONLY 127, NO_SUMMIT 40, TRAILHEAD_AND_SUMMIT 1074.

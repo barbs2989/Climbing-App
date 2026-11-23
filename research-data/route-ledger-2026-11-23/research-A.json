@@ -1,0 +1,52 @@
+{
+ "wa_ridge_traverse_from_east_fury": {
+  "claims": [
+   {"field": "distance_stated_segments", "value_as_stated": "20 km (Luna Camp back to Big Beaver camp); 10 km final stretch back toward Ross Dam", "from_trailhead": "Ross Dam", "to": "camp", "boat_leg": "unknown", "url": "https://stevensong.com/mount-fury-east-west", "publisher": "stevensong.com (trip report blog)", "quote_of_fact": "20 km dash back to Big Beaver camp", "retrieved_at": "2026-11-23"}
+  ],
+  "trailhead_note": "Sources (Mountaineers, blog) start from Ross Dam / Big Beaver Trail; no published trailhead-to-summit one-way figure found. Mountaineers page lists approaches: Big Beaver Trail to Access Creek or Eiley-Wiley Ridge; Little Beaver to Whatcom Peak/Perfect Pass; Hannegan Pass to Easy Ridge/Perfect Pass; Terror Basin to Picket Pass. Stored dist 0.5 km is plainly the East-to-West Fury traverse only, not a trailhead walk.",
+  "other_facts": [
+   {"fact": "From Luna Col, ridge to Fury is Class 3 with many short ups and downs, then heather slopes traverse", "url": "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/mount-fury-southeast-glacier"},
+   {"fact": "Mount Fury routes: snow/glacier 20 to 40 degrees and Class 3 to Class 5 rock; all approaches cross-country", "url": "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/mount-fury-southeast-glacier"},
+   {"fact": "Peakbagger: Mount Fury West Peak pid 1654, 8302 ft; East Peak pid 1655, 8326 ft; North Buttress listed for a 2004 ascent", "url": "https://www.peakbagger.com/climber/PeakAscents.aspx?pid=1654"}
+  ],
+  "not_found": ["Peakbagger Fury ascent list had no Gain/Mi data", "Peakbagger then served a Cloudflare challenge; stopped using it", "SummitPost 403 (not opened)"]
+ },
+ "wa_the_devils_club": {
+  "claims": [
+   {"field": "dist_one_way", "value_as_stated": "15.0 miles, one-way", "from_trailhead": "Chilliwack Lake Road (Canada, 48.9472,-121.2569)", "to": "summit (Southeast Mox Peak)", "boat_leg": "none", "url": "https://www.wta.org/go-hiking/hikes/mox-peaks-southeast-peak", "publisher": "WTA", "quote_of_fact": "15.0 miles, one-way", "retrieved_at": "2026-11-23"},
+   {"field": "gain_ft_one_way", "value_as_stated": "7,400 feet", "from_trailhead": "Chilliwack Lake Road (Canada)", "to": "summit", "boat_leg": "none", "url": "https://www.wta.org/go-hiking/hikes/mox-peaks-southeast-peak", "publisher": "WTA", "quote_of_fact": "ELEVATION GAIN 7,400 feet", "retrieved_at": "2026-11-23"}
+  ],
+  "trailhead_note": "WTA's trailhead for Southeast Mox is Chilliwack Lake Road on the Canadian side, NOT Ross Dam. Our stored Ross Dam pin is a different trailhead; the 16.1 km (10 mi) stored distance does not match either the WTA 15 mi or the Ross Lake dock route. Search result only (not opened page): a Mountain Project photo caption puts Little Beaver Trail at about 4 mi from Perry Creek Shelter to the Ross Lake dock.",
+  "other_facts": [
+   {"fact": "WTA: route is Class 5 or above with exposed climbing; highest point 8,504 ft; difficulty Hard", "url": "https://www.wta.org/go-hiking/hikes/mox-peaks-southeast-peak"},
+   {"fact": "North Cascades NP backcountry camping permit required: $10 per person plus $6 reservation fee", "url": "https://www.wta.org/go-hiking/hikes/mox-peaks-southeast-peak"}
+  ],
+  "not_found": ["Mountain Project / Mountaineers pages with Little Beaver distance not opened", "stevensong Hard Mox page opened but gave no usable one-way figure (Depot Creek approach, ~2 km sidehill)"]
+ },
+ "wa_castle_peak_pasayten_scramble": {
+  "claims": [
+   {"field": "dist_one_way_to_castle_pass_trail", "value_as_stated": "18.9 miles, one-way", "from_trailhead": "not named (WTA: no trailhead; access from PCT or Ross Lake Recreation Area)", "to": "Castle Pass (not the summit)", "boat_leg": "unknown", "url": "https://www.wta.org/go-hiking/hikes/castle-pass", "publisher": "WTA", "quote_of_fact": "18.9 miles, one-way; gain 5,400 feet; highest point 6,600 ft", "retrieved_at": "2026-11-23"},
+   {"field": "gain_ft_one_way_to_castle_pass", "value_as_stated": "5,400 feet", "from_trailhead": "not named", "to": "Castle Pass", "boat_leg": "unknown", "url": "https://www.wta.org/go-hiking/hikes/castle-pass", "publisher": "WTA", "quote_of_fact": "ELEVATION GAIN 5,400 feet", "retrieved_at": "2026-11-23"},
+   {"field": "gain_ft_total_one_way", "value_as_stated": "4448 ft, Gain on way in; Start Trailhead 3900 ft (trailhead not named)", "from_trailhead": "unnamed, 3900 ft", "to": "summit", "boat_leg": "unknown", "url": "https://www.peakbagger.com/climber/ascent.aspx?aid=285244", "publisher": "Peakbagger (user ascent 2001-07-01)", "quote_of_fact": "Gain on way in: 4448 ft", "retrieved_at": "2026-11-23"},
+   {"field": "gain_round_trip", "value_as_stated": "8405 ft gain, 35.9 mi (2023 ascent by Black, Mike; list row only, ascent page blocked by Cloudflare, trailhead not seen)", "from_trailhead": "unknown", "to": "summit", "boat_leg": "unknown", "url": "https://www.peakbagger.com/climber/PeakAscents.aspx?pid=1679", "publisher": "Peakbagger", "quote_of_fact": "8405 / 35.9", "retrieved_at": "2026-11-23"}
+  ],
+  "trailhead_note": "WTA Castle Peak page (coords 48.9822,-120.8607) says it can be reached from the north (provincial park), the PCT on the west, or Freezeout Creek on the east; no distance. Castle Pass trail (#749) runs from the PCT at Castle Pass west to the Lightning Creek Trail junction in Ross Lake NRA. Trail is closed due to the Ptarmigan Fire (WTA note dated 9.14.26). Whether the 18.9 mi starts at Ross Lake or the PCT is not stated; the PCT/Harts Pass end and Ross Lake end are both candidates, so it is not safe to assign it to our Ross Dam pin.",
+  "other_facts": [
+   {"fact": "Castle Pass trail not maintained by the Forest Service since 2006, many downed trees, impassable to stock", "url": "https://www.wta.org/go-hiking/hikes/castle-pass"},
+   {"fact": "Castle Peak highest point 8,306 ft per WTA; Peakbagger lists 8348 ft", "url": "https://www.wta.org/go-hiking/hikes/castle-peak"},
+   {"fact": "Castle Pass trail: Wilderness permit self-issue at trailhead, no fee; Ross Lake access no parking fee; NW Forest Pass for Pasayten parking", "url": "https://www.wta.org/go-hiking/hikes/castle-pass"},
+   {"fact": "Search-result summary only (page not opened): Castle Pass to summit is 1.3 mi, 1,187 ft gain via west ridge", "url": "https://outdoorproject.com/node/2974"}
+  ],
+  "not_found": ["Peakbagger ascent 2338179 blocked by Cloudflare challenge", "SummitPost 403 / not opened"]
+ },
+ "wa_castle_peak_pasayten_south_route": {
+  "claims": [
+   {"field": "dist_one_way_to_castle_pass_trail", "value_as_stated": "18.9 miles, one-way (trailhead not named by WTA)", "from_trailhead": "not named", "to": "Castle Pass", "boat_leg": "unknown", "url": "https://www.wta.org/go-hiking/hikes/castle-pass", "publisher": "WTA", "quote_of_fact": "18.9 miles, one-way", "retrieved_at": "2026-11-23"}
+  ],
+  "trailhead_note": "No page I opened gives a Harts Pass to Castle Peak distance. Search-result summaries only (not opened, not evidence): PCT Harts Pass to Holman Pass about 13.3 mi, 1,929 ft; Harts Pass trailhead 6,178 ft. Peakbagger Castle ascent 2001 gain on way in 4448 ft from a 3900 ft trailhead, which cannot be Harts Pass (6,178 ft), so it is likely the Ross Lake or Lightning Creek side.",
+  "other_facts": [
+   {"fact": "Castle Peak can be reached from the PCT on the west", "url": "https://www.wta.org/go-hiking/hikes/castle-peak"}
+  ],
+  "not_found": ["No opened page gives Harts Pass to Castle Peak mileage"]
+ }
+}
