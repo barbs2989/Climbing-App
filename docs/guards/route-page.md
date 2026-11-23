@@ -1196,6 +1196,11 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     track question.
   - Section 4 carries its own proof it can fail: the same jumpy recording under the flat threshold
     must read over 1.5 times the real climb.
+  - Section 6 (2026-11-23): a track that starts more than 2 km from the trailhead pin prints no Gain
+    and Loss (`RouteMapProfile` reads `trackCoverage`'s `missingApproach` and hands `partial` to
+    `ElevChart`). A study of the 63 profiles still far from their headline found 21 whose track
+    starts over 1.5 km from the pin; the 2 km bar is `trackCoverage`'s existing one, not a new number.
+    It cannot see a recording that also goes over other peaks, or one that runs downhill.
   - Trap met: a sharp summit turnaround is itself a departure from the local average, so even a
     perfect recording's threshold lifts to 20-30 ft for a few samples at the top. The guard asserts
     that honestly (10 ft on the slopes, under 30 at the turnaround) and that the totals stay exact.
