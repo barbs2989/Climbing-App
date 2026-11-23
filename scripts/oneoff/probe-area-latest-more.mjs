@@ -41,9 +41,11 @@ await wait(2500);
 // Drill the area browser by row name.
 const clickRow = (name) => page.evaluate((n) => {
   const norm = (s) => (s || "").replace(/\s+/g, " ").trim();
-  const els = [...document.querySelectorAll("[role=button], button, a")]
-    .filter((e) => { for (let p = e; p; p = p.parentElement) { const q = getComputedStyle(p).position; if (q === "fixed" || q === "sticky") return false; } return true; })
-    .filter((e) => norm(e.innerText).startsWith(n));
+  // Rows in the page first: on a phone the fixed bottom bar must not take the click. The website draws
+  // an area's sub-areas in a fixed side panel, so when the page has no such row, that panel's row is it.
+  const pinned = (e) => { for (let p = e; p; p = p.parentElement) { const q = getComputedStyle(p).position; if (q === "fixed" || q === "sticky") return true; } return false; };
+  const all = [...document.querySelectorAll("[role=button], button, a")].filter((e) => norm(e.innerText).startsWith(n));
+  const els = all.some((e) => !pinned(e)) ? all.filter((e) => !pinned(e)) : all;
   if (!els.length) return false;
   els.sort((a, b) => norm(a.innerText).length - norm(b.innerText).length);
   els[0].click();
@@ -73,7 +75,10 @@ ok("four rows before the dropdown", (await rowsNow()) === 4, (await rowsNow()) +
 ok("four selects are offered", (await card.locator("select").count()) === 4);
 ok("the dropdown counts the rest", /See 12 more/.test(await text()), ((await text()).match(/See \d+ more/) || ["none"])[0]);
 const toggle = card.locator("button[aria-expanded]");
-ok("the dropdown is 44px tall and says it is closed", (await toggle.boundingBox()).height >= 44 && (await toggle.getAttribute("aria-expanded")) === "false");
+// 44px is the phone's touch target; the website draws the same control at 38px on purpose (lib/wideLayout.js).
+const minTall = WIDTH < 700 ? 44 : 38;
+const tall = (await toggle.boundingBox()).height;
+ok("the dropdown is " + minTall + "px tall or more and says it is closed", tall >= minTall && (await toggle.getAttribute("aria-expanded")) === "false", Math.round(tall) + "px");
 const firstNewest = (await dates())[0];
 ok("newest first by default", /Nov 15/.test(firstNewest), firstNewest);
 
