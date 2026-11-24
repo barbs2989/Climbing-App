@@ -92,14 +92,14 @@ export default function RankAreaPicker({real,uid,ranked,trail,browseId,onBrowse,
   if(!open)return <div style={{display:"flex",alignItems:"center",gap:10,background:C.card,border:"1px solid "+C.border,borderRadius:12,padding:"10px 12px"}}>
     <div style={{alignSelf:"flex-start",marginTop:19,flexShrink:0,display:"flex"}}><ActionIcon name="pin" size={18} color={C.amber}/></div>
     <div style={{flex:1,minWidth:0}}>
-      <div style={{fontSize:10.5,fontWeight:800,color:C.textMuted,letterSpacing:0.4,textTransform:"uppercase"}}>Ranking in</div>
+      <div style={{fontSize:10.5,fontWeight:800,color:C.label,letterSpacing:0.4,textTransform:"uppercase"}}>Ranking in</div>
       <div aria-current="location" style={{fontSize:16,fontWeight:800,color:C.amber,overflowWrap:"anywhere",lineHeight:1.25}}>{ranked.name||"this area"}</div>
       {trail.length?<div style={{fontSize:11.5,color:C.textMuted,overflowWrap:"anywhere",lineHeight:1.35,marginTop:1}}>{trail.join(" › ")}</div>:null}
     </div>
     <button ref={changeBtn} onClick={()=>onBrowse(ranked.id)} aria-label="Change the area these rankings cover" style={{minHeight:44,minWidth:72,padding:"0 14px",flexShrink:0,borderRadius:10,border:"1px solid "+C.border,background:C.surface,color:C.blue,fontSize:13,fontWeight:700,cursor:"pointer"}}>Change</button>
   </div>;
 
-  const head: CSSProperties={fontSize:11,fontWeight:800,color:C.textMuted,letterSpacing:0.4,textTransform:"uppercase",margin:"12px 0 6px"};
+  const head: CSSProperties={fontSize:11,fontWeight:800,color:C.label,letterSpacing:0.4,textTransform:"uppercase",margin:"12px 0 6px"};
   const box: CSSProperties={background:C.card,border:"1px solid "+C.border,borderRadius:14,padding:"12px 14px"};
   const card: CSSProperties={textAlign:"left",minWidth:0,minHeight:56,background:C.card,border:"1px solid "+C.border,borderRadius:12,padding:"10px 12px",cursor:"pointer",color:C.text,fontFamily:"inherit"};
   const noun=!lvl?"country":subdivisionNoun(lvl);
