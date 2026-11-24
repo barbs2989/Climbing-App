@@ -1,0 +1,84 @@
+{
+ "co_atlantic_peak_north_ridge": {
+  "area": "co_atlantic_peak",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "McCullough Gulch Trailhead",
+    "trailheadLat": 39.39851,
+    "trailheadLng": -106.06926
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "McCullough Gulch Trailhead",
+     "trailheadLat": 39.39851,
+     "trailheadLng": -106.06926
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.climb13ers.com/colorado-13ers/un13841--atlantic-peak",
+      "fact": "McCullough Gulch TH 39.39851,-106.06926",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://thenextsummit.org/colorado-13ers/atlantic-peak-route-guide/",
+      "fact": "Start: McCullough Gulch Trailhead",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "research",
+    "fact": "route page and a second guide agree on the start; single-publisher coordinate (owner-accepted 2026-11-23)"
+   },
+   "chunk": "round16"
+  }
+ },
+ "ca_mount_pinchot_east_ridge_from_armstrong_canyon": {
+  "area": "ca_mount_pinchot",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Armstrong Canyon Road End",
+    "trailheadLat": 36.94505,
+    "trailheadLng": -118.35353
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Armstrong Canyon Road End",
+     "trailheadLat": 36.94505,
+     "trailheadLng": -118.35353
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://climber.org/driving/images/sawmill.gpx",
+      "fact": "Armstrong Canyon Road End 36.94505,-118.35353",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://climber.org/reports/2008/1680.html",
+      "fact": "Start: Armstrong Canyon",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "research",
+    "fact": "one route-specific report, no opened source names another start; single-publisher coordinate (owner-accepted 2026-11-23)"
+   },
+   "chunk": "round16"
+  }
+ }
+}
