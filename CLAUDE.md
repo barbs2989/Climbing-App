@@ -50,6 +50,7 @@ npm run check:no-nul  # no source file git would treat as BINARY, so diffs stay 
 npm run check:no-secrets # no Supabase service key, service_role JWT, or literal anon key / project URL in source (in build)
 npm run check:script-roots # no script reads the app files of somebody ELSE's worktree (in build)
 npm run check:dup-attrs # a declaration written TWICE: the later wins, the earlier is dead (in build)
+npm run check:field-outline # every text field (input, textarea, select) is outlined in C.field, never C.border — its outline is what shows where it is, so it needs 3:1 (in build)
 npm run check:no-module-scope-core-reads # a component core imports BACK must not read core at module scope — the bundle throws before React mounts (in build)
 npm run check:bottom-panels # a fixed panel at the bottom must RESERVE the space it covers (in build)
 npm run check:hooks# React hooks-rules violations (runs in build + CI)
