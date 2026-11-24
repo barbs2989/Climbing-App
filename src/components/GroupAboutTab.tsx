@@ -17,7 +17,7 @@ interface GroupAboutTabGroup {
   /** The catalog area it climbs from (0396), and that area's name. */
   areaId?: string | null;
   areaName?: string;
-  /** The state it is filed under (0511), and its area's state when the browser placed it itself. */
+  /** The state it is filed under (0516), and its area's state when the browser placed it itself. */
   region?: string | null;
   areaRegion?: string;
   disciplines?: string[];
@@ -46,7 +46,7 @@ interface GroupAboutTabForm {
   location: string;
   areaId: string | null;
   areaName: string;
-  /** Where it climbs (0511): the picked area's state, or a typed place and its state. */
+  /** Where it climbs (0516): the picked area's state, or a typed place and its state. */
   areaRegion: string;
   placeMode: string;
   placeText: string;

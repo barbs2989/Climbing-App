@@ -1,4 +1,4 @@
--- 0511 — A GROUP'S STATE COMES FROM THE AREA IT CLIMBS AT, not only from what was typed.
+-- 0516 — A GROUP'S STATE COMES FROM THE AREA IT CLIMBS AT, not only from what was typed.
 --
 -- 0487 derived `groups.region` (the state chip Discover files a group under) from the free-text
 -- `location` alone. A group typed as "Squamish" or "North Cascades" names no state, so it was

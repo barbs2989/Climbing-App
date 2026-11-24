@@ -27,7 +27,7 @@ export interface GroupPlaceFieldsProps {
 
 const LINK: CSSProperties = { display: "block", minHeight: 44, padding: "10px 0", background: "none", border: "none", color: C.blue, fontSize: 12.5, fontWeight: 700, cursor: "pointer", textAlign: "left" };
 
-/* WHERE A GROUP CLIMBS, asked first and as a place the app knows (0511). A catalog area gives the
+/* WHERE A GROUP CLIMBS, asked first and as a place the app knows (0516). A catalog area gives the
    group a state (Discover's chips) and a point (Near a place) that no typing can get wrong; a place
    the catalog does not hold is still allowed, but with its state or province picked from a list, so
    "Squamish" is filed under British Columbia rather than under Other. */

@@ -1,4 +1,4 @@
-// One-off: does a group's STATE come from the catalog area it climbs at (0511)?
+// One-off: does a group's STATE come from the catalog area it climbs at (0516)?
 //
 // Replays every migration into PGlite (no network, no production), builds canada > bc > Squamish and
 // canada > nt > a crag, then writes groups as the owner would and reads them back:
@@ -8,10 +8,10 @@
 //   3. a group with no area that typed only "Squamish" is still Other: the text names no state;
 //   4. a client that writes area_region / area_place itself is overwritten by the trigger;
 //   5. clearing the area falls back to the typed text;
-//   6. a Northwest Territories area files its group there (place_regions() lacked NT before 0511);
+//   6. a Northwest Territories area files its group there (place_regions() lacked NT before 0516);
 //   7. discover_groups, called as another climber, lists by those regions.
-// Run it WITHOUT 0511 in supabase/migrations and steps 1, 4, 6 and 7 fail: that is the bug.
-//   node scripts/oneoff/probe-group-region-from-area-0511.mjs
+// Run it WITHOUT 0516 in supabase/migrations and steps 1, 4, 6 and 7 fail: that is the bug.
+//   node scripts/oneoff/probe-group-region-from-area-0516.mjs
 import fs from "node:fs";
 import path from "node:path";
 
@@ -19,7 +19,7 @@ const ROOT = process.cwd();
 const DIR = path.join(ROOT, "supabase", "migrations");
 let failures = 0, passes = 0;
 const ok = (c, m) => { console.log((c ? "  ok    " : "  FAIL  ") + m); if (c) passes++; else failures++; };
-const dead = (m) => { console.error(`probe-group-region-from-area-0511 FAILED: ${m}. Nothing below was checked.`); process.exit(1); };
+const dead = (m) => { console.error(`probe-group-region-from-area-0516 FAILED: ${m}. Nothing below was checked.`); process.exit(1); };
 
 let PGlite, ltree, pg_trgm, pgcrypto, uuid_ossp;
 try {
@@ -49,8 +49,8 @@ for (const f of files) {
   try { await db.exec("begin"); await db.exec(fs.readFileSync(path.join(DIR, f), "utf8")); await db.exec("commit"); }
   catch (e) { await db.exec("rollback").catch(() => {}); dead(`${f} did not replay: ${e.message}`); }
 }
-const has = files.some((f) => f.startsWith("0511_"));
-console.log(`probe-group-region-from-area-0511: ${files.length} migrations replayed${has ? "" : " (0511 is NOT among them: expect steps 1, 4, 6 and 7 to fail)"}.`);
+const has = files.some((f) => f.startsWith("0516_"));
+console.log(`probe-group-region-from-area-0516: ${files.length} migrations replayed${has ? "" : " (0516 is NOT among them: expect steps 1, 4, 6 and 7 to fail)"}.`);
 
 const O = "00000000-0000-4000-8000-0000000000a1", V = "00000000-0000-4000-8000-0000000000b2";
 const G1 = "00000000-0000-4000-8000-000000000001", G2 = "00000000-0000-4000-8000-000000000002", G3 = "00000000-0000-4000-8000-000000000003", G4 = "00000000-0000-4000-8000-000000000004";
@@ -105,5 +105,5 @@ async function discover(region, q = "") {
 { const g = await discover("Other"); ok(g === "Probe Typed Bare", `7: Other lists only the group whose place names no state ("${g}")`); }
 { const g = await discover(null, "squamish bc"); ok(g === "Probe Picked,Probe Typed With State", `7: searching "squamish bc" finds both ("${g}")`); }
 
-console.log(`\nprobe-group-region-from-area-0511: ${passes} ok, ${failures} failed.`);
+console.log(`\nprobe-group-region-from-area-0516: ${passes} ok, ${failures} failed.`);
 process.exit(failures ? 1 : 0);
