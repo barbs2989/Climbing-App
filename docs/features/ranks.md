@@ -75,7 +75,7 @@ Every number for a real climber comes from `leaderboard()` on the server; the cl
   `scripts/oneoff/probe-ranks-0379.sql` (130 test climbers: exactly the 100 that belong come back; the caller reads #121 of 131).
 - **Which logs count**: `rankable_logs()` (0203/0208/0269/0504) — catalog routes only, no future dates, one log per route per
   day, 30 a day, a climb a tagged partner denied is dropped; each log is tiered confirmed (1.0) / evidence (0.75) /
-  self (0.5). **Confirmed** = a tagged partner said they were there; ONE partner is enough (0504, owner 2026-11-23 — 0208 to 0504 needed two different partners). That partner must be an accepted friend, unblocked, with an account 30+ days old and a confirmed email, and any one partner backs at most 12 of your climbs a calendar year. A **Conditions** tick (a scouting report) is not a climb and counts on no board.
+  self (0.5). **Confirmed** = a tagged partner said they were there; ONE partner is enough (0504, owner 2026-11-23 — 0208 to 0504 needed two different partners). That partner must be an accepted friend, unblocked, with a confirmed email (no account-age wait since 0507, owner 2026-11-23), and any one partner backs at most 12 of your climbs a calendar year. A **Conditions** tick (a scouting report) is not a climb and counts on no board.
 - **Sent** = any tick except Attempt, Turned around, Fell, Hung, Project (case-insensitive).
 - **Send points**: per DIFFERENT sent route, its best log scores `(8 + g² × 0.35) × tier`, where g is the route's
   grade on ONE scale (`rank_grade()` / `rankGrade()`: 5.10a = 10, a letter = 0.25; V, WI and M converted; class,
