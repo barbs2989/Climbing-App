@@ -40050,3 +40050,37 @@ Buttress (North Early Winters Spire).
 
 0 confirmed errors fixed, 5 newly flagged for human review, 3 clean.
 Next batch will continue id-ascending from `wa_forbidden_peak_east_ledges` (pass 9).
+
+## 2026-11-24 — Pass 9, Batch 576
+
+Ten routes, continuing id-ascending from `wa_forbidden_peak_east_ledges`: East Ridge Direct,
+North Ridge, Northeast Face, Northwest Face, and West Ridge (all Forbidden Peak); East Ridge,
+Northeast Face, and Southwest Face (Fortress Mountain); East Slope Route and Standard Route
+(Fortune Peak).
+
+Four of the five Forbidden Peak routes' first ascents matched primary/secondary sources exactly:
+East Ridge Direct, North Ridge, Northwest Face, and West Ridge (the last being the peak's own
+June 1940 FA — Anderson/Beckey/Beckey/Crooks/Lind — per Wikipedia). The fifth, Northeast Face's
+FA (Cooper/Ferguson, Sept 15 1961), was tracked down directly in Ed Cooper's own 1961 AAC
+Publications trip report: it confirms the date and both partners verbatim, and its description
+("about 300 feet of climbing on rock, then a 50-degree ice patch, then steeper rock above")
+matches the stored overview's "50°" ice patch exactly. This closes a gap in the route's own
+`data_quality` note, which claimed an AAJ confirmation from 2026-07-15 without citing it.
+
+Fortress Mountain's East Ridge and Northeast Face rows carry pre-existing, already-documented
+caveats — summit elevation disagreement (8,679/8,760/8,671 ft across sources) and a "Northeast
+Face" vs. every source's "Northeast Ridge" naming mismatch. Re-checked against the same sources;
+nothing new to add. Both Fortress Mountain routes in this batch also repeat the same stale
+Little Giant Fire road closure text (order 06-17-07-2026-40, stated end date Oct 31 2026, now
+passed) already flagged in batch 575 for Fifth of July Mountain — same underlying fact, not
+re-flagged separately here.
+
+Fortress's Southwest Face (Class 3) and Fortune Peak's two routes (Class 2) are each broadly
+consistent with secondary trip-report sources (class 3-4 terrain, an easier line distinct from
+the harder Ingalls-ridge traverse) but not independently nailed down by name — no source
+confirms Fortress's "Pass No Pass" feature. Left unflagged per the audit rule against flagging
+what can't be verified either way. Fortune Peak's stored coordinates were already cross-checked
+against Wikipedia in a prior pass (corrections field); still matches.
+
+0 confirmed errors fixed, 0 newly flagged for human review, 10 clean.
+Next batch will continue id-ascending from `wa_fortune_peak_standard_route` (pass 9).
