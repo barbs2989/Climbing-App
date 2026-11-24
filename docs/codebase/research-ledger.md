@@ -14,6 +14,7 @@ independent, tolerances, per-discipline rules) are in `.claude/skills/route-rese
 | trigger `trg_route_field_evidence_mirror` | a locked row makes the field HIGH in `route_field_confidence` (via `contribution_fields.column_name`), so climbers can only flag it. Never touches a level the owner set or an owner-approved edit (`set_by` not null). |
 | `scripts/lib/research-ledger.mjs` | the rules as pure functions: `validateEntry`, `lockViolations`, `ledgerValueMatches`, `nextLedgerRow`; `--selftest`. |
 | `enrich:apply` (`scripts/enrich-approach-rappel-bivy.mjs`) | reads the ledger (service key) before writing; **refuses** any write that changes a locked field; validates the batch's `ledger` entries; stores evidence only after a verified re-read (or on the ledger-only path). |
+| `audit:coverage` | rolls the ledger up with what is merely stored: per state × discipline × region, how much of each field is stored / sourced / locked, and which destinations to research next, most-used first (`audits/coverage/<date>.json`; notes in `docs/guards/route-prose.md`). |
 | `check:research-locks` (build) | self-test, the writer's order (lock check before `patchRow`), the table's privacy, and an injection suite. |
 
 ## Batch format

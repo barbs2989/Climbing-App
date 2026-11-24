@@ -1,3 +1,4 @@
+import { foldKeepingPlace } from "../../lib/keepPlace.js";
 import { EditIconButton, CopyCoordButton, NO_PARKING_PIN_BUT_NOTE_LINE, NO_PARKING_PIN_LINE } from "../../lib/areaChrome";
 import { lazy, Suspense, useState } from "react";
 import type { CSSProperties, ReactNode } from "react";
@@ -92,7 +93,7 @@ export default function AreaGettingThere({ area, C, onEdit, flat }: AreaGettingT
       {walk ? <div style={{ fontSize: 13, color: C.textSub, lineHeight: 1.55, marginTop: 2 }}>{walk}</div> : null}
     </Step> : null}
     </div>
-    {long ? <button onClick={() => setMore(m => !m)} aria-expanded={more} style={{ minHeight: 44, display: "inline-flex", alignItems: "center", background: "none", border: "none", padding: "0 0 6px 41px", color: C.blue, fontSize: 12.5, fontWeight: 700, cursor: "pointer" }}>{more ? "Show less" : "Show more"}</button> : null}
+    {long ? <button onClick={(e) => foldKeepingPlace(e, () => setMore(m => !m), more)} aria-expanded={more} style={{ minHeight: 44, display: "inline-flex", alignItems: "center", background: "none", border: "none", padding: "0 0 6px 41px", color: C.blue, fontSize: 12.5, fontWeight: 700, cursor: "pointer" }}>{more ? "Show less" : "Show more"}</button> : null}
     {pinMap && dest ? <div style={{ marginTop: 4, marginBottom: 12 }}><WalkInMap pts={[]} park={park} crag={crag} height={180} zoom={14} label={"Map of " + area.name + (park ? " with the parking pin (P)" : "")} on3d={() => setView3d(true)} /></div> : null}
     {trail ? <div style={{ marginTop: 4, marginBottom: 12 }}>
       <div style={lbl}>{"Trail to the crag · " + fmtTrailLen(trailLenM(trail))}</div>
