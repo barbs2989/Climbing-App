@@ -73,8 +73,14 @@ whole guide feature on 2026-11-14 (owner). This doc covers the partners mode (`l
   supersedes the 2026-11-14 zip gate): **no zip is required to see climbers**. My areas, Saved areas, Pick an area, A peak,
   My objectives, A route, Everyone and the crew-invite list near the climb all render without one; only the DISTANCE
   searches need it: with none, the zip radii in the Distance pill are disabled (*Near my zip (none set)*); *Near me now* needs no zip.
-  Everyone at Anywhere is the browse list (`useDiscoverableProfiles`, first 24, not in distance order); a radius of your zip or
-  *Near me now* gives the nearest first.
+  **Everyone at Anywhere, with a zip, is nearest first** (0524, owner 2026-11-24): ONE ordered read, `usePartnersByDistance`
+  -> RPC `partners_by_distance`, which returns only ids and a rounded distance measured from the caller’s OWN saved zip
+  (it takes no coordinates), nearest first and climbers with no zip last, up to 50; their profiles are then read with the
+  same select and 0434 column rules as the plain list. The source (sorted read or plain list) is decided once when
+  Everyone opens, after the zip read answers, and again only on the climber’s own action (changing the distance, saving a
+  zip); the read is one attempt with no refetch on focus, so the order on screen never changes, and a failure falls back to
+  the plain list with *Couldn’t sort by distance right now*. Without a zip, or while filling a crew, Everyone is the
+  browse list (`useDiscoverableProfiles`, first 24, no distance order).
   With no zip, the inline zip card (`_zipNeeded` in `lib/PartnerSearch.jsx`, saves through `saveMyZip`) stays above the
   lists as an offer. My objectives with none saved, and A route with none picked, show their own
   prompt instead of falling through to everyone; My objectives says *Couldn’t load your objectives* on a failed read (with *See
@@ -121,7 +127,7 @@ whole guide feature on 2026-11-14 (owner). This doc covers the partners mode (`l
 ## 2. How it works
 1. `App` mounts `PartnerSearch` lazily (`React.lazy` + `Suspense`) when `partnersMode==="partners"`, passing `mutuals`, `friendState`, `blocked`, `objDates`, `crews`, `routeById`, `onConnect`, `onViewProfile`, `onPlan`, `onInvite`, `initialClimb` (deep link from a route page), etc.
 2. Real lists, each a React Query hook in `lib/db.js`: `useProfileSearch(q)` (by name); `useDiscoverableProfiles(meId,24)` (browse, `PARTNER_COLS`);
-   `usePartnersNear(origin,radiusMi)` -> RPC `partners_near`; `usePartnersByObjective(routeIds,areaId,origin,radiusMi)` -> RPC `partners_by_objective`
+   `usePartnersNear(origin,radiusMi)` -> RPC `partners_near`; `usePartnersByDistance(meId,zipKey,enabled)` -> RPC `partners_by_distance` (0524) then a `profiles` select; `usePartnersByObjective(routeIds,areaId,origin,radiusMi)` -> RPC `partners_by_objective`
    (My Objectives / By Route; since 0303 it counts only objectives whose route is not crag-family or climbs a peak; with an origin it is also a radius search);
    `usePartnersForMyAreas(origin,radiusMi)` -> RPC `partners_for_my_areas` (Near my areas); `usePartnersInArea(areaId,origin,radiusMi)` -> RPC `partners_in_area` (By Area, the area page, a crag route's Partners sub-tab);
    `usePartnersInAreas(areaIds,origin,radiusMi)` -> one `partners_in_area` read per saved area under the same query key, merged by climber with `via_area_ids` (Saved areas; `SAVED_SEARCH_LIM` = 12).
