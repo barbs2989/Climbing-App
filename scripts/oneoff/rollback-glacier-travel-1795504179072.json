@@ -1,0 +1,68 @@
+[
+ {
+  "id": "wa_bacon_peak_diobsud",
+  "before": {
+   "glacier_travel": null,
+   "snow_in_season": "yes"
+  },
+  "after": {
+   "glacier_travel": "yes",
+   "snow_in_season": "yes"
+  }
+ },
+ {
+  "id": "wa_northwest_mox_peak_northeast_ridge",
+  "before": {
+   "glacier_travel": null,
+   "snow_in_season": "yes"
+  },
+  "after": {
+   "glacier_travel": "yes",
+   "snow_in_season": "yes"
+  }
+ },
+ {
+  "id": "wa_ottohorn_southeast_route",
+  "before": {
+   "glacier_travel": null,
+   "snow_in_season": "yes"
+  },
+  "after": {
+   "glacier_travel": "no",
+   "snow_in_season": "yes"
+  }
+ },
+ {
+  "id": "wa_pyramid_peak_colonial_standard",
+  "before": {
+   "glacier_travel": "no",
+   "snow_in_season": null
+  },
+  "after": {
+   "glacier_travel": "no",
+   "snow_in_season": "yes"
+  }
+ },
+ {
+  "id": "wa_silver_star_ne_ridge",
+  "before": {
+   "glacier_travel": null,
+   "snow_in_season": "yes"
+  },
+  "after": {
+   "glacier_travel": "yes",
+   "snow_in_season": "yes"
+  }
+ },
+ {
+  "id": "co_pyramid_peak_northeast_ridge",
+  "before": {
+   "glacier_travel": "no",
+   "snow_in_season": "no"
+  },
+  "after": {
+   "glacier_travel": null,
+   "snow_in_season": "no"
+  }
+ }
+]
