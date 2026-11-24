@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// check:trip-reports â€” RELIABILITY'S RULES, executed against the real migrations (0519).
+// check:trip-reports — RELIABILITY'S RULES, executed against the real migrations (0519).
 //
 // Owner, 2026-11-23: reliability (showed up, on time, didn't bail) is recorded by the crew after the trip. One
 // crewmate's report counts; the climber it is about can reply "I was there", which takes it out; a report is hidden
@@ -22,7 +22,7 @@ const DIR = path.join(ROOT, "supabase", "migrations");
 let failures = 0, ran = 0;
 const ok = (m) => { ran++; console.log("  ok    " + m); };
 const fail = (m) => { ran++; failures++; console.log("  FAIL  " + m); };
-const dead = (m) => { console.error(`check:trip-reports FAILED â€” ${m}. Nothing below was checked.`); process.exit(1); };
+const dead = (m) => { console.error(`check:trip-reports FAILED — ${m}. Nothing below was checked.`); process.exit(1); };
 
 let PGlite, ltree, pg_trgm, pgcrypto, uuid_ossp;
 try {
@@ -53,13 +53,13 @@ for (const f of files) {
 }
 console.log(`check:trip-reports: ${files.length} migrations replayed with Supabase's default grants.`);
 
-// â”€â”€ fixtures: A organises, B and C are crewmates, D is a stranger â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ── fixtures: A organises, B and C are crewmates, D is a stranger ──────────────────────────────────────────────────
 const U = (c) => `00000000-0000-4000-8000-0000000000${c}`;
 const A = U("a1"), B = U("b2"), C = U("c3"), D = U("d4");
 const CREW = "10000000-0000-4000-8000-000000000001";     // a trip yesterday: A, B, C
 const OLD = "10000000-0000-4000-8000-000000000002";      // a trip 20 days ago: reports closed
 const SOON = "10000000-0000-4000-8000-000000000003";     // a trip next week
-const LEFT = "10000000-0000-4000-8000-000000000004";     // a trip TODAY that C leaves (on the day: a bail, 0522)
+const LEFT = "10000000-0000-4000-8000-000000000004";     // a trip yesterday that C leaves
 await db.exec(`
   insert into auth.users (id, email, raw_user_meta_data) values
     ('${A}', 'a@example.test', '{"name":"Avery"}'), ('${B}', 'b@example.test', '{"name":"Blake"}'),
@@ -68,7 +68,7 @@ await db.exec(`
     ('${CREW}', 'r1', '${A}', to_char(current_date - 1, 'YYYY-MM-DD')),
     ('${OLD}',  'r1', '${A}', to_char(current_date - 20, 'YYYY-MM-DD')),
     ('${SOON}', 'r1', '${A}', to_char(current_date + 7, 'YYYY-MM-DD')),
-    ('${LEFT}', 'r1', '${A}', to_char(current_date, 'YYYY-MM-DD')); -- TODAY: leaving on the day is bailing; leaving after it is not (0522)
+    ('${LEFT}', 'r1', '${A}', to_char(current_date - 1, 'YYYY-MM-DD'));
   insert into crew_members (crew_id, user_id, status, invited_by) values
     ('${CREW}', '${B}', 'confirmed', '${A}'), ('${CREW}', '${C}', 'confirmed', '${A}'),
     ('${OLD}',  '${B}', 'confirmed', '${A}'), ('${SOON}', '${B}', 'confirmed', '${A}'),
@@ -100,18 +100,18 @@ const rel = async (uid, ids) => {
 const aboutMe = (uid) => as("authenticated", uid, `select * from my_trip_reports_about_me()`);
 const ageAll = (crew, days) => db.exec(`update crew_trip_reports set updated_at = now() - interval '${days} days' where crew_id = '${crew}'`);
 
-// â”€â”€ 1. nobody reads a report row by row â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ── 1. nobody reads a report row by row ────────────────────────────────────────────────────────────────────────────
 for (const t of ["crew_trip_reports", "crew_trip_replies", "crew_departures"]) {
   const anon = await as("anon", null, `select * from ${t} limit 1`), auth = await as("authenticated", A, `select * from ${t} limit 1`);
   const ins = await as("authenticated", A, `insert into crew_trip_reports (crew_id, reporter_id, about_id, trip_date, outcome) values ('${CREW}', '${A}', '${B}', current_date, 'no_show')`);
   if (anon.error && auth.error && ins.error) ok(`${t}: neither signed out nor signed in can read it directly, and a direct insert is refused`);
-  else fail(`${t} is reachable directly (anon: ${anon.error ? "refused" : "READ"}, signed in: ${auth.error ? "refused" : "READ"}, insert: ${ins.error ? "refused" : "WROTE"}) â€” the reveal rule is decoration`);
+  else fail(`${t} is reachable directly (anon: ${anon.error ? "refused" : "READ"}, signed in: ${auth.error ? "refused" : "READ"}, insert: ${ins.error ? "refused" : "WROTE"}) — the reveal rule is decoration`);
 }
 const anonRel = await as("anon", null, `select * from reliability_of_users(array['${B}']::uuid[])`);
 if (anonRel.error) ok("signed out cannot call reliability_of_users (signed-in only, like partner_counts)");
 else fail("signed out can read reliability counts");
 
-// â”€â”€ 2. who may report, and when â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ── 2. who may report, and when ────────────────────────────────────────────────────────────────────────────────────
 {
   const stranger = await report(D, CREW, B, "no_show");
   const self = await report(B, CREW, B, "on_time");
@@ -128,18 +128,18 @@ else fail("signed out can read reliability counts");
   else fail(`a report was ACCEPTED from/for: ${let_through.map((c) => c[0]).join(", ")}`);
 }
 
-// â”€â”€ 3. one report counts, but only once revealed â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ── 3. one report counts, but only once revealed ───────────────────────────────────────────────────────────────────
 {
   const r = await report(A, CREW, B, "no_show");
   if (r.error) dead(`a crewmate's report was refused: ${r.error}`);
   const hidden = await aboutMe(B), counted = await rel(D, [B]);
   if (!hidden.error && hidden.rows.length === 0 && counted[B].trips === 0) ok("a fresh report is HIDDEN from the climber it is about, and changes nobody's counts yet");
-  else fail(`before the reveal, B sees ${hidden.rows?.length} report(s) and counts show ${counted[B]?.trips} trip(s) â€” the reveal rule leaks`);
+  else fail(`before the reveal, B sees ${hidden.rows?.length} report(s) and counts show ${counted[B]?.trips} trip(s) — the reveal rule leaks`);
   // B files their own recap for the crew: the reveal opens (Airbnb's simultaneous reveal).
   await report(B, CREW, A, "on_time");
   const shown = await aboutMe(B), now = await rel(D, [B]);
   if (shown.rows?.length === 1 && shown.rows[0].outcome === "no_show" && shown.rows[0].reporter_id === A && now[B].trips === 1 && now[B].no_show === 1)
-    ok("once B files their own recap, B sees A's report (naming A) and B's counts read 1 trip, 1 no-show â€” one report counts");
+    ok("once B files their own recap, B sees A's report (naming A) and B's counts read 1 trip, 1 no-show — one report counts");
   else fail(`after B's own recap: B sees ${JSON.stringify(shown.rows)}; counts ${JSON.stringify(now[B])}`);
   // ...and A's on-time report about... A is hidden from A until A files (A filed about B: so it is revealed).
   const aSees = await aboutMe(A);
@@ -147,7 +147,7 @@ else fail("signed out can read reliability counts");
   else fail(`A sees ${JSON.stringify(aSees.rows)}`);
 }
 
-// â”€â”€ 4. the 7-day reveal, for a climber who never files â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ── 4. the 7-day reveal, for a climber who never files ─────────────────────────────────────────────────────────────
 {
   await report(A, CREW, C, "late");
   const before = await aboutMe(C);
@@ -157,7 +157,7 @@ else fail("signed out can read reliability counts");
   else fail(`C saw ${before.rows?.length} report(s) before and ${after.rows?.length} after 7 days`);
 }
 
-// â”€â”€ 5. "I was there" takes it out; a note does not â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ── 5. "I was there" takes it out; a note does not ─────────────────────────────────────────────────────────────────
 {
   const mine = (await aboutMe(B)).rows[0];
   const wrongPerson = await as("authenticated", C, `select reply_to_trip_report($1, 'was_there', null)`, [mine.id]);
@@ -169,7 +169,7 @@ else fail("signed out can read reliability counts");
   const there = await as("authenticated", B, `select reply_to_trip_report($1, 'was_there', null)`, [mine.id]);
   const disputed = await rel(D, [B]);
   if (!there.error && disputed[B].trips === 0 && disputed[B].no_show === 0) ok("\"I was there\" disputes it: the report stops counting");
-  else fail(`"I was there": ${there.error || "ok"}; counts ${JSON.stringify(disputed[B])} â€” a disputed report still counts`);
+  else fail(`"I was there": ${there.error || "ok"}; counts ${JSON.stringify(disputed[B])} — a disputed report still counts`);
   // The REPORTER sees the answer on their recap: a note only its writer could read would be context for nobody.
   const back = (await as("authenticated", A, `select * from crew_recap($1)`, [CREW])).rows?.find((r) => r.about_id === B);
   const strangerRecap = await as("authenticated", D, `select * from crew_recap($1)`, [CREW]);
@@ -179,17 +179,17 @@ else fail("signed out can read reliability counts");
   if (emptyNote.error) ok("an empty note is refused"); else fail("an empty note was accepted");
 }
 
-// â”€â”€ 6. changing a report clears its answer and hides it again â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ── 6. changing a report clears its answer and hides it again ──────────────────────────────────────────────────────
 {
   await db.exec(`delete from crew_trip_reports where crew_id = '${CREW}' and reporter_id = '${B}'`); // B un-files, so the reveal depends on time
   await report(A, CREW, B, "cancelled_late");
-  const r = (await db.query(`select r.outcome, (select count(*)::int from crew_trip_replies y where y.report_id = r.id) n from crew_trip_reports r where crew_id = '${CREW}' and reporter_id = '${A}' and about_id = '${B}'`)).rows[0];
+  const r = (await db.query(`select r.outcome, (select count(*)::int from crew_trip_replies y where y.trip_crew = r.trip_crew and y.trip_date = r.trip_date and y.reporter_id = r.reporter_id and y.about_id = r.about_id and y.outcome = r.outcome) n from crew_trip_reports r where crew_id = '${CREW}' and reporter_id = '${A}' and about_id = '${B}'`)).rows[0];
   const seen = await aboutMe(B);
   if (r.outcome === "cancelled_late" && r.n === 0 && seen.rows.length === 0) ok("a CHANGED report drops the old reply and is hidden again until the reveal");
   else fail(`after a change: ${JSON.stringify(r)}; B sees ${seen.rows.length}`);
 }
 
-// â”€â”€ 7. called off marks nobody â€” unless it is the reported climber excusing themself â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ── 7. called off marks nobody — unless it is the reported climber excusing themself ───────────────────────────────
 {
   await ageAll(CREW, 8);
   const beforeC = (await rel(D, [C]))[C];
@@ -205,7 +205,7 @@ else fail("signed out can read reliability counts");
   if (bRows === 0) ok("calling it off replaces the caller's per-person reports"); else fail(`B still has ${bRows} per-person report(s) beside a "called off"`);
 }
 
-// â”€â”€ 8. leaving the crew: a departure stays reportable, a removal is not a departure â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ── 8. leaving the crew: a departure stays reportable, a removal is not a departure ────────────────────────────────
 {
   // C leaves LEFT by their own hand (auth.uid() = C), dated 3 days before the day.
   const leave = await as("authenticated", C, `delete from crew_members where crew_id = $1 and user_id = $2`, [LEFT, C]);
@@ -218,8 +218,8 @@ else fail("signed out can read reliability counts");
   if (listed && listed.departed === true) ok("the recap sheet still lists the climber who left, marked as left");
   else fail(`crew_recap after C left: ${JSON.stringify(recap.rows || recap.error)}`);
   const noShow = await report(A, LEFT, C, "no_show"), cancelled = await report(A, LEFT, C, "cancelled_late");
-  if (noShow.error && !cancelled.error) ok("someone who left can be reported as cancelling, not as a no-show");
-  else fail(`about a departed climber: no_show ${noShow.error ? "refused" : "ACCEPTED"}, cancelled_late ${cancelled.error || "ok"}`);
+  if (!noShow.error && !cancelled.error) ok("someone who left can be given any answer (0523: when they left says nothing certain about whether they came)");
+  else fail(`about a departed climber: no_show ${noShow.error || "ok"}, cancelled_late ${cancelled.error || "ok"}`);
   // The organizer removing B is not B bailing.
   const removed = await as("authenticated", A, `delete from crew_members where crew_id = $1 and user_id = $2`, [LEFT, B]);
   const depB = (await db.query(`select count(*)::int n from crew_departures where crew_id = '${LEFT}' and user_id = '${B}'`)).rows[0].n;
@@ -234,7 +234,7 @@ else fail("signed out can read reliability counts");
   else fail(`C's cancelled-late count ${keep.cancelled_late} -> ${kept.cancelled_late} after the crew was deleted`);
 }
 
-// â”€â”€ 9. benefit of the doubt, and vouch stars â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ── 9. benefit of the doubt, and vouch stars ───────────────────────────────────────────────────────────────────────
 {
   // Every earlier report about C goes, the one section 8 kept from the DELETED crew included (a separate trip, which
   // would make this read 2 trips and prove nothing about one trip with two reporters).
@@ -266,61 +266,87 @@ else fail("signed out can read reliability counts");
   else fail(`A's vouch reliability with a punctuality-only vouch reads ${JSON.stringify(a)}`);
 }
 
-// â”€â”€ 10. the review of 2026-11-24 (0522) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ── 10. the two reviews of 2026-11-24 (0522, 0523) ─────────────────────────────────────────────────────────────
 {
-  const T1 = "10000000-0000-4000-8000-000000000011", T2 = "10000000-0000-4000-8000-000000000012", T3 = "10000000-0000-4000-8000-000000000013";
+  const id = (n) => `10000000-0000-4000-8000-0000000000${n}`;
   const E = U("e5");
-  await db.exec(`
-    insert into auth.users (id, email, raw_user_meta_data) values ('${E}', 'e@example.test', '{"name":"Emery"}');
-    insert into crews (id, route_id, created_by, agreed_date) values
-      ('${T1}', 'r1', '${B}', to_char(current_date - 1, 'YYYY-MM-DD')),
-      ('${T2}', 'r1', '${B}', to_char(current_date - 1, 'YYYY-MM-DD')),
-      ('${T3}', 'r1', '${B}', to_char(current_date + 1, 'YYYY-MM-DD'));
-    insert into crew_members (crew_id, user_id, status, invited_by) values
-      ('${T1}', '${C}', 'confirmed', '${B}'), ('${T1}', '${E}', 'confirmed', '${B}'),
-      ('${T2}', '${C}', 'confirmed', '${B}'), ('${T2}', '${E}', 'confirmed', '${B}'),
-      ('${T3}', '${E}', 'confirmed', '${B}');
-  `);
-  // (a) A disbanded crew: two crewmates' reports about one trip stay ONE trip, and a crewmate's "called off" still holds.
-  await report(B, T1, E, "no_show"); await report(C, T1, E, "no_show");
-  await report(B, T2, E, "no_show"); await report(C, T2, null, "called_off");
-  await ageAll(T1, 8); await ageAll(T2, 8);
-  await db.exec(`delete from crews where id in ('${T1}', '${T2}')`);
-  const e = (await rel(D, [E]))[E];
+  // The trip's "today" is the date at UTC-12 (0523): dates below are built from it, so the test does not depend on
+  // the hour it runs at.
+  const T = `((now() at time zone 'utc') - interval '12 hours')::date`;
+  const crew = async (n, dayExpr, members) => db.exec(`
+    insert into crews (id, route_id, created_by, agreed_date) values ('${id(n)}', 'r1', '${B}', to_char(${dayExpr}, 'YYYY-MM-DD'));
+    insert into crew_members (crew_id, user_id, status, invited_by) values ${members.map((m) => `('${id(n)}', '${m}', 'confirmed', '${B}')`).join(", ")};`);
+  await db.exec(`insert into auth.users (id, email, raw_user_meta_data) values ('${E}', 'e@example.test', '{"name":"Emery"}');`);
+
+  // (a) A crew deleted afterwards (maintenance, or an account's deletion): two reports about one trip still count once,
+  //     and a crewmate's "called off" still clears its trip.
+  await crew(11, `${T} - 1`, [C, E]); await crew(12, `${T} - 1`, [C, E]);
+  await report(B, id(11), E, "no_show"); await report(C, id(11), E, "no_show");
+  await report(B, id(12), E, "no_show"); await report(C, id(12), null, "called_off");
+  await ageAll(id(11), 8); await ageAll(id(12), 8);
+  await db.exec(`delete from crews where id in ('${id(11)}', '${id(12)}')`);
+  let e = (await rel(D, [E]))[E];
   if (e.trips === 1 && e.no_show === 1) ok("after the crews are deleted, two reports about one trip still count once, and a crewmate's \"called off\" still clears its trip");
-  else fail(`after deleting the crews E reads ${JSON.stringify(e)} â€” want 1 trip, 1 no-show (T1 once; T2 called off)`);
-  // (b) Leaving AFTER the day is not a departure.
-  await db.exec(`insert into crews (id, route_id, created_by, agreed_date) values ('10000000-0000-4000-8000-000000000014', 'r1', '${B}', to_char(current_date - 2, 'YYYY-MM-DD'));
-    insert into crew_members (crew_id, user_id, status, invited_by) values ('10000000-0000-4000-8000-000000000014', '${E}', 'confirmed', '${B}');`);
-  await as("authenticated", E, `delete from crew_members where crew_id = '10000000-0000-4000-8000-000000000014' and user_id = $1`, [E]);
-  const dep = (await db.query(`select count(*)::int n from crew_departures where crew_id = '10000000-0000-4000-8000-000000000014'`)).rows[0].n;
-  if (dep === 0) ok("a climber who leaves the crew AFTER its day is not recorded as having bailed");
-  else fail("leaving two days after the trip was recorded as a departure");
-  // (c) A note after "I was there" keeps the dispute.
-  await report(B, T3, E, "late").catch(() => {});
-  const lateRow = (await db.query(`select id from crew_trip_reports where crew_id = '${T3}' and about_id = '${E}'`)).rows[0];
-  if (!lateRow) fail("a report on the day BEFORE the trip (one day of slack for time zones) was refused");
-  else {
-    ok("the window opens a day early for time zones ahead of UTC (a report dated tomorrow is accepted)");
-    await db.exec(`update crew_trip_reports set updated_at = now() - interval '8 days' where id = '${lateRow.id}'`);
-    await as("authenticated", E, `select reply_to_trip_report($1, 'was_there', null)`, [lateRow.id]);
-    await as("authenticated", E, `select reply_to_trip_report($1, 'note', 'I was at the trailhead at 5')`, [lateRow.id]);
-    const y = (await db.query(`select reply, note from crew_trip_replies where report_id = '${lateRow.id}'`)).rows[0];
-    if (y && y.reply === "was_there" && y.note === "I was at the trailhead at 5") ok("a note added after \"I was there\" keeps the dispute, and the note");
-    else fail(`after was_there then a note, the reply row reads ${JSON.stringify(y)}`);
-  }
-  // (d) ...and closes a day late: day 15 is still open, day 16 is not.
-  await db.exec(`insert into crews (id, route_id, created_by, agreed_date) values
-      ('10000000-0000-4000-8000-000000000015', 'r1', '${B}', to_char(current_date - 15, 'YYYY-MM-DD')),
-      ('10000000-0000-4000-8000-000000000016', 'r1', '${B}', to_char(current_date - 16, 'YYYY-MM-DD'));
-    insert into crew_members (crew_id, user_id, status, invited_by) values
-      ('10000000-0000-4000-8000-000000000015', '${E}', 'confirmed', '${B}'), ('10000000-0000-4000-8000-000000000016', '${E}', 'confirmed', '${B}');`);
-  const d15 = await report(B, "10000000-0000-4000-8000-000000000015", E, "on_time"), d16 = await report(B, "10000000-0000-4000-8000-000000000016", E, "on_time");
-  if (!d15.error && d16.error) ok("the window closes a day late for time zones behind UTC (day 15 open, day 16 refused)");
-  else fail(`day 15: ${d15.error || "ok"}; day 16: ${d16.error ? "refused" : "ACCEPTED"}`);
+  else fail(`after deleting the crews E reads ${JSON.stringify(e)} — want 1 trip, 1 no-show`);
+  await db.exec(`delete from crew_trip_reports where about_id = '${E}'`);
+
+  // (b) 0523: leaving AFTER the day still leaves you reportable, with any answer (a no-show cannot dodge by leaving).
+  await crew(14, `${T} - 2`, [E]);
+  await as("authenticated", E, `delete from crew_members where crew_id = '${id(14)}' and user_id = $1`, [E]);
+  const late = await report(B, id(14), E, "no_show");
+  if (!late.error) ok("a crewmate who did not show and then left the crew after the day can still be reported (0523)");
+  else fail(`leaving after the day dodged the report: ${late.error}`);
+
+  // (c) 0523: a crew with crewmates cannot be disbanded by its organizer while its trip is reportable; before the day it can.
+  await crew(15, `${T} - 1`, [E]); await crew(16, `${T} + 5`, [E]);
+  const blocked = await as("authenticated", B, `delete from crews where id = $1 returning id`, [id(15)]);
+  const before = await as("authenticated", B, `delete from crews where id = $1 returning id`, [id(16)]);
+  if (blocked.error && /can be reported on until/.test(blocked.error) && !before.error && before.rows.length === 1) ok("a crew cannot be disbanded while its trip can be reported on, and can before the day (0523)");
+  else fail(`disband in the window: ${blocked.error || "ALLOWED"}; before the day: ${before.error || before.rows?.length + " row(s)"}`);
+
+  // (d) 0523: a second trip on one crew is its own trip; the first trip's report is not overwritten.
+  await crew(17, `${T} - 3`, [E]);
+  await report(B, id(17), E, "on_time");
+  await db.exec(`update crews set agreed_date = to_char(${T} - 1, 'YYYY-MM-DD') where id = '${id(17)}'`);
+  await report(B, id(17), E, "no_show");
+  await ageAll(id(17), 8);
+  e = (await rel(D, [E]))[E];
+  const n17 = (await db.query(`select count(*)::int n from crew_trip_reports where trip_crew = '${id(17)}' and about_id = '${E}'`)).rows[0].n;
+  if (n17 === 2 && e.on_time === 1 && e.no_show >= 1) ok("a second trip on the same crew is reported as its own trip; the first is kept (0523)");
+  else fail(`two trips on one crew: ${n17} report row(s); E reads ${JSON.stringify(e)}`);
+  await db.exec(`delete from crew_trip_reports where about_id = '${E}'; delete from crew_trip_replies where about_id = '${E}'`);
+
+  // (e) 0523: "I was there" survives the reporter taking the report back and filing it again; a DIFFERENT answer is new.
+  await crew(18, `${T} - 1`, [E]);
+  await report(B, id(18), E, "no_show");
+  await report(E, id(18), B, "on_time");                     // E files, so the report is revealed to E
+  const rep = (await db.query(`select id from crew_trip_reports where trip_crew = '${id(18)}' and about_id = '${E}'`)).rows[0];
+  await as("authenticated", E, `select reply_to_trip_report($1, 'was_there', null)`, [rep.id]);
+  await as("authenticated", B, `select withdraw_trip_report($1, $2)`, [id(18), E]);
+  await report(B, id(18), E, "no_show");
+  e = (await rel(D, [E]))[E];
+  if (e.no_show === 0 && e.trips === 0) ok("taking a report back and filing the same answer again meets the same \"I was there\" (0523)");
+  else fail(`after withdraw and re-file, E reads ${JSON.stringify(e)} — the dispute was erased`);
+  await report(B, id(18), E, "late");
+  e = (await rel(D, [E]))[E];
+  if (e.late === 1) ok("...while a DIFFERENT answer is a new claim the dispute does not cover");
+  else fail(`after changing to late, E reads ${JSON.stringify(e)}`);
+  // (f) a note added after "I was there" keeps the dispute (0522), on a claim answered with both.
+  await report(B, id(18), E, "no_show");
+  const rep2 = (await db.query(`select id from crew_trip_reports where trip_crew = '${id(18)}' and about_id = '${E}'`)).rows[0];
+  await as("authenticated", E, `select reply_to_trip_report($1, 'note', 'I was at the trailhead at 5')`, [rep2.id]);
+  const y = (await db.query(`select reply, note, outcome from crew_trip_replies where trip_crew = '${id(18)}' and about_id = '${E}'`)).rows[0];
+  if (y && y.reply === "was_there" && y.note === "I was at the trailhead at 5" && y.outcome === "no_show") ok("a note added after \"I was there\" keeps the dispute, and the note");
+  else fail(`after was_there then a note, the reply row reads ${JSON.stringify(y)}`);
+
+  // (g) 0523: the window is the trip's day to 14 days after, by the date at UTC-12: never open before the day anywhere.
+  await crew(19, `${T} + 1`, [E]); await crew(20, `${T}`, [E]); await crew(21, `${T} - 14`, [E]); await crew(22, `${T} - 15`, [E]);
+  const r19 = await report(B, id(19), E, "on_time"), r20 = await report(B, id(20), E, "on_time"), r21 = await report(B, id(21), E, "on_time"), r22 = await report(B, id(22), E, "on_time");
+  if (r19.error && !r20.error && !r21.error && r22.error) ok("the window opens on the trip's day and closes 14 days later, by the date at UTC-12 (never early)");
+  else fail(`window: day before ${r19.error ? "refused" : "ACCEPTED"}, the day ${r20.error || "ok"}, day 14 ${r21.error || "ok"}, day 15 ${r22.error ? "refused" : "ACCEPTED"}`);
 }
 
 const FLOOR = 20;
 if (ran < FLOOR) dead(`only ${ran} assertions ran, expected at least ${FLOOR}`);
-console.log(failures ? `\n${failures} problem(s).` : `\nok â€” the trip-report rules hold (${ran} assertions)`);
+console.log(failures ? `\n${failures} problem(s).` : `\nok — the trip-report rules hold (${ran} assertions)`);
 process.exit(failures ? 1 : 0);
