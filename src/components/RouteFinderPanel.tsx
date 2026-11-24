@@ -307,17 +307,19 @@ export default function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElev
   // Mountain Project's filter screen does — so a tap on it visibly does something, and a
   // combination that matches nothing is seen before the sheet is left. Queried only while open.
   const { data: draftTotal, isFetching: draftCounting } = useSubtreeRouteCount(sheet && !needsAreaFor(df) ? loc.id : null, finderArgs(qD, df, metric));
-  // While the sheet is open the page behind it must not scroll. The document is the scroller
-  // here, and on a phone a drag past the end of the sheet moved the page instead, which slid the
-  // browser's own toolbar in and out and shifted the sheet under the climber's finger.
-  useEffect(() => {
-    if (!sheet) return;
-    const el = document.documentElement, prev = el.style.overflow;
-    el.style.overflow = "hidden";
-    return () => { el.style.overflow = prev; };
-  }, [sheet]);
+  // The page behind the open sheet is held still by the ONE shared lock in lib/dialogA11y.js (it
+  // finds this sheet by its dialog role). The sheet used to lock <html> itself as well,
+  // and the two locks froze the app for good (2026-11-23: "after I apply filters the scroll stops
+  // working, even when I click back"): this effect set overflow:hidden first, the shared lock ran a
+  // frame later and RECORDED that "hidden" as the page's own value, so on close this effect cleared
+  // it and the shared lock then put "hidden" back. Never add a second lock here.
 
-  useEffect(() => { setPage(0); setAll([]); }, [qD, af, loc.id]);
+  // Start the list over only when the QUERY changes, not when `af` is a new object holding the same
+  // filters: "Show routes" with nothing changed stores a fresh object, and keyed on its identity
+  // this emptied the list while the query, unchanged, never refetched to refill it — "600 routes",
+  // "No routes match these filters", and a page too short to scroll (2026-11-24).
+  const queryKey = JSON.stringify(finderArgs(qD, af, metric));
+  useEffect(() => { setPage(0); setAll([]); }, [queryKey, loc.id]);
   useEffect(() => {
     if (!batch) return;
     setAll(prev => page === 0 ? batch : [...prev, ...batch]);
