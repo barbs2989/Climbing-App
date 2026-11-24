@@ -47,7 +47,7 @@ try {
 
   // 1. Open Partners, as a climber would, from the nav.
   await page.locator('button[aria-label="Partners"], button:has-text("Partners")').first().click(); await page.waitForTimeout(6000);
-  // A fresh account has no zip: main's point-of-use rule (#3306) asks for it right here, and the real lists wait for it.
+  // A fresh account has no zip: the card offers it here (#3306); since 2026-11-24 the lists show without it, and the zip only adds the distance searches.
   const zipForm = page.locator('[role="region"][aria-label="Add your zip code"]');
   if (await zipForm.count()) {
     await cardLook(zipForm, "the zip form");

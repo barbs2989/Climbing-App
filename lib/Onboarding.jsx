@@ -24,8 +24,8 @@
 // no Skip setup for it, only Sign out. The username is saved the moment Continue is pressed, because
 // it is locked once chosen (0432: one change in the first 7 days) and must not wait on the last step.
 // Photo, about-you and notifications stay optional. A guest, with no account to keep anything in,
-// can still skip the lot. Zip and photo are asked for where they matter instead: Partners asks for a
-// zip before it lists real climbers, and sending a request asks for a photo.
+// can still skip the lot. Zip and photo are asked for where they matter instead: Partners offers a
+// zip for its distance searches (it lists climbers without one since 2026-11-24), and sending a request asks for a photo.
 // EDITING (opened over a profile that already has disciplines) is the climbing step alone, as it
 // always was -- preceded by the username step for an older account that never chose one -- and it
 // closes on Save, with no finish screen.
@@ -147,7 +147,7 @@ export default function Onboarding({onFinish,onSkip,onSignOut,onUsernameSaved,on
     const shownName=(un||(initial&&initial.username)||"").trim();
     const where=(homeQ||"").trim()||home;
     const rows=[].concat(
-      [["partners","Find climbing partners",required?"Add your zip and see climbers near you":"Browse climbers and crews near you","partners"]],
+      [["partners","Find climbing partners","Browse climbers and crews near you","partners"]],
       required&&!ava?[["camera","Add a profile photo","Optional","photo"]]:[],
       required?[["pin","List the areas you climb","So climbers there can find you","areas"]]:[],
       [["mountain","Explore climbs","Conditions, beta and plans for your next objective","climbs"]]);
