@@ -308,7 +308,7 @@ export default function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElev
   // combination that matches nothing is seen before the sheet is left. Queried only while open.
   const { data: draftTotal, isFetching: draftCounting } = useSubtreeRouteCount(sheet && !needsAreaFor(df) ? loc.id : null, finderArgs(qD, df, metric));
   // The page behind the open sheet is held still by the ONE shared lock in lib/dialogA11y.js (it
-  // finds this sheet by role="dialog" aria-modal). The sheet used to lock <html> itself as well,
+  // finds this sheet by its dialog role). The sheet used to lock <html> itself as well,
   // and the two locks froze the app for good (2026-11-23: "after I apply filters the scroll stops
   // working, even when I click back"): this effect set overflow:hidden first, the shared lock ran a
   // frame later and RECORDED that "hidden" as the page's own value, so on close this effect cleared
