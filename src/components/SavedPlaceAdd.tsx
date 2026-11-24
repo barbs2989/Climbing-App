@@ -44,7 +44,7 @@ export default function SavedPlaceAdd({ C, kind, savedIds, onSave }: SavedPlaceA
   return (
     <div style={{ marginTop: 10, paddingTop: 10, borderTop: "1px solid " + C.border }}>
       <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
-        <input autoFocus value={q} onChange={(e) => setQ(e.target.value)} aria-label={"Search for " + (peak ? "a peak" : "an area") + " to save"} placeholder={peak ? "Search any peak — Rainier, Shuksan, Hood…" : "Search any area — Index, Smith Rock, Red Rock…"} style={{ flex: 1, minWidth: 0, boxSizing: "border-box", minHeight: 44, padding: "11px 12px", borderRadius: 10, border: "1px solid " + C.border, background: C.card, color: C.text, fontSize: 13 }} />
+        <input autoFocus value={q} onChange={(e) => setQ(e.target.value)} aria-label={"Search for " + (peak ? "a peak" : "an area") + " to save"} placeholder={peak ? "Search any peak — Rainier, Shuksan, Hood…" : "Search any area — Index, Smith Rock, Red Rock…"} style={{ flex: 1, minWidth: 0, boxSizing: "border-box", minHeight: 44, padding: "11px 12px", borderRadius: 10, border: "1px solid " + C.field, background: C.card, color: C.text, fontSize: 13 }} />
         <button type="button" aria-expanded={true} onClick={() => { setOpen(false); setQ(""); }} style={{ flexShrink: 0, minHeight: 44, padding: "10px 14px", borderRadius: 10, border: "1px solid " + C.border, background: C.card, color: C.textSub, fontSize: 13, fontWeight: 700, cursor: "pointer" }}>Done</button>
       </div>
       {!term ? <div style={note}>{"Type the " + noun + "’s name, then tap it to save it."}</div>

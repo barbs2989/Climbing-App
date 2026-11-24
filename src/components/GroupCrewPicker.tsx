@@ -66,7 +66,7 @@ export default function GroupCrewPicker({groupName,groupPrivate,people,meId,bloc
       </div>
       <SL>Who {sel.length?"· "+sel.length+" picked":""}</SL>
       {!others.length?<div style={{fontSize:12.5,color:C.textMuted,marginBottom:12}}>Nobody else in this group to invite yet.</div>:<>
-        {others.length>8?<input value={q} onChange={e=>setQ(e.target.value)} placeholder="Find a member" aria-label="Find a member" style={{width:"100%",boxSizing:"border-box",padding:"9px 12px",borderRadius:10,border:"1px solid "+C.border,background:C.bg,color:C.text,marginBottom:8}}/>:null}
+        {others.length>8?<input value={q} onChange={e=>setQ(e.target.value)} placeholder="Find a member" aria-label="Find a member" style={{width:"100%",boxSizing:"border-box",padding:"9px 12px",borderRadius:10,border:"1px solid "+C.field,background:C.bg,color:C.text,marginBottom:8}}/>:null}
         <div style={{display:"flex",flexDirection:"column",gap:6,maxHeight:300,overflowY:"auto",overscrollBehavior:"contain",marginBottom:6}}>
           {shown.map(p=>{const on=isOn(p.id);const off=!on&&full;return <button key={String(p.id)} type="button" aria-pressed={on} disabled={off} onClick={()=>toggle(p.id)} style={{display:"flex",alignItems:"center",gap:10,width:"100%",textAlign:"left",padding:"7px 10px",borderRadius:10,border:"1px solid "+(on?C.blueDim:C.border),background:on?C.blueBg:C.card,color:off?C.textMuted:C.text,cursor:off?"default":"pointer"}}>
             <Av src={p.avatar} size={30} online={p.online}/>
