@@ -1360,6 +1360,30 @@ rows. Its build script is gone; new reviews write the column.
   snow answers were already "yes". Wyoming's one web "no glacier" (Dike Route, Middle Teton) was held at
   unsure, because its own text sends bail-out parties onto the Middle Teton Glacier. Before another round on
   these states, make sure WebFetch is permitted for the researchers.
+  A fourth round (`<state>/research-out-4.json`, plus `wy/research-out-9.json` for the Koven Route, which has a
+  park rescue release about a crevasse fall on its descent) researched only the open glacier calls, with page
+  reads working. Glacier not settled went from 41 to 10 in BC, 19 to 10 in CO, 28 to 23 in WY and 26 to 20 in AK.
+  Ten thin "no glacier" answers were held at unsure by hand; each entry's `why` starts "Held at unsure on review":
+  - Colorado's three Mills Glacier routes and Queen's Way (Isabelle Glacier): no page rules out crevasses.
+  - Brenta Spire, and Talchako Up in Smoke (its only source is a different line).
+  - Dragonfly Jr and West Twincil in Alaska.
+  - The Buck Sanction and the Dike Route in Wyoming.
+  Andrews Glacier (five CO routes) stays unsure because its sources disagree: one trip report saw open
+  crevasses in the fall. The Grand Teton's north side (Valhalla Traverse normal, Teton Glacier as an
+  alternative) stays unsure.
+  A fifth round (`research-out-5.json`, plus `wy/research-out-6.json` written on review) settled those:
+  - Andrews Glacier is glacier travel, because the park's glacier research page counts its crevasses. That makes 4
+    CO routes yes; Central Buttress stays unsure, since it has a non-glacier descent.
+  - The three Mills Glacier routes are yes. An alpine-journal accident report has a climber fall on the glacier
+    below Longs Peak's east face into a crevasse.
+  - The Grand Teton North Ridge and North Face Highlight Tour are no. Their standard line is the Valhalla Traverse
+    out and the Owen-Spalding back. The Lowlight Tour stays unsure, because no page of its own was read.
+  - Settled no: McHenry's Notch Couloir, and Eternal Darkness (BC).
+  - Held again: Dragonfly Jr, and Toe Gully's snow "no".
+  Since this round, the fold merges research rounds PER FACT (`glacier-travel-decide.mjs`). A later round's
+  "unsure" never erases an earlier page-read answer, and in a disagreement "yes" wins. Before the change, a
+  later file replaced an earlier one whole.
+  Glacier not settled now: BC 9, CO 2, WY 21, AK 20.
 
   - **HOUR BY HOUR + THE GUST WINDOW (2026-10-08, owner: "clear and exact and accurate science").**
     Section 12 of the guard. Three things it holds, each measured, not assumed:

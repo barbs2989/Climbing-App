@@ -5,6 +5,8 @@ import { RangeSlider } from "./RangeSlider.jsx";
 import { useMyCondPrefs, saveMyCondPrefs } from "./db.js";
 import { DISC_LABELS } from "./discLabels.js";
 import { TEXT_TAP } from "./buttonStyles.js";
+import { carryAlpineRange } from "./condPrefsSplit.js";
+import { SR_ONLY } from "./srOnly.js";
 
 /* "YOUR CONDITIONS" — the climber's ideal temperature RANGE (one for all climbing, and optionally
    one per discipline), the wind RANGE they are happy in, and how long they give rock after rain.
@@ -71,9 +73,8 @@ export function cleanPrefs(o) {
   const out = { rain: "normal", temp: {}, wind: null, rhMax: null, sun: null, aq: null, window: null };
   if (!o || typeof o !== "object") return out;
   if (o.rain === "cautious") out.rain = "cautious";
-  const t = Object.assign({}, o.temp && typeof o.temp === "object" ? o.temp : {});
-  // Saved before alpine and mountaineering were split: the one "alpine" range was for both, so it stays on both. `split` marks a copy saved after.
-  if (!o.split && t.alpine && !t.mountaineering) t.mountaineering = t.alpine;
+  // Saved before alpine and mountaineering were split: the one "alpine" range was for both, so it stays on both (lib/condPrefsSplit.js, and its known gap).
+  const t = carryAlpineRange(o.temp, o.split);
   out.split = true;
   ["all"].concat(COND_DISCS).concat(Object.keys(RANGE_ONLY)).forEach(function (k) {
     const r = t[k];
@@ -181,6 +182,8 @@ const hourName = function (h) { return (h % 12 || 12) + (h % 24 < 12 ? " AM" : "
 const HOUR_TICKS = [0, 3, 6, 9, 12, 15, 18, 21, 24];
 const hourTick = function (h) { return (h % 12 || 12) + (h % 24 < 12 ? "a" : "p"); };
 const rangeText = function (r) { return uTemp(r[0]) + "–" + uTemp(r[1]); };
+// A mountain range runs below zero, and "-1°–50°" reads as a minus beside a dash: spelled out in sentences.
+const spanText = function (r) { return uTemp(r[0]) + " to " + uTemp(r[1]); };
 const same = function (a, b) { return !!a && !!b && a[0] === b[0] && a[1] === b[1]; };
 const LBL = { fontSize: 10.5, fontWeight: 800, color: C.label, letterSpacing: 0.5, textTransform: "uppercase", marginBottom: 5 };
 const NOTE = { fontSize: 11.5, color: C.textMuted, lineHeight: 1.5, marginTop: 6 };
@@ -188,6 +191,7 @@ const NOTE = { fontSize: 11.5, color: C.textMuted, lineHeight: 1.5, marginTop: 6
 const HEAD = { fontSize: 13.5, fontWeight: 800, color: C.text, marginBottom: 8 };
 const GROUP = { fontSize: 11.5, fontWeight: 700, color: C.textSub, marginBottom: 6 };
 const SECTION = { borderTop: "1px solid " + C.border, paddingTop: 14 };
+const DOT = { display: "inline-block", width: 7, height: 7, borderRadius: "50%", background: C.green, marginRight: 6, verticalAlign: "middle" };
 // A step the climber can SEE: a whole degree C when metric, a whole degree F otherwise, and a whole km/h or mph.
 const snapTemp = function (f) { return uTempIn(uTempN(f)); };
 const snapWind = function (m) { return uImp() ? Math.round(m) : Math.round(m * 1.60934) / 1.60934; };
@@ -233,11 +237,14 @@ export function CondPrefsControls({ disc, only, onSignIn }) {
   const win = p.window || [6, 20];
   const setWin = function (a, b) { updateCondPrefs(function (x) { x.window = [a, b]; return x; }); };
   // Two groups, because they do different things: a crag scope sets the conditions SCORE; a mountain scope only adds one temperature line beside the safety flags.
-  const scopeChip = function (d) { return chip(scope === d[0], d[0] !== "all" && p.temp[d[0]] ? d[1] + " ·" : d[1], function () { setScope(d[0]); }, d[0]); };
+  // A scope with a range of its own carries a green dot (the "·" after its name read as a typo), spoken as "has its own range".
+  const scopeChip = function (d) { const mine = d[0] !== "all" && !!p.temp[d[0]]; return chip(scope === d[0], mine ? <><span aria-hidden="true" style={DOT} />{d[1]}<span style={SR_ONLY}>, has its own range</span></> : d[1], function () { setScope(d[0]); }, d[0]); };
   const cragScopes = [["all", "All climbing"]].concat(COND_DISCS.map(function (k) { return [k, DISC_NAME[k]]; }));
   const mtnScopes = Object.keys(RANGE_ONLY).map(function (k) { return [k, RANGE_ONLY[k]]; });
   // On a mountain route's Conditions tab (only="temp") the crag scopes are noise: that box is about this route's kind of climbing.
   const showCrag = full || !ownOnly;
+  // ...and on a crag route's score card the mountain scopes are noise the other way round (code review of #3783). Settings and the Menu pass no `disc`, so they keep both groups.
+  const showMtn = !disc || ownOnly || COND_DISCS.indexOf(disc) < 0;
   return <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
     <div>
       <div style={HEAD}>Temperatures that suit you</div>
@@ -245,16 +252,18 @@ export function CondPrefsControls({ disc, only, onSignIn }) {
         <div style={GROUP}>Crag climbing · sets the conditions score</div>
         <div role="group" aria-label="Crag climbing the temperature range is for" style={{ display: "flex", gap: 6, flexWrap: "wrap", marginBottom: 10 }}>{cragScopes.map(scopeChip)}</div>
       </> : null}
-      <div style={GROUP}>Mountain climbing · adds one temperature line, never changes a warning</div>
-      <div role="group" aria-label="Mountain climbing the temperature range is for" style={{ display: "flex", gap: 6, flexWrap: "wrap", marginBottom: 10 }}>{mtnScopes.map(scopeChip)}</div>
+      {showMtn ? <>
+        <div style={GROUP}>Mountain climbing · adds a temperature line</div>
+        <div role="group" aria-label="Mountain climbing the temperature range is for" style={{ display: "flex", gap: 6, flexWrap: "wrap", marginBottom: 10 }}>{mtnScopes.map(scopeChip)}</div>
+      </> : null}
       {shown ? <RangeSlider label={(ownOnly ? "Temperatures I like, " : "Ideal temperature, ") + scopeName} min={span[0]} max={span[1]} minGap={MIN_SPAN} step={stepTemp()} value={shown} fmt={uTemp} snap={snapTemp} onChange={setRange} /> : null}
       {ownOnly ? null : <div role="group" aria-label={"Quick ranges for " + scopeName} style={{ display: "flex", gap: 6, flexWrap: "wrap", marginTop: 8 }}>
-        {chip(scope === "all" ? !p.temp.all : !own, scope === "all" ? "Default (Mild " + rangeText(TEMP_BANDS.standard) + ", Cool for bouldering)" : "Same as all climbing", clearRange, "d")}
+        {chip(scope === "all" ? !p.temp.all : !own, scope === "all" ? "Default" : "Same as all climbing", clearRange, "d")}
         {["cool", "standard", "warm"].map(function (k) { return chip(scope === "all" ? same(p.temp.all, TEMP_BANDS[k]) : same(p.temp[scope], TEMP_BANDS[k]), NAME[k] + " " + rangeText(TEMP_BANDS[k]), function () { setRange(TEMP_BANDS[k].slice()); }, k); })}
       </div>}
       <div style={NOTE}>{ownOnly
-        ? (own ? "Each day on the Conditions tab of " + scopeName.toLowerCase() + " routes says whether the forecast temperatures fall in " + rangeText(eff) + ". Drag either end to yours." : "No range set, so " + scopeName.toLowerCase() + " routes show no temperature line. There is no suggested range: set the temperatures you like.")
-        : "Anything from " + rangeText(eff) + " scores full marks for " + scopeName + (scope === "all" ? ", unless a discipline has its own range (marked ·)" : own ? "" : ", from your all-climbing range") + "; the score fades to nothing " + uTempDelta(25) + "° below it and " + uTempDelta(20) + "° above. Drag either end."}</div>
+        ? (own ? "Each day on the Conditions tab of " + scopeName.toLowerCase() + " routes says whether the forecast temperatures fall in " + spanText(eff) + ". Drag either end to yours." : "No range set, so " + scopeName.toLowerCase() + " routes show no temperature line. There is no suggested range: set the temperatures you like.")
+        : "Anything from " + rangeText(eff) + " scores full marks for " + scopeName + (scope === "all" ? ", unless a discipline has its own range (marked with a dot)" : own ? "" : ", from your all-climbing range") + "; the score fades to nothing " + uTempDelta(25) + "° below it and " + uTempDelta(20) + "° above. Drag either end." + (scope === "all" ? " Default is Mild, and Cool for bouldering." : "")}</div>
       {/* A range-only scope is on or off: one plain action says which way it goes (was two chips, "Not set" / "My range", that read as a choice of values). */}
       {ownOnly ? (own
         ? <button onClick={clearRange} style={{ minHeight: 44, background: "none", border: "none", color: C.blue, fontSize: 12.5, fontWeight: 700, cursor: "pointer", ...TEXT_TAP }}>{"Remove my " + scopeName.toLowerCase() + " range"}</button>

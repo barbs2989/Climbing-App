@@ -2,6 +2,7 @@ import { createPortal } from "react-dom";
 import type { ReactNode } from "react";
 import { C } from "../../ClimbMatchCore.jsx";
 import { POP_BACK, POP_REMOVE } from "../../lib/popupChrome.js";
+import EmptyState from "./EmptyState.tsx";
 
 type ListPageOption = readonly [string, string];
 interface ListPagePick { value: string; onChange: (v: string) => void; options: ReadonlyArray<ListPageOption>; label: string }
@@ -49,7 +50,7 @@ export default function ListPage({ title, onClose, zIndex = 9500, search, sort, 
   </div>, document.body);
 }
 
-/** The line a page shows when its search or filter leaves nothing. */
-export function ListPageEmpty({ children }: { children: ReactNode }) {
-  return <div style={{ textAlign: "center", padding: "28px 0", color: C.textMuted, fontSize: 14, lineHeight: 1.5 }}>{children}</div>;
+/** What a page shows when its search or filter leaves nothing: the app’s EmptyState, with a search icon by default. */
+export function ListPageEmpty({ children, icon = "search", action }: { children: ReactNode; icon?: string; action?: ReactNode }) {
+  return <EmptyState C={C} icon={icon} action={action} style={{ padding: "28px 14px" }}>{children}</EmptyState>;
 }

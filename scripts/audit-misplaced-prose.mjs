@@ -44,7 +44,7 @@ const LIST = +(argv[argv.indexOf("--list") + 1] || 0) || 25;
 // Bare "presumably" is NOT a cue: "Presumably Bob", "unknown, presumably 1980s" are climbers writing
 // their own FA notes (17 of the first run's 82 hits, all non-WA). Research voice presumes a LINE.
 const FA_RESEARCH = /\b(?:presum(?:ed|ably) (?:via|to be|to have|original|the (?:FA|original))|(?:is|was) the presumed|plausible|not (?:separately |specifically |explicitly |independently )?(?:documented|confirmed|verified|corroborated)|no source|(?:the |one |another )?account (?:does not|gives)|(?:stored|recorded) here|previously stored|see corrections|Grokipedia|Mountain Project|AAJ|trip report that|not fully attributable|on the source page|by any source located|carried by no|another record|some (?:accounts|sources)|secondary source|(?:is|was) not recorded for this line|not (?:a )?route-specific|rather than a (?:confirmed )?route-specific)\b/i;
-const PIPELINE = /\b(?:this session|(?:current |existing )?DB value|DB entry|previously stored|stored here|see corrections|enrichment pass|re-research|this entry is|this row|sources? (?:checked|found|located)|(?:in|from) (?:the )?available sources|in any source|by any source located|no located source|carried by no|NOT (?:independently )?verified|per (?:WTA|Mountain Project|SummitPost|Peakbagger|the guidebook)|Wikipedia|Grokipedia|recorded here)\b/i;
+const PIPELINE = /\b(?:this session|(?:current |existing )?DB value|DB entry|previously stored|stored here|see corrections|enrichment pass|re-research|this entry is (?:an? |the )?(?:based|derived|duplicat\w*|placeholder|stub|record|row|import\w*|sourced|unverified|incomplete|kept|marked|flagged|for (?:the|a)\b)|this row|sources? (?:checked|found|located)|(?:in|from) (?:the )?available sources|in any source|by any source located|no located source|carried by no|NOT (?:independently )?verified|per (?:WTA|Mountain Project|SummitPost|Peakbagger|the guidebook)|Wikipedia|Grokipedia|recorded here)\b/i;
 const EXEMPT = [
   /\bSource Lake\b/,                                                      // a place in the Alpental valley
   /geometric interpolation[^.]*not independently verified/i,              // the manufactured-pin caveat check:waypoint-caveat requires
@@ -91,6 +91,10 @@ const KEEP = new Set([
   // area history: who named or first climbed a peak, a club's lookout, "Cascade climbers" meaning people
   "areas.wa_bryant_peak blurb", "areas.wa_cloudy_peak blurb", "areas.wa_mount_hinman blurb", "areas.wa_mount_pilchuck blurb",
   "areas.wa_mount_seattle blurb", "areas.wa_mount_triumph blurb",
+  // read and decided 2026-11-23, when Climber Kyle / the Mazamas joined NAMED: a grade naming its scale,
+  // a first-ascent party's club, a route NAMED for a guidebook, and a campground named for a club
+  "routes.wa_cutthroat_west_ridge alpine_grade", "routes.wa_bonanza_peak_mary_green_glacier overview", "areas.wa_bonanza_peak blurb",
+  "routes.ca_east_wall_2_names_in_the_guidebook approach", "areas.wv_tuggin_shack blurb",
 ]);
 
 const cols = "id,fa,grade,season,aspect,commitment,alpine_grade,rock_grade,ice_grade,aid_grade,face,permit,comms,turnaround,pro_needs,detailed_rack,rope_type,rope_note,rappel_count_note,rappels,best_season,bail,descent,descent_text,approach,overview,beta,gear,hazards,obj_haz,what_to_bring,pro_tips,watch_out,timing,access,road,crowds,emergency,climate,itinerary,partner_requirements,seasonal_guidance,seasonal_hazards,approach_logistics,approach_variants,climbing_route,bivy,pitch_detail,waypoints,rappel_detail,sling_rack,ascender,start_type,landing,pads,rock,crux,prot_rating";

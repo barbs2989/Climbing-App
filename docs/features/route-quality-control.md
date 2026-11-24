@@ -196,6 +196,16 @@ empty field fill at once and two agreeing climbers change one; the owner withdre
       `review-flags-nightly` asks whether the climb or area exists where it is filed and whether its facts are
       right (`ai_value` = only the corrected keys). The Menu's proposal tiles still work.
     - Proved by `scripts/oneoff/verify-0505-proposals-share-the-edit-rules-pglite.mjs` (PGlite replay, 17 checks).
+    - **End-to-end QA, 2026-11-23** (owner: "do tests … by creating test accounts and do all the actions"): two
+      real test accounts and every desk action clicked on review.html (approve an area and a climb, the duplicate
+      warning on a second same-named climb, turn down with and without a strike, approve and turn down an edit,
+      dismiss a flag, a restricted climber refused), 23 checks, all passing; the test data was deleted after. It
+      found three faults, fixed in 0517: the strike notice said "A route edit of yours was turned down" for a
+      turned-down climb and doubled the reason's full stop (`_add_contribution_strike` now names any contribution
+      and drops the reason's own full stop); a restricted climber's field edit got the RLS policy's own error
+      (`guard_field_contribution` now refuses it first: "Editing is paused on your account…"); and the proposal
+      card printed Approach twice. `scripts/oneoff/verify-0517-strike-notices-pglite.mjs` holds them. Still open:
+      two PENDING proposals with the same name do not flag each other; the duplicate list reads the catalog only.
     - *Signed out = sign in first.* Add a climb used to offer *Submit anonymously*, which 0165's "authed can
       contribute" policy always refused. Its button now reads *Sign in to submit* and opens the sign-in sheet
       (`onLogin`), as Add an area's `submitAreaProposal` already did.

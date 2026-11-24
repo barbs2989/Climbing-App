@@ -34,8 +34,8 @@ views under `groupsTab`: For you · Your groups · Your activity · Discover · 
   covered them, so a climber whose only groups were at home could pick nothing but home. It no longer offers each typed town, which ran to hundreds of spellings. A town is found
   by the search box and a distance by *Near a place*. Results show 20 at a time with *Show more groups*, reset
   whenever a filter changes. Signed in, each 20 is its own read (`discover_groups`, 0487) and the heading's count is
-  the database's total; the chip counts come from `discover_group_facets`. *Other* lists the groups whose typed
-  location names no state.
+  the database's total; the chip counts come from `discover_group_facets`. *Other* lists the groups that picked no
+  catalog area and whose typed place names no state (since 0516 the form no longer saves a group that way).
 - **Discover — explore by discipline.** One chip per discipline, whatever capitals a group typed it with ("alpine"
   and "Alpine" are one chip, named as most groups spell it; `useDiscoverGroupFacets`). A chip fills the search box.
 - **Discover — sorts.** *Recommended* (or *Nearest* with a place picked), *Most active* (the most recent post that
@@ -53,17 +53,25 @@ views under `groupsTab`: For you · Your groups · Your activity · Discover · 
   as the guest profile photo is.
 - **Make it yours** (owner 2026-11-23, "do all", 0506). The group form's section after *Photos* (`GroupCustomizeFields`)
   sets five more things, all optional and saved with the form: a **colour** (`groups.accent`, one of `GROUP_ACCENTS` or
-  *Auto*; it tints `groupBand`, the initial in `groupMark`, and a strip above the name when there is no cover; the
+  *Auto*, which stores no colour, at creation as on an edit; it tints `groupBand`, the initial in `groupMark`, and a strip above the name when there is no cover; the
   database holds it to `#rrggbb` since it reaches a style), an **announcement** (≤300, an amber banner under the
   group's name for anyone who opens it), a **welcome message** (≤600, at the top of Discussion for a member until they
   close it, for the session: `grpWelcomeHidden`), up to 4 **links** (`{label, url}`, https only; `cleanGroupLinks` in
   `lib/groupRules.js` adds a missing `https://` and refuses `http://`, as `group_links_valid()` does; listed on About
   and opened in a new tab with no opener), and **what to call moderators** (≤24, `mod_title`, in place of MOD and
-  Moderator on Members). The new text is screened with the group's name and About text (`screening_text`'s `group`
-  line). Only a manager can change them (0090's update policy).
+  Moderator on Members, its badge capped at 120px). The new text is screened with the group's name and About text
+  (`screening_text`'s `group` line), each link's address with its label since 0509, because About prints both; the
+  model screen (`supabase/functions/screen-content`) reads the same fields for a group. A link's scheme is lowercased
+  before saving (the database's test is case-sensitive), and `club.org:8080` is a host and port, not a scheme. The
+  welcome message is shown only to members, but it is a column of the group row, so anyone who can read a public
+  group can read it: it is not a place for anything private. Only a manager can change them (0090's update policy).
 - **The database refuses a late RSVP or invite** (0506, `guard_group_event_not_past`): for an event dated before the UTC
   date minus one, a day more lenient than the app, so it never refuses what the app offers. The RSVP toast says *This
   event has ended.* Cancelling an RSVP stays allowed. Probe: `scripts/oneoff/probe-group-custom-0506.mjs`.
+  **So a new event starts today or later** (`GroupEventForm`, review 2026-11-23): `createGroupEvents` writes the host's
+  RSVP with the event, and the database would refuse it for a past date, leaving an event its host is not on. The date
+  picker's minimum is today and a past date disables *Create event* with *Pick today or a later date.* An edit may still
+  move an event's date.
 - **Join / Leave and + Invite** in a group's header are compact pills; the joined state reads *✓ Joined* (its name
   for a screen reader still says tap to leave, and leaving asks first).
 - **Removing a member** (the ✕ on Members) is for the owner and moderators only, never on yourself or the owner, and
@@ -75,7 +83,7 @@ views under `groupsTab`: For you · Your groups · Your activity · Discover · 
   `GroupEventForm` on that event (`editId` in its draft: no group or repeat choice) and saves through `updateGroupEvents`;
   on a series, a checkbox applies the title, time, meeting spot, details and cap to the later events too, whose dates
   never move. A series event also shows a *This series* card: how many are left and the last date, **Add N more**
-  (`seriesExtension` continues after the last date and `createGroupEvents` writes the round under the same `series_id`),
+  (`seriesExtension` continues the cadence after the last date, from today on for a series that already ran out, and `createGroupEvents` writes the round under the same `series_id`),
   and **Cancel this and the N after it** (`seriesLater`, `deleteGroupEvents`, one confirm). The host's 10-day reminder
   for the last event of a series says it is the last. Only the host may edit (the `group events edited by the host`
   policy); a group organizer can cancel but sees none of these tools on another host's event.
@@ -90,7 +98,15 @@ views under `groupsTab`: For you · Your groups · Your activity · Discover · 
   partners card links to *Climbing groups near <area>*, which opens Discover already set to that area. This is
   Meetup's model (search any location, then a distance around it), on the places the app already knows, for the
   climber planning a trip somewhere they do not live.
-- **Where it climbs.** A group's form has an optional *Where it climbs* field: one catalog area (`groups.area_id`).
+- **Where it climbs** (required since 0516, asked right after the name; `GroupPlaceFields`). A catalog area, or, behind
+  *Not in the catalog? Enter a place yourself*, a place name and a **state or province picked from a list**, stored in
+  `location` as "Squamish, BC". The group is filed under its area's state first (`groups.region` = `area_region`, else
+  what `location` names), so a group placed at Squamish is under British Columbia whatever its text says, and the
+  area's name is in its search text. *Based in* (optional, the town it meets from) is `location` when an area is
+  picked. A group saved before 0516 with no area reopens its settings on the place it typed, and saving asks for the
+  state. The area's state is its level-2 ancestor (`area_state()`); it and the area's name (`area_region`, `area_place`)
+  are written only by the trigger below.
+- **The area** is one catalog row (`groups.area_id`).
   Its point (`lat`, `lng`) is written only by the `groups_place_from_area` trigger from `area_point()` (the area's
   own coordinate, else its descendants' average, else its nearest ancestor's), so a client cannot place a group
   somewhere its area is not. The About tab reads *Climbs around <area>*. A group without one is never claimed to be
@@ -152,6 +168,7 @@ treats it as a DELETE. Probe: `scripts/oneoff/probe-live-takedown.mjs`.
 | File | Key symbols |
 |---|---|
 | `ClimbMatch.jsx` | `groupDiscover`, `groupDiscoverUnavailable`, `groupRecommended`, `groupsKnown`, `discoverGroupList` (guests), `groupDiscoverCard`, `groupHomeRegion`, `groupClimbRegions`, `groupRegionRank`, `groupPlace`, `groupNear`, `groupNearPt`, `groupNearMi`, `openGroupsNear`, `groupsTab`, `openGroupId` |
+| `src/components/GroupPlaceFields.tsx` | `GroupPlaceFields`, the form's *Where it climbs* (a catalog area, or a typed place and its state) and *Based in* (0516) |
 | `src/components/GroupPlaceSearch.tsx` | `GroupPlaceSearch`, the catalog search behind *Near a place* and the form's *Where it climbs* |
 | `src/components/PartnersHereCard.tsx` | `onGroupsHere`, the area page's *Climbing groups near* link |
 | `src/components/GroupDiscussionTab.tsx` | `GroupDiscussionTab`, an open group's Discussion tab (lifted from App, PR62) |
@@ -165,21 +182,23 @@ treats it as a DELETE. Probe: `scripts/oneoff/probe-live-takedown.mjs`.
 | `lib/eventSeries.js` | `SERIES_COUNTS`, `seriesDates`, `seriesExtension`, `seriesLater`: the dates of a repeating series |
 | `lib/groupRules.js` | `groupVisOf`, `groupCanHostEvent`, `groupJoinPath`, `groupJoinLabel`, `GROUP_TOPICS`, `groupWhere` (moved out of `ClimbMatch.jsx`, PR62) |
 | `src/components/GroupsTab.tsx` | `GroupsTab`, the Groups screen body (For you / Your groups / Your activity / Discover / Events), lifted from App in PR61; App passes it the helpers above |
-| `lib/db.js` | `useMyGroups`, `useDiscoverGroups`, `useDiscoverGroupFacets`, `useGroupById`, `refreshGroupDiscovery`, `createGroupRow`, `updateGroupSettings`, `uploadGroupPhoto`, `setGroupVisibility`, `createGroupEvents`, `updateGroupEvents`, `deleteGroupEvents`, `regionOfPlace`, `regionAbbr`, `useMyPartnerAreas`, `useStates`, `useGroupFeed`, `useAreaPoint` |
+| `lib/db.js` | `useMyGroups`, `useDiscoverGroups`, `useDiscoverGroupFacets`, `useGroupById`, `refreshGroupDiscovery`, `createGroupRow`, `updateGroupSettings`, `uploadGroupPhoto`, `setGroupVisibility`, `createGroupEvents`, `updateGroupEvents`, `deleteGroupEvents`, `regionOfPlace`, `regionAbbr`, `groupRegionOf`, `splitTypedPlace`, `PLACE_REGION_LIST`, `knownRegion`, `useMyPartnerAreas`, `useStates`, `useGroupFeed`, `useAreaPoint` |
 | `lib/search.js` | `searchMatches` |
 | `lib/live.js` | `useLiveQuery` — the Realtime subscription behind the live feed |
 | `src/components/GroupCrewPicker.tsx` | Form a crew from this group: pick members, then a saved climb or an area |
 | `src/components/GroupPhotoFields.tsx` | `GroupPhotoFields`, the form's avatar and cover photo pickers (0454) |
-| `supabase/migrations` | 0090, 0178, 0230, 0258, 0260, 0318, 0326, 0396, 0454 (avatar and cover); 0426 (private crews, used by Form a crew); 0487 (`discover_groups`, `discover_group_facets`, `region_of_place`, `groups.region`, `groups.search_text`) |
+| `supabase/migrations` | 0090, 0178, 0230, 0258, 0260, 0318, 0326, 0396, 0454 (avatar and cover); 0426 (private crews, used by Form a crew); 0487 (`discover_groups`, `discover_group_facets`, `region_of_place`, `groups.region`, `groups.search_text`); 0516 (`area_state`, `groups.area_region`, `groups.area_place`: the region from the area first) |
+| `scripts/oneoff/probe-group-region-from-area-0516.mjs` | Replays the migrations into PGlite: a group placed at Squamish is under British Columbia, a typed "Squamish, BC" too, a forged area state is overwritten |
 | `scripts/oneoff/verify-0487-discover-groups-pglite.mjs` | Replays the migrations into PGlite and asks Discover's questions as real callers: who is listed, search, state, distance, each sort, paging, grants |
 
 ## 4. Data
-`groups` (`visibility`, `event_policy`, `policy`, `location`, `blurb`, `area_id`, `lat`, `lng`, `avatar_url`, `cover_url`; generated: `region`, `search_text`), `group_members` (`role`, `status`),
+`groups` (`visibility`, `event_policy`, `policy`, `location`, `blurb`, `area_id`, `lat`, `lng`, `area_region`, `area_place` (trigger-written), `avatar_url`, `cover_url`; generated: `region`, `search_text`), `group_members` (`role`, `status`),
 `group_posts`, `group_post_reactions` (both in the `supabase_realtime` publication since 0326), `group_events`, `group_event_rsvps`, `partner_areas`, `areas` (state rows and `path`).
 
 ## 5. Known gaps
-- A group's location is free text; one typed with no state ("Squamish") has no region and is listed under *Other*.
-- Only groups that picked *Where it climbs* have a point; the rest are found by state and search, never by distance.
+- A group saved before 0516 with no area and a place naming no state stays under *Other* until its organizer saves
+  its settings (the form then asks for the state).
+- A place typed instead of picked has a state but no point, so it is found by state and search, never by distance.
 - Discover's pages are cut by offset, so a group created between two reads can shift a row onto the next page (the
   list drops the repeat). *Most members* and *Most active* count members or find the last post for every group the
   filters match before cutting the page; past tens of thousands of groups those two sorts want a stored count and
