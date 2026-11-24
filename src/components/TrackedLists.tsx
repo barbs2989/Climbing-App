@@ -1,3 +1,4 @@
+import { FONT_DISPLAY } from "../../lib/fonts.js";
 import type { CSSProperties } from "react";
 import { C, useCuratedLists } from "../../ClimbMatchCore.jsx";
 import ActionIcon from "./ActionIcon.tsx";
@@ -33,7 +34,7 @@ export interface TrackedListsProps {
    apart from a one-line way in; a key the app no longer draws is skipped. A row opens that list in Logbook > Challenges. */
 export default function TrackedLists({keys,logs,routeById,onOpenList,onChoose,unavailable}: TrackedListsProps){
   const {lists,listProgress}: CuratedLists=useCuratedLists(logs||[],routeById);
-  const hd: CSSProperties={fontSize:13,fontWeight:800,color:C.text,textTransform:"uppercase",letterSpacing:0.4,margin:"4px 2px 10px",borderLeft:"3px solid "+C.blue,paddingLeft:9};
+  const hd: CSSProperties={fontFamily:FONT_DISPLAY,fontSize:18,lineHeight:1.15,fontWeight:600,color:C.text,textTransform:"uppercase",letterSpacing:0.7,margin:"4px 2px 10px"};
   if(unavailable)return <div style={{marginBottom:14}}><div style={hd}>{"Your lists"}</div><div style={{fontSize:12.5,color:C.textMuted,background:C.card,border:"1px solid "+C.border,borderRadius:12,padding:"11px 13px"}}>{"Couldn’t load the lists you follow. Your progress is safe — it comes from your logs."}</div></div>;
   const shown=(keys||[]).map(k=>lists.find(L=>L.key===k)).filter((L): L is CuratedList => !!L);
   if(!shown.length)return <button onClick={onChoose} style={{width:"100%",display:"flex",alignItems:"center",gap:10,marginBottom:14,padding:"11px 13px",borderRadius:12,border:"1px solid "+C.border,background:C.card,color:C.text,cursor:"pointer",textAlign:"left"}}><ActionIcon name="award" size={17} color={C.amber}/><span style={{flex:1,minWidth:0}}><span style={{display:"block",fontSize:13,fontWeight:700}}>{"Follow a climbing list here"}</span><span style={{display:"block",fontSize:12,color:C.textMuted,marginTop:1,lineHeight:1.35}}>{"Pick the Fifty Classics, the Bulgers or any list to see your progress on Home."}</span></span><span style={{color:C.blue,fontSize:12.5,fontWeight:700,whiteSpace:"nowrap"}}>{"Choose →"}</span></button>;

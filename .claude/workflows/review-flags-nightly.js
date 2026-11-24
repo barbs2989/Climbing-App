@@ -50,7 +50,13 @@ const RULES = `Rules:
 - "ai_value" = the value you believe belongs in the field, in the SAME JSON shape as the current/suggested value (number stays number, array of rows stays array of rows). Omit it (null) when unsure, or when the climber's value is already right and verdict is "agree" — then use the climber's value.
 - "reasoning": 1–4 plain sentences the owner reads before deciding. Mention if the edit removes something.`;
 
+const isProposal = (it) => it.field === "new_route" || it.field === "new_area";
 function itemText(it) {
+  if (isProposal(it)) {
+    const where = it.area ? `${it.area.name || it.area.id}${it.area.state ? ", " + String(it.area.state).toUpperCase() : ""}` : "no area given";
+    return `A CLIMBER PROPOSES A NEW ${it.field === "new_route" ? "CLIMB" : "AREA (crag, peak or area)"} for the catalog, filed ${it.field === "new_route" ? "in" : "inside"}: ${where}  [area id ${it.area_id || "none"}]
+WHAT THEY SENT: ${JSON.stringify(it.suggested_value)}`;
+  }
   const where = it.route ? `${it.route.name} (${it.route.discipline || "?"}, grade ${it.route.grade || "?"}) in ${it.route.area || "?"}, ${String(it.route.state || "").toUpperCase()}` : it.area ? `area ${it.area.name || it.area.id}` : it.route_id;
   return `ROUTE/AREA: ${where}  [id ${it.route_id || it.area_id}]
 FIELD: ${it.field_label} (${it.field || "whole route"})
@@ -65,7 +71,7 @@ const results = await pipeline(
 
 ${itemText(it)}
 
-${it.item_kind === "flag" ? "Decide: is the value on the page wrong? verdict agree = the climber is right that it is wrong (give the correct value in ai_value); disagree = the page is right; partly = some of it is wrong." : "Decide: is the climber's suggested value correct? agree = yes; disagree = no (put the right value in ai_value if you found it); partly = some of it (put the corrected value in ai_value)."}
+${isProposal(it) ? "Decide: is this a real climb / area, in the place it is filed, and are the facts the climber gave (name, grade, length, pitches, location, approach…) right? agree = it exists there and the facts check out; disagree = no such climb/area, or it belongs somewhere else entirely (say where in reasoning); partly = it exists but some facts are wrong — put ONLY the corrected keys, with the climber's key names, in ai_value as an object. Name in reasoning any other name it is known by." : it.item_kind === "flag" ? "Decide: is the value on the page wrong? verdict agree = the climber is right that it is wrong (give the correct value in ai_value); disagree = the page is right; partly = some of it is wrong." : "Decide: is the climber's suggested value correct? agree = yes; disagree = no (put the right value in ai_value if you found it); partly = some of it (put the corrected value in ai_value)."}
 
 ${RULES}`,
     { label: `research:${(it.route && it.route.name) || it.route_id || i}:${it.field || "route"}`, phase: "Research", schema: VERDICT }),
