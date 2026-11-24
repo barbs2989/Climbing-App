@@ -530,7 +530,7 @@ export default function SuggestFix({route,onClose,onSubmit,onLog,scrollTo,pendin
   const isFilled=function(f: SFField){return filledStr(f)!==""&&!sameAsApp(f);};
   const changedFields=FIELDS.filter(function(f){return isFilled(f);});
   const allEmpty=changedFields.every(function(f){return !f.cur||f.cur==="—";});
-  const fld: CSSProperties={width:"100%",padding:"9px 11px",borderRadius:9,border:"1px solid "+C.border,background:C.surface,color:C.text,fontSize:14,fontFamily:"inherit",boxSizing:"border-box",outline:"none"};
+  const fld: CSSProperties={width:"100%",padding:"9px 11px",borderRadius:9,border:"1px solid "+C.field,background:C.surface,color:C.text,fontSize:14,fontFamily:"inherit",boxSizing:"border-box",outline:"none"};
   const bivyCap=function(t: string){return <span style={{display:"block",fontSize:11,fontWeight:700,color:C.textMuted,margin:"0 0 3px 2px"}}>{t}</span>;};
   const sm=function(on: boolean){return {...CHIP,border:"1px solid "+(on?C.blue:C.border),background:on?C.blueBg:C.surface,color:on?C.onSolid:C.textSub};};
   const setV=function(k: string,v: unknown){setVals(function(p){return Object.assign({},p,{[k]:v});});};
