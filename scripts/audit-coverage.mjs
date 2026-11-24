@@ -138,7 +138,15 @@ async function main() {
   const onlyState = opt("--state", null);
   const top = Number(opt("--top", 25));
   const date = new Date().toLocaleDateString("en-CA"); // YYYY-MM-DD in the machine's own day, not UTC's
-  const outPath = path.resolve(ROOT, opt("--out", `audits/coverage/${onlyState ? onlyState + "-" : ""}${date}.json`));
+  // The baseline is read FIRST, and a snapshot never lands on it: run twice in one day, the dated name IS the
+  // baseline's, and writing before reading compared the new snapshot with itself and destroyed the old one.
+  const cmp = opt("--compare", null);
+  const prev = cmp ? JSON.parse(fs.readFileSync(path.resolve(ROOT, cmp), "utf8")) : null;
+  let outPath = path.resolve(ROOT, opt("--out", `audits/coverage/${onlyState ? onlyState + "-" : ""}${date}.json`));
+  if (cmp && path.resolve(ROOT, cmp) === outPath) {
+    const hm = new Date().toTimeString().slice(0, 5).replace(":", "");
+    outPath = outPath.replace(/\.json$/, `-${hm}.json`);
+  }
 
   const g = query(GLOBAL_SQL, "global").j;
   const ledgerBy = new Map(), ownerBy = new Map(), use = new Map();
@@ -251,9 +259,7 @@ async function main() {
   fs.writeFileSync(outPath, JSON.stringify(snapshot) + "\n");
   console.log(`\nSnapshot: ${path.relative(ROOT, outPath)}`);
 
-  const cmp = opt("--compare", null);
-  if (cmp) {
-    const prev = JSON.parse(fs.readFileSync(path.resolve(ROOT, cmp), "utf8"));
+  if (prev) {
     // In FIELDS, not percentage points: a research batch moves a few hundred fields of 1.4 million, which reads as
     // "+0.00 pts" (measured on the first two runs). Only what changed is printed.
     const sg = (n) => (n > 0 ? "+" : "") + n;
