@@ -26,6 +26,7 @@ the catalog import pipeline (see [docs/BACKEND.md](docs/BACKEND.md)).
 
 ## Recent changes
 
+- **Vouch stars in a public profile's header** (owner 2026-11-23: "add the person vouch stars to their public profile … and also show the number of people that have vouched"): under the name, `FullProfile` draws five stars filled to the average vouch rating, the average, and *N people vouched* (plus *N rated* when some vouches endorsed without stars); tapping it opens the Vouches tab. The stat line then leaves out its vouch count so the header says it once. `Stars` gained `outOf`, which dims the unearned stars. See `docs/features/profile-and-settings.md`.
 - **Match %: one number for the pair, every grade counts, crag climbers can reach the top** (owner 2026-11-23, from the compat audit: "we should add those in"):
   - `compat()` is now symmetric. Each climber's ✓ verified counts half the term, so A and B no longer see different %s (12 of 20 seed pairs used to).
   - Shared objectives and listed areas are one *where you climb* term (`CMAX_WHERE`), so a crag pair that matches on everything reaches 99 instead of 84.
