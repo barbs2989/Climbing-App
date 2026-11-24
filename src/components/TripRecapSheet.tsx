@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import { C, pubNameRow, shortDate } from "../../ClimbMatchCore.jsx";
 import { POP_BACK } from "../../lib/popupChrome.js";
@@ -27,6 +27,8 @@ export interface TripRecapSheetProps {
   placeName?: string | null;
   onClose: () => void;
   showToast: (msg: string) => void;
+  /** Called once this climber has filed something for the crew, or the sheet shows there is nobody to mark: the "Who showed up" alert has done its job. */
+  onDone?: () => void;
 }
 
 interface RecapMate { id: string; departed: boolean; outcome: string | null; theirReply: string | null; theirNote: string | null }
@@ -36,7 +38,7 @@ interface ProfileRow { id: string; name?: string | null; username?: string | nul
 /** "How did it go?": after a crew's day, each crewmate says what happened to each other crewmate — or that the crew
  *  called it off, which marks nobody. One tap per crewmate; a second tap on the same answer takes it back. Every tap
  *  is a write (submitTripReport), shown at once and put back if the write fails. */
-export default function TripRecapSheet({ crewId, real = true, placeName, onClose, showToast }: TripRecapSheetProps) {
+export default function TripRecapSheet({ crewId, real = true, placeName, onClose, showToast, onDone }: TripRecapSheetProps) {
   const q = useCrewRecap(crewId, real);
   const data = q.data as RecapData | undefined;
   const ids = (data?.mates || []).map((m) => m.id);
@@ -47,18 +49,30 @@ export default function TripRecapSheet({ crewId, real = true, placeName, onClose
   const [mine, setMine] = useState<Record<string, string | null>>({});
   const [callOff, setCallOff] = useState<boolean | null>(null);
   const [busy, setBusy] = useState(false);
+  /* Crewmates with a write in flight: their chips wait, so two quick taps cannot land out of order (review 2026-11-24). */
+  const [pending, setPending] = useState<Record<string, boolean>>({});
+  /* Nothing to do here, or something already filed: the alert that brought you here can go. */
+  const _filed = !!data && (data.calledOff || data.mates.some((m) => m.outcome));
+  const _empty = !!data && !!data.tripDate && !data.mates.length;
+  const [doneSent, setDoneSent] = useState(false);
+  useEffect(() => { if ((_filed || _empty) && !doneSent && onDone) { setDoneSent(true); onDone(); } }, [_filed, _empty, doneSent, onDone]);
   const calledOff = callOff == null ? !!data?.calledOff : callOff;
   const open = !!data?.open;
   const day = data?.tripDate ? shortDate(data.tripDate) : null;
 
   const pick = (m: RecapMate, outcome: string) => {
+    if (pending[m.id]) return;
     const was = m.id in mine ? mine[m.id] : m.outcome;
     const next = was === outcome ? null : outcome;
     setMine((p) => ({ ...p, [m.id]: next }));
-    submitTripReport(crewId, m.id, next).catch((e: Error) => {
-      setMine((p) => ({ ...p, [m.id]: was }));
-      showToast("Couldn’t save that — " + (e && e.message ? e.message : "check your connection and try again."));
-    });
+    setPending((p) => ({ ...p, [m.id]: true }));
+    submitTripReport(crewId, m.id, next)
+      .then(() => { if (next && onDone && !doneSent) { setDoneSent(true); onDone(); } })
+      .catch((e: Error) => {
+        setMine((p) => ({ ...p, [m.id]: was }));
+        showToast("Couldn’t save that — " + (e && e.message ? e.message : "check your connection and try again."));
+      })
+      .finally(() => setPending((p) => ({ ...p, [m.id]: false })));
   };
   const toggleCallOff = () => {
     const next = !calledOff;
@@ -90,7 +104,7 @@ export default function TripRecapSheet({ crewId, real = true, placeName, onClose
         data.mates.map((m) => {
           const cur = m.id in mine ? mine[m.id] : m.outcome;
           const nm = nameOf(m.id);
-          const opts = TRIP_OUTCOMES.filter((o) => !m.departed || DEPARTED_OUTCOMES.has(o[0]));
+          const opts = TRIP_OUTCOMES.filter((o) => !m.departed || DEPARTED_OUTCOMES.has(o[0]) || o[0] === cur);
           return <div key={m.id} style={{ background: C.card, border: "1px solid " + C.border, borderRadius: 12, padding: "11px 12px", marginBottom: 10 }}>
             <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 9 }}>
               <Av src={profs[m.id] ? profs[m.id].avatar : null} size={32} />
@@ -102,7 +116,7 @@ export default function TripRecapSheet({ crewId, real = true, placeName, onClose
             <div role="group" aria-label={"How it went for " + nm} style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>
               {opts.map(([k, label]) => {
                 const on = cur === k;
-                return <button key={k} onClick={() => pick(m, k)} disabled={!open} aria-pressed={on} aria-label={label + " — " + nm}
+                return <button key={k} onClick={() => pick(m, k)} disabled={!open || !!pending[m.id]} aria-pressed={on} aria-label={label + " — " + nm}
                   style={{ padding: "8px 12px", borderRadius: 18, fontSize: 12.5, fontWeight: 700, cursor: open ? "pointer" : "default", whiteSpace: "nowrap",
                     border: "1px solid " + (on ? C.blue : C.border), background: on ? C.blueBg : C.surface, color: on ? C.onSolid : C.textSub, opacity: open || on ? 1 : 0.55 }}>
                   {(on ? "✓ " : "") + label}

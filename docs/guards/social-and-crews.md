@@ -22,6 +22,10 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     non-zero on the matching assertion.
   - **Trap met building it:** section 9 first read 2 trips for one climber because section 8's DELETED crew kept its
     report, which is the behaviour being proved. The section now clears that climber's reports first.
+  - **Section 10 (0522, review 2026-11-24):** a deleted crew's reports still group by trip and its *called off* still
+    holds; leaving after the day is no departure; a note after *I was there* keeps the dispute; the window opens a day
+    early and closes a day late. Run without 0522, all four fail (measured). 31 assertions. Section 8's fixture crew
+    that a member leaves is dated TODAY now: leaving on the day is a bail, leaving after it is not.
   - **What it cannot see:** time. `now()` is real, so the 7-day reveal and the 14-day window are tested by ageing
     `updated_at` and choosing agreed dates relative to `current_date`, not by waiting.
 

@@ -276,7 +276,7 @@ export default function Onboarding({onFinish,onSkip,onSignOut,onUsernameSaved,on
       {/* THE DESKTOP RAIL: the steps, done ones ticked, the current one bold. */}
       {inRail?<div style={{width:280,flexShrink:0,background:HERO_BG,boxShadow:HERO_SHEEN,borderRight:"1px solid "+C.border,padding:"30px 26px",display:"flex",flexDirection:"column",boxSizing:"border-box"}}>
         <div style={{display:"flex",alignItems:"center",gap:10}}>{LOGO(36)}<span style={{fontSize:19,fontWeight:800,color:C.text,letterSpacing:-0.3}}>Climb<span style={{color:C.brand}}>Match</span></span></div>
-        <div style={{fontSize:13,fontWeight:800,letterSpacing:0.6,textTransform:"uppercase",color:C.textMuted,margin:"34px 0 8px"}}>Set up your profile</div>
+        <div style={{fontSize:13,fontWeight:800,letterSpacing:0.6,textTransform:"uppercase",color:C.label,margin:"34px 0 8px"}}>Set up your profile</div>
         <div style={{flex:1}}>{rail}</div>
         <div style={{fontSize:12.5,color:C.textMuted,lineHeight:1.5,marginBottom:6}}>{doneShown?"All done.":"Takes about a minute."}</div>
         {showOut?<div style={{marginLeft:-4}}><button onClick={outGo} style={{...linkBtn,padding:"10px 4px"}}>{outLabel}</button></div>:null}
