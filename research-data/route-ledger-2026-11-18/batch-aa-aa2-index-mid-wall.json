@@ -1,0 +1,698 @@
+{
+ "wa_mid_wall_behind_the_green_door": {
+  "area": "wa_mid_wall",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/112903452/behind-the-green-door",
+    "https://rakkup.com/guidebook/index-rock-climbing/behind-the-green-door/c39473",
+    "https://www.mountainproject.com/area/106386407/mid-wall",
+    "https://rakkup.com/guidebook/index-rock-climbing/mid-wall/s11509",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5719,47.8191&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.5719,47.8191&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,parcel_id&returnGeometry=false&f=json",
+    "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.11c",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112903452/behind-the-green-door",
+      "fact": "5.11c YDS",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://rakkup.com/guidebook/index-rock-climbing/behind-the-green-door/c39473",
+      "fact": "5.11c (guide)",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "discipline",
+    "value": "trad",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112903452/behind-the-green-door",
+      "fact": "Type: Trad",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://rakkup.com/guidebook/index-rock-climbing/behind-the-green-door/c39473",
+      "fact": "Trad (guide icon)",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "length_m",
+    "value": 24,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112903452/behind-the-green-door",
+      "fact": "80 ft (24 m)",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 1,
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112903452/behind-the-green-door",
+      "fact": "one line to one anchor; count implied, not stated",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_mid_wall_behind_the_green_door",
+    "column": "guide_stars",
+    "from": null,
+    "to": 2,
+    "why": "The Index guidebook's own entry (publisher's teaser page) rates it 2 stars.",
+    "evidence": [
+     "https://rakkup.com/guidebook/index-rock-climbing/behind-the-green-door/c39473",
+     "https://rakkup.com/guidebook/index-rock-climbing/mid-wall/s11509"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_mid_wall_behind_the_green_door",
+    "column": "anchor",
+    "from": null,
+    "to": "Bolted anchor",
+    "why": "Mountain Project: a bolted anchor up and right at the top. House spelling \"Bolted anchor\" (stored on 11 routes); the bolt count of the anchor is not stated, so not \"2-bolt anchor\". Single source: locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/112903452/behind-the-green-door"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_mid_wall_behind_the_green_door",
+    "column": "gear",
+    "from": null,
+    "to": [
+     "standard rack",
+     "TCUs"
+    ],
+    "why": "Mountain Project: a standard rack with TCUs for the upper part. Single source: locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/112903452/behind-the-green-door"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_mid_wall_behind_the_green_door",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Washington State Parks (Forks of the Sky State Park)"
+    },
+    "why": "Brief AA: copy the State Parks object field for field from wa_folsom_blues (same wall, owner-approved; read live 2026-11-23). Re-read 2026-11-23: the State Parks boundary layer returns Forks of the Sky, State Park Property at the Mid Wall point (47.8191,-121.5719); the county parcel there (10030000000400) is owned by WA State Parks & Recreation; the parks.wa.gov release of 2026-03-13 is unchanged (no update date, no pass or fee rule). Fills a null access. permit stays null.",
+    "evidence": [
+     "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5719,47.8191&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+     "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.5719,47.8191&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,parcel_id&returnGeometry=false&f=json",
+     "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+    ]
+   }
+  ],
+  "held": [
+   "bolts: Mountain Project gives 8 bolts only if the climber takes the finishing sequence out right, so the count depends on the finish; held (stored null)."
+  ],
+  "disputed": [],
+  "notes": "Both sources place it apart from the main Mid Wall: uphill and to the right of every other Mid Wall route (filing note, not a move). FA: Mountain Project credits Dave Tower and Bruce Anderson, no year; the guide teaser shows none, so a blank FA is not filled from one source. Mixed protection (bolts low, gear above) but both sources call it trad."
+ },
+ "wa_mid_wall_keep_that_tuna_away_from_my_batteries": {
+  "area": "wa_mid_wall",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/124124251/keep-that-tuna-away-from-my-batteries",
+    "https://www.mountainproject.com/area/106386407/mid-wall",
+    "https://rakkup.com/guidebook/index-rock-climbing/mid-wall/s11509",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5719,47.8191&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.5719,47.8191&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,parcel_id&returnGeometry=false&f=json",
+    "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.8",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/124124251/keep-that-tuna-away-from-my-batteries",
+      "fact": "5.8 YDS",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "length_m",
+    "value": 18,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/124124251/keep-that-tuna-away-from-my-batteries",
+      "fact": "60 ft (18 m)",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 1,
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/124124251/keep-that-tuna-away-from-my-batteries",
+      "fact": "one line to one anchor; count implied, not stated",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_mid_wall_keep_that_tuna_away_from_my_batteries",
+    "column": "bolts",
+    "from": null,
+    "to": 2,
+    "why": "Mountain Project states two bolts alongside a couple of small cams. Single source (not in the guide's Mid Wall teaser list; theCrag Forbidden): locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/124124251/keep-that-tuna-away-from-my-batteries"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_mid_wall_keep_that_tuna_away_from_my_batteries",
+    "column": "gear",
+    "from": null,
+    "to": [
+     "a few small cams to 0.1"
+    ],
+    "why": "Mountain Project: a couple of cams, finger size down to 0.1, plus the bolts. Single source: locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/124124251/keep-that-tuna-away-from-my-batteries"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_mid_wall_keep_that_tuna_away_from_my_batteries",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Washington State Parks (Forks of the Sky State Park)"
+    },
+    "why": "Brief AA: copy the State Parks object field for field from wa_folsom_blues (same wall, owner-approved; read live 2026-11-23). Re-read 2026-11-23: the State Parks boundary layer returns Forks of the Sky, State Park Property at the Mid Wall point (47.8191,-121.5719); the county parcel there (10030000000400) is owned by WA State Parks & Recreation; the parks.wa.gov release of 2026-03-13 is unchanged (no update date, no pass or fee rule). Fills a null access. permit stays null.",
+    "evidence": [
+     "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5719,47.8191&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+     "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.5719,47.8191&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,parcel_id&returnGeometry=false&f=json",
+     "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+    ]
+   }
+  ],
+  "held": [],
+  "disputed": [],
+  "notes": "Not listed on the guide's Mid Wall teaser page (a 2023 line), so every fact rests on Mountain Project. FA: Mountain Project gives Tavish H, April 2023 (surname not given); one source, blank FA not filled. Anchor type not stated. Starts from the same ledge as Douglas the Furry Grizzly Wolf Kitten Goes Chomp. Stored trad; it mixes 2 bolts with cams, and MP files it trad."
+ },
+ "wa_stems_valleys": {
+  "area": "wa_mid_wall",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/108269608/stems-valleys",
+    "https://rakkup.com/guidebook/index-rock-climbing/stems-and-valleys/c31628",
+    "https://www.mountainproject.com/area/106386407/mid-wall",
+    "https://rakkup.com/guidebook/index-rock-climbing/mid-wall/s11509",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5719,47.8191&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.5719,47.8191&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,parcel_id&returnGeometry=false&f=json",
+    "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "discipline",
+    "value": "trad",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108269608/stems-valleys",
+      "fact": "Type: Trad",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://rakkup.com/guidebook/index-rock-climbing/stems-and-valleys/c31628",
+      "fact": "Trad (guide icon)",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "length_m",
+    "value": 18,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108269608/stems-valleys",
+      "fact": "60 ft (18 m)",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 1,
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108269608/stems-valleys",
+      "fact": "one line to one anchor; count implied, not stated",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_stems_valleys",
+    "column": "grade",
+    "from": "5.11-",
+    "to": "5.11a",
+    "why": "Two independent sources agree on 5.11a: Mountain Project (5.11a) and the Index guidebook's own entry (5.11a). The stored 5.11- is a looser form of the same grade. grade_num stays 11.25 (gradeNumFrom gives 11.25 for both), so no grade_num change; rock_grade is null.",
+    "evidence": [
+     "https://www.mountainproject.com/route/108269608/stems-valleys",
+     "https://rakkup.com/guidebook/index-rock-climbing/stems-and-valleys/c31628"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_stems_valleys",
+    "column": "guide_stars",
+    "from": null,
+    "to": 3,
+    "why": "The Index guidebook's own entry (publisher's teaser page) rates it 3 stars.",
+    "evidence": [
+     "https://rakkup.com/guidebook/index-rock-climbing/stems-and-valleys/c31628",
+     "https://rakkup.com/guidebook/index-rock-climbing/mid-wall/s11509"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_stems_valleys",
+    "column": "anchor",
+    "from": null,
+    "to": "Chain anchor",
+    "why": "Mountain Project: it finishes at the chains of Robin's Ramp (a shared anchor). House spelling \"Chain anchor\" (stored on 84 routes). Single source: locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/108269608/stems-valleys"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_stems_valleys",
+    "column": "gear",
+    "from": null,
+    "to": [
+     "nuts",
+     "a few cams to #2",
+     "slings"
+    ],
+    "why": "Mountain Project: nuts, a couple of cams to a #2 and a couple of slings, plus quickdraws for the bolts. Single source: locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/108269608/stems-valleys"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_stems_valleys",
+    "column": "access",
+    "from": {
+     "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+     "notes": "Many of these peaks (Mount Persis, Gunn Peak, Baring Mountain area) sit outside designated wilderness — administratively unrestricted despite serious technical terrain.",
+     "permit": "None required.",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+     "parking_pass": "Northwest Forest Pass or America the Beautiful pass required at developed trailheads."
+    },
+    "to": {
+     "land_manager": "Washington State Parks (Forks of the Sky State Park)"
+    },
+    "why": "Brief AA: copy the State Parks object field for field from wa_folsom_blues (same wall, owner-approved; read live 2026-11-23). Re-read 2026-11-23: the State Parks boundary layer returns Forks of the Sky, State Park Property at the Mid Wall point (47.8191,-121.5719); the county parcel there (10030000000400) is owned by WA State Parks & Recreation; the parks.wa.gov release of 2026-03-13 is unchanged (no update date, no pass or fee rule). Replaces the LEGACY object (Mt. Baker-Snoqualmie NF, Northwest Forest Pass, Mount Rainier NP fee line, Persis/Gunn/Baring note), which names the wrong manager. permit stays null.",
+    "evidence": [
+     "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5719,47.8191&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+     "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.5719,47.8191&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,parcel_id&returnGeometry=false&f=json",
+     "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+    ]
+   }
+  ],
+  "held": [
+   "bolts: Mountain Project says bolts were placed and lists 5 quickdraws, but never gives a bolt count; quickdraws are not bolts, so nothing proposed (stored null)."
+  ],
+  "disputed": [],
+  "notes": "Stems & Valleys and Stems and Leaves are TWO different lines: Stems & Valleys (5.11a) shares the hand-crack start of Hips and Valleys, moves right up a shallow corner and ends at the Robin's Ramp chains; Stems and Leaves (5.10a) is a left-facing corner on the huge flake further left, finishing at the Wild Boar anchors. Both have their own Mountain Project pages and the guide lists Stems and Valleys on its own. FA stored (U Lukic, J Tetzlaff, D Taylor) matches Mountain Project only, no year; left as is."
+ },
+ "wa_mid_wall_stems_and_leaves": {
+  "area": "wa_mid_wall",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/108161801/stems-and-leaves",
+    "https://rakkup.com/guidebook/index-rock-climbing/routes-on-the-huge-flake/c39469",
+    "https://www.mountainproject.com/area/106386407/mid-wall",
+    "https://rakkup.com/guidebook/index-rock-climbing/mid-wall/s11509",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5719,47.8191&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.5719,47.8191&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,parcel_id&returnGeometry=false&f=json",
+    "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.10a",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108161801/stems-and-leaves",
+      "fact": "5.10a YDS",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 1,
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108161801/stems-and-leaves",
+      "fact": "one line to one anchor; count implied, not stated",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_mid_wall_stems_and_leaves",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Washington State Parks (Forks of the Sky State Park)"
+    },
+    "why": "Brief AA: copy the State Parks object field for field from wa_folsom_blues (same wall, owner-approved; read live 2026-11-23). Re-read 2026-11-23: the State Parks boundary layer returns Forks of the Sky, State Park Property at the Mid Wall point (47.8191,-121.5719); the county parcel there (10030000000400) is owned by WA State Parks & Recreation; the parks.wa.gov release of 2026-03-13 is unchanged (no update date, no pass or fee rule). Fills a null access. permit stays null.",
+    "evidence": [
+     "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5719,47.8191&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+     "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.5719,47.8191&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,parcel_id&returnGeometry=false&f=json",
+     "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+    ]
+   }
+  ],
+  "held": [],
+  "disputed": [],
+  "notes": "Not the same line as Stems & Valleys (see that entry). The guide has no entry of its own: it groups the huge-flake lines as one 'Routes on the Huge Flake' entry (5.10a, 1 star), so no guide_stars proposed and the grade rests on Mountain Project. Length not stated anywhere. Anchor: shares the Wild Boar anchors, type not stated, not proposed. FA 'unknown' on Mountain Project: stays null. Gear given only as 'full range of sizes': not proposed."
+ },
+ "wa_mid_wall_flee_fly_flue": {
+  "area": "wa_mid_wall",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/108161775/flee-fly-flue",
+    "https://rakkup.com/guidebook/index-rock-climbing/routes-on-the-huge-flake/c39469",
+    "https://www.mountainproject.com/area/106386407/mid-wall",
+    "https://rakkup.com/guidebook/index-rock-climbing/mid-wall/s11509",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5719,47.8191&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.5719,47.8191&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,parcel_id&returnGeometry=false&f=json",
+    "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.7",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108161775/flee-fly-flue",
+      "fact": "5.7 YDS",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 2,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108161775/flee-fly-flue",
+      "fact": "Trad, 2 pitches",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_mid_wall_flee_fly_flue",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Washington State Parks (Forks of the Sky State Park)"
+    },
+    "why": "Brief AA: copy the State Parks object field for field from wa_folsom_blues (same wall, owner-approved; read live 2026-11-23). Re-read 2026-11-23: the State Parks boundary layer returns Forks of the Sky, State Park Property at the Mid Wall point (47.8191,-121.5719); the county parcel there (10030000000400) is owned by WA State Parks & Recreation; the parks.wa.gov release of 2026-03-13 is unchanged (no update date, no pass or fee rule). Fills a null access. permit stays null.",
+    "evidence": [
+     "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5719,47.8191&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+     "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.5719,47.8191&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,parcel_id&returnGeometry=false&f=json",
+     "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+    ]
+   }
+  ],
+  "held": [],
+  "disputed": [],
+  "notes": "Stored 2 pitches checked: Mountain Project states '2 pitches' (pitch 1 ends at a belay up and left along the flake edge), so it stays 2 (locked-1src). The guide covers it only inside the grouped 'Routes on the Huge Flake' entry. Length, anchor type and FA not stated (FA unknown: stays null). Gear 'full range': not proposed."
+ },
+ "wa_waiting_for_the_sun_2": {
+  "area": "wa_mid_wall",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/106461837/waiting-for-the-sun",
+    "https://rakkup.com/guidebook/index-rock-climbing/waiting-for-the-sun/c39470",
+    "https://www.mountainproject.com/area/106386407/mid-wall",
+    "https://rakkup.com/guidebook/index-rock-climbing/mid-wall/s11509",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5719,47.8191&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.5719,47.8191&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,parcel_id&returnGeometry=false&f=json",
+    "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.9",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106461837/waiting-for-the-sun",
+      "fact": "5.9 YDS",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://rakkup.com/guidebook/index-rock-climbing/waiting-for-the-sun/c39470",
+      "fact": "5.9 (guide)",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "length_m",
+    "value": 17,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106461837/waiting-for-the-sun",
+      "fact": "55 ft (17 m)",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 1,
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106461837/waiting-for-the-sun",
+      "fact": "one line to one anchor; count implied, not stated",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_waiting_for_the_sun_2",
+    "column": "bolts",
+    "from": null,
+    "to": 3,
+    "why": "Mountain Project states 3 bolts plus one small cam for the start. Single source: locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/106461837/waiting-for-the-sun"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_waiting_for_the_sun_2",
+    "column": "anchor",
+    "from": null,
+    "to": "2-bolt anchor",
+    "why": "Mountain Project: a two-bolt anchor at the top. House spelling \"2-bolt anchor\" (stored on 258 routes). Single source: locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/106461837/waiting-for-the-sun"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_waiting_for_the_sun_2",
+    "column": "gear",
+    "from": null,
+    "to": [
+     "one small cam for the start"
+    ],
+    "why": "Mountain Project: one small cam (green Alien size) protects the start (small cams also build the belay at the base). Single source: locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/106461837/waiting-for-the-sun"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_waiting_for_the_sun_2",
+    "column": "guide_stars",
+    "from": null,
+    "to": 3,
+    "why": "The Index guidebook's own entry (publisher's teaser page) rates it 3 stars.",
+    "evidence": [
+     "https://rakkup.com/guidebook/index-rock-climbing/waiting-for-the-sun/c39470",
+     "https://rakkup.com/guidebook/index-rock-climbing/mid-wall/s11509"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_waiting_for_the_sun_2",
+    "column": "access",
+    "from": {
+     "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+     "notes": "Many of these peaks (Mount Persis, Gunn Peak, Baring Mountain area) sit outside designated wilderness — administratively unrestricted despite serious technical terrain.",
+     "permit": "None required.",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+     "parking_pass": "Northwest Forest Pass or America the Beautiful pass required at developed trailheads."
+    },
+    "to": {
+     "land_manager": "Washington State Parks (Forks of the Sky State Park)"
+    },
+    "why": "Brief AA: copy the State Parks object field for field from wa_folsom_blues (same wall, owner-approved; read live 2026-11-23). Re-read 2026-11-23: the State Parks boundary layer returns Forks of the Sky, State Park Property at the Mid Wall point (47.8191,-121.5719); the county parcel there (10030000000400) is owned by WA State Parks & Recreation; the parks.wa.gov release of 2026-03-13 is unchanged (no update date, no pass or fee rule). Replaces the LEGACY object (Mt. Baker-Snoqualmie NF, Northwest Forest Pass, Mount Rainier NP fee line, Persis/Gunn/Baring note), which names the wrong manager. permit stays null.",
+    "evidence": [
+     "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5719,47.8191&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+     "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.5719,47.8191&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,parcel_id&returnGeometry=false&f=json",
+     "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+    ]
+   }
+  ],
+  "held": [],
+  "disputed": [
+   "discipline: stored sport = Mountain Project (Sport, 3 bolts + one cam); the guide's teaser shows a Trad icon. Two sources disagree, so not locked and not changed."
+  ],
+  "notes": "Sits on a small upper crag (the Blue Tile Lounge) just above the Mid Wall, reached up Robin's Ramp and a slab: a filing note, not a move. Descent: rappel to the Robin's Ramp chains, then to the ground (done with a 70 m rope; a 60 m untested). FA stored (E. Lund, B. Swee) matches Mountain Project only, no year; left as is."
+ },
+ "wa_mid_wall_dinky_twinkies": {
+  "area": "wa_mid_wall",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/108161783/dinky-twinkies",
+    "https://rakkup.com/guidebook/index-rock-climbing/routes-on-the-huge-flake/c39469",
+    "https://www.mountainproject.com/area/106386407/mid-wall",
+    "https://rakkup.com/guidebook/index-rock-climbing/mid-wall/s11509",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5719,47.8191&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.5719,47.8191&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,parcel_id&returnGeometry=false&f=json",
+    "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.9",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108161783/dinky-twinkies",
+      "fact": "5.9 YDS",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 1,
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108161783/dinky-twinkies",
+      "fact": "one line to one anchor; count implied, not stated",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_mid_wall_dinky_twinkies",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Washington State Parks (Forks of the Sky State Park)"
+    },
+    "why": "Brief AA: copy the State Parks object field for field from wa_folsom_blues (same wall, owner-approved; read live 2026-11-23). Re-read 2026-11-23: the State Parks boundary layer returns Forks of the Sky, State Park Property at the Mid Wall point (47.8191,-121.5719); the county parcel there (10030000000400) is owned by WA State Parks & Recreation; the parks.wa.gov release of 2026-03-13 is unchanged (no update date, no pass or fee rule). Fills a null access. permit stays null.",
+    "evidence": [
+     "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5719,47.8191&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+     "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.5719,47.8191&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,parcel_id&returnGeometry=false&f=json",
+     "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+    ]
+   }
+  ],
+  "held": [
+   "bolts: Mountain Project says the low crux is bolted but gives no count; nothing proposed (stored null)."
+  ],
+  "disputed": [],
+  "notes": "Climbs the outside of the huge flake on the left side of the wall (bolted crux low, gear for the upper half), so the stored disciplines [trad, sport] match Mountain Project's 'Trad, Sport'. The guide covers it only in the grouped 'Routes on the Huge Flake' entry. Length, anchor type and FA not stated (FA unknown: stays null)."
+ }
+}
