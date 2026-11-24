@@ -39959,3 +39959,48 @@ Peak), North Buttress/Thread of Gneiss (East Twin Needle), Thread of Ice (East T
 
 0 confirmed errors fixed, 5 newly flagged for human review, 5 clean.
 Next batch will continue id-ascending from `wa_east_twin_needle_thread_of_ice` (pass 9).
+
+## Batch 574 (pass 9) — 2026-11-24
+
+Checked 8 routes, continuing id-ascending from `wa_east_twin_needle_thread_of_ice`: five routes
+on Eldorado Peak (East Ridge/Inspiration Glacier, Northwest Couloir/Eldorado Glacier, North
+Ridge, Northeast Face, West Arete), Elephant Butte's Standard Route (Stetattle/Sourdough Ridge),
+and two Elephant Head routes (Lower West Face, Variation P1 West Face).
+
+Eldorado Peak's own five routes disagree on the summit's `high_point_ft`: East Ridge stores
+8,868ft while the other four store 8,872ft — the same summit, so these can't both be right.
+No single source settles it either: Wikipedia gives 8,868ft (NGVD29), SummitPost/WTA give
+8,876ft, the federal GNIS record gives 8,861ft, and Mountain Project gives 8,860ft. 8,868ft has
+the stronger/more-cited corroboration of the two stored values, but nothing nails it down enough
+to pick a number and write a fix — flagged for a human to normalize the five routes to one
+figure. The East Ridge's first-ascent names (Blair/Grigg/Wilson/Winder, Aug 1933) match Mountain
+Project exactly (order differs, not an error); the exact day (Aug 27) isn't independently
+confirmable beyond "August 1933." West Arete's FA names (Emerson/Gove) match Mountain Project
+exactly, but a search snippet gives Aug 29, 1969 against our stored Aug 24 — a likely date error,
+but resting on one snippet (mountainproject.com itself wasn't fetchable this run) isn't enough
+corroboration to write a fix per the two-source rule, so flagged rather than corrected. Northwest
+Couloir, North Ridge, and Northeast Face carry no other checkable claim beyond the shared
+high_point_ft and pass clean on everything else.
+
+Elephant Butte's Standard Route matches Wikipedia's 7,380ft summit exactly, and its approach via
+the Sourdough Mountain Trail from Diablo is corroborated by trip reports. But its access/closures
+note claiming the Sourdough Mountain Trail "was closed from the 2023 Sourdough Fire until
+reopening on May 12, 2026" doesn't hold up — NPS releases describe that fire's 2023 closures
+being lifted in phases by September 2023, not a three-year closure, and no NPS source names a
+May 12, 2026 reopening. Looks fabricated or conflated with something else; flagged rather than
+deleted outright, since no source was found either confirming or fully ruling it out.
+
+Elephant Head itself checks out as a real, correctly-placed peak (Chelan Co., near Dome Peak —
+not a mixup with the better-known Wyoming or Icicle Canyon "Elephant Head"s), and an AAC
+Publications entry confirms a west face exists there via a documented Northwest Ridge route. But
+neither "Lower West Face" (5.9, 5 pitches, 122m) nor "Variation P1 West Face" (5.7, 1 pitch, 24m)
+is named or rated by any source found — Mountain Project, SummitPost, and AAJ results for
+"Elephant Head" all point elsewhere. Both routes are bare rows (no FA, season, or approach text)
+with nothing to cross-check them against; flagged as uncorroborated rather than passed clean,
+since unlike most bare rows this peak's one documented route doesn't match either of theirs.
+
+**Clean (3):** Northwest Couloir/Eldorado Glacier, North Ridge, Northeast Face (all Eldorado
+Peak).
+
+0 confirmed errors fixed, 5 newly flagged for human review, 3 clean.
+Next batch will continue id-ascending from `wa_elephant_head_variation_p1_west_face` (pass 9).
