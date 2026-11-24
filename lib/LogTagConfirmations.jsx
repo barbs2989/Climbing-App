@@ -43,7 +43,9 @@ function useAnswer(t, showToast) {
     setBusy(true);
     respondToLogTag(t.log_id, verdict)
       .then(() => {
-        const followed = verdict === "confirmed" && confirmedHandler ? confirmedHandler(t) : false;
+        /* the answer is SAVED by now: a fault in what follows must not reach the catch below, which says nothing changed */
+        let followed = false;
+        try { followed = verdict === "confirmed" && confirmedHandler ? confirmedHandler(t) : false; } catch { followed = false; }
         if (showToast && !followed) showToast(verdict === "confirmed" ? "Confirmed" : "Marked as not with you — " + who + "’s climb no longer counts on Ranks.");
         qc.invalidateQueries({ queryKey: ["leaderboard"] });
         return qc.invalidateQueries({ queryKey: ["log-tags-for-me"] });
