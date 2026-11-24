@@ -1,0 +1,15 @@
+import fs from "node:fs";
+const D = (process.env.BATCH_DIR || ".") + "/";
+const raw = fs.readFileSync(D + "raw.txt", "utf8");
+const j = JSON.parse(raw.slice(raw.indexOf("{"))).rows[0].j;
+fs.writeFileSync(D + "routes.json", JSON.stringify(j, null, 1));
+const R = j.routes;
+const filled = (k) => R.filter((r) => r[k] != null && r[k] !== "" && !(Array.isArray(r[k]) && !r[k].length)).length;
+const disc = {};
+R.forEach((r) => (disc[r.discipline] = (disc[r.discipline] || 0) + 1));
+console.log(R.length, "routes; pitches0", R.filter((r) => r.pitches === 0).length, "len", filled("length_m"), "rack", filled("detailed_rack"), "overview", filled("overview"), "access", filled("access"));
+console.log(JSON.stringify(disc), "walls", new Set(R.map((r) => r.wall)).size, "unnamed", R.filter((r) => /^unnamed/i.test(r.name)).length);
+const ch = [];
+R.forEach((r, i) => (ch[i % 8] ||= []).push({ id: r.id, name: r.name, wall: r.wall, grade: r.grade, length_m: r.length_m }));
+ch.forEach((c, i) => fs.writeFileSync(D + "chunk" + (i + 1) + ".json", JSON.stringify(c, null, 1)));
+console.log("chunks", ch.map((c) => c.length).join(","));
