@@ -30,16 +30,19 @@ const M = createRequire(import.meta.url)(bundle);
 const { planTimes, summitDayPlan, realPitches, catOf } = M;
 const CRAG = M.CRAG_CATS || ["trad", "sport", "toprope", "aid", "bouldering"];
 
-const rows = await selectAll("routes", "id,name,discipline,grade,pitches,length_m,gain_ft,loss_ft,dist_km,timing,itinerary,outing_shape",
-  "discipline=not.in.(sport,toprope,bouldering,trad,aid)", { key: requireServiceKey(), pageSize: 1000 });
+const rows = await selectAll("routes", "id,name,area_id,discipline,grade,pitches,length_m,gain_ft,loss_ft,dist_km,timing,itinerary,outing_shape",
+  "discipline=not.in.(sport,toprope,bouldering)", { key: requireServiceKey(), pageSize: 1000 });
+/* A TRAD (or rock) route on a PEAK is alpine to catOf() (climbsAPeak reads the area's type), so it mounts Full
+   trip time too: every route the card can reach is read, and catOf decides with the area it would see. */
+const peaks = new Set((await selectAll("areas", "id", "area_type=eq.peak", { key: requireServiceKey(), pageSize: 1000 })).map((a) => a.id));
 const blank = (v) => v == null || v === "";
 const out = { approach: [], climb: [], descent: [], total: [], mdClimbHidden: [], mdWalkInHidden: [] };
 // AFTER: the same question asked of the flags Calculator.tsx now reads. Each must be 0.
 const after = { approach: 0, climb: 0, descent: 0, total: 0, legCardZero: 0 };
-let mounted = 0, multi = 0;
+let mounted = 0, multi = 0, tradOnPeak = 0;
 for (const r of rows) {
   const route = {
-    id: r.id, discipline: r.discipline, grade: r.grade, pitches: r.pitches,
+    id: r.id, discipline: r.discipline, grade: r.grade, pitches: r.pitches, mountainId: r.area_id, _dbArea: { areaType: peaks.has(r.area_id) ? "peak" : null },
     routeFt: r.length_m != null ? Math.round(r.length_m * 3.28084) : null,
     gainM: r.gain_ft != null ? Math.round(r.gain_ft / 3.28084) : null,
     lossM: r.loss_ft != null ? Math.round(r.loss_ft / 3.28084) : null,
@@ -47,6 +50,7 @@ for (const r of rows) {
   };
   if (CRAG.includes(catOf(route))) continue;
   mounted++;
+  if (/^(trad|rock|aid)$/.test(r.discipline || "")) tradOnPeak++;
   const P = planTimes(route, {});
   const tag = { id: r.id, name: r.name, disc: r.discipline, hikeH: +P.hikeH.toFixed(2), techH: +P.techH.toFixed(2), downH: +P.downH.toFixed(2), tripH: +P.tripH.toFixed(2) };
   const oldHike = !blank(route.distKm) || !blank(route.gainM);
@@ -71,7 +75,7 @@ for (const r of rows) {
   // The leg card used to print "≥0.0hr" for a leg Full trip time calls N/A.
   if (!P.descentTimed && P.downH === 0) after.legCardZero++;
 }
-console.log(`${rows.length} routes read; ${mounted} mount Full trip time; ${multi} of those show the multi-day view`);
+console.log(`${rows.length} routes read; ${mounted} mount Full trip time (${tradOnPeak} of them trad/rock/aid on a peak); ${multi} of those show the multi-day view`);
 console.log(`One-day view — a tile printed N/A while planTimes (and the leg card under GETTING THERE) timed it:`);
 console.log(`  Approach: ${out.approach.length}   Climbing: ${out.climb.length}   Descent: ${out.descent.length}   Total: ${out.total.length}`);
 console.log(`  AFTER the fix: Approach ${after.approach}   Climbing ${after.climb}   Descent ${after.descent}   Total ${after.total}  (a descent leg card now leaves out its "≥0.0hr": ${after.legCardZero})`);
