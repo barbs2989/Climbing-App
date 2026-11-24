@@ -75,11 +75,14 @@ whole guide feature on 2026-11-14 (owner). This doc covers the partners mode (`l
   searches need it: with none, the zip radii in the Distance pill are disabled (*Near my zip (none set)*); *Near me now* needs no zip.
   **Everyone at Anywhere, with a zip, is nearest first** (0524, owner 2026-11-24): ONE ordered read, `usePartnersByDistance`
   -> RPC `partners_by_distance`, which returns only ids and a rounded distance measured from the caller’s OWN saved zip
-  (it takes no coordinates), nearest first and climbers with no zip last, up to 50; their profiles are then read with the
+  (it takes no coordinates; every other climber’s centroid snapped to the 0.1 degree grid, 0502), the 50 nearest with a
+  zip and then up to 24 without one; their profiles are then read with the
   same select and 0434 column rules as the plain list. The source (sorted read or plain list) is decided once when
   Everyone opens, after the zip read answers, and again only on the climber’s own action (changing the distance, saving a
-  zip); the read is one attempt with no refetch on focus, so the order on screen never changes, and a failure falls back to
-  the plain list with *Couldn’t sort by distance right now*. Without a zip, or while filling a crew, Everyone is the
+  zip); the read is one attempt, with no refetch on focus and no cache once Partners closes, so the order on screen changes
+  only when the climber changes their own profile, blocks or zip, and a failure falls back to the plain list with *Couldn’t
+  sort by distance right now*. A list left unsorted although a zip is on file says *Not sorted by distance* with a *Sort by
+  distance* button -- the climber’s own choice, never an automatic switch. Without a zip, or while filling a crew, Everyone is the
   browse list (`useDiscoverableProfiles`, first 24, no distance order).
   With no zip, the inline zip card (`_zipNeeded` in `lib/PartnerSearch.jsx`, saves through `saveMyZip`) stays above the
   lists as an offer. My objectives with none saved, and A route with none picked, show their own

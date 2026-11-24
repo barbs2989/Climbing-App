@@ -17,6 +17,10 @@
 -- any distance is taken or any row is ordered, exactly as partners_near does since 0502, so saving a series of zips and
 -- calling this can recover at most a grid cell, never a zip. (The first version measured from the exact centroid and was
 -- corrected before merging; review of #3901.) Climbers the CALLER blocked are left out here too, before the limit.
+--
+-- CLIMBERS WITH NO ZIP STILL SHOW (third review of #3901): the nearest p_limit climbers WITH a zip come first, then up
+-- to 24 climbers with no zip -- a single limit with "nulls last" dropped every one of them once 50 had a zip, undoing
+-- the point of #3869 (climbers without a zip are findable).
 
 create or replace function public.partners_by_distance(p_limit integer default 24)
 returns table(id uuid, dist_mi integer)
@@ -42,11 +46,18 @@ begin
       where p.discoverable = true and p.id <> auth.uid() and not profile_owner_blocked_me(p.id)
         and not exists (select 1 from blocked_users b where b.blocker = auth.uid() and b.blocked = p.id)
     )
-    select d.pid,
-           case when d.miles is null then null else (greatest(1, ceil(d.miles / 5.0)) * 5)::integer end
-    from d
-    order by d.miles nulls last, d.pid
-    limit n;
+    select u.pid, u.dmi from (
+      (select d.pid, (greatest(1, ceil(d.miles / 5.0)) * 5)::integer as dmi
+         from d where d.miles is not null
+        order by d.miles, d.pid
+        limit n)
+      union all
+      (select d.pid, null::integer as dmi
+         from d where d.miles is null
+        order by d.pid
+        limit 24)
+    ) u
+    order by u.dmi nulls last, u.pid;  -- a UNION ALL keeps no order of its own
 end;
 $function$;
 
