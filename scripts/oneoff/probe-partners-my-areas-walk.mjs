@@ -113,9 +113,9 @@ try {
   ok(/listed at 1 place\./.test(await mbox.innerText()), "my box counts 1 place");
   const by = mp.locator('select[aria-label="Search by"]');
   note("mode: " + await by.inputValue());
-  // Partners lists real climbers once a zip is on file (owner, 0420): type it into the card, as a climber would.
+  // Partners offers a zip in a card (the lists show without one since 2026-11-24): type it in, as a climber would.
   const zipCard = mp.locator('[role="region"][aria-label="Add your zip code"]');
-  ok(await zipCard.count() === 1, "no zip yet: Partners asks for one in a card");
+  ok(await zipCard.count() === 1, "no zip yet: Partners offers one in a card");
   if (await zipCard.count()) { await zipCard.locator('input[aria-label="Zip code"]').fill("98225"); await zipCard.locator("button", { hasText: /^Save$/ }).click(); await mp.waitForTimeout(7000); }
   // Real climbers are listed by @username unless they show their name.
   const robinRow = mp.locator(`text=/${robin.name}|@${robinUser}/`).first();

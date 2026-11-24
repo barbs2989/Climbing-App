@@ -90,11 +90,11 @@ try {
       await home();
     }
     if (pass === 2) {
-      // Round two: save a zip THROUGH THE APP (profile_zips cascades with the account), so the
-      // near-the-climb list is allowed to draw.
+      // Round two: save a zip THROUGH THE APP (profile_zips cascades with the account). Since 2026-11-24 the
+      // near-the-climb list draws without one (it measures from the climb); this round checks the card clears.
       await tapNav("Partners"); await page.waitForTimeout(4000);
       const zi = page.locator('input[aria-label*="zip" i], input[placeholder*="zip" i]').first();
-      if (await zi.count()) { await zi.fill("98225"); await page.getByRole("button", { name: /^Save$/ }).first().click(); await page.waitForTimeout(4000); log("\n##### zip 98225 saved through the app; zip prompt still showing:", await page.evaluate(() => /Add your zip code to see climbers near you/.test(document.body.innerText))); }
+      if (await zi.count()) { await zi.fill("98225"); await page.getByRole("button", { name: /^Save$/ }).first().click(); await page.waitForTimeout(4000); log("\n##### zip 98225 saved through the app; zip prompt still showing:", await page.locator('[role="region"][aria-label="Add your zip code"]').count() > 0); }
       else log("\n##### no zip box found");
     }
     await tapNav("Crews");

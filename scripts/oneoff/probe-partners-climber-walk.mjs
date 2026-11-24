@@ -47,13 +47,13 @@ try {
 
   // 1. Open Partners, as a climber would, from the nav.
   await page.locator('button[aria-label="Partners"], button:has-text("Partners")').first().click(); await page.waitForTimeout(6000);
-  // A fresh account has no zip: main's point-of-use rule (#3306) asks for it right here, and the real lists wait for it.
+  // A fresh account has no zip: the card offers it here (#3306); since 2026-11-24 the lists show without it, and the zip only adds the distance searches.
   const zipForm = page.locator('[role="region"][aria-label="Add your zip code"]');
   if (await zipForm.count()) {
     await cardLook(zipForm, "the zip form");
     await zipForm.locator('input[aria-label="Zip code"]').fill("84117");
     await zipForm.locator("button", { hasText: /^Save$/ }).click(); await page.waitForTimeout(6000);
-    ok(await zipForm.count() === 0, "saving a zip clears the form and lets the lists show");
+    ok(await zipForm.count() === 0, "saving a zip clears the offer card (the lists show without one since 2026-11-24)");
   } else note("no zip form (the fixture already has a zip)");
   const by = page.locator('select[aria-label="Search by"]');
   ok(await by.count() === 1, "Partners tab is open (Search by pill present)");
