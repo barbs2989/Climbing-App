@@ -81,7 +81,7 @@ const out = path.join(outdir, "b.cjs");
 const CORE = JSON.stringify(corePath);
 await build({
   stdin: {
-    contents: `export { compat, compatParts, compatWhy, compatSummary, compatUnknown, availOf, availSlotLabels, AVAIL_OPTS, AVAIL_SLOT_OPTS, __set_MY_PACE, CLIMBERS, ME, CMAX_DISC, CMAX_GRADE, CMAX_WHERE, CMAX_VERIF, CMAX_PACE, CMAX_AVAIL, CMAX_REL, COMPAT_BASE, COMPAT_TOP, COMPAT_MAX } from ${CORE};`,
+    contents: `export { compat, compatParts, compatWhy, compatSummary, compatUnknown, availOf, availSlotLabels, AVAIL_OPTS, AVAIL_SLOT_OPTS, __set_MY_PACE, CLIMBERS, ME, CMAX_DISC, CMAX_GRADE, CMAX_WHERE, CMAX_VERIF, CMAX_PACE, CMAX_AVAIL, CMAX_REL, REL_PRIOR, COMPAT_BASE, COMPAT_TOP, COMPAT_MAX } from ${CORE};`,
     resolveDir: ROOT, loader: "js",
   },
   bundle: true, format: "cjs", platform: "node", jsx: "automatic",
@@ -458,7 +458,12 @@ else fail(`the browse row no longer explains the missing match % (${JSON.stringi
   const relOf = (a, b) => M.compatParts(a, b).find((r) => r.k === "rel");
   const good = { reliability: { trips: 9, onTime: 9 } }, flaky = { reliability: { trips: 4, onTime: 1, noShow: 3 } }, none = {};
   const g = relOf(none, good), fl = relOf(none, flaky), nn = relOf(none, none);
-  if (g.pts > nn.pts && fl.pts < nn.pts && nn.pts === nn.max / 2 && !nn.known) ok(`a good record lifts the match (${g.pts.toFixed(1)}), a flaky one lowers it (${fl.pts.toFixed(1)}), and NO record is the neutral half (${nn.pts}/${nn.max}), never a bad mark`);
+  // NO RECORD READS AS A TYPICAL CLIMBER (REL_PRIOR, owner 2026-11-24 re-audit), the rate a short record is pulled toward:
+  // at the neutral half, 3 no-shows in 5 trips scored the same as a brand-new climber. So a flaky record must now sit
+  // BELOW no record, and a spotless one at or above it.
+  const prior = M.REL_PRIOR;
+  if (typeof prior !== "number") dead("core does not export REL_PRIOR — section 9 cannot judge the no-record rule");
+  if (g.pts > nn.pts && fl.pts < nn.pts && Math.abs(nn.pts - nn.max * prior) < 1e-9 && !nn.known) ok(`a good record lifts the match (${g.pts.toFixed(1)}), a flaky one lowers it (${fl.pts.toFixed(1)}), and NO record reads as a typical climber (${nn.pts.toFixed(1)}/${nn.max}), never a bad mark`);
   else fail(`reliability term: good ${g.pts}, flaky ${fl.pts}, none ${nn.pts}/${nn.max} (known ${nn.known})`);
   const one = relOf(none, { reliability: { trips: 1, noShow: 1 } });
   if (one.pts > fl.pts && one.rate > 0.4) ok(`one bad trip on a one-trip record does not sink it (rate ${one.rate.toFixed(2)}): the record is pulled toward the norm until it is long`);
@@ -468,6 +473,11 @@ else fail(`the browse row no longer explains the missing match % (${JSON.stringi
   const seedRel = M.compatParts({}, { vouches: [{ ratings: { reliability: 5 } }, { ratings: { reliability: 4, safety: 2 } }] }).find((r) => r.k === "rel");
   if (seedRel.known && seedRel.rec && seedRel.rec.relN === 2) ok("an example climber's own vouch Reliability stars are their record, so guests see the same rule");
   else fail(`an example climber's vouch stars are not read as reliability: ${JSON.stringify(seedRel)}`);
+  // A vouch from before "reliability" was asked rated the retired "punctuality" (the example climbers' all do): it counts,
+  // unless the vouch has a reliability rating of its own (owner 2026-11-24 re-audit: guests saw no reliability at all).
+  const punct = M.compatParts({}, { vouches: [{ ratings: { punctuality: 4 } }, { ratings: { punctuality: 1, reliability: 5 } }] }).find((r) => r.k === "rel");
+  if (punct.known && punct.rec && punct.rec.relN === 2 && punct.rec.relAvg === 4.5) ok("an older vouch's \"punctuality\" stars count as reliability, and a vouch's own reliability rating wins over it");
+  else fail(`punctuality fallback: ${JSON.stringify(punct.rec)} — expected 2 ratings averaging 4.5 (4 from punctuality, 5 from reliability)`);
   const line = M.compatWhy(none, { reliability: { trips: 10, onTime: 8, late: 1, cancelledLate: 1 } }).find((r) => r.k === "rel");
   if (/Showed up for 9 of 10 crew trips/.test(line.text) && /1 cancelled last minute/.test(line.text) && !/score|%/.test(line.text)) ok(`the line is plain counts, not a score ("${line.text}")`);
   else fail(`the reliability line reads "${line.text}" — it must be counts (owner: no trust score)`);
