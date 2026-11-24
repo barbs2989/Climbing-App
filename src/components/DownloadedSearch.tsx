@@ -60,7 +60,7 @@ export default function DownloadedSearch({ C, downloaded, onOpenArea, onOpenRout
   const states: string[] = scope ? scope.states : [];
   const packs = scope ? scope.packs : 0;
   const nothing = !!scope && !states.length && !packs;
-  const tab = (on: boolean): CSSProperties => ({ flex: 1, minHeight: 40, padding: "7px 0", textAlign: "center", fontSize: 13, fontWeight: 700, cursor: "pointer", borderRadius: 7, border: "none", background: on ? C.blueSolid : "transparent", color: on ? C.onSolid : C.textSub });
+  const tab = (on: boolean): CSSProperties => ({ flex: 1, minHeight: 40, padding: "7px 0", textAlign: "center", fontSize: 13, fontWeight: 700, cursor: "pointer", borderRadius: 7, border: "none", background: on ? C.actionSolid : "transparent", color: on ? C.onSolid : C.textSub });
   const row: CSSProperties = { width: "100%", display: "flex", alignItems: "center", gap: 10, padding: "10px 4px", minHeight: 44, cursor: "pointer", border: "none", borderBottom: "1px solid " + C.borderLight, background: "transparent", color: C.text, textAlign: "left" };
   const covers = states.length || packs
     ? "Searching what’s on this phone: " + [states.join(", "), packs ? packs + (packs === 1 ? " saved climb" : " saved climbs") : ""].filter(Boolean).join(" · ")

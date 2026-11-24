@@ -29,7 +29,7 @@ export default function ClimbDaysHeatmap({ dates, C, whose }: ClimbDaysHeatmapPr
   for (let w = 0; w < 52; w++) { const col: Date[] = []; for (let d = 0; d < 7; d++) col.push(new Date(start.getTime() + (w * 7 + d) * DAY)); weeks.push(col); }
   let days = 0, climbs = 0;
   for (const k in counts) { const t = new Date(k + "T00:00:00Z").getTime(); if (t >= start.getTime() && t <= end.getTime()) { days++; climbs += counts[k]; } }
-  const shade = (n: number) => n <= 0 ? C.surface : n === 1 ? C.blueDim : n === 2 ? C.blue : C.blueSolid;
+  const shade = (n: number) => n <= 0 ? C.surface : n === 1 ? C.blueDim : n === 2 ? C.blue : C.actionSolid;
   const monthOf = (d: Date) => d.toLocaleDateString(DLOCALE, { month: "short", timeZone: "UTC" });
   const dayLabel = (d: Date) => d.toLocaleDateString(DLOCALE, { month: "short", day: "numeric", year: "numeric", timeZone: "UTC" });
   // A month label over the first week whose first day starts a new month.

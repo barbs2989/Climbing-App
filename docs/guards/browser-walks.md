@@ -1513,7 +1513,7 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     a WRAPPER and the blue text on a child inside it (the Ranks "You're #17 of 18" card, a partner
     card's match percentage). Which ancestor paints is a property of the rendered tree.
   - **The thresholds.** Blue text: blue ≥180 and leading red by ≥110 and green by ≥60 (C.blue,
-    C.blueSolid and the lifted `Pill` blues). A blue box: blue leading red by ≥35 and green by ≥20.
+    C.actionSolid and the lifted `Pill` blues). A blue box: blue leading red by ≥35 and green by ≥20.
     The app's neutral dark surfaces lean blue too (C.bg by 10, C.surface by 12, C.card by 20), so the
     box threshold sits well clear of them; C.blueBg leads by 55, C.blueChip by 50, C.blueDim by 81.
   - **The fix is white text (`"#fff"`)**, the owner's word, as #2752 chose; the blue fill and blue

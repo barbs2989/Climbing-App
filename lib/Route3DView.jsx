@@ -128,7 +128,7 @@ export default function Route3DView({ line, waypoints, tracks, title, view, kind
           if (w.onOpen) {
             const ob = document.createElement("button");
             ob.type = "button";
-            ob.style.cssText = "margin-top:6px;padding:7px 12px;border-radius:8px;border:none;background:" + C.blueSolid + ";color:#fff;font-size:12.5px;font-weight:700;cursor:pointer";
+            ob.style.cssText = "margin-top:6px;padding:7px 12px;border-radius:8px;border:none;background:" + C.actionSolid + ";color:#fff;font-size:12.5px;font-weight:700;cursor:pointer";
             ob.textContent = w.openLabel || "Open";
             ob.addEventListener("click", w.onOpen);
             card.appendChild(ob);

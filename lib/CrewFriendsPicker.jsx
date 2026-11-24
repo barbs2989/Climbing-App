@@ -78,7 +78,7 @@ export default function CrewFriendsPicker({ friends, allAlreadyIn, disc, placeNa
           <span style={{ fontSize: 11.5, color: C.textMuted }}>{note.length + "/300"}</span>
         </div>
       </div> : <button type="button" onClick={() => setShowNote(true)} style={{ ...BTN_LINK(C), ...TEXT_TAP_INLINE, fontSize: 12.5, display: "block", marginBottom: 8 }}>+ Add a note</button>}
-      <button type="button" onClick={send} style={{ ...BTN_SECONDARY(C), width: "100%", minHeight: 46, fontWeight: 800, background: C.blueSolid, border: "1px solid " + C.blueSolid, color: C.onSolid }}>{chosen.length === 1 ? "Invite " + pubFirst(chosen[0]) : "Invite " + chosen.length + " friends"}</button>
+      <button type="button" onClick={send} style={{ ...BTN_SECONDARY(C), width: "100%", minHeight: 46, fontWeight: 800, background: C.actionSolid, border: "1px solid " + C.actionSolid, color: C.onSolid }}>{chosen.length === 1 ? "Invite " + pubFirst(chosen[0]) : "Invite " + chosen.length + " friends"}</button>
     </div> : null}
   </div>;
 }
