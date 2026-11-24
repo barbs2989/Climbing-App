@@ -1,4 +1,4 @@
--- 0524: a TRIP is fixed once its day comes — the third review of reliability (owner 2026-11-24: "do another pass").
+-- 0525: a TRIP is fixed once its day comes — the third review of reliability (owner 2026-11-24: "do another pass").
 --
 -- 0523 keyed reports by (crew, day), but the day and the roster could still move under them:
 --
@@ -40,7 +40,7 @@ alter table public.crew_departures drop constraint if exists crew_departures_pke
 alter table public.crew_departures add primary key (crew_id, user_id, agreed_date);
 alter table public.crew_departures add column if not exists removed_by_other boolean not null default false;
 comment on table public.crew_departures is
-  'Someone who came off a crew for the trip of agreed_date: left, declined, or (from the day on) was removed (removed_by_other). With the confirmed members, the trip''s ROSTER. Read by definer functions only (0519, 0524).';
+  'Someone who came off a crew for the trip of agreed_date: left, declined, or (from the day on) was removed (removed_by_other). With the confirmed members, the trip''s ROSTER. Read by definer functions only (0519, 0525).';
 
 -- On the trip's roster: confirmed now, or came off it for THIS trip (left in the 14 days before it, or after).
 create or replace function public.crew_trip_on_roster(p_crew uuid, p_user uuid, d date)
@@ -168,7 +168,7 @@ begin
   if r.outcome = 'on_time' then raise exception 'there is nothing to answer in an on-time report' using errcode = '22023'; end if;
   if r.updated_at < now() - interval '37 days' then raise exception 'replies close 30 days after a report is shown to you' using errcode = '22023'; end if;
   if p_reply not in ('was_there','note') then raise exception 'unknown reply %', p_reply using errcode = '22023'; end if;
-  -- One reply per answer (0524): answering another answer never touches this one, and a dispute stays a dispute.
+  -- One reply per answer (0525): answering another answer never touches this one, and a dispute stays a dispute.
   insert into public.crew_trip_replies (report_id, trip_crew, trip_date, reporter_id, about_id, outcome, reply, note)
   values (r.id, r.trip_crew, r.trip_date, r.reporter_id, r.about_id, r.outcome, p_reply, n)
   on conflict (trip_crew, trip_date, reporter_id, about_id, outcome) do update set

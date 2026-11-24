@@ -1406,7 +1406,7 @@ function relRecordOf(c){if(!c)return null;var r=c.reliability;if(r&&typeof r==="
    0.85 by two imaginary trips, so one bad day cannot sink a short record and a long record speaks for itself. */
 const REL_PRIOR=0.85;/* what a typical climber's record reads: the rate a short record is pulled toward, and the rate a climber with NO record counts at (owner 2026-11-24 re-audit: at the neutral half, 3 no-shows in 5 trips read the same as a brand-new climber). */
 function relRate(rec){if(!rec)return null;var t=Number(rec.trips)||0,vn=Number(rec.relN)||0,va=Number(rec.relAvg);var credit=(Number(rec.onTime)||0)+(Number(rec.cancelledEarly)||0)*0.9+(Number(rec.late)||0)*0.75+(Number(rec.cancelledLate)||0)*0.35;var n=t;if(vn&&va>=1){credit+=vn*0.5*((va-1)/4);n+=vn*0.5;}if(!n)return null;return (credit+2*REL_PRIOR)/(n+2);}
-/* THE TRIP-REPORT WINDOW, the server's own rule (0523/0524): the date at UTC-12, which is never ahead of any climber's
+/* THE TRIP-REPORT WINDOW, the server's own rule (0523/0525): the date at UTC-12, which is never ahead of any climber's
    local date, from the trip's day to 14 days after. The alert, the crew card, Past crews and the sheet all read THIS,
    so none of them opens before the server will take a report, or says "closed" while it is still open (review 2026-11-24). */
 function tripToday(){return new Date(Date.now()-12*3600000).toISOString().slice(0,10);}

@@ -22,11 +22,11 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     non-zero on the matching assertion.
   - **Trap met building it:** section 9 first read 2 trips for one climber because section 8's DELETED crew kept its
     report, which is the behaviour being proved. The section now clears that climber's reports first.
-  - **Section 11 (0524, third review 2026-11-24):** the organizer cannot move or clear a day that has come, and can
+  - **Section 11 (0525, third review 2026-11-24):** the organizer cannot move or clear a day that has come, and can
     before it; declining after the day is a departure and stays reportable; a removal before the day is not one; a
     departure from an earlier trip does not put a climber on the next trip's roster; switching answers and back cannot
     wipe a dispute. Section 8 now asserts an organizer's removal AFTER the day is recorded (marked removed) and the
-    removed member can still report. 39 assertions. Without 0524 the run stops at section 8's new column (measured).
+    removed member can still report. 39 assertions. Without 0525 the run stops at section 8's new column (measured).
   - **Section 10 rewritten for 0523 (second review, 2026-11-24):** a deleted crew's reports still group by trip; leaving
     after the day is still reportable with any answer; the organizer cannot disband in the window but can before the
     day; a second trip on one crew is its own trip; withdraw and re-file meets the same *I was there*, a different
