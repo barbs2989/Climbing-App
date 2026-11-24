@@ -307,17 +307,19 @@ export default function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElev
   // Mountain Project's filter screen does — so a tap on it visibly does something, and a
   // combination that matches nothing is seen before the sheet is left. Queried only while open.
   const { data: draftTotal, isFetching: draftCounting } = useSubtreeRouteCount(sheet && !needsAreaFor(df) ? loc.id : null, finderArgs(qD, df, metric));
-  // While the sheet is open the page behind it must not scroll. The document is the scroller
-  // here, and on a phone a drag past the end of the sheet moved the page instead, which slid the
-  // browser's own toolbar in and out and shifted the sheet under the climber's finger.
-  useEffect(() => {
-    if (!sheet) return;
-    const el = document.documentElement, prev = el.style.overflow;
-    el.style.overflow = "hidden";
-    return () => { el.style.overflow = prev; };
-  }, [sheet]);
+  // The page behind the open sheet is held still by the ONE shared lock in lib/dialogA11y.js (it
+  // finds this sheet by its dialog role). The sheet used to lock <html> itself as well,
+  // and the two locks froze the app for good (2026-11-23: "after I apply filters the scroll stops
+  // working, even when I click back"): this effect set overflow:hidden first, the shared lock ran a
+  // frame later and RECORDED that "hidden" as the page's own value, so on close this effect cleared
+  // it and the shared lock then put "hidden" back. Never add a second lock here.
 
-  useEffect(() => { setPage(0); setAll([]); }, [qD, af, loc.id]);
+  // Start the list over only when the QUERY changes, not when `af` is a new object holding the same
+  // filters: "Show routes" with nothing changed stores a fresh object, and keyed on its identity
+  // this emptied the list while the query, unchanged, never refetched to refill it — "600 routes",
+  // "No routes match these filters", and a page too short to scroll (2026-11-24).
+  const queryKey = JSON.stringify(finderArgs(qD, af, metric));
+  useEffect(() => { setPage(0); setAll([]); }, [queryKey, loc.id]);
   useEffect(() => {
     if (!batch) return;
     setAll(prev => page === 0 ? batch : [...prev, ...batch]);
@@ -382,7 +384,7 @@ export default function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElev
         {[["routes", "Routes"], ["areas", "Areas"]].map(([k, l]) => <button key={k} onClick={() => setMode(k)} aria-pressed={mode === k} style={{ flex: 1, padding: "8px 0", border: "none", borderRadius: 7, background: mode === k ? C.blueBg : "transparent", boxShadow: mode === k ? "inset 0 0 0 1px " + C.blue : "none", color: mode === k ? C.onSolid : C.textSub, fontSize: 13.5, fontWeight: 700, cursor: "pointer" }}>{l}</button>)}
       </div>
       <div style={{ display: "flex", gap: 8, marginBottom: 8 }}>
-      <input aria-label={mode === "areas" ? "Search areas, crags, peaks" : "Search routes"} value={q} onChange={e => setQ(e.target.value)} placeholder={mode === "areas" ? "Search areas, crags, peaks…" : "Search routes in " + loc.name + "…"} style={{ flex: 1, minWidth: 0, padding: "11px 13px", borderRadius: 10, border: "1px solid " + C.border, background: C.surface, color: C.text, fontSize: 14, boxSizing: "border-box", outline: "none" }} />
+      <input aria-label={mode === "areas" ? "Search areas, crags, peaks" : "Search routes"} value={q} onChange={e => setQ(e.target.value)} placeholder={mode === "areas" ? "Search areas, crags, peaks…" : "Search routes in " + loc.name + "…"} style={{ flex: 1, minWidth: 0, padding: "11px 13px", borderRadius: 10, border: "1px solid " + C.field, background: C.surface, color: C.text, fontSize: 14, boxSizing: "border-box", outline: "none" }} />
       {mode === "routes" ? <button onClick={() => { setDf(af); setSheet(true); }} style={rowBtn(nF)}><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 6h16M7 12h10M10 18h4" /></svg>{"Filters" + (nF ? " (" + nF + ")" : "")}</button> : null}
       </div>
       {mode === "routes" ? <>
@@ -556,7 +558,7 @@ export default function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElev
             </> : <>
               <button onClick={locateMe} disabled={nearSt.busy} style={{ ...BTN_LG, width: "100%", marginBottom: 8, border: "1px solid " + C.border, background: C.surface, color: C.text }}>{nearSt.busy ? "Finding…" : "Use my location"}</button>
               <form onSubmit={e => { e.preventDefault(); findNear(); }} style={{ display: "flex", gap: 8 }}>
-                <input aria-label="Town or zip code" value={nearQ} onChange={e => setNearQ(e.target.value)} placeholder="…or a town or zip code" style={{ flex: 1, minWidth: 0, padding: "10px 12px", borderRadius: 10, border: "1px solid " + C.border, background: C.surface, color: C.text, fontSize: 14, boxSizing: "border-box" }} />
+                <input aria-label="Town or zip code" value={nearQ} onChange={e => setNearQ(e.target.value)} placeholder="…or a town or zip code" style={{ flex: 1, minWidth: 0, padding: "10px 12px", borderRadius: 10, border: "1px solid " + C.field, background: C.surface, color: C.text, fontSize: 14, boxSizing: "border-box" }} />
                 <button type="submit" disabled={nearSt.busy || !nearQ.trim()} style={{ ...BTN_LG, flexShrink: 0, border: "1px solid " + C.border, background: C.surface, color: C.text }}>Go</button>
               </form>
               {nearSt.err ? <div style={{ fontSize: 12, color: C.red, marginTop: 8, lineHeight: 1.45 }}>{nearSt.err}</div> : null}
@@ -574,7 +576,7 @@ export default function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElev
               const iLo = df.gLo ? sc.findIndex(o => o[0] === df.gLo) : -1, iHi = df.gHi ? sc.findIndex(o => o[0] === df.gHi) : -1;
               const sel = (label: string, val: string, opts: RouteFinderPanelGrade[], set: (v: string) => void) => (
                 <label style={{ flex: 1, display: "flex", flexDirection: "column", gap: 5, fontSize: 11.5, color: C.textMuted, fontWeight: 700 }}>{label}
-                  <select aria-label={label + " grade"} value={val} onChange={e => set(e.target.value)} style={{ padding: "10px 10px", borderRadius: 10, border: "1px solid " + (val ? C.blue : C.border), background: val ? C.blueBg : C.surface, color: val ? C.onSolid : C.text, fontSize: 14, fontWeight: 700 }}>
+                  <select aria-label={label + " grade"} value={val} onChange={e => set(e.target.value)} style={{ padding: "10px 10px", borderRadius: 10, border: "1px solid " + (val ? C.blue : C.field), background: val ? C.blueBg : C.surface, color: val ? C.onSolid : C.text, fontSize: 14, fontWeight: 700 }}>
                     <option value="">Any</option>
                     {opts.map(o => <option key={o[0]} value={o[0]}>{o[0]}</option>)}
                   </select>

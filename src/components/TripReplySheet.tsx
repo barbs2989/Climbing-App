@@ -70,7 +70,7 @@ export default function TripReplySheet({ report, placeName, onClose, showToast }
         </button>
         <label htmlFor="trip-reply-note" style={{ display: "block", fontSize: 13, fontWeight: 700, color: C.text, marginBottom: 6 }}>{"Or add context for " + first}</label>
         <textarea id="trip-reply-note" value={note} maxLength={280} rows={3} onChange={(e) => setNote(e.target.value)} placeholder="The road was closed, I messaged at 6am…"
-          style={{ width: "100%", boxSizing: "border-box", background: C.surface, color: C.text, border: "1px solid " + C.border, borderRadius: 10, padding: "10px 11px", fontSize: 14, fontFamily: "inherit", resize: "vertical" }} />
+          style={{ width: "100%", boxSizing: "border-box", background: C.surface, color: C.text, border: "1px solid " + C.field, borderRadius: 10, padding: "10px 11px", fontSize: 14, fontFamily: "inherit", resize: "vertical" }} />
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 10, marginTop: 8 }}>
           <span style={{ fontSize: 12, color: C.textMuted }}>{note.length + " / 280 · the report still counts"}</span>
           <button onClick={() => send("note")} disabled={busy || !note.trim()} style={{ flexShrink: 0, padding: "9px 16px", borderRadius: 10, border: "1px solid " + C.border, background: C.surface, color: C.text, fontSize: 13, fontWeight: 700, cursor: busy || !note.trim() ? "default" : "pointer", opacity: note.trim() ? 1 : 0.6 }}>Send note</button>

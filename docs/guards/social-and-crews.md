@@ -22,6 +22,16 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     non-zero on the matching assertion.
   - **Trap met building it:** section 9 first read 2 trips for one climber because section 8's DELETED crew kept its
     report, which is the behaviour being proved. The section now clears that climber's reports first.
+  - **Section 10 rewritten for 0523 (second review, 2026-11-24):** a deleted crew's reports still group by trip; leaving
+    after the day is still reportable with any answer; the organizer cannot disband in the window but can before the
+    day; a second trip on one crew is its own trip; withdraw and re-file meets the same *I was there*, a different
+    answer does not; a note after *I was there* keeps it; the window is [day, day+14] at UTC-12. Dates are built from
+    the same UTC-12 "today" the functions use, so no assertion depends on the hour the run starts. 34 assertions.
+    Without 0523 the run cannot even query its reply columns (measured).
+  - **Section 10 (0522, review 2026-11-24):** a deleted crew's reports still group by trip and its *called off* still
+    holds; leaving after the day is no departure; a note after *I was there* keeps the dispute; the window opens a day
+    early and closes a day late. Run without 0522, all four fail (measured). 31 assertions. Section 8's fixture crew
+    that a member leaves is dated TODAY now: leaving on the day is a bail, leaving after it is not.
   - **What it cannot see:** time. `now()` is real, so the 7-day reveal and the 14-day window are tested by ageing
     `updated_at` and choosing agreed dates relative to `current_date`, not by waiting.
 
@@ -364,7 +374,7 @@ Part of the guard notes — see [README.md](README.md) for the full index.
 - **THE GROUP PAGE IS TABS, AND OUTSIDERS SEE ONLY A COUNT (2026-10-14; roster rule settled 2026-10-21).** The
   `openGroupId` view was one scroll holding the hero, rules, notifications, the calendar, the
   roster, the moderation queues and the discussion. It is now a hero (name, *Private/Public group
-  · N members*, Join and + Invite) over the tabs **About · Discussion · Events · Members · Media**
+  · N members*, Join and + Invite) over the tabs **About · Discussion · Events · Members**
   (`groupPageTab`, kept per group as `{gid, tab}`). A member lands on Discussion and anyone else
   on About, because a real group's posts are members-only (0230).
   - **Members shows the roster to the group's members and moderators, a COUNT to anyone else**
@@ -417,8 +427,8 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   - **Saved left the sort.** Save/Unsave is in the ⋯ menu, and **Groups › Your activity** lists
     *Saved posts*, gated on `myPostSavesQ.isError` so a failed read is not "nothing saved".
   - **Block is in the ⋯ menu of someone else's post** (Apple 1.2: block an abusive user from the
-    content). A **blocked climber's posts leave the feeds you read** — the Discussion, the Media
-    tab, For you, Your activity and the unread count — through `groupPostByBlocked`. They stay in
+    content). A **blocked climber's posts leave the feeds you read** — the Discussion,
+    For you, Your activity and the unread count — through `groupPostByBlocked`. They stay in
     the page's own `posts`, because the Reported queue reads that list to tell a removed post from
     a live one. Their **comments** are not filtered yet: that is the Comments redesign's job.
 - **A SHARED POST IS A LINK, NOT ITS WORDS (2026-10-15).** The card's third action, **Share**, opens

@@ -87,3 +87,58 @@ if (bad.length) {
   process.exit(1);
 }
 console.log(`  ok    ${panes} scroll panes across ${files.length} files all declare overscrollBehavior (#appscroll exempt)`);
+
+// ── ONE page scroll lock ──
+// lib/dialogA11y.js locks the page behind every open popup (overflow:hidden on <html>, <body>
+// pinned). A component that ALSO locked it froze the whole app for good (2026-11-23, the Route
+// finder's Filters sheet: "after I apply filters the scroll stops working, even when I click
+// back"): its lock ran first, the shared one recorded that "hidden" as the page's own value and
+// put it back after the sheet had cleared it. So no file but the shared lock may write an
+// element's `overflow` from script, in ANY spelling: the assignment, a bracketed property,
+// setProperty, a cssText string, or an Object.assign onto a style. (overflowX / overflowY are other
+// properties — lib/Ads.jsx toggles its rail's overflowY — and are not matched.)
+// ALLOW: a deliberate overflow write on an element that is NOT the page (an inner pane, say), keyed
+// "file" -> the reason. Empty at writing; an entry must say why it cannot freeze the page.
+const LOCK_OWNER = "lib/dialogA11y.js";
+const ALLOW_WRITERS = {};
+const OVERFLOW_WRITES = [
+  /\.style\.overflow\s*=(?!=)/,                                        // el.style.overflow = "hidden"
+  /\.style\[\s*["'`]overflow["'`]\s*\]\s*=(?!=)/,                      // el.style["overflow"] = …
+  /\.style\.setProperty\(\s*["'`]overflow["'`]/,                       // el.style.setProperty("overflow", …)
+  /\.style\.cssText\s*\+?=(?!=)[^\n]*?[\s;"'`]overflow\s*:/,           // el.style.cssText = "…overflow:hidden" (one line)
+  /Object\.assign\(\s*[\w.$]*\.style\s*,\s*\{[^}]*(?:^|[\s,{"'`])overflow["'`]?\s*:/m, // Object.assign(el.style, { overflow: … })
+];
+export const writesOverflow = (src) => OVERFLOW_WRITES.some((re) => re.test(src));
+// Every spelling above must be caught, and none of the look-alikes the app really has may be.
+const CAUGHT = ['el.style.overflow = "hidden";', 'el.style.overflow="hidden"', 'document.body.style["overflow"] = "hidden";',
+  'root.style.setProperty("overflow", "hidden");', 'el.style.cssText = "position:fixed; overflow:hidden";',
+  'Object.assign(document.documentElement.style, { overflow: "hidden" });', 'Object.assign(b.style, {top: "0", overflow: "hidden"})'];
+const PASSED = ['rail.style.overflowY = "hidden";', 'if (a.style.overflow === "x") {}', 'el.style.setProperty("overflow-y", "auto")',
+  'el.style.cssText = "width:24px;height:24px"', 'Object.assign(b.style, { position: "fixed", overflowY: "auto" })', 'const o = el.style.overflow;'];
+const missed = CAUGHT.filter((s) => !writesOverflow(s)), wrong = PASSED.filter((s) => writesOverflow(s));
+if (missed.length || wrong.length) {
+  console.error(`${G} FAILED — the page-lock scan no longer classifies its own fixture. Nothing was checked.`);
+  for (const s of missed) console.error("  missed:   " + s);
+  for (const s of wrong) console.error("  wrongly caught: " + s);
+  process.exit(1);
+}
+const libFiles = fs.readdirSync(path.join(ROOT, "lib")).filter((f) => /\.(jsx?|tsx?)$/.test(f)).map((f) => "lib/" + f);
+if (!libFiles.includes(LOCK_OWNER) || !writesOverflow(fs.readFileSync(path.join(ROOT, LOCK_OWNER), "utf8"))) {
+  console.error(`${G} FAILED — ${LOCK_OWNER} no longer writes the page's overflow, so this rule names the wrong owner. Re-read it.`);
+  process.exit(1);
+}
+const scanned = [...new Set([...files, ...libFiles])];
+for (const f of Object.keys(ALLOW_WRITERS)) {
+  if (!scanned.includes(f) || !writesOverflow(fs.readFileSync(path.join(ROOT, f), "utf8"))) {
+    console.error(`${G} FAILED — ALLOW_WRITERS names ${f}, which no longer writes an overflow. Remove the stale entry.`);
+    process.exit(1);
+  }
+}
+const lockers = scanned.filter((f) => f !== LOCK_OWNER && !ALLOW_WRITERS[f] && writesOverflow(fs.readFileSync(path.join(ROOT, f), "utf8")));
+if (lockers.length) {
+  console.error(`${G} FAILED — ${lockers.join(", ")} write(s) an element's overflow from script. The page scroll lock lives in ${LOCK_OWNER} ONLY;`);
+  console.error(`a second lock un-does it in the wrong order and leaves the whole app unscrollable. Give the popup role="dialog" aria-modal and let that lock hold the page.`);
+  console.error(`(If the element is NOT the page, add the file to ALLOW_WRITERS with the reason it cannot freeze it.)`);
+  process.exit(1);
+}
+console.log(`  ok    only ${LOCK_OWNER} writes the page's scroll lock (${scanned.length} files, 5 spellings)`);

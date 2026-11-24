@@ -254,7 +254,7 @@ export async function createFixture(log = () => {}) {
     const crew = await insert("crews", {
       created_by: owner.id,
       route_id: ROUTE_ID,
-      dates: ["2026-09-12", "2026-09-13"],
+      dates: fixtureCrewDays(2),
       meet_place: "Heliotrope Ridge TH",
       meet_time: "04:30",
       cap: 4,
@@ -284,7 +284,7 @@ export async function createFixture(log = () => {}) {
     const inviteCrew = await insert("crews", {
       created_by: mate.id,
       route_id: ROUTE_ID,
-      dates: ["2026-10-04"],
+      dates: fixtureCrewDays(1),
       meet_place: "Coleman Deming TH",
       meet_time: "05:00",
       cap: 3,
@@ -302,7 +302,7 @@ export async function createFixture(log = () => {}) {
       route_id: null,
       area_id: AREA_CREW_AREA_ID,
       discipline: "sport",
-      dates: ["2026-10-05"],
+      dates: fixtureCrewDays(1),
       meet_place: "Lower lot",
       meet_time: "09:00",
       cap: 3,
@@ -440,3 +440,21 @@ export function sessionForStorage(session) {
 }
 
 export const STORAGE_KEY = "climbmatch-auth";
+
+// THE DAYS A FIXTURE CREW PROPOSES, counted from TODAY rather than written down.
+//
+// Every fixture crew used to carry a fixed day ("2026-09-12", "2026-10-04"...). That was harmless
+// while a crew with no agreed day stayed on the active list forever. Since #3816 a crew whose LAST
+// proposed day is more than CREW_UNSETTLED_GRACE_DAYS (14) behind is a PAST crew, so on 2026-11-24
+// the Crews tab of every walk read "You have no crews yet. Past crews (3)" and check:signed-in
+// could not find its crew, its roster or its chat. The app was right; the fixture had aged.
+//
+// LOCAL calendar days, as the app's own comparison is (isArchivedCrew parses "<day>T12:00:00").
+// Three weeks out, so a walk never sits on the day itself, where the recap's wording changes.
+export function fixtureCrewDays(count = 1, now = new Date()) {
+  const p = (n) => String(n).padStart(2, "0");
+  return Array.from({ length: count }, (_, i) => {
+    const d = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 21 + i);
+    return `${d.getFullYear()}-${p(d.getMonth() + 1)}-${p(d.getDate())}`;
+  });
+}

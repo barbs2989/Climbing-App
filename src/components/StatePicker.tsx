@@ -73,7 +73,7 @@ export default function StatePicker({ onPick, C }: StatePickerProps) {
   const phoneCard: CSSProperties = { textAlign: "left", minWidth: 0, minHeight: 56, background: C.card, border: "1px solid " + C.border, borderRadius: 12, padding: "10px 12px", cursor: "pointer", color: C.text, fontFamily: "inherit" };
   const phoneCardName: CSSProperties = { fontSize: 14, fontWeight: 700, overflowWrap: "anywhere" };
   const phoneCardSub = { fontSize: 12, color: C.textMuted, marginTop: 2 };
-  const selStyle: CSSProperties = { width: "100%", WebkitAppearance: "none", appearance: "none", background: C.card, color: C.text, border: "1px solid " + C.border, borderRadius: 12, padding: "13px 34px 13px 13px", fontSize: 15, fontWeight: 600 };
+  const selStyle: CSSProperties = { width: "100%", WebkitAppearance: "none", appearance: "none", background: C.card, color: C.text, border: "1px solid " + C.field, borderRadius: 12, padding: "13px 34px 13px 13px", fontSize: 15, fontWeight: 600 };
   return (
     <div style={{ marginBottom: 14 }}>
       {only ? null : (

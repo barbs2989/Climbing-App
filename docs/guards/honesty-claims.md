@@ -1433,6 +1433,49 @@ rows. Its build script is gone; new reviews write the column.
     Center Ridge again and Iron Maiden (OR); both Chopping Block routes and Little Mac Spire (WA). Each rested
     on a page silent about the glacier, a single account, or another route's page.
   Glacier not settled now: WA 27, CA 23, AK 19, WY 16, OR 11, BC 7, MT 7, AB 5, CO 1, NV 1, NU 1; YT 0.
+- **Round 8** (2026-11-24) took the 81 routes whose glacier answer is settled but whose snow in season is
+  not (`round8/`, a snow-only prompt; the split, now `--round 8`, writes every glacier answer as "unsure" so
+  no settled one can move). The shared web-search budget ran out a few searches in, so most entries got only
+  fetches of pages that said nothing about snow, and one researcher read no page that settled anything.
+  - Snow yes: Birds of Fire (CO), the Washington–Ellinor Traverse (WA), The Candy Shop (WY).
+  - Snow no: the Humphreys Peak trail (AZ), Silver Lining (WY; an axe only early or in a big snow year).
+  - Held at unsure on review (7, `round8/hold.json`): Bear Creek Spire (a Northeast Ridge page), Devil's
+    Crag #1, Mount Jordan (CA); Gladstone North Ridge and the Glacier Gorge and Spearhead–Longs traverses
+    (CO); Chouinard–Frost Chimney (WY). Each rested on one account, another line's page, or a silent page.
+  Snow not settled now on these routes: WA 29, CA 17, CO 14, WY 8, UT 4, BC 2, ID 1, OR 1; AZ 0. Worth a
+  re-run once the search budget refills.
+  - The loads found a ping-pong: the Washington load (no `--state`) re-asserts the 2026-11-12 dry list, which
+    spans every state, as glacier null, so it undid CO's reviewed "no" on Pyramid Peak NE Ridge each time it
+    ran after CO. `load-glacier-travel.mjs` now skips a dry-list id that a state's own `final.json` reviews;
+    Pyramid Peak was the only one.
+- **Round 9** (2026-11-24) re-ran round 8's 76 open snow calls (`round9/`, each entry carrying round 8's note,
+  and the review bar written into the prompt: a "no" needs a page saying the line is dry, or two accounts from
+  different days). Searches worked longer this time, but most routes still have no page that speaks to snow on
+  the line.
+  - Snow yes: Cashmere Mountain West Ridge (WA; snow late spring to mid-summer, an axe usually needed late).
+  - Snow no: Gladstone Peak North Ridge (CO; several dated June to September reports find the ridge dry).
+  - Held at unsure on review (4, `round9/hold.json`): Pulitzer (a Bailey Range traverse page) and Rock Mountain
+    NE Ridge and Tailgunner (search snippets of pages that answer 403) (WA); Middle Teton SW Couloir (WY), whose
+    own page, read on review, is typed snow but says the couloir melts out fairly quickly.
+  Snow not settled now on these routes: WA 28, CA 17, CO 13, WY 8, UT 4, BC 2, ID 1, OR 1 (74). Further web
+  rounds look unlikely to pay; these wait for climbers' corrections on the edit sheet.
+- **Round 10** (2026-11-24) re-ran the 118 open glacier calls (`round10/`, each entry carrying every earlier
+  note, six researchers). Searches ran out partway for one researcher again; one file of 20 Washington routes
+  settled nothing.
+  - Glacier yes (6): Stanley Peak North Face (AB; seracs, crevasse rescue advised); Mount Michelson North Ridge
+    (the Esetuk valley glacier), Goldfinger (the Ruth Gorge crevasses), The Fall Line (up the Mendenhall
+    Glacier) (AK); Shasta Hotlum–Wintun Ridge (onto the Wintun, small crevasses) and Norman Clyde Peak North
+    Face (the Middle Palisade Glacier's bergschrund) (CA).
+  - Glacier no: North Milk Creek Glacier on Mount Jefferson (OR): the glacier is gone, and the line is a snow
+    gully.
+  - Held at unsure on review (9, `round10/hold.json`). The prompt's bar said a named glacier on the line was
+    enough for "yes", which is looser than RULE.md (crevasse, bergschrund or icefall hazard, normally roped):
+    six answers that only named a small glacier were held on that ground: AK West Ridge (Twincicle), Dana
+    Couloir, Mendel Couloir, Mills North Face (CA), Apache Queen's Way (CO), Vesper North Face (WA). Also
+    Michelson South Face (the page is the peak's normal route), Burgette Arête (a start-only page) and Bonanza
+    Cascadian (one descent account).
+  - The split script's snow-only switch is now rounds 8 and 9 only, so a later glacier round keeps its answers.
+  Glacier not settled now: WA 27, CA 21, AK 16, WY 16, OR 10, BC 7, MT 7, AB 4, CO 1, NV 1, NU 1 (111).
 
   - **HOUR BY HOUR + THE GUST WINDOW (2026-10-08, owner: "clear and exact and accurate science").**
     Section 12 of the guard. Three things it holds, each measured, not assumed:

@@ -41,7 +41,7 @@ export default function PeakPicker({ C, value, onPick, savedPeaks, label }: Peak
   return (
     <div style={{ marginBottom: 12 }}>
       {savedPeaks && savedPeaks.length ? <div role="group" aria-label="Your saved peaks" style={{ display: "flex", flexWrap: "wrap", gap: 7, marginBottom: 10 }}>{savedPeaks.map((p) => <button key={p.id} type="button" onClick={() => onPick(p)} style={chip(false)}>{p.name}</button>)}</div> : null}
-      <input value={q} onChange={(e) => setQ(e.target.value)} aria-label={label} placeholder="Search any peak — Rainier, Shuksan, Hood…" style={{ width: "100%", boxSizing: "border-box", padding: "11px 12px", borderRadius: 10, border: "1px solid " + C.border, background: C.surface, color: C.text, fontSize: 13 }} />
+      <input value={q} onChange={(e) => setQ(e.target.value)} aria-label={label} placeholder="Search any peak — Rainier, Shuksan, Hood…" style={{ width: "100%", boxSizing: "border-box", padding: "11px 12px", borderRadius: 10, border: "1px solid " + C.field, background: C.surface, color: C.text, fontSize: 13 }} />
       {!q.trim() ? <div style={{ fontSize: 12, color: C.textMuted, marginTop: 6, lineHeight: 1.5 }}>{savedPeaks && savedPeaks.length ? "Tap one of your saved peaks, or search for another." : "Type a peak’s name."}</div>
         : !qOk ? <div style={{ fontSize: 12, color: C.textMuted, marginTop: 6 }}>Keep typing — at least two letters.</div>
         : USE_DB && searchQ.isError ? <div style={{ fontSize: 12, color: C.amber, marginTop: 6 }}>Couldn’t search peaks right now — check your connection and try again.</div>

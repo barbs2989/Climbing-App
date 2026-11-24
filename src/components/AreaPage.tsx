@@ -386,8 +386,8 @@ export default function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, book
                   {/* ORDER WRONG? (owner, 2026-11-19): offered beside the wall orders it corrects, and on a wall with no
                       order stored, where it asks for one. Never on a peak (its routes are not a line along a wall), and
                       a boulder problem is never part of it. The sheet holds every roped climb, whatever the filters hide: the placed ones in line, the rest waiting to be placed. */}
-                  {area.area_type !== "peak" && (!placed || key === "lr" || key === "rl") && routes.filter(r => r.discipline !== "bouldering").length > 1 ? <div style={{ display: "flex", justifyContent: "flex-end", marginBottom: 8 }}>
-                    <button onClick={() => setOrderOpen(true)} style={{ ...BTN, minHeight: 44, border: "1px dashed " + C.border, background: C.surface, color: C.blue, fontSize: 12.5 }}>{placed ? "Order wrong? Suggest a different order" : "Know the left-to-right order? Add it"}</button>
+                  {area.area_type !== "peak" && (!placed || key === "lr" || key === "rl") && routes.filter(r => r.discipline !== "bouldering").length > 1 ? <div style={{ display: "flex", justifyContent: "flex-end", marginBottom: 6 }}>
+                    <button onClick={() => setOrderOpen(true)} style={{ ...BTN, border: "none", background: "transparent", color: C.blue, padding: "2px 0", fontSize: 12, fontWeight: 600 }}>{placed ? "Suggest a different order" : "Add the wall order"}</button>
                   </div> : null}
                   {shownAll.length ? (() => {
                     // By discipline: one heading per run of the same discipline, rows under it in name order.

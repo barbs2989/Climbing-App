@@ -339,6 +339,20 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   management compared `ownerId` against the seed id `0`, so a DB group's own owner got no
   controls), and **#688** (four more, below). Same shape every time: *seed-id logic meeting a
   uuid.*
+  - **A fixture crew proposes days counted from TODAY** (`fixtureCrewDays()` in
+    `scripts/lib/ui-fixture.mjs`, 2026-11-24). Every fixture crew carried a fixed day from
+    September or October 2026. Since #3816 a crew whose last proposed day is more than 14 days
+    behind is a PAST crew, so the Crews tab of every walk read "You have no crews yet. Past crews
+    (3)" and four assertions failed with the app correct. The per-run crews now ask the helper,
+    and `durableFixture()` moves the DURABLE crew's days forward on every run, on its creator's
+    own JWT, as it already re-stamps the policy version. A date written into a fixture is a
+    fixture with an expiry.
+  - **The recap is `TripRecapSheet` since #3838, and it has no "You" row.** The assertion that
+    read the old sheet between "Trip recap" and "Confirm attendance" now reads from "How did it
+    go?" to "Done": the signed-in climber is never a row on their own recap, and the sheet must
+    have loaded. **It does not reach the roster**: the sheet lists crewmates only for a crew with
+    an AGREED day, the fixture crews have none, and the walk logs that instead of counting an
+    assertion. Giving a fixture crew an agreed day within the last 3 days would reach it.
   - **The fixture accounts carry a USERNAME** (2026-11-18). Since 0420/0432 an account with none
     is sent to setup on every screen, so this walk (and `check:outage`'s healthy
     run, which shares the fixture) measured the "Choose your username" step and reported 7
@@ -1678,6 +1692,12 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   that flag was false**, so `_anniv` produced `[]` and no anniversary could **ever** fire. Being spread into
   `mergedNotifs` beside four live sources hid that completely: the notification list worked,
   so nothing looked wrong. It now derives from the user's real `logs`.
+  - **Its anchors name App's own lines, so a rename there turns it red with the feature intact**
+    (2026-11-24). #3787 gave your own logs their own reader, `useMyLogs(uid)`, and the scaffold
+    still looked for `const myLogsQ=useUserLogs(uid);`. Two scheduled walks failed on ANCHOR LOST
+    before anyone read the message. The scaffold now names `useMyLogs`. Signed out, that read is
+    refused (it names `partners`, 0501), and the probe row is prepended on an error as well as on
+    data, so the check does not depend on which answer the probe account gets.
   - **Nothing rendered it afterwards, and nothing easily could, because the feature is
     date-gated.** `_anniv` only fires for a log whose yearly anchor is within **two days** of
     today, and the seed logbook holds one entry dated 2026-05-24 — so on ~360 days of the year

@@ -9,7 +9,7 @@
 -- and commit the result in the same PR. `npm run gen:schema -- --check` exits 1 when this
 -- file has drifted from the live database.
 --
--- Counts: 90 tables, 887 columns, 489 keyed/checked constraints (158 foreign keys), 259 RLS policies.
+-- Counts: 90 tables, 893 columns, 490 keyed/checked constraints (160 foreign keys), 259 RLS policies.
 -- Not covered here: views, functions, triggers, standalone indexes (see supabase/migrations/).
 
 -- ── Foreign keys ───────────────────────────────────────────────────────────────
@@ -69,7 +69,9 @@
 -- crew_rides (crew_rides_user_id_fkey): FOREIGN KEY (user_id) REFERENCES profiles(id) ON DELETE CASCADE
 -- crew_safety_answers (crew_safety_answers_crew_id_fkey): FOREIGN KEY (crew_id) REFERENCES crews(id) ON DELETE CASCADE
 -- crew_safety_answers (crew_safety_answers_user_id_fkey): FOREIGN KEY (user_id) REFERENCES auth.users(id) ON DELETE CASCADE
--- crew_trip_replies (crew_trip_replies_report_id_fkey): FOREIGN KEY (report_id) REFERENCES crew_trip_reports(id) ON DELETE CASCADE
+-- crew_trip_replies (crew_trip_replies_about_id_fkey): FOREIGN KEY (about_id) REFERENCES profiles(id) ON DELETE CASCADE
+-- crew_trip_replies (crew_trip_replies_report_id_fkey): FOREIGN KEY (report_id) REFERENCES crew_trip_reports(id) ON DELETE SET NULL
+-- crew_trip_replies (crew_trip_replies_reporter_id_fkey): FOREIGN KEY (reporter_id) REFERENCES profiles(id) ON DELETE CASCADE
 -- crew_trip_reports (crew_trip_reports_about_id_fkey): FOREIGN KEY (about_id) REFERENCES profiles(id) ON DELETE CASCADE
 -- crew_trip_reports (crew_trip_reports_crew_id_fkey): FOREIGN KEY (crew_id) REFERENCES crews(id) ON DELETE SET NULL
 -- crew_trip_reports (crew_trip_reports_reporter_id_fkey): FOREIGN KEY (reporter_id) REFERENCES profiles(id) ON DELETE CASCADE
@@ -892,15 +894,21 @@ CREATE POLICY "own safety answers update" ON public.crew_safety_answers AS PERMI
   WHERE ((m.crew_id = crew_safety_answers.crew_id) AND (m.user_id = ( SELECT auth.uid() AS uid)) AND (m.status = 'confirmed'::text))))));
 
 CREATE TABLE public.crew_trip_replies (
-  report_id uuid NOT NULL,
+  report_id uuid,
   reply text NOT NULL,
   note text,
   created_at timestamp with time zone NOT NULL DEFAULT now(),
-  CONSTRAINT crew_trip_replies_pkey PRIMARY KEY (report_id),
+  trip_crew uuid NOT NULL,
+  trip_date date NOT NULL,
+  reporter_id uuid NOT NULL,
+  about_id uuid NOT NULL,
+  outcome text NOT NULL,
   CONSTRAINT crew_trip_replies_note_len CHECK (((note IS NULL) OR (char_length(note) <= 280))),
   CONSTRAINT crew_trip_replies_note_needed CHECK (((reply <> 'note'::text) OR ((note IS NOT NULL) AND (char_length(btrim(note)) > 0)))),
   CONSTRAINT crew_trip_replies_reply CHECK ((reply = ANY (ARRAY['was_there'::text, 'note'::text]))),
-  CONSTRAINT crew_trip_replies_report_id_fkey FOREIGN KEY (report_id) REFERENCES crew_trip_reports(id) ON DELETE CASCADE
+  CONSTRAINT crew_trip_replies_about_id_fkey FOREIGN KEY (about_id) REFERENCES profiles(id) ON DELETE CASCADE,
+  CONSTRAINT crew_trip_replies_report_id_fkey FOREIGN KEY (report_id) REFERENCES crew_trip_reports(id) ON DELETE SET NULL,
+  CONSTRAINT crew_trip_replies_reporter_id_fkey FOREIGN KEY (reporter_id) REFERENCES profiles(id) ON DELETE CASCADE
 );
 ALTER TABLE public.crew_trip_replies ENABLE ROW LEVEL SECURITY;
 
@@ -913,6 +921,7 @@ CREATE TABLE public.crew_trip_reports (
   outcome text NOT NULL,
   created_at timestamp with time zone NOT NULL DEFAULT now(),
   updated_at timestamp with time zone NOT NULL DEFAULT now(),
+  trip_crew uuid NOT NULL,
   CONSTRAINT crew_trip_reports_pkey PRIMARY KEY (id),
   CONSTRAINT crew_trip_reports_not_self CHECK (((about_id IS NULL) OR (about_id <> reporter_id))),
   CONSTRAINT crew_trip_reports_outcome CHECK ((outcome = ANY (ARRAY['on_time'::text, 'late'::text, 'cancelled_early'::text, 'cancelled_late'::text, 'no_show'::text, 'called_off'::text]))),

@@ -167,8 +167,14 @@ export default function NearMePanel({ center0, areaType, name, onBack, onOpenAre
   // THE AREA YOU CAME FROM (owner, 2026-11-23: "it should be highlighted on the map"): every peak and
   // crag under it, so the map opens with all of it in view, and a bullseye on it (below).
   const focusPath = focus && focus.path ? focus.path : null;
-  const { data: fp } = useAreaFootprint(focusPath ? focus : null);
+  const { data: fp, isFetched: fpDone } = useAreaFootprint(focusPath ? focus : null);
   const fpPts = useMemo(() => fp ? trimOutliers(fp.points as { lat: number; lng: number }[]) : [], [fp]);
+  // NO JUMP ON OPEN (review of #3854, 2026-11-24): opened from an area, the map used to show its first
+  // fixed zoom for a moment and then leap to the area's frame. It stays under "Loading map…" until it is
+  // framed, or the footprint read came back empty or failed, or 2.5 s pass, whichever is first.
+  const [shown, setShown] = useState(!focusPath);
+  useEffect(() => { if (!shown && ready && fpDone && !fpPts.length) setShown(true); }, [shown, ready, fpDone, fpPts]);
+  useEffect(() => { if (shown) return; const t = setTimeout(() => setShown(true), 2500); return () => clearTimeout(t); }, [shown]);
   const { data, isLoading, error } = useNearbyAreas(bounds);
   const nearbyAll: NearMePanelArea[] | undefined = data && data.rows;
   const typesOf = (a: NearMePanelArea) => Array.isArray(a.disciplines) ? a.disciplines : (a.dominant_discipline ? [a.dominant_discipline] : []);
@@ -264,13 +270,15 @@ export default function NearMePanel({ center0, areaType, name, onBack, onOpenAre
     const L = window.L, map = mapRef.current;
     if (!ready || !L || !map || framedRef.current || autoLocate || !fpPts.length) return;
     framedRef.current = true;
-    if (movedRef.current) return;
+    if (movedRef.current) { setShown(true); return; }
     const pts = focusPt ? fpPts.concat([focusPt]) : fpPts;
     const one = pts.every(p => Math.abs(p.lat - pts[0].lat) < 1e-4 && Math.abs(p.lng - pts[0].lng) < 1e-4);
     try {
-      if (one) map.setView([pts[0].lat, pts[0].lng], Math.max(map.getZoom(), ZOOM_BY_AREA_TYPE[areaType] || 12));
-      else map.fitBounds(L.latLngBounds(pts.map(p => [p.lat, p.lng])), { padding: [60, 60], maxZoom: 14 });
+      // Not animated: the map is still hidden, and it should appear already framed.
+      if (one) map.setView([pts[0].lat, pts[0].lng], Math.max(map.getZoom(), ZOOM_BY_AREA_TYPE[areaType] || 12), { animate: false });
+      else map.fitBounds(L.latLngBounds(pts.map(p => [p.lat, p.lng])), { padding: [60, 60], maxZoom: 14, animate: false });
     } catch (e) { /* the map is gone or not laid out yet; nothing to update */ }
+    setShown(true);
   }, [ready, fpPts, focusPt]); // eslint-disable-line react-hooks/exhaustive-deps -- frames once per footprint; areaType and autoLocate are fixed for this panel's life (it is keyed on the area)
 
   useEffect(() => {
@@ -320,7 +328,18 @@ export default function NearMePanel({ center0, areaType, name, onBack, onOpenAre
       const r = ringR(g.reduce((s, p) => s + (p.a.route_count || 0), 0));
       return { x0: x - r, y0: y - r, x1: x + r, y1: y + r };
     });
+    // ...and never under the map's own controls (owner, 2026-11-24, phone check: a name sat under the
+    // Street / Satellite row). Each control's box is read from the page, in the map's own pixels, so the
+    // row, ⤢, + / − and "Me" are avoided at whatever size they render on this screen.
     const placed: Box[] = [];
+    const host = mapDiv.current, frame = host && host.parentElement;
+    if (host && frame) {
+      const m = host.getBoundingClientRect();
+      frame.querySelectorAll("button, .leaflet-control").forEach(el => {
+        const r = el.getBoundingClientRect();
+        if (r.width && r.height) placed.push({ x0: r.left - m.left - 2, y0: r.top - m.top - 2, x1: r.right - m.left + 2, y1: r.bottom - m.top + 2 });
+      });
+    }
     const labelFits = (gi: number, name: string) => {
       const rb = ringBoxes[gi], cx = (rb.x0 + rb.x1) / 2, w = labelWidth(name);
       const lb = { x0: cx - w / 2, y0: rb.y1 + 2, x1: cx + w / 2, y1: rb.y1 + 16 };
@@ -426,7 +445,7 @@ export default function NearMePanel({ center0, areaType, name, onBack, onOpenAre
   const searchUI = (
     <>
         <form onSubmit={findPlace} role="search" style={{ display: "flex", gap: 6, marginBottom: place.err || place.alts.length ? 4 : 8 }}>
-          <div style={{ position: "relative", flex: 1, minWidth: 0 }}><input type="search" value={placeQ} onChange={e => setPlaceQ(e.target.value)} placeholder="Go to a town, county or zip/postal code" aria-label="Go to a town, county or zip/postal code" enterKeyHint="search" style={{ width: "100%", boxSizing: "border-box", padding: "10px 40px 10px 12px", borderRadius: 10, border: "1px solid " + C.border, background: C.surface, color: C.text, fontSize: 16 }} />{placeQ ? <button type="button" onClick={() => setPlaceQ("")} aria-label="Clear search" style={{ ...POP_REMOVE, position: "absolute", right: 10, top: "50%", transform: "translateY(-50%)" }}>✕</button> : null}</div>
+          <div style={{ position: "relative", flex: 1, minWidth: 0 }}><input type="search" value={placeQ} onChange={e => setPlaceQ(e.target.value)} placeholder="Go to a town, county or zip/postal code" aria-label="Go to a town, county or zip/postal code" enterKeyHint="search" style={{ width: "100%", boxSizing: "border-box", padding: "10px 40px 10px 12px", borderRadius: 10, border: "1px solid " + C.field, background: C.surface, color: C.text, fontSize: 16 }} />{placeQ ? <button type="button" onClick={() => setPlaceQ("")} aria-label="Clear search" style={{ ...POP_REMOVE, position: "absolute", right: 10, top: "50%", transform: "translateY(-50%)" }}>✕</button> : null}</div>
           <button type="submit" disabled={!placeQ.trim() || place.busy} style={{ ...BTN, background: C.blueSolid, color:C.onSolid, border: "none", flexShrink: 0, opacity: !placeQ.trim() || place.busy ? 0.6 : 1 }}>{place.busy ? "Finding…" : "Go"}</button>
         </form>
         {place.err ? <div role="status" style={{ color: C.red, fontSize: 12, marginBottom: 8 }}>{place.err}</div> : null}
@@ -440,8 +459,8 @@ export default function NearMePanel({ center0, areaType, name, onBack, onOpenAre
   );
   const mapBox = (
     <div style={{ position: "relative", flex: fullscreen ? 1 : "none", minHeight: 0 }}>
-      <div ref={mapDiv} style={{ width: "100%", height: fullscreen ? "100%" : 260, borderRadius: 12, overflow: "hidden", background: C.surface }} />
-      {!ready ? <div style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "center", color: C.textMuted, fontSize: 12.5, pointerEvents: "none", textAlign: "center", padding: 16 }}>{mapFail ? "Map couldn't load — the nearest areas are listed below." : "Loading map…"}</div> : null}
+      <div ref={mapDiv} style={{ width: "100%", height: fullscreen ? "100%" : 260, borderRadius: 12, overflow: "hidden", background: C.surface, opacity: shown ? 1 : 0 }} />
+      {!ready || !shown ? <div style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "center", color: C.textMuted, fontSize: 12.5, pointerEvents: "none", textAlign: "center", padding: 16 }}>{mapFail ? "Map couldn't load — the nearest areas are listed below." : "Loading map…"}</div> : null}
       <BaseLayerToggle baseLayer={baseLayer} setBaseLayer={setBaseLayer} C={C} snow snowAt={center} on3d={ready && bounds ? () => setView3d(true) : undefined} />
       {/* ⤢ to go full screen and ✕ to leave it, in the SAME spot on the map, so the way out is where the
           way in was (owner, 2026-10-24: "Exit full screen is a little hidden on the map"). Drawn OPAQUE, with a

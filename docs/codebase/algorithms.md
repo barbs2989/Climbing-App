@@ -33,6 +33,10 @@ project documentation as a whole — `CLAUDE.md`, `docs/codebase/` and `docs/gua
     (stars−1)/4; pulled toward `REL_PRIOR` (0.85, a typical climber) by two imaginary trips, so one bad day on a short record
     does not sink it (one no-show alone reads 0.57). The term is `12 × r(me) + 12 × r(them)`, a missing record counting
     `REL_PRIOR`, so it stays SYMMETRIC like verified and no record is never a bad mark.
+    - **No record caps a perfect pair at 97, by design (second review 2026-11-24).** Two climbers who match on everything
+      else but have no crew record each count `REL_PRIOR` (0.85), and `relRate` keeps any record below 1.0, so 99 needs a
+      long spotless record on both sides. #3826's "a crag pair can reach 99" holds with that record
+      (`check:match-percent` 8b builds it); without one, the same pair reads 97.
     - **Re-audit 2026-11-24 (owner: "do what you recommend").** At 12 with a missing record at 0.5, a partner with 20
       no-shows read 84% against 87% for 20 on time, and 3 no-shows in 5 trips read the SAME as a brand-new climber (the
       neutral half sat below the norm the rate is pulled toward). Now, from a mid profile: 20 on time 89%, no record 88%,
