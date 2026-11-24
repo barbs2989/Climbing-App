@@ -17,6 +17,7 @@ import { gradeNumFor } from "./grade";
 import { discLabel } from "./discLabels";
 import { C } from "../ClimbMatchCore";
 import LoadingRows from "../src/components/LoadingRows.tsx";
+import { searchCanon, searchBare } from "./search";
 
 // Shown here because a reviewer should see everything the climber wrote, not only the part
 // the schema models. Six of these got real columns in 0131 (prot_rating, start_type, landing,
@@ -50,20 +51,40 @@ function Row({ label, children }) {
 
 // Catalog rows this proposal may already be (0214's catalog_find_*). Approving still refuses a same-named
 // copy nearby (0216); this catches the ones it cannot: another spelling, or farther away.
-function PossibleDuplicates({ kind, name, areaId, lat, lng }) {
+// The same name as the search box spells it ("Mt Baker" = "Mount Baker", a leading "The" dropped): lib/search.js.
+const nameKey = (n) => searchBare(searchCanon(String(n || "")));
+// Other proposals STILL WAITING that name the same climb or area (QA run, 2026-11-23: two climbers proposed one climb,
+// and neither card warned until one was approved, because the catalog read cannot see a pending proposal). A climb
+// matches on the same area; an area on the same name anywhere in the queue, since a twin may name another parent.
+function waitingTwins(list, r, sameArea) {
+  const k = nameKey((r.value || {}).name);
+  if (!k) return [];
+  return list.filter(function (x) { return x.id !== r.id && nameKey((x.value || {}).name) === k && (!sameArea || x.area_id === r.area_id); });
+}
+function PossibleDuplicates({ kind, name, areaId, lat, lng, waiting }) {
   const { data, isLoading, error } = useProposalDuplicates(kind, name, areaId, lat, lng);
-  if (isLoading) return <Row label="Already in catalog?">Checking…</Row>;
-  if (error) return <Row label="Already in catalog?"><span style={{ color: C.amber }}>Could not check — {(error && error.message) || "the request failed"}</span></Row>;
+  const twins = waiting || [];
+  const twinBox = twins.length ? <div style={{ background: C.surface, border: "1px solid " + C.amber, borderRadius: 8, padding: "7px 9px", marginTop: 7 }}>
+    <div style={{ fontSize: 12, fontWeight: 700, color: C.amber, marginBottom: 3 }}>{"Also waiting for review: " + twins.length + " more with this name"}</div>
+    {twins.map(function (t) {
+      const tv = t.value || {};
+      return <div key={t.id} style={{ fontSize: 12, color: C.textSub, lineHeight: 1.55, wordBreak: "break-word" }}>
+        {"By " + String(t.contributor || "anonymous").slice(0, 8) + (t.created_at ? " on " + String(t.created_at).slice(0, 10) : "") + (kind === "new_area" && tv.parentName ? ", inside " + tv.parentName : "")}
+      </div>;
+    })}
+  </div> : null;
+  if (isLoading) return <>{twinBox}<Row label="Already in catalog?">Checking…</Row></>;
+  if (error) return <>{twinBox}<Row label="Already in catalog?"><span style={{ color: C.amber }}>Could not check — {(error && error.message) || "the request failed"}</span></Row></>;
   const hits = (data || []).slice(0, 5);
-  if (!hits.length) return <Row label="Already in catalog?">No match found</Row>;
-  return <div style={{ background: C.surface, border: "1px solid " + C.amber, borderRadius: 8, padding: "7px 9px", marginTop: 7 }}>
+  if (!hits.length) return <>{twinBox}<Row label="Already in catalog?">No match found</Row></>;
+  return <>{twinBox}<div style={{ background: C.surface, border: "1px solid " + C.amber, borderRadius: 8, padding: "7px 9px", marginTop: 7 }}>
     <div style={{ fontSize: 12, fontWeight: 700, color: C.amber, marginBottom: 3 }}>Possible duplicate{hits.length > 1 ? "s" : ""}: read before approving</div>
     {hits.map(function (h) {
       return <div key={h.id} style={{ fontSize: 12, color: C.textSub, lineHeight: 1.55, wordBreak: "break-word" }}>
         {h.label}{h.grade ? " · " + h.grade : ""}{h.km != null ? " · " + Number(h.km).toFixed(1) + " km" : ""} · {h.match} <span style={{ color: C.textMuted }}>({h.id})</span>
       </div>;
     })}
-  </div>;
+  </div></>;
 }
 
 // What the nightly AI checker (review-flags-nightly, 0436) concluded about this proposal: does the climb or
@@ -215,7 +236,7 @@ export function RouteProposalQueue({ ai = null } = {}) {
             This proposal names no DB area, so it cannot be filed. Approving it will be refused.
           </div> : null}
 
-          {r.area_id ? <PossibleDuplicates kind="new_route" name={v.name} areaId={r.area_id} /> : null}
+          {r.area_id ? <PossibleDuplicates kind="new_route" name={v.name} areaId={r.area_id} waiting={waitingTwins(list, r, true)} /> : null}
           {ai ? <AiNote v={ai["contribution:" + r.id]} /> : null}
 
           {rejecting === r.id
@@ -340,7 +361,7 @@ export function AreaProposalQueue({ ai = null } = {}) {
           <Row label="Location">{v.lat != null && v.lng != null ? v.lat + ", " + v.lng : null}</Row>
           <Row label="Submitted">{r.created_at ? String(r.created_at).slice(0, 10) : null}</Row>
           <Row label="By">{r.contributor ? String(r.contributor).slice(0, 8) : "anonymous"}</Row>
-          <PossibleDuplicates kind="new_area" name={v.name} areaId={r.area_id} lat={v.lat} lng={v.lng} />
+          <PossibleDuplicates kind="new_area" name={v.name} areaId={r.area_id} lat={v.lat} lng={v.lng} waiting={waitingTwins(list, r, false)} />
           {ai ? <AiNote v={ai["contribution:" + r.id]} /> : null}
           {rejecting === r.id
             ? <RejectBox busy={busy} onConfirm={(n, st) => doReject(r.id, n, st)} onCancel={() => setRejecting(null)} />
