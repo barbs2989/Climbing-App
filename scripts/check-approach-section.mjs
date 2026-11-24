@@ -156,11 +156,14 @@ check(!text(nameOnly).includes("Stream crossing"), "a crossing in the NOTES or N
 console.log("5. every shape reaches a screen");
 check(text(proseOnly).includes(PROSE) && (proseOnly.match(/>APPROACH</g) || []).length === 1, "paragraph only: one APPROACH, with the paragraph");
 check(text(varsOnly).includes(V0.name) && text(varsOnly).includes(V1.name) && !text(varsOnly).includes("Full description"), "ways in only: every way in, no empty Full description");
-check(text(none).includes("No approach description"), "neither: the GapNote says the walk is not written down");
+// Since the "Help fill this in" list (lib/helpFill.js) an empty section is an ENTRY of that list; its row is drawn after an
+// effect, which a static render never runs, so the entry is read off the marker the section leaves (check:bare proves the row).
+const gapEntry = (html) => html.includes('data-help-fill="APPROACH"') && html.includes('data-help-fill-what="No approach description"');
+check(gapEntry(none), "neither: the walk is listed as not written down (a Help-fill entry)");
 
 console.log("6. a crag's ways in render on Overview (a crag has no Plan tab since 2026-10-07)");
 check(!/>Plan</.test(cragVars) && text(cragVars).includes(V0.name), "a crag whose only approach data is ways in shows them on Overview, with no Plan tab");
-check(!/>Plan</.test(cragNone) && text(cragNone).includes("No approach description"), "...and a bare crag shows the approach placeholder there (control)");
+check(!/>Plan</.test(cragNone) && gapEntry(cragNone), "...and a bare crag lists the approach as missing there (control)");
 
 console.log("7. borrowed numbers keep Overview's label");
 const sc = cards(summit);

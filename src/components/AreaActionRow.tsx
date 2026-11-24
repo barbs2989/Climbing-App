@@ -28,7 +28,7 @@ export interface AreaActionRowProps {
 // route finder and objectives. Make all those buttons the same size ... make all 3 of those buttons stand out more";
 // Map used to be content-width, and it and Objectives were grey outlines). On the website the finder chip opens the inline form under the row rather than leaving the page.
 // NOT ORANGE (owner, 2026-11-24: "i dont like the orange boxes for route finder, objectives, map on areas pages"): the
-// warm palette made C.blueSolid a burnt orange, so the row wears the palette's BLUE instead -- the dark blue fill under
+// warm palette made C.actionSolid a burnt orange, so the row wears the palette's BLUE instead -- the dark blue fill under
 // a light-blue edge, in the text colour -- and keeps the size and shadow that make the three stand out.
 // Mountain Project keeps a ~300px Route Finder form always open on its area pages; here it is one tap away.
 export default function AreaActionRow({ C, routeCount, onFinder, inlineDiscs, myGrades, onFindInline, objectivesHere, onObjectives, onNear, first }: AreaActionRowProps) {

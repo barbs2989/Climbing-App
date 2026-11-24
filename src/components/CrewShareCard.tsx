@@ -66,7 +66,7 @@ export default function CrewShareCard({ token, signedIn, onJoin, onSignIn, onDis
     {sent
       ? <div style={{ fontSize: 12.5, color: C.green, fontWeight: 700, lineHeight: 1.5 }}>Request sent. The organizer will see it in Requests.</div>
       : <div style={{ display: "flex", alignItems: "center", gap: 14, flexWrap: "wrap" }}>
-          <button type="button" disabled={busy || !open} onClick={join} style={{ padding: "10px 16px", borderRadius: 10, border: "none", background: open ? C.blueSolid : C.surface, color: open ? C.onSolid : C.textMuted, fontSize: 13, fontWeight: 800, cursor: busy || !open ? "default" : "pointer", opacity: busy ? 0.6 : 1 }}>{!open ? "Crew is full" : busy ? "Sending…" : signedIn ? "Ask to join" : "Sign up to join"}</button>
+          <button type="button" disabled={busy || !open} onClick={join} style={{ padding: "10px 16px", borderRadius: 10, border: "none", background: open ? C.actionSolid : C.surface, color: open ? C.onSolid : C.textMuted, fontSize: 13, fontWeight: 800, cursor: busy || !open ? "default" : "pointer", opacity: busy ? 0.6 : 1 }}>{!open ? "Crew is full" : busy ? "Sending…" : signedIn ? "Ask to join" : "Sign up to join"}</button>
           {close}
         </div>}
     {err ? <div style={{ fontSize: 12, color: C.amber, marginTop: 6 }}>{err}</div> : null}

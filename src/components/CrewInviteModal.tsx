@@ -61,7 +61,7 @@ export default function CrewInviteModal({climber,climbers,route,onClose,onSend}:
       </div>
       <div style={{display:"flex",gap:12}}>
         <button onClick={onClose} style={{...BTN_LG,flex:"0 0 auto",padding:"13px 17px",background:C.surface,color:C.textSub,border:"1px solid "+C.border}}>Cancel</button>
-        <button onClick={()=>onSend(note.trim())} style={{...BTN_LG,flex:1,background:C.blueSolid,color:C.onSolid,border:"none"}}>{many?(note.trim()?"Send "+many.length+" invites":"Send "+many.length+" without note"):note.trim()?"Send invite":"Send without note"}</button>
+        <button onClick={()=>onSend(note.trim())} style={{...BTN_LG,flex:1,background:C.actionSolid,color:C.onSolid,border:"none"}}>{many?(note.trim()?"Send "+many.length+" invites":"Send "+many.length+" without note"):note.trim()?"Send invite":"Send without note"}</button>
       </div>
       <div style={{fontSize:12,color:C.textMuted,textAlign:"center",marginTop:11,lineHeight:1.5}}>{many?"Each climber can accept or decline your invite.":first+" can accept or decline your invite."}</div>
     </div>

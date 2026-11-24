@@ -254,7 +254,9 @@ export async function createFixture(log = () => {}) {
     const crew = await insert("crews", {
       created_by: owner.id,
       route_id: ROUTE_ID,
-      dates: fixtureCrewDays(2),
+      dates: [fixtureTripDay()],
+      agreed_date: fixtureTripDay(),
+      date_forced: true,
       meet_place: "Heliotrope Ridge TH",
       meet_time: "04:30",
       cap: 4,
@@ -457,4 +459,22 @@ export function fixtureCrewDays(count = 1, now = new Date()) {
     const d = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 21 + i);
     return `${d.getFullYear()}-${p(d.getMonth() + 1)}-${p(d.getDate())}`;
   });
+}
+
+// THE DAY THE FIXTURE'S MAIN CREW CLIMBED: yesterday, locked by its organizer.
+//
+// The trip recap ("How did it go?", 0519) lists crewmates only for a crew with an AGREED day
+// (crews.agreed_date), and takes answers from that day until 14 days after. No fixture crew had
+// one, so the walk could never see the recap's roster. Yesterday rather than today: the database
+// counts "today" in its own zone, and a day that is still tomorrow there closes the sheet. A crew
+// whose day passed stays on the active list for 3 days (CREW_ARCHIVE_GRACE_DAYS), so it is still a
+// crew CARD for the roster and chat assertions.
+//
+// ONLY the main crew, never a per-run one: a crew with crewmates cannot be DELETED while its trip
+// is reportable (crews_keep_while_reportable, 0523), so a per-run crew with a locked day would be
+// left in the live project by every run.
+export function fixtureTripDay(now = new Date()) {
+  const p = (n) => String(n).padStart(2, "0");
+  const d = new Date(now.getFullYear(), now.getMonth(), now.getDate() - 1);
+  return `${d.getFullYear()}-${p(d.getMonth() + 1)}-${p(d.getDate())}`;
 }

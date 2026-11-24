@@ -273,7 +273,7 @@ export function GradeSpread({ stats, C, standalone, bare, onGrade }) {
     <div style={{ position: "relative", flex: 1, minWidth: 0 }}>
     <svg role="img" aria-label={(disc ? discName(disc) + " climbs" : "Climbs") + " by grade (" + (SYS_NAME[sys] || sys) + "): " + desc} viewBox={"0 0 " + W + " " + H} preserveAspectRatio="none" style={{ width: "100%", height: 56, display: "block" }}>
       {axis.map(t => t ? <line key={"t" + t} x1={0} x2={W} y1={H - t / top * H} y2={H - t / top * H} stroke={C.border} strokeWidth={1} vectorEffect="non-scaling-stroke" /> : null)}
-      {full.map((c, i) => { const h = Math.max(c.n ? 1.5 : 0, c.n / top * H); return <rect key={c.b} x={i * (bw + gap)} y={H - h} width={bw} height={h} rx={0} fill={C.blueSolid} />; })}
+      {full.map((c, i) => { const h = Math.max(c.n ? 1.5 : 0, c.n / top * H); return <rect key={c.b} x={i * (bw + gap)} y={H - h} width={bw} height={h} rx={0} fill={C.actionSolid} />; })}
     </svg>
     {onGrade && gradeFinderRange(sys, lo) ? <div style={{ position: "absolute", inset: 0, display: "flex", gap: gap + "px" }}>
       {full.map(c => c.n ? <button key={c.b} onClick={() => onGrade(sys, c.b, disc)} aria-label={label(c) + ": " + c.n.toLocaleString() + " climb" + (c.n !== 1 ? "s" : "") + ", open in Route finder"} style={{ flex: 1, minWidth: 0, background: "transparent", border: "none", padding: 0, cursor: "pointer" }} /> : <span key={c.b} aria-hidden="true" style={{ flex: 1, minWidth: 0 }} />)}

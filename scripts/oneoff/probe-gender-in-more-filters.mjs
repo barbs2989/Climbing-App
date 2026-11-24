@@ -65,7 +65,7 @@ try {
   const moreText = async () => (await more.innerText()).replace(/\s+/g, " ").trim();
 
   // My areas: the mode that had NO More filters button before.
-  await by.selectOption("myareas"); await page.waitForTimeout(2500);
+  await by.selectOption("mine"); await page.waitForTimeout(2500);
   ok(await row.locator('[role="switch"]').count() === 0 && await row.locator("button", { hasText: /^Only / }).count() === 0, "no gender pill or switch in the filter row");
   ok(await more.count() === 1, "More filters is offered on My areas");
   await more.click(); await page.waitForTimeout(600);
@@ -81,7 +81,7 @@ try {
   await shot("2-women-and-nonbinary");
 
   // An example-list mode: the chips first, the other filters under them.
-  const exMode = (await by.locator("option").evaluateAll((os) => os.map((o) => o.value))).find((v) => !["myareas", "saved", "peak"].includes(v));
+  const exMode = (await by.locator("option").evaluateAll((os) => os.map((o) => o.value))).find((v) => !["mine", "peak"].includes(v));
   await by.selectOption(exMode); await page.waitForTimeout(3000);
   if (!(await chips.count())) { await more.click(); await page.waitForTimeout(600); }
   const sy = await chips.boundingBox().then((b) => b && b.y), ay = await page.locator("text=AVAILABLE TO CLIMB").first().boundingBox().then((b) => b && b.y).catch(() => null);

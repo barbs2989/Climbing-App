@@ -22,6 +22,18 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     non-zero on the matching assertion.
   - **Trap met building it:** section 9 first read 2 trips for one climber because section 8's DELETED crew kept its
     report, which is the behaviour being proved. The section now clears that climber's reports first.
+  - **Section 12 (0526, fourth review 2026-11-24):** left before the day cannot report (called off included) and is
+    reportable; joined after the day neither reports nor is reported; an organizer's removal the day before is not a
+    departure; an organizer alone who leaves can still disband; a crewmate removed after the day is listed by
+    `my_trip_recaps` and can report. 44 assertions; all five fail without 0526 (measured). Every call now backdates
+    fixture memberships a month (`backdateMembers`), since "on the trip" needs `joined_at` before the day ended and the
+    fixtures add members now to crews dated yesterday; `LATE_JOINERS` keeps the one test's late joiner late. The live
+    probe backdates its real crew the same way.
+  - **Section 11 (0525, third review 2026-11-24):** the organizer cannot move or clear a day that has come, and can
+    before it; declining after the day is a departure and stays reportable; a removal before the day is not one; a
+    departure from an earlier trip does not put a climber on the next trip's roster; switching answers and back cannot
+    wipe a dispute. Section 8 now asserts an organizer's removal AFTER the day is recorded (marked removed) and the
+    removed member can still report. 39 assertions. Without 0525 the run stops at section 8's new column (measured).
   - **Section 10 rewritten for 0523 (second review, 2026-11-24):** a deleted crew's reports still group by trip; leaving
     after the day is still reportable with any answer; the organizer cannot disband in the window but can before the
     day; a second trip on one crew is its own trip; withdraw and re-file meets the same *I was there*, a different

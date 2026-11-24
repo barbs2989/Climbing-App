@@ -189,6 +189,27 @@ Three top-level `tab` values in `ClimbMatch.jsx` (`tab==="today"`, `tab==="crew"
   - Shown as COUNTS, never a score (the trust score was removed on 2026-10-21): "Showed up for 9 of 10 crew trips · 1 cancelled
     last minute" under the name on a profile (`FullProfile`) and on your own Profile tab (`MeTab`), from `reliabilityText`.
     Nothing until a trip is on record, nothing while the read is out. It is one term of the match % (`docs/features/partners.md`).
+  - **Fourth review (0526, owner 2026-11-24: "fix it then review again"): who was ON the trip.** Two questions now, not
+    one roster: ON THE TRIP (`crew_trip_was_on`) is confirmed with `joined_at` before the day ended (UTC-12), or came
+    off on or after the day began anywhere (UTC+14) — they report and are reported; BAILED is came off by their own hand
+    in the 14 days before — they are reported and do NOT report (a climber who left early used to be able to file
+    "called off", which clears the whole trip). Joining after the day puts nobody on it. An organizer's removal is
+    recorded only once the day has begun everywhere (`crew_trip_today() >= d`), and the organizer is never "others" for
+    the disband guard and the day lock. A climber who came off a trip after it began is asked from `my_trip_recaps()`
+    (`useMyTripRecaps`): the crew is no longer in their crews, so that read drives their alert and opens the sheet by
+    the crew's uuid. The Day sheet shows a locked notice while `tripDayLocked`, `updateCrew` returns whether the save
+    landed and the day toasts wait for it, Past crews asks only a confirmed member, and a partner card waits only for
+    its OWN climber's reliability (`placeholderData: keepPreviousData`, so a growing list does not re-blank cards).
+  - **Third review (0525, owner 2026-11-24: "do another pass"): a trip is FIXED once its day comes.** From the trip's day
+    in the earliest time zone (UTC+14) until its reports close: the crew's `agreed_date` cannot change
+    (`crews_keep_day_while_reportable`) and the crew cannot be disbanded (the guard used to start only when the day
+    reached UTC-12). A trip's ROSTER is its confirmed members plus its departures (`crew_trip_on_roster`): any way off
+    the crew from the day on is a departure for THAT trip — leaving, declining (`crew_members_demoted`), or being
+    removed by the organizer (`removed_by_other`) — and anyone on the roster can report and be reported. Departures are
+    keyed by the trip's day. Replies are one per ANSWER, so switching answers and back cannot wipe *I was there*. In the
+    app, the alert, the crew card and Past crews open by the server's own window (`tripReportsOpen`, the date at
+    UTC-12); the alert is one per trip; the crew card's button asks only a confirmed member; the partner card holds its %
+    until both climbers' reliability has loaded.
   - **Second review (0523, owner 2026-11-24: "review it all"):** every departure is recorded while the trip is
     reportable, and a crewmate who left can be given ANY answer (when they left says nothing certain about whether they
     came); a crew with crewmates cannot be disbanded from its day until reports close (`crews_keep_while_reportable`;
@@ -340,7 +361,7 @@ Three top-level `tab` values in `ClimbMatch.jsx` (`tab==="today"`, `tab==="crew"
 | `src/components/ListMeSwitch.tsx` | `ListMeSwitch`, the List me switch on each saved area and peak in Logbook › Saved |
 | `src/components/SavedPlaceAdd.tsx` | `SavedPlaceAdd`, the *+ Add an area* / *+ Add a peak* search at the foot of each Saved box |
 | `src/components/PeakPicker.tsx` | `PeakPicker`, saved-peak chips over a peak-only catalog search — Partners › A peak and Join a crew › By Peak |
-| `lib/CrewFinder.jsx` | Crew discovery (**By Peak**, owner 2026-11-18: every open crew on a route up the picked peak or meeting at it, `onPeak` over `useAreaPaths`; saved peaks as chips via `PeakPicker`; `inMyAreas`: "My climbs & areas" also matches a crew at, or inside, an area you listed or saved — `savedAreaIds`, signed in only; under that mode ONE ROW is the pane's home for your listings (owner 2026-11-23: "one row", as on Find partners): *You’re listed at N places.* beside **Edit areas** (*Add areas* with none), which opens the Listed areas sheet; the sentence also counts the saved areas that match (`onEditAreas`; a failed listings read says so via `myAreasError`). From 2026-11-19 to 2026-11-23 it was a card of area chips; the separate *My areas* card above the finder was removed 2026-11-19 as a duplicate); `initialArea` from the area page's "Crews here") |
+| `lib/CrewFinder.jsx` | Crew discovery (**By Peak**, owner 2026-11-18: every open crew on a route up the picked peak or meeting at it, `onPeak` over `useAreaPaths`; saved peaks as chips via `PeakPicker`; `inMyAreas`: "My climbs & areas" also matches a crew at, or inside, an area you listed or saved — `savedAreaIds`, signed in only; under that mode ONE ROW is the pane's home for your listings (owner 2026-11-23: "one row", as on Find partners): *You’re listed at N places.* beside **My areas** (the label Find partners' row uses too since 2026-11-24; it read *Edit areas* / *Add areas* before), which opens the Listed areas sheet; the sentence also counts the saved areas that match (`onEditAreas`; a failed listings read says so via `myAreasError`). From 2026-11-19 to 2026-11-23 it was a card of area chips; the separate *My areas* card above the finder was removed 2026-11-19 as a duplicate); `initialArea` from the area page's "Crews here"; **By Area** goes as deep as the catalog does since 2026-11-24 — each picked place adds an *Inside <place>* dropdown, down to the crag or wall, through the shared `AreaRegionSelect`, and `inPlace` matches a crew anywhere under it) |
 | `lib/StartCrewSheet.jsx` | `StartCrewSheet` — start a crew at an AREA: the place, the session's discipline, a day, a size, a note; hands `formCrew` a place |
 | `lib/FloatPlans.jsx`, `lib/GiveVouch.jsx`, `lib/Inbox.jsx`, `lib/NotifPanel.jsx` | Float plans, vouch sheet, messages, notifications |
 | `lib/SafetyTab.jsx` | `SafetyTab` — crew safety check: Team Alignment (server counts for a real crew) and the float plan |

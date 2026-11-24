@@ -19,7 +19,7 @@ const when = (iso) => { if (!iso) return ""; try { return new Date(iso).toLocale
 
 const btn = (kind, busy) => ({
   padding: "8px 10px", borderRadius: 8, fontSize: 12.5, fontWeight: 700, cursor: busy ? "default" : "pointer", flex: 1,
-  background: busy ? C.surface : kind === "ok" ? C.blueSolid : kind === "bad" ? C.redBg : C.surface,
+  background: busy ? C.surface : kind === "ok" ? C.actionSolid : kind === "bad" ? C.redBg : C.surface,
   color: busy ? C.textMuted : kind === "ok" ? C.onSolid : kind === "bad" ? C.red : C.textSub,
   border: kind === "ok" && !busy ? "none" : "1px solid " + (kind === "bad" ? C.red : C.border),
 });

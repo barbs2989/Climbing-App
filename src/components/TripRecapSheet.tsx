@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
-import { C, pubNameRow, shortDate } from "../../ClimbMatchCore.jsx";
+import { C, pubNameRow, shortDate, tripToday } from "../../ClimbMatchCore.jsx";
 import { POP_BACK } from "../../lib/popupChrome.js";
 import { submitTripReport, useCrewRecap, useProfilesByIds } from "../../lib/db.js";
 import Av from "./Av.tsx";
@@ -92,7 +92,7 @@ export default function TripRecapSheet({ crewId, real = true, placeName, onClose
   else {
     body = <>
       {!open ? <div style={{ fontSize: 12.5, color: C.textMuted, lineHeight: 1.5, background: C.card, border: "1px solid " + C.border, borderRadius: 10, padding: "9px 11px", marginBottom: 12 }}>
-        {new Date(data.tripDate + "T12:00:00") > new Date() ? "You can say how it went from the day of the trip." : "Trip reports closed 14 days after the trip. What you said is shown below."}
+        {tripToday() < String(data.tripDate).slice(0, 10) ? "Reports for this trip open on its day — later today if that is today where you are." : "Trip reports closed 14 days after the trip. What you said is shown below."}
       </div> : null}
       <button onClick={toggleCallOff} disabled={!open || busy || anyPending} aria-pressed={calledOff}
         style={{ width: "100%", textAlign: "left", display: "block", boxSizing: "border-box", padding: "12px 14px", borderRadius: 12, marginBottom: 14, cursor: open ? "pointer" : "default",
@@ -146,7 +146,7 @@ export default function TripRecapSheet({ crewId, real = true, placeName, onClose
       </div>
       <div style={{ padding: "14px 16px 40px" }}>
         {body}
-        <button onClick={onClose} style={{ width: "100%", marginTop: 16, padding: 12, background: C.blueSolid, color: C.onSolid, border: "none", borderRadius: 11, fontSize: 14, fontWeight: 700, cursor: "pointer" }}>Done</button>
+        <button onClick={onClose} style={{ width: "100%", marginTop: 16, padding: 12, background: C.actionSolid, color: C.onSolid, border: "none", borderRadius: 11, fontSize: 14, fontWeight: 700, cursor: "pointer" }}>Done</button>
       </div>
     </div>
   </div>, document.body);
