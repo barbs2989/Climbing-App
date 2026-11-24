@@ -28,7 +28,7 @@ whole guide feature on 2026-11-14 (owner). This doc covers the partners mode (`l
   *Looking for partners? List the crags and peaks you climb — you’re listed at N places.* beside **My areas**, which opens
   `MyPartnerAreas` — the only way onto that screen here (the empty card no longer repeats it), and where each listing is changed or removed; then the **I'm free this weekend** switch (`role="switch"`; it writes your own
   `profiles.free_until`, which is why it left the filter row — as a pill there, a tap meant to find free climbers published your status),
-  and at most one hint: listing turned off (*Turn listing on*), no profile photo (you are not shown until you add one), or no gender. With no zip on file, the point-of-use zip form (#3306) sits under the pills in the same card look and the real lists wait for it. Ended date windows are NOT flagged here (owner):
+  and at most one hint: listing turned off (*Turn listing on*), no profile photo (you are not shown until you add one), or no gender. With no zip on file, the point-of-use zip form (#3306) sits under the pills in the same card look, as an offer: the lists no longer wait for it (owner 2026-11-24). Ended date windows are NOT flagged here (owner):
   an ended listing still matches (0311 only drops the dates), and the listing screen already marks it.
 - **Distance defaults to Anywhere in the place modes** (My areas, Pick an area; walkthrough 2026-11-14): with a zip on file it defaulted
   to *within 50 mi of <zip>* everywhere, so a Bellingham climber listed at Smith Rock saw nobody there. Near my zip stays the default for
@@ -69,9 +69,12 @@ whole guide feature on 2026-11-14 (owner). This doc covers the partners mode (`l
 - **Climbers on ClimbMatch** (signed-in + DB): real, listed climbers (`profiles.discoverable`, on by default since 0195;
   opt out in Settings). Distance chips: Near my zip / Near me now (browser geolocation, rounded to 2 decimals) / Anywhere,
   with a 10-500 mi radius slider (steps of 5, debounced 400 ms). Others see a **distance only**, never a zip.
-- **What Partners requires** (owner, 2026-11-14 — asked here, not at sign-up): the real-climber lists render only once a
-  **zip** is on file (`_zipNeeded` in `lib/PartnerSearch.jsx`: an inline zip card saves through `saveMyZip`; a zip read
-  still loading or failed does not gate; the example profiles are never gated). Real climbers with **no photo** are left
+- **What Partners requires** (owner, 2026-11-24: "do what you recommend is best to find partners and crews easier";
+  supersedes the 2026-11-14 zip gate): **no zip is required to see climbers**. My areas, Saved areas, Pick an area, A peak,
+  My objectives, A route, Everyone and the crew-invite list near the climb all render without one; only the DISTANCE
+  searches (Near my zip, a radius of your zip) need it, and say *Choose where to search from.* until there is an origin.
+  With no zip, the inline zip card (`_zipNeeded` in `lib/PartnerSearch.jsx`, saves through `saveMyZip`) stays above the
+  lists as an offer. Join a crew never gated on a zip (its distance filter alone uses it). Real climbers with **no photo** are left
   out of every browse list (name search still finds them), and a viewer without one is told they are not shown.
   **Sending a request** to a real climber without your own photo is refused (`sendReq` in `ClimbMatch.jsx`: *Didn't send
   it — add a profile photo first*) and opens Edit profile on the photo.
