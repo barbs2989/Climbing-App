@@ -189,6 +189,19 @@ Three top-level `tab` values in `ClimbMatch.jsx` (`tab==="today"`, `tab==="crew"
   - Shown as COUNTS, never a score (the trust score was removed on 2026-10-21): "Showed up for 9 of 10 crew trips · 1 cancelled
     last minute" under the name on a profile (`FullProfile`) and on your own Profile tab (`MeTab`), from `reliabilityText`.
     Nothing until a trip is on record, nothing while the read is out. It is one term of the match % (`docs/features/partners.md`).
+  - **Second review (0523, owner 2026-11-24: "review it all"):** every departure is recorded while the trip is
+    reportable, and a crewmate who left can be given ANY answer (when they left says nothing certain about whether they
+    came); a crew with crewmates cannot be disbanded from its day until reports close (`crews_keep_while_reportable`;
+    the toast says until when; before the day, and an account's own deletion, still delete it); a TRIP is a crew and a
+    day (`trip_crew`, `trip_date`), so a second trip on one crew is its own; *I was there* belongs to the trip, the
+    reporter and the crewmate and names the answer it disputes, so taking a report back and filing it again meets the
+    same dispute and only a different answer is a new claim; the window is the trip's day to 14 days after by the date
+    at UTC-12 (`crew_trip_today`), never open before the day anywhere. The sheet's chips and *We called it off* cannot be
+    in flight together. Signed out, the profile no longer reads reliability (it is signed-in only).
+  - **Crew card (#3887):** *How did it go?* shows from the crew's set day to 14 days after, the same rule as the alert
+    and the database, not the card's own stage (which also wants every member's ack or a lock).
+  - **Punctuality (0521):** a vouch's retired "punctuality" stars count as its Reliability rating when it has none of
+    its own, in `reliability_of_users` and in the app's `relRecordOf`.
   - **Review fixes (0522, 2026-11-24):** only leaving ON OR BEFORE the day is a departure (leaving after the trip is
     tidying up); reports keep their trip (`trip_crew`) when the crew is deleted, so two reports about one trip still
     count once and a crewmate's *called off* still holds; a note added after *I was there* keeps the dispute; the

@@ -22,6 +22,12 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     non-zero on the matching assertion.
   - **Trap met building it:** section 9 first read 2 trips for one climber because section 8's DELETED crew kept its
     report, which is the behaviour being proved. The section now clears that climber's reports first.
+  - **Section 10 rewritten for 0523 (second review, 2026-11-24):** a deleted crew's reports still group by trip; leaving
+    after the day is still reportable with any answer; the organizer cannot disband in the window but can before the
+    day; a second trip on one crew is its own trip; withdraw and re-file meets the same *I was there*, a different
+    answer does not; a note after *I was there* keeps it; the window is [day, day+14] at UTC-12. Dates are built from
+    the same UTC-12 "today" the functions use, so no assertion depends on the hour the run starts. 34 assertions.
+    Without 0523 the run cannot even query its reply columns (measured).
   - **Section 10 (0522, review 2026-11-24):** a deleted crew's reports still group by trip and its *called off* still
     holds; leaving after the day is no departure; a note after *I was there* keeps the dispute; the window opens a day
     early and closes a day late. Run without 0522, all four fail (measured). 31 assertions. Section 8's fixture crew
