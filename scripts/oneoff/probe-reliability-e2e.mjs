@@ -31,6 +31,8 @@ let bad = 0, ran = 0;
 const ok = (m) => { ran++; console.log("  ok    " + m); };
 const fail = (m) => { ran++; bad++; console.log("  FAIL  " + m); };
 const check = (cond, m, detail) => (cond ? ok(m) : fail(m + (detail ? "  -- " + detail : "")));
+// Wait for a locator to appear (lazy chunks and reads land at their own pace); resolves true/false, never throws.
+const appear = (loc, ms = 20000) => loc.waitFor({ state: "visible", timeout: ms }).then(() => true, () => false);
 
 async function signIn(u) {
   const r = await fetch(`${SUPABASE_URL}/auth/v1/token?grant_type=password`, { method: "POST", headers: { apikey: ANON, "Content-Type": "application/json" }, body: JSON.stringify({ email: u.email, password: u.password }) });
@@ -88,19 +90,21 @@ try {
   await pB.waitForTimeout(6000);
   await pB.locator('button[title="Notifications"]').first().click();
   await pB.waitForTimeout(1500);
-  const alertB = pB.getByText(/How did .* go on .*\? Say who showed up/).first();
-  check(await alertB.count() > 0, "B's bell has the \"How did it go? Say who showed up\" alert for yesterday's crew");
+  const alertB = pB.getByText(/Who showed up for .* on .*\? Mark your crew/).first();
+  await appear(alertB);
+  check(await alertB.count() > 0, "B's bell has the \"Who showed up? Mark your crew\" alert for yesterday's crew");
   await pB.screenshot({ path: path.join(OUT, "1-alert.png") });
   if (await alertB.count()) await alertB.click();
   await pB.waitForTimeout(2500);
   const sheet = pB.getByRole("dialog", { name: "How did it go?" });
+  await appear(pB.getByRole("button", { name: /^On time — / }).first());
   check(await sheet.count() > 0, "the alert opens How did it go?");
   await pB.screenshot({ path: path.join(OUT, "2-recap-sheet.png"), fullPage: false });
   const onTimeA = pB.getByRole("button", { name: new RegExp("^On time — ") }).first();
   check(await onTimeA.count() > 0, "the sheet lists A with the five answers");
   if (await onTimeA.count()) await onTimeA.click();
   await pB.waitForTimeout(2500);
-  check((await onTimeA.getAttribute("aria-pressed")) === "true", "tapping On time marks it, and says so (aria-pressed)");
+  check((await onTimeA.count()) && (await onTimeA.getAttribute("aria-pressed", { timeout: 5000 })) === "true", "tapping On time marks it, and says so (aria-pressed)");
   await pB.screenshot({ path: path.join(OUT, "3-recap-marked.png") });
   const mineAboutA = ((await a("my_trip_reports_about_me", {})).json || [])[0];
   check(mineAboutA && mineAboutA.outcome === "on_time", "the tap reached the database: A now sees B's On time (A filed first, so it is revealed)", JSON.stringify(mineAboutA));
@@ -112,9 +116,11 @@ try {
   await pB.reload({ waitUntil: "domcontentloaded" }); await pB.waitForTimeout(6000);
   await pB.locator('button[title="Notifications"]').first().click(); await pB.waitForTimeout(1500);
   const replyAlert = pB.getByText(/A crewmate marked you “Didn’t show”/).first();
+  await appear(replyAlert);
   check(await replyAlert.count() > 0, "B's bell says a crewmate marked them Didn't show");
   if (await replyAlert.count()) await replyAlert.click();
   await pB.waitForTimeout(2500);
+  await appear(pB.getByRole("button", { name: /^I was there/ }).first());
   check(await pB.getByRole("dialog", { name: "Your side of a trip report" }).count() > 0, "the alert opens Your side");
   await pB.screenshot({ path: path.join(OUT, "4-your-side.png") });
   const there = pB.getByRole("button", { name: /^I was there/ }).first();
@@ -130,8 +136,9 @@ try {
   const pA = await ctxA.newPage(); const errsA = []; pA.on("pageerror", (e) => errsA.push(e.message));
   await pA.goto(base, { waitUntil: "domcontentloaded" }); await pA.waitForTimeout(6000);
   await pA.locator('button[title="Notifications"]').first().click(); await pA.waitForTimeout(1500);
-  const alertA = pA.getByText(/How did .* go on .*\? Say who showed up/).first();
-  if (await alertA.count()) { await alertA.click(); await pA.waitForTimeout(2500); }
+  const alertA = pA.getByText(/Who showed up for .* on .*\? Mark your crew/).first();
+  await appear(alertA);
+  if (await alertA.count()) { await alertA.click(); await appear(pA.getByText(/replied that they were there/)); }
   const repliedLine = pA.getByText(/replied that they were there/);
   check(await repliedLine.count() > 0, "A's recap shows that B replied they were there");
   await pA.screenshot({ path: path.join(OUT, "5-recap-with-reply.png") });
@@ -142,6 +149,7 @@ try {
   const meTab = pA.getByRole("button", { name: /^(Profile|Me)\b/ }).last();
   if (await meTab.count()) { await meTab.click(); await pA.waitForTimeout(3000); }
   const line = pA.getByText(/Showed up for 1 of 1 crew trip/).first();
+  await appear(line);
   check(await line.count() > 0, "A's own Profile tab shows \"Showed up for 1 of 1 crew trip\"");
   await pA.screenshot({ path: path.join(OUT, "6-profile-line.png") });
   check(!errsA.length, "no page errors on A's side", errsA.slice(0, 2).join(" | "));
@@ -154,8 +162,9 @@ try {
   await pB.setViewportSize({ width: 320, height: 760 });
   await pB.reload({ waitUntil: "domcontentloaded" }); await pB.waitForTimeout(6000);
   await pB.locator('button[title="Notifications"]').first().click(); await pB.waitForTimeout(1200);
-  const al2 = pB.getByText(/How did .* go on .*\? Say who showed up/).first();
-  if (await al2.count()) { await al2.click(); await pB.waitForTimeout(2500); }
+  const al2 = pB.getByText(/Who showed up for .* on .*\? Mark your crew/).first();
+  await appear(al2);
+  if (await al2.count()) { await al2.click(); await appear(pB.getByRole("dialog", { name: "How did it go?" })); await pB.waitForTimeout(1500); }
   const over = await pB.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
   check(over <= 0, "at 320 px the recap sheet does not run off the right-hand edge", over + " px over");
   await pB.screenshot({ path: path.join(OUT, "7-recap-320.png") });

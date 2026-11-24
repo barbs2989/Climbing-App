@@ -116,7 +116,7 @@ export default function TripRecapSheet({ crewId, real = true, placeName, onClose
           </div>;
         })}
       <div style={{ fontSize: 12, color: C.textMuted, lineHeight: 1.55, marginTop: 6 }}>
-        Only your crew can say how the trip went. What you pick is shown to that climber once they’ve said how it went too, or after 7 days, and they can reply; a report they dispute doesn’t count. Tap an answer again to take it back. Their profile shows counts, like “Showed up for 9 of 10 crew trips”, never your name.
+        Only your crew can say how the trip went. Each crewmate sees what you said about them, and that it came from you, once they’ve said how it went too or after 7 days, and can reply; a report they dispute doesn’t count. Everyone else sees only counts on their profile, like “Showed up for 9 of 10 crew trips”. Tap an answer again to take it back.
       </div>
     </>;
   }
