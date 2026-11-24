@@ -1,5 +1,6 @@
 import { routeKw } from "../../lib/routeKw.js";
 import { useState } from "react";
+import { FONT_MONO } from "../../lib/fonts.js";
 import type { CSSProperties, ReactNode } from "react";
 import { getAvailableItineraries, itinDaysToDraft, blankItinDay, itinDraftToStructured, C, RSL as SL, catOf, ROUTE_GAP, uElev, uDistMi, uMass, SUB_LABEL, shareOrCopy, itinShareText, printSheet, itinSheetHtml, shortDate, hoursNum } from "../../ClimbMatchCore.jsx";
 import { clickable } from "../../lib/clickable";
@@ -112,7 +113,7 @@ function Tile({label,value,color,big}: {label: string; value: string|null; color
 }
 
 /** The DAY N tag at the head of a day card. */
-function DayTag({n}: {n: number}){return <span style={{flexShrink:0,fontSize:10.5,fontWeight:800,letterSpacing:0.6,color:C.onSolid,background:C.blueChip,border:"1px solid "+C.blueDim,borderRadius:6,padding:"3px 7px",lineHeight:1.2}}>{"DAY "+n}</span>;}
+function DayTag({n}: {n: number}){return <span data-rope-knot="" style={{flexShrink:0,fontFamily:FONT_MONO,fontSize:10.5,fontWeight:600,letterSpacing:0.4,color:C.text,background:C.card,border:"2px solid "+C.brand,borderRadius:12,padding:"2px 8px",lineHeight:1.2}}>{"DAY "+n}</span>;}
 
 /** A day's hour-by-hour schedule, folded behind a toggle that names its first and last stop. */
 function ScheduleFold({schedule}: {schedule: NonNullable<StoredDay["schedule"]>}){
@@ -133,14 +134,14 @@ function ScheduleFold({schedule}: {schedule: NonNullable<StoredDay["schedule"]>}
 }
 
 /** One day of the plan. `steps` is a prose day split at its semicolons. */
-function DayCard({n,title,objective,figures,note,steps,schedule,onContribute}: {n: number; title?: string|null; objective?: string|null; figures: StoredDay|null; note?: string|null; steps?: string[]|null; schedule?: StoredDay["schedule"]; onContribute?: (() => void) | null}){
+function DayCard({n,title,objective,figures,note,steps,schedule,onContribute,last}: {last?: boolean; n: number; title?: string|null; objective?: string|null; figures: StoredDay|null; note?: string|null; steps?: string[]|null; schedule?: StoredDay["schedule"]; onContribute?: (() => void) | null}){
   const f=figures;
   const anyFig=!!f&&[f.gainFt,f.lossFt,f.hours,f.miles,f.packLb].some(has);
   // A spare / weather day stores zeros, which is data ("no travel"), not a gap; five tiles of 0 and dashes said nothing.
   // Rest day: at least one travel figure is STORED as 0 and none is above 0. A day with only a pack weight is missing data, not rest (review, 2026-11-11).
   const travel=f?[f.gainFt,f.lossFt,f.hours,f.miles].filter(has):[];
   const restDay=travel.length>0&&travel.every(v=>Number(v)===0);
-  return <div style={{...CARD,borderLeft:"3px solid "+C.blue,padding:"11px 13px 12px",marginBottom:ROUTE_GAP}}>
+  return <div style={{...CARD,position:"relative",borderLeft:"2px solid "+C.brand,padding:"11px 13px 12px",marginBottom:ROUTE_GAP}}>{/* THE ROPE: the card's left edge is the line, carried across the gap to the next day. */last?null:<span aria-hidden="true" data-rope="" style={{position:"absolute",left:-2,bottom:-(ROUTE_GAP+1),width:2,height:ROUTE_GAP+1,background:C.brand}}/>}
     <div style={{display:"flex",alignItems:"flex-start",gap:9,marginBottom:objective?4:9}}><DayTag n={n}/>{title?<div style={{fontSize:14,fontWeight:700,lineHeight:1.3,minWidth:0}}>{title}</div>:null}</div>
     {objective?<div style={{fontSize:12,color:C.textSub,lineHeight:1.45,marginBottom:9}}><span style={{color:C.textMuted,fontWeight:700}}>Goal: </span>{objective}</div>:null}
     {restDay?<div style={{fontSize:11.5,color:C.textMuted,background:C.surface,borderRadius:9,padding:"7px 10px",marginBottom:(note||steps)?9:0}}>No travel planned this day.</div>:f&&anyFig?<div style={{display:"flex",gap:4,marginBottom:(note||steps)?9:0}}>
@@ -217,8 +218,8 @@ export default function ItineraryView({route,activity,onSeeReports,onSeeSeason,s
         {it&&it.cal?<div style={{fontSize:12,color:C.textSub,lineHeight:1.5}}>{it.cal}</div>:null}
       </div>
     </div>:null}
-    {days.map((d: StoredDay,i: number)=><DayCard key={i} n={d.n||i+1} title={d.title} objective={d.objective} figures={d} note={d.note} schedule={d.schedule} onContribute={onContribute}/>)}
-    {parsed.multi?parsed.days.map((d,i)=><DayCard key={i} n={d.n} figures={null} note={d.text} steps={splitItinerarySteps(d.text)}/>):null}
+    {days.map((d: StoredDay,i: number)=><DayCard key={i} n={d.n||i+1} title={d.title} objective={d.objective} figures={d} note={d.note} schedule={d.schedule} onContribute={onContribute} last={i===days.length-1&&!parsed.multi}/>)}
+    {parsed.multi?parsed.days.map((d,i)=><DayCard key={i} n={d.n} figures={null} note={d.text} steps={splitItinerarySteps(d.text)} last={i===parsed.days.length-1}/>):null}
     {(!days.length&&!parsed.multi&&proseIt)?(()=>{const steps=splitItinerarySteps(parsed.days[0].text);return <div style={{...CARD,padding:"12px 14px",marginBottom:ROUTE_GAP}}>{steps.length>1?<ul style={{margin:0,paddingLeft:18,display:"flex",flexDirection:"column",gap:7}}>{steps.map((s: string,si: number)=><li key={si} style={{fontSize:12.5,color:C.textSub,lineHeight:1.55}}>{s}</li>)}</ul>:<div style={{fontSize:12.5,color:C.textSub,lineHeight:1.6}}>{parsed.days[0].text}</div>}</div>;})():null}
     {(days.length||parsed.multi)?caveat:null}
     {!hasPlan?<div style={{...CARD,border:"1px dashed "+C.border,padding:"18px 14px",textAlign:"center"}}>
