@@ -75,7 +75,7 @@ const cases = [
   },
   {
     name: "COMPAT_MAX becomes a LITERAL, so a new term can drift from the ceiling",
-    edits: [['COMPAT_MAX=COMPAT_BASE+CMAX_DISC+CMAX_GRADE+CMAX_WHERE+CMAX_VERIF+CMAX_PACE+CMAX_AVAIL;', 'COMPAT_MAX=118;']],
+    edits: [['COMPAT_MAX=COMPAT_BASE+CMAX_DISC+CMAX_GRADE+CMAX_WHERE+CMAX_VERIF+CMAX_PACE+CMAX_AVAIL+CMAX_REL;', 'COMPAT_MAX=130;']],
     expect: "not derived",
   },
   {
@@ -86,7 +86,7 @@ const cases = [
   {
     name: "the copy promises a signal nothing wires (belay catches)",
     file: PARTNER_SEARCH,   // the Find-partners copy moved out of core with PartnerSearch
-    edits: [['blends where you climb (shared objectives or listed areas), grade range, disciplines, availability overlap and whether each of you is verified.', 'blends where you climb (shared objectives or listed areas), grade range, disciplines, availability overlap and belay catches.']],
+    edits: [['blends where you climb (shared objectives or listed areas), grade range, disciplines, availability overlap, reliability and whether each of you is verified.', 'blends where you climb (shared objectives or listed areas), grade range, disciplines, availability overlap, reliability and belay catches.']],
     expect: "which this guard cannot tie to any signal",
   },
   {
@@ -159,7 +159,7 @@ const cases = [
   {
     name: "SILENT: a comment naming the old wording",
     file: REAL_ROW,
-    edits: [['export default function RealClimberRow({p,distFrom,onOpen,objIds,objErr,verified,listing,action,friendState,onConnect,cand,online,level,years,climbs,vouches,climbsPrivate,onClimbs,onVouches,extras,tag}: RealClimberRowProps){', '/* this used to read "New profile — …score a match yet" */\nexport default function RealClimberRow({p,distFrom,onOpen,objIds,objErr,verified,listing,action,friendState,onConnect,cand,online,level,years,climbs,vouches,climbsPrivate,onClimbs,onVouches,extras,tag}: RealClimberRowProps){']],
+    edits: [['export default function RealClimberRow({p,distFrom,onOpen,objIds,objErr,verified,reliability,listing,action,friendState,onConnect,cand,online,level,years,climbs,vouches,climbsPrivate,onClimbs,onVouches,extras,tag}: RealClimberRowProps){', '/* this used to read "New profile — …score a match yet" */\nexport default function RealClimberRow({p,distFrom,onOpen,objIds,objErr,verified,reliability,listing,action,friendState,onConnect,cand,online,level,years,climbs,vouches,climbsPrivate,onClimbs,onVouches,extras,tag}: RealClimberRowProps){']],
     expect: null,
   },
   {
