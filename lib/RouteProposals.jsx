@@ -11,6 +11,7 @@
 // button that would only fail.
 
 import { useState } from "react";
+import { SOLID_LEDGE } from "./buttonStyles.js";
 import { useQueryClient } from "@tanstack/react-query";
 import { useRouteProposals, useAreaProposals, useAreaPlacementClaims, useAreaNamesByIds, resolveAreaPlacement, approveNewRoute, approveNewArea, rejectNewRoute, useProposalDuplicates, preferNetworkReads } from "./db";
 import { gradeNumFor } from "./grade";
@@ -243,7 +244,7 @@ export function RouteProposalQueue({ ai = null } = {}) {
             ? <RejectBox busy={busy} onConfirm={(n, st) => doReject(r.id, n, st)} onCancel={() => setRejecting(null)} />
             : <div style={{ display: "flex", gap: 12, marginTop: 9 }}>
                 <button onClick={() => doApprove(r)} disabled={busy}
-                  style={{ flex: 2, padding: 9, background: busy ? C.surface : C.actionSolid, color: busy ? C.textMuted : C.onSolid, border: busy ? "1px solid " + C.border : "none", borderRadius: 8, fontSize: 12.5, fontWeight: 700, cursor: busy ? "default" : "pointer" }}>
+                  style={{ flex: 2, padding: 9, background: busy ? C.surface : C.actionSolid,boxShadow:(busy)?"none":SOLID_LEDGE(C), color: busy ? C.textMuted : C.onSolid, border: busy ? "1px solid " + C.border : "none", borderRadius: 8, fontSize: 12.5, fontWeight: 700, cursor: busy ? "default" : "pointer" }}>
                   {busy ? "Working…" : "Approve — file this climb"}
                 </button>
                 <button onClick={() => setRejecting(r.id)} disabled={busy}
@@ -302,7 +303,7 @@ export function AreaPlacementQueue() {
           <textarea value={note[r.id] || ""} onChange={e => setNote({ ...note, [r.id]: e.target.value })} rows={2} aria-label="Note kept with this claim (optional)" placeholder="Note kept on the record (optional)"
             style={{ width: "100%", boxSizing: "border-box", marginTop: 8, background: C.surface, color: C.text, border: "1px solid " + C.field, borderRadius: 8, padding: "7px 9px", fontSize: 12.5, fontFamily: "inherit", resize: "vertical" }} />
           <div style={{ display: "flex", gap: 12, marginTop: 9 }}>
-            <button onClick={() => resolve(r.id, "approved")} disabled={busy} style={{ flex: 1, padding: 9, background: busy ? C.surface : C.actionSolid, color: busy ? C.textMuted : C.onSolid, border: busy ? "1px solid " + C.border : "none", borderRadius: 8, fontSize: 12.5, fontWeight: 700, cursor: busy ? "default" : "pointer" }}>Moved it</button>
+            <button onClick={() => resolve(r.id, "approved")} disabled={busy} style={{ flex: 1, padding: 9, background: busy ? C.surface : C.actionSolid,boxShadow:(busy)?"none":SOLID_LEDGE(C), color: busy ? C.textMuted : C.onSolid, border: busy ? "1px solid " + C.border : "none", borderRadius: 8, fontSize: 12.5, fontWeight: 700, cursor: busy ? "default" : "pointer" }}>Moved it</button>
             <button onClick={() => resolve(r.id, "rejected")} disabled={busy} style={{ flex: 1, padding: 9, background: C.surface, color: C.textSub, border: "1px solid " + C.border, borderRadius: 8, fontSize: 12.5, cursor: busy ? "default" : "pointer" }}>Not wrong</button>
           </div>
         </div>;
@@ -366,7 +367,7 @@ export function AreaProposalQueue({ ai = null } = {}) {
           {rejecting === r.id
             ? <RejectBox busy={busy} onConfirm={(n, st) => doReject(r.id, n, st)} onCancel={() => setRejecting(null)} />
             : <div style={{ display: "flex", gap: 12, marginTop: 9 }}>
-                <button onClick={() => doApprove(r)} disabled={busy} style={{ flex: 2, padding: 9, background: busy ? C.surface : C.actionSolid, color: busy ? C.textMuted : C.onSolid, border: busy ? "1px solid " + C.border : "none", borderRadius: 8, fontSize: 12.5, fontWeight: 700, cursor: busy ? "default" : "pointer" }}>{busy ? "Working…" : "Approve — file this area"}</button>
+                <button onClick={() => doApprove(r)} disabled={busy} style={{ flex: 2, padding: 9, background: busy ? C.surface : C.actionSolid,boxShadow:(busy)?"none":SOLID_LEDGE(C), color: busy ? C.textMuted : C.onSolid, border: busy ? "1px solid " + C.border : "none", borderRadius: 8, fontSize: 12.5, fontWeight: 700, cursor: busy ? "default" : "pointer" }}>{busy ? "Working…" : "Approve — file this area"}</button>
                 <button onClick={() => setRejecting(r.id)} disabled={busy} style={{ flex: 1, padding: 9, background: C.surface, color: C.textSub, border: "1px solid " + C.border, borderRadius: 8, fontSize: 12.5, cursor: "pointer" }}>Turn down</button>
               </div>}
         </div>;

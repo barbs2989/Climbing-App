@@ -1,6 +1,6 @@
 import { FONT_DISPLAY } from "../../lib/fonts.js";
 import { useState } from "react";
-import { BTN_LG } from "../../lib/buttonStyles.js";
+import { BTN_LG, SOLID_FILL } from "../../lib/buttonStyles.js";
 import { createPortal } from "react-dom";
 import { C, ME, ROUTES, climberLine, pubFirst } from "../../ClimbMatchCore.jsx";
 import { POP_CLOSE } from "../../lib/popupChrome.js";
@@ -61,7 +61,7 @@ export default function ConnectModal({climber,onClose,onSend,routeById}: Connect
       </div>
       <div style={{display:"flex",gap:12}}>
         <button onClick={onClose} style={{...BTN_LG,flex:"0 0 auto",padding:"13px 17px",background:C.surface,color:C.textSub,border:"1px solid "+C.border}}>Cancel</button>
-        <button onClick={()=>onSend(note.trim())} style={{...BTN_LG,flex:1,background:C.actionSolid,color:C.onSolid,border:"none"}}>{note.trim()?"Send request":"Send without note"}</button>
+        <button onClick={()=>onSend(note.trim())} style={{...BTN_LG,flex:1,...SOLID_FILL(C),color:C.onSolid,border:"none"}}>{note.trim()?"Send request":"Send without note"}</button>
       </div>
       <div style={{fontSize:12,color:C.textMuted,textAlign:"center",marginTop:11,lineHeight:1.5}}>A connection is mutual — {first} confirms before you’re connected.</div>
     </div>

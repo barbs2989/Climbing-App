@@ -7,6 +7,7 @@
 // area". It collects what the database demands of an area crew (the area and the session's discipline)
 // and what a session needs to be joinable (a day, a size), then hands `formCrew` a place.
 import { createPortal } from "react-dom";
+import { SOLID_LEDGE } from "./buttonStyles.js";
 import { useMemo, useState } from "react";
 import { USE_DB } from "./supabase";
 import { POP_CLOSE } from "./popupChrome.js";
@@ -70,7 +71,7 @@ export default function StartCrewSheet({ payload, uid, onClose, onStart, notify 
         <input value={note} maxLength={200} onChange={(e) => setNote(e.target.value)} placeholder="e.g. Swapping burns on the 5.11s, two spots" aria-label="Note for the crew" style={{ ...field, marginBottom: 12 }} />
         <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 12 }}><button type="button" aria-pressed={priv} onClick={() => setPriv((v) => !v)} style={{ ...chip(priv), flexShrink: 0 }}>{priv ? "Private" : "Listed"}</button><span style={{ fontSize: 11.5, color: C.textMuted, lineHeight: 1.4 }}>{priv ? "Only the people invited can see who’s in it. It won’t be listed under Join a crew." : "Climbers browsing Join a crew can find it and ask to join."}</span></div>
         {partners.length ? <div style={{ marginBottom: 12 }}><SL>Inviting</SL><div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>{partners.map((c) => <span key={c.id} style={{ display: "inline-flex", alignItems: "center", gap: 6, background: C.card, border: "1px solid " + C.border, borderRadius: 20, padding: "4px 10px 4px 4px", fontSize: 12.5, color: C.text }}><Av src={c.avatar} size={22} />{pubName(c)}</span>)}</div></div> : null}
-        <button onClick={start} disabled={!canStart} style={{ width: "100%", padding: "12px", borderRadius: 11, background: canStart ? C.actionSolid : C.surface, color: canStart ? C.onSolid : C.textMuted, fontSize: 14, fontWeight: 800, cursor: canStart ? "pointer" : "default", border: canStart ? "none" : "1px solid " + C.border }}>{partners.length ? "Start the crew and invite" : "Start the crew"}</button>
+        <button onClick={start} disabled={!canStart} style={{ width: "100%", padding: "12px", borderRadius: 11, background: canStart ? C.actionSolid : C.surface,boxShadow:(canStart)?SOLID_LEDGE(C):"none", color: canStart ? C.onSolid : C.textMuted, fontSize: 14, fontWeight: 800, cursor: canStart ? "pointer" : "default", border: canStart ? "none" : "1px solid " + C.border }}>{partners.length ? "Start the crew and invite" : "Start the crew"}</button>
         {!uid ? <div style={{ fontSize: 11.5, color: C.textMuted, marginTop: 8, lineHeight: 1.5 }}>Signed out, the crew is kept on this device only — sign in to let others find it.</div> : null}
       </div>
     </div>

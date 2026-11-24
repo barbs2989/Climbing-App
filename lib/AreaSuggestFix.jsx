@@ -18,7 +18,7 @@ import { AREA_EDIT_FIELDS, ASPECTS, MONTH_ABBR, PIN_NAME_MAX, myPendingAreaEdits
 import WaypointMapPicker from "../src/components/WaypointMapPicker.tsx";
 import { ROCK_OPTIONS } from "./rockType";
 import { POP_CLOSE } from "./popupChrome.js";
-import { BTN, CHIP, INPUT } from "./buttonStyles.js";
+import { BTN, CHIP, INPUT, SOLID_FILL, SOLID_LEDGE } from "./buttonStyles.js";
 
 // Kilometres between two points (haversine) — only to warn when a parking pin lands far from the crag.
 function kmApart(a, b) {
@@ -122,7 +122,7 @@ export default function AreaSuggestFix({ area, field, rows, myId, C, onClose, on
         <div style={{ fontSize: 40, textAlign: "center", marginBottom: 8 }}>{"✓"}</div>
         <div style={{ textAlign: "center", fontWeight: 700, fontSize: 15, color: C.text, marginBottom: 12 }}>{sent.n === 1 ? "Sent for review" : sent.n + " edits sent for review"}</div>
         <div style={{ background: C.amberBg, border: "1px solid " + C.amber + "55", borderRadius: 11, padding: "11px 13px", fontSize: 12.5, color: C.text, lineHeight: 1.55, marginBottom: 12 }}>{"Every edit is checked before it shows. You’ll be told when it’s checked, and it credits you once it’s live."}</div>
-        <button onClick={onClose} style={{ ...BTN, width: "100%", background: C.actionSolid, color:C.onSolid, border: "none" }}>Done</button>
+        <button onClick={onClose} style={{ ...BTN, width: "100%", ...SOLID_FILL(C), color:C.onSolid, border: "none" }}>Done</button>
       </div> : <div style={{ display: "contents" }}><div ref={scrollRef} style={{ position: "relative", minHeight: 0, padding: 16, overflowY: "auto", overscrollBehavior: "contain", flex: 1 }}>
         <div style={{ fontSize: 12.5, color: C.textSub, lineHeight: 1.55, padding: "0 2px", marginBottom: 12 }}>{"Spotted something wrong or missing about "}<b>{a.name || "this area"}</b>{"? Fill in any fields below — leave the rest blank. Every edit is checked before it shows on the page."}</div>
         {AREA_EDIT_FIELDS.map(f => {
@@ -155,7 +155,7 @@ export default function AreaSuggestFix({ area, field, rows, myId, C, onClose, on
       </div>
       <div style={{ flexShrink: 0, display: "flex", gap: 8, padding: "10px 16px 12px", borderTop: "1px solid " + C.border, background: C.surface }}>
         <button onClick={onClose} disabled={busy} style={{ ...BTN, flex: "0 0 auto", padding: "0 18px", background: C.card, color: C.text, border: "1px solid " + C.border, cursor: busy ? "default" : "pointer" }}>Cancel</button>
-        <button onClick={submit} disabled={!canSubmit} style={{ ...BTN, flex: 1, minWidth: 0, background: canSubmit ? C.actionSolid : C.card, color: canSubmit ? C.onSolid : C.textMuted, border: "1px solid " + (canSubmit ? C.actionSolid : C.border), cursor: canSubmit ? "pointer" : "default" }}>{busy ? "Sending…" : edits.length ? "Send " + edits.length + " " + (edits.length === 1 ? "edit" : "edits") : "Fill in a field to send"}</button>
+        <button onClick={submit} disabled={!canSubmit} style={{ ...BTN, flex: 1, minWidth: 0, background: canSubmit ? C.actionSolid : C.card,boxShadow:(canSubmit)?SOLID_LEDGE(C):"none", color: canSubmit ? C.onSolid : C.textMuted, border: "1px solid " + (canSubmit ? C.actionSolid : C.border), cursor: canSubmit ? "pointer" : "default" }}>{busy ? "Sending…" : edits.length ? "Send " + edits.length + " " + (edits.length === 1 ? "edit" : "edits") : "Fill in a field to send"}</button>
       </div></div>}
     </div>
   </div>, document.body);

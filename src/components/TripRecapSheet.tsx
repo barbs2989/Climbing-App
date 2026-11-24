@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { SOLID_FILL } from "../../lib/buttonStyles.js";
 import { createPortal } from "react-dom";
 import { C, pubNameRow, shortDate, tripToday } from "../../ClimbMatchCore.jsx";
 import { POP_BACK } from "../../lib/popupChrome.js";
@@ -146,7 +147,7 @@ export default function TripRecapSheet({ crewId, real = true, placeName, onClose
       </div>
       <div style={{ padding: "14px 16px 40px" }}>
         {body}
-        <button onClick={onClose} style={{ width: "100%", marginTop: 16, padding: 12, background: C.actionSolid, color: C.onSolid, border: "none", borderRadius: 11, fontSize: 14, fontWeight: 700, cursor: "pointer" }}>Done</button>
+        <button onClick={onClose} style={{ width: "100%", marginTop: 16, padding: 12, ...SOLID_FILL(C), color: C.onSolid, border: "none", borderRadius: 11, fontSize: 14, fontWeight: 700, cursor: "pointer" }}>Done</button>
       </div>
     </div>
   </div>, document.body);

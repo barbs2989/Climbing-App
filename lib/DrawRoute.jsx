@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { SOLID_LEDGE } from "./buttonStyles.js";
 import { createPortal } from "react-dom";
 import { C, CRAG_CATS, catOf, trailheadPoint, uElev, wpIs, wpPlaced } from "../ClimbMatchCore.jsx";
 import TrailDrawMap, { fmtTrailLen, trailLenM } from "./TrailDrawMap.jsx";
@@ -95,7 +96,7 @@ export default function DrawRouteView({ route, mtn, onClose, onSuggest }) {
       </div>
       <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginTop: 12 }}>
         <button onClick={download} disabled={!canDownload} title={pts.length >= 2 && shapePending ? "Still following the trail for a leg" : undefined} style={{ padding: "10px 14px", borderRadius: 10, border: "1px solid " + C.blueDim, background: C.blueBg, color: canDownload ? "#fff" : C.textMuted, fontSize: 13.5, fontWeight: 700, cursor: canDownload ? "pointer" : "default" }}>⤓ Download GPX</button>
-        {crag && onSuggest ? <button onClick={function () { onSuggest(pts, shapeRef.current); }} disabled={!canSuggest} title={pts.length < MIN_RECORDED_PTS ? "Draw at least " + MIN_RECORDED_PTS + " points" : shapePending ? "Still following the trail for a leg" : undefined} style={{ padding: "10px 14px", borderRadius: 10, border: "none", background: canSuggest ? C.actionSolid : C.card, color: canSuggest ? "#fff" : C.textMuted, fontSize: 13.5, fontWeight: 700, cursor: canSuggest ? "pointer" : "default" }}>Suggest this as the trail</button> : null}
+        {crag && onSuggest ? <button onClick={function () { onSuggest(pts, shapeRef.current); }} disabled={!canSuggest} title={pts.length < MIN_RECORDED_PTS ? "Draw at least " + MIN_RECORDED_PTS + " points" : shapePending ? "Still following the trail for a leg" : undefined} style={{ padding: "10px 14px", borderRadius: 10, border: "none", background: canSuggest ? C.actionSolid : C.card,boxShadow:(canSuggest)?SOLID_LEDGE(C):"none", color: canSuggest ? "#fff" : C.textMuted, fontSize: 13.5, fontWeight: 700, cursor: canSuggest ? "pointer" : "default" }}>Suggest this as the trail</button> : null}
       </div>
       <p style={{ fontSize: 12, color: C.textMuted, lineHeight: 1.5, margin: "12px 0 0" }}>A drawn line is a sketch — check it against the map.</p>
     </div>

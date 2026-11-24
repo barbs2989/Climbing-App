@@ -12,7 +12,7 @@
 import { useState } from "react";
 import { createPortal } from "react-dom";
 import { POP_CLOSE } from "../../lib/popupChrome.js";
-import { BTN, BTN_SM, INPUT } from "../../lib/buttonStyles.js";
+import { BTN, BTN_SM, INPUT, SOLID_FILL, SOLID_LEDGE } from "../../lib/buttonStyles.js";
 import { rowGrade } from "../../lib/areaBrowserShared.js";
 import type { CSSProperties, MouseEvent } from "react";
 import type { C as Palette } from "../../ClimbMatchCore.jsx";
@@ -103,7 +103,7 @@ export default function WallOrderSuggest({ area, routes, unplaced, C, onClose, o
       {sent ? <div style={{ padding: 16 }}>
         <div style={{ textAlign: "center", fontWeight: 700, fontSize: 15, color: C.text, marginBottom: 12 }}>{"Sent to the owner for review"}</div>
         <div style={{ fontSize: 12.5, color: C.textSub, lineHeight: 1.55, marginBottom: 12 }}>{"Nothing on the page has changed. The owner checks each suggested order, and you get a notification either way."}</div>
-        <button onClick={onClose} style={{ ...BTN, width: "100%", background: C.actionSolid, color: C.onSolid, border: "none" }}>Done</button>
+        <button onClick={onClose} style={{ ...BTN, width: "100%", ...SOLID_FILL(C), color: C.onSolid, border: "none" }}>Done</button>
       </div> : <div style={{ padding: 16 }}>
         <div style={{ fontSize: 12.5, color: C.textSub, lineHeight: 1.55, background: C.card, border: "1px solid " + C.border, borderRadius: 12, padding: "10px 12px", marginBottom: 12 }}>
           {"Put the climbs on "}<b>{name}</b>{" in the order they sit on the wall as you face it: 1 is the climb furthest left. Nothing on the page changes until the owner has checked it."}
@@ -150,11 +150,11 @@ export default function WallOrderSuggest({ area, routes, unplaced, C, onClose, o
         </div>
         {needSignIn ? <div style={{ background: C.amberBg, border: "1px solid " + C.amber + "55", borderRadius: 11, padding: "10px 12px", fontSize: 12.5, color: C.text, lineHeight: 1.5, marginBottom: 12 }}>
           {"Sign in to send this. Nothing was sent."}
-          {onSignIn ? <button onClick={onSignIn} style={{ ...BTN, width: "100%", marginTop: 8, background: C.actionSolid, color: C.onSolid, border: "none" }}>Sign in</button> : null}
+          {onSignIn ? <button onClick={onSignIn} style={{ ...BTN, width: "100%", marginTop: 8, ...SOLID_FILL(C), color: C.onSolid, border: "none" }}>Sign in</button> : null}
         </div> : null}
         {err ? <div role="alert" style={{ fontSize: 12.5, color: C.red, lineHeight: 1.45, marginBottom: 10 }}>{err}</div> : null}
         {!canSend && !busy ? <div style={{ fontSize: 11.5, color: C.textMuted, lineHeight: 1.45, marginBottom: 8 }}>{order.length < 2 ? "Place at least two climbs to send an order." : !changed ? "Move or place a climb to send a new order." : ""}</div> : null}
-        <button onClick={send} disabled={!canSend} style={{ ...BTN, width: "100%", background: canSend ? C.actionSolid : C.card, color: canSend ? C.onSolid : C.textMuted, border: "1px solid " + (canSend ? C.actionSolid : C.border), cursor: canSend ? "pointer" : "default" }}>{busy ? "Sending…" : "Send to the owner"}</button>
+        <button onClick={send} disabled={!canSend} style={{ ...BTN, width: "100%", background: canSend ? C.actionSolid : C.card,boxShadow:(canSend)?SOLID_LEDGE(C):"none", color: canSend ? C.onSolid : C.textMuted, border: "1px solid " + (canSend ? C.actionSolid : C.border), cursor: canSend ? "pointer" : "default" }}>{busy ? "Sending…" : "Send to the owner"}</button>
       </div>}
     </div>
   </div>, document.body);

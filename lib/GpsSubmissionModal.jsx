@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { SOLID_FILL } from "./buttonStyles.js";
 import { parseGpxXml, parseCoordinateList, validateGpxQuality, calculateQualityScore, detectGpxFormat } from './gpxParser'
 import { POP_CLOSE } from "./popupChrome.js";
 import TrailDrawMap from './TrailDrawMap'
@@ -480,7 +481,7 @@ function sheetStyles() {
     checkBox: { flexShrink: 0, width: 18, height: 18, borderRadius: 5, color: C.onSolid, fontSize: 12, lineHeight: '16px', textAlign: 'center', fontWeight: 700 },
     error: { background: C.redBg, border: '1px solid ' + C.red, borderRadius: 10, padding: '9px 12px', marginBottom: 10, fontSize: 13, color: C.text, lineHeight: 1.45 },
     successMark: { width: 44, height: 44, margin: '0 auto 12px', borderRadius: 22, background: C.greenBg, border: '1px solid ' + C.green, color: C.green, fontSize: 22, fontWeight: 800, display: 'flex', alignItems: 'center', justifyContent: 'center' },
-    primary: { ...btn, width: '100%', flex: 1, background: C.actionSolid, color: C.onSolid, border: '1px solid rgba(0,0,0,0.22)' },
+    primary: { ...btn, width: '100%', flex: 1, ...SOLID_FILL(C), color: C.onSolid, border: '1px solid rgba(0,0,0,0.22)' },
     secondary: { ...btn, flex: 1, background: C.card, color: C.text, border: '1px solid ' + C.border },
   }
 }

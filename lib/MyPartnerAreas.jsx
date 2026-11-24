@@ -20,7 +20,7 @@
 import { foldKeepingPlace } from "./keepPlace.js";
 import { tx } from "./tapWords.js";
 import { createPortal } from "react-dom";
-import { BTN_LG } from "./buttonStyles.js";
+import { BTN_LG, SOLID_FILL } from "./buttonStyles.js";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { USE_DB } from "./supabase";
 import { POP_BACK, POP_CLOSE, POP_REMOVE } from "./popupChrome.js";
@@ -186,7 +186,7 @@ export default function MyPartnerAreas({ uid, listings, listingsError, prefill, 
           <SL>A line for partners (optional)</SL>
           <input value={draft.note} maxLength={140} onChange={(e) => setDraft({ ...draft, note: e.target.value })} placeholder="e.g. Looking for a rope gun on weekends" aria-label="Note for partners" style={{ ...field, marginBottom: 4 }} />
           <div style={{ fontSize: 11.5, color: C.textMuted, textAlign: "right", marginBottom: 16 }}>{(draft.note || "").length}/140</div>
-          <button onClick={save} disabled={busy} style={{ ...BTN_LG, width: "100%", minHeight: 48, border: "none", background: C.actionSolid, color:C.onSolid, opacity: busy ? 0.6 : 1 }}>{editing ? "Save changes" : "List me at " + draft.name}</button>
+          <button onClick={save} disabled={busy} style={{ ...BTN_LG, width: "100%", minHeight: 48, border: "none", ...SOLID_FILL(C), color:C.onSolid, opacity: busy ? 0.6 : 1 }}>{editing ? "Save changes" : "List me at " + draft.name}</button>
           {/* Apart from Save (owner, 2026-11-18: "too close together"): 10px under the save button put a thumb aimed at Save on the one tap that deletes the listing. A rule and 28px either side of it now. */}
           {editing ? <div aria-hidden="true" style={{ height: 1, background: C.border, margin: "28px 0" }} /> : null}
           {editing ? <button onClick={() => remove({ areaId: draft.areaId })} disabled={busy} style={{ ...BTN_LG, width: "100%", minHeight: 48, border: "1px solid " + C.border, background: C.surface, color: C.red }}>Remove this listing</button> : null}

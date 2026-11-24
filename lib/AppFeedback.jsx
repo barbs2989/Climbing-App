@@ -16,6 +16,7 @@
 // never claim a delivery that did not happen.
 
 import { tx } from "./tapWords.js";
+import { SOLID_LEDGE, SOLID_FILL } from "./buttonStyles.js";
 import { useState } from "react";
 import { C } from "../ClimbMatchCore.jsx";
 import { fileAppFeedback, useAppFeedbackQueue, useAppRatingSummary, setAppFeedbackStatus } from "./db.js";
@@ -49,7 +50,7 @@ export function storeListing(platform) {
 
 const field = { width: "100%", padding: "11px 12px", borderRadius: 10, border: "1px solid " + C.field, background: C.bg, color: C.text, fontSize: 14, outline: "none", boxSizing: "border-box", fontFamily: "inherit" };
 const lbl = { display: "block", fontSize: 12.5, fontWeight: 700, color: C.textSub, margin: "12px 0 5px" };
-const primary = (on) => ({ width: "100%", marginTop: 14, padding: 12, minHeight: 46, background: on ? C.actionSolid : C.bg, color: on ? C.onSolid : C.textMuted, border: on ? "none" : "1px solid " + C.border, borderRadius: 11, fontSize: 14, fontWeight: 700, cursor: on ? "pointer" : "default" });
+const primary = (on) => ({ width: "100%", marginTop: 14, padding: 12, minHeight: 46, background: on ? C.actionSolid : C.bg, boxShadow:on?SOLID_LEDGE(C):"none",color: on ? C.onSolid : C.textMuted, border: on ? "none" : "1px solid " + C.border, borderRadius: 11, fontSize: 14, fontWeight: 700, cursor: on ? "pointer" : "default" });
 const why = (e) => (e && e.code === "P0001" && e.message ? e.message + " " : "");
 
 function GuestEmail({ id, email, setEmail }) {
@@ -113,7 +114,7 @@ export function RateForm({ uid, onFeedback }) {
   </div>;
   return <form onSubmit={(e) => { e.preventDefault(); send(); }} aria-label="Rate ClimbMatch">
     {store ? <>
-      <a href={store.url} target="_blank" rel="noopener noreferrer" style={{ display: "flex", alignItems: "center", justifyContent: "center", minHeight: 46, padding: 12, background: C.actionSolid, color:C.onSolid, borderRadius: 11, fontSize: 14, fontWeight: 700, textDecoration: "none", boxSizing: "border-box" }}>{"Rate us on " + store.name}</a>
+      <a href={store.url} target="_blank" rel="noopener noreferrer" style={{ display: "flex", alignItems: "center", justifyContent: "center", minHeight: 46, padding: 12, ...SOLID_FILL(C), color:C.onSolid, borderRadius: 11, fontSize: 14, fontWeight: 700, textDecoration: "none", boxSizing: "border-box" }}>{"Rate us on " + store.name}</a>
       <div style={{ fontSize: 12.5, color: C.textSub, lineHeight: 1.5, margin: "10px 0 4px" }}>{"A rating on " + store.name + " helps other climbers find ClimbMatch. Or rate us here — that one comes only to the team."}</div>
     </> : <div style={{ fontSize: 13, color: C.textSub, lineHeight: 1.55, marginBottom: 4 }}>How is ClimbMatch working for you? Your rating goes straight to the ClimbMatch team.</div>}
     <div role="radiogroup" aria-label="Your rating, out of 5 stars" onKeyDown={key} style={{ display: "flex", justifyContent: "center", gap: 4, margin: "10px 0 2px" }}>

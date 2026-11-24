@@ -1,6 +1,7 @@
 // Moved out of ClimbMatchCore.jsx verbatim so it can load lazily, off the first-paint
 // bundle. It is rendered only from App (ClimbMatch.jsx) behind React.lazy + Suspense.
 import { FONT_DISPLAY } from "./fonts.js";
+import { SOLID_FILL } from "./buttonStyles.js";
 import { tx } from "./tapWords.js";
 import { USE_DB } from "./supabase";
 import { clickable } from "./clickable";
@@ -88,6 +89,6 @@ export default function GiveVouch({friend,onClose,onSave,suggest,initial,routeBy
     {H("A few words","18px 0 8px")}
     <textarea aria-label="A few words (optional)" value={text} onChange={e=>setText(e.target.value)} placeholder={"What was it like climbing with "+fn+"?"} style={{width:"100%",minHeight:62,padding:"10px 11px",borderRadius:10,border:`1px solid ${C.field}`,background:C.surface,color:C.text,fontSize:13,marginBottom:13,boxSizing:"border-box",resize:"vertical",fontFamily:"inherit"}}/>
     <label style={{display:"flex",alignItems:"center",gap:11,marginBottom:16,cursor:"pointer",fontSize:15,fontWeight:700,color:again?C.green:C.text,background:again?C.greenBg:C.surface,border:"1px solid "+(again?C.green:C.border),borderRadius:11,padding:"12px 14px"}}><input type="checkbox" checked={again} onChange={e=>setAgain(e.target.checked)} style={{width:20,height:20,accentColor:C.green,cursor:"pointer",flexShrink:0}}/><span>I&rsquo;d climb with {fn} again</span></label>
-    <button onClick={()=>onSave({_targetId:friend.id,from:ME.name,avatar:ME.avatar,route:(route&&route.name)||"Climbed together",date:initial&&initial.date?initial.date:"Today",ratings:ratings,skills:skills,text:text||"",wouldClimbAgain:again,practicedOn:practiced&&skills.length&&/^\d{4}-\d{2}-\d{2}$/.test(practicedOn)?practicedOn:undefined})} style={{width:"100%",padding:12,background:C.actionSolid,color:C.onSolid,border:"1px solid rgba(0,0,0,0.22)",boxSizing:"border-box",borderRadius:10,fontSize:15,fontWeight:700,cursor:"pointer"}}>{initial?"Save changes":"Post vouch"}</button>
+    <button onClick={()=>onSave({_targetId:friend.id,from:ME.name,avatar:ME.avatar,route:(route&&route.name)||"Climbed together",date:initial&&initial.date?initial.date:"Today",ratings:ratings,skills:skills,text:text||"",wouldClimbAgain:again,practicedOn:practiced&&skills.length&&/^\d{4}-\d{2}-\d{2}$/.test(practicedOn)?practicedOn:undefined})} style={{width:"100%",padding:12,...SOLID_FILL(C),color:C.onSolid,border:"1px solid rgba(0,0,0,0.22)",boxSizing:"border-box",borderRadius:10,fontSize:15,fontWeight:700,cursor:"pointer"}}>{initial?"Save changes":"Post vouch"}</button>
   </div></div>,document.body);
 }

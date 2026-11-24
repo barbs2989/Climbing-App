@@ -1,4 +1,5 @@
 import { useState, type CSSProperties } from "react";
+import { SOLID_LEDGE } from "../../lib/buttonStyles.js";
 import { C } from "../../ClimbMatchCore.jsx";
 import PhotoAltField from "./PhotoAltField.tsx";
 
@@ -25,7 +26,7 @@ export default function PhotoDescribeBox({initial,onSave,style}: PhotoDescribeBo
   return <div onClick={e=>e.stopPropagation()} style={{position:"absolute",left:20,right:20,margin:"0 auto",maxWidth:420,background:"rgba(18,17,15,0.94)",border:"1px solid "+C.border,borderRadius:12,padding:"10px 12px",boxSizing:"border-box",...style}}>
     <PhotoAltField value={v} onChange={x=>{setV(x);setMsg(null);}}/>
     <div style={{display:"flex",alignItems:"center",gap:10,marginTop:8}}>
-      <button disabled={!dirty||busy} onClick={()=>{setBusy(true);setMsg(null);Promise.resolve(onSave(String(v||"").trim())).then(()=>setMsg({ok:true,t:"Description saved"}),e=>setMsg({ok:false,t:"Couldn’t save the description — "+((e&&e.message)||"try again")})).finally(()=>setBusy(false));}} style={{padding:"7px 14px",borderRadius:8,border:"none",background:dirty&&!busy?C.actionSolid:C.border,color:dirty&&!busy?C.onSolid:C.textSub,fontSize:12.5,fontWeight:700,cursor:dirty&&!busy?"pointer":"default"}}>{busy?"Saving…":"Save description"}</button>
+      <button disabled={!dirty||busy} onClick={()=>{setBusy(true);setMsg(null);Promise.resolve(onSave(String(v||"").trim())).then(()=>setMsg({ok:true,t:"Description saved"}),e=>setMsg({ok:false,t:"Couldn’t save the description — "+((e&&e.message)||"try again")})).finally(()=>setBusy(false));}} style={{padding:"7px 14px",borderRadius:8,border:"none",background:dirty&&!busy?C.actionSolid:C.border,boxShadow:(dirty&&!busy)?SOLID_LEDGE(C):"none",color:dirty&&!busy?C.onSolid:C.textSub,fontSize:12.5,fontWeight:700,cursor:dirty&&!busy?"pointer":"default"}}>{busy?"Saving…":"Save description"}</button>
       {msg?<span role={msg.ok?"status":"alert"} style={{fontSize:12,color:msg.ok?C.green:C.red,lineHeight:1.4}}>{msg.t}</span>:null}
     </div>
   </div>;

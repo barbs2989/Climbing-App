@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { SOLID_LEDGE } from "../../lib/buttonStyles.js";
 import { addPartnerArea, removePartnerArea } from "../../lib/db";
 import { tx } from "../../lib/tapWords.js";
 import Chevron from "./Chevron.tsx";
@@ -60,7 +61,7 @@ export default function ListMeInAreaBox({ areaId, areaName, areaType, C, uid, my
       <div style={{ fontSize: 14.5, fontWeight: 800, color: C.text, marginBottom: 4, overflowWrap: "anywhere" }}>{listed ? "You’re listed " + prep + " " + name + " ✓" : "Climb " + prep + " " + name + "?"}</div>
       <div style={{ fontSize: 12.5, color: C.textSub, lineHeight: 1.5, marginBottom: 10 }}>{listed ? "Climbers who search " + name + " can find you and reach out." : "List yourself here so climbers searching " + name + " can find you."}</div>
       <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
-        <button type="button" onClick={toggle} disabled={busy} aria-pressed={listed} aria-label={listed ? "Listed " + prep + " " + name + tx(" — tap to remove") : "List me " + prep + " " + name} style={{ flex: listed ? "0 0 auto" : "1 1 auto", minHeight: 44, padding: "0 16px", borderRadius: 10, border: listed ? "1px solid " + C.border : "none", background: listed ? C.surface : C.actionSolid, color: listed ? C.textSub : C.onSolid, fontSize: 13.5, fontWeight: 800, cursor: busy ? "default" : "pointer", opacity: busy ? 0.6 : 1, overflowWrap: "anywhere" }}>{listed ? "Remove listing" : "List me " + prep + " " + name}</button>
+        <button type="button" onClick={toggle} disabled={busy} aria-pressed={listed} aria-label={listed ? "Listed " + prep + " " + name + tx(" — tap to remove") : "List me " + prep + " " + name} style={{ flex: listed ? "0 0 auto" : "1 1 auto", minHeight: 44, padding: "0 16px", borderRadius: 10, border: listed ? "1px solid " + C.border : "none", background: listed ? C.surface : C.actionSolid,boxShadow:(listed)?"none":SOLID_LEDGE(C), color: listed ? C.textSub : C.onSolid, fontSize: 13.5, fontWeight: 800, cursor: busy ? "default" : "pointer", opacity: busy ? 0.6 : 1, overflowWrap: "anywhere" }}>{listed ? "Remove listing" : "List me " + prep + " " + name}</button>
         {listed && onListMe ? (
           <button type="button" onClick={() => onListMe({ areaId, name: areaName, areaType: areaType || null, disciplines: [] })} aria-label={"Add the dates and climbing types for your listing " + prep + " " + name} style={{ flex: "1 1 auto", minHeight: 44, display: "flex", alignItems: "center", justifyContent: "space-between", gap: 8, padding: "0 12px", borderRadius: 10, border: "1px solid " + C.border, background: C.surface, color: C.text, fontSize: 13, fontWeight: 700, cursor: "pointer", textAlign: "left" }}>
             <span>Add dates or climbing types</span>
