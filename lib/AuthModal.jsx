@@ -20,8 +20,8 @@ import { CAPTCHA_ON, Turnstile } from "./captcha.jsx";
 import BrandMark from "../src/components/BrandMark.tsx";
 import { TOPO } from "./ScreenHero";
 
-// The sign-in screen wears the splash's contour texture at the splash's size, so the hand-over does not jump.
-const TOPO_GATE = TOPO.replace("right top", "right top / min(520px, 130vw) auto");
+// The sign-in screen wears the contour texture at the one size every header and the splash use, so the hand-over does not jump.
+const TOPO_GATE = TOPO;
 
 const c = { bg: "#12110f", card: "#1a1916", border: "#36322c", text: "#f1ede6", sub: "#a69d90", blue: "#62aee8", brand: "#ff8a3d", red: "#f85149", green: "#3fb950" };
 const provBtn = { width: "100%", boxSizing: "border-box", display: "flex", alignItems: "center", justifyContent: "center", gap: 8, padding: 12, minHeight: 46, borderRadius: 11, border: "1px solid " + c.border, fontSize: 15, fontWeight: 600, cursor: "pointer" };
