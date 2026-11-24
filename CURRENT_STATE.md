@@ -26,6 +26,14 @@ the catalog import pipeline (see [docs/BACKEND.md](docs/BACKEND.md)).
 
 ## Recent changes
 
+- **Match %: one number for the pair, every grade counts, crag climbers can reach the top** (owner 2026-11-23, from the compat audit: "we should add those in"):
+  - `compat()` is now symmetric. Each climber's ✓ verified counts half the term, so A and B no longer see different %s (12 of 20 seed pairs used to).
+  - Shared objectives and listed areas are one *where you climb* term (`CMAX_WHERE`), so a crag pair that matches on everything reaches 99 instead of 84.
+  - Ice, alpine, mixed and aid grades from `climb_grades` are compared like with like.
+  - Every field one side left blank scores half, whichever field it is.
+  - The four "Match % blends…" sentences now say *where you climb* and *whether each of you is verified*.
+  - See `docs/codebase/algorithms.md` and `docs/features/partners.md`.
+
 - **Glacier warnings: 51 more routes settled in BC, CO, WY and AK** (data only, 2026-11-23): a page-read research round on the open glacier calls. Ten thin "no glacier" answers were held at unsure. See [conditions.md](docs/features/conditions.md) and `docs/guards/honesty-claims.md`.
 - **Full trip time walks the trip plan's gain, as the leg card prints it** (owner 2026-11-23, review of the fix below): the leg card's Gain fell back to the trip plan's day gains while the walk read only `gain_ft`, so 68 routes printed "↑ 4,600 ft" on TRAILHEAD TO SUMMIT and timed the approach flat (Mount Ballard's East Face: 1.5 hr, now 4.5), and the *Lower bounds only* note said "no recorded approach distance" on 111 routes whose trip-plan miles the walk had used. `planTimes()` reads both from the same place now (`walkKm`, `walkGainM`). See [route-page.md](docs/features/route-page.md).
 - **Groups: review fixes to the customization and past-event work** (2026-11-23, migration 0509). A new event can no longer be dated in the past: the database refuses a past event's RSVPs, so the host's own RSVP failed and left an event without its host. A colour left on *Auto* stores nothing, so the settings form reopens on Auto. A long moderator title no longer stretches a member row. The colour swatches announce as pressed buttons. A group link's address is screened as well as its label. `src/components/GroupEventForm.tsx`, `src/components/GroupCustomizeFields.tsx`, `lib/db.js`. See [groups.md](docs/features/groups.md).
