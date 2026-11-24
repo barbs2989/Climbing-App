@@ -194,8 +194,10 @@ const pickTick = async () => { for (const t of ["Redpoint", "Summit", "Send"]) {
   must(st3.includes(R3.name), "...and names the climb (opened from a link, so not in App's route cache)");
   must(!/Log it too/.test(st3), "the logger is not offered Log it too (it is already logged)");
   await shot(page, "8-logger-sheet");
-  const l3 = (await svc(`climb_logs?user_id=eq.${ownerId}&route_id=eq.${R3.id}&select=partners`)).body;
-  must(Array.isArray(l3) && l3[0] && (l3[0].partners || []).includes(mate.id), "DB: the logger's log is stored, tagging the mate");
+  /* the app writes the log asynchronously after the sheet is up: poll, do not read once */
+  let l3 = null;
+  for (let i = 0; i < 10; i++) { l3 = (await svc(`climb_logs?user_id=eq.${ownerId}&route_id=eq.${R3.id}&select=partners`)).body; if (Array.isArray(l3) && l3[0]) break; await sleep(2000); }
+  must(Array.isArray(l3) && l3[0] && (l3[0].partners || []).includes(mate.id), `DB: the logger's log is stored, tagging the mate (${JSON.stringify(l3).slice(0, 160)})`);
 
   must(errs.length === 0, `no page errors (${errs.slice(0, 3).join(" | ")})`);
 } catch (e) {
