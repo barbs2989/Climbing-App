@@ -40084,3 +40084,56 @@ against Wikipedia in a prior pass (corrections field); still matches.
 
 0 confirmed errors fixed, 0 newly flagged for human review, 10 clean.
 Next batch will continue id-ascending from `wa_fortune_peak_standard_route` (pass 9).
+
+## 2026-11-24 — Pass 9, Batch 577
+
+Eight routes, continuing id-ascending from `wa_fortune_peak_standard_route`: Southwest Route
+(Four Brothers), Free Mojo (South Early Winters Spire), South Route (Frenzel Spitz), Full Tilt
+/ Tempest Wall Free Version (Colchuck Balanced Rock), and East Rib, Infinite Bliss, Leaning
+Spire West Route, and North Route (all Garfield Mountain).
+
+Four Brothers' 6,485ft south-peak elevation, Frenzel Spitz's 7,440ft summit, its Sept 10 1961
+first ascent (Cooper/Denny/Firey/Firey/Whitmore) and the 2003 Wallace/Bunker/Haley Southern
+Pickets traverse ending there all matched Wikipedia, The Mountaineers, and AAC Publications
+("First Ascents in the Southern Pickets" / "Walking the Fence") exactly. Free Mojo's FA
+(Herrington/Zimmerman) was confirmed in Herrington's own 2013 blog post; South Early Winters
+Spire's 7,807ft summit, the June 2022 South Arete rockfall, and North Cascade Mountain Guides'
+replacement bolted rappel stations all matched The Mountaineers' route page and contemporaneous
+trip reports. Full Tilt's nine-person FA roster and 8,240ft Colchuck Balanced Rock summit
+matched Mountain Project and Wikipedia/listsofjohn exactly; its 5.12, 5-pitch, ~1,200ft
+stats also matched. East Rib is a bare stub (pitches only) with nothing else on file to check.
+
+Garfield Mountain's Infinite Bliss had its FA (Windham/Martin, Aug 2003) and its 23-pitch,
+792m, bolted-slab character confirmed by Mountain Project/OpenBeta/Steph Abegg, and the
+September 2014 rappel fatality confirmed in outline (Seattle Mountain Rescue's own blog names
+the climber and the September 2014 date) — but its summit elevation (4,804ft) has no
+independent source (the nearby, distinct "Garfield West" peak is 4,896ft per SummitPost, not
+the same point), and the fatality's specific mechanics (bypassed station, fading light, ran out
+of rope, fell three pitches) could not be confirmed beyond the broad fact of a fatal rappel
+fall — flagged for a human to pull the underlying AAC/Rock and Ice accident report directly.
+
+Two confirmed errors on Garfield Mountain, both fixed in `audits/sql/2026-11-24-batch-577.sql`:
+Leaning Spire West Route's stored 5,169ft summit elevation has no source anywhere, while
+SummitPost gives a specific, sourced 5,040ft (120ft prominence) figure with no competing value
+found — corrected to 5,040. North Route's stored first ascent ("Richard Berge and Pete
+Schoening in 1950 or 1951") turned out to be a likely mix-up with a different, well-documented
+mountain: a 1961 AAC/Mountaineer article by Beckey and Cooper ties these exact two climbers'
+only joint climbing of that era to two 1951 attempts on Mount Baring's north face (a separate
+peak ~15 mi away, where Berge died in a 1952 fall) — no source ties either climber to Garfield.
+Nulled rather than guessing a replacement FA, since no source gives one for Garfield's own
+North Route.
+
+Leaning Spire's FA party and exact date (Beckey, Lois Graham, and Walt Varney, Nov 9 1941) is
+also flagged: Mountain Project credits Beckey alone with no partners or date, and no other
+source was found to confirm or contradict the fuller claim — a specific, checkable-in-principle
+detail that would need the original Beckey guide text to nail down either way. Four Brothers'
+overview states the peak was named in the 1890s for miners John, Tom, Vic, and Lawrie Denny who
+had a cabin at its base; this story is repeated verbatim across several low-authority aggregator
+sites but traces to no primary source (USGS Board on Geographic Names, Beckey, or a historical
+society) — flagged as an unverified folk etymology.
+
+**Clean (4):** Four Brothers Southwest Route, Free Mojo, Frenzel Spitz South Route, Full Tilt.
+**Bare, nothing to check (1):** Garfield East Rib.
+
+2 confirmed errors fixed, 4 newly flagged for human review, 5 clean/bare.
+Next batch will continue id-ascending from `wa_garfield_mountain_north_route` (pass 9).
