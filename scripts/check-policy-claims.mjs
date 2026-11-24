@@ -257,7 +257,7 @@ for (const [claim, why] of [
   // searches can narrow it down). The limit is the clause a tidier rewrite would drop first, which
   // is why it is pinned rather than trusted.
   ["Only you can read your zip", "profile_zips is owner-only under RLS (0189)"],
-  ["never your zip", "others learn a rounded distance through partners_near / partners_by_distance, not the zip"],
+  ["never your zip", "others learn a rounded distance through the partner searches (partners_near, partners_by_distance, partners_by_objective, partners_for_my_areas, partners_in_area), not the zip"],
   ["to find listed climbers near it, and it is not stored", "the Near-me-now origin is a query argument and is written nowhere"],
   ["could still narrow down roughly which area you live in", "the stated LIMIT of distance-only disclosure"],
   ["do we store that position against your account", "§4 discloses that a base check-in is stored against the account (0188)"],
