@@ -1433,6 +1433,17 @@ rows. Its build script is gone; new reviews write the column.
     Center Ridge again and Iron Maiden (OR); both Chopping Block routes and Little Mac Spire (WA). Each rested
     on a page silent about the glacier, a single account, or another route's page.
   Glacier not settled now: WA 27, CA 23, AK 19, WY 16, OR 11, BC 7, MT 7, AB 5, CO 1, NV 1, NU 1; YT 0.
+- **Round 8** (2026-11-24) took the 81 routes whose glacier answer is settled but whose snow in season is
+  not (`round8/`, a snow-only prompt; the split, now `--round 8`, writes every glacier answer as "unsure" so
+  no settled one can move). The shared web-search budget ran out a few searches in, so most entries got only
+  fetches of pages that said nothing about snow, and one researcher read no page that settled anything.
+  - Snow yes: Birds of Fire (CO), the Washington–Ellinor Traverse (WA), The Candy Shop (WY).
+  - Snow no: the Humphreys Peak trail (AZ), Silver Lining (WY; an axe only early or in a big snow year).
+  - Held at unsure on review (7, `round8/hold.json`): Bear Creek Spire (a Northeast Ridge page), Devil's
+    Crag #1, Mount Jordan (CA); Gladstone North Ridge and the Glacier Gorge and Spearhead–Longs traverses
+    (CO); Chouinard–Frost Chimney (WY). Each rested on one account, another line's page, or a silent page.
+  Snow not settled now on these routes: WA 29, CA 17, CO 14, WY 8, UT 4, BC 2, ID 1, OR 1; AZ 0. Worth a
+  re-run once the search budget refills.
 
   - **HOUR BY HOUR + THE GUST WINDOW (2026-10-08, owner: "clear and exact and accurate science").**
     Section 12 of the guard. Three things it holds, each measured, not assumed:
