@@ -17,11 +17,12 @@
   "peak": "3 Pigs",
   "discipline": "ice",
   "kindToday": "alpineice",
-  "glacier": "unsure",
+  "glacier": "no",
   "snowInSeason": "yes",
   "basis": "web",
   "why": "A winter and spring ice and snow route; whether it crosses glacier ice is not stated.",
-  "verified": true
+  "verified": true,
+  "research": "no/yes: The route page describes an alluvial fan, a long ice flow, a mixed ridge and a retraced descent, with no glacier on the line and snow-loaded slopes named as the hazard."
  },
  {
   "id": "ak_3rd_4th_the_curtain_inside_passage",
@@ -174,12 +175,13 @@
   "peak": "Bear Creek",
   "discipline": "ice",
   "kindToday": "alpineice",
-  "glacier": "unsure",
+  "glacier": "no",
   "snowInSeason": "yes",
   "basis": "text",
   "why": "A low-elevation ice gully into alders and snow; no glacier is named.",
   "verified": true,
-  "secondReview": "no/yes: A short waterfall with alders and deep snow above, a winter ice line with no glacier mentioned anywhere on it."
+  "secondReview": "no/yes: A short waterfall with alders and deep snow above, a winter ice line with no glacier mentioned anywhere on it.",
+  "research": "no/yes: A page on this Bear Creek Canyon ice route near Valdez describes a short steep ice step with trees for descent and no glacier; the route text has deep steep snow."
  },
  {
   "id": "ak_boomerang_buttress",
@@ -357,11 +359,12 @@
   "peak": "East Twin Peak",
   "discipline": "mountaineering",
   "kindToday": "glacier",
-  "glacier": "unsure",
+  "glacier": "no",
   "snowInSeason": "yes",
   "basis": "text",
   "why": "A steep snow couloir; glacier travel is not mentioned.",
-  "verified": true
+  "verified": true,
+  "research": "no/yes: The area page describes this Chugach State Park peak as a trail approach with scree, rock steps and spring snow routes and names no glacier; the couloir is a ski mountaineering snow line."
  },
  {
   "id": "ak_fogels_visscher",
@@ -406,12 +409,13 @@
   "peak": "Glacier Creek",
   "discipline": "ice",
   "kindToday": "waterfall",
-  "glacier": "unsure",
+  "glacier": "no",
   "snowInSeason": "yes",
   "basis": "text",
   "why": "A winter ice climb above Seward; a glacier is only in the creek name.",
   "verified": true,
-  "secondReview": "no/yes: A waterfall on Tiehacker's south face descended by rappel or the summer trail, so Glacier Creek is just a place name."
+  "secondReview": "no/yes: A waterfall on Tiehacker's south face descended by rappel or the summer trail, so Glacier Creek is just a place name.",
+  "research": "no/yes: Pages on this Seward route describe a creek approach from town, a WI5 ice flow and a descent by rappel or snow to the ridge and trail, with Glacier Creek only a place name."
  },
  {
   "id": "ak_goat_rock_2_north_couloir",
@@ -843,11 +847,12 @@
   "peak": "Mt Wake",
   "discipline": "ice",
   "kindToday": "alpineice",
-  "glacier": "unsure",
+  "glacier": "yes",
   "snowInSeason": "yes",
   "basis": "knowledge",
   "why": "Steep snow and ice face in the Alaska ranges; glacier approach not confirmed.",
-  "verified": true
+  "verified": true,
+  "research": "yes/yes: A Ruth Gorge account of the east face describes the descent to the Wake-Bradley col on the glaciated backside, where the party bivied in a crevasse."
  },
  {
   "id": "ak_nantina_point_2_col_of_the_wild",
@@ -1545,11 +1550,12 @@
   "peak": "Cracked Ice",
   "discipline": "ice",
   "kindToday": "waterfall",
-  "glacier": "unsure",
+  "glacier": "yes",
   "snowInSeason": "yes",
   "basis": "text",
   "why": "Glacier equipment listed but glacier travel not described.",
-  "verified": true
+  "verified": true,
+  "research": "yes/yes: The route page describes crossing a valley glacier to the base and recommends a glacier kit with crampons, though it calls the glacier relatively mellow and does not mention crevasses."
  },
  {
   "id": "ak_west_ridge_3",
