@@ -27,11 +27,14 @@ export interface AreaActionRowProps {
 // one third of the row each, 48px tall, all in the solid blue (owner, 2026-11-18: "map button is small compared to
 // route finder and objectives. Make all those buttons the same size ... make all 3 of those buttons stand out more";
 // Map used to be content-width, and it and Objectives were grey outlines). On the website the finder chip opens the inline form under the row rather than leaving the page.
+// NOT ORANGE (owner, 2026-11-24: "i dont like the orange boxes for route finder, objectives, map on areas pages"): the
+// warm palette made C.blueSolid a burnt orange, so the row wears the palette's BLUE instead -- the dark blue fill under
+// a light-blue edge, in the text colour -- and keeps the size and shadow that make the three stand out.
 // Mountain Project keeps a ~300px Route Finder form always open on its area pages; here it is one tap away.
 export default function AreaActionRow({ C, routeCount, onFinder, inlineDiscs, myGrades, onFindInline, objectivesHere, onObjectives, onNear, first }: AreaActionRowProps) {
   const [inlineOpen, setInlineOpen] = useState(false);
   const inline = !!(inlineDiscs && inlineDiscs.length && onFindInline);
-  const chip = { position: "relative" as const, boxSizing: "border-box" as const, flex: "1 1 0", minWidth: 0, minHeight: 48, display: "flex", alignItems: "center", justifyContent: "center", flexWrap: "wrap" as const, alignContent: "center", gap: "0 5px", padding: "4px 5px", borderRadius: 11, border: "1px solid " + C.blue, background: C.blueSolid, color: C.onSolid, fontSize: 13.5, fontWeight: 800, lineHeight: 1.2, textAlign: "center" as const, cursor: "pointer", boxShadow: "0 2px 8px rgba(0,0,0,0.35)" };
+  const chip = { position: "relative" as const, boxSizing: "border-box" as const, flex: "1 1 0", minWidth: 0, minHeight: 48, display: "flex", alignItems: "center", justifyContent: "center", flexWrap: "wrap" as const, alignContent: "center", gap: "0 5px", padding: "4px 5px", borderRadius: 11, border: "1px solid " + C.blue, background: C.blueBg, color: C.text, fontSize: 13.5, fontWeight: 800, lineHeight: 1.2, textAlign: "center" as const, cursor: "pointer", boxShadow: "0 2px 8px rgba(0,0,0,0.35)" };
   const objLabel = objectivesHere == null ? "Objectives" : objectivesHere + " objective" + (objectivesHere !== 1 ? "s" : "") + " here";
   // Three buttons share a ~330px column on the website and ~115px each on a phone, so the word stays short and the
   // count is a badge on the button's CORNER, where it costs the label no width.
