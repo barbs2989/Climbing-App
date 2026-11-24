@@ -18,7 +18,7 @@ export interface CardHeadProps {
  * style spread were added. `lib/DbAreaBrowser.jsx` and `EnrichmentPanels.jsx` keep their own copies on
  * purpose (they must not import core) — see the hand-off in docs/refactor-progress.md. The heading role
  * sits on the TITLE only, as SL's does: on the whole row it took the chip's text in too, and the route
- * page's jump pill (SectionJumps reads heading text) read "ROUTE FACTSHigh".
+ * page's old section-jump pill (it read heading text) showed "ROUTE FACTSHigh".
  * The chip WRAPS under the title when the row is too narrow, lined up with the title's first letter, instead
  * of squeezing the title: beside a chip and an Edit button, ROUTE BREAKDOWN, EMERGENCY & RESCUE, GEAR &
  * ESSENTIALS and ~10 more broke onto two lines at 320px, ACCESS & REGULATIONS onto three at 390 (owner,
