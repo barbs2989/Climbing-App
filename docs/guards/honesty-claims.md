@@ -1485,6 +1485,15 @@ rows. Its build script is gone; new reviews write the column.
     Arête (the same start-only page); snow on Pulitzer (a page about the traverse), Rock Mountain (one early-June
     day, which RULE.md counts as early season) and the Middle Teton SW Couloir "no" (one mid-July year).
   Glacier not settled now: 110. This is where web research stops paying.
+- **Unsure alpine and scramble routes kept no warnings** (live check, 2026-11-24). Forbidden East Ridge, held
+  unsure on its glacier and reviewed snow in season "yes", rendered as plain *Alpine rock*: `condKind` gave
+  alpine and scrambling the glacier card only on a reviewed "yes" (or, for alpine, a glacier word in the text),
+  and its text reads as rock. 42 unsure-glacier routes were alpine or scramble kinds; 30 of them reviewed snowy.
+  Owner decision 3 (unsure keeps the warnings, softer) only reached mountaineering. Now a route reviewed snowy
+  with its glacier unsure gets the glacier card and "any snow bridges" (`bridgeWord` "maybe" even where the text
+  guess says no glacier). `routeTerrain()` returns `glacierReviewed` / `snowReviewed` so a route nobody reviewed
+  (both null) cannot be mistaken for one. The 12 with snow also unsure cannot be told apart from unreviewed
+  rows and stay as they were. Six assertions in `check:alpine-conditions`.
 
   - **HOUR BY HOUR + THE GUST WINDOW (2026-10-08, owner: "clear and exact and accurate science").**
     Section 12 of the guard. Three things it holds, each measured, not assumed:

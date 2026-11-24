@@ -18,7 +18,7 @@ import { POLICY_VERSION } from "../../lib/policy.js";
 // Re-exported from ui-fixture so the two modes cannot disagree about the storage contract.
 // Safe to import now that its service-key lookup is lazy.
 export { sessionForStorage, STORAGE_KEY } from "./ui-fixture.mjs";
-import { fixtureCrewDays } from "./ui-fixture.mjs";
+import { fixtureCrewDays, fixtureTripDay } from "./ui-fixture.mjs";
 
 const ANON = anonKey();
 
@@ -291,32 +291,35 @@ export async function durableFixture(log) {
     }
   }
 
-  // THE DURABLE CREW'S DAYS ARE MOVED FORWARD ON EVERY RUN. It was seeded once
+  // THE DURABLE CREW CLIMBED YESTERDAY, ON EVERY RUN. It was seeded once
   // (scripts/oneoff/seed-ci-test-fixture.mjs) proposing 2026-09-12 and -13, and it is the crew the
-  // walk's roster and chat assertions are about. Since #3816 a crew whose last proposed day is
-  // more than 14 days behind is a PAST crew, so on 2026-11-24 this account's Crews tab read "You
-  // have no crews yet" and check:signed-in failed on four lines with the app correct. Same reason
-  // as the policy stamp and the disciplines above: these rows are permanent, so "is an active
-  // crew" has to KEEP being true. Written by the crew's own CREATOR on their own JWT (the update
-  // policy is created_by = auth.uid()), read back, and only when its last day is under a week out.
+  // walk's roster, chat and recap assertions are about. Two things need its day to keep moving:
+  //   * since #3816 a crew whose last day is long behind is a PAST crew, so on 2026-11-24 this
+  //     account's Crews tab read "You have no crews yet" and check:signed-in failed on four lines
+  //     with the app correct;
+  //   * the recap (0519) lists crewmates only for a crew with an AGREED day, and takes answers for
+  //     14 days after it. See fixtureTripDay() in ui-fixture.mjs for why yesterday, and why this
+  //     crew and never a per-run one.
+  // Same reason as the policy stamp and the disciplines above: these rows are permanent, so a
+  // property has to KEEP being true. It is the organizer's own "lock the day" (agreed_date +
+  // date_forced, 0075), written by the crew's CREATOR on their own JWT (the update policy is
+  // created_by = auth.uid()), read back, and skipped when the row already says it.
   {
     const DURABLE_CREW_MEET = "Heliotrope Ridge TH";
-    const got = await asUser(session, `crews?route_id=eq.${CREW_ROUTE_ID}&meet_place=eq.${encodeURIComponent(DURABLE_CREW_MEET)}&select=id,created_by,dates`);
-    assertHealthy(got, "reading the durable crew's days");
+    const got = await asUser(session, `crews?route_id=eq.${CREW_ROUTE_ID}&meet_place=eq.${encodeURIComponent(DURABLE_CREW_MEET)}&select=id,created_by,dates,agreed_date`);
+    assertHealthy(got, "reading the durable crew's day");
     const rows = Array.isArray(got.json) ? got.json : [];
     if (!rows.length) throw new Error("the durable crew (North Ridge, " + DURABLE_CREW_MEET + ") is not readable by the owner — re-run scripts/oneoff/seed-ci-test-fixture.mjs");
-    const soon = fixtureCrewDays(1, new Date(Date.now() - 14 * 86400000))[0]; // = a week from today
+    const day = fixtureTripDay();
     for (const c of rows) {
-      const last = (c.dates || []).map((d) => String(d).slice(0, 10)).sort().pop() || "";
-      if (last >= soon) continue;
+      const had = String(c.agreed_date || "").slice(0, 10);
+      if (had === day && (c.dates || []).map((d) => String(d).slice(0, 10)).join() === day) continue;
       const by = c.created_by === session.user.id ? session : c.created_by === mateSession.user.id ? mateSession : null;
-      if (!by) throw new Error(`the durable crew ${c.id} belongs to neither fixture account, so nobody here may move its days`);
-      const days = fixtureCrewDays(2);
-      const up = await asUser(by, `crews?id=eq.${c.id}&select=id,dates`, { method: "PATCH", body: JSON.stringify({ dates: days }) });
-      assertHealthy(up, "moving the durable crew's days forward");
-      const now = (up.json?.[0]?.dates || []).map((d) => String(d).slice(0, 10));
-      if (up.status >= 300 || now.join() !== days.join()) throw new Error(`could not move the durable crew's days forward (HTTP ${up.status}): ${(up.text || "").slice(0, 200)}`);
-      log(`  moved the durable crew's days forward (${last || "none"} -> ${days.join(", ")}): a crew whose last day is 14 days behind is a past crew (#3816)`);
+      if (!by) throw new Error(`the durable crew ${c.id} belongs to neither fixture account, so nobody here may lock its day`);
+      const up = await asUser(by, `crews?id=eq.${c.id}&select=id,agreed_date`, { method: "PATCH", body: JSON.stringify({ dates: [day], agreed_date: day, date_forced: true }) });
+      assertHealthy(up, "locking the durable crew's day");
+      if (up.status >= 300 || String(up.json?.[0]?.agreed_date || "").slice(0, 10) !== day) throw new Error(`could not lock the durable crew's day (HTTP ${up.status}): ${(up.text || "").slice(0, 200)}`);
+      log(`  locked the durable crew's day to yesterday (${had || "none"} -> ${day}): active for 3 days, and its recap lists the crewmate (0519)`);
     }
   }
 

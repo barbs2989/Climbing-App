@@ -49,6 +49,13 @@ export function render(route, tab, extra) {
         crewsForRoute: [], myStars: {}, presence: null, ...(extra || {}),
       })));
 }
+// The "Help fill this in" list, given rows directly: the route page fills it from an EFFECT (each empty
+// section registers itself), and no effect runs under renderToStaticMarkup.
+import HelpFillList from ${JSON.stringify(path.join(ROOT, "src/components/HelpFillList.tsx"))};
+import { HelpFillRows } from ${JSON.stringify(path.join(ROOT, "lib/helpFill.js"))};
+export function renderHelpFill(rows) {
+  return renderToStaticMarkup(React.createElement(HelpFillRows.Provider, { value: rows }, React.createElement(HelpFillList)));
+}
 `;
 
 const out = path.join(fs.mkdtempSync(path.join(os.tmpdir(), "cm-bare-")), "bundle.cjs");
@@ -58,7 +65,7 @@ await build({
   loader: { ".jsx": "jsx" }, define: { "import.meta.env": "{}" },
   outfile: out, logLevel: "error",
 });
-const { render } = require_(out);
+const { render, renderHelpFill } = require_(out);
 
 // ── The shape 88% of alpine routes and 99.5% of the catalog actually have.
 const bare = (discipline, grade) => ({
@@ -282,15 +289,20 @@ for (const d of [...CRAG, "alpine"]) {
     else if (d !== "bouldering" && !(withItems.includes("quickdraws") && withItems.includes("\u00d712"))) fail(`rack: a ${d} route's rack items lose their quantity`);
     else if (d === "bouldering" && !(withItems.includes("crash pads") && withItems.includes("\u00d73"))) fail("rack: a boulder route's pads do not reach the RACK card");
     else ok(`rack: a ${d} route's own rack reaches the screen with its quantities`);
-    const none = text(render(base, "overview"));
+    const noneHtml = render(base, "overview");
+    const none = text(noneHtml);
     if (/What to bring|ROPEWORK|GEAR & ESSENTIALS|Standard rack for this discipline/.test(none))
       fail(`rack: a ${d} route with no rack of its own still prints a stock gear section — the stock kit is not shown for crag routes`);
     else if (!/No rack listed yet|No quickdraw count yet|No pad count yet/.test(none))
       fail(`rack: a ${d} route with no rack of its own shows no placeholder to add one`);
     else ok(`rack: a ${d} route with no rack of its own shows an add-the-rack placeholder and no stock kit`);
     /* Owner note 2026-10-21, "add back the beta section": an empty crag BETA returned null and
-       left no place for beta at all. It is an EmptySection now; a route WITH beta prints it. */
-    if (!/BETA/.test(none) || !none.includes("No beta yet")) fail(`beta: a ${d} route with no beta shows no BETA section to add it`);
+       left no place for beta at all. It is an EmptySection now; a route WITH beta prints it.
+       Since the "Help fill this in" list (lib/helpFill.js) an empty section on the route page is an
+       ENTRY of that list, not a card in place. Its row is drawn after an effect, which this static
+       render never runs, so the entry is read off the marker the section leaves; section 9 below
+       proves the list turns an entry into a named row with its add button. */
+    if (!noneHtml.includes('data-help-fill="BETA"') || !noneHtml.includes('data-help-fill-what="No beta yet"')) fail(`beta: a ${d} route with no beta leaves no BETA entry for the Help-fill list, so there is no place to add it`);
     else if (!text(render({ ...base, beta: ["Stem the corner to the rest."] }, "overview")).includes("Stem the corner to the rest.")) fail(`beta: a ${d} route's own beta no longer reaches the BETA section`);
     else ok(`beta: a ${d} route shows its BETA section, empty or not`);
   }
@@ -489,6 +501,26 @@ for (const d of [...CRAG, "alpine"]) {
   if (!text(render(filled, "overview")).includes("Problem description")) fail("ANCHOR LOST: a filled boulder problem's Overview has no \"Problem description\" card — section 7 never saw the description branch");
   if (!cache.get("bouldering/overview")) fail("ANCHOR LOST: no bouldering/overview render — section 7 checked nothing");
   else if (!bad) ok("bare boulder problem: no tab calls it a route");
+}
+
+// ── The "Help fill this in" list draws every entry: its section, why it matters, and ITS add button.
+// The owner's condition for collapsing the empty cards was that every add entry point stays.
+{
+  let tapped = "";
+  const rows = [
+    { id: "a", title: "BETA", what: "No beta yet", why: "Nothing says how the moves go.", cta: "Add beta", fix: () => { tapped = "beta"; }, mark: null },
+    { id: "b", title: "APPROACH", what: "No approach description", why: null, cta: null, fix: () => { tapped = "approach"; }, mark: null },
+    { id: "c", title: "RAPPELS", what: "No rappel beta", why: null, cta: "Add the rappels", fix: null, mark: null },
+  ];
+  const html = renderHelpFill(rows);
+  const t = text(html);
+  void tapped;
+  if (!/HELP FILL THIS IN/.test(t)) fail("help-fill: the list has no heading");
+  else if (!t.includes("Beta") || !t.includes("Nothing says how the moves go.") || !t.includes("Add beta →")) fail("help-fill: an entry's section, reason or add button is missing from its row");
+  else if (!t.includes("No approach description") || !t.includes("Add what you know →")) fail("help-fill: an entry with no reason or no button words loses its row text or its add button");
+  else if ((html.match(/<button/g) || []).length !== 2) fail("help-fill: expected one add button per entry that can be fixed (2 of 3), found " + (html.match(/<button/g) || []).length);
+  else if (renderHelpFill([]) !== "") fail("help-fill: the list draws something when no section is empty");
+  else ok("help-fill: every entry is a row with its section, its reason and its own add button; no entries, no list");
 }
 
 fs.rmSync(path.dirname(out), { recursive: true, force: true });

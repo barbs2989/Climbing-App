@@ -304,7 +304,7 @@ export default function GpsSubmissionModal({ routeId, routeName, crag, parkAt, c
   const tabLabel = { draw: 'Draw on map', paste: 'Paste', upload: 'Upload file', devices: 'How to export' }
   const check = (on, label, set) => (
     <button role="checkbox" aria-checked={on} onClick={() => set(!on)} style={{ ...S.checkRow, border: '1px solid ' + (on ? C.blue : C.border), background: on ? C.blueBg : C.card }}>
-      <span aria-hidden="true" style={{ ...S.checkBox, border: '1px solid ' + (on ? C.blue : C.borderHi), background: on ? C.blueSolid : 'transparent' }}>{on ? '✓' : ''}</span>
+      <span aria-hidden="true" style={{ ...S.checkBox, border: '1px solid ' + (on ? C.blue : C.borderHi), background: on ? C.actionSolid : 'transparent' }}>{on ? '✓' : ''}</span>
       <span style={{ minWidth: 0, fontSize: 13.5, fontWeight: 600, color: C.text, lineHeight: 1.4 }}>{label}</span>
     </button>
   )
@@ -480,7 +480,7 @@ function sheetStyles() {
     checkBox: { flexShrink: 0, width: 18, height: 18, borderRadius: 5, color: C.onSolid, fontSize: 12, lineHeight: '16px', textAlign: 'center', fontWeight: 700 },
     error: { background: C.redBg, border: '1px solid ' + C.red, borderRadius: 10, padding: '9px 12px', marginBottom: 10, fontSize: 13, color: C.text, lineHeight: 1.45 },
     successMark: { width: 44, height: 44, margin: '0 auto 12px', borderRadius: 22, background: C.greenBg, border: '1px solid ' + C.green, color: C.green, fontSize: 22, fontWeight: 800, display: 'flex', alignItems: 'center', justifyContent: 'center' },
-    primary: { ...btn, width: '100%', flex: 1, background: C.blueSolid, color: C.onSolid, border: '1px solid rgba(0,0,0,0.22)' },
+    primary: { ...btn, width: '100%', flex: 1, background: C.actionSolid, color: C.onSolid, border: '1px solid rgba(0,0,0,0.22)' },
     secondary: { ...btn, flex: 1, background: C.card, color: C.text, border: '1px solid ' + C.border },
   }
 }

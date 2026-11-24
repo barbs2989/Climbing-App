@@ -139,6 +139,20 @@ eq("...reviewed glacier travel is the glacier card", k({ discipline: "mountainee
 eq("...a glacier word in text nobody reviewed keeps the glacier card (the careful reading)", k({ discipline: "mountaineering" }, { glacierTravel: "likely", glacier: "yes", snow: "yes" }), "glacier");
 eq("a SCRAMBLE reviewed as crossing a crevassed glacier (Jack Mountain North Ridge) gets the GLACIER card", k({ discipline: "scrambling" }, { glacierTravel: "yes", glacier: "yes", snow: "yes", snowInSeason: "yes" }), "glacier");
 eq("...but a glacier WORD in an unreviewed scramble's text does not promote it", k({ discipline: "scrambling" }, { glacierTravel: "likely", glacier: "yes", snow: "yes" }), "scramble");
+/* Owner, 2026-11-24: a route REVIEWED snowy whose glacier stayed unsure keeps the glacier card, "any snow bridges".
+   Live: Forbidden East Ridge (alpine, text reads as rock) showed no snow logic at all. Both columns null = nobody
+   looked = untouched. */
+{
+  const held = { glacierTravel: "no", glacier: "no", snow: "yes", snowInSeason: "yes", glacierReviewed: null, snowReviewed: "yes" };
+  const never = { glacierTravel: "no", glacier: "no", snow: "no", snowInSeason: "no", glacierReviewed: null, snowReviewed: null };
+  eq("an ALPINE route reviewed snowy with its glacier held unsure (Forbidden East Ridge) gets the glacier card", k({ discipline: "alpine", grade: "5.8" }, held, "alpine"), "glacier");
+  eq("...a SCRAMBLE in the same state too", k({ discipline: "scrambling" }, held), "glacier");
+  eq("...and its bridges are 'any snow bridges', never stated, even though its text reads as rock", A.bridgeWord("glacier", held), "maybe");
+  eq("...an alpine route nobody reviewed (both columns null) stays alpine rock", k({ discipline: "alpine", grade: "5.8" }, never, "alpine"), "alpinerock");
+  eq("...a route REVIEWED no glacier stays off the card even when snowy", k({ discipline: "alpine", grade: "5.8" }, Object.assign({}, held, { glacierReviewed: "no" }), "alpine"), "alpinerock");
+  const { routeTerrain } = await import(pathToFileURL(path.join(ROOT, "lib", "terrain.js")).href);
+  eq("routeTerrain hands condKind the two reviewed columns on their own", [routeTerrain({ id: "x", discipline: "alpine", grade: "5.8", snow_in_season: "yes" }).snowReviewed, routeTerrain({ id: "x", discipline: "alpine", grade: "5.8", snow_in_season: "yes" }).glacierReviewed, routeTerrain({ id: "x", discipline: "alpine", glacier_travel: "no" }).glacierReviewed], ["yes", null, "no"]);
+}
 eq("an alpine route reviewed NO glacier is alpine rock even when its text names one", k({ discipline: "alpine", grade: "5.7" }, { glacierTravel: "no", glacier: "no", snow: "yes" }, "alpine"), "alpinerock");
 eq("the snow climb carries the snow legs and the snow timing; it is one of the snow kinds", [A.hasSnowLegs("snow", {}), A.isSnowKind("snow"), A.isSnowKind("glacier"), A.isSnowKind("alpineice"), A.isSnowKind("scramble")], [true, true, true, true, false]);
 eq("a sport route gets no alpine kind", k({ discipline: "sport" }, {}, "sport"), null);
