@@ -485,11 +485,15 @@ export default function NearMePanel({ center0, areaType, name, onBack, onOpenAre
       <div style={{ flex: 1, minHeight: 0, overflowY: "auto", overscrollBehavior: "contain", padding: "6px 8px 0" }}>
         {pickRows.map(a => {
           const open = !!onOpenRoute && (pickRows.length === 1 || !!climbsOpen[a.id]);
-          const openRoute = open ? onOpenRoute : undefined;
+          // LEAVING THE MAP CLOSES FULL SCREEN FIRST (owner 2026-11-24: on the website a climb picked here
+          // opened only after pressing Back). Full screen is a portal on document.body, and this panel
+          // stays MOUNTED (hidden) under an open route, so the map went on covering the route page.
+          const openRoute = open && onOpenRoute ? (r: RouteRowRoute) => { setView3d(false); setFullscreen(false); onOpenRoute(r); } : undefined;
+          const openArea = () => { setView3d(false); setFullscreen(false); onOpenArea(a); };
           const wl = wlByArea[a.id] || 0;
           return <div key={a.id} style={{ marginBottom: 6 }}>
             <div style={{ display: "flex", alignItems: "stretch", gap: 6 }}>
-              <div {...clickable(() => onOpenArea(a))} style={{ flex: 1, minWidth: 0, background: C.card, border: "1px solid " + (wl ? C.amber : C.border), borderRadius: 10, padding: "10px 12px", cursor: "pointer", display: "flex", justifyContent: "space-between", alignItems: "center", gap: 10 }}>
+              <div {...clickable(openArea)} style={{ flex: 1, minWidth: 0, background: C.card, border: "1px solid " + (wl ? C.amber : C.border), borderRadius: 10, padding: "10px 12px", cursor: "pointer", display: "flex", justifyContent: "space-between", alignItems: "center", gap: 10 }}>
                 <span style={{ minWidth: 0 }}>
                   <span style={{ display: "block", fontWeight: 700, fontSize: 14, color: C.text, overflowWrap: "anywhere" }}>{a.name}</span>
                   {wl ? <span style={{ display: "block", fontSize: 11.5, fontWeight: 700, color: C.amber }}>{onList(wl)}</span> : null}
@@ -498,7 +502,7 @@ export default function NearMePanel({ center0, areaType, name, onBack, onOpenAre
               </div>
               {onOpenRoute && pickRows.length > 1 && a.route_count > 0 ? <button onClick={() => setClimbsOpen(o => ({ ...o, [a.id]: !o[a.id] }))} aria-expanded={open} aria-label={(open ? "Hide" : "Show") + " the climbs at " + a.name} style={{ ...CHIP, flexShrink: 0, minHeight: 44, border: "1px solid " + (open ? C.blue : C.border), background: open ? C.blueBg : C.surface, color: open ? C.onSolid : C.blue, fontSize: 12, fontWeight: 700, cursor: "pointer" }}>{open ? "Hide" : "Climbs"}</button> : null}
             </div>
-            {openRoute && a.route_count > 0 ? <MapAreaClimbs area={a} onOpenRoute={openRoute} onOpenArea={() => onOpenArea(a)} C={C} /> : null}
+            {openRoute && a.route_count > 0 ? <MapAreaClimbs area={a} onOpenRoute={openRoute} onOpenArea={openArea} C={C} /> : null}
           </div>;
         })}
       </div>
