@@ -1030,6 +1030,18 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   - Injection-tested; the four cases are named at the bottom of the script and are
     driven by `--inject=`, since the fault lives in the DB and the checker cannot
     write. `--sql` prints the repair as a **recount**, never as literal numbers.
+  - **WHEN THE `--sql` RECOUNT CHANGES NOTHING, THE PATHS ARE WRONG, NOT THE COUNT (0520, 2026-11-24).**
+    This guard walks `parent_id`; the recount (and every `path <@` reader) walks `areas.path`. Twelve
+    regions "drifted" and the printed recount left every one unchanged, because `route_count` matched
+    the path tree exactly: 36 areas held a path under their parent's OLD place. A mid-level area had
+    moved (Lover's Leap Limestone, Point Mugu, Riggins, Memorial Falls, Leslie Gulch…), `areas_set_path`
+    rewrote its own path, and nothing rewrote its children's — that trigger fires only on a row's own
+    `parent_id`/`id`. Diagnose with `select a.id from areas a join areas p on p.id = a.parent_id where
+    a.path <> p.path || subpath(a.path, nlevel(a.path) - 1)`. 0520 repaired them and added
+    `trg_areas_cascade_path`: a changed path now carries its children (recursively), and a change of
+    PARENT moves the area's `route_count` from its old ancestors to its new ones, so a move no longer
+    leaves either drift behind. It also cleared an `check:area-duplicates` finding (Buffalo Canyon/Dark
+    Canyon), which paired two children whose stranded paths sat outside their own parent.
 - **`check:approve-route-columns`** asserts that nothing may fork `approve_new_route` again.
   That function is the whole consume half of the add-a-route flow: it turns a pending
   `new_route` contribution into a row in `routes`, and it is a `SECURITY DEFINER` RPC precisely

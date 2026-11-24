@@ -302,7 +302,7 @@ export default function DbAreaBrowser({ areaDiscussion, jumpToFinderReq, onSignI
         </div>
       ) : null}
       {screen === "near" ? (
-        <><ScreenHero C={C} title={"Map" + (current ? " · " + current.name : "")} /><NearMePanel key={current ? current.id : "root"} uDistMi={uDistMi} autoLocate={!current && nearLocate ? nearLocate : null} name={current ? current.name : null} center0={current && current.lat != null ? { lat: current.lat, lng: current.lng } : null} areaType={current && current.area_type} onBack={() => setScreen("areas")} onOpenArea={jumpToArea} onOpenRoute={onOpenRoute} C={C} /></>
+        <><ScreenHero C={C} title={"Map" + (current ? " · " + current.name : "")} /><NearMePanel key={current ? current.id : "root"} uDistMi={uDistMi} autoLocate={!current && nearLocate ? nearLocate : null} name={current ? current.name : null} center0={current && current.lat != null ? { lat: current.lat, lng: current.lng } : null} areaType={current && current.area_type} focus={current || null} onBack={() => setScreen("areas")} onOpenArea={jumpToArea} onOpenRoute={onOpenRoute} C={C} /></>
       ) : !stateNode ? (
         <>{rootHeader || null}<StatePicker onPick={pickState} C={C} /></>
       ) : screen === "finder" ? (

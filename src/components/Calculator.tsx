@@ -1,5 +1,6 @@
 import { uImp, gainBelowOwnPins, RSL as SL, C, SUB_LABEL, loggedTimeStats, fmtDurMin, uElev, pitchedFraction, gn, scarfHrs, techHrs, uDist } from "../../ClimbMatchCore.jsx";
 import { useState } from "react";
+import { FONT_MONO } from "../../lib/fonts.js";
 import type { Dispatch, SetStateAction } from "react";
 import { planTimes, summitDayPlan } from "../../lib/planTimes";
 import { isMultiDayOuting, itinDayCount } from "../../lib/outing.js";
@@ -343,7 +344,7 @@ export default function Calculator({route,activity,fit:fitProp,setFit:setFitProp
     {(route.segments||[]).map((seg,i)=>{
       const sh=scarfHrs(seg.distKm,seg.gainM,seg.lossM,fit,pack)+(seg.type==="technical"?techHrs(2,35,gn(route.grade)):0);
       const cumH=depart+(route.segments as Segment[]).slice(0,i+1).reduce((s,sg)=>s+scarfHrs(sg.distKm,sg.gainM,sg.lossM,fit,pack)+(sg.type==="technical"?techHrs(2,35,gn(route.grade)):0),0);
-      return <div key={i} style={{display:"flex",gap:10,alignItems:"center",padding:"6px 0",borderBottom:`1px solid ${C.borderLight}`}}><div style={{width:24,height:24,borderRadius:"50%",background:C.blueBg,border:`1px solid ${C.blueDim}`,display:"flex",alignItems:"center",justifyContent:"center",flexShrink:0,fontSize:12,fontWeight:700,color:"#fff"}}>{i+1}</div><div style={{flex:1}}><div style={{fontSize:13.5,fontWeight:700}}>{seg.name}</div><div style={{fontSize:12,color:C.textMuted}}>{uDist(seg.distKm)} · ↑{uGain(seg.gainM as number)} · {seg.type}</div></div><div style={{textAlign:"right"}}><div style={{fontSize:13,fontWeight:700,color:C.blue}}>{sh.toFixed(1)}hr</div><div style={{fontSize:12,color:C.textMuted}}>ETA {fmt(cumH)}</div></div></div>;
+      return <div key={i} style={{position:"relative",display:"flex",gap:10,alignItems:"center",padding:"6px 0",borderBottom:`1px solid ${C.borderLight}`}}>{/* THE ROPE: from this leg's knot to the next one's. */i<(route.segments as Segment[]).length-1?<span aria-hidden="true" data-rope="" style={{position:"absolute",left:11,top:"50%",width:2,height:"100%",background:C.brand}}/>:null}<div data-rope-knot="" style={{position:"relative",zIndex:1,boxSizing:"border-box",width:24,height:24,borderRadius:"50%",background:C.card,border:"2px solid "+C.brand,display:"flex",alignItems:"center",justifyContent:"center",flexShrink:0,fontFamily:FONT_MONO,fontSize:11.5,fontWeight:600,color:C.text}}>{i+1}</div><div style={{flex:1}}><div style={{fontSize:13.5,fontWeight:700}}>{seg.name}</div><div style={{fontSize:12,color:C.textMuted}}>{uDist(seg.distKm)} · ↑{uGain(seg.gainM as number)} · {seg.type}</div></div><div style={{textAlign:"right"}}><div style={{fontSize:13,fontWeight:700,color:C.blue}}>{sh.toFixed(1)}hr</div><div style={{fontSize:12,color:C.textMuted}}>ETA {fmt(cumH)}</div></div></div>;
     })}
   </div></div>;
 }
