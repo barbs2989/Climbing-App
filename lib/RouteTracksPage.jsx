@@ -14,7 +14,7 @@ import { BTN_PRIMARY, BTN_SECONDARY } from "./buttonStyles.js";
 import { SEASONS, TRACK_OUTCOMES, TRACK_SORTS, filterTrackRows, sortTracks, trackYears } from "./routeTracks.js";
 import { TRACK_LINK, TrackFootnote, TrackRow, TracksEmpty, TracksFailedNotes, trackChip, useTrackRows } from "./RouteTracksPanel.jsx";
 
-const SEL = { width: "100%", boxSizing: "border-box", minWidth: 0, minHeight: 44, padding: "8px 11px", borderRadius: 9, border: "1px solid " + C.border, background: C.surface, color: C.text, fontSize: 12.5, cursor: "pointer" };
+const SEL = { width: "100%", boxSizing: "border-box", minWidth: 0, minHeight: 44, padding: "8px 11px", borderRadius: 9, border: "1px solid " + C.field, background: C.surface, color: C.text, fontSize: 12.5, cursor: "pointer" };
 const GROUP = { display: "flex", gap: 6, flexWrap: "wrap", marginBottom: 8 };
 
 /**

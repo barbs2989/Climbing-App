@@ -39,7 +39,7 @@ export default function StartCrewSheet({ payload, uid, onClose, onStart, notify 
   const seedHits = useMemo(() => !USE_DB && q.trim() ? MOUNTAINS.filter((m) => !NO_CREW_TYPES.has(m.areaType) && (m.name || "").toLowerCase().includes(q.trim().toLowerCase())).slice(0, 12).map((m) => ({ id: m.id, name: m.name, area_type: m.areaType, parent_name: (MOUNTAINS.find((x) => x.id === m.parentId) || {}).name })) : [], [q]);
   const partners = Array.isArray(p.partners) ? p.partners : [];
   const chip = (on, disabled) => ({ padding: "6px 11px", borderRadius: 20, border: "1px solid " + (on ? C.blueDim : C.border), background: on ? C.blueBg : C.surface, color: disabled ? C.textMuted : on ? "#fff" : C.textSub, fontSize: 12.5, fontWeight: 700, cursor: disabled ? "default" : "pointer" });
-  const field = { width: "100%", boxSizing: "border-box", padding: "10px 12px", borderRadius: 10, border: "1px solid " + C.border, background: C.bg, color: C.text, fontSize: 14 };
+  const field = { width: "100%", boxSizing: "border-box", padding: "10px 12px", borderRadius: 10, border: "1px solid " + C.field, background: C.bg, color: C.text, fontSize: 14 };
   const pick = (a) => { const next = { id: a.id, name: a.name, areaType: a.area_type || null, disciplines: a.disciplines || [], parentName: a.parent_name || null }; setArea(next); const d = firstDisc(next); if (d) { setDisc(d); setCap(crewMax({ discipline: d })); } setQ(""); };
   const pickDisc = (d) => { setDisc(d); setCap(crewMax({ discipline: d })); };
   const canStart = !!(area && area.id && disc);

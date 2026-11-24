@@ -20,7 +20,7 @@ const ACCESS_UPDATED = "2026-10-23";
 const EMAIL_RE=/^[^@\s]+@[^@\s]+\.[^@\s]+$/;
 function AccessReportForm({uid}){
   const [screen,setScreen]=useState(""),[problem,setProblem]=useState(""),[assistive,setAssistive]=useState(""),[email,setEmail]=useState(""),[state,setState]=useState("idle"),[why,setWhy]=useState("");
-  const field={width:"100%",padding:"9px 11px",borderRadius:9,border:"1px solid "+C.border,background:C.card,color:C.text,fontSize:14,boxSizing:"border-box",fontFamily:"inherit"},lbl={display:"block",fontSize:12.5,fontWeight:700,color:C.textSub,margin:"10px 0 4px"};
+  const field={width:"100%",padding:"9px 11px",borderRadius:9,border:"1px solid "+C.field,background:C.card,color:C.text,fontSize:14,boxSizing:"border-box",fontFamily:"inherit"},lbl={display:"block",fontSize:12.5,fontWeight:700,color:C.textSub,margin:"10px 0 4px"};
   const ready=!!problem.trim()&&(!!uid||EMAIL_RE.test(email.trim()));
   // A refusal the server explains (a daily limit) is shown in its own words; anything else is the generic line.
   const send=()=>{if(!ready||state==="sending")return;setState("sending");setWhy("");fileAccessibilityReport(uid,{screen,problem,assistive,email:uid?"":email}).then(r=>{if(r==="recorded"){setScreen("");setProblem("");setAssistive("");setEmail("");setState("sent");}else setState("failed");},e=>{setWhy(e&&e.code==="P0001"&&e.message?e.message:"");setState("failed");});};

@@ -49,7 +49,7 @@ function SubmissionCard({ r, notify, onOpenRoute }) {
       {"Save as the walk in for every climb at " + (r.area_name || "this crag")}
     </label> : null}
     {replaces ? <div style={{ fontSize: 12, color: C.textMuted }}>{replaces + " The old line is kept with this submission."}</div> : null}
-    <input value={note} onChange={(e) => setNote(e.target.value)} maxLength={2000} aria-label="Note for this review (optional)" placeholder="Note (optional)" style={{ width: "100%", boxSizing: "border-box", marginTop: 8, padding: "8px 10px", borderRadius: 8, border: "1px solid " + C.border, background: C.surface, color: C.text, fontSize: 13 }} />
+    <input value={note} onChange={(e) => setNote(e.target.value)} maxLength={2000} aria-label="Note for this review (optional)" placeholder="Note (optional)" style={{ width: "100%", boxSizing: "border-box", marginTop: 8, padding: "8px 10px", borderRadius: 8, border: "1px solid " + C.field, background: C.surface, color: C.text, fontSize: 13 }} />
     <div style={{ display: "flex", gap: 7, marginTop: 9, flexWrap: "wrap" }}>
       <button disabled={!!busy || short} onClick={() => act("approve")} style={{ ...btn, border: "1px solid " + C.blueDim, background: C.blueBg, color: C.onSolid, opacity: short ? 0.45 : 1 }}>{busy === "approve" ? "Working…" : "Approve"}</button>
       <button disabled={!!busy} onClick={() => act("reject")} style={{ ...btn, border: "1px solid " + C.border, background: C.surface, color: C.textSub, fontWeight: 600 }}>{busy === "reject" ? "Working…" : "Turn down"}</button>

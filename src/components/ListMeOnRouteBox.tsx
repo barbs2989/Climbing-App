@@ -74,7 +74,7 @@ export default function ListMeOnRouteBox({ routeId, noun, C, uid, myListings, li
   /* DATES THAT HAVE PASSED are not "free": the search hands other climbers no window for them, so this box must not print one either. */
   const ended = !!(mine && mine.freeTo && mine.freeTo < today);
   const win = ended ? "" : routeListingWindow(mine);
-  const field = { width: "100%", boxSizing: "border-box" as const, minHeight: 44, padding: "9px 12px", borderRadius: 10, border: "1px solid " + C.border, background: C.bg, color: C.text, fontFamily: "inherit", fontSize: 13.5 };
+  const field = { width: "100%", boxSizing: "border-box" as const, minHeight: 44, padding: "9px 12px", borderRadius: 10, border: "1px solid " + C.field, background: C.bg, color: C.text, fontFamily: "inherit", fontSize: 13.5 };
   return (
     <div role="region" aria-label={"List yourself as a partner for this " + noun} style={{ ...CARD(C, listed ? C.green : C.blueDim), marginBottom: 12 }}>
       <div style={EYEBROW(listed ? C.green : C.blue)}>Your listing</div>
