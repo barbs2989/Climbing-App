@@ -39,7 +39,7 @@ const blank = (v) => v == null || v === "";
 const out = { approach: [], climb: [], descent: [], total: [], mdClimbHidden: [], mdWalkInHidden: [] };
 // AFTER: the same question asked of the flags Calculator.tsx now reads. Each must be 0.
 const after = { approach: 0, climb: 0, descent: 0, total: 0, legCardZero: 0 };
-let mounted = 0, multi = 0, tradOnPeak = 0;
+let mounted = 0, multi = 0, tradOnPeak = 0, gainFromPlan = 0, gainFromPlanUntimed = 0, distFromPlan = 0;
 for (const r of rows) {
   const route = {
     id: r.id, discipline: r.discipline, grade: r.grade, pitches: r.pitches, mountainId: r.area_id, _dbArea: { areaType: peaks.has(r.area_id) ? "peak" : null },
@@ -52,6 +52,10 @@ for (const r of rows) {
   mounted++;
   if (/^(trad|rock|aid)$/.test(r.discipline || "")) tradOnPeak++;
   const P = planTimes(route, {});
+  // THE TRIP PLAN'S GAIN AND MILES: the leg card prints them (routeAscentFt, effDistKm); did the walk time them?
+  const planGainFt = Array.isArray(r.itinerary && r.itinerary.days) ? r.itinerary.days.reduce((a, d) => a + ((d && d.gainFt) || 0), 0) : 0;
+  if (blank(route.gainM) && planGainFt > 0) { gainFromPlan++; if (P.walkGainM == null) gainFromPlanUntimed++; }
+  if (blank(route.distKm) && P.walkKm != null) distFromPlan++;
   const tag = { id: r.id, name: r.name, disc: r.discipline, hikeH: +P.hikeH.toFixed(2), techH: +P.techH.toFixed(2), downH: +P.downH.toFixed(2), tripH: +P.tripH.toFixed(2) };
   const oldHike = !blank(route.distKm) || !blank(route.gainM);
   const oldAny = oldHike || P.hasPublishedSummitH || P.hasDerivedSummitH || realPitches(route) > 0 || P.loneApproachH != null || P.loneDescentH != null;
@@ -79,6 +83,7 @@ console.log(`${rows.length} routes read; ${mounted} mount Full trip time (${trad
 console.log(`One-day view — a tile printed N/A while planTimes (and the leg card under GETTING THERE) timed it:`);
 console.log(`  Approach: ${out.approach.length}   Climbing: ${out.climb.length}   Descent: ${out.descent.length}   Total: ${out.total.length}`);
 console.log(`  AFTER the fix: Approach ${after.approach}   Climbing ${after.climb}   Descent ${after.descent}   Total ${after.total}  (a descent leg card now leaves out its "≥0.0hr": ${after.legCardZero})`);
+console.log(`Trip plan holds the gain the leg card prints (no gain_ft): ${gainFromPlan}, of them the walk ignores it: ${gainFromPlanUntimed}; trip plan holds the miles (no dist_km): ${distFromPlan}`);
 console.log(`Multi-day view — the climb timed only as a clock, no duration: ${out.mdClimbHidden.length}; only one whole-trip figure: ${out.mdWalkInHidden.length}`);
 for (const k of ["approach", "climb", "descent", "total"]) for (const x of out[k].slice(0, 4)) console.log(`  [${k}] ${x.id}  approach ${x.hikeH}  climb ${x.techH}  descent ${x.downH}`);
 const i = process.argv.indexOf("--out");
