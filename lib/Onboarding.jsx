@@ -62,7 +62,7 @@ const GRADED_DISC = ["rock", "bouldering", "alpine", "ice", "mixed", "aid"];
 // Each step's name in the desktop rail and its icon above the question.
 const STEP_META = { username: ["Username", "user"], photo: ["Photo", "camera"], home: ["Home area", "pin"], climb: ["Your climbing", "mountain"], about: ["About you", "partners"], alerts: ["Notifications", "bell"] };
 
-const LOGO = (size) => <svg width={size} height={size} viewBox="0 0 24 24" aria-hidden="true" style={{display:"block",flexShrink:0}}><rect width="24" height="24" rx="5.5" fill={C.bg}/><g transform="translate(2.4 2.4) scale(0.8)"><path d="m8 3 4 8 5-5 5 15H2L8 3z" fill="none" stroke={C.blue} strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round"/></g></svg>;
+const LOGO = (size) => <svg width={size} height={size} viewBox="0 0 24 24" aria-hidden="true" style={{display:"block",flexShrink:0}}><rect width="24" height="24" rx="5.5" fill={C.bg}/><g transform="translate(-1.44 -1.44) scale(0.42)" fill="none" strokeWidth="5.5" strokeLinecap="round" strokeLinejoin="round"><path d="M10 50 L24 14 L33.5 33" stroke={C.brand}/><path d="M33.5 33 L42.5 22 L54 50" stroke={C.text}/><circle cx="33.5" cy="33" r="5.4" fill={C.bg} stroke="none"/><circle cx="33.5" cy="33" r="3.3" stroke={C.brand} strokeWidth="2.8"/></g></svg>;
 
 export default function Onboarding({onFinish,onSkip,onSignOut,onUsernameSaved,onDone,initial,onHelp,uid,googlePhoto,avatarNow,onAvatarChange,notifPrefs,onNotifChange}){
   const wide=useWideScreen();

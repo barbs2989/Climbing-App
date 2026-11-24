@@ -146,7 +146,8 @@ async function main() {
   const rr = await rowOf(ids[0]);
   if (rr && rr.status === "rejected" && /guidebook/.test(rr.review_note || "")) ok("the rejected row carries the reason"); else bad("rejected row", JSON.stringify(rr));
   const e3 = await edit(V, R, "season", "Nov–Mar");
-  if (e3.status >= 400 && (code(e3) === "42501" || e3.status === 403)) ok("a RESTRICTED contributor's edit is refused by the policy"); else bad("restricted edit", e3.status + " " + msg(e3));
+  // 0517: guard_field_contribution refuses it first, with its own sentence, before the RLS policy would.
+  if (e3.status >= 400 && (code(e3) === "42501" || e3.status === 403 || /Editing is paused/.test(msg(e3)))) ok("a RESTRICTED contributor's edit is refused by the policy"); else bad("restricted edit", e3.status + " " + msg(e3));
   const fl = await as(V).rpc("file_route_flag", { p_route_id: R, p_field: "season", p_note: "This window is wrong — it bakes in July" });
   if (fl.status < 300 && fl.body) ok("...but they can still FLAG a field"); else bad("flag while restricted", fl.status + " " + msg(fl));
   if ((await levelOf(V, R, "season")) === "low") ok("an open flag drops a MEDIUM field to LOW"); else bad("flagged level");

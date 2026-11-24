@@ -22,7 +22,8 @@ explains why: it tagged the ordinary rounded icon `purpose: "maskable"`. A maska
 be **full bleed** (the launcher supplies the shape; a pre-rounded tile inside its mask reads
 as a small badge floating on the launcher background) and its ink must stay inside the safe
 zone, which is the central circle of 80% the width — **not** the inner 80% square, whose
-corners sit at ~113% of that radius. The mark is a wide triangle, so its lower corners are
+corners sit at ~113% of that radius. The mark (since 2026-11-24 a twin-peak ridge in two
+strands, tied by a knot at the col) is widest at its two feet, so those lower corners are
 the binding constraint. The generator **measures the rendered pixels** and fails if any ink
 lands outside that circle, because the arithmetic is easy to get wrong: the first corrected
 scale still overshot at 82.9% and only the measurement caught it.

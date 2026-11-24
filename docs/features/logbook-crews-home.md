@@ -189,6 +189,30 @@ Three top-level `tab` values in `ClimbMatch.jsx` (`tab==="today"`, `tab==="crew"
   - Shown as COUNTS, never a score (the trust score was removed on 2026-10-21): "Showed up for 9 of 10 crew trips · 1 cancelled
     last minute" under the name on a profile (`FullProfile`) and on your own Profile tab (`MeTab`), from `reliabilityText`.
     Nothing until a trip is on record, nothing while the read is out. It is one term of the match % (`docs/features/partners.md`).
+  - **Fifth review (0527, owner 2026-11-24: "review again"): the trip's day is the CREW'S day.** Four rounds keyed
+    "the trip has begun" on worldwide worst cases (UTC+14, UTC-12) and each found a new edge between them. The database
+    now works out a crew's local time from the longitude of its climb, its area (or the nearest area above with a
+    coordinate) or its meet-up pin (`crew_trip_offset`, round(lng/15) hours; none at all reads as mountain time), and
+    keys everything on the crew's own day (`crew_trip_start`, `crew_trip_local_today`, `crew_trip_open`): the report
+    window, the day lock and the disband guard (one window), on the trip (came off on or after local midnight), bailed
+    (the 14 days before it), and an organizer's removal (recorded from that midnight). `crew_members.confirmed_at` is
+    stamped when a member is confirmed (`joined_at` is when the invite was made), and on the trip needs it before the
+    day ended. A trip is called off for a climber only when at least half of the OTHER crewmates who filed for it said so.
+    In the app `tripReportsOpen` and `tripDayLocked` read the device's local date (a crewmate is in the crew's zone); the
+    Day sheet locks only when someone else was on the trip; the alert checks when I was confirmed; a declined member is
+    still asked; the sheet clears its alert when there is nothing for me to report; a partner card waits only while the
+    read that answers it is in flight.
+  - **Fourth review (0526, owner 2026-11-24: "fix it then review again"): who was ON the trip.** Two questions now, not
+    one roster: ON THE TRIP (`crew_trip_was_on`) is confirmed with `joined_at` before the day ended (UTC-12), or came
+    off on or after the day began anywhere (UTC+14) — they report and are reported; BAILED is came off by their own hand
+    in the 14 days before — they are reported and do NOT report (a climber who left early used to be able to file
+    "called off", which clears the whole trip). Joining after the day puts nobody on it. An organizer's removal is
+    recorded only once the day has begun everywhere (`crew_trip_today() >= d`), and the organizer is never "others" for
+    the disband guard and the day lock. A climber who came off a trip after it began is asked from `my_trip_recaps()`
+    (`useMyTripRecaps`): the crew is no longer in their crews, so that read drives their alert and opens the sheet by
+    the crew's uuid. The Day sheet shows a locked notice while `tripDayLocked`, `updateCrew` returns whether the save
+    landed and the day toasts wait for it, Past crews asks only a confirmed member, and a partner card waits only for
+    its OWN climber's reliability (`placeholderData: keepPreviousData`, so a growing list does not re-blank cards).
   - **Third review (0525, owner 2026-11-24: "do another pass"): a trip is FIXED once its day comes.** From the trip's day
     in the earliest time zone (UTC+14) until its reports close: the crew's `agreed_date` cannot change
     (`crews_keep_day_while_reportable`) and the crew cannot be disbanded (the guard used to start only when the day

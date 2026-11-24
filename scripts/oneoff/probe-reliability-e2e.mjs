@@ -68,6 +68,9 @@ try {
   const yesterday = ymd(new Date(Date.now() - 86400000));
   const set = await svc(`crews?id=eq.${crewId}`, { method: "PATCH", body: JSON.stringify({ agreed_date: yesterday, dates: [yesterday] }) });
   if (set.status >= 300 || !set.json?.length) throw new Error("could not move the fixture crew's day to yesterday");
+  // "On the trip" (0526) needs members to have JOINED by the end of its day; the fixture's joined just now.
+  const back = await svc(`crew_members?crew_id=eq.${crewId}`, { method: "PATCH", body: JSON.stringify({ joined_at: new Date(Date.now() - 30 * 86400000).toISOString(), confirmed_at: new Date(Date.now() - 30 * 86400000).toISOString() }) });
+  if (back.status >= 300 || !back.json?.length) throw new Error("could not backdate the fixture crew's members");
   console.log(`  crew ${crewId.slice(0, 8)}: ${A.name} + ${B.name}, agreed day ${yesterday}\n`);
   const aS = await signIn(A), bS = await signIn(B);
   const a = rpc(aS.access_token), b = rpc(bS.access_token);
