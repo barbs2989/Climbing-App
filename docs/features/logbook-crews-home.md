@@ -187,6 +187,12 @@ Three top-level `tab` values in `ClimbMatch.jsx` (`tab==="today"`, `tab==="crew"
   - Shown as COUNTS, never a score (the trust score was removed on 2026-10-21): "Showed up for 9 of 10 crew trips · 1 cancelled
     last minute" under the name on a profile (`FullProfile`) and on your own Profile tab (`MeTab`), from `reliabilityText`.
     Nothing until a trip is on record, nothing while the read is out. It is one term of the match % (`docs/features/partners.md`).
+  - **Review fixes (0522, 2026-11-24):** only leaving ON OR BEFORE the day is a departure (leaving after the trip is
+    tidying up); reports keep their trip (`trip_crew`) when the crew is deleted, so two reports about one trip still
+    count once and a crewmate's *called off* still holds; a note added after *I was there* keeps the dispute; the
+    window has a day of slack each side (local date vs UTC). Both alerts obey Settings › Notifications › *Crew
+    updates*; *Who showed up* goes once you have filed (or there is nobody to mark), and *A crewmate marked you* stays
+    until you have said *I was there*, a note included. A crewmate's chips wait while their answer saves.
   - It replaced a Trip recap sheet of Showed / No-show buttons that wrote nothing (`relLedger`, a device-only "honored" ratio
     seeded at 23 of 24, and an unread `ME.reliability`).
 - **Crew safety check** (`SafetyTab`, 0314): the pre-climb questionnaire and "mark me safety-ready" are stored per crew for real crews (`saveCrewSafetyAnswers`, `markCrewSafetyReady`) in `crew_safety_answers`, readable by their owner alone. The crew's Team Alignment comes from `crew_alignment()` (`useCrewAlignment` → `alignmentFromServer`): counts per risk level and per flag, never anyone's answers, as the questionnaire promises. Flags are anonymous on every path (`alignmentFromCounts`). The crew card's per-member "reviewed the safety plan" mark reads `crew_ready_ids()` (`useCrewReadyIds`). Example crews keep the local path.
