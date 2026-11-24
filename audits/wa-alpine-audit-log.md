@@ -39810,3 +39810,60 @@ Kidney for a Friend, Backbone Ridge.
 
 1 confirmed error fixed, 0 newly flagged for human review, 9 clean.
 Next batch will continue id-ascending from `wa_dragontail_peak_backbone_ridge` (pass 9).
+
+## Batch 571 (pass 9) — 2026-11-24
+
+Checked 10 routes, all on Dragontail Peak, continuing id-ascending from
+`wa_dragontail_peak_backbone_ridge`: Boving Route, Colchuck Col Buttress, Complete Northeast
+Buttress, Dragon's Jaw, Dragonfruit, Dragons of Eden, East Ridge via Aasgard Pass, New Dark
+Ages, Northwest Face, Gerber-Sink.
+
+Dragon's Jaw's grade (5.11-), length (700ft/212m vs. stored 213m) and pitch count (6) all match
+its Mountain Project route page exactly. Dragons of Eden's length (2,250ft/686m, exact match)
+and pitch count (7, exact match) also match its Mountain Project page exactly. East Ridge via
+Aasgard Pass's stated Aasgard Pass elevation (7,841 ft) and Colchuck Lake elevation (5,570 ft)
+both check out exactly against Wikipedia/WTA, and its Enchantment Permit Area summary (quota
+permit May 15-Oct 31 via Recreation.gov lottery, free self-issued day-use permit otherwise)
+matches the Forest Service's and Recreation.gov's current rules. New Dark Ages' length
+(650ft/197m vs. stored 198m) and pitch count (5) match Mountain Project exactly. Gerber-Sink's
+length (2,000ft/606m vs. stored 610m) and pitch count (10) match Mountain Project exactly; its
+FA field already discloses that the exact Gerber/Sink given names and year aren't recorded,
+which is honest rather than wrong. Dragonfruit's grade (5.11) matches Mountain Project (5.11
+6c+); no source gives a pitch count either way, left unconfirmed. Colchuck Col Buttress has no
+findable source at all (grade, pitches, or the stored Barnett/Hansen 1974 FA) — thin row, left
+unconfirmed per the no-guessing rule, not flagged.
+
+No confirmed errors with a clean, sourced fix this batch — three genuine source conflicts
+flagged instead of guessed at:
+
+**Flagged for human review (3):**
+- **Boving Route** — stored `pitches` is 5. A Climbing.com retrospective confirms the FA (Paul
+  Boving, FFA with Matt Christensen, 1977, matching the stored FA) and the 5.10c grade (stored
+  "5.10" is a harmless truncation), but Joe Puryear's own published climbing résumé lists a
+  "Boving Route, Dragontail Peak" ascent (August 1998) as "IV 5.10c, 14 pitches" — a real
+  mismatch against the stored 5 pitches, not a different route (same peak, same name, same
+  grade). Could be a shorter named variation vs. the full buttress combination; left for a human
+  to resolve rather than picking one source.
+- **Complete Northeast Buttress** — stored `length_m` is 610 (2,000 ft) with `pitches` 1. The
+  5.8 R grade checks out exactly against Mountain Project, but 2,000 ft of climbing in one pitch
+  is physically implausible with a standard rope, and every comparably-long Dragontail buttress
+  route in this same batch and recent ones (Backbone Ridge 12p, Serpentine Arete 13p) runs
+  10+ pitches — no source gives this route's own pitch count to confirm or correct it, so
+  flagging the implausibility rather than guessing a replacement number.
+- **Northwest Face** — stored FA is "Fred Beckey and Dan Davis on June 28, 1962," grade 5.9,
+  213m/3 pitches. Beckey's own first-ascent account (AAJ 1963, read directly from the scanned
+  journal page) describes two separate Davis/Beckey routes put up on Dragontail "early this
+  summer" 1962: a **north face** (mostly 4th class, to the "north summit... which may never have
+  been reached before") and a **west face** ("an estimated 1700 feet high," mostly 4th class with
+  two 5th-class pitches on "friction holds with poor protection" — i.e. low 5th class, not 5.9).
+  Neither matches a route named "Northwest Face," neither matches the stored 700ft length, and
+  the specific date "June 28" isn't in the primary source at all (which only says "early this
+  summer"). Mountain Project's own "Northwest Face" route page independently gives 898ft/272m,
+  6 pitches — also contradicting the stored 213m/3 pitches. Three numbers disagree at once;
+  flagging rather than picking a side.
+
+**Clean (7):** Colchuck Col Buttress, Dragon's Jaw, Dragonfruit, Dragons of Eden, East Ridge via
+Aasgard Pass, New Dark Ages, Gerber-Sink.
+
+0 confirmed errors fixed, 3 newly flagged for human review, 7 clean.
+Next batch will continue id-ascending from `wa_dragontail_peak_r2` (pass 9).
