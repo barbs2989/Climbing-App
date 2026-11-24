@@ -441,6 +441,7 @@ if (!inverted) ok(`alpine ${alpine} >= rock ${counts.rock}, bouldering ${counts.
     aidGrade: "on an aid route the Grade picker IS the aid scale (ADDR_GRADES.aid)",
     glacierTravel: "a reviewed verdict about the NORMAL line in its NORMAL season (0490), settled by research or by a correction on the route page; a new climb starts unsettled, which keeps the careful Conditions wording",
     snowInSeason: "a reviewed verdict about the NORMAL line in its NORMAL season (0490), settled by research or by a correction on the route page; a new climb starts unsettled, which keeps the careful Conditions wording",
+    snowFreeFrom: "the date the usual line goes dry (0532), settled by research or by a correction on the route page; a new climb has none, so the Conditions card keeps its snow flags all season",
   };
   // Per type, where the edit sheet offers a fact the add form deliberately does not ask. (The crag exemptions
   // for High point, Trip shape and Published times went 2026-11-18: lib/fieldScope.js no longer offers them on a

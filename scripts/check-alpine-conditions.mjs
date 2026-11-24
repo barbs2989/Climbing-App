@@ -153,6 +153,24 @@ eq("...but a glacier WORD in an unreviewed scramble's text does not promote it",
   const { routeTerrain } = await import(pathToFileURL(path.join(ROOT, "lib", "terrain.js")).href);
   eq("routeTerrain hands condKind the two reviewed columns on their own", [routeTerrain({ id: "x", discipline: "alpine", grade: "5.8", snow_in_season: "yes" }).snowReviewed, routeTerrain({ id: "x", discipline: "alpine", grade: "5.8", snow_in_season: "yes" }).glacierReviewed, routeTerrain({ id: "x", discipline: "alpine", glacier_travel: "no" }).glacierReviewed], ["yes", null, "no"]);
 }
+/* SNOW-FREE FROM A DATE (owner, 2026-11-24): Forbidden West Ridge's couloir is a snow climb until it melts out,
+   then parties take the Cat Scratch gullies. routes.snow_free_from (0532) makes the card read the route as dry from
+   that date to 31 October, and as stored before it. */
+{
+  const { routeTerrain, snowFreeOn } = await import(pathToFileURL(path.join(ROOT, "lib", "terrain.js")).href);
+  const fwr = { id: "x", discipline: "alpine", grade: "5.6", glacier_travel: "yes", snow_in_season: "yes", snow_free_from: "08-15" };
+  const july = routeTerrain(fwr, { on: new Date(2026, 6, 10) }), sept = routeTerrain(fwr, { on: new Date(2026, 8, 5) }), nov = routeTerrain(fwr, { on: new Date(2026, 10, 3) });
+  eq("FORBIDDEN WEST RIDGE in July (couloir in) is the glacier card", k(fwr, july, "alpine"), "glacier");
+  eq("...in September (Cat Scratch gullies, snow-free from mid-August) it is alpine rock with no snow legs", [k(fwr, sept, "alpine"), A.hasSnowLegs(k(fwr, sept, "alpine"), sept), A.bridgeWord(k(fwr, sept, "alpine"), sept)], ["alpinerock", false, false]);
+  eq("...from November the stored answers apply again", k(fwr, nov, "alpine"), "glacier");
+  eq("...the date itself is the first dry day", [snowFreeOn(fwr, new Date(2026, 7, 14)).out, snowFreeOn(fwr, new Date(2026, 7, 15)).out, snowFreeOn(fwr, null).label], [false, true, "mid-August"]);
+  eq("...without a date (gear, packing) routeTerrain reads the whole season, as before", routeTerrain(fwr).snowInSeason, "yes");
+  eq("...a malformed or missing date is no date", [snowFreeOn({ snow_free_from: "Aug" }, new Date()), snowFreeOn({}, new Date())], [null, null]);
+  const early = { id: "y", discipline: "mountaineering", glacier_travel: "no", snow_in_season: "yes", snow_free_from: "07-01" };
+  eq("a walk-up holding snow THROUGH JUNE is a snow climb in June and a scramble in August", [k(early, routeTerrain(early, { on: new Date(2026, 5, 20) })), k(early, routeTerrain(early, { on: new Date(2026, 7, 1) }))], ["snow", "scramble"]);
+  const card = fs.readFileSync(path.join(ROOT, "lib", "AlpineConditionsCard.jsx"), "utf8");
+  eq("the card reads the terrain AS OF TODAY", /routeTerrain\(route, \{ on: /.test(card), true);
+}
 eq("an alpine route reviewed NO glacier is alpine rock even when its text names one", k({ discipline: "alpine", grade: "5.7" }, { glacierTravel: "no", glacier: "no", snow: "yes" }, "alpine"), "alpinerock");
 eq("the snow climb carries the snow legs and the snow timing; it is one of the snow kinds", [A.hasSnowLegs("snow", {}), A.isSnowKind("snow"), A.isSnowKind("glacier"), A.isSnowKind("alpineice"), A.isSnowKind("scramble")], [true, true, true, true, false]);
 eq("a sport route gets no alpine kind", k({ discipline: "sport" }, {}, "sport"), null);

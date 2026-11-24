@@ -33,7 +33,11 @@ export function forecastPoint(route, mtn) {
 }
 
 export default function AlpineConditionsCard({ route, mtn, calc, activity, reportsUnavailable }) {
-  const terrain = useMemo(function () { return routeTerrain(route); }, [route]);
+  /* Read as of TODAY: a route whose usual line melts out (routes.snow_free_from, lib/terrain.js snowFreeOn) is a dry
+     route past that date, so it loses its snow and glacier flags then and keeps them before. The card covers this
+     week, so today's date stands for all seven days. */
+  const day = new Date().toDateString();
+  const terrain = useMemo(function () { return routeTerrain(route, { on: new Date(day) }); }, [route, day]);
   const kind = condKind(route, terrain, catOf(route));
   const pt = useMemo(function () { return forecastPoint(route, mtn); }, [route, mtn]);
   if (!kind) return null;

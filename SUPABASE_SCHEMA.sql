@@ -9,7 +9,7 @@
 -- and commit the result in the same PR. `npm run gen:schema -- --check` exits 1 when this
 -- file has drifted from the live database.
 --
--- Counts: 91 tables, 910 columns, 499 keyed/checked constraints (163 foreign keys), 263 RLS policies.
+-- Counts: 91 tables, 911 columns, 500 keyed/checked constraints (163 foreign keys), 263 RLS policies.
 -- Not covered here: views, functions, triggers, standalone indexes (see supabase/migrations/).
 
 -- ── Foreign keys ───────────────────────────────────────────────────────────────
@@ -2071,6 +2071,7 @@ CREATE TABLE public.routes (
   extra_facts jsonb,
   glacier_travel text,
   snow_in_season text,
+  snow_free_from text,
   CONSTRAINT routes_pkey PRIMARY KEY (id),
   CONSTRAINT routes_anchor_len CHECK (((anchor IS NULL) OR ((char_length(anchor) >= 1) AND (char_length(anchor) <= 80)))),
   CONSTRAINT routes_approach_loss_ft_range CHECK (((approach_loss_ft IS NULL) OR ((approach_loss_ft >= 0) AND (approach_loss_ft <= 20000)))),
@@ -2086,6 +2087,7 @@ CREATE TABLE public.routes (
   CONSTRAINT routes_rack_items_array CHECK (((rack_items IS NULL) OR (jsonb_typeof(rack_items) = 'array'::text))),
   CONSTRAINT routes_return_gain_ft_range CHECK (((return_gain_ft IS NULL) OR ((return_gain_ft >= 0) AND (return_gain_ft <= 20000)))),
   CONSTRAINT routes_rock_quality_len CHECK (((rock_quality IS NULL) OR ((char_length(rock_quality) >= 1) AND (char_length(rock_quality) <= 160)))),
+  CONSTRAINT routes_snow_free_from_mmdd CHECK (((snow_free_from IS NULL) OR (snow_free_from ~ '^(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$'::text))),
   CONSTRAINT routes_snow_in_season_yn CHECK (((snow_in_season IS NULL) OR (snow_in_season = ANY (ARRAY['yes'::text, 'no'::text])))),
   CONSTRAINT routes_sun_len CHECK (((sun IS NULL) OR ((char_length(sun) >= 1) AND (char_length(sun) <= 160)))),
   CONSTRAINT routes_variations_is_array CHECK (((variations IS NULL) OR (jsonb_typeof(variations) = 'array'::text))),

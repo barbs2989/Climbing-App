@@ -35,6 +35,10 @@ for (const r of fin) {
   if (r.glacier === "yes" && r.snowInSeason !== "yes") throw new Error(r.id + ": glacier yes needs snow yes");
   want.set(r.id, { glacier_travel: col(r.glacier), snow_in_season: col(r.snowInSeason) });
 }
+// The 2026-11-24 seasonal review (load-snow-free-from.mjs) settled some WA rows after final.json: its answers win,
+// or re-running this load would undo them.
+const SEAS = path.join(ROOT, "research-data", "glacier-travel-2026-11-23", "seasonal", "final-seasonal.json");
+if (!STATE && fs.existsSync(SEAS)) for (const r of JSON.parse(fs.readFileSync(SEAS, "utf8"))) want.set(r.id, { glacier_travel: r.glacier_travel || null, snow_in_season: r.snow_in_season || null });
 // The dry list spans every state. A dry id that a later per-state review (<slug>/final.json) covers belongs to
 // that state's load: re-asserting glacier null here would undo it (2026-11-24: co_pyramid_peak_northeast_ridge
 // flipped between "no" and null with each WA and CO load).
