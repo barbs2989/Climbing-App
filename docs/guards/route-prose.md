@@ -674,11 +674,24 @@ the correction knows the screen is wrong, and they have no way to report it.
     the sourcing shapes only (`per/by/from/(` + Mazamas, or Mazamas + rates/gives/says…), because "a
     Mazamas party" first ascent and "a Mountaineers/Mazamas basic climb" are a club as credit or
     operator, which the rule keeps; injections `mazamasclub` (0) / `mazamascite` (all) pin both
-    directions. WA then read **61 values on 46 routes**; the 46 citation edits on 24 routes are in
-    `scripts/oneoff/prose-citations-2026-11-23/` (edits.json, apply.mjs, dry-run clean). The rest
+    directions. WA then read **61 values on 46 routes**; the 47 citation edits on 25 routes (two
+    "per Mazamas" lines on `adams_avalanche_glacier`, whose id has no `wa_` prefix, came from
+    `audit:misplaced-prose`) are in `scripts/oneoff/prose-citations-2026-11-23/` (edits.json,
+    apply.mjs, dry-run clean). Same day, `The Mountaineers` stopped matching the **Mountaineers
+    Route / Wall / Couloir** — Whitney's descent and a trail, ~16 of that audit's 75 all-state hits,
+    place names not sources — unless a page/description/notes word follows ("The Mountaineers route
+    page:" is still a citation). The rest
     are the kept classes: FA credits, a club as operator or grading body, a guidebook or map to carry,
     and the NWAC caveat. `audit:misplaced-prose` section 4 reads this same `NAMED`, so the widening
     reaches every state there.
+  - **Applied 2026-11-23: WA 61 → 23**, every survivor a kept class. The same day the all-state
+    section 4 (75 strings) was read whole: `Mountaineers Gully` joined the place-name exception, five
+    keeps joined its `KEEP` (a Mazamas-scale grade, a first-ascent party's club twice, the route
+    *Names in the Guidebook*, a club-named campground), and its unnamed SOURCING hedges — "one report
+    logged 15 hours", "Sources differ on the number of bolts", "guidebooks list 8-9", "published
+    beta" — became 16 plain statements of the same fact on 14 rows (CA, OR, UT, WV, WA; one area
+    blurb) in `scripts/oneoff/prose-hedges-2026-11-23/`. A disagreement becomes a RANGE ("4th to 5th
+    class", "AI4+ or WI4"), never a pick of one side.
   - **`waypoints[].directions` is scanned too, since 2026-10-01** — the "Getting here —" line in
     the same card as the note, and the one waypoint string the audit never read. Added when a
     web-researched pass filled 1,642 of them (663 routes; record and brief in
