@@ -162,7 +162,6 @@ export const MOVED = {
     "src/components/PullToRefresh.tsx",
     "src/components/TopContribBadge.tsx",
     "src/components/PlaceMatches.tsx",
-    "src/components/SectionJumps.tsx",
     "src/components/MiniCalendar.tsx",
     "src/components/SunCorrect.tsx",
     "src/components/AreaRegionSelect.tsx",
