@@ -1,0 +1,630 @@
+{
+ "wa_just_say_no": {
+  "area": "wa_narrow_arrow_and_further_right",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/106728857/just-say-no2",
+    "https://www.mountainproject.com/comments/forObject/Climb-Lib-Models-Route/106728857?sortOrder=newest&showAll=true",
+    "https://www.mountainproject.com/area/108143218/narrow-arrow-and-further-right",
+    "https://rakkup.com/guidebook/index-rock-climbing/just-say-no^2/c39321",
+    "https://rakkup.com/guidebook/index-rock-climbing/lower-town-wall/s10403",
+    "https://www.thecrag.com/en/climbing/united-states/central-cascade-mountains/area/16775827",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.57139,47.81847&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.57139,47.81847&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,parcel_id&returnGeometry=false&f=json",
+    "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "discipline",
+    "value": "trad",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106728857/just-say-no2",
+      "fact": "Type: Trad",
+      "retrieved_at": "2026-11-24"
+     },
+     {
+      "url": "https://rakkup.com/guidebook/index-rock-climbing/just-say-no^2/c39321",
+      "fact": "Trad, 5.12b",
+      "retrieved_at": "2026-11-24"
+     }
+    ]
+   },
+   {
+    "field": "length_m",
+    "value": 27,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106728857/just-say-no2",
+      "fact": "Trad, 90 ft (27 m)",
+      "retrieved_at": "2026-11-24"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_just_say_no",
+    "column": "access",
+    "from": {
+     "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+     "notes": "Many of these peaks (Mount Persis, Gunn Peak, Baring Mountain area) sit outside designated wilderness — administratively unrestricted despite serious technical terrain.",
+     "permit": "None required.",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+     "parking_pass": "Northwest Forest Pass or America the Beautiful pass required at developed trailheads."
+    },
+    "to": {
+     "land_manager": "Washington State Parks (Forks of the Sky State Park)"
+    },
+    "why": "Brief AH-AK: replaces the LEGACY object (Mt. Baker-Snoqualmie NF, Skykomish RD, Northwest Forest Pass, a Mount Rainier NP fee line and an unrelated peaks note) with the owner-approved Forks of the Sky object, copied field for field from the live wa_godzilla row. Re-read 2026-11-24: the State Parks boundary layer returns Forks of the Sky, State Park Property, and Snohomish County parcel 10030000000400 is owned by Washington State Parks & Recreation, at 47.81847,-121.57139; the parks.wa.gov release states no pass, fee or closure rule. permit stays null.",
+    "evidence": [
+     "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.57139,47.81847&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+     "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.57139,47.81847&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,parcel_id&returnGeometry=false&f=json",
+     "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_just_say_no",
+    "column": "grade",
+    "from": "5.12a/b",
+    "to": "5.12b",
+    "why": "Three publishers put it at 5.12b and none at 5.12a: the Index guide 5.12b, theCrag's Lower Town Walls sector 5.12b, Mountain Project 5.12b/c (a slash grade agrees with either half). Majority rule. INDEPENDENCE CAVEAT: theCrag's Index grades often follow the guide, so the guide + MP pair is the one that counts; the stored 5.12a/b also overlaps 5.12b under the slash tolerance, so the owner may treat this as optional.",
+    "evidence": [
+     "https://rakkup.com/guidebook/index-rock-climbing/just-say-no^2/c39321",
+     "https://rakkup.com/guidebook/index-rock-climbing/lower-town-wall/s10403",
+     "https://www.mountainproject.com/route/106728857/just-say-no2",
+     "https://www.thecrag.com/en/climbing/united-states/central-cascade-mountains/area/16775827"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_just_say_no",
+    "column": "grade_num",
+    "from": 12.25,
+    "to": 12.5,
+    "why": "Goes with the grade change: gradeNumFrom('5.12b','yds') = 12.5.",
+    "evidence": [
+     "https://rakkup.com/guidebook/index-rock-climbing/just-say-no^2/c39321",
+     "https://www.mountainproject.com/route/106728857/just-say-no2"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_just_say_no",
+    "column": "guide_stars",
+    "from": null,
+    "to": 2,
+    "why": "The Index guide's own entry rates it 2 stars (climb page and Lower Town Wall list agree); stored null.",
+    "evidence": [
+     "https://rakkup.com/guidebook/index-rock-climbing/just-say-no^2/c39321",
+     "https://rakkup.com/guidebook/index-rock-climbing/lower-town-wall/s10403"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_just_say_no",
+    "column": "gear",
+    "from": null,
+    "to": [
+     "nuts or small cams, red C3 to BD 0.4",
+     "one BD #2 cam"
+    ],
+    "why": "gear is empty. Mountain Project protection: a few cams from a red C3 to a 0.4 BD, or nuts in that range, plus one #2 BD cam with a sling. Single source.",
+    "evidence": [
+     "https://www.mountainproject.com/route/106728857/just-say-no2"
+    ]
+   }
+  ],
+  "held": [
+   "bolts (stored null): MP's page states 7 lead bolts, but its comments say new bolts went in on 2020-09-29 and a 2021 comment calls it a rebolting candidate; the count may predate the change. Held.",
+   "anchor: MP says it finishes at the With Apologies to Walter B anchor; type not stated. Not proposed."
+  ],
+  "disputed": [],
+  "notes": "Grade not ledgered because a fix changes it. SCOPE: own line (MP page, guide entry, theCrag listing). It starts left of With Apologies to Walter B (wa_with_apologies_to_walter_b), climbs the bolt line left of the arete, and finishes at the Walter B anchor. Like Honey (wa_like_honey, context) uses Just Say NO2's start and then the Walter B finger crack (batch AJ). FA 'Jim Yoder & Larry Kemp' matches MP; one source, not ledgered. pitches 1 left as is (not a stated count). SAFETY (MP): the page warns that leading without pre-hanging draws on the upper arete is dangerous and that the last arete bolt may not be clippable on lead; a 2021 comment advises a long draw on the last bolt. No stored prose names fixed gear. 2023 rockfall: not on or below the Great Northern Slab, and no change reported."
+ },
+ "wa_narrow_arrow_overhang": {
+  "area": "wa_narrow_arrow_and_further_right",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/106328225/narrow-arrow-overhang",
+    "https://www.mountainproject.com/comments/forObject/Climb-Lib-Models-Route/106328225?sortOrder=newest&showAll=true",
+    "https://www.mountainproject.com/area/108143218/narrow-arrow-and-further-right",
+    "https://rakkup.com/guidebook/index-rock-climbing/narrow-arrow-overhang/c18749",
+    "https://rakkup.com/guidebook/index-rock-climbing/lower-town-wall/s10403",
+    "https://www.thecrag.com/en/climbing/united-states/central-cascade-mountains/area/16775827",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.57139,47.81847&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.57139,47.81847&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,parcel_id&returnGeometry=false&f=json",
+    "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.13a",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106328225/narrow-arrow-overhang",
+      "fact": "5.13a YDS",
+      "retrieved_at": "2026-11-24"
+     },
+     {
+      "url": "https://rakkup.com/guidebook/index-rock-climbing/narrow-arrow-overhang/c18749",
+      "fact": "5.13a, Trad, 4 stars",
+      "retrieved_at": "2026-11-24"
+     }
+    ]
+   },
+   {
+    "field": "discipline",
+    "value": "trad",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106328225/narrow-arrow-overhang",
+      "fact": "Type: Trad",
+      "retrieved_at": "2026-11-24"
+     },
+     {
+      "url": "https://rakkup.com/guidebook/index-rock-climbing/narrow-arrow-overhang/c18749",
+      "fact": "Trad icon",
+      "retrieved_at": "2026-11-24"
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 2,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106328225/narrow-arrow-overhang",
+      "fact": "Trad, 120 ft (36 m), 2 pitches",
+      "retrieved_at": "2026-11-24"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_narrow_arrow_overhang",
+    "column": "access",
+    "from": {
+     "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+     "notes": "Many of these peaks (Mount Persis, Gunn Peak, Baring Mountain area) sit outside designated wilderness — administratively unrestricted despite serious technical terrain.",
+     "permit": "None required.",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+     "parking_pass": "Northwest Forest Pass or America the Beautiful pass required at developed trailheads."
+    },
+    "to": {
+     "land_manager": "Washington State Parks (Forks of the Sky State Park)"
+    },
+    "why": "Brief AH-AK: replaces the LEGACY object (Mt. Baker-Snoqualmie NF, Skykomish RD, Northwest Forest Pass, a Mount Rainier NP fee line and an unrelated peaks note) with the owner-approved Forks of the Sky object, copied field for field from the live wa_godzilla row. Re-read 2026-11-24: the State Parks boundary layer returns Forks of the Sky, State Park Property, and Snohomish County parcel 10030000000400 is owned by Washington State Parks & Recreation, at 47.81847,-121.57139; the parks.wa.gov release states no pass, fee or closure rule. permit stays null.",
+    "evidence": [
+     "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.57139,47.81847&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+     "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.57139,47.81847&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,parcel_id&returnGeometry=false&f=json",
+     "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+    ]
+   }
+  ],
+  "held": [
+   "guide_stars: stored 2; the Index guide's climb page and list both give 4 stars. Existing nonzero value, one source; reported, not changed.",
+   "length_m: stored 37; MP gives 120 ft (36 m). Within tolerance, but no second source states a length; not ledgered, not changed.",
+   "aid_grade C3: no source read states an aid grade (MP gives the 1968 aid FA without a grade). Reported.",
+   "anchor: MP describes bolted anchors at the ledge and a newer anchor about 15 ft above the roof, but a 2022 comment says the lowest anchor has disappeared. Not proposed."
+  ],
+  "disputed": [],
+  "notes": "SCOPE: own line (MP, guide, theCrag). theCrag also lists 'NAO first anchor' (5.11d, 82 ft) as a separate entry for the first part of the pitch to the lowest chains. Sits between Natural Log Cabin / Deal with it Ranger and Narrow Arrow Direct. FA DEFECT (report only): fa stores the aid FA, two partial FFAs and their labels in one string; MP adds the first complete free ascent of the modern pitch by Ben Gilkison, October 2008. Not rewritten (batch N rule). SAFETY (report, prose not rewritten): (1) MP comment 2022-09-07 says the LOWEST anchor has disappeared and the current lowest anchor is at the top of the 'cryptic 5.11R' section. Stored pitch_detail[0].belay reads \"The belay is an anchor on a ledge, reached after the face and corner moves past two bolts.\" and gear item reads \"2 bolts on the first pitch, to a ledge anchor\"; the owner should check whether that ledge anchor is the one now gone. (2) MP comment 2017-09-01: the 0.5 Camalot placement that protected the roof crux pulled and took a large chunk of rock with it; the placement is now shallow and unreliable (a blue Totem near the lip is suggested, finicky). The MP page also notes broken rock changed a critical placement. Stored pitch_detail[1].notes lists 'cams to 1 in' for the crux pitch without this warning. Descent per MP: single 70 m rope from the top anchors. No 2023-rockfall change reported."
+ },
+ "wa_narrow_arrow_direct": {
+  "area": "wa_narrow_arrow_and_further_right",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/106222524/narrow-arrow-direct",
+    "https://www.mountainproject.com/comments/forObject/Climb-Lib-Models-Route/106222524?sortOrder=newest&showAll=true",
+    "https://www.mountainproject.com/area/108143218/narrow-arrow-and-further-right",
+    "https://rakkup.com/guidebook/index-rock-climbing/narrow-arrow-direct/c18750",
+    "https://rakkup.com/guidebook/index-rock-climbing/lower-town-wall/s10403",
+    "https://www.thecrag.com/en/climbing/united-states/central-cascade-mountains/area/16775827",
+    "https://www.mountainproject.com/route/124899678/narrow-arrow-indirect",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.57139,47.81847&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.57139,47.81847&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,parcel_id&returnGeometry=false&f=json",
+    "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.12c",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106222524/narrow-arrow-direct",
+      "fact": "5.12c YDS",
+      "retrieved_at": "2026-11-24"
+     },
+     {
+      "url": "https://rakkup.com/guidebook/index-rock-climbing/narrow-arrow-direct/c18750",
+      "fact": "5.12c, Trad, 4 stars",
+      "retrieved_at": "2026-11-24"
+     }
+    ]
+   },
+   {
+    "field": "discipline",
+    "value": "trad",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106222524/narrow-arrow-direct",
+      "fact": "Type: Trad",
+      "retrieved_at": "2026-11-24"
+     },
+     {
+      "url": "https://rakkup.com/guidebook/index-rock-climbing/narrow-arrow-direct/c18750",
+      "fact": "Trad icon",
+      "retrieved_at": "2026-11-24"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_narrow_arrow_direct",
+    "column": "access",
+    "from": {
+     "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+     "notes": "Many of these peaks (Mount Persis, Gunn Peak, Baring Mountain area) sit outside designated wilderness — administratively unrestricted despite serious technical terrain.",
+     "permit": "None required.",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+     "parking_pass": "Northwest Forest Pass or America the Beautiful pass required at developed trailheads."
+    },
+    "to": {
+     "land_manager": "Washington State Parks (Forks of the Sky State Park)"
+    },
+    "why": "Brief AH-AK: replaces the LEGACY object (Mt. Baker-Snoqualmie NF, Skykomish RD, Northwest Forest Pass, a Mount Rainier NP fee line and an unrelated peaks note) with the owner-approved Forks of the Sky object, copied field for field from the live wa_godzilla row. Re-read 2026-11-24: the State Parks boundary layer returns Forks of the Sky, State Park Property, and Snohomish County parcel 10030000000400 is owned by Washington State Parks & Recreation, at 47.81847,-121.57139; the parks.wa.gov release states no pass, fee or closure rule. permit stays null.",
+    "evidence": [
+     "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.57139,47.81847&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+     "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.57139,47.81847&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,parcel_id&returnGeometry=false&f=json",
+     "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_narrow_arrow_direct",
+    "column": "gear",
+    "from": null,
+    "to": [
+     "cams from very thin to green Camalot (0.5)",
+     "nuts"
+    ],
+    "why": "gear is empty. Mountain Project protection: gear from very thin up to a green Camalot, plus nuts. Single source.",
+    "evidence": [
+     "https://www.mountainproject.com/route/106222524/narrow-arrow-direct"
+    ]
+   }
+  ],
+  "held": [
+   "pitches (stored 2) and length_m (stored 30): the sources disagree. MP lists ONE pitch, 100 ft (30 m), lowering to the ground with a 60 m rope, and says three more pitches (to 5.10c, with an offwidth) can follow; theCrag's sector lists 3 pitches (5.12c, 5.10d, 5.10b); MP's Narrow Arrow Indirect page refers to NAD's P2 and P3 anchors. The stored 2 pitches matches none, and 30 m is the first pitch alone. Neither changed.",
+   "guide_stars: stored 2; the Index guide's climb page and list give 4 stars. Existing nonzero value, one source; reported.",
+   "bolts (stored null): MP's protection text says four bolts, but an MP comment of 2025-10-09 reports a new 1/2 in bolt placed at the P1 roof in place of an old 5/8 in angle pin, so the count has changed. Held."
+  ],
+  "disputed": [
+   "pitches: MP 1 (with optional continuation) vs theCrag 3 vs stored 2."
+  ],
+  "notes": "SCOPE: own line (MP, guide, theCrag). Starts with a wide stemming corner (5.11b) or, more easily, via Shirley (wa_shirley). The Cleft (stored as alt_name) is P4 of the Narrow Arrow Indirect link-up (batch AH) above NAD's upper pitches; MP's NAD page does not name it, so alt_names ['The Cleft'] is unverified as an alternate NAME for this route: report. FA DEFECT (report only): fa stores \"Fa: Ron burgner, Mark Weigelt FFA P2-3: John Stoddard FFA P1: Toprope long ago? Dave Morales?\" (labels, question marks, lower-case 'burgner'); MP gives FA Ron Burgner, Mark Weigelt; FFA P2-3 John Stoddard; FFA P1 Dave Moroles (spelled Moroles, also in a 2025 comment). One publisher; not rewritten. SAFETY: 2025-10-09 MP comment: the old fixed pin at the P1 roof was removed and replaced with a bolt (optional clip; cams there pulled under body weight in tests). No stored prose on this row names the pin. 2024 comment: a hornet nest under the P1 roof (seasonal). No 2023-rockfall change reported."
+ },
+ "wa_natural_log_cabin": {
+  "area": "wa_narrow_arrow_and_further_right",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/105805752/natural-log-cabin",
+    "https://www.mountainproject.com/comments/forObject/Climb-Lib-Models-Route/105805752?sortOrder=newest&showAll=true",
+    "https://www.mountainproject.com/area/108143218/narrow-arrow-and-further-right",
+    "https://rakkup.com/guidebook/index-rock-climbing/natural-log-cabin/c18748",
+    "https://rakkup.com/guidebook/index-rock-climbing/lower-town-wall/s10403",
+    "https://www.thecrag.com/en/climbing/united-states/central-cascade-mountains/area/16775827",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.57139,47.81847&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.57139,47.81847&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,parcel_id&returnGeometry=false&f=json",
+    "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.11d",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105805752/natural-log-cabin",
+      "fact": "5.11d YDS (R)",
+      "retrieved_at": "2026-11-24"
+     },
+     {
+      "url": "https://rakkup.com/guidebook/index-rock-climbing/natural-log-cabin/c18748",
+      "fact": "5.11d, Trad, 4 stars",
+      "retrieved_at": "2026-11-24"
+     }
+    ]
+   },
+   {
+    "field": "discipline",
+    "value": "trad",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105805752/natural-log-cabin",
+      "fact": "Type: Trad",
+      "retrieved_at": "2026-11-24"
+     },
+     {
+      "url": "https://rakkup.com/guidebook/index-rock-climbing/natural-log-cabin/c18748",
+      "fact": "Trad icon",
+      "retrieved_at": "2026-11-24"
+     }
+    ]
+   },
+   {
+    "field": "length_m",
+    "value": 40,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105805752/natural-log-cabin",
+      "fact": "Trad, 130 ft (39 m)",
+      "retrieved_at": "2026-11-24"
+     },
+     {
+      "url": "https://www.thecrag.com/en/climbing/united-states/central-cascade-mountains/area/16775827",
+      "fact": "Natural Log Cabin, Mixed trad, 130ft",
+      "retrieved_at": "2026-11-24"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_natural_log_cabin",
+    "column": "access",
+    "from": {
+     "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+     "notes": "Many of these peaks (Mount Persis, Gunn Peak, Baring Mountain area) sit outside designated wilderness — administratively unrestricted despite serious technical terrain.",
+     "permit": "None required.",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+     "parking_pass": "Northwest Forest Pass or America the Beautiful pass required at developed trailheads."
+    },
+    "to": {
+     "land_manager": "Washington State Parks (Forks of the Sky State Park)"
+    },
+    "why": "Brief AH-AK: replaces the LEGACY object (Mt. Baker-Snoqualmie NF, Skykomish RD, Northwest Forest Pass, a Mount Rainier NP fee line and an unrelated peaks note) with the owner-approved Forks of the Sky object, copied field for field from the live wa_godzilla row. Re-read 2026-11-24: the State Parks boundary layer returns Forks of the Sky, State Park Property, and Snohomish County parcel 10030000000400 is owned by Washington State Parks & Recreation, at 47.81847,-121.57139; the parks.wa.gov release states no pass, fee or closure rule. permit stays null.",
+    "evidence": [
+     "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.57139,47.81847&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+     "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.57139,47.81847&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,parcel_id&returnGeometry=false&f=json",
+     "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_natural_log_cabin",
+    "column": "anchor",
+    "from": null,
+    "to": "Chain anchor",
+    "why": "anchor is empty. Mountain Project: the route ends at chains. House spelling. Single source.",
+    "evidence": [
+     "https://www.mountainproject.com/route/105805752/natural-log-cabin"
+    ]
+   }
+  ],
+  "held": [
+   "fa: stored 'Darryl Cramer, Nicola Masciandaro 1985'; MP gives 'Darryl Cramer, Nicola Masciandaro, and Terry Lien (1985)'. One source adds a third climber; held.",
+   "guide_stars: stored 2; the Index guide's climb page and list give 4 stars. Existing nonzero value, one source; reported.",
+   "prot_rating (stored null): MP lists R; theCrag lists R - X. Not the same value; not proposed.",
+   "bolts (stored null): theCrag's sector line shows 'Mixed trad 130ft, 5' (probably 5 bolts, not labelled); MP gives no count, and a 2021 comment describes bolts that replaced earlier pins. Not proposed. theCrag's route page went to a bot-check redirect (one try, own tab, closed; no CAPTCHA touched)."
+  ],
+  "disputed": [],
+  "notes": "SCOPE: own line (MP, guide, theCrag). Shares its start and anchor with Deal with it Ranger (wa_deal_with_it_ranger, batch AJ); Natural Log Cabin steps right into the bolted corner where Deal with it Ranger goes straight up the chimney. It is the next line right of Godzilla P1 and one way to reach Salad Fingers. pitches 1 left as is (MP gives a single length, no stated count). Descent per MP: lowering is discouraged for rope drag, and a 70 m rope does not reach the ground when lowering. SAFETY: runout 5.10 to the first bolt (MP); a 2023 comment describes a near ground fall in the roof-cabin section after a foot slip. No stored prose names fixed gear (only the generic hazards line). No 2023-rockfall change reported."
+ },
+ "wa_full_horse_power": {
+  "area": "wa_c_main_wall_left_side",
+  "review": {
+   "sources": [
+    "https://openbeta.io/climb/0ece66bc-60cf-5077-ab7f-3f0aa9a79979/full-horse-power",
+    "https://openbeta.io/area/ec924cd1-1663-5700-a1a1-2a188db444a2/c-main-wall-left-side",
+    "https://www.mountainproject.com/route/121370114/powerhorse",
+    "https://www.mountainproject.com/route/106197952/amandla",
+    "https://rakkup.com/guidebook/index-rock-climbing/powerhorse/c39272",
+    "https://www.mountainproject.com/area/105790707/dwarf-tossing-to-narrow-arrow",
+    "https://rakkup.com/guidebook/index-rock-climbing/lower-town-wall/s10403",
+    "https://www.thecrag.com/en/climbing/united-states/central-cascade-mountains/area/16775827",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.57139,47.81847&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.57139,47.81847&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,parcel_id&returnGeometry=false&f=json",
+    "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+   ]
+  },
+  "ledger": [],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_full_horse_power",
+    "column": "access",
+    "from": {
+     "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+     "notes": "Many of these peaks (Mount Persis, Gunn Peak, Baring Mountain area) sit outside designated wilderness — administratively unrestricted despite serious technical terrain.",
+     "permit": "None required.",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+     "parking_pass": "Northwest Forest Pass or America the Beautiful pass required at developed trailheads."
+    },
+    "to": {
+     "land_manager": "Washington State Parks (Forks of the Sky State Park)"
+    },
+    "why": "Brief AH-AK: replaces the LEGACY object (Mt. Baker-Snoqualmie NF, Skykomish RD, Northwest Forest Pass, a Mount Rainier NP fee line and an unrelated peaks note) with the owner-approved Forks of the Sky object, copied field for field from the live wa_godzilla row. Re-read 2026-11-24: the State Parks boundary layer returns Forks of the Sky, State Park Property, and Snohomish County parcel 10030000000400 is owned by Washington State Parks & Recreation, at 47.81847,-121.57139; the parks.wa.gov release states no pass, fee or closure rule. permit stays null.",
+    "evidence": [
+     "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.57139,47.81847&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+     "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.57139,47.81847&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,parcel_id&returnGeometry=false&f=json",
+     "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_full_horse_power",
+    "column": "pitches",
+    "from": 0,
+    "to": null,
+    "why": "0 is invalid. Full Horse Power is an extension of Powerhorse (Iron Horse to its first chains, the upper arete of Amandla, then over the roof); no source states a pitch count for it. Null rather than a guess (batch P/R rule).",
+    "evidence": [
+     "https://www.mountainproject.com/route/121370114/powerhorse",
+     "https://openbeta.io/climb/0ece66bc-60cf-5077-ab7f-3f0aa9a79979/full-horse-power"
+    ]
+   }
+  ],
+  "held": [
+   "grade 5.13a: only OpenBeta lists the route (5.13a, FA unknown, no description), and OpenBeta = Mountain Project as a publisher; MP itself has no page for it. Nothing locked."
+  ],
+  "disputed": [],
+  "notes": "SCOPE / CLEAN-UP CANDIDATE: an EXTENSION, not its own line. MP's Powerhorse page describes Full Horse Power as the extension that continues out over the roof above Powerhorse's anchor. Powerhorse (catalog wa_dwarf_tossing_to_narrow_arrow_powerhorse; MP 5.13a, 90 ft, FA Justen Sjong; guide 5.12d) climbs Iron Horse (wa_iron_horse) to its first chains, then Amandla's (wa_amandla) upper arete bolts. MP's Amandla page says the original Amandla anchor was moved up under the roof, and its own extension goes over the roof past one bolt to a ledge anchor. So Full Horse Power = Iron Horse start + Amandla upper arete + the roof extension: related to BOTH Powerhorse (its full version) and Iron Horse (its start). Not in the Index guide's list, not on theCrag's sector, no MP page: only OpenBeta lists it, with no description. Owner decides whether it stays. MISFILED: OpenBeta files it in 'Main Wall, left side', which is OpenBeta's name for MP's 'Dwarf Tossing to Narrow Arrow' (OpenBeta's list of 48 there is MP's list of 46 plus Full Horse Power and Open Project). If kept, it belongs in wa_dwarf_tossing_to_narrow_arrow beside Powerhorse. No 2023-rockfall change reported."
+ },
+ "wa_dwarf_tossing_to_narrow_arrow_dr_sniff_and_the_tuna_boaters": {
+  "area": "wa_dwarf_tossing_to_narrow_arrow",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/105806007/dr-sniff-and-the-tuna-boaters",
+    "https://www.mountainproject.com/comments/forObject/Climb-Lib-Models-Route/105806007?sortOrder=newest&showAll=true",
+    "https://www.mountainproject.com/area/105790707/dwarf-tossing-to-narrow-arrow",
+    "https://rakkup.com/guidebook/index-rock-climbing/dr.-sniff-and-the-tuna-boaters/c18500",
+    "https://rakkup.com/guidebook/index-rock-climbing/lower-town-wall/s10403",
+    "https://www.thecrag.com/en/climbing/united-states/central-cascade-mountains/area/16775827",
+    "https://openbeta.io/area/ec924cd1-1663-5700-a1a1-2a188db444a2/c-main-wall-left-side",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.57139,47.81847&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.57139,47.81847&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,parcel_id&returnGeometry=false&f=json",
+    "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.10d",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105806007/dr-sniff-and-the-tuna-boaters",
+      "fact": "5.10d YDS",
+      "retrieved_at": "2026-11-24"
+     },
+     {
+      "url": "https://rakkup.com/guidebook/index-rock-climbing/dr.-sniff-and-the-tuna-boaters/c18500",
+      "fact": "5.10d, Trad, 3 stars",
+      "retrieved_at": "2026-11-24"
+     }
+    ]
+   },
+   {
+    "field": "discipline",
+    "value": "trad",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105806007/dr-sniff-and-the-tuna-boaters",
+      "fact": "Type: Trad",
+      "retrieved_at": "2026-11-24"
+     },
+     {
+      "url": "https://rakkup.com/guidebook/index-rock-climbing/dr.-sniff-and-the-tuna-boaters/c18500",
+      "fact": "Trad icon",
+      "retrieved_at": "2026-11-24"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_dwarf_tossing_to_narrow_arrow_dr_sniff_and_the_tuna_boaters",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Washington State Parks (Forks of the Sky State Park)"
+    },
+    "why": "Brief AH-AK: fills the null access with the owner-approved Forks of the Sky object, copied field for field from the live wa_godzilla row. Re-read 2026-11-24: the State Parks boundary layer returns Forks of the Sky, State Park Property, and Snohomish County parcel 10030000000400 is owned by Washington State Parks & Recreation, at 47.81847,-121.57139; the parks.wa.gov release states no pass, fee or closure rule. permit stays null.",
+    "evidence": [
+     "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.57139,47.81847&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+     "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.57139,47.81847&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,parcel_id&returnGeometry=false&f=json",
+     "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_dwarf_tossing_to_narrow_arrow_dr_sniff_and_the_tuna_boaters",
+    "column": "guide_stars",
+    "from": null,
+    "to": 3,
+    "why": "The Index guide's own entry rates it 3 stars (climb page and Lower Town Wall list agree); stored null.",
+    "evidence": [
+     "https://rakkup.com/guidebook/index-rock-climbing/dr.-sniff-and-the-tuna-boaters/c18500",
+     "https://rakkup.com/guidebook/index-rock-climbing/lower-town-wall/s10403"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_dwarf_tossing_to_narrow_arrow_dr_sniff_and_the_tuna_boaters",
+    "column": "gear",
+    "from": null,
+    "to": [
+     "gear to 2 in",
+     "small cams"
+    ],
+    "why": "gear is empty. Mountain Project protection: gear to 2 inches; a 2023 comment says small cams are still needed. Single source.",
+    "evidence": [
+     "https://www.mountainproject.com/route/105806007/dr-sniff-and-the-tuna-boaters",
+     "https://www.mountainproject.com/comments/forObject/Climb-Lib-Models-Route/105806007?sortOrder=newest&showAll=true"
+    ]
+   }
+  ],
+  "held": [
+   "fa (stored null): MP gives Terry Lien and Greg Olsen. A blank FA needs two sources; the guide teaser and theCrag sector do not show an FA. Held.",
+   "length_m (stored null): no source states it."
+  ],
+  "disputed": [],
+  "notes": "KEEPER of a duplicate pair (see wa_c_main_wall_left_side_doctor_sniff). SCOPE: own line (MP, guide, theCrag 'Doctor Sniff and the Tuna Boaters' 5.10d). It starts from the belay atop Princely Ambitions P1 and moves left into a finger crack, just right of Princely Ambitions P2; a 2023 comment calls it an alternative to Princely's second pitch, and says a party can traverse from Princely P2 to the Dr. Sniff anchors to top-rope it. pitches 1 left as is (not a stated count). SAFETY: none beyond MP's note that the layback near the top is hard to protect; comments say the fall is clean. Princely Ambitions is near the trail section the 2023 rockfall thread mentions (debris on the trail near Roger's Corner / Princely Ambitions), but no source reports a change to this line."
+ },
+ "wa_c_main_wall_left_side_doctor_sniff": {
+  "area": "wa_c_main_wall_left_side",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/105806007/dr-sniff-and-the-tuna-boaters",
+    "https://www.mountainproject.com/area/105790707/dwarf-tossing-to-narrow-arrow",
+    "https://rakkup.com/guidebook/index-rock-climbing/dr.-sniff-and-the-tuna-boaters/c18500",
+    "https://rakkup.com/guidebook/index-rock-climbing/lower-town-wall/s10403",
+    "https://www.thecrag.com/en/climbing/united-states/central-cascade-mountains/area/16775827",
+    "https://openbeta.io/area/ec924cd1-1663-5700-a1a1-2a188db444a2/c-main-wall-left-side",
+    "https://openbeta.io/area/625dbab0-15ce-5fba-854d-523514c50c00/lower-town-wall"
+   ]
+  },
+  "ledger": [],
+  "sql_fixes": [],
+  "held": [
+   "No fixes: DUPLICATE row (brief AE rule). Its access stays null; its grade 5.11a and guide_stars 2 are backed by no source read."
+  ],
+  "disputed": [],
+  "notes": "DUPLICATE (clean-up candidate, owner call): 'Doctor Sniff' is a short form of Dr. Sniff and the Tuna Boaters. Keeper: wa_dwarf_tossing_to_narrow_arrow_dr_sniff_and_the_tuna_boaters (MP name and area). Evidence: no source lists a separate 'Doctor Sniff' (MP, the Index guide, theCrag and OpenBeta's Lower Town Wall and 'Main Wall, left side' lists); theCrag spells the one line 'Doctor Sniff and the Tuna Boaters' (5.10d); the stored gear 'gear to 2 in' matches MP's protection note for Dr. Sniff; and name_search on both rows holds 'doctor dr sniff'. The stored 5.11a matches no source (all give 5.10d). The parent area wa_c_main_wall_left_side ('Main Wall, left side') is OpenBeta's name for MP's 'Dwarf Tossing to Narrow Arrow' (wa_dwarf_tossing_to_narrow_arrow); its five rows (Corner Flash, Doctor Sniff, Full Horse Power, NTAD, Open Project) look like a second import of the same wall: report the area as a clean-up candidate too."
+ }
+}
