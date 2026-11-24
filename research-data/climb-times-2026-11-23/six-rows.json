@@ -1,0 +1,1279 @@
+{
+ "wa_big_four_mountain_tower_route": {
+  "row": {
+   "id": "wa_big_four_mountain_tower_route",
+   "area_id": "wa_big_four_mountain",
+   "name": "Tower Route",
+   "discipline": "alpine",
+   "grade": "5.7",
+   "grade_system": "yds",
+   "grade_num": 7,
+   "length_m": 1219,
+   "fa": "Ben Guydelkon and Ron Miller, July 25, 1972",
+   "aspect": "N",
+   "season": "Jun-Sep",
+   "gear": [
+    "rock rack",
+    "rappel gear",
+    "ice axe",
+    "crampons"
+   ],
+   "hazards": [
+    "Rockfall from loose, friable rock on the towers",
+    "Exposure on the long, steep summit snowfield",
+    "Route-finding complexity across three separate towers"
+   ],
+   "overview": "A technical rock-and-snow line on the mountain's north side/NE ridge that climbs a prominent gully to the first of three rock towers, works over and between the towers via rock climbing and a rappel into a notch, then finishes up a long, steep, exposed snowfield to the summit.",
+   "beta": "First climbed July 25, 1972 by Ben Guydelkon and Ron Miller as a new line on Big Four's north side. The party left the end of the ice-caves trail and traversed to a prominent gully on the northeast side of the first tower; by climbing it they could work their way west and up onto the first tower. They rappelled into a notch, climbed two more towers, then finished with rock scrambling leading to a long, steep, exposed snowfield to the summit.",
+   "turnaround": "Turn around with time and rope in hand to complete the notch rappel and reverse the tower gullies before dark -- this is not a route to be caught on after nightfall.",
+   "auto_generated": false,
+   "rock_grade": "5.7",
+   "rappels": "One rappel into the notch between the first and second towers",
+   "commitment": "IV",
+   "face": "North Face (rock towers)",
+   "permit": "No climbing or wilderness permit required; Northwest Forest Pass (or day fee) to park at the Ice Caves Trailhead.",
+   "comms": "No reliable cell service in the valley or on the mountain; a satellite messenger/PLB is strongly advised.",
+   "descent": "Descend via the north side towers, reversing rappels between towers; alternatively downclimb to the notch system used on ascent.",
+   "obj_haz": [
+    "loose/decomposing rock",
+    "exposed rappels between towers"
+   ],
+   "waypoints": [
+    {
+     "lat": 48.0659166667,
+     "lng": -121.510733333,
+     "elev": 1640,
+     "name": "Big Four Picnic Area / Ice Caves Trailhead",
+     "type": "Trailhead",
+     "distMi": null,
+     "elevFt": 1640,
+     "directions": "From Granite Falls, follow the Mountain Loop Highway east past the Verlot Public Service Center and about 13 miles beyond the bridge just past it to the Big Four turnoffs on the right. Pass the picnic area entrance and turn in a quarter mile later at the Ice Caves Trailhead lot, at about 1,640 ft. A Northwest Forest Pass or day pass is required to park; day passes are sold at the lot."
+    },
+    {
+     "lat": 48.042355,
+     "lng": -121.523305,
+     "elev": 6170,
+     "name": "Big Four Mountain Summit",
+     "type": "Summit",
+     "distMi": null,
+     "elevFt": 6170,
+     "directions": "Follow the Ice Caves trail toward the basin below the north face, then traverse to the base of the prominent gully on the northeast side. Climb the gully to the first tower, work west onto it and up, rappel into the notch, and climb the remaining two towers; a long, steep, exposed snowfield then leads to the summit."
+    }
+   ],
+   "timing": {
+    "totalHrs": null,
+    "summitTimeHrs": null,
+    "descentTimeHrs": null,
+    "approachTimeHrs": null,
+    "recommendedStart": null
+   },
+   "detailed_rack": "A moderate rock rack to 5.7, plus rappel gear for the inter-tower notch.",
+   "what_to_bring": [
+    "Helmet (loose rock on the towers)",
+    "Extra rappel tat/anchor material for the notch",
+    "ice axe and crampons — summit snowfield"
+   ],
+   "pro_tips": [
+    "Expect loose rock typical of Big Four's metasedimentary/sandstone-conglomerate geology -- test holds carefully"
+   ],
+   "watch_out": [
+    "Exposure on the final summit snowfield after three towers of rock climbing"
+   ],
+   "pro_needs": "Standard trad rack sufficient for 5.7 terrain on the towers; the crux is more about route-finding and commitment across three towers than sustained hard climbing.",
+   "best_season": "Climbed in summer conditions (the first ascent was in late July); rock quality on the towers is reported as loose in places, typical of the peak's friable metasedimentary rock.",
+   "high_point_ft": 6170,
+   "approach": "Approach via the Big Four Ice Caves trail from the Big Four Picnic Area / Ice Caves Trailhead, then traverse toward the north side of the mountain to reach the base of the first tower's gully.",
+   "bail": "A rappel into the notch between the first and second towers is required as part of the route itself; below that, retreat generally means reversing the gully system rather than a distinct bail line.",
+   "pitch_detail": [
+    {
+     "grade": "low 5th class",
+     "notes": "Ascend the prominent gully on the NE side to the first tower",
+     "pitch": "Approach gully"
+    },
+    {
+     "grade": "5.7",
+     "notes": "Make your way west and up onto the first tower",
+     "pitch": "First tower"
+    },
+    {
+     "grade": "rappel",
+     "notes": "Rappel into the notch between towers",
+     "pitch": "Notch rappel"
+    },
+    {
+     "grade": "5.6-5.7",
+     "notes": "Continue climbing the remaining two towers",
+     "pitch": "Second and third towers"
+    },
+    {
+     "grade": "steep snow",
+     "notes": "Long, steep, exposed snowfield leads to the summit",
+     "pitch": "Summit snowfield"
+    }
+   ],
+   "access": {
+    "fees": "$5 per vehicle per day (or $30 annual) day-use fee at the trailhead",
+    "rules": "Group size capped at 12 (people + stock combined) inside Glacier Peak Wilderness; larger groups must split with 1-mile separation. Campfires prohibited above 3,500 ft in wilderness.",
+    "permit": "None required — free self-issue wilderness permits available at trailheads/ranger stations for day/overnight travel where the peak is inside designated wilderness.",
+    "closures": "No closure order covers the approach, but the Forest Service tells visitors not to go past the end of the ice-caves trail and viewing area: the caves and slopes directly below the North Face cliffs have rock and ice fall all year. Never enter the caves, and cross below the cliffs quickly.",
+    "group_limit": 12,
+    "landManager": "Mount Baker-Snoqualmie National Forest, Darrington Ranger District",
+    "land_manager": "Mt. Baker-Snoqualmie National Forest (Darrington Ranger District)",
+    "parking_pass": "Northwest Forest Pass required at Mountain Loop Highway trailheads — $5/day or $30/year.",
+    "passRequired": "Northwest Forest Pass or Interagency Recreation Pass honored"
+   },
+   "road": {
+    "name": "Mountain Loop Highway (Mountain Loop Scenic Byway)",
+    "status": "Paved and generally open year-round to the Big Four Picnic Area / Ice Caves Trailhead",
+    "driveNote": "From Granite Falls, drive the Mountain Loop Highway east about 25 miles to the Big Four Picnic Area / Ice Caves Trailhead.",
+    "seasonalGate": "The unpaved section further east (Deer Creek to Barlow Pass) closes seasonally each winter; does not affect this trailhead"
+   },
+   "climate": {
+    "fall": null,
+    "spring": null,
+    "summer": "Preferred season for this route; rock is at its driest but remains loose/friable.",
+    "winter": null,
+    "typical": "Wet, maritime Cascades climate typical of the Mountain Loop Highway corridor.",
+    "forecastZone": "NWAC West Slopes North"
+   },
+   "emergency": {
+    "notes": null,
+    "county": "Snohomish County",
+    "rangerStation": "Darrington Ranger District, (360) 436-1155",
+    "nearestHospital": "Cascade Valley Hospital, Arlington, WA (24-hour Emergency Department)",
+    "sheriffDispatch": "Snohomish County Sheriff's Office non-emergency (425) 407-3999; 911 for emergencies"
+   },
+   "seasonal_guidance": {
+    "optimalWindow": "Mid-July to mid-August, while the summit snowfield is still firm snow and after the north-side avalanche season",
+    "monthBreakdown": {
+     "May": {
+      "reason": "Big Four's north side is still shedding avalanches and ice onto the ice-caves basin, and the Deer Creek gate may still be closed.",
+      "status": "risky"
+     },
+     "July": {
+      "reason": "Avalanche cycle is over and the long summit snowfield is still continuous snow; start early before sun loosens the tower rock.",
+      "status": "optimal"
+     },
+     "June": {
+      "reason": "Heavy avalanche debris and cornices on the north side, with wet slides and ice fall into the approach gully under the towers.",
+      "status": "risky"
+     },
+     "August": {
+      "reason": "Towers are dry, but the summit snowfield shrinks and hardens and melt-out increases rockfall from the friable rock.",
+      "status": "good"
+     },
+     "September": {
+      "reason": "The summit snowfield can be hard ice or melted to loose rock, and rockfall in the tower gullies peaks before the first storms.",
+      "status": "marginal"
+     }
+    }
+   },
+   "rappel_detail": [
+    {
+     "n": 1,
+     "notes": "One rappel into the notch between the first and second towers. On the descent parties reverse the towers, rappelling where needed, or downclimb to the notch system used on the ascent.",
+     "anchor": "not described; carry slings and cord",
+     "lengthM": null,
+     "station": "The first tower, above the notch that separates it from the second tower."
+    }
+   ],
+   "rappel_count_note": "One rappel into the notch between the first and second towers is reported; the descent reverses the towers with further rappels where needed, but no count for those is published.",
+   "classic": false,
+   "name_search": "tower twr route rte",
+   "glacier_travel": "no",
+   "snow_in_season": "yes"
+  },
+  "area": {
+   "id": "wa_big_four_mountain",
+   "name": "Big Four Mountain",
+   "area_type": "peak",
+   "parent_id": "wa_glacier_peak_region",
+   "path": "usa.washington.wa_northwest.wa_glacier_peak_region.wa_big_four_mountain",
+   "lat": 48.042355,
+   "lng": -121.523305,
+   "elevation_ft": 6170
+  },
+  "siblings": [
+   {
+    "id": "wa_big_four_mountain_dry_creek_route",
+    "name": "Dry Creek Route",
+    "discipline": "scrambling",
+    "grade": "Class 4",
+    "length_m": 610,
+    "pitches": null
+   },
+   {
+    "id": "wa_big_four_mountain_northwest_ridge",
+    "name": "Northwest Ridge",
+    "discipline": "mountaineering",
+    "grade": "Class 4",
+    "length_m": null,
+    "pitches": null
+   },
+   {
+    "id": "wa_big_four_mountain_spindrift_couloir",
+    "name": "Spindrift Couloir",
+    "discipline": "alpine",
+    "grade": "5.9",
+    "length_m": 1219,
+    "pitches": null
+   },
+   {
+    "id": "wa_big_four_mountain_tower_route",
+    "name": "Tower Route",
+    "discipline": "alpine",
+    "grade": "5.7",
+    "length_m": 1219,
+    "pitches": null
+   }
+  ],
+  "logs": 0
+ },
+ "wa_lane_peak_r3": {
+  "row": {
+   "id": "wa_lane_peak_r3",
+   "area_id": "wa_lane_peak",
+   "name": "Lover's Lane (couloir)",
+   "discipline": "alpine",
+   "grade": "AI1",
+   "grade_system": "wi",
+   "grade_num": 1,
+   "length_m": 305,
+   "aspect": "N",
+   "season": "Dec-May",
+   "gear": [
+    "Ice axe",
+    "Second ice tool",
+    "Crampons",
+    "Pickets",
+    "Ice screws",
+    "Small rock rack (nuts, small cams, tricams, pitons)",
+    "60m rope, plus a second rope for the double-rope rappel"
+   ],
+   "hazards": [
+    "Steep, sustained ice/mixed terrain that can be harder than rated depending on conditions",
+    "Rappel-transfer hazard into the adjacent Zipper couloir"
+   ],
+   "overview": "The steepest and narrowest of Lane Peak's three north-face couloirs, climbing sustained 40-60° snow/ice to a notch above and left of the Zipper, then rappelling into the Zipper for the summit finish.",
+   "beta": "This alpine ice/snow route ascends a north-facing couloir just left (climber's) of the Zipper, with two or three steeper sections requiring ice protection along the way, topping out on a ridge above the Zipper route. From the top, climbers typically rappel 100+ ft (double rope recommended) into the adjacent Zipper couloir, then climb the last of the Zipper and traverse to the summit.",
+   "turnaround": "Assess ice conditions on the two-to-three steeper steps before committing — in lean years these are bare ice well above the nominal AI1 rating, and the terrain is unforgiving to downclimb.",
+   "auto_generated": false,
+   "alpine_grade": "Grade II",
+   "ice_grade": "AI1",
+   "gain_ft": 2000,
+   "loss_ft": 2000,
+   "dist_km": 3.2,
+   "max_angle": 60,
+   "rappels": "One roughly 100+ ft rappel (double rope recommended) from the ridge top into the adjacent Zipper couloir, made on the way up; on the descent, a rappel from a tree just below the summit is used unless the snow allows downclimbing",
+   "commitment": "II",
+   "face": "North Face (left/climber's-left of the Zipper)",
+   "permit": "Inside Mount Rainier National Park: no permit for day climbs; overnight stays require a park wilderness permit.",
+   "comms": "Cell coverage in the park backcountry is spotty and unreliable; do not rely on a signal below the north face.",
+   "descent": "From the summit, downclimb or rappel from a tree just below it, then descend moderate slopes to the Lane-Denman saddle and down the steep gully on its far side to rejoin the approach. The 100+ ft rappel into the Zipper is made on the way up, not on the way down.",
+   "obj_haz": [
+    "Avalanche terrain on the approach traverse below Denman/Lane",
+    "Steep snow/ice fall potential on the two-to-three steeper sections",
+    "Rappel/anchor hazard rigging the transfer into the Zipper"
+   ],
+   "waypoints": [
+    {
+     "lat": 46.77501,
+     "lng": -121.74624,
+     "elev": 4564,
+     "name": "Narada Falls trailhead/parking",
+     "type": "Trailhead",
+     "distMi": null,
+     "elevFt": 4564,
+     "directions": "From the Nisqually Entrance on SR 706, drive the road east past Longmire toward Paradise to the Narada Falls parking area, about a mile below Paradise. The lot is plowed through winter; the road above Longmire is gated overnight in winter and vehicles must carry tire chains. National park entrance fee applies."
+    },
+    {
+     "lat": 46.769582,
+     "lng": -121.730213,
+     "elev": 4858,
+     "name": "Reflection Lakes area winter snow camp",
+     "type": "Campsite"
+    },
+    {
+     "lat": 46.757985,
+     "lng": -121.752965,
+     "elev": 6012,
+     "name": "Lane Peak summit",
+     "type": "Summit",
+     "distMi": null,
+     "elevFt": 6012,
+     "directions": "Ski or snowshoe along the snow-covered Reflection Lakes road, then traverse the steep hillsides under Denman Peak and turn sharply uphill at the first steep avalanche funnel, the leftmost of Lane's three north couloirs. Climb it to the ridge above the Zipper, rappel more than 100 ft from the tree into the upper Zipper, climb its last few hundred feet, then curl onto the south side and traverse left to the summit."
+    }
+   ],
+   "timing": {
+    "totalHrs": null,
+    "summitTimeHrs": null,
+    "descentTimeHrs": null,
+    "approachTimeHrs": null,
+    "recommendedStart": "Pre-dawn/alpine start for a firm freeze on the steeper ice sections"
+   },
+   "detailed_rack": "A 60m rope plus a second rope for the rappel, pickets and ice screws for the sustained 40-60° snow/ice, plus a small rock rack (nuts, small cams, tricams, a few pitons) for the two or three steeper mixed sections; carry a second tool.",
+   "what_to_bring": [
+    "Ski or snowshoe approach gear",
+    "Avalanche rescue gear (beacon, probe, shovel)",
+    "Extra rope length/webbing for the rappel anchor into the Zipper"
+   ],
+   "pro_tips": [
+    "This is the hardest and most sustained of the three couloirs — not a beginner objective.",
+    "Carry a second rope as well as the 60m; the rappel into the Zipper is usually longer than 100 ft.",
+    "Conditions vary a lot year to year — the route's two or three steeper sections can be moderate snow or bare ice."
+   ],
+   "watch_out": [
+    "The rappel into the Zipper is usually longer than 100 ft — bring enough rope and back up anchors.",
+    "Steeper sections (40-60°) can be bare ice in lean years, raising the difficulty well above the moderate AI1 rating.",
+    "The approach crosses avalanche-prone open slopes below Denman/Lane."
+   ],
+   "pro_needs": "Ice screws and pickets protect the snow/ice sections; a small selection of nuts, small cams, tricams and pitons backs up the steeper mixed steps, plus gear/slings to rig the rappel into the Zipper.",
+   "best_season": "Winter through spring (roughly December-May), coinciding with when Lane Peak is most climbed overall; consolidated snow/ice is needed for the steeper sections.",
+   "high_point_ft": 6012,
+   "approach": "Begin at the Narada Falls parking area; travel via snowshoe/ski along the (closed, in winter) Reflection Lakes road, then traverse steep hillsides under Denman Peak toward Lane Peak's base, turning sharply uphill at the first steep avalanche funnel to reach the base of the couloir.",
+   "descent_text": "From the summit, downclimb to a large tree a few feet below it and rappel from the tree unless the snow is good enough to downclimb. Then plunge-step down moderate slopes toward the Lane–Denman saddle; at the saddle, go to its far left side and descend a steep gully, then retrace the approach. The 100+ ft rappel from the ridge top into the adjacent Zipper couloir (double rope recommended; a 70m rope allows some downclimbing on moderate snow first) is part of the ascent, not the descent.",
+   "bail": "Below the steeper mixed sections, downclimb the moderate snow; above them, retreat requires a rappel from natural gear (pickets, screws, or slung rock) rather than downclimbing the steepest ice.",
+   "pitch_detail": [
+    {
+     "grade": "Mod. snow",
+     "notes": "Start from the flat below the north face at the left-most of Lane Peak's three north couloirs, just left of the Zipper. Crampon up and rack on the flat. Most parties rope up where the gully first narrows and place pro in the rock wall on the left (nuts, small cams, Tricams, pitons); simul-climbing with running protection is common here.",
+     "pitch": "1"
+    },
+    {
+     "grade": "AI1",
+     "notes": "The couloir steepens in two or three places, with the steepest steps reaching about 60° snow or thin ice. At the high constriction there is sometimes enough ice for a screw; otherwise protect off the left wall and pickets. A tree on climber's right partway up takes a sling. This is the narrowest of the Lane Peak couloirs, so anything knocked loose funnels straight down it.",
+     "pitch": "2"
+    },
+    {
+     "grade": "Snow",
+     "notes": "Above the constriction, firm névé leads to where the couloir ends abruptly on a ridge above the Zipper, marked by a tree. Cross to the far side and belay the second from the tree, which is also the anchor for the rappel into the Zipper.",
+     "pitch": "3",
+     "anchor": "tree"
+    },
+    {
+     "grade": "Rappel, 30+ m",
+     "notes": "Rappel more than 100 ft from the tree into the upper Zipper. Plan on double ropes; a single 70 m rope reaches the snow in some conditions but not reliably. A 60 m rope alone will not do it.",
+     "pitch": "Rappel into the Zipper"
+    },
+    {
+     "grade": "Moderate snow",
+     "notes": "Climb the last 300 ft or so of the Zipper, which many parties solo. From its top, curl around onto the south side and traverse left to the summit slopes; the final 200–300 ft can warrant a belay when the snow is hard.",
+     "pitch": "Upper Zipper to summit"
+    }
+   ],
+   "itinerary": {
+    "cal": "A winter and spring couloir (roughly Dec-May) that needs enough snow to fill and stabilize it; parties do it car-to-car from Narada Falls. Overnight trips need a winter wilderness permit from Longmire.",
+    "days": [
+     {
+      "n": 1,
+      "note": "Climb the steep bank above the Narada Falls lot and follow the snow-covered road to the first hairpin. Drop into the forest, then traverse steep slopes under Denman Peak and turn uphill at the first big avalanche funnel. Rope up below the first constriction for about 1,000 ft of AI1 snow. Rappel over 100 ft (double ropes advised) into the Zipper and finish to the summit. Descend to the Lane-Denman saddle and down the steep gully on its far left side.",
+      "hours": null,
+      "miles": 4,
+      "title": "Lover's Lane couloir on Lane Peak",
+      "gainFt": 2000,
+      "lossFt": 2000,
+      "packLb": 22,
+      "schedule": [],
+      "objective": "Climb the couloir to the summit and return to Narada Falls"
+     }
+    ],
+    "totalNote": "A single winter day: snowshoe or ski under Denman Peak to the north-face couloir, climb about 1,000 ft of snow with a rappel into the Zipper, and descend via the Lane-Denman saddle."
+   },
+   "access": {
+    "fees": "NPS entrance fee required (see nps.gov/mora)",
+    "permit": "No climbing permit needed below 10,000 ft",
+    "closures": "Stevens Canyon Road closed beyond Narada Falls in winter/spring",
+    "landManager": "National Park Service – Mount Rainier National Park",
+    "passRequired": "America the Beautiful / NPS annual pass accepted",
+    "overnight_permit": {
+     "url": "https://www.nps.gov/mora/planyourvisit/wilderness-camping-and-hiking.htm",
+     "what": "Mount Rainier National Park wilderness camping permit",
+     "where": "Reserve online via Recreation.gov, or get a walk-up permit in person at a park Wilderness Information Center; required year-round for any overnight stay, including cross-country-zone camping below Unicorn Peak or The Castle."
+    }
+   },
+   "road": {
+    "name": "Stevens Canyon Road / Longmire-Narada Falls Rd",
+    "status": "Seasonal",
+    "driveNote": "Park at the plowed Narada Falls lot in winter/spring; approach on skis/snowshoes along the closed Reflection Lakes road.",
+    "seasonalGate": "Stevens Canyon Rd typically opens ~Memorial Day, closes at first major snowfall (~mid-Oct); winter Longmire gate hours ~9:30am-4pm"
+   },
+   "climate": {
+    "fall": "Road access closes at the first significant snowfall",
+    "spring": "Prime season with the most consolidated snow/ice",
+    "summer": "Couloir largely melts out; not the intended season for this route",
+    "winter": "Deep maritime snowpack fills the couloir; access via Narada Falls only",
+    "typical": "Marine west-coast climate with strong orographic lift; heavy wet snow in winter",
+    "forecastZone": "NWAC – Mount Rainier area"
+   },
+   "emergency": {
+    "notes": "Cell coverage is unreliable in the Tatoosh backcountry. Always call 911 for an active emergency.",
+    "county": "Lewis County, WA",
+    "rangerStation": "Mount Rainier NP main line (360) 569-2211; Longmire Wilderness Information Center (360) 569-6641; Mount Rainier Dispatch (360) 569-6600",
+    "nearestHospital": "Arbor Health – Morton Hospital, Morton, WA",
+    "sheriffDispatch": "Lewis County Sheriff (360) 740-1105 (after-hours, then prompt 0)"
+   },
+   "seasonal_guidance": {
+    "optimalWindow": "March and April, when the couloir is filled with consolidated snow and the ice steps are frozen",
+    "monthBreakdown": {
+     "May": {
+      "reason": "The snowpack turns isothermal, the constrictions thin, and wet slides and cornice drop on warm afternoons.",
+      "status": "marginal"
+     },
+     "June": {
+      "reason": "The couloir melts out to rock and runnels with rockfall, and the Reflection Lakes approach loses its snow cover.",
+      "status": "risky"
+     },
+     "April": {
+      "reason": "Firm spring snow allows a fast approach without snowshoes; start early and be off the approach before the sun softens it.",
+      "status": "optimal"
+     },
+     "March": {
+      "reason": "Longer days and freeze-thaw cycles consolidate the couloir, and the upper constriction often holds good ice.",
+      "status": "optimal"
+     },
+     "January": {
+      "reason": "Colder snowpack can set up the steep constrictions, but short days and the Paradise road's daily gate hours squeeze the climb.",
+      "status": "good"
+     },
+     "December": {
+      "reason": "Early-season snow is often unconsolidated over thin steps, and the traverse under Denman Peak loads quickly in winter storms.",
+      "status": "marginal"
+     },
+     "February": {
+      "reason": "A deeper snowpack fills the couloir; avalanche hazard on the approach traverse depends closely on recent loading.",
+      "status": "good"
+     }
+    }
+   },
+   "approach_logistics": {
+    "peakLat": 46.757985,
+    "peakLng": -121.752965,
+    "trailhead": "Narada Falls trailhead/parking",
+    "trailheadLat": 46.77501,
+    "trailheadLng": -121.74624,
+    "trailheadDirection": "From the Nisqually entrance of Mount Rainier National Park, drive east on Paradise Road about 14 miles; the signed Narada Falls parking lot is on the right, about 1 mile before the Paradise area."
+   },
+   "rappel_detail": [
+    {
+     "n": 1,
+     "notes": "Made on the ascent, not the descent: a rappel of 100+ ft into the adjacent Zipper couloir. Two ropes recommended; a 70 m rope allows some downclimbing on moderate snow first.",
+     "anchor": "not described; bring slings",
+     "lengthM": null,
+     "station": "The ridge top between Lover's Lane and the Zipper couloir, reached on the way up."
+    },
+    {
+     "n": 2,
+     "notes": "Rappel from the tree unless the snow is good enough to downclimb, then plunge-step toward the Lane-Denman saddle and descend the steep gully on its far left side.",
+     "anchor": "a large tree a few feet below the summit",
+     "lengthM": null,
+     "station": "Just below the summit, on the descent."
+    }
+   ],
+   "rappel_count_note": "Two rappels in all: one of 100+ ft into the Zipper couloir on the way up, and one from a tree just below the summit on the way down, which good snow lets parties skip.",
+   "classic": false,
+   "approach_variants": [
+    {
+     "name": "Narada Falls, under Denman Peak, and the first steep avalanche funnel",
+     "notes": "Begin at the Narada Falls parking area, which is plowed and open year-round. Travel on skis or snowshoes along the closed Reflection Lakes road, then traverse steep hillsides under Denman Peak toward Lane Peak's base, turning sharply uphill at the first steep avalanche funnel to reach the base of the couloir.\n\nThe route is a north-facing couloir immediately climber's left of the Zipper, with two or three steeper ice and mixed sections needing screws or pickets, and an upper couloir that steepens to about 60 degrees before topping out on the ridge above the Zipper.\n\nFrom the top, the standard move is a rappel of more than 100 ft — a double rope is recommended — down into the adjacent Zipper couloir, then climb the last few hundred feet of the Zipper and traverse to the summit; the way down is the standard South Face line and the Lane-Denman saddle.\n\nThe approach traverse is itself avalanche terrain.",
+     "season": "Roughly Dec-May",
+     "hazards": [
+      "Avalanche exposure on the approach traverse beneath Denman Peak",
+      "Steep sustained ice and mixed ground that can be harder than rated depending on conditions",
+      "A rappel that transfers the party into the adjacent Zipper couloir, with rockfall and rope-pull consequences for anyone below",
+      "A rappel usually longer than a single 70 m rope doubled",
+      "Short winter days on a north aspect"
+     ],
+     "baseFinding": "Left to right: Lover's Lane, the Zipper, the Fly. This is the leftmost — immediately climber's left of the Zipper.\n\nThe approach test is a count, and it is the one that works on a ski track in the dark: traversing under Denman Peak toward Lane's base, you turn sharply uphill at the first steep avalanche funnel you meet. First, not second. If you have passed one funnel and carried on to another, you are at the Zipper.\n\nThe climbing test is angle, and it is decisive because this route is the steepest of the three: the upper couloir reaches about 60 degrees, with two or three steeper ice and mixed sections below it that want screws. If nothing has exceeded about 45 degrees, you are in the Zipper or the Fly.\n\nThe top-out test is the definitive one, and it is unique to this route: Lover's Lane finishes on the ridge above the Zipper, and the standard next move is a rappel of more than 100 ft from that ridge into the Zipper itself, then up its last few hundred feet to the summit. So if you can look down into a neighbouring couloir from where you topped out, you are on Lover's Lane. If instead you topped out at a dead tree in a notch with slings on it, you climbed the Zipper.\n\nPlan the rope before you leave the car, because the top of this route is the wrong place to find out: the rappel is usually longer than 100 ft, so a single 70 m doubled will not reach cleanly in a normal year. Two ropes, or a very deliberate plan for downclimbing the first section.\n\nAnd the thing that makes this route different from its neighbours': you do not finish on your own line. You rappel into somebody else's, which is a good reason to know where parties on the Zipper are before you pull the rope."
+    }
+   ],
+   "bivy": [
+    {
+     "elev": 3180,
+     "name": "Cougar Rock Campground",
+     "role": "main",
+     "type": "camp",
+     "notes": "For a Tatoosh trip this is the practical drive-in base, sitting between Longmire and the switchbacks up to Narada Falls and Reflection Lakes, so the morning drive to any of these trailheads is short. It runs roughly late May into early autumn and is closed the rest of the year — which puts it out of reach for exactly the season the Lane Peak gullies are in. Book it if you want a bed for a Pinnacle or Unicorn day climb without dealing with the wilderness permit system at all.",
+     "water": "Potable water at the campground; no hookups at any site",
+     "permit": "No wilderness permit — a developed campground. Reservations through Recreation.gov during the summer peak. Park entrance fee applies separately, and the park has used timed-entry reservations for the Nisqually/Paradise corridor in recent summers, which can affect what time you can drive up.",
+     "capacity": "Around 173 individual sites plus 5 group sites"
+    },
+    {
+     "elev": 4858,
+     "name": "Reflection Lakes area winter snow camp",
+     "role": "route",
+     "type": "bivy",
+     "notes": "The base people reach for when Stevens Canyon Road is gated and Lane Peak or Pinnacle is the objective, since it puts you at the top of the road walk rather than the bottom. In practice most parties skip it: the Zipper and Lover's Lane, and Pinnacle and The Castle in winter dress, are routinely done car-to-car from the Narada Falls lot, and the honest variable on those routes is the approach and the snow stability, not where you slept. The reason to camp is the gate — the road above Longmire is closed overnight and reopens on a morning schedule, so a dawn start from a car is not available the way it is elsewhere. Habituated foxes here have a long record of working over unattended food.",
+     "water": "None liquid in winter — melt snow",
+     "permit": "Winter wilderness permit, obtained in person at Longmire rather than online. Camping on snow is broadly allowed once the pack is deep enough, which the park sets at roughly two feet for the Reflection Lakes and Mazama Ridge side and five feet at Paradise itself. Blue bags for waste; food hung or in a hard-sided container.",
+     "capacity": "Parties up to 12; anything larger is directed to the designated Paradise group area"
+    }
+   ],
+   "name_search": "lovers lane couloir coulior",
+   "ice_grade_num": 1,
+   "glacier_travel": "no",
+   "snow_in_season": "yes"
+  },
+  "area": {
+   "id": "wa_lane_peak",
+   "name": "Lane Peak",
+   "area_type": "peak",
+   "parent_id": "wa_tatoosh_range",
+   "path": "usa.washington.wa_sw_tacoma.wa_southwest_cascades.wa_tatoosh_range.wa_lane_peak",
+   "lat": 46.757985,
+   "lng": -121.752965,
+   "elevation_ft": 6012
+  },
+  "siblings": [
+   {
+    "id": "wa_classic_route_3",
+    "name": "Classic Route",
+    "discipline": "scrambling",
+    "grade": "Class 4",
+    "length_m": 76,
+    "pitches": 2
+   },
+   {
+    "id": "wa_lane_peak_r1",
+    "name": "The Zipper (couloir)",
+    "discipline": "alpine",
+    "grade": "WI2",
+    "length_m": 305,
+    "pitches": 3
+   },
+   {
+    "id": "wa_lane_peak_r2",
+    "name": "The Fly (couloir)",
+    "discipline": "alpine",
+    "grade": "AI1",
+    "length_m": 244,
+    "pitches": 3
+   },
+   {
+    "id": "wa_lane_peak_r3",
+    "name": "Lover's Lane (couloir)",
+    "discipline": "alpine",
+    "grade": "AI1",
+    "length_m": 305,
+    "pitches": null
+   }
+  ],
+  "logs": 0
+ },
+ "wa_mount_johnson_southwest_route": {
+  "row": {
+   "id": "wa_mount_johnson_southwest_route",
+   "area_id": "wa_mount_johnson",
+   "name": "Southwest Route",
+   "discipline": "alpine",
+   "grade": "Class 3",
+   "grade_system": "class",
+   "grade_num": 3,
+   "length_m": 3,
+   "auto_generated": false,
+   "classic": false,
+   "name_search": "southwest sw route rte"
+  },
+  "area": {
+   "id": "wa_mount_johnson",
+   "name": "Mount Johnson",
+   "area_type": "peak",
+   "parent_id": "wa_north_central_olympics",
+   "path": "usa.washington.wa_olympics.wa_olympic_np.wa_north_central_olympics.wa_mount_johnson",
+   "lat": 47.832625,
+   "lng": -123.237265,
+   "elevation_ft": 7680
+  },
+  "siblings": [
+   {
+    "id": "wa_mount_johnson_deception_chimney",
+    "name": "Deception Chimney",
+    "discipline": "alpine",
+    "grade": null,
+    "length_m": null,
+    "pitches": null
+   },
+   {
+    "id": "wa_mount_johnson_northwest_face",
+    "name": "Northwest Face",
+    "discipline": "alpine",
+    "grade": null,
+    "length_m": null,
+    "pitches": null
+   },
+   {
+    "id": "wa_mount_johnson_rumble_gully",
+    "name": "Rumble Gully",
+    "discipline": "alpine",
+    "grade": null,
+    "length_m": null,
+    "pitches": null
+   },
+   {
+    "id": "wa_mount_johnson_south_terrace_route",
+    "name": "South Terrace Route",
+    "discipline": "alpine",
+    "grade": null,
+    "length_m": null,
+    "pitches": null
+   },
+   {
+    "id": "wa_mount_johnson_southwest_route",
+    "name": "Southwest Route",
+    "discipline": "alpine",
+    "grade": "Class 3",
+    "length_m": 3,
+    "pitches": null
+   },
+   {
+    "id": "wa_mount_johnson_staircase_route",
+    "name": "Staircase Route",
+    "discipline": "alpine",
+    "grade": null,
+    "length_m": null,
+    "pitches": null
+   },
+   {
+    "id": "wa_mount_johnson_standard",
+    "name": "Standard Route",
+    "discipline": "scrambling",
+    "grade": "Class 4",
+    "length_m": null,
+    "pitches": null
+   }
+  ],
+  "logs": 0
+ },
+ "wa_spectre_peak_haunted_wall": {
+  "row": {
+   "id": "wa_spectre_peak_haunted_wall",
+   "area_id": "wa_spectre_peak",
+   "name": "Haunted Wall",
+   "discipline": "alpine",
+   "grade": "5.9+",
+   "grade_system": "yds",
+   "grade_num": 9,
+   "length_m": 640,
+   "fa": "Wayne Wallace and Mike Layton, August 2006",
+   "aspect": "S",
+   "season": "Jul-Sep",
+   "hazards": [
+    "Long runout pitches devoid of crack protection",
+    "Enclosed, exposed chimney climbing",
+    "A committing rappel into a notch partway up, with few options to bail",
+    "No cell service; multi-day approach makes rescue slow"
+   ],
+   "overview": "A serious, sparsely-protected line up the center of Spectre Peak's south face: roughly 800 feet of runout face climbing lead into an enclosed, fully-shadowed interior chimney, followed by exposed face climbing past an offwidth feature and a ridge traverse to the summit.",
+   "beta": "Established in August 2006 by Wayne Wallace and Mike Layton after a grueling approach, this route starts in the center of Spectre's south face and climbs about 800 feet of runout terrain into a 'deep, spooky' chimney that is completely enclosed inside the mountain at times, then continues on exposed face climbing past an offwidth section before a ridge traverse gains the summit. The route is noted for being largely devoid of crack protection through its runout sections.",
+   "turnaround": "Because the route offers little protection and a difficult reversal, plan the climbing day so the crux runout sections and chimney are climbed with a large daylight margin, and treat any need to retreat as a serious, slow undertaking rather than a quick bail.",
+   "auto_generated": false,
+   "rock_grade": "5.9+",
+   "rappels": "No rappel descent is recorded for this wall: the first-ascent party downclimbed steep snow on Spectre's far side to a system of ledges and traversed around the mountain back to the south face. Carry anchor material anyway. The one rappel on the route comes on the way up, into the notch below the south-ridge gendarme, and it commits the party; retreat off the upper, runout face is described as difficult given a near-total lack of gear placements - which is why the advice on file is to commit to the route rather than to plan on rappelling off it.",
+   "commitment": "IV",
+   "face": "South Face (center of face)",
+   "comms": "No cell coverage in the Northern Pickets backcountry; a satellite communicator is strongly advised given the remote, multi-day approach and difficult retreat.",
+   "descent": "Downclimb steep snow on the mountain's opposite (north) side to ledges, then traverse around the peak back toward the south face and the approach line.",
+   "obj_haz": [
+    "sparse/absent crack protection on runout sections",
+    "loose, exfoliating rock",
+    "exposed face climbing",
+    "committing multi-day approach with no easy retreat",
+    "enclosed chimney terrain"
+   ],
+   "what_to_bring": [
+    "Bivy gear for a multi-day approach and climb",
+    "Satellite communicator (no cell service)",
+    "Bear canister/food storage (NPS backcountry requirement)",
+    "Ice axe for early-season snow on approach/descent slopes"
+   ],
+   "pro_tips": [
+    "Expect long, unprotected sections — this is a route for parties comfortable well above their gear",
+    "The interior chimney can be cold and shadowed; plan clothing accordingly"
+   ],
+   "watch_out": [
+    "Extended runout climbing with little to no protection",
+    "Loose/exfoliating rock typical of Northern Pickets gneiss",
+    "A single rappel into a notch partway up the route commits the party to finishing it",
+    "Extremely remote — self-rescue would take days"
+   ],
+   "pro_needs": "The route is notably devoid of crack protection through its long runout sections, so parties should expect significant unprotected climbing regardless of rack size; specific gear recommendations were not documented by the first-ascent party.",
+   "best_season": "A short summer window, roughly July through September, is required to clear enough snow from the multi-day Easy Ridge/Challenger approach; the first ascent was climbed in August.",
+   "high_point_ft": 7952,
+   "approach": "As with the south ridge route, access is via the Hannegan Pass Trailhead and Easy Ridge, crossing a col to the right of Mount Challenger's summit before descending several miles to a camp below Phantom Peak's south face, from which the south face of Spectre is reached.",
+   "descent_text": "From the summit, the FA party downclimbed steep snow on Spectre's far side to a system of ledges, then traversed around the mountain back to the south face before retracing the multi-day approach (via Phantom Peak, the Challenger-area col, and Easy Ridge) to the Hannegan Pass trailhead.",
+   "bail": "Retreat from the upper, runout face is difficult given the near-total lack of gear placements; parties should commit to the route only with confidence in completing it, since downclimbing the exposed, poorly-protected terrain is more hazardous than continuing to the ridge and using the established descent.",
+   "access": {
+    "fees": "Day-use fee of $5/vehicle/day or $30/year at the Hannegan Trailhead (National Forest); no separate NPS entrance fee",
+    "permit": "Backcountry/wilderness permit required for all overnight stays in North Cascades National Park; obtain at the Glacier Public Service Center or the Marblemount Wilderness Information Center",
+    "closures": "Mandatory NPS wilderness moratorium on installing new fixed anchors — build rappel/belay anchors from removable gear and cord only",
+    "landManager": "North Cascades National Park (NPS) via the Wilderness Information Center, Marblemount; trailhead access is via Mt. Baker-Snoqualmie National Forest",
+    "passRequired": "Northwest Forest Pass or America the Beautiful interagency pass accepted for trailhead parking"
+   },
+   "road": {
+    "name": "Hannegan Pass Road (Forest Road 32)",
+    "status": "Open to the trailhead; limited access for larger vehicles due to flood damage",
+    "driveNote": "From Glacier, WA, drive east on Mt. Baker Highway (SR 542) about 12.5 miles past the Glacier Public Service Center, then turn left onto Hannegan Pass Road #32 and follow it 5.3 miles to the trailhead (elev. 3,100 ft).",
+    "seasonalGate": null
+   },
+   "climate": {
+    "fall": "Shortens quickly after early-mid September as snow and storms return to the high Pickets.",
+    "spring": "Still largely snowbound; not a viable climbing season for this route.",
+    "summer": "Roughly July through September offers the main window, with variable weather and afternoon thunderstorm potential typical of the North Cascades high country.",
+    "winter": "Effectively inaccessible; heavy snow and avalanche hazard close off the approach.",
+    "typical": "Heavy winter snowpack lingers deep into the Northern Pickets, leaving only a brief, weather-dependent summer climbing window.",
+    "forecastZone": null
+   },
+   "emergency": {
+    "notes": "No cell coverage in the Northern Pickets backcountry — carry a satellite communicator. Bellingham Mountain Rescue provides technical rescue response for the Picket Range when activated by the Whatcom County Sheriff's Office or NPS.",
+    "county": "Whatcom County, WA",
+    "rangerStation": "North Cascades National Park Wilderness Information Center, Marblemount — 360-854-7200",
+    "nearestHospital": "PeaceHealth St. Joseph Medical Center, Bellingham, WA (roughly 1 hour drive from the Glacier/Hannegan trailhead area)",
+    "sheriffDispatch": "911 for emergencies; Whatcom County Sheriff's Office non-emergency dispatch 360-676-6911"
+   },
+   "seasonal_guidance": {
+    "optimalWindow": "Late July through early September, when the Easy Ridge approach is snow-free enough and the enclosed chimney has dried",
+    "monthBreakdown": {
+     "July": {
+      "reason": "The forest approach melts out early in the month and lingering snow eases travel on Easy Ridge, though the chimney may still drip early on.",
+      "status": "good"
+     },
+     "June": {
+      "reason": "Hannegan Pass Road and Easy Ridge often still hold snow, the col near Challenger is corniced, and the enclosed chimney is likely wet or iced.",
+      "status": "risky"
+     },
+     "August": {
+      "reason": "The runout south-face slabs and the chimney are driest; the col crossing is still snow-covered and bridged. The first ascent was made in August.",
+      "status": "optimal"
+     },
+     "October": {
+      "reason": "Early storms can snow in the multi-day approach and the committing mid-route rappel, with slow rescue and short days.",
+      "status": "marginal"
+     },
+     "September": {
+      "reason": "Dry rock and cooler days, but the Challenger col crossing gets icier and crevassed, and shorter days press a multi-day trip.",
+      "status": "good"
+     }
+    }
+   },
+   "approach_logistics": {
+    "trailhead": "Hannegan Pass Trailhead",
+    "trailheadLat": 48.9102,
+    "trailheadLng": -121.5941
+   },
+   "classic": false,
+   "name_search": "haunted wall",
+   "glacier_travel": "yes",
+   "snow_in_season": "yes"
+  },
+  "area": {
+   "id": "wa_spectre_peak",
+   "name": "Spectre Peak",
+   "area_type": "peak",
+   "parent_id": "wa_northern_pickets",
+   "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_picket_range.wa_northern_pickets.wa_spectre_peak",
+   "lat": 48.812,
+   "lng": -121.343,
+   "elevation_ft": 7952
+  },
+  "siblings": [
+   {
+    "id": "wa_spectre_peak_haunted_wall",
+    "name": "Haunted Wall",
+    "discipline": "alpine",
+    "grade": "5.9+",
+    "length_m": 640,
+    "pitches": null
+   },
+   {
+    "id": "wa_spectre_peak_south_route",
+    "name": "South Ridge (\"Spirited Away\")",
+    "discipline": "alpine",
+    "grade": "5.9",
+    "length_m": 732,
+    "pitches": 12
+   }
+  ],
+  "logs": 0
+ },
+ "wa_three_queens_west_peak": {
+  "row": {
+   "id": "wa_three_queens_west_peak",
+   "area_id": "wa_three_queens",
+   "name": "West Peak via West Ridge - West Face",
+   "discipline": "alpine",
+   "grade": "5.7",
+   "grade_system": "yds",
+   "grade_num": 7,
+   "length_m": 183,
+   "aspect": "W",
+   "season": "Jul-Oct",
+   "gear": [
+    "helmet",
+    "sturdy boots for the long approach and ridge scrambling",
+    "trekking poles"
+   ],
+   "hazards": [
+    "Loose rock typical of the range.",
+    "Long, remote approach — roughly 16 miles round trip including a Kachess River ford; plan a multi-day trip and a committing exit.",
+    "Exposed ridge scrambling on the summit push."
+   ],
+   "overview": "A rock scramble/climb up Three Queens' West Peak (6,400 ft) via its West Ridge and West Face, approached from a high camp at Spectacle Point after a multi-day hike in via Mineral Creek and Park Lakes.",
+   "beta": "After camping at Spectacle Point (5,800 ft), the route climbs the West Ridge and West Face of West Peak to the summit — a mix of rock scrambling and rock climbing, i.e. class 3-4 terrain without a documented technical crux comparable to the Middle Peak chimney.",
+   "turnaround": "Turn around and return to Spectacle Point if weather closes in on the ridge — this is an exposed, multi-day approach with no quick escape once on the West Face.",
+   "auto_generated": false,
+   "rock_grade": "5.7 (final pitch, loose, poor pro)",
+   "gain_ft": 5300,
+   "loss_ft": 5300,
+   "dist_km": 12.8,
+   "face": "West Ridge / West Face",
+   "permit": "Free self-issue Alpine Lakes Wilderness permit at the trailhead; no quota or fee. Northwest Forest Pass to park at most trailheads.",
+   "descent": "Reverse the West Ridge/West Face line back to Spectacle Point camp, then retrace the approach trail.",
+   "obj_haz": [
+    "loose rock typical of the range",
+    "long, remote approach with a river ford",
+    "exposed ridge scrambling"
+   ],
+   "waypoints": [
+    {
+     "lat": 47.4618857,
+     "lng": -121.2807066,
+     "elev": 4265,
+     "name": "Spectacle Lake",
+     "type": "landmark",
+     "distMi": null,
+     "elevFt": 4265
+    },
+    {
+     "lat": 47.449086,
+     "lng": -121.299016,
+     "elev": 4880,
+     "name": "Park Lakes Basin",
+     "type": "Campsite"
+    }
+   ],
+   "disciplines": [
+    "alpine"
+   ],
+   "timing": {
+    "totalHrs": null,
+    "summitTimeHrs": null,
+    "descentTimeHrs": null,
+    "approachTimeHrs": null,
+    "recommendedStart": "Start the summit push from Spectacle Point at first light to allow a full margin for the ridge scrambling and the long return hike."
+   },
+   "detailed_rack": "No technical rack is documented for this line beyond what a party would carry for general class 3-4 scrambling; no roped pitches or fixed protection are recorded.",
+   "what_to_bring": [
+    "overnight camping gear for the Spectacle Point approach",
+    "water treatment",
+    "bug repellent for the lower trail/creek sections"
+   ],
+   "pro_tips": [
+    "Spectacle Point camp (5,800 ft) sets up a short summit push the next morning",
+    "The October ascent in the accounts report suggests good fall conditions are possible on this west-facing line"
+   ],
+   "watch_out": [
+    "Long, remote approach (16 miles round trip) with a Kachess River ford — plan for a multi-day trip",
+    "Exposed ridge scrambling on the summit push"
+   ],
+   "best_season": "The only documented ascent of this line was in mid-October, suggesting the route can stay in condition later into fall than typical Cascades scrambles at this elevation; treat summer through early fall as the likely window.",
+   "high_point_ft": 6400,
+   "approach": "From the Mineral Creek Trailhead (2,400 ft), follow the Kachess River/Mineral Creek approach through Park Lakes to Spectacle Point (5,800 ft) — a longer multi-day approach (16 miles round trip in the accounts report) than the Middle Peak day-route.",
+   "descent_text": "Descend the West Ridge/West Face by the ascent line back to Spectacle Point, then follow the Park Lakes-Mineral Creek trail back out to the Mineral Creek Trailhead.",
+   "bail": "Retreat is a straightforward reversal of the ridge/face line back to Spectacle Point camp; no rappels are documented as required.",
+   "pitch_detail": [
+    {
+     "grade": "Class 3-4 scramble/climb",
+     "notes": "West Ridge and West Face line; vertical relief between the documented Spectacle Point camp (5,800 ft) and West Peak summit (6,400 ft)",
+     "pitch": "Spectacle Point camp to West Peak summit",
+     "lengthM": null
+    }
+   ],
+   "itinerary": {
+    "cal": "The route is in season from July to October and is documented as a 2-day trip.",
+    "days": [
+     {
+      "n": 1,
+      "note": "Hike from the trailhead to Spectacle Point camp via the Kachess River, Mineral Creek and Park Lakes.",
+      "hours": null,
+      "miles": null,
+      "title": "Hike to Spectacle Point camp",
+      "gainFt": 3400,
+      "lossFt": null,
+      "packLb": 40,
+      "schedule": [],
+      "objective": "Camp at Spectacle Point"
+     },
+     {
+      "n": 2,
+      "note": "Climb the West Ridge and West Face to the summit, then return to camp and on to the trailhead. The accounts report 16 miles and 5,300 ft of gain and loss for the whole trip.",
+      "hours": null,
+      "miles": null,
+      "title": "Climb the West Ridge and hike out",
+      "gainFt": 1900,
+      "lossFt": 5300,
+      "packLb": 20,
+      "schedule": [],
+      "objective": "Summit West Peak"
+     }
+    ],
+    "totalNote": "Hike via the Kachess River, Mineral Creek and Park Lakes to Spectacle Point camp, then climb the West Ridge and return to the trailhead, about 16 miles and 5,300 ft total."
+   },
+   "access": {
+    "fees": "Standard Okanogan-Wenatchee NF trailhead/parking fee policies apply in addition to the wilderness permit.",
+    "notes": "Alpine Lakes Wilderness permit required (May 15-Oct 31; self-issue at trailhead, no fee). Northwest Forest Pass or America the Beautiful Pass required. Closed by the Three Queens Fire closure: Order 06-17-03-2026-44, effective September 18 through October 31, 2026 unless rescinded sooner, closes the Mineral Creek Trailhead, the Mineral Creek Trail and the Spectacle Lake Trail. Cle Elum Ranger District: (509) 852-1100. No campfires above 5,000 ft elevation.",
+    "permit": "Self-issue, free wilderness permit at the trailhead.",
+    "closures": null,
+    "landManager": "Okanogan-Wenatchee National Forest, Cle Elum Ranger District (Alpine Lakes Wilderness)",
+    "passRequired": "Northwest Forest Pass or America the Beautiful pass typically required for trailhead parking.",
+    "overnight_permit": {
+     "url": "https://www.fs.usda.gov/r06/mbs/recreation/alpine-lakes-wilderness-mt-baker-snoqualmie",
+     "what": "Free self-issue Alpine Lakes Wilderness permit",
+     "where": "Fill one out at the trailhead kiosk and carry your copy."
+    }
+   },
+   "climate": {
+    "fall": null,
+    "spring": null,
+    "summer": null,
+    "winter": null,
+    "typical": "Marine west coast climate typical of the central Cascades: wet winters, drier summers.",
+    "forecastZone": null
+   },
+   "emergency": {
+    "notes": "Long, remote multi-day approach with a river ford; carry a satellite messenger given unreliable cell coverage in the Park Lakes/Spectacle Point basin.",
+    "county": "Kittitas County, Washington",
+    "rangerStation": "Cle Elum Ranger District, Okanogan-Wenatchee National Forest, 803 W. 2nd St, Cle Elum, WA 98922, (509) 852-1100",
+    "nearestHospital": "Kittitas Valley Healthcare, 603 S. Chestnut St, Ellensburg, WA",
+    "sheriffDispatch": "Kittitas County Sheriff's Office non-emergency: (509) 962-7525; dial 911 for emergencies"
+   },
+   "seasonal_guidance": {
+    "optimalWindow": "August to September, when the long Park Lakes approach is snow-free and the Kachess ford is low, before fall snow",
+    "monthBreakdown": {
+     "July": {
+      "reason": "The approach melts out through the month and the ford drops; early July can still hold snow patches on the west ridge.",
+      "status": "good"
+     },
+     "June": {
+      "reason": "Snow still covers the high Park Lakes basin and Spectacle Point camp, and the Kachess River ford runs high with melt.",
+      "status": "marginal"
+     },
+     "August": {
+      "reason": "Snow-free approach, low ford and dry ridge rock make the multi-day trip most straightforward; wildfire smoke is possible.",
+      "status": "optimal"
+     },
+     "October": {
+      "reason": "The route has been climbed in mid-October, but an early storm can snow in the ridge, freeze camp water and shorten the days sharply.",
+      "status": "good"
+     },
+     "November": {
+      "reason": "Snow typically covers the west face and Spectacle Point, and the long remote approach leaves little margin in short days.",
+      "status": "risky"
+     },
+     "September": {
+      "reason": "Cooler days suit the 16-mile round trip and the ford is at its lowest; late-season fire closures can shut the trailhead.",
+      "status": "optimal"
+     }
+    }
+   },
+   "approach_logistics": {
+    "peakLat": 47.44,
+    "peakLng": -121.27,
+    "trailhead": "Mineral Creek Trailhead",
+    "trailheadLat": 47.4176,
+    "trailheadLng": -121.2373,
+    "trailheadDirection": "From Cle Elum, drive SR-903 north 17 miles past Lake Cle Elum and turn left onto Road 4600 (Cooper Lake Road). Drive Road 4600 about 7 miles over Cooper Pass, then stay on Road 4600 about 3 miles down to the small signed trailhead."
+   },
+   "classic": false,
+   "bivy": [
+    {
+     "elev": 5800,
+     "name": "Spectacle Point high camp",
+     "role": "main",
+     "type": "bivy",
+     "notes": "High camp on the ridge above Park Lakes, used as the base for the West Peak.",
+     "water": "Uncertain late in the season; carry water up from Park Lakes",
+     "permit": "Free self-issue Alpine Lakes Wilderness permit",
+     "capacity": "Small; a few tent sites on the ridge"
+    },
+    {
+     "elev": 4880,
+     "name": "Park Lakes Basin",
+     "role": "route",
+     "type": "camp",
+     "notes": "The base for Three Queens, and the reason that peak sits in this zone at all — it shares the Cooper River road with Pete Lake and nothing else. Drive the Cooper River road past Cooper Lake and over Cooper Pass to the Mineral Creek trailhead at around 2,375 ft, then follow the Mineral Creek trail roughly four and a half miles and 2,300 ft up to the basin. The trail crosses Mineral Creek several times on logs and rocks, and in high water those crossings are the hardest part of the day — early season parties should expect at least one that is genuinely unpleasant. From the basin the standard scramble goes up loose slabs, talus and heather to the ridge, and the middle peak's south face and south chimney and the west peak's west ridge are reached from the same camp with a traverse. The rock is loose and the notch below the summit block is exposed with no obvious easy line, so this is a scramble that repays a rope more often than its grade suggests. Many parties skip the camp entirely and do Three Queens as a long day from the car, which is honest and reasonable in good conditions — the basin is worth a night mainly if you want two of the three summits. Best late July through September. Honest caveat for 2026: the Mineral Creek trail was closed by the summer wildfire that took its name from this very peak, along with the Spectacle Lake access and a long stretch of the Pacific Crest Trail; the closure ran into autumn and must be confirmed before any trip.",
+     "water": "The lakes and their connecting streams, plus Glacier Lake just above — reliable through the season",
+     "permit": "Free self-issue Alpine Lakes Wilderness permit. Northwest Forest Pass at the Mineral Creek trailhead. Group limit twelve. Campfires are prohibited in Park Lakes Basin specifically, in addition to the general ban above 5,000 ft. Stay off the meadow edges.",
+     "capacity": "Several established sites among the trees, meadows and rolling knolls of the basin; three or four parties fit without being on top of each other"
+    }
+   ],
+   "name_search": "west peak pk via west ridge rdg west face",
+   "snow_in_season": "no"
+  },
+  "area": {
+   "id": "wa_three_queens",
+   "name": "Three Queens",
+   "area_type": "peak",
+   "parent_id": "wa_western_alpine_lakes",
+   "path": "usa.washington.wa_centralwest.wa_western_alpine_lakes.wa_three_queens",
+   "lat": 47.446355,
+   "lng": -121.270305,
+   "elevation_ft": 6693
+  },
+  "siblings": [
+   {
+    "id": "wa_three_queens_middle_peak",
+    "name": "Middle Peak via South Face - South Chimney",
+    "discipline": "mountaineering",
+    "grade": "Class 4",
+    "length_m": null,
+    "pitches": null
+   },
+   {
+    "id": "wa_three_queens_standard",
+    "name": "Standard Scramble",
+    "discipline": "scrambling",
+    "grade": "Class 4",
+    "length_m": 607,
+    "pitches": null
+   },
+   {
+    "id": "wa_three_queens_west_peak",
+    "name": "West Peak via West Ridge - West Face",
+    "discipline": "alpine",
+    "grade": "5.7",
+    "length_m": 183,
+    "pitches": null
+   }
+  ],
+  "logs": 0
+ },
+ "wa_thunder_mountain_north_face": {
+  "row": {
+   "id": "wa_thunder_mountain_north_face",
+   "area_id": "wa_thunder_mountain_and_slippery_slab_tower",
+   "name": "Thunder Mountain North Face",
+   "discipline": "alpine",
+   "grade": "5.0",
+   "grade_system": "yds",
+   "grade_num": 0,
+   "length_m": 183,
+   "fa": "Bruce Garrett and Dennis Nelson (July 6, 1972)",
+   "aspect": "N",
+   "gear": [
+    "Single 60m rope",
+    "Rock rack (nuts + cams to ~3 in)",
+    "Helmet",
+    "Approach shoes suited to talus/scrambling",
+    "Ice axe for early-season snow in approach gullies"
+   ],
+   "hazards": [
+    "First climbed in 1972 with no widely documented repeats found; rock quality and current protection options on the upper face are unconfirmed by recent sources."
+   ],
+   "overview": "A relatively obscure, rarely-repeated 600-foot class 5 granite line up Thunder Mountain's north face, above the Thunder Mountain Lakes basin, first climbed in 1972 — in contrast to the standard 3rd-class scramble route to the same 6,556 ft summit via the SE slopes.",
+   "beta": "The north face is 600 feet of class 5 granite climbing, first ascended by Bruce Garrett and Dennis Nelson on July 6, 1972. Little further pitch-by-pitch or modern beta exists for this specific line; it sees far less traffic than the popular SE-slope scramble or the nearby Slippery Slab Tower climb.",
+   "turnaround": "As with any alpine face route in this range, treat building afternoon cumulus as a turnaround trigger and retreat via the described line before storms arrive — no rappel/bail information is documented for this route, so a party should be prepared to downclimb.",
+   "auto_generated": false,
+   "face": "North Face",
+   "permit": "Free self-issue Alpine Lakes Wilderness permit at the trailhead; no quota or fee. Northwest Forest Pass to park at most trailheads.",
+   "comms": "This is a remote, high section of the Alpine Lakes Wilderness with no reliable cell coverage; carry a satellite communicator or PLB.",
+   "obj_haz": [
+    "remote/rarely-repeated line with sparse modern beta",
+    "loose or lichen-covered alpine granite typical of an infrequently-climbed face",
+    "no documented recent ascents to confirm current rock quality"
+   ],
+   "waypoints": [
+    {
+     "lat": 47.674572,
+     "lng": -121.124142,
+     "elev": 5143,
+     "name": "Trap Lake",
+     "type": "Campsite"
+    }
+   ],
+   "disciplines": [
+    "alpine"
+   ],
+   "detailed_rack": "A single 60m rope and a rack of nuts and cams to about 3 inches covers this 600ft class 5 granite line (FA Garrett/Nelson, 1972); specific pitch-by-pitch beta isn't published, so this reflects standard granite alpine-rock kit for a route of this length.",
+   "watch_out": [
+    "This route has very little documented modern beta — treat it as a serious, semi-exploratory alpine rock objective rather than a well-traveled line."
+   ],
+   "high_point_ft": 6556,
+   "approach": "Reached via the same Trap Pass approach used for Slippery Slab Tower (Tunnel Creek or Surprise Creek trailheads to the PCT at Trap Pass), continuing past Slippery Slab Meadows toward Thunder Mountain Pass and the Thunder Mountain Lakes basin, then approaching the peak's north side. The standard SE-slope scramble route is reached via Upper Thunder Mountain Lake.",
+   "pitch_detail": [
+    {
+     "grade": "5th class (specific YDS grade not documented)",
+     "notes": "600 ft of sustained low-to-mid 5th-class granite on Thunder Mountain's north face; no pitch-by-pitch breakdown is known.",
+     "pitch": "Full route",
+     "lengthM": null
+    }
+   ],
+   "access": {
+    "fees": "Northwest Forest Pass required for trailhead parking.",
+    "permit": "Free self-issue Alpine Lakes Wilderness permit, filled out at the trailhead kiosk, required May 15-October 31.",
+    "closures": null,
+    "landManager": "Mount Baker-Snoqualmie National Forest (Skykomish Ranger District) — Alpine Lakes Wilderness",
+    "passRequired": "Northwest Forest Pass",
+    "overnight_permit": {
+     "url": null,
+     "what": "Free self-issue wilderness permit (Henry M. Jackson or Alpine Lakes Wilderness)",
+     "where": "Fill one out at the trailhead kiosk."
+    }
+   },
+   "road": {
+    "name": "Tunnel Creek Road (FR 6095) / Surprise Creek spur",
+    "status": "Narrow gravel spur roads to both trailheads; high-clearance recommended.",
+    "driveNote": "Same access as Slippery Slab Tower — via US-2 to either the Tunnel Creek Trailhead (~12-13 mi east of Skykomish) or the Surprise Creek Trailhead spur near milepost 58.7.",
+    "seasonalGate": null
+   },
+   "climate": {
+    "fall": "Possible in a stable weather window but with earlier snow risk than south-facing objectives given the north aspect.",
+    "spring": "Snow lingers on north-facing terrain well into summer at this elevation.",
+    "summer": "The likely climbing window, though the north aspect will hold snow/ice later into the season than south-facing routes nearby.",
+    "winter": "Full winter alpine/avalanche conditions; not a casual objective.",
+    "typical": "Typical Washington Cascade-crest weather: wet winters/springs, a shorter mostly-stable dry window in mid/late summer, with afternoon thunderstorm risk on summer days.",
+    "forecastZone": null
+   },
+   "emergency": {
+    "notes": "Call 911 for search and rescue; this route's remoteness and lack of documented traffic make self-rescue planning especially important.",
+    "county": "King County (west side) / Chelan County (east side) — Thunder Mountain sits on the King-Chelan county line.",
+    "rangerStation": "Skykomish Ranger District, Mount Baker-Snoqualmie National Forest — (360) 677-2414",
+    "nearestHospital": "No hospital near the trailhead; nearest full-service emergency rooms are roughly 45-50 miles away via US-2 — Providence Regional Medical Center (Everett, west) or Cascade Medical Center (Leavenworth, east).",
+    "sheriffDispatch": null
+   },
+   "approach_logistics": {
+    "trailhead": "Surprise Creek Trailhead",
+    "trailheadLat": 47.7078,
+    "trailheadLng": -121.1567,
+    "trailheadDirection": "From Skykomish, drive US-2 east about 10 miles to an unsigned right turn near milepost 58.7, just past the old railroad community of Scenic; cross the railroad tracks, turn right, and follow the narrow dirt road about 0.3 mile to the trailhead."
+   },
+   "gear_confidence": "inferred",
+   "classic": false,
+   "approach_variants": [
+    {
+     "name": "Surprise Creek past Surprise and Glacier lakes",
+     "camps": [
+      "Trap Lake",
+      "Thunder Mountain Lakes",
+      "Surprise Lake and Glacier Lake"
+     ],
+     "notes": "The more popular way in, from a trailhead that is easy to find near Scenic on US 2. Climb the Surprise Creek trail to Surprise Lake, join the Pacific Crest Trail and follow it north to Trap Pass, then take the unofficial path south from the pass to the Thunder Mountain lakes basin under the north face.",
+     "objHaz": [
+      "loose rock",
+      "route-finding"
+     ],
+     "hazards": [
+      "Rarely repeated 600 ft class 5 line, first climbed 1972; rock quality and protection unconfirmed",
+      "Loose or lichen-covered alpine granite likely on an infrequently climbed face",
+      "Unofficial, unmarked path south of Trap Pass to the lakes basin under the face",
+      "Remote setting with sparse modern beta"
+     ],
+     "primary": true
+    },
+    {
+     "name": "Tunnel Creek, Hope Lake and the PCT",
+     "trip": {
+      "bivy": [
+       {
+        "elev": 5143,
+        "name": "Trap Lake",
+        "role": "main",
+        "type": "camp",
+        "notes": "The closest camp to Slippery Slab Tower and the best base for Thunder Mountain. Two trailheads reach it: Tunnel Creek, which climbs about a mile and a half to Hope Lake on the Pacific Crest Trail and then runs south a couple of miles over meadowy ground before the switchbacks up to Trap Pass; or Surprise Creek at Scenic, which climbs to Surprise Lake and joins the Pacific Crest Trail heading north. Trap Lake sits a little below Trap Pass on the east side. From the pass a faint but obvious climbers' track branches south along the ridge crest, follows it to a boulder field, and works up that to the base of the tower — the whole point of camping here rather than at the Scenic lakes is that it puts a party at the pass within half an hour of leaving the tent. Slippery Slab Tower is a single pitch of pleasant lower fifth class on an arete whose flakes are not to be trusted for protection, so it is a short climb with a long walk attached, and an overnight makes the arithmetic work. Thunder Mountain itself is a scramble from the same ground. The Thunder Mountain Lakes further south are a delicate basin where camping is discouraged; use this lake instead. Season is roughly July to October, with snow on the Trap Pass switchbacks well into summer.",
+        "water": "The lake, and the inlet above it. Treat it.",
+        "permit": "Alpine Lakes Wilderness. A free self-issue permit is required for day and overnight use, taken at the trailhead register from mid-May to the end of October. A Northwest Forest Pass is required at the Surprise Creek trailhead. Campfires are prohibited above 4,000 feet west of the crest, and a stove is the right answer here in any case.",
+        "capacity": "Several small informal sites in the trees at the lake, below the pass on the east side of the crest. Quiet, and rarely more than a party or two."
+       },
+       {
+        "name": "Thunder Mountain Lakes",
+        "role": "main",
+        "type": "camp",
+        "notes": "Lake basin under the granite of Slippery Slab Tower and Thunder Mountain, reached by the unofficial trail south from Trap Pass. The closest camp to the north face. Fragile ground; camp only on rock or bare sites.",
+        "water": "The lakes",
+        "permit": "Free self-issue Alpine Lakes Wilderness permit",
+        "capacity": "A few small sites on durable ground"
+       }
+      ],
+      "approachLogistics": {
+       "trailhead": "Tunnel Creek Trailhead (FR-6095 off US-2)"
+      }
+     },
+     "notes": "From the Tunnel Creek trailhead off US 2, climb about a mile and a half to Hope Lake on the Pacific Crest Trail. Follow the PCT south a couple of miles over meadowy ground and up the switchbacks to Trap Pass, then take the unofficial path south to the Thunder Mountain lakes basin.",
+     "objHaz": [
+      "snow",
+      "loose rock",
+      "route-finding"
+     ],
+     "hazards": [
+      "Snow on the Trap Pass switchbacks well into summer",
+      "Rarely repeated 600 ft class 5 line, first climbed 1972; rock quality and protection unconfirmed",
+      "Loose or lichen-covered alpine granite likely on an infrequently climbed face",
+      "Unofficial path south of Trap Pass to the lakes basin; fragile ground at the lakes",
+      "Remote setting with sparse modern beta"
+     ],
+     "whyThisWay": "Starts higher for an open, easy walk along the Pacific Crest Trail, and suits a through-trip that exits by Surprise Creek, at the cost of extra mileage."
+    }
+   ],
+   "bivy": [
+    {
+     "elev": 5143,
+     "name": "Trap Lake",
+     "role": "main",
+     "type": "camp",
+     "notes": "The closest camp to Slippery Slab Tower and the best base for Thunder Mountain. Two trailheads reach it: Tunnel Creek, which climbs about a mile and a half to Hope Lake on the Pacific Crest Trail and then runs south a couple of miles over meadowy ground before the switchbacks up to Trap Pass; or Surprise Creek at Scenic, which climbs to Surprise Lake and joins the Pacific Crest Trail heading north. Trap Lake sits a little below Trap Pass on the east side. From the pass a faint but obvious climbers' track branches south along the ridge crest, follows it to a boulder field, and works up that to the base of the tower — the whole point of camping here rather than at the Scenic lakes is that it puts a party at the pass within half an hour of leaving the tent. Slippery Slab Tower is a single pitch of pleasant lower fifth class on an arete whose flakes are not to be trusted for protection, so it is a short climb with a long walk attached, and an overnight makes the arithmetic work. Thunder Mountain itself is a scramble from the same ground. The Thunder Mountain Lakes further south are a delicate basin where camping is discouraged; use this lake instead. Season is roughly July to October, with snow on the Trap Pass switchbacks well into summer.",
+     "water": "The lake, and the inlet above it. Treat it.",
+     "permit": "Alpine Lakes Wilderness. A free self-issue permit is required for day and overnight use, taken at the trailhead register from mid-May to the end of October. A Northwest Forest Pass is required at the Surprise Creek trailhead. Campfires are prohibited above 4,000 feet west of the crest, and a stove is the right answer here in any case.",
+     "capacity": "Several small informal sites in the trees at the lake, below the pass on the east side of the crest. Quiet, and rarely more than a party or two."
+    },
+    {
+     "name": "Thunder Mountain Lakes",
+     "role": "main",
+     "type": "camp",
+     "notes": "Lake basin under the granite of Slippery Slab Tower and Thunder Mountain, reached by the unofficial trail south from Trap Pass. The closest camp to the north face. Fragile ground; camp only on rock or bare sites.",
+     "water": "The lakes",
+     "permit": "Free self-issue Alpine Lakes Wilderness permit",
+     "capacity": "A few small sites on durable ground"
+    },
+    {
+     "elev": 4500,
+     "name": "Surprise Lake and Glacier Lake",
+     "role": "route",
+     "type": "camp",
+     "notes": "The other half of the Thunder Mountain approach, and the one most parties use because the trailhead is simple to find and the walk is pleasant. From US 2 turn south into Scenic, ten miles east of Skykomish, cross the railway tracks and follow gravel a third of a mile to the trailhead at about 2,200 feet. It is four and a half miles to Surprise Lake and a further mile to Glacier Lake, climbing steadily through forest with the creek alongside. From either lake the Pacific Crest Trail runs north to Trap Pass, from where the climbers' track along the ridge reaches Thunder Mountain and Slippery Slab Tower. Camping here rather than at Trap Lake adds an hour or more to the summit morning but gives a better camp and a shorter, easier walk in with heavy loads, so it suits a party carrying a rope and rack. Both lakes are subalpine and hold snow into July in a normal year. The lower trail is steep enough in places to be slow with overnight packs, and the railway line at the trailhead is active and noisy at night, which is worth knowing before you pitch near the car.",
+     "water": "Both lakes and the creek between them. Treat it.",
+     "permit": "Alpine Lakes Wilderness self-issue permit at the trailhead, free, required for day and overnight use from mid-May to the end of October. Northwest Forest Pass or the daily fee at the Surprise Creek trailhead. No campfires above 4,000 feet west of the crest, which includes both of these lakes. Camp only at the established sites on the west shores.",
+     "capacity": "Established sites along the west shores of both lakes. Surprise is the larger and busier; Glacier, about a mile further and three hundred feet higher, is quieter and holds fewer parties."
+    }
+   ],
+   "name_search": "thunder mountain mtn north face",
+   "glacier_travel": "no"
+  },
+  "area": {
+   "id": "wa_thunder_mountain_and_slippery_slab_tower",
+   "name": "Thunder Mountain and Slippery Slab Tower",
+   "area_type": "crag",
+   "parent_id": "wa_stevens_pass_region",
+   "path": "usa.washington.wa_centralwest.wa_stevens_pass_region.wa_thunder_mountain_and_slippery_slab_tower",
+   "lat": 47.66888,
+   "lng": -121.12634,
+   "elevation_ft": null
+  },
+  "siblings": [
+   {
+    "id": "wa_slippery_slab_tower_ne_face",
+    "name": "Slippery Slab Tower NE Face",
+    "discipline": "alpine",
+    "grade": "5.4",
+    "length_m": 61,
+    "pitches": 2
+   },
+   {
+    "id": "wa_thunder_mountain_north_face",
+    "name": "Thunder Mountain North Face",
+    "discipline": "alpine",
+    "grade": "5.0",
+    "length_m": 183,
+    "pitches": null
+   }
+  ],
+  "logs": 0
+ }
+}
