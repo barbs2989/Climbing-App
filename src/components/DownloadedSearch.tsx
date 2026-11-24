@@ -9,6 +9,7 @@ import type { C as Palette } from "../../ClimbMatchCore.jsx";
 import ActionIcon from "./ActionIcon.tsx";
 import LoadingRows from "./LoadingRows.tsx";
 import EmptyState from "./EmptyState.tsx";
+import { POP_REMOVE } from "../../lib/popupChrome.js";
 import RouteRow from "./RouteRow.tsx";
 import type { RouteRowRoute } from "./RouteRow.tsx";
 
@@ -96,7 +97,8 @@ export default function DownloadedSearch({ C, downloaded, onOpenArea, onOpenRout
       </div>
       <div style={{ position: "relative" }}>
         <span aria-hidden="true" style={{ position: "absolute", left: 12, top: 0, height: 44, display: "flex", alignItems: "center", pointerEvents: "none" }}><ActionIcon name="search" size={18} color={C.textMuted}/></span>
-        <input type="search" enterKeyHint="search" value={q} onChange={e => setQ(e.target.value)} aria-label={mode === "areas" ? "Search your downloaded areas" : "Search your downloaded routes"} placeholder={mode === "areas" ? "Search areas, crags, peaks…" : "Search routes…"} style={{ width: "100%", height: 44, boxSizing: "border-box", padding: "0 12px 0 38px", borderRadius: 12, border: "1px solid " + C.border, background: C.card, color: C.text, fontSize: 15, outline: "none" }}/>
+        <input type="search" enterKeyHint="search" value={q} onChange={e => setQ(e.target.value)} aria-label={mode === "areas" ? "Search your downloaded areas" : "Search your downloaded routes"} placeholder={mode === "areas" ? "Search areas, crags, peaks…" : "Search routes…"} style={{ width: "100%", height: 44, boxSizing: "border-box", padding: "0 40px 0 38px", borderRadius: 12, border: "1px solid " + C.border, background: C.card, color: C.text, fontSize: 15, outline: "none" }}/>
+        {q ? <button type="button" onClick={() => setQ("")} aria-label="Clear search" style={{ ...POP_REMOVE, position: "absolute", right: 10, top: 22, transform: "translateY(-50%)" }}>✕</button> : null}
       </div>
       {/* What it covers, and the way to change that: with a state downloaded nothing else on this screen leads to Manage areas. */}
       {covers ? <div style={{ display: "flex", alignItems: "center", gap: 8, margin: "2px 2px 0" }}><span style={{ flex: 1, minWidth: 0, fontSize: 11.5, color: C.textMuted, lineHeight: 1.4, overflowWrap: "anywhere" }}>{covers}</span><button onClick={onManageAreas} aria-label="Manage downloaded areas" style={{ flexShrink: 0, minHeight: 36, padding: "4px 2px 4px 8px", border: "none", background: "transparent", color: C.blue, fontSize: 12, fontWeight: 700, cursor: "pointer" }}>Manage</button></div> : null}
