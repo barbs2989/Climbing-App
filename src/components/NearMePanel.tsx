@@ -9,7 +9,7 @@ import { applyBaseLayer, loadLeaflet, pinHtml, useFollowMe, searchPlaces, BaseLa
 import { DISC_COLORS, discIconMarkup } from "../../lib/disciplines";
 import { haversineMi } from "../../lib/areaBrowserShared.js";
 import { CHIP, BTN } from "../../lib/buttonStyles.js";
-import { POP_CLOSE_MEDIA, POP_CLOSE, POP_BACK } from "../../lib/popupChrome.js";
+import { POP_CLOSE_MEDIA, POP_CLOSE, POP_BACK, POP_REMOVE } from "../../lib/popupChrome.js";
 import ActionIcon from "./ActionIcon.tsx";
 import { clickable } from "../../lib/clickable";
 import { createPortal } from "react-dom";
@@ -317,7 +317,7 @@ export default function NearMePanel({ center0, areaType, name, onBack, onOpenAre
   const searchUI = (
     <>
         <form onSubmit={findPlace} role="search" style={{ display: "flex", gap: 6, marginBottom: place.err || place.alts.length ? 4 : 8 }}>
-          <input type="search" value={placeQ} onChange={e => setPlaceQ(e.target.value)} placeholder="Go to a town, county or zip/postal code" aria-label="Go to a town, county or zip/postal code" enterKeyHint="search" style={{ flex: 1, minWidth: 0, padding: "10px 12px", borderRadius: 10, border: "1px solid " + C.border, background: C.surface, color: C.text, fontSize: 16 }} />
+          <div style={{ position: "relative", flex: 1, minWidth: 0 }}><input type="search" value={placeQ} onChange={e => setPlaceQ(e.target.value)} placeholder="Go to a town, county or zip/postal code" aria-label="Go to a town, county or zip/postal code" enterKeyHint="search" style={{ width: "100%", boxSizing: "border-box", padding: "10px 40px 10px 12px", borderRadius: 10, border: "1px solid " + C.border, background: C.surface, color: C.text, fontSize: 16 }} />{placeQ ? <button type="button" onClick={() => setPlaceQ("")} aria-label="Clear search" style={{ ...POP_REMOVE, position: "absolute", right: 10, top: "50%", transform: "translateY(-50%)" }}>✕</button> : null}</div>
           <button type="submit" disabled={!placeQ.trim() || place.busy} style={{ ...BTN, background: C.blueSolid, color:C.onSolid, border: "none", flexShrink: 0, opacity: !placeQ.trim() || place.busy ? 0.6 : 1 }}>{place.busy ? "Finding…" : "Go"}</button>
         </form>
         {place.err ? <div role="status" style={{ color: C.red, fontSize: 12, marginBottom: 8 }}>{place.err}</div> : null}

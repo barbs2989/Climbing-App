@@ -2,6 +2,7 @@ import { useAreaClassics, useSubtreeRoutes } from "../../lib/db";
 import { BTN } from "../../lib/buttonStyles.js";
 import RouteRow from "./RouteRow.tsx";
 import LoadingRows from "./LoadingRows.tsx";
+import EmptyState from "./EmptyState.tsx";
 import type { RouteRowRoute } from "./RouteRow.tsx";
 import type { C as Palette } from "../../ClimbMatchCore.jsx";
 
@@ -43,7 +44,7 @@ export default function MapAreaClimbs({ area, onOpenRoute, onOpenArea, C }: MapA
         <div style={lbl}>{fromClassics ? "Classics here" : "Climbs here"}</div>
         {rows.map(r => <RouteRow key={String(r.id)} r={r} onOpen={onOpenRoute} C={C} />)}
       </> : null}
-      {!loading && !failed && !rows.length ? <div style={{ fontSize: 12.5, color: C.textMuted, padding: "4px 2px 8px" }}>No climbs listed here yet.</div> : null}
+      {!loading && !failed && !rows.length ? <EmptyState C={C} icon="mountain" style={{ padding: "12px 14px 14px" }}>No climbs listed here yet.</EmptyState> : null}
       {area.route_count > rows.length ? <button onClick={() => onOpenArea(area)} style={{ ...BTN, width: "100%", border: "1px solid " + C.border, background: C.surface, color: C.blue }}>{"See all " + area.route_count + " climbs at " + area.name + " ›"}</button> : null}
     </div>
   );
