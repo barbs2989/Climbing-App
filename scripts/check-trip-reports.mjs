@@ -170,6 +170,11 @@ else fail("signed out can read reliability counts");
   const disputed = await rel(D, [B]);
   if (!there.error && disputed[B].trips === 0 && disputed[B].no_show === 0) ok("\"I was there\" disputes it: the report stops counting");
   else fail(`"I was there": ${there.error || "ok"}; counts ${JSON.stringify(disputed[B])} — a disputed report still counts`);
+  // The REPORTER sees the answer on their recap: a note only its writer could read would be context for nobody.
+  const back = (await as("authenticated", A, `select * from crew_recap($1)`, [CREW])).rows?.find((r) => r.about_id === B);
+  const strangerRecap = await as("authenticated", D, `select * from crew_recap($1)`, [CREW]);
+  if (back && back.their_reply === "was_there" && back.my_outcome === "no_show" && strangerRecap.rows?.length === 0) ok("the reporter's recap shows the crewmate's answer, and a stranger's recap of the crew is empty");
+  else fail(`A's recap row about B: ${JSON.stringify(back)}; stranger's recap rows: ${JSON.stringify(strangerRecap.rows || strangerRecap.error)}`);
   const emptyNote = await as("authenticated", B, `select reply_to_trip_report($1, 'note', '   ')`, [mine.id]);
   if (emptyNote.error) ok("an empty note is refused"); else fail("an empty note was accepted");
 }
