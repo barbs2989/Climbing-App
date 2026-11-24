@@ -122,7 +122,8 @@ empty field fill at once and two agreeing climbers change one; the owner withdre
   sent, and an admin can make them a reviewer. *Appeals*: kind `contributing` appeals, Reverse or Keep
   (`decide_appeal`). *Locks*: the hand-set levels in `route_field_confidence`, searchable, with Unlock (back to the
   computed level). *Worklist*: `review_worklist`, the data audits' findings, Done / Ignore / Reopen, filled by
-  `node scripts/review-worklist-load.mjs` (built-in impossible-numbers finder, plus `audit:expiring-closures`,
+  `node scripts/review-worklist-load.mjs` (built-in impossible-numbers finder, plus `audit:expiring-closures` (its
+  expired tier only: the other 965 WA candidates on 2026-11-24 may age but are not wrong today),
   `audit:prose-length` and `audit:partner-grade`; a re-run closes what it no longer finds and reopens what comes back).
   Inside an expanded edit: a word-level diff of the page's text against the climber's, and every edit the field has
   ever had. Keys on the table: j / k next and previous, a approve, r turn down, Escape close.

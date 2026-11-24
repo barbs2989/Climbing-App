@@ -46,8 +46,11 @@ async function main() {
   console.log("route edit gates — two throwaway climbers, anon key + their own JWT, outcomes read back with the service key\n");
   const V = await mk("v"), Y = await mk("y");
   await api("/rest/v1/profiles?id=eq." + V.id, { method: "PATCH", body: JSON.stringify({ created_at: new Date(Date.now() - 40 * 864e5).toISOString() }) }, svc);
-  const R = ((await truth("/rest/v1/routes?discipline=eq.sport&watch_out=is.null&season=not.is.null&grade=not.is.null&lat=not.is.null&select=id,area_id,lat,lng&limit=1")).body || [])[0];
-  if (!R) throw new Error("no sport route with an empty watch_out, a season, a grade and a position to test on");
+  // A sport route (grade HIGH by discipline) with an empty watch_out and a filled season; one with a position if
+  // there is one, so the far-pin check can run (it is skipped, and says so, when none has).
+  const pick = (extra) => truth("/rest/v1/routes?discipline=eq.sport&watch_out=is.null&season=not.is.null&grade=not.is.null" + extra + "&select=id,area_id,lat,lng&limit=1");
+  const R = ((await pick("&lat=not.is.null")).body || [])[0] || ((await pick("")).body || [])[0];
+  if (!R) throw new Error("no sport route with an empty watch_out, a season and a grade to test on");
   console.log("route under test: " + R.id);
   const sel = "grade,season,watch_out";
   const before = ((await truth(`/rest/v1/routes?id=eq.${encodeURIComponent(R.id)}&select=${sel}`)).body || [])[0];
@@ -98,7 +101,8 @@ async function main() {
 
   // 0530: values are checked when sent.
   for (const [f, v, why] of [["highPointFt", 999999, "a 999,999 ft high point"], ["watchOut", "Call for beta: http://spam.example", "a link in route text"],
-    ["grade", "harder than it looks honestly", "a sentence as a grade"], ["waypoints", [{ name: "Far", lat: R.lat + 2, lng: R.lng }], "a pin ~220 km from the climb"]]) {
+    ["rockGrade", "harder than it looks honestly", "a sentence as a grade"], ["waypoints", [{ name: "Nowhere", lat: 0, lng: 0 }], "a pin at 0,0"],
+    ...(R.lat != null ? [["waypoints", [{ name: "Far", lat: R.lat + 2, lng: R.lng }], "a pin ~220 km from the climb"]] : [])]) {
     const r = await edit(V, R.id, f, v);
     if (r.status >= 400) ok("refused when sent: " + why + " — " + msg(r).slice(0, 70)); else bad("accepted: " + why);
   }

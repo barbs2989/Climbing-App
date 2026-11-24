@@ -31,8 +31,10 @@ async function rest(method, p, body, extra) {
 }
 
 // Run an audit script with --json; return its parsed output (the first JSON value it prints).
-function runAudit(script) {
-  const argv = [script, "--json"]; if (STATE) argv.push("--state", STATE);
+// The audits disagree on the state's spelling: audit-expiring-closures matches a lowercase id prefix ("wa"),
+// the others take "WA". `lower` says which this one wants.
+function runAudit(script, lower) {
+  const argv = [script, "--json"]; if (STATE) argv.push("--state", lower ? STATE.toLowerCase() : STATE);
   const out = execFileSync(process.execPath, argv, { encoding: "utf8", maxBuffer: 256 * 1024 * 1024, stdio: ["ignore", "pipe", "inherit"] });
   const i = out.search(/^[[{]/m);
   if (i < 0) throw new Error(script + " printed no JSON");
@@ -57,7 +59,10 @@ const SOURCES = {
     }
     return items;
   },
-  "audit:expiring-closures": async () => (runAudit("scripts/audit-expiring-closures.mjs").findings || []).map((f) => ({
+  // Only the EXPIRED tier: a closure stated past its own end date is false today. The other tiers (open-ended,
+  // dated to a period, dated to the research) are claims that MAY age: 965 of 978 WA findings on 2026-11-24,
+  // which would bury everything else on the desk. Run the audit itself to work those.
+  "audit:expiring-closures": async () => (runAudit("scripts/audit-expiring-closures.mjs", true).findings || []).filter((f) => f.tier === "expired").map((f) => ({
     item_key: `${f.id}:${f.field}`, route_id: f.id, title: `${f.name}: a closure that may have expired (${f.tier})`,
     detail: clip(`${f.field}${f.roadName ? " · " + f.roadName : ""}: ${f.text}`, 4000) })),
   "audit:prose-length": async () => (runAudit("scripts/audit-prose-length.mjs") || []).map((f) => ({
