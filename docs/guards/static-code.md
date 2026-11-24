@@ -129,14 +129,27 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   (`#776e62`) is 3.09–3.77:1 on every background a field sits on. **Why it exists:** the move to
   `C.field` was a codemod over text, and its review found seven field styles it had missed, every one
   declared with a type annotation (`const fld: CSSProperties = {…}`) its pattern did not allow. This
-  guard parses with Babel and resolves a style variable through `scope.getBinding`, so an annotation,
-  a spread (`{...inp}`), a call (`_pill(on)`) or a conditional style all reach the declaration.
-  **What it cannot see:** an IMPORTED style is not followed (the shared `INPUT` in
-  `lib/buttonStyles.js` is checked where it is defined instead); a colour that is not a palette
-  member (`<palette>.border` with the palette named `C` or `c`) — a hex literal, or a variable
-  holding the colour — passes. **Fails closed** below 200 fields or 20 resolved style variables; the
-  first run read 385 fields and followed 149. **Proved:** turning `LoginScreen.tsx`'s `inp` back to
-  `C.border` fails it on all five sign-in fields that share it.
+  guard parses with Babel and follows EVERY name a field's `style` refers to through
+  `scope.getBinding`, recursively with a visited set: a variable, a spread, an argument
+  (`Object.assign({},fld,{…})` — 59 fields are written that way), a function declaration's body, the
+  names a followed declaration uses in turn (`const fld={...base}`), and an import from a relative
+  module, resolved to the declaration in that file. `S.field` is NARROWED to the `field` property —
+  through an object literal or the object a called function returns (`S = sheetStyles()`) — because
+  the rest of such a map is buttons and dividers, which keep `C.border`. A `type` written as an
+  expression (`{"checkbox"}`, or a conditional of non-text types) is still recognised as not a text
+  field. A file with a syntax error stops it (DEAD), since a partial parse would skip the fields after
+  the error. **Second version, 2026-11-24, from the review of #3880:** the first version followed one
+  level, skipped `Object.assign`, function declarations and imports, and misread `type={"checkbox"}`;
+  making it follow everything found one more real miss the text codemod and the first version both
+  passed — the GPS submission form's four fields, styled `S.field` from `sheetStyles()`.
+  **What it cannot see:** a value handed in as a function PARAMETER or a prop (counted and printed as a
+  `note`, never silent); a package import; a colour that is not a palette member (`<palette>.border`
+  with the palette named `C` or `c`) — a hex literal, or a variable holding the colour — passes.
+  **Fails closed** below 200 fields or 100 followed references; this version reads 385 fields and
+  follows 416. **Proved** (a throwaway probe file, deleted): `Object.assign`, two-level, function
+  declaration, import and `S.field` cases each FAIL with the chain they were reached by; `type={"checkbox"}`,
+  a conditional checkbox/radio and a map's other properties pass; a syntax error is DEAD. Earlier:
+  turning `LoginScreen.tsx`'s `inp` back to `C.border` fails all five sign-in fields that share it.
 - **`check:dup-attrs`** asserts that no declaration is written **twice in one place** — a JSX
   attribute on one element, or a key in one object literal. The later one wins and the earlier one
   is **dead**. Static (Babel), so it sits in `npm run build`.

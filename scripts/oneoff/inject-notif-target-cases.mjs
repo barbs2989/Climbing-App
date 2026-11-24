@@ -72,7 +72,7 @@ const CASES = [
 
   // Home's fallback is what makes ITS unconditional clickable honest.
   { name: "home-loses-its-fallback", file: "today", expect: "Home's fallback is gone",
-    find: "if(n.lbtab)setLogbookTab(n.lbtab);return;}setNotifOpen(true);}", repl: "if(n.lbtab)setLogbookTab(n.lbtab);return;}" },
+    find: "if(n.lbtab)setLogbookTab(n.lbtab);return;}if(wide)_alerts.openAll();else setNotifOpen(true);}", repl: "if(n.lbtab)setLogbookTab(n.lbtab);return;}" },
 
   // SILENT: documentation naming the old list is not the old list.
   { name: "SILENT-comment-quotes-the-old-list", file: "core", silent: true,

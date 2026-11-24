@@ -114,7 +114,9 @@ console.log("\n4. Home's third chain, and why it is left alone\n");
 // includes() is satisfied by the OTHER occurrence -- the injection case reported MISSED against a
 // deleted fallback, which is this probe's own "matched N times, so the assertion is about an
 // unknown site" trap arriving in the one assertion that did not guard against it.
-const HOME_FALLBACK = 'if(n.lbtab)setLogbookTab(n.lbtab);return;}setNotifOpen(true);}';
+// The fallback opens the panel as the PAGE on the website (openAll: there is no website drop-down since
+// 2026-11-24) and as the sheet on a phone; either way it opens the panel.
+const HOME_FALLBACK = 'if(n.lbtab)setLogbookTab(n.lbtab);return;}if(wide)_alerts.openAll();else setNotifOpen(true);}';
 if (app.split(HOME_FALLBACK).length - 1 === 1) ok("Home's alerts chain still ends in the open-the-panel fallback");
 else fail("Home's fallback is gone — its rows are now tappable on an INCOMPLETE list of kinds");
 

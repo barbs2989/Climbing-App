@@ -452,6 +452,11 @@ try {
   // fixture now names its group per run; matching that name is what makes the assertion about
   // this run's data. Falls back to the literal only if a fixture predates the field.
   const groupName = fixture.group?.name || "Fixture Alpine Club";
+  // Wait for the NAME, not for two seconds. The list is a read of the live database; on
+  // 2026-11-24 it answered after the fixed wait above, the tap found nothing, and the walk
+  // reported "not listed for its own owner" over a Groups screen that listed it a moment later.
+  // The assertion is unchanged: a group that never renders still fails, 15s later.
+  await page.waitForFunction((n) => document.body.innerText.includes(n), groupName, { timeout: 15000 }).catch(() => {});
   if (await clickContaining(groupName)) {
     /* AND a second, independent gap that per-run groups do not close. `isCreator` in
        ClimbMatch.jsx reads `cl._db ? (!!uid && cl.ownerId === uid) : ...`, and `isMod` is
@@ -679,30 +684,44 @@ try {
     // unscoped search for it fails on a working fix. (I made exactly this mistake writing this
     // assertion, and it is the third time today: a fixed window or a whole-screen read is not a
     // section.) The modal runs from its title to its submit button.
+    //
+    // SINCE #3838 THE RECAP IS TripRecapSheet ("How did it go?"), and it has NO "You" row: you say how
+    // the trip went for each CREWMATE. The sheet above ("Trip recap" ... "Confirm attendance") is gone,
+    // and this assertion went red on 2026-11-24 looking for its submit button. What it protected is
+    // restated for the new sheet: the signed-in climber must never be a row they can mark, and when
+    // the sheet lists crewmates the other member must be one of them.
+    //   The sheet is portalled to document.body, so it is the END of the captured text: it runs from
+    // its title to its "Done" button.
     const _whole = screens["modal:recapId"];
-    const _a = _whole === undefined ? -1 : _whole.indexOf("Trip recap");
-    const _b = _a < 0 ? -1 : _whole.indexOf("Confirm attendance", _a);
+    const _a = _whole === undefined ? -1 : _whole.lastIndexOf("How did it go?");
+    const _b = _a < 0 ? -1 : _whole.lastIndexOf("Done");
     const recap = (_a >= 0 && _b > _a) ? _whole.slice(_a, _b) : undefined;
     if (_whole === undefined) {
       log("  recap roster: not checked — modal:recapId was skipped or never opened");
     } else if (recap === undefined) {
       asserted++;
-      fail("modal:recapId", "could not find the recap between its title and \"Confirm attendance\" — it was renamed, so the roster was NOT checked");
+      fail("modal:recapId", "could not find the recap between its title \"How did it go?\" and its \"Done\" button — it was renamed, so the roster was NOT checked");
     } else {
       asserted++;
-      if (!/\bYou\b/.test(recap)) {
-        fail("modal:recapId", "the recap does not list a \"You\" row, so there is nothing for the duplicate check to be relative to");
+      if (/Loading your crew|Couldn’t load this trip/.test(recap)) {
+        fail("modal:recapId", "the recap never loaded its crew — it reads " + JSON.stringify(recap.slice(0, 160)));
       } else if (recap.includes(fixture.owner.name)) {
-        fail("modal:recapId",
-          `the signed-in climber is listed twice — a "You" row and a ${JSON.stringify(fixture.owner.name)} row. ` +
-          "Both carry cid 0, so they share one attendance mark and one React key.");
+        fail("modal:recapId", `the signed-in climber ${JSON.stringify(fixture.owner.name)} is a row on their own recap — nobody reports on themselves`);
       }
-      asserted++;
-      // …and the OTHER member must still be there. A roster that dropped everyone would satisfy
-      // the check above and be a worse screen than the one it replaced.
-      const mateFirst = fixture.mate.name.split(" ")[0];
-      if (!recap.toLowerCase().includes(mateFirst.toLowerCase())) {
-        fail("modal:recapId", `the crew's other member ${JSON.stringify(mateFirst)} is not on the recap roster`);
+      // The ROSTER renders only for a crew with an AGREED day (the sheet says so otherwise). The
+      // fixture's crews propose days and nobody acks them, so today this branch is not reached and
+      // the log line says that rather than counting an assertion that could not fire.
+      if (/We called it off, or didn’t go/.test(recap)) {
+        asserted++;
+        const mateFirst = fixture.mate.name.split(" ")[0];
+        if (!recap.toLowerCase().includes(mateFirst.toLowerCase())) {
+          fail("modal:recapId", `the crew's other member ${JSON.stringify(mateFirst)} is not on the recap roster`);
+        }
+      } else if (/needs an agreed day/.test(recap)) {
+        log("  recap roster: not checked — the fixture crew has no agreed day, so the sheet lists nobody (it says so)");
+      } else {
+        asserted++;
+        fail("modal:recapId", "the recap shows neither its roster nor its no-agreed-day note — it reads " + JSON.stringify(recap.slice(0, 160)));
       }
     }
   }

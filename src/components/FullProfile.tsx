@@ -208,7 +208,7 @@ export default function FullProfile({restricted,onRestrict,notify,climber,onClos
      then, rather than calling a verified climber unverified. */
   const realVerQ=useVerifiedUsers(_realId?[_realId]:[]);
   /* RELIABILITY (0519): THEIR record and MINE in one read, because the match counts both sides. */
-  const _relQ=useReliabilityOf((DB_UID?[DB_UID]:[]).concat(_realId&&_realId!==DB_UID?[_realId]:[]));/* A failed read scores as no record (neutral) rather than holding the % back for good. */const _relUnavailable=_relQ.isError;
+  const _relQ=useReliabilityOf((DB_UID?[DB_UID]:[]).concat(_realId&&_realId!==DB_UID?[_realId]:[]),!!DB_UID);/* A failed read scores as no record (neutral) rather than holding the % back for good. */const _relUnavailable=_relQ.isError;
   climber=useMemo(function(){
     if(!_realId)return climber;
     const p=realProfileQ.data||{};
@@ -239,7 +239,7 @@ export default function FullProfile({restricted,onRestrict,notify,climber,onClos
   const _mAreas: string[]=(Array.isArray(climber.partnerAreaPaths)&&climber.partnerAreaPaths.length)?climber.partnerAreaPaths.filter((x): x is string=>!!x):((_realId&&partnerAreasQ.data)?((partnerAreasQ.data as Record<string, Array<{path?: string | null}>>)[_realId]||[]):[]).map(l=>l.path).filter((x): x is string=>!!x);
   /* A failed listed-areas read must not hold the % back forever: score without the area term (it reads "not listed by both", scored neutral). */
   const _areasUnavailable=partnerAreasQ.isError;
-  const _scoreReady=!climber._real||(!!_mObj&&(!!partnerAreasQ.data||_areasUnavailable)&&(!!_relQ.data||_relUnavailable));
+  const _scoreReady=!climber._real||(!!_mObj&&(!!partnerAreasQ.data||_areasUnavailable)&&(!DB_UID||!!_relQ.data||_relUnavailable));
   const _them=climber._real?Object.assign({},climber,{objectiveIds:_mObj||[],partnerAreaPaths:_mAreas,reliability:_relQ.data?_relQ.data[_realId||""]:undefined}):climber;
   const _unkN=climber._real?compatUnknown(_meM,_them):0;
   /* THE MATCH IN ONE SENTENCE (2026-11-23), over the checklist: the same pair the score reads, and their listed-area names when the read has them. */
