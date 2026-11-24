@@ -1,0 +1,317 @@
+{
+ "note": "Values replaced by the owner-approved batch-ak access/gear object fixes, 2026-11-24",
+ "rollback": [
+  {
+   "table": "routes",
+   "id": "wa_frog_prince",
+   "before": {
+    "access": {
+     "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+     "notes": "Many of these peaks (Mount Persis, Gunn Peak, Baring Mountain area) sit outside designated wilderness — administratively unrestricted despite serious technical terrain.",
+     "permit": "None required.",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+     "parking_pass": "Northwest Forest Pass or America the Beautiful pass required at developed trailheads."
+    }
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_frog_prince",
+   "before": {
+    "gear": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_frog_pond",
+   "before": {
+    "access": {
+     "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+     "notes": "Many of these peaks (Mount Persis, Gunn Peak, Baring Mountain area) sit outside designated wilderness — administratively unrestricted despite serious technical terrain.",
+     "permit": "None required.",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+     "parking_pass": "Northwest Forest Pass or America the Beautiful pass required at developed trailheads."
+    }
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_frog_pond",
+   "before": {
+    "gear": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_tadpole",
+   "before": {
+    "access": {
+     "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+     "notes": "Many of these peaks (Mount Persis, Gunn Peak, Baring Mountain area) sit outside designated wilderness — administratively unrestricted despite serious technical terrain.",
+     "permit": "None required.",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+     "parking_pass": "Northwest Forest Pass or America the Beautiful pass required at developed trailheads."
+    }
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_tadpole",
+   "before": {
+    "gear": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_stern_farmer",
+   "before": {
+    "access": {
+     "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+     "notes": "Many of these peaks (Mount Persis, Gunn Peak, Baring Mountain area) sit outside designated wilderness — administratively unrestricted despite serious technical terrain.",
+     "permit": "None required.",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+     "parking_pass": "Northwest Forest Pass or America the Beautiful pass required at developed trailheads."
+    }
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_dwarf_tossing_to_narrow_arrow_stern_farmer_full",
+   "before": {
+    "access": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_dwarf_tossing_to_narrow_arrow_stern_farmer_full",
+   "before": {
+    "gear": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_sushi_farmer",
+   "before": {
+    "access": {
+     "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+     "notes": "Many of these peaks (Mount Persis, Gunn Peak, Baring Mountain area) sit outside designated wilderness — administratively unrestricted despite serious technical terrain.",
+     "permit": "None required.",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+     "parking_pass": "Northwest Forest Pass or America the Beautiful pass required at developed trailheads."
+    }
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_dwarf_tossing_to_narrow_arrow_chorus_of_frogs",
+   "before": {
+    "access": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_numbah_ten",
+   "before": {
+    "access": {
+     "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+     "notes": "Many of these peaks (Mount Persis, Gunn Peak, Baring Mountain area) sit outside designated wilderness — administratively unrestricted despite serious technical terrain.",
+     "permit": "None required.",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+     "parking_pass": "Northwest Forest Pass or America the Beautiful pass required at developed trailheads."
+    }
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_numbah_ten_p3",
+   "before": {
+    "access": {
+     "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+     "notes": "Many of these peaks (Mount Persis, Gunn Peak, Baring Mountain area) sit outside designated wilderness — administratively unrestricted despite serious technical terrain.",
+     "permit": "None required.",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+     "parking_pass": "Northwest Forest Pass or America the Beautiful pass required at developed trailheads."
+    }
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_numbah_ten_p3",
+   "before": {
+    "gear": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_comfortably_numbah_10",
+   "before": {
+    "access": {
+     "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+     "notes": "Many of these peaks (Mount Persis, Gunn Peak, Baring Mountain area) sit outside designated wilderness — administratively unrestricted despite serious technical terrain.",
+     "permit": "None required.",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+     "parking_pass": "Northwest Forest Pass or America the Beautiful pass required at developed trailheads."
+    }
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_tommy_s_sandbox",
+   "before": {
+    "access": {
+     "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+     "notes": "Many of these peaks (Mount Persis, Gunn Peak, Baring Mountain area) sit outside designated wilderness — administratively unrestricted despite serious technical terrain.",
+     "permit": "None required.",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+     "parking_pass": "Northwest Forest Pass or America the Beautiful pass required at developed trailheads."
+    }
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_tommy_s_sandbox",
+   "before": {
+    "gear": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_city_park_bolt_ladder",
+   "before": {
+    "access": {
+     "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+     "notes": "Many of these peaks (Mount Persis, Gunn Peak, Baring Mountain area) sit outside designated wilderness — administratively unrestricted despite serious technical terrain.",
+     "permit": "None required.",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+     "parking_pass": "Northwest Forest Pass or America the Beautiful pass required at developed trailheads."
+    }
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_cheeseburgers_on_trial",
+   "before": {
+    "access": {
+     "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+     "notes": "Many of these peaks (Mount Persis, Gunn Peak, Baring Mountain area) sit outside designated wilderness — administratively unrestricted despite serious technical terrain.",
+     "permit": "None required.",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+     "parking_pass": "Northwest Forest Pass or America the Beautiful pass required at developed trailheads."
+    }
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_bwana_dik",
+   "before": {
+    "access": {
+     "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+     "notes": "Many of these peaks (Mount Persis, Gunn Peak, Baring Mountain area) sit outside designated wilderness — administratively unrestricted despite serious technical terrain.",
+     "permit": "None required.",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+     "parking_pass": "Northwest Forest Pass or America the Beautiful pass required at developed trailheads."
+    }
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_bwana_dik",
+   "before": {
+    "gear": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_just_say_no",
+   "before": {
+    "access": {
+     "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+     "notes": "Many of these peaks (Mount Persis, Gunn Peak, Baring Mountain area) sit outside designated wilderness — administratively unrestricted despite serious technical terrain.",
+     "permit": "None required.",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+     "parking_pass": "Northwest Forest Pass or America the Beautiful pass required at developed trailheads."
+    }
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_just_say_no",
+   "before": {
+    "gear": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_narrow_arrow_overhang",
+   "before": {
+    "access": {
+     "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+     "notes": "Many of these peaks (Mount Persis, Gunn Peak, Baring Mountain area) sit outside designated wilderness — administratively unrestricted despite serious technical terrain.",
+     "permit": "None required.",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+     "parking_pass": "Northwest Forest Pass or America the Beautiful pass required at developed trailheads."
+    }
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_narrow_arrow_direct",
+   "before": {
+    "access": {
+     "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+     "notes": "Many of these peaks (Mount Persis, Gunn Peak, Baring Mountain area) sit outside designated wilderness — administratively unrestricted despite serious technical terrain.",
+     "permit": "None required.",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+     "parking_pass": "Northwest Forest Pass or America the Beautiful pass required at developed trailheads."
+    }
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_narrow_arrow_direct",
+   "before": {
+    "gear": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_natural_log_cabin",
+   "before": {
+    "access": {
+     "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+     "notes": "Many of these peaks (Mount Persis, Gunn Peak, Baring Mountain area) sit outside designated wilderness — administratively unrestricted despite serious technical terrain.",
+     "permit": "None required.",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+     "parking_pass": "Northwest Forest Pass or America the Beautiful pass required at developed trailheads."
+    }
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_full_horse_power",
+   "before": {
+    "access": {
+     "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+     "notes": "Many of these peaks (Mount Persis, Gunn Peak, Baring Mountain area) sit outside designated wilderness — administratively unrestricted despite serious technical terrain.",
+     "permit": "None required.",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+     "parking_pass": "Northwest Forest Pass or America the Beautiful pass required at developed trailheads."
+    }
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_dwarf_tossing_to_narrow_arrow_dr_sniff_and_the_tuna_boaters",
+   "before": {
+    "access": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_dwarf_tossing_to_narrow_arrow_dr_sniff_and_the_tuna_boaters",
+   "before": {
+    "gear": null
+   }
+  }
+ ]
+}
