@@ -94,6 +94,13 @@ try {
   const boxTxt = await box.innerText().catch(() => ""); note("list-me box: " + boxTxt.replace(/\n/g, " / "));
   ok(/ at /.test(boxTxt.split("\n").slice(0, 2).join(" ")), "the list-me box says \"at\" a crag or wall");
   await shot("2-by-area-deep");
+  // Leave By Area and come back: the crag is still what the dropdowns show AND what is searched (review of #3909).
+  await by.selectOption("anyone"); await page.waitForTimeout(2500);
+  await by.selectOption("area"); await page.waitForTimeout(3000);
+  const insideBack = await pick.locator('select[aria-label^="Filter by area inside "]').count();
+  ok(insideBack === names.length - 1, "back on By Area, the deeper dropdowns are still there (" + insideBack + ")");
+  const titleBack = await page.locator('[role="heading"][aria-level="2"]').first().innerText();
+  ok(titleBack.includes(names[names.length - 1]), "...and the title still names the crag: " + titleBack);
   // Changing the state clears the deeper selects.
   await page.locator('select[aria-label="Filter by state"]').selectOption("oregon"); await page.waitForTimeout(4000);
   ok(await pick.locator('select[aria-label^="Filter by area inside "]').count() === 0, "a new state clears the deeper selects");
