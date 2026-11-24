@@ -1,4 +1,4 @@
--- 0506: a report kept to friends, a crew or Just me also feeds the route's RAPPELS answers and its
+-- 0508: a report kept to friends, a crew or Just me also feeds the route's RAPPELS answers and its
 -- summit counts, without a name or a word of the climber's.
 --
 -- Owner 2026-11-23 ("do all", after the log-form audit): the log form tells a climber whose report is
