@@ -228,7 +228,9 @@ export const OVERLAY_PAYLOADS = {
     expr: "(crews.length?{crewId:crews[0].id,climber:CLIMBERS[0]}:null)",
     needsData: "`crews.find(id)` must hit AND that crew's route must resolve",
   },
-  recapId: { expr: "(crews[0]||{}).id", needsData: "`crews.find(x=>x.id===recapId)` — needs a crew" },
+  // The crew with a LOCKED day first: the recap lists crewmates only for one (0519), and the signed-in fixture's
+  // main crew is the one that has it. Any crew otherwise, as before.
+  recapId: { expr: "(crews.find(function(c){return c&&c.date;})||crews[0]||{}).id", needsData: "`crews.find(x=>x.id===recapId)` — needs a crew" },
   // 0519: "Your side" of a trip report about you. The report comes from my_trip_reports_about_me, which only a real
   // crew trip that a crewmate reported on can fill, so a walk opens the first one when the account has one.
   tripReplyId: { expr: "(((tripAboutQ.data)||[])[0]||{}).id", needsData: "`tripAboutQ.data.find(id)` — needs a revealed trip report about the signed-in climber (0519)" },

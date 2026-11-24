@@ -343,16 +343,20 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     `scripts/lib/ui-fixture.mjs`, 2026-11-24). Every fixture crew carried a fixed day from
     September or October 2026. Since #3816 a crew whose last proposed day is more than 14 days
     behind is a PAST crew, so the Crews tab of every walk read "You have no crews yet. Past crews
-    (3)" and four assertions failed with the app correct. The per-run crews now ask the helper,
-    and `durableFixture()` moves the DURABLE crew's days forward on every run, on its creator's
-    own JWT, as it already re-stamps the policy version. A date written into a fixture is a
-    fixture with an expiry.
+    (3)" and four assertions failed with the app correct. The per-run crews now ask the helper.
+    The MAIN crew (the durable one in CI) is instead LOCKED to yesterday on every run
+    (`fixtureTripDay()`), on its creator's own JWT, as the policy version is re-stamped: a crew
+    whose day passed stays a crew card for 3 days. A date written into a fixture is a fixture
+    with an expiry.
   - **The recap is `TripRecapSheet` since #3838, and it has no "You" row.** The assertion that
     read the old sheet between "Trip recap" and "Confirm attendance" now reads from "How did it
     go?" to "Done": the signed-in climber is never a row on their own recap, and the sheet must
-    have loaded. **It does not reach the roster**: the sheet lists crewmates only for a crew with
-    an AGREED day, the fixture crews have none, and the walk logs that instead of counting an
-    assertion. Giving a fixture crew an agreed day within the last 3 days would reach it.
+    have loaded. **The roster is required**: the sheet lists crewmates only for a crew with an
+    AGREED day, so the main crew is locked to yesterday and the scaffold opens `recapId` on the
+    crew that has a locked day. The crewmate must be on it; the sheet's own "needs an agreed day"
+    note is a failure. **Never give a PER-RUN crew a locked day**: a crew with crewmates cannot be
+    deleted while its trip is reportable (`crews_keep_while_reportable`, 0523), so teardown would
+    leave one behind on every run.
   - **The fixture accounts carry a USERNAME** (2026-11-18). Since 0420/0432 an account with none
     is sent to setup on every screen, so this walk (and `check:outage`'s healthy
     run, which shares the fixture) measured the "Choose your username" step and reported 7
