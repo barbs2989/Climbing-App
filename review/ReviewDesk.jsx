@@ -111,7 +111,7 @@ const CSS = `
 }
 .rd-btn{padding:8px 11px;border-radius:8px;font-size:12.5px;font-weight:700;cursor:pointer;border:1px solid ${C.border};background:${C.surface};color:${C.textSub};min-height:36px}
 .rd-btn:disabled{opacity:.55;cursor:default}
-.rd-ok{background:${C.blueSolid};color:#fff;border-color:${C.blueSolid}}
+.rd-ok{background:${C.actionSolid};color:#fff;border-color:${C.actionSolid}}
 .rd-ai{background:${C.greenBg};color:${C.green};border-color:${C.greenDim}}
 .rd-bad{background:${C.redBg};color:${C.red};border-color:${C.red}}
 .rd-sel,.rd-in{background:${C.surface};color:${C.text};border:1px solid ${C.border};border-radius:8px;padding:7px 9px;font-size:12.5px;font-family:inherit}

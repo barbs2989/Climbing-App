@@ -131,7 +131,7 @@ export default function RouteBreakdown({route,focus,onEdit,comments,commentsUnav
         return <div data-belay-ask="" style={{background:C.blueBg,border:"1px solid "+C.blueDim,borderRadius:10,padding:"10px 12px",marginBottom:10}}>
           <div style={{fontSize:12.5,fontWeight:700,color:C.onSolid,marginBottom:3}}>You've climbed this</div>
           <div style={{fontSize:12,color:C.onSolid,lineHeight:1.5,marginBottom:8}}>{_noBelay.length+(_noBelay.length===1?" pitch has":" pitches have")+" no belay station yet. Say where you belayed, and the next party will find it."}</div>
-          <button onClick={function(){onEdit(_noBelay[0]._i);}} style={{...BTN_SM,background:C.blueSolid,color:C.onSolid,border:"none"}}>Add belay stations</button>
+          <button onClick={function(){onEdit(_noBelay[0]._i);}} style={{...BTN_SM,background:C.actionSolid,color:C.onSolid,border:"none"}}>Add belay stations</button>
         </div>;})()}
       {_anchors?<div data-pitch-anchors="" style={{fontSize:12,color:C.textSub,lineHeight:1.5,marginBottom:10,padding:"2px 0 2px 10px",borderLeft:"2px solid "+C.border}}><span style={{fontWeight:700,color:C.text}}>{"Anchors change by pitch: "}</span>{_anchors.map(function(x,i){return <span key={x[0]}>{i?" · ":""}<span style={{fontWeight:700,color:x[0]==="Bolted"?C.green:C.blue}}>{x[0]}</span>{" "+x[1]}</span>;})}</div>:null}
       {rows.map(function(r,idx){

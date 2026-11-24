@@ -17,7 +17,7 @@
 import { useEffect, useRef } from "react";
 import { createRoot } from "react-dom/client";
 
-const P = { surface: "#1a1916", card: "#221f1b", border: "#514a41", text: "#f1ede6", textSub: "#c9c1b5", redSolid: "#d0443d", blueSolid: "#b45309" };
+const P = { surface: "#1a1916", card: "#221f1b", border: "#514a41", text: "#f1ede6", textSub: "#c9c1b5", redSolid: "#d0443d", actionSolid: "#b45309" };
 // Below the toast (Z_TOAST in ClimbMatch.jsx is 1000000), above every other overlay.
 const Z = 999000;
 
@@ -47,7 +47,7 @@ function Sheet({ title, body, confirmLabel, cancelLabel, danger, onDone }) {
       <div style={{ fontSize: 17, fontWeight: 800, textAlign: "center", marginBottom: body ? 8 : 20, lineHeight: 1.35 }}>{title}</div>
       {body ? <div style={{ fontSize: 13.5, color: P.textSub, textAlign: "center", lineHeight: 1.55, marginBottom: 22 }}>{body}</div> : null}
       <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
-        <button type="button" onClick={() => onDone(true)} style={Object.assign({}, btn, { background: danger === false ? P.blueSolid : P.redSolid, color: "#fff", border: "none" })}>{confirmLabel}</button>
+        <button type="button" onClick={() => onDone(true)} style={Object.assign({}, btn, { background: danger === false ? P.actionSolid : P.redSolid, color: "#fff", border: "none" })}>{confirmLabel}</button>
         <button type="button" ref={cancelRef} onClick={() => onDone(false)} style={Object.assign({}, btn, { background: P.card, color: P.text, border: "1px solid " + P.border })}>{cancelLabel}</button>
       </div>
     </div>

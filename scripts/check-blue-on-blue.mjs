@@ -11,8 +11,8 @@ import { fileURLToPath } from "node:url";
 // owns text, its computed colour, and the colour actually behind it (every painted ancestor,
 // translucent washes composited over what is under them).
 //
-// "Blue text" is a saturated blue (C.blue #62aee8, the Rock discipline's #2f81f7 and their kin; C.blueSolid is the brand's orange since 2026-11-23); "a blue box" is a
-// fill whose blue channel clearly leads the others (C.blueBg, C.blueChip, C.blueDim, C.blueSolid, a
+// "Blue text" is a saturated blue (C.blue #62aee8, the Rock discipline's #2f81f7 and their kin; C.actionSolid is the brand's orange since 2026-11-23); "a blue box" is a
+// fill whose blue channel clearly leads the others (C.blueBg, C.blueChip, C.blueDim, C.actionSolid, a
 // blue wash). The app's neutral dark surfaces (C.bg, C.surface, C.card) lean blue by a few points and
 // are not boxes; the threshold sits well clear of them.
 //
