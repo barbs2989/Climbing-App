@@ -1,0 +1,24 @@
+[
+ {
+  "id": "ca_mount_davis_southeast_slopes_from_north_glacier_pass",
+  "before": {
+   "glacier_travel": "no",
+   "snow_in_season": null
+  },
+  "after": {
+   "glacier_travel": "no",
+   "snow_in_season": "yes"
+  }
+ },
+ {
+  "id": "ca_thunderbolt_to_sill_traverse",
+  "before": {
+   "glacier_travel": null,
+   "snow_in_season": "yes"
+  },
+  "after": {
+   "glacier_travel": "yes",
+   "snow_in_season": "yes"
+  }
+ }
+]
