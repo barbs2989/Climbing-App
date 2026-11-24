@@ -1758,7 +1758,8 @@ function crewStage(c,ctx){
   var cur=open.length?open[0].key:null;
   return {steps:steps,current:cur,index:cur?steps.findIndex(function(s){return s.key===cur;}):steps.length,ready:readyDone,parts:parts,agreed:agreed,dayReached:dayReached,organizerId:org};
 }
-function isArchivedCrew(c,logs){if(!c)return false;if(c.dismissed)return true;if((logs||[]).some(l=>l.crewId===c.id))return true;const ad=agreedDate(c)||c.date;if(ad){const days=Math.floor((Date.now()-new Date(ad+"T12:00:00").getTime())/86400000);if(days>CREW_ARCHIVE_GRACE_DAYS)return true;}return false;}
+/* A crew whose days NEVER SETTLED is past too, once the LAST day anyone put forward is behind it (audit 2026-11-23): it read only the agreed day, so a crew where one member never confirmed stayed "active" forever -- live, a crew whose last day was Sep 13 was still on both members' list in late November, and never reached the Past card's Log / Vouch / Climb with them again. A crew with no day at all stays active: nothing has passed. */
+function isArchivedCrew(c,logs){if(!c)return false;if(c.dismissed)return true;if((logs||[]).some(l=>l.crewId===c.id))return true;const ad=agreedDate(c)||c.date||(c.dates||[]).slice().sort().pop()||null;if(ad){const days=Math.floor((Date.now()-new Date(ad+"T12:00:00").getTime())/86400000);if(days>CREW_ARCHIVE_GRACE_DAYS)return true;}return false;}
 /* THE NEXT MEETUP IS THE NEXT ONE, NOT THE FIRST ONE. Both group surfaces used to take
    `events.sort(byDate)[0]` and label it "Next meet", so a group whose meetups are all behind it
    advertised its OLDEST as upcoming -- observed on a CI capture as "Next meet Jun 27" on 4 Sep.
