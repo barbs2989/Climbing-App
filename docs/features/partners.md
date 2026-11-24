@@ -72,10 +72,14 @@ whole guide feature on 2026-11-14 (owner). This doc covers the partners mode (`l
 - **What Partners requires** (owner, 2026-11-24: "do what you recommend is best to find partners and crews easier";
   supersedes the 2026-11-14 zip gate): **no zip is required to see climbers**. My areas, Saved areas, Pick an area, A peak,
   My objectives, A route, Everyone and the crew-invite list near the climb all render without one; only the DISTANCE
-  searches (Near my zip, a radius of your zip) need it, and say *Choose where to search from.* until there is an origin.
+  searches need it: with none, the zip radii in the Distance pill are disabled (*Near my zip (none set)*); *Near me now* needs no zip.
+  Everyone at Anywhere is the browse list (`useDiscoverableProfiles`, first 24, not in distance order); a radius of your zip or
+  *Near me now* gives the nearest first.
   With no zip, the inline zip card (`_zipNeeded` in `lib/PartnerSearch.jsx`, saves through `saveMyZip`) stays above the
   lists as an offer. My objectives with none saved, and A route with none picked, show their own
-  prompt instead of falling through to everyone. Join a crew never gated on a zip (its distance filter alone uses it). Real climbers with **no photo** are left
+  prompt instead of falling through to everyone; My objectives says *Couldn’t load your objectives* on a failed read, loads
+  while the read or a saved climb’s row is still answering, and tells a climber whose objectives are all crag routes that crag
+  partners are found by area (they are a tick list, not a match signal, 0300). Join a crew never gated on a zip (its distance filter alone uses it). Real climbers with **no photo** are left
   out of every browse list (name search still finds them), and a viewer without one is told they are not shown.
   **Sending a request** to a real climber without your own photo is refused (`sendReq` in `ClimbMatch.jsx`: *Didn't send
   it — add a profile photo first*) and opens Edit profile on the photo.
