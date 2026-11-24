@@ -11,7 +11,7 @@ interface DbArea { id: string; name: string; route_count: number; area_type?: st
 /** The slice of a `useAreaChildren` result this component reads. */
 interface AreaQuery { data?: DbArea[]; isLoading?: boolean; isError?: boolean; }
 /** What both paths have in common once filtered: an option for a select. */
-interface Place { id: string; name: string; areaType?: string | null; }
+export interface Place { id: string; name: string; areaType?: string | null; }
 /** The place picked, as handed to `onPick`: its id, name and catalog type (crag, wall, region…). */
 export interface PickedPlace { id: string; name: string; areaType: string | null; }
 
@@ -33,6 +33,11 @@ export interface AreaRegionSelectProps {
   onName?: (name: string) => void;
   /** Told the deepest place picked below the state (null when none), with its type, so a caller can say "at" a crag. */
   onPick?: (place: PickedPlace | null) => void;
+  /** The picks below the state, region first, held by the CALLER so they survive this picker unmounting (Partners and Join a
+   *  crew drop it whenever another mode is chosen). Without it the picker keeps its own, and a crag picked before a mode switch
+   *  comes back as "All areas" while the caller still searches the crag (review of #3909). */
+  path?: Place[];
+  setPath?: (p: Place[]) => void;
 }
 
 const SEED_BELOW_STATE = ["range", "region", "canyon", "peak", "wall", "crag"];
@@ -68,14 +73,15 @@ function DeeperSelect({ parent, value, onPick, hasArea }: { parent: Place; value
  * select is disabled until a state is picked. `areaId` is the deepest pick. A DB read that fails says so under the
  * selects instead of offering an empty list.
  */
-export default function AreaRegionSelect({ areaCountry, setAreaCountry, areaState, setAreaState, areaId, setAreaId, hasArea, footer, onName, onPick }: AreaRegionSelectProps) {
+export default function AreaRegionSelect({ areaCountry, setAreaCountry, areaState, setAreaState, areaId, setAreaId, hasArea, footer, onName, onPick, path, setPath }: AreaRegionSelectProps) {
   const cQ: AreaQuery = useAreaChildren(null, { enabled: USE_DB }), sQ: AreaQuery = useAreaChildren(areaCountry || null, { enabled: USE_DB && !!areaCountry }), rQ: AreaQuery = useAreaChildren(areaState || null, { enabled: USE_DB && !!areaState });
   const countries: Place[] = USE_DB ? live(cQ) : MOUNTAINS.filter(a => a.areaType === "country" && hasArea(a));
   const states: Place[] = USE_DB ? live(sQ).slice().sort(byName) : MOUNTAINS.filter(a => a.areaType === "state" && a.parentId === areaCountry && hasArea(a));
   const regions: Place[] = !areaState ? [] : USE_DB ? live(rQ).slice().sort(byName) : MOUNTAINS.filter(a => a.id !== areaState && SEED_BELOW_STATE.indexOf(a.areaType) >= 0 && inArea(a.id, areaState) && hasArea(a)).map(a => ({ id: a.id, name: a.name, areaType: a.areaType || null }));
   /* The places picked below the state, region first. areaId is always its last; a caller that clears or moves areaId (a new
      state, a new country) is followed: the chain drops back to the region the new areaId names, or to nothing. */
-  const [chain, setChain] = useState<Place[]>([]);
+  const [ownChain, setOwnChain] = useState<Place[]>([]);
+  const chain = path || ownChain, setChain = setPath || setOwnChain;
   const last = chain.length ? chain[chain.length - 1] : null;
   useEffect(() => { if ((last ? last.id : "") === areaId) return; const r = areaId ? regions.find(a => a.id === areaId) : undefined; setChain(r ? [r] : []); }, [areaId, regions.length]); // eslint-disable-line react-hooks/exhaustive-deps -- follows the CALLER's areaId; `last` and `regions` are read fresh each render and listing them would re-run on every new array
   const pickAt = (depth: number, p: Place | null) => { const next = chain.slice(0, depth).concat(p ? [p] : []); setChain(next); const l = next.length ? next[next.length - 1] : null; setAreaId(l ? l.id : ""); if (onPick) onPick(l ? { id: l.id, name: l.name, areaType: l.areaType || null } : null); };
@@ -86,5 +92,5 @@ export default function AreaRegionSelect({ areaCountry, setAreaCountry, areaStat
   useEffect(() => { if (onName) onName(selName); }, [selName]); // eslint-disable-line react-hooks/exhaustive-deps -- the effect is about the NAME changing; onName is an inline arrow in its caller, so listing it would re-fire the effect on every render
   const loading = (q: AreaQuery) => USE_DB && q.isLoading ? <option value="" disabled>Loading…</option> : null;
   const foot = typeof footer === "function" ? footer(selName) : footer;
-  return <div><div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:8}}><div style={{minWidth:0}}><div style={hd}>Country</div><select aria-label="Filter by country" value={areaCountry} onChange={e=>{setAreaCountry(e.target.value);setAreaState("");setAreaId("");}} style={box}>{!countries.length?loading(cQ):null}{countries.map(a=><option key={a.id} value={a.id}>{a.name}</option>)}</select></div><div style={{minWidth:0}}><div style={hd}>{sub}</div><select aria-label={"Filter by "+sub.toLowerCase()} value={areaState} onChange={e=>{setAreaState(e.target.value);setAreaId("");}} style={box}><option value="">{"All "+sub.toLowerCase()+"s"}</option>{!states.length?loading(sQ):null}{states.map(a=><option key={a.id} value={a.id}>{a.name}</option>)}</select></div><div style={{gridColumn:"1 / -1"}}><div style={hd}>Region / area</div><select aria-label="Filter by area" value={chain.length?chain[0].id:""} onChange={e=>{const v=e.target.value;pickAt(0,v?regions.find(a=>a.id===v)||null:null);}} disabled={!areaState} style={{...box,background:areaState?C.surface:C.card,opacity:areaState?1:0.6}}><option value="">{areaState?"All areas in this "+sub.toLowerCase():"Pick a "+sub.toLowerCase()+" first"}</option>{areaState&&!regions.length?loading(rQ):null}{regions.map(a=><option key={a.id} value={a.id}>{a.name}</option>)}</select></div></div>{chain.map((p,i)=><DeeperSelect key={p.id} parent={p} value={chain[i+1]?chain[i+1].id:""} onPick={np=>pickAt(i+1,np)} hasArea={hasArea}/>)}{placesUnavailable?<div style={{fontSize:12,color:C.amber,marginTop:8,lineHeight:1.5}}>Couldn’t load the list of places — check your connection and try again.</div>:null}{foot?<div style={{fontSize:11.5,color:C.textMuted,marginTop:8}}>{foot}</div>:null}</div>;
+  return <div><div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:8}}><div style={{minWidth:0}}><div style={hd}>Country</div><select aria-label="Filter by country" value={areaCountry} onChange={e=>{setAreaCountry(e.target.value);setAreaState("");setChain([]);setAreaId("");if(onPick)onPick(null);}} style={box}>{!countries.length?loading(cQ):null}{countries.map(a=><option key={a.id} value={a.id}>{a.name}</option>)}</select></div><div style={{minWidth:0}}><div style={hd}>{sub}</div><select aria-label={"Filter by "+sub.toLowerCase()} value={areaState} onChange={e=>{setAreaState(e.target.value);setChain([]);setAreaId("");if(onPick)onPick(null);}} style={box}><option value="">{"All "+sub.toLowerCase()+"s"}</option>{!states.length?loading(sQ):null}{states.map(a=><option key={a.id} value={a.id}>{a.name}</option>)}</select></div><div style={{gridColumn:"1 / -1"}}><div style={hd}>Region / area</div><select aria-label="Filter by area" value={chain.length?chain[0].id:""} onChange={e=>{const v=e.target.value;pickAt(0,v?regions.find(a=>a.id===v)||null:null);}} disabled={!areaState} style={{...box,background:areaState?C.surface:C.card,opacity:areaState?1:0.6}}><option value="">{areaState?"All areas in this "+sub.toLowerCase():"Pick a "+sub.toLowerCase()+" first"}</option>{areaState&&!regions.length?loading(rQ):null}{regions.map(a=><option key={a.id} value={a.id}>{a.name}</option>)}</select></div></div>{chain.map((p,i)=><DeeperSelect key={p.id} parent={p} value={chain[i+1]?chain[i+1].id:""} onPick={np=>pickAt(i+1,np)} hasArea={hasArea}/>)}{placesUnavailable?<div style={{fontSize:12,color:C.amber,marginTop:8,lineHeight:1.5}}>Couldn’t load the list of places — check your connection and try again.</div>:null}{foot?<div style={{fontSize:11.5,color:C.textMuted,marginTop:8}}>{foot}</div>:null}</div>;
 }
