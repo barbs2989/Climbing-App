@@ -3,6 +3,7 @@ import { C, SUB_LABEL, trailheadPoint, wpPlaced } from "../../ClimbMatchCore.jsx
 import { trailheadDirectionProblem } from "../../lib/trailheadDirectionShape.js";
 import CopyCoordButton from "./CopyCoordButton.tsx";
 import EditIconButton from "./EditIconButton.tsx";
+import { parkingOf } from "../../lib/areaInherit.js";
 
 export interface CragLocationCardProps {
   route: {
@@ -45,9 +46,10 @@ export default function CragLocationCard({route,mtn,onEditParking,onEditRoutePin
      from the one the note describes. The note sits directly above the pin only when the pin IS the
      crag's; under any other pin it is labelled crag-wide parking. With no pin at all the note is the
      only answer to "where do I park", so the Directions line points at it instead of saying none. */
-  const ar=route._dbArea||{};
-  const note=(ar.parkingNote&&String(ar.parkingNote).trim())||null;
-  const parkIsCrag=!!(park&&wpPlaced({lat:ar.parkingLat,lng:ar.parkingLng})&&Number(ar.parkingLat)===park.lat&&Number(ar.parkingLng)===park.lng);
+  /* A wall with no parking of its own shows its crag's note and pin (parkingOf, lib/areaInherit.js). */
+  const pk=parkingOf(route);
+  const note=pk&&pk.note?(pk.from?pk.from+" parking, shared by every climb there: "+pk.note:pk.note):null;
+  const parkIsCrag=!!(park&&pk&&wpPlaced({lat:pk.lat,lng:pk.lng})&&Number(pk.lat)===park.lat&&Number(pk.lng)===park.lng);
   const addPin={display:"inline-flex",alignItems:"center",minHeight:44,flexShrink:0,background:"none",border:"none",padding:"0 2px",color:C.blue,fontSize:12,fontWeight:700,cursor:"pointer"};
   const dest=park||crag;
   if(!crag&&!park&&!note)return null;

@@ -257,7 +257,9 @@ const CASES = [
     why: "Slipstream stores 1 pitch on a 909 m route; the Climbing tile printed 0.6 hr beside a day the reports time at 7.5 hr",
     edits: [{ find: "hasDerivedSummitH || realPitches(route) > 0;", repl: "hasDerivedSummitH || !!route.pitches;" }],
     expect: "fail",
-    must: /the Climbing tile reads N\/A, not a 0\.6 hr climb/,
+    /* Since 2026-11-23 the Climbing tile reads N/A on climbTimed (techH > 0), so a placeholder counted as known
+       no longer prints a 0.6 hr climb there; what it still breaks on screen is the Total's lower-bound marker. */
+    must: /Total carries the lower-bound marker/,
   },
   {
     name: "placeholder-pitch-count-still-timed",
@@ -269,8 +271,11 @@ const CASES = [
   },
   {
     name: "placeholder-pitch-count-opens-an-estimate",
+    file: PLAN,
     why: "with no walk on file a placeholder count alone still made a '≥0.6hr' Total",
-    edits: [{ find: "hasDerivedSummitH||realPitches(route)>0||P.loneApproachH", repl: "hasDerivedSummitH||!!route.pitches||P.loneApproachH" }],
+    /* Since 2026-11-23 whether a leg is timed is planTimes' own test (climbTimed), read by Full trip time and the
+       leg cards alike, so the regression is planted there: a stored count, placeholder or not, counted as a climb. */
+    edits: [{ find: "const climbTimed = techH > 0;", repl: "const climbTimed = techH > 0 || !!route.pitches;" }],
     expect: "fail",
     must: /leaves nothing to estimate/,
   },

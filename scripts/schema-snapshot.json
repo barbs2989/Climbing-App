@@ -1,6 +1,6 @@
 {
   "note": "Generated from the live database by scripts/refresh-schema-snapshot.mjs. Do not hand-edit.",
-  "generatedAt": "2026-11-23",
+  "generatedAt": "2026-11-24",
   "tables": {
     "accessibility_reports": [
       "assistive",
@@ -572,6 +572,7 @@
     ],
     "groups": [
       "accent",
+      "announcement",
       "area_id",
       "avatar_url",
       "blurb",
@@ -584,15 +585,18 @@
       "invite_policy",
       "join_questions",
       "lat",
+      "links",
       "lng",
       "location",
+      "mod_title",
       "moderation",
       "name",
       "policy",
       "region",
       "rules",
       "search_text",
-      "visibility"
+      "visibility",
+      "welcome_text"
     ],
     "hazard_votes": [
       "created_at",

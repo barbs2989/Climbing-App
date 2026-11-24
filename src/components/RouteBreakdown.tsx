@@ -156,7 +156,7 @@ export default function RouteBreakdown({route,focus,onEdit,comments,commentsUnav
             <div aria-hidden="true" style={{width:26,height:26,borderRadius:isPitch?7:13,background:r.crux?C.amberBg:(isPitch?C.blueBg:C.surface),border:"1px solid "+(r.crux?C.amber:(isPitch?C.blueDim:C.border)),display:"flex",alignItems:"center",justifyContent:"center",fontSize:isPitch?11.5:12,fontWeight:700,color:r.crux?C.amber:(isPitch?"#fff":C.textSub)}}>{isPitch?("P"+r._badge):r._seq}</div>
             {last?null:<div style={{flex:1,width:2,background:C.border,marginTop:3,minHeight:14}}/>}
           </div>
-          <div style={{flex:1,minWidth:0,background:C.surface,border:"1px solid "+C.border,borderLeft:"3px solid "+accent,borderRadius:10}}>
+          <div style={{flex:1,minWidth:0,borderLeft:"3px solid "+accent}}>
             <div {...(hasMore?clickable(function(){setOpen(isOpen?null:r._i);}):{})} aria-expanded={hasMore?isOpen:undefined} aria-label={hasMore?(isPitch?pitchRowName(r):stageRowName(r)):undefined} style={{padding:"9px 11px",minHeight:44,boxSizing:"border-box",display:"flex",flexDirection:"column",justifyContent:"center",cursor:hasMore?"pointer":"default"}}>
               {(isPitch&&r._title)?<div style={{fontSize:12.5,fontWeight:700,color:C.text,marginBottom:3,wordBreak:"break-word",overflowWrap:"anywhere"}}>{r._title}</div>:null}
               <div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-start",gap:8,flexWrap:"wrap",marginBottom:(r._note&&!longTerrain)?5:0}}>
