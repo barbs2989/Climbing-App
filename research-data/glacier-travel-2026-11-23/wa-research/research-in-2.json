@@ -1,35 +1,5 @@
 [
  {
-  "id": "wa_horseshoe_peak_scramble",
-  "name": "Standard Route",
-  "peak": "Horseshoe Peak",
-  "areaType": "peak",
-  "discipline": "alpine",
-  "grade": "5.2",
-  "highFt": 8480,
-  "season": "Jul-Sep",
-  "text": [
-   "[seasonal_hazards] Approach crosses glaciated terrain ('glaciated approach terrain');",
-   "[approach_variants] From Sahale Glacier Camp traverse the boulder-and-heather plateau east, downclimb the steep snowfield, and gain Sahale Peak's sharp southeast ridge;",
-   "[approach_variants] Pick up the southeast rib that forms the west edge of Horseshoe Basin and follow it southeast to the top of the so-called secret gully at about 6,700 ft — full of snow some years, completely melted out and loose in others.",
-   "[approach_variants] A snow crossing that wants an axe, and crampons in early season.",
-   "[approach_variants] From the basin floor a snowfield at 30 to 45 degrees sits at the base of the peak and spills onto a large ledge about a hundred feet below the top;",
-   "[beta] From Sahale Glacier Camp (or a Horseshoe Basin camp), cross into Horseshoe Basin, gain the base of a class 3 dike/gully system below Ripsaw Ridge, and follow it (with a short class 4 step) up to the ridge crest near the 'Lick of Flame' spire.",
-   "[hazards] early-season snow and possible crevasse hazard on Sahale Arm / the Sahale Glacier bowl",
-   "[obj_haz] glacier/snow travel.",
-   "[watch_out] Early-season snow bridges/moats near the Sahale Glacier require caution and self-arrest readiness",
-   "[gear] more useful if rappelling from a higher start in snow/ice).",
-   "[gear] ice axe (early season snow on Sahale Arm / Horseshoe Basin).",
-   "[gear] crampons (early season)",
-   "[what_to_bring] ice axe (early season).",
-   "[approach] Sahale Arm option: continue past the Cascade Pass junction onto the Sahale Arm Trail, climbing the open heather ridge past the Doubtful Lake overlook to Sahale Glacier Camp (about 5.9 mi and 3,940 ft of gain from the trailhead, ~7,600 ft)."
-  ],
-  "stillUnsure": [
-   "glacier"
-  ],
-  "earlierWhy": "approach crosses glaciated terrain near the Sahale Glacier; snowfield descent needs an axe"
- },
- {
   "id": "wa_hozomeen_mountain_south_peak_southwest_route",
   "name": "Southwest Route (South Peak)",
   "peak": "Hozomeen Mountain",
@@ -73,27 +43,6 @@
    "snowInSeason"
   ],
   "earlierWhy": "approach gullies hold snow and moats into late July; no glacier"
- },
- {
-  "id": "wa_indian_head_peak_southwest_slopes",
-  "name": "Southwest Slopes (Standard Route)",
-  "peak": "Indian Head Peak",
-  "areaType": "peak",
-  "discipline": "mountaineering",
-  "grade": "Class 3",
-  "highFt": 7447,
-  "season": "Jul-Sep",
-  "text": [
-   "[seasonal_guidance] The trail and PCT usually melt out through July, but snow can linger on the upper southwest slopes and biting insects are at their worst..",
-   "[seasonal_guidance] Snow typically covers the upper North Fork Sauk switchbacks and the PCT toward White Pass, and steep snow lingers on the peak's upper slopes..",
-   "[seasonal_guidance] The talus slopes and west ridge are dry and snow-free, making the Class 2 scramble and loose schist near the summit easiest to manage..",
-   "[seasonal_guidance] The first snow on the upper slopes and the summit block, cold nights at Indian Pass, and short days make the 11-mile approach committing..",
-   "[pro_tips] Doing this as an out-and-back from a Glacier Peak climb (via White Pass/Indian Pass) is a common way parties combine objectives on the same backpack.."
-  ],
-  "stillUnsure": [
-   "snowInSeason"
-  ],
-  "earlierWhy": "snow lingers on upper slopes in July only"
  },
  {
   "id": "wa_jack_mountain_southwest_ridge",
@@ -281,7 +230,6 @@
    "[seasonal_guidance] Usually still dry, but shorter days on a multi-day traverse and hard, early-morning snow on the east-slope glacier remnants.."
   ],
   "stillUnsure": [
-   "glacier",
    "snowInSeason"
   ],
   "earlierWhy": "Used as a descent on a Pickets traverse; text mentions glacier remnants on the east slope in early July only."
@@ -373,36 +321,6 @@
   "earlierWhy": "No glacier; 35-40 degree snowfield to the divide wants an axe outside late season."
  },
  {
-  "id": "wa_mount_hinman_hinman_glacier",
-  "name": "Hinman Glacier / Standard",
-  "peak": "Mount Hinman",
-  "areaType": "peak",
-  "discipline": "mountaineering",
-  "grade": "Class 3",
-  "highFt": 7492,
-  "season": "Jul-Sep",
-  "text": [
-   "[seasonal_hazards] Maritime crest climate with significant snowpack;",
-   "[seasonal_hazards] Low technical fall exposure on typical snow/glacial-remnant slopes, but the combination of a long remote approach and route-finding on a broad, featureless summit raises the consequence of a navigation error or late-day weather change;",
-   "[seasonal_hazards] Reduced but not zero - a 'greatly receded' Hinman Glacier with remnant ice;",
-   "[seasonal_hazards] treat remaining ice/snow patches as glaciated terrain and rope up/carry rescue gear rather than assuming it is crevasse-free",
-   "[approach_variants] Crevasse and bergschrund hazard on the lingering glacier remnant, mostly early season.",
-   "[approach_variants] La Bohn Gap and its lakes are the arrival, and the honest finding is that there is no longer much of a glacier to find.",
-   "[approach_variants] Measured in August 2022, the Hinman Glacier had largely disappeared, leaving stranded patches of snow and ice.",
-   "[approach_variants] So do not stand at the gap looking for a glacier front to identify.",
-   "[approach_variants] What you are looking for is the basin above the gap: mostly bare rock and permanent snowfield in most recent seasons, with crevasse and bergschrund hazard only in early season or after a big snow year.",
-   "[approach_variants] The objective is the snowfield basin immediately above the lakes, which is unmistakable once you are at the gap, and easy class 2 ridge and scree ground leads from it to the summit ridge.",
-   "[overview] Mount Hinman is a broad glaciated dome neighboring Mount Daniel (7,960 ft, less than 2 miles east).",
-   "[overview] Hinman, a founding member of an Everett climbing club, the peak once carried two glaciers — Hinman Glacier on its north flank and the smaller Foss Glacier to the northeast — but Hinman Glacier was declared dead (no longer flowing) by 2022, and both are now red",
-   "[overview] The standard route climbs from La Bohn Gap up the peak's north side, crossing the former glacier basins on now largely bare, unstable talus rather than true glacier ice.",
-   "[beta] The ascent involves 4-9 miles of off-trail scrambling from La Bohn Lakes, gaining 2,500-3,000 ft to the summit via Class 2 talus and snow slopes."
-  ],
-  "stillUnsure": [
-   "glacier"
-  ],
-  "earlierWhy": "Glacier largely gone but text says treat remnant as glaciated; permanent snowfield basin."
- },
- {
   "id": "wa_mount_hinman_southeast_route",
   "name": "Southeast Route",
   "peak": "Mount Hinman",
@@ -420,26 +338,6 @@
    "glacier"
   ],
   "earlierWhy": "Snow chute is the early-season option with a boulder-gully alternative; glacier use not stated."
- },
- {
-  "id": "wa_mount_hinman_west_ridge",
-  "name": "West Ridge",
-  "peak": "Mount Hinman",
-  "areaType": "peak",
-  "discipline": "mountaineering",
-  "grade": "Easy Snow",
-  "highFt": null,
-  "season": null,
-  "text": [
-   "[overview] One typical plan: get to La Bohn gap (a bit below 6k feet), ascend the Hinman Glacier onto the west ridge, and then traverse the glacier's upper margin, which goes on surprisingly long but is enjoyable.",
-   "[detailed_rack] Roping up is likely unnecessary, given the receding glacier and the option of staying high.",
-   "[what_to_bring] Microspikes or crampons and an axe for the remaining ice (September)",
-   "[descent_text] in early season the snow chute to the gap needs an ice axe and often crampons."
-  ],
-  "stillUnsure": [
-   "glacier"
-  ],
-  "earlierWhy": "Ascends the receding Hinman Glacier remnant; roping \"likely unnecessary\"."
  },
  {
   "id": "wa_mount_hinman_west_route",
@@ -631,5 +529,53 @@
    "snowInSeason"
   ],
   "earlierWhy": "no glacier; descent gully often holds snow in summer"
+ },
+ {
+  "id": "wa_northwest_face_4",
+  "name": "Northwest Face",
+  "peak": "Little Big Chief Mountain",
+  "areaType": "peak",
+  "discipline": "alpine",
+  "grade": "5.9",
+  "highFt": 7225,
+  "season": "Aug-Sep",
+  "text": [
+   "[approach_variants] snow can linger in the approach gully system earlier in the summer..",
+   "[approach_variants] Residual snow and ice on the pocket glacier and the polished slabs used on the descent, into midsummer.",
+   "[approach_variants] if you are climbing heather and rock steps directly out of a saddle toward an open bench and a snowfield, that is the gap route too.",
+   "[hazards] Potential residual snow/ice on the pocket glacier and polished descent slabs into midsummer.",
+   "[obj_haz] Glacier-polished slabs on descent can be slick when wet",
+   "[watch_out] Glacier-polished slabs on the descent are slick, especially early season or when wet..",
+   "[what_to_bring] Ice axe (early-season glacier-polished slabs on descent).",
+   "[descent] South along the connecting ridge to a pocket glacier, then glacier-polished slabs (trending climber's left) back to the ridge crest near 5,400';",
+   "[descent_text] From the summit, travel south along the ridge for several hundred feet to a small pocket glacier below the face.",
+   "[descent_text] Cross glacier-polished slabs, trending climber's left, to regain the ridge crest at approximately 5,400'.",
+   "[descent_text] The glacier-polished slabs can be wet, snow-covered, or icy well into summer.",
+   "[turnaround] Because the descent requires crossing a pocket glacier and glacier-polished slabs before regaining the ridge, set a firm turnaround time that leaves enough daylight to finish both the climb and the multi-stage descent (glacier traverse, rappels, ledges, forest",
+   "[seasonal_guidance] August to mid-September, when the approach gully and polished descent slabs are finally clear of snow.",
+   "[seasonal_guidance] Snow commonly lingers in the approach gully and on the glacier-polished descent slabs, and the Summit Chief valley brush is wet.."
+  ],
+  "stillUnsure": [
+   "glacier",
+   "snowInSeason"
+  ],
+  "earlierWhy": "crosses small pocket glacier on descent; hazard unclear"
+ },
+ {
+  "id": "wa_northwest_mox_peak_northeast_ridge",
+  "name": "Northeast Ridge",
+  "peak": "Northwest Mox Peak",
+  "areaType": "peak",
+  "discipline": "alpine",
+  "grade": "5.6 Mod. Snow",
+  "highFt": null,
+  "season": null,
+  "text": [
+   "[overview] Ascend the snowy finger to reach rock, then take two pitches, fourth class into low fifth, directly to the saddle (rappel anchor atop each)."
+  ],
+  "stillUnsure": [
+   "glacier"
+  ],
+  "earlierWhy": "snowy finger to rock; no glacier stated"
  }
 ]

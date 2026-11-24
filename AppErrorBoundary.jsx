@@ -21,7 +21,7 @@ import { swallowedChunk } from "./lib/chunkReload.js";
 const WRAP = { minHeight: "100vh", background: "#12110f", color: "#f1ede6", display: "flex",
   alignItems: "center", justifyContent: "center", padding: 24,
   font: "15px/1.5 -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" };
-const CARD = { maxWidth: 420, width: "100%", background: "#1a1916", border: "1px solid #36322c",
+const CARD = { maxWidth: 420, width: "100%", background: "#1a1916", border: "1px solid #514a41",
   borderRadius: 14, padding: "20px 18px" };
 const BTN = { width: "100%", marginTop: 16, padding: "12px 14px", borderRadius: 10, border: "none",
   background: "#62aee8", color: "#fff", fontSize: 15, fontWeight: 700, cursor: "pointer" };
@@ -54,7 +54,7 @@ export default class AppErrorBoundary extends Component {
             Nothing you had saved to your account is affected — anything
             entered on this screen and not yet saved is lost.
           </div>
-          <div style={{ marginTop: 12, padding: "9px 11px", background: "#12110f", border: "1px solid #36322c",
+          <div style={{ marginTop: 12, padding: "9px 11px", background: "#12110f", border: "1px solid #514a41",
             borderRadius: 9, fontSize: 12, color: "#c9c1b5", fontFamily: "ui-monospace, SFMono-Regular, Menlo, monospace",
             wordBreak: "break-word", maxHeight: 120, overflowY: "auto" }}>{msg}</div>
           <button style={BTN} onClick={() => window.location.reload()}>Reload ClimbMatch</button>
