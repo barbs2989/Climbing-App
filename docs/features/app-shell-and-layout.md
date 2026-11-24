@@ -78,7 +78,7 @@ room for side-panel ads later. The phone app keeps its own look.
     tab's title (owner 2026-11-04, from the competitor review: KAYA, Gaia, Komoot and Mountain Project
     lead with search); there its hits run down the page.
   - **Drawn ~10% larger** (owner 2026-11-04, `ZOOM` = 1.1 in `lib/wideLayout.js`): the page column
-    (`#appscroll`), the pages that open in it, the rail's cards, centred windows, the bell drop-down and
+    (`#appscroll`), the pages that open in it, the rail's cards, centred windows and
     both Messages panes are CSS-`zoom`ed, so the phone's 13px type reads as ~14.3px beside Mountain
     Project's 14 and Strava's 15. A fixed element zooms itself, so its own top/left/width are written
     divided by `ZOOM`; a Leaflet map is zoomed back to exactly 1 (its drag and click maths are unchanged —
@@ -183,7 +183,9 @@ room for side-panel ads later. The phone app keeps its own look.
     button (and a lone `flex:1` one) in the page column or a page-view. List rows (space-between,
     left-aligned, flex-start) still run edge to edge; dialogs keep full-width footer buttons; on the route
     page the action buttons sit in one row across the header.
-  - The **bell** opens Notifications as a drop-down under it at the shell's right edge. Home's Alerts button shows
+  - The **bell** opens the full Notifications page in the column (`openAllNotifs`), not a drop-down: its
+    drop-down sat over the right rail directly above the rail's own Notifications card (owner 2026-11-24:
+    "right panel has 2 dropdowns, remove the upper one"). On a phone it still opens the sheet. Home's Alerts button shows
     at every width (#2734), so a desktop Home has it beside the rail's card; both read `_alerts` and agree.
   - **Popups that slide up from the bottom** on a phone open as **centred windows** (rounded, at most
     85% of the window tall).
