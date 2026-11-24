@@ -26,6 +26,7 @@ the catalog import pipeline (see [docs/BACKEND.md](docs/BACKEND.md)).
 
 ## Recent changes
 
+- **Glacier warnings: 23 more routes settled across eight states** (data only, 2026-11-24, round 7): Vulcan Mountain (YT) is glacier travel; 22 routes are not, among them the Mount Hoffman north face routes and Avalanche Gulch (CA), five Wyoming lines, Magog (BC) and Black Peak NE Ridge (WA). Thirteen thin "no" answers were held at unsure; 118 glacier calls stay open. See `docs/guards/honesty-claims.md`.
 - **Glacier warnings: 11 more routes settled in WA, CA, OR and NT** (data only, 2026-11-23; 9 glacier calls, 2 snow): Bacon Peak from Diobsud, NW Mox NE Ridge, Silver Star NE Ridge and the Thunderbolt to Sill Traverse are glacier travel; Ottohorn, Jefferson North Ridge, South Sister North Ridge, Large Ear and Lotus Flower Tower are not. Eight thin "no" answers were held at unsure. See `docs/guards/honesty-claims.md`.
 - **Reliability counts for more in the match %** (owner 2026-11-24, re-audit: "do what you recommend"): `CMAX_REL` 12 → 24, and a climber with no record counts as a typical one (`REL_PRIOR`, 0.85) rather than the neutral half, so 3 no-shows in 5 trips no longer scores the same as a brand-new climber. From a mid profile: 20 on time 89%, no record 88%, 3 of 5 no-shows 86%, 20 no-shows 82% (was 87 / 85 / 85 / 84). A vouch's retired "punctuality" stars now count as its reliability rating when it has none of its own, so the example climbers show reliability too. See `docs/codebase/algorithms.md`.
 
