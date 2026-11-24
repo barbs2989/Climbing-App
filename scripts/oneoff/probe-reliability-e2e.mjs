@@ -117,6 +117,7 @@ try {
   await pB.locator('button[title="Notifications"]').first().click(); await pB.waitForTimeout(1500);
   const replyAlert = pB.getByText(/A crewmate marked you “Didn’t show”/).first();
   await appear(replyAlert);
+  check(await pB.getByText(/Who showed up for .* on .*\? Mark your crew/).count() === 0, "once B has filed, the \"Who showed up\" alert is gone from B's bell (#3872)");
   check(await replyAlert.count() > 0, "B's bell says a crewmate marked them Didn't show");
   if (await replyAlert.count()) await replyAlert.click();
   await pB.waitForTimeout(2500);
@@ -128,6 +129,10 @@ try {
   await pB.waitForTimeout(2500);
   const afterDispute = await relOf(a, B.id);
   check(afterDispute.no_show === 0 && afterDispute.trips === 0, "\"I was there\" from the sheet takes the report out of B's counts", JSON.stringify(afterDispute));
+  const repId = (((await b("my_trip_reports_about_me", {})).json) || [])[0]?.id;
+  const noteAfter = await b("reply_to_trip_report", { p_report: repId, p_reply: "note", p_note: "I was at the trailhead at 5" });
+  const afterNote = await relOf(a, B.id);
+  check(noteAfter.status < 300 && afterNote.no_show === 0, "live: a note added after \"I was there\" keeps the dispute (0522)", noteAfter.text.slice(0, 120) + " " + JSON.stringify(afterNote));
   check(!errsB.length, "no page errors on B's side", errsB.slice(0, 2).join(" | "));
 
   // ── 3. A's screens: the recap shows B's answer; A's own Profile shows A's record ──────────────────────────────────
@@ -161,10 +166,19 @@ try {
   // ── 5. 320 px: nothing runs off the edge ──────────────────────────────────────────────────────────────────────────
   await pB.setViewportSize({ width: 320, height: 760 });
   await pB.reload({ waitUntil: "domcontentloaded" }); await pB.waitForTimeout(6000);
-  await pB.locator('button[title="Notifications"]').first().click(); await pB.waitForTimeout(1200);
-  const al2 = pB.getByText(/Who showed up for .* on .*\? Mark your crew/).first();
-  await appear(al2);
-  if (await al2.count()) { await al2.click(); await appear(pB.getByRole("dialog", { name: "How did it go?" })); await pB.waitForTimeout(1500); }
+  await pB.locator('button[title="Notifications"]').first().click(); await pB.waitForTimeout(1500);
+  await appear(pB.getByText(/joined your|How did .* go|Who showed up/).first(), 8000);
+  check(await pB.getByText(/A crewmate marked you/).count() === 0, "after \"I was there\", the \"A crewmate marked you\" alert is gone");
+  await pB.getByRole("button", { name: "← Back" }).first().click().catch(() => {});
+  await pB.waitForTimeout(800);
+  const crewsTab = pB.getByRole("button", { name: /^Crews\b/ }).last();
+  if (await crewsTab.count()) { await crewsTab.click(); await pB.waitForTimeout(3000); }
+  let cardBtn = pB.getByRole("button", { name: "How did it go? Say who showed up" }).first();
+  if (!(await appear(cardBtn, 6000))) { const t = pB.getByText(/North Ridge/).first(); if (await t.count()) { await t.click(); await pB.waitForTimeout(2000); } cardBtn = pB.getByRole("button", { name: "How did it go? Say who showed up" }).first(); await appear(cardBtn, 8000); }
+  await pB.screenshot({ path: path.join(OUT, "7a-crew-card.png") });
+  check(await cardBtn.count() > 0, "the crew card offers \"How did it go? Say who showed up\" the day after the trip");
+  if (await cardBtn.count()) { await cardBtn.click(); await appear(pB.getByRole("dialog", { name: "How did it go?" })); await pB.waitForTimeout(1500); }
+  check(await pB.getByRole("dialog", { name: "How did it go?" }).count() > 0, "...and it opens How did it go?");
   const over = await pB.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
   check(over <= 0, "at 320 px the recap sheet does not run off the right-hand edge", over + " px over");
   await pB.screenshot({ path: path.join(OUT, "7-recap-320.png") });
