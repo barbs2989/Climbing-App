@@ -4,7 +4,7 @@ import { catOf, uTemp, C } from "../../ClimbMatchCore.jsx";
 import { rangeNote } from "../../lib/alpineConditions.js";
 
 /* "Your range": ONE plain line saying whether the day's forecast temperatures fall inside the range the
-   climber set for alpine, or for ice and mixed. Neutral colour on purpose: it is a preference, not a
+   climber set for alpine, for mountaineering and scrambling, or for ice and mixed. Neutral colour on purpose: it is a preference, not a
    hazard, so it never reads like a warning and never feeds the flags above it (rangeNote). Without a
    range it shows only the way to set one. */
 export interface RangeLineProps {
