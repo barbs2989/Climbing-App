@@ -59,7 +59,16 @@ const BLIND = {
 };
 // The glacier card on a route nobody has reviewed as glacier travel: bridges are a possibility, not a fact (bridgeWord "maybe").
 const BLIND_GLACIER_OPEN = "A forecast can’t see how firm the snow is, whether any snow bridges are open or whether a boot track is in — check recent reports.";
-const hrs = (h: number) => (Math.round(h * 2) / 2).toFixed(1).replace(/\.0$/, "") + " h";
+/* A route whose usual line melts out (routes.snow_free_from): say which half of its season this is, so a dry card in
+   late August and a snow card in June both explain themselves (lib/terrain.js snowFreeOn). */
+function snowFreeNote(terrain: unknown): string {
+  const sf = terrain && typeof terrain === "object" ? (terrain as { snowFree?: { label: string; out: boolean } | null }).snowFree : null;
+  if (!sf) return "";
+  return sf.out
+    ? " From " + sf.label + " the usual line is normally off the snow, so the snow and glacier flags are left off. A late-lying snowfield or a fresh storm changes that: check recent reports."
+    : " The usual line normally holds snow until about " + sf.label + "; after that it is dry and these snow flags drop off.";
+}
+const hrs = (h: number) =>(Math.round(h * 2) / 2).toFixed(1).replace(/\.0$/, "") + " h";
 export interface ForecastBoxProps {
   route: { id: string; timing?: { recommendedStart?: unknown } | null };
   /** The Planner's inputs (fitness, pack weight...), passed straight to planTimes. */
@@ -284,7 +293,7 @@ export default function ForecastBox({ route, calc, kind, terrain, pt }: Forecast
     <RangeLine route={route} sum={day.sum} />
     <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 6, marginBottom: 8 }}>{readout.map(function (r) { return <div key={r[0]} style={{ borderLeft: "1px solid " + C.border, padding: "1px 0 1px 8px", minWidth: 0 }}><div style={{ fontSize: 10.5, color: C.textMuted, fontWeight: 700 }}>{r[0]}</div><div style={{ fontSize: 12.5, color: C.text, fontWeight: 700 }}>{r[1]}</div>{r[2] ? <div style={{ fontSize: 11, color: C.textMuted, marginTop: 1 }}>{r[2]}</div> : null}</div>; })}</div>
     <div style={{ fontSize: 11, color: C.textMuted, lineHeight: 1.5 }}>
-      {"Read at " + (pt.elevFt != null ? uElev(pt.elevFt) : groundFt(fc) != null ? uElev(Math.round(groundFt(fc) / 10) * 10) + ", the ground height at the map point" : "the area’s height") + (pt.pinned ? " at " + pt.name : " over " + pt.name) + "." + (floor && floor.basis === "trailhead" ? " Snow is assumed to reach down to " + uElev(floor.ft) + ", halfway between the trailhead and the top." : floor && floor.basis === "halfway" ?" Snow is assumed to reach down to " + uElev(floor.ft) + ", halfway up the climb." : floor && floor.basis === "camp" ? " Snow is read down to high camp, " + uElev(floor.ft) + "." : "") + " Flags are rules of thumb, not a go/no-go. " + (kind === "glacier" && bridges !== "yes" ? BLIND_GLACIER_OPEN : BLIND[kind])}
+      {"Read at " + (pt.elevFt != null ? uElev(pt.elevFt) : groundFt(fc) != null ? uElev(Math.round(groundFt(fc) / 10) * 10) + ", the ground height at the map point" : "the area’s height") + (pt.pinned ? " at " + pt.name : " over " + pt.name) + "." + (floor && floor.basis === "trailhead" ? " Snow is assumed to reach down to " + uElev(floor.ft) + ", halfway between the trailhead and the top." : floor && floor.basis === "halfway" ?" Snow is assumed to reach down to " + uElev(floor.ft) + ", halfway up the climb." : floor && floor.basis === "camp" ? " Snow is read down to high camp, " + uElev(floor.ft) + "." : "") + " Flags are rules of thumb, not a go/no-go. " + (kind === "glacier" && bridges !== "yes" ? BLIND_GLACIER_OPEN : BLIND[kind]) + snowFreeNote(terrain)}
     </div>
   </div>
   <DayByDay days={days} di={di} pick={setDayI} dayName={dayName} nWarn={nWarn} nCaution={nCaution} fc={fc} legs={legs} startOn={kind !== "waterfall" && kind !== "cragmixed"} />

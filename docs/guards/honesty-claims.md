@@ -1315,6 +1315,15 @@ rows. Its build script is gone; new reviews write the column.
   and an approved edit reaches the card through the client overlay onto `route.glacierTravel`, which is why the
   form key and the route property are the same string. Not asked when a climb is ADDED (a new climb starts
   unsettled): `NOT_AT_CREATION` in `check:add-route-fields` says why.
+- **A season is not one answer** (owner, 2026-11-24, on Forbidden West Ridge: the couloir is snow early season,
+  then parties take the Cat Scratch gullies). `routes.snow_free_from` (0532) is the date the usual line goes dry;
+  the card reads `routeTerrain(route, { on: today })` and is dry from that date to 31 October. The guard holds
+  July (glacier card), September (alpine rock, no snow legs, no bridges), November (stored answers again), the
+  date as the first dry day, and the card passing today's date. **`routeTerrain(route)` with no date must stay the
+  whole-season reading**: the gear and packing readers call it, and a dated read there would drop the axe from a
+  list read in September for a trip planned for June. The review took a date only where the line is
+  dry AND has no glacier; dates on glacier-unsure routes waited for a web check, and a text-only "no glacier"
+  never loaded (absence of evidence).
 - **`npm run audit:glacier-travel -- --state <slug>`** is the worklist for the next state: snow-flagged routes
   with an unsettled answer. It reads the stored discipline, so a trad route the page calls alpine is outside it.
 - **Six more states reviewed, 2026-11-23** (Oregon, California, Colorado, Wyoming, Montana, Alaska; 775 routes):
