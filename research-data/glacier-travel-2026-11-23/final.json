@@ -203,12 +203,13 @@
   "peak": "Bacon Peak",
   "discipline": "mountaineering",
   "kindToday": "glacier",
-  "glacier": "unsure",
+  "glacier": "yes",
   "snowInSeason": "yes",
   "basis": "text",
   "why": "Text conflicts: titled for Diobsud Creek Glacier and warns of icecap crevasses, yet says the line reaches the summit without crossing a glacier.",
   "verified": false,
-  "webResearched": true
+  "webResearched": true,
+  "research2": "yes/yes: A trip report read describes crossing the Diobsud Creek Glacier toward the summit with crevasses starting to open and parties travelling parallel to them."
  },
  {
   "id": "wa_bald_eagle_peak_scramble",
@@ -6775,12 +6776,13 @@
   "peak": "Northwest Mox Peak",
   "discipline": "alpine",
   "kindToday": "alpinerock",
-  "glacier": "unsure",
+  "glacier": "yes",
   "snowInSeason": "yes",
   "basis": "text",
   "why": "snowy finger to rock; no glacier stated",
   "verified": false,
-  "webResearched": true
+  "webResearched": true,
+  "research2": "yes/yes: The Mountain Project area page lists the northeast ridge with a glacier crossing, crevasses, snow and a moat on approach and descent."
  },
  {
   "id": "wa_northwest_mox_peak_standard",
@@ -6948,12 +6950,13 @@
   "peak": "Ottohorn",
   "discipline": "alpine",
   "kindToday": "glacier",
-  "glacier": "unsure",
+  "glacier": "no",
   "snowInSeason": "yes",
   "basis": "text",
   "why": "rock route but text mentions glacier/snow approach crevasses and crampons to col",
   "verified": false,
-  "webResearched": true
+  "webResearched": true,
+  "research2": "no/unsure: An American Alpine Club report and a Mountain Project route page describe the way to the col as snow, slab and talus in Crescent Creek Basin and a snow gully, with the glacier only on the far side."
  },
  {
   "id": "wa_oval_peak_scramble",
@@ -7196,11 +7199,12 @@
   "discipline": "scrambling",
   "kindToday": "scramble",
   "glacier": "no",
-  "snowInSeason": "unsure",
+  "snowInSeason": "yes",
   "basis": "text",
   "why": "No glacier travel on SE scramble; snowfields hold into summer, axe advised but unclear if required",
   "verified": false,
-  "webResearched": true
+  "webResearched": true,
+  "research2": "unsure/yes: A park ranger conditions report from mid-August describes the Pyramid route as rock scrambling mixed with firm snow."
  },
  {
   "id": "wa_ragged_edge",
@@ -7639,12 +7643,13 @@
   "peak": "Silver Star Mountain",
   "discipline": "alpine",
   "kindToday": "glacier",
-  "glacier": "unsure",
+  "glacier": "yes",
   "snowInSeason": "yes",
   "basis": "text",
   "why": "Text mentions crevasses and the glacier on the approach but route proper starts at the col",
   "verified": false,
-  "webResearched": true
+  "webResearched": true,
+  "research2": "yes/yes: A Mountain Project route page describes the approach descending steep snow from Burgundy Col onto the Silver Star Glacier and recommends glacier gear, and the route text itself says it is reached via that glacier."
  },
  {
   "id": "wa_silver_star_northwest_face",
