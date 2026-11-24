@@ -1,0 +1,233 @@
+{
+ "note": "Values replaced by the owner-approved batch-AA access/gear object fixes, 2026-11-23",
+ "rollback": [
+  {
+   "table": "routes",
+   "id": "wa_mid_wall_douglas_the_furry_grizzly_wolf_kitten_goes_chomp",
+   "before": {
+    "gear": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_mid_wall_douglas_the_furry_grizzly_wolf_kitten_goes_chomp",
+   "before": {
+    "access": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_mid_wall_friendly_fredly",
+   "before": {
+    "gear": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_mid_wall_friendly_fredly",
+   "before": {
+    "access": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_mid_wall_the_disco_gecko",
+   "before": {
+    "gear": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_mid_wall_the_disco_gecko",
+   "before": {
+    "access": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_stig_s_rig",
+   "before": {
+    "gear": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_stig_s_rig",
+   "before": {
+    "access": {
+     "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+     "notes": "Many of these peaks (Mount Persis, Gunn Peak, Baring Mountain area) sit outside designated wilderness — administratively unrestricted despite serious technical terrain.",
+     "permit": "None required.",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+     "parking_pass": "Northwest Forest Pass or America the Beautiful pass required at developed trailheads."
+    }
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_mid_wall_i_d_rather_be_slowly_consumed_by_moss",
+   "before": {
+    "access": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_mid_wall_smearnov_s_revenge",
+   "before": {
+    "gear": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_mid_wall_smearnov_s_revenge",
+   "before": {
+    "access": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_mid_wall_we_shall_continue_with_style",
+   "before": {
+    "access": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_mid_wall_behind_the_green_door",
+   "before": {
+    "gear": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_mid_wall_behind_the_green_door",
+   "before": {
+    "access": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_mid_wall_keep_that_tuna_away_from_my_batteries",
+   "before": {
+    "gear": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_mid_wall_keep_that_tuna_away_from_my_batteries",
+   "before": {
+    "access": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_stems_valleys",
+   "before": {
+    "gear": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_stems_valleys",
+   "before": {
+    "access": {
+     "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+     "notes": "Many of these peaks (Mount Persis, Gunn Peak, Baring Mountain area) sit outside designated wilderness — administratively unrestricted despite serious technical terrain.",
+     "permit": "None required.",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+     "parking_pass": "Northwest Forest Pass or America the Beautiful pass required at developed trailheads."
+    }
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_mid_wall_stems_and_leaves",
+   "before": {
+    "access": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_mid_wall_flee_fly_flue",
+   "before": {
+    "access": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_waiting_for_the_sun_2",
+   "before": {
+    "gear": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_waiting_for_the_sun_2",
+   "before": {
+    "access": {
+     "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+     "notes": "Many of these peaks (Mount Persis, Gunn Peak, Baring Mountain area) sit outside designated wilderness — administratively unrestricted despite serious technical terrain.",
+     "permit": "None required.",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+     "parking_pass": "Northwest Forest Pass or America the Beautiful pass required at developed trailheads."
+    }
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_mid_wall_dinky_twinkies",
+   "before": {
+    "access": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_the_gentlemen_s_club_aquaman",
+   "before": {
+    "access": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_the_gentlemen_s_club_green_lantern",
+   "before": {
+    "access": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_the_gentlemen_s_club_electra_woman",
+   "before": {
+    "access": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_the_gentlemen_s_club_dyna_girl",
+   "before": {
+    "access": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_the_gentlemen_s_club_robin",
+   "before": {
+    "access": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_the_gentlemen_s_club_fulcrum",
+   "before": {
+    "access": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_blownout",
+   "before": {
+    "access": null
+   }
+  }
+ ]
+}
