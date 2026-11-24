@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { SOLID_FILL } from "../../lib/buttonStyles.js";
 import { createPortal } from "react-dom";
 import { C, fuzzyMatch, pubName } from "../../ClimbMatchCore.jsx";
 import { POP_BACK, POP_REMOVE } from "../../lib/popupChrome.js";
@@ -65,7 +66,7 @@ export default function StartCrewFriendPage<F extends StartCrewFriend>({ friends
               <div style={{ fontSize: 13.5, fontWeight: 700, color: C.text, overflowWrap: "anywhere" }}>{pubName(x.f)}</div>
               <div style={{ fontSize: 11.5, color: x.shared.length ? C.textSub : C.textMuted, marginTop: 1, overflowWrap: "anywhere" }}>{x.shared.length ? "You both want " + x.shared.slice(0, 2).join(", ") + (x.shared.length > 2 ? " and " + (x.shared.length - 2) + " more" : "") : "No shared objectives yet"}</div>
             </div>
-            <button aria-haspopup="dialog" aria-label={"Start a crew with " + pubName(x.f)} onClick={() => onPick(x.f)} style={{ flexShrink: 0, minHeight: 44, padding: "0 14px", borderRadius: 9, border: "none", background: C.actionSolid, color: C.onSolid, fontSize: 12.5, fontWeight: 700, fontFamily: "inherit", cursor: "pointer", whiteSpace: "nowrap" }}>Start crew</button>
+            <button aria-haspopup="dialog" aria-label={"Start a crew with " + pubName(x.f)} onClick={() => onPick(x.f)} style={{ flexShrink: 0, minHeight: 44, padding: "0 14px", borderRadius: 9, border: "none", ...SOLID_FILL(C), color: C.onSolid, fontSize: 12.5, fontWeight: 700, fontFamily: "inherit", cursor: "pointer", whiteSpace: "nowrap" }}>Start crew</button>
           </div>)}
         </div>
         {!rows.length ? <EmptyState C={C} icon="search" style={{ padding: "28px 14px" }}>{"No friends match “" + q.trim() + "”."}</EmptyState> : null}

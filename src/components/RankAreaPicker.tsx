@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import { SOLID_FILL } from "../../lib/buttonStyles.js";
 import type { CSSProperties } from "react";
 import { C, MOUNTAINS, ROUTES, inArea } from "../../ClimbMatchCore.jsx";
 import { useMyPartnerAreas, useAreaPath, useAreaChildren, useAreaChildrenDiscCounts } from "../../lib/db.js";
@@ -120,7 +121,7 @@ export default function RankAreaPicker({real,uid,ranked,trail,browseId,onBrowse,
           <button onClick={()=>onBrowse(a.id)} style={{background:"transparent",border:"none",color:C.blue,fontSize:13.5,cursor:"pointer",fontWeight:700,padding:"3px 0",textAlign:"left",lineHeight:1.3,overflowWrap:"anywhere"}}>{a.name}</button>
         </span>)}
       </nav>:null}
-      {lvl?<button onClick={()=>onRank(lvl)} style={{display:"block",width:"100%",minHeight:46,boxSizing:"border-box",marginTop:12,padding:"10px 12px",borderRadius:12,border:"none",background:C.actionSolid,color:C.onSolid,fontSize:14.5,fontWeight:800,cursor:"pointer",overflowWrap:"anywhere"}}>{named?"See rankings for "+name:"See rankings for this area"}</button>
+      {lvl?<button onClick={()=>onRank(lvl)} style={{display:"block",width:"100%",minHeight:46,boxSizing:"border-box",marginTop:12,padding:"10px 12px",borderRadius:12,border:"none",...SOLID_FILL(C),color:C.onSolid,fontSize:14.5,fontWeight:800,cursor:"pointer",overflowWrap:"anywhere"}}>{named?"See rankings for "+name:"See rankings for this area"}</button>
         :<div style={{fontSize:12.5,color:C.textMuted,lineHeight:1.45,marginTop:6}}>Pick a country to see its states, or search for any place above.</div>}
     </div>
 

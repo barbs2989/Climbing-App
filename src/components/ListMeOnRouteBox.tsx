@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { SOLID_FILL, SOLID_LEDGE } from "../../lib/buttonStyles.js";
 import { addRouteListing, removeRouteListing, saveRouteListing } from "../../lib/db";
 import { CARD, EYEBROW } from "../../lib/cardStyles.js";
 import { DLOCALE, localYmd } from "../../ClimbMatchCore.jsx";
@@ -82,7 +83,7 @@ export default function ListMeOnRouteBox({ routeId, noun, C, uid, myListings, li
       <div style={{ fontSize: 12.5, color: C.textSub, lineHeight: 1.5, marginBottom: 10, overflowWrap: "anywhere" }}>{listed ? ((discoverable === false ? "Your listing for this " + noun + " is saved." : "Climbers who open this " + noun + " can find you and start a crew with you.") + (win ? " " + win + "." : "") + (ended && mine && mine.freeTo ? " Your dates ended " + fmtDay(mine.freeTo) + "." : "") + (mine && mine.note ? " “" + mine.note + "”" : "")) : "List yourself here so climbers looking at this " + noun + " can find you and start a crew with you."}</div>
       {listed && discoverable === false ? <div style={{ fontSize: 12.5, color: C.amber, background: C.amberBg, border: "1px solid " + C.amber + "55", borderRadius: 10, padding: "9px 11px", marginBottom: 10, lineHeight: 1.5 }}>You’re off the Partners list, so this listing isn’t shown to anyone. {onOpenPrivacy ? <button type="button" onClick={onOpenPrivacy} style={{ background: "none", border: "none", color: C.blue, fontWeight: 800, cursor: "pointer", padding: "8px 0", fontSize: 12.5, fontFamily: "inherit" }}>Turn it on in Privacy</button> : null}</div> : null}
       <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
-        <button type="button" onClick={toggle} disabled={busy} aria-pressed={listed} style={{ flex: listed ? "0 0 auto" : "1 1 auto", minHeight: 44, padding: "0 16px", borderRadius: 10, border: listed ? "1px solid " + C.border : "none", background: listed ? C.surface : C.actionSolid, color: listed ? C.textSub : C.onSolid, fontSize: 13.5, fontWeight: 800, cursor: busy ? "default" : "pointer", opacity: busy ? 0.6 : 1 }}>{listed ? "Remove listing" : "List me for this " + noun}</button>
+        <button type="button" onClick={toggle} disabled={busy} aria-pressed={listed} style={{ flex: listed ? "0 0 auto" : "1 1 auto", minHeight: 44, padding: "0 16px", borderRadius: 10, border: listed ? "1px solid " + C.border : "none", background: listed ? C.surface : C.actionSolid,boxShadow:(listed)?"none":SOLID_LEDGE(C), color: listed ? C.textSub : C.onSolid, fontSize: 13.5, fontWeight: 800, cursor: busy ? "default" : "pointer", opacity: busy ? 0.6 : 1 }}>{listed ? "Remove listing" : "List me for this " + noun}</button>
         {listed && serverListed && !editing ? <button type="button" onClick={openEditor} style={{ flex: "1 1 auto", minHeight: 44, padding: "0 12px", borderRadius: 10, border: "1px solid " + C.border, background: C.surface, color: C.text, fontSize: 13, fontWeight: 700, cursor: "pointer", textAlign: "left" }}>{win || (mine && mine.note) ? "Change the dates or note" : "Add dates or a note"}</button> : null}
       </div>
       {listed && editing ? <div style={{ marginTop: 12, borderTop: "1px solid " + C.border, paddingTop: 12 }}>
@@ -95,7 +96,7 @@ export default function ListMeOnRouteBox({ routeId, noun, C, uid, myListings, li
         </div>
         <input value={note} maxLength={140} onChange={(e) => setNote(e.target.value)} placeholder="A line for climbers who find you (optional)" aria-label="A note on your listing" style={{ ...field, marginBottom: 10 }} />
         <div style={{ display: "flex", gap: 8 }}>
-          <button type="button" onClick={saveDetails} disabled={busy} style={{ flex: 1, minHeight: 44, borderRadius: 10, border: "none", background: C.actionSolid, color: C.onSolid, fontSize: 13.5, fontWeight: 800, cursor: busy ? "default" : "pointer", opacity: busy ? 0.6 : 1 }}>Save</button>
+          <button type="button" onClick={saveDetails} disabled={busy} style={{ flex: 1, minHeight: 44, borderRadius: 10, border: "none", ...SOLID_FILL(C), color: C.onSolid, fontSize: 13.5, fontWeight: 800, cursor: busy ? "default" : "pointer", opacity: busy ? 0.6 : 1 }}>Save</button>
           <button type="button" onClick={() => setEditing(false)} style={{ flex: 1, minHeight: 44, borderRadius: 10, border: "1px solid " + C.border, background: C.surface, color: C.textSub, fontSize: 13.5, fontWeight: 700, cursor: "pointer" }}>Cancel</button>
         </div>
       </div> : null}

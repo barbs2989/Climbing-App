@@ -1,4 +1,5 @@
 import { tx } from "../../lib/tapWords.js";
+import { SOLID_FILL } from "../../lib/buttonStyles.js";
 import { C, wpPlaced, wpType, wpColor, wpIs, wpGlyph, legMi, ROUTE_GAP, uDistMi, uElev, cumMi } from "../../ClimbMatchCore.jsx";
 import ActionIcon from "./ActionIcon.tsx";
 import { clickable } from "../../lib/clickable";
@@ -33,7 +34,7 @@ export interface WaypointListProps {
    whether you will have signal — so the prompt is not lost by folding it. The body is HIDDEN,
    not unmounted, like AccessFold. */
 export default function WaypointList({waypoints,onFocus,emptyCopy,onAdd}: WaypointListProps){
-  if(!(waypoints&&waypoints.length))return <div style={{background:C.card,borderRadius:12,padding:"14px 13px",border:`1px dashed ${C.border}`,textAlign:"center"}}><div style={{fontSize:12.5,color:C.textSub,lineHeight:1.6,marginBottom:9}}>{emptyCopy}</div><button onClick={onAdd} style={{padding:"8px 14px",borderRadius:9,border:"none",background:C.actionSolid,color:C.onSolid,fontSize:12.5,fontWeight:700,cursor:"pointer"}}>Add waypoints</button></div>;
+  if(!(waypoints&&waypoints.length))return <div style={{background:C.card,borderRadius:12,padding:"14px 13px",border:`1px dashed ${C.border}`,textAlign:"center"}}><div style={{fontSize:12.5,color:C.textSub,lineHeight:1.6,marginBottom:9}}>{emptyCopy}</div><button onClick={onAdd} style={{padding:"8px 14px",borderRadius:9,border:"none",...SOLID_FILL(C),color:C.onSolid,fontSize:12.5,fontWeight:700,cursor:"pointer"}}>Add waypoints</button></div>;
   /* The affordance is taught ONCE, here, rather than repeated as a "Show on map" line on
      every row. These rows look like content and behave like controls, and on a phone there
      is no hover to reveal that — but eight identical hints is the clutter the row hint was

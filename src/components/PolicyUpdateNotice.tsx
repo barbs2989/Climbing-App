@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import { SOLID_FILL } from "../../lib/buttonStyles.js";
 import { C } from "../../ClimbMatchCore.jsx";
 import { POLICY_VERSION, policyVersionLabel } from "../../lib/policy";
 
@@ -62,7 +63,7 @@ export default function PolicyUpdateNotice({previous,busy,onRead,onAccept,z,onHe
     <div style={{display:"flex",gap:7,flexWrap:"wrap"}}>
       <button onClick={()=>onRead("terms")} style={{flex:"1 1 auto",padding:"9px 12px",borderRadius:10,border:"1px solid "+C.border,background:C.card,color:C.text,fontSize:12.5,fontWeight:600,cursor:"pointer"}}>Read Terms</button>
       <button onClick={()=>onRead("privacy")} style={{flex:"1 1 auto",padding:"9px 12px",borderRadius:10,border:"1px solid "+C.border,background:C.card,color:C.text,fontSize:12.5,fontWeight:600,cursor:"pointer"}}>Read Privacy</button>
-      <button disabled={busy} onClick={onAccept} style={{flex:"1 1 100%",padding:"11px 12px",borderRadius:11,border:"1px solid rgba(0,0,0,0.22)",background:C.actionSolid,color:C.onSolid,fontSize:14,fontWeight:700,cursor:busy?"default":"pointer",opacity:busy?0.6:1}}>{busy?"Recording…":previous?"I accept":"I’m 18 or older — I accept"}</button>
+      <button disabled={busy} onClick={onAccept} style={{flex:"1 1 100%",padding:"11px 12px",borderRadius:11,border:"1px solid rgba(0,0,0,0.22)",...SOLID_FILL(C),color:C.onSolid,fontSize:14,fontWeight:700,cursor:busy?"default":"pointer",opacity:busy?0.6:1}}>{busy?"Recording…":previous?"I accept":"I’m 18 or older — I accept"}</button>
     </div>
   </div>;
 }

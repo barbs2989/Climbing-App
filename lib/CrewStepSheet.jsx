@@ -12,14 +12,14 @@
 import { createPortal } from "react-dom";
 import { C } from "../ClimbMatchCore.jsx";
 import { POP_CLOSE } from "./popupChrome.js";
-import { BTN_PRIMARY, BTN_SECONDARY } from "./buttonStyles.js";
+import { BTN_PRIMARY, BTN_SECONDARY, SOLID_FILL } from "./buttonStyles.js";
 import { useWideScreen } from "./wideLayout.js";
 
 export default function CrewStepSheet({ title, stepNo, stepOf, sub, onClose, nextLabel, onNext, stepDone, children }) {
   const wide = useWideScreen();
   /* The crew card's solid blue (its "Propose days" / "Remind or invite" buttons), not BTN_GO's green,
      which buttonStyles.js keeps for saying yes to a person or recording a climb. */
-  const SOLID = { ...BTN_PRIMARY(C), background: C.actionSolid, border: "1px solid " + C.actionSolid, color: C.onSolid };
+  const SOLID = { ...BTN_PRIMARY(C), ...SOLID_FILL(C), border: "1px solid " + C.actionSolid, color: C.onSolid };
   const close = (e) => { if (e) e.stopPropagation(); onClose && onClose(); };
   return createPortal(<div onClick={close} role="dialog" aria-modal="true" aria-label={title} style={{ position: "fixed", inset: 0, zIndex: 1200, background: C.scrim, display: "flex", alignItems: wide ? "center" : "flex-end", justifyContent: "center", padding: wide ? 16 : 0, boxSizing: "border-box" }}>
     <div onClick={(e) => e.stopPropagation()} style={{ background: C.surface, color: C.text, borderRadius: wide ? 18 : "18px 18px 0 0", border: "1px solid " + C.border, width: "100%", maxWidth: 520, boxSizing: "border-box", maxHeight: wide ? "88vh" : "90vh", display: "flex", flexDirection: "column", boxShadow: "0 -10px 40px rgba(0,0,0,0.5)" }}>

@@ -1,6 +1,7 @@
 // Moved out of ClimbMatchCore.jsx verbatim so it can load lazily, off the first-paint
 // bundle. It is rendered only from App (ClimbMatch.jsx) behind React.lazy + Suspense.
 import { useState } from "react";
+import { SOLID_FILL } from "./buttonStyles.js";
 import { C, HERO_BG, HERO_SHEEN, profileGradeRows, pubName } from "../ClimbMatchCore.jsx";
 import Av from "../src/components/Av.tsx";
 import { POP_CLOSE } from "./popupChrome.js";
@@ -44,7 +45,7 @@ export default function ShareCard({climber,selfUid,onClose,logsUnavailable}){
         </div>
         <div style={{fontSize:12,color:C.textMuted,fontWeight:700,marginBottom:5,letterSpacing:0.4}}>COPY SUMMARY</div>
         <textarea aria-label="Copy summary" readOnly value={summary} onFocus={e=>e.target.select()} style={{width:"100%",height:124,overscrollBehavior:"contain",background:C.card,border:`1px solid ${C.field}`,borderRadius:9,padding:"9px 11px",fontSize:12,color:C.textSub,boxSizing:"border-box",resize:"none",outline:"none",lineHeight:1.5,fontFamily:"inherit"}}/>
-        <button onClick={()=>copy(summary,"summary")} style={{width:"100%",marginTop:8,padding:11,background:C.actionSolid,color:C.onSolid,border:"1px solid rgba(0,0,0,0.22)",boxSizing:"border-box",borderRadius:11,fontSize:14,cursor:"pointer",fontWeight:700}}>{copied==="summary"?"✓ Copied to clipboard":copied==="fail:summary"?"Couldn’t copy — your browser blocked it":"Copy summary"}</button>
+        <button onClick={()=>copy(summary,"summary")} style={{width:"100%",marginTop:8,padding:11,...SOLID_FILL(C),color:C.onSolid,border:"1px solid rgba(0,0,0,0.22)",boxSizing:"border-box",borderRadius:11,fontSize:14,cursor:"pointer",fontWeight:700}}>{copied==="summary"?"✓ Copied to clipboard":copied==="fail:summary"?"Couldn’t copy — your browser blocked it":"Copy summary"}</button>
         <div style={{fontSize:12,color:C.textMuted,textAlign:"center",marginTop:11,lineHeight:1.5,fontStyle:"italic"}}>The public link doesn’t open a profile page — copy the summary above to share your climbing history.</div>
       </div>
     </div>

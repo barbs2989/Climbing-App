@@ -1,4 +1,5 @@
 import { useEffect, useLayoutEffect, useRef, useState, type CSSProperties, type MutableRefObject, type SyntheticEvent } from "react";
+import { SOLID_FILL } from "../../lib/buttonStyles.js";
 import { C, caretToEnd, editorHtmlToMd, mdToEditorHtml } from "../../ClimbMatchCore.jsx";
 
 export interface RichEditorProps {
@@ -74,7 +75,7 @@ export default function RichEditor({value,onChange,elRef,ariaLabel,placeholder,m
     </div>
     {linkOpen?<div style={{marginBottom:6}}><div style={{display:"flex",alignItems:"center",gap:6}}>
       <input ref={urlRef} type="url" inputMode="url" autoCapitalize="none" autoCorrect="off" spellCheck={false} aria-label="Link address" aria-invalid={linkErr} placeholder="Paste a web address" value={url} onChange={function(e){setUrl(e.target.value);setLinkErr(false);}} onKeyDown={function(e){if(e.key==="Enter"){e.preventDefault();addLink();}}} style={{flex:1,minWidth:0,boxSizing:"border-box",padding:"6px 10px",borderRadius:8,border:"1px solid "+(linkErr?C.red:C.field),background:C.card,color:C.text,fontSize:16,outline:"none"}}/>
-      <button type="button" onClick={addLink} style={{flexShrink:0,padding:"8px 12px",borderRadius:8,border:"none",background:C.actionSolid,color:C.onSolid,fontSize:12,fontWeight:700,cursor:"pointer"}}>Add link</button>
+      <button type="button" onClick={addLink} style={{flexShrink:0,padding:"8px 12px",borderRadius:8,border:"none",...SOLID_FILL(C),color:C.onSolid,fontSize:12,fontWeight:700,cursor:"pointer"}}>Add link</button>
       <button type="button" onClick={function(){setLinkOpen(false);}} style={{flexShrink:0,padding:"8px 10px",borderRadius:8,border:"1px solid "+C.border,background:C.card,color:C.textSub,fontSize:12,fontWeight:700,cursor:"pointer"}}>Cancel</button>
     </div>{linkErr?<div role="alert" style={{fontSize:11.5,color:C.red,marginTop:4}}>That doesn’t look like a web address.</div>:null}</div>:null}
     <div style={{position:"relative"}}>

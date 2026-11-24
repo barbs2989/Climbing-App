@@ -18,7 +18,7 @@ import globals from "globals";
 
 // A palette style in lib/buttonStyles.js that is a FUNCTION of C, spread uncalled, adds nothing: CrewCard's
 // "All your float plans" link drew as a grey browser-default button that way (2026-11-18).
-const paletteSpread = ["error", { selector: "SpreadElement > Identifier.argument[name=/^(BTN_PRIMARY|BTN_SECONDARY|BTN_GO|BTN_LINK|INPUT)$/]", message: "This style is a function of the palette: spread NAME(C), not NAME." },
+const paletteSpread = ["error", { selector: "SpreadElement > Identifier.argument[name=/^(BTN_PRIMARY|BTN_SECONDARY|BTN_GO|BTN_LINK|INPUT|SOLID_FILL)$/]", message: "This style is a function of the palette: spread NAME(C), not NAME." },
   // The solid action colour was C.blueSolid until 2026-11-24. A branch cut before the rename can bring the old name
   // back, and a missing palette key is `undefined`: the button draws with no fill and nothing fails.
   { selector: "MemberExpression > Identifier.property[name='blueSolid']", message: "C.blueSolid was renamed: use C.actionSolid." }];

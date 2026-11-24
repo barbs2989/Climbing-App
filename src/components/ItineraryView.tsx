@@ -5,7 +5,7 @@ import type { CSSProperties, ReactNode } from "react";
 import { getAvailableItineraries, itinDaysToDraft, blankItinDay, itinDraftToStructured, C, RSL as SL, catOf, ROUTE_GAP, uElev, uDistMi, uMass, SUB_LABEL, shareOrCopy, itinShareText, printSheet, itinSheetHtml, shortDate, hoursNum } from "../../ClimbMatchCore.jsx";
 import { clickable } from "../../lib/clickable";
 import { seasonShort, seasonTidy } from "../../lib/seasonText.js";
-import { BTN } from "../../lib/buttonStyles.js";
+import { BTN, SOLID_LEDGE } from "../../lib/buttonStyles.js";
 import ItineraryEditor from "./ItineraryEditor.tsx";
 import type { Itinerary } from "./ItineraryEditor.tsx";
 import Chevron from "./Chevron.tsx";
@@ -248,7 +248,7 @@ export default function ItineraryView({route,activity,onSeeReports,onSeeSeason,s
         <ItineraryEditor itin={draft||{days:[blankItinDay()]}} onChange={setDraft}/>
         <div style={{display:"flex",gap:12,marginTop:8}}>
           <button onClick={function(){setShowBuilder(false);setDraft(null);setPickedKey(null);}} style={{flex:1,padding:9,background:C.card,color:C.textSub,border:"1px solid "+C.border,borderRadius:9,fontSize:13,cursor:"pointer"}}>Cancel</button>
-          <button onClick={saveDraft} disabled={!draftContentDays()} title={draftContentDays()?"":"Add a day title, a note or some numbers first"} style={{flex:2,padding:9,background:draftContentDays()?C.actionSolid:C.surface,color:draftContentDays()?C.onSolid:C.textMuted,border:"none",borderRadius:9,fontSize:13,fontWeight:700,cursor:draftContentDays()?"pointer":"default"}}>Save my plan</button>
+          <button onClick={saveDraft} disabled={!draftContentDays()} title={draftContentDays()?"":"Add a day title, a note or some numbers first"} style={{flex:2,padding:9,background:draftContentDays()?C.actionSolid:C.surface,boxShadow:(draftContentDays())?SOLID_LEDGE(C):"none",color:draftContentDays()?C.onSolid:C.textMuted,border:"none",borderRadius:9,fontSize:13,fontWeight:700,cursor:draftContentDays()?"pointer":"default"}}>Save my plan</button>
         </div>
       </div>}
     </div>:null}

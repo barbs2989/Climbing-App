@@ -1,6 +1,6 @@
 import { FONT_DISPLAY } from "../../lib/fonts.js";
 import { useState } from "react";
-import { BTN_LG } from "../../lib/buttonStyles.js";
+import { BTN_LG, SOLID_FILL } from "../../lib/buttonStyles.js";
 import { C, FALLBACK_COVER, onImgErr, pubFirst } from "../../ClimbMatchCore.jsx";
 import { POP_CLOSE } from "../../lib/popupChrome.js";
 import Av from "./Av.tsx";
@@ -61,7 +61,7 @@ export default function CrewInviteModal({climber,climbers,route,onClose,onSend}:
       </div>
       <div style={{display:"flex",gap:12}}>
         <button onClick={onClose} style={{...BTN_LG,flex:"0 0 auto",padding:"13px 17px",background:C.surface,color:C.textSub,border:"1px solid "+C.border}}>Cancel</button>
-        <button onClick={()=>onSend(note.trim())} style={{...BTN_LG,flex:1,background:C.actionSolid,color:C.onSolid,border:"none"}}>{many?(note.trim()?"Send "+many.length+" invites":"Send "+many.length+" without note"):note.trim()?"Send invite":"Send without note"}</button>
+        <button onClick={()=>onSend(note.trim())} style={{...BTN_LG,flex:1,...SOLID_FILL(C),color:C.onSolid,border:"none"}}>{many?(note.trim()?"Send "+many.length+" invites":"Send "+many.length+" without note"):note.trim()?"Send invite":"Send without note"}</button>
       </div>
       <div style={{fontSize:12,color:C.textMuted,textAlign:"center",marginTop:11,lineHeight:1.5}}>{many?"Each climber can accept or decline your invite.":first+" can accept or decline your invite."}</div>
     </div>

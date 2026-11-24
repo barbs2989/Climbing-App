@@ -1,4 +1,5 @@
 import { Component } from "react";
+import { SOLID_FILL } from "./buttonStyles.js";
 import { C } from "../ClimbMatchCore.jsx";
 import { swallowedChunk } from "./chunkReload.js";
 
@@ -37,7 +38,7 @@ export default class SectionErrorBoundary extends Component {
         <div style={{ maxWidth: 420, width: "100%", boxSizing: "border-box", background: C.card, border: "1px solid " + C.border, borderRadius: 14, padding: "22px 18px", textAlign: "center" }}>
           <div style={{ fontSize: 16, fontWeight: 700, color: C.text, marginBottom: 8, lineHeight: 1.3 }}>ClimbMatch was just updated</div>
           <div style={{ fontSize: 13.5, color: C.textSub, lineHeight: 1.55 }}>This part of the app needs the new version. Reloading now; tap Reload if it doesn’t.</div>
-          <button type="button" onClick={() => window.location.reload()} style={{ marginTop: 16, width: "100%", boxSizing: "border-box", padding: "11px 14px", borderRadius: 10, border: "1px solid " + C.actionSolid, background: C.actionSolid, color: "#fff", fontSize: 14.5, fontWeight: 700, cursor: "pointer" }}>Reload</button>
+          <button type="button" onClick={() => window.location.reload()} style={{ marginTop: 16, width: "100%", boxSizing: "border-box", padding: "11px 14px", borderRadius: 10, border: "1px solid " + C.actionSolid, ...SOLID_FILL(C), color: "#fff", fontSize: 14.5, fontWeight: 700, cursor: "pointer" }}>Reload</button>
         </div>
       </div>
     );
@@ -49,7 +50,7 @@ export default class SectionErrorBoundary extends Component {
             {chunk ? "This part of the app could not be downloaded, which usually means the connection dropped. " : ""}
             Try again. Anything you were typing here may be lost. The rest of the app still works, so you can pick another tab.
           </div>
-          <button type="button" onClick={this.retry} style={{ marginTop: 16, width: "100%", boxSizing: "border-box", padding: "11px 14px", borderRadius: 10, border: "1px solid " + C.actionSolid, background: C.actionSolid, color: "#fff", fontSize: 14.5, fontWeight: 700, cursor: "pointer" }}>Try Again</button>
+          <button type="button" onClick={this.retry} style={{ marginTop: 16, width: "100%", boxSizing: "border-box", padding: "11px 14px", borderRadius: 10, border: "1px solid " + C.actionSolid, ...SOLID_FILL(C), color: "#fff", fontSize: 14.5, fontWeight: 700, cursor: "pointer" }}>Try Again</button>
         </div>
       </div>
     );

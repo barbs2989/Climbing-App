@@ -1,4 +1,5 @@
 import { useState, useEffect, type CSSProperties } from "react";
+import { SOLID_LEDGE } from "../../lib/buttonStyles.js";
 import { C } from "../../ClimbMatchCore.jsx";
 
 export interface TopoCaptionBoxProps {
@@ -29,7 +30,7 @@ export default function TopoCaptionBox({initial,onSave,style,draftRef}: TopoCapt
       <textarea aria-label="Caption — everyone who opens this topo reads it" value={v} onChange={function(e){setV(e.target.value);setMsg(null);}} rows={3} placeholder="Add context — which face this is, when you took it, where the line goes or what to watch for" style={{display:"block",width:"100%",boxSizing:"border-box",marginTop:6,padding:"8px 10px",borderRadius:8,border:"1px solid "+C.field,background:C.card,color:C.text,fontSize:13,fontWeight:400,lineHeight:1.45,fontFamily:"inherit",resize:"vertical",outline:"none"}}/>
     </label>
     <div style={{display:"flex",alignItems:"center",gap:10,marginTop:8}}>
-      <button disabled={!dirty||busy} onClick={function(){setBusy(true);setMsg(null);const t=String(v||"").trim();Promise.resolve(onSave(t)).then(function(){setSaved(t);setMsg({ok:true,t:"Caption saved"});},function(e: {message?: string}|null){setMsg({ok:false,t:"Couldn’t save the caption — "+((e&&e.message)||"try again")});}).finally(function(){setBusy(false);});}} style={{padding:"7px 14px",borderRadius:8,border:"none",background:dirty&&!busy?C.actionSolid:C.border,color:dirty&&!busy?C.onSolid:C.textSub,fontSize:12.5,fontWeight:700,cursor:dirty&&!busy?"pointer":"default"}}>{busy?"Saving…":"Save caption"}</button>
+      <button disabled={!dirty||busy} onClick={function(){setBusy(true);setMsg(null);const t=String(v||"").trim();Promise.resolve(onSave(t)).then(function(){setSaved(t);setMsg({ok:true,t:"Caption saved"});},function(e: {message?: string}|null){setMsg({ok:false,t:"Couldn’t save the caption — "+((e&&e.message)||"try again")});}).finally(function(){setBusy(false);});}} style={{padding:"7px 14px",borderRadius:8,border:"none",background:dirty&&!busy?C.actionSolid:C.border,boxShadow:(dirty&&!busy)?SOLID_LEDGE(C):"none",color:dirty&&!busy?C.onSolid:C.textSub,fontSize:12.5,fontWeight:700,cursor:dirty&&!busy?"pointer":"default"}}>{busy?"Saving…":"Save caption"}</button>
       {msg?<span role={msg.ok?"status":"alert"} style={{fontSize:12,color:msg.ok?C.green:C.red,lineHeight:1.4}}>{msg.t}</span>:null}
     </div>
   </div>;

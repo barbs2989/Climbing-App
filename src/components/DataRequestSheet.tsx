@@ -1,4 +1,5 @@
 import type { Dispatch, SetStateAction } from "react";
+import { SOLID_LEDGE } from "../../lib/buttonStyles.js";
 import { C } from "../../ClimbMatchCore.jsx";
 import { POP_CLOSE } from "../../lib/popupChrome.js";
 import { raiseDataRequest } from "../../lib/db";
@@ -21,5 +22,5 @@ export default function DataRequestSheet({dataReq,dataReqBusy,dataReqNote,setDat
       /* Three outcomes, three messages. "unavailable" is the migration not having run yet, which
          is NOT the same as a failure and must not read as one — and neither may be dressed up as
          success, which is the whole reason this control exists. */
-      showToast(r==="recorded"?"Request recorded. We'll follow up.":r==="unavailable"?"Couldn't send that request right now — nothing was sent. Please try again later.":"Couldn't record that request. Please try again.",4000);}} style={{width:"100%",padding:12,background:dataReqBusy?C.surface:C.actionSolid,color:dataReqBusy?C.textMuted:C.onSolid,border:"none",borderRadius:11,fontSize:14,fontWeight:700,cursor:dataReqBusy?"default":"pointer"}}>{dataReqBusy?"Sending…":"Send request"}</button></>:null}</div></div>;
+      showToast(r==="recorded"?"Request recorded. We'll follow up.":r==="unavailable"?"Couldn't send that request right now — nothing was sent. Please try again later.":"Couldn't record that request. Please try again.",4000);}} style={{width:"100%",padding:12,background:dataReqBusy?C.surface:C.actionSolid,boxShadow:(dataReqBusy)?"none":SOLID_LEDGE(C),color:dataReqBusy?C.textMuted:C.onSolid,border:"none",borderRadius:11,fontSize:14,fontWeight:700,cursor:dataReqBusy?"default":"pointer"}}>{dataReqBusy?"Sending…":"Send request"}</button></>:null}</div></div>;
 }

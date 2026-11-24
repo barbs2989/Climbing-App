@@ -2,7 +2,7 @@ import { tx } from "../../lib/tapWords.js";
 import { useState, useRef, useEffect } from "react";
 import { useImgAspect, PIN_CATEGORIES, zoomTopoView, ZOOM_MAX, clampTopoView, TAP_SLOP, pinNums, pinLabel, TOPO_RED, TOPO_VAR, TOPO_IMG, pinColor, LOUPE_Z } from "../../lib/topoMarks.jsx";
 import { askConfirm } from "../../lib/ConfirmSheet.jsx";
-import { CHIP } from "../../lib/buttonStyles.js";
+import { CHIP, SOLID_LEDGE } from "../../lib/buttonStyles.js";
 import { boxZoom } from "../../lib/wideLayout.js";
 import { C } from "../../ClimbMatchCore.jsx";
 import type { KeyboardEvent, ChangeEvent, PointerEvent } from "react";
@@ -400,7 +400,7 @@ export default function TopoDrawer({initial,onCancel,onSubmit,dirtyRef,discardAs
     {mode==="line"?<input aria-label="Name this line (optional)" value={label} maxLength={60} onChange={function(e: ChangeEvent<HTMLInputElement>){setLabel(e.target.value);}} placeholder="Name this line (optional) — e.g. direct start, left-hand variation" style={{width:"100%",boxSizing:"border-box",padding:"8px 10px",borderRadius:8,border:"1px solid "+C.field,background:C.card,color:C.text,fontSize:13,outline:"none",marginBottom:10}}/>:null}
     <div style={{display:"flex",gap:12}}>
       <button onClick={cancel} disabled={!!saving} style={{flex:1,padding:9,background:C.surface,color:C.textSub,border:"1px solid "+C.border,borderRadius:9,fontSize:13,cursor:"pointer"}}>Cancel</button>
-      <button disabled={!canPost||!!saving} onClick={function(){if(saving)return;onSubmit({points:canSave?points:[],variants:variants,variantLabels:keptVar.map(function(o){return o.t;}),pins:cleanPins(),label:label.trim()||null});}} style={{flex:2,padding:9,background:canPost&&!saving?C.actionSolid:C.border,color:C.onSolid,border:"none",borderRadius:9,fontSize:13,fontWeight:700,cursor:canPost&&!saving?"pointer":"default"}}>{saving?"Saving…":(canSave?"Save topo":(emptyLabel||"Save topo"))}</button>
+      <button disabled={!canPost||!!saving} onClick={function(){if(saving)return;onSubmit({points:canSave?points:[],variants:variants,variantLabels:keptVar.map(function(o){return o.t;}),pins:cleanPins(),label:label.trim()||null});}} style={{flex:2,padding:9,background:canPost&&!saving?C.actionSolid:C.border,boxShadow:(canPost&&!saving)?SOLID_LEDGE(C):"none",color:C.onSolid,border:"none",borderRadius:9,fontSize:13,fontWeight:700,cursor:canPost&&!saving?"pointer":"default"}}>{saving?"Saving…":(canSave?"Save topo":(emptyLabel||"Save topo"))}</button>
     </div>
   </div>;
 }

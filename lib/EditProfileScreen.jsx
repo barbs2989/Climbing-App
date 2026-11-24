@@ -14,7 +14,7 @@ import Av from "../src/components/Av.tsx";
 import DiscIcon from "../src/components/DiscIcon.tsx";
 import Lbl from "../src/components/Lbl.tsx";
 import Chevron from "../src/components/Chevron.tsx";
-import { INPUT } from "./buttonStyles.js";
+import { INPUT, SOLID_LEDGE } from "./buttonStyles.js";
 
 /* What a Home "Finish setting up" row is asking for. The row used to open this editor at the top,
    with nothing saying which of its dozen fields the tap was about; now the editor opens on that
@@ -103,7 +103,7 @@ export default function EditProfileScreen({draft,setDraft,onSave,onCancel,onAvat
   return (<div style={{position:"fixed",inset:0,background:C.bg,zIndex:1100,overflowY:"auto",overscrollBehavior:"contain",maxWidth:520,margin:"0 auto",boxSizing:"border-box"}}>
     <div style={{position:"sticky",top:0,background:C.surface,borderBottom:"1px solid "+C.border,padding:"12px 16px",display:"flex",alignItems:"center",justifyContent:"space-between",zIndex:2}}>
       <div style={{display:"flex",alignItems:"center",gap:12}}><button onClick={onCancel} style={{background:C.card,border:"1px solid "+C.border,color:C.text,borderRadius:8,padding:"9px 11px",fontSize:13,fontWeight:700,cursor:"pointer"}}>Cancel</button><div style={{fontSize:15,fontWeight:700,color:C.text}}>Edit profile</div></div>
-      <button disabled={!ok} onClick={onSave} style={{background:ok?C.actionSolid:C.card,color:ok?C.onSolid:C.textMuted,border:"1px solid "+(ok?C.blue:C.border),borderRadius:8,padding:"6px 16px",fontSize:13,fontWeight:700,cursor:ok?"pointer":"not-allowed"}}>Save</button>
+      <button disabled={!ok} onClick={onSave} style={{background:ok?C.actionSolid:C.card,boxShadow:(ok)?SOLID_LEDGE(C):"none",color:ok?C.onSolid:C.textMuted,border:"1px solid "+(ok?C.blue:C.border),borderRadius:8,padding:"6px 16px",fontSize:13,fontWeight:700,cursor:ok?"pointer":"not-allowed"}}>Save</button>
     </div>
     <div style={{maxWidth:560,margin:"0 auto",padding:"4px 16px 44px"}}>
       {setup?<div role="status" style={{marginTop:12,background:C.card,border:"1px solid "+C.blue+"66",borderLeft:"3px solid "+C.blue,borderRadius:12,padding:"11px 13px"}}><div style={{fontSize:11,fontWeight:800,letterSpacing:0.5,textTransform:"uppercase",color:C.blue}}>Finish setting up</div><div style={{fontSize:15,fontWeight:800,color:C.text,marginTop:3}}>{setup.t}</div><div style={{fontSize:12.5,color:C.textSub,marginTop:4,lineHeight:1.45}}>{setup.why}</div><div style={{fontSize:12.5,color:C.text,marginTop:6,lineHeight:1.45,fontWeight:600}}>{tx(setup.how)}</div></div>:null}
