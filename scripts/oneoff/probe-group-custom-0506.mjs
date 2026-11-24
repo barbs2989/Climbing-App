@@ -81,6 +81,8 @@ ok(await tries(`delete from group_event_rsvps where event_id = '${next}' and use
 await set("links", `'[{"label":"Probe label","url":"https://example.org"}]'`);
 const t = (await db.query(`select screening_text('group', to_jsonb(g)) t from groups g where id = '${G}'`)).rows[0].t || "";
 ok(t.includes("Gym night") && t.includes("Probe label") && t.includes("Crew lead") && t.includes("Welcome!"), "the new text is screened with the group");
+// 0509: the link's address is printed on About, so it is screened too.
+ok(!files.some((f) => f.startsWith("0509_")) || t.includes("example.org"), "a link's address is screened with its label (0509)");
 
 console.log(`\nprobe-group-custom-0506: ${passes} passed, ${failures} failed.`);
 process.exit(failures ? 1 : 0);
