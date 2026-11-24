@@ -297,6 +297,7 @@ npm run check:list-row-columns # the Climbs list's THIN ROW carries every column
 npm run check:migrations # two migrations must never share a number (in build)
 npm run check:migration-replay # does supabase/migrations rebuild an EMPTY database, as a Supabase preview does? (--compare-live: into the LIVE schema)
 npm run check:profile-privacy # PGlite replay, then profiles read as anon/authenticated: hidden name/photos and private columns refused, every app select list still allowed; and signed out, climb_logs.partners is refused while every other climb_logs column is granted (hand-run, 0434/0501 — run it when a migration ADDS a climb_logs column)
+npm run check:trip-reports # PGlite replay, then RELIABILITY (0519) driven as each climber: one report counts, hidden until the climber files or 7 days pass, "I was there" takes it out, called off marks nobody, leaving stays reportable (hand-run)
 npm run check:rls   # policies bind the right column; definer fns pin pg_temp; every table has RLS; every write policy asks WHO is calling; every view is read-only to the app's keys (in build)
 npm run check:hook-signature # does the screen-content hook signature (0429) agree between pgcrypto in the trigger and the edge function, and refuse stale/forged calls? (in build)
 ```
@@ -381,7 +382,7 @@ Read it in three bands:
 
 Four functions do the real work; everything else is UI around them. The code is the source of truth for the exact constants/formulas — these are just pointers.
 
-- `compat(a, b)` (~L335) — partner compatibility score (20–99) from shared disciplines, grade closeness, shared objectives, verification, pace (`hikingSpeedFtHr`), and availability overlap. Every term is BOUNDED and the total is RESCALED onto that range; it does not clamp.
+- `compat(a, b)` (~L1414) — partner compatibility score (20–99) from shared disciplines, grade closeness (every profile ladder: sport, trad, alpine, ice, mixed, aid, boulder), where you climb (shared objectives OR listed areas, one term), verification of BOTH sides, pace (`hikingSpeedFtHr`), and availability overlap. Every term is BOUNDED and the total is RESCALED onto that range; it does not clamp. It is SYMMETRIC (`compat(a,b) === compat(b,a)`), and a term either side left blank scores half (2026-11-23 audit).
   Its design history — why the terms are bounded and rescaled rather than clamped, and how the
   design was measured — is in [docs/codebase/algorithms.md](docs/codebase/algorithms.md).
 - `buildConsensus(activity)` (~L344) — distills a route's trip reports into a conditions summary, weighting each report by the author's `trustScore` and recency; separates all-time vs recent tags and surfaces hazards.
