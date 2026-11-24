@@ -181,6 +181,8 @@ const hourName = function (h) { return (h % 12 || 12) + (h % 24 < 12 ? " AM" : "
 const HOUR_TICKS = [0, 3, 6, 9, 12, 15, 18, 21, 24];
 const hourTick = function (h) { return (h % 12 || 12) + (h % 24 < 12 ? "a" : "p"); };
 const rangeText = function (r) { return uTemp(r[0]) + "–" + uTemp(r[1]); };
+// A mountain range runs below zero, and "-1°–50°" reads as a minus beside a dash: spelled out in sentences.
+const spanText = function (r) { return uTemp(r[0]) + " to " + uTemp(r[1]); };
 const same = function (a, b) { return !!a && !!b && a[0] === b[0] && a[1] === b[1]; };
 const LBL = { fontSize: 10.5, fontWeight: 800, color: C.label, letterSpacing: 0.5, textTransform: "uppercase", marginBottom: 5 };
 const NOTE = { fontSize: 11.5, color: C.textMuted, lineHeight: 1.5, marginTop: 6 };
@@ -257,7 +259,7 @@ export function CondPrefsControls({ disc, only, onSignIn }) {
         {["cool", "standard", "warm"].map(function (k) { return chip(scope === "all" ? same(p.temp.all, TEMP_BANDS[k]) : same(p.temp[scope], TEMP_BANDS[k]), NAME[k] + " " + rangeText(TEMP_BANDS[k]), function () { setRange(TEMP_BANDS[k].slice()); }, k); })}
       </div>}
       <div style={NOTE}>{ownOnly
-        ? (own ? "Each day on the Conditions tab of " + scopeName.toLowerCase() + " routes says whether the forecast temperatures fall in " + rangeText(eff) + ". Drag either end to yours." : "No range set, so " + scopeName.toLowerCase() + " routes show no temperature line. There is no suggested range: set the temperatures you like.")
+        ? (own ? "Each day on the Conditions tab of " + scopeName.toLowerCase() + " routes says whether the forecast temperatures fall in " + spanText(eff) + ". Drag either end to yours." : "No range set, so " + scopeName.toLowerCase() + " routes show no temperature line. There is no suggested range: set the temperatures you like.")
         : "Anything from " + rangeText(eff) + " scores full marks for " + scopeName + (scope === "all" ? ", unless a discipline has its own range (marked ·)" : own ? "" : ", from your all-climbing range") + "; the score fades to nothing " + uTempDelta(25) + "° below it and " + uTempDelta(20) + "° above. Drag either end."}</div>
       {/* A range-only scope is on or off: one plain action says which way it goes (was two chips, "Not set" / "My range", that read as a choice of values). */}
       {ownOnly ? (own
