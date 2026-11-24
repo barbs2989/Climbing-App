@@ -1,0 +1,110 @@
+{
+ "note": "Values replaced by the owner-approved batch-AH scalar fixes, 2026-11-24",
+ "rollback": [
+  {
+   "table": "routes",
+   "id": "wa_aries_aka_the_lizard",
+   "before": {
+    "pitches": 0
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_aries_aka_the_lizard",
+   "before": {
+    "length_m": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_aries_aka_the_lizard",
+   "before": {
+    "guide_stars": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_taurus",
+   "before": {
+    "pitches": 0
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_taurus",
+   "before": {
+    "guide_stars": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_pisces",
+   "before": {
+    "pitches": 0
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_sickle_crack",
+   "before": {
+    "pitches": 0
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_sickle_crack",
+   "before": {
+    "length_m": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_sickle_crack",
+   "before": {
+    "anchor": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_free_at_last",
+   "before": {
+    "length_m": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_higher_learning",
+   "before": {
+    "guide_stars": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_higher_learning",
+   "before": {
+    "bolts": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_roger_s_corner",
+   "before": {
+    "guide_stars": 0
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_sugar_bear",
+   "before": {
+    "pitches": 0
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_park_ranger",
+   "before": {
+    "anchor": null
+   }
+  }
+ ]
+}

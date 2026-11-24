@@ -1,0 +1,481 @@
+{
+ "wa_aries_aka_the_lizard": {
+  "area": "wa_great_northern_slab",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/105793821/aries-aka-the-lizard",
+    "https://www.mountainproject.com/area/105790646/great-northern-slab",
+    "https://www.mountainproject.com/route/105790657/great-northern-slab",
+    "https://rakkup.com/guidebook/index-rock-climbing/the-great-northern-slab/s10833",
+    "https://rakkup.com/guidebook/index-rock-climbing/the-lizard-route-(aka-aries)/c21061",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5722,47.8184&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.5722,47.8184&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,parcel_id&returnGeometry=false&f=json",
+    "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.8+",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105793821/aries-aka-the-lizard",
+      "fact": "5.8+ YDS, Trad",
+      "retrieved_at": "2026-11-24"
+     },
+     {
+      "url": "https://rakkup.com/guidebook/index-rock-climbing/the-lizard-route-(aka-aries)/c21061",
+      "fact": "The Lizard Route (aka Aries) 5.8+, trad, 4 stars",
+      "retrieved_at": "2026-11-24"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_aries_aka_the_lizard",
+    "column": "pitches",
+    "from": 0,
+    "to": 5,
+    "why": "pitches 0 is invalid. Mountain Project states 5 pitches (P1-P5 described, each to its own belay). Single source (theCrag Forbidden; the guide teaser shows no count); locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/105793821/aries-aka-the-lizard"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_aries_aka_the_lizard",
+    "column": "length_m",
+    "from": null,
+    "to": 76,
+    "why": "length is empty. Mountain Project: 250 ft (76 m). Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/105793821/aries-aka-the-lizard"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_aries_aka_the_lizard",
+    "column": "gear",
+    "from": null,
+    "to": [
+     "cams from smallest Alien to #3 Camalot",
+     "extra thin hands to hands",
+     "small nuts"
+    ],
+    "why": "gear is empty. Mountain Project rack: one set of cams from the smallest Alien to a #3 Camalot, extras in thin hands to hands, a set of small nuts. Single source (rack); locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/105793821/aries-aka-the-lizard"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_aries_aka_the_lizard",
+    "column": "guide_stars",
+    "from": null,
+    "to": 4,
+    "why": "guide_stars is empty. The Index guidebook's own entry (publisher's teaser page) rates The Lizard Route (aka Aries) 4 stars.",
+    "evidence": [
+     "https://rakkup.com/guidebook/index-rock-climbing/the-lizard-route-(aka-aries)/c21061",
+     "https://rakkup.com/guidebook/index-rock-climbing/the-great-northern-slab/s10833"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_aries_aka_the_lizard",
+    "column": "access",
+    "from": {
+     "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+     "notes": "Many of these peaks (Mount Persis, Gunn Peak, Baring Mountain area) sit outside designated wilderness — administratively unrestricted despite serious technical terrain.",
+     "permit": "None required.",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+     "parking_pass": "Northwest Forest Pass or America the Beautiful pass required at developed trailheads."
+    },
+    "to": {
+     "land_manager": "Washington State Parks (Forks of the Sky State Park)"
+    },
+    "why": "Brief AH: copy the owner-approved State Parks object field for field from wa_godzilla (read from the saved live row 2026-11-24): land_manager only, permit stays null. Re-read 2026-11-24: the State Parks boundary layer returns 'Forks of the Sky, State Park Property' at the Great Northern Slab (47.8184,-121.5722); the Snohomish County parcel there (10030000000400) is owned by Washington State Parks & Recreation; the parks.wa.gov release of 2026-03-13 is unchanged (WCC donation, managed as a climbing park in Forks of the Sky SP; no pass or fee rule). Replaces the LEGACY object (Mt. Baker-Snoqualmie NF, Skykomish RD, Northwest Forest Pass, Mount Rainier NP fee line, Persis/Gunn/Baring note), which names the wrong manager.",
+    "evidence": [
+     "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5722,47.8184&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+     "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.5722,47.8184&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,parcel_id&returnGeometry=false&f=json",
+     "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+    ]
+   }
+  ],
+  "held": [],
+  "disputed": [
+   "fa: stored \"Tom Nephew, Ron Burgner\" matches Mountain Project's names (no year); an FA never locks from MP, left as is. wa_sickle_crack stores \"Ron Burgner, Thom Nephew 1970\" (Thom vs Tom)."
+  ],
+  "notes": "SCOPE: its own 5-pitch line (fist-crack start, flared squeeze P3, roof traverse P4, slab finish), listed as its own route by both publishers. Descent: rappel Great Northern Slab (wa_great_northern_slab), one rope per MP. Sickle Crack (wa_sickle_crack) climbs the crack between GNS P1 and the Aries dihedral. Bolts: MP mentions two bolts on P5 and a fixed bong at the P2 belay, no total count; not proposed. MP notes P3 is often wet."
+ },
+ "wa_taurus": {
+  "area": "wa_great_northern_slab",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/106621804/taurus",
+    "https://www.mountainproject.com/area/105790646/great-northern-slab",
+    "https://www.mountainproject.com/route/106620653/pisces",
+    "https://www.mountainproject.com/route/124941605/pisces-respawned",
+    "https://www.mountainproject.com/route/106621779/xxrip-blockbuster",
+    "https://rakkup.com/guidebook/index-rock-climbing/the-great-northern-slab/s10833",
+    "https://rakkup.com/guidebook/index-rock-climbing/taurus/c21060",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5722,47.8184&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.5722,47.8184&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,parcel_id&returnGeometry=false&f=json",
+    "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+   ]
+  },
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_taurus",
+    "column": "pitches",
+    "from": 0,
+    "to": 2,
+    "why": "pitches 0 is invalid. Mountain Project states 2 pitches (P1 corner and traverse, P2 hand crack to the last pitch of Great Northern Slab). Single source; locked-1src after apply. P2 is unaffected by the Blockbuster rockfall (see notes).",
+    "evidence": [
+     "https://www.mountainproject.com/route/106621804/taurus"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_taurus",
+    "column": "gear",
+    "from": null,
+    "to": [
+     "gear to 2 in"
+    ],
+    "why": "gear is empty. Mountain Project: gear to 2\". Single source (rack); locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/106621804/taurus"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_taurus",
+    "column": "guide_stars",
+    "from": null,
+    "to": 2,
+    "why": "guide_stars is empty. The Index guidebook's own entry (publisher's teaser page) rates Taurus 2 stars.",
+    "evidence": [
+     "https://rakkup.com/guidebook/index-rock-climbing/taurus/c21060",
+     "https://rakkup.com/guidebook/index-rock-climbing/the-great-northern-slab/s10833"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_taurus",
+    "column": "access",
+    "from": {
+     "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+     "notes": "Many of these peaks (Mount Persis, Gunn Peak, Baring Mountain area) sit outside designated wilderness — administratively unrestricted despite serious technical terrain.",
+     "permit": "None required.",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+     "parking_pass": "Northwest Forest Pass or America the Beautiful pass required at developed trailheads."
+    },
+    "to": {
+     "land_manager": "Washington State Parks (Forks of the Sky State Park)"
+    },
+    "why": "Brief AH: copy the owner-approved State Parks object field for field from wa_godzilla (read from the saved live row 2026-11-24): land_manager only, permit stays null. Re-read 2026-11-24: the State Parks boundary layer returns 'Forks of the Sky, State Park Property' at the Great Northern Slab (47.8184,-121.5722); the Snohomish County parcel there (10030000000400) is owned by Washington State Parks & Recreation; the parks.wa.gov release of 2026-03-13 is unchanged (WCC donation, managed as a climbing park in Forks of the Sky SP; no pass or fee rule). Replaces the LEGACY object (Mt. Baker-Snoqualmie NF, Skykomish RD, Northwest Forest Pass, Mount Rainier NP fee line, Persis/Gunn/Baring note), which names the wrong manager.",
+    "evidence": [
+     "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5722,47.8184&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+     "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.5722,47.8184&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,parcel_id&returnGeometry=false&f=json",
+     "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+    ]
+   }
+  ],
+  "held": [
+   {
+    "table": "routes",
+    "id": "wa_taurus",
+    "column": "length_m",
+    "from": null,
+    "to": 45,
+    "why": "HELD (scope): Mountain Project gives 150 ft (45 m), but its P1 starts from the top of Blockbuster, a block that MP says was removed from the wall (rockfall, 2022). The figure may describe a start that no longer exists. Single source.",
+    "evidence": [
+     "https://www.mountainproject.com/route/106621804/taurus",
+     "https://www.mountainproject.com/route/106620653/pisces",
+     "https://www.mountainproject.com/route/106621779/xxrip-blockbuster"
+    ]
+   }
+  ],
+  "disputed": [
+   "grade: stored 5.7; Mountain Project 5.7, the Index guidebook (rakkup teaser) 5.7+. Not identical, so not locked and not changed."
+  ],
+  "notes": "SCOPE / SAFETY: Mountain Project still describes P1 as starting from the top of Blockbuster. The Blockbuster block is gone (MP Pisces page: pushed off with a hydraulic jack for safety; an xxRIP-Blockbuster comment dates the rockfall to summer 2022), so the described Taurus start no longer exists as written. Pisces Respawned (wa_great_northern_slab_pisces_respawned, 2023) now reaches Pisces and can go right toward Taurus. No stored overview/description sends climbers to the gone block (only the generic hazard line). P2 joins the last pitch of Great Northern Slab (wa_great_northern_slab). Both publishers list Taurus as its own route. FA: unknown on MP, row stores none."
+ },
+ "wa_pisces": {
+  "area": "wa_great_northern_slab",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/106620653/pisces",
+    "https://www.mountainproject.com/route/124941605/pisces-respawned",
+    "https://www.mountainproject.com/route/106621779/xxrip-blockbuster",
+    "https://www.mountainproject.com/area/105790646/great-northern-slab",
+    "https://www.mountainproject.com/route/105790657/great-northern-slab",
+    "https://rakkup.com/guidebook/index-rock-climbing/the-great-northern-slab/s10833",
+    "https://rakkup.com/guidebook/index-rock-climbing/pisces/c21059",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5722,47.8184&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.5722,47.8184&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,parcel_id&returnGeometry=false&f=json",
+    "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+   ]
+  },
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_pisces",
+    "column": "pitches",
+    "from": 0,
+    "to": null,
+    "why": "pitches 0 is invalid. No source states a count, and the route scope is unsettled: Mountain Project treats Pisces as the 65 ft hand crack reached by a gully or via Libra Crack, while the Index guidebook rates Pisces 5.10a, i.e. including the Libra Crack start. 0 -> null (count unclear).",
+    "evidence": [
+     "https://www.mountainproject.com/route/106620653/pisces",
+     "https://rakkup.com/guidebook/index-rock-climbing/pisces/c21059"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_pisces",
+    "column": "access",
+    "from": {
+     "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+     "notes": "Many of these peaks (Mount Persis, Gunn Peak, Baring Mountain area) sit outside designated wilderness — administratively unrestricted despite serious technical terrain.",
+     "permit": "None required.",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+     "parking_pass": "Northwest Forest Pass or America the Beautiful pass required at developed trailheads."
+    },
+    "to": {
+     "land_manager": "Washington State Parks (Forks of the Sky State Park)"
+    },
+    "why": "Brief AH: copy the owner-approved State Parks object field for field from wa_godzilla (read from the saved live row 2026-11-24): land_manager only, permit stays null. Re-read 2026-11-24: the State Parks boundary layer returns 'Forks of the Sky, State Park Property' at the Great Northern Slab (47.8184,-121.5722); the Snohomish County parcel there (10030000000400) is owned by Washington State Parks & Recreation; the parks.wa.gov release of 2026-03-13 is unchanged (WCC donation, managed as a climbing park in Forks of the Sky SP; no pass or fee rule). Replaces the LEGACY object (Mt. Baker-Snoqualmie NF, Skykomish RD, Northwest Forest Pass, Mount Rainier NP fee line, Persis/Gunn/Baring note), which names the wrong manager.",
+    "evidence": [
+     "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5722,47.8184&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+     "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.5722,47.8184&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,parcel_id&returnGeometry=false&f=json",
+     "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+    ]
+   }
+  ],
+  "held": [],
+  "disputed": [
+   "grade: stored 5.6 (MP, the upper hand crack alone); the Index guidebook (rakkup) rates Pisces 5.10a, counting the Libra Crack start (MP says Kalman/Van Biene include Libra in the original route). The row already records the Libra start as an alt name/variation. Two scopes, not a disagreement on one line; not changed.",
+   "length: MP 65 ft (20 m) for the crack alone; not proposed because the guide scope includes Libra Crack.",
+   "fa: stored \"Mark Weigelt, Mike Berman 1969\"; Mountain Project says unknown. No second source; left as is.",
+   "guide_stars: stored 3 matches the guide teaser (3 stars); not changed."
+  ],
+  "notes": "GONE-LINE CHECK: Pisces itself still exists (MP lists it, with comments up to Aug 2025). What is gone is its easy approach: MP says the old 5.4 corner above and left of Blockbuster no longer exists after the Blockbuster block was removed. Pisces Respawned (wa_great_northern_slab_pisces_respawned, MP 5.10b, shared 2023) is a NEW short start directly right of Libra Crack, sharing Libra's new anchors, that joins the ORIGINAL Pisces crack: a start variation of Pisces, not Pisces after a rockfall and not a duplicate. MP still documents a non-Libra way in (the 5.2-5.4 gully past the giant ring anchors, the GNS corner, then a traverse right). SCOPE: MP calls Pisces a continuation of Libra Crack (own MP page; no Libra row among the rows given). GNS P2's right-hand crack is 'technically Pisces' (MP GNS page)."
+ },
+ "wa_sickle_crack": {
+  "area": "wa_great_northern_slab",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/106589110/sickle-crack",
+    "https://www.mountainproject.com/route/106621779/xxrip-blockbuster",
+    "https://www.mountainproject.com/area/105790646/great-northern-slab",
+    "https://rakkup.com/guidebook/index-rock-climbing/the-great-northern-slab/s10833",
+    "https://rakkup.com/guidebook/index-rock-climbing/lower-town-wall/s10403",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5722,47.8184&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.5722,47.8184&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,parcel_id&returnGeometry=false&f=json",
+    "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.7",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106589110/sickle-crack",
+      "fact": "5.7 YDS, Trad, 50 ft",
+      "retrieved_at": "2026-11-24"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_sickle_crack",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "pitches 0 is invalid. Mountain Project: one 50 ft crack from the ledge to a chained anchor at the top (one length to one anchor). Single source; 0 -> 1.",
+    "evidence": [
+     "https://www.mountainproject.com/route/106589110/sickle-crack"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_sickle_crack",
+    "column": "length_m",
+    "from": null,
+    "to": 15,
+    "why": "length is empty. Mountain Project: 50 ft (15 m). Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/106589110/sickle-crack"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_sickle_crack",
+    "column": "anchor",
+    "from": null,
+    "to": "Chain anchor",
+    "why": "anchor is empty. Mountain Project: chained anchor at the top. House spelling \"Chain anchor\" (stored on 64 routes). Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/106589110/sickle-crack"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_sickle_crack",
+    "column": "gear",
+    "from": null,
+    "to": [
+     "gear to 3 in",
+     "extra small gear for the crack"
+    ],
+    "why": "gear is empty. Mountain Project: gear to 3\", smaller pieces for the crack. Single source (rack); locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/106589110/sickle-crack"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_sickle_crack",
+    "column": "access",
+    "from": {
+     "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+     "notes": "Many of these peaks (Mount Persis, Gunn Peak, Baring Mountain area) sit outside designated wilderness — administratively unrestricted despite serious technical terrain.",
+     "permit": "None required.",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+     "parking_pass": "Northwest Forest Pass or America the Beautiful pass required at developed trailheads."
+    },
+    "to": {
+     "land_manager": "Washington State Parks (Forks of the Sky State Park)"
+    },
+    "why": "Brief AH: copy the owner-approved State Parks object field for field from wa_godzilla (read from the saved live row 2026-11-24): land_manager only, permit stays null. Re-read 2026-11-24: the State Parks boundary layer returns 'Forks of the Sky, State Park Property' at the Great Northern Slab (47.8184,-121.5722); the Snohomish County parcel there (10030000000400) is owned by Washington State Parks & Recreation; the parks.wa.gov release of 2026-03-13 is unchanged (WCC donation, managed as a climbing park in Forks of the Sky SP; no pass or fee rule). Replaces the LEGACY object (Mt. Baker-Snoqualmie NF, Skykomish RD, Northwest Forest Pass, Mount Rainier NP fee line, Persis/Gunn/Baring note), which names the wrong manager.",
+    "evidence": [
+     "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5722,47.8184&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+     "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.5722,47.8184&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,parcel_id&returnGeometry=false&f=json",
+     "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+    ]
+   }
+  ],
+  "held": [],
+  "disputed": [
+   "fa: stored \"Ron Burgner, Thom Nephew 1970\"; Mountain Project says unknown. Not in the guide teaser lists (theCrag Forbidden). Left as is."
+  ],
+  "notes": "SAFETY: the Mountain Project description (note dated April 2026) warns of possible LOOSE BLOCKS AT THE TOP of Sickle Crack. The row's stored hazard is a generic loose-rock line; the owner may want a specific warning (not written here). CATALOG DEFECT: the row stores alt_names ['Blockbuster']. That is wrong: on MP, Blockbuster was a separate 20 ft wide crack splitting the boulder ABOVE Sickle Crack (usually combined with it), and that boulder is gone (see wa_blockbuster). Recommend removing the alt name; not proposed (one source). Position: from the ledge, the sickle-shaped crack between Great Northern Slab P1 and the Aries dihedral. Not in the Index guidebook's Great Northern Slab teaser list (4 climbs), so grade/length rest on MP alone."
+ },
+ "wa_blockbuster": {
+  "area": "wa_great_northern_slab",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/106621779/xxrip-blockbuster",
+    "https://www.mountainproject.com/route/106620653/pisces",
+    "https://www.mountainproject.com/route/124941605/pisces-respawned",
+    "https://www.mountainproject.com/route/106589110/sickle-crack",
+    "https://www.mountainproject.com/area/105790646/great-northern-slab",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5722,47.8184&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.5722,47.8184&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,parcel_id&returnGeometry=false&f=json",
+    "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+   ]
+  },
+  "sql_fixes": [],
+  "held": [
+   {
+    "table": "routes",
+    "id": "wa_blockbuster",
+    "column": "access",
+    "from": {
+     "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+     "notes": "Many of these peaks (Mount Persis, Gunn Peak, Baring Mountain area) sit outside designated wilderness — administratively unrestricted despite serious technical terrain.",
+     "permit": "None required.",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+     "parking_pass": "Northwest Forest Pass or America the Beautiful pass required at developed trailheads."
+    },
+    "to": {
+     "land_manager": "Washington State Parks (Forks of the Sky State Park)"
+    },
+    "why": "HELD: this row duplicates wa_great_northern_slab_xxrip_blockbuster and describes a line that no longer exists (brief AE: a duplicate gets no fixes). The owner may prefer to delete the row rather than correct it. If it is kept, this is the correct object. Brief AH: copy the owner-approved State Parks object field for field from wa_godzilla (read from the saved live row 2026-11-24): land_manager only, permit stays null. Re-read 2026-11-24: the State Parks boundary layer returns 'Forks of the Sky, State Park Property' at the Great Northern Slab (47.8184,-121.5722); the Snohomish County parcel there (10030000000400) is owned by Washington State Parks & Recreation; the parks.wa.gov release of 2026-03-13 is unchanged (WCC donation, managed as a climbing park in Forks of the Sky SP; no pass or fee rule). Replaces the LEGACY object (Mt. Baker-Snoqualmie NF, Skykomish RD, Northwest Forest Pass, Mount Rainier NP fee line, Persis/Gunn/Baring note), which names the wrong manager.",
+    "evidence": [
+     "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5722,47.8184&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+     "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.5722,47.8184&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,parcel_id&returnGeometry=false&f=json",
+     "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "GONE LINE + DUPLICATE (clean-up candidate). wa_blockbuster (5.9+, trad, pitches 0) is the same line as wa_great_northern_slab_xxrip_blockbuster (MP 'xxRIP - Blockbuster', 5.9+, 20 ft): the wide crack splitting the boulder above Sickle Crack. That boulder is GONE: MP's Pisces page says the Blockbuster boulder was pushed off the wall with a hydraulic jack for safety and the route is gone for good; an xxRIP comment ties it to the summer 2022 rockfall, and a 2023 comment calls the newly exposed face maybe 5.8 C1 on small nuts. No grade, length or pitches fixes proposed. Keeper if either is kept: wa_great_northern_slab_xxrip_blockbuster (its name already marks it RIP), though both describe a climb that no longer exists. SAFETY: Taurus (wa_taurus) P1 is still described by MP as starting from the top of Blockbuster."
+ },
+ "wa_a_great_northern_slab_velvasheen": {
+  "area": "wa_great_northern_slab",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/105790646/great-northern-slab",
+    "https://rakkup.com/guidebook/index-rock-climbing/the-great-northern-slab/s10833",
+    "https://rakkup.com/guidebook/index-rock-climbing/lower-town-wall/s10403",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5722,47.8184&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.5722,47.8184&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,parcel_id&returnGeometry=false&f=json",
+    "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+   ]
+  },
+  "sql_fixes": [],
+  "held": [
+   {
+    "table": "routes",
+    "id": "wa_a_great_northern_slab_velvasheen",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Washington State Parks (Forks of the Sky State Park)"
+    },
+    "why": "HELD (brief AE: a row with no source anywhere gets no fixes). access is empty. If the owner keeps the row on the Great Northern Slab, this is the wall's object. Brief AH: copy the owner-approved State Parks object field for field from wa_godzilla (read from the saved live row 2026-11-24): land_manager only, permit stays null. Re-read 2026-11-24: the State Parks boundary layer returns 'Forks of the Sky, State Park Property' at the Great Northern Slab (47.8184,-121.5722); the Snohomish County parcel there (10030000000400) is owned by Washington State Parks & Recreation; the parks.wa.gov release of 2026-03-13 is unchanged (WCC donation, managed as a climbing park in Forks of the Sky SP; no pass or fee rule).",
+    "evidence": [
+     "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5722,47.8184&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+     "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.5722,47.8184&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,parcel_id&returnGeometry=false&f=json",
+     "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "NO SOURCE (clean-up candidate). Velvasheen is not on Mountain Project's Great Northern Slab list (13 routes), nor on the Index guidebook's Great Northern Slab or Lower Town Wall teaser lists; theCrag's Great Northern Slab sector went Forbidden on the first page; a web search found only a search-engine summary of a rockclimbing.com listing (5.6, one pitch), and rockclimbing.com refused connections, so it is not evidence. Stored 5.6 trad, gear ['gear to 3 in'], guide_stars 0, pitches null: nothing set. The 'wa_a_' id prefix suggests a different import from the main Great Northern Slab rows. Not shown to be a pitch or variation of Great Northern Slab; unknown."
+ },
+ "wa_a_great_northern_slab_leo_chimney": {
+  "area": "wa_great_northern_slab",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/105790646/great-northern-slab",
+    "https://rakkup.com/guidebook/index-rock-climbing/the-great-northern-slab/s10833",
+    "https://rakkup.com/guidebook/index-rock-climbing/lower-town-wall/s10403",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5722,47.8184&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.5722,47.8184&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,parcel_id&returnGeometry=false&f=json",
+    "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+   ]
+  },
+  "sql_fixes": [],
+  "held": [
+   {
+    "table": "routes",
+    "id": "wa_a_great_northern_slab_leo_chimney",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Washington State Parks (Forks of the Sky State Park)"
+    },
+    "why": "HELD (brief AE: a row with no source anywhere gets no fixes). access is empty. If the owner keeps the row on the Great Northern Slab, this is the wall's object. Brief AH: copy the owner-approved State Parks object field for field from wa_godzilla (read from the saved live row 2026-11-24): land_manager only, permit stays null. Re-read 2026-11-24: the State Parks boundary layer returns 'Forks of the Sky, State Park Property' at the Great Northern Slab (47.8184,-121.5722); the Snohomish County parcel there (10030000000400) is owned by Washington State Parks & Recreation; the parks.wa.gov release of 2026-03-13 is unchanged (WCC donation, managed as a climbing park in Forks of the Sky SP; no pass or fee rule).",
+    "evidence": [
+     "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5722,47.8184&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+     "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.5722,47.8184&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,parcel_id&returnGeometry=false&f=json",
+     "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "NO SOURCE (clean-up candidate). Leo Chimney is not on Mountain Project's Great Northern Slab list, nor on the Index guidebook's Great Northern Slab or Lower Town Wall teaser lists; theCrag Forbidden; rockclimbing.com has a 'Leo Chimney' page (seen only as a search result: 5.6) but refused connections, so not evidence. Stored 5.6 trad, guide_stars 2, pitches null: nothing set. Unknown whether it is a pitch or variation of Great Northern Slab or Aries (Aries P3 is a flared squeeze chimney, but nothing ties the two names)."
+ }
+}
