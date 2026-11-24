@@ -11,7 +11,7 @@ views under `groupsTab`: For you · Your groups · Your activity · Discover · 
   `groups update by manager` (0090) admits `is_group_manager()` only, and `setGroupVisibility` /
   `updateGroupSettings` report a zero-row update as a refusal rather than a success. Deleting a group is the
   owner's alone.
-- **Event cards** (`groupEventRow` in `ClimbMatch.jsx`; competitor review batch A, item 7, owner 2026-11-04, Meetup's pattern): under the title, the first four faces of who is going (`_groupPerson`, so a real member's photo shows) with *N going*; a capped event wears an amber *N spots left* badge in that same line, beside *N going* (it hung off the card's top edge until 2026-11-23 and read as cut off), and says *Full* at none; the row's name for a screen reader carries both. **A past event takes no RSVP, invite or share** (owner 2026-11-23): from the day after its date (`daysUntil` < 0) the open-event sheet says *This event has ended* (*· you went* if you had RSVP'd) in place of the RSVP button, and drops *+ Invite* and *Share this event*; the invite sheet refuses to open on one. The app is the only writer; the database does not refuse a late RSVP.
+- **Event cards** (`groupEventRow` in `ClimbMatch.jsx`; competitor review batch A, item 7, owner 2026-11-04, Meetup's pattern): under the title, the first four faces of who is going (`_groupPerson`, so a real member's photo shows) with *N going*; a capped event wears an amber *N spots left* badge in that same line, beside *N going* (it hung off the card's top edge until 2026-11-23 and read as cut off), and says *Full* at none; the row's name for a screen reader carries both. **A past event takes no RSVP, invite or share** (owner 2026-11-23): from the day after its date (`daysUntil` < 0) the open-event sheet says *This event has ended* (*· you went* if you had RSVP'd) in place of the RSVP button, and drops *+ Invite* and *Share this event*; the invite sheet refuses to open on one. Since 0506 the database refuses them too, a day later (below).
 - **+ Create event leads the Events tab** (owner 2026-11-23): a wide, centred button above *Upcoming events*, for whoever the group's event policy lets create. The Discover view's title names the place once one is picked: *Climbing groups near Index*.
 - **Who may host events** is the group's own setting, *Who can create events?* — *Any member* or *Moderators only*
   (`groups.event_policy`), enforced by the `group events created per the group's event policy` insert policy (0230).
@@ -51,6 +51,19 @@ views under `groupsTab`: For you · Your groups · Your activity · Discover · 
   change them (0090's update policy); `groups_avatar_url_ours` / `groups_cover_url_ours` refuse any address outside the
   bucket, so a group's picture cannot be aimed at an outside server. A guest's pick is a preview on the device only,
   as the guest profile photo is.
+- **Make it yours** (owner 2026-11-23, "do all", 0506). The group form's section after *Photos* (`GroupCustomizeFields`)
+  sets five more things, all optional and saved with the form: a **colour** (`groups.accent`, one of `GROUP_ACCENTS` or
+  *Auto*; it tints `groupBand`, the initial in `groupMark`, and a strip above the name when there is no cover; the
+  database holds it to `#rrggbb` since it reaches a style), an **announcement** (≤300, an amber banner under the
+  group's name for anyone who opens it), a **welcome message** (≤600, at the top of Discussion for a member until they
+  close it, for the session: `grpWelcomeHidden`), up to 4 **links** (`{label, url}`, https only; `cleanGroupLinks` in
+  `lib/groupRules.js` adds a missing `https://` and refuses `http://`, as `group_links_valid()` does; listed on About
+  and opened in a new tab with no opener), and **what to call moderators** (≤24, `mod_title`, in place of MOD and
+  Moderator on Members). The new text is screened with the group's name and About text (`screening_text`'s `group`
+  line). Only a manager can change them (0090's update policy).
+- **The database refuses a late RSVP or invite** (0506, `guard_group_event_not_past`): for an event dated before the UTC
+  date minus one, a day more lenient than the app, so it never refuses what the app offers. The RSVP toast says *This
+  event has ended.* Cancelling an RSVP stays allowed. Probe: `scripts/oneoff/probe-group-custom-0506.mjs`.
 - **Join / Leave and + Invite** in a group's header are compact pills; the joined state reads *✓ Joined* (its name
   for a screen reader still says tap to leave, and leaving asks first).
 - **Removing a member** (the ✕ on Members) is for the owner and moderators only, never on yourself or the owner, and
@@ -147,6 +160,7 @@ treats it as a DELETE. Probe: `scripts/oneoff/probe-live-takedown.mjs`.
 | `src/components/GroupEventsTab.tsx` | `GroupEventsTab`, an open group's Events tab; past three past events, *All N past events →* opens a `ListPage` with a search by name or place and newest/oldest. Both group pages stack at 792, over the group view and under the event (795) or the Remove sheet (860) a row opens |
 | `src/components/GroupMediaTab.tsx` | `GroupMediaTab`, an open group's Media grid |
 | `src/components/GroupJoinQuestionsEditor.tsx` | `GroupJoinQuestionsEditor`, the membership-questions editor in the create-group form (PR63) |
+| `src/components/GroupCustomizeFields.tsx` | `GroupCustomizeFields`, the form's *Make it yours* section: colour, announcement, welcome message, links, moderator title (0506) |
 | `src/components/GroupEventForm.tsx` | `GroupEventForm`, the create-an-event sheet, and the editor for one |
 | `lib/eventSeries.js` | `SERIES_COUNTS`, `seriesDates`, `seriesExtension`, `seriesLater`: the dates of a repeating series |
 | `lib/groupRules.js` | `groupVisOf`, `groupCanHostEvent`, `groupJoinPath`, `groupJoinLabel`, `GROUP_TOPICS`, `groupWhere` (moved out of `ClimbMatch.jsx`, PR62) |

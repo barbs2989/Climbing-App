@@ -522,3 +522,20 @@ Ice Lake Basin both used), Hozomeen Southeast Buttress (Lightning Creek is a lak
 Stuart Direct North Ridge (the same page logs an Esmeralda start), Colorado routes (coordinate rule).
 - **Audit, measured:** SUMMIT_ONLY 124, NO_SUMMIT 40, TRAILHEAD_AND_SUMMIT 1075. The audited total fell from 1241
   to 1239 between rounds 13 and 15, during another session's route batch; not investigated here.
+
+### Round 16: single-publisher coordinate (2026-11-23)
+
+The owner accepted a looser coordinate rule: a named trailhead's point from one publisher can stand when the
+start itself is settled. The start rules are unchanged. Written (`batch-r16.json`, verified on re-read):
+- Atlantic Peak North Ridge: McCullough Gulch Trailhead at 39.39851,-106.06926, the point the climb13ers
+  route page prints. thenextsummit names the same start. The OSM parking node 150 m away is tagged
+  access=no, so it was not used. 5.1 km from the peak.
+- Mount Pinchot East Ridge from Armstrong Canyon: Armstrong Canyon Road End at 36.94505,-118.35353 (climber.org
+  Sawmill driving GPX, waypoint ARMSCN). climber.org 2008/1680 is a single-peak trip with "Trailhead: Armstrong
+  Canyon". 4.6 km from the peak.
+
+Held even under the looser rule: Jones Mountain and Niagara Peak Northeast Ridge (the climb13ers pages for both
+also name Cuba Gulch and American Basin starts for Jones, which the Niagara route passes over), Half Peak
+(Cataract Gulch also used), North Apostle (two adjacent lots, unresolved), Cartago and Dyer (route not firmly
+identified).
+- **Audit, measured:** SUMMIT_ONLY 122, NO_SUMMIT 40, TRAILHEAD_AND_SUMMIT 1077.

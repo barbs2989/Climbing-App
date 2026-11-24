@@ -9,7 +9,7 @@
 -- and commit the result in the same PR. `npm run gen:schema -- --check` exits 1 when this
 -- file has drifted from the live database.
 --
--- Counts: 87 tables, 865 columns, 469 keyed/checked constraints (152 foreign keys), 259 RLS policies.
+-- Counts: 87 tables, 869 columns, 474 keyed/checked constraints (152 foreign keys), 259 RLS policies.
 -- Not covered here: views, functions, triggers, standalone indexes (see supabase/migrations/).
 
 -- ── Foreign keys ───────────────────────────────────────────────────────────────
@@ -1298,17 +1298,26 @@ CREATE TABLE public.groups (
   cover_url text,
   region text GENERATED ALWAYS AS (region_of_place(location)) STORED,
   search_text text GENERATED ALWAYS AS (group_search_text(name, disciplines, location, blurb)) STORED,
+  welcome_text text,
+  announcement text,
+  links jsonb NOT NULL DEFAULT '[]'::jsonb,
+  mod_title text,
   CONSTRAINT groups_pkey PRIMARY KEY (id),
+  CONSTRAINT groups_accent_hex CHECK (((accent IS NULL) OR (accent ~ '^#[0-9a-fA-F]{6}$'::text))),
+  CONSTRAINT groups_announcement_len CHECK (((announcement IS NULL) OR (length(announcement) <= 300))),
   CONSTRAINT groups_avatar_url_ours CHECK (((avatar_url IS NULL) OR ((length(avatar_url) <= 1000) AND (avatar_url ~ '^https://[a-z0-9]+\.supabase\.co/storage/v1/object/public/topo-photos/[0-9a-f-]{36}/[^?#]+$'::text)))),
   CONSTRAINT groups_cover_url_ours CHECK (((cover_url IS NULL) OR ((length(cover_url) <= 1000) AND (cover_url ~ '^https://[a-z0-9]+\.supabase\.co/storage/v1/object/public/topo-photos/[0-9a-f-]{36}/[^?#]+$'::text)))),
   CONSTRAINT groups_event_policy_check CHECK ((event_policy = ANY (ARRAY['anyone'::text, 'mods'::text]))),
   CONSTRAINT groups_invite_policy_check CHECK ((invite_policy = ANY (ARRAY['members'::text, 'mods'::text]))),
   CONSTRAINT groups_join_questions_valid CHECK (group_join_questions_valid(join_questions)),
+  CONSTRAINT groups_links_valid CHECK (group_links_valid(links)),
+  CONSTRAINT groups_mod_title_len CHECK (((mod_title IS NULL) OR ((length(btrim(mod_title)) >= 1) AND (length(btrim(mod_title)) <= 24)))),
   CONSTRAINT groups_moderation_chk CHECK ((moderation = ANY (ARRAY['visible'::text, 'held'::text, 'removed'::text]))),
   CONSTRAINT groups_name_check CHECK ((length(btrim(name)) > 0)),
   CONSTRAINT groups_policy_check CHECK ((policy = ANY (ARRAY['open'::text, 'approval'::text, 'trust'::text]))),
   CONSTRAINT groups_rules_valid CHECK (group_rules_valid(rules)),
   CONSTRAINT groups_visibility_check CHECK ((visibility = ANY (ARRAY['public'::text, 'private'::text]))),
+  CONSTRAINT groups_welcome_text_len CHECK (((welcome_text IS NULL) OR (length(welcome_text) <= 600))),
   CONSTRAINT groups_area_id_fkey FOREIGN KEY (area_id) REFERENCES areas(id) ON DELETE SET NULL,
   CONSTRAINT groups_created_by_fkey FOREIGN KEY (created_by) REFERENCES auth.users(id) ON DELETE CASCADE
 );
