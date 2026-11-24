@@ -452,6 +452,11 @@ try {
   // fixture now names its group per run; matching that name is what makes the assertion about
   // this run's data. Falls back to the literal only if a fixture predates the field.
   const groupName = fixture.group?.name || "Fixture Alpine Club";
+  // Wait for the NAME, not for two seconds. The list is a read of the live database; on
+  // 2026-11-24 it answered after the fixed wait above, the tap found nothing, and the walk
+  // reported "not listed for its own owner" over a Groups screen that listed it a moment later.
+  // The assertion is unchanged: a group that never renders still fails, 15s later.
+  await page.waitForFunction((n) => document.body.innerText.includes(n), groupName, { timeout: 15000 }).catch(() => {});
   if (await clickContaining(groupName)) {
     /* AND a second, independent gap that per-run groups do not close. `isCreator` in
        ClimbMatch.jsx reads `cl._db ? (!!uid && cl.ownerId === uid) : ...`, and `isMod` is
