@@ -40137,3 +40137,44 @@ society) — flagged as an unverified folk etymology.
 
 2 confirmed errors fixed, 4 newly flagged for human review, 5 clean/bare.
 Next batch will continue id-ascending from `wa_garfield_mountain_north_route` (pass 9).
+
+## Batch 578 (pass 9) — 2026-11-24
+
+Checked 8 routes, continuing id-ascending from `wa_garfield_mountain_north_route`: Preiss
+Route, South Route (Main Peak) and Southwest Ledges (all Garfield Mountain), Southeast Face
+(Garfield Mountain), South Route (Ghost Peak), and Conrad Glacier, Meade Glacier, West Route
+(all Gilbert Peak).
+
+South Route (Main Peak)'s FA (Jim Crooks & Judson Nelson, Aug 27 1940) and 5,519ft summit
+matched Wikipedia and SummitPost exactly. Ghost Peak South Route's FA party (Carla Firey, Joan
+Firey, David Knudson, Peter Renz, July 17 1970, during the Carpetbaggers Traverse) and its
+~8,000ft elevation and "notch south of the peak, gained from the west" route description are
+confirmed almost verbatim by the 1971 American Alpine Journal report of that traverse. Gilbert
+Peak's three routes (Conrad Glacier, Meade Glacier, West Route) are internally consistent with
+each other and with Meade Glacier's own `corrections` field, which already discloses the
+8,184ft (USGS/Wikipedia) vs 8,201ft (USFS survey marker) conflict — a pre-existing, already-
+disclosed discrepancy, not a new finding.
+
+Three items flagged for human review, none fixed:
+- Preiss Route and Southwest Ledges both store `high_point_ft: 4804` for the "West
+  Peak"/"Infinite Peak" sub-summit they top out on. Batch 577 already flagged this exact
+  question for the neighboring Infinite Bliss route (which tops out on the same sub-summit) and
+  concluded the 4,896ft figure two independent sources (The Mountaineers, SummitPost) give for
+  "Garfield West Peak" may be a *different* point than the 4,804ft these routes store — not
+  resolved either way. Extending that open flag to these two routes rather than re-litigating
+  or guessing a fix; a human with the Beckey guide or a topo would need to settle whether
+  "West Peak" and the sub-summit these three routes top out on are the same point.
+- Southeast Face's stored FA (Pete Doorish, solo, September 1989) and Grade V/5.10 are
+  consistent with the one source that names Doorish at all (cascadeclimber.com's Mt. Garfield
+  page, hedged "apparently"): two Grade V, 5.10 routes on Garfield's south side in the late
+  80s/early 90s. But that source describes both of Doorish's routes as "over 20 pitches," while
+  this route stores 10 — too thin and hedged a source to correct confidently (it doesn't break
+  out the two routes individually), so flagging the pitch count rather than fixing it.
+
+Clean (2): South Route (Main Peak), Ghost Peak South Route.
+Consistent with an existing, already-disclosed source conflict (3): Conrad Glacier, Meade
+Glacier, West Route (Gilbert Peak).
+
+0 confirmed errors, 3 flagged for human review (2 of them extending an existing flag from
+batch 577), 5 clean/consistent. No SQL file this batch — nothing cleared the bar for a fix.
+Next batch continues id-ascending from `wa_gilbert_peak_west_route` (pass 9).

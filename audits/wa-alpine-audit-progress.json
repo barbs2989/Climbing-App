@@ -2,10 +2,10 @@
  "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
  "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
  "pass": 9,
- "last_processed_id": "wa_garfield_mountain_north_route",
+ "last_processed_id": "wa_gilbert_peak_west_route",
  "total_in_scope_last_count": 751,
  "total_wa_alpine_or_mountaineering_tagged": 857,
- "pass_note": "Checked 8 routes, continuing id-ascending from `wa_fortune_peak_standard_route`: Southwest Route (Four Brothers), Free Mojo (South Early Winters Spire), South Route (Frenzel Spitz), Full Tilt / Tempest Wall Free Version (Colchuck Balanced Rock), and East Rib, Infinite Bliss, Leaning Spire West Route, and North Route (all Garfield Mountain). Four Brothers' 6,485ft elevation, Frenzel Spitz's 7,440ft summit/1961 FA/2003 traverse, Free Mojo's FA and the 2022 South Arete rockfall/new rappel stations, and Full Tilt's FA roster and 8,240ft summit all matched external sources exactly. East Rib is a bare stub with nothing to check. Garfield's Infinite Bliss had its FA, pitch count and the Sept 2014 rappel fatality (broad facts) confirmed, but its 4,804ft elevation and the fatality's exact mechanics are unconfirmed -- flagged. Two confirmed errors fixed in audits/sql/2026-11-24-batch-577.sql: Leaning Spire West Route's elevation corrected 5169->5040 ft (SummitPost, no competing source for 5169), and North Route's FA (Berge/Schoening 1950/51) nulled -- a 1961 AAC/Mountaineer article ties these two climbers' only joint climbing of that era to Mount Baring's north face, a different peak, not Garfield. Leaning Spire's fuller FA claim (Beckey/Graham/Varney, Nov 9 1941) and Four Brothers' Denny-family naming story are both flagged as specific but unconfirmable claims.",
+ "pass_note": "South Route (Main Peak)'s FA (Crooks/Nelson, Aug 27 1940) and 5,519ft summit confirmed via Wikipedia/SummitPost. Ghost Peak South Route's FA party and 1970 Carpetbaggers Traverse description confirmed almost verbatim via the 1971 AAJ report. Gilbert Peak's three routes (Conrad Glacier, Meade Glacier, West Route) are consistent with each other and with Meade Glacier's own already-disclosed 8,184ft vs 8,201ft corrections note -- not a new finding. Flagged for human review: Preiss Route and Southwest Ledges both store high_point_ft 4804 for the same 'West Peak'/'Infinite Peak' sub-summit that batch 577 already flagged for Infinite Bliss (open question: is that the same point as the 4,896ft 'Garfield West Peak' two independent sources give, or a different point? -- extending the existing flag, not re-litigating or guessing a fix); Southeast Face's Doorish FA pitch count (10) conflicts with the one source naming him at all, which hedges 'apparently' and describes his two Grade V routes as 'over 20 pitches' without breaking them out individually -- too thin to correct confidently. 0 confirmed errors, 3 flagged (2 extending batch 577's flag), 5 clean. No SQL file -- nothing cleared the bar for a fix. Next batch continues id-ascending from `wa_gilbert_peak_west_route` (pass 9).",
  "batches": [
   {
    "batch_number": 1,
@@ -11481,6 +11481,26 @@
    "clean": 4,
    "sql_file": "audits/sql/2026-11-24-batch-577.sql",
    "note": "Leaning Spire West Route high_point_ft corrected 5169->5040 (SummitPost, uncontested). North Route fa nulled -- stored Berge/Schoening 1950/51 FA is almost certainly a mix-up with Mount Baring's north face (same two climbers, same era, documented in a 1961 AAC/Mountaineer article; Berge died on Baring in 1952). Flagged for human review: Garfield Infinite Bliss's 4,804ft elevation (no independent source) and its 2014 fatality's exact mechanics (only the broad fact -- date, route, fatal rappel fall -- is confirmed via Seattle Mountain Rescue's blog); Leaning Spire's full FA party/date (Beckey alone is confirmed by Mountain Project, but not Graham/Varney/Nov 9 1941); Four Brothers' Denny-family naming story (repeated on aggregator sites only, no primary source). Clean: Four Brothers Southwest Route, Free Mojo, Frenzel Spitz South Route, Full Tilt. Garfield East Rib is a bare stub with nothing to check."
+  },
+  {
+   "batch_number": 578,
+   "date": "2026-11-24",
+   "pass": 9,
+   "route_ids": [
+    "wa_garfield_mountain_preiss_route",
+    "wa_garfield_mountain_south_route",
+    "wa_garfield_mountain_southeast_face",
+    "wa_garfield_mountain_southwest_ledges",
+    "wa_ghost_peak_south_route",
+    "wa_gilbert_peak_conrad_glacier",
+    "wa_gilbert_peak_meade_glacier",
+    "wa_gilbert_peak_west_route"
+   ],
+   "confirmed_errors_fixed": 0,
+   "flagged_for_human_review": 3,
+   "clean": 5,
+   "sql_file": null,
+   "note": "South Route (Main Peak)'s FA (Crooks/Nelson, Aug 27 1940) and 5,519ft summit confirmed via Wikipedia/SummitPost. Ghost Peak South Route's FA party and 1970 Carpetbaggers Traverse description confirmed almost verbatim via the 1971 AAJ report. Gilbert Peak's three routes (Conrad Glacier, Meade Glacier, West Route) are consistent with each other and with Meade Glacier's own already-disclosed 8,184ft vs 8,201ft corrections note -- not a new finding. Flagged for human review: Preiss Route and Southwest Ledges both store high_point_ft 4804 for the same 'West Peak'/'Infinite Peak' sub-summit that batch 577 already flagged for Infinite Bliss (open question: is that the same point as the 4,896ft 'Garfield West Peak' two independent sources give, or a different point? -- extending the existing flag, not re-litigating or guessing a fix); Southeast Face's Doorish FA pitch count (10) conflicts with the one source naming him at all, which hedges 'apparently' and describes his two Grade V routes as 'over 20 pitches' without breaking them out individually -- too thin to correct confidently. 0 confirmed errors, 3 flagged (2 extending batch 577's flag), 5 clean. No SQL file -- nothing cleared the bar for a fix. Next batch continues id-ascending from `wa_gilbert_peak_west_route` (pass 9)."
   }
  ],
  "outage_runs": [
