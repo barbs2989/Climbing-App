@@ -54,15 +54,15 @@ const cases = [
   {
     name: "THE REAL DEFECT: both terms uncapped again, under a hard clamp at 99",
     edits: [
-      ['pts:Math.min(CMAX_DISC,_sd.length*16),', 'pts:_sd.length*16,'],
-      ['pts:Math.min(CMAX_OBJ,_so.length*14),', 'pts:_so.length*14,'],
+      ['pts:_dk?(_sd.length?CMAX_DISC:0):CMAX_DISC/2,', 'pts:_dk?_sd.length*16:CMAX_DISC/2,'],
+      ['var _wo=_so.length>=2?CMAX_WHERE:(_so.length===1?Math.round(CMAX_WHERE*0.75):0);', 'var _wo=_so.length*14;'],
       ['return Math.max(COMPAT_BASE,Math.min(COMPAT_TOP,Math.round(COMPAT_BASE+((s-COMPAT_BASE)/(COMPAT_MAX-COMPAT_BASE))*(COMPAT_TOP-COMPAT_BASE))));', 'return Math.min(99,Math.max(s,20));'],
     ],
     expect: "still clamps at a literal 99",
   },
   {
     name: "only the DISCIPLINES cap reverts",
-    edits: [['pts:Math.min(CMAX_DISC,_sd.length*16),', 'pts:_sd.length*16,']],
+    edits: [['pts:_dk?(_sd.length?CMAX_DISC:0):CMAX_DISC/2,', 'pts:_dk?_sd.length*16:CMAX_DISC/2,']],
     // NOT the maximal-pair assertion: with ONE term uncapped the rescale overshoots and re-clamps
     // to exactly COMPAT_TOP, so that assertion still passes. What catches it is the saturation
     // returning and the weakest signals being swamped again.
@@ -70,23 +70,23 @@ const cases = [
   },
   {
     name: "only the OBJECTIVES cap reverts",
-    edits: [['pts:Math.min(CMAX_OBJ,_so.length*14),', 'pts:_so.length*14,']],
+    edits: [['var _wo=_so.length>=2?CMAX_WHERE:(_so.length===1?Math.round(CMAX_WHERE*0.75):0);', 'var _wo=_so.length*14;']],
     expect: "verified CANNOT move the number",
   },
   {
     name: "COMPAT_MAX becomes a LITERAL, so a new term can drift from the ceiling",
-    edits: [['COMPAT_MAX=COMPAT_BASE+CMAX_DISC+CMAX_GRADE+CMAX_OBJ+CMAX_VERIF+CMAX_PACE+CMAX_AVAIL+CMAX_AREA;', 'COMPAT_MAX=128;']],
+    edits: [['COMPAT_MAX=COMPAT_BASE+CMAX_DISC+CMAX_GRADE+CMAX_WHERE+CMAX_VERIF+CMAX_PACE+CMAX_AVAIL;', 'COMPAT_MAX=118;']],
     expect: "not derived",
   },
   {
     name: "a signal stops mattering: the grade term is flattened to its neutral value",
-    edits: [['pts:_gp?Math.max(0,CMAX_GRADE-Math.abs(_gp[0]-_gp[1])*3):CMAX_GRADE/2,', 'pts:CMAX_GRADE/2,']],
+    edits: [['pts:_yp?Math.max(0,CMAX_GRADE-Math.abs(_yp.x-_yp.y)*3):CMAX_GRADE/2,', 'pts:CMAX_GRADE/2,']],
     expect: "grade range CANNOT move the number",
   },
   {
     name: "the copy promises a signal nothing wires (belay catches)",
     file: PARTNER_SEARCH,   // the Find-partners copy moved out of core with PartnerSearch
-    edits: [['blends your shared objectives and listed areas, grade range, disciplines, availability overlap and whether they are verified.', 'blends your shared objectives and listed areas, grade range, disciplines, availability overlap and belay catches.']],
+    edits: [['blends where you climb (shared objectives or listed areas), grade range, disciplines, availability overlap and whether each of you is verified.', 'blends where you climb (shared objectives or listed areas), grade range, disciplines, availability overlap and belay catches.']],
     expect: "which this guard cannot tie to any signal",
   },
   {
@@ -115,7 +115,10 @@ const cases = [
     file: REAL_ROW,
     // The regression 0209 closed: objectives hardcoded empty and the new columns dropped.
     edits: [['objectiveIds:Array.isArray(objIds)?objIds:[],', 'objectiveIds:[],'],
-            ['hikingSpeedFtHr:Number(p.hiking_speed_ft_hr)||undefined,', '']],
+            ['hikingSpeedFtHr:Number(p.hiking_speed_ft_hr)||undefined,', ''],
+            // ...and the availability columns, which 0209 added with pace: dropping only two of the three left the row
+            // two unknowns deep, under the refusal's threshold, so the case reproduced half the regression (2026-11-23).
+            ['availability:Array.isArray(p.availability)?p.availability:[],availWeek:Array.isArray(p.avail_week)?p.avail_week:[],', '']],
     expect: "for a COMPLETE profile",
   },
   {
@@ -123,6 +126,27 @@ const cases = [
     file: REAL_ROW,
     edits: [['{!_objReady?<div', '{false?<div']],
     expect: "before its objectives are read",
+  },
+  // THE COMPAT AUDIT OF 2026-11-23: each of its four fixes reverted on its own.
+  {
+    name: "THE AUDIT DEFECT: verified reads only the OTHER climber again, so A and B see different numbers",
+    edits: [['pts:(a.verified?CMAX_VERIF/2:0)+(b.verified?CMAX_VERIF/2:0),', 'pts:b.verified?CMAX_VERIF:0,']],
+    expect: "score differently by direction",
+  },
+  {
+    name: "THE AUDIT DEFECT: the listed area stops filling where-you-climb, so a crag pair tops out below 99",
+    edits: [['pts:_wk?Math.max(_wo,_ov?CMAX_WHERE:0):CMAX_WHERE/2,', 'pts:_wk?_wo:CMAX_WHERE/2,']],
+    expect: "one way of saying where you climb is worth less",
+  },
+  {
+    name: "THE AUDIT DEFECT: ice grades are read by nothing again",
+    edits: [['["ice",wi2,"ice"],', '']],
+    expect: "a grade from climb_grades is not scored",
+  },
+  {
+    name: "THE AUDIT DEFECT: a blank discipline scores nothing while a blank grade scores half",
+    edits: [['pts:_dk?(_sd.length?CMAX_DISC:0):CMAX_DISC/2,', 'pts:_dk?(_sd.length?CMAX_DISC:0):0,']],
+    expect: "blank fields score unevenly",
   },
   {
     name: "SILENT: the refusal is REWORDED, truthfully and differently",
@@ -135,7 +159,7 @@ const cases = [
   {
     name: "SILENT: a comment naming the old wording",
     file: REAL_ROW,
-    edits: [['export default function RealClimberRow({p,onOpen,objIds,objErr,verified,listing}: RealClimberRowProps){', '/* this used to read "New profile — …score a match yet" */\nexport default function RealClimberRow({p,onOpen,objIds,objErr,verified,listing}: RealClimberRowProps){']],
+    edits: [['export default function RealClimberRow({p,distFrom,onOpen,objIds,objErr,verified,listing,action,friendState,onConnect,cand,online,level,years,climbs,vouches,climbsPrivate,onClimbs,onVouches,extras,tag}: RealClimberRowProps){', '/* this used to read "New profile — …score a match yet" */\nexport default function RealClimberRow({p,distFrom,onOpen,objIds,objErr,verified,listing,action,friendState,onConnect,cand,online,level,years,climbs,vouches,climbsPrivate,onClimbs,onVouches,extras,tag}: RealClimberRowProps){']],
     expect: null,
   },
   {
