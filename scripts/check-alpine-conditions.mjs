@@ -782,7 +782,18 @@ console.log("\n17. YOUR RANGE — the climber's own, one neutral line, never a f
   eq("alpine, mountaineering and ice/mixed are their own scopes with no preset and no inherited default", /RANGE_ONLY = \{ alpine: "Alpine", mountaineering: "Mountaineering & scrambling", ice: "Ice & mixed" \}/.test(prefsSrc) && /ownOnly \? \(p\.temp\[scope\] \|\| null\)/.test(prefsSrc) && /scopeForDiscipline/.test(card2), true);
   const fnText = (prefsSrc.match(/export function scopeForDiscipline[\s\S]*?\n}/) || [""])[0];
   // Alpine and mountaineering were one scope until 2026-11-23 (owner: "alpine and mountaineering need to be separated").
-  eq("alpine maps to alpine; mountaineering and scrambling to mountaineering; ice and mixed to ice; crag disciplines to themselves", /d === "alpine"\) return "alpine"/.test(fnText) && /d === "mountaineering" \|\| d === "scrambling"\) return "mountaineering"/.test(fnText) &&/d === "ice" \|\| d === "mixed"\) return "ice"/.test(fnText) && /COND_DISCS\.indexOf\(d\) >= 0\) return d/.test(fnText), true);
+  eq("alpine maps to alpine; mountaineering and scrambling to mountaineering; ice and mixed to ice; crag disciplines to themselves", /d === "alpine"\) return "alpine"/.test(fnText) && /d === "mountaineering" \|\| d === "scrambling"\) return "mountaineering"/.test(fnText) && /d === "ice" \|\| d === "mixed"\) return "ice"/.test(fnText) && /COND_DISCS\.indexOf\(d\) >= 0\) return d/.test(fnText), true);
+  // The carry-over (lib/condPrefsSplit.js): without it every climber who saved an alpine range before the split
+  // silently loses the temperature line on their walk-ups and scrambles. Run it, don't read it.
+  const { carryAlpineRange } = await import(pathToFileURL(path.join(ROOT, "lib", "condPrefsSplit.js")).href);
+  const pre = { alpine: [20, 50] };
+  eq("a range saved BEFORE the split is carried onto mountaineering", carryAlpineRange(pre, undefined).mountaineering, [20, 50]);
+  eq("...but a copy saved AFTER it (split) is left alone: a removed mountaineering range stays removed", carryAlpineRange(pre, true).mountaineering, undefined);
+  eq("...a mountaineering range of its own is never overwritten", carryAlpineRange({ alpine: [20, 50], mountaineering: [30, 60] }, undefined).mountaineering, [30, 60]);
+  eq("...and the input is not mutated", (carryAlpineRange(pre, undefined), pre.mountaineering), undefined);
+  eq("cleanPrefs carries through carryAlpineRange and marks its output split", /carryAlpineRange\(o\.temp, o\.split\)/.test(prefsSrc) && /out\.split = true/.test(prefsSrc), true);
+  // Each route's box is about its own kind of climbing: no crag chips on a mountain route, no mountain chips on a crag's score card.
+  eq("the crag score card hides the mountain scopes; Settings and the Menu (no disc) show both groups", /const showMtn = !disc \|\| ownOnly \|\| COND_DISCS\.indexOf\(disc\) < 0/.test(prefsSrc) && /\{showMtn \? <>/.test(prefsSrc) && /\{showCrag \? <>/.test(prefsSrc), true);
 }
 
 

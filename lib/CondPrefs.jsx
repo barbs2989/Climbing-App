@@ -5,6 +5,7 @@ import { RangeSlider } from "./RangeSlider.jsx";
 import { useMyCondPrefs, saveMyCondPrefs } from "./db.js";
 import { DISC_LABELS } from "./discLabels.js";
 import { TEXT_TAP } from "./buttonStyles.js";
+import { carryAlpineRange } from "./condPrefsSplit.js";
 
 /* "YOUR CONDITIONS" — the climber's ideal temperature RANGE (one for all climbing, and optionally
    one per discipline), the wind RANGE they are happy in, and how long they give rock after rain.
@@ -71,9 +72,8 @@ export function cleanPrefs(o) {
   const out = { rain: "normal", temp: {}, wind: null, rhMax: null, sun: null, aq: null, window: null };
   if (!o || typeof o !== "object") return out;
   if (o.rain === "cautious") out.rain = "cautious";
-  const t = Object.assign({}, o.temp && typeof o.temp === "object" ? o.temp : {});
-  // Saved before alpine and mountaineering were split: the one "alpine" range was for both, so it stays on both. `split` marks a copy saved after.
-  if (!o.split && t.alpine && !t.mountaineering) t.mountaineering = t.alpine;
+  // Saved before alpine and mountaineering were split: the one "alpine" range was for both, so it stays on both (lib/condPrefsSplit.js, and its known gap).
+  const t = carryAlpineRange(o.temp, o.split);
   out.split = true;
   ["all"].concat(COND_DISCS).concat(Object.keys(RANGE_ONLY)).forEach(function (k) {
     const r = t[k];
@@ -238,6 +238,8 @@ export function CondPrefsControls({ disc, only, onSignIn }) {
   const mtnScopes = Object.keys(RANGE_ONLY).map(function (k) { return [k, RANGE_ONLY[k]]; });
   // On a mountain route's Conditions tab (only="temp") the crag scopes are noise: that box is about this route's kind of climbing.
   const showCrag = full || !ownOnly;
+  // ...and on a crag route's score card the mountain scopes are noise the other way round (code review of #3783). Settings and the Menu pass no `disc`, so they keep both groups.
+  const showMtn = !disc || ownOnly || COND_DISCS.indexOf(disc) < 0;
   return <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
     <div>
       <div style={HEAD}>Temperatures that suit you</div>
@@ -245,8 +247,10 @@ export function CondPrefsControls({ disc, only, onSignIn }) {
         <div style={GROUP}>Crag climbing · sets the conditions score</div>
         <div role="group" aria-label="Crag climbing the temperature range is for" style={{ display: "flex", gap: 6, flexWrap: "wrap", marginBottom: 10 }}>{cragScopes.map(scopeChip)}</div>
       </> : null}
-      <div style={GROUP}>Mountain climbing · adds one temperature line, never changes a warning</div>
-      <div role="group" aria-label="Mountain climbing the temperature range is for" style={{ display: "flex", gap: 6, flexWrap: "wrap", marginBottom: 10 }}>{mtnScopes.map(scopeChip)}</div>
+      {showMtn ? <>
+        <div style={GROUP}>Mountain climbing · adds one temperature line, never changes a warning</div>
+        <div role="group" aria-label="Mountain climbing the temperature range is for" style={{ display: "flex", gap: 6, flexWrap: "wrap", marginBottom: 10 }}>{mtnScopes.map(scopeChip)}</div>
+      </> : null}
       {shown ? <RangeSlider label={(ownOnly ? "Temperatures I like, " : "Ideal temperature, ") + scopeName} min={span[0]} max={span[1]} minGap={MIN_SPAN} step={stepTemp()} value={shown} fmt={uTemp} snap={snapTemp} onChange={setRange} /> : null}
       {ownOnly ? null : <div role="group" aria-label={"Quick ranges for " + scopeName} style={{ display: "flex", gap: 6, flexWrap: "wrap", marginTop: 8 }}>
         {chip(scope === "all" ? !p.temp.all : !own, scope === "all" ? "Default (Mild " + rangeText(TEMP_BANDS.standard) + ", Cool for bouldering)" : "Same as all climbing", clearRange, "d")}
