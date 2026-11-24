@@ -307,7 +307,7 @@ taken focus from it by the time the hook looks.
 | `index.html` | `#cm-boot`, `.b-nav`, `#cm-splash` |
 | `lib/BootSplash.jsx` | `BootSplash` |
 | `lib/ScreenHero.jsx` | `ScreenHero`, `HERO_BG`, `HERO_SHEEN`, `HOME_GLOW` |
-| `src/components/BrandMark.tsx` | `BrandMark` |
+| `src/components/BrandMark.tsx` | `BrandMark` — the logo (2026-11-24): a twin-peak ridge that is also an M, the first strand in the brand orange and the second in chalk as in the wordmark, tied by a knot at the col drawn like the rope motif's knots. Drawn in a 64 box and scaled into a 24 one. The same drawing is copied in the boot splash (index.html and BootSplash), in onboarding, and in the favicon that the PNG app icons are generated from; the maskable icon holds it smaller, inside the launcher's safe circle (docs/codebase/deploy-and-icons.md). The Climbs tab keeps the mountain glyph, which was the logo until then |
 | `src/components/Chevron.tsx` | `Chevron` |
 
 ## 4. Data
