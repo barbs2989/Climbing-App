@@ -28,7 +28,7 @@ whole guide feature on 2026-11-14 (owner). This doc covers the partners mode (`l
   *Looking for partners? List the crags and peaks you climb — you’re listed at N places.* beside **My areas**, which opens
   `MyPartnerAreas` — the only way onto that screen here (the empty card no longer repeats it), and where each listing is changed or removed; then the **I'm free this weekend** switch (`role="switch"`; it writes your own
   `profiles.free_until`, which is why it left the filter row — as a pill there, a tap meant to find free climbers published your status),
-  and at most one hint: listing turned off (*Turn listing on*), no profile photo (you are not shown until you add one), or no gender. With no zip on file, the point-of-use zip form (#3306) sits under the pills in the same card look, as an offer: the lists no longer wait for it (owner 2026-11-24). Ended date windows are NOT flagged here (owner):
+  and at most one hint: listing turned off (*Turn listing on*), or no gender. With no zip on file, the point-of-use zip form (#3306) sits under the pills in the same card look, as an offer: the lists no longer wait for it (owner 2026-11-24). Ended date windows are NOT flagged here (owner):
   an ended listing still matches (0311 only drops the dates), and the listing screen already marks it.
 - **Distance defaults to Anywhere in EVERY mode** (owner 2026-11-24, choosing it over the walkthrough rule of 2026-11-14 that kept
   *Near my zip* the default for Everyone and My objectives): with a zip on file Everyone shrank to *within 50 mi*, and a climber
@@ -82,8 +82,9 @@ whole guide feature on 2026-11-14 (owner). This doc covers the partners mode (`l
   not yet copied in -- a flag set by that one-time copy, so it cannot wait forever), tells a climber whose objectives are all crag
   routes that crag partners are found by area (a tick list, not a match signal, 0300), and when some saved climbs have not
   resolved -- loading, offline, or no longer in the catalog -- says they can’t be matched right now (amber when the route read
-  failed, `objectiveRowsFailed`) with *See everyone*. It never waits on those, and never calls them none. Join a crew never gated on a zip (its distance filter alone uses it). Real climbers with **no photo** are left
-  out of every browse list (name search still finds them), and a viewer without one is told they are not shown.
+  failed, `objectiveRowsFailed`) with *See everyone*. It never waits on those, and never calls them none. Join a crew never gated on a zip (its distance filter alone uses it). A **photo is not required** to be listed (owner
+  2026-11-14): a climber without one shows with the silhouette avatar. With a zip, Everyone at Anywhere lists the nearest first
+  (`partners_near` at its widest radius) and then everyone else (`browseShown`), with *Nearest to your zip first*.
   **Sending a request** to a real climber without your own photo is refused (`sendReq` in `ClimbMatch.jsx`: *Didn't send
   it — add a profile photo first*) and opens Edit profile on the photo.
 - **Show only these genders** (0359; several at once since 2026-11-18, owner: "they only want to climb with women and non binary"): the
