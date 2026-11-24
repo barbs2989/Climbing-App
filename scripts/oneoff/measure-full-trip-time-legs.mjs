@@ -19,7 +19,7 @@ import { selectAll, requireServiceKey } from "../lib/supabase-env.mjs";
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
 const dir = fs.mkdtempSync(path.join(process.env.CLAUDE_JOB_DIR ? path.join(process.env.CLAUDE_JOB_DIR, "tmp") : os.tmpdir(), "ftt-"));
 const entry = path.join(dir, "entry.js");
-fs.writeFileSync(entry, `export { planTimes, summitDayPlan, realPitches } from ${JSON.stringify(path.join(ROOT, "lib", "planTimes.js"))};\nexport { catOf, CRAG_CATS } from ${JSON.stringify(path.join(ROOT, "ClimbMatchCore.jsx"))};\n`);
+fs.writeFileSync(entry, `export { planTimes, summitDayPlan, realPitches, LENGTH_CLIMB_MAX_H } from ${JSON.stringify(path.join(ROOT, "lib", "planTimes.js"))};\nexport { catOf, CRAG_CATS } from ${JSON.stringify(path.join(ROOT, "ClimbMatchCore.jsx"))};\n`);
 const bundle = path.join(dir, "bundle.cjs");
 await build({
   entryPoints: [entry], bundle: true, format: "cjs", platform: "node",
@@ -39,7 +39,7 @@ const blank = (v) => v == null || v === "";
 const out = { approach: [], climb: [], descent: [], total: [], mdClimbHidden: [], mdWalkInHidden: [] };
 // AFTER: the same question asked of the flags Calculator.tsx now reads. Each must be 0.
 const after = { approach: 0, climb: 0, descent: 0, total: 0, legCardZero: 0 };
-let mounted = 0, multi = 0, tradOnPeak = 0, gainFromPlan = 0, gainFromPlanUntimed = 0, distFromPlan = 0;
+let mounted = 0, multi = 0, tradOnPeak = 0, gainFromPlan = 0, gainFromPlanUntimed = 0, distFromPlan = 0, lengthCapped = 0;
 for (const r of rows) {
   const route = {
     id: r.id, discipline: r.discipline, grade: r.grade, pitches: r.pitches, mountainId: r.area_id, _dbArea: { areaType: peaks.has(r.area_id) ? "peak" : null },
@@ -56,6 +56,7 @@ for (const r of rows) {
   const planGainFt = Array.isArray(r.itinerary && r.itinerary.days) ? r.itinerary.days.reduce((a, d) => a + ((d && d.gainFt) || 0), 0) : 0;
   if (blank(route.gainM) && planGainFt > 0) { gainFromPlan++; if (P.walkGainM == null) gainFromPlanUntimed++; }
   if (blank(route.distKm) && P.walkKm != null) distFromPlan++;
+  if (!P.legsStored && realPitches(route) === 0 && Math.abs(P.techH - (M.LENGTH_CLIMB_MAX_H || 6)) < 1e-9) lengthCapped++; // the length estimate hit its cap
   const tag = { id: r.id, name: r.name, disc: r.discipline, hikeH: +P.hikeH.toFixed(2), techH: +P.techH.toFixed(2), downH: +P.downH.toFixed(2), tripH: +P.tripH.toFixed(2) };
   const oldHike = !blank(route.distKm) || !blank(route.gainM);
   const oldAny = oldHike || P.hasPublishedSummitH || P.hasDerivedSummitH || realPitches(route) > 0 || P.loneApproachH != null || P.loneDescentH != null;
@@ -83,7 +84,7 @@ console.log(`${rows.length} routes read; ${mounted} mount Full trip time (${trad
 console.log(`One-day view — a tile printed N/A while planTimes (and the leg card under GETTING THERE) timed it:`);
 console.log(`  Approach: ${out.approach.length}   Climbing: ${out.climb.length}   Descent: ${out.descent.length}   Total: ${out.total.length}`);
 console.log(`  AFTER the fix: Approach ${after.approach}   Climbing ${after.climb}   Descent ${after.descent}   Total ${after.total}  (a descent leg card now leaves out its "≥0.0hr": ${after.legCardZero})`);
-console.log(`Trip plan holds the gain the leg card prints (no gain_ft): ${gainFromPlan}, of them the walk ignores it: ${gainFromPlanUntimed}; trip plan holds the miles (no dist_km): ${distFromPlan}`);
+console.log(`Trip plan holds the gain the leg card prints (no gain_ft): ${gainFromPlan}, of them the walk ignores it: ${gainFromPlanUntimed}; trip plan holds the miles (no dist_km): ${distFromPlan}; climbing estimated from the length held at its ${M.LENGTH_CLIMB_MAX_H} hr cap: ${lengthCapped}`);
 console.log(`Multi-day view — the climb timed only as a clock, no duration: ${out.mdClimbHidden.length}; only one whole-trip figure: ${out.mdWalkInHidden.length}`);
 for (const k of ["approach", "climb", "descent", "total"]) for (const x of out[k].slice(0, 4)) console.log(`  [${k}] ${x.id}  approach ${x.hikeH}  climb ${x.techH}  descent ${x.downH}`);
 const i = process.argv.indexOf("--out");
