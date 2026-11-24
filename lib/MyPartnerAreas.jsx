@@ -17,6 +17,7 @@
 //
 // Writes reflect by the list updating (the hooks invalidate every reader), so there is no success
 // toast; a refused write toasts the server's reason.
+import { foldKeepingPlace } from "./keepPlace.js";
 import { tx } from "./tapWords.js";
 import { createPortal } from "react-dom";
 import { BTN_LG } from "./buttonStyles.js";
@@ -210,7 +211,7 @@ export default function MyPartnerAreas({ uid, listings, listingsError, prefill, 
             </button>
             <button onClick={() => remove(l)} aria-label={"Remove " + l.name} style={POP_REMOVE}>✕</button>
           </div>; }) : !listingsError ? <div style={{ fontSize: 12.5, color: C.textMuted, lineHeight: 1.5, padding: "12px 14px", border: "1px dashed " + C.border, borderRadius: 12 }}>You’re not listed anywhere yet. Search above or browse below{suggestions.length ? tx(", or tap one of the areas from your climbs") : ""}, or use “List me here” on any area page.</div> : null}
-          {foldable ? <button type="button" aria-expanded={!folded} onClick={() => setAllListings(folded)} style={{ width: "100%", minHeight: 44, padding: "10px 12px", borderRadius: 12, border: "1px solid " + C.border, background: C.surface, color: C.blue, fontSize: 13.5, fontWeight: 700, cursor: "pointer", textAlign: "left" }}>{folded ? "Show all " + listingsN + (hiddenPast ? " · " + hiddenPast + " window" + (hiddenPast === 1 ? "" : "s") + " ended" : "") : "Show fewer"}</button> : null}
+          {foldable ? <button type="button" aria-expanded={!folded} onClick={(e) => foldKeepingPlace(e, () => setAllListings(folded), !folded)} style={{ width: "100%", minHeight: 44, padding: "10px 12px", borderRadius: 12, border: "1px solid " + C.border, background: C.surface, color: C.blue, fontSize: 13.5, fontWeight: 700, cursor: "pointer", textAlign: "left" }}>{folded ? "Show all " + listingsN + (hiddenPast ? " · " + hiddenPast + " window" + (hiddenPast === 1 ? "" : "s") + " ended" : "") : "Show fewer"}</button> : null}
           {routeListingsError ? <div style={{ fontSize: 12.5, color: C.amber, lineHeight: 1.5, padding: "10px 2px 0" }}>Couldn’t load the climbs you’re listed on — check your connection and try again.</div> : (routeListings || []).length ? <div style={{ marginTop: 14 }}>
             <SL>{"Climbs you’re listed on · " + routeListings.length}</SL>
             <div style={{ fontSize: 12, color: C.textMuted, marginBottom: 8, lineHeight: 1.5 }}>Climbers who open one of these can find you on its Find tab. To change the dates or note, open the climb and go to Find.</div>

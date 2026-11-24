@@ -184,10 +184,11 @@
   "discipline": "alpine",
   "kindToday": "alpinerock",
   "glacier": "no",
-  "snowInSeason": "unsure",
+  "snowInSeason": "yes",
   "basis": "knowledge",
   "why": "Cody Peak has no glacier; snow only when the couloir holds it.",
-  "verified": true
+  "verified": true,
+  "research": "unsure/yes: Route page says the approach couloir holds snow in late spring and early summer and calls for axe and crampons then."
  },
  {
   "id": "wy_crawl_along_the_watchtower",
@@ -470,11 +471,12 @@
   "peak": "Mt Owen",
   "discipline": "alpine",
   "kindToday": "glacier",
-  "glacier": "unsure",
+  "glacier": "yes",
   "snowInSeason": "yes",
   "basis": "text",
   "why": "Passes the glacier end and an upper snowfield; crampons normal.",
-  "verified": true
+  "verified": true,
+  "research": "yes/yes: The park's own 2020 rescue release has a climber descending the Koven Route fall into a crevasse while crossing the Teton Glacier, and tells climbers to expect crevasses there."
  },
  {
   "id": "wy_lookin_for_trouble",
@@ -592,11 +594,12 @@
   "peak": "Grand Teton",
   "discipline": "alpine",
   "kindToday": "glacier",
-  "glacier": "unsure",
+  "glacier": "no",
   "snowInSeason": "yes",
   "basis": "text",
   "why": "Face holds snow into summer; standard approach avoids the glacier.",
-  "verified": true
+  "verified": true,
+  "research": "no/yes: Settled on review of round 5's reads: the route page gives the Valhalla Traverse from the Lower Saddle as the standard approach and the Owen-Spalding as the descent, both off the glacier; the Teton Glacier is only the original or alternative way in, and the face holds snow into summer."
  },
  {
   "id": "wy_north_face_standard",
@@ -616,12 +619,13 @@
   "peak": "Grand Teton",
   "discipline": "alpine",
   "kindToday": "glacier",
-  "glacier": "unsure",
+  "glacier": "no",
   "snowInSeason": "yes",
   "basis": "text",
   "why": "Teton Glacier approach is an option, not stated as standard.",
   "verified": true,
-  "secondReview": "unsure/yes: Guides describe the Teton Glacier approach with crevasses and a moat, but the Valhalla and Cascade approaches avoid it, so the normal line is not settled."
+  "secondReview": "unsure/yes: Guides describe the Teton Glacier approach with crevasses and a moat, but the Valhalla and Cascade approaches avoid it, so the normal line is not settled.",
+  "research": "no/yes: Settled on review of round 5's reads: the route page names the Valhalla Traverse, which a 1961 alpine journal account describes as rock ledges and a snow and ice slope with no glacier, as the standard approach; the Teton Glacier approach is listed only as an option."
  },
  {
   "id": "wy_north_side_lowlight_tour_path_of_least_resistance",
@@ -868,12 +872,13 @@
   "peak": "Warrior 1",
   "discipline": "alpine",
   "kindToday": "alpinerock",
-  "glacier": "unsure",
+  "glacier": "no",
   "snowInSeason": "unsure",
   "basis": "text",
   "why": "Approach up snowfields without season detail.",
   "verified": true,
-  "secondReview": "no/unsure: Warrior 1 is a Wind River cirque rock peak without a glacier, and the approach climbs snowfields whose lingering is not stated."
+  "secondReview": "no/unsure: Warrior 1 is a Wind River cirque rock peak without a glacier, and the approach climbs snowfields whose lingering is not stated.",
+  "research": "no/unsure: Page describes a snowfield approach to a rock crack on Warrior 1 and mentions no glacier."
  },
  {
   "id": "wy_the_grand_traverse",
@@ -893,12 +898,13 @@
   "peak": "Triple Traverse, The",
   "discipline": "alpine",
   "kindToday": "alpinerock",
-  "glacier": "unsure",
+  "glacier": "yes",
   "snowInSeason": "yes",
   "basis": "text",
   "why": "Pickets used once; no detail.",
   "verified": true,
-  "secondReview": "unsure/yes: The traverse rings the Dinwoody Glacier peaks and the party used snow pickets, but no source says whether the line crosses the ice."
+  "secondReview": "unsure/yes: The traverse rings the Dinwoody Glacier peaks and the party used snow pickets, but no source says whether the line crosses the ice.",
+  "research": "yes/yes: Area page says access is up the Dinwoody Glacier to Elsie Col before the scramble."
  },
  {
   "id": "wy_triple_glaciers_nnw_face",
@@ -930,12 +936,13 @@
   "peak": "Warrior 1",
   "discipline": "alpine",
   "kindToday": "alpinerock",
-  "glacier": "unsure",
-  "snowInSeason": "unsure",
+  "glacier": "no",
+  "snowInSeason": "no",
   "basis": "text",
   "why": "Couloir holds steep snow early in season only.",
   "verified": true,
-  "secondReview": "no/no: A rock face in a cirque without a glacier, where the walk-off couloir holds steep snow only early in the season."
+  "secondReview": "no/no: A rock face in a cirque without a glacier, where the walk-off couloir holds steep snow only early in the season.",
+  "research": "no/no: Page has a talus approach and a rappel descent; snow shows up only in an alternate gully walk-off."
  },
  {
   "id": "wy_watchtower_ice_of_desperation",
@@ -967,12 +974,13 @@
   "peak": "Fremont Peak",
   "discipline": "alpine",
   "kindToday": "alpinerock",
-  "glacier": "unsure",
-  "snowInSeason": "unsure",
+  "glacier": "no",
+  "snowInSeason": "no",
   "basis": "text",
   "why": "Only a snow patch skirted.",
   "verified": true,
-  "secondReview": "no/no: A big-wall rock route on the west face of Fremont Peak where the only snow is a patch skirted at a belay."
+  "secondReview": "no/no: A big-wall rock route on the west face of Fremont Peak where the only snow is a patch skirted at a belay.",
+  "research": "no/no: Page has a talus approach from Mistake Lake, a trail descent, and a single snow patch at the tower base; no glacier."
  },
  {
   "id": "wy_wind_walker_traverse",

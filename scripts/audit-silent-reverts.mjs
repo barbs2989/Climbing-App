@@ -120,6 +120,10 @@ const GATE = [];
    escape above fires by itself, with no bookkeeping at all. */
 const REVIEWED_SEEN = new Set();
 const REVIEWED = new Map([
+  ["002aec2f9e564368a614c6a50fbc121fdbd6b39e",
+    "#3706 moved suggested wall orders from a Menu queue to the Review desk (owner, 2026-11-23). Its message " +
+    "names WallOrderQueue as removed but not WallOrderCard, the row component only that queue rendered. " +
+    "Deliberate; verified 2026-11-23 that nothing in the tree references either name."],
   ["13c825b78dbc242c4715d2f9e35ea10835b8aee8",
     "#3378 replaced #3352's track-measured leg Loss/Regain with published, sourced columns (0449) on the " +
     "owner's word (2026-11-14: \"i dont want to have to do any of our own math\"). Its message names " +

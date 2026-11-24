@@ -10,6 +10,7 @@
 //   - the grade spread draws ONE discipline on ONE scale at a time, and offers every discipline the area
 //     has as a chip (and every scale that discipline is really graded on there: one holding under 5% of
 //     the discipline's graded climbs is a filing stray and gets no chip, see SCALE_MIN_SHARE).
+import { foldKeepingPlace } from "./keepPlace.js";
 import { useState } from "react";
 import { AREA_EDIT_FIELDS, MONTH_ABBR, monthsLabel, myPendingAreaEdits } from "./areaFields";
 import { DISC_COLORS } from "./disciplines";
@@ -17,6 +18,7 @@ import { DISC_LABELS as DL, DISC_SHORT as DS } from "./discLabels";
 import { EditIconButton } from "./areaChrome";
 import { CHIP } from "./buttonStyles.js";
 import ActionIcon from "../src/components/ActionIcon.tsx";
+import EmptyState from "../src/components/EmptyState.tsx";
 
 const card = C => ({ background: C.card, borderRadius: 12, padding: "12px 14px", border: "1px solid " + C.border, marginBottom: 12 });
 // THE AREA SHEET (owner, 2026-11-11: "create borders between each section so it reads nicely"): the area page's
@@ -46,7 +48,7 @@ export function AboutCard({ area, C, onEdit, flat, first }) {
         <div style={long && !open ? { maxHeight: clampPx, overflow: "hidden", WebkitMaskImage: "linear-gradient(to bottom, #000 70%, transparent)", maskImage: "linear-gradient(to bottom, #000 70%, transparent)" } : null}>
           {blurb.split(/\n{2,}/).map((p, i) => <div key={i} style={{ fontSize: 13, color: C.textSub, lineHeight: 1.6, marginTop: i ? 8 : 0, overflowWrap: "anywhere" }}>{p}</div>)}
         </div>
-        {long ? <button onClick={() => setOpen(!open)} aria-expanded={open} style={{minHeight:44, background: "none", border: "none", padding: "6px 0 0", color: C.blue, fontSize: 12.5, fontWeight: 700, cursor: "pointer" }}>{open ? "Show less" : flat ? "Show more" : "Read more"}</button> : null}
+        {long ? <button onClick={(e) => foldKeepingPlace(e, () => setOpen(!open), open)} aria-expanded={open} style={{minHeight:44, background: "none", border: "none", padding: "6px 0 0", color: C.blue, fontSize: 12.5, fontWeight: 700, cursor: "pointer" }}>{open ? "Show less" : flat ? "Show more" : "Read more"}</button> : null}
       </>
       : <div style={{ fontSize: 12.5, color: C.textMuted, lineHeight: 1.5 }}>{"No description yet. Climbed here? "}{onEdit ? <button onClick={() => onEdit("blurb")} style={{ background: "none", border: "none", padding: 0, color: C.blue, fontSize: 12.5, fontWeight: 700, cursor: "pointer" }}>Tell people what it is like</button> : "Tell people what it is like"}{"."}</div>}
   </div>;
@@ -145,7 +147,7 @@ export function ClimbsChart({ stats, loading, error, C, discOptions, onDisc, chi
     <div style={headRow}><Head C={C}>{bare ? "By type" : "Climbs here"}</Head>{rows.length ? <span style={{ fontSize: 12.5, color: C.textSub, fontWeight: 700, fontVariantNumeric: "tabular-nums" }}>{sum.toLocaleString() + " climb" + (sum !== 1 ? "s" : "")}</span> : null}</div>
     {loading && !stats ? <div style={{ fontSize: 12, color: C.textMuted }}>Counting…</div> : null}
     {error && !stats ? <div style={{ fontSize: 12.5, color: C.textMuted, lineHeight: 1.5 }}>Couldn't count the climbs here just now — check your connection and try again.</div> : null}
-    {stats && !rows.length ? <div style={{ fontSize: 12.5, color: C.textMuted }}>No climbs filed here yet.</div> : null}
+    {stats && !rows.length ? <EmptyState C={C} icon="chart" style={{ padding: "12px 14px 6px" }}>No climbs filed here yet.</EmptyState> : null}
     {rows.map(d => {
       const label = DS[d.disc] || DL[d.disc] || d.disc, n = Number(d.n), pct = max ? Math.max(2, Math.round(n / max * 100)) : 0, col = DISC_COLORS[d.disc] || C.blue;
       const inner = <>
@@ -334,7 +336,7 @@ export function GradeSpreadDisclosure({ stats, loading, error, C, discOptions, o
       <span style={{ flex: 1, textAlign: "left", fontSize: 12.5, fontWeight: 700 }}>{"Climbs here by type"}</span>
       {open ? null : <span style={{ fontSize: 12.5, color: C.textSub, fontWeight: 700, fontVariantNumeric: "tabular-nums" }}>{typed.toLocaleString() + " climb" + (typed !== 1 ? "s" : "")}</span>}
       <span aria-hidden="true" style={{ display: "inline-block", color: C.blue, fontSize: 12, transform: open ? "rotate(180deg)" : "none" }}>{"▾"}</span>
-    </button> : stats && !spread ? <div style={{ fontSize: 12.5, color: C.textMuted }}>No climbs filed here yet.</div> : null}
+    </button> : stats && !spread ? <EmptyState C={C} icon="chart" style={{ padding: "12px 14px 6px" }}>No climbs filed here yet.</EmptyState> : null}
     {open && rows.length ? <ClimbsChart stats={stats} loading={loading} error={error} C={C} discOptions={discOptions} onDisc={onDisc} bare>{null}</ClimbsChart> : null}
   </div>;
 }

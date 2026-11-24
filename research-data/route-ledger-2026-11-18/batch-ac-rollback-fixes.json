@@ -1,0 +1,516 @@
+{
+ "note": "Values replaced by the owner-approved batch-AC scalar fixes, 2026-11-24",
+ "rollback": [
+  {
+   "table": "routes",
+   "id": "wa_whit_s_wall",
+   "before": {
+    "pitches": 0
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_whit_s_wall",
+   "before": {
+    "length_m": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_whit_s_wall",
+   "before": {
+    "detailed_rack": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_whit_s_wall",
+   "before": {
+    "permit": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_wild_turkeys",
+   "before": {
+    "pitches": 0
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_wild_turkeys",
+   "before": {
+    "length_m": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_wild_turkeys",
+   "before": {
+    "detailed_rack": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_wild_turkeys",
+   "before": {
+    "permit": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_sufficiently_breathless",
+   "before": {
+    "pitches": 0
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_sufficiently_breathless",
+   "before": {
+    "length_m": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_sufficiently_breathless",
+   "before": {
+    "detailed_rack": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_sufficiently_breathless",
+   "before": {
+    "permit": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_free_for_some",
+   "before": {
+    "pitches": 0
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_free_for_some",
+   "before": {
+    "length_m": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_free_for_some",
+   "before": {
+    "anchor": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_free_for_some",
+   "before": {
+    "detailed_rack": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_free_for_some",
+   "before": {
+    "permit": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_fall_guy",
+   "before": {
+    "pitches": 0
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_fall_guy",
+   "before": {
+    "length_m": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_fall_guy",
+   "before": {
+    "bolts": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_fall_guy",
+   "before": {
+    "anchor": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_fall_guy",
+   "before": {
+    "permit": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_spring_fever_3",
+   "before": {
+    "pitches": 0
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_spring_fever_3",
+   "before": {
+    "length_m": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_spring_fever_3",
+   "before": {
+    "detailed_rack": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_spring_fever_3",
+   "before": {
+    "permit": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_local_access_only",
+   "before": {
+    "pitches": 0
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_local_access_only",
+   "before": {
+    "length_m": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_local_access_only",
+   "before": {
+    "anchor": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_local_access_only",
+   "before": {
+    "detailed_rack": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_local_access_only",
+   "before": {
+    "permit": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_gitmo_love_machine",
+   "before": {
+    "pitches": 0
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_gitmo_love_machine",
+   "before": {
+    "length_m": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_gitmo_love_machine",
+   "before": {
+    "permit": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_full_steam_ahead",
+   "before": {
+    "pitches": 0
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_full_steam_ahead",
+   "before": {
+    "length_m": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_full_steam_ahead",
+   "before": {
+    "permit": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_burning_calves",
+   "before": {
+    "pitches": 0
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_burning_calves",
+   "before": {
+    "length_m": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_burning_calves",
+   "before": {
+    "anchor": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_burning_calves",
+   "before": {
+    "permit": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_fireballs",
+   "before": {
+    "pitches": 0
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_fireballs",
+   "before": {
+    "length_m": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_fireballs",
+   "before": {
+    "anchor": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_fireballs",
+   "before": {
+    "permit": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_genesis",
+   "before": {
+    "pitches": 0
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_genesis",
+   "before": {
+    "length_m": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_genesis",
+   "before": {
+    "permit": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_red_sky_at_night",
+   "before": {
+    "pitches": 0
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_red_sky_at_night",
+   "before": {
+    "length_m": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_red_sky_at_night",
+   "before": {
+    "permit": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_charted_waters",
+   "before": {
+    "pitches": 0
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_charted_waters",
+   "before": {
+    "permit": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_boardwalk",
+   "before": {
+    "pitches": 0
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_boardwalk",
+   "before": {
+    "length_m": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_boardwalk",
+   "before": {
+    "detailed_rack": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_boardwalk",
+   "before": {
+    "permit": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_stardust",
+   "before": {
+    "pitches": 0
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_stardust",
+   "before": {
+    "length_m": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_stardust",
+   "before": {
+    "detailed_rack": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_stardust",
+   "before": {
+    "permit": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_icy_treats",
+   "before": {
+    "pitches": 0
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_icy_treats",
+   "before": {
+    "length_m": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_icy_treats",
+   "before": {
+    "detailed_rack": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_icy_treats",
+   "before": {
+    "permit": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_rhythm_method",
+   "before": {
+    "pitches": 0
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_rhythm_method",
+   "before": {
+    "bolts": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_rhythm_method",
+   "before": {
+    "detailed_rack": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_rhythm_method",
+   "before": {
+    "permit": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_the_gentlemen_s_club_c_est_la_vie",
+   "before": {
+    "bolts": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_the_gentlemen_s_club_c_est_la_vie",
+   "before": {
+    "anchor": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_the_gentlemen_s_club_deceptively_straight",
+   "before": {
+    "bolts": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_the_gentlemen_s_club_deceptively_straight",
+   "before": {
+    "anchor": null
+   }
+  }
+ ]
+}

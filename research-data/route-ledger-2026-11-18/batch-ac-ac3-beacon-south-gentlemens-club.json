@@ -1,0 +1,666 @@
+{
+ "wa_boardwalk": {
+  "area": "wa_south_face_4",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/117722434/boardwalk",
+    "https://www.mountainproject.com/area/111087707/south-face",
+    "https://parks.wa.gov/find-parks/state-parks/beacon-rock-state-park",
+    "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass",
+    "https://www.thecrag.com/en/climbing/united-states/washington-beacon-rock/area/14403247"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.6",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/117722434/boardwalk",
+      "fact": "5.6 YDS, Trad, PG13",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Bill Coe and Bill Dykstra June 1985",
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/117722434/boardwalk",
+      "fact": "Bill Coe and Bill Dykstra, June 1985",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_boardwalk",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "pitches 0 is invalid. Mountain Project: one 110 ft length up a dihedral and crack to an anchor near the roof, descended with a single 60 m rappel (one length to one anchor). Count implied, not stated: unconfirmed after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/117722434/boardwalk"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_boardwalk",
+    "column": "length_m",
+    "from": null,
+    "to": 33,
+    "why": "Mountain Project states 110 ft (33 m). Single source (theCrag lists none of these routes and redirected to its home page in the owner's Chrome); locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/117722434/boardwalk"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_boardwalk",
+    "column": "detailed_rack",
+    "from": null,
+    "to": "Nuts and cams from 0.5 to 2 in, with an optional 4 in piece.",
+    "why": "Rack empty. Mountain Project lists nuts and cams 1/2 to 2 in plus one optional 4 in placement. Paragraph, not lockable.",
+    "evidence": [
+     "https://www.mountainproject.com/route/117722434/boardwalk"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_boardwalk",
+    "column": "access",
+    "from": null,
+    "to": {
+     "fees": "Discover Pass: $10 for one day or $45 for a year.",
+     "rules": "The south and southeast faces close every Feb 1 for nesting peregrine falcons and are expected to reopen around mid-July. The east face is closed for good. Park hours are 8 a.m. to dusk.",
+     "land_manager": "Washington State Parks (Beacon Rock State Park)",
+     "parking_pass": "Discover Pass."
+    },
+    "why": "access is empty. Brief AC: copied field for field from wa_jill_s_thrill (read live 2026-11-23 with the service key, read-only). Re-read 2026-11-23: the park page still says the south and southeast faces close each Feb 1 and tentatively reopen mid-July (2026 reopening 7/9/2026), the west and northwest faces are open all year, the east face is closed permanently, hours 8 a.m. to dusk, Discover Pass $10 day / $45 annual; the Discover Pass page says a pass is required to park at State Parks, $10 / $45. Nothing changed. official-1, 12 months, after apply.",
+    "evidence": [
+     "https://parks.wa.gov/find-parks/state-parks/beacon-rock-state-park",
+     "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_boardwalk",
+    "column": "permit",
+    "from": null,
+    "to": "Discover Pass required to park. The south and southeast faces close each year on Feb 1 for nesting peregrine falcons and should reopen around mid-July; the east face is closed for good.",
+    "why": "permit is empty. Copied verbatim from wa_jill_s_thrill; facts re-checked on the official park and Discover Pass pages 2026-11-23.",
+    "evidence": [
+     "https://parks.wa.gov/find-parks/state-parks/beacon-rock-state-park",
+     "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass"
+    ]
+   }
+  ],
+  "held": [],
+  "disputed": [],
+  "notes": "Only source: Mountain Project (theCrag's South Face page lists none of my four routes and its sub-sector page is empty; the next page redirected to theCrag's home page, so I stopped; three web searches found no cascadeclimbers, blog or guide page). Grade 5.6 matches (locked-1src); MP also gives PG13, which has no column here. Stored FA matches MP word for word; recorded unconfirmed (an FA never locks from MP alone). Anchor not proposed: MP says the original anchor was an angle piton plus one bolt and was later moved to a poorer spot, which fits no house spelling. Starts about 10 ft left of Rhythm Method; parties sometimes top out via Rhythm Method and go left to bolts to top-rope it. MP mentions a possible second pitch with loose rock that has not been climbed, so 1 pitch stands. No pin proposed (MP coordinates are not evidence)."
+ },
+ "wa_stardust": {
+  "area": "wa_south_face_4",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/119722316/stardust",
+    "https://www.mountainproject.com/area/111087707/south-face",
+    "https://parks.wa.gov/find-parks/state-parks/beacon-rock-state-park",
+    "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass",
+    "https://www.thecrag.com/en/climbing/united-states/washington-beacon-rock/area/14403247"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.10a",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119722316/stardust",
+      "fact": "5.10a YDS, R, Trad",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Scott Tracy, Jim Opdyke",
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119722316/stardust",
+      "fact": "Scott Tracy, Jim Opdyke",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_stardust",
+    "column": "pitches",
+    "from": 0,
+    "to": null,
+    "why": "pitches 0 is invalid. Mountain Project states no pitch count, no anchor and no descent: the line finishes by joining Cruisin' at its second roof or traversing into Rockmaster's upper dihedral, so the count is unclear. Null, not a guess.",
+    "evidence": [
+     "https://www.mountainproject.com/route/119722316/stardust"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_stardust",
+    "column": "length_m",
+    "from": null,
+    "to": 27,
+    "why": "Mountain Project states 90 ft (27 m). Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/119722316/stardust"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_stardust",
+    "column": "detailed_rack",
+    "from": null,
+    "to": "A full rack of nuts and cams to 3 in; the small pieces are fiddly to place.",
+    "why": "Rack empty. Mountain Project lists nuts and cams to 3 in and says the spaced small nuts and cams are awkward. Paragraph, not lockable.",
+    "evidence": [
+     "https://www.mountainproject.com/route/119722316/stardust"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_stardust",
+    "column": "access",
+    "from": null,
+    "to": {
+     "fees": "Discover Pass: $10 for one day or $45 for a year.",
+     "rules": "The south and southeast faces close every Feb 1 for nesting peregrine falcons and are expected to reopen around mid-July. The east face is closed for good. Park hours are 8 a.m. to dusk.",
+     "land_manager": "Washington State Parks (Beacon Rock State Park)",
+     "parking_pass": "Discover Pass."
+    },
+    "why": "access is empty. Brief AC: copied field for field from wa_jill_s_thrill (read live 2026-11-23 with the service key, read-only). Re-read 2026-11-23: the park page still says the south and southeast faces close each Feb 1 and tentatively reopen mid-July (2026 reopening 7/9/2026), the west and northwest faces are open all year, the east face is closed permanently, hours 8 a.m. to dusk, Discover Pass $10 day / $45 annual; the Discover Pass page says a pass is required to park at State Parks, $10 / $45. Nothing changed. official-1, 12 months, after apply.",
+    "evidence": [
+     "https://parks.wa.gov/find-parks/state-parks/beacon-rock-state-park",
+     "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_stardust",
+    "column": "permit",
+    "from": null,
+    "to": "Discover Pass required to park. The south and southeast faces close each year on Feb 1 for nesting peregrine falcons and should reopen around mid-July; the east face is closed for good.",
+    "why": "permit is empty. Copied verbatim from wa_jill_s_thrill; facts re-checked on the official park and Discover Pass pages 2026-11-23.",
+    "evidence": [
+     "https://parks.wa.gov/find-parks/state-parks/beacon-rock-state-park",
+     "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass"
+    ]
+   }
+  ],
+  "held": [],
+  "disputed": [],
+  "notes": "Only source: Mountain Project (theCrag lists none of these routes; see Boardwalk). Grade 5.10a matches (locked-1src); MP adds an R rating. Stored FA matches MP; recorded unconfirmed. MP spells the second climber Opdyke; other Beacon rows (Blownout Direct, Local Access Only) spell him Opdycke; no change proposed. Sits right of Rockmaster, about 15 ft left of Cruisin', and finishes on one of those two routes, so its 90 ft may be only the independent part. Neighbours wa_rockmaster and wa_cruisin also store pitches 0 (not mine)."
+ },
+ "wa_icy_treats": {
+  "area": "wa_south_face_4",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/113373773/icy-treats",
+    "https://www.mountainproject.com/area/111087707/south-face",
+    "https://parks.wa.gov/find-parks/state-parks/beacon-rock-state-park",
+    "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass",
+    "https://www.thecrag.com/en/climbing/united-states/washington-beacon-rock/area/14403247"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.10d",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/113373773/icy-treats",
+      "fact": "5.10d YDS, Trad",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Jeff Thomas, Charles Arnett, and Eric Freden (winter 1986--1987)",
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/113373773/icy-treats",
+      "fact": "Jeff Thomas, Charles Arnett, and Eric Freden (winter 1986--1987)",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_icy_treats",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "pitches 0 is invalid. Mountain Project: one 95 ft length up a white left-facing dihedral to the top anchors it shares with Switchblade (one length to one anchor). Count implied, not stated: unconfirmed after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/113373773/icy-treats"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_icy_treats",
+    "column": "length_m",
+    "from": null,
+    "to": 29,
+    "why": "Mountain Project states 95 ft (29 m). Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/113373773/icy-treats"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_icy_treats",
+    "column": "detailed_rack",
+    "from": null,
+    "to": "A trad rack; the route also has some bolts.",
+    "why": "Rack empty. Mountain Project lists the protection as gear and bolts, with no sizes or bolt count. Paragraph, not lockable.",
+    "evidence": [
+     "https://www.mountainproject.com/route/113373773/icy-treats"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_icy_treats",
+    "column": "access",
+    "from": null,
+    "to": {
+     "fees": "Discover Pass: $10 for one day or $45 for a year.",
+     "rules": "The south and southeast faces close every Feb 1 for nesting peregrine falcons and are expected to reopen around mid-July. The east face is closed for good. Park hours are 8 a.m. to dusk.",
+     "land_manager": "Washington State Parks (Beacon Rock State Park)",
+     "parking_pass": "Discover Pass."
+    },
+    "why": "access is empty. Brief AC: copied field for field from wa_jill_s_thrill (read live 2026-11-23 with the service key, read-only). Re-read 2026-11-23: the park page still says the south and southeast faces close each Feb 1 and tentatively reopen mid-July (2026 reopening 7/9/2026), the west and northwest faces are open all year, the east face is closed permanently, hours 8 a.m. to dusk, Discover Pass $10 day / $45 annual; the Discover Pass page says a pass is required to park at State Parks, $10 / $45. Nothing changed. official-1, 12 months, after apply.",
+    "evidence": [
+     "https://parks.wa.gov/find-parks/state-parks/beacon-rock-state-park",
+     "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_icy_treats",
+    "column": "permit",
+    "from": null,
+    "to": "Discover Pass required to park. The south and southeast faces close each year on Feb 1 for nesting peregrine falcons and should reopen around mid-July; the east face is closed for good.",
+    "why": "permit is empty. Copied verbatim from wa_jill_s_thrill; facts re-checked on the official park and Discover Pass pages 2026-11-23.",
+    "evidence": [
+     "https://parks.wa.gov/find-parks/state-parks/beacon-rock-state-park",
+     "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass"
+    ]
+   }
+  ],
+  "held": [],
+  "disputed": [],
+  "notes": "Only source: Mountain Project (theCrag lists none of these routes; OpenBeta copies MP). Grade 5.10d matches (locked-1src). Stored FA matches MP exactly, including the double hyphen; recorded unconfirmed, no reformat proposed. Bolts not proposed: MP states bolts but gives no count. Anchor type not named, so not proposed. Descent: rappel from the anchors above Bladerunner or from either end of Snag Ledge. Possible name defect (not mine): MP's 'Switchblade' link resolves to the same MP id as Bladerunner (112200558), so the Switchblade named here may be Bladerunner's old name."
+ },
+ "wa_rhythm_method": {
+  "area": "wa_south_face_4",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/112158275/rhythm-method",
+    "https://www.mountainproject.com/route/119498015/whits-wall",
+    "https://www.mountainproject.com/area/111087707/south-face",
+    "https://parks.wa.gov/find-parks/state-parks/beacon-rock-state-park",
+    "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass",
+    "https://www.thecrag.com/en/climbing/united-states/washington-beacon-rock/area/14403247"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.7",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112158275/rhythm-method",
+      "fact": "5.7 YDS, Sport, 80 ft",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "1985 Bill Coe & friends",
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112158275/rhythm-method",
+      "fact": "1985 Bill Coe & friends",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_rhythm_method",
+    "column": "pitches",
+    "from": 0,
+    "to": null,
+    "why": "pitches 0 is invalid. Mountain Project's type field gives 80 ft and no pitch count, but its description lays out two pitches: a bolted first pitch (80 ft, 6 bolts, to a bolt anchor) and a sparsely protected, runout trad second pitch it does not recommend. Whether the row is 1 or 2 pitches is an owner call (held below), so null rather than a guess.",
+    "evidence": [
+     "https://www.mountainproject.com/route/112158275/rhythm-method"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_rhythm_method",
+    "column": "bolts",
+    "from": null,
+    "to": 6,
+    "why": "Mountain Project states 6 bolts (pitch 1; pitch 2 is protected by nuts and cams only). Stated as bolts, not quickdraws. Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/112158275/rhythm-method"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_rhythm_method",
+    "column": "detailed_rack",
+    "from": null,
+    "to": "About six quickdraws for the bolted first pitch, with a few small cams or nuts if wanted; the upper pitch needs small to medium nuts and cams.",
+    "why": "Rack empty. Mountain Project: six draws for P1 with optional small cams and nuts; P2 takes small to medium nuts and cams. Paragraph, not lockable.",
+    "evidence": [
+     "https://www.mountainproject.com/route/112158275/rhythm-method"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_rhythm_method",
+    "column": "access",
+    "from": null,
+    "to": {
+     "fees": "Discover Pass: $10 for one day or $45 for a year.",
+     "rules": "The south and southeast faces close every Feb 1 for nesting peregrine falcons and are expected to reopen around mid-July. The east face is closed for good. Park hours are 8 a.m. to dusk.",
+     "land_manager": "Washington State Parks (Beacon Rock State Park)",
+     "parking_pass": "Discover Pass."
+    },
+    "why": "access is empty. Brief AC: copied field for field from wa_jill_s_thrill (read live 2026-11-23 with the service key, read-only). Re-read 2026-11-23: the park page still says the south and southeast faces close each Feb 1 and tentatively reopen mid-July (2026 reopening 7/9/2026), the west and northwest faces are open all year, the east face is closed permanently, hours 8 a.m. to dusk, Discover Pass $10 day / $45 annual; the Discover Pass page says a pass is required to park at State Parks, $10 / $45. Nothing changed. official-1, 12 months, after apply.",
+    "evidence": [
+     "https://parks.wa.gov/find-parks/state-parks/beacon-rock-state-park",
+     "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_rhythm_method",
+    "column": "permit",
+    "from": null,
+    "to": "Discover Pass required to park. The south and southeast faces close each year on Feb 1 for nesting peregrine falcons and should reopen around mid-July; the east face is closed for good.",
+    "why": "permit is empty. Copied verbatim from wa_jill_s_thrill; facts re-checked on the official park and Discover Pass pages 2026-11-23.",
+    "evidence": [
+     "https://parks.wa.gov/find-parks/state-parks/beacon-rock-state-park",
+     "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass"
+    ]
+   }
+  ],
+  "held": [
+   "pitches: 1 (the bolted 80 ft sport pitch that MP's type field and grade describe) vs 2 (MP's description adds a runout trad second pitch). Proposed null meanwhile. Recommendation: 1, with the upper pitch noted as an optional unrecommended continuation.",
+   "length_m: 24 (MP type field, 80 ft) fits pitch 1 only; it would be short for a 2-pitch row. Not proposed until pitches is settled.",
+   "anchor: 'bolted anchor' (house spelling, 18 routes) for the pitch 1 anchor MP describes as a bolt anchor, shared with Young Warriors P1; the pitch 2 top anchor type is not named. Not proposed until pitches is settled."
+  ],
+  "disputed": [],
+  "notes": "DISCIPLINE CHECK: stored sport matches Mountain Project's type (Sport) and the Whit's Wall page, which calls Rhythm Method a nicely bolted face climb and lists it as S; the first pitch is fully bolted to a bolt anchor. Only the optional upper pitch is trad. No discipline change proposed (and discipline never changes or locks on MP alone). Grade 5.7 matches (locked-1src). Stored FA matches MP; unconfirmed. Rhythm Method is also pitch 1 of wa_whit_s_wall (ac1's route), whose P2 starts from the Rhythm Method anchor; not a defect, noted. MP: rappel to the ground from the P1 anchor with one rope; from the top, two ropes or one 70 m, or rap to Young Warriors' P1 anchor. Only source family: Mountain Project (theCrag lists none of these routes; web searches found no other page)."
+ },
+ "wa_the_gentlemen_s_club_c_est_la_vie": {
+  "area": "wa_the_gentlemen_s_club",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/127218407/cest-la-vie",
+    "https://www.mountainproject.com/area/126915111/the-gentlemens-club",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0/query?geometry=-120.42992,48.60994&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownerclassification,forestname&returnGeometry=false&f=json",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_RangerDistricts_03/MapServer/1/query?geometry=-120.42992,48.60994&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=districtname,forestname&returnGeometry=false&f=json"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.11-",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/127218407/cest-la-vie",
+      "fact": "5.11- YDS, Sport/TR",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "length_m",
+    "value": 15,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/127218407/cest-la-vie",
+      "fact": "48 ft (15 m)",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 1,
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/127218407/cest-la-vie",
+      "fact": "48 ft (15 m) bolted slab to chains; count implied, not stated",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_the_gentlemen_s_club_c_est_la_vie",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)"
+    },
+    "why": "Brief AC: copy access field for field from wa_the_gentlemen_s_club_aquaman (read live 2026-11-23 with the service key: land_manager only). Re-read 2026-11-23: USFS EDW BasicOwnership at the crag's coordinate (48.60994,-120.42992) returns USDA FOREST SERVICE, Okanogan-Wenatchee National Forest; the ranger-district layer returns Methow Valley Ranger District. Unchanged from batches AA and AB. permit stays null.",
+    "evidence": [
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0/query?geometry=-120.42992,48.60994&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownerclassification,forestname&returnGeometry=false&f=json",
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_RangerDistricts_03/MapServer/1/query?geometry=-120.42992,48.60994&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=districtname,forestname&returnGeometry=false&f=json"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_the_gentlemen_s_club_c_est_la_vie",
+    "column": "bolts",
+    "from": null,
+    "to": 6,
+    "why": "Mountain Project protection field: 6 bolts. Stated as bolts. Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/127218407/cest-la-vie"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_the_gentlemen_s_club_c_est_la_vie",
+    "column": "anchor",
+    "from": null,
+    "to": "Chain anchor",
+    "why": "Mountain Project: chains for the anchor. House spelling 'Chain anchor' (95 routes). Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/127218407/cest-la-vie"
+    ]
+   }
+  ],
+  "held": [],
+  "disputed": [],
+  "notes": "Only source: Mountain Project (theCrag lists no Gentlemen's Club routes, per batches AA/AB; one web search in this batch found no other page for Beacon or Mazama, and none is known for this 2024-25 crag). Grade 5.11- and length 15 m (MP 48 ft) match the row; locked-1src. Pitches 1 matches but no count is stated: unconfirmed. FA left null: MP gives Alex Perz, 2025; one source only, and a blank FA needs two. Wall within the crag not given by MP. Gear: bolts only."
+ },
+ "wa_the_gentlemen_s_club_all_dawgs_go_to_heaven": {
+  "area": "wa_the_gentlemen_s_club",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/127218252/all-dawgs-go-to-heaven",
+    "https://www.mountainproject.com/area/126915111/the-gentlemens-club",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0/query?geometry=-120.42992,48.60994&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownerclassification,forestname&returnGeometry=false&f=json",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_RangerDistricts_03/MapServer/1/query?geometry=-120.42992,48.60994&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=districtname,forestname&returnGeometry=false&f=json"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.12+",
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/127218252/all-dawgs-go-to-heaven",
+      "fact": "5.12+ YDS listed; FA field says Open Project",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_the_gentlemen_s_club_all_dawgs_go_to_heaven",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)"
+    },
+    "why": "Brief AC: copy access field for field from wa_the_gentlemen_s_club_aquaman (read live 2026-11-23 with the service key: land_manager only). Re-read 2026-11-23: USFS EDW BasicOwnership at the crag's coordinate (48.60994,-120.42992) returns USDA FOREST SERVICE, Okanogan-Wenatchee National Forest; the ranger-district layer returns Methow Valley Ranger District. Unchanged from batches AA and AB. permit stays null.",
+    "evidence": [
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0/query?geometry=-120.42992,48.60994&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownerclassification,forestname&returnGeometry=false&f=json",
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_RangerDistricts_03/MapServer/1/query?geometry=-120.42992,48.60994&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=districtname,forestname&returnGeometry=false&f=json"
+    ]
+   }
+  ],
+  "held": [],
+  "disputed": [],
+  "notes": "Only source: Mountain Project (theCrag lists no Gentlemen's Club routes, per batches AA/AB; one web search in this batch found no other page for Beacon or Mazama, and none is known for this 2024-25 crag). CATALOG DEFECT (reported, not fixed): Mountain Project's FA field reads 'Bolted: Alex Perz 2024 - FA: Open Project', so this line has not been sent; the stored 5.12+ is a proposed grade for a project, shown as if it were a climbed route. Owner decides whether the row stays (flagged as a project) or goes. Per the project/variation rule only access is proposed. Facts MP states, not proposed here: Sport/TR, 30 ft (9 m, matches the stored 9), 4 bolts, chain anchor. Grade recorded unconfirmed only."
+ },
+ "wa_the_gentlemen_s_club_deceptively_straight": {
+  "area": "wa_the_gentlemen_s_club",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/200631597/deceptively-straight",
+    "https://www.mountainproject.com/area/126915111/the-gentlemens-club",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0/query?geometry=-120.42992,48.60994&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownerclassification,forestname&returnGeometry=false&f=json",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_RangerDistricts_03/MapServer/1/query?geometry=-120.42992,48.60994&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=districtname,forestname&returnGeometry=false&f=json"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.9",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/200631597/deceptively-straight",
+      "fact": "5.9 YDS, Sport/TR",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "length_m",
+    "value": 17,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/200631597/deceptively-straight",
+      "fact": "55 ft (17 m)",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 1,
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/200631597/deceptively-straight",
+      "fact": "55 ft (17 m) bolted line to chains; count implied, not stated",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_the_gentlemen_s_club_deceptively_straight",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)"
+    },
+    "why": "Brief AC: copy access field for field from wa_the_gentlemen_s_club_aquaman (read live 2026-11-23 with the service key: land_manager only). Re-read 2026-11-23: USFS EDW BasicOwnership at the crag's coordinate (48.60994,-120.42992) returns USDA FOREST SERVICE, Okanogan-Wenatchee National Forest; the ranger-district layer returns Methow Valley Ranger District. Unchanged from batches AA and AB. permit stays null.",
+    "evidence": [
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0/query?geometry=-120.42992,48.60994&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownerclassification,forestname&returnGeometry=false&f=json",
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_RangerDistricts_03/MapServer/1/query?geometry=-120.42992,48.60994&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=districtname,forestname&returnGeometry=false&f=json"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_the_gentlemen_s_club_deceptively_straight",
+    "column": "bolts",
+    "from": null,
+    "to": 7,
+    "why": "Mountain Project protection field: 7 bolts. Stated as bolts. Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/200631597/deceptively-straight"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_the_gentlemen_s_club_deceptively_straight",
+    "column": "anchor",
+    "from": null,
+    "to": "Chain anchor",
+    "why": "Mountain Project: chains for the anchor. House spelling 'Chain anchor' (95 routes). Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/200631597/deceptively-straight"
+    ]
+   }
+  ],
+  "held": [],
+  "disputed": [],
+  "notes": "Only source: Mountain Project (theCrag lists no Gentlemen's Club routes, per batches AA/AB; one web search in this batch found no other page for Beacon or Mazama, and none is known for this 2024-25 crag). Grade 5.9 and length 17 m match the row; locked-1src. Pitches 1 matches but no count is stated: unconfirmed. Sector: VIP Wall, The Gentlemen's Club (filed correctly under the crag). FA left null: MP gives Alex Perz, 2025; one source only, and a blank FA needs two. Gear: bolts only."
+ }
+}
