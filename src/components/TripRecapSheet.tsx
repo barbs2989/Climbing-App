@@ -51,7 +51,7 @@ export default function TripRecapSheet({ crewId, real = true, placeName, onClose
   const [pending, setPending] = useState<Record<string, boolean>>({});
   /* Nothing to do here, or something already filed: the alert that brought you here can go. */
   const _filed = !!data && (data.calledOff || data.mates.some((m) => m.outcome));
-  const _empty = !!data && !!data.tripDate && !data.mates.length;
+  const _empty = !!data && (!data.tripDate || !data.mates.length);
   const [doneSent, setDoneSent] = useState(false);
   useEffect(() => { if ((_filed || _empty) && !doneSent && onDone) { setDoneSent(true); onDone(); } }, [_filed, _empty, doneSent, onDone]);
   const calledOff = callOff == null ? !!data?.calledOff : callOff;
@@ -88,7 +88,7 @@ export default function TripRecapSheet({ crewId, real = true, placeName, onClose
   if (!real) body = <div style={{ fontSize: 13.5, color: C.textSub, lineHeight: 1.5, padding: "18px 2px" }}>This is an example crew, so there is nothing to record. On a real crew, after your climbing day, everyone on it can say who showed up, and it adds to each climber’s reliability.</div>;
   else if (q.isLoading) body = <div style={{ fontSize: 13.5, color: C.textMuted, padding: "18px 2px" }}>Loading your crew…</div>;
   else if (q.isError) body = <div style={{ fontSize: 13.5, color: C.amber, lineHeight: 1.5, padding: "18px 2px" }}>Couldn’t load this trip — this is not a claim there is nothing to say. Check your connection and try again.</div>;
-  else if (!data || !data.tripDate) body = <div style={{ fontSize: 13.5, color: C.textSub, lineHeight: 1.5, padding: "18px 2px" }}>There’s nothing to report for this crew: it needs an agreed day, and only its confirmed members can say how it went.</div>;
+  else if (!data || !data.tripDate) body = <div style={{ fontSize: 13.5, color: C.textSub, lineHeight: 1.5, padding: "18px 2px" }}>There’s nothing for you to report here: only the climbers who were on this trip can say how it went.</div>;
   else {
     body = <>
       {!open ? <div style={{ fontSize: 12.5, color: C.textMuted, lineHeight: 1.5, background: C.card, border: "1px solid " + C.border, borderRadius: 10, padding: "9px 11px", marginBottom: 12 }}>

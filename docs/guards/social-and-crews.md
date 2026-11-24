@@ -22,6 +22,12 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     non-zero on the matching assertion.
   - **Trap met building it:** section 9 first read 2 trips for one climber because section 8's DELETED crew kept its
     report, which is the behaviour being proved. The section now clears that climber's reports first.
+  - **Section 13 (0527, fifth review 2026-11-24):** a crew's offset comes from its place (a Sydney pin is +10; no
+    coordinate is -7); invited before and accepted after the trip is not on it; leaving the evening before the crew's
+    day is bailing; an organizer's removal on the crew's day is recorded; one in three calling it off does not wipe the
+    others' reports, two in three does; a late joiner does not stop a solo organizer disbanding. 51 assertions. Every
+    section's "today" is now the crew's local date (the fixtures have no coordinate, so UTC-7), and `backdateMembers`
+    backdates `confirmed_at` too. Without 0527 the run stops at the missing column (measured).
   - **Section 12 (0526, fourth review 2026-11-24):** left before the day cannot report (called off included) and is
     reportable; joined after the day neither reports nor is reported; an organizer's removal the day before is not a
     departure; an organizer alone who leaves can still disband; a crewmate removed after the day is listed by
