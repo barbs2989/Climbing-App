@@ -45,7 +45,7 @@ export default function RouteFinderInline({ discs, myGrades, onFind, C }: RouteF
   const scale = scaleFor(p.disc);
   const opts = GRADE_SCALES[scale] || [];
   const iLo = p.gLo ? opts.findIndex(o => o[0] === p.gLo) : -1, iHi = p.gHi ? opts.findIndex(o => o[0] === p.gHi) : -1;
-  const selSt = (on: boolean) => ({ padding: "9px 10px", borderRadius: 10, border: "1px solid " + (on ? C.blue : C.border), background: on ? C.blueBg : C.surface, color: on ? C.onSolid : C.text, fontSize: 13.5, fontWeight: 700, minWidth: 0, width: "100%" });
+  const selSt = (on: boolean) => ({ padding: "9px 10px", borderRadius: 10, border: "1px solid " + (on ? C.blue : C.field), background: on ? C.blueBg : C.surface, color: on ? C.onSolid : C.text, fontSize: 13.5, fontWeight: 700, minWidth: 0, width: "100%" });
   const lab = { display: "flex", flexDirection: "column" as const, gap: 5, fontSize: 11.5, color: C.textMuted, fontWeight: 700, minWidth: 0 };
   const presetNote = p.gHi && MY_GRADE_KEY[p.disc] && myGrades && myGrades[MY_GRADE_KEY[p.disc]] === p.gHi ? "Up to your " + (dl[p.disc] || p.disc).toLowerCase() + " grade" : null;
   return (

@@ -27,7 +27,7 @@ export interface ListPageProps {
    button that opens this page: a full-screen portal in the app's 520px column, one ← Back, and whichever of a search box, a sort
    and filter chips its list can use. The caller keeps the open flag, the query and the rows; this draws only the frame. */
 export default function ListPage({ title, onClose, zIndex = 9500, search, sort, filter, intro, children }: ListPageProps) {
-  const field = { minWidth: 0, height: 44, boxSizing: "border-box" as const, borderRadius: 10, border: "1px solid " + C.border, background: C.surface, color: C.text, fontFamily: "inherit" };
+  const field = { minWidth: 0, height: 44, boxSizing: "border-box" as const, borderRadius: 10, border: "1px solid " + C.field, background: C.surface, color: C.text, fontFamily: "inherit" };
   return createPortal(<div role="dialog" aria-modal="true" aria-label={title} style={{ position: "fixed", inset: 0, background: C.bg, zIndex, display: "flex", flexDirection: "column", overscrollBehavior: "contain", maxWidth: 520, margin: "0 auto", boxSizing: "border-box" }}>
     <div style={{ display: "flex", alignItems: "center", gap: 10, padding: "14px 16px", borderBottom: "1px solid " + C.border, flexShrink: 0 }}>
       <button onClick={onClose} style={POP_BACK}>{"← Back"}</button>

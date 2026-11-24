@@ -20,7 +20,7 @@ export default function PhotoAltField({ value, onChange, label, hint, autoFocus 
   return (
     <label style={{ display: "block", marginTop: 6 }}>
       <span style={{ display: "block", fontSize: 11, fontWeight: 700, color: C.textMuted, marginBottom: 4 }}>{label || "Describe this photo (optional)"}</span>
-      <input value={value || ""} maxLength={PHOTO_ALT_MAX} autoFocus={autoFocus} onChange={(e) => onChange(e.target.value)} placeholder="e.g. Climber on a sunny granite slab, second pitch" style={{ width: "100%", padding: "8px 10px", borderRadius: 8, border: "1px solid " + C.border, background: C.surface, color: C.text, fontSize: 13, boxSizing: "border-box" }} />
+      <input value={value || ""} maxLength={PHOTO_ALT_MAX} autoFocus={autoFocus} onChange={(e) => onChange(e.target.value)} placeholder="e.g. Climber on a sunny granite slab, second pitch" style={{ width: "100%", padding: "8px 10px", borderRadius: 8, border: "1px solid " + C.field, background: C.surface, color: C.text, fontSize: 13, boxSizing: "border-box" }} />
       {hint ? <span style={{ display: "block", fontSize: 11, color: C.textMuted, marginTop: 4, lineHeight: 1.4 }}>{"Read aloud to climbers who use a screen reader. Say what the photo shows."}</span> : null}
     </label>
   );

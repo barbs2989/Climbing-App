@@ -93,7 +93,7 @@ export default function VerifyEmailPanel({ email, nudge, onVerified }) {
       </div> : <div>
         <div style={{ fontSize: 12.5, color: C.textSub, marginBottom: 10 }}>Enter the code we sent to <b>{email}</b>{tx(", or tap the link in that email on this device.")}</div>
         <div style={{ display: "flex", gap: 8, alignItems: "center", flexWrap: "wrap" }}>
-          <input aria-label="Code from the email" value={code} onChange={(e) => setCode(e.target.value)} onKeyDown={(e) => { if (e.key === "Enter") confirm(); }} inputMode="numeric" autoComplete="one-time-code" maxLength={12} placeholder="123456" style={{ width: 130, padding: "9px 10px", borderRadius: 9, border: "1px solid " + C.border, background: C.bg, color: C.text, fontSize: 16, letterSpacing: 2 }} />
+          <input aria-label="Code from the email" value={code} onChange={(e) => setCode(e.target.value)} onKeyDown={(e) => { if (e.key === "Enter") confirm(); }} inputMode="numeric" autoComplete="one-time-code" maxLength={12} placeholder="123456" style={{ width: 130, padding: "9px 10px", borderRadius: 9, border: "1px solid " + C.field, background: C.bg, color: C.text, fontSize: 16, letterSpacing: 2 }} />
           <button onClick={confirm} disabled={busy} style={btn}>{busy ? "Checking…" : "Verify"}</button>
         </div>
         <div style={{ display: "flex", gap: 14, marginTop: 6 }}>

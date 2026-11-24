@@ -88,7 +88,7 @@ export default function AreaLatestReports({ area, onOpenRoute, onOpenReport, C }
   </div>;
   if (!rows.length && !hazardCount && !filtered) return null;
 
-  const sel = { width: "100%", minWidth: 0, minHeight: 40, boxSizing: "border-box" as const, background: C.surface, color: C.text, border: "1px solid " + C.border, borderRadius: 9, padding: "0 8px", fontSize: 13, fontWeight: 600, cursor: "pointer" };
+  const sel = { width: "100%", minWidth: 0, minHeight: 40, boxSizing: "border-box" as const, background: C.surface, color: C.text, border: "1px solid " + C.field, borderRadius: 9, padding: "0 8px", fontSize: 13, fontWeight: 600, cursor: "pointer" };
   const selOn = { ...sel, border: "1px solid " + C.blue };
   const more = Math.max(0, total - FIRST);
   const row = (r: LatestRow) => {
