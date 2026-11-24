@@ -26,12 +26,19 @@ project documentation as a whole — `CLAUDE.md`, `docs/codebase/` and `docs/gua
        score 56% rather than 37%, which no screen shows: a real row with 3+ unknowns still refuses to print a %.
     `check:match-percent` section 8 pins all four, and `scripts/oneoff/inject-match-percent-cases.mjs` reverts each
     one on its own (19/19 as expected).
-  - **RELIABILITY (`CMAX_REL` 12, 0519, owner 2026-11-23).** Each climber's record (`relRecordOf`: crewmates' trip reports
-    from `reliability_of_users`, plus their vouches' Reliability stars) becomes a rate (`relRate`): a trip is worth 1 on time,
+  - **RELIABILITY (`CMAX_REL` 24, 0519, owner 2026-11-23; reweighted 2026-11-24).** Each climber's record (`relRecordOf`:
+    crewmates' trip reports from `reliability_of_users`, plus their vouches' Reliability stars, or the retired "punctuality"
+    stars on a vouch that has no reliability rating) becomes a rate (`relRate`): a trip is worth 1 on time,
     0.9 cancelled with notice, 0.75 late, 0.35 cancelled last minute, 0 no-show; each vouch's stars half a trip at
-    (stars−1)/4; pulled toward 0.85 by two imaginary trips, so one bad day on a short record does not sink it (one no-show
-    alone reads 0.57). The term is `6 × r(me) + 6 × r(them)`, a missing record counting 0.5, so it stays SYMMETRIC like
-    verified and no record is never a bad mark. It is not one of `compatUnknown`'s signals: a new climber's blank record must
+    (stars−1)/4; pulled toward `REL_PRIOR` (0.85, a typical climber) by two imaginary trips, so one bad day on a short record
+    does not sink it (one no-show alone reads 0.57). The term is `12 × r(me) + 12 × r(them)`, a missing record counting
+    `REL_PRIOR`, so it stays SYMMETRIC like verified and no record is never a bad mark.
+    - **Re-audit 2026-11-24 (owner: "do what you recommend").** At 12 with a missing record at 0.5, a partner with 20
+      no-shows read 84% against 87% for 20 on time, and 3 no-shows in 5 trips read the SAME as a brand-new climber (the
+      neutral half sat below the norm the rate is pulled toward). Now, from a mid profile: 20 on time 89%, no record 88%,
+      3 of 5 no-shows 86%, 20 no-shows 82% -- a chronic no-show costs about as much as four letter grades. The estimate
+      given beforehand (about 13 points between the extremes) missed the rescale onto 20..99; the measured gap is 7.
+      The example climbers' vouches all rate "punctuality", so guests saw no reliability at all until the fallback. It is not one of `compatUnknown`'s signals: a new climber's blank record must
     not push real partner rows over the "limited info" line. The checklist line is plain counts (`reliabilityText`).
     `check:match-percent` section 9.
   - **LISTED AREAS (2026-10-15, 0300; merged into WHERE YOU CLIMB on 2026-11-23, above).** Crag partners are found by area, so a yes/no term `CMAX_AREA=14`
