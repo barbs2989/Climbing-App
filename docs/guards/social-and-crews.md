@@ -4,6 +4,27 @@ Crews, groups, connections and presence: who is on a crew, how a climber is name
 
 Part of the guard notes — see [README.md](README.md) for the full index.
 
+- **`check:trip-reports` — RELIABILITY'S RULES, executed (0518, owner 2026-11-23).** Replays every migration into PGlite
+  with Supabase's default grants, builds four climbers and four crews (yesterday, 20 days ago, next week, and one a
+  member LEFT), and drives each rule as the climber who would try to break it: 24 assertions. Hand-run like
+  `check:profile-privacy` (~40 s of WASM), declared in `check:guard-wiring`'s EXCLUDED with its trigger.
+  - **What it proves:** the three tables are unreadable row by row and unwritable directly, to anon and signed in
+    alike; reports are refused from a stranger, about yourself, about a non-member, before the day, after day+14 and
+    signed out; ONE report counts, but is hidden from its subject (and from every count) until the subject files their
+    own recap for the crew or 7 days pass; "I was there" takes a report out while a note does not; changing a report
+    drops its reply and hides it again; "called off" by a crewmate takes the trip off everyone's record, but the
+    reported climber cannot excuse THEMSELF that way; a member who leaves stays reportable (as cancelling, never as a
+    no-show) and one the organizer removed is not recorded as leaving; deleting the crew keeps its reports; two
+    crewmates who disagree about one trip count once, at the more favourable outcome; vouch Reliability stars average
+    numbers and numeric strings and skip a plain-text vouch.
+  - **Injection measured (2026-11-23):** four rules broken one at a time in a copy of 0518 (counts reading unrevealed
+    reports; removal recorded as a departure; "I was there" ignored; self-excusing "called off"): each run exits
+    non-zero on the matching assertion.
+  - **Trap met building it:** section 9 first read 2 trips for one climber because section 8's DELETED crew kept its
+    report, which is the behaviour being proved. The section now clears that climber's reports first.
+  - **What it cannot see:** time. `now()` is real, so the 7-day reveal and the 14-day window are tested by ageing
+    `updated_at` and choosing agreed dates relative to `current_date`, not by waiting.
+
 - **A PRIVATE CREW'S ROSTER IS NOT PUBLIC (0426).** `crew_members` was `using (true)` from 0036 on; it now reads
   `crew_visible_to_me(crew_id)`. Two traps, both hit while writing it:
   - a policy on `crew_members` that subqueries `crews` runs under the CALLER's RLS on `crews` (organiser/members
