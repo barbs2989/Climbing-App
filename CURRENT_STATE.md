@@ -26,6 +26,8 @@ the catalog import pipeline (see [docs/BACKEND.md](docs/BACKEND.md)).
 
 ## Recent changes
 
+- **Reliability: who was on the trip** (owner 2026-11-24, "fix it then review again"; migration 0526): a climber who left before the trip is reportable but can no longer report on it (an early leaver could clear the whole crew's record with "called off"); joining after the trip puts nobody on it; an organizer's removal only counts once the day has begun everywhere; climbers who came off a trip after it began are still asked who showed up (`my_trip_recaps`). The Day sheet says the day is locked instead of offering controls the database refuses, its toasts wait for the save, and partner cards no longer blank while a list grows. See `docs/features/logbook-crews-home.md`.
+
 - **Privacy Policy version 2026-11-24** (owner 2026-11-24, "fix it"): `POLICY_VERSION` was set to 2026-11-23 at 08:39 that morning, and the Privacy Policy then changed four more times under it, the last adding crewmates' trip reports (#3838). An account that accepted that morning recorded the same version as one that read the newer text. Bumping it asks every account once to accept the current text. `lib/policy.js`.
 
 - **Menu tiles carry no counts** (owner 2026-11-24, "Remove numbers under each menu box"): *Crews · N* and *Listed areas · N* are now plain *Crews* and *Listed areas*. The count wrapped onto its own line under the label in the narrow tiles. The Requests corner badge (people waiting on you) stays. `ClimbMatch.jsx`; see `docs/features/partners.md`.

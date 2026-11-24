@@ -78,7 +78,16 @@ if ((await db.query(`select count(*)::int n from crew_members where crew_id = '$
 
 // Run `sql` as a client role with a JWT subject (null = signed out). The transaction is COMMITTED (a probe that
 // rolled back every write could not test what a later call sees). Resolves { rows } or { error }.
+// "On the trip" (0526) needs a confirmed member to have JOINED by the end of the trip's day. Fixtures add members now
+// to crews dated yesterday, so before every call they are backdated a month — except the climbers a test needs to
+// have joined LATE (LATE_JOINERS).
+const LATE_JOINERS = new Set();
+async function backdateMembers() {
+  const keep = [...LATE_JOINERS].map((u) => `'${u}'`).join(",");
+  await db.exec(`update crew_members set joined_at = now() - interval '30 days' where joined_at > now() - interval '1 day'${keep ? ` and user_id not in (${keep})` : ""}`);
+}
 async function as(role, uid, sql, params = []) {
+  await backdateMembers();
   try {
     await db.exec("begin");
     await db.query("select set_config('request.jwt.claim.sub', $1, true), set_config('request.jwt.claim.role', $2, true)", [uid || "", role]);
@@ -403,6 +412,58 @@ else fail("signed out can read reliability counts");
   const g = (await rel(D, [G]))[G];
   if (g.no_show === 0 && g.trips === 0) ok("switching to another answer and back cannot wipe \"I was there\" (one reply per answer, 0525)");
   else fail(`after no_show, was_there, late, a note on late, no_show again: G reads ${JSON.stringify(g)}`);
+}
+
+// ── 12. the fourth review (0526): who was ON the trip ───────────────────────────────────────────────────────────
+{
+  const id = (n) => `10000000-0000-4000-8000-0000000000${n}`;
+  const T = `((now() at time zone 'utc') - interval '12 hours')::date`;
+  const H = U("b8"), I = U("c9"), J = U("d0");
+  await db.exec(`insert into auth.users (id, email, raw_user_meta_data) values ('${H}', 'h@example.test', '{"name":"Harper"}'), ('${I}', 'i@example.test', '{"name":"Indy"}'), ('${J}', 'j@example.test', '{"name":"Jules"}');`);
+  const crew = async (n, dayExpr, members) => db.exec(`
+    insert into crews (id, route_id, created_by, agreed_date) values ('${id(n)}', 'r1', '${H}', to_char(${dayExpr}, 'YYYY-MM-DD'));
+    ${members.length ? `insert into crew_members (crew_id, user_id, status, invited_by) values ${members.map((m) => `('${id(n)}', '${m}', 'confirmed', '${H}')`).join(", ")};` : ""}`);
+
+  // (a) Left before the day: reportable, but cannot report — "called off" included.
+  await crew(41, `${T} - 1`, [I, J]);
+  await backdateMembers();
+  await db.exec(`delete from crew_members where crew_id = '${id(41)}' and user_id = '${I}';
+    insert into crew_departures (crew_id, user_id, agreed_date, left_at) values ('${id(41)}', '${I}', ${T} - 1, now() - interval '4 days')
+    on conflict (crew_id, user_id, agreed_date) do update set left_at = excluded.left_at;`);
+  const callOff = await report(I, id(41), null, "called_off"), iNoShow = await report(I, id(41), J, "no_show"), aboutI = await report(H, id(41), I, "cancelled_late");
+  if (callOff.error && iNoShow.error && !aboutI.error) ok("a climber who left BEFORE the day cannot report (not even \"called off\"), and can be reported (0526)");
+  else fail(`left before the day: called_off ${callOff.error ? "refused" : "ACCEPTED"}, no_show ${iNoShow.error ? "refused" : "ACCEPTED"}; report about them ${aboutI.error || "ok"}`);
+
+  // (b) Joined AFTER the day: neither reports nor is reported.
+  await crew(42, `${T} - 1`, [I]);
+  LATE_JOINERS.add(J);
+  await db.exec(`insert into crew_members (crew_id, user_id, status, invited_by, joined_at) values ('${id(42)}', '${J}', 'confirmed', '${H}', now())`);
+  const lateRep = await report(J, id(42), I, "no_show"), aboutLate = await report(H, id(42), J, "no_show");
+  LATE_JOINERS.delete(J);
+  if (lateRep.error && aboutLate.error) ok("a climber who joined AFTER the day neither reports nor is reported (0526)");
+  else fail(`joined after the day: their report ${lateRep.error ? "refused" : "ACCEPTED"}; report about them ${aboutLate.error ? "refused" : "ACCEPTED"}`);
+
+  // (c) The organizer removing someone before the day has begun everywhere is not recorded.
+  await crew(43, `${T} + 1`, [I]);
+  await as("authenticated", H, `delete from crew_members where crew_id = $1 and user_id = $2`, [id(43), I]);
+  const pre = (await db.query(`select count(*)::int n from crew_departures where crew_id = '${id(43)}'`)).rows[0].n;
+  if (pre === 0) ok("an organizer's removal before the trip's day has begun everywhere is not a departure (0526)");
+  else fail(`a removal the day before the trip was recorded (${pre})`);
+
+  // (d) An organizer alone on their crew who leaves it can still disband it: they are never "others".
+  await crew(44, `${T} - 1`, []);
+  await as("authenticated", H, `delete from crew_members where crew_id = $1 and user_id = $2`, [id(44), H]);
+  const solo = await as("authenticated", H, `delete from crews where id = $1 returning id`, [id(44)]);
+  if (!solo.error && solo.rows.length === 1) ok("an organizer alone on their crew can disband it after leaving it; they are never \"others\" (0526)");
+  else fail(`solo organizer disband: ${solo.error || solo.rows?.length + " row(s)"}`);
+
+  // (e) Removed after the day: the trip is listed for them by my_trip_recaps, and they can report.
+  await crew(45, `${T} - 1`, [I]);
+  await as("authenticated", H, `delete from crew_members where crew_id = $1 and user_id = $2`, [id(45), I]);
+  const mine = await as("authenticated", I, `select * from my_trip_recaps()`);
+  const theirRep = await report(I, id(45), H, "no_show");
+  if (mine.rows?.some((r) => r.crew_id === id(45) && r.place === null) !== undefined && mine.rows.some((r) => r.crew_id === id(45)) && !theirRep.error) ok("a crewmate removed after the day still sees the trip (my_trip_recaps) and can report the organizer (0526)");
+  else fail(`removed after the day: my_trip_recaps ${JSON.stringify(mine.rows || mine.error)}; their report ${theirRep.error || "ok"}`);
 }
 
 const FLOOR = 20;
