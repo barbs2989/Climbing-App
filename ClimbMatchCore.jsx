@@ -1685,7 +1685,7 @@ function crewChatReaders(c){var org=(c&&c._organizerId!=null)?c._organizerId:0;r
    says plainly that nothing typed here reaches anybody yet, rather than trading one wrong
    claim for another. */
 function crewChatParticipantLine(n){return n>0?("You + "+n+" climber"+(n===1?"":"s")+" \u00b7 group chat"):"Just you so far \u00b7 nobody else can read this yet";}
-const CREW_ARCHIVE_GRACE_DAYS=3;
+const CREW_ARCHIVE_GRACE_DAYS=3;const CREW_UNSETTLED_GRACE_DAYS=14;
 function isReady(c,hasMessages){return !!(c&&crewAllConfirmed(c)&&(datesAgreed(c)||(c.date&&c.dateForced))&&c.meetPlace&&c.meetTime&&hasMessages);}
 /* THE CREW JOURNEY, ONE DERIVATION (2026-11-14, owner: "guided, not gated"). The crew card shows a
    7-step strip -- Crew, Day, Meet-up, Ready, Climb, Log, Vouch -- and ONE next step. Every step is
@@ -1758,7 +1758,8 @@ function crewStage(c,ctx){
   var cur=open.length?open[0].key:null;
   return {steps:steps,current:cur,index:cur?steps.findIndex(function(s){return s.key===cur;}):steps.length,ready:readyDone,parts:parts,agreed:agreed,dayReached:dayReached,organizerId:org};
 }
-function isArchivedCrew(c,logs){if(!c)return false;if(c.dismissed)return true;if((logs||[]).some(l=>l.crewId===c.id))return true;const ad=agreedDate(c)||c.date;if(ad){const days=Math.floor((Date.now()-new Date(ad+"T12:00:00").getTime())/86400000);if(days>CREW_ARCHIVE_GRACE_DAYS)return true;}return false;}
+/* A crew whose days NEVER SETTLED is past too, once the LAST day anyone put forward is behind it (audit 2026-11-23): it read only the agreed day, so a crew where one member never confirmed stayed "active" forever -- live, a crew whose last day was Sep 13 was still on both members' list in late November, and never reached the Past card's Log / Vouch / Climb with them again. A crew with no day at all stays active: nothing has passed. An unsettled crew waits LONGER (CREW_UNSETTLED_GRACE_DAYS) than a settled one: its members may still be finding a new day, and any day they put forward on the card moves the cutoff on. */
+function isArchivedCrew(c,logs){if(!c)return false;if(c.dismissed)return true;if((logs||[]).some(l=>l.crewId===c.id))return true;const settled=agreedDate(c)||c.date||null;const ad=settled||(c.dates||[]).slice().sort().pop()||null;if(ad){const days=Math.floor((Date.now()-new Date(String(ad).slice(0,10)+"T12:00:00").getTime())/86400000);if(days>(settled?CREW_ARCHIVE_GRACE_DAYS:CREW_UNSETTLED_GRACE_DAYS))return true;}return false;}
 /* THE NEXT MEETUP IS THE NEXT ONE, NOT THE FIRST ONE. Both group surfaces used to take
    `events.sort(byDate)[0]` and label it "Next meet", so a group whose meetups are all behind it
    advertised its OLDEST as upcoming -- observed on a CI capture as "Next meet Jun 27" on 4 Sep.

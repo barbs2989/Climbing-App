@@ -48,7 +48,7 @@ export interface DayByDayProps<D extends DayByDayDay = DayByDayDay> {
   startOn: boolean;
 }
 export default function DayByDay<D extends DayByDayDay>({ days, di, pick, dayName, nWarn, nCaution, fc, legs, startOn }: DayByDayProps<D>) {
-  const cell: CSSProperties = { borderLeft: "1px solid " + C.borderLight, padding: "1px 0 1px 8px", display: "block", minWidth: 0 };
+  const cell: CSSProperties = { borderLeft: "1px solid " + C.border, padding: "1px 0 1px 8px", display: "block", minWidth: 0 };
   const lbl: CSSProperties = { display: "block", fontSize: 10.5, color: C.textMuted, fontWeight: 700 };
   // Values WRAP (a freezing level "8,200 ft–10,900 ft" breaks after its dash): at 390px a one-line clip cut it to "8,200 ft–1…" on every day.
   const val: CSSProperties = { display: "block", fontSize: 12.5, color: C.text, fontWeight: 700, lineHeight: 1.3, overflowWrap: "anywhere" };
@@ -75,7 +75,7 @@ export default function DayByDay<D extends DayByDayDay>({ days, di, pick, dayNam
         <span style={{ display: "grid", gridTemplateColumns: "repeat(2,minmax(0,1fr))", gap: 5 }}>
           {/* Name and rows in ONE order -- day, date, flags, high/low, freezing level, rain, gusts, notes -- because a voice-control user reads the row and says those words (WCAG 2.5.3). The spaces render nothing between these blocks; they keep the words apart. */}<span style={cell}><span style={lbl}>High / low</span>{" "}<span style={val}>{temp}</span></span>{" "}
           <span style={cell}><span style={lbl}>Freezing level</span>{" "}<span style={val}>{fl}</span></span>{" "}
-          <span style={cell}><span style={lbl}>{s.snow ? "Precipitation" : "Rain"}</span>{" "}<span style={Object.assign({}, val, { color: s.precip > 0 ? C.blue : C.text })}>{rain}</span>{rainSub ? " " : null}{rainSub ? <span style={{ display: "block", fontSize: 10.5, color: C.textMuted, lineHeight: 1.35 }}>{rainSub}</span> : null}</span>
+          <span style={cell}><span style={lbl}>{s.snow ? "Precipitation" : "Rain"}</span>{" "}<span style={Object.assign({}, val, { color: s.precip > 0 && !on ? C.blue : C.text })}>{rain}</span>{rainSub ? " " : null}{rainSub ? <span style={{ display: "block", fontSize: 10.5, color: C.textMuted, lineHeight: 1.35 }}>{rainSub}</span> : null}</span>
 {" "}
           <span style={cell}><span style={lbl}>Gusts</span>{" "}<span style={val}>{gust}</span></span>
         </span>{" "}
