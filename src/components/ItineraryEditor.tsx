@@ -33,7 +33,7 @@ const TIME_PRESETS = ["3:00 AM","5:00 AM","7:00 AM","9:00 AM","12:00 PM","3:00 P
  * (`check:units` renders this component through its probe).
  */
 export default function ItineraryEditor({itin,onChange}: ItineraryEditorProps){
-  const fld: CSSProperties={width:"100%",padding:"9px 11px",borderRadius:9,border:"1px solid "+C.border,background:C.surface,color:C.text,fontSize:14,boxSizing:"border-box",outline:"none"};
+  const fld: CSSProperties={width:"100%",padding:"9px 11px",borderRadius:9,border:"1px solid "+C.field,background:C.surface,color:C.text,fontSize:14,boxSizing:"border-box",outline:"none"};
   const days: ItinDay[]=(itin&&itin.days&&itin.days.length)?itin.days:[blankItinDay()];
   const setDays=function(fn: (ds: ItinDay[]) => ItinDay[]){onChange(Object.assign({},itin,{days:fn(days)}));};
   const setDayField=function(i: number,k: keyof ItinDay,v: string){setDays(function(ds){const nd=ds.slice();nd[i]=Object.assign({},nd[i],{[k]:v});return nd;});};

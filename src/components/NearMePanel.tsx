@@ -328,7 +328,18 @@ export default function NearMePanel({ center0, areaType, name, onBack, onOpenAre
       const r = ringR(g.reduce((s, p) => s + (p.a.route_count || 0), 0));
       return { x0: x - r, y0: y - r, x1: x + r, y1: y + r };
     });
+    // ...and never under the map's own controls (owner, 2026-11-24, phone check: a name sat under the
+    // Street / Satellite row). Each control's box is read from the page, in the map's own pixels, so the
+    // row, ⤢, + / − and "Me" are avoided at whatever size they render on this screen.
     const placed: Box[] = [];
+    const host = mapDiv.current, frame = host && host.parentElement;
+    if (host && frame) {
+      const m = host.getBoundingClientRect();
+      frame.querySelectorAll("button, .leaflet-control").forEach(el => {
+        const r = el.getBoundingClientRect();
+        if (r.width && r.height) placed.push({ x0: r.left - m.left - 2, y0: r.top - m.top - 2, x1: r.right - m.left + 2, y1: r.bottom - m.top + 2 });
+      });
+    }
     const labelFits = (gi: number, name: string) => {
       const rb = ringBoxes[gi], cx = (rb.x0 + rb.x1) / 2, w = labelWidth(name);
       const lb = { x0: cx - w / 2, y0: rb.y1 + 2, x1: cx + w / 2, y1: rb.y1 + 16 };

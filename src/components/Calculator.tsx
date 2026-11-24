@@ -294,7 +294,7 @@ export default function Calculator({route,activity,fit:fitProp,setFit:setFitProp
         const dayLbl=(a: number,b: number)=>a===b?"Day "+a:"Days "+a+"–"+b;
         const hr=(h: number)=>h.toFixed(1)+" hr";
         const sdN=sd.inDays+1;
-        const row=(key: string,day: string,what: string,val: string,col: string)=><div key={key} style={{display:"flex",justifyContent:"space-between",alignItems:"baseline",gap:10,padding:"7px 0",borderBottom:`1px solid ${C.borderLight}`}}><div style={{minWidth:0}}><div style={{fontSize:11,fontWeight:700,color:C.textMuted,textTransform:"uppercase",letterSpacing:0.3}}>{day}</div><div style={{fontSize:13,color:C.text,fontWeight:600}}>{what}</div></div><div style={{fontSize:15,fontWeight:800,color:col,flexShrink:0,whiteSpace:"nowrap"}}>{val}</div></div>;
+        const row=(key: string,day: string,what: string,val: string,col: string)=><div key={key} style={{display:"flex",justifyContent:"space-between",alignItems:"baseline",gap:10,padding:"7px 0",borderBottom:`1px solid ${C.borderLight}`}}><div style={{minWidth:0}}><div style={{fontSize:11,fontWeight:700,color:C.label,textTransform:"uppercase",letterSpacing:0.3}}>{day}</div><div style={{fontSize:13,color:C.text,fontWeight:600}}>{what}</div></div><div style={{fontSize:15,fontWeight:800,color:col,flexShrink:0,whiteSpace:"nowrap"}}>{val}</div></div>;
         const clock=(lbl: string,h: number,red: boolean,warn: string)=><div style={{textAlign:"center",background:red?C.redBg:lowerBound?C.card:C.greenBg,borderRadius:8,padding:8}}><div style={{fontSize:17,fontWeight:700,color:red?C.red:lowerBound?C.text:C.green}}>{(lowerBound?"≥":"")+fmt(h)}</div><div style={{fontSize:12,color:C.textMuted}}>{lbl}</div>{red?<div style={{fontSize:12,color:C.red,marginTop:1}}>{warn}</div>:null}</div>;
         /* A WHOLE-TRIP figure is the only number: the walk model's legs beside it do not add up to it
            (Indian Head printed a 9.5 hr walk in, a 13.6 hr climb and an 8.6 hr descent over a 13.6 hr total). */
@@ -302,7 +302,7 @@ export default function Calculator({route,activity,fit:fitProp,setFit:setFitProp
         return <div data-summit-day={sd.timed?"timed":sd.why}>
           {whole?null:row("in",dayLbl(1,sd.inDays),sd.why==="enroute"?"Walk in, over the summit, to camp":sd.inDays===1?"Walk in to camp":"Walk in, camping on the way",(walkInKnown?"":"≥")+hr(sd.why==="enroute"?sd.walkInH+techH:sd.walkInH),C.green)}
           {sd.timed?<div style={{padding:"8px 0",borderBottom:sd.outDays?`1px solid ${C.borderLight}`:"none"}}>
-            <div style={{fontSize:11,fontWeight:700,color:C.textMuted,textTransform:"uppercase",letterSpacing:0.3}}>{"Day "+sdN+" · summit day"}</div>
+            <div style={{fontSize:11,fontWeight:700,color:C.label,textTransform:"uppercase",letterSpacing:0.3}}>{"Day "+sdN+" · summit day"}</div>
             <div style={{fontSize:13,color:C.text,fontWeight:600,marginBottom:2}}>{"Leaving camp at "+fmt(camp)+(sd.endAt==="car"?", out to the car the same day":"")}</div>
             {/* The summit day's own HOURS, not only its clocks: 467 multi-day routes timed the climb only as an
                 Est. summit clock, so the one leg the leg cards under GETTING THERE time had no duration here (owner, 2026-11-23). */}
