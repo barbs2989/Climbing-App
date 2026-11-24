@@ -73,8 +73,10 @@ whole guide feature on 2026-11-14 (owner). This doc covers the partners mode (`l
   supersedes the 2026-11-14 zip gate): **no zip is required to see climbers**. My areas, Saved areas, Pick an area, A peak,
   My objectives, A route, Everyone and the crew-invite list near the climb all render without one; only the DISTANCE
   searches need it: with none, the zip radii in the Distance pill are disabled (*Near my zip (none set)*); *Near me now* needs no zip.
-  Everyone at Anywhere is the browse list (`useDiscoverableProfiles`, first 24, not in distance order); a radius of your zip or
-  *Near me now* gives the nearest first.
+  Everyone at Anywhere, for a climber with a zip, lists the nearest first (`partners_near` at its widest radius, up to 50;
+  `nearFirstPeople`) and then everyone else from the browse read (`useDiscoverableProfiles`, first 24), nobody twice, with
+  *Nearest to your zip first* when one of them is drawn; those climbers join every per-row read. Without a zip it is the
+  browse read alone, in no distance order.
   With no zip, the inline zip card (`_zipNeeded` in `lib/PartnerSearch.jsx`, saves through `saveMyZip`) stays above the
   lists as an offer. My objectives with none saved, and A route with none picked, show their own
   prompt instead of falling through to everyone; My objectives says *Couldn’t load your objectives* on a failed read (with *See
