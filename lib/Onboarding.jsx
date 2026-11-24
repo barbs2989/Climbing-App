@@ -148,7 +148,7 @@ export default function Onboarding({onFinish,onSkip,onSignOut,onUsernameSaved,on
     const where=(homeQ||"").trim()||home;
     const rows=[].concat(
       [["partners","Find climbing partners",required?"Add your zip and see climbers near you":"Browse climbers and crews near you","partners"]],
-      required&&!ava?[["camera","Add a profile photo","Optional — helps partners recognise you at the crag","photo"]]:[],
+      required&&!ava?[["camera","Add a profile photo","Optional","photo"]]:[],
       required?[["pin","List the areas you climb","So climbers there can find you","areas"]]:[],
       [["mountain","Explore climbs","Conditions, beta and plans for your next objective","climbs"]]);
     body=<div style={{textAlign:wide?"left":"center"}}>

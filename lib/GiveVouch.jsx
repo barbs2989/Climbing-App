@@ -1,5 +1,6 @@
 // Moved out of ClimbMatchCore.jsx verbatim so it can load lazily, off the first-paint
 // bundle. It is rendered only from App (ClimbMatch.jsx) behind React.lazy + Suspense.
+import { FONT_DISPLAY } from "./fonts.js";
 import { tx } from "./tapWords.js";
 import { USE_DB } from "./supabase";
 import { clickable } from "./clickable";
@@ -35,7 +36,7 @@ export default function GiveVouch({friend,onClose,onSave,suggest,initial,routeBy
   // Tapping the star that is already the rating clears it, so a category can be put back to unrated.
   const rate=(k,n)=>setRatings(r=>{const o=Object.assign({},r);if(o[k]===n)delete o[k];else o[k]=n;return o;});
   const dbVouchSearch=useRouteSearch(USE_DB?q:"");
-  const H=(t,m)=><div style={{fontSize:13,fontWeight:800,color:C.text,textTransform:"uppercase",letterSpacing:0.4,margin:m||"0 0 6px",borderLeft:"3px solid "+C.blue,paddingLeft:9}}>{t}</div>;
+  const H=(t,m)=><div style={{fontFamily:FONT_DISPLAY,fontSize:18,lineHeight:1.15,fontWeight:600,color:C.text,textTransform:"uppercase",letterSpacing:0.7,margin:m||"0 0 6px"}}>{t}</div>;
   const sub={fontSize:12,color:C.textSub,lineHeight:1.45,marginBottom:10};
   const pick=(r)=>{setRoute({name:r.name,sub:r.grade+" · "+mtnOf(r)});setQ("");};
   const row=(r,ix,tag)=><div key={r.id} {...clickable(()=>pick(r))} aria-label={"Choose "+r.name} style={{display:"flex",alignItems:"center",gap:9,padding:"9px 10px",borderTop:ix?"1px solid "+C.borderLight:"none",cursor:"pointer"}}><div style={{flex:1,minWidth:0}}><div style={{fontSize:13,fontWeight:600,color:C.text,overflowWrap:"anywhere"}}>{r.name}</div><div style={{fontSize:11,color:C.textMuted,marginTop:1,overflowWrap:"anywhere"}}>{tag?<span style={{color:C.blue,fontWeight:700}}>{tag+" · "}</span>:null}{/* a crew climb handed over from the card has no mountainId; name its peak, never "undefined" */[r.grade,mtnOf(r)||r.parentName||(r._dbArea&&r._dbArea.name)].filter(Boolean).join(" · ")}</div></div><DiscBadges route={r} sm/><span style={{flexShrink:0,fontSize:12,fontWeight:700,color:C.blue,border:"1px solid "+C.blueDim,borderRadius:7,padding:"3px 9px"}}>Choose</span></div>;

@@ -327,7 +327,7 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     `playwright-core` downloads no browser, so it drives the Google Chrome that ships on
     the `ubuntu-latest` image — the workflow asserts Chrome is present before starting.
   - Opening an overlay by name reaches some the UI would not offer at zero (e.g.
-    `vouchesGivenOpen` only opens from a *See all N →* button needing >3 vouches). Check the
+    `vouchesGivenOpen` only opens from the Profile's *Vouches you've given* button, drawn once you have given one). Check the
     setter's call sites before treating an empty one as a bug.
 - **`check:signed-in`** walks the app as a **real signed-in account that already owns
   things** — a crew and a group, each with a *second real member*. It fills the one gap the

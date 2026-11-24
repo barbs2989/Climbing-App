@@ -12,7 +12,7 @@
 
 import { useState } from "react";
 import { useQueryClient } from "@tanstack/react-query";
-import { useRouteProposals, useAreaProposals, useAreaPlacementClaims, useAreaNamesByIds, resolveAreaPlacement, approveNewRoute, approveNewArea, rejectNewRoute, preferNetworkReads } from "./db";
+import { useRouteProposals, useAreaProposals, useAreaPlacementClaims, useAreaNamesByIds, resolveAreaPlacement, approveNewRoute, approveNewArea, rejectNewRoute, useProposalDuplicates, preferNetworkReads } from "./db";
 import { gradeNumFor } from "./grade";
 import { discLabel } from "./discLabels";
 import { C } from "../ClimbMatchCore";
@@ -48,13 +48,75 @@ function Row({ label, children }) {
   </div>;
 }
 
-export function RouteProposalQueue() {
+// Catalog rows this proposal may already be (0214's catalog_find_*). Approving still refuses a same-named
+// copy nearby (0216); this catches the ones it cannot: another spelling, or farther away.
+function PossibleDuplicates({ kind, name, areaId, lat, lng }) {
+  const { data, isLoading, error } = useProposalDuplicates(kind, name, areaId, lat, lng);
+  if (isLoading) return <Row label="Already in catalog?">Checking…</Row>;
+  if (error) return <Row label="Already in catalog?"><span style={{ color: C.amber }}>Could not check — {(error && error.message) || "the request failed"}</span></Row>;
+  const hits = (data || []).slice(0, 5);
+  if (!hits.length) return <Row label="Already in catalog?">No match found</Row>;
+  return <div style={{ background: C.surface, border: "1px solid " + C.amber, borderRadius: 8, padding: "7px 9px", marginTop: 7 }}>
+    <div style={{ fontSize: 12, fontWeight: 700, color: C.amber, marginBottom: 3 }}>Possible duplicate{hits.length > 1 ? "s" : ""}: read before approving</div>
+    {hits.map(function (h) {
+      return <div key={h.id} style={{ fontSize: 12, color: C.textSub, lineHeight: 1.55, wordBreak: "break-word" }}>
+        {h.label}{h.grade ? " · " + h.grade : ""}{h.km != null ? " · " + Number(h.km).toFixed(1) + " km" : ""} · {h.match} <span style={{ color: C.textMuted }}>({h.id})</span>
+      </div>;
+    })}
+  </div>;
+}
+
+// What the nightly AI checker (review-flags-nightly, 0436) concluded about this proposal: does the climb or
+// area exist where it is filed, and are its facts right. Only the Review desk passes verdicts; the AI never acts.
+const AI_LABEL = { agree: "AI agrees", disagree: "AI disagrees", partly: "AI: partly right", unsure: "AI unsure" };
+function AiNote({ v }) {
+  if (!v) return <Row label="AI check">Not checked yet</Row>;
+  const col = v.verdict === "agree" ? C.green : v.verdict === "disagree" ? C.red : v.verdict === "partly" ? C.amber : C.textSub;
+  const src = Array.isArray(v.sources) ? v.sources : [];
+  return <div style={{ border: "1px solid " + C.border, borderRadius: 8, padding: "7px 9px", marginTop: 7, fontSize: 12, lineHeight: 1.5 }}>
+    <div style={{ fontWeight: 700, color: col }}>{(AI_LABEL[v.verdict] || v.verdict) + (v.confidence && v.confidence !== "none" ? " · " + v.confidence : "")}</div>
+    {v.reasoning ? <div style={{ color: C.textSub, marginTop: 2 }}>{v.reasoning}</div> : null}
+    {v.verdict !== "agree" && v.ai_value && typeof v.ai_value === "object" && !Array.isArray(v.ai_value) && Object.keys(v.ai_value).length
+      ? <div style={{ color: C.textSub, marginTop: 2 }}><b>AI would correct:</b> {Object.keys(v.ai_value).map(function (k) { return k + ": " + (typeof v.ai_value[k] === "object" ? JSON.stringify(v.ai_value[k]) : String(v.ai_value[k])); }).join(" · ")}</div> : null}
+    {src.map(function (s, i) { return <div key={i} style={{ color: C.textMuted, wordBreak: "break-word" }}><a href={s.url} target="_blank" rel="noopener noreferrer" style={{ color: C.blue }}>{s.title || s.url}</a>{s.quote ? " — “" + s.quote + "”" : ""}</div>; })}
+  </div>;
+}
+
+// Turning a proposal down: the reason is shown to the proposer (0505 refuses under 10 characters), and it is
+// a strike against their contributing (3 pauses it 90 days, 5 closes it) unless ticked as an honest mistake.
+function RejectBox({ busy, onConfirm, onCancel }) {
+  const [note, setNote] = useState("");
+  const [mistake, setMistake] = useState(false);
+  const ok = note.trim().length >= 10;
+  return <div style={{ marginTop: 9 }}>
+    <textarea value={note} onChange={e => setNote(e.target.value)} rows={2}
+      aria-label="Why this proposal is turned down"
+      placeholder="Why? The climber is shown this (at least 10 characters)"
+      style={{ width: "100%", background: C.surface, color: C.text, border: "1px solid " + C.border, borderRadius: 8, padding: "7px 9px", fontSize: 12.5, fontFamily: "inherit", resize: "vertical", boxSizing: "border-box" }} />
+    <label style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 12.5, color: C.textSub, marginTop: 6, minHeight: 44, cursor: "pointer" }}>
+      <input type="checkbox" checked={mistake} onChange={e => setMistake(e.target.checked)} style={{ width: 18, height: 18 }} />
+      Honest mistake: no strike
+    </label>
+    <div style={{ display: "flex", gap: 12, marginTop: 4 }}>
+      <button onClick={() => onConfirm(note.trim(), !mistake)} disabled={busy || !ok}
+        style={{ flex: 1, padding: 9, background: busy || !ok ? C.surface : C.redBg, color: busy || !ok ? C.textMuted : C.red, border: "1px solid " + (busy || !ok ? C.border : C.red), borderRadius: 8, fontSize: 12.5, fontWeight: 700, cursor: busy || !ok ? "default" : "pointer" }}>
+        {busy ? "Working…" : mistake ? "Turn down" : "Turn down + strike"}
+      </button>
+      <button onClick={onCancel} disabled={busy}
+        style={{ flex: 1, padding: 9, background: C.surface, color: C.textSub, border: "1px solid " + C.border, borderRadius: 8, fontSize: 12.5, cursor: "pointer" }}>
+        Cancel
+      </button>
+    </div>
+  </div>;
+}
+
+/** @param {{ ai?: Record<string, any> | null }} [props] AI verdicts keyed "contribution:<id>"; the Review desk passes them, the Menu does not. */
+export function RouteProposalQueue({ ai = null } = {}) {
   const { data: rows, isLoading, error } = useRouteProposals("pending");
   const qc = useQueryClient();
   const [busyId, setBusyId] = useState(null);
   const [msg, setMsg] = useState(null);      // {kind:"ok"|"err", text}
   const [rejecting, setRejecting] = useState(null);
-  const [note, setNote] = useState("");
 
   const refresh = () => {
     qc.invalidateQueries({ queryKey: ["route-proposals"] });
@@ -86,12 +148,12 @@ export function RouteProposalQueue() {
     } finally { setBusyId(null); }
   };
 
-  const doReject = async (id) => {
+  const doReject = async (id, note, strike) => {
     setBusyId(id); setMsg(null);
     try {
-      await rejectNewRoute(id, note);
-      setMsg({ kind: "ok", text: "Rejected." });
-      setRejecting(null); setNote(""); refresh();
+      await rejectNewRoute(id, note, strike);
+      setMsg({ kind: "ok", text: strike ? "Turned down, with a strike. The climber is told why." : "Turned down, no strike. The climber is told why." });
+      setRejecting(null); refresh();
     } catch (e) {
       setMsg({ kind: "err", text: (e && e.message) ? e.message : "Could not reject that proposal." });
     } finally { setBusyId(null); }
@@ -154,23 +216,11 @@ export function RouteProposalQueue() {
             This proposal names no DB area, so it cannot be filed. Approving it will be refused.
           </div> : null}
 
+          {r.area_id ? <PossibleDuplicates kind="new_route" name={v.name} areaId={r.area_id} /> : null}
+          {ai ? <AiNote v={ai["contribution:" + r.id]} /> : null}
+
           {rejecting === r.id
-            ? <div style={{ marginTop: 9 }}>
-                <textarea value={note} onChange={e => setNote(e.target.value)} rows={2}
-                  aria-label="Why this proposal is rejected"
-                  placeholder="Why? (optional, kept on the record)"
-                  style={{ width: "100%", background: C.surface, color: C.text, border: "1px solid " + C.border, borderRadius: 8, padding: "7px 9px", fontSize: 12.5, fontFamily: "inherit", resize: "vertical" }} />
-                <div style={{ display: "flex", gap: 12, marginTop: 7 }}>
-                  <button onClick={() => doReject(r.id)} disabled={busy}
-                    style={{ flex: 1, padding: 9, background: busy ? C.surface : C.redBg, color: C.red, border: "1px solid " + C.red, borderRadius: 8, fontSize: 12.5, fontWeight: 700, cursor: busy ? "default" : "pointer" }}>
-                    {busy ? "Working…" : "Confirm reject"}
-                  </button>
-                  <button onClick={() => { setRejecting(null); setNote(""); }} disabled={busy}
-                    style={{ flex: 1, padding: 9, background: C.surface, color: C.textSub, border: "1px solid " + C.border, borderRadius: 8, fontSize: 12.5, cursor: "pointer" }}>
-                    Cancel
-                  </button>
-                </div>
-              </div>
+            ? <RejectBox busy={busy} onConfirm={(n, st) => doReject(r.id, n, st)} onCancel={() => setRejecting(null)} />
             : <div style={{ display: "flex", gap: 12, marginTop: 9 }}>
                 <button onClick={() => doApprove(r)} disabled={busy}
                   style={{ flex: 2, padding: 9, background: busy ? C.surface : C.blueSolid, color: busy ? C.textMuted : C.onSolid, border: busy ? "1px solid " + C.border : "none", borderRadius: 8, fontSize: 12.5, fontWeight: 700, cursor: busy ? "default" : "pointer" }}>
@@ -178,7 +228,7 @@ export function RouteProposalQueue() {
                 </button>
                 <button onClick={() => setRejecting(r.id)} disabled={busy}
                   style={{ flex: 1, padding: 9, background: C.surface, color: C.textSub, border: "1px solid " + C.border, borderRadius: 8, fontSize: 12.5, cursor: "pointer" }}>
-                  Reject
+                  Turn down
                 </button>
               </div>}
         </div>;
@@ -244,12 +294,12 @@ export function AreaPlacementQueue() {
 // approve_new_area writes the areas row; the area triggers refuse a same-named place within
 // 1.5 km or a parent that holds climbs, and that refusal is printed here verbatim.
 const AREA_KIND = { crag: "Crag, wall or boulder", peak: "Peak", region: "Area" };
-export function AreaProposalQueue() {
+/** @param {{ ai?: Record<string, any> | null }} [props] AI verdicts keyed "contribution:<id>"; the Review desk passes them, the Menu does not. */
+export function AreaProposalQueue({ ai = null } = {}) {
   const { data: rows, isLoading, error } = useAreaProposals("pending");
   const [busyId, setBusyId] = useState(null);
   const [msg, setMsg] = useState(null);      // {kind:"ok"|"err", text}
   const [rejecting, setRejecting] = useState(null);
-  const [note, setNote] = useState("");
 
   const doApprove = async (r) => {
     setBusyId(r.id); setMsg(null);
@@ -260,12 +310,12 @@ export function AreaProposalQueue() {
       setMsg({ kind: "err", text: (e && e.message) ? e.message : "Could not approve that proposal." });
     } finally { setBusyId(null); }
   };
-  const doReject = async (id) => {
+  const doReject = async (id, note, strike) => {
     setBusyId(id); setMsg(null);
     try {
-      await rejectNewRoute(id, note);
-      setMsg({ kind: "ok", text: "Rejected." });
-      setRejecting(null); setNote("");
+      await rejectNewRoute(id, note, strike);
+      setMsg({ kind: "ok", text: strike ? "Turned down, with a strike. The climber is told why." : "Turned down, no strike. The climber is told why." });
+      setRejecting(null);
     } catch (e) {
       setMsg({ kind: "err", text: (e && e.message) ? e.message : "Could not reject that proposal." });
     } finally { setBusyId(null); }
@@ -291,18 +341,13 @@ export function AreaProposalQueue() {
           <Row label="Location">{v.lat != null && v.lng != null ? v.lat + ", " + v.lng : null}</Row>
           <Row label="Submitted">{r.created_at ? String(r.created_at).slice(0, 10) : null}</Row>
           <Row label="By">{r.contributor ? String(r.contributor).slice(0, 8) : "anonymous"}</Row>
+          <PossibleDuplicates kind="new_area" name={v.name} areaId={r.area_id} lat={v.lat} lng={v.lng} />
+          {ai ? <AiNote v={ai["contribution:" + r.id]} /> : null}
           {rejecting === r.id
-            ? <div style={{ marginTop: 9 }}>
-                <textarea value={note} onChange={e => setNote(e.target.value)} rows={2} aria-label="Why this proposal is rejected" placeholder="Why? (optional, kept on the record)"
-                  style={{ width: "100%", background: C.surface, color: C.text, border: "1px solid " + C.border, borderRadius: 8, padding: "7px 9px", fontSize: 12.5, fontFamily: "inherit", resize: "vertical" }} />
-                <div style={{ display: "flex", gap: 12, marginTop: 7 }}>
-                  <button onClick={() => doReject(r.id)} disabled={busy} style={{ flex: 1, padding: 9, background: busy ? C.surface : C.redBg, color: C.red, border: "1px solid " + C.red, borderRadius: 8, fontSize: 12.5, fontWeight: 700, cursor: busy ? "default" : "pointer" }}>{busy ? "Working…" : "Confirm reject"}</button>
-                  <button onClick={() => { setRejecting(null); setNote(""); }} disabled={busy} style={{ flex: 1, padding: 9, background: C.surface, color: C.textSub, border: "1px solid " + C.border, borderRadius: 8, fontSize: 12.5, cursor: "pointer" }}>Cancel</button>
-                </div>
-              </div>
+            ? <RejectBox busy={busy} onConfirm={(n, st) => doReject(r.id, n, st)} onCancel={() => setRejecting(null)} />
             : <div style={{ display: "flex", gap: 12, marginTop: 9 }}>
                 <button onClick={() => doApprove(r)} disabled={busy} style={{ flex: 2, padding: 9, background: busy ? C.surface : C.blueSolid, color: busy ? C.textMuted : C.onSolid, border: busy ? "1px solid " + C.border : "none", borderRadius: 8, fontSize: 12.5, fontWeight: 700, cursor: busy ? "default" : "pointer" }}>{busy ? "Working…" : "Approve — file this area"}</button>
-                <button onClick={() => setRejecting(r.id)} disabled={busy} style={{ flex: 1, padding: 9, background: C.surface, color: C.textSub, border: "1px solid " + C.border, borderRadius: 8, fontSize: 12.5, cursor: "pointer" }}>Reject</button>
+                <button onClick={() => setRejecting(r.id)} disabled={busy} style={{ flex: 1, padding: 9, background: C.surface, color: C.textSub, border: "1px solid " + C.border, borderRadius: 8, fontSize: 12.5, cursor: "pointer" }}>Turn down</button>
               </div>}
         </div>;
       })}

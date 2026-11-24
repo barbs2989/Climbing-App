@@ -1,0 +1,572 @@
+{
+ "wa_the_gentlemen_s_club_aquaman": {
+  "area": "wa_the_gentlemen_s_club",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/201660832/aquaman",
+    "https://www.mountainproject.com/area/126915111/the-gentlemens-club",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0/query?geometry=-120.42992,48.60994&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownerclassification,forestname&returnGeometry=false&f=json",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0/query?geometry=-120.432,48.605&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownerclassification,forestname&returnGeometry=false&f=json",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_RangerDistricts_03/MapServer/1/query?geometry=-120.42992,48.60994&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=districtname,forestname&returnGeometry=false&f=json",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_Wilderness_01/MapServer/0/query?geometry=-120.42992,48.60994&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=*&returnGeometry=false&f=json"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.6",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/201660832/aquaman",
+      "fact": "5.6 YDS, Sport/TR",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "length_m",
+    "value": 9,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/201660832/aquaman",
+      "fact": "30 ft (9 m)",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 1,
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/201660832/aquaman",
+      "fact": "30 ft (9 m), bolted line to one anchor; count implied, not stated",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_the_gentlemen_s_club_aquaman",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)"
+    },
+    "why": "Brief AA: copy access field for field from wa_sisyphus (read live 2026-11-23, land_manager only). USFS EDW BasicOwnership, queried 2026-11-23 at the crag's own coordinate (48.60994,-120.42992) and on a 5x5 grid at ~200 m and ~400 m spacing around it: USDA FOREST SERVICE, Okanogan-Wenatchee NF, at the point and at every grid point within ~300 m; the only NON-FS cells are 400+ m to the S/SW, toward the main Fun Rock (48.605,-120.432 returns NON-FS, consistent with the private Outward Bound land). Ranger district layer: Methow Valley Ranger District. Wilderness layer: none. Caveat: the crag coordinate is the stored area point, which equals the coordinate Mountain Project shows; the published approach (past Fun Rock and A-Wall to an upper bench, then north) fits a site above and NE of Fun Rock. permit stays null.",
+    "evidence": [
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0/query?geometry=-120.42992,48.60994&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownerclassification,forestname&returnGeometry=false&f=json",
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_RangerDistricts_03/MapServer/1/query?geometry=-120.42992,48.60994&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=districtname,forestname&returnGeometry=false&f=json",
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_Wilderness_01/MapServer/0/query?geometry=-120.42992,48.60994&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=*&returnGeometry=false&f=json",
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0/query?geometry=-120.432,48.605&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownerclassification,forestname&returnGeometry=false&f=json"
+    ]
+   }
+  ],
+  "held": [],
+  "disputed": [],
+  "notes": "Only source: Mountain Project (theCrag Forbidden on the first page in Chrome; one web search found no guide, club or blog page for this 2025-era crag). Grade 5.6 and length 9 m match the row; locked-1src. Pitches 1 matches but no source states a count: unconfirmed. Sector: Superfriends Wall, The Gentlemen's Club (filed correctly). FA left null: MP names only the bolter (Brooks Middleton, no date), which is not an FA, and a blank FA needs two sources. Bolts: not counted on the page. Anchor: the page says Mussy hooks; no house spelling exists (each Mussy-hook spelling is stored on 1 route), so not proposed. Gear: bolts only, nothing to propose."
+ },
+ "wa_the_gentlemen_s_club_green_lantern": {
+  "area": "wa_the_gentlemen_s_club",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/201660853/green-lantern",
+    "https://www.mountainproject.com/area/126915111/the-gentlemens-club",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0/query?geometry=-120.42992,48.60994&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownerclassification,forestname&returnGeometry=false&f=json",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0/query?geometry=-120.432,48.605&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownerclassification,forestname&returnGeometry=false&f=json",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_RangerDistricts_03/MapServer/1/query?geometry=-120.42992,48.60994&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=districtname,forestname&returnGeometry=false&f=json",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_Wilderness_01/MapServer/0/query?geometry=-120.42992,48.60994&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=*&returnGeometry=false&f=json"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.6",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/201660853/green-lantern",
+      "fact": "5.6 YDS, Sport/TR",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "length_m",
+    "value": 11,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/201660853/green-lantern",
+      "fact": "35 ft (11 m)",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 1,
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/201660853/green-lantern",
+      "fact": "35 ft (11 m), bolted line to one anchor; count implied, not stated",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_the_gentlemen_s_club_green_lantern",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)"
+    },
+    "why": "Brief AA: copy access field for field from wa_sisyphus (read live 2026-11-23, land_manager only). USFS EDW BasicOwnership, queried 2026-11-23 at the crag's own coordinate (48.60994,-120.42992) and on a 5x5 grid at ~200 m and ~400 m spacing around it: USDA FOREST SERVICE, Okanogan-Wenatchee NF, at the point and at every grid point within ~300 m; the only NON-FS cells are 400+ m to the S/SW, toward the main Fun Rock (48.605,-120.432 returns NON-FS, consistent with the private Outward Bound land). Ranger district layer: Methow Valley Ranger District. Wilderness layer: none. Caveat: the crag coordinate is the stored area point, which equals the coordinate Mountain Project shows; the published approach (past Fun Rock and A-Wall to an upper bench, then north) fits a site above and NE of Fun Rock. permit stays null.",
+    "evidence": [
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0/query?geometry=-120.42992,48.60994&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownerclassification,forestname&returnGeometry=false&f=json",
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_RangerDistricts_03/MapServer/1/query?geometry=-120.42992,48.60994&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=districtname,forestname&returnGeometry=false&f=json",
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_Wilderness_01/MapServer/0/query?geometry=-120.42992,48.60994&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=*&returnGeometry=false&f=json",
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0/query?geometry=-120.432,48.605&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownerclassification,forestname&returnGeometry=false&f=json"
+    ]
+   }
+  ],
+  "held": [],
+  "disputed": [],
+  "notes": "Only source: Mountain Project (theCrag Forbidden on the first page in Chrome; one web search found no guide, club or blog page for this 2025-era crag). Grade 5.6 and length 11 m match the row; locked-1src. Pitches 1 matches but no source states a count: unconfirmed. Sector: Superfriends Wall, The Gentlemen's Club (filed correctly). FA left null: MP names only the bolter (Brooks Middleton, no date), which is not an FA, and a blank FA needs two sources. Bolts: not counted on the page. Anchor: the page says Mussy hooks; no house spelling exists (each Mussy-hook spelling is stored on 1 route), so not proposed. Gear: bolts only, nothing to propose."
+ },
+ "wa_the_gentlemen_s_club_electra_woman": {
+  "area": "wa_the_gentlemen_s_club",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/201660880/electra-woman",
+    "https://www.mountainproject.com/area/126915111/the-gentlemens-club",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0/query?geometry=-120.42992,48.60994&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownerclassification,forestname&returnGeometry=false&f=json",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0/query?geometry=-120.432,48.605&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownerclassification,forestname&returnGeometry=false&f=json",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_RangerDistricts_03/MapServer/1/query?geometry=-120.42992,48.60994&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=districtname,forestname&returnGeometry=false&f=json",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_Wilderness_01/MapServer/0/query?geometry=-120.42992,48.60994&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=*&returnGeometry=false&f=json"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.7",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/201660880/electra-woman",
+      "fact": "5.7 YDS, Sport/TR",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "length_m",
+    "value": 12,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/201660880/electra-woman",
+      "fact": "40 ft (12 m)",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 1,
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/201660880/electra-woman",
+      "fact": "40 ft (12 m), bolted line to one anchor; count implied, not stated",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_the_gentlemen_s_club_electra_woman",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)"
+    },
+    "why": "Brief AA: copy access field for field from wa_sisyphus (read live 2026-11-23, land_manager only). USFS EDW BasicOwnership, queried 2026-11-23 at the crag's own coordinate (48.60994,-120.42992) and on a 5x5 grid at ~200 m and ~400 m spacing around it: USDA FOREST SERVICE, Okanogan-Wenatchee NF, at the point and at every grid point within ~300 m; the only NON-FS cells are 400+ m to the S/SW, toward the main Fun Rock (48.605,-120.432 returns NON-FS, consistent with the private Outward Bound land). Ranger district layer: Methow Valley Ranger District. Wilderness layer: none. Caveat: the crag coordinate is the stored area point, which equals the coordinate Mountain Project shows; the published approach (past Fun Rock and A-Wall to an upper bench, then north) fits a site above and NE of Fun Rock. permit stays null.",
+    "evidence": [
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0/query?geometry=-120.42992,48.60994&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownerclassification,forestname&returnGeometry=false&f=json",
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_RangerDistricts_03/MapServer/1/query?geometry=-120.42992,48.60994&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=districtname,forestname&returnGeometry=false&f=json",
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_Wilderness_01/MapServer/0/query?geometry=-120.42992,48.60994&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=*&returnGeometry=false&f=json",
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0/query?geometry=-120.432,48.605&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownerclassification,forestname&returnGeometry=false&f=json"
+    ]
+   }
+  ],
+  "held": [],
+  "disputed": [],
+  "notes": "Only source: Mountain Project (theCrag Forbidden on the first page in Chrome; one web search found no guide, club or blog page for this 2025-era crag). Grade 5.7 and length 12 m match the row; locked-1src. Pitches 1 matches but no source states a count: unconfirmed. Sector: Superfriends Wall, The Gentlemen's Club (filed correctly). FA left null: MP names only the bolter (Brooks Middleton, no date), which is not an FA, and a blank FA needs two sources. Bolts: not counted on the page. Anchor: the page says Mussy hooks; no house spelling exists (each Mussy-hook spelling is stored on 1 route), so not proposed. Gear: bolts only, nothing to propose."
+ },
+ "wa_the_gentlemen_s_club_dyna_girl": {
+  "area": "wa_the_gentlemen_s_club",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/201660904/dyna-girl",
+    "https://www.mountainproject.com/area/126915111/the-gentlemens-club",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0/query?geometry=-120.42992,48.60994&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownerclassification,forestname&returnGeometry=false&f=json",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0/query?geometry=-120.432,48.605&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownerclassification,forestname&returnGeometry=false&f=json",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_RangerDistricts_03/MapServer/1/query?geometry=-120.42992,48.60994&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=districtname,forestname&returnGeometry=false&f=json",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_Wilderness_01/MapServer/0/query?geometry=-120.42992,48.60994&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=*&returnGeometry=false&f=json"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.8",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/201660904/dyna-girl",
+      "fact": "5.8 YDS, Sport/TR",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "length_m",
+    "value": 12,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/201660904/dyna-girl",
+      "fact": "40 ft (12 m)",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 1,
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/201660904/dyna-girl",
+      "fact": "40 ft (12 m), bolted line to one anchor; count implied, not stated",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_the_gentlemen_s_club_dyna_girl",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)"
+    },
+    "why": "Brief AA: copy access field for field from wa_sisyphus (read live 2026-11-23, land_manager only). USFS EDW BasicOwnership, queried 2026-11-23 at the crag's own coordinate (48.60994,-120.42992) and on a 5x5 grid at ~200 m and ~400 m spacing around it: USDA FOREST SERVICE, Okanogan-Wenatchee NF, at the point and at every grid point within ~300 m; the only NON-FS cells are 400+ m to the S/SW, toward the main Fun Rock (48.605,-120.432 returns NON-FS, consistent with the private Outward Bound land). Ranger district layer: Methow Valley Ranger District. Wilderness layer: none. Caveat: the crag coordinate is the stored area point, which equals the coordinate Mountain Project shows; the published approach (past Fun Rock and A-Wall to an upper bench, then north) fits a site above and NE of Fun Rock. permit stays null.",
+    "evidence": [
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0/query?geometry=-120.42992,48.60994&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownerclassification,forestname&returnGeometry=false&f=json",
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_RangerDistricts_03/MapServer/1/query?geometry=-120.42992,48.60994&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=districtname,forestname&returnGeometry=false&f=json",
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_Wilderness_01/MapServer/0/query?geometry=-120.42992,48.60994&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=*&returnGeometry=false&f=json",
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0/query?geometry=-120.432,48.605&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownerclassification,forestname&returnGeometry=false&f=json"
+    ]
+   }
+  ],
+  "held": [],
+  "disputed": [],
+  "notes": "Only source: Mountain Project (theCrag Forbidden on the first page in Chrome; one web search found no guide, club or blog page for this 2025-era crag). Grade 5.8 and length 12 m match the row; locked-1src. Pitches 1 matches but no source states a count: unconfirmed. Sector: Superfriends Wall, The Gentlemen's Club (filed correctly). FA left null: MP names only the bolter (Brooks Middleton, no date), which is not an FA, and a blank FA needs two sources. Bolts: not counted on the page. Anchor: the page says Mussy hooks; no house spelling exists (each Mussy-hook spelling is stored on 1 route), so not proposed. Gear: bolts only, nothing to propose."
+ },
+ "wa_the_gentlemen_s_club_robin": {
+  "area": "wa_the_gentlemen_s_club",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/201660959/robin",
+    "https://www.mountainproject.com/area/126915111/the-gentlemens-club",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0/query?geometry=-120.42992,48.60994&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownerclassification,forestname&returnGeometry=false&f=json",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0/query?geometry=-120.432,48.605&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownerclassification,forestname&returnGeometry=false&f=json",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_RangerDistricts_03/MapServer/1/query?geometry=-120.42992,48.60994&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=districtname,forestname&returnGeometry=false&f=json",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_Wilderness_01/MapServer/0/query?geometry=-120.42992,48.60994&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=*&returnGeometry=false&f=json"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.8",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/201660959/robin",
+      "fact": "5.8 YDS, Sport/TR",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "length_m",
+    "value": 14,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/201660959/robin",
+      "fact": "45 ft (14 m)",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 1,
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/201660959/robin",
+      "fact": "45 ft (14 m), bolted line to one anchor; count implied, not stated",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_the_gentlemen_s_club_robin",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)"
+    },
+    "why": "Brief AA: copy access field for field from wa_sisyphus (read live 2026-11-23, land_manager only). USFS EDW BasicOwnership, queried 2026-11-23 at the crag's own coordinate (48.60994,-120.42992) and on a 5x5 grid at ~200 m and ~400 m spacing around it: USDA FOREST SERVICE, Okanogan-Wenatchee NF, at the point and at every grid point within ~300 m; the only NON-FS cells are 400+ m to the S/SW, toward the main Fun Rock (48.605,-120.432 returns NON-FS, consistent with the private Outward Bound land). Ranger district layer: Methow Valley Ranger District. Wilderness layer: none. Caveat: the crag coordinate is the stored area point, which equals the coordinate Mountain Project shows; the published approach (past Fun Rock and A-Wall to an upper bench, then north) fits a site above and NE of Fun Rock. permit stays null.",
+    "evidence": [
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0/query?geometry=-120.42992,48.60994&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownerclassification,forestname&returnGeometry=false&f=json",
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_RangerDistricts_03/MapServer/1/query?geometry=-120.42992,48.60994&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=districtname,forestname&returnGeometry=false&f=json",
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_Wilderness_01/MapServer/0/query?geometry=-120.42992,48.60994&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=*&returnGeometry=false&f=json",
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0/query?geometry=-120.432,48.605&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownerclassification,forestname&returnGeometry=false&f=json"
+    ]
+   }
+  ],
+  "held": [],
+  "disputed": [],
+  "notes": "Only source: Mountain Project (theCrag Forbidden on the first page in Chrome; one web search found no guide, club or blog page for this 2025-era crag). Grade 5.8 and length 14 m match the row; locked-1src. Pitches 1 matches but no source states a count: unconfirmed. Sector: Superfriends Wall, The Gentlemen's Club (filed correctly). FA left null: MP names only the bolter (Brooks Middleton, no date), which is not an FA, and a blank FA needs two sources. Bolts: not counted on the page. Anchor: the page says Mussy hooks; no house spelling exists (each Mussy-hook spelling is stored on 1 route), so not proposed. Gear: bolts only, nothing to propose."
+ },
+ "wa_the_gentlemen_s_club_fulcrum": {
+  "area": "wa_the_gentlemen_s_club",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/201891911/fulcrum",
+    "https://www.mountainproject.com/area/126915111/the-gentlemens-club",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0/query?geometry=-120.42992,48.60994&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownerclassification,forestname&returnGeometry=false&f=json",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0/query?geometry=-120.432,48.605&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownerclassification,forestname&returnGeometry=false&f=json",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_RangerDistricts_03/MapServer/1/query?geometry=-120.42992,48.60994&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=districtname,forestname&returnGeometry=false&f=json",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_Wilderness_01/MapServer/0/query?geometry=-120.42992,48.60994&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=*&returnGeometry=false&f=json"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "M3+",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/201891911/fulcrum",
+      "fact": "M3+, TR, Mixed",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "length_m",
+    "value": 15,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/201891911/fulcrum",
+      "fact": "50 ft (15 m)",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 1,
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/201891911/fulcrum",
+      "fact": "50 ft to one chain anchor; count implied, not stated",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_the_gentlemen_s_club_fulcrum",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)"
+    },
+    "why": "Brief AA: copy access field for field from wa_sisyphus (read live 2026-11-23, land_manager only). USFS EDW BasicOwnership, queried 2026-11-23 at the crag's own coordinate (48.60994,-120.42992) and on a 5x5 grid at ~200 m and ~400 m spacing around it: USDA FOREST SERVICE, Okanogan-Wenatchee NF, at the point and at every grid point within ~300 m; the only NON-FS cells are 400+ m to the S/SW, toward the main Fun Rock (48.605,-120.432 returns NON-FS, consistent with the private Outward Bound land). Ranger district layer: Methow Valley Ranger District. Wilderness layer: none. Caveat: the crag coordinate is the stored area point, which equals the coordinate Mountain Project shows; the published approach (past Fun Rock and A-Wall to an upper bench, then north) fits a site above and NE of Fun Rock. permit stays null.",
+    "evidence": [
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0/query?geometry=-120.42992,48.60994&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownerclassification,forestname&returnGeometry=false&f=json",
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_RangerDistricts_03/MapServer/1/query?geometry=-120.42992,48.60994&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=districtname,forestname&returnGeometry=false&f=json",
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_Wilderness_01/MapServer/0/query?geometry=-120.42992,48.60994&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=*&returnGeometry=false&f=json",
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0/query?geometry=-120.432,48.605&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownerclassification,forestname&returnGeometry=false&f=json"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_the_gentlemen_s_club_fulcrum",
+    "column": "anchor",
+    "from": null,
+    "to": "Chain anchor",
+    "why": "Mountain Project states chains for the anchor; 'Chain anchor' is the house spelling (stored on 64 routes). Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/201891911/fulcrum"
+    ]
+   }
+  ],
+  "held": [],
+  "disputed": [],
+  "notes": "Discipline and grade checked: Mountain Project lists it as TR, Mixed, M3+, 50 ft, a dry-tool line on natural tool placements plus some drilled pockets, top-rope only for now, reached by a scramble up the far right side of the VIP Wall. The stored mixed / M3+ / ice_grade M3+ / mixed_grade_num 3 agrees, so no change. The row's disciplines list holds only \"mixed\"; MP says it is top-rope only at present, but discipline never changes or locks on MP alone, so a toprope addition is not proposed (owner call). Grade and length locked-1src; pitches unconfirmed. FA null: MP gives only 'Bolted: Alex Perz 2025'. Anchor: MP states chains, proposed as the house spelling 'Chain anchor'. Approach prose on the row agrees with MP's approach facts."
+ },
+ "wa_blownout": {
+  "area": "wa_south_face_4",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/107198195/blownout",
+    "https://www.mountainproject.com/area/111087707/south-face",
+    "https://parks.wa.gov/find-parks/state-parks/beacon-rock-state-park",
+    "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.10b/c",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107198195/blownout",
+      "fact": "5.10b/c YDS, Trad, 220 ft, 2 pitches",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_blownout",
+    "column": "pitches",
+    "from": 0,
+    "to": 2,
+    "why": "pitches 0 is invalid. Mountain Project states 2 pitches (P1 to a belay in a corner under the big upper dihedral). Single source (theCrag Forbidden); locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/107198195/blownout"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_blownout",
+    "column": "length_m",
+    "from": null,
+    "to": 67,
+    "why": "Mountain Project states 220 ft (67 m). Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/107198195/blownout"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_blownout",
+    "column": "access",
+    "from": null,
+    "to": {
+     "fees": "Discover Pass: $10 for one day or $45 for a year.",
+     "rules": "The south and southeast faces close every Feb 1 for nesting peregrine falcons and are expected to reopen around mid-July. The east face is closed for good. Park hours are 8 a.m. to dusk.",
+     "land_manager": "Washington State Parks (Beacon Rock State Park)",
+     "parking_pass": "Discover Pass."
+    },
+    "why": "Brief AA: copy access and permit field for field from wa_jill_s_thrill (read live 2026-11-23; identical on wa_south_face_4_blownout_to_1st_anchor). Re-read 2026-11-23: parks.wa.gov Beacon Rock page still gives 8 a.m. to dusk, south and southeast faces closed from Feb 1 to about mid-July (reopened July 9, 2026), east face permanently closed, northwest/west open; Discover Pass page still $10 one day, $45 annual. Unchanged.",
+    "evidence": [
+     "https://parks.wa.gov/find-parks/state-parks/beacon-rock-state-park",
+     "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_blownout",
+    "column": "permit",
+    "from": null,
+    "to": "Discover Pass required to park. The south and southeast faces close each year on Feb 1 for nesting peregrine falcons and should reopen around mid-July; the east face is closed for good.",
+    "why": "Brief AA: copy access and permit field for field from wa_jill_s_thrill (read live 2026-11-23; identical on wa_south_face_4_blownout_to_1st_anchor). Re-read 2026-11-23: parks.wa.gov Beacon Rock page still gives 8 a.m. to dusk, south and southeast faces closed from Feb 1 to about mid-July (reopened July 9, 2026), east face permanently closed, northwest/west open; Discover Pass page still $10 one day, $45 annual. Unchanged.",
+    "evidence": [
+     "https://parks.wa.gov/find-parks/state-parks/beacon-rock-state-park",
+     "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass"
+    ]
+   }
+  ],
+  "held": [
+   {
+    "table": "routes",
+    "id": "wa_blownout",
+    "column": "fa",
+    "from": "Steve Strauch and Danny Gates, 1969",
+    "to": "Jeff Thomas and Ken Currens, 1976",
+    "why": "HELD: a one-source change to an existing FA. Mountain Project gives Jeff Thomas and Ken Currens, 1976; no second independent source found (theCrag Forbidden; one web search found no guide or history page naming either party). Stored value has no source on file.",
+    "evidence": [
+     "https://www.mountainproject.com/route/107198195/blownout"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_blownout",
+    "column": "gear",
+    "from": "Full rack to 3 in, several to 2 in",
+    "to": [
+     "gear to 2.5 in"
+    ],
+    "why": "HELD: one-source change to an existing value. Mountain Project says gear to 2.5 in; stored says a full rack to 3 in. Also a shape defect: gear is jsonb meant to hold a text[] of short items, but this row stores a bare string.",
+    "evidence": [
+     "https://www.mountainproject.com/route/107198195/blownout"
+    ]
+   }
+  ],
+  "disputed": [
+   "fa: stored 'Steve Strauch and Danny Gates, 1969' vs Mountain Project 'Jeff Thomas and Ken Currens, 1976'"
+  ],
+  "notes": "Grade 5.10b/c matches MP (locked-1src). MP lists Blownout Direct (5.9+, the usual P1 now) and 'Blownout (to 1st anchor)' 5.9+ as variations; wa_south_face_4_blownout_to_1st_anchor is that shorter variant row (its own row, researched in batch U), and wa_blownout_direct no longer exists in the DB. The row's variations array also names Second Wind 5.11d, which has its own row (wa_south_face_4_second_wind); not a defect, but noted. Commitment II not stated by MP: left as is. Beacon Rock page also posts weekly Tue-Thu closures of the Beacon Rock (summit hiking) Trail Oct 1 to end of May for decking work; not a climbing-face closure, not added."
+ }
+}

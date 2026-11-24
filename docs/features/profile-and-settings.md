@@ -185,6 +185,8 @@ profile can also open as `FullProfile` and `Resume` overlays from anywhere (part
 6. **Units / date**: `units` and `dateFmt` are `App` state; each render calls `__set_UNITS(units)` and `__set_DLOCALE(dateFmtToLocale(dateFmt))`
    so module-level `UNITS` / `DLOCALE` (read by formatters) follow. Stored on-device by `loadUnits`/`saveUnits` (`lib/units-pref.js`, key `climbmatch-units`)
    and `loadDateFmt`/`saveDateFmt` (`lib/date-pref.js`); `currentDateLocale()` reads it outside React.
+   *Also show grades in* (French · UIAA · Ewbank · Font, all off by default) is `lib/grade-scales-pref.js` (`useGradeScales`/`setGradeScale`,
+   key `climbmatch-grade-scales`), read by the route page's Composite Grade line, not App state.
 7. **Notification and browse switches** are flag sets: `loadNotifPrefs`/`saveNotifPrefs` (`lib/notif-pref.js`, `climbmatch-notif-prefs`) — the notification switches ALSO follow a signed-in account since 0469 (`notification_state.prefs`, read and saved with the alerts read-state by `useMyNotificationState`/`saveMyNotificationState`; a switch the account saved wins over the device, and the device's are written up on first load),
    `visibleWhileBrowsingPref`/`saveVisibleWhileBrowsing` (`lib/browse-visibility-pref.js`), built on `lib/prefs.js` (`defineFlagSet`). Onboarding shown-once: `lib/onboard-pref.js`.
 8. **Server counts**: gone. `my_trust_counts` (0203) and its reader `useMyTrustCounts` were removed with belay catches (0417, 2026-11-12). A future per-user count RPC keys its query on the user only, never on another query's `dataUpdatedAt` — that fired the RPC on every logs refetch.
@@ -223,7 +225,7 @@ profile can also open as `FullProfile` and `Resume` overlays from anywhere (part
 | `lib/AppFeedback.jsx` | `FeedbackForm`, `RateForm` (the Menu's Feedback and Rate app sheets), `AppFeedbackQueue` (Menu › Review › Feedback & ratings), `devicePlatform`, `storeListing`, `APP_VERSION` |
 | `lib/AccessibilityReports.jsx` | `AccessibilityReportQueue` — the owner's queue of accessibility reports, a section of the Review desk (`review.html#access`) |
 | `supabase/functions/notify-accessibility-report/index.ts` | emails the owner when a report is filed (needs `RESEND_API_KEY`) |
-| `lib/units-pref.js`, `lib/date-pref.js`, `lib/notif-pref.js`, `lib/browse-visibility-pref.js`, `lib/inbox-pref.js`, `lib/onboard-pref.js`, `lib/prefs.js` | device-local preference modules |
+| `lib/units-pref.js`, `lib/date-pref.js`, `lib/notif-pref.js`, `lib/browse-visibility-pref.js`, `lib/inbox-pref.js`, `lib/onboard-pref.js`, `lib/grade-scales-pref.js`, `lib/prefs.js` | device-local preference modules |
 
 ## 4. Data
 - **Supabase tables**: `profiles` (0009; `show_name` 0175; `gender` 0359; `discoverable` 0104/0110; `resume_public` 0177; certifications 0181), `climber_resumes` (0342: owner, or anyone while `resume_public`), `profile_zips` (owner-only) + `zip_centroids` (0189),
@@ -253,6 +255,7 @@ Notes: `docs/guards/settings-and-persistence.md`, `honesty-claims.md`, `units-an
 - **Accessibility reports from guests, and a queue** (0354) — a signed-out visitor can file one with an email; the owner sees them on the Review desk (`review.html#access`; a Menu tile until 2026-11-23); the statement promises a reply within 5 business days.
 - **Accessibility reports reach someone** (0343) — the statement's report form saves to `accessibility_reports`; it used to point at the Feedback button, which only copies to the clipboard.
 - **Profile: Vouches you’ve received** — what partners said about you (ratings, words, skills, would climb again) shows on your own Profile tab above the vouches you gave, as LinkedIn keeps Received above Given; it was reachable only through View public profile, the tab showed just a count.
+- **Profile: Vouches are two buttons, each opening its own page** (owner 2026-11-23): the Profile tab's *Vouches* card holds *Vouches you've received* (its count, or *None yet* / *Couldn’t load*) and *Vouches you've given* (shown once you have vouched for someone — no read flag tells a failed read of that list from none). Each opens a full-screen page in the 520px column with *← Back* (Esc also closes): received lists every `VouchCard`; given lists every climber with *Edit* (opens `GiveVouch`) and *Revoke*. They replaced the first two/three vouches drawn inline with a *See all N →* bottom sheet. `src/components/MeTab.tsx` (`vouchesInOpen`, `vouchesGivenOpen`).
 - **Menu: Your crews + shortcuts first** — a Crews tile and a *Your crews* list; both shortcut lists sit above the tiles.
 - **Menu: Saved & lists + Edit profile** — saved areas, challenges and climbing lists get Menu tiles (the saved-searches tile went with the feature, 2026-11-05); Edit profile sits beside View profile on the card.
 - **Menu lists your groups** — a *Your groups* section with up to five, newest post first, each opening the group.
