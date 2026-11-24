@@ -9,7 +9,7 @@
 -- and commit the result in the same PR. `npm run gen:schema -- --check` exits 1 when this
 -- file has drifted from the live database.
 --
--- Counts: 90 tables, 894 columns, 490 keyed/checked constraints (160 foreign keys), 259 RLS policies.
+-- Counts: 91 tables, 911 columns, 500 keyed/checked constraints (163 foreign keys), 263 RLS policies.
 -- Not covered here: views, functions, triggers, standalone indexes (see supabase/migrations/).
 
 -- ── Foreign keys ───────────────────────────────────────────────────────────────
@@ -139,6 +139,9 @@
 -- restricted_users (restricted_users_restrictor_fkey): FOREIGN KEY (restrictor) REFERENCES auth.users(id) ON DELETE CASCADE
 -- review_ai_verdicts (review_ai_verdicts_area_id_fkey): FOREIGN KEY (area_id) REFERENCES areas(id) ON DELETE CASCADE
 -- review_ai_verdicts (review_ai_verdicts_route_id_fkey): FOREIGN KEY (route_id) REFERENCES routes(id) ON DELETE CASCADE
+-- review_worklist (review_worklist_area_id_fkey): FOREIGN KEY (area_id) REFERENCES areas(id) ON DELETE CASCADE
+-- review_worklist (review_worklist_resolved_by_fkey): FOREIGN KEY (resolved_by) REFERENCES profiles(id) ON DELETE SET NULL
+-- review_worklist (review_worklist_route_id_fkey): FOREIGN KEY (route_id) REFERENCES routes(id) ON DELETE CASCADE
 -- route_base_checkins (route_base_checkins_route_id_fkey): FOREIGN KEY (route_id) REFERENCES routes(id) ON DELETE CASCADE
 -- route_base_checkins (route_base_checkins_user_id_fkey): FOREIGN KEY (user_id) REFERENCES auth.users(id) ON DELETE CASCADE
 -- route_base_pin_changes (route_base_pin_changes_route_id_fkey): FOREIGN KEY (route_id) REFERENCES routes(id) ON DELETE CASCADE
@@ -663,6 +666,7 @@ CREATE TABLE public.contributions (
   applied_value jsonb,
   reason text,
   result_id text,
+  prior_value jsonb,
   CONSTRAINT contributions_pkey PRIMARY KEY (id),
   CONSTRAINT contributions_applied_value_len_ck CHECK (((applied_value IS NULL) OR (length((applied_value)::text) <= 20000))),
   CONSTRAINT contributions_area_field_ck CHECK (((NOT ((area_id IS NOT NULL) AND (route_id IS NULL) AND (kind = 'field'::text))) OR (field = ANY (ARRAY['blurb'::text, 'approach'::text, 'approach_min'::text, 'parking_note'::text, 'parking_pin'::text, 'rock'::text, 'aspect'::text, 'season_months'::text])))),
@@ -678,7 +682,7 @@ CREATE TABLE public.contributions (
 ALTER TABLE public.contributions ENABLE ROW LEVEL SECURITY;
 CREATE POLICY "authed can contribute" ON public.contributions AS PERMISSIVE FOR INSERT TO public WITH CHECK (((( SELECT auth.uid() AS uid) IS NOT NULL) AND (contributor = (( SELECT auth.uid() AS uid))::text)));
 CREATE POLICY "contribution standing allows field edits" ON public.contributions AS RESTRICTIVE FOR INSERT TO public WITH CHECK (((kind <> ALL (ARRAY['field'::text, 'new_route'::text, 'new_area'::text])) OR can_contribute_fields(auth.uid())));
-CREATE POLICY "contributions public read" ON public.contributions AS PERMISSIVE FOR SELECT TO public USING (true);
+CREATE POLICY "contributions read: live, own, or a reviewer" ON public.contributions AS PERMISSIVE FOR SELECT TO public USING (((status = 'approved'::text) OR (kind = ANY (ARRAY['photo'::text, 'pair'::text, 'sun'::text])) OR (contributor = (( SELECT auth.uid() AS uid))::text) OR can_review(( SELECT auth.uid() AS uid))));
 CREATE POLICY "own photo, pairing or sun vote, or an admin" ON public.contributions AS PERMISSIVE FOR DELETE TO public USING ((((kind = ANY (ARRAY['photo'::text, 'pair'::text, 'sun'::text])) AND (contributor IS NOT NULL) AND (contributor = (( SELECT auth.uid() AS uid))::text)) OR is_admin(( SELECT auth.uid() AS uid))));
 CREATE POLICY "restricted accounts cannot post" ON public.contributions AS RESTRICTIVE FOR INSERT TO public WITH CHECK (is_active_user(( SELECT auth.uid() AS uid)));
 
@@ -794,6 +798,7 @@ CREATE TABLE public.crew_members (
   gear_extras text[] NOT NULL DEFAULT '{}'::text[],
   gear_counts jsonb NOT NULL DEFAULT '{}'::jsonb,
   gear_wanted jsonb NOT NULL DEFAULT '{}'::jsonb,
+  confirmed_at timestamp with time zone,
   CONSTRAINT crew_members_pkey PRIMARY KEY (crew_id, user_id),
   CONSTRAINT crew_members_crew_id_fkey FOREIGN KEY (crew_id) REFERENCES crews(id) ON DELETE CASCADE,
   CONSTRAINT crew_members_invited_by_fkey FOREIGN KEY (invited_by) REFERENCES profiles(id) ON DELETE SET NULL,
@@ -1463,12 +1468,13 @@ CREATE TABLE public.moderation_actions (
   note text,
   created_at timestamp with time zone NOT NULL DEFAULT now(),
   CONSTRAINT moderation_actions_pkey PRIMARY KEY (id),
-  CONSTRAINT moderation_actions_action_check CHECK ((action = ANY (ARRAY['remove'::text, 'hold'::text, 'restore'::text, 'auto_hold'::text, 'suspend'::text, 'ban'::text, 'reinstate'::text, 'remove_all'::text, 'approve_contribution'::text, 'reject_contribution'::text, 'contrib_warn'::text, 'contrib_restrict'::text, 'contrib_ban'::text, 'contrib_reinstate'::text, 'lock_field'::text, 'unlock_field'::text, 'flag_fixed'::text, 'flag_dismissed'::text]))),
+  CONSTRAINT moderation_actions_action_check CHECK ((action = ANY (ARRAY['remove'::text, 'hold'::text, 'restore'::text, 'auto_hold'::text, 'suspend'::text, 'ban'::text, 'reinstate'::text, 'remove_all'::text, 'approve_contribution'::text, 'reject_contribution'::text, 'contrib_warn'::text, 'contrib_restrict'::text, 'contrib_ban'::text, 'contrib_reinstate'::text, 'lock_field'::text, 'unlock_field'::text, 'flag_fixed'::text, 'flag_dismissed'::text, 'withdraw_approval'::text, 'grant_reviewer'::text, 'revoke_reviewer'::text]))),
   CONSTRAINT moderation_actions_actor_fkey FOREIGN KEY (actor) REFERENCES auth.users(id) ON DELETE SET NULL,
   CONSTRAINT moderation_actions_report_id_fkey FOREIGN KEY (report_id) REFERENCES user_reports(id) ON DELETE SET NULL
 );
 ALTER TABLE public.moderation_actions ENABLE ROW LEVEL SECURITY;
 CREATE POLICY "admins read moderation actions" ON public.moderation_actions AS PERMISSIVE FOR SELECT TO public USING (is_admin(( SELECT auth.uid() AS uid)));
+CREATE POLICY "reviewers read edit and flag actions" ON public.moderation_actions AS PERMISSIVE FOR SELECT TO public USING (((target_kind = ANY (ARRAY['contribution'::text, 'route_flag'::text])) AND can_review(( SELECT auth.uid() AS uid))));
 
 CREATE TABLE public.moderation_appeals (
   id uuid NOT NULL DEFAULT gen_random_uuid(),
@@ -1660,6 +1666,7 @@ CASE
 END) STORED,
   skill_practiced jsonb,
   pronouns text[],
+  is_reviewer boolean NOT NULL DEFAULT false,
   CONSTRAINT profiles_pkey PRIMARY KEY (id),
   CONSTRAINT profiles_username_key UNIQUE (username),
   CONSTRAINT profiles_account_type_check CHECK ((account_type = ANY (ARRAY['primary'::text, 'secondary'::text]))),
@@ -1725,6 +1732,34 @@ CREATE TABLE public.review_ai_verdicts (
 );
 ALTER TABLE public.review_ai_verdicts ENABLE ROW LEVEL SECURITY;
 CREATE POLICY "ai verdicts read by admin" ON public.review_ai_verdicts AS PERMISSIVE FOR SELECT TO public USING (is_admin(auth.uid()));
+CREATE POLICY "reviewers read ai verdicts" ON public.review_ai_verdicts AS PERMISSIVE FOR SELECT TO public USING (can_review(( SELECT auth.uid() AS uid)));
+
+CREATE TABLE public.review_worklist (
+  id uuid NOT NULL DEFAULT gen_random_uuid(),
+  audit text NOT NULL,
+  item_key text NOT NULL,
+  route_id text,
+  area_id text,
+  title text NOT NULL,
+  detail text,
+  found_at timestamp with time zone NOT NULL DEFAULT now(),
+  last_seen timestamp with time zone NOT NULL DEFAULT now(),
+  status text NOT NULL DEFAULT 'open'::text,
+  resolved_by uuid,
+  resolved_at timestamp with time zone,
+  note text,
+  CONSTRAINT review_worklist_pkey PRIMARY KEY (id),
+  CONSTRAINT review_worklist_audit_item_key_key UNIQUE (audit, item_key),
+  CONSTRAINT review_worklist_detail_check CHECK (((detail IS NULL) OR (char_length(detail) <= 4000))),
+  CONSTRAINT review_worklist_note_check CHECK (((note IS NULL) OR (char_length(note) <= 1000))),
+  CONSTRAINT review_worklist_status_check CHECK ((status = ANY (ARRAY['open'::text, 'done'::text, 'ignored'::text]))),
+  CONSTRAINT review_worklist_title_check CHECK (((char_length(title) >= 1) AND (char_length(title) <= 300))),
+  CONSTRAINT review_worklist_area_id_fkey FOREIGN KEY (area_id) REFERENCES areas(id) ON DELETE CASCADE,
+  CONSTRAINT review_worklist_resolved_by_fkey FOREIGN KEY (resolved_by) REFERENCES profiles(id) ON DELETE SET NULL,
+  CONSTRAINT review_worklist_route_id_fkey FOREIGN KEY (route_id) REFERENCES routes(id) ON DELETE CASCADE
+);
+ALTER TABLE public.review_worklist ENABLE ROW LEVEL SECURITY;
+CREATE POLICY "admins read the worklist" ON public.review_worklist AS PERMISSIVE FOR SELECT TO public USING (is_admin(( SELECT auth.uid() AS uid)));
 
 CREATE TABLE public.route_base_checkins (
   id uuid NOT NULL DEFAULT gen_random_uuid(),
@@ -1844,6 +1879,7 @@ CREATE TABLE public.route_flags (
 );
 ALTER TABLE public.route_flags ENABLE ROW LEVEL SECURITY;
 CREATE POLICY "flags read own or admin" ON public.route_flags AS PERMISSIVE FOR SELECT TO public USING (((reporter = ( SELECT auth.uid() AS uid)) OR is_admin(( SELECT auth.uid() AS uid))));
+CREATE POLICY "reviewers read flags" ON public.route_flags AS PERMISSIVE FOR SELECT TO public USING (can_review(( SELECT auth.uid() AS uid)));
 
 CREATE TABLE public.route_link_ups (
   id text NOT NULL,
@@ -2035,6 +2071,7 @@ CREATE TABLE public.routes (
   extra_facts jsonb,
   glacier_travel text,
   snow_in_season text,
+  snow_free_from text,
   CONSTRAINT routes_pkey PRIMARY KEY (id),
   CONSTRAINT routes_anchor_len CHECK (((anchor IS NULL) OR ((char_length(anchor) >= 1) AND (char_length(anchor) <= 80)))),
   CONSTRAINT routes_approach_loss_ft_range CHECK (((approach_loss_ft IS NULL) OR ((approach_loss_ft >= 0) AND (approach_loss_ft <= 20000)))),
@@ -2050,6 +2087,7 @@ CREATE TABLE public.routes (
   CONSTRAINT routes_rack_items_array CHECK (((rack_items IS NULL) OR (jsonb_typeof(rack_items) = 'array'::text))),
   CONSTRAINT routes_return_gain_ft_range CHECK (((return_gain_ft IS NULL) OR ((return_gain_ft >= 0) AND (return_gain_ft <= 20000)))),
   CONSTRAINT routes_rock_quality_len CHECK (((rock_quality IS NULL) OR ((char_length(rock_quality) >= 1) AND (char_length(rock_quality) <= 160)))),
+  CONSTRAINT routes_snow_free_from_mmdd CHECK (((snow_free_from IS NULL) OR (snow_free_from ~ '^(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$'::text))),
   CONSTRAINT routes_snow_in_season_yn CHECK (((snow_in_season IS NULL) OR (snow_in_season = ANY (ARRAY['yes'::text, 'no'::text])))),
   CONSTRAINT routes_sun_len CHECK (((sun IS NULL) OR ((char_length(sun) >= 1) AND (char_length(sun) <= 160)))),
   CONSTRAINT routes_variations_is_array CHECK (((variations IS NULL) OR (jsonb_typeof(variations) = 'array'::text))),
@@ -2185,7 +2223,7 @@ CREATE TABLE public.user_notices (
   read_at timestamp with time zone,
   CONSTRAINT user_notices_pkey PRIMARY KEY (id),
   CONSTRAINT user_notices_body_check CHECK (((body IS NULL) OR (char_length(body) <= 2000))),
-  CONSTRAINT user_notices_kind_check CHECK ((kind = ANY (ARRAY['contribution_approved'::text, 'contribution_rejected'::text, 'contribution_warning'::text, 'contribution_restricted'::text, 'contribution_banned'::text, 'contribution_reinstated'::text, 'flag_resolved'::text]))),
+  CONSTRAINT user_notices_kind_check CHECK ((kind = ANY (ARRAY['contribution_approved'::text, 'contribution_rejected'::text, 'contribution_warning'::text, 'contribution_restricted'::text, 'contribution_banned'::text, 'contribution_reinstated'::text, 'flag_resolved'::text, 'contribution_withdrawn'::text]))),
   CONSTRAINT user_notices_title_check CHECK (((char_length(title) >= 1) AND (char_length(title) <= 200))),
   CONSTRAINT user_notices_user_id_fkey FOREIGN KEY (user_id) REFERENCES auth.users(id) ON DELETE CASCADE
 );

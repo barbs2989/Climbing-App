@@ -285,6 +285,7 @@
       "field",
       "id",
       "kind",
+      "prior_value",
       "reason",
       "result_id",
       "review_note",
@@ -308,6 +309,13 @@
       "crew_id",
       "date",
       "rank",
+      "user_id"
+    ],
+    "crew_departures": [
+      "agreed_date",
+      "crew_id",
+      "left_at",
+      "removed_by_other",
       "user_id"
     ],
     "crew_email_invites": [
@@ -343,6 +351,7 @@
       "route_id"
     ],
     "crew_members": [
+      "confirmed_at",
       "crew_id",
       "gear_claims",
       "gear_counts",
@@ -380,6 +389,28 @@
       "risk_tolerance",
       "updated_at",
       "user_id"
+    ],
+    "crew_trip_replies": [
+      "about_id",
+      "created_at",
+      "note",
+      "outcome",
+      "reply",
+      "report_id",
+      "reporter_id",
+      "trip_crew",
+      "trip_date"
+    ],
+    "crew_trip_reports": [
+      "about_id",
+      "created_at",
+      "crew_id",
+      "id",
+      "outcome",
+      "reporter_id",
+      "trip_crew",
+      "trip_date",
+      "updated_at"
     ],
     "crews": [
       "agreed_date",
@@ -715,6 +746,7 @@
       "hiking_speed_ft_hr",
       "id",
       "is_admin",
+      "is_reviewer",
       "level",
       "location",
       "mutuals_visible",
@@ -766,6 +798,21 @@
       "sources",
       "suggested_value",
       "verdict"
+    ],
+    "review_worklist": [
+      "area_id",
+      "audit",
+      "detail",
+      "found_at",
+      "id",
+      "item_key",
+      "last_seen",
+      "note",
+      "resolved_at",
+      "resolved_by",
+      "route_id",
+      "status",
+      "title"
     ],
     "route_base_checkins": [
       "accuracy_m",
@@ -980,6 +1027,7 @@
       "seasonal_guidance",
       "seasonal_hazards",
       "sling_rack",
+      "snow_free_from",
       "snow_grade_num",
       "snow_in_season",
       "sort_order",
