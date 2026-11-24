@@ -1355,6 +1355,11 @@ rows. Its build script is gone; new reviews write the column.
 - **Still on a guess:** the unsettled routes `npm run audit:glacier-travel -- --state <slug>` lists, about 300
   across all states. Each needs a page read, and the search budget, not the method, is what limits it. Section 1 and 2 of `check:alpine-conditions` hold the rule
   (21 assertions); the data is only as good as the review.
+  A third research round on BC, CO, WY and AK (146 routes, `<state>/research-out-*.json`) settled nothing
+  new. Page reads were mostly refused, and the researchers stopped after 2 to 6 searches. Colorado's two web
+  snow answers were already "yes". Wyoming's one web "no glacier" (Dike Route, Middle Teton) was held at
+  unsure, because its own text sends bail-out parties onto the Middle Teton Glacier. Before another round on
+  these states, make sure WebFetch is permitted for the researchers.
 
   - **HOUR BY HOUR + THE GUST WINDOW (2026-10-08, owner: "clear and exact and accurate science").**
     Section 12 of the guard. Three things it holds, each measured, not assumed:
