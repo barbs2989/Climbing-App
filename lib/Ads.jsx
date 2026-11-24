@@ -30,7 +30,7 @@ export const adPreviewOn = () => !!(import.meta.env.DEV && typeof location !== "
 /** Draw the two slots at all? Real ads, or the dev server's preview boxes. */
 export const adsActive = () => ADS_ON || adPreviewOn();
 
-const BOX = (w, h) => ({ width: w, height: h, boxSizing: "border-box", border: "1px dashed #4a443c", borderRadius: 10, background: "repeating-linear-gradient(45deg,#1a1916,#1a1916 12px,#1a2029 12px,#1a2029 24px)", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", color: "#a69d90", fontSize: 12, gap: 6 });
+const BOX = (w, h) => ({ width: w, height: h, boxSizing: "border-box", border: "1px dashed #635b50", borderRadius: 10, background: "repeating-linear-gradient(45deg,#1a1916,#1a1916 12px,#1a2029 12px,#1a2029 24px)", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", color: "#a69d90", fontSize: 12, gap: 6 });
 const Label = () => <div style={{ fontSize: 10.5, letterSpacing: 0.5, textTransform: "uppercase", color: "#a69d90", margin: "0 0 4px 2px" }}>Advertisement</div>;
 
 let scriptAsked = false;

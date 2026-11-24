@@ -452,7 +452,7 @@ export default function GpsSubmissionModal({ routeId, routeName, crag, parkAt, c
         {drawing && !submitting && (drawPts.length < MIN_RECORDED_PTS || drawPending) ? <div style={{ fontSize: 12.5, color: C.textMuted, marginBottom: 8, textAlign: 'right' }}>{drawPts.length < MIN_RECORDED_PTS ? tx('Tap at least ' + MIN_RECORDED_PTS + ' points along the trail to submit it (you have ' + drawPts.length + ').') : 'Still following the trail for a leg.'}</div> : null}
         <div style={{ display: 'flex', gap: 10 }}>
           <button onClick={onClose} disabled={submitting} style={S.secondary}>Cancel</button>
-          <button onClick={handleSubmit} disabled={submitting || (drawing && (drawPts.length < MIN_RECORDED_PTS || drawPending))} title={drawing && drawPts.length < MIN_RECORDED_PTS ? tx('Tap at least ' + MIN_RECORDED_PTS + ' points along the trail') : drawing && drawPending ? 'Still following the trail for a leg' : undefined} style={{ ...S.primary, flex: 2, ...(submitting || (drawing && (drawPts.length < MIN_RECORDED_PTS || drawPending)) ? { background: C.border, color: C.textMuted, cursor: 'default' } : {}) }}>
+          <button onClick={handleSubmit} disabled={submitting || (drawing && (drawPts.length < MIN_RECORDED_PTS || drawPending))} title={drawing && drawPts.length < MIN_RECORDED_PTS ? tx('Tap at least ' + MIN_RECORDED_PTS + ' points along the trail') : drawing && drawPending ? 'Still following the trail for a leg' : undefined} style={{ ...S.primary, flex: 2, ...(submitting || (drawing && (drawPts.length < MIN_RECORDED_PTS || drawPending)) ? { background: C.border, color: C.textSub, cursor: 'default' } : {}) }}>
             {submitting ? 'Submitting…' : crag ? 'Submit trail' : 'Submit track'}
           </button>
         </div>
