@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { createPortal } from "react-dom";
-import { C, SL, mtnOf } from "../../ClimbMatchCore.jsx";
+import { C, SL, routePlace } from "../../ClimbMatchCore.jsx";
 import { POP_CLOSE } from "../../lib/popupChrome.js";
 
 /** A saved list and the climbs on it a crew can be formed for — App's crewPickGroups(). */
@@ -46,7 +46,7 @@ export function SavedClimbList({ picks, formedIds = [], onRoute, disabled = fals
     {shown.map(g => <div key={g.list.id} style={{ marginBottom: 10 }}>
       {g.list.name ? <div style={{ fontSize: 11, fontWeight: 800, letterSpacing: 0.4, textTransform: "uppercase", color: C.label, margin: "0 2px 5px", overflowWrap: "anywhere" }}>{g.list.name}</div> : null}
       <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
-        {g.rs.map(r => { const has = formedIds.includes(r.id); const off = has || disabled; const where = [r.grade, mtnOf(r)].filter(Boolean).join(" · ");
+        {g.rs.map(r => { const has = formedIds.includes(r.id); const off = has || disabled; const where = [r.grade, routePlace(r)].filter(Boolean).join(" · ");
           return <button key={r.id} type="button" disabled={off} onClick={() => onRoute(r.id)} style={{ ...ROW, cursor: off ? "default" : "pointer", color: off ? C.textMuted : C.text }}>
             <span style={{ flex: 1, minWidth: 0 }}><span style={{ display: "block", fontSize: 13.5, fontWeight: 700, overflowWrap: "anywhere" }}>{r.name}</span>{where ? <span style={SUB}>{where}</span> : null}</span>
             {has ? <span style={{ flexShrink: 0, fontSize: 11, fontWeight: 700, color: C.textSub, border: "1px solid " + C.border, borderRadius: 20, padding: "2px 8px" }}>Crew formed</span> : null}
