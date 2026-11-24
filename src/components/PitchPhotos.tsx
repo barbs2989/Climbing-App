@@ -18,5 +18,5 @@ export default function PitchPhotos({items,onAdd}: PitchPhotosProps){
     {onAdd?<div style={{marginTop:items.length?8:0}}>
       <button disabled={busy} onClick={function(){if(inp.current)inp.current.click();}} style={{...BTN_SM,background:C.surface,color:C.blue,border:"1px solid "+C.border,display:"inline-flex",alignItems:"center",gap:6,opacity:busy?0.6:1,cursor:busy?"default":"pointer"}}><ActionIcon name="camera" size={14} color={C.blue}/>{busy?"Adding…":(items.length?"Add another photo of this pitch":"Add a photo of this pitch")}</button>
       <input ref={inp} type="file" accept="image/*" multiple hidden aria-label="Add a photo of this pitch" onChange={function(e){const fs=Array.from(e.target.files||[]);e.target.value="";if(!fs.length)return;setBusy(true);Promise.resolve(onAdd(fs)).finally(function(){setBusy(false);});}}/>
-    </div>:(items.length?null:<div style={{background:C.card,borderRadius:8,padding:"12px",textAlign:"center",border:`1px dashed ${C.border}`,fontSize:12,color:C.textMuted,lineHeight:1.5}}>No photos of this pitch yet. Sign in to add one.</div>)}
+    </div>:(items.length?null:<div style={{fontSize:12,color:C.textMuted,lineHeight:1.5}}>No photos of this pitch yet. Sign in to add one.</div>)}
   </div>;}
