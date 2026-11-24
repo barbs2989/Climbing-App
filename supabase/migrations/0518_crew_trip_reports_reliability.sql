@@ -229,8 +229,9 @@ grant execute on function public.reply_to_trip_report(uuid, text, text) to authe
 -- ── reads ─────────────────────────────────────────────────────────────────────────────────────────────────────────
 -- The recap sheet for one crew, for a confirmed member: who can be reported (crewmates, and anyone who left in the 14
 -- days before the day), what I filed about each, and whether I said it was called off (the row with about_id null).
+-- With each of my reports, THEIR answer to it: a note that only its writer could read would be context for nobody.
 create or replace function public.crew_recap(p_crew uuid)
-returns table(about_id uuid, departed boolean, my_outcome text, trip_date date, is_open boolean)
+returns table(about_id uuid, departed boolean, my_outcome text, trip_date date, is_open boolean, their_reply text, their_note text)
 language plpgsql stable security definer
 set search_path = public, pg_temp
 as $$
@@ -246,10 +247,11 @@ begin
       select x.user_id, true from public.crew_departures x where x.crew_id = p_crew and x.user_id <> me and x.left_at >= (d - 14)::timestamptz
         and not exists (select 1 from public.crew_members m2 where m2.crew_id = p_crew and m2.user_id = x.user_id and m2.status = 'confirmed')
     )
-    select mates.uid, mates.gone, r.outcome, d, (current_date between d and d + 14)
+    select mates.uid, mates.gone, r.outcome, d, (current_date between d and d + 14), y.reply, y.note
       from mates left join public.crew_trip_reports r on r.crew_id = p_crew and r.reporter_id = me and r.about_id = mates.uid
+                 left join public.crew_trip_replies y on y.report_id = r.id
     union all
-    select null::uuid, false, r.outcome, d, (current_date between d and d + 14)
+    select null::uuid, false, r.outcome, d, (current_date between d and d + 14), null::text, null::text
       from public.crew_trip_reports r where r.crew_id = p_crew and r.reporter_id = me and r.about_id is null;
 end $$;
 revoke all on function public.crew_recap(uuid) from public, anon;
