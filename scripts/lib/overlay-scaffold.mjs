@@ -229,6 +229,9 @@ export const OVERLAY_PAYLOADS = {
     needsData: "`crews.find(id)` must hit AND that crew's route must resolve",
   },
   recapId: { expr: "(crews[0]||{}).id", needsData: "`crews.find(x=>x.id===recapId)` — needs a crew" },
+  // 0519: "Your side" of a trip report about you. The report comes from my_trip_reports_about_me, which only a real
+  // crew trip that a crewmate reported on can fill, so a walk opens the first one when the account has one.
+  tripReplyId: { expr: "(((tripAboutQ.data)||[])[0]||{}).id", needsData: "`tripAboutQ.data.find(id)` — needs a revealed trip report about the signed-in climber (0519)" },
   groupInvite: {
     expr: "(createdGroups.concat(GROUPS)[0]||{}).id",
     needsData: "`createdGroups.concat(GROUPS).find(...)` — needs a group",

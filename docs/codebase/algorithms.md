@@ -4,8 +4,37 @@ Moved verbatim from `CLAUDE.md`, which keeps a one-paragraph summary of the rule
 Read this before doing the kind of work it describes. Where the text says "this file" it means the
 project documentation as a whole — `CLAUDE.md`, `docs/codebase/` and `docs/guards/`.
 
-- `compat(a, b)` (~L335) — partner compatibility score (20–99) from shared disciplines, grade closeness, shared objectives, **shared listed areas** (`partnerAreaPaths`, 0300), verification, pace (`hikingSpeedFtHr`), and availability overlap. Every term is BOUNDED and the total is RESCALED onto that range; it does not clamp.
-  - **LISTED AREAS (2026-10-15, 0300).** Crag partners are found by area, so a yes/no term `CMAX_AREA=14`
+- `compat(a, b)` (~L1414) — partner compatibility score (20–99) from shared disciplines (16), grade closeness (28),
+  **where you climb** (24: shared objectives OR listed areas), verification of both sides (8), pace (10) and
+  availability overlap (12). Every term is BOUNDED and the total is RESCALED onto that range; it does not clamp.
+  - **THE COMPAT AUDIT OF 2026-11-23 (owner approved all four fixes).** Measured by running the real `compat()` over
+    the 5 seed climbers and 11 real-row-shaped personas:
+    1. **One number for the pair.** `verified` read only the OTHER climber, so 12 of 20 seed pairs differed by
+       direction, by up to 6 points. Each verified side is now half the term; 0 pairs differ.
+    2. **WHERE YOU CLIMB is one term (`CMAX_WHERE` 24), replacing `CMAX_OBJ` 20 + `CMAX_AREA` 14.** A crag climber never
+       saves a mountain objective (see LISTED AREAS below), so the objectives term could never be earned and a crag pair
+       that matched on everything topped out at 84%; an alpine pair with no listed area at 89%. Now the same listed
+       area is full marks, one shared objective three quarters, two or more full, and the term takes the higher. Both
+       reach 99. Known only for a COMPARABLE pair, which was already `compatUnknown`'s rule.
+    3. **Every profile ladder is a grade.** The term read `sportGrade` / `tradGrade` / `boulderGrade` only; ice, alpine,
+       mixed and aid grades (`climb_grades`, 0237) were read by nothing, so an ice climber always read *Grade: not
+       comparable*. It now takes the closest kind both climbers set (sport, trad, alpine, ice, mixed, aid, boulder); on
+       the ice, mixed and aid ladders a number grade is two steps and a "+" one, so WI2 vs WI4 is *Far apart*. The
+       cross comparison stays a YDS-only fallback (sport, trad, alpine).
+    4. **One rule for a blank: half the term.** It was half for grade and pace, a third for availability and nothing
+       for disciplines, objectives and areas, so WHICH field was left blank decided the score. Two empty profiles now
+       score 56% rather than 37%, which no screen shows: a real row with 3+ unknowns still refuses to print a %.
+    `check:match-percent` section 8 pins all four, and `scripts/oneoff/inject-match-percent-cases.mjs` reverts each
+    one on its own (19/19 as expected).
+  - **RELIABILITY (`CMAX_REL` 12, 0519, owner 2026-11-23).** Each climber's record (`relRecordOf`: crewmates' trip reports
+    from `reliability_of_users`, plus their vouches' Reliability stars) becomes a rate (`relRate`): a trip is worth 1 on time,
+    0.9 cancelled with notice, 0.75 late, 0.35 cancelled last minute, 0 no-show; each vouch's stars half a trip at
+    (stars−1)/4; pulled toward 0.85 by two imaginary trips, so one bad day on a short record does not sink it (one no-show
+    alone reads 0.57). The term is `6 × r(me) + 6 × r(them)`, a missing record counting 0.5, so it stays SYMMETRIC like
+    verified and no record is never a bad mark. It is not one of `compatUnknown`'s signals: a new climber's blank record must
+    not push real partner rows over the "limited info" line. The checklist line is plain counts (`reliabilityText`).
+    `check:match-percent` section 9.
+  - **LISTED AREAS (2026-10-15, 0300; merged into WHERE YOU CLIMB on 2026-11-23, above).** Crag partners are found by area, so a yes/no term `CMAX_AREA=14`
     (the weight of ONE shared objective, deliberately — one shared crag is one shared climb's worth of
     "we climb in the same place") fires when any of a's listed-area paths is b's, or sits inside it, or
     contains it (`areaPathsOverlap`, the client form of the ltree `<@`/`@>` reach). In the same change
