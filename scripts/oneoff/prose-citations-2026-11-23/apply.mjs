@@ -1,4 +1,4 @@
-// Rewrites the WA route prose that named a third party as its source (audit:prose-citations, 2026-11-23,
+// Rewrites the route prose that named a third party as its source (audit:prose-citations, 2026-11-23,
 // after Climber Kyle and "per Mazamas" joined NAMED). Each edit swaps one exact sentence for our own words
 // carrying the same facts; nothing new is added. Kept on purpose, as the owner's rule allows: first-ascent
 // credits, a club as the OPERATOR of trips or the owner of a grading scale, a guidebook or map to carry,
@@ -19,7 +19,9 @@ const edits = JSON.parse(fs.readFileSync(path.join(HERE, "edits.json"), "utf8"))
 const key = requireServiceKey();
 
 const groups = new Map();
-for (const [id, col, from, to] of edits) { const k = id + "\0" + col; if (!groups.has(k)) groups.set(k, { id, col, list: [] }); groups.get(k).list.push([from, to]); }
+// An edit's optional 5th element is how many times its sentence occurs in the column (default 1):
+// a climate block can say the same thing for two seasons.
+for (const [id, col, from, to, times] of edits) { const k = id + "\0" + col; if (!groups.has(k)) groups.set(k, { id, col, list: [] }); groups.get(k).list.push([from, to, times || 1]); }
 
 // Every string leaf of a value, rewritten by fn; returns the new value.
 function mapStrings(v, fn) {
@@ -42,9 +44,9 @@ let bad = 0;
 for (const { id, col, list } of groups.values()) {
   const cur = await read(id, col);
   let next = cur;
-  for (const [from, to] of list) {
+  for (const [from, to, times] of list) {
     const n = count(next, from);
-    if (n !== 1) { console.error(`MISS ${id}.${col}: matched ${n}x — ${from.slice(0, 70)}`); bad++; continue; }
+    if (n !== times) { console.error(`MISS ${id}.${col}: matched ${n}x — ${from.slice(0, 70)}`); bad++; continue; }
     next = mapStrings(next, t => t.split(from).join(to));
   }
   (before[id] = before[id] || {})[col] = cur;
