@@ -42,7 +42,7 @@ export function SavedClimbList({ picks, formedIds = [], onRoute, disabled = fals
     <div style={{ fontSize: 11.5, color: C.textMuted, lineHeight: 1.45, margin: "-4px 0 8px" }}>
       {intro ? intro : total ? "Every climb on your lists — My Objectives first, then each list you made. A climb on two lists shows once." : (emptyText || "Climbs you save to My Objectives or any of your lists show up here.")}
     </div>
-    {total > FILTER_AT ? <input value={q} onChange={e => setQ(e.target.value)} placeholder="Filter your saved climbs" aria-label="Filter your saved climbs" style={{ width: "100%", boxSizing: "border-box", padding: "9px 12px", borderRadius: 10, border: "1px solid " + C.border, background: C.bg, color: C.text, marginBottom: 8, fontFamily: "inherit" }} /> : null}
+    {total > FILTER_AT ? <input value={q} onChange={e => setQ(e.target.value)} placeholder="Filter your saved climbs" aria-label="Filter your saved climbs" style={{ width: "100%", boxSizing: "border-box", padding: "9px 12px", borderRadius: 10, border: "1px solid " + C.field, background: C.bg, color: C.text, marginBottom: 8, fontFamily: "inherit" }} /> : null}
     {shown.map(g => <div key={g.list.id} style={{ marginBottom: 10 }}>
       {g.list.name ? <div style={{ fontSize: 11, fontWeight: 800, letterSpacing: 0.4, textTransform: "uppercase", color: C.label, margin: "0 2px 5px", overflowWrap: "anywhere" }}>{g.list.name}</div> : null}
       <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>

@@ -54,7 +54,7 @@ export default function CrewInviteModal({climber,climbers,route,onClose,onSend}:
         <div style={{minWidth:0}}><div style={{fontSize:13.5,fontWeight:700,color:C.text,overflowWrap:"anywhere"}}>{route.name}</div><div style={{fontSize:11.5,color:"#fff",fontWeight:600}}>{withProtection(route.grade,route)}</div></div>
       </div>
       <div style={{fontFamily:FONT_DISPLAY,fontSize:18,lineHeight:1.15,color:C.text,fontWeight:600,textTransform:"uppercase",letterSpacing:0.7,marginBottom:8}}>Add a note (optional)</div>
-      <textarea aria-label="Add a note (optional)" value={note} onChange={e=>setNote(e.target.value.slice(0,MAX))} placeholder={suggested} rows={4} style={{width:"100%",padding:"11px 12px",borderRadius:11,border:"1px solid "+C.border,background:C.bg,color:C.text,fontSize:13.5,lineHeight:1.5,boxSizing:"border-box",resize:"vertical",fontFamily:"inherit",outline:"none"}}/>
+      <textarea aria-label="Add a note (optional)" value={note} onChange={e=>setNote(e.target.value.slice(0,MAX))} placeholder={suggested} rows={4} style={{width:"100%",padding:"11px 12px",borderRadius:11,border:"1px solid "+C.field,background:C.bg,color:C.text,fontSize:13.5,lineHeight:1.5,boxSizing:"border-box",resize:"vertical",fontFamily:"inherit",outline:"none"}}/>
       <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginTop:7,marginBottom:15}}>
         <button onClick={()=>setNote(suggested)} style={{background:"transparent",border:"none",color:C.blue,fontSize:12.5,fontWeight:600,cursor:"pointer",padding:0}}>Use suggested note</button>
         <span style={{fontSize:12,color:note.length>MAX-30?C.amber:C.textMuted}}>{note.length}/{MAX}</span>

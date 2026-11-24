@@ -165,7 +165,7 @@ export default function DbAreaTree({ stateRoot, current, ancestorIds, onNavigate
         <button onClick={onClose} aria-label="Close" style={POP_CLOSE}>{"✕"}</button>
       </div>
       <div style={{ padding: "10px 14px", borderBottom: "1px solid " + C.border, flexShrink: 0 }}>
-        <input aria-label="Search areas, crags and peaks" value={q} onChange={e => setQ(e.target.value)} placeholder={"Search " + stateRoot.name + "’s areas, crags and peaks…"} style={{ width: "100%", padding: "10px 12px", borderRadius: 9, border: "1px solid " + C.border, background: C.surface, color: C.text, fontSize: 13.5, outline: "none", boxSizing: "border-box" }} />
+        <input aria-label="Search areas, crags and peaks" value={q} onChange={e => setQ(e.target.value)} placeholder={"Search " + stateRoot.name + "’s areas, crags and peaks…"} style={{ width: "100%", padding: "10px 12px", borderRadius: 9, border: "1px solid " + C.field, background: C.surface, color: C.text, fontSize: 13.5, outline: "none", boxSizing: "border-box" }} />
         {/* Say what each of the two tap targets does. They look alike and do opposite
             things: the name OPENS the area (closing this screen), the ▸ only reveals
             what is inside it without going anywhere. */}

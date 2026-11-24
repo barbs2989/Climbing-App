@@ -1,0 +1,280 @@
+{
+ "wa_south_face_4_flying_circus": {
+  "area": "wa_south_face_4",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/123066997/flying-circus",
+    "https://www.mountainproject.com/area/111087707/south-face",
+    "https://www.thecrag.com/en/climbing/united-states/washington-beacon-rock/search?S=flying+circus",
+    "https://www.thecrag.com/en/climbing/united-states/washington-beacon-rock/area/16783489",
+    "https://parks.wa.gov/find-parks/state-parks/beacon-rock-state-park",
+    "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.10d",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/123066997/flying-circus",
+      "fact": "5.10d YDS; Trad, 230 ft (70 m), 2 pitches",
+      "retrieved_at": "2026-11-24"
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 2,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/123066997/flying-circus",
+      "fact": "Trad, 230 ft (70 m), 2 pitches",
+      "retrieved_at": "2026-11-24"
+     }
+    ]
+   },
+   {
+    "field": "length_m",
+    "value": 70,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/123066997/flying-circus",
+      "fact": "Trad, 230 ft (70 m), 2 pitches",
+      "retrieved_at": "2026-11-24"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_south_face_4_flying_circus",
+    "column": "gear",
+    "from": null,
+    "to": [
+     "Camalot 0.3 to #2, two each",
+     "Camalot #3, one",
+     "Camalot #4, two",
+     "Camalot #5, one",
+     "offset nuts, medium to large"
+    ],
+    "why": "gear is empty. Mountain Project's recommended rack: two each BD C4 .3 to #2 and #4, one each #3 and #5, optional third .5, medium-to-large offset nuts. All sizes exist in the Camalot C4 line. Single source.",
+    "evidence": [
+     "https://www.mountainproject.com/route/123066997/flying-circus"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_south_face_4_flying_circus",
+    "column": "access",
+    "from": null,
+    "to": {
+     "fees": "Discover Pass: $10 for one day or $45 for a year.",
+     "rules": "The south and southeast faces close every Feb 1 for nesting peregrine falcons and are expected to reopen around mid-July. The east face is closed for good. Park hours are 8 a.m. to dusk.",
+     "land_manager": "Washington State Parks (Beacon Rock State Park)",
+     "parking_pass": "Discover Pass."
+    },
+    "why": "access is empty. Copied field for field from the live owner-approved sibling wa_jill_s_thrill (read with the service key, read-only, 2026-11-24). Re-read 2026-11-24: the park page still says the south and southeast faces close each Feb 1 and tentatively reopen mid-July (south face reopened 7/9/2026), the west and northwest faces stay open, the east face is closed, hours 8 a.m. to dusk, Discover Pass $10 one day / $45 annual; the Discover Pass page says a pass is required to park at State Parks. Nothing changed. official-1, 12 months, after apply.",
+    "evidence": [
+     "https://parks.wa.gov/find-parks/state-parks/beacon-rock-state-park",
+     "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_south_face_4_flying_circus",
+    "column": "permit",
+    "from": null,
+    "to": "Discover Pass required to park. The south and southeast faces close each year on Feb 1 for nesting peregrine falcons and should reopen around mid-July; the east face is closed for good.",
+    "why": "permit is empty. Copied verbatim from wa_jill_s_thrill; facts re-checked on the official park and Discover Pass pages 2026-11-24.",
+    "evidence": [
+     "https://parks.wa.gov/find-parks/state-parks/beacon-rock-state-park",
+     "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass"
+    ]
+   }
+  ],
+  "disputed": [
+   "fa: Mountain Project gives Jeff Thomas, Neal Olson and Mike Smelsar, 1977; the row stores none. One source (theCrag has no Beacon entry), so a blank FA is not filled.",
+   "bolts: Mountain Project says 3 bolts (replacing 5 pitons, with the FA's permission) protect the P1 corner seam; P2 is a crack with no bolts mentioned, but no whole-route count is stated. Not proposed.",
+   "anchor: P1 ends at an anchor of Metolius rap hangers atop a column beside Big Ledge; no house spelling chosen for a mid-route anchor, so not proposed."
+  ],
+  "notes": "Stored grade 5.10d, 2 pitches and 70 m all match Mountain Project (230 ft); locked-1src, no change. theCrag lists no Flying Circus at Beacon (searched; Third Tunnel sector page checked). Line: starts above the anchor shared by Reasonable Richard (wa_reasonable_richard) and Local Access Only (wa_local_access_only); P1 (45 m) ends a few metres east of the Blood, Sweat and Smears anchor next to Big Ledge; P2 (15 m) joins the original Dod's Jam in the Great Amphitheater. Not a duplicate: wa_flying_circus (Nelson's Wall) and wa_flying_circus_2 (Rattlesnake Rock, Tumwater Canyon) are other crags. CONDITION NOTE: as of MP's 2022 write-up the P2 crack was mossy and not recommended until cleaned; the row stores no prose, so nothing to correct."
+ },
+ "wa_south_face_4_the_maiden_s_escape": {
+  "area": "wa_south_face_4",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/121393144/the-maidens-escape",
+    "https://www.mountainproject.com/area/111087707/south-face",
+    "https://www.thecrag.com/en/climbing/united-states/washington-beacon-rock/search?S=maiden",
+    "https://parks.wa.gov/find-parks/state-parks/beacon-rock-state-park",
+    "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.12 PG13",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/121393144/the-maidens-escape",
+      "fact": "5.12 YDS, PG13; Trad, 300 ft (91 m), 3 pitches",
+      "retrieved_at": "2026-11-24"
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 3,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/121393144/the-maidens-escape",
+      "fact": "Trad, 300 ft (91 m), 3 pitches",
+      "retrieved_at": "2026-11-24"
+     }
+    ]
+   },
+   {
+    "field": "length_m",
+    "value": 91,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/121393144/the-maidens-escape",
+      "fact": "Trad, 300 ft (91 m), 3 pitches",
+      "retrieved_at": "2026-11-24"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_south_face_4_the_maiden_s_escape",
+    "column": "gear",
+    "from": null,
+    "to": [
+     "Camalot to 0.5, one each",
+     "Camalot 0.75 to #2, two each",
+     "6-8 quickdraws"
+    ],
+    "why": "gear is empty. Mountain Project protection: single rack to BD .5, doubles .75 to #2, 6-8 quickdraws. Sizes exist in the Camalot line. Single source.",
+    "evidence": [
+     "https://www.mountainproject.com/route/121393144/the-maidens-escape"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_south_face_4_the_maiden_s_escape",
+    "column": "access",
+    "from": null,
+    "to": {
+     "fees": "Discover Pass: $10 for one day or $45 for a year.",
+     "rules": "The south and southeast faces close every Feb 1 for nesting peregrine falcons and are expected to reopen around mid-July. The east face is closed for good. Park hours are 8 a.m. to dusk.",
+     "land_manager": "Washington State Parks (Beacon Rock State Park)",
+     "parking_pass": "Discover Pass."
+    },
+    "why": "access is empty. Copied field for field from the live owner-approved sibling wa_jill_s_thrill (read with the service key, read-only, 2026-11-24). Re-read 2026-11-24: the park page still says the south and southeast faces close each Feb 1 and tentatively reopen mid-July (south face reopened 7/9/2026), the west and northwest faces stay open, the east face is closed, hours 8 a.m. to dusk, Discover Pass $10 one day / $45 annual; the Discover Pass page says a pass is required to park at State Parks. Nothing changed. official-1, 12 months, after apply.",
+    "evidence": [
+     "https://parks.wa.gov/find-parks/state-parks/beacon-rock-state-park",
+     "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_south_face_4_the_maiden_s_escape",
+    "column": "permit",
+    "from": null,
+    "to": "Discover Pass required to park. The south and southeast faces close each year on Feb 1 for nesting peregrine falcons and should reopen around mid-July; the east face is closed for good.",
+    "why": "permit is empty. Copied verbatim from wa_jill_s_thrill; facts re-checked on the official park and Discover Pass pages 2026-11-24.",
+    "evidence": [
+     "https://parks.wa.gov/find-parks/state-parks/beacon-rock-state-park",
+     "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass"
+    ]
+   }
+  ],
+  "disputed": [
+   "fa: Mountain Project (posted by the first ascensionist) gives Odin Grano; the row stores none. One source, not filled.",
+   "bolts: Mountain Project states 3 bolts on P1 and 4 bolts plus a fixed nut on P2; P3 gives no bolt count. No whole-route count, not proposed."
+  ],
+  "notes": "Stored grade 5.12 PG13, 3 pitches and 91 m all match Mountain Project (300 ft); locked-1src, no change. theCrag has no Beacon entry (searched). SCOPE: Mountain Project calls it a free variation of the old, never-completed aid line Iron Maiden (A4): a new P1, the aid line's middle pitch, then a new rightward finger crack off P3 into a 5.10 corner. No Iron Maiden row exists in WA (searched name ilike maiden), so there is no parent row; it is listed as its own route and is treated as its own line here. Start: 50 ft right of the 3rd tunnel by a large oak and flat rock, old pin about 30 ft up."
+ },
+ "wa_south_face_4_south_face": {
+  "area": "wa_south_face_4",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/113482827/south-face-2827",
+    "https://www.mountainproject.com/comments/forObject/Climb-Lib-Models-Route/113482827?sortOrder=oldest&showAll=true",
+    "https://www.mountainproject.com/route/113482841/fall-guy",
+    "https://www.mountainproject.com/area/111087707/south-face",
+    "https://www.thecrag.com/en/climbing/united-states/washington-beacon-rock/area/16783441",
+    "https://parks.wa.gov/find-parks/state-parks/beacon-rock-state-park",
+    "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass"
+   ]
+  },
+  "disputed": [],
+  "notes": "IDENTIFIED, and a LIKELY DUPLICATE of wa_aging_fruits (keeper: wa_aging_fruits, the named row). The row matches Mountain Project's route titled 'South Face | 2827' (an unnamed placeholder title): 5.11- R, Trad, 65 ft (20 m), FA Avery Tichner, Summer 1985, just left of Tunnel #1 off the mossy mini-pillar shared with Fall Guy. It is NOT the historic Beacon Rock South Face/Southeast Corner line (that is wa_south_east_corner). wa_aging_fruits stores the same grade (5.11-) and the same FA ('Avery Tichner, Summer 1985'), and MP's Fall Guy page starts 'as for Aging Fruits' off the same mossy ledge and joins Aging Fruits for the spooky upper ledges to the anchor - the same finish MP's 'South Face' page describes. So both rows describe one line. Per the duplicate rule NO fixes are proposed here (not even access/permit). If the owner keeps wa_aging_fruits, the MP page could supply it pitches 1 and length 20 m (one source) plus the jill_s_thrill access/permit; batch AE held those for lack of a source. theCrag's First Tunnel sector lists neither name. SAFETY: MP says the only fixed pro is one rusty 3/8 in bolt with a homemade hanger, reached after unprotected edging; a 2018 comment says an old pin near the top is gone and calls the lead closer to X than R (a fall low down would be X-rated). The row stores no prose; the grade suffix R may understate it - owner call."
+ },
+ "wa_south_face_4_second_wind": {
+  "area": "wa_south_face_4",
+  "review": {
+   "sources": [
+    "https://www.thecrag.com/en/climbing/united-states/washington-beacon-rock/route/19211977",
+    "https://www.thecrag.com/en/climbing/united-states/washington-beacon-rock/area/16783465",
+    "https://www.thecrag.com/en/climbing/united-states/washington-beacon-rock/search?S=second+wind",
+    "https://www.mountainproject.com/route/107198195/blownout",
+    "https://www.mountainproject.com/area/111087707/south-face",
+    "https://parks.wa.gov/find-parks/state-parks/beacon-rock-state-park",
+    "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass"
+   ]
+  },
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_south_face_4_second_wind",
+    "column": "access",
+    "from": null,
+    "to": {
+     "fees": "Discover Pass: $10 for one day or $45 for a year.",
+     "rules": "The south and southeast faces close every Feb 1 for nesting peregrine falcons and are expected to reopen around mid-July. The east face is closed for good. Park hours are 8 a.m. to dusk.",
+     "land_manager": "Washington State Parks (Beacon Rock State Park)",
+     "parking_pass": "Discover Pass."
+    },
+    "why": "access is empty. Copied field for field from the live owner-approved sibling wa_jill_s_thrill (read with the service key, read-only, 2026-11-24). Re-read 2026-11-24: the park page still says the south and southeast faces close each Feb 1 and tentatively reopen mid-July (south face reopened 7/9/2026), the west and northwest faces stay open, the east face is closed, hours 8 a.m. to dusk, Discover Pass $10 one day / $45 annual; the Discover Pass page says a pass is required to park at State Parks. Nothing changed. official-1, 12 months, after apply.",
+    "evidence": [
+     "https://parks.wa.gov/find-parks/state-parks/beacon-rock-state-park",
+     "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_south_face_4_second_wind",
+    "column": "permit",
+    "from": null,
+    "to": "Discover Pass required to park. The south and southeast faces close each year on Feb 1 for nesting peregrine falcons and should reopen around mid-July; the east face is closed for good.",
+    "why": "permit is empty. Copied verbatim from wa_jill_s_thrill; facts re-checked on the official park and Discover Pass pages 2026-11-24.",
+    "evidence": [
+     "https://parks.wa.gov/find-parks/state-parks/beacon-rock-state-park",
+     "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass"
+    ]
+   }
+  ],
+  "disputed": [
+   "grade: stored 5.11d; theCrag 5.11d (Second Tunnel Area, cites the 'Rock Climbing Washington' guidebook, type Unknown, length UNKNOWN, no history). Mountain Project has no page for it. Agrees with the stored value but one source only; not locked.",
+   "guide_stars: stored 3; theCrag shows 2 stars (a site rating, not the guidebook's own). Not changed."
+  ],
+  "notes": "SCOPE: likely a VARIATION of Blownout (parent wa_blownout). wa_blownout's own variations array lists 'Second Wind: thin finger-crack finish through small roofs, 5.11d', and theCrag files Second Wind in the Second Tunnel Area right after Blownout and Borderline. theCrag lists it as a separate route, but gives no length, pitches, type or FA, and Mountain Project has no page for it (two searches). Per the row-scope rule only access/permit are proposed; pitches and length_m stay null (they depend on whether it is a finish or a full line), and discipline/disciplines (null) are not filled because no source states the type. No other Beacon row duplicates it (wa_w_lower_world_wall_2_second_wind is a 5.10b at another crag)."
+ }
+}

@@ -97,7 +97,7 @@ export default function DownloadedSearch({ C, downloaded, onOpenArea, onOpenRout
       </div>
       <div style={{ position: "relative" }}>
         <span aria-hidden="true" style={{ position: "absolute", left: 12, top: 0, height: 44, display: "flex", alignItems: "center", pointerEvents: "none" }}><ActionIcon name="search" size={18} color={C.textMuted}/></span>
-        <input type="search" enterKeyHint="search" value={q} onChange={e => setQ(e.target.value)} aria-label={mode === "areas" ? "Search your downloaded areas" : "Search your downloaded routes"} placeholder={mode === "areas" ? "Search areas, crags, peaks…" : "Search routes…"} style={{ width: "100%", height: 44, boxSizing: "border-box", padding: "0 40px 0 38px", borderRadius: 12, border: "1px solid " + C.border, background: C.card, color: C.text, fontSize: 15, outline: "none" }}/>
+        <input type="search" enterKeyHint="search" value={q} onChange={e => setQ(e.target.value)} aria-label={mode === "areas" ? "Search your downloaded areas" : "Search your downloaded routes"} placeholder={mode === "areas" ? "Search areas, crags, peaks…" : "Search routes…"} style={{ width: "100%", height: 44, boxSizing: "border-box", padding: "0 40px 0 38px", borderRadius: 12, border: "1px solid " + C.field, background: C.card, color: C.text, fontSize: 15, outline: "none" }}/>
         {q ? <button type="button" onClick={() => setQ("")} aria-label="Clear search" style={{ ...POP_REMOVE, position: "absolute", right: 10, top: 22, transform: "translateY(-50%)" }}>✕</button> : null}
       </div>
       {/* What it covers, and the way to change that: with a state downloaded nothing else on this screen leads to Manage areas. */}

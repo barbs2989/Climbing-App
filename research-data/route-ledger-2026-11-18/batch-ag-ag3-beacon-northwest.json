@@ -1,0 +1,501 @@
+{
+ "wa_northwest_face_false_prophets": {
+  "area": "wa_northwest_face",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/120734430/false-prophets",
+    "https://www.mountainproject.com/route/121354618/piracy",
+    "https://www.mountainproject.com/area/111087716/northwest-face",
+    "https://parks.wa.gov/find-parks/state-parks/beacon-rock-state-park",
+    "https://discoverpass.wa.gov/about-pass/what-discover-pass"
+   ]
+  },
+  "ledger": [],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_northwest_face_false_prophets",
+    "column": "gear",
+    "from": null,
+    "to": [
+     "gear to 3 in"
+    ],
+    "why": "gear is empty. Mountain Project protection: bolts and gear to 3 in. Single source. Bolt count not stated (the start passes two bolts), so bolts not proposed.",
+    "evidence": [
+     "https://www.mountainproject.com/route/120734430/false-prophets"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_northwest_face_false_prophets",
+    "column": "access",
+    "from": null,
+    "to": {
+     "fees": "Discover Pass: $10 for one day or $45 for a year.",
+     "rules": "The northwest face is open all year. The south and southeast faces close every Feb 1 for nesting peregrine falcons until about mid-July, and the east face is closed for good. Park hours are 8 a.m. to dusk.",
+     "land_manager": "Washington State Parks (Beacon Rock State Park)",
+     "parking_pass": "Discover Pass."
+    },
+    "why": "access is empty. Copied field for field from the live, owner-approved sibling wa_northwest_face_pioneer_iron_spike_route (same face, same park; read with the service key, read-only). Re-read 2026-11-24: the parks.wa.gov Beacon Rock page still says the northwest face is open year-round, the south and southeast faces close Feb 1 and tentatively reopen mid-July (reopened 7/9/2026), the east face is closed permanently, and hours are 8 a.m. to dusk; discoverpass.wa.gov still gives $45 annual and $10 one-day. official-1, 12 months, after apply.",
+    "evidence": [
+     "https://parks.wa.gov/find-parks/state-parks/beacon-rock-state-park",
+     "https://discoverpass.wa.gov/about-pass/what-discover-pass"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_northwest_face_false_prophets",
+    "column": "permit",
+    "from": null,
+    "to": "Discover Pass required to park. The northwest face stays open all year; the south and southeast faces close from Feb 1 to about mid-July for nesting falcons, and the east face is closed for good.",
+    "why": "permit is empty. Copied from wa_northwest_face_pioneer_iron_spike_route; same official re-read as the access fix.",
+    "evidence": [
+     "https://parks.wa.gov/find-parks/state-parks/beacon-rock-state-park",
+     "https://discoverpass.wa.gov/about-pass/what-discover-pass"
+    ]
+   }
+  ],
+  "held": [],
+  "disputed": [],
+  "notes": "DUPLICATE: wa_false_profits (stored 'False Profits', 5.10d, pitches 0, FA 'Andrew Leiner & Chris Hill (1999)') is a misspelled duplicate of this route; keeper wa_northwest_face_false_prophets; no fixes on the duplicate. Its grade 5.10d disagrees with MP's 5.11b (stored here). OVERLAP: Piracy (wa_northwest_face_piracy) climbs a slab start and then this route's upper half (batch AF). Stored grade 5.11b, trad and length_m 26 (MP 85 ft, 26 m) agree with MP; pitches 1 not stated (one length to an anchor), unchanged; one source, no lock (not on theCrag's 11-route sector; one web search found no other publisher). FA is blank: MP gives Andrew Leiner and Chris Hill, 1999 (matches the duplicate row's FA, but that is our own data, not a second publisher); not filled. MP says Leiner also called the line 'Cry Baby' (an alias only; wa_cry_baby is an unrelated Index route). Anchor hardware not stated (rap anchors on the upper ledge, above and left of a big tree); not proposed. No safety warnings on the page."
+ },
+ "wa_northwest_face_crossing_wakes": {
+  "area": "wa_northwest_face",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/203732533/crossing-wakes",
+    "https://www.mountainproject.com/route/124994270/sirens-call",
+    "https://www.mountainproject.com/area/111087716/northwest-face",
+    "https://parks.wa.gov/find-parks/state-parks/beacon-rock-state-park",
+    "https://discoverpass.wa.gov/about-pass/what-discover-pass"
+   ]
+  },
+  "ledger": [],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_northwest_face_crossing_wakes",
+    "column": "gear",
+    "from": null,
+    "to": [
+     "cams 0.2 to #4",
+     "doubles 0.2 to 0.75 and #2",
+     "offset nuts",
+     "small to medium nuts",
+     "alpine slings"
+    ],
+    "why": "gear is empty. Mountain Project protection: Camalots 0.2 to #4, doubles 0.2 to 0.75 and #2, an offset nut set, small to medium nuts, alpine slings. Single source. No bolts mentioned.",
+    "evidence": [
+     "https://www.mountainproject.com/route/203732533/crossing-wakes"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_northwest_face_crossing_wakes",
+    "column": "access",
+    "from": null,
+    "to": {
+     "fees": "Discover Pass: $10 for one day or $45 for a year.",
+     "rules": "The northwest face is open all year. The south and southeast faces close every Feb 1 for nesting peregrine falcons until about mid-July, and the east face is closed for good. Park hours are 8 a.m. to dusk.",
+     "land_manager": "Washington State Parks (Beacon Rock State Park)",
+     "parking_pass": "Discover Pass."
+    },
+    "why": "access is empty. Copied field for field from the live, owner-approved sibling wa_northwest_face_pioneer_iron_spike_route (same face, same park; read with the service key, read-only). Re-read 2026-11-24: the parks.wa.gov Beacon Rock page still says the northwest face is open year-round, the south and southeast faces close Feb 1 and tentatively reopen mid-July (reopened 7/9/2026), the east face is closed permanently, and hours are 8 a.m. to dusk; discoverpass.wa.gov still gives $45 annual and $10 one-day. official-1, 12 months, after apply.",
+    "evidence": [
+     "https://parks.wa.gov/find-parks/state-parks/beacon-rock-state-park",
+     "https://discoverpass.wa.gov/about-pass/what-discover-pass"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_northwest_face_crossing_wakes",
+    "column": "permit",
+    "from": null,
+    "to": "Discover Pass required to park. The northwest face stays open all year; the south and southeast faces close from Feb 1 to about mid-July for nesting falcons, and the east face is closed for good.",
+    "why": "permit is empty. Copied from wa_northwest_face_pioneer_iron_spike_route; same official re-read as the access fix.",
+    "evidence": [
+     "https://parks.wa.gov/find-parks/state-parks/beacon-rock-state-park",
+     "https://discoverpass.wa.gov/about-pass/what-discover-pass"
+    ]
+   }
+  ],
+  "held": [],
+  "disputed": [],
+  "notes": "OVERLAP: crosses Full Steam Ahead (wa_full_steam_ahead) and Siren's Call (wa_northwest_face_siren_s_call) and finishes at Siren's Call's top anchors (MP). Its own line otherwise; kept as a route. Stored grade 5.11b, trad and length_m 24 (MP 80 ft, 24 m) agree with MP; pitches 1 not stated, unchanged; one source, no lock (not on theCrag's sector). FA is blank: MP gives Marsha Hamilton and Topher Dabrowski, no date; not filled. Anchor: the shared Siren's Call anchor is steel quick-links (perma-clips); no house spelling fits ('Quick-link anchor' is on 1 row), so not proposed. Starts in the pit beside a large boulder, which it may use. No safety warnings."
+ },
+ "wa_northwest_face_siren_s_call": {
+  "area": "wa_northwest_face",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/124994270/sirens-call",
+    "https://www.mountainproject.com/area/111087716/northwest-face",
+    "https://parks.wa.gov/find-parks/state-parks/beacon-rock-state-park",
+    "https://discoverpass.wa.gov/about-pass/what-discover-pass"
+   ]
+  },
+  "ledger": [],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_northwest_face_siren_s_call",
+    "column": "bolts",
+    "from": null,
+    "to": 6,
+    "why": "bolts is empty. Mountain Project states 6 bolts plus cams. Single source.",
+    "evidence": [
+     "https://www.mountainproject.com/route/124994270/sirens-call"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_northwest_face_siren_s_call",
+    "column": "gear",
+    "from": null,
+    "to": [
+     "cams 0.5 to #2",
+     "double 0.75",
+     "optional #3 or #4 for the start"
+    ],
+    "why": "gear is empty. Mountain Project: Camalots 0.5 to 2, a double 0.75, an optional 3 or 4 at the start; save the #2 for above the bolts. Single source.",
+    "evidence": [
+     "https://www.mountainproject.com/route/124994270/sirens-call"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_northwest_face_siren_s_call",
+    "column": "access",
+    "from": null,
+    "to": {
+     "fees": "Discover Pass: $10 for one day or $45 for a year.",
+     "rules": "The northwest face is open all year. The south and southeast faces close every Feb 1 for nesting peregrine falcons until about mid-July, and the east face is closed for good. Park hours are 8 a.m. to dusk.",
+     "land_manager": "Washington State Parks (Beacon Rock State Park)",
+     "parking_pass": "Discover Pass."
+    },
+    "why": "access is empty. Copied field for field from the live, owner-approved sibling wa_northwest_face_pioneer_iron_spike_route (same face, same park; read with the service key, read-only). Re-read 2026-11-24: the parks.wa.gov Beacon Rock page still says the northwest face is open year-round, the south and southeast faces close Feb 1 and tentatively reopen mid-July (reopened 7/9/2026), the east face is closed permanently, and hours are 8 a.m. to dusk; discoverpass.wa.gov still gives $45 annual and $10 one-day. official-1, 12 months, after apply.",
+    "evidence": [
+     "https://parks.wa.gov/find-parks/state-parks/beacon-rock-state-park",
+     "https://discoverpass.wa.gov/about-pass/what-discover-pass"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_northwest_face_siren_s_call",
+    "column": "permit",
+    "from": null,
+    "to": "Discover Pass required to park. The northwest face stays open all year; the south and southeast faces close from Feb 1 to about mid-July for nesting falcons, and the east face is closed for good.",
+    "why": "permit is empty. Copied from wa_northwest_face_pioneer_iron_spike_route; same official re-read as the access fix.",
+    "evidence": [
+     "https://parks.wa.gov/find-parks/state-parks/beacon-rock-state-park",
+     "https://discoverpass.wa.gov/about-pass/what-discover-pass"
+    ]
+   }
+  ],
+  "held": [],
+  "disputed": [],
+  "notes": "Stored grade 5.10d, trad + toprope (MP: Trad, TR), length_m 24 (MP 80 ft) and pitches 1 (MP: single pitch) agree with MP; one source, no lock. FA is blank: MP gives Mark Deffenbaugh (spelled 'Defenbaugh' on this page), Topher Dabrowski and Dan Leone, October 2023; one source, not filled. Anchor: steel perma-clips (quick-links); MP asks top-ropers to rig their own draws; no house spelling fits, not proposed. Crossing Wakes (wa_northwest_face_crossing_wakes) finishes at this anchor. Runs between Stone Soup and Full Steam Ahead. SAFETY (route fact, no stored prose to correct): drifting right of the crux bolt leads onto Full Steam Ahead and a bad fall."
+ },
+ "wa_northwest_face_torpedo": {
+  "area": "wa_northwest_face",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/125052640/torpedo",
+    "https://www.mountainproject.com/area/111087716/northwest-face",
+    "https://parks.wa.gov/find-parks/state-parks/beacon-rock-state-park",
+    "https://discoverpass.wa.gov/about-pass/what-discover-pass"
+   ]
+  },
+  "ledger": [],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_northwest_face_torpedo",
+    "column": "anchor",
+    "from": null,
+    "to": "Bolted anchor",
+    "why": "anchor is empty. Mountain Project: P2 ends at a bolted anchor with rap rings. House spelling 'Bolted anchor' (19 rows). Single source.",
+    "evidence": [
+     "https://www.mountainproject.com/route/125052640/torpedo"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_northwest_face_torpedo",
+    "column": "gear",
+    "from": null,
+    "to": [
+     "doubles cams 0.2 to #2",
+     "one 0.1 and one #3",
+     "set of nuts",
+     "12 quickdraws",
+     "3 long slings"
+    ],
+    "why": "gear is empty. Mountain Project: two sets of Camalots 0.2 to #2, one each 0.1 and #3, one set of nuts, 12 draws, 3 long slings. Single source.",
+    "evidence": [
+     "https://www.mountainproject.com/route/125052640/torpedo"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_northwest_face_torpedo",
+    "column": "access",
+    "from": null,
+    "to": {
+     "fees": "Discover Pass: $10 for one day or $45 for a year.",
+     "rules": "The northwest face is open all year. The south and southeast faces close every Feb 1 for nesting peregrine falcons until about mid-July, and the east face is closed for good. Park hours are 8 a.m. to dusk.",
+     "land_manager": "Washington State Parks (Beacon Rock State Park)",
+     "parking_pass": "Discover Pass."
+    },
+    "why": "access is empty. Copied field for field from the live, owner-approved sibling wa_northwest_face_pioneer_iron_spike_route (same face, same park; read with the service key, read-only). Re-read 2026-11-24: the parks.wa.gov Beacon Rock page still says the northwest face is open year-round, the south and southeast faces close Feb 1 and tentatively reopen mid-July (reopened 7/9/2026), the east face is closed permanently, and hours are 8 a.m. to dusk; discoverpass.wa.gov still gives $45 annual and $10 one-day. official-1, 12 months, after apply.",
+    "evidence": [
+     "https://parks.wa.gov/find-parks/state-parks/beacon-rock-state-park",
+     "https://discoverpass.wa.gov/about-pass/what-discover-pass"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_northwest_face_torpedo",
+    "column": "permit",
+    "from": null,
+    "to": "Discover Pass required to park. The northwest face stays open all year; the south and southeast faces close from Feb 1 to about mid-July for nesting falcons, and the east face is closed for good.",
+    "why": "permit is empty. Copied from wa_northwest_face_pioneer_iron_spike_route; same official re-read as the access fix.",
+    "evidence": [
+     "https://parks.wa.gov/find-parks/state-parks/beacon-rock-state-park",
+     "https://discoverpass.wa.gov/about-pass/what-discover-pass"
+    ]
+   }
+  ],
+  "held": [],
+  "disputed": [],
+  "notes": "Stored pitches 2 (MP states 2), length_m 27 (MP 90 ft, 27 m), grade 5.10d and trad agree with MP; one source, no lock (not on theCrag's sector). Bolts not proposed: one bolt low on P1 and bolts on P2, no count. FA is blank: MP gives Arent Wortel and Mark Deffenbaugh ('Marc Defenbaugh'), P1 May 2023, P2 September 5 (year not given); not filled. Starts in a depression where a large detached-looking rock abuts the wall; most parties start from that rock (MP gives no warning about it). Left of Batten Down the Hatches."
+ },
+ "wa_northwest_face_riptide": {
+  "area": "wa_northwest_face",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/119481141/riptide",
+    "https://www.mountainproject.com/area/111087716/northwest-face",
+    "https://parks.wa.gov/find-parks/state-parks/beacon-rock-state-park",
+    "https://discoverpass.wa.gov/about-pass/what-discover-pass"
+   ]
+  },
+  "ledger": [],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_northwest_face_riptide",
+    "column": "gear",
+    "from": null,
+    "to": [
+     "gear to 2 in",
+     "Totems for flares",
+     "cams 0.2 to 0.4 for P2",
+     "black Totem or purple Metolius for P2"
+    ],
+    "why": "gear is empty. Mountain Project: P1 bolts plus gear to 2 in (Totems help in flares and pods); P2 bolts plus optional 0.2 to 0.4 cam and a black Totem or purple Metolius. Single source.",
+    "evidence": [
+     "https://www.mountainproject.com/route/119481141/riptide"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_northwest_face_riptide",
+    "column": "access",
+    "from": null,
+    "to": {
+     "fees": "Discover Pass: $10 for one day or $45 for a year.",
+     "rules": "The northwest face is open all year. The south and southeast faces close every Feb 1 for nesting peregrine falcons until about mid-July, and the east face is closed for good. Park hours are 8 a.m. to dusk.",
+     "land_manager": "Washington State Parks (Beacon Rock State Park)",
+     "parking_pass": "Discover Pass."
+    },
+    "why": "access is empty. Copied field for field from the live, owner-approved sibling wa_northwest_face_pioneer_iron_spike_route (same face, same park; read with the service key, read-only). Re-read 2026-11-24: the parks.wa.gov Beacon Rock page still says the northwest face is open year-round, the south and southeast faces close Feb 1 and tentatively reopen mid-July (reopened 7/9/2026), the east face is closed permanently, and hours are 8 a.m. to dusk; discoverpass.wa.gov still gives $45 annual and $10 one-day. official-1, 12 months, after apply.",
+    "evidence": [
+     "https://parks.wa.gov/find-parks/state-parks/beacon-rock-state-park",
+     "https://discoverpass.wa.gov/about-pass/what-discover-pass"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_northwest_face_riptide",
+    "column": "permit",
+    "from": null,
+    "to": "Discover Pass required to park. The northwest face stays open all year; the south and southeast faces close from Feb 1 to about mid-July for nesting falcons, and the east face is closed for good.",
+    "why": "permit is empty. Copied from wa_northwest_face_pioneer_iron_spike_route; same official re-read as the access fix.",
+    "evidence": [
+     "https://parks.wa.gov/find-parks/state-parks/beacon-rock-state-park",
+     "https://discoverpass.wa.gov/about-pass/what-discover-pass"
+    ]
+   }
+  ],
+  "held": [],
+  "disputed": [],
+  "notes": "Stored pitches 2 (MP states 2), length_m 46 (MP 150 ft, 45.7 m), grade 5.11- and trad agree with MP; one source, no lock (not on theCrag's sector). MP's area page mentions '5.10c Riptide P1' (a pitch grade, not a conflict). Bolts not proposed (no total count). Anchor hardware not stated; P1 ends at a ledge with two anchors, the left one used to go on to P2. FA is blank: MP gives P1 Bryan Smith and Topher Dabrowski, Aug 2021; P2 Bryan Smith and Mark Deffenbaugh, June 2023; one source, not filled. Between Charted Waters and Rogue Wave. SAFETY (route facts; the row has no stored prose to correct): crumbly corner on P1; small runout between bolt 6 and the last bolt on P2."
+ },
+ "wa_northwest_face_the_arabia": {
+  "area": "wa_northwest_face",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/203382833/the-arabia",
+    "https://www.mountainproject.com/route/203383004/the-bertrand",
+    "https://www.mountainproject.com/area/111087716/northwest-face",
+    "https://parks.wa.gov/find-parks/state-parks/beacon-rock-state-park",
+    "https://discoverpass.wa.gov/about-pass/what-discover-pass"
+   ]
+  },
+  "ledger": [],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_northwest_face_the_arabia",
+    "column": "bolts",
+    "from": null,
+    "to": 6,
+    "why": "bolts is empty. Mountain Project states 6 bolts plus gear. Single source.",
+    "evidence": [
+     "https://www.mountainproject.com/route/203382833/the-arabia"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_northwest_face_the_arabia",
+    "column": "anchor",
+    "from": null,
+    "to": "Chain anchor",
+    "why": "anchor is empty. Mountain Project: finishes at chains, a semi-hanging anchor in an alcove, shared with The Bertrand (wa_northwest_face_the_bertrand, which stores 'Chain anchor'). House spelling 'Chain anchor' (100 rows). Single source.",
+    "evidence": [
+     "https://www.mountainproject.com/route/203382833/the-arabia"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_northwest_face_the_arabia",
+    "column": "gear",
+    "from": null,
+    "to": [
+     "gear to 2 in",
+     "optional larger cams for the fist crack"
+    ],
+    "why": "gear is empty. Mountain Project: gear from #0 to 2 in, optional bigger pieces for a mid-route fist crack. Single source.",
+    "evidence": [
+     "https://www.mountainproject.com/route/203382833/the-arabia"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_northwest_face_the_arabia",
+    "column": "access",
+    "from": null,
+    "to": {
+     "fees": "Discover Pass: $10 for one day or $45 for a year.",
+     "rules": "The northwest face is open all year. The south and southeast faces close every Feb 1 for nesting peregrine falcons until about mid-July, and the east face is closed for good. Park hours are 8 a.m. to dusk.",
+     "land_manager": "Washington State Parks (Beacon Rock State Park)",
+     "parking_pass": "Discover Pass."
+    },
+    "why": "access is empty. Copied field for field from the live, owner-approved sibling wa_northwest_face_pioneer_iron_spike_route (same face, same park; read with the service key, read-only). Re-read 2026-11-24: the parks.wa.gov Beacon Rock page still says the northwest face is open year-round, the south and southeast faces close Feb 1 and tentatively reopen mid-July (reopened 7/9/2026), the east face is closed permanently, and hours are 8 a.m. to dusk; discoverpass.wa.gov still gives $45 annual and $10 one-day. official-1, 12 months, after apply.",
+    "evidence": [
+     "https://parks.wa.gov/find-parks/state-parks/beacon-rock-state-park",
+     "https://discoverpass.wa.gov/about-pass/what-discover-pass"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_northwest_face_the_arabia",
+    "column": "permit",
+    "from": null,
+    "to": "Discover Pass required to park. The northwest face stays open all year; the south and southeast faces close from Feb 1 to about mid-July for nesting falcons, and the east face is closed for good.",
+    "why": "permit is empty. Copied from wa_northwest_face_pioneer_iron_spike_route; same official re-read as the access fix.",
+    "evidence": [
+     "https://parks.wa.gov/find-parks/state-parks/beacon-rock-state-park",
+     "https://discoverpass.wa.gov/about-pass/what-discover-pass"
+    ]
+   }
+  ],
+  "held": [
+   {
+    "table": "routes",
+    "id": "wa_northwest_face_the_arabia",
+    "column": "pitches",
+    "from": 1,
+    "to": 2,
+    "why": "HELD: Mountain Project's Arabia page states 2 pitches and 190 ft (58 m), but MP's Bertrand page puts the same shared chain anchor at the top of a 95 ft (29 m) route. One source whose own pages disagree (brief AE lesson), and only one publisher (not on theCrag's sector), so nothing proposed. Stored 1 pitch / 27 m fits the Bertrand figure, not the Arabia header.",
+    "evidence": [
+     "https://www.mountainproject.com/route/203382833/the-arabia",
+     "https://www.mountainproject.com/route/203383004/the-bertrand"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_northwest_face_the_arabia",
+    "column": "length_m",
+    "from": 27,
+    "to": 58,
+    "why": "HELD with pitches, same reason: Arabia page 190 ft (58 m) vs the shared anchor at 95 ft (29 m) on The Bertrand's page.",
+    "evidence": [
+     "https://www.mountainproject.com/route/203382833/the-arabia",
+     "https://www.mountainproject.com/route/203383004/the-bertrand"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "Stored grade 5.10 and trad agree with MP's header (MP's gear text says 5.10c; three starts: right 5.10b, bear-hug 5.10+, left 5.11-). Disciplines: MP also lists TR. FA is blank: MP gives Todd Adams and Melissa Abraham, May 2026; one source, not filled. Just right of The Bertrand, left of Burning Calves. The crux is a small roof right off the ground. Pitch count and length need a second publisher or an FA-party report."
+ },
+ "wa_northwest_face_arete_in_the_sky": {
+  "area": "wa_northwest_face",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/201846279/arete-in-the-sky",
+    "https://www.mountainproject.com/route/119481131/charted-waters",
+    "https://www.mountainproject.com/area/111087716/northwest-face",
+    "https://parks.wa.gov/find-parks/state-parks/beacon-rock-state-park",
+    "https://discoverpass.wa.gov/about-pass/what-discover-pass"
+   ]
+  },
+  "ledger": [],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_northwest_face_arete_in_the_sky",
+    "column": "access",
+    "from": null,
+    "to": {
+     "fees": "Discover Pass: $10 for one day or $45 for a year.",
+     "rules": "The northwest face is open all year. The south and southeast faces close every Feb 1 for nesting peregrine falcons until about mid-July, and the east face is closed for good. Park hours are 8 a.m. to dusk.",
+     "land_manager": "Washington State Parks (Beacon Rock State Park)",
+     "parking_pass": "Discover Pass."
+    },
+    "why": "access is empty. Copied field for field from the live, owner-approved sibling wa_northwest_face_pioneer_iron_spike_route (same face, same park; read with the service key, read-only). Re-read 2026-11-24: the parks.wa.gov Beacon Rock page still says the northwest face is open year-round, the south and southeast faces close Feb 1 and tentatively reopen mid-July (reopened 7/9/2026), the east face is closed permanently, and hours are 8 a.m. to dusk; discoverpass.wa.gov still gives $45 annual and $10 one-day. official-1, 12 months, after apply.",
+    "evidence": [
+     "https://parks.wa.gov/find-parks/state-parks/beacon-rock-state-park",
+     "https://discoverpass.wa.gov/about-pass/what-discover-pass"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_northwest_face_arete_in_the_sky",
+    "column": "permit",
+    "from": null,
+    "to": "Discover Pass required to park. The northwest face stays open all year; the south and southeast faces close from Feb 1 to about mid-July for nesting falcons, and the east face is closed for good.",
+    "why": "permit is empty. Copied from wa_northwest_face_pioneer_iron_spike_route; same official re-read as the access fix.",
+    "evidence": [
+     "https://parks.wa.gov/find-parks/state-parks/beacon-rock-state-park",
+     "https://discoverpass.wa.gov/about-pass/what-discover-pass"
+    ]
+   }
+  ],
+  "held": [
+   {
+    "table": "routes",
+    "id": "wa_northwest_face_arete_in_the_sky",
+    "column": "grade",
+    "from": "5.11b/c",
+    "to": "5.11b",
+    "why": "HELD: Mountain Project's own page and area list give 5.11b; stored 5.11b/c. One source, and the row is a variation (see notes), so not proposed. grade_num would also change.",
+    "evidence": [
+     "https://www.mountainproject.com/route/201846279/arete-in-the-sky"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "CLEAN-UP CANDIDATE, VARIATION: not its own line. MP's Charted Waters page (wa_charted_waters, stored 9 pitches) says the left side of the P5 slab and arete above Moss Island (the top of Charted Waters P4) is called Arete in the Sky; Charted Waters P5 is 5.11c/d, 17 m. MP's Arete page starts it from Moss Island, gives it a temporary name and says more pitches are being developed. So it is a left-hand variant of Charted Waters P5, reached only by climbing Charted Waters P1-P4. Only MP lists it (not on theCrag's sector). Recommend merging into wa_charted_waters or keeping it flagged as a variation; owner decides. Only access/permit proposed. Stored sport (MP: Sport), length_m 15 (MP 50 ft) and pitches 1 (not stated) agree with MP. FA: MP gives Mark Deffenbaugh and Topher Dabrowski, May 14, 2024, but a photo caption on the same page says 05-16-2024; self-contradicting, not filled. Bolts and anchor not stated."
+ }
+}

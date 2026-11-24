@@ -200,8 +200,8 @@ export default function AddRoute({onClose,defaultArea,defaultAreaName,dbAreaId,s
      below treats 1 and true alike, so nothing else needed it. */
   const _applicable=checks.filter(function(c){return c!==null;}),pct=_applicable.length?Math.round(_applicable.filter(Boolean).length/_applicable.length*100):0;
   const ready=name.trim()&&locOk&&disc&&attest;const need=!name.trim()?"Add a climb name":!locOk?"Pick or name an area":!disc?"Pick a discipline":!attest?"Confirm the details are accurate":"";
-  const fld={width:"100%",padding:"10px 12px",borderRadius:10,border:"1px solid "+C.border,background:C.surface,color:C.text,fontSize:14,boxSizing:"border-box",outline:"none"};
-  const sel={width:"100%",padding:"11px 34px 11px 12px",borderRadius:10,border:"1px solid "+C.border,background:C.surface,color:C.text,fontSize:14,boxSizing:"border-box",outline:"none",WebkitAppearance:"none",appearance:"none",cursor:"pointer"};
+  const fld={width:"100%",padding:"10px 12px",borderRadius:10,border:"1px solid "+C.field,background:C.surface,color:C.text,fontSize:14,boxSizing:"border-box",outline:"none"};
+  const sel={width:"100%",padding:"11px 34px 11px 12px",borderRadius:10,border:"1px solid "+C.field,background:C.surface,color:C.text,fontSize:14,boxSizing:"border-box",outline:"none",WebkitAppearance:"none",appearance:"none",cursor:"pointer"};
   const lab={fontSize:12,fontWeight:800,letterSpacing:0.3,textTransform:"uppercase",color:C.text,margin:"13px 0 6px"};
   /* A LINE OF CONTEXT UNDER EACH FIELD, the route page's own (lib/fieldHints.js), so proposing a
      route and correcting one explain a field the same way. `own` is for a control this form draws

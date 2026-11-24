@@ -78,7 +78,7 @@ export default function DbSearchSplit({ scope, onJumpToArea, onOpenRoute, C, onM
         <div {...clickable(() => setMode("areas"))} aria-pressed={mode === "areas"} style={tab(mode === "areas")}>Areas</div>
         <div {...clickable(() => setMode("routes"))} aria-pressed={mode === "routes"} style={tab(mode === "routes")}>Routes</div>
       </div>
-      <input aria-label={mode === "areas" ? "Search areas, crags, peaks" : "Search routes"} value={q} onChange={e => setQ(e.target.value)} placeholder={mode === "areas" ? "Search areas, crags, peaks…" : "Search routes…"} style={{ width: "100%", padding: "10px 12px", borderRadius: 9, border: "1px solid " + C.border, background: C.surface, color: C.text, fontSize: 14, boxSizing: "border-box", outline: "none" }} />
+      <input aria-label={mode === "areas" ? "Search areas, crags, peaks" : "Search routes"} value={q} onChange={e => setQ(e.target.value)} placeholder={mode === "areas" ? "Search areas, crags, peaks…" : "Search routes…"} style={{ width: "100%", padding: "10px 12px", borderRadius: 9, border: "1px solid " + C.field, background: C.surface, color: C.text, fontSize: 14, boxSizing: "border-box", outline: "none" }} />
       </div>
       </div>
       {qq ? (
