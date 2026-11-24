@@ -147,7 +147,7 @@ export default function Onboarding({onFinish,onSkip,onSignOut,onUsernameSaved,on
     const shownName=(un||(initial&&initial.username)||"").trim();
     const where=(homeQ||"").trim()||home;
     const rows=[].concat(
-      [["partners","Find climbing partners","Browse climbers and crews near you","partners"]],
+      [["partners","Find climbing partners","Browse climbers and crews","partners"]],
       required&&!ava?[["camera","Add a profile photo","Optional","photo"]]:[],
       required?[["pin","List the areas you climb","So climbers there can find you","areas"]]:[],
       [["mountain","Explore climbs","Conditions, beta and plans for your next objective","climbs"]]);

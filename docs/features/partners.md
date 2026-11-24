@@ -30,9 +30,9 @@ whole guide feature on 2026-11-14 (owner). This doc covers the partners mode (`l
   `profiles.free_until`, which is why it left the filter row — as a pill there, a tap meant to find free climbers published your status),
   and at most one hint: listing turned off (*Turn listing on*), no profile photo (you are not shown until you add one), or no gender. With no zip on file, the point-of-use zip form (#3306) sits under the pills in the same card look, as an offer: the lists no longer wait for it (owner 2026-11-24). Ended date windows are NOT flagged here (owner):
   an ended listing still matches (0311 only drops the dates), and the listing screen already marks it.
-- **Distance defaults to Anywhere in the place modes** (My areas, Pick an area; walkthrough 2026-11-14): with a zip on file it defaulted
-  to *within 50 mi of <zip>* everywhere, so a Bellingham climber listed at Smith Rock saw nobody there. Near my zip stays the default for
-  Everyone and My objectives, and is one pick away in every mode.
+- **Distance defaults to Anywhere in EVERY mode** (owner 2026-11-24, choosing it over the walkthrough rule of 2026-11-14 that kept
+  *Near my zip* the default for Everyone and My objectives): with a zip on file Everyone shrank to *within 50 mi*, and a climber
+  who saved a zip from the card watched the list they were reading go from 3 climbers to 1. A radius of your zip is one pick away in every mode.
 - **Area search finds every state** (the Listed areas search behind *My areas*, and Pick an area, whose box now sits above the state dropdowns): partial names,
   mt/mount, apostrophes, climber nicknames (`PLACE_NICKNAMES` in lib/search.js: rrg, jtree, nrg, hcr, lcc, bcc, shawangunks) and, when
   nothing matched, typos via `search_names_fuzzy` ("closest names"). Audit 2026-11-14 (`scripts/oneoff/audit-area-search.mjs`): 67/67
@@ -74,7 +74,8 @@ whole guide feature on 2026-11-14 (owner). This doc covers the partners mode (`l
   My objectives, A route, Everyone and the crew-invite list near the climb all render without one; only the DISTANCE
   searches (Near my zip, a radius of your zip) need it, and say *Choose where to search from.* until there is an origin.
   With no zip, the inline zip card (`_zipNeeded` in `lib/PartnerSearch.jsx`, saves through `saveMyZip`) stays above the
-  lists as an offer. Join a crew never gated on a zip (its distance filter alone uses it). Real climbers with **no photo** are left
+  lists as an offer. My objectives with none saved, and A route with none picked, show their own
+  prompt instead of falling through to everyone. Join a crew never gated on a zip (its distance filter alone uses it). Real climbers with **no photo** are left
   out of every browse list (name search still finds them), and a viewer without one is told they are not shown.
   **Sending a request** to a real climber without your own photo is refused (`sendReq` in `ClimbMatch.jsx`: *Didn't send
   it — add a profile photo first*) and opens Edit profile on the photo.
@@ -119,7 +120,7 @@ whole guide feature on 2026-11-14 (owner). This doc covers the partners mode (`l
    `usePartnersInAreas(areaIds,origin,radiusMi)` -> one `partners_in_area` read per saved area under the same query key, merged by climber with `via_area_ids` (Saved areas; `SAVED_SEARCH_LIM` = 12).
    The saved list (`bookmarks`, owner-only `saved_areas`) never leaves the viewer: only climbers who LISTED themselves come back, so Saved areas exposes nothing a By Area search does not.
    Listings: `useMyPartnerAreas`, `savePartnerArea`, `removePartnerArea` (owner-only table `partner_areas`), `usePartnerAreaCounts` -> RPC `partner_area_counts`.
-3. Origin: `_nearBy` = `nearBy || (zip ? "zip" : "any")`. Zip comes from `useMyZip` (owner-only `profile_zips` joined to `zip_centroids`); "here" comes from `hereLoc`. Neither is stored.
+3. Origin: `_nearBy` = `nearBy || "any"` (Anywhere until the climber picks a distance, owner 2026-11-24). Zip comes from `useMyZip` (owner-only `profile_zips` joined to `zip_centroids`); "here" comes from `hereLoc`. Neither is stored.
 4. Per-row enrichment, one read each for every row on screen: `useMatchObjectivesOfUsers` (the objectives that still count for a match — RPC `match_objectives_of_users`), `usePartnerAreasOfUsers` (their listed areas — RPC `partner_areas_of_users`), `useVerifiedUsers` (verified tick, 0232), `usePartnerSignals` (level via RPC `partner_signals`, only fetched when Experience is active).
 5. Client filtering: `_realFits(p)` applies discipline, availability (`availFits` against `availWeek`/`avail_week`) and speed (`paceOf`; an unrecorded pace is unknown, not a mismatch); `_vRows` also applies level from `sigQ`.
    A climber who never set level/discipline/availability does not match a filter on it. Name search is not narrowed.
