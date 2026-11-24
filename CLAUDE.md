@@ -251,6 +251,7 @@ npm run audit:terrain      # does a route's safety advice match the terrain it c
 npm run audit:hazard-redundancy # how much repetition the KNOWN HAZARDS merge removes (NOT a backlog)
 npm run enrich:apply       # write approach_variants / climbing_route / bivy (--dry first)
 npm run check:research-locks # can a research batch overwrite a field the evidence ledger has locked? (in build)
+npm run audit:coverage     # how much of each STATE × DISCIPLINE is filled / sourced / LOCKED (approach, descent, protection, pitches, coordinates…), and which destinations to research next, most-used first (writes audits/coverage/<date>.json; --compare an older one; --selftest needs no DB)
 
 # ── Contributions and the logbook — notes: docs/guards/contributions-and-logbook.md ──
 npm run check:contrib-fields # every field the contribute form offers is actually applied (in build)
