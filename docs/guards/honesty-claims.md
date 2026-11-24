@@ -1444,6 +1444,10 @@ rows. Its build script is gone; new reviews write the column.
     (CO); Chouinard–Frost Chimney (WY). Each rested on one account, another line's page, or a silent page.
   Snow not settled now on these routes: WA 29, CA 17, CO 14, WY 8, UT 4, BC 2, ID 1, OR 1; AZ 0. Worth a
   re-run once the search budget refills.
+  - The loads found a ping-pong: the Washington load (no `--state`) re-asserts the 2026-11-12 dry list, which
+    spans every state, as glacier null, so it undid CO's reviewed "no" on Pyramid Peak NE Ridge each time it
+    ran after CO. `load-glacier-travel.mjs` now skips a dry-list id that a state's own `final.json` reviews;
+    Pyramid Peak was the only one.
 
   - **HOUR BY HOUR + THE GUST WINDOW (2026-10-08, owner: "clear and exact and accurate science").**
     Section 12 of the guard. Three things it holds, each measured, not assumed:
