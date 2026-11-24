@@ -21,6 +21,7 @@ import PartnersHereCard from "./PartnersHereCard.tsx";
 import DbSearchSplit from "./DbSearchSplit.tsx";
 import SummitBriefing from "./SummitBriefing.tsx";
 import LoadingRows from "./LoadingRows.tsx";
+import EmptyState from "./EmptyState.tsx";
 import { discLabel } from "../../lib/areaDiscLabel.js";
 import { gradeNumFor, gradeSystemForDiscipline } from "../../lib/grade.js";
 import RouteRow from "./RouteRow.tsx";
@@ -403,7 +404,7 @@ export default function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, book
             </>
           /* Only claim the crag is empty when the load actually succeeded — otherwise a
              failed refetch reports "no routes" about a crag it never managed to read. */
-          : !error ? <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 10, flexWrap: "wrap" }}><span style={{ color: C.textMuted, fontSize: 12.5 }}>No climbs here yet.</span>{onAddClimb ? <button onClick={() => onAddClimb(area)} style={{ ...HEAD_BTN, background: C.blueBg, border: "1px solid " + C.blue, color: C.text }}>Add a climb</button> : null}</div> : null
+          : !error ? <EmptyState C={C} icon="mountain" action={onAddClimb ? <button onClick={() => onAddClimb(area)} style={{ ...HEAD_BTN, background: C.blueBg, border: "1px solid " + C.blue, color: C.text }}>Add a climb</button> : null}>{onAddClimb ? "No climbs here yet. Know one? Add it so the next climber finds it." : "No climbs here yet."}</EmptyState> : null
       )}
   </>);
   const main = (
