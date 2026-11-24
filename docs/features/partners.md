@@ -77,9 +77,12 @@ whole guide feature on 2026-11-14 (owner). This doc covers the partners mode (`l
   *Near me now* gives the nearest first.
   With no zip, the inline zip card (`_zipNeeded` in `lib/PartnerSearch.jsx`, saves through `saveMyZip`) stays above the
   lists as an offer. My objectives with none saved, and A route with none picked, show their own
-  prompt instead of falling through to everyone; My objectives says *Couldn’t load your objectives* on a failed read, loads
-  while the read or a saved climb’s row is still answering, and tells a climber whose objectives are all crag routes that crag
-  partners are found by area (they are a tick list, not a match signal, 0300). Join a crew never gated on a zip (its distance filter alone uses it). Real climbers with **no photo** are left
+  prompt instead of falling through to everyone; My objectives says *Couldn’t load your objectives* on a failed read (with *See
+  everyone*), loads only until your saved list reaches the screen (`objectivesLoading`: the read is pending, or answered and
+  not yet copied in -- a flag set by that one-time copy, so it cannot wait forever), tells a climber whose objectives are all crag
+  routes that crag partners are found by area (a tick list, not a match signal, 0300), and when some saved climbs have not
+  resolved -- loading, offline, or no longer in the catalog -- says they can’t be matched right now (amber when the route read
+  failed, `objectiveRowsFailed`) with *See everyone*. It never waits on those, and never calls them none. Join a crew never gated on a zip (its distance filter alone uses it). Real climbers with **no photo** are left
   out of every browse list (name search still finds them), and a viewer without one is told they are not shown.
   **Sending a request** to a real climber without your own photo is refused (`sendReq` in `ClimbMatch.jsx`: *Didn't send
   it — add a profile photo first*) and opens Edit profile on the photo.
