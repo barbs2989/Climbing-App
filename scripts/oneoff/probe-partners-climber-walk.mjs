@@ -58,8 +58,8 @@ try {
   const by = page.locator('select[aria-label="Search by"]');
   ok(await by.count() === 1, "Partners tab is open (Search by pill present)");
   const modes = await by.locator("option").allInnerTexts();
-  ok(modes.join("|") === "My areas|Pick an area|A peak|My objectives|A route|Everyone", "six modes (A peak since #3451): " + modes.join(" | "));
-  ok(await by.inputValue() === "myareas", "opens on My areas");
+  ok(modes.join("|") === "My climbs & areas|By Route|By Peak|By Area|Everyone", "Join a crew's five choices (#3909): " + modes.join(" | "));
+  ok(await by.inputValue() === "mine", "opens on My climbs & areas");
   const you = page.locator('section[aria-label="How climbers find you"]');
   ok(await you.count() === 1, "the You card is there");
   const youTxt = await you.innerText().catch(() => "");
@@ -76,8 +76,7 @@ try {
   note("pills in the row: " + pills);
   ok(pills <= 6, "at most 6 pills in the row");
   ok(await page.locator('select[aria-label="Search radius"]').count() === 0, "distance is one pill (no separate radius select)");
-  const chips = page.locator('[role="group"][aria-label="Which of my areas"] button');
-  ok((await chips.allInnerTexts()).join("|") === "Where I’m listed|Saved areas", "My areas chips: Where I'm listed / Saved areas");
+  ok(await page.locator('[role="group"][aria-label="Which of my areas"]').count() === 0, "no Where I'm listed / Saved areas buttons (#3909)");
   const empty = page.locator("[data-partner-empty]");
   ok(await empty.count() === 1, "unlisted My areas shows the friendly empty card");
   const emptyTxt = await empty.innerText().catch(() => "");
@@ -158,17 +157,13 @@ try {
 
   // 6. Back to My areas, now listed.
   await page.evaluate(() => window.scrollTo(0, 0));
-  await by.selectOption("myareas"); await page.waitForTimeout(7000);
+  await by.selectOption("mine"); await page.waitForTimeout(7000);
   const you2 = await you.innerText(); note("You card now: " + you2.replace(/\n/g, " / "));
   ok(/My areas · 1/.test(you2) && /Utah/.test(you2), "the You card names Utah (My areas · 1, a Utah chip)");
   const e3 = page.locator("[data-partner-empty]");
   if (await e3.count()) { const t3 = await e3.innerText(); note("listed, empty: " + t3.replace(/\n/g, " / ")); ok(/at your area/.test(t3) && /Pick an area/.test(t3), "listed but nobody else: the card names your area and offers Pick an area"); }
   else note("someone else is listed across Utah's reach -- results shown");
   await shot(page, "6-myareas-listed");
-  await chips.filter({ hasText: "Saved areas" }).click(); await page.waitForTimeout(3000);
-  ok(await by.inputValue() === "myareas", "Saved areas chip keeps the pill on My areas");
-  ok(/No saved areas yet/.test(await page.locator("body").innerText()), "a fresh account's Saved areas says how to save one");
-  await chips.filter({ hasText: "Where I’m listed" }).click(); await page.waitForTimeout(2000);
 
   // 7. Free this weekend switch (the fixture's own status) and Invite.
   const sw = you.locator('[role="switch"]');
