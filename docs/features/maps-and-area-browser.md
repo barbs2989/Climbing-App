@@ -76,7 +76,7 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
   Neither import kept a position (the OpenBeta ETL dropped `metadata.leftRightIndex`; MP's route-finder CSV has none), so on 2026-10-21
   **1 of 314,360 routes** had one.
 - **Order wrong?** (owner, 2026-11-19; `src/components/WallOrderSuggest.tsx`, button in `AreaPage`): under the sort chips of a wall's climb list, while
-  the list is in a wall order (*Order wrong? Suggest a different order*) or the wall has no order stored (*Know the left-to-right order? Add it*);
+  the list is in a wall order (*Suggest a different order*) or the wall has no order stored (*Add the wall order*), as a small right-aligned text link rather than a box, so the list starts high (owner, 2026-11-24);
   never on a peak, and only with two or more climbs that are not boulder problems. The sheet holds every such climb, whatever the list's filters hide, as the wall stood when it opened. Climbs that have a place are **the line**, left to right:
   a climb moves one place with its ↑ / ↓ buttons or by typing its place number, and *Reverse the whole order* turns a line that is listed
   backwards. Climbs with **no place on the wall yet** wait in their own list under it; *Place* puts one at the right-hand end of the line
