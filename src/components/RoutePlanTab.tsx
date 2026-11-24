@@ -127,7 +127,7 @@ export interface RoutePlanTabProps {
   _tracksPanel: ReactNode;
   /** The merged trip reports. */
   activity: PlanActivity[];
-  /** `activity` plus the private reports, anonymous (route_private_conditions). Read where a figure is counted or summed (the time estimate, the camps' slept-here counts, the RAPPELS answers) and by the road status line; never where a report's words are listed -- a private row carries no note, beta or name (route_private_conditions, 0506). Omitted, the shared reports alone. */
+  /** `activity` plus the private reports, anonymous (route_private_conditions). Read where a figure is counted or summed (the time estimate, the camps' slept-here counts, the RAPPELS answers) and by the road status line; never where a report's words are listed -- a private row carries no note, beta or name (route_private_conditions, 0508). Omitted, the shared reports alone. */
   condActivity?: PlanActivity[];
   baseQ: BaseCheckinPanelProps["q"];
   baseSpots: BaseCheckinPanelProps["spots"];
