@@ -416,12 +416,13 @@
   "peak": "Tijeras Peak",
   "discipline": "alpine",
   "kindToday": "alpinerock",
-  "glacier": "unsure",
+  "glacier": "no",
   "snowInSeason": "unsure",
   "basis": "knowledge",
   "why": "No glaciers in the Sangre de Cristos; the snowfield at the start may persist.",
   "verified": true,
-  "secondReview": "unsure/unsure: Starts near a high snowfield and nothing says whether it is permanent or crevassed."
+  "secondReview": "unsure/unsure: Starts near a high snowfield and nothing says whether it is permanent or crevassed.",
+  "research": "no/unsure: The climbing page places it on a rock wall in the Sangre de Cristo with only early-season snow in the descent slot and no glacier mentioned; whether the base snowfield lasts through the season stayed unclear."
  },
  {
   "id": "co_b_line",
@@ -1625,12 +1626,13 @@
   "peak": "James Peak",
   "discipline": "mountaineering",
   "kindToday": "glacier",
-  "glacier": "unsure",
+  "glacier": "no",
   "snowInSeason": "yes",
   "basis": "knowledge",
   "why": "Snow couloir above Mary's Lake where the approach climbs Mary's Glacier; it is a small remnant but I could not confirm it has no crevasse hazard.",
   "verified": true,
-  "secondReview": "no/yes: Mary's Glacier is a small snowfield with no crevasse record, climbed as a snow couloir."
+  "secondReview": "no/yes: Mary's Glacier is a small snowfield with no crevasse record, climbed as a snow couloir.",
+  "research": "no/yes: A club page calls Mary's Glacier a semi-permanent snowfield rather than a glacier, and the route page describes a snow couloir with optional pickets and no crevasses."
  },
  {
   "id": "co_james_peak_shooting_star",
@@ -1674,12 +1676,13 @@
   "peak": "Jasper Peak",
   "discipline": "mountaineering",
   "kindToday": "glacier",
-  "glacier": "unsure",
+  "glacier": "no",
   "snowInSeason": "yes",
   "basis": "text",
   "why": "Text mentions crevasse-like features where snow separates from rock; likely only a snow moat but it keeps the warning.",
   "verified": true,
-  "secondReview": "no/yes: A snow couloir where crevasse-like gaps appear, but it is a seasonal snow climb rather than a glacier."
+  "secondReview": "no/yes: A snow couloir where crevasse-like gaps appear, but it is a seasonal snow climb rather than a glacier.",
+  "research": "no/yes: The route page describes a snow couloir where snow pulls away from the rock in places, and a solo trip report treats it as snow slopes with avalanche concern and no glacier."
  },
  {
   "id": "co_jasper_peak_turf_war_couloir",
@@ -2409,11 +2412,12 @@
   "peak": "Navajo Peak",
   "discipline": "ice",
   "kindToday": "alpineice",
-  "glacier": "unsure",
+  "glacier": "no",
   "snowInSeason": "yes",
   "basis": "text",
   "why": "Ice-axe couloir with a snowfield descent; glaciers sit nearby so glacier travel is not ruled out.",
-  "verified": true
+  "verified": true,
+  "research": "no/yes: The route page describes a long couloir on the west side of the Divide with a short ice step and ice axes in use, and the snowfield is only an alternative descent."
  },
  {
   "id": "co_ne_buttress_hallett_peak_mixed_ice_analysis_paralysis",
@@ -2481,12 +2485,13 @@
   "peak": "NE Buttress Hallett Peak",
   "discipline": "mixed",
   "kindToday": "alpineice",
-  "glacier": "unsure",
+  "glacier": "no",
   "snowInSeason": "yes",
   "basis": "text",
   "why": "Winter or spring ice, mixed or snow-couloir line in Colorado with no crevassed glacier; its season is the snow season.",
   "verified": true,
-  "secondReview": "unsure/yes: Climbs above Tyndall Glacier and the text does not say whether the line touches it."
+  "secondReview": "unsure/yes: Climbs above Tyndall Glacier and the text does not say whether the line touches it.",
+  "research": "no/yes: The route page describes a short spring mixed climb on the north face with steep snow, and mentions Tyndall Glacier only as a descent option."
  },
  {
   "id": "co_ne_buttress_hallett_peak_mixed_ice_the_slit",
@@ -2506,12 +2511,13 @@
   "peak": "NE Buttress Hallett Peak",
   "discipline": "mountaineering",
   "kindToday": "glacier",
-  "glacier": "unsure",
+  "glacier": "no",
   "snowInSeason": "yes",
   "basis": "text",
   "why": "Couloir is described as mostly cut off from the Tyndall Glacier by a rib, so the climb stays off the ice.",
   "verified": true,
-  "secondReview": "unsure/yes: Couloir beside Tyndall Glacier, described as mostly cut off by a rock rib but sources list the glacier route as snow and glacier climbing."
+  "secondReview": "unsure/yes: Couloir beside Tyndall Glacier, described as mostly cut off by a rock rib but sources list the glacier route as snow and glacier climbing.",
+  "research": "no/yes: The route page describes a snow couloir largely separated from Tyndall Glacier by a rock rib, soloed with optional pickets, soft snow in July and ice later."
  },
  {
   "id": "co_north_buttress_2",
@@ -2701,12 +2707,13 @@
   "peak": "Flattop Mountain",
   "discipline": "alpine",
   "kindToday": "alpinerock",
-  "glacier": "unsure",
-  "snowInSeason": "unsure",
+  "glacier": "no",
+  "snowInSeason": "yes",
   "basis": "knowledge",
   "why": "Snow on the line is mentioned but the text does not settle whether it lasts through the usual season; no crevassed glacier is involved.",
   "verified": true,
-  "secondReview": "unsure/unsure: Text mentions axe and crampons for snow in a couloir but the line and any glacier contact are unclear."
+  "secondReview": "unsure/unsure: Text mentions axe and crampons for snow in a couloir but the line and any glacier contact are unclear.",
+  "research": "no/yes: Route pages place it on Flattop's south face with winter and spring ascents, steep snow and mixed pitches, and no glacier."
  },
  {
   "id": "co_overflow_and_jewell_lake_cave",
@@ -3030,12 +3037,13 @@
   "peak": "Southeast Face aka The Cirque",
   "discipline": "mixed",
   "kindToday": "alpineice",
-  "glacier": "unsure",
+  "glacier": "no",
   "snowInSeason": "yes",
   "basis": "knowledge",
   "why": "Winter ice or snow-climb season; Colorado has no crevassed glacier on this line (small stagnant remnants at most).",
   "verified": true,
-  "secondReview": "unsure/yes: Steep snow couloir; I could not place the cirque to rule out a glacier."
+  "secondReview": "unsure/yes: Steep snow couloir; I could not place the cirque to rule out a glacier.",
+  "research": "no/yes: The area page places it in the Pikes Peak cirque, a winter and spring mixed and snow area with no glacier mentioned."
  },
  {
   "id": "co_spear_me_the_details",
@@ -3079,12 +3087,13 @@
   "peak": "Sphinx Buttress",
   "discipline": "mixed",
   "kindToday": "alpineice",
-  "glacier": "unsure",
+  "glacier": "no",
   "snowInSeason": "yes",
   "basis": "knowledge",
   "why": "Winter ice or snow-climb season; Colorado has no crevassed glacier on this line (small stagnant remnants at most).",
   "verified": true,
-  "secondReview": "unsure/yes: Approach descends steep to moderate snow in a drainage; no glacier described but location unverified."
+  "secondReview": "unsure/yes: Approach descends steep to moderate snow in a drainage; no glacier described but location unverified.",
+  "research": "no/yes: The area page places it in French Creek on Pikes Peak, a winter and spring mixed objective with a moderate to steep snow approach and no glacier."
  },
  {
   "id": "co_stettner_s_ledges",
