@@ -53,17 +53,22 @@ views under `groupsTab`: For you · Your groups · Your activity · Discover · 
   as the guest profile photo is.
 - **Make it yours** (owner 2026-11-23, "do all", 0506). The group form's section after *Photos* (`GroupCustomizeFields`)
   sets five more things, all optional and saved with the form: a **colour** (`groups.accent`, one of `GROUP_ACCENTS` or
-  *Auto*; it tints `groupBand`, the initial in `groupMark`, and a strip above the name when there is no cover; the
+  *Auto*, which stores no colour, at creation as on an edit; it tints `groupBand`, the initial in `groupMark`, and a strip above the name when there is no cover; the
   database holds it to `#rrggbb` since it reaches a style), an **announcement** (≤300, an amber banner under the
   group's name for anyone who opens it), a **welcome message** (≤600, at the top of Discussion for a member until they
   close it, for the session: `grpWelcomeHidden`), up to 4 **links** (`{label, url}`, https only; `cleanGroupLinks` in
   `lib/groupRules.js` adds a missing `https://` and refuses `http://`, as `group_links_valid()` does; listed on About
   and opened in a new tab with no opener), and **what to call moderators** (≤24, `mod_title`, in place of MOD and
-  Moderator on Members). The new text is screened with the group's name and About text (`screening_text`'s `group`
-  line). Only a manager can change them (0090's update policy).
+  Moderator on Members, its badge capped at 120px). The new text is screened with the group's name and About text
+  (`screening_text`'s `group` line), each link's address with its label since 0509, because About prints both. Only a
+  manager can change them (0090's update policy).
 - **The database refuses a late RSVP or invite** (0506, `guard_group_event_not_past`): for an event dated before the UTC
   date minus one, a day more lenient than the app, so it never refuses what the app offers. The RSVP toast says *This
   event has ended.* Cancelling an RSVP stays allowed. Probe: `scripts/oneoff/probe-group-custom-0506.mjs`.
+  **So a new event starts today or later** (`GroupEventForm`, review 2026-11-23): `createGroupEvents` writes the host's
+  RSVP with the event, and the database would refuse it for a past date, leaving an event its host is not on. The date
+  picker's minimum is today and a past date disables *Create event* with *Pick today or a later date.* An edit may still
+  move an event's date.
 - **Join / Leave and + Invite** in a group's header are compact pills; the joined state reads *✓ Joined* (its name
   for a screen reader still says tap to leave, and leaving asks first).
 - **Removing a member** (the ✕ on Members) is for the owner and moderators only, never on yourself or the owner, and
