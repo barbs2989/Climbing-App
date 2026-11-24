@@ -1,0 +1,10 @@
+[
+ { "id": "ab_mount_snowdome_slipstream",
+   "from": { "summitTimeHrs": 7.5, "descentTimeHrs": 5.5 },
+   "to": { "summitTimeHrs": 7.5, "descentTimeHrs": 5.5, "summitFrom": "camp", "descentTo": "camp" },
+   "why": "the published times run from and back to the camp below the route (verified6.json)" },
+ { "id": "bc_bugaboo_spire_kain_route_south_ridge",
+   "from": { "summitTimeHrs": 4, "descentTimeHrs": 3.5 },
+   "to": { "summitTimeHrs": 4, "descentTimeHrs": 3.5, "summitFrom": "camp", "descentTo": "camp" },
+   "why": "the published times run from and back to Applebee camp (verified6.json)" }
+]
