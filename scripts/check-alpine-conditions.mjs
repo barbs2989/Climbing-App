@@ -779,9 +779,10 @@ console.log("\n17. YOUR RANGE — the climber's own, one neutral line, never a f
   const rl = (card2.match(/function RangeLine[\s\S]*?(?=\nfunction [A-Z]|\nexport default function|$)/) || [""])[0];
   eq("the range line is neutral: no red, amber or warning words", rl.length > 200 && !/C\.red|C\.amber|Warning|Caution/.test(rl), true);
   eq("the line mounts once, after the day's flags, from that day's own summary", (card2.match(/<RangeLine route=\{route\} sum=\{day\.sum\} \/>/g) || []).length === 1 && /Nothing in the forecast flags this day\.<\/div>\}\s*<\/div>\s*<RangeLine/.test(card2), true);
-  eq("alpine and ice/mixed are their own scopes with no preset and no inherited default", /RANGE_ONLY = \{ alpine:/.test(prefsSrc) && /ice: "Ice & mixed"/.test(prefsSrc) && /ownOnly \? \(p\.temp\[scope\] \|\| null\)/.test(prefsSrc) && /scopeForDiscipline/.test(card2), true);
+  eq("alpine, mountaineering and ice/mixed are their own scopes with no preset and no inherited default", /RANGE_ONLY = \{ alpine: "Alpine", mountaineering: "Mountaineering & scrambling", ice: "Ice & mixed" \}/.test(prefsSrc) && /ownOnly \? \(p\.temp\[scope\] \|\| null\)/.test(prefsSrc) && /scopeForDiscipline/.test(card2), true);
   const fnText = (prefsSrc.match(/export function scopeForDiscipline[\s\S]*?\n}/) || [""])[0];
-  eq("alpine, mountaineering and scrambling map to the alpine scope; ice and mixed to ice; crag disciplines to themselves", /d === "alpine" \|\| d === "mountaineering" \|\| d === "scrambling"\) return "alpine"/.test(fnText) && /d === "ice" \|\| d === "mixed"\) return "ice"/.test(fnText) && /COND_DISCS\.indexOf\(d\) >= 0\) return d/.test(fnText), true);
+  // Alpine and mountaineering were one scope until 2026-11-23 (owner: "alpine and mountaineering need to be separated").
+  eq("alpine maps to alpine; mountaineering and scrambling to mountaineering; ice and mixed to ice; crag disciplines to themselves", /d === "alpine"\) return "alpine"/.test(fnText) && /d === "mountaineering" \|\| d === "scrambling"\) return "mountaineering"/.test(fnText) &&/d === "ice" \|\| d === "mixed"\) return "ice"/.test(fnText) && /COND_DISCS\.indexOf\(d\) >= 0\) return d/.test(fnText), true);
 }
 
 
