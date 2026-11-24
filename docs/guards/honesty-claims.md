@@ -703,6 +703,22 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     it. The scale was then fixed at the source (owner, same day): every number grade up to 5.9 is its own step, the
     spacing from 5.9 to 5.12 is unchanged, and the guard asserts 5.6 vs 5.10a is more than two steps while 5.9 vs 5.10a is
     one. A second review found the same lump at the top (5.13 and up were one step); it steps by letter now, pinned too.
+  - **SECTION 8: THE COMPAT AUDIT OF 2026-11-23** (see `docs/codebase/algorithms.md`). Four assertions, one per
+    owner-approved fix: (a) `compat(a,b) === compat(b,a)` over every ordered pair of ME, the seed climbers and five
+    personas (110 pairs); (b) a crag pair with listed areas only and an alpine pair with objectives only, matching on
+    everything, both reach `COMPAT_TOP`; (c) ice, alpine, mixed and aid grades from `climbGrades` are compared like with
+    like, and the ice line says "(ice)"; (d) against a blank profile every overlap term scores exactly max/2.
+    `scripts/oneoff/inject-match-percent-cases.mjs` reverts each fix alone and each is caught (19/19).
+    - **WHERE YOU CLIMB HAS TWO ANSWERS, so section 4 tests each on a base holding only that answer.** With both in the
+      base, dropping the objectives leaves the area filling the term, which is correct, and section 4 read it as "a
+      signal that does nothing". `baseFor()`/`variantFor()` strip the other answer; section 7 reuses them.
+    - **The copy pattern is `blends (your )?`, and each capture is cut at its first full stop.** The new sentences read
+      "blends where you climb…", which the old `blends your` pattern missed entirely (found 0 sites, so the run proved
+      nothing). The widening also reaches the fourth sentence, `PARTNER_NUMBERS`, which runs on into "Open a climber's
+      profile… line by line" and would otherwise be read as a promised signal.
+    - **Two injection cases had rotted before this change**, and `check:injection-anchors` did not report them: the
+      pre-0209 `_cand` case dropped objectives and pace but not availability (2 unknowns, under the refusal's 3), and the
+      comment case anchored on a `RealClimberRow` signature that has since grown props. Both fixed.
   - **THE WEEK GRID IS THE SCHEDULE (2026-11-23).** `availOf()` must read a climber's `availWeek` when it has one: a
     stale `availability` ("weekends") on a test account put one schedule on its partner card and in the % and another on
     its profile. Asserted on a grid of Wednesday evening and weekend mornings with stale tags; injection measured: the old
@@ -1384,6 +1400,19 @@ rows. Its build script is gone; new reviews write the column.
   "unsure" never erases an earlier page-read answer, and in a disagreement "yes" wins. Before the change, a
   later file replaced an earlier one whole.
   Glacier not settled now: BC 9, CO 2, WY 21, AK 20.
+- **Round 6** (2026-11-23) read pages for the calls still open in WA, CA, OR, MT, AB, NV, NT, NU and YT (160
+  entries). Most came back unsure: no page that loads describes the line.
+  - Glacier yes: Bacon Peak from Diobsud, Northwest Mox NE Ridge, Silver Star NE Ridge (WA), the
+    Thunderbolt to Sill Traverse (CA).
+  - Glacier no: Ottohorn (WA); Jefferson North Ridge, South Sister North
+    Ridge and Large Ear, a rock pinnacle whose "crevasse" is a crack (OR); Lotus Flower Tower (NT).
+  - Snow yes: Pyramid Peak (WA), Mount Davis from North Glacier Pass (CA).
+  - Held at unsure on review (eight): Bonanza Cascadian, Chopping Block NW Route, Devils Club (WA); Austrian
+    Arete, and Bear Creek Spire's snow "no" (CA); Center Ridge (OR); Devils Thumb and Andromeda Asteroid Alley
+    (AB). Each rested on silence, one account, a page about a different line, or "can stay off the glacier".
+    The Chopping Block NE Ridge's new "no" (a park conditions page) is not applied: the WA fold's
+    `HOLD_GLACIER` list keeps it unsure until someone reads that page against the Terror Glacier approach.
+  Glacier not settled now: WA 30, CA 32, OR 11, MT 7, AB 6, NV 1, NU 1, YT 1; NT 0.
 
   - **HOUR BY HOUR + THE GUST WINDOW (2026-10-08, owner: "clear and exact and accurate science").**
     Section 12 of the guard. Three things it holds, each measured, not assumed:
