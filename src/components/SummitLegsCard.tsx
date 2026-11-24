@@ -40,10 +40,13 @@ export default function SummitLegsCard({route,calc}: SummitLegsCardProps){
      trailhead. The leg gets no gain of its own (none is published per leg); the note states the outing's. */
   const legGainFt=whole?null:gainFt;
   const upFloor=!pt.walkInKnown||!pt.climbKnown;const downFloor=!pt.walkOutKnown;
+  /* A leg with nothing to time prints no Time, on planTimes' own test -- the one Full trip time's N/A reads --
+     rather than "≥0.0hr" beside a tile that says N/A. */
+  const upTimed=pt.approachTimed||pt.climbTimed||pt.climbToStartH>0;
   const legs: Leg[]=pt.publishedIsWholeDay
-    ?[["CAR TO CAR",[gainFt?["Gain","↑ "+uElev(gainFt)]:null,upLoss?["Loss on the way in",upLoss[1]]:null,downGain?["Regain on the way out",downGain[1]]:null,hasKm?["Distance",fmtLegKm(outBack&&!whole?km*2:km)]:null,["Time",fmtLegHrs(pt.tripH,upFloor||downFloor)]]]]
-    :[["TRAILHEAD TO "+top.toUpperCase(),[legGainFt?["Gain","↑ "+uElev(legGainFt)]:null,upLoss,legKm?["Distance","~"+fmtLegKm(legKm)]:null,["Time",fmtLegHrs(pt.totalH,upFloor)]]],
-      [top.toUpperCase()+" TO TRAILHEAD",[legKm?["Distance","~"+fmtLegKm(legKm)]:null,legKm&&dropFt?["Drop","↓ "+uElev(dropFt)]:null,downGain,["Time",fmtLegHrs(pt.downH,downFloor)]]]];
+    ?[["CAR TO CAR",[gainFt?["Gain","↑ "+uElev(gainFt)]:null,upLoss?["Loss on the way in",upLoss[1]]:null,downGain?["Regain on the way out",downGain[1]]:null,hasKm?["Distance",fmtLegKm(outBack&&!whole?km*2:km)]:null,pt.anyTimed?["Time",fmtLegHrs(pt.tripH,upFloor||downFloor)]:null]]]
+    :[["TRAILHEAD TO "+top.toUpperCase(),[legGainFt?["Gain","↑ "+uElev(legGainFt)]:null,upLoss,legKm?["Distance","~"+fmtLegKm(legKm)]:null,upTimed?["Time",fmtLegHrs(pt.totalH,upFloor)]:null]],
+      [top.toUpperCase()+" TO TRAILHEAD",[legKm?["Distance","~"+fmtLegKm(legKm)]:null,legKm&&dropFt?["Drop","↓ "+uElev(dropFt)]:null,downGain,pt.descentTimed?["Time",fmtLegHrs(pt.downH,downFloor)]:null]]];
   const shown=legs.map(function(l): [string, LegStat[]] {return [l[0],l[1].filter(function(s): s is LegStat {return s!==null;})];}).filter(function(l){return l[1].length;});
   if(!shown.length)return null;
   const days=itinDayCount(route);
