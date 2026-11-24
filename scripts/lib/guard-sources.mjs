@@ -324,6 +324,8 @@ export const MOVED = {
     "src/components/TopoPinKey.tsx",
     "src/components/TopoThumb.tsx",
     "src/components/EmptySection.tsx",
+    "src/components/HelpFillProvider.tsx",
+    "src/components/HelpFillList.tsx",
     "src/components/PitchPhotos.tsx",
     "src/components/CopyCoordButton.tsx",
     "src/components/TopoZoomPhoto.tsx",

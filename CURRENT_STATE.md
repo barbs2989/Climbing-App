@@ -25,6 +25,8 @@ Not yet documented here (add a doc when you next work in one): moderation/safety
 the catalog import pipeline (see [docs/BACKEND.md](docs/BACKEND.md)).
 
 ## Recent changes
+- **Route page: empty sections are one "Help fill this in" list** (2026-11-24, visual guide, owner-approved on the condition that every add button stays): a section nobody has written yet (description, beta, approach, climbing route, route breakdown, descent, rappels) no longer draws its own heading and card. Each is a row of one card above *Know this route?* on Overview and Plan, with the same add button. `lib/helpFill.js`, `EmptySection`, `HelpFillList`; `check:bare` and `check:approach-section` read the entry a section leaves. See [route-page](docs/features/route-page.md).
+
 - **Menu tiles carry no counts** (owner 2026-11-24, "Remove numbers under each menu box"): *Crews · N* and *Listed areas · N* are now plain *Crews* and *Listed areas*. The count wrapped onto its own line under the label in the narrow tiles. The Requests corner badge (people waiting on you) stays. `ClimbMatch.jsx`; see `docs/features/partners.md`.
 
 - **Partners shows climbers without a zip code** (owner 2026-11-24, "do what you recommend is best to find partners and crews easier"): the lists no longer wait for a saved zip; a place, a peak, a route, your objectives or everyone are searched without one, and only the distance searches need it. The zip card stays above the lists as an offer, and every search starts at Anywhere (a radius of your zip is one tap away), so saving a zip never shrinks the list. Join a crew never needed one. Supersedes the 2026-11-14 zip gate. See [partners.md](docs/features/partners.md).
