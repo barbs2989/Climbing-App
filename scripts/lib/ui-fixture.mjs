@@ -214,6 +214,7 @@ export async function sweepOrphans(log = () => {}) {
         await rest(`${table}?id=eq.${row.id}`, { method: "DELETE" }).catch(() => {});
       }
     }
+    await rest(`contributions?contributor=eq.${u.id}`, { method: "DELETE" }).catch(() => {});
     await auth(`admin/users/${u.id}`, { method: "DELETE" }).catch(() => {});
   }
   return stale.length;
@@ -398,6 +399,10 @@ export async function createFixture(log = () => {}) {
           await rest(`${table}?${filter}`, { method: "DELETE" }).catch(() => {});
         }
         for (const u of users) {
+          // contributions.contributor is text, not a foreign key: nothing cascades, and a fixture sun vote or
+          // photo left behind sits on the owner's Review desk as pending (2026-11-23). The in-app delete-account
+          // function deletes them first for the same reason.
+          await rest(`contributions?contributor=eq.${u.id}`, { method: "DELETE" }).catch(() => {});
           await auth(`admin/users/${u.id}`, { method: "DELETE" }).catch(() => {});
         }
         // Assert the accounts are actually gone. A leaked fixture profile shows up in
@@ -415,7 +420,7 @@ export async function createFixture(log = () => {}) {
     for (const { table, filter } of undo.reverse()) {
       await rest(`${table}?${filter}`, { method: "DELETE" }).catch(() => {});
     }
-    for (const u of users) await auth(`admin/users/${u.id}`, { method: "DELETE" }).catch(() => {});
+    for (const u of users) { await rest(`contributions?contributor=eq.${u.id}`, { method: "DELETE" }).catch(() => {}); await auth(`admin/users/${u.id}`, { method: "DELETE" }).catch(() => {}); }
     throw e;
   }
 }
