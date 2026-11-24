@@ -39867,3 +39867,42 @@ Aasgard Pass, New Dark Ages, Gerber-Sink.
 
 0 confirmed errors fixed, 3 newly flagged for human review, 7 clean.
 Next batch will continue id-ascending from `wa_dragontail_peak_r2` (pass 9).
+
+## Batch 572 (pass 9) — 2026-11-24
+
+Checked 10 routes, continuing id-ascending from `wa_dragontail_peak_r2`: Pandora's Box (W
+Couloir), Triple Couloirs and Serpentine Arête on Dragontail Peak, East Face (Witches Tower),
+Standard Scramble (Eagle Rock), Southwest Ridge and Standup Creek Route (Earl Peak), East Face
+(Middle Peak / Middle Gunsight), East Face (Chimney Rock), and Northeast Buttress (East McMillan
+Spire).
+
+Triple Couloirs' WI3/Grade III rating, 2,500ft/762m length and 20 pitches, and its Joiner/Nelson/
+Seman May 1974 FA, all matched Mountaineers.org and American Alpine Institute's route profile.
+Serpentine Arête's 5.8 grade, 2000ft/606m length (vs. stored 610m — trivial rounding) and
+Hargis/Ossiander 1973 FA (dated July 1, 1973 in Beckey's guide per a Mountain Project comment)
+matched exactly; its pitch count (14, matching Mountaineers.org and SummitPost) is stored
+correctly against Mountain Project's own contradicting 13 — two sources beat one, not re-flagged.
+Witches Tower's East Face elevation (8,566ft) matched Wikipedia exactly (SummitPost's conflicting
+8,520ft is the minority source). Middle Peak/Middle Gunsight's East Face matched Mountain Project
+exactly on every field: 5.10d, 600ft/182m (vs. stored 183m — trivial), 7 pitches, Wertkin/Putelis
+2006 FA. Chimney Rock's East Face matched Wikipedia and Mountain Project exactly: Farr/Winder/
+Byington 1930 FA, 7,727ft summit, 3 pitches. East McMillan Spire's Northeast Buttress ("Come Over
+to the Dark Side") matched AAJ/Alpinist exactly: 5.10-, 25 pitches, Kearney/Johnson 2008 FA; its
+7,992ft high point matches the cited map elevation exactly (LiDAR gives 7,990ft, a trivial 2ft
+difference). Earl Peak's two routes share its 7,036ft summit, confirmed exactly by SummitPost and
+WTA; the Southwest Ridge's 3,600ft gain matches WTA's own figure exactly, and the Standup Creek
+Route's claim that the 2025 Labor Mountain Fire closure of Trail #1369 has been lifted checks out
+— the Forest Service's own closure order had a Dec 31, 2025 end date, and the separate 2026 Three
+Queens Fire closure does not cover this trail. Eagle Rock's 5,614ft summit sits inside the
+5,610–5,615ft spread multiple sources themselves disagree on — not a real discrepancy.
+
+Pandora's Box (W Couloir) has no findable source giving its length or pitch count either way —
+thin row, left unconfirmed per the no-guessing rule, not flagged.
+
+**Clean (9):** Triple Couloirs, Serpentine Arête, East Face (Witches Tower), Standard Scramble
+(Eagle Rock), Southwest Ridge (Earl Peak), Standup Creek Route (Earl Peak), East Face (Middle
+Peak), East Face (Chimney Rock), Northeast Buttress (East McMillan Spire).
+
+0 confirmed errors fixed, 0 newly flagged for human review, 9 clean, 1 left unconfirmed (no
+source).
+Next batch will continue id-ascending from `wa_east_mcmillan_spire_northeast_buttress` (pass 9).
