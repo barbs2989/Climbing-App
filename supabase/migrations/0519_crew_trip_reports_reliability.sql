@@ -1,4 +1,4 @@
--- 0518: RELIABILITY — did a crewmate show up, on time, or bail? Recorded by the crew, after the trip.
+-- 0519: RELIABILITY — did a crewmate show up, on time, or bail? Recorded by the crew, after the trip.
 --
 -- Owner, 2026-11-23: "reliability should be a factor. Climbers should get scored on reliability ie showing up, on
 -- time, not bailing". Decisions the same day: ONE crewmate's report counts; the climber it is about can reply "I was
@@ -34,7 +34,7 @@ create table public.crew_departures (
 alter table public.crew_departures enable row level security;
 revoke all on table public.crew_departures from anon, authenticated;
 comment on table public.crew_departures is
-  'A confirmed member who LEFT (not was removed from) a crew that had an agreed day, so crewmates can still say they cancelled (0518). Read by definer functions only.';
+  'A confirmed member who LEFT (not was removed from) a crew that had an agreed day, so crewmates can still say they cancelled (0519). Read by definer functions only.';
 
 create or replace function public.crew_member_departed()
 returns trigger
@@ -95,7 +95,7 @@ create index crew_trip_reports_about on public.crew_trip_reports (about_id);
 alter table public.crew_trip_reports enable row level security;
 revoke all on table public.crew_trip_reports from anon, authenticated;
 comment on table public.crew_trip_reports is
-  'What a crewmate said happened on a crew''s day: on time, late, cancelled with notice, cancelled last minute, did not show, or the crew called it off. Read through functions only (0518).';
+  'What a crewmate said happened on a crew''s day: on time, late, cancelled with notice, cancelled last minute, did not show, or the crew called it off. Read through functions only (0519).';
 
 create table public.crew_trip_replies (
   report_id  uuid primary key references public.crew_trip_reports(id) on delete cascade,
@@ -109,7 +109,7 @@ create table public.crew_trip_replies (
 alter table public.crew_trip_replies enable row level security;
 revoke all on table public.crew_trip_replies from anon, authenticated;
 comment on table public.crew_trip_replies is
-  'The reported climber''s answer to a trip report: was_there disputes it (it stops counting), note adds context (0518).';
+  'The reported climber''s answer to a trip report: was_there disputes it (it stops counting), note adds context (0519).';
 
 -- A crew's day as a date, or null when it has none (agreed_date is text).
 create or replace function public.crew_trip_day(p_crew uuid)
@@ -325,7 +325,7 @@ as $$
    where exists (select 1 from public.profiles p where p.id = ids.u);
 $$;
 comment on function public.reliability_of_users(uuid[]) is
-  'Per climber: crew trips crewmates reported on (revealed, undisputed, one outcome per trip) and how many were on time / late / cancelled with notice / cancelled last minute / no-show, plus the vouch Reliability stars. Counts only: no reporter is named. Signed-in only (0518).';
+  'Per climber: crew trips crewmates reported on (revealed, undisputed, one outcome per trip) and how many were on time / late / cancelled with notice / cancelled last minute / no-show, plus the vouch Reliability stars. Counts only: no reporter is named. Signed-in only (0519).';
 revoke all on function public.reliability_of_users(uuid[]) from public, anon;
 grant execute on function public.reliability_of_users(uuid[]) to authenticated;
 

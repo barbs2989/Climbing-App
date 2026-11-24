@@ -4,7 +4,7 @@ Crews, groups, connections and presence: who is on a crew, how a climber is name
 
 Part of the guard notes — see [README.md](README.md) for the full index.
 
-- **`check:trip-reports` — RELIABILITY'S RULES, executed (0518, owner 2026-11-23).** Replays every migration into PGlite
+- **`check:trip-reports` — RELIABILITY'S RULES, executed (0519, owner 2026-11-23).** Replays every migration into PGlite
   with Supabase's default grants, builds four climbers and four crews (yesterday, 20 days ago, next week, and one a
   member LEFT), and drives each rule as the climber who would try to break it: 24 assertions. Hand-run like
   `check:profile-privacy` (~40 s of WASM), declared in `check:guard-wiring`'s EXCLUDED with its trigger.
@@ -17,7 +17,7 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     no-show) and one the organizer removed is not recorded as leaving; deleting the crew keeps its reports; two
     crewmates who disagree about one trip count once, at the more favourable outcome; vouch Reliability stars average
     numbers and numeric strings and skip a plain-text vouch.
-  - **Injection measured (2026-11-23):** four rules broken one at a time in a copy of 0518 (counts reading unrevealed
+  - **Injection measured (2026-11-23):** four rules broken one at a time in a copy of 0519 (counts reading unrevealed
     reports; removal recorded as a departure; "I was there" ignored; self-excusing "called off"): each run exits
     non-zero on the matching assertion.
   - **Trap met building it:** section 9 first read 2 trips for one climber because section 8's DELETED crew kept its
