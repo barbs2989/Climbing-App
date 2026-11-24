@@ -60,8 +60,11 @@ views under `groupsTab`: For you · Your groups · Your activity · Discover · 
   `lib/groupRules.js` adds a missing `https://` and refuses `http://`, as `group_links_valid()` does; listed on About
   and opened in a new tab with no opener), and **what to call moderators** (≤24, `mod_title`, in place of MOD and
   Moderator on Members, its badge capped at 120px). The new text is screened with the group's name and About text
-  (`screening_text`'s `group` line), each link's address with its label since 0509, because About prints both. Only a
-  manager can change them (0090's update policy).
+  (`screening_text`'s `group` line), each link's address with its label since 0509, because About prints both; the
+  model screen (`supabase/functions/screen-content`) reads the same fields for a group. A link's scheme is lowercased
+  before saving (the database's test is case-sensitive), and `club.org:8080` is a host and port, not a scheme. The
+  welcome message is shown only to members, but it is a column of the group row, so anyone who can read a public
+  group can read it: it is not a place for anything private. Only a manager can change them (0090's update policy).
 - **The database refuses a late RSVP or invite** (0506, `guard_group_event_not_past`): for an event dated before the UTC
   date minus one, a day more lenient than the app, so it never refuses what the app offers. The RSVP toast says *This
   event has ended.* Cancelling an RSVP stays allowed. Probe: `scripts/oneoff/probe-group-custom-0506.mjs`.
@@ -80,7 +83,7 @@ views under `groupsTab`: For you · Your groups · Your activity · Discover · 
   `GroupEventForm` on that event (`editId` in its draft: no group or repeat choice) and saves through `updateGroupEvents`;
   on a series, a checkbox applies the title, time, meeting spot, details and cap to the later events too, whose dates
   never move. A series event also shows a *This series* card: how many are left and the last date, **Add N more**
-  (`seriesExtension` continues after the last date and `createGroupEvents` writes the round under the same `series_id`),
+  (`seriesExtension` continues the cadence after the last date, from today on for a series that already ran out, and `createGroupEvents` writes the round under the same `series_id`),
   and **Cancel this and the N after it** (`seriesLater`, `deleteGroupEvents`, one confirm). The host's 10-day reminder
   for the last event of a series says it is the last. Only the host may edit (the `group events edited by the host`
   policy); a group organizer can cancel but sees none of these tools on another host's event.

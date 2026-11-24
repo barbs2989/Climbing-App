@@ -56,7 +56,11 @@ const KINDS: Record<string, { table: string; text: string[]; more?: (r: any) => 
   group_event:  { table: "group_events",   text: ["title", "descr", "location"] },
   comment:      { table: "comments",       text: ["text"] },
   trip_report:  { table: "climb_logs",     text: ["notes", "beta", "gear_beta", "road_note", "outcome_note", "sun_note"], images: (r) => photoUrls(r.photos) },
-  group:        { table: "groups",         text: ["name", "blurb", "location"] },
+  // What its organizers customized (0506) is read as well: the trigger fires on an edit to any of it, and a model that
+  // saw only the name would allow an announcement it never read. Each link's label and address, as About prints both (0509).
+  group:        { table: "groups",         text: ["name", "blurb", "location", "welcome_text", "announcement", "mod_title"], more: (r) =>
+    (Array.isArray(r.links) ? r.links : []).map((l: any) => [l && l.label, l && l.url].filter((s: any) => typeof s === "string" && s.trim()).join(" "))
+      .filter((s: string) => s) },
   topo:         { table: "topos",          text: ["alt", "photographer", "caption"] },
   // A line's words are not plain columns (0492): its name, a caption per variation, a note per marker.
   topo_line:    { table: "topo_lines",     text: ["label"], more: (r) => [
