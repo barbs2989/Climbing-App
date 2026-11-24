@@ -1069,6 +1069,16 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     pane fails the run naming `ClimbMatchCore.jsx` and the style.
   - Cannot see a style held in a variable or spread; those are `check:overlay-scroll`'s where
     reachable.
+  - **Second rule (2026-11-23): ONE page scroll lock.** No file but `lib/dialogA11y.js` may write
+    an element's `.style.overflow`. The Route finder's Filters sheet set `overflow:hidden` on
+    `<html>` in its own effect; the shared lock ran a frame later (it is a MutationObserver +
+    rAF), RECORDED that "hidden" as the page's resting value, and restored it after the sheet's
+    cleanup had cleared it, so the app stayed unscrollable through Back and every tab until a
+    reload. Reproduced in the browser on the old code (`<html>` still `hidden` with no dialog
+    open) and gone on the fix. The shared lock also now records "" when it finds "hidden".
+    Scans every app source plus every `lib/` file; fails closed if its fixture stops matching or
+    the owner file stops writing the lock. `overflowY` (lib/Ads.jsx's rail) is a different
+    property and is not matched.
   - **Same day, same report: `PullToRefresh` (Today) tested `window.scrollY`**, which is always
     0 because `#appscroll` scrolls, not the document — so any downward drag mid-feed grew the
     pull spacer instead of scrolling. It now reads `#appscroll.scrollTop` and ignores touches

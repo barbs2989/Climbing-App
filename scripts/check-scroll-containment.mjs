@@ -87,3 +87,29 @@ if (bad.length) {
   process.exit(1);
 }
 console.log(`  ok    ${panes} scroll panes across ${files.length} files all declare overscrollBehavior (#appscroll exempt)`);
+
+// ── ONE page scroll lock ──
+// lib/dialogA11y.js locks the page behind every open popup (overflow:hidden on <html>, <body>
+// pinned). A component that ALSO locked it froze the whole app for good (2026-11-23, the Route
+// finder's Filters sheet: "after I apply filters the scroll stops working, even when I click
+// back"): its lock ran first, the shared one recorded that "hidden" as the page's own value and
+// put it back after the sheet had cleared it. So no file but the shared lock may write an
+// element's `.style.overflow`.
+const LOCK_OWNER = "lib/dialogA11y.js";
+export const writesOverflow = (src) => /\.style\.overflow\s*=[^=]/.test(src);
+if (!writesOverflow('el.style.overflow = "hidden";') || writesOverflow('rail.style.overflowY = "hidden"; if (a.style.overflow === "x") {}')) {
+  console.error(`${G} FAILED — the page-lock scan no longer classifies its own fixture. Nothing was checked.`);
+  process.exit(1);
+}
+const libFiles = fs.readdirSync(path.join(ROOT, "lib")).filter((f) => /\.(jsx?|tsx?)$/.test(f)).map((f) => "lib/" + f);
+if (!libFiles.includes(LOCK_OWNER) || !writesOverflow(fs.readFileSync(path.join(ROOT, LOCK_OWNER), "utf8"))) {
+  console.error(`${G} FAILED — ${LOCK_OWNER} no longer writes the page's overflow, so this rule names the wrong owner. Re-read it.`);
+  process.exit(1);
+}
+const lockers = [...new Set([...files, ...libFiles])].filter((f) => f !== LOCK_OWNER && writesOverflow(fs.readFileSync(path.join(ROOT, f), "utf8")));
+if (lockers.length) {
+  console.error(`${G} FAILED — ${lockers.join(", ")} write(s) an element's style.overflow. The page scroll lock lives in ${LOCK_OWNER} ONLY;`);
+  console.error(`a second lock un-does it in the wrong order and leaves the whole app unscrollable. Give the popup role="dialog" aria-modal and let that lock hold the page.`);
+  process.exit(1);
+}
+console.log(`  ok    only ${LOCK_OWNER} writes the page's scroll lock`);
