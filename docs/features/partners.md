@@ -83,7 +83,11 @@ whole guide feature on 2026-11-14 (owner). This doc covers the partners mode (`l
   only when the climber changes their own profile, blocks or zip, and a failure falls back to the plain list with *Couldn’t
   sort by distance right now*. A list left unsorted although a zip is on file says *Not sorted by distance* with a *Sort by
   distance* button -- the climber’s own choice, never an automatic switch. Without a zip, or while filling a crew, Everyone is the
-  browse list (`useDiscoverableProfiles`, first 24, no distance order).
+  browse list (`useDiscoverableProfiles`, first 24, no distance order). Everyone waits at most 1.5 s for the zip read
+  before showing the plain list (a later zip is offered by the button); the cap note counts what the function returned.
+  **Known limit:** `partners_by_distance` measures every listed climber with a zip on each call (a full scan of
+  `profiles` x `profile_zips`, then a sort). Fine at today's size; past tens of thousands of listed climbers it needs a
+  bounding-box prefilter or a spatial index.
   With no zip, the inline zip card (`_zipNeeded` in `lib/PartnerSearch.jsx`, saves through `saveMyZip`) stays above the
   lists as an offer. My objectives with none saved, and A route with none picked, show their own
   prompt instead of falling through to everyone; My objectives says *Couldn’t load your objectives* on a failed read (with *See
