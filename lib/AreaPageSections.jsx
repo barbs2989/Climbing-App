@@ -312,13 +312,13 @@ export function gradeFinderFilters(sys, b, stats, disc) {
 // ── GRADE SPREAD, with CLIMBS HERE behind a dropdown (owner, 2026-11-11: "Just show grade spread and allow
 // them to dropdown to view the climbs here chart") ──
 // The first section of the area sheet. With no grade spread to draw, the dropdown alone remains.
-// The open/closed choice is remembered on this device (a convenience, so storage failing is fine).
-const TYPES_OPEN_KEY = "cm.area.typesOpen";
-function readTypesOpen() { try { return typeof localStorage !== "undefined" && localStorage.getItem(TYPES_OPEN_KEY) === "1"; } catch { return false; } }
+// "Climbs here by type" is CLOSED on every area until that area's own button is tapped (owner, 2026-11-24:
+// "always needs to be collapsed unless you click on that exact button for that area"). The choice is NOT
+// remembered: it used to be saved on the device, so opening it once opened it on every area after.
+// AreaPage is keyed by the area id, so moving to another area mounts this closed again.
 const SKELETON_BARS = [28, 52, 70, 86, 64, 52, 42, 34, 26, 18, 12, 8];
 export function GradeSpreadDisclosure({ stats, loading, error, C, discOptions, onDisc, onGrade, first }) {
-  const [open, setOpenRaw] = useState(readTypesOpen);
-  const setOpen = v => { setOpenRaw(v); try { localStorage.setItem(TYPES_OPEN_KEY, v ? "1" : "0"); } catch { /* storage off: still toggles */ } };
+  const [open, setOpen] = useState(false);
   const rows = stats && Array.isArray(stats.by_disc) ? stats.by_disc.filter(d => d && d.n > 0) : [];
   const typed = rows.reduce((a, d) => a + Number(d.n), 0);
   const spread = hasGradeSpread(stats);

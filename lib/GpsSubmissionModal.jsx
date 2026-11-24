@@ -463,7 +463,7 @@ export default function GpsSubmissionModal({ routeId, routeName, crag, parkAt, c
 
 // Built at render, not at module scope: C comes from core (check:no-module-scope-core-reads).
 function sheetStyles() {
-  const field = { width: '100%', boxSizing: 'border-box', padding: '10px 11px', borderRadius: 9, border: '1px solid ' + C.border, background: C.card, color: C.text, fontSize: 14, fontFamily: 'inherit', outline: 'none' }
+  const field = { width: '100%', boxSizing: 'border-box', padding: '10px 11px', borderRadius: 9, border: '1px solid ' + C.field, background: C.card, color: C.text, fontSize: 14, fontFamily: 'inherit', outline: 'none' }
   const btn = { boxSizing: 'border-box', padding: 12, borderRadius: 11, fontSize: 15, fontWeight: 700, cursor: 'pointer', fontFamily: 'inherit' }
   return {
     card: { background: C.surface, borderRadius: 18, width: '100%', maxWidth: 500, border: '1px solid ' + C.border, overflow: 'hidden', color: C.text },
