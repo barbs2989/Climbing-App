@@ -41,7 +41,7 @@ try {
 
   const row = page.locator('[role="group"][aria-label="Narrow the list"]');
   const by = page.locator('select[aria-label="Search by"]');
-  ok(await by.inputValue() === "myareas", "opens on My areas");
+  ok(await by.inputValue() === "mine", "opens on My climbs & areas");
 
   // 1. Experience is gone from the row; More filters is there in My areas.
   ok(await row.locator('select[aria-label="Filter by experience level"]').count() === 0, "no experience dropdown in the row");
