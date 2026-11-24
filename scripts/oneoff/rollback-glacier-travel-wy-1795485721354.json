@@ -1,0 +1,57 @@
+[
+ {
+  "id": "wy_koven_route",
+  "before": {
+   "glacier_travel": null,
+   "snow_in_season": "yes"
+  },
+  "after": {
+   "glacier_travel": "yes",
+   "snow_in_season": "yes"
+  }
+ },
+ {
+  "id": "wy_the_candy_shop",
+  "before": {
+   "glacier_travel": null,
+   "snow_in_season": null
+  },
+  "after": {
+   "glacier_travel": "no",
+   "snow_in_season": null
+  }
+ },
+ {
+  "id": "wy_the_triple_traverse",
+  "before": {
+   "glacier_travel": null,
+   "snow_in_season": "yes"
+  },
+  "after": {
+   "glacier_travel": "yes",
+   "snow_in_season": "yes"
+  }
+ },
+ {
+  "id": "wy_warrior_1_northeast_face_r_of_warrior_i",
+  "before": {
+   "glacier_travel": null,
+   "snow_in_season": null
+  },
+  "after": {
+   "glacier_travel": "no",
+   "snow_in_season": "no"
+  }
+ },
+ {
+  "id": "wy_west_face_dihedral",
+  "before": {
+   "glacier_travel": null,
+   "snow_in_season": null
+  },
+  "after": {
+   "glacier_travel": "no",
+   "snow_in_season": "no"
+  }
+ }
+]
