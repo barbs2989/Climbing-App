@@ -1,0 +1,229 @@
+{
+ "note": "Values replaced by the owner-approved batch-aj scalar fixes, 2026-11-24",
+ "rollback": [
+  {
+   "table": "routes",
+   "id": "wa_air_over_aries",
+   "before": {
+    "pitches": 0
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_on_the_verge",
+   "before": {
+    "pitches": 0
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_voyage_to_the_bottom_of_the_verge",
+   "before": {
+    "pitches": 0
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_voyage_to_the_bottom_of_the_verge",
+   "before": {
+    "length_m": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_voyage_to_the_bottom_of_the_verge",
+   "before": {
+    "bolts": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_sandy_corner",
+   "before": {
+    "pitches": 0
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_let_s_go_bowling",
+   "before": {
+    "pitches": 0
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_tatoosh",
+   "before": {
+    "pitches": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_tatoosh",
+   "before": {
+    "anchor": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_tatoosh",
+   "before": {
+    "guide_stars": 0
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_kunselman_s_physics",
+   "before": {
+    "grade": "5.12a"
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_kunselman_s_physics",
+   "before": {
+    "grade_num": 12.25
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_kunselman_s_physics",
+   "before": {
+    "pitches": 0
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_kunselman_s_physics",
+   "before": {
+    "bolts": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_mini_air_dangler",
+   "before": {
+    "pitches": 0
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_mini_air_dangler",
+   "before": {
+    "anchor": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_with_apologies_to_walter_b",
+   "before": {
+    "guide_stars": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_path_of_righteousness",
+   "before": {
+    "pitches": 0
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_path_of_righteousness",
+   "before": {
+    "bolts": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_path_of_righteousness",
+   "before": {
+    "guide_stars": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_voyage_of_the_majestic_glass_eyed_tuna",
+   "before": {
+    "pitches": 0
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_voyage_of_the_majestic_glass_eyed_tuna",
+   "before": {
+    "bolts": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_voyage_of_the_majestic_glass_eyed_tuna",
+   "before": {
+    "guide_stars": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_salad_fingers",
+   "before": {
+    "guide_stars": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_let_s_barbecue",
+   "before": {
+    "anchor": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_bob_and_doris",
+   "before": {
+    "anchor": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_deal_with_it_ranger",
+   "before": {
+    "pitches": 0
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_deal_with_it_ranger",
+   "before": {
+    "guide_stars": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_like_honey",
+   "before": {
+    "grade": "5.12-"
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_like_honey",
+   "before": {
+    "guide_stars": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_24_hour_buccaneer",
+   "before": {
+    "guide_stars": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_24_hour_buccaneer",
+   "before": {
+    "anchor": null
+   }
+  }
+ ]
+}
