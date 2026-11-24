@@ -1,0 +1,577 @@
+{
+ "wa_gogum": {
+  "area": "wa_dihedral_wall",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/117630440/gogum",
+    "https://www.thecrag.com/en/climbing/united-states/central-cascade-mountains/route/19181857",
+    "https://www.mountainproject.com/area/105805997/dihedral-wall",
+    "https://www.thecrag.com/en/climbing/united-states/central-cascade-mountains/area/16775731",
+    "https://rakkup.com/guidebook/index-rock-climbing/lower-town-wall/s10403",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5710,47.8186&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.11a/b",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/117630440/gogum",
+      "fact": "5.11a/b YDS",
+      "retrieved_at": "2026-11-24"
+     },
+     {
+      "url": "https://www.thecrag.com/en/climbing/united-states/central-cascade-mountains/area/16775731",
+      "fact": "Gogum 5.11b Trad (sector list)",
+      "retrieved_at": "2026-11-24"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_gogum",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "pitches 0 is invalid. Mountain Project: one leaning dihedral (the rightmost corner of the Dihedral Wall) ending at an anchor on a ledge at the top of the corner; one length to one stance. Count not stated, so 1 by the one-length rule.",
+    "evidence": [
+     "https://www.mountainproject.com/route/117630440/gogum"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_gogum",
+    "column": "gear",
+    "from": null,
+    "to": [
+     "small rack"
+    ],
+    "why": "gear is empty. Mountain Project protection: small rack. Single source.",
+    "evidence": [
+     "https://www.mountainproject.com/route/117630440/gogum"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_gogum",
+    "column": "access",
+    "from": {
+     "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+     "notes": "Many of these peaks (Mount Persis, Gunn Peak, Baring Mountain area) sit outside designated wilderness — administratively unrestricted despite serious technical terrain.",
+     "permit": "None required.",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+     "parking_pass": "Northwest Forest Pass or America the Beautiful pass required at developed trailheads."
+    },
+    "to": {
+     "land_manager": "Washington State Parks (Forks of the Sky State Park)"
+    },
+    "why": "Brief AH/AI: replaces the LEGACY object (Mt. Baker-Snoqualmie NF, Skykomish RD, Northwest Forest Pass, Mount Rainier NP fee line, Persis/Gunn/Baring note), which names the wrong manager, with the Forks of the Sky State Park object copied field for field from wa_godzilla (owner-approved; read from the saved live row 2026-11-24). Re-read 2026-11-24: the State Parks boundary layer returns Forks of the Sky, State Park Property at the Lower Town Wall point (47.8186,-121.5710); Mountain Project puts the Dihedral Wall directly above Princely Ambitions / Dr. Sniff on the Lower Town Wall, reached from the Great Northern Slab trail; the parks.wa.gov release (Lower Town Wall joins Forks of the Sky) is unchanged and states no pass or fee rule. permit stays null.",
+    "evidence": [
+     "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5710,47.8186&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+     "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks",
+     "https://www.mountainproject.com/area/105805997/dihedral-wall"
+    ]
+   }
+  ],
+  "held": [
+   "fa: stored \"Gregs Mekenna and Olsen\"; Mountain Project spells it \"Gregs Mckenna and Olsen\" (name from the FA party's initials). One source; an FA change needs two. Likely a stored misspelling: owner call.",
+   "guide_stars: stored 1. The Index guide (rakkup) Lower Town Wall list does not include any Dihedral Wall climb, so no guide page backs the value; changing an existing nonzero rating needs two sources. Left as is, reported."
+  ],
+  "disputed": [
+   "length_m: no source states a length (MP and theCrag both blank)."
+  ],
+  "notes": "Own route: the rightmost (leaning) dihedral of the Dihedral Wall, Lower Town Wall. Grade 5.11a/b locked agree-2 (MP 5.11a/b; theCrag 5.11b, a slash grade agrees with either half). MP says the line is now overgrown/hidden by foliage and that an anchor \"should be\" on the ledge at the top of the corner (type not stated; anchor not proposed). Area descent per MP: scramble to the Great Northern Slab or rappel; MP warns the rappel bolts may be old, in poor condition, or missing (SAFETY note for the owner; stored prose not rewritten)."
+ },
+ "wa_dihedral_wall_i_ll_be_back": {
+  "area": "wa_dihedral_wall",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/203632769/ill-be-back",
+    "https://www.mountainproject.com/area/105805997/dihedral-wall",
+    "https://www.thecrag.com/en/climbing/united-states/central-cascade-mountains/area/16775731",
+    "https://rakkup.com/guidebook/index-rock-climbing/lower-town-wall/s10403",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5710,47.8186&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.8",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/203632769/ill-be-back",
+      "fact": "5.8 YDS",
+      "retrieved_at": "2026-11-24"
+     }
+    ]
+   },
+   {
+    "field": "length_m",
+    "value": 18,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/203632769/ill-be-back",
+      "fact": "Trad, 60 ft (18 m)",
+      "retrieved_at": "2026-11-24"
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 1,
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/203632769/ill-be-back",
+      "fact": "60 ft from the anchor atop Defoliator/Terminator to the wall top; count implied, header states none",
+      "retrieved_at": "2026-11-24"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_dihedral_wall_i_ll_be_back",
+    "column": "gear",
+    "from": null,
+    "to": [
+     "standard rack to #3"
+    ],
+    "why": "gear is empty. Mountain Project protection: standard rack to #3. Single source.",
+    "evidence": [
+     "https://www.mountainproject.com/route/203632769/ill-be-back"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_dihedral_wall_i_ll_be_back",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Washington State Parks (Forks of the Sky State Park)"
+    },
+    "why": "Brief AI: access is null; fill it with the Forks of the Sky State Park object copied field for field from wa_godzilla (owner-approved; read from the saved live row 2026-11-24). Re-read 2026-11-24: the State Parks boundary layer returns Forks of the Sky, State Park Property at the Lower Town Wall point (47.8186,-121.5710); Mountain Project puts the Dihedral Wall directly above Princely Ambitions / Dr. Sniff on the Lower Town Wall, reached from the Great Northern Slab trail; the parks.wa.gov release (Lower Town Wall joins Forks of the Sky) is unchanged and states no pass or fee rule. permit stays null.",
+    "evidence": [
+     "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5710,47.8186&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+     "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks",
+     "https://www.mountainproject.com/area/105805997/dihedral-wall"
+    ]
+   }
+  ],
+  "held": [
+   "fa: null. Mountain Project: Ben Hubbard, August 2026. A blank FA is filled only from two sources; the route is too new for theCrag or the Index guide.",
+   "bolts: MP mentions a bolt in the upper chimney but gives no count for the pitch; not proposed."
+  ],
+  "disputed": [],
+  "notes": "SCOPE (owner call, kept as its own route): a NEW line (MP FA August 2026) that is a second pitch above the short Dihedral Wall routes: it starts at the bolted anchor atop The Defoliator (wa_the_defoliator_instigator) or The Terminator (wa_the_terminator), climbs a left-trending hand crack (the 5.8 crux, which can be skirted on the left at 5.7), a hand crack to a ledge and a chimney past a bolt to the top of the wall; rappel or walk off left. MP suggests linking it from the Great Northern Slab base in 3-5 pitches, or with a start pitch as one ~100 ft pitch. Not on theCrag or in the Index guide. Stored 5.8 / 18 m match MP (locked-1src); pitches 1 implied, unconfirmed. access null filled per brief AI."
+ },
+ "wa_dihedral_wall_weevils_walk": {
+  "area": "wa_dihedral_wall",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/203628221/weevils-walk",
+    "https://www.thecrag.com/en/climbing/united-states/central-cascade-mountains/route/2475797109",
+    "https://www.mountainproject.com/area/105805997/dihedral-wall",
+    "https://www.thecrag.com/en/climbing/united-states/central-cascade-mountains/area/16775731",
+    "https://rakkup.com/guidebook/index-rock-climbing/lower-town-wall/s10403",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5710,47.8186&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+   ]
+  },
+  "ledger": [],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_dihedral_wall_weevils_walk",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Washington State Parks (Forks of the Sky State Park)"
+    },
+    "why": "Brief AI: access is null; fill it with the Forks of the Sky State Park object copied field for field from wa_godzilla (owner-approved; read from the saved live row 2026-11-24). Re-read 2026-11-24: the State Parks boundary layer returns Forks of the Sky, State Park Property at the Lower Town Wall point (47.8186,-121.5710); Mountain Project puts the Dihedral Wall directly above Princely Ambitions / Dr. Sniff on the Lower Town Wall, reached from the Great Northern Slab trail; the parks.wa.gov release (Lower Town Wall joins Forks of the Sky) is unchanged and states no pass or fee rule. permit stays null.",
+    "evidence": [
+     "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5710,47.8186&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+     "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks",
+     "https://www.mountainproject.com/area/105805997/dihedral-wall"
+    ]
+   }
+  ],
+  "held": [],
+  "disputed": [
+   "grade: stored 5.10 = MP 5.10 (no letter); theCrag 5.10a. A plain 5.10 does not agree with 5.10a, so not locked and not changed.",
+   "pitches: stored 1; no source states a count (MP and theCrag blank). Unconfirmed, unchanged.",
+   "fa: null; MP says unknown. Nothing to fill."
+  ],
+  "notes": "Own route: a corner-and-crack line left of Cup and Saucer (MP); theCrag spells it \"Weevil's Walk\". MP (shared August 2026) asks for a standard Index rack and a brush; gear not proposed (no sizes). SAFETY: MP says the rock is mostly good but has loose sections and the line needs cleaning before it is climbed; the stored hazard line is generic. access null filled per brief AI."
+ },
+ "wa_the_terminator": {
+  "area": "wa_dihedral_wall",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/117630673/the-terminator",
+    "https://www.thecrag.com/en/climbing/united-states/central-cascade-mountains/route/19181707",
+    "https://www.mountainproject.com/route/203632769/ill-be-back",
+    "https://www.mountainproject.com/route/117630700/the-defoliatorinstigator",
+    "https://www.mountainproject.com/area/105805997/dihedral-wall",
+    "https://www.thecrag.com/en/climbing/united-states/central-cascade-mountains/area/16775731",
+    "https://rakkup.com/guidebook/index-rock-climbing/lower-town-wall/s10403",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5710,47.8186&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.10a/b",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/117630673/the-terminator",
+      "fact": "5.10a/b YDS",
+      "retrieved_at": "2026-11-24"
+     },
+     {
+      "url": "https://www.thecrag.com/en/climbing/united-states/central-cascade-mountains/area/16775731",
+      "fact": "Terminator 5.10b Trad (sector list)",
+      "retrieved_at": "2026-11-24"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_the_terminator",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "pitches 0 is invalid. Mountain Project: past two bolts and a short reachy crux, then easier ground to the anchor; one length to one anchor. I'll Be Back's page starts its own pitch from this anchor. Count not stated, so 1 by the one-length rule.",
+    "evidence": [
+     "https://www.mountainproject.com/route/117630673/the-terminator",
+     "https://www.mountainproject.com/route/203632769/ill-be-back"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_the_terminator",
+    "column": "bolts",
+    "from": null,
+    "to": 2,
+    "why": "Mountain Project: the route climbs past two bolts through a knobby section. Stated as bolts. Single source.",
+    "evidence": [
+     "https://www.mountainproject.com/route/117630673/the-terminator"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_the_terminator",
+    "column": "anchor",
+    "from": null,
+    "to": "Bolted anchor",
+    "why": "Mountain Project: the I'll Be Back page names a bolted anchor atop The Terminator / The Defoliator; the Terminator page photos show the anchor rebuilt with 3/8 in stainless bolts. House spelling \"Bolted anchor\". Single publisher.",
+    "evidence": [
+     "https://www.mountainproject.com/route/117630673/the-terminator",
+     "https://www.mountainproject.com/route/203632769/ill-be-back"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_the_terminator",
+    "column": "gear",
+    "from": null,
+    "to": [
+     "small rack"
+    ],
+    "why": "gear is empty. Mountain Project protection: small rack. Single source.",
+    "evidence": [
+     "https://www.mountainproject.com/route/117630673/the-terminator"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_the_terminator",
+    "column": "access",
+    "from": {
+     "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+     "notes": "Many of these peaks (Mount Persis, Gunn Peak, Baring Mountain area) sit outside designated wilderness — administratively unrestricted despite serious technical terrain.",
+     "permit": "None required.",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+     "parking_pass": "Northwest Forest Pass or America the Beautiful pass required at developed trailheads."
+    },
+    "to": {
+     "land_manager": "Washington State Parks (Forks of the Sky State Park)"
+    },
+    "why": "Brief AH/AI: replaces the LEGACY object (Mt. Baker-Snoqualmie NF, Skykomish RD, Northwest Forest Pass, Mount Rainier NP fee line, Persis/Gunn/Baring note), which names the wrong manager, with the Forks of the Sky State Park object copied field for field from wa_godzilla (owner-approved; read from the saved live row 2026-11-24). Re-read 2026-11-24: the State Parks boundary layer returns Forks of the Sky, State Park Property at the Lower Town Wall point (47.8186,-121.5710); Mountain Project puts the Dihedral Wall directly above Princely Ambitions / Dr. Sniff on the Lower Town Wall, reached from the Great Northern Slab trail; the parks.wa.gov release (Lower Town Wall joins Forks of the Sky) is unchanged and states no pass or fee rule. permit stays null.",
+    "evidence": [
+     "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5710,47.8186&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+     "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks",
+     "https://www.mountainproject.com/area/105805997/dihedral-wall"
+    ]
+   }
+  ],
+  "held": [],
+  "disputed": [
+   "length_m: no source states a length.",
+   "fa: stored \"Doug Weaver & Jeff Wright\" matches MP; no year; one source, left as is."
+  ],
+  "notes": "Own route, around the corner on the short west-facing wall left of the dihedrals (MP); the Great Northern Slab trail passes under it. Grade locked agree-2 (MP 5.10a/b; theCrag 5.10b). Its anchor serves The Defoliator too and is the start of I'll Be Back. MP photo captions say both protection bolts and the anchor were replaced with 3/8 in stainless in the same holes (good news, not a hazard)."
+ },
+ "wa_julies_roof": {
+  "area": "wa_dihedral_wall",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/105806001/julies-roof",
+    "https://www.thecrag.com/en/climbing/united-states/central-cascade-mountains/route/19181803",
+    "https://www.mountainproject.com/route/117630504/cup-and-saucer",
+    "https://www.mountainproject.com/area/105805997/dihedral-wall",
+    "https://www.thecrag.com/en/climbing/united-states/central-cascade-mountains/area/16775731",
+    "https://rakkup.com/guidebook/index-rock-climbing/lower-town-wall/s10403",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5710,47.8186&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.11a",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105806001/julies-roof",
+      "fact": "5.11a YDS",
+      "retrieved_at": "2026-11-24"
+     },
+     {
+      "url": "https://www.thecrag.com/en/climbing/united-states/central-cascade-mountains/area/16775731",
+      "fact": "Julie's Roof 5.11a Trad (sector list)",
+      "retrieved_at": "2026-11-24"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_julies_roof",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "pitches 0 is invalid. Mountain Project: crack to the roof, traverse left beneath it, easier crack to a ledge with anchor bolts; one length to one stance. Count not stated, so 1 by the one-length rule.",
+    "evidence": [
+     "https://www.mountainproject.com/route/105806001/julies-roof"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_julies_roof",
+    "column": "anchor",
+    "from": null,
+    "to": "Bolted anchor",
+    "why": "Mountain Project: photo caption shows anchor bolts at the top of the route and a commenter reports using them. Stated as bolts. House spelling \"Bolted anchor\". Single source.",
+    "evidence": [
+     "https://www.mountainproject.com/route/105806001/julies-roof"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_julies_roof",
+    "column": "gear",
+    "from": null,
+    "to": [
+     "gear to #3 Camalot"
+    ],
+    "why": "gear is empty. Mountain Project protection: gear up to a #3 Camalot. Single source.",
+    "evidence": [
+     "https://www.mountainproject.com/route/105806001/julies-roof"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_julies_roof",
+    "column": "access",
+    "from": {
+     "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+     "notes": "Many of these peaks (Mount Persis, Gunn Peak, Baring Mountain area) sit outside designated wilderness — administratively unrestricted despite serious technical terrain.",
+     "permit": "None required.",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+     "parking_pass": "Northwest Forest Pass or America the Beautiful pass required at developed trailheads."
+    },
+    "to": {
+     "land_manager": "Washington State Parks (Forks of the Sky State Park)"
+    },
+    "why": "Brief AH/AI: replaces the LEGACY object (Mt. Baker-Snoqualmie NF, Skykomish RD, Northwest Forest Pass, Mount Rainier NP fee line, Persis/Gunn/Baring note), which names the wrong manager, with the Forks of the Sky State Park object copied field for field from wa_godzilla (owner-approved; read from the saved live row 2026-11-24). Re-read 2026-11-24: the State Parks boundary layer returns Forks of the Sky, State Park Property at the Lower Town Wall point (47.8186,-121.5710); Mountain Project puts the Dihedral Wall directly above Princely Ambitions / Dr. Sniff on the Lower Town Wall, reached from the Great Northern Slab trail; the parks.wa.gov release (Lower Town Wall joins Forks of the Sky) is unchanged and states no pass or fee rule. permit stays null.",
+    "evidence": [
+     "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5710,47.8186&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+     "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks",
+     "https://www.mountainproject.com/area/105805997/dihedral-wall"
+    ]
+   }
+  ],
+  "held": [
+   "guide_stars: stored 2. The Index guide (rakkup) Lower Town Wall list does not include Julie's Roof; theCrag shows 2 stars but guide_stars must come from the guidebook itself. Existing nonzero value, left as is, reported."
+  ],
+  "disputed": [
+   "fa: stored \"Julie Brugger & Tom Hargis\" matches MP; no year; one source, left as is.",
+   "length_m: no source states a length."
+  ],
+  "notes": "Own route: the second dihedral from the right (just left of Gogum). Grade locked agree-2 (MP + theCrag, both 5.11a). The stored `variations` text (not settable here) is partly off: MP files Cup and Saucer as its own route that joins Julie's Roof at the top of its corner (MP 5.11b/c, theCrag 5.11d, not the stored \"5.11c\"), and MP describes passing the roof by traversing LEFT only; going straight over the roof may never have been done ground-up. The \"either side\" variation has no source. Report only."
+ },
+ "wa_cup_and_saucer": {
+  "area": "wa_dihedral_wall",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/117630504/cup-and-saucer",
+    "https://www.thecrag.com/en/climbing/united-states/central-cascade-mountains/route/19181755",
+    "https://www.mountainproject.com/route/105806001/julies-roof",
+    "https://www.mountainproject.com/area/105805997/dihedral-wall",
+    "https://www.thecrag.com/en/climbing/united-states/central-cascade-mountains/area/16775731",
+    "https://rakkup.com/guidebook/index-rock-climbing/lower-town-wall/s10403",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5710,47.8186&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+   ]
+  },
+  "ledger": [],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_cup_and_saucer",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "pitches 0 is invalid. Mountain Project: a short steep start into a wide dihedral, one short stemming corner that joins Julie's Roof at the top of the corner; one length. Count not stated, so 1 by the one-length rule.",
+    "evidence": [
+     "https://www.mountainproject.com/route/117630504/cup-and-saucer"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_cup_and_saucer",
+    "column": "gear",
+    "from": null,
+    "to": [
+     "small rack to 3 in"
+    ],
+    "why": "gear is empty. Mountain Project protection: small rack up to 3 in. Single source.",
+    "evidence": [
+     "https://www.mountainproject.com/route/117630504/cup-and-saucer"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_cup_and_saucer",
+    "column": "access",
+    "from": {
+     "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+     "notes": "Many of these peaks (Mount Persis, Gunn Peak, Baring Mountain area) sit outside designated wilderness — administratively unrestricted despite serious technical terrain.",
+     "permit": "None required.",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+     "parking_pass": "Northwest Forest Pass or America the Beautiful pass required at developed trailheads."
+    },
+    "to": {
+     "land_manager": "Washington State Parks (Forks of the Sky State Park)"
+    },
+    "why": "Brief AH/AI: replaces the LEGACY object (Mt. Baker-Snoqualmie NF, Skykomish RD, Northwest Forest Pass, Mount Rainier NP fee line, Persis/Gunn/Baring note), which names the wrong manager, with the Forks of the Sky State Park object copied field for field from wa_godzilla (owner-approved; read from the saved live row 2026-11-24). Re-read 2026-11-24: the State Parks boundary layer returns Forks of the Sky, State Park Property at the Lower Town Wall point (47.8186,-121.5710); Mountain Project puts the Dihedral Wall directly above Princely Ambitions / Dr. Sniff on the Lower Town Wall, reached from the Great Northern Slab trail; the parks.wa.gov release (Lower Town Wall joins Forks of the Sky) is unchanged and states no pass or fee rule. permit stays null.",
+    "evidence": [
+     "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5710,47.8186&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+     "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks",
+     "https://www.mountainproject.com/area/105805997/dihedral-wall"
+    ]
+   }
+  ],
+  "held": [
+   "fa: null. Mountain Project: Jon Nelson and Darryl Cramer, 1985. theCrag gives none. A blank FA is filled only from two sources.",
+   "bolts: MP mentions one old bolt of unknown size near the start, but gives no protection count; not proposed."
+  ],
+  "disputed": [
+   "grade: stored 5.11b/c = MP 5.11b/c; theCrag 5.11d. They do not agree (5.11d is neither half), and Julie's Roof's stored variations text says 5.11c. Not locked, no change."
+  ],
+  "notes": "Own route (MP and theCrag both list it), just left of Julie's Roof; it finishes on Julie's Roof (wa_julies_roof) at the top of its corner, so it also works as a direct start to Julie's upper section. SAFETY: MP says the first ascent used pitons that are now gone, that modern gear SHOULD work but this is a guess, and that the bolt near the start is old and of uncertain size. The owner may want a specific warning; the stored hazard line is generic and is not rewritten here."
+ },
+ "wa_the_defoliator_instigator": {
+  "area": "wa_dihedral_wall",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/117630700/the-defoliatorinstigator",
+    "https://www.thecrag.com/en/climbing/united-states/central-cascade-mountains/route/2475797004",
+    "https://www.mountainproject.com/route/203632769/ill-be-back",
+    "https://www.mountainproject.com/area/105805997/dihedral-wall",
+    "https://www.thecrag.com/en/climbing/united-states/central-cascade-mountains/area/16775731",
+    "https://rakkup.com/guidebook/index-rock-climbing/lower-town-wall/s10403",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5710,47.8186&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+   ]
+  },
+  "ledger": [],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_the_defoliator_instigator",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "pitches 0 is invalid on any row. Mountain Project: easy ground into a corner (5.7) up to the Terminator anchor; the Instigator start (5.8) is just right; I'll Be Back calls this the start pitch. One length to one anchor whichever start is used, so 1.",
+    "evidence": [
+     "https://www.mountainproject.com/route/117630700/the-defoliatorinstigator",
+     "https://www.mountainproject.com/route/203632769/ill-be-back"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_the_defoliator_instigator",
+    "column": "gear",
+    "from": null,
+    "to": [
+     "small rack"
+    ],
+    "why": "gear is empty (null-only). Mountain Project protection: small rack. Single source.",
+    "evidence": [
+     "https://www.mountainproject.com/route/117630700/the-defoliatorinstigator"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_the_defoliator_instigator",
+    "column": "access",
+    "from": {
+     "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+     "notes": "Many of these peaks (Mount Persis, Gunn Peak, Baring Mountain area) sit outside designated wilderness — administratively unrestricted despite serious technical terrain.",
+     "permit": "None required.",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+     "parking_pass": "Northwest Forest Pass or America the Beautiful pass required at developed trailheads."
+    },
+    "to": {
+     "land_manager": "Washington State Parks (Forks of the Sky State Park)"
+    },
+    "why": "Brief AH/AI: replaces the LEGACY object (Mt. Baker-Snoqualmie NF, Skykomish RD, Northwest Forest Pass, Mount Rainier NP fee line, Persis/Gunn/Baring note), which names the wrong manager, with the Forks of the Sky State Park object copied field for field from wa_godzilla (owner-approved; read from the saved live row 2026-11-24). Re-read 2026-11-24: the State Parks boundary layer returns Forks of the Sky, State Park Property at the Lower Town Wall point (47.8186,-121.5710); Mountain Project puts the Dihedral Wall directly above Princely Ambitions / Dr. Sniff on the Lower Town Wall, reached from the Great Northern Slab trail; the parks.wa.gov release (Lower Town Wall joins Forks of the Sky) is unchanged and states no pass or fee rule. permit stays null.",
+    "evidence": [
+     "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5710,47.8186&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+     "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks",
+     "https://www.mountainproject.com/area/105805997/dihedral-wall"
+    ]
+   }
+  ],
+  "held": [
+   "grade: stored 5.7 agrees with MP (Defoliator 5.7) and theCrag (\"The Defoliator\" 5.7), but the row also carries the Instigator (5.8). Not locked while the row holds two lines.",
+   "anchor: the Defoliator ends at the bolted Terminator anchor (MP); whether the Instigator shares it is not stated. Not proposed on the combined row."
+  ],
+  "disputed": [
+   "fa: stored \"Doug Weaver, Jeff Wright & Scott Prueter\" matches MP; no year; one source, left as is."
+  ],
+  "notes": "SCOPE: TWO NAMED LINES IN ONE ROW (owner call). MP lists one entry \"The Defoliator/Instigator\": the Defoliator is the 5.7 corner to the Terminator anchor; the Instigator is a 5.8 variation START just to its right (MP does not say whether it rejoins the corner or has its own finish; a photo caption of \"upper Instigator/Defoliator\" suggests shared upper ground). theCrag lists only \"The Defoliator\" (5.7), and the I'll Be Back page names the Defoliator, Terminator and Instigator as three tops. So the row is the Defoliator with the Instigator start folded in; a clean split would be \"The Defoliator\" (5.7) plus the Instigator as a variation. Only access, pitches 0 and the null gear are proposed. SAFETY: an MP photo caption warns that flakes on the upper part sound hollow; the stored hazard line is generic."
+ }
+}
