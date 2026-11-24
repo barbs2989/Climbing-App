@@ -1410,9 +1410,9 @@ function relRate(rec){if(!rec)return null;var t=Number(rec.trips)||0,vn=Number(r
 /* THE TRIP-REPORT WINDOW, the server's own rule (0523/0525): the date at UTC-12, which is never ahead of any climber's
    local date, from the trip's day to 14 days after. The alert, the crew card, Past crews and the sheet all read THIS,
    so none of them opens before the server will take a report, or says "closed" while it is still open (review 2026-11-24). */
-function tripToday(){return new Date(Date.now()-12*3600000).toISOString().slice(0,10);}
-/* The trip's day is LOCKED (0525) from when it has begun anywhere (UTC+14) until its reports close (UTC-12 + 14 days). */
-function tripDayLocked(day){if(!day)return false;var d=String(day).slice(0,10);if(!/^\d{4}-\d{2}-\d{2}$/.test(d))return false;var early=new Date(Date.now()+14*3600000).toISOString().slice(0,10);var e=new Date(d+"T00:00:00Z");e.setUTCDate(e.getUTCDate()+14);return early>=d&&tripToday()<=e.toISOString().slice(0,10);}
+function tripToday(){return localYmd(new Date());}
+/* The day is LOCKED (0525) over the same window (0527). */
+function tripDayLocked(day){return tripReportsOpen(day);}
 function tripReportsOpen(day){if(!day)return false;var d=String(day).slice(0,10);if(!/^\d{4}-\d{2}-\d{2}$/.test(d))return false;var e=new Date(d+"T00:00:00Z");e.setUTCDate(e.getUTCDate()+14);var t=tripToday();return t>=d&&t<=e.toISOString().slice(0,10);}
 /* The record in plain counts: "Showed up for 9 of 10 crew trips · 1 cancelled last minute", and the vouch stars apart. */
 function reliabilityText(rec){if(!rec)return null;var t=Number(rec.trips)||0;var parts=[];if(t){var sh=(Number(rec.onTime)||0)+(Number(rec.late)||0);parts.push("Showed up for "+sh+" of "+t+" crew trip"+(t===1?"":"s"));var ex=[[rec.late,"late"],[rec.cancelledEarly,"cancelled with notice"],[rec.cancelledLate,"cancelled last minute"],[rec.noShow,"didn’t show"]].filter(function(x){return Number(x[0])>0;}).map(function(x){return Number(x[0])+" "+x[1];});parts=parts.concat(ex);}var vn=Number(rec.relN)||0;return {trips:parts.length?parts.join(" · "):null,stars:vn&&rec.relAvg!=null?{avg:Number(rec.relAvg),n:vn}:null};}
