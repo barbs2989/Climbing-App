@@ -403,6 +403,9 @@ const PUBLIC_DEFINER = {
   group_invite_policy: "group_members invite policy helper; returns the group's invite_policy text",
   crew_is_private: "crew_members 'join or invite' policy helper; yes/no whether a crew is private (anon revoked in 0431)",
   verified_user_ids: "the public verified tick: which of the given ids have a verified email; authenticated only",
+  // 0519 (owner 2026-11-23: reliability). Definer because crew_trip_reports has no client grant at all: a report must
+  // never be readable row by row, or the reveal rule is decoration. Returns COUNTS per climber, never a reporter.
+  reliability_of_users: "crew-trip outcome counts (revealed, undisputed) + vouch Reliability star average for the given ids; no reporter named; authenticated only (0519)",
 };
 const clientCallable = (n) => {
   const s = execGrants.get(n);
