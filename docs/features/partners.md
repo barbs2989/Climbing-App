@@ -80,8 +80,21 @@ whole guide feature on 2026-11-14 (owner). This doc covers the partners mode (`l
   supersedes the 2026-11-14 zip gate): **no zip is required to see climbers**. My climbs & areas, By Route, By Peak, By Area,
   Everyone and the crew-invite list near the climb all render without one; only the DISTANCE
   searches need it: with none, the zip radii in the Distance pill are disabled (*Near my zip (none set)*); *Near me now* needs no zip.
-  Everyone at Anywhere is the browse list (`useDiscoverableProfiles`, first 24, not in distance order); a radius of your zip or
-  *Near me now* gives the nearest first.
+  **Everyone at Anywhere, with a zip, is nearest first** (0524, owner 2026-11-24): ONE ordered read, `usePartnersByDistance`
+  -> RPC `partners_by_distance`, which returns only ids and a rounded distance measured from the caller’s OWN saved zip
+  (it takes no coordinates; every other climber’s centroid snapped to the 0.1 degree grid, 0502), the 50 nearest with a
+  zip and then up to 24 without one; their profiles are then read with the
+  same select and 0434 column rules as the plain list. The source (sorted read or plain list) is decided once when
+  Everyone opens, after the zip read answers, and again only on the climber’s own action (changing the distance, saving a
+  zip); the read is one attempt, with no refetch on focus and no cache once Partners closes, so the order on screen changes
+  only when the climber changes their own profile, blocks or zip, and a failure falls back to the plain list with *Couldn’t
+  sort by distance right now*. A list left unsorted although a zip is on file says *Not sorted by distance* with a *Sort by
+  distance* button -- the climber’s own choice, never an automatic switch. Without a zip, or while filling a crew, Everyone is the
+  browse list (`useDiscoverableProfiles`, first 24, no distance order). Everyone waits at most 1.5 s for the zip read
+  before showing the plain list (a later zip is offered by the button); the cap note counts what the function returned.
+  **Known limit:** `partners_by_distance` measures every listed climber with a zip on each call (a full scan of
+  `profiles` x `profile_zips`, then a sort). Fine at today's size; past tens of thousands of listed climbers it needs a
+  bounding-box prefilter or a spatial index.
   With no zip, the inline zip card (`_zipNeeded` in `lib/PartnerSearch.jsx`, saves through `saveMyZip`) stays above the
   lists as an offer. By Route with none picked shows its own prompt instead of falling through to everyone. Under My climbs &
   areas the objectives half waits while your saved list (`objectivesLoading`) or its route rows (`objectiveRowsLoading`) are still
@@ -126,7 +139,7 @@ whole guide feature on 2026-11-14 (owner). This doc covers the partners mode (`l
 ## 2. How it works
 1. `App` mounts `PartnerSearch` lazily (`React.lazy` + `Suspense`) when `partnersMode==="partners"`, passing `mutuals`, `friendState`, `blocked`, `objDates`, `crews`, `routeById`, `onConnect`, `onViewProfile`, `onPlan`, `onInvite`, `initialClimb` (deep link from a route page), etc.
 2. Real lists, each a React Query hook in `lib/db.js`: `useProfileSearch(q)` (by name); `useDiscoverableProfiles(meId,24)` (browse, `PARTNER_COLS`);
-   `usePartnersNear(origin,radiusMi)` -> RPC `partners_near`; `usePartnersByObjective(routeIds,areaId,origin,radiusMi)` -> RPC `partners_by_objective`
+   `usePartnersNear(origin,radiusMi)` -> RPC `partners_near`; `usePartnersByDistance(meId,zipKey,enabled)` -> RPC `partners_by_distance` (0524) then a `profiles` select; `usePartnersByObjective(routeIds,areaId,origin,radiusMi)` -> RPC `partners_by_objective`
    (My Objectives / By Route; since 0303 it counts only objectives whose route is not crag-family or climbs a peak; with an origin it is also a radius search);
    `usePartnersForMyAreas(origin,radiusMi)` -> RPC `partners_for_my_areas` (Near my areas); `usePartnersInArea(areaId,origin,radiusMi)` -> RPC `partners_in_area` (By Area, the area page, a crag route's Partners sub-tab);
    `usePartnersInAreas(areaIds,origin,radiusMi)` -> one `partners_in_area` read per saved area under the same query key, merged by climber with `via_area_ids` (Saved areas; `SAVED_SEARCH_LIM` = 12).
