@@ -1,0 +1,159 @@
+{
+ "note": "Values replaced by the owner-approved batch-AG scalar fixes, 2026-11-24",
+ "rollback": [
+  {
+   "table": "routes",
+   "id": "wa_south_face_4_sunrise_express",
+   "before": {
+    "anchor": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_south_face_4_sunrise_express",
+   "before": {
+    "permit": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_south_face_4_sunrise_direct",
+   "before": {
+    "permit": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_south_face_4_the_bellflower",
+   "before": {
+    "permit": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_south_face_4_roll_on_columbia",
+   "before": {
+    "bolts": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_south_face_4_roll_on_columbia",
+   "before": {
+    "anchor": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_south_face_4_roll_on_columbia",
+   "before": {
+    "permit": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_south_face_4_north_country",
+   "before": {
+    "permit": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_south_face_4_flying_circus",
+   "before": {
+    "permit": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_south_face_4_the_maiden_s_escape",
+   "before": {
+    "permit": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_south_face_4_second_wind",
+   "before": {
+    "permit": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_northwest_face_false_prophets",
+   "before": {
+    "permit": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_northwest_face_crossing_wakes",
+   "before": {
+    "permit": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_northwest_face_siren_s_call",
+   "before": {
+    "bolts": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_northwest_face_siren_s_call",
+   "before": {
+    "permit": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_northwest_face_torpedo",
+   "before": {
+    "anchor": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_northwest_face_torpedo",
+   "before": {
+    "permit": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_northwest_face_riptide",
+   "before": {
+    "permit": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_northwest_face_the_arabia",
+   "before": {
+    "bolts": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_northwest_face_the_arabia",
+   "before": {
+    "anchor": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_northwest_face_the_arabia",
+   "before": {
+    "permit": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_northwest_face_arete_in_the_sky",
+   "before": {
+    "permit": null
+   }
+  }
+ ]
+}
