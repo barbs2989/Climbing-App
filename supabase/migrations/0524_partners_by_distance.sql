@@ -12,6 +12,11 @@
 -- The origin is the CALLER's own saved zip, looked up here. It takes no coordinates, so it cannot be
 -- used to measure distances from an arbitrary point. No zip on file: every dist_mi is null (the app
 -- does not call it then). Distances are rounded up to 5 mi, as partners_near rounds them.
+--
+-- ZIP PRIVACY (0502): every OTHER climber’s zip centroid is snapped to the 0.1 degree grid (about 7 by 5 miles) before
+-- any distance is taken or any row is ordered, exactly as partners_near does since 0502, so saving a series of zips and
+-- calling this can recover at most a grid cell, never a zip. (The first version measured from the exact centroid and was
+-- corrected before merging; review of #3901.) Climbers the CALLER blocked are left out here too, before the limit.
 
 create or replace function public.partners_by_distance(p_limit integer default 24)
 returns table(id uuid, dist_mi integer)
@@ -29,12 +34,13 @@ begin
     with d as (
       select p.id as pid,
              case when me_lat is null or z.lat is null then null else 3958.8 * 2 * asin(sqrt(
-                 power(sin(radians(z.lat - me_lat) / 2), 2)
-               + cos(radians(me_lat)) * cos(radians(z.lat)) * power(sin(radians(z.lng - me_lng) / 2), 2))) end as miles
+                 power(sin(radians((round(z.lat::numeric, 1))::double precision - me_lat) / 2), 2)
+               + cos(radians(me_lat)) * cos(radians((round(z.lat::numeric, 1))::double precision)) * power(sin(radians((round(z.lng::numeric, 1))::double precision - me_lng) / 2), 2))) end as miles
       from profiles p
       left join profile_zips pz on pz.user_id = p.id
       left join zip_centroids z on z.zip = pz.zip
       where p.discoverable = true and p.id <> auth.uid() and not profile_owner_blocked_me(p.id)
+        and not exists (select 1 from blocked_users b where b.blocker = auth.uid() and b.blocked = p.id)
     )
     select d.pid,
            case when d.miles is null then null else (greatest(1, ceil(d.miles / 5.0)) * 5)::integer end
