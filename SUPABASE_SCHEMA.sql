@@ -9,7 +9,7 @@
 -- and commit the result in the same PR. `npm run gen:schema -- --check` exits 1 when this
 -- file has drifted from the live database.
 --
--- Counts: 87 tables, 869 columns, 474 keyed/checked constraints (152 foreign keys), 259 RLS policies.
+-- Counts: 87 tables, 871 columns, 474 keyed/checked constraints (152 foreign keys), 259 RLS policies.
 -- Not covered here: views, functions, triggers, standalone indexes (see supabase/migrations/).
 
 -- ── Foreign keys ───────────────────────────────────────────────────────────────
@@ -671,7 +671,7 @@ ALTER TABLE public.contributions ENABLE ROW LEVEL SECURITY;
 CREATE POLICY "authed can contribute" ON public.contributions AS PERMISSIVE FOR INSERT TO public WITH CHECK (((( SELECT auth.uid() AS uid) IS NOT NULL) AND (contributor = (( SELECT auth.uid() AS uid))::text)));
 CREATE POLICY "contribution standing allows field edits" ON public.contributions AS RESTRICTIVE FOR INSERT TO public WITH CHECK (((kind <> ALL (ARRAY['field'::text, 'new_route'::text, 'new_area'::text])) OR can_contribute_fields(auth.uid())));
 CREATE POLICY "contributions public read" ON public.contributions AS PERMISSIVE FOR SELECT TO public USING (true);
-CREATE POLICY "own photo or pairing, or an admin" ON public.contributions AS PERMISSIVE FOR DELETE TO public USING ((((kind = ANY (ARRAY['photo'::text, 'pair'::text])) AND (contributor IS NOT NULL) AND (contributor = (( SELECT auth.uid() AS uid))::text)) OR is_admin(( SELECT auth.uid() AS uid))));
+CREATE POLICY "own photo, pairing or sun vote, or an admin" ON public.contributions AS PERMISSIVE FOR DELETE TO public USING ((((kind = ANY (ARRAY['photo'::text, 'pair'::text, 'sun'::text])) AND (contributor IS NOT NULL) AND (contributor = (( SELECT auth.uid() AS uid))::text)) OR is_admin(( SELECT auth.uid() AS uid))));
 CREATE POLICY "restricted accounts cannot post" ON public.contributions AS RESTRICTIVE FOR INSERT TO public WITH CHECK (is_active_user(( SELECT auth.uid() AS uid)));
 
 CREATE TABLE public.conversation_state (
@@ -1296,12 +1296,14 @@ CREATE TABLE public.groups (
   lng double precision,
   avatar_url text,
   cover_url text,
-  region text GENERATED ALWAYS AS (region_of_place(location)) STORED,
-  search_text text GENERATED ALWAYS AS (group_search_text(name, disciplines, location, blurb)) STORED,
   welcome_text text,
   announcement text,
   links jsonb NOT NULL DEFAULT '[]'::jsonb,
   mod_title text,
+  area_region text,
+  area_place text,
+  region text GENERATED ALWAYS AS (COALESCE(area_region, region_of_place(location))) STORED,
+  search_text text GENERATED ALWAYS AS (group_search_text(name, disciplines, location, blurb, area_place, area_region)) STORED,
   CONSTRAINT groups_pkey PRIMARY KEY (id),
   CONSTRAINT groups_accent_hex CHECK (((accent IS NULL) OR (accent ~ '^#[0-9a-fA-F]{6}$'::text))),
   CONSTRAINT groups_announcement_len CHECK (((announcement IS NULL) OR (length(announcement) <= 300))),
