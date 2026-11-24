@@ -254,6 +254,16 @@ else fail("signed out can read reliability counts");
   const d = (await rel(A, [D]))[D];
   if (d.rel_n === 2 && Number(d.rel_avg) === 4.5 && d.trips === 0) ok("vouch Reliability stars are averaged (5 and \"4\" -> 4.5 from 2), and a plain-text vouch is skipped, not an error");
   else fail(`D's vouch reliability reads ${JSON.stringify(d)}`);
+  // 0521: an older vouch rated the retired "punctuality", and it counts when the vouch has no reliability rating;
+  // a vouch that has both counts its reliability rating.
+  await db.exec(`
+    insert into vouches (from_id, to_id, reason) values
+      ('${D}', '${A}', '{"ratings":{"punctuality":3}}'),
+      ('${C}', '${A}', '{"ratings":{"punctuality":1,"reliability":5}}');
+  `);
+  const a = (await rel(B, [A]))[A];
+  if (a.rel_n === 2 && Number(a.rel_avg) === 4) ok("a punctuality-only vouch counts as reliability (3), and a vouch with both counts its reliability rating (5, not 1): 4.0 from 2");
+  else fail(`A's vouch reliability with a punctuality-only vouch reads ${JSON.stringify(a)}`);
 }
 
 const FLOOR = 20;
