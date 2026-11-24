@@ -48,7 +48,7 @@ export interface DayByDayProps<D extends DayByDayDay = DayByDayDay> {
   startOn: boolean;
 }
 export default function DayByDay<D extends DayByDayDay>({ days, di, pick, dayName, nWarn, nCaution, fc, legs, startOn }: DayByDayProps<D>) {
-  const cell: CSSProperties = { background: C.surface, borderRadius: 8, padding: "5px 7px", display: "block", minWidth: 0 };
+  const cell: CSSProperties = { borderLeft: "1px solid " + C.borderLight, padding: "1px 0 1px 8px", display: "block", minWidth: 0 };
   const lbl: CSSProperties = { display: "block", fontSize: 10.5, color: C.textMuted, fontWeight: 700 };
   // Values WRAP (a freezing level "8,200 ft–10,900 ft" breaks after its dash): at 390px a one-line clip cut it to "8,200 ft–1…" on every day.
   const val: CSSProperties = { display: "block", fontSize: 12.5, color: C.text, fontWeight: 700, lineHeight: 1.3, overflowWrap: "anywhere" };
