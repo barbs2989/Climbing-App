@@ -1,3 +1,4 @@
+import { foldKeepingPlace } from "../../lib/keepPlace.js";
 import { useState } from "react";
 import { C } from "../../ClimbMatchCore.jsx";
 
@@ -18,6 +19,6 @@ export default function TopoCaption({text}: TopoCaptionProps){
   const long=t.length>CAPTION_FOLD||t.split("\n").length>5;
   return <div style={{marginBottom:12}}>
     <div style={{fontSize:13,color:C.text,lineHeight:1.5,whiteSpace:"pre-wrap",overflowWrap:"anywhere",maxHeight:long&&!open?"7.5em":"none",overflow:"hidden"}}>{t}</div>
-    {long?<button onClick={function(){setOpen(!open);}} aria-expanded={open} style={{minHeight:44,background:"none",border:"none",padding:"6px 0",color:C.blue,fontSize:12.5,fontWeight:700,cursor:"pointer"}}>{open?"Show less":"Show more"}</button>:null}
+    {long?<button onClick={function(e){foldKeepingPlace(e,function(){setOpen(!open);},open);}} aria-expanded={open} style={{minHeight:44,background:"none",border:"none",padding:"6px 0",color:C.blue,fontSize:12.5,fontWeight:700,cursor:"pointer"}}>{open?"Show less":"Show more"}</button>:null}
   </div>;
 }
