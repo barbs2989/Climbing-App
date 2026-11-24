@@ -72,7 +72,7 @@ export default function AreaChildrenList<T extends AreaChildRow>({ rows: given, 
   // sidebar is too narrow for that and gives it its own line under the heading.
   const select = given.length > 1 ? <label style={{ display: "flex", alignItems: "center", gap: 6, minWidth: 0, flex: side ? 1 : "0 1 auto" }}>
     <span style={{ flexShrink: 0, fontSize: 12, fontWeight: 700, color: C.textMuted }}>Sort</span>
-    <select value={key} onChange={e => pick(e.target.value)} aria-label={"Sort " + noun.toLowerCase()} style={{ flex: 1, minWidth: 0, maxWidth: side ? "none" : 210, minHeight: 40, background: C.card, color: C.text, border: "1px solid " + C.border, borderRadius: 9, padding: "0 8px", fontSize: 13, fontWeight: 600, cursor: "pointer" }}>
+    <select value={key} onChange={e => pick(e.target.value)} aria-label={"Sort " + noun.toLowerCase()} style={{ flex: 1, minWidth: 0, maxWidth: side ? "none" : 210, minHeight: 40, background: C.card, color: C.text, border: "1px solid " + C.field, borderRadius: 9, padding: "0 8px", fontSize: 13, fontWeight: 600, cursor: "pointer" }}>
       {groups.map(g => <optgroup key={g} label={g}>{options.filter(o => o.group === g).map(o => <option key={o.key} value={o.key}>{o.label}</option>)}</optgroup>)}
     </select>
   </label> : null;
