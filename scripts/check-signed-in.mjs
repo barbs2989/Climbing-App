@@ -708,19 +708,22 @@ try {
       } else if (recap.includes(fixture.owner.name)) {
         fail("modal:recapId", `the signed-in climber ${JSON.stringify(fixture.owner.name)} is a row on their own recap — nobody reports on themselves`);
       }
-      // The ROSTER renders only for a crew with an AGREED day (the sheet says so otherwise). The
-      // fixture's crews propose days and nobody acks them, so today this branch is not reached and
-      // the log line says that rather than counting an assertion that could not fire.
+      // The ROSTER renders only for a crew with an AGREED day. The fixture's main crew has one
+      // (fixtureTripDay(): locked to yesterday), and the scaffold opens the recap on the crew
+      // with a locked day, so the roster is REQUIRED here: the sheet's own "needs an agreed day"
+      // note now means the lock or the read of it broke.
+      asserted++;
       if (/We called it off, or didn’t go/.test(recap)) {
-        asserted++;
+        // …and the OTHER member must be on it, under the name the app gives them (pubNameRow: the
+        // handle when they have one). "Nobody else was on this crew." is the #569 shape here.
         const mateFirst = fixture.mate.name.split(" ")[0];
-        if (!recap.toLowerCase().includes(mateFirst.toLowerCase())) {
-          fail("modal:recapId", `the crew's other member ${JSON.stringify(mateFirst)} is not on the recap roster`);
+        const low = recap.toLowerCase();
+        if (/Nobody else was on this crew/.test(recap) || !(low.includes(mateFirst.toLowerCase()) || (fixture.mate.username && low.includes(fixture.mate.username.toLowerCase())))) {
+          fail("modal:recapId", `the crew's other member ${JSON.stringify(fixture.mate.username || mateFirst)} is not on the recap roster — it reads ${JSON.stringify(recap.slice(0, 200))}`);
         }
       } else if (/needs an agreed day/.test(recap)) {
-        log("  recap roster: not checked — the fixture crew has no agreed day, so the sheet lists nobody (it says so)");
+        fail("modal:recapId", "the recap says the crew has no agreed day, but the fixture's main crew is locked to yesterday — the lock, the scaffold's choice of crew, or crew_recap's read of it broke");
       } else {
-        asserted++;
         fail("modal:recapId", "the recap shows neither its roster nor its no-agreed-day note — it reads " + JSON.stringify(recap.slice(0, 160)));
       }
     }
