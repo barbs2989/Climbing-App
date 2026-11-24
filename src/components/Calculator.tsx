@@ -147,8 +147,9 @@ export default function Calculator({route,activity,fit:fitProp,setFit:setFitProp
   // in green, against 5.6hr once the missing pieces are supplied. Name the components rather
   // than saying "no approach data", because here most of it IS present.
   const _missHike: string[]=[];
-  if(route.distKm==null||route.distKm==="")_missHike.push("approach distance");
-  if(route.gainM==null||route.gainM==="")_missHike.push("elevation gain");
+  // What the walk READ (planTimes: the trip plan's miles and day gains count), so the note never says "no gain" under a leg card printing it.
+  if(P.walkKm==null)_missHike.push("approach distance");
+  if(P.walkGainM==null)_missHike.push("elevation gain");
   if(route.lossM==null||route.lossM==="")_missHike.push("elevation loss");
 
   /* There used to be a `hikeCoversWholeDay` flag here (gainCoversWholeOuting: gain and loss within
