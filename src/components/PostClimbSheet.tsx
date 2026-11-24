@@ -63,7 +63,7 @@ export default function PostClimbSheet({ climb, vouchedIds, dayLabel, onClose, o
   const firsts = climb.people.map(function (p) { return pubFirst(p) as string; });
   const sub = climb.routeName + (climb.date ? " · " + dayLabel(climb.date) : "");
   const H = { fontSize: 11.5, fontWeight: 800, color: C.textMuted, textTransform: "uppercase" as const, letterSpacing: 0.5, margin: "0 0 7px" };
-  const SOLID = { ...BTN, border: "1px solid " + C.blueSolid, background: C.blueSolid, color: C.onSolid };
+  const SOLID = { ...BTN, border: "1px solid " + C.actionSolid, background: C.actionSolid, color: C.onSolid };
   const section = { padding: "12px 0", borderTop: "1px solid " + C.borderLight };
   return createPortal(<div onClick={(e) => { if (e.target === e.currentTarget) close(e); }} role="dialog" aria-modal="true" aria-label={"Climbed together: " + climb.routeName} style={{ position: "fixed", inset: 0, zIndex: 1300, background: C.scrim, display: "flex", alignItems: wide ? "center" : "flex-end", justifyContent: "center", padding: wide ? 16 : 0, boxSizing: "border-box" }}>
     <div style={{ background: C.surface, color: C.text, borderRadius: wide ? 18 : "18px 18px 0 0", border: "1px solid " + C.border, width: "100%", maxWidth: 520, boxSizing: "border-box", maxHeight: wide ? "88vh" : "90vh", display: "flex", flexDirection: "column", boxShadow: "0 -10px 40px rgba(0,0,0,0.5)" }}>
