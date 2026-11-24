@@ -16,12 +16,18 @@
 // Two more sections beside the table (owner, 2026-11-23): Trails & GPS tracks (gps_submissions, 0397)
 // and Accessibility reports (0343/0354), each the same queue component the app's Menu used to open.
 // Identical edits cluster with sameEditValue, exactly as the old queue did.
+// 2026-11-24 (owner, after the quality-control audit: "do all"): History (with Take back), Climbers (with the
+// reviewer switch and Contributor standing, moved here off the Menu), Appeals, Locks and Worklist sections, a
+// health strip, a word diff and every earlier edit of the field inside each row, keyboard shortcuts, and a
+// REVIEWER role (0530) who may open the desk and work edits and flags but not ban, lock or decide appeals.
+// Those sections live in DeskSections.jsx.
 import { useEffect, useMemo, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { useAuth } from "../src/AuthContext.tsx";
 import { supabase } from "../lib/supabase";
+import { HealthStrip, HistorySection, ClimbersSection, AppealsSection, LocksSection, WorklistSection, FieldHistory, WordDiff } from "./DeskSections";
 import {
-  useIsAdmin, useFieldContributions, useOpenRouteFlags, useContributionFields, useRouteRowsByIds,
+  useCanReview, useFieldContributions, useOpenRouteFlags, useContributionFields, useRouteRowsByIds,
   useAreaEditRowsByIds, approveFieldContribution, rejectFieldContribution, setRouteFieldConfidence,
   resolveRouteFlag, submitContribution, REMOVAL_NOTE, useWallOrderSuggestions, useWallRoutesByAreaIds, resolveWallOrder,
   useAdminQueueCounts,
@@ -115,7 +121,7 @@ const box = { whiteSpace: "pre-wrap", wordBreak: "break-word", fontSize: 12.5, l
 // ── gate ─────────────────────────────────────────────────────────────────────────────
 export default function ReviewDesk() {
   const { user, loading } = useAuth();
-  const admin = useIsAdmin(user && user.id);
+  const admin = useCanReview(user && user.id);
   const page = (body) => <div style={{ maxWidth: 1400, margin: "0 auto", padding: "16px 16px 60px" }}><style>{CSS}</style>
     <header style={{ display: "flex", alignItems: "baseline", gap: 12, flexWrap: "wrap", marginBottom: 12 }}>
       <h1 style={{ fontSize: 20, margin: 0 }}>Review desk</h1>
@@ -126,8 +132,8 @@ export default function ReviewDesk() {
   if (loading || (user && admin.isLoading)) return page(<p style={{ color: C.textMuted }}>Checking who is signed in…</p>);
   if (!user) return page(<p>Sign in on <a href={BASE} style={{ color: C.blue }}>ClimbMatch</a> with the owner account, then reload this page.</p>);
   if (admin.error) return page(<p role="alert" style={{ color: C.red }}>Could not check your account — {admin.error.message}. Reload to try again.</p>);
-  if (!admin.data) return page(<p>Owner only. This account cannot review edits.</p>);
-  return page(<Desk />);
+  if (!admin.data || !admin.data.reviewer) return page(<p>Owner and reviewers only. This account cannot review edits.</p>);
+  return page(<Desk admin={admin.data.admin} />);
 }
 
 // ── sections ─────────────────────────────────────────────────────────────────────────
@@ -140,19 +146,22 @@ export default function ReviewDesk() {
 // than a zero. A link can open a section directly: review.html#trails or review.html#access.
 // PROPOSED CLIMBS & AREAS (0505, owner 2026-11-23: quality control on people who add a climb or an area) are
 // the Menu's two proposal queues, with the AI checker's verdict on each card. review.html#proposals opens it.
-const SECTIONS = [["edits", "Edits, flags & wall orders"], ["proposals", "Proposed climbs & areas"], ["trails", "Trails & GPS tracks"], ["access", "Accessibility reports"]];
-const fromHash = () => { const h = (typeof window !== "undefined" && window.location.hash || "").slice(1); return SECTIONS.some(([k]) => k === h) ? h : "edits"; };
-function Desk() {
-  const [sec, setSec] = useState(fromHash);
-  const countsQ = useAdminQueueCounts(true);
+// The last five (2026-11-24) are DeskSections.jsx. A reviewer (0530) sees only the ones marked true.
+const SECTIONS = [["edits", "Edits, flags & wall orders", true], ["proposals", "Proposed climbs & areas"], ["trails", "Trails & GPS tracks"], ["access", "Accessibility reports"],
+  ["history", "History", true], ["climbers", "Climbers"], ["appeals", "Appeals"], ["locks", "Locks"], ["worklist", "Worklist"]];
+const fromHash = (admin) => { const h = (typeof window !== "undefined" && window.location.hash || "").slice(1); return SECTIONS.some(([k, , rev]) => k === h && (admin || rev)) ? h : "edits"; };
+function Desk({ admin }) {
+  const [sec, setSec] = useState(() => fromHash(admin));
+  const countsQ = useAdminQueueCounts(admin);
   const n = countsQ.data || null;
   const [note, setNote] = useState(null);
   const pick = (k) => { setSec(k); setNote(null); try { window.history.replaceState(null, "", k === "edits" ? window.location.pathname + window.location.search : "#" + k); } catch (_e) { /* the section still switches */ } };
   const notify = (t) => { setNote(t); countsQ.refetch(); };
   const openRoute = (id) => { window.open(BASE + "?route=" + encodeURIComponent(id), "_blank", "noopener"); };
   return <div>
+    {admin ? <HealthStrip /> : null}
     <div role="tablist" aria-label="Review sections" style={{ display: "flex", gap: 6, flexWrap: "wrap", marginBottom: 14, borderBottom: "1px solid " + C.border, paddingBottom: 10 }}>
-      {SECTIONS.map(([k, label]) => {
+      {SECTIONS.filter(([, , rev]) => admin || rev).map(([k, label]) => {
         const c = n ? n[k] : null;
         return <button key={k} role="tab" aria-selected={sec === k} className={"rd-btn" + (sec === k ? " rd-ok" : "")} onClick={() => pick(k)}>{label}{c ? " · " + c : ""}</button>;
       })}
@@ -164,7 +173,8 @@ function Desk() {
     </div> : sec === "access" ? <div style={{ maxWidth: 640 }}>
       <p style={{ fontSize: 12.5, color: C.textMuted, lineHeight: 1.5, marginTop: 0 }}>Problems climbers and visitors reported from the Accessibility statement. The statement promises a reply within 5 business days; reply by email, then mark it answered.</p>
       <AccessibilityReportQueue notify={notify} />
-    </div> : sec === "proposals" ? <ProposalsSection /> : <EditsTable />}
+    </div> : sec === "proposals" ? <ProposalsSection /> : sec === "history" ? <HistorySection admin={admin} /> : sec === "climbers" ? <ClimbersSection admin={admin} />
+      : sec === "appeals" ? <AppealsSection /> : sec === "locks" ? <LocksSection /> : sec === "worklist" ? <WorklistSection /> : <EditsTable admin={admin} />}
   </div>;
 }
 
@@ -181,7 +191,7 @@ function ProposalsSection() {
 }
 
 // ── the table ────────────────────────────────────────────────────────────────────────
-function EditsTable() {
+function EditsTable({ admin }) {
   const editsQ = useFieldContributions("pending", 1000);
   const flagsQ = useOpenRouteFlags(true);
   const fieldsQ = useContributionFields();
@@ -194,7 +204,8 @@ function EditsTable() {
   // SUGGESTED WALL ORDERS (0485; owner, 2026-11-23: "I receive it in the admin like what would happen when people
   // suggest edits"). A climber's left-to-right order for a wall is a row of this table, not a queue of its own.
   const ordersQ = useWallOrderSuggestions("pending");
-  const orders = ordersQ.data || NONE;
+  // Only an admin can write a wall's order (resolve_wall_order), so a reviewer is not shown them.
+  const orders = (admin && ordersQ.data) || NONE;
   const wallIds = useMemo(() => Array.from(new Set(orders.map((o) => o.area_id).filter(Boolean))), [orders]);
   const wallsQ = useWallRoutesByAreaIds(wallIds);
 
@@ -309,6 +320,25 @@ function EditsTable() {
     setMsg({ ok: !failed.length, text: "Approved " + done + " of " + bulk.length + "." + (failed.length ? " Not approved — " + failed.join("; ") : "") });
   };
 
+  // KEYBOARD (2026-11-24): j / k open the next / previous row, a approves the open edit as sent, r opens
+  // "Turn down", Escape closes the row. Ignored while typing in a box, and while a decision is running.
+  const [keyCmd, setKeyCmd] = useState(null);
+  useEffect(() => {
+    const onKey = (e) => {
+      const t = e.target, tag = t && t.tagName;
+      if (e.ctrlKey || e.metaKey || e.altKey || tag === "INPUT" || tag === "TEXTAREA" || tag === "SELECT" || (t && t.isContentEditable) || busy) return;
+      const i = shown.findIndex((r) => r.key === open);
+      if (e.key === "j" || e.key === "k") {
+        e.preventDefault();
+        const next = shown[Math.min(shown.length - 1, Math.max(0, i < 0 ? 0 : i + (e.key === "j" ? 1 : -1)))];
+        if (next) setOpen(next.key);
+      } else if (e.key === "Escape" && open) setOpen(null);
+      else if ((e.key === "a" || e.key === "r") && i >= 0 && shown[i].kind === "edit") { e.preventDefault(); setKeyCmd({ k: e.key, row: shown[i].key, at: Date.now() }); }
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [shown, open, busy]);
+
   const loadErr = editsQ.error || flagsQ.error || ordersQ.error;
   // A wall order is not sent to the nightly AI checker, so it never counts as "not yet checked".
   const counts = { edits: rows.filter((r) => r.kind === "edit").length, flags: rows.filter((r) => r.kind === "flag").length, orders: rows.filter((r) => r.kind === "order").length, unchecked: rows.filter((r) => !r.ai && r.kind !== "order").length };
@@ -316,7 +346,8 @@ function EditsTable() {
 
   return <div>
     <div style={{ display: "flex", gap: 8, flexWrap: "wrap", alignItems: "center", marginBottom: 10 }}>
-      <span style={{ fontSize: 12.5, color: C.textSub }}>{counts.edits} edit{counts.edits === 1 ? "" : "s"} · {counts.flags} flag{counts.flags === 1 ? "" : "s"} · {counts.orders} wall order{counts.orders === 1 ? "" : "s"} · {counts.unchecked} not yet checked by AI{aiQ.error ? " (AI verdicts could not load: " + aiQ.error.message + ")" : ""}</span>
+      <span style={{ fontSize: 12.5, color: C.textSub }}>{counts.edits} edit{counts.edits === 1 ? "" : "s"} · {counts.flags} flag{counts.flags === 1 ? "" : "s"}{admin ? " · " + counts.orders + " wall order" + (counts.orders === 1 ? "" : "s") : ""} · {counts.unchecked} not yet checked by AI{aiQ.error ? " (AI verdicts could not load: " + aiQ.error.message + ")" : ""}</span>
+      <span style={{ fontSize: 11.5, color: C.textMuted, marginLeft: "auto" }}>Keys: j / k next and previous · a approve · r turn down · Esc close</span>
     </div>
     <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginBottom: 12 }}>
       <select aria-label="Type" className="rd-sel" value={f.type} onChange={(e) => setF({ ...f, type: e.target.value })}><option value="all">Everything</option><option value="edit">Suggested edits</option><option value="flag">Flags</option><option value="order">Wall orders</option></select>
@@ -345,7 +376,7 @@ function EditsTable() {
               <td><span className="rd-lab">AI value</span>{r.ai && !isEmpty(r.ai.ai_value) ? short(r.ai.ai_value) : <span style={{ color: C.textMuted }}>—</span>}</td>
               <td style={{ whiteSpace: "nowrap", color: C.textMuted }}><span className="rd-lab">Age</span>{when(r.created_at)} · {ageDays(r.created_at)}d</td>
             </tr>,
-            isOpen ? <tr key={r.key + ":d"} className="rd-detail"><td colSpan={8}>{r.kind === "order" ? <OrderDetail row={r} busy={busy === r.key} act={act} refresh={wallsQ.refetch} fetching={wallsQ.isFetching} readError={wallsQ.error} /> : <Detail row={r} busy={busy === r.key} act={act} />}</td></tr> : null,
+            isOpen ? <tr key={r.key + ":d"} className="rd-detail"><td colSpan={8}>{r.kind === "order" ? <OrderDetail row={r} busy={busy === r.key} act={act} refresh={wallsQ.refetch} fetching={wallsQ.isFetching} readError={wallsQ.error} /> : <Detail row={r} busy={busy === r.key} act={act} admin={admin} keyCmd={keyCmd && keyCmd.row === r.key ? keyCmd : null} />}</td></tr> : null,
           ];
         })}</tbody>
       </table>}
@@ -400,9 +431,16 @@ function OrderDetail({ row: r, busy, act, refresh, fetching, readError }) {
 }
 
 // ── one item, expanded ───────────────────────────────────────────────────────────────
-function Detail({ row: r, busy, act }) {
+function Detail({ row: r, busy, act, admin, keyCmd }) {
   const ai = r.ai;
   const [mode, setMode] = useState(null); // "reject" | "edit"
+  // The table's a / r keys (EditsTable): approve as sent, or open Turn down. Each key press is a new keyCmd.
+  useEffect(() => {
+    if (!keyCmd || busy || mode) return;
+    if (keyCmd.k === "r") setMode("reject");
+    else if (keyCmd.k === "a") act(r, () => approveFieldContribution(r.ids[0], null, r.ids.slice(1)), "approved; it is on the page and locked.");
+  }, [keyCmd]); // eslint-disable-line react-hooks/exhaustive-deps -- runs once per key press; busy, mode, act and r are read at that moment on purpose
+  const textDiff = r.kind === "edit" && typeof r.said === "string" && typeof r.cur === "string" && r.cur.trim() && r.said.trim();
   const [reason, setReason] = useState(ai && ai.verdict === "disagree" ? ai.reasoning.slice(0, 500) : "");
   const [noStrike, setNoStrike] = useState(false);
   const [draft, setDraft] = useState(() => { const v = ai && !isEmpty(ai.ai_value) ? ai.ai_value : r.said; return isPrim(v) ? String(v == null ? "" : v) : JSON.stringify(v, null, 1); });
@@ -434,6 +472,8 @@ function Detail({ row: r, busy, act }) {
         {r.removes ? <div style={{ fontSize: 12, color: C.red, fontWeight: 700, marginTop: 4 }}>This edit removes something from the page.</div> : null}</div>
       <div><div style={{ fontSize: 11, fontWeight: 700, color: C.green }}>AI THINKS IT SHOULD BE</div><div style={{ ...box, borderColor: aiVal ? C.greenDim : C.border }}>{aiVal ? fmtVal(aiVal) : ai ? "(no value proposed)" : "(not checked yet)"}</div></div>
     </div>
+    {textDiff ? <div><div style={{ fontSize: 11, fontWeight: 700, color: C.textMuted }}>WHAT CHANGES, WORD BY WORD</div><WordDiff from={r.cur} to={r.said} /></div> : null}
+    {r.field && (r.route_id || r.area_id) ? <FieldHistory routeId={r.route_id} areaId={r.route_id ? null : r.area_id} field={r.field} label={r.label} /> : null}
     {ai ? <div style={{ fontSize: 12.5, lineHeight: 1.55 }}>
       <div><VerdictChip v={ai} /> <span style={{ color: C.textMuted, fontSize: 11.5 }}>checked {when(ai.checked_at)}{ai.model ? " · " + ai.model : ""}</span></div>
       <p style={{ margin: "6px 0", color: C.text }}>{ai.reasoning}</p>
@@ -463,7 +503,7 @@ function Detail({ row: r, busy, act }) {
         {aiVal ? <button className="rd-btn rd-ai" disabled={busy} onClick={() => act(r, () => approveFieldContribution(r.ids[0], aiVal, r.ids.slice(1)), "approved with the AI’s value; locked.")}>Use AI value</button> : null}
         <button className="rd-btn" disabled={busy} onClick={() => setMode("edit")}>Edit value…</button>
         <button className="rd-btn rd-bad" disabled={busy} onClick={() => setMode("reject")}>Turn down…</button>
-        {r.area_id ? null : <button className="rd-btn" disabled={busy} onClick={() => act(r, async () => { await setRouteFieldConfidence(r.route_id, r.field, "high", "Locked by ClimbMatch as stored"); await rejectFieldContribution(r.ids[0], "The value on the page was checked and locked at high confidence; this edit was not applied.", r.ids.slice(1), false); }, "kept as stored and locked; edit turned down without a strike.")}>Keep page value &amp; lock</button>}
+        {r.area_id || !admin ? null : <button className="rd-btn" disabled={busy} onClick={() => act(r, async () => { await setRouteFieldConfidence(r.route_id, r.field, "high", "Locked by ClimbMatch as stored"); await rejectFieldContribution(r.ids[0], "The value on the page was checked and locked at high confidence; this edit was not applied.", r.ids.slice(1), false); }, "kept as stored and locked; edit turned down without a strike.")}>Keep page value &amp; lock</button>}
       </> : <>
         {aiVal && r.field ? <button className="rd-btn rd-ai" disabled={busy} onClick={() => act(r, () => fixFlagWith(aiVal), "fixed with the AI’s value; the reporter was thanked.")}>Use AI value</button> : null}
         {r.field ? <button className="rd-btn" disabled={busy} onClick={() => setMode("edit")}>Enter value…</button> : null}
