@@ -20,6 +20,13 @@
 // a live check that the design measured is the design running rather than a historical note.
 //
 //   node scripts/oneoff/measure-compat-designs.mjs
+//
+// RETIRED (2026-11-24). #3826 merged the objectives and listed-areas terms into one (CMAX_WHERE) and #3838 added
+// reliability (CMAX_REL), so CMAX_OBJ no longer exists and this script cannot bundle. It is kept as the record of how the
+// bounded-and-rescaled design was chosen (docs/codebase/algorithms.md); check:match-percent is the live check. Refuse
+// plainly rather than crash on a missing export or model "obj undefined".
+console.error("measure-compat-designs.mjs is retired: the terms it models changed in #3826/#3838. See docs/codebase/algorithms.md; check:match-percent is the live check.");
+process.exit(1);
 
 import { build } from "esbuild";
 import { createRequire } from "node:module";
