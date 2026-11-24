@@ -91,6 +91,10 @@ const KEEP = new Set([
   // area history: who named or first climbed a peak, a club's lookout, "Cascade climbers" meaning people
   "areas.wa_bryant_peak blurb", "areas.wa_cloudy_peak blurb", "areas.wa_mount_hinman blurb", "areas.wa_mount_pilchuck blurb",
   "areas.wa_mount_seattle blurb", "areas.wa_mount_triumph blurb",
+  // read and decided 2026-11-23, when Climber Kyle / the Mazamas joined NAMED: a grade naming its scale,
+  // a first-ascent party's club, a route NAMED for a guidebook, and a campground named for a club
+  "routes.wa_cutthroat_west_ridge alpine_grade", "routes.wa_bonanza_peak_mary_green_glacier overview", "areas.wa_bonanza_peak blurb",
+  "routes.ca_east_wall_2_names_in_the_guidebook approach", "areas.wv_tuggin_shack blurb",
 ]);
 
 const cols = "id,fa,grade,season,aspect,commitment,alpine_grade,rock_grade,ice_grade,aid_grade,face,permit,comms,turnaround,pro_needs,detailed_rack,rope_type,rope_note,rappel_count_note,rappels,best_season,bail,descent,descent_text,approach,overview,beta,gear,hazards,obj_haz,what_to_bring,pro_tips,watch_out,timing,access,road,crowds,emergency,climate,itinerary,partner_requirements,seasonal_guidance,seasonal_hazards,approach_logistics,approach_variants,climbing_route,bivy,pitch_detail,waypoints,rappel_detail,sling_rack,ascender,start_type,landing,pads,rock,crux,prot_rating";

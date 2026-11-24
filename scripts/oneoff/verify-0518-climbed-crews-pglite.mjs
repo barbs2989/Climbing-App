@@ -1,7 +1,7 @@
-// verify-0510-climbed-crews-pglite.mjs — replays every migration into PGlite (as check:migration-replay does) and
+// verify-0518-climbed-crews-pglite.mjs — replays every migration into PGlite (as check:migration-replay does) and
 // asks crew_listings, as a signed-in outsider and as anon, which of eight crews it offers to a climber looking
 // for one. A crew that has CLIMBED (a crew-tagged climb log, or a locked day gone by) must not be listed.
-// No production database, no service key: run `node scripts/oneoff/verify-0510-climbed-crews-pglite.mjs`.
+// No production database, no service key: run `node scripts/oneoff/verify-0518-climbed-crews-pglite.mjs`.
 // Exits 1 on the first broken expectation.
 import fs from "node:fs";
 import path from "node:path";

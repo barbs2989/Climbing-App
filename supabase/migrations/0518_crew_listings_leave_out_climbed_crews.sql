@@ -1,4 +1,4 @@
--- 0510: a crew that has already CLIMBED its route is no longer listed to climbers looking for a crew
+-- 0518: a crew that has already CLIMBED its route is no longer listed to climbers looking for a crew
 -- (owner, 2026-11-23: "crews that have already climbed the route together" should not show up on
 -- available crews — it would not make sense to those listed).
 --
