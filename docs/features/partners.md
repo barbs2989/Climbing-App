@@ -28,7 +28,7 @@ whole guide feature on 2026-11-14 (owner). This doc covers the partners mode (`l
   *Looking for partners? List the crags and peaks you climb — you’re listed at N places.* beside **My areas**, which opens
   `MyPartnerAreas` — the only way onto that screen here (the empty card no longer repeats it), and where each listing is changed or removed; then the **I'm free this weekend** switch (`role="switch"`; it writes your own
   `profiles.free_until`, which is why it left the filter row — as a pill there, a tap meant to find free climbers published your status),
-  and at most one hint: listing turned off (*Turn listing on*), or no gender. With no zip on file, the point-of-use zip form (#3306) sits under the pills in the same card look, as an offer: the lists no longer wait for it (owner 2026-11-24). Ended date windows are NOT flagged here (owner):
+  and at most one hint: listing turned off (*Turn listing on*), the zip read failed (*Couldn’t load your zip code — you can still search near where you are now*), or no gender. With no zip on file, the point-of-use zip form (#3306) sits under the pills in the same card look, as an offer: the lists no longer wait for it (owner 2026-11-24). Ended date windows are NOT flagged here (owner):
   an ended listing still matches (0311 only drops the dates), and the listing screen already marks it.
 - **Distance defaults to Anywhere in EVERY mode** (owner 2026-11-24, choosing it over the walkthrough rule of 2026-11-14 that kept
   *Near my zip* the default for Everyone and My objectives): with a zip on file Everyone shrank to *within 50 mi*, and a climber
