@@ -7,7 +7,7 @@ import { clickable } from "./clickable";
 import { useRouteSearch } from "./db";
 import { useState } from "react";
 import { createPortal } from "react-dom";
-import { C, ME, ROUTES, SKILLS, SKILL_GROUPS, VOUCH_RATINGS, VOUCH_RATINGS_RETIRED, areaPathNames, fuzzyMatchAny, mtnOf, shortDate } from "../ClimbMatchCore.jsx";
+import { C, ME, ROUTES, SKILLS, SKILL_GROUPS, VOUCH_RATINGS, VOUCH_RATINGS_RETIRED, areaPathNames, fuzzyMatchAny, routePlace, shortDate } from "../ClimbMatchCore.jsx";
 import ActionIcon from "../src/components/ActionIcon.tsx";
 import DiscBadges from "../src/components/DiscBadges.tsx";
 import { POP_CLOSE, POP_REMOVE } from "./popupChrome.js";
@@ -38,8 +38,8 @@ export default function GiveVouch({friend,onClose,onSave,suggest,initial,routeBy
   const dbVouchSearch=useRouteSearch(USE_DB?q:"");
   const H=(t,m)=><div style={{fontFamily:FONT_DISPLAY,fontSize:18,lineHeight:1.15,fontWeight:600,color:C.text,textTransform:"uppercase",letterSpacing:0.7,margin:m||"0 0 6px"}}>{t}</div>;
   const sub={fontSize:12,color:C.textSub,lineHeight:1.45,marginBottom:10};
-  const pick=(r)=>{setRoute({name:r.name,sub:r.grade+" · "+mtnOf(r)});setQ("");};
-  const row=(r,ix,tag)=><div key={r.id} {...clickable(()=>pick(r))} aria-label={"Choose "+r.name} style={{display:"flex",alignItems:"center",gap:9,padding:"9px 10px",borderTop:ix?"1px solid "+C.borderLight:"none",cursor:"pointer"}}><div style={{flex:1,minWidth:0}}><div style={{fontSize:13,fontWeight:600,color:C.text,overflowWrap:"anywhere"}}>{r.name}</div><div style={{fontSize:11,color:C.textMuted,marginTop:1,overflowWrap:"anywhere"}}>{tag?<span style={{color:C.blue,fontWeight:700}}>{tag+" · "}</span>:null}{/* a crew climb handed over from the card has no mountainId; name its peak, never "undefined" */[r.grade,mtnOf(r)||r.parentName||(r._dbArea&&r._dbArea.name)].filter(Boolean).join(" · ")}</div></div><DiscBadges route={r} sm/><span style={{flexShrink:0,fontSize:12,fontWeight:700,color:C.blue,border:"1px solid "+C.blueDim,borderRadius:7,padding:"3px 9px"}}>Choose</span></div>;
+  const pick=(r)=>{setRoute({name:r.name,sub:[r.grade,routePlace(r)].filter(Boolean).join(" · ")});setQ("");};
+  const row=(r,ix,tag)=><div key={r.id} {...clickable(()=>pick(r))} aria-label={"Choose "+r.name} style={{display:"flex",alignItems:"center",gap:9,padding:"9px 10px",borderTop:ix?"1px solid "+C.borderLight:"none",cursor:"pointer"}}><div style={{flex:1,minWidth:0}}><div style={{fontSize:13,fontWeight:600,color:C.text,overflowWrap:"anywhere"}}>{r.name}</div><div style={{fontSize:11,color:C.textMuted,marginTop:1,overflowWrap:"anywhere"}}>{tag?<span style={{color:C.blue,fontWeight:700}}>{tag+" · "}</span>:null}{/* a crew climb handed over from the card has no mountainId; name its peak, never "undefined" */[r.grade,routePlace(r)||r.parentName].filter(Boolean).join(" · ")}</div></div><DiscBadges route={r} sm/><span style={{flexShrink:0,fontSize:12,fontWeight:700,color:C.blue,border:"1px solid "+C.blueDim,borderRadius:7,padding:"3px 9px"}}>Choose</span></div>;
   /* Portalled, and ABOVE a climber's profile (9800), which stays open underneath: the sheet was drawn at
      z 220, under the profile, the résumé (9900) and most overlays, so every caller had to close what it was
      opened from first -- and whatever else was still open (the résumé, Past crews, a list) showed in its

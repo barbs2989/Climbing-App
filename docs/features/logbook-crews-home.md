@@ -189,6 +189,16 @@ Three top-level `tab` values in `ClimbMatch.jsx` (`tab==="today"`, `tab==="crew"
   - Shown as COUNTS, never a score (the trust score was removed on 2026-10-21): "Showed up for 9 of 10 crew trips · 1 cancelled
     last minute" under the name on a profile (`FullProfile`) and on your own Profile tab (`MeTab`), from `reliabilityText`.
     Nothing until a trip is on record, nothing while the read is out. It is one term of the match % (`docs/features/partners.md`).
+  - **Third review (0525, owner 2026-11-24: "do another pass"): a trip is FIXED once its day comes.** From the trip's day
+    in the earliest time zone (UTC+14) until its reports close: the crew's `agreed_date` cannot change
+    (`crews_keep_day_while_reportable`) and the crew cannot be disbanded (the guard used to start only when the day
+    reached UTC-12). A trip's ROSTER is its confirmed members plus its departures (`crew_trip_on_roster`): any way off
+    the crew from the day on is a departure for THAT trip — leaving, declining (`crew_members_demoted`), or being
+    removed by the organizer (`removed_by_other`) — and anyone on the roster can report and be reported. Departures are
+    keyed by the trip's day. Replies are one per ANSWER, so switching answers and back cannot wipe *I was there*. In the
+    app, the alert, the crew card and Past crews open by the server's own window (`tripReportsOpen`, the date at
+    UTC-12); the alert is one per trip; the crew card's button asks only a confirmed member; the partner card holds its %
+    until both climbers' reliability has loaded.
   - **Second review (0523, owner 2026-11-24: "review it all"):** every departure is recorded while the trip is
     reportable, and a crewmate who left can be given ANY answer (when they left says nothing certain about whether they
     came); a crew with crewmates cannot be disbanded from its day until reports close (`crews_keep_while_reportable`;

@@ -9,7 +9,7 @@
 -- and commit the result in the same PR. `npm run gen:schema -- --check` exits 1 when this
 -- file has drifted from the live database.
 --
--- Counts: 90 tables, 893 columns, 490 keyed/checked constraints (160 foreign keys), 259 RLS policies.
+-- Counts: 90 tables, 894 columns, 490 keyed/checked constraints (160 foreign keys), 259 RLS policies.
 -- Not covered here: views, functions, triggers, standalone indexes (see supabase/migrations/).
 
 -- ── Foreign keys ───────────────────────────────────────────────────────────────
@@ -727,7 +727,8 @@ CREATE TABLE public.crew_departures (
   user_id uuid NOT NULL,
   left_at timestamp with time zone NOT NULL DEFAULT now(),
   agreed_date date NOT NULL,
-  CONSTRAINT crew_departures_pkey PRIMARY KEY (crew_id, user_id),
+  removed_by_other boolean NOT NULL DEFAULT false,
+  CONSTRAINT crew_departures_pkey PRIMARY KEY (crew_id, user_id, agreed_date),
   CONSTRAINT crew_departures_crew_id_fkey FOREIGN KEY (crew_id) REFERENCES crews(id) ON DELETE CASCADE,
   CONSTRAINT crew_departures_user_id_fkey FOREIGN KEY (user_id) REFERENCES profiles(id) ON DELETE CASCADE
 );

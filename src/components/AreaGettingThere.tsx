@@ -1,6 +1,7 @@
 import { foldKeepingPlace } from "../../lib/keepPlace.js";
 import { EditIconButton, CopyCoordButton, NO_PARKING_PIN_BUT_NOTE_LINE, NO_PARKING_PIN_LINE } from "../../lib/areaChrome";
 import { lazy, Suspense, useState } from "react";
+import { createPortal } from "react-dom";
 import type { CSSProperties, ReactNode } from "react";
 import ActionIcon from "./ActionIcon";
 import WalkInMap, { walkInPts } from "../../lib/WalkInMap.jsx";
@@ -11,6 +12,8 @@ import type { C as Palette } from "../../ClimbMatchCore.jsx";
 // MapLibre is fetched only when a climber asks for 3D, as on the route and area maps.
 // Named apart from NearMePanel's own lazy Route3DView: the guards read both components as one file's code.
 const WalkIn3DView = lazy(() => import("../../lib/Route3DView.jsx"));
+// The trail form the route page's "Add the trail" opens (#2532): Draw on map first, then Paste, Upload, How to export.
+const CragTrailForm = lazy(() => import("../../lib/GpsSubmissionModal.jsx"));
 
 export interface AreaGettingThereArea {
   name: string;
@@ -35,6 +38,9 @@ export interface AreaGettingThereProps {
   onEdit?: ((field: string) => void) | null;
   /** Drawn as a section of the area sheet (no card of its own): the words first, clamped, then the map. */
   flat?: boolean;
+  /** A climb filed directly on this crag. A trail is submitted against a climb and approved onto THAT climb's area
+   *  (review_gps_submission, 0397), so only a climb on this area lands it here; absent hides Draw the trail. */
+  trailRoute?: { id: string | number; name: string } | null;
 }
 // In the sheet, long directions open at about five lines with Show more (owner, 2026-11-11: "a getting there text
 // description with maps below that").
@@ -57,9 +63,10 @@ function Step({ icon, tone, title, meta, last, children, C }: StepProps) {
 }
 
 // ── GETTING THERE: drive & park, walk in, and the maps links — the area's own columns only ──
-export default function AreaGettingThere({ area, C, onEdit, flat }: AreaGettingThereProps) {
+export default function AreaGettingThere({ area, C, onEdit, flat, trailRoute }: AreaGettingThereProps) {
   const [more, setMore] = useState(false);
   const [view3d, setView3d] = useState(false);
+  const [drawOpen, setDrawOpen] = useState(false);
   const note = area.parking_note && String(area.parking_note).trim();
   const walk = area.approach && String(area.approach).trim();
   const park = area.parking_lat != null && area.parking_lng != null && isFinite(Number(area.parking_lat)) && isFinite(Number(area.parking_lng)) ? { lat: Number(area.parking_lat), lng: Number(area.parking_lng) } : null;
@@ -79,6 +86,10 @@ export default function AreaGettingThere({ area, C, onEdit, flat }: AreaGettingT
   const clampSt: CSSProperties | undefined = long && !more ? { maxHeight: FLAT_CLAMP_PX, overflow: "hidden", WebkitMaskImage: "linear-gradient(to bottom, #000 65%, transparent)", maskImage: "linear-gradient(to bottom, #000 65%, transparent)" } : undefined;
   // No recorded walk in: in the sheet the map still comes after the words, with the parking (P) and crag (C) pins.
   const pinMap = flat && !trail && dest && !area.coords_approx;
+  // DRAW THE TRAIL (owner, 2026-11-24: "allow people to draw the approach to crags"). The form already existed, but only
+  // a crag climb's Planner reached it, so in production nobody had ever sent one. A walk in is one line per crag
+  // (withCragWalkIn draws it on every crag climb), so it is offered on a crag or wall with a pin to start from.
+  const canDraw = !!trailRoute && !!dest && !area.coords_approx && (area.area_type === "crag" || area.area_type === "wall");
   return <div style={flat ? { padding: "12px 14px", borderTop: "1px solid " + C.border } : { background: C.card, borderRadius: 12, padding: "12px 14px", border: "1px solid " + C.border, marginBottom: 14 }}>
     <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 8, marginBottom: 8 }}><div role="heading" aria-level={3} style={{ fontSize: 12, fontWeight: 800, color: C.text, letterSpacing: 0.4, textTransform: "uppercase" }}>Getting there</div>{onEdit ? <EditIconButton C={C} onClick={() => onEdit(note ? "approach" : "parking_note")} title={"Edit how to get to " + area.name} /> : null}</div>
     {!note && !walk ? <div style={{ fontSize: 12.5, color: C.textMuted, lineHeight: 1.5, marginBottom: dest ? 10 : 0 }}>{"No directions on file yet. Know the way in? "}{onEdit ? <button onClick={() => onEdit("parking_note")} style={{ background: "none", border: "none", padding: 0, color: C.blue, fontSize: 12.5, fontWeight: 700, cursor: "pointer" }}>Add it</button> : "Add it"}{"."}</div> : null}
@@ -94,12 +105,17 @@ export default function AreaGettingThere({ area, C, onEdit, flat }: AreaGettingT
     </Step> : null}
     </div>
     {long ? <button onClick={(e) => foldKeepingPlace(e, () => setMore(m => !m), more)} aria-expanded={more} style={{ minHeight: 44, display: "inline-flex", alignItems: "center", background: "none", border: "none", padding: "0 0 6px 41px", color: C.blue, fontSize: 12.5, fontWeight: 700, cursor: "pointer" }}>{more ? "Show less" : "Show more"}</button> : null}
-    {pinMap && dest ? <div style={{ marginTop: 4, marginBottom: 12 }}><WalkInMap pts={[]} park={park} crag={crag} height={180} zoom={14} label={"Map of " + area.name + (park ? " with the parking pin (P)" : "")} on3d={() => setView3d(true)} /></div> : null}
+    {pinMap && dest ? <div style={{ marginTop: 4, marginBottom: 12 }}><WalkInMap pts={[]} park={park} crag={crag} height={180} zoom={14} label={"Map of " + area.name + (park ? " with the parking pin (P)" : "")} on3d={() => setView3d(true)} expandable title={"Getting to " + area.name} /></div> : null}
     {trail ? <div style={{ marginTop: 4, marginBottom: 12 }}>
       <div style={lbl}>{"Trail to the crag · " + fmtTrailLen(trailLenM(trail))}</div>
-      <WalkInMap pts={trail} park={park} crag={crag} on3d={() => setView3d(true)} />
+      <WalkInMap pts={trail} park={park} crag={crag} on3d={() => setView3d(true)} expandable title={"Trail to " + area.name} />
       <div style={{ fontSize: 11.5, color: C.textMuted, lineHeight: 1.45, marginTop: 6 }}>{"From the parking (P) to the crag (C). " + (area.walkin_kind === "traced" ? "A climber traced it on the map; it is not a GPS recording. " : "") + "Every climb here shows it on its crag map."}</div>
     </div> : null}
+    {canDraw ? <div style={{ display: "flex", alignItems: "center", flexWrap: "wrap", gap: "0 10px", marginTop: trail || pinMap ? -6 : 4, marginBottom: 10 }}>
+      {trail ? null : <span style={{ fontSize: 12, color: C.textMuted, lineHeight: 1.45 }}>No trail to the crag on file yet.</span>}
+      <button type="button" onClick={() => setDrawOpen(true)} style={{ ...pinLink, gap: 6 }}><ActionIcon name="map" size={14} color={C.blue} />{trail ? "Suggest a better trail" : "Draw the trail"}</button>
+    </div> : null}
+    {canDraw && drawOpen && trailRoute ? createPortal(<Suspense fallback={null}><CragTrailForm routeId={String(trailRoute.id)} routeName={area.name} crag parkAt={park} cragAt={crag} initialPts={null} initialShape={null} onClose={() => setDrawOpen(false)} onSuccess={() => { /* the form shows its own receipt; its Done closes it */ }} /></Suspense>, document.body) : null}
     {/* The crag over the terrain: the same pins as the flat map above, and the walk in where one is on file, with the
         same caveat when the line was traced rather than recorded. No crag has a walk in on file yet (2026-11-18), so the
         pin map is the one climbers meet. "P" and "C" are fixed letters, not data. */}
