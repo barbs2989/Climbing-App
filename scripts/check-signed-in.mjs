@@ -464,7 +464,7 @@ try {
 
        Waiting here cannot mask a real defect: the assertions below are unchanged, so a control
        that genuinely never renders still fails, with the same message, just later. */
-    // The group page is TABS (About · Discussion · Events · Members · Media) and a member lands on
+    // The group page is TABS (About · Discussion · Events · Members) and a member lands on
     // the Discussion, so the roster is one tap away: on Members, which renders it for a member and
     // only a count for anyone else. The tap is scoped to THIS group's dialog and matches the tab's
     // whole label -- a page-wide "contains" would also match "2 members" in the header.
