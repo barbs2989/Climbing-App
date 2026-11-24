@@ -204,8 +204,11 @@ empty field fill at once and two agreeing climbers change one; the owner withdre
       turned-down climb and doubled the reason's full stop (`_add_contribution_strike` now names any contribution
       and drops the reason's own full stop); a restricted climber's field edit got the RLS policy's own error
       (`guard_field_contribution` now refuses it first: "Editing is paused on your account…"); and the proposal
-      card printed Approach twice. `scripts/oneoff/verify-0517-strike-notices-pglite.mjs` holds them. Still open:
-      two PENDING proposals with the same name do not flag each other; the duplicate list reads the catalog only.
+      card printed Approach twice. `scripts/oneoff/verify-0517-strike-notices-pglite.mjs` holds them. Two PENDING
+      proposals with the same name now flag each other too (owner, "fix the gap"): `waitingTwins` in
+      `lib/RouteProposals.jsx` matches names the way the search box does (`searchCanon` + `searchBare`, so
+      "Mt Baker" is "Mount Baker"), a climb within the same area and an area anywhere in the queue, and each card
+      shows *Also waiting for review: N more with this name* with who sent it and when, above the catalog check.
     - *Signed out = sign in first.* Add a climb used to offer *Submit anonymously*, which 0165's "authed can
       contribute" policy always refused. Its button now reads *Sign in to submit* and opens the sign-in sheet
       (`onLogin`), as Add an area's `submitAreaProposal` already did.
