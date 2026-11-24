@@ -2,7 +2,8 @@
 
 `tab==="groups"` in `ClimbMatch.jsx`, opened from the Menu's Groups tile (NAV marks it `bar:false`). Five
 views under `groupsTab`: For you · Your groups · Your activity · Discover · Events. A group opens as the
-`openGroupId` overlay over it.
+`openGroupId` overlay over it, with four tabs: About · Discussion · Events · Members. There is **no Media tab**
+(owner 2026-11-23: a photo someone posts already shows in the Discussion).
 
 ## 1. What it does today
 - **Who may change what.** Only a group's **managers** (the owner and its moderators) can change its settings,
@@ -175,7 +176,6 @@ treats it as a DELETE. Probe: `scripts/oneoff/probe-live-takedown.mjs`.
 | `src/components/GroupAboutTab.tsx` | `GroupAboutTab`, an open group's About tab |
 | `src/components/GroupMembersTab.tsx` | `GroupMembersTab`, an open group's Members tab (roster and member requests); the first `MEMBERS_FIT` (7, the rows that fill a 390x844 phone, measured 2026-11-23), then *Show N more members* unfolds the rest in place; *Search members* by the heading opens a `ListPage` with a name search and a sort (group order, name, moderators first) |
 | `src/components/GroupEventsTab.tsx` | `GroupEventsTab`, an open group's Events tab; past three past events, *All N past events →* opens a `ListPage` with a search by name or place and newest/oldest. Both group pages stack at 792, over the group view and under the event (795) or the Remove sheet (860) a row opens |
-| `src/components/GroupMediaTab.tsx` | `GroupMediaTab`, an open group's Media grid |
 | `src/components/GroupJoinQuestionsEditor.tsx` | `GroupJoinQuestionsEditor`, the membership-questions editor in the create-group form (PR63) |
 | `src/components/GroupCustomizeFields.tsx` | `GroupCustomizeFields`, the form's *Make it yours* section: colour, announcement, welcome message, links, moderator title (0506) |
 | `src/components/GroupEventForm.tsx` | `GroupEventForm`, the create-an-event sheet, and the editor for one |
