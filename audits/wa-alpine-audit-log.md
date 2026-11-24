@@ -40004,3 +40004,49 @@ Peak).
 
 0 confirmed errors fixed, 5 newly flagged for human review, 3 clean.
 Next batch will continue id-ascending from `wa_elephant_head_variation_p1_west_face` (pass 9).
+
+## Batch 575 (pass 9) — 2026-11-24
+
+Checked 8 routes, continuing id-ascending from `wa_forbidden_peak_east_ledges`: Energizer Bunny
+(Prusik Peak), Southwest Slope/De Roux Creek (Esmeralda Peaks), Standard Scramble (Fifth of July
+Mountain), Fire on the Mountain (Sloan Peak), Fish & Whistle (Vesper Peak), Southwest Slope/
+Standard Route (Flora Mountain), Flycatcher Buttress (North Early Winters Spire), and East
+Ledges (Forbidden Peak).
+
+Energizer Bunny's 8,008ft high point, FA (Pobst/Abegg, June 2015 — already hedged in the stored
+overview as unconfirmed), coordinates, and Enchantment Permit Area fees all matched Wikipedia/AAC/
+Recreation.gov exactly. Fire on the Mountain's 7,835ft summit and Herrington/Roberts 2009 FA
+matched Wikipedia and Roberts's own trip report exactly. Flycatcher Buttress's FA (Marts/
+McPherson/McPherson 1965, FFA Burdo 1990 onsight free solo) matched OpenBeta exactly; an older
+trip report citing 9 pitches/5.9 A0 instead of the stored 10 pitches/5.10b is a plausible
+era/grading variance, not flagged.
+
+Forbidden Peak's East Ledges 8,815ft elevation matched the Wikipedia/Mountain Project/SummitPost
+consensus (TopoZone's 8,632ft is the lone outlier). But its stored hazard text claims a
+"documented fatality" on this specific route; the one real, NPS-confirmed Forbidden Peak fatality
+(Sept 2013) names only "a commonly-used rappel gully," not East Ledges by name — flagged for a
+human to either find a source naming the route or soften the wording.
+
+Esmeralda Peaks' 6,765ft high point matched Wikipedia, but no source gave an independently-
+checkable summit coordinate precise enough to cross-check the stored lat/lng — flagged.
+
+Fifth of July Mountain's 7,696ft summit and its Little Giant Fire road-closure claim (order
+06-17-07-2026-40) both matched USFS's own conditions page, but the closure's stated end date
+(Oct 31, 2026) has now passed (today is Nov 24, 2026) — not wrong, just stale/time-sensitive text
+better suited to `check:expiring-closures`/`audit:expiring-closures` than a fact fix — flagged
+for that.
+
+Fish & Whistle's 6,214ft high point matched The Mountaineers exactly, but no source
+independently ties its stored FA (Berdinka, Sept 2017) to this specific route, though Berdinka is
+confirmed FA of two neighboring lines on the same face — flagged as plausible-but-unconfirmed.
+
+Flora Mountain's FA (Leuthold/Metzger, Sept 11 1940) and ~8,323ft summit both matched Wikipedia,
+but its stored $5 one-way NPS shuttle fare (Stehekin Landing to Harlequin Bridge) looks stale
+against current reseller pricing and a 2026 flood-damage advisory for Stehekin Landing services —
+flagged for a human to check nps.gov/Stehekin Valley Adventures directly.
+
+**Clean (3):** Energizer Bunny (Prusik Peak), Fire on the Mountain (Sloan Peak), Flycatcher
+Buttress (North Early Winters Spire).
+
+0 confirmed errors fixed, 5 newly flagged for human review, 3 clean.
+Next batch will continue id-ascending from `wa_forbidden_peak_east_ledges` (pass 9).
