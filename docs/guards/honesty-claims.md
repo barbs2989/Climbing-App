@@ -1387,6 +1387,19 @@ rows. Its build script is gone; new reviews write the column.
   Andrews Glacier (five CO routes) stays unsure because its sources disagree: one trip report saw open
   crevasses in the fall. The Grand Teton's north side (Valhalla Traverse normal, Teton Glacier as an
   alternative) stays unsure.
+  A fifth round (`research-out-5.json`, plus `wy/research-out-6.json` written on review) settled those:
+  - Andrews Glacier is glacier travel, because the park's glacier research page counts its crevasses. That makes 4
+    CO routes yes; Central Buttress stays unsure, since it has a non-glacier descent.
+  - The three Mills Glacier routes are yes. An alpine-journal accident report has a climber fall on the glacier
+    below Longs Peak's east face into a crevasse.
+  - The Grand Teton North Ridge and North Face Highlight Tour are no. Their standard line is the Valhalla Traverse
+    out and the Owen-Spalding back. The Lowlight Tour stays unsure, because no page of its own was read.
+  - Settled no: McHenry's Notch Couloir, and Eternal Darkness (BC).
+  - Held again: Dragonfly Jr, and Toe Gully's snow "no".
+  Since this round, the fold merges research rounds PER FACT (`glacier-travel-decide.mjs`). A later round's
+  "unsure" never erases an earlier page-read answer, and in a disagreement "yes" wins. Before the change, a
+  later file replaced an earlier one whole.
+  Glacier not settled now: BC 9, CO 2, WY 21, AK 20.
 
   - **HOUR BY HOUR + THE GUST WINDOW (2026-10-08, owner: "clear and exact and accurate science").**
     Section 12 of the guard. Three things it holds, each measured, not assumed:

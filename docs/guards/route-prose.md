@@ -1153,7 +1153,10 @@ the correction knows the screen is wrong, and they have no way to report it.
     *"possibly done previously"*) — that is a climber writing their own FA note, the ordinary voice of
     the field, not the pipeline. The section-2 cues match research vocabulary, not uncertainty.
   - **Measured non-findings, exempted by name:** *"Source Lake"* is a place; *"This entry gully"* is a
-    gully you enter (the cue is `this entry is`); the waypoint caveat *"Coordinate is a geometric
+    gully you enter (the cue is `this entry is`, and since 2026-11-23 only when database talk follows —
+    `based`, `derived`, `a duplicate`, `a placeholder`, `sourced`, `for the`…: *"this entry is far
+    gentler than the original"* (a roof's way in) and *"This entry is the loosest ground of the day"*
+    (a gully) were the section's only two hits, both climbing words); the waypoint caveat *"Coordinate is a geometric
     interpolation … not independently verified"* is REQUIRED by `check:waypoint-caveat`;
     `access._raw.*` does not render. *"(6,320-6,340 ft depending on source)"* is deliberately not a
     cue — collapsing it invents a number — and publisher names inside grade columns belong to
@@ -1388,3 +1391,55 @@ the correction knows the screen is wrong, and they have no way to report it.
     (5.9+ to 5.10b). Sharkfin Tower stays 5.0 (near-universal) with its text naming "a couple of
     harder moves near 5.4".
   - Service key, `partner_requirements=not.is.null` in 100-row pages. Not a build gate.
+
+- **`audit:coverage`** — how much of the catalog is FILLED and how much is BACKED BY EVIDENCE, per
+  state × discipline × region, and which destinations to research next, the most-used first (owner,
+  2026-11-23: "a measurable coverage system by region and discipline … verified approach, descent,
+  protection, pitch information, coordinates … then prioritize the most-used climbing areas").
+  `scripts/audit-coverage.mjs` measures; every rule is in `scripts/lib/coverage.mjs` (`--selftest`,
+  no DB). Read-only; writes `audits/coverage/<date>.json`, and `--compare <older snapshot>` prints
+  what moved, in FIELDS (a research batch is a few hundred of ~1.4 million; percentage points read
+  "+0.00").
+  - **16 dimensions**: coordinates, trailhead/parking pin, approach, descent, protection/rack, pitch
+    count, pitch-by-pitch, rappels, grade, length, gain, GPS track, season, access/road/permit,
+    hazards, overview.
+  - **Relevant** is `lib/fieldScope.js` — the edit sheet's and the page's own rule — per `catOf`
+    discipline, so a boulder never "misses" a rappel table and a single-pitch sport line never
+    "misses" a descent. A stored value keeps its field in scope, as fieldScope says.
+  - **Four tiers**: missing · stored · **sourced** (a `route_field_evidence` row with ≥1 evidence
+    item that has not locked) · **locked** (`locked`/`locked-1src`, or an owner-approved
+    `route_field_confidence`). Paragraphs (approach, descent, pitch_detail, overview…) NEVER lock
+    (owner, 2026-11-18), so **sourced is their ceiling** — read "verified" for prose as sourced. A
+    `disputed` row, or one with no evidence items, backs nothing; evidence never lifts an EMPTY column.
+  - **Area fallbacks the page itself uses count as stored**: the crag's (or the nearest ancestor's)
+    parking pin for the trailhead, its walk-in for the approach (0397), its `season_months`, and its
+    coordinate (`dbRouteToCamel` takes `lat` from the area — only 121 of 14,226 WA routes store
+    their own; a first draft read coordinates as 0.9%). An area flagged `coords_approx` does NOT
+    count: its page says the coordinates are approximate. A region's row never fills a route.
+  - **Destination** (the ranking unit, `destinationOf`): a peak is its own; a crag ranks as the
+    region directly above its OUTERMOST crag (walls nest in crags), unless that is the state's
+    top-level region. First draft ranked the outermost crag and listed "South Face" five times —
+    five different walls; their regions above are Pinto Rock, Beacon Rock, Squire Creek…
+  - **Use weight** (`usageWeight`): 1 + 3·classic + quality 0–4 (classic_score › guide_stars ›
+    stars) + 2·on a named list + log-scaled 90-day views, climbers who logged it, and objectives.
+    Pre-launch the app's own signals are thin (2026-11-23: 14 logs on 10 routes, 2,313 view-days on
+    328 routes since 2026-10-23, mostly the team), so the catalog's popularity carries the ranking;
+    real use takes over as it grows. **Priority** = Σ weight × gap, gap = 1 per missing relevant
+    field + ¼ per stored-but-unsourced one.
+  - **Baseline 2026-11-23** (`audits/coverage/2026-11-23.json`, 316,985 routes, 61 states):
+    **37.0% of relevant fields stored, 0.07% sourced, 0.04% locked.** Coordinates 100% and grade
+    100% stored; pitch count 99%; approach 14%; descent 21% of 20.7k relevant; protection 4.7%;
+    pitch-by-pitch 4.8% of 18.8k; access/road/permit 1.1%; overview 6.5%. Top destinations:
+    Indian Creek, Clear Creek Canyon, PMRP and the Northern Gorge (Red River Gorge), Boulder Canyon,
+    Rifle, American Fork, Smith Rock, Miller Fork, Muir Valley. WA alone: 47.1% stored; Icicle
+    Creek, Beacon Rock, Index's Lookout Point Area, Tum Tum, Frenchman Coulee top it.
+  - **What it cannot see**: whether a stored value is RIGHT (that is the research ledger's job, and
+    the other audits'); per-route repetition — a crag-wide fact such as access counts once per
+    route, so big crags weigh it heavily; route_views is per device-day, not per person.
+  - **Traps met**: one `supabase db query` costs ~5 s of CLI start-up whatever it reads — 61
+    one-state calls overran 10 minutes, so states are packed into ≤20k-route batches (16 queries,
+    ~3 min, none over 18 s). The per-state count is read seconds before its batch and parallel
+    sessions add routes meanwhile (one WA route did): a short read fails, a few rows of drift is
+    noted. The first snapshot was 3.1 MB, three quarters a 3,357-row priority list: it keeps the top
+    500 plus each state's top 20, and drops dimensions no route of an entry is relevant to.
+  - Take the DB slot first (`~/dev/db-throttle/dbslot.mjs acquire <name>`). Not a build gate.

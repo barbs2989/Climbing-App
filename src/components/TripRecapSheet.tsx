@@ -5,7 +5,7 @@ import { POP_BACK } from "../../lib/popupChrome.js";
 import { submitTripReport, useCrewRecap, useProfilesByIds } from "../../lib/db.js";
 import Av from "./Av.tsx";
 
-/** The five things that can have happened to one crewmate on the day, in the order a climber thinks of them (0518). */
+/** The five things that can have happened to one crewmate on the day, in the order a climber thinks of them (0519). */
 export const TRIP_OUTCOMES: ReadonlyArray<readonly [string, string]> = [
   ["on_time", "On time"],
   ["late", "Late"],
@@ -15,7 +15,7 @@ export const TRIP_OUTCOMES: ReadonlyArray<readonly [string, string]> = [
 ];
 /** What each outcome reads as, for a sentence ("marked you Late"). */
 export const TRIP_OUTCOME_LABEL: Record<string, string> = Object.fromEntries(TRIP_OUTCOMES);
-/** A crewmate who LEFT the crew cancelled; they cannot also have been on time, late or a no-show (0518 refuses it). */
+/** A crewmate who LEFT the crew cancelled; they cannot also have been on time, late or a no-show (0519 refuses it). */
 const DEPARTED_OUTCOMES = new Set(["cancelled_early", "cancelled_late"]);
 
 export interface TripRecapSheetProps {

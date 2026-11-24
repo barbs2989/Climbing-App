@@ -79,6 +79,7 @@
     "audit:hazard-redundancy": "node scripts/audit-hazard-redundancy.mjs",
     "audit:fifty-classics": "node scripts/audit-fifty-classics.mjs",
     "audit:list-coverage": "node scripts/audit-list-coverage.mjs",
+    "audit:coverage": "node scripts/audit-coverage.mjs",
     "check:route-tags": "node scripts/check-route-tags.mjs",
     "check:list-summit-audit": "node scripts/check-list-summit-audit.mjs",
     "audit:list-summit-routes": "node scripts/audit-list-summit-routes.mjs",

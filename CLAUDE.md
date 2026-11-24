@@ -251,6 +251,7 @@ npm run audit:terrain      # does a route's safety advice match the terrain it c
 npm run audit:hazard-redundancy # how much repetition the KNOWN HAZARDS merge removes (NOT a backlog)
 npm run enrich:apply       # write approach_variants / climbing_route / bivy (--dry first)
 npm run check:research-locks # can a research batch overwrite a field the evidence ledger has locked? (in build)
+npm run audit:coverage     # how much of each STATE × DISCIPLINE is filled / sourced / LOCKED (approach, descent, protection, pitches, coordinates…), and which destinations to research next, most-used first (writes audits/coverage/<date>.json; --compare an older one; --selftest needs no DB)
 
 # ── Contributions and the logbook — notes: docs/guards/contributions-and-logbook.md ──
 npm run check:contrib-fields # every field the contribute form offers is actually applied (in build)
@@ -296,7 +297,7 @@ npm run check:list-row-columns # the Climbs list's THIN ROW carries every column
 npm run check:migrations # two migrations must never share a number (in build)
 npm run check:migration-replay # does supabase/migrations rebuild an EMPTY database, as a Supabase preview does? (--compare-live: into the LIVE schema)
 npm run check:profile-privacy # PGlite replay, then profiles read as anon/authenticated: hidden name/photos and private columns refused, every app select list still allowed; and signed out, climb_logs.partners is refused while every other climb_logs column is granted (hand-run, 0434/0501 — run it when a migration ADDS a climb_logs column)
-npm run check:trip-reports # PGlite replay, then RELIABILITY (0518) driven as each climber: one report counts, hidden until the climber files or 7 days pass, "I was there" takes it out, called off marks nobody, leaving stays reportable (hand-run)
+npm run check:trip-reports # PGlite replay, then RELIABILITY (0519) driven as each climber: one report counts, hidden until the climber files or 7 days pass, "I was there" takes it out, called off marks nobody, leaving stays reportable (hand-run)
 npm run check:rls   # policies bind the right column; definer fns pin pg_temp; every table has RLS; every write policy asks WHO is calling; every view is read-only to the app's keys (in build)
 npm run check:hook-signature # does the screen-content hook signature (0429) agree between pgcrypto in the trigger and the edge function, and refuse stale/forged calls? (in build)
 ```

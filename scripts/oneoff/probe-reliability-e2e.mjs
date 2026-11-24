@@ -1,8 +1,8 @@
 #!/usr/bin/env node
-// RELIABILITY END TO END, on two REAL accounts against the live database (0518, owner 2026-11-23: "do some tests after
+// RELIABILITY END TO END, on two REAL accounts against the live database (0519, owner 2026-11-23: "do some tests after
 // with real climbers accounts" / "test that it works properly with good ui and ux").
 //
-// check:trip-reports proves 0518's rules in PGlite. This proves the same rules hold in the LIVE project, and that the
+// check:trip-reports proves 0519's rules in PGlite. This proves the same rules hold in the LIVE project, and that the
 // screens a climber uses reach them: a crew whose day was yesterday, the "How did it go?" alert and sheet, the reveal,
 // "Your side" and "I was there", the profile's counts, and the match % in both directions. It creates its own two
 // accounts (scripts/lib/ui-fixture.mjs: service key HERE only) and deletes them, and every report with them, at the end.

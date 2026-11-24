@@ -6,7 +6,7 @@ import { replyToTripReport, useProfilesByIds } from "../../lib/db.js";
 import { TRIP_OUTCOME_LABEL } from "./TripRecapSheet.tsx";
 import Av from "./Av.tsx";
 
-/** A report about me, as useTripReportsAboutMe returns it (0518). */
+/** A report about me, as useTripReportsAboutMe returns it (0519). */
 export interface TripReportAboutMe {
   id: string;
   crewId: string | null;

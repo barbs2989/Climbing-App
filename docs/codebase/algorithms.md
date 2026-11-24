@@ -26,7 +26,7 @@ project documentation as a whole — `CLAUDE.md`, `docs/codebase/` and `docs/gua
        score 56% rather than 37%, which no screen shows: a real row with 3+ unknowns still refuses to print a %.
     `check:match-percent` section 8 pins all four, and `scripts/oneoff/inject-match-percent-cases.mjs` reverts each
     one on its own (19/19 as expected).
-  - **RELIABILITY (`CMAX_REL` 12, 0518, owner 2026-11-23).** Each climber's record (`relRecordOf`: crewmates' trip reports
+  - **RELIABILITY (`CMAX_REL` 12, 0519, owner 2026-11-23).** Each climber's record (`relRecordOf`: crewmates' trip reports
     from `reliability_of_users`, plus their vouches' Reliability stars) becomes a rate (`relRate`): a trip is worth 1 on time,
     0.9 cancelled with notice, 0.75 late, 0.35 cancelled last minute, 0 no-show; each vouch's stars half a trip at
     (stars−1)/4; pulled toward 0.85 by two imaginary trips, so one bad day on a short record does not sink it (one no-show

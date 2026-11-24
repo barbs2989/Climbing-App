@@ -86,7 +86,7 @@ const wfText = wfFiles
 // Declared exemptions. A name here must be a real file, and must genuinely be unwired.
 const EXCLUDED = {
   "check-trip-reports.mjs":
-    "replays every migration into PGlite (~40s of WASM, like check:profile-privacy) and drives 0518's trip-report " +
+    "replays every migration into PGlite (~40s of WASM, like check:profile-privacy) and drives 0519's trip-report " +
     "rules as each climber. Hand-run before pushing a change to crew_trip_reports, crew_trip_replies, " +
     "crew_departures, their functions, or the reliability reads in lib/db.js. No credential and no network.",
   "check-profile-privacy.mjs":

@@ -147,7 +147,7 @@ const withoutSignal = {
   "verified": { ...base, verified: false },
   "availability overlap": { ...base, availability: ["wed"] },
   pace: { ...base, hikingSpeedFtHr: 300 },
-  // RELIABILITY (0518): crewmates say they did not show, ten times.
+  // RELIABILITY (0519): crewmates say they did not show, ten times.
   reliability: { ...base, reliability: { trips: 10, noShow: 10 } },
 };
 // WHERE YOU CLIMB has two answers (2026-11-23): shared objectives OR the same listed area. With both in the base, losing
@@ -453,7 +453,7 @@ else fail(`the browse row no longer explains the missing match % (${JSON.stringi
   else fail(`blank fields score unevenly: ${off.map((r) => r.k + " " + r.pts + "/" + r.max + (r.known ? " (known?)" : "")).join(", ")} — which field you leave blank decides the score`);
 }
 
-// ---- 9. RELIABILITY (0518, owner 2026-11-23): both sides, from crewmates' reports, never a bad mark for having none.
+// ---- 9. RELIABILITY (0519, owner 2026-11-23): both sides, from crewmates' reports, never a bad mark for having none.
 {
   const relOf = (a, b) => M.compatParts(a, b).find((r) => r.k === "rel");
   const good = { reliability: { trips: 9, onTime: 9 } }, flaky = { reliability: { trips: 4, onTime: 1, noShow: 3 } }, none = {};

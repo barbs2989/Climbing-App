@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// check:trip-reports — RELIABILITY'S RULES, executed against the real migrations (0518).
+// check:trip-reports — RELIABILITY'S RULES, executed against the real migrations (0519).
 //
 // Owner, 2026-11-23: reliability (showed up, on time, didn't bail) is recorded by the crew after the trip. One
 // crewmate's report counts; the climber it is about can reply "I was there", which takes it out; a report is hidden
@@ -12,7 +12,7 @@
 //   node scripts/check-trip-reports.mjs
 //
 // Hand-run, like check:profile-privacy (~40 s of WASM replay, no credential, no network): before pushing any change
-// to 0518's tables or functions, or to the reliability reads in lib/db.js.
+// to 0519's tables or functions, or to the reliability reads in lib/db.js.
 
 import fs from "node:fs";
 import path from "node:path";
@@ -46,7 +46,7 @@ await db.exec(`
   alter default privileges in schema public grant all on sequences to anon, authenticated, service_role;
 `);
 const files = fs.readdirSync(DIR).filter((f) => /^\d+_.*\.sql$/.test(f)).sort();
-if (!files.some((f) => /^0518_/.test(f))) dead("migration 0518 (crew trip reports) is not in supabase/migrations");
+if (!files.some((f) => /^0519_/.test(f))) dead("migration 0519 (crew trip reports) is not in supabase/migrations");
 for (const f of files) {
   try { await db.exec("begin"); await db.exec(fs.readFileSync(path.join(DIR, f), "utf8")); await db.exec("commit"); }
   catch (e) { await db.exec("rollback").catch(() => {}); dead(`${f} did not replay: ${e.message}`); }

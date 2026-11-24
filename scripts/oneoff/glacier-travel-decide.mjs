@@ -51,7 +51,16 @@ if (argv.includes("--verify-in")) {
 } else if (argv.includes("--final") || argv.includes("--research-in")) {
   const second = new Map(); for (const f of files(/^verify-out-\d+\.json$/)) read(f).forEach((r) => second.set(r.id, r));
   const research = new Map();
-  if (!argv.includes("--research-in")) for (const f of files(/^research-out-\d+\.json$/)) read(f).forEach((r) => { if (!VALS.has(r.glacier) || !VALS.has(r.snowInSeason)) throw new Error(f + ": " + r.id + " has a bad value"); research.set(r.id, r); });
+  // Research rounds merge PER FACT, and only from answers resting on a page read (basis "web"): a later round's
+  // "unsure" never erases an earlier round's answer, and when two rounds disagree the answer moves toward the
+  // warning ("yes" beats "no"). A hand hold is written as "unsure" in the round that made the thin call.
+  const merge = (a, b) => b === "unsure" ? a : a === "unsure" ? b : a === "yes" || b === "yes" ? "yes" : "no";
+  if (!argv.includes("--research-in")) for (const f of files(/^research-out-\d+\.json$/)) read(f).forEach((r) => {
+    if (!VALS.has(r.glacier) || !VALS.has(r.snowInSeason)) throw new Error(f + ": " + r.id + " has a bad value");
+    if (r.basis !== "web") return;
+    const p = research.get(r.id);
+    research.set(r.id, p ? { basis: "web", glacier: merge(p.glacier, r.glacier), snowInSeason: merge(p.snowInSeason, r.snowInSeason), why: r.glacier !== "unsure" || r.snowInSeason !== "unsure" ? r.why : p.why } : r);
+  });
   const region = fs.existsSync(path.join(dir, "region.json")) ? read("region.json") : null;
   if (region && (region.glacier !== "no" || !region.why)) throw new Error("region.json must say glacier: no and give its why");
   // With a regional fact, a risky first-read call needs no second read: the place itself settles the glacier question.
