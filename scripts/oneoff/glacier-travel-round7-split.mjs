@@ -4,7 +4,7 @@
 //   node scripts/oneoff/glacier-travel-round7-split.mjs [--round 8]   (default 7; reads round<N>/, tags rows round: N)
 //   node scripts/oneoff/glacier-travel-decide.mjs --state <s> --final    # each non-WA state it names
 //   node scripts/oneoff/glacier-travel-wa-research.mjs --fold
-// Round 8 on is SNOW-ONLY (every glacier answer was already settled): the split writes glacier "unsure", which the
+// Rounds 8 and 9 were SNOW-ONLY (every glacier answer was already settled): the split writes glacier "unsure", which the
 // fold never lets erase an earlier answer, so a researcher's copied glacier value cannot move a settled one.
 // HOLD (below) writes a thin "no" as "unsure" before the split, the hand review's rule (RESEARCH-PROMPT step 5).
 import fs from "node:fs";
@@ -12,7 +12,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
-const RI = process.argv.indexOf("--round"), ROUND = RI > 0 ? Number(process.argv[RI + 1]) : 7, SNOW_ONLY = ROUND >= 8;
+const RI = process.argv.indexOf("--round"), ROUND = RI > 0 ? Number(process.argv[RI + 1]) : 7, SNOW_ONLY = ROUND === 8 || ROUND === 9;
 if (!Number.isInteger(ROUND) || ROUND < 7) { console.error("--round takes 7 or more"); process.exit(1); }
 const D = path.join(ROOT, "research-data", "glacier-travel-2026-11-23"), R7 = path.join(D, "round" + ROUND);
 const VALS = new Set(["yes", "no", "unsure"]);

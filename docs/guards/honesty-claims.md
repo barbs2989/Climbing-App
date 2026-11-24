@@ -1459,6 +1459,23 @@ rows. Its build script is gone; new reviews write the column.
     own page, read on review, is typed snow but says the couloir melts out fairly quickly.
   Snow not settled now on these routes: WA 28, CA 17, CO 13, WY 8, UT 4, BC 2, ID 1, OR 1 (74). Further web
   rounds look unlikely to pay; these wait for climbers' corrections on the edit sheet.
+- **Round 10** (2026-11-24) re-ran the 118 open glacier calls (`round10/`, each entry carrying every earlier
+  note, six researchers). Searches ran out partway for one researcher again; one file of 20 Washington routes
+  settled nothing.
+  - Glacier yes (6): Stanley Peak North Face (AB; seracs, crevasse rescue advised); Mount Michelson North Ridge
+    (the Esetuk valley glacier), Goldfinger (the Ruth Gorge crevasses), The Fall Line (up the Mendenhall
+    Glacier) (AK); Shasta Hotlum–Wintun Ridge (onto the Wintun, small crevasses) and Norman Clyde Peak North
+    Face (the Middle Palisade Glacier's bergschrund) (CA).
+  - Glacier no: North Milk Creek Glacier on Mount Jefferson (OR): the glacier is gone, and the line is a snow
+    gully.
+  - Held at unsure on review (9, `round10/hold.json`). The prompt's bar said a named glacier on the line was
+    enough for "yes", which is looser than RULE.md (crevasse, bergschrund or icefall hazard, normally roped):
+    six answers that only named a small glacier were held on that ground: AK West Ridge (Twincicle), Dana
+    Couloir, Mendel Couloir, Mills North Face (CA), Apache Queen's Way (CO), Vesper North Face (WA). Also
+    Michelson South Face (the page is the peak's normal route), Burgette Arête (a start-only page) and Bonanza
+    Cascadian (one descent account).
+  - The split script's snow-only switch is now rounds 8 and 9 only, so a later glacier round keeps its answers.
+  Glacier not settled now: WA 27, CA 21, AK 16, WY 16, OR 10, BC 7, MT 7, AB 4, CO 1, NV 1, NU 1 (111).
 
   - **HOUR BY HOUR + THE GUST WINDOW (2026-10-08, owner: "clear and exact and accurate science").**
     Section 12 of the guard. Three things it holds, each measured, not assumed:
