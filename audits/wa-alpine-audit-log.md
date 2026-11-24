@@ -39906,3 +39906,56 @@ Peak), East Face (Chimney Rock), Northeast Buttress (East McMillan Spire).
 0 confirmed errors fixed, 0 newly flagged for human review, 9 clean, 1 left unconfirmed (no
 source).
 Next batch will continue id-ascending from `wa_east_mcmillan_spire_northeast_buttress` (pass 9).
+
+## Batch 573 (pass 9) — 2026-11-24
+
+Checked 10 routes, continuing id-ascending from `wa_east_mcmillan_spire_northeast_buttress`:
+West Ridge/Southwest Face (East McMillan Spire), East Ridge on Snowking Mountain, Silver Star
+Mountain, Inspiration Peak, Pinnacle Peak, and Ingalls Peak, East Slope (Primus Peak), and three
+East Twin Needle routes — North Buttress ("Thread of Gneiss"), South Route, Thread of Ice.
+
+Snowking's East Ridge matched Mountain Project exactly: Class 3/Easy Snow, Grade II, 1,800ft/
+545m (vs. stored 549m — trivial rounding), Ulrichs/Heath 1938 FA; approach (Cascade River Rd/
+FR-1570) and descent (Kindy Ridge/Cyclone Lake) both corroborated by Mountaineers.org. Pinnacle
+Peak's East Ridge matched Mountain Project exactly: 5.5, 3 pitches, Trad/Alpine; stored 91m is
+plausible for 3 short pitches and uncontradicted. Ingalls Peak's East Ridge matched Mountain
+Project almost exactly: 5.7, 6 pitches, Grade II, 900ft/273m (vs. stored 274m — trivial); the
+South-Ridge-rappel descent (not down the East Ridge itself) is corroborated by multiple sources.
+One source spells the FA's second climber "Barry Prayer" against our stored "Prather" — a single
+conflicting secondary transcription, not enough to override the stored spelling. East Twin
+Needle's North Buttress ("Thread of Gneiss") matched a Cascade Climbers trip report exactly:
+Wehrly/Boyce July 31 2022 FA, 5.9 D+, 9 pitches, ~2,000ft/610m. Its Thread of Ice matched
+stephabegg.com's own trip report and a Cascade Climbers thread title exactly: Abegg/Wallace
+June 27 2009 FA; stored AI3 alongside a "5.7 rock" crux mentioned in the source is not a
+conflict — mixed snow/ice routes commonly carry both an ice grade and a rock-crux grade.
+
+Five flagged, none fixed. East McMillan Spire's West Ridge/Southwest Face: every source tying a
+1940 Fred/Helmy Beckey FA and a "West Ridge" name to a McMillan spire attaches it to **West**
+McMillan Spire (OpenBeta, a Mountaineers trip report), not East; AAC/Alpinist sources on East
+McMillan Spire describe only a 1976 North Face and 1977/1987 North Buttress with different
+climbers. Possible wrong-twin-peak misattribution, but no source explicitly rules out a separate
+1940 Beckey ascent of East McMillan — needs the guidebook (Beckey's Cascade Alpine Guide), not a
+guess. Silver Star Mountain's East Ridge: OpenBeta credits Childs/Goldie Sept 14 2000 and grades
+it 5.8 IV (soloed, noting a continuous roped ascent "could push it to 5.9+ V"); Wikipedia gives
+5.8 Grade III; SummitPost gives Grade II Class 4/5; none confirms the stored "5.9+" outright, and
+a Cascade Climbers forum post claims Childs actually climbed it "in the early 90s," conflicting
+with the 2000 date — three-way source disagreement on both grade and date. Inspiration Peak's
+East Ridge: FA (Beckey/Cooper/Collins 1958) and 5.9 grade are solidly confirmed by Mountain
+Project and SummitPost, but Mountain Project's own listing gives only 800ft/242m over 6 pitches
+against the stored 396m/10 pitches — a real mismatch, not rounding; SummitPost's route
+description references pitch numbers past P9, suggesting MP's entry may cover only a sub-section
+of the full ridge rather than contradicting it outright. Can't resolve which pitch/length count
+is right without the full guidebook breakdown. Primus Peak's "East Slope": no source names a
+route by that exact name — all of Mountaineers.org, SummitPost and Cascade Climbers describe this
+Class 2-3 line via the Borealis Glacier from Lucky Pass as the "East Ridge" or "east side," though
+the approach/descent text otherwise matches closely; looks like a naming variant rather than a
+factual error, but flagged since the name itself isn't corroborated. East Twin Needle's South
+Route has no source naming it specifically; its descent (Eye Col/Crescent Creek Basin, optional
+Himmelhorn-West Twin Needle exit) is directionally consistent with how the peak's other routes
+are described, but with grade/pitches uncorroborated, flagging rather than passing it clean.
+
+**Clean (5):** East Ridge (Snowking Mountain), East Ridge (Pinnacle Peak), East Ridge (Ingalls
+Peak), North Buttress/Thread of Gneiss (East Twin Needle), Thread of Ice (East Twin Needle).
+
+0 confirmed errors fixed, 5 newly flagged for human review, 5 clean.
+Next batch will continue id-ascending from `wa_east_twin_needle_thread_of_ice` (pass 9).
