@@ -668,6 +668,17 @@ the correction knows the screen is wrong, and they have no way to report it.
   `check:no-rendered-sources` enforces it for app *fields* and is structurally blind to this,
   because these citations are free prose inside jsonb columns — every identifier is bound, the
   column is populated, the section renders. Only reading the value finds them.
+  - **`Climber Kyle` and the Mazamas as a SOURCE joined `NAMED` on 2026-11-23** (found because the
+    ROPEWORK card began quoting "climberkyle notes only ~4 pitches really need pitching"). Both were on
+    the enrichment source list and in no needle, so 22 values slipped it. The Mazamas alternative is
+    the sourcing shapes only (`per/by/from/(` + Mazamas, or Mazamas + rates/gives/says…), because "a
+    Mazamas party" first ascent and "a Mountaineers/Mazamas basic climb" are a club as credit or
+    operator, which the rule keeps; injections `mazamasclub` (0) / `mazamascite` (all) pin both
+    directions. WA then read **61 values on 46 routes**; the 46 citation edits on 24 routes are in
+    `scripts/oneoff/prose-citations-2026-11-23/` (edits.json, apply.mjs, dry-run clean). The rest
+    are the kept classes: FA credits, a club as operator or grading body, a guidebook or map to carry,
+    and the NWAC caveat. `audit:misplaced-prose` section 4 reads this same `NAMED`, so the widening
+    reaches every state there.
   - **`waypoints[].directions` is scanned too, since 2026-10-01** — the "Getting here —" line in
     the same card as the note, and the one waypoint string the audit never read. Added when a
     web-researched pass filled 1,642 of them (663 routes; record and brief in

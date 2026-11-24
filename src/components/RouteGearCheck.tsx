@@ -1,4 +1,6 @@
-import { ropeworkFacts } from "../../lib/ropework";
+import { ropeworkFacts, ropeworkLevel } from "../../lib/ropework";
+import { useContext } from "react";
+import { ConfidenceCtx } from "../../lib/confidence.jsx";
 import { C, RSL as SL } from "../../ClimbMatchCore.jsx";
 import CardHead from "./CardHead.tsx";
 import GapNote from "./GapNote.tsx";
@@ -61,13 +63,18 @@ export default function RouteGearCheck({route,activity,onSeeReports,rack,onEditR
 // (rappel beta, gear, "no rope needed") have their own cards, and printing the note here repeated them.
 function RopeworkBox({route,onEdit}: {route: RopeworkRoute; onEdit?: (() => void) | null}){
   const f=ropeworkFacts(route);
+  /* The heading's chip says how sure the ROWS are: the weakest level of the fields they were quoted
+     from (lib/ropework.js ropeworkLevel), not the rope note's alone. The pencil still edits the note. */
+  const _cx=useContext(ConfidenceCtx);
+  const _lv=_cx&&_cx.levels?ropeworkLevel(_cx.levels,f.keys):null;
+  const headCx=_cx&&_cx.levels&&_lv?{..._cx,levels:{..._cx.levels,ropeNote:_lv}}:_cx;
   const any=!!(f.length||f.link||f.simul);
   /* Empty: a placeholder, where a rope is part of the route at all (not a scramble or a hike). */
   if(!any)return (onEdit&&!["scrambling","hiking","scramble","hike","bouldering"].includes(route&&route.discipline as string))?<div style={{background:C.card,borderRadius:12,padding:"12px 14px",border:`1px solid ${C.border}`,marginTop:12}}><CardHead style={{marginBottom:6}}>ROPEWORK</CardHead><GapNote what="No ropework notes yet" why="Nothing says what rope this needs, whether the pitches link, or whether parties simul-climb." cta="Add ropework notes" onFix={onEdit}/></div>:null;
   const row=function(label: string,value?: string | null){return <div style={{display:"flex",gap:10,fontSize:12.5,lineHeight:1.55,marginTop:6}}><div style={{width:112,flexShrink:0,color:C.textMuted}}>{label}</div><div style={{color:C.textSub,wordBreak:"break-word",overflowWrap:"break-word",minWidth:0}}>{value||"Not stated"}</div></div>;};
   return <div style={{background:C.card,borderRadius:12,padding:"12px 14px",border:`1px solid ${C.border}`,marginTop:12}}>
     <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",marginBottom:3,gap:10}}>
-      <CardHead>ROPEWORK</CardHead>
+      <ConfidenceCtx.Provider value={headCx}><CardHead>ROPEWORK</CardHead></ConfidenceCtx.Provider>
       {onEdit?<EditIconButton onClick={onEdit} title="Edit the ropework note"/>:null}
     </div>
     {row("Rope length",f.length)}
