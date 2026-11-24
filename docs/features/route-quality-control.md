@@ -54,6 +54,31 @@ empty field fill at once and two agreeing climbers change one; the owner withdre
   (`route_flags`, one open flag per reporter per target, ≤5 a day). An open flag drops a
   medium field to low until the owner marks it fixed or dismissed; it never lowers a high field.
 - **Rate limit.** 20 field edits a day per account, 5 for accounts under 7 days old.
+- **A waiting or turned-down edit is private (0530, owner 2026-11-24 after the quality-control audit).** `contributions`
+  is readable only where it is live (status approved, or a photo, pairing or sun vote, which are live when sent), by
+  its sender, or by a reviewer. Until 0530 the policy was `using (true)`: anyone, signed out included, could read every
+  pending and rejected edit through the API, with who sent it, their reason and the owner's turn-down reason.
+- **A value is checked when it is sent (0530, `_field_value_problem`, run by `guard_field_contribution`)**, so the
+  climber hears at once and the owner never sees junk. Numbers, in the units the edit sheet sends (`CANON`: feet for
+  length and high point, metres for gain and loss, km): high point -300 to 20,400 ft, length 1 to 15,000 ft, gain and
+  loss 0 to 6,500 m, distance 0 to 300 km, angle 0 to 180°, pitches 1 to 200, and caps on draws, screws, bolts, pads
+  and walk-in minutes. A grade must be under 30 characters and shaped like a grade (every picker grade passes, and so
+  does every grade the live catalog held on 2026-11-24 except five sentence-length ones). A pin must be a real
+  coordinate within 40 km of the route (or the area, for a parking pin). Route text may not carry a link or an email
+  address (contact fields such as Permits, Access, Emergency, the road and trailhead keep them; Permit link must
+  start https://). Every field edit and every proposed climb or area is run past the screening word list that
+  comments and posts get (`screening_match`, 0265). A refusal is the sentence the climber sees.
+- **A flag note needs 5 characters** in the database too (0530); it was only the form's rule.
+- **An approval can be taken back (0530, `withdraw_approval`).** The row becomes rejected with *Approval taken back:
+  <reason>*, no strike; the page falls back to the previous approved edit or the column; the *Approved by ClimbMatch*
+  lock is dropped when nothing approved is left; the climber gets a `contribution_withdrawn` notice. A grade and an
+  area value are written to their table, so each approval now records the page's earlier value in
+  `contributions.prior_value` (trigger `trg_contribution_prior_value`); undoing one restores it. An approval made
+  before 0530 has no recorded value, and undoing a grade or area one says to use Edit value instead.
+- **Reviewers (0530).** `profiles.is_reviewer`, granted only by an admin (`set_reviewer`; `prevent_self_admin` now
+  guards both flags), and `can_review(uid)`. A reviewer opens the Review desk (Edits and History only), approves,
+  turns down and takes back FIELD edits and resolves flags. Standing, bans, locks, appeals, wall orders, proposals
+  and the worklist stay admin-only.
 - **Notices.** Approvals, rejections (with the reason), warnings, standing changes and flag
   outcomes land in `user_notices` and appear in the bell panel; dismissing one marks it read.
 - **Your contributions** (Menu → Profile) shows each edit as Awaiting review / Added — live /
@@ -87,8 +112,21 @@ empty field fill at once and two agreeing climbers change one; the owner withdre
   and a separate skeptic re-opens every cited source; `scripts/review-verdicts-write.mjs` validates
   (2-source = two different sites, or one .gov/.us/.gc.ca page) and upserts. Writes NOTHING if any row
   is malformed.
-- **Contributor standing** stays a Menu › Review tile (`lib/RouteQualityQueues.jsx`): reset, warn,
-  restrict 90 days, ban, each with a reason.
+- **Contributor standing** moved off the Menu on 2026-11-24, to the bottom of the Review desk's *Climbers* section
+  (`ContributorStandingQueue` in `lib/RouteQualityQueues.jsx`): reset, warn, restrict 90 days, ban, each with a reason.
+- **The Review desk's other sections (2026-11-24, `review/DeskSections.jsx`)**: a health strip (oldest waiting item,
+  median time to decide over 30 days, when the AI check last ran, app errors in the last 24 h, whether the live site
+  serves the newest `main` via GitHub's public API; a part that cannot be read says so, never zero). *History*: every
+  `moderation_actions` row, filterable, with *Take back…* on an approval still live. *Climbers*: everyone who has
+  sent an edit, flag, climb or area, with counts, approval rate and standing; a drawer lists everything one climber
+  sent, and an admin can make them a reviewer. *Appeals*: kind `contributing` appeals, Reverse or Keep
+  (`decide_appeal`). *Locks*: the hand-set levels in `route_field_confidence`, searchable, with Unlock (back to the
+  computed level). *Worklist*: `review_worklist`, the data audits' findings, Done / Ignore / Reopen, filled by
+  `node scripts/review-worklist-load.mjs` (built-in impossible-numbers finder, plus `audit:expiring-closures` (its
+  expired tier only: the other 965 WA candidates on 2026-11-24 may age but are not wrong today),
+  `audit:prose-length` and `audit:partner-grade`; a re-run closes what it no longer finds and reopens what comes back).
+  Inside an expanded edit: a word-level diff of the page's text against the climber's, and every edit the field has
+  ever had. Keys on the table: j / k next and previous, a approve, r turn down, Escape close.
 - **The climber's standing on the edit sheet** (`ContributionStandingNotice` in `lib/SafetyNotices.jsx`):
   warned / restricted-until / banned with the reason and an Appeal button (kind `contributing`).
 
@@ -317,7 +355,11 @@ Deferred by the owner (2026-10-15): CAPTCHA on sign-up.
 | `review.html`, `review/main.jsx`, `review/ReviewDesk.jsx`, `vite.review.config.js` | The owner's standalone Review desk (its own build, written beside the app; the service worker leaves it alone) |
 | `scripts/review-queue-export.mjs`, `scripts/review-verdicts-write.mjs`, `.claude/workflows/review-flags-nightly.js` | The nightly AI checker: export → research + verify → write verdicts |
 | `supabase/migrations/0436_review_ai_verdicts.sql`, `scripts/oneoff/verify-0436-review-ai-verdicts-pglite.mjs` | The verdicts table (admin read, service-key write) and its RLS check |
-| `lib/RouteQualityQueues.jsx` | `ContributorStandingQueue` |
+| `lib/RouteQualityQueues.jsx` | `ContributorStandingQueue` (rendered on the Review desk's Climbers section) |
+| `review/DeskSections.jsx` | `HealthStrip`, `HistorySection`, `FieldHistory`, `ClimbersSection`, `AppealsSection`, `LocksSection`, `WorklistSection`, `WordDiff` (2026-11-24) |
+| `supabase/migrations/0530_route_edits_private_checked_undoable.sql`, `scripts/oneoff/verify-0530-route-edits-pglite.mjs` | the read policy, `_field_value_problem`, `withdraw_approval`, `prior_value`, `can_review` / `set_reviewer`, `review_worklist`; and its offline proof |
+| `scripts/review-worklist-load.mjs` | fills `review_worklist` from the data audits |
+| `scripts/oneoff/probe-route-edit-gates.mjs` | every gate a climber meets, against the live database, with no admin needed |
 | `lib/RouteProposals.jsx` | `RouteProposalQueue`, `AreaProposalQueue`, `PossibleDuplicates`, `RejectBox`, `AiNote` (proposal review, 0505) |
 | `supabase/migrations/0505_proposals_share_the_edit_rules.sql` | `guard_field_contribution` with the proposal branch, the standing policy over both proposal kinds, `reject_new_route` with `p_strike` |
 | `lib/confidence.jsx` | `ConfidenceCtx`, `HEAD_KEYS`, `headKey`, `ConfChip` |
@@ -356,7 +398,11 @@ Deferred by the owner (2026-10-15): CAPTCHA on sign-up.
   fixed | dismissed, resolution. Read own or admin.
 - **`user_notices`**: `kind`, `title`, `body`, `link`, `read_at`. Read / mark-read / delete own;
   inserted only by definer functions.
-- **`moderation_actions`**: every approve, reject, strike, lock, unlock and flag outcome.
+- **`moderation_actions`**: every approve, reject, strike, lock, unlock and flag outcome; since 0530 also
+  `withdraw_approval`, `grant_reviewer`, `revoke_reviewer`. A reviewer reads the contribution and flag rows.
+- **`contributions.prior_value`** (0530): `{v: <page value before this approval>}`, set only by the trigger.
+- **`review_worklist`** (0530): `audit`, `item_key` (unique together), route or area, title, detail, `found_at`,
+  `last_seen`, status open | done | ignored, note. Admin read; written by the service key and `resolve_worklist_item`.
 
 ## 5. Connections
 
@@ -372,6 +418,12 @@ Deferred by the owner (2026-10-15): CAPTCHA on sign-up.
 `check:correction-readers`, `check:rls`, `check:function-columns`, `check:migration-replay`.
 
 ## 7. Last significant change
+
+2026-11-24 (0530, owner after the quality-control audit, "do all"): waiting and turned-down edits are private; values
+are checked and screened when sent; flag notes need 5 characters; approvals can be taken back; a reviewer role; the
+Review desk gained History, Climbers, Appeals, Locks and Worklist, a health strip, a word diff, field history and keys.
+Audit that day: 13/13 quality-control guards, 3/3 replay proofs, 14 of 17 live climber probes held (one failure was
+the probe's own mistake; the other two, public pending rows and a 2-character flag note, are fixed here).
 
 2026-11-23 (0505): proposed climbs and areas share the edit rules: standing, a daily cap, strikes on a turn-down, a duplicate list on each card, a Review desk tab and the nightly AI check.
 

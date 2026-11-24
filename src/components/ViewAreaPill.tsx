@@ -15,7 +15,7 @@ export interface ViewAreaPillProps {
 // It is drawn INSIDE the row's own control (a <button> or a clickable() row), so the whole row stays one
 // tap target and a screen reader hears one name: the row's. Hence aria-hidden.
 export default function ViewAreaPill({ C, label = "View area" }: ViewAreaPillProps) {
-  return <span aria-hidden="true" style={{ flexShrink: 0, display: "inline-flex", alignItems: "center", gap: 3, minHeight: 32, boxSizing: "border-box", padding: "0 11px", borderRadius: 8, background: C.blueSolid, color: C.onSolid, fontSize: 12.5, fontWeight: 800, whiteSpace: "nowrap", lineHeight: 1 }}>
+  return <span aria-hidden="true" style={{ flexShrink: 0, display: "inline-flex", alignItems: "center", gap: 3, minHeight: 32, boxSizing: "border-box", padding: "0 11px", borderRadius: 8, background: C.actionSolid, color: C.onSolid, fontSize: 12.5, fontWeight: 800, whiteSpace: "nowrap", lineHeight: 1 }}>
     {label}
     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="M9 6l6 6-6 6" /></svg>
   </span>;

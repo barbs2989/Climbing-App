@@ -64,7 +64,7 @@ export default function DbSearchSplit({ scope, onJumpToArea, onOpenRoute, C, onM
   // one state, so the row reads "Index › Lower Town Wall › Main Wall, Washington".
   const { data: hitAreaTrails } = useAreaTrailsByIds(hitAreaIds);
   useEffect(() => { if (onModeChange) onModeChange(mode); }, [mode, onModeChange]);
-  const tab = (on: boolean): CSSProperties => ({ flex: 1, padding: "7px 0", textAlign: "center", fontSize: 12.5, fontWeight: 700, cursor: "pointer", borderRadius: 7, background: on ? C.blueSolid : "transparent", color: on ? C.onSolid : C.textSub });
+  const tab = (on: boolean): CSSProperties => ({ flex: 1, padding: "7px 0", textAlign: "center", fontSize: 12.5, fontWeight: 700, cursor: "pointer", borderRadius: 7, background: on ? C.actionSolid : "transparent", color: on ? C.onSolid : C.textSub });
   const row = { display: "flex", alignItems: "center", gap: 10, padding: "9px 4px", cursor: "pointer", borderBottom: "1px solid " + C.borderLight };
   return (
     // A CARD OF ITS OWN on the area page (owner, 2026-11-18): headed like the page's other cards (Classic climbs,

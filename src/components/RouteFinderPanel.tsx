@@ -506,7 +506,7 @@ export default function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElev
                   {!customLists.length ? <div style={{ fontSize: 11.5, color: C.textMuted, marginTop: 12, lineHeight: 1.45 }}>Make your own lists under Logbook → Saved, and they show up here.</div> : null}
                 </>;
               })()}
-              <button onClick={() => setSaveFor(null)} style={{ ...BTN_LG, width: "100%", marginTop: 16, border: "none", background: C.blueSolid, color:C.onSolid }}>Done</button>
+              <button onClick={() => setSaveFor(null)} style={{ ...BTN_LG, width: "100%", marginTop: 16, border: "none", background: C.actionSolid, color:C.onSolid }}>Done</button>
             </div>
           </div>
         </div>, document.body) : null}
@@ -633,7 +633,7 @@ export default function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElev
             </div>
             <div style={{ flexShrink: 0, display: "flex", gap: 8, padding: "12px 16px calc(env(safe-area-inset-bottom) + 12px)", borderTop: "1px solid " + C.border, background: C.bg }}>
               <button onClick={() => setDf(DEF)} style={{ ...BTN_LG, flex: 1, border: "1px solid " + C.border, background: C.surface, color: C.textSub }}>Clear all</button>
-              <button onClick={() => { setAf(dropUnfit(df)); setSheet(false); }} style={{ ...BTN_LG, flex: 2, border: "none", background: C.blueSolid, color:C.onSolid }}>{draftTotal == null || draftCounting ? "Show" + finderNoun(df.discs, 2) : "Show " + draftTotal.toLocaleString() + finderNoun(df.discs, draftTotal)}</button>
+              <button onClick={() => { setAf(dropUnfit(df)); setSheet(false); }} style={{ ...BTN_LG, flex: 2, border: "none", background: C.actionSolid, color:C.onSolid }}>{draftTotal == null || draftCounting ? "Show" + finderNoun(df.discs, 2) : "Show " + draftTotal.toLocaleString() + finderNoun(df.discs, draftTotal)}</button>
             </div>
           </div>
         </div>, document.body) : null}

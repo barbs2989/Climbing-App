@@ -162,7 +162,7 @@ export default function RealClimberRow({p,distFrom,onOpen,objIds,objErr,verified
   const _open=onOpen?function(){onOpen(_c);}:null;
   const _gs=profileDiscGrades(_c) as [string, string][];const _gk=_gs.map(function(g){return g[0];});const _rest=(_c.disciplines||[]).filter(function(d){return _gk.indexOf(d)<0;});
   const _av=availSlotLabels(_c) as string[];
-  const fst=friendState?friendState(p.id):null;const _fs=fst==="friends"?{bg:C.greenBg,fg:C.green,bd:C.greenDim}:fst==="out"?{bg:C.amberBg,fg:C.amber,bd:C.amber}:fst==="in"?{bg:C.green,fg:C.onBright,bd:C.green}:{bg:C.blueSolid,fg:C.onSolid,bd:C.blueSolid};
+  const fst=friendState?friendState(p.id):null;const _fs=fst==="friends"?{bg:C.greenBg,fg:C.green,bd:C.greenDim}:fst==="out"?{bg:C.amberBg,fg:C.amber,bd:C.amber}:fst==="in"?{bg:C.green,fg:C.onBright,bd:C.green}:{bg:C.actionSolid,fg:C.onSolid,bd:C.actionSolid};
   return <div key={p.id} data-real-climber-card="" style={{background:C.card,borderRadius:16,padding:"16px 16px",marginBottom:24,border:"1px solid "+C.borderHi,boxShadow:"0 1px 3px rgba(0,0,0,0.28)"}}>
     <div style={{display:"flex",gap:12,alignItems:"flex-start",marginBottom:12}}>
       <span {...(_open?clickable(_open):{})} /* The photo opens the profile by mouse; the NAME beside it is the one keyboard / screen-reader stop, so the same profile is not announced twice per card (audit 2026-11-18). */ tabIndex={-1} aria-hidden="true" style={{cursor:_open?"pointer":"default",flexShrink:0}}><Av src={p.avatar} size={52} online={online}/></span>
