@@ -83,8 +83,7 @@ whole guide feature on 2026-11-14 (owner). This doc covers the partners mode (`l
   routes that crag partners are found by area (a tick list, not a match signal, 0300), and when some saved climbs have not
   resolved -- loading, offline, or no longer in the catalog -- says they can’t be matched right now (amber when the route read
   failed, `objectiveRowsFailed`) with *See everyone*. It never waits on those, and never calls them none. Join a crew never gated on a zip (its distance filter alone uses it). A **photo is not required** to be listed (owner
-  2026-11-14): a climber without one shows with the silhouette avatar. With a zip, Everyone at Anywhere lists the nearest first
-  (`partners_near` at its widest radius) and then everyone else (`browseShown`), with *Nearest to your zip first*.
+  2026-11-14): a climber without one shows with the silhouette avatar.
   **Sending a request** to a real climber without your own photo is refused (`sendReq` in `ClimbMatch.jsx`: *Didn't send
   it — add a profile photo first*) and opens Edit profile on the photo.
 - **Show only these genders** (0359; several at once since 2026-11-18, owner: "they only want to climb with women and non binary"): the
