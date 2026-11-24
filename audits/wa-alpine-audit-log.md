@@ -40178,3 +40178,46 @@ Glacier, West Route (Gilbert Peak).
 0 confirmed errors, 3 flagged for human review (2 of them extending an existing flag from
 batch 577), 5 clean/consistent. No SQL file this batch — nothing cleared the bar for a fix.
 Next batch continues id-ascending from `wa_gilbert_peak_west_route` (pass 9).
+
+## Batch 579 (pass 9) — 2026-11-24
+
+Checked 8 routes, continuing id-ascending from `wa_gilbert_peak_west_route`: Disappointment
+Peak Cleaver (Gerdine Ridge / Cool Glacier), Frostbite Ridge, Kennedy Glacier, and Sitkum
+Glacier (all Glacier Peak); South Tahoma Headwall and Tahoma Cleaver (both Mount Rainier, filed
+under a `wa_glacier_peak_` id prefix); and Eastern Route and South Ridge / Standard Scramble
+(both Goat Mountain).
+
+Sitkum Glacier's FA (Darcy Bard, A.H. Dubor, Thomas Gerdine, Sam Strom, June 1897) matches
+Mountain Project and Skimountaineer almost exactly — Wikipedia alone gives 1898, but every other
+source checked agrees on 1897, so the stored year is the well-supported one. Goat Mountain South
+Ridge's FA (Frank Calkins and George Otis Smith, 1904) matches Wikipedia, and its 6,891 ft high
+point matches SummitPost's own summit page exactly, though Wikipedia (6,844 ft, NAVD88) and a
+SummitPost trip report (6,725/6,860 ft for the separate West/East sub-peaks) give different
+numbers — ordinary datum/sub-peak variance, not an error. Frostbite Ridge's and Kennedy
+Glacier's FR-23/White Chuck road-closure text, including the specific "no end date given on the
+alert updated June 30, 2026" claim, checked out against the live USFS alerts: the original 2025
+order has technically lapsed, but a July 1, 2026 USFS closures update still lists the same
+closed segment with no new end date stated — the stored claim holds up as of this audit.
+
+Three items flagged for human review, none fixed:
+- South Tahoma Headwall's stored FA ("Steve Marts and Fred Beckey on July 12, 1963") — no source
+  found names any first-ascent party for this route at all. A 2004 cascadeclimbers.com thread
+  asking the same question got no definitive answer, suggesting the climb's early history may
+  not be documented to this level of specificity by anyone. Flagging as unverified rather than
+  guessing a replacement.
+- South Tahoma Headwall and Tahoma Cleaver both carry a `wa_glacier_peak_` id prefix but a
+  correct `area_id` of `wa_mount_rainier` — both are genuinely Rainier routes ("Tahoma" is
+  Rainier's Native name), so the row is filed right but the id string itself says the wrong
+  peak. Same kind of id/content split flagged for `wa_big_kangaroo_southwest_rib` back in batch
+  3 — a human rename decision per `route-identity.md`, not something to patch here.
+- Disappointment Peak Cleaver's added narrative detail — that the 1897 survey party first
+  summited a sub-peak in fog (later named Disappointment Peak) before the true summit — could
+  not be confirmed or denied by any source found; the FA party names themselves are
+  well-corroborated.
+
+Clean (4): Frostbite Ridge, Kennedy Glacier, Sitkum Glacier, Goat Mountain South Ridge.
+Bare, nothing to check (1): Goat Mountain Eastern Route.
+
+0 confirmed errors, 3 flagged for human review, 4 clean, 1 bare. No SQL file this batch —
+nothing cleared the bar for a fix. Next batch continues id-ascending from
+`wa_goat_mountain_south_ridge` (pass 9).
