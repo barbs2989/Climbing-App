@@ -20,7 +20,9 @@
 --
 -- CLIMBERS WITH NO ZIP STILL SHOW (third review of #3901): the nearest p_limit climbers WITH a zip come first, then up
 -- to 24 climbers with no zip -- a single limit with "nulls last" dropped every one of them once 50 had a zip, undoing
--- the point of #3869 (climbers without a zip are findable).
+-- the point of #3869 (climbers without a zip are findable). The 24 are the NEWEST members, not the lowest ids, so the
+-- same handful does not fill the slot for ever. Rows come out in the inner query’s exact order (part, then rank), so
+-- "nearest first" holds within each 5-mile band too; only the DISPLAYED distance is rounded (fourth review of #3901).
 
 create or replace function public.partners_by_distance(p_limit integer default 24)
 returns table(id uuid, dist_mi integer)
@@ -36,7 +38,7 @@ begin
    where pz.user_id = auth.uid();
   return query
     with d as (
-      select p.id as pid,
+      select p.id as pid, p.created_at as joined,
              case when me_lat is null or z.lat is null then null else 3958.8 * 2 * asin(sqrt(
                  power(sin(radians((round(z.lat::numeric, 1))::double precision - me_lat) / 2), 2)
                + cos(radians(me_lat)) * cos(radians((round(z.lat::numeric, 1))::double precision)) * power(sin(radians((round(z.lng::numeric, 1))::double precision - me_lng) / 2), 2))) end as miles
@@ -47,17 +49,19 @@ begin
         and not exists (select 1 from blocked_users b where b.blocker = auth.uid() and b.blocked = p.id)
     )
     select u.pid, u.dmi from (
-      (select d.pid, (greatest(1, ceil(d.miles / 5.0)) * 5)::integer as dmi
+      (select d.pid, (greatest(1, ceil(d.miles / 5.0)) * 5)::integer as dmi, 0 as part,
+              row_number() over (order by d.miles, d.pid) as rk
          from d where d.miles is not null
         order by d.miles, d.pid
         limit n)
       union all
-      (select d.pid, null::integer as dmi
+      (select d.pid, null::integer as dmi, 1 as part,
+              row_number() over (order by d.joined desc nulls last, d.pid) as rk
          from d where d.miles is null
-        order by d.pid
+        order by d.joined desc nulls last, d.pid
         limit 24)
     ) u
-    order by u.dmi nulls last, u.pid;  -- a UNION ALL keeps no order of its own
+    order by u.part, u.rk;  -- a UNION ALL keeps no order of its own
 end;
 $function$;
 
