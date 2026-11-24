@@ -1400,6 +1400,19 @@ rows. Its build script is gone; new reviews write the column.
   "unsure" never erases an earlier page-read answer, and in a disagreement "yes" wins. Before the change, a
   later file replaced an earlier one whole.
   Glacier not settled now: BC 9, CO 2, WY 21, AK 20.
+- **Round 6** (2026-11-23) read pages for the calls still open in WA, CA, OR, MT, AB, NV, NT, NU and YT (160
+  entries). Most came back unsure: no page that loads describes the line.
+  - Glacier yes: Bacon Peak from Diobsud, Northwest Mox NE Ridge, Silver Star NE Ridge (WA), the
+    Thunderbolt to Sill Traverse (CA).
+  - Glacier no: Ottohorn (WA); Jefferson North Ridge, South Sister North
+    Ridge and Large Ear, a rock pinnacle whose "crevasse" is a crack (OR); Lotus Flower Tower (NT).
+  - Snow yes: Pyramid Peak (WA), Mount Davis from North Glacier Pass (CA).
+  - Held at unsure on review (eight): Bonanza Cascadian, Chopping Block NW Route, Devils Club (WA); Austrian
+    Arete, and Bear Creek Spire's snow "no" (CA); Center Ridge (OR); Devils Thumb and Andromeda Asteroid Alley
+    (AB). Each rested on silence, one account, a page about a different line, or "can stay off the glacier".
+    The Chopping Block NE Ridge's new "no" (a park conditions page) is not applied: the WA fold's
+    `HOLD_GLACIER` list keeps it unsure until someone reads that page against the Terror Glacier approach.
+  Glacier not settled now: WA 30, CA 32, OR 11, MT 7, AB 6, NV 1, NU 1, YT 1; NT 0.
 
   - **HOUR BY HOUR + THE GUST WINDOW (2026-10-08, owner: "clear and exact and accurate science").**
     Section 12 of the guard. Three things it holds, each measured, not assumed:
