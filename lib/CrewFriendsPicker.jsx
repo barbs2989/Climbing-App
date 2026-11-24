@@ -72,7 +72,7 @@ export default function CrewFriendsPicker({ friends, allAlreadyIn, disc, placeNa
     </div>
     {chosen.length ? <div style={{ marginTop: 4 }}>
       {showNote ? <div style={{ marginBottom: 8 }}>
-        <textarea aria-label="Note to the friends you invite" value={note} onChange={e => setNote(e.target.value.slice(0, 300))} rows={3} placeholder="Add a note (optional)" style={{ width: "100%", boxSizing: "border-box", padding: "9px 11px", borderRadius: 9, border: "1px solid " + C.border, background: C.card, color: C.text, fontSize: 13, resize: "vertical", fontFamily: "inherit" }} />
+        <textarea aria-label="Note to the friends you invite" value={note} onChange={e => setNote(e.target.value.slice(0, 300))} rows={3} placeholder="Add a note (optional)" style={{ width: "100%", boxSizing: "border-box", padding: "9px 11px", borderRadius: 9, border: "1px solid " + C.field, background: C.card, color: C.text, fontSize: 13, resize: "vertical", fontFamily: "inherit" }} />
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: 3 }}>
           <button type="button" onClick={() => setNote(suggested)} style={{ ...BTN_LINK(C), ...TEXT_TAP_INLINE, fontSize: 12.5 }}>Use suggested note</button>
           <span style={{ fontSize: 11.5, color: C.textMuted }}>{note.length + "/300"}</span>

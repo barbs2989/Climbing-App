@@ -42,7 +42,7 @@ export default function StartCrewFriendPage<F extends StartCrewFriend>({ friends
   const az = (f: F): string => String(pubName(f)).replace(/^@/, "");
   const rows = friends.map(f => ({ f, shared: sharedNames(f) })).filter(x => !ql || fuzzyMatch(ql, shown(x.f)));
   rows.sort((a, b) => (sort === "shared" ? b.shared.length - a.shared.length : 0) || az(a.f).localeCompare(az(b.f), undefined, { sensitivity: "base" }));
-  const field = { minWidth: 0, height: 44, boxSizing: "border-box" as const, borderRadius: 10, border: "1px solid " + C.border, background: C.surface, color: C.text, fontFamily: "inherit" };
+  const field = { minWidth: 0, height: 44, boxSizing: "border-box" as const, borderRadius: 10, border: "1px solid " + C.field, background: C.surface, color: C.text, fontFamily: "inherit" };
   return createPortal(<div role="dialog" aria-modal="true" aria-label="Start a crew with a friend" style={{ position: "fixed", inset: 0, background: C.bg, zIndex: 9500, display: "flex", flexDirection: "column", overscrollBehavior: "contain", maxWidth: 520, margin: "0 auto", boxSizing: "border-box" }}>
     <div style={{ display: "flex", alignItems: "center", gap: 10, padding: "14px 16px", borderBottom: "1px solid " + C.border, flexShrink: 0 }}>
       <button onClick={onClose} style={POP_BACK}>{"← Back"}</button>

@@ -265,7 +265,6 @@ export const MOVED = {
     "src/components/GroupAboutTab.tsx",
     "src/components/GroupMembersTab.tsx",
     "src/components/GroupEventsTab.tsx",
-    "src/components/GroupMediaTab.tsx",
     "src/components/GroupEventForm.tsx",
     "src/components/SettingsPrivacySheet.tsx",
     "src/components/SettingsDataSheet.tsx",

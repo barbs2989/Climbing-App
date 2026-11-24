@@ -23,14 +23,14 @@ import { TOPO } from "./ScreenHero";
 // The sign-in screen wears the contour texture at the one size every header and the splash use, so the hand-over does not jump.
 const TOPO_GATE = TOPO;
 
-const c = { bg: "#12110f", card: "#1a1916", border: "#36322c", text: "#f1ede6", sub: "#a69d90", blue: "#62aee8", brand: "#ff8a3d", red: "#f85149", green: "#3fb950" };
+const c = { bg: "#12110f", card: "#1a1916", border: "#514a41", field: "#776e62", text: "#f1ede6", sub: "#a69d90", blue: "#62aee8", brand: "#ff8a3d", red: "#f85149", green: "#3fb950" };
 const provBtn = { width: "100%", boxSizing: "border-box", display: "flex", alignItems: "center", justifyContent: "center", gap: 8, padding: 12, minHeight: 46, borderRadius: 11, border: "1px solid " + c.border, fontSize: 15, fontWeight: 600, cursor: "pointer" };
 // A provider the project has not switched on yet ("coming soon") is drawn DARK and outlined: as two
 // white slabs at 60% opacity they were the brightest thing on the sign-in screen and read as broken.
 // Live, each keeps its own white brand button. Both stay the same shape, for guideline 4.8's equal prominence.
 const provSoon = { background: "transparent", color: c.sub, border: "1px solid " + c.border };
 const hint = { color: c.sub, fontSize: 12, marginTop: -6, marginBottom: 10 };
-const field = { width: "100%", boxSizing: "border-box", background: "#12110f", border: "1px solid " + c.border, borderRadius: 10, padding: "11px 13px", color: c.text, fontSize: 15, marginBottom: 10, outline: "none" };
+const field = { width: "100%", boxSizing: "border-box", background: "#12110f", border: "1px solid " + c.field, borderRadius: 10, padding: "11px 13px", color: c.text, fontSize: 15, marginBottom: 10, outline: "none" };
 
 // "Did you mean …@gmail.com?" -- the common misspellings of the big mail domains, and a .con/.cmo ending.
 // Create account asks for the email twice for a reason (below); this catches the typo typed twice.

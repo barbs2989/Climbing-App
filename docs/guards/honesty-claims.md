@@ -1413,6 +1413,41 @@ rows. Its build script is gone; new reviews write the column.
     The Chopping Block NE Ridge's new "no" (a park conditions page) is not applied: the WA fold's
     `HOLD_GLACIER` list keeps it unsure until someone reads that page against the Terror Glacier approach.
   Glacier not settled now: WA 30, CA 32, OR 11, MT 7, AB 6, NV 1, NU 1, YT 1; NT 0.
+- **Round 7** (2026-11-24) took every glacier call still open in every state (141) in one pool of eight
+  researchers (`research-data/glacier-travel-2026-11-23/round7/`, split by
+  `scripts/oneoff/glacier-travel-round7-split.mjs`, holds in `round7/hold.json`). It steered them off
+  summitpost and cascadeclimbers. Mountaineers.org, peakbagger, WTA and Mazamas also answered 403 this time;
+  Mountain Project, the AAJ, NPS pages and personal trip-report blogs loaded.
+  - The first pass came back almost empty: told to spare the shared search budget, six of the eight
+    researchers stopped after a few searches and read no pages. The prompt now has a binding effort rule
+    (every entry gets a fetch of a result page and two sources), and the re-runs made 35 to 60 calls each.
+    The first pass's files are kept as `try1-out-*.json` and are not folded.
+  - Glacier yes: Vulcan Mountain (YT).
+  - Glacier no (22): the eight Mount Hoffman north face routes, Avalanche Gulch on Shasta (CA); Taylor Peak
+    Central Buttress, whose descent walks the small Andrews Glacier unroped (CO); Big Jobbin, Kagevah NE
+    Couloir, the Watchtower ice (Cirque of the Towers holds no glacier), Moran SW Couloir and the Cathedral
+    Traverse (WY); Magog and Brenta Spire Another Fine Day (BC); Black Peak NE Ridge, Hinman West Route,
+    Worm Flows (WA); the Waterton French Kiss ice (AB); Cantwell Creek Dragonfly Jr (AK).
+  - Held at unsure on review (13): Andromeda Asteroid Alley, Mount Cline SW Ridge (AB); Austrian Arete again
+    (CA); Gog East Face, which rested on the Magog page (BC); four Cabinet Mountains NE Face routes (MT);
+    Center Ridge again and Iron Maiden (OR); both Chopping Block routes and Little Mac Spire (WA). Each rested
+    on a page silent about the glacier, a single account, or another route's page.
+  Glacier not settled now: WA 27, CA 23, AK 19, WY 16, OR 11, BC 7, MT 7, AB 5, CO 1, NV 1, NU 1; YT 0.
+- **Round 8** (2026-11-24) took the 81 routes whose glacier answer is settled but whose snow in season is
+  not (`round8/`, a snow-only prompt; the split, now `--round 8`, writes every glacier answer as "unsure" so
+  no settled one can move). The shared web-search budget ran out a few searches in, so most entries got only
+  fetches of pages that said nothing about snow, and one researcher read no page that settled anything.
+  - Snow yes: Birds of Fire (CO), the Washington–Ellinor Traverse (WA), The Candy Shop (WY).
+  - Snow no: the Humphreys Peak trail (AZ), Silver Lining (WY; an axe only early or in a big snow year).
+  - Held at unsure on review (7, `round8/hold.json`): Bear Creek Spire (a Northeast Ridge page), Devil's
+    Crag #1, Mount Jordan (CA); Gladstone North Ridge and the Glacier Gorge and Spearhead–Longs traverses
+    (CO); Chouinard–Frost Chimney (WY). Each rested on one account, another line's page, or a silent page.
+  Snow not settled now on these routes: WA 29, CA 17, CO 14, WY 8, UT 4, BC 2, ID 1, OR 1; AZ 0. Worth a
+  re-run once the search budget refills.
+  - The loads found a ping-pong: the Washington load (no `--state`) re-asserts the 2026-11-12 dry list, which
+    spans every state, as glacier null, so it undid CO's reviewed "no" on Pyramid Peak NE Ridge each time it
+    ran after CO. `load-glacier-travel.mjs` now skips a dry-list id that a state's own `final.json` reviews;
+    Pyramid Peak was the only one.
 
   - **HOUR BY HOUR + THE GUST WINDOW (2026-10-08, owner: "clear and exact and accurate science").**
     Section 12 of the guard. Three things it holds, each measured, not assumed:

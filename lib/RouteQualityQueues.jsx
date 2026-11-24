@@ -23,7 +23,7 @@ const btn = (kind, busy) => ({
   color: busy ? C.textMuted : kind === "ok" ? C.onSolid : kind === "bad" ? C.red : C.textSub,
   border: kind === "ok" && !busy ? "none" : "1px solid " + (kind === "bad" ? C.red : C.border),
 });
-const fld = { width: "100%", background: C.surface, color: C.text, border: "1px solid " + C.border, borderRadius: 8, padding: "7px 9px", fontSize: 12.5, fontFamily: "inherit", resize: "vertical", boxSizing: "border-box" };
+const fld = { width: "100%", background: C.surface, color: C.text, border: "1px solid " + C.field, borderRadius: 8, padding: "7px 9px", fontSize: 12.5, fontFamily: "inherit", resize: "vertical", boxSizing: "border-box" };
 function Msg({ msg }) {
   if (!msg) return null;
   return <div role={msg.kind === "err" ? "alert" : "status"} style={{ background: msg.kind === "err" ? C.redBg : C.greenBg, color: msg.kind === "err" ? C.red : C.green, border: "1px solid " + (msg.kind === "err" ? C.red : C.greenDim), borderRadius: 9, padding: "9px 11px", fontSize: 12.5, lineHeight: 1.5, marginBottom: 10 }}>{msg.text}</div>;
