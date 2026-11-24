@@ -37,7 +37,7 @@ whole guide feature on 2026-11-14 (owner). This doc covers the partners mode (`l
   mt/mount, apostrophes, climber nicknames (`PLACE_NICKNAMES` in lib/search.js: rrg, jtree, nrg, hcr, lcc, bcc, shawangunks) and, when
   nothing matched, typos via `search_names_fuzzy` ("closest names"). Audit 2026-11-14 (`scripts/oneoff/audit-area-search.mjs`): 67/67
   corpus places found, against 22/67 for the old one-state box.
-- **No dead ends** (owner, 2026-11-13): every empty real list (My areas, Pick an area, My objectives, A route, Everyone within a radius)
+- **No dead ends** (owner, 2026-11-13): every empty real list (My climbs & areas, By Area, By Peak, By Route, Everyone within a radius)
   is one card (`emptyCard`, `data-partner-empty`) of one-tap next steps, each shown only when it changes the list —
   *Search anywhere*, *Within <next radius>*, *Pick an area*, *See everyone*, *Invite a climbing friend* (inline `ShareVia`, a link to the
   app). The *Meanwhile, climbers near you / on ClimbMatch* list that sat under it was removed (owner 2026-11-18, #3416): it read as a second copy of the results.
@@ -56,6 +56,9 @@ whole guide feature on 2026-11-14 (owner). This doc covers the partners mode (`l
   (`usePartnersForMyAreas`), then at your saved areas (`usePartnersInAreas`, at most the first 12, saved peaks too since 0456, a saved country
   said to be too broad), then who share a mountain objective (`usePartnersByObjective`), each climber once (`minePeople`). It replaced
   *My areas* with its **Where I'm listed / Saved areas** buttons (the `myareas` / `saved` modes) and *My objectives* (`objectives`).
+  The list waits until every enabled read has answered, so a late source never pushes cards down under a thumb; signed in,
+  no example climber is drawn under it; *Plan a session* is offered only to a climber matched by an AREA (not one matched by a
+  shared mountain objective); a climber whose saved climbs are all crag climbs is told crag partners are found by area.
   Each of the three inputs and reads is honest on its own: one still loading waits, one that failed is NAMED (*Couldn’t search your saved
   areas…*), on an empty list as *this is not an empty list* and under a partial one as *some climbers may be missing*; with nothing listed,
   saved or objectived, the empty card says how to do each. *Edit saved areas* opens Logbook › Saved › Areas.

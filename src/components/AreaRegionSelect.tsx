@@ -20,7 +20,9 @@ export interface AreaRegionSelectProps {
   setAreaCountry: (id: string) => void;
   areaState: string;
   setAreaState: (id: string) => void;
-  /** The DEEPEST place picked below the state: a region, or a crag or wall inside it. */
+  /** The DEEPEST place picked below the state: a region, or a crag or wall inside it. Set from outside, it must be "" or a
+   *  REGION (a direct child of the state): a deeper id cannot be rebuilt into the dropdowns, so the picker would read "All areas".
+   *  Partners hides the picker for a place chosen by name (areaPicked) for exactly that reason. */
   areaId: string;
   setAreaId: (id: string) => void;
   /** Seed path only: keeps an area in a list when the caller has something filed under it (a crew, a route). */
@@ -46,6 +48,7 @@ function DeeperSelect({ parent, value, onPick, hasArea }: { parent: Place; value
   const q: AreaQuery = useAreaChildren(parent.id, { enabled: USE_DB });
   const kids: Place[] = USE_DB ? live(q).slice().sort(byName) : MOUNTAINS.filter(a => a.parentId === parent.id && hasArea(a)).map(a => ({ id: a.id, name: a.name, areaType: a.areaType || null }));
   if (USE_DB && q.isError) return <div style={{fontSize:12,color:C.amber,marginTop:8,lineHeight:1.5}}>{"Couldn’t load what’s inside " + parent.name + " — check your connection and try again."}</div>;
+  if (USE_DB && q.isLoading && !kids.length) return <div style={{marginTop:8}}><div style={hd}>{"Inside " + parent.name}</div><select aria-label={"Filter by area inside " + parent.name} value="" disabled style={{...box,opacity:0.6}}><option value="">Loading…</option></select></div>;
   if (!kids.length) return null;
   return <div style={{marginTop:8}}><div style={hd}>{"Inside " + parent.name}</div><select aria-label={"Filter by area inside " + parent.name} value={value} onChange={e => { const v = e.target.value; onPick(v ? kids.find(k => k.id === v) || null : null); }} style={box}><option value="">{"All of " + parent.name}</option>{kids.map(a => <option key={a.id} value={a.id}>{a.name}</option>)}</select></div>;
 }
