@@ -19,7 +19,7 @@ import { selectAll, requireServiceKey } from "../lib/supabase-env.mjs";
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
 const dir = fs.mkdtempSync(path.join(process.env.CLAUDE_JOB_DIR ? path.join(process.env.CLAUDE_JOB_DIR, "tmp") : os.tmpdir(), "ftt-"));
 const entry = path.join(dir, "entry.js");
-fs.writeFileSync(entry, `export { planTimes, summitDayPlan, realPitches, LENGTH_CLIMB_MAX_H } from ${JSON.stringify(path.join(ROOT, "lib", "planTimes.js"))};\nexport { catOf, CRAG_CATS } from ${JSON.stringify(path.join(ROOT, "ClimbMatchCore.jsx"))};\n`);
+fs.writeFileSync(entry, `export { planTimes, summitDayPlan, realPitches, climbPitches } from ${JSON.stringify(path.join(ROOT, "lib", "planTimes.js"))};\nexport { catOf, CRAG_CATS } from ${JSON.stringify(path.join(ROOT, "ClimbMatchCore.jsx"))};\n`);
 const bundle = path.join(dir, "bundle.cjs");
 await build({
   entryPoints: [entry], bundle: true, format: "cjs", platform: "node",
@@ -56,7 +56,7 @@ for (const r of rows) {
   const planGainFt = Array.isArray(r.itinerary && r.itinerary.days) ? r.itinerary.days.reduce((a, d) => a + ((d && d.gainFt) || 0), 0) : 0;
   if (blank(route.gainM) && planGainFt > 0) { gainFromPlan++; if (P.walkGainM == null) gainFromPlanUntimed++; }
   if (blank(route.distKm) && P.walkKm != null) distFromPlan++;
-  if (!P.legsStored && realPitches(route) === 0 && Math.abs(P.techH - (M.LENGTH_CLIMB_MAX_H || 6)) < 1e-9) lengthCapped++; // the length estimate hit its cap
+  if (!P.legsStored && realPitches(route) === 0 && M.climbPitches(route) > 0) lengthCapped++; // climbing timed on the length curve
   const tag = { id: r.id, name: r.name, disc: r.discipline, hikeH: +P.hikeH.toFixed(2), techH: +P.techH.toFixed(2), downH: +P.downH.toFixed(2), tripH: +P.tripH.toFixed(2) };
   const oldHike = !blank(route.distKm) || !blank(route.gainM);
   const oldAny = oldHike || P.hasPublishedSummitH || P.hasDerivedSummitH || realPitches(route) > 0 || P.loneApproachH != null || P.loneDescentH != null;
@@ -77,15 +77,15 @@ for (const r of rows) {
   if (!P.climbTimed && P.techH > 0) after.climb++;
   if (!P.descentTimed && P.downH > 0) after.descent++;
   if (!P.anyTimed && P.tripH > 0) after.total++;
-  // The leg card used to print "≥0.0hr" for a leg Full trip time calls N/A.
+  // The leg card used to print "â‰¥0.0hr" for a leg Full trip time calls N/A.
   if (!P.descentTimed && P.downH === 0) after.legCardZero++;
 }
 console.log(`${rows.length} routes read; ${mounted} mount Full trip time (${tradOnPeak} of them trad/rock/aid on a peak); ${multi} of those show the multi-day view`);
-console.log(`One-day view — a tile printed N/A while planTimes (and the leg card under GETTING THERE) timed it:`);
+console.log(`One-day view â€” a tile printed N/A while planTimes (and the leg card under GETTING THERE) timed it:`);
 console.log(`  Approach: ${out.approach.length}   Climbing: ${out.climb.length}   Descent: ${out.descent.length}   Total: ${out.total.length}`);
-console.log(`  AFTER the fix: Approach ${after.approach}   Climbing ${after.climb}   Descent ${after.descent}   Total ${after.total}  (a descent leg card now leaves out its "≥0.0hr": ${after.legCardZero})`);
-console.log(`Trip plan holds the gain the leg card prints (no gain_ft): ${gainFromPlan}, of them the walk ignores it: ${gainFromPlanUntimed}; trip plan holds the miles (no dist_km): ${distFromPlan}; climbing estimated from the length held at its ${M.LENGTH_CLIMB_MAX_H} hr cap: ${lengthCapped}`);
-console.log(`Multi-day view — the climb timed only as a clock, no duration: ${out.mdClimbHidden.length}; only one whole-trip figure: ${out.mdWalkInHidden.length}`);
+console.log(`  AFTER the fix: Approach ${after.approach}   Climbing ${after.climb}   Descent ${after.descent}   Total ${after.total}  (a descent leg card now leaves out its "â‰¥0.0hr": ${after.legCardZero})`);
+console.log(`Trip plan holds the gain the leg card prints (no gain_ft): ${gainFromPlan}, of them the walk ignores it: ${gainFromPlanUntimed}; trip plan holds the miles (no dist_km): ${distFromPlan}; climbing timed from the length alone (no published time, no pitch count): ${lengthCapped}`);
+console.log(`Multi-day view â€” the climb timed only as a clock, no duration: ${out.mdClimbHidden.length}; only one whole-trip figure: ${out.mdWalkInHidden.length}`);
 for (const k of ["approach", "climb", "descent", "total"]) for (const x of out[k].slice(0, 4)) console.log(`  [${k}] ${x.id}  approach ${x.hikeH}  climb ${x.techH}  descent ${x.downH}`);
 const i = process.argv.indexOf("--out");
 if (i > 0) fs.writeFileSync(process.argv[i + 1], JSON.stringify(out, null, 1));
