@@ -1,4 +1,5 @@
-import { C, DLOCALE, ME, availOf, profileDiscGrades, compat, compatSummary, compatUnknown, localYmd, pubNameRow, uApproxDist, uRate, availSlotLabels } from "../../ClimbMatchCore.jsx";
+import { useReliabilityOf } from "../../lib/db.js";
+import { C, DB_UID, DLOCALE, ME, availOf, profileDiscGrades, compat, compatSummary, compatUnknown, localYmd, pubNameRow, uApproxDist, uRate, availSlotLabels } from "../../ClimbMatchCore.jsx";
 import { clickable } from "../../lib/clickable";
 import { tx } from "../../lib/tapWords.js";
 import type { ReactNode } from "react";
@@ -75,6 +76,13 @@ export interface RealClimberCand {
   objectiveIds: string[];
   partnerAreaPaths: Array<string | null | undefined>;
   verified: boolean;
+  reliability?: ReliabilityRecord;
+}
+
+/** RELIABILITY (0519): what crewmates reported after crew trips, as counts, and the vouch Reliability stars. */
+export interface ReliabilityRecord {
+  trips: number; onTime: number; late: number; cancelledEarly: number; cancelledLate: number; noShow: number;
+  relN: number; relAvg: number | null;
 }
 
 export interface RealClimberRowProps {
@@ -87,6 +95,8 @@ export interface RealClimberRowProps {
   objErr?: boolean;
   /** Only a confirmed TRUE (from the list's verified_user_ids read) sets it. */
   verified?: boolean;
+  /** Their reliability record from the list's one batched read (useReliabilityOf); absent = none yet or not read, which scores as the neutral half. */
+  reliability?: ReliabilityRecord | null;
   /** Their listed areas from the list's read; absent, the row builds them from its own `listed_*` columns. */
   listing?: PartnerListing[] | null;
   /** A button shown inside the card, under the facts (Plan a session at an area). */
@@ -121,7 +131,7 @@ const meView: MeView = ME;
    profile carries no level, catches or pace, so this renders only what the
    row actually has and says so when there is too little to score a match — reusing the
    seed climber card here is what produced the "undefined · 0" bug fixed in #715. */
-export default function RealClimberRow({p,distFrom,onOpen,objIds,objErr,verified,listing,action,friendState,onConnect,cand,online,level,years,climbs,vouches,climbsPrivate,onClimbs,onVouches,extras,tag}: RealClimberRowProps){/* THE SCORE IS FED REAL SIGNALS NOW (0209). Until then `_cand` carried one of the four signals
+export default function RealClimberRow({p,distFrom,onOpen,objIds,objErr,verified,reliability,listing,action,friendState,onConnect,cand,online,level,years,climbs,vouches,climbsPrivate,onClimbs,onVouches,extras,tag}: RealClimberRowProps){/* MY reliability, for my side of the match (0519): one query key for every row, so the list reads it once. */const _myRelQ=useReliabilityOf(DB_UID?[DB_UID]:[]);/* THE SCORE IS FED REAL SIGNALS NOW (0209). Until then `_cand` carried one of the four signals
      compatUnknown counts -- it hardcoded `objectiveIds:[]`, and `profiles` had no availability or
      pace column -- so `_unk` was >= 3 for every real climber and the score never rendered. The row
      now gets availability, the week grid and pace from its own columns, and objectives from ONE
@@ -135,9 +145,9 @@ export default function RealClimberRow({p,distFrom,onOpen,objIds,objErr,verified
      their resume private had it offered from partner browse. `!!` rather than `!== false`
      because this is SOMEBODY ELSE's row: an omitted column must hide a button, never expose a
      resume. `!== false` is only correct for your own read-back. */
-  const _cand={id:p.id,name:p.name||"Climber",username:p.username,showName:!!p.show_name,resumePublic:!!p.resume_public,avatar:p.avatar,bio:p.bio,location:p.location,disciplines:Array.isArray(p.disciplines)?p.disciplines:[],sportGrade:p.sport_grade,tradGrade:p.trad_grade,boulderGrade:p.boulder_grade,climbGrades:(p.climb_grades&&typeof p.climb_grades==="object")?p.climb_grades:undefined,/* 0359 */gender:p.gender||undefined,/* 0475 */pronouns:Array.isArray(p.pronouns)&&p.pronouns.length?p.pronouns:undefined,availability:Array.isArray(p.availability)?p.availability:[],availWeek:Array.isArray(p.avail_week)?p.avail_week:[],hikingSpeedFtHr:Number(p.hiking_speed_ft_hr)||undefined,_distMi:p.dist_mi!=null?p.dist_mi:undefined,objectiveIds:Array.isArray(objIds)?objIds:[],/* Their LISTED AREAS (0300): the list's one partner_areas_of_users read, or the row's own listed_* columns when it came from an area search. Paths feed compat()'s shared-areas term. */partnerAreaPaths:(Array.isArray(listing)?listing.map(function(x){return x&&x.path}):(Array.isArray(p.listed_area_paths)?p.listed_area_paths:[])).filter(Boolean),/* From the list's one verified_user_ids read (0232). Only a confirmed TRUE sets it: unknown must not cost the match % nor read as unverified on the profile this row opens. */verified:verified===true};
+  const _cand={id:p.id,name:p.name||"Climber",username:p.username,showName:!!p.show_name,resumePublic:!!p.resume_public,avatar:p.avatar,bio:p.bio,location:p.location,disciplines:Array.isArray(p.disciplines)?p.disciplines:[],sportGrade:p.sport_grade,tradGrade:p.trad_grade,boulderGrade:p.boulder_grade,climbGrades:(p.climb_grades&&typeof p.climb_grades==="object")?p.climb_grades:undefined,/* 0359 */gender:p.gender||undefined,/* 0475 */pronouns:Array.isArray(p.pronouns)&&p.pronouns.length?p.pronouns:undefined,availability:Array.isArray(p.availability)?p.availability:[],availWeek:Array.isArray(p.avail_week)?p.avail_week:[],hikingSpeedFtHr:Number(p.hiking_speed_ft_hr)||undefined,_distMi:p.dist_mi!=null?p.dist_mi:undefined,objectiveIds:Array.isArray(objIds)?objIds:[],/* Their LISTED AREAS (0300): the list's one partner_areas_of_users read, or the row's own listed_* columns when it came from an area search. Paths feed compat()'s shared-areas term. */partnerAreaPaths:(Array.isArray(listing)?listing.map(function(x){return x&&x.path}):(Array.isArray(p.listed_area_paths)?p.listed_area_paths:[])).filter(Boolean),/* From the list's one verified_user_ids read (0232). Only a confirmed TRUE sets it: unknown must not cost the match % nor read as unverified on the profile this row opens. */verified:verified===true,/* 0519: both sides' reliability counts; theirs from the list's batched read. */reliability:reliability||undefined};
   const _c=(cand||_cand) as typeof _cand;
-  const _nm=pubNameRow(p)||"Climber";const _objReady=Array.isArray(objIds);/* The viewer's side of the score: mountain objectives only (crag objectives are a tick list, not a match signal) plus their listed areas. */const _me=Object.assign({},ME,{objectiveIds:Array.isArray(meView.matchObjectiveIds)?meView.matchObjectiveIds:(meView.objectiveIds||[])});const _unk=compatUnknown(_me,_c),_pct=compat(_me,_c);
+  const _nm=pubNameRow(p)||"Climber";const _objReady=Array.isArray(objIds);/* The viewer's side of the score: mountain objectives only (crag objectives are a tick list, not a match signal) plus their listed areas. */const _me=Object.assign({},ME,{objectiveIds:Array.isArray(meView.matchObjectiveIds)?meView.matchObjectiveIds:(meView.objectiveIds||[])},DB_UID&&_myRelQ.data?{reliability:_myRelQ.data[DB_UID]}:{});const _unk=compatUnknown(_me,_c),_pct=compat(_me,_c);
   const _lst: PartnerListing[] | null=Array.isArray(listing)?listing:(Array.isArray(p.listed_area_names)?p.listed_area_names.map(function(n,i){return {name:n,path:(p.listed_area_paths||[])[i],disciplines:p.listed_disciplines||[],freeFrom:p.free_from||null,freeTo:p.free_to||null,above:!!p.listed_above};}):null);
   const _lstLine=(function(){if(!_lst||!_lst.length)return null;const names=_lst.slice(0,2).map(function(l){return l.name;}).filter(Boolean);const more=_lst.length>2?" +"+(_lst.length-2):"";const discs: string[]=[];_lst.forEach(function(l){(l.disciplines||[]).forEach(function(d){if(discs.indexOf(d)<0)discs.push(d);});});const win=_lst.find(function(l){return l.freeFrom&&l.freeTo;});const fmt=function(d: string){try{return new Date(d+"T12:00:00").toLocaleDateString(DLOCALE,{month:"short",day:"numeric"});}catch{return d;}};return (_lst[0].above?"Listed across ":"Listed at ")+names.join(", ")+more+(win?" · free "+(win.freeFrom===win.freeTo?fmt(win.freeFrom||""):fmt(win.freeFrom||"")+"–"+fmt(win.freeTo||"")):"");})();
   /* THE MATCH IN WORDS (2026-11-23): one sentence of what the two of you share, from the rows the % is summed from. Their listed-area names let it name the shared area. Held until their objectives have landed, like the %, so it does not change under the reader. */
@@ -160,7 +170,7 @@ export default function RealClimberRow({p,distFrom,onOpen,objIds,objErr,verified
         {_free?<div style={{fontSize:11.5,fontWeight:800,color:C.green,marginBottom:3}}>{"● Free this weekend"}</div>:null}
         {_lstLine?<div style={{fontSize:11.5,color:C.blue,fontWeight:700,overflowWrap:"anywhere"}}>{_lstLine}</div>:(tag?<span style={{fontSize:11.5,fontWeight:700,color:C.blue}}>{tag}</span>:null)}
       </div>
-      {!_objReady?<div style={{flexShrink:0,maxWidth:96,textAlign:"center",fontSize:11,color:objErr?C.amber:C.textSub,lineHeight:1.35}}>{objErr?"Couldn’t load their objectives to score a match":"Scoring match…"}</div>:_unk>=3?<div style={{flexShrink:0,maxWidth:96,textAlign:"center",fontSize:11,color:C.textSub,lineHeight:1.35}}>Not enough shared info to score a match</div>:<div title={"Match % blends where you climb (shared objectives or listed areas), grade range, disciplines, availability overlap and whether each of you is verified"+(_unk?" · based on limited info":"")} style={{flexShrink:0,textAlign:"center",background:_band.bg,borderRadius:13,padding:"7px 10px",border:"1px solid "+_band.bd,minWidth:52}}><div style={{fontSize:18,fontWeight:800,color:_band.fg,lineHeight:1}}>{_sc}%</div><div style={{fontSize:10.5,color:_band.fg,marginTop:3,textTransform:"uppercase",letterSpacing:0.6}}>match</div></div>}
+      {!_objReady?<div style={{flexShrink:0,maxWidth:96,textAlign:"center",fontSize:11,color:objErr?C.amber:C.textSub,lineHeight:1.35}}>{objErr?"Couldn’t load their objectives to score a match":"Scoring match…"}</div>:_unk>=3?<div style={{flexShrink:0,maxWidth:96,textAlign:"center",fontSize:11,color:C.textSub,lineHeight:1.35}}>Not enough shared info to score a match</div>:<div title={"Match % blends where you climb (shared objectives or listed areas), grade range, disciplines, availability overlap, reliability and whether each of you is verified"+(_unk?" · based on limited info":"")} style={{flexShrink:0,textAlign:"center",background:_band.bg,borderRadius:13,padding:"7px 10px",border:"1px solid "+_band.bd,minWidth:52}}><div style={{fontSize:18,fontWeight:800,color:_band.fg,lineHeight:1}}>{_sc}%</div><div style={{fontSize:10.5,color:_band.fg,marginTop:3,textTransform:"uppercase",letterSpacing:0.6}}>match</div></div>}
     </div>
     {_sum?<div data-match-summary="" style={{fontSize:12.5,color:C.text,lineHeight:1.45,marginBottom:7,overflowWrap:"anywhere"}}>{_sum}</div>:null}
     {/* One line, facts split by " · " (polish 2026-11-18: two facts side by side read as one). */(p.location||_where.length)?<div style={{fontSize:12,color:C.text,marginBottom:6,overflowWrap:"anywhere"}}>{[p.location||null].concat(_where).filter(Boolean).join(" · ")}</div>:null}

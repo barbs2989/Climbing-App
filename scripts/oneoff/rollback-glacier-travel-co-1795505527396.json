@@ -1,0 +1,24 @@
+[
+ {
+  "id": "co_central_buttress",
+  "before": {
+   "glacier_travel": null,
+   "snow_in_season": "yes"
+  },
+  "after": {
+   "glacier_travel": "no",
+   "snow_in_season": "yes"
+  }
+ },
+ {
+  "id": "co_pyramid_peak_northeast_ridge",
+  "before": {
+   "glacier_travel": null,
+   "snow_in_season": "no"
+  },
+  "after": {
+   "glacier_travel": "no",
+   "snow_in_season": "no"
+  }
+ }
+]
