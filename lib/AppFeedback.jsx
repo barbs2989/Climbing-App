@@ -47,7 +47,7 @@ export function storeListing(platform) {
   return null;
 }
 
-const field = { width: "100%", padding: "11px 12px", borderRadius: 10, border: "1px solid " + C.border, background: C.bg, color: C.text, fontSize: 14, outline: "none", boxSizing: "border-box", fontFamily: "inherit" };
+const field = { width: "100%", padding: "11px 12px", borderRadius: 10, border: "1px solid " + C.field, background: C.bg, color: C.text, fontSize: 14, outline: "none", boxSizing: "border-box", fontFamily: "inherit" };
 const lbl = { display: "block", fontSize: 12.5, fontWeight: 700, color: C.textSub, margin: "12px 0 5px" };
 const primary = (on) => ({ width: "100%", marginTop: 14, padding: 12, minHeight: 46, background: on ? C.blueSolid : C.bg, color: on ? C.onSolid : C.textMuted, border: on ? "none" : "1px solid " + C.border, borderRadius: 11, fontSize: 14, fontWeight: 700, cursor: on ? "pointer" : "default" });
 const why = (e) => (e && e.code === "P0001" && e.message ? e.message + " " : "");

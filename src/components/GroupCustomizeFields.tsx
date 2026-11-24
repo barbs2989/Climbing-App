@@ -28,7 +28,7 @@ interface GroupCustomizeFieldsProps {
 export default function GroupCustomizeFields({ draft, onChange }: GroupCustomizeFieldsProps) {
   const accent = draft.accent || "";
   const links = draft.links || [];
-  const box = { width: "100%", boxSizing: "border-box" as const, padding: "10px 12px", borderRadius: 10, border: "1px solid " + C.border, background: C.surface, color: C.text, fontSize: 14, outline: "none" };
+  const box = { width: "100%", boxSizing: "border-box" as const, padding: "10px 12px", borderRadius: 10, border: "1px solid " + C.field, background: C.surface, color: C.text, fontSize: 14, outline: "none" };
   const sub = (t: string, hint?: string) => <div style={{ margin: "12px 0 6px" }}><div style={{ fontSize: 12.5, fontWeight: 700, color: C.textSub }}>{t}</div>{hint ? <div style={{ fontSize: 11.5, color: C.textMuted, marginTop: 2, lineHeight: 1.4 }}>{hint}</div> : null}</div>;
   const count = (v: string, max: number) => <div style={{ fontSize: 11, color: v.length > max * 0.9 ? C.amber : C.textMuted, textAlign: "right", marginTop: 3 }}>{v.length + " / " + max}</div>;
   const setLink = (ix: number, patch: Partial<GroupLinkDraft>) => onChange({ links: links.map((l, i) => i === ix ? { ...l, ...patch } : l) });
