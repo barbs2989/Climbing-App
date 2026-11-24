@@ -1079,6 +1079,21 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     Scans every app source plus every `lib/` file; fails closed if its fixture stops matching or
     the owner file stops writing the lock. `overflowY` (lib/Ads.jsx's rail) is a different
     property and is not matched.
+    - **Five spellings, not one (2026-11-24):** `x.style.overflow =`, `x.style["overflow"] =`,
+      `setProperty("overflow", …)`, a one-line `cssText` string holding `overflow:`, and
+      `Object.assign(x.style, { overflow })`. The fixture lists each spelling it must catch AND the
+      look-alikes the app really has that it must not (`overflowY`, `setProperty("overflow-y")`, a
+      read, the map popups' `cssText`), and prints which one drifted. Injection-tested: each of the
+      five planted in `lib/Ads.jsx` fails the run.
+    - **`ALLOW_WRITERS`** (empty) is for a deliberate overflow write on an element that is NOT the
+      page; an entry names the file and why it cannot freeze the page, and a stale entry fails.
+    - **Still blind to:** a multi-line `cssText` template, a computed property name, and a write
+      through a helper that takes the property as an argument. None exist.
+    - **Phone-width proof (2026-11-24):** a 390x844 touch emulation in Playwright drove the finder
+      with RAW touch swipes (CDP `Input.dispatchTouchEvent`; `Input.synthesizeScrollGesture` scrolls
+      nothing in this Chrome, not even a plain page, so do not use it to judge scrolling). 14 checks
+      pass: each popup holds the page open and frees it on ✕, Escape, Done, Show routes, Back and
+      a tab change. Not a guard (it needs the dev server and a signed-in or guest session).
   - **Same day, same report: `PullToRefresh` (Today) tested `window.scrollY`**, which is always
     0 because `#appscroll` scrolls, not the document — so any downward drag mid-feed grew the
     pull spacer instead of scrolling. It now reads `#appscroll.scrollTop` and ignores touches

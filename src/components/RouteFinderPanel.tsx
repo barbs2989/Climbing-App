@@ -314,7 +314,12 @@ export default function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElev
   // frame later and RECORDED that "hidden" as the page's own value, so on close this effect cleared
   // it and the shared lock then put "hidden" back. Never add a second lock here.
 
-  useEffect(() => { setPage(0); setAll([]); }, [qD, af, loc.id]);
+  // Start the list over only when the QUERY changes, not when `af` is a new object holding the same
+  // filters: "Show routes" with nothing changed stores a fresh object, and keyed on its identity
+  // this emptied the list while the query, unchanged, never refetched to refill it — "600 routes",
+  // "No routes match these filters", and a page too short to scroll (2026-11-24).
+  const queryKey = JSON.stringify(finderArgs(qD, af, metric));
+  useEffect(() => { setPage(0); setAll([]); }, [queryKey, loc.id]);
   useEffect(() => {
     if (!batch) return;
     setAll(prev => page === 0 ? batch : [...prev, ...batch]);
