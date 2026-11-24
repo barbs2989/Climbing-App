@@ -11,8 +11,7 @@ import { NPX, NPX_PRE } from "../lib/npx.mjs";
 // calls) or by the app itself (the owner in Chrome) -- never the service key, which bypasses RLS and
 // would prove nothing. The service key only SETS UP (createFixture) and READS the result.
 //
-// The two accounts are made NOT friends and NOT crewmates first (createFixture seats them as both):
-// that is the case where the tagger's name used to fall through to "typed names" in the log form.
+// The two accounts are friends, as a tag requires (log_tag_eligible, 0194): a non-friend's tag never reaches you.
 //
 // Per-run accounts (createFixture), deleted in finally, and the deletion is asserted. Local only: it
 // needs the service key. Run through ~/dev/db-throttle/dbslot.mjs. Screenshots go to --shots DIR.
@@ -62,18 +61,18 @@ try {
   const mateTok = (await tr.json()).access_token;
   must(!!mateTok, "the mate signed in with its own session");
 
-  // ---- NOT friends, NOT crewmates (the case bug #1 lived in) ----
-  await svc(`connections?or=(and(requester.eq.${ownerId},addressee.eq.${mate.id}),and(requester.eq.${mate.id},addressee.eq.${ownerId}))`, { method: "DELETE" });
-  const ownCrews = (await svc(`crews?select=id,created_by&created_by=in.(${ownerId},${mate.id})`)).body || [];
-  for (const c of ownCrews) await svc(`crew_members?crew_id=eq.${c.id}&user_id=eq.${c.created_by === ownerId ? mate.id : ownerId}`, { method: "DELETE" });
-  const conn = (await svc(`connections?select=id&or=(requester.eq.${ownerId},addressee.eq.${ownerId})`)).body;
-  must(Array.isArray(conn) && conn.length === 0, "setup: the two accounts are not friends");
+  // ---- FRIENDS, as createFixture leaves them: a tag reaches you only from an accepted connection (log_tag_eligible, 0194) ----
+  const conn = (await svc(`connections?select=id,status&or=(and(requester.eq.${ownerId},addressee.eq.${mate.id}),and(requester.eq.${mate.id},addressee.eq.${ownerId}))`)).body;
+  must(Array.isArray(conn) && conn.length === 1 && conn[0].status === "accepted", "setup: the two accounts are friends (a tag needs it)");
 
   // ---- three real routes: two for the mate's logs, one the owner logs themselves ----
-  const rr = (await svc(`routes?select=id,name,area_id&name=not.is.null&id=like.wa_*&order=id&limit=3&offset=40`)).body;
+  let rr = null;
+  for (let i = 0; i < 3 && !Array.isArray(rr); i++) { const q = await svc(`routes?select=id,name,area_id&name=not.is.null&id=like.wa_*&order=id&limit=3&offset=40`); if (Array.isArray(q.body)) rr = q.body; else { log(`  route read ${q.status}: ${JSON.stringify(q.body).slice(0, 160)}`); await sleep(3000); } }
   must(Array.isArray(rr) && rr.length === 3, "three catalog routes to log");
   const [R1, R2, R3] = rr;
   log(`  routes: ${R1.name} | ${R2.name} | ${R3.name}`);
+  // a saved climb with no crew yet, so Climb with them again has something to pick (the fixture's only objective already has one)
+  await svc("objectives", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ user_id: ownerId, route_id: R1.id }) });
 
   // ---- the MATE logs two climbs that tag the owner, under the mate's own JWT (as syncLogToDb writes) ----
   const mk = async (r, day) => (await asUser(mateTok, "climb_logs", { method: "POST", headers: { Prefer: "return=representation" }, body: JSON.stringify({ user_id: mate.id, route_id: r.id, discipline: "alpine", date_climbed: day, tick_type: "Summit", partners: [ownerId], party_size: 2 }) }));
@@ -91,6 +90,7 @@ try {
   await page.addInitScript(([k, v]) => { try { localStorage.setItem(k, v); } catch { /* storage blocked */ } }, [STORAGE_KEY, JSON.stringify(sessionForStorage(fixture.session))]);
   await page.goto(base, { waitUntil: "domcontentloaded" });
 
+const pickTick = async () => { for (const t of ["Redpoint", "Summit", "Send"]) { const b = page.getByRole("button", { name: t, exact: true }).first(); if (await b.count()) { await b.click(); return t; } } return null; };
   const openBell = async () => { await page.getByRole("button", { name: /^Notifications/ }).first().click(); };
   await openBell();
   const confirm1 = page.getByRole("button", { name: new RegExp("^Confirm you climbed " + R1.name.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")) }).first();
@@ -132,7 +132,7 @@ try {
   const dateVal = await page.locator('input[type="date"]').first().inputValue().catch(() => "");
   must(dateVal === "2026-11-15", `the log form opens on the day climbed (${dateVal})`);
   await shot(page, "5-log-form");
-  await page.getByRole("button", { name: "Summit", exact: true }).first().click().catch(() => {});
+  must(!!(await pickTick()), "a tick was picked on the log form");
   const save = page.getByRole("button", { name: /Log it$/ }).last();
   await save.scrollIntoViewIfNeeded(); await save.click();
   await sleep(5000);
@@ -161,7 +161,7 @@ try {
   await shot(page, "6-climb-again");
   const t0 = new Date(Date.now() - 5000).toISOString();
   const pick = again.getByRole("button").filter({ hasText: R1.name }).first();
-  if (await pick.count()) await pick.click(); else await again.getByRole("button").filter({ hasText: /Kings|Peak|Route|Ridge|Wall/ }).first().click();
+  must(await pick.count() > 0, "the saved climb is offered in Climb again"); await pick.click();
   await sleep(6000);
   const newCrews = (await svc(`crews?created_by=eq.${ownerId}&created_at=gte.${t0}&select=id,route_id`)).body;
   const nc = Array.isArray(newCrews) ? newCrews[0] : null;
@@ -179,18 +179,23 @@ try {
   await full.click();
   const search = page.getByRole("textbox", { name: /^Search friends, crews or ClimbMatch/ });
   await search.waitFor({ timeout: 30000 });
-  await search.fill(mate.username);
-  const tagBtn = page.getByRole("button", { name: /^Tag / }).first();
-  await tagBtn.waitFor({ timeout: 30000 });
-  await tagBtn.click();
-  await page.getByRole("button", { name: "Summit", exact: true }).first().click().catch(async () => { await page.getByRole("button", { name: "Send", exact: true }).first().click().catch(() => {}); });
+  await shot(page, "8a-logger-form");
+  // a friend is a chip in the FRIENDS row, named as pubName names them (the @handle when they hide their name)
+  const chip = page.getByRole("button", { name: new RegExp("^@?" + mate.username) }).first();
+  await chip.waitFor({ timeout: 30000 });
+  await chip.click();
+  must((await chip.getAttribute("aria-pressed")) === "true", "the logger tagged the mate");
+  await pickTick();
   const save3 = page.getByRole("button", { name: /Log it$/ }).last();
   await save3.scrollIntoViewIfNeeded(); await save3.click();
   await sheet(page).waitFor({ timeout: 15000 }).catch(() => {});
   const st3 = await sheet(page).innerText().catch(() => "");
-  must(/You climbed with/.test(st3) && st3.includes(R3.name), "the logger's save opens the sheet for a partner found by search");
+  must(/You climbed with/.test(st3), "the logger's save opens the sheet for the tagged partner");
+  must(st3.includes(R3.name), "...and names the climb (opened from a link, so not in App's route cache)");
   must(!/Log it too/.test(st3), "the logger is not offered Log it too (it is already logged)");
   await shot(page, "8-logger-sheet");
+  const l3 = (await svc(`climb_logs?user_id=eq.${ownerId}&route_id=eq.${R3.id}&select=partners`)).body;
+  must(Array.isArray(l3) && l3[0] && (l3[0].partners || []).includes(mate.id), "DB: the logger's log is stored, tagging the mate");
 
   must(errs.length === 0, `no page errors (${errs.slice(0, 3).join(" | ")})`);
 } catch (e) {
@@ -201,7 +206,7 @@ try {
     const left = await fixture.cleanup();
     must(left.length === 0, `cleanup: both accounts deleted (${left.join(",") || "none left"})`);
     const ids = [fixture.owner.id, fixture.mate.id].join(",");
-    for (const [t, col] of [["climb_logs", "user_id"], ["vouches", "from_id"], ["crews", "created_by"], ["crew_members", "user_id"], ["climb_log_confirmations", "partner_id"]]) {
+    for (const [t, col] of [["climb_logs", "user_id"], ["vouches", "from_id"], ["crews", "created_by"], ["crew_members", "user_id"], ["objectives", "user_id"], ["climb_log_confirmations", "partner_id"]]) {
       const r = await svc(`${t}?${col}=in.(${ids})&select=*`, { headers: { Prefer: "count=exact", Range: "0-0" } });
       must(Array.isArray(r.body) && r.body.length === 0, `cleanup: no ${t} rows left`);
     }

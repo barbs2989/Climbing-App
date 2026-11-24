@@ -27,6 +27,8 @@ export interface PostClimbPerson { id: string | number; name?: string; username?
 export interface PostClimb {
   routeId: string | number;
   routeName: string;
+  /** The route itself, when the caller holds it (App's lookup misses a climb opened from a link). */
+  route?: { id: string | number; name?: string } | null;
   /** The day climbed, YYYY-MM-DD. */
   date: string | null;
   people: PostClimbPerson[];
@@ -76,7 +78,7 @@ export default function PostClimbSheet({ climb, vouchedIds, dayLabel, onClose, o
         {climb.note ? <div style={{ fontSize: 13, color: C.green, fontWeight: 700, lineHeight: 1.45, padding: "10px 0 2px", overflowWrap: "anywhere" }}>{climb.note}</div> : null}
         {climb.logged ? null : <div style={{ ...section, borderTop: climb.note ? section.borderTop : "none" }}>
           <div style={H}>Log it together</div>
-          <div style={{ fontSize: 13, color: C.textSub, lineHeight: 1.45, marginBottom: 9 }}>{(climb.loggedBy ? pubFirst(climb.loggedBy) + " logged this climb. " : "") + "Add it to your logbook too: the climb, the day and " + joinNames(firsts) + " are filled in, and you add how it went."}</div>
+          <div style={{ fontSize: 13, color: C.textSub, lineHeight: 1.45, marginBottom: 9 }}>{"Add it to your logbook too. The climb, the day and your partner are filled in; you add how it went."}</div>
           <button type="button" onClick={onLogIt} style={{ ...BTN_GO(C), width: "100%", minHeight: 44, fontWeight: 800 }}>Log it too</button>
         </div>}
         <div style={{ ...section, borderTop: (climb.logged && !climb.note) ? "none" : section.borderTop }}>
