@@ -128,7 +128,7 @@ export default function Resume({climber,logs,unavailable,loading,onClose,fstate,
   const secEdit=(what: string,go: () => void)=>(editable&&!edit)?<AreaEditIconButton C={C} onClick={go} title={"Edit "+what}/>:null;
   const [cN,setCN]=useState("");const [cO,setCO]=useState("");const [cD,setCD]=useState("");
   const [xN,setXN]=useState("");const [xA,setXA]=useState("");const [xG,setXG]=useState("");const [xR,setXR]=useState("Lead");const [xDt,setXDt]=useState("");const [xDisc,setXDisc]=useState("sport");
-  const rInp: CSSProperties={width:"100%",padding:"11px 12px",borderRadius:9,border:"1px solid "+C.border,background:C.card,color:C.text,fontSize:15,boxSizing:"border-box"};
+  const rInp: CSSProperties={width:"100%",padding:"11px 12px",borderRadius:9,border:"1px solid "+C.field,background:C.card,color:C.text,fontSize:15,boxSizing:"border-box"};
   const addCourse=()=>{if(!cN.trim())return;if(onAddCourse)onAddCourse({name:cN.trim(),org:cO.trim(),date:cD.trim(),self:true});setCN("");setCO("");setCD("");};
   const addClimb=()=>{if(!xN.trim())return;if(onAddExtra)onAddExtra({date:xDt||todayIso,name:xN.trim(),area:xA.trim(),grade:xG.trim(),disc:xDisc,role:xR,partner:null});setXN("");setXA("");setXG("");setXDt("");};
   /* SHARE and PDF used to toast "link copied" / "exported as PDF" and do neither. They now hand the rows this screen already renders to the same shareOrCopy / printSheet a list and a plan use. */
