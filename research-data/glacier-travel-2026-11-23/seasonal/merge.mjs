@@ -10,7 +10,7 @@ import path from "node:path";
 const dir = path.dirname(new URL(import.meta.url).pathname.replace(/^\/([A-Z]:)/, "$1"));
 const ins = [], outs = [];
 for (let i = 1; i <= 10; i++) { ins.push(...JSON.parse(fs.readFileSync(path.join(dir, `seasonal-in-${i}.json`), "utf8"))); outs.push(...JSON.parse(fs.readFileSync(path.join(dir, `seasonal-out-${i}.json`), "utf8"))); }
-const webSettled = new Set(Object.keys(JSON.parse(fs.readFileSync(path.join(dir, "..", "unsure-research.json"), "utf8"))));
+const webSettled = new Set(JSON.parse(fs.readFileSync(path.join(dir, "..", "unsure-research.json"), "utf8")).map((r) => r.id));
 const inBy = new Map(ins.map((r) => [r.id, r]));
 if (outs.length !== ins.length || outs.some((o) => !inBy.has(o.id))) throw new Error(`outputs (${outs.length}) do not match inputs (${ins.length})`);
 const rank = { no: 0, unsure: 1, yes: 2 };

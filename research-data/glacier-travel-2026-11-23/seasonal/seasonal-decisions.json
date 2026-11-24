@@ -60,18 +60,6 @@
   "why": "Couloir between the ribs holds snow into August; season starts July so it is snow in season."
  },
  {
-  "id": "wa_bear_mountain_chilliwack_north_buttress",
-  "name": "North Buttress",
-  "glacier_travel": "yes",
-  "snow_in_season": "yes",
-  "snow_free_from": null,
-  "was": {
-   "glacier_travel": "no",
-   "snow_in_season": "yes"
-  },
-  "why": "Climbs a small glacier or neve with a moat, crampons useful even in summer, plus icefall from the remnant; glacier raised from no."
- },
- {
   "id": "wa_bearpaw_mountain_scramble",
   "name": "Church Lake Scramble",
   "glacier_travel": null,
@@ -230,7 +218,7 @@
  {
   "id": "wa_bonanza_peak_cascadian_route",
   "name": "Cascadian Route",
-  "glacier_travel": "yes",
+  "glacier_travel": null,
   "snow_in_season": "yes",
   "snow_free_from": null,
   "was": {
@@ -504,18 +492,6 @@
   "why": "Both ways in start mid-July once the gully and cirque are snow-free, so July snow is in season; flipped to yes."
  },
  {
-  "id": "wa_colchuck_peak_northeast_couloir",
-  "name": "Northeast Couloir",
-  "glacier_travel": "yes",
-  "snow_in_season": "yes",
-  "snow_free_from": null,
-  "was": {
-   "glacier_travel": null,
-   "snow_in_season": "yes"
-  },
-  "why": "Approach follows the Colchuck Glacier margin and the descent is down the glacier."
- },
- {
   "id": "wa_columbia_peak_scramble",
   "name": "Standard Scramble",
   "glacier_travel": "no",
@@ -538,18 +514,6 @@
    "snow_in_season": "no"
   },
   "why": "Saddle bivy is snow-free only in high summer, so snow is in a June-start season; flipped to yes, date is a guess."
- },
- {
-  "id": "wa_corteo_peak_southwest_ridge",
-  "name": "Southwest Ridge / Standard Route",
-  "glacier_travel": null,
-  "snow_in_season": "yes",
-  "snow_free_from": null,
-  "was": {
-   "glacier_travel": "no",
-   "snow_in_season": "yes"
-  },
-  "why": "Way in crosses the Lewis Glacier remnant moraine with crevasses and moats, which contradicts glacier no."
  },
  {
   "id": "wa_courtney_peak_scramble",
@@ -598,18 +562,6 @@
    "snow_in_season": "yes"
   },
   "why": "Route is done on snow from late spring until mid-July when the gullies melt out."
- },
- {
-  "id": "wa_direct_north_buttress",
-  "name": "Direct North Buttress",
-  "glacier_travel": null,
-  "snow_in_season": "yes",
-  "snow_free_from": null,
-  "was": {
-   "glacier_travel": "no",
-   "snow_in_season": "yes"
-  },
-  "why": "Route starts where the buttress meets a glacier remnant with icefall, which contradicts glacier no."
  },
  {
   "id": "wa_east_ridge_2",
@@ -910,18 +862,6 @@
    "snow_in_season": "no"
   },
   "why": "Steep snow or verglas near the col lingers through July and a snow patch can sit on the path into August."
- },
- {
-  "id": "wa_inner_constance_standard",
-  "name": "Standard Route (Northeast summit via South Gully and East Ridge)",
-  "glacier_travel": null,
-  "snow_in_season": "yes",
-  "snow_free_from": null,
-  "was": {
-   "glacier_travel": "no",
-   "snow_in_season": "yes"
-  },
-  "why": "The gully is snow-dependent with moats and a small glacier high up early season; late-season melt-out is not given."
  },
  {
   "id": "wa_ives_peak_r1",
@@ -1258,18 +1198,6 @@
    "snow_in_season": null
   },
   "why": "Snow on the slabs and in the gullies lingers into early summer, with an axe and crampons standard until it is gone; the season begins in July."
- },
- {
-  "id": "wa_mount_adams_south_climb",
-  "name": "South Climb (South Spur)",
-  "glacier_travel": null,
-  "snow_in_season": "yes",
-  "snow_free_from": null,
-  "was": {
-   "glacier_travel": "no",
-   "snow_in_season": "yes"
-  },
-  "why": "The text puts the upper route on snowfields and the Crescent Glacier slopes all season, with no melt-out date. Glacier moved to unsure because the slopes are named as glacier."
  },
  {
   "id": "wa_mount_angeles_standard",
@@ -2170,18 +2098,6 @@
    "snow_in_season": null
   },
   "why": "A snow ramp on the southeast approach can linger into July or midsummer, which is in a Jul-Sep season."
- },
- {
-  "id": "wa_tomyhoi_peak_southeast_ridge",
-  "name": "Southeast Ridge",
-  "glacier_travel": null,
-  "snow_in_season": "yes",
-  "snow_free_from": null,
-  "was": {
-   "glacier_travel": "no",
-   "snow_in_season": "yes"
-  },
-  "why": "The route traverses the top edge of the Tomyhoi Glacier with some crevasse hazard, so the no for glacier is doubtful; no melt-out date given."
  },
  {
   "id": "wa_tower_mountain_southwest_route",
