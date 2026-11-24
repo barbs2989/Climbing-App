@@ -222,9 +222,21 @@ export default function GPXMap({pts,waypoints,peakCoord,emptyPinType,endpointLab
      The Snow layer's day stepper changes it once per tap, and a rebuild re-fitted the route every time. */
   useEffect(()=>{if(!mapRef.current)return;applyBaseLayer(mapRef.current,tileRef,baseLayer);},[baseLayer]);
   useEffect(()=>{const map=mapRef.current;if(!map||!window.L)return;if(slopeOn&&!slopeRef.current)slopeRef.current=slopeLayer(window.L).addTo(map);else if(!slopeOn&&slopeRef.current){map.removeLayer(slopeRef.current);slopeRef.current=null;}},[slopeOn,ready]);
-  /* The elevation profile's marker: its own effect, so a scrub moves one dot and never rebuilds the map. */
+  /* The elevation profile's marker: its own effect, so a scrub moves one dot and never rebuilds the map.
+     THE DOT STAYS IN SIGHT (owner, 2026-11-24: dragging the profile "works on some routes but not
+     all"). It used to be added once where the track point was and nothing more, so it vanished
+     wherever that point was not on screen: under the layer row or the Slope button (Denali's West
+     Buttress opens with its summit there), under the Me button, under a pin (pins sit in a pane above
+     the track's), or off the map entirely once the climber had zoomed or panned. Now it is drawn in a
+     pane of its own above the pins, and the map pans just far enough to keep it inside the area the
+     controls leave clear: the layer row, the Slope button and the zoom buttons along the top and left,
+     the Me button and the tile credit along the bottom. A dot already in that area moves nothing. */
   const cursorRef=useRef<LeafletAny>(null);const cLat=cursor?cursor[0]:null,cLng=cursor?cursor[1]:null;
-  useEffect(()=>{if(cursorRef.current){try{cursorRef.current.remove();}catch{/* the map it sat on was rebuilt */}cursorRef.current=null;}const map=mapRef.current;if(!map||!window.L||cLat==null||cLng==null)return;cursorRef.current=window.L.circleMarker([cLat,cLng],{radius:7,color:"#ffffff",weight:2,fillColor:C.blue,fillOpacity:1,interactive:false}).addTo(map);},[cLat,cLng,mapGen,ready]);
+  useEffect(()=>{const map=mapRef.current;if(!map||!window.L||cLat==null||cLng==null){if(cursorRef.current){try{cursorRef.current.remove();}catch{/* the map it sat on was rebuilt */}cursorRef.current=null;}return;}
+    if(cursorRef.current&&cursorRef.current._map===map)cursorRef.current.setLatLng([cLat,cLng]);
+    else{if(cursorRef.current){try{cursorRef.current.remove();}catch{/* the map it sat on was rebuilt */}}if(!map.getPane("cmCursor")){const pane=map.createPane("cmCursor");pane.style.zIndex="650";pane.style.pointerEvents="none";}cursorRef.current=window.L.circleMarker([cLat,cLng],{radius:7,color:"#ffffff",weight:2,fillColor:C.blue,fillOpacity:1,interactive:false,pane:"cmCursor"}).addTo(map);}
+    try{map.panInside([cLat,cLng],{paddingTopLeft:[52,108],paddingBottomRight:[40,64],animate:false});}catch{/* the map is mid-rebuild */}
+  },[cLat,cLng,mapGen,ready]);
   const me=useFollowMe(mapRef,{C,zoom:16,onFix:(_f,first)=>{if(first)setLocatedOnce(true);}}),locate=me.locate,geoErr=me.err;
   useEffect(()=>{if(!mapRef.current)return;const t=setTimeout(()=>{try{mapRef.current.invalidateSize();}catch{/* the map is already gone */}},220);return ()=>clearTimeout(t);},[fullscreen]);
   /* Tapping a waypoint row below the map pans to that pin and opens its popup. `focusWp`
