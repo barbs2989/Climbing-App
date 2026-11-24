@@ -674,8 +674,13 @@ the correction knows the screen is wrong, and they have no way to report it.
     the sourcing shapes only (`per/by/from/(` + Mazamas, or Mazamas + rates/gives/says…), because "a
     Mazamas party" first ascent and "a Mountaineers/Mazamas basic climb" are a club as credit or
     operator, which the rule keeps; injections `mazamasclub` (0) / `mazamascite` (all) pin both
-    directions. WA then read **61 values on 46 routes**; the 46 citation edits on 24 routes are in
-    `scripts/oneoff/prose-citations-2026-11-23/` (edits.json, apply.mjs, dry-run clean). The rest
+    directions. WA then read **61 values on 46 routes**; the 47 citation edits on 25 routes (two
+    "per Mazamas" lines on `adams_avalanche_glacier`, whose id has no `wa_` prefix, came from
+    `audit:misplaced-prose`) are in `scripts/oneoff/prose-citations-2026-11-23/` (edits.json,
+    apply.mjs, dry-run clean). Same day, `The Mountaineers` stopped matching the **Mountaineers
+    Route / Wall / Couloir** — Whitney's descent and a trail, ~16 of that audit's 75 all-state hits,
+    place names not sources — unless a page/description/notes word follows ("The Mountaineers route
+    page:" is still a citation). The rest
     are the kept classes: FA credits, a club as operator or grading body, a guidebook or map to carry,
     and the NWAC caveat. `audit:misplaced-prose` section 4 reads this same `NAMED`, so the widening
     reaches every state there.
