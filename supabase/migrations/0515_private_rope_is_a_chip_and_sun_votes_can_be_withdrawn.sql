@@ -1,4 +1,4 @@
--- 0511: three follow-ups from the code reviews of #3787 and of 0508 / #3793 (owner 2026-11-23, "do a review once it's live").
+-- 0515: three follow-ups from the code reviews of #3787 and of 0508 / #3793 (owner 2026-11-23, "do a review once it's live").
 --
 -- 1. A PRIVATE REPORT'S ROPE IS ONE OF THE FOUR CHIPS, OR NOTHING. climb_logs.rappel_rope is free text
 --    with no CHECK; only the log form's chips (COND_ENUMS.rapRope) keep it to "Single 60 m", "Single 70 m",
