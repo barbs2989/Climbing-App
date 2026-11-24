@@ -125,6 +125,12 @@ export default function ForecastBox({ route, calc, kind, terrain, pt }: Forecast
   const wd = P.publishedIsWholeDay && !fromCamp ? wholeDayLegs(P.techH, kind) : null;
   const legs = wd ? { up: wd.up, down: wd.down, fromCamp: false, floor: false, tech: wd.up, hike: 0, wholeDay: wd.total }
     : { up: fromCamp ? P.techH : P.hikeH + P.techH, down: P.downH, fromCamp, floor: P.legsFloor || P.publishedIsWholeDay, tech: P.techH, hike: fromCamp ? 0 : P.hikeH };
+  /* A ONE-DAY route whose published climb starts at the camp below it (planTimes' upFromCamp: Slipstream,
+     the Kain Route) is counted back the same way -- no walk-in is added, so the hours are right -- but the
+     card must say "Leave camp by", not "Start by ... walk back down" (owner, 2026-11-24). Wording ONLY:
+     `fromCamp` still decides the maths and which height the start is read from, and these routes store no
+     camp height, so moving them onto `fromCamp` would drop their start time. */
+  const sayCamp = legs.fromCamp || (!wd && P.upFromCamp);
   const snowLegs = hasSnowLegs(kind, terrain);
   // How the card may speak of snow bridges: "yes" states them, "maybe" says "any", false never names one.
   const bridges = bridgeWord(kind, terrain);
@@ -224,16 +230,16 @@ export default function ForecastBox({ route, calc, kind, terrain, pt }: Forecast
       const st = floorQ(day.start.at), daysEarly = day.daysEarly;
       const offBy = clockOf(fc, day.start.at + legs.up * 3600), storm = day.thunder && day.thunder.likely ? "forecast" : "possible";
       const why = day.start.why === "snow"
-        ? (legs.wholeDay ? "to do the " + hrs(legs.wholeDay) + " day and be back down by " : legs.fromCamp ? "to climb " + hrs(legs.up) + " from camp and be back down by " : "to climb " + hrs(legs.up) + " and walk " + hrs(legs.down) + " back down by ") + clockOf(fc, day.softAt) + ", when the snow at " + uElev(floor.ft) + " starts to soften"
-        : day.start.why === "snow-noon" ? (legs.wholeDay ? "to do the " + hrs(legs.wholeDay) + " day and be back down by " : legs.fromCamp ? "to climb " + hrs(legs.up) + " from camp and be back there by " : "to climb " + hrs(legs.up) + " and walk " + hrs(legs.down) + " back down by ") + clockOf(fc, day.start.backBy) + (kind === "snow" ? ": parties on snow climbs start early and plan to be off the snow by midday, while the night’s freeze still holds and before the sun softens it" : bridges === "yes" ? ": parties on glaciers start in the dark and plan to be off the snow by midday, while the night’s freeze still holds and before the sun softens it and weakens the bridges" : ": parties on glacier and snow routes start in the dark and plan to be off the snow by midday, while the night’s freeze still holds and before the sun softens it and weakens any snow bridges")
+        ? (legs.wholeDay ? "to do the " + hrs(legs.wholeDay) + " day and be back down by " : sayCamp ? "to climb " + hrs(legs.up) + " from camp and be back down by " : "to climb " + hrs(legs.up) + " and walk " + hrs(legs.down) + " back down by ") + clockOf(fc, day.softAt) + ", when the snow at " + uElev(floor.ft) + " starts to soften"
+        : day.start.why === "snow-noon" ? (legs.wholeDay ? "to do the " + hrs(legs.wholeDay) + " day and be back down by " : sayCamp ? "to climb " + hrs(legs.up) + " from camp and be back there by " : "to climb " + hrs(legs.up) + " and walk " + hrs(legs.down) + " back down by ") + clockOf(fc, day.start.backBy) + (kind === "snow" ? ": parties on snow climbs start early and plan to be off the snow by midday, while the night’s freeze still holds and before the sun softens it" : bridges === "yes" ? ": parties on glaciers start in the dark and plan to be off the snow by midday, while the night’s freeze still holds and before the sun softens it and weakens the bridges" : ": parties on glacier and snow routes start in the dark and plan to be off the snow by midday, while the night’s freeze still holds and before the sun softens it and weakens any snow bridges")
           + (day.start.forecast ? ". The forecast alone would allow a start as late as " + clockOf(fc, floorQ(day.start.forecast.at)) + ", but that has no margin" : ". The forecast sets no earlier deadline today")
-        : day.start.why === "sun" ? (legs.fromCamp ? "to climb " + hrs(legs.up) + " from camp" : "to walk in (" + hrs(legs.hike) + ") and climb " + hrs(legs.tech)) + " and be above " + uElev(Math.ceil(day.start.sun.ft / 50) * 50) + " by " + clockOf(fc, day.start.sun.sunAt) + ", when the sun reaches steep ground that sheds onto the line above that height"
+        : day.start.why === "sun" ? (sayCamp ? "to climb " + hrs(legs.up) + " from camp" : "to walk in (" + hrs(legs.hike) + ") and climb " + hrs(legs.tech)) + " and be above " + uElev(Math.ceil(day.start.sun.ft / 50) * 50) + " by " + clockOf(fc, day.start.sun.sunAt) + ", when the sun reaches steep ground that sheds onto the line above that height"
         : day.start.why === "storm-descent" ? "to reach the top" + (legs.wholeDay ? "" : " (" + hrs(legs.up) + ")") + " and start down by " + offBy + ", before the thunderstorms " + storm + " this afternoon"
         : "to be off the summit" + (legs.wholeDay ? "" : " (" + hrs(legs.up) + " up)") + " by " + offBy + ", before the thunderstorms " + storm + " this afternoon";
       startEl = daysEarly >= 2
         ? <div style={{ fontSize: 12.5, color: C.textSub, lineHeight: 1.5 }}>{"Too long for one push: counting back from the Plan tab’s estimate puts the start " + daysEarly + " days early. Plan a camp — see the Plan tab."}</div>
         : <div>
-          <div style={{ fontSize: 15, fontWeight: 800, color: C.text }}>{(legs.fromCamp ? "Leave camp by " : "Start by ") + clockOf(fc, st) + (daysEarly === 1 ? " the night before" : "")}</div>
+          <div style={{ fontSize: 15, fontWeight: 800, color: C.text }}>{(sayCamp ? "Leave camp by " : "Start by ") + clockOf(fc, st) + (daysEarly === 1 ? " the night before" : "")}</div>
           <div style={{ fontSize: 12, color: C.textSub, lineHeight: 1.5, marginTop: 2 }}>{why + (legs.wholeDay ? ". The route publishes one whole-day time (" + hrs(legs.wholeDay) + ") with no split, so the way up is counted as " + Math.round(LIMITS.wholeDayUpShare * 100) + "% of it: a rule of thumb that errs early. It is a fit party’s time, so a slower party should start earlier still." : P.legsStored ? ". Times are this route’s published times for a fit party (Plan tab), so a slower party should start earlier." : ". Times are the Plan tab’s estimate at its own fitness and pack.")}</div>
         </div>;
     } else if (day.noFreeze && floor) {

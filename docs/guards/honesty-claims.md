@@ -1448,6 +1448,17 @@ rows. Its build script is gone; new reviews write the column.
     spans every state, as glacier null, so it undid CO's reviewed "no" on Pyramid Peak NE Ridge each time it
     ran after CO. `load-glacier-travel.mjs` now skips a dry-list id that a state's own `final.json` reviews;
     Pyramid Peak was the only one.
+- **Round 9** (2026-11-24) re-ran round 8's 76 open snow calls (`round9/`, each entry carrying round 8's note,
+  and the review bar written into the prompt: a "no" needs a page saying the line is dry, or two accounts from
+  different days). Searches worked longer this time, but most routes still have no page that speaks to snow on
+  the line.
+  - Snow yes: Cashmere Mountain West Ridge (WA; snow late spring to mid-summer, an axe usually needed late).
+  - Snow no: Gladstone Peak North Ridge (CO; several dated June to September reports find the ridge dry).
+  - Held at unsure on review (4, `round9/hold.json`): Pulitzer (a Bailey Range traverse page) and Rock Mountain
+    NE Ridge and Tailgunner (search snippets of pages that answer 403) (WA); Middle Teton SW Couloir (WY), whose
+    own page, read on review, is typed snow but says the couloir melts out fairly quickly.
+  Snow not settled now on these routes: WA 28, CA 17, CO 13, WY 8, UT 4, BC 2, ID 1, OR 1 (74). Further web
+  rounds look unlikely to pay; these wait for climbers' corrections on the edit sheet.
 
   - **HOUR BY HOUR + THE GUST WINDOW (2026-10-08, owner: "clear and exact and accurate science").**
     Section 12 of the guard. Three things it holds, each measured, not assumed:
