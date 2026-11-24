@@ -1153,7 +1153,10 @@ the correction knows the screen is wrong, and they have no way to report it.
     *"possibly done previously"*) — that is a climber writing their own FA note, the ordinary voice of
     the field, not the pipeline. The section-2 cues match research vocabulary, not uncertainty.
   - **Measured non-findings, exempted by name:** *"Source Lake"* is a place; *"This entry gully"* is a
-    gully you enter (the cue is `this entry is`); the waypoint caveat *"Coordinate is a geometric
+    gully you enter (the cue is `this entry is`, and since 2026-11-23 only when database talk follows —
+    `based`, `derived`, `a duplicate`, `a placeholder`, `sourced`, `for the`…: *"this entry is far
+    gentler than the original"* (a roof's way in) and *"This entry is the loosest ground of the day"*
+    (a gully) were the section's only two hits, both climbing words); the waypoint caveat *"Coordinate is a geometric
     interpolation … not independently verified"* is REQUIRED by `check:waypoint-caveat`;
     `access._raw.*` does not render. *"(6,320-6,340 ft depending on source)"* is deliberately not a
     cue — collapsing it invents a number — and publisher names inside grade columns belong to
