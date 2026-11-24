@@ -25,6 +25,7 @@ Not yet documented here (add a doc when you next work in one): moderation/safety
 the catalog import pipeline (see [docs/BACKEND.md](docs/BACKEND.md)).
 
 ## Recent changes
+- **Menu tiles carry no counts** (owner 2026-11-24, "Remove numbers under each menu box"): *Crews · N* and *Listed areas · N* are now plain *Crews* and *Listed areas*. The count wrapped onto its own line under the label in the narrow tiles. The Requests corner badge (people waiting on you) stays. `ClimbMatch.jsx`; see `docs/features/partners.md`.
 
 - **Partners shows climbers without a zip code** (owner 2026-11-24, "do what you recommend is best to find partners and crews easier"): the lists no longer wait for a saved zip; a place, a peak, a route, your objectives or everyone are searched without one, and only the distance searches need it. The zip card stays above the lists as an offer, and every search starts at Anywhere (a radius of your zip is one tap away), so saving a zip never shrinks the list. Join a crew never needed one. Supersedes the 2026-11-14 zip gate. See [partners.md](docs/features/partners.md).
 - **Glacier warnings: 7 more routes settled** (data only, 2026-11-24, round 10): Stanley Peak North Face, Mount Michelson North Ridge, Goldfinger, The Fall Line, Shasta Hotlum–Wintun Ridge and Norman Clyde Peak North Face are glacier travel; North Milk Creek on Mount Jefferson is not (its glacier is gone). Nine thin answers were held; 111 glacier calls stay open. See `docs/guards/honesty-claims.md`.

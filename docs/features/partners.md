@@ -181,7 +181,7 @@ whole guide feature on 2026-11-14 (owner). This doc covers the partners mode (`l
   The card's friend button has one look per state: **+ Add friend** filled blue, **✓ Accept friend** filled green, **Requested · tap to undo** amber outline (tapping it again withdraws, after a confirm), **✓ Friends** quiet green outline. A sent request also lists under Crew › Requests › Waiting on others with Withdraw.
 - **Route page**: `initialClimb` + `onConsumeInitial` open By Route preselected; under an alpine route’s results, *Also see climbers on <peak>* switches to A peak on its peak (or Pick an area on the area it is filed under, when that is not a peak); `useRecentRouteIds` supplies recent picks. `initialArea` + `onConsumeInitialArea`
   open By Area on an area (from the area page's "See all", a crag route's Partners sub-tab, a Logbook crag row — all through App's `onFindPartnersInArea`).
-- **Menu**: the *Yours* group has a **Listed areas · N** tile (`openMyAreas`; signed out it asks to sign in).
+- **Menu**: the *Yours* group has a **Listed areas** tile (`openMyAreas`; signed out it asks to sign in). It carries no count: a " · N" wrapped onto a line of its own under the label (owner 2026-11-24).
 - **Area page / crews pane**: `PartnersHereCard` (`docs/features/maps-and-area-browser.md`) and the crews pane both open the My listed areas sheet (`openMyAreas`).
 - **Siblings in the tab**: `CrewFinder` (crews).
 
