@@ -1,11 +1,11 @@
-<!-- ClimbMatch mark. Not a new design: this is the app's OWN Climbs-tab glyph
-     (ActionIcon name="mountain", path "m8 3 4 8 5-5 5 15H2L8 3z") on the app's
-     background, stroked in the brand orange (C.brand) the wordmark uses for "Match".
-     The glyph is scaled to 0.8 and centred so it sits inside the inner 80% —
-     the safe zone Android crops a `maskable` icon to. -->
+<!-- ClimbMatch mark (2026-11-24). A twin-peak ridge that is also an M, drawn as two strands in the
+     wordmark's two colours: the orange one climbs the first summit, the chalk one the second, and
+     a knot ties them at the col. The knot is the ring the app's rope motif uses.
+     Before this it was the app's Climbs-tab glyph (ActionIcon "mountain"); that glyph is still the
+     Climbs tab's icon, and no longer the logo.
+     The mark is drawn in a 64 box and scaled into this 24 one (0.42, centred). This file is the single
+     source for the PNG icons: change it, then run node scripts/oneoff/render-app-icons.mjs. -->
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" role="img" aria-label="ClimbMatch">
   <rect width="24" height="24" rx="5" fill="#12110f"/>
-  <g transform="translate(2.4 2.4) scale(0.8)">
-    <path d="m8 3 4 8 5-5 5 15H2L8 3z" fill="none" stroke="#ff8a3d" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
-  </g>
+  <g transform="translate(-1.44 -1.44) scale(0.42)" fill="none" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 50 L24 14 L33.5 33" stroke="#ff8a3d"/><path d="M33.5 33 L42.5 22 L54 50" stroke="#f1ede6"/><circle cx="33.5" cy="33" r="5.4" fill="#12110f" stroke="none"/><circle cx="33.5" cy="33" r="3.3" stroke="#ff8a3d" stroke-width="2.8"/></g>
 </svg>

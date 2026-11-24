@@ -23,9 +23,9 @@ whole guide feature on 2026-11-14 (owner). This doc covers the partners mode (`l
   counts the panel filters that are on, one per picked gender. The controls are 44px on a phone and 36px on the website (#3156), and since 2026-11-18 (owner) they wear the **Join a crew look** — the *Find a crew by* buttons: two across, 10px corners, 12.5px semibold centred, blue while chosen or set — instead of rounded pills; only the look changed, each is still a dropdown. A dropdown whose longest choice cannot fit half a phone column (Distance with a zip, Leads) takes a row of its own rather than clipping its label, and Discipline sits beside Search by so the short two share a row. Each dropdown draws ONE arrow, the one `index.html` puts on every select (#2585); the row no longer adds a chevron of its own beside it. The name
   search is an icon pill (*Name*, `aria-expanded`) beside the title that opens the box. Partner cards stay one per row (owner).
 - **The You card — how other climbers find you** (owner, climber walkthrough 2026-11-13): one compact card above the pills holding
-  everything about YOUR visibility, so the pill row is only "who am I looking for". Its first row is the sentence and button the Join a crew
-  pane showed until 2026-11-19, when that pane moved its listings under *My climbs & areas* (owner 2026-11-18: the heading, paragraph, a chip per listed area and a full-width add button ran a screen deep at 14 areas):
-  *Looking for partners? List the crags and peaks you climb — you’re listed at N places.* beside **My areas**, which opens
+  everything about YOUR visibility, so the pill row is only "who am I looking for". Its first row is the Join a crew pane's row, word for word
+  and at its size (owner 2026-11-24: "it needs to feel consistent"; it replaced, on 2026-11-18, a heading, paragraph, a chip per listed area and a full-width add button that ran a screen deep at 14 areas):
+  *You’re listed at N places. Your M saved areas count too.* (or *List the crags and peaks you climb…* with none) beside **My areas** — the label on both screens now (the crew pane's said *Add areas* / *Edit areas*) — which opens
   `MyPartnerAreas` — the only way onto that screen here (the empty card no longer repeats it), and where each listing is changed or removed; then the **I'm free this weekend** switch (`role="switch"`; it writes your own
   `profiles.free_until`, which is why it left the filter row — as a pill there, a tap meant to find free climbers published your status),
   and at most one hint: listing turned off (*Turn listing on*), the zip read failed (*Couldn’t load your zip code — you can still search near where you are now*), or no gender. With no zip on file, the point-of-use zip form (#3306) sits under the pills in the same card look, as an offer: the lists no longer wait for it (owner 2026-11-24). Ended date windows are NOT flagged here (owner):
@@ -37,7 +37,7 @@ whole guide feature on 2026-11-14 (owner). This doc covers the partners mode (`l
   mt/mount, apostrophes, climber nicknames (`PLACE_NICKNAMES` in lib/search.js: rrg, jtree, nrg, hcr, lcc, bcc, shawangunks) and, when
   nothing matched, typos via `search_names_fuzzy` ("closest names"). Audit 2026-11-14 (`scripts/oneoff/audit-area-search.mjs`): 67/67
   corpus places found, against 22/67 for the old one-state box.
-- **No dead ends** (owner, 2026-11-13): every empty real list (My areas, Pick an area, My objectives, A route, Everyone within a radius)
+- **No dead ends** (owner, 2026-11-13): every empty real list (My climbs & areas, By Area, By Peak, By Route, Everyone within a radius)
   is one card (`emptyCard`, `data-partner-empty`) of one-tap next steps, each shown only when it changes the list —
   *Search anywhere*, *Within <next radius>*, *Pick an area*, *See everyone*, *Invite a climbing friend* (inline `ShareVia`, a link to the
   app). The *Meanwhile, climbers near you / on ClimbMatch* list that sat under it was removed (owner 2026-11-18, #3416): it read as a second copy of the results.
@@ -50,17 +50,24 @@ whole guide feature on 2026-11-14 (owner). This doc covers the partners mode (`l
   compare on `gradeNumFrom`, which reads aid C3 and A3 as the same grade. Changing the discipline clears it; it counts in the clear-filters
   button. Real rows get their `climb_grades` through `usePartnerClimbGrades` (the partner RPCs carry none).
 - **Find someone by name** (DB only): a full-width search bar (min 2 chars) over real profiles, always shown under *Find partners / Join a crew*; the search title sits under the filter pills, above the results (owner 2026-11-14).
-- **Search for partners by** five modes (the Search by ▾ pill; owner 2026-11-13 merged Near my areas and Saved areas): **My areas** (signed in, the default),
-  with two chips under the pills — **Where I'm listed** (internal mode `myareas`: climbers whose listings overlap yours, most
-  in common first; with no listing, the You card's *My areas* button is the way in, under the empty card) and **Saved areas** (internal mode `saved`: the
-  areas you saved with Save area as the search — a chip row *All saved · N* plus one chip per saved crag, canyon, range or state;
-  climbers listed at, inside, or across a wider area containing any of them, listed in the most of them first; saved peaks are searched
-  too since 0456; at most the first 12 saved areas; with none saved it says how to save one; an
-  *Edit saved areas* link opens Logbook › Saved › Areas), **A peak** (internal `peak`, signed in; owner 2026-11-18): `PeakPicker` (`src/components/PeakPicker.tsx`) — your saved peaks as chips over a peak-only catalog search — then one list: climbers LISTED on the peak (`usePartnersInArea`) first, then climbers with a route on it as a mountain objective (`usePartnersByObjective(null, peakId)`), each once; a half that failed is said, never read as empty. The *Climb at <peak>?* `ListMeInAreaBox` sits ABOVE that list (#3518), as under Pick an area. The example profiles stand down here, as under My areas (they list no peaks). `scripts/oneoff/probe-peak-partners-walk.mjs` walks it signed in (fixture accounts, 390px screenshots). **Pick an area** (internal `area`; listing-based; the region dropdown plus a search box for any crag, canyon or range inside the chosen
-  state; once a place is chosen, signed in, a *Climb in <place>?* / *Climb at <crag>?* box (`ListMeInAreaBox`; "at" for a crag, wall, boulder or sector, "in" otherwise) sits ABOVE who is listed (owner 2026-11-18, #3416; it was under them from 2026-11-13) with a
+- **Search for partners by** the five choices Join a crew offers, in its order and words (the Search by ▾ pill; owner 2026-11-24, "there's too many
+  options and it's still confusing"): **My climbs & areas**, **By Route**, **By Peak** (signed in), **By Area**, **Everyone** (crews' *Any Crew*).
+  **My climbs & areas** (internal mode `mine`, the default) is ONE list, as crews' is: climbers listed where you are listed
+  (`usePartnersForMyAreas`), then at your saved areas (`usePartnersInAreas`, at most the first 12, saved peaks too since 0456, a saved country
+  said to be too broad), then who share a mountain objective (`usePartnersByObjective`), each climber once (`minePeople`). It replaced
+  *My areas* with its **Where I'm listed / Saved areas** buttons (the `myareas` / `saved` modes) and *My objectives* (`objectives`).
+  The list waits until every enabled read has answered, so a late source never pushes cards down under a thumb; signed in,
+  no example climber is drawn under it; *Plan a session* is offered only to a climber matched by an AREA (not one matched by a
+  shared mountain objective); a climber whose saved climbs are all crag climbs is told crag partners are found by area.
+  Each of the three inputs and reads is honest on its own: one still loading waits, one that failed is NAMED (*Couldn’t search your saved
+  areas…*), on an empty list as *this is not an empty list* and under a partial one as *some climbers may be missing*; with nothing listed,
+  saved or objectived, the empty card says how to do each. *Edit saved areas* opens Logbook › Saved › Areas.
+  **By Peak** (internal `peak`, signed in; owner 2026-11-18): `PeakPicker` (`src/components/PeakPicker.tsx`) — your saved peaks as chips over a peak-only catalog search — then one list: climbers LISTED on the peak (`usePartnersInArea`) first, then climbers with a route on it as a mountain objective (`usePartnersByObjective(null, peakId)`), each once; a half that failed is said, never read as empty. The *Climb at <peak>?* `ListMeInAreaBox` sits ABOVE that list (#3518), as under Pick an area. The example profiles stand down here, as under My areas (they list no peaks). `scripts/oneoff/probe-peak-partners-walk.mjs` walks it signed in (fixture accounts, 390px screenshots). **By Area** (internal `area`; listing-based; a search box for any crag, canyon or range, then Country › State › Region dropdowns
+  that keep going (owner 2026-11-24): each picked place adds an *Inside <place>* dropdown of what is inside it, down to the crag or wall
+  (`AreaRegionSelect`, `src/components/AreaRegionSelect.tsx`, shared with Join a crew; `onPick` hands back the type so a crag reads "at"; the chain of picks is held by the caller (`areaPath`), so a crag survives switching to another mode and back); once a place is chosen, signed in, a *Climb in <place>?* / *Climb at <crag>?* box (`ListMeInAreaBox`; "at" for a crag, wall, boulder or sector, "in" otherwise) sits ABOVE who is listed (owner 2026-11-18, #3416; it was under them from 2026-11-13) with a
   one-tap *List me in/at <place>* — the same `addPartnerArea` write as the area page's Partners here card — and, once listed,
-  *Remove listing* and *Add dates or climbing types*, which opens My listed areas preset to that place), **My objectives** (mountain
-  objectives only), **A route** (internal `route`; a crag route redirects to its area), **Everyone** (internal `anyone`). A route can pick from a search, your saved objectives,
+  *Remove listing* and *Add dates or climbing types*, which opens My listed areas preset to that place),
+  **By Route** (internal `route`; a crag route redirects to its area), **Everyone** (internal `anyone`). By Route can pick from a search, your saved objectives,
   recently opened routes (the 3 newest; up to 2 more behind a "Show N more" toggle), crew routes, or a country > state > crag drill-down.
 - **Saved vs listed, said where you tap** (owner 2026-11-14): Save area is a private bookmark (`saved_areas`, owner-only); a listing (`partner_areas`) is what other climbers see. The area page's Partners here card says so in one line under its *List me here* button, and the signed-in Save toast reads *Saved — only you see it, in Logbook › Saved* (`src/components/PartnersHereCard.tsx`, `toggleBookmark` in `ClimbMatch.jsx`).
 - **Free this weekend, in Find partners** (owner, Gora audit 2026-10-28): your own *I'm free this weekend* switch sits in the You card (`freeWknd` / `onToggleFreeWknd` from App; the same `profiles.free_until` the Menu sets), and climbers who switched it on lead the real list in their existing order, under a line saying how many (`data-free-weekend-count`). Chosen instead of an expiring "climbing today" post.
@@ -70,8 +77,8 @@ whole guide feature on 2026-11-14 (owner). This doc covers the partners mode (`l
   opt out in Settings). Distance chips: Near my zip / Near me now (browser geolocation, rounded to 2 decimals) / Anywhere,
   with a 10-500 mi radius slider (steps of 5, debounced 400 ms). Others see a **distance only**, never a zip.
 - **What Partners requires** (owner, 2026-11-24: "do what you recommend is best to find partners and crews easier";
-  supersedes the 2026-11-14 zip gate): **no zip is required to see climbers**. My areas, Saved areas, Pick an area, A peak,
-  My objectives, A route, Everyone and the crew-invite list near the climb all render without one; only the DISTANCE
+  supersedes the 2026-11-14 zip gate): **no zip is required to see climbers**. My climbs & areas, By Route, By Peak, By Area,
+  Everyone and the crew-invite list near the climb all render without one; only the DISTANCE
   searches need it: with none, the zip radii in the Distance pill are disabled (*Near my zip (none set)*); *Near me now* needs no zip.
   **Everyone at Anywhere, with a zip, is nearest first** (0524, owner 2026-11-24): ONE ordered read, `usePartnersByDistance`
   -> RPC `partners_by_distance`, which returns only ids and a rounded distance measured from the caller’s OWN saved zip
@@ -89,13 +96,11 @@ whole guide feature on 2026-11-14 (owner). This doc covers the partners mode (`l
   `profiles` x `profile_zips`, then a sort). Fine at today's size; past tens of thousands of listed climbers it needs a
   bounding-box prefilter or a spatial index.
   With no zip, the inline zip card (`_zipNeeded` in `lib/PartnerSearch.jsx`, saves through `saveMyZip`) stays above the
-  lists as an offer. My objectives with none saved, and A route with none picked, show their own
-  prompt instead of falling through to everyone; My objectives says *Couldn’t load your objectives* on a failed read (with *See
-  everyone*), loads only until your saved list reaches the screen (`objectivesLoading`: the read is pending, or answered and
-  not yet copied in -- a flag set by that one-time copy, so it cannot wait forever), tells a climber whose objectives are all crag
-  routes that crag partners are found by area (a tick list, not a match signal, 0300), and when some saved climbs have not
-  resolved -- loading, offline, or no longer in the catalog -- says they can’t be matched right now (amber when the route read
-  failed, `objectiveRowsFailed`) with *See everyone*. It never waits on those, and never calls them none. Join a crew never gated on a zip (its distance filter alone uses it). A **photo is not required** to be listed (owner
+  lists as an offer. By Route with none picked shows its own prompt instead of falling through to everyone. Under My climbs &
+  areas the objectives half waits while your saved list (`objectivesLoading`) or its route rows (`objectiveRowsLoading`) are still
+  arriving, and names *your objectives* as not searched when either read failed (`objectivesUnavailable`, `objectiveRowsFailed`);
+  crag objectives never count (a tick list, not a match signal, 0300). (Until 2026-11-24 the separate *My objectives* mode had a
+  longer empty-state of its own; it went with the mode.) Join a crew never gated on a zip (its distance filter alone uses it). A **photo is not required** to be listed (owner
   2026-11-14): a climber without one shows with the silhouette avatar.
   **Sending a request** to a real climber without your own photo is refused (`sendReq` in `ClimbMatch.jsx`: *Didn't send
   it — add a profile photo first*) and opens Edit profile on the photo.
@@ -159,7 +164,7 @@ whole guide feature on 2026-11-14 (owner). This doc covers the partners mode (`l
 ## 3. Files
 | File | What lives there |
 |---|---|
-| `lib/PartnerSearch.jsx` | `PartnerSearch` (modes incl. Near my areas, Saved areas (`savedAreaIds`, `onOpenSaved`, `SAVED_SEARCH_LIM`) and listing-based By Area, filters, near/objective/area/browse lists, the example list (drawn by `RealClimberRow`), `cardExtras`, route picker, `initialArea` deep link) |
+| `lib/PartnerSearch.jsx` | `PartnerSearch` (modes incl. My climbs & areas — listed + saved areas (`savedAreaIds`, `onOpenSaved`, `SAVED_SEARCH_LIM`) + objectives as one `minePeople` list — and listing-based By Area, filters, near/objective/area/browse lists, the example list (drawn by `RealClimberRow`), `cardExtras`, route picker, `initialArea` deep link) |
 | `lib/cardStyles.js` | `CARD(C, edge?)` / `EYEBROW(color)` — the crew card's look (radius 16, padding 14, a 1px edge in the state colour, its shadow; the uppercase label over a title), read by the crew card and the Partners boxes: the You card, the empty card, the More filters panel and the list-me box (owner 2026-11-14: "make it consistent" with crew cards). NOT the climber cards: the owner asked for those back on their own look (2026-11-18) |
 | `src/components/ListMeInAreaBox.tsx` | `ListMeInAreaBox` — By Area's and A peak's *List me at <place>* box, under the picker and above the climbers (optimistic `addPartnerArea` / `removePartnerArea`, then `onListMe` for dates and types) |
 | `lib/MyPartnerAreas.jsx` | `MyPartnerAreas` — the My listed areas screen (add/edit/remove a listing, `windowText`; opened ON one listing from a chip, Back, Save and — since 2026-11-19 — Remove all return to where you came from): a full-screen view in the 520px column, search first over every area in every state (`useCatalogAreaSearch`, the Add-a-climb picker's search and the Climbs tab's spelling rules; it searched one state from a dropdown until 2026-11-14), each hit with its type, its trail (*Oregon › Central Oregon*) and climb count, one-tap suggestions from the climber's own crag climbs and saved areas (`suggestIds`, a wall offered as its crag), then **Browse areas** (your own listings sit above both, straight under the search box, so a long state list never pushes them off the screen; more than five fold to the first four behind a *Show all N* row, `LIST_FOLD`, which names any ended date window it hides; `AreaFinder`, owner 2026-11-18: the Climbs tab's hierarchy read through `useAreaChildren` — country, state, region, crag; a row opens what is inside it, *+ List* lists you there, a country cannot be listed, and a trail of crumbs walks back up; it keeps its place while a listing form is open, so several crags in one region are listed without re-walking the tree; hidden while a search is typed), the search box under an *Add an area* heading with a clear button, *Remove this listing* under a rule 57px below *Save changes*, date presets This weekend / Next weekend / Pick dates, an ended window flagged on its card |
@@ -194,7 +199,7 @@ whole guide feature on 2026-11-14 (owner). This doc covers the partners mode (`l
   The card's friend button has one look per state: **+ Add friend** filled blue, **✓ Accept friend** filled green, **Requested · tap to undo** amber outline (tapping it again withdraws, after a confirm), **✓ Friends** quiet green outline. A sent request also lists under Crew › Requests › Waiting on others with Withdraw.
 - **Route page**: `initialClimb` + `onConsumeInitial` open By Route preselected; under an alpine route’s results, *Also see climbers on <peak>* switches to A peak on its peak (or Pick an area on the area it is filed under, when that is not a peak); `useRecentRouteIds` supplies recent picks. `initialArea` + `onConsumeInitialArea`
   open By Area on an area (from the area page's "See all", a crag route's Partners sub-tab, a Logbook crag row — all through App's `onFindPartnersInArea`).
-- **Menu**: the *Yours* group has a **Listed areas · N** tile (`openMyAreas`; signed out it asks to sign in).
+- **Menu**: the *Yours* group has a **Listed areas** tile (`openMyAreas`; signed out it asks to sign in). It carries no count: a " · N" wrapped onto a line of its own under the label (owner 2026-11-24).
 - **Area page / crews pane**: `PartnersHereCard` (`docs/features/maps-and-area-browser.md`) and the crews pane both open the My listed areas sheet (`openMyAreas`).
 - **Siblings in the tab**: `CrewFinder` (crews).
 
@@ -208,7 +213,7 @@ whole guide feature on 2026-11-14 (owner). This doc covers the partners mode (`l
 ## 7. Last significant change
 **One partner card** (owner 2026-11-18; #3416, #3508, #3518, #3532; 0460, 0463, 0468): example and real climbers, on Partners and the route page, share `RealClimberRow` with the example card's look and content — level and years, crew invites, mutual friends, *N climbs · N vouches* counted as the viewer's résumé counts them — and no left bar. The List me box sits above the climbers (Pick an area, A peak); the Meanwhile list is gone; *Plan a session* names the climber's own listed place; Back from one listing opened from a My areas chip returns to Partners.
 
-Find partners and crews by SAVED areas: Find partners has a *Saved areas* mode (chips: all saved areas, or one), and Join a crew's *My climbs & areas* also matches a session at, or inside, an area you saved ("★ In an area you saved").
+Find partners and crews by SAVED areas: Find partners' *My climbs & areas* searches every saved area alongside your listings and objectives (the separate *Saved areas* mode and its chips went 2026-11-24), and Join a crew's *My climbs & areas* also matches a session at, or inside, an area you saved ("★ In an area you saved").
 Partner-area reach stops at the state (0311): a listing at Utah no longer appears on every Utah crag; *Plan a session at <area>* on listed climbers' rows under Near my areas / By Area; the new-climber journey asserts friend removal against the Friends rows, not the whole page.
 Real climbers, batch 3: real friends carry their match objectives and ✓ (`useMatchObjectivesOfUsers` / `useVerifiedUsers` in App's connections hydration), so shared-objective counts, "You both want", the DM banner and suggested crews work for them; Leaderboards shows a real row's ✓; the signed-in header counts "example climbers" and the real-list copy says the filters narrow it.
 #2437 / #2444 / #2445 / #2446 (0300, 0303) — crag partners are found by AREA: `partner_areas` listings, the My listed areas sheet, Near my areas as the signed-in default,

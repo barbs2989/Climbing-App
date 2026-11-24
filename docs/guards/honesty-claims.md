@@ -1476,6 +1476,24 @@ rows. Its build script is gone; new reviews write the column.
     Cascadian (one descent account).
   - The split script's snow-only switch is now rounds 8 and 9 only, so a later glacier round keeps its answers.
   Glacier not settled now: WA 27, CA 21, AK 16, WY 16, OR 10, BC 7, MT 7, AB 4, CO 1, NV 1, NU 1 (111).
+- **Round 11** (2026-11-24) gave the 13 answers held in rounds 9 and 10 their one open question each
+  (`round11/`, e.g. "does this small glacier have a bergschrund?"), two researchers with the whole budget.
+  - Glacier yes: Dana Couloir (CA): an accident report has a roped party fall near the Dana Glacier's open
+    bergschrund.
+  - Held again (`round11/hold.json`): Mendel Couloir (a snippet), Apache Queen's Way "no" (one unroped trip and
+    a page that only calls the upper Isabelle probably a snowfield), Vesper North Face (snippets), Burgette
+    Arête (the same start-only page); snow on Pulitzer (a page about the traverse), Rock Mountain (one early-June
+    day, which RULE.md counts as early season) and the Middle Teton SW Couloir "no" (one mid-July year).
+  Glacier not settled now: 110. This is where web research stops paying.
+- **Unsure alpine and scramble routes kept no warnings** (live check, 2026-11-24). Forbidden East Ridge, held
+  unsure on its glacier and reviewed snow in season "yes", rendered as plain *Alpine rock*: `condKind` gave
+  alpine and scrambling the glacier card only on a reviewed "yes" (or, for alpine, a glacier word in the text),
+  and its text reads as rock. 42 unsure-glacier routes were alpine or scramble kinds; 30 of them reviewed snowy.
+  Owner decision 3 (unsure keeps the warnings, softer) only reached mountaineering. Now a route reviewed snowy
+  with its glacier unsure gets the glacier card and "any snow bridges" (`bridgeWord` "maybe" even where the text
+  guess says no glacier). `routeTerrain()` returns `glacierReviewed` / `snowReviewed` so a route nobody reviewed
+  (both null) cannot be mistaken for one. The 12 with snow also unsure cannot be told apart from unreviewed
+  rows and stay as they were. Six assertions in `check:alpine-conditions`.
 
   - **HOUR BY HOUR + THE GUST WINDOW (2026-10-08, owner: "clear and exact and accurate science").**
     Section 12 of the guard. Three things it holds, each measured, not assumed:

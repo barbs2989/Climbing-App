@@ -143,9 +143,12 @@ async function main() {
   const cmp = opt("--compare", null);
   const prev = cmp ? JSON.parse(fs.readFileSync(path.resolve(ROOT, cmp), "utf8")) : null;
   let outPath = path.resolve(ROOT, opt("--out", `audits/coverage/${onlyState ? onlyState + "-" : ""}${date}.json`));
-  if (cmp && path.resolve(ROOT, cmp) === outPath) {
-    const hm = new Date().toTimeString().slice(0, 5).replace(":", "");
-    outPath = outPath.replace(/\.json$/, `-${hm}.json`);
+  // A snapshot is a record: the default name never REPLACES one already on disk (measured 2026-11-24: a third run
+  // that day overwrote the committed post-batch snapshot, because only the --compare file was protected). An
+  // explicit --out is the caller's choice and is honoured, unless it is the file being compared against.
+  const hm = () => new Date().toTimeString().slice(0, 8).replace(/:/g, "");
+  if ((!opt("--out", null) && fs.existsSync(outPath)) || (cmp && path.resolve(ROOT, cmp) === outPath)) {
+    outPath = outPath.replace(/\.json$/, `-${hm()}.json`);
   }
 
   const g = query(GLOBAL_SQL, "global").j;

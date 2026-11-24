@@ -1,0 +1,608 @@
+{
+ "wa_nick_o_time": {
+  "area": "wa_b_sonic_slab",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/106621830/nick-o-time",
+    "https://www.mountainproject.com/area/120731224/sonic-slab",
+    "https://rakkup.com/guidebook/index-rock-climbing/roger's-corner---sonic-slab/s10835",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.57175,47.81838&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.57175,47.81838&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,parcel_id&returnGeometry=false&f=json",
+    "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks",
+    "https://www.mountainproject.com/forum/message/125423151"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.10a",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106621830/nick-o-time",
+      "fact": "5.10a YDS, Trad, 80 ft",
+      "retrieved_at": "2026-11-24"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_nick_o_time",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "pitches 0 is invalid. Mountain Project describes one 80 ft crack climbed from the Terminal Preppie anchors to the top of the crack (one length). The count is implied, not stated: single source, unconfirmed. Proposed under the scope rule (pitches 0 is wrong whatever the row is).",
+    "evidence": [
+     "https://www.mountainproject.com/route/106621830/nick-o-time"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_nick_o_time",
+    "column": "access",
+    "from": {
+     "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+     "notes": "Many of these peaks (Mount Persis, Gunn Peak, Baring Mountain area) sit outside designated wilderness — administratively unrestricted despite serious technical terrain.",
+     "permit": "None required.",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+     "parking_pass": "Northwest Forest Pass or America the Beautiful pass required at developed trailheads."
+    },
+    "to": {
+     "land_manager": "Washington State Parks (Forks of the Sky State Park)"
+    },
+    "why": "Brief AI/AH: copy the owner-approved State Parks object field for field from wa_godzilla (saved live row): land_manager only, permit stays null. Re-read 2026-11-24: the State Parks boundary layer returns 'Forks of the Sky, State Park Property' at the Sonic Slab (MP GPS 47.81838,-121.57175); the Snohomish County parcel there (10030000000400) is owned by Washington State Parks & Recreation; the parks.wa.gov release of 2026-03-13 (WCC donation, Forks of the Sky SP) is unchanged. Replaces the LEGACY object (Mt. Baker-Snoqualmie NF, Skykomish RD, Northwest Forest Pass, Mount Rainier NP fee line, Persis/Gunn/Baring note), which names the wrong manager.",
+    "evidence": [
+     "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.57175,47.81838&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+     "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.57175,47.81838&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,parcel_id&returnGeometry=false&f=json",
+     "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+    ]
+   }
+  ],
+  "held": [
+   "length_m: MP gives 80 ft (24 m) for the crack above the Terminal Preppie anchors; not proposed under the scope rule (see notes).",
+   "gear: MP 'gear to 3 in'; not proposed under the scope rule."
+  ],
+  "disputed": [],
+  "notes": "SCOPE (possible extension, owner call): MP's page starts this crack ABOVE the Terminal Preppie anchors, so it is a continuation above wa_terminal_preppie rather than a line from the ground. It is NOT in the Index guide's Roger's Corner / Sonic Slab list (7 climbs). FA unknown on MP (row stores none). MP: rarely climbed, often dirty at the top (rappel from the top of GNS to clean it first). ROCKFALL CHECK (brief AI): the late-November 2023 rockfall is real. MP forum thread 'Index rockfall' (Nov 29 2023 - Feb 8 2024): debris and trees came off the top of the Great Northern Slab, the trail from the toilet to Roger's Corner was taped off, one poster noted dirt patches roughly in line with the START of Sonic Reducer, and on Jan 7 2024 GNS and the Roger's Corner area were reported not climbable; GNS itself was reported not destroyed and no damaged bolts were known. No source says any Sonic Slab or Shield line was lost or changed. Terminal Preppie has a detailed MP comment dated Feb 1 2026 describing it climbed after the event. MP pages read 2026-11-24 carry no access warning. No official State Parks closure page was found either way. The top of GNS, where MP suggests rappelling in from, is where the 2023 debris started."
+ },
+ "wa_strength_through_bowling": {
+  "area": "wa_b_sonic_slab",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/106857032/strength-through-bowling",
+    "https://www.mountainproject.com/area/120731224/sonic-slab",
+    "https://rakkup.com/guidebook/index-rock-climbing/strength-through-bowling/c25306",
+    "https://rakkup.com/guidebook/index-rock-climbing/roger's-corner---sonic-slab/s10835",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.57175,47.81838&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.57175,47.81838&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,parcel_id&returnGeometry=false&f=json",
+    "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks",
+    "https://www.mountainproject.com/forum/message/125423151"
+   ]
+  },
+  "ledger": [],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_strength_through_bowling",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "pitches 0 is invalid. Mountain Project: one 80 ft line through the roof and up the slab to the anchors (one length to one anchor). Count implied, not stated: single source, unconfirmed.",
+    "evidence": [
+     "https://www.mountainproject.com/route/106857032/strength-through-bowling"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_strength_through_bowling",
+    "column": "length_m",
+    "from": null,
+    "to": 24,
+    "why": "length is empty. Mountain Project: 80 ft (24 m). Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/106857032/strength-through-bowling"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_strength_through_bowling",
+    "column": "guide_stars",
+    "from": null,
+    "to": 3,
+    "why": "guide_stars is empty. The Index guidebook's own entry (publisher's teaser page) rates Strength Through Bowling 3 stars.",
+    "evidence": [
+     "https://rakkup.com/guidebook/index-rock-climbing/strength-through-bowling/c25306",
+     "https://rakkup.com/guidebook/index-rock-climbing/roger's-corner---sonic-slab/s10835"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_strength_through_bowling",
+    "column": "gear",
+    "from": null,
+    "to": [
+     "thin cams to green Alien",
+     "#3 Camalot",
+     "quickdraws"
+    ],
+    "why": "gear is empty. Mountain Project: a few quickdraws, thin gear to a green Alien, a #3 Camalot helpful. Single source (rack).",
+    "evidence": [
+     "https://www.mountainproject.com/route/106857032/strength-through-bowling"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_strength_through_bowling",
+    "column": "access",
+    "from": {
+     "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+     "notes": "Many of these peaks (Mount Persis, Gunn Peak, Baring Mountain area) sit outside designated wilderness — administratively unrestricted despite serious technical terrain.",
+     "permit": "None required.",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+     "parking_pass": "Northwest Forest Pass or America the Beautiful pass required at developed trailheads."
+    },
+    "to": {
+     "land_manager": "Washington State Parks (Forks of the Sky State Park)"
+    },
+    "why": "Brief AI/AH: copy the owner-approved State Parks object field for field from wa_godzilla (saved live row): land_manager only, permit stays null. Re-read 2026-11-24: the State Parks boundary layer returns 'Forks of the Sky, State Park Property' at the Sonic Slab (MP GPS 47.81838,-121.57175); the Snohomish County parcel there (10030000000400) is owned by Washington State Parks & Recreation; the parks.wa.gov release of 2026-03-13 (WCC donation, Forks of the Sky SP) is unchanged. Replaces the LEGACY object (Mt. Baker-Snoqualmie NF, Skykomish RD, Northwest Forest Pass, Mount Rainier NP fee line, Persis/Gunn/Baring note), which names the wrong manager.",
+    "evidence": [
+     "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.57175,47.81838&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+     "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.57175,47.81838&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,parcel_id&returnGeometry=false&f=json",
+     "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+    ]
+   }
+  ],
+  "held": [
+   "grade: stored 5.10c matches Mountain Project; the Index guide gives 5.10d/11a. No two sources agree on one grade (5.10c is neither half of 5.10d/11a); left as is, not locked. A 2013 MP comment also suggests 5.10d.",
+   "bolts: MP's description passes three bolts (roof, slab, before the final traverse) but the protection line says only 'a few QD', and a 2021 comment says the route has no bolts (it seems to discuss a neighbouring line). Not proposed.",
+   "prot_rating: stored 'R'; no source found states an R rating. Reported, not changed."
+  ],
+  "disputed": [],
+  "notes": "Own line, listed by both publishers. FA 'Greg Olsen, Bryan Trott, Jon Nelson' matches MP (no year); an FA never locks from MP. Anchor type not stated (traverse left then back right to the anchors; the original finish was a sling on a big block). MP comments: upper slab flaky, crumbly rock in the easiest section; the first-roof bolt was called misplaced in 2016 (permission given to move it). ROCKFALL CHECK (brief AI): the late-November 2023 rockfall is real. MP forum thread 'Index rockfall' (Nov 29 2023 - Feb 8 2024): debris and trees came off the top of the Great Northern Slab, the trail from the toilet to Roger's Corner was taped off, one poster noted dirt patches roughly in line with the START of Sonic Reducer, and on Jan 7 2024 GNS and the Roger's Corner area were reported not climbable; GNS itself was reported not destroyed and no damaged bolts were known. No source says any Sonic Slab or Shield line was lost or changed. Terminal Preppie has a detailed MP comment dated Feb 1 2026 describing it climbed after the event. MP pages read 2026-11-24 carry no access warning. No official State Parks closure page was found either way."
+ },
+ "wa_terminal_preppie": {
+  "area": "wa_b_sonic_slab",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/105995079/terminal-preppie",
+    "https://www.mountainproject.com/area/120731224/sonic-slab",
+    "https://rakkup.com/guidebook/index-rock-climbing/terminal-preppie/c25305",
+    "https://rakkup.com/guidebook/index-rock-climbing/roger's-corner---sonic-slab/s10835",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.57175,47.81838&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.57175,47.81838&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,parcel_id&returnGeometry=false&f=json",
+    "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks",
+    "https://www.mountainproject.com/forum/message/125423151"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.11c",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105995079/terminal-preppie",
+      "fact": "5.11c YDS, Trad, 90 ft",
+      "retrieved_at": "2026-11-24"
+     },
+     {
+      "url": "https://rakkup.com/guidebook/index-rock-climbing/terminal-preppie/c25305",
+      "fact": "Terminal Preppie 5.11c, 4 stars",
+      "retrieved_at": "2026-11-24"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_terminal_preppie",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "pitches 0 is invalid. Mountain Project: one 90 ft line, five bolts and gear, to an anchor (one length to one anchor; Nick O' Time continues above these anchors as its own route). Count implied: single source, unconfirmed.",
+    "evidence": [
+     "https://www.mountainproject.com/route/105995079/terminal-preppie"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_terminal_preppie",
+    "column": "length_m",
+    "from": null,
+    "to": 27,
+    "why": "length is empty. Mountain Project: 90 ft (27 m). Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/105995079/terminal-preppie"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_terminal_preppie",
+    "column": "bolts",
+    "from": null,
+    "to": 5,
+    "why": "bolts is empty. Mountain Project protection: 5 bolts (old bolts replaced in 2007) plus a few pieces. Stated as bolts. Single source.",
+    "evidence": [
+     "https://www.mountainproject.com/route/105995079/terminal-preppie"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_terminal_preppie",
+    "column": "gear",
+    "from": null,
+    "to": [
+     "small nuts",
+     "#1 and #2 Camalot",
+     "#3 Wild Country Rock or black Totem"
+    ],
+    "why": "gear is empty. Mountain Project: small wires for the upper roof and the flake, a #1 Camalot in the flake before the first bolt, a #3 Wild Country Rock for the upper roof (a 2021 comment suggests a black Totem instead), a #2 Camalot in the final horizontal crack. Single source (rack).",
+    "evidence": [
+     "https://www.mountainproject.com/route/105995079/terminal-preppie"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_terminal_preppie",
+    "column": "access",
+    "from": {
+     "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+     "notes": "Many of these peaks (Mount Persis, Gunn Peak, Baring Mountain area) sit outside designated wilderness — administratively unrestricted despite serious technical terrain.",
+     "permit": "None required.",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+     "parking_pass": "Northwest Forest Pass or America the Beautiful pass required at developed trailheads."
+    },
+    "to": {
+     "land_manager": "Washington State Parks (Forks of the Sky State Park)"
+    },
+    "why": "Brief AI/AH: copy the owner-approved State Parks object field for field from wa_godzilla (saved live row): land_manager only, permit stays null. Re-read 2026-11-24: the State Parks boundary layer returns 'Forks of the Sky, State Park Property' at the Sonic Slab (MP GPS 47.81838,-121.57175); the Snohomish County parcel there (10030000000400) is owned by Washington State Parks & Recreation; the parks.wa.gov release of 2026-03-13 (WCC donation, Forks of the Sky SP) is unchanged. Replaces the LEGACY object (Mt. Baker-Snoqualmie NF, Skykomish RD, Northwest Forest Pass, Mount Rainier NP fee line, Persis/Gunn/Baring note), which names the wrong manager.",
+    "evidence": [
+     "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.57175,47.81838&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+     "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.57175,47.81838&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,parcel_id&returnGeometry=false&f=json",
+     "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+    ]
+   }
+  ],
+  "held": [
+   "guide_stars: stored 3; the Index guide's own entry shows 4 stars. Changing an existing nonzero rating needs two sources (brief AI); reported, not changed.",
+   "prot_rating: stored PG13; only an MP comment (2015, '5.11c/d PG13') supports it. Not locked."
+  ],
+  "disputed": [],
+  "notes": "Own line, listed by both publishers. FA 'Greg Olsen, Jon Nelson 1983' matches MP; an FA never locks from MP. SAFETY (comments): a 2020 MP comment says the flake below the first bolt, where the page suggests a #1 Camalot, is a large detached rock that could land on the leader and belayer; a 2020 comment reports a key hold broke at the upper slab crux (grade held at 5.11c); runout above the last bolt is called safe. The stored hazard line is generic; owner may want the detached flake named. ROCKFALL CHECK (brief AI): the late-November 2023 rockfall is real. MP forum thread 'Index rockfall' (Nov 29 2023 - Feb 8 2024): debris and trees came off the top of the Great Northern Slab, the trail from the toilet to Roger's Corner was taped off, one poster noted dirt patches roughly in line with the START of Sonic Reducer, and on Jan 7 2024 GNS and the Roger's Corner area were reported not climbable; GNS itself was reported not destroyed and no damaged bolts were known. No source says any Sonic Slab or Shield line was lost or changed. Terminal Preppie has a detailed MP comment dated Feb 1 2026 describing it climbed after the event. MP pages read 2026-11-24 carry no access warning. No official State Parks closure page was found either way."
+ },
+ "wa_pretty_vacant": {
+  "area": "wa_b_sonic_slab",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/108263992/pretty-vacant",
+    "https://www.mountainproject.com/area/120731224/sonic-slab",
+    "https://rakkup.com/guidebook/index-rock-climbing/pretty-vacant/c25304",
+    "https://rakkup.com/guidebook/index-rock-climbing/roger's-corner---sonic-slab/s10835",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.57175,47.81838&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.57175,47.81838&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,parcel_id&returnGeometry=false&f=json",
+    "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks",
+    "https://www.mountainproject.com/forum/message/125423151"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.11d",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108263992/pretty-vacant",
+      "fact": "5.11d YDS, Sport, 90 ft",
+      "retrieved_at": "2026-11-24"
+     },
+     {
+      "url": "https://rakkup.com/guidebook/index-rock-climbing/pretty-vacant/c25304",
+      "fact": "Pretty Vacant 5.11d, 3 stars",
+      "retrieved_at": "2026-11-24"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_pretty_vacant",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "pitches 0 is invalid. Mountain Project: one 90 ft bolted line lowered off rap rings (one length to one anchor). Count implied: single source, unconfirmed.",
+    "evidence": [
+     "https://www.mountainproject.com/route/108263992/pretty-vacant"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_pretty_vacant",
+    "column": "length_m",
+    "from": null,
+    "to": 27,
+    "why": "length is empty. Mountain Project: 90 ft (27 m). Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/108263992/pretty-vacant"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_pretty_vacant",
+    "column": "access",
+    "from": {
+     "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+     "notes": "Many of these peaks (Mount Persis, Gunn Peak, Baring Mountain area) sit outside designated wilderness — administratively unrestricted despite serious technical terrain.",
+     "permit": "None required.",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+     "parking_pass": "Northwest Forest Pass or America the Beautiful pass required at developed trailheads."
+    },
+    "to": {
+     "land_manager": "Washington State Parks (Forks of the Sky State Park)"
+    },
+    "why": "Brief AI/AH: copy the owner-approved State Parks object field for field from wa_godzilla (saved live row): land_manager only, permit stays null. Re-read 2026-11-24: the State Parks boundary layer returns 'Forks of the Sky, State Park Property' at the Sonic Slab (MP GPS 47.81838,-121.57175); the Snohomish County parcel there (10030000000400) is owned by Washington State Parks & Recreation; the parks.wa.gov release of 2026-03-13 (WCC donation, Forks of the Sky SP) is unchanged. Replaces the LEGACY object (Mt. Baker-Snoqualmie NF, Skykomish RD, Northwest Forest Pass, Mount Rainier NP fee line, Persis/Gunn/Baring note), which names the wrong manager.",
+    "evidence": [
+     "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.57175,47.81838&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+     "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.57175,47.81838&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,parcel_id&returnGeometry=false&f=json",
+     "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+    ]
+   }
+  ],
+  "held": [
+   "guide_stars: stored 1; the Index guide's own entry shows 3 stars. Changing an existing nonzero rating needs two sources (brief AI); reported, not changed.",
+   "bolts: MP's protection says 10 bolts plus a small piece for Terminal Preppie's roof, but comments say 3 bolts were added at the start in Aug 2021 and 2 more on a direct finish with a new anchor in Jul 2023. The current count is not stated anywhere; not proposed.",
+   "anchor: MP 'rap rings' (original finish), plus a 2023 direct-finish anchor; no house spelling fits with certainty. Not proposed.",
+   "gear: MP microcam or small nut for TP's roof (only if finishing on TP); not proposed since the 2023 direct finish may avoid it."
+  ],
+  "disputed": [],
+  "notes": "Own line, listed by both publishers; discipline sport matches MP (discipline never locks from MP alone). FA 'Greg Olsen, Darryl Cramer' matches MP. Since Jul 2023 MP comments describe a bolted direct finish to its own anchor, so it no longer has to finish on Terminal Preppie or Sonic Reducer. SAFETY (comments): a large block/chockstone in the final crack above the route was flagged in 2021 and called stable but 'tread lightly' in 2023; stored hazards are generic. ROCKFALL CHECK (brief AI): the late-November 2023 rockfall is real. MP forum thread 'Index rockfall' (Nov 29 2023 - Feb 8 2024): debris and trees came off the top of the Great Northern Slab, the trail from the toilet to Roger's Corner was taped off, one poster noted dirt patches roughly in line with the START of Sonic Reducer, and on Jan 7 2024 GNS and the Roger's Corner area were reported not climbable; GNS itself was reported not destroyed and no damaged bolts were known. No source says any Sonic Slab or Shield line was lost or changed. Terminal Preppie has a detailed MP comment dated Feb 1 2026 describing it climbed after the event. MP pages read 2026-11-24 carry no access warning. No official State Parks closure page was found either way."
+ },
+ "wa_sonic_reducer": {
+  "area": "wa_b_sonic_slab",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/106328511/sonic-reducer",
+    "https://www.mountainproject.com/area/120731224/sonic-slab",
+    "https://rakkup.com/guidebook/index-rock-climbing/sonic-reducer/c25303",
+    "https://rakkup.com/guidebook/index-rock-climbing/roger's-corner---sonic-slab/s10835",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.57175,47.81838&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.57175,47.81838&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,parcel_id&returnGeometry=false&f=json",
+    "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks",
+    "https://www.mountainproject.com/forum/message/125423151"
+   ]
+  },
+  "ledger": [],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_sonic_reducer",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "pitches 0 is invalid. Mountain Project: one 90 ft line, 7 bolts to a bolted anchor, one 60 m rope to get down (one length to one anchor). Count implied: single source, unconfirmed.",
+    "evidence": [
+     "https://www.mountainproject.com/route/106328511/sonic-reducer"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_sonic_reducer",
+    "column": "length_m",
+    "from": null,
+    "to": 27,
+    "why": "length is empty. Mountain Project: 90 ft (27 m). Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/106328511/sonic-reducer"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_sonic_reducer",
+    "column": "bolts",
+    "from": null,
+    "to": 7,
+    "why": "bolts is empty. Mountain Project protection: 7 bolts and a bolted anchor (a 2013 comment says the bolts and anchor were modernized). Stated as bolts. Single source.",
+    "evidence": [
+     "https://www.mountainproject.com/route/106328511/sonic-reducer"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_sonic_reducer",
+    "column": "access",
+    "from": {
+     "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+     "notes": "Many of these peaks (Mount Persis, Gunn Peak, Baring Mountain area) sit outside designated wilderness — administratively unrestricted despite serious technical terrain.",
+     "permit": "None required.",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+     "parking_pass": "Northwest Forest Pass or America the Beautiful pass required at developed trailheads."
+    },
+    "to": {
+     "land_manager": "Washington State Parks (Forks of the Sky State Park)"
+    },
+    "why": "Brief AI/AH: copy the owner-approved State Parks object field for field from wa_godzilla (saved live row): land_manager only, permit stays null. Re-read 2026-11-24: the State Parks boundary layer returns 'Forks of the Sky, State Park Property' at the Sonic Slab (MP GPS 47.81838,-121.57175); the Snohomish County parcel there (10030000000400) is owned by Washington State Parks & Recreation; the parks.wa.gov release of 2026-03-13 (WCC donation, Forks of the Sky SP) is unchanged. Replaces the LEGACY object (Mt. Baker-Snoqualmie NF, Skykomish RD, Northwest Forest Pass, Mount Rainier NP fee line, Persis/Gunn/Baring note), which names the wrong manager.",
+    "evidence": [
+     "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.57175,47.81838&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+     "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.57175,47.81838&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,parcel_id&returnGeometry=false&f=json",
+     "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+    ]
+   }
+  ],
+  "held": [
+   "grade: stored 5.12- matches Mountain Project; the Index guide gives 5.12a. 5.12- is not identical to 5.12a, so no grade locks and nothing changes (a 2019 MP comment also says 5.12a; a comment is not a publisher). If the owner treats 5.12- as 5.12a, the two would agree on 5.12a."
+  ],
+  "disputed": [],
+  "notes": "Own line, listed by both publishers; the guide notes it as Index's first 5.12a. guide_stars 3 matches the guide (no change). FA 'Jon Nelson, Greg Olsen, Russell Erickson' matches MP. Crux in the first three bolts. Walkin The Dog (wa_walkin_the_dog) starts 10 ft left. ROCKFALL CHECK (brief AI): the late-November 2023 rockfall is real. MP forum thread 'Index rockfall' (Nov 29 2023 - Feb 8 2024): debris and trees came off the top of the Great Northern Slab, the trail from the toilet to Roger's Corner was taped off, one poster noted dirt patches roughly in line with the START of Sonic Reducer, and on Jan 7 2024 GNS and the Roger's Corner area were reported not climbable; GNS itself was reported not destroyed and no damaged bolts were known. No source says any Sonic Slab or Shield line was lost or changed. Terminal Preppie has a detailed MP comment dated Feb 1 2026 describing it climbed after the event. MP pages read 2026-11-24 carry no access warning. No official State Parks closure page was found either way. SAFETY: this is the Sonic Slab line the forum named as in line with the 2023 debris; no later report on its start or first bolts was found."
+ },
+ "wa_beak_beak_beak": {
+  "area": "wa_cb_the_shield",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/107721460/beak-beak-beak",
+    "https://www.mountainproject.com/route/117622118/lamars-trust",
+    "https://www.mountainproject.com/area/107721455/the-shield",
+    "https://rakkup.com/guidebook/index-rock-climbing/beak!-beak!-beak!/c39267",
+    "https://rakkup.com/guidebook/index-rock-climbing/lower-town-wall/s10403",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.57175,47.81838&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.57175,47.81838&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,parcel_id&returnGeometry=false&f=json",
+    "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+   ]
+  },
+  "ledger": [],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_beak_beak_beak",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "pitches 0 is invalid. Mountain Project describes one right-facing corner climb from a flaring thin-hands start; MP's Lamar's Trust page names a Beak! Beak! Beak! anchor at its top (one length to one anchor). Count implied: single source, unconfirmed.",
+    "evidence": [
+     "https://www.mountainproject.com/route/107721460/beak-beak-beak",
+     "https://www.mountainproject.com/route/117622118/lamars-trust"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_beak_beak_beak",
+    "column": "guide_stars",
+    "from": null,
+    "to": 2,
+    "why": "guide_stars is empty. The Index guidebook's own entry (publisher's teaser page) rates Beak! Beak! Beak! 2 stars.",
+    "evidence": [
+     "https://rakkup.com/guidebook/index-rock-climbing/beak!-beak!-beak!/c39267",
+     "https://rakkup.com/guidebook/index-rock-climbing/lower-town-wall/s10403"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_beak_beak_beak",
+    "column": "gear",
+    "from": null,
+    "to": [
+     "gear to 2 in",
+     "extra thin hands"
+    ],
+    "why": "gear is empty. Mountain Project: gear to 2 in, with emphasis on thin-hands sizes. Single source (rack).",
+    "evidence": [
+     "https://www.mountainproject.com/route/107721460/beak-beak-beak"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_beak_beak_beak",
+    "column": "access",
+    "from": {
+     "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+     "notes": "Many of these peaks (Mount Persis, Gunn Peak, Baring Mountain area) sit outside designated wilderness — administratively unrestricted despite serious technical terrain.",
+     "permit": "None required.",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+     "parking_pass": "Northwest Forest Pass or America the Beautiful pass required at developed trailheads."
+    },
+    "to": {
+     "land_manager": "Washington State Parks (Forks of the Sky State Park)"
+    },
+    "why": "Brief AI/AH: copy the owner-approved State Parks object field for field from wa_godzilla (saved live row): land_manager only, permit stays null. Re-read 2026-11-24: the State Parks boundary layer returns 'Forks of the Sky, State Park Property' at the Sonic Slab (MP GPS 47.81838,-121.57175); the Snohomish County parcel there (10030000000400) is owned by Washington State Parks & Recreation; the parks.wa.gov release of 2026-03-13 (WCC donation, Forks of the Sky SP) is unchanged. Replaces the LEGACY object (Mt. Baker-Snoqualmie NF, Skykomish RD, Northwest Forest Pass, Mount Rainier NP fee line, Persis/Gunn/Baring note), which names the wrong manager.",
+    "evidence": [
+     "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.57175,47.81838&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+     "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.57175,47.81838&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,parcel_id&returnGeometry=false&f=json",
+     "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+    ]
+   }
+  ],
+  "held": [
+   "grade: stored 5.9+ matches Mountain Project; the Index guide gives 5.9. No two sources agree; left as is, not locked.",
+   "fa: MP 'unknown'; row stores none. Left null.",
+   "length: no source states one."
+  ],
+  "disputed": [],
+  "notes": "Own line on The Shield (above Princely Ambitions, right of the Dihedral Wall), listed by both publishers (guide spelling 'Beak! Beak! Beak!'). Finishes either left (original) or right on the upper part of Newest Industry (wa_newest_industry). NAME/ALT-NAME: the row's alt_names holds 'Nazi Love Camp'; neither MP nor the guide teaser shows that name, so its origin is unverified; owner may want it reviewed or removed. ROCKFALL: The Shield sits above Princely Ambitions, to the right of the 2023 rockfall zone (GNS to Roger's Corner); no source mentions it."
+ },
+ "wa_lamar_s_trust": {
+  "area": "wa_cb_the_shield",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/117622118/lamars-trust",
+    "https://www.mountainproject.com/area/107721455/the-shield",
+    "https://rakkup.com/guidebook/index-rock-climbing/lower-town-wall/s10403",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.57175,47.81838&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.57175,47.81838&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,parcel_id&returnGeometry=false&f=json",
+    "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.9+",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/117622118/lamars-trust",
+      "fact": "Lamar's Trust 5.9+ YDS, Trad",
+      "retrieved_at": "2026-11-24"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_lamar_s_trust",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "pitches 0 is invalid. Mountain Project: crack/corner to a slab, three bolts to a bolted anchor (one length to one anchor); an optional following pitch to the top of the wall is described as a separate continuation. Count implied: single source, unconfirmed.",
+    "evidence": [
+     "https://www.mountainproject.com/route/117622118/lamars-trust"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_lamar_s_trust",
+    "column": "bolts",
+    "from": null,
+    "to": 3,
+    "why": "bolts is empty. Mountain Project: pad past three bolts to a bolted anchor. Stated as bolts. Single source.",
+    "evidence": [
+     "https://www.mountainproject.com/route/117622118/lamars-trust"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_lamar_s_trust",
+    "column": "access",
+    "from": {
+     "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+     "notes": "Many of these peaks (Mount Persis, Gunn Peak, Baring Mountain area) sit outside designated wilderness — administratively unrestricted despite serious technical terrain.",
+     "permit": "None required.",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+     "parking_pass": "Northwest Forest Pass or America the Beautiful pass required at developed trailheads."
+    },
+    "to": {
+     "land_manager": "Washington State Parks (Forks of the Sky State Park)"
+    },
+    "why": "Brief AI/AH: copy the owner-approved State Parks object field for field from wa_godzilla (saved live row): land_manager only, permit stays null. Re-read 2026-11-24: the State Parks boundary layer returns 'Forks of the Sky, State Park Property' at the Sonic Slab (MP GPS 47.81838,-121.57175); the Snohomish County parcel there (10030000000400) is owned by Washington State Parks & Recreation; the parks.wa.gov release of 2026-03-13 (WCC donation, Forks of the Sky SP) is unchanged. Replaces the LEGACY object (Mt. Baker-Snoqualmie NF, Skykomish RD, Northwest Forest Pass, Mount Rainier NP fee line, Persis/Gunn/Baring note), which names the wrong manager.",
+    "evidence": [
+     "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.57175,47.81838&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+     "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.57175,47.81838&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,parcel_id&returnGeometry=false&f=json",
+     "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+    ]
+   }
+  ],
+  "held": [
+   "guide_stars: stored 1, but Lamar's Trust is not in the Index guide's Lower Town Wall list (rakkup sector page, alphabetical list) under this name. Unsupported; reported, not changed.",
+   "fa: stored 'Gregs Mckenna and Olsen' is MP's exact text (no year); never locks from MP. A cleaner spelling would be a reformat with no new fact; left.",
+   "anchor: MP 'bolted anchor'; no house spelling confirmed for it. Not proposed.",
+   "length: not stated anywhere."
+  ],
+  "disputed": [],
+  "notes": "Own line just left of Beak! Beak! Beak! (wa_beak_beak_beak); its anchor can be skipped by moving right to Beak's anchor. MP only (shared 2019); not in the guide teaser list. SAFETY: MP's own description warns the bolts may still be old 1/4 in bolts and the route may be scruffy; the stored hazard line mentions corroded-bolt history generally. ROCKFALL: The Shield is right of the 2023 rockfall zone; no source mentions it."
+ }
+}

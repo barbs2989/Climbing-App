@@ -407,7 +407,7 @@ export default function NearMePanel({ center0, areaType, name, onBack, onOpenAre
     try {
       if (p.bbox) map.fitBounds(p.bbox, { maxZoom: 13 }); else map.setView([p.lat, p.lng], 12);
       if (placeMarkRef.current) map.removeLayer(placeMarkRef.current);
-      const html = "<div style='width:16px;height:16px;border-radius:50%;background:" + C.blueSolid + ";border:3px solid #fff;box-shadow:0 0 0 4px " + C.blueSolid + "55,0 2px 7px rgba(0,0,0,0.6);'></div>";
+      const html = "<div style='width:16px;height:16px;border-radius:50%;background:" + C.actionSolid + ";border:3px solid #fff;box-shadow:0 0 0 4px " + C.actionSolid + "55,0 2px 7px rgba(0,0,0,0.6);'></div>";
       placeMarkRef.current = L.marker([p.lat, p.lng], { icon: L.divIcon({ html, className: "", iconSize: [16, 16], iconAnchor: [8, 8] }), zIndexOffset: 1000 }).bindTooltip(p.name, { direction: "top", permanent: true }).addTo(map);
     } catch (e) { /* the map is gone or not laid out yet; nothing to update */ }
   };
@@ -446,7 +446,7 @@ export default function NearMePanel({ center0, areaType, name, onBack, onOpenAre
     <>
         <form onSubmit={findPlace} role="search" style={{ display: "flex", gap: 6, marginBottom: place.err || place.alts.length ? 4 : 8 }}>
           <div style={{ position: "relative", flex: 1, minWidth: 0 }}><input type="search" value={placeQ} onChange={e => setPlaceQ(e.target.value)} placeholder="Go to a town, county or zip/postal code" aria-label="Go to a town, county or zip/postal code" enterKeyHint="search" style={{ width: "100%", boxSizing: "border-box", padding: "10px 40px 10px 12px", borderRadius: 10, border: "1px solid " + C.field, background: C.surface, color: C.text, fontSize: 16 }} />{placeQ ? <button type="button" onClick={() => setPlaceQ("")} aria-label="Clear search" style={{ ...POP_REMOVE, position: "absolute", right: 10, top: "50%", transform: "translateY(-50%)" }}>✕</button> : null}</div>
-          <button type="submit" disabled={!placeQ.trim() || place.busy} style={{ ...BTN, background: C.blueSolid, color:C.onSolid, border: "none", flexShrink: 0, opacity: !placeQ.trim() || place.busy ? 0.6 : 1 }}>{place.busy ? "Finding…" : "Go"}</button>
+          <button type="submit" disabled={!placeQ.trim() || place.busy} style={{ ...BTN, background: C.actionSolid, color:C.onSolid, border: "none", flexShrink: 0, opacity: !placeQ.trim() || place.busy ? 0.6 : 1 }}>{place.busy ? "Finding…" : "Go"}</button>
         </form>
         {place.err ? <div role="status" style={{ color: C.red, fontSize: 12, marginBottom: 8 }}>{place.err}</div> : null}
         {place.alts.length ? (
@@ -470,7 +470,7 @@ export default function NearMePanel({ center0, areaType, name, onBack, onOpenAre
       {/* WHERE AM I, on the map itself, as the route map has it: bottom-right, above the tile
           credit, in full screen too. It used to be a full-width button above the map, which full
           screen hid. */}
-      <button onClick={locate} disabled={locating} aria-label="Show my location on the map" style={{ position: "absolute", bottom: 26, right: 10, zIndex: 1000, background: C.blueSolid, color:C.onSolid, border: "none", borderRadius: 9, padding: "9px 12px", fontSize: 12.5, fontWeight: 700, cursor: locating ? "default" : "pointer", boxShadow: "0 2px 8px rgba(0,0,0,0.4)" }}><span style={{ display: "inline-flex", alignItems: "center", gap: 5 }}><ActionIcon name="pin" size={14} color="currentColor" />{locateLabel(me, "Me")}</span></button>
+      <button onClick={locate} disabled={locating} aria-label="Show my location on the map" style={{ position: "absolute", bottom: 26, right: 10, zIndex: 1000, background: C.actionSolid, color:C.onSolid, border: "none", borderRadius: 9, padding: "9px 12px", fontSize: 12.5, fontWeight: 700, cursor: locating ? "default" : "pointer", boxShadow: "0 2px 8px rgba(0,0,0,0.4)" }}><span style={{ display: "inline-flex", alignItems: "center", gap: 5 }}><ActionIcon name="pin" size={14} color="currentColor" />{locateLabel(me, "Me")}</span></button>
     </div>
   );
   // The tapped circle's areas, nearest the middle of the map first.
@@ -485,11 +485,15 @@ export default function NearMePanel({ center0, areaType, name, onBack, onOpenAre
       <div style={{ flex: 1, minHeight: 0, overflowY: "auto", overscrollBehavior: "contain", padding: "6px 8px 0" }}>
         {pickRows.map(a => {
           const open = !!onOpenRoute && (pickRows.length === 1 || !!climbsOpen[a.id]);
-          const openRoute = open ? onOpenRoute : undefined;
+          // LEAVING THE MAP CLOSES FULL SCREEN FIRST (owner 2026-11-24: on the website a climb picked here
+          // opened only after pressing Back). Full screen is a portal on document.body, and this panel
+          // stays MOUNTED (hidden) under an open route, so the map went on covering the route page.
+          const openRoute = open && onOpenRoute ? (r: RouteRowRoute) => { setView3d(false); setFullscreen(false); onOpenRoute(r); } : undefined;
+          const openArea = () => { setView3d(false); setFullscreen(false); onOpenArea(a); };
           const wl = wlByArea[a.id] || 0;
           return <div key={a.id} style={{ marginBottom: 6 }}>
             <div style={{ display: "flex", alignItems: "stretch", gap: 6 }}>
-              <div {...clickable(() => onOpenArea(a))} style={{ flex: 1, minWidth: 0, background: C.card, border: "1px solid " + (wl ? C.amber : C.border), borderRadius: 10, padding: "10px 12px", cursor: "pointer", display: "flex", justifyContent: "space-between", alignItems: "center", gap: 10 }}>
+              <div {...clickable(openArea)} style={{ flex: 1, minWidth: 0, background: C.card, border: "1px solid " + (wl ? C.amber : C.border), borderRadius: 10, padding: "10px 12px", cursor: "pointer", display: "flex", justifyContent: "space-between", alignItems: "center", gap: 10 }}>
                 <span style={{ minWidth: 0 }}>
                   <span style={{ display: "block", fontWeight: 700, fontSize: 14, color: C.text, overflowWrap: "anywhere" }}>{a.name}</span>
                   {wl ? <span style={{ display: "block", fontSize: 11.5, fontWeight: 700, color: C.amber }}>{onList(wl)}</span> : null}
@@ -498,7 +502,7 @@ export default function NearMePanel({ center0, areaType, name, onBack, onOpenAre
               </div>
               {onOpenRoute && pickRows.length > 1 && a.route_count > 0 ? <button onClick={() => setClimbsOpen(o => ({ ...o, [a.id]: !o[a.id] }))} aria-expanded={open} aria-label={(open ? "Hide" : "Show") + " the climbs at " + a.name} style={{ ...CHIP, flexShrink: 0, minHeight: 44, border: "1px solid " + (open ? C.blue : C.border), background: open ? C.blueBg : C.surface, color: open ? C.onSolid : C.blue, fontSize: 12, fontWeight: 700, cursor: "pointer" }}>{open ? "Hide" : "Climbs"}</button> : null}
             </div>
-            {openRoute && a.route_count > 0 ? <MapAreaClimbs area={a} onOpenRoute={openRoute} onOpenArea={() => onOpenArea(a)} C={C} /> : null}
+            {openRoute && a.route_count > 0 ? <MapAreaClimbs area={a} onOpenRoute={openRoute} onOpenArea={openArea} C={C} /> : null}
           </div>;
         })}
       </div>

@@ -15,7 +15,7 @@ export interface BarProps {
 export default function Bar({ val, max, color, h }: BarProps) {
   return (
     <div style={{ background: C.border, borderRadius: 3, overflow: "hidden", height: h || 6 }}>
-      <div style={{ width: `${Math.min(100, (val / (max || 100)) * 100)}%`, height: "100%", background: color || C.blueSolid, borderRadius: 3, transition: "width .4s" }} />
+      <div style={{ width: `${Math.min(100, (val / (max || 100)) * 100)}%`, height: "100%", background: color || C.actionSolid, borderRadius: 3, transition: "width .4s" }} />
     </div>
   );
 }
