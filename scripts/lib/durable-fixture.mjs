@@ -18,6 +18,7 @@ import { POLICY_VERSION } from "../../lib/policy.js";
 // Re-exported from ui-fixture so the two modes cannot disagree about the storage contract.
 // Safe to import now that its service-key lookup is lazy.
 export { sessionForStorage, STORAGE_KEY } from "./ui-fixture.mjs";
+import { fixtureCrewDays } from "./ui-fixture.mjs";
 
 const ANON = anonKey();
 
@@ -290,6 +291,35 @@ export async function durableFixture(log) {
     }
   }
 
+  // THE DURABLE CREW'S DAYS ARE MOVED FORWARD ON EVERY RUN. It was seeded once
+  // (scripts/oneoff/seed-ci-test-fixture.mjs) proposing 2026-09-12 and -13, and it is the crew the
+  // walk's roster and chat assertions are about. Since #3816 a crew whose last proposed day is
+  // more than 14 days behind is a PAST crew, so on 2026-11-24 this account's Crews tab read "You
+  // have no crews yet" and check:signed-in failed on four lines with the app correct. Same reason
+  // as the policy stamp and the disciplines above: these rows are permanent, so "is an active
+  // crew" has to KEEP being true. Written by the crew's own CREATOR on their own JWT (the update
+  // policy is created_by = auth.uid()), read back, and only when its last day is under a week out.
+  {
+    const DURABLE_CREW_MEET = "Heliotrope Ridge TH";
+    const got = await asUser(session, `crews?route_id=eq.${CREW_ROUTE_ID}&meet_place=eq.${encodeURIComponent(DURABLE_CREW_MEET)}&select=id,created_by,dates`);
+    assertHealthy(got, "reading the durable crew's days");
+    const rows = Array.isArray(got.json) ? got.json : [];
+    if (!rows.length) throw new Error("the durable crew (North Ridge, " + DURABLE_CREW_MEET + ") is not readable by the owner — re-run scripts/oneoff/seed-ci-test-fixture.mjs");
+    const soon = fixtureCrewDays(1, new Date(Date.now() - 14 * 86400000))[0]; // = a week from today
+    for (const c of rows) {
+      const last = (c.dates || []).map((d) => String(d).slice(0, 10)).sort().pop() || "";
+      if (last >= soon) continue;
+      const by = c.created_by === session.user.id ? session : c.created_by === mateSession.user.id ? mateSession : null;
+      if (!by) throw new Error(`the durable crew ${c.id} belongs to neither fixture account, so nobody here may move its days`);
+      const days = fixtureCrewDays(2);
+      const up = await asUser(by, `crews?id=eq.${c.id}&select=id,dates`, { method: "PATCH", body: JSON.stringify({ dates: days }) });
+      assertHealthy(up, "moving the durable crew's days forward");
+      const now = (up.json?.[0]?.dates || []).map((d) => String(d).slice(0, 10));
+      if (up.status >= 300 || now.join() !== days.join()) throw new Error(`could not move the durable crew's days forward (HTTP ${up.status}): ${(up.text || "").slice(0, 200)}`);
+      log(`  moved the durable crew's days forward (${last || "none"} -> ${days.join(", ")}): a crew whose last day is 14 days behind is a past crew (#3816)`);
+    }
+  }
+
   const mk = await asUser(session, "groups", {
     method: "POST",
     body: JSON.stringify({
@@ -355,7 +385,7 @@ export async function durableFixture(log) {
   const mkCrew = await asUser(mateSession, "crews", {
     method: "POST",
     body: JSON.stringify({
-      created_by: mateSession.user.id, route_id: CREW_ROUTE_ID, dates: ["2026-10-04"],
+      created_by: mateSession.user.id, route_id: CREW_ROUTE_ID, dates: fixtureCrewDays(1),
       meet_place: "Coleman Deming TH", meet_time: "05:00", cap: 3,
     }),
   });
@@ -396,7 +426,7 @@ export async function durableFixture(log) {
     method: "POST",
     body: JSON.stringify({
       created_by: mateSession.user.id, route_id: null, area_id: AREA_CREW_AREA_ID, discipline: "sport",
-      dates: ["2026-10-05"], meet_place: "Lower lot", meet_time: "09:00", cap: 3,
+      dates: fixtureCrewDays(1), meet_place: "Lower lot", meet_time: "09:00", cap: 3,
     }),
   });
   assertHealthy(mkArea, "creating this run's area crew");

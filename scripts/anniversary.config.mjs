@@ -15,7 +15,7 @@
 // `logs`, a path #2789 legitimately closed -- the guard went red with the feature intact. A
 // real climber's `logs` are filled from their climb_logs rows by the hydration effect, so the
 // probe goes in there: a uid is forced (as zero-state.config.mjs does), and one synthetic row
-// is prepended to what useUserLogs(uid) returns. The path held is therefore the shipping
+// is prepended to what useMyLogs(uid) returns (the own-logs reader since #3787). The path held is therefore the shipping
 // one: climb_logs row -> hydration -> logs -> _anniv -> mergedNotifs -> the screen.
 //
 // Does not ship. Only ever passed via `vite --config`.
@@ -25,8 +25,8 @@ import { buildOpener, lazyChunks, routeDetailTransform } from "./lib/overlay-sca
 
 const OPENER_ANCHOR = "  const prevUidRef=useRef(uid);";
 const UID_ANCHOR = "const uid=(USE_DB&&session&&session.user)?session.user.id:null;";
-const LOGS_Q_ANCHOR = "const myLogsQ=useUserLogs(uid);";
-// A VALID uuid, unlike zero-state's: useUserLogs filters climb_logs on it, and a malformed
+const LOGS_Q_ANCHOR = "const myLogsQ=useMyLogs(uid);";
+// A VALID uuid, unlike zero-state's: useMyLogs filters climb_logs on it, and a malformed
 // one makes PostgREST answer 400, the query errors, and no hydration runs at all. A real
 // uuid that owns nothing answers [] -- an account with no logs but the probe.
 export const PROBE_UID = "00000000-0000-4000-8000-00000000a771";
@@ -88,7 +88,7 @@ function anniversaryScaffold() {
       // window.__annivLogsQ says whether that read has answered: the probe is prepended only once it
       // has, so "no anniversary" with the read still pending is a database that did not answer, not a
       // severed feed. check-anniversary.mjs waits on it and names it when it fails.
-      out = out.replace(LOGS_Q_ANCHOR, "const _myLogsQ=useUserLogs(uid);if(typeof window!==\"undefined\")window.__annivLogsQ=_myLogsQ.isError?\"error\":(_myLogsQ.data?\"data\":\"pending\");const _annivData=useMemo(()=>(_myLogsQ.data||_myLogsQ.isError)?[" + JSON.stringify(row) + "].concat(_myLogsQ.data||[]):undefined,[_myLogsQ.data,_myLogsQ.isError]);const myLogsQ=Object.assign({},_myLogsQ,{data:_annivData});");
+      out = out.replace(LOGS_Q_ANCHOR, "const _myLogsQ=useMyLogs(uid);if(typeof window!==\"undefined\")window.__annivLogsQ=_myLogsQ.isError?\"error\":(_myLogsQ.data?\"data\":\"pending\");const _annivData=useMemo(()=>(_myLogsQ.data||_myLogsQ.isError)?[" + JSON.stringify(row) + "].concat(_myLogsQ.data||[]):undefined,[_myLogsQ.data,_myLogsQ.isError]);const myLogsQ=Object.assign({},_myLogsQ,{data:_annivData});");
       return out;
     },
   };
