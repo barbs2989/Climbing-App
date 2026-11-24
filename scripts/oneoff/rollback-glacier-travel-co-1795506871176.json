@@ -1,0 +1,24 @@
+[
+ {
+  "id": "co_birds_of_fire",
+  "before": {
+   "glacier_travel": "no",
+   "snow_in_season": null
+  },
+  "after": {
+   "glacier_travel": "no",
+   "snow_in_season": "yes"
+  }
+ },
+ {
+  "id": "co_pyramid_peak_northeast_ridge",
+  "before": {
+   "glacier_travel": null,
+   "snow_in_season": "no"
+  },
+  "after": {
+   "glacier_travel": "no",
+   "snow_in_season": "no"
+  }
+ }
+]

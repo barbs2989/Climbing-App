@@ -45,8 +45,8 @@ export default function SummitLegsCard({route,calc}: SummitLegsCardProps){
   const upTimed=pt.approachTimed||pt.climbTimed||pt.climbToStartH>0;
   const legs: Leg[]=pt.publishedIsWholeDay
     ?[["CAR TO CAR",[gainFt?["Gain","↑ "+uElev(gainFt)]:null,upLoss?["Loss on the way in",upLoss[1]]:null,downGain?["Regain on the way out",downGain[1]]:null,hasKm?["Distance",fmtLegKm(outBack&&!whole?km*2:km)]:null,pt.anyTimed?["Time",fmtLegHrs(pt.tripH,upFloor||downFloor)]:null]]]
-    :[["TRAILHEAD TO "+top.toUpperCase(),[legGainFt?["Gain","↑ "+uElev(legGainFt)]:null,upLoss,legKm?["Distance","~"+fmtLegKm(legKm)]:null,upTimed?["Time",fmtLegHrs(pt.totalH,upFloor)]:null]],
-      [top.toUpperCase()+" TO TRAILHEAD",[legKm?["Distance","~"+fmtLegKm(legKm)]:null,legKm&&dropFt?["Drop","↓ "+uElev(dropFt)]:null,downGain,pt.descentTimed?["Time",fmtLegHrs(pt.downH,downFloor)]:null]]];
+    :[[(pt.upFromCamp?"CAMP":"TRAILHEAD")+" TO "+top.toUpperCase(),[legGainFt?["Gain","↑ "+uElev(legGainFt)]:null,upLoss,legKm?["Distance","~"+fmtLegKm(legKm)]:null,upTimed?["Time",fmtLegHrs(pt.totalH,upFloor)]:null]],
+      [top.toUpperCase()+(pt.downToCamp?" TO CAMP":" TO TRAILHEAD"),[legKm?["Distance","~"+fmtLegKm(legKm)]:null,legKm&&dropFt?["Drop","↓ "+uElev(dropFt)]:null,downGain,pt.descentTimed?["Time",fmtLegHrs(pt.downH,downFloor)]:null]]];
   const shown=legs.map(function(l): [string, LegStat[]] {return [l[0],l[1].filter(function(s): s is LegStat {return s!==null;})];}).filter(function(l){return l[1].length;});
   if(!shown.length)return null;
   const days=itinDayCount(route);

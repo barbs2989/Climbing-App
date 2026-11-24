@@ -113,7 +113,7 @@ function RejectBox({ busy, onConfirm, onCancel }) {
     <textarea value={note} onChange={e => setNote(e.target.value)} rows={2}
       aria-label="Why this proposal is turned down"
       placeholder="Why? The climber is shown this (at least 10 characters)"
-      style={{ width: "100%", background: C.surface, color: C.text, border: "1px solid " + C.border, borderRadius: 8, padding: "7px 9px", fontSize: 12.5, fontFamily: "inherit", resize: "vertical", boxSizing: "border-box" }} />
+      style={{ width: "100%", background: C.surface, color: C.text, border: "1px solid " + C.field, borderRadius: 8, padding: "7px 9px", fontSize: 12.5, fontFamily: "inherit", resize: "vertical", boxSizing: "border-box" }} />
     <label style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 12.5, color: C.textSub, marginTop: 6, minHeight: 44, cursor: "pointer" }}>
       <input type="checkbox" checked={mistake} onChange={e => setMistake(e.target.checked)} style={{ width: 18, height: 18 }} />
       Honest mistake: no strike
@@ -300,7 +300,7 @@ export function AreaPlacementQueue() {
           <Row label="Submitted">{r.created_at ? String(r.created_at).slice(0, 10) : null}</Row>
           <Row label="By">{r.contributor ? String(r.contributor).slice(0, 8) : "anonymous"}</Row>
           <textarea value={note[r.id] || ""} onChange={e => setNote({ ...note, [r.id]: e.target.value })} rows={2} aria-label="Note kept with this claim (optional)" placeholder="Note kept on the record (optional)"
-            style={{ width: "100%", boxSizing: "border-box", marginTop: 8, background: C.surface, color: C.text, border: "1px solid " + C.border, borderRadius: 8, padding: "7px 9px", fontSize: 12.5, fontFamily: "inherit", resize: "vertical" }} />
+            style={{ width: "100%", boxSizing: "border-box", marginTop: 8, background: C.surface, color: C.text, border: "1px solid " + C.field, borderRadius: 8, padding: "7px 9px", fontSize: 12.5, fontFamily: "inherit", resize: "vertical" }} />
           <div style={{ display: "flex", gap: 12, marginTop: 9 }}>
             <button onClick={() => resolve(r.id, "approved")} disabled={busy} style={{ flex: 1, padding: 9, background: busy ? C.surface : C.blueSolid, color: busy ? C.textMuted : C.onSolid, border: busy ? "1px solid " + C.border : "none", borderRadius: 8, fontSize: 12.5, fontWeight: 700, cursor: busy ? "default" : "pointer" }}>Moved it</button>
             <button onClick={() => resolve(r.id, "rejected")} disabled={busy} style={{ flex: 1, padding: 9, background: C.surface, color: C.textSub, border: "1px solid " + C.border, borderRadius: 8, fontSize: 12.5, cursor: busy ? "default" : "pointer" }}>Not wrong</button>
