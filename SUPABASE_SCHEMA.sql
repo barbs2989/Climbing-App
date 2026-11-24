@@ -9,7 +9,7 @@
 -- and commit the result in the same PR. `npm run gen:schema -- --check` exits 1 when this
 -- file has drifted from the live database.
 --
--- Counts: 87 tables, 871 columns, 474 keyed/checked constraints (152 foreign keys), 259 RLS policies.
+-- Counts: 90 tables, 887 columns, 489 keyed/checked constraints (158 foreign keys), 259 RLS policies.
 -- Not covered here: views, functions, triggers, standalone indexes (see supabase/migrations/).
 
 -- ── Foreign keys ───────────────────────────────────────────────────────────────
@@ -51,6 +51,8 @@
 -- conversation_state (conversation_state_user_id_fkey): FOREIGN KEY (user_id) REFERENCES profiles(id) ON DELETE CASCADE
 -- crew_day_acks (crew_day_acks_crew_id_fkey): FOREIGN KEY (crew_id) REFERENCES crews(id) ON DELETE CASCADE
 -- crew_day_acks (crew_day_acks_user_id_fkey): FOREIGN KEY (user_id) REFERENCES profiles(id) ON DELETE CASCADE
+-- crew_departures (crew_departures_crew_id_fkey): FOREIGN KEY (crew_id) REFERENCES crews(id) ON DELETE CASCADE
+-- crew_departures (crew_departures_user_id_fkey): FOREIGN KEY (user_id) REFERENCES profiles(id) ON DELETE CASCADE
 -- crew_email_invites (crew_email_invites_claimed_by_fkey): FOREIGN KEY (claimed_by) REFERENCES auth.users(id) ON DELETE SET NULL
 -- crew_email_invites (crew_email_invites_crew_id_fkey): FOREIGN KEY (crew_id) REFERENCES crews(id) ON DELETE CASCADE
 -- crew_email_invites (crew_email_invites_invited_by_fkey): FOREIGN KEY (invited_by) REFERENCES auth.users(id) ON DELETE CASCADE
@@ -67,6 +69,10 @@
 -- crew_rides (crew_rides_user_id_fkey): FOREIGN KEY (user_id) REFERENCES profiles(id) ON DELETE CASCADE
 -- crew_safety_answers (crew_safety_answers_crew_id_fkey): FOREIGN KEY (crew_id) REFERENCES crews(id) ON DELETE CASCADE
 -- crew_safety_answers (crew_safety_answers_user_id_fkey): FOREIGN KEY (user_id) REFERENCES auth.users(id) ON DELETE CASCADE
+-- crew_trip_replies (crew_trip_replies_report_id_fkey): FOREIGN KEY (report_id) REFERENCES crew_trip_reports(id) ON DELETE CASCADE
+-- crew_trip_reports (crew_trip_reports_about_id_fkey): FOREIGN KEY (about_id) REFERENCES profiles(id) ON DELETE CASCADE
+-- crew_trip_reports (crew_trip_reports_crew_id_fkey): FOREIGN KEY (crew_id) REFERENCES crews(id) ON DELETE SET NULL
+-- crew_trip_reports (crew_trip_reports_reporter_id_fkey): FOREIGN KEY (reporter_id) REFERENCES profiles(id) ON DELETE CASCADE
 -- crews (crews_area_id_fkey): FOREIGN KEY (area_id) REFERENCES areas(id)
 -- crews (crews_created_by_fkey): FOREIGN KEY (created_by) REFERENCES profiles(id) ON DELETE CASCADE
 -- crews (crews_itinerary_by_fkey): FOREIGN KEY (itinerary_by) REFERENCES profiles(id) ON DELETE SET NULL
@@ -714,6 +720,17 @@ CREATE POLICY "members ack their own day" ON public.crew_day_acks AS PERMISSIVE 
   WHERE ((m.crew_id = crew_day_acks.crew_id) AND (m.user_id = ( SELECT auth.uid() AS uid)) AND (m.status = 'confirmed'::text))))));
 CREATE POLICY "members un-ack their own day" ON public.crew_day_acks AS PERMISSIVE FOR DELETE TO public USING ((( SELECT auth.uid() AS uid) = user_id));
 
+CREATE TABLE public.crew_departures (
+  crew_id uuid NOT NULL,
+  user_id uuid NOT NULL,
+  left_at timestamp with time zone NOT NULL DEFAULT now(),
+  agreed_date date NOT NULL,
+  CONSTRAINT crew_departures_pkey PRIMARY KEY (crew_id, user_id),
+  CONSTRAINT crew_departures_crew_id_fkey FOREIGN KEY (crew_id) REFERENCES crews(id) ON DELETE CASCADE,
+  CONSTRAINT crew_departures_user_id_fkey FOREIGN KEY (user_id) REFERENCES profiles(id) ON DELETE CASCADE
+);
+ALTER TABLE public.crew_departures ENABLE ROW LEVEL SECURITY;
+
 CREATE TABLE public.crew_email_invites (
   id uuid NOT NULL DEFAULT gen_random_uuid(),
   crew_id uuid NOT NULL,
@@ -873,6 +890,38 @@ CREATE POLICY "own safety answers read" ON public.crew_safety_answers AS PERMISS
 CREATE POLICY "own safety answers update" ON public.crew_safety_answers AS PERMISSIVE FOR UPDATE TO public USING ((user_id = ( SELECT auth.uid() AS uid))) WITH CHECK (((user_id = ( SELECT auth.uid() AS uid)) AND (EXISTS ( SELECT 1
    FROM crew_members m
   WHERE ((m.crew_id = crew_safety_answers.crew_id) AND (m.user_id = ( SELECT auth.uid() AS uid)) AND (m.status = 'confirmed'::text))))));
+
+CREATE TABLE public.crew_trip_replies (
+  report_id uuid NOT NULL,
+  reply text NOT NULL,
+  note text,
+  created_at timestamp with time zone NOT NULL DEFAULT now(),
+  CONSTRAINT crew_trip_replies_pkey PRIMARY KEY (report_id),
+  CONSTRAINT crew_trip_replies_note_len CHECK (((note IS NULL) OR (char_length(note) <= 280))),
+  CONSTRAINT crew_trip_replies_note_needed CHECK (((reply <> 'note'::text) OR ((note IS NOT NULL) AND (char_length(btrim(note)) > 0)))),
+  CONSTRAINT crew_trip_replies_reply CHECK ((reply = ANY (ARRAY['was_there'::text, 'note'::text]))),
+  CONSTRAINT crew_trip_replies_report_id_fkey FOREIGN KEY (report_id) REFERENCES crew_trip_reports(id) ON DELETE CASCADE
+);
+ALTER TABLE public.crew_trip_replies ENABLE ROW LEVEL SECURITY;
+
+CREATE TABLE public.crew_trip_reports (
+  id uuid NOT NULL DEFAULT gen_random_uuid(),
+  crew_id uuid,
+  reporter_id uuid NOT NULL,
+  about_id uuid,
+  trip_date date NOT NULL,
+  outcome text NOT NULL,
+  created_at timestamp with time zone NOT NULL DEFAULT now(),
+  updated_at timestamp with time zone NOT NULL DEFAULT now(),
+  CONSTRAINT crew_trip_reports_pkey PRIMARY KEY (id),
+  CONSTRAINT crew_trip_reports_not_self CHECK (((about_id IS NULL) OR (about_id <> reporter_id))),
+  CONSTRAINT crew_trip_reports_outcome CHECK ((outcome = ANY (ARRAY['on_time'::text, 'late'::text, 'cancelled_early'::text, 'cancelled_late'::text, 'no_show'::text, 'called_off'::text]))),
+  CONSTRAINT crew_trip_reports_shape CHECK (((outcome = 'called_off'::text) = (about_id IS NULL))),
+  CONSTRAINT crew_trip_reports_about_id_fkey FOREIGN KEY (about_id) REFERENCES profiles(id) ON DELETE CASCADE,
+  CONSTRAINT crew_trip_reports_crew_id_fkey FOREIGN KEY (crew_id) REFERENCES crews(id) ON DELETE SET NULL,
+  CONSTRAINT crew_trip_reports_reporter_id_fkey FOREIGN KEY (reporter_id) REFERENCES profiles(id) ON DELETE CASCADE
+);
+ALTER TABLE public.crew_trip_reports ENABLE ROW LEVEL SECURITY;
 
 CREATE TABLE public.crews (
   id uuid NOT NULL DEFAULT gen_random_uuid(),
