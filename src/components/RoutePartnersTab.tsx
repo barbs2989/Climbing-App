@@ -53,7 +53,8 @@ export interface RoutePartnersTabProps {
   dbCrews?: PartnersTabCrew[] | null;
   /** "friends", "in", "out" or none, for a climber id. */
   friendState: (id: string | number) => string | null | undefined;
-  mtn: { name?: string | null };
+  /** The route’s place; `_unnamed` when RouteDetail fell back to "this area" (no catalog or seed name). */
+  mtn: { name?: string | null; _unnamed?: boolean };
   onConnect: (c: PartnersTabPerson) => void;
   onFindPartners?: (() => void) | null;
   onFindPartnersInArea?: ((area: { id: string | undefined; name: string; areaType?: string; asPeak?: boolean }) => void) | null;
@@ -118,7 +119,7 @@ export default function RoutePartnersTab({_listedHere,_raRes,areaLimit,_rpObj,_r
   /* SIGNED IN, THE TAB IS REAL CLIMBERS AND REAL CREWS ONLY (owner's standing rule, applied here 2026-11-23): the example
      crews and example climber cards rendered beside a real account's own data. A guest and the no-database demo keep them. */
   const signedIn=!!(USE_DB&&who);
-  const _an=mtn.name||"this crag";
+  const _an=(!mtn._unnamed&&mtn.name)||"this crag";
   const day=function(d: string){return new Date(d+"T12:00").toLocaleDateString(DLOCALE,{month:"short",day:"numeric"});};
   /* CURRENT CREWS (owner, 2026-11-23): ONE section, always drawn, in place of "Crews on this climb" and "Sessions at <crag>",
      which appeared only when a crew existed and left your own crews out. Yours first, then every open crew on this route and,
@@ -158,7 +159,7 @@ export default function RoutePartnersTab({_listedHere,_raRes,areaLimit,_rpObj,_r
         {cragOnly?<div>
           {/* A CRAG route (0300): partners are the climbers listed at this crag, inside it, or across a wider area that contains it — found by AREA, never by this one route. */}
           <SL>{"Climbers at "+_an}</SL>
-          {signedIn?<div style={{marginBottom:12}}><div style={{display:"flex",gap:8,marginBottom:10}}><button onClick={()=>onListMe&&onListMe({areaId:route.mountainId,name:mtn.name||"",areaType:(route._dbArea||{}).areaType,disciplines:[catOf(route)]})} aria-pressed={_listedHere} style={{...BTN,flex:1,background:_listedHere?C.greenBg:C.blueBg,color:_listedHere?C.green:"#fff",border:"1px solid "+(_listedHere?C.green:C.blueDim)}}>{_listedHere?"Listed at "+_an+" ✓ · edit":"List me at "+_an}</button><button onClick={()=>onFindPartnersInArea&&onFindPartnersInArea({id:route.mountainId,name:mtn.name||"",areaType:(route._dbArea||{}).areaType})} style={{...BTN,flex:1,background:C.surface,color:C.textSub,border:"1px solid "+C.border}}>{"See all at "+_an}</button></div>
+          {signedIn?<div style={{marginBottom:12}}>{/* No named place, no place to list yourself: the buttons wrote and searched a place called "this area" (review of #3845). */mtn._unnamed?<div style={{fontSize:12,color:C.textMuted,lineHeight:1.5,padding:"2px 2px 10px"}}>This climb isn’t filed under a named crag yet, so there’s no place to list yourself here.</div>:<div style={{display:"flex",gap:8,marginBottom:10}}><button onClick={()=>onListMe&&onListMe({areaId:route.mountainId,name:mtn.name||"",areaType:(route._dbArea||{}).areaType,disciplines:[catOf(route)]})} aria-pressed={_listedHere} style={{...BTN,flex:1,background:_listedHere?C.greenBg:C.blueBg,color:_listedHere?C.green:"#fff",border:"1px solid "+(_listedHere?C.green:C.blueDim)}}>{_listedHere?"Listed at "+_an+" ✓ · edit":"List me at "+_an}</button><button onClick={()=>onFindPartnersInArea&&onFindPartnersInArea({id:route.mountainId,name:mtn.name||"",areaType:(route._dbArea||{}).areaType})} style={{...BTN,flex:1,background:C.surface,color:C.textSub,border:"1px solid "+C.border}}>{"See all at "+_an}</button></div>}
             {_raRes.isLoading?<div style={{fontSize:12,color:C.textMuted,padding:"6px 2px"}}>{"Finding climbers at "+_an+"…"}</div>:_raRes.error?<div style={{fontSize:12,color:C.amber,lineHeight:1.5,padding:"6px 2px"}}>Couldn’t load the climbers listed here — check your connection and try again.</div>:areaPartners.length?<div>{areaPartners.map(areaCard)}<div style={{fontSize:11.5,color:C.textMuted,marginTop:2,lineHeight:1.5}}>{"Listed at "+_an+" or an area containing it."}</div></div>:<div style={{fontSize:12,color:C.textMuted,lineHeight:1.5,padding:"6px 2px"}}>{_listedHere?"No one else is listed at "+_an+" yet.":"Nobody is listed at "+_an+" yet — list yourself and climbers searching it can find you."}</div>}
           </div>:<div style={{fontSize:12,color:C.textMuted,lineHeight:1.5,padding:"6px 2px",marginBottom:12}}>Sign in to see who climbs here, and to list yourself.</div>}
         </div>:<SL>{"Find a partner for this "+noun}</SL>}
