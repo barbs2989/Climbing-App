@@ -470,11 +470,12 @@
   "peak": "Mt Owen",
   "discipline": "alpine",
   "kindToday": "glacier",
-  "glacier": "unsure",
+  "glacier": "yes",
   "snowInSeason": "yes",
   "basis": "text",
   "why": "Passes the glacier end and an upper snowfield; crampons normal.",
-  "verified": true
+  "verified": true,
+  "research": "yes/yes: The park's own 2020 rescue release has a climber descending the Koven Route fall into a crevasse while crossing the Teton Glacier, and tells climbers to expect crevasses there."
  },
  {
   "id": "wy_lookin_for_trouble",
@@ -868,12 +869,13 @@
   "peak": "Warrior 1",
   "discipline": "alpine",
   "kindToday": "alpinerock",
-  "glacier": "unsure",
+  "glacier": "no",
   "snowInSeason": "unsure",
   "basis": "text",
   "why": "Approach up snowfields without season detail.",
   "verified": true,
-  "secondReview": "no/unsure: Warrior 1 is a Wind River cirque rock peak without a glacier, and the approach climbs snowfields whose lingering is not stated."
+  "secondReview": "no/unsure: Warrior 1 is a Wind River cirque rock peak without a glacier, and the approach climbs snowfields whose lingering is not stated.",
+  "research": "no/unsure: Page describes a snowfield approach to a rock crack on Warrior 1 and mentions no glacier."
  },
  {
   "id": "wy_the_grand_traverse",
@@ -893,12 +895,13 @@
   "peak": "Triple Traverse, The",
   "discipline": "alpine",
   "kindToday": "alpinerock",
-  "glacier": "unsure",
+  "glacier": "yes",
   "snowInSeason": "yes",
   "basis": "text",
   "why": "Pickets used once; no detail.",
   "verified": true,
-  "secondReview": "unsure/yes: The traverse rings the Dinwoody Glacier peaks and the party used snow pickets, but no source says whether the line crosses the ice."
+  "secondReview": "unsure/yes: The traverse rings the Dinwoody Glacier peaks and the party used snow pickets, but no source says whether the line crosses the ice.",
+  "research": "yes/yes: Page describes crossing the glacier on descent and says to be glacier rigged for the approach, with snow pickets used."
  },
  {
   "id": "wy_triple_glaciers_nnw_face",
@@ -930,12 +933,13 @@
   "peak": "Warrior 1",
   "discipline": "alpine",
   "kindToday": "alpinerock",
-  "glacier": "unsure",
-  "snowInSeason": "unsure",
+  "glacier": "no",
+  "snowInSeason": "no",
   "basis": "text",
   "why": "Couloir holds steep snow early in season only.",
   "verified": true,
-  "secondReview": "no/no: A rock face in a cirque without a glacier, where the walk-off couloir holds steep snow only early in the season."
+  "secondReview": "no/no: A rock face in a cirque without a glacier, where the walk-off couloir holds steep snow only early in the season.",
+  "research": "no/no: Page has a talus approach and a rappel descent; snow shows up only in an alternate gully walk-off."
  },
  {
   "id": "wy_watchtower_ice_of_desperation",
@@ -967,12 +971,13 @@
   "peak": "Fremont Peak",
   "discipline": "alpine",
   "kindToday": "alpinerock",
-  "glacier": "unsure",
-  "snowInSeason": "unsure",
+  "glacier": "no",
+  "snowInSeason": "no",
   "basis": "text",
   "why": "Only a snow patch skirted.",
   "verified": true,
-  "secondReview": "no/no: A big-wall rock route on the west face of Fremont Peak where the only snow is a patch skirted at a belay."
+  "secondReview": "no/no: A big-wall rock route on the west face of Fremont Peak where the only snow is a patch skirted at a belay.",
+  "research": "no/no: Page has a talus approach from Mistake Lake, a trail descent, and a single snow patch at the tower base; no glacier."
  },
  {
   "id": "wy_wind_walker_traverse",
