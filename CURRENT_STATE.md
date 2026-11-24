@@ -26,6 +26,8 @@ the catalog import pipeline (see [docs/BACKEND.md](docs/BACKEND.md)).
 
 ## Recent changes
 
+- **Privacy Policy version 2026-11-24** (owner 2026-11-24, "fix it"): `POLICY_VERSION` was set to 2026-11-23 at 08:39 that morning, and the Privacy Policy then changed four more times under it, the last adding crewmates' trip reports (#3838). An account that accepted that morning recorded the same version as one that read the newer text. Bumping it asks every account once to accept the current text. `lib/policy.js`.
+
 - **Menu tiles carry no counts** (owner 2026-11-24, "Remove numbers under each menu box"): *Crews · N* and *Listed areas · N* are now plain *Crews* and *Listed areas*. The count wrapped onto its own line under the label in the narrow tiles. The Requests corner badge (people waiting on you) stays. `ClimbMatch.jsx`; see `docs/features/partners.md`.
 - **Every route search says exactly where each climb is** (owner 2026-11-24): the area, up to two levels above it, then the state, on every whole-catalog route search and picker (website search, Find partners, Join a crew, vouch, add-a-climb duplicate note, new crew, guest search, downloaded search). One helper, `routePlace`. See [maps-and-area-browser.md](docs/features/maps-and-area-browser.md).
 - **Glacier warnings: Dana Couloir settled** (data only, 2026-11-24, round 11): a targeted pass on the 13 answers held in rounds 9 and 10 found an open bergschrund on the Dana Glacier; the other 12 stay held. 110 glacier calls stay open. See `docs/guards/honesty-claims.md`.
