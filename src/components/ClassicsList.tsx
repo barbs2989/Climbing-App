@@ -1,4 +1,6 @@
 import { useState, useContext } from "react";
+import type { MouseEvent } from "react";
+import { foldKeepingPlace } from "../../lib/keepPlace.js";
 import { clickable } from "../../lib/clickable";
 import { rowGrade } from "../../lib/areaBrowserShared.js";
 import { DISC_LABELS as DL } from "../../lib/discLabels";
@@ -32,6 +34,8 @@ export interface ClassicsListProps {
 }
 export default function ClassicsList({ rows, total, withWall, dense, onOpen, C, title }: ClassicsListProps) {
   const [open, setOpen] = useState(false);
+  // "Show fewer" keeps you where you were (owner, 2026-11-23): lib/keepPlace.js.
+  const toggle = (e: MouseEvent<HTMLButtonElement>) => foldKeepingPlace(e, () => setOpen(o => !o), open);
   const { wishlist, completedIds } = useContext(ClimberCtx);
   const wish = new Set((wishlist || []).map(String));
   const done = new Set([...(completedIds || [])].map(String));
@@ -65,7 +69,7 @@ export default function ClassicsList({ rows, total, withWall, dense, onOpen, C, 
       </div>
       {open && all > rows.length ? <div style={{ fontSize: 12, color: C.textMuted, margin: "6px 2px 0" }}>{"The first " + rows.length.toLocaleString() + " of " + all.toLocaleString() + " classic climbs here, best first."}</div> : null}
       {rest > 0 ? (
-        <button onClick={() => setOpen(o => !o)} aria-expanded={open} style={{ minHeight: 44, width: "100%", textAlign: "left", display: "flex", alignItems: "center", gap: 8, background: "none", border: "none", padding: "8px 0 0", cursor: "pointer" }}>
+        <button onClick={toggle} aria-expanded={open} style={{ minHeight: 44, width: "100%", textAlign: "left", display: "flex", alignItems: "center", gap: 8, background: "none", border: "none", padding: "8px 0 0", cursor: "pointer" }}>
           <span style={{ flex: 1, textAlign: "left", fontSize: 12.5, fontWeight: 700, color: C.blue }}>{open ? "Show fewer" : "Show all " + all.toLocaleString() + (title ? "" : " classic climbs")}</span>
           <Chevron open={open} size={14} color={C.blue} />
         </button>

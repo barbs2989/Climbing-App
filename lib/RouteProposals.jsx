@@ -198,7 +198,6 @@ export function RouteProposalQueue({ ai = null } = {}) {
           <Row label="Season">{v.season}</Row>
           <Row label="Commitment">{v.commit}</Row>
           <Row label="FA">{v.fa}</Row>
-          <Row label="Approach">{v.approach}</Row>
           <Row label="Descent">{v.descentText}</Row>
           <Row label="Rappels">{v.rap}</Row>
           <Row label="Comms">{v.comms}</Row>

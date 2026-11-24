@@ -1360,6 +1360,17 @@ rows. Its build script is gone; new reviews write the column.
   snow answers were already "yes". Wyoming's one web "no glacier" (Dike Route, Middle Teton) was held at
   unsure, because its own text sends bail-out parties onto the Middle Teton Glacier. Before another round on
   these states, make sure WebFetch is permitted for the researchers.
+  A fourth round (`<state>/research-out-4.json`, plus `wy/research-out-9.json` for the Koven Route, which has a
+  park rescue release about a crevasse fall on its descent) researched only the open glacier calls, with page
+  reads working. Glacier not settled went from 41 to 10 in BC, 19 to 10 in CO, 28 to 23 in WY and 26 to 20 in AK.
+  Ten thin "no glacier" answers were held at unsure by hand; each entry's `why` starts "Held at unsure on review":
+  - Colorado's three Mills Glacier routes and Queen's Way (Isabelle Glacier): no page rules out crevasses.
+  - Brenta Spire, and Talchako Up in Smoke (its only source is a different line).
+  - Dragonfly Jr and West Twincil in Alaska.
+  - The Buck Sanction and the Dike Route in Wyoming.
+  Andrews Glacier (five CO routes) stays unsure because its sources disagree: one trip report saw open
+  crevasses in the fall. The Grand Teton's north side (Valhalla Traverse normal, Teton Glacier as an
+  alternative) stays unsure.
 
   - **HOUR BY HOUR + THE GUST WINDOW (2026-10-08, owner: "clear and exact and accurate science").**
     Section 12 of the guard. Three things it holds, each measured, not assumed:

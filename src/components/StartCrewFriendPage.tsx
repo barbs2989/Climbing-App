@@ -3,6 +3,7 @@ import { createPortal } from "react-dom";
 import { C, fuzzyMatch, pubName } from "../../ClimbMatchCore.jsx";
 import { POP_BACK, POP_REMOVE } from "../../lib/popupChrome.js";
 import Av from "./Av.tsx";
+import EmptyState from "./EmptyState.tsx";
 
 /** A friend as App's `connections` holds them: an example climber (integer id) or a real profile (uuid). */
 export interface StartCrewFriend {
@@ -67,13 +68,9 @@ export default function StartCrewFriendPage<F extends StartCrewFriend>({ friends
             <button aria-haspopup="dialog" aria-label={"Start a crew with " + pubName(x.f)} onClick={() => onPick(x.f)} style={{ flexShrink: 0, minHeight: 44, padding: "0 14px", borderRadius: 9, border: "none", background: C.blueSolid, color: C.onSolid, fontSize: 12.5, fontWeight: 700, fontFamily: "inherit", cursor: "pointer", whiteSpace: "nowrap" }}>Start crew</button>
           </div>)}
         </div>
-        {!rows.length ? <div style={{ textAlign: "center", padding: "28px 0", color: C.textMuted, fontSize: 14, lineHeight: 1.5 }}>{"No friends match “" + q.trim() + "”."}</div> : null}
-      </> : <div style={{ textAlign: "center", padding: "28px 0", color: C.textMuted, fontSize: 14, lineHeight: 1.5 }}>
-        {unavailable ? "Couldn’t load your friends. This list is unread, not empty. Try again in a moment." : <>
-          <div>No friends yet.</div>
-          <button onClick={onFindPartners} style={{ marginTop: 12, minHeight: 44, padding: "0 16px", borderRadius: 10, border: "1px solid " + C.blueDim, background: C.blueBg, color: C.onSolid, fontSize: 13, fontWeight: 700, fontFamily: "inherit", cursor: "pointer" }}>Find partners</button>
-        </>}
-      </div>}
+        {!rows.length ? <EmptyState C={C} icon="search" style={{ padding: "28px 14px" }}>{"No friends match “" + q.trim() + "”."}</EmptyState> : null}
+      </> : unavailable ? <EmptyState C={C} icon="alert" style={{ padding: "28px 14px" }}>Couldn’t load your friends. This list is unread, not empty. Try again in a moment.</EmptyState>
+        : <EmptyState C={C} icon="partners" style={{ padding: "28px 14px" }} action={<button onClick={onFindPartners} style={{ marginTop: 3, minHeight: 44, padding: "0 16px", borderRadius: 10, border: "1px solid " + C.blueDim, background: C.blueBg, color: C.onSolid, fontSize: 13, fontWeight: 700, fontFamily: "inherit", cursor: "pointer" }}>Find partners</button>}>No friends yet. Start a crew with someone once you are connected.</EmptyState>}
     </div>
   </div>, document.body);
 }
