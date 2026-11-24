@@ -495,7 +495,7 @@ export default function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, book
       {/* GETTING THERE -- the one drive control on the area page: the words first, then the map. ONLY where a
           destination is actionable: "Directions to Colorado" routes you to a state centroid. A crag, peak or
           wall has somewhere you can actually park (check:area-surfaces reads this gate). */}
-      {["crag", "peak", "wall"].includes(area.area_type) ? section(<AreaGettingThere area={area} C={C} onEdit={editOn} flat />) : null}
+      {["crag", "peak", "wall"].includes(area.area_type) ? section(<AreaGettingThere area={area} C={C} onEdit={editOn} flat trailRoute={(routes || []).find(r => String(r.area_id) === String(area.id)) || null} />) : null}
 
       {wide ? null : partnersEl}
 
