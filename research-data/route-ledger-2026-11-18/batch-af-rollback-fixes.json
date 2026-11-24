@@ -1,0 +1,362 @@
+{
+ "note": "Values replaced by the owner-approved batch-AF scalar fixes, 2026-11-24",
+ "rollback": [
+  {
+   "table": "routes",
+   "id": "wa_young_warriors",
+   "before": {
+    "pitches": 0
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_young_warriors",
+   "before": {
+    "permit": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_rookie_nookie",
+   "before": {
+    "pitches": 0
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_rookie_nookie",
+   "before": {
+    "length_m": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_rookie_nookie",
+   "before": {
+    "permit": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_rock_police",
+   "before": {
+    "pitches": 0
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_rock_police",
+   "before": {
+    "length_m": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_rock_police",
+   "before": {
+    "permit": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_bladerunner",
+   "before": {
+    "pitches": 0
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_bladerunner",
+   "before": {
+    "length_m": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_bladerunner",
+   "before": {
+    "bolts": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_bladerunner",
+   "before": {
+    "permit": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_the_3rd_rail",
+   "before": {
+    "pitches": 0
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_the_3rd_rail",
+   "before": {
+    "length_m": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_the_3rd_rail",
+   "before": {
+    "permit": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_left_gull",
+   "before": {
+    "pitches": 0
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_left_gull",
+   "before": {
+    "length_m": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_left_gull",
+   "before": {
+    "permit": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_cruisin",
+   "before": {
+    "pitches": 0
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_cruisin",
+   "before": {
+    "length_m": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_cruisin",
+   "before": {
+    "permit": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_the_pink_panther",
+   "before": {
+    "pitches": 0
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_the_pink_panther",
+   "before": {
+    "length_m": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_the_pink_panther",
+   "before": {
+    "permit": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_borderline",
+   "before": {
+    "pitches": 0
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_borderline",
+   "before": {
+    "permit": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_excalibur_2",
+   "before": {
+    "pitches": 0
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_excalibur_2",
+   "before": {
+    "length_m": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_excalibur_2",
+   "before": {
+    "permit": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_flight_time",
+   "before": {
+    "pitches": 0
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_flight_time",
+   "before": {
+    "length_m": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_flight_time",
+   "before": {
+    "permit": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_little_wing_2",
+   "before": {
+    "pitches": 0
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_little_wing_2",
+   "before": {
+    "length_m": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_little_wing_2",
+   "before": {
+    "permit": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_blood_sweat_and_smears",
+   "before": {
+    "pitches": 0
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_blood_sweat_and_smears",
+   "before": {
+    "permit": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_south_face_4_steppenwolf",
+   "before": {
+    "permit": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_northwest_face_it_takes_a_village",
+   "before": {
+    "permit": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_northwest_face_cornercopia",
+   "before": {
+    "anchor": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_northwest_face_cornercopia",
+   "before": {
+    "permit": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_northwest_face_winters_passage",
+   "before": {
+    "permit": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_northwest_face_walk_the_plank",
+   "before": {
+    "bolts": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_northwest_face_walk_the_plank",
+   "before": {
+    "permit": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_northwest_face_the_bertrand",
+   "before": {
+    "bolts": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_northwest_face_the_bertrand",
+   "before": {
+    "anchor": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_northwest_face_the_bertrand",
+   "before": {
+    "permit": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_northwest_face_piracy",
+   "before": {
+    "bolts": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_northwest_face_piracy",
+   "before": {
+    "anchor": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_northwest_face_piracy",
+   "before": {
+    "permit": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_northwest_face_rogue_wave",
+   "before": {
+    "permit": null
+   }
+  }
+ ]
+}
