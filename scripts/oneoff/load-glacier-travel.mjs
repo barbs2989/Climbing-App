@@ -35,9 +35,15 @@ for (const r of fin) {
   if (r.glacier === "yes" && r.snowInSeason !== "yes") throw new Error(r.id + ": glacier yes needs snow yes");
   want.set(r.id, { glacier_travel: col(r.glacier), snow_in_season: col(r.snowInSeason) });
 }
-let dryAdded = 0;
-for (const id of dry) if (!want.has(id)) { want.set(id, { glacier_travel: null, snow_in_season: "no" }); dryAdded++; }
-console.log(`targets: ${want.size} routes (${fin.length} reviewed for glacier travel, ${dryAdded} more from the 2026-11-12 dry list; ${dry.length - dryAdded} of that list are covered by the newer review)`);
+// The dry list spans every state. A dry id that a later per-state review (<slug>/final.json) covers belongs to
+// that state's load: re-asserting glacier null here would undo it (2026-11-24: co_pyramid_peak_northeast_ridge
+// flipped between "no" and null with each WA and CO load).
+const G = path.join(ROOT, "research-data", "glacier-travel-2026-11-23");
+const stateReviewed = new Set(STATE ? [] : fs.readdirSync(G).filter((d) => /^[a-z]{2}$/.test(d) && fs.existsSync(path.join(G, d, "final.json")))
+  .flatMap((d) => JSON.parse(fs.readFileSync(path.join(G, d, "final.json"), "utf8")).map((r) => r.id)));
+let dryAdded = 0, dryElsewhere = 0;
+for (const id of dry) if (want.has(id)) continue; else if (stateReviewed.has(id)) dryElsewhere++; else { want.set(id, { glacier_travel: null, snow_in_season: "no" }); dryAdded++; }
+console.log(`targets: ${want.size} routes (${fin.length} reviewed for glacier travel, ${dryAdded} more from the 2026-11-12 dry list; ${dry.length - dryAdded - dryElsewhere} of that list are covered by the newer review, ${dryElsewhere} by a state's own review)`);
 
 async function read(ids) {
   const out = new Map();
