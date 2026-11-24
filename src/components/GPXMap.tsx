@@ -235,7 +235,10 @@ export default function GPXMap({pts,waypoints,peakCoord,emptyPinType,endpointLab
   useEffect(()=>{const map=mapRef.current;if(!map||!window.L||cLat==null||cLng==null){if(cursorRef.current){try{cursorRef.current.remove();}catch{/* the map it sat on was rebuilt */}cursorRef.current=null;}return;}
     if(cursorRef.current&&cursorRef.current._map===map)cursorRef.current.setLatLng([cLat,cLng]);
     else{if(cursorRef.current){try{cursorRef.current.remove();}catch{/* the map it sat on was rebuilt */}}if(!map.getPane("cmCursor")){const pane=map.createPane("cmCursor");pane.style.zIndex="650";pane.style.pointerEvents="none";}cursorRef.current=window.L.circleMarker([cLat,cLng],{radius:7,color:"#ffffff",weight:2,fillColor:C.blue,fillOpacity:1,interactive:false,pane:"cmCursor"}).addTo(map);}
-    try{map.panInside([cLat,cLng],{paddingTopLeft:[52,108],paddingBottomRight:[40,64],animate:false});}catch{/* the map is mid-rebuild */}
+    /* Each figure is a control's edge plus the dot's 9px radius, measured on the 276x302 rail map: the
+       layer row, the Slope button (its bottom edge 106px down) and the zoom buttons (112px) along the
+       top; the Me button (its top edge 63px up), Reset view and the tile credit along the bottom. */
+    try{map.panInside([cLat,cLng],{paddingTopLeft:[12,122],paddingBottomRight:[12,74],animate:false});}catch{/* the map is mid-rebuild */}
   },[cLat,cLng,mapGen,ready]);
   const me=useFollowMe(mapRef,{C,zoom:16,onFix:(_f,first)=>{if(first)setLocatedOnce(true);}}),locate=me.locate,geoErr=me.err;
   useEffect(()=>{if(!mapRef.current)return;const t=setTimeout(()=>{try{mapRef.current.invalidateSize();}catch{/* the map is already gone */}},220);return ()=>clearTimeout(t);},[fullscreen]);
