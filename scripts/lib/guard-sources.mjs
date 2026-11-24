@@ -280,6 +280,10 @@ export const MOVED = {
     "src/components/GroupJoinQuestionsEditor.tsx",
     "src/components/DeleteAccountConfirm.tsx",
     "src/components/BlockedClimbersSheet.tsx",
+    // 0518 (2026-11-23): the trip recap replaced App's inline Showed / No-show sheet, and the reply sheet is new; both
+    // are App's overlays (recapId, tripReplyId), so the overlay guards must see them as App's code.
+    "src/components/TripRecapSheet.tsx",
+    "src/components/TripReplySheet.tsx",
     "src/components/ClimberProfileSheet.tsx",
     "src/components/DataRequestSheet.tsx",
     "src/components/AboutSheet.tsx",

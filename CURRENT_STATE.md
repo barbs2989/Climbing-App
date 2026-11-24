@@ -26,6 +26,11 @@ the catalog import pipeline (see [docs/BACKEND.md](docs/BACKEND.md)).
 
 ## Recent changes
 
+- **Reliability: crewmates say who showed up, and it counts in the match %** (owner 2026-11-23: "Climbers should get scored on reliability ie showing up, on time, not bailing"; decided: one report counts, the climber can reply, counts not a score):
+  - After a real crew's day, each crewmate says *On time*, *Late*, *Cancelled with notice*, *Cancelled last minute* or *Didn't show* for each other one, or *We called it off*, which marks nobody (`TripRecapSheet`, 0518).
+  - A report is hidden from its subject until they file their own recap or 7 days pass. *I was there* takes it out (`TripReplySheet`); a note reaches the reporter.
+  - Profiles show counts under the name ("Showed up for 9 of 10 crew trips"). The match % has a reliability term counting both sides (`CMAX_REL`).
+  - It replaced a Trip recap sheet that wrote nothing. New guard `check:trip-reports` (PGlite, hand-run). See `docs/features/logbook-crews-home.md`.
 - **Vouch stars in a public profile's header** (owner 2026-11-23: "add the person vouch stars to their public profile … and also show the number of people that have vouched"): under the name, `FullProfile` draws five stars filled to the average vouch rating, the average, and *N people vouched* (plus *N rated* when some vouches endorsed without stars); tapping it opens the Vouches tab. The stat line then leaves out its vouch count so the header says it once. `Stars` gained `outOf`, which dims the unearned stars. See `docs/features/profile-and-settings.md`.
 - **Match %: one number for the pair, every grade counts, crag climbers can reach the top** (owner 2026-11-23, from the compat audit: "we should add those in"):
   - `compat()` is now symmetric. Each climber's ✓ verified counts half the term, so A and B no longer see different %s (12 of 20 seed pairs used to).
